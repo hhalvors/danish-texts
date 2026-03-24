@@ -8,6 +8,11 @@
 #      Visibility: Public
 #      Do NOT initialize with README (we already have one)
 #   2. Run this script
+#
+# Authentication: uses HTTPS. When prompted for a password, use a
+# GitHub personal access token (not your account password):
+#   github.com → Settings → Developer settings → Personal access tokens
+#   → Tokens (classic) → Generate new token → tick "repo" → copy token
 
 set -e
 cd "$(dirname "$0")"
@@ -16,7 +21,7 @@ git init
 git add .
 git commit -m "Initial commit: Nielsen Religionsphilosophie Indledning §§1-2"
 git branch -M main
-git remote add origin git@github.com:hhalvors/danish-texts.git
+git remote add origin https://github.com/hhalvors/danish-texts.git
 git push -u origin main
 
 echo ""
