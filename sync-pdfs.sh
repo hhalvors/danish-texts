@@ -1,46 +1,37 @@
 #!/usr/bin/env bash
 # sync-pdfs.sh
-# Copy compiled PDFs from phi423 readings into the danish-texts repo,
-# compile any tex files that don't yet have PDFs, then commit everything.
+#
+# Push compiled PDFs from danish-texts (the single source of truth)
+# out to phi423/readings and any other consumers.
+#
+# Workflow:
+#   1. Edit .tex sources in danish-texts/texts/
+#   2. Run 'make' (or 'make -j4') to rebuild PDFs
+#   3. Run this script to push PDFs to course directories
 
 set -e
 
-REPO="$HOME/danish-texts"
+DANISH="$HOME/danish-texts"
 PHI423="$HOME/hhalvors.github.io/courses/phi423_s2026/readings"
 
-echo "==> Copying PDFs from phi423 readings..."
+echo "==> Pushing PDFs from danish-texts to phi423..."
 
-cp "$PHI423/nielsen-darwin/transcription.pdf"     "$REPO/texts/nielsen/darwinismen/"
-cp "$PHI423/nielsen-darwin/translation.pdf"       "$REPO/texts/nielsen/darwinismen/"
+cp "$DANISH/texts/hoeffding/darwinismen/transcription.pdf"    "$PHI423/hoffding-darwin/"
+cp "$DANISH/texts/hoeffding/darwinismen/translation.pdf"      "$PHI423/hoffding-darwin/"
 
-cp "$PHI423/nielsen-propaedeutik/transcription.pdf" "$REPO/texts/nielsen/propaedeutik-darwin/"
-cp "$PHI423/nielsen-propaedeutik/translation.pdf"   "$REPO/texts/nielsen/propaedeutik-darwin/"
+cp "$DANISH/texts/hoeffding/realisme/transcription.pdf"       "$PHI423/hoffding-realisme/"
+cp "$DANISH/texts/hoeffding/realisme/translation.pdf"         "$PHI423/hoffding-realisme/"
 
-cp "$PHI423/hoffding-darwin/transcription.pdf"    "$REPO/texts/hoeffding/darwinismen/"
-cp "$PHI423/hoffding-darwin/translation.pdf"      "$REPO/texts/hoeffding/darwinismen/"
+cp "$DANISH/texts/nielsen/darwinismen/transcription.pdf"      "$PHI423/nielsen-darwin/"
+cp "$DANISH/texts/nielsen/darwinismen/translation.pdf"        "$PHI423/nielsen-darwin/"
 
-cp "$PHI423/hoffding-realisme/transcription.pdf"  "$REPO/texts/hoeffding/realisme/"
-cp "$PHI423/hoffding-realisme/translation.pdf"    "$REPO/texts/hoeffding/realisme/"
+cp "$DANISH/texts/nielsen/propaedeutik-darwin/transcription.pdf" "$PHI423/nielsen-propaedeutik/"
+cp "$DANISH/texts/nielsen/propaedeutik-darwin/translation.pdf"   "$PHI423/nielsen-propaedeutik/"
 
-echo "==> Compiling Brøchner PDFs..."
-cd "$REPO/texts/brochner/problemet-tro-viden"
-pdflatex -interaction=nonstopmode transcription.tex
-pdflatex -interaction=nonstopmode translation.tex
-
-echo "==> Compiling Nielsen Om det oprindelige Forhold PDFs..."
-cd "$REPO/texts/nielsen/om-oprindelige-forhold"
-pdflatex -interaction=nonstopmode transcription.tex
-pdflatex -interaction=nonstopmode translation.tex
-
-echo "==> Compiling Nielsen Theologiens Naturbegreb PDFs..."
-cd "$REPO/texts/nielsen/theologiens-naturbegreb"
-pdflatex -interaction=nonstopmode transcription.tex
-pdflatex -interaction=nonstopmode translation.tex
-
-echo "==> Committing to git..."
-cd "$REPO"
+echo "==> Committing danish-texts..."
+cd "$DANISH"
 git add texts/
-git commit -m "Add/refresh PDFs for all complete texts"
+git commit -m "Rebuild PDFs" || echo "(nothing to commit)"
 git push
 
 echo "==> Done."
