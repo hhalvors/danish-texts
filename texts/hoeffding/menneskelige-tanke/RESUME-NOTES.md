@@ -40,12 +40,36 @@ Existens, Villie, exakt/experimental (x), f.\ Ex., o.\ s.\ v., d.\ v.\ s.
 Book ends p.392.
 
 ## CURRENT RESUME POINT
-Next marker: `% [text to be added: pp. 11--20]` — Part I.A "Psykisk Energi" continues.
-Body breaks mid-word at p.10 ("udspringer for der-") → next page starts "efter…"; join the seam.
+Next marker: `% [text to be added: pp. 81--90]` — Part I.C.b "Hindringer for Domsdannelse"
+continues (after §28). Body breaks mid-word at p.80 ("…bestemt og positivt karakteri-") →
+p.81 (PDF 96) continues "seret…"; join the seam.
+Math set in math mode ($x^2=x$, $A_x$/$B_x$); the AB-combinatorics letters (A, AB, AX, B, X)
+and the algebraic A,B set ROMAN in text. Edition markers as superscript (Vernunft$^2$,
+Logik\textsuperscript{1}). §-numbers run continuously: p.71 is §24 (OCR misreads as 21).
+Notes: footnote-cited author names ARE letterspaced too (Wundt, Ramon y Cajal, Herrlin, p.27).
+Emphasis can be ordinary contrast words too (e.g. *slutte*/*udlede* p.31; *hvem/har/udøver*
+p.34). Latin set ROMAN when the print sets it roman (e.g. "qvalitas occulta" p.33) — match the
+page, do not auto-italicize Latin. "Ramon y Cajal" printed without accent → keep as printed.
+Section B added at p.37 ("B. Anskuen, Association og Sammenligning" → "a. Sansning").
+
+Refined name rule (important): author names are letterspaced ONLY when the figure is the
+key subject under discussion — NOT every mention. Verify each by zoom. Examples seen:
+emphasized = Locke/Hume/Mill, William James, Henri Bergson, Hamann/Herder/Jacobi, Kant
+(p.8); Hume, Kant (p.15); Fries, Henri Bergson (p.16); Stumpf (p.18); Sir William Ramsay,
+Ernst Mach (p.19); Pawlow (p.20). NOT emphasized (roman) = Platon/Aristoteles/Plotinos/
+Leibniz, "Lockes Forudsætning" (p.15); "John Locke" (p.12); 2nd mentions of Fries/Bergson/
+Stumpf. For "J. F. Fries" only the surname is letterspaced → `J.\ F. \emph{Fries}`.
+Emphasis is also true italics for ordinary words (e.g. *hvilken* … *hvilken*, p.17).
 
 ## DONE so far (don't redo)
-- Preamble, title page, Forord (Aug 1910), Part I + §A heading, printed pp. 1–10
-  (§§1–4 of A. Psykisk Energi). Footnotes: p.6 Psykologi ref; p.8 James & Bergson; p.10 student quote.
+- Preamble, title page, Forord (Aug 1910), printed pp. 1–60. Part I.A "Psykisk Energi"
+  (§§1–10) COMPLETE; Part I.B "Anskuen, Association og Sammenligning": a. Sansning,
+  b. Genkendelse (§§14–16) COMPLETE, c. Erindrings- og Fantasianskuelse (§§17–18) COMPLETE,
+  d. Forestillingsassociation (§§19–20), e. Sammenligning (§§21–23) — Part I.B COMPLETE.
+  Part I.C "Dømmen": a. Domsdannelse (§§24–25), b. Hindringer for Domsdannelse (§§26–28)
+  begun, through p.80. Footnotes added batch 8: p.73 Jevons; p.77 Kant (Vernunft) + Hegel
+  (Wissenschaft der Logik); p.78 Sigwart/Lotze/Bergson/Diog.Laërt + Hermann Cohen; p.79
+  Moderne Filosofer; p.80 Kr. Nyrop. Earlier footnotes pp.6–69 as listed above.
 
 ## Conventions
 See ../../../TRANSLATION-PLAYBOOK.md plus the book-specific notes above.
