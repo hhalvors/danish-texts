@@ -40,12 +40,13 @@ Existens, Villie, exakt/experimental (x), f.\ Ex., o.\ s.\ v., d.\ v.\ s.
 Book ends p.392.
 
 ## CURRENT RESUME POINT
-Next marker: `% [text to be added: pp. 81--90]` — Part I.C.b "Hindringer for Domsdannelse"
-continues (after §28). Body breaks mid-word at p.80 ("…bestemt og positivt karakteri-") →
-p.81 (PDF 96) continues "seret…"; join the seam.
-Math set in math mode ($x^2=x$, $A_x$/$B_x$); the AB-combinatorics letters (A, AB, AX, B, X)
-and the algebraic A,B set ROMAN in text. Edition markers as superscript (Vernunft$^2$,
-Logik\textsuperscript{1}). §-numbers run continuously: p.71 is §24 (OCR misreads as 21).
+Next marker: `% [text to be added: pp. 111--120]` — Part II.A "Animisme, Platonisme og
+Positivisme" continues (§40). Body breaks mid-sentence at p.110 ("…Naar det er saa let at")
+→ p.111 (PDF 126) continues "paavise…"; join the seam.
+PART I is COMPLETE; PART II "Tankens Historie" begins (chapter heading added at p.109, with
+A. Animisme… section heading). Greek on p.104: πιθανή, ἀπερίστατος, διεξωδευμένη, συνδρομή
+(Carneades). Author-name print variants kept as printed (body "Émile Durkheim" / footnote
+"É. Durckheim"). Edition markers superscript. ɔ: mark + Greek compile clean in sandbox.
 Notes: footnote-cited author names ARE letterspaced too (Wundt, Ramon y Cajal, Herrlin, p.27).
 Emphasis can be ordinary contrast words too (e.g. *slutte*/*udlede* p.31; *hvem/har/udøver*
 p.34). Latin set ROMAN when the print sets it roman (e.g. "qvalitas occulta" p.33) — match the
@@ -62,14 +63,22 @@ Stumpf. For "J. F. Fries" only the surname is letterspaced → `J.\ F. \emph{Fri
 Emphasis is also true italics for ordinary words (e.g. *hvilken* … *hvilken*, p.17).
 
 ## DONE so far (don't redo)
+- Through p.110: PART I "Tankens Psykologi" COMPLETE (A Psykisk Energi, B Anskuen/Association/
+  Sammenligning, C Dømmen incl. d. Dommens Gyldighed §§36–39). PART II "Tankens Historie"
+  begun: A. Animisme, Platonisme og Positivisme §40. Batch 11 footnotes: p.102 Meinong/Stumpf;
+  p.104 Psykologi V D + Sextus Empiricus; p.105 Galilei Dialogo + Bradley/Moderne Filosofer;
+  p.110 É. Durckheim (Revue de Métaphysique).
+
 - Preamble, title page, Forord (Aug 1910), printed pp. 1–60. Part I.A "Psykisk Energi"
   (§§1–10) COMPLETE; Part I.B "Anskuen, Association og Sammenligning": a. Sansning,
   b. Genkendelse (§§14–16) COMPLETE, c. Erindrings- og Fantasianskuelse (§§17–18) COMPLETE,
   d. Forestillingsassociation (§§19–20), e. Sammenligning (§§21–23) — Part I.B COMPLETE.
-  Part I.C "Dømmen": a. Domsdannelse (§§24–25), b. Hindringer for Domsdannelse (§§26–28)
-  begun, through p.80. Footnotes added batch 8: p.73 Jevons; p.77 Kant (Vernunft) + Hegel
-  (Wissenschaft der Logik); p.78 Sigwart/Lotze/Bergson/Diog.Laërt + Hermann Cohen; p.79
-  Moderne Filosofer; p.80 Kr. Nyrop. Earlier footnotes pp.6–69 as listed above.
+  Part I.C "Dømmen": a. Domsdannelse (§§24–25), b. Hindringer for Domsdannelse (§§26–28),
+  c. Subjekt og Prædikat (§§29–35), d. Dommens Gyldighed (§36) begun, through p.100.
+  Footnotes added batch 10: p.93 Erdmann Logik; p.96 Aristoteles (Analyt. post./De categ.)
+  + Eilschow + Jens Kraft + Højsgaard; p.97 Wundt (Logik³) + Erdmann + Jerusalem (Die
+  Urteilsfunktion); p.98 Leibniz Dialogus + my Analogi-Afhandling. Earlier footnotes
+  pp.6–90 as listed above.
 
 ## Conventions
 See ../../../TRANSLATION-PLAYBOOK.md plus the book-specific notes above.
