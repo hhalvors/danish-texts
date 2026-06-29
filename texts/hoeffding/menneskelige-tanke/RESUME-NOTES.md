@@ -40,10 +40,96 @@ Existens, Villie, exakt/experimental (x), f.\ Ex., o.\ s.\ v., d.\ v.\ s.
 Book ends p.392.
 
 ## CURRENT RESUME POINT
-Next marker: `% [text to be added: pp. 291--300]` — Part IV.A.b.β §122 continues (no Bevis for
-Aarsagssætningens Gyldighed). p.290 ends MID-SENTENCE: "…Som jeg tror tilstrækkeligt at have
-paavist, kan der ikke føres noget Bevis for Aarsagssætningens" → p.291 continues the sentence
-(join directly, no blank line). Compiles 0/0 (229pp).
+Next marker: `% [text to be added: pp. 321--330]` — Part IV.B.b §133 continues. p.320 ends
+MID-SENTENCE: "…For Filosofen er det ikke denne endeløse Række, der er Hovedsagen," → p.321
+continues the sentence (join directly, no blank line). Compiles 0/0 (251pp).
+
+### Batch 32 done (pp.311--320, §§130(end)--133) — IV.B.a end → new IV.B.b "Enhed og Mangfoldighed"
+- §130 ends (Urfænomen = the analogical base topic; Goethe's term); §131 (a Verdensanskuelse on
+  the boundary of science; philosophy as art); §132 (Bergson's intuition/analysis, his "Philosopher
+  consiste à invertir…"; Høffding's verdict that all metaphysics rests on analogy). End of
+  subsection **a. Videnskab og Verdensanskuelse** at p.318.
+- **New \subsection* "b. Enhed og Mangfoldighed"** (+ addcontentsline subsection) begins p.319;
+  §133 (causality as Urfænomen; Lessing/Spinoza/Hegel) runs to p.320 end.
+- Seam p.310→311: "…hvorvidt det er" + "muligt at forstaa…".
+- Letterspaced names (\emph, where print letterspaces): \emph{Leibniz} (p.311), \emph{Goethe}
+  (p.311, 1st of two; 2nd roman), \emph{Schelling} og \emph{Hegel} (p.313), \emph{Georg Simmel}
+  (p.315), \emph{Henri Bergson} (p.315, emphatic re-mention), \emph{Carlyle} (p.317),
+  \emph{Platon}'s/\emph{Spinoza}'s/\emph{Schopenhauer}'s (p.315), \emph{Schopenhauer}+\emph{Albert
+  Lange} (p.314 fn-anchors), \emph{Lessing}s + \emph{Spinoza} og \emph{Hegel} (p.320).
+  Footnote-name leads \emph: \emph{Goethe}'s (p.312 fn), \emph{Schopenhauer} (p.312 fn),
+  \emph{Bradley}+\emph{Benedetto Croce} (p.313 fn). Passing/roman: Bergson/Bergson's (body),
+  Poul Møller (p.318 roman — but p.302 was \emph), Hegel/Schelling in Croce fn, "(Spinoza)" (p.320,
+  roman — distinct from the letterspaced "Spinoza og Hegel" two lines below).
+- **Latin/foreign phrases kept ROMAN per print** (verified by zoom): "Intellectio fictionem
+  terminat (Spinoza)" (p.320), "(causæ secundæ)" (p.320), the Bergson maxim "Philosopher consiste
+  à invertir…" (p.316--317), French parentheticals (les yeux de la seule intelligence)/(l'esprit)/
+  (l'Etre, l'Absolu)/(l'élan de la vie)/(élan). EXCEPTION: inside the long French quote on p.318,
+  "\emph{sur le modèle de laquelle}" IS italic (Høffding's emphasis). Italian quotes in p.313 fn
+  („l'indifferenza…", „al non --- teoretico…") roman; only the Croce book-title \emph{Ciò che è
+  vivo…} italic.
+- Many German/French work-titles italic in fns (Goethe's Farbenlehre / Gespräche mit Eckermann /
+  Sprüche in Prosa / Unterhaltungen mit Kanzler v. Müller / Den nyere Filosofis Historie² /
+  Moderne Filosofer / Psykologi / Mindre Arbejder / Schopenhauer und Nietzsche --- Ein
+  Vortragscyclus / Introduction à la Métaphysique / Évolution créatrice). Journal "Revue de
+  Métaphysique et de Morale" and "(Sartor Resartus I, 10.)" kept ROMAN.
+- Multiple \footnote per page handled by auto-numbering (p.314 has 4: Psykologi / Mindre Arbejder /
+  Den nyere Filosofis Historie² / Anf. Skr.). Faithful: gulrøde, Krystalisering (single l),
+  havt-type forms, naat, x-spellings (Tankeexperimenter), én (accent), „Forstanden“s (quote+genitive).
+
+### Batch 31 done (pp.301--310, §§126(end)--130(start)) — IV.A.b end → new IV.B "Verdensanskuelse"
+- §126 ends (Subjekt/Objekt Vexelspil); §127 (the human standpoint S_m; comparative
+  Erkendelsesteori; S_α S_β S_γ series). End of subsection **b. Former og Emner** and section
+  **A. Erkendelse** at p.305.
+- **New \section* "B. Verdensanskuelse"** (+ addcontentsline section + \label{sec:verdensanskuelse})
+  begins p.306 mid-page, immediately followed by **\subsection* "a. Videnskab og Verdensanskuelse"**
+  (+ addcontentsline subsection). Then §128 (metaphysical Trang; Kosmologi), §129 (no absolutely
+  closed Verdensbillede), §130 starts at p.310 end.
+- Seam p.300→301: "…Erkendelsens Fremskriden" + "snart bestaar i at gøre…".
+- Letterspaced names (\emph, where print letterspaces — incl. emphatic re-mentions of Kant):
+  \emph{Shakespeare} (p.302), \emph{Poul Møller} (p.302), \emph{Kant} (p.302 "oversaa Kant"; later
+  Kant roman same page), G. E. \emph{Schultze} + \emph{Albert Lange} (p.302), \emph{Kant} again
+  (p.307 "hvad Kant har kaldet"), \emph{Goethe} (p.307), Chr. \emph{Wolff} (p.308), \emph{Spinoza}
+  (p.310), \emph{Wundt} (p.310). Footnote-name leads \emph: \emph{Rasmus Nielsen}s (p.301 fn),
+  \emph{Husserl} (p.304 fn; Benno Erdmann roman), G. \emph{Séailles} (p.308 fn), \emph{Jens Kraft}
+  (p.308 fn), \emph{Spinoza} (p.310 fn; Wundt roman). Passing names ROMAN: Ptolemaios/Kopernikus/
+  Aristoteles/Kant in the O_x→O_y list (p.303); Leibniz/Leibniz' (p.304); Lavater/Jacobi/Claudius (p.307).
+- Work titles italic in fns: \emph{Danske Filosofer}, \emph{Logische Untersuchungen}, \emph{Les
+  affirmations de la conscience moderne}, \emph{Religionsfilosofi}, \emph{Mindre Arbejder},
+  \emph{Ethica}, \emph{Moderne Filosofer}, \emph{Metafysik} (Jens Kraft work, p.308 fn).
+- **Math** (house style, math-italic letters): S_o/O_s, S/O, S_m/S_n/S_p, O_x O_y O_z, S_x;
+  S_α S_β S_γ via $S_\alpha$ etc. (math Greek cmds, NOT literal glyphs). Inline brace-series
+  $S_1<O_1\mathrel{\{}S_2<O_2\mathrel{\{}S_3\ldots$ (p.302). Imaginary formula $a+b\sqrt{-1}$, with
+  "$b$ altid var o" (literal lowercase **o** for zero, verified by zoom). Square brackets kept:
+  [sidevendte], [fremadgaaende og tilbagegaaende] (p.310).
+- French quote (p.308) "Hélas, il est plus difficile…s'ignore" kept ROMAN (no quote marks in print).
+  German quote „Dem Lehrbegierigen…bei ihnen.“ roman in „ “. „Ding an sich“ kept in „ “ (roman).
+  Faithful: én (accented), havt (p.302), exakte/existerende/Vexelspil/Tankeexperimentets (x),
+  d.\ v.\ s., o.\ s.\ v., f.\ Ex., (125 α og β) literal Greek glyphs.
+
+### Batch 30 done (pp.291--300, §§122(end)--126(start)) — IV.A.b.γ "Subjekt og Objekt"
+- §122 ends (will/determinism, Arbejdshypotese). §123 (immediate consciousness of "could have
+  acted otherwise"; Achilleus/Atene illustration). New \subsubsection* **γ. Subjekt og Objekt**
+  (after α. Kvalitet og Kvantitet, β. Succession og Kausalitet) at p.295, with addcontentsline.
+  §§124--125 the Subjekt/Objekt analysis; §126 starts at p.300 end.
+- Seam p.290→291: "…noget Bevis for Aarsagssætningens" + "absolute Gyldighed."
+- Letterspaced names (\emph, 1st/key mention): \emph{Henri Bergson} (p.292; later Bergson/Bergsons
+  roman), \emph{Aristoteles} (p.295), \emph{Hobbes} (p.295). Footnote-name leads \emph: \emph{James}
+  (p.293 fn, "W." roman), \emph{Dedekind} + \emph{Fichte} (p.300 fn).
+- Footnotes: p.291 "Se herom min \emph{Etik}. Kap. V."; p.293 long fn = \emph{Les données immédiates
+  de la conscience}.\textsuperscript{4} + W. \emph{James} English quote (faithful typos kept:
+  "charakter", "Psychologial"; »free will« in guillemets; quote italic, the (The Psychologial
+  Review…) parenthetical roman); p.295 "\emph{Philosophia prima}. IX, 5."; p.300 Dedekind/Fichte.
+- **Math notation** (matches house style $A_x$, \[ A < B < C < D … \]): Subject/Object symbols set
+  math-italic — $S$, $S_o$ (objektiveret), $O$, $O_s$ (subjektiveret), $S_1$, $O_1$, … Relation
+  $<$ = "forudsætter"; brace $\mathrel{\{}$ = "objektiveret af". Four displays via \[ \]:
+  $S_1<O_1<S_2<O_2…$ (p.298); $S_1<O_1\{S_2<O_2\{S_3<O_3…$ (p.299); $S_1\{S_2\{S_3…$ (p.300);
+  and the 2-D stacked-brace array {S_1,O_1}}{S_2,O_2}} S_3 (p.300, via \left.array\right\}).
+- Run-in italic Synsmaade heads kept inline as \emph{α. Psykologisk Synsmaade.} etc. (NOT
+  subsubsections — distinct from the centered γ. Subjekt og Objekt).
+- Faithful typos kept: **gammengræske** (for gammelgræske, p.294), **oprede** (p.292), charakter/
+  Psychologial (p.293 fn). x-spellings: existerede/existerer, Vexelvirkning, Vexelspil, afvexlende,
+  f.\ Ex., extensive. negte/negter, faat, Ti.
 
 ### Batch 29 done (pp.281--290, §§117(end)--122) — still IV.A.b.β "Succession og Kausalitet"
 - §§117(end)--122, all under the existing β. Succession og Kausalitet (no new headings this
