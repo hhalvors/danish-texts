@@ -40,11 +40,39 @@ Existens, Villie, exakt/experimental (x), f.\ Ex., o.\ s.\ v., d.\ v.\ s.
 Book ends p.392.
 
 ## CURRENT RESUME POINT
-Next marker: `% [text to be added: pp. 281--290]` — Part IV.A.b.β §117 continues (Aarsag/
-Erfaringens Analogier; we keep applying the cause-form to examine objects). p.280 ends
-MID-SENTENCE: "…Vi faa ved dette Synspunkt en stadig Opfordring til at undersøge Emnerne saa
-nøje som muligt, for at" → p.281 continues the sentence (join directly, no blank line).
-Compiles 0/0 (221pp).
+Next marker: `% [text to be added: pp. 291--300]` — Part IV.A.b.β §122 continues (no Bevis for
+Aarsagssætningens Gyldighed). p.290 ends MID-SENTENCE: "…Som jeg tror tilstrækkeligt at have
+paavist, kan der ikke føres noget Bevis for Aarsagssætningens" → p.291 continues the sentence
+(join directly, no blank line). Compiles 0/0 (229pp).
+
+### Batch 29 done (pp.281--290, §§117(end)--122) — still IV.A.b.β "Succession og Kausalitet"
+- §§117(end)--122, all under the existing β. Succession og Kausalitet (no new headings this
+  batch). §121 has run-in **Greek-letter** sub-items **α. / β. / γ.** (Helheds-/Udviklings
+  methodology: isolate vs. forfølg; analyse the given Helhed; find the Trin/Historie) — inline
+  paragraph leads, kept literal α β γ.
+- Seam p.280→281: "…undersøge Emnerne saa nøje som muligt, for at Analogien kan gennemføres saa
+  meget som muligt."
+- Letterspaced names (\emph): \emph{Stuart Mill} (p.281), \emph{Comte}'s/\emph{Mill}'s genitives +
+  \emph{William James} + \emph{Schelling}/\emph{Hegel} (p.281), \emph{William Hamilton} (p.282),
+  \emph{Ernst Mach} (p.286), \emph{William James} (p.288). Footnote-name leads \emph: \emph{Stuart
+  Mill}? (no — body), F.\ H. \emph{Bradley} (p.283 fn, initials roman), \emph{Richard Avenarius}/
+  \emph{Ernst Mach} (p.284 fn), G. \emph{Tarde} (p.286 fn), \emph{Meyerson} (p.287 fn). 2nd-mention/
+  passing names ROMAN: Hume (p.282/285 "Hume's" roman), Newton (p.288 "sibi consona"), Plotinos.
+- Footnotes (7 this batch): p.281 *) \emph{System of Logic}…; p.283 *) F.\ H. \emph{Bradley}:
+  \emph{Appearance and Reality}…Plotinos(Drews); p.284 *) \emph{Richard Avenarius}/\emph{Ernst
+  Mach} titles; p.286 *) G. \emph{Tarde}: \emph{Les lois de l'imitation}; p.287 *) \emph{Die
+  Mechanik in ihrer Entwickelung}⁶ + [Udhævelserne af mig.] + \emph{Identité et Réalité}/
+  \emph{Meyerson}; p.289 *) self-cites \emph{Mindre Arbejder}/\emph{Psykologi}/\emph{Etik}; p.290
+  *) \emph{Religionsfilosofi}.
+- Long \emph{Ernst Mach} block-quote (p.286--287) in „…": italic-emphasis spans (Høffding's, per
+  the fn "[Udhævelserne af mig.]") = \emph{naar de ere overladte til sig selv} /
+  \emph{til sig selv overladte} / \emph{I alt dette udtaler der sig… i Tingene.}; (Sinn) roman.
+- ROMAN as printed: "sibi consona" (p.288); „forklare"/„Forklaringer"/„Aarsag og Virkning"/
+  „vendes om"/„Springet"/„Konjunktion"/„og"/„derfor"/„Livskraft"/„Sjælens"/„Samfundet"/„Verdens"/
+  „Universets"/„Meningen"/„helt ude"/„Aarsag til sig selv"/„Enheden i Alt". Energy/event labels A,
+  B plain roman (p.285--286). Faithful: "strænge" (p.283), "Carnot'ske"/"Carnotske" (p.286).
+  x-spell: Exempel, Vexelvirkning. En-dash ranges: 336--344, 4--7, 332--335, 412--415, 37--38,
+  93--99. No display math, no inline Greek words (only α/β/γ markers).
 
 ### Batch 28 done (pp.271--280, §§112(end)--117) — NEW subsection IV.A.b + sub-subsections α, β
 - §§112(end)--113 finish "a. Former og Principer" (the three -ismer balanced; Kriticismens
