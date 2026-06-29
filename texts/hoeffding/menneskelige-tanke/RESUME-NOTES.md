@@ -40,9 +40,56 @@ Existens, Villie, exakt/experimental (x), f.\ Ex., o.\ s.\ v., d.\ v.\ s.
 Book ends p.392.
 
 ## CURRENT RESUME POINT
-Next marker: `% [text to be added: pp. 321--330]` — Part IV.B.b §133 continues. p.320 ends
-MID-SENTENCE: "…For Filosofen er det ikke denne endeløse Række, der er Hovedsagen," → p.321
-continues the sentence (join directly, no blank line). Compiles 0/0 (251pp).
+Next marker: `% [text to be added: pp. 341--350]` — Part IV.B §142 continues into subsection
+**c. Vurdering** territory soon (TOC: C. Vurdering p.347). p.340 ends with a display syllogism
+cascade (A=B / B=C / A=C / C=D / A=D / …) introduced by "…stedse maa optages nye Præmisser:";
+p.341 continues. Join the next batch directly after the `\]` display. Compiles 0/0 (267pp).
+
+### Batch 34 done (pp.331--340, §§138(end)--142) — IV.B.c "Aand og Materie" → new IV.B.d "Bestaaen og Udvikling"
+- §138(end) materialism cont. (matter as Urfænomen; aether/Langevin fn); §139 idealism's case
+  (Hegel's Tankehelhed, Leibniz's monads, Schopenhauer/Beneke/Lotze/Bergson); §140 no forced
+  Either/Or between idealism & materialism (Goethe's Urphänomen/Forundring quote); §141 elimination
+  of time, sorites/development; §142 development vs dissolution, the syllogism-cascade display.
+- **New \subsection* "d. Bestaaen og Udvikling"** (+ addcontentsline subsection) begins p.338.
+- Seam p.330→331: "…som tale" + "til Gunst for at betragte det Materielle som Urfænomenet…".
+- Letterspaced names (\emph, verified by zoom): \emph{Pascal} (p.333), \emph{Hegel}'s Løsning
+  (p.333), \emph{Leibniz} (p.333 para-start), \emph{Charles Darwin} (p.337 body + fn),
+  \emph{Spinoza} (p.337 "har Spinoza her set klarest"), \emph{Goethe} (p.335 "Ifølge Goethe").
+  In fns: \emph{Paul Langevin}, \emph{Christiansen}s (p.331); \emph{Brøchner}'s, \emph{Wundt}
+  (p.333). ROMAN (verified): Hegel ikke (p.333 2nd), Hegels Standpunkt (fn), Agasiz's, Darwin
+  (p.337 2nd), Spinoza deri / Spinozas Tro (p.337), Spinozas Grundtanke (p.338), Goethes Trang
+  (p.336), Spinoza og Hegel (p.338 list), Schopenhauer/Beneke/Lotze/Bergson (p.334), Nietzsche (fn p.339).
+- Latin/French kept ROMAN per print: (comprend)/(comprends) (p.333), (Attributer)/(Ethica) (p.337).
+  Work titles italic in fns: Physics of the Electron, Danske Filosofer, Moderne Filosofer,
+  Religionsfilosofi, Life and Letters. Body emph: \emph{Orden} (p.336 2nd "Tingenes Orden").
+- Faithful: „…“ („æteriske", „parallele", „psykofysisk", „Upanishad", „ligger i", „Psykologi");
+  Existens/Exempler/Vexelvirkning/f. Ex. (x), ét/ti (=thi), em-dashes ---, ranges -- (202--204,
+  21--24, 97--99). Math: $T<M\mathrel{\{}T$, $S_1<O\mathrel{\{}S_2$, (et $O_s$).
+- Display (end p.340): \[ array{l} A=B / \underline{B=C} / A=C / \underline{C=D} / A=D / \ldots \].
+
+### Batch 33 done (pp.321--330, §§133(end)--138(start)) — IV.B.b end → new IV.B.c "Aand og Materie"
+- §§133--136 (Monisme vs. Pluralisme; "kritisk Monisme"; Renouvier/James pluralism; Spinoza's
+  unity-in-multiplicity; time/Tilværelsens uafsluttelighed). End of subsection **b. Enhed og
+  Mangfoldighed** at p.328.
+- **New \subsection* "c. Aand og Materie"** (+ addcontentsline subsection) begins p.329; §137
+  (spirit/matter as the two Hovedgrupper), §138 (materialism) starts p.329--330.
+- Seam p.320→321: "…der er Hovedsagen," + "saa megen Interesse…".
+- Letterspaced names (\emph, where print letterspaces — verified by zoom each time, since these
+  names recur roman elsewhere): \emph{Spinoza} (p.321 "Det var denne Magt, Spinoza"),
+  \emph{Hegel} som hos \emph{Spinoza} (p.321), \emph{Charles Renouvier} og \emph{William James}
+  (p.323), \emph{David Hume} (p.324), \emph{Renouvier} (p.325 para-start) + \emph{James} (p.325
+  "For James"), \emph{Spinoza}'s (p.326 "Og i denne Retning gik Spinoza's"). ROMAN (verified):
+  Hegel/Hegels (p.322--323 all roman incl. "med Hegel"), Spinoza's/Leibniz's (p.323 „Substans"/
+  „Monader" line), James (p.326 "Naar James kalder"), Spinoza's (p.326 "Spinoza's egentlige" &
+  p.327 "Spinoza's Sætning"), Kant's (p.328 "Kant's Sprog"), (Platons, Spinozas, Hegels) list (p.328).
+- **Latin phrases kept ROMAN per print** (verified): "inclinata resurget!" (p.323), "(res
+  singulares)" (p.327), the Ethica fn quote "Qvo magis res singulares intelligimus eo magis Deum
+  intelligimus." (p.327, with faithful "Qvo"); French "(la correlation de l'un et du plusieurs)"
+  (p.325), „la superstition de l'unité" (p.323). Work titles italic in fns: Religionsfilosofi,
+  Wissenschaft der Logik, A World of Pure Experience, Pragmatism. A new name…, Ethica.
+  "kritisk Monisme" italic in body (p.322, author's emphasis).
+- Faithful: „…“ + genitive s (e.g. „sunde Menneskeforstand"s, p.321), „noëtic Pluralism" (ë),
+  Praxis/Existens/Forvexlinger (x), én, Ti (=thi), „Ding an sich" in „ ".
 
 ### Batch 32 done (pp.311--320, §§130(end)--133) — IV.B.a end → new IV.B.b "Enhed og Mangfoldighed"
 - §130 ends (Urfænomen = the analogical base topic; Goethe's term); §131 (a Verdensanskuelse on
