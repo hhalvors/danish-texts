@@ -40,10 +40,116 @@ Existens, Villie, exakt/experimental (x), f.\ Ex., o.\ s.\ v., d.\ v.\ s.
 Book ends p.392.
 
 ## CURRENT RESUME POINT
-Next marker: `% [text to be added: pp. 341--350]` — Part IV.B §142 continues into subsection
-**c. Vurdering** territory soon (TOC: C. Vurdering p.347). p.340 ends with a display syllogism
-cascade (A=B / B=C / A=C / C=D / A=D / …) introduced by "…stedse maa optages nye Præmisser:";
-p.341 continues. Join the next batch directly after the `\]` display. Compiles 0/0 (267pp).
+**TRANSCRIPTION COMPLETE.** All 392 printed pages (1--392) transcribed. No markers remain.
+Document ends with §162 "…Men enhver redelig menneskelig Stræben virker med til at forberede
+den." + `\end{document}`. Final sandbox compile: 0 errors / 0 missing-char / 306pp.
+Next step (separate job): translation per ../../../TRANSLATION-PLAYBOOK.md.
+
+### Batch 40 done (pp.391--392, §162 end) — FINAL BATCH, end of book
+- §162 concludes: religious phenomena understood via interaction of social/individual; Augustine's
+  Confessiones as individual self-testimony; closes with future Livsanskuelse / Livspoesi peroration.
+- Seam p.390→391: mid-sentence "…hvad der giver" + "Religionen Værdi for Mennesker…" (joined
+  directly). Seam p.391→392: mid-sentence "…Saa stor" + "Betydning man end vil tillægge…".
+- Letterspaced (\emph, verified): \emph{Augustins} (p.391); \emph{Wundt}, \emph{Wilamowitz-Moellendorff}
+  (fn p.391). Body emph: \emph{Livspoesi} (p.392). Quotes (roman): „Confessiones", „Religionsfilosofi",
+  „Folkespykologien" (sic — printed spelling preserved). Genitive "Herakles's" (fn).
+- Work titles italic in fns: Religionsfilosofi, Mythus und Religion, Euripides' Herakles² (superscript).
+- German quote roman: „Aus dem ersten nemeischen Gedichte habe ich den Herakles verstanden."
+
+### Batch 39 done (pp.381--390, §§159(end)--162) — IV.C.b.β new subsubsection
+- Continues §159 (Heiberg/Martensen/Kierkegaard on religion as Emne vs Autoritet); §160 (Fichte,
+  Tro paa Værdiens Bestaaen); **new \subsubsection* "β. Den historiske og den filosofiske
+  Betragtning"** at p.385; §161 (3 Hovedsynspunkter: 1) why gods worshipped 2) reality-cognition
+  3) experiences of value's fate); §162 (Religionsfilosofi vs Religionshistorie; Kant; Magi/Religion;
+  Frazer, Isis, Oldenberg).
+- Seam p.380→381: new indented paragraph after "…hele Syntese i sig." (blank line).
+- Letterspaced (\emph, verified): \emph{Martensen}, \emph{Kierkegaard} (p.381); \emph{Fichte} (p.384,
+  +fn); \emph{Platon}, \emph{Plotinos} (p.386--387, +fn); \emph{Kant} (p.389); \emph{Frazer} (p.389,
+  +fn); \emph{Oldenberg}'s (p.390); fn names \emph{Hubert et Mauss}, \emph{Adonis}, \emph{Die iranische
+  Religion}. ROMAN: Heiberg, Hegel, Fichte's (2nd/3rd), Frazer's (2nd), Oldenberg (2nd), Isis/Astarte/
+  Kybele/Varuna/Ahura—Mazda. Greek verbatim p.386: (πρὸς οἷσπερ θεὸς ὢν θεῖος ἐστιν).
+- Print quirk preserved: footnote "p. 131 ff) betone"; Mélanges d'Histoire des religions (roman).
+
+### Batch 38 done (pp.371--380, §§155(end)--159) — IV.C.b "Det religiøse Problem", new subsubsection IV.C.b.α
+- §155 finishes: religion's objective (Kultus) vs psychological character; §156 Høffding's own
+  Religionsfilosofi (3 theses); **new \subsubsection* "α. Religionens psykologiske Sted"** at
+  p.374; §157 values↔religion (kontinuitetstro); §158 value-variation, Billedsprog/Resignation,
+  Humor; §159 Filosofiens forhold til Religionen (Romantik, Heiberg/Hegel).
+- Seam p.370→371: mid-sentence "…historisk-psykologisk Begreb, der" + "fremtræder i saa mange
+  Former…" (joined directly, no blank line).
+- Letterspaced names (\emph, verified): \emph{Hubert et Mauss} (fn p.371); \emph{David Hume}
+  (p.373); \emph{Pascal}, \emph{Deuterojesaja} (fns p.375); \emph{Martensen} (fn p.377);
+  \emph{Kierkegaard} (1st mention p.378); \emph{J. L. Heiberg} (p.380).
+  ROMAN (verified): Grundtvig (fn p.377); Jakobsen (p.379); Hegel (p.380); later Kierkegaard
+  mentions (Kierkegaards Redegørelse / som Kierkegaard bevidst / Kierkegaard krævede, p.378).
+- Body emph: \emph{sit} (p.374). Latin/foreign roman per print: asylum ignorantiæ (p.372),
+  (affected) (p.373), C'est une chose horrible… (fn p.375), Mit Befrielsens Aar… (fn p.375).
+  Quotes: „Fornuftighed", „Livets Kilde springer…", „Humor". Work titles italic in fns:
+  Essai sur la nature et la fonction du sacrifice, Natural History of Religion, Danske Filosofer
+  (×2). Note p.377 fn closing paren added for balance (print drops it).
+
+### Batch 37 done (pp.361--370, §§151(end)--155) — IV.C.a.β (Real Etik) → new subsection IV.C.b "Det religiøse Problem"
+- §151 motiv/værdiforskydning; §152 Etik↔Psyk/Soc/Pæd; §153 retfærdighed (Selvhævdelse+Hengivelse),
+  §154 individualisering of the ethical task; ends a.β. **New \subsection* "b. Det religiøse
+  Problem"** at p.369; §155 begins (religion's place / psychic equivalents).
+- Seam p.360→361: complete sentence + new para "Det er en Selvmodsigelse at paastaa, at man
+  lever for det Hinsidige…".
+- Letterspaced names (\emph, verified): \emph{Hugo Grotius} (p.363); \emph{Leo Tolstoi},
+  \emph{Friedrich Nietzsche} (p.366); \emph{Demokritos} (p.367), \emph{Westermarck} (fn p.367).
+  ROMAN (verified): Sokrates, Darwin, Hobbes, Kant, Schopenhauer, Marx, Hobbes-2 (p.364);
+  Tönnies (fn p.364); Leibniz' (p.366); Demokrit's (p.365); Schiller's + Wilhelm Tell (p.368).
+- Body emph: \emph{medens} (p.362). Latin/foreign roman per print: caritas sapientis (p.366),
+  animus sedatus (p.364), Excelsior! (p.369), Justice…feelings (fn). Greek glyphs kept verbatim:
+  γαλήνη (p.365). Work titles italic in fns: Etik(³), Psykologi, Ethik und Sozialismus, Den nyere
+  Filosofis Historie², The Origin and Development of moral ideas, Etiske Undersøgelser; journal
+  roman (Archiv für Sozialwissenschaft… / Bulletin earlier).
+- OCR fixes (zoom-verified): "de Fordringer, almindelige Principer føre til at opstille" (p.368,
+  not "fordrede Principer"); "emanciperet" (p.370, not "emancieret"); "At der er dem, der ikke
+  føle Trang" (p.370). Faithful: Logiken/Pædagogiken/Principer/Villiesliv, Voxnes/voxe (x), jevnt,
+  forat, naat, én/ét, ti (=thi), skjule/Skjul (j); ranges -- (36--38, 121--124, 51--83).
+- Running headers "C. Vurdering. a./b. …" NOT reproduced (book's own). Subsection b heading
+  letterspaced in print.
+
+### Batch 36 done (pp.351--360, §§147(end)--151) — IV.C.a.α (Det etiske Arbejde) → new α/β; β "Real Etik" begins
+- §147 the formal ethics / energy-synthesis; §148 the sociological objection (Durkheim), §149
+  the individual-moment objection, §150 formal ethics' common concepts; new **\subsubsection*
+  "β. \emph{Den etiske Vurderings Rationalitet}. (Real Etik)"** at p.359; §151 begins (Grundværdi).
+- Seam p.350→351: "…former sin Trang til at" + "give sine Sindsbevægelser…".
+- Letterspaced names (\emph, verified by zoom): \emph{Platon}'s \emph{Symposion} (p.352);
+  \emph{Kierkegaard}s (p.353 1st, Stadierne), \emph{Nietzsche} (p.353), \emph{Brøchner} (p.353);
+  \emph{Émile Durkheim} (p.354); \emph{Aristoteles} (p.357--58 span), \emph{Aristippos} (p.358 1st),
+  \emph{Kierkegaard} (p.358). ROMAN (verified): Platon 2nd/3rd (p.352), Kierkegaards 2nd (p.353
+  "Springene"), Buddha/St. Franciscus (p.353), Durkheim 2nd+ (p.355 body), Aristippos 2nd (p.358).
+- French kept ROMAN per print (p.355): "(notre premier devoir… une morale)", "La morale commence
+  là ou commence l'attachement à un groupe quelle qu'il soit". Greek glyph (φρόνησις) kept verbatim (p.358).
+- Work/journal titles italic in fns: Etiske Undersøgelser, Danske Filosofer, Moderne Filosofer,
+  Etik, De la division du travail soial (faithful typo "soial"); roman journal "Bulletin de la
+  sociétè francaise de philosophie" (faithful quirks: grave "sociétè", no cedilla "francaise").
+- Body emph: \emph{hvad} (p.359 "hvad der er Maal"). Subsubsection headings α/β: literal Greek +
+  italic title + roman "(… Etik)". OCR fixes: "siges Samfundet" (p.356, not "siger"); "indføres"
+  not doubled (p.351 slice overlap). Faithful: „Stadierne", „Begreberne…Handlen", Vexelvirkning/
+  Væxt/existerer/forvexler (x), Villiesliv/Villier, idethele, ti (=thi), fornegtes; ranges --.
+
+### Batch 35 done (pp.341--350, §§142(end)--147) — IV.B.d end → new section IV.C "Vurdering"
+- §142(end) the development/Helhed argument; §143 Udvikling vs Fremskridt (Augustinus, Dante's
+  Paradiso verse on the unity of all things); end of B.d, end of section B. Then **new \section*
+  "C. Vurdering"** (+ addcontentsline + \label{sec:vurdering}) at p.346; §§145--146 the value
+  problem / Grundværdi / praktisk Fornuft (Rousseau & Hume); new **\subsection* "a. Det etiske
+  Problem"** + **\subsubsection* "α. \emph{Det etiske Arbejde}. (Formal Etik)"** at p.350; §147 begins.
+- Seam p.340→341: after the `\]` display, new para "Hveranden Præmis kommer her ind…".
+- Dante verse rendered as \begin{quote}…\\…\end{quote} (matches existing Hegel-system quote block).
+- Letterspaced names (\emph, verified by zoom): \emph{Augustinus}, \emph{Dante}'s (p.342);
+  \emph{Jacob Böhme}, \emph{Pascal}, \emph{Hegel}, \emph{Heiberg} (p.343; "J. L." initials roman);
+  \emph{Goethe} (p.344); \emph{Fichte} (p.345 1st); \emph{Rousseau} (p.349). ROMAN (verified):
+  Kopernikus (p.343), Fichte (p.345 2nd "kunde Fichte ikke finde"), Hume (p.349 "hvad Hume").
+- Work titles italic in fns: Religionsfilosofi, Den nyere Filosofis Historie² , Danske Filosofer,
+  Grundlage der gesammten Wissenschaftslehre², Psykologi, Etik. Superscript edition via \textsuperscript{2}.
+- Faithful: „…“ („Paradiset", „Evighedens Lue", „Blomsterdrømme", „det Begribelige",
+  „Existensform", „slette", „man", „teoretiske", „praktisk Fornuft", „fromme"); Vexelforholdet/
+  Existens/Expansioner/f. Ex. (x); én/ét (é); ti (=thi); havt/naat (1910); "naat et vist Trin"
+  (verified, not "og vist"); em-dashes ---, ranges -- (135--136, 14--16, 243--245).
+- Section C top-level heading mirrors A. Erkendelse / B. Verdensanskuelse markup (section* +
+  addcontentsline section + label). Running header "C. Vurdering. — Indledning." NOT reproduced.
 
 ### Batch 34 done (pp.331--340, §§138(end)--142) — IV.B.c "Aand og Materie" → new IV.B.d "Bestaaen og Udvikling"
 - §138(end) materialism cont. (matter as Urfænomen; aether/Langevin fn); §139 idealism's case
