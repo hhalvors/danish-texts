@@ -1,0 +1,612 @@
+% ============================================================
+%  R. Nielsen, "Philosophie og Mathematik. En propædeutisk Afhandling."
+%  "Philosophy and Mathematics. A Propaedeutic Treatise."
+%  Kjøbenhavn: Forlagt af den Gyldendalske Boghandling (F. Hegel);
+%  Thieles Bogtrykkeri, 1857.
+%  TRANSLATION (English) — from the verified Danish transcription.tex.
+%
+%  Method: prose-only translation. Every equation, array, tikzpicture
+%  block (with its % FIGURE comment), point/label token, and % flag
+%  print-oddity note is carried over VERBATIM from transcription.tex;
+%  only natural-language prose (body sentences, footnote prose, heading
+%  titles, caption words) is translated. See TRANSLATION-HANDOFF.md.
+%
+%  Register: scholarly, moderately literal, preserving Nielsen's
+%  speculative/Hegelian flavour wrapped around real analysis.
+%
+%  STATUS: IN PROGRESS. Done: front matter + Section I (printed pp.3--18).
+%        Resume at Section II ("The Problem of Infinity", printed p.19).
+% ============================================================
+\documentclass[12pt]{book}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage[protrusion=true,expansion=true]{microtype}
+\usepackage[margin=1.4in]{geometry}
+\usepackage{setspace}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usetikzlibrary{calc,intersections,arrows.meta}
+\usepackage{libertinus}
+\usepackage{libertinust1math}
+\usepackage{textalpha}   % polytonic Greek typed directly
+\usepackage{fancyhdr}
+\usepackage[colorlinks=true,linkcolor=black,urlcolor=black,
+  pdftitle={Philosophy and Mathematics},
+  pdfauthor={Rasmus Nielsen}]{hyperref}
+\setlength{\headheight}{15pt}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LE,RO]{\thepage}
+\fancyhead[RE]{\textit{Philosophy and Mathematics}}
+\fancyhead[LO]{\textit{\leftmark}}
+\setlength{\parindent}{1.5em}
+\setlength{\parskip}{0pt}
+\onehalfspacing
+
+\begin{document}
+
+% ============================================================
+% TITLE PAGE — PDF 6 (printed p.1)
+% ============================================================
+\begin{titlepage}
+\centering
+\vspace*{2cm}
+{\Huge\bfseries Philosophy and Mathematics.\par}
+\vspace{1.2cm}
+\rule{4cm}{0.4pt}\par
+\vspace{1.2cm}
+{\LARGE A Propaedeutic Treatise\par}
+\vspace{0.5cm}
+{\large by\par}
+\vspace{0.8cm}
+{\LARGE\bfseries R.\ Nielsen,\par}
+\vspace{0.2cm}
+{\normalsize Professor of Philosophy.\par}
+\vspace{2.4cm}
+\rule{4cm}{0.4pt}\par
+\vspace{1.6cm}
+{\large\bfseries Kjøbenhavn.\par}
+\vspace{0.4cm}
+{\normalsize Forlagt af den Gyldendalske Boghandling (F.\ Hegel).\par}
+\vspace{0.3cm}
+{\small\emph{Thieles Bogtrykkeri.}\par}
+\vspace{0.6cm}
+{\large 1857.\par}
+\end{titlepage}
+
+\frontmatter
+\tableofcontents
+\mainmatter
+
+% ============================================================
+% BODY BEGINS — printed p.3 (PDF 8)
+% ============================================================
+
+% ---- printed p.3 (PDF 8): opening statement (stands alone on the page) ----
+\noindent The author of the present treatise, who neither is nor wishes to be
+a mathematician, has found in philosophy, the general theory of science, an
+incitement to learn the language of mathematics as well, and, with respect to
+its leading fundamental concepts, so far as possible, to enter into its way of
+thinking.
+
+% ---- printed p.4 (PDF 9): "Rettelse." (errata). Original page (letterspaced
+%      heading) reads only:
+%        S. 25, Linie 9: Tilnærmelse til et Uopnaaeligt; læs: Tilnærmelse til
+%        et Opnaaeligt.
+%      Per repo convention the errata page is NOT reproduced as body text;
+%      the correction is APPLIED where p.25 is translated (Section II): the
+%      text there must read "an approach toward an Attainable".
+
+% ============================================================
+% ---- printed p.5 (PDF 10) ----
+\begin{center}
+  {\large\bfseries I.}\par\vspace{4pt}
+  {\Large\bfseries Mathematical Functions.}\par\vspace{4pt}
+  \rule{2.5cm}{0.4pt}
+\end{center}
+\phantomsection
+\addcontentsline{toc}{section}{\texorpdfstring{I.\quad Mathematical Functions}{I. Mathematical Functions}}
+\markboth{Mathematical Functions}{Mathematical Functions}
+
+\noindent The word ``function'' occurs in a very wide sense. Wherever there can
+be talk of acting, suffering, doing, function denotes a particular law-governed
+activity. It is said of an official\footnote{With categorical emphasis
+Chamberlain Norden in ``Gamle Minder'' stresses his ``term of function.''}, that
+he is in function; one speaks of the function of the eye, of the function of a
+nerve, and so forth.
+
+On the domain of pure magnitudes there can, as regards these, just as little be
+talk of real doing as of real suffering: an $a$ cannot act, a $b$ cannot suffer,
+an $x$ cannot function in the likeness either of an official or of a nerve.
+
+Since nevertheless the designation ``function'' is not only retained, but even
+held fast as a concept in mathematics, one must be able, in the mathematical
+application, to point out something corresponding to the fundamental meaning.
+
+To be sure, pure magnitudes cannot exert real activity, but by being placed in
+different connections they can nevertheless essentially alter their mutual
+relations. A magnitude can, so to speak, be appointed to different offices; it
+can, as an addend $(a+x)$, as a factor $(ax)$, as an exponent of a power
+$(a^{x},\ x^{a})$, as a logarithm, and so forth, acquire a
+% ---- printed p.6 (PDF 11) ----
+very different influence, and to that extent appear in different functions.
+
+Here, however, is another side of the concept, which must be brought out
+especially in the theory of magnitude. One speaks not merely of functioning, of
+being in function; one speaks also of that which is brought about by the
+functioning activity. Outside mathematics one thinks, in connection with
+function, chiefly of the activity, in mathematics chiefly of the result;
+outside mathematics the point is to be in function at something, within
+mathematics to be a function of something. The law-bound relation between a
+dependent and an independent shows itself, however, on both sides.
+
+``If a magnitude $y$ depends, according to a certain law, on other magnitudes
+$x$, $z$, $t$, $u\ldots$, so that every value of $y$ is determined by the values
+arbitrarily assigned to $x$, $z$, $t$, $u\ldots$, then $y$ is said to be a
+function of these magnitudes, all regarded as variable, $y$ dependent, the
+others independent. This is commonly denoted: $y = f(x,z,t,u\ldots)$''\footnote{C.\
+Ramus. Algebra og Functionslære. Kjøbenhavn 1840, S.\ 14.}.
+
+According to this mathematical determination of the concept, changes will thus
+proceed from the independents and exert their lawful influence upon the
+dependent. In order to recall the likeness between non-mathematical and
+mathematical functions, one might indeed regard the independents $x$, $z$, $t$,
+$u\ldots$ as the functioning ones, the agents, that cause the changes in the
+suffering $y$. But since the conception is figurative, one likewise sees why
+$x$, $z$, $t$, $u\ldots$ are not said to be in function with respect to $y$,
+whereas $y$ is expressly said to be a function of $x$, $z$, $t$, $u\ldots$
+
+In the function, then, the magnitudes are variable; but magnitudes can of course
+also be invariable. That every magnitude must be equal to itself, and that every
+magnitude can, by increase or decrease, at every moment become
+% ---- printed p.7 (PDF 12) ----
+unequal to itself, is a contradiction that is resolved in the concept of
+function. In and for itself no magnitude is either invariable or variable, for
+no magnitude is anything alone in and for itself. Whether the particular
+magnitude, on the other hand, in its relation to other magnitudes, is to play
+the role of the invariable or of the variable, and, within variability, again
+that of the dependent or of the independent, is determined by the function, and
+in turn determines the function.
+
+If the concept function is now, in the first place, determined by the concept of
+dependence, then it depends again on determining the mode of dependence, that is
+to say: on pointing out the law.
+
+In the mathematical presentation of the different functions there shows itself a
+scale of case, rule, and law, which must become an object of philosophy's
+attention.
+\[
+\begin{aligned}
+&\text{That }\ 2(3+4) = 2\cdot 3 + 2\cdot 4 = 6+8 = 2\cdot 7 = 14,\\
+&\text{that }\ (3\cdot 4)^{2} = 12^{2} = 3^{2}\cdot 4^{2} = 9\cdot 16 = 144,\\
+&\text{that }\ 2^{3}\cdot 2^{4} = (2\cdot 2\cdot 2)\cdot(2\cdot 2\cdot 2\cdot 2)
+      = 2^{3+4} = 2^{7},
+\end{aligned}
+\]
+can be experienced by trial, and seen by comparison. In this way one can test
+various cases and abstract a rule from them. But, however important the rule may
+be for practical use, it is nevertheless not, like the law, a necessary
+expression of the essence of the matter.
+
+In order to obtain a rule as comprehensive as possible, one must test as many
+cases as possible; but even if one tested cases by the thousand without meeting
+a single exception, the rule could not thereby be raised to a law.
+
+The rule expresses only \emph{that a relation is}, not that it necessarily must
+be; but the law holds as law in virtue of the concept. That, when the law is to
+be known, it does not depend on the number of cases, but on \emph{the essence of
+the matter}, and hence on insight, can be seen from the following example.
+
+That $\frac{1}{1-x} = 1 + x + x^{2} + \ldots$ will yield an infinite series is
+proved not by continuing the division to infinity,
+% ---- printed p.8 (PDF 13) ----
+but by understanding what the division, on the given presupposition,
+necessarily brings with it.
+
+How easily a series of cases falling under a rule can deceive, when one would
+from this infer a law, is well known. One seeks, for example, a law for the
+prime numbers, and finds: $2^{3}-1 = 7$, $2^{5}-1 = 31$, $2^{7}-1 = 127$, all
+prime numbers. But if one now, from these three cases, would draw the conclusion
+that $2^{2m-1}-1$ must necessarily be a prime number, one would badly
+miscalculate, since already the fourth case, $2^{9}-1 = 511 = 7\cdot 73$, gives
+no prime number.
+
+That in the cited example the exception to the rule already occurs with the
+fourth case is, in the whole consideration, itself as it were a matter of
+chance. Had the exception occurred with the 99th case, we should still just as
+little have had any law, but should on the contrary have been more exposed to
+being deceived by the multitude of cases\footnote{Fermat supposed that
+$2^{(2^{n})}+1$ was a prime number; but Euler showed that $2^{32}+1$ is
+divisible by 641.}.
+
+That mathematics, instead of definite numerical values, employs general
+designations --- instead of
+\[
+\begin{array}{lll}
+2\cdot(3+4) = 2\cdot 3 + 2\cdot 4 & a(x+y) = ax + ay; & \text{instead of}\\[2pt]
+(3\cdot 4)^{2} = 3^{2}\cdot 4^{2} & (xy)^{a} = x^{a}y^{a}; & \text{instead of}\\[2pt]
+2^{3}\cdot 2^{4} = 2^{3+4} & a^{x}a^{y} = a^{x+y} &
+\end{array}
+\]
+--- is, as regards the cognition of laws, an important step. The understanding,
+which from the beginning was entangled in the consideration of the definite
+values, the diverse cases, the individual rules, raises itself, by means of the
+general designations, to insight into the essence of the relations, and thereby
+to insight into the law.
+
+How intimately the law hangs together with the concept can be seen by a glance
+at the logarithmic function. $a^{z} = x$, $z = \log x$; $a^{t} = y$,
+$t = \log y$, cannot be established by any proof. Here there can be talk neither
+of case nor of rule nor of law; here it is a question of
+% ---- printed p.9 (PDF 14) ----
+a determination of the concept for the logarithm, a statement of its category.
+But once the category of the logarithm is fixed, then there holds as law in
+virtue of the concept: $a^{z}a^{t} = a^{z+t} = xy$, and
+$z+t = \log(xy) = \log x + \log y$.
+
+In so far as the concept of function everywhere points to definite relations of
+dependence, we are directed by the functions to perform intellectual,
+law-governed actions. How intimately these actions fuse with the concept can be
+seen from the so-called fundamental equations.
+
+As the first of all functions, $a+x$ cannot indeed itself be defined by any
+fundamental equation; but the four single functions $ax$, $x^{a}$, $a^{x}$, and
+$\log x$ can, on the other hand, be regarded as entirely determined in their
+nature\footnote{Jvfr. Ramus: Algebra og Functionslære S.\ 14--18.} by the
+following four equations.
+\[
+\begin{aligned}
+&f_{1}(x+y) = f_{1}(x) + f_{1}(y); \quad f_{1}(x) = ax,
+      \quad \text{for } a(x+y) = ax + ay.\\[2pt]
+&f_{2}(xy) = f_{2}(x)\,f_{2}(y); \quad f_{2}(x) = x^{a},
+      \quad \text{for } (xy)^{a} = x^{a}y^{a}.\\[2pt]
+&f_{3}(x+y) = f_{3}(x)\,f_{3}(y); \quad f_{3}(x) = a^{x},
+      \quad \text{for } a^{x+y} = a^{x}a^{y}.\\[2pt]
+&f_{4}(xy) = f_{4}(x) + f_{4}(y); \quad f_{4}(x) = a\log x,
+      \quad \text{for } a\log(xy) = a\log x + a\log y.
+\end{aligned}
+\]
+
+If we now see in these fundamental equations a demonstration of laws, a
+presentation of concepts, the difference between mathematics and philosophy will
+be conspicuous. What is peculiar makes itself known in the language.
+
+For a philosophical presentation of the concept the word is used, and the word
+sounds different in the different vernaculars; but mathematics is not content
+with the word; independent of the diversity of the vernaculars, the exact
+science has its own language: $f(x+y) = f(x)\,f(y)$ is neither Danish nor French,
+but mathematical.
+% ---- printed p.10 (PDF 15) ----
+That the notation which mathematics employs is now also really a language in a
+stricter sense than, for example, the notation of notes in music, is seen from
+the fact that it is not confined to indicating different operations of
+calculation, but expresses oppositions, draws conclusions, and points out the
+difference between the possible and the impossible.
+
+In the inverse functions we have expressions both for opposition and for
+conclusion. If the function $\varphi$ is the inverse of $\psi$, i.e.
+$\varphi(\psi(x)) = x$, then also $\psi(\varphi(x)) = x$, i.e. the function
+$\psi$ is the inverse of $\varphi$. If $\varphi(x) = x+a$, then $\psi(x) = a-x$;
+if $\varphi(x) = ax$, then $\psi(x) = \frac{x}{a}$; if $\varphi(x) = x^{n}$, then
+$\psi(x) = \sqrt[n]{x}$; if $\varphi(x) = a^{x}$, then $\psi(x) = \log x$; if
+$\varphi(x) = \cos x$, then $\psi(x) = \mathrm{arc}\,(\cos = x)$.
+
+The last designation, which indicates a relation between the trigonometric line
+$\cos x$ and the arc corresponding to it, $\mathrm{arc}\,(\cos = x)$, expresses
+the opposition in such a way that $\varphi$ and $\psi$ do not signify two
+mutually cancelling actions; for $x$ is opposed to $x$ in that in $\varphi(x)$ it
+is an arc, in $\psi(x)$ a straight line.
+
+That mathematics, in its language, can express both the merely possible and the
+in-itself impossible, shines forth from the manner in which the relation between
+the rational and the irrational, the real and the imaginary magnitudes is
+indicated: $a = \frac{b}{c}$ is, for thought, a reality, $b = \pm\sqrt{a^{2}-x^{2}}$
+a possibility, and $\sqrt{-1}$, $\sqrt[2m]{-a}$ an impossibility.
+
+While philosophy, then, together with the other sciences\footnote{Incomplete
+sign-systems, such as, for example, the chemical, cannot be placed on the same
+level as the mathematical.}, is referred to a grammatical vernacular,
+mathematics avails itself essentially of a pasigraphic sign-language: this
+difference of language must surely have its deeper ground.
+% ---- printed p.11 (PDF 16) ----
+In so far as a language expresses thoughts and concepts, it expresses how the
+universal and the individual are separated in abstractions and united in
+judgments, distinguished in judgments and connected in conclusions.
+
+In the grammatical language the universal has a one-sided preponderance over the
+individual; in the mathematical language the universal is determined so
+punctually that it can coincide with the single and meet the individual. In the
+grammatical language the concept assumes a logical form; in the pasigraphic
+sign-language a mathematical form.
+
+Logic says: ``$A$ is $A$'', ``every thing is what it is'', and thereby shows that
+in the single it looks only at the universal.
+
+Mathematics posits $A = A$, and thereby shows that in the universal it expressly
+looks at the single.
+
+In the logical proposition ``$A$ is $A$'', $A$ is like an image that represents
+``every thing'', but in itself is without significance. In the designation of the
+single, one does not have this single, but only the universal: the word and the
+thing, the designation and the designated fall apart from one another.
+
+In the mathematical proposition $A = A$, $A$ also indeed represents any magnitude
+whatsoever, but, inasmuch as $A$ is an example of any magnitude whatsoever, $B$,
+$C$, $D\ldots$, it, as a magnitude, at the same time represents itself; $A = A$,
+for $2 = 2$, $3 = 3$: the universal is posited punctually, the sign and the
+designated are congruent.
+
+Logic transforms the equation $A = A$ into a grammatical proposition;
+mathematics transforms the proposition $A$ is $A$ into an equation. Already in
+this is seen an essential difference between the exact and the dialectical
+science.
+
+In the proposition as equation there is no difference between subject and
+predicate. This holds not only of the so-called identical equations, such as
+$A = A$, but of any equation whatsoever. For what stands on the one side of the
+equals-sign represents the subject, and what
+% ---- printed p.12 (PDF 17) ----
+stands on the other side, the predicate; but for every equation it is quite
+indifferent from which side it is read. If $f(x+y) = f(x) + f(y)$, then of course
+also $f(x) + f(y) = f(x+y)$. In the mathematical language the predicate is
+congruent with the subject, for mathematics is an exact science.
+
+If, on the other hand, the equation is transformed, in the grammatical language,
+into a logical proposition, then an essential difference arises between subject
+and predicate; for which reason these two components cannot indeed be united by
+the mere equals-sign, but must be joined by the copula. Now, when the difference
+between the subject and the predicate in the logical judgment is brought to
+consciousness, there appears the much-discussed contradiction, that the single
+is said to be the universal\footnote{Already the Megarian Stilpo attacked the
+logical judgments. He maintained that one could say nothing but identical, or
+rather tautological, propositions, for example ``Man is man,'' ``Horse is
+horse''; but not ``The horse runs,'' for ``horse'' and ``to run'' are not
+identical; the latter predicate one ascribes also to dogs and lions. Jvfr. Paul
+Møllers Forelæsninger over den ældre Philosophies Historie.}. In the logical
+language the predicate's being one with the subject is a contradiction, and
+philosophy a dialectical science.
+
+The mathematical sign-language and the grammatical proposition-language are, in
+their origin, both natural to sound human understanding, and therefore enter
+into various combinations.
+
+Mathematical determinations of relation are so far at home in existence that
+daily life consumes a by no means insignificant quantum of conscious and
+unconscious mathematics for practical need. Expressions such as ``heavy,
+heavier, quick, quicker, warm, warmer'' still fall outside the mathematical;
+but, when it is expressly asked: ``how heavy?''
+% ---- printed p.13 (PDF 18) ----
+``how much heavier?'' and so forth, the answer can scarcely lack a mathematical
+element.
+
+The peculiar relation of mathematical thinking to the general-logical shows
+itself perhaps most strikingly when mathematics itself takes the word in order
+to pose a problem. Example. ``A water-reservoir can be filled by the uniform
+inflow of several pipes, $n$ in number, and the times in which it is filled by
+each pipe separately are given: $a_1$, $a_2$, $a_3\dots a_n$. In what time $(x)$
+will it be filled, when the inflow takes place through all of them
+simultaneously\footnote{C.\ Ramus. Elementær Algebra S.\ 179.}?''
+
+He who has not learned mathematics will understand what is here said, and yet not
+understand it. In its logical fundamental features the matter is not only
+universally intelligible, but can even become so clear that the problem is solved
+in the same moment it is posed.
+
+For if one has four pipes of such a kind that a uniform inflow through each of
+them separately can fill a certain water-reservoir in one hour, then sound human
+understanding naturally grasps, involuntarily, that the same water-reservoir
+must, by uniform inflow through all four pipes at once, be filled in a time four
+times as short, that is, in the course of a quarter of an hour. Here the
+mathematical merges into the general-logical.
+
+But how different this mathematical is nevertheless from the general-logical is
+also evident from the cited example. One need only make the relation between the
+times in which the water-reservoir is filled through each pipe separately a
+little complicated; and at once the problem is so peculiar that the stiffest
+logician, the most acute dialectician, who does not know mathematics, racks his
+brains in vain to solve it.
+
+He who understands the mathematical language finds the problem easy, indeed for
+every case essentially equally easy; for
+% ---- printed p.14 (PDF 19) ----
+the equation $\dfrac{x}{a_1}+\dfrac{x}{a_2}+\dfrac{x}{a_3}+\dots\dfrac{x}{a_n}=1$,
+which gives $x = \dfrac{1}{\frac{1}{a_1}+\frac{1}{a_2}+\frac{1}{a_3}+\dots
+\frac{1}{a_n}}$, fits all possible cases. This merging of the universal into the
+individual cases is decisive for mathematical cognition.
+
+In the logical language the formula is a conclusion, in the mathematical the
+conclusion is a formula. In the formal conclusion the validity of the concept is
+indeed seen, but always in such a way that the single and the particular vanish
+into the universal. In the formula the universal is punctualized, and thereby
+fitted for the exact determination of the particular and the single.
+
+From the well-known syllogism:
+\begin{center}
+``All men are mortal,\\
+Cajus is a man.\\
+Therefore: Cajus is mortal.''
+\end{center}
+one obtains, although Cajus is expressly named, nevertheless no particular
+information about Cajus as Cajus. In the minor premise ``Cajus is a man'' the
+universal has already so far swallowed up the single that one gains absolutely
+nothing by inserting into the syllogism either Brutus or Pompejus or Cnejus
+instead of Cajus.
+
+% NB print error preserved: the 3rd denominator term below is set „a^3" (raised),
+%    a typo for a_3 (cf. the identical formula on p.14 top and p.17, both a_3).
+From the formula $x = \dfrac{1}{\frac{1}{a_1}+\frac{1}{a_2}+\frac{1}{a^{3}}+\dots
+\frac{1}{a_n}}$, on the other hand, one obtains, by inserting for $a_1$, $a_2$,
+$a_3\dots$ a multitude of arbitrary values, the most diverse cases. And yet the
+formula is universally valid, invariable; only the individual cases are
+variable. By the formula, then, there is brought about a peculiar agreement
+between the universal and the single, the invariable and the variable.
+
+With the logical formula-business, at the present stage of the sciences, things
+stand but poorly; with the mathematical formulas the matter has another bearing.
+% ---- printed p.15 (PDF 20) ----
+Against the logical formula-business there is a scientific remedy: a sound and
+sharp dialectic; against the mathematical formula-business no remedy is needed,
+for insight into the real laws is conditioned by insight into the mathematical
+formulas\footnote{By its formulas mathematics is just fitted to express the real
+laws. If, in the determination of these laws, it merely came to naming the
+universal, they could be determined without the help of mathematics; but since it
+also comes to the phenomena and the individual cases, inasmuch as the laws are
+the laws of the phenomena, the mathematical must come in, that the expression may
+become exact. He who, for example, grasps the law of uniformly increasing
+velocity only in so far as it is logically expressed in words, grasps indeed in a
+certain sense the essential, but, since he lacks the punctuality in the
+particular cases, not the real. --- It makes a great difference whether the law
+for the collision of hard bodies is set forth in logical form or in mathematical
+formula. The logical presentation in words is, with all its accuracy, always
+hovering; only a formula such as $\frac{MH+mh}{M+m}$ is fitted to explain the
+single.}.
+
+The scientific character in the development of these formulas can already be seen
+from the manner in which the concept of function is articulated in the several
+fundamental functions.
+
+The single functions $a\log x$, $a^{x}$, $x^{a}$, $ax$, $a+x$ can, namely, be
+derived in such a way that the succeeding one springs with inner necessity from
+the preceding. However much difference there may be here between these functions
+in their independent appearance, one nevertheless easily finds, on the thread of
+development, the knots where the one lies enclosed in the other.
+
+Here, thus, is a turning-point, where the concept of multiplication dawns beneath
+the veil of addition. If one takes $a+a+a$, a sum of three equal addends, one
+comes almost unawares to conceive the magnitude as an $a$ repeated 3 times. But
+therewith the transition is not yet made. Consciousness can often come very near
+to a new concept, can glimpse it as in a dawn, and yet the concept can again
+vanish and be lost.
+% ---- printed p.16 (PDF 21) ----
+If a new concept is to arise for cognition, it is not enough that the
+investigation leads up to the turning-point where it has its origin (for then the
+great discoveries of the present would surely have been made centuries ago); in
+order that a new concept may come to be in cognition, it is required that thought
+rightly catch sight of it, take it up into a category, introduce it among the
+other concepts, follow its course, and test its consequences.
+
+As it goes in mathematics with the transition from addition to multiplication, so
+also with the transition from multiplication to the exponential function, and
+from this to the logarithm\footnote{The inner connection of the trigonometric
+functions with the exponential and with the logarithm can only be pointed out
+later.}.
+
+In the equation $a+a+a+\dots a = na$ the same magnitude is conceived on the one
+side as sum, on the other side as product. Here too it is expressly seen that the
+mathematical notation is a language.
+
+As an immediate expression of calculation the equation indicates only that on
+each side of the equals-sign there are equal magnitudes; but with respect to the
+concept the equation is a judgment.
+
+Seen from the logical side, this judgment again shows the contradiction, the
+contradiction that multiplication is thus both the same and yet not the same as
+addition. This contradiction, together with the \textit{diversus respectus} by
+which formal logic would avoid the contradiction, and just thereby comes into
+contradiction with itself, and falls under dialectics, does not concern
+mathematics at all.
+
+As a mathematical judgment the equation will not logically declare what
+multiplication either is or is not, but rather demonstrate, in the exact form,
+how the intellectual action of multiplication is connected with that of addition.
+% ---- printed p.17 (PDF 22) ----
+What dialectics is in philosophy, the intellectual action with its practical
+transitions is in mathematics. That the matter stands thus, we can illustrate by
+a retrospect.
+
+The mathematical function presupposes the variable in its dependents as in its
+independents; only by grasping the infinite possibility of the changes does one
+grasp the function. But the function presupposes, in all these changes, at the
+same time an invariable; it expresses, after all, the law, and the law is the
+invariable.
+
+Seen from the finite side, it might well seem as if the invariable in the formula
+were a dead schema, indifferent toward the variable cases --- that, for example,
+with respect to the formula $x = \dfrac{1}{\frac{1}{a_1}+\frac{1}{a_2}
++\frac{1}{a_3}+\dots\frac{1}{a_n}}$, it could be quite indifferent what values
+one inserted. This is indeed, in the finite sense, so. But the more finite the
+point of view becomes, the more the concept of function also recedes into the
+background; the more, on the contrary, the concept of function prevails, the more
+intimately is seen the unity of the variable and the invariable: the function
+points precisely to that which dialectics demands.
+
+In the above problem the times $a_1$, $a_2\dots a_n$ were given, each for itself,
+and consequently independent of one another. But one might assume $a_1$ given in
+such a way that $a_2$, $a_3\dots$ were made dependent on it, and that according to
+such a law that they formed, for example, either an arithmetic or a geometric
+series: $a_1 = a_1$, $a_2 = a_1 + d$, $a_3 = a_1 + 2d\dots$ or $a_1 = a_1$,
+$a_2 = a_1 q$, $a_3 = a_1 q^{2},\dots$ thus in the first case $a_p = a_1 + (p-1)d =
+\varphi_1(p)$; in the second case $a_p = a_1 q^{p-1} = \varphi_2(p)$; we then
+obtained
+\[
+x = \frac{1}{\dfrac{1}{\varphi(1)}+\dfrac{1}{\varphi(2)}+\dots\dfrac{1}{\varphi(p)}
+\dots\dfrac{1}{\varphi(n)}} = F(\varphi(p)) = f(p).
+\]
+% ---- printed p.18 (PDF 23) ----
+Since in the expression for $x$ there is found in the denominator a sum of the
+form $\frac{1}{\varphi(p)}$, which is a function of $\varphi(p)$, and the whole
+sum consequently a function of $\varphi(p)$, so also $1$, divided by the sum, is a
+function of $\varphi(p)$. The invariable and the variable will in this way
+interpenetrate one another.
+
+The mathematical functions are not dead formulas, but active, busy, practical
+concepts that lead an intellectual life in the operations of science. For such
+practical transitions no dialectical spur is needed.
+
+As an example of how the mathematical concepts of action can cooperate even
+within elementary limits, we will, in conclusion, recall the symmetric functions.
+
+Through
+\[
+\begin{aligned}
+(x-a_1)(x-a_2) &= x^{2} - (a_1+a_2)x + a_1a_2 = x^{2} + A_1 x + A_2;\\
+(x-a_1)(x-a_2)(x-a_3) &= x^{3} - (a_1+a_2+a_3)x^{2}
+   + (a_1a_2 + a_1a_3 + a_2a_3)x - a_1a_2a_3\\
+&= x^{3} + A_1 x^{2} + A_2 x + A_3,
+\end{aligned}
+\]
+one will understand the general expression:
+\[
+f(x) = x^{n} + A_1 x^{n-1} + A_2 x^{n-2} + A_3 x^{n-3} + \dots A_{n-1}x + A_n
+   = (x-a_1)(x-a_2)(x-a_3)\dots(x-a_n) = 0.
+\]
+Here the invariable is everywhere present in the variable; for the law of
+development shows us the reciprocal determination of coefficients and roots:
+
+$A_1 = -(a_1+a_2+a_3+\dots a_n) = f_1(a_1\,a_2\dots a_n) = $ the sum of all the
+$a$'s with opposite sign; here the first fundamental function operates.
+
+% NB print oddity: above the second „3" in „3 og 3 a" the print carries a stray
+%    raised „3" (a typesetting defect); the intended reading „3 og 3 a" is given.
+$A_3 = -(a_1a_2a_3 + a_1a_2a_4 + \dots a_1a_2a_n + a_2a_3a_4 + \dots
+a_{n-2}a_{n-1}a_n) = f_3(a_1\,a_2\,a\dots a_n) = $ the sum of the products of the
+$a$'s taken three at a time, with opposite sign; here the first and second
+fundamental functions cooperate.
+% ---- printed p.19 (PDF 24) ----
+$A_n = (-1)^{n}(a_1\,a_2\,a_3\dots a_n) = f_n(a_1, a_2, \dots a_n) = $ the product
+of all the $a$'s with opposite sign, when $n$ is odd. It is thus the second
+fundamental function that here appears.
+
+If one considers besides that the series proceeds according to powers of $x$,
+whereby the alternation of the exponential function with the logarithmic also
+becomes possible, then one obtains a total impression of the intellectual
+cooperation of the functions.
+
+The formal concepts of logic are like empty vessels, which must either remain in
+their emptiness or be filled with matter and content from without; the
+function-concepts of mathematics are like active organs that assimilate to
+themselves an essential content.
+
+Although the mathematical operations, in their peculiar procedure, belong to the
+specialized science without concerning philosophy, their character nevertheless
+lends itself to a philosophical consideration, to illuminate the activity of
+thought from a side of its own, and to make visible problems whose treatment, not
+to say solution, is and must be the aim of philosophy.
+
+\begin{center}\rule{2.5cm}{0.4pt}\end{center}
+
+% [text to be added: pp. 19--84 — Section II (The Problem of Infinity) onward]
+
+\end{document}
