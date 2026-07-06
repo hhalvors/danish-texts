@@ -3192,6 +3192,243 @@ af en Potens angivne Lov, er $\int x\,dx = \dfrac{x^{2}}{2}$, og altsaa
 = y\,\frac{x}{2}:
 \]
 Trekantens Areal $=$ Grundlinien $\times\ \tfrac{1}{2}$ Høide.
-% [text to be added: pp. 80--... body batch 23]
+
+\begin{center}
+% FIGURE (printed p.80): parabola $y^2=px$ with vertex at A. Rectangle
+% D (top-left), B (top-right), E (bottom-right), A (bottom-left, = vertex);
+% upper branch A--C--B, lower branch A--H (below the base); chord A--B;
+% dashed vertical G (on chord) -- F (on base) -- H (on lower branch).
+% Labels: $AE=x$, $EB=y$, $GFH=p$. Schematic redraw.
+\begin{tikzpicture}[scale=1.15]
+  \coordinate (A) at (0,0);
+  \coordinate (E) at (2.4,0);
+  \coordinate (B) at (2.4,1.7);
+  \coordinate (D) at (0,1.7);
+  \draw (D) -- (B) -- (E) -- (A) -- (D);
+  \draw (A) -- (B);
+  \draw[domain=0:1.7,smooth,variable=\t] plot ({(\t*\t)/1.204},{\t});
+  \draw[domain=-1.35:0,smooth,variable=\t] plot ({(\t*\t)/1.204},{\t});
+  \draw[dashed] (1.5,1.06) -- (1.5,-1.35);
+  \node[above left] at (D) {$D$};
+  \node[above right] at (B) {$B$};
+  \node[below right] at (E) {$E$};
+  \node[below left] at (A) {$A$};
+  \node[below] at (1.5,0) {$F$};
+  \node[above right] at (1.5,1.06) {$G$};
+  \node[below] at (1.5,-1.35) {$H$};
+  \node at (0.5,0.95) {$C$};
+\end{tikzpicture}
+
+$AE = x$;\quad $EB = y$. \\
+$GFH = p$.
+\end{center}
+
+For en Parabel, hvis Ligning, $y^{2} = px$, viser
+$y = f'(x) = \sqrt{p}\,\sqrt{x}$, er
+\[
+\int y\,dx = \sqrt{p}\int \sqrt{x}\cdot dx = \sqrt{p}\int x^{\frac12}\,dx
+  = \sqrt{p}\,\frac{x^{\frac{3}{2}}}{\frac{3}{2}}
+  = \frac{2}{3}\sqrt{p}\,x^{\frac12}\cdot x = \frac{2yx}{3}.
+\]
+\[
+\text{Segmentet } ACB = \frac{2yx}{3} - \frac{yx}{2}
+  = \left(\frac{4}{6} - \frac{3}{6}\right)xy = \frac{1}{6}xy.
+\]
+\[
+\text{Arealet } ADBCA = xy - \frac{2}{3}xy = \frac{1}{3}xy
+  = 2\times \text{Segmentet } ACB.\text{\footnotemark}
+\]
+\footnotetext{Vi have fundet Arealet $ABCE = \dfrac{2}{3}xy = \dfrac{2}{3}$
+af et Rectangel, som kan reduceres til et Qvadrat; Parablen kan altsaa,
+hvad de øvrige Keglesnitslinier ikke kunne, qvadreres under endelig
+Form.}
+I alle slige Tilfælde behandles det Tilblevne ikke som et umiddelbart
+Værende, men efter dets Tilblivelse; Functionen udtrykker Tilblivelsens
+Lov.
+
+Tilblivelsen forudsætter ogsaa her et allerede Tilblevet. Idet
+Integrationen, under Forudsætning af den i Forandringerne udtrykte
+Bevægelse, fører det Uendelige tilbage til endelig Bestemthed, maa det
+bestemte Integral angives ved en tilføiet Constant. Constanten er just
+den Grændse, hvori det Endelige berører det i Bevægelsen
+Uendelige\footnote{Læren om Constanten maa ikke misforstaaes, som om
+Mathematiken, for at angive bestemte Forhold og udtrykke de bestemte
+Love, nødvendigviis maatte have enkelte uforanderlige Led; tvertimod,
+jo længere man trænger ind i den høiere Analyse, i Differentialer med
+flere Uafhængige (Ramus. Diff. Intgr. S.\,149 o.\,fl.), i Curvers og
+Fladers Generation (Ramus. Analytisk Geometrie. S.\,135 o.\,fl.), i
+Liniers Røring, Osculation, Evolution o.\,s.\,v.; desto mere indlyser
+det, at hvert Forholdsled er i det Uendelige foranderligt, og kun
+Lovenes System det Væsentlige, det Bestandige, det Evige. Forsaavidt
+Materialismen med Hensyn til de i mekaniske og chemiske Tiltrækninger
+exacte Forhold vil slutte fra Forholdenes Bestandighed til
+Grunddelenes Uforanderlighed ved at beraabe sig paa det Mathematiske,
+er Slutningen falsk.}.
+
+% ---- printed p.81 (PDF 86) ----
+Exempel. Af den rationelle Mekanik er Forholdet mellem Hastigheden:
+$v = \dfrac{dx}{dt}$, og den bevægnede Kraft:
+$\varphi = \dfrac{d^{2}x}{dt^{2}}$, allerede fremhævet.
+
+Er nu 1) Hastigheden constant, saa sættes $\dfrac{dx}{dt} = a$, hvor
+$a$ er Constanten. Af $dx = adt$ faaes da ved Integration
+$\int dx = \int adt = a\int dt$, eller: $x = at + b$; $b$ er en
+tilføiet vilkaarlig Constant, thi differentierer man $x = at + b$,
+faaer man igjen $dx = d\cdot at + db = adt + 0$. Betydningen af den
+tilføiede Constant oplyses da saaledes: for $t = 0$ er $x = b$, altsaa
+er $b$ Massens Afstand fra Udgangspunktet ved Bevægelsens Begyndelse.
+
+Er 2) Kraften, $\varphi$, constant, $= k$, haves
+$\dfrac{d^{2}x}{dt^{2}} = k$, og $\dfrac{d^{2}x}{dt} = kdt$, som,
+integreret, giver $\dfrac{dx}{dt} = \int kdt$; altsaa er
+$\dfrac{dx}{dt} = kt + c$, og $c$, Constanten, en Begyndelseshastighed,
+thi, naar $t = 0$, er $\dfrac{dx}{dt} = c$. Integreres atter, faaer man
+\[
+\int dx = \int (kt + c)\,dt = \int (ktdt + cdt)
+  = k\int t\,dt + c\int dt,
+\]
+altsaa: $x = \dfrac{1}{2}kt^{2} + ct + d$, hvor $d$ er en ny Constant,
+o.\,s.\,v.
+
+Constantens Betydning fremlyser iligemaade af Arealberegningen.
+
+% ---- printed p.82 (PDF 87) ----
+Bestemmer man Trekantens Areal ved Formlen $y\dfrac{x}{2}$ fra
+Endelighedens Synspunkt, saa maa man fra Uendelighedens Standpunkt
+anvende Formlen: $\int y\,dx = \dfrac{xy}{2} + C$. Her forudsættes da,
+at $x$, den Uafhængige, og $y$, den Afhængige, variere i det
+Uendelige: den tilføiede Constant peger hen paa Bevægelsen.
+
+\begin{center}
+% FIGURE (printed p.82): right triangle $O$ (bottom-left, origin),
+% $D$ (bottom-right), $B$ (top-right); hypotenuse $O$--$B$; point $b$ on
+% the hypotenuse above $d$ on the base; inscribed Riemann strips between
+% $d$ and $D$. Labels: $OD=x$, $BD=y$, $Od=x'=bd=y'$. Schematic redraw.
+\begin{tikzpicture}[scale=1.15]
+  \coordinate (O) at (0,0);
+  \coordinate (D) at (3,0);
+  \coordinate (B) at (3,2);
+  \foreach \i in {0,...,7}{
+    \pgfmathsetmacro\xa{1.7+\i*0.1625}
+    \pgfmathsetmacro\xb{\xa+0.1625}
+    \pgfmathsetmacro\hh{(2/3)*\xb}
+    \draw (\xa,0) rectangle (\xb,\hh);
+  }
+  \draw (O) -- (D) -- (B) -- cycle;
+  \node[below left] at (O) {$O$};
+  \node[below] at (3,0) {$D$};
+  \node[above] at (B) {$B$};
+  \node[below] at (1.7,0) {$d$};
+  \node[above left] at (1.7,1.13) {$b$};
+\end{tikzpicture}
+
+$OD = x$, $BD = y$, $Od = x' = bd = y'$.
+\end{center}
+
+$\int y\,dx = \int f'(x)\,dx = f(x) + C$. Er $x = 0$, da er
+$f(0) = 0$; $\int y\,dx = 0 + C$, og $C = 0$; er $x = OD$, da er
+\[
+\int_{0}^{x} y\,dx = \int_{0}^{x} f'(x)\,dx = f(x);
+\]
+er $x = Od = x'$, da er
+\[
+\int_{0}^{x'} y\,dx = \int_{0}^{x'} f'(x)\,dx = f(x').
+\]
+Forsaavidt de varierende $x$ og $x'$ ere i et vist Forhold til
+hinanden, ere de varierende Arealer $OBD$ og $Obd$ i et tilsvarende
+Forhold. Dette Forhold bestemmes ved Arealdifferensen, og ved denne
+igjen Constanten.
+\[
+OBD - Obd = bdBD = \int_{0}^{x} y\,dx - \int_{0}^{x'} y\,dx
+  = \int_{x'}^{x} y\,dx = f(x) - f(x').
+\]
+For nu at udfinde, hvorvidt Constanten er positiv eller negativ, maa
+man begynde med at lade Arealdifferensen indsvinde til 0. Dette skeer
+i nærværende Tilfælde ved at sætte $x = x'$, hvorved man erholder en
+bestemt Grændse, enten $bd$ eller $BD$.
+
+Arealet $bdBD$, som før var $= f(x) - f(x')$, bliver altsaa nu
+$= f(x') - f(x') = f(x') + C = 0$, og følgelig $C = -f(x')$. Naar nu
+$x$ ved Endepunktets Bevægelse, d.\,e. ved continuerlig Tilvæxt $dx$,
+forlænges ud over $x'$, vil Arealdifferensen blive $= f(x) + C$, idet
+$C = -f(x')$. Man vil altsaa, hvormeget end $x$ voxer, altid kunne
+sætte
+\[
+bdBD = \int_{x'}^{x} y\,dx = f(x) - f(x') = f(x) + C.
+\]
+Hvorledes Overgangen fra Punkt til Linie, fra Linie til Flade, fra
+Flade til Legeme forholder sig til Integralet, sees af den Maade,
+hvorpaa der integreres med Hensyn til Masse.
+
+\begin{center}
+% FIGURE (printed p.83): attraction of a sphere on an external point.
+% Circle with centre $A$; element $dm$ on the circle; $B$ the foot of
+% the perpendicular from $dm$ to the axis $AM$; external point $M$;
+% angle $\alpha$ at $A$ between $AM$ and $A$--$dm$; radius $r=A\,dm$;
+% dashed line $dm$--$M$. Labels: $AM=a$, $AB=r\cos\alpha$. Schematic redraw.
+\begin{tikzpicture}[scale=1.1]
+  \coordinate (A) at (0,0);
+  \coordinate (dm) at (0.746,1.065);
+  \coordinate (B) at (0.746,0);
+  \coordinate (M) at (3.5,0);
+  \draw (A) circle (1.3);
+  \draw (A) -- (M);
+  \draw (A) -- (dm);
+  \draw (B) -- (dm);
+  \draw[dashed] (dm) -- (M);
+  \node[above] at (dm) {$dm$};
+  \node[below left] at (A) {$A$};
+  \node[below] at (B) {$B$};
+  \node[right] at (M) {$M$};
+  \node at (0.34,0.17) {$\alpha$};
+  \node[left] at (0.42,0.62) {$r$};
+\end{tikzpicture}
+
+$AM = a$;\quad $AB = r\cos\alpha$.
+\end{center}
+
+Antager man et legemligt Punkt, et materielt Element, $dm$, der
+tiltrækker $M$, og dette $dm$ bestemt ved Radius $r$, ved Vinklen
+$\alpha$, og ved en Vinkel $\Theta$, som et fast Plan danner f.\,Ex.
+med Papirets Plan; antager man endvidere $dm = pdw$ idet $p$ er
+Vægtfylde og $w$ Volumen, saa at $dw$ bevises at være
+$= r^{2}\sin\Theta\,dr\,d\Theta\,d\alpha$, og Punktets hele
+Tiltrækning, opløst efter Retningen mod Centrum,
+\[
+= \frac{kdm\,(a - r\cos\alpha)}{(r^{2} + a^{2} - 2ra\cos\alpha)^{\frac{3}{2}}}
+\]
+saa kan man ved Integration bestemme den Tiltrækning, som hele
+Kuglemassen udøver paa $M$,
+\[
+= k\int \frac{dm\,(a - r\cos\alpha)}
+  {(r^{2} + a^{2} - 2ra\cos\alpha)^{\frac{3}{2}}};
+\]
+men $dm = pdw$, altsaa haves
+\[
+kp\int \frac{dw\,(a - r\cos\alpha)}
+  {(r^{2} + a^{2} - 2ra\cdot\cos\alpha)^{\frac{3}{2}}}
+= kp\int \frac{r^{2}\sin\Theta\,dr\,d\Theta\,d\alpha\,(a - r\cos\alpha)}
+  {(r^{2} + a^{2} - 2ra\cos\alpha)^{\frac{3}{2}}}.
+\]
+Men, at integrere een Gang med Hensyn til Masse er det Samme som at
+integrere 3 Gange med Hensyn til de Variable, hvorved Volumen er
+udtrykt. Altsaa integreres først med Hensyn til $\Theta$, den Vinkel,
+som fremkommer, idet
+% ---- printed p.84 (PDF 89) ----
+$dm$ dreies i Cirkel om $AM$ (Grændserne ere $0^{\circ}$ og
+$360^{\circ}$, $\int_{0}^{2\pi}$); dernæst integreres med Hensyn til
+$\alpha$ (Grændserne ere $0^{\circ}$ og $180^{\circ}$,
+$\int_{0}^{\pi}$, thi, naar Halvcirklen bevæger sig om sin Diameter,
+fremkommer Kugleskallen), endelig maa man, for at faae de uendelig
+mange Kugleskaller, integrere med Hensyn til $r$, $\int_{0}^{r}$.
+
+Altsaa haves for den Kraft, hvormed hele Massen, $m$, tiltrækker $M$,
+\[
+kp\iiint \frac{r^{2}\sin\Theta\,dr\,d\Theta\,d\alpha\,(a - r\cos\alpha)}
+  {(r^{2} + a^{2} - 2ra\cos\alpha)^{\frac{3}{2}}};
+\]
+og heri et yderligere Beviis for, at det Uendelige paa alle Punkter i
+Analysen slutter sig sammen med det Endelige, at det Uendelige altsaa
+dog er endeligt, og det Endelige uendeligt.
 
 \end{document}
