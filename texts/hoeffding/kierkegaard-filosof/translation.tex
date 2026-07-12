@@ -1,59 +1,1730 @@
 % ============================================================
-%  H. Høffding, Søren Kierkegaard som Filosof
-%  Copenhagen: P. G. Philipsens Forlag, 1892.
-%  Chapter IV, Section A: Epistemology (pp. 58--70)
-%  TRANSLATION (English)
-%  Translated from the Danish transcription (transcription.tex).
+%  Harald Høffding, Søren Kierkegaard som Filosof
+%  TRANSLATION (English) — complete book
+%
+%  Translated from the Danish of the revised edition
+%  (Copyright (c) 1919 Lindhardt og Ringhof; SAGA e-book, 2020),
+%  ISBN 9788726363111. First edition: P. G. Philipsen, Copenhagen, 1892.
+%
+%  The Danish source text is the publisher's copyrighted modern
+%  edition and is therefore NOT reproduced here; only this English
+%  translation is provided. Page ranges cited in the section markers
+%  are those of the 1892 first edition (per Project Runeberg) and are
+%  approximate navigational aids.
+%
+%  Structure mirrors the book:
+%    Introduction
+%    I.   The Romantic-Speculative Philosophy of Religion
+%    II.  Søren Kierkegaard's Older Contemporaries in Denmark
+%    III. Søren Kierkegaard's Personality
+%    IV.  Søren Kierkegaard's Philosophy
+%           A. Epistemology            (DONE)
+%           B. Ethics
+%                a. The Leap
+%                b. The Stages  (alpha aesthetic / beta ethical / gamma religious)
+%                c. The Standard
+%    V.   Søren Kierkegaard and Christianity
+%           A. Personal Breakthrough
+%           B. The Last Word
+%    Conclusion
 % ============================================================
-\documentclass[12pt,a4paper]{article}
+\documentclass[12pt,a4paper]{book}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{libertinus}
 \usepackage{libertinust1math}
+\usepackage{textalpha}
 \usepackage[english]{babel}
 \usepackage[protrusion=true,expansion=true]{microtype}
 \usepackage{setspace}
+\usepackage{enumitem}
 \usepackage[margin=1.2in]{geometry}
 \usepackage{fancyhdr}
 \usepackage{hyperref}
 
 \hypersetup{
-  pdftitle={Søren Kierkegaard as Philosopher, Ch. IV.A: Epistemology (trans.)},
-  pdfauthor={H. Høffding},
+  pdftitle={Søren Kierkegaard as Philosopher (English translation)},
+  pdfauthor={Harald Høffding},
   hidelinks
 }
 
 \pagestyle{fancy}
 \fancyhf{}
-\rhead{Høffding, \emph{Søren Kierkegaard as Philosopher} (1892), IV.A}
+\rhead{Høffding, \emph{Søren Kierkegaard as Philosopher}}
+\lhead{\leftmark}
 \cfoot{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
 
 \setstretch{1.3}
 
-\title{\textbf{Søren Kierkegaard as Philosopher}\\[6pt]
-  \large Chapter IV: Søren Kierkegaard's Philosophy\\[4pt]
-  A. Epistemology}
-\author{Harald Høffding\\[4pt]
-  \small Translated from the Danish}
-\date{Copenhagen: P. G. Philipsens Forlag, 1892\\
-  \small (pp.\ 58--70)}
+% Unnumbered chapter that still appears in the running header + ToC
+\newcommand{\bookchapter}[1]{%
+  \chapter*{#1}%
+  \addcontentsline{toc}{chapter}{#1}%
+  \markboth{#1}{#1}%
+}
+
+\title{\textbf{\Large Søren Kierkegaard as Philosopher}\\[10pt]
+  \large Harald Høffding}
+\author{}
+\date{\small Translated from the Danish\\
+  (revised edition, 1919; first published 1892)}
 
 \begin{document}
+
+\frontmatter
 \maketitle
+\thispagestyle{empty}
+
+% ---- Epigraph -------------------------------------------------
+\clearpage
+\thispagestyle{empty}
+\vspace*{0.28\textheight}
+\begin{quotation}
+\noindent ``What is the significance of a primitive genius? It is not so
+much to bring forth something absolutely new; for there is really
+nothing new under the sun; but it is to revise the universally human,
+the fundamental questions. This, in the deepest sense, is honesty. And
+to lack primitivity altogether---that is, the revising element---to take
+everything without further ado as given custom and usage, and to let it
+suffice that it is custom and usage, that is, to withdraw from
+responsibility for doing likewise: that is dishonesty.''
+\end{quotation}
+\hfill\emph{Søren Kierkegaard's Papers}, 1847.
+
+% ---- Translator's note ---------------------------------------
+\clearpage
 \thispagestyle{fancy}
+\section*{Translator's note}
+This is an English translation of Harald Høffding's \emph{Søren
+Kierkegaard som Filosof}, first published by P.~G.~Philipsen
+(Copenhagen, 1892) and here rendered from the revised edition
+(\copyright~1919 Lindhardt og Ringhof; e-book, 2020). Because that
+Danish edition remains under the publisher's copyright, the Danish text
+is not reproduced alongside the translation; the Danish may be obtained
+from the publisher (see the catalog entry for a link). Page ranges given
+in the source correspond to the 1892 first edition and serve only as
+navigational aids. Høffding's own notes, printed as endnotes in the
+modern edition, are restored here to footnotes at their anchors. German
+titles and verse are left in the original; Greek is reproduced as
+printed.
 
-\bigskip
+\tableofcontents
 
-\subsection*{Søren Kierkegaard's Epistemology}
+\mainmatter
+
+% ============================================================
+%  INTRODUCTION  (pp. 1--4)
+% ============================================================
+\bookchapter{Introduction}
+\label{ch:indledning}
+
+It was a melancholy thought for Søren Kierkegaard that the time would
+come when he too would fall into ``the Lecturer's, the Professor's''
+hand and be made an object of exposition. Indeed, he foresaw that this
+very melancholy thought would be lectured on as well. What he found
+repugnant in this was surely not the prospect of being made an object of
+criticism. Rather, it was something bound up very closely with his whole
+cast of thought. In the first place, he detested the ``treacherous''
+admiration that comes afterwards, when the struggle is over, when renown
+has been won, and that whitewashes the prophet's tomb---forgetting that
+it is in the relation of contemporaneity to what is great that it must
+show itself what sense and will one has to acknowledge it. His life's
+work was to expose the self-deception in which we so easily entangle
+ourselves with respect to what he called ``the historically corked-up
+Ideality.'' But in the second place it was also one of his central
+thoughts that there is no continuous psychological and historical
+development. To exhibit a spiritual phenomenon---a thinker's or an
+author's activity---as a link in a development, as borne by definite
+inner and outer conditions and as bearing and conditioning the
+subsequent development: that, for him, was to drag it down, to rob it of
+its value. He would not be ``set down in a Paragraph.''
+
+If my attempt to give a characterization and an appraisal of this
+greatest thinker of our people should stand in need of a defense against
+his own protest, then I must first observe that I proceed from an
+entirely different conception of the relation between psychology and
+ethics than his. I hold the conviction that, just as those figures who
+stand before us with an ideal stamp arise under quite definite
+psychological and historical conditions, so their ideal
+significance---insofar as it is really present---is not weakened by their
+being seen in their definite limitation and conditionedness. On the
+contrary, the demonstration of this is absolutely necessary if the
+abiding value is to be distinguished from what is due only to transient
+and purely individual circumstances. And this holds not least of a
+thinker of so pronounced and singular a peculiarity as Søren Kierkegaard.
+If those who are to learn from him are themselves, or wish to be,
+personalities, they must first have \emph{his} personal peculiarity
+determined, so that they can decide what, according to their nature and
+under their circumstances, they can carry over from him. Precisely in
+consequence, then, of the great weight that Søren Kierkegaard has taught
+us to place on personal appropriation, on personal truth, we must
+undertake a psychological-historical and a critically examining treatment
+of his personality and activity.
+
+And as for the fact that we easily come into a self-deceiving relation to
+the figures of the past, I must be permitted to make the personal
+confession that when I now (1890), after an interval of some twenty-odd
+years, have again taken up the study of Søren Kierkegaard's writings, I
+have once more had to experience the power he has to make us turn our
+gaze upon ourselves, to wound us by awakening a self-knowledge we are
+otherwise so inclined to avoid. There is a sting in these writings that
+no one who earnestly immerses himself in them will fail to feel, whatever
+presuppositions he may otherwise bring. To them applies a word from the
+book of Ecclesiastes that Søren Kierkegaard often uses in his journals
+and discourses: ``Keep thy foot when thou goest to the house of the
+Lord!'' His interpretation of this word was: You might easily come to
+learn that the ideal was higher, the demand stricter, than you had
+imagined; beware, therefore, lest you come to hear the ideal!---The
+presuppositions with which I now [1890] resumed the reading of these
+writings were, to be sure, very different from those with which, nearly
+30 years ago, as a young theological student, I began my acquaintance
+with them. At that time they led me into inner struggles and conflicts,
+partly of a practical-personal, partly of a theoretical kind. After long
+reluctance I had to acknowledge his strict conception of the Christian as
+far more justified than the usual, idyllic and harmonious one. If
+Christianity is really to be one and all for us, in life as in faith,
+Søren Kierkegaard has drawn the consequences of it. For a time I tried to
+keep going by distinguishing between faith and knowledge and between
+ideal and reality. But I learned, more through personal life-experience
+than through study, that it was an impossibility to slip through in this
+way. The main decision had, after all, to be whether in my personal
+life, in my spiritual household, I could really say myself to be borne by
+supernatural help, and whether in my way of conducting my life I could be
+said to let myself be guided by the ideals and commands of religious
+ethics. Self-knowledge gradually gave me, after a long time of unrest and
+torment, a clear answer to this, which for me has been decisive for my
+whole life. Confining myself here to what concerns the public, I will
+remark that I was now led, through studies in the history of philosophy
+and investigations in the domains of psychology and ethics, to trace the
+conditions, forms, and laws of the human life of the spirit. I was led to
+see that ``the Humane'' is by no means, as Søren Kierkegaard says in one
+of his journals, merely evaporated Christianity, but that it denotes a
+view of life and a conduct of life which---founded by the Greeks,
+deepened and inwardized by Christianity, expanded and clarified by the
+theoretical and practical labor of the modern age---cannot, to be sure,
+easily be summed up in brief formulas, but which nonetheless exercises
+its power even over those who combat it, just as its steady development
+is not hindered by transient excesses and caricatures. It is from this
+standpoint of humanism (if we must, after all, have a word ending in
+``-ism'') that I now look back on Kierkegaard's activity. But for me it
+has been significant to see how valuable his appearance must be said to
+be even from this point of view. It is by no means with polemical intent
+that I have returned to him, although several views with which I have
+also otherwise collided appear in him with the clarity and consistency of
+genius, which makes it especially instructive to bring them forward. But
+in that, by the homage I can still bring the great thinker, I render my
+thanks for what he has given me for my personal development, I will at
+the same time bear witness that he can be much to many who stand far from
+him in faith. In that respect he does not cease to be our
+contemporary.---I hope it will be excused that I have here spoken so much
+about myself. My concern was to give a single example, the one nearest to
+me, of Søren Kierkegaard's influence.
+
+% ============================================================
+%  I.  THE ROMANTIC-SPECULATIVE PHILOSOPHY OF RELIGION  (pp. 5--15)
+% ============================================================
+\bookchapter{I.\quad The Romantic-Speculative Philosophy of Religion}
+\label{ch:1}
+
+\noindent\textbf{1.} The nineteenth century began with a union of
+religion, philosophy, and art as the watchword in the world of spirit.
+People cherished an enthusiastic faith that truth was one, and that
+everything of value, in whatever domain and in whatever form it might
+appear, was comprised in this one truth, if only one immersed oneself in
+it with open sense. No barriers to thought---and yet preservation of
+harmony with religious feeling and with artistic imagination: that was
+the great idea that filled the leading thinkers in the first decades.
+They believed that in the strict form of thought they were only
+expressing what the newly awakening religious sense and the so mighty
+poetic urge, under other forms, lived and breathed in. The faith of the
+philosophers of religion was, in form and content, not very different
+from that which Faust expresses when Gretchen is anxious about how things
+stand with his religion. Faust expresses a feeling of infinity,
+inwardness, and fullness, awakened by life in nature and among human
+beings, and which cannot be summed up in any finite expression, nor
+exhausted in any name---»Name ist Schall und Rauch!« And Gretchen thinks:
+
+\begin{verse}
+So ungefähr sagt das Pfarrer auch,\\
+Nur mit ein bischen anderen Worten.
+\end{verse}
+
+\noindent These words might serve as a motto for the age's conception of
+the relation between faith and knowledge, as it appears---with
+characteristic and significant differences---in Schleiermacher and in
+Hegel.
 
 \medskip
+
+\noindent\textbf{2.} Right at the century's beginning (1799)
+\emph{Friedrich Schleiermacher} (b.\ 1768, d.\ 1834) published his »Reden
+über die Religion an die Gebildeten unter ihren Verächtern«. He here
+conceived of religion as an immediate consciousness that everything
+finite has its subsistence in and through an infinite, everything
+temporal in an eternal---not in such a way that the eternal and infinite
+falls outside the temporal and finite, but in such a way that it is the
+latter's inner essence and soul. While in our knowing and our acting we
+direct ourselves toward the finite, the determinate and the limited, in
+order to grasp it or to change it, in our feeling we live a whole and
+undivided life, a universal life, in which opposition and limitation are
+annulled, and in which the one-sidedness that clings to every theoretical
+and practical striving falls away. Feeling is the domain of religion,
+because it is a life in the whole and the universal---because there
+announces itself in it that ``instinct for the Universe'' which is
+precisely one with religion. Every feeling, according to Schleiermacher,
+has a religious character when it is not morbid and corrupted. And as the
+religious feeling thus expresses itself not in opposition to, but as a
+deepening of, life in the world of experience, so the deity too stands
+not as a being separated from this world, but as its inner unity and its
+animating power. And immortality is not an existence that is to replace
+the present one, but consists in this: to feel, in the midst of time, the
+eternal within oneself.
+
+Later Schleiermacher developed, in more theological form, his conception
+of religion in »Der christliche Glaube« (1821). He here determines the
+religious feeling as unconditioned feeling of dependence, and thereby
+establishes a moment of the greatest importance for religious psychology.
+It is, on the whole, Schleiermacher's fine psychological sense that gives
+his works their abiding significance. Both his earlier description of the
+religious feeling as universal feeling of unity, as a centralization of
+the life of feeling in relation to existence, and the later determination
+of it as feeling of dependence are valuable contributions to the
+psychology of religion, even if more precise determinations are necessary.
+
+Dogma is for Schleiermacher always something derived, something
+secondary. Dogmatic propositions originally arose as expressions of the
+religious feeling. First this feeling gives itself air in poetic and
+rhetorical fashion; the forms of expression thus arising are then
+developed in the form of doctrine, as confessions. And since the poetic
+expressions often had to come into apparent conflict with one another,
+even where the feeling that lay at their basis was in reality the same, a
+reflective and dialectical treatment became necessary in order to bring
+about full clarity. Through these intermediate stages the dogmatic
+propositions came into being, and their validity and significance are
+therefore different from such propositions as are won by a purely
+theoretical or philosophical route. Schleiermacher wishes to carry
+through a definite separation between the doctrine of faith and
+philosophy, a separation he supports by his theory of knowledge (which we
+know from the unfinished »Dialektik«, published after his death), which
+critically demonstrates the limits of knowledge and holds a place open
+for an immediate feeling-relation to the deity, of whose essence
+theoretical thinking, in his view, can form no concluded concept.
+
+By this fine and spirited conception Schleiermacher placed himself in
+definite opposition to the two dominant tendencies of the age, orthodoxy
+and rationalism. He rejected the former's external literalism and the
+latter's superficial explaining-away. His work has an abiding
+significance for the philosophy of religion, and he stands as the
+greatest thinker theology can show beside Augustine and Zwingli.
+
+\medskip
+
+\noindent\textbf{3.} But Schleiermacher did not want to be merely a free
+religious thinker; he wanted to present ecclesiastical theology and
+believed he could do so from his standpoint. Here he was caught in a
+great illusion and sacrifices at the altar of the age; for of his
+personal love of truth there is, despite all that orthodox and radical
+fanatics have thought, no doubt. He was the most Socratic personality in
+the philosophy of that time. A rare sense for individualities and a
+strong feeling of the right and significance of the individual mark his
+life, as we know it through a rich and interesting collection of letters,
+and animate his thinking. But he did not see that on such a standpoint an
+ecclesiastical theologian cannot place himself. The Church as a
+historical community rests on the assumption of revelation as objective
+fact, as the absolute and adequate expression of the eternal truth, and
+therefore comes forward with a claim to unconditional authority over the
+feeling-life of individuals. For Schleiermacher the dogmas in reality
+became only symbols, the standard subjective, and from his standpoint
+there is only one step to Ludwig Feuerbach's, for whom theology is only
+psychology. Symbols cannot be imposed; they must be freely chosen or
+produced, and they can be changed without the underlying feeling
+therefore needing to change. But the Church cannot concede this in the
+case of its dogmas; for then the very concept of revelation would fall
+away. For Schleiermacher even God's personality was only a symbolic
+representation! But if, with respect to all religious representations, a
+fundamental distinction is to be made between image and reality, then
+thereby positive religion is abolished, which in any case must, on
+certain points, maintain that truth has entered the world in its whole
+fullness and in its adequate form.
+
+And on closer inspection it appears at the same time that the very
+determination of the religious feeling (both in its older form, as
+feeling of unity, and in its later form, as feeling of dependence)
+presupposes several theoretical presuppositions---more philosophy, that
+is---than Schleiermacher is aware of. The religious feeling has, in his
+conception, a harmonious character. It is precisely the feeling through
+which all disharmony, one-sidedness, imperfection, and sin is overcome.
+The feeling of dependence takes on, in the end, the character of trust
+and enthusiasm. But thereby an optimistic and harmonious view of the
+world is presupposed. It is presupposed that there are no experiences
+that could bring about a wholly different total-mood toward existence, or
+in any case give the religious feeling a less harmonious stamp. In
+Schopenhauer and Søren Kierkegaard the opposition to the romantic,
+harmonizing conception appears on this point as energetically as can be
+conceived.
+
+It is, on the whole, characteristic of the development in the domain of
+spiritual, and especially religious, life in our century that the
+oppositions grow ever sharper as time advances. The century begins with
+harmony and reconciliation, but the splitting and division is consummated
+with increasing emphasis. Schleiermacher did not live to see the radical
+sharpening that came with Strauss and Feuerbach, whose forerunner he
+himself is---partly through his critical investigations of the New
+Testament writings (which led him, among other things, to reject on
+historical grounds the authenticity of the first letter to Timothy and of
+the accounts of Jesus' birth), partly through his psychological method.
+He did, however, live to feel the sharpening on the orthodox wing. When
+in the year 1821 he published for the third time his ``Discourses on
+Religion to the Educated among its Despisers,'' he wrote in the preface
+``that the times had changed so strikingly that the persons to whom these
+discourses are addressed no longer seem to exist at all, but that when
+one looked about among the educated, one would rather find it necessary
+to write discourses to mopers and slaves of the letter, to superstitious
+people who show both their ignorance and their unkindness by the manner
+in which they condemn others.''---The times had changed, and they were to
+change still more.
+
+\medskip
+
+\noindent\textbf{4.} Alongside Schleiermacher, and in a polemical posture
+toward him, there worked at the University of Berlin in the twenties
+another philosopher of religion who expresses the age's craving for
+harmony between faith and knowledge to an even higher degree than he.
+This was \emph{Hegel} (b.\ 1770, d.\ 1831). What distinguished this
+thinker---whose writings'\footnote{Hegel's philosophy of religion is
+most fully presented in the work published after his death, »Philosophie
+der Religion«; but in his »Encyclopädie der philosophischen
+Wissenschaften« (1817) it is already stated in more concise form. Most
+easily accessible, perhaps, is his conception of Christianity in
+»Philosophie der Geschichte«.} abstract form makes it difficult for most
+present-day readers to penetrate to what he has of really significant in
+his ideas---was his great sense for the unity of spiritual life under all
+its different forms and at all its different stages. Since he now saw in
+human spiritual life a form of the revelation of an eternal
+world-spirit, it became possible for him to sketch an idealistic doctrine
+of development, within whose framework he ranged---often with great
+arbitrariness and with more or less spirited reinterpretation---everything
+that his rich learning placed at his disposal from the various domains.
+Since the divine expresses itself at all stages of existence and in all
+forms, Hegel acknowledges no absolute oppositions. All differences and
+oppositions are moments in the development, which serve to give it
+fullness of content and energy, but which are themselves continually
+annulled and united in a higher unity. Through the continual positing and
+annulling of oppositions the development of the world proceeds. It is in
+a certain sense the effect of contrast that is for Hegel the fundamental
+phenomenon illuminating existence. It shows us, indeed, how the
+oppositions call one another forth and cannot be separated. A higher
+stage or a higher form of existence is, on the Hegelian conception,
+characterized by the fact that oppositions have been run through and have
+deposited their result in a new form of unity. Mediation, the
+equalization and annulling of oppositions (or, as Hegel incorrectly calls
+them, contradictions), became the watchword for Hegel's adherents. To
+remain standing in a relation of opposition was a sign that one was
+caught in the finite and external; the point was to reach the higher
+unity, to unite the oppositions of existence in harmony.---An ingenious
+idea and a great goal! But from the general idea to the special
+theoretical and practical execution the way is long, and Hegel and his
+adherents all too often confused the program with the execution.
+
+The relation between philosophy and religion was, according to Hegel,
+this: that they have the same content, only that philosophy expresses
+this content in the language of abstract thought, while religion
+expresses it in the language of feeling and imagination. The difference
+is thus only a difference of form, which is not to touch the essential.
+What the believer conceives as historical events---e.g.\ the creation of
+the world, God's becoming man in Christ, and so on---are for philosophy
+eternal truths and laws that hold for all times. The Christian doctrine
+of the suffering god is thus for philosophy not the expression of a
+single series of historical events; rather its essential content---which
+only philosophy grasps in its clear, adequate form---is the truth that
+the infinite and divine stirs in the finite world, while yet every finite
+form is imperfect and must be shattered. It is, then, only through the
+continual perishing of finite forms that the infinite unfolds itself in
+the world. Only in the infinite process of ever new and ever again
+perishing forms of life does the eternal life of the deity consist.---
+
+Already from this one example it becomes clear that Hegel, just as much
+as Schleiermacher, in reality makes the dogmas into symbols, only that
+with him they become symbols for general ideas, not for subjective
+feelings. It rested, then, with Hegel as with Schleiermacher on an
+illusion when he believed he had reconciled faith and knowledge. But it
+was Hegel's definite conviction that nothing of essential significance
+was lost by the content of faith being transposed into philosophical
+form; on the contrary, he believed that only then did it really become
+the property of the human spirit. He did not see what Strauss and
+Feuerbach first sharply demonstrated---that the transposition really
+meant a transition to a wholly different view of life and the world than
+that which is characteristic of positive religion, especially of
+Christianity, of which of course there is here first and foremost
+question. The whole relation between Christianity and humanity Hegel
+conceived, like Schleiermacher, as a harmonious relation. Romantic
+optimism is characteristic of both.
+
+\medskip
+
+\noindent\textbf{5.} But even purely philosophically and humanly there
+was a misgiving that had to come forward in the face of the Hegelian
+philosophy's fundamental thought of the unity of oppositions. Even if
+there should be a higher unity in which all the oppositions of existence
+find their reconciliation, we are, as existing beings, in the midst of
+this world of oppositions, far from this unity. The surge of the
+oppositions raises us and lowers us; we are dependent on experience, we
+run up against barriers both in our thinking and in our acting, our
+horizon is limited, and we often end in problematic results or run our
+head against the wall; \emph{for us}, therefore, that unity is an
+unattainable ideal, and the reconciliation it contains is only for the
+imagination, or for faith. This essential point---the difference between
+metaphysics on the one hand, psychology and ethics on the other---Hegel
+overlooked, and therein lay his greatest philosophical error. The
+consequence was that he, and still more his adherents, often confused the
+purely abstract and logical establishing of the connection of oppositions
+---e.g.\ of opposed standpoints---with an overcoming of the oppositions
+through real work, or, in the ethical domain, through really having
+\emph{lived} them, having practically attained a reconciliation of the
+opposed tendencies between which life moves. Add to this that, so long as
+life lasts, ever new oppositions, and thereby new problems, come forward;
+``the higher unity'' cannot therefore be won once and for all. The theory
+of the unity of oppositions thus sets up an ideal, but does not give us a
+real possession. It was Hegel's great error that his endeavor, to use his
+own words, aimed at ``rewriting the ideal into a system.'' Thereby he
+came (as not only his philosophy of religion, but also his ethics and
+theory of the state show) to violate the right both of reality and of the
+ideal.
+
+Søren Kierkegaard's opposition to Hegel acquires no small significance
+through the sharp and penetrating manner in which he attacked this main
+point in the Hegelian philosophy. And it must be well noted that we are
+here not confronted with the ideas of a single philosopher. On the
+contrary, the Hegelian doctrine on this point is really of a typical
+kind. It represents---in its best meaning---a natural striving, which
+human spiritual life can at no time give up, after finding connection and
+harmony, after winning by its own powers mastery and survey over life.
+And---in its more superficial application---it represents a
+fantasy-relation to existence, an aesthetic-contemplative attitude toward
+problems, crises, and oppositions, which one lets unfold as an
+interesting spectacle, by whose conflicts one feels oneself untouched,
+regarding oneself as the realized ``higher unity.''---Even in its best
+meaning, however, this system---in which the romantic movement from the
+century's beginning was clarified in abstract form---stood in need of a
+serious reaction, one that in practice and theory laid an accent on
+reality in its definite concrete and individual character. And in that
+Søren Kierkegaard brings this reaction, as energetically as could be
+wished, into the ethico-religious domain, he brings it at the same time
+in a manner that can act as a standing resistance against similar
+tendencies in human nature, such as later times too present.
+
+Goethe's Faust, moreover, had already here expressed what was at stake.
+When in Nostradamus' book he sees the symbol of the universe, he first
+exclaims enthusiastically:
+
+\begin{verse}
+Wie Alles sich zum Ganzen webt,\\
+Eins in dem Andern wirkt und lebt!
+\end{verse}
+
+\noindent---but he soon becomes melancholy that this unity of oppositions
+is not given in the form of reality:
+
+\begin{verse}
+Welch Schauspiel! Aber ach! ein Schauspiel nur!
+\end{verse}
+
+\noindent Søren Kierkegaard conceived it precisely as his life's task to
+impress what the preceding romantic-speculative generation had forgotten:
+that life is something other and more than a spectacle for us.
+
+% ============================================================
+%  II.  SØREN KIERKEGAARD'S OLDER CONTEMPORARIES IN DENMARK  (pp. 16--27)
+% ============================================================
+\bookchapter{II.\quad Søren Kierkegaard's Older Contemporaries in Denmark}
+\label{ch:2}
+
+\noindent\textbf{1.} Johan Ludvig Heiberg (1791--1860) was the apostle of
+Hegelian philosophy in Denmark.\footnote{A more detailed treatment of
+this chapter's subject I have given later in my book \emph{Danske
+Filosofer} (1909).} He first spoke up for it in a treatise from 1825,
+which was a contribution to the deterministic controversy raised by
+Howitz. Later he applied it especially to aesthetic and theological
+subjects. He found in Hegel's philosophy an expression of the same thing
+that Goethe strove for in his view of life and in his poetry. ``Hegel's
+system,'' he says (\emph{Om Filosofiens Betydning for den nærværende
+Tid}. Copenhagen 1833, p.~48), ``is the same as Goethe's. That two such
+great minds should at the same time have arrived at the same result
+cannot but awaken a favorable impression of the result\dots\ To
+characterize the Hegelian philosophy in a few words, one may say that
+it, like Goethean poetry, reconciles the ideal with reality, our demands
+with what we possess, our wishes with what has been attained.'' As for
+the relation between religion and philosophy in particular, Heiberg
+expressed himself about it not only in his treatises and in his journal
+\emph{Perseus}, but also in his great philosophical poems, which are
+surely the finest of what our literature possesses in this direction. It
+is Hegel's fundamental thought that he expresses when it is said, in the
+Reformation cantata, that ``Thought ascended to the heights at the very
+moment it descended into itself.'' For it is by thought's own path, by
+thinking's clear elucidation of its own nature, that (according to Hegel)
+the same ideas are to be found which constitute the essential content of
+religion. To be sure, there is a great difference in the form: religion,
+at its immediate stage, commands images and symbols, beside whose splendor
+of color the forms of thought might seem poor and paltry. But Heiberg
+consoles us in ``Protestantism in Nature,'' the poem in which he has
+perhaps reached highest:
+
+\begin{verse}
+Turn your gaze toward your inner self!\\
+What perished in your world\\
+you will find within your thought.\\
+All that vanished, in there,\\
+gained life and existence.
+\end{verse}
+
+\noindent What has vanished is the outer, perceptible form, which the
+childlike imagination misses, and with which it believes all is lost. But
+for Heiberg, just as little as for Hegel, does anything go lost. He saw it
+as peculiar to ``the present age'' that it wished to \emph{know} what
+former ages had felt and believed; but this was, in his opinion, ``so far
+from wanting to make an end of feeling and faith that, on the contrary,
+it wants to consolidate them; for only when we know that they contain the
+truth can we surrender ourselves to them undisturbed.''---This conception,
+however, aroused misgivings among the theologians, and it was not in this
+clear and resolute form that speculative philosophy of religion managed
+to win wider assent here at home. It first had to undergo a dogmatic
+modification of a peculiar kind.
+
+\medskip
+
+\noindent\textbf{2.} \emph{Hans Martensen} (1808--1884) felt himself,
+already as a young man, strongly drawn to Hegel's forms of thought, which
+seemed to him to open the possibility of a knowledge of the divine, while
+Schleiermacher, who at the same time influenced him strongly, in the end
+let the speculative problems lie. When Schleiermacher, during his visit to
+Copenhagen the year before his death, was one day walking with the young
+promising theological graduate, the latter asked him ``quite naively''
+(see \emph{Martensens Levned} I, p.~69) whether he believed that a
+knowledge of ``God's essence in itself, of the inner eternal life-process
+in God'' was possible. Schleiermacher answered quite calmly: ``Ich halte
+es für eine Täuschung.'' But the young theologian's speculative
+enthusiasm would not be damped by the old master's warning. Hegel's forms
+of thought enticed him, though he could not remain standing at Hegel, who
+was too abstractly logical for him. He no doubt also sensed that, carried
+through consistently, the dogmas could for Hegel, as for Schleiermacher,
+become only symbols. He credited himself with the power to reach something
+even greater than these thinkers had considered attainable: he wanted to
+reconcile faith and knowledge in such a way that he retained the forms of
+both! Characteristic of Martensen was a union of mysticism and
+imaginative vision with thinking---that is, a thinking that strove to
+bring about a certain coherence among the images that thrust themselves
+forward before the imagination as moved by the temperament. His ideal was
+the old mystics and theosophists; it was in the tracks of Meister Eckhart
+and Jakob Böhme that he wished to walk. Of contemporary thinkers he most
+admired the Catholic philosopher Franz Baader, who likewise wished
+precisely to renew Jakob Böhme's philosophy. His distance from Hegel he
+expressed early, in a critique of one of Heiberg's treatises
+(\emph{Maanedsskrift for Litteratur} 1836) and in his dissertation on
+``The Autonomy of Self-Consciousness in Christian Dogmatics'' (1837).
+Against Hegel he objected above all to the impossibility of thinking
+without presuppositions. The human being has not, after all, created
+himself, but is posited by God---and thus has God as his presupposition,
+his authority. In virtue of the dogma of creation, not independence
+(autonomy), but dependence on God (theonomy), must become the watchword.
+The task must become: speculation on the basis of faith. Earnest must be
+made of the old saying that the fear of God is the beginning of wisdom.
+Later (in his dogmatics) he expressed this by saying that the doctrine of
+faith as a science was possible only for the consciousness reborn by faith
+and grace.
+
+One cannot deny Martensen an eye for the fact that his higher science
+required a good many presuppositions; whereas it may well cause surprise
+that he did not ask himself of what value a ``science'' is that rests on
+so many and such enormous presuppositions. But the young theologian was
+enthusiastic, and enthusiastic became those who heard him. People reckoned
+``a new era'' from his appearance and expected a golden age of theology. In
+his lectures on the history of recent philosophy he first led his hearers
+to Hegel's philosophy as the necessary result of the development of
+thought; and when they were impressed by this, there came astonishment and
+admiration to the second power when he showed them the necessity and
+possibility of a higher standpoint---beyond the greatest thinker of the
+age! In his dogmatics he led his hearers, and later his readers, from
+dogma to dogma without any decisive difficulty halting them. Trinity,
+incarnation, atonement are presented as a series of images of great events
+in the world of spirit, often accompanied by spirited and profound
+remarks, but in such a way that every sting for thought is taken away.
+That must come, presumably, from the rebirth. Only at one point does the
+dogmatic thinker halt, without even his reborn consciousness being able to
+clear the matter up for him: it is at the question of eternal damnation.
+Here he finds---to the honor of his feeling of humanity, though not to the
+honor of his orthodoxy---a stumbling-block for thought.
+
+Philosophically, Martensen has, in the first place, offended against the
+truth that thinking always needs presuppositions. He has not seen that
+these presuppositions are always sought to be reduced to the least
+possible, and that they are then (in the theory of knowledge) sought to be
+demonstrated in their origin from human nature. We construct only those
+presuppositions that are necessary in order to understand the reality
+given in experience, and whose basis in human nature can be established.---
+And in the second place, he has never shed any light on how it actually
+comes about that the difficulties the dogmas present to the natural
+consciousness fall away for the reborn consciousness. Does one then get a
+different logic when one is reborn? And in that case, would it not be of
+importance to have this higher logic set forth? Or should the whole
+difference perhaps be that one no longer thinks? And is it, then, so easy
+to cease thinking, to take reason captive? At any rate there came one who,
+on this point, felt the most painful contradiction, the most passionate
+collision between different forces, and who felt himself deeply outraged by
+this attempt at a ``higher'' scientificity.
+
+Seen from the religious point of view, the misgiving had to be this:
+whether, after having obtained the presuppositions in question, one now
+really also has the time, the desire, and the strength for speculation? For
+it might be that those presuppositions were of such a kind that they had to
+be acquired ever anew, that the appropriation could not take place once and
+for all, and that the ever-renewed problem of appropriation made ``the high
+unity'' impossible---even in the form in which Martensen, in his arrogant
+attempt to outbid Hegel, had conceived it.
+
+\medskip
+
+\noindent\textbf{3.} It was German speculative philosophy that, with
+Heiberg and Martensen, made its entry among us. But already before Søren
+Kierkegaard made his mighty attack on this tendency, it had met able and
+well-grounded resistance among Danish thinkers. Just as Treschow, at the
+century's beginning, had by his sober critical thinking and his sound
+psychology counteracted the obscurities of Schellingian philosophy, so
+already in the thirties \emph{Frederik Christian Sibbern} (1785--1872) came
+forward with a penetrating critique of Hegelian philosophy. Sibbern was,
+by his innermost nature and by his whole development, unreceptive to a
+philosophy that wished to spin everything out of itself, and that by its
+speculative abstractions came into a relation of remoteness from life.
+Characteristic of him in this last respect is a trait he himself relates.
+``I remember that Søren Kierkegaard once, in his Hegelian period, met me on
+Gammeltorv and asked me: what relation there was between philosophy and
+life in reality? The question startled me, since all my philosophy aimed
+at studying life and reality; but afterwards I certainly had to become
+aware that for a Hegelianized thinker the question was natural, since the
+Hegelians did not study philosophy existentially.''
+
+For Sibbern, thinking always had to have a given, a factual basis.
+Philosophy must be \emph{explicative}---that is, must make clear and
+distinct the content presented in given experience---before it can become
+\emph{speculative}, that is: set up its further-reaching hypotheses on this
+basis. And to this was added that Sibbern, in the interesting philosophy of
+development on which he early entered, conceived existence as a great
+process, or a system of processes, proceeding from many different starting
+points. It is the \emph{sporadic} character of development that he
+especially emphasizes. Since the knower is himself one of these many
+starting points, and is himself placed in one of these sporadic processes
+of development, he cannot possibly survey the whole. Although we are links
+in the universal existence, and its innermost essence must therefore stir
+in us as well, still we cannot from our vantage point form a closed image
+of the whole life of the world.
+
+It was therefore firmly grounded in Sibbern's whole philosophical outlook
+when he came forward with a \emph{Critique of Hegelian Philosophy} (1838),
+directed especially against Heiberg---a work that contains many sound and
+able thoughts and does Danish philosophy honor.---That he here called
+Heiberg a philosophical dilettante caused Heiberg, some years later in
+``A Soul after Death,'' to have Sibbern's writings belong to the library in
+hell.
+
+Sibbern's philosophy of religion held that the religious content should be
+taken like any other given content of experience. The point was to live
+oneself into it and find its value and validity. He was equally opposed to
+the rationalistic or speculative transposition of living, personal faith
+into abstract concept, and to the orthodox assertion of the dogmas as
+outer, objective truths. It was, at first, the opposition to the aridity of
+rationalism's understanding that determined Sibbern's position here. But as
+the years went by, he felt himself more and more repelled by the orthodox
+tendency, and he began to doubt how far the religious content could really
+be called \emph{given} in the same sense as the experiences that science
+takes as its basis. A definite critical attitude toward positive religious
+faith comes forward in Sibbern in a series of remarkable university
+programs from 1846--1849. It was not so much historical criticism that
+brought him to doubt how much, in the religious domain, was really
+\emph{given}, as it was a psychological conviction that what one took to be
+original expressions of religious emotion could not be immediate
+outpourings of personal experience, but had to be due to a more composite
+development, in which manifold traditions and reflections had intervened.
+He was, on the whole, led more and more away from the objective and
+historical side of religion to the inner personal life, which is its
+source of life. And in that he now connected with this his significant
+thought that all development proceeds sporadically, from individual
+starting points, he demanded that the right of subjectivity be
+acknowledged. The aging thinker consistently carried through here what his
+younger friend, Søren Kierkegaard, had already some years before
+developed: that subjectivity is the truth---only that he does not, with
+Kierkegaard, ground it merely on the necessity of personal appropriation,
+but lays the weight especially on this, that it is in the individual
+personalities, each for itself, that the real spiritual life stirs, and
+that one would stop up these springs of life by imposing on all a common
+form of view of life.
+
+That Sibbern did not act more strongly on his contemporaries was connected
+especially with his lacking the ability to shape his thoughts in an easily
+accessible and condensed form. His expositions suffer from prolixity and
+from various peculiarities, which stood hinderingly in the way of the
+proper appreciation of the significance of this remarkable
+personality.\footnote{A detailed characterization of Sibbern's personality
+and of his cast of thought I have given in \emph{Mindre Arbejder}. First
+Series, pp.~61--112.}
+
+\medskip
+
+\noindent\textbf{4.} A younger friend and colleague of Sibbern, the poet
+and philosopher \emph{Poul Møller} (1794--1838), must be especially
+remembered when the talk is of Søren Kierkegaard's older contemporaries,
+since he was the one who stood in the closest personal relation to
+Kierkegaard. Poul Møller had for a time been strongly occupied with Hegel's
+philosophy, but later placed himself (as is seen from his treatise on the
+possibility of proofs for immortality) critically toward it. As a
+university teacher he worked most through his lectures on the history of
+philosophy. He had, as is seen from his ``Stray Thoughts'' (\emph{Strøtanker}),
+his eye open to the personal side of philosophizing; he kept not merely to
+the objective content of the philosophical theories, but went back from
+this content to the philosophizing personality. In his draft of a treatise
+on affectation, Poul Møller's sense for the significance of personal truth
+expresses itself especially in a characteristic way. It seems to me that
+here is something that gives him an interesting position as Søren
+Kierkegaard's forerunner. In reading these drafts one comes to sense what
+the continual conversations between Poul Møller and Søren Kierkegaard had
+turned upon.
+
+Affectation is, according to Poul Møller, a combination of falseness and
+self-deception. It arises through one's wanting to be what by one's nature
+one cannot be, and therefore imagining to oneself and to others that one is
+other than one really is. ``The affected person does on purpose what has no
+significance except where it is called forth by the power and prompting of
+nature or by a higher necessity.'' But Poul Møller has a clear eye for the
+fact that it is something which, by the nature of circumstances, is not to
+be avoided at certain stages of development. For when the personality is to
+be developed and expanded, it must necessarily overstep its limits and take
+foreign matter into itself, without at once being able to make this foreign
+matter its own real property. Thereby a momentary affectation arises as a
+point of transition. Affectation becomes fixed when one consistently
+carries through the foreign principle, although it cannot take root in one's
+personality. Moral feeling, self-regard, and immorality alike can in this
+way be shells in which one hides oneself from oneself and others, taking
+pleasure in them without, however, really filling them out. The use of
+terminologies without insight into the corresponding thoughts, and
+exaggerated symmetry in a scientific system, are more theoretical forms of
+the same thing.
+
+Poul Møller goes so far in his assertion of the importance of agreement
+between the inner and the outer that he declares that ``no expression of
+life has truth unless there lies in it a creative self-activity.'' He
+advances this proposition with full awareness that it stands as a paradox.
+For how much truth, indeed, will there be in the world if we are true only
+in what we ourselves bring forth? But he holds the conviction that in the
+falsely assumed, and in the objective common stamp, there is a great danger
+to the originality and richness of life. ``Affectation most often comes
+from one's not having the strength to fall out with the world in order to
+show one's personality true\dots\ Everyone has by nature his deep stamp,
+but lets it be effaced in order to please others.---He will not come
+forward with his own person, does not believe in his person's infinite
+depth. If each individual man, without fearing the reproach of simplicity,
+judged of things just as they presented themselves to him, then glorious
+phenomena would come forth.''---
+
+On his deathbed Poul Møller sent, through Sibbern, a greeting to Søren
+Kierkegaard. The three men belong together by kinship of thought. The idea
+of personal truth and its significance they have all three grasped, though
+only one of them was able to develop it in its whole force and rigor. And a
+great sympathy did Søren Kierkegaard feel for his two teachers.---In the
+introduction to the ``Posthumous Papers'' (\emph{Efterladte Papirer}) the
+following is told. ``One of his somewhat younger schoolfellows has related
+how he once, weighed down by heavy thoughts, met Søren Kierkegaard in
+Frederiksberg Garden. `Without, moreover, any words being exchanged about
+the mood that oppressed me,' the account runs, `Søren Kierkegaard suddenly
+stepped up to me and asked, with a look and voice in which sympathy
+trembled, whether I knew Professor Sibbern? \emph{Him} I should turn to;
+\emph{that} was a \emph{whole} man; he was amiability itself, and in
+intercourse with him there was something calming.' ''---As for Poul Møller,
+Kierkegaard gave vent to his enthusiasm for him in the dedication to his
+memory in \emph{Begrebet Angest} [The Concept of Anxiety]: ``The late
+Professor Poul Martin Møller, the happy lover of Greek culture, admirer of
+Homer, confidant of Socrates, interpreter of Aristotle---Denmark's joy in
+the joy over Denmark, though `far traveled' always `remembered in the
+Danish summer'---my admiration, my loss---to him this writing is
+consecrated.''
+
+This dedication indicates at the same time that Poul Møller introduced and
+guided Kierkegaard in the study of the Greeks, which became so significant
+for him. It means, on the whole, much in Kierkegaard's mouth when he calls
+his late teacher the confidant of Socrates. There lies in it a hint of a
+very essential spiritual connection between the two men, of which people
+have not always been aware.
+
+% ============================================================
+%  III.  SØREN KIERKEGAARD'S PERSONALITY  (pp. 28--53)
+% ============================================================
+\bookchapter{III.\quad Søren Kierkegaard's Personality}
+\label{ch:3}
+
+\noindent\textbf{1.} There are thoughts that can grow up only in a
+certain definite kind of soil and in a certain kind of air. And there is
+no doubt that Søren Kierkegaard's thoughts belong among them. They are
+like the wine that can grow only on volcanic ground. This ground, then,
+we must first and foremost learn to know. And the ground lies deep. We
+are directed back beyond himself to his family and his race, and to the
+traditions that formed the spiritual atmosphere of his childhood.---For
+the validity or invalidity of the thoughts, such a demonstration is not
+decisive. Whatever peculiar conditions their development may be due to,
+they can in themselves be equally valuable. It might well be that
+especially valuable thoughts can grow up only under \emph{such}
+conditions! But these conditions must be brought out and known when the
+question of the thoughts' vital force under other conditions is to be
+decided.---
+
+\medskip
+
+\noindent\textbf{2.} His family stems from West Jutland. In the West
+Jutland race there is found, alongside tenacity, shrewdness, and humor,
+also no small propensity to melancholy and weariness of life.
+
+On the heath in Sæding parish near Ringkøbing, in the year 1768 a
+twelve-year-old ``herd-boy'' walked with his sheep. He endured hunger and
+cold and was oppressed by loneliness and forsakenness. Then in his despair
+he went up onto a hill and cursed the God who had given him this wretched
+life.---This boy was Søren Kierkegaard's father. In a journal entry from
+1847 (\emph{Søren Kierkegaards Papirer}, edited by P.~A.~Heiberg and
+V.~Kuhr, seventh volume) the following passage is found:
+
+\begin{quote}
+``The terrible thing about the man who once, as a little boy tending sheep
+on the Jutland heath, suffered much evil, hungered and was famished, stood
+up on a hill and cursed God---and that man was not able to forget it when
+he was 82 years old.''
+\end{quote}
+
+When the first editor of Kierkegaard's papers showed Søren Kierkegaard's
+brother, Bishop P.~C.~Kierkegaard, this passage, the old bishop burst into
+tears and said: ``That is our father's history, and ours too!''
+(H.~P.~Barfod's biography of Bishop Kierkegaard in \emph{Illustreret
+Tidende} 1888). In the history of the Kierkegaard family that event plays
+a great role, both as effect and as cause. It stands as an outflow of the
+heavy temperament that felt everything more strongly and deeply than
+others, and of the passion that drove every mood and every thought out to
+its utmost consequence. But it also comes to stand as a threatening
+symbol, which set the dark temperament in ever new motion and awakened the
+thought of the God who visits the sins of the fathers upon the children.
+
+The boy from the heath, Michael Pedersen Kierkegaard, was sent to
+Copenhagen and apprenticed to a hosier. He worked his way up to becoming a
+rich man, but never forgot that moment on the heath in which he believed
+he had committed a sin against the Holy Spirit. His melancholy dread often
+gave itself vent in despairing words, and it then stamped the life of the
+home with its darkness, although he was otherwise a mentally lively man who
+in wit and acumen could hold his own with his highly gifted sons. Already
+in his fortieth year he had withdrawn from trade and lived thereafter
+occupied mostly with philosophical reading; he especially studied the
+German philosopher Wolff eagerly.---For the understanding of the following
+characterization of Søren Kierkegaard, it must be noted that other
+hereditary influences made themselves felt than those stemming from the
+melancholy, brooding father. The mother is described as a nice little woman
+with an even and contented temperament. A contrast that is not rare, and
+that recalls the one between Goethe's parents, where likewise ``des Lebens
+ernstes Führen'' derived from the father, ``die Frohnatur'' from the
+mother. To be sure, the opposite elements appeared in Søren Kierkegaard in
+a far more contentious and contrasting way than in that grand master of
+life's harmony.
+
+The younger son, \emph{Søren Aabye Kierkegaard}, was born in Copenhagen on
+5 May 1813. Of his outward life there is not much to relate, and yet, when
+one day all the posthumous papers are available, an interesting biography
+of him will be able to be written---so true is it that the essential in
+life, for a nature like his, is not the outward events. In Georg Brandes'
+book on Søren Kierkegaard a brilliant characterization of his literary
+personality is given. Something has here been accomplished that cannot be
+done over. But I believe that Brandes, precisely because his eye was
+directed especially toward S.~Kierkegaard's literary activity, has come to
+lay \emph{too} great weight on individual events in his life, which
+certainly became motives and themes in his production, but were not wholly
+decisive for the direction of his spirit. And neither can I agree with
+Brandes that piety and contempt were S.~Kierkegaard's two fundamental
+passions. In my view they occupy a more subordinate place in his
+psychology.---It must, however, be noted, especially with regard to this
+last point, that when Brandes wrote his book, only the first two volumes of
+the ``posthumous papers'' had appeared.\footnote{The first edition of
+Kierkegaard's papers was undertaken by H.~P.~Barfod and the Swiss
+theologian Gottsched. A new, critical edition is now being undertaken by
+P.~A.~Heiberg and V.~Kuhr. I cite according to this edition, so far as it
+is available.}
+
+\medskip
+
+\noindent\textbf{3.} The most decisive element for Søren Kierkegaard's
+whole personality must be sought in his melancholy, as it lay in his race
+and in his temperament and was nourished by his upbringing. ``I am not a
+human being; I am melancholy to the very border of insanity,'' he says
+(1849) in his notes, where he gives an account of his circumstances of
+life. It was melancholy that lay at the basis of his great piety and of his
+reverence for all authority. It brought with it a need for absolute points
+of support and a shyness before the confusion of the new. He needed
+something that could hold him up when everything seemed to dissolve for him
+into a bottomless darkness. Only when such an absolute ground had been laid
+could other sides of his nature, especially his great dialectical urge,
+unfold freely and powerfully. In religious respects this led to his sharp
+reflection and criticism being applied only to the question of the
+appropriation of the religious content, not to the testing of the inner
+coherence and validity of this content itself. And the feeling of contempt
+that could stir in him is also easily understood from the consequences of
+melancholy for his inner life. Accustomed as he was to walking between
+abysses and terrors, ordinary, ``lightly living'' people had to make a
+strange impression on him, just as melancholy itself had to lead him to
+picture people's conduct and their motives in more unfavorable colors than
+real experience warranted. But contempt was not an original element in his
+nature. Rather there was in him a heartfelt compassion---understandable
+also from the melancholy---with people, especially with those who suffer,
+or whom he believed to be suffering. From several sides it is attested that
+he had a remarkable eye for whether something pained those he was together
+with, and that he knew how to soften and console in a manner as
+considerate and delicate as no one else. He not only found comfort and
+relief in going about and talking with common folk in the street, but felt
+a heartfelt compassion with them and knew how to enter into their affairs.
+And even at the last, when his conception of Christianity sharpened, and
+when he felt the hour drawing near when the ideal was to be asserted in all
+its rigor, he was for a while held back by compassion with the happiness he
+was to disturb, with the unrest and suffering he was to cause where
+hitherto a mild and harmonious conception of life had prevailed.
+
+It is naturally impossible to derive the various qualities and tendencies
+of a human being, especially of a richly endowed one, from a single cause.
+Such people, whose significance rests precisely on their coming to make
+spiritual experiences that most people are spared or miss, will have in
+their nature several different starting points, several elements between
+which they must struggle to bring harmony. The tasks they have to solve are
+first and foremost set them by their own nature.
+
+Alongside melancholy as the dominant element there has already been named a
+power of thought, an ability for dialectical work, for dismembering
+reflection. As he himself expresses it (1849): ``Bound in agonizing misery,
+like a bird whose wings have been clipped, so am I, while I have yet
+retained all the power of my spirit, that no doubt extraordinary power.''
+Not only in reflection and thinking did this power express itself, but also
+in an imagination that at every vibration, every flash of mood, could throw
+out images in full splendor and with striking life, and in an art of
+language such as had scarcely yet been seen in Danish literature. Favorably
+situated in outward respects, he could develop these mental powers
+according to his own pleasure. The use of these powers has, like the use of
+every natural force, been bound up with pleasure; it was for him an
+independent need to employ them, even if they were mainly employed in the
+service of the prevailing moods.
+
+In his work ``On My Work as an Author'' (\emph{Om Synspunktet for min
+Forfatter\-virksomhed}) Kierkegaard attributes to himself, alongside ``the
+enormous melancholy,'' an ``equally enormous facility for concealing it
+under apparent cheerfulness and joy of life.'' By this remark he certainly
+brings---as, on the whole, in the retrospect on his authorial activity---
+more system and deliberateness into his conduct than there really was.
+Alongside melancholy there lay an element of a wholly opposite nature, an
+urge to give oneself over to all kinds of high-spirited play, to let
+oneself go in wit and other trials of intellectual strength---an urge that
+naturally connected itself with the urge to use his mental power. According
+to the characterization his headmaster gave of him, after the old custom,
+at his transition to the university, the childlikeness is said to have
+persisted long in him; he had, it appears, a great love of freedom and
+independence, and his character was lively and cheerful. The same
+impression others got of him later in life. It cannot, at first, have been
+dissimulation. There was in him an involuntary tendency in this direction, a
+tendency that under a different upbringing might have been developed so as
+to have a happy influence on his character. As it now expressed itself,
+when melancholy withdrew, or as a contrast-effect of it, it could in fact
+become a cover for the closed-off-ness of melancholy; but deliberately
+produced it cannot have been. It was surely the same with this as with his
+eager and constant roaming about the streets, which he later also presented
+as part of a thought-out plan, but which at first too was an outflow of an
+urge for movement, for people, and for changing impressions.
+
+``I am a Janus bifrons---with the one face I laugh, with the other I
+weep,'' he writes at 24 years of age. Neither of these faces was assumed,
+even though the one came out most before others, the other in solitude. For
+it is the nature of melancholy to withdraw when others are present, just as
+the dwarfs vanish when the sun rises. This property of melancholy was
+precisely what made it so fateful an element in Søren Kierkegaard's
+personality. It was its working to make solitary, to produce isolation and
+render openness toward others impossible, that became decisive for his
+fate. The dull grief made him mute---but is it not a sin not to be able to
+open oneself to those nearest one, not to be able to give oneself
+inwardly? And do not, at any rate, the most intimate relations of communal
+life become impossible where such an isolating melancholy prevails? When it
+is told that Jesus drove out a devil, and it was mute---then Søren
+Kierkegaard explained this as grief, melancholy, which in its egoism, in
+order not to lose its dominion over the person, makes him mute, draws him
+out of connection with others. And herewith there was now set for him an
+enormous problem in his own inner life: was it insanity or sin that thus
+possessed him? ``It is and remains the heaviest tribulation when a person
+does not know whether the ground of his suffering is insanity or sin.''
+Here was something that could well set the brooding dialectic in motion.
+Streams of thought and series of images could develop from the one of the
+possible points of view, only suddenly to vanish before new series of
+representations from the other point of view---especially when there was
+now added to this the emphasis produced by the strictly orthodox upbringing
+and by the memory of how the father's melancholy had even led him to curse
+God.
+
+In \emph{Stages on Life's Way} the relation between father and son is
+depicted: ``There was once a father and a son. A son is like a mirror in
+which the father sees himself, and for the son again the father is like a
+mirror in which he sees himself in the time to come. Yet they seldom
+regarded each other thus, for the cheerfulness of a lively, animated
+conversation was their daily intercourse. Only a few times did it happen
+that the father stopped, stood before the son with a sorrowful
+countenance, regarded him and said: Poor child, you are going about in a
+quiet despair. Nothing further was ever said about how this was to be
+understood, how true it nevertheless was.''---In the posthumous papers
+Kierkegaard expresses himself far more definitely and sharply about how the
+father ``unloaded all his melancholy onto a poor child,'' how his father
+made him unhappy and robbed him of his childhood. ``The joy of being a
+child I have indeed never had.'' And it is surely also grounded in his own
+experience when he says: ``It is a rape, however well-meant it may be, to
+force the child's existence into the decisive Christian categories''
+(\emph{Concluding Unscientific Postscript}).
+
+Kierkegaard's youthful years (from 22 to 25) have been illuminated by the
+complete publication of his papers and by the investigations an energetic
+Kierkegaard-scholar has undertaken on their basis.\footnote{\emph{P.~A.
+Heiberg: En Episode i Søren Kierkegaards Ungdomsliv} (Kierkegaard Studier.
+I) 1912.---\emph{Et Segment af Søren Kierkegaards religiøse Udvikling}
+(Kierkegaard Studier III). 1918. (See my review of this book in
+\emph{Tilskueren} 1919.)} It appears that there was a period in
+Kierkegaard's youth that may be called the period of dissipation. He was
+carried beyond the boundary of what he considered right and pure, and the
+memory of this has ever since stood as a black spot in his life. When he
+tried to explain to himself how such a fall was possible, he emphasizes the
+demonically alluring power of foreboding and dread. The human being stands
+before evil as before an abyss; a dizziness can seize him at the mere
+thought of the possibility of casting himself out. Already in 1837 the view
+of dread is expressed in the notes which he later developed in detail in
+\emph{The Concept of Anxiety} (1844). It appears thus that there lies
+personal experience behind the whole series of reflections on this concept
+that are found in his works. And when in a note from 1837 he warns against
+awakening in children, by allusions, suspicion, and untimely warnings,
+representations of the possibility of evil, and thereby ``kindling the
+tinder that is in every soul,'' he is surely thinking of his own upbringing
+and of stray remarks of his father. When even the venerable figure he
+looked up to with admiration for piety and firmness of character turned out
+to suffer from inner unrest, perhaps to brood over secrets and in any case
+to know terrible possibilities, this had to work on the son's mind like an
+``earthquake.'' And the background of melancholy that in the father lay
+behind the unrest and dread the son knew sufficiently from his own
+experience; it was an inheritance that was increased by the strict
+upbringing and by the father's remarks that the young man was going about
+``in a quiet despair.'' It seems to have been in the year 1837 that Søren
+Kierkegaard received confirmation of his foreboding as to what lay behind
+the father's unrest. In his Old Testament conception the old man believed
+that he had committed the sin that cannot be forgiven, because as a child
+he had cursed God. Of the impression Søren Kierkegaard received of what he
+had first only suspected, and then knew about the father, he has expressed
+himself in a note from 1838.
+
+\begin{quote}
+``Then it was that the great earthquake occurred, the frightful upheaval
+that suddenly forced upon me a new infallible law of interpretation of all
+the phenomena. Then I suspected that my father's great age was not a divine
+blessing, but rather a curse; that our family's excellent mental gifts
+existed only to lacerate one another; then I felt the stillness of death
+around me\dots\ A guilt must rest on the whole family, a punishment of God
+must be over it.''
+\end{quote}
+
+Characteristic for Kierkegaard it surely is that the foreboding had for
+him ``worked far more frightfully than the fact by which the truth of the
+foreboding is confirmed,'' as he expresses himself in a note from January
+1837. The foreboding and its confirmation put an end for him to the life in
+speculation and in the mere spectator-relation in which he had an
+inclination to place himself toward the world. ``The quiet despair'' could
+no longer be kept down by such means.
+
+His religious development had thereby, as by his whole temperament and his
+whole upbringing, received an initial velocity that let his course run high
+above the most traveled level roads. And the inner brooding to which he was
+disposed now got a symbol to hold to. He had been led practically into
+Old Testament religiosity in a way that falls to the lot of the fewest. The
+patriarchal God-relation did not stand for him in the usual idyllic light.
+And he was not among those who could make a great distinction between the
+Old and the New Testament.
+
+Søren Kierkegaard himself found his melancholy akin to the remarkable state
+of feeling that has not been unusual in the monasteries of the Middle Ages,
+and that was called \emph{Acedia}.\footnote{Cf.\ \emph{Den store Humor},
+p.~96~f.} It expressed itself as spiritual slackening, disinclination for
+religious exercises, longing for the world, and aversion to confession
+(\emph{odium professionis}). He believed he found therein what his father
+called the quiet despair. He interpreted the aversion to confession in a
+wider sense: of a shyness about expressing oneself to others at all, and
+believed he could then support the description with his own experience. He
+also found that it betrayed a deep insight into human nature when the
+medieval ethicists reckoned Acedia among the chief vices. It was a
+monastery-sickness, and he also says occasionally: ``Had I lived in the
+Middle Ages, I would probably have gone into a monastery.''---His
+melancholy was in this different from the medieval Acedia, that it was far
+more grounded in nature than the latter. Acedia arose, as it seems,
+especially by contrast-effect, as a slackening after the strong mystical
+exertion, a reaction after forced devotion---a «désenchantement de dieu,»
+as a French philosopher has designated it. Yet Kierkegaard's state of
+feeling surely also had this character in part. There was, in consequence
+of the ``rape'' that early, by his own account, was practiced against him
+(especially against those elements in his nature that pointed in a
+direction other than melancholy), rich occasion for contrast-effect of the
+kind mentioned.
+
+\medskip
+
+\noindent\textbf{4.} On the basis of melancholy---as the from the first
+strongest, and by upbringing and the father's influence further potentiated
+or inflamed, element of his nature---his engagement story now finds its
+explanation, when we attend to the utterances in the posthumous papers.---
+After he had led an aestheticizing and philosophizing youthful life, broken
+several times by violent inner agitations, as at that ``earthquake'' and at
+the father's death, he became engaged to a quite young girl, but broke off
+the engagement the following year, to the great sorrow and offense of the
+whole circle. He has depicted this episode in the third part of the
+\emph{Stages}, and in the posthumous papers he returns to it again. It
+seems to me that all necessary explanation lies in the often-varied
+exclamation: ``Alas, she could not break the silence of my melancholy!'' He
+had no happiness to share with her---on the contrary, it was first by
+coming to know her bright, light temperament and immediate happiness that
+he became rightly conscious of how unhappy a temperament his own was:
+``Precisely her immediate youthful happiness, set beside my dreadful
+melancholy and in such a relation, had to teach me to understand myself;
+for how melancholy I was I had never suspected before; I really had no
+standard for how happy a human being can be.''---As his high spirits and
+power of thought could grow by the contrast to melancholy, so this again
+grew when it got happiness as its counterpart. A web of actions and
+reactions between the elements in his inner life and between his inner life
+and his outer experiences, which with the power of consistency formed his
+disposition in an ever more sharply pronounced style!
+
+From what he calls his misery---the fact that ``the simplest conditions for
+being a human being were denied him,'' the isolating, demonically inhibiting
+melancholy---he derives not only the impossibility for him of entering into
+a relation which, like marriage, rests on openness and inwardness toward
+another, but also the impossibility of taking on an office. ``It has always
+come easy to me to get on with people, and, accustomed as I am to being
+bound, it never occurred to me that it should become so hard for me. But
+here again comes my misery: I cannot, because I am not a human being,
+because I am melancholy to the border of insanity---something I can indeed
+gloss over so long as I am independent, but which makes me useless for a
+position where I do not myself determine everything.'' Yet it was, according
+to what the complete notes show, especially the black spot mentioned above
+that stood for him as a hindrance, both toward the thought of marriage and
+toward the thought of becoming a priest.
+
+With admirable clarity and honesty Søren Kierkegaard gives an account of how
+he came to be placed differently from other people. Had it been up to him,
+he would have chosen marriage and social position, like so many others. It
+was his sick temperament that made this impossible for him, while his
+pecuniary circumstances on the other hand made it possible for him to live
+(for a time---but it became his lifetime) without seeking paid work. It was
+by no means the case that he kept from entering into any relation of
+communal life on strictly ideal and principled grounds. That he became the
+individual was due to the inner problems that, by his psychological
+presuppositions, he got to struggle with. Only when, on
+psychological-individual grounds, he was placed outside the ordinary way of
+life of people, on a solitary post, did he there discover something that he
+otherwise probably would not have caught sight of. What in his eyes stood as
+the highest ideal showed itself to him with a clarity and a consistency
+harder to reach for one who lives as a link in the manifold and conditioned
+life of humanity. Thus from a lighthouse out at sea much is seen that cannot
+be seen from the mainland; and yet it is not said that those who see it had
+been drawn out there in order to see it. Melancholy became, so to speak, his
+lookout station. Already in antiquity it was thought (it is so stated in the
+so-called Aristotelian ``Problems'') that the melancholic temperament was
+peculiar to geniuses. Even if by melancholy they did not then understand
+quite the same as nowadays, this opinion may fit many cases. There are
+experiences and discoveries made only by one who, with melancholy as a
+weight beneath his feet, dives down into the sea of life.
+
+The great personalities whose life and thought acquire decisive and typical
+significance (whether now by the attraction or by the repulsion they
+exert) are such as have great inner problems to solve, and who solve them
+in a way that acquires value for others than themselves. When they come to
+step forth actively and aggressively, the chief cause will lie in the fact
+that the inner self-work needs an outer continuation. The sharp eye both for
+the ideal and for what stands opposed to the ideal they have acquired in
+their inner life. An inner drama has taken place before the outer one comes
+to performance. What to contemporaries often looks like, or is by them
+construed as, vanity, presumption, love of criticism, misanthropy---this is
+in the really great the outflow of dearly bought experiences that they
+cannot---without denying themselves---keep to themselves. Søren Kierkegaard
+belongs decidedly to this class of personalities. That his inner life should
+acquire significance for others through the clarity he could bring to some
+of life's most important questions was his own conviction. In that
+consisted, really, the faith he had in his mission. ``Very far back in my
+recollection,'' he says (\emph{On My Work as an Author}), ``goes the thought
+that in every generation there are a couple or three who are sacrificed for
+the others, used to discover in frightful sufferings what comes to benefit
+the others; thus I melancholically understood myself, that I was singled out
+for this.''
+
+\medskip
+
+\noindent\textbf{5.} When Kierkegaard's melancholy, with its effects, stood
+for him now as sickness, now as guilt, this surely came in part from the
+fact that melancholy has a peculiar power to let the mind dwell on
+possibilities it would otherwise not bring forward, and to give these
+possibilities not merely a dark stamp, but a stamp of reality. This will
+naturally happen all the more where there is a lively imagination and a
+subtle dialectic to unfold the possibilities and work with them. Every
+strong feeling has a tendency to spread in the mind and to give all emerging
+representations partly an absolute character, partly a stamp of reality they
+otherwise lack, just as it will also call forth recollections and
+anticipations for its own explanation and clarification. (These phenomena I
+have described, under the name of the expansion of feeling, in my
+psychology.) Melancholy disposes to a life in possibilities---partly in
+anticipation, partly in recollection. That Kierkegaard was well versed in
+both is seen not only from his writings, where he both inculcates the great
+importance of living in possibilities and testing oneself in them, and of
+not confusing possibility and reality, but also from the posthumous papers,
+which here too show how what he developed in his books was drawn from his
+personal experience. With melancholy there worked here, naturally, the
+poetic urge to image-formation, to the concrete development of the
+representations that could serve as an expression of the moods, now a direct
+expression of these, now, by contrast-effect, an expression of their
+opposite. The following utterances show what power anticipation and
+recollection had over him, and what danger he saw therein.
+
+In the year 1839 (25 July) he writes in his diary: ``This is why I find so
+little joy in existence: that when the thought of something awakens in my
+soul, it awakens with such an energy, in so supernatural a magnitude, that I
+really \emph{overstrain} myself upon it, and the ideal anticipation is for
+me so far from being explanatory of existence that I rather proceed from it
+too powerless to find what corresponds to the idea, too restless and, so to
+speak, nerve-shaken to rest in it.''---One easily understands how melancholy
+had to be increased by such constant re-living of the disproportion between
+the anticipated and the real.
+
+``For me,'' it runs in a note from about the same time, ``there is nothing
+more dangerous than to recollect. Once I have recollected a life-relation,
+it is impossible for me to get any interest in it again\dots\ Once I get time
+to make the experience I have all too often enough made, that recollection
+satiates more richly than all reality---then it is over.''---Here again it is
+the life in representation that gets the precedence over the life in reality.
+In the same direction points a note occasioned by a brother's death: ``I
+have noticed that my grief is not one that apprehends momentarily, but one
+that increases in the long run, and I am sure that when I some day grow old
+I shall really come to think of the departed\dots\ As for my now deceased
+brother, I am sure that the grief will first really awaken after a long
+lapse of time.''
+
+If melancholy, by its propensity to call forth and dwell in possibilities
+and representations, gave the poetic urge and the dialectical drive wind in
+their sails, there was thereby attained, on the other hand, a diverting
+effect on melancholy; the latter was kept down by the work of thought and
+imagination, which laid claim to the whole force and attention of the mind.
+The whole first grand period of Kierkegaard's production (1843--46), in
+which his most brilliant works fall, he himself has explained from this
+point of view: ``Like that princess in the \emph{Thousand and One Nights} I
+saved my life by telling stories, i.e.\ by producing. To produce was my
+life. An enormous melancholy, inner sufferings of a sympathetic kind---all
+this I could master when I was allowed to produce.''---Had there not been
+this deep urge to work of thought and imagination, he would have gone under
+spiritually.\footnote{The constantly repeated rhythmic play of melancholy
+and thought-movement is depicted in the following note from 1843: ``It is
+strange how strictly, in a certain sense, I am brought up. From time to time
+I am set down in the dark hole; there I crawl about in torment and pain, see
+nothing, no way out. Then suddenly a thought awakens in my soul as vividly
+as if I had never had it before, though it is not unknown to me; but before
+I have, as it were, only been wedded to it with the left hand, now I am
+wedded to it with the right. When it has now settled fast in me, then I am
+caressed a little, I am taken up in the arms, and I, who had shriveled up
+like a grasshopper, now grow up again, healthy, thriving, glad, warm-blooded,
+supple as a newborn. Thereupon I must, as it were, give my word that I will
+pursue this thought to the utmost; I set my life in pawn, and now I am
+harnessed in the traces. Stop I cannot, and my powers hold out. Then I am
+finished, and now everything begins again.''} It was an independent element
+in his nature, which under other circumstances could have been developed in
+other forms than it was. It sought an outlet, and the direction of the
+outlet was determined by what else stirred in his mind. But the whole
+authorial activity was hardly, from the first, laid out so clearly and
+definitely in one direction or with one purpose as he later believed. There
+was from the first far more that was involuntary in him than he would admit
+when he looked back on his activity.\footnote{The relation between the
+involuntary and the deliberate in the design of Kierkegaard's production in
+those three years I have discussed in \emph{Mindre Arbejder}. Second
+Series, pp.~181--191.}
+
+\medskip
+
+\noindent\textbf{6.} If we stopped at the elements of his being hitherto
+brought out, we could not expect to find in him more than---what is
+naturally no small thing---a poet-nature, and perhaps also a thinker of a
+psychological cast. Søren Kierkegaard has also often enough warned against
+himself in this respect. When it was his conviction that people, especially
+in his time, all too often confused a thought- and imagination-relation to
+life and to life's great exemplars with a relation of reality, he knew, as
+has been shown, this danger from himself. But he also knew the
+counterweight. For just as characteristic of him as the strongly tensed life
+of mood, the tireless dialectic, and the imagination obedient to every
+nuance of feeling and every transition of thought, was the energetic will
+with which he sought to preserve himself in concentration, to hold together
+the elements of his being and lead all the streams of the rich inner life
+toward one goal. He has with full right maintained that at no stage was he
+merely a poet or a thinker. Already as a young man of 22 he wrote (at
+Gilleleje, on a walking tour in the summer of 1835) the following:
+
+\begin{quote}
+``What I really lack is to get clear in my own mind about \emph{what I am to
+do,} not about what I am to know, except insofar as a knowing must precede
+every action. The point is to understand my destiny, to see what the Deity
+really wants \emph{me} to do; the thing is to find a truth that is truth
+\emph{for me,} to find \emph{the idea for which I am willing to live and
+die.} And what use would it be to me if I discovered a so-called objective
+truth\dots\ if it had \emph{no} deeper significance for \emph{myself} and for
+\emph{my} life?\dots\ That was what I lacked: to lead \emph{a completely
+human life} and not merely a life of knowledge, so that I should thereby
+come not to base my developments of thought upon---yes, upon something one
+calls objective---something that is at any rate not my own, but upon
+something that is bound up with the deepest root of my existence, through
+which I am, so to speak, grown into the Divine, cleave fast to it even if
+the whole world should collapse. See, \emph{this is what I lack,} and
+\emph{this is what I strive toward.}'' (The emphases are Kierkegaard's own.)
+\end{quote}
+
+The strong urge to think is thus from the first an urge \emph{to think in
+existence,} to think in such a way that the innermost personality is
+involved and is determined thereby in its core and its direction. He wants
+to think in the same manner as, in one place, he writes that he has read a
+book (Görres's \emph{Athanasius}): ``with my whole body---with the pit of my
+heart.'' But this urge to bend everything in himself toward one purpose, to
+join the separated, conflicting elements of his being together into unity,
+had strong resistance to overcome. And yet the thinking of the age seemed to
+have paved the way. The watchword, after all, was the higher unity, the
+harmony of oppositions, and all around him he heard young speculative
+virtuosos repeat these slogans in full assurance of being able to make good
+on them. The thing was to mediate, to find the mediation; to remain stuck in
+an either--or, in an extreme or an unreconciled relation of opposition, was a
+sign of a poor head or of a narrow-minded holding-fast to a ``superseded
+standpoint.'' These phrases had to grate on Søren Kierkegaard's ears when he
+came from his solitary meditations or from his inner struggles, which taught
+him well enough that here there was no question of a method, a knack, that
+could be learned once and for all, but that it was something which, when
+attempted in the reality of life---not merely in fantastic abstraction or on
+paper---could demand the most strenuous willing, the most painful endurance,
+and that it was a task that always had to be solved anew. But---as he wrote
+in his diary in 1837---``there are many people who arrive at a life-result
+the way schoolboys do; they cheat their teacher by copying the answer out of
+the arithmetic book without having worked the problem themselves.''
+Kierkegaard was here the strict auditor---first and foremost toward himself.
+He lived through the elements of life and learned from his own experience
+how hard a work it can be to construct a totality of them. A superficial
+polishing-up so often covers over a botched job. He therefore declared
+``the higher unity,'' with its both-and, a struggle for life and death. The
+distinction, the disjunction, the either--or was given a place of honor, and
+``repetition'' was set in the place of mediation. ``All talk of a higher
+unity that is to unite absolute oppositions is a metaphysical assault on
+ethics.'' One presupposes without more ado that everything is in order, and
+that the elements join together as of themselves, so that no special act of
+exertion, no new effort is necessary or must always be repeated. But often
+this comes precisely from one's having no real natural ground in oneself.
+For his own part he says: ``I sit and listen to the tones within me, the
+glad hint of the music and the deep earnestness of the organ; to work them
+together, that is a task not for a composer, but for a \emph{human being}
+who, in default of greater demands on life, restricts himself to the simple
+one of wanting to understand \emph{himself}.---To mediate is no art when one
+has no moments in oneself.''
+
+As life went on, the oppositions became for him stronger and stronger, the
+moments more and more contentious, although his power grew at the same
+time---or perhaps rather because his power grew; for had it not grown (even
+to sickly overstrain), he would not have been able to hold fast such great
+disharmonies and operate with them. All rational and natural coherence in
+life was in the end burst asunder for him, and he passed a sentence of
+condemnation on the natural life of man as corrupted and depraved in its
+innermost root.
+
+For it must indeed be well noted, and will in the following be more closely
+demonstrated, that Søren Kierkegaard's indignation and polemic were most
+immediately called forth by the romantic-speculative blurring of life's
+oppositions---a blurring that, especially in the mouth of epigones and
+parrots, became insipid and superficial---but that it was not merely such a
+passing tendency of the age or of fashion that he wanted to do away with. He
+aimed higher. What he wanted to do away with was really all human and
+natural view of life and conduct of life, faith in life's unbroken power, in
+its ability by its own natural ways to solve the problems its own unfolding
+has brought with it. In itself the idea of ``the higher unity'' is also only
+a modernized expression for the harmony that Greek thought in its way sought
+and found, and by which no human thinking can refrain from steering, even
+though it is of great importance for the richness and depth of life that one
+not bargain away the oppositions, and that one not too early and on loose
+ground celebrate the festivals of ``mediation.''
+
+Kierkegaard also became ever more clearly conscious of what kind of power it
+really was that he was fighting against. When the time of ``the system'' was
+past, his struggle was not past. He saw clearly that the scientific view of
+the world, by its naturalistic path, asserted the same continuity and inner
+coherence in life that the speculative view had, in its idealistic manner,
+maintained. It was the same enemy in a new shape.---Yet it was a pity that
+Kierkegaard did not have before him greater representatives of humanism than
+the speculative epigones. He did not have enough resistance to overcome. His
+work therefore did not become \emph{as} significant as it otherwise might
+have become.---
+
+The higher unity was, according to Kierkegaard, so difficult to reach not
+merely for the reason that there are sharp oppositions, conflicting moments
+to overcome, but also because all human existence is in a state of
+\emph{becoming}. Existence means, according to his definition expressly: to
+be \emph{in time}, and on this last he lays (as we shall see more fully in
+his theory of knowledge) a very great weight. So long as we are in time, we
+stand ever before new possibilities and new tasks, whose solution is
+problematic. All our knowledge and harmony is grounded on hindsight. ``Life
+must be \emph{understood backwards}. But\dots\ it must be \emph{lived
+forwards}.'' Which proposition, the more it is thought through, ends
+precisely in this: that life in temporality never becomes rightly
+intelligible, precisely because at no moment can I get complete rest to take
+up the position backwards. Every won result must be ventured anew as a
+stake, put anew up for debate, in order if possible to be won anew under the
+constant development and the constant work. Here the concept of
+\emph{repetition} shows itself in its significance for Kierkegaard's
+thinking. It is closely connected with his emphasis on reality, on existence
+as being in time. What has been won in the past has only a \emph{possible}
+value in the future. The point is a conversion of this possibility into
+reality; but every such conversion is a repetition, since what is to be
+realized existed beforehand as a possibility, for representation. (To the
+concept of repetition we shall return in connection with Søren Kierkegaard's
+ethics.)---
+
+\medskip
+
+\noindent\textbf{7.} The relation between Søren Kierkegaard's poetic gift
+and his gift as a thinker must still be touched on. The two sides in his
+nature work constantly together. This places him in a position of his own in
+literature, outside the usual rubrics. In a certain sense he might perhaps
+have achieved a greater effect if he had been able to give poetic works that
+did not require an understanding of philosophical thoughts, and works of
+thought that did not present so many parentheses, elaborations, and images.
+Many who would enjoy poetry by itself, or follow pure and rigorous thinking,
+now pass him by. But the close cooperation of his poetizing and his thinking
+sprang from the close connection of both with his own innermost nature. They
+both work in the service of his personality. His urge to think was an urge
+to think in connection with life-experiences and moods; therefore he
+constantly needed concrete situations and examples. And the mood, which
+constantly accompanies, then undertakes its little excursions, has its side
+effects, to whose unfolding and clarification the ever-willing and
+lightning-quick imagination lends its aid. Hence the richness and
+poetry---in short turns and expressions, after parenthetical outbursts, or in
+elaborating images---that is scattered about in his works.
+
+``My thinking,'' he himself says, ``is \emph{presentic}; I have as much
+imagination as dialectic.'' That he did not lose himself in abstractions
+remote from life and the present he here aptly connects with the fact that
+imagination and thinking work together in him. Since real experience seldom
+or never presents us with a character, a passion, or a state of soul in full
+and consistent development, he takes imagination to his aid and
+constructs---by a thought-experiment that strictly holds to the decisive
+conceptual determinations that are to be practiced---figures and situations
+for the visualization and contemporization of the spiritual conditions and
+problems he is occupied with. His most famous books---\emph{Either--Or},
+\emph{Stages on Life's Way}, \emph{Repetition}---are such ``Attempts in
+Experimenting Psychology.''---Yet I believe that in this respect too there is
+more involuntariness and less systematic design in his authorial activity
+than he often himself gives the appearance of. Images have surely thrust
+themselves forward before their use, and he has---at any rate most
+often---only afterward seen what they could be used for. And where the
+constructing deliberateness has intervened more strongly, it has not
+seldom been to the detriment of the poetic value, and also (as will be
+sought to be shown in a later section) of the philosophical value of his
+expositions.
+
+Kierkegaard lays much weight on the need to test oneself through
+possibilities, since the reality of life is not sufficient to educate the
+character. But it is characteristic of him that he emphasizes only one
+drawback of this method of possibilities, namely that one can easily shirk
+one's way to a greater proficiency than one really possesses. ``It is
+difficult to test oneself in possibility; it is as if someone, without
+daring to use his voice, were to test whether he had a strong voice.
+Hitherto in vain I have many times speculated on finding a means of being
+able to check myself in possibility'' (\emph{Stages on Life's Way}). He does
+not always bring out the other conceivable drawback: that the possibilities
+constructed could be so dark and abnormal that strength and courage are used
+up in the struggle with shadows, without any proficiency for taking up the
+struggle of reality being fetched from this dwelling in the world of
+possibilities. And moreover: with reality one can at times get finished; but
+possibility is like a shadow or a fog that forms again as often as it is cut
+apart; the struggle with possibilities therefore easily becomes a bailing
+into the vessel of the Danaids. Kierkegaard has here worked far more as a
+romantic than he wished and willed. He has for many conjured forth an
+imaginary world that sucked all the strength and sap out of the real one.
+There are several for whom his writings have been like the lion's den, where
+all tracks led in, none back out again. Others have had to free themselves
+violently from his world of possibility by one of those resolute ``jerks of
+decision'' that he himself in another connection recommends.
+
+So great was his zeal for personal truth that he expressly wanted it
+established that these thought-experiments did not cover his own view.
+Therefore he poetized not only characters and situations, but also authors.
+The pseudonymous author-names that stand on most of his writings make up a
+whole circle of individualities at different standpoints. It is his striving
+after ``thinking in existence'' that leads him to these pseudonyms. What
+virtuosity he possessed in thus psychologically and poetically entering into
+different possible author-individualities can be seen from the little work
+\emph{Prefaces} (\emph{Forord}), a collection of prefaces to various imagined
+writings by imagined authors.---
+
+His thinking is not only \emph{present,} bound to perceptible conditions and
+situations; it is also, what is moreover closely connected therewith,
+\emph{subjective}, that is: a thinking that proceeds from, and is consumed
+in, the personal life, in the view of life and the conduct of life of the
+individual, in the practical relation to life's circumstances and life's
+possibilities. Such a subjective thinking is bound up with passion, for to
+exist is an enormous contradiction. The subjective thinker must not swing
+away from existence into abstraction; his task is rather to understand the
+abstract and the universal concretely, in his existence as this individual
+human being. To be the ideal in imagination or on the lecturer's platform is
+not difficult; but to have to exist as an idealist is an extremely
+strenuous life-task. The subjective thinker is an artist, not a man of
+science, for his thinking goes together with a willing.---As such subjective
+thinkers Kierkegaard especially admired Socrates and Lessing, also Jacobi
+and Hamann. His doctoral dissertation dealt with Socrates (\emph{Om Begrebet
+Ironi med stadigt Hensyn til Sokrates}, 1841). Both Socrates and Lessing he
+has characterized in a brilliant, but also highly one-sided way; in
+particular he has surely made them more ``subjective'' than they in reality
+were.
+
+It is an important idea that Kierkegaard has set up in his demand for
+subjective thinking. It contains not merely the demand to leave the paths of
+speculative abstraction and go back to critical reflection on the
+presuppositions and barriers within which our thought has to work. But it
+leads him to give a psychological and ethical introduction to a view of
+life, or a theory of the art of the view of life. Søren Kierkegaard's
+philosophy is such a theory. It is, to be sure, first and foremost designed
+to illuminate the Christian view of life; but it is designed and carried
+through in such a way that it can acquire significance for every view of
+life.
+
+Søren Kierkegaard's authorial activity falls essentially into two periods.
+In the first (1843--46) he is occupied with the struggle against the
+speculative-aesthetic evaporation of existence, with demonstrating
+oppositions, transitional relations, and conditions in the domain of the
+views of life. He here gives a kind of comparative philosophy of life. In
+the second period (1847--1855) he carries on his great struggle against the
+Church's mitigating conception and treatment of Christianity. This last
+period too acquires significance in philosophical respects, since
+Kierkegaard here draws his last consequences with regard to the relation
+between religion and humanity.---In the characterization of the first period,
+however, utterances from a later time may of course very well be used from
+time to time, provided only that they are expressions of thoughts that were
+already developed in the earlier time.
+
+% ============================================================
+%  IV.  SØREN KIERKEGAARD'S PHILOSOPHY  (pp. 54--126)
+% ============================================================
+\bookchapter{IV.\quad Søren Kierkegaard's Philosophy}
+\label{ch:4}
+
+The task Kierkegaard set himself as a thinker he has himself designated
+as this: to make difficulties. Everything was being made easier nowadays,
+he thought. In the outer world, traffic and intercourse were made easier
+by railways and telegraphs; and in the world of spirit there was promised
+a reconciliation of all oppositions, a harmonious unity of all conflicting
+elements. So he set himself, then, to make something difficult;---for
+otherwise those who wanted to make everything easy would come to lack
+material in the end.
+
+Of the men here at home by whom he was influenced during his development,
+there has been talk in the foregoing. Here it shall merely be mentioned
+that it was especially Martensen's lectures on speculative theology that
+provoked his criticism. Already in the dissertation on Socrates there
+appeared hints of a more critical, subjective, and existential conception
+of thinking, and a doubt whether it should be possible to give our
+knowledge as smooth and continuous a coherence as speculative philosophy
+believed it had attained. When Schelling in the year 1841 began the
+sensational lectures with which he wanted to set a new, higher and more
+``positive'' philosophy in place of Hegel's, Kierkegaard was among the many
+who hurried from all around to Berlin to become acquainted with the new
+wisdom. In the beginning it seemed as if the expectations with which he
+came would be fulfilled. In his diary he wrote: ``I am glad to have heard
+Schelling's second hour---indescribable. I have sighed long enough, and
+the thoughts have sighed within me; when he mentioned the word
+`\emph{reality},' concerning philosophy's relation to reality, then the
+child of thought leapt within me for joy as in Elizabeth. I remember almost
+every word he said from that moment. Here perhaps clarity may come. This
+one word reminded me of all my philosophical sufferings and torments.'' The
+expected greater clarity failed to come; for some months later Kierkegaard
+wrote to his brother: ``Dear Peter, Schelling talks the most utter
+nonsense,'' and he traveled home before the lectures were at an end. Yet
+that leap of the child of thought was the beginning of his subsequent life
+of thought. For Schelling emphasized very strongly that speculative
+philosophy could not get beyond the possible and the abstract, the
+universal, and that the relation to the absolute reality---especially as
+religious faith conceives it---could be posited only by an act of will,
+motivated by longing and by practical, personal need: thus, as Kierkegaard
+later expressed it, by a leap. The opposition between thought and
+existence, between the universal and the individual, and the impossibility
+of a continuous transition between them, Kierkegaard here got established
+so firmly that he did not forget it. He was rightly repelled by the
+arbitrary and fantastic way in which Schelling philosophized further after
+having established that break in the continuity of thought, although amid
+the fantastry there emerge flashes of genius. Schelling's concluding result
+would hardly have appealed to him either; it aimed at healing the break
+again by demonstrating a new coherence and by announcing a religiosity of
+the future, ``a third kingdom'' (like Lessing earlier, and in our day
+Henrik Ibsen), to which Christianity is only an introduction, and which in
+its higher form is to lead beyond the opposition between mythology and
+revelation through free religious self-understanding. Kierkegaard held to
+the break that Schelling had established. In his philosophical writings
+(especially in \emph{The Concept of Anxiety}) one can clearly notice
+Schelling's influence, in part also his terminology.
+
+A younger German philosopher to whom Kierkegaard owes much is Adolf
+Trendelenburg. During his Berlin stay mentioned above he was so taken up
+with Schelling and the Hegelians that he did not get to hear Trendelenburg,
+which he later regretted. Trendelenburg was the first to give an
+epistemological critique of the speculative method and to develop a more
+critical theory of knowledge (\emph{Logische Untersuchungen}, 1840), which
+has had no small influence on Kierkegaard's cast of thought. Kierkegaard
+speaks of Trendelenburg as ``a man who thinks soundly and is happily formed
+by the Greeks,'' and in his posthumous papers he even says: ``There is,
+after all, no modern philosopher from whom I have had the benefit that I
+have had from Trendelenburg.''
+
+But whatever he owed to others, the essential ground was laid in his own
+personality and in the original nature and direction of his thought.
+Through solitary brooding and reflection his thoughts soon developed to
+full maturity. After his return home from Berlin he lived in his studies
+and his immensely productive authorial activity, from which he diverted
+himself by walks, by excursions to the wooded regions of North Zealand, and
+on a single occasion by a new journey to Berlin. By his roaming about the
+streets and lanes he soon became a well-known Copenhagen figure, just as
+Socrates was in Athens, and he too found his Aristophanes. He needed
+movement for the sake of his health. But he also felt an urge to seek
+relief for his melancholy and his sorrow by talking with common folk and
+entering into their circumstances, helping and consoling them. He learned,
+moreover, much both as a psychologist and as an author by hearing plain
+people talk together: ``What one has vainly sought enlightenment about in
+books, a light suddenly dawns on it by hearing one servant-girl talk with
+another; an expression one has vainly tried to squeeze out of one's own
+brain, sought in vain in dictionaries, even the Academy's, one hears in
+passing: a common soldier says it, and he does not know what a rich man he
+is. And as one who walks in the great forest, wondering at the whole,
+sometimes tears off a branch, sometimes a leaf, now listens for a bird's
+cry: so one goes among the crowd of people, sees now an utterance of a
+state of soul, now another, learns and learns and only becomes more eager
+to learn. Then one does not let oneself be deceived by books, in which the
+human occurred so seldom; then one does not read about it in newspapers;
+the best in the utterance, the loveliest, the little psychological trait, is
+nevertheless sometimes not preserved'' (\emph{Stages on Life's Way}).---As
+the deliberate everywhere comes after the involuntary, it was only later
+that he conceived this roaming about the streets and lanes as a tactical
+means: in order that the religious authorial activity, which was his real
+task, might come to count by its own force, he wanted to weaken the
+impression of his person. The technique of indirect communication required
+this! We need not here enter more closely into this artifice. I have merely
+wanted to sketch his circumstances of life in the time (1843--46) in which
+his properly philosophical authorial activity falls.
+
+% ------------------------------------------------------------
+\section*{A.\quad Epistemology}
+\label{sec:4A}
+\markright{IV. Søren Kierkegaard's Philosophy --- A. Epistemology}
 
 \noindent\textbf{1.} When Kierkegaard considers the question of what
 knowledge an existing human being can attain, he is not thinking of
 every possible kind of knowledge, but only of what he calls
 \emph{essential} knowledge, by which he means the knowledge that bears
 specifically on the knowing individual itself in its conditions of
-existence---ethico-religious knowledge. All other knowledge---empirical,
+existence---ethico-religious knowledge.\footnote{The main work here is
+the \emph{Concluding Unscientific Postscript} (1846).} All other
+knowledge---empirical,
 mathematical, and historical---is a matter of indifference to him,
 because it has nothing to do with existence. Already here he makes a
 very important distinction, introduces an Either--Or. For it is surely a
@@ -196,7 +1867,10 @@ absorption in existence. All unity and continuity is only abstraction.
 And finally: only the individual, the concrete, exists; to exist means
 to be individual. But only the universal and the abstract is the object
 of thought. Herein too lies a disproportion between thought and
-existence.
+existence.\footnote{Before Kierkegaard, Sibbern (\emph{Hegels Filosofi
+betragtet i Forhold til vor Tid}, 1838) had already criticized Hegel's
+speculation from similar points of view. (See \emph{Danske Filosofer},
+pp.~109--112.)}
 
 Because a system of existence cannot be formed by our thought, it does
 not follow, according to Kierkegaard, that such a system does not exist.
@@ -247,7 +1921,9 @@ from its presenting us with insurmountable contradictions. The
 inexhaustibility of existence for thought corresponds exactly to
 Lessing's idea of the eternal striving after truth. If we hold fast to
 this idea, we must as its objective counterpart assume a continually
-becoming, and in its becoming unsurveillable, existence.
+becoming, and in its becoming unsurveillable, existence.\footnote{What is
+here hinted at, I have developed in detail in \emph{Den menneskelige
+Tanke}, pp.~306--375.}
 
 Kierkegaard proceeds from the premise that we cannot, even with respect
 to ``essential'' knowledge, content ourselves with approximations and
@@ -334,8 +2010,8 @@ the movement that is awakened in the inner life of the personality.
 
 In fact, Søren Kierkegaard has in his own way stated the same thing that
 Ludwig Feuerbach had maintained a few years earlier in \emph{The Essence
-of Christianity}: that theology is psychology. (\emph{The Essence of
-Christianity} appeared in 1841, the \emph{Concluding Unscientific
+of Christianity}: that theology is psychology. (\emph{The Essence
+of Christianity} appeared in 1841, the \emph{Concluding Unscientific
 Postscript} in 1846. In this book, and already in \emph{Stages on
 Life's Way}, Kierkegaard expressly refers to Feuerbach's interpretation
 of Christianity.) Only through an inconsistency can Kierkegaard demand
@@ -382,5 +2058,60 @@ dogmatic impediment not been there, his thoughts would have attained a
 more directly universal significance; as it stands, a translation, a
 process of sifting, must take place before they can come to play the
 role for humanity that is rightfully theirs.
+
+% ------------------------------------------------------------
+\section*{B.\quad Ethics}
+\label{sec:4B}
+\markright{IV. Søren Kierkegaard's Philosophy --- B. Ethics}
+
+% [text to be added: section B intro, pp. 70]
+
+\subsection*{a.\quad The Leap}
+\label{sec:4Ba}
+% [text to be added: pp. 70--82]
+
+\subsection*{b.\quad The Stages}
+\label{sec:4Bb}
+% [text to be added: section b intro, pp. 82]
+
+\subsubsection*{$\alpha$.\quad The Aesthetic View of Life}
+\label{sec:4Bb-alpha}
+% [text to be added: pp. 83--91]
+
+\subsubsection*{$\beta$.\quad The Ethical View of Life}
+\label{sec:4Bb-beta}
+% [text to be added: pp. 92--109]
+
+\subsubsection*{$\gamma$.\quad The Religious View of Life}
+\label{sec:4Bb-gamma}
+% [text to be added: pp. 109--119]
+
+\subsection*{c.\quad The Standard}
+\label{sec:4Bc}
+% [text to be added: pp. 119--126]
+
+% ============================================================
+%  V.  SØREN KIERKEGAARD AND CHRISTIANITY  (pp. 127--149)
+% ============================================================
+\bookchapter{V.\quad Søren Kierkegaard and Christianity}
+\label{ch:5}
+
+\section*{A.\quad Personal Breakthrough}
+\label{sec:5A}
+\markright{V. Søren Kierkegaard and Christianity --- A. Personal Breakthrough}
+% [text to be added: pp. 127--143]
+
+\section*{B.\quad The Last Word}
+\label{sec:5B}
+\markright{V. Søren Kierkegaard and Christianity --- B. The Last Word}
+% [text to be added: pp. 143--149]
+
+% ============================================================
+%  CONCLUSION  (pp. 150--159)
+% ============================================================
+\bookchapter{Conclusion}
+\label{ch:slutning}
+
+% [text to be added: pp. 150--159]
 
 \end{document}
