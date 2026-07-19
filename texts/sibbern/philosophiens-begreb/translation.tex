@@ -1,0 +1,632 @@
+% ============================================================
+%  F. C. Sibbern, On the Concept, Nature, and Essence of Philosophy.
+%    A Presentation of the Propaedeutic of Philosophy.
+%  Copenhagen: At the Author's Own Expense (Printed by Director
+%    Jens Hostrup Schultz), 1843.
+%  TRANSLATION (English) — SCAFFOLD.
+%  Source of truth for translation: transcription.tex (Danish, COMPLETE + proofed,
+%    §§1--21 + Fortale + Rettelser; verified compile 59 pp., 0/0).
+%  Method: ../../../TRANSLATION-PLAYBOOK.md. Fill each "% [text to be added: ...]"
+%    marker batch by batch (~10 printed pp.), mirroring transcription 1:1.
+%  Same policy as the companion volume *Om Erkjendelse og Granskning*:
+%    - Register: lightly modernized (faithful meaning, Sibbern's long periods untangled).
+%    - Key terms: on first use in a section, gloss the Danish in brackets, e.g.
+%      "fundamental cognition [Grunderkjendelse]". Maintain GLOSSARY.md.
+%    - Layout: English-only, section-keyed; mirrors the transcription structure 1:1.
+%  Page-offset (Danish scan, for reference): printed page = PDF page - 11.
+%  Book-specific: emphasis in this book is BOLD Fraktur (Fett), already encoded as
+%    \emph{} in the transcription -> keep as \emph{} (renders italic). Latin already in
+%    \textit{}; German block-quotes are plain (Fraktur in the source); no real Greek.
+%  See TRANSLATION-NOTES.md for state, decisions, and the section->page map.
+% ============================================================
+\documentclass[12pt,a4paper]{book}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{libertinus}
+\usepackage{libertinust1math}
+\usepackage{textalpha}   % real Greek glyphs if any arise (only transliterated names here)
+\usepackage[english]{babel}
+\usepackage{enumitem}    % for \arabic*)-style lists (playbook: easy to forget)
+\usepackage[protrusion=true,expansion=true]{microtype}
+\usepackage{setspace}
+\usepackage[margin=1.2in]{geometry}
+\usepackage{fancyhdr}
+\setlength{\headheight}{28pt}
+\addtolength{\topmargin}{-13.5pt}
+\usepackage{hyperref}
+
+\hypersetup{
+  pdftitle={On the Concept, Nature, and Essence of Philosophy},
+  pdfauthor={F. C. Sibbern},
+  hidelinks
+}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LE,RO]{\thepage}
+\fancyhead[CE]{\textit{\leftmark}}
+\fancyhead[CO]{\textit{\rightmark}}
+
+\setstretch{1.3}
+
+% Group-heading helper (the centered bold rubrics of the Indhold / body)
+\newcommand{\grouphead}[1]{%
+  \bigskip\begin{center}\large\textbf{#1}\end{center}\smallskip}
+
+% TITLE — rendering to confirm with Hans (see TRANSLATION-NOTES).
+\title{\textbf{On}\\[6pt]
+  \Huge\textbf{the Concept, Nature,}\\[6pt]
+  \LARGE\textbf{and Essence of Philosophy.}\\[14pt]
+  \normalsize A Presentation of\\[4pt]
+  \Large\textbf{the Propaedeutic of Philosophy.}\\[16pt]
+  \normalsize By\\[6pt]
+  \large Dr.\ Frederik Christian Sibbern,\\[4pt]
+  \normalsize Professor of Philosophy.}
+\author{}
+\date{Copenhagen, 1843.\\
+  At the Author's Own Expense\\
+  printed by Director Jens Hostrup Schultz,\\
+  Royal and University Printer.}
+
+\begin{document}
+\maketitle
+\thispagestyle{empty}
+\cleardoublepage
+
+%% ============================================================
+%%  PREFACE  (Fortale, PDF 8--9). Transcription L78--111.
+%% ============================================================
+\chapter*{Preface.}
+\markboth{Preface}{Preface}
+
+\begin{center}\rule{0.28\linewidth}{0.4pt}\end{center}
+
+Had I not, up to now, let every writing of mine that has come forward
+independently in the literature be accompanied by a preface---not exactly
+because I have expressly reckoned such a thing among the proper appointments of
+a book, but because each time it has felt natural to me---I should this time
+have been inclined to dispense with any preface at all, since I had nothing to
+say that could be its subject. For the truth is that I would rather have
+refrained from expressly declaring that what several of my readers will perhaps
+expect to find stated here I mean to leave to them to settle for themselves. I
+mean this: in what relation the present writing stands to my book
+\textit{Om Erkjendelse og Granskning} [On Cognition and Inquiry], published at
+the close of the year 1821. If I am to declare myself on the matter---for how I
+intend to use both writings in my lectures on the propaedeutic of philosophy
+[Philosophiens Propædeutik] does not belong here to explain---then, so far as
+the public is concerned, I would say nothing more than this: I could wish that,
+in its relation to the present book, the reader would regard that earlier one
+as though it were by another author, one whom I had drawn upon and to whom I had
+therefore often referred, while yet having a different object before me than he.
+For in that earlier work the object is science [Videnskab] and scientific study
+in general, and it is offered as an introduction to academic study at large.
+Here, by contrast, I have had philosophy in particular before me, and have
+therefore had more to enter into with respect to \emph{this} than had come
+forward in that other work. ---Finally, I ask that among the errata [Rettelser],
+those marked \textbf{NB} in particular may be heeded.
+
+\bigskip
+\noindent\textbf{Copenhagen,} the 28th of October 1843.
+\nopagebreak
+\begin{flushright}\textbf{Sibbern.}\end{flushright}
+
+\begin{center}\rule{0.18\linewidth}{0.4pt}\end{center}
+
+\mainmatter
+
+%% ============================================================
+%%  PRELIMINARY REMARKS  (§§ 1--2, printed pp. 1--6)
+%% ============================================================
+\grouphead{Preliminary Remarks.}
+
+\begin{center}\large\S~1.\end{center}
+\markboth{\S~1}{\S~1}
+\begin{center}What is to be undertaken here, and where we set out from.\end{center}
+
+It is the concept, nature, and essence of philosophy that we shall here seek to
+clarify for ourselves. We cannot, then, confine ourselves to the question: What
+is meant by philosophy? but have to do with the far more telling question: What
+is philosophy? Yet we must of course, straightaway and from the very
+first, take account of the word's meaning, attending to what is called
+philosophy---and has through the course of history been so called, and has
+asserted itself under that name. For although the concept we are to seek to give
+is to be developed and determined as reflection on the matter itself demands,
+still the question---whether what is thereby set up corresponds to what one
+calls philosophy, or whether perhaps, with all the validity it may have in and
+for itself, it is something quite other than what one has in view by the word
+philosophy---can only be settled by taking into consideration the meaning with
+which this name passes and holds good. By the name, the object to be spoken of
+is pointed out, and one must from the first take care not to end up speaking of
+some other object instead of this one. It is most correct, then, to set out from
+a given representation [Forestilling] of what philosophy is---a given meaning of
+the word.
+
+But the matter itself, thus pointed to by the name and thereby lifted out for
+us, we must then surely consider entirely as it wills to be seen, and must
+pursue it through its whole consequence, so that the concept, further on, cannot
+be bound to, nor in its whole carrying-through be conditioned by, that given
+representation.
+
+In this way we do indeed come to consider philosophy in philosophy's own light,
+and thus come to lay our own philosophy at the foundation; for we are now to
+philosophize our way to the cognition [Erkjendelse] we seek, and in all
+philosophizing philosophy at once asserts itself. But this circularity is a
+consequence of the whole position of the matter; for philosophy is but one
+member within the world-totality [Verdenstotalitet] which philosophy itself---%
+according to the concept of it that we must presuppose as given---is to clarify
+for us.
+
+{\small\emph{Note~1.} There naturally arises here the question whether the
+concept of philosophy ought not to be treated in two quite different places:
+first, in the considerations introductory to philosophy, where the philosophical
+undertaking cannot of course be dealt with without laying at its foundation a
+concept of what philosophy is; ---and second, in the very midst of philosophy's
+system, once the speculative fundamental cognition [Grunderkjendelse] has been so
+far attained and developed that philosophy---stepping forward as a co-engaging
+member in the spiritual life unfolding in consciousness---comes to be considered
+from the speculative---more precisely a psycho-biological---standpoint. One
+readily sees that, although philosophy would lead us back to the first
+fundamental moments and beginning (\textit{initia}) of all things, it
+nevertheless itself belongs in the very midst of the world's course, where it
+can first arise in the higher life of consciousness, or in the midst of the
+sphere of spirituality, and must then show itself as an essential principal
+moment in the totality of spiritual life. The question of philosophy's proper
+essence [Væsen] belongs, then, there where poetry, morality, and religiosity too
+are to constitute themselves for us in their essential belonging-together with
+the totality of spiritual life. ---\par}
+
+{\small The question then naturally arises whether we ought not to distinguish,
+from this spirit-philosophical and properly speculative consideration of
+philosophy's essence, another, preliminary one belonging to a mere introduction
+to philosophy---which we might then call the merely propaedeutic, and which would
+at the same time be called the merely explicative. This one would merely pursue
+the given concept of philosophy through all its consequence and thereafter
+determine and expound it, whereas the other would let philosophy itself
+constitute itself for us and thereby show itself in its proper essence. This last
+would then be the one which, if the very expressive designation the philosophy of
+philosophy is to be adopted, would have to be furnished with that name.\par}
+
+{\small Yet to such a merely propaedeutic exposition of the concept of philosophy
+we neither can nor will here confine ourselves, nor keep it separated from the
+speculative; for it is philosophy itself---not the concept that has formed about
+it---that we have before us here, and the clarification of philosophy, if it is
+to be complete, cannot rest at that merely propaedeutic level.\par}
+
+{\small In the meantime we must surely seek constantly to remain aware how far
+our concept, as it more and more determines and develops itself for us, remains
+within the domain [Gebeet] of the merely propaedeutic---so that it can be set up
+as valid with respect to the various philosophical parties (Platonists,
+Skeptics, Kantians, Lockeans, and so forth), and can thus be laid at the
+foundation in the history of philosophy---and how far, on the other hand, it goes
+further, and so is already developed according to the dictate of a definite
+philosophical fundamental view [Grundanskuelse].\par}
+
+{\small\emph{Note~2.} One will readily see that it would be altogether
+inappropriate to give the first and fundamental part of philosophy itself---which
+Hegel has called Logic---the name of the philosophy of philosophy, as some have
+done. Hegel, too, is very far from having been able to give any occasion for
+this, since with him the philosophy of philosophy---though this name is not found
+in him---appears at the close of the third and last part of his whole
+system.\par}
+
+{\small\emph{Note~3.} Concerning the expression \emph{nature and essence} and its
+relation to the expression \emph{concept}, be it noted that what is here most
+immediately and first sought is the concept of philosophy and its exact
+determination, but that this concept is then to unfold itself for us, or to step
+out into the whole sum-total [Indbegreb] of its consequence, or into its whole
+content---which is what we have in view by the expression \emph{nature and
+essence}. (I refer here to my \textit{Logik}, \S~35.)\par}
+
+\begin{center}\large\S~2.\end{center}
+\markboth{\S~2}{\S~2}
+\begin{center}A survey of the whole course of what follows.\end{center}
+
+If, then, we ask first of all: What does one understand by philosophy?---whereby
+we are only to indicate provisionally just so much that we may know with
+certainty what it is that is to be treated, but must also at once come to
+indicate the first points to which we have to direct our attention---then we note
+that the received concept implies that philosophy is to aim at a certain
+fundamental cognition [Grunderkjendelse] serving for a deeper clarification of
+the whole of existence [Tilværelse], but that it is to form itself through
+thinking and reflection, and thus to become a cognition that is to be aware of
+its own inner groundedness and able to give an account of it. In this way, then,
+we come to let our consideration take the following course:
+
+First and foremost we take into consideration that 1) philosophy is a whole body
+of cognizing [Indbegreb af Erkjenden], and we therefore consider the nature and
+essence of cognition in general.
+
+Next we observe that, since philosophy aims at a certain deeper fundamental
+cognition that looks toward the last or innermost fundamental relations
+[Grundforhold]---yet such a cognition shows itself as philosophy only when it
+comes forward as sprung from rational cognition [Fornufterkjendelse], and
+especially only when investigation [Efterforskning] or inquiry [Randsagelse] has
+thereby been set in motion---we are hereby led to consider the endeavor of
+cognition in general in its transition from its first principal stage, the stage
+of first, immediate cognizing, to its second principal stage, the mediated but at
+the same time higher stage of cognizing called forth by the spirit of inquiry
+[Randsagelsesaand]---the stage at which cognition becomes a cognizing according
+to insight, and at the same time---since here testing must take place, an account
+must be rendered, grounds come under consideration, and groundedness is brought
+to light and made good---a cognition in force of grounds [i Kraft af Grunde];
+which then lets us see philosophy as that which 2) is a whole body of intelligent
+and rational cognizing.
+
+To this attaches, further, the observation that, since this whole body must form
+a well-connected totality [Heelhed], philosophy in its carrying-through and
+execution must become 3) a scientific cognition---whereby we are brought to
+consider science [Videnskab] and scientific character [Videnskabelighed] in
+general.
+
+But since---according to the received concept---not all scientific cognizing is
+philosophy, then, by asking ourselves what sort of science it is in which
+philosophy consists, we come to become aware that the endeavor to press through
+to the grounds cannot but lead to the forming of 4) a \emph{science} that in a
+certain \emph{all-comprehending manner} aims at ultimate grounds and an ultimate
+fundamental cognition, and that it is this above all that one has in view when
+one speaks of philosophy; and here, when the question is now raised whether it is
+the ultimate grounds and fundamental relations of all cognition, or of the whole
+of existence, that are thereby meant, it will appear that---although a twofold
+principal task [Hovedopgave] for philosophy has in this respect formed, and had
+to form---it is nevertheless in the end only 5) the ultimate grounds and
+fundamental relations of \emph{existence}, or as one is wont to say, of \emph{all
+things}, in the finding-out and cognition of which the all-comprehending
+fundamental cognition is to form, wherein philosophy consists.
+
+This determination of the concept of philosophy, handed down from ancient times,
+from which we are thus brought to set out, shows us philosophy as that which
+comes forward over against, and in a certain opposition to, the sum-total of all
+that cognizing whereby everything is given us and presents itself to us---%
+everything whose ultimate grounds and fundamental relations are now to be in
+question, and which we are accordingly prompted and called upon to gather for
+ourselves into a single overview.
+
+In its pursuit through the various principal respects or principal directions, we
+shall next see the concept of philosophy lead to a whole cycle of conceptual
+determinations, which can be developed into a whole cycle of definitions.
+
+Thereupon we shall proceed to consider philosophy in its execution. But when we
+now first take into consideration what ultimate grounds are, and how matters
+stand with our pressing toward them, the question of philosophy's foundation
+[Grundlag] and starting-point will prove to have to precede the question of the
+execution of philosophy's work---to which, then, once we have thereupon fully
+answered for ourselves the question what philosophy is, a consideration of
+philosophy's significance in the totality of existence will naturally be able to
+succeed.
+
+With this, the course we shall take is fully indicated.
+
+{\small\emph{Note.} It must be noted here at once---what will be more closely
+treated further on in its place---that alongside philosophy proper, of which alone
+there is question here, there is a whole body of sciences which, without being
+philosophy proper, are nevertheless also called philosophical, but which I, to
+distinguish them from the former (see further on, \S~11), give the name of
+explicative philosophy, and to which I here pay no regard whatever.\par}
+
+\begin{center}\rule{0.18\linewidth}{0.4pt}\end{center}
+
+%% ============================================================
+%%  INTRODUCTORY CONSIDERATIONS. ON COGNITION IN GENERAL. (§§ 3--7, pp. 7--24)
+%% ============================================================
+\grouphead{Introductory Considerations.\\[2pt]\normalsize On Cognition in General.}
+
+\begin{center}\large\S~3.\end{center}
+\markboth{\S~3}{\S~3}
+\begin{center}Philosophy is a) cognition. ---The fundamental moments of all cognition.\end{center}
+
+All cognizing aims at an \emph{is}, whereby something, in asserting itself in us,
+is posited by us as an objective [det Objective] to which we must ascribe
+validity, and which, insofar as it comes forward for us in this its validity, we
+call the true---which is then to be taken entirely as it gives itself to us, that
+is: shows itself to be.
+
+Here, then, we see an opposition [Modsætning] between a self-conscious
+subjectivity and an objectivity subsisting independently of it---one which,
+moreover, comes forward for us not only from without but also from within. But
+cognition sets in only when this opposition is so overcome that what is comes
+forward for the subjectivity too exactly as it is, so that it comes to be for
+us---that is, is posited by us to be---just as it is in itself; whereby we come,
+in the very act of living in our own individual subsistence, at the same time to
+live in the fullness of objectivity, indeed of the true.
+
+The mediating and unifying element between the true and the subjectivity---which
+latter shows itself at the same time as an individuality---is, on the side of the
+first, the determining necessity with which it asserts itself, and on the side of
+the subjectivity it is \emph{partly} the latter's becoming-determined and the
+coming-to-consciousness that thereby sets in, which may be called a receiving
+(\textit{scimus, qvia accepimus}), \emph{partly} the individual life's own doing
+that answers to that becoming-determined. ---But this last is again partly one
+that aims merely at a directing of the mind [Sindshenvendelse], partly one that
+aims at inner subjective re-presentation and objectification. In the first we see
+a subjective reaction and response, called forth by the awakening power of the
+determining influence, that aims merely to make the reception deeper and
+fuller---both through an accompanying devotion and through a supervening
+recollection---as a care that the true may, in all its points and relations, come
+to its rightful full power in us, so that in each and all we may be determined
+wholly in accordance with the true's own bearing. In the subjective
+re-presentation and objectification, by contrast, we see a productivity springing
+from the individual life itself, which has its inner ground and mode of activity
+within itself, and now, as a producing doing, brings forth and constitutes within
+the subjective self-consciousness the inner presentation, in and through which the
+true comes to be taken up into the subjective life. (And here, properly, it is
+first said: \textit{scimus, qvia facimus}. ---For the rest I refer here to my work
+\textit{Om Erkjend.\ og Granskn.}, \S\S~1--3, as well as to my \textit{Psychologie}.)
+But what makes it that in our own productivity we nonetheless have, not something
+merely subjective, but---by means of and through this merely subjective---the true
+itself, is the power with which the true so determines and governs the subjective
+life that creates and forms the representation, that it thereby at the same time
+presents itself as the valid for the self-conscious beholding.
+
+{\small\emph{Note~1.} When we here speak of an ``is,'' we see here not only an
+opposition between an ``is'' and an ``is-not,'' but also an opposition between an
+``is'' and a ``shows itself'' or ``seems.'' Hereupon one may at once ask whether
+this ``seems'' too must not be said to be, and conversely, whether an ``is'' can
+ever be anything other than a ``shows itself.'' Here it would be a matter of
+asking what that ``is'' really means; and when we then observe that we can in
+general have to do only with a being insofar as it asserts itself, but that now
+every seeming too asserts itself, then the question is whether there is here a
+differing self-assertion, and on what such difference rests---whereby a difference
+between a merely momentary and subjective and a more constant and objective
+self-assertion may perhaps be assumed, and within the latter there may again be
+distinguished a) a merely sporadic, b) a merely microcosmic, c) a macrocosmic
+validity, and only the last is to be acknowledged as the properly true one in the
+last instance. But here the consideration would arise that all apparent, all
+sporadic, all microcosmic self-assertion must in the end be grounded in the
+macrocosmic order of things, so that here it is to be noted that all that other
+self-assertion is seen in its true light---that is, in its proper being---only by
+being seen in its emergence from, and reducibility to, the macrocosmic order of
+things. ---But all the considerations that might thus be called forth by
+reflection on that ``is'' do not belong here, but to the fundamental
+considerations of speculative philosophy itself. ---This much is certain: that
+throughout all our striving for cognition, the opposition between an ``is'' and a
+``seems''---an ``in itself'' and a ``not in itself''---and along with it the
+opposition between an objective and a subjective, so asserts itself that in the
+whole course of our cognizing, as in the whole of the rest of our life bound up
+with it, we cannot withdraw ourselves from it. And to this we hold ourselves
+here, where we have merely to expound the nature of cognition as it gives itself
+to us, and where we take without further ado the existence of a cognizing, with
+all the moments therein, as given---just as we take the existence of a philosophy
+as given---without entering here into the question of the proper reality of all
+cognition and all philosophy, which it belongs to speculative philosophy itself
+to decide. ---The concept of cognition we have here given has plainly---this is
+still to be noted---validity even for one who would deny all our cognizing any
+true reality; for such a one too must nonetheless have a concept of cognition that
+he lays at the foundation, and it can only be the one given here; and one who
+would ascribe to all our cognizing only a certain subjective validity must still
+admit that cognition rests on the agreement of our representing with something
+that takes on the character of an objective.\par}
+
+{\small\emph{Note~2.} As an ``is'' forms itself, intelligence at once intervenes,
+and a so-called category---or better, an a priori fundamental determination---%
+asserts itself. Herewith cognition too at once comes forward as that which issues
+in a judging, whereby a something (as subject) comes forward as that which is
+something definite (the fundamental determination of whatness), and this
+what-it-is comes forward as an other, which is nonetheless, by the judging itself,
+made one with the former (as predicate). This fundamental nature of judging is
+expressed in the so-called principle of identity.\par}
+
+{\small\emph{Note~3.} The question arising here---how that productivity, having
+its inner ground and mode of activity, and hence also the regulative principle for
+it, within itself, nonetheless comes to present a real objective---is of
+speculative nature, and finds for us its answer in the Idea of a
+\textit{harmonia originaria} between individuality and totality. The determining
+influence of the objective is indeed only an eliciting one, since it is the
+individual life itself that, by its own activity within the individuality's circle
+of consciousness, brings about that whereby the objective is to become the
+cognized. But just as the whole individuality first comes forth at all through the
+total course of things, and becomes, in its whole existence, as that course brings
+it about, so too its whole organization---both in inner, psychic, and in outer
+respects---is constituted in such a way, answering to the totality, that every
+influence coming from the totality, whether it come from without or from the inner
+universal, calls forth its own determinate corresponding activity in the
+individual organization, or in the microcosm, and this so that it now, according
+to the latter's own fundamental nature, leads precisely to such a certain
+determinate production that just that determinate objective is thereby represented
+by us. So that, although we constantly behold objects in our own soul, we
+nonetheless behold the actual objects as they are in themselves, because our inner
+representations become images of them, or counter-images to them, inasmuch as our
+inner life of consciousness---according to that inner harmony of its with the
+totality, when it (be it noted) is in its normal course---must each time bring
+forth, out of its own inner working, precisely that nerve-action, with
+corresponding representation-action, which produces just that representation which
+answers to the object. The individual organism, which contains within itself the
+real possibility of all possible representation-productions, is as it were
+calculated to work, at every point---that is, in every respect---in such accord or
+concordance with every influence coming from the side of the total, that the
+former each time produces precisely what the latter aims to call forth (as when an
+instrument, according to its own entire construction, renders---though in its own
+individual way---precisely the tone that is struck on another). We feel ourselves,
+however, in this not as related to mere counter-images, but as related to actual
+objects, because we here constantly feel our organism subjected to an affection
+which, coming from something other than ourselves, is what calls forth and compels
+that action and production of our own soul---so that the affection of our
+individual organism, or microcosm, distinguishes for us sensation from mere
+representation.\par}
+
+\begin{center}\large\S~4.\end{center}
+\markboth{\S~4}{\S~4}
+\begin{center}Philosophy is b) intelligent and rational cognizing. ---The fundamental
+moments of cognition in their appearance as such. ---Cognition as intelligent.\end{center}
+
+The individual life of consciousness, determined by the power of the objective,
+shows itself, insofar as it comes forward over against the objective, as that
+which is in itself free, carrying with it an inexhaustible possibility of acting
+in other ways than the way which the determining necessity each time brings with
+it. The necessity thus refers here to a freedom, and has such a freedom for its
+object, since it is precisely the in-itself-free (the in-itself-free imagination
+and reflection) that is bound by the necessity; and only thereby does cognition
+acquire the character of a cognizing, since only thereby does it show itself as an
+ascription of validity [Gyldighedstillæggelse]. [The true, too, comes forward as
+the valid and as that which is cognized in its validity only to the same degree as
+this free element, coming forward as such, then shows itself to be that which is
+determined and bound.]
+
+But in the first natural cognizing, which forms itself of its own accord, and in
+which we on the whole comport ourselves as natural beings (cf.\ my
+\textit{Psych., ny Udarb.}, \S~26), the opposition between the objective and the
+subjectivity, though it may show itself in particular cases, does not come forward
+in such a way that it wholly asserts itself as such. Cognition finds itself then,
+despite all the mediating element lying within it, at a first stage of immediacy,
+and the moments of cognition, though certainly present, are so lost in the
+cognizing as a whole that they do not come forward as such. But then neither does
+the true come forward for us in \emph{its truth}, nor does it come to assert
+itself by its formally acknowledged validity.
+
+In order for the true to attain such a higher governance, the individual life of
+consciousness lying on the side of the subjectivity must first come wholly forth
+into its freedom. And to this, too, the striving for cognition leads in its
+advance, in that we---whether by some other interest, or by mere desire to know
+[Videdrivt] and the higher life working itself forth through it---are moved to go
+beyond the immediately given, to seek other and more: either merely a) by looking
+further about us in the sphere opened to us, whereby not only the directing of the
+mind, that is, attention, becomes free, but also, as expectation sets in, the
+representation begins to find itself unbound; or else b) by asking after other and
+more than what is given in that sphere, because through it we find ourselves
+awakened to seek something such as that to which the given points---so that a
+spirit of inquiry [Randsagelsesaand] asserts itself, and scrutiny [Granskning] or
+investigation [Efterforskning] comes forth, and now not only the representation,
+the imagination, but also the pursuit of relations and connections lying within
+it, or reflection, comes forward as such. ---But the new that is now in this way
+formally sought is sought at the same time as the valid, and as answering to the
+investigation in such a way that that questioning can find itself satisfied;
+whereby one strives after a result by which the representing and pursuing that has
+become free---or has stepped forth into its freedom---can again be sufficiently
+determined and bound, with a necessity that is now also sought, and which, when
+found, will come to come forward as such.
+
+But the necessity---together with the being-governed by, and being-at-home in, the
+power of the objective---that sets in in this way has then a different and freer
+character than that first immediate necessity. It now comes forward as necessity
+of understanding and reason [Forstands- og Fornuftnødvendighed], and we ourselves
+now show ourselves as beings of reason who ascribe validity because we acknowledge
+according to an express admission, assent, and approval grounded in insight;
+whereby the acknowledgment, or ascription of validity, too comes---stepping forth
+into its freedom---to show itself as such. For although at first it may be only new
+objects, of the same kind as those given in an immediate way, that are thus sought
+under a merely tracking observation, they must now not only show themselves to us
+as the ones we sought, but we must now also be assured that they are the right
+ones, and that we now objectify them to ourselves rightly, so that nothing else
+presents itself to us and is posited by us than the in-itself-valid, or that which
+\emph{ought} to be posited. ---But this then naturally has such a retroactive
+effect on what was earlier immediately assumed that it too can be drawn into the
+same consideration, so that \emph{all} cognizing can become the object of a
+question as to its validity.
+
+Cognition will in this way become one that we ourselves confirm in ourselves, in
+that we confirm ourselves in it, so that now the assurance too comes to show itself
+as such, and indeed as a potentiated assurance, or as an assurance of whose
+validity we are assured. ---But certainly the uncertainty lying in the questioning
+may here too come forward in such a way that something doubting, dubitative, may
+set in, which is however overcome when a result is attained that becomes
+sufficiently satisfying.
+
+Here, then, there emerges a properly mediated cognizing---mediated, namely, by
+thinking, and resting on thinking and the satisfaction of thinking---an intelligent
+cognizing, in the formation of which the fundamental demands originally lying in
+the pursuit of connection and relation that strives toward cognition, that is, in
+thinking itself (in the intelligence in the subject), are so in motion that it is
+in accordance with their satisfaction that insight, approval, and acknowledgment
+set in.
+
+\begin{center}\large\S~5.\end{center}
+\markboth{\S~5}{\S~5}
+% [text to be added: pp. 15--20 (§ 5): Fortsættelse. Hvorpaa den intelligente Erkjenden gaaer ud.]
+
+\begin{center}\large\S~6.\end{center}
+\markboth{\S~6}{\S~6}
+% [text to be added: p. 21 (§ 6): Erkjendelsen som rational, henarbeidende til et sidste Grundlag.]
+
+\begin{center}\large\S~7.\end{center}
+\markboth{\S~7}{\S~7}
+% [text to be added: pp. 22--24 (§ 7): Philosophie er c) videnskabelig Erkjendelse. Om Videnskab og Videnskabelighed i Almindelighed.]
+
+\begin{center}\rule{0.18\linewidth}{0.4pt}\end{center}
+
+%% ============================================================
+%%  THE PROPAEDEUTIC CONCEPT OF PHILOSOPHY AND ITS EXPOSITION. (§§ 8--14, pp. 25--58)
+%% ============================================================
+\grouphead{The Propaedeutic Concept of Philosophy and Its Exposition.}
+
+\begin{center}\large\S~8.\end{center}
+\markboth{\S~8}{\S~8}
+% [text to be added: pp. 25--26 (§ 8): Philosophie gaaer d) ud paa en altomfattende Grunderkjendelse. Subjectiv Hovedopgave.]
+
+\begin{center}\large\S~9.\end{center}
+\markboth{\S~9}{\S~9}
+% [text to be added: p. 27 (§ 9): Objectiv Hovedopgave. --- Philosophie gaaer e) ud paa Tilværelsens sidste Grunde.]
+
+\begin{center}\large\S~10.\end{center}
+\markboth{\S~10}{\S~10}
+% [text to be added: pp. 28--32 (§ 10): Propædeutisk Definition paa Philosophie.]
+
+\begin{center}\large\S~11.\end{center}
+\markboth{\S~11}{\S~11}
+% [text to be added: pp. 33--41 (§ 11): Philosophien træder det ellers Givne imøde. --- Overblik over Indbegrebet af alt dette.]
+
+\begin{center}\large\S~12.\end{center}
+\markboth{\S~12}{\S~12}
+% [text to be added: p. 42 (§ 12): Exposition af det givne Begreb om Philosophie: tre Hovedsynspuncter herved.]
+
+\begin{center}\large\S~13, a.\end{center}
+\markboth{\S~13a}{\S~13a}
+% [text to be added: pp. 42--46 (§ 13, a): Exposition af Begrebet Philosophie i første Hovedhenseende.]
+
+\begin{center}\large\S~13, b.\end{center}
+\markboth{\S~13b}{\S~13b}
+% [text to be added: pp. 47--56 (§ 13, b): Begrebets Exposition i anden Hovedhenseende.]
+
+\begin{center}\large\S~14.\end{center}
+\markboth{\S~14}{\S~14}
+% [text to be added: pp. 56--58 (§ 14): Begrebets Exposition i tredie Hovedhenseende.]
+
+%% ============================================================
+%%  THE FOUNDATION OF PHILOSOPHY AND ITS WORK. (§§ 15--19, pp. 59--80)
+%% ============================================================
+\grouphead{The Foundation of Philosophy and Its Work.}
+
+\begin{center}\large\S~15.\end{center}
+\markboth{\S~15}{\S~15}
+% [text to be added: pp. 59--62 (§ 15): Den philosophiske Grundidee.]
+
+\begin{center}\large\S~16.\end{center}
+\markboth{\S~16}{\S~16}
+% [text to be added: pp. 63--66 (§ 16): Hvori den philosophiske Grundidee har sit Grundlag.]
+
+\begin{center}\large\S~17.\end{center}
+\markboth{\S~17}{\S~17}
+% [text to be added: pp. 66--67 (§ 17): Hvorledes Philosophie kommer i Stand. --- a) Explication i speculativ Tendents.]
+
+\begin{center}\large\S~18.\end{center}
+\markboth{\S~18}{\S~18}
+% [text to be added: pp. 67--71 (§ 18): b) Speculation og Dialektik i væsentlig Eenhed.]
+
+\begin{center}\large\S~19.\end{center}
+\markboth{\S~19}{\S~19}
+% [text to be added: pp. 71--80 (§ 19): Philosophiens Udtræden i c) et philosophiskt System.]
+
+%% ============================================================
+%%  THE FULL DETERMINATION OF THE CONCEPT OF PHILOSOPHY. (§ 20, p. 81)
+%% ============================================================
+\grouphead{The Full Determination of the Concept of Philosophy.}
+
+\begin{center}\large\S~20.\end{center}
+\markboth{\S~20}{\S~20}
+% [text to be added: p. 81 (§ 20): Endelig Definition paa Philosophie.]
+
+%% ============================================================
+%%  PHILOSOPHY AS A MEMBER AND MOMENT IN THE WHOLE SPIRITUAL LIFE. (§ 21, pp. 82--86)
+%% ============================================================
+\grouphead{Philosophy as a Member and Moment in the Whole Spiritual Life.}
+
+\begin{center}\large\S~21.\end{center}
+\markboth{\S~21}{\S~21}
+% [text to be added: pp. 82--86 (§ 21): Philosophie paa lige Linie med det Empiriske og det Suprarationale, --- med Poesie, Moral og Religion.]
+
+%% ============================================================
+%%  RETTELSER (errata leaf). The Danish errata correct only the ORIGINAL's
+%%  orthography, so they are meaningless in English. Per the erkjendelse policy,
+%%  render a one-line translator's note here at finish (or omit). Decide at finish.
+%% ============================================================
+% [text to be added: Rettelser -- translator's note (see TRANSLATION-NOTES finish checklist)]
+
+\end{document}
