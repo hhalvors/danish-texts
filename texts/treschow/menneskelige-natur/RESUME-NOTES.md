@@ -23,9 +23,14 @@ Companions in this collection: `../enslige-ting/` (1810 essay, complete),
 - Orthography uses **ø**. Note `Siel`/`Sielen` beside `Siæl` (both occur —
   transcribe as printed), `Gienstand`, `Bevidsthed`, `Noümen` (with diaeresis),
   `Sands` = sense, `indvortes`/`udvortes` = inner/outer.
-- §§ are numbered **continuously through the whole book** (1., 2., 3., …), set
-  inline at the head of a paragraph, not as display headings. Transcribe them as
-  `8.~\emph{...}` etc., matching the existing text.
+- ⚠ **§-numbering RESTARTS at each Hovedstykke.** The Indledning has §§ 1–6;
+  the 1ste Hovedstykke begins again at § 1 (p. 11). So "§ 8" in this file means
+  *1ste Hovedstykke § 8* (p. 16), not the eighth § of the book. Check which
+  Hovedstykke you are in before citing a §. They are set inline at the head of a
+  paragraph, not as display headings; transcribe as `8.~\emph{...}`.
+- The chapter heading on p. 11 reads **"1ste Hovedstykke"** and "især fra **den**
+  aandelige Side", where the Indhold has "dets". Headings are transcribed as
+  printed on the page, not as given in the Indhold.
 
 ## Structure (from the Indhold, printed pp. XV–XVI = scan 17–18)
 
@@ -82,19 +87,17 @@ grep -o 'Output written.*' l.txt; grep -ic 'not set up\|missing character' l.txt
 Expect 0 char-warnings, 0 errors.
 
 ## STATE
-- **DONE (image-verified, compiles 0/0):**
-  - **Indledning COMPLETE, printed pp. 1–10** (§§ 1–6, ending with the closing
-    ornament on p. 10)
-  - Første Hovedstykke, **printed pp. 16–21** (end of § 7 through § 11 opening)
-- **NEXT — printed pp. 11–15** (scan 29–33), the opening of the Første
-  Hovedstykke. §§ 7 and 8 are already in hand from p. 16, so this batch supplies
-  the missing § 7 opening and whatever §§ fall on 11–15 — note the numbering
-  jumps from § 6 (p. 5) to § 8 (p. 16), so § 7 spans pp. 11–15. Closing this
-  gap makes pp. 1–27 continuous.
-- **THEN — printed pp. 22–27**, finishing §§ 11–14 and the Første Hovedstykke's
-  argument, ending "Mennesket er altsaa i sin individuelle Grundform og som Idee
-  eller Noümen uforgængeligt."
-- **THEN** the Fortale (roman I–VI+), then onward through the Hovedstykker.
+- **DONE (image-verified, compiles 0/0, 10 pp.):**
+  - **Indledning COMPLETE, printed pp. 1–10** (§§ 1–6)
+  - **1ste Hovedstykke, printed pp. 11–21** (§§ 1–11 opening)
+  - **pp. 1–21 are now CONTINUOUS** — verified, no gaps in the page-marker
+    sequence.
+- **NEXT — printed pp. 22–27** (scan 40–45), finishing the 1ste Hovedstykke's
+  argument: rest of § 11, then §§ 12–14, ending "Mennesket er altsaa i sin
+  individuelle Grundform og som Idee eller Noümen uforgængeligt." Resume at the
+  foot of p. 21, after "…f. Ex. i den første Sand-".
+- **THEN — printed pp. 28–34**, to the end of the 1ste Hovedstykke.
+- **THEN** the Fortale (roman I–VI+), then the 2det Hovedstykke onward.
 - **Translation:** hold until the Danish of a whole Hovedstykke is complete, then
   translate it as a unit (mirroring 1:1), rather than interleaving page by page.
   Terminology per `../enslige-ting/RESUME-NOTES.md`, plus for this book:
@@ -106,6 +109,24 @@ Expect 0 char-warnings, 0 errors.
   `menneskelige-natur`, with the § 2 / § 11 / p. 27 material recorded.
 
 ## Notable so far
+- **1ste Hovedstykke § 1 (p. 11)** states the identity thesis outright, and more
+  sharply than the later p. 20 formulation: "Efter Identitets Systemets
+  Grundsætninger kan Mennesket vel betragtes som et sammensat Væsen; men ei som
+  sammensat af Siel og Legeme; thi begge ere kun **modsatte Sider af det
+  samme**: saavidt det nemlig baade kan være Gienstand for den indvortes og
+  udvortes Sands." Body and soul are opposite *sides*, individuated by which
+  sense can take them as object.
+- **§ 2 (p. 12)** ties the book to the 1810 essay by name: the Grundform's
+  development in the sense-world answers to what in a higher order of things is
+  called an Idea, and "I denne Grundformens og Ideens Uforanderlighed bestaaer
+  hvert Menneskes Individualitet."
+- **§ 7 (p. 15)** dissolves the mind–body problem rather than solving it: "Om
+  Muligheden af en reel Forbindelse mellem Siel og Legeme kan her intet
+  Spørgsmaal være; thi i sig selv ere de jo den samme Ting." What remains is
+  only the easier question how a finer and a coarser organisation are united.
+- **§ 6 (p. 15)** anticipates the § 11 argument: the unity and indivisibility of
+  consciousness gives "en langt fastere Middelpunct end nogen, der udvortes
+  lader sig anskue" — the inner access yields a centre the outer never could.
 - **§ 2 (p. 2)** already sets up the two-sidedness: the human being "kan
   betragtes fra en dobbelt Side, nemlig en legemlig og aandelig," and taking
   either exclusively makes knowledge one-sided. He asks whether there is a
