@@ -87,19 +87,20 @@ grep -o 'Output written.*' l.txt; grep -ic 'not set up\|missing character' l.txt
 Expect 0 char-warnings, 0 errors.
 
 ## STATE
-- **DONE (image-verified, compiles 0/0, 44 pp., 187 emph):**
+- **DONE (image-verified, compiles 0/0, 59 pp., 251 emph):**
   - **Indledning COMPLETE, printed pp. 1–10** (§§ 1–6)
   - **1ste Hovedstykke COMPLETE, printed pp. 11–34** (§§ 1–18)
   - **2det Hovedstykke, 1ste Afdeling COMPLETE, printed pp. 34–60**
     (§§ 1–16, with § 6 skipped by the print — see below)
   - **2den Afdeling COMPLETE, printed pp. 60–90** (§§ 1–16)
-  - **3die Afdeling begun: printed p. 90** (§ 1)
-  - **pp. 1–90 are CONTINUOUS** — verified, no gaps in the page-marker sequence.
-    **Half the 2det Hovedstykke is now done** (it runs to p. 188).
-- **NEXT — printed pp. 91–100** (scan 109–118), continuing the 3die Afdeling.
-  Resume at the foot of p. 90, mid-§ 1, after "…at Fornemmelser kan fornyes, uden
-  at nogen virkelig Gien" — a `%`-joined word-stem, so the next batch opens with
-  the remainder of that word (check scan 109) with **no space**.
+  - **3die Afdeling: printed pp. 90–120** (§§ 1–14)
+  - **pp. 1–120 are CONTINUOUS** — verified, no gaps in the page-marker sequence.
+    Nearly two thirds of the 2det Hovedstykke is done (it runs to p. 188).
+- **NEXT — printed pp. 121–130** (scan 139–148), continuing the 3die Afdeling.
+  Resume at the foot of p. 120, mid-§ 14, at the split word "\emph{Themi}" —
+  p. 121 opens with "…stocles" and the Sperrsatz runs on. **Join the two halves
+  into a single `\emph{Themistocles}`** and delete the placeholder comment
+  currently sitting after it.
 - **THEN** the rest of the 3die Afdeling (to p. 146) and the 4de (pp. 146–188).
 - The **Fortale** (roman I–VI+) is still untranscribed; do it at any convenient
   point — it is short and self-contained.
@@ -146,6 +147,162 @@ Also: an edit once **swallowed the `\end{document}`**, producing a bare
 `grep -c '\end{document}' transcription.tex` first.
 
 ## Notable so far
+- **§§ 9–14 (pp. 111–120) finish the treatment of memory**, and the tone shifts:
+  much of this is practical pedagogy. Worth knowing what is here rather than
+  mining it for the paper.
+- ⚑ **§ 9 (p. 111): forgetting is a moral matter, not only a physical one.**
+  "\emph{Glemsomhed er en Mangel af Erindringsevne, ei af Hukommelse}" — the
+  faculty may be intact — and then: "Vi glemme hvad der ei synes os vigtigt nok.
+  Hvo der glemmer noget, som Pligt og Ære burde giøre ham kiert, kan derfor ei
+  undskyldes." Hence punishing children *and adults* for forgetting is
+  intelligible, since fear then binds the thought. Only where neither fear nor
+  hope can bind the thoughts is the cause "blot physisk" — that is
+  \emph{Sandsesløshed}.
+- **§ 10 (p. 112) distinguishes Sag- from Stedhukommelse**, i.e. memory for
+  connections of ground and consequence versus memory for merely contingent
+  likeness or contiguity, with *Local-Hukommelse* a species of the latter. "Efter
+  Dr. Gall har enhver af disse endog et eget Organ" — reported, not endorsed, and
+  Treschow's own point is the dissociation: the man who can retain a chain of
+  inferences at one reading may not manage a few vocabulary items, and those with
+  a memory like Simonides or Mithridates "lære maaskee aldrig nogen grundig
+  Videnskab." A clean statement of what we would call a double dissociation.
+- **§§ 11–12 (pp. 113–117): the four components of good memory** — Lethed to
+  receive, Troskab to retain, Rummelighed for many and various things, Hurtighed
+  to recall and refer each representation to its object — and then the mnemonic
+  rules. The interesting one is the **rejection of artificial mnemonics** on
+  grounds of associative structure: the ancient art rested on whole/part symbolism
+  (the house whose parts stand in a known connection), but "saa megen Kunst
+  besværer, som \emph{Qvintilian} med Rette erindrer, snarere end den letter."
+  What actually works is connecting the new to what is already fixed, and the
+  ordering of the five sub-rules is *itself* the list of association laws from
+  § 2: inherence, causal relation, likeness, part/whole, same time and place.
+  So the mnemonic advice is derived from the theory rather than tacked on.
+- ⚑ **And a warning that belongs in the paper's vicinity** (p. 116): whichever
+  order one uses, "bør man vogte sig for, at ei Tildragelsernes væsentlige
+  Forbindelse tilsidesettes for den tilfældige af Tid og Sted." Essential
+  connection versus accidental connection, as a norm on how to organise
+  knowledge. Compare the *egentlige/uegentlige* kinds of *Almindelig Logik* § 30:
+  the same distinction, now as advice to the historian choosing between the
+  synchronistic and the ethnographic method. Treschow does have a working
+  essential/accidental distinction; what he denies is that it individuates a
+  privileged class of properties.
+- **Two cultural details worth keeping.** p. 115: the Hebrew beth is taught to
+  children by its resemblance to a house open at the front. p. 117: Catholic
+  rosaries and "de americanske Vildes Wampooner eller Skielsnorer med adskillige
+  Farver" are treated as external signs serving the same mnemonic function — wampum
+  as writing.
+- **§ 14 (p. 120) makes memory the condition of every other faculty**: without it
+  all we know "vilde være en indelukt Skat, som vi ikke kunde bruge"; the
+  understanding needs it to compare, reason to survey the whole chain of causes,
+  productive imagination to have any stock to work on, and even judgement — "som
+  man mest pleier at adskille fra Hukommelsen" — cannot do without it. The roll of
+  great memories is Aristotle, Leibniz, **Kant**, then the two Scaligers,
+  Salmasius, Grotius, and "blandt vore Landsmænd" Hans Gram.
+- ⚑ **§§ 4–5 (pp. 100–105): herskende Forestillinger, and this is where Treschow
+  gets closest to a *theory of what makes a classification stick*.** A
+  representation is *levende* not when it violently stirs the senses — "thi da
+  ere de kun \emph{stærke}" (p. 101) — but when it is fit to arouse feelings of a
+  different kind from those the impression itself can produce. It becomes
+  *herskende* when repeated and deeply impressed, and above all when it is
+  "sammensat af mange Dele, men formedelst disse tillige associeret med saa mange
+  andre" (p. 102). Then the model: think of the whole system of impressions as
+  divided into smaller ones, with the Hovedbegreb "som det herskende" occupying
+  the centre and the rest the circumference, "hvert i sin Orden", fastened both
+  to it and to each other. He is candid that this "Skyggerids" may give no real
+  insight into the matter, only a picture for the imagination "paa hvis
+  Berigtigelse man siden maa arbeide."
+  **The relevance: a dominant concept earns its centrality by its associative
+  connectivity, not by carving nature. That is a rival to naturalness as a
+  primitive — closer to a network-centrality story than to Lewis.**
+- **p. 103 pushes it further, into constitutive luck.** Thousands read and saw
+  what Cæsar and Themistocles did without being equally inflamed; the same
+  representation "associerer sig ei ligedan hos alle" — in some minds it drags
+  every other into its vortex, in others certain concepts lie "aldeles ensomme og
+  uvirksomme." And every innate talent demands matter and nourishment from all
+  the rest, so the thinking power "har intet andet at bestille end at bearbeide
+  dem efter et saa indskrænket Øiemed."
+- **§ 5 (pp. 104–106) fixes the vocabulary of memory.** Persisting after-effects
+  (the sun's image, the ringing ear, the echo) are *efterklingende* and must not
+  be confused with *Spor*; representations revived from traces are
+  \emph{Indbildninger} and the faculty \emph{Indbildningskraft}, which is either
+  \emph{reproductiv} (mere renewal) or \emph{productiv} (forming new
+  representations by separation and combination, and deepening the traces).
+- **§ 6 (pp. 106–108): imagination is *anskuende* only.** Like sensibility it
+  confines itself to "Gienstandens Materie og udvortes Form, uden at agte paa dens
+  indvortes Væsen eller virkelige Forhold og Forbindelser" — so imagination
+  cannot reach the real relations, which is what § 13 of Afd. 1 (p. 53) reserved
+  to the *metaphysiske Form* of a Begreb. The division of labour is consistent.
+  Sight supplies the most vivid Anskuelser and the most durable traces, which is
+  why the faculty is named for it.
+- **§ 7 (p. 108) separates recall from recognition**, and the aside is memorable:
+  memory in the first sense is "ligesom den Riges Forraadskamre, hvori der findes
+  mange Ting, han selv ikke veed af." Hence the ancient poets' belief in
+  inspiration — they were not conscious of having had the idea before, nor of
+  having just produced it by reflection — and hence, drily, "De fleste
+  Skribentere laane Andres Tanker uden selv at vide det, især naar de ikke
+  excerpere."
+- **⚑ Two more author's cross-references, both resolvable this time.** p. 104 has
+  "§.~1" (printed "§. I."), pointing back to § 1 of the same Afdeling, p. 90; and
+  **p. 110 has "S.~2, C.~e."** = Stykke 2, division C, item e — the contiguity law
+  at p. 96. So the book uses *three* reference formats: Hovedstykke–Afdeling–§
+  (roman, arabic, arabic) for distant references, "§. N" within an Afdeling, and
+  "S. N, C. e" down to a lettered item. Worth normalising in the translation's
+  apparatus rather than reproducing all three.
+- **p. 107 cites Croesus and Solon** (both in Sperrsatz, spelled "Croisos" and
+  "Solons") for the delayed comprehension of a remark — Croesus grasping Solon's
+  words only on the pyre.
+- ⚑ **§ 2 (pp. 92–100) is a full theory of the association of ideas**, and the
+  organising distinction is the one worth having: "Denne \emph{Forbindelse er}
+  deels \emph{logisk} deels \emph{physisk}." The logical connection is "blot
+  ideal og frembragt ved vor egen Virksomhed eller Tænkekraft"; the physical is
+  "en Følge af vor passive Natur og uafhængig af den fri Villie", and it is the
+  latter alone that is properly called \emph{Association} (p. 92). So the
+  ideal/real distinction of the 1810 essay is here doing work *inside* the theory
+  of mind: our groupings come in two kinds, one of them our own doing and one not.
+- **The laws of association (C, pp. 95–97) are read off the table of categories**
+  — "de mange Slags saavel naturlige som tilfældige Forhold, der efter
+  Kategorierens Tavle kan være mellem Ting eller Forestillinger." Six are given:
+  (a) thing/metaphysical subject ↔ its properties; (b) cause → effect, ground →
+  consequence, with the asymmetry noted that ascent is easier than descent
+  ("Virkningen fører derfor lettere til Aarsagen, den opstigende Røg til at tænke
+  paa en Lue"); (c) like and contrasting representations, where opposites are as
+  close in thought "som Sirkelens første og sidste Punct"; (d) whole ↔ parts,
+  with the observation that it makes no difference whether whole and parts are
+  ideal (several things of one kind) or real (body and limbs); (e) contiguity in
+  time and place, *in the original order* — hence we can recite a passage
+  forwards but not backwards; (f) transfer of one object's properties to another
+  by Vexelvirkning.
+- **(f) is turned immediately into a debunking explanation** (p. 97): the origin
+  of many a foolish and superstitious opinion "f.~Ex.\ om Helgenes Reliqvier,
+  Adelskab, Sympathie" — and at p. 100, punishing the malefactor *in effigie* and
+  the working of witchcraft are put down to the same associative sympathy. Note
+  he lists nobility alongside relics and magic.
+- ⚑ **D (p. 97): association is the condition of language and of thought at all.**
+  Without it neither could representations of absent things be aroused nor could
+  any thinking take place; the traces would be preserved in vain. "Ligesaa lidet
+  vilde noget Sprog da være muligt. Thi af Association have Ord saavelsom andre
+  Tegn deres Betydning." Then a *typology of intellects by dominant associative
+  law*, which is a nice piece of psychology: if likeness is the chief rule, the
+  result is wit or acuteness (Vid, Skarpsindighed); if the causal relation, depth
+  (Dybsindighed); if mere contiguity in time and place, superficiality. Slow plus
+  superficial gives stupidity.
+- **E (p. 98) keeps the will in play without breaking the laws.** The laws are
+  "physisk nødvendige", yet the will, by way of attention, can steer and alter
+  their effects: we cannot stop the stream, but we can dam it so it does not carry
+  us off, and we can tighten some bonds and loosen others. Compare the § 15
+  attention taxonomy at pp. 55–60 — this is the same compatibilism applied to
+  thought's succession.
+- **Home and Homerus** are the two proper names in Sperrsatz here (pp. 96, 99).
+  "Home" is Henry Home, Lord Kames — cited for the observation that love and
+  hatred transfer from parents to children but not as readily in reverse. Worth
+  noting for the Scottish-Enlightenment side of Treschow's reading.
+- **⚠ A third author's cross-reference, but a corrupt one (p. 91).** The print has
+  "I, 2, I3", where the last numeral is plainly 13 set with the antiqua I. The
+  first element is therefore ambiguous too, and the reference does not resolve
+  cleanly under the Hovedstykke–Afdeling–§ format used at pp. 76 and 82. Most
+  likely target is the dark sensations at II, 1, 10 (printed p. 48), or II, 2, 14
+  (p. 83). Left as printed, with the problem documented at the site — **worth
+  checking against the 1817 second edition if one exists.**
 - ⚑ **p. 81 — the Jeget passage, and it is the sharpest anti-materialist argument
   in the book.** Set in Sperrsatz across the page break: "\emph{Jeget maa være
   Foreningspuncten af alle saavel Fornemmelser som Bevægelser. Men dette er
@@ -344,6 +501,37 @@ Also: an edit once **swallowed the `\end{document}`**, producing a bare
   author's choice, and in a reading edition it just trips the eye. It is
   therefore **normalised silently to "1)" throughout**, with a comment at each
   site. Everything else that departs from modern usage is carried as printed.
+- ✎ **A Hebrew letter at p. 115.** The print sets the letter beth itself (U+05D1)
+  in "Det hebraiske ב har nogen Lighed med et Huus, der er aabent paa den
+  forreste Side." Since the edition is built with pdfLaTeX + Libertinus and has
+  no Hebrew font, the glyph is rendered **by its name**, `\emph{beth}`, with the
+  substitution documented at the site. Treschow's point depends on the *shape*,
+  so if `cjhebrew` is installed the glyph should be restored: add
+  `\usepackage{cjhebrew}` to the preamble and set `\cjRL{b}`. **Open item.**
+- ⚠ **Print slips in pp. 111–120, all carried with a `% sic`:** p. 112 "negen"
+  (for "nogen"); p. 120 "alt hvad vide" (the "vi" dropped); p. 120 "Slut=/ger"
+  for "Slutninger". Section numbers 11 and 14 are set with antiqua-I ("II.",
+  "I4.") and normalised per the policy above, as are the 1) enumerators on
+  pp. 113 and 114.
+- ⚠ **Print slips in pp. 101–110, all carried with a `% sic`:** p. 101 the
+  dittography "blive blive levende"; p. 104 "pragmagtiske" (for "pragmatiske");
+  p. 106 "Forestillngen" (missing i); p. 108 "dert" (for "deri"); p. 109 "af vi
+  ei kan erindre" (for "at"). Also **p. 106 skips 3)** — it runs 1), 2), then 4),
+  with the intended third item ("Indbildningskraften handler deels
+  uvilkaarlig… Deels handler den vilkaarlig…") standing unnumbered. Same species
+  of slip as the missing § 6 in Afd. 1. Not renumbered.
+- ✎ **The antiqua-I/1 normalisation is now doing real work.** In pp. 101–110 the
+  print sets the first enumerator with the capital I **eight** times (pp. 101,
+  102, 103, 104 ×2 incl. "§. I.", 106, 109, 110), always followed by arabic 2),
+  3). All silently normalised to "1)", per the policy above.
+- ⚠ **p. 92 prints "Forbindelse laf Sielens Virksomhed"** (for "af") and **p. 95
+  "efter Kategorierens Tavle"** (for "Kategoriernes"); both carried as printed
+  with a `% sic`.
+- ✎ **Antiqua-within-Fraktur is a script switch, not emphasis.** p. 100 sets
+  "in effigie" in antiqua roman because it is a Latin phrase; the print does this
+  for foreign words generally. Since the transcription is already in Latin type,
+  such words are rendered as ordinary text and **not** given `\emph{}`. Only
+  Sperrsatz (and antiqua *italic*) become `\emph{}`.
 - ⚠ **p. 87 prints "iutet hørte"** (turned n/u for "intet"), the same slip as
   "Meunesker" at s. 70; carried as printed with a `% sic`.
 - ⚠ **p. 72 prints "i det vi domme"** (for "dømme") and **p. 80 sets the first
