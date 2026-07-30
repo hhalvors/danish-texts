@@ -87,18 +87,20 @@ grep -o 'Output written.*' l.txt; grep -ic 'not set up\|missing character' l.txt
 Expect 0 char-warnings, 0 errors.
 
 ## STATE
-- **DONE (image-verified, compiles 0/0, 34 pp., 164 emph):**
+- **DONE (image-verified, compiles 0/0, 44 pp., 187 emph):**
   - **Indledning COMPLETE, printed pp. 1–10** (§§ 1–6)
   - **1ste Hovedstykke COMPLETE, printed pp. 11–34** (§§ 1–18)
   - **2det Hovedstykke, 1ste Afdeling COMPLETE, printed pp. 34–60**
     (§§ 1–16, with § 6 skipped by the print — see below)
-  - **2den Afdeling: printed pp. 60–70** (§§ 1–7)
-  - **pp. 1–70 are CONTINUOUS** — verified, no gaps in the page-marker sequence.
-- **NEXT — printed pp. 71–80** (scan 89–98), continuing the 2den Afdeling.
-  Resume at the foot of p. 70, mid-§ 7 (Hørelsen), after "…Ja, der gives
-  Meunesker, som uagtet deres Hørelse".
-- **THEN** pp. 81–90 to finish the 2den Afdeling, then the 3die Afdeling
-  (pp. 90–146) and 4de (pp. 146–188).
+  - **2den Afdeling COMPLETE, printed pp. 60–90** (§§ 1–16)
+  - **3die Afdeling begun: printed p. 90** (§ 1)
+  - **pp. 1–90 are CONTINUOUS** — verified, no gaps in the page-marker sequence.
+    **Half the 2det Hovedstykke is now done** (it runs to p. 188).
+- **NEXT — printed pp. 91–100** (scan 109–118), continuing the 3die Afdeling.
+  Resume at the foot of p. 90, mid-§ 1, after "…at Fornemmelser kan fornyes, uden
+  at nogen virkelig Gien" — a `%`-joined word-stem, so the next batch opens with
+  the remainder of that word (check scan 109) with **no space**.
+- **THEN** the rest of the 3die Afdeling (to p. 146) and the 4de (pp. 146–188).
 - The **Fortale** (roman I–VI+) is still untranscribed; do it at any convenient
   point — it is short and self-contained.
 
@@ -144,6 +146,110 @@ Also: an edit once **swallowed the `\end{document}`**, producing a bare
 `grep -c '\end{document}' transcription.tex` first.
 
 ## Notable so far
+- ⚑ **p. 81 — the Jeget passage, and it is the sharpest anti-materialist argument
+  in the book.** Set in Sperrsatz across the page break: "\emph{Jeget maa være
+  Foreningspuncten af alle saavel Fornemmelser som Bevægelser. Men dette er
+  tillige den Punct, fra hvilken de gaae ud.}" The argument for it is compressed
+  and clean: the Sielevæsen one means by the word *Jeg* does possess
+  Sensibilitet, but it cannot be the brain or the nerves, because "disse kan
+  forandres, men Jeget selv bestaaer: de ere mange, Jeget kun et eneste."
+  Changeability and plurality against persistence and unity. Yet we do count the
+  brain's changes as *our own* — "Jeget tilegner sig samme" — so they must become
+  ours "ved Meddelelse". Note this is *not* in tension with the § 12 parallelism:
+  the I is the point of convergence and of origin, not a third thing interacting.
+- ⚑ **§ 16 (pp. 86–90) is the epistemology of the senses, and directly useful.**
+  Thesis in Sperrsatz: "\emph{Sandseligheden lærer intet om Objecterne: den giør
+  ingen Slutninger.}" Sensations in themselves are neither correct nor incorrect,
+  since correctness requires agreement or conflict *among several*, on which the
+  understanding must judge — therefore "\emph{Sandserne kan derfor ikke
+  bedrage.}" He then takes the three ways one might mean that they do, and
+  answers each (pp. 87–90). The **first answer (p. 87) matters most for the
+  paper**: it is no business of sensibility to teach us what things are in
+  themselves, "men hvad Forhold de staae i til os og vore Nødvendigheder" — so
+  the subjectivity of sensation is not a defect to be deplored but a design one
+  should praise. And the thought-experiment that follows is a real argument, not
+  a pious remark: *suppose* the senses gave us only the Grundegenskaber, or only
+  what survives purging every subjective appearance — that sight showed only the
+  elements' passage from free to bound state, hearing only the wave-motion of
+  sound — would this world's stage not lose all the beauty that makes it
+  ravishing, and would such dissolved, faint and inert sensations be able to
+  produce the feelings that rouse us to useful activity? To demand knowledge of
+  things' inner and absolute constitution *by the senses* is "en urimelig
+  Fordring", since sensibility would thereby lose its own nature.
+  **This is a functional vindication of the manifest image against the scientific
+  one, on grounds of the work it does — worth setting directly against the
+  Lewisian preference for the elite class.**
+- **p. 88's second answer** is a nice methodological aside: if all sensations
+  stood in the best harmony, nature's secrets "neppe bleve nogen Gienstand for
+  vore Granskninger", because "Hensigten af al Forskning er at kunne forene det
+  Stridige, oplyse det Mørke, ordne det Forvirrede." Ordinary events do not
+  attract attention; the unusual, which does not agree with other experience,
+  forces us to look for grounds. Illusion is epistemically productive.
+- **p. 89 cites Pascal and Bonnet** (in Sperrsatz) as examples of otherwise
+  rational people who knew their waking visions were only images of the fancy —
+  Charles Bonnet, hence the syndrome later named for him.
+- **§ 14 (pp. 83–84) is an economy-of-attention argument** with the same shape as
+  the p. 57 passage: the stronger sensation darkens the weaker, and since "enhver
+  menneskelig Kraft er endelig og har sine bestemte Grændser: hvad den altsaa
+  vinder i en Henseende taber den i en anden", intensity is bought with extension.
+  Five benefits follow (skill acquisition, the possibility of pleasure at all,
+  the overriding of pain, the cure of mental disorder, presence of mind).
+- **A second author's cross-reference, "II, I, 9" (p. 82)** — Hovedstykke II,
+  Afd. I, § 9, printed p. 47 — again confirming the citation form. Used here to
+  send the reader back to the dark/unconscious sensations, which are what make
+  voluntary control of one's own body possible without anatomical knowledge of it.
+- **The 3die Afdeling opens (p. 90)** on memory, and the opening move is to ask
+  what a *Spor* is: taken mentally, a persisting activity or determination of the
+  inner force, "færdig at yttre sig"; taken physically, a lasting change in the
+  organism, an *Anlæg* to a certain kind of motion in a single part. The § 12
+  parallelism applied to traces.
+- ⚑ **p. 79 — "Sandselighedens første Lov", and this is the most important
+  passage in the book so far for the natural-properties project.** Set in
+  Sperrsatz, so Treschow is flagging it as the thesis: "Enhver legemlig Bevægelse
+  er forbunden med en aandelig Fornemmelse, som baade i Beskaffenhed og Størrelse
+  dertil svarer: enhver Fornemmelse ligeledes med en Bevægelse." And then the
+  crucial disclaimer in roman: "**Forholdet mellem begge er altsaa ikke
+  caussalt.** En Bevægelse kan blot frembringe en anden Bevægelse, og en
+  Fornemmelse ligeledes kun en anden." So: a strict correspondence in both
+  quality *and* magnitude, with causation explicitly denied in both directions.
+  This is the 1812 book's version of the identity claim that *Om Gud* (1831–33)
+  will make metaphysical — and it is a *parallelism*, not an interaction, which
+  is exactly what the "same reality under two irreducible modes of access"
+  reading of § 2 predicts. Note also the preceding sentence: motion and sensation
+  are "det ene Væsens Grundegenskaber", impossible to unite in a single
+  Anskuelse yet "dog uadskillelige".
+- **p. 76 contains an author's cross-reference, "II, I, 5"** — i.e. Hovedstykke
+  II, Afdeling I, § 5 (printed p. 43). This settles the citation format and
+  independently confirms that the § numbering restarts within each Afdeling.
+  Worth adopting the same form in the translation's editorial notes.
+- **§ 10 (pp. 75–77) on the *indvortes Sands*.** Two claims to flag: (i) it
+  requires an *organ* just as the outer senses do, because "kun ved dettes
+  Reaction kan Sielen tænkes som lidende" and "ingen Kraft indskrænker sig selv"
+  — so introspection is not self-transparency but a causal transaction; and (ii)
+  "Bevidsthed og indvortes Fornemmelse maa man ikke holde for det samme" (p. 77,
+  spaced) — one can undergo changes or have sensations without referring them to
+  any object or subject. Consciousness is "en Handling", sensation "en Forandring
+  af en blot passiv Evne". This is the unconscious-sensation thesis of § 10
+  (p. 48) now given its official statement.
+- **The brain is "det fælles Organ for begge Slags Sandser"** (p. 76), and
+  Treschow is pointedly cautious about localisation: we find many distinct parts
+  in the brain, but their function is not known to us as the outer sense-organs'
+  is, so "derfor tale vi kun om *en indvortes Sands*". He then complains that
+  attempted assignments of brain parts to particular faculties neither agree with
+  sound psychology nor can be established by anything better than "en hidindtil
+  meget ufuldstændig Induction" — a direct swipe at Gall, cited approvingly on
+  purely anatomical grounds at p. 61.
+- **§ 11 (pp. 77–78): the senses correct themselves, not the understanding.**
+  Knowing the moon's distance does not make it look bigger — "formaaer den dog ei
+  at omstøbe Forestillingen selv" — so when objects *are* presented at their real
+  size despite a false retinal image, it must be the senses themselves that
+  repair the error by "en nye Virksomhed". His account of the horizon illusion is
+  atmospheric (dust and vapour) rather than judgemental, and he explicitly
+  rejects the inference-from-intervening-objects explanation.
+- **§ 8 (pp. 71–74) on sight** is largely Berkeleyan in its data: distance, size,
+  figure, density and transparency are known by sight only *mediately*, by
+  comparison with touch, and the evidence offered is the newly-couched blind and
+  the behaviour of infants.
 - **2den Afdeling, §§ 1–7 (pp. 60–70): the doctrine of the senses.** The
   organising claim is that *Sands* is originally **one** and only "ligesom deler
   sig" by the constitution of objects and of organs; the division into five is
@@ -231,6 +337,19 @@ Also: an edit once **swallowed the `\end{document}`**, producing a bare
   and only modifies and "ligesom deler sig" according to the constitution of
   the objects and of the organs. Were the objects' side taken as the ground,
   there would be as many senses as there are Qvaliteter in things.
+- ✎ **EDITORIAL NORMALISATION (the one silent change in this edition).** The print
+  sets the **first** enumerator of a numbered series with the antiqua capital
+  "I)" and then continues "2)", "3)", "4)". Verified at s. 80 and s. 86. This is
+  a type-case artefact — the same sort served for I and 1 — not a compositor's or
+  author's choice, and in a reading edition it just trips the eye. It is
+  therefore **normalised silently to "1)" throughout**, with a comment at each
+  site. Everything else that departs from modern usage is carried as printed.
+- ⚠ **p. 87 prints "iutet hørte"** (turned n/u for "intet"), the same slip as
+  "Meunesker" at s. 70; carried as printed with a `% sic`.
+- ⚠ **p. 72 prints "i det vi domme"** (for "dømme") and **p. 80 sets the first
+  enumerator as the roman "I)" and the second as "2)"** — both carried as
+  printed with a `% sic`. p. 72 also has "Gebet" (the German *Gebiet*), left as
+  printed with a plain comment, not a sic — it is a period-legitimate loan.
 - ⚠ **p. 64 prints "de fleste Empiriken"** (for "Empirikerne") and **p. 70
   prints "Meunesker"** (a turned n/u for "Mennesker"); both carried as printed
   with a `% sic`.
