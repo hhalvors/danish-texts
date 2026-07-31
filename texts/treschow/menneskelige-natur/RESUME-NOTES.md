@@ -87,20 +87,20 @@ grep -o 'Output written.*' l.txt; grep -ic 'not set up\|missing character' l.txt
 Expect 0 char-warnings, 0 errors.
 
 ## STATE
-- **DONE (image-verified, compiles 0/0, 59 pp., 251 emph):**
+- **DONE (image-verified, compiles 0/0, 69 pp., 284 emph):**
   - **Indledning COMPLETE, printed pp. 1–10** (§§ 1–6)
   - **1ste Hovedstykke COMPLETE, printed pp. 11–34** (§§ 1–18)
   - **2det Hovedstykke, 1ste Afdeling COMPLETE, printed pp. 34–60**
     (§§ 1–16, with § 6 skipped by the print — see below)
   - **2den Afdeling COMPLETE, printed pp. 60–90** (§§ 1–16)
-  - **3die Afdeling: printed pp. 90–120** (§§ 1–14)
-  - **pp. 1–120 are CONTINUOUS** — verified, no gaps in the page-marker sequence.
-    Nearly two thirds of the 2det Hovedstykke is done (it runs to p. 188).
-- **NEXT — printed pp. 121–130** (scan 139–148), continuing the 3die Afdeling.
-  Resume at the foot of p. 120, mid-§ 14, at the split word "\emph{Themi}" —
-  p. 121 opens with "…stocles" and the Sperrsatz runs on. **Join the two halves
-  into a single `\emph{Themistocles}`** and delete the placeholder comment
-  currently sitting after it.
+  - **3die Afdeling: printed pp. 90–140** (§§ 1–23)
+  - **pp. 1–140 are CONTINUOUS** — verified, no gaps in the page-marker sequence.
+- **NEXT — printed pp. 141–146** (scan 159–164), which **finishes the 3die
+  Afdeling**. Resume at the foot of p. 140, mid-§ 23, after "…c) Man gribe dem
+  aldrig ligefrem an, men ved en Omvei og paa den mest umærkelige Maade, i det".
+- **THEN** the 4de Afdeling (pp. 146–188), which closes the 2det Hovedstykke;
+  after that the 3die Hovedstykke (Om Føleevnen, pp. 188–269) and the 4de (Om den
+  menneskelige Villie, pp. 270–486).
 - **THEN** the rest of the 3die Afdeling (to p. 146) and the 4de (pp. 146–188).
 - The **Fortale** (roman I–VI+) is still untranscribed; do it at any convenient
   point — it is short and self-contained.
@@ -147,6 +147,98 @@ Also: an edit once **swallowed the `\end{document}`**, producing a bare
 `grep -c '\end{document}' transcription.tex` first.
 
 ## Notable so far
+- **§§ 20–23 (pp. 130–140): sleepwalking, presentiment, prophecy and madness.**
+  Naturalistic throughout, and the method is worth noting even where the content
+  is dated — in each case Treschow takes a phenomenon the age treated as
+  supernatural and derives it from the § 18 machinery running without the usual
+  checks.
+- **§ 20 (pp. 130–133) explains sleepwalking by a *dissociation of two systems*.**
+  Sensibility and motion depend on nerve-force and muscle-force respectively;
+  these are normally proportioned, but need not be. In sleepwalkers the sense
+  organs are weak while the muscles retain strength, so the images are vivid and
+  the limbs still obey the will. The confirming contrast is elegant: in the dying
+  and the apparently dead the ratio is reversed — they can move no limb "men
+  alligevel see og høre" — and in wasting diseases muscle-force fails before the
+  senses, "hos Nattevandrere har det Modsatte Sted." No special faculty is posited.
+- **§ 21 (pp. 133–135) on *Ahnelse*.** Presentiment is not a power of foresight
+  but an inference whose premises are dark: "Heri er Slutningen alene tydelig, ei
+  Forsetningerne." A dark sensation of some imperceptible change in the body can
+  arouse the much clearer thought of approaching death — and the bodily change may
+  genuinely be a sign or a cause of it. Animals are granted the same. This is the
+  dark-sensations doctrine of Afd. 1 § 10 cashed out, and it is a good example of
+  Treschow explaining away an apparent anomaly without denying the datum.
+- **Then the debunking (pp. 134–135)**, which is briskly done: the ancients divided
+  dreams into natural and supernatural only because they could not explain why
+  some came true. Spinoza is named as deriving divination from the imagination
+  (not in Sperrsatz). Prophecies that do come true are put down to deep insight
+  into character, constitutions and historical analogy, plus luck, plus a real
+  "Talent til at giette" — with Böhme, Drabicius and Nostradamus named. Shamans'
+  ecstasies get the same treatment.
+- **§ 23 (pp. 137–140) is a clinical taxonomy of madness** built entirely out of
+  the theory of dominant representations: fixed ideas are those whose force equals
+  or exceeds that of immediate sensation and persists; \emph{Raserie} is when they
+  obliterate outer perception; \emph{Forrykthed} is when the sufferer perceives
+  normally *and knows it* but blends the two kinds of representation. Then a cross
+  classification into \emph{Total} and \emph{partial}, temporary and permanent,
+  where "Total" means the dominant representations are knit to all the others "saa
+  at man intet kan tænke eller sige uden at hine tillige komme frem." The examples
+  are the standard ones of the period (the man of glass, feet of straw, the monk
+  who takes himself for a cardinal) plus Tasso, Swift and Le Clerc from
+  overexertion, and Spinello driven mad by the devil he had painted. Treatment is
+  "deels physiske… deels psychologiske", and the psychological rules are the § 4
+  rules for weakening dominant representations, applied "aldrig ligefrem… men ved
+  en Omvei".
+- ⚑⚑ **§ 18 (p. 126) — the single most useful sentence in this stretch.** Having
+  said that imagination can revive or produce nothing except by Association,
+  Treschow adds: "Men blandt disse Regler føre nogle til vigtige, skiønne og
+  **Gienstandene selv væsentlige** Forbindelser; andre til uvigtige, heslige og
+  uvæsentlige. I første Tilfælde faaer \emph{Indbildningskraften} Navn af en
+  \emph{høiere}, i det andet \emph{af en lavere}."
+  So the associative laws are *not* all on a par: some of them track connections
+  belonging to the objects themselves, and that is what makes an imagination a
+  higher one. This is as close as Treschow comes to a naturalness constraint —
+  and note where he puts it. It is not a distinguished class of *properties* but a
+  distinguished subset of *combining rules*, graded by whether they answer to the
+  object. For the paper: this is the resource that answers the aptness objection
+  without conceding the Lewisian elite. The imagination is then described as "paa
+  en vis Maade sammensat af Sandselighed og Fornuft" — reason supplies the
+  correctness of outline, sensibility the colours.
+- **§ 15 (p. 121) qualifies "creative" hard.** The productive imagination is
+  called \emph{skabende}, but this "skal ei betyde, at den frembringer noget, som
+  hverken heelt eller stykkeviis tilforn har været til" — only that it (a)
+  enlivens, (b) composes and separates parts that were once present, (c) fits them
+  into a whole. And at p. 127: "Vi kan intet drømme uden hvad vi tilforn
+  stykkeviis have fornemmet; thi Phantasien kan i egentlig Forstand intet skabe."
+  A strict recombination theory of imagination.
+- **§ 16 (p. 122) uses "enslige" again, and in the plainest sense**: the images of
+  enthusiasm "kan snart være enslige og om virkelige Ting… snart almindelige eller
+  rene Begreber, f. Ex. Fædreland, Dyd og Ære." Singular versus general
+  representations — the 1810 vocabulary doing routine work. (Not in Sperrsatz
+  here; verified by zoom.)
+- **§ 17 (pp. 122–125): the three perfections of Phantasie** — the life of its
+  images, the ease of passing from one image to another, and \emph{Orden}. The
+  second is given a nice diagnostic function: fixation on a single vivid image is
+  a *deficit* of the first perfection, and "Extensiv Fuldkommenhed forenet med hiin
+  intensive afværger den Forrykkelse, som en eneste herskende Forestilling kan
+  foraarsage." Order is what makes genius look instinctive — it "frembringer hvad
+  der hos andre først er en sildig Frugt af langvarig Eftertanke", and one finds
+  in poets "ofte Sæden til de dybsindigst udtænkte Philosophemer."
+- **§§ 19–20 (pp. 126–130) on dreams and sleepwalking.** The mechanism is the § 18
+  one running unchecked: in sleep the active powers rest, so the passive
+  Phantasie "saa meget lettere mechanisk følge sine Love, som dens Gang af ingen
+  Selvvirksomhed forstyrres." Hence dreams combine the most unsuitable things
+  without our noticing any absurdity — "Vi ere paa engang døde og handle dog som
+  levende… herske i Lænker, og eie intet midt i den største Overflødighed."
+  Plato is invoked (in Sperrsatz) for the thought that living moderately and free
+  of passions would give us philosophical dreams.
+- **⚠ Two more cross-references, both defective.** p. 126: "Association §. 6, 3 og
+  15" — but Association is *defined* at § 2 (p. 92), so "6" is very likely an
+  error for "2". p. 130: "S. 3, Afd. 2, A, b, sammenholdt med I Afd. 10" — the most
+  complex reference in the book and not cleanly resolvable; the likely targets are
+  this Afdeling's § 2 A b (p. 93) and Afd. 1 § 10 (p. 48). Both left as printed
+  with the problem documented at the site. **The reference apparatus of this book
+  is unreliable and should be silently corrected only in the translation, with a
+  note.**
 - **§§ 9–14 (pp. 111–120) finish the treatment of memory**, and the tone shifts:
   much of this is practical pedagogy. Worth knowing what is here rather than
   mining it for the paper.
@@ -501,6 +593,17 @@ Also: an edit once **swallowed the `\end{document}`**, producing a bare
   author's choice, and in a reading edition it just trips the eye. It is
   therefore **normalised silently to "1)" throughout**, with a comment at each
   site. Everything else that departs from modern usage is carried as printed.
+- ⚠⚠ **A CORRECTED MISREADING, and a standing trap: Fraktur x vs r.** At montage
+  resolution (975 px/page) the Fraktur **x** (𝔵) is easily read as **r** (𝔯). This
+  produced a wrong reading of "Afvexlingerne" as "Afverlingerne" at p. 119 in the
+  previous batch, **now fixed**; p. 124 "afvexler" was nearly mis-set the same
+  way. **Rule going forward: any word that looks like it contains "-erl-" or
+  "-ver-" and is not a Danish word must be re-cropped at ≥300 %% before being
+  written.** Note also that nb.no's OCR is *not* a reliable arbiter here — it read
+  p. 124 correctly ("afvexler") but repeated the error at p. 119
+  ("Afverlingerne"). Zooming the image is the only check that settles it.
+  A grep sweep for words containing "verl" is now part of the per-batch
+  verification; at pp. 1–140 it returns only legitimate forms of "overlade".
 - ✎ **A Hebrew letter at p. 115.** The print sets the letter beth itself (U+05D1)
   in "Det hebraiske ב har nogen Lighed med et Huus, der er aabent paa den
   forreste Side." Since the edition is built with pdfLaTeX + Libertinus and has
