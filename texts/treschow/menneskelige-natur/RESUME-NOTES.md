@@ -87,20 +87,22 @@ grep -o 'Output written.*' l.txt; grep -ic 'not set up\|missing character' l.txt
 Expect 0 char-warnings, 0 errors.
 
 ## STATE
-- **DONE (image-verified, compiles 0/0, 69 pp., 284 emph):**
+- **DONE (image-verified, compiles 0/0, 77 pp., 338 emph):**
   - **Indledning COMPLETE, printed pp. 1–10** (§§ 1–6)
   - **1ste Hovedstykke COMPLETE, printed pp. 11–34** (§§ 1–18)
   - **2det Hovedstykke, 1ste Afdeling COMPLETE, printed pp. 34–60**
     (§§ 1–16, with § 6 skipped by the print — see below)
   - **2den Afdeling COMPLETE, printed pp. 60–90** (§§ 1–16)
-  - **3die Afdeling: printed pp. 90–140** (§§ 1–23)
-  - **pp. 1–140 are CONTINUOUS** — verified, no gaps in the page-marker sequence.
-- **NEXT — printed pp. 141–146** (scan 159–164), which **finishes the 3die
-  Afdeling**. Resume at the foot of p. 140, mid-§ 23, after "…c) Man gribe dem
-  aldrig ligefrem an, men ved en Omvei og paa den mest umærkelige Maade, i det".
-- **THEN** the 4de Afdeling (pp. 146–188), which closes the 2det Hovedstykke;
-  after that the 3die Hovedstykke (Om Føleevnen, pp. 188–269) and the 4de (Om den
-  menneskelige Villie, pp. 270–486).
+  - **3die Afdeling COMPLETE, printed pp. 90–146** (§§ 1–24, with 24 used twice)
+  - **4de Afdeling: printed pp. 146–156** (§§ 1–4)
+  - **pp. 1–156 are CONTINUOUS** — verified, no gaps in the page-marker sequence.
+- **NEXT — printed pp. 157–166** (scan 175–184), continuing the 4de Afdeling.
+  Resume at the foot of p. 156, mid-§ 4, after "…saavidt de kunde kiendes af Ord
+  eller Udtryk, og ei forud" — a `%`-joined word-stem, so the next batch opens
+  with the remainder of that word with **no space**.
+- **THEN** the rest of the 4de Afdeling (to p. 188), which closes the 2det
+  Hovedstykke; after that the 3die Hovedstykke (Om Føleevnen, pp. 188–269) and
+  the 4de (Om den menneskelige Villie, pp. 270–486).
 - **THEN** the rest of the 3die Afdeling (to p. 146) and the 4de (pp. 146–188).
 - The **Fortale** (roman I–VI+) is still untranscribed; do it at any convenient
   point — it is short and self-contained.
@@ -147,6 +149,64 @@ Also: an edit once **swallowed the `\end{document}`**, producing a bare
 `grep -c '\end{document}' transcription.tex` first.
 
 ## Notable so far
+- ⚑⚑⚑ **The 4de Afdeling (from p. 146) is on the Forstand, and pp. 148–156 are the
+  richest stretch in the book for the natural-properties paper. Four passages.**
+- **(i) p. 148 — Treschow answers the charge of excessive particularism.** He
+  reports that the newest school undervalues the understanding, in part because
+  it "kun afsondrer og deler uden at forbinde, hvorover den menneskelige Aand er
+  kommen saavidt ind i **det Enkelte og Enslige** eller Besynderlige, at den neppe
+  bliver istand til at samle det igien." His reply: such charges can be made
+  against any faculty taken alone, and "Forstandens Arbeide [bestaaer] ei alene i
+  at opløse og abstrahere, eller dele, da vi derved alene intet Begreb kunde faae,
+  men ogsaa i at **forbinde**: og denne Forbindelse samt Indsigt i Enheden af det
+  Mangfoldige…" So Treschow explicitly disowns the position that stops at the
+  singular. This is the passage to cite against the objection that his 1810 thesis
+  leaves him unable to account for general structure.
+- **(ii) p. 149 — the monist argument runs *through* analysis, not against it.**
+  "Jo flere Slags Stoffer vi paa denne Maade lære at kiende, desto tydeligere
+  bliver Enheden af en første Materie… desto mere bliver det os indlysende, at
+  Grundkraften og Grundformen kun er en eneste." And then a mathematical
+  illustration: circle and polygon, curve and straight line "ei ere saa
+  forskiellige som de synes: modsatte Ting selv smelte derved sammen." Note the
+  direction of argument — *more* science, more analysis, yields *more* monism.
+  That is the reply to the worry that Treschow's metaphysics is at odds with
+  scientific practice.
+- **(iii) pp. 149–151 — understanding is *classification*, and importance is
+  interest-relative while essence is not.** To understand a thing is to know
+  "hvad Orden eller Klasse vi skal henføre Gienstanden til, hvad Plads vi skal
+  anvise den blandt de Ting, vi ellers kiende" — "Vi forstaae ikke hvad Mosen,
+  Skimmelen og Paddehatten er, saalænge det er uvist til hvilket af de saa kaldte
+  Naturriger de bør henføres." Then the crucial distinction (p. 150): "Begrebet om
+  \emph{Vigtighed} er relativt, og har altid Hensyn til noget andet… En Tings
+  **væsentlige** Egenskaber ere uden Tvivl **for den selv** de vigtigste, men for
+  andre Ting kan de tilfældige være vigtigere. Blomsternes Lugt og Farve ere for
+  dem selv uvæsentlige, men i Lysthaver og Urtepotter tages disse fornemmelig i
+  Betragtning." **Two tiers: essence is absolute, importance is relative to a
+  purpose.**
+- **(iv) p. 151 makes it a *domain* thesis, which is the reframing the paper
+  needs.** "En grundig Naturbeskriver bestemmer Planternes Kiendemærker i
+  Natursystemet efter Kiønsdelene, men for Havekunsten enten efter deres Skiønhed
+  eller Nytte i Huusholdningen, for Forstvæsenet efter deres Størrelse og Træets
+  Brugbarhed… **Men i alle tre Videnskaber kan Forstanden vise Grundighed.** Denne
+  yttrer sig derfor i anvendte saavelsom i rene Videnskaber, hvoraf disse
+  fornemmelig have **Tingenes Væsen**, hine deres **Vigtighed for et eller andet
+  Øiemed** til Formaal." Linnaean sexual system, horticulture and forestry are all
+  capable of *Grundighed*; they differ in aim, not in rigour.
+- **And p. 152 blocks the relativist reading outright:** "\emph{Skæv er
+  Forstanden,} naar den finder Ligheder og Kontraster **hvor ingen ere.**" A
+  general concept can be *wrong* — one under which "de forskielligste Ting synes
+  lige", or under which likeness disappears among things that fully agree. With
+  p. 156's "mangen Lighed kan være mere væsentlig end den synes", this is as clear
+  a realism about similarity as one could want from someone who denies an elite
+  class of properties.
+- **Lighter matter in §§ 3–4 (pp. 154–156): a theory of wit.** Wit is "en med
+  Overlæg spillende Forstand" — pretending to treat the unimportant as important
+  in order to draw attention to what is essential. The examples are worth keeping:
+  the author who matched monastic orders to insect species by Linnaean characters
+  ("abdomine magno, dorso incurvo"), Wessel on the wren, the Franklin epigram
+  "eripuit cœlo fulmen sceptrumque tyrannis". Wit and acuteness differ in that
+  acuteness looks to the essential and wit to the accidental — but they converge,
+  because a likeness may be more essential than it looks.
 - **§§ 20–23 (pp. 130–140): sleepwalking, presentiment, prophecy and madness.**
   Naturalistic throughout, and the method is worth noting even where the content
   is dated — in each case Treschow takes a phenomenon the age treated as
@@ -593,6 +653,16 @@ Also: an edit once **swallowed the `\end{document}`**, producing a bare
   author's choice, and in a reading edition it just trips the eye. It is
   therefore **normalised silently to "1)" throughout**, with a comment at each
   site. Everything else that departs from modern usage is carried as printed.
+- ⚠ **The print numbers two consecutive sections "24"** — § 24 Fanatismus at
+  s. 141 and § 24 Adspredelse at s. 146 (verified by zoom). Not renumbered; a
+  `% sic` marks the second.
+- ⚠ **Print slips in pp. 141–156, all carried with a `% sic`:** s. 143
+  "indbiidte" (for "indbildte"); s. 148 "Mangfoidige"; s. 150 "Opmærsomhed";
+  s. 154 "Væseutlige" — the third instance of the turned n/u slip after
+  "Meunesker" (s. 70) and "iutet" (s. 87), so it is this compositor's signature
+  error. Two montage-level misreadings were caught and corrected before writing:
+  s. 148 "affondrer" is **afsondrer** (long-s) and s. 156 "abskille" is
+  **adskille** (Fraktur d).
 - ⚠⚠ **A CORRECTED MISREADING, and a standing trap: Fraktur x vs r.** At montage
   resolution (975 px/page) the Fraktur **x** (𝔵) is easily read as **r** (𝔯). This
   produced a wrong reading of "Afvexlingerne" as "Afverlingerne" at p. 119 in the
