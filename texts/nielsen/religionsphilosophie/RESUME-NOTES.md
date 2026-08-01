@@ -1,0 +1,201 @@
+# Rasmus Nielsen — *Religionsphilosophie* (1869): transcription resume notes
+
+**Phase 1 (transcription) job.** Read this, then the two standing-method files, then
+continue the batch loop.
+
+## The two standing methods
+- **Transcription discipline:** follow `../grundideernes-logik/RESUME-NOTES.md`
+  (image-verified LaTeX: Sperrsatz → `\emph{}`, Danish quotes, footnotes,
+  page-break comments, portable verify compile, balance checks).
+- (Phase 2, later: translation via `../../../TRANSLATION-PLAYBOOK.md`.)
+
+## This book, concretely
+- **Title:** *Religionsphilosophie*, af R. Nielsen. Kjøbenhavn: Forlagt af den
+  Gyldendalske Boghandel (F. Hegel), I. Cohens Bogtrykkeri, 1869.
+- **Scan:** `~/bibliotek/Nielsen, Rasmus/religionsphilosophie.pdf` — Det Kgl.
+  Bibliotek, **557 PDF pp.**, 177 MB. Copied into this folder as `scan.pdf`
+  (gitignored). Sidecars in bibliotek: `religionsphilosophie.txt` (raw pdftotext),
+  `religionsphilosophie_clean.txt` (cleaned; **strips page numbers** — not usable
+  for locating printed pages), plus `extract_*.py` / `clean_*.py`.
+- **Script:** **Antiqua** (Latin type) throughout — not Fraktur. Emphasis is
+  **Sperrsatz** (letterspacing), which is invisible in the OCR text layer, so every
+  page must be checked against the image.
+- **OCR quality: poor.** Word order is scrambled on many pages, and letters are
+  routinely misread ("Prinoiper", "Villi es", "Sønn en's Væ s en", "livad",
+  "Eorskjellen"). Use the text layer only as a crutch; transcribe from the image.
+- **Offset (VERIFIED): PDF = printed + 13.** printed p.1 = PDF 14; p.17 = PDF 30;
+  p.42 = PDF 55; p.56 = PDF 69; p.82 = PDF 95; p.538 = PDF 551.
+  Title leaf = PDF 8; preface theses (undated body, signed "Kjøbenhavn, den 28de
+  December 1868. R. Nielsen.") = PDF 10.
+- **Extent:** body printed pp. **1–537** (KB catalogue records "537 s.").
+- **catalog.yaml:** id `religionsphilosophie`, status in-progress.
+
+## Front matter, as bound in this scan
+- PDF 1–7: KB digitisation notice, marbling, stamps, blanks.
+- PDF 8: title page. PDF 10: the five preface theses + date + signature.
+- PDF 11–13: **Indhold** — but only three leaves, beginning mid-way at
+  "c) Faderens Personlighed. § 9 … 129". **The first Indhold leaf (covering the
+  Indledning through § 8) is missing from this scan.** The structure below was
+  therefore reconstructed from the running text, not from the Indhold.
+- PDF 551 (printed 538): **RETTELSER** (errata). None of the errata touch pp. 1–81;
+  they affect pp. 130, 257, 284, 400, 508, 592 — see "Errata" below.
+
+## Structure of the INDLEDNING (printed pp. 1–81)
+Section head `INDLEDNING.` on p.1, then centred bold sub-heads, each followed by a
+centred `§ N.` marker:
+
+| Sub-head | § | printed pp. | PDF pp. |
+|---|---|---|---|
+| *(unheaded opening paragraph)* | — | 1 | 14 |
+| Religion og Philosophie | § 1 | 1–10 | 14–23 |
+| Religion og Mythologie | § 2 | 11–22 | 24–35 |
+| Aabenbaring og Tro | § 3 | 23–41 | 36–54 |
+| Ordet og Aanden | § 4 | 42–55 | 55–68 |
+| Troesprincipet: Religionsphilosophiens Methode | § 5 | 56–81 | 69–94 |
+
+Third-level divisions are inline italic run-heads of the form
+`a) Ordets Oprindelighed.`, `b) Ordets Troværdighed.`, `c) Aabenbaringens
+Tilegnelse i Troen.`, `a) Troen og dens Indhold.`, `b) Troesbekjendelsen.` — these
+are centred italic lines in the setting, rendered in the existing transcription as
+`\noindent\textit{a) …}` between `\medskip`s.
+
+The Indledning closes on p.81 by announcing the tripartite plan: "…deling ved: Tro
+paa Faderen, Tro paa Sønnen og Tro paa Aanden."
+
+## Structure of the body (after the Indledning)
+- **Tro paa Faderen** — § 6 begins printed p.82 (PDF 95).
+  A. Faderens Væsen … c) Faderens Personlighed § 9 (129); B. Faderens Gjerninger
+  § 10 (149) — a) Skabelsen § 11 (151), b) Opholdelsen § 12 (165), c) Styrelsen
+  § 13 (179); C. Faderens Rige § 14 (200) — a) Ideal og Virkelighed § 15 (201),
+  b) Verdensidealer § 16 (224), c) Gudsrigets Ideal § 17 (256).
+- **Tro paa Sønnen** — A. Sønnens Væsen § 18 (272): a) Selvet i Sønnen § 19 (273),
+  b) Grundbestemmelser i Sønnens Selv § 20 (304), c) Sønnens Personlighed § 21 (321).
+- **Tro paa Aanden** — … b) Grundbestemmelser i Aandens Selv § 32 (458) …
+  (full detail on PDF 13; the § 22–31 leaf is present, § 1–8 leaf is not.)
+
+## STATE OF PLAY (as of 2026-08-02)
+
+**The live file is `transcription.tex` in this folder — one file for the whole
+book.** Done and image-verified: title leaf, preface theses, and printed
+**pp. 1–42** — §§ 1–3 complete (§ 3 *Aabenbaring og Tro*, pp.23–41, with run-heads
+*a) Aabenbaring og hellig Historie* p.24, *b) Aabenbaring og Fornuft* p.28,
+*c) Aabenbaringen Tilegnelse i Troen* p.35), and § 4 *Ordet og Aanden* opened at
+p.42. **Resume at printed p.43 (PDF 56).**
+
+Checks that pass on the current file: compiles clean; 42 page-break comments,
+contiguous pp.1–42, every one at offset +13; braces balanced; „ and “ balanced
+(39 each); 3 footnotes.
+
+### Two traps worth remembering
+
+**1. Apparent italics in the two-up render.** On left-hand pages the gutter
+curvature plus downsampling can make whole paragraphs look slanted. The lower half
+of p.33 looked convincingly italic and is plain roman at 420 dpi. **Verify any
+suspected italic at ≥400 dpi before marking it.** Genuine italic in this book is,
+so far, only Latin tags: *ubique et nusquam* (p.6), *eo ipso* (p.36),
+*per subtractionem* / *per additionem* (p.38), *Der christliche Glaube* (p.40 note).
+
+**2. Footnotes can run across a page boundary.** The Martensen/Schleiermacher note
+begins on p.39 and continues over most of p.40, whose body text is only four lines.
+It is transcribed whole at its p.39 marker, with a comment at both ends.
+
+### Printer's slips found so far
+Reproduced as printed, each with a `% sic:` comment. Neither is in RETTELSER.
+- p.26 "lade Isaak **døer** for at vække ham op igjen" (for *døe*) — 400 dpi.
+- p.35 run-head "c) **Aabenbaringen** Tilegnelse i Troen." — missing genitive *-s*;
+  the forward reference on p.24 reads "Aabenbaringens". Verified at 420 dpi.
+
+Two typographic points established while transcribing pp. 1–18, both of which the
+old `indledning/` file got wrong and which recur constantly:
+- Third-level run-heads (`a) Religionsphilosophien som speculativ Videnskab.`) are
+  **centred bold**, not italic. Use `\runhead{}`.
+- Sperrsatz is frequent and load-bearing — e.g. *speculativ Videnskab* /
+  *kritisk Videnskab* / *omvendt Videnskab* (p.2), *Grændsevidenskab* (p.9),
+  *sig selv i Troeslære ophævende Videnskab* (p.11), the whole Hegel schema on
+  p.12, *en Viden af* / *en Viden om* (p.18). None of it survives in the OCR.
+Latin phrases are set in antiqua italic (`\textit{ubique et nusquam}`, p.6).
+Footnotes begin at p.13 (Hegel, *Religionsphilosophie* II, Berlin 1840).
+
+### The superseded folder
+
+`indledning/` contains `transcription.tex` (624 ll.) and `translation.tex` (642 ll.).
+
+**Two problems with it, both verified against the page images:**
+
+1. **It is truncated.** Its header claims "§§ 1–3, pp. 1–30". In fact it contains
+   only § 1 and § 2, and it stops **mid-page 17** — at "…Fordi dens oprindelige
+   Forudsætninger ere absolut ueensartede med Videnskab." Printed p.17 continues
+   for a further ~15 lines after that point. So the real coverage is **pp. 1–17**,
+   and **pp. 18–81 of the Indledning are untranscribed** (rest of § 2, all of
+   §§ 3–5).
+2. **The last sentence is wrong.** The transcription reads "…absolut ueensartede
+   med Videnskab."; the page reads "…absolut **uforenelige med al** Videnskab."
+   (p.17, PDF 30, verified at 160 dpi). Since the phrase "absolut ueensartet"
+   occurs twice higher on the same page, this looks like a text-layer/model
+   conflation rather than a typo — which is a reason to re-verify the whole of
+   pp. 1–17 against images rather than trusting it.
+
+A third error surfaced on re-verification: the old file rendered the p.17 clause
+"der har **hildet sig i** Modsigelsen" as "der har **bildt sig ind at have løst**
+Modsigelsen" — a different claim, not a misreading. Between that and the
+"uforenelige med al Videnskab" substitution, nothing in the old file should be
+carried over without checking it against the image.
+
+**Next step: transcribe from printed p.43 (PDF 56) onward** in `transcription.tex`,
+straight through to p.81 to finish the Indledning, then on into "Tro paa Faderen"
+(§ 6, p.82). The old `indledning/transcription.tex` can be deleted once pp. 1–18
+here are considered settled; `indledning/translation.tex` is untouched and still
+the only English text that exists for this work.
+
+## Rendering conventions (inherited from `indledning/`, keep consistent)
+- Preamble: `article`, 12pt a4paper, `libertinus` + `libertinust1math`,
+  `babel[danish]`, `microtype`, `setstretch{1.3}`, `geometry[margin=1.2in]`,
+  `fancyhdr` (rhead = short title, cfoot = page number), `hyperref[hidelinks]`.
+- `\section*{INDLEDNING}` / `\subsection*{<sub-head>}` / `\subsubsection*{§ N}`.
+- Third-level run-heads → `\medskip` + `\noindent\textit{a) …}` + `\medskip`.
+- Sperrsatz → `\emph{}` — **verify each page by zoom render**; the OCR cannot see it.
+- Danish quotes „…“ as U+201E / U+201C.
+- Footnotes: present from p.41 onward (e.g. the long note on
+  *Begrebsmodsigelsens Grundsætning*, p.41). Use `\footnote{}`; the printed marker
+  is `*)`.
+- Page-break comments `% ---- printed p.N (PDF M) ----` at each boundary.
+
+## Two-up render helper
+Everything needed (poppler, ImageMagick, LaTeX) is in the sandbox; the scan must be
+at `texts/nielsen/religionsphilosophie/scan.pdf`. Renders go to `.render/`
+(gitignored — add `.render/` to `.gitignore` if not already covered).
+
+```bash
+#!/bin/bash
+# twoup.sh <printed_first> <printed_second>
+set -e
+D=<repo>/texts/nielsen/religionsphilosophie
+OFF=13
+A=$(( $1 + OFF )); B=$(( $2 + OFF ))
+pdftoppm -f $A -l $A -r 160 -gray -png "$D/scan.pdf" /tmp/pa
+pdftoppm -f $B -l $B -r 160 -gray -png "$D/scan.pdf" /tmp/pb
+montage /tmp/pa-*.png /tmp/pb-*.png -tile 2x1 -geometry +4+0 -background white \
+  "$D/.render/p$1-$2.png"
+convert "$D/.render/p$1-$2.png" -resize 2000x2000\> -quality 92 "$D/.render/p$1-$2.png"
+rm -f /tmp/pa-*.png /tmp/pb-*.png
+```
+
+160 dpi grayscale, montaged two-up and capped at 2000 px, is legible for this
+setting (verified on pp. 17/18, 41/42, 55/56) and keeps the image small.
+
+## ERRATA (from RETTELSER, printed p.538 / PDF 551)
+None fall in pp. 1–81. Apply when the relevant batch is reached:
+- p.150 Anm.: *unserer* → **unseres**
+- p.257 ll.12–13 f.o.: "den Kjendsgjerning, at Chanoch" → "den Kjendsgjerning, at
+  Modsætningen igjen udslettes. Ifølge c. 5 ere alle Adams Efterkommere uden
+  Forskjel Sethiter, med mindre man da vil antage, at Chanoch."
+- p.257 l.15 f.o.: "Lamech selv med al" → "Lamech — hvis c. 5, 25 og c. 4, 18 ved
+  en Blanding af Genealogierne hentyde paa samme Lamech — Lamech selv."
+- p.257 l.19 f.o.: *er Abraham selv* → **er da Abraham selv**
+- p.257 l.20 f.o.: *denne Kjendsgjerning* → **slige Kjendsgjerninger, dersom det
+  virkelig ere Kjendsgjerninger**
+- p.400 l.6 f.o.: *Prophetens* → **Propheternes**
+- p.508 l.11 f.n.: *til i sin* → **til sin**
+- p.284 l.6 f.n.: *forklare* → **bortforklare**
+- p.592 l.4 f.o.: *Selvishedeus* → **Selvvishedens**
+  (n.b. "592" exceeds the 537-page body — printed as such in the errata list.)

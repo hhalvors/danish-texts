@@ -1,0 +1,1528 @@
+% ============================================================
+%  R. Nielsen, "Religionsphilosophie."
+%  Kjøbenhavn: Forlagt af den Gyldendalske Boghandel (F. Hegel);
+%  I. Cohens Bogtrykkeri, 1869.
+%  TRANSCRIPTION (Danish) — from the Det Kgl. Bibliotek scan.
+%
+%  Scan: ~/bibliotek/Nielsen, Rasmus/religionsphilosophie.pdf (557 PDF pp., KB).
+%        Copied into this folder as scan.pdf (gitignored).
+%  TYPE: Antiqua (Latin type) throughout — NOT Fraktur.
+%        Letterspacing (Sperrsatz) -> \emph{}; image-verify per page by zoom.
+%        The OCR text layer CANNOT see letterspacing and is badly scrambled
+%        ("Prinoiper", "Villi es", "Sønn en's Væ s en"): use it only as a crutch.
+%
+%  OFFSET (VERIFIED): PDF = printed + 13.
+%        printed p.1 = PDF 14; p.17 = PDF 30; p.42 = PDF 55; p.56 = PDF 69;
+%        p.82 = PDF 95; p.538 = PDF 551. Title leaf = PDF 8; preface theses = PDF 10.
+%
+%  EXTENT: body printed pp. 1--537 (KB catalogue: "537 s.").
+%
+%  STRUCTURE OF THE INDLEDNING (pp. 1--81) — reconstructed from the running text,
+%        because the FIRST LEAF OF THE INDHOLD IS MISSING from this scan (the
+%        surviving Indhold leaves, PDF 11--13, begin mid-way at "§ 9 ... 129"):
+%          Religion og Philosophie                          § 1   pp.  1--10
+%          Religion og Mythologie                           § 2   pp. 11--22
+%          Aabenbaring og Tro                               § 3   pp. 23--41
+%          Ordet og Aanden                                  § 4   pp. 42--55
+%          Troesprincipet: Religionsphilosophiens Methode   § 5   pp. 56--81
+%        Then the tripartite body: Tro paa Faderen (§ 6, p.82), Tro paa Sønnen
+%        (§ 18, p.272), Tro paa Aanden (§ 32, p.458 region).
+%
+%  ERRATA (from "RETTELSER", printed p.538 / PDF 551) — none fall in pp. 1--81:
+%        p.150 Anm.        : unserer      -> unseres
+%        p.257 ll.12--13 f.o., l.15 f.o., l.19 f.o., l.20 f.o. — see RESUME-NOTES.md
+%        p.284 l.6  f.n.   : forklare     -> bortforklare
+%        p.400 l.6  f.o.   : Prophetens   -> Propheternes
+%        p.508 l.11 f.n.   : til i sin    -> til sin
+%        p.592 l.4  f.o.   : Selvishedeus -> Selvvishedens
+%
+%  STATUS: IN PROGRESS. Done & image-verified: title leaf, preface theses,
+%        and printed pp. 1--42 (Indledning: §§ 1--3 complete -- § 3 "Aabenbaring
+%        og Tro", pp.23--41, with run-heads a) Aabenbaring og hellig Historie
+%        (p.24), b) Aabenbaring og Fornuft (p.28), c) Aabenbaringen Tilegnelse
+%        i Troen (p.35); § 4 "Ordet og Aanden" opens p.42).
+%        RESUME AT printed p.43 (PDF 56). See RESUME-NOTES.md.
+%        NOTE: the older indledning/transcription.tex is SUPERSEDED by this file.
+%        It covered only pp. 1--17 (breaking off mid-page), carried no page-break
+%        comments and no Sperrsatz markup, and mis-transcribed the p.17 sentence
+%        "absolut uforenelige med al Videnskab" as "absolut ueensartede med
+%        Videnskab". Its translation.tex is still live and has not been touched.
+% ============================================================
+\documentclass[12pt]{book}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+% Danish hyphenation where available; falls back so the file still compiles in a
+% minimal TeX install (e.g. a sandbox without texlive-lang-european).
+\IfFileExists{danish.ldf}{\usepackage[danish]{babel}}{\usepackage[english]{babel}}
+\usepackage[protrusion=true,expansion=true]{microtype}
+\usepackage[margin=1.4in]{geometry}
+\usepackage{setspace}
+\usepackage{amsmath}
+% Libertinus is the house face; fall back to Latin Modern in a minimal install so
+% the file always compiles for a quick structural check.
+\IfFileExists{libertinus.sty}%
+  {\usepackage{libertinus}\usepackage{libertinust1math}}%
+  {\usepackage{lmodern}}
+\IfFileExists{textalpha.sty}{\usepackage{textalpha}}{} % polytonic Greek, if it occurs later
+\usepackage{fancyhdr}
+\usepackage[colorlinks=true,linkcolor=black,urlcolor=black,
+  pdftitle={Religionsphilosophie},
+  pdfauthor={Rasmus Nielsen}]{hyperref}
+\setlength{\headheight}{15pt}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LE,RO]{\thepage}
+\fancyhead[RE]{\textit{Religionsphilosophie}}
+\fancyhead[LO]{\textit{\leftmark}}
+\setlength{\parindent}{1.5em}
+\setlength{\parskip}{0pt}
+\onehalfspacing
+
+% --- house macros -------------------------------------------------------
+% Centred bold sub-head (e.g. "Religion og Philosophie.") + ToC entry.
+\newcommand{\subhead}[1]{%
+  \begin{center}{\large\bfseries #1}\end{center}%
+  \phantomsection\addcontentsline{toc}{subsection}{#1}\markboth{#1}{#1}}
+% Centred "§ N." marker (not in the ToC).
+\newcommand{\parmark}[1]{\begin{center}{\bfseries \S\,#1.}\end{center}}
+% Centred bold run-head (e.g. "a) Religionsphilosophien som speculativ Videnskab.")
+\newcommand{\runhead}[1]{%
+  \medskip\begin{center}{\bfseries #1}\end{center}\medskip}
+% -------------------------------------------------------------------------
+
+\begin{document}
+
+% ============================================================
+% TITLE PAGE — PDF 8
+% ============================================================
+\begin{titlepage}
+\centering
+\vspace*{3.0cm}
+{\Huge\bfseries Religionsphilosophie\par}
+\vspace{1.4cm}
+{\large af\par}
+\vspace{1.0cm}
+{\LARGE\bfseries R.\ Nielsen.\par}
+\vspace{3.0cm}
+\rule{4cm}{0.4pt}\par
+\vspace{2.0cm}
+{\large\bfseries Kjøbenhavn.\par}
+\vspace{0.4cm}
+{\normalsize Forlagt af den Gyldendalske Boghandel (F.\ Hegel).\par}
+\vspace{0.3cm}
+{\small\emph{I.\ Cohens Bogtrykkeri.}\par}
+\vspace{0.6cm}
+{\large 1869.\par}
+\end{titlepage}
+
+\frontmatter
+
+% ============================================================
+% PREFACE THESES — PDF 10 (unnumbered leaf)
+% ============================================================
+\thispagestyle{empty}
+\vspace*{0.10\textheight}
+\begin{quote}
+\itshape\noindent
+Tro og Viden ere som Principer absolut ueensartede.
+
+\medskip
+
+Principernes Ueensartethed gjør intet Brud paa de almeengyldige
+Tankelove, men viser Umuligheden af en hvilkensomhelst
+videnskabelig Overgang enten fra Viden til Tro eller fra Tro til Viden.
+
+\medskip
+
+Den lange Strid mellem Religion og Videnskab har oprindelig sin
+Grund i en uklar Blanding af de ueensartede Principer, og maa
+altsaa høre op, naar Blandingen ophører.
+
+\medskip
+
+Den Sætning, at Sandhed i Religionen ikke er Sandhed i Videnskaben,
+er ikke længer et Paradox, naar Videns absolute Grændse falder
+sammen med det Mysterium, hvorfra Troeserkjendelsen gaaer ud, og
+hvortil den vender tilbage.
+
+\medskip
+
+Det er disse Hovedsætninger, som Religionsphilosophien i den
+foreliggende Form vil udvikle og begrunde. Om Udviklingen og
+Begrundelsen har nogen Gyldighed, maa Prøvelsen afgjøre.
+\end{quote}
+
+\vspace{1.2cm}
+\begin{flushright}
+Kjøbenhavn, den 28de December 1868.\par
+\vspace{0.4cm}
+R.\ Nielsen.
+\end{flushright}
+
+\tableofcontents
+\mainmatter
+
+% ============================================================
+% BODY BEGINS — printed p.1 (PDF 14)
+% ============================================================
+
+% ---- printed p.1 (PDF 14) ----
+\begin{center}
+  {\Large\bfseries INDLEDNING.}\par\vspace{4pt}
+  \rule{2.5cm}{0.4pt}
+\end{center}
+\phantomsection
+\addcontentsline{toc}{section}{Indledning}
+\markboth{Indledning}{Indledning}
+
+Religionsphilosophiens Forhold til Religionen kan ikke paa
+tilfredsstillende Maade angives i almindelige Begrebsbestemmelser;
+dets eiendommelige Natur udkræver en eiendommelig Behandling. Hvad
+der siges religiøst: Viis mig din Tro af dine Gjerninger, det maa
+siges philosophisk: Viis mig dit Princip af dets Gjennemførelse.
+
+\subhead{Religion og Philosophie.}
+\parmark{1}
+
+Er Philosophien i det Hele en Videnskab, saa maa
+Religionsphilosophien, saasandt den skal fortjene Navn af
+Philosophie, naturligviis ogsaa være en Videnskab, men just det
+Særegne, at den er en Videnskab om Religionen, giver den et fra de
+øvrige Videnskaber afvigende Præg og paatrykker den et eget Mærke.
+Hvad dette betyder, vil bedst kunne forstaaes ved et Blik paa de
+Hovedformer, Religionsphilosophien i nyere Tid har antaget.
+
+Den videnskabelige Form maa bestemmes ved Principet.
+Grundspørgsmaalet er: have Religion og Philosophie det samme
+Princip, eller ere Principerne forskjellige? Dersom Religionens
+Princip er forskjelligt fra Philosophiens, hvilket Princip skal
+Videnskaben da følge, Philosophiens eller Religionens? Først ved en
+Besvarelse af
+% ---- printed p.2 (PDF 15) ----
+disse Spørgsmaal kan Religionsphilosophiens Begreb og Methode
+bestemmes.
+
+Gaaer man ud fra den Forudsætning, at Religion og Philosophie have
+samme Princip, saa bliver Religionsphilosophien en \emph{speculativ
+Videnskab}; antager man, at Principerne vel ere forskjellige, men at
+Sandheden dog maa bedømmes efter Vidensprincipet, saa bliver
+Religionsphilosophien en \emph{kritisk Videnskab}. Antager man
+endelig Principerne for absolut ueensartede og lægger det religiøse
+Princip til Grund ved den videnskabelige Belysning, saa bliver
+Religionsphilosophien en \emph{omvendt Videnskab}. Den første af
+disse Synsmaader repræsenteres af Hegel; den anden fornemmelig af
+L.\ Feuerbach; den tredie er den, som i nærværende Fremstilling
+kommer til Anvendelse.
+
+\runhead{a) Religionsphilosophien som speculativ Videnskab.}
+
+Religionens saavelsom Philosophiens Gjenstand er, ifølge Hegel, den
+evige Sandhed i dens Objectivitet, Gud og Intet uden Gud og
+Explicationen af Gud. Philosophien udvikler kun sig selv, idet den
+udvikler Religionen, og idet den udvikler Religionen, udvikler den
+sig selv. Saaledes falder Religion og Philosophie da sammen til Eet.
+Philosophien er i Virkelighed Gudstjeneste, er Religion, thi den er
+Forsagelse af subjective Indfald og Meninger i Beskjæftigelsen med
+Gud. Ikke desto mindre er Beskjæftigelsen med Gud i Philosophien en
+anden, foregaaer paa en anden Art og Maade end i Religionen. I
+Religionen er Gud Bevidsthedens umiddelbare Gjenstand; i
+Philosophien er Bevidstheden om Gud Guds egen Bevidsthed om sig
+selv: Forskjellen ligger i Formen. Religionen som Religion er
+folkelig, er for Alle og just derfor henviist til Forestillingens
+billedlige Form; men en saadan Form er uadæqvat for Indholdet.
+Formen er endelig, Indholdet uendeligt: dette er et Misforhold. Kan
+dette Misforhold hæves; kan det samme Indhold, uden at
+% ---- printed p.3 (PDF 16) ----
+forandre sig, fremstilles i to aldeles forskjellige Former? Her er
+Vanskeligheden, og paa denne Vanskelighed strander Hegel. Thi hvor
+det gjælder Sandheden som Sandhed, gaaer Ideen saaledes op i Formen,
+at Formen umulig kan forandres, uden at Indholdet forandres. Under
+sin Tankebevægelse bliver den speculative Religionsphilosophie
+umærkelig ført til et andet Resultat end det, hvorpaa den oprindelig
+sigtede. Bevægelsen er denne: det begynder med, at Videnskaben skal
+anerkjende og begrunde Religionens Sandhed; Religionens Sandhed
+bestemmes ved det Sande i Indholdet, d.\ e.\ ved det større eller
+mindre Qvantum Livsidealitet, en given Religion i Forhold til det
+Trin af Formudvikling, hvorpaa den befinder sig, er istand til at
+udtrykke; da nu Religionens Form ikke er videnskabelig, men den
+videnskabelige Form den eneste fuldkomne, saa bringes det til
+Bevidsthed, at selv den fuldkomne Religion har en ufuldkommen Form,
+og kan paa Grund af Formens Ufuldkommenhed kun udtrykke det Sande
+paa ufuldkommen Maade. Det, hvorved den fuldkomne Religion adskiller
+sig fra Philosophien, er altsaa en Form, der maa ophæves; men idet
+Formen ophæves, ophæves det for Religionen Eiendommelige og dermed
+Religionen selv. Ved at miste sin Form mister Religionen tillige sit
+Indhold, thi Indholdets Sandhed beroer paa Formen. Altsaa ender det
+med, at Philosophien, for at kunne begribe det Sande i Religionen,
+maa begribe Religionen selv som en Usandhed. Det negative, fra
+Videnskabens Side frastødende Forhold mellem Philosophie og Religion
+er med kraftig Conseqvens kommen til Udtalelse i Nyhegelianismen.
+
+\runhead{b) Religionsphilosophien som kritisk Videnskab.}
+
+Medens den speculativt positive Retning nærmest holder sig til det
+for Religion og Philosophie fælles Indhold og stræber at udvikle
+dette Sandhedens sande
+% ---- printed p.4 (PDF 17) ----
+Indhold til den sande Form, gaaer den negativt kritiske Retning, i
+Erkjendelse af Religionens og Philosophiens principielle
+Forskjellighed, nærmest ud fra den for Religionen eiendommelige
+Form, paaviser dens øiensynlige Strid med Fornuften, og kommer saa
+gjennem en Paaviisning af det Usande i Formen til det Usande i
+Indholdet. Umiddelbart seer det ud, som havde Religionen med lutter
+virkelige, om end overnaturlige, Kjendsgjerninger at gjøre; men den
+til Viden udviklede Fornuft begriber, at de overnaturlige
+Kjendsgjerninger ikke ere virkelige, og de virkelige ikke
+overnaturlige. Det er ikke Aanden som Aand, men det sjælelige Livs
+ideale Naturkræfter, der røre sig oprindeligt i den oprindeligt
+religiøse Bevidsthed. De religiøse Forestillinger ere vel ikke
+Frembringelser af bevidst Vilkaarlighed, tvertimod de skyldes en
+ubevidst Digtning, en Sjælenes Trang til Selvobjectivering, en
+psychologisk Nødvendighed, hvormed den af Ideen overvældede
+Phantasie har stillet det Guddommelige i Mennesket frem for
+Mennesket ved at stille det udenfor Mennesket. Religionen er
+menneskelig; den er den menneskelige Fornufts første elementære
+Gjennembrud; den har sit Udspring, ikke i Guds Kjærlighed, men i
+Menneskets Lidenskaber. Hjertets Drømme, Sindets Rørelser, Sjælens
+Længsler indeholde de Grundelementer, af hvilke den ideebeaandede
+Phantasie har dannet alle Troens Guder, ogsaa den ene Almægtige.
+Dette stadfæstes ved Indblik saavel i Mono\-theismens som i
+Polytheismens Væsen. Den mægtige, vrede, hævnfnysende Jehova i det
+Gamle Testamente er, videnskabelig seet, en idealiseret Speiling af
+Jødefolkets abstracte, mægtige Aand, af Israels stærke, lovbundne og
+dog selvraadige Jeg. Christus i det Nye Testamente er ikke et
+virkeligt Gudmenneske, thi et virkeligt Gudmenneske er en
+Modsigelse, men dog væsentlig en Menneskegud, det saarede Hjertes,
+den ængstede Sjæls forsonende Gud, en Gud for de Lidende. For
+Phantasie og Følelse fremstiller det Ideale sig umiddel\-
+% ---- printed p.5 (PDF 18) ----
+bart; derpaa beroer ikke blot Ønsket selv, men ogsaa dets
+Opfyldelse. Mennesket med sin indsnevrende Naturbegrændsning ønsker
+sig Magt; havde det Magt som det har Villie, vilde det føle sig
+saligt og frit; men ak desværre det er afmægtigt; saa føler det i
+sin Afmagt Trang til guddommelig Bistand. Den guddommelige Bistand
+bestemmes umiddelbart saaledes, at en Gud, der har Magt over
+Naturen, vilkaarlig griber ind i Tingenes Gang og hjælper ved et
+Mirakel. I Miraklet anskues den ubegrændsede, fra Naturtvang
+frigjorte Villie, en Villie, der formaaer at tilintetgjøre al
+Modstand, tilfredsstille alle Ønsker og høre alle Bønner. Miraklet
+er Troens Grund, Haabets Udvei, Phantasiens Trøst, det fromme Gemyts
+hellige Eventyr; naar en Gud er bleven saa gammel og svag, at han
+ikke længere kan gjøre Mirakler, gjør han bedst i at resignere,
+ophøre at være Gud, og ligesaa maa en Religion, der ikke
+vedblivende kan opvise Mirakler, ophøre at være Religion. Her er det
+Vendepunkt, hvor Striden mellem Religion og Philosophie culminerer.
+Religionen holder paa Miraklet, Philosophien paa Fornuften. Miraklet
+er i Modsigelse med Fornuften; naar Fornuften vaagner til
+Erkjendelse af Virkelighedens Love, forsvinder Miraklet, og med
+Miraklet tillige Religionen. Saaledes har da Philosophien, som
+negativ Kritik, ifølge egen Forsikkring, fuldbyrdet Religionens
+Opløsning.
+
+Ad den negative Vei er der imidlertid naaet et positivt Resultat.
+Resultatet er, at Religionen, forskudt og forhaanet af
+„Videnskaben“, bliver henviist til sit eget Princip og derved
+opfordret til at stole paa egne Kræfter og hævde sin Selvstændighed
+overfor Videnskaben. Det afgjørende Brud mellem Religion og
+Videnskab kan da paa disse Vilkaar ligesaavel komme Religionen som
+Videnskaben tilgode. Religionens absolute Ueensartethed med al
+objectiv Viden og Videnskab er med gjennemtræn\-
+% ---- printed p.6 (PDF 19) ----
+gende Skarphed og seirrig Overlegenhed paaviist af S.\ Kierkegaard.
+
+Grundspørgsmaalet, hvorfra S.\ Kierkegaard gaaer ud, er dette:
+\emph{Hvorvidt kan Sandheden læres?} Her møder saa, hvad Sokrates i
+Meno kalder en stridslysten Sætning: at et Menneske umuligt kan
+søge, hvad han veed, og ligesaa umuligt kan søge, hvad han ikke
+veed, thi hvad han veed, kan han ikke søge, da han veed det, og hvad
+han ikke veed, kan han ikke søge, thi han veed jo end ikke, hvad det
+er, han skal søge. Sokrates hæver Vanskeligheden derved, at al Læren
+og Søgen kun er en Erindren, saa at den Uvidende blot behøver at
+mindes, for ved sig selv at besinde sig paa, hvad han veed.
+Sandheden bringes saaledes ikke ind i ham, men var i ham. Dette er,
+hvad vi kunne kalde den humane Forklaring. Fra dette Synspunkt faaer
+„Øieblikket“, det Guddommeliges Indtræden i Tiden, Underet, ingen
+Betydning. „For den sokratiske Betragtning er ethvert Menneske sig
+selv det Centrale, og hele Verden centraliserer kun til ham, fordi
+hans Selverkjendelse er en Gudserkjendelse.“ Den, der lærer
+Sandheden, lærer den ved sig selv, Læreren er kun Anledningen;
+Øieblikket, da Sandheden indlyser, er i Forhold til den værende,
+Menneskets Væsen iboende Sandhed et forsvindende og forsaavidt
+ligegyldigt Tidspunkt. „\emph{Udgangspunktet er et Intet}; thi i
+samme Øieblik som jeg opdager, at jeg fra Evighed af har vidst
+Sandheden uden at vide det, i samme Nu er hiint Øieblik skjult i det
+Evige, indoptaget deri saaledes, at jeg, saa at sige, end ikke kan
+finde det, selv om jeg søgte det, fordi her intet Her og Der er, men
+kun et \textit{ubique et nusquam}.“ Anderledes fra det exclusivt
+religiøse Standpunkt. Her forudsættes Mennesket at være, ikke i
+Sandheden, men i Usandheden. Skal nu den, der ved Slægtens og ved
+egen Skyld har tabt Sandheden, komme til Sandheds Erkjendelse,
+nemlig den Sandheds Erkjendelse,
+% ---- printed p.7 (PDF 20) ----
+der fører til Salighed, da bliver det nødvendigt, at Gud ikke alene
+oplyser den Formørkede om Usandheden, men tillige ved selv at
+indtræde i Tiden og existere som Menneske giver det i Usandheden
+værende Menneske Betingelsen for at naae Sandheden. Ved Guds
+Selvmeddelelse i Tiden faaer Øieblikket, det bestemte Tidspunkt, og
+dermed Underet, absolut afgjørende Betydning. Underet er Forstandens
+Paradox. Ved at fastholde Underet og opstille Paradoxet har
+S.\ Kierkegaard sikkret Religionen mod Videnskabens Overgreb og
+reist et Bolværk mod den negative Kritiks Indbrud; men saa er han
+ogsaa med afgjørende Sigte paa sit „Indledningsproblem, ikke til
+Christendommen, men til det at blive en Christen“, bleven staaende
+ved den Afgjørelse, at Christendommen ikke er nogen Lære, men en
+Existens-Meddelelse, og en Existens-Meddelelse, udtrykt i det
+Problem: „at Individets evige Salighed afgjøres i Tiden ved
+Forholdet til noget Historisk, der ydermere er saaledes historisk,
+at i dets Sammensætning Det er medoptaget, hvilket ifølge sit Væsen
+ikke kan blive historisk, og altsaa maa blive det i Kraft af det
+Absurde“.
+
+Ifølge den negative Kritik er det Videnskaben, der erklærer
+Religionen for et Absurdum og derved mener at opløse den; ifølge den
+Kierkegaardske Opgjørelse er det Religionen, der, den objective
+Viden til Trods, erklærer sig selv for et Absurdum og derved een
+Gang for alle udelukker Videnskaben. Heraf sees, at Religion og
+Philosophie ere ikke blot ueensartede, men absolut ueensartede. Er
+nu med denne Forudsætning en Religionsphilosophie mulig?
+
+\runhead{c) Religionsphilosophien som omvendt Videnskab.}
+
+Det exclusive, ved Underet bestemte Gudsforhold, der er Religionens
+egen uafviselige Forudsætning, kan Videnskaben ikke tilegne sig.
+Denne Forudsætning er
+% ---- printed p.8 (PDF 21) ----
+det Ubegribelige, det Uudgrundelige, og kan kun anerkjendes paa een
+Betingelse, den, at den menneskelige Viden anerkjender en Skranke,
+en absolut Grændse, hvorved den maa standse. Hvad der i andre
+Erkjendelsens Egne viser sig modsigende og urimeligt, er altid et
+Lavere, som Videnskaben frit kan hæve sig over; den kan drøfte dette
+Lavere, opløse det, og ved dets Opløsning bestandig skride videre
+frem. Men Religionen, det for Viden Modsigende, er ikke et Lavere,
+men et Høiere, thi Religionen er Livets høieste ideale Magt; hvor
+denne Magt i Medfør af sit oprindelige Væsen møder med „et
+Absurdum“, der er Veien objectivt ufremkommelig, der finder
+Fornuften Gjennemgangen spærret, der maa Videnskaben bøie af.
+
+Men det for den videnskabelige Tænkning Absurde, „Paradoxet“, falder
+dog indenfor den tænkende Bevidsthed, saasandt det falder indenfor
+Religionen; hvoraf igjen følger, at det for Videnskaben Utænkelige
+kan være tænkeligt i Religionen. Der er en væsentlig Forskjel mellem
+det: at overskride Videns Grændse og at overskride Tankens Grændse,
+mellem det: at falde udenfor Viden og at falde udenfor Tanken.
+Forskjellen mellem Tænkeligt og Utænkeligt bliver her at bestemme
+ved det Princip, hvorfra Tænkningen gaaer ud. At Paradoxet falder
+udenfor Viden, er vist; men falder det derfor udenfor Tanken? For at
+Tanken kan støde sig paa Paradoxet, maa Tænkningen jo selv bringe
+Paradoxet frem; Paradoxet er kun utænkeligt derved, at det bliver
+tænkt; dets dialektiske Knude er en Sammenslyngning af absolut
+ueensartede Tanketraade. Existentielt er Knuden uløselig; men deraf
+følger ingenlunde, at den ogsaa skulde være det intellectuelt. Den
+intellectuelle Løsning er betinget af, at de ueensartede Traade
+opredes og skilles fra hverandre. Videnskaben vilde ikke være istand
+til at opfatte og bestemme sit Vidensprincip, dersom den ikke
+% ---- printed p.9 (PDF 22) ----
+ved Modsætningen mellem det, som kan vides, og det, som ikke kan
+vides, var istand til, om end blot negativt, at charakterisere det
+for Viden uigjennemtrængelige Troesprincip. Men er det Videnskaben
+muligt at adskille de absolut ueensartede Principer, da er det den
+jo ogsaa muligt at adskille de fra disse Principer udgaaende Tanker,
+muligt altsaa at gjøre Forskjel mellem Videnstanker og Troestanker,
+mellem Vidensbegreber og Troesbegreber. Med den eiendommelige Opgave
+at klare Brydningsforholdet mellem de ueensartede Tanker er
+Religionsphilosophien nærmest at bestemme som en
+\emph{Grændsevidenskab}.
+
+Religionsphilosophien bliver imidlertid ikke staaende ved
+almindelige Grændsebestemmelser for Tro og Viden; den kan umulig
+lade Religionen udvikle sit Indhold uden at lade et heelt System af
+Troesbegreber komme til Udvikling. Men Troens religiøse Indhold er,
+ifølge Principet, et overvidenskabeligt Indhold; her indtræder da
+den Modsigelse, at et overvidenskabeligt Indhold optages i
+Videnskaben. Dersom Videnskabsformen nu virkelig blev forvexlet med
+Indholdets sande oprindelige Form og indført og fastholdt istedenfor
+denne, vilde Modsigelsen ganske vist være uopløselig. Men dette er
+ingenlunde Tilfældet. Den videnskabelige Reflexion har just den
+Bøielighed, at den kan bringe Vidensformen til at reflectere en
+anden og modsat Form. Thi ligesom den klare Dag kan bringe Øiet til
+at glemme Lysskjæret og see paa Gjenstandene, saaledes kan ogsaa
+Reflexionen bringe Tanken til i Viden at see paa Troen og glemme
+Viden. Religionsphilosophien er saa langt fra at paatvinge det
+religiøse Indhold en fremmed Form, at dens Formudvikling tvertimod
+bestaaer i at frigjøre det fra de Tilsætninger af umiddelbart
+individuelle Forestillinger, Billeder, Følelser, Villiesyttringer
+o.\ s.\ v., hvormed det i Troeslivet selv altid er sammenvoxet.
+Forsaavidt Reflexionen, saavel hvad Formen som hvad Indholdet
+angaaer, ved Viden ophæver Viden,
+% ---- printed p.10 (PDF 23) ----
+idet den lægger an paa at klare, ikke en videnskabelig, men en
+overvidenskabelig Sandhed, er Forholdet mellem Sandheden og
+Videnskaben væsentlig vendt om, og Religionsphilosophien bliver med
+Hensyn hertil at charakterisere som en \emph{omvendt Videnskab}.
+
+Det for enhver Videnskab Afgjørende er Begrundelsen. Nu kan jo
+vistnok en hvilkensomhelst grundig Indholdsudvikling betragtes som
+en eiendommelig Sagudvikling, altsaa som en Udvikling, hvorunder
+Sagen udfolder sine Momenter og begrunder sig selv. Men i alle
+directe Videnskaber er Sagbegrundelsens Princip i Grunden Eet med
+det almene Vidensprincip, saa at Sagbegrundelsen Punkt for Punkt
+falder sammen med den paagjældende Videnskabs egen Selvbegrundelse.
+I den omvendte Videnskab er Begrundelsen derimod omvendt.
+Grundprincipet er her saa langt fra at gaae op i Vidensprincipet, at
+de to absolut ueensartede Principer, Underets og Fornuftens, overalt
+frastøde hinanden og i deres negative Forhold bestemme hinanden
+negativt. Om dette negative Forhold med de dertil svarende
+Vexelbestemmelser kan der nu vistnok gives en klar Viden; men den
+almene, de modsatte Principer oversvævende Viden er paa nærværende
+Trin ikke længer istand til at tage Parti for sit eget Princip; den
+omvendte Videnskab har just den Opgave, at sætte Troen i Kraft og
+bringe Viden selv til at bøie sig for den. Som det gaaer med det
+begrundende Princip, maa det gaae med Begrundelsen. Den omvendte
+Videnskab skal hverken fortie eller fornegte de almeengyldige
+Vidensgrunde, men den skal bringe det til klar Indsigt, hvorledes
+Religionens Selvbekræftelse netop foregaaer derved, at
+Vidensgrundene conseqvent opløse sig og give Plads for Troens
+absolut selvgyldige Grunde. Ved at begrunde Vidensgrundenes
+Omsætning og Opløsning i Troesgrunde begrunder Religionsphilosophien
+sin egen videnskabelige Opløsning og faaer paa disse Vilkaar
+% ---- printed p.11 (PDF 24) ----
+Betydning som en paa Religionen sig offrende, \emph{sig selv i
+Troeslære ophævende Videnskab}.
+
+\subhead{Religion og Mythologie.}
+\parmark{2}
+
+Af det Forhold, hvori Philosophien sætter sig til Religionen,
+afhænger den videnskabelige Opfattelse af Modsætningen mellem sand
+og falsk Religion, mellem Religion og Mythologie. Den speculative
+Fornuft gjør Mythologien til Religion; den kritiske Forstand gjør
+Religionen til Mythologie; kun i den omvendte Viden kan den
+principielle Adskillelse mellem Religion og Mythologie gjennemføres.
+Vi skulle betragte disse Synsmaader nærmere.
+
+\runhead{a) Mythologie er væsentlig Religion: den speculative\\ Opfattelse.}
+
+Med den Forudsætning, at Sandheden i Religionen og Sandheden i
+Videnskaben ikke ere to indbyrdes ueensartede Sandheder, men den ene
+og samme absolute Sandhed, maa den speculative Religionsphilosophie
+conseqvent anerkjende Religionen i enhver Mythologie, og betragte
+den mythiske Indklædning som et Hylster, der let kan borttages.
+Religionen er Aand, og for Aanden som Aand ere de endelige
+Forestillinger ligegyldige. At udgrunde Aandens Væsen er at udgrunde
+Religionens Væsen; for at udgrunde Religionens Væsen udvikler
+Philosophien Religionens Begreb. Religionens Begreb er i dets
+Almindelighed et Slægtsbegreb, men efter dets særlige
+Fremtrædelsesmaader et Artsbegreb. Religionens Idee har sondret sit
+Indhold og udlagt sine Momenter i en Fleerhed af mere og mindre
+eensidige Religioner, for igjennem disse at samle sig ud af
+Adpredelsen og komme
+% ---- printed p.12 (PDF 25) ----
+til Fuldendelse i den ene, sande, fuldkomne Religion. „Det har“,
+siger Hegel, „været Aandens Arbeide gjennem Aartusinder, at udføre
+Religionens Begreb og gjøre den til Gjenstand for Bevidstheden.“
+Opgaven er at vise, hvorledes Menneske-Aanden, begyndende i al
+Naturlighed, har Trin for Trin kunnet hæve sig over den naturbundne
+Tilstand til stedse større Frihed og omsider naae det Vendepunkt, da
+Aanden begreb sig som Aand og udtrykte Begrebet i den forbilledlige
+Existens, der under Samfundets Form skal tilegnes og virkeliggjøres
+af Alle. Hegels religionsphilosophiske Systematik er i denne
+Henseende charakteristisk. Fra \emph{Naturreligionen}, det Trin,
+hvor Bevidstheden i gjærende Eenhed af Natur og Aand anskuer det
+Guddommelige, gjennem den \emph{aandige Individualitets eller den
+frie Subjectivitets} --- \emph{Høihedens, Skjønhedens og
+Hensigtsmæssighedens} --- \emph{Religioner} skrider Udviklingen frem
+til Opfattelsen og Bestemmelsen af den i sig klare, aabenbare, til
+Aabenbaringsbegrebet svarende Religion, \emph{den absolute Religion,
+Christendommen}.
+
+Ifølge denne Synsmaade ere alle Religioner beslægtede, alle
+udsprungne af een Rod, alle Grene paa een Stamme. Den gamle
+Adskillelse imellem Naturreligionerne og den aabenbarede Religion er
+hos Hegel overseet, endog i den Grad, at „Høihedens Religion“ i
+Jødedommen bliver --- for Begrebets Skyld --- stillet lavere end
+„Skjønhedsreligionen“ hos Grækerne og „Hensigtsmæssighedsreligionen“
+hos Romerne. Hvad følger nu heraf? At den jødiske Religion er
+Mythologie ligesaavel som den græske og romerske! Men naar
+Jødedommen er Mythologie, da er Christendommen ogsaa Mythologie: den
+absolute Religion er af samme Oprindelse som de relative. Med den
+absolute Religion er det Mythiske altsaa ikke forsvundet; det er
+tvertimod blevet Aanden gjennemsigtigt som et til Religionens
+eiendommelige Form Med\-
+% ---- printed p.13 (PDF 26) ----
+hørende. Først naar det i Religionen forestillede Begreb begribes i
+Viden, d.\ v.\ s.\ naar Religionen forvandles til Philosophie,
+forsvinder det Mythiske.
+
+„Den absolute Religion“, siger Hegel, „er den aabenbare. Religionen
+er da først det Aabenbare, naar Religionens Begreb selv er \emph{for
+sig}, d.\ v.\ s.\ naar dens Begreb er blevet sig selv objectivt,
+ikke i indskrænket, endelig Objectivitet, men saaledes at den efter
+sit Begreb er sig objectiv. Vi have saaledes Tvende: Bevidstheden og
+Objectet; men i den med sig opfyldte Religion, den aabenbare, der
+har fattet sig selv, er Indholdet selv Gjenstanden, og denne
+Gjenstand, \emph{det sig vidende Væsen, er Aanden}. Her er først
+Aanden som saadan Gjenstand, Religionens Indhold, og Aanden er kun
+for Aanden. Idet den er Indhold, Gjenstand, giver den sig selv den
+subjective Bevidstheds anden Side, og derved et endeligt Udseende.
+Det er Religionen, der er opfyldt med sig selv. Det er denne Idees
+abstracte Bestemmelse, eller Religionen er i Virkeligheden Idee. Thi
+Idee i philosophisk Betydning er Begrebet, der har sig selv til
+Gjenstand, d.\ e.\ har Tilværelse, Realitet, Objectivitet, er ikke
+mere det Indre eller Subjective, men objectiverer sig, kun at dets
+Objectivitet tillige er dets Tilbagevenden i sig selv, eller,
+forsaavidt vi kalde Begrebet Øiemed, det opfyldte, udførte Øiemed,
+der følgelig er objectivt.“\footnote{Religionsphilosophie II.
+Berlin 1840. S.\ 192--93.}
+
+Men naar Religionens Indhold paa denne Maade falder sammen med
+Philosophiens Idee, naar den religiøse Erkjendelse gjøres til Eet
+med Speculationens absolute Viden, hvo seer da ikke, endog ved
+første Øiekast, Conseqvensen? Religionen fordrer Tro paa sine
+overnaturlige Kjendsgjerninger, holder fast ved den existentielle
+Umiddelbarhed og vil ikke lade sig omdanne til Philosophie;
+Philosophien, der har forvandlet de hellige
+% ---- printed p.14 (PDF 27) ----
+Kjendsgjerninger til mythiske Forestillinger, er sikker paa Viden,
+erklærer al positiv Religion for Mythologie og opgiver Troen.
+
+\runhead{b) Religion er Mythologie: den kritiske Opfattelse.}
+
+Striden mellem Religion og Philosophie begyndte hos Grækerne meget
+tidlig, og hvad Romerne angaaer, kunde jo to Augurer paa Ciceros Tid
+ikke betragte hinanden uden at lee. Vistnok afgav Religionen det
+oprindelige Grundlag for Aandslivet hos Grækerne saavelsom hos
+Romerne, men hos dem begge viser det sig ogsaa, at de religiøse
+Forestillingers Form kun paa Folkelivets første, barnlige Trin
+tilfredsstiller Aanden: Udviklingsloven er, at Bevidstheden med den
+tiltagende Reflexion og den fremskridende Cultur voxer fra
+Religionen. Da Sokrates havde opdaget Subjectivitetens Dialektik,
+sat Selverkjendelsen som Philosophiens Maal og forsaavidt indført
+„nye Guder“, kunde Folkereligionen ikke længere modstaae
+Philosophernes Angreb. Blev end Mythebegrebet selv ikke i Oldtiden
+udviklet med den Klarhed og Dybde, som skeet er i Nutiden, saa blev
+det dog, hvad Gudernes Liv og Heroernes Bedrifter angaaer, snart
+tilstrækkelig indlysende, at „det Guddommelige“, for at bruge et
+Udtryk af Strauss, „ikke kunde være skeet saaledes, at det saaledes
+Skete ikke kunde være guddommeligt“. Denne Opløsning, der forklarer
+Mytherne, men tilintetgjør Guderne, er ikke et aandeligt
+Tilbageskridt, men i Tankens, Fornuftens, Selvbevidsthedens Navn et
+væsentligt Fremskridt. Det Mythologiske er det ubevidst Illusoriske;
+men dette ligefrem Illusoriske kan Religionen ikke afføre sig uden
+at blotte sin medfødte Svaghed og give sig selv til Priis. De
+overnaturlige Phænomener i det Nye Testamente ere ligesaa
+fornuftstridige som Begivenhederne i den græske Gudekrig. Religion
+og Mythologie ere eenstydige Begreber, og Forskjellen mellem lavere
+og
+% ---- printed p.15 (PDF 28) ----
+høiere, ufuldkomnere og fuldkomnere Religioner kun en Forskjel
+mellem lavere og høiere, ufuldkomnere og fuldkomnere Mythologier.
+
+Jo høiere en Mythologie staaer, jo mere opfyldt den er af Væsen og
+Aand, desto længere vil den naturligviis holde ud med
+Culturbevidstheden; men just den Omstændighed, at den aandfuldeste
+af alle Myther, Mythen om den Opstandne, har kunnet bære Culturen
+gjennem atten Aarhundreder og holde ud med Menneske-Aanden, indtil
+Bevidstheden omsider fik Bugt med alle uklare Forudsætninger og kom
+til sig selv, idet den „som det frie, for sig værende Almene, blev
+sig selv gjennemsigtig“, netop dette viser, hvad det egentlig er,
+der i den „aabenbarede“ Religion bliver det Aabenbare. Det er ikke
+en Grundforskjel mellem Mythe og Aabenbaring, der kommer for Dagen;
+nei, det, der nu kommer for Dagen, er noget ganske Andet, det er den
+store objective Sandhed, at Menneske-Aanden, ikke det enkelte
+Menneskes Aand, men Menneske-Aanden i sit Princip, er sin egen
+Guddom, er i den religiøse Selvfordobling baade Subject og Object,
+som endelig Aand Subject, som Aand i indre Uendelighed Object. Dette
+er ingen blasphemisk Selvforgudelse, det er jo Opdagelsen af det
+Absolute, af Ideen som Idee, af det Subjectives og det Objectives
+gudmenneskelige Eenhed.
+
+Ved at gjennemføre Vidensprincipet har den philosophiske Kritik
+conseqvent opløst Religionen som Religion --- thi at ville bevare
+det Religiøse, naar Religionens Princip er opløst, er naturligviis
+Nonsens --- den har da med det Samme naaet det Grændseskjel, hvor
+Livsmagterne reagere: det Religiøse gjør sin Ret gjældende, Troen
+træder op imod Viden, og de ueensartede Principer maale sig med
+hinanden.
+% ---- printed p.16 (PDF 29) ----
+\runhead{c) Religion er absolut ueensartet med Mythologie: den anti-\\
+rationelle Opfattelse.}
+
+Der er saavel i den kritiske som i den speculative Philosophies
+Stilling til Religionen en Tvetydighed, der fra Først til Sidst maa
+blende Betragteren og forvirre hans Opfattelse, denne Tvetydighed
+ligger i Brugen af Ordet Sandhed. At den evige, absolute Sandhed kun
+er een, og at den ene guddommelige Sandhed ikke kan være bleven
+splidagtig med sig selv eller have deelt sig i to med hinanden
+indbyrdes stridende Sandheder, er ganske vist en ligesaa utvetydig
+som ubestridelig Forudsætning. Men idet man saa uden videre overseer
+Forskjellen imellem en guddommelig og en menneskelig Viden af
+Sandheden, overseer, at hvad der i Guds Viden er absolut, maa i
+Menneskets være relativt, overseer den principielle Forskjel mellem
+religiøs og videnskabelig Erkjendelse, fremkommer Tvetydigheden. Det
+seer ud, som om Philosophien virkelig gik ind paa Religionens egne
+Forudsætninger, lod disse Forudsætninger udvikle deres religiøse
+Conseqvenser, og derved kom til stridige, hinanden ophævende
+Resultater. Ja, hvis det virkelig gik saaledes til, da kunde det med
+Sandhed siges, at den philosophiske Kritik lod Religionen selv
+fuldbyrde sin egen Opløsning. Men saaledes gaaer det ikke til.
+Istedenfor at begynde med det religiøse Princip, begynder jo
+Videnskaben tvertimod med Vidensprincipet. Ved at anvendes paa
+Religionen bliver Vidensprincipet conseqvent et religionsfornegtende
+Princip. Naar det da faaer Udseende af, at Kritiken beviser
+Religionens Selvopløsning, saa er dette kun et Skin. Sandheden er,
+at Kritiken faaer ud, hvad den selv har sat ind; den begynder med at
+sætte Religionsfornegtelsen ind, og ender med at faae
+Religionsfornegtelsen ud: den opløsende Kritik bevæger sig i en
+Cirkel. Thi hvad er det vel, som Videnskaben i Principet sætter som
+det Mythiske? Det er just det for
+% ---- printed p.17 (PDF 30) ----
+Religionen eiendommelige Gudsforhold. At klare og bestemme
+Gudsforholdet er at klare og bestemme de for Aandslivet afgjørende
+Grundbetingelser. Nu bør dog Videnskaben vide, at disse
+Grundbetingelser stille sig anderledes paa Troens end paa Videns
+Omraade. Er det virkelig Videnskabens Alvor at faae Aandslivet selv
+fra Grunden af opklaret og forstaaet, da maa den, idetmindste indtil
+videre, kunne vise den Selvfornegtelse, at see bort fra sit eget
+Princip, og lade Religionen komme til Orde.
+
+At Religionsprincipet er absolut ueensartet med Videnskabens
+Princip, kan sees af Begrundelsen. Alle Vidensgrunde ere i dybeste
+Forstand Nødvendighedsgrunde, Religionens Grunde derimod ere
+Villiesgrunde. Guds Villie er Religionens Absolute. Skulde det, hvad
+Tankeløse paastaae, være en Modsigelse, at Videnskaben bliver
+vidende om et med Viden absolut ueensartet Princip, da maatte det
+netop være den negative Kritik, der har hildet sig i Modsigelsen.
+Hvad vil denne Kritik? Opløse den positive Religion i Kraft af
+Viden. Hvorfor vil den opløse den positive Religion? Fordi dens
+oprindelige Forudsætninger ere absolut uforenelige med al Videnskab.
+Kan Videnskaben nu ikke blive vidende om de med Videnskaben
+uforenelige Forudsætninger, saa behandler Kritiken jo Noget, den
+ikke veed hvad er, og dens hele Forehavende er meningsløst;
+paastaaer den, at den tilfulde veed, hvad det er, den opløser, da
+har den med det Samme indrømmet, at Videnskaben kan blive vidende om
+det i Viden Ufordragelige. Men at Religionsprincipet er absolut
+ueensartet med Vidensprincipet, vil jo ikke sige Andet end, at dette
+i sig eiendommelige Princip, naar det skal opfattes og anvendes som
+Vidensprincip, maa blive Videnskaben ufordrageligt. Og hvorfor?
+Fordi Religionens Princip er Guds ubetingede Villie.
+
+At kjende Guds Villie, give sig hen i Guds Villie
+% ---- printed p.18 (PDF 31) ----
+og gjøre Guds Villie, er Religionens Eet og Alt. Men en ubetinget
+Villie kan ingen Videnskab assimilere. Vistnok er Villien ikke for
+sig uden Væsen og Idee; men derved, at Ideens Indhold sættes i
+Villiens Form, og bestemmes af Villien, blive Væsenstankerne
+Villiestanker, og Sandheden personlig. Idet Gudsforholdet er sat som
+Villiesforhold, er der udtrykkelig sat en Grundforskjel og dermed et
+Grændseskjel mellem den religiøse og den videnskabelige, den
+personlige og den upersonlige Sandhed. Den upersonlige Sandhed
+erkjendes af Ideenødvendighed; den er Menneskets Væsen iboende og
+kan ikke tabes, uden at Mennesket taber sin Fornuft og ophører at
+være Menneske. Den personlige Sandhed, Villiessandheden, er derimod
+identisk med Friheden og kan tabes, naar Friheden tabes, d.\ e.\
+naar Gudsforholdet forstyrres. Skal Religionsphilosophien virkelig
+begynde med Religionens Princip, da maa den begynde, ikke med en
+Viden \emph{af}, men med en Viden \emph{om} to absolut ueensartede
+Principer.
+
+Oprindeligt --- saa lyder det i Videnskaben ufordragelige Ord ---
+har Mennesket været sat i det begyndende Gudsforhold saaledes, at
+det deri har havt alle Forudsætninger og Betingelser for Sandhedens
+og Frihedens Erkjendelse. Ved Villiens, altsaa ved Frihedens Misbrug
+har det tabt Friheden, er sunken ned i Ufrihed og dermed i personlig
+Usandhed. I Usandheden har det tabt Erkjendelsen af Guds Villie, af
+Gud som Gud, og derved tillige Betingelsen for at erkjende sig selv
+efter sin evige Bestemmelse. Som det faldne Menneskes
+Gudserkjendelse er bleven illusorisk, er ogsaa dets Selverkjendelse
+bleven illusorisk. Evnen til almindelig Væsenserkjendelse er
+bevaret, men Villieserkjendelsen er tabt: Fornuften er bevaret, men
+Aanden er formørket. Beroede Gudsforholdet nu derpaa, at Mennesket
+ved sig selv af egen aandelig Drift kunde sætte sig i Forhold til
+Gud, da vilde det ogsaa beroe paa Mennesket selv, om det efter at
+% ---- printed p.19 (PDF 32) ----
+være traadt ud af Forholdet paany vilde træde ind og gjenoprette,
+hvad det havde forbrudt. Men det er umuligt. Det er ikke Mennesket,
+der har begyndt med at sætte sig i Forhold til Gud, men Gud, der fra
+Begyndelsen af har sat sig i Forhold til Mennesket; skal det brudte
+Forhold gjenoprettes, maa det skee derved, at Gud ved en udtrykkelig
+Villiesact paany antager sig Mennesket, altsaa derved, at han
+\emph{aabenbarer sig for Mennesket}. Dette er --- vi gjentage det
+--- Religionens Grundtanke. Hvad den Vidende fra en oversvævende
+Betragtnings objective Standpunkt vil dømme om denne Tanke, om han
+vil finde den rimelig eller urimelig, antagelig eller uantagelig,
+tiltrækkende eller frastødende, er uvæsentligt; det Væsentlige er,
+at Videnskaben bliver vidende om den, mærker sig den og seer,
+hvorledes den udvikler sig i Religionen.
+
+Ved den her angivne Grundtanke er Forskjellen mellem Aabenbaring og
+Mythe, mellem Religion og Mythologie uafviselig fastsat. Denne
+Forskjel bestemmes ikke ved udvortes, men ved indvortes Mærker, ikke
+ved historiske Beretninger, men ved Aandens Vidnesbyrd. Men
+hvorledes bestemmes saa Aandens Vidnesbyrd? Dersom Aandens
+Vidnesbyrd ikke var Andet end de religiøse Individers umiddelbare
+Udtalelse af deres egne indre, individuelle Erfaringer, vilde Aanden
+være principløs, og Religionen ikke til at adskille fra
+Mythologien. Thi hvilken Mangfoldighed af Theophanier, af
+Villiesforkyndelser, Raad, Veiledninger, Befalinger, Trusler og
+Forjættelser fra Guder til Mennesker indeholdes ikke i de gamle
+Gudesagn! Denne Blanding af alskens Indbildninger, denne brogede
+Vrimmel af mere og mindre ideale Gudsforestillinger kan ikke blende
+det Sind, der holder sig overbeviist om, at Religionen er Aandens
+Liv, og at Livet har sit Princip. Det Gudsforhold, der i Eet og Alt
+fyldestgjør Aandens, det evige Livs Fordringer, fastsætter Maalet,
+% ---- printed p.20 (PDF 33) ----
+anviser Veien og tilbyder Midlerne, er og maa være det sande,
+ethvert andet derfra afvigende, det usande. Her fordres altsaa en
+Kritik, der sikkert adskiller det sande Gudsforhold fra det usande.
+
+Som Principet er, maa Kritiken være. Da nu Principet som
+Villiesprincip, det absolute Frihedsprincip, ikke tilhører
+Videnskaben, men Religionen, saa følger heraf, at den Kritik, der i
+Aand og Sandhed skal kunne skjelne Religion fra Mythologie, maa
+være, ikke videnskabelig, men religiøs.
+
+Hvad har saa Videnskaben med denne Kritik at gjøre? Den har at
+skaffe de formelle Betingelser tilveie; den har at fremhæve alle
+væsentlige Bestemmelser, fjerne alle uvedkommende Hensyn, afværge
+alle forvirrende Tankeblandinger, sikkre Bevægelsens conseqvente
+Fremgang og blive vidende om det religiøse Princips eiendommelige
+Selvudvikling.
+
+Gudsforholdet er et Forhold af Aand til Aand. Herom kan Videnskaben
+i al Almindelighed være enig med Religionen; men naar Forholdet
+nærmere skal bestemmes, indtræder Adskillelsen. Forholdet har nemlig
+to Hovedsider, Ideesiden, der grunder i Fornuftnødvendighed, og den
+exclusive Villiesbestemmelse, der grunder i Friheden: hiin er den
+abstracte, thi Ideesiden kan fremhæves, uden at Villien erkjendes;
+denne er derimod den concrete, thi Villien kan ikke, hverken som
+menneskelig eller guddommelig, erkjendes i Sandhed, uden at
+erkjendes i Ideen. Saalidt som Aanden er en i sig almindelig Idee
+uden Villie, ligesaalidt er den en tom, vilkaarlig Villie uden Idee:
+Aandsvillien er Ideevillie, Aanden selv den absolute Eenhed af Idee
+og Villie.
+
+I det mythiske Gudsforhold er Friheden lammet, Villieselementet
+forqvaklet. Forqvaklingen viser sig saavel fra den guddommelige som
+fra den menneskelige Side deri, at Egoismen er traadt i
+Aandsvilliens Sted;
+% ---- printed p.21 (PDF 34) ----
+de mythiske Guder ere Egoister ligesaavel som Menneskene.
+Forskjellen er imidlertid den, at kun den menneskelige Egoisme er
+reel, den guddommelige opdigtet og phantastisk. Saa vaagner
+Fornuften og opdager det Phantastiske; Gudernes Villie forsvinder
+med Guderne selv: kun Ideenødvendigheden bliver tilbage. Fra den
+aabenbarede Religions Standpunkt kunne Naturreligionerne umulig
+antages for at høre til Sandhedens Rige; de ere tvertimod Vidnesbyrd
+om et i Usandhed nedsunket Gudsforhold, et forudgaaende Affald fra
+den sande Gud. De mythiske Guder ere i Religionens Sprog Afguder,
+falske Guder; den Eenhed af Aand og Natur, hvormed Mythologien
+begynder, er en falsk Eenhed. Fornuften kan belyse de falske Guder,
+opdage Virkelighedens Love og forjage Overtroen; men Ideens
+Tvetydighed, den falske Eenhed af Natur og Aand, kan den til sig
+selv overladte Fornuft umulig opklare, og det af den gode naturlige
+Grund, at Fornuftnødvendighed og Ideenødvendighed væsentlig falde
+sammen. Fornuften kan erkjende en Verdensorden i Tingenes
+Sammenhæng, kan i Stat, i Kunst, i Videnskab udfolde og klare
+Ideernes System; men Aanden som Aand, den evig frie, som absolut
+Villie virkende Aand kan den ikke forklare. Aanden som Aand har kun
+een Forklaring, og det er dens egen, ubetinget frie
+Selvaabenbarelse. Fornuften er saa langt fra at kunne ophæve det
+Mythiske, at den ved at miskjende Gudsvillien og lade Friheden paa
+tvetydig Maade fødes af Nødvendigheden, meget mere selv i Væsen og
+Grund er mythisk. Dette er Religionens Grundtanke; om den vil være
+istand til at udvikle og forsvare den imod videnskabelige Angreb,
+ville vi faae at see; men Saameget er vist: det er Religionens
+Grundtanke, og Videnskaben maa blive vidende derom.
+
+Idet Villiesprincipet er sat som Aandens eget guddommelige Princip,
+maa Opfattelsen af det for Religionen
+% ---- printed p.22 (PDF 35) ----
+Eiendommelige blive, ikke rationel, men antirationel. Det
+Antirationelle er ingenlunde det i sig selv Fornuftstridige, men
+det, der med en saa eiendommelig Bestemthed staaer Fornuften imod,
+at den Fornuftige ved nærmere Eftertanke maa indsee det Ufornuftige
+i at ville begribe det. Modsætningen af Religion og Fornuft
+bestemmes ingenlunde derved, at Religionen skulde enten gjøre Brud
+paa de almindelige Tankelove eller negte Fornuften Ret til at prøve
+de objective i Ideenødvendighed begrundede Sandheder; nei,
+Modsætningen bestemmes ved det for Religionen eiendommelige Princip,
+Villiesprincipet. En videnskabelig Begrundelse af Villiesprincipet
+er umulig; men af samme Grund er en videnskabelig Gjendrivelse af
+dette Princip da ogsaa umulig. Hvor antirationelt Principet er,
+bliver især indlysende, naar vi betænke, at dets Væsen er Underet
+selv, at det absolute Villiesprincip netop er Underets Princip.
+
+Naar Talen er om det i Religionen Overnaturlige og „Unaturlige“, som
+forarger Fornuften, saa pleier Opmærksomheden gjerne at fæste sig
+paa Miraklerne i det Ydre, de udvortes Tegn og Gjerninger, som om
+det var dem alene, der vakte Anstød. Herved overseer man det
+indvortes overnaturlige Princip. Og naar saa Talen er om dette
+Princip, overseer man igjen kun altfor let, at det overnaturlige
+Princip er Villiesprincipet selv. Den saakaldte sunde Fornuft finder
+det anstødeligt at negte Gud en Villie, men den finder det ikke
+anstødeligt at negte Religionen sit Mirakel. Har --- saaledes
+raisonnerer man --- Mennesket, som kun er et endeligt Fornuftvæsen,
+en, om end ufuldkommen, fri Villie, saa maa Guddommen, det uendelige
+Fornuftvæsen, nødvendigviis have en fuldkommen fri Villie. Det
+Forargelige sættes altsaa ikke deri, at den Almægtige har en
+fornuftig Villie, men deri, at en uendelig fornuftig Villie skulde
+kunne beslutte sig til noget saa Ufornuftigt, som at gjøre et
+Mirakel. Men det
+% ---- printed p.23 (PDF 36) ----
+kategoriske Udtryk for den almægtige Villies ubetingede Frihed er
+Miraklet. At Gud som Gud kan ville, kan beslutte, kan i en enkelt
+bestemt Gjerning udtale en enkelt bestemt Villiestanke, er jo netop
+Miraklernes Mirakel, Grundmiraklet: Religionen, Gudsforholdet selv,
+er Grundmiraklet.
+
+Forskjellen mellem Religion og Mythologie er da i Korthed denne:
+Religionen udtrykker det sande, almægtige, Mythologien det falske,
+afmægtige Villiesprincip; Religionen kjendes paa det sande,
+Mythologien paa det falske, blot forestillede Mirakel.
+
+\subhead{Aabenbaring og Tro.}
+\parmark{3}
+
+Dersom Aandens d.\ v.\ s.\ Villiens Gud ikke var sig selv aabenbar,
+vilde Aandsvillien ganske vist heller ikke kunne blive Mennesket
+aabenbar; men det for Aabenbaringsbegrebet Afgjørende er dog ikke,
+hvad Hegel antager, at Aanden som Aand \emph{bliver} aabenbar, men,
+at Aanden selvbestemmende \emph{gjør} sin Villie aabenbar:
+Aabenbaringen er som Frihedsact udtrykkelig en Villiesact. Herpaa
+beroer fra Guds Side Aabenbaringens uopløselige Eenhed med Underet,
+fra Menneskets Side dens uopløselige Eenhed med Troen. Ligesom Troen
+bliver guddommelig bestemt ved Aabenbaringen, saaledes bliver
+Aabenbaringen igjen menneskelig bestemt ved Troen: Aabenbaring er et
+Troesbegreb, Tro et Aabenbaringsbegreb. Den samme Aand, der virker
+Aabenbaringen, virker ogsaa Troen; og ligesom Aabenbaringen bliver
+aandløs, naar dens objective Elementer adskilles fra Troen, saaledes
+bliver ogsaa Troen aandløs, naar den troende Subjectivitet løsriver
+sig fra Aabenbaringen. Da begges Eenhed imidlertid ikke er en blot
+formel, men en reel Eenhed, altsaa en Modsætningseenhed, vil det til
+Sagens
+% ---- printed p.24 (PDF 37) ----
+Opklaring være nødvendigt at belyse Forholdet fra dets forskjellige
+Hovedsider; fra det historiske, ved Modsætningen mellem Aabenbaring
+og hellig Historie; fra den metaphysiske, ved Modsætningen mellem
+Aabenbaring og Fornuft; fra den psychologiske, ved Aabenbaringens
+Tilegnelse i Troen.
+
+\runhead{a) Aabenbaring og hellig Historie.}
+
+Som Villiesact af Gud selv er Aabenbaringen ikke „Manifestation“ af
+en speculativ Idee, men guddommelig Handling, en Aandens Gjerning,
+en hellig Kjendsgjerning. Aabenbaringen er, ifølge sit Princip,
+historisk; kun gjælder det om, at det Historiske ikke kommer ind
+under en falsk Belysning. Ved at anlægge samme Maalestok paa den
+hellige som paa den profane Historie falder det Kritiken let, ikke
+blot at rokke de bibelske Fortællingers Troværdighed, men tillige at
+sætte en Skilsmisse mellem Aabenbaring og Tro, der maa tilintetgjøre
+begges Betydning. En Betragtning, som hertil svarer, er følgende:
+Der viser sig historisk en Forskjel mellem umiddelbar og middelbar
+Meddelelse af det, der aabenbares. Den umiddelbare Meddelelse skeer
+ikke til Alle, men kun til Enkelte. Disse Enkelte, de Udvalgte, der
+saa at sige faae Aabenbaringen paa første Haand, opleve selv det
+Vidunderlige. Men hvad et Menneske saaledes oplever, derom har han
+jo en ligefrem umiddelbar Vished, men til ligefrem, umiddelbar
+Vished svarer Viden, ikke Tro. Jeg troer ikke, at jeg er til, thi
+jeg veed det; jeg troer ikke, at jeg virkelig seer og hører, og at
+der er synlige og hørlige Ting til, thi jeg veed det. Saaledes med
+de Udvalgte; de \emph{troe} ikke, at en Aabenbaring er skeet, thi de
+\emph{vide} det. Mængden derimod, de Ikke-Udvalgte, d.\ v.\ s.\ de,
+som ikke selv opleve det Vidunderlige, men ved at stole paa
+Beretninger om, hvad Andre have oplevet, modtage Aabenbaringen paa
+anden Haand,
+% ---- printed p.25 (PDF 38) ----
+altsaa ret historisk, blive de egentlig Troende. Thi at troe paa en
+Aabenbaring, man udtrykkelig har faaet, er jo ingen Sag, men at troe
+paa en Aabenbaring, man ikke har faaet, er en anstrengende Opgave.
+Paa denne Maade faaer man Aabenbaring og Tro til at falde udenfor
+hinanden: \emph{salige ere de, som ikke have seet, men dog troe}.
+Ved at falde udenfor Troen bliver Aabenbaringen udvortes objectiv,
+altsaa aandløs: ved at falde udenfor Aabenbaringen bliver Troen, med
+et tomt Indvortes, hvis Indhold maa søges i et Udvortes, formelt
+subjectiv, altsaa aandløs. Denne dobbeltsidige Aandløshed vedkommer
+imidlertid ikke Religionen, men alene Kritiken.
+
+For at fyldestgjøre Aandens Fordring, optager og forener den hellige
+Historie absolut ueensartede Elementer. Gud forkynder Mennesket sin
+Villie; Forkyndelsen skeer umiddelbart, paa endelig bestemt Maade.
+Paa den umiddelbare Bestemthed vil det Overnaturlige kjendes; men
+den bestemte Umiddelbarhed hefter i Yttringsmaaden tillige ved det
+Naturlige, det i Phænomenet Sandselige; Indhold og Form, det Indre
+og det Ydre staae i afgjørende Modsætning: Indholdet er
+overnaturligt, Formen naturlig, det Indre er oversandseligt, det
+Ydre sandseligt. Dette er en Modsigelse. Dersom nu Indholdet var
+commensurabelt med Formen, og Forholdet mellem det Indre og det Ydre
+et immanent Nødvendighedsforhold, maatte Modsigelsen naturligviis
+løses i Viden. Men Indholdet er netop incommensurabelt med Formen;
+Forholdet mellem det Indre og det Ydre er ingenlunde begrundet i
+Nødvendighed, men tvertimod sat med guddommelig Frihed. Modsigelsen
+er, at det Oversandselige skal sandses, det i sig Usynlige sees, det
+Uhørlige høres, en saadan Modsigelse maa løses i Troen. Kun Troen i
+religiøs Forstand besidder den lykkelige Eenhed af uendelig
+Reflexion og barnlig Umiddelbarhed, den vidunderlige
+% ---- printed p.26 (PDF 39) ----
+Gave, at kjende det Oversandselige paa det Sandselige, og sætte det
+Naturlige sammen med det Overnaturlige. Troen forbinder Extremer af
+Helligt og Syndigt, af guddommelig Almagt og menneskelig Afmagt: ved
+Troen, og kun ved Troen, sættes Mennesket i et paa een Gang endeligt
+og dog uendeligt Forhold til Gud som Aand til Aand.
+
+Vi lære det af den hellige Historie. Ved umiddelbar Aabenbaring
+faaer Abraham Befaling til at offre sin Søn Isaak. Kunde en saadan
+Befaling nu virkelig opfattes med samme umiddelbare, sandselige
+Vished, som man kan opfatte en menneskelig Befaling, saa var den
+hele Fortælling om Abrahams Lydighed uden religiøs Betydning. Hvad
+Abraham gjør, kunde og vilde enhver Anden i hans Sted have gjort.
+Thi hvem er det vel, der befaler? Jehova selv, den almægtige Skaber!
+Her kan da, under Forudsætning af sandselig Vished, ligesaa lidt
+være Tanke om Mulighed for at unddrage sig Befalingen som om Fare
+ved at opfylde den. Hvad vovede vel den Mand, der vidste med sig
+selv, at den talende Gud var hans Ven, naar han, vel at mærke,
+vidste det med sandselig ubedragelig Vished. Den Almægtige kunde jo
+% sic: "døer" (for "døe") is the printed reading — verified at 400 dpi, p.26.
+maaskee blot ville lade Isaak døer for at vække ham op igjen, eller,
+hvis det ikke behagede ham at opvække den Døde, give sin Udvalgte
+tusinde Sønner i Erstatning for den Ene. Nei, den religiøse
+Betydning ligger netop deri, at Abraham ifølge Sagens Natur umulig
+kunde have nogen sandselig afgjørende Vished, og just af den Grund
+maatte have Forvisningen i Troen. Han troede at høre Jehovas Stemme;
+han troede, at Befalingen, skjøndt den, utroligt nok, løb paa Isaaks
+Opoffrelse, udgik fra Gud, og ikke, hvad det naturlige Hjerte dog
+maatte finde langt troligere, fra mørke Griller eller fra en ond
+Aand. --- Vende vi os til Evangeliet, da behøvede de Samtidige jo
+blot at bruge de naturlige Sandser for at see og høre
+% ---- printed p.27 (PDF 40) ----
+Mennesket Jesus; men til i Menneskens Søn at opdage \emph{Christus,
+den levende Guds Søn}, var den naturlige Seen og Høren ikke
+tilstrækkelig: \emph{salig er du Simon, Jonas Søn, thi Kjød og Blod
+haver ikke aabenbaret dig det, men min Fader, som er i Himmelen}
+(Mtth.\ 16).
+
+Saa lidt som en ydre Aabenbaring kan faae religiøs Betydning uden
+Tro, ligesaa lidt kan Troen faae religiøs Betydning uden en
+tilsvarende indre Aabenbaring. Mangler den indre Aabenbaring, ville
+Beretninger om det Overnaturlige enten afvises med Vantro eller paa
+overtroisk Maade antages ifølge en blot historisk Tro. Thi al
+ligefrem historisk Tro paa den hellige Historie er Overtro. Den
+hellige Historie er nemlig deri forskjellig fra anden Historie, at
+den vil troes, ikke med, men imod al Sandsynlighed. Paa Grund af
+Usandsynligheden er det i Aabenbaringen Historiske, hvad Antagelsen
+angaaer, ikke ligefrem understøttende, men tvertimod frastødende.
+Det Høieste, der ved historisk Vidnesbyrd kan opnaaes, er kun
+Sandsynlighed for, at Vidnerne selv have troet paa det
+Usandsynlige. Det Usandsynlige, som ellers er et Kjendetegn paa det
+Uhistoriske, er i den hellige Historie netop Mærket paa det
+Religiøse, forsaavidt det er Underets Mærke.
+
+De evangeliske Beretninger om Christi Opstandelse gjøre ingenlunde
+Opstandelsen selv sandsynlig, saa lidt som de give nogen fuldkommen
+Forvisning om dens Virkelighed. Dette er ingen Indvending imod
+Beretningernes Troværdighed; tvertimod, de kunne ikke være
+troværdigere end de virkelig ere, men Troværdigheden boer i det
+Frastødende. Uden de historiske Vidnesbyrd vilde den religiøse Tro
+mangle de overnaturlige, ved bestemte Kjendsgjerninger bestemte
+Forudsætninger, og dermed sit egentlige Grundlag; men derfor er det
+ligefuldt sandt, at det ikke er de udvortes i sig usandsynlige Be\-
+% ---- printed p.28 (PDF 41) ----
+givenheder, men det i Begivenhederne Indvortes, det Aabenbarede, som
+paany aabenbarer sig for Troens Blik, ophæver Forbigangenheden og
+gjør det Guddommelige nærværende. Den ydre Aabenbaring er paa
+Betingelse af Tro udtrykkelig sat i hellig Historie, for at det
+Historiske igjen paa Betingelse af Tro kan omsættes i indre
+Aabenbaring.
+
+\runhead{b) Aabenbaring og Fornuft.}
+
+Modsætningen mellem Aabenbaring og Fornuft betegnes kort og skarpt
+som en Modsætning mellem ubetinget Frihed og absolut Nødvendighed,
+mellem Sandhed i Tro og Sandhed i Viden. At ville tilhylle det
+Stridige og Stridbare i denne Modsætning er forgjæves. Man har
+beraabt sig paa, at Sandheden maa være een og udeelt, i alle
+Henseender overeensstemmende med sig selv; men saasnart man skal til
+at angive, hvor det høieste Sandhedskriterium er, i Aabenbaringen
+eller i Fornuften, bryder Striden ud.
+
+Naar Spørgsmaalet om Aabenbaringens Sandhed gjøres afhængigt af
+Fornuftens Dom, da kommer Videnskaben frem med Indsigelser, den ene
+mere høirøstet end den anden. Aabenbaring i Religionens Forstand er
+et utænkeligt Begreb, lige selvmodsigende, enten vi see paa
+Menneskets eller paa Verdens eller paa Guds Væsen.
+
+„Tage vi“, siger en dybsindig Tænker, „blot Hensyn til den
+menneskelige Natur i og for sig, saa overbevise vi os om, at
+Aabenbaringen forudsætter en Receptivitet i Menneskets Aand, der
+ganske strider mod Aandens Væsen. Thi da Aandens Væsen bestaaer i
+Activitet, saa kan den kun være i Liden, forsaavidt den tillige er i
+Virken. Men ved en Aabenbaring, en umiddelbar Indvirkning af det
+høieste Væsen paa den menneskelige Aand, bliver der Intet tilovers
+for den sidste uden en absolut Liden; thi det høieste Væsen er
+absolut activt,
+% ---- printed p.29 (PDF 42) ----
+men det nødvendige Correlat til den absolute Activitet er den
+absolute Passivitet.“ (Schelling). Betragtet fra denne Side er en
+Aabenbaring altsaa umulig. Ligesaa umulig viser Aabenbaringen sig,
+naar vi betragte Verden, den naturlige Tingenes Orden.
+Aabenbaringen er et Under, men Underets Begreb ophæver
+Naturbegrebet. Her behøves ingen smaalig Kritik til at udfinde
+Forskjellen mellem rimelige og urimelige, nødvendige og overflødige
+Undergjerninger; Sagen er, at et eneste Under tilintetgjør hele
+Naturens Realitet. Thi hvad er Naturen? En fornuftnødvendig
+Idee-Aabenbarelse; hvis ikke, da et sandseligt phantastisk
+Skyggevæsen. Have Tingene en naturlig Grund og nødvendig
+Sammenhæng, saa er Miraklet umuligt; er Miraklet muligt, saa er
+Naturgrunden huul, Sammenhængen løs, og Alfornuften en taaget
+Indbildning. Et Mirakel, som f.\ Ex.\ det, at en Stav forvandles til
+en Slange og Slangen igjen til Stav, er nok til at vise, hvorledes
+en naturløs, ubetinget Villie kan lege med alle Betingelser,
+behandle de endelige Aarsager som intetsigende Anledningsaarsager,
+ophæve Loven og berøve Naturen dens Realitet.
+
+Det samme Urimelige viser sig med Hensyn paa Guds eget Væsen.
+Religionen lærer vel, at Gud er uforanderlig; men antage vi dens
+Aabenbaringshistorier, da maa Gud i sig selv være meget
+foranderlig. En Sammenligning mellem Nutid og Fortid viser noksom,
+at der i Tidernes Løb maa være foregaaet en mærkværdig Forandring
+med hans Forhold til Verden og Menneskene. Den samme Gud, der fordum
+talede og talede næsten uophørlig og gjorde saa mange Mirakler, at
+det Gamle og Nye Testamente neppe kunne rumme dem, see, han er i den
+senere Tid bleven ganske taus, og gjør slet ingen Mirakler. Fra
+Aabenbaringens Standpunkt er dette uforklarligt. Dersom det ikke er
+Øiemedet med Miraklerne, at de skulle styrke Troen og bekæmpe
+Vantroen,
+% ---- printed p.30 (PDF 43) ----
+hvad er da Øiemedet? Men dersom en Bestyrkelse i Troen er Øiemedet:
+hvo forklarer os da, hvi Miraklerne udeblive? Gaves der nogensinde
+en Tid, da Menneskene ret kunde trænge til at høre et virkeligt Guds
+Ord, et almægtigt Ord af Guds egen Mund og see en virkelig Guds
+Gjerning, da maatte det vist være denne nærværende Tid; thi ligesom
+Jordbunden efter langvarig Tørke og Hede trænger til husvalende og
+befrugtende Regn, saaledes maae de fromme Gemytter i Tvivlens og
+Culturens Solbrand omsider trænge til husvalende og befrugtende
+Mirakler. Skal Troen paa en overnaturlig Aabenbaring holdes i Live,
+maa den uforanderlige Gud fra Tid til Tid i mærkelig Grad forandre
+sig.
+
+Men er en Aabenbaring nu ogsaa nødvendig? Religionen vil begrunde
+Nødvendigheden paa Menneskeslægtens almindelige Fordærvelse ved
+Syndefaldet; men her, om ellers nogensteds, viser sig et
+paafaldende Misforhold mellem Middel og Øiemed. Fordærvelsen, hedder
+det, er almindelig, Trangen til den foregivne Hjælp følgelig ogsaa
+almindelig; og dog, uagtet Alle ere ved Faldet blevne lige skyldige,
+lige hjælpeløse, lige trængende, har Hjælpen dog langtfra udstrakt
+sig til Alle. Det var oprindelig kun Jøderne, hvilke Gud kom til
+Hjælp ved særegne Aabenbaringer; Hedningene, det store Fleertal,
+maatte hjælpe sig selv, saa godt de kunde, ved Fornuftens Brug. Men
+at hjælpe Nogle og forbigaae Andre, hvad er det Andet end
+guddommelig Partiskhed, grundløs Vilkaarlighed?
+
+At dette i det Hele er „en fornuftig Tankegang“, vil vist Ingen
+negte: Fornuften kan som Fornuft, naar den skal gjøre sit eget
+Erkjendelsesprincip gjældende, ikke dømme anderledes. Men naar
+Fornuften ikke kan dømme anderledes, hvad hjælper det saa at ville
+lægge Dølgsmaal paa, at Aabenbaringen er og maa være Fornuften en
+Forargelse.
+% ---- printed p.31 (PDF 44) ----
+Gjøres omvendt Sagen afhængig af Aabenbaringens Kjendelse, da vil
+Dommen ligefrem gaae Fornuften imod, og det vil let kunne synes, som
+om dens Ret blev krænket. Fornuften mener at kunne forklare, begribe
+og gjennemskue Aanden; det er denne Mening, Religionen tilbageviser
+som en Indbildning. Thi Aabenbaringen alene forklarer Aanden og
+oplader dens Dybder: Aabenbaringen er Aandens Sol. Ligesom det
+sandselige Øie blendes, naar det stirrer ind i Solen, saaledes
+blendes Fornuften, naar den vil stirre paa Aabenbaringen. Fornuften
+veed ikke, hvad Aand er, og kan ikke vide det; thi den veed ikke,
+hvad en hellig, almægtig Villie er, og kan ikke vide det. At
+Fornuften i sit System af almeengyldige Begreber kan optage ogsaa
+Villiesbegrebet, skal ikke negtes; den kan ved Forgudelse af den til
+Ideenødvendigheden bundne Almeenvillie endogsaa mene, at den i
+Begrebet virkelig anerkjender Guds Villie. Men den Anerkjendelse,
+Fornuften yder Gudsvillien ved at berøve den Selvbestemmelsens
+Ubetingethed og ophøie den til Rang med „virkelige Begreber“, har
+ikke Mere at betyde end den Anerkjendelse, en hedensk Keiser fordum
+viste Christendommen ved at optage Christus blandt sine Huusguder.
+Det nytter ikke at ville stille den efter Nødvendighedsgrunde
+forskende Fornuft tilfreds ved Forsikkringer om, at Guds Villie er
+Eet med Guds Væsen, og Guds Væsen og Villie Eet med den evige
+Sandhed: hver Gang Villien vil udtrykke sig i \emph{dette} eller
+\emph{hiint} Bud, i \emph{denne} eller \emph{hiin} Gjerning, altsaa
+som Villie, blive Nødvendighedsgrundene borte; Betingelserne
+forsvinde i det Ubetingede; Ubetingethedens Braad saarer Fornuften,
+og den saarede Fornuft beklager sig over Vilkaarligheden. Men naar
+Fornuften ikke kan begribe den almægtige Villies ubetingede Frihed,
+altsaa ikke begribe Aabenbaringens høieste Forudsætning: hvorledes
+skulde den da
+% ---- printed p.32 (PDF 45) ----
+være istand til at magte Religionen, trænge ind i Gudsforholdet og
+begribe Troen.
+
+Kun paa een Betingelse kan Guds ubetingede Villie erkjendes; men
+denne Betingelse, skjøndt i Grunden een, er dobbeltsidig: fra den
+guddommelige Side Aabenbaring, fra den menneskelige Side Tro. Det i
+Aabenbaringen afgjørende Første er ikke, hvad Gud i dette eller
+hiint Anliggende vil Mennesket, men at Gud udtrykkelig vil Mennesket
+Noget, har Villie til Mennesket, altsaa ubetinget: at Gud har
+Villie. Aabenbaringen er den guddommelige Frihedsact, den ideale
+Handling, hvori Aanden oprindelig forkynder sig som Aand. Troen er,
+i Lighed med Aabenbaringen, ikke en uvilkaarlig Rørelse eller uklar
+Følelse, men en indre Handling, en første Frihedsact, ved hvilken
+Aandsvillien bliver til i Mennesket, og ved hvilken Mennesket
+væsentlig bliver Aand. Det i Troen afgjørende Første er ikke dette:
+at Mennesket angaaende Dette eller Hiint umiddelbart forvisser sig
+om, hvad Gud vil, men dette: at Mennesket skal ville Guds Villie,
+ubetinget altsaa: at Mennesket skal \emph{ville}, skal erkjende, at
+Gudsforholdet er et Villiesforhold, det Forhold, hvori der alene er
+Aand og Frihed og evigt Liv.
+
+I dette Forhold kan Fornuften umulig trænge ind; det seer ud, som
+havde det skilt sig fra alle Væsensgrunde: just fordi det optager og
+indeslutter alle objective Grunde i Subjectiviteten selv, i
+Frihedsgrunden, seer det i Fornuftens Øine ud, som var det
+grundløst. Eller hvorpaa skulde vel Troen begrundes? Paa
+Aabenbaringen, altsaa paa et Under. Og hvorpaa skulde saa
+Aabenbaringens Sandhed begrundes? Paa Troen, altsaa paa et Under,
+der selv er begrundet paa et Under. Som ubetinget Villiesforhold er
+Gudsforholdet, naar det gribes i sin inderste Eiendommelighed, et
+antirationelt Forhold; ved at ville rationalisere det i sig selv
+Antirationelle, forraader Fornuften kun sin egen Blindhed. I Aandens
+% ---- printed p.33 (PDF 46) ----
+% n.b. the lower half of this page LOOKS italic in a downsampled two-up render
+% (gutter curvature on a left-hand page); at 420 dpi it is plain roman. No italics.
+høieste Anliggender, for alle absolute Villiesafgjørelser er
+Fornuften blind, blind for Faldet og blind for Opreisningen; blind
+for Faldet, thi Faldets Hemmelighed ligger i Villien; blind for
+Opreisningen, thi Opreisningens Hemmelighed ligger i Villien.
+Fornuften vil udgrunde Viisdommen, og kan dog med al sin Viisdom
+ikke erkjende Gud i hans Viisdom; thi alle Viisdommens Hemmeligheder
+skjule sig i Villien, Viisdomsideen, Guds Villies Idee, aabenbares
+kun for Villien. Saa dømmer Religionen „den blinde Fornuft“. Det vil
+fra dette Synspunkt kunne forstaaes, at det ikke er Fornuften, men
+dens Overgreb, der er Aabenbaringstroen en Forargelse.
+
+De mange vidtløftige og tilsyneladende endeløse Stridigheder mellem
+Aabenbaring og Fornuft kunne kun da bringes til en sidste
+Afgjørelse, naar de føres tilbage til det første Udgangspunkt,
+Modsætningen nemlig mellem Frihedens og Nødvendighedens Principer,
+mellem Villiesgrunde og Væsensgrunde. Enhver afgjørende Villiesgrund
+trækker altid det Almene ind i Enkeltheden, hæver Nødvendigheden ved
+det frie Valg og gjør Væsensgrunden utilstrækkelig; i den
+tilstrækkelige Væsensgrund er det Enkelte derimod opløst i det
+Almene, Nødvendigheden sat med de givne Betingelser, og
+Villiesgrunden ukjendelig. Begge Dele kan Fornuften indsee; men
+derfor kan den ogsaa indsee, at den i Villien ophævede Grund, der
+giver Handlingen som Handling Præg af Vilkaarlighed, umulig kan være
+Fornuftgrund. I denne Sammenhæng vil det tillige kunne indsees, hvor
+ørkesløs og tom den Tænkning er, som bilder sig ind at kunne hæve
+Skilsmissen imellem de ueensartede Principer ved den Forsikkring, at
+Frihed og Nødvendighed absolut maa være Eet i det absolute Væsen.
+Thi saasnart der spørges, hvad det da egentlig er, som gjør det
+absolute Væsen absolut, saa
+% ---- printed p.34 (PDF 47) ----
+sætter, som allerede viist, Aabenbaringen igjen Friheden, Fornuften
+Nødvendigheden, og Striden begynder forfra.
+
+Her er ingen anden Udvei end at lade de to absolut ueensartede
+Principer afgive Midtpunkter for to absolut ueensartede
+Begrundelser, to absolut ueensartede Erkjendelseskredse. Er det nu
+ligesaa umuligt at aflede Nødvendigheden af Friheden som Friheden af
+Nødvendigheden, og tillige umuligt at negte de modsatte Principers
+oprindelige Grundeenhed: saa maa Grundeenheden nødvendigviis
+opfattes som et for den menneskelige Viden uigjennemtrængeligt
+Mysterium.
+
+Dette Mysterium er intet Paradox. Thi Paradoxet viser sig kun, naar
+den vidende Bevidsthed eensidig tager Parti for Fornuften, og vil,
+ved at anstrenge Forstanden til det Yderste, af Fornuftprincipet
+begribe Aabenbaringen. Ved at anerkjende Mysteriet anerkjende vi
+begge Erkjendelseskredsenes indre Uendelighed. Alle af
+Nødvendighedsprincipet udviklede Erkjendelser have i deres egen
+Sphære fuld Gyldighed, og Fornuften forsaavidt en ubestridelig Ret
+til at undersøge Alt, prøve Alt og udvikle sin Videns Indhold i det
+Uendelige. Ligeledes have alle af Frihedsprincipet udviklede
+Erkjendelser fuld Gyldighed i deres Sphære, og Aabenbaringstroen fra
+sin Side en ubestridelig Ret til at lade sin Tænkning prøve Alt og
+dømme om Alt; Fornuften kan i denne Henseende ikke sætte den
+conseqvente Udvikling af Troens Indhold nogensomhelst Skranke.
+
+Men, spørger man, naar Aabenbaring og Fornuft nu komme i Strid om
+det samme, det selvsamme Virkelige, de samme, de selvsamme
+Kjendsgjerninger: hvad saa? Ja, saa følger heraf, at det samme
+Virkelige maa vise sig forskjelligt og bedømmes forskjelligt og
+tillægges forskjellig Betydning, eftersom det sees enten i
+Aabenbaringens eller i Fornuftens Lys. At Aabenbaring og Fornuft
+modsige hinanden, er da saa langt fra at være et Beviis
+% ---- printed p.35 (PDF 48) ----
+enten imod Aabenbaringens religiøse eller imod Fornuftens
+videnskabelige Sandhedserkjendelse, at det meget mere er en
+nødvendig Følge af Principernes absolute Ueensartethed.
+
+% sic: the run-head prints "Aabenbaringen" without the genitive -s; the forward
+% reference on p.24 reads "Aabenbaringens Tilegnelse i Troen". Verified at 420 dpi.
+\runhead{c) Aabenbaringen Tilegnelse i Troen.}
+
+Hvor ganske nøiagtig Aabenbaring og Tro svare til hinanden, sees
+udtrykkelig deraf, at Begreberne selv i deres Gjensidighed defineres
+ved hinanden. Hvad er vel det Aabenbarede? Just det, som alene kan
+opfattes af Troen, erkjendes, bevares og forklares i Troen, det,
+hvis Sandhed alene kan svare til Troens Sandhed. Og Troen? Ja,
+ligesom Synet særlig bestemmes ved det Synlige, Hørelsen ved det
+Hørlige, Tanken ved det Tænkelige, saaledes maa Troen bestemmes ved,
+hvad den naturlige Sands anseer for det Utrolige, omendskjøndt det
+dog ifølge sin Natur netop er det i Sandhed Trolige, det Eneste, som
+i Ordets egentligste og strengeste Forstand lader sig troe, nemlig
+det af Gud selv Aabenbarede. Ved denne Grundbestemmelse er ethvert
+Forsøg paa at indblande Fornuften i Religionens Anliggender een Gang
+for alle afskaaret. Men herved er tillige stillet
+Religionsphilosophien den Fordring, at den skal vise, hvorledes
+Forholdet imellem Aabenbaring og Tro lader sig udvikle af
+Gudsforholdet selv, og derved aabne os et Indblik i Troens
+Psychologie.
+
+Betragte vi de to Hovedsider i Gudsforholdet, den guddommelige og
+den menneskelige, hver for sig, da tyder den første særlig hen paa
+det Udvortes, den sidste paa det Indvortes i Aabenbaringsunderet;
+Modsætningen imellem det Udvortes og det Indvortes er her saa
+fremtrædende, at den begrunder en Adskillelse mellem det aabenbare
+og det skjulte Under.
+
+Gudsforholdet sættes ved en guddommelig Handling; det Evige tager
+sin Begyndelse i Tiden, det Over\-
+% ---- printed p.36 (PDF 49) ----
+historiske bliver historisk. Dette er Fornuften en forargelig
+Modsigelse, og Modsigelsen skærpes til det Yderste, naar Blikket
+fæster sig paa en Kjendsgjerning som den, at Gud til en given Tid
+har aabenbaret sig i et enkelt Menneske, et Menneske i Kjød og Blod;
+dette Menneske, der er født, har lidt og er død, skal virkelig være
+Gud! det seer jo ud, som var Modsigelsen selv bleven incarneret. Er
+det Evige paa denne Maade blevet historisk, saa er det, siger den af
+Fornuften ophidsede Forstand, blevet til Noget, som udtrykkelig
+strider imod dets Natur, og maa altsaa være blevet det „i Kraft af
+det Absurde“. --- Men det i sig selv Absurde, er \textit{eo ipso}
+det i sig selv Umulige, og det i sig selv Umulige kan ikke troes.
+Her maa da vise sig en Forskjel imellem det i Fornuftens Tanker
+Umulige og det i sig selv Umulige. Skal den Eviges Selvaabenbarelse
+i Tiden virkelig høre til det i sig selv Umulige, da maae saadanne
+religiøse Udtryk som: guddommelig Gjerning, guddommelig Handling,
+guddommelig Villie nødvendigviis henregnes til det i sig selv
+Umulige. Eet af To: enten er Gud Villie, og da kan han ogsaa
+incarnere sig; eller Gud kan ikke incarnere sig, og da er han heller
+ikke Villie. Underet som Phænomen er et Udvortes, men Phænomenets
+Aarsag, Villien selv, er et Indvortes. Forargelsen paa det Udvortes,
+paa det aabenbare Under, er altsaa en Forargelse paa det indvortes,
+det skjulte Under, en Forargelse paa den absolut religiøse
+Forudsætning, at den almægtige Villie er Gud, at Guds Villie er fri,
+at Gud kan handle.
+
+I det ved Aabenbaring og Tro bestemte Gudsforhold er den frie,
+almægtige Handling, at Gud træder Mennesket imøde, ubetinget det
+Første. I Synet, i Tegn og Tale skeer Meddelelsen umiddelbart. Dette
+Syn, dette Tegn, dette Ord henvendes ikke til Mennesker i
+Almindelighed, men til dette bestemte Menneske, angaaer ikke
+menneskelige Anliggender i Almindelighed, men dette
+% ---- printed p.37 (PDF 50) ----
+eller disse bestemte Anliggender: Aabenbaringen kommer fra
+Uendeligheden som et Lyn, der slaaer ned i det Endelige. Synet,
+Tegnet, Ordet, dette Overnaturlige skeer ved umiddelbart
+Gjennembrud af det Naturlige; Underet er aabenbart, og Eftertrykket
+falder paa det Udvortes. Den Tro, der umiddelbart tilegner sig en
+saadan udvortes Aabenbaring, maa ifølge den rationelle Psychologie
+conseqvent opfattes som Overtro. Skulde Muligheden af en udvortes
+Aabenbaring regnes med til den fornuftige Tingenes Orden, da maatte,
+som ovenfor anført, slige Aabenbaringer jo ligesaa vel kunne skee
+til en Tid som til en anden, ligesaa vel blive det ene Menneske til
+Deel som det andet; men Enhver, der i Livets virkelige Anliggender
+beraaber sig paa Syner og Aabenbaringer, bliver anseet, om ikke
+ligefrem for en forsætlig Bedrager, saa dog for en overtroisk
+Sværmer.
+
+Vende vi os nu til det Næste, nemlig Gudsforholdets menneskelige
+Side, faaer Sagen et modsat Udseende. Det Udvortes forsvinder med
+dets overordentlige Indvirkninger, Gudsvillien forvandler sig til en
+ved det Godes Idee bestemmelig og dog overnaturlig Almeenvillie; Gud
+drager sig tilbage; Alt foregaaer i den Troendes Indre: det
+aabenbare Under giver Plads for det skjulte. Fra den rationelle
+Psychologies Standpunkt er Dommen over en saadan Sjæletilstand
+betegnende udtalt i Strausses Kritik af Schleiermachers Tro paa den
+historiske Christus. „Jeg føler som Christen“, siger Schleiermacher,
+„Foreningen af min lavere og min høiere Selvbevidsthed lettet, eller
+min Fromhed befordret. Denne Befordring kan ikke udgaae fra mig
+selv, da der tvertimod fra mig kun udgaaer en Standsning af det
+religiøse Liv“. Strauss spørger: „Hvorfra veed Du det? Du nemlig,
+det moderne-christelige Jeg, thi det gammeldagstroende vidste
+rigtignok sammestedsfra som det vidste, at det af sig selv ikke
+vidste noget Sandt, at det af sig selv ikke kunde virke
+% ---- printed p.38 (PDF 51) ----
+noget Godt: begge Dele vidste det af sin Grundforudsætning, Aandens
+Fremmedhed for sig og Udtræden fra sig. Men hvorfra faaer det
+moderne Jeg, der er kommet til Bevidsthed om sig og er blevet sig
+mægtigt, Midler til at foretage en saadan Adskillelse? Om noget Ydre
+og Tilfældigt, som en Efterretning, en historisk Notits, kan jeg vel
+vide, at jeg ikke har den fra mig selv, men har erfaret den af
+Andre; men her handles der om to modsatte Bevægelser i det
+menneskelige Gemyts Inderste, af hvilke kun den ene skal have sin
+Oprindelse der, den anden derimod være ledet derind udenfra“. Det
+religiøse Sindelag bliver altsaa kjendeligt paa det
+„Rettroenhedens barnagtige Regnestykke, ved hvilket Mennesket først
+\textit{per subtractionem} skiller sig af med alt Godt, for derpaa
+\textit{per additionem} at lade det tilflyde sig som Naadegave“. Det
+skjulte Under er den uklare Bevidstheds egen skjulte Modsigelse: en
+saadan Reflexion maa conseqvent opløse Troen og ende i Vantro.
+
+Ved de Extremer, som i Conseqvens af Gudsforholdets Natur maae danne
+sig mellem det Ydre og det Indre, bestemmes Troen. Det Ydre,
+Gudsindvirkningen i dens umiddelbare Særskilthed, er nødvendig
+Betingelse for at vække det Indre; men det er som Ydre kun
+Betingelse, kun Middel; det Indre og dets Tilegnelse er Maalet.
+Synet er et Ydre, men Almagtens Væsen et Indre; Ordet, der høres, er
+et Ydre, men Tanken i Ordet, den guddommelige Tanke, et Indre;
+Befalingen et Ydre, men Villien, der befaler, et Indre. Troen er nu
+deri forskjellig fra Overtroen, at den igjennem det Ydre griber og
+tilegner sig det Indre; og deri forskjellig fra Viden, at det Indre,
+den griber, er Overnaturligt, altsaa et Indre, der ikke ligefrem
+eller i Kraft af fornuftnødvendig Reflexion bestemmes ved sit Ydre:
+skulde Troen indlade sig paa objective Væsensreflexioner, maatte den
+ende i Vantro.
+% ---- printed p.39 (PDF 52) ----
+Idet Overtro og Vantro begge falde udenfor Troen, fremkalde de
+hinanden gjensidig. Overtroen vil have sandselig Vished om det
+Overnaturlige, et Tegn for hvert Tilfælde, et Varsel for hver
+Begivenhed, en Guds Befaling for hver Handling; den hænger sig ved
+det Udvortes. Forstand og Fornuft blive da let enige om, at saadanne
+Forestillinger om det Overnaturlige ere unaturlige og vanære det
+Guddommelige. Saa forkastes Tegn og Varsler, og de sædelige
+Handlinger henføres under sædelige Love. Med de sædelige Love følger
+Ideenødvendigheden; men Ideenødvendigheden er som en Sky, der
+skjuler Guds Aasyn: „Gud har ingen Villie, der er ingen Gud“, det er
+Vantroens Forklaring, og denne Forklaring er tom og trøstesløs. Det
+tomme, gudforladte Sind griber da atter efter overnaturlige
+Forudsætninger, vil atter have sandselig Vished: Vantro føder igjen
+Overtro, og saaledes i det Uendelige. Af Troen som Tro kan Overtroen
+derimod aldrig fødes; thi Troen omsætter det Udvortes i sit
+tilsvarende Indvortes og lever af Aanden; heller ikke kan Vantroen
+nogensinde faae Magt med Troen; thi Troen har Inderlighed, og
+Inderligheden hviler paa overnaturlige Kjendsgjerninger, paa frie,
+guddommelige Forudsætninger, der modstaae Nødvendigheden.
+
+Er nu det Indre sat som det oprindelig Første, men dog saaledes, at
+det tillige er betinget af et ophævet Ydre, saa maa der jo i et
+saadant Indre kunne paavises et Sandhedskriterium, et ubedrageligt
+Mærke paa Sandt og Falskt; dette Kriterium maa være bestemt ved det
+til Aabenbaringsprincipet svarende Forhold mellem Indre og Ydre.
+Hvori skal Sandhedskriteriet da søges? Ikke i Følelsen; thi naar
+Følelse strider mod Følelse, alt som Stemningerne vexle, saa behøves
+her just et Kriterium for Følelsen%
+% This footnote begins on printed p.39 and runs over onto p.40 (PDF 52--53).
+\footnote{At Religionens Væsen ikke udelukkende kan sættes i
+Følelsen, selv om vi tage Følelsen i substantiel Almindelighed som
+absolut Afhængighedsfølelse, har Martensen tydelig viist. „Naar
+Schleiermacher har betegnet den religiøse Følelse som en Følelse af
+absolut Afhængighed, da har han derved ligesom Mystikerne betegnet
+Fromheden som en gudlidende Tilstand, en Tilstand, hvori Mennesket i
+sit Gemyts Inderste føler sig berørt af den Magt, i hvilken vi leve,
+røres og ere, en hellig Pathos, hvori Mennesket føler sig som
+Guddommens Kar og Bolig. Men som denne Beskrivelse minder om
+Mystiken, saaledes er den selv mystisk; thi det staaer i ubestemt
+Dæmring, \emph{hvilken} denne absolute Magt er, af hvilken jeg føler
+mig afhængig, om det er det upersonlige Absolute, om det er Fatum,
+eller om det er den ethiske, den hellige, den gode Magt. Kun i
+sidste Tilfælde kan den gudlidende Tilstand, kan den absolute
+Afhængighedsfølelse tillige være en befriende og opløftende
+Følelse.“ Den christelige Dogmatik. Indledning S.\ 10.\par
+Hvor vanskeligt det falder Schleiermacher at gjøre Adskillelsen
+mellem Guds og Verdens Væsen ret kjendelig, fremlyser da ogsaa af,
+hvad han („\textit{Der christliche Glaube}“. Berlin 1835. 1.\ Bd.\
+S.\ 169) siger om „den deelte og den udeelte Eenhed“; thi vel er
+Verdenseenheden deelt, men, seet fra Synspunktet af det immanent
+Absolute, er den dog ogsaa udeelt, og Umuligheden af en absolut
+Afhængighedsfølelse i Forhold til Verden saaledes ingenlunde
+beviist.}.
+Endnu mindre i Phantasien, da Phanta\-
+% ---- printed p.40 (PDF 53) ----
+% (the body text of p.40 is only four lines; the rest of the page carries the
+%  continuation of the footnote begun on p.39, transcribed in full above)
+sien ligesaa let kan bevæges af usande som af sande Indskydelser. At
+søge Kriteriet i den almene Tænkning hjælper heller ikke, eftersom
+Tankens Bevægelser kunne være ligesaa forskjellige som de Principer,
+hvoraf den bevæges. Kriteriet maa, ifølge Forholdets Natur,
+oprindelig søges i Villien.
+
+Som almindelig Villiesact kan Troen kun bestemmes fra Grunden af ved
+Villien selv, nemlig ved Grundvillien. I Grundvillien bliver det
+Inderste i Mennesket, det menneskelige Selv, umiddelbart berørt,
+beaandet og bevæget af det Inderste i Gud, af det guddommelige Selv,
+af Gudsvillien.
+
+Men naar Adskillelsen af Sandt og Falskt gjøres afhængig af Villien,
+maa den da ikke blive vilkaarlig? Ingenlunde! Den Villie, hvorom her
+tales, er ikke den egoistiske, mellem endelige driftagtige
+Tilskyndelser væl\-
+% ---- printed p.41 (PDF 54) ----
+gende Formalvillie, men Aandsvillien selv, den alle Sindets
+Kræfter, alle Følelser, Forestillinger og Tanker gjennemtrængende,
+det hele sjælelige Liv samlende Frihedsvillie, den Villie, i Kraft
+af hvilken det indvortes Menneske ikkun kan og maa ville sin egen
+Frelse. Vækkelsen af denne Aandsvillie er udelukkende betinget af
+Gudsvilliens Indvirkning; den beroer altsaa paa et skjult Under;
+heraf sees dens Forhold til historiske Kjendsgjerninger af aabenbare
+Undere; den er et Indre, der i Troens Forstand reflecterer sit
+Ydre. Aandvilliens Eenhed med Følelse, Phantasie og Tanke giver i
+Ordets allerdybeste Betydning Selvforstaaelse, en Selvforstaaelse,
+der alene beroer paa inderlig Forstaaelse med Gud. Til videnskabelig
+Prøvelse af Sandt og Falskt opstiller Fornuftphilosophien
+\emph{Begrebsmodsigelsens Grundsætning}; til personlig Prøvelse af
+Sandt og Falskt --- til Selvprøvelse for Gud --- opstiller
+Religionsphilosophien \emph{Selvmodsigelsens
+Grundsætning}\footnote{Ved Begrebsmodsigelser tænkes her ikke blot
+paa Modsigelser mellem rene objective Vidensbegreber saasom: en rund
+Fiirkant, et udenfor Rummet faldende Legeme o.\ s.\ v., men tillige,
+og det fornemmelig, paa saadanne Modsigelser, som fremkomme ved en
+Sammenblanding af Religion og Videnskab, idet man (jvnfr.\
+Forelæsningerne: Om Hindringer og Betingelser for det aandelige Liv
+i Nutiden) af religiøse Forudsætninger uddrager videnskabelige, og
+af videnskabelige Forudsætninger religiøse Conseqvenser. Istedenfor
+ægte Vidensbegreber og rene Troesbegreber faaer man da en Række
+Bastardbegreber, der naturligviis alle ere fulde af Modsigelser. At
+en videnskabelig Modsigelse iøvrigt, naar man tager det formelt,
+ogsaa kan opfattes som en Selvmodsigelse, og omvendt enhver
+Selvmodsigelse som Begrebsmodsigelse, forstaaer sig af sig selv, og
+bliver kun udtrykkelig anført for at spare „Ordkritiken“ den
+Uleilighed at gjøre formelle Opdagelser, hvor Opdagelser ere
+overflødige.}.
+
+I Selvforstaaelse for Gud er Frelse, i Selvmodsigelse for Gud er
+Fortabelse; det er Aandslivets yderste Poler; om disse to Poler maae
+i Troens Inderlighed alle Følelser,
+% ---- printed p.42 (PDF 55) ----
+al Frygt, alt Haab, alle Hjertets Tanker bevæge sig. Det
+Eiendommelige ved Gudsforholdet viser sig nu deri, at Alt paa een
+Gang er saa umiddelbart og dog uendelig reflecteret, saa enfoldigt
+og dog, naar Eftertanken ret begynder, uendelig indviklet. Troen er
+af barnlig Natur: hvad der er skjult for de Vise og Forstandige, er
+aabenbaret for de Umyndige; men Troen er dog først og sidst af
+aandelig Natur; dens Væsen er Aand, og „Aanden randsager alle Ting,
+ogsaa Guds Dybheder“.
+
+\subhead{Ordet og Aanden.}
+\parmark{4}
+
+Men „Guds Dybheder“ i Aanden randsages ikke paa samme Vilkaar som
+Ideens Dybheder i Fornuften; thi Fornuftideen er fordybet i
+Nødvendighed, men i Gud er Inderligheden fri, uendelig fordybet i
+Selvbestemmen. Til et ufrit Indre svarer et ufrit Ydre, og
+Yttringen skeer med Nødvendighed; saaledes maa Væsenet nødvendigt
+have sit Skin, Realgrunden sin Existens, Sjælen sit Legeme o.\ s.\
+v. Derimod kan det frie Indre kun give sig et sandt Udtryk i et frit
+Ydre, og Yttringen skeer med Frihed. Det ufrie Indre lader sig under
+givne Betingelser tvinge frem til Aabenbarelse i sit Ydre; derfor
+kan Naturen, om vi saa maae sige, ingen Hemmeligheder have for den i
+sine Forskninger stedse mere indtrængende, altid videre gaaende
+Fornuft. Men det frie Indre kan ikke saaledes udforskes. At et
+Menneske under visse Omstændigheder lader sig overraske og kommer
+imod sin Villie til at forraade sit Indre, viser kun, at dets Frihed
+er ufuldkommen; thi Guds Indre, Friheden selv i dens indre
+Uendelighed, skal ingen nok saa dybsindig Fornuft bringe til at
+forraade sig. Hvad der skal kunne vides om Gud, maa være aabenbaret
+af Gud, aabenbaret
+
+\end{document}
