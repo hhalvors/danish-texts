@@ -87,7 +87,7 @@ grep -o 'Output written.*' l.txt; grep -ic 'not set up\|missing character' l.txt
 Expect 0 char-warnings, 0 errors.
 
 ## STATE
-- **DONE (image-verified, compiles 0/0, 115 pp., 534 emph):**
+- **DONE (image-verified, compiles 0/0, 117 pp., 549 emph):**
   - **Indledning COMPLETE, printed pp. 1–10** (§§ 1–6)
   - **1ste Hovedstykke COMPLETE, printed pp. 11–34** (§§ 1–18)
   - **2det Hovedstykke, 1ste Afdeling COMPLETE, printed pp. 34–60**
@@ -99,13 +99,13 @@ Expect 0 char-warnings, 0 errors.
   - **3die Hovedstykke (Om Føleevnen), 1ste Afdeling (Om Følelser i
     Almindelighed) COMPLETE: printed pp. 188–227** (§§ 1–17, with 13 used twice)
   - **2den Afdeling (Om de forskiellige Slags behagelige og ubehagelige Følelser):
-    printed pp. 227–233** (§§ 1–3)
-  - **pp. 1–233 are CONTINUOUS** — verified, no gaps in the page-marker sequence.
-    That is **48 %% of the body** (which runs to p. 486).
-- **NEXT — printed pp. 234–243** (scan 252–261), continuing the 2den Afdeling
-  (which runs to p. 269). Resume at the foot of p. 233, mid-§ 3 point 2), after
-  "…og nødig lukker det svage Syn sit Øie til for glimrende Farver, naar de
-  skiære. Disse Gienstande foraarsage".
+    printed pp. 227–237** (§§ 1–5)
+  - **pp. 1–237 are CONTINUOUS** — verified, no gaps in the page-marker sequence.
+    That is **49 %% of the body** (which runs to p. 486).
+- **NEXT — printed pp. 238–247** (scan 256–265), continuing the 2den Afdeling
+  (which runs to p. 269). Resume at the foot of p. 237, mid-§ 5, after "…Men de
+  rigeste Malerier, den frugtba" — a `%`-joined word-stem, so the next batch opens
+  with the remainder of that word with **no space**.
 - **THEN** the rest of the 2den Afdeling, and finally the 4de Hovedstykke (Om den
   menneskelige Villie, pp. 270–486) — which alone is 217 pp., nearly half the
   book.
@@ -160,6 +160,41 @@ Also: an edit once **swallowed the `\end{document}`**, producing a bare
 `grep -c '\end{document}' transcription.tex` first.
 
 ## Notable so far
+- ⚑⚑ **p. 234 point 3) — the epistemic gap stated as a law of psychology, and it
+  is the same structure as p. 186.** Deviations we cannot bring under the general
+  rule must be explained "\emph{Af en Mængde besynderlige Aarsager}… hvis utallige
+  Afledninger fra deres første Udspring det er umuligt altid at forfølge" — and
+  then the crucial clause: "**endskiøndt de, ligesaa vel som de mest sædvanlige
+  Tilfælde, derunder indbefattes.**" The exceptions *are* covered by the law;
+  what fails is our ability to trace the derivation. Determinateness of the
+  particular plus inaccessibility to a finite knower — exactly the p. 186 formula
+  ("hvori det nødvendig ligger skiult…"), now in the theory of feeling. This is
+  the third independent statement of the position and probably the crispest.
+- ⚑ **p. 235 draws a limit on the "only in degree" thesis, and draws it in the
+  right place.** The higher feelings surpass the lower "**I Art og Beskaffenhed,
+  ei i Størrelse**" — in kind and quality, not magnitude; indeed in intensity the
+  animal and organic ones are often stronger. The explanation follows at p. 236:
+  "Som det Oversandselige, just fordi det er uendeligt, **har ingen Størrelse**."
+  So degree-talk governs the *real* (matter finer and grosser, good and evil,
+  qualities as limitations), but not the supersensible, which is unquantifiable
+  because infinite. Worth noting that this keeps the monism from collapsing into
+  a flat quantitative reductionism.
+- **§ 4 (p. 235) grounds the higher feelings in *self-activity*:** they arise from
+  Indbildningskraft, Forstand, Dømmekraft and reason, "der alle ved vor egen
+  Selvvirksomhed ere frembragte, da de sandselige derimod af en fremmed Krafts
+  Indvirkning fornemmelig synes at have deres Udspring. Vi føle derfor os selv ved
+  hine paa en meget renere og værdigere Maade." The criterion is activity versus
+  passivity — consistent with § 5 of the 1ste Afdeling ("kun for saavidt vi virke
+  ere vi til").
+- **§ 5 (pp. 236–237) on the pleasures of imagination** has a good passage on
+  idealisation: imagination borrows its Grundtræk from understanding and reason,
+  which supply them "gandske nøgne, d. e. med deres væsentlige Beskaffenheder
+  alene, der ei kan røre Sandserne." Phidias's Zeus is the example, said to be
+  borrowed from Homer — but only as to one telling trait, not the concept, "der er
+  gandske philosophiskt". Then the remark that a rich imagination needs no more
+  than a single word, *glaukopis*, to fill in the whole.
+- **Two more f/long-s catches:** s. 236 "listige" is **liflige**, s. 234
+  "saavelsom som" is a genuine dittography in the print (carried with a sic).
 - **§ 1 (pp. 227–229) divides feelings into lower and higher, and the lower again
   into \emph{organiske} and \emph{dyriske}** — the first arising from the common
   sense of feeling and usually without any clear representation of their cause,
