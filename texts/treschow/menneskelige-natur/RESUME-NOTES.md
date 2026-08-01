@@ -87,7 +87,7 @@ grep -o 'Output written.*' l.txt; grep -ic 'not set up\|missing character' l.txt
 Expect 0 char-warnings, 0 errors.
 
 ## STATE
-- **DONE (image-verified, compiles 0/0, 117 pp., 549 emph):**
+- **DONE (image-verified, compiles 0/0, 123 pp., 578 emph):**
   - **Indledning COMPLETE, printed pp. 1–10** (§§ 1–6)
   - **1ste Hovedstykke COMPLETE, printed pp. 11–34** (§§ 1–18)
   - **2det Hovedstykke, 1ste Afdeling COMPLETE, printed pp. 34–60**
@@ -99,13 +99,13 @@ Expect 0 char-warnings, 0 errors.
   - **3die Hovedstykke (Om Føleevnen), 1ste Afdeling (Om Følelser i
     Almindelighed) COMPLETE: printed pp. 188–227** (§§ 1–17, with 13 used twice)
   - **2den Afdeling (Om de forskiellige Slags behagelige og ubehagelige Følelser):
-    printed pp. 227–237** (§§ 1–5)
-  - **pp. 1–237 are CONTINUOUS** — verified, no gaps in the page-marker sequence.
-    That is **49 %% of the body** (which runs to p. 486).
-- **NEXT — printed pp. 238–247** (scan 256–265), continuing the 2den Afdeling
-  (which runs to p. 269). Resume at the foot of p. 237, mid-§ 5, after "…Men de
-  rigeste Malerier, den frugtba" — a `%`-joined word-stem, so the next batch opens
-  with the remainder of that word with **no space**.
+    printed pp. 227–249** (§§ 1–10)
+  - **pp. 1–249 are CONTINUOUS** — verified, no gaps in the page-marker sequence.
+    That is **51 %% of the body** (which runs to p. 486).
+- **NEXT — printed pp. 250–259** (scan 268–277). The 2den Afdeling ends at p. 269;
+  the 4de Hovedstykke (Om den menneskelige Villie) begins at p. 270 and runs to
+  p. 486. Resume at the foot of p. 249, mid-§ 10, after "…Uden samme maae abstracte
+  Sandheder nødvendig synes nøgne eller".
 - **THEN** the rest of the 2den Afdeling, and finally the 4de Hovedstykke (Om den
   menneskelige Villie, pp. 270–486) — which alone is 217 pp., nearly half the
   book.
@@ -160,6 +160,68 @@ Also: an edit once **swallowed the `\end{document}`**, producing a bare
 `grep -c '\end{document}' transcription.tex` first.
 
 ## Notable so far
+- ⚑⚑ **p. 248 — what pure philosophy is *for*, and it fits the deflationary
+  reading exactly.** "\emph{Den hele rene eller høiere Philosophie lærer egentlig
+  intet Nyt: ja, det er en Fortieneste deri intet Nyt at lære, men blot at oplyse
+  de Ideer og Begreber, som Enhver derved som hans egne kiender igien.}" And the
+  pleasure it gives is reason's recognition of itself: "Fornuften bliver sig
+  bevidst eller lærer, saa at sige, at føle sig selv, sine Principiers og Ideers
+  **Almagt til at forene saa megen Mangfoldighed og tilsyneladende Strid**."
+  Philosophy adds no new objects; it displays the power of principles to unify.
+  Set beside p. 244 ("Orden… hielper til Oversigt") this is a consistent account
+  of what the general is good for, and it never once requires that the general be
+  what is *real*.
+- ⚑ **§ 10 (p. 247) on discovery, and the taxonomic point is explicit.** "Et forhen
+  ubekiendt Dyr, Mineral eller en Plante, **udfylder et Hul i Systemet**, er, hvor
+  ubetydeligt det i øvrigt kan synes, en virkelig Gevinst for samme: thi kun ved
+  Fuldstændighed kan man deri naae **Fornuftens store Maal, som er Enhed og
+  Harmonie**." The worth of a new species is its contribution to systematic
+  completeness — a value conferred by the aim of the system, not read off the
+  organism. Antiquaries are put on exactly the same footing as naturalists.
+- **p. 249 gives a fruitfulness criterion for principles** — "et almindeligt
+  Princip er saa meget frugtbarere, som utallige besynderlige Ting deraf lade sig
+  forklare" — grounded in "**intet er uden Forbindelse**", and confirmed by
+  experience, since the smallest things often influence the greatest and what
+  seemed trifling proves of the utmost importance. Montgolfier, Berthold Schwarz
+  and Pythagoras are the examples.
+- **§ 9 (pp. 245–247) on clarity, and it qualifies the survey story.** The
+  greatest clarity pleases only when the matter is also manifold and important
+  enough to occupy us; often "noget Halvdunkelt" — an allusion — pleases more,
+  "naar vi see os istand til selv at opklare det", while "For megen Lethed og
+  Tydelighed er derimod kedsommelig." So transparency is not the goal either;
+  what is wanted is work we can just manage.
+- ⚑⚑⚑ **p. 244, § 8 — the 1810 phrase turns up as the explanation of aesthetic
+  pleasure, and this is as close to a direct gloss on "Hjælpemidler til Oversyn"
+  as the book gets.** In Sperrsatz: "\emph{Orden i Mangfoldighed behager, fordi
+  den hielper til **Oversigt af det Hele**.}" And then the limiting clause: "Men
+  Lyst til Orden strækker sig ei heller videre end denne Grund." Our love of order
+  is instrumental to survey and *extends no further than that ground* — whence a
+  pleasing negligence is welcome in beautiful things, "som Naturen selv i sine
+  Verker… ei har skyet at begaae", and an order so easy that it costs no effort
+  simply bores (the little garden of straight avenues). Set this beside the 1810
+  essay: there the aids-to-survey claim was about concepts; here the same claim is
+  made about *order as such*, and the ground given is identical.
+- ⚑ **§ 7 (p. 243) states what the higher pleasures of understanding are for.**
+  The concepts at their base "ei alene ved at lette det Heles Oversigt understøtte
+  Tænkekraften, men derhos ved at **bringe det Mangfoldige tilbage til sin Enhed**
+  befordre et Øiemed, som det er Fornuftens høieste Interesse… at see opfyldt."
+  Survey *and* the return of the manifold to its unity — the second is the monist
+  aim, and it is described as reason's highest interest rather than as a discovery.
+  The internal reference III, I, 12 (p. 208) resolves cleanly.
+- **§ 6 (pp. 239–241): the paradox of tragedy, with an explicit rejection of the
+  Lucretian answer.** Representations can please by their *form* though their
+  objects are in themselves unpleasant — Milton's and Dante's hells are agreeable
+  reading. The view that our pleasure comes from the thought that we ourselves are
+  safe, watching the shipwreck from a secure harbour, "giendrives bedst af Enhvers
+  egen Selvbevidsthed, hvori man ei finder mindste Spor til denne Tanke, der altid
+  er en senere Frugt af Overlæg eller Reflexion" (p. 240). His own account: we
+  identify with the hero, and the proof is that romances and histories have so
+  often driven young men to reckless enterprises.
+- **The limit case (p. 241): disgust.** Ækelhed is what ugly and unclean things
+  produce, and it is *not* redeemed by representation — unlike the terrible, the
+  merely loathsome is rejected in art as in nature, because a bare physical
+  imperfection is "uhensigtsmæssig og upassende". Horace is quoted for the rule
+  (Medea must not butcher her children before the audience, p. 242).
 - ⚑⚑ **p. 234 point 3) — the epistemic gap stated as a law of psychology, and it
   is the same structure as p. 186.** Deviations we cannot bring under the general
   rule must be explained "\emph{Af en Mængde besynderlige Aarsager}… hvis utallige
