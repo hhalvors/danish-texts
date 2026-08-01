@@ -87,7 +87,7 @@ grep -o 'Output written.*' l.txt; grep -ic 'not set up\|missing character' l.txt
 Expect 0 char-warnings, 0 errors.
 
 ## STATE
-- **DONE (image-verified, compiles 0/0, 127 pp., 594 emph):**
+- **DONE (image-verified, compiles 0/0, 129 pp., 614 emph):**
   - **Indledning COMPLETE, printed pp. 1–10** (§§ 1–6)
   - **1ste Hovedstykke COMPLETE, printed pp. 11–34** (§§ 1–18)
   - **2det Hovedstykke, 1ste Afdeling COMPLETE, printed pp. 34–60**
@@ -99,13 +99,14 @@ Expect 0 char-warnings, 0 errors.
   - **3die Hovedstykke (Om Føleevnen), 1ste Afdeling (Om Følelser i
     Almindelighed) COMPLETE: printed pp. 188–227** (§§ 1–17, with 13 used twice)
   - **2den Afdeling (Om de forskiellige Slags behagelige og ubehagelige Følelser):
-    printed pp. 227–257** (§§ 1–13, with 12 used twice)
-  - **pp. 1–257 are CONTINUOUS** — verified, no gaps in the page-marker sequence.
-    That is **53 %% of the body** (which runs to p. 486).
-- **NEXT — printed pp. 258–267** (scan 276–285). The 2den Afdeling ends at p. 269;
-  the 4de Hovedstykke (Om den menneskelige Villie) begins at p. 270 and runs to
-  p. 486. Resume at the foot of p. 257, mid-§ 13, after "…naar smaa Siele give sig
-  Mine af stor For" — a `%`-joined word-stem.
+    printed pp. 227–261** (§§ 1–15, with 12 used twice)
+  - **pp. 1–261 are CONTINUOUS** — verified, no gaps in the page-marker sequence.
+    That is **54 %% of the body** (which runs to p. 486).
+- **NEXT — printed pp. 262–269**, which **finishes the 2den Afdeling and the 3die
+  Hovedstykke** (scan 280–287). Resume at the foot of p. 261, mid-§ 15, after
+  "…deels af disse Følelsers Almindelighed; hvorimod der".
+- **THEN the 4de Hovedstykke (Om den menneskelige Villie), pp. 270–486** — 217 pp.,
+  45 %% of the body, in four Afdelinger (270–293, 293–363, 363–383, 384–486).
 - **THEN** the rest of the 2den Afdeling, and finally the 4de Hovedstykke (Om den
   menneskelige Villie, pp. 270–486) — which alone is 217 pp., nearly half the
   book.
@@ -160,6 +161,29 @@ Also: an edit once **swallowed the `\end{document}`**, producing a bare
 `grep -c '\end{document}' transcription.tex` first.
 
 ## Notable so far
+- ⚑ **p. 259 applies the realism about similarity to wit**, and the wording is the
+  same as at p. 152. Crooked witticisms displease "fordi enten **Ligheden eller
+  Modsetningen er mindre sand og virkelig**"; flat ones because neither part is
+  new or striking. So a joke can fail by getting a resemblance *wrong* — there is
+  a fact of the matter about likeness even here. Wit itself is then explained by
+  the same standing principle: it pleases "fordi den altid giver
+  Indbildningskraften og den empiriske Forstand **en passende Beskæftelse**."
+- **§ 14 (pp. 259–260) on tragic pleasure** completes the p. 240 argument by
+  giving the positive account: sorrowful subjects please "ei formedelst Ulykken
+  eller det Onde selv, som altid er et Tab, men… **formedelst deres positive
+  Aarsager eller Virkninger**" — Seneca's spectacle of a great man contending
+  with misfortune, where force becomes visible whether he conquers or is
+  conquered. And the formal half: "Ikke Gienstanden selv, ei dens Indhold, men
+  dens **Form** kan være behagelig" (p. 260).
+- **§ 15 (pp. 260–261) opens the moral feelings**, and sets up a dispute worth
+  watching: Treschow derives them from concepts of right and wrong, and then
+  reports the rival view — "\emph{Andre have søgt Grunden dertil, ikke i Fornuften
+  eller noget Begreb, men i en besynderlig og Mennesket særegen moralsk Sands}"
+  — i.e. the Hutchesonian moral sense, to be examined from p. 262. His own
+  standard is that moral worth consists in the strength of the inclinations over
+  which reason has prevailed, and that the moral feeling is weak or partly wrong
+  in children and the uneducated "da dette, for at være klart og levende,
+  forudsetter nogen Dannelse."
 - ⚑⚑⚑ **pp. 254–255 — the sublime, and it turns out to be the aesthetics of
   exactly the epistemic gap the whole book keeps returning to.** The puzzle is set
   at p. 254: nothing pleases as beauty unless we perceive unity, order and
