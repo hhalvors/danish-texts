@@ -87,7 +87,7 @@ grep -o 'Output written.*' l.txt; grep -ic 'not set up\|missing character' l.txt
 Expect 0 char-warnings, 0 errors.
 
 ## STATE
-- **DONE (image-verified, compiles 0/0, 93 pp., 425 emph):**
+- **DONE (image-verified, compiles 0/0, 98 pp., 451 emph):**
   - **Indledning COMPLETE, printed pp. 1–10** (§§ 1–6)
   - **1ste Hovedstykke COMPLETE, printed pp. 11–34** (§§ 1–18)
   - **2det Hovedstykke, 1ste Afdeling COMPLETE, printed pp. 34–60**
@@ -96,13 +96,14 @@ Expect 0 char-warnings, 0 errors.
   - **3die Afdeling COMPLETE, printed pp. 90–146** (§§ 1–24, with 24 used twice)
   - **4de Afdeling COMPLETE, printed pp. 146–188** (§§ 1–15)
   - **➤ THE 2det HOVEDSTYKKE IS COMPLETE (pp. 34–188).**
-  - **3die Hovedstykke (Om Føleevnen) begun: 1ste Afdeling (Om Følelser i
-    Almindelighed), printed p. 188** (§ 1)
-  - **pp. 1–188 are CONTINUOUS** — verified, no gaps in the page-marker sequence.
-    That is **39 %% of the body** (which runs to p. 486).
-- **NEXT — printed pp. 189–198** (scan 207–216), continuing the 1ste Afdeling of
-  the 3die Hovedstykke. Resume at the foot of p. 188, mid-§ 1, after "…men i
-  Fornemmelsen alene, uagtet hiin, som".
+  - **3die Hovedstykke (Om Føleevnen), 1ste Afdeling (Om Følelser i
+    Almindelighed): printed pp. 188–198** (§§ 1–5)
+  - **pp. 1–198 are CONTINUOUS** — verified, no gaps in the page-marker sequence.
+    That is **41 %% of the body** (which runs to p. 486).
+- **NEXT — printed pp. 199–208** (scan 217–226), continuing the 1ste Afdeling.
+  Resume at the foot of p. 198, mid-§ 5, after "…eller med \emph{Sulzer} af en
+  ubehindret eller alt for indskrænket Frihed i at tænke. Begge disse Meninger
+  lade".
 - **THEN** the rest of the 1ste Afdeling (to p. 227), the 2den (pp. 227–269), and
   finally the 4de Hovedstykke (Om den menneskelige Villie, pp. 270–486).
 - **THEN** the rest of the 4de Afdeling (to p. 188), which closes the 2det
@@ -154,6 +155,48 @@ Also: an edit once **swallowed the `\end{document}`**, producing a bare
 `grep -c '\end{document}' transcription.tex` first.
 
 ## Notable so far
+- ⚑⚑ **p. 197 (C) — the cleanest subject/object statement in the book, and it
+  divides the labour by *category*, not by degree.** "\emph{Grunden til vore
+  Følelser er altsaa dobbelt, nemlig baade subjectiv og objectiv.}" Then: when we
+  *represent* a thing the relation between subject and object is
+  \emph{qvalitativt} — "mellem Sandselighedens og de udvortes Tings **selve Væsen
+  eller Natur**"; when we *feel* it the relation is only \emph{qvantitativt}, a
+  matter of the two forces' strength. So representation reaches essence,
+  feeling only magnitude. That is a principled place to put the
+  objective/subjective line, and it is the same architecture as the Materie/Form
+  analysis of Afd. 1 § 8 (p. 46), now applied to affect.
+- **§ 4 (pp. 195–197) argues the point in two moves.** A (p. 195): pleasure and
+  pain are *not* to be ascribed to the object or our representation of it alone,
+  "thi ellers maatte de deraf nødvendig og stedse følge" — habit, boredom,
+  temperament and circumstance make people differ. B (p. 196): but neither do
+  they rest on the subject alone, since we are affected differently according to
+  the objects' constitution "endskiøndt Subjectet og dets Tilstand for Resten ere
+  de samme". The examples are good — tobacco smells the same to everyone yet
+  delights some and disgusts others; yellow makes the same impression on all, yet
+  only the Chinese prefer it, as the Turks prefer green. **This is exactly the
+  structure the paper wants for secondary qualities: constant objective input,
+  variable affective response, and neither side alone sufficient.**
+- ⚑ **§ 1 (p. 189) states the deflationary half plainly:** "\emph{Følelser ere
+  altsaa ikke Forestillinger, men blotte subjective Fornemmelser}" — when we call
+  something pleasant "saa mene vi dog ikke, at dette er Tingen tilhørende". And a
+  fine observation on how affect crowds out representation: when the fire burns we
+  think no longer of the fire or its heat "men paa vor Smerte".
+- **§ 2 (pp. 190–192) is a sustained refutation of Leibniz**, whose view — that
+  all feelings arise from *confused* representations, so that feeling must cease
+  when they become distinct — Treschow says "grunder sig paa en ufuldstændig
+  Induction". He grants two of Leibniz's points and denies the conclusion: what
+  makes a representation move us "er snarere Liv og Styrke end Utydelighed", and
+  distinctness does not hinder feeling "naar man, efterat Analysen er fuldendt,
+  bag efter overskuer det Hele" (citing Mendelssohn). Then the strong thesis:
+  **no representation whatever is without effect on feeling** — even those that
+  seem wholly indifferent, "saa foretrække vi dem dog for slet ingen at have."
+- **§ 5 (p. 198) gives the general law of the agreeable**: an impression is
+  pleasant when it has "et passende Forhold til vor Receptivitet eller Kraft" —
+  stimulating without over-straining or blocking. The a priori argument for it is
+  worth noting: the feeling of our own existence cannot be indifferent to us,
+  hence neither can the feeling of our force and activity, "thi **kun for saavidt
+  vi virke ere vi til**." Descartes and Wolff (perfection) and Sulzer (freedom in
+  thinking) are named as the rival accounts.
 - ⚑⚑ **p. 186 — "Stykkeviis Kundskab er derfor ikke heller Viden."** Piecemeal
   knowledge is not knowledge, "thi hiin standser ved de besynderlige Grunde, denne
   omfatter Alt formedelst de almindelige og høieste, **hvori det nødvendig ligger
@@ -835,7 +878,9 @@ Also: an edit once **swallowed the `\end{document}`**, producing a bare
   p. 124 correctly ("afvexler") but repeated the error at p. 119
   ("Afverlingerne"). Zooming the image is the only check that settles it.
   A grep sweep for words containing "verl" is now part of the per-batch
-  verification; at pp. 1–140 it returns only legitimate forms of "overlade".
+  verification; through p. 198 it returns only legitimate forms of "overlade",
+  "Overlæg" and "overlegen". **The trap caught a third time at s. 194** — the
+  montage read "afverler", the 500 %% crop showed "afvexler". Always re-crop.
 - ✎ **A Hebrew letter at p. 115.** The print sets the letter beth itself (U+05D1)
   in "Det hebraiske ב har nogen Lighed med et Huus, der er aabent paa den
   forreste Side." Since the edition is built with pdfLaTeX + Libertinus and has
