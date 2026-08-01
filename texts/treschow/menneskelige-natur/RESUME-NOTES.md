@@ -87,7 +87,7 @@ grep -o 'Output written.*' l.txt; grep -ic 'not set up\|missing character' l.txt
 Expect 0 char-warnings, 0 errors.
 
 ## STATE
-- **DONE (image-verified, compiles 0/0, 108 pp., 508 emph):**
+- **DONE (image-verified, compiles 0/0, 112 pp., 522 emph):**
   - **Indledning COMPLETE, printed pp. 1–10** (§§ 1–6)
   - **1ste Hovedstykke COMPLETE, printed pp. 11–34** (§§ 1–18)
   - **2det Hovedstykke, 1ste Afdeling COMPLETE, printed pp. 34–60**
@@ -97,14 +97,18 @@ Expect 0 char-warnings, 0 errors.
   - **4de Afdeling COMPLETE, printed pp. 146–188** (§§ 1–15)
   - **➤ THE 2det HOVEDSTYKKE IS COMPLETE (pp. 34–188).**
   - **3die Hovedstykke (Om Føleevnen), 1ste Afdeling (Om Følelser i
-    Almindelighed): printed pp. 188–218** (§§ 1–15, with 13 used twice)
-  - **pp. 1–218 are CONTINUOUS** — verified, no gaps in the page-marker sequence.
-    That is **45 %% of the body** (which runs to p. 486).
-- **NEXT — printed pp. 219–227** (scan 237–245), which **finishes the 1ste
-  Afdeling**. Resume at the foot of p. 218, mid-§ 15, after "…deels fordi den
-  giver ny Stof, deels Rolighed efter Arbeide. Men vor Tilstand kan".
-- **THEN** the 2den Afdeling of the 3die Hovedstykke (pp. 227–269), and finally
-  the 4de Hovedstykke (Om den menneskelige Villie, pp. 270–486).
+    Almindelighed) COMPLETE: printed pp. 188–227** (§§ 1–17, with 13 used twice)
+  - **2den Afdeling (Om de forskiellige Slags behagelige og ubehagelige Følelser)
+    begun: printed p. 227** (§ 1)
+  - **pp. 1–227 are CONTINUOUS** — verified, no gaps in the page-marker sequence.
+    That is **47 %% of the body** (which runs to p. 486).
+- **NEXT — printed pp. 228–237** (scan 246–255), continuing the 2den Afdeling
+  (which runs to p. 269). Resume at the foot of p. 227, mid-§ 1, after "…Stik af
+  et giftigt Insect foraarsager ligeledes en dobbelt ubehagelig Følelse; hvoraf
+  den ene ei kunde".
+- **THEN** the rest of the 2den Afdeling, and finally the 4de Hovedstykke (Om den
+  menneskelige Villie, pp. 270–486) — which alone is 217 pp., nearly half the
+  book.
 - **THEN** the rest of the 1ste Afdeling (to p. 227), the 2den (pp. 227–269), and
   finally the 4de Hovedstykke (Om den menneskelige Villie, pp. 270–486).
 - **THEN** the rest of the 4de Afdeling (to p. 188), which closes the 2det
@@ -156,6 +160,42 @@ Also: an edit once **swallowed the `\end{document}`**, producing a bare
 `grep -c '\end{document}' transcription.tex` first.
 
 ## Notable so far
+- ⚑ **p. 224 keeps the monism running through the philosophy of mind.** Of the
+  Sieleorgan: "rimeligviis er den finere Materie, hvoraf det bestaaer, dog **ei
+  væsentlig forskiellig fra den grovere**, hvis almindelige Beskaffenheder vi
+  kiende." Finer and grosser matter differ in degree, not in kind — the same
+  move as "Godt og Ondt… kun i Graderne forskiellige" (p. 214) and the reduction
+  of qualities to "det Reales besynderlige Indskrænkninger" (p. 215). Note also
+  his candour: such explanations should not be expected to satisfy completely,
+  since in both grosser and finer matter "ere der saa utallige Afændringer, at det
+  hverken er muligt at angive dem allesammen".
+- ⚑ **p. 221 — a methodological rule that cuts against his own besetting
+  temptation.** "Man maa i Sielelæren, ligesom i den øvrige Naturlære, vogte sig
+  for den Feil af alt for **besynderlige** Aarsager at ville forklare alle
+  Phænomener." Beware explaining all phenomena from causes that are too
+  particular. The target is Verri and Locke on pleasure as mere relief from pain
+  — remarks "som oftest rigtige, men blive skæve og ensidige, fordi man fra en
+  alt for lav Standpunct betragter den hele Sag."
+- **§ 16 (pp. 222–225) is a typology of individual difference in feeling** —
+  ease of reception (with two kinds of sensitivity, one joined to weakness and
+  one showing strength, on the analogy of soft versus hard-and-elastic bodies),
+  constancy of retention, capacity for more or fewer kinds, vehemence and
+  strength, fineness and coarseness. Its conclusion is worth having: "Føleevnen
+  selv ei er saa enkelt; men, ligesom Sandseligheden overhovedet, bestaaer af
+  flere, og at dens Organer derfor tillige ere flere" (p. 225) — the faculty of
+  feeling is not simple, and neither is its organ, "enhver Nerve har sin egen
+  Maade at føle paa".
+- **§ 17 (pp. 225–227) closes the Afdeling on the reform of feeling**, and the
+  line is characteristically two-sided: correct concepts are needed to bring the
+  feelings into a rational proportion, "Men dette Middel er ei tilstrækkeligt,
+  dersom ikke Legemet tillige styrkes." He is caustic about the philosophies that
+  distort feeling — Epicureans, Stoics, Mystics, Eudaemonists, Rigorists — and
+  notes that systems condemning all feeling merely make one feeling, "den af egen
+  Høihed og Værdighed", the more vivid: "Spartanerne, Stoikerne og adskillige
+  **Kantianere** bevise ved Exempler denne Setnings Rigtighed."
+- **The 2den Afdeling opens at p. 227** with a division of feelings by source —
+  from representations, or from bare impressions on the body and outer senses
+  "hvoraf vi om Gienstandenes eiendommelige Beskaffenhed intet lære."
 - ⚑⚑ **p. 215 — an explicit prohibition on inferring the real from the felt, plus
   a striking account of what sensory qualities are.** "Men derfor maa man ei
   heller bedømme **Tingenes virkelige Beskaffenheder af Følelser**." And then:
@@ -938,6 +978,12 @@ Also: an edit once **swallowed the `\end{document}`**, producing a bare
   the second. Together with the double § 24 and the skipped § 6 and § 3, the
   section numbering of this book is simply unreliable and **the translation
   should carry a general note rather than reproduce every slip**.
+- ⚠ **s. 221 carries its page number as "121"** (antikva-I for the 2) — a
+  misprinted folio, not a sequence error; noted at the site, the marker keeps the
+  true number. Print slips in pp. 219–227, all with a `% sic`: s. 223
+  "Legemetnes" (for "Legemernes") and "et alene" (for "ei alene"); s. 224
+  "tilfredsstilende" and "en forskiellige Receptivitet"; s. 225 "i selv" (for
+  "i sig selv").
 - ⚠ **s. 211 prints "Bygnkng"** (for "Bygning"); carried with a `% sic`. Three
   montage-level misreadings were caught and corrected before writing: s. 211
   "sei" is **slet**, s. 218 "Klosterløsterne" is **Klosterløfterne** (long-s
