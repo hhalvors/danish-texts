@@ -87,19 +87,19 @@ grep -o 'Output written.*' l.txt; grep -ic 'not set up\|missing character' l.txt
 Expect 0 char-warnings, 0 errors.
 
 ## STATE
-- **DONE (image-verified, compiles 0/0, 77 pp., 338 emph):**
+- **DONE (image-verified, compiles 0/0, 82 pp., 367 emph):**
   - **Indledning COMPLETE, printed pp. 1–10** (§§ 1–6)
   - **1ste Hovedstykke COMPLETE, printed pp. 11–34** (§§ 1–18)
   - **2det Hovedstykke, 1ste Afdeling COMPLETE, printed pp. 34–60**
     (§§ 1–16, with § 6 skipped by the print — see below)
   - **2den Afdeling COMPLETE, printed pp. 60–90** (§§ 1–16)
   - **3die Afdeling COMPLETE, printed pp. 90–146** (§§ 1–24, with 24 used twice)
-  - **4de Afdeling: printed pp. 146–156** (§§ 1–4)
-  - **pp. 1–156 are CONTINUOUS** — verified, no gaps in the page-marker sequence.
-- **NEXT — printed pp. 157–166** (scan 175–184), continuing the 4de Afdeling.
-  Resume at the foot of p. 156, mid-§ 4, after "…saavidt de kunde kiendes af Ord
-  eller Udtryk, og ei forud" — a `%`-joined word-stem, so the next batch opens
-  with the remainder of that word with **no space**.
+  - **4de Afdeling: printed pp. 146–166** (§§ 1–7)
+  - **pp. 1–166 are CONTINUOUS** — verified, no gaps in the page-marker sequence.
+- **NEXT — printed pp. 167–176** (scan 185–194), continuing the 4de Afdeling.
+  Resume at the foot of p. 166, mid-§ 7 (on Fornuft), after "…stemme dog de fleste
+  Forklaringer i det Væsentlige mere overeens end de stridende Partier selv ere
+  villige".
 - **THEN** the rest of the 4de Afdeling (to p. 188), which closes the 2det
   Hovedstykke; after that the 3die Hovedstykke (Om Føleevnen, pp. 188–269) and
   the 4de (Om den menneskelige Villie, pp. 270–486).
@@ -149,6 +149,59 @@ Also: an edit once **swallowed the `\end{document}`**, producing a bare
 `grep -c '\end{document}' transcription.tex` first.
 
 ## Notable so far
+- ⚑⚑⚑ **p. 164 — the single best answer to the objection that Treschow's position
+  is anti-theoretical.** Judgement is sharpened, he says, "c) \emph{Ved
+  theoretiske Kundskaber,} endog saadanne, der hentes af Tingenes første Grunde;
+  da Dømmekraften ellers let forvildes af saa mange **eenslige** Exempler,
+  besynderlige Regler og Undtagelser. **Uden Principier**, ved hvis Hielp man,
+  ligesom fra et høiere Sted, kan oversee deres Forbindelse eller Rekke, vil man
+  hverken være istand til at erindre dem alle, eller vide hvad der passer paa
+  nærværende Tilfælde." And then, of the mere practitioner who applies to a new
+  case the rules that worked in similar ones: **"Thi hvorvidt de virkelig ligne,
+  kan Theorien alene lære."**
+  Real similarity is not read off the surface; theory alone can teach it. Note the
+  use of "eenslige" — here the singular cases are the *problem*, and principles
+  the remedy. Taken with p. 148, this settles that the 1810 thesis is a claim
+  about what is *real*, not a recommendation about how inquiry should proceed.
+- ⚑ **p. 158 gives the two ways distinction-drawing fails, and they are exactly
+  the two tiers.** "Men Skarpsindighed vanslægter undertiden til
+  \emph{Spidsfindighed}, naar Tingenes Forskiel **ei er værd at bemærke**, og til
+  \emph{Haarkløverie}, naar den **ei engang er virkelig**." Over-subtlety = a real
+  difference not worth marking; hair-splitting = a difference that is not real at
+  all. Same structure as the essence/importance split at p. 150. The scholastic
+  examples are good ones for a paper: whether a goat's hair may be called wool,
+  whether the ox is drawn to market by the rope or by the man.
+- **§ 4 concluded (p. 157): acuteness must cut both ways.** "\emph{Den ægte
+  Skarpsindighed er altsaa en Gave til at udfinde Tingenes **virkelige** Lighed
+  eller Forskiel}" — and the acute man "ligesaa vel maa bemærke den væsentlige
+  Overensstemmelse, der mellem de forskielligste Ting er at finde", on pain of an
+  Ensidighed that turns the perfection into a defect.
+- ⚑ **p. 160 — a genetic account of the categories.** The highest concepts (Tid,
+  Rum, Afstand, Aarsag, Grund, Substans) are products of "Tænkekraftens ubevidste
+  Virksomhed i en Alder, hvori vi handle paa en gandske instinctmæssig Maade";
+  philosophers' disputes about their origin only prove how little we can recall
+  forming them. Hence metaphysics and logic contain nothing but efforts "for at
+  besinde sig" — recollection, but **not** Plato's of pre-natal knowledge, rather
+  of "vor Barndoms Beskæftigelser og Tænkekraftens Udvikling formedelst samme."
+- **p. 163 states the realism about determinacy** that the paper's monistic
+  reading needs: in any difficult case one becomes aware of "kun nogle, ei alle,
+  Sider… af en **uforanderlig og i sig selv fuldkommen bestemt Idee**." The object
+  is fully determinate; our access is partial. This is the 1812 form of what *Om
+  Gud* will call the individual Ideas.
+- **§§ 5–6 (pp. 158–166) on Fatteevne and Dømmekraft** are largely practical, but
+  two points carry: judgement "kan følgelig ei engang i den empiriske Sielelære
+  betragtes som en besynderlig og fra de andre gandske forskiellig Evne" — it is
+  not a separate faculty, and has no domain of its own (contra the third Critique,
+  though Kant is not named here); and the old dispute of theory vs. practice is
+  refused rather than settled — "Uden Tvivl er det bedst, naar begge Midler ere
+  forbundne."
+- **A dated political aside worth knowing about (p. 166):** the first draft of the
+  French Revolution was made by "et philosophisk Partie" that miscalculated how
+  far principles about innate rights, liberty and equality could be applied in
+  legislation to a people not yet prepared for them by enlightenment and morality.
+  Treschow grants the principles are "i sig selv meget rigtige" — the objection is
+  about application, and it is the same application/content distinction he uses
+  throughout.
 - ⚑⚑⚑ **The 4de Afdeling (from p. 146) is on the Forstand, and pp. 148–156 are the
   richest stretch in the book for the natural-properties paper. Four passages.**
 - **(i) p. 148 — Treschow answers the charge of excessive particularism.** He
