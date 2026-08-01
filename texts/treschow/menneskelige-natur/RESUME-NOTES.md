@@ -87,19 +87,24 @@ grep -o 'Output written.*' l.txt; grep -ic 'not set up\|missing character' l.txt
 Expect 0 char-warnings, 0 errors.
 
 ## STATE
-- **DONE (image-verified, compiles 0/0, 82 pp., 367 emph):**
+- **DONE (image-verified, compiles 0/0, 93 pp., 425 emph):**
   - **Indledning COMPLETE, printed pp. 1–10** (§§ 1–6)
   - **1ste Hovedstykke COMPLETE, printed pp. 11–34** (§§ 1–18)
   - **2det Hovedstykke, 1ste Afdeling COMPLETE, printed pp. 34–60**
     (§§ 1–16, with § 6 skipped by the print — see below)
   - **2den Afdeling COMPLETE, printed pp. 60–90** (§§ 1–16)
   - **3die Afdeling COMPLETE, printed pp. 90–146** (§§ 1–24, with 24 used twice)
-  - **4de Afdeling: printed pp. 146–166** (§§ 1–7)
-  - **pp. 1–166 are CONTINUOUS** — verified, no gaps in the page-marker sequence.
-- **NEXT — printed pp. 167–176** (scan 185–194), continuing the 4de Afdeling.
-  Resume at the foot of p. 166, mid-§ 7 (on Fornuft), after "…stemme dog de fleste
-  Forklaringer i det Væsentlige mere overeens end de stridende Partier selv ere
-  villige".
+  - **4de Afdeling COMPLETE, printed pp. 146–188** (§§ 1–15)
+  - **➤ THE 2det HOVEDSTYKKE IS COMPLETE (pp. 34–188).**
+  - **3die Hovedstykke (Om Føleevnen) begun: 1ste Afdeling (Om Følelser i
+    Almindelighed), printed p. 188** (§ 1)
+  - **pp. 1–188 are CONTINUOUS** — verified, no gaps in the page-marker sequence.
+    That is **39 %% of the body** (which runs to p. 486).
+- **NEXT — printed pp. 189–198** (scan 207–216), continuing the 1ste Afdeling of
+  the 3die Hovedstykke. Resume at the foot of p. 188, mid-§ 1, after "…men i
+  Fornemmelsen alene, uagtet hiin, som".
+- **THEN** the rest of the 1ste Afdeling (to p. 227), the 2den (pp. 227–269), and
+  finally the 4de Hovedstykke (Om den menneskelige Villie, pp. 270–486).
 - **THEN** the rest of the 4de Afdeling (to p. 188), which closes the 2det
   Hovedstykke; after that the 3die Hovedstykke (Om Føleevnen, pp. 188–269) and
   the 4de (Om den menneskelige Villie, pp. 270–486).
@@ -149,6 +154,96 @@ Also: an edit once **swallowed the `\end{document}`**, producing a bare
 `grep -c '\end{document}' transcription.tex` first.
 
 ## Notable so far
+- ⚑⚑ **p. 186 — "Stykkeviis Kundskab er derfor ikke heller Viden."** Piecemeal
+  knowledge is not knowledge, "thi hiin standser ved de besynderlige Grunde, denne
+  omfatter Alt formedelst de almindelige og høieste, **hvori det nødvendig ligger
+  skiult, om der end maaskee gives meget Besynderligt, som man deraf ei er istand
+  til at udvikle.**" The particular lies *contained* in the highest grounds — but
+  not derivably, for us. Read alongside p. 168 ("Enhver enslig Ting… Aftryk af en
+  Idee") this is the whole position in miniature: individuals are what is real and
+  fully determinate; the general grounds contain them; and no finite knower can
+  unfold the one from the other. Note too the concession just before: "I Henseende
+  til Tingenes reale Grunde, er den menneskelige Kundskab ifølge Tænkekraftens
+  Væsen selv **nødvendig ufuldkommen og relativ**."
+- **p. 178 gives individuality a social cost.** "Ethvert Menneske har sin
+  individuelle Form, hvoraf følger noget i Handlinger og Charakter afstikkende,
+  hvorved… [man] bliver mindre skikket til det selskabelige Liv." Politur is the
+  wearing-down of "det Rue og Ujævne" until people fit together "ligesom Delene af
+  en Maskine". The Englishman takes Cultur as well as anyone but Politur badly,
+  "som han mindre kan fornægte sin Individualitet" (p. 180). So the individual
+  Grundform of p. 168 is metaphysically basic and socially abraded — a nice
+  tension to note, not to resolve.
+- **§§ 12–13 (pp. 181–185): Oplysning, Visdom, Klogskab.** Enlightenment requires
+  both a *form* (facility in orderly thinking) and *material* knowledge, and
+  Treschow is sharp about the difference: memorised propositions, "skiøndt i sig
+  selv rigtige", produce no enlightenment, and much supposed enlightenment "bestaaer
+  alligevel ei i andet end i visse Ordformularer og Sentenzer". He then takes the
+  contemporary debate over popular enlightenment seriously on both sides before
+  coming down for it. Wisdom is defined as "Oplysning, forenet med Sielestyrke til
+  at handle derefter"; Aristotle (*Magna Moralia*) is cited for the wisdom/prudence
+  distinction, and Horace for the ancients' conception.
+- **§ 14 (pp. 185–187) closes the Hovedstykke with definitions** of Videnskab,
+  Kunst and Lærdom — learning being "et velordnet Vare-Magazin" that by itself
+  yields neither art nor science, "langt mindre Visdom eller Klogskab" — and § 15
+  treats *sensus communis* as natural good sense that has nonetheless been
+  cultivated, so the dispute over whether it is innate or acquired is dissolved
+  rather than settled.
+- **The 3die Hovedstykke, Om Føleevnen, opens at p. 188** with a definition that
+  matters for the paper's subjective/objective theme: "Ordet \emph{Følelse} betyder
+  her i Almindelighed en Fornemmelse, saavidt den enten er behagelig eller
+  ubehagelig. Disse Ord betegne ei Beskaffenheder i Gienstanden, men i
+  Fornemmelsen alene."
+- ⚑⚑⚑ **p. 168 — the 1810 thesis restated in the vocabulary of Ideas, and the
+  bridge to *Om Gud*. This may be the single most quotable sentence in the book.**
+  Having defined Ideas as "de rene Begreber om Tingenes høieste Grunde", divided
+  into \emph{theoretiske} and \emph{practiske}, he lists the theoretical ones:
+  "Gud, Kraft, saavidt den tænkes uden Grændser, **Individualitet, som Tingenes
+  uforanderlige Grundform**, der evig udvikler sig efter et uendeligt Mønster, ere
+  theoretiske Ideer." And then:
+  > **Enhver enslig Ting kan i denne Mening betragtes som Aftryk af en Idee, ei
+  > Arterne og Slægterne alene.**
+  Every singular thing is the impress of an Idea — **not the species and genera
+  alone.** That is exactly the 1810 claim, now with a positive metaphysics behind
+  it: individuality *is* a Grundform, and there are Ideas of individuals. Note
+  also "Ingen af disse Ideer er for os anskuelig, men vel for den guddommelige
+  Forstand" — the Ideas are fully determinate but not intuitable by us, which is
+  the p. 163 point again.
+- ⚑ **p. 171, first line — Treschow locates his own position.** "Dualismus's
+  Opfindelse røber derfor mere Skarpsind, Identitets Systemets Dybsind." The
+  invention of dualism betrays more acuteness; that of the Identity System, depth.
+  Acuteness dissolves, depth unifies — and he has just said (p. 169) that
+  "\emph{Dybsindighed forudsetter derfor Skarpsindighed}", so the monist is not
+  excused from analysis, only required to go further.
+- ⚑⚑ **p. 170 is Treschow diagnosing precisely the tension you raised.** "Derfor
+  er Philosophie, Metaphysik og det Spørgsmaal om Tingenes første Grunde, om de
+  simpleste og rene Begreber tidt en Daarlighed i skarpsindige Naturforskeres
+  Øine. De største Chemikere, Anatomer, Naturbeskrivere… ere tidt Foragtere af de
+  høiere Videnskaber, og declamere med Iver mod alle Systemer, der af faa eller
+  endog et eneste almindeligt Princip søger at forklare alle Naturens Særsyner."
+  His diagnosis: acuteness is so busy dissolving "at den ei faaer Tid til at tænke
+  paa nogen Forbindelse". And the examples he gives of unification are real,
+  contemporary science — whether electricity and galvanism are one, whether plant
+  and animal life is the same activity that shows itself in crystal formation.
+- **p. 169 on method:** an objective science can be *presented* synthetically but
+  is "altid opfunden ved Analysis"; one starts from the most composite objects of
+  experience, and the more different Beskaffenheder one finds in them, the closer
+  one comes to their ground — because one then notices how a barely perceptible
+  difference gradually becomes larger "og omsider gaaer over i en gandske modsat".
+- **§ 9 (pp. 171–175) on genius**, defined at last as "en \emph{Naturgave til
+  efter uudviklede Ideer eller selv opfundne, men ubestemte, Ordens Regler ved
+  Phantasiens Hielp at frembringe eller opfinde}." Against Kant, who "har derfor
+  indskrænket Begrebet om Genie til de skiønne Kunster alene", Treschow insists
+  genius is needed in mathematics (choosing among equally good forms of an
+  equation), in the practical sciences, and in ordinary life — where what is
+  wanted is *Tact*, "der som et pludseligt Skin i Mørke paa engang oplyser
+  Gienstandene, men alt for hastig igien forsvinder til at man kunde beskrive
+  deres Udseende." Gerard, Resewits and Kant are named as the moderns who worked
+  on the question; Oholiab and Bezalel as scripture's artistic geniuses.
+- **§ 10 (pp. 175–176) opens on Cultur**, with the agricultural etymology spelled
+  out (preparing the ground, sowing, favourable weather) and the threefold Vilde /
+  Barbarer / civiliserte division. The definition of the savage uses "enslig"
+  once more: those whose knowledge extends no further than "det \emph{enslige}
+  Væsens Vedligeholdelse og første Nødvendigheder."
 - ⚑⚑⚑ **p. 164 — the single best answer to the objection that Treschow's position
   is anti-theoretical.** Judgement is sharpened, he says, "c) \emph{Ved
   theoretiske Kundskaber,} endog saadanne, der hentes af Tingenes første Grunde;
@@ -706,6 +801,20 @@ Also: an edit once **swallowed the `\end{document}`**, producing a bare
   author's choice, and in a reading edition it just trips the eye. It is
   therefore **normalised silently to "1)" throughout**, with a comment at each
   site. Everything else that departs from modern usage is carried as printed.
+- ⚠ **Print slips in pp. 167–176, all carried with a `% sic`:** s. 167 "Dictum
+  **et** omni et nullo" (for *de omni et nullo*); s. 169 "forskitllige"; s. 173
+  "en sikker Dømmekraft, **det**," (for "der,"); s. 173/174 the word broken as
+  "videnska=/lig", i.e. **"videnskalig" for "videnskabelig"** — the syllable "be"
+  is simply missing, and both halves were re-checked at magnification; s. 176
+  "udsletede". Also s. 168's page number is set with an inked-in 8 that reads as a
+  9 at montage resolution — it *is* 168, verified by zoom.
+- ✎ **ë added to the permitted character set** for "Poëm" (s. 173).
+- ✎ **A Greek word at s. 179**, ἀστεῖα, printed with the **stigma ligature** for
+  στ. As with the Hebrew beth at s. 115, the edition has no Greek font
+  (`textalpha` is *not* in the preamble), so the word is given transliterated and
+  in italic, with the substitution documented at the site. **Note that this italic
+  is not Sperrsatz** — the translation must not treat it as emphasis. To restore
+  the Greek, add `\usepackage{textalpha}`. Second open item of this kind.
 - ⚠ **The print numbers two consecutive sections "24"** — § 24 Fanatismus at
   s. 141 and § 24 Adspredelse at s. 146 (verified by zoom). Not renumbered; a
   `% sic` marks the second.
