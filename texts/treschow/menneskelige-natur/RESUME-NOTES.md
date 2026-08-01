@@ -87,7 +87,7 @@ grep -o 'Output written.*' l.txt; grep -ic 'not set up\|missing character' l.txt
 Expect 0 char-warnings, 0 errors.
 
 ## STATE
-- **DONE (image-verified, compiles 0/0, 98 pp., 451 emph):**
+- **DONE (image-verified, compiles 0/0, 108 pp., 508 emph):**
   - **Indledning COMPLETE, printed pp. 1–10** (§§ 1–6)
   - **1ste Hovedstykke COMPLETE, printed pp. 11–34** (§§ 1–18)
   - **2det Hovedstykke, 1ste Afdeling COMPLETE, printed pp. 34–60**
@@ -97,13 +97,14 @@ Expect 0 char-warnings, 0 errors.
   - **4de Afdeling COMPLETE, printed pp. 146–188** (§§ 1–15)
   - **➤ THE 2det HOVEDSTYKKE IS COMPLETE (pp. 34–188).**
   - **3die Hovedstykke (Om Føleevnen), 1ste Afdeling (Om Følelser i
-    Almindelighed): printed pp. 188–198** (§§ 1–5)
-  - **pp. 1–198 are CONTINUOUS** — verified, no gaps in the page-marker sequence.
-    That is **41 %% of the body** (which runs to p. 486).
-- **NEXT — printed pp. 199–208** (scan 217–226), continuing the 1ste Afdeling.
-  Resume at the foot of p. 198, mid-§ 5, after "…eller med \emph{Sulzer} af en
-  ubehindret eller alt for indskrænket Frihed i at tænke. Begge disse Meninger
-  lade".
+    Almindelighed): printed pp. 188–218** (§§ 1–15, with 13 used twice)
+  - **pp. 1–218 are CONTINUOUS** — verified, no gaps in the page-marker sequence.
+    That is **45 %% of the body** (which runs to p. 486).
+- **NEXT — printed pp. 219–227** (scan 237–245), which **finishes the 1ste
+  Afdeling**. Resume at the foot of p. 218, mid-§ 15, after "…deels fordi den
+  giver ny Stof, deels Rolighed efter Arbeide. Men vor Tilstand kan".
+- **THEN** the 2den Afdeling of the 3die Hovedstykke (pp. 227–269), and finally
+  the 4de Hovedstykke (Om den menneskelige Villie, pp. 270–486).
 - **THEN** the rest of the 1ste Afdeling (to p. 227), the 2den (pp. 227–269), and
   finally the 4de Hovedstykke (Om den menneskelige Villie, pp. 270–486).
 - **THEN** the rest of the 4de Afdeling (to p. 188), which closes the 2det
@@ -155,6 +156,79 @@ Also: an edit once **swallowed the `\end{document}`**, producing a bare
 `grep -c '\end{document}' transcription.tex` first.
 
 ## Notable so far
+- ⚑⚑ **p. 215 — an explicit prohibition on inferring the real from the felt, plus
+  a striking account of what sensory qualities are.** "Men derfor maa man ei
+  heller bedømme **Tingenes virkelige Beskaffenheder af Følelser**." And then:
+  "saaledes forholder det sig ved enhver sandselig Fornemmelse, hvis forskiellige
+  Qvaliteter ei er noget andet end **det Reales besynderlige Indskrænkninger** at
+  tilskrive." Sensory qualities are to be ascribed to nothing but the particular
+  *limitations of the real* — a privative account of quality that sits exactly
+  where the monism needs it: the real is one and unlimited, qualities are its
+  restrictions. Note the parallel argument about physical evil, which only
+  *seems* positive, and which is explained teleologically.
+- ⚑ **p. 217 restates the double-aspect thesis for affect.** "\emph{Alle Følelser
+  have følgelig noget i sig af Menneskets dobbelte Natur:} ingen hører gandske til
+  en Art alene." No feeling belongs wholly to one side. This is the Indledning
+  § 2 doctrine — the same reality under two irreducible modes — now applied to
+  the feelings, and it is argued empirically (religious enthusiasm and moral
+  feeling show themselves in flashing eyes, blushing, muscular exertion just as
+  sensual objects do).
+- **p. 216 carries a *resolvable* cross-reference, "II, 2, 12"** — Hovedstykke II,
+  Afdeling 2, § 12, printed p. 79, i.e. the parallelism law itself. So the
+  reference apparatus does sometimes work, and this one confirms the format.
+- **p. 214: "Godt og Ondt… ere dog kun i Graderne forskiellige, og berøre, saa at
+  sige, hverandre: ellers var ingen Overgang muelig."** Good and evil differ only
+  in degree — the quantitative thesis of p. 197 extended to value. But note the
+  qualification at p. 215: although the *causes* of these feelings differ only in
+  magnitude, that does not hold of the feelings themselves — "Man kan ikke sige,
+  at Smerte bestaaer i en høiere eller lavere Grad af Vellyst."
+- **§ 12–13 (pp. 209–214) distinguish the *interesting* from the merely
+  agreeable**, and the criterion is effort: an object is interessant when it
+  gives matter for activity "men til en, der koster Anstrængelse", whereas the
+  agreeable demands no work we do not think we can do easily. Hence tragedy,
+  executions and bad news draw as many spectators as their opposites: "Det kommer
+  ei an paa Gienstandens Beskaffenhed, men paa dens Størrelse" (p. 209). The
+  novelty/habit material that follows is a small sociology of intellectual
+  resistance — Anaxagoras, the Roman statesmen on Christianity, Meiners, Feder and
+  Eberhard declining to become Kant's disciples because that would mean recanting
+  what they had taught.
+- ⚑⚑ **§ 6 (p. 199) states the law of the agreeable in terms of *qualities*, and
+  it is worth having beside the p. 197 subject/object split.** In Sperrsatz:
+  "\emph{Gienstandenes Qvaliteter kun ved den forskiellige Beqvemhed, de kan have
+  til at hindre, mere eller mindre at vække vor Virksomhed og Bevidstheden af
+  samme, ere os behagelige eller ubehagelige.}" Qualities are pleasant or
+  unpleasant *only* through their fitness to arouse or block our activity — so
+  affective value is a relation to a capacity, not a property of the object, yet
+  it is grounded in the object's qualities. Neither a projectivism nor a naive
+  realism about value.
+- ⚑ **p. 200 turns the 1810 thesis into an explanatory demand.** To say why a
+  given smell pleases, "maatte man ei alene kiende Tingenes og det følende
+  Subjects Egenskaber i Almindelighed, men ogsaa **Grundene til al Individualitet
+  og Idiosyncrasie**." General properties of object and subject are not enough;
+  one would need the grounds of individuality itself. And he adds the
+  methodological point that our ignorance of the mechanism licenses no inference
+  against the main proposition.
+- **§ 5's law is then filled out with a long empirical catalogue (pp. 201–208)**,
+  and it is more interesting than it looks. Quantity alone converts one kind of
+  feeling into the other (Socrates on the chain-marks: "Godt og Ondt… ere bundne
+  sammen ved Enderne", p. 201). Sustained irritation becomes unpleasant, whence
+  \emph{Kedsomhed} and then \emph{Væmmelse}: "Naar samme Organ nemlig altid
+  pirres paa samme Maade, taber det efterhaanden sin særegne Virksomhed"
+  (p. 202) — so **variation is a condition of continued function**, not a mere
+  preference. Representations that sustain aroused activity please, those that
+  block it displease (§ 8, p. 203), with applications to long digressions in epic
+  and to notes in a text. § 9 (p. 204): all exercise pleases "hvorved vi føle
+  Styrken af vor Kraft".
+- **§ 10 (pp. 205–207) is the best-written stretch here**: no state is more
+  unbearable than one in which we have nothing left to hope, "om den endog i sig
+  selv var den lykkeligste". Suppose every wish granted on condition of no
+  further advance — one would see at once how much better it had been to work
+  toward "et ubestemt Maal, som han stedse, jo videre han kom, var istand til at
+  forlænge." Alexander lamenting no world left to conquer; Pyrrhus embarrassed by
+  the question what he would do when tired of conquering; the old man consoled
+  that the trees he planted will spread. **Holberg** appears too (p. 205), taking
+  the metaphysics chair unwillingly and gladly exchanging it — a nice cross-link
+  to the Holberg entry in the catalogue.
 - ⚑⚑ **p. 197 (C) — the cleanest subject/object statement in the book, and it
   divides the labour by *category*, not by degree.** "\emph{Grunden til vore
   Følelser er altsaa dobbelt, nemlig baade subjectiv og objectiv.}" Then: when we
@@ -858,6 +932,16 @@ Also: an edit once **swallowed the `\end{document}`**, producing a bare
   in italic, with the substitution documented at the site. **Note that this italic
   is not Sperrsatz** — the translation must not treat it as emphasis. To restore
   the Greek, add `\usepackage{textalpha}`. Second open item of this kind.
+- ⚠ **A third repeated section number: "13" twice** in the 3die Hovedstykke,
+  1ste Afdeling — § 13 (Det Ny) at s. 210 and § 13 (Det Behagelige bliver
+  ubehageligt) at s. 212, both verified by zoom. Not renumbered; a `% sic` marks
+  the second. Together with the double § 24 and the skipped § 6 and § 3, the
+  section numbering of this book is simply unreliable and **the translation
+  should carry a general note rather than reproduce every slip**.
+- ⚠ **s. 211 prints "Bygnkng"** (for "Bygning"); carried with a `% sic`. Three
+  montage-level misreadings were caught and corrected before writing: s. 211
+  "sei" is **slet**, s. 218 "Klosterløsterne" is **Klosterløfterne** (long-s
+  vs. f), and s. 201 "søb" is **sød** (see the d/b trap above).
 - ⚠ **The print numbers two consecutive sections "24"** — § 24 Fanatismus at
   s. 141 and § 24 Adspredelse at s. 146 (verified by zoom). Not renumbered; a
   `% sic` marks the second.
