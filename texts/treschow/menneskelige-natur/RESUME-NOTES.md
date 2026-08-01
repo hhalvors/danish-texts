@@ -87,7 +87,7 @@ grep -o 'Output written.*' l.txt; grep -ic 'not set up\|missing character' l.txt
 Expect 0 char-warnings, 0 errors.
 
 ## STATE
-- **DONE (image-verified, compiles 0/0, 112 pp., 522 emph):**
+- **DONE (image-verified, compiles 0/0, 115 pp., 534 emph):**
   - **Indledning COMPLETE, printed pp. 1–10** (§§ 1–6)
   - **1ste Hovedstykke COMPLETE, printed pp. 11–34** (§§ 1–18)
   - **2det Hovedstykke, 1ste Afdeling COMPLETE, printed pp. 34–60**
@@ -98,14 +98,14 @@ Expect 0 char-warnings, 0 errors.
   - **➤ THE 2det HOVEDSTYKKE IS COMPLETE (pp. 34–188).**
   - **3die Hovedstykke (Om Føleevnen), 1ste Afdeling (Om Følelser i
     Almindelighed) COMPLETE: printed pp. 188–227** (§§ 1–17, with 13 used twice)
-  - **2den Afdeling (Om de forskiellige Slags behagelige og ubehagelige Følelser)
-    begun: printed p. 227** (§ 1)
-  - **pp. 1–227 are CONTINUOUS** — verified, no gaps in the page-marker sequence.
-    That is **47 %% of the body** (which runs to p. 486).
-- **NEXT — printed pp. 228–237** (scan 246–255), continuing the 2den Afdeling
-  (which runs to p. 269). Resume at the foot of p. 227, mid-§ 1, after "…Stik af
-  et giftigt Insect foraarsager ligeledes en dobbelt ubehagelig Følelse; hvoraf
-  den ene ei kunde".
+  - **2den Afdeling (Om de forskiellige Slags behagelige og ubehagelige Følelser):
+    printed pp. 227–233** (§§ 1–3)
+  - **pp. 1–233 are CONTINUOUS** — verified, no gaps in the page-marker sequence.
+    That is **48 %% of the body** (which runs to p. 486).
+- **NEXT — printed pp. 234–243** (scan 252–261), continuing the 2den Afdeling
+  (which runs to p. 269). Resume at the foot of p. 233, mid-§ 3 point 2), after
+  "…og nødig lukker det svage Syn sit Øie til for glimrende Farver, naar de
+  skiære. Disse Gienstande foraarsage".
 - **THEN** the rest of the 2den Afdeling, and finally the 4de Hovedstykke (Om den
   menneskelige Villie, pp. 270–486) — which alone is 217 pp., nearly half the
   book.
@@ -160,6 +160,40 @@ Also: an edit once **swallowed the `\end{document}`**, producing a bare
 `grep -c '\end{document}' transcription.tex` first.
 
 ## Notable so far
+- **§ 1 (pp. 227–229) divides feelings into lower and higher, and the lower again
+  into \emph{organiske} and \emph{dyriske}** — the first arising from the common
+  sense of feeling and usually without any clear representation of their cause,
+  the second from objects acting on the particular sense organs and bound up with
+  clear representations. The organic ones are found "i den hele levende Natur",
+  the animal ones only in animals.
+- ⚑ **p. 229 grants plants feeling, and draws a realist conclusion about
+  sympathy.** If worms gnaw their root, sun parches or rain refreshes them, plants
+  "kan… have visse Fornemmelser af Vellyst eller Smerte" — whence: "Vor Sympathie
+  med det visnende Blomst og den under Vintersneen begravede Natur kan da
+  ligesaavel som den Andeel, vi tage i Dyrets Lidelser, **have en objectiv
+  Grund.**" Sympathy with a withering flower is not mere projection. Worth noting
+  for the paper: this is the same move as the p. 199 "Beqvemhed" law — an
+  affective response with an objective ground that is nonetheless a relation, not
+  a property of the thing.
+- **The Brunonian aside (p. 229)** — Treschow observes that John Brown's theory of
+  disease (sthenia/asthenia) "saa nøie stemmer overeens med denne, uagtet det ei
+  er rimeligt, at han derved har havt samme for Øine." An independent convergence
+  offered as evidence, which is a nice bit of method.
+- ⚑ **p. 231 states the abstraction the general law requires**, and it is the
+  mirror image of the p. 200 passage. To judge what is pleasant in sensation "maa
+  man aldeles abstrahere fra Enhvers besynderlige Smag, der deels kan beroe paa
+  Omstændigheder, deels paa Idiosyncrasie. \emph{See vi derfor kun paa det
+  Almindelige}…" At p. 200 he said a full explanation would require the grounds of
+  all individuality; here he says the *law* is got only by abstracting from it.
+  The two together are the cleanest statement of his position: individuals are
+  what is real, general laws are what a finite knower can have, and the second is
+  reached by deliberately setting the first aside.
+- **The examples in §§ 2–3 (pp. 230–233) are pleasant and concrete** — spring
+  warmth as a rousing "Potens", tickling as agreeable only because it is
+  stimulating, Anquetil-Duperron on Indian bath-houses, the loveliest tones lying
+  between the highest and lowest, and the observation that Nature "valgte viselig
+  den grønne til Planterigets herskende \emph{Farve}" because a livelier colour
+  would tire the eye and a weaker one not occupy it enough.
 - ⚑ **p. 224 keeps the monism running through the philosophy of mind.** Of the
   Sieleorgan: "rimeligviis er den finere Materie, hvoraf det bestaaer, dog **ei
   væsentlig forskiellig fra den grovere**, hvis almindelige Beskaffenheder vi
