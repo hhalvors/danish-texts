@@ -87,7 +87,7 @@ grep -o 'Output written.*' l.txt; grep -ic 'not set up\|missing character' l.txt
 Expect 0 char-warnings, 0 errors.
 
 ## STATE
-- **DONE (image-verified, compiles 0/0, 123 pp., 578 emph):**
+- **DONE (image-verified, compiles 0/0, 127 pp., 594 emph):**
   - **Indledning COMPLETE, printed pp. 1–10** (§§ 1–6)
   - **1ste Hovedstykke COMPLETE, printed pp. 11–34** (§§ 1–18)
   - **2det Hovedstykke, 1ste Afdeling COMPLETE, printed pp. 34–60**
@@ -99,13 +99,13 @@ Expect 0 char-warnings, 0 errors.
   - **3die Hovedstykke (Om Føleevnen), 1ste Afdeling (Om Følelser i
     Almindelighed) COMPLETE: printed pp. 188–227** (§§ 1–17, with 13 used twice)
   - **2den Afdeling (Om de forskiellige Slags behagelige og ubehagelige Følelser):
-    printed pp. 227–249** (§§ 1–10)
-  - **pp. 1–249 are CONTINUOUS** — verified, no gaps in the page-marker sequence.
-    That is **51 %% of the body** (which runs to p. 486).
-- **NEXT — printed pp. 250–259** (scan 268–277). The 2den Afdeling ends at p. 269;
+    printed pp. 227–257** (§§ 1–13, with 12 used twice)
+  - **pp. 1–257 are CONTINUOUS** — verified, no gaps in the page-marker sequence.
+    That is **53 %% of the body** (which runs to p. 486).
+- **NEXT — printed pp. 258–267** (scan 276–285). The 2den Afdeling ends at p. 269;
   the 4de Hovedstykke (Om den menneskelige Villie) begins at p. 270 and runs to
-  p. 486. Resume at the foot of p. 249, mid-§ 10, after "…Uden samme maae abstracte
-  Sandheder nødvendig synes nøgne eller".
+  p. 486. Resume at the foot of p. 257, mid-§ 13, after "…naar smaa Siele give sig
+  Mine af stor For" — a `%`-joined word-stem.
 - **THEN** the rest of the 2den Afdeling, and finally the 4de Hovedstykke (Om den
   menneskelige Villie, pp. 270–486) — which alone is 217 pp., nearly half the
   book.
@@ -160,6 +160,61 @@ Also: an edit once **swallowed the `\end{document}`**, producing a bare
 `grep -c '\end{document}' transcription.tex` first.
 
 ## Notable so far
+- ⚑⚑⚑ **pp. 254–255 — the sublime, and it turns out to be the aesthetics of
+  exactly the epistemic gap the whole book keeps returning to.** The puzzle is set
+  at p. 254: nothing pleases as beauty unless we perceive unity, order and
+  regularity in it, "saa synes det tvertimod, at \emph{høie og store Gienstande
+  ofte ere yderst uordentlige og uregelmæssige, ja, at Orden skader det Indtryk,
+  de kunde giøre}." The examples are wonderful and, for the paper, pointed:
+  imagine the stars actually **arranged in constellations**, or hung in orderly
+  rows; imagine the high mountains given a regular figure.
+  The solution at p. 255 is the key: the sublime yields no pure but only a mixed
+  feeling, because "Det Skiønne og Høie indtage Sindet, begge ved Gienstandens
+  Fuldkommenhed, **Orden er deri noget Væsentligt**. Men i Bestræbelsen for at
+  fatte den møder der undertiden Vanskeligheder, som vi ei kan overvinde. **Vi
+  skimte Regelen kun langt borte, men Anvendelsen deraf kan vi ikke finde.** Vi
+  anstrænge vor Kraft forgieves for at oversee det Hele."
+  So the order is *really in the object*; what the sublime adds is the failure of
+  survey. That is the p. 186 formula ("hvori det nødvendig ligger skiult…") and
+  the p. 234 formula ("endskiøndt de… derunder indbefattes") transposed into
+  aesthetics — and it is the fifth independent statement of the position. **The
+  constellation example is worth using directly**: our orderly groupings would
+  *spoil* the heavens, yet the heavens are not disorderly.
+- **p. 256 draws the corollary for the infinite:** "de høieste Tanker og Udtryk
+  fatte vi aldrig gandske. Kunde vi dette, vare de ei længere høie; thi deres
+  Gienstande vare da ei uendelige." Ungraspability is constitutive of the sublime,
+  not a defect in us — which is why poets may exploit the illusion and enthusiasts
+  may not.
+- **p. 257 distinguishes the great from the high** by which dimensions we can
+  survey at once, and § 13 opens the treatment of the ridiculous: laughter arises
+  from "en Contrast mellem det indbildte Store og virkelige Smaa" — the frog
+  puffing itself up to match the ox.
+- ⚑ **p. 252 — beauty is where the double nature is felt as one, and this is a
+  genuinely nice thought.** "\emph{Behageligheden af det Skiønne… grunder sig
+  derfor paa den Stof, som alle baade høiere og lavere Sindets Evner derved faae
+  til en passende Beskæftelse}", and the pleasure is greater the more it brings
+  them into harmony. Then: in any other pleasure, where either sensibility or
+  reason alone can share, "føler Mennesket sig ligesom deelt: **ved denne Enhed i
+  Nydelsen bliver det sig derimod ogsaa sin egen Enhed bevidst.**" The Indledning
+  § 2 doctrine says the two sides cannot be surveyed together by any *faculty*;
+  here the aesthetic is the one place where their unity is nonetheless *felt*.
+  Worth pairing with the p. 217 claim that every feeling has something of both.
+- **§ 11 (p. 251) grounds beauty in a Fornuftidee** — no beauty can be thought
+  "uden at deels en Fornuftidee ligger til Grund, saasom om **Enhed i en uendelig
+  Mangfoldighed**, deels at denne udvortes er anskuelig." Unity in infinite
+  multiplicity, made outwardly intuitable. Same content as the p. 243 account of
+  intellectual pleasure and the p. 244 order-for-survey claim, now in aesthetics.
+- **p. 251 also states the hedonic constraint on willing** flatly: "det er
+  alligevel en nødvendig Regel for vor Villie, at vi intet kan begiere eller
+  afskye, uden fordi det behager eller mishager… **endog de nøgneste Ideer selv**,
+  ved nogen Angenemhed maa røre." Even the barest Ideas must move us through some
+  agreeableness — which is how the coming Hovedstykke on the will is set up.
+- **p. 250 on speculation's practical use**, with Virgil's *felix qui potuit* and
+  the observation that Epicurus, who despised speculation, recommended the study
+  of nature for just this reason: to instil contempt for perishable things and
+  for the fear of death. And a good line against scepticism: "Alle Skeptikere have
+  derfor været nødte til at handle som om noget var vist, uagtet de holdt denne
+  Vished for umulig i sig selv."
 - ⚑⚑ **p. 248 — what pure philosophy is *for*, and it fits the deflationary
   reading exactly.** "\emph{Den hele rene eller høiere Philosophie lærer egentlig
   intet Nyt: ja, det er en Fortieneste deri intet Nyt at lære, men blot at oplyse
@@ -1103,6 +1158,9 @@ Also: an edit once **swallowed the `\end{document}`**, producing a bare
   in italic, with the substitution documented at the site. **Note that this italic
   is not Sperrsatz** — the translation must not treat it as emphasis. To restore
   the Greek, add `\usepackage{textalpha}`. Second open item of this kind.
+- ⚠ **A fourth repeated section number: "12" twice** in the 3die Hovedstykke,
+  2den Afdeling — § 12 (Det Store og Høie) at s. 253 and § 12 (Endskiøndt intet
+  ved Skiønhed) at s. 254. Not renumbered.
 - ⚠ **A third repeated section number: "13" twice** in the 3die Hovedstykke,
   1ste Afdeling — § 13 (Det Ny) at s. 210 and § 13 (Det Behagelige bliver
   ubehageligt) at s. 212, both verified by zoom. Not renumbered; a `% sic` marks
