@@ -37,11 +37,12 @@
 %        p.592 l.4  f.o.   : Selvishedeus -> Selvvishedens
 %
 %  STATUS: IN PROGRESS. Done & image-verified: title leaf, preface theses,
-%        and printed pp. 1--42 (Indledning: §§ 1--3 complete -- § 3 "Aabenbaring
-%        og Tro", pp.23--41, with run-heads a) Aabenbaring og hellig Historie
-%        (p.24), b) Aabenbaring og Fornuft (p.28), c) Aabenbaringen Tilegnelse
-%        i Troen (p.35); § 4 "Ordet og Aanden" opens p.42).
-%        RESUME AT printed p.43 (PDF 56). See RESUME-NOTES.md.
+%        and printed pp. 1--60 (Indledning: §§ 1--4 complete -- § 4 "Ordet og
+%        Aanden", pp.42--55, run-heads a) Ordets Oprindelighed (p.43),
+%        b) Ordets Troværdighed (p.47), c) Aandens Vidnesbyrd (p.52);
+%        § 5 "Troesprincipet: Religionsphilosophiens Methode" opens p.56, with
+%        run-head a) Troen og dens Indhold (p.57), carried to p.60).
+%        RESUME AT printed p.61 (PDF 74). See RESUME-NOTES.md.
 %        NOTE: the older indledning/transcription.tex is SUPERSEDED by this file.
 %        It covered only pp. 1--17 (breaking off mid-page), carried no page-break
 %        comments and no Sperrsatz markup, and mis-transcribed the p.17 sentence
@@ -63,7 +64,21 @@
 \IfFileExists{libertinus.sty}%
   {\usepackage{libertinus}\usepackage{libertinust1math}}%
   {\usepackage{lmodern}}
-\IfFileExists{textalpha.sty}{\usepackage{textalpha}}{} % polytonic Greek, if it occurs later
+% Polytonic Greek. \gk{<Greek>}{<transliteration>} sets the Greek where textalpha
+% is available and falls back to the italic transliteration where it is not, so a
+% minimal install never chokes on the UTF-8 Greek in the unused argument.
+%
+% NOTE: the \newcommand definitions must live OUTSIDE the \IfFileExists branches.
+% \IfFileExists stores its branches with \def\reserved@a{...}, so a bare #1/#2
+% inside a branch is read as a parameter of \reserved@a and throws
+% "Illegal parameter number in definition of \reserved@a". Hence the flag.
+\newif\ifRPhasgreek
+\IfFileExists{textalpha.sty}{\usepackage{textalpha}\RPhasgreektrue}{}
+\ifRPhasgreek
+  \newcommand{\gk}[2]{#1}
+\else
+  \newcommand{\gk}[2]{\textit{#2}}
+\fi
 \usepackage{fancyhdr}
 \usepackage[colorlinks=true,linkcolor=black,urlcolor=black,
   pdftitle={Religionsphilosophie},
@@ -1524,5 +1539,598 @@ er ufuldkommen; thi Guds Indre, Friheden selv i dens indre
 Uendelighed, skal ingen nok saa dybsindig Fornuft bringe til at
 forraade sig. Hvad der skal kunne vides om Gud, maa være aabenbaret
 af Gud, aabenbaret
+% ---- printed p.43 (PDF 56) ----
+i Ordet; thi Ordet er Aandens Ydre, den frie Yttring af det frie
+Indre.
+
+\runhead{a) Ordets Oprindelighed.}
+
+Ordets Betydning for Aanden, det frie Indre, sees psychologisk
+deraf, at Sproget paa een Gang baade er Betingelse for og Følge af
+Menneskets Selvbevidsthed. Tankens Frigjørelse til bevidst Tanke,
+Villiens Frigjørelse til bestemmende Villie er kun mulig ved
+Sproget. Frigjørelsen er dobbelt: deels en theoretisk ved Dannelsen
+af objective Begreber og deres Udvikling til Videnskab; deels en
+praktisk ved indre Opklaring af Alt, hvad der i særegen Forstand
+hører under Villieslivet. Ved den dobbelte Frigjørelse faaer Ordet
+en dobbelt Betydning; en theoretisk nemlig som Vidensord, der lyder
+paa upersonlig Sandhed, og en praktisk som Villiesord til at
+udtrykke Sandheden personlig. At Villiesordet forudsætter en anden
+og friere Modsætning mellem det Indre og det Ydre end Vidensordet,
+fremlyser tydeligt nok af Kjendsgjerninger som disse: den, der
+videnskabelig begrunder en Læresætning, vil ikke forlange, at Nogen
+ligefrem skal troe ham paa hans Ord, men han forlanger, at enhver
+Tænkende, som er istand til at følge Beviset, skal see Tanken blive
+aabenbar i Ordet, og det Indre gjennemskinne det Ydre; den derimod,
+der taler om sit Sindelag, sit frie personlige Indre, kan lægge
+Haanden paa Hjertet og udtrykkelig fordre at blive troet paa sit
+Ord, efterdi det Indre, hvorom han taler, altid har noget Skjult,
+der umulig kan gaae ligefrem op i sit Ydre. Hvad der menneskeligt
+gjælder om Menneskets Aand, gjælder guddommeligt om Guds Aand.
+„Hvilket Menneske veed det, der er i Mennesket, uden Menneskets
+Aand, som er i ham? Saa veed og Ingen det, som er i Gud uden Guds
+Aand“.
+
+I Læren om Ordets oprindelige Eenhed med Gud maatte --- skulde man
+mene --- Aabenbaring og Fornuft
+% ---- printed p.44 (PDF 57) ----
+let kunne bringes til at stemme overeens. Den speculative Viden
+erkjender Nødvendigheden af en indre Selvobjectivering i det
+Absolute som Aand; en saadan Selvobjectivering er kun mulig i Kraft
+af Ordet fra Evighed af, det oprindelige Ord, Logos. Logos er
+Eenheden af Væsenet og dets Aabenbarelse i guddommelig Tænken, den
+sande Identitet af Fornuften og Ordet. Ved Ordet er Fornuften Gud, i
+Fornuften selv er Ordet guddommeligt. „I Begyndelsen var Ordet, og
+Ordet var hos Gud og Ordet var Gud“, denne evangeliske Indledning er
+da saa langt fra at vække Forargelse hos philosophiske Tænkere eller
+indeholde noget for Philosophien Anstødeligt, at den meget mere
+tager sig ud som et religiøst Philosophem, et Laan fra den
+speculative Philosophie. Og dog er dette en stor Misforstaaelse.
+Fornuft og Aabenbaring ere, hvad Principet angaaer, ligesaa uenige i
+Læren om Logos som i hvilketsomhelst andet Punkt. Den Logos, hvorom
+Philosophien taler, er, naar vi see bort fra det Billedlige og
+Mystisk-Symbolske, væsentlig den, der gaaer igjennem al sand
+Videnskab; Logoslæren, objectivt forstaaet, er Speculationens
+Apotheose; i den speculative Logoslære forherliger Videnskaben sit
+eget Ideen iboende Fornuftprincip. Vel er her en Frigjørelse af det
+Indre, forsaavidt Ideen, det Indre, tænkes ved Ordet og begribes i
+Ordet; men Frigjørelsen er kun formel. Der begyndes med Væsen og
+endes med Væsen; Ideens Selvobjectivering til Aand kan ikke hæve sig
+over Tankenødvendigheden (\textit{libera necessitas}): „Menneskets
+Viden af Gud er Guds Viden af sig selv“; dette er Vidensordets
+afslørede Hemmelighed, den sande Betydning af den objectivt
+videnskabelige Logoslære.
+
+Fra Aabenbaringens Standpunkt er Tankebevægelsen lige den omvendte.
+Vel forudsætter ogsaa Religionen, at Selvobjectiveringens Resultat
+og Forudsætning, Guds evige Frihed i Aanden ved Ordet, er begrundet
+i Guds
+% ---- printed p.45 (PDF 58) ----
+Væsen og forsaavidt falder ind under den guddommelige Videns egen
+iboende Nødvendighed. Men Væsen, Grund, Nødvendighed, alle for en
+objectiv Vidensbegrundelse uundværlige Kategorier, optages af
+Frihedstanken og indgaae i Villien, uden at de for Vidensbegrebet
+nødvendige Mellembestemmelser lade sig angive. Ligesom
+Fornuftphilosophien ved sin rationelle Logoslære ikke er istand til
+at naae fra Ideenødvendigheden til Friheden, saaledes er
+Religionsphilosophien med sin antirationelle Logoslære heller ikke
+istand til at naae fra Friheden til den Guds Væsen iboende, alle
+objective Grunde udtømmende Ideenødvendighed. Det er heller ikke
+dens Opgave; thi Opgaven er at fremhæve, fastholde og udvikle
+Aabenbaringsprincipet, det guddommelige Villiesprincip: her er ikke
+Tale om Ordet som Vidensord, men som Villiesord, det ubetingede
+Frihedsord, Troens Ord.
+
+For Vidensordet er Friheden, for Villiesordet er Nødvendigheden et
+Mysterium. Frihedens Grundeenhed med Nødvendigheden,
+Begrebseenheden af Videns og Villiens Ord er Ordet selv; det Ord,
+som var i Begyndelsen hos Gud og forudsætter Aabenbaring. Til
+Aabenbaring svarer Mysterium; begge Kategorier høre væsentlig med
+til Bestemmelsen af det frie Indre. Aabenbaringens Gud er
+Inderlighedens Gud, og Inderligheden uendelig dyb.
+
+I Inderligheden (ad intra) er Gud sig selv aabenbar ved Ordet. For
+Reflexionen stiller Forudsætningen sig saaledes: det aabenbarede Ord
+er i reflecteret Umiddelbarhed forskjelligt fra den sig i Ordet
+aabenbarende Gud; Gud som Subject har i Ordet sit indre Object;
+Selvfordybelsen er Selvobjectivering: \emph{Ordet er hos Gud}. Men
+Ordet kunde umuligt aabenbare Guds Væsen for Gud selv, dersom det i
+sin \emph{Forskjel} fra Gud ikke oprindelig var Eet med Gud; det
+indre Object er væsentlig selv Subject; Selvobjectiveringen er
+Selvfordybelse: \emph{Ordet er
+% ---- printed p.46 (PDF 59) ----
+Gud}. Det lyder speculativt, saa speculativt, at det næsten seer ud,
+som skulde Religionsphilosophien nu ret for Alvor til at trænge ind
+i Inderlighedens Grund og randsage Guds Dybheder. Men her er
+Grændsen. De anførte Træk af Logoslæren tjene just til at vise, ikke
+Muligheden, men Umuligheden af at udvikle nogetsomhelst
+Vidensbegreb af den guddommelige Selvobjectiverings forborgne
+Væsen. Spørgsmaal om den metaphysiske Logossubstans, om Guds andet
+Jeg i Logos o.\ s.\ v., forraade til Overflod det Forfængelige i at
+ville gjøre det aabenbart, som ikke er blevet Mennesker aabenbaret.
+
+Grændsen imellem det, som kun er aabenbart for Gud i Ordet, og det,
+som Gud ved Ordet har aabenbaret Menneskene, er en Væsensgrændse,
+der kategorisk angiver Mysteriet og ophæver Mystiken. Den Sætning:
+Aanden randsager alle Ting, ogsaa Guds Dybheder, er den frie,
+forborgne Inderligheds uomstødelige Grundsætning, ikke en
+Videnssætning, men ubetinget en Troessætning; thi „Ingen veed det,
+som er i Gud uden Guds Aand“. Den Sætning: „Os aabenbarede Gud det
+formedelst sin Aand“, gjælder udelukkende for de Troende, er altsaa
+heller ikke en Videnssætning, men en Troessætning. Troessætningen
+sætter Aandens Meddelelse som en Villiesact, en ubetinget
+Frihedsact, der ikke kan controlleres af nogensomhelst Videnskab.
+
+Til yderligere Beviis for, at det ved Ordet Aabenbarede er en
+Meddelelse af fri Inderlighed, tjener ogsaa dette, at der i
+Religionens Sprog tales om Guds Raadslutninger, Guds forud
+beskikkede Raad, Forudbestemmelse o.\ s.\ v.; thi saadanne
+Kategorier som Raad, Raadslutning og Forudbestemmelse ere
+betegnende, ikke for Nødvendigheden, men for Friheden, ikke for
+Videnstankerne, men for Villiestankerne. Aabenbaringsordet er
+Villiesord og som Villiesord Gjenstand for Troen.
+% ---- printed p.47 (PDF 60) ----
+\runhead{b) Ordets Troværdighed.}
+
+At Troesordet efter sit Princip er ueensartet med Vidensordet, kan,
+naar Spørgsmaalet er om den ved Ordet meddelte Sandhed, sees paa
+Forvisningen. Fra Sammenligningen imellem religiøs og videnskabelig
+Forvisning maae vi naturligviis strax udelukke det Videns Omraade,
+hvor en objectiv Begrundelse ligefrem fører til uimodsigelig Vished,
+og indskrænke os til en Betragtning af det \textit{cognoscendi
+genus}, som udtrykkelig kræver et særeget Hensyn saavel til den
+Meddelendes som til den Modtagendes frie Indre, nemlig det
+historiske. Ved Bedømmelsen af historiske Beretninger viser
+Modsætningen mellem Religion og Videnskab sig navnlig deri, at
+Videnskaben, som ovenfor antydet, lader Troværdigheden afhænge af
+Sandsynligheden, medens Troværdigheden i religiøs Forstand er
+uafhængig af Sandsynligheden.
+
+„Den Erfaring“, siger Hume, „at et Vidnesbyrd pleier at stemme
+overeens med Factum, og den, at dette sidste kun høist sjelden
+forekommer, fører til en Kamp imellem to Beviisgrunde, af hvilke den
+stærkere beholder Valpladsen, dog saaledes, at den taber Saameget af
+sin Styrke, som den modsatte Grunds Styrke udgjør. Hvis altsaa en
+Cato fortalte mig, at han havde seet en Fabius overile sig, saa
+maatte jeg beregne, om der var flere Tilfælde, i hvilke jeg, naar
+Betingelserne vare givne, havde seet Fabius gjøre Noget, der nærmede
+sig til Uforsigtighed, eller Cato sige Noget, der grændsede ---
+just ikke til at være Løgn, men hvad der i høi Grad gjør det
+lettere, at en feilagtig Beretning kunde være mulig, til at være en
+urigtig Opfattelse og Bedømmelse af det Givne: og hvis man nu
+antager, at Sandsynlighedsgrundene \emph{for} Udsagnets Rigtighed
+ere $= 1$, Grundene \emph{derimod} $= \frac{9}{10}$, saa vilde
+Udsagnet vel beholde Ret, men dog kun have det ringe Overskud af en
+Tiendedeels Overvægt i Sandsynlighed.“
+% ---- printed p.48 (PDF 61) ----
+Men hvor urimeligt det er at ville overføre en saadan
+Sandsynlighedsberegning paa Troværdigheden af aabenbarede
+Kjendsgjerninger, vil falde i Øinene, naar vi betænke, at
+Grundforudsætningen, hvortil alle slige Kjendsgjerninger maae føres
+tilbage, den Forudsætning nemlig, at Gud har Ord og Villie, at Gud
+har talet til Mennesker, at Gud altsaa virkelig kan tale, hører til
+det Urimeligste, det Usandsynligste, som nogen Vidende kan
+forestille sig. At troe det Usandsynlige er desuagtet ingenlunde det
+Samme som at troe det Umulige. Det Usandsynlige maa troes; det
+Umulige kan ikke troes! Troens Mulighed er netop betinget af en
+principiel Forskjel mellem det Usandsynlige og det
+Umulige.%
+% The printed numerator of the first fraction is a lowercase "o" standing for
+% zero (a common 19th-c. setting); reproduced as printed. Verified at 500 dpi.
+\footnote{Selv Mathematiken gjør denne Forskjel kjendelig. Idet
+Sandsynligheden angives ved en Qvotient af gunstige og mulige
+Tilfælde, gjør det en væsentlig Forskjel, om Qvotienten er
+$\frac{o}{a} = 0$ eller $\frac{a}{\infty} = 0$; det Første betegner
+Umuligheden, det Sidste kun en Usandsynlighed, der grændser til
+Umulighed.}
+
+Ordets Troværdighed er fra Fornuftens Standpunkt særlig bleven
+bestridt med Hensyn paa de Aabenbaringshandlinger, i hvilke Gud
+ligefrem henvender Talen til Mennesket saaledes, at det guddommelige
+Ord gaaer i Eet med det menneskelige. Guds Talen til Patriarcherne,
+den mosaiske Lovgivning, Ordet til Propheterne maa nødvendigviis
+forekomme den efter Begreb og Indsigt higende Fornuft som noget
+Urimeligt, Usandsynligt, ja Umuligt. Det er ikke nærmest, hvad der
+siges, men at det siges og Maaden, hvorpaa det siges, der vækker
+Forargelse. Saa forklarligt det er, at et Menneske kan tale med et
+Menneske, og det tænkende Menneske i Taushed tale med sig selv,
+ligesaa uforklarligt er det, at et Menneske skal kunne enten tale
+til Gud eller tiltales af Gud. Samtale mellem Gud og Menneske, et
+Sprog, ved hvis Ord Gud selv lydelig og tydelig meddeler Mennesket
+sine
+% ---- printed p.49 (PDF 62) ----
+Tanker og Raad, maa den forstandigt reflecterende Fornuft henregne
+til det i sig Utænkelige, det Absurde. Skulde en Forklaring være
+mulig, da maatte der i det almeenmenneskelige Bevidsthedsliv, i de
+indre Erfaringers Kreds, kunne opvises Analogier; men hvilke
+Analogier, hvilke indre Forkyndelser af det Guddommelige i
+Mennesket, hvilke æsthetiske, ethiske og intellectuelle
+Idee-Indskydelser man end vil beraabe sig paa, saa opløser Ligheden
+sig i fuldstændig Ulighed. Det eneste Analogon, som her kan
+anvendes, er den religiøse Bevidstheds egen mythiske Selvfordobling,
+hvorved dens Talen med sig selv forvandler sig til en Talen med Gud;
+men dette er intet Analogon, det er Sagen selv: Gudsmeddelelsen er
+mythisk, Ordet er Mythe.
+
+Disse Fornuftens Indsigelser ere imidlertid saa langt fra at svække
+det aabenbarede Ords religiøse Troværdighed, at den Troende, der
+kjender Principet, hvoraf de fremgaae, kan finde dem meget
+fornuftige og dog aldeles intetsigende. Hvad der ifølge sin Natur
+maa bestemmes ved Frihed, kan umulig afledes af Nødvendighed.
+Spørgsmaalet om Ordets Troværdighed falder sammen med Spørgsmaalet
+om Gudsforholdets Realitet: det er Gudsforholdet i exclusiv
+Eiendommelighed, hvorpaa Troværdigheden hviler.
+
+I sit Forhold til Gud er Mennesket --- ved Guds Ord og Villie ---
+blevet et Selv i aandelig og evig Forstand; dets Selvforstaaelse kan
+altsaa alene grunde sig paa dets Forstaaelse af Gud. Men Menneskets
+Forstaaelse af Gud er kun mulig derved, at Gud selv gjør sig
+forstaaelig for Mennesket; men forstaaelig for Mennesket kan Gud kun
+gjøre sig ved Ordet. Hvorledes Ordet i udvortes Umiddelbarhed har
+kunnet lyde til de Udvalgte, deraf gives ikke, og kan ifølge Sagens
+Natur ikke gives, nogen Forklaring. Det Eneste, hvorpaa det kommer
+an, er den Forvandling, hvorved det ydre, det aabenbare Under kan
+blive Middel og Betingelse for Vækkelse af
+% ---- printed p.50 (PDF 63) ----
+Aanden, for Frigjørelse af det Indre: Forklaringen er i
+Tilegnelsen. Ligefrem, d.\ e.\ i sandselig Umiddelbarhed, kan intet
+Ord, være sig i ydre eller indre Aabenbaring, fastholdes for sig som
+et Gudsord, en saadan Umiddelbarhed strider, som allerede sagt,
+imod Aandens Væsen. Forstaaelsen maa reflecteres i
+Selvforstaaelse, og Reflexionen styres af Villien. Det gjælder om at
+ville, som Ordet lyder, i aandelig og evig Forstand forstaae Gud, at
+ville indtil det Allerinderste blive sig selv aabenbar ved at blive
+aabenbar for Gud. Udtryk som: „Gud har sagt“; „Gud siger“, maa i
+Tilegnelsen forvandles til: „Jeg troer, at Gud har sagt“; „jeg
+troer, at Gud siger“. Kun ved denne Forvandlen kan Mennesket i Guds
+Ord og Villie faae ubetinget, afgjørende Forudsætninger for sit
+menneskelige Ord, sin menneskelige Villie: den Troende maa
+forudsætte Guds Ord ved selv at sætte det i Troen; den troende
+Forudsætten er i denne Forstand en Selvsætten. Dog heller ikke denne
+Selvsætten kan fastholdes umiddelbart. Thi hvad der menneskeligt
+sættes ved Menneskeordet, sættes jo som det, der allerede forud er
+sat af Gud i Guds Ord. Det er ved den i Følelsen umiddelbare, i
+Forestillingen endelige, men i Reflexionen uendelige Sætten og
+Omsætten af Guddommeligt i Menneskeligt og omvendt, at Mennesket
+bliver istand til at binde sit Ord til Guds Ord, finde sin Villie
+bevæget af Guds Villie og erkjende den Aandens Hemmelighed, at
+Ordets Gud kan tale troværdige Ord, at der i Troens Inderlighed
+gives en Talen med Gud.
+
+I hvilken Forstand Aabenbaringsordet kan siges at angaae Mennesket
+og gjøre Menneskets Forstaaelse af Gud afhængig af dets oprindelige
+Selvforstaaelse, sees da udtrykkelig deraf, at det Ord, hvormed
+% sic: printed "uldendes" -- the initial f has dropped out of the forme; the
+% word is evidently "fuldendes". Verified at 500 dpi: the line begins flush at
+% the left margin with "uldendes", with no gap and no hyphen on the line above.
+Aabenbaringen uldendes, ikke blot er et Ord ved et Menneske til
+Mennesker, men et Ord, der i sin Guddomsfylde, sin Eenhed med Gud,
+er saaledes menneskeligt, at det er Eet med
+% ---- printed p.51 (PDF 64) ----
+Mennesket, at Mennesket er Ordet selv, og Ordet Menneske. Her er
+igjen et Vendepunkt, hvor Tro og Viden, Religionsphilosophie og
+fornuftig Speculation synes at flyde sammen.
+
+At Logoslæren ligesaavel tilhører Religionen som Philosophien, er
+allerede viist. I den evige Logos kan umulig tænkes nogen endelig
+Adskillelse af Væsen og Villie, af Natur og Aand; Logos, Ordet fra
+Begyndelsen, er som Væsenets og Villiens Ord, eet og samme Ord.
+Lærer nu Aabenbaringen udtrykkelig, at Ordet blev Kjød, og at det
+Ord, som blev Kjød og boede iblandt os, er Ordet selv, det Ord, som
+i Begyndelsen var hos Gud og var Gud: følger da ikke heraf, at den
+fuldkomne Aabenbaring netop maa antages at fastholde Eenheden af
+Væsen og Villie, Nødvendighed og Frihed, Liv og Lys i sit
+guddommelige Ord? „I det er Livet, og Livet er Menneskets Lys“! Men
+naar Livsordet er Eet med Lysordet, og Troesordet følgelig Eet med
+Vidensordet, er det da ikke en Selvmodsigelse at ville adskille Tro
+og Viden som ueensartede, ja som absolut ueensartede Principer?
+
+Det Blendende i denne Betragtning lader sig let fjerne. Thi
+Vidensprincipet, der holder sig til Væsen, Grund og Nødvendighed,
+vil jo ikke dermed fornegte Friheden; endnu mindre vil
+Troesprincipet, der holder sig til Friheden, udelukke
+Nødvendigheden: Tro og Viden kunne i al Almindelighed let enes om at
+indrømme en oprindelig Forskjelseenhed af Nødvendighed og Frihed.
+Men naar en Udvikling skal foregaae, naar det gjælder om Methode,
+naar Spørgsmaalet om de for Erkjendelsen afgjørende Udgangspunkter
+indstiller sig, blive Principerne ueensartede. Fra Nødvendigheden
+som Udgangspunkt er der ingen Vei til fuldstændig Begrundelse af
+Friheden, og fra Friheden som Udgangspunkt er der ingen Vei til
+grundig Indsigt i Nødvendigheden: begge Veie tabe sig i Mysteriet.
+Det guddommelige Ord, hvis Gyldighed be\-
+% ---- printed p.52 (PDF 65) ----
+grundes i Viden, er ueensartet med det gudmenneskelige Ord, hvorom
+Aabenbaringen taler. Det aabenbarede Ord, Ordet, som blev Kjød og
+boede iblandt os, er ifølge Videns Grunde, aldeles ikke troværdigt.
+Hvor kunde det ogsaa være troværdigt, naar „Kjødspaatagelsen“ er i
+sit Phænomen saa usandsynlig, i sit Begreb saa modsigende! At
+Vidensordet maa fornegte Aabenbaringsordet, er en Selvfølge, efterdi
+det i Kraft af Nødvendighedens Grunde maa fornegte Underet. Thi at
+Ordet blev Kjød, er et Under, ikke et blandt mange Undere, men
+Underet selv: det aabenbarede Ord er det aabenbare Under. Ifølge
+Troens Grunde derimod er Ordet troværdigt som Underet; thi Troens
+Grunde ere Frihedsgrunde, og det aabenbarede Ord er i allerdybeste
+Forstand den aabenbarede Frihed. Modsigelse mod Friheden er
+Selvmodsigelse i Aanden, Tvivl om Friheden er Fortvivlelse i
+Aanden. Troen paa det aabenbarede Ord falder altsaa sammen med Troen
+paa den aabenbarede Frihed: kun Frihedens Aand kan vidne for Ordets
+Troværdighed.
+
+\runhead{c) Aandens Vidnesbyrd.}
+
+Dersom den religionsphilosophiske Hovedsætning, at Troens og Videns
+% sic: "til at literærhistorisk Beviis" -- printed "at" for "et". Verified 500 dpi.
+Principer ere absolut ueensartede, virkelig trænger til at
+literærhistorisk Beviis, da kan et mere iøinefaldende neppe gives,
+end det der fremgaaer af Striden for og imod Bibelordets
+Troværdighed. Just de Beretninger, paa hvis Troværdighed den
+religiøse Bevidsthed maa lægge den allerstørste Vægt, efterdi de
+fremstille Aabenbaringsphænomener, der til Forstaaelse af
+Gudsforholdet ere af den allervæsentligste Betydning,
+Beretningerne f.\ Ex.\ om Paradiset og Syndefaldet i det Gamle
+Testamente, om Christi Fødsel og Opstandelse i det Nye Testamente,
+just disse Beretninger frakjender Videnskaben al Troværdighed, og
+gjør det, vel at mærke, ikke af Gjenstridighed eller ondt Lune, men
+i Kraft af
+% ---- printed p.53 (PDF 66) ----
+objective Beviisgrunde, i al Besindighed og efter den
+alleromhyggeligste Prøvelse. Nu kan der dog ved en Bedømmelse af
+historiske Kjendsgjerninger neppe tænkes stærkere Modsætning imellem
+to Principer, end naar den samme Beretning, der ifølge det ene
+erklæres for absolut troværdig, ifølge det andet maa ansees for
+aldeles utrolig.
+
+Til sand Forstaaelse af Aabenbaringens historiske Grundlag er det
+imidlertid ikke nok, at Troen frigjør sig fra den objective
+Videnskab; her kræves en dybere gaaende Undersøgelse af Forholdet
+imellem det Ydre og det Indre, mellem det Historiske og det
+Religiøse, det Forsvindende og det Blivende, altsaa en Undersøgelse
+af Forholdet mellem Ordet og Aanden.
+
+At bygge sin Tro paa udvortes historiske Vidnesbyrd er aandløst; det
+er i Overtro at klamre sig til det Ydre og forglemme det Indre. Men
+at skille sin subjective Tro fra dens objective Forudsætninger er
+ogsaa aandløst; thi dersom Ringeagten for det Historiske skal betyde
+Ringeagt for alt Ydre, da er det skjulte Under kun en Indbildning,
+naar det aabenbare fornegtes; og dersom Indbildskheden gaaer
+saavidt, at Individet med sine indre Erfaringer anseer sig selv for
+et isoleret Aabenbaringsorgan, saa have vi Sværmeriet.
+
+I det Gamle og det Nye Testamente forekomme
+Aabenbaringsphænomener, hvis Eiendommelighed saa ganske svarer til
+bestemte Tidsalderes Forestillinger og Tænkemaade, at Formerne for
+det Guddommeliges Fremtræden maae synes at være ligefrem afpassede
+efter Oldtidsmenneskenes barnlige Phantasie og Fatteevne.
+Aabenbaringen i den hellige Skrift indskrænker sig ikke til en
+Forkyndelse af Guds Villie ved Ordet; det er Verdensbilleder i store
+vidunderlige Træk, der oprulles for Synet. Begivenhederne foregaae i
+to Riger, et naturligt og et overnaturligt. Det overnaturlige Rige
+er befolket med Engle,
+% ---- printed p.54 (PDF 67) ----
+gode og onde; her er i Modsætning til Lysriget et Mørkets Rige,
+hvori Djævelen med sine Dæmoner spiller Hovedrollen o.\ s.\ v.:
+hører hele dette Apparat nu med til Aabenbaringens Væsen, gaaer Alt
+dette op i det Blivende? Her er Kritik nødvendig!
+
+Men som Principet er, maa ogsaa Kritiken være. Den Kritik, som her
+udkræves, er ikke en Videnskritik, men en Troeskritik: Forskjellen
+er charakteristisk. For det Første vil Videnskritiken lægge Vægt
+paa det udvortes Objective i dets Adskillelse fra den Deel af
+Indholdet, der antages at hidrøre fra Fortællerens subjective
+Opfattelse og Fremstilling; som Følge heraf kan der da ogsaa kun
+være Spørgsmaal om Virkeligheden af det Naturlige, thi alle Træk af
+det Overnaturlige maae udskilles for sig og betragtes som
+uvirkelige. Naar en Beretning fra den hellige Historie saaledes er
+opløst i sine Bestanddele, kan her naturligviis ikke være Tale om
+noget aabenbarende Ord: Gudsordet, der skulde beaande det Hele,
+synker ned til en slet og ret Fortælling, et gammelt Sagn af større
+eller mindre ideel Værdi. Videnskritiken er negativ; den fornegter
+Aabenbaringens Ord, fordi den fornegter dens Aand. I Modsætning
+hertil vil Troeskritiken, der forudsætter, at Fremstillingen af et
+Aandens Indhold altid og væsentlig maa være et Aandens Værk,
+opfatte Beretningen efter dens indre Totalitet; den vil see det
+Indvortes reflectere sig i det Udvortes, det Overnaturlige i det
+Naturlige just saaledes, at Fremstillingen og det Fremstillede
+smelte sammen til een eneste ideel og dog reel Virkelighed,
+Aandsvirkelighed, Virkelighed for Aanden. Saaledes er Ordet om
+Paradiset ingenlunde det Samme som Fortællingen om Paradiset;
+heller ikke er Ordet, det i Aanden aabenbarede Ord, om Christi
+Opstandelse at forvexle med det collective Resultat af samtlige
+Evangelieberetninger. Ved Ordet som Guds Ord lægges der ikke blot
+Eftertryk paa, hvad der
+% ---- printed p.55 (PDF 68) ----
+fremstilles, men tillige paa, at det efter sin Grundcharakteer netop
+fremstilles saaledes. At en Fortælling skal underkastes en
+Troeskritik vil da sige: den skal i sin Heelhed opfattes som Udtryk
+for et bestemt, i Aandslivet dybt indgribende Troesphænomen; og
+Spørgsmaalet er nu, om det, der ifølge Beretningen henføres til en
+ydre Aabenbaring, kan finde Bekræftelse i den indre. Sagnet om
+Paradiis f.\ Ex.\ bliver ikke at troe som en udvortes Historie,
+fordi det staaer i Bibelen; men det Sagn, der staaer i Bibelen
+bliver at troe, fordi alle væsentlige Træk i den tilsyneladende
+udvortes Historie samle sig til et Totalitetsudtryk af Aandens Ord,
+til en indvortes Historie, om hvis Gyldighed Aanden vidner. Christi
+Opstandelse bliver ikke at troe, fordi de evangeliske Beretninger
+fremstille den som virkelig Kjendsgjerning; men Ordet om den
+historiske, virkelige og dog overnaturlige Kjendsgjerning bliver at
+troe som et aabenbaret Ord, fordi der i den Troendes Indre er en
+virkelig og dog overnaturlig Kjendsgjerning, ved hvilken Aanden
+vidner om Ordet.
+
+Ved at sammenstille uligeartede Beretninger vil man let overbevise
+sig om Kritikens Nødvendighed. Thi der udkræves just ikke megen
+Skarpsindighed for at see, at Ordet om Christi Opstandelse betoner
+Virkeligheden paa en anden Maade end enten Ordet om Paradiset eller
+Ordet om Djævelen, og dog har alt dette sin Virkelighed. Skal nu
+Troeskritiken med Aandens Vidnesbyrd ikke blive vilkaarlig, maa den
+nødvendig have sit Correctiv. Dette Correctiv kan ikke umiddelbart
+lægges ind i den Troendes subjective Bevidsthed; thi naar
+Bevidstheden fastholdes i sin umiddelbare Tilstand, saa troer den
+Ene Et, den Anden et Andet; den Ene troer f.\ Ex.\ paa Djævelen og
+beraaber sig paa Aandens Vidnesbyrd; den Anden troer derimod ikke
+paa Djævelen og beraaber sig ligeledes paa Aandens Vidnesbyrd; den
+Ene troer paa Muligheden
+% ---- printed p.56 (PDF 69) ----
+af en evig Fordømmelse ifølge Aandens Vidnesbyrd; den Anden
+paastaaer Umuligheden, naturligviis ogsaa ifølge Aandens Vidnesbyrd:
+hvor er nu Correctivet? I Troesprincipet! Thi Troesprincipet er Eet
+med Gudsforholdets Princip, er Aandens eget Princip, og kun i Kraft
+af sit eget Princip kan Aanden vidne.
+
+\subhead{Troesprincipet: Religionsphilosophiens Methode.}
+\parmark{5}
+
+Religionen er Aandens Værk. Men, siger man, Videnskaben er jo ogsaa
+et Aandens Værk: kan Aanden da være i Strid med sig selv? Vi svare:
+Aanden som Sandhedens Aand er ikke i Strid med sig selv; Striden
+forudsætter, at der foruden Sandhedens Aand ogsaa maa være en
+Løgnens Aand. Denne Løgnens Aand er ligesaa afmægtig i Videnskaben
+som i Religionen; dens Magt er alene betinget deraf, at
+Menneske-Aanden i Religionen som i Videnskaben misforstaaer og
+misbruger sig selv. For at forvisse sig om, at Videnskaben og
+Religionen høre ind under modsatte Aandssphærer, behøver man blot at
+besinde sig paa den principielle Forskjel, der er mellem den
+\emph{vidende} og den \emph{vidnende} Aand. Jo mere Vidensprincipet
+fremhersker i al sin Strenghed, desto mere upassende er det at tale
+om et særeget Aandens Vidnesbyrd. Aanden vidner ikke med vor Aand
+enten, at Hypothenusens Qvadrat er lig med Summen af Katheternes,
+eller, at alle Legemer ere tunge, eller, at Quirinius ikke var
+Landsherre i Syrien under Keiser August, da Skatteudskrivningen
+skete. Den upersonlige Sandhed forvandler Vidnesbyrdet til en
+Vidensgrund og er fordybet i Begrundelsen. Men med den personlige
+Sandhed forholder det sig omvendt; Forholdet til Aanden er her ikke
+et Nødvendighedsforhold, men ubetinget et Friheds\-
+% ---- printed p.57 (PDF 70) ----
+forhold: i Frihedsforholdet er Aanden vidnende; dens Vidnesbyrd er i
+det skjulte Under.
+
+Det er lettere at misforstaae den vidnende Aand end den vidende. Ved
+at opfatte den religiøse Sandhed paa aandløs Maade kommer den
+troende Bevidsthed til at svæve mellem to Yderligheder, alt eftersom
+den nærmest lægger den personlige Afgjørelse ind i Guds eller ind i
+Menneskets Væsen. Lægges Afgjørelsen aandløst over paa den
+% sic: printed as one word "blindthen" (for "blindt hen"). Verified 500 dpi.
+guddommelige Side, saa er Aabenbaringsordet blindthen et
+Autoritetsord: Gud selv eller hans Repræsentanter maa da udtrykkelig
+dictere de Umyndige, hvad og hvormeget de skulle troe; herved synker
+Troen ned til en passiv, umiddelbar Antagelse af de ved et
+guddommeligt Magtsprog foreskrevne Troessætninger: Subjectiviteten
+er huul, den troende Sjæl i sig selv tom, en \textit{tabula rasa}.
+Lægges Afgjørelsen aandløst over paa den menneskelige Side, saa
+bliver Troen --- hvad enten dens Inderlighed nu iøvrigt kommer til
+Hvile i en mystisk Dæmring af blide Følelser eller hidses i
+Lidenskab til en uophørlig Renden Panden imod „Paradoxet“ --- en
+reent subjectiv Sag; det er da omtrent ligegyldigt, \emph{hvad der
+troes}, hele Eftertrykket lægges paa, \emph{hvorledes det troes}:
+den endelige, aandløse Adskillelse af \emph{Hvad} og
+\emph{Hvorledes} leder saa til den bekjendte
+Subjectivitetssophisme, at Enhver bliver salig ved sin Tro. For at
+drage de nævnte Yderligheder ind under Troesprincipet og derved ind
+under Aandens Vidnesbyrd, overveie vi særskilt, hvorledes Troens
+Indhold fremgaaer subjectivt af Troen selv, hvorledes det bestemmes
+objectivt ved Troesbekjendelsen, og hvad saa heraf følger for
+Religionsphilosophiens Methode.
+
+\runhead{a) Troen og dens Indhold.}
+
+Troen er i strengeste Forstand bestemt ved Gudsforholdet. I
+Gudsforholdet er Menneskets Frihed Eet
+% ---- printed p.58 (PDF 71) ----
+med dets absolute Afhængighed, og Troen, den mest afgjørende
+Frihedsact, som Følge heraf Afhængighedens væsentlige Udtryk. I
+Troen kan Intet antages, og Intet optages, uden hvad den troende
+Bevidsthed selv sætter og forudsætter: at troe paa Gud er at sætte
+og forudsætte Gud; dette er Troens Inderlighed, dens Subjectivitet
+og Frihed, at den Troende kun kan troe, hvad Troen sætter. Men naar
+Friheden saaledes fastholdes i indre Uendelighed, da indsees det
+tillige, at Troen selv og det, hvorpaa der troes, ikke lade sig
+adskille: som Troen paa Gud er, saaledes er ogsaa den Gud, hvorpaa
+der troes, Troens Gud er, subjectivt forstaaet, en Frembringelse af
+Troen. Det er denne Side af Sagen, hvortil den negative Kritik
+udelukkende holder sig; men herved overseer den, at den Troendes
+uendelige Frihed netop er bestemt ved hans absolute Afhængighed. Var
+den Gud, hvorpaa der troes, intet Andet end et Product af den
+troende Subjectivitet, da vilde det ganske rigtigt være Frihedens
+Høieste, at baade Gud og Troen gik ud, og Mennesket endte med at
+forholde sig absolut ved sig selv til det Absolute. Men dette er
+Troens Hemmelighed, at den saavel med Hensyn paa det skjulte som paa
+det aabenbare Under kun frembringer Gud derved, at den selv
+frembringes af Gud: at Troen frembringer Gud betegner den uendelige
+Frihed, at den frembringes af Gud den absolute Afhængighed. Saa
+inderlig gjennemgaaende er Afhængigheden, at den, hvis Tro anfægtes
+af Tvivl, maa tilskrive sig selv Tvivlen og bede Gud om Troen. Den
+negative Kritiks Spørgsmaal: hvoraf veed du, det moderne Jeg, at alt
+det Gode, alle hellige Kræfter, al Reenhed i Sjælen, al Aandens
+Kjærlighed og alt dens Haab kommer fra Gud og kun det Onde,
+Svagheden, Ureenheden, Selviskheden fra dig selv? kan da omskrives
+saaledes: hvoraf veed du, det moderne Jeg, endnu, hvad Tro er, og
+hvad det er at troe, thi Kritiken, der opløser Troen, veed det ikke?
+% ---- printed p.59 (PDF 72) ----
+Hvad der i Gudsforholdet gjælder om det guddommelige Selv, gjælder
+ogsaa om det menneskelige. Det Selv, der ved Troen sættes i Forhold
+til Gud, er ikke hvad Religionen kalder „det sandselige Menneske“
+% The Greek is set in the scan as printed here: the first word accented, the
+% second NOT (no accent on the omicron). Verified at 600 dpi. Reproduced as is.
+(\gk{ἄνθρωπος ψυχικος}{anthrōpos psychikos}), thi „det sandselige
+Menneske fatter ikke de Ting, som høre Guds Aand til“: det
+sandselige Menneske veed ikke, hvad Tro er, og kan ikke troe. Det
+Selv, der i Troen frembringer Gud, er det aandelige Selv, det Selv,
+der netop ved sit Forhold til Gud er frembragt af Gud, og derfor
+uendeligt trænger til Gud. Det Selv, der fungerer i Viden, har
+Videns Vished og besidder sig selv vidende; men det Selv, der
+fungerer i Troen, har alene Troens Vished og besidder kun sig selv
+troende. Ved at fungere i to absolut ueensartede
+Erkjendelsessystemer, bliver det ene og samme menneskelige Selv til
+et dobbelt Selv, et vidende og et troende. Men Fordoblingen er ingen
+Selvadsplittelse; det er en Bevægelse om to forskjellige Centra,
+Ideenødvendighedens og Frihedens; det vilde kun da være
+Selvadsplittelse, dersom det Sandhedsindhold, der skal søges i den
+ene af de to Sphærer, ogsaa skulde søges i den anden.
+
+For nu nærmere at see, hvorledes Troens Indhold udvikler sig i og
+med Troen selv, fæste vi Opmærksomheden paa de Forandringer,
+Gudsforholdet undergaaer, idet Aabenbaringen trinviis antager sine
+tre Grundskikkelser. Det er en Selvfølge, at Udviklingen skeer i
+Kraft af Troesprincipet, og at den intellectuelle Begrundelse maa
+være Fornuften modvendt, altsaa omvendt.
+
+Paa Aabenbaringens første Trin er Gudsforholdet at charakterisere
+derved, at Modsætningen mellem Gud og Menneske betones abstract som
+en Modsætning mellem Skaber og Skabning. Skaberen har at byde,
+Skabningen at lyde, det er Aandens Vilkaar. Med Gudsforholdet
+begynder Menneskets Selvmodsigelse. Det erkjender, at Gud er hellig,
+og hans Villie retfærdig; det erkjender sig
+% ---- printed p.60 (PDF 73) ----
+forpligtet til ubetinget Lydighed. Men Aandsmennesket, det troende
+Selv, der giver Gud Ret, er væsentlig forskjelligt fra det naturlige
+Menneske, hvis driftbundne selviske Villie ikke giver Gud Ret; her
+er to Mennesker i eet Menneske, eller rettere: det ene og samme
+Menneske er fra Grunden af blevet splidagtigt med sig selv: dette er
+Selvmodsigelsen, og Selvmodsigelsen er Gudsforholdets negative
+Kjendemærke. Den umiddelbare Erkjendelse af Selvmodsigelsen, der
+uvilkaarlig fornemmes som en Modsigelse mod Gud, en Krænkelse af
+hans Hellighed, er Erkjendelsen af Synd. Troen som Tro hæver ikke
+Selvmodsigelsen. Tvertimod! Selvmodsigelsen og med den
+Syndserkjendelsen stiger, jo mere levende og inderlig Troen er. Ved
+Bestemmelsen af Menneskets Væsen sees det ret, hvor forskjellig
+Troens Forklaring er fra Fornuftens.
+
+Det med sig selv splidagtige Menneske maa Fornuften udtrykkelig
+henvise til det almene, i Individerne gjældende Menneskevæsen;
+Modsigelsen mellem det aandelige og det sandselige Menneske er en
+Begrebsmodsigelse, der skal løses derved, at Menneskenaturens
+nødvendige Grundeenhed bringes til klar Bevidsthed. I Kraft af
+Grundeenheden maae da de lavere Elementer i Menneskets Natur
+betragtes som Aandslivets egne nødvendige Forudsætninger: Drifter,
+Tilbøieligheder og Lidenskaber ere naturlige Fornuftelementer; de
+ere i deres Anlæg fornuftige, idet de ere bestemte til at beherskes
+af den sig selv som det Almene og det Almene som sig selv
+erkjendende Fornuftvillie; Modsigelsen kommer saa frem derved, at
+det sandseligt Individuelle, det Lavere, modsætter sig det Høiere,
+det Erkjendelsens Almene, der alene bør bestemme Fornuftvillien.
+Bevidstheden om den stedfindende Modsigelse --- en Bevidsthed om
+Striden mellem det virkelige Menneske og dets Ideal --- kan nu vel i
+en vis Forstand kaldes en Syndsbevidsthed, forsaavidt det er en
+Bevidsthed om, at
 
 \end{document}

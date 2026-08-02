@@ -77,14 +77,56 @@ paa Faderen, Tro paa Sønnen og Tro paa Aanden."
 
 **The live file is `transcription.tex` in this folder — one file for the whole
 book.** Done and image-verified: title leaf, preface theses, and printed
-**pp. 1–42** — §§ 1–3 complete (§ 3 *Aabenbaring og Tro*, pp.23–41, with run-heads
-*a) Aabenbaring og hellig Historie* p.24, *b) Aabenbaring og Fornuft* p.28,
-*c) Aabenbaringen Tilegnelse i Troen* p.35), and § 4 *Ordet og Aanden* opened at
-p.42. **Resume at printed p.43 (PDF 56).**
+**pp. 1–60** — §§ 1–4 complete (§ 4 *Ordet og Aanden*, pp.42–55, with run-heads
+*a) Ordets Oprindelighed* p.43, *b) Ordets Troværdighed* p.47, *c) Aandens
+Vidnesbyrd* p.52), and § 5 *Troesprincipet: Religionsphilosophiens Methode* opened
+at p.56 with run-head *a) Troen og dens Indhold* (p.57), carried to p.60.
+**Resume at printed p.61 (PDF 74).**
 
-Checks that pass on the current file: compiles clean; 42 page-break comments,
-contiguous pp.1–42, every one at offset +13; braces balanced; „ and “ balanced
-(39 each); 3 footnotes.
+Checks that pass on the current file: compiles clean; 60 page-break comments,
+contiguous pp.1–60, every one at offset +13; braces balanced; „ and “ balanced
+(55 each); `$` count even; 4 footnotes; 5 `% sic:` notes.
+
+Mathematics has started appearing — the p.48 footnote sets
+$\frac{o}{a}=0$ and $\frac{a}{\infty}=0$, and the Hume quotation on p.47 has
+$=\frac{9}{10}$. `amsmath` is already loaded.
+
+### Greek
+
+Greek starts at p.59 (ἄνθρωπος ψυχικος, 1 Cor. 2:14). It is typed through a macro:
+
+```latex
+\gk{<Greek>}{<transliteration>}
+```
+
+`\gk` sets the Greek where `textalpha` is available and falls back to the italic
+transliteration where it is not, so the file still compiles in a minimal install —
+the UTF-8 Greek sits in an argument that the fallback branch discards.
+
+**The two `\newcommand`s must stay OUTSIDE the `\IfFileExists` branches.** LaTeX's
+`\IfFileExists` stores its branches with `\def\reserved@a{...}`, so a bare `#1`/`#2`
+written inside a branch is read as a parameter of `\reserved@a` and aborts the run
+with *"Illegal parameter number in definition of `\reserved@a`"*. The first version
+of this preamble made exactly that mistake and was fatal under TeX Live 2024. The
+fix routes through a flag:
+
+```latex
+\newif\ifRPhasgreek
+\IfFileExists{textalpha.sty}{\usepackage{textalpha}\RPhasgreektrue}{}
+\ifRPhasgreek \newcommand{\gk}[2]{#1}\else \newcommand{\gk}[2]{\textit{#2}}\fi
+```
+
+The same hazard applies to the `danish.ldf` and `libertinus.sty` conditionals above
+— neither currently contains a `#`, and neither should be given one.
+
+Verification status: the no-`textalpha` branch is fully tested here (the sandbox
+lacks the package; the PDF reads "(anthrōpos psychikos)"). The `textalpha` branch
+can only be tested on a machine that has the real package — a stub proves only that
+no parameter-number error occurs, not that the Greek sets correctly.
+
+n.b. the p.59 Greek is printed with an accent on the first word and **none** on the
+second (no accent over the omicron of ψυχικος). Verified at 600 dpi; reproduced as
+printed rather than normalised.
 
 ### Two traps worth remembering
 
@@ -100,10 +142,18 @@ begins on p.39 and continues over most of p.40, whose body text is only four lin
 It is transcribed whole at its p.39 marker, with a comment at both ends.
 
 ### Printer's slips found so far
-Reproduced as printed, each with a `% sic:` comment. Neither is in RETTELSER.
+Reproduced as printed, each with a `% sic:` comment. None is in RETTELSER.
 - p.26 "lade Isaak **døer** for at vække ham op igjen" (for *døe*) — 400 dpi.
 - p.35 run-head "c) **Aabenbaringen** Tilegnelse i Troen." — missing genitive *-s*;
   the forward reference on p.24 reads "Aabenbaringens". Verified at 420 dpi.
+- p.50 "hvormed Aabenbaringen **uldendes**" — the initial *f* of *fuldendes* has
+  dropped out of the forme. Verified at 500 dpi: the line begins flush at the left
+  margin with no gap, and the line above ends "Aabenbaringen" with no hyphen.
+- p.48 footnote: the numerator of the first fraction is a lowercase **o** standing
+  for zero (ordinary 19th-c. setting), not a variable. Kept as printed.
+- p.52 "virkelig trænger til **at** literærhistorisk Beviis" — *at* for *et*. 500 dpi.
+- p.57 "saa er Aabenbaringsordet **blindthen** et Autoritetsord" — set as one word,
+  for *blindt hen*. 500 dpi.
 
 Two typographic points established while transcribing pp. 1–18, both of which the
 old `indledning/` file got wrong and which recur constantly:
@@ -141,7 +191,7 @@ Modsigelsen" — a different claim, not a misreading. Between that and the
 "uforenelige med al Videnskab" substitution, nothing in the old file should be
 carried over without checking it against the image.
 
-**Next step: transcribe from printed p.43 (PDF 56) onward** in `transcription.tex`,
+**Next step: transcribe from printed p.61 (PDF 74) onward** in `transcription.tex`,
 straight through to p.81 to finish the Indledning, then on into "Tro paa Faderen"
 (§ 6, p.82). The old `indledning/transcription.tex` can be deleted once pp. 1–18
 here are considered settled; `indledning/translation.tex` is untouched and still
