@@ -80,23 +80,22 @@ book.** Done and image-verified: title leaf, preface theses, and printed
 **The INDLEDNING IS COMPLETE — pp. 1–81, §§ 1–5.** In *Tro paa Faderen* /
 *A. Faderens Væsen*: § 6 (p.82), *a) Selvet i Faderen* with § 7 (p.83), then
 *α) …fra Videns Standpunkt* (p.84) and *β) …fra Troens Standpunkt* (p.88).
-Transcribed to p.94. **Resume at printed p.95 (PDF 108).**
+…and *γ) Det faderlige Selv: Mysteriet* (p.97).
+Transcribed to p.102. **Resume at printed p.103 (PDF 116)** — note the Jacob Bøhme
+quotation opened on p.102 is still open across the cut.
 
 A fifth structural device appears inside β): **letterspaced inline run-ins** that
 divide the argument without being headings — *Beviis af Ordet.* (p.92), *Beviis af
 Aanden.* (p.93), *Troesbeviset.* (p.94). They open a paragraph and run straight
 into the sentence, so they take plain `\emph{}`, not `\runhead`. Watch for more.
 
-Checks that pass on the current file: 94 page-break comments, contiguous pp.1–94,
-every one at offset +13; braces balanced; `$` count even; 8 footnotes; 9 `% sic:`
-notes; quote running balance shows the expected 1 dropped-open + final balance 1;
-no `\IfFileExists` or `\gk` anywhere.
+Checks that pass on the current file: 102 page-break comments, contiguous pp.1–102,
+every one at offset +13; braces balanced; `$` count even; 10 footnotes; 9 `% sic:`
+notes; quote running balance shows 1 dropped-open + final balance 2 (the extra 1
+being the open Bøhme quotation, see above); no `\IfFileExists` or `\gk` anywhere.
 
-**Compile status: last confirmed `make` build was the pp. 1–60 state.** Three
-macros added since then have never been through a real compile —
-`\parthead`, `\lettersub`, `\greekrun`. The `\addcontentsline` calls in the first
-two, and the Greek in the third, are the places a failure would surface. Worth a
-`make` before going much further.
+**Compile status: `make` confirmed green at the pp. 1–94 state**, which exercised
+`\parthead`, `\lettersub` and `\greekrun` (including the Greek α/β/γ markers).
 
 Mathematics has started appearing — the p.48 footnote sets
 $\frac{o}{a}=0$ and $\frac{a}{\infty}=0$, and the Hume quotation on p.47 has
@@ -109,9 +108,17 @@ Greek starts at p.59 (ἄνθρωπος ψυχικος, 1 Cor. 2:14). It is type
 in this repo (`philosophie-og-mathematik`, `philosophiske-grundproblemer`,
 `videnskabslaere`, the Sibbern and Høffding texts, etc.). No macro, no conditional.
 
-n.b. the p.59 Greek is printed with an accent on the first word and **none** on the
-second (no accent over the omicron of ψυχικος). Verified at 600 dpi; reproduced as
-printed rather than normalised.
+**This setting is unreliable about Greek accents, and they are reproduced as
+printed, not normalised.** Verified at 600 dpi in each case:
+
+| p. | printed | would normally be |
+|---|---|---|
+| 59 | ἄνθρωπος **ψυχικος** | ψυχικός |
+| 99 | μυστήριον | μυστήριον ✓ |
+| 100 | **ὑπερουσιον** | ὑπερούσιον |
+
+Breathings are consistently present (ἄ, ὑ); it is the acute that goes missing. Check
+each Greek word against the page rather than supplying the expected accent.
 
 ### Don't make the preamble conditional
 
@@ -160,7 +167,13 @@ House form is „…“ (U+201E / U+201C), as in the rest of the repo.
    "Videnskabens Aander" closes only the *inner* quotation. Verified at 500 dpi.
 
 Expected signature: exactly **one** dropped-open event, and a final balance of
-exactly **1**. Anything else is a real error in the transcription.
+exactly **1**. Anything else is a real error in the transcription —
+
+**except** when a batch stops in the middle of a quotation. The final balance is
+then 1 + (number of quotations still open across the cut). At p.102 the Jacob Bøhme
+quotation is mid-flight, so the balance reads 2 and is correct; it closes on p.103.
+Before treating a high balance as a bug, check whether the last transcribed page
+ends inside an open quote.
 
 The same footnote sets „Dette“ and the Grundtvig quotation with the substitute
 sorts `,,…‘‘` instead of `„…“`. Normalised to the house form, since it is the same
@@ -218,7 +231,7 @@ Modsigelsen" — a different claim, not a misreading. Between that and the
 "uforenelige med al Videnskab" substitution, nothing in the old file should be
 carried over without checking it against the image.
 
-**Next step: transcribe from printed p.95 (PDF 108) onward** in `transcription.tex`,
+**Next step: transcribe from printed p.103 (PDF 116) onward** in `transcription.tex`,
 straight through to p.81 to finish the Indledning, then on into "Tro paa Faderen"
 (§ 6, p.82). The old `indledning/transcription.tex` can be deleted once pp. 1–18
 here are considered settled; `indledning/translation.tex` is untouched and still
