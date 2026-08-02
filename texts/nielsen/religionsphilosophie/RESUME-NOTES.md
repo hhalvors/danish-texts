@@ -80,20 +80,21 @@ book.** Done and image-verified: title leaf, preface theses, and printed
 **The INDLEDNING IS COMPLETE — pp. 1–81, §§ 1–5.** In *Tro paa Faderen* /
 *A. Faderens Væsen*: § 6 (p.82), *a) Selvet i Faderen* with § 7 (p.83), then
 *α) …fra Videns Standpunkt* (p.84) and *β) …fra Troens Standpunkt* (p.88).
-…and *γ) Det faderlige Selv: Mysteriet* (p.97). § 7 closes on p.107; the next
-run-head, *b) Grundbestemmelser i Faderens Selv* with § 8, opens p.108.
-Transcribed to p.108. **Resume at printed p.109 (PDF 122)** — no quotation open
-across this cut.
+…and *γ) Det faderlige Selv: Mysteriet* (p.97). § 7 closes on p.107; *b)
+Grundbestemmelser i Faderens Selv* with § 8 opens p.108, subdivided by
+*α) Det Absolutes Attributer* (p.109) and *β) Opløsningens Betydning for
+Videnskaben* (p.116). Transcribed to p.116. **Resume at printed p.117 (PDF 130)**
+— no quotation open across this cut.
 
 A fifth structural device appears inside β): **letterspaced inline run-ins** that
 divide the argument without being headings — *Beviis af Ordet.* (p.92), *Beviis af
 Aanden.* (p.93), *Troesbeviset.* (p.94). They open a paragraph and run straight
 into the sentence, so they take plain `\emph{}`, not `\runhead`. Watch for more.
 
-Checks that pass on the current file: 108 page-break comments, contiguous pp.1–108,
-every one at offset +13; braces balanced; `$` count even; 12 footnotes; 9 `% sic:`
-notes; quote running balance back to the expected 1 dropped-open + final balance 1
-(the Bøhme quotation closed on p.103 as predicted); no `\IfFileExists` or `\gk`.
+Checks that pass on the current file: 116 page-break comments, contiguous pp.1–116,
+every one at offset +13; braces balanced; `$` count even; 12 footnotes; 10 `% sic:`
+notes; quote running balance at the expected 1 dropped-open + final balance 1;
+no `\IfFileExists` or `\gk`.
 
 **Compile status: `make` confirmed green at the pp. 1–94 state**, which exercised
 `\parthead`, `\lettersub` and `\greekrun` (including the Greek α/β/γ markers).
@@ -115,11 +116,17 @@ printed, not normalised.** Verified at 600 dpi in each case:
 | p. | printed | would normally be |
 |---|---|---|
 | 59 | ἄνθρωπος **ψυχικος** | ψυχικός |
-| 99 | μυστήριον | μυστήριον ✓ |
+| 99 | μυστήριον | ✓ correct |
 | 100 | **ὑπερουσιον** | ὑπερούσιον |
+| 116 | δημιουργὸς δίκαιος, θεὸς ἀγαθὸς | ✓ all correct |
 
-Breathings are consistently present (ἄ, ὑ); it is the acute that goes missing. Check
-each Greek word against the page rather than supplying the expected accent.
+Breathings are always present (ἄ, ὑ, ἀ); it is the acute that sometimes goes
+missing, and **not systematically** — p.116 sets four words with correct accents
+including graves. So check every Greek word against the page individually; neither
+"always right" nor "always dropped" is a safe assumption.
+
+The scan's Greek fount uses the script theta **ϑ**; this is normalised to **θ**, as
+a fount variant rather than a distinct letter. Flagged in a comment where it occurs.
 
 ### Don't make the preamble conditional
 
@@ -201,6 +208,8 @@ Reproduced as printed, each with a `% sic:` comment. None is in RETTELSER.
   for *blindt hen*. 500 dpi.
 - p.62 "Er nu **Sevmodsigelsen**, saaledes forstaaet" — the *l* of *Selvmodsigelsen*
   has dropped out of the forme. 500 dpi. (Second dropped sort, after p.50.)
+- p.114 "en **methaphysisk** Mulighed" — intrusive *h*; the book sets *metaphysisk*
+  elsewhere (pp.46, 106). 500 dpi.
 
 Two typographic points established while transcribing pp. 1–18, both of which the
 old `indledning/` file got wrong and which recur constantly:
@@ -238,11 +247,15 @@ Modsigelsen" — a different claim, not a misreading. Between that and the
 "uforenelige med al Videnskab" substitution, nothing in the old file should be
 carried over without checking it against the image.
 
-**Next step: transcribe from printed p.109 (PDF 122) onward** in `transcription.tex`,
-straight through to p.81 to finish the Indledning, then on into "Tro paa Faderen"
-(§ 6, p.82). The old `indledning/transcription.tex` can be deleted once pp. 1–18
-here are considered settled; `indledning/translation.tex` is untouched and still
-the only English text that exists for this work.
+**Next step: transcribe from printed p.117 (PDF 130) onward** in `transcription.tex`.
+
+**`catalog.yaml` now points only at this file** — one section, "Complete work
+(pp. 1–537)", linking `religionsphilosophie/transcription.pdf`. The `indledning/`
+links have been removed at the author's request. The `indledning/` folder itself is
+still on disk and still committed, so GitHub Pages continues to serve
+`indledning/transcription.pdf` and `indledning/translation.pdf` at their old URLs
+even though nothing links to them. Both are superseded/flawed (see above) and are
+candidates for deletion.
 
 ## Division macros
 
