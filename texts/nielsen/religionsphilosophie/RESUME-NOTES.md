@@ -77,15 +77,16 @@ paa Faderen, Tro paa Sønnen og Tro paa Aanden."
 
 **The live file is `transcription.tex` in this folder — one file for the whole
 book.** Done and image-verified: title leaf, preface theses, and printed
-**pp. 1–60** — §§ 1–4 complete (§ 4 *Ordet og Aanden*, pp.42–55, with run-heads
-*a) Ordets Oprindelighed* p.43, *b) Ordets Troværdighed* p.47, *c) Aandens
-Vidnesbyrd* p.52), and § 5 *Troesprincipet: Religionsphilosophiens Methode* opened
-at p.56 with run-head *a) Troen og dens Indhold* (p.57), carried to p.60.
-**Resume at printed p.61 (PDF 74).**
+**pp. 1–68** — §§ 1–4 complete, and § 5 *Troesprincipet: Religionsphilosophiens
+Methode* (from p.56) through its run-heads *a) Troen og dens Indhold* (p.57) and
+*b) Troesbekjendelsen* (p.67), carried to p.68.
+**Resume at printed p.69 (PDF 82).** Thirteen pages left in the Indledning; "Tro
+paa Faderen" (§ 6) opens p.82.
 
-Checks that pass on the current file: compiles clean; 60 page-break comments,
-contiguous pp.1–60, every one at offset +13; braces balanced; „ and “ balanced
-(55 each); `$` count even; 4 footnotes; 5 `% sic:` notes.
+Checks that pass on the current file: 68 page-break comments, contiguous pp.1–68,
+every one at offset +13; braces balanced; „ and “ balanced (59 each); `$` count
+even; 4 footnotes; 6 `% sic:` notes; no `\IfFileExists` or `\gk` left anywhere.
+Last confirmed `make` build: pp. 1–60 state, by the author.
 
 Mathematics has started appearing — the p.48 footnote sets
 $\frac{o}{a}=0$ and $\frac{a}{\infty}=0$, and the Hume quotation on p.47 has
@@ -147,6 +148,8 @@ Reproduced as printed, each with a `% sic:` comment. None is in RETTELSER.
 - p.52 "virkelig trænger til **at** literærhistorisk Beviis" — *at* for *et*. 500 dpi.
 - p.57 "saa er Aabenbaringsordet **blindthen** et Autoritetsord" — set as one word,
   for *blindt hen*. 500 dpi.
+- p.62 "Er nu **Sevmodsigelsen**, saaledes forstaaet" — the *l* of *Selvmodsigelsen*
+  has dropped out of the forme. 500 dpi. (Second dropped sort, after p.50.)
 
 Two typographic points established while transcribing pp. 1–18, both of which the
 old `indledning/` file got wrong and which recur constantly:
@@ -184,7 +187,7 @@ Modsigelsen" — a different claim, not a misreading. Between that and the
 "uforenelige med al Videnskab" substitution, nothing in the old file should be
 carried over without checking it against the image.
 
-**Next step: transcribe from printed p.61 (PDF 74) onward** in `transcription.tex`,
+**Next step: transcribe from printed p.69 (PDF 82) onward** in `transcription.tex`,
 straight through to p.81 to finish the Indledning, then on into "Tro paa Faderen"
 (§ 6, p.82). The old `indledning/transcription.tex` can be deleted once pp. 1–18
 here are considered settled; `indledning/translation.tex` is untouched and still
