@@ -52,33 +52,14 @@
 \documentclass[12pt]{book}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
-% Danish hyphenation where available; falls back so the file still compiles in a
-% minimal TeX install (e.g. a sandbox without texlive-lang-european).
-\IfFileExists{danish.ldf}{\usepackage[danish]{babel}}{\usepackage[english]{babel}}
+\usepackage[danish]{babel}
 \usepackage[protrusion=true,expansion=true]{microtype}
 \usepackage[margin=1.4in]{geometry}
 \usepackage{setspace}
 \usepackage{amsmath}
-% Libertinus is the house face; fall back to Latin Modern in a minimal install so
-% the file always compiles for a quick structural check.
-\IfFileExists{libertinus.sty}%
-  {\usepackage{libertinus}\usepackage{libertinust1math}}%
-  {\usepackage{lmodern}}
-% Polytonic Greek. \gk{<Greek>}{<transliteration>} sets the Greek where textalpha
-% is available and falls back to the italic transliteration where it is not, so a
-% minimal install never chokes on the UTF-8 Greek in the unused argument.
-%
-% NOTE: the \newcommand definitions must live OUTSIDE the \IfFileExists branches.
-% \IfFileExists stores its branches with \def\reserved@a{...}, so a bare #1/#2
-% inside a branch is read as a parameter of \reserved@a and throws
-% "Illegal parameter number in definition of \reserved@a". Hence the flag.
-\newif\ifRPhasgreek
-\IfFileExists{textalpha.sty}{\usepackage{textalpha}\RPhasgreektrue}{}
-\ifRPhasgreek
-  \newcommand{\gk}[2]{#1}
-\else
-  \newcommand{\gk}[2]{\textit{#2}}
-\fi
+\usepackage{libertinus}
+\usepackage{libertinust1math}
+\usepackage{textalpha}   % polytonic Greek typed directly
 \usepackage{fancyhdr}
 \usepackage[colorlinks=true,linkcolor=black,urlcolor=black,
   pdftitle={Religionsphilosophie},
@@ -2071,7 +2052,7 @@ ogsaa om det menneskelige. Det Selv, der ved Troen sættes i Forhold
 til Gud, er ikke hvad Religionen kalder „det sandselige Menneske“
 % The Greek is set in the scan as printed here: the first word accented, the
 % second NOT (no accent on the omicron). Verified at 600 dpi. Reproduced as is.
-(\gk{ἄνθρωπος ψυχικος}{anthrōpos psychikos}), thi „det sandselige
+(ἄνθρωπος ψυχικος), thi „det sandselige
 Menneske fatter ikke de Ting, som høre Guds Aand til“: det
 sandselige Menneske veed ikke, hvad Tro er, og kan ikke troe. Det
 Selv, der i Troen frembringer Gud, er det aandelige Selv, det Selv,

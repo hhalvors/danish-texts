@@ -93,36 +93,29 @@ $=\frac{9}{10}$. `amsmath` is already loaded.
 
 ### Greek
 
-Greek starts at p.59 (ἄνθρωπος ψυχικος, 1 Cor. 2:14). It is typed through a macro:
+Greek starts at p.59 (ἄνθρωπος ψυχικος, 1 Cor. 2:14). It is typed **directly**, with
+`\usepackage{textalpha}` in the preamble — the same convention as every other file
+in this repo (`philosophie-og-mathematik`, `philosophiske-grundproblemer`,
+`videnskabslaere`, the Sibbern and Høffding texts, etc.). No macro, no conditional.
 
-```latex
-\gk{<Greek>}{<transliteration>}
-```
+n.b. the p.59 Greek is printed with an accent on the first word and **none** on the
+second (no accent over the omicron of ψυχικος). Verified at 600 dpi; reproduced as
+printed rather than normalised.
 
-`\gk` sets the Greek where `textalpha` is available and falls back to the italic
-transliteration where it is not, so the file still compiles in a minimal install —
-the UTF-8 Greek sits in an argument that the fallback branch discards.
+### Don't make the preamble conditional
 
-**The two `\newcommand`s must stay OUTSIDE the `\IfFileExists` branches.** LaTeX's
-`\IfFileExists` stores its branches with `\def\reserved@a{...}`, so a bare `#1`/`#2`
-written inside a branch is read as a parameter of `\reserved@a` and aborts the run
-with *"Illegal parameter number in definition of `\reserved@a`"*. The first version
-of this preamble made exactly that mistake and was fatal under TeX Live 2024. The
-fix routes through a flag:
+An earlier version of this file wrapped `babel`, `libertinus` and `textalpha` in
+`\IfFileExists` so that it would compile in a cut-down TeX install. Don't do this:
 
-```latex
-\newif\ifRPhasgreek
-\IfFileExists{textalpha.sty}{\usepackage{textalpha}\RPhasgreektrue}{}
-\ifRPhasgreek \newcommand{\gk}[2]{#1}\else \newcommand{\gk}[2]{\textit{#2}}\fi
-```
+- It diverges from the ~25 other transcriptions, all of which load the packages
+  plainly. The preamble should match `philosophie-og-mathematik` line for line.
+- It was actively fatal. `\IfFileExists` stores its branches with
+  `\def\reserved@a{...}`, so a bare `#1`/`#2` inside a branch becomes a parameter of
+  `\reserved@a` and aborts with *"Illegal parameter number in definition of
+  `\reserved@a`"* under TeX Live 2024.
 
-The same hazard applies to the `danish.ldf` and `libertinus.sty` conditionals above
-— neither currently contains a `#`, and neither should be given one.
-
-Verification status: the no-`textalpha` branch is fully tested here (the sandbox
-lacks the package; the PDF reads "(anthrōpos psychikos)"). The `textalpha` branch
-can only be tested on a machine that has the real package — a stub proves only that
-no parameter-number error occurs, not that the Greek sets correctly.
+The build target is the author's machine, which has the full TeX Live. A sandbox
+that cannot compile the file is not a reason to change the file.
 
 n.b. the p.59 Greek is printed with an accent on the first word and **none** on the
 second (no accent over the omicron of ψυχικος). Verified at 600 dpi; reproduced as
@@ -209,6 +202,33 @@ the only English text that exists for this work.
   *Begrebsmodsigelsens Grundsætning*, p.41). Use `\footnote{}`; the printed marker
   is `*)`.
 - Page-break comments `% ---- printed p.N (PDF M) ----` at each boundary.
+
+## Don't compile in the sandbox
+
+The sandbox lacks `libertinus`, `textalpha` and `danish.ldf`, so it cannot build
+this file — and it should not try. Running `pdflatex` there writes
+`transcription.pdf` and the aux files into the working tree with a timestamp newer
+than `transcription.tex`, after which **`make` treats the target as up to date and
+silently skips the rebuild**. That already happened once.
+
+Checks that don't require a compile (use these instead):
+
+```bash
+python3 - <<'EOF'
+import re
+s = open('transcription.tex', encoding='utf-8').read()
+print("braces balanced:", s.count('{') == s.count('}'))
+print("quotes „/“:", s.count('„'), s.count('“'), s.count('„') == s.count('“'))
+print("$ even:", s.count('$') % 2 == 0)
+m = [(int(a), int(b)) for a, b in
+     re.findall(r'---- printed p\.(\d+) \(PDF (\d+)\) ----', s)]
+print("range:", m[0], "..", m[-1], "n =", len(m))
+print("gaps:", [p for i, (p, _) in enumerate(m) if p != i + 1])
+print("offset +13 throughout:", all(b - a == 13 for a, b in m))
+EOF
+```
+
+Leave the actual compile to `make` on the author's machine.
 
 ## Two-up render helper
 Everything needed (poppler, ImageMagick, LaTeX) is in the sandbox; the scan must be
