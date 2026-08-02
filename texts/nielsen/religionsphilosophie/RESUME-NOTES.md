@@ -80,19 +80,20 @@ book.** Done and image-verified: title leaf, preface theses, and printed
 **The INDLEDNING IS COMPLETE — pp. 1–81, §§ 1–5.** In *Tro paa Faderen* /
 *A. Faderens Væsen*: § 6 (p.82), *a) Selvet i Faderen* with § 7 (p.83), then
 *α) …fra Videns Standpunkt* (p.84) and *β) …fra Troens Standpunkt* (p.88).
-…and *γ) Det faderlige Selv: Mysteriet* (p.97).
-Transcribed to p.102. **Resume at printed p.103 (PDF 116)** — note the Jacob Bøhme
-quotation opened on p.102 is still open across the cut.
+…and *γ) Det faderlige Selv: Mysteriet* (p.97). § 7 closes on p.107; the next
+run-head, *b) Grundbestemmelser i Faderens Selv* with § 8, opens p.108.
+Transcribed to p.108. **Resume at printed p.109 (PDF 122)** — no quotation open
+across this cut.
 
 A fifth structural device appears inside β): **letterspaced inline run-ins** that
 divide the argument without being headings — *Beviis af Ordet.* (p.92), *Beviis af
 Aanden.* (p.93), *Troesbeviset.* (p.94). They open a paragraph and run straight
 into the sentence, so they take plain `\emph{}`, not `\runhead`. Watch for more.
 
-Checks that pass on the current file: 102 page-break comments, contiguous pp.1–102,
-every one at offset +13; braces balanced; `$` count even; 10 footnotes; 9 `% sic:`
-notes; quote running balance shows 1 dropped-open + final balance 2 (the extra 1
-being the open Bøhme quotation, see above); no `\IfFileExists` or `\gk` anywhere.
+Checks that pass on the current file: 108 page-break comments, contiguous pp.1–108,
+every one at offset +13; braces balanced; `$` count even; 12 footnotes; 9 `% sic:`
+notes; quote running balance back to the expected 1 dropped-open + final balance 1
+(the Bøhme quotation closed on p.103 as predicted); no `\IfFileExists` or `\gk`.
 
 **Compile status: `make` confirmed green at the pp. 1–94 state**, which exercised
 `\parthead`, `\lettersub` and `\greekrun` (including the Greek α/β/γ markers).
@@ -148,9 +149,15 @@ suspected italic at ≥400 dpi before marking it.** Genuine italic in this book 
 so far, only Latin tags: *ubique et nusquam* (p.6), *eo ipso* (p.36),
 *per subtractionem* / *per additionem* (p.38), *Der christliche Glaube* (p.40 note).
 
-**2. Footnotes can run across a page boundary.** The Martensen/Schleiermacher note
-begins on p.39 and continues over most of p.40, whose body text is only four lines.
-It is transcribed whole at its p.39 marker, with a comment at both ends.
+**2. Footnotes can run across a page boundary — this is common, not exceptional.**
+Each is transcribed whole at its opening marker, with a comment at both ends so the
+page-break comments don't imply a full page of body text where there isn't one:
+
+| note | spans | body text on the overrun page |
+|---|---|---|
+| Martensen/Schleiermacher | p.39 → p.40 | four lines |
+| Kierkegaard, *Efterskrift* | p.71 → p.72 → p.73 | five lines on p.72 |
+| Strauss on Fichte and Hegel | p.106 → p.107 | one closing paragraph |
 
 ### Quote marks
 
@@ -231,7 +238,7 @@ Modsigelsen" — a different claim, not a misreading. Between that and the
 "uforenelige med al Videnskab" substitution, nothing in the old file should be
 carried over without checking it against the image.
 
-**Next step: transcribe from printed p.103 (PDF 116) onward** in `transcription.tex`,
+**Next step: transcribe from printed p.109 (PDF 122) onward** in `transcription.tex`,
 straight through to p.81 to finish the Indledning, then on into "Tro paa Faderen"
 (§ 6, p.82). The old `indledning/transcription.tex` can be deleted once pp. 1–18
 here are considered settled; `indledning/translation.tex` is untouched and still
