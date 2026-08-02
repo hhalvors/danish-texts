@@ -37,11 +37,20 @@
 %        p.592 l.4  f.o.   : Selvishedeus -> Selvvishedens
 %
 %  STATUS: IN PROGRESS. Done & image-verified: title leaf, preface theses,
-%        and printed pp. 1--68 (Indledning: §§ 1--4 complete; § 5 "Troesprincipet:
-%        Religionsphilosophiens Methode" from p.56, with run-heads
-%        a) Troen og dens Indhold (p.57) and b) Troesbekjendelsen (p.67),
-%        carried to p.68).
-%        RESUME AT printed p.69 (PDF 82). See RESUME-NOTES.md.
+%        and printed pp. 1--94. THE INDLEDNING (pp.1--81, §§ 1--5) IS COMPLETE.
+%        Tro paa Faderen / A. Faderens Væsen: § 6 (p.82), run-head
+%        a) Selvet i Faderen with § 7 (p.83), then the Greek-lettered heads
+%        α) ...fra Videns Standpunkt (p.84) and β) ...fra Troens Standpunkt (p.88),
+%        carried to p.94. Within β) the argument is subdivided by LETTERSPACED
+%        inline run-ins, not by headings: "Beviis af Ordet." (p.92), "Beviis af
+%        Aanden." (p.93), "Troesbeviset." (p.94) -- all set with \emph{}.
+%        RESUME AT printed p.95 (PDF 108). See RESUME-NOTES.md.
+%
+%  NOTE ON QUOTE COUNTS: the setting has two unmatched quotation marks, both
+%        reproduced as printed -- a dropped OPENING mark on p.72 (in the footnote
+%        begun p.71) and a dropped CLOSING mark on p.78. They cancel in the raw
+%        totals, so check the RUNNING balance: expect exactly one dropped-open
+%        event and a final balance of 1. See the "% sic:" comments at both spots.
 %        NOTE: the older indledning/transcription.tex is SUPERSEDED by this file.
 %        It covered only pp. 1--17 (breaking off mid-page), carried no page-break
 %        comments and no Sperrsatz markup, and mis-transcribed the p.17 sentence
@@ -74,6 +83,16 @@
 \onehalfspacing
 
 % --- house macros -------------------------------------------------------
+% Major division head (e.g. "Tro paa Faderen."). Each of the three begins a new
+% page in the scan. + ToC entry.
+\newcommand{\parthead}[1]{%
+  \clearpage
+  \begin{center}{\LARGE\bfseries #1}\end{center}\vspace{2pt}%
+  \phantomsection\addcontentsline{toc}{section}{#1}\markboth{#1}{#1}}
+% Lettered sub-division: "A." set over "Faderens Væsen." + ToC entry.
+\newcommand{\lettersub}[2]{%
+  \begin{center}{\large\bfseries #1}\par\vspace{3pt}{\large\bfseries #2}\end{center}%
+  \phantomsection\addcontentsline{toc}{subsection}{#1\quad #2}\markboth{#2}{#2}}
 % Centred bold sub-head (e.g. "Religion og Philosophie.") + ToC entry.
 \newcommand{\subhead}[1]{%
   \begin{center}{\large\bfseries #1}\end{center}%
@@ -83,6 +102,11 @@
 % Centred bold run-head (e.g. "a) Religionsphilosophien som speculativ Videnskab.")
 \newcommand{\runhead}[1]{%
   \medskip\begin{center}{\bfseries #1}\end{center}\medskip}
+% Fourth-level head, marked with a GREEK letter set in italic before a bold title:
+% "α) Det guddommelige Selv opfattet fra Videns Standpunkt." (p.84). The markers
+% really are α) β) γ) — verified at 600 dpi, they are not Latin a) b) c).
+\newcommand{\greekrun}[2]{%
+  \medskip\begin{center}{\itshape #1)}\ {\bfseries #2}\end{center}\medskip}
 % -------------------------------------------------------------------------
 
 \begin{document}
@@ -2374,5 +2398,840 @@ og bekjender, at Kirkens Præster ere Menighedens aandelige Herrer,
 og at den romerske Katholicisme er det eneste conseqvente
 Kirkesystem. Endvidere: hvad troer og bekjender den, der troer og
 bekjender, at Apost\-
+% ---- printed p.69 (PDF 82) ----
+lene med den Ufeilbarhed, som Inspirationen udelukkende tilsikkrede
+dem, have givet den Troesbekjendelse, som bærer deres Navn, sit
+bogstavelige Udtryk og dermed stiftet de første Menigheder? Svaret
+lyder: han troer og bekjender, at Aanden selv har reist en
+Skillemuur, en uoverstigelig Skranke imellem Christus og hans
+Menighed; thi han troer og bekjender, at Apostlene ved deres
+exclusive Inspiration staae som Mæglere og Mellemmænd mellem
+Menigheden og Christus, saa at Veien til Christus gaaer, ikke
+igjennem Ordet af den nærværende Christus selv, men paa Grund af
+hans midlertidige Fraværelse alene gjennem Apostelordet. Endelig:
+hvad troer og bekjender den, der troer og bekjender, at det er
+Christus selv, der saavel gjennem Apostlene som ogsaa gjennem
+Menighedens Ordførere i alle følgende Tider udtaler
+Troesbekjendelsens Ord, saa at han i usynlig, men dog levende
+Nærværelse aabenbarer sig, ikke middelbart og upersonligt gjennem
+Andres, men umiddelbart og personligt gjennem sit eget Ord, det Ord,
+hvormed han i egen gudmenneskelig Personlighed taler til Enhver
+især, der vil høre ham, indbyder Enhver, der vil komme til ham,
+modtage hans Vilkaar og slutte Pagt med ham? Svaret lyder: han troer
+og bekjender, hvad der i Kraft af Troens og Bekjendelsens evige
+Princip alene kan troes og bekjendes.
+
+Med de forskjellige Synspunkter for Troesbekjendelsens
+Oprindelighed følger naturligviis en tilsvarende forskjellig
+Opfattelse af Bekjendelsens Form og Indhold. Den \emph{katholske},
+der sætter Præste-Ordet paa lige Linie med Apostelordet, kan, om man
+ogsaa ifølge Legenden lader Enhver af de tolv Apostle indsætte sit
+Led og saaledes frembringe den af tolv Led sammenstykkede
+Bekjendelse, kun betragte de apostoliske Artikler som det første
+dogmatiske Udkast, hvortil den hele Række af Dogmebestemmelser og
+Symboler, der skyldes Conciliernes og Pavernes Ufeilbarhed, slutte
+sig med lige ubestridelig
+% ---- printed p.70 (PDF 83) ----
+Autoritet. Den \emph{protestantiske}, der, hvad Ufeilbarheden
+angaaer, enten bryder af med Aposteltiden eller for Katholicitetens
+Skyld indrømmer de ældste økumeniske Concilier ligesom ogsaa
+Reformationens Tidsalder en symboldannende Myndighed, men forøvrigt
+gjør den hellige Skrift til Kilde, Norm og Prøvesteen (\textit{lapis
+lydius}), maa i det Hele taget ansee alle Troesbekjendelser og
+Symboler for Compendier af Skriftlæren, saa at kun Bibelordet og
+dets rette Fortolkning egentlig afgiver det ufeilbare, tilstrækkelig
+omfattende Grundlag, paa hvilket Menigheden kan bygge sin Tro.
+Fælles for den pavetroende Katholicisme og den bibeltroende
+Protestantisme er den Grundanskuelse, at Christendommen er en
+factisk juridisk objectiv Lære, og Troen denne Læres subjective
+Antagelse.
+
+Betragtes Troesbekjendelsen under Synspunktet af en objectivt
+juridisk Lærecontract: da er der ganske vist væsentlige Indsigelser
+at gjøre baade imod Indhold og Form. Den apostoliske
+Troesbekjendelse er en altfor lille Dogmatik. Hvorfor just
+udelukkende holde sig til disse Udtryk, disse Formler, da det jo dog
+er vitterligt, at mange Hovedlærdomme ikke engang ere berørte i
+dette Uddrag? „Som det apostoliske Symbolum, historisk betragtet, er
+et efterapostolisk Product, saaledes er det ogsaa efter dets hele
+indre Beskaffenhed utilstrækkeligt til at være den høiste
+\emph{critiske} Norm i Kirken. Ethvert af dets Ord vilde være
+uforstaaeligt, dersom vi ikke havde en rigere Kilde at tye til for
+at forklare dem. Derfor finde vi ogsaa, at Fædrene i de tre første
+Aarhundreder aldrig have løsrevet Traditionen fra Skriften, og den
+for Troesregelen saa ofte paaberaabte Irenæus kalder selv Skriften
+\textit{columna et fundamentum ecclesiæ}. Klart er det jo og, at
+uden Skriften vilde vi kun være slet støttede ved det apostoliske
+Symbol. Skjøndt det er Daabssymbol, giver det os ikke den ringeste
+Oplysning om Daabens sacramentale Betydning; og med den fuldstændige
+Be\-
+% ---- printed p.71 (PDF 84) ----
+kjendelse af det apostoliske Symbolum lader sig meget vel en
+Opfattelse af Daaben forene, som i dette Sacrament seer en blot
+sindbilledlig Ceremonie. Ligesaa lidt giver det nogen Oplysning om
+Nadveren. Det Samme gjælder om den vigtige Lære om
+Retfærdiggjørelsen af Troen, en Lære, hvis fundamentale Betydning
+dog vel Ingen hos os har Mod til at bestride. Selv Læren om Christi
+Person er fremsat saa ubestemt, at baade Arianere og Socinianere
+have kunnet vedkjende sig Symbolets Ord, som da ogsaa Socinianerne
+ideligt paaberaabte sig deres Overeensstemmelse med det apostoliske
+Symbol for derved at legitimere sig som gode Christne“.\footnote{Den
+christelige Dogmatik af Dr.\ H.\ Martensen. S.\ 43--44.}
+
+Men Synsmaaden forandrer sig, naar Troesprincipet fastholdes og
+gjennemføres. Hvad for det Første den Paastand angaaer, at det
+apostoliske Symbolum, historisk betragtet, skulde være et
+efterapostolisk Product, da vil det, ifølge Sagens Natur, være
+ligesaa umuligt at præstere et positivt historisk Beviis herfor, som
+det af skriftlige Vidnesbyrd vil være umuligt at præstere et
+historisk positivt Beviis for, at Symbolet er ordret fra Christus.
+Troesbekjendelsens Ord er, hvad Grundtvig kalder „et levende Ord“,
+Livets Ord „af Herrens egen Mund“. Den mundtlige Overlevering „er
+Ordets Vei, en levende Strøm fra Christus gjennem Apostlene til
+Menigheden“. At forlange skriftlige Vidnesbyrd for det, som alene
+skal søges i mundtlig Overlevering, er en Modsigelse; og at føre
+Beviis mod en mundtlig Overlevering ved at anføre Mangel af
+skriftlige Documenter, er ligeledes en Modsigelse. Begge Modsigelser
+falde sammen i den ene: \emph{at ville bygge sin religiøse Tro paa
+objectiv historisk Viden}%
+% This footnote begins on printed p.71, fills nearly all of p.72 (whose body text
+% is only five lines) and ends five lines into p.73 (PDF 84--86).
+\footnote{Umuligheden af „at bygge sin Salighed“ paa objectiv
+Vished om nogetsomhelst objectivt Historisk har S.\ Kierkegaard
+træffende viist i første Deel af „Afsluttende uvidenskabelig
+Efterskrift“, hvor han omhandler det objective Problem om
+Christendommens Sandhed. „De, der bygge paa Skriften, have i denne
+Henseende ikke større Sikkerhed, end de, der bygge paa
+Troesbekjendelsen“.
+% sic: the quotation resumed at "Naar Skriften betragtes" has NO opening mark in
+% the scan (verified 500 dpi, p.72) — but it is closed after "subjectivt“". The
+% compositor dropped the opening „. Reproduced as printed, so this file carries
+% one more “ than „ from here on; see RESUME-NOTES.md before "fixing" the count.
+Naar Skriften betragtes som det sikkre Tilhold,
+der afgjør, hvad der er christeligt, og hvad ikke, saa gjælder det
+historisk kritisk at sikkre Skriften. Man afhandler da her de
+enkelte Skrifters Medhenhøren til Kanon, deres Authentie,
+Integritet, Forfatternes Axiopistie, og man sætter en dogmatisk
+Garantie i Inspirationen. Naar man seer Englændernes Arbeide paa
+Tunnelen: den uhyre Anstrengelse af Kraft, og hvorledes saa et lille
+Tilfælde i lang Tid kan forstyrre det Hele --- saa faaer man en
+passende Forestilling om dette hele kritiske Foretagende. Hvilken
+Tid, hvilken Flid, hvilke herlige Evner, hvilke udmærkede
+Kundskaber ere her fra Slægt til Slægt satte i Reqvisition til dette
+Underværk. Og dog kan her pludseligen en lille dialektisk Tvivl, der
+rører Forudsætningerne, i lang Tid forstyrre det Hele, forstyrre den
+underjordiske Vei til Christendommen, som man objectivt og
+videnskabeligt har villet anlægge, istedenfor at lade Problemet
+blive til som det er: subjectivt“. \dots\ „Dette“, indrømmer han,
+% n.b. the scan sets „Dette“ and the following quotation with the substitute
+% sorts ,,…‘‘ rather than the „…“ used elsewhere on the page. Normalised here to
+% the house „…“, since it is the same logical quotation, not a distinct usage.
+„havde Grundtvig rigtigt indseet, at Bibelen umuligen kunde holde
+igjen mod den indtrængende Tvivl“; men saa gjør han Grundtvig Uret,
+idet han, misforstaaende den grundtvigske Tale om det Historiske,
+mener, at Grundtvig ogsaa vil have objectiv Sikkerhed forud, før han
+subjectivt kan troe. Det Historiske, hvorom Grundtvig taler, er ikke
+et udvortes Objectivt, hvortil der saa uden videre kan adderes et
+Subjectivt, men Livseenheden af Subjectivt og Objectivt, altsaa i
+Reflexionens Sprog netop Principeenheden. Charakteristisk er det i
+denne Henseende da ogsaa, at medens S.\ Kierkegaard bebreider
+Grundtvig, at han tager det Historiske for objectivt, bebreide hans
+andre Modstandere ham derimod, at han tager det for subjectivt.
+Tingen er, at S.\ Kierkegaard, hvad Martensen meget rigtig har
+følt, men fra sit Standpunkt ikke kunde modarbeide, trods al sin
+Dialektik har løbet sig fast i Subjectivisme: han har som ingen
+Anden bragt det til Evidens, at Subjectiviteten i den Troende er
+Sandheden, men med Blikket uafladelig fæstet paa den Troende
+overseet, at Troen har sit intellectuelle Princip, at dette Princip
+er Eet med Aabenbaringens eget Princip, og at Aabenbaringsprincipet
+ligesaa oprindeligt er objectivt som subjectivt.}.
+Søge vi Livsnerven i den Grundt\-
+% ---- printed p.72 (PDF 85) ----
+% (body text of p.72 is only these five lines; the remainder of the page carries
+%  the continuation of the footnote begun on p.71, transcribed in full above)
+vigske Anskuelse, da maa den ubetinget sættes deri, at Troen paa
+Troesbekjendelsen i Principet falder sammen med Troen paa dens
+Oprindelse fra Troens Gjenstand, altsaa med Troen paa den i
+Bekjendelsens Ord personlig nærværende Christus.
+% ---- printed p.73 (PDF 86) ----
+% (the first five lines of p.73 are the end of the p.71 footnote, transcribed there)
+At det apostoliske Symbolum, betragtet som et Indbegreb af objective
+Læresætninger, ikke kan være „kritisk Norm i Kirken“ maa indrømmes;
+men at den hellige Skrift, betragtet som Aabenbaringsdocument i
+historisk objectiv Forstand, heller ikke kan være kritisk Norm, maa
+ifølge de Aandsphænomener, som Aarhundreders Stridigheder have
+bragt for Lyset, da vel ogsaa indrømmes. Eller have Arianere og
+Socinianere for deres eensidige Lære om Christi Person maaskee ikke
+ligesaa let kunnet vedkjende sig Skriftens som Symbolets Ord? Den
+hellige Skrifts Uundværlighed for Lærens Udvikling vil vist Ingen
+drage i Tvivl; men Sagen er, at der ligesaa lidt kan naaes en Videns
+Objectivitet ved Hjælp af Skriften som ved Hjælp af Symbolet. I
+Følelsen af, at det for Troen Objective er væsentlig forskjelligt
+fra det Objective i Viden, fordrer man jo ogsaa udtrykkeligt, at
+Skriftordet skal opfattes med et troende Sind, at der ved
+Skriftfortolkningen nødvendig maa forudsættes en christelig
+Bevidsthed. Men det troende, christelige Sind, den christelige
+Bevidsthed, kan dog heller ikke være kritisk Norm; thi ikke at tale
+om, at hver Enkelt blandt de Troende har sit Sind, saa har jo hvert
+Troessamfund sin christelige Bevidsthed, og denne Bevidsthed er til
+forskjellige Tider igjen forskjellig. Det hjælper ikke at henvise
+den, der søger en kritisk Norm, fra Symbolet til Skriften, fra
+Skriften til Bevidstheden, fra Bevidstheden gjennem Tradition og
+Indtryk af typisk givne Forskjelligheder i bestaaende Kirkesamfund
+igjen til Skriften: thi hvor er Midtpunktet, Udgangspunktet,
+Slutningspunktet, hvor er Correctivet? Det er, siger man,
+Totalindtrykket, der maa
+% ---- printed p.74 (PDF 87) ----
+tydeliggjøres ved Bestemmelser af det Enkelte, idet det Enkelte
+igjen bestemmes ved det Totale: i Totaliteten gaaer det Subjective
+sammen med det Objective, i Totalindtrykket have vi Aandens
+Vidnesbyrd. Men naar det Hele nu ikke skal løbe rundt for Øinene, og
+Totalindtrykket blive ligesaa ubestemmeligt som Aanden, og Aanden
+igjen ligesaa ubestemmelig som Totalindtrykket: da maa her i alt
+dette være et Princip: Principet er Christus selv, Ordet fra
+Begyndelsen.
+
+Af Principet maa Alt udledes, ved det maa Alt bestemmes, til det maa
+Alt føres tilbage. Principet er ikke en Troesbekjendelse, men bærer
+Troesbekjendelsen og har i den sit korte, klare, fyndige Udtryk.
+Principet er ikke en hellig Skrift, men det gaaer igjennem den
+hellige Skrift og afgiver den kritiske Norm, hvorefter Skriften maa
+fortolkes. Principet er ikke en christelig Bevidsthed, hverken den
+Enkeltes eller Samfundets; men det bevæger og bestemmer den
+christelige Bevidsthed, og Bevidstheden maa bøie sig under det og
+lade sig corrigere af det. Først efterhaanden som de forskjellige
+Troessamfund lære at rette deres Tro efter Troesprincipet, ikke
+Troesprincipet efter Confessionernes Forskjellighed, vil det
+religiøse Liv vinde selvbevidst Eenhed, Form og Skikkelse.
+
+\runhead{c) Religionsphilosophiens Methode.}
+
+At Religionsphilosophiens Indhold væsentlig maa være Troens Indhold,
+forstaaer sig af sig selv; men Troesindholdet er oprindelig et
+Livsindhold, og dets Former eiendommelige Livsformer; hvorimod
+Religionsphilosophien kun er istand til at udvikle Indholdet
+igjennem intellectuelle Former: Spørgsmaalet er da, hvorledes de
+intellectuelle Former forholde sig til Livsformerne. Dette
+Spørgsmaal, der allerede, om end fra en anden Side, er berørt i
+Indledningens Begyndelse, bliver nu i dens Slutning at
+% ---- printed p.75 (PDF 88) ----
+besvare ved en Angivelse af den religionsphilosophiske Methode.
+
+Religionsphilosophien kan ikke umiddelbart bygge paa nogen
+Troesbekjendelse; thi Troesbekjendelsens Form er en Livsform,
+bestemt for den levende Menighed; men den kan og bør udvikle Troens
+Begreb og derved intellectuelt angive dens kategoriske Betydning for
+Menighedslivet. I den intellectuelle Form ere de religiøse Begreber
+alle tilhobe Bekjendelsesbegreber, det vil sige: Begreber, hvis
+Gyldighed personlig afgjøres ved Bekjendelsen.
+
+Aabenbaringens tre Hovedbegreber: \emph{Faderen, Sønnen og Aanden}
+ere ikke Vidensbegreber, men Troesbegreber, umiddelbare
+Bekjendelsesbegreber. Religionsphilosophien, der i Menigheden
+forefinder saadanne Bekjendelsesbegreber, har da den Opgave at
+omsætte dem i den intellectuelle Form og i Kraft af Principet
+udvikle dem til Klarhed og fuld Gjennemsigtighed. Den Klarhed,
+hvortil de religiøse Begreber lade sig udvikle, er methodisk
+afhængig af den Sikkerhed, hvormed Adskillelsen af de to
+Erkjendelseskredse, Troens og Videns, fastholdes, og af den
+Deduction og Begrundelse, der udelukkende bestemmes ved
+Gudsforholdet. Guds Væsen i og for sig kan Religionsphilosophien
+ikke klare, thi „Gud boer i et Lys, hvortil Ingen kan komme“; men
+Guds Væsen, reflecteret i og ved Gudsforholdet (Forholdet til
+Menneskene) bør den stræbe at klare, thi i det aabenbarede
+Gudsforhold kan ingen Tvetydighed tænkes.
+
+Gudsforholdet er, som vi alt have seet, et Villiesforhold;
+Religionsphilosophien er som Villiesphilosophie absolut ueensartet
+med Fornuftphilosophien, den ideenødvendige Væsensphilosophie. Men
+Villieserkjendelse udelukker ikke Væsenserkjendelse. Da nu Villie
+altid forudsætter Væsen, og Væsen i høieste Forstand Villie, saa
+indsees heraf, at Principernes Modsætning udelukkende maa beroe paa
+Methoden. Ligesom Væsensphilosophien overalt
+% ---- printed p.76 (PDF 89) ----
+gaaer ud fra og gjennem Alt vender tilbage til Væsenet, saaledes
+gaaer Villiesphilosophien ved alle Problemer ud fra og vender
+tilbage til Villien. Det Samme gjælder om Modsætningen mellem
+Begrebsmodsigelse og Selvmodsigelse; denne Modsætning faaer
+ligeledes sin Betydning alene ved Methoden. Seet \textit{in
+abstracto} kan enhver Begrebsmodsigelse let fremstilles som en
+Selvmodsigelse, og omvendt; men ifølge den methodiske Adskillelse
+mellem de to Regioner, bliver Selvmodsigelsens Grundsætning
+afgjørende for Troen, Begrebsmodsigelsens for Viden. Hvor der altsaa
+er Valg mellem Eet af To, enten at lægge Correctivet i
+Begrebsmodsigelsen uden at agte paa Selvmodsigelsen, eller omvendt,
+der viser sig Nødvendigheden af en methodisk Orientering. Løses et
+Problem derved, at Begrebsmodsigelsen, Modsigelsen i objectiv
+Forstand, er normerende, medens Selvmodsigelsen træder tilbage og
+taber sig i Mysteriet, saa hører Opløsningen under Videnskaben;
+løses omvendt et Problem saaledes, at det Normerende ligger i
+Selvmodsigelsen, Modsigelsen i subjectiv Forstand, medens
+Begrebsmodsigelsen kun løser sig op ved en Opløsning i Mysteriet,
+saa hører Opløsningen ind under Religionen.
+
+Kun i Methoden kan Modsætningen mellem rationel og antirationel,
+mellem ligefrem og omvendt Begrundelse finde sin Anvendelse og sin
+rette Betydning. Vi oplyse dette ved nogle Exempler. Der findes i
+„den christelige Dogmatik“ mangfoldige Udtalelser, om hvilke vi
+kunne sige, at de i og for sig kunne være baade sande og usande, saa
+at deres Sandhed eller Usandhed ene og alene afhænger af
+Begrundelsen.
+
+Der siges om Skabelsen: „Verden har en dobbelt Begyndelse, en
+kosmogonisk og en skaberisk, en naturlig og en overnaturlig. ---
+Verden maa derfor i ethvert Moment af sin Tilværelse betragtes som
+\textit{natura} eller som organisk Selvudvikling, og som
+\textit{creatura} eller som frem\-
+% ---- printed p.77 (PDF 90) ----
+skridende Aabenbaring af den guddommelige \emph{Villie}, og den er
+kun det Ene, fordi den er det Andet“. Denne Udtalelse er tvetydig,
+forsaavidt der i menneskelig Viden forudsættes et Eenhedspunkt,
+hvori de to uligeartede Begreber, Skabelse og Natur, ligelig finde
+deres Begrundelse. Et saadant Eenhedspunkt gives ikke. Imellem
+Skabelse og Natur ligger et dunkelt, uudgrundeligt Dyb, her ligger
+Mysteriet. Begrebet: Skabelse er oprindelig et Troesbegreb, et
+ubetinget Villiesbegreb, og kan som Villiesbegreb umuligt afgive
+Grundlag for en rationel Udvikling af Naturbegrebet. Naturbegrebet
+er oprindeligt et Vidensbegreb, et i Ideen som Idee hvilende
+Nødvendighedsbegreb, og kan som Nødvendighedsbegreb umuligt afgive
+Grundlag for den antirationelle Udvikling, der tilkommer
+Skabelsesbegrebet.
+
+Der siges om Sønnen: „Som Midleren mellem Faderen og Verden hører
+det Sønnen til, ikke blot at leve sit Liv i Faderen, men ogsaa i
+Verden. Som „Gud Faders Hjerte“ er han tillige det evige
+„Verdenshjerte“, hvorigjennem det guddommelige Liv straaler ind i
+Skabningen. Som Faderens Logos er han tillige den evige
+Verdenslogos, hvorigjennem det guddommelige Lys straaler ind i
+Skabningen. Han er Grund og Kilde til al Fornuft i Skabningen, det
+være sig i Menneske eller Engel, i Græker eller Jøde“. Denne
+Udtalelse er tvetydig, forsaavidt der forudsættes, at der fra en
+Troeserkjendelse af den i Gud og som Gud overnaturlige Logos skulde
+kunne gives en ligefrem, fornuftnødvendig Overgang til en
+Videnserkjendelse af den naturlige, Tingene selv iboende
+Verdensfornuft. En saadan Overgang gives ikke. Imellem Logos i
+Aabenbaringen og Fornuften i Verden ligger Mysteriet, den store
+Verdensgaade, hvori de actuelle Vexelbestemmelser af Frihed og
+Nødvendighed ere skjulte for Menneskets Blik.
+
+Der siges om Aanden: „Den Hellig-Aand adskiller sig fra alle
+Verdensaander ikke blot derved, at alle Verdens\-
+% ---- printed p.78 (PDF 91) ----
+aander ere indesluttede under Synd, men ogsaa derved, at
+Verdensaanderne efter deres oprindelige Bestemmelse forfølge heelt
+andre Formaal. De kosmiske Aander, det være sig Folkeaander eller
+Statens Aander, det være sig Kunstens Aander eller Videnskabens
+Aander, have kun det Formaal at grunde og udbrede deres
+\emph{Rige}, medens de menneskelige \emph{Individer} fornemmelig
+gjælde dem blot som Midler for dette Maal. Den Hellig-Aand derimod
+vil skabe et Rige af helliggjorte, af salige \emph{Individer}, dens
+Formaal er Sjælens Frelse“. Denne Udtalelse gjør ganske vist
+Indtryk af at være baade klar og sand, saalænge vi betragte den i al
+Almindelighed uden at spørge om Begrundelsen. Men naar Spørgsmaalet
+om Begrundelsen sættes methodisk i Bevægelse: hvorledes seer
+Udtalelsen da ud? Er det virkelig sandt --- og det er jo virkelig
+sandt --- at „Verdensaanderne“, hvortil ogsaa „Videnskabens Aander“
+høre, efter deres oprindelige, vel at mærke: deres oprindelige
+Bestemmelse forfølge heelt andre Formaal end „den Hellig-Aand“,
+Formaal, der ere den Hellig-Aands saa modsatte, som det, at gjøre de
+menneskelige Individer til Midler for et objectivt, upersonligt
+Rige, og det, at skabe et Rige af helliggjorte, af salige
+Individer, altsaa et i evig Forstand personligt Rige: saa er jo
+% sic: the quotation opened here at „den Hellig-Aand is NEVER closed in the scan
+% -- the single “ after "Videnskabens Aander" closes the inner quotation only.
+% Verified at 500 dpi, p.78. Reproduced as printed; see RESUME-NOTES.md.
+hermed udtalt, at „den Hellig-Aand ikke blot er noget forskjelligt
+fra, men ueensartet --- absolut ueensartet med Verdensaanderne,
+ueensartet --- absolut ueensartet med „Videnskabens Aander“. Men
+naar et Aandens Indhold methodisk skal udvikles, da gjælder den
+Sætning uimodsigelig: som Aanden er, maa Udviklingsprincipet være;
+og som Udviklingsprincipet er, maa Begrundelsen være.
+
+Fastholdes det ubetinget, at Gudsforholdet er et Villiesforhold, da
+vil en methodisk Adskillelse af Fornuft- og Religionsphilosophie
+aldrig kunne undgaaes. Vi see det af Treenighedslæren. Den
+religionsphilosophiske Ud\-
+% ---- printed p.79 (PDF 92) ----
+vikling af denne Lære maa nøiagtig svare til en Udvikling af det ved
+Aabenbaringen bestemte Gudsforhold; ved at afvige fra denne
+Grundsætning, ved at ville betragte Gud som Gud i objective
+Relationer, deels indadtil i det evige Dyb, deels udadtil i
+Vexelvirkning med Naturen og Verdenslivet kommer man øieblikkelig
+udenfor Troesgrændsen, blendes af Videnskaben og forvilder sig i
+Speculationen. Indenfor den kategorisk bestemte Troesgrændse vil det
+derimod vise sig, at Guds Forhold til Mennesket ogsaa udbreder et
+Lys over hans Forhold til sig selv, at Villiesforholdet giver en
+Speiling af Væsensforholdet, og at det netop er et methodisk Feilsyn
+af Væsenets Reflexion i Villiesaabenbarelsen, der har foranlediget
+saamange Grublerier og forvirret saamange Hjerner.
+
+I Gudsforholdet have vi tre Led: Gud i sit Forhold til Mennesket,
+Mennesket i sit Forhold til Gud, og Verden, det virkelige Mellemled
+mellem Gud og Mennesket. Forsaavidt nu ethvert af Forholdets Led kan
+belyses af det hele Forhold, vil det mangfoldigt nuancerede
+Villiesforhold, hvori Gud gjennem Verden sætter sig til Mennesket,
+vel kunne kaste en Belysning tilbage paa Guds indre Væsen. Men
+Hovedsagen er, at Villiesprincipet er og bliver det Afgjørende.
+
+I Læren om Faderen opfattes Gud som Altilværelsens Ophav, som det
+Væsen, af hvis Villie alle Ting ere absolut afhængige. Det er
+Modsætningen mellem Gud i sig og alt Andet, som ikke er Gud, hvorpaa
+Eftertrykket falder. Betragtes nu denne Modsætning objectivt i al
+Almindelighed, saa fremkomme Begrebssætninger, om hvilke det ikke er
+let at sige, hvorvidt de have deres Oprindelse fra Religionen eller
+fra Speculationen. At Gud i sig ikke med fuld Frihed kan have
+Verden til Modsætning, dersom han ikke derved tillige har sig selv
+til Modsætning, maa indrømmes. Den guddommelige Selvbevidsthed
+% ---- printed p.80 (PDF 93) ----
+kræver ikke blot sit eget Jeg, men ogsaa sit eget Du, og kan kun
+tænkes at objectivere sin Verden saaledes, at den deri tillige
+objectiverer sig selv. Har nu Guds Objectivering af Verden hans egen
+Selvobjectivering til Forudsætning, saa følger ganske rigtigt heraf,
+at Guds frie, bevidste Eenhed med sig selv, maa være en indre,
+uendelig Modsætningseenhed, en Eenhed udviklet i Aanden som Aand.
+Den Sætning: \emph{Gud er Aand}, kan forsaavidt i formel Henseende
+meget vel udvikles til den Sætning: \emph{det guddommelige Væsen er
+trinitarisk}.
+
+Men er dette saa Troesbekjendelsens religiøse Treenighed? At gjøre
+ethvert af de tre Momenter i Begrebet af Guds Selvobjectivering til
+en Person for sig, det guddommelige Jeg til Faderen, det
+guddommelig Du til Sønnen og begges guddommelige Eenhed til den
+Hellig-Aand, hvad er det Andet end en uklar Sammenblanding af
+subjective Forestillinger med objective Begreber, en Personification
+af almene Væsensformer, om hvilke man med Grund kan sige, at
+Billederne tilhøre Troen, men at Tankerne ere laante fra Viden:
+Røsten er Jakobs Røst, men Hænderne ere Esaus.
+
+Skal Uklarheden hæves, maa den hæves methodisk. Troen paa den
+treenige Gud er af en ganske anden Oprindelse og har en ganske anden
+Charakteer end den objectivt metaphysiske Treenighedslære. Det
+religiøse Treenighedsbegreb er et Troesbegreb, udtrykkelig at
+bestemme ved de i det aabenbarede Gudsforhold indeholdte Momenter:
+Troesprincipet selv er et Treenighedsprincip. Heri ligger, at intet
+Moment i dette Begreb kan faae Betydning for Læren, hvis det ikke
+viser sig at have Betydning for Livet. Kunde Nogen vise, at en Tro
+paa den eneste sande Gud med alle i Troens Væsen indeholdte
+Fordringer, Forudsætninger og Conseqvenser var mulig uden Tro paa
+den treenige Gud, da vilde Treenighedslæren een Gang for alle være
+at betragte som
+% ---- printed p.81 (PDF 94) ----
+afskaffet. Men gjælder nu det Omvendte, at Troen paa den sande Gud,
+naar Gudsforholdet alsidig udvikles til fuld Klarhed, er og maa være
+Eet med Troen paa den treenige Gud: da er Treenighedslæren typisk
+for den religionsphilosophiske Methode. For at forebygge en
+Forvexling af den videnskabelige og den religiøse Objectivitet, tage
+vi da \emph{Treenighedslæren} udtrykkelig i Betydning af
+\emph{Treenighedstroen}, og angive Religionsphilosophiens Inddeling
+ved: \emph{Tro paa Faderen, Tro paa Sønnen og Tro paa Aanden}.
+
+% The Indledning closes here; the rest of p.81 is blank below a short rule.
+\begin{center}\rule{5cm}{0.4pt}\end{center}
+
+% ============================================================
+% ---- printed p.82 (PDF 95) ----
+\parthead{Tro paa Faderen.}
+\lettersub{A.}{Faderens Væsen.}
+\parmark{6}
+
+Naar Spørgsmaalet er om Altilværelsens Ophav, vende Videnskab og
+Religion sig strax i forskjellig Retning: Videnskaben seer ned i
+Nødvendigheden, nedad i Grunden, og fordrer af Fornuften, at den
+skal begribe det Absolute; men Religionen seer op mod Friheden og
+indskærper Tro paa den himmelske Fader. For at sand Forstaaelse
+mellem Tro og Viden skal kunne opnaaes, maae de stridige Anskuelser
+allerførst bringes til en saa fuldstændig Udtalelse, at Principernes
+Ueensartethed herigjennem kan komme tilsyne, og de modsatte
+Resultater vise sig at fremgaae af modsatte Forudsætninger. Striden
+vil gjælde det Guddommeliges Indre, dets iboende Momenter og den
+gjennem Momenterne udviklede Selvstændigheds eiendommelige
+Begrebsform. Imod Videns upersonlige Almene sætter da Troen det
+faderlige Selv; imod Videns Opløsning af alle
+Inderlighedsbestemmelser i det forskjelsløse Absolute sætter Troen
+et livsfyldigt Indbegreb af faderlige Egenskaber; imod det Absolutes
+negative Form sætter Troen positivt Faderens Personlighed. Da
+Striden imidlertid føres, ikke mellem en Vidende, som negter Troen,
+og en Troende, som forkaster Viden, men
+% ---- printed p.83 (PDF 96) ----
+væsentlig mellem Tro og Viden, med andre Ord: ikke mellem
+Individer, men mellem Principer: saa vil, idet ethvert af
+Principerne udvikler og bevæger sig frit i sin egen Sphære, og den i
+Mysteriet liggende Grændse fra begge Sider anerkjendes, den
+gjennemførte Strid kunne føre til en Forsoning.
+
+\runhead{a) Selvet i Faderen.}
+\parmark{7}
+
+Der er saavel i praktisk som i theoretisk Henseende anstillet en
+Mængde Overveielser for og imod Muligheden af at bevise Guds
+Tilværelse. Den, der skal bevise, at Gud er til, maa jo forud vide
+hvad Gud er; thi at ville bevise om Noget, man ikke veed hvad er, at
+det er til, er tankeløst. Da Gud nu ikke er kjendelig paa Andet end
+sig selv, og ikke kan kjendes paa sig selv uden at erkjendes for
+tilværende: saa er Erkjendelsen af Gud jo umiddelbar, og ethvert
+Forsøg med at bevise hans Tilværelse maa da synes at være lige saa
+overflødigt som intetsigende. Og dog er Forvisningen om Guds
+Tilværelse ingenlunde umiddelbar; den er tvertimod uendelig
+reflecteret. Dette vil blive indlysende, naar vi betænke, at et
+Menneske kun kan erkjende Gud i Forhold til som det erkjender sig
+selv: som Mennesket er, saa er dets Gud. Den Sætning, at enhver Dom
+om det guddommelige Selv, hvor objectivt den end mon lyde, væsentlig
+reflecterer sig i en Dom om det menneskelige, er en Hovedsætning,
+der sætter Skilsmisse mellem Tro og Viden. Vi fastholde denne
+Hovedsætning, idet vi, hvad Gudsforestillingens Realitet angaaer,
+med Hensyn paa de saakaldte Beviser opfatte \emph{det guddommelige
+Selv} først fra Videns Standpunkt, dernæst fra Troens og bestemme
+Mysteriets Kategorie som Grændse for Tro og Viden.
+% ---- printed p.84 (PDF 97) ----
+\greekrun{α}{Det guddommelige Selv opfattet fra Videns Standpunkt.}
+
+Staaer det fast, at Dommen om det guddommelige Selv afhænger af
+Dommen om det menneskelige: da er jo Spørgsmaalet, hvorledes den
+vidende Subjectivitet opfatter og maa opfatte sig selv i
+Videnskaben, et af de første og vigtigste Spørgsmaal. At det i al
+objectiv Viden væsentlig kommer an paa at erkjende det Almene, det
+Nødvendige, det af al subjectiv Individualitet Uafhængige, er ofte
+fremhævet. Men det Selv, der i Videns Form skal erkjende det
+Almene, maa ved Abstractionen, saa at sige, afdøe fra sin
+Individualitet og gjøre sig til Eet med det Almene; det maa, for at
+opfatte Sagen i dens Reenhed, forvandle sig til et Speil for Sagen.
+Det betragtende Selv gaaer da op i den almene Tænken; det
+betragtende, tænkende, dømmende Selv bliver under sin Betragten,
+Tænken og Dømmen i den Grad borte for sig selv, at det Intet
+bestemmer, Intet kan og Intet tør bestemme uden det, hvortil det ved
+Sagens Natur nødvendig bestemmes. Fortabt i Sagen, fordybet i
+Undersøgelsen kan den Grundende endog betages af en saa fuldstændig
+Selvforglemmelse, at han tilsidst har glemt baade Tiden og Stedet og
+den tilfældige Virkelighed, ligesom den i sine Opgaver fordybede
+Archimedes jo havde glemt baade Tiden og Stedet og den tilfældige
+Virkelighed, da han sagde til den romerske Soldat: \textit{noli
+turbare circulos meos}.
+
+Det er Videns første uafviselige Fordring, at det vidende Selv maa
+forvandle sig til abstract Væsenhed, til intellectuel Selvhed;
+Selvhed er det Enkeltes og Særskiltes reflecterede Eenhed med det
+Almene; kun i den intellectuelle Selvheds almene Form kan Selvet
+identificere sig med det Objective og tænke objectivt. Den, hvis
+Livsprincip absolut skal være objectivt, veed da heller ikke
+% ---- printed p.85 (PDF 98) ----
+Andet, end at Selvet selv er det Objective, „det Almindelige“, „det
+frie for sig værende Almene“, og hvad de Talemaader ellers hedde,
+hvormed tom Ordphilosophie kan blende en abstraheret abstraherende
+Subjectivitet.
+
+Som det gaaer med Bestemmelsen af det vidende Selv, saaledes ogsaa
+med Bestemmelsen af Videns Indhold. Her spørges ikke nærmest om,
+hvad der i endelig Forstand kan blive Gjenstand for videnskabelig
+Efterforskning, de mange udvortes eller indvortes Kjendsgjerninger;
+her spørges om Videns absolute Indhold, d.\ e.\ om Ideen som Idee.
+At Ideen i al sin Objectivitet ogsaa er Selvhed og har i sig
+Subjectivitetens Moment, udtales i Begrebet derved, at den siges at
+være Subject-Object, det Subjectives og Objectives absolute Eenhed.
+I umiddelbar objectiv Form er Ideen Natur, i subjectiv Form er den
+Aand: den subjective Idees absolute Identitet med den objective er
+Gud. Beviserne for Guds Tilværelse have nu den Betydning: at sætte
+Ideen i Bevægelse og vise, gjennem hvilke Overgange og
+„Mediationer“ Gudstanken giver sig selv Realitet.
+
+Disse Beviser, hvis Antal den nyere Philosophie særlig har
+reduceret til tre: \emph{det kosmologiske}, der slutter fra „den
+tilfældige Væren, som ikke kan bære sig selv“, til „den sande, i og
+for sig nødvendige Væren“ --- Beviset \textit{ex contingentia
+mundi}; \emph{det teleologiske}, der gaaer ud fra Verdens
+Hensigtsmæssighed og slutter til dens vise Ophav; og endelig
+\emph{det ontologiske}, der gaaer ud fra Gudsbegrebet selv og
+slutter til dets Realitet --- disse Beviser, saaledes som de findes
+behandlede og udviklede navnlig hos Hegel,\footnote{Vorlesungen über
+die Beweise vom Daseyn Gottes.} tjene, saavel hvert enkelt for sig
+som i systematisk Forbindelse, til at stadfæste, hvad ovenfor er
+sagt, at den ved Ideen bestemte
+% ---- printed p.86 (PDF 99) ----
+Viden ligesaa lidt formaaer at hæve sig fra Verden til Gud, som fra
+Nødvendighed til Frihed.
+
+Tanken i det kosmologiske Beviis er denne: Ikke fordi Verden er,
+maae vi tænke os Gud som værende, men fordi der ikke tilkommer
+Verden en sand Væren, maae vi søge den sande Væren over Verden, i
+Gud. At tænke den endelige Væren er at befrie den fra Enkelthedens
+og Tilfældighedens Form og begribe den som en almindelig, i og for
+sig nødvendig Væren, der er forskjellig fra hiin første: som Gud. At
+denne nødvendige Væren imidlertid kun ved Abstraction kan adskilles
+fra den tilfældige, har den negative Kritik meget rigtigt indseet.
+„Hvad vil dette sige Andet“ --- bemærker Strauss\footnote{Troeslære
+I. S.\ 334.} --- „end at Verden for den almindelige Forestilling
+viser sig som et Aggregat af endelige, for hinanden tilfældige Ting,
+og siden som lignende Love; den begribende Erkjendelse negerer disse
+Ting som for sig bestaaende Enkeltheder, og stiger op til den
+almindelige Eenhed, der ligesaavel sætter disse ud af sig, som den
+igjen tager dem tilbage i sig, d.\ e.\ som forholder sig til dem som
+Substansen til Accidenserne“? Altsaa: Gud er Verdens Substans, dens
+egen iboende Nødvendighed.
+
+Med det teleologiske Beviis skulde, ifølge Hegel, Substansen udvikle
+sig til det frie Begreb, og Frihedens Lys opgaae over
+Nødvendigheden; men den Frihed, som vindes ved Midlernes og
+Formaalenes immanente Dialektik, er kun den af sit eget Begreb
+forklarede Nødvendighed. Det er den organiske Natur, det
+organiserende Princip, Formaalenes Formaal, Livet i alt Levende, der
+opfattes som Gud; men en saadan Gud er jo netop Eet med Verden, er
+Verdens Liv, den levende Naturs iboende Nødvendighed.
+
+Hvad endelig det ontologiske Beviis angaaer, da er
+% ---- printed p.87 (PDF 100) ----
+dets Resultat tydelig nok udtalt. „De, der ere overbeviste om“,
+siger Hegel, „at det absolute Væsen i Tanken, ikke er Tanken selv,
+de tale bestandigen om, at Gud er et Hiinsides for Bevidstheden, og
+at det at tænke ham er at have et Begreb om ham, hvis Existens eller
+Virkelighed er noget fra hiint Begreb forskjelligt; ligesom naar vi
+tænke eller forestille os et Dyr eller en Steen, vort Begreb derom
+eller vor Forestilling er noget ganske Andet end Dyret selv“.
+Resultatet er, at Gud kun tænker sig som han tænkes af Mennesket, at
+Gud er Aanden i alle Aander, Begrebet i alle Begribende, Tænkningen
+i alle Tænkende --- ikke det villende Selv, men kun en almindelig
+Selvhed, det tænkende Væsens logiske Nødvendighed.
+
+Den Verdensanskuelse, som svarer til det af disse Beviser udviklede
+Gudsbegreb, er som bekjendt Pantheismen: i Pantheismen er Gud, uden
+Selv, kun den almene Selvhed. Hvormeget Hegel end arbeider paa at
+komme ud over Spinozismen og Pantheismen, saa kommer han dog i denne
+Forstand ikke af Stedet. Vel sandt, hans Gudsbegreb er langt rigere
+udviklet end Spinozas; men Principet er det samme; Udviklingen er
+formelt logisk; den hele logiske Idee-Udvikling foregaaer indenfor
+Pantheismens Grændser. Som Menneskets Selv er, saaledes er dets Gud;
+det vidende Selv opløser sig i Ideens Selvhed, thi Videns Gud er
+Ideens Selvhed. Men denne Selvets intellectuelle Opløsning har endnu
+en anden Conseqvens. Er det guddommelige Selv først opløst i
+Vidensideen, saa falder Ideen umiddelbart sammen med den naturlige
+Virkelighed og gaaer i denne sin Umiddelbarhed tabt som Idee. „Kun
+det Virkelige, det Sandselige, er, Ideen som Idee er ikke; den
+almene Selvhed er det tomme, selvløse Almene“; dette er Atheismens
+Løsen. For Atheismen er det selvløse Object, Atomet i materiel
+Umiddelbarhed, det evige Første, det Uoprundne,
+% ---- printed p.88 (PDF 101) ----
+Atheismen er en Slags naturnødvendig Conseqvens af Pantheismen, en
+nedslaaende, men videnskabelig Conseqvens.
+
+„Det er“, siger Martensen, „det unge Tydsklands sørgelige Berømmelse
+at have bragt Pantheismens fornegtende Conseqvenser i et System,
+hvilket de have søgt at skaffe Indgang hos Mængden. Istedetfor
+Schellings og Hegels intellectuel-poetiske, logisk-mystiske
+Verdensanskuelse have vi nu paa det Sidste faaet et ganske
+ordinairt \textit{système de la nature}. Under denne Slægts Hænder
+er det mystisk-poetiske Vingestøv gaaet af den pantheistiske
+Sommerfugl; den før saa glimrende viser sig nu for Tiden kun i en
+prosaisk Nøgenhed, eller dog kun med et Dødningehoved paa Vingerne.
+Thi det forkyndes nu uden Omsvøb, der er ingen Gud; Navnet „Gud“ er
+et kjedsommeligt Navn, hvorved intet Klart lader sig tænke.“
+
+\greekrun{β}{Det guddommelige Selv opfattet fra Troens Standpunkt.}
+
+Der tales vidt og bredt om Nødvendigheden af at ophæve
+Sjæledualismen og sikkre den menneskelige Selvbevidstheds Eenhed fra
+Grunden af: denne Tale er tom, saalænge det ikke gjøres indlysende,
+hvoraf Dualismen udspringer, hvor væsentlig den er, og paa hvilke
+Betingelser den lader sig ophæve. Kan det Selv, der fornegter Gud,
+og det Selv, der sætter Ideen i Guds Sted, og det Selv, der troer
+paa Gud, virkelig siges at være tre Ændringer af eet og samme
+Menneskeselv, eller have vi her tre Slags Mennesker, hvert med sit
+Selv, eller kunne de tre Slags Selv maaskee være til i eet og samme
+Menneske? Maaskee kan Spørgsmaalet synes besynderligt; men dets
+Besvarelse er nødvendig til Sagens Opklaring. Menneskets Dom om Gud
+er væsentlig en Dom om dets eget Selv; kun paa sig selv, i sig selv
+og fra sig selv kan det kjende Gud. Det sandselige Selv fornegter
+Gud; det
+% ---- printed p.89 (PDF 102) ----
+fornuftige Selv opløser sig i Selvhed og forvandler Gud til Idee:
+kun det aandelige Selv kan troe paa Gud. Naar her nu tales om tre
+forskjellige Slags Selv, vil det let forstaaes, at her ikke er Tale
+om tre umiddelbart existerende Ting, men om tre for
+Selvbevidstheden mulige Concentrationspunkter, tre for Villieslivet
+afgjørende Midtpunkter.
+
+Det menneskelige Væsens Eenhed er oprindelig en Selveenhed. Al
+typisk, organisk Dannelsesdrift i alle levende Organismer tyder hen
+paa en Formen og Virken, der er Selvhedsloven,
+Selvudviklingens Grundlov, underlagt. Men Selvudvikling er umulig
+uden en, om end ganske ubevidst, Selvbestemmen. Enhver
+Selvbestemmen antyder en Villen, men en saadan Villen er endnu ikke
+Villie. Først i de besjælede Organismer, Dyrene, begynder den i
+Dannelsesdriften antydede Grundvillen at antage Præg af
+Driftvillie. Den høiere Concentration er saa langt fra at være en
+Følge af dyrisk Sandsebevidsthed, at denne i dens Eiendommelighed
+tvertimod er en Følge af hiin. Af Naturen, d.\ e.\ i sin
+Tilværelses første Umiddelbarhed, har Mennesket nu vistnok
+Driftvillien tilfælles med Dyrene, ligesom det jo ogsaa har Sandser,
+Forstandsanlæg o.\ s.\ v.\ tilfælles med Dyrene; men da
+Sjæleprincipet i Mennesket udtrykkelig adskiller sig fra det dyriske
+derved, at det allerede fra første Begyndelse af er et
+Selvbevidsthedsprincip, saa er ogsaa Driftvillien i Mennesket
+allerede fra Begyndelsen af en Selvbevidsthedsvillie, en
+Grundvillie, der producerer sig selv ved at producere sin
+Bevidsthed. Den af sandselige Forestillinger opfyldte
+Selvbevidsthed har i Driftvillien sit selviske Midtpunkt, sit første
+styrende Eenhedspunkt: hertil svarer det sandselige Selv.
+
+Ved at anerkjende det Almene og bevæges af Ideen undergaaer
+Menneskelivet en væsentlig Forandring, som navnlig bestaaer deri, at
+det styrende Eenhedspunkt, saa
+% ---- printed p.90 (PDF 103) ----
+at sige, flytter sig og lægger sig ind i Ideen: Driftvillien
+forsvinder just ikke, men den gaaer op i Ideevillien, og Mennesket
+fremtræder som et fornuftigt Selv. Men Ideevillien er tvetydig; det
+Almene opfylder Selvet og fortærer Selvet, opløser det i Selvhed.
+Først naar der foregaaer en saadan Selvconcentration, at det
+styrende Midtpunkt lægges ind i Gud, saa at Menneskets Villie bliver
+Organ for Guds Villie, da er Mennesket forvandlet: det er blevet et
+nyt Selv, et aandeligt Selv.
+
+At nu Menneskets Bevidsthed ikke paa een Gang kan bevæge sig om tre
+lige faste Midtpunkter, er begribeligt; men at det ene og samme
+Menneske kan befinde sig i Overgangstilstande, hvor det sjælelige
+Liv deler sig saaledes, at snart Driftvillien, snart Fornuftvillien,
+snart Aandsvillien enten ganske eller tildeels har Overvægt, er en
+Kjendsgjerning. Vi see det paa „Gudsbevidstheden“.
+
+Overalt i alle Lande, hvor den aabenbarede Religion har udøvet nogen
+social Indflydelse, vil der være et stort Antal Mennesker, der bilde
+sig ind, at de virkelig troe paa Guds Tilværelse, og dog er denne
+deres Tro ikke synderligt Mere end en from Indbildning. Atheismens
+aabenbare Paastand: der er ingen Gud, afvise de med Skræk og
+Uvillie; det er dem, som om en saadan Paastand krænkede Menneskets
+Værdighed og gjorde Tilværelsen meningsløs. Hvoraf kommer det? Det
+er det halvfornuftige, halvaandelige Selv, der føler sig krænket.
+Men troe de da ikke virkelig paa Guds Tilværelse? Ingenlunde! Det er
+kun saalænge Forestillingen om Tilværelse kan falde sammen med en
+taaget Forestilling om Fraværelse, at Gudstilværelsen foresvæver
+dem. „Gud er til, men han er i Himlen“; det vil sige: Gud er
+tilværende, men uendelig fraværende. Skal Forestillingen om den
+tilværende Gud derimod sættes i Kraft, skal hans Tilværelse betyde
+hans indre umiddelbare Nærværelse,
+% ---- printed p.91 (PDF 104) ----
+hvormange ville da ikke falde fra? At det guddommelige Selv, den
+villende Gud, virkeligt er hvert enkelt Menneske umiddelbart nær, at
+et Menneske midt i Tilværelsens tusinde Anliggender ikke skal kunne
+røre sig, ikke have en eneste Følelse, ikke en Tanke saa skjult,
+ikke en Attraa saa hemmelig, at jo den tilværende og just derfor
+uendelig nærværende Gud har i hvert Øieblik sit Øie fæstet paa dette
+enkelte Menneske, og ved hvert enkelt Anliggende spørger i Taushed,
+om det vil gjøre hans Villie: en saadan Forestilling er ikke til at
+udholde! Det naturlige Selv reagerer fra Sindets naturlige Grund, og
+det naturlige Selv har Medhold i „den sunde Fornuft“. Menneskets
+halvsandselige og halvfornuftige Selv smelte her sammen til et
+tvivlende Selv, og dette tvivlende, om Livets høieste Anliggender
+med sig forøvrigt uenige Selv er nu enigt med sig selv derom, at det
+guddommelige Selv er altfor paatrængende.
+
+Hvad vil saa Religionen? Vil den udrydde Menneskenaturen, fordømme
+Fornuften, oprykke det sandselige og fornuftige Selv med Rode, for
+at plante et naturløst, unaturligt og fornuftløst Selv i Stedet?
+Langtfra! En saadan Tydning er ingen Forklaring; det er en
+Bagvaskelse. Hvad Religionen fordrer er Tro, Tro paa Gud, og da
+allerførst Tro paa hans Tilværelse. Det sandselige Selv kan ikke
+troe; og derfor fordrer Religionen, at det Sandselige skal ved
+forstærket Villie beherskes af det Aandelige. Det almeenfornuftige
+Selv kan ikke troe; og derfor fordrer Religionen, at Mennesket skal
+i Villiens ubetinget afgjørende Concentration sætte sit aandelige,
+evige Selv høiere end Fornuftideernes almene Selvhed: Troen paa Guds
+Tilværelse er udelukkende betinget af Bevidsthedens Concentration i
+det evige Selv.
+
+Altsaa --- siger man --- behøves der fra Troens Standpunkt slet
+ingen Beviser for Guds Tilværelse: Gud har aabenbaret sig, har viist
+sig for Mennesket som han
+% ---- printed p.92 (PDF 105) ----
+er; hermed maa der een Gang for alle være gjort Ende paa den ellers
+endeløse Bevisen! --- Det kommer dog an paa, hvorledes man forstaaer
+Sagen. Thi vel har Aabenbaringen sit Umiddelbare ligesaa vel som
+Troen; men dette Umiddelbare er i sin Grund uendelig reflecteret. Vi
+see det af Ordets og Aandens Væsen.
+
+\emph{Beviis af Ordet.} Naar der i videnskabelig Forstand tales om
+at føre Beviis for Noget, være sig en Kjendsgjerning, en
+Læresætning eller hvilkensomhelst almindelig Sandhed, da falder
+Beviisførelsen væsentlig i den Bevisendes egen Subjectivitet. Sagen,
+der skal bevises, er objectiv, hviler i objectiv Væren, forholder
+sig passiv og forsaavidt ligegyldig mod sit Beviis: dette gjælder
+endog om den saakaldte Selvbevægelse, den dialektiske Sagbevægelse,
+der særlig og med Grund anprises som et Fortrin ved Hegels immanente
+Methode. Anderledes, naar Talen er om Gud og Guds Tilværelse. Her
+gjælder det ikke, at det, som skal bevises, er i objectiv Væren
+ligegyldigt mod sit Beviis. Den religionsphilosophiske Tænker kan
+ikke behandle det guddommelige Selv, som man i Videnskaben behandler
+en immanent Idee; han kan ikke ved nogensomhelst Dialektik mane
+dette Selv frem af dets evige Skjul, trylle det ind i en
+uimodstaaelig Tankebevægelse og sætte det i den Nødvendighed, at det
+absolut maa vise sig aabenbart. Det er ikke Mennesket, der beviser
+for sig og Andre, at Gud nødvendig maa være til; nei, det er Gud
+selv, den frie Gud, der beviser sin Tilværelse for Mennesket.
+Beviset er, at Gud taler til Mennesket: Beviset er Guds Ord. Selvet
+og Ordet svare til hinanden, reflectere og forklare hinanden: tag
+Selvet bort, og Ordet vil forsvinde; tag Ordet bort, og Selvet vil
+forsvinde. I sit Ord, og kun i sit Ord, har Gud udtrykkeligt,
+utvetydigt beviist sin egen Tilværelse. At troe paa Guds Tilværelse
+er at troe paa Guds Ord, at tvivle om Guds Ord er at tvivle om Guds
+% ---- printed p.93 (PDF 106) ----
+Tilværelse. Hvad Gud „har talet til Fædrene ved Propheterne“, er i
+denne Sammenhæng ikke det Afgjørende; det Afgjørende er, at Gud har
+talet.
+
+\emph{Beviis af Aanden.} Af Ordets og Selvets reflecterede Eenhed
+følger, at Ordet fra Gud ligesaa lidt kan fastholdes i objectiv
+værende Umiddelbarhed som Gud selv. Menneskeordet har, naar det een
+Gang er udtalt, en objectiv, af den Talende uafhængig Tilværelse, en
+Tilværelse, der, selv om den Talende siden fortrød sit Ord, ikke kan
+kaldes tilbage. Men saaledes forholder det sig ikke med det
+guddommelige Ord; det taaler ikke den udvortes Facticitet: det døer
+i Umiddelbarheden; dets objective Tilværen i Skrift og Tradition er
+uden Betydning, naar det er skilt fra den talende Gud. Har et
+Menneske een Gang tydelig udtalt, hvad der boer i ham, og i det
+saaledes Udtalte givet sit Selv en aandelig Nærværelse, da er det
+nok: da tie han stille, lade Ordet gaae sin Gang og gjøre sin
+Virkning. Med Gudsordet er det en anden Sag: det guddommelige Ord
+kan ikke virke, ikke læses, ikke høres, ikke fattes eller forstaaes
+uden i og ved og med den guddommelige Talen.
+
+Hvad Aabenbaringsmaaden angaaer, maa der ganske vist gjøres en
+Forskjel imellem det udvortes og det indvortes, mellem det hørlige
+og det uhørlige Ord; men det er en Forskjel mellem Umiddelbarhedens
+og Reflexionens Form, der ikke paa nogen Maade berettiger os til at
+skille Ordet fra Talen. I den lydelige Talen er Aanden Ord; i den
+tause Talen er Ordet Aand. Dersom ikke det samme Ord, der igjennem
+Skrift og Tradition kommer til Bevidstheden udenfra, i Opfattelsens
+Øieblik kommer frem i Bevidstheden indenfra, saaledes at det fra
+begge Sider erkjendes at komme fra Gud, kan det umulig opfattes som
+Guds Ord: Eftertrykket falder ikke paa Ordet, men paa det Selv, der
+taler Ordet.
+% ---- printed p.94 (PDF 107) ----
+Heraf sees, at Beviset for Guds Tilværelse maa være absolut
+ueensartet med et hvilketsomhelst videnskabeligt Beviis for en
+hvilkensomhelst videnskabelig Sandhed. Den videnskabelige Sandhed
+forstaaes af Ordet, og det er forsaavidt ligegyldigt, hvem der taler
+Ordet. Er en Læresætning een Gang for alle beviist, saa er den jo
+beviist, og saa er den Sag afgjort: Sætningen staaer fast, og man
+kan ved given Anledning vise hen til Beviset. Men saaledes kan
+Beviset for Guds Tilværelse ikke afsluttes; det er et Aandsbeviis;
+det lever af Aanden i Aanden, og Beaandelsen maa, ligesom
+Aandedrættet, uophørlig fortsættes. Kalde vi nu Aandsbeviset i dets
+indre uendelige Fortsættelse et Reflexionsbeviis, da er det
+Eiendommelige i Reflexionen kjendeligt paa den uendelige
+Vexelbestemmelse af det udvortes og det indvortes, det hørlige og
+det uhørlige Ord. Uden det udvortes, hørlige Ord, det Ord, Gud
+fordum talede „til Fædrene ved Propheterne“, vilde den tilværende
+Gud forvandle sig til Idee, og det guddommelige Selv løses op i
+metaphysisk almindelig Selvhed; uden det indvortes, i sig uhørlige
+Tankeord, vilde det udvortes Ord være dunkelt og dødt, Guds
+Tilværelse umiddelbar Fraværelse, og Forvisningen mangle.
+Forvisningen om, at der i Sandhed fra Gud er et udvortes Ord, er i
+hvert Reflexionens Øieblik uadskillelig fra Forvisningen om, at der
+i Sandhed fra Gud er et indvortes Ord, og omvendt; Forvisningen om
+Guds Tilværelse er betinget af Selvforvisning, en indre Forvisning
+om egen Tilværelse, og omvendt.
+
+\emph{Troesbeviset.} „Jeg veed, at Gud er til, saa vist som jeg
+veed, at jeg selv er til“; disse Ord kunne udtales med en saa
+umiddelbar Overbeviisningens Styrke, at de gjøre et Indtryk, som
+havde den Talende virkelig en fuldkommen Forvisning, og var, hvad
+Guds Tilværelse angaaer, ganske og aldeles paa det Rene med sig
+selv. Ikke destomindre er Udtalelsen tvetydig, og det saavel
 
 \end{document}

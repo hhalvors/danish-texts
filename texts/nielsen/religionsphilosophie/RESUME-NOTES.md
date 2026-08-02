@@ -77,16 +77,26 @@ paa Faderen, Tro paa Sønnen og Tro paa Aanden."
 
 **The live file is `transcription.tex` in this folder — one file for the whole
 book.** Done and image-verified: title leaf, preface theses, and printed
-**pp. 1–68** — §§ 1–4 complete, and § 5 *Troesprincipet: Religionsphilosophiens
-Methode* (from p.56) through its run-heads *a) Troen og dens Indhold* (p.57) and
-*b) Troesbekjendelsen* (p.67), carried to p.68.
-**Resume at printed p.69 (PDF 82).** Thirteen pages left in the Indledning; "Tro
-paa Faderen" (§ 6) opens p.82.
+**The INDLEDNING IS COMPLETE — pp. 1–81, §§ 1–5.** In *Tro paa Faderen* /
+*A. Faderens Væsen*: § 6 (p.82), *a) Selvet i Faderen* with § 7 (p.83), then
+*α) …fra Videns Standpunkt* (p.84) and *β) …fra Troens Standpunkt* (p.88).
+Transcribed to p.94. **Resume at printed p.95 (PDF 108).**
 
-Checks that pass on the current file: 68 page-break comments, contiguous pp.1–68,
-every one at offset +13; braces balanced; „ and “ balanced (59 each); `$` count
-even; 4 footnotes; 6 `% sic:` notes; no `\IfFileExists` or `\gk` left anywhere.
-Last confirmed `make` build: pp. 1–60 state, by the author.
+A fifth structural device appears inside β): **letterspaced inline run-ins** that
+divide the argument without being headings — *Beviis af Ordet.* (p.92), *Beviis af
+Aanden.* (p.93), *Troesbeviset.* (p.94). They open a paragraph and run straight
+into the sentence, so they take plain `\emph{}`, not `\runhead`. Watch for more.
+
+Checks that pass on the current file: 94 page-break comments, contiguous pp.1–94,
+every one at offset +13; braces balanced; `$` count even; 8 footnotes; 9 `% sic:`
+notes; quote running balance shows the expected 1 dropped-open + final balance 1;
+no `\IfFileExists` or `\gk` anywhere.
+
+**Compile status: last confirmed `make` build was the pp. 1–60 state.** Three
+macros added since then have never been through a real compile —
+`\parthead`, `\lettersub`, `\greekrun`. The `\addcontentsline` calls in the first
+two, and the Greek in the third, are the places a failure would surface. Worth a
+`make` before going much further.
 
 Mathematics has started appearing — the p.48 footnote sets
 $\frac{o}{a}=0$ and $\frac{a}{\infty}=0$, and the Hume quotation on p.47 has
@@ -134,6 +144,27 @@ so far, only Latin tags: *ubique et nusquam* (p.6), *eo ipso* (p.36),
 **2. Footnotes can run across a page boundary.** The Martensen/Schleiermacher note
 begins on p.39 and continues over most of p.40, whose body text is only four lines.
 It is transcribed whole at its p.39 marker, with a comment at both ends.
+
+### Quote marks
+
+House form is „…“ (U+201E / U+201C), as in the rest of the repo.
+
+**Two quotation defects in the setting are reproduced as printed.** Check the
+*running balance*, not the totals — the two cancel, so raw counts look clean:
+
+1. **p.72 (in the p.71 footnote): a dropped opening mark.** The quotation resumed
+   at "Naar Skriften betragtes" has no opening „, yet is closed after
+   "subjectivt“". Verified at 500 dpi.
+2. **p.78: a dropped closing mark.** The quotation opened at „den Hellig-Aand ikke
+   blot er noget forskjelligt fra…" is never closed; the single “ after
+   "Videnskabens Aander" closes only the *inner* quotation. Verified at 500 dpi.
+
+Expected signature: exactly **one** dropped-open event, and a final balance of
+exactly **1**. Anything else is a real error in the transcription.
+
+The same footnote sets „Dette“ and the Grundtvig quotation with the substitute
+sorts `,,…‘‘` instead of `„…“`. Normalised to the house form, since it is the same
+logical quotation rather than a distinct usage; flagged in a comment at the spot.
 
 ### Printer's slips found so far
 Reproduced as printed, each with a `% sic:` comment. None is in RETTELSER.
@@ -187,11 +218,30 @@ Modsigelsen" — a different claim, not a misreading. Between that and the
 "uforenelige med al Videnskab" substitution, nothing in the old file should be
 carried over without checking it against the image.
 
-**Next step: transcribe from printed p.69 (PDF 82) onward** in `transcription.tex`,
+**Next step: transcribe from printed p.95 (PDF 108) onward** in `transcription.tex`,
 straight through to p.81 to finish the Indledning, then on into "Tro paa Faderen"
 (§ 6, p.82). The old `indledning/transcription.tex` can be deleted once pp. 1–18
 here are considered settled; `indledning/translation.tex` is untouched and still
 the only English text that exists for this work.
+
+## Division macros
+
+Four levels, all defined in the preamble:
+
+| Macro | Use | Example |
+|---|---|---|
+| `\parthead{…}` | the three main divisions; each starts a new page | `Tro paa Faderen.` (p.82) |
+| `\lettersub{A.}{…}` | lettered sub-division, letter set over title | `A.` / `Faderens Væsen.` (p.82) |
+| `\subhead{…}` | centred bold sub-head inside a division | `Religion og Philosophie.` (p.1) |
+| `\runhead{…}` | centred bold run-head | `a) Ordets Oprindelighed.` (p.43) |
+| `\greekrun{α}{…}` | fourth-level head, italic Greek marker + bold title | `α) Det guddommelige Selv opfattet fra Videns Standpunkt.` (p.84) |
+| `\parmark{N}` | centred `§ N.`; deliberately **not** in the ToC | `§ 6.` (p.82) |
+
+**The fourth-level markers are real Greek letters** — α) β) γ), not Latin a) b) c).
+Verified at 600 dpi on p.84; the single-storey italic α is unmistakable against the
+Latin `a)` of the level above (`a) Selvet i Faderen.`, p.83). The garbled Indhold
+OCR ("«) … ß) … Y)") is this same series. `textalpha` is loaded, so they set
+directly. Expect γ) as the third member throughout.
 
 ## Rendering conventions (inherited from `indledning/`, keep consistent)
 - Preamble: `article`, 12pt a4paper, `libertinus` + `libertinust1math`,
@@ -219,15 +269,27 @@ Checks that don't require a compile (use these instead):
 ```bash
 python3 - <<'EOF'
 import re
-s = open('transcription.tex', encoding='utf-8').read()
-print("braces balanced:", s.count('{') == s.count('}'))
-print("quotes „/“:", s.count('„'), s.count('“'), s.count('„') == s.count('“'))
-print("$ even:", s.count('$') % 2 == 0)
+raw = open('transcription.tex', encoding='utf-8').read()
+# Strip TeX comments first — the header and the "% sic:" notes contain „ and “ as
+# prose, which otherwise skews the quote check.
+body = '\n'.join(re.sub(r'(?<!\\)%.*$', '', l) for l in raw.split('\n'))
+print("braces balanced:", body.count('{') == body.count('}'))
+print("$ even:", body.count('$') % 2 == 0)
 m = [(int(a), int(b)) for a, b in
-     re.findall(r'---- printed p\.(\d+) \(PDF (\d+)\) ----', s)]
+     re.findall(r'---- printed p\.(\d+) \(PDF (\d+)\) ----', raw)]
 print("range:", m[0], "..", m[-1], "n =", len(m))
 print("gaps:", [p for i, (p, _) in enumerate(m) if p != i + 1])
 print("offset +13 throughout:", all(b - a == 13 for a, b in m))
+# Running balance, not totals: the two known defects cancel in the raw counts.
+bal, neg = 0, []
+for i, line in enumerate(body.split('\n'), 1):
+    for ch in line:
+        if ch == '„': bal += 1
+        elif ch == '“':
+            bal -= 1
+            if bal < 0: neg.append(i); bal = 0
+print("dropped-open events (expect exactly 1, in the p.71 footnote):", neg)
+print("final balance (expect exactly 1 — the unclosed open on p.78):", bal)
 EOF
 ```
 
