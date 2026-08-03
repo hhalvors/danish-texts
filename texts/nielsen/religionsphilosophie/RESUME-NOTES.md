@@ -95,8 +95,11 @@ Kosmogonie* (p.152), *β) Den bibelsk religiøse Anskuelse: Skabelse i sex Dage*
 (p.154), *γ) Skabelse og Kosmogonie: Mysteriet* (p.157).
 *b) Opholdelsen* (§ 12) opens p.165, with *α) Skabelse og Opholdelse* (p.166),
 *β) Opholdelse og Naturproces* (p.170) and *γ) Opholdelsens Mysterium* (p.174).
-*c) Styrelsen* (§ 13) opens p.179, with *α) Styrelsen og Verdensløbet* (p.181).
-Transcribed to p.184. **Resume at printed p.185 (PDF 198)** — no quotation open
+*c) Styrelsen* (§ 13) opens p.179, with *α) Styrelsen og Verdensløbet* (p.181),
+*β) Det aabenbarede Ord om Forsynets Styrelse* (p.185) and *γ) Tro paa det
+styrende Forsyn* (p.191). **C. Faderens Rige** (§ 14) opens p.200 — the last of
+the three lettered divisions of *Tro paa Faderen*.
+Transcribed to p.200. **Resume at printed p.201 (PDF 214)** — no quotation open
 across this cut.
 
 **The Indhold's page numbers have now been confirmed exact eleven times running**
@@ -111,12 +114,12 @@ divide the argument without being headings — *Beviis af Ordet.* (p.92), *Bevii
 Aanden.* (p.93), *Troesbeviset.* (p.94). They open a paragraph and run straight
 into the sentence, so they take plain `\emph{}`, not `\runhead`. Watch for more.
 
-Checks that pass on the current file: 184 page-break comments, contiguous pp.1–184,
+Checks that pass on the current file: 200 page-break comments, contiguous pp.1–200,
 every one at offset +13; braces balanced; `$` count even; 22 footnotes; 14 `% sic:`
-notes; 16 `\greekrun` heads; quote running balance at the expected 1
-dropped-open + final balance 1; no `\IfFileExists`/`\gk`.
+notes; 1 `% LACUNA`; quote running balance at the expected 1 dropped-open + final
+balance 1; no `\IfFileExists`/`\gk`.
 
-**Progress: 184 of 537 body pages = 34.3%.**
+**Progress: 200 of 537 body pages = 37.2%.**
 
 **Compile status: `make` confirmed green at the pp. 1–94 state**, which exercised
 `\parthead`, `\lettersub` and `\greekrun` (including the Greek α/β/γ markers).
@@ -187,6 +190,31 @@ page-break comments don't imply a full page of body text where there isn't one:
 | Martensen/Schleiermacher | p.39 → p.40 | four lines |
 | Kierkegaard, *Efterskrift* | p.71 → p.72 → p.73 | five lines on p.72 |
 | Strauss on Fichte and Hegel | p.106 → p.107 | one closing paragraph |
+
+## A SECOND COPY EXISTS — use it when the KB scan fails
+
+**`~/bibliotek/Nielsen, Rasmus/religion-1869.pdf` is a Google Books scan of the
+BODLEIAN copy of the same 1869 edition.** It is an independent witness to the whole
+book. Whenever the KB scan (14,-225 8°) is damaged or illegible, collate there
+rather than conjecturing.
+
+**Already used once, at printed p.200.** The KB copy has an offset/ink-transfer
+defect on that leaf which had lifted the type across ~2 lines. Nothing recovered it
+— 900 dpi rendering, `-normalize`, `-sigmoidal-contrast`, `-level`, unsharp
+masking, and the PDF's own text layer all failed, because the type had lifted
+rather than faded. The Bodleian copy is clean there, and the missing words are:
+
+> Tilstanden paa Jorden, da Mennesket fremkom, **Menneskelivets Begyndelse,**
+> Overgangen fra Natur- til Culturtilstand …
+
+**Note the methodological point.** From context I had guessed the gap read something
+like *Menneskeslægtens Uddannelse*. It does not — it reads *Menneskelivets
+Begyndelse*. Marking the lacuna instead of filling it was what kept a plausible
+invention out of the text. Keep doing that: mark, then collate.
+
+(KB also holds five other physical copies — Rel. 84530 8°, UK Nielsen 2,
+UnReK A12 rel fil, U 7 Nie, and the digitised 14,-225 8° — if a third witness is
+ever needed.)
 
 ### Quote marks
 
@@ -275,11 +303,11 @@ Modsigelsen" — a different claim, not a misreading. Between that and the
 "uforenelige med al Videnskab" substitution, nothing in the old file should be
 carried over without checking it against the image.
 
-**Next step: transcribe from printed p.185 (PDF 198) onward** in `transcription.tex`,
-inside *c) Styrelsen* (§ 13). Ahead: β) Det aabenbarede Ord om Forsynets Styrelse
-(p.185), γ) Tro paa det styrende Forsyn (p.191); then *C. Faderens Rige* § 14
-(p.200), which closes *Tro paa Faderen* — a) Ideal og Virkelighed § 15 (201),
-b) Verdensidealer § 16 (224), c) Gudsrigets Ideal § 17 (256).
+**Next step: transcribe from printed p.201 (PDF 214) onward** in `transcription.tex`,
+inside *C. Faderens Rige* (§ 14): a) Ideal og Virkelighed § 15 (p.201) with heads
+at 201 / 207 / 217, b) Verdensidealer § 16 (p.224) with heads at 226 / 238 / 245,
+c) Gudsrigets Ideal § 17 (p.256) with heads at 256 / 260 / 267. *Tro paa Faderen*
+then closes and *Tro paa Sønnen* opens at p.272.
 
 **`catalog.yaml` now points only at this file** — one section, "Complete work
 (pp. 1–537)", linking `religionsphilosophie/transcription.pdf`. The `indledning/`
