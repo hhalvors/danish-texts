@@ -99,7 +99,9 @@ Kosmogonie* (p.152), *β) Den bibelsk religiøse Anskuelse: Skabelse i sex Dage*
 *β) Det aabenbarede Ord om Forsynets Styrelse* (p.185) and *γ) Tro paa det
 styrende Forsyn* (p.191). **C. Faderens Rige** (§ 14) opens p.200 — the last of
 the three lettered divisions of *Tro paa Faderen*.
-Transcribed to p.200. **Resume at printed p.201 (PDF 214)** — no quotation open
+Within it, *a) Ideal og Virkelighed* (§ 15, p.201) with *α) Uskyldighedsidealet*
+(p.201) and *β) Fristelse og Fald* (p.207).
+Transcribed to p.208. **Resume at printed p.209 (PDF 222)** — no quotation open
 across this cut.
 
 **The Indhold's page numbers have now been confirmed exact eleven times running**
@@ -114,12 +116,12 @@ divide the argument without being headings — *Beviis af Ordet.* (p.92), *Bevii
 Aanden.* (p.93), *Troesbeviset.* (p.94). They open a paragraph and run straight
 into the sentence, so they take plain `\emph{}`, not `\runhead`. Watch for more.
 
-Checks that pass on the current file: 200 page-break comments, contiguous pp.1–200,
-every one at offset +13; braces balanced; `$` count even; 22 footnotes; 14 `% sic:`
-notes; 1 `% LACUNA`; quote running balance at the expected 1 dropped-open + final
-balance 1; no `\IfFileExists`/`\gk`.
+Checks that pass on the current file: 208 page-break comments, contiguous pp.1–208,
+every one at offset +13; braces balanced; `$` count even; 23 footnotes; 14 `% sic:`
+notes; no lacunae outstanding; quote running balance at the expected 1 dropped-open
++ final balance 1; no `\IfFileExists`/`\gk`.
 
-**Progress: 200 of 537 body pages = 37.2%.**
+**Progress: 208 of 537 body pages = 38.7%.**
 
 **Compile status: `make` confirmed green at the pp. 1–94 state**, which exercised
 `\parthead`, `\lettersub` and `\greekrun` (including the Greek α/β/γ markers).
@@ -216,6 +218,29 @@ invention out of the text. Keep doing that: mark, then collate.
 UnReK A12 rel fil, U 7 Nie, and the digitised 14,-225 8° — if a third witness is
 ever needed.)
 
+### Using the second witness
+
+`bodleian.sh` sits next to `twoup.sh` and works the same way:
+
+```bash
+./bodleian.sh 200        # one page
+./bodleian.sh 200 201    # facing pair
+```
+
+**The two scans have DIFFERENT offsets** — this is the easy thing to get wrong:
+
+| witness | file | offset | text layer |
+|---|---|---|---|
+| KB, shelfmark 14,-225 8° | `scan.pdf` (in this folder) | PDF = printed **+ 13** | usable, poor |
+| Bodleian, Google Books | `~/bibliotek/Nielsen, Rasmus/religion-1869.pdf` | PDF = printed **+ 14** | **none** — image only |
+
+Offset verified on Bodleian PDF 206/208/210/212/214 → printed 192/194/196/198/200.
+Because that copy has no OCR layer, collation against it is necessarily visual.
+
+Beyond repairing damage, the second witness is also the way to settle the more
+surprising `% sic:` readings — a genuine compositor's error will appear in *both*
+copies; a defect peculiar to the KB copy will not.
+
 ### Quote marks
 
 House form is „…“ (U+201E / U+201C), as in the rest of the repo.
@@ -303,11 +328,11 @@ Modsigelsen" — a different claim, not a misreading. Between that and the
 "uforenelige med al Videnskab" substitution, nothing in the old file should be
 carried over without checking it against the image.
 
-**Next step: transcribe from printed p.201 (PDF 214) onward** in `transcription.tex`,
-inside *C. Faderens Rige* (§ 14): a) Ideal og Virkelighed § 15 (p.201) with heads
-at 201 / 207 / 217, b) Verdensidealer § 16 (p.224) with heads at 226 / 238 / 245,
-c) Gudsrigets Ideal § 17 (p.256) with heads at 256 / 260 / 267. *Tro paa Faderen*
-then closes and *Tro paa Sønnen* opens at p.272.
+**Next step: transcribe from printed p.209 (PDF 222) onward** in `transcription.tex`,
+finishing *a) Ideal og Virkelighed* — γ) Forbandelsen falls at p.217. Then
+b) Verdensidealer § 16 (p.224) with heads at 226 / 238 / 245, c) Gudsrigets Ideal
+§ 17 (p.256) with heads at 256 / 260 / 267. *Tro paa Faderen* then closes and
+*Tro paa Sønnen* opens at p.272.
 
 **`catalog.yaml` now points only at this file** — one section, "Complete work
 (pp. 1–537)", linking `religionsphilosophie/transcription.pdf`. The `indledning/`
