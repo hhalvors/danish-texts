@@ -100,8 +100,9 @@ Kosmogonie* (p.152), *β) Den bibelsk religiøse Anskuelse: Skabelse i sex Dage*
 styrende Forsyn* (p.191). **C. Faderens Rige** (§ 14) opens p.200 — the last of
 the three lettered divisions of *Tro paa Faderen*.
 Within it, *a) Ideal og Virkelighed* (§ 15, p.201) with *α) Uskyldighedsidealet*
-(p.201) and *β) Fristelse og Fald* (p.207).
-Transcribed to p.208. **Resume at printed p.209 (PDF 222)** — no quotation open
+(p.201), *β) Fristelse og Fald* (p.207) and *γ) Forbandelsen* (p.217); then
+*b) Verdensidealer* (§ 16, p.224) with *α) Den faldne Slægt* (p.226).
+Transcribed to p.232. **Resume at printed p.233 (PDF 246)** — no quotation open
 across this cut.
 
 **The Indhold's page numbers have now been confirmed exact eleven times running**
@@ -116,12 +117,12 @@ divide the argument without being headings — *Beviis af Ordet.* (p.92), *Bevii
 Aanden.* (p.93), *Troesbeviset.* (p.94). They open a paragraph and run straight
 into the sentence, so they take plain `\emph{}`, not `\runhead`. Watch for more.
 
-Checks that pass on the current file: 208 page-break comments, contiguous pp.1–208,
-every one at offset +13; braces balanced; `$` count even; 23 footnotes; 14 `% sic:`
+Checks that pass on the current file: 232 page-break comments, contiguous pp.1–232,
+every one at offset +13; braces balanced; `$` count even; 25 footnotes; 15 `% sic:`
 notes; no lacunae outstanding; quote running balance at the expected 1 dropped-open
 + final balance 1; no `\IfFileExists`/`\gk`.
 
-**Progress: 208 of 537 body pages = 38.7%.**
+**Progress: 232 of 537 body pages = 43.2%.**
 
 **Compile status: `make` confirmed green at the pp. 1–94 state**, which exercised
 `\parthead`, `\lettersub` and `\greekrun` (including the Greek α/β/γ markers).
@@ -291,6 +292,10 @@ Reproduced as printed, each with a `% sic:` comment. None is in RETTELSER.
   (an instant). 550 dpi.
 - p.160 note: „Philosophisk **Propædentik**“ — an *n* where the *u* belongs, in the
   title of Nielsen's own 1860–61 lecture course. 600 dpi.
+- p.229 "Han har valgt **vig** Kain til Forbillede" — a *v* where the *s* of *sig*
+  belongs. **CONFIRMED BY COLLATION**: the Bodleian copy reads "vig" too, so this
+  is an error in the 1869 setting, not a defect in the KB scan. Both at 600 dpi.
+  This is the pattern to follow for the remaining sic readings.
 
 Two typographic points established while transcribing pp. 1–18, both of which the
 old `indledning/` file got wrong and which recur constantly:
@@ -328,11 +333,11 @@ Modsigelsen" — a different claim, not a misreading. Between that and the
 "uforenelige med al Videnskab" substitution, nothing in the old file should be
 carried over without checking it against the image.
 
-**Next step: transcribe from printed p.209 (PDF 222) onward** in `transcription.tex`,
-finishing *a) Ideal og Virkelighed* — γ) Forbandelsen falls at p.217. Then
-b) Verdensidealer § 16 (p.224) with heads at 226 / 238 / 245, c) Gudsrigets Ideal
-§ 17 (p.256) with heads at 256 / 260 / 267. *Tro paa Faderen* then closes and
-*Tro paa Sønnen* opens at p.272.
+**Next step: transcribe from printed p.233 (PDF 246) onward** in `transcription.tex`,
+inside *b) Verdensidealer* (§ 16) — β) Verdensguderne falls at p.238, γ) Denne
+Verdens Fyrste at p.245. Then c) Gudsrigets Ideal § 17 (p.256) with heads at
+256 / 260 / 267. *Tro paa Faderen* then closes and **Tro paa Sønnen opens at
+p.272** — the second of the three main divisions.
 
 **`catalog.yaml` now points only at this file** — one section, "Complete work
 (pp. 1–537)", linking `religionsphilosophie/transcription.pdf`. The `indledning/`
