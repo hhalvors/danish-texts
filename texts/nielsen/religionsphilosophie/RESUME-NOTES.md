@@ -93,24 +93,29 @@ and *γ) Salighedsidealet* (p.143). *A. Faderens Væsen* closes p.148.
 and its three Greek heads: *α) Den videnskabeligt naturalistiske Anskuelse:
 Kosmogonie* (p.152), *β) Den bibelsk religiøse Anskuelse: Skabelse i sex Dage*
 (p.154), *γ) Skabelse og Kosmogonie: Mysteriet* (p.157).
-Transcribed to p.160. **Resume at printed p.161 (PDF 174)** — no quotation open
+*b) Opholdelsen* (§ 12) opens p.165, with *α) Skabelse og Opholdelse* (p.166),
+*β) Opholdelse og Naturproces* (p.170) and *γ) Opholdelsens Mysterium* (p.174).
+Transcribed to p.176. **Resume at printed p.177 (PDF 190)** — no quotation open
 across this cut.
 
-**The Indhold's page numbers have now been confirmed exact seven times running**
-— 133 / 138 / 143 for § 9's heads, then 149 (§ 10), 151 (§ 11), and 152 / 154 / 157
-for § 11's. The structure reconstructed from the running text and the fragmentary
-Indhold leaf agree completely, so the Indhold's remaining numbers (§ 12 at 165,
-§ 13 at 179, § 14 at 200, § 15 at 201 …) can be used as reliable navigation.
+**The Indhold's page numbers have now been confirmed exact eleven times running**
+— 133 / 138 / 143 (§ 9), 149 (§ 10), 151 (§ 11), 152 / 154 / 157 (§ 11's heads),
+165 (§ 12), 166 / 170 / 174 (§ 12's heads). The structure reconstructed from the
+running text and the fragmentary Indhold leaf agree completely, so the Indhold's
+remaining numbers (§ 13 at 179, § 14 at 200, § 15 at 201 …) are reliable
+navigation.
 
 A fifth structural device appears inside β): **letterspaced inline run-ins** that
 divide the argument without being headings — *Beviis af Ordet.* (p.92), *Beviis af
 Aanden.* (p.93), *Troesbeviset.* (p.94). They open a paragraph and run straight
 into the sentence, so they take plain `\emph{}`, not `\runhead`. Watch for more.
 
-Checks that pass on the current file: 160 page-break comments, contiguous pp.1–160,
-every one at offset +13; braces balanced; `$` count even; 18 footnotes; 13 `% sic:`
-notes; 12 `\greekrun` heads; quote running balance at the expected 1
+Checks that pass on the current file: 176 page-break comments, contiguous pp.1–176,
+every one at offset +13; braces balanced; `$` count even; 20 footnotes; 14 `% sic:`
+notes; 15 `\greekrun` heads; quote running balance at the expected 1
 dropped-open + final balance 1; no `\IfFileExists`/`\gk`.
+
+**Progress: 176 of 537 body pages = 32.8%.**
 
 **Compile status: `make` confirmed green at the pp. 1–94 state**, which exercised
 `\parthead`, `\lettersub` and `\greekrun` (including the Greek α/β/γ markers).
@@ -269,9 +274,10 @@ Modsigelsen" — a different claim, not a misreading. Between that and the
 "uforenelige med al Videnskab" substitution, nothing in the old file should be
 carried over without checking it against the image.
 
-**Next step: transcribe from printed p.161 (PDF 174) onward** in `transcription.tex`,
-finishing *a) Skabelsen* (§ 11). Ahead: *b) Opholdelsen* § 12 (p.165),
-*c) Styrelsen* § 13 (p.179), then *C. Faderens Rige* § 14 (p.200).
+**Next step: transcribe from printed p.177 (PDF 190) onward** in `transcription.tex`,
+finishing *b) Opholdelsen* (§ 12). Ahead: *c) Styrelsen* § 13 (p.179), with
+α) Styrelsen og Verdensløbet (181), β) Det aabenbarede Ord om Forsynets Styrelse
+(185), γ) Tro paa det styrende Forsyn (191); then *C. Faderens Rige* § 14 (p.200).
 
 **`catalog.yaml` now points only at this file** — one section, "Complete work
 (pp. 1–537)", linking `religionsphilosophie/transcription.pdf`. The `indledning/`
@@ -381,12 +387,14 @@ setting (verified on pp. 17/18, 41/42, 55/56) and keeps the image small.
 `philosophisk-propaedeutik`. Each application carries an `% ERRATUM APPLIED`
 comment at the spot.
 
-- ~~p.150~~ **p.130** Anm.: *unserer* → **unseres** — APPLIED at p.130.
-  **The errata list's own page number is wrong.** p.150's footnote is on the
-  formal reciprocal determination of finite and infinite and contains no
-  "unserer"; the Fichte title *Ueber den Grund unseres Glaubens an eine göttliche
-  Weltregierung* — which does require *unseres* — occurs only in the p.130 note.
-  Checked both pages in the text layer before applying.
+- **p.130** Anm.: *unserer* → **unseres** — APPLIED at p.130. (The Fichte title
+  *Ueber den Grund unseres Glaubens an eine göttliche Weltregierung*.)
+
+  n.b. an earlier note here claimed the errata list misprinted this as "S. 150"
+  and that the list was wrong. **That was my misreading**, off a 170 dpi render of
+  the errata page. At 700 dpi the line plainly reads "S. 130". The RETTELSER page
+  numbers should be treated as correct unless verified otherwise at high
+  resolution — and verified before any claim that the source is in error.
 - p.257 ll.12–13 f.o.: "den Kjendsgjerning, at Chanoch" → "den Kjendsgjerning, at
   Modsætningen igjen udslettes. Ifølge c. 5 ere alle Adams Efterkommere uden
   Forskjel Sethiter, med mindre man da vil antage, at Chanoch."
@@ -395,8 +403,13 @@ comment at the spot.
 - p.257 l.19 f.o.: *er Abraham selv* → **er da Abraham selv**
 - p.257 l.20 f.o.: *denne Kjendsgjerning* → **slige Kjendsgjerninger, dersom det
   virkelig ere Kjendsgjerninger**
+- p.284 l.6 f.n.: *forklare* → **bortforklare**
+- p.392 l.4 f.o.: *Selvishedeus* → **Selvvishedens**
 - p.400 l.6 f.o.: *Prophetens* → **Propheternes**
 - p.508 l.11 f.n.: *til i sin* → **til sin**
-- p.284 l.6 f.n.: *forklare* → **bortforklare**
-- p.592 l.4 f.o.: *Selvishedeus* → **Selvvishedens**
-  (n.b. "592" exceeds the 537-page body — printed as such in the errata list.)
+
+All nine page numbers above were re-read at 700 dpi. **Two were previously recorded
+wrong here** — "150" for 130 and "592" for 392 — both misreadings off the original
+170 dpi render of the errata page. The second had also prompted a spurious note that
+the errata cited a page beyond the 537-page body; it does not. Every RETTELSER page
+number falls inside the body.
