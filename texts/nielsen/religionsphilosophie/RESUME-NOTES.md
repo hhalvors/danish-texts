@@ -101,8 +101,9 @@ styrende Forsyn* (p.191). **C. Faderens Rige** (§ 14) opens p.200 — the last 
 the three lettered divisions of *Tro paa Faderen*.
 Within it, *a) Ideal og Virkelighed* (§ 15, p.201) with *α) Uskyldighedsidealet*
 (p.201), *β) Fristelse og Fald* (p.207) and *γ) Forbandelsen* (p.217); then
-*b) Verdensidealer* (§ 16, p.224) with *α) Den faldne Slægt* (p.226).
-Transcribed to p.232. **Resume at printed p.233 (PDF 246)** — no quotation open
+*b) Verdensidealer* (§ 16, p.224) with *α) Den faldne Slægt* (p.226),
+*β) Verdensguderne* (p.238) and *γ) Denne Verdens Fyrste* (p.245).
+Transcribed to p.248. **Resume at printed p.249 (PDF 262)** — no quotation open
 across this cut.
 
 **The Indhold's page numbers have now been confirmed exact eleven times running**
@@ -117,12 +118,12 @@ divide the argument without being headings — *Beviis af Ordet.* (p.92), *Bevii
 Aanden.* (p.93), *Troesbeviset.* (p.94). They open a paragraph and run straight
 into the sentence, so they take plain `\emph{}`, not `\runhead`. Watch for more.
 
-Checks that pass on the current file: 232 page-break comments, contiguous pp.1–232,
-every one at offset +13; braces balanced; `$` count even; 25 footnotes; 15 `% sic:`
+Checks that pass on the current file: 248 page-break comments, contiguous pp.1–248,
+every one at offset +13; braces balanced; `$` count even; 27 footnotes; 15 `% sic:`
 notes; no lacunae outstanding; quote running balance at the expected 1 dropped-open
 + final balance 1; no `\IfFileExists`/`\gk`.
 
-**Progress: 232 of 537 body pages = 43.2%.**
+**Progress: 248 of 537 body pages = 46.2%.**
 
 **Compile status: `make` confirmed green at the pp. 1–94 state**, which exercised
 `\parthead`, `\lettersub` and `\greekrun` (including the Greek α/β/γ markers).
@@ -333,11 +334,13 @@ Modsigelsen" — a different claim, not a misreading. Between that and the
 "uforenelige med al Videnskab" substitution, nothing in the old file should be
 carried over without checking it against the image.
 
-**Next step: transcribe from printed p.233 (PDF 246) onward** in `transcription.tex`,
-inside *b) Verdensidealer* (§ 16) — β) Verdensguderne falls at p.238, γ) Denne
-Verdens Fyrste at p.245. Then c) Gudsrigets Ideal § 17 (p.256) with heads at
-256 / 260 / 267. *Tro paa Faderen* then closes and **Tro paa Sønnen opens at
-p.272** — the second of the three main divisions.
+**Next step: transcribe from printed p.249 (PDF 262) onward** in `transcription.tex`,
+finishing *b) Verdensidealer*. Then c) Gudsrigets Ideal § 17 (p.256) with heads at
+256 / 260 / 267 — which closes *Tro paa Faderen*. **Tro paa Sønnen opens at
+p.272**, the second of the three main divisions: A. Sønnens Væsen § 18 (272),
+a) Selvet i Sønnen § 19 (273) with heads 274 / 286 / 295, b) Grundbestemmelser i
+Sønnens Selv § 20 (304) with heads 305 / 310 / 317, c) Sønnens Personlighed
+§ 21 (321) with heads 322 / 324.
 
 **`catalog.yaml` now points only at this file** — one section, "Complete work
 (pp. 1–537)", linking `religionsphilosophie/transcription.pdf`. The `indledning/`
