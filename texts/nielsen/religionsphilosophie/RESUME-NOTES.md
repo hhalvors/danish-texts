@@ -86,21 +86,30 @@ Grundbestemmelser i Faderens Selv* with § 8 opens p.108, subdivided by
 Videnskaben* (p.116) and *γ) Den religiøse Theisme: Grundbestemmelser i det
 faderlige Selv* (p.120). § 8 closes on p.129; *c) Faderens Personlighed* with § 9
 opens p.129 — the last of the three run-heads under *A. Faderens Væsen* —
-subdivided by *α) Idealet af Høihed* (p.133). Transcribed to p.136.
-**Resume at printed p.137 (PDF 150)** — no quotation open across this cut.
+subdivided by *α) Idealet af Høihed* (p.133), *β) Idealet af Kjærlighed* (p.138)
+and *γ) Salighedsidealet* (p.143). *A. Faderens Væsen* closes p.148.
 
-p.133 announces the three members of § 9 in advance: *Idealet af Høihed*,
-*af Kjærlighed*, *af Salighed* — matching β) and γ) in the surviving Indhold leaf
-(pp.138, 143). So α) p.133, β) ≈ p.138, γ) ≈ p.143 are expected.
+**B. Faderens Gjerninger** (§ 10) opens p.149, with *a) Skabelsen* (§ 11, p.151)
+and its three Greek heads: *α) Den videnskabeligt naturalistiske Anskuelse:
+Kosmogonie* (p.152), *β) Den bibelsk religiøse Anskuelse: Skabelse i sex Dage*
+(p.154), *γ) Skabelse og Kosmogonie: Mysteriet* (p.157).
+Transcribed to p.160. **Resume at printed p.161 (PDF 174)** — no quotation open
+across this cut.
+
+**The Indhold's page numbers have now been confirmed exact seven times running**
+— 133 / 138 / 143 for § 9's heads, then 149 (§ 10), 151 (§ 11), and 152 / 154 / 157
+for § 11's. The structure reconstructed from the running text and the fragmentary
+Indhold leaf agree completely, so the Indhold's remaining numbers (§ 12 at 165,
+§ 13 at 179, § 14 at 200, § 15 at 201 …) can be used as reliable navigation.
 
 A fifth structural device appears inside β): **letterspaced inline run-ins** that
 divide the argument without being headings — *Beviis af Ordet.* (p.92), *Beviis af
 Aanden.* (p.93), *Troesbeviset.* (p.94). They open a paragraph and run straight
 into the sentence, so they take plain `\emph{}`, not `\runhead`. Watch for more.
 
-Checks that pass on the current file: 136 page-break comments, contiguous pp.1–136,
-every one at offset +13; braces balanced; `$` count even; 13 footnotes; 11 `% sic:`
-notes; 7 `\greekrun` heads; quote running balance back to the expected 1
+Checks that pass on the current file: 160 page-break comments, contiguous pp.1–160,
+every one at offset +13; braces balanced; `$` count even; 18 footnotes; 13 `% sic:`
+notes; 12 `\greekrun` heads; quote running balance at the expected 1
 dropped-open + final balance 1; no `\IfFileExists`/`\gk`.
 
 **Compile status: `make` confirmed green at the pp. 1–94 state**, which exercised
@@ -219,6 +228,10 @@ Reproduced as printed, each with a `% sic:` comment. None is in RETTELSER.
   elsewhere (pp.46, 106). 500 dpi.
 - p.126 "At det **guddommellge** Selv er Princip" — an *l* standing where the *i*
   belongs. 550 dpi. (Fourth wrong/dropped sort, after pp.50, 62, 114.)
+- p.146 the German quotation prints "ein **Nun**"; Angelus Silesius has *ein Nu*
+  (an instant). 550 dpi.
+- p.160 note: „Philosophisk **Propædentik**“ — an *n* where the *u* belongs, in the
+  title of Nielsen's own 1860–61 lecture course. 600 dpi.
 
 Two typographic points established while transcribing pp. 1–18, both of which the
 old `indledning/` file got wrong and which recur constantly:
@@ -256,9 +269,9 @@ Modsigelsen" — a different claim, not a misreading. Between that and the
 "uforenelige med al Videnskab" substitution, nothing in the old file should be
 carried over without checking it against the image.
 
-**Next step: transcribe from printed p.137 (PDF 150) onward** in `transcription.tex`,
-inside *c) Faderens Personlighed* (§ 9). *B. Faderens Gjerninger* (§ 10) opens
-p.149 and begins the second main division of *Tro paa Faderen*.
+**Next step: transcribe from printed p.161 (PDF 174) onward** in `transcription.tex`,
+finishing *a) Skabelsen* (§ 11). Ahead: *b) Opholdelsen* § 12 (p.165),
+*c) Styrelsen* § 13 (p.179), then *C. Faderens Rige* § 14 (p.200).
 
 **`catalog.yaml` now points only at this file** — one section, "Complete work
 (pp. 1–537)", linking `religionsphilosophie/transcription.pdf`. The `indledning/`
