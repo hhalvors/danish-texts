@@ -95,7 +95,8 @@ Kosmogonie* (p.152), *β) Den bibelsk religiøse Anskuelse: Skabelse i sex Dage*
 (p.154), *γ) Skabelse og Kosmogonie: Mysteriet* (p.157).
 *b) Opholdelsen* (§ 12) opens p.165, with *α) Skabelse og Opholdelse* (p.166),
 *β) Opholdelse og Naturproces* (p.170) and *γ) Opholdelsens Mysterium* (p.174).
-Transcribed to p.176. **Resume at printed p.177 (PDF 190)** — no quotation open
+*c) Styrelsen* (§ 13) opens p.179, with *α) Styrelsen og Verdensløbet* (p.181).
+Transcribed to p.184. **Resume at printed p.185 (PDF 198)** — no quotation open
 across this cut.
 
 **The Indhold's page numbers have now been confirmed exact eleven times running**
@@ -110,12 +111,12 @@ divide the argument without being headings — *Beviis af Ordet.* (p.92), *Bevii
 Aanden.* (p.93), *Troesbeviset.* (p.94). They open a paragraph and run straight
 into the sentence, so they take plain `\emph{}`, not `\runhead`. Watch for more.
 
-Checks that pass on the current file: 176 page-break comments, contiguous pp.1–176,
-every one at offset +13; braces balanced; `$` count even; 20 footnotes; 14 `% sic:`
-notes; 15 `\greekrun` heads; quote running balance at the expected 1
+Checks that pass on the current file: 184 page-break comments, contiguous pp.1–184,
+every one at offset +13; braces balanced; `$` count even; 22 footnotes; 14 `% sic:`
+notes; 16 `\greekrun` heads; quote running balance at the expected 1
 dropped-open + final balance 1; no `\IfFileExists`/`\gk`.
 
-**Progress: 176 of 537 body pages = 32.8%.**
+**Progress: 184 of 537 body pages = 34.3%.**
 
 **Compile status: `make` confirmed green at the pp. 1–94 state**, which exercised
 `\parthead`, `\lettersub` and `\greekrun` (including the Greek α/β/γ markers).
@@ -274,10 +275,11 @@ Modsigelsen" — a different claim, not a misreading. Between that and the
 "uforenelige med al Videnskab" substitution, nothing in the old file should be
 carried over without checking it against the image.
 
-**Next step: transcribe from printed p.177 (PDF 190) onward** in `transcription.tex`,
-finishing *b) Opholdelsen* (§ 12). Ahead: *c) Styrelsen* § 13 (p.179), with
-α) Styrelsen og Verdensløbet (181), β) Det aabenbarede Ord om Forsynets Styrelse
-(185), γ) Tro paa det styrende Forsyn (191); then *C. Faderens Rige* § 14 (p.200).
+**Next step: transcribe from printed p.185 (PDF 198) onward** in `transcription.tex`,
+inside *c) Styrelsen* (§ 13). Ahead: β) Det aabenbarede Ord om Forsynets Styrelse
+(p.185), γ) Tro paa det styrende Forsyn (p.191); then *C. Faderens Rige* § 14
+(p.200), which closes *Tro paa Faderen* — a) Ideal og Virkelighed § 15 (201),
+b) Verdensidealer § 16 (224), c) Gudsrigets Ideal § 17 (256).
 
 **`catalog.yaml` now points only at this file** — one section, "Complete work
 (pp. 1–537)", linking `religionsphilosophie/transcription.pdf`. The `indledning/`
