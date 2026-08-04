@@ -160,22 +160,32 @@ p.304; *b) Grundbestemmelser i Sønnens Selv* with § 20 opens p.304, subdivided
 by *α) Sønnens Selv er Logos* (p.305), *β) I Sønnens Selv er Livet* (p.310) and
 *γ) Sønnens Selv er Verdens Lys* (p.317). § 20 closes p.321; ***c) Sønnens
 Personlighed* with § 21 opens p.321** — the last of the three run-heads under
-*A. Sønnens Væsen* — with *α) Personlighedens Metaphysik* (p.322). Transcribed
-to p.322. **The Indhold has now been exact sixteen times running**
-(295 / 304 / 305 / 310 / 317 / 321 / 322).
+*A. Sønnens Væsen* — subdivided by *α) Personlighedens Metaphysik* (p.322),
+*β) Personlighedens Aabenbarelse* (p.324) and *γ) Personlighedens evige Liv*
+(p.331). Transcribed to p.346. The Indhold was exact seventeen times running
+(295 / 304 / 305 / 310 / 317 / 321 / 322 / 324) before it ran out; **p.331 is
+the first head found by reading alone**, and it fits the α/β/γ series exactly.
+
+### ✅ A. SØNNENS VÆSEN IS COMPLETE — pp. 272–340, §§ 18–21
+
+**B. Sønnens Gjerninger** (§ 22) opens **p.340**, with *a) Lovens Opfyldelse*
+(§ 23, p.343) and *α) Lovens Aand* (p.344). p.344 announces the α/β/γ series
+outright — "en Belysning af *Lovens Aand*, af *Evangeliets Lov*, af *Lovens
+Ende*" — so β) and γ) are named in advance; likewise p.343 announces the three
+lettered heads of § 22: *Lovens Opfyldelse, Forsoningen og Forløsningen*. **Use
+those two sentences as the navigation the Indhold no longer supplies.**
 
 **The misbound range is now behind us** — from p.276 the offset is a plain +13
 again for the rest of the book. (The `kb()` function still needs to stay in any
 check script, since it covers pp.260–275 which are already transcribed.)
 
-**Resume at printed p.323 (PDF 336).** p.322 ends mid-word („totale Særskilt-“,
-carried with `\-`) but outside any quotation, so the check script should read
-exactly the standing balance of 4.
+**Resume at printed p.347 (PDF 360).** p.346 ends mid-sentence, outside any
+quotation, so the check script should read exactly the standing balance of 4.
 
-**The Indhold runs out here.** Its surviving leaves cover through § 21's heads
-(322 / 324); *Tro paa Aanden* and § 32 (458) are on PDF 13 but with less detail.
-From p.325 onward the structure has to be read off the running text again, as it
-was for the Indledning. Spot-check every run-head against the page.
+**The Indhold has run out.** Its surviving leaves covered through § 21's second
+head (324); *Tro paa Aanden* and § 32 (458) are on PDF 13 but with no
+intermediate detail. From p.325 onward the structure is read off the running
+text, as it was for the Indledning. Spot-check every run-head against the page.
 
 **Quote balance is now permanently 4, not 2.** Four openers are never closed by
 the printer, and `check.py` has been updated to expect 4:
@@ -196,10 +206,14 @@ silently treats the offsets as 53 *pixels*, so you get the page header instead o
 the region you wanted. Use `-crop WxH+X+Y` with absolute pixel values taken from
 `identify` (a 600 dpi page here is ~2970×4885).
 
-Structure ahead: the Indhold's last usable number is § 21's second head at
-**324**, inside the next batch. After that the leaf gives only *Tro paa Aanden*
-and *b) Grundbestemmelser i Aandens Selv* § 32 (458), so intermediate heads must
-be found by reading the pages.
+Structure ahead: no more Indhold numbers until § 32 (458). **But the text
+announces its own divisions** — p.343 names § 22's three lettered heads (*Lovens
+Opfyldelse, Forsoningen og Forløsningen*) and p.344 names § 23's three Greek
+heads (*Lovens Aand, Evangeliets Lov, Lovens Ende*). So expect, in order:
+β) Evangeliets Lov, γ) Lovens Ende, then *b) Forsoningen* (§ 24) and
+*c) Forløsningen* (§ 25), then a *C.* division to close *Tro paa Sønnen* before
+*Tro paa Aanden* around p.458. Watch for further such announcing sentences; they
+are now the primary navigation.
 
 **The Indhold's page numbers have now been confirmed exact eleven times running**
 — 133 / 138 / 143 (§ 9), 149 (§ 10), 151 (§ 11), 152 / 154 / 157 (§ 11's heads),
@@ -213,13 +227,13 @@ divide the argument without being headings — *Beviis af Ordet.* (p.92), *Bevii
 Aanden.* (p.93), *Troesbeviset.* (p.94). They open a paragraph and run straight
 into the sentence, so they take plain `\emph{}`, not `\runhead`. Watch for more.
 
-Checks that pass on the current file: 322 page-break comments, contiguous pp.1–322,
-every offset correct against `kb()` above; braces balanced; `$` count even; 42
-footnotes; 26 `% sic:` notes; errata applied through p.284 (**next one due at
-p.392**); no lacunae outstanding; exactly one dropped-open event and a final
-balance of exactly 4 — the standing expectation.
+Checks that pass on the current file: 346 page-break comments, contiguous pp.1–346,
+every offset correct against `kb()` above; braces balanced; `$` count even; 48
+footnotes; 27 `% sic:` notes; 4 `\lettersub` divisions; errata applied through
+p.284 (**next one due at p.392**); no lacunae outstanding; exactly one
+dropped-open event and a final balance of exactly 4 — the standing expectation.
 
-**Progress: 322 of 537 body pages = 60.0%.**
+**Progress: 346 of 537 body pages = 64.4%.**
 
 **Compile status: `make` confirmed green at the pp. 1–94 state**, which exercised
 `\parthead`, `\lettersub` and `\greekrun` (including the Greek α/β/γ markers).
@@ -251,6 +265,7 @@ printed, not normalised.** Verified at 600 dpi in each case:
 | 307 | κατα κρυφιν / κατα κενωσιν | κατὰ κρυφὴν / κατὰ κένωσιν |
 | 309 | ἀρρήτως και ἀνεκδιηγήτως | ✓ acutes correct; only καί bare |
 | 316 | κρύψις / Φανέρωσις | ✓ both fully correct |
+| 327 | λογος, ζωη, Φως | λόγος, ζωή, φῶς (note the capital Φ) |
 
 The whole Socinus note on pp.288–290 keeps its breathings (ἀ, ὑ, ἐ, and the
 separately-set ’ before Ἀβρααμ in the *second* occurrence only — the first is bare
@@ -460,6 +475,34 @@ Reproduced as printed, each with a `% sic:` comment. None is in RETTELSER.
   and not in RETTELSER.
 - p.317 the letterspacing covers "*midlende*" only, not the following "Gud" —
   the same partial-Sperrsatz habit as p.289. 400 dpi.
+- p.324 the same again, twice on one page: "*personlig* Gud" and "*treenig* Gud",
+  with "Gud" plain both times. 400 dpi. **This is now a settled habit of the
+  setting, not an accident — three pages, four instances.**
+- p.331 "**Logos selvet** i Gud og **Logosselvet** i Christus" — set as two words
+  and then as one, on the same line. 400 dpi.
+
+- p.337 "men ikke som *Alskabningens* Afslutning" — letterspacing again stops
+  one word short. 400 dpi.
+
+### One word is set in BOLD in running text
+
+**p.327: "forgude `Absurdum`."** Bold, not letterspaced — verified at 700 dpi
+against the neighbouring roman. Bold is otherwise reserved for headings
+(`\runhead`, `\greekrun`, `\subhead`) throughout the book, so this is the single
+exception so far and is rendered `\textbf{}`. Watch for others; do not silently
+convert a bold word to `\emph{}`.
+
+**The contrast is real, not an inking artefact.** p.343 sets *the same word* —
+"det *Absurdum*, man ved at lægge Modsigelserne over paa Phænomenet" —
+**letterspaced**, and it is rendered `\emph{}` there. Both compared at 700 dpi.
+So the book does distinguish bold from Sperrsatz in running text; check the
+stroke weight rather than assuming.
+
+### Two names/abbreviations vary between pages — reproduce, don't regularise
+- **Anticlimacus** (p.303) vs **Anti-Climacus** (p.342), in the two footnotes
+  citing *Indøvelse i Christendom*.
+- **Matth.** (pp.293, 306) vs **Mtth.** (pp.345, 346, and the rest of § 23).
+- **Jvnfr.** (pp.318, 323, 324) vs **Jvfr.** (pp.334, 342).
 - p.229 "Han har valgt **vig** Kain til Forbillede" — a *v* where the *s* of *sig*
   belongs. **CONFIRMED BY COLLATION**: the Bodleian copy reads "vig" too, so this
   is an error in the 1869 setting, not a defect in the KB scan. Both at 600 dpi.
@@ -501,11 +544,11 @@ Modsigelsen" — a different claim, not a misreading. Between that and the
 "uforenelige med al Videnskab" substitution, nothing in the old file should be
 carried over without checking it against the image.
 
-**Next step: `bash batch.sh 323` and transcribe printed pp. 323–334** in
-`transcription.tex`. The offset is a plain +13. § 21's second head falls at
-p.324; after that the Indhold gives no more numbers until § 32 (p.458), so read
-the heads off the pages. *Tro paa Aanden*, the third and last main division,
-opens around p.458.
+**Next step: `bash batch.sh 347` and transcribe printed pp. 347–358** in
+`transcription.tex`. The offset is a plain +13. Inside *α) Lovens Aand*; expect
+*β) Evangeliets Lov* and possibly *γ) Lovens Ende* in this range, both named in
+advance on p.344. *Tro paa Aanden*, the third and last main division, opens
+around p.458.
 
 **`catalog.yaml` now points only at this file** — one section, "Complete work
 (pp. 1–537)", linking `religionsphilosophie/transcription.pdf`. The `indledning/`
