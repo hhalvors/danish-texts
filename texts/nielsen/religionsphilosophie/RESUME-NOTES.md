@@ -233,6 +233,32 @@ their announcement word for word, so treat an announcing sentence as naming the
 
 ### ✅ TRO PAA SØNNEN IS COMPLETE — pp. 272–442, §§ 18–29
 
+## TRO PAA AANDEN — the third and last main division, opens p.443
+
+`\parthead{Tro paa Aanden.}` then `\lettersub{A.}{Aandens Væsen.}` and `§ 30`,
+all on **p.443**. § 30's announcing sentence (p.446) names three lettered heads,
+letterspaced throughout including the *og*: *Selvet i Aanden, Grundbestemmelser
+i Aandens Selv og Aandens Personlighed*.
+
+- ***a) Selvet i Aanden* (§ 31, p.446)**, with *α) Aanden paa Grundlag af det
+  Almene* (p.446), *β) Aanden paa Grundlag af det Individuelle* (p.449),
+  *γ) Aandens Selv: Mysteriet* (p.452).
+- ***b) Grundbestemmelser i Aandens Selv* (§ 32, p.458)** — ✅ **the Indhold's
+  last surviving number, and it is EXACT.** Every one of its numbers held, from
+  the first (§ 9 at 129) to the last. With it the Indhold is now spent; the rest
+  of the book is navigated by announcing sentences alone.
+  Its heads: *α) Gudverdslige Grundbestemmelser* (p.459),
+  *β) Gudmenneskelige Grndbestemmelser* (p.467 — `sic`, see below).
+- *γ) Trinitariske Grundbestemmelser* and then *c) Aandens Personlighed* to
+  follow. Transcribed to p.478 and still inside *β)*, which is a long one.
+
+§ 32's announcing sentence is **spread over three consecutive sentences** rather
+than packed into one, each closing on a letterspaced title: *gudverdslige* /
+*gudmenneskelige* / *trinitariske Grundbestemmelser* (pp.458–459). A new shape
+for the same device — don't expect the whole list in a single sentence.
+
+Transcribed to p.466.
+
 Still to come: the close of § 25, then a *C.* division to finish *Tro paa
 Sønnen* before *Tro paa Aanden* around p.458.
 
@@ -240,24 +266,13 @@ Sønnen* before *Tro paa Aanden* around p.458.
 again for the rest of the book. (The `kb()` function still needs to stay in any
 check script, since it covers pp.260–275 which are already transcribed.)
 
-**Resume at printed p.443 (PDF 456).** p.442 ends at a full stop with the page
-set short, outside any quotation, so the check script should read exactly the
+**Resume at printed p.479 (PDF 492).** p.478 ends mid-word ("er Forholdet
+aand-"), outside any quotation, so the check script should read exactly the
 standing balance of 5.
 
-### ⚠ TRO PAA AANDEN OPENS ON p.443 — NOT p.458
-
-The earlier estimate of "around p.458" was wrong: **458 is § 32's page**, taken
-from the surviving Indhold leaf's line for *b) Grundbestemmelser i Aandens Selv*,
-not the division's opening. Verified on the page image at PDF 456: p.443 carries
-
-```
-\parthead{Tro paa Aanden.}
-\lettersub{A.}{Aandens Væsen.}
-```
-
-so the very first thing the next batch must emit is the third and last
-`\parthead`, followed immediately by the `A.` division. `\parthead` issues a
-`\clearpage`, which matches the scan (p.442 is set short).
+n.b. an earlier note here estimated *Tro paa Aanden* at "around p.458". That was
+wrong — 458 is § 32's page from the Indhold leaf, not the division's opening.
+The division in fact opened on **p.443** and is now transcribed.
 
 **The Indhold has run out.** Its surviving leaves covered through § 21's second
 head (324); *Tro paa Aanden* and § 32 (458) are on PDF 13 but with no
@@ -343,14 +358,14 @@ not the compositor — crop that band at 400 dpi before transcribing or flagging
 `% sic:`.** The dittography sweep in the verification step exists because of
 this.
 
-Checks that pass on the current file: 442 page-break comments, contiguous pp.1–442,
-every offset correct against `kb()` above; braces balanced; `$` count even; 71
-footnotes; 36 `% sic:` notes; 5 `\lettersub` divisions; **8 of the 9 errata
-applied** (130, 257 ×4, 284, 392, 400); no lacunae outstanding; exactly one entry
-in the dropped-open list and a balance of exactly 5 — the standing figure. The
-dittography sweep over the new pages is clean.
+Checks that pass on the current file: 478 page-break comments, contiguous pp.1–478,
+every offset correct against `kb()` above; braces balanced; `$` count even; 76
+footnotes; 40 `% sic:` notes; 4 `\parthead` and 6 `\lettersub`; **8 of the 9
+errata applied** (130, 257 ×4, 284, 392, 400); no lacunae outstanding; exactly
+one entry in the dropped-open list and a balance of exactly 5 — the standing
+figure. The dittography sweep is clean.
 
-**Progress: 442 of 537 body pages = 82.3% — 95 pages left, eight batches.**
+**Progress: 478 of 537 body pages = 89.0% — 59 pages left, five batches.**
 
 **Compile status: `make` confirmed green at the pp. 1–94 state**, which exercised
 `\parthead`, `\lettersub` and `\greekrun` (including the Greek α/β/γ markers).
@@ -386,6 +401,7 @@ printed, not normalised.** Verified at 600 dpi in each case:
 | 368 | θεοτόκος (body) | ✓ correct |
 | 368 note | Λέγουσι … θεοτόκον | ✓ **the fullest and best Greek in the book** — breathings, acutes, graves and circumflexes all correct, except two bare words: βαστασαντας, διδασκειν |
 | 429 | μετανοεῖτε ἤγγικε γὰρ ἡ βασιλεία τῶν οὐρανῶν | ✓ **fully and correctly accented** — circumflexes, acutes, graves, breathings all right |
+| 452 | δυναμις ἐξ ὑψους | δύναμις ἐξ ὕψους — ἐξ right, the other two carry breathings but no accents |
 | 381 | καταλλαγή | ✓ correct |
 | 381 | **ἀπαλύτρωσις** | ἀπολύτρωσις — an α where the ο belongs. **Confirmed by collation.** Since καταλλαγή one line above is right, this is a wrong sort, not a habit |
 
@@ -443,6 +459,7 @@ page-break comments don't imply a full page of body text where there isn't one:
 | Hilarius / Symbolum Nicænum | p.309 → p.310 | lower third of p.310 |
 | **Hegel, *Religionsphilosophie*** | p.373 → p.374 → p.375 | **three lines** on p.374 — the longest note in the book |
 | Martensen on Lady Macbeth | p.438 → p.439 | four lines; the note interrupts the word *Mulig-hed* mid-break |
+| Nielsen, *Om Hindringer og Betingelser* | p.475 → p.476 | **eight lines** on p.476 |
 
 ## ⚠ MISBOUND LEAF IN THE KB SCAN — pp. 260–275
 
@@ -633,10 +650,25 @@ Reproduced as printed, each with a `% sic:` comment. None is in RETTELSER.
   collation.**
 - p.394 "gjennemborer man Næsen **pan** Behemoth" — an *n* where the second *a*
   of *paa* belongs. **Confirmed by collation.**
+- p.465 "Almagtsbegrebet altsaa **dobbelsidig** bestemt" — the *t* of
+  *dobbeltsidig* has dropped out; the book sets it correctly on p.463, two pages
+  earlier. **Confirmed by collation.**
+- p.461 note: "K. Schwarz. **Anfr** Skr. S. 354" — no period after *Anfr*, where
+  the note on the facing page (462) has "Anfr. Skr." 700 dpi; reproduced as
+  printed.
 - **p.403, IN A HEADING**: *α) Frihedens Grundbetingelser: Sædemanden og
   **Jordbnnden***— two *n*'s where *un* belongs. **Confirmed by collation.** The
   word is set correctly on pp.404 and 405. First wrong sort found in a head, so
   don't assume headings were proof-read more carefully than the body.
+- **p.467, IN A HEADING**: *β) Gudmenneskelige **Grndbestemmelser*** — the *u*
+  has dropped out. **Confirmed by collation.** Second head-error, and **the same
+  kind as p.403's**: both are u/n confusions in the bold heading fount. Two in
+  ~65 pages, against none in the first 400 — worth reading every remaining head
+  letter by letter rather than at a glance.
+- p.467 "hvis andet **Leder** en aandløs Aand" — *Led er* set without the space;
+  the parallel clause four words earlier reads "hvis ene Led er en Aand". 700 dpi.
+- p.469 "ikke ved nogen Samvirken med Naaden **kunne gjør** det muligt" — the
+  final *e* of *gjøre* has dropped out. 700 dpi.
 - p.350 note (Latin) "quovis puncto **mathemathico**" for *mathematico*, and
   "**Hollatius**" for *Hollazius* (David Hollaz). 700 dpi.
 
@@ -741,17 +773,15 @@ Modsigelsen" — a different claim, not a misreading. Between that and the
 "uforenelige med al Videnskab" substitution, nothing in the old file should be
 carried over without checking it against the image.
 
-**Next step: `bash batch.sh 443` and transcribe printed pp. 443–454** in
-`transcription.tex`. The offset is a plain +13.
+**Next step: `bash batch.sh 479` and transcribe printed pp. 479–490** in
+`transcription.tex`. The offset is a plain +13. Still inside *β) Gudmenneskelige
+Grndbestemmelser*; expect *γ) Trinitariske Grundbestemmelser* to open, then
+*c) Aandens Personlighed*.
 
-**The batch opens with `\parthead{Tro paa Aanden.}` + `\lettersub{A.}{Aandens
-Væsen.}` on p.443** — see the verified note above. Expect a `\parmark` for § 30
-right after, then the usual lettered/Greek heads; watch for an announcing
-sentence naming them. The Indhold's one surviving datum for this division is
-*b) Grundbestemmelser i Aandens Selv* = § 32 at p.458, which should fall in the
-batch after next.
+**The Indhold is spent** — announcing sentences are the only navigation left.
 
-Only the **p.508 erratum** remains.
+Only the **p.508 erratum** remains (*til i sin* → **til sin**, Lin. 11 f.n.),
+about two batches out.
 
 **`catalog.yaml` now points only at this file** — one section, "Complete work
 (pp. 1–537)", linking `religionsphilosophie/transcription.pdf`. The `indledning/`
