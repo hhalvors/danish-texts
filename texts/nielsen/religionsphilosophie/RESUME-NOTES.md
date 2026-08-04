@@ -248,9 +248,21 @@ i Aandens Selv og Aandens Personlighed*.
   the first (§ 9 at 129) to the last. With it the Indhold is now spent; the rest
   of the book is navigated by announcing sentences alone.
   Its heads: *α) Gudverdslige Grundbestemmelser* (p.459),
-  *β) Gudmenneskelige Grndbestemmelser* (p.467 — `sic`, see below).
-- *γ) Trinitariske Grundbestemmelser* and then *c) Aandens Personlighed* to
-  follow. Transcribed to p.478 and still inside *β)*, which is a long one.
+  *β) Gudmenneskelige Grndbestemmelser* (p.467 — `sic`, see below),
+  *γ) Trinitariske **Form**bestemmelser* (p.480 — see the note below; not a
+  misprint).
+- ***c) Aandens Personlighed* (§ 33, p.487)**, with *α) Faderens Aand* (p.488).
+  Expect *β)* and *γ)* for the Son and the Spirit. Transcribed to p.490.
+
+**⚠ A head can differ from its announcement in wording, not just in fullness.**
+§ 32's announcing sentence (p.459) promised *trinitariske **Grund**bestemmelser*;
+the head at p.480 reads *Trinitariske **Form**bestemmelser*. **Confirmed by
+collation** — both copies, 700 dpi — so it is Nielsen's variation, not a wrong
+sort, even though *Grund-/Form-* is exactly the kind of swap the late-book
+compositor might have made. α and β matched their announcement word for word.
+This is the second such case after p.438 (*Dommen* → *Dommedag: Salighed og
+Fordømmelse*). **Collate any head that departs from its announcement** rather
+than assuming either a misreading or a misprint.
 
 § 32's announcing sentence is **spread over three consecutive sentences** rather
 than packed into one, each closing on a letterspaced title: *gudverdslige* /
@@ -266,8 +278,8 @@ Sønnen* before *Tro paa Aanden* around p.458.
 again for the rest of the book. (The `kb()` function still needs to stay in any
 check script, since it covers pp.260–275 which are already transcribed.)
 
-**Resume at printed p.479 (PDF 492).** p.478 ends mid-word ("er Forholdet
-aand-"), outside any quotation, so the check script should read exactly the
+**Resume at printed p.491 (PDF 504).** p.490 ends mid-word ("al personlig
+Virk-"), outside any quotation, so the check script should read exactly the
 standing balance of 5.
 
 n.b. an earlier note here estimated *Tro paa Aanden* at "around p.458". That was
@@ -358,14 +370,14 @@ not the compositor — crop that band at 400 dpi before transcribing or flagging
 `% sic:`.** The dittography sweep in the verification step exists because of
 this.
 
-Checks that pass on the current file: 478 page-break comments, contiguous pp.1–478,
-every offset correct against `kb()` above; braces balanced; `$` count even; 76
+Checks that pass on the current file: 490 page-break comments, contiguous pp.1–490,
+every offset correct against `kb()` above; braces balanced; `$` count even; 80
 footnotes; 40 `% sic:` notes; 4 `\parthead` and 6 `\lettersub`; **8 of the 9
 errata applied** (130, 257 ×4, 284, 392, 400); no lacunae outstanding; exactly
 one entry in the dropped-open list and a balance of exactly 5 — the standing
 figure. The dittography sweep is clean.
 
-**Progress: 478 of 537 body pages = 89.0% — 59 pages left, five batches.**
+**Progress: 490 of 537 body pages = 91.2% — 47 pages left, four batches.**
 
 **Compile status: `make` confirmed green at the pp. 1–94 state**, which exercised
 `\parthead`, `\lettersub` and `\greekrun` (including the Greek α/β/γ markers).
@@ -773,15 +785,14 @@ Modsigelsen" — a different claim, not a misreading. Between that and the
 "uforenelige med al Videnskab" substitution, nothing in the old file should be
 carried over without checking it against the image.
 
-**Next step: `bash batch.sh 479` and transcribe printed pp. 479–490** in
-`transcription.tex`. The offset is a plain +13. Still inside *β) Gudmenneskelige
-Grndbestemmelser*; expect *γ) Trinitariske Grundbestemmelser* to open, then
-*c) Aandens Personlighed*.
+**Next step: `bash batch.sh 491` and transcribe printed pp. 491–502** in
+`transcription.tex`. The offset is a plain +13. Inside *α) Faderens Aand*;
+expect *β)* and *γ)* (presumably the Son's and the Spirit's Aand) to close § 33,
+and then whatever closes *A. Aandens Væsen* — a *B.* division should follow.
 
-**The Indhold is spent** — announcing sentences are the only navigation left.
-
-Only the **p.508 erratum** remains (*til i sin* → **til sin**, Lin. 11 f.n.),
-about two batches out.
+**⚠ THE p.508 ERRATUM — THE LAST ONE — falls in the batch after next**
+(*til i sin* → **til sin**, Lin. 11 f.n.). Body ends at p.537, so after this
+there are about four batches: 491–502, 503–514, 515–526, 527–537.
 
 **`catalog.yaml` now points only at this file** — one section, "Complete work
 (pp. 1–537)", linking `religionsphilosophie/transcription.pdf`. The `indledning/`
