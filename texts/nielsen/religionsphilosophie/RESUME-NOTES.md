@@ -3,6 +3,48 @@
 **Phase 1 (transcription) job.** Read this, then the two standing-method files, then
 continue the batch loop.
 
+---
+
+## SESSION PROTOCOL — read this first, it is about cost
+
+This job's cost is dominated by **context replay**, not by the transcribing. A
+two-up scan render is ~2,800 tokens and stays in context forever; the LaTeX output
+is only ~500 tokens per page. Working 2 pages per turn in a long-running session
+meant paying roughly 30× the irreducible cost per batch. The rules below exist to
+stop that. Follow them.
+
+1. **Start each sitting in a FRESH conversation.** Do not continue a session that
+   has already done a batch or two. Cold start ≈ 15k tokens; a session twenty
+   batches deep is 150k+, mostly retained page images.
+
+2. **Never read `transcription.tex` whole — it is >560 KB.** To resume, read only
+   the tail: `tail -60 transcription.tex`. The status block near the top of the
+   file names the resume page; `check.py` prints it too.
+
+3. **Twelve pages per turn, not two.** Inside one turn the marginal cost of another
+   page is just its image. `bash batch.sh <first>` renders six two-ups in one call
+   and prints the verification report at the same time.
+
+4. **One edit per batch.** Write all twelve pages in a single `Edit`, appending
+   before `\end{document}`. Do not edit page-by-page.
+
+5. **Zoom only on real doubt.** No routine confirmation zooms. When several
+   readings are doubtful, `montage` the crops into ONE image and read it once.
+   (ImageMagick crop offsets are pixels even when written with `%` — see below.)
+
+6. **Bookkeeping every ~20 pages, not every batch.** The status block in
+   `transcription.tex` and the resume line in this file do not need touching after
+   each batch.
+
+So the per-batch loop is: `bash batch.sh N` → read six PNGs → one `Edit` → next
+turn `bash batch.sh N+12` (which verifies what you just wrote and renders ahead).
+
+**Do not use the OCR text layer as a draft.** Checked and rejected: `pdftotext`
+returns scrambled reading order and character-level errors ("psycliologisk"), so
+correcting it costs more than transcribing from the image.
+
+---
+
 ## The two standing methods
 - **Transcription discipline:** follow `../grundideernes-logik/RESUME-NOTES.md`
   (image-verified LaTeX: Sperrsatz → `\emph{}`, Danish quotes, footnotes,
@@ -102,9 +144,62 @@ the three lettered divisions of *Tro paa Faderen*.
 Within it, *a) Ideal og Virkelighed* (§ 15, p.201) with *α) Uskyldighedsidealet*
 (p.201), *β) Fristelse og Fald* (p.207) and *γ) Forbandelsen* (p.217); then
 *b) Verdensidealer* (§ 16, p.224) with *α) Den faldne Slægt* (p.226),
-*β) Verdensguderne* (p.238) and *γ) Denne Verdens Fyrste* (p.245).
-Transcribed to p.248. **Resume at printed p.249 (PDF 262)** — no quotation open
-across this cut.
+*β) Verdensguderne* (p.238) and *γ) Denne Verdens Fyrste* (p.245); then
+*c) Gudsrigets Ideal* (§ 17, p.256) with *α) Udvælgelsen: det udvalgte Folk*
+(p.256).
+*β) Lovgivningen: Theokratiet* opens p.260. (The Indhold reads this head as
+"Timokratiet"; the page itself reads **Theokratiet** and is followed.)
+and *γ) Forjættelsen: Messiasidealet* (p.267).
+
+### ✅ TRO PAA FADEREN IS COMPLETE — pp. 82–271, §§ 6–17
+
+**TRO PAA SØNNEN opens p.272** with *A. Sønnens Væsen* (§ 18); *a) Selvet i Sønnen*
+(§ 19, p.273) with *α) Det menneskelige Selv* (p.274), *β) Det guddommelige
+Selv* (p.286) and *γ) Det gudmenneskelige Selv: Mysteriet* (p.295). § 19 closes
+p.304; *b) Grundbestemmelser i Sønnens Selv* with § 20 opens p.304, subdivided
+by *α) Sønnens Selv er Logos* (p.305), *β) I Sønnens Selv er Livet* (p.310) and
+*γ) Sønnens Selv er Verdens Lys* (p.317). § 20 closes p.321; ***c) Sønnens
+Personlighed* with § 21 opens p.321** — the last of the three run-heads under
+*A. Sønnens Væsen* — with *α) Personlighedens Metaphysik* (p.322). Transcribed
+to p.322. **The Indhold has now been exact sixteen times running**
+(295 / 304 / 305 / 310 / 317 / 321 / 322).
+
+**The misbound range is now behind us** — from p.276 the offset is a plain +13
+again for the rest of the book. (The `kb()` function still needs to stay in any
+check script, since it covers pp.260–275 which are already transcribed.)
+
+**Resume at printed p.323 (PDF 336).** p.322 ends mid-word („totale Særskilt-“,
+carried with `\-`) but outside any quotation, so the check script should read
+exactly the standing balance of 4.
+
+**The Indhold runs out here.** Its surviving leaves cover through § 21's heads
+(322 / 324); *Tro paa Aanden* and § 32 (458) are on PDF 13 but with less detail.
+From p.325 onward the structure has to be read off the running text again, as it
+was for the Indledning. Spot-check every run-head against the page.
+
+**Quote balance is now permanently 4, not 2.** Four openers are never closed by
+the printer, and `check.py` has been updated to expect 4:
+
+1. the early dropped opener in the p.71 footnote (p.72);
+2. the long Strauss quotation running pp.280–282 — no `“` before the footnote
+   marker at the end of p.282, verified at 600 dpi;
+3. **p.294, the Bethesda quotation** „end mere søgte at slaae ham ihjel … gjorde
+   sig selv Gud lig; — the sentence returns to Nielsen's own voice at "følger en
+   Udtalelse" with no closing mark. 400 dpi;
+4. **p.294 footnote, the Martensen quotation** „De tre første Evangelier … — no
+   closing mark after "ogsaa maa have Præexistens." 700 dpi.
+
+All four are reproduced as printed.
+
+**ImageMagick crop offsets must be pixels, not percentages.** `-crop 100%x9%+0+53%`
+silently treats the offsets as 53 *pixels*, so you get the page header instead of
+the region you wanted. Use `-crop WxH+X+Y` with absolute pixel values taken from
+`identify` (a 600 dpi page here is ~2970×4885).
+
+Structure ahead: the Indhold's last usable number is § 21's second head at
+**324**, inside the next batch. After that the leaf gives only *Tro paa Aanden*
+and *b) Grundbestemmelser i Aandens Selv* § 32 (458), so intermediate heads must
+be found by reading the pages.
 
 **The Indhold's page numbers have now been confirmed exact eleven times running**
 — 133 / 138 / 143 (§ 9), 149 (§ 10), 151 (§ 11), 152 / 154 / 157 (§ 11's heads),
@@ -118,12 +213,13 @@ divide the argument without being headings — *Beviis af Ordet.* (p.92), *Bevii
 Aanden.* (p.93), *Troesbeviset.* (p.94). They open a paragraph and run straight
 into the sentence, so they take plain `\emph{}`, not `\runhead`. Watch for more.
 
-Checks that pass on the current file: 248 page-break comments, contiguous pp.1–248,
-every one at offset +13; braces balanced; `$` count even; 27 footnotes; 15 `% sic:`
-notes; no lacunae outstanding; quote running balance at the expected 1 dropped-open
-+ final balance 1; no `\IfFileExists`/`\gk`.
+Checks that pass on the current file: 322 page-break comments, contiguous pp.1–322,
+every offset correct against `kb()` above; braces balanced; `$` count even; 42
+footnotes; 26 `% sic:` notes; errata applied through p.284 (**next one due at
+p.392**); no lacunae outstanding; exactly one dropped-open event and a final
+balance of exactly 4 — the standing expectation.
 
-**Progress: 248 of 537 body pages = 46.2%.**
+**Progress: 322 of 537 body pages = 60.0%.**
 
 **Compile status: `make` confirmed green at the pp. 1–94 state**, which exercised
 `\parthead`, `\lettersub` and `\greekrun` (including the Greek α/β/γ markers).
@@ -148,6 +244,18 @@ printed, not normalised.** Verified at 600 dpi in each case:
 | 99 | μυστήριον | ✓ correct |
 | 100 | **ὑπερουσιον** | ὑπερούσιον |
 | 116 | δημιουργὸς δίκαιος, θεὸς ἀγαθὸς | ✓ all correct |
+| 288 | ἀμην, ἀμην λεγω ὑμιν, πριν Αβρααμ | ἀμήν … λέγω ὑμῖν, πρὶν Ἀβραάμ |
+| 288 | ἐγω εἰμι / πατηρ παντων των πιστευοντων | ἐγώ εἰμι / πατὴρ πάντων τῶν πιστευόντων |
+| 290 | ἐγενετο | ἐγένετο |
+| 302 | κενωσις | κένωσις |
+| 307 | κατα κρυφιν / κατα κενωσιν | κατὰ κρυφὴν / κατὰ κένωσιν |
+| 309 | ἀρρήτως και ἀνεκδιηγήτως | ✓ acutes correct; only καί bare |
+| 316 | κρύψις / Φανέρωσις | ✓ both fully correct |
+
+The whole Socinus note on pp.288–290 keeps its breathings (ἀ, ὑ, ἐ, and the
+separately-set ’ before Ἀβρααμ in the *second* occurrence only — the first is bare
+Αβρααμ) and drops every acute. The cursive kappa **ϰ** appears there and is
+normalised to **κ**, on the same footing as ϑ → θ.
 
 Breathings are always present (ἄ, ὑ, ἀ); it is the acute that sometimes goes
 missing, and **not systematically** — p.116 sets four words with correct accents
@@ -194,6 +302,48 @@ page-break comments don't imply a full page of body text where there isn't one:
 | Martensen/Schleiermacher | p.39 → p.40 | four lines |
 | Kierkegaard, *Efterskrift* | p.71 → p.72 → p.73 | five lines on p.72 |
 | Strauss on Fichte and Hegel | p.106 → p.107 | one closing paragraph |
+| Strauss on Socinus's exegesis | p.288 → p.289 → p.290 | **two lines** on p.289 |
+| Hilarius / Symbolum Nicænum | p.309 → p.310 | lower third of p.310 |
+
+## ⚠ MISBOUND LEAF IN THE KB SCAN — pp. 260–275
+
+**The KB scan is not uniformly printed + 13.** A leaf bearing printed pp. **274–275**
+was scanned two leaves early, pushing pp. 260–273 back by two. Established by
+reading the folio numbers off PDF 268–301:
+
+```
+PDF 268-272 -> printed 255-259     (+13)
+PDF 273-274 -> printed 274-275     (out of place)
+PDF 275-288 -> printed 260-273     (+15)
+PDF 289+    -> printed 276+        (+13)
+```
+
+Correct mapping, now implemented in `twoup.sh`:
+
+| printed | KB PDF |
+|---|---|
+| ≤ 259 | printed + 13 |
+| 260–273 | printed + **15** |
+| 274–275 | printed − **1** |
+| ≥ 276 | printed + 13 |
+
+**The Bodleian copy is correctly ordered** (checked at bodPDF 273/274/275/288/289 →
+printed 259/260/261/274/275, a clean +14), so this is a defect of the KB scan
+rather than of the edition — no need to reorder anything in the transcription.
+
+**Any check script must stop asserting a flat +13.** Use:
+
+```python
+def kb(p):
+    if p <= 259: return p + 13
+    if p <= 273: return p + 15
+    if p <= 275: return p - 1
+    return p + 13
+```
+
+This was caught only because the facing page of a two-up render showed folio 274
+where 260 was expected. Worth spot-checking folio numbers against the expected
+offset at the start of each batch rather than trusting the arithmetic.
 
 ## A SECOND COPY EXISTS — use it when the KB scan fails
 
@@ -293,6 +443,23 @@ Reproduced as printed, each with a `% sic:` comment. None is in RETTELSER.
   (an instant). 550 dpi.
 - p.160 note: „Philosophisk **Propædentik**“ — an *n* where the *u* belongs, in the
   title of Nielsen's own 1860–61 lecture course. 600 dpi.
+- p.288 note: **γενεθαι** for γενέσθαι — the σ has dropped out of the forme, in
+  both occurrences of the phrase. 700 dpi. (Fifth dropped sort.)
+- p.288 note: **δί** for δι᾽ — an acute set over the iota where the elision
+  apostrophe belongs (Rom. 4, 11 δι' ἀκροβυστίας). 700 dpi.
+- p.289 note: the letterspacing of "**var i Begyndelsen hos** Gud" stops before
+  *Gud*, although "Ordet var **Gud**" three lines below IS spaced throughout.
+  Compared at 700 dpi; reproduced as printed.
+- p.291 "Speculationen bestemmer **Subjectiviten** negativt" — a dropped syllable;
+  the *Efterskrift* reads *Subjektiviteten*. 400 dpi.
+- p.299 "to Guds **Sønnner**" — three *n*'s, for *Sønner*. 700 dpi; the same page
+  and p.301 set *Sønner* correctly elsewhere.
+- p.304 "maa ogsaa Troens **Objectiverering** være" — a doubled *-er-*. 400 dpi.
+- p.313 "hvor det ikke behøves (**Mr. 13, 52**)" — Mark 13 has only 37 verses;
+  the verse meant is Mr. 13, 32, which Nielsen quotes in full on p.302. 700 dpi,
+  and not in RETTELSER.
+- p.317 the letterspacing covers "*midlende*" only, not the following "Gud" —
+  the same partial-Sperrsatz habit as p.289. 400 dpi.
 - p.229 "Han har valgt **vig** Kain til Forbillede" — a *v* where the *s* of *sig*
   belongs. **CONFIRMED BY COLLATION**: the Bodleian copy reads "vig" too, so this
   is an error in the 1869 setting, not a defect in the KB scan. Both at 600 dpi.
@@ -334,13 +501,11 @@ Modsigelsen" — a different claim, not a misreading. Between that and the
 "uforenelige med al Videnskab" substitution, nothing in the old file should be
 carried over without checking it against the image.
 
-**Next step: transcribe from printed p.249 (PDF 262) onward** in `transcription.tex`,
-finishing *b) Verdensidealer*. Then c) Gudsrigets Ideal § 17 (p.256) with heads at
-256 / 260 / 267 — which closes *Tro paa Faderen*. **Tro paa Sønnen opens at
-p.272**, the second of the three main divisions: A. Sønnens Væsen § 18 (272),
-a) Selvet i Sønnen § 19 (273) with heads 274 / 286 / 295, b) Grundbestemmelser i
-Sønnens Selv § 20 (304) with heads 305 / 310 / 317, c) Sønnens Personlighed
-§ 21 (321) with heads 322 / 324.
+**Next step: `bash batch.sh 323` and transcribe printed pp. 323–334** in
+`transcription.tex`. The offset is a plain +13. § 21's second head falls at
+p.324; after that the Indhold gives no more numbers until § 32 (p.458), so read
+the heads off the pages. *Tro paa Aanden*, the third and last main division,
+opens around p.458.
 
 **`catalog.yaml` now points only at this file** — one section, "Complete work
 (pp. 1–537)", linking `religionsphilosophie/transcription.pdf`. The `indledning/`
@@ -405,7 +570,12 @@ m = [(int(a), int(b)) for a, b in
      re.findall(r'---- printed p\.(\d+) \(PDF (\d+)\) ----', raw)]
 print("range:", m[0], "..", m[-1], "n =", len(m))
 print("gaps:", [p for i, (p, _) in enumerate(m) if p != i + 1])
-print("offset +13 throughout:", all(b - a == 13 for a, b in m))
+def kb(p):                      # NOT a flat +13 — misbound leaf, see above
+    if p <= 259: return p + 13
+    if p <= 273: return p + 15
+    if p <= 275: return p - 1
+    return p + 13
+print("offsets correct:", all(b == kb(a) for a, b in m))
 # Running balance, not totals: the two known defects cancel in the raw counts.
 bal, neg = 0, []
 for i, line in enumerate(body.split('\n'), 1):
@@ -452,6 +622,19 @@ comment at the spot.
 
 - **p.130** Anm.: *unserer* → **unseres** — APPLIED at p.130. (The Fichte title
   *Ueber den Grund unseres Glaubens an eine göttliche Weltregierung*.)
+
+**⚠ p.257 carries FOUR of the nine errata** — by far the densest page, and the next
+one due. Read them off the errata page at ≥700 dpi before transcribing it; they are
+long substitutions, not single words. Transcribed at 700 dpi they read:
+
+- p.257 ll.12–13 f.o.: "den Kjendsgjerning, at Chanoch" → **"den Kjendsgjerning,
+  at Modsætningen igjen udslettes. Ifølge c. 5 ere alle Adams Efterkommere uden
+  Forskjel Sethiter, med mindre man da vil antage, at Chanoch."**
+- p.257 l.15 f.o.: "Lamech selv med al" → **"Lamech — hvis c. 5, 25 og c. 4, 18
+  ved en Blanding af Genealogierne hentyde paa samme Lamech — Lamech selv."**
+- p.257 l.19 f.o.: *er Abraham selv* → **er da Abraham selv**
+- p.257 l.20 f.o.: *denne Kjendsgjerning* → **slige Kjendsgjerninger, dersom det
+  virkelig ere Kjendsgjerninger**
 
   n.b. an earlier note here claimed the errata list misprinted this as "S. 150"
   and that the list was wrong. **That was my misreading**, off a 170 dpi render of

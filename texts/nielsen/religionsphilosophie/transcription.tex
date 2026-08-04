@@ -11,9 +11,20 @@
 %        The OCR text layer CANNOT see letterspacing and is badly scrambled
 %        ("Prinoiper", "Villi es", "Sønn en's Væ s en"): use it only as a crutch.
 %
-%  OFFSET (VERIFIED): PDF = printed + 13.
+%  OFFSET (VERIFIED): PDF = printed + 13 -- EXCEPT pp.260--275, see below.
 %        printed p.1 = PDF 14; p.17 = PDF 30; p.42 = PDF 55; p.56 = PDF 69;
 %        p.82 = PDF 95; p.538 = PDF 551. Title leaf = PDF 8; preface theses = PDF 10.
+%
+%  !! MISBOUND LEAF IN THE KB SCAN (pp.260--275).
+%        A leaf bearing printed pp. 274--275 was scanned TWO LEAVES EARLY, which
+%        pushes pp. 260--273 back by two. Verified by reading the folio numbers off
+%        PDF 268--301. The BODLEIAN copy is correctly ordered, so this is a defect
+%        of the KB scan, not of the edition. Correct mapping:
+%            printed  <= 259 : PDF = printed + 13
+%            printed 260-273 : PDF = printed + 15
+%            printed 274-275 : PDF = printed -  1
+%            printed  >= 276 : PDF = printed + 13
+%        twoup.sh implements this; do not assume a flat +13 in any check script.
 %
 %  EXTENT: body printed pp. 1--537 (KB catalogue: "537 s.").
 %
@@ -42,7 +53,7 @@
 %        "592" for 392; every RETTELSER page number falls inside the body.)
 %
 %  STATUS: IN PROGRESS. Done & image-verified: title leaf, preface theses,
-%        and printed pp. 1--102. THE INDLEDNING (pp.1--81, §§ 1--5) IS COMPLETE.
+%        and printed pp. 1--322. THE INDLEDNING (pp.1--81, §§ 1--5) IS COMPLETE.
 %        Tro paa Faderen / A. Faderens Væsen: § 6 (p.82), run-head
 %        a) Selvet i Faderen with § 7 (p.83), then the Greek-lettered heads
 %        α) ...fra Videns Standpunkt (p.84), β) ...fra Troens Standpunkt (p.88),
@@ -73,8 +84,33 @@
 %        a) Ideal og Virkelighed § 15 (p.201) and its heads α) Uskyldighedsidealet
 %        (p.201), β) Fristelse og Fald (p.207), γ) Forbandelsen (p.217);
 %        b) Verdensidealer § 16 (p.224) with α) Den faldne Slægt (p.226),
-%        β) Verdensguderne (p.238), γ) Denne Verdens Fyrste (p.245).
-%        RESUME AT printed p.249 (PDF 262). See RESUME-NOTES.md.
+%        β) Verdensguderne (p.238), γ) Denne Verdens Fyrste (p.245);
+%        c) Gudsrigets Ideal § 17 (p.256) with α) Udvælgelsen (p.256).
+%        β) Lovgivningen: Theokratiet (p.260) -- the Indhold reads this head as
+%        "Timokratiet"; the page reads Theokratiet and is followed --
+%        γ) Forjættelsen: Messiasidealet (p.267).
+%
+%        *** TRO PAA FADEREN IS COMPLETE: pp.82--271, §§ 6--17. ***
+%        TRO PAA SØNNEN opens p.272 with A. Sønnens Væsen, § 18; a) Selvet i
+%        Sønnen § 19 (p.273) with α) Det menneskelige Selv (p.274).
+%        The misbound range is now BEHIND US -- from p.276 the offset is a plain
+%        +13 again for the rest of the book.
+%        β) Det guddommelige Selv opens p.286; γ) Det gudmenneskelige Selv:
+%        Mysteriet opens p.295. § 19 closes p.304; run-head
+%        b) Grundbestemmelser i Sønnens Selv with § 20 opens p.304, subdivided by
+%        α) Sønnens Selv er Logos (p.305), β) I Sønnens Selv er Livet (p.310) and
+%        γ) Sønnens Selv er Verdens Lys (p.317). § 20 closes p.321; run-head
+%        c) Sønnens Personlighed with § 21 opens p.321, with
+%        α) Personlighedens Metaphysik (p.322) -- Indhold exact throughout
+%        (295 / 304 / 305 / 310 / 317 / 321 / 322).
+%        !! The Indhold's numbers RUN OUT at § 21's second head (324). From p.325
+%        onward the structure must be read off the running text again.
+%        RESUME AT printed p.323 (PDF 336). See RESUME-NOTES.md.
+%        N.B. FOUR quotations are NEVER CLOSED by the printer, so the quote
+%        running balance permanently reads 4: the early dropped opener (p.71
+%        footnote), the Strauss quotation of pp.280--282, the Bethesda quotation
+%        on p.294, and the Martensen quotation in the p.294 footnote. All four
+%        reproduced as printed; check.py expects 4.
 %
 %  SECOND COPY (for collation where the KB scan is defective):
 %        ~/bibliotek/Nielsen, Rasmus/religion-1869.pdf -- Google Books scan of the
@@ -8248,5 +8284,2449 @@ S.\ 202--5.}. Saaledes er det. Den videnskabelige Kritik taaler
 ikke Djævelen; flygter han for Viden, saa anholdes han af Troen;
 gjør han Udfald fra Troen, saa angribes han igjen af Viden: saa maa
 Djævelen selv holde Grændsevagt mellem Tro og Viden.
+% ---- printed p.249 (PDF 262) ----
+Mørkets Aand er væsentlig en fristende Magt; Fristelsen er den
+Grundfunction, hvorpaa dens Overlegenhed beroer; den angriber Ingen
+uden igjennem Fristelsen, den beseirer Ingen uden ved Fristelsen:
+Djævelen er Fristeren. Men hvad er det at fristes af Djævelen?
+Enhver fristes, „naar han drages og lokkes af sin egen
+Begjærlighed“; det er Fristelsens almeenpsychologiske Forklaring;
+den passer paa ethvert Menneske som Individ i Slægten, ethvert af
+Synd og Skyld betynget Menneske; men fra Deelagtighed i Synd og
+Skyld gives der to ideale Undtagelser: den rene Uskyldighed, der
+endnu ikke er Aand, og den syndfrie Villie, som personligt er Aand.
+Paa ingen af disse kan Fristelsens almene Psychologie anvendes.
+Vistnok fristes den Uskyldige af sin Begjærlighed, men ikke i
+Begjærlighedens Form, det vil sige: ikke med Bevidsthed om, at det
+Fristende netop er Selvets egen urene Begjærlighed; thi i samme Nu
+som Bevidstheden herom indtræder, er, som vi have seet, Selvet
+ureent og Uskyldigheden tabt. --- Den syndfrie Villie kan umulig
+fristes af egen Begjærlighed, thi den fristes med fuld Bevidsthed
+som Aand; var den sig nu under Fristelsen bevidst, at den blev
+fristet af sin egen Begjærlighed, da var den sig jo sin Syndighed
+bevidst, og kunde ikke være usyndig. Og dog kan og maa den syndfrie
+Villie fristes, saasandt den er menneskelige Vilkaar underlagt.
+Syndfriheden bestemmes i Virkeligheden derved, at den Usyndige frier
+sig fra Synden ved at udelukke Synden, holde Synden borte: Synden
+vil altsaa udenfra d.\ e.\ fra en anden Villie trænge ind, og maa
+ved en udtrykkelig Villiesact holdes ude. Eva fristes af Slangen,
+men Christus fristes af Djævelen, paa disse to Yderpunkter maa
+Opmærksomheden fæste sig, naar vi skulle forstaae Aabenbaringens Ord
+om „Fristeren“.
+
+For at kunne fristes af Aand, maa Mennesket selv være Aand, kun i
+samme Maal som Individualiteten, der
+% ---- printed p.250 (PDF 263) ----
+fristes, er sig sin Aandsvillie bevidst, vil den være istand til at
+henføre de fristende Indskydelser af Lyster, Billeder, Forestillinger
+og Tanker til den onde Villie, jo mindre befæstet Selvet er i
+Aandsvillien, jo mere det enten afficeres af det umiddelbart
+Sandselige eller i Form af almindelig Selvhed gjennemstrømmes af
+Almeenideer, desto mindre vil det være istand til at opfatte det
+fristende Princip som Villie. Hvad de sandselige Tillokkelser
+angaaer, maa Individet ved lidt Selvbesindelse let mærke, at det
+Fristende ligger i Begjærligheden; hvad bedaarende Idee-Indskydelser
+og falske Idealer angaaer, vil den Begavede med sin stærkt
+arbeidende Reflexion opdage, at det Fristende egentlig kommer fra
+mørke Muligheder, fra en dunkel Ideernes Egoisme; han vil erkjende,
+at han fristes af Aand; men det er endnu kun Verdensaanden i al
+Forblommethed: den onde Villie, det fristende Selv, kommer ikke
+tilsyne. Anderledes med Christi Fristelse; vi skulle i denne
+Sammenhæng blot reflectere paa Fristeren.
+
+Det er fra Troens Synspunkt ret betegnende, at Christi Fristelse i
+Ørken ikke gaaer forud for, men falder i et Tidspunkt, der følger
+umiddelbart efter hans Daab i Jordans Flod. Hans messianske
+Optræden er altsaa en fuldmoden Beslutning; han har Indvielsen; han
+er i Aanden, absolut concentreret i Aandsvillie. Hvad i Verden
+skulde nu kunne rokke denne hellig rene besluttede Villie? Intet!
+Hvilket Blendværk, dannet af bølgende Luft, af Ørkens gøglende
+Dunster, skulde vel være istand til at forvirre denne Besluttedes
+Tanker og omtaage dette Blik, der gjennemskuer ethvert Bedrag?
+Intet! Og dog kommer der i Ørken af dette Intet, i dette Øde, af
+denne Tomhed en Frister frem med en Fristelse. Det maa da være en
+Fristelse af egen Art, en Fristelse, hvortil den rationelle
+Psychologie ikke kjender noget Tilsvarende. At fristes er paa dette
+Høidepunkt ikke at hildes, bedaares
+% ---- printed p.251 (PDF 264) ----
+og gjøres vaklende; men det er: i fordoblet Selvhed som Aand at
+angribes af Aand, saa at Tanke staaer imod Tanke, Villie imod
+Villie, Selv imod Selv. Denne Fordobling i Selvhed er Frihedens
+dybeste Krise. Det fristende Selv er ikke Christi Selv; langtfra!
+det er den Hellige saa modsat som muligt. Og dog optager Christus
+baade Fristeren og Fristelsen i sin Bevidsthed; thi hvis han ikke
+gjorde det, kunde han jo ikke fristes. Fristeren kan kun „komme til
+ham“, fordi han i sin uendelige Overlegenhed lader ham komme; og han
+lader ham komme for Frihedens, for Aabenbaringens og Frelsens Skyld:
+først paa Fristerens Fald kan Messias grunde sit Rige.
+
+At Christus lader sig friste, betyder, at han tvinger Fristeren til
+at aabenbare sig: det er den onde Villies afgjørende Nederlag, at
+dens Selvmodsigelse kommer for Dagen, at den bliver fuldstændig
+aabenbar. Fra Videns Standpunkt er ikke blot Fristeren men ogsaa det
+fristende Ord at henføre under Kategorien: Mythe; men i Conseqvens
+af Troesprincipet er Fristelseshistorien netop antimythisk. Det
+Antimythiske kjendes paa den klare Modsætning af den Fristende mod
+den Fristede, af Selv mod Selv; ved denne Modsætning faaer det
+aabenbarende Ord under Fristelsens Gang sin Betydning. Fristeren
+gjør sit Angreb saaledes, at hver Replik netop træffer Modsigelsen,
+den Begrebsmodsigelse, som fra en negativ Kritiks Synspunkt er i
+det: at være Gudmenneske. „Er du Guds Søn, da siig, at disse Stene
+blive Brød“. At hungre som et Menneske og dog være som Gud, der ved
+et Ord kan forvandle Stene til Brød, hvilken mythisk Modsigelse! Men
+just idet Modsigelsen skal gjøre sin fristende Virkning og bringe
+den Fristede i Selvmodsigelse, høres det Antimythiske: „Mennesket
+lever ikke af Brød alene, men af hvert Ord, som udgaaer gjennem Guds
+Mund“. Men en Modsigelse er det dog, en mythisk Selvmodsigelse, at
+vide sig som den, der kunde byde over Legioner Engle, og desuagtet
+% ---- printed p.252 (PDF 265) ----
+vide sig som den, der ligeoverfor Verdens Miskjendelse, Foragt og
+Spot skal være den Afmægtige, der ikke kan give sig Phænomen, fordi
+han ikke til egen Forherligelse kan betjene sig af overnaturlige
+Midler. „Er du Guds Søn, da kast dig ned“ --- fra Templets Tinde ---
+„thi der staaer skrevet: han skal give sine Engle Befaling om dig,
+og de skulle bære dig paa Hænderne“. \dots\ Er du virkelig den, som
+Faderen vil forherlige, da lad det strax begynde med Forherligelsen,
+at Verden kan see det og undre sig. --- Imod en mythisk
+Forherligelse, der sprænger alle Virkelighedens Love, sætter Messias
+nu den antimythiske Resignation: du skal ikke selvisk udfordre den
+overnaturlige Magt, „du skal ikke friste Herren din Gud“.
+
+Men det er dog en Modsigelse, en utaalelig Selvmodsigelse, at den
+skal være Alles Tjener, som veed med sig selv, at han er udrustet
+til at være Alles Herre og lægge den hele Verden under sin Fod. Den,
+der er som Gud i sig selv, maa vel ogsaa have Ret til at herske som
+en Gud og forgude sig selv. Selvmodsigelsen skulde, naar dette er
+den fristende Tanke, altsaa finde sin Løsning i umiddelbar
+Selvforgudelse. Denne Sagens Vending synes imidlertid ved første
+Øiekast at stride mod Texten. Ifølge Fristelseshistorien (Matth.\ 4,
+8, jvfr.\ Luk, 4, 6) er det jo ikke umiddelbar Selvforgudelse,
+hvortil Fristeren opfordrer Messias; det, han bogstavelig opfordrer
+ham til, er tvertimod en uendelig og, som det synes, aldeles
+oprørende Selvfornedrelse. „Alt dette“ --- alle Verdens Riger og
+deres Herlighed --- „vil jeg give dig, om du vil falde ned og
+tilbede mig“. Taabeligere Forlangende kunde da, efter Kritikens
+Mening, Djævelen ikke gjøre, \textit{ergo} --- det er Kritikens
+videnskabelige Dom --- er ikke alene Fristelsens Indklædning, men
+ogsaa Fristelsen selv en Mythe.
+
+Principernes, Troens og Videns absolute Ueensartet\-
+% ---- printed p.253 (PDF 266) ----
+hed maa vel her, om ellers nogensteds, være iøinefaldende.
+Fristelseshistorien, som i Videns Øine har drevet det Mythiske til
+sin yderste Spidse, skal, ifølge Troesprincipet, netop kunne siges
+at have kastet Lys ind i Selvhedens inderste Afkroge, i de Aandens
+Vraaer, hvorfra det Mythiske udgaaer. Det er Forholdet mellem den
+personlige Villie og det falske, fristende Verdensideal, som een
+Gang for alle skal opklares. Fristelsen er paa sit Høieste, naar
+Modsætningen af det fristende Ideal og Villien er paa sit Høieste.
+Fristelsen ender, naar alle Omsvøb falde bort. Havde Christus havt
+det fristende Princip i sig selv, havde han som en anden Herkules
+med tvetydige Tilskyndelser i sit Indre staaet paa Korsveien: da
+vilde den gjennem Verdensidealet fristende Magt kunne have hyllet
+sig i en mythisk Nimbus, og det Mythiske været kjendeligt derpaa, at
+den Fristende gjorde Omsvøb. Den mythiske Fristelse kunde da umulig
+begynde med, at Fristeren, om han end tusinde Gange indbildte sig
+selv, at han virkelig havde, hvad han dog, ligefrem forstaaet, ikke
+har, alle Verdens Riger og deres Herligheder at bortgive, aabenlyst
+og uden Omstændigheder fordrede, at Messias, „Guds Søn“, skulde
+falde ned og tilbede ham. Nei, han maatte have begyndt omvendt; han
+maatte meget mere have begyndt med det Tilsagn, at naar Guds Søn,
+Messias, blot vilde forstaae sin Opgave praktisk, saa skulde ikke
+blot alle Verdens Riger, men ogsaa han selv, denne Verdens Fyrste,
+falde ned og tilbede den almægtige Messias. Kunde den Fristede lade
+sig bedaare heraf, saa havde Fristeren seiret; saa fulgte det af sig
+selv, at det ikke blev denne Verdens Fyrste, der faldt ned og tilbad
+Messias, men omvendt, Messias, der maatte falde ned og tilbede den
+ved Fristelsen seirende Verdensfyrste.
+
+Overfor den rene, selvklare Villie ere slige Omsvøb umulige. Hvad
+Fristeren har at sige, maa han sige
+% ---- printed p.254 (PDF 267) ----
+aabent og ligefrem, thi det Tvetydige, det Forblommede, bliver
+øieblikkelig gjennemskuet. Just den Omstændighed, at enhver Replik
+fra Fristerens Side er saa ligefrem og uforbeholden, at Lumskheden
+selv tvinges til Aabenhjertighed, bevirker, at hvert enkelt Forsøg,
+især det sidste, kommer til at tage sig saa anmassende og dog saa
+fattigt, enfoldigt og næsten vanvittigt ud. Men just derved er
+Hemmeligheden i al Fristelse afsløret: Fristelsen kommer i sidste
+Instans fra det onde Selv; dets inderste Mening er væsentlig
+meningsløs; den afgjørende Seir betinges af, at dets dunkle,
+selvmodsigende Væsen bliver fuldstændig gjennemskuet; Afgjørelsen
+er, at den rene Villie, det sande Selv, med besluttet Energie
+banlyser Fristeren: „Viig bort, Satan! thi der staaer skrevet: du
+skal tilbede Herren din Gud, og tjene ham alene“.
+
+Er det mythiske Slør, som den tvetydige Verdensaand udbreder over
+det fristende Princip og dermed over alle Fristelser, først
+sønderrevet, da vil det ogsaa vise sig, at det selviske Væsen, der
+fristede Eva, var en forblommet Tilsyneladelse af den fristende
+Magt, det selviske Selv, der vilde prøve Kræfter med Christus. Den
+fristende Aand kan nu sees i tilbagekastet Lys som „den gamle
+Slange“, som „Løgneren“, „Menneskemorderen fra Begyndelsen“.
+
+Umiddelbart og ligefrem har intet syndigt Menneske paa Jorden
+nogensinde staaet \textit{vis à vis} med Fristeren selv, denne
+Verdens Fyrste. At ville vide sig umiddelbart og personligt fristet
+af Fristeren selv, er en blasphemisk Anmasselse, den Anmasselse at
+ville sætte sig lige med Christus og paa egen Haand gjennemgaae
+Frihedens dybeste Krise; thi kun i Frihedens dybeste Krise kan det
+onde Selv staae objectivt klart for det hellige Selv, den onde
+Villie objectivt bestemt mod den gode. Det forholder sig ikke
+saaledes, at Djævelens Magt tilligemed Djævelen selv allerede er
+tilstrækkelig aabenbaret,
+% ---- printed p.255 (PDF 268) ----
+før Christus kommer, saa at Christus kun har den Opgave at overvinde
+den vel bekjendte Djævel; nei, Sandheden er, at Christus alene gjør
+Djævelens Væsen aabenbart og just ved at gjøre det aabenbart bryder
+Djævelens Magt. Ifølge Aabenbaringsprincipet kan Troen paa Djævelen
+kun faae væsentlig Betydning ved Troen paa Christus; alle Sætninger
+om Djævelen saavel i det Nye som i det Gamle Testamente ere
+Troessætninger, der tage sig ynkeligt ud, naar de omdannes til
+Videnssætninger og behandles kosmologisk.
+
+Og hvorledes forholder det sig saa med Troen paa Djævelen og hans
+fristende Magt? „Enhver fristes, naar han drages og lokkes af sin
+egen Begjærlighed.“ Dette er Fristelsen som psychologisk
+Kjendsgjerning. Men denne Kjendsgjerning, om hvilken Fornuft og
+Aabenbaring ere enige, vilde skjule sin Grund i Tvivlenes Nat,
+Tvetydighedens evige Mørke, hvis den ikke fik Lys fra det
+aabenbarede Ord. Jo mere relativt og forblommet det Fristende er,
+desto mere bedaarende er Fristelsen; det Bedaarende forsvinder
+først, naar Fristelsen kort og bestemt, uden alle Omsvøb, i Troen
+kan henføres til det fristende Princip, det selviske Selv, den onde
+Villie. Ligesom Troen paa Christus er ubetinget positiv, saaledes er
+Troen paa Djævelen ubetinget negativ, en Tro, der udelukkende gaaer
+ud paa Forsagelse. „Forsager du Djævelen og alle hans Gjerninger og
+alt hans Væsen“? Det er Spørgsmaalet; dette fyndige, korte, myndige
+sakramentale Ord er uden Omsvøb, uden Tvetydighed.
+
+Verdensidealerne ere som Verdensideerne i og for sig hverken gode
+eller onde, i personlig Forstand hverken sande eller falske; de
+blive det først ved det Forhold, hvori de sættes til den hellige
+Villie. Verdensriget faaer kun sin ideale Betydning derved, at det
+med Virkelighedens Betingelser afgiver et naturligt og dog aandigt
+Grundlag for Gudsriget.
+% ---- printed p.256 (PDF 269) ----
+\runhead{c) Gudsrigets Ideal.}
+\parmark{17}
+
+Hvorledes det oprindelige Gudsforhold blev fordunklet og hævet, er
+allerede viist; vi skulle nu see, hvorledes det bliver fornyet. Den
+faldne Slægt skal igjen opreises, saa stiftes der et Gudsrige paa
+guddommelige og dog menneskelige Vilkaar. Det er en Pagt, som Gud
+opretter med Mennesket, et Forhold af Selv til Selv, af Villie til
+Villie, hvoraf Aabenbaringens Grundcharakteer fremlyser. Det
+saaledes stiftede Gudsrige er virkeligt og dog overvirkeligt,
+nærværende og dog bestandig tilkommende. Det i Virkeligheden
+indesluttede Ideal, hæver sig trinviis frem og fordrer sin
+Virkeliggjørelse; men paa ethvert følgende Trin bliver det
+Nærværende stedse mere utilfredsstillende, og Striden mellem Ideal
+og Virkelighed mere følelig. Livstanken er stor og salig, men den
+følges af en Forbandelse og mætter kun med Velsignelse, forsaavidt
+den nærer sig af en Forjættelse. Den Omvending, at Fremgang er
+Tilbagegang, og Tilbagegangen igjen Fremgang, giver Opdragelsen af
+det udvalgte Folk et saa eiendommeligt Præg, at den hele
+Aandsudvikling kjendelig adskiller sig fra rationel Culturudvikling.
+Vi overskue Bevægelsen fra de tre Synspunkter: \emph{Udvælgelse,
+Lovgivning og Forjættelse.}
+
+\greekrun{α}{Udvælgelsen: det udvalgte Folk.}
+
+Religionen er af antirationel Oprindelse, Styrelsens Tanke kan ikke
+begrundes i Viden: Begrundelsen er omvendt, det sees af Israels
+Udvælgelse. For at besvare det Spørgsmaal, hvorfor Gud udvalgte
+Jødefolket til sit Eiendomsfolk fremfor alle andre, har man beraabt
+sig paa dets Patriarchers Fromhed og dets naturlige Egenhed, dets i
+forunderlig Grad udprægede Individualitet. For
+% ---- printed p.257 (PDF 270) ----
+% FOUR ERRATA FALL ON THIS PAGE -- all four applied below, each marked. The
+% RETTELSER entries were read at 700 dpi; see RESUME-NOTES.md for the full text.
+end mere at fremhæve Naturbestemmelsens særegne Betydning har man
+endog villet paavise en Deling i Menneskeslægten fra Begyndelsen,
+ifølge hvilken de fromme Naturer, „Guds Børn“, kjendelig adskilte
+sig fra de Ugudelige, saaledes som Abel fra Kain. Denne Betragtning
+er uden objectiv Gyldighed. Vel er der Forskjel imellem fromme og
+ufromme Individer; men Forskjellen er saa individuel, at den ikke
+kan begrunde nogen Folkeadskillelse. Det siges, at Seth blev sat i
+Abels Sted (1 Mosb.\ 4, 25); man skulde altsaa vente at see Stammen
+dele sig i Seths gode og Kains onde Slægt; men herimod strider i
+% ERRATUM APPLIED (RETTELSER, p.257 ll.12--13 f.o.): the page prints
+% "den Kjendsgjerning, at Chanoch"; read as below.
+Slægtregistrene den Kjendsgjerning, at Modsætningen igjen udslettes.
+Ifølge c.\ 5 ere alle Adams Efterkommere uden Forskjel Sethiter, med
+mindre man da vil antage, at Chanoch (Henoch), der „vandrede med
+Gud“, var en Søn af Kain, og Noah, der „fandt Naade for Jehovas
+% ERRATUM APPLIED (RETTELSER, p.257 l.15 f.o.): the page prints "Lamech selv
+% med al"; read as below. N.B. the errata entry gives the replacement as
+% "Lamech -- hvis ... -- Lamech selv.", ending at "selv"; taken literally that
+% would leave "sin Verdslighed" without "med al" and be ungrammatical. The
+% trailing stop is read as entry punctuation and "med al" is retained.
+Øine“, en Søn af Lamech. Ja, Lamech --- hvis c.\ 5, 25 og c.\ 4, 18
+ved en Blanding af Genealogierne hentyde paa samme Lamech ---
+Lamech selv med al sin Verdslighed synes omsider at have følt Trang
+til guddommelig Trøst, et Tegn paa, at hans Overmod mere har været
+ungdommelig naivt end reflecteret i Trods. Gjennem
+% ERRATUM APPLIED (RETTELSER, p.257 l.19 f.o.): "er Abraham selv" -> "er da
+% Abraham selv".
+Noah er da Abraham selv af Kains Æt: Israeliterne ere Kainiter.
+% ERRATUM APPLIED (RETTELSER, p.257 l.20 f.o.): "denne Kjendsgjerning" ->
+% "slige Kjendsgjerninger, dersom det virkelig ere Kjendsgjerninger".
+Efter slige Kjendsgjerninger, dersom det virkelig ere
+Kjendsgjerninger, at dømme maae „religiøse Naturer“ altsaa omtrent
+ligelig kunne findes i alle Folkeslag.
+
+Men selv om saa er, hvad vi villig indrømme, at den jødiske
+Folkecharakteer i særegen Forstand er anlagt paa religiøs Udvikling,
+saa kan denne Kjendsgjerning dog i al Fald ikke være noget for
+Styrelsen Tilfældigt. Hvorfra have Folkene vel deres forskjellige
+Naturanlæg, naar vi fastholde Religionens Synspunkt, uden fra
+Skaberen? Maa nu Grunden til, at Jødefolket er skabt med
+eiendommeligt Physiognomie, søges deri, at det er skabt til at være
+Guds Folk, og Grunden til, at det ved Udvælgelsen bliver Guds Folk,
+søges deri, at det er skabt med dertil fornødne Anlæg, saa gaaer
+Begrundelsen i en Cirkel; denne Cirkelbegrundelse fører fra Viden
+til Tro. Vi høre (1 Mosb.\ 12, 1) Jehova sige til Abraham: „gak ud
+af dit Land og din Slægt og din Faders Huus til det Land,
+% ---- printed p.258 (PDF 271) ----
+som jeg vil vise dig“; men der gaaer Intet forud, som kunde oplyse
+os om, hvad det er, der just gjør Abraham værdig til en saadan
+Kaldelse fremfor Nachor og Haran. Vi kunne tillægge Abraham
+saamange skjulte Fortrin, vi ville, men der staaer Intet om dem i
+Texten. Abrahams Udvælgelse maa da ligesaa ubetinget tilskrives Guds
+frie Valg, som det maa tilskrives Guds frie Valg, at Jacob siden
+blev foretrukken for Esau (Rom.\ 9, 11--13). Med Udvælgelsen som
+Udtryk for Guds ubetingede Villie er Charakteren af det Følgende
+allerede angiven.
+
+Her er ved Gudsrigets Stiftelse fra Begyndelsen af den skarpeste
+Modsætning af en almægtig Villie og Naturbetingelser, og dog gribe
+begge Factorer igjen paa saa uendelig Maade ind i hinanden, at
+Eenheden taber sig i Mysteriet. Ligesom Udvælgelsen selv er skeet i
+Troen og paa Troens Vilkaar, saaledes kan dens historiske
+Virkelighed ogsaa kun bekræfte sig for en troende Bevidsthed.
+Gudsrigets Historie er i dobbelt Forstand en Troeshistorie, nemlig
+en Historie om Troende og en Historie for Troende. Rækken af de
+naturlige Mellemaarsager gjennembrydes af Underet, og medens
+Sandsynligheden hvert Øieblik gaaer Idealet imod, skeer det
+Usandsynlige, og Troen seirer.
+
+Jehovas Forjættelse lyder til Abraham: „Jeg vil gjøre dig til et
+stort Folk, \dots\ og jeg vil velsigne dem, som velsigne dig, og
+dem, som forbande dig, vil jeg forbande, og i dig skulle alle
+Slægter paa Jorden velsignes“. Saa er Forventningen paa sit
+Høieste; men Tiden gaaer hen, Opfyldelsen lader vente paa sig, og
+kommer først, da det kun kan skee imod al Sandsynlighed. Den Søn,
+paa hvem Forjættelsen hviler, Abrahams Eneste, af hvis Liv det
+afhænger, om Patriarchen virkelig skal blive til et stort Folk,
+eller kun efterlade sig uægte Børn, altsaa dog døe som en barnløs
+Olding, kræver Jehova til Offer;
+% ---- printed p.259 (PDF 272) ----
+det er, som skulde Alt igjen gaae tilbage. Her maa troes med Haab
+mod Haab, paa Mulighed mod Sandsynlighed. Og Troen seirer; Familien
+voxer til et stort Folk, men --- er dette det udvalgte Folk, det
+Folk, hvorover Velsignelsen hviler? Det er jo Trælle, lutter Trælle!
+Fjernt fra Fædrenes Land, det Land, Jehova selv gav Abraham, Isaak
+og Jacob til Arv og Eie, trælle Forjættelsernes Folk under fremmed
+Aag: den tilsyneladende Fremgang er en sørgelig Tilbagegang.
+
+Her er, menneskelig seet, ingen Udsigt til Frelse; men just dette
+betyder, at Frelsen er nær, at den kommer fra Fædrenes Gud. Fra den
+brændende Tornebusk i Midians Ørk taler Jehova til Moses, og Moses
+fremstaaer for Pharao, og Pharao forfærdes ved Tegn paa Tegn, og
+Befrielsen er vidunderlig. „I den tredie Maaned efter Israels Børns
+Udgang fra Landet Ægypten, paa denne Dag kom de til Ørken Sinai
+\dots\ Og Moses steg op til Gud, og Jehova raabte til ham af
+Bjerget, sigende: saa skal du sige til Jacobs Huus og forkynde
+Israels Børn: I have seet, hvad jeg har gjort ved Ægypten, og jeg
+løftede Eder paa Ørnevinger og bragte Eder til mig. Og nu, dersom I
+ville høre min Røst og bevare min Pagt, da skulle I være mig en
+Eiendom fremfor Folkene, thi mig hører al Jorden til. Og I skulle
+blive mig et Kongerige af Præster og et helligt Folk“ (2 Mosb.\ 19,
+1--6). Saa sluttes Pagten, saa staaer Forjættelsen da ved Magt; saa
+var Trældommen kun for Befrielsens Skyld, saa var den sørgelige
+Tilbagegang dog væsentlig Fremgang.
+
+Men hvilken Fremgang? Prøven er lang, og Veien trang: der hungres i
+Ørken, der høres Klager og Veeraab; i Forbittrelse og Trods gjør
+Folket Oprør mod Moses og mod Jehova; ja, saa haard er Modsætningen
+af Ideal og Virkelighed, at Jorden maa aabne sig og sluge Oprørerne,
+og en heel Slægt døe hen, og dens Been
+% ---- printed p.260 (PDF 275) ----
+% N.B. offset jumps to +15 here -- misbound leaf in the KB scan, see the header
+% note and RESUME-NOTES.md. The Bodleian copy is correctly ordered.
+spredes i Ørken, uden at noget Øie endnu har seet det forjættede
+Land.
+
+Der vil i Folkehistorien overalt kunne paavises Contraster af
+Medgang og Modgang, Ophøielse og Fornedrelse, Fluctuationer af
+Fremgang og Tilbagegang, medens Bevægelserne dog i det Hele lede hen
+til Maalet, det Maal, der er sat det særegne Folk og betegner dets
+Kaldelse. Det kommer i denne Henseende ikke blot an paa, hvad et
+Folk virkelig oplever eller har oplevet i det Udvortes; det kommer
+tillige, og det fornemmelig, an paa, hvorledes det har oplevet dette
+Udvortes og forstaaet det Oplevede. Først ved Forstaaelsen bliver
+det udvortes Virkelige forvandlet til indvortes Virkelighed, til
+Aandsvirkelighed, Virkelighed for Aanden. I denne Henseende er et
+Folks Sagnhistorie ikke blot ligesaa væsentlig, men endog
+væsentligere end Alt, hvad Videnskritiken faaer ud som nøgne
+Kjendsgjerninger; thi i Sagnhistorien er det Udvortes blevet
+indvortes, og det Indvortes igjen udvortes. Sagnhistorien er den
+folkelige Aandens Historie, en Historie, der ikke blot vil huskes,
+men væsentlig erindres. Men heraf følger, at Aandens Historie hos
+ethvert eiendommeligt Folk principielt maa svare til Folkets Aand;
+og heraf følger igjen, at det udvalgte Folks Historie maa efter hele
+sin virkelige Charakteer saavel i det Ydre som i det Indre være
+ligesaa forskjellig fra en hvilkensomhelst hedensk Folkehistorie,
+som Aabenbaringens Ord i sit Princip er forskjelligt fra Mythen.
+
+% n.b. the surviving Indhold leaf reads this head as "Timokratiet"; the page
+% itself reads "Theokratiet". The page is followed here.
+\greekrun{β}{Lovgivningen: Theokratiet.}
+
+Den mosaiske Lovgivning er Gudsrigets aandelige, almene Grundlag.
+Det Eiendommelige ved denne Lovgivning er, at den umiddelbart og
+uden Omsvøb henføres til Gud selv; allerede heraf sees, at den er
+bestemt for Troende, ikke for Vidende. Gudsriget er ikke et al\-
+% ---- printed p.261 (PDF 276) ----
+mindeligt Ideerige, men i strengeste Forstand et Villiesrige: det
+almægtige Selv, den hellige Villie, vil i dette Rige være absolut
+Enehersker. Ikke blot Lovens Ord, ogsaa Lovens Tavler ere
+oprindelig fra Jehova selv; „Tavlerne vare Guds Arbeide, og Skriften
+var Guds Skrift, hvilken var indgravet paa Tavlerne“ (2 Mosb.\ 32,
+16). Modsætningen mellem Jødedommen og Hedenskabet er herved
+betegnet saa skarpt som muligt. I det aandelige Hedenskab er det
+Ideerne, de indholdsrige, ved deres guddommelige Indhold blendende
+Mellemformer, der stille sig mellem Gud og Mennesket, og fordunkle
+Gudsbevidstheden; i Jødedommen tilbagetrænges disse Mellemformer,
+endog i den Grad, at det seer ud, som om de vare ganske forsvundne.
+Denne Fjernelse, for ikke at sige Udelukkelse, af Ideerne, der er
+saa charakteristisk for Aabenbaringen, er en Betingelse for, at det
+guddommelige Selv i reflecteret Umiddelbarhed kan gjennemtrænge og
+bevæge det menneskelige, Betingelse for at Gud inderlig kan aande
+paa Mennesket, tale til Mennesket og i Aanden ved Ordet gjøre sig
+forstaaelig for Mennesket.
+
+Men just ved denne Gudsvilliens eiendommelige Selvmeddelelse i
+Lovens Bud sættes en Forskjelseenhed af Guddommeligt og
+Menneskeligt, der imponerer Phantasien og frastøder Forstanden.
+
+Hvad kan vel for den umiddelbart troende Anskuelse være mere
+ophøiet eller mere ærefrygtvækkende end en Begyndelse som denne: „Og
+Gud talede alle disse Ord og sagde: Jeg er Jehova, din Gud, som har
+ført dig ud af Ægyptens Land, af Trællehuset. Du skal ikke have
+andre Guder for mit Aasyn. Du skal ikke gjøre dig noget udskaaret
+Billede eller nogen Afbildning af det, som er i Himmelen foroven,
+eller af det, som er paa Jorden forneden, eller af det, som er i
+Vandet under Jorden. Du skal ikke bøie dig for dem og ikke tjene
+dem; thi jeg, Jehova, din Gud, er en nidkjær Gud, som
+% ---- printed p.262 (PDF 277) ----
+hjemsøger Fædrenes Misgjerning paa Børnene i tredie og fjerde Led;
+men gjør Miskundhed i tusinde Led paa dem, som elske mig og holde
+mine Bud“ (2 Mosb.\ 20, 1--6). Saa har det hellige Selv en Røst;
+hvor denne Røst gjenlyder i Samvittighederne, vækker den
+Alvorstanker; hvor denne Aandestemme høres, ryster den Sindets
+Grund, at Verdensguderne, de nye med de gamle, maae synke sammen.
+
+Men det Samme, der i den guddommelige Talen betinger det Ophøiede,
+medfører tillige en saadan Endeliggjørelse, Udstykning og
+Mangfoldiggjørelse af Bud og Forskrifter, at den reflecterende
+Forstandighed, der ikke er opmærksom paa Principet selv, maa
+forarges. At Forskrifter for Tabernaklets Indretning, forsaavidt det
+i al Almindelighed gjælder om Grundtanken, henføres til Jehova,
+kunne vi fra Religionens Standpunkt vel forstaae; men jo mere
+Forskrifterne gaae i det Enkelte og dog umiddelbart fremsættes som
+Jehovas Bud, jo mere smaaligt nøiagtigt Alt foreskrives, desmere
+skinner det Menneskelige igjennem, desmere savne vi Ideens
+Mellembestemmelser, og desmere anstødeligt bliver det Hele. Eller
+hvilket Menneske med Reflexion kan vel læse følgende Befaling (2
+Mosb.\ 25, 1 flgd.): „Og Jehova talede til Moses, idet han sagde:
+Tal til Israels Børn, at de skulle tage mig en Offergave af hver
+Mand, saaledes som hans Hjerte frivilligen vil yde, skulle de tage
+min Offergave. Og dette er Offergaven, som I skulle tage af dem,
+Guld og Sølv og Kobber, Mørkeblaat og Purpurrødt og Carmoisinrødt og
+fiint Linned og Gedehaar, og rødfarvet Vædderskind og Sælhundeskind
+og Acacietræ, Olie til Lysning, Urter til Salveolie“ o.\ s.\ v.\ ---
+hvo kan, spørge vi, læse Sligt uden uvilkaarlig at overfaldes af en
+hemmelig Gru, at den negative Kritik dog maaskee har Ret, at
+Aabenbaringens Aand er aandløs, og det hele hellige Lovgivningsværk
+et Værk af religiøs Politik?
+% ---- printed p.263 (PDF 278) ----
+Umiddelbar historisk Tro paa den hellige Historie er Overtro; dette
+gjælder ligesaa vel om de Kjendsgjerninger, hvorigjennem det Høieste
+og Dybeste fremlyser, som om de Forskrifter, der angaae det
+Ringeste, det Allersmaaligste. Skal Troen paa det aabenbarede Ord
+sættes i Kraft, da maa Overtroen bort; skal Overtroen bort, da maa
+der sees paa Principet. At Religionen er antirationel, betyder ikke,
+at Religionen er aandløs; men aandløs bliver den, mere aandløs end
+den aandløseste af alle Mythologier, naar der umiddelbart
+bogstavelig troes paa en Gud, som paa udvortes endelig Maade
+dicterer udvortes endelige Forskrifter. Det er denne Dicteren, der
+danner det haarde Punkt, Knudepunktet i den gammeltestamentlige
+Aabenbaring. Men Knuden løses, naar vi besinde os paa det
+principielle Forhold mellem det Udvortes og det Indvortes, mellem
+den religiøse Forestillings Umiddelbarhed og Troestanken. For den
+umiddelbare Anskuen staaer Sagen saaledes, at Jehova udvortes
+sandselig viser sig for Moses og taler til Moses, som det ene
+Menneske kan tale til det andet. Skal denne Synsmaade forsvares, da
+maa den forsvares ved at trodse al Tænkning; skal Troen i denne
+Mening byde Tanken Trods, da er Forsvaret let at føre: „Religionen
+er tankeløs; den, der troer, tør ikke tænke“. Det er et maadeligt
+Paaskud, at der tænkes lidt her og der og frem og tilbage over
+Religionen, naar Grundlaget selv er tankeløst, og Tankeløsheden
+slaaet fast i Principet.
+
+At begynde med Tanken er at begynde med Aanden, det er: ikke at
+begynde med abstracte Reflexioner, der ringeagte det Udvortes, men
+med Aabenbaringstanken selv, Villiestanken, den hellige Grundtanke;
+det er: gjennem det Udvortes at søge det Indvortes og i Lys af det
+Indvortes opklare det Udvortes. Det almægtige Selv er ikke for Moses
+et Udvortes, men oprindelig og væsentlig et Indvortes; Jehova er
+usynlig og bliver kun synlig for
+% ---- printed p.264 (PDF 279) ----
+Prophetens Syn: Jehova er Aandens Gud, Jehova er Aand. Men Aanden er
+Villie, og den altbestemmende Villie aabenbarer sig i Tanken og
+Talen. Den indre Talen kan ikke forklares af rationel Psychologie;
+thi her gjælder det, at Religionen er antirationel. Men at den indre
+Talen i Prophetens Aand bestemmes ved en uendelig Omsætten af
+guddommelige Tanker i menneskelige, af guddommelige Ord i
+menneskeligt Sprog, kan erkjendes i Troen; thi denne ideelle
+Fordobling udtrykker netop Troens Væsen. Da nu de hellige Tanker ere
+Villiestanker, og det aabenbarede Ord forkyndt i Bud og Forskrifter,
+saa følger det af Troesprincipet selv, at Jehovas Prophet ikke kan
+indlade sig paa endelig Skjelnen imellem Jehovas Tanker og hans egne
+Tanker, imellem Jehovas Bud og de af ham selv udtænkte Bud; i det
+Øieblik han tillod sig en saadan Distinction, vilde Aanden forlade
+ham: han kunde i prophetisk Forstand umulig træde frem som Jehovas
+Tjener. Mægtig bevæget af Aanden maa den lovgivende Prophet forkynde
+hvert Bud i Jehovas Navn, med Myndighed fra Jehova.
+
+Naar Love og Institutioner umiddelbart bestemmes ved Guds Villie,
+maa Staten opfattes som Guds Stat, og Gud selv troes at være Folkets
+Konge. Statens Idee kommer da ikke særlig til Udvikling, de
+borgerlige Love blive religiøse, og de religiøse borgerlige. Med
+denne Sammensmeltning af Helligt og Verdsligt, Idealt og Virkeligt,
+som er Theokratiets Særkjende, stemmer det, at Forskrifterne for
+Cultus og Sæder fremsættes saa bestemt og saa specielt, at de
+umiddelbart kunne efterleves. Idet Gudsvillien giver sig Udtryk i de
+mange endelige Bud og Forbud, faaer den et concret Indhold og træder
+i alsidig Vexelvirkning med den menneskelige Villie. For at kunne
+lyde Guds Villie maa Israeliten vide, hvad det er, Gud i ethvert
+givet Tilfælde vil; det faaer han at vide i Loven. Hvilken Betydning
+den enkelte Forskrift
+% ---- printed p.265 (PDF 280) ----
+har i og for sig, om den er nødvendig eller unødvendig, fornuftig
+eller ufornuftig, betydelig eller ubetydelig, derover tør den
+troende Israelit ikke raisonnere: det Afgjørende er, at Forskriften
+er Jehovas Bud, at den findes i hans Lov. At der nu tillige maa være
+en egen Stand, der vaager over Lovens Kundgjørelse og Efterlevelse,
+at det levitiske Præstedømme, med andre Ord, svarer til Theokratiet,
+forstaaes af sig selv.
+
+Men ihvorvel Loven bestaaer i et Indbegreb af endelige Forskrifter,
+er den dog efter sit Væsen Aand, og maa forstaaes aandeligt. Herved
+bestemmes Propheternes Stilling til Præsterne. Medens Præsterne have
+at bevare det i Aabenbaringen allerede Givne, holde det Overleverede
+i Hævd og sørge for, at Loven opfyldes efter Bogstaven, ere
+Propheterne Organer for den sig fortsættende Aabenbaring; de see
+derfor ikke nærmest paa det Ydre, men paa det Indre, tage Loven,
+ikke efter Bogstaven, men efter Aanden.
+
+Aandslivet har nu en dobbelt Modstand at overvinde; det har Modstand
+i den lavere, sandselige Natur, og det har Modstand i
+Forstandsegoismen. I første Henseende er Fristelsen til
+Afgudsdyrkelse, i sidste Henseende Værkhelligheden det
+Fremherskende. Jo strengere Aanden er, desmere ægger den til
+Gjenstridighed: jo koldere den høie Usynlige er, desto varmere ere
+en Moloch og de øvrige fremmede Guder. Den sig fortsættende Strid
+mellem Folket og Jehova er en naturlig Følge af Dualismen i
+Menneskets Væsen og et talende Vidnesbyrd om, at det ikke er Folket,
+der har valgt Jehova til sin Gud, men Jehova, der har valgt Folket
+til sit Folk. I Værkhelligheden have vi et typisk Udtryk for, hvad
+aandløs Aand vil sige. Det er en Aandsfordring, den første,
+elementære Betingelse for Aand, at Buddenes Lov skal efterleves; kun
+i Buddenes Efterlevelse har Ærefrygten sit virkelige Udtryk. Men
+Buddene angaae dog nærmest det Udvortes;
+% ---- printed p.266 (PDF 281) ----
+den udvortes Opfyldelse af udvortes Forskrifter er i Gjerningen
+mulig uden væsentlig Forandring i det Indvortes. Guds Stat bliver
+saa opfattet som en borgerlig Stat, Guds Love som blot borgerlige
+Love, Herskeren, Jehova, som en borgerlig Konge. Dette er
+Theokratiets iboende Eensidighed. At der igjennem det Udvortes
+sigtes paa det Indvortes, at den betingede Lydighed i det Udvortes
+kun er Tegn paa den indvortes ubetingede Lydighed; den Lydighed, der
+bryder Egoismen og bøier Menneskets Villie i Eet og Alt efter Guds
+Villie, bliver overseet. Dersom det nu blot var Raahed og
+Tankeløshed, der bragte Folket til at glemme det Indvortes over det
+Udvortes, saa var Aandløsheden umiddelbar og væsentlig at hæve ved
+Underviisning og Dannelse. Men med en Aabenbaring til Forudsætning
+kan Aandløsheden ikke være umiddelbar; det er Slangeprincipet, der
+virker, at Egoismen sætter Gudsfrygten i det Ydre, for selv at
+beholde det Indre. Idet Gudsfrygten bliver egoistisk, bliver
+Egoismen gudfrygtig; af denne Sammensmeltning fremkommer ikke blot
+Hykleriet, men her avles en Fanatisme, en i selvisk Selvantændelse
+glødende Iver for Lovens Bud, for Hellighed, Retfærdighed og
+Ustraffelighed i det Udvortes. Det er Aandløshed; men denne
+Aandløshed er ikke naiv: det er Aandsforbrydelse. Imod den i
+Aandsforbrydelse reflecterede Egoisme, en Gudfrygtighedsegoisme, der
+med sin Gjerningshellighed vel kan forene endog blodige Ugjerninger,
+er det blot undervisende, stille paamindende Ord for svagt; saa
+hæver sig den prophetiske Røst. „Hvad skal jeg med Eders mange
+Offere?“ siger Jehova. „Jeg er mæt af Vædderes Brændoffer og af
+Slagteqvægets Fedme, og i Studes og Lams og Bukkes Blod finder jeg
+ingen Behag \dots\ Eders Maaneder og Eders bestemte Høitider hader
+min Sjæl; de ere mig en Byrde, jeg er kjed af at bære dem. Naar I
+udstrække Eders Hænder, skjuler jeg mine Øine for Eder.
+% ---- printed p.267 (PDF 282) ----
+Om I end ville gjøre Eders Bønner mange, vil jeg ikke høre Eder;
+Eders Hænder ere fulde af Blod“ (Jes.\ 1, 11--15).
+
+De prophetiske Domme ere Straffedomme. Folkets Optugtelse, dets
+aandelige Opdragelse, er netop betinget af det religiøse
+Vexelforhold mellem disse Domme og deres Fuldbyrdelse. See vi bort
+fra Dommene, da ville de Ydmygelser og Tugtelser, der efter Delingen
+af Davidsriget overgaae først Israel siden Juda, ikke vare
+qvalitativt forskjellige fra saadanne Ulykker og Elendigheder, der
+ogsaa overgaae hedenske Folkeslag. Abstrahere vi omvendt fra de
+virkelige Tugtelser og opfatte Straffedommene blot som fromme
+Trusler mod de Ugudelige, Stemningsudbrud af subjectiv hellig Vrede,
+da synke Propheterne ned til almindelige Bodsprædikanter, uden
+høiere guddommelig Myndighed; Aabenbaringsordet opløser sig i et
+poetisk Billedsprog af religiøs Begeistring. Kun naar
+Straffedommenes Fuldbyrdelse erkjendes i de tilsvarende Tugtelser,
+saa at disse just faae deres aandelige Betydning ved i Sandhed at
+være Fuldbyrdelsen, kan det straffende Ord erkjendes for et
+prophetisk Ord. Saaledes blev det i Troen erkjendt af Israels Folk.
+Ved at ydmyge sig under Jehovas vældige Haand følte det troende
+Israel sig ikke blot nedbøiet under den faderlige Revselse, men
+ogsaa opreist ved den til dets Omvendelse knyttede Forjættelse.
+
+\greekrun{γ}{Forjættelsen: Messiasidealet.}
+
+Paa Modsætningens Grundlag forbinder det Oververdslige sig i
+Theokratiet saa umiddelbart og ligefrem med det Verdslige, at
+Striden mellem Ideal og Virkelighed ret maa falde i Øinene. For
+Overholdelse af Loven tilsiges de allerrigeste Velsignelser, men mod
+Lovovertrædelsen rettes ogsaa de rædsomste Forbandelser. „Dersom I
+ville vandre i mine Bud og holde mine Befalinger
+% ---- printed p.268 (PDF 283) ----
+og gjøre dem“, siger Jehova (3 Mosb.\ 26, 3 flgd.), „da vil jeg give
+Eder Regn i sin Tid, og Jorden skal give sin Grøde \dots\ og I
+skulle æde Eders Brød til Mættelse og I skulle boe tryggelig i
+Landet \dots\ Og I skulle forfølge Eders Fjender, og de skulle falde
+for Eders Aasyn ved Sværdet \dots\ Og Fem af Eder skulle forfølge
+Hundrede, og Hundrede af Eder skulle forfølge ti Tusinde, og Eders
+Fjender skulle falde for Eders Aasyn ved Sværdet“ \dots\ Saa
+verdsligt er det i sig oververdslige Gudsrige, at de af Jehova
+udsatte Belønninger i allerhøieste Grad maae tiltale den folkelige
+Egoisme. Ligesaa sandselig afskrækkende ere igjen de tilføiede
+Trusler. „Men dersom I ikke ville høre mig og ikke gjøre alle disse
+Befalinger, og dersom I foragte mine Anordninger og I udi Eders
+Sjæle forkaste min Ret \dots\ og bryde min Pagt, da vil jeg ogsaa
+gjøre dette ved Eder: jeg vil hjemsøge Eder til Forfærdelse med
+Svindsot og med hidsig Feber, saa at Øinene skulle svækkes og Sjælen
+skal forsmægte, og I skulle saae Eders Sæd forgjæves, og Eders
+Fjender skulle opæde den“ \dots; i denne Aand følger Forbandelse paa
+Forbandelse, den ene forfærdeligere end den anden. Det gjælder om
+Forbandelsen, hvad der gjælder om Velsignelsen: den tiltaler det
+Selviske i Mennesket. Heri er vistnok en Modsigelse, ja en
+Grundmodsigelse; men Modsigelsen rammer ikke Aabenbaringen, den
+rammer kun Menneskenaturen, hvis Egoisme netop bliver aabenbar ved
+Forholdet til det Hellige.
+
+Gudsriget vil og skal være et Virkelighedens Rige; saa sættes der
+tilsvarende Betingelser: Velsignelserne gaae umiddelbart ud paa det
+Virkelige ligesaavel som Truslerne. Det Virkelige er i sandselig
+Nærværelse et jordisk Haandgribeligt. Fra det jordisk Haandgribelige
+maa der begyndes, naar der skal begyndes med et raat, gjenstridigt,
+men livskraftigt Folk og dog begyndes i Aanden. Aanden kan ikke fra
+Begyndelsen af gjøre det
+% ---- printed p.269 (PDF 284) ----
+sandselige Menneske begribeligt, hvad der i evig Forstand maa
+forstaaes ved Virkelighed, virkelig Velsignelse og virkelig
+Forbandelse; saa begynder den med det Timelige, thi ogsaa det
+Timelige er virkeligt. Dette Virkelighedens dobbeltsidige Væsen
+ægger og skuffer Egoismen, og sætter Aandskræfterne i Bevægelse.
+„Dersom I ville vandre i mine Bud og holde mine Befalinger“ --- det
+er den ideale Fordring, som det Egoistiske i Mennesket uvilkaarlig
+sætter sig imod; dog hvad følger? „Saa vil jeg give Eder“ o.\ s.\
+v.; her er i de tilføiede Forjættelser Noget for Egoismen, og dog
+kunne Forjættelserne umulig forstaaes egoistisk uden at
+misforstaaes. Naar da Eftertanken sættes i Bevægelse, og Mennesket
+spørger sig selv: gaaer det nu ogsaa altid de Fromme vel? Hvorledes
+opfylder Jehova sine Løfter? saa vækkes Samvittigheden og reiser det
+religiøse Spørgsmaal: hvorledes blive Jehovas Bud opfyldte? „Der er
+jo Ingen, som gjør Godt, ikke Een“. Det er Gjengjældelsesproblemet,
+som trænger sig frem, og under sin fortsatte, qvalfulde Bearbeidelse
+bevirker, at Syndserkjendelsen bliver dybere og dybere, og at
+Virkeligheden af Belønning og Straf faaer en for de Troende stedse
+mere aandelig Betydning.
+
+Hvorledes den aandelige, ideale Opfattelse af Gudsriget arbeider sig
+frem af de første virkelige Forudsætninger, sees klart af den
+Omdannelse, som den theokratiske Grundtanke i Tidernes Løb undergik,
+en Omdannelse, der, langt fra at være et Product af menneskelig
+Vilkaarlighed, var i Ordets strengeste Forstand et Værk af Aanden.
+
+Oprindelig er Jehova Folkets Konge, Samfundet med dets borgerlige
+Indretninger, umiddelbart Jehovas Stat. Men hvad Statens
+Organisation og Styrelse angaaer, maatte Kløften mellem det
+Menneskelige og det Overmenneskelige, det Jordiske og det
+Himmelske, efterhaanden vise sig saa stor og dyb, at Trangen til et
+vir\-
+% ---- printed p.270 (PDF 285) ----
+keligt Mellemled kunde erkjendes. Udviklingen af denne Trang,
+fremkaldt af Idealets Strid med Virkeligheden, gik i Eet med
+Udviklingen af den religiøse Grundbevidsthed og svarede til den
+prophetiske Anskuelse. Saa valgte Folket sig en jordisk Konge; men
+den jordiske Konge blev salvet af Propheten med Jehovas Aand, og
+fremtræder nu i sin ideale Belysning som det virkelige Mellemled
+mellem Herren i Himlen og hans Rige paa Jorden, som Jehovas Søn, den
+Salvede, Messias.
+
+Paa Kongen, Folkets Hoved, hviler nu Forjættelsen; Rigets Storhed,
+Magt og Herlighed betinges af, at Kongen svarer til sit Ideal. Men
+just her er Striden mellem Ideal og Virkelighed anskuelig. Kun Een
+blandt Kongerne var saaledes salvet med Aand, at alle Forjættelsens
+Tegn kunde kjendes hos ham: det var David. Thi Salomons Herlighed,
+en verdslig Afglands af Davids aandelige Storhed, var et glimrende
+Phænomen, der kom og svandt.
+
+Den Davids Søn, der skulde oprette det paa een Gang hellige, og dog
+verdslige Messiasrige, maatte da ogsaa være den Herre Zebaoths Søn,
+en vældig Krigsfyrste, hvem Jehova vilde give Hedningerne i Arv, at
+han kunde „knuse dem med Jernstav og slaae dem istykker som
+Pottemagerkar“ (Ps.\ 2), og dog en Fredens Fyrste, som „har Velbehag
+i Jehovas Frygt“, som „dømmer de Ringe med Retfærdighed“ og „skaffer
+de Lidende i Landet Ret med Billighed“ (Jes.\ 11, 4 flgd.). Idet det
+Himmelske paa denne Maade drages ned i det Jordiske, hæves dette
+Jordiske med det Samme bestandig mere og mere op mod det Himmelske;
+Virkeligheden antager saaledes efterhaanden et stedse stærkere Præg
+af det Overvirkelige, af symboliseret Aandsvirkelighed. Naar Messias
+„slaaer Jorden med sin Munds Stav og med sine Læbers Aande dræber de
+Ugudelige“, da skal „en Ulv dvæle ved et Lam og et Pantherdyr ligge
+ved et Kid“, og Barnet
+% ---- printed p.271 (PDF 286) ----
+„lege ved Øglens Hule“. --- „De skulle ei handle ondt og ei gjøre
+Ugudelighed paa mit hellige Bjerg, thi Jorden er fuld af Jehovas
+Kundskab, som Vandene skjule Havet“.
+
+Det væsentlige Fremskridt betinges af Tilbageskridt. Jo mere det gik
+tilbage med Virkeligheden, det udvortes virkelige Rige, desto mere
+gik det fremad med den ideale Opfattelse af Messias og hans Rige.
+Hvad der ikke er at see paa Jorden, seer Propheten da i Himmelens
+Skyer. „Jeg saae i Nattens Syner, og see! med Himmelens Skyer kom
+En, som en Menneske-Søn, og han kom hen til den Gamle af Dage og
+stilledes frem for ham. Og ham blev givet Magt og Ære og Rige, at
+alle Folk, Stammer og Tungemaal skulde tilbede ham. Hans Herredømme
+er et evigt Herredømme, som ikke skifter; hans Kongerige gaaer ikke
+tilgrunde“ (Dan.\ 7, 13--14). Messias er altsaa Davids Søn og dog
+Guds Søn, et virkeligt Menneske og dog et overnaturligt Væsen. Ved
+Messiasidealet forberedes en Anskuelse af den guddommelige og den
+menneskelige Naturs Forening. Jehovas Aasyn formildes, thi Faderen
+elsker sin Søn. Men det er kun en Forberedelse. Ideal og
+Virkelighed, det Himmelske og det Jordiske nærme sig ikke hinanden
+ligefrem: Extremerne ere spændte til det Yderste. Først da
+Forestillingen om en Guds Søn, der tillige skal være en
+Menneske-Søn, har optaget saamange ideale Forudsætninger, at
+Hemmelighedernes Segl kan brydes, indtræder Vendepunktet, det
+Evighedens Vendepunkt, der er Tidens Fylde.
+
+% Tro paa Faderen closes here; the rest of p.271 is blank below a short rule.
+\begin{center}\rule{5cm}{0.4pt}\end{center}
+
+% ============================================================
+% ---- printed p.272 (PDF 287) ----
+\parthead{Tro paa Sønnen.}
+\lettersub{A.}{Sønnens Væsen.}
+\parmark{18}
+
+At Jesus af Nazareth, Marias Søn, er Verdens Frelser og Guds Søn,
+vil med andre Ord sige, at Jesus af Nazareth er Modsigelsens Tegn.
+„Denne“, siger Simeon om Barnet i Templet (Luc.\ 2, 34), „er sat til
+Fald og Opreisning for Mange og til et Tegn, som imodsiges“.
+Modsigelsens Tegn har, hvad siden nærmere skal omhandles, det
+Eiendommelige ved sig, at Enhver maa forstaae det i Forhold til, som
+han forstaaer sig selv; det er Selvforstaaelsens Problem, som dette
+Tegn vil vække. Er Jesus af Nazareth Verdens Frelser, da maa hans
+Skikkelse sees i Troen, forklaret af Aanden; betragtes
+Christusskikkelsen derimod fra Videns Synspunkt, da har den negative
+Kritik allerede tilstrækkelig viist, hvad der historisk kommer ud af
+Evangelisternes Beretninger. Der kan umulig gives et større Beviis
+for Principernes absolute Ueensartethed end den Forandring, der
+foregaaer med Frelserens Billede, eftersom Lyset falder ind enten
+gjennem Videnskabens eller gjennem Religionens Tempeldør. Det
+Usandsynlige maa troes, men det Umulige kan ikke troes. Det bør da
+for det Første undersøges, hvorvidt Fornuftvidenskaben er istand til
+at bevise Umu\-
+% ---- printed p.273 (PDF 288) ----
+ligheden af, at Jesus af Nazareth, dette enkelte Menneske, kan have
+været sig selv bevidst som Verdens Frelser, og hvorledes den
+gudmenneskelige Selvbevidsthed, naar Muligheden fastholdes, bliver
+at opfatte i Troen, vi henføre denne Undersøgelse under
+Betragtningen af: \emph{Selvet i Sønnen}. Det bør dernæst
+undersøges, hvorledes de ideale Væsensmærker, paa hvilke
+Verdensfrelseren udelukkende lader sig kjende, opfattede som
+Troesmærker, unddrage sig „den moderne Bevidstheds“ opløsende
+Kritik; vi afhandle dette under: \emph{Grundbestemmelser i Sønnens
+Selv}. Det bør endelig undersøges, hvorvidt og hvorledes det er
+muligt at erkjende Forholdet mellem Gud og Christus, mellem den sig
+Aabenbarende og Aabenbareren, for et oprindeligt Væsensforhold, et
+evigt Grundforhold mellem Faderen og Sønnen; vi sammenfatte det
+herhen Hørende under Synspunktet af: \emph{Sønnens Personlighed}.
+
+Personlighedsproblemet er paa een Gang Humanitetens og
+Religiøsitetens Grundproblem; det maa da omsider vise sig, hvor
+dette Problem skal finde sin sidste egentlige Løsning, i Viden eller
+i Tro, i Fornuft eller i Aabenbaring.
+
+\runhead{a) Selvet i Sønnen.}
+\parmark{19}
+
+Hvad der oprindelig ligger i Begrebet af en Verdensfrelser, at han
+maa være „baade sandt Menneske og sand Gud og begge Dele i
+Forening“, have de gamle Kirkelærere, Athanasius f.\ Ex., allerede
+med klar Bevidsthed og fuldt Eftertryk fremhævet. „Thi uden at hans
+Natur var af lige Art med vor, skulde han ikke have kunnet forløse
+denne, uden sand Guddom ikke kunnet gjøre os guddommelige, og uden
+et levende Baand mellem begge
+% ---- printed p.274 (PDF 273) ----
+% N.B. offset -1 here: this leaf was scanned two leaves EARLY in the KB copy.
+Sider ikke kunnet stifte nogen Forbindelse mellem Gud og
+Menneskene“. Her paatrænge sig nu følgende tre Spørgsmaal: α) i
+hvilken Betydning har den evangeliske Christus været sig bevidst som
+et menneskeligt Selv? β) i hvilken Betydning har han været sig
+bevidst som et guddommeligt Selv? og γ) inden hvilken Begrændsning
+lader Eenheden af det guddommelige og menneskelige Selv sig erkjende
+som gudmenneskelig Selveenhed?
+
+\greekrun{α}{Det menneskelige Selv.}
+
+At Jesus Christus, der i Evangelierne fortrinsviis selv kalder sig
+„Menneskens Søn“, har været et virkeligt Menneske, er der neppe
+Nogen i Nutiden, der drager i Tvivl. Thi at Christus skulde have
+været en fra det himmelske Pleroma emaneret Æon, som ikke var bleven
+Menneske i Kjød og Blod, men kun havde paataget sig et Skinlegeme,
+hvormed han ogsaa uden Lidelse var bleven korsfæstet, slige
+gnostiske Eventyr finde ikke længer Tiltro. Vel finder Clemens
+Alexandrinus det at være en latterlig Mening, „at Christi Legeme,
+der opholdtes ved Logoses hellige Kraft, skulde have behøvet Spiser
+til sin Næring, da det tvertimod kun var for at forebygge doketiske
+Meninger om sin Person, at Jesus havde taget Spiser til sig, uagtet
+han selv var lige ufølsom mod Indtryk af Smerte og Lyst, til hvilke
+man forholder sig passiv“; men ikke at tale om, at en saadan
+Forebyggelse af doketiske Meninger er selvmodsigende, da den netop
+stadfæster, hvad den skulde forebygge, saa er denne hele Synsmaade i
+lige Grad stridende saavel mod den evangeliske Fremstilling som mod
+Begrebet af en Verdensfrelser. Skal nu Eftertrykket falde paa det at
+være virkeligt Menneske, at fødes, voxe, paavirkes af sandseligt
+behagelige og ubehagelige Indtryk o.\ s.\ v., da maa der først og
+fornemmelig lægges Vægt paa en Besvarelse af det Spørgsmaal, hvor\-
+% ---- printed p.275 (PDF 274) ----
+% N.B. offset -1 (last page of the displaced leaf); p.276 returns to +13.
+ledes Menneskeindividets Udvikling egentlig forholder sig til det
+menneskelige Selv.
+
+Det menneskelige Selv begynder i Ubevidsthed. At et virkeligt Barn
+skulde kunne fødes til Verden med fuldt udviklet Selvbevidsthed, er
+en Modsigelse, for hvilken Troen viger tilbage ligesaavel som Viden.
+Det Evangelium om Jesu Barndom, hvori der fortælles, at Jesus har
+talet i Vuggen og sagt til Maria, sin Moder: „Jeg er Jesus, Guds
+Søn“, er visselig apokryphisk, ikke blot efter Videns, men ogsaa
+efter Troens Dom. Med alle de overnaturlige Tegn, hvoraf
+Christusbarnet findes omgivet, holde de kanoniske
+Evangelieberetninger dog fast paa den Grundtanke, at Barnet i
+Virkeligheden har begyndt som Barn, at det saavel i sjælelig som i
+legemlig Henseende har voxet en stille Væxt, at der med andre Ord er
+foregaaet en virkelig naturlig Selvudvikling. Dersom der altsaa i
+nærværende Sammenhæng kun var Tale om det virkelige Menneske, saa
+vilde der, hvad Christi menneskelige Selv angaaer, umulig kunne være
+nogen Strid. Men nu tales her jo ikke om det blot virkelige, men
+udtrykkelig \emph{om det sande Menneske}. \emph{Det virkelige
+Menneske} skal være det \emph{sande Menneske}, og dette \emph{sande
+Menneske} et \emph{virkeligt Menneske}: her have vi Striden igjen
+mellem Tro og Viden.
+
+I sin „Fremstilling af den christelige Troeslære“\footnote{II Bd.
+S.\ 191--194.} har Strauss fra Videns Standpunkt med klar
+Overskuelse og indtrængende Skarphed forsvaret sin Christologie imod
+Forsøgene paa at hævde de kirkelige Forestillinger. Vi hensætte
+dette Forsvar for det Følgendes Skyld, som et afrundet Hele. „Det
+var dog slet ikke utænkeligt, --- sagde man --- at Skaberen
+oprindelig havde givet den menneskelige Natur et saadant Anlæg, at
+den almeen-menneskelige Bestemmelse, d.\ e.\ den religiøs-sædelige,
+paa et bestemt Punkt fuld\-
+% ---- printed p.276 (PDF 289) ----
+% N.B. offset back to +13 here; the misbound range is behind us.
+kommen kunde opnaaes. Da en saadan blot Tænkelighed ikke siger
+Noget, er der heller ikke Noget at sige imod den; men den Slutning,
+som man nu drager, nemlig at man, naar man negter hiin Tænkelighed,
+maa paastaae, at det hører til Menneskets Væsen at være
+ufuldkomment, og at den menneskelige Natur vilde ophæves ved
+religiøs Fuldkommenhed, --- denne Slutning behøver kun at udtrykkes
+bedre: nemlig saaledes, at det er væsentligt for det enkelte
+Menneske, eller for Phænomenet af Mennesket \textit{an sich}, at
+være ufuldkomment, for at sige ganske det Samme, som vi paastaae.
+Men Aabenbarelsen af et i religiøs Henseende fuldkomment Menneske,
+siger man nu, var nødvendig, naar Samfundets religiøse Liv skulde
+naae sin Fuldendelse. Menneskehedens hele religiøse Udviklingsproces
+stræber hen til en alle beherskende Stifter af den sande almindelige
+Kirke, hvis religiøse Liv ikke kan forhøies og fuldstændiggjøres
+videre. Man seer let, at der her forudsættes, hvad der først skulde
+bevises. At alle andre Religionsformer ere bestemte til at gaae over
+i den christelige Kirke, det kan, saalænge denne Overgang ikke
+virkeligt er gaaet for sig, kun sluttes af Christendommens Stifters
+Dignitet; men man kan ikke omvendt slutte sig til denne af Noget,
+der endnu kun staaer som tom Prætension. Men der boer dog, bemærkes
+der nu videre, i Mennesket en dyb Attraa efter Livsfuldendelse: naar
+det nu ikke formaaer at virkeliggjøre Menneskehedens Idee i sig
+selv, saa geraader det dog til væsentlig Tilfredsstillelse, naar det
+udenfor sig, i et andet Individuum af sin Slægt, finder det
+virkeliggjort --- eller forestiller sig det virkeliggjort, og vi see
+ikke, hvorledes det af Naturen halte Argument skulde kunne forsvare
+sig imod at modtage denne Bøining. Dog, man kommer endnu med en
+Indvending, og i den støder den Schleiermacherske Retnings Polemik
+mod den speculative Christologie sammen med den Hegelske Skoles:
+hvis der al\-
+% ---- printed p.277 (PDF 290) ----
+drig virkelig har existeret et i religiøs Henseende fuldkomment
+Menneske, saa bliver Menneskehedens Begreb aldrig fuldkommen
+virkeligt; saalænge Ideen ikke er blevet fuldstændig realiseret i
+eet Individuum, er den en blot Skullen og et tomt Ideal. Her ligger
+den uklareste Sammenblanding af to ganske forskjellige
+Forestillinger om Virkeliggjørelsen af et Slægtbegreb til Grund.
+Derved kan man nemlig enten forstaae, at Slægten og hvert enkelt
+Individuum, eller at Slægten og Totaliteten af Individer udtømme og
+dække hinanden. Det Første finder man nu ikke ved Menneskeheden
+(ligesom overhovedet ikke ved nogen Slægt, da dette Begreb
+indeholder det Modsatte): godt, saa maa man lade sig nøie med det
+Sidste. Det har man ingen Lyst til, derfor vil man gaae en
+Middelvei: i det ene Individuum, Christus, skal Slægten have
+virkeliggjort sig paa den første Maade, i den øvrige Menneskehed
+derimod ikke. Menneskeslægten bliver da saaledes afmægtig, hvad den
+overveiende Fleerhed af dens Individer angaaer, og desuden kommer
+der en Rift i Omkredsen af dens Virkeliggjørelse, som man ikke
+finder i nogen anden Slægt: nemlig Forskjellen mellem et
+Individuum, i hvilken Slægten fyldestgjør sig, og saadanne, i
+hvilken den ikke tilfredsstiller sig. Skulde nu disse sidste ikke
+synes at være forkastede og forskudte, saa maa hiint ene
+Individuums Fortræffelighed paa en eller anden Maade komme dem
+tilgode: hvilket ikke blot er Kirkens Lære, men ogsaa
+Schleiermachers, idet Gud efter ham kun seer Menneskeheden i
+Christus. Men naar saaledes Gud, for at finde Menneskehedens Idee
+fuldkommen virkeliggjort i Menneskeheden, ligesom maa regne Christi
+Fortjeneste og de øvrige Menneskers Mangler sammen: saa bliver det
+jo dog den anden Maade, hvorpaa et Slægtbegreb kan virkeliggjøres,
+nemlig saaledes, at det kun bliver fuldstændig virkeligt i
+Totaliteten af sine Individer, der gjensidig supplere hverandre; kun
+i den tanke\-
+% ---- printed p.278 (PDF 291) ----
+løse Forbindelse med den første Art Virkeliggjørelse, der skal finde
+Sted i eet Individuum, medens den anden finder Sted ved alle øvrige
+i deres Forhold til hiint. Fornuftstridig er denne Forbindelse af
+den Grund, at Slægten, hvis den kunde virkeliggjøre sig fuldstændig
+i eet Individuum, ikke vilde pine sig med at adsplitte sig i en
+Mangfoldighed af saadanne og i disses Udvikling i Tiden; men den
+vilde kun existere i hiint Individuum og som samme, som
+Slægt-Individuum; ligesom Gud, naar han umiddelbart kunde være
+Enkeltpersonlighed, vilde have kunnet spare det hele uhyre Apparat
+til Frembringelsen af Personligheder (Verdensskabelsen og
+Verdenshistorien)“.
+
+Om der nu end fra et videnskabeligt Standpunkt kan være Adskilligt
+at indvende mod \textit{nervus probandi} i de Argumenter, hvormed
+Strauss her bekæmper sine Modstandere, saa er det dog øiensynligt,
+at der paa Videns Grund ikke gives noget Fodfæste for den, der med
+Eftertryk vil trænge den negative Kritiks vel rettede Angreb
+tilbage. Man betænke den intelligente Resoluthed, hvormed „den
+moderne Videnskabs“ Ordfører indrømmer, „at det er væsentligt for
+det enkelte Menneske eller for Phænomenet af Mennesket \textit{an
+sich}, at være ufuldkomment“; man mærke sig den objective
+Sorgløshed, hvormed „det af Naturen halte Argument“, der hentes fra
+„Menneskets dybe Attraa efter Livsfuldendelse“, bliver skubbet
+tilside: og man vil forstaae, at Religionen absolut maa gives til
+Priis, naar dens antirationelle Princip skal rationaliseres.
+
+Strauss beraaber sig paa, at Slægten og det enkelte Individ ikke
+„dække hinanden“, efterdi det nødvendig ligger i Slægtens Begreb, at
+det kun kan udtømmes i Totaliteten af sine Individer. Fra dette
+Synspunkt bliver Menneskeslægten som Slægt uden videre identificeret
+med en hvilkensomhelst Dyreslægt, og endda er Betragtningen
+hinkende. Skal Menneskeslægten som Slægt stilles i
+% ---- printed p.279 (PDF 292) ----
+Række med Dyreslægterne, da kommer den ikke til at staae paa lige
+Trin med, men lavere end dem alle. Thi om Slægter og Arter i
+Dyreriget gjælder det virkelig, at Slægten dækkes af Arterne, og
+Arterne, hver især, af de tilsvarende Exemplarer. Det er
+Exemplarernes normale Sundhed, og ingenlunde deres Mængde, hvorpaa
+det ved denne Dækning væsentlig kommer an. Et eneste Exemplar af en
+sund og nogenlunde feilfri Hest er uden videre congruent med Arten,
+hvorimod en Fleerhed af feilfulde Exemplarer, af hvilke det ene
+f.\ Ex.\ har Spat, det andet Snive, det tredie Kuller o.\ s.\ v.,
+ingenlunde ved deres Mængde bidrage til enten at udtømme eller dække
+Arten. Der er i Dyreverdenen ingen væsentlig Splid mellem Art og
+Exemplar, og derfor er der heller ingen Incommensurabilitet mellem
+Slægten og dens Individer: Slægten udtømmes i Individernes Totalitet
+accurat paa tilsvarende Maade som den igjennem Arten udtømmes i
+hvert enkelt Exemplar. Den Eensidighed, der naturlig klæber ved
+Exemplarerne i deres Enkelthed, bliver, naar vi see paa det
+Principielle, aldeles ikke afhjulpen ved Formerelsen. Sættes
+Eensidigheden i Kjønsforskjellen, ville to Exemplarer være nok til
+at repræsentere den hele Art. Det kommer simpelthen deraf, at der i
+Dyreindividet ikke er Strid mellem Ideal og Virkelighed.
+
+Men Strid mellem Ideal og Virkelighed er netop charakteristisk for
+hvert enkelt Menneske, og just derved i høieste Forstand
+charakteristisk for Forholdet mellem Menneskeslægten og dens
+Individer. At intet Menneske er fuldkomment, at der ifølge den
+naturlige Tingenes Orden ikke gives et eneste sandt og fuldkommen
+sundt Menneske paa Jorden, derom ville Fornuft og Religion let blive
+enige; men naar det nærmere skal bestemmes, hvori Ufuldkommenheden
+bestaaer, og hvorfra Usandheden stammer, blive de strax uenige. Hvor
+dybt Uenigheden stikker, sees allerede deraf, at medens Religionen
+holder paa Virkeligheden af
+% ---- printed p.280 (PDF 293) ----
+\emph{det eneste sande Menneske}, holder Fornuften paa Umuligheden.
+Hele Striden dreier sig væsentlig om Selvet. Religionen, der hævder
+hvert enkelt Menneskes Selvgyldighed ved ubetinget at hævde Selvets
+Gyldighed, sætter Ufuldkommenheden i Selvet og Selvets Usandhed i
+Synden. Opfattet som Synd er Usandheden ikke blot en almindelig
+Modsigelse i Selvets Væsen, men en Villiesmodsigelse, i hvert
+Menneskeindivid den inderste, dybeste Selvmodsigelse. Ligger det nu
+i enhver Modsigelses Natur, at den maa fordre en Løsning, da maa
+dette i allerstrengeste Forstand gjælde om Selvmodsigelsen. At der i
+Slægten er optraadt En, der har fremstillet sig som det sande
+Menneske, som den, der selv fra Grunden af er fri for
+Selvmodsigelsen, og derved istand til at løse Individerne af
+Modsigelsens Lænker, og istand til, paa Troens Vilkaar, at frelse
+Enhver fra den nagende Usandhed og gjøre ham det muligt at
+\emph{vorde} et sandt Menneske: denne Forudsætning er saa langt fra
+at indeholde nogen Modsigelse, at Enhver, der modsiger den, netop
+gjør sig dobbelt skyldig i Selvmodsigelse. Skulle Individerne og
+Slægten „dække“ hinanden, da kan det kun skee ved det syndfrie
+Menneske.
+
+Det er imidlertid fra Videns Standpunkt høist interessant at
+betragte den Snildhed, hvormed den negative Kritik manøvrerer, naar
+det gjælder om at faae ethvert Vidnesbyrd om Christi Syndfrihed
+bortforklaret. „Christi Syndfrihed, og det ikke blot som
+virkeliggjort Mulighed til ikke at synde (\textit{potuit non
+peccare}), men som Umuligheden af at kunne synde (\textit{non potuit
+peccare}) havde“, bemærker Strauss, „i det gammelkirkelige System
+sin faste dogmatiske Grund deri, at i Christus den menneskelige
+Natur, der var skikket til Synd, slet ikke havde nogen egen
+Personlighed, men kun var optaget i Guds hellige Søns Personlighed.
+Denne Begrundelse falder for Schleiermacher bort med den kirkelige
+Christologie.
+% ---- printed p.281 (PDF 294) ----
+Ligesaalidet vil han støtte sig paa den exegetiske Beviisførelse,
+hvori han gjør Ret. Thi hvad Beviiskraft havde det vel, om Paulus,
+om hvem det ikke er bekjendt, at han har kjendt Jesus personligt,
+efter sin Omvendelse i nok saa bestemte Udtryk tilskrev ham
+Syndfrihed? Men i Stedet derfor siger han desuden kun i en oratorisk
+Antithese (2 Cor.\ 5, 21), at Gud har gjort den, der ikke vidste af
+nogen Synd, til Synd eller Syndoffer for os, for at vi i ham kunde
+blive retfærdige; hvori der som bestemt Tanke kun ligger det, at
+Jesu voldsomme Død ikke tør ansees som Straf for egen Forseelse.
+Mere ligger der ikke i 1 Pet.\ 1, 19, hvor han kaldes et reent og
+pletløst Lam, og Hebr.\ 7, 26, hvor han kaldes en hellig, uskyldig
+Ypperstepræst; kun at her tillige Forestillingerne om levitisk
+Reenhed have indblandet sig \dots\ Dog, selv om disse Udsagn ogsaa
+havde en mindre typisk og dogmatisk, selv om de havde den
+bestemteste historiske Form, og tillige vare tagne af ægte Skrifter
+af Jesu umiddelbare Disciple, saa kunde de dog, selv om de vilde,
+ikke sige mere end hiint bekjendte Vidnesbyrd af Xenophon om
+Sokrates (\textit{Οὐδεις ποποτε Σωκρατους οὐδεν ἀσεβες οὐδε ἀνοσιον
+οὐτε πραττοντος εἰδεν οὐτε λεγοντος ἠκουσεν}), af hvilket dog Ingen
+endnu har villet slutte, at hiin Hedning har været syndfri.
+% sic: printed „ποποτε“ for Xenophon's πώποτε (Mem. I.1.11). Verified at 600 dpi.
+% N.B. the Greek fount uses the ȣ (ou) ligature throughout this run --
+%      Σωκρατȣς, ȣδεν, ȣδε, ȣτε -- transcribed here as plain ου. The printed
+%      accentuation is otherwise as given: breathings but no acutes/circumflexes.
+Thi som syndige Mennesker kunde Jesu Disciple aldrig være visse paa,
+om ikke Noget hos ham, der just paa Grund af deres Syndighed ikke
+forekom dem som Synd, dog i Virkeligheden var det. Kun den Syndfrie
+kan give et gyldigt Vidnesbyrd om Syndfrihed, og følgelig kunde
+Jesus, da han skal have været eneste i denne Art blandt Menneskene,
+alene vide, at han var det. Denne Bevidsthed skal han nu ogsaa have
+udtalt i det bekjendte Spørgsmaal (Joh.\ 8, 46); men selv uanseet,
+at \textit{ἁμαρτια} her efter Sammenhængen snarere maa betyde
+Vildfarelse, og, selv om det var sagt i Betydningen af Synd, blot
+kunde være sagt om dem, der kunde iagttages, saa kan Jesu
+% ---- printed p.282 (PDF 295) ----
+egen Paastand ikke bevise hans Usyndighed, da vi jo allerede i
+Forveien maatte være visse paa denne, for at være sikkre paa, at han
+ved hiin Paastand ikke har skuffet sig selv eller
+Andre\footnote{Strauss. Anf.\ Skr.\ II. S.\ 155--56.}.
+% sic: the printer supplies NO closing quotation mark here, although the Strauss
+%      quotation has run unclosed since p.280. Reproduced as printed; this is why
+%      the running quote balance stays 1 higher than it otherwise would.
+
+Kritiken har her fremhævet et afgjørende Punkt, en Sandhed, der ikke
+noksom kan indskærpes, og det er: at der om Christi Syndfrihed ikke
+gives nogen objectiv Viden. Syndfrihed er et Troesbegreb. Den
+Indvending, at Intet vides om det, som ifølge Sagens Natur ikke kan
+være Gjenstand for Viden, falder altsaa bort. Den Syndfrie kan vide
+med sig selv, at han er uden Synd; men hans eget Vidnesbyrd herom
+maa annammes i Tro: Tro er i denne Forbindelse ikke et Surrogat for
+en manglende Viden, Troesvisheden er i Forhold til sin Gjenstand
+Selvvished, og Selvvisheden mere ubedragelig end nogensomhelst
+ligefrem historisk Kjendsgjerning. At Jesus Christus har vidst sig
+at være det sande Menneske, fri for al Synd, det skal ikke bevises
+af enkelte Skriftsteder, det skal sees og erkjendes af hele hans
+Optræden, af den Myndighed, hvormed han taler, af den afgjørende
+Vægt, han lægger paa sig selv og sit Forhold til Faderen, af den
+uendelige Overlegenhed, hvormed han, „sagtmodig og ydmyg af
+Hjertet“, indbyder Alle, „der arbeide og ere besværede“, at komme
+til sig, at Sjælene maae finde Hvile. I Sandhed, dersom Han, der
+kalder sig Verdens Frelser, ikke har vidst med sig selv, at Ingen
+enten i Himlen eller paa Jorden kunde overbevise ham om nogen Synd,
+da har han været hildet i et forfærdeligt Selvbedrag. Thi jo
+nærmere et Menneske kommer det Ideale uden at virkeliggjøre det,
+desto klarere seer han Afstanden; det gjælder om ethvert Idèal, men
+især om det hellige.
+% sic: „Idèal“ with a GRAVE accent (verified at 600 dpi), against „det Ideale“
+%      unaccented three words earlier in the same sentence. Printer's slip.
+% ---- printed p.283 (PDF 296) ----
+Det er en religiøs-psychologisk Kjendsgjerning, at Syndsbevidstheden
+voxer med Gudsbevidstheden, indtil Synden er hævet; derfor have de
+store religiøse Charakterer, ikke blot Reformatorerne, men ogsaa
+Apostlene, ikke blot en Luther, men ogsaa en Paulus, en saa levende
+Syndserkjendelse, at Mennesker paa et lavere Bevidsthedstrin ikke
+ret kunne forstaae dem. Denne Syndserkjendelse hører ikke til de
+Ting, hvorom de i Sandhed religiøse Charakterer gjerne tie, hvorover
+de helst udbrede et Slør; tvertimod! den hører just til det, hvorom
+de tale med Eftertryk, saa at de tale høit uden at blive
+høirøstede: thi saa modbydeligt som det er at høre en af hellige
+Indbildninger exalteret Bodsprædikant tale indbildsk om sig selv som
+den største Synder og til yderligere Beviis uden Blufærdighed
+udkramme sine hemmelige Skrøbeligheder og private Jammerligheder for
+at pirre Tilhørernes gudelige Nysgjerrighed, ligesaa væsentligt og
+kategorisk nødvendigt er det, at Syndserkjendelsen lyder med i det
+religiøse Foredrag, og det saa indtrængende, at Enhver maa føle, at
+denne Talende taler af sit Indre.
+
+Naar nu dette staaer fast, hvad skulle vi saa dømme om Ham, der
+kalder sig Verdens Frelser? Eet af Tvende: enten er dette Menneske i
+Sandhed uden al Synd eller ogsaa den største Synder! At dette er
+sagt uden al Overdrivelse, vil Enhver indsee. Om Christus ogsaa i
+Virkeligheden har været det mest religiøse af alle religiøse
+Mennesker, dersom han dog ikke har været syndfri, saa er hans Ord og
+Gjerning en uhyre Aandsforbrydelse mod Gud og Mennesker; thi han har
+jo kun talt om Andres Synd, men ikke om sin egen. Selv om det
+exegetisk kunde bevises, hvad det dog ikke kan, at ingen af de
+Udtalelser, der tillægges ham, lyde paa Syndfrihed i Ordets
+strengeste Betydning, er dette endnu ikke nok. Havde han virkelig
+ikke været syndfri, saa maatte vi vente,
+% ---- printed p.284 (PDF 297) ----
+at der i hele hans Optræden, i alle hans Taler ved enhver Anledning
+fandtes en Tilstaaelse af, at han selv oprindelig var en Synder,
+just den, der i sit menneskelige Selv havde den dybeste
+Syndserkjendelse, efterdi han havde den sandeste Gudserkjendelse og
+ved denne kom Idealet nærmest. Naar nu denne Tilstaaelse ikke paa
+noget Sted er at finde, naar hverken Tilhængere eller Fjender have
+kunnet opdage mindste Antydning af en saadan Selvbekjendelse, men
+derimod baade til Opbyggelse og til Forargelse hørt af hans egen
+Mund, at han var Sandheden selv, Sandhedens Konge, Veien og Livet og
+Sandheden: saa har han med eller uden Bevidsthed fortiet en Sandhed
+og krænket Sandheden. Her kan ikke tales om uskyldigt Selvbedrag.
+Har Christus i dette ene Punkt bedraget sig selv og Andre, da er han
+ikke en Sandhedens, men en Løgnens Konge, det incarnerede
+Slangeprincip, den største Bedrager, der har levet paa Jorden.
+Skulde Viden end ikke finde et saadant Bedrag usandsynligt, Troen
+finder det dog umuligt.
+
+Idet Christi Syndfrihed henføres til sin Mulighed \textit{(potuit
+non peccare)}, saa er det nærmest Frihedens menneskelige Side, der
+bliver fremhævet. Heri ligger en Opfordring til at sammenligne
+Christus med Adam, det oprindelige Menneskevæsen i Slægtens
+Individer. Ogsaa om Adam gjælder det at han, i Kraft af
+Uskyldighedsidealet, kunde have undgaaet at synde \textit{(potuit
+non peccare)}. Ethvert Forsøg paa at begrunde Nødvendigheden af
+Adams Synd, af det i de til Frihed bestemte Individers stedse
+gjentagende Syndefald, er, efter hvad vi have seet, kun et Forsøg
+paa at bortforklare Synden.
+% ERRATUM applied (Trykfeil, p.284 l.6 f.n.): printed „forklare“, corrected in the
+%   book's own errata list to „bortforklare“. Printed reading verified in the scan.
+Da Syndfriheden i det menneskelige Selv begynder som Mulighed, maa
+Fristelsen indtræde, for at Muligheden kan differentiere sig og gaae
+over til Virkelighed. Adam blev fristet og faldt, fordi han
+\emph{vilde} falde. Han vilde falde, fordi han ikke oprindelig vilde
+modstaae Fristelsen; thi
+% ---- printed p.285 (PDF 298) ----
+han kunde jo have modstaaet den: \textit{potuit non peccare}. At den
+gamle Adam nu bagefter forklarer det anderledes, at han nemlig ikke
+kunde modstaae Fristelsen, at han virkelig ikke vilde være falden,
+dersom han kunde have modstaaet, er en tvetydig Udflugt, en uklar
+Blanding af Undskyldning og Selvangivelse, der er ugyldig, og da især
+af den Grund ugyldig, at den kommer bagefter. Christus blev fristet
+og bestod i Fristelsen; han seirede, fordi han vilde seire: han
+syndede ikke, fordi han ikke vilde: forsaavidt gjælde de samme
+Vilkaar for Christus som for Adam.
+
+Dersom Christi Syndfrihed imidlertid blot skulde udtrykke
+Virkeliggjørelsen af det, hvortil den menneskelige Natur, betragtet
+fra Idealets Synspunkt, bærer Muligheden i sig selv, da kunde
+Christus, det sande Menneske, vel siges at være Slægtens moralske
+Forbillede, Vækkeren af de i Individerne slumrende Villieskræfter,
+men ingenlunde Verdens Frelser. For at Christus kan være
+Verdensfrelser, Slægtens Forløser, maa hans Syndfrihed have en anden
+Grund end Adams Uskyldighed: Friheden i ham maa væsentlig opfattes
+fra den guddommelige Side \textit{(non potuit peccare)}. Den
+qvalitative Forskjel mellem Adams og Christi Uskyldighedsstand,
+mellem Adams og Christi Fristelse, med eet Ord: mellem Adams og
+Christi Selv bestaaer oprindelig deri, at medens Selvhedsspiren i
+Adam er naturlig selvisk, er Selvhedsspiren i Christusbarnet derimod
+overnaturlig, en Logosspire, som formedelst Aanden er indgaaet i
+Vexelvirkning med det naturlige Stof og har organiseret Legemet.
+Hvorledes et Livsprincip overhovedet kan forme og danne en legemlig
+Organisme, skal her ikke undersøges; her skal kun paa Troens Vegne,
+gjøres opmærksom paa, at Logosprincipets organiserende Virksomhed er
+fra Naturlærens Standpunkt ligesaa begribelig og ligesaa ubegribelig,
+som Virksomheden af et hvilketsomhelst andet Livsprincip i Naturen.
+At
+% ---- printed p.286 (PDF 299) ----
+Logosprincipet virker som organiserende Livsprincip betyder, at
+Selvet i Sønnen er fra Spiren af ikke blot naturligt, men ogsaa
+helligt, ikke blot menneskeligt, men ogsaa guddommeligt.
+
+\greekrun{β}{Det guddommelige Selv.}
+
+Den væsentlige Forskjel mellem Christus, det sande Menneske og
+ethvert andet Menneske er afgjørende betegnet derved, at det sande
+Menneske selv har fremstillet sig som en sand Gud, som Guds egen Søn,
+den Søn, der er kommen ned fra Himmelen, som guddommeligt Selv. Denne
+Væsensforskjel fremlyser blandt Andet deraf, at han erindrer sig en
+Præexistens: „førend Abraham blev, er jeg“ (Joh.\ 8, 58). En saadan
+Præexistenserindring maa for de menneskelige Individers Vedkommende
+nødvendig enten tabe sig i abstracte Speculationer eller løse sig op
+i mythiske Phantasier. Med mythiske Phantasier udrettes Intet. Det
+Tiltalende i Platos skjønne philosophiske Mythe om Sjælenes
+Præexistens ligger ingenlunde i Udmalingen af Sjælenes forud for
+Fødselen gaaende Tilværelse hos Guderne, men i den sindrige, bevidste
+og dog naive Anskueliggjørelse af det Aprioriske i ethvert
+sjælelig-fornuftigt Selv. Hvor stort et Misgreb der begaaes, naar
+Nogen vil søge at forklare sig Christi Præexistens ved at holde sig
+til Forestillingen og lægge den Platoniske Mythe til Grund, lære vi
+hos Origenes. I Præexistenslæren hos Origenes er Opmærksomheden
+særlig fæstet paa de præexisterende Sjæles Selvværen i objectiv
+umiddelbar Enkelthed. Logos bliver i Modsætning til Gud selv,
+fastholdt i en saa afsluttet Enkeltexistens, at han endog forestilles
+som en Gud for sig, en underordnet Gud (\textit{δευτερος θεος}). Hos
+Origenes er Sønnen nemlig „ikke den høieste Gud, men mindre end
+Faderen, den anden Gud, og staaer paa en vis Maade midt imellem det
+Oprindeliges og det Ikke-Oprindeliges Natur. Han erkjender ikke
+Faderen saa
+% ---- printed p.287 (PDF 300) ----
+fuldkomment, som denne erkjender sig selv; Verden er ikke skabt af
+ham, men ved ham af et høiere Princip end han, af Faderen, og
+ligesaalidt tør man bede til Sønnen, der jo selv beder, men gjennem
+ham til Faderen“. --- „Først Origenes“, siger Strauss, „blev ved
+Nødvendigheden af, deels at finde et Subject for Christi legemlige og
+sjælelige Lidelser, overhovedet for den endelige Form ogsaa af hans
+indre Liv, udenfor den uforanderlige og ubegrændsede Logos, deels at
+finde et forbindende Mellemled mellem denne og det materielle Legeme,
+ført til, bestemt at adskille en menneskelig Sjæl i Christus fra hans
+høiere Natur; en Distinction, der i Forbindelse med hans
+Præexistenstheorie ogsaa tjente ham til at besvare det Spørgsmaal,
+hvorledes og hvorfor just denne Sjæl er kommen til en saadan Forening
+med den guddommelige Logos. Fra Begyndelsen af, d.\ e. allerede i
+Præexistensen, skulde samme paa en ganske anden Maade have hængt ved
+Logos (af fri Drift, som det forstaaer sig af sig selv i Origeneses
+System), og ved denne Hengivenhed skulde den bestandig mere og mere
+være gaaet op i ham, og være bleven een Aand med ham --- rigtignok
+kun saaledes som, efter 1 Cor.\ 6, 17, Enhver, der hænger ved Herren,
+er een Aand med ham; og saaledes bestemtes Christus og Logos som to
+Personer, der kun hvad det Moralske angaaer ere
+Eet“\footnote{Saml.\ I Bd.\ S.\ 580 flgd.\ med II Bd.\ S.\ 84--85.}.
+
+Det er i Troeslæren den objective Videns Vei, vi her med Origenes
+have betraadt. At denne Vei er ufremkommelig, naar en Løsning af
+Præexistensproblemet er Maalet, vil vist Ingen negte; det Resultat,
+hvortil Undersøgelser i denne Retning, trods alle orthodoxe
+Speculationer og Forklaringer, conseqvent maae føre, er ingenlunde
+tilnærmelsesviis en Forstaaelse af Forholdet mellem Gud Logos og
+Mennesket Jesus, men tvertimod en saa
+% ---- printed p.288 (PDF 301) ----
+bundløs Misforstaaelse, at Videnskritiken blot behøver at følge de
+dogmehistoriske Forhandlinger for Skridt for Skridt at paavise
+Modsigelserne og triumphere over Opløsningen. At dække sig mod
+Conseqvensernes Springflod bag en Dæmning af Skriftsteder, er
+umuligt. For Skriftsteder gives der jo altid en Fortolkning, og som
+Erkjendelsesprincipet er, vil Fortolkningen blive. De, som ret ville
+indprænte sig, at det saakaldte Skriftprincip egentlig talt ikke er
+noget Princip, ville i denne Sammenhæng blot behøve at mærke sig den
+exegetiske Taktik, hvormed f.\ Ex.\ Socinianerne gik tilværks for at
+bortforklare Christi Præexistens, en Taktik, som Strauss fortræffelig
+har vidst at vurdere; man kaste blot et Blik paa den Prøve, han
+meddeler af en Fortolkning, som Faustus Socinus har givet af
+Joh.\ 8, 58; 17, 5 og af den johanneiske Prolog%
+% This footnote begins on printed p.288, fills the whole of p.289 below its two
+% lines of body text, and ends at the foot of p.290 (PDF 301--303).
+% The Greek of this note is set with breathings but almost no accents; it is
+% reproduced as printed. The script theta ϑ is normalised to θ and the cursive
+% kappa ϰ to κ, as fount variants (house convention, see RESUME-NOTES.md).
+% sic: „γενεθαι“ for γενέσθαι — the σ has dropped out of the forme, in both
+%   occurrences. Verified at 700 dpi.
+% sic: „δί“ for δι᾽ (Rom.\ 4, 11 δι' ἀκροβυστίας) — the compositor has set an
+%   acute over the iota where the elision apostrophe belongs. 700 dpi.
+\footnote{„Naar Jesus Joh.\ 8, 58 siger til Jøderne:
+\textit{ἀμην, ἀμην λεγω ὑμιν, πριν Αβρααμ γενεθαι ἐγω εἰμι}, saa kan
+for det Første efter F.\ Socinus, \textit{πριν Ἀβρααμ γενεθαι}
+ligesaagodt betyde: før Abraham blev til, som før han blev til; for
+det Andet maae disse Ord ikke forbindes med \textit{ἐγω εἰμι}, men
+med \textit{λεγω ὑμιν}; og for det Tredie maae \textit{ἐγω εἰμι} ikke
+forstaaes om den blotte Existens, men om Christusværdigheden:
+Isandhed, før Abraham bliver til, siger jeg Eder, at jeg er Messias.
+Men Abraham var jo ikke blot blevet til, men ogsaa forgaaet for mange
+hundrede Aar siden, hvorledes kan det da sættes som noget Fremtidigt,
+at han skal blive til? Mennesket med Navnet Abraham, svarer Socinus,
+var rigtignok for længe siden blevet til, men det var blevet til,
+eller indtruffet, hvorfor Gud havde tillagt ham dette Navn, nemlig,
+at han skulde blive mange Folkeslags Fader (1 Mosb.\ 17, 5)
+d.\ e. efter Apostelens Udtydning (Rom.\ 4, 11) \textit{πατηρ παντων
+των πιστευοντων δί ἀκροβυστιας}, da Evangeliet endnu ikke var tilbudt
+disse, men først skulde blive det paa Grund af Jødernes
+Uimodtagelighed. Disse giver Jesus altsaa her den alvorlige
+Formaning, at de skulle anerkjende ham for Christus før Guds Rige
+bliver taget fra dem og givet til Hedningerne“.
+
+„Ved Joh.\ 17, 5 slog F.\ Socinus ind paa en anden Vei, som
+Sam.\ Crell og sildigere Rationalisterne ogsaa benyttede ved det nys
+omtalte Sted. Hvorledes kan man dog være saa blind, spørger han, at
+man ikke skulde indsee, at Christus her ikke vil sige Andet, end at
+det allerede før Verdensskabelsen har været besluttet hos Gud, i sin
+Tid at skjænke ham den Herlighed, om hvilken han nu beder“?
+
+„Dog, en tætslynget Knude af exegetiske Vanskeligheder ventede paa
+den socinianske Hermeneutiks Sværd i den Johanneiske Prolog. Vi ville
+see, om det har formaaet at gjennemhugge den, eller om det ikke
+snarere har forhugget sig deri. --- V.\ 1. \emph{I Begyndelsen}.
+Dette maa forstaaes efter Sammenhængen. Ligesom Moses (1 Mosb.\ 1, 1)
+med dette Udtryk kun meente de Tings Begyndelse, om hvis Oprindelse
+han der vil tale; og det var dem af den synlige, ikke dem af den
+usynlige Verden, saaledes kan Johannes ogsaa her kun mene
+Begyndelsen af det, hvorom han vil handle, nemlig Evangeliet. Ikke
+før der overhovedet var skabt Noget, men før Christendommens nye
+Verden tog sin Begyndelse, \emph{var allerede --- Ordet}. Ligesom
+Døberen metonymisk kaldes en Stemme, saaledes kaldes Christus Ordet
+som Forkynder af det guddommelige Ord eller Evangeliet, og der siges
+om ham, at han i Begyndelsen, d.\ e. til den Tid, da Døberen kaldte
+det israelitiske Folk til Bod, allerede var tilstede og af Gud udseet
+til at forkynde hans Villie. Men Ordet --- \emph{var i Begyndelsen
+hos} Gud;
+% n.b. the letterspacing stops before „Gud“ on this line: „var i Begyndelsen
+%   h o s“ is spaced, „Gud;“ is not. Compared at 700 dpi with „Ordet var Gud.“
+%   three lines below, where „G u d“ IS spaced. Reproduced as printed.
+d.\ v.\ s. før Jesus ved Døberen blev bekjendt for Jøderne, var hans
+høiere Bestemmelse kun Gud bekjendt; men denne Bestemmelse var af den
+Art, at der med Føie kunde siges i den ovenfor fastsatte videre
+Betydning: \emph{Ordet var Gud}. --- V.\ 3. \emph{Alt er skabt ved
+det} o.\ s.\ v.: alle de aandelige og guddommelige Virkninger, som
+Christendommen frembragte i Verden, have deres Grund i Jesus som
+Forkynderen af det guddommelige Ord. --- V 4. \emph{I det var Livet},
+forsaavidt som Enhver, der følger Jesus, vil opnaae den evige
+Salighed og af ham blive opvakt til Udødelighed; han \emph{var
+Menneskenes Lys}, idet han ved sin Lære og sit Exempel lyste for dem.
+--- V.\ 10. \emph{Det var i Verden og Verden er skabt ved det}:
+d.\ v.\ s. Christus optraadte blandt Menneskene, der ved hans
+Virksomhed bleve omskabte i moralsk Henseende. --- V.\ 14. \emph{Og
+Ordet blev Kjød} --- tvertimod \emph{var} Christus, Forkynderen af
+det guddommelige Ord, allerede Kjød eller Menneske paa den Tid,
+hvorom der er Tale, og saaledes maa derfor, og kan ogsaa med Føie,
+\textit{ἐγενετο} oversættes, og det er tilføiet, for at man ikke skal
+holde det Væsen, fra hvilket saa store Virkninger ere udgaaede, for
+et overmenneskeligt; men just dette Ord, som skulde forebygge
+Drømmerierne om en høiere Natur i Christus, lod Djævelen Menneskene
+misforstaae“. Anfr.\ Skr.\ I Bd.\ S.\ 410--413.}.
+% ---- printed p.289 (PDF 302) ----
+% (body text of p.289 is only these two lines; the remainder of the page carries
+%  the continuation of the footnote begun on p.288, transcribed in full above)
+
+Kun naar Præexistenserindringen betragtes under Synspunktet af
+Selvets Forhold til Sandheden, vil dens
+% ---- printed p.290 (PDF 303) ----
+% (the foot of p.290 carries the last nine lines of the footnote begun on p.288,
+%  transcribed in full above)
+Betydning vise sig; men saa vil ogsaa Forskjellen mellem en vidende
+og en troende Opfattelse være iøinefaldende. For den Vidende gjælder
+det, at Selvet og Sandheden svare til hinanden, ikke \textit{in
+concreto}, men \textit{in abstracto}, ikke i Virkelighed, men i
+Væsenhed, i al Almindelighed. Gjennem Sandheden gaaer det vidende
+Selv, luttret fra tilfældig Enkelthed, tilbage i den rene Selvhed og
+derved i den rene Evighed. Erindring af Præexistens er i denne
+Forstand en metaphysisk Opløsning af al Existens: den vidende Selvhed
+existerer ikke, den \emph{er}, den erindrer sin evige Væren ved at
+anskue sig selv \textit{sub specie æternitatis}. Den sokratiske
+Sætning: at al Erkjenden er en Erindren er, siger S.\ Kierkegaard,
+„en Antydning af Speculationens Begynden; men Sokrates forfulgte den
+derfor heller ikke, væsentligen blev den platonisk \dots\ For
+Sokrates betyder derfor det, at al Erkjenden er en Erindren \dots\ det
+Dobbelte: 1) at den Erkjendende væsentligen er \textit{integer}, og
+at der for ham ingen anden Mislighed er med Hensyn til Erkjendelsen
+af den evige Sandhed end den, at han existerer, hvilken Mislighed er
+ham saa væsentlig og afgjørende, at den betyder, at det at existere,
+Inderliggjørelsen i og ved at existere, er Sandheden; 2) at
+Existensen i Timeligheden ikke har nogen afgjørende Betydning, fordi
+der bestandigt er Muligheden af erindrende at tage sig selv tilbage i
+Evigheden, om denne Mulighed end bestandigt ophæves derved, at
+Inderliggjørelse i at existere ud\-
+% ---- printed p.291 (PDF 304) ----
+fylder Tiden. --- Altsaa Subjectiviteten, Inderligheden, er
+Sandheden; gives der nu et inderligere Udtryk derfor? Ja, hvis den
+Tale: Subjectiviteten, Inderligheden er Sandheden, begynder saaledes:
+Subjectiviteten er Usandheden. \dots\ Speculationen siger ogsaa, at
+Subjectiviteten er Usandheden, men siger det lige i den modsatte
+Retning, nemlig hen til at Objectiviteten er Sandheden. Speculationen
+bestemmer Subjectiviten negativt hen til Objectiviteten.
+% sic: „Subjectiviten“ for Subjectiviteten — a dropped syllable; the same
+%   sentence in the Efterskrift reads „Subjektiviteten“. Verified at 400 dpi.
+Den anden Bestemmelse forhindrer sig selv derimod, idet den vil
+begynde, hvilket netop gjør Inderligheden langt inderligere. Sokratisk
+er Subjectiviteten Usandheden, hvis den ikke vil fatte, at
+Subjectiviteten er Sandheden, men f.\ Ex.\ vil være objectiv. Her
+derimod er Subjectiviteten, idet den vil begynde paa at blive
+Sandheden ved at blive subjectiv, i den Vanskelighed, at den er
+Usandheden“\footnote{Afsluttende uvidenskabelig Efterskrift.
+S.\ 151--153.}.
+
+Forholdet mellem Selvet og Sandheden er i den rationelle Ethik et
+ganske andet end i den aabenbarede Religion. Vel er
+Existensfordringen afgjørende ligesaavel for den ethiske
+Subjectivitet som for den religiøse; men forsaavidt den
+almeenethiske Sandhed er rationel, gaaer Selvet under sin Stræben
+bestandig ud fra den Forudsætning, at det oprindelig er i Sandheden,
+og dets Selvudvikling altsaa en Sandhedsudvikling, medens det
+religiøse Selv i sit Gudsforhold maa erkjende, at det væsentlig er i
+Usandheden, forsaavidt det er i Synden. Den rationel-ethiske
+Subjectivitet, hvis Bryderier og Anstrengelser for Sandhedens Skyld
+kun skyldes det Timelige, ikke det Evige, kan altsaa, om den vil,
+trække sig tilbage fra Timeligheden, hvile sig ud i Evighedstanken og
+finde Lindring ved igjennem en Præexistenserindrings Metaphysik at
+identificere sig med „det Absolute“. For det religiøse Selv er en
+saadan Lindring umulig. Selverkjendelsen er i
+% ---- printed p.292 (PDF 305) ----
+Troen uadskillelig fra Syndserkjendelse; Syndserkjendelsen, den i
+uafviselig Existensfordring concentrerede Selvmodsigelse, betyder, at
+Striden mellem Selvet og Sandheden, med alle derunder hørende
+Conflicter ikke blot angaae det Timelige, men i allerstrengeste
+Forstand det Evige; thi det Evige truer. For den troende Bevidsthed
+er den bagved liggende Evighed lukket og enhver Præexistenserindring
+ubetinget afskaaren. Men Christus, hvis Bevidsthed er Aabenbaringens
+Lys, Christus kunde umulig være det sande, det syndfrie Selv, dersom
+han ikke havde været istand til at erindre sig sin Præexistens.
+
+„Jeg er Sandheden“; „før Abraham blev, er jeg“, disse to Sætninger
+svare saa fuldstændig til hinanden, at dersom den første passer paa
+Christus, da gjør den anden det ogsaa. Det er ikke den almene
+Sandhedsidee, men den hellige, personlige Sandhed, den Sandhed, der
+evig er Eet med det sande Selv, hvorom her tales. Idet Christus
+personlig veed sig at være den som Menneske aabenbarede Sandhed, veed
+han sig \textit{eo ipso} at være den for Menneskene aabenbarede Gud,
+det guddommelige Selv, Guds Søn fra Evighed af. At han i sine Taler
+desuagtet fremstiller sig som den, der siger Sandheden, vidner om
+Sandheden og saaledes igjen gjør Forskjel mellem sig selv og
+Sandheden, er begribeligt, naar vi tænke paa den existentielle
+Modsætning mellem Phænomen og Væsen, mellem Selvet som existerende
+Individ og den indre, Selvet iboende Uendelighed, der rummer al
+„Guddommens Fylde“. Bevæget af Aanden, kan ogsaa en Prophet tale
+Sandhedens Ord og vidne om Sandheden; men som existerende Selv er
+Propheten dog kun et menneskeligt Organ for den guddommelige Sandhed
+og kan derfor, selv med den høieste Beaandelse, ikke gjøre sig til
+Eet med Sandheden; hvis den Inspirerede et eneste Øieblik
+sammenblandede det Menneskelige med det Guddommelige og udgav sig
+% ---- printed p.293 (PDF 306) ----
+selv for Sandheden, var han dømt. Derfor har heller Ingen af
+Propheterne i det Gamle Testamente nogensteds antydet nogen
+Præexistenserindring eller vovet at sige: „før Abraham blev, er
+jeg“. Vel kan en Prophet ogsaa tale med guddommelig Myndighed; men
+idet han bruger sin høieste Myndighed, taler han ikke i sit eget, men
+i Jehovas Navn. Men Christus, det guddommelige Selv, taler med
+høieste Myndighed i sit eget Navn, taler af Gud, idet han taler af
+sig selv: „Sandelig, sandelig siger jeg Eder“.
+
+Det mest talende Udtryk for, at Christus handler som guddommeligt
+Selv, have vi i hans Ord til den Værkbrudne: „Dine Synder ere dig
+forladte“. De Skriftkloge, der i ham kun saae og hørte Mennesket,
+sagde ved sig selv: „Denne bespotter Gud“ (Matth.\ 9, 2--3). Det var,
+naar vi sætte os ind i deres Tankegang, i Grunden ganske rigtigt. At
+det ene Menneske ikke i sit eget Navn kan tilsige det andet
+Syndernes Forladelse, forsaavidt de begge ere Syndere, forstaaer sig
+af sig selv; hvis det skete, vilde det virke ligesaa parodisk, som
+hvis to Fanger paa Veien til Forhørsdommeren vilde skifteviis trøste
+hinanden med Forsikkring om Frifindelse. Selv om den Ene vidste sig
+fri for at have begaaet den ham paasigtede Forbrydelse, han kunde dog
+umulig frifinde den Anden. Ligesaalidt kunde Christus, om han ogsaa
+vidste sig syndfri, som Menneske meddele noget andet Menneske
+Syndsforladelse. At fremstille sig som den, der i sit eget Navn har
+Myndighed og Magt at forlade Synder, det er at fremstille sig som det
+guddommelige Selv, som den, der er, før Abraham blev, d.\ e. som den
+evige Dommer.
+
+Videnskritiken har gjort Væsen og Blæst af den store Afvigelse, som i
+Fremstillingen af Christi Person skal finde Sted mellem Synoptikerne
+og Forfatteren af det fjerde Evangelium. At der nu ikke blot i Ord og
+% ---- printed p.294 (PDF 307) ----
+Udtryksmaade, men ogsaa i hvad vi kunne kalde religionsphilosophiske
+Grundforestillinger og betegnende Kategorier viser sig en Forskjel,
+maa indrømmes: Johannes har et dybere Blik for Logos, for Sønnens
+Evighed, for hans Udgang fra Faderen, end Synoptikerne. Men denne
+Afvigelse vedrører ikke Troesprincipet%
+% n.b. the scan sets this whole note with the substitute sorts ,,…‘‘ rather than
+%   the „…“ used elsewhere. Normalised here to the house form.
+% sic: the outer quotation opened at „De tre første Evangelier is NEVER CLOSED —
+%   there is no closing mark after „ogsaa maa have Præexistens.“ Verified at
+%   700 dpi. Reproduced as printed; see the balance note in RESUME-NOTES.md.
+\footnote{„De tre første Evangelier opfatte Christi Guddomsherlighed
+væsentligt under Eschatologiens prophetiske Synspunkt, eller, om vi
+saa maae udtrykke os, under Synspunktet af hans Postexistens. \dots\
+Men i denne Opfattelse er den Tanke skjult tilstede, som Johannes
+klart udtaler, at den, som er den \emph{Sidste}, som i sin
+Tilkommelse skal være over Alt i Skabningen, over Alt i Himlen og paa
+Jorden, ogsaa maa være den „Første“, maa være før alle Skabninger; at
+den, hvem vi i denne Betydning maae tillægge Postexistens, ogsaa maa
+have Præexistens. H.\ Martensen. „Den christelige Dogmatik“.
+S.\ 247--48.}. Det johanneiske Evangelium betegner aldeles ingen
+Overgang fra den umiddelbart religiøse Forestilling til
+Speculationen. Det Speculative, man har villet paadutte Johannes, er
+et Skin: det johanneiske Princip er fra Først til Sidst et
+Villiesprincip; Forholdet er mellem Faderen og Sønnen ubetinget et
+Villiesforhold, og Christi Præexistenserindring saa antirationel som
+muligt.
+
+Da Christus har helbredet den Syge ved Bethesda Dam (Joh.\ 5, 1
+flgd.), og Jøderne, som heraf tage Forargelse,
+% sic: this quotation is never closed — there is no “ after „Gud lig;“, where
+%   the sentence returns to Nielsen's own voice. Verified at 400 dpi.
+„end mere søgte at slaae ham ihjel, fordi han ikke alene brød
+Sabbathen, men og kaldte Gud sin egen Fader, og gjorde sig selv Gud
+lig; følger en Udtalelse, hvori Frelseren udtrykkelig fremstiller sig
+som Faderens Udsendte, som Verdensdommeren; thi „Faderen dømmer
+Ingen, men haver givet Sønnen al Dom, at alle skulle ære Sønnen
+ligesom de ære Faderen“. Den Væsenseenhed af Faderen og Sønnen,
+hvorom Talen handler, er, som Enhver kan see, ingenlunde rationelt
+begrundet i den guddommelige Selvobjectiverings metaphysiske Nød\-
+% ---- printed p.295 (PDF 308) ----
+vendighed, men har sin antirationelle Grund i den religiøs-ethiske
+Frihedseenhed, i Selveenheden, den oprindelige Villieseenhed; thi,
+vidner den hellige Røst, hvis Vidnesbyrd er sandt, „jeg søger ikke
+min Villie, men Faderens Villie, som haver udsendt mig“.
+
+\greekrun{γ}{Det gudmenneskelige Selv: Mysteriet.}
+
+At Selveenhed væsentlig beroer paa en ved Andet betinget
+Selvfordobling, er en Grundsætning, hvis Gyldighed den nyere
+Philosophie har gjort saa indlysende, at den ikke mere kan drages i
+Tvivl. Men ligesom Selveenheden, naar den nærmere skal bestemmes, er
+af forskjellig Art, saaledes er ogsaa Selvfordoblingen af forskjellig
+Art. Der er, for at blive ved Selvbevidstheden, en væsentlig Forskjel
+mellem den blot formelle og den reelle Fordobling. Den formelle er
+let at gjennemskue. At blive sig selv bevidst, er at sætte Selvet paa
+een Gang baade som Subject og Object; Læren om den formelle
+Selvobjectivering hører allerede til de forslidte Emner, og skal i
+denne Sammenhæng ikke videre udvikles. Anderledes forholder det sig
+med Selvfordoblingens existentielle Realitet. Om dette vigtige Punkt
+hersker der endnu i Philosophien en stor Uklarhed, og det af den
+simple Grund, at Abstractionsmetaphysiken, der eensidig seer paa det
+Almene, altfor let bliver færdig med at gjøre Subjectiviteten til en
+Theorie og reducere Selvobjectiveringens Grundact til en almindelig
+Tænkningsact. Er denne Eensidighed allerede skadelig for
+Fornuftphilosophien, som derved umærkelig synker ned til tom
+Ordphilosophie, saa er den dog endnu skadeligere, ja aldeles
+ødelæggende for Religionsphilosophien.
+
+I Religionsphilosophien maa Selveenheden ubetinget opfattes som
+personlig Villieseenhed og den tilsvarende Fordobling sættes, ikke
+som en blot Tænkningsact, men oprindelig som en Villiesact. Hvorledes
+det i denne Henseende forholder sig med Selvets existentielle
+Fordobling,
+% ---- printed p.296 (PDF 309) ----
+og hvorledes Fordoblingen afhænger af Selvcentraliseringens
+Forskjellighed, er, hvad Syndsbevidstheden angaaer, allerede berørt i
+Indledningen. Saadanne Begreber som Anger og Fortrydelse vilde jo
+savne al dybere Realitet, dersom Angerens Smerte ikke netop grundede
+sig paa, at det samme existerende Selv erkjender sig for et
+Dobbeltselv; thi det Selv, der har sat, og det Selv, der vil udslette
+Overtrædelsen, er det samme og dog ikke det samme. Kun en overfladisk
+Fortrydelse kan fordre en forandret Handlen uden at fordre et
+forandret Selv.
+
+Jo dybere Selvet, jo rigere Inderligheden er, desto eiendommeligere
+Phænomener af Selvfordobling vil der kunne fremkomme. Mystikerens
+Selv, f.\ Ex., vil kunne være snart som i Himlen, snart som i
+Helvede, vil, uden at han derfor i endelig Forstand gaaer fra sig
+selv og afsindig bilder sig ind at have flere Selv, kunne
+gjennemleve vidunderlige Kriser, idet Selvets Idealitet ved
+successive og forskjelligartede Concentrationer gjør en Række
+Bevidsthedsforvandlinger mulige. Hvor rige Aandsgaver og religiøs
+Begeistring ere forenede, vil en besindig Iagttager altid finde det
+yderst vanskeligt at gaae tilbunds i et fremmed Indre. Vi kunne tænke
+os et Menneske, f.\ Ex.\ en Digter, saa rigt begavet, at hans
+Productivitet er, bogstavelig talt, endogsaa ham selv en Gaade; vi
+kunne tænke os en Gnist af hellig Ild falde ned i en saadan Sjæl og
+tænde den i Flamme, men udmaale Subjectivitetens Dybder, afsløre
+Productivitetens Hemmelighed og opdage det skjulte Begeistringens
+Kildespring, formaae vi ikke. Vi overraskes, vi næsten gribes af
+Angst for Vanvid, naar en hidtil ukjendt Inderlighed uberegnelig
+svulmende vælder frem, naar en religiøs Begeistring, der ikke kjender
+nogen Grændse, pludselig bryder ud af sit Skjul og vil give sig Luft
+i Forklaring. Jo mere eiendommeligt Gudsforholdet er, desto mere
+unddrager det sig enhver Control af videnskabelig Art. Sandhed og
+Selvbedrag,
+% ---- printed p.297 (PDF 310) ----
+Viisdom og Forrykthed kunne i et religiøst bevæget Indvortes indgaae
+i de allerforskjelligste Forbindelser og afsætte de
+allerforunderligste Phænomener: jo mere begavet Individualiteten er,
+jo vanskeligere er det at gjennemskue dens Livsgrund og bringe
+Charakteerudviklingen ind under almeengyldige Bestemmelser. Den i
+Aanden Bevægede kan kun maales med sit eget Maal, og jo stærkere,
+dybere og oprindeligere Bevægelsen er, desto mere exceptionel er
+Maalestokken. Endogsaa da, naar Selvreflectionen med psychologisk
+iagttagende Speiderblik er dreven til et Yderste, og en
+religiøs-ethisk Charakteerdannelse gjennemført med streng
+Aarvaagenhed og imponerende Conseqvens, vil Inderligheden i
+Gudsforholdet umulig kunne udtrykkes i ligefrem Meddelelse. „Jeg
+vilde“ --- siger en vidunderlig Begavet, hvor han just skal tale om
+sit Forhold til Gud, om hvad der har lært ham at forundres over Gud,
+hans Kjærlighed, og over, hvad et Menneskes Afmagt formaaer ved hans
+Bistand --- „jeg vilde mere besluttet end hiin Konge, der raabte: mit
+Kongerige for en Hest, og salig besluttet som han ikke var det, vilde
+jeg give Alt, mit Liv med, for at finde, hvad der er Tanken saligere
+at finde end den Elskende den Elskede, Udtrykket“ --- Taksigelsens
+Udtryk --- „for saa at døe med dette Udtryk paa mine Læber. Og see,
+det tilbydes, Tankerne saa fortryllende som hine Frugter i
+Eventyrets Have, saa rige, varme, inderlige, Udtrykkene saa lindrende
+for Tankens Trang i mig, saa svalende over den hede Længsel --- det
+er mig, som hvis jeg havde en bevinget Pen, ja om jeg havde ti, vilde
+jeg dog ikke være istand til hurtig nok at følge med i Forhold til
+Rigdommen, som tilbyder sig. Men idet jeg saa tager min Pen i
+Haanden, kan jeg, som man taler om ikke at kunne flytte en Fod, for
+Øieblikket ikke røre den“\footnote{S.\ Kierkegaard. Synspunktet for
+min Forfattervirksomhed en ligefrem Meddelelse. Rapport til
+Historien. Kbhvn., 1859. S.\ 51.}.
+% ---- printed p.298 (PDF 311) ----
+Saalænge Gudsforholdet imidlertid holder sig paa et afledet Trin, saa
+at den religiøse Individualitet væsentlig har sit Liv i en Tilegnelse
+af det aabenbarede Ord, uden selv at turde fremstille sig som et
+særligt, selvstændigt Aabenbaringsorgan, ville Analogier fra det
+Almeenmenneskelige endnu kunne afgive orienterende Støttepunkter og
+en rationel Psychologie, ihvorvel Troens skjulte Under altid vil
+unddrage sig videnskabelig Forskning, yde negative Bidrag ved
+Bestemmelsen af saadanne Grændser, som ikke tør overskrides, dersom
+virkelige Troesphænomener overhovedet skulle lade sig adskille fra
+Phænomener af excentriske Sværmerier og uhyggelige
+Aandsforvildelser. Optræder derimod et exclusivt, selvstændigt
+Aabenbaringsorgan, f.\ Ex.\ en Prophet, da vil Mysteriet i en saadan
+Selvbevidsthed kategorisk svare til Aabenbaringen. Men hvor Mysterium
+og Aabenbaring kategorisk svare til hinanden, saa at Mysteriet
+standser Viden, medens det Aabenbarede beriger Troen, der er enhver
+fra Humanitet og rationel Psychologie hentet Maalestok uanvendelig.
+Om indtrængende Erkjendelse af forskjelligartet Selvbevidsthed
+gjælder det først og sidst: kun det Lige forstaaes af det Lige. Er
+allerede en Prophets religiøse Selvbevidsthed, ifølge det ham
+Betroede, qvalitativt forskjellig fra enhver anden troende
+Bevidsthed, da maa jo Christi Selvbevidsthed i absolut Forstand være
+forskjellig endog fra Prophetens. Sønnen, den Eenbaarne, veed sig ---
+realiter --- at være Gud og veed sig tillige --- realiter --- at være
+Menneske: denne Selvfordobling er i sin gudmenneskelige Realitet et
+uigjennemtrængeligt Mysterium.
+
+Ikke destomindre have baade Troens og Vantroens Ordførere, hver fra
+sin Side, med stor Paatrængenhed forsøgt at arbeide sig igjennem
+Mysteriet. Tankeforvirringen er saa ovenikjøbet bleven forøget
+derved, at man istedenfor at fastholde Opgaven i Selvbevidsthedens,
+altsaa i Selvvishedens og Idealitetens aandige Form, har faaet den
+% ---- printed p.299 (PDF 312) ----
+forvandlet til et Stykke Naturphilosophie, en
+physiologisk-hyperphysiologisk Opgave, ved at indføre Læren om
+Christi to Naturer.
+
+Udgangspunktet for de christologiske Begrebsforvildelser maa
+oprindelig søges i Speculationerne over Logos. Hvor forskjellige
+Forestillingerne end fra Begyndelsen af vare, var man dog i
+Almindelighed enig om at ansee Logos for et selvstændigt Væsen.
+Forestillingen om et eiendommeligt Logosselv stod fast som
+ubestridelig Forudsætning, da Læren om Logos som den uskabte, af
+Faderen fra Evighed af med Nødvendighed fødte Søn blev erklæret for
+orthodox. Altsaa Opgaven var at forklare sig, hvorledes det evige,
+almægtige, alvidende og allestedsnærværende Logosselv kunde til et
+givet Tidspunkt antage menneskelig Natur og lade sig føde som
+Menneske. Denne Opgave er uløselig. Her danner sig for den objective
+Anskuelse et dobbelt Logosselv, et i Gud og et andet i Mennesket;
+hiint er fra Evighed af, dette har Begyndelse i Tiden; hiint er
+værende, dette vordende; hiint er almægtigt, dette lidende; hiint
+forbliver i Himlen, medens dette vandrer paa Jorden: istedenfor een
+Guds Søn faaer Speculationen, saa nødigt den end vil det, to Guds
+Sønnner,
+% sic: „Sønnner“ with three n's, for Sønner. Verified at 700 dpi; the same page
+%   and p.301 both set „Sønner“ correctly elsewhere.
+en, der ikke er bleven Menneske, og en, der er bleven
+Menneske. Betragte vi dernæst det Logosselv, der er blevet Menneske,
+saa gjentager Vanskeligheden sig med Hensyn paa Menneskets Selv. Er
+Gud Logos virkelig selv bleven Menneske, et sandt fuldstændigt
+Menneske, saa maa der jo i Gudmennesket enten være et dobbelt Selv,
+et Logosselv, thi dette Menneske er Guds Søn, et Menneskeselv, thi
+denne Guds Søn er et sandt Menneske, eller ogsaa maa Logosselvet
+udelukke Menneskeselvet. Men enten man nu antager, at der i
+Gudmennesket er et dobbelt Selv, eller ogsaa, at Logosselvet har
+fortrængt Menneskeselvet og sat sig selv i dets Sted, er Resultatet
+lige urimeligt.
+% ---- printed p.300 (PDF 313) ----
+
+Idet Troeserkjendelsens Grændser overskrides og de to adskilte
+Naturers uadskillelige Eenhed nøiagtig skal fastsættes, møder
+Videnskritiken strax med Indvendinger som disse. „Naar Guds Søn, et
+almægtigt Væsen, Verdens Behersker, evig, sig selv lig i Actualitet,
+skulde forenes med et tilblevet, endeligt Menneske, saa var der kun
+to Veie aabne: enten maatte Guden trække sig sammen i den
+menneskelige Endelighed og underkaste sig den menneskelige Vorden,
+saa at han virkelig havde slumret bevidstløs i Modersliv med
+Mennesket, efter Fødselen successivt udviklet sig og paa Livstid
+frasagt sig Deeltagelse i Verdensregjeringen; men herved var hans
+Guddom ophævet, og Kirken, der trængte til denne, kunde følgelig
+ikke gaae denne Vei. Saa havde man da den anden Vei: medens
+Mennesket successivt udviklede sig fra Embryo til Mand, blev Guden
+sig selv lig i sin absolute Actualitet; medens Mennesket sov
+bevidstløs i Skibet, var Guden alvidende; medens Mennesket hang paa
+Korset og laa i Graven, regjerede Guden alle Ting. Dette er det
+almindelige Grundlag for den kirkelige Forestilling; men herved
+vilde rigtignok Christi Persons Eenhed være fuldkommen sønderrevet.
+Derfor gjorde man ogsaa hans menneskelige Natur deelagtig i den
+Guddommeliges Fortrin; derved satte man den endnu mere skrigende
+Modsigelse, at man nu skulde tænke sig denne ene menneskelige Natur
+paa den ene Side som hævet over den successive Vorden, som alvidende
+og almægtig, og dog paa den anden Side som successivt vordende og
+begrændset i Kraft og Viden. Dette Sidste var den heller ikke
+nogensinde virkeligt, men bestandigt kun det Første, men paa en
+skjult Maade, sagde det ene Parti: --- og det opløste saaledes hele
+Christi menneskelige Liv i et skuffende Gøglespil. Den besad hine den
+guddommelige Naturs Fortrin, sagde det andet Parti, men afholdt sig
+i Reglen fra Brugen af dem: --- altsaa var Christus dog undertiden
+som
+% ---- printed p.301 (PDF 314) ----
+Menneske, med den menneskelige Hjernebygning o.\ s.\ v. alvidende og
+almægtig; ja hans menneskelige Natur havde ligesaavel allerede i
+Modersliv, følgelig som Embryo kunnet vide Alt, regjere Verden ---
+det var kun hans frie Villies Skyld, naar han ikke gjorde
+det.“\footnote{Strauss Troesl.\ II.\ Bd.\ S.\ 117}
+
+Er Troeslæren først gaaet over paa den objective Videns Enemærker,
+da er det forsilde at tye ind under det Ubegribelige og beraabe sig
+paa Mysteriet, naar man rammes af Kritikens Pile; thi Grændsen er
+overskreden. Mysteriet er Grændsen, den kategorisk afgjørende
+Grændse for Troens Tænkning saavelsom for Videns. Grændsen bestemmes
+ved Begrebernes egen conseqvente Selvopløsning. At Eenheden af
+Selvet i Christus med det evige Logosselv er en Principeenhed, maa
+Troen fastholde; men, hvorledes Christi Bevidsthed har formaaet at
+omsætte denne Principeenhed i concret personlig Selveenhed, er og
+forbliver et uigjennemtrængeligt Mysterium. Hvad hjælper det vel at
+tye til Talemaader som disse: „Her er ikke to Guds Sønner, men een
+Guds Søn; med Christus kommer ikke en anden Søn til Treenigheden;
+den hele Bevægelse foregaaer indenfor Treenighedens Kreds“
+o.\ s.\ v., naar det dog i objectiv Forstand er umuligt at tænke sig
+eller endog gjøre sig en Forestilling om, hvorledes Logosselvet i
+Gud og Logosselvet i Mennesket kunne trods Adskillelsen være
+forenede indenfor Treenighedens Kreds? Eller er der vel nogen
+Tænker, som for Alvor tør paatage sig at klare os en Fordobling som
+den, at det ene og samme Selv kan til een og samme Tid være baade
+alvidende og dog ikke alvidende, baade almægtigt og dog lidende? Kan
+her ikke være to Guds Sønner, saa kan den ene Guds Søn da endnu
+mindre tænkes at have deelt sig i to halve Sønner. Det er dog
+virkelig en monstrøs Forestilling, at den ene halve Søn, Sønnens ene
+halve Selv, „den rene Guddomslogos“ skulde gjen\-
+% ---- printed p.302 (PDF 315) ----
+nemvirke „Naturens Rige i altopfyldende Nærværelse“, medens den
+anden halve Søn, Sønnens andet halve Selv, kun til en bestemt Tid
+kunde være nærværende paa et bestemt Sted, være sig i Nazareth eller
+i Jerusalem. Hvad hjælper det at ville rette paa de gamle
+Dogmatikere, som for at hævde Selveenheden forestillede sig, at de
+guddommelige Egenskaber ved \textit{communicatio idiomatum} ---
+meddeeltes den menneskelige Natur i al Uendelighed, naar der ikke er
+ringeste videnskabelig Udsigt til at komme et Haarsbred videre med
+„det retforstaaede Begreb om den guddommelige Selvbegrændsning“
+(\textit{κενωσις})?
+% n.b. printed unaccented (κένωσις would be the normal form), with the fount's
+%   cursive kappa ϰ, normalised to κ. Verified at 700 dpi.
+Blot et Exempel: Christus forudsiger Verdens
+Undergang og tilføier (Mr.\ 13, 32): „Men om den Dag og Time veed
+Ingen, hverken Englene, som ere i Himmelen, ikke heller Sønnen, men
+alene Faderen,“ og Qvenstedt forklarer Stedet: „Jeg Christus, som
+Menneske, gjør nu i Fornedrelsens Tilstand ingen Brug af den
+guddommelige Alvidenhed, som jeg dog besidder, saa at jeg nu i
+Virkeligheden ikke kjender Tidspunktet for den yderste Dag“.
+Hvorledes vil man i en objectiv videnskabelig Troeslære corrigere
+Qvenstedt? Siger man, at Christus i sin Fornedrelses Tilstand
+virkelig ikke har vidst Dagen og Timen, medens „den rene
+Guddomslogos“ i Himlen har vidst baade Dag og Time, saa faae vi jo
+dog et dobbelt Logosselv, „en Christus med to Hoveder“, det ene med
+indskrænket, det andet med uindskrænket Viden.
+
+Var det nu muligt at bortskære Speculationens svampagtige Udvæxter
+med et Snit eller dog at luge det troesvidenskabelige Ukrudt, som man
+luger Tidsler med et skarpt Jern, da vilde det unegtelig være den
+mest praktiske Methode at erklære „Gud-Mennesket“ for „et Paradox“
+og Paradoxet for „et Absurdum“. Det er den Kierkegaardske Udvei,
+som, hvad Inderliggjørelse af Existensproblemerne angaaer, visselig
+har sin Ret. Men Troestanken har som Tanke dog ogsaa sin Ret. Den
+religi\-
+% ---- printed p.303 (PDF 316) ----
+øse Opfattelse af Gudmennesket maa, saasandt den skal gaae i Eet med
+en væsentlig Selvforstaaelse, nødvendig forudsætte en troende
+Opfattelse af det gudmenneskelige Selv, men en troende Opfattelse er
+betinget af Troestanken; bliver nu Troestanken ligesaa brat afbrudt
+som Videnstanken, da oprykker man jo Hveden tilligemed Klinten, og
+det seer betænkeligt ud med Lugningen.
+
+Den religiøse Opfattelse af Gudmennesket reducerer S.\ Kierkegaard
+til Opfattelsen af et gudmenneskeligt Incognito. Gudmennesket er
+Gud, men vælger at blive det enkelte Menneske. „Dette er det dybeste
+Incognito eller den uigjennemtrængeligste Ukjendelighed, der er
+mulig; thi Modsigelsen mellem at være Gud og at være et enkelt
+Menneske er den størst mulige, den uendeligt qvalitative. Men det er
+hans Villie, hans frie Beslutning, og derfor et almægtigt fastholdt
+Incognito. Ja, han har i en vis Forstand, ved at lade sig føde, een
+Gang for alle bundet sig selv; hans Ukjendelighed er saa almægtigt
+fastholdt, at han selv paa en Maade er i sit Incognitos Magt, hvori
+ligger hans reent menneskelige Lidelses bogstavelige
+\emph{Virkelighed}, at denne ikke er en blot \emph{Tilsyneladelse},
+men i en vis Forstand er den paatagne Ukjendeligheds Overmagt over
+ham selv.“\footnote{Indøvelse i Christendom af Anticlimacus. 2det
+Oplag. 1855. S.\ 141.}
+
+Den, der ret besinder sig paa, hvad hermed er sagt, vil indsee, at
+der er Forskjel mellem et Mysterium og et Absurdum. Mysteriet
+opløser Modsigelsen ved at løse de modstridende Begreber op. I et
+Absurdum have vi derimod en Haardknude af faste, uopløste og dog
+uforenelige Begrebsbestemmelser, af evige, i sig uopløselige
+Modsigelser. „At en Almægtig“, „lader sig føde“, „at en Almægtig
+frivillig sætter et Incognito saa almægtigt, at den Almægtige selv
+er i sit Incognitos Magt“; slige skrigende Modsigelser tilhøre ikke
+Mysteriet, men det rene Absur\-
+% ---- printed p.304 (PDF 317) ----
+dum. De reserverende Udtryk: „paa en Maade“, „i en vis Forstand“,
+give i den anførte Sammenhæng ingen Forstaaelse. Forfatteren maa
+tilvisse have Ret, naar han tilføier: „Det er en besynderlig Art
+Dialektik, at han (Gudmennesket) almægtig --- binder sig selv; og
+han gjør det saa almægtigt, at han virkelig føler sig bunden, lider
+under Følgen af, at han kjærligt og frit besluttede at blive et
+enkelt Menneske“. Ja, det er en besynderlig Art Dialektik, at det
+gudmenneskelige Selv, det Selv, hvori al Gudserkjendelse, al sand
+Selverkjendelse skal grunde, er, ikke blot et Tegn, som imodsiges af
+Andre, men væsentlig et Tegn, som imodsiger sig selv.
+
+Sønnens gudmenneskelige Selv er intet Paradox; men det er et
+Mysterium.
+
+\runhead{b) Grundbestemmelser i Sønnens Selv.}
+\parmark{20}
+
+\emph{Jesus Christus, Guds eenbaarne Søn}, er ikke et Videns Object,
+men Troens Gjenstand. Som Objectet er, maa Objectiveringen være;
+ligesom Vidensobjecterne forudsætte en Objectivering i Viden,
+saaledes maae Troesobjecterne forudsætte en Objectivering i Tro.
+Saasandt nu Principerne, Troens og Videns, ere absolut ueensartede,
+maa ogsaa Troens Objectiverering være absolut ueensartet med Videns.
+% sic: „Objectiverering“ — a doubled -er-, for Objectivering. 400 dpi.
+Det absolut Ueensartede ligger, som vi have seet, ikke umiddelbart i
+Gjenstandens Forskjellighed, men væsentlig i den Forvandling, som
+den forskjelligartede Objectivering bevirker. Al Objectivering i Tro
+har nu det Eiendommelige ved sig, at Selvforstaaelse og Forstaaelse
+af Gjenstanden betinge hinanden i indre Uendelighed. Den Syndige maa
+kjende sig selv paa den Usyndige, og omvendt; den i Timeligheden
+Formørkede maa kjende sig selv paa den i Evighedens Lys Forklarede,
+og omvendt;
+% ---- printed p.305 (PDF 318) ----
+dette er Objectivering i Tro. Det Lige og det Ulige, det Fælles og
+det Forskjellige kan kun ved en saadan Objectivering komme frem og
+erholde sin fulde Betydning. Dette er da Ligheden, det Fælles, at
+Christusselvet, det hellige Logosselv, der „indsænker sig i
+Menneskehedens Skjød som Mulighed, som hellig Sæd“ og lader sig føde
+af en Qvinde, begynder fra Spiren af sin Vorden, sin Udvikling i
+Tiden paa tilsvarende Maade som ethvert naturligt Menneskeselv;
+medens Uligheden og Forskjelligheden er, at det selviske Selv,
+fortabt i Endeligheden, glemmer Evigheden, det hellige Selv derimod,
+stridende i Endeligheden, uafbrudt erindrer sin Evighed og gjør
+Selvets evige Liv aabenbart. Dette er Ligheden, det Fælles, at
+Christusselvet, det hellige Logosselv, ikke har sit Liv umiddelbart
+af sig selv, men af Gud i sit Gudsforhold, paa tilsvarende Maade som
+ethvert troende Menneskeselv; men Uligheden og Forskjelligheden
+viser sig deri, at det sande oprindelige Gudsforhold, Sønnens Liv af
+Faderen i Faderen, er hans evige Liv i sig selv, medens den Troende
+kun ved at tilegne sig Livet i Sønnen og formedelst Sønnen af
+Faderen kan i sig selv have et afledet Liv. Dette er Ligheden, det
+Fælles, at Mennesket Christus, Troens Gjenstand, er som existerende
+Menneske med menneskelig Indskrænkning et enkelt selvlysende Punkt i
+det ydre uendelige Universum, paa tilsvarende Maade som ethvert til
+Bevidsthed udviklet Menneske; men Uligheden, den gjennemgaaende
+Forskjel er, at Christus, Sandhedens, Livets oprindelige Lys er
+Aandernes Sol for Tid og Evighed, medens det Evighedslys, der ved
+Troen tændes i Menneskets Sjæl, er et afledet Lys, en Straale fra
+Aandernes Sol.
+
+\greekrun{α}{Sønnens Selv er Logos.}
+
+Oprindelig er Troens Blik at fæste paa den som virkeligt Menneske og
+dog som Messias optrædende Jesus
+% ---- printed p.306 (PDF 319) ----
+af Nazareth. Ved at høre hans Ord og see hans Gjerninger fik
+Disciplene strax et dobbelt Indtryk. Det begynder hos Johannes, som
+om Forstaaelsen faldt af sig selv; det begynder med ideale
+Forventninger: „Fra nu af skulle I see Himmelen aabnet og Guds Engle
+fare op og fare ned over Menneskens Søn“ (Joh.\ 1, 52). Men at
+Modsætningen mellem den ydre Ringhed og den indre Herlighed har
+virket stærkt paa de første Disciple, og at det har gjæret og
+arbeidet i dem, inden de kunde komme til klar og sikker Forstaaelse,
+derom indeholde Evangelierne mange og talende Vidnesbyrd. Det kom
+til Gjennembrud hos Petrus, da han (Matth.\ 16, 16) paa Mesterens
+Spørgsmaal gav det lovpriste Svar: „Du er Christus, den levende Guds
+Søn“; men hvor ustadig det opblussende Lys flammede, og hvor let det
+under Vandringen med Christus kunde gaae tilbage med Forstaaelsen,
+viser Petrus selv ved sit Exempel til det Sidste. Først efterat den
+Opstandne var indgaaet til sin Herlighed, og Aanden udgydt over hans
+Vidner, stod Billedet af den Forklarede levende for dem med alle
+gudmenneskelige Træk. Sammenfatte vi da Evangelisternes og
+Apostlenes Udtalelser om Christi Guddom i eet Totalindtryk, da
+stemme de alle overeens i at anerkjende Menneskesønnen for Guds Søn,
+for Alskabningens Førstefødte, for Logos, for Guds Herligheds Glands
+og hans Væsens udtrykte Billede (Hebr.\ 1, 3); dette er den første
+Grundbestemmelse i Sønnens Selv: \emph{Sønnen er Logos}.
+
+Mærke vi os nu den Vei, ad hvilken Grundbestemmelsen er naaet, da
+lære vi, hvad det vil sige, at Troens Gjenstand vil objectiveres i
+Tro. Thi Erkjendelsens Udgangspunkt er ikke sat i Guds evige Væsen,
+i Treenigheden \textit{ad intra}; men Udgangspunktet er i den som
+Menneske aabenbarede Gud, i det levende personlige Indtryk af
+Christi Person. Der begyndes ikke med Guds immanente
+Selvobjectivering, det store Nødvendighedsproblem
+% ---- printed p.307 (PDF 320) ----
+i Speculationen; men der begyndes med det existerende Selv, med den
+rene, den hellige Villie, der alene formaaer at vække Sandhedens,
+Frihedens og Kjærlighedens Liv i troende Sjæle: der begyndes ikke
+rationelt, men antirationelt.
+
+Derfor er der i den apostoliske Objectivering da ogsaa en Række
+Bestemmelser udeladte, som den videnskabelige Reflexion bestandig
+søger, men aldrig finder, og det er de metaphysiske
+Mellembestemmelser, just de Væsensbestemmelser, der skulde opløfte
+Troen til Viden og give Troeslæren Præg af objectiv Videnskab. Det
+siges kort og enfoldigt, at Logos var i Begyndelsen hos Gud og var
+Gud; men om Logosselvets oprindelige Forhold til Gudselvet findes
+der end ikke den svageste Antydning. Det siges kort og enfoldigt, at
+Logos blev Kjød, men om Forholdet mellem Selvet i den evige og
+Selvet i den menneskeblevne Logos siges der ikke et Ord; og hvorfor
+ikke? Fordi Incarnationens metaphysiske Problem slet ikke har været
+til for Evangelisten. Jo mere personligt Sagen tages, desto
+tydeligere bliver det, at Problemets Metaphysik falder udenfor
+Troen. Man forestille sig engang, hvorledes det vel vilde tage sig
+ud, om En af Disciplene, f.\ Ex.\ Petrus, var bleven metaphysisk paa
+Veien, og havde gjort Christus følgende Spørgsmaal: „Mester, siig
+mig oprigtig, hvorledes kan du, som nu er Guds Søn paa Jorden,
+legemlig nærværende iblandt os, tillige være Guds Søn i Himlen, den
+Almægtige, Allestedsnærværende, der tilligemed Faderen styrer al
+Verden, formaaer du dette \textit{κατα κρυφιν} eller maaskee
+\textit{κατα κενωσιν}?“ og man vil faae et Indtryk af
+Gudsbespottelse, et Indtryk af, at Christus strengt vilde afvise den
+spørgende, som han paa given Anledning afviste den formanende,
+Petrus: „Vig fra mig, Satan! du er mig en Forargelse“. Vil et
+kløgtigt Metaphysikmenneske finde Afviisningen naturlig af den
+Grund, at „Christus, der ikke var Meta\-
+% ---- printed p.308 (PDF 321) ----
+physiker og følgelig endnu ikke sig selv fuldkommen gjennemsigtig i
+det Almene, naturligviis var nødt til at benytte sig af sin
+Autoritet og bide Disciplen af, fordi han ikke formaaede at besvare
+hans videnskabelige Spørgsmaal“: da skal en Vidensoplysning af den
+Natur vist ikke formørke den Troende.
+
+Den scholastiske Orthodoxie lader sig imidlertid ikke nøie med en
+religiøs Udvikling af Religionens Indhold; den fordrer metaphysisk
+exacte Mellembestemmelser, den objectiverer i Viden, den bestemmer
+det Ubestemmelige, den krænker Mysteriet.
+
+Hvor charakteristisk er i denne Henseende ikke Striden mellem Arius
+og Athanasius! De gaae begge to ud fra Troens Forudsætninger, de ere
+begge enige om, at Troesindholdet maa lade sig tænke, og komme da
+ogsaa begge til at begaae det samme Misgreb, at forvexle
+Troestanker med Videnstanker: vi høre det strax paa
+Grundspørgsmaalet. Er Sønnen \emph{skabt} eller \emph{født} af
+Faderen, er Logos af Gud med Frihed eller med Nødvendighed? For at
+svare exact paa dette Spørgsmaal, maatte man da nødvendig have de to
+Begreber: Skabelse og Fødsel fuldkommen klare og tillige kunne gjøre
+Begrebet Gud saa objectivt gjennemsigtigt, at Forskjellen mellem en
+\emph{skabt} og en \emph{født} Gud blev aldeles indlysende. Men hvor
+umuligt det fra Troens Standpunkt er at begribe Guds indre, evige
+Selvaabenbaring, mærkes allerede af Stridens Begyndelse. Naar Arius
+paastaaer, at Sønnen er skabt, men med det Fortrin fremfor de øvrige
+Skabninger, at disse alle, den Hellig-Aand ikke undtagen, igjen ere
+skabte ved Sønnen, da er det øiensynligt, at han ikke begriber, hvad
+han selv siger. Der er visse, efter hans Mening anstødelige
+Forestillinger om en Udstrømning af Logos fra Gud, en Deling af Gud,
+en Sammensmeltning af Faderens og Sønnens Væsen o.\ desl., han vil
+afværge; men at han ikke har gjort sig Skabelsesbegrebet klart og
+endnu mindre gjennem\-
+% ---- printed p.309 (PDF 322) ----
+skuet, hvad der ligger i saadanne Begreber som en \emph{skabt Gud},
+en \emph{skabt Skaber}, er umiskjendeligt. Men det Samme maa siges
+om Athanasius. Istedenfor at indsee, at Ariuses Misgreb netop
+bestaaer i, at han fordrer metaphysiske Mellembestemmelser, hvor de
+ikke kunne gives, og derfor vilkaarlig opstiller Sætninger, der
+forvirre de religiøse Forestillinger, betræder Athanasius selv samme
+Vei som sin Modstander, kun at han vil have sin, ikke Modstanderens,
+Metaphysik sanctioneret. At Athanasius ligesaalidt begriber, hvad
+han selv stiller op, som Arius, kan let bevises. Ifølge Athanasius
+skal Sønnen fra Evighed af være avlet af Faderen; men ikke at tale
+om, at Kategorien Avling, hvad Arianerne da ogsaa noksom
+fremhævede, særligt tyder hen paa en sandselig-legemlig
+Naturfrembringelse, en Deling af Faderens Væsen, saa er Begrebet af
+en Avling fra Evighed af jo stærkt beheftet med Modsigelse. At være
+avlet fra Evighed af var da ogsaa for Arianerne det Samme som ikke
+at være avlet. „Skal Sønnen ikke være avlet, da han allerede var,
+hvilket er en Modsigelse, saa kan han umulig have været til før sin
+Avling“. Den evige Avling er en Begyndelse uden Begyndelse, en
+Frembringelse af et allerede Frembragt, en Tilblivelse af det, som
+ikke bliver til, men er. Saa maatte Athanasius og hans Venner da
+omsider tilstaae, at Sønnens Avling er foregaaet paa ubegribelig
+Maade (\textit{ἀρρήτως και ἀνεκδιηγήτως}), at med andre Ord
+Avlingsbegrebet, anvendt paa Gud, er et ubegribeligt Begreb%
+% This footnote begins on printed p.309 and runs over onto p.310 (PDF 322--323),
+% where it takes the lower third of the page. The Greek above keeps its acutes
+% (ἀρρήτως, ἀνεκδιηγήτως) but sets και unaccented; verified at 700 dpi.
+\footnote{At Nogle af Kirkefædrene idetmindste have havt en Anelse
+om, at Rettroenhedens Forsvarere bleve ved Kjætternes Paafund
+tvungne ind paa en unaturlig Vei, skjønnes blandt Andet af følgende
+Udtalelse. \textit{Sufficiebat quidem credentibus Dei sermo} \dots\
+\textit{Sed compellimur hæreticorum et blasphemantium vitiis illicita
+agere, ardua scandere, ineffabilia eloqui, inconcessa præsumere.}
+\textit{Hilarius de trinitate. II, 1.} Jvfr.\ Gieseler I, 2, S.\ 43.
+--- Det er saa langt fra, at \textit{Symbolum Nicænum} kan siges at
+have klaret og styrket Menighedslivet, at den græske Kirke, hvad
+Grundtvig med fuld Ret har fremhævet, ved at lægge dette Symbolum
+til Grund og i Overeensstemmelse med sit alexandrinske Skriftprincip
+ombytte Troen paa det levende Christusord med Troen paa dogmatisk
+Metaphysik, netop hidførte den aandelige Selvsvækkelse, hvorunder
+den lider den Dag idag.}.
+% ---- printed p.310 (PDF 323) ----
+% (the lower third of p.310 carries the end of the footnote begun on p.309,
+%  transcribed in full above)
+
+Altsaa: først krænker man Mysteriet ved at tvinge metaphysiske
+Mellembestemmelser ind i Troesbekjendelsen; naar det saa viser sig,
+at disse Mellembestemmelser ende i lutter Modsigelser, saa beraaber
+man sig paa Mysteriet --- det Mysterium, man selv har krænket.
+
+\greekrun{β}{I Sønnens Selv er Livet.}
+
+„Faderen har givet Sønnen at have Livet i sig selv“; heri ligger, at
+Christus giver Verden et nyt Liv, idet han i Verden indfører et nyt
+Selv. Fra den kirkelige Metaphysiks Standpunkt er dette Selv
+rigtignok blevet mishandlet i den Grad, at den negative Kritik har
+gjort Religionen en væsentlig Tjeneste ved at gjøre Mishandlingen
+aabenbar. Ifølge den scholastisk-objective Kirkelære skal der ikke
+kunne tilkomme Christi menneskelige Natur nogen egen Personlighed;
+men --- det er en Straussisk Indvending --- Jesu Menneskehed vilde
+jo være lemlæstet, og han vilde overhovedet ikke kunne have havt
+nogen menneskelig Aand, hvis der, paa Grund af Foreningen med Logos,
+ikke kunde udvikle sig en Personlighed af hans Menneskenatur. I
+dette Tilfælde kunde der da heller ikke udvikle sig nogen menneskelig
+Sjæl, ikke heller noget menneskeligt Legeme. „Thi da det dog
+aabenbart er en Virkning af den i det menneskelige Embryo som Spire
+indesluttede menneskelige Aand, at den udvikler sig til et besjælet
+Legeme af bestemt Skikkelse og Beskaffenhed: saa maatte der have
+dannet sig en Organisme af ganske anden Art for Guds Søn, naar han
+% ---- printed p.311 (PDF 324) ----
+som Personlighedens Spire forbandt sig med et menneskeligt Embryo
+(ligesom Gallehvepsen, naar den med sin Braad borer i Grenen af en
+Rosenbusk, ikke frembringer nogen Rose, men den mosbedækkede
+Concretion, som Almuen i Tydskland kalder
+Schafapfel)\footnote{Strauss. Troesl.\ II.\ S.\ 94.}“.
+% n.b. the footnote marker stands BEFORE the closing quotation mark in the
+%   setting: „…kalder Schafapfel)*)“. Reproduced in that order.
+
+Disse og lignende Indsigelser tabe deres Betydning, naar vi ifølge
+Troesprincipet sætte den qvalitative Forskjel imellem Christusselvet
+og ethvert andet Menneskeselv i Syndfriheden alene. Det syndfrie
+Selv er som Logosspire af guddommelig Natur, helligt og reent som
+Guds eget Selv. At Vexelvirkningen mellem det overnaturlige
+Logosprincip og det legemlige Stof i et menneskeligt Embryo er et
+uigjennemtrængeligt Mysterium, indrømmes; men saa spørge vi: hvad
+har nu Videnskaben, hvormed den kan bevise, ikke Usandsynligheden,
+thi den er underforstaaet, men Umuligheden af en saadan
+Vexelvirkning? Kjendsgjerninger som i det skjønne Exempel med
+Gallehvepsen og Rosenbusken har den jo slet ikke. „Men Begreber!“
+Ja, tomme Formler til Bedste for Ordkritiken, intetsigende
+Modsigelser saasom: at et overnaturligt Princip ikke er et
+naturligt, at Christus ikke er et Menneske som andre Mennesker
+o.\ s.\ v., Begrebsmodsigelser, der alle snige sig frem under den
+Mystification, at vi kjende, hvad vi dog ikke kjende, vide, hvad vi
+dog ikke vide.
+
+Som det sande Menneske og Guds Søn lever Christus kun i sig selv
+derved, at han lever i Gud, og lever i Gud, idet han lever i sig
+selv: han har ikke en Religion, thi han er Religionen. I Religionen
+selv er Gudsforholdet det rene, ideale Villiesforhold; Religionen
+selv er Livet, det evige Liv. At Mennesket i sit Gudsforhold er
+absolut afhængigt af Gud, kan den Troende lære af Christus. Thi
+uagtet Sønnen vidner om sig selv, at han og Faderen ere Eet
+(Joh.\ 10, 30), saa vidner han dog ogsaa paa det
+% ---- printed p.312 (PDF 325) ----
+Eftertrykkeligste om sin Afhængighed, sin absolute Afhængighed af
+Faderen. Han har Intet af sig selv, kan ikke tale af sig selv og
+slet Intet gjøre af sig selv (Joh.\ 5, 19); men Alt, hvad han er,
+det er han af Faderen, og Alt, hvad han taler, og hvad han gjør, og
+hvad han formaaer, det er ham Altsammen givet af Faderen. Men i
+denne absolute Afhængighed har han \textit{eo ipso} sin absolute
+Frihed, sin indre uendelige Selvstændighed. Hans Liv af Faderen er
+hans eget Liv, hans oprindelige Leven i sig selv. „Thi ligesom
+Faderen haver Livet i sig selv, saaledes haver han og givet Sønnen
+at have Livet i sig selv, og haver givet ham Magt, ogsaa at holde
+Dom, efterdi han er Menneskens Søn“ (Joh.\ 5, 26--27).
+Gudsforholdet er, for at tale i Skolesproget, et uendelig rigt
+Immanensforhold; men idet vi lægge Vægt, afgjørende Vægt paa
+Immanensen, maae vi ikke glemme, at dette hellige Immanensforhold er
+et Frihedsforhold, et principielt Villiesforhold, altsaa ---
+antirationelt!
+
+Det gudmenneskelige Liv, Religionens evige Liv, er Livet i Logos;
+til dette i sig fordoblede Logosliv svarer nu det fordoblede Selv,
+Selvet i Gud og Selvet i Mennesket, men saaledes, at Selvet i Gud
+ved den levende Modsætning til Mennesket som Menneske er Eet med den
+i Sønnen sig aabenbarende Fader, medens Selvet i Mennesket ved den
+levende Modsætning til Gud som Gud er det sande Menneske, Guds Søn,
+der siger om sig selv: „Hvo, som mig haver seet, haver seet
+Faderen“ (Joh.\ 14, 9; 12, 45). Objectiveret i Troen er
+Christuslivet altsaa et oprindeligt Dobbeltliv; til dette Dobbeltliv
+svarer, som vi nu skulle see, den kategoriske Fordobling af
+Logos-Selvet.
+
+For at gjøre Faderens Villie paa Jorden maa Sønnen være vidende om
+Faderens Villie, som er i Himmelen. Hvorfra har han da som Menneske
+denne Viden? Han har den fra sig selv; thi Menneske-Selvet i ham,
+det i
+% ---- printed p.313 (PDF 326) ----
+Tiden udviklede Logosprincip, er Aabenbarelsen af Logos-Selvet i
+Gud, det evige Selv, hvori Faderen har al Viden og Villie. Og dog
+har Sønnen ikke sin Viden umiddelbart eller een Gang for alle af sig
+selv; thi i denne Forstand har han Intet, slet Intet af sig selv:
+han har den kun derved, at den er ham given og i hvert Øieblik
+bliver ham given: det vil sige: han har den i sit Gudsforhold: han
+har den i Religion, og han er Religionen selv. Begge Momenter i
+Grundbestemmelsen, baade at han har sin Viden af sig selv, og at han
+har den fra Faderen, blive da ogsaa i den evangeliske Objectivering
+fremstillede saaledes, at Foreningen og Adskillelsen ligelig komme
+tilsyne. Han er Hjertekjenderen, der gjennemskuer baade Pharisæere
+og Sadducæere og „seer deres Tanker“; men at han er det, fordi det
+bliver ham givet, er kjendeligt derpaa, at han, endskjøndt han som
+Menneske ikke er alvidende, dog veed, naar det til Aabenbaringens
+Fuldendelse behøves, hvad han paa menneskelige Vilkaar umulig kunde
+vide (Joh.\ 11, 4), medens en saadan Viden igjen, hvor det ikke
+behøves (Mr.\ 13, 52), heller ikke bliver ham given.
+% sic: „Mr. 13, 52“ — Mark 13 has only 37 verses, and the verse meant is plainly
+%   Mr. 13, 32, which Nielsen quotes in full on p.302. Verified at 700 dpi;
+%   not in RETTELSER. Reproduced as printed.
+At drage en videnskabelig Slutning fra hans menneskelige til hans
+guddommelige Viden, eller omvendt, er umuligt, efterdi hans
+gudmenneskelige Viden bevæger sig i og med Aabenbaringen selv som en
+levende personlig Viden.
+
+For at gjøre Faderens Villie paa Jorden, maa Sønnen have en Magt som
+Faderens i Himlen. Villiens Aabenbarelse i Magtens Tegn er Underet:
+Sønnen kunde ikke i Gjerning aabenbare Faderens Villie, dersom han
+ikke kunde gjøre Underet. Hvorfra har han da Magten? Ikke fra sig
+selv umiddelbart som virkeligt Menneske; thi et virkeligt Menneske
+kan, ifølge Menneskenaturens Begrændsning, ikke være almægtigt. Han
+har den fra Faderen, gjennem den evige Logos, han har den i sit
+Gudsforhold, idet den bliver ham given (Joh.\ 11, 41). Og dog har
+han
+% ---- printed p.314 (PDF 327) ----
+den i sig selv som sin egen Magt, en i Menneskeselvet tilegnet
+Logosmagt, hvor den behøves: han hjælper, fordi han vil hjælpe, han
+helbreder, fordi han vil helbrede. Fra de momentane
+Magtaabenbarelser kan der altsaa ikke drages nogen videnskabelig
+Slutning til Negtelse af hans menneskelige Liden, saalidt som der
+fra hans menneskelige Liden kan drages nogen videnskabelig Slutning
+til Negtelse af hans guddommelige Magt. Den, der ikke i Troen kan
+forstaae, at Sønnens Magt ikke er en hans Menneskenatur iboende
+Almagt, men en levende Villiesmagt, en Magt han hverken kan eller
+vil have, uden idet Faderen giver ham den, en Religionens og
+Bønnens Magt, en Magt i Gudsforholdet, maa gaae til Gethsemane og
+høre den Bedende: „Fader, er det muligt“!
+
+Saalidt som de Undere, Christus gjør, kunne oplyse Noget om hans
+virkelige Menneskenatur, ligesaalidt kunne de Undere, der skee med
+ham selv, give nogen udenfor Troen faldende Oplysning. Han vandrer
+paa Havet, han forklares paa Bjerget; men den, som fra Vandringen
+paa Havet, vilde slutte, at hans menneskelige Legeme har, ifølge sin
+Natur, været hævet over Tyngdens Love, vilde ligesaa vist fare vild,
+som den, der fra hans Forklarelse paa Bjerget vilde slutte sig til
+Beskaffenheden af det Legeme, hvormed han blev korsfæstet. De
+momentane Forvandlinger, Forvarsler for den sidste store,
+afsluttende Forvandling, hvorunder han indgaaer til Herlighed, ere
+for Troen ligesaa ubegribelige som for Viden: de herhen hørende
+Begreber opløse sig i Mysteriet, det Mysterium, hvori Naturens og
+Skabelsens Eenhed er skjult.
+
+Istedenfor at holde sig til det evangeliske Forbillede og opfatte
+Forholdet mellem Christus-Selvet og det Faderen iboende Logos-Selv
+som Aabenbarelsen af det ideale Gudsforhold, den levende Religion,
+„Livet, det evige, hvilket var hos Faderen og blev aabenbaret for
+os“, er Orthodoxien tidlig slaaet ind i et andet, et objectivt
+viden\-
+% ---- printed p.315 (PDF 328) ----
+skabeligt Spor og har, uden at ændse Mysteriets kategoriske
+Grændseskjel, ved exacte Charakteerbestemmelser lagt an paa at
+tydeliggjøre Foreningen af Christi to Naturer som en Forening af to
+tilværende Substanser. Hvilke Stridigheder og Forvirringer, hvilken
+Vrimmel af Modsigelser, hvilke Forstandens Misfostre, denne
+Foreningslære i heterodoxe Smerter med orthodoxe Fødselsveer har
+bragt til Verden, er bekjendt. Den orthodoxe Theorie om
+\textit{unitio personalis} og \textit{status unionis} med deraf
+flydende Conseqvenser kan ikke forbedres ved Omskrivninger eller
+mæglende Ændringer; den er ved sin skarpt udprægede Form som
+Scholastikens modne Frugt netop hjemfalden til kritisk Opløsning.
+
+Angaaende Jesu Ord paa Korset: „Min Gud, min Gud, hvi har du forladt
+mig“? bemærker Strauss, at disse Ord kun passe sig for et Menneske,
+der ikke er personlig forenet med Gud, saa at den, hvis
+Personlighed just denne Forening udgjør, ikke kunde tale saaledes,
+før hans Personlighed var bleven en anden; og Kritiken følger: „Nu
+bliver i den kirkelige Lære Christi Person dannet af Guds Søn,
+medens den menneskelige Natur i ham, som upersonlig, kun er optagen
+i hiin guddommelige Person. Hiint Udraab kunde altsaa kun komme fra
+Guds Søn eller Logos, da der ikke er nogen Person i Christus foruden
+ham, og han maatte have anraabt Faderen, af hvem han altsaa havde
+følt sig forladt. Men hvorledes vil man nu kunne forestille sig
+dette uden at sønderrive Treenigheden og ophæve Sønnens Guddom?
+Derfor skal ikke Guds Søn eller Christi guddommelige Natur have følt
+sig forladt af Faderen, men Christi menneskelige Natur af den
+guddommelige, og med det Samme (da \textit{derelictio} --- som
+\textit{opus ad extra} --- skal være fælles for de tre Personer) af
+hele Treenigheden. Men den menneskelige Natur, der i og for sig var
+upersonlig, kunde heller ikke have nogen egen Selvfølelse, følgelig
+heller ikke udraabe
+% ---- printed p.316 (PDF 329) ----
+hine Ord, men det maatte Guds Søn i Christo have gjort, og han
+maatte altsaa i sin menneskelige Naturs Navn have klaget for sig
+selv over hvad, han selv havde gjort, eller da hans menneskelige
+Natur ikke var noget fra ham forskjelligt Subject, have forladt sig
+selv, og han vilde altsaa rettere have udraabt: hvorfor har jeg,
+end: hvorfor har du forladt mig“\footnote{Troesl.\ II Bd.\
+S.\ 119--20.}?
+
+Slige positive og negative Unaturligheder falde bort af sig selv,
+naar Forholdet mellem Faderen og Sønnen med den i Logos-Selvet
+tilsvarende Livsfordobling opfattes som et religiøst Grundforhold;
+vi kunne da fra Religionens --- ikke fra Videnskabens og
+Speculationens --- Standpunkt opfatte „de gudmenneskelige Tilstande“
+som forbilledlige Betegnelser for den Vexlen af Tilstande, der
+saavel i ydre som indre Erfaringer opleves af de Troende. „Thi ikke
+blot i de Helliges udvortes Tilstande, men ogsaa i deres indvortes
+sjælelige Tilstande og Stemninger maa der være en Vexel af
+\textit{κρύψις} og \textit{Φανέρωσις}, af Dunkelhed og Forklarelse,
+Tomhed og Fylde. \dots\ Saasandt som nu Christus maatte forsøges i
+Alt som vi, dog uden Synd, saasandt maa der ogsaa i hans indvortes
+Liv være denne Vexel af Dunkelhedens og Forklarelsens, af Tomhedens
+og Fyldens Tilstande. Skjøndt han aldrig var alene, men Faderen
+altid var hos ham, skjøndt Guddomsfylden boede legemligt i ham, har
+han dog ikke blot kjendt saadanne Tilstande, i hvilke Fylden
+gjennembrød den jordiske Indskrænkning og den Eenbaarne saligt
+hvilede ved Faderens Bryst, men ogsaa saadanne Tilstande, hvor
+Guddomsfylden var traadt tilbage i hans Væsens forborgne Dybder, kun
+var i \emph{Grunden} af hans Tilværelse, medens han i sin sjælelige
+Virkelighed maatte kæmpe Taalmodighedens Kamp“\footnote{H.\
+Martensen. „Den christl.\ Dogm“. S.\ 298--99.}.
+% n.b. p.316 carries two notes, *) and **); both are set out above in the order
+%   they are called. The Greek κρύψις / Φανέρωσις is fully and correctly
+%   accented here — verified at 700 dpi. Do not assume this fount always drops
+%   accents; it does not.
+% ---- printed p.317 (PDF 330) ----
+
+\greekrun{γ}{Sønnens Selv er Verdens Lys.}
+
+„Medens jeg er i Verden, er jeg Verdens Lys“ (Joh.\ 9, 5). Christus
+er Verdens Lys, fordi han er Verdens Liv: som Livet er, saaledes er
+ogsaa Lyset. Saasandt nu Christus-Livet, det hellige Logos-Liv, er
+et Liv i Gud, Religionens evige Liv i det ideale Gudsforhold,
+saasandt er ogsaa det Lys, der udgaaer fra Christus til at opklare
+Verden, Religionens hellige Lys, der ikke maa forvexles med
+Videnskabens. Hvor det imidlertid gjælder om en stor og omfattende
+religiøs Verdensbetragtning, ligger Forvexlingen nær. Det seer ved
+første Øiekast ud, som havde Evangelister og Apostle i deres
+forskjellige Udtalelser om Sønnen som Logos, som den Alskabningens
+Førstefødte, som Mægleren mellem Faderen og Verden, virkelig givet
+os Grundlaget for en objectiv videnskabelig, paa Christuslæren
+hvilende Kosmologie. Hvad der fra dette Synspunkt lader sig anføre,
+er allerede fremsat i „den christelige Dogmatik“. Guds Søn, hedder
+det, har som Faderens Logos, der tillige er den evige Verdenslogos,
+i sin Præexistens allerede beredt sig selv Betingelserne for sin
+Kjærlighedsaabenbaring, sin Menneskeblivelse i Tidens Fylde, den
+Aabenbaring, i hvilken han først fuldstændigt virkeliggjør sit
+Begreb som den \emph{midlende} Gud.
+% n.b. the letterspacing covers „midlende“ only; „Gud“ is set plain. 400 dpi.
+Hans Aabenbarelse, der ikke
+blot har historisk, ikke blot religiøs og ethisk, men metaphysisk
+Betydning, kan ikke være bestemt ved Synden alene, thi Synden er
+ikke indkommen efter en metaphysisk Nødvendighed, den er
+kosmologisk bestemt: han kunde kun blive Frelseren, fordi det er
+hans evige Begreb at være Midleren \textit{(Etsiamsi homo non
+peccasset, Deus tamen incarnatus esset)}. Kun som den
+verdensfrelsende og verdensfuldendende Midler kan Sønnen i Sandhed
+erkjendes som Selvaabenbaringen af den guddommelige Logos. Thi det
+verdensfuldendende
+% ---- printed p.318 (PDF 331) ----
+Princip kan ikke være forskjelligt fra det verdensskabende, ved
+hvilket alle Ting ere blevne til. Saaledes er da Christus, den
+menneskeblevne Logos, ikke blot Midtpunktet i Menneskeverdenen, men
+Alskabningens Midtpunkt. For ham, der staaer som den personlige
+Evighed i Tidernes Midte, ja i Alskabningens Midte, har den
+sandselige Forskjel mellem Fortid og Fremtid kun forsvindende
+Betydning; thi alle Verdenstider, alle Æoner bevæge sig om ham som
+om deres altbestemmende Midtpunkt.
+
+De dybsindige Udtalelser, hvori Forfatteren af den christelige
+Dogmatik\footnote{Jvnfr.\ „Læren om Sønnen“. S.\ 243--44;
+265--68; 273--74.} har fremstillet den Eenbaarne som Verdens Liv og
+Verdens Lys, skulle vi, efter at Sagens Skyggesider alt i en anden
+Sammenhæng\footnote{Den gode Villie som Magt i Videnskaben.
+S.\ 76--110.} ere noksom fremhævede, villig yde vor Anerkjendelse;
+men spørge vi, er det dog ikke nødvendigt, at sikkre sig de hellige
+Sandheder ved at sikkre sig deres Begrundelse? Og, naar Talen er om
+Begrundelse, er det da ikke nødvendigt at besinde sig paa
+Forskjellen mellem rationel og antirationel Begrundelse, paa
+Forskjellen mellem Videnskabens og Religionens Lys, paa Forskjellen
+mellem Objectiveren i Viden og Objectiveren i Tro? Til en
+Adskillelse af denne Natur kan Skriftordet ikke ligefrem veilede os.
+Den bibelske Verdensanskuelse svarer, ogsaa med Hensyn paa den
+udvortes Virkelighed, umiddelbart til den troende Opfattelse af
+Christus som Alskabningens Midtpunkt; heller ikke kan her, hvad
+Lyset angaaer, være Tale om Skilsmisse mellem Religion og Videnskab,
+thi for den apostoliske Bevidsthed var Videnskaben slet ikke til.
+Men i den nærværende Tid, da Videnskaben fra saamange Sider og paa
+saamange Maader lader sig mærke
+% ---- printed p.319 (PDF 332) ----
+med, at den er til; i den nærværende Tid, da Virkeligheden i den
+ydre Natur har forandret sig, fordi Bevidstheden om den har
+forandret sig, og det hele Universum faaet en anden Skikkelse, i
+denne nærværende Tid er det uundgaaelig nødvendigt at gjøre Skjel
+mellem Verden og Verden, mellem Liv og Liv, mellem Lys og Lys.
+
+For at indsee Nødvendigheden af en gjennemgaaende Adskillelse mellem
+Religion og Videnskab, behøve vi ikke at gjøre Videnskaben partisk
+for Vantroen; vi kunne gjerne lade den gaae ud fra den
+Forudsætning, at Alt, hvad Aabenbaringen lærer om „den midlende Gud“
+som „Alskabningens Midtpunkt“, har sin Gyldighed, sin fulde Sandhed
+i Aandens og da forsaavidt ogsaa i Virkelighedens Universum: og dog,
+naar her spørges om Lys og Belysning, om Grund og Begrundelse, har
+Videnskaben sine Betænkeligheder og vil og maa gjøre sine
+Indsigelser. Christus siger: „Mig er given al Magt i Himlen og paa
+Jorden“. Naar nu disse Ord forklares saaledes, at „alle himmelske og
+jordiske Magter, alle Kræfter i Natur og Historie finde i ham deres
+befriende Midtpunkt og ere tjenende for det Rige, hvis Hoved han
+er“, saa spørges: hvorledes er dette videnskabeligt at forstaae? Er
+Jesus af Nazareth, Marias Søn, den eneste Christus i hele Universet,
+da maa Menneskeslægten paa denne Jord vel ogsaa være Universets
+eneste Menneskeslægt. Eller, hvis der paa andre Kloder ogsaa ere
+Slægter, der trænge til Forløsning, saa er der jo flere Muligheder.
+Enten maa alle Slægters Forløsning paa alle Kloder være indesluttet
+i den Forløsning, som een Gang for alle er skeet paa Jorden; eller
+Jesus af Nazareth maa vandre fra Klode til Klode og paa hver Klode
+lade sig føde paany af Klodens Maria, blive Forløsnings-Barn igjen
+og voxe op i Tjenerskikkelsen og begynde Forløsningsværket forfra;
+eller ogsaa hver Klode maa have sin egen Christus, saa at der bliver
+ligesaa mange Christusser som der er faldne Slægter. Men dersom der
+er flere Christusser, ja maa\-
+% ---- printed p.320 (PDF 333) ----
+skee et uberegneligt Antal, hvorledes kunne vi da forstaae, at vor
+Christus netop maa være den øverste blandt dem alle, den eneste
+sande Overchristus, „Alskabningens Midtpunkt, den anden Adam, i
+hvem det Himmelske og det Jordiske, det Usynlige og det Synlige,
+Alskabningens Kræfter, Engle, Herskaber og Magter finde deres Alt
+sammenfattende Afslutning“? Sige vi: der kan kun være een Christus i
+Universet, efterdi der i alle fornuftige Slægter, væsentlig kun er
+een Slægt, i alle Syndefald væsentlig een Synd, i det for hele
+Verden algyldige Forløsningsværk væsentlig een forløsende
+Virksomhed, saa holde vi os udelukkende til Principet, og kunne
+forsaavidt med Grund beraabe os paa det verdensskabende og det
+verdensforløsende Logosprincip. Men Et er Principet, et Andet er
+Selvet.
+
+Imellem Logosselvet i Gud og Logosselvet i det sande, syndfrie
+Menneske maa jo Forskjellen blive uendelig stor, naar vi tage det
+kosmologisk; thi en orthodox Protestant, som vilde sige, at det er
+Jesus af Nazareth, der har skabt Verden, vilde jo dog virkelig
+udtrykke sig ligesaa uvidenskabeligt, som en enfoldig Katholik, der
+vilde mene, at det er Jomfru Maria, der har skabt Verden.
+
+Har man engang stillet sig paa Videnskabens Standpunkt og draget
+Grundlinier til en christologisk Kosmologie, da bør man ikke vige
+tilbage for nærliggende Vanskeligheder eller undslaae sig for
+yderligere Forklaring af dunkle Punkter. Er Christus Verdens Lys, og
+Lyset videnskabeligt: saa maa den religiøse Kosmologie kunne stilles
+i objectiv klar Belysning. At det nu ikke er skeet og ifølge
+Erkjendelsens Vilkaar ikke kan skee, er et talende Beviis for, at
+den religiøse Kosmologie hverken er eller vil være videnskabelig.
+
+Fra Troens Standpunkt falde Videnskabens Indvendinger bort som af
+sig selv. Ifølge Troesprincipet skal
+% ---- printed p.321 (PDF 334) ----
+der jo ikke føres et objectivt Beviis for, at Christus, i Kraft af
+Begrebet: „den midlende Gud“, absolut maa være den eneste mulige
+Verdensfrelser og som Følge heraf den sande Frelser for os; dersom
+et saadant Beviis skulde føres, da maatte Begrundelsen ganske vist
+være rationel, og Mangel af rationel Begrundelse betyde Mangel af
+Lys. Men Begrundelsen er omvendt. Her begyndes med den indre
+Selvforvisning, Forvisningen om, at Jesus af Nazareth, det sande,
+syndfrie Menneske, er den eneste sande Frelser for os Mennesker, at
+der, som Paulus udtrykker det, „ikke er Salighed i nogen Anden“, og
+saa indsees heraf, at han, objectiveret i Troen, ogsaa maa være den
+i sig selv sande Frelser, Guds Søn, Faderens Eenbaarne, hvis
+forløsende, frelsende Magt erkjendes, ikke blot paa Jorden, men
+ogsaa i Himmelen.
+
+\runhead{c) Sønnens Personlighed.}
+\parmark{21}
+
+De hertil svarende Grundtræk findes allerede angivne i
+Fremstillingen af Faderens Personlighed. Men ligesom Selvet i
+Faderen først faaer sin fulde Belysning ved dets Forhold til Selvet
+i Sønnen, saaledes vil ogsaa Sønnens Menneske-Existens med den
+dertil svarende Personlighedsaabenbarelse først kunne afgive det
+reale, livsfyldige Grundlag for Udviklingen af det
+Personlighedsbegreb, som, efterdi det kun svarer til Sønnen derved,
+at det svarer til Faderen, og omvendt, udtrykker den personlige
+Modsætningseenhed af Faderen og Sønnen. Vi henføre denne
+Begrebsudvikling under de tre Synspunkter: \emph{Personlighedens
+Metaphysik, Personlighedens Aabenbarelse og Personlighedens evige
+Liv}.
+% ---- printed p.322 (PDF 335) ----
+
+\greekrun{α}{Personlighedens Metaphysik.}
+
+Det Usandsynlige skal troes; men det Umulige kan ikke troes: for at
+sikkre os mod Umulighedernes Absurdum tage vi Udgangspunktet i
+Viden. „To“, siger Hegel, „kunne ikke være Eet“, og heri har han
+visselig Ret. Hans Forklaring er i Korthed denne. Kategorien
+\emph{Eet}, det abstracte Eet, er, som Logiken viser, en slet
+Kategorie. Hvad nu Personligheden angaaer, saa er enhver Person jo
+vistnok et Stivt, Sprødt, Selvstændigt, For-sig-værende; men det
+ligger dog i Personens, endnu mere i Subjectets, Charakteer, at
+ophæve sin Isolering, sin \emph{Afsondrethed}. Sædelighed,
+Kjærlighed er: at opgive sin Egenhed, sin særskilte Personlighed og
+udvide den til Almindeligheden; saa at Identiteten af Eetet med sit
+Andet viser sig. Idet jeg handler ret imod en Anden, behandler jeg
+ham identisk med mig. I Venskab, Kjærlighed opgiver jeg min
+abstracte Personlighed og vinder den derved som concret. Det Sande i
+Personligheden er just det, at vinde den ved denne Hensynken, denne
+Fordybelse i det Andet. Naar Personligheden er som \emph{uopløst},
+saa har man det \emph{Onde}; thi den Personlighed, som ikke vil gaae
+op i den guddommelige Idee, er det Onde. I den guddommelige Eenhed
+er Personligheden sat som opløst, kun i Tilsyneladelsen er
+Personlighedens Negativitet forskjellig fra det, hvorved den bliver
+ophævet. Treenigheden er henført under Forholdet af \emph{Fader, Søn
+og Aand}, det er et barnligt Forhold, en barnlig, naturlig Form.
+Forstanden har ingen saadan Kategorie, intet saadant Forhold, som
+hermed paa passende Maade kunde sammenlignes; det maa da bringes til
+Bevidsthed, at det kun er billedligt: Aanden træder ikke tydeligt
+ind i Forholdet. Kjærlighed vilde have været mere passende; men det
+Sande er Aanden. Den abstracte Gud, Faderen, er den Almene, den
+evige, altomfattende, totale Særskilt\-
 
 \end{document}
