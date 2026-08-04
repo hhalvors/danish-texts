@@ -43,8 +43,20 @@ print("partheads:", body.count("\\parthead{"),
 #   2. the Strauss quotation of pp.280-282
 #   3. the Bethesda quotation on p.294 („end mere søgte ... Gud lig;)
 #   4. the Martensen quotation in the p.294 footnote („De tre første Evangelier)
-# so the standing expected balance is 4. A batch that ends mid-quotation reads
-# higher; check the last transcribed page before treating that as a bug.
+# and ONE closer is never opened:
+#   5. the Hase quotation of pp.349-350 („Verbum divinum ... til Evangeliet“)
+# and a SIXTH unmatched opener:
+#   6. the Strauss/Hegel quotation on p.376 („Modsætningen mellem Substans og
+#      Subject ...), which runs on into Nielsen's own voice unclosed.
+#
+# !! The "dropped openers" list below will NOT catch #5. A stray “ only registers
+# there if the running balance is already 0; here it merely cancels one of the
+# standing unmatched openers. The running total is therefore
+#     4 openers - 1 stray closer (p.350) + 1 opener (p.376) = 4.
+# A second entry in the neg list is still a real error.
+# A batch that ends mid-quotation reads one higher; check the last transcribed
+# page before treating that as a bug.
+STANDING = 4   # 4 unmatched openers - 1 stray closer (p.350) + 1 unmatched opener (p.376)
 bal, neg = 0, []
 for i, line in enumerate(body.split("\n"), 1):
     for ch in line:
@@ -55,7 +67,8 @@ for i, line in enumerate(body.split("\n"), 1):
             if bal < 0:
                 neg.append(i)
                 bal = 0
-print(f"quote balance: {bal} (standing expectation 4; higher = quote open at the cut)")
+print(f"quote balance: {bal} (standing expectation {STANDING}; "
+      f"higher = quote open at the cut)")
 print("dropped openers at lines:", neg or "none", "(expect exactly one)")
 
 done = len(m)

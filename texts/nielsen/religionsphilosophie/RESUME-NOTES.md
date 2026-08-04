@@ -175,20 +175,45 @@ Ende*" — so β) and γ) are named in advance; likewise p.343 announces the thr
 lettered heads of § 22: *Lovens Opfyldelse, Forsoningen og Forløsningen*. **Use
 those two sentences as the navigation the Indhold no longer supplies.**
 
+**Both predictions have now come true**: *β) Evangeliets Lov* opens **p.349** and
+*γ) Lovens Ende* opens **p.354**. § 23 closes p.361; ***b) Forsoningen* with § 24
+opens p.361**, as the p.343 sentence predicted. Transcribed to p.370.
+
+**⚠ CORRECTION to a note written after the pp.359–370 batch.** I had recorded
+that "the α/β/γ series is NOT invariable", on the ground that § 24's announcing
+sentence on p.363 named only two heads. **That was wrong.** The sentence reads:
+
+> "Ved at betragte Forsoningslæren først fra den *scholastisk-objective* og
+> dernæst fra den *mystisk-subjective* Side bane vi os Vei til en Indsigt i
+> ***Forsoningens dobbeltsidige Væsen***."
+
+The final clause is not a summary — it is the title of the third head, which
+duly appears as *γ) Forsoningens dobbeltsidige Væsen* on **p.372**. So § 24 has
+three heads like every other §, and the announcing sentence named all three.
+**The series has still never broken.** Read the whole sentence, including its
+final clause, before counting.
+
+§ 24's heads: *α)* p.364, *β)* p.368, *γ)* p.372. § 24 closes p.380;
+***c) Forløsningen* with § 25 opens p.380**. Transcribed to p.382.
+
+Still to come: the close of § 25, then a *C.* division to finish *Tro paa
+Sønnen* before *Tro paa Aanden* around p.458.
+
 **The misbound range is now behind us** — from p.276 the offset is a plain +13
 again for the rest of the book. (The `kb()` function still needs to stay in any
 check script, since it covers pp.260–275 which are already transcribed.)
 
-**Resume at printed p.347 (PDF 360).** p.346 ends mid-sentence, outside any
-quotation, so the check script should read exactly the standing balance of 4.
+**Resume at printed p.383 (PDF 396).** p.382 ends mid-sentence, outside any
+quotation, so the check script should read exactly the standing balance — which
+is **back up to 4** (see the quote note below).
 
 **The Indhold has run out.** Its surviving leaves covered through § 21's second
 head (324); *Tro paa Aanden* and § 32 (458) are on PDF 13 but with no
 intermediate detail. From p.325 onward the structure is read off the running
 text, as it was for the Indledning. Spot-check every run-head against the page.
 
-**Quote balance is now permanently 4, not 2.** Four openers are never closed by
-the printer, and `check.py` has been updated to expect 4:
+**Quote balance is 4 — and the arithmetic is no longer naive.** Five openers are
+never closed by the printer, and one closer is never opened:
 
 1. the early dropped opener in the p.71 footnote (p.72);
 2. the long Strauss quotation running pp.280–282 — no `“` before the footnote
@@ -198,8 +223,32 @@ the printer, and `check.py` has been updated to expect 4:
    Udtalelse" with no closing mark. 400 dpi;
 4. **p.294 footnote, the Martensen quotation** „De tre første Evangelier … — no
    closing mark after "ogsaa maa have Præexistens." 700 dpi.
+5. **pp.349–350, the Hase quotation** — the reverse defect: it opens with no `„`
+   at "Verbum divinum absolvitur…" on p.349 but *is* closed after "…til
+   Evangeliet“" on p.350. 700 dpi.
+6. **p.376, the Strauss/Hegel quotation** „Modsætningen mellem Substans og
+   Subject … — never closed; the sentence runs on into Nielsen's own voice at
+   "med Alt, hvad derunder maa henføres". 700 dpi.
 
-All four are reproduced as printed.
+All six are reproduced as printed, and #5 and #6 are **CONFIRMED BY COLLATION**
+against the Bodleian copy.
+
+**⚠ The "dropped openers" line in `check.py` will not catch #5, and that is worth
+understanding before trusting the check.** A stray `“` is only recorded there if
+the running balance is already 0. Here it simply decrements the four standing
+unmatched openers to three. So:
+
+| what | effect on the running balance |
+|---|---|
+| four never-closed openers (pp.71, 282, 294 ×2) | +4 |
+| the p.350 never-opened closer | −1 |
+| the p.376 never-closed opener | +1 |
+| **standing total from p.376** | **4** |
+| a quotation still open at the batch cut | +1 each |
+
+`check.py` now prints the standing figure from a `STANDING` constant — update it
+there if another such defect turns up, and keep treating a *second* entry in the
+neg list as a genuine transcription error.
 
 **ImageMagick crop offsets must be pixels, not percentages.** `-crop 100%x9%+0+53%`
 silently treats the offsets as 53 *pixels*, so you get the page header instead of
@@ -227,13 +276,14 @@ divide the argument without being headings — *Beviis af Ordet.* (p.92), *Bevii
 Aanden.* (p.93), *Troesbeviset.* (p.94). They open a paragraph and run straight
 into the sentence, so they take plain `\emph{}`, not `\runhead`. Watch for more.
 
-Checks that pass on the current file: 346 page-break comments, contiguous pp.1–346,
-every offset correct against `kb()` above; braces balanced; `$` count even; 48
-footnotes; 27 `% sic:` notes; 4 `\lettersub` divisions; errata applied through
-p.284 (**next one due at p.392**); no lacunae outstanding; exactly one
-dropped-open event and a final balance of exactly 4 — the standing expectation.
+Checks that pass on the current file: 382 page-break comments, contiguous pp.1–382,
+every offset correct against `kb()` above; braces balanced; `$` count even; 59
+footnotes; 32 `% sic:` notes; 4 `\lettersub` divisions; errata applied through
+p.284 (**next one due at p.392 — INSIDE THE NEXT BATCH**); no lacunae
+outstanding; exactly one entry in the dropped-open list and a balance of exactly
+4 — the new standing figure.
 
-**Progress: 346 of 537 body pages = 64.4%.**
+**Progress: 382 of 537 body pages = 71.1%.**
 
 **Compile status: `make` confirmed green at the pp. 1–94 state**, which exercised
 `\parthead`, `\lettersub` and `\greekrun` (including the Greek α/β/γ markers).
@@ -266,6 +316,10 @@ printed, not normalised.** Verified at 600 dpi in each case:
 | 309 | ἀρρήτως και ἀνεκδιηγήτως | ✓ acutes correct; only καί bare |
 | 316 | κρύψις / Φανέρωσις | ✓ both fully correct |
 | 327 | λογος, ζωη, Φως | λόγος, ζωή, φῶς (note the capital Φ) |
+| 368 | θεοτόκος (body) | ✓ correct |
+| 368 note | Λέγουσι … θεοτόκον | ✓ **the fullest and best Greek in the book** — breathings, acutes, graves and circumflexes all correct, except two bare words: βαστασαντας, διδασκειν |
+| 381 | καταλλαγή | ✓ correct |
+| 381 | **ἀπαλύτρωσις** | ἀπολύτρωσις — an α where the ο belongs. **Confirmed by collation.** Since καταλλαγή one line above is right, this is a wrong sort, not a habit |
 
 The whole Socinus note on pp.288–290 keeps its breathings (ἀ, ὑ, ἐ, and the
 separately-set ’ before Ἀβρααμ in the *second* occurrence only — the first is bare
@@ -319,6 +373,7 @@ page-break comments don't imply a full page of body text where there isn't one:
 | Strauss on Fichte and Hegel | p.106 → p.107 | one closing paragraph |
 | Strauss on Socinus's exegesis | p.288 → p.289 → p.290 | **two lines** on p.289 |
 | Hilarius / Symbolum Nicænum | p.309 → p.310 | lower third of p.310 |
+| **Hegel, *Religionsphilosophie*** | p.373 → p.374 → p.375 | **three lines** on p.374 — the longest note in the book |
 
 ## ⚠ MISBOUND LEAF IN THE KB SCAN — pp. 260–275
 
@@ -387,6 +442,24 @@ ever needed.)
 
 ### Using the second witness
 
+**The scan must sit next to the script as `bodleian.pdf`** (12.6 MB, gitignored),
+exactly the way `scan.pdf` does. Refresh or restore it with:
+
+```bash
+cp ~/bibliotek/"Nielsen, Rasmus"/religion-1869.pdf \
+   texts/nielsen/religionsphilosophie/bodleian.pdf
+```
+
+⚠ **Why this matters.** `bodleian.sh` used to read the file straight out of
+`~/bibliotek`. The file tools can see that path, but the *render sandbox* — where
+`pdftoppm` actually runs — only mounts the repo, so the old path resolved to
+nothing and **collation silently stopped being possible**. The script's guard
+printed an error, but only if you ran it; the practical effect was that sic
+readings accumulated marked-but-unconfirmed. The script now points at the local
+copy and its error message gives the `cp` command. If collation ever seems
+unavailable again, check for `bodleian.pdf` in the folder before concluding the
+second witness is out of reach.
+
 `bodleian.sh` sits next to `twoup.sh` and works the same way:
 
 ```bash
@@ -399,9 +472,10 @@ ever needed.)
 | witness | file | offset | text layer |
 |---|---|---|---|
 | KB, shelfmark 14,-225 8° | `scan.pdf` (in this folder) | PDF = printed **+ 13** | usable, poor |
-| Bodleian, Google Books | `~/bibliotek/Nielsen, Rasmus/religion-1869.pdf` | PDF = printed **+ 14** | **none** — image only |
+| Bodleian, Google Books | `bodleian.pdf` (in this folder) | PDF = printed **+ 14** | **none** — image only |
 
-Offset verified on Bodleian PDF 206/208/210/212/214 → printed 192/194/196/198/200.
+Offset verified on Bodleian PDF 206/208/210/212/214 → printed 192/194/196/198/200,
+and re-verified at PDF 364 → printed 350 by reading the folio off the page.
 Because that copy has no OCR layer, collation against it is necessarily visual.
 
 Beyond repairing damage, the second witness is also the way to settle the more
@@ -483,6 +557,34 @@ Reproduced as printed, each with a `% sic:` comment. None is in RETTELSER.
 
 - p.337 "men ikke som *Alskabningens* Afslutning" — letterspacing again stops
   one word short. 400 dpi.
+- p.349 (Hase, in Latin) "additis minis in legis **tansgressores**" — the *r* of
+  *transgressores* has dropped out. 700 dpi.
+- p.350 note (Latin) "quovis puncto **mathemathico**" for *mathematico*, and
+  "**Hollatius**" for *Hollazius* (David Hollaz). 700 dpi.
+
+**All three of the pp.349–350 readings are CONFIRMED BY COLLATION** — the
+Bodleian copy reads *tansgressores*, *mathemathico* and *Hollatius* as well, and
+is markedly cleaner than the KB copy on that page (the KB ink blot beside the
+*ll* of *Hollatius* raised the question but did not cause the reading). Errors of
+the 1869 setting, not scan defects. The missing opening quotation mark at
+"Verbum divinum" is likewise absent in the Bodleian, and the closer after
+"Evangeliet" is present there too.
+
+### Letterspacing INSIDE italic — an unresolved rendering question
+
+On pp.349–350 the long Latin quotation from Hase is set in italic throughout,
+but three phrases inside it are *additionally letterspaced*: the names of the
+three uses of the Law — *politicus s. civilis*, *elenchticus s. pædagogicus*,
+*didacticus, normativus s. tertius* — as against the plain-italic glosses that
+follow each. Verified at 700 dpi.
+
+This has no clean rendering in the current preamble: `\emph{}` inside `\textit{}`
+flips to upright, which would misrepresent it as roman, and there is no
+letterspacing macro. **The distinction is therefore recorded in a source comment
+at the spot but not rendered.** If the author wants it in the PDF, the minimal
+change is `\usepackage{letterspace}` plus something like
+`\newcommand{\sperr}[1]{\textls[80]{#1}}` — but that diverges from the other ~25
+transcriptions, so it is left as a decision rather than made unilaterally.
 
 ### One word is set in BOLD in running text
 
@@ -502,7 +604,24 @@ stroke weight rather than assuming.
 - **Anticlimacus** (p.303) vs **Anti-Climacus** (p.342), in the two footnotes
   citing *Indøvelse i Christendom*.
 - **Matth.** (pp.293, 306) vs **Mtth.** (pp.345, 346, and the rest of § 23).
-- **Jvnfr.** (pp.318, 323, 324) vs **Jvfr.** (pp.334, 342).
+- **Jvnfr.** (pp.318, 323, 324, 368) vs **Jvfr.** (pp.334, 342).
+- **Gieseler.** and **Giesel.** — in the two footnotes on *the same page* (368),
+  citing the same *Kirchengeschichte*.
+
+### A collation that overturned a suspected sic
+
+p.360 „Dette er Guds Gjerning, at I skulle troe …“ looked at 160 dpi — and still
+at 700 dpi in the KB copy — as though the compositor had set a **full stop**
+after *Gjerning* where a comma belongs. The Bodleian copy shows the comma's tail
+plainly. **No sic.** Worth remembering as the counter-example: the second witness
+is not only for confirming odd readings but for killing false ones, and the KB
+copy's inking is light enough that comma-versus-point is not safely decidable
+from it alone.
+
+**It happened again at p.378** — "finder kun Forsoning i den Trøst, at den
+fornuftige Gud …", where the KB copy again prints a bare dot and the Bodleian
+again shows the tail. This is now a known systematic weakness of the KB scan, not
+a one-off. **Treat every KB "full stop mid-sentence" as a comma until collated.**
 - p.229 "Han har valgt **vig** Kain til Forbillede" — a *v* where the *s* of *sig*
   belongs. **CONFIRMED BY COLLATION**: the Bodleian copy reads "vig" too, so this
   is an error in the 1869 setting, not a defect in the KB scan. Both at 600 dpi.
@@ -544,11 +663,15 @@ Modsigelsen" — a different claim, not a misreading. Between that and the
 "uforenelige med al Videnskab" substitution, nothing in the old file should be
 carried over without checking it against the image.
 
-**Next step: `bash batch.sh 347` and transcribe printed pp. 347–358** in
-`transcription.tex`. The offset is a plain +13. Inside *α) Lovens Aand*; expect
-*β) Evangeliets Lov* and possibly *γ) Lovens Ende* in this range, both named in
-advance on p.344. *Tro paa Aanden*, the third and last main division, opens
-around p.458.
+**Next step: `bash batch.sh 383` and transcribe printed pp. 383–394** in
+`transcription.tex`. The offset is a plain +13. Inside *c) Forløsningen* (§ 25).
+
+**⚠ THE p.392 ERRATUM FALLS IN THIS BATCH.** RETTELSER, l.4 f.o.:
+*Selvishedeus* → **Selvvishedens**. Apply it inline with an `% ERRATUM APPLIED`
+comment at the spot, per house convention, and record the printed reading in the
+comment. That is the 6th of the nine errata; two remain after it (p.400, p.508).
+
+*Tro paa Aanden*, the third and last main division, opens around p.458.
 
 **`catalog.yaml` now points only at this file** — one section, "Complete work
 (pp. 1–537)", linking `religionsphilosophie/transcription.pdf`. The `indledning/`
