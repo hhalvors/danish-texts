@@ -45,18 +45,21 @@ print("partheads:", body.count("\\parthead{"),
 #   4. the Martensen quotation in the p.294 footnote („De tre første Evangelier)
 # and ONE closer is never opened:
 #   5. the Hase quotation of pp.349-350 („Verbum divinum ... til Evangeliet“)
-# and a SIXTH unmatched opener:
+# and TWO more unmatched openers:
 #   6. the Strauss/Hegel quotation on p.376 („Modsætningen mellem Substans og
 #      Subject ...), which runs on into Nielsen's own voice unclosed.
+#   7. the Ideekjærlighed quotation on p.416 („den forvandler sig til lutter
+#      Indhold.), likewise never closed.
+# All confirmed by collation against the Bodleian copy.
 #
 # !! The "dropped openers" list below will NOT catch #5. A stray “ only registers
 # there if the running balance is already 0; here it merely cancels one of the
 # standing unmatched openers. The running total is therefore
-#     4 openers - 1 stray closer (p.350) + 1 opener (p.376) = 4.
+#     4 openers - 1 stray closer (p.350) + 1 opener (p.376) + 1 opener (p.416) = 5.
 # A second entry in the neg list is still a real error.
 # A batch that ends mid-quotation reads one higher; check the last transcribed
 # page before treating that as a bug.
-STANDING = 4   # 4 unmatched openers - 1 stray closer (p.350) + 1 unmatched opener (p.376)
+STANDING = 5
 bal, neg = 0, []
 for i, line in enumerate(body.split("\n"), 1):
     for ch in line:
