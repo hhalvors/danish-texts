@@ -194,7 +194,26 @@ three heads like every other §, and the announcing sentence named all three.
 final clause, before counting.
 
 § 24's heads: *α)* p.364, *β)* p.368, *γ)* p.372. § 24 closes p.380;
-***c) Forløsningen* with § 25 opens p.380**. Transcribed to p.382.
+***c) Forløsningen* with § 25 opens p.380**, and p.383 carries its announcing
+sentence — "henføre den hele frelsende, frigjørende Virksomhed til Forløsning
+***fra Synd, fra Død, fra Satans Rige***" — naming, again, exactly three heads:
+*α) Fra Synden* (p.383), *β) Fra Døden* (p.390), *γ) Fra Satans Rige* (p.393).
+All three appeared where promised.
+
+### ✅ B. SØNNENS GJERNINGER IS COMPLETE — pp. 340–399, §§ 22–25
+
+**C. Sønnens Rige** (§ 26) opens **p.399** — the last of the three lettered
+divisions of *Tro paa Sønnen*. p.401 carries its announcing sentence — "opfatte
+Sønnens Rige som ***Frihedens, Kjærlighedens*** og ***Salighedens*** Rige" —
+naming three lettered heads; *a) Frihedens Rige* (§ 27) opens p.401. p.403 then
+announces § 27's own three Greek heads: "anskueliggjøre Frihedens
+***Grundbetingelser, Vilkaar og Byrder***", of which
+*α) Frihedens Grundbetingelser: Sædemanden og Jordbnnden* opens p.403.
+Transcribed to p.406.
+
+**Two announcing sentences are now nested**, one for the lettered series and one
+for the Greek series inside it. Expect *β) … Vilkaar* and *γ) … Byrder*, then
+*b) Kjærlighedens Rige* and *c) Salighedens Rige*.
 
 Still to come: the close of § 25, then a *C.* division to finish *Tro paa
 Sønnen* before *Tro paa Aanden* around p.458.
@@ -203,9 +222,8 @@ Sønnen* before *Tro paa Aanden* around p.458.
 again for the rest of the book. (The `kb()` function still needs to stay in any
 check script, since it covers pp.260–275 which are already transcribed.)
 
-**Resume at printed p.383 (PDF 396).** p.382 ends mid-sentence, outside any
-quotation, so the check script should read exactly the standing balance — which
-is **back up to 4** (see the quote note below).
+**Resume at printed p.407 (PDF 420).** p.406 ends at a full stop, outside any
+quotation, so the check script should read exactly the standing balance of 4.
 
 **The Indhold has run out.** Its surviving leaves covered through § 21's second
 head (324); *Tro paa Aanden* and § 32 (458) are on PDF 13 but with no
@@ -276,14 +294,15 @@ divide the argument without being headings — *Beviis af Ordet.* (p.92), *Bevii
 Aanden.* (p.93), *Troesbeviset.* (p.94). They open a paragraph and run straight
 into the sentence, so they take plain `\emph{}`, not `\runhead`. Watch for more.
 
-Checks that pass on the current file: 382 page-break comments, contiguous pp.1–382,
-every offset correct against `kb()` above; braces balanced; `$` count even; 59
-footnotes; 32 `% sic:` notes; 4 `\lettersub` divisions; errata applied through
-p.284 (**next one due at p.392 — INSIDE THE NEXT BATCH**); no lacunae
-outstanding; exactly one entry in the dropped-open list and a balance of exactly
-4 — the new standing figure.
+Checks that pass on the current file: 406 page-break comments, contiguous pp.1–406,
+every offset correct against `kb()` above; braces balanced; `$` count even; 61
+footnotes; 35 `% sic:` notes; **5 `\lettersub` divisions** (A/B/C of *Faderen*
+were 3, plus A and B and C of *Sønnen* — see the structure notes); **8 of the 9
+errata applied** (130, 257 ×4, 284, 392, 400); no lacunae outstanding; exactly
+one entry in the dropped-open list and a balance of exactly 4 — the standing
+figure. A dittography sweep over the new pages is clean.
 
-**Progress: 382 of 537 body pages = 71.1%.**
+**Progress: 406 of 537 body pages = 75.6% — three quarters.**
 
 **Compile status: `make` confirmed green at the pp. 1–94 state**, which exercised
 `\parthead`, `\lettersub` and `\greekrun` (including the Greek α/β/γ markers).
@@ -559,6 +578,15 @@ Reproduced as printed, each with a `% sic:` comment. None is in RETTELSER.
   one word short. 400 dpi.
 - p.349 (Hase, in Latin) "additis minis in legis **tansgressores**" — the *r* of
   *transgressores* has dropped out. 700 dpi.
+- p.383 "mod en **scholatisk**-objectiv Viden" — the *s* of *scholastisk* has
+  dropped out; the book sets it correctly on pp.308 and 379. **Confirmed by
+  collation.**
+- p.394 "gjennemborer man Næsen **pan** Behemoth" — an *n* where the second *a*
+  of *paa* belongs. **Confirmed by collation.**
+- **p.403, IN A HEADING**: *α) Frihedens Grundbetingelser: Sædemanden og
+  **Jordbnnden***— two *n*'s where *un* belongs. **Confirmed by collation.** The
+  word is set correctly on pp.404 and 405. First wrong sort found in a head, so
+  don't assume headings were proof-read more carefully than the body.
 - p.350 note (Latin) "quovis puncto **mathemathico**" for *mathematico*, and
   "**Hollatius**" for *Hollazius* (David Hollaz). 700 dpi.
 
@@ -663,15 +691,12 @@ Modsigelsen" — a different claim, not a misreading. Between that and the
 "uforenelige med al Videnskab" substitution, nothing in the old file should be
 carried over without checking it against the image.
 
-**Next step: `bash batch.sh 383` and transcribe printed pp. 383–394** in
-`transcription.tex`. The offset is a plain +13. Inside *c) Forløsningen* (§ 25).
+**Next step: `bash batch.sh 407` and transcribe printed pp. 407–418** in
+`transcription.tex`. The offset is a plain +13. Inside *α) Frihedens
+Grundbetingelser*; expect *β) … Vilkaar* and *γ) … Byrder*, both named on p.403.
 
-**⚠ THE p.392 ERRATUM FALLS IN THIS BATCH.** RETTELSER, l.4 f.o.:
-*Selvishedeus* → **Selvvishedens**. Apply it inline with an `% ERRATUM APPLIED`
-comment at the spot, per house convention, and record the printed reading in the
-comment. That is the 6th of the nine errata; two remain after it (p.400, p.508).
-
-*Tro paa Aanden*, the third and last main division, opens around p.458.
+*Tro paa Aanden*, the third and last main division, opens around p.458 — roughly
+four batches away. Only the **p.508 erratum** remains.
 
 **`catalog.yaml` now points only at this file** — one section, "Complete work
 (pp. 1–537)", linking `religionsphilosophie/transcription.pdf`. The `indledning/`
@@ -786,6 +811,14 @@ setting (verified on pp. 17/18, 41/42, 55/56) and keeps the image small.
 `philosophisk-propaedeutik`. Each application carries an `% ERRATUM APPLIED`
 comment at the spot.
 
+**The list is NOT in page order.** On the page it runs
+130 · 257 · 257 · 257 · 257 · **400 · 508 · 284 · 392** — the last three are out
+of sequence, which is why a quick scan of the top of the page appears to skip
+284 and 392 entirely. Read all nine lines before concluding an entry is absent.
+
+**Applied so far (8 of 9):** 130, 257 ×4, 284, 392, 400.
+**Only p.508 is outstanding** — *til i sin* → **til sin**, Lin. 11 f.n.
+
 - **p.130** Anm.: *unserer* → **unseres** — APPLIED at p.130. (The Fichte title
   *Ueber den Grund unseres Glaubens an eine göttliche Weltregierung*.)
 
@@ -816,9 +849,16 @@ long substitutions, not single words. Transcribed at 700 dpi they read:
 - p.257 l.20 f.o.: *denne Kjendsgjerning* → **slige Kjendsgjerninger, dersom det
   virkelig ere Kjendsgjerninger**
 - p.284 l.6 f.n.: *forklare* → **bortforklare**
-- p.392 l.4 f.o.: *Selvishedeus* → **Selvvishedens**
-- p.400 l.6 f.o.: *Prophetens* → **Propheternes**
-- p.508 l.11 f.n.: *til i sin* → **til sin**
+- **p.392 l.4 f.o.: *Selvishedeus* → Selvvishedens — APPLIED at p.392.**
+  ⚠ **The errata list itself is misprinted here.** It quotes the faulty word as
+  *Selvishede**us***, but the page (both copies, 700 dpi) reads
+  *Selvishede**ns*** — a dropped second *v*, not an n→u slip. So the lemma you
+  would search for does not occur on the page. The correction *Selvvishedens*
+  is right; the lemma is not. Trust the correction.
+- p.400 l.6 f.o.: *Prophetens* → **Propheternes** — APPLIED at p.400. The plural
+  is corroborated by the next sentence, "maatte Propheterne bestandig anlægge
+  Lovens … Maalestok".
+- **p.508 l.11 f.n.: *til i sin* → til sin — STILL OUTSTANDING, the last one.**
 
 All nine page numbers above were re-read at 700 dpi. **Two were previously recorded
 wrong here** — "150" for 130 and "592" for 392 — both misreadings off the original
