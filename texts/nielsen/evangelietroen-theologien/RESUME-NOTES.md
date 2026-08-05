@@ -89,6 +89,41 @@ renders as `1, 2, 3…`. Decide before the count grows: keep LaTeX numbering, or
 `*)` (`\renewcommand{\thefootnote}{*)}` or `\footnote[symbol]`). Uniform now, so a global
 change is still cheap.
 
+**Lectures VI, VII and VIII (pp. 66–111): DONE.** ~12,441 words, three concurrent agents,
+spliced with `splice.py`. `check.py`: 111/174, no gaps, no dupes, braces 288/288. Compile
+(Greek neutralised): 0 errors, 0 missing chars, 101 pp.
+
+- **VI (66–80):** argument matches p. 66. **Lecture boundary settled: VI ends at p. 80.**
+  The Indhold's "66—86" is simply wrong; p. 81 opens Syvende Forelæsning.
+  Also established: **this book has no running heads at all**, only a centred page numeral
+  — so "check the running head" is not a usable instruction here.
+  Defects logged: p. 73 `Mennneske` (three n's).
+- **VII (81–96):** argument matches p. 81. Defects logged: p. 95 `Fremstilligen`;
+  p. 96 `er der er saligt Liv` for `et` (cf. p. 95). Doubtful: `J. H. A. Ebrard` — Fraktur
+  I/J identical, `J` chosen.
+- **VIII (97–111):** **skeleton argument was wrong and has been corrected** — it read
+  `halvspeculative`, the printed p. 97 reads `halvphilosophiske`. Defects logged:
+  p. 103 `mataphysisk`; p. 105 `(V 5–13)` missing its period.
+
+**⚠ NEAR MISS worth remembering:** `halvspeculative` occurs **13 times** in this book as
+Nielsen's own term. A global find-and-replace to fix the one occurrence in the lecture VIII
+heading would have silently corrupted twelve legitimate ones. Always scope a correction to
+the heading block.
+
+**The p. 82/83 seam was handled correctly.** Verified independently after splicing:
+printed 81→PDF 94, 82→95, 83→96, 84→99, 85→100 (PDF 97–98 correctly skipped), and an md5
+comparison of every page-block in the whole file reports **no duplicate pages**.
+
+**Quote balance still +1** — VI, VII and VIII are each internally balanced, so the running
+total is unchanged from lecture V.
+
+### Outstanding review items (not blockers)
+- **p. 111** doubles `er` across a line break (`er-` + `erkjendes`); resolved to
+  `erkjendes` per the file's hyphen-joining convention. Flagged by the agent for a human eye.
+- **`De Wette`** is set `\textit{}` on p. 57 (antiqua there) but left plain on p. 108
+  (Fraktur there). Both follow the print, but confirm on a consistency pass.
+- The **footnote question is still open** and there are now **11** footnotes.
+
 ### ⚠ FRAGMENTS MUST NOT BE NAMED `.tex` — this broke `make`
 The repo Makefile discovers targets with `find texts -name '*.tex'`, so staging batch
 fragments as `.parts/pp26-37.tex` made it try to build them standalone. A fragment has no
@@ -113,11 +148,18 @@ document. Use the `lmodern` substitution recipe in BATCH-AGENT.md for sandbox co
    `009` sorts before `068`, so a spot-check can confidently verify the wrong page — this
    happened once here. Render with `mktemp -d` + `pdftoppm -singlefile`.
 
-**7 markers remain** — lectures VI–XII. `grep -n "text to be added" transcription.tex`.
+**4 markers remain** — lectures IX–XII. `grep -n "text to be added" transcription.tex`.
 
-Next batches = **VI pp. 66–80 · VII 81–96 · VIII 97–111** (15/16/15 pp.). Note VII–VIII
-cross the p. 83/84 page-map seam, where the offset changes from +13 to +15 — `pagemap.py`
-handles it, which is exactly why nothing may hard-code an offset.
+Next batches = **IX pp. 112–128 · X 129–143 · XI 144–158 · XII 159–174**
+(17/15/15/16 pp.). All are past the seam at a uniform +15, but call `pagemap.py` anyway.
+Three can run concurrently, then XII alone — or all four at once.
+
+When XII is done the book is complete, and two passes remain:
+1. the outstanding review items above;
+2. image-verifying the **Indhold, PDF 190–191** — the lecture arguments in the skeleton
+   came from its ABBYY text layer. Two have now proved wrong against the printed lecture
+   heads (III `consequent`, VIII `halvspeculative`) and one page range was wrong
+   (VI "66—86"), so the Indhold itself should be transcribed from the image, not trusted.
 
 Note for a fresh session: the `bibliotek` folder is not mounted by default — request it
 explicitly (host path `/Users/hhalvors/bibliotek`) before running any script, since
