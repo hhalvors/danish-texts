@@ -31,7 +31,50 @@ page reverts, so they are not real.
 
 `pagemap.py` is the single source of truth and every script calls it.
 
-## CURRENT RESUME POINT
+## ✅ BODY COMPLETE — pp. 1–174, all twelve lectures + Forord
+
+`check.py`: **174/174, no gaps, no dupes**, braces 349/349, 0 suspect readings.
+Compile (Greek neutralised, lmodern substitute): **0 errors, 0 missing chars, 140 pp.**
+Footnotes render as `*)` throughout — 13 notes, no daggers, no math asterisks.
+
+**Quote balance is +2 and that is correct.** Running total of logged printer's defects:
++1 lecture II, −1 III, +1 V, +1 XI. Do not "fix" it. (The Indhold adds one balanced
+pair — „Jesu Liv“ in the lecture VII entry — so the total is unchanged.)
+
+### ✅ Indhold pass: DONE — and it corrected the record
+The Indhold (PDF 190–191) is now transcribed from the page images at 250–600 dpi and sits
+at the end of `transcription.tex` under `\backmatter`. Twelve entries, all rendering.
+
+**This pass overturned an earlier conclusion.** While the transcription was in progress I
+recorded that four lecture arguments were "wrong in the skeleton because of the OCR layer."
+Reading the Indhold off the image shows that only **two** were OCR errors. The other two
+are **genuine variants in the 1850 printing**, where the book's own contents page and its
+lecture head differ. Both were re-verified at 600 dpi on both witnesses:
+
+| | Indhold reads | Lecture head reads | verdict |
+|---|---|---|---|
+| III | `conseqvent` | `conseqvent` | OCR error in the layer (`consequent`); corrected |
+| VI | `S. 66—80` | (VII opens p. 81) | OCR error in the layer (`66—86`); corrected |
+| **VIII** | `halvspeculative` | `halvphilosophiske` (p. 97) | **real variant — keep both** |
+| **X** | `gjældende` … `Theorien; thi` | `giældende` … `Theorien, thi` (p. 129) | **real variant — keep both** |
+
+Each witness is transcribed as it stands: the lecture heads carry the head readings, the
+Indhold carries the Indhold readings, and both are commented at their sites. **Do not
+normalise these two into agreement** — the disagreement is the datum.
+
+### What remains before this can be called finished
+1. **The closing fleuron, p. 174.** The book ends with a centred ornament — a stroke flaring
+   into two leaves flanking a ring — currently stood in for by `\rule{0.22\textwidth}{0.4pt}`.
+   Replace with a real fleuron (pifont, or a `❦`-class glyph) or accept the rule deliberately.
+3. **The review items listed under lectures VI–VIII** (the p. 111 `er-`/`erkjendes`
+   hyphen-join, and `De Wette` italicised on p. 57 but plain on p. 108).
+4. **Scratch directories the sandbox could not delete** — `.parts/imgs/`,
+   `.scratch-129-143/`, and `.parts/_scratch-delete-me.txt`, plus stale `.aux/.log/.fls` in
+   `.parts/`. All gitignored or harmless; delete by hand.
+
+Translation: not begun.
+
+## SUPERSEDED — resume point while the transcription was in progress
 **Forord (pp. III–VIII, PDF 8–13): DONE.** ~1770 words.
 
 **Første Forelæsning (pp. 1–13, PDF 14–26): DONE.** Transcribed in one batch, image-verified
