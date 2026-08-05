@@ -47,17 +47,82 @@ the line break) — read this way, not "Hjertets Grund"; check again if it looks
 context later. Verified compile in the sandbox (lmodern substitute, babel/textalpha
 stripped): **41 pp., 0 LaTeX errors, 0 missing-character warnings.**
 
-**11 markers remain** — one per lecture II–XII. `grep -n "text to be added" transcription.tex`.
+**Anden Forelæsning (pp. 14–25, PDF 27–38): DONE.** ~3260 words. First batch done by a
+dispatched subagent (see "The loop"), then independently re-verified in the main
+conversation: `check.py` clean, compile 0 errors / 0 missing chars, and the p.18
+letterspacing spot-checked against the scan — „Christendommen eensartet med Videnskaben,
+Evangelietroen eensartet med Theologien“ is genuinely Sperrsatz, so the agent's call was
+right. The skeleton's italic argument matches the printed p.14 heading verbatim; no
+correction needed. `fides religiosa` / `fides historica` set `\textit{}` (antiqua).
 
-Next batch = **Anden Forelæsning, pp. 14–25 (PDF 27–38)**, 12 printed pp., one batch.
-Opens: "I Opfattelsen af Forholdet mellem den historiske og religiøse Tro maa Theologien
-adskille det i Religionen Uadskillelige, og derfor er Evangelietroen ueensartet med
-Theologien." — argument already confirmed against the printed p.14 heading (visible on
-the p13–14 two-up render from this session).
+**Three printer's defects in this lecture, transcribed as printed and logged in `%`
+comments at each site** — this is why `check.py` now reports quote balance **+1** rather
+than 0:
+- p. 15: the Religious man's second speech has one opening `„` but two closing `“`.
+- pp. 23–24: `„lad os kun indrømme` is opened and never closed; it simply stops.
+- pp. 24–25: a single `“` closes both the inner and the outer quotation.
 
-Note for next session: the `bibliotek` folder is not mounted by default in a fresh
-session — request it explicitly (path `/Users/hhalvors/bibliotek` on the host) before
-running `batch.sh`, since `pagemap.py` needs the scan to be readable.
+Expect `balance=1` from here on until another defect is logged. Do not "fix" it.
+
+**Lectures III, IV and V (pp. 26–65): DONE.** ~10,999 words, transcribed by three agents
+running **concurrently**, each to a fragment in `.parts/`, then spliced with `splice.py`.
+This worked: `check.py` reports 65/174, no gaps, no dupes, braces 251/251. Independently
+spot-checked in the main conversation — p. 55 „Skriften — hedder det — skal fortolke sig
+selv.“ is genuine Sperrsatz with the interpolated „hedder det“ *not* spaced, exactly as
+marked up.
+
+- **III (26–37):** skeleton's argument had `consequent`; the printed p. 26 reads
+  `conseqvent`. **Corrected.** Defects logged: p. 26 a closing `“` with no opener;
+  p. 32 `Refomatorerne`; p. 35 a missing full stop.
+- **IV (38–51):** argument matches p. 38 verbatim. First lecture with footnotes.
+  Defects logged: p. 41 `lil` for `til`; p. 42 `medele` for `meddele`.
+- **V (52–65):** argument matches p. 52 verbatim. Defect logged: the p. 57 footnote opens
+  `„Weil` and never closes. Doubtful: `L.\ I.\ Rückert` — the Fraktur I/J is ambiguous;
+  `I.` chosen. Only `De Wette` (p. 57) is antiqua; the other German names are Fraktur.
+
+**Quote balance is now +1 and should stay there.** Arithmetic: +1 (lecture II) −1 (III)
++0 (IV) +1 (V). If it moves without a newly logged defect, something is wrong.
+
+### ⚠ OPEN EDITORIAL QUESTION — footnotes
+The print marks footnotes `*)`. The 7 footnotes so far are plain `\footnote{}`, which
+renders as `1, 2, 3…`. Decide before the count grows: keep LaTeX numbering, or restore
+`*)` (`\renewcommand{\thefootnote}{*)}` or `\footnote[symbol]`). Uniform now, so a global
+change is still cheap.
+
+### ⚠ FRAGMENTS MUST NOT BE NAMED `.tex` — this broke `make`
+The repo Makefile discovers targets with `find texts -name '*.tex'`, so staging batch
+fragments as `.parts/pp26-37.tex` made it try to build them standalone. A fragment has no
+preamble, so `make` died with `! LaTeX Error: Missing \begin{document}`. Fixed three ways:
+fragments are now `.texfrag`; `splice.py` refuses to run if it finds `.tex` fragments and
+archives spliced ones to `.parts/spliced/`; and the Makefile excludes `*/.parts/*`.
+
+Leftover `.aux/.log/.fls` from that failed build are still in `.parts/` — gitignored and
+harmless; `make clean` clears them. So is `.parts/_scratch-delete-me.txt`.
+
+**Note on the sandbox:** `make` cannot build this book (or any other in the repo) inside the
+Claude sandbox, because `libertinus.sty` is not installed there — verified by failing an
+untouched file the same way. That failure is environmental and says nothing about the
+document. Use the `lmodern` substitution recipe in BATCH-AGENT.md for sandbox compile tests.
+
+### ⚠ TWO TRAPS THAT PRODUCED FALSE CONCLUSIONS — both now documented in BATCH-AGENT.md
+1. **The sandbox compile reports ~22 `Unicode character … not set up` errors for Greek.**
+   These are an artefact of stripping `textalpha` for the sandbox test, *not* a defect.
+   Check `grep '^!' log.txt | grep -v 'Unicode character'` is empty; map Greek to a
+   placeholder to test the rest. Never delete Greek from the file.
+2. **`glob('/tmp/pg*.png')[0]` returns a stale page.** `/tmp` is shared between agents and
+   `009` sorts before `068`, so a spot-check can confidently verify the wrong page — this
+   happened once here. Render with `mktemp -d` + `pdftoppm -singlefile`.
+
+**7 markers remain** — lectures VI–XII. `grep -n "text to be added" transcription.tex`.
+
+Next batches = **VI pp. 66–80 · VII 81–96 · VIII 97–111** (15/16/15 pp.). Note VII–VIII
+cross the p. 83/84 page-map seam, where the offset changes from +13 to +15 — `pagemap.py`
+handles it, which is exactly why nothing may hard-code an offset.
+
+Note for a fresh session: the `bibliotek` folder is not mounted by default — request it
+explicitly (host path `/Users/hhalvors/bibliotek`) before running any script, since
+`pagemap.py` needs the scan to be readable. `BATCH-AGENT.md` tells the subagent to do this
+itself.
 
 ## Skeleton
 `transcription.tex` already carries all twelve `\chapter*` headings with the lecture
