@@ -45,6 +45,8 @@ print("partheads:", body.count("\\parthead{"),
 #   4. the Martensen quotation in the p.294 footnote („De tre første Evangelier)
 # and ONE closer is never opened:
 #   5. the Hase quotation of pp.349-350 („Verbum divinum ... til Evangeliet“)
+#   8. the Grundtvig quotation resumed on p.500 after an ellipsis with no opener
+#      („Det Samme gjælder om Konst-Ordet ... lader sig døbe paa“)
 # and TWO more unmatched openers:
 #   6. the Strauss/Hegel quotation on p.376 („Modsætningen mellem Substans og
 #      Subject ...), which runs on into Nielsen's own voice unclosed.
@@ -52,14 +54,18 @@ print("partheads:", body.count("\\parthead{"),
 #      Indhold.), likewise never closed.
 # All confirmed by collation against the Bodleian copy.
 #
-# !! The "dropped openers" list below will NOT catch #5. A stray “ only registers
-# there if the running balance is already 0; here it merely cancels one of the
-# standing unmatched openers. The running total is therefore
-#     4 openers - 1 stray closer (p.350) + 1 opener (p.376) + 1 opener (p.416) = 5.
-# A second entry in the neg list is still a real error.
+# !! The "dropped openers" list below will NOT catch #5 or #8. A stray “ only
+# registers there if the running balance is already 0; here each merely cancels
+# one of the standing unmatched openers. The running total is therefore
+#     9 never-closed openers - 2 never-opened closers (p.350, p.500) = 7.
+#      (7th = the p.524 footnote opener „Naar Du derimod…; 8th and 9th are both
+#       on p.527 — the Greek „Ἔδοξε … and „Da besluttede Apostlene …)
+# THE BODY IS COMPLETE (pp.1-537), so 7 is now the FINAL figure, not a running
+# one: any deviation from it means something has been edited by mistake.
+# ANY entry in the neg list beyond the single expected one is a real error.
 # A batch that ends mid-quotation reads one higher; check the last transcribed
 # page before treating that as a bug.
-STANDING = 5
+STANDING = 7
 bal, neg = 0, []
 for i, line in enumerate(body.split("\n"), 1):
     for ch in line:

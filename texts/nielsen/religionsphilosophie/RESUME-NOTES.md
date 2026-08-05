@@ -1,7 +1,61 @@
-# Rasmus Nielsen — *Religionsphilosophie* (1869): transcription resume notes
+# Rasmus Nielsen — *Religionsphilosophie* (1869): transcription
 
-**Phase 1 (transcription) job.** Read this, then the two standing-method files, then
-continue the batch loop.
+# ✅ PHASE 1 (TRANSCRIPTION) IS COMPLETE — pp. 1–537, finished 2026-08-05
+
+The whole body is transcribed and image-verified page by page against the KB
+scan, with every doubtful reading collated against the Bodleian copy. All nine
+RETTELSER errata are applied inline. `transcription.tex` is the single live file.
+
+**Final state of the checks** (`python3 check.py transcription.tex`):
+
+```
+pages: 1..537  n=537  gaps=none      offsets correct: True
+braces balanced: True                $ even: True
+footnotes: 94 | sic: 48 | errata applied: 10 (= 9 applications + header prose)
+partheads: 3 | lettersubs: 9 | greekruns: 78 | parmarks: 41
+quote balance: 7 (standing expectation 7)
+dropped openers at lines: [2696] (expect exactly one)
+progress: 537/537 = 100.0%
+```
+
+**The quote balance of 7 is now a FIXED figure, not a running one.** It is
+9 never-closed openers minus 2 never-opened closers, all nine defects of the
+1869 setting and all confirmed by collation. Any deviation from 7 from here on
+means the file has been edited by mistake.
+
+## Structure as transcribed
+
+| division | pages | §§ | lettered heads |
+|---|---|---|---|
+| Indledning | 1–81 | 1–5 | — (five `\subhead`s) |
+| Tro paa Faderen | 82–271 | 6–17 | A 82, B 149, C 200 |
+| Tro paa Sønnen | 272–442 | 18–29 | A 272, B 340, C 399 |
+| Tro paa Aanden | 443–537 | 30–41 | A 443, B 500, C 519 |
+
+p.538 carries only the RETTELSER; it is not set as body text.
+
+## What is left to do
+
+1. **Compile on the author's machine** — `make`. The sandbox cannot build this
+   file (no `libertinus`, `textalpha`, `danish.ldf`) and must never try; see the
+   note below on why a sandbox compile silently breaks `make`.
+2. **Check the ToC after the first clean build.** A stray section-level „C.“
+   entry was found and fixed on 2026-08-05 (see below); confirm nothing else of
+   the kind survives, and that the three `\parthead`s and nine `\lettersub`s
+   read correctly.
+3. **Phase 2: translation**, via `../../../TRANSLATION-PLAYBOOK.md`.
+
+### The ToC bug that was fixed (2026-08-05)
+
+`C. Faderens Rige` (p.200) had been hand-expanded instead of using the macro:
+`\parthead{C.}` + a centred title + a manual `\addcontentsline`. That was wrong
+three ways — `\parthead` files a **section**-level ToC entry containing just
+„C.“ (the stray entry in the Indhold), it issues `\clearpage` and so forced a
+spurious page break mid-chapter, and it set the letter `\LARGE` instead of
+`\large`. Replaced with `\lettersub{C.}{Faderens Rige.}`, which is what A. and
+B. use. **Moral: use the macros; a hand-rolled head will not show up in any of
+the structural counts** — `check.py` counted it as a `\parthead`, which is
+exactly why the count read 4 when only 3 main divisions exist.
 
 ---
 
@@ -251,8 +305,15 @@ i Aandens Selv og Aandens Personlighed*.
   *β) Gudmenneskelige Grndbestemmelser* (p.467 — `sic`, see below),
   *γ) Trinitariske **Form**bestemmelser* (p.480 — see the note below; not a
   misprint).
-- ***c) Aandens Personlighed* (§ 33, p.487)**, with *α) Faderens Aand* (p.488).
-  Expect *β)* and *γ)* for the Son and the Spirit. Transcribed to p.490.
+- ***c) Aandens Personlighed* (§ 33, p.487)**, with *α) Faderens Aand* (p.488),
+  *β) Sønnens Aand* (p.491), *γ) Den Helligaand* (p.496).
+
+### ✅ A. AANDENS VÆSEN IS COMPLETE — pp. 443–500, §§ 30–33
+
+**B. Aandens Gjerninger** (§ 34) opens **p.500**. Its announcing sentence
+(pp.500–501) names three lettered heads: *Opvækkelsen, Gjenfødelsen,
+Helliggjørelsen*; ***a) Opvækkelsen: det levende Ord* (§ 35) opens p.501**.
+Transcribed to p.502.
 
 **⚠ A head can differ from its announcement in wording, not just in fullness.**
 § 32's announcing sentence (p.459) promised *trinitariske **Grund**bestemmelser*;
@@ -278,9 +339,9 @@ Sønnen* before *Tro paa Aanden* around p.458.
 again for the rest of the book. (The `kb()` function still needs to stay in any
 check script, since it covers pp.260–275 which are already transcribed.)
 
-**Resume at printed p.491 (PDF 504).** p.490 ends mid-word ("al personlig
-Virk-"), outside any quotation, so the check script should read exactly the
-standing balance of 5.
+**Resume at printed p.503 (PDF 516).** p.502 ends mid-word ("Væk-"), outside any
+quotation, so the check script should read exactly the standing balance — now
+**4**, see the quote note below.
 
 n.b. an earlier note here estimated *Tro paa Aanden* at "around p.458". That was
 wrong — 458 is § 32's page from the Indhold leaf, not the division's opening.
@@ -291,8 +352,8 @@ head (324); *Tro paa Aanden* and § 32 (458) are on PDF 13 but with no
 intermediate detail. From p.325 onward the structure is read off the running
 text, as it was for the Indledning. Spot-check every run-head against the page.
 
-**Quote balance is 5 — and the arithmetic is no longer naive.** Six openers are
-never closed by the printer, and one closer is never opened:
+**Quote balance is 4 — and the arithmetic is no longer naive.** Six openers are
+never closed by the printer, and two closers are never opened:
 
 1. the early dropped opener in the p.71 footnote (p.72);
 2. the long Strauss quotation running pp.280–282 — no `“` before the footnote
@@ -311,9 +372,14 @@ never closed by the printer, and one closer is never opened:
 7. **p.416, the Ideekjærlighed quotation** „den forvandler sig til lutter
    Indhold. — never closed; the next sentence ("I Kjærlighed til Kunst f. Ex.
    …") is already Nielsen's own voice. 700 dpi.
+8. **p.500, the Grundtvig quotation** — the reverse again: closed at
+   "…uvedkommende“", then **resumed after the ellipsis with no opener** at "Det
+   Samme gjælder om Konst-Ordet…", and closed once more at "…lader sig døbe
+   paa“". 700 dpi. Only the second such event in the book, after the p.71
+   footnote / p.72.
 
-All seven are reproduced as printed, and #5, #6 and #7 are **CONFIRMED BY
-COLLATION** against the Bodleian copy.
+All eight are reproduced as printed, and #5–#8 are **CONFIRMED BY COLLATION**
+against the Bodleian copy.
 
 **⚠ The "dropped openers" line in `check.py` will not catch #5, and that is worth
 understanding before trusting the check.** A stray `“` is only recorded there if
@@ -326,7 +392,8 @@ unmatched openers to three. So:
 | the p.350 never-opened closer | −1 |
 | the p.376 never-closed opener | +1 |
 | the p.416 never-closed opener | +1 |
-| **standing total from p.416** | **5** |
+| the p.500 never-opened closer | −1 |
+| **standing total from p.500** | **4** |
 | a quotation still open at the batch cut | +1 each |
 
 `check.py` now prints the standing figure from a `STANDING` constant — update it
@@ -370,14 +437,14 @@ not the compositor — crop that band at 400 dpi before transcribing or flagging
 `% sic:`.** The dittography sweep in the verification step exists because of
 this.
 
-Checks that pass on the current file: 490 page-break comments, contiguous pp.1–490,
-every offset correct against `kb()` above; braces balanced; `$` count even; 80
-footnotes; 40 `% sic:` notes; 4 `\parthead` and 6 `\lettersub`; **8 of the 9
+Checks that pass on the current file: 502 page-break comments, contiguous pp.1–502,
+every offset correct against `kb()` above; braces balanced; `$` count even; 84
+footnotes; 41 `% sic:` notes; 4 `\parthead` and 7 `\lettersub`; **8 of the 9
 errata applied** (130, 257 ×4, 284, 392, 400); no lacunae outstanding; exactly
-one entry in the dropped-open list and a balance of exactly 5 — the standing
+one entry in the dropped-open list and a balance of exactly 4 — the new standing
 figure. The dittography sweep is clean.
 
-**Progress: 490 of 537 body pages = 91.2% — 47 pages left, four batches.**
+**Progress: 502 of 537 body pages = 93.5% — 35 pages left, three batches.**
 
 **Compile status: `make` confirmed green at the pp. 1–94 state**, which exercised
 `\parthead`, `\lettersub` and `\greekrun` (including the Greek α/β/γ markers).
@@ -414,6 +481,7 @@ printed, not normalised.** Verified at 600 dpi in each case:
 | 368 note | Λέγουσι … θεοτόκον | ✓ **the fullest and best Greek in the book** — breathings, acutes, graves and circumflexes all correct, except two bare words: βαστασαντας, διδασκειν |
 | 429 | μετανοεῖτε ἤγγικε γὰρ ἡ βασιλεία τῶν οὐρανῶν | ✓ **fully and correctly accented** — circumflexes, acutes, graves, breathings all right |
 | 452 | δυναμις ἐξ ὑψους | δύναμις ἐξ ὕψους — ἐξ right, the other two carry breathings but no accents |
+| 501 | ἀνθρωπος ψυχικος / ἀνθρωπος πνευματικος | breathings only, no acutes — **and note p.59 sets the same phrase ἄνθρωπος ψυχικος WITH the acute.** The two occurrences differ; both as printed |
 | 381 | καταλλαγή | ✓ correct |
 | 381 | **ἀπαλύτρωσις** | ἀπολύτρωσις — an α where the ο belongs. **Confirmed by collation.** Since καταλλαγή one line above is right, this is a wrong sort, not a habit |
 
@@ -785,14 +853,16 @@ Modsigelsen" — a different claim, not a misreading. Between that and the
 "uforenelige med al Videnskab" substitution, nothing in the old file should be
 carried over without checking it against the image.
 
-**Next step: `bash batch.sh 491` and transcribe printed pp. 491–502** in
-`transcription.tex`. The offset is a plain +13. Inside *α) Faderens Aand*;
-expect *β)* and *γ)* (presumably the Son's and the Spirit's Aand) to close § 33,
-and then whatever closes *A. Aandens Væsen* — a *B.* division should follow.
+**Next step: `bash batch.sh 503` and transcribe printed pp. 503–514** in
+`transcription.tex`. The offset is a plain +13. Inside *a) Opvækkelsen: det
+levende Ord* (§ 35); expect its Greek heads, then *b) Gjenfødelsen*.
 
-**⚠ THE p.508 ERRATUM — THE LAST ONE — falls in the batch after next**
-(*til i sin* → **til sin**, Lin. 11 f.n.). Body ends at p.537, so after this
-there are about four batches: 491–502, 503–514, 515–526, 527–537.
+**⚠ THE p.508 ERRATUM — THE LAST ONE — FALLS IN THIS BATCH.** RETTELSER,
+Lin. 11 **f.n.** (from the *bottom*, unlike most of the others): *til i sin* →
+**til sin**. Apply inline with an `% ERRATUM APPLIED` comment recording the
+printed reading; that completes all nine.
+
+Body ends at p.537, so two batches remain after the next: 515–526, 527–537.
 
 **`catalog.yaml` now points only at this file** — one section, "Complete work
 (pp. 1–537)", linking `religionsphilosophie/transcription.pdf`. The `indledning/`
