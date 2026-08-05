@@ -34,16 +34,28 @@ means the file has been edited by mistake.
 
 p.538 carries only the RETTELSER; it is not set as body text.
 
+## ✅ BUILD VERIFIED — 2026-08-05
+
+`make` run on the author's machine. The build is clean and was checked, not just
+assumed:
+
+- **383 pages**, letter, no errors, no undefined references, `transcription.out`
+  checksum unchanged (so no rerun pending).
+- **ToC correct**: 4 section entries (Indledning + the three `\parthead`s) and
+  14 subsections (5 Indledning sub-heads + A/B/C × 3). The stray „C.“ is gone
+  and *C. Faderens Rige.* now carries its full stop like A. and B.
+- **The spurious page break is gone**: *C. Faderens Rige* now sits mid-page on
+  printed p.140 of the build, directly under the preceding paragraph, at
+  `\large` like its siblings, with `§ 14` following. It had previously been
+  forced to the top of a fresh page by the `\parthead` `\clearpage`.
+
 ## What is left to do
 
-1. **Compile on the author's machine** — `make`. The sandbox cannot build this
-   file (no `libertinus`, `textalpha`, `danish.ldf`) and must never try; see the
-   note below on why a sandbox compile silently breaks `make`.
-2. **Check the ToC after the first clean build.** A stray section-level „C.“
-   entry was found and fixed on 2026-08-05 (see below); confirm nothing else of
-   the kind survives, and that the three `\parthead`s and nine `\lettersub`s
-   read correctly.
-3. **Phase 2: translation**, via `../../../TRANSLATION-PLAYBOOK.md`.
+1. **`catalog.yaml` still says `status: in-progress`** for this text (line
+   ~1830). Now that the PDF is rebuilt and correct, that can be flipped to
+   `complete` — it was deliberately left alone until the build existed, so the
+   site would not advertise a finished transcription while serving a stale PDF.
+2. **Phase 2: translation**, via `../../../TRANSLATION-PLAYBOOK.md`.
 
 ### The ToC bug that was fixed (2026-08-05)
 
@@ -892,8 +904,12 @@ OCR ("«) … ß) … Y)") is this same series. `textalpha` is loaded, so they s
 directly. Expect γ) as the third member throughout.
 
 ## Rendering conventions (inherited from `indledning/`, keep consistent)
-- Preamble: `article`, 12pt a4paper, `libertinus` + `libertinust1math`,
-  `babel[danish]`, `microtype`, `setstretch{1.3}`, `geometry[margin=1.2in]`,
+- Preamble (**corrected 2026-08-05 against the actual file** — this entry used to
+  say `article`, a4paper, `setstretch{1.3}`, `margin=1.2in`, none of which is
+  what the file has): `book`, 12pt, **default letter paper** (no paper option is
+  given), `libertinus` + `libertinust1math`,
+  `babel[danish]`, `microtype[protrusion,expansion]`, `onehalfspacing`,
+  `geometry[margin=1.4in]`,
   `fancyhdr` (rhead = short title, cfoot = page number), `hyperref[hidelinks]`.
 - `\section*{INDLEDNING}` / `\subsection*{<sub-head>}` / `\subsubsection*{§ N}`.
 - Third-level run-heads → `\medskip` + `\noindent\textit{a) …}` + `\medskip`.
