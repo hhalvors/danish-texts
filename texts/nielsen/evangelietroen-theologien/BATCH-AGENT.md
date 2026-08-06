@@ -1,5 +1,10 @@
 # Standing brief for a transcription batch subagent
 
+> **The general method now lives in `../../../TRANSCRIPTION-PLAYBOOK.md`** at the repo
+> root, generalised from this file and applicable to any book here. This file is the
+> book-specific prompt body for *Evangelietroen og Theologien*. If the two ever disagree,
+> the playbook is the method and this is the instance.
+
 Paste this file's body as the prompt for a `general-purpose` subagent, substituting the
 page range. The agent starts cold, does one batch, and returns ~150 words. Everything
 expensive — the OCR dump, the page images, the zooms — lives and dies in the agent's own
