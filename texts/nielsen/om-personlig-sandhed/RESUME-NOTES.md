@@ -7,9 +7,9 @@ Boghandling (F. Hegel), 1854. [1] + 144 pp., Fraktur. Same author and genre as
 whole method used here (pagemap.py / ocr.sh / spacing.py / check.py / splice.py /
 BATCH-AGENT.md) — see `../evangelietroen-theologien/` for the fully worked example.
 
-**Status: SET-UP ONLY. No transcription has been done yet.** This is a fresh skeleton;
-the next session should read `../../../TRANSCRIPTION-PLAYBOOK.md` and start batching
-from printed p. 1.
+**Status: printed pp. 1–32 transcribed and spliced (Lectures I–III complete). 112 pages
+remain, starting at printed p. 33 (Lecture IV).** Read `../../../TRANSCRIPTION-PLAYBOOK.md`
+before continuing.
 
 ## Files
 - Scan: `bibliotek/Nielsen, Rasmus/om-personlig-sandhed.pdf` (157 PDF pp., 33.5 MB,
@@ -133,24 +133,46 @@ drop-cap paragraph; **no italic "argument" summary** under the heading (unlike
 evangelietroen, which prints one both at the chapter head and in its Indhold — moot
 here anyway, since there is no Indhold).
 
-## Compile / skeleton check (done)
-`python3 check.py` on the untouched skeleton reports:
+## Batches done so far
 
-    pages: no arabic % --- p. N --- markers yet
-    progress: 0/144 = 0.0%   next page to transcribe: 1
-    braces balanced: True (130 open / 130 close)
-    markers remaining (text to be added): 13
-    quotes: „=0 “=0  balance=0
+| Batch | Pages | Lecture | Notes |
+|---|---|---|---|
+| pp1-11 | 11 | I, Indledning: en Phantasie | 1 `\emph{}` (Sperrsatz, p.11, confirmed); 0 footnotes; 0 `\textit{}`; 2 cross-page hyphenations silently rejoined |
+| pp12-22 | 11 | II, Æsthetisk og religiøs Phantasie | 3 `\emph{}` (all confirmed Sperrsatz); p.12 "Forskiel" vs heading's "Forskjel" — genuine printer's variant, kept as printed; p.16 stray period logged; p.19 doubled full stop logged; 0 footnotes |
+| pp23-32 | 10 | III (opening), Det evige Liv | 1 `\emph{}` (the Beatitude, p.32, confirmed); possible systematic Ø/D Fraktur confusion noted (p.24, "Øiekast") — worth adding to `ocr.sh`'s sed table if it recurs; 0 footnotes |
 
-13 markers = Forord (pp. 0--0) + 12 lectures. Sandbox compile test (libertinus →
-lmodern, libertinust1math/textalpha stripped, babel stripped) succeeds: 29 pages,
-0 `!`-errors.
+Fresh Fraktur OCR via `ocr.sh` confirmed usable (as hoped, matching evangelietroen) —
+the OCR-first pipeline stands; no need to switch to eyeball-first.
+
+`check.py` after splicing pp.1–32:
+
+    pages: 1..32  n=32  gaps=none  dupes=none
+    progress: 32/144 = 22.2%   next page to transcribe: 33
+    braces balanced: True (135 open / 135 close)
+    markers remaining (text to be added): 10
+    quotes: „=54 “=54  balance=0
+    suspect readings: 0
+
+Sandbox compile test (libertinus → lmodern, libertinust1math/textalpha stripped, babel
+stripped) succeeds: 47 pages, 0 `!`-errors.
+
+## Open items for a future review pass
+- p.12 "Forskiel"/"Forskjel" printer's variant — confirm it isn't a transcription slip
+  when doing the end-of-book review (playbook §6).
+- p.16 and p.19 punctuation oddities — logged in-line as printer's defects, not yet
+  independently re-verified.
+- Possible Ø/D Fraktur confusion flagged at p.24 — watch for recurrence in later
+  batches; if it recurs, add a sed rule to `ocr.sh`.
+- The Forord (synthetic marker `pp. 0--0`, ~1 page) is still untranscribed — it was
+  skipped in favor of starting the numbered body at Lecture I; do it whenever
+  convenient, it's independent of the rest.
 
 ## CURRENT RESUME POINT
-**Nothing transcribed yet.** Next: dispatch a batch-agent for the Forord
-(`% [text to be added: pp. 0--0]`, ~1 page) or start directly with Lecture I
-(`% [text to be added: pp. 1--11]`), per `BATCH-AGENT.md`. Running quote-balance
-total so far: **0** (nothing transcribed to unbalance it yet).
+**Printed pp. 1–32 done (Lectures I–III).** Next: printed p. 33, start of Lecture IV
+("Personlig Hjælp", pp. 33–42), marker `% [text to be added: pp. 33--42]`. The Forord
+(`% [text to be added: pp. 0--0]`) also still needs doing, independently, whenever
+convenient. Running quote-balance total: **0** (all defects found so far are logged
+punctuation/spelling variants, not quote-nesting problems).
 
 ## Standing method
 See `../../../TRANSCRIPTION-PLAYBOOK.md` for the batch-dispatch protocol, and
