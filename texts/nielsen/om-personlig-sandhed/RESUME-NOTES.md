@@ -7,8 +7,8 @@ Boghandling (F. Hegel), 1854. [1] + 144 pp., Fraktur. Same author and genre as
 whole method used here (pagemap.py / ocr.sh / spacing.py / check.py / splice.py /
 BATCH-AGENT.md) — see `../evangelietroen-theologien/` for the fully worked example.
 
-**Status: printed pp. 1–117 transcribed and spliced (Lectures I–X complete, ~81% of
-the book). 27 pages remain, starting at printed p. 118 (Lecture XI).** Read
+**Status: printed pp. 1–131 transcribed and spliced (Lectures I–XI complete, ~91% of
+the book). Only 13 pages remain, all of Lecture XII (pp. 132–144).** Read
 `../../../TRANSCRIPTION-PLAYBOOK.md` before continuing.
 
 ## Files
@@ -205,6 +205,14 @@ Running quote-balance total after pp.1-104: **+1**, unchanged since pp.68-79.
 Running quote-balance total after pp.1-117: **+2** (new defect at p.106, on top of the
 prior +1 from pp.48/59/71/73).
 
+| pp118-131 | 14 | XI, Personlighedens Vilkaar | 1 `\emph{}` ("Samvittighed for Gud og Mennesker", p.126, confirmed, spans a line break); 0 `\textit{}`; **new structural finding**: two mid-lecture display sub-headings ("Sandhedens Gjennembrud i det Personlige." p.120, "Samvittigheden." p.125), no precedent macro — rendered `\begin{center}\textbf{...}\end{center}`, flagged for review since this is the first occurrence in the book; Ø/D confusion recurred (Ønske p.121, Øieblikke p.123); **1 NEW quote defect**: p.120 Acts-9 citation closes after "Fængsel;" then resumes without a new opening „, leaving the final close unmatched — balance moves +2→+1 (batch was internally 25„/26“, i.e. −1); doubtful "Ivren" (missing medial e, kept as printed); several stray reader ink-marks and a malformed-but-still-paired opening-quote glyph (p.128) logged, not transcribed as defects since they don't affect balance; 0 footnotes |
+
+Running quote-balance total after pp.1-131: **+1**, per `check.py` (the authoritative
+source — 287 „ / 286 “). Logged defects contributing to it, at pp. 48, 59, 71, 73, 106,
+and 120: do not try to hand-recompute the running total from this list, since some
+defects add an extra opener and others an extra closer; always read the number straight
+off `check.py`'s own quotes line.
+
 ## Open items for a future review pass
 - p.12 "Forskiel"/"Forskjel" printer's variant — confirm it isn't a transcription slip
   when doing the end-of-book review (playbook §6).
@@ -222,16 +230,25 @@ prior +1 from pp.48/59/71/73).
   of the rest, do whenever convenient.
 
 ## CURRENT RESUME POINT
-**Printed pp. 1–117 done (Lectures I–X).** Next: printed p. 118, start of Lecture XI
-("Personlighedens Vilkaar", pp. 118–131), marker `% [text to be added: pp. 118--131]`.
-The Forord (`% [text to be added: pp. 0--0]`) also still needs doing, independently,
-whenever convenient. Running quote-balance total: **+2** (four real logged defects at
-pp.48, 59, 71, 73, 106 — see above; do not silently correct this).
+**Printed pp. 1–131 done (Lectures I–XI). Only Lecture XII remains.** Next: printed
+p. 132, start of Lecture XII ("Personlig Stræben: en Slutning", pp. 132–144 — the last
+page of the book), marker `% [text to be added: pp. 132--144]`. The Forord
+(`% [text to be added: pp. 0--0]`) also still needs doing, independently — it's the
+only piece of the book left untouched after Lecture XII. Running quote-balance total:
+**+1** per `check.py` (six real logged defects — see above; do not silently correct
+this).
 
 ## Printer's-spelling variants confirmed so far (record both readings, do not normalise)
 - p.12: "Forskiel" (heading has "Forskjel")
 - p.102: "Øjeblik" (elsewhere consistently "Øieblik")
 - p.107: "Punker" (missing t; correct "Punkt" appears twice on p.115)
+
+## Structural note for the final pass
+Two mid-lecture display sub-headings appeared for the first time in Lecture XI (p.120,
+p.125), rendered as `\begin{center}\textbf{...}\end{center}` with no precedent macro.
+Watch whether Lecture XII has any of these too, and consider promoting this to a proper
+`\subheading{}`-style command in the preamble during the end-of-book review if the
+pattern recurs.
 
 ## Standing method
 See `../../../TRANSCRIPTION-PLAYBOOK.md` for the batch-dispatch protocol, and
