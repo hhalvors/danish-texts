@@ -1,0 +1,1291 @@
+% ============================================================
+%  R. Nielsen, "Den propædeutiske Logik."
+%  Kjøbenhavn: Forlagt af Boghandler P. G. Philipsen;
+%  Trykt i BiancoLunos Bogtrykkeri, 1845.
+%  TRANSCRIPTION (Danish) — from the Royal Danish Library scan.
+%
+%  Scan: ~/bibliotek/Nielsen, Rasmus/1845-propædeutiske-logik.pdf
+%        (KB / ABBYY Recognition Server, 297 PDF pp., A4, 105 MB. A byte-for-byte
+%        twin, propædeutiske_logik.pdf, sits in the same directory — same scan.)
+%  TYPE: Fraktur (Danish body); Latin/French/English and all figures in antiqua
+%        -> \textit{}. Letterspacing (Sperrsatz) -> \emph{}; image-verify by zoom.
+%
+%  OFFSET (VERIFIED, UNIFORM): PDF = printed + 9.
+%        Body printed pp. 1--283 = PDF 10--292. No leaf was scanned twice and the
+%        offset never changes. Verified three ways: the ABBYY layer's own header
+%        numerals (224 pages at exactly +9, the 7 exceptions all single-digit
+%        misreads with +9 neighbours); a text-similarity sweep over adjacent and
+%        next-but-one page pairs, which found no duplicated leaf; and the image at
+%        200 dpi for the endpoints and the numeral-less opening run
+%        (PDF 11=2, 12=3, 13=4, 14=5, 16=7, 292=283).
+%        pagemap.py is the single source of truth — do not hard-code +9.
+%
+%  EXTENT: body printed pp. 1--283 (PDF 10--292). Front matter: title page PDF 6,
+%        Indhold PDF 8--9. There is NO half-title, NO dedication, NO motto and
+%        NO Forord. Back matter: "Rettelser" errata PDF 293; PDF 294--297 blank.
+%
+%  STRUCTURE (from the Indhold, PDF 8--9, transcribed from the image):
+%        Indledning (I. Den formelle og speculative Logik; II. Den propædeutiske
+%        Logiks Formaal) — Første Deel: Læren om det subjective Begreb
+%        (Cap. 1 §§1--5, Cap. 2 §§6--8, Cap. 3 §§9--11) — Anden Deel: Læren om det
+%        objective Begreb (Indledning §12, Cap. 1 §§13--15, Cap. 2 §§16--18,
+%        Cap. 3 §§19--21).
+%        The §§ run CONTINUOUSLY 1--21 across both Parts; they do not restart.
+%        The Første Deel Indledning's two sections are numbered I./II., NOT as §§;
+%        the Anden Deel Indledning IS a § (§ 12). That asymmetry is in the book.
+%        The Indhold carries NO page numbers at all — bare text, no leaders.
+%
+%  PRINTED-vs-INDHOLD VARIANTS (record both, do NOT normalise — see CLAUDE.md):
+%        body heads use a COLON  ("Første Deel:"),  Indhold a PERIOD ("Første Deel.")
+%        printed p.97 has LOWERCASE "anden Deel:" against p.6's "Første Deel:"
+%           and against the Indhold's "Anden Deel."
+%
+%  ERRATA (from "Rettelser", PDF 293; apply inline, flagged with % ERRATA):
+%        p. 80  l.3  fra oven : Omsætningen   -> Oversætningen
+%        p. 92  l.13 fra oven : A er ei = A,  -> A er ei = --- A
+%              [the errata line itself misprints "ci" for "ei"; see RESUME-NOTES]
+%        p. 93  l.7  fra oven : Betingelser   -> Betingethed
+%        p.112  l.4  fra neden: Daddel        -> Dadel
+%        p.152  l.8  fra neden: med           -> ved
+%        p.154  l.15 fra neden: Dyr=Rige      -> Dyre=Rige
+%        p.187  l.9  fra neden: εἵδη          -> εἴδη
+%        p.206  l.9  fra neden: en miniatur   -> en miniature
+%        p.241  l.1  fra neden: θετον         -> θεῖον   [script theta normalised]
+%
+%  NO FOOTNOTES anywhere in this book (confirmed on the image and by a type-size
+%        sweep of all 283 pages). References are inline in parentheses; the
+%        "Anm." remarks do the work footnotes would do. The "3*", "12*", "18*"
+%        at some page feet are SIGNATURE MARKS, not note marks.
+%  NO figures, NO tables, NO displayed equations. Inline antiqua symbols only
+%        (A=A, A er ei = --- A, A/B/C placeholders). Polytonic Greek occurs inline
+%        (pp. 138, 147, 179, 187, 241 ...). The fount prints theta as the script
+%        form and kappa sometimes as the cursive form; both are NORMALISED to
+%        θ and κ per the repo's standing convention (fount variants, not distinct
+%        letters — see texts/nielsen/religionsphilosophie/transcription.tex).
+%        This is also a hard build requirement: U+03D1 ϑ and U+03F0 ϰ are FATAL
+%        errors under textalpha/greek-fontenc in text mode. `verify.sh` lints for
+%        them, because the sandbox cannot compile Greek at all (textalpha is not
+%        installed there and tlmgr cannot cross-release install it).
+%  RUNNING HEADS: none in the original — only a centred bold antiqua folio.
+%
+%  SCAN CAVEAT: printed p.96 (PDF 105) carries a previous reader's yellow
+%        highlighter across the Sibbern quotation. Not a printing feature.
+%
+%  STATUS: IN PROGRESS. See RESUME-NOTES.md.
+% ============================================================
+\documentclass[12pt]{book}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[danish]{babel}
+\usepackage[protrusion=true,expansion=true]{microtype}
+\usepackage[margin=1.4in]{geometry}
+\usepackage{setspace}
+\usepackage{amsmath}
+\usepackage{graphicx}    % for \reflectbox (the old Danish »ɔ:« id-est mark)
+\DeclareUnicodeCharacter{0254}{\reflectbox{c}}  % ɔ (U+0254) = reversed c
+\usepackage{libertinus}
+\usepackage{libertinust1math}
+\usepackage{textalpha}   % polytonic Greek typed directly
+\usepackage{fancyhdr}
+% plainpages=false + pdfpagelabels: the title page, the roman front matter and the
+% arabic body would otherwise all produce a PDF destination called "page.1", and
+% pdfTeX drops the duplicates with a warning on every build.
+% The PDF metadata is set with \hypersetup AFTER \begin{document}, NOT as package
+% options here. As a package option the "æ" of the title reaches hyperref while
+% fontenc still has it as the T1 command \T1\ae, which hyperref cannot put in a
+% PDF string: it warns "Token not allowed in a PDF string" and drops the letter.
+% By \begin{document} the encodings have settled and the æ comes through intact.
+\usepackage[colorlinks=true,linkcolor=black,urlcolor=black,
+  unicode=true,plainpages=false,pdfpagelabels]{hyperref}
+\setlength{\headheight}{15pt}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LE,RO]{\thepage}
+\fancyhead[RE]{\textit{Den propædeutiske Logik}}
+\fancyhead[LO]{\textit{\leftmark}}
+\setlength{\parindent}{1.5em}
+\setlength{\parskip}{0pt}
+\onehalfspacing
+
+% ------------------------------------------------------------
+%  STRUCTURAL MACROS — use these, do not hand-roll centre blocks.
+%  They exist so that every batch renders the book's four recurring
+%  display forms identically, and so that check.py can count them.
+% ------------------------------------------------------------
+
+% A Part opening. In the book this is a page-top head on an ordinary text page
+% (NOT a display page), introduced by a full-measure double rule.
+%   #1 = the Deel line as printed, WITH its colon ("Første Deel:")
+%   #2 = the Deel argument ("Læren om det subjective Begreb.")
+% VERIFIED on printed p.6 at 400 dpi (batch 1): "Den propædeutiske Logiks" and
+% the Deel line are bold but NOT letterspaced; only the Deel ARGUMENT is
+% letterspaced. And there is NO short centred rule between the argument and the
+% Capitel head that follows — the earlier note claiming one was wrong.
+\newcommand{\deel}[2]{%
+  \par\vspace{1.2\baselineskip}%
+  \noindent\rule{\linewidth}{1.2pt}\par\vspace{2pt}%
+  \noindent\rule{\linewidth}{0.4pt}\par\vspace{0.9\baselineskip}%
+  \begin{center}
+    {\large\bfseries Den propædeutiske Logiks\par}\vspace{0.35\baselineskip}
+    {\bfseries #1\par}\vspace{0.35\baselineskip}
+    {\Large\bfseries\emph{#2}\par}
+  \end{center}
+  \vspace{0.5\baselineskip}
+  \phantomsection
+  \addcontentsline{toc}{section}{\texorpdfstring{#1\quad #2}{#1 #2}}%
+  \markboth{#1\ #2}{#1\ #2}%
+}
+
+% A Capitel head: bold letterspaced label, then the argument one size down.
+\newcommand{\capitel}[2]{%
+  \par\vspace{0.9\baselineskip}%
+  \begin{center}
+    {\bfseries\emph{#1}\par}\vspace{0.25\baselineskip}
+    {\large #2\par}
+  \end{center}
+  \vspace{0.3\baselineskip}
+  \phantomsection
+  \addcontentsline{toc}{subsection}{\texorpdfstring{#1\quad #2}{#1 #2}}%
+}
+
+% A § head: centred "§ N." (antiqua figures), then the centred BOLD argument.
+% Mid-page § heads get extra space above and below but NO rule.
+%   \parag{1}{Almeenforestillingen.}
+% VERIFIED on printed p.6 (batch 1): the § argument is bold but NOT letterspaced,
+% unlike the Capitel label and the Deel argument. No \emph here.
+\newcommand{\parag}[2]{%
+  \par\vspace{0.9\baselineskip}%
+  \begin{center}
+    {\bfseries \S\,#1.\par}\vspace{0.2\baselineskip}
+    {\bfseries #2\par}
+  \end{center}
+  \vspace{0.25\baselineskip}
+  \phantomsection
+  \addcontentsline{toc}{subsubsection}{\texorpdfstring{\S\,#1.\quad #2}{§ #1. #2}}%
+}
+
+% The Indledning's two sections, headed with a bare roman numeral. These are
+% numbered I./II. and are NOT §§ -- the asymmetry is in the book (the Anden
+% Deel's Indledning IS a §, § 12). Image evidence (printed pp. 1 and 4): a
+% centred bold roman numeral in antiqua, then the argument in bold Fraktur a
+% size up from the body, NOT letterspaced.
+%   \romsec{I.}{Den formelle og speculative Logik.}
+% NB the \texorpdfstring is load-bearing: a bare \quad inside \addcontentsline
+% makes hyperref warn "Token not allowed in a PDF string" on every build.
+\newcommand{\romsec}[2]{%
+  \par\vspace{0.9\baselineskip}%
+  \begin{center}
+    {\large\bfseries #1\par}\vspace{0.3\baselineskip}
+    {\large\bfseries #2\par}
+  \end{center}
+  \vspace{0.3\baselineskip}
+  \phantomsection
+  \addcontentsline{toc}{subsection}{\texorpdfstring{#1\quad #2}{#1 #2}}%
+}
+
+% A top-level division head that is not a Deel, a Capitel or a §. In this book
+% that is "Indledning." -- which occurs TWICE: once at printed p.1 opening the
+% whole work, and again at printed p.97 opening the Anden Deel.
+\newcommand{\division}[1]{%
+  \par\vspace{1.0\baselineskip}%
+  \phantomsection
+  \addcontentsline{toc}{section}{#1}%
+  \markboth{#1}{#1}%
+  \begin{center}{\Large\bfseries #1}\end{center}
+  \begin{center}\rule{0.35\linewidth}{0.4pt}\end{center}
+  \vspace{0.3\baselineskip}%
+}
+
+% An "Anm." remark. NOT a smaller type block — measured on printed p.7, the
+% baseline pitch is identical to body text. The ONLY distinction is the bold
+% letterspaced lead-in, after which the remark runs on as an ordinary indented
+% paragraph and simply ends. Use as:  \anm{2} Text of the remark...
+\newcommand{\anm}[1]{\emph{\textbf{Anm.~#1.}}}
+
+% The Danish "that is" sign, ɔ: — type it with this, never as a plain "o:".
+\newcommand{\dsi}{\textup{ɔ:}}
+
+\begin{document}
+\hypersetup{pdftitle={Den propædeutiske Logik},pdfauthor={Rasmus Nielsen}}
+
+% \frontmatter must come BEFORE the titlepage. The titlepage environment resets
+% the page counter to 1 in whatever numbering is in force; if that is arabic, the
+% title page and the first page of \mainmatter both claim the PDF destination
+% "page.1" and pdfTeX drops one with a warning on every build.
+\frontmatter
+
+% ============================================================
+% TITLE PAGE — PDF 6
+% ============================================================
+\begin{titlepage}
+\centering
+\vspace*{3.0cm}
+{\Huge\bfseries Den propædeutiske Logik\par}
+\vspace{1.6cm}
+{\small af\par}
+\vspace{0.7cm}
+% "Lie. theol." is what the page actually prints: the third glyph carries a
+% clear horizontal crossbar and is identical to the 'e' of "theol.". A wrong-sort
+% error for "Lic. theol." (licentiatus theologiæ). Transcribed as printed.
+{\large\textit{Lie. theol.}\ {\LARGE\bfseries R. Nielsen,}\par}
+\vspace{0.4cm}
+{\large Professor i Philosophien.\par}
+\vspace{1.8cm}
+{\Large $\ast$\par}          % the fleuron: a double-taper rule with a centre lozenge
+\vspace{1.8cm}
+{\Large\bfseries Kjøbenhavn.\par}
+\vspace{0.6cm}
+% "BiancoLunos" is set solid as one word on the title page: measured at 300 dpi
+% the o|L gap is 14 px against 25--27 px for the true word spaces of that line.
+{\emph{Forlagt af Boghandler P. G. Philipsen.}\par}
+\vspace{0.35cm}
+{\small\emph{Trykt i BiancoLunos Bogtrykkeri.}\par}
+\vspace{1.2cm}
+{\large\textit{1845.}\par}
+\end{titlepage}
+
+
+% ============================================================
+% INDHOLD — PDF 8--9, transcribed from the image.
+% The original carries NO page numbers against any entry: bare text, no leaders,
+% nothing in the right margin. Reproduced here as printed; the generated
+% \tableofcontents below carries this edition's own page numbers.
+% ============================================================
+\chapter*{Indhold}
+\markboth{Indhold}{Indhold}
+\begin{center}\rule{0.35\linewidth}{0.4pt}\end{center}
+{\small\setlength{\parindent}{0pt}\setlength{\parskip}{2pt}
+
+\begin{center}\emph{Indledning.}\end{center}
+\begin{center}I.\\ Den formelle og speculative Logik.\end{center}
+\begin{center}II.\\ Den propædeutiske Logiks Formaal.\end{center}
+
+\begin{center}{\bfseries Første Deel.}\\ {\bfseries\emph{Læren om det subjective Begreb.}}\end{center}
+
+\begin{center}{\bfseries\emph{Første Capitel.}}\\ Det subjective Begrebs Dannelse.\end{center}
+\S\,1.\quad Almeenforestillingen.\par
+\S\,2.\quad Den klare og tydelige Anskuelse.\par
+\S\,3.\quad Indsigten eller det subjective Begreb.\par
+\S\,4.\quad Begrebets Aprioritet.\par
+\S\,5.\quad Begrebets Totalitet.\par
+
+\begin{center}{\bfseries\emph{Andet Capitel.}}\\ Det subjective Begrebs Fremstilling: den logiske Dom.\end{center}
+\S\,6.\quad Dommens logiske Form.\par
+\S\,7.\quad Dommens logiske Indhold.\par
+\S\,8.\quad Dommens logiske Totalitet.\par
+
+\begin{center}{\bfseries\emph{Tredie Capitel.}}\\ Det subjective Begrebs Gyldighed: Slutning og Beviis.\end{center}
+\S\,9.\quad Slutningens logiske Reqvisiter.\par
+\S\,10.\quad Slutningens formelle Gyldighed.\par
+\S\,11.\quad Slutningens reelle Gyldighed: Beviis og Methode.\par
+
+% ---- PDF 9 ----
+\begin{center}{\bfseries Anden Deel.}\\ {\bfseries\emph{Læren om det objective Begreb.}}\end{center}
+\begin{center}\emph{Indledning.}\end{center}
+\S\,12.\quad Den dialektisk-speculative Methode.\par
+
+\begin{center}{\bfseries\emph{Første Capitel.}}\\ Det objective Begrebs Dannelse.\end{center}
+\S\,13.\quad Væren og Væsen.\par
+\S\,14.\quad Væsen og Virkelighed.\par
+\S\,15.\quad Virkelighed og Begreb.\par
+
+\begin{center}{\bfseries\emph{Andet Capitel.}}\\ Det objective Begrebs Frihed.\end{center}
+\S\,16.\quad Idealitet og Realitet.\par
+\S\,17.\quad Subjectivitet og Objectivitet.\par
+\S\,18.\quad Teleologie.\par
+
+\begin{center}{\bfseries\emph{Tredie Capitel.}}\\ Det objective Begrebs Fylde: Ideens Logik.\end{center}
+\S\,19.\quad Ideens Oprindelighed.\par
+\S\,20.\quad Ideernes Vexelvirkning.\par
+\S\,21.\quad Idee og Gud.\par
+
+}
+\begin{center}\rule{0.35\linewidth}{0.4pt}\end{center}
+
+\cleardoublepage
+\tableofcontents
+
+\mainmatter    % sets arabic numbering itself — do not add \pagenumbering here
+
+% ============================================================
+%  BODY — printed pp. 1--283 (PDF 10--292)
+% ============================================================
+
+% ---- Indledning, printed pp. 1--5 (PDF 10--14) ----
+\division{Indledning.}
+
+% --- p. 1 ---
+% The "Indledning." head and its short rule are already in transcription.tex
+% above this point. What follows is the head of section I as the page sets it.
+%
+% IMAGE EVIDENCE for the I./II. heads (printed pp. 1 and 4): a centred bold
+% roman numeral ("I." / "II.") in ANTIQUA, then, one line below, the argument in
+% BOLD Fraktur, a size up from the body and NOT letterspaced. So these two heads
+% sit between \capitel (whose label IS letterspaced and whose argument is NOT
+% bold) and \parag. They are numbered I./II., not as §§ -- that asymmetry is in
+% the book -- so they are hand-rolled here rather than pushed through \capitel.
+\romsec{I.}{Den formelle og speculative Logik.}
+
+% The paragraph opens flush left with a raised initial "V" about 1.5x the body
+% size (the same treatment as the "L" of "Lighed" at § 1, printed p. 6). Set as
+% ordinary text here; only the absent indent is reproduced.
+\noindent Ved at betænke sin egen Tænkning føres Subjectet til at
+tydeliggjøre sig de forskjellige Tankeoperationer og disses indbyrdes
+Sammenhæng. Den første Fordring er, at Tænkningen skal være conseqvent og
+følge sine egne Love uden alt Hensyn enten til det tænkende Subjects
+psychiske Eiendommelighed eller til Beskaffenheden af de Gjenstande, paa
+hvilke den ellers maatte kunne anvendes. Den formelle Logik behandler derfor
+Tænkningen som et givet Aandsphænomen uden at spørge om dens Oprindelse eller
+objective Gyldighed. Dette Spørgsmaal er ikke desto mindre saa
+betydningsfuldt, at Philosophiens hele Retning og Skjæbne er afhængig af den
+% PRINTER'S DEFECT p.1: the final "e" of "Skjæbne" is broken/under-inked and
+% prints as two fragments resembling a colon. The word is Skjæbne; transcribed
+% so, since this is an inking failure and not a compositor's reading.
+Maade, hvorpaa det besvares. Sensualisterne lære, at Sjælen (\textit{tabula
+rasa}) faaer sit oprindelige Indhold fra Omverdenens sandselige Indtryk
+(Impressioner), og ende med at gjøre Tænkningen til en Afskygning af
+Erfaringen. Den subjective Idealisme vindicerer derimod Sjælens uendelige
+Selvvirksomhed, og tænker sig Erfaringsverdenen som det forestillende Jegs
+eget ubevidste Product. Enhver af disse Theorier miskjen%
+% --- p. 2 ---
+der den menneskelige Tanke. Sensualismen undervurderer Tænkningen, betvivler
+Tankelovenes almene Gyldighed, og kan desaarsag ingen Sandhed finde i den
+virkelige Verden; Idealismen overvurderer den subjective Tænkning, benegter
+Verdens sande Virkelighed, og ender i formel Tomhed. Begge Eensidigheder
+overvindes i den speculative Logik, der viser, at vor fornuftige Tænkning
+afspeiler den i Universet aabenbarede Fornuft.
+
+\anm{1} Ved at gjøre Sandsningen til Erkjendelsens Kilde maatte Sensualismen
+føre til Skepticisme; thi Sandsningen refererer sig blot til det Particulære
+og Tilfældige, ikke til det Almindelige og Nødvendige; Erfaringen lærer blot,
+\emph{at} Noget skeer, men ikke, \emph{hvorfor} det skeer; den viser, at det
+Ene følger paa det Andet, men beviser derimod ikke, at det Ene er en Følge af
+det Andet; under slige Forudsætninger var det altsaa conseqvent, at Hume
+bestred Causalitetsbegrebet.
+
+\anm{2} Imod Humes Theorie opponerede Kant. Grundtanken i den kantiske
+Fornuftcritik er den, at vore rene Sandseanskuelser (Tid og Rum),
+Forstandskategorier (Eenhed og Mangfoldighed, Aarsag og Virkning etc.) og
+Fornuftideer (Sjælen, Verden, Gud) ikke kunne være abstraherede af en udenfor
+Bevidstheden liggende Erfaringsverden, eftersom de selv udgjøre de nødvendige
+Forudsætninger, uden hvilke ingen Erfaring er mulig. Men idet Kant forsvarede
+de aprioriske Formers subjective Almeengyldighed, frakjendte han dem paa den
+anden Side al objectiv Betydning. Den hele Erfaringsverden bliver følgelig at
+betragte som et Product af tvende Factorer, nemlig af de aprioriske Former og
+et ubekjendt Object („das Ding an sich“), hvis rene Væsen Ingen kan erkjende,
+fordi Enhver, der prøver paa at erkjende det, derved strax optager det i sin
+egen Bevidstheds subjective Medium.
+
+% --- p. 3 ---
+\anm{3} Det kantiske „Ding an sich“ blev bestridt af den ældre Fichte. Det
+er, ifølge Fichtes Anskuelse, en Urimelighed, at antage en „Ding an sich,“ da
+en saadan hverken kan sandses eller tænkes. Et Object, der skulde ligge
+aldeles udenfor Bevidstheden, kan Subjectet ikke tillægge Realitet uden at
+komme i Modsigelse med sig selv; thi hvis Nogen siger, at han veed om et
+saadant Objects Tilværelse, da har han allerede draget denne Tilværelse ind i
+Bevidsthedskredsen; han siger da: Jeg veed Noget om en Tilværelse, om hvilken
+jeg dog aldeles Intet veed. „Das Ding an sich“ var den sidste Rest af
+Objectivitet, som den kritiske Idealisme lod blive tilbage. Ved at bortskaffe
+denne ubekjendte Størrelse blev Idealismen aldeles subjectiv, og concentrerede
+sig nu i den Sætning, at den hele Verden frembringes af Jeget. For at forstaae
+denne dristige Paastand, maae vi nærmere bestemme Jegets Væsen, dets
+Productivitet og dets Frihed.
+
+% a)--c) are set with a hanging indent: the label stands to the left and the
+% continuation lines are indented to the label's text. Not a display head, so
+% a plain itemize (no enumitem in the preamble) rather than a \begin{center}.
+\begin{itemize}
+\item[a)] Det Jeg, hvorom Idealismen taler, er ikke det empiriske Jeg, der
+  finder sig umiddelbart bestemt ved Bevidsthedslivets forskjellige Yttringer
+  og Tilstande (Jeg taler, sørger, glædes etc.); men det rene Jeg = Jeg,
+  Jeget, der i Alt tænker sig selv uden Hensyn til particulære
+  Indskrænkninger og Forandringer.
+\item[b)] Den Productivitet, hvorved Jeget frembringer den hele virkelige
+  Omverden, er intet løst Phantasiespil, eller vilkaarlig Imagination, som
+  Jeget efter Behag skulde kunne forandre eller standse, men en
+  Nødvendighedsact, hvorved det forudsætter de Skranker, hvis uendelige
+  Ophævelse betinger dets Frihed.
+\item[c)] Jegets Verdensfrembringelse foregaaer ubevidst i dets egen dunkle
+  Livsgrund, og hører, saa at sige, til dets natlige Sphære; derfor træder
+  Universet op med en saa
+% --- p. 4 ---
+  imponerende Magt, at Subjectet tager sit eget Verdenssyn for en udvortes
+  gjenstændig Virkelighed. Denne populære Anskuelse er imidlertid kun en
+  Drøm, der forsvinder, naar den philosophiske Tænkning vaagner. Overgangen
+  fra Forestillingens til Philosophiens Standpunkt er altsaa en Overgang fra
+  Illusion til Sandhed, fra Ufrihed til Frihed.
+\end{itemize}
+
+\anm{4} Den speculative Logik er i den nyere Tid bleven grundlagt af Hegel.
+
+\romsec{II.}{Den propædeutiske Logiks Formaal.}
+
+% Unlike § I, this section opens with an ordinary indented paragraph: no raised
+% initial. Verified on the image.
+Det er altsaa en Kjendsgjerning, at der foruden den saakaldte forstandige
+Tænkning, der finder sin umiddelbare Anvendelse i det praktiske Liv og sin
+høiere Uddannelse i Mathematiken og de empiriske Videnskaber, endnu gives en
+anden Art af Tænkning, den dialektiske nemlig, der betinger al høiere Viden,
+og derfor nærmest hører hjemme i den speculative Philosophie. Uagtet begge
+disse Tænkningens Hovedretninger have deres Udspring fra een og samme Kilde,
+den evige Fornuft, danne de dog for den overfladiske Betragtning en saa
+paafaldende Modsætning, at det ofte synes, som om Sandheden var i Strid med
+sig selv. Denne Modsætning lader sig tilsyne ikke blot i en afvigende
+Terminologie, men endog i den Maade, paa hvilken Tankelovene selv bestemmes og
+fremstilles, saa at En kan være meget vel øvet i forstandig Tænkning, uden dog
+at see sig istand til enten at følge Philosophiens Gang eller tilegne sig dens
+Resultater. Skal altsaa den propædeutiske Logik
+% --- p. 5 ---
+svare til sin sande Bestemmelse, skal den orientere os i Tænkningens hele
+Rige, da maa den nødvendigviis indlade sig med begge de modsatte
+Tankeretninger. Ved at holde sig til den formelle Tænkning alene vilde den
+aabenbart give for Lidet, ved at tabe sig i speculative Problemers Løsning
+vilde den overskride sin propædeutiske Grændse: den indtager derfor en
+mæglende Plads imellem den formelle og speculative Logik.
+
+\anm{1} For at løse sin Opgave maa den propædeutiske Logik give en comparativ
+Fremstilling af de formelle og speculative Tankeoperationer. Skal denne
+Fremstilling lykkes, bør det Skridt for Skridt eftervises, hvorledes et
+bestemt Tankeindhold, efter først at være betragtet med et forstandigt Øie,
+forandrer sit Udseende ved at besees igjennem Dialektikens Glar. \emph{Læren
+om det subjective Begreb}, der udgjør Logikens første Deel, lader derfor
+Tænkningen trinviis søge sine Udgangspunkter i Sandseverdenens og
+Forestillingens fastere Jordbund, for derfra at hæve sig til den speculative
+Erkjendelses friere Luftstrøm. Ved denne Bevægelse nedenfra opad føres vi
+overalt fra Empirien ind i Philosophien, fra den Tankekreds, vi kalde vor
+egen, ind i den Fornuftverden, der aabenbarer den guddommelige Tænker. Den
+Tankeøvelse og Indsigt i Begrebets Væsen, der herved vindes, introducerer
+dernæst en mere methodisk Udvikling af Tænkningens og Tilværelsens
+Universalformer og Principer, der fremstilles i Logikens anden Deel, \dsi{}
+\emph{i Læren om det objective Begreb}. Men ligesom den første Hovedafdeling
+stedse peger hen til høiere Begrebsudvikling, saaledes maa denne igien overalt
+vise tilbage til Begrebernes empiriske Existens, og kaste Lys over den
+virkelige Verden.
+
+% Printed p. 5 closes the Indledning with a short centred rule, heavier than
+% the rule under the Indledning head. Reproduced.
+\begin{center}\rule{0.30\linewidth}{1.0pt}\end{center}
+
+% ---- Første Deel, printed pp. 6--96 (PDF 15--105) ----
+% p.6 opens with the double rule + Deel head + Første Capitel + § 1.
+% Batch 1 places these; the \deel and \capitel macros are defined in the preamble.
+
+% --- p. 6 ---
+% IMAGE EVIDENCE for the p. 6 head, top to bottom: a full-measure DOUBLE rule
+% (a thick rule with a thin one below it); "Den propædeutiske Logiks" (large
+% bold Fraktur, not letterspaced); "Første Deel:" (bold Fraktur, WITH A COLON,
+% NOT letterspaced); "Læren om det subjective Begreb." (largest, bold Fraktur,
+% clearly LETTERSPACED); a short centred rule; "Første Capitel." (bold Fraktur,
+% letterspaced); "Det subjective Begrebs Dannelse." (one size down, NOT bold,
+% not letterspaced); "§ 1." (bold, antiqua figure); "Almeenforestillingen."
+% (bold Fraktur, NOT letterspaced).
+% The Indhold prints "Første Deel." with a period; the body head prints a colon.
+% Both readings are on record in the file header; the colon is what p. 6 sets.
+\deel{Første Deel:}{Læren om det subjective Begreb.}
+\capitel{Første Capitel.}{Det subjective Begrebs Dannelse.}
+\parag{1}{Almeenforestillingen.}
+
+% Flush left, with a raised initial "L" about 1.5x the body size — the same
+% treatment as the "V" of "Ved" at the opening of the Indledning, printed p. 1.
+% Set as ordinary text; only the absent indent is reproduced.
+\noindent Lighed og Ulighed ere de simpleste Former, i hvilke Omverdenens
+Gjenstande lade sig fremstille for den tænkende Betragtning. Tankeoperationen,
+der bestaaer i at fremhæve og fastholde det Lige i de ulige Gjenstande, er en
+\emph{Abstraction}, og det Resultat, til hvilket den fører, en
+\emph{Almeenforestilling}, der kan characteriseres som et Sandsebillede, et
+Tankebillede og Begrebets Forbillede.
+
+Uagtet tvende tilværende Ting ikke i een og samme Henseende kunne indbyrdes
+være baade lige og ulige, saa er det dog umuligt at tænke Ligheden uden ved
+Hjælp af Uligheden; jo skarpere disse Kategorier adskilles, desto klarere
+viser det sig, at de gaae over i hinanden: deres Grændse er følgelig
+dialektisk.
+
+\anm{1} Flere Gjenstande, der have en væsentlig Lighed med hverandre, reducere
+vi i Sproget til een Fælles%
+% --- p. 7 ---
+benævnelse, og vise derved, at vi oversee deres tilfældige Ulighed. Med
+Sproget begynder strax Abstractionen; idet Barnet lærer at tale, lærer det
+tillige at abstrahere. Gjenstandenes Lighed observeres ved en Sammenligning,
+der fra først af er ligesaa umiddelbar som Sandsningen selv, og Abstractionen
+foregaaer forsaavidt ganske ubevidst; men da Ligheden selv ikke er nogen
+sandselig Gjenstand, der ved udvortes Adskillelse kan fjernes fra de
+Uligheder, i hvilke den finder sit Udtryk, saa viser Abstractionen sig som en
+ideel Act, hvorved Subjectet selv tager det Almene for det Væsentlige, og
+lader de tilfældige Modificationer fare; altsaa som en begyndende
+Tænkningsact, der blot behøver at bringes til Bevidsthed, for at den egentlige
+Tænkning kan begynde.
+
+\anm{2} At see en Gjenstand er med andre Ord at danne sig en til bestemte
+sandselige Indtryk svarende Forestilling. At Subjectet selv danner sig
+Forestillingen, indlyser deraf, at Gjenstandens Billede kan reproduceres,
+efterat Gjenstanden selv er forsvunden. Ved at sandse en Række af forskjellige
+Gjenstande uddanner sig i Bevidstheden en Kreds af forskjellige Billeder og
+Forestillinger; ved Anvendelse af Sammenligning og Abstraction erholdes en
+Almeenforestilling. Almeenforestillingen er i Begyndelsen ganske umiddelbar.
+Man forestiller sig det Almindelige ved at sætte en enkelt Gjenstand som
+Exemplar. Almindeligheden falder altsaa sammen med det Billede, i hvilket den
+anskues, og er følgelig at betragte som et \emph{Sandsebillede}. Men en
+nærmere Undersøgelse viser, at ethvert Exemplar, der skal repræsentere den
+rene Almindelighed, baade giver os for Meget og for Lidet. Exemplaret
+udtrykker foruden det Almene tillige en bestemt Gjenstands Eiendommelighed, og
+indeholder altsaa for Meget; paa den anden Side viser det kun Almindeligheden
+i en
+% --- p. 8 ---
+% PRINTER'S DEFECT p.8 l.1: no full stop after "for Lidet". The sentence space
+% before "Subjectet" is a wide one, but the period simply did not print
+% (verified at 300 dpi: clean paper, no broken sort). Transcribed as printed.
+particulær Skikkelse, og giver os desaarsag for Lidet Subjectet, der nu
+forsøger paa at gjøre sig en bestemt Forestilling om det Almindelige, faaer da
+kun en uoverskuelig Række af Exemplarer, der, hvert for sig, ere lige adæqvate
+og lige uadæqvate. Følgen heraf er, at den med Sandseligheden behæftede
+Almeenforestilling forsvinder som et Gjøglebillede, og kun Tanken om det
+Almindelige, der selv er en Tanke, bliver tilbage. Ved at gaae over i
+Tænkningen bliver Almeenbilledet egentlig ubilledligt. Tænkningen er
+forsaavidt negativ, som det Almene tillige er det Usynlige, der ikke lader sig
+forestille eller fastholde i noget Billede. Den abstraherende Tænkning frigjør
+det Almindelige fra alle sandselige Tilsætninger; men naar det nu endvidere
+betænkes, at det Almene aldrig existerer for sig selv, men abstraheres af de
+existerende Gjenstande, saa maa Tænkningen atter ophæve Abstractionen, og
+Forstandens Øie skue det Almindelige i dets enkelte Exemplarer og Exempler.
+Den frie Tanke svæver uafbrudt imellem det Ubilledlige og det Billedlige,
+hvorved Almeenbilledet forvandles til et \emph{Tankebillede}. Ifølge heraf
+% "omslutter" is NOT letterspaced on the page (zoom-verified) although the
+% sense makes it part of the emphasised phrase; the letterspacing begins with
+% "og" on the following line. Transcribed as printed.
+omslutter \emph{og indbegriber} det alle de enkelte Gjenstande, og er i denne
+Betydning at sætte som \emph{Begrebets Forbillede}.
+
+\anm{3} Naar det Almindelige fastholdes ved Abstractionen, kaldes det et
+Abstractum; naar det derimod anskues i et bestemt Exemplar, haves det
+\textit{in concreto}. Dog bliver Forholdet imellem det Abstracte og Concrete
+anderledes bestemt i den formelle end i den speculative Logik.
+
+\anm{4} Hvad Forholdet imellem den rene Lighed og Ulighed angaaer, da er det
+for det Første indlysende, at de gjensidig udelukke hinanden, eller at de, med
+andre Ord, begrændse hinanden. Men hermed er Sagen dog ikke afgjort; thi
+enhver negativ Tankebegrændsning bliver tillige at om%
+% --- p. 9 ---
+sætte som en positiv Tankebestemmelse. Hvad er det Lige? Sv. Det Lige er det
+Ulige uligt, og derved sig selv ligt. Heri ligger da, at Tanken om Lighed ikke
+blot falder udenfor, men tillige sammen med Tanken om Ulighed. Den, der direct
+tænker paa det Lige, tænker derved indirect paa det Ulige. Uligheden er altsaa
+den Kategorie, hvorved Ligheden bestemmes. Grændsen imellem den rene Lighed og
+Ulighed kan aldrig staae stille; derfor hedder det i Dialektikens Sprog, at de
+gaae over i hinanden. At denne Dialektik ikke er vilkaarlig, beviser
+Philosophiens egen Historie. Thi ved at gjøre Grændsen imellem det Lige og
+Ulige ubevægelig og udialektisk kunde Eleaterne bevise, at al Vorden var
+utænkelig. Skal Vorden tænkes, sagde de, da maa det enten være det Lige, der
+kommer af det Ulige, eller det Lige, der fremkommer af det Lige. I sidste
+Tilfælde kan ingen Vorden finde Sted, thi da det Lige er = det Lige, saa er
+her ingen Overgang; i første Tilfælde maatte Noget blive til af Intet, thi i
+det Ulige kan det Lige slet ikke indeholdes. Den eleatiske Abstraction
+forraader sin Eensidighed derved, at den ikke vil lade det ene Begreb
+integrere det andet.
+
+\parag{2}{Den klare og tydelige Anskuelse.}
+
+Naar Gjenstanden for den tænkende Betragtning viser sig som en \emph{Eenhed} i
+en Mangfoldighed, bestaaer den subjective Tankevirksomhed: a) i en
+\emph{Analyse} eller ideel Udsondring, hvorved de mangfoldige Kjendemærker og
+Bestemmelser, der med Hensyn til Gjenstanden ere at adskille, sættes ud fra
+hverandre; b) i en ideel Sammenfatten eller \emph{Synthese}, hvorved den
+udsondrede Fleerhed føres tilbage til sin Eenhed. Det ved denne
+% --- p. 10 ---
+dobbelte Tankeoperation vundne Resultat er en \emph{klar og tydelig
+Anskuelse}. Formedelst Anskuelsens Klarhed bliver den gjenstændige Eenhed
+udsondret af Tilværelsens uendelige Mangfoldighed og sat som bestemt
+Enkelthed; ved Anskuelsens Tydeliggjørelse bliver den enkelte Gjenstand selv
+bestemt ved en Mangfoldighed af Enkeltheder, der indbefattes i dens egen
+Eenhed. Uden en, om end ubevidst, Analyse og Synthese er ingen bestemt
+Sandsning eller Erfaring mulig; men Tænkningens analytiske og synthetiske
+Virksomhed er fra Begyndelsen af saa aldeles fortabt i Sandsningen, at den
+klare og tydelige Anskuelse selv bærer Sandselighedens umiddelbare Præg.
+Imidlertid er Begrebet dog ogsaa her forbilledlig tilstede; thi Analyse og
+Synthese kunne ikke anvendes uden paa Forhold; men Forholdet selv er ingen
+sandselig Gjenstand.
+
+Naar de umiddelbare Forholdskategorier: Eenhed og Mangfoldighed, selv gjøres
+til Gjenstand for en tænkende Undersøgelse, opstaaer et dialektisk Problem.
+
+\anm{1} Forsaavidt det Almene er den Fællesform, i hvis Lighed de enkelte
+Exemplarers indbyrdes Ulighed forsvinder, viser det sig som den Eenhed,
+hvorunder Gjenstandene kunne subsumeres; forsaavidt det derimod tillige finder
+sit concrete Udtryk i ethvert Exemplar for sig, bliver dets Lighed selv
+nærmere bestemt ved Uligheden, holder sig i en Gjentagelse, og gaaer over i
+Fleerhed. Derfor have ogsaa de fleste \textit{nomina apellativa} baade en
+% "apellativa" with a single p is what the page sets; not corrected.
+Singularis og en Pluralis.
+
+\anm{2} Naar det, der opfattes, ikke refererer sig til Synets, men til
+Hørelsens Sands, kan der vel ikke være
+% --- p. 11 ---
+Tale om Anskuelse, men dog altid om en klar og tydelig Opfattelse.
+
+\anm{3} Naar der tales om et Forstandens Øie, eller om et Tankesyn, maae disse
+Udtryk ikke blot forstaaes billedligt; thi Overgangen fra Sandsning til
+Tænkning kan ikke skee ved et Spring. Som der ligger en Tænkning til Grund for
+al Sandsning, saa ligger der ogsaa en ideel Sandsning til Grund for den frie
+Tænkning; som der gives en sandselig Anskuelse, saa gives der ogsaa en
+intellectuel Anskuelse, og ligesaavel som der kan være Tale om en physisk
+Blindhed, kan der ogsaa være Tale om en mental Blindhed. Men naar det nu med
+Bestemthed skal udsiges, hvad det Ideelle er, mod hvilket Tankens Blik vender
+sig, saa møder strax den Vanskelighed, at Tanken aldrig dvæler ved Noget, der
+kan henstilles og paapeges som et bestemt Exempel eller en hvilende Skikkelse.
+Naar Sandsen slaaer sig til Ro ved en begrændset Gjenstand, saa er Tanken
+derimod i evig Uro, og overskrider enhver Grændse. Idet det sandsende Øie
+dvæler ved den ene Ting, har det med det Samme vendt sig bort fra den anden;
+naar Tanken derimod skal fastholde en Bestemmelse, tager den altid en anden
+til Hjælp. Derfor er det klare Tankesyn egentlig et Dobbeltsyn: et
+\emph{Hensyn}. Hvad \emph{Hensynet} er fra det subjective Synspunkt, er
+\emph{Forholdet} fra det objective; derfor gaaer Tænkningen stedse ud paa at
+finde de bestemte Forhold. Som Følge heraf faae Analyse og Synthese en ganske
+anden Betydning for den intellectuelle end for den sandselige Anskuelse. For
+Sandsen er Anskuelsen klar, naar Gjenstanden i dens rene Enkelthed træder frem
+med bestemte Omrids; men Tænkningen glemmer derimod ikke, at den udsondrede
+Gjenstand selv er een iblandt flere, at dens Enkelthed altsaa kun kan
+bestemmes med Hensyn til andre
+% --- p. 12 ---
+Enkeltheder, og at den derfor maa sættes som en \emph{særskilt} Gjenstand.
+Fra den sandselige Side er Anskuelsen tydeliggjort, naar den i Gjenstandens
+Eenhed indeholdte Fleerhed træder frem som en Sum af Enkeltheder; for Tanken
+derimod kan Anskuelsen først tydeliggjøres derved, at de givne Enkeltheder
+bestemmes med Hensyn til hverandre, og sættes som Led i særskilte Forhold.
+
+\anm{4} Eenhedens Forhold til Fleerheden bestemmes ved den blot forestillende
+Tænkning saaledes, at Noget, der i een Henseende kan betragtes som en
+Fleerhed, kan i en anden Henseende sættes som en Eenhed; men den dialektiske
+Tænkning nøies ikke med en saa udvortes Sammenføining af modsatte Hensyn; den
+spørger, om ikke Eenheden, naar den klart og tydeligt gjennemtænkes, selv
+bestemmer sig som en Fleerhed. I Platos Dialog, Parmenides, har Socrates
+truffet Problemet, hvilket han fremsætter omtrent saaledes: At jeg, Socrates,
+i een Henseende er en Eenhed, i en anden Henseende derimod en Mangfoldighed,
+er ikke saa forunderligt; men kunde Nogen derimod bevise mig, at ἕν var πολλὰ
+og πολλὰ ἕν, da vilde jeg høiligen forundre mig (ἀγαίμην ἂν θαυμαστως, ὦ
+% GREEK, zoom-verified at 300 dpi: ἕν carries a rough breathing and an ACUTE
+% (the stroke leans the opposite way from the grave of πολλὰ, and the same way
+% as the ή of Ζήνων); ἂν carries a breathing and a GRAVE. "θαυμαστως" is
+% printed with a plain ω — NO circumflex; transcribed as printed (cf. the
+% Rettelser entry for p. 241, θετον -> θεῖον, where the same fount drops an
+% accent).
+% The fount's script theta ϑ is normalised to θ per the repo's standing
+% convention (see texts/nielsen/religionsphilosophie/transcription.tex): it is a
+% fount variant, not a distinct letter. This is not optional here — U+03D1 is a
+% FATAL error under textalpha/greek-fontenc in text mode.
+Ζήνων). Eleaterne (Zeno) efterviste den Modsigelse, der ligger i Fleerhedens
+Kategorie. „Hvis det antages, at flere Ting existere, da maa deres Antal baade
+være bestemt og ubestemt. Tingene maae tænkes at udgjøre et bestemt Antal, thi
+de maae netop være saa mange, som de ere (hverken flere eller færre); men paa
+den anden Side maa deres Antal tillige tænkes at være ubestemt; thi imellem de
+adskilte Ting gives der endnu andre Ting, og udenfor de bestemte Tings Antal
+igjen et Antal af bestemte Ting; følgelig bliver Tingenes Antal uendeligt,
+ubestemmeligt og derved i sig selv ubestemt. Da det nu er en Modsigelse, at
+tænke Tingenes Antal baade som bestemt
+% --- p. 13 ---
+og ubestemt, saa antages Fleerheden at være utænkelig“. Sandheden heri er, at
+den abstracte Analyse kan gaae i det Uendelige: enhver Fleerhed bestaaer af
+Eenheder, enhver af disse Eenheder er igjen at tænke som en Fleerhed med sine
+Eenheder o. s. f. Den abstracte Synthese gaaer ligeledes i det Uendelige; thi
+den Eenhed, i hvilken en Fleerhed samles, er igjen et Led i en Række af flere
+lignende Eenheder; forbindes nu disse ved en ny Synthese, da haves atter en
+Eenhed i en ny Række o. s. v. I denne Henseende maae vi altsaa give Eleaterne
+Ret, naar de paastaae, at Tingenes Antal vil blive uendeligt, hvis man
+overhovedet antager en Fleerhed. Men Tanken om en saadan Uendelighed er ikke i
+nogen uopløselig Modsigelse med den Sætning, at Antallet tillige maa være
+bestemt. Thi naar Synthesen overalt forbindes med Analysen, bliver enhver
+Eenhed bestemt ved \emph{sin} Fleerhed, og Tingenes Antal som Følge heraf
+\emph{uendelig bestemt}.
+
+\anm{5} Betragtes Forholdet imellem Eenhed og Fleerhed reent qvantitativt,
+bliver Eenheden sat som Continuitet, Fleerheden derimod som Discretion. Enhver
+Linie forestiller en saadan Continuitet, hvis Discretion igjen er at søge i
+Liniens utallige Punkter.
+
+\parag{3}{Indsigten eller det subjective Begreb.}
+
+Skal en existerende Gjenstand tillige være Gjenstand for en begribende
+Tænkning, maa dens Indhold lade sig opfatte i Form af \emph{Heelhed og Dele}.
+Idet Heelheden og dens Dele sees gjensidig at betinge og bestemme hinanden,
+fremkaldes derved Spørgsmaal om Forudsætning og Conseqvens, om Grund og Følge,
+og
+% --- p. 14 ---
+Tænkningen, der nu gjør sig selv Regnskab for det hele Indbegreb af bestemte
+Forholde, viser sig som en \emph{Reflexion}, hvorved Subjectet kommer til et
+\emph{Begreb om Tingen}, eller til en \emph{Indsigt} i Tingenes Væsen og
+Beskaffenhed.
+
+Den Modsigelse, der ligger i Totalitetens eget Begreb, blev allerede tidlig
+fremhævet af de græske Philosopher, ligesom den ogsaa igjennem hele
+Philosophiens Historie spiller en vigtig Rolle, navnlig med Hensyn til
+Spørgsmaalet om Materiens uendelige Deelbarhed. Som en Modsigelse imellem det
+Enkelte og Sammensatte reduceredes den af Kant til en Antinomie, der igjen
+fandt sin dialektiske Opløsning i den hegelske Logik.
+
+\anm{1} Naar Eenheden sættes som Heelhed, er hermed udtrykt, at den omfatter
+en Mangfoldighed af Enkeltheder, der udgjøre dens Dele. For den sandselige
+Betragtning viser det Hele sig blot som Delenes Aggregat; for den
+intellectuelle Opfattelse er det Hele derimod at bestemme som Delenes
+\emph{almindelige} Sammenhæng, og Delene som Led i Heelhedens
+\emph{særskilte} Sammenhæng. Naar Heelheden er given som Forudsætning, følger
+Delenes Beskaffenhed og gjensidige Forhold med nødvendig Conseqvens. Derfor
+hedder det i Professor \emph{Sibberns} explicative Logik, at man ved at
+erkjende det Heles \emph{Tilværelsesmaade} kommer til at indsee Delenes
+\emph{Tilværelsesgrund} (\textit{ratio essendi}). Naar Noget nemlig sættes
+% "Grunden" and "Følgen" in the next sentence are NOT letterspaced —
+% zoom-verified; spacing.py flags them, but the line is simply loosely justified.
+direct saaledes, at et Andet dermed er sat indirect, da kaldes hiint Grunden,
+dette Følgen; derfor er Grunden altid Forholdets primitive, og Følgen dets
+consecutive Led.
+
+\anm{2} Af det bestemte Forhold imellem Heelhed og Dele indlyser det, at det
+egentlige Tankesyn er et Dobbeltsyn. Idet Heelheden sees umiddelbart, komme
+Delene middel%
+% --- p. 15 ---
+bart tilsyne, og omvendt. Delene og det Hele gjenspeile eller reflectere
+hinanden; derfor har den frie, selvbevidste Tænkning ogsaa faaet Navn af
+\emph{Reflexion}.
+
+\begin{itemize}
+\item[a)] Ordet Reflexion er vel nærmest hentet fra Optiken; men det
+  naturlige Lys er tillige et Afbillede af Tankens Lys. Der er samme Forhold
+  imellem Tænkningens modsatte Led, som imellem „to Speile, af hvilke det ene
+  reflecterer det andets Billede, og i denne Reflexion reflecterer sit eget“
+  % PRINTER'S DEFECT p.15: "Pg.." — two full stops after "Pg", zoom-verified.
+  % Transcribed as printed.
+  (cfr. Professor Heiberg: Grundtræk til Philosophiens Philosophie, Pg.. 34).
+\item[b)] Reflexionen er tillige Udtrykket for den \emph{overveiende og
+  prøvende} Tænkning. Denne Ordets Bemærkelse udledes af den foregaaende. Kun
+  derved, at den ene Tanke sees i den andens Lys, indlyser det, hvorvidt de
+  kunne bestaae med hinanden eller ikke.
+\item[c)] Endelig kan Reflexionen ogsaa betegne den \emph{raisonnerende og
+  begrundende} Tænkning; thi naar tvende Tanker stride mod hinanden, da kommer
+  det an paa, hvilken af disse Subjectet skal opgive, og hvilken det skal
+  fastholde; dette kan alene afgjøres ved et bestemt Hensyn eller ved en
+  Forudsætning, der indeholder den bestemmende Grund. Tanken om Menneskets
+  Frihed lader sig, til Exempel, ikke forsone med Tanken om en uundgaaelig
+  Skjæbne: det tænkende Subject maa nu enten fastholde Friheden eller
+  Skjæbnen; tages der Hensyn til Samvittighed og Tilregnelighed, saa maa
+  Tanken om en uimodstaaelig Skjæbne opgives; tages der derimod blot Hensyn
+  til en mechanisk Naturnødvendighed, maa Tanken om Frihed forsvinde. Hvilket
+  Hensyn Subjectet i et givet Tilfælde vil tage, kan igjen beroe paa andre
+  Hensyn, og saa fremdeles i det
+% --- p. 16 ---
+  Uendelige. Da ethvert Hensyn indeholder en partiel Grund, saa fører den i
+  udvortes Hensyn fortabte Tænkning til et Raisonnement af Grunde. Forsaavidt
+  den virkelige Omverden viser os Tingene i deres mange forskjellige
+  Combinationer og Forviklinger, bliver den raisonnerende Tænkning nødvendig i
+  alle empiriske Undersøgelser. Men den raisonnerende Tænkning er dog af
+  endelig Natur; forsøger den at løsrive sig fra den givne Erfaring, da maa
+  % "pro" and "contra" are antiqua; the "og" between them is Fraktur.
+  den ende med at anføre Grunde \textit{pro} og \textit{contra}, uden
+  nogensinde at naae den høieste og sidste Grund. Først naar alle ydre Hensyn
+  forsvinde i eet Grundsyn, antager den reflecterende Tænkning en philosophisk
+  Characteer, og finder den uendelige Forudsætning, af hvilken alle endelige
+  Forholde lade sig deducere. Fra Endelighedens Synspunkt er Tænkningen
+  grundig, naar den opfatter Sagen i dens mange forskjellige, saavel fjernere
+  som nærmere, Relationer; fra Uendelighedens Standpunkt er den kun da
+  grundig, naar den søger og finder den absolute Grund. Som det er en
+  philosophisk Affectation, at ville anvende Dialektikens uendelige Former paa
+  Hverdagslivets endelige Indhold, eller forsmaae et Raisonnement af Grunde,
+  naar Talen er om en forstandig Kritik eller en Orienteren i praktiske
+  Forhold, saa røber det paa den anden Side en videnskabelig Borneerthed, at
+  ville hjælpe sig igjennem med en blot raisonnerende Tænkning, naar det
+  gjælder en Erkjendelse af de evige Sandheder.
+\end{itemize}
+
+\anm{3} Resultatet af den gjennemførte Reflexion er \emph{Begrebet}, som
+saadant, eller det egentlige Tankeresultat. Begrebet er altsaa et Tankehele
+eller en Grundtanke, der lader sig tilsyne i en Mangfoldighed af særskilte
+Tankebestem%
+% --- p. 17 ---
+melser og disses indbyrdes Sammenhæng. Spørges der nu, hvor Begrebet
+existerer, da kan det for det Første siges at have sin Tilværelse i det
+tænkende Subjects Bevidsthed. Subjectet seer Gjenstanden i dens forskjellige
+Relationer, abstraherer af den de bestemte Forhold, sondrer (Analyse) og
+forener (Synthese) de partielle Tanker i deres Grundtanke (Reflexion), og
+siges derfor at danne sig et \emph{Begreb om Tingen}. Men forsaavidt det er
+den existerende Gjenstand, af hvilken det subjective Begreb abstraheres, kan
+der ogsaa tales om Gjenstandens eget Begreb, eller om det i Gjenstanden
+udtrykte Tankehele. Forskjellen imellem Gjenstanden og dens Begreb er egentlig
+talt en Forskjel imellem dens intellectuelle og dens sandselige Side, der
+nærmere er at bestemme som en Modsætning imellem Tingens \emph{Indre} og dens
+\emph{Ydre}. Det Ydre er for Sandsen, det Indre for Tanken; derfor siges det
+subjective \emph{Begreb om Tingen} ogsaa at være en \emph{Indsigt i Tingen}
+(ἐπιστήμη --- νοητόν).
+
+\anm{4} For at danne sig et Begreb om de Phænomener, der stykkeviis komme
+tilsyne, uden at Heelheden umiddelbart kan overskues, bliver det ofte
+nødvendigt, at imaginere sig en intellectuel Heelhed, eller at opstille en
+\emph{Hypothese}. Den Erkjendelse, hvortil Hypothesen fører, er imidlertid kun
+endelig og relativ. Tanken svæver imellem Empirie og Reflexion. I empirisk
+Henseende er Hypothesen utilstrækkelig; thi Delene (det Ydre) \emph{betinge},
+men \emph{begrunde} ikke Heelheden (det Indre), og i intellectuel Henseende
+støtter Indsigten sig til et Raisonnement af Grunde, der mangler den
+tilstrækkelige Grund. Hypothesen giver derfor kun en Sandsynlighed, der maa
+hæves til Vished enten ved en ny Erfaring, der da indleder en ny
+Tankeundersøgelse, eller ved en dybere Indsigt i Sammenhængens væsentlige
+% NB the sentence, the paragraph and Anm. 4 all run on into printed p. 18.
+% When the pp. 18--30 fragment is spliced, the blank line that transcription.tex
+% keeps between the two markers must be closed up, or a paragraph break will be
+% introduced here that is not in the book.
+% --- p. 18 ---
+Grund (den copernicanske Hypothese, Newton). Hvad Hypothesen er i Forhold til
+Heelheden, er \emph{Conjecturen} i Forhold til et enkelt, i Heelheden
+manglende, Led. (Jfr. Sibberns Logik \S\,23.)
+% "Forhold til" on this line is NOT letterspaced — the ABBYY layer spaces the
+% whole line out, but the line is merely loosely justified; only "Conjecturen"
+% is Sperrsatz (zoom-verified at 300 dpi).
+% "Jfr." here has a descending Fraktur capital = J; on p.24 the same
+% abbreviation is set lowercase "jfr.". Both are as printed.
+
+\anm{5} Den forestillende Tænkning bestemmer Forholdet imellem det Hele og
+Delene saaledes, at det Hele sættes = Delenes Sum, men større end enhver af
+dets enkelte Dele. Denne Synsmaade har sin fuldkomne Gyldighed, saalænge der
+blot handles om endelige Størrelser; men er aldeles utilstrækkelig, saasnart
+Undersøgelserne føres over paa Uendelighedens Gebeet. Spiritualisterne
+(Berkeley), der negtede Materiens Væren, beraabte sig paa den Modsigelse, der
+ligger i Tanken om en uendelig Deelbarhed. Materien kan, ifølge deres
+Paastand, slet ikke existere; thi da den tænkes at bestaae af uendelig mange
+uendelig smaa Dele, maa enhver Deel blive = det Hele. Sæt t. Ex. \textit{a}
+% The inline symbols on this page are antiqua against the Fraktur: the
+% placeholders a and A are upright roman (set here as \textit{}, following the
+% convention fixed for A=A), while the relation signs are the printer's own
+% "<" and the lemniscate for infinity. Those two are set in math mode rather
+% than typed as raw Unicode: neither U+221E (INFINITY) nor the less-than sign
+% is declared in the preamble, and the raw infinity glyph would be a fatal
+% error on the real build. The "=" is the ordinary equals, kept as a literal.
+(Delen) $<$ \textit{A} (Heelheden); ved at multiplicere med $\infty$ paa begge
+Sider, erholdes $\infty$ \textit{a} = $\infty$ \textit{A}, og ved igjen at
+dividere begge Factorer med samme Størrelse, nemlig $\infty$, udkommer:
+\textit{a} = \textit{A}. Mathematikernes Indvending, at en saadan Operation er
+absurd, kan ikke modbevise Spiritualisternes Theorie, thi denne støtter sig
+netop til den indrømmede Absurditet. Ligesaa utilstrækkelig er den almindelige
+Bemærkning, at der i det Uendelige selv ikke kan sættes nogen Grændse, at
+altsaa Storhed og Lidenhed maae flyde sammen i Uendelighedens Taage; thi
+Opgaven er jo netop at lade Tankens Lys adsprede denne Taage, eller, med andre
+Ord, at erkjende, hvorledes det Endelige og det Uendelige gjensidig bestemme
+hinanden. --- Endnu mere bestemt traadte Problemet frem i den kantiske
+Fornuftkritik, hvor det reduceredes til en i Substansens Begreb liggende
+Antinomie:
+% --- p. 19 ---
+
+\emph{Thesis: Enhver sammensat Substans maa bestaae af usammensatte Dele.}
+Hvis ikke, da maatte enhver Deel igjen være sammensat, og Sammensætningens
+Opløsning fortsættes saalænge, indtil Substansen tilsidst kom til at bestaae
+af Intet.
+
+\emph{Antithesis: Der existerer ingen usammensat Substans.} Thi ingen
+Sammensætning er mulig uden i Rummet; gaves der nu en Substans, der bestod af
+usammensatte Dele, da maatte Rummet selv bestaae af udeelbare Dele; men Rummet
+kan deles i det Uendelige.
+
+Sandheden i den kantiske Antinomie er, som Hegel ogsaa har viist, denne, at
+Tanken om et Hele stedse medfører Tanken om Dele. Naar en vis bestemt Deel
+adskilles fra sin Heelhed, bliver den selv sat som et Hele. Det Samme, der fra
+et Synspunkt maa betragtes som et Hele, maa fra et andet Synspunkt bestemmes
+som en Deel; Relationen vender sig uophørlig om, og enhver endelig Grændse
+ophæves. Men hvergang et bestemt Hele sættes, træder det i en bestemt
+Modsætning til sine Dele, saa at Grændsens endelige Side ogsaa kommer tilsyne.
+Alt beroer da kun paa, at Forholdet selv nærmere bestemmes. Forholdet imellem
+Heelhed og Dele har en vis Lighed med Forholdet imellem Eenhed og Fleerhed,
+Continuitet og Discretion; ikke desto mindre er her dog en væsentlig Forskjel
+at observere. Naar nemlig Continuiteten er sat, saa er Discretionen
+forsvunden; og naar Discretionen sættes, afbrydes Continuiteten. Continuitet
+og Discretion kunne ombyttes med hinanden i det Uendelige, men de reflectere
+dog ikke hinanden i egentlig Forstand. Dette er derimod Tilfældet med det Hele
+og Delene; naar det Hele er sat, saa ere Delene ogsaa satte, og omvendt.
+Derfor kaldes dette Forhold et \emph{Reflexionsforhold} eller et
+\emph{væsentligt Forhold}.
+% "Derfor kaldes dette Forhold et" is NOT letterspaced, though the ABBYY layer
+% spaces it — the last two lines of the page are loosely justified. The "2*" at
+% the foot is a signature mark, not a note mark.
+% --- p. 20 ---
+
+\anm{6} Heelheden er paa dens laveste Trin et mechanisk Compositum, der viser
+os Forholdet fra dets endelige Side. Paa et høiere Trin staaer den organiske
+Heelhed; derfor siges der ogsaa at være et uendeligt Forhold imellem Liv og
+Organisme. I sin høieste Udvikling bliver Heelheden hævet til en fri
+Totalitet, en reflecteret \emph{Enkelthed}, hvor Begrebet aldeles falder
+sammen med sin Gjenstand. Saaledes er det hele Jeg tilstede i enhver af dets
+selvbevidste Livsytringer, og dog er det en Enkelthed, der ikke kan deles. Som
+Sandsningen \emph{begynder} umiddelbart med det Enkelte, saa \emph{ender}
+Tænkningen med den reflecterede Enkelthed.
+% "hævet til en fri Totalitet" is NOT letterspaced (zoom-verified at 300 dpi
+% against the adjacent "Enkelthed", which plainly is), though the ABBYY layer
+% spaces it out.
+
+\parag{4}{Begrebets Aprioritet.}
+% Printed head agrees with the Indhold: "Begrebets Aprioritet." Bold, not
+% letterspaced.
+
+Uagtet det subjective Begreb i sin oprindelige Udvikling er betinget ved
+Erfaring, saa reflecterer det dog sine egne væsentlige Bestemmelser med en
+saadan Selvstændighed og Conseqvens (Begrebsanalyse), at det ingenlunde kan
+være et Product eller tomt Gjenskin af Erfaringen. Ligesaa lidet lader
+Erfaringsverdenen sig betragte som et Produkt af det subjective Jeg, uagtet al
+Erfaring er betinget ved apriorisk Tænkning. Derfor gjør den formelle Logik
+ogsaa en Adskillelse imellem \emph{aprioriske og aposterioriske Begreber}. De
+aprioriske Begreber tilhøre ikke blot det tænkende Subject, saa at de skulde
+danne en uoverstigelig Kløft imellem den subjective Erkjendelse og den
+objective Sandhed, men udtrykke de \emph{almindelige} Grundformer, der
+% "Product" and, four lines later, "Produkt" — both spellings as printed.
+% Only "almindelige" is letterspaced here: "Grundformer" is set solid, though
+% the sense wants the whole phrase (zoom-verified; cf. the same lapse at
+% "omslutter", p. 8).
+forsaavidt ikke forudsætte speciel Erfaring, som de overalt finde deres
+Anvendelse paa de
+% --- p. 21 ---
+existerende Gjenstande og disses forskjellige Forhold. Paa den anden Side maae
+de aposterioriske Begreber, der abstraheres af de i Erfaringen forefundne
+Gjenstande, heller ikke tænkes at forholde sig ligegyldige til de subjective
+Tankelove, thi derved vilde de ophøre at være sande Begreber; de ere meget
+mere at betragte som de \emph{særskilte} Former, i hvilke den aprioriske
+Tænkning gjenkjender sit eget eiendommelige Indhold (Normalbegreber).
+
+Den uendelige Vexelvirkning imellem den subjective Tænkning og den objective
+Fornuft forudsætter en skabende Frihed, som det absolute Prius, af hvilken al
+Tænken og Væren have deres fælles Oprindelse.
+
+% PRINTER'S DEFECT: the page range prints as "Pag. 190  200" — the dash between
+% the two numerals never got set. Verified at high magnification and high
+% contrast: the gap is clean, there is no under-inked rule. Transcribed as
+% printed, with the wide space kept.
+\anm{1} Professor Sibbern har i sin explicative Logik (2den Udgave Pag.
+190\quad 200) skjelnet imellem den \emph{forfølgende}, den \emph{almindelige}
+og den \emph{rene Begrebsanalyse}. Den \emph{forfølgende} Analyse fører de i
+Gjenstanden forefundne Begrebsbestemmelser ud over den empiriske Grændse, ved
+at tydeliggjøre de i samme liggende Conseqvenser. Den \emph{almindelige}
+% PRINTER'S DEFECT: "Bgrebet" for "Begrebet" — a dropped e, zoom-verified.
+% Transcribed as printed, not corrected.
+Begrebsanalyse finder Bgrebet i det levende Ord, adskiller Ordets oprindelige
+Betydning fra den afledede, viser dets Slægtskab med andre Ord (Synonymik),
+udfinder derved det søgte Begrebs væsentlige Reqvisiter, og formaaer saaledes
+ikke blot at bestemme, men endog at corrigere Sprogbrugen. Den \emph{rene}
+Begrebsanalyse tydeliggjør Tænkningens egne Kategorier, og spiller en
+Hovedrolle i den objective Logik. I alle disse Arter af Begrebsanalyse viser
+det sig, at Tænkningen gaaer ud over det Givne, saa at Sensualisterne have
+Uret i at negte dens Selvstændighed.
+
+\anm{2} Den kritiske Idealisme, der vel indrømmer
+% --- p. 22 ---
+Tænkningen en subjectiv Aprioritet, men dog benegter dens Evne til at erkjende
+den objective Sandhed, og til Beviis herfor beraaber sig paa Antinomierne,
+finder sin Gjendrivelse i disse Antinomiers dialektiske Opløsning. Derimod kan
+den subjective Idealisme, der henfører det hele objective Verdensindhold til
+Jegets uendelige Aprioritet, ikke gjendrives ved den Kjendsgjerning, at
+Tænkningens Udvikling betinges ved Erfaringen, eftersom det ikke er
+Erfaringsverdenens Nødvendighed, men dens Selvstændighed, den benegter.
+
+\anm{3} Det cartesianske Princip: \textit{Cogito, ergo sum}, har fundet sin
+conseqvente Udvikling i den fichtiske „Wissenschaftslehre.“ Det absolute
+Subject, Jeg, kan tvivle om Alt, kun ikke om dets egen Tænken og Væren. Den
+Sætning: Jeg \emph{tænker}, falder umiddelbart sammen med den Sætning: Jeg
+\emph{er}. Subjectet kan ikke tænke uden at \emph{være} tænkende, og om det
+end betvivler alle enkelte Tankers Gyldighed, kan det dog ikke ved
+nogensomhelst Tvivl ophæve Visheden af den almindelige Tænkning, eftersom det
+for at betvivle al Tænkning nødvendigviis maa tænke, og følgelig stole paa
+% The full stop after "Gyldighed" is badly under-inked — barely a speck at 300
+% dpi, invisible to both OCR witnesses — but it is there. Transcribed.
+% "Wissenschaftslehre" is a German quotation and so stays in Fraktur (no
+% italic), exactly as „Ding an sich“ at p. 3; only the Latin "Cogito, ergo sum"
+% is antiqua.
+Tænkningen i samme Nu, som det betvivler dens Gyldighed. Hvad der ikke har
+denne uimodsigelige Vished, maa falde udenfor den egentlige Videnskab. Da
+Videnskaben ikke kan være et Aggregat af løse Forestillinger, da der maa gaae
+een Grundsandhed igiennem alle enkelte Sandheder, saa maae ogsaa alle
+videnskabelige Sætninger lade sig føre tilbage til een uomstødelig
+Grundsætning, og af denne igjen deduceres. Har nu Jeget fundet denne
+almindelige Grundsætning i sin egen Tænken og Væren, saa har det med det Samme
+fundet Sandhedens Kilde i sig selv, og Philosophien, den rene Videnskab,
+maatte da ifølge denne Theorie være istand til at begribe den hele Tilværelse
+i Kraft af den øverste Grund%
+% --- p. 23 ---
+sætning, eller, med andre Ord, construere sin Verden \textit{a priori}.
+Sandheden heri er, at den videnskabelige Tænkning ikke kan anerkjende Andet
+end det, Tankens Conseqvens medfører, og at den Nødvendighed, hvormed
+Sandheden afnøder det tænkende Subject sin Anerkjendelse, er den reneste
+Prøvesteen for det Visse og Uvisse. Men den subjective Idealismes Construeren
+\textit{a priori} medfører desuagtet en Eensidighed, der paa flere Maader
+lægger sig for Dagen (Jacobis Strikkestrømpe). Subjectet, der altid har
+Blikket henvendt mod den formelle Jeghed, taber den virkelige Verden og dens
+concrete Indhold af Sigte. Enten maa den philosophiske Viden da indskrænkes
+til et ringe Antal af abstracte Sandheder, eller ogsaa vil Philosophen, der
+indlader sig paa at construere Natur og Historie \textit{a priori}, let kunne
+overbevises om at have insinueret empiriske Forudsætninger tvertimod det
+opstillede Princip. Mislykkede Forsøg paa at construere \textit{a priori},
+hvad der kun lader sig erkjende i Erfaringens aposterioriske Medium, have
+fremfor Alt bidraget til at bringe Philosophien i Miscredit.
+
+\anm{4} Adskillelsen imellem aprioriske og aposterioriske Begreber refererer
+sig, ifølge den formelle Logik, til deres Kilde eller Oprindelse. Den simpleste
+Form, i hvilken en saadan Adskillelse kan fastholdes, er denne, at de
+aprioriske Begreber siges at være \emph{forud} for Tingene, paa hvilke de
+\emph{anvendes}; de aposterioriske derimod at følge \emph{efter Tingene}, af
+hvilke de \emph{abstraheres}, saa at hine have deres Oprindelse fra
+Tænkningen selv, disse fra Erfaringen. Men nærmere betragtet kan denne
+Modsætning ikke holde sig. Det har allerede viist sig, at Tingens Begreb ikke
+er at søge i dens tilfældige Ydre, men i dens Indre \dsi{} i dens intelligible
+Væsenhed. At Tænkningen altsaa abstraherer sine empiriske
+% Faint pencil underlinings by a former reader run under "forud for" and
+% "anvendes" here and under several phrases on pp. 19, 25 and 26. They are not
+% printing features.
+% --- p. 24 ---
+Begreber af Gjenstandene, vil da med andre Ord sige, at den i disses bestemte
+Væsen gjenkjender sin egen oprindelige Væsenhed. Erfaringen er altsaa ikke
+nogen egentlig Begrebskilde, men kun det Middel, hvorved Subjectets
+almindelige Tænkning beriges med et i sig udpræget og concret Tankeindhold.
+Begrebet, der med Hensyn til vor Opfattelse kan være aposteriorisk, forsaavidt
+en speciel Erfaring er gaaet i Forveien, er dog med Hensyn til Gjenstanden
+selv apriorisk, da Tingens Indre og Ydre stedse forholde sig som det Primitive
+(\textit{dignitate prius}) til det Consecutive (\textit{dignitate
+posterius}). Den aprioriske Vexelvirkning imellem Tingens Begreb og vor
+begribende Tænkning kommer tilsyne i Udviklingen af de saakaldte
+\emph{Normalbegreber} (jfr. Sibbern \S\,47). Normalbegrebet begynder
+\textit{a posteriori}, forsaavidt dets almindelige Grundtræk fra først af
+opdages i en empirisk given Gjenstand; men det viser sig tillige fra en
+apriorisk Side, forsaavidt det med det Samme indlyser, at den virkelige
+Gjenstand ikke svarer til dets Fordringer. Dette Misforhold fører da
+Subjectet, der gjennemtænker Begrebets Conseqvenser, til at imaginere eller
+construere sig en saa fuldkommen Gjenstand, at det antydede Begreb deri finder
+sit adæqvate Udtryk. Den frugtbare Anvendelse, der i Virkeligheden lader sig
+gjøre af slige normerende Begreber (t. Ex. i Chrystallographien), beviser
+klart, at den grundige Tænkning har fundet Tingenes oprindelige Mening, eller,
+hvad der er det samme, at de aprioriske Fordringer, der lede Tænkeren, ogsaa
+beherske Virkeligheden. Alle saakaldte aposterioriske Begreber ere, naar de
+ikke forvexles med blotte Forestillinger eller sandselige Anskuelser, egentlig
+at betragte som specielle Tilsyneladelser af den universelle Fornuft, hvis
+Aprioritet er ligesaa objectiv som subjectiv. Med Hensyn til vor Begribnings
+Methode
+% --- p. 25 ---
+kan derimod Adskillelsen imellem aprioriske og aposterioriske Begreber
+forsaavidt have sin Betydning, som den minder det tænkende Subject om dets
+Endelighed og intellectuelle Begrændsning. Forsaavidt de concrete Begreber
+vindes \textit{a posteriori}, maa Erfaringen gaae Haand i Haand med den
+begribende Tænkning; forsaavidt de aposterioriske Begreber ere den aprioriske
+Tænknings egne Typer, maa Erfaringens sporadiske Indhold lutres i den rene,
+universelle Dialektik. Fra den aposterioriske Side er al vor Erkjendelse
+stykkeviis, og vor Tænkning discursiv; ifølge Begribningens Aprioritet maa det
+Stykkevise igjen ophæves i den videnskabelige Grunderkjendelse. Som der altsaa
+maae gives empiriske Videnskaber, der støtte sig til det Aposterioriske, og
+følge deres egen selvstændige Methode, saa maa der nødvendigviis ogsaa gives
+en Videnskabernes Videnskab, Philosophien nemlig, der, ifølge sin
+eiendommelige Methode, lægger an paa at erkjende Sandheden i dens Aprioritet.
+Den concrete Gjennemførelse af Philosophien vindes kun igjennem Empirien, og
+det Lys, der opklarer Empirien, udstraaler igjen fra Philosophien.
+
+\anm{5} Spørgsmaalet om det subjective Begrebs Forhold til den empiriske
+Virkelighed forvandler sig i høieste Instans til et Problem, der gjælder
+Forholdet imellem \emph{Tænken og Væren}. Ifølge den subjective Idealisme
+% The intervening "og" IS letterspaced here (zoom-verified), unlike the "den"
+% and "og" inside the p. 21 run, so this is emphasised as one phrase.
+gaaer den reale Væren under i den formelle Tænkning, ifølge den crasse
+Empirisme (Sensualismen) gaaer den frie Tænkning til Grunde i den tilfældige
+Væren. Da nu enhver af disse Theorier har viist sig i sin Eensidighed; da den
+subjective Tænkning ikke kan producere Tilværelsens Fylde, og den objective
+Tilværelse kun lader sig tænke, fordi den overalt er underkastet Tankens Love,
+men ikke selv kan tænke, efterdi den mangler den subjective Frihed: saa maa
+den endelige Modsætning
+% --- p. 26 ---
+imellem Tænken og Væren føres tilbage til sin oprindelige Grundeenhed. I denne
+Urgrund eller oprindelige Grund taber Modsætningen sin Endelighed; thi Tænken
+falder paa ethvert Punkt sammen med Væren, og begge ere forsaavidt lige
+uendelige. Men paa den anden Side kan denne uendelige Eenhed dog heller ikke
+være uden Forskjel. Hvis Tænken og Væren vare i deres dybeste Grund
+tautologiske, saa vilde den endelige Adskillelse, der netop skal forklares af
+Grunden, være uden al Grund. Resultatet bliver altsaa dette, at den endelige,
+\emph{consecutive} Modsætning imellem Tænken og Væren søger sin tilstrækkelige,
+\emph{primitive} Grund i deres uendelige, absolute Modsætning \dsi{} i det
+Begreb, hvori deres Adskillelse er ligesaa uendelig som deres Forening, saa at
+deres ydre Forskjel forvandles til en indre, \emph{levende} Eenhed. Det
+absolute Væsen, der formedelst sin frie Tænken producerer den virkelige
+Tilværelse, aabenbarer med det Samme sin Tilværelses Realitet i Productet af
+sin skaberiske Frihed. I dette Vendepunkt slaaer det \emph{Logiske} over i det
+\emph{Theologiske}. Anselms ontologiske Beviis for Guds Tilværelse er en logisk
+Fremstilling af det absolute Begrebs uendelige Aprioritet. De Indvendinger,
+der til forskjellige Tider (Gaunilo---Kant) ere fremførte mod dette Beviis,
+træffe ikke Sagen men Formen. Thi Bevisets adæqvate Form kan egentlig først
+gjennemføres i Ontologien eller den objective Logik.
+
+\parag{5}{Begrebets Totalitet.}
+% Printed head agrees with the Indhold: "Begrebets Totalitet." Bold, not
+% letterspaced. NB § 5 ends the Første Capitel, but the Capitel does NOT close
+% within this batch and there is no section-end rule on pp. 18--29: § 5 is
+% still running at the foot of p. 29.
+
+Indbegrebet af alle til et Begreb henhørende Bestemmelser udgjør dets indre
+Totalitet eller \emph{Indhold}; Antallet af de existerende Gjenstande, i hvilke
+Begrebet
+% --- p. 27 ---
+finder sit Udtryk, bestemmer dets ydre Totalitet eller \emph{Omfang}. Med
+Hensyn til Indhold og Omfang har man i den formelle Logik inddeelt Begreberne
+i \emph{høiere} (\textit{conceptus superiores}) og \emph{lavere}
+(\textit{conceptus inferiores}), saaledes at hine, der have mindre Indhold,
+men større Omfang, indbefatte disse under sig. Da denne Inddeling især gjælder
+Naturforholdet imellem Slægt (\textit{genus}) og Art (\textit{species}), har
+man ogsaa i Almindelighed kaldet de overordnede Begreber
+\emph{Slægtsbegreber}, de underordnede \emph{Artsbegreber}.
+
+Det dialektiske Forhold imellem Begrebets indre og ydre Totalitet førte
+Middelalderens Scholastikere til en metaphysisk Undersøgelse angaaende
+Begrebernes Almindelighed (\textit{universalia}) og Tingenes Enkelthed
+(\textit{res, ens, entitas, hæcceitas}). Nominalisterne (\textit{universalia
+post rem}) miskjendte Begrebets væsentlige Aprioritet; de eensidige Realister
+(\textit{universalia ante rem}) oversaae \textit{principium individuationis}.
+Den sande Realisme (\textit{universalia in re}) er tillige den høieste
+Idealisme (\textit{universalia in mente divina}). Den guddommelige Tænkning,
+der reflecterer det absolute Begreb, er eet med den skabende Almagt, der
+frembringer den Virkelighed, i hvilken Begrebets indre Totalitet sondres og
+forvandles til en ydre Totalitet af relative Begreber, hvis Existens sættes i
+og \emph{med} de existerende Ting.
+% Only "med" is letterspaced — the preceding "i og" is set solid
+% (zoom-verified), though the sense wants "i og med".
+
+\anm{1} Det virkelige Begreb er et Tankehele, der finder sit Udtryk i en
+dertil svarende sandselig Heelhed, det er et Indre, der træder frem i sit
+Ydre. Skal nu Forholdet imellem det Indre og Ydre nærmere bestemmes, da træde
+disse Hovedsider igjen ud fra hinanden som særskilte Totaliteter. Det Ydre,
+der sandses, men ikke tænkes, er ligegyldigt mod
+% --- p. 28 ---
+% PRINTER'S DEFECT: a stray horizontal bar prints over the "e" of the second
+% "det" in the next sentence ("og det sandseligt Reelle") — foul case or a
+% piece of loose furniture, not an accent. Transcribed as "det".
+det Indre, der tænkes, men ikke sandses; Tingens empiriske eller
+haandgribelige Udvortes kan aldrig udledes af dens Begreb: det Intellectuelle
+og det sandseligt Reelle ere forsaavidt at betragte som incommensurable
+Størrelser. Men paa den anden Side kan Begrebet dog heller ikke træde ud i
+Virkeligheden uden at forudsætte et Stof eller Materiale, hvori det realiseres
+og kommer tilsyne: ethvert Ydre maa svare til \emph{sit} Indre, og
+Gjenstandens empiriske Totalitet tilfredsstille Begrebets Fordringer.
+Betragtes Omverdenen med et sandseligt Øie, er den aldeles uden Begreb;
+betragtes den derimod med Tankens Øie, da kommer Begrebet tilsyne i de
+allerforskjelligste Former. Det uadæqvate Forhold imellem Begreb og
+Virkelighed giver sig ikke blot tilkjende derved, at Normalbegreberne hemmes i
+deres fulde Fremtræden (t. Ex. Planeternes Perturbationer; den menneskelige
+Organismes Mangel paa fuldkommen Sundhed), men viser sig navnlig deri, at
+Begrebets Indhold falder, formedelst de endelige Tings ydre Adskillelse, ud
+fra sig selv i en saa sporadisk Mangfoldighed af partielle Begreber, at den
+subjective Reflexion ikke er istand til at opdage disses concrete Sammenhæng.
+Istedetfor at reducere de partielle Begreber til Momenter i det absolute
+Begrebs indre Totalitet, lægger den subjective Tænkning an paa at gruppere
+efter de forskjellige abstractere eller concretere Grundformer, og derved
+tydeliggjøre sig Begrebets ydre Totalitet. \emph{Indsigten} i et Begrebs
+væsentlige Bestemmelser (Indhold) lægges til Grund for en \emph{Oversigt} over
+de Gjenstandes Antal, der subsumeres derunder (Omfang). Det ligger da i Sagens
+Natur, at Indhold og Omfang staae i omvendt Forhold.
+
+\anm{2} Sammenlignes Begreberne indbyrdes med Hensyn til Omfang, da kan det
+høiere Begreb ikke siges at
+% --- p. 29 ---
+indeholde de lavere i sig, ligesaalidt som det udtømmer alle den enkelte Tings
+intellectuelle Bestemmelser. De høiere og lavere Begreber adskille sig da
+formedelst Gjenstandenes ydre Existens saaledes fra hverandre, at hine som de
+abstractere ere ligegyldige mod disse; de forholde sig til hinanden som videre
+og snevrere Schemata, saa at den hele Begriben reduceres til en egentlig
+Schematiseren.
+
+% PRINTER'S DEFECT: the Sibbern quotation that ends "...har et ganske andet.“"
+% has NO opening „ anywhere — verified at high magnification on both the line
+% "fører Prof. Sibbern (§ 42), at den intellect..." and the lines before it.
+% The closing mark is transcribed as printed, so this fragment carries „1 / “2
+% and its quote balance is deliberately -1.
+Der gives Tilfælde, i hvilke den subjective Tænkning ikke er istand til at
+udlede alle Gjenstandens specielle Begrebsbestemmelser af een
+Grundbestemmelse, men maa søge forskjellige Udgangspunkter for Betragtningen,
+og lade sig nøie med en Combination af flere sammenstødende Begreber, der hver
+for sig tilhøre forskjellige Sphærer. Saaledes anfører Prof. Sibbern
+(\S\,42), at den intellectuelle Indtrængen i Chrystallisationsformernes Natur
+og Væsen hos et Mineral har sit eget Støttepunkt i den mathematiske
+Betragtning, hvorimod dens Undersøgelse i Henseende til Glands, Farve o. s. v.
+har et ganske andet.“ Forsaavidt et Grundbegrebs Modificationer hidrøre fra
+ydre Sammentræf og empirisk bestemte Forhold, kunne de oversees som
+uvæsentlige og ligegyldige; men hvad der saaledes i een Henseende er
+uvæsentligt, er fra et andet Synspunkt, under Forudsætning af et andet
+Grundbegreb, at betragte som væsentligt, og de forskjellige Hensyn og
+Combinationer, den empiriske Tankeforfølgelse kræver, vedkomme ikke Logiken
+som saadan.
+
+% Greek zoom-verified at 300 dpi: γένη is epsilon with an acute and no
+% breathing; εἴδη has smooth breathing + acute over the iota (ἴ) — i.e. the
+% form the Rettelser prescribe for p. 187, already correct here.
+Udvikles derimod Begrebernes egne Relationer, da viser det sig, at de høiere
+Begreber stedse have deres specifiske Indholdsbestemmelser i de lavere. Dette
+bliver allerede udtalt, idet de overordnede Begreber bestemmes som
+Slægtsbegreber (γένη), de underordnede som Artsbegreber (εἴδη); thi her
+gjælder det, at enhver Slægt maa indeholde sine Arter. Livet, betragtet som
+Slægtsbegreb,
+
+% [text to be added: pp. 30--41]
+
+% [text to be added: pp. 42--53]
+
+% [text to be added: pp. 54--65]
+
+% [text to be added: pp. 66--77]
+
+% [text to be added: pp. 78--89]
+
+% [text to be added: pp. 90--96]
+
+% ---- Anden Deel, printed pp. 97--283 (PDF 106--292) ----
+% p.97 opens with the double rule + "anden Deel:" (LOWERCASE as printed) +
+% Indledning + § 12. Batch boundaries are aligned so that p.97 starts a batch.
+
+% [text to be added: pp. 97--108]
+
+% [text to be added: pp. 109--120]
+
+% [text to be added: pp. 121--132]
+
+% [text to be added: pp. 133--144]
+
+% [text to be added: pp. 145--156]
+
+% [text to be added: pp. 157--168]
+
+% [text to be added: pp. 169--180]
+
+% [text to be added: pp. 181--192]
+
+% [text to be added: pp. 193--204]
+
+% [text to be added: pp. 205--216]
+
+% [text to be added: pp. 217--228]
+
+% [text to be added: pp. 229--240]
+
+% [text to be added: pp. 241--252]
+
+% [text to be added: pp. 253--264]
+
+% [text to be added: pp. 265--276]
+
+% [text to be added: pp. 277--283]
+
+\begin{center}\rule{0.35\linewidth}{0.4pt}\end{center}
+
+% ============================================================
+% RETTELSER — PDF 293 (printed [284], unnumbered).
+% Reproduced for the record. All nine corrections are APPLIED in the text above,
+% each flagged at its site with a % ERRATA comment.
+% The p.92 entry misprints "ci" for "ei" in its own right-hand column; that is
+% transcribed as printed here.
+% ============================================================
+\cleardoublepage
+\chapter*{Rettelser}
+\markboth{Rettelser}{Rettelser}
+{\small\setlength{\parindent}{0pt}
+Side 80 Linie 3 ovenfra Omsætningen læs: Oversætningen\par
+--- \quad 92 \quad --- \quad 13 \quad --- \quad A er ei = A, \quad --- \quad A er ci = --- A\par
+--- \quad 93 \quad --- \quad 7 \quad --- \quad Betingelser \quad --- \quad Betingethed\par
+--- \quad 112 \quad --- \quad 4 nedenfra \quad Daddel \quad --- \quad Dadel\par
+--- \quad 152 \quad --- \quad 8 \quad --- \quad med \quad --- \quad ved\par
+--- \quad 154 \quad --- \quad 15 \quad --- \quad Dyr=Rige \quad --- \quad Dyre=Rige\par
+--- \quad 187 \quad --- \quad 9 \quad --- \quad εἵδη \quad --- \quad εἴδη\par
+--- \quad 206 \quad --- \quad 9 \quad --- \quad en miniatur \quad --- \quad en miniature\par
+% The errata page sets both forms with the fount's script theta; normalised to θ
+% per the standing convention, as everywhere else in this file.
+--- \quad 241 \quad --- \quad 1 \quad --- \quad θετον \quad --- \quad θεῖον\par
+}
+
+\end{document}
