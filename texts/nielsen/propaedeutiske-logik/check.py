@@ -90,7 +90,10 @@ CHECKS = [
     # "jævnfør" abbreviation; and Jacobi is F. H. Jacobi. All correct as J.
     (r"\bJ(?!eg\b|eg[a-zæøå]|ord|a\b|o\b|ordan|fr\b|acobi)[a-zæøå]{2,}",
      "Fraktur I read as J (Jdee, Jndhold, ...)", body, 0),
-    (r'"', "straight double quote — this book uses „ and “", body, 0),
+    # A straight " used as a quotation mark. Not preceded by a backslash: \" is
+    # the umlaut accent command (\"a for ä in "Qvidit\"at", printed p. 32), and
+    # is legitimate.
+    (r'(?<!\\)"', "straight double quote — this book uses „ and “", body, 0),
     (r"\\footnote", "this book has NO footnotes — check the image again", body, 0),
     (r"(?m)^\\begin\{center\}(?!\\rule).*\{\\(?:bf|Large|large)",
      "hand-rolled display head — use \\deel / \\capitel / \\parag instead",

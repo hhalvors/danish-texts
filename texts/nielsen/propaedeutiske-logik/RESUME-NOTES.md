@@ -5,9 +5,10 @@ batch loop. The standing method is `../../../TRANSCRIPTION-PLAYBOOK.md`.
 
 ## CURRENT RESUME POINT
 
-**Next: printed p. 30 (PDF 39)** — continue **Første Deel / Første Capitel, § 5
-*Begrebets Totalitet***, which is still running at the foot of p. 29. **Andet Capitel**
-(*Det subjective Begrebs Fremstilling: den logiske Dom*, §§ 6–8) has not yet been reached.
+**Next: printed p. 42 (PDF 51)** — continue **Første Deel / Andet Capitel, § 6 *Dommens
+logiske Form***, whose `Anm. 4` is still running at the foot of p. 41. **§ 7 *Dommens
+logiske Indhold*** has not been reached. p. 41 ends **mid-paragraph** ("…op i Identiteten,
+og"), so the blank line above the next marker must be closed up after splicing.
 
 `python3 check.py` prints progress; `bash verify.sh` compiles.
 
@@ -246,6 +247,45 @@ emitting the same warning and losing the letter from their PDF metadata. Harmles
 build; worth a sweep some day.
 
 ## DONE so far
+
+- **Batch 3 (pp. 30–41), image-verified.** Finishes **§ 5** (ends p. 35, closed by a short
+  centred **double** rule — two 0.4 pt rules at ~0.22 of the measure, verified at high
+  contrast, *not* one under-inked heavy rule, so not the p. 5 ornament). Then
+  `\capitel{Andet Capitel.}{Det subjective Begrebs Fremstilling: den logiske Dom.}` and
+  `\parag{6}{Dommens logiske Form.}`, both matching the Indhold word for word. **§ 7 not
+  reached.**
+  **Greek**, word-by-word at 600 dpi, normalised with `%` notes: ϑ→θ, ϰ→κ, ϱ→ρ, ϕ→φ, and
+  **ϲ→σ** in σώματά (p. 33, the one lunate sigma). Reproduced as printed, not corrected:
+  γενων (no perispomeni), ταύτα (oxia for perispomeni), κατεγορεῖται (ε for η), the graves
+  on διαφορὰ/συμβεβηκὸς/χωριστὰ, and ἰδιον psili-only on p. 32 against ἴδιον on p. 31. In
+  ὁποῖόν the perispomeni sits over the omicron in print; Unicode forces it onto the iota,
+  noted at the site.
+  **`ꝛc.` — decided, and I overruled the agent here.** The agent transcribed the Fraktur
+  *et cetera* sort literally as "2c." on the diplomatic principle. That was wrong: it is
+  the **r-rotunda abbreviation ꝛc.**, whose sort merely *looks* like a figure 2 — and both
+  OCR witnesses fell for it in different ways (tesseract "2c.", ABBYY ":c."), which is the
+  tell that neither is evidence. Verified on the image at 600 dpi. Rendered **`\&c.`** per
+  repo precedent (`texts/moller/qvindelighed`, `texts/moller/affectation`); raw U+A75B is
+  not available in T1/libertinus (tested). Printed p. 2 sets the spelled-out "etc." in
+  antiqua — both forms kept distinct, neither normalised to the other.
+  **The general lesson:** "transcribe as printed" applies to what the compositor *set*, not
+  to what an OCR engine *reports*. When the two witnesses disagree in different directions
+  on the same glyph, that is a glyph-identification problem, and only the image settles it.
+  **Printer's defect:** p. 40, no full stop after "(Stilpons Kaal)" — clean gap at 4×; set
+  as `\quad`, as batch 2 did for p. 21. Compositor inconsistency logged: the letterspaced
+  run takes in "det" on p. 30 but leaves it solid in the parallel phrases on pp. 30–31.
+  Emphasis rejected as false: *blot* (p. 30, kerning gap), *Valg* (p. 38), *ere disse*
+  (p. 40).
+  **`„Ειςαγωγη“` (p. 33)** has no breathing, no accent, and a **final sigma used medially**
+  — a wrong sort, not a fount variant (the same page sets round σ six times), so it is
+  **not** normalised.
+  **`„Qvidit\"at“` (p. 32)** written with the accent command `\"a`, not a raw ä. `check.py`
+  now excludes `\"` from its straight-quote test.
+  **Scan caveat 2:** printed **p. 34** (PDF 43) carries the same reader's yellow
+  highlighter as p. 96, across "da maae begge disse Extremer … skaberiske Productivitet."
+  Tesseract garbles it and reports it letterspaced; the type underneath is solid.
+  Compile: **37 pp., 0/0/0/0**; braces 473/473; quotes „26 / “27 = **−1, still just the
+  p. 29 defect** (the batch itself was internally balanced 19/19); suspect readings 0.
 
 - **Batch 2 (pp. 18–29), image-verified.** Finishes **§ 3** and adds
   **`\parag{4}{Begrebets Aprioritet.}`** (p. 20) and **`\parag{5}{Begrebets Totalitet.}`**
