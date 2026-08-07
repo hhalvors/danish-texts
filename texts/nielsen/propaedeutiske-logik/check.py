@@ -88,7 +88,9 @@ CHECKS = [
     # Fraktur I misread as J. But Jeg/Jeget/Jegets is this book's commonest
     # technical term; Jord/Ja/Jo/Jordan are ordinary words; Jfr is the standard
     # "jævnfør" abbreviation; and Jacobi is F. H. Jacobi. All correct as J.
-    (r"\bJ(?!eg\b|eg[a-zæøå]|ord|a\b|o\b|ordan|fr\b|acobi)[a-zæøå]{2,}",
+    # "Just" (= netop) is an ordinary Danish adverb and is printed with J; both
+    # OCR witnesses agree on it at p.53.
+    (r"\bJ(?!eg\b|eg[a-zæøå]|ord|a\b|o\b|ordan|fr\b|acobi|ust\b)[a-zæøå]{2,}",
      "Fraktur I read as J (Jdee, Jndhold, ...)", body, 0),
     # A straight " used as a quotation mark. Not preceded by a backslash: \" is
     # the umlaut accent command (\"a for ä in "Qvidit\"at", printed p. 32), and

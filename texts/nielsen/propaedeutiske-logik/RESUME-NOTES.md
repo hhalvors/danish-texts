@@ -5,10 +5,12 @@ batch loop. The standing method is `../../../TRANSCRIPTION-PLAYBOOK.md`.
 
 ## CURRENT RESUME POINT
 
-**Next: printed p. 42 (PDF 51)** — continue **Første Deel / Andet Capitel, § 6 *Dommens
-logiske Form***, whose `Anm. 4` is still running at the foot of p. 41. **§ 7 *Dommens
-logiske Indhold*** has not been reached. p. 41 ends **mid-paragraph** ("…op i Identiteten,
-og"), so the blank line above the next marker must be closed up after splicing.
+**Next: printed p. 54 (PDF 63)** — continue **Første Deel / Andet Capitel, § 7 *Dommens
+logiske Indhold***. **§ 8 *Dommens logiske Totalitet*** has not been reached.
+
+**p. 53 ends MID-WORD.** The last line closes `den lige%` and p. 54 carries `saa`
+(= "ligesaa"). The trailing `%` is already in place to suppress the space; the pp. 54–65
+fragment must therefore **begin with `saa`**, and its blank line has already been closed up.
 
 `python3 check.py` prints progress; `bash verify.sh` compiles.
 
@@ -247,6 +249,39 @@ emitting the same warning and losing the letter from their PDF metadata. Harmles
 build; worth a sweep some day.
 
 ## DONE so far
+
+- **Batch 4 (pp. 42–53), image-verified.** Finishes **§ 6** — which ends on p. 46 with **no
+  rule at all** (checked at high contrast; contrast the double rule closing § 5 on p. 35,
+  so the book is not consistent about section ends) — then
+  `\parag{7}{Dommens logiske Indhold.}`, matching the Indhold word for word. `Anm. 1–5` of
+  § 7 all fall in range. **§ 8 not reached.** The a)/b)/c) discussion on pp. 43–46 is a
+  plain `itemize` per the pp. 3/15 precedent; its labels are antiqua in print but left
+  unitalicised for consistency with the earlier lists.
+  **Emphasis spot-checked by the caller at 600 dpi** on the batch's most interesting claim:
+  p. 52's run **takes in "har Schelling"** — `det Absolute har Schelling` is spaced across
+  all four words while `gribeliggjøre` on the same line is solid. Confirmed, reproduced, not
+  regularised. That is now three batches running in which the compositor's letterspacing
+  takes in or drops an adjacent word; treat it as normal for this book. Rejected as false:
+  "speculativt Standpunkt" (p. 52).
+  Antiqua → `\textit{}`: *Diversi respectus tollunt/faciunt contradictionem*, *diversi
+  respectus*, *idem per idem*, *in mente*, *res*, *universalia*, *sub specie æternitatis*,
+  and the A/B/C/D placeholders. „Das Urtheil des Daseyns" / „der Reflexion" stay Fraktur.
+  **Greek** normalised with `%` notes: ϕ→φ and ϱ→ρ (φλυαρία, p. 44), ϰ→κ and ϱ→ρ
+  (κατὰ … χρόνῳ, p. 45), ϰ→κ (ὑποκείμενον, p. 50). Accents and breathings reproduced as
+  printed, incl. ἀδολεσχία with psili + oxia and a round medial sigma.
+  **Printer's defects logged in place:** p. 43 a nearly blind full stop after "opfattes"
+  (both OCR witnesses drop it); p. 45 **"Parodox"** for Paradox; **p. 48 a Greek β) standing
+  where "b)" is wanted** — a wrong sort out of the Greek case, transcribed as printed
+  (U+03B2, *not* ϐ, so the Greek lint stays clean); p. 51 an ink blot between "ere" and
+  "Mennesker" (press debris, not a sort); p. 51 "forskiellige" with -ie-; p. 52 a "fordi"
+  whose *r* is almost unprinted — tesseract read "for di", ABBYY "fo di", the stem's ghost
+  is visible on the image, so **fordi**.
+  **Scan caveat 3:** printed **p. 47** (PDF 56) carries a reader's **pencil underline**
+  under "Diremtioner" — wavy, grey, overrunning the word. Not a printed rule.
+  `check.py` now exempts **"Just"** (an ordinary Danish adverb, printed with J, both
+  witnesses agreeing) from the Fraktur-I test.
+  Compile: **45 pp., 0/0/0/0**; braces 578/578; quotes „42 / “43 = **−1, still only the
+  p. 29 defect** (batch internally balanced 16/16); suspect readings 0.
 
 - **Batch 3 (pp. 30–41), image-verified.** Finishes **§ 5** (ends p. 35, closed by a short
   centred **double** rule — two 0.4 pt rules at ~0.22 of the measure, verified at high
