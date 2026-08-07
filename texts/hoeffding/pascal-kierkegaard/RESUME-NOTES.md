@@ -12,13 +12,50 @@ The issue is the Pascal tercentenary number. **Høffding wrote this in French**
 — it is not a translation from Danish, and the French is his own. Catalog entry
 `pascal-kierkegaard` under `hoeffding` in `catalog.yaml`.
 
-## STATUS
+## STATUS — COMPLETE
 
-**Transcription COMPLETE** — 26/26 pages, 0 gaps, 0 dupes, braces balanced,
-guillemets balanced at 45/45, compile test clean (0 errors, 0 missing
-characters, 23 typeset pages).
+**Transcription (French)** — 26/26 pages, 0 gaps, 0 dupes, braces balanced,
+guillemets 45/45, compile clean (0 errors, 0 missing characters, 23 pages).
 
-**Translation: not started.** That is the next job; see TRANSLATION-PLAYBOOK.md.
+**Translation (English)** — all three markers filled, no `translation continues`
+notes outstanding, compile clean (0/0, 23 pages). Structure mirrors the
+transcription 1:1: 4 section heads, 2 footnotes, 26 page markers in each.
+
+`catalog.yaml` is set to `status: complete` with Transcription, Translation,
+archive.org and JSTOR links. **Not committed — the user commits.** The PDFs
+still need a local build with the real fonts, then
+`~/hhalvors.github.io/publish-danish.sh "message"`.
+
+## Translation conventions specific to this piece
+
+The source is FRENCH, so TRANSLATION-PLAYBOOK.md applies with one addition: a
+title policy, fixed with the user and recorded in full in the `translation.tex`
+preamble. In short:
+
+- **Kierkegaard's works → standard English titles.** *Ou l'un ou l'autre* →
+  *Either/Or*; *Étapes de la route humaine* → *Stages on Life's Way*;
+  *Postscriptum définitif non scientifique* → *Concluding Unscientific
+  Postscript*; *(L')Exercice dans le Christianisme* → *Practice in
+  Christianity*; *(La) Maladie à la mort* → *The Sickness unto Death*;
+  *Le Moment* → *The Moment*.
+- **Pascal's works → standard English, except *Pensées***, which keeps its
+  French name because that is its standard name in English. *Provinciales* →
+  *The Provincial Letters*; *Mémoire sur le Vide* → *Memoir on the Vacuum*;
+  *Comparaison des chrétiens…* → *Comparison Between the Christians of Early
+  Times and Those of Today*.
+- **French secondary literature stays French**: Sainte-Beuve's *Port-Royal*,
+  Strowski's *Pascal et son temps*, Høffding's own *Philosophie de la religion*
+  and *La Morale*, the *Revue*, the Brunschvicg *Œuvres*. Translating them
+  would make the citations untraceable.
+- **Latin stays Latin**: *De civitate Dei*, *Augustinus*, \textit{de plano}.
+- The p. 232 footnote keeps Høffding's **Danish** citation exactly as the
+  journal prints it, misprint included, so the two files agree.
+
+Brunschvicg fragment numbers ("fr. 144 Br.") are carried over verbatim.
+
+A verification script for the title policy is worth rerunning after any edit:
+grep the body (comments stripped) for the French forms — all should be 0 —
+and for the English forms, which should all be non-zero.
 
 ## Source
 
@@ -152,6 +189,22 @@ Guillemet balance is **0** (45 open / 45 close) — no defect disturbs it.
 
 ## Open review items
 
-- [ ] Translation → `translation.tex`
-- [ ] `catalog.yaml`: flip `status` from `to-do` when the translation lands
+- [ ] Build both PDFs locally with the real fonts (libertinus) and confirm the
+      Transcription and Translation links on the `/dansk/` page resolve
+- [ ] Publish: `~/hhalvors.github.io/publish-danish.sh "message"`
 - [ ] Report the content-filter false positive if it recurs
+
+## A late correction pass worth knowing about
+
+After the transcription was first declared complete, translating from it turned
+up ~45 further OCR residues that `check.py` could not see, because each was a
+*plausible French word or mark*: `atiitudes`, `aussilôt`, `déecrit`, `distinetion`,
+`s'oceuper`, `Là Poésie` for `La Poésie`, `pascopernicien` for `pas copernicien`,
+`quelles propositions` for `que les propositions`, stray `[`/`{`/`:` mid-sentence,
+and a handful of missing word-spaces. All were fixed against the page images and
+are listed in the git diff.
+
+The lesson for the next French book: **translating is itself the best proofreading
+pass**, because it forces every sentence to be parsed. Budget for a correction
+round on the transcription while translating, and do not treat `check.py` coming
+back clean as evidence that the text is right — it checks structure, not sense.
