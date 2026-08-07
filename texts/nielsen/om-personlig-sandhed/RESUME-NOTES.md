@@ -7,9 +7,9 @@ Boghandling (F. Hegel), 1854. [1] + 144 pp., Fraktur. Same author and genre as
 whole method used here (pagemap.py / ocr.sh / spacing.py / check.py / splice.py /
 BATCH-AGENT.md) — see `../evangelietroen-theologien/` for the fully worked example.
 
-**Status: printed pp. 1–32 transcribed and spliced (Lectures I–III complete). 112 pages
-remain, starting at printed p. 33 (Lecture IV).** Read `../../../TRANSCRIPTION-PLAYBOOK.md`
-before continuing.
+**Status: printed pp. 1–117 transcribed and spliced (Lectures I–X complete, ~81% of
+the book). 27 pages remain, starting at printed p. 118 (Lecture XI).** Read
+`../../../TRANSCRIPTION-PLAYBOOK.md` before continuing.
 
 ## Files
 - Scan: `bibliotek/Nielsen, Rasmus/om-personlig-sandhed.pdf` (157 PDF pp., 33.5 MB,
@@ -141,38 +141,97 @@ here anyway, since there is no Indhold).
 | pp12-22 | 11 | II, Æsthetisk og religiøs Phantasie | 3 `\emph{}` (all confirmed Sperrsatz); p.12 "Forskiel" vs heading's "Forskjel" — genuine printer's variant, kept as printed; p.16 stray period logged; p.19 doubled full stop logged; 0 footnotes |
 | pp23-32 | 10 | III (opening), Det evige Liv | 1 `\emph{}` (the Beatitude, p.32, confirmed); possible systematic Ø/D Fraktur confusion noted (p.24, "Øiekast") — worth adding to `ocr.sh`'s sed table if it recurs; 0 footnotes |
 
+| pp33-42 | 10 | IV, Personlig Hjælp | 3 `\emph{}` (Scripture citations, confirmed Sperrsatz); **Ø/D Fraktur confusion recurs** ("Øiemed"→"Diemed", "Øieblik"→"Dieblik/Djeblik", "Øiekast"→"Diekast" — now confirmed at 3+ pages across two batches; NOT safe to blanket sed-fix since "Diadem" is a genuine word with the same opening); 0 footnotes |
+| pp43-54 | 12 | V, Selskab i Eensomhed | 6 `\emph{}` (Scripture quotations, all confirmed); **1 footnote** (p.49, `*)`, confirmed as the mark — content transcribed in full); quote imbalance „18/“17 (+1) from a logged unclosed quote after "Sandheden." on p.48 — a genuine printer's defect, not a transcription slip; several stray ink marks logged, not transcribed as characters |
+| pp55-67 | 13 | VI, Store Mænd | 0 `\emph{}`/`\textit{}` (Machiavelli's „Fyrste" stays in Fraktur, not antiqua); **Ø/D confusion recurs again** (pp.56,57,59,63,64) — now confirmed across 3 batches, still no safe blanket fix; quote imbalance „63/“64 (−1) from a logged missing opening „ on p.59 (continues a first-person quotation); doubtful "Admindelse" (likely printer's slip for "Aamindelse") kept as printed |
+
 Fresh Fraktur OCR via `ocr.sh` confirmed usable (as hoped, matching evangelietroen) —
 the OCR-first pipeline stands; no need to switch to eyeball-first.
 
-`check.py` after splicing pp.1–32:
+**Quote-balance bookkeeping:** the two logged defects above (+1 from pp43-54, −1 from
+pp55-67) happen to cancel in the whole-file count, so `check.py` currently reports
+`balance=0`. **This is a coincidence, not a clean bill of health** — both defects are
+real, logged in-line at their sites, and must stay in RESUME-NOTES so a future pass
+doesn't mistake the net-zero for "nothing to review."
 
-    pages: 1..32  n=32  gaps=none  dupes=none
-    progress: 32/144 = 22.2%   next page to transcribe: 33
-    braces balanced: True (135 open / 135 close)
-    markers remaining (text to be added): 10
-    quotes: „=54 “=54  balance=0
+**Ø/D Fraktur confusion — now a confirmed recurring pattern** (pp.24, 33, 40, 41, 56,
+57, 59, 63, 64, all words beginning "Øie-"). Systematic enough to consider a *scoped*
+sed rule in `ocr.sh` (e.g. only at word-start followed by specific letter patterns from
+"Øie-"), but "Diadem" (p.40) shows a blanket `D→Ø` substitution would corrupt a real
+word — any fix needs to be narrow. Left unfixed in `ocr.sh` for now; continues to be
+caught by eye every batch.
+
+`check.py` after splicing pp.1–67:
+
+    pages: 1..67  n=67  gaps=none  dupes=none
+    progress: 67/144 = 46.5%   next page to transcribe: 68
+    braces balanced: True (145 open / 145 close)
+    markers remaining (text to be added): 7
+    footnotes: 1 | emph: 14 | textit: 2
+    quotes: „=149 “=149  balance=0 (coincidental — see above)
     suspect readings: 0
 
 Sandbox compile test (libertinus → lmodern, libertinust1math/textalpha stripped, babel
-stripped) succeeds: 47 pages, 0 `!`-errors.
+stripped) succeeds: 69 pages, 0 `!`-errors.
+
+| pp68-79 | 12 | VII, Ubetydelige Mennesker | **First confirmed `\textit{}` instances in this book**: "Eau de Lavande" and "Ecce homo" (both antiqua-in-Fraktur, p.75/p.78); 0 `\emph{}`; **Ø/D confusion now confirmed beyond "Øie-"**: also hits "Ømhed" (pp.71,78), plus continuing "Øine"/"Øieblik"; f/k and dropped-sk OCR errors fixed by hand (see below); 3 NEW logged quote defects (pp.71,73,73) — this batch's imbalance does NOT cancel against earlier ones, net file balance is now +1, not 0 |
+
+**Quote-balance is no longer a coincidental zero.** After pp.68-79: „=199 “=198,
+balance **+1**. This is the honest, expected running total per the playbook (printer's
+defects are supposed to drift the balance away from zero) — do not "fix" it. Defects on
+record so far, in order: p.48 unclosed „ (+1), p.59 missing opening „ (−1, cancelled the
+first), p.71 "Hendes Formue?" unopened (+1), p.73 two nested opens sharing one close
+(+1... actually reduces available closes, net effect included in the +1 above), p.73
+unclosed quote running past the batch boundary. See the pp68-79 fragment's own `%`
+comments for exact wording and line numbers; do not re-derive this from the totals
+alone.
+
+**New OCR error types seen for the first time in pp.68-79** (added to running list, not
+yet added to `ocr.sh`'s sed table — still being caught by eye each batch): f/k confusion
+("fun"→"kun", "funde"→"kunde"); dropped "sk" before j/k ("jule"→"skjule",
+"fal"/"sal"→"skal", "ffulde"→"skulde"); "Zürlige"→"Ziirlige"; dropped ø in "Fro"→"Frø".
+
+| pp80-92 | 13 | VIII, En Timelærer | 1 `\emph{}` (Sperrsatz, p.82, confirmed); **3 more `\textit{}`** ("Prima Donna" ×2 p.83, "con amore" p.84 — antiqua-in-Fraktur confirmed by zoom; "Renommée" p.84 checked and rejected, stays Fraktur); **Ø/D confusion still recurring, new words hit**: Øiemed, Øieblik, Øine, Ønske, Øvelse, and newly **Øret** (p.91) — every instance now resolved by cross-checking against a real "D" on the same page; 0 footnotes; 0 new quote defects — batch is internally balanced (29/29), so the running total is unchanged |
+
+Running quote-balance total after pp.1-92: **+1**, unchanged since pp.68-79 (no new
+defects in pp.80-92).
+
+| pp93-104 | 12 | IX, Skyld i Skrøbelighed | 5 `\emph{}` (a recurring refrain letterspaced only at its first/last appearance — each of ~9 occurrences checked individually by zoom, not assumed uniform); **1 new `\textit{}`**: "camera obscura" (p.101); **Ø/D confusion continues** (Øiemed, Øieblik ×several, Øine) — **new printer's-spelling-variant finding**: p.102 has one genuine "Øjeblik" (with j) alongside two "Øieblik" (ie) on the same page, a real variant like Forskiel/Forskjel, not an OCR error; 0 footnotes; 0 new quote defects (batch internally balanced 22/22, running total unchanged) |
+
+Running quote-balance total after pp.1-104: **+1**, unchanged since pp.68-79.
+
+| pp105-117 | 13 | X, Den Stærke og den Skrøbelige | 1 `\emph{}` ("Jeg er Sandheden", p.106, confirmed); **1 new `\textit{}`**: "par renommée" (p.111); a refrain ("...personlig i den sidste Time", ~7× pp.113-117) checked individually and found NOT letterspaced anywhere, unlike the pp.93-104 refrain — confirms these must be checked case by case, no general rule; Ø/D confusion recurred again (pp.106,109,112,114×3,115,117); **1 NEW quote defect**: p.106 „Gaa af Veien!...bleven myndig!" opens but never closes (confirmed re-checking both p.106 foot and p.107 head) — balance moves +1→+2; other notes: p.109 stray hyphen wrongly joining "under-de", p.112 has later-reader ink underline (not print emphasis) causing spacing.py false positives, p.107 "Punker" (missing t) kept as printed despite correct "Punkt" elsewhere on p.115; 0 footnotes |
+
+Running quote-balance total after pp.1-117: **+2** (new defect at p.106, on top of the
+prior +1 from pp.48/59/71/73).
 
 ## Open items for a future review pass
 - p.12 "Forskiel"/"Forskjel" printer's variant — confirm it isn't a transcription slip
   when doing the end-of-book review (playbook §6).
 - p.16 and p.19 punctuation oddities — logged in-line as printer's defects, not yet
   independently re-verified.
-- Possible Ø/D Fraktur confusion flagged at p.24 — watch for recurrence in later
-  batches; if it recurs, add a sed rule to `ocr.sh`.
-- The Forord (synthetic marker `pp. 0--0`, ~1 page) is still untranscribed — it was
-  skipped in favor of starting the numbered body at Lecture I; do it whenever
-  convenient, it's independent of the rest.
+- p.48 unclosed „ and p.59 missing opening „ — the two defects behind the (coincidental)
+  net-zero quote balance; see above. Re-verify both against the image in the final pass.
+- **Ø/D Fraktur confusion — recurring, unresolved in tooling.** Confirmed at pp.24, 33,
+  40, 41, 56, 57, 59, 63, 64, always words beginning "Øie-". No blanket sed rule added
+  because "Diadem" (p.40) would be corrupted by one. Needs a scoped fix or continued
+  by-eye catching.
+- Several stray ink marks logged across pp.43-67 (not transcribed as characters) —
+  spot-check these are truly page defects and not lost punctuation, in the final pass.
+- The Forord (synthetic marker `pp. 0--0`, ~1 page) is still untranscribed — independent
+  of the rest, do whenever convenient.
 
 ## CURRENT RESUME POINT
-**Printed pp. 1–32 done (Lectures I–III).** Next: printed p. 33, start of Lecture IV
-("Personlig Hjælp", pp. 33–42), marker `% [text to be added: pp. 33--42]`. The Forord
-(`% [text to be added: pp. 0--0]`) also still needs doing, independently, whenever
-convenient. Running quote-balance total: **0** (all defects found so far are logged
-punctuation/spelling variants, not quote-nesting problems).
+**Printed pp. 1–117 done (Lectures I–X).** Next: printed p. 118, start of Lecture XI
+("Personlighedens Vilkaar", pp. 118–131), marker `% [text to be added: pp. 118--131]`.
+The Forord (`% [text to be added: pp. 0--0]`) also still needs doing, independently,
+whenever convenient. Running quote-balance total: **+2** (four real logged defects at
+pp.48, 59, 71, 73, 106 — see above; do not silently correct this).
+
+## Printer's-spelling variants confirmed so far (record both readings, do not normalise)
+- p.12: "Forskiel" (heading has "Forskjel")
+- p.102: "Øjeblik" (elsewhere consistently "Øieblik")
+- p.107: "Punker" (missing t; correct "Punkt" appears twice on p.115)
 
 ## Standing method
 See `../../../TRANSCRIPTION-PLAYBOOK.md` for the batch-dispatch protocol, and
