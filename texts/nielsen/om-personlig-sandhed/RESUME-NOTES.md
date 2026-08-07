@@ -7,9 +7,14 @@ Boghandling (F. Hegel), 1854. [1] + 144 pp., Fraktur. Same author and genre as
 whole method used here (pagemap.py / ocr.sh / spacing.py / check.py / splice.py /
 BATCH-AGENT.md) — see `../evangelietroen-theologien/` for the fully worked example.
 
-**Status: printed pp. 1–131 transcribed and spliced (Lectures I–XI complete, ~91% of
-the book). Only 13 pages remain, all of Lecture XII (pp. 132–144).** Read
-`../../../TRANSCRIPTION-PLAYBOOK.md` before continuing.
+**Status: TRANSCRIPTION COMPLETE.** All 144 printed pages plus the unfoliated Forord
+are transcribed and spliced. `check.py`: 144/144, 0 gaps, 0 dupes, 0 markers remaining,
+braces balanced, 0 suspect readings. Full two-pass sandbox compile (libertinus→lmodern
+substitution): 117 pages, 0 `!`-errors. Final page (printed p.144) spot-checked against
+the scan image directly in the calling conversation and matches exactly, including the
+closing printed rule with blank space after it (confirmed: no Indhold, no Efterskrift,
+nothing follows). Translation has not been started — see TRANSLATION-PLAYBOOK.md for
+that separate job.
 
 ## Files
 - Scan: `bibliotek/Nielsen, Rasmus/om-personlig-sandhed.pdf` (157 PDF pp., 33.5 MB,
@@ -213,6 +218,14 @@ and 120: do not try to hand-recompute the running total from this list, since so
 defects add an extra opener and others an extra closer; always read the number straight
 off `check.py`'s own quotes line.
 
+| pp132-144 (Lecture XII, final) | 13 | XII, Personlig Stræben: en Slutning | 7 `\emph{}` (parallel "Slutning" predicates, closing clauses, Scripture citations — each checked individually; a 4×-repeated refrain "...Indbildning!" confirmed plain weight at every occurrence, consistent with the pp.105-117 finding that refrains are not automatically emphasised); 0 `\textit{}`; Ø/D confusion checked again at "Østerlandets"/"Øgler", confirmed genuine Ø both times (an OCR-only artifact, never a real ambiguity once zoomed); no display sub-headings (the Lecture XI pattern did not recur); **1 NEW quote defect**: p.133 unclosed „ before "Kommer til mig!" — balance moves +1→+2; **p.144 confirmed as the true final page** — ends with the author's closing address to the audience, then a printed rule and blank space, nothing further in the scan; 0 footnotes |
+| pp0-0 (Forord) | 1 (unfoliated) | Forord | 157 words, no emphasis/letterspacing anywhere on the page; heading and closing signature set in the book's decorative titling face, not Sperrsatz; signed "Kjøbenhavn, d. 1. Mai 1854. / R. Nielsen.", rendered `\begin{flushright}...\end{flushright}`; no quotation marks on the page, nothing to balance |
+
+**FINAL running quote-balance: +2** (309 „ / 307 “, per `check.py`). Seven logged
+printer's defects across the whole book, at printed pp. 48, 59, 71, 73, 106, 120, 133 —
+this is the honest total per the playbook's instruction to transcribe defects as
+printed rather than silently correct them. Do not "fix" this number.
+
 ## Open items for a future review pass
 - p.12 "Forskiel"/"Forskjel" printer's variant — confirm it isn't a transcription slip
   when doing the end-of-book review (playbook §6).
@@ -230,25 +243,48 @@ off `check.py`'s own quotes line.
   of the rest, do whenever convenient.
 
 ## CURRENT RESUME POINT
-**Printed pp. 1–131 done (Lectures I–XI). Only Lecture XII remains.** Next: printed
-p. 132, start of Lecture XII ("Personlig Stræben: en Slutning", pp. 132–144 — the last
-page of the book), marker `% [text to be added: pp. 132--144]`. The Forord
-(`% [text to be added: pp. 0--0]`) also still needs doing, independently — it's the
-only piece of the book left untouched after Lecture XII. Running quote-balance total:
-**+1** per `check.py` (six real logged defects — see above; do not silently correct
-this).
+**Nothing left to transcribe. The book is done.** All twelve lectures plus the Forord
+are in `transcription.tex`; `check.py` shows 0 markers remaining. What's left is
+bookkeeping only:
+1. ~~Update `catalog.yaml`: status → `complete`, add a Transcription link.~~ (done in
+   this same session — see the entry near `id: om-personlig-sandhed`.)
+2. The two-pass sandbox compile is clean, but the **real build** (with `libertinus`,
+   `libertinust1math`, `textalpha`, `babel` actually installed) still needs to happen on
+   the user's own machine — the sandbox substitutes `lmodern` and cannot exercise the
+   real fonts. Confirm the Transcription PDF link resolves after that.
+3. **Translation has not been started.** That's a separate job — see
+   `TRANSLATION-PLAYBOOK.md` at the repo root — whenever the user wants it.
+4. A genuinely optional review pass, listed below, for anyone who wants to tighten
+   things further before calling the transcription fully final; none of it blocks
+   calling this "complete" the way the rest of this repo uses that word (image-verified
+   verbatim transcription, printer's defects transcribed and logged rather than
+   silently fixed).
 
-## Printer's-spelling variants confirmed so far (record both readings, do not normalise)
+## Printer's-spelling variants confirmed (record both readings, do not normalise)
 - p.12: "Forskiel" (heading has "Forskjel")
 - p.102: "Øjeblik" (elsewhere consistently "Øieblik")
 - p.107: "Punker" (missing t; correct "Punkt" appears twice on p.115)
 
-## Structural note for the final pass
-Two mid-lecture display sub-headings appeared for the first time in Lecture XI (p.120,
-p.125), rendered as `\begin{center}\textbf{...}\end{center}` with no precedent macro.
-Watch whether Lecture XII has any of these too, and consider promoting this to a proper
-`\subheading{}`-style command in the preamble during the end-of-book review if the
-pattern recurs.
+## Structural note
+Two mid-lecture display sub-headings appeared, both in Lecture XI only (p.120, p.125),
+rendered as `\begin{center}\textbf{...}\end{center}` with no precedent macro — the
+pattern did not recur in Lecture XII. Left as-is; a future pass could promote this to a
+proper `\subheading{}`-style command in the preamble if it's ever felt to matter, but
+two occurrences don't obviously warrant one.
+
+## Optional future review-pass items (none of these block "complete")
+- p.12 "Forskiel"/"Forskjel", p.102 "Øjeblik"/"Øieblik", p.107 "Punker" — re-verify each
+  is a genuine printer's variant and not a transcription slip.
+- The seven quote-balance defects (pp.48, 59, 71, 73, 106, 120, 133) — re-verify each
+  against the image independently of the batch that first found it.
+- p.132 "Dersom Nogen i selv vil" — flagged as a likely printer's dropped "kke" from
+  "ikke"; transcribed as printed either way.
+- Several stray reader ink-marks and marginal annotations logged across the book
+  (pp.99, 109, 112, 127, 128, 131 and others) — spot-check a sample are genuinely marks
+  and not lost punctuation.
+- The recurring Ø/D Fraktur OCR confusion was never added to `ocr.sh`'s sed table
+  (a blanket rule would corrupt real words like "Diadem") — not a defect in the
+  transcription itself, just a note for anyone re-running OCR on this scan later.
 
 ## Standing method
 See `../../../TRANSCRIPTION-PLAYBOOK.md` for the batch-dispatch protocol, and
