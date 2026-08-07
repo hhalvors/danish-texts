@@ -112,6 +112,13 @@ the new form and let the caller add a macro for it.
   Do not transcribe folios.
 
 ### Transcription conventions
+- **The ABBYY layer turns every Fraktur `x` into `r`.** Tesseract garbles it differently
+  (`forverles` for `forvexles`). The Fraktur x is identifiable at 600 dpi by its right leg
+  dropping below the baseline. Suspect any word where `r` makes no sense.
+- **If your first page completes a word broken at the previous page's foot, verify that
+  word on the image yourself.** Do not trust the joint word as given in your brief or in
+  RESUME-NOTES — it may have come from an agent that never read your page. This has already
+  produced one wrong reading (`ligesaa` for `ligefremme` at the p. 53/54 joint).
 - 19th-century orthography exactly as printed: `Christendommen`, `Videnskaben`,
   `Theologie`, `høiere`, `aa`, capitalised nouns. Do not modernise.
 - Danish quotation marks `„…“` low-high, as printed. Em-dash as `---`.

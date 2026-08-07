@@ -5,12 +5,28 @@ batch loop. The standing method is `../../../TRANSCRIPTION-PLAYBOOK.md`.
 
 ## CURRENT RESUME POINT
 
-**Next: printed p. 54 (PDF 63)** — continue **Første Deel / Andet Capitel, § 7 *Dommens
-logiske Indhold***. **§ 8 *Dommens logiske Totalitet*** has not been reached.
+**Next: printed p. 66 (PDF 75)** — continue **Første Deel / Andet Capitel, § 8 *Dommens
+logiske Totalitet***, which is still running at the foot of p. 65 (its `Anm. 1–4` are all
+done). **Tredie Capitel** (*Det subjective Begrebs Gyldighed: Slutning og Beviis*, §§ 9–11)
+has not been reached.
 
-**p. 53 ends MID-WORD.** The last line closes `den lige%` and p. 54 carries `saa`
-(= "ligesaa"). The trailing `%` is already in place to suppress the space; the pp. 54–65
-fragment must therefore **begin with `saa`**, and its blank line has already been closed up.
+p. 65's foot is **mid-sentence at a clean word boundary**, inside a paragraph
+("…og fastsætter saaledes den bestemte" → p. 66). The blank line above the pp. 66–77
+marker has already been closed up.
+
+### A process lesson worth more than the page it cost
+
+Batch 4 reported that p. 53's broken word `lige=` was completed by **`saa`** on p. 54. It is
+completed by **`fremme`** — the word is *ligefremme*, in "Imod den simple Bekræftelse
+stiller sig den ligefremme Benegtelse". Batch 5 caught it on the image; both OCR witnesses
+agree with batch 5.
+
+The error was mine to catch and I did not: **a batch agent's report about the page after its
+own range is unverified by construction** — it has read that page only glancingly, if at all.
+I copied "saa" into RESUME-NOTES and into batch 5's brief without checking, and only the next
+agent's diligence stopped it entering the text. So: **when a batch ends mid-word, confirm the
+completing fragment against the scan yourself before writing it into the notes, and state it
+in the next brief as something to verify rather than as fact.**
 
 `python3 check.py` prints progress; `bash verify.sh` compiles.
 
@@ -249,6 +265,42 @@ emitting the same warning and losing the letter from their PDF metadata. Harmles
 build; worth a sweep some day.
 
 ## DONE so far
+
+- **Batch 5 (pp. 54–65), image-verified.** Finishes **§ 7** — which closes on p. 55 with **no
+  rule at all** (checked at full autocontrast; the band is blank, what shows is verso
+  bleed-through) — then `\parag{8}{Dommens logiske Totalitet.}`, matching the Indhold word
+  for word. So section ends now run: § 5 double rule, § 6 none, § 7 none. **The book is
+  simply inconsistent here; check each one and record what is there.** `Anm. 1–4` of § 8 all
+  fall in range; **Tredie Capitel not reached**.
+  Also caught **my propagated error on the p. 53/54 joint** — see the process lesson above.
+  **Two glyph-ID cases, both settled on the image:** *forvexles* (p. 55) and *fixere* (p. 58)
+  — the sort is a **Fraktur x**, whose right leg drops below the baseline at 600 dpi. Both
+  engines read "forverles", and **ABBYY turns every Fraktur x on these pages into r**, which
+  is a systematic trap worth remembering. And `o. s. f.` (p. 62) — the first sort's nub is
+  left (long ſ), the second's bar right (f); tesseract read "o. ﬅ ff.", ABBYY "o. s. s.".
+  **Compositor lapses, reproduced not regularised:** p. 59's run takes in "de" and "og" —
+  *de over= og underordnede* spaced entire, while the identical phrase three words later is
+  solid. Conversely p. 62's *analyseres* is spaced but the parallel "synthetisk" is not.
+  That is **four batches running**; treat it as this compositor's habit.
+  Rejected as ABBYY false positives: "Sammenhæng", "Forhold" (p. 54), "Sætningers" (p. 56),
+  "da finder Læren om de" (p. 59), "Domme…Subject" (p. 60).
+  **Printer's defects logged in place:** p. 57 "Mere" with an almost unprinted *e*
+  (tesseract "M.,re", ABBYY "Mvre"); p. 57 a blotted *g* in "dog"; p. 60 "endydermere" set
+  solid; p. 61 near-blind full stop after "forfeiles."; p. 65 a badly under-inked antiqua *B*
+  in "ikke B."; p. 65 **"pricipium"** for *principium*, as printed; p. 65 a comma set inside
+  the closing quote of „og,“, reproduced. The point after the 8 in "§ 8." is the fount's
+  wedge full stop — **both engines read it as a comma**.
+  **Greek: none normalised.** The only Greek is the sub-item pair **α) / β)** on p. 56, plain
+  U+03B1/U+03B2 in italic Greek sorts — genuine labels here, unlike p. 48's wrong-sort β.
+  No breathings or accents; lint clean.
+  **Reader's marks (not transcribed):** pale wavy pencil underline under p. 56 ll. 1–4, same
+  hand as p. 47; a curved pen brace in p. 63's right margin against the last three lines; a
+  small brown pen tick in p. 60's left margin.
+  **Mid-word joints inside the batch**, each already carrying a trailing `%`: p. 56/57
+  ("egent=" / "lige") and p. 59/60 ("under=" / "ordnede"). p. 63/64 is a paragraph break.
+  Compile: **53 pp., 0/0/0/0**; braces 687/687; quotes „48 / “49 = **−1, still only the p. 29
+  defect** (batch internally balanced 6/6); suspect readings 0. Confirmed in the built PDF
+  that the p. 53/54 seam emits a single "ligefremme".
 
 - **Batch 4 (pp. 42–53), image-verified.** Finishes **§ 6** — which ends on p. 46 with **no
   rule at all** (checked at high contrast; contrast the double rule closing § 5 on p. 35,
