@@ -5,14 +5,18 @@ batch loop. The standing method is `../../../TRANSCRIPTION-PLAYBOOK.md`.
 
 ## CURRENT RESUME POINT
 
-**Next: printed p. 66 (PDF 75)** — continue **Første Deel / Andet Capitel, § 8 *Dommens
-logiske Totalitet***, which is still running at the foot of p. 65 (its `Anm. 1–4` are all
-done). **Tredie Capitel** (*Det subjective Begrebs Gyldighed: Slutning og Beviis*, §§ 9–11)
-has not been reached.
+**Next: printed p. 78 (PDF 87)** — continue **Første Deel / Tredie Capitel, § 10
+*Slutningens formelle Gyldighed***. **§ 11 *Slutningens reelle Gyldighed: Beviis og
+Methode*** has not been reached; it closes the Første Deel at p. 96.
 
-p. 65's foot is **mid-sentence at a clean word boundary**, inside a paragraph
-("…og fastsætter saaledes den bestemte" → p. 66). The blank line above the pp. 66–77
-marker has already been closed up.
+**p. 77 ends MID-WORD.** The last body line closes `bliver et%` and p. 78 opens
+`hvert universale selv enkelt: …` — the word is ***ethvert***. Batch 6 read that
+continuation on the image itself (PDF 87) rather than taking it on report, per the lesson
+below. The trailing `%` is in place and the blank line is already closed up, so the
+pp. 78–89 fragment must **begin with `hvert`**.
+
+**The p. 80 errata falls in the next batch:** l. 3 fra oven, `Omsætningen` → **`Oversætningen`**,
+to be applied inline and flagged with `% ERRATA`.
 
 ### A process lesson worth more than the page it cost
 
@@ -265,6 +269,52 @@ emitting the same warning and losing the letter from their PDF metadata. Harmles
 build; worth a sweep some day.
 
 ## DONE so far
+
+- **Batch 6 (pp. 66–77), image-verified.** Closes **§ 8 and the Andet Capitel** at p. 68,
+  opens **Tredie Capitel** with **§ 9 *Slutningens logiske Reqvisiter*** and
+  **§ 10 *Slutningens formelle Gyldighed***; all heads match the Indhold word for word.
+  **The section-end rule is now understood:** p. 68's rule was *measured* — 301 px, two ~4 px
+  rules with a ~4 px gap — against p. 35's 305 px, identical build. So it is **the same
+  ornament in both places**, and since p. 35 falls mid-Capitel while p. 68 falls at a Capitel
+  end, **the rule is not a Capitel marker**. § 9 ends with no rule. Running tally of section
+  ends: § 5 rule, § 6 none, § 7 none, § 8/Capitel rule, § 9 none.
+  **German is now typed RAW.** This batch brought the book's first **ß** (the Hegel „der
+  Schluß ist nicht nur vernünftig…"). The agent conservatively wrote `\ss{}` and `\"u`; I
+  tested raw `ß ä ö ü Ä Ö Ü` under T1 fontenc, found them native and identical in output, and
+  converted the whole file (3 `\ss{}`, 7 umlaut commands, incl. p. 32's „Qvidität"). Verified
+  in the built PDF. Much more German follows in the Anden Deel, so keeping it raw matters for
+  readability; BATCH-AGENT.md now lists the full set of characters that may be typed raw.
+  **Two glyph-ID readings kept as printed, alternatives rejected:** **φαλαρκός** (p. 71) with
+  ρκ where κρ is wanted — the rho's descender precedes the baseline-only ϰ at 6× — and
+  **σοφιστιχῶν** (p. 72) with a **χ** where κ belongs, that glyph carrying the same long
+  descender as the χ of ἐλέγχων, unlike p. 71's ϰ. Greek normalised: ϱ→ρ, ϰ→κ (φαλαρκός,
+  περὶ, σωρείτης, παράδοξα). Lint clean.
+  **Fraktur x confirmed throughout** against ABBYY's systematic x→r (Extremer, Reflexer,
+  t. Ex., Alexander).
+  **Antiqua → `\textit{}`:** the *ratiocinium* series, *conclusum/conclusio*, *terminus
+  minor/major/medius*, *propositio major/minor*, *Ex meris…*, *nota notæ est nota rei
+  ipsius*, *Elenchus in dictione*, *partitio*, *implicite* (p. 70 — antiqua, verified against
+  the Fraktur beside it), *universalia/res/universale*, and the E–S–A schema letters. Note the
+  Danish **"eller" inside `(conclusum eller conclusio…)` is itself antiqua**, so the whole
+  parenthesis is italicised. German quotations stay Fraktur.
+  **Printer's defects logged in place:** p. 67 no full stop after `(partitio)` (set `\quad`
+  per p. 40); p. 71 near-blind point after "Sophistik." and near-blind comma after
+  ψευδόμενος; p. 74 **"auden"** for *anden*; **p. 75 a SECOND "Anm. 1." inside § 10** —
+  unmistakable at 4×, both witnesses agreeing, so § 10 has two Anm. 1; p. 75 a stray
+  mid-height stroke after "dydig," logged as press debris and *not* transcribed (an intended
+  dash was rejected); p. 76 a near-blind *r* in "Fremskridt" and an ink speck over the *m* of
+  "fremhæves"; "fiirbenet" with a doubled i (tesseract "fürbenet", ABBYY "fiirbenet").
+  **Compositor lapse, fifth batch running:** on p. 77 `Det Enkelte er kun Enkelt` takes in
+  "er kun", while `bliver` stays solid before `det Enkelte almindeligt`. Rejected as false:
+  dicat/der (68), eer (69), jule/ife (71), viser (74), iet (76).
+  **Two new layout forms**, neither tripping `check.py`'s hand-rolled-head test: the displayed
+  three-line Latin syllogism on p. 71 (`\begin{center}` + `\textit{}`, resumption carries
+  `\noindent`) and the 1)/2)/3) hanging list on p. 70 (plain `itemize`).
+  **Scan artefacts (not transcribed):** p. 68 the scan's colour balance **flips to magenta at
+  the rule** — straight-edged, type undisturbed, a scanner artefact not an ink change; p. 66 a
+  pencil stroke under "maa" and a margin tick, same hand as pp. 47/56.
+  Compile: **63 pp., 0/0/0/0**; braces 775/775; quotes „66 / “67 = **−1, still only the p. 29
+  defect** (batch internally balanced 18/18); suspect readings 0.
 
 - **Batch 5 (pp. 54–65), image-verified.** Finishes **§ 7** — which closes on p. 55 with **no
   rule at all** (checked at full autocontrast; the band is blank, what shows is verso

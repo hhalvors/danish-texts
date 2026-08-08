@@ -62,10 +62,16 @@ PDF 10–292. It is already verified three ways; do not re-derive it.
    balanced braces, balanced `„`/`“` (or a logged printer's defect that explains the
    imbalance). Do not compile — the caller runs `bash verify.sh` after splicing.
    **Do not introduce a raw non-ASCII character that the preamble does not already
-   handle.** `ɔ` (U+0254) is set up via `\DeclareUnicodeCharacter`; Greek is set up via
-   `textalpha`. Anything else new — an unusual dash, a symbol, a diacritic the book uses
-   once — must be reported, not just typed, because it will be a fatal error on the
-   user's machine while looking fine in the sandbox.
+   handle.** Anything new — an unusual dash, a symbol, a diacritic the book uses once —
+   must be reported, not just typed: it will be fatal on the user's machine while looking
+   fine in the sandbox. Already available, type these RAW and do not use accent commands:
+
+   - Danish `æ ø å Æ Ø Å` and the Danish quotes `„ “`
+   - **German `ß ä ö ü Ä Ö Ü`** — T1 fontenc covers these natively (tested). Much German
+     follows in the Anden Deel; keep it raw and readable, not `\ss{}` / `\"u`.
+   - polytonic Greek **base** letterforms, via `textalpha` (but see the normalisation rule)
+   - `\dsi` for the id-est sign ɔ: — `ɔ` needs `\DeclareUnicodeCharacter` and is set up
+   - `\&c.` for the Fraktur r-rotunda *et cetera*; raw U+A75B ꝛ is NOT available (tested)
 
 ### Use the preamble macros — do not hand-roll display heads
 Defined in `transcription.tex`; `check.py` counts them and flags hand-rolled
