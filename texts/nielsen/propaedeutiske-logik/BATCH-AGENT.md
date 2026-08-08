@@ -39,51 +39,64 @@ PDF 10–292. It is already verified three ways; do not re-derive it.
 
 ### Steps
 
-0. **BUILD A RENDER CACHE FIRST.** The scan is 105 MB and `pdftoppm` costs **9.5 s a page at
-   300 dpi, 23 s at 600**, every time. Re-rendering a page for each zoom is where batches 3–8
-   lost most of their wall time — measured at **50–60 minutes** on a twelve-page batch.
-   Slicing the PDF first does *not* help (tested: the cost is rasterising the bitmap, not
-   seeking). So render the whole range once, at 600 dpi, into a `mktemp -d`:
+0. **THE RENDER CACHE ALREADY EXISTS. DO NOT RENDER ANYTHING.**
 
-       D=$(mktemp -d); echo "$D"
-       SCAN="$(python3 pagemap.py --scan)"
-       pdftoppm -f <firstPDF> -l <lastPDF> -r 600 -png "$SCAN" "$D/pg"
+       /sessions/<id>/tmp/pgcache/pg-<PDFpage>.png     600 dpi, PDF 190--292
 
-   ~23 s and ~11 MB a page. **The bash timeout varies between sessions — it has been seen at
-   ~178 s and at ~37 s.** Do not assume: the robust recipe is **one page per bash call, with
-   all the calls issued in parallel in a single message.** A six-page chunk that works one day
-   is killed part-way the next. Files come out named `pg-<PDFpage>.png`, so there is no glob
-   ambiguity and no stale-file trap. **Never write it inside the repo.**
+   Every page from printed 181 to the end of the book is already there, named by **PDF** page
+   (printed + 9). Check with `ls`. Only if a page you need is genuinely absent should you render
+   it yourself — `pdftoppm` costs 23 s a page at 600 dpi and there is no reason to pay it twice.
+   Do not delete the cache when you finish; later batches use it.
 
-   Also render the page **before** your range (for the joint) and, if your last page breaks a
-   word, the page **after** it — you need both, and they cost one call each.
+   **WHY THIS MATTERS, AND THE ONE NUMBER TO KEEP IN MIND.** Wall time on this job is almost
+   entirely a function of **how many tool calls you make** — measured across thirteen batches,
+   **0.35–0.53 minutes per call**, regardless of what the call does. A batch of 90 calls took
+   31 minutes; a batch of 313 calls took 162 minutes for the same twelve pages and no more
+   accuracy. So the thing to economise is **round trips**, not seconds.
 
-   `ocr.sh` and `spacing.py` call `pdftoppm` internally and will time out on a short cap.
-   If that happens, drive tesseract straight off your cached PNGs instead.
+   Three rules follow, and they matter more than any micro-optimisation:
 
-   Thereafter **do not call `pdftoppm` again**. Every page read and every zoom is a PIL crop
-   from the cache at ~0.3 s, so a 10× look at one glyph is free — which is what makes the
-   decisive checks affordable. Downsample for a whole-page read, crop tight for a zoom.
-   Delete the cache and your crops when you finish.
+   **(a) Read images in CONTACT SHEETS, not one at a time.** Every `Read` of a crop is a full
+   round trip. Do not Read forty crops. Build a single PNG containing eight or twelve labelled
+   crops — stacked vertically with a `PIL.ImageDraw` caption over each — and Read that once.
+   Batch your zooms: collect the doubtful spots for a page (or for three pages), make one sheet,
+   look once. This is the single biggest saving available to you.
+
+   **(b) Do all of a page's measurement in ONE bash call.** Ink profiles, rule sweeps, x-heights,
+   gap statistics, gap-to-glyph ratios — write one python script that computes everything you
+   want about a page or a range and prints a table. Do not issue a call per measurement.
+
+   **(c) Combine the fixed setup into one call.** `ocr.sh`, `spacing.py` and the `pdftotext`
+   second witness can be run in a single bash invocation, as can any `ls`/`grep`/`tail` you need.
+
+   `ocr.sh` and `spacing.py` invoke `pdftoppm` internally and will be slow or time out. Prefer
+   driving `tesseract` straight off the cached PNGs, in one call for the whole range.
 
 1. `export TESSDATA_PREFIX=/tmp/tessdata` (the Fraktur model is already there; if
    `Fraktur.traineddata` is missing, stop and say so — do not try to fetch it).
-2. `bash ocr.sh FIRST N` — Fraktur OCR for the batch. **Run this alone**, with a timeout of
-   at least **300000 ms**: the scan is 105 MB and `pdftoppm` seeks slowly, ~6 s a page.
-3. `python3 spacing.py FIRST … LAST` — mechanical letterspacing detection. A **RUN** is
-   nearly always real emphasis; a **single?** is often noise and needs the image.
-4. **Second witness, free:** `pdftotext -f P -l P -layout "$SCAN" -` gives the PDF's own
-   ABBYY layer. It fails differently from tesseract (loses æ/ø, reads Fraktur I as J), so
-   where the two agree the reading is safe and where they differ, look at the image.
+2. **In ONE bash call**, off the cached PNGs (not via `ocr.sh`, which re-renders):
+   run `tesseract "$CACHE/pg-<P>.png" stdout -l Fraktur --psm 6` over your whole range with
+   the `sed` table copied out of `ocr.sh`, and `pdftotext -f P -l P -layout "$SCAN" -` for the
+   **second witness** — the ABBYY layer, which fails differently from tesseract (loses æ/ø,
+   reads Fraktur I as J, turns every Fraktur x into r and every Fraktur E into G). Where the
+   two agree the reading is safe; where they differ, go to the image.
+3. `spacing.py` also re-renders, so either accept that cost once for the range or reimplement
+   its least-squares fit over the cached PNGs. Its **RUN**s are nearly always real emphasis;
+   its **single?**s are often noise; it has false negatives on short words (it cannot see a
+   letterspaced two-letter `er` at all) and its residuals are inflated on pages with much
+   antiqua. It narrows the search; it never settles a call.
 5. Read **every** page from the step-0 cache. The OCR carries the words; only the image
    carries paragraphing, the display heads, the rules and the emphasis. Downsample the
    cached 600 dpi PNG for a whole-page read; crop tight for a zoom.
+   **Two or three whole pages fit legibly on one contact sheet** at reading scale — use that
+   for the first pass over the batch, then a second sheet of tight zooms for the doubtful
+   spots. Aim for something like **5–8 image Reads for a twelve-page batch, not forty.**
    **Address cache files by their PDF page number** (`pg-118.png`), never by
    `glob(...)[0]` — a shared directory plus `009` sorting before `068` has already produced
    one confident verification of entirely the wrong page.
    Write crops into the **outputs** folder and `Read` them from there; the sandbox `/tmp` is
    invisible to the file tools. **Never write a scratch file — above all a PNG — inside the
-   repo.** Clean up the cache and your crops when you are done.
+   repo.** Delete your own crops when you are done, but **leave the page cache in place.**
    **Measure, do not eyeball, anything that turns on a faint or thin mark.** A rule the
    compositor under-inked is invisible in a casual look and obvious in a row-by-row scan:
    I deleted a real rule from `\deel` in batch 1 by looking at a crop and seeing white.
@@ -195,6 +208,21 @@ column of stray `|`, `l`, `i`, `:` at the right margin — ignore it.
 
 **Scan caveat:** printed p. 96 (PDF 105) carries a previous reader's yellow highlighter
 across the Sibbern quotation. It is not a printing feature.
+
+### Budget
+
+Wall time is ~0.4 min per tool call, so **aim for under ~90 tool calls for a twelve-page
+batch.** Batches that ran 130–313 calls were not more accurate than the one that ran 90; they
+just made more round trips. Concretely, a good shape is:
+
+- 1 call: `ls` the cache, run tesseract over the range, run the `pdftotext` second witness
+- 1–2 calls: all per-page measurement scripts (rules, x-heights, spacing statistics)
+- 5–8 image Reads: contact sheets, not single crops
+- 1 call: write the fragment; 1 call: self-check braces/quotes/markers
+- a handful for the joint pages and any genuinely doubtful glyph
+
+**Never trade accuracy for calls.** If a reading needs a 12× look, take it — but put it on a
+sheet with the other doubtful readings rather than spending a round trip on it alone.
 
 ### What to return
 150 words at most: pages written; the `\emph{}` / `\textit{}` decisions you made and what

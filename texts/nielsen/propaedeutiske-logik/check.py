@@ -90,6 +90,10 @@ QUOTE_DEFECTS = [
     (124, +1, "„Logische Untersuchungen, 1ster Band Pag. 46=55) never closes its „"),
     (142, -1, "Hegel quotation CLOSES with “ after Aeußeres but was never opened — "
               "clean word-space paper between the colon and So, verified twice"),
+    (195, -1, "Wissen quotation CLOSES with “ (…sinnliches Wissen“.) and was never "
+              "opened — clean paper between the comma and 'ist'; ABBYY agrees"),
+    (223, +1, "„Ideens fuldkomne Selvmeddelelse i sine naturlige Producter … never "
+              "closes its „ (both witnesses agree)"),
 ]
 
 # A quotation may legitimately be OPEN at the transcription frontier: p.180 opens a
@@ -97,7 +101,10 @@ QUOTE_DEFECTS = [
 # must not be logged as one — it disappears when the next batch is spliced. List any
 # such span here with the page whose splice closes it, and REMOVE the row then.
 OPEN_AT_FRONTIER = [
-    (181, +1, "Schelling quotation opened p.180 („…) closes on p.181 (bezeichnen kann“)"),
+    # (181, +1, ...) removed: pp.181- are spliced, so that span now closes in-file.
+    # NB the Bacon span open across p.240/241 is a PARENTHESIS and an italic run, not a
+    # quotation: it involves no „ or “ and so has NO effect on this balance. Recorded in
+    # RESUME-NOTES instead. Do not add non-quote spans here.
 ]
 
 op, cl = body.count("„"), body.count("“")
@@ -135,8 +142,8 @@ CHECKS = [
     # technical term; Jord/Ja/Jo/Jordan are ordinary words; Jfr is the standard
     # "jævnfør" abbreviation; and Jacobi is F. H. Jacobi. All correct as J.
     # "Just" (= netop) is an ordinary Danish adverb and is printed with J; both
-    # OCR witnesses agree on it at p.53.
-    (r"\bJ(?!eg\b|eg[a-zæøå]|ord|a\b|o\b|ordan|fr\b|acobi|ust\b)[a-zæøå]{2,}",
+    # OCR witnesses agree on it at p.53. "Jern"/"Jernet" (p.209) and "Jesuitismens" (p.238) likewise.
+    (r"\bJ(?!eg\b|eg[a-zæøå]|ord|a\b|o\b|ordan|fr\b|acobi|ust\b|ern|esuit)[a-zæøå]{2,}",
      "Fraktur I read as J (Jdee, Jndhold, ...)", body, 0),
     # A straight " used as a quotation mark. Not preceded by a backslash: \" is
     # the umlaut accent command (\"a for ä in "Qvidit\"at", printed p. 32), and
