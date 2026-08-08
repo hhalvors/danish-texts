@@ -38,6 +38,27 @@ it to mount. Every script needs it.
 PDF 10–292. It is already verified three ways; do not re-derive it.
 
 ### Steps
+
+0. **BUILD A RENDER CACHE FIRST.** The scan is 105 MB and `pdftoppm` costs **9.5 s a page at
+   300 dpi, 23 s at 600**, every time. Re-rendering a page for each zoom is where batches 3–8
+   lost most of their wall time — measured at **50–60 minutes** on a twelve-page batch.
+   Slicing the PDF first does *not* help (tested: the cost is rasterising the bitmap, not
+   seeking). So render the whole range once, at 600 dpi, into a `mktemp -d`:
+
+       D=$(mktemp -d); echo "$D"
+       SCAN="$(python3 pagemap.py --scan)"
+       pdftoppm -f <firstPDF> -l <lastPDF> -r 600 -png "$SCAN" "$D/pg"
+
+   ~23 s and ~11 MB a page. **The sandbox kills a bash call at ~178 s, so chunk it** — about
+   six pages per call, and independent chunks can run in parallel in one message. Files come
+   out named `pg-<PDFpage>.png`, so there is no glob ambiguity and no stale-file trap.
+   **Never write it inside the repo.**
+
+   Thereafter **do not call `pdftoppm` again**. Every page read and every zoom is a PIL crop
+   from the cache at ~0.3 s, so a 10× look at one glyph is free — which is what makes the
+   decisive checks affordable. Downsample for a whole-page read, crop tight for a zoom.
+   Delete the cache and your crops when you finish.
+
 1. `export TESSDATA_PREFIX=/tmp/tessdata` (the Fraktur model is already there; if
    `Fraktur.traineddata` is missing, stop and say so — do not try to fetch it).
 2. `bash ocr.sh FIRST N` — Fraktur OCR for the batch. **Run this alone**, with a timeout of
@@ -47,14 +68,20 @@ PDF 10–292. It is already verified three ways; do not re-derive it.
 4. **Second witness, free:** `pdftotext -f P -l P -layout "$SCAN" -` gives the PDF's own
    ABBYY layer. It fails differently from tesseract (loses æ/ø, reads Fraktur I as J), so
    where the two agree the reading is safe and where they differ, look at the image.
-5. Render and read **every** page at 200–300 dpi, single-page. The OCR carries the words;
-   only the image carries paragraphing, the display heads, the rules and the emphasis.
-   Use `mktemp -d` + `pdftoppm -f P -l P -r 300 -png -singlefile "$SCAN" "$D/page"`.
-   **Never `glob('/tmp/pg*.png')[0]`** — `/tmp` is shared and `009` sorts before `068`,
-   so you will silently verify the wrong page. This has happened.
-   To zoom, crop with PIL into the **outputs** folder and `Read` the crop from there; the
-   sandbox `/tmp` is invisible to the file tools. **Never write a scratch file — above all
-   a PNG — inside the repo.** Clean up your crops when you are done.
+5. Read **every** page from the step-0 cache. The OCR carries the words; only the image
+   carries paragraphing, the display heads, the rules and the emphasis. Downsample the
+   cached 600 dpi PNG for a whole-page read; crop tight for a zoom.
+   **Address cache files by their PDF page number** (`pg-118.png`), never by
+   `glob(...)[0]` — a shared directory plus `009` sorting before `068` has already produced
+   one confident verification of entirely the wrong page.
+   Write crops into the **outputs** folder and `Read` them from there; the sandbox `/tmp` is
+   invisible to the file tools. **Never write a scratch file — above all a PNG — inside the
+   repo.** Clean up the cache and your crops when you are done.
+   **Measure, do not eyeball, anything that turns on a faint or thin mark.** A rule the
+   compositor under-inked is invisible in a casual look and obvious in a row-by-row scan:
+   I deleted a real rule from `\deel` in batch 1 by looking at a crop and seeing white.
+   The reliable method for rules is the longest contiguous dark run per pixel row, with the
+   threshold varied (a rule at 108/203 ink vanishes at a <150 cut and shows at <190).
 6. Write the batch to `.parts/ppFIRST-LAST.texfrag` — exactly the text that will replace
    the marker line `MARKER`, beginning with `% --- p. FIRST ---`. Do **not** touch
    `transcription.tex`.
@@ -79,9 +106,11 @@ Defined in `transcription.tex`; `check.py` counts them and flags hand-rolled
 
 | Printed form | Write |
 |---|---|
-| Part opening (double rule + "Den propædeutiske Logiks" + Deel line + argument) | `\deel{Første Deel:}{Læren om det subjective Begreb.}` |
+| Part opening (full-measure double rule + "Den propædeutiske Logiks" + Deel line + argument + a short ~0.20 rule) | `\deel{Første Deel:}{Læren om det subjective Begreb.}` |
 | Chapter head (bold letterspaced label + argument one size down) | `\capitel{Første Capitel.}{Det subjective Begrebs Dannelse.}` |
 | `§ N.` centred, then centred bold letterspaced argument | `\parag{1}{Almeenforestillingen.}` |
+| Tail ornament ending a **§** | `\secrule` — ~0.20 of measure, **two** thin rules |
+| Tail ornament ending a **top-level division** | `\divrule` — ~0.27, one swelled band |
 | The bold letterspaced `A n m. 2.` lead-in | `\anm{2} Text of the remark…` |
 | `Indledning.` as a top-level division (pp. 1 and 97) | `\division{Indledning.}` |
 | The Indledning's roman-numeral sections (I., II.) | `\romsec{I.}{Den formelle og speculative Logik.}` |

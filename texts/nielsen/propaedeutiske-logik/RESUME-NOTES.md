@@ -5,7 +5,27 @@ batch loop. The standing method is `../../../TRANSCRIPTION-PLAYBOOK.md`.
 
 ## CURRENT RESUME POINT
 
-**THE FØRSTE DEEL IS COMPLETE — printed pp. 1–96 done.**
+**Next: printed p. 109 (PDF 118)** — continue **anden Deel / Første Capitel**. § 12 ran past
+p. 108 and **§ 13 *Væren og Væsen*** has not been reached. p. 108 ends **mid-sentence at a
+word boundary** ("Den ideelle Bevægelse i Væsenets" → p. 109 "og Nødvendighedens Evighed og
+den reelle Forandring i"), so the blank line above the pp. 109–120 marker **must be closed up**.
+
+**The next errata is p. 112**: l. 4 *fra neden*, `Daddel` → **`Dadel`**. Note this one is
+counted **from the bottom**, unlike pp. 80/92/93.
+
+## ALWAYS BUILD THE RENDER CACHE FIRST (added batch 9)
+
+`pdftoppm` on this 105 MB scan costs **9.5 s a page at 300 dpi, 23 s at 600**, every time.
+Batches 3–8 lost **50–60 minutes each** to re-rendering the same page for successive zooms.
+Slicing the PDF first does **not** help — the cost is rasterising the bitmap, not seeking.
+
+Render the batch once at 600 dpi into a `mktemp -d`, chunked at ~6 pages per bash call (the
+sandbox kills a call at ~178 s; independent chunks can run in parallel), then do every read
+and every zoom as a PIL crop at ~0.3 s. Batch 9 confirmed it: ~4.5 min of rendering, then ~45
+reads and zooms for free, and it is what made the decisive checks affordable — the 0.20 rule,
+a u/n tick at 9×, a doubtful point at 10×. Step 0 of BATCH-AGENT.md now mandates it.
+
+## THE FØRSTE DEEL IS COMPLETE — printed pp. 1–96 done.
 
 **Next: printed p. 97 (PDF 106)** — the opening of the **anden Deel**. The next batch
 (pp. 97–108) starts a Part, so it must place:
@@ -314,6 +334,51 @@ emitting the same warning and losing the letter from their PDF metadata. Harmles
 build; worth a sweep some day.
 
 ## DONE so far
+
+- **Batch 9 (pp. 97–108), image-verified. THE ANDEN DEEL IS OPEN.**
+  `\deel{anden Deel:}{Læren om det objective Begreb.}` — **lowercase `anden`, with a colon**,
+  confirmed at 8× by the agent and by me at 450 dpi; `\division{Indledning.}`;
+  `\parag{12}{Den dialektisk=speculative Methode.}`. **The printed § 12 argument DOES carry a
+  final period**, and its connector is the Fraktur **double hyphen `=`**, not a hyphen — true
+  on the body head *and* in the Indhold on PDF 9. My front-matter Indhold entry had a plain
+  `-`; corrected.
+  **A rule I wrongly deleted, now restored.** In batch 1 I looked at a 400 dpi crop of p. 6,
+  saw white between the Deel argument and the Capitel head, removed the short rule from
+  `\deel`, and left a comment here asserting it did not exist. It does. Batch 9 measured it;
+  I re-measured independently at 300 dpi by longest contiguous dark run per row over a 1532 px
+  measure, and both Deel openings carry it at the **same height, y/H = 0.365**:
+  p. 6 at 295–298 px = **0.193–0.195** of measure, **solid** (darkest 76 against paper 204);
+  p. 97 at 310 px = **0.202**, **under-inked** (darkest 108 against paper 203). p. 97's
+  vanishes at a `<150` threshold and appears at `<190` — which is presumably how p. 6's was
+  missed too. **So the book has THREE ornaments, and width alone does not identify them:**
+  `\deel`'s rule ~0.20 one thin band; `\secrule` ~0.20 **two** thin bands; `\divrule` ~0.27
+  one swelled band. **The lesson, now in BATCH-AGENT.md step 5: measure, do not eyeball,
+  anything turning on a faint or thin mark, and vary the threshold.**
+  **No tail ornament in range** — all twelve pages swept; § 12 runs past p. 108.
+  **Emphasis** (21 `\emph`, ABBYY overruled repeatedly): *objective* alone p. 99; *Aprioritet*,
+  *logisk*, *existentiel*, and *Nødvendige* og det *Tilfældige* **with "og det" solid —
+  eighth consecutive batch**; p. 102 has the compositor **contradicting himself inside four
+  lines**, spacing *kritisk*, *dialektisk*, *kritisk=dialektisk*, *Anvendelse*, *lægges til
+  Grund*, then setting "kritisk" and "dialektisk" tight eleven lines later; **the two-letter
+  word *er* is spaced three times on p. 103**, which `spacing.py` cannot see at all;
+  *Anticipationens*, *Reservationen*, *forudfattet*, *Sagen bevæger sig selv*, *gaae over*,
+  *gaaer over*. 30 `\textit` for antiqua — note Latin compounds take an ordinary hyphen, not
+  the Fraktur `=`.
+  **Printer's defects, as printed and logged:** near-blind Fraktur *d* in **Begrebsreduction**
+  (p. 98 — the preceding sort is the same *r* as in "-gre-", so *Begrebsdeduction* rejected);
+  **Idenditet** for *Identitet* (p. 99); **a full stop after "dobbelt"** where the sentence
+  runs on into "Synsmaade" (p. 100 — both witnesses see a mark; comma and debris rejected);
+  a stray bar over the second *n* of "kunne" (p. 101, logged not transcribable);
+  **Grnndens** for *Grundens* (p. 102 — settled at 9× against the correct "Grund" two lines
+  below: in this fount u and n differ only by a tick, and neither minim carries it);
+  near-blind antiqua *e* in "mente" (p. 107). Press debris, not transcribed: short strokes in
+  the word spaces of "videnskabelige Fortrin" (p. 106) and "en Række af" (p. 107).
+  **Greek:** one normalisation, ϱ→ρ in *μέτρον πάντων* (p. 99). Lint clean.
+  **Reader's marks:** the pp. 34/96 yellow highlighter recurs on **p. 98 and p. 107**
+  (detected mechanically by background level, 210→189 and 203→178); a pencil corner-bracket at
+  p. 98's "Anm. 1." and a matching pencil `]` on p. 99. Type solid underneath.
+  Compile: **83 pp., 0/0/0/0**; braces 957/957; quotes „109 / “109 = raw 0, matching the two
+  logged defects; suspect readings 0.
 
 - **Batch 8 (pp. 90–96), image-verified. FØRSTE DEEL COMPLETE. Two errata applied.**
   **p. 92 errata applied:** the phrase runs across the line break — l. 13 ends "…den anden:

@@ -184,8 +184,24 @@
 %   #2 = the Deel argument ("Læren om det subjective Begreb.")
 % VERIFIED on printed p.6 at 400 dpi (batch 1): "Den propædeutiske Logiks" and
 % the Deel line are bold but NOT letterspaced; only the Deel ARGUMENT is
-% letterspaced. And there is NO short centred rule between the argument and the
-% Capitel head that follows — the earlier note claiming one was wrong.
+% letterspaced.
+%
+% THE SHORT RULE UNDER THE DEEL ARGUMENT IS REAL. Batch 1 (me) looked at a 400 dpi
+% crop of p. 6, saw white, and deleted it, leaving a comment here denying it
+% existed. That was wrong, and it was wrong because looking is not measuring.
+% Batch 9 measured it; I then re-measured independently at 300 dpi, by longest
+% contiguous dark run per pixel row over a 1532 px measure, and both Deel openings
+% carry it at the SAME height, y/H = 0.365:
+%     p.  6  295--298 px = 0.193--0.195 of measure, SOLID (darkest 76, paper 204)
+%     p. 97  310 px     = 0.202 of measure,  UNDER-INKED (darkest 108, paper 203)
+% p. 97's is faint enough to vanish at a <150 threshold, which is presumably how it
+% was missed on p. 6 too.
+%
+% So this is a THIRD ornament, distinct from both of the tail rules:
+%     \deel's rule  ~0.20 of measure, ONE thin rule, under a Deel argument
+%     \secrule      ~0.20,            TWO thin rules, at a § end
+%     \divrule      ~0.27,            one swelled band, at a division end
+% Width alone does not identify an ornament here — the number of bands matters.
 \newcommand{\deel}[2]{%
   \par\vspace{1.2\baselineskip}%
   \noindent\rule{\linewidth}{1.2pt}\par\vspace{2pt}%
@@ -195,7 +211,9 @@
     {\bfseries #1\par}\vspace{0.35\baselineskip}
     {\Large\bfseries\emph{#2}\par}
   \end{center}
-  \vspace{0.5\baselineskip}
+  \vspace{0.45\baselineskip}
+  \begin{center}\rule{0.20\linewidth}{0.4pt}\end{center}
+  \vspace{0.45\baselineskip}
   \phantomsection
   \addcontentsline{toc}{section}{\texorpdfstring{#1\quad #2}{#1 #2}}%
   \markboth{#1\ #2}{#1\ #2}%
@@ -374,7 +392,10 @@
 % ---- PDF 9 ----
 \begin{center}{\bfseries Anden Deel.}\\ {\bfseries\emph{Læren om det objective Begreb.}}\end{center}
 \begin{center}\emph{Indledning.}\end{center}
-\S\,12.\quad Den dialektisk-speculative Methode.\par
+% The connector is the Fraktur DOUBLE hyphen "=", not a plain hyphen, on PDF 9 as
+% well as on the body head at p.97 (both checked on the image). The plain "-" here
+% was a front-matter slip of mine, not a printed variant.
+\S\,12.\quad Den dialektisk=speculative Methode.\par
 
 \begin{center}{\bfseries\emph{Første Capitel.}}\\ Det objective Begrebs Dannelse.\end{center}
 \S\,13.\quad Væren og Væsen.\par
@@ -3824,7 +3845,565 @@ Philosophiens Begreb, Natur og Væsen. Pag. 24; 81).
 % p.97 opens with the double rule + "anden Deel:" (LOWERCASE as printed) +
 % Indledning + § 12. Batch boundaries are aligned so that p.97 starts a batch.
 
-% [text to be added: pp. 97--108]
+% --- p. 97 ---
+% ============================================================================
+%  THE anden Deel OPENS HERE.  All of the following was verified on PDF 106 at
+%  600 dpi (whole-page render, then 3--10x PIL crops).
+%
+%  HEAD, top to bottom, as printed:
+%    1. a FULL-MEASURE DOUBLE RULE — a heavy band (rows 617--636 at 600 dpi,
+%       ~20 px) over a thin one (rows 642--649), both x 397--3170, i.e. 2773 px,
+%       which IS the measure. \deel emits this; it is not repeated here.
+%    2. "Den propædeutiske Logiks" — large bold Fraktur, not letterspaced.
+%    3. "anden Deel:" — bold Fraktur, LOWERCASE a, WITH A COLON. Checked at 8x:
+%       the a has no ascender and is the same sort as the a of "anden" in the
+%       body. This stands against p. 6's "Første Deel:" and against the Indhold's
+%       "Anden Deel." (PDF 9, re-checked on the image). All three readings are on
+%       record in the file header; none is normalised. The lowercase is what
+%       p. 97 sets.
+%    4. "Læren om det objective Begreb." — largest, bold, clearly LETTERSPACED,
+%       and it carries a final period.
+%    5. A SHORT CENTRED RULE. See the note below — this is a correction.
+%    6. "Indledning." (this Deel has its own Indledning), then "§ 12." and its
+%       argument. NB the structural asymmetry, which is the book's and is not
+%       tidied: the Første Deel's Indledning had sections I./II. and no §§,
+%       whereas THIS Indledning IS § 12.
+%
+%  CORRECTION TO THE RECORD — THE SHORT RULE UNDER THE DEEL ARGUMENT IS REAL.
+%  The comment on \deel in the preamble says there is NO short centred rule
+%  between the Deel argument and what follows, and that the earlier note claiming
+%  one was wrong. The earlier note was right. Measured, at 600 dpi, by the
+%  longest contiguous dark run per pixel row against a 2773 px measure:
+%      printed p. 97 : rows 2435--2440, ONE band ~6 px, x 1448--2063 = 616 px
+%                      = 0.222 of the measure. Under-inked (darkest pixel 103
+%                      against paper 202), which is why a 0.90-of-measure
+%                      threshold sweep first missed it.
+%      printed p.  6 : rows 2433--2444, ONE band ~10 px, x 1817--2411 = 595 px
+%                      = 0.210 of the measure. SOLID INK (darkest pixel 59,
+%                      594/594 dark pixels across on rows 2439--2442), so this
+%                      one is beyond argument, and it sits at the SAME height
+%                      on the page (y/H = 0.364 on both leaves).
+%  So it is a printed feature of the Deel opening, at both Deel openings, and it
+%  is a SINGLE thin rule at ~0.21 of the measure — distinct from \divrule
+%  (0.27, swelled) and from \secrule (0.20, but TWO rules). \deel does not emit
+%  it, and a display rule must not be hand-rolled, so it is recorded here and
+%  NOT set. FOR THE CALLER: either give \deel a 0.21 rule after the argument
+%  (which retrofits p. 6 too, whose own inline comment already records it), or
+%  strike the denial from the \deel comment. It should not stay as it is.
+%
+%  § 12's ARGUMENT — both questions settled on the image:
+%   * IT DOES END WITH A PERIOD. A round, solidly inked full stop after
+%     "Methode", checked at 3.4x. The scan's ABBYY layer drops it; the Indhold
+%     (PDF 9) prints it too. No divergence here after all.
+%   * THE CONNECTOR IS THE FRAKTUR DOUBLE HYPHEN "=", not a plain hyphen: two
+%     short parallel obliques, identical to the "=" of "Ikke=Væren" (p. 103) and
+%     to the line-end breaks on this very page. Kept as "=" per the house rule.
+%     I checked the Indhold on PDF 9 as well and IT ALSO PRINTS "=".
+%     FOR THE CALLER: the Indhold as transcribed (transcription.tex l. 377) reads
+%     "Den dialektisk-speculative Methode." with a PLAIN HYPHEN. That looks like
+%     a slip in the front matter rather than a printed variant; worth re-checking
+%     against PDF 9. I have not touched it.
+%
+%  The paragraph opens FLUSH LEFT with a raised initial "F" about 1.5x the body,
+%  the same treatment as the "V" of "Ved" (p. 1) and the "L" of "Lighed" (p. 6).
+%  Set as ordinary text; only the absent indent is reproduced.
+%  Fraktur x confirmed in "Alexistensens" (the right leg drops below the
+%  baseline at 8x). "ligesaameget" is set SOLID as one word (checked at 1.9x).
+%  Letterspacing: NONE in p. 97's body. spacing.py's "For" (1.70) is the raised
+%  initial's own width fooling the glyph-width model; "anden" (1.65) is the
+%  display line, which \deel handles.
+%  The "7" at the foot is a SIGNATURE MARK, not transcribed.
+% ============================================================================
+\deel{anden Deel:}{Læren om det objective Begreb.}
+\division{Indledning.}
+% PRINTED HEAD, verified: "Den dialektisk=speculative Methode." — Fraktur double
+% hyphen, final period. Bold, not letterspaced.
+\parag{12}{Den dialektisk=speculative Methode.}
+
+% Raised initial "F", flush left — see the note above.
+\noindent For at kunne begynde, maa Philosophien ikke blot abstrahere fra Alt, men ligesaameget
+anticipere og reservere sig Alexistensens Gehalt. Uden en fuldstændig Abstraction vilde den
+philosophiske Begyndelse være umethodisk, uden Anticipation vilde Udviklingens Princip og
+Tilværelsens Indhold falde udenfor den tænkende Bevidsthed; uden Reservationen maatte
+Kjendsgjerningernes Eiendommelighed og Livets specifiske Potenser hemmes i Universalformernes
+schematiske Udvikling. Bevægelsen kommer istand derved, at det anticiperede Begrebsindhold
+stedse viser sig fyldigere og rigere end den gjennemreflecterede Begrebsform; de eensidige
+Begreber maae derfor integrere hinanden, indtil Ideens articulerede og totaliserede Indhold har
+fundet sin adæqvate Typus. Philosophiens Begreb kan, som Følge heraf, ikke fremstilles i dens
+Begyndelse, men maa søge sit fuldstændige
+% --- p. 98 ---
+% The p. 97/98 join falls BETWEEN WORDS ("sit fuldstændige" / "Udtryk"), so no
+% trailing %. Verified on PDF 107 myself.
+% PRINTER'S DEFECT p. 98: a NEAR-BLIND FRAKTUR d in "Begrebsreduction". Only two
+% fragments of the sort printed — the tip of the ascender flag and a speck at the
+% foot of the bowl. Both witnesses fail, in different directions (tesseract
+% "Begrebstrezuction", ABBYY "Begrebste:uction"), which is the tell that neither
+% is evidence. Settled on the image at 5x: the sort BEFORE it is unmistakably the
+% same Fraktur r as in "-gre-" two positions earlier (same shoulder), not a d,
+% so the word is Begrebs-re-?-uction and the damaged sort is the d of
+% "reduction". ALTERNATIVE REJECTED: "Begrebsdeduction", which would need that
+% first sort to be a d. Transcribed as the compositor set it: Begrebsreduction.
+% "nogetsomhelst" is set SOLID as one word (checked at 1.9x).
+% READER'S MARK, not transcribed: a grey PENCIL CORNER-BRACKET in the left margin
+% at the head of "Anm. 1.", and a matching pencil "]" on p. 99 after "Logik." —
+% thin, hand-drawn, wavering, the hand of the pp. 47/56/63/66/80/81 marks.
+% READER'S HIGHLIGHTER, not a printing feature: the same yellow wash as pp. 34
+% and 96 lies over "Det ligger imidlertid … et adæqvat System." Detected
+% mechanically (the per-row 85th-percentile background falls from 210 to 189 over
+% rows y/H = 0.335--0.373) and confirmed on the image. It is what garbles
+% tesseract into "Detnliggermimidlertid…"; ABBYY reads straight through it and
+% the type underneath is SOLID, not letterspaced.
+% Letterspacing on p. 98: only the "A n m. 1." lead-in, which \anm sets.
+% spacing.py's "nok," (twice), "(Anm." and "phi-" are justification artefacts;
+% "ELD" (7.54) is the facing leaf's black edge.
+% Fraktur x: "Reflexion" (ABBYY's systematic x->r gives "Neflerion").
+Udtryk i det hele System. Som Formalprincip træder det frem i den dialektiske Modsigelse, der
+forvandler den subjective Reflexion til en objectiv Begrebsreduction, saa at enhver relativ
+Slutning bliver forudsat som en ny Begyndelse; som Realprincip stiller det sit concrete Indhold
+frem for det speculative Syn, saa at den methodiske Bevægelse forsaavidt kan siges at være
+Sagens og Sandhedens egen Selvbevægelse igjennem den philosopherende Aand. Det ligger
+imidlertid i den creaturlige Aands Begrændsning, at den absolute, indholdsrige Sandhed ikke til
+nogetsomhelst historisk Tidspunkt kan afslutte sin Udvikling i et adæqvat System. Philosophien
+har derfor altid den dobbelte Opgave, paa een Gang at løse og at stramme Tilværelsens
+Problemer.
+
+\anm{1} Fra de forskjelligste peripheriske Udgangspunkter kan den philosophiske Tankebevægelse
+føre os ind i Centralundersøgelsen selv. Enhver, der har Anlæg og Dannelse, kan forsaavidt
+begynde sin Philosopheren med hvilket Emne, han selv vil, og ved at vælge et Stof, der
+umiddelbart tiltaler hans Bevidsthed, ofte endog stille nye Problemer, vække nye
+Idee=Associationer og give hidtil overseete, forglemte eller afblegede Sandheder friske og
+levende Farver. Men danner der sig nu en Række af slige enkeltstaaende Præstationer, da
+opstaaer nødvendigviis det Spørgsmaal, hvorledes de forholde sig til hinanden indbyrdes og til
+den almeengyldige Sandhed. Det er ikke nok, at de sporadisk fremkomne Resultater, befriede fra
+den overfladiske Modsigelse, lade sig opstille ved Siden af hinanden i Bevidstheden, som
+Gjenstande, der have hver sin Plads, i Rummet; det er heller ikke nok, at de ved en sindrig
+„Diallelus“ bekræfte hinanden som Led i en plausibel Hypothese, thi ingen Sand%
+% --- p. 99 ---
+% The word broken at p. 98's foot is SANDSYNLIGHED: p. 99 l. 1 opens "synlighed
+% erstatter den visse Sandhed." Verified on PDF 108 myself.
+% GREEK (the only Greek in this batch): μέτρον πάντων, checked at 4x.
+% NORMALISED per the standing convention: the fount's cursive rho ϱ -> ρ, once,
+% in μέτρον — a fount variant and nothing more. Reproduced as printed: both
+% accents are oxia (μέτρον, πάντων); there are no breathings and none is wanted;
+% the sigma does not occur. Greek is left unwrapped, per the pp. 90/89 practice —
+% \textit is for Latin antiqua, not for Greek sorts.
+% PRINTER'S DEFECT p. 99: "Idenditet" for *Identitet* — a d where a t belongs.
+% Checked at 3x: I-d-e-n-d-i-t-e-t, and both witnesses read the d
+% ("Jdenditet" / "Jdenditel"). Transcribed as printed, NOT corrected: this is not
+% one of the nine Rettelser.
+% Fraktur x in "existerende" (twice); Fraktur E in "Enkelthed" / "Enkelthedens",
+% which ABBYY reads as G elsewhere in the book but gets right here.
+% LETTERSPACING, settled at 1.35x on the image: the run is "o b j e c t i v e"
+% ALONE. The next line's "Logik." is set tight, and so are "den maa begynde med
+% den" before it, though ABBYY's layer spaces "m a a" and would have taken the
+% whole clause. So \emph{objective} Logik, not \emph{objective Logik}.
+% "Anm. 2."'s lead-in is letterspaced (\anm sets it); the words after it are not,
+% against ABBYY, which spaces "I d e t … viser s i g a t være".
+% ANTIQUA -> \textit: rationes cognoscendi, rationes essendi, ratio essendi,
+% universalia in re, universalia in mente. "rationes essendi." is followed by a
+% solidly inked wedge FULL STOP, not the comma both engines report.
+% The "7*" at the foot is a SIGNATURE MARK, not transcribed.
+synlighed erstatter den visse Sandhed. Philosophiske Frihaandstegninger ere vistnok langt
+lettere at udkaste end correcte, videnskabelige Grundrids; gjaldt det blot om ved subjective
+Stemninger, dristige Paastande, flygtige Tankespring og brogede Idee=Associationer at udmale og
+forfegte en individuel Livsanskuelse, da vilde enhver Protagoras selv være μέτρον πάντων, og vi
+erholdt ligesaa mange Slags Philosophier, som philosopherende Individer. Skal den philosophiske
+Theorie være mere end en foreløbig Hypothese, da maae dens Indholdsmomenter paa alle Punkter
+træffe sammen saavel med den objective Tilværen, som med den subjective Reflexion, og
+\textit{rationes cognoscendi} retfærdiggjøres i deres Eenhed med \textit{rationes essendi}.
+Denne Idenditet er ikke nærmest at søge i nogen enkelt existerende Ting, thi Enkelthedens
+\textit{ratio essendi} lader sig ikke deducere ved reen Begrebsanalyse. Men omendskjøndt den
+existerende Enkelthed ikke kan udledes af den rationelle Almindelighed, saa kan den dog paa den
+anden Side hverken være ei heller tænkes at være uden i og formedelst de almindelige
+Begrebsbestemmelser. Philosophiens methodiske Prøvelse maa altsaa begynde med at gjennemklare
+det Medium, i hvilket alle Værensbestemmelser tillige ere Tankebestemmelser; den maa begynde
+med den \emph{objective} Logik.
+
+\anm{2} Idet den objective Logik viser sig at være Philosophiens egentlige Grundlag, maa denne
+Videnskabs Indhold og Omfang nærmere bestemmes. Holde vi os eensidigt til \textit{universalia
+in re}, da synes Logikens Indhold at indskrænke sig til et meget snevert Omfang; thi
+Tilværelsens virkelige Gjenstande, det reelle Livs forskjellige Sphærer kunne ikke, som
+saadanne, afhandles i den metaphysiske Tænkelære. Holde vi os derimod eensidigt til
+\textit{universalia in mente}, da
+% --- p. 100 ---
+% The p. 99/100 join falls BETWEEN WORDS ("universalia in mente}, da" / "synes
+% Logiken"), so no trailing %. Verified on PDF 109 myself.
+% LETTERSPACING, all confirmed on the image: \emph{Aprioritet} (the run carries
+% across the "Aprio=/ritet" line break; "objectiv" before it is set tight),
+% \emph{logisk}, \emph{existentiel}, and — the compositor's habit again, for the
+% EIGHTH consecutive batch — \emph{Nødvendige} og det \emph{Tilfældige}, in which
+% THE INTERVENING "og det" IS SET SOLID. Logged, not regularised.
+% PRINTER'S DEFECT p. 100: a PUNCTUATION MARK AFTER "dobbelt" at the end of the
+% line, where the adjective runs straight on into "Synsmaade" on the next line.
+% Reproduced as printed. Both witnesses independently see a mark (tesseract a
+% point, ABBYY a comma), so it is set, not scan noise; at 10x it is a solid wedge
+% sitting ON the baseline with no descending tail, i.e. this fount's full stop
+% rather than its comma, and it is jammed hard against the t.
+% ALTERNATIVES REJECTED: a comma (no tail below the baseline) and press debris
+% (too large and too regularly wedge-shaped, and two engines read it as type).
+% Two more wedge full stops confirmed against tesseract's commas, by ABBYY and by
+% the following capital: "til deres Andet." and "allerforskjelligste Gjenstande."
+% Fraktur x: "existerende", "voxer", "t. Ex.", "existentiel", "existentiel".
+% ANTIQUA -> \textit: universalia in mente, eo ipso, universalia in re.
+% The parenthesis sets true em-dashes inside it: "(--- Positiv … Negative ---)".
+% No paragraph break anywhere on this page — Anm. 2 runs on (left-edge scan of
+% every line: no indent).
+synes Logiken at udvide sig til et uendeligt Omfang; thi ethvert existerende Begreb kommer
+tilsyne med objectiv \emph{Aprioritet}, og de ontologiske Universalformers Antal voxer
+efterhaanden, som Realerkjendelsen udvider sig (--- Positiv og negativ Elektricitet; Begrebet
+om det Positive og det Negative ---). Denne Tvetydighed hæves ved at tydeliggjøre de
+ontologiske Kategoriers dobbelte Indhold. Saaledes er t. Ex. Forskjellen imellem „Noget“ og
+„Andet“ ikke blot en \emph{logisk}, men tillige en \emph{existentiel} Forskjel. Tanken er
+Noget, Forestillingen et Andet; Blomsten er Noget, Frugten et Andet; Gud er Noget, Verden et
+Andet. Her frembyder sig nu en dobbelt.
+% PRINTER'S DEFECT at this point: the full stop after "dobbelt" is set although
+% the sentence runs straight on into "Synsmaade" — reproduced as printed. See the
+% page note above for the evidence and the alternatives rejected.
+Synsmaade; thi deels have de forskjellige Subjecter (Tanke, Blomst, Gud) den Fællesbestemmelse
+at være Noget, hvoraf da følger, at de forsaavidt alle maae staae i samme Forhold til deres
+Andet. Den logiske Grændse imellem „Noget“ og „Andet“ maa altsaa, een Gang for alle bestemt,
+gjælde om Forholdet mellem de allerforskjelligste Gjenstande. „Noget“ og „Andet“ fastholdes
+herved som rene \textit{universalia in mente}, og adskilles alene efter deres logiske Indhold.
+Men denne logiske Forskjel er tillige ontologisk; den er ikke blot en Tankeforskjel, men en
+Tilværelsesforskjel, og, som saadan, existentiel. Alt, hvad der virkelig er Noget, er
+\textit{eo ipso} mere end et blot Noget. Blomsten, der forhen bestemtes som Noget, er tillige
+at bestemme som en Ting med sine Egenskaber, som en Substans med sine Accidenser, som en
+relativ Organisme o. s. v. Ethvert Noget staaer altsaa i et ganske særegent Forhold til sit
+Andet, hvorved Forskjellen bliver existentiel (\textit{universalia in re}), og Indholdets
+Udvikling overskrider Logikens Grændser. Det Samme gjælder, skjøndt i en høiere Form, om
+Forholdet imellem det \emph{Nødvendige} og det \emph{Tilfældige}. Indrømmer man, at de
+nødvendige Bestemmelser maae afhandles i Logiken,
+% --- p. 101 ---
+% The p. 100/101 join falls BETWEEN WORDS ("afhandles i Logiken," / "da vil det"),
+% so no trailing %. Verified on PDF 110 myself.
+% "Tilfældigheden." — the mark before "Virkeligheden er kun i Kraft af
+% Væsenheden" is the fount's WEDGE FULL STOP, checked at 3.2x: a solid triangular
+% mark on the baseline with no tail descending below it, and a sentence space
+% after. Both engines read it as a comma; that is the documented trap.
+% LETTERSPACING: \emph{kritisk} in "ingen blot værende eller kritisk Grændse",
+% confirmed at 2.2x. Nothing else on the page; spacing.py's "sig" (1.47) is a
+% justification artefact.
+% PRINTER'S DEFECT p. 101: a STRAY BAR printed over the second n of "kunne" in
+% "skulde kunne udvikles" — a short curved stroke where a Fraktur nasal bar would
+% sit, but the word already sets a full nn, so it is an ink mark, not an
+% abbreviation. Both witnesses see it (tesseract "kunüñe", ABBYY "kuune").
+% Logged, not transcribable; the p. 28 stray bar over the e of "det" is the
+% precedent. The word is transcribed "kunne".
+% PARAGRAPH BREAK, measured on the left edge (line 25 starts +279 px, and line 24
+% is a 1457 px short line): a second paragraph of Anm. 2 begins at "Grændsen
+% imellem". Nothing marks the remark's end — the book's habit.
+% Fraktur x: "Existens", "Vexelbegreber", "Vexelskin".
+% ANTIQUA -> \textit: quod absurdum est.
+da vil det ogsaa let indsees, at de tilfældige heller ikke kunne udelukkes. Tankens Syn er et
+Dobbeltsyn: det Nødvendige lader sig kun bestemme i Relation til det Tilfældige. Allerede den
+Omstændighed, at man i Kraft af Nødvendighedens logiske Natur vil udelukke Tilfældigheden,
+foraarsager en logisk Besindelse paa det Tilfældiges ulogiske Aberrationer. Siger man, at det
+Nødvendige altid maa forholde sig til sig selv paa samme Maade, saa vil det Tilfældige blive at
+bestemme som det, der altid maa forholde sig til sig selv paa forskjellig Maade; men herved
+faae de tilfældige Ting da ogsaa med det Samme et logisk Signalement, et Fællesmærke, hvorved
+de, afseet fra den Forskjel, der vedrører deres Existens, lade sig characterisere i Ontologien.
+Om alle Vexelbegreber gjælder det derfor, at de i deres Uddannelse altid maae holde Skridt med
+hinanden. Ved en Tautologie som denne: „det Nødvendige er nødvendigt“, kan ingen fornuftig
+Tænkning blive staaende; men alle særegne Bestemmelser, der gjælde Nødvendigheden, maae
+nødvendigviis reflectere sig i de modsatte Bestemmelser, der specificere Tilfældigheden.
+Virkeligheden er kun i Kraft af Væsenheden; derfor maae begge Sphærers ontologiske Momenter
+sees i deres uendelige Vexelskin: i samme Grad, som Væsenets Begreb udvikles, udvikles ogsaa
+Virkelighedens; skulde Virkelighedskategorierne udelukkes af Logiken, da maatte Væsenets ogsaa
+udelukkes, \textit{quod absurdum est}.
+
+Grændsen imellem den objective Logik og Realphilosophien er ingen blot værende eller
+\emph{kritisk} Grændse, der lader sig udvide ved Addition eller indskrænke ved Subtraction. De,
+der finde det modsigende, at Gudsbegrebet skulde kunne udvikles i Logiken, gaae ud fra den i
+sig selv rigtige Forudsætning, at den rene Ontologie ikke kan være Theologie. Men at ville af%
+% --- p. 102 ---
+% The word broken at p. 101's foot is AFSKAFFE: p. 102 l. 1 opens "skaffe
+% Religionens Gud i Kraft af den rene Videnskab". Verified on PDF 111 myself.
+% LETTERSPACING — a nest of it, and the compositor is INCONSISTENT WITH HIMSELF
+% inside four lines. All six calls made on 1.55x--2.2x crops, not on the OCR:
+%   spaced   : "blot \emph{kritisk}," / "nemlig en \emph{dialektisk}," /
+%              "en \emph{kritisk=dialektisk} Grændse." / "kræver en
+%              \emph{Anvendelse};" / "maa \emph{lægges til Grund}."
+%   NOT spaced, though the same words: "hvis Grændse er kritisk" and "hvis
+%              Grændse er dialektisk", eleven and thirteen lines further on, are
+%              set TIGHT, and so is the "maa" before "lægges til Grund".
+% Reproduced as set; not regularised. The letterspaced compound keeps its "=".
+% PRINTER'S DEFECT p. 102: "Grnndens" for *Grundens* — an n standing where the u
+% belongs. Settled at 9x by nearest-neighbour comparison with the CORRECT "Grund"
+% two lines below on the same page: in this fount u and n differ only by a small
+% tick above, and "Grund" carries the tick on the first of the two minim-letters
+% while "Grnndens" carries it on NEITHER. Both witnesses read "Grnndens", so this
+% is the compositor's, not the scan's. Transcribed as printed.
+% ALTERNATIVE REJECTED: "Grnudens" (an n/u transposition) — the second
+% minim-letter has no tick either.
+% PARAGRAPH BREAK measured on the left edge: Anm. 3 at line 18 (+283 px), after a
+% 1864 px short line.
+% Fraktur x: "existentielle", "f. Ex.", "strax". Fraktur I: "I den concrete
+% Videnskab", "I denne Henseende", "Istedetfor".
+skaffe Religionens Gud i Kraft af den rene Videnskab, uden at raadføre sig med Logiken,
+hvorvidt det Begreb, der ligger til Grund for den religiøse Forestilling om Gud, stemmer med de
+metaphysiske Tankelove eller ikke, røber en videnskabelig Letsindighed. Enhver Religion
+forudsætter sin særegne Logik; hvilken Logik der er den sande, kan alene prøves i Logiken selv.
+Men omendskjøndt Logikens Grændse ikke er blot \emph{kritisk}, saa har denne bestemte Videnskab
+dog ligefuldt sin Grændse, nemlig en \emph{dialektisk}, eller, om man saa vil, en
+\emph{kritisk=dialektisk} Grændse. Gudsbegrebets concrete Indhold er saaledes et andet i
+Theologien end i den objective Logik, idet de ontologiske Bestemmelser give sig som Momenter i
+de existentielle. I den concrete Videnskab kommer den objective Logik vel ikke til Orde, men
+dens immanente Former finde dog deres fortsatte Udvikling i og med det reale Indhold selv; den
+formelle Logik, hvis Grændse er kritisk, kræver en \emph{Anvendelse}; den speculative, hvis
+Grændse er dialektisk, maa \emph{lægges til Grund}.
+
+\anm{3} Spørgsmaalet om Philosophiens methodiske Begyndelse, falder altsaa, ifølge det
+Foregaaende, sammen med Spørgsmaalet om Logikens Begyndelse. I denne Henseende gjælder den
+Observation, at de simplere Begreber maae gaae forud for de mere indholdsrige. Aarsagsbegrebet
+kan f. Ex. ikke tilfulde forstaaes, før Grnndens Begreb er udviklet;
+% PRINTER'S DEFECT at this point: "Grnndens" for *Grundens*, as printed — see the
+% page note above; the correct "Grund" follows two lines later in the original.
+Begrebet Grund forudsætter igjen Begrebet om en Tilværelse, hvis Grund den er. Saaledes føres
+Tanken tilbage til Væren, der i sin rene Almindelighed omfatter alt det Tilværende. Den, der
+altsaa staaer ved Philosophiens egentlige Begyndelse, tør ikke strax fælde nogen bestemt Dom
+over de tilværende Ting; thi den rene Begyndelse har endnu intet Indhold. Desuagtet er
+Begyndelsen dog det egentlige
+% --- p. 103 ---
+% The p. 102/103 join falls BETWEEN WORDS ("det egentlige" / "Tilløb:"), so no
+% trailing %. Verified on PDF 112 myself.
+% LETTERSPACING, the page's one real find and a nice one: the TWO-LETTER WORD
+% "er" is letterspaced THREE TIMES over two lines — "Skinnet \emph{er}, ligesaavel
+% som Væsenet; Løgnen \emph{er}, ligesaavel som Sandheden; Alt \emph{er}." —
+% while "Skinnet", "Løgnen" and "Alt" are all set tight. Confirmed at 1.6x: the
+% e|r gap is wider than any intra-word gap on either line. The fourth "er" on the
+% page ("„Intet“ er, at det har Væren") is NOT spaced. spacing.py sees none of
+% this (a two-letter word is below its length filter) and instead flags "Ikke"
+% (2.91), "„Jntet“", "sig", "sal" — all justification artefacts.
+% ANTIQUA -> \textit: "x er y", wholly antiqua including the Danish "er" between
+% the two placeholders, so the whole run is italicised — the p. 67/84 precedent
+% where an intervening Danish word is itself antiqua. The final letter is a y
+% (a descender below the baseline); ABBYY reads v.
+% Fraktur x: "existentielle", "Tanke=Experiment".
+% The compound double hyphen is kept in "Ikke=Væren" (set twice; the second
+% occurrence has justification space either side of the "=", not a real space)
+% and in "Tanke=Experiment".
+% No paragraph break: Anm. 3 runs on (no indent on any line).
+Tilløb: der maa begyndes; Dommen maa udtales, og da den mangler baade Subject og Prædicat,
+efterdi Tanken endnu savner enhver speciellere Bestemmelse, staaer den tomme Copula tilbage:
+\textit{x er y}. Begyndelsen bringer saaledes den hele existentielle Mangfoldighed under een
+Form, og reducerer alle Virkelighedens Brøker til deres fælles Nævner: Skinnet \emph{er},
+ligesaavel som Væsenet; Løgnen \emph{er}, ligesaavel som Sandheden; Alt \emph{er}. Uagtet den
+sande Væren i Begyndelsen selv ikke lader sig adskille fra den falske, er den dog ingenlunde et
+Foster af den subjective Tænkning alene. Forsaavidt den almindelige Væren repræsenterer os hele
+Universet, det sandselige saavelsom det usandselige, fremstiller den sig tillige som
+Objectivitetens, Nødvendighedens og Almagtens Forbud, hvilket ogsaa sees deraf, at Tanken ikke
+kan opgive den, uden at miste sit Liv i samme Aandedrag. Den, der tænker: „Væren er slet ikke“,
+han tænker jo paa Ikke=Væren; hvis nu denne Ikke=Væren fastholdes som en selvstændig Tanke for
+sig i Form af „Intet“, saa komme vi dog til det Resultat, at „Intet“ er, at det har Væren.
+Begrebet „Intet“ er altsaa Tanken selv, tænkt i sin rene Tomhed, en utaalelig Skygge, der kun
+kan gribes ved Hjælp af Væren. Idet Tanken tænker sin egen Tilintetgjørelse, kommer den med det
+Samme til at tænke paa Væren, og frelses ved denne Afhængighed af en reel Magt fra et logisk
+Selvmord. Abstractionen bestaaer altsaa deri, at al Forskjel opgives, for at Tænken og Væren
+kunne erkjendes i deres væsentlige Eenhed. Da den philosopherende Bevidsthed kan tænke baade
+Tankens og Værens Forsvinden i „Intet“, saa er enhver umiddelbar Forudsætning ophævet, og
+Philosophien kan forsaavidt siges at begynde uden alle Forudsætninger; men da „Intet“ snarere
+maa kaldes et Tanke=Experiment end en sand Tanke, maa Til%
+% --- p. 104 ---
+% The word broken at p. 103's foot is TILINTETGJØRELSENS: p. 104 l. 1 opens
+% "intetgjørelsens Phantom øieblikkelig forsvinde". Verified on PDF 113 myself.
+% PARAGRAPH BREAK measured on the left edge: line 2 starts +313 px, after a
+% 2638 px short line ("… en absolut Forudsætning."). This second paragraph of
+% Anm. 3 begins at "Alt vil nu beroe".
+% LETTERSPACING: \emph{Anticipationens} only ("Betydning" after it is tight).
+% spacing.py's "Hvis" (1.48) is a justification artefact.
+% Fraktur x: "Vexelforhold", "existentielle", "Reflexionen" (twice), "Existensens".
+% Fraktur Ø in "sit Øie" (ABBYY reads "Oie"); Fraktur I in "Idet", "Ihukommelse",
+% "Intuitionen".
+intetgjørelsens Phantom øieblikkelig forsvinde, og Philosophien har, fra denne Side betragtet,
+en absolut Forudsætning.
+
+Alt vil nu beroe paa det Vexelforhold, der vedbliver at finde Sted imellem den Philosopherendes
+Bevidsthed og Livets Virkelighed. Hvis Subjectet, der foretager Abstractionen, lukkede sit Øie
+for den existentielle Mangfoldighed, vilde Tanken fortabes i et mystisk Drømmesyn, og
+Begyndelsen selv, uden Bevægelse og Fremskridt, falde sammen med Enden. Den mystiske Bevidsthed
+er forudsætningsløs, efterdi den foragter Virkeligheden; den philosophiske Bevidsthed kan
+derimod aldrig være forudsætningsløs, efterdi den skal begribe Virkeligheden. Det, der fra
+Begyndelsen af holder den abstracte Tanke vaagen, og forhindrer den fra at blive mystisk, er
+netop den klare Besindelse paa Abstractionens og de tomme Formers Utilstrækkelighed. Idet
+Reflexionen griber den almene Væren, vender Intuitionen sig mod Tilværelsens Grundforhold og
+Livets Gehalt, stiller sig derved Opgaven i dens hele Omfang, og seer i et Fremsyn, hvorhen
+Udviklingens Vei fører. Denne intuitive Opfattelse er imidlertid ingen tautologisk Gjentagelse
+af den forestillede Verdens Indhold eller en blot Ihukommelse af de Kundskaber og Erfaringer,
+Individet har erhvervet sig før Philosopheringens Begyndelse; thi hele Virkeligheden maa
+nedsættes til en reel Mulighed, og alle Kjendsgjerninger optages i det store Universalproblem.
+Men ligesaalidt kunne Existensens væsentlige Factorer stilles i Bero, saa at Bevidstheden ledes
+i Blinde af en formel Tankeconseqvens, uden at vide, hvorhen; thi naar Anskuelsen ikke længere
+finder Noget, mod hvilket Reflexionen kan vende sig, staaer Tanken stille. Derfor maa den
+intellectuelle Anskuelse stedse ile forud, og berede Reflexionen Veien. Derpaa beroer altsaa
+\emph{Anticipationens} Betydning, at Philo%
+% --- p. 105 ---
+% The word broken at p. 104's foot is PHILOSOPHEN: p. 105 l. 1 opens "sophen fra
+% Begyndelsen af baade maa besidde". Verified on PDF 114 myself.
+% LETTERSPACING: NONE on this page — spacing.py reports none either, and the
+% image agrees.
+% ANTIQUA -> \textit: in mente; per intus-susceptionem. The Latin compound takes
+% an ORDINARY ANTIQUA HYPHEN, not the Fraktur "=" — checked on the image; the
+% same holds for "per juxta-appositionem" on p. 106 and "uni-versalia" on p. 107.
+% Fraktur x: "strax", "Alexistensen".
+% "slet ikke lægges an" — "slet", not tesseract's "let" (the long ſ is there).
+sophen fra Begyndelsen af baade maa besidde og dog ikke besidde Philosophiens Resultat. Hvis
+Resultatet ikke fra Begyndelsen af haves \textit{in mente}, kan den philosophiske Methode slet
+ikke lægges an. Selv det meest eensidige og skjæve Anlæg forudsætter dog altid en Anticipation;
+som Fremsynet er, saa vil ogsaa Anlæget være. Philosophien er i denne Henseende sin egen
+Forudsætning. Men omvendt, hvis det philosophiske Resultat var færdigt i og med Begyndelsen
+selv, vilde den hele Udvikling tabe sin Betydning; Philosophen maatte da besidde sin
+Philosophie, idet han begyndte at philosophere; hvilket er Modsigelse, da han just begynder at
+philosophere, for at finde sin Philosophie. Anticipationen vil altsaa indeholde Systemets
+Centralpunkter tilligemed Grundformen, saa at det hele Anlæg maa siges at ligge i Typen og
+Udkastet. Men som Resultatet ikke strax er færdigt, saa kan Typen og Schemaet heller ikke være
+det. Hegelianismen har i denne Henseende ofte modsagt sig selv; thi medens denne Philosophie
+paa den ene Side har rost sig af at være fuldkommen forudsætningsløs, og urgeret den immanente
+Form, har den dog paa den anden Side i mangfoldige Punkter forraadt, at dens allerede færdige
+Schema var en given Forudsætning. Den, der tilfulde besinder sig paa, at Alexistensen fra
+Begyndelsen af ligger skjult under Kategorien Væren, maa ogsaa erkjende, at Philosophien derved
+træder i et oprindeligt Forhold til alt det Givne, og Enhver, der har erkjendt, at det givne
+Indhold altid maa bestemme sin egen Form, vil ogsaa indsee Nødvendigheden af at reservere sig
+Formernes uendelige Bøielighed og Frihed. Hvis Philosophien ikke fra dens Begyndelse af er lagt
+an paa at optage det Givne \textit{per intus-susceptionem}, da maa den under sin Udvikling
+nødvendigviis enten tabe sig i Formalisme eller
+% --- p. 106 ---
+% The p. 105/106 join falls BETWEEN WORDS ("i Formalisme eller" / "voxe"), so no
+% trailing %. Verified on PDF 115 myself.
+% LETTERSPACING: \emph{Reservationen} and \emph{forudfattet}, both confirmed on
+% the image; "Betingelse" after the first and "Mening" after the second are set
+% tight. spacing.py's "fin" (1.46) and "Natur," (1.65) are justification.
+% "Dikaiosyne" is set in FRAKTUR, not antiqua — the D and the k are Fraktur sorts
+% at 1.6x — so it takes no italic although it is a Greek word. It is broken
+% "Di=kaiosyne" across the line, with the Fraktur double hyphen.
+% ANTIQUA -> \textit: per juxta-appositionem (antiqua hyphen), index sui et falsi.
+% PRINTER'S DEFECT / PRESS DEBRIS p. 106, logged and NOT transcribed: a short
+% oblique stroke standing at x-height in the WORD SPACE between "videnskabelige"
+% and "Fortrin". ABBYY reports a character there. It is a single stroke, whereas
+% this fount's "=" is two parallel obliques, and "videnskabelige Fortrin" is
+% adjective + noun, not a compound, so a half-inked "=" is rejected: press debris,
+% on the p. 75 and p. 89 precedents. A second, similar stroke occurs on p. 107.
+% Fraktur x: "voxe", "Reflex", "Existens". Fraktur I: "Imellem" (both witnesses
+% garble it — tesseract "Jmellem", ABBYY "Indeklem" — but the sorts are
+% I-m-e-l-l-e-m at 4x).
+% PARAGRAPH BREAK measured on the left edge: Anm. 4 at line 14 (+282 px), after a
+% 1604 px short line ("… index sui et falsi.").
+voxe uorganisk \textit{per juxta-appositionem}. Fra dette Synspunkt gjælder altsaa
+\emph{Reservationen} som en subjectiv Betingelse for rettelig at optage og grundig at prøve det
+Givne. Forudsætningsløshed betyder da ingenlunde en ved Abstractionen fremkunstlet Uvidenhed om
+Livets høiere Fordringer og Interesser, men maa derimod bestemmes som den prøvende og
+randsagende Aands uhildede Frihed, som den sande philosophiske Dikaiosyne.
+% PRESS DEBRIS a few lines below, in the word space of "videnskabelige Fortrin" —
+% logged, not transcribed. See the page note above.
+Skal jeg ikke philosophere, for at forsvare en theistisk Anskuelse, hvad enten den saa er sand
+eller usand; saa skal jeg dog heller ikke philosophere, for at forfegte en \emph{forudfattet}
+Mening om Pantheismens eller Atheismens videnskabelige Fortrin, men maa derimod reservere mig
+Resultatets Afgjørelse, for at Sandheden kan erkjendes i sin Sandhed, som \textit{index sui et
+falsi}.
+
+\anm{4} Som Abstractionen er, saa er Begyndelsen, og som Anticipationen er, saaledes vil ogsaa
+Principet være: jo grundigere Anticipation, desto grundigere Princip. Det ligger da i Sagens
+Natur, at Principet ikke kan udtrykkes i Begyndelsen selv, uagtet det fra Begyndelsen af maa
+haves \textit{in mente}. Forskjellen imellem den logiske og den existentielle Begyndelse beroer
+netop derpaa, at hiin kun kan vise sig som en Reflex af det bevægende Princip, medens denne
+derimod har Principet umiddelbart i sig selv. Den rene Væren er saaledes ingenlunde at betragte
+som Philosophiens Princip, saa lidt som den rene Tænken; Planten derimod, der udvikler sin
+Existens af Kjernen, kan siges at begynde med Principet selv. Af samme Grund er ogsaa den
+logiske Bevægelse, der forvandler Successionen til et forsvindende Skin, væsentlig forskjellig
+fra den existentielle Bevægelse, der foregaaer i og med Successionen. Imellem „Værens“
+Begyndelse og „Begrebets“ Slutning indtræder vel en
+% --- p. 107 ---
+% The p. 106/107 join falls BETWEEN WORDS ("indtræder vel en" / "Succession,"), so
+% no trailing %. Verified on PDF 116 myself.
+% LETTERSPACING: \emph{Sagen bevæger sig selv} — a four-word run, confirmed on
+% the image; the "at" before it is tight. Nothing else: the "at Sagen selv, ved
+% at frembyde" fourteen lines later is set TIGHT, though it repeats the phrase.
+% PARAGRAPH BREAK measured on the left edge: line 13 starts +271 px ("Den
+% hegelske Sætning"), a second paragraph of Anm. 4.
+% READER'S HIGHLIGHTER, not a printing feature: the same yellow wash as pp. 34,
+% 96 and 98 lies over "og sammenblandet den logiske Bevægelse med den
+% existentielle." Detected mechanically (per-row background 203 -> 178 over rows
+% y/H = 0.531--0.546) and confirmed on the image. It is what garbles tesseract
+% into "ogrsammeu-(nemen egisfeTBesægalsemme…"; ABBYY reads straight through and
+% the type underneath is SOLID.
+% PRINTER'S DEFECT p. 107: a NEAR-BLIND ANTIQUA e ending "in mente;" — the bowl's
+% left half printed, the terminal did not. tesseract reads "in ment;", ABBYY "in
+% mentc". Transcribed "mente". Three ink specks stand above the same word:
+% press debris, not transcribed.
+% PRESS DEBRIS p. 107, logged and not transcribed: a short horizontal stroke in
+% the word space of "en Række af" (tesseract reports "Rækfe -af"). Single stroke,
+% mid-height; the "=" of the same line is plainly two obliques. Second of two
+% such marks in this batch — see p. 106.
+% ANTIQUA -> \textit: tempore posterius, dignitate prius, universalia in re
+% (three times), universalia in mente. The antiqua "uni-versalia" line break
+% takes an ORDINARY HYPHEN, not the Fraktur "=", because the word is antiqua.
+% Fraktur x: "Reflexionen", "Grundexistens", "existentielle" (twice), "existere",
+% "Reflexion". Fraktur E in "Eensidighed", which ABBYY reads as G ("Gensidighed").
+Succession, forsaavidt den ene ontologiske Kategorie optages og udvikles efter den anden; men
+denne Tidsfølge forsvinder igjen som et Skin i Reflexionen, efterdi Begrebet, der under
+Udviklingens Gang er fremkommet som et \textit{tempore posterius}, til Slutningen erkjendes som
+\textit{dignitate prius}. At ethvert logisk Fremskridt tillige er et væsentligt Tilbageskridt,
+hidrører derfra, at den ontologiske Begyndelse, der er incommensurabel med sit Princip, stræber
+tilbage til den Grundexistens, der i sig bærer alle Begrebets Universalformer. Den
+existentielle Begyndelse, der umiddelbart har Principet i sig, udfolder sit Indhold i
+Successionen; da den nemlig har alle sine \textit{universalia in re}, bliver Momenternes
+Forskjel overalt en Realforskjel, der til sin Udfoldning kræver Rummets og Tidens Former.
+
+Den hegelske Sætning, at \emph{Sagen bevæger sig selv}, har i den senere Tid afstedkommet stor
+Forvirring, idet man aldeles har misforstaaet Bevægelsens Kategorie, og sammenblandet den
+logiske Bevægelse med den existentielle. Hegels Udtryk er nærmest rettet mod den formelle
+Tænknings Eensidighed, ifølge hvilken det altid maa forekomme det tænkende Subject, som om den
+hele Udvikling af Objectets Indhold blot angik den subjective Reflexion, der af en given
+Gjenstand tager Anledning til at anstille en Række af sammenhængende Betragtninger, uden dog at
+trænge nærmere ind i Sagens Natur og Væsen. Betragtet som Correctiv, udtrykker altsaa Sætningen
+den Sandhed, at Sagen selv, ved at frembyde alle sine Momenter, under Udviklingens Gang
+oversætter sit hele intellectuelle Indhold i Tænkerens Bevidsthed. Bevægelsen er den, at
+\textit{universalia in re} forvandles til \textit{universalia in mente}; men forsaavidt de
+samme \textit{universalia} desuagtet vedblive at existere \textit{in re}, falder den omhandlede
+% --- p. 108 ---
+% The p. 107/108 join falls BETWEEN WORDS ("falder den omhandlede" /
+% "Gjenstand"), so no trailing %. Verified on PDF 117 myself.
+% LETTERSPACING: \emph{gaae over} and \emph{gaaer over}. The first run stops at
+% the line end — the next line's "til Tanken om „Andet“;" is set TIGHT, checked
+% at 2.2x, so it is not "gaae over til Tanken om".
+% DOUBTFUL, and left unemphasised: in "„Noget“ gaaer over i „Andet“." the single
+% letter "i" AFTER the run cannot be settled. Its flanking spaces match those
+% inside the run, but a one-sort word carries no internal spacing to measure, and
+% this line is loosely justified throughout. So \emph{gaaer over} i „Andet“ is
+% the minimal reading; the alternative, \emph{gaaer over i}, is recorded here
+% rather than silently chosen.
+% "gik over" (last line but four) is NOT letterspaced, against spacing.py's flag.
+% \dsi{} twice: after „Andet“ and after "virkelig indtraf,". Both are the
+% id-est sign, unmistakable at page scale.
+% Fraktur x: "Exempel", "Reflex", "strax". Fraktur Æ in "Æonerne". Fraktur I in
+% "Istedetfor", "Idet", "I sin".
+% "oversees" has the double e (tesseract "oversecs").
+% No paragraph break on this page; the paragraph runs past the batch boundary.
+% FOOT OF p. 108: NOT mid-word. The page ends "… Den ideelle Bevægelse i
+% Væsenets" — no hyphen, no "=", the word complete (checked at 3x). p. 109 opens
+% "og Nødvendighedens Evighed og den reelle Forandring i", which I read myself on
+% a fresh 600 dpi render of PDF 118. So the joint is MID-SENTENCE AT A WORD
+% BOUNDARY, and the next batch must NOT close up the blank line above its marker
+% — but it must not start a new paragraph either.
+Gjenstand aldeles udenfor den logiske Bevægelse. I sin crasseste Form er Misforstaaelsen
+tilstede, naar man personificerer Kategorierne i Logiken, ligesom de gamle Gnostikere
+personificerede Æonerne i Pleroma; Bevægelsen foregaaer da som ved et logisk Trylleri, Tænkeren
+hensættes som en qvietistisk Tilskuer, og Begrebsmystiken er iøinefaldende. Hele denne
+Forvirring hidrører imidlertid alene fra en misforstaaet Breviloqvens. Istedetfor at sige: Den,
+der tænker „Noget“, maa conseqvent komme til at tænke „Andet“ \dsi{} \emph{gaae over} til
+Tanken om „Andet“; siger man ved en Abbreviation: „Noget“ \emph{gaaer over} i „Andet“. Det maa
+imidlertid heller ikke oversees, at denne Udtryksmaade ogsaa har sin objective Betydning; den
+minder os nemlig om, at et „Noget“, der ikke kan tænkes uden et „Andet“, heller ikke kan være
+sit „Andet“ foruden, saa at den Overgang, Tænkningen gjør, tillige er en Overgang, der ligger i
+Sagens egen Beskaffenhed. Paa samme Maade forholder det sig, for at bruge et andet Exempel, med
+Overgangen fra Mulighed til Virkelighed. Vil man holde Muligheden saa eensidig fast, at alle
+dens Momenter tænkes som rene Væsensbestemmelser, da skal ingen Dialektik formaae at udlede
+Virkeligheden af dens Begreb; thi ethvert af Virkelighedens Kjendemærker vil da strax forvandle
+sig for Betragtningen til en logisk Reflex. Sandheden er, at Enhver, for grundig at tænke
+Muligheden, allerede maa have anticiperet Virkeligheden. Idet Tanken besinder sig paa denne
+Anticipation, indlyser det, at Muligheden selv vilde være umulig, dersom Virkeligheden ikke
+virkelig indtraf, \dsi{} dersom Muligheden ikke gik over til Virkelighed. Som den ydre Verden
+kun kan forestilles ved Hjælp af Tænkningen, saa kan den intelligible Verden kun tænkes ved
+Hjælp af Forestillingen. Den ideelle Bevægelse i Væsenets
 
 % [text to be added: pp. 109--120]
 
