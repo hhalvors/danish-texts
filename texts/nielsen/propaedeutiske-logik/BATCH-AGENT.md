@@ -49,10 +49,17 @@ PDF 10–292. It is already verified three ways; do not re-derive it.
        SCAN="$(python3 pagemap.py --scan)"
        pdftoppm -f <firstPDF> -l <lastPDF> -r 600 -png "$SCAN" "$D/pg"
 
-   ~23 s and ~11 MB a page. **The sandbox kills a bash call at ~178 s, so chunk it** — about
-   six pages per call, and independent chunks can run in parallel in one message. Files come
-   out named `pg-<PDFpage>.png`, so there is no glob ambiguity and no stale-file trap.
-   **Never write it inside the repo.**
+   ~23 s and ~11 MB a page. **The bash timeout varies between sessions — it has been seen at
+   ~178 s and at ~37 s.** Do not assume: the robust recipe is **one page per bash call, with
+   all the calls issued in parallel in a single message.** A six-page chunk that works one day
+   is killed part-way the next. Files come out named `pg-<PDFpage>.png`, so there is no glob
+   ambiguity and no stale-file trap. **Never write it inside the repo.**
+
+   Also render the page **before** your range (for the joint) and, if your last page breaks a
+   word, the page **after** it — you need both, and they cost one call each.
+
+   `ocr.sh` and `spacing.py` call `pdftoppm` internally and will time out on a short cap.
+   If that happens, drive tesseract straight off your cached PNGs instead.
 
    Thereafter **do not call `pdftoppm` again**. Every page read and every zoom is a PIL crop
    from the cache at ~0.3 s, so a 10× look at one glyph is free — which is what makes the
@@ -107,7 +114,8 @@ Defined in `transcription.tex`; `check.py` counts them and flags hand-rolled
 | Printed form | Write |
 |---|---|
 | Part opening (full-measure double rule + "Den propædeutiske Logiks" + Deel line + argument + a short ~0.20 rule) | `\deel{Første Deel:}{Læren om det subjective Begreb.}` |
-| Chapter head (bold letterspaced label + argument one size down) | `\capitel{Første Capitel.}{Det subjective Begrebs Dannelse.}` |
+| Chapter head, argument **plain** (pp. 6, 35, 68) | `\capitel{Første Capitel.}{Det subjective Begrebs Dannelse.}` |
+| Chapter head, argument **letterspaced** (p. 114) | `\capitelsp{Første Capitel.}{Det objective Begrebs Dannelse.}` |
 | `§ N.` centred, then centred bold letterspaced argument | `\parag{1}{Almeenforestillingen.}` |
 | Tail ornament ending a **§** | `\secrule` — ~0.20 of measure, **two** thin rules |
 | Tail ornament ending a **top-level division** | `\divrule` — ~0.27, one swelled band |
@@ -115,6 +123,11 @@ Defined in `transcription.tex`; `check.py` counts them and flags hand-rolled
 | `Indledning.` as a top-level division (pp. 1 and 97) | `\division{Indledning.}` |
 | The Indledning's roman-numeral sections (I., II.) | `\romsec{I.}{Den formelle og speculative Logik.}` |
 | The Danish "that is" sign ɔ: | `\dsi` (never a plain `o:`, never the raw character) |
+
+**Thresholds when measuring a rule:** a flat `<190` cut is useless on some leaves —
+the paper median across this scan runs 186–208, so `<190` sits *at* paper level and
+reports 1600–1900 px "rules" that are not there. Use `paper-median − 15`, or sweep
+several cuts and keep only what is stable across them.
 
 If you need a head form that has no macro, **do not hand-roll an `\addcontentsline` with a
 bare `\quad` in it** — hyperref rejects it and warns on every build. Wrap the argument in

@@ -51,6 +51,7 @@ print(f"markers remaining (text to be added): {src.count('text to be added')}")
 print(f"structure: \\division={body.count(chr(92)+'division{')} "
       f"\\deel={body.count(chr(92)+'deel{')} "
       f"\\capitel={body.count(chr(92)+'capitel{')} "
+      f"\\capitelsp={body.count(chr(92)+'capitelsp{')} "
       f"\\anm={body.count(chr(92)+'anm{')}")
 
 secs = [int(m) for m in re.findall(r"\\parag\{(\d+)\}", body)]
@@ -81,14 +82,30 @@ print(f"footnotes: {body.count(chr(92)+'footnote')} | "
 # So: list every logged defect with its page and its effect, and compare the raw
 # balance to the sum. Add a line here whenever a new one is found and logged.
 QUOTE_DEFECTS = [
-    (29, -1, "Sibbern quotation CLOSES with “ and has no opening „ anywhere"),
-    (86, +1, "quotation opened „Hvis A er et … at p.85's foot never closes"),
+    (29,  -1, "Sibbern quotation CLOSES with “ and has no opening „ anywhere"),
+    (86,  +1, "quotation opened „Hvis A er et … at p.85's foot never closes"),
+    (111, +4, "TWO quotations („Ansich„ and „…Mediationens Strøm„) each CLOSE with "
+              "the low „ instead of “ — verified at 8x, marks on the baseline where "
+              "p.112's vide?“ sets the pair at ascender height. +2 each."),
+    (124, +1, "„Logische Untersuchungen, 1ster Band Pag. 46=55) never closes its „"),
+    (142, -1, "Hegel quotation CLOSES with “ after Aeußeres but was never opened — "
+              "clean word-space paper between the colon and So, verified twice"),
+]
+
+# A quotation may legitimately be OPEN at the transcription frontier: p.180 opens a
+# Schelling quotation that closes on p.181. That is a page split, not a defect, and it
+# must not be logged as one — it disappears when the next batch is spliced. List any
+# such span here with the page whose splice closes it, and REMOVE the row then.
+OPEN_AT_FRONTIER = [
+    (181, +1, "Schelling quotation opened p.180 („…) closes on p.181 (bezeichnen kann“)"),
 ]
 
 op, cl = body.count("„"), body.count("“")
 raw = op - cl
 pages_done = max(pages) if pages else 0
 expected = sum(d for pg, d, _ in QUOTE_DEFECTS if pg <= pages_done)
+pending = [(pg, d, w) for pg, d, w in OPEN_AT_FRONTIER if pg > pages_done]
+expected += sum(d for _, d, _ in pending)
 status = "MATCHES the logged defects" if raw == expected else "*** DOES NOT MATCH ***"
 print(f"quotes: „={op} “={cl}  raw balance={raw:+d}")
 print(f"  expected {expected:+d} from {sum(1 for pg,_,_ in QUOTE_DEFECTS if pg<=pages_done)} "
@@ -96,6 +113,8 @@ print(f"  expected {expected:+d} from {sum(1 for pg,_,_ in QUOTE_DEFECTS if pg<=
 for pg, d, why in QUOTE_DEFECTS:
     if pg <= pages_done:
         print(f"    p.{pg}: {d:+d}  {why}")
+for pg, d, why in pending:
+    print(f"    OPEN AT FRONTIER {d:+d}  {why}")
 if raw == expected and expected == 0 and QUOTE_DEFECTS:
     print("  NB raw zero here is defects CANCELLING, not quotes being sound.")
 
