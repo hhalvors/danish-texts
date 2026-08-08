@@ -5,23 +5,55 @@ batch loop. The standing method is `../../../TRANSCRIPTION-PLAYBOOK.md`.
 
 ## CURRENT RESUME POINT
 
-**Next: printed p. 90 (PDF 99)** — continue **Første Deel / Tredie Capitel, § 11
-*Slutningens reelle Gyldighed: Beviis og Methode***, the last § of the Første Deel, which
-runs to **p. 96**. The next batch (pp. 90–96, seven pages) therefore **closes the Første
-Deel**; after it comes p. 97, which opens the **anden Deel** — note the printed lowercase
-`anden Deel:` there, against p. 6's `Første Deel:` and the Indhold's `Anden Deel.`
+**THE FØRSTE DEEL IS COMPLETE — printed pp. 1–96 done.**
 
-**p. 89 ends MID-WORD.** The last body line closes `sætte Demonstra%` and p. 90 opens
-`tionen som Betingelse for al Viden, maa man enten, som` — the word is ***Demonstrationen***.
-Batch 7 read that continuation on the image itself (PDF 99). The trailing `%` is in place and
-the blank line is already closed up, so the pp. 90–96 fragment must **begin with `tionen`**.
+**Next: printed p. 97 (PDF 106)** — the opening of the **anden Deel**. The next batch
+(pp. 97–108) starts a Part, so it must place:
 
-**Two errata fall in the next batch**, both to be applied inline and flagged `% ERRATA`:
+1. the full-measure **double rule** across the page top,
+2. `\deel{anden Deel:}{Læren om det objective Begreb.}` — **note the printed LOWERCASE
+   `anden`**, against p. 6's `Første Deel:` and the Indhold's `Anden Deel.` Verify on the
+   image and reproduce the lowercase; both readings are on record and neither is normalised,
+3. `\division{Indledning.}` — the anden Deel has its own Indledning,
+4. `\parag{12}{Den dialektisk-speculative Methode.}`
 
-- p. 92, l. 13 f.o.: `A er ei = A,` → **`A er ei = --- A`** (supplying the missing negation
-  dash). NB the Rettelser's own right-hand column misprints `ci` for `ei`; that typo is
-  reproduced in the back-matter transcription but is not part of the correction.
-- p. 93, l. 7 f.o.: `Betingelser` → **`Betingethed`**
+**p. 96 ends cleanly** with the division tail ornament (`\divrule`); there is no mid-word or
+mid-sentence joint to close, and no signature mark or catchword at that foot. So the
+pp. 97–108 fragment begins with `% --- p. 97 ---` and a fresh paragraph, and the blank line
+above its marker should be **left in place**.
+
+**Three errata are still to come:** p. 112 (`Daddel` → `Dadel`), p. 152 (`med` → `ved`),
+p. 154 (`Dyr=Rige` → `Dyre=Rige`), then p. 187, p. 206, p. 241. The p. 80, p. 92 and p. 93
+entries are **done**.
+
+## The two tail ornaments — settled by measurement
+
+The book uses **two** distinct tail ornaments, at two structural levels. Measured at 300 dpi
+by longest-contiguous-dark-run per pixel row, over a 1412 px text column:
+
+| printed | closes | bands | max width | as fraction |
+|---|---|---|---|---|
+| 5 | the Indledning | one, 6 px | 403 px | **0.26** |
+| 96 | the Første Deel | one, 5 px | 416 px | **0.27** |
+| 35 | § 5 | **two**, ~310 + ~155 px | 310 px | **0.20** |
+| 68 | § 8 and the Capitel | **two**, ~303 + ~153 px | 303 px | **0.20** |
+
+So a **wider** ornament ends a top-level division and a **narrower double** rule ends a §.
+The rule is **not** a Capitel marker — the same narrow double stands mid-Capitel at p. 35.
+
+On pp. 5 and 96 the per-row widths are irregular (254/336/232/385/403 and
+200/288/316/416/142): the band is not a rectangle but a **swelled rule**, thick at the centre
+and tapering to points, the same class of ornament as the title page's centre-lozenge
+fleuron. `\rule` cannot make one without graphics, so it is represented by a plain rule of
+the measured width — an approximation recorded in the preamble rather than hidden.
+
+These four rules had been hand-rolled **three different ways**, and p. 5's coding had missed
+part of the ornament. All four now go through **`\divrule`** and **`\secrule`**. Do not
+hand-roll a tail rule. (The 0.35-measure rules elsewhere are editorial decoration under
+heads and in the front/back matter, not reproductions — leave them.)
+
+Running tally of § ends: § 5 rule, § 6 none, § 7 none, § 8 rule, § 9 none, § 10 none,
+§ 11 → division rule (it ends the Deel).
 
 ### A process lesson worth more than the page it cost
 
@@ -282,6 +314,59 @@ emitting the same warning and losing the letter from their PDF metadata. Harmles
 build; worth a sweep some day.
 
 ## DONE so far
+
+- **Batch 8 (pp. 90–96), image-verified. FØRSTE DEEL COMPLETE. Two errata applied.**
+  **p. 92 errata applied:** the phrase runs across the line break — l. 13 ends "…den anden:
+  A er ei =" and l. 14 opens "A derimod Jegets Forskjel fra Ikke=Jeg." The negation dash is
+  set between the `=` and the second A. The same page's third Grundsætning, printed
+  `A og --- A`, settles that a full em-dash is the sort wanted — a good piece of internal
+  evidence. **p. 93 errata applied:** `Betingelser` → `Betingethed`, located **by the word**
+  (unique on the page), not by counting lines, since the Rettelser's line number is off by one
+  against the OCR's split.
+  **The two tail ornaments were settled here** — see the table above. The agent measured all
+  four rules on one threshold and found pp. 5/96 distinct from pp. 35/68; I re-measured
+  independently by a different method (longest contiguous dark run per row) and confirmed it,
+  additionally showing the pp. 5/96 band to be a **swelled** rule rather than thick-over-thin.
+  `\divrule` and `\secrule` added and all four sites retrofitted, including p. 5, whose
+  coding had missed part of the ornament.
+  **Fichte's apparatus** (`A`, `Non-A`, `Ikke=Jeg`) set as antiqua `\textit{}` placeholders
+  with plain `=` and `---`, per the house style already at pp. 18 and 82 — **not** math mode,
+  since nothing here is a real relation.
+  **Antiqua → `\textit{}`:** *circulus in probando*, *Anal. post. c. 2* (whole parenthesis,
+  per p. 89), *methodus mathematica*, *a priori*, *in abstracto*, *in concreto*, the A
+  placeholders. German quotations stay Fraktur („discursive Grundsätze“, „Ding an sich“,
+  *Die Disciplin der reinen Vernunft*, „Daseyn zu enthüllen“ — ä/ü raw). `cfr.` is **Fraktur**
+  here (verified at 8×) and left upright, as are the figures "Pag. 24; 81" per p. 89.
+  **Letterspacing:** p. 92's run *Identitet* / *Modsætning* **drops the intervening "og"**,
+  which is solid — **seventh consecutive batch** of this. Also *begrændse*, *Grundens*
+  (p. 92), *Methode*, *Fornuftkunstner* (the run carries across the `For=/nuftkunstner`
+  break), *afsløre Tilværelsen* (p. 93). pp. 90, 94, 95, 96 carry none at all.
+  Rejected as false: *sætter* (p. 91 — the line opens with antiqua *in abstracto*, which
+  inflates the model), *Formen;* (p. 93), and **tesseract's whole highlighted p. 96 passage**,
+  which is solid under the wash.
+  **Printer's defects, as printed and logged:** p. 90 no full stop after "fra Plato" (clean
+  paper at 8×; `\quad` per pp. 21/40); p. 91 `1 Haupst.)` for *Hauptst.*; **p. 92's Anm. 2
+  paragraph ends with a comma** ("Demonstration tilbage,") — the mark carries the comma's
+  tail, unlike the wedge point after "frem." eleven lines above; p. 93 a near-blind *r* in
+  "Demonstrations" and a doubled point in `Miscredit..` (p. 15 "Pg.." precedent); p. 94 an
+  **under-inked em-dash** after "overflødig.", a third of its length inked at dash height,
+  where the same page sets a well-printed `---` twelve lines below (press debris rejected).
+  **Glyph ID:** Fraktur *x* confirmed in *existerende*, *Exempel*, *Reflexions*, *Reflexion*,
+  *forvexle*, *forvexles*; **Fraktur *E* in *Eensidighed*, which ABBYY reads as G throughout**;
+  `beviisning` double-i confirmed against ABBYY's single.
+  **Greek (p. 90, the Anal. post. I 2 quotation):** normalised ϰ→κ ×12, ϱ→ρ ×10, ϑ→θ ×1.
+  Reproduced as printed, not corrected: **ἀναγκη** with psili but no oxia; **γαρ** with no
+  varia; **οὑτος** with dasia only (the mark opens rightwards, where the psili of ἀ/ἐ on the
+  same line opens leftwards); γνωριμοτέρων with omicron for omega; **συμπεράςματος** with a
+  final sigma standing medially — a wrong sort on the p. 89 / p. 33 precedent, so not
+  normalised; **οἰκεῖαι**, where the perispomeni stands over the ε in print and Unicode forces
+  it onto the ι (p. 32 ὁποῖόν precedent).
+  The elision mark on **τ’** was flagged rather than invented: the agent set an ASCII
+  apostrophe rather than introduce U+1FBD koronis. I changed it to the typographic apostrophe
+  **U+2019**, which T1 handles natively — an ASCII straight quote inside a Greek word would
+  also have escaped `check.py`'s straight-quote test, which only looks for `"`.
+  Compile: **75 pp., 0/0/0/0**; braces balanced; quotes „85 / “85 = raw 0, matching the two
+  logged defects; suspect readings 0.
 
 - **Batch 7 (pp. 78–89), image-verified. FIRST ERRATA APPLIED.**
   **p. 80 errata applied and flagged:** line 3 f.o. confirmed on PDF 89 as "tagelse af

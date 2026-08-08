@@ -270,6 +270,33 @@
 % The Danish "that is" sign, ɔ: — type it with this, never as a plain "o:".
 \newcommand{\dsi}{\textup{ɔ:}}
 
+% ------------------------------------------------------------
+%  THE TWO TAIL ORNAMENTS. The book uses two, at two structural levels, and they
+%  are measurably distinct. Measured at 300 dpi by taking, for each pixel row,
+%  the longest contiguous dark run, over a text column 1412 px wide:
+%
+%    printed p.  5  (closes the Indledning)   one band, 6 px, max 403 px = 0.26
+%    printed p. 96  (closes the Første Deel)  one band, 5 px, max 416 px = 0.27
+%    printed p. 35  (closes § 5)              TWO bands, ~310 px and ~155 px = 0.20
+%    printed p. 68  (closes § 8 + the Capitel) TWO bands, ~303 px and ~153 px = 0.20
+%
+%  So: a WIDER ornament ends a top-level division, a NARROWER DOUBLE rule ends a §.
+%  The rule is NOT a Capitel marker — the same narrow double appears mid-Capitel at
+%  p. 35 and at a Capitel end at p. 68.
+%
+%  On pp. 5 and 96 the per-row widths are irregular (254/336/232/385/403 and
+%  200/288/316/416/142), i.e. the band is not a rectangle: it is a SWELLED rule,
+%  thick at the centre and tapering to points — the same class of ornament as the
+%  title page's centre-lozenge fleuron. A swelled rule cannot be had from \rule
+%  without graphics, so it is represented by a plain rule of the measured width.
+%  That approximation is recorded here rather than hidden.
+%
+%  These existed as three different hand-rolled spellings before they were
+%  measured. Use the macros; do not hand-roll a tail rule.
+\newcommand{\divrule}{\begin{center}\rule{0.27\linewidth}{0.9pt}\end{center}}
+\newcommand{\secrule}{\begin{center}%
+  \rule{0.20\linewidth}{0.4pt}\\[1.3pt]\rule{0.20\linewidth}{0.4pt}\end{center}}
+
 \begin{document}
 \hypersetup{pdftitle={Den propædeutiske Logik},pdfauthor={Rasmus Nielsen}}
 
@@ -529,7 +556,7 @@ virkelige Verden.
 
 % Printed p. 5 closes the Indledning with a short centred rule, heavier than
 % the rule under the Indledning head. Reproduced.
-\begin{center}\rule{0.30\linewidth}{1.0pt}\end{center}
+\divrule
 
 % ---- Første Deel, printed pp. 6--96 (PDF 15--105) ----
 % p.6 opens with the double rule + Deel head + Første Capitel + § 1.
@@ -1478,7 +1505,7 @@ Logik atter hen til den objective.
 % the Indledning on printed p. 5, so it is set separately rather than reusing it.
 % No macro exists for it; hand-rolled here, with no ToC entry (it is an
 % ornament, not a head).
-\begin{center}\rule{0.22\linewidth}{0.4pt}\\[1.2pt]\rule{0.22\linewidth}{0.4pt}\end{center}
+\secrule
 
 % Printed head, read off the image, agrees with the Indhold word for word:
 % "Andet Capitel." / "Det subjective Begrebs Fremstilling: den logiske Dom."
@@ -2643,7 +2670,7 @@ concretere Totalitet.
 % i.e. the rule is NOT reserved for Capitel boundaries — it also closed § 5 in
 % mid-chapter — and its absence at §§ 6 and 7 remains simple inconsistency.
 % No macro exists for it; hand-rolled, with no ToC entry (an ornament, not a head).
-\begin{center}\rule{0.22\linewidth}{0.4pt}\\[1.2pt]\rule{0.22\linewidth}{0.4pt}\end{center}
+\secrule
 
 % Printed head, read off the image, agrees with the Indhold word for word:
 % "Tredie Capitel." / "Det subjective Begrebs Gyldighed: Slutning og Beviis."
@@ -3468,7 +3495,330 @@ at al Sandhedserkjendelse skulde være afhængig af syllogistiske Beviser. Ved a
 % line the skeleton keeps above the pp. 90--96 marker must be closed up when the
 % next batch is spliced. No signature mark at this foot.
 sætte Demonstra%
-% [text to be added: pp. 90--96]
+% --- p. 90 ---
+% The word broken at p. 89's foot is DEMONSTRATIONEN. Verified on the image (PDF 99)
+% myself: p. 90 l. 1 reads "tionen som Betingelse for al Viden, maa man enten, som".
+% This fragment therefore begins with "tionen", closed up against "Demonstra%".
+% GREEK, p. 90 (Anal. post. I 2). NORMALISED per the standing convention, each a
+% fount variant and nothing more: the cursive kappa ϰ -> κ (ἀναγκη, καὶ x5,
+% ἀποδεικτικὴν x2, οἰκεῖαι, δεικνυμένου), the cursive rho ϱ -> ρ (πρώτων,
+% γνωριμοτέρων x2, προτέρων, συμπεράςματος, ἀρχαὶ, ἀρχαί, πρώται), and the script
+% theta ϑ -> θ (ἀληθῶν).
+% REPRODUCED AS PRINTED, not corrected — accents and breathings are not variants:
+%   * "ἀναγκη" carries its psili but NO oxia (the α is bare at 8x; the same page
+%     prints the oxia unmistakably on ἐπιστήμην, ἀμέσων, προτέρων, ἀρχαί, so its
+%     absence here is the compositor's, not the scan's).
+%   * "γαρ" has NO varia — the α is bare at 8x.
+%   * "οὑτος" has the dasia only, no perispomeni (the mark opens rightwards, unlike
+%     the psili of ἀ / ἐ, which opens leftwards; both shapes occur on this line).
+%   * "γνωριμοτέρων" has omicron where omega is wanted; "πρώται" carries oxia.
+%   * "συμπεράςματος" is printed with a FINAL SIGMA STANDING MEDIALLY — the p. 89
+%     συλλογιςμὸς and p. 33 „Ειςαγωγη“ precedent. A wrong sort, not a fount
+%     variant, so NOT normalised (U+03C2, so the Greek lint stays clean). The word
+%     sets a round σ initially and a correct final ς at the end, three sorts later.
+%   * "οἰκεῖαι": in print the PERISPOMENI SITS OVER THE EPSILON, not over the
+%     iota. Unicode has no ε with perispomeni and forces it onto the iota, as at p. 32's
+%     ὁποῖόν; noted here rather than silently moved.
+%   * the elision mark on "τ’" is the psili-shaped apostrophe of the fount. It is
+%     set here as a plain ASCII apostrophe: the Greek koronis U+1FBD is a codepoint
+%     the preamble has never had to handle, and per the brief a new character is
+%     reported, not typed. FLAGGED for the caller.
+% "(Anal. post. c. 2)" is wholly antiqua, figures and points included, so the whole
+% parenthesis is italicised — the p. 89 "(Analytic. post. c. 1---3)" precedent.
+% Fraktur x confirmed against ABBYY's systematic x->r: "existerende" (the right leg
+% drops below the baseline at 8x; ABBYY reads "e.risterende", tesseract
+% "erxisterende").
+% PRINTER'S DEFECT p. 90: NO FULL STOP after "fra Plato". At 8x the gap is clean
+% paper — no ghost, no blind point — and it is a full sentence space, so the point
+% was never set. Both witnesses drop it. Transcribed as printed with \quad, per the
+% p. 21 and p. 40 precedents.
+tionen som Betingelse for al Viden, maa man enten, som Nogle have villet, benegte
+Videnskabens Mulighed, efterdi enhver Slutning indeholder Præmisser, der igjen maae
+bevises ved nye Slutninger, saa at den hele Beviisførelse taber sig i en uendelig
+Regres; eller ogsaa, hvad Andre have forsøgt, udlede Præmisserne af deres egne
+Følgesætninger, hvorved den saakaldte \textit{circulus in probando} opstaaer, og
+Beviset kommer til at svæve i Luften. Som der altsaa, ifølge Aristoteles, gives
+Sandheder, der kunne og maae demonstreres, saa gives der ogsaa Sandheder, der intet
+Beviis kræve, efterdi de selv afgive de oprindelige Støttepunkter for al
+Demonstration: ἀναγκη καὶ τὴν ἀποδεικτικὴν ἐπιστήμην ἐξ ἀληθῶν τ’ εἶναι καὶ
+πρώτων, καὶ ἀμέσων, καὶ γνωριμοτέρων καὶ προτέρων, καὶ αἰτίων τοῦ συμπεράςματος.
+οὑτος γαρ ἔσονται καὶ αἱ ἀρχαὶ οἰκεῖαι τοῦ δεικνυμένου (\textit{Anal. post. c. 2}).
+Det er fornemmelig Antagelsen af disse mange ἀρχαί eller Principer og
+Erkjendelsesgrunde, der adskiller Aristoteles fra Plato\quad Thi medens Plato især
+lagde an paa at forklare Tingenes Mangfoldighed i Kraft af Universalbegrebernes
+(Ideernes) Aprioritet, fæstede Aristoteles tillige sit Blik paa Erfaringens Verden,
+for i den at finde de sporadiske Udgangspunkter, og føre de existerende
+Enkeltbegreber (αἱ πρώται οὐσίαι) tilbage til deres almindelige Grundbegreb. Uagtet
+nu enhver Videnskab har sine særskilte Forudsætninger, saa maa der dog i dem alle,
+selv i Philosophien, baade være Noget, hvoraf man beviser, og tillige Noget, hvorom
+Beviisførelsen dreier sig; den aristoteliske Tænkelære kan derfor siges at have
+etableret Philosophiens dogmatiske Methode.
+
+\anm{2} Efterat Dogmatismen i Philosophiens Historie havde gjennemløbet forskjellige
+Udviklingstrin, blev den i den nyere Tid dreven paa Spidsen af Christ. Wolf, der
+% --- p. 91 ---
+% "methodus mathematica", "a priori", "in abstracto", "in concreto" are antiqua
+% against the Fraktur, so \textit{}. The German title is Fraktur throughout, as
+% „Wissenschaftslehre“ and „Ding an sich“ already are; "jfr." and the figure of
+% "1 Haupst." are left unitalicised, per "Pag. 99" (p. 89) and "Pag. 11---13"
+% (p. 52).
+% NB "Die Disciplin der reinen Vernunft": ocr.sh's mechanical s/\bDie\b/Øie/ rule
+% fires wrongly on this GERMAN "Die" and reported "Øie Disciplin". The image and the
+% ABBYY layer both give "Die"; the rule is a Danish one and does not apply here.
+% PRINTER'S DEFECT p. 91: the reference prints "1 Haupst.)." — the t of "Hauptst."
+% was never set. At 8x the sorts are H-a-u-p-ſ-t with no room and no ghost for a
+% second t. Both witnesses agree. Transcribed as printed.
+% Emphasis: NOTHING on this page is letterspaced. spacing.py's single flag,
+% "sætter" (1.50), is a false positive — at 8x the word is solid, and the line it
+% stands on opens with the antiqua "in abstracto", which inflates the page's glyph
+% width model exactly as the brief warns.
+methodisk uddannede den saakaldte \textit{methodus mathematica}. Da enhver
+Forudsætning i denne Methode falder sammen med en Definition, der skal udtrykke
+Begrebets væsentlige Bestemmelser, er Analysen tilstrækkelig for at udbringe det i
+Definitionen selv allerede anticiperede Resultat; hvorved den hele Demonstration
+faaer et Skin af apodiktisk Ufeilbarhed. „Det guddommelige Væsen maa, ifølge sit
+Begreb, besidde alle Fuldkommenheder; Væren er en Fuldkommenhed, altsaa maa Gud være
+til.“ --- Denne dogmatiske Methodes Utilstrækkelighed blev efterviist af Kant (jfr.
+Die Disciplin der reinen Vernunft im dogmatischen Gebrauche; Kritik d. r. V.;
+Methodenlehre 1 Haupst.). Idet Kant indrømmer Mathematiken, at den giver et glimrende
+Exempel paa den rene Fornufts Selvudvikling uden Erfaringens Hjælp, benegter han
+tillige den mathematiske Methodes Anvendelighed i Philosophien. Den methodiske
+Forskjel er nemlig begrundet i begge Videnskabers særegne Natur. Thi medens den
+philosophiske Erkjendelse betragter det Særskilte i det Almindelige, \dsi{}
+fastholder Almindeligheden \textit{in abstracto}, sætter derimod den mathematiske det
+Almindelige i det Særskilte, og besidder det saaledes \textit{in concreto}; hvad „der
+Vernunftgebrauch durch Construction der Begriffe“ gjælder i Mathematiken, gjælder
+„der Vernunftgebrauch nach Begriffen“ i Philosophien. Mathematikens Definitioner ere
+altid ufeilbare, efterdi de \textit{a priori} frembringes med samt de tilsvarende
+Gjenstande; medens de philosophiske Definitioner derimod forudsætte et i
+Virkeligheden givet Indhold, hvis Bestemmelser ikke umiddelbart lade sig afgrændse.
+Mathematiken, der i apriorisk Synthese construerer sine Begreber, kan anvende
+Demonstrationen; hvorimod Philosophien, hvis almindelige Begreber altid maae referere
+sig til den „mulige Erfaring“, ikke kan bringe det til nogen speculativ synthetisk
+% --- p. 92 ---
+% The p. 91/92 join falls between words ("synthetisk" / "Dom,"), so no trailing %.
+% German umlaut typed RAW ("Grundsätze"), per the batch 6 conversion.
+% PRINTER'S DEFECT p. 92: the Anm. 2 paragraph ENDS WITH A COMMA — "Dogmatisme og
+% Demonstration tilbage," — where a full stop belongs. At 8x the mark has the
+% comma's descending tail, quite unlike the fount's wedge full stop after "frem."
+% eleven lines above, which sits on the baseline with no tail. Both witnesses read a
+% comma. Transcribed as printed.
+%
+% ERRATA (Rettelser, p. 92 l. 13): the page prints "A er ei = A" — the line ends
+% "saa udtrykker den anden: A er ei =" and the next line opens "A derimod Jegets
+% Forskjel fra Ikke=Jeg." The Rettelser directs "A er ei = --- A", supplying the
+% missing NEGATION DASH before the second A. DIRECTION FOLLOWED: the dash is set
+% between the equals sign and the second A, i.e. exactly where the line break falls.
+% The phrase "er ei" occurs only once on the page, so the site is unambiguous. The
+% same page's third Grundsætning, "A og --- A", is printed WITH the negation dash
+% and settles what sort is wanted: a full-length em-dash, not a hyphen. (The
+% Rettelser's own right-hand column misprints "ci" for "ei"; that typo belongs to
+% the back-matter transcription and is not part of the correction applied here.)
+%
+% The Fichte apparatus is set as ANTIQUA PLACEHOLDER LETTERS in \textit{}, with the
+% relation signs as ordinary text characters — the house style already established
+% at pp. 18 ("\textit{a} = \textit{A}") and 82 ("\textit{a} = \textit{b}"). No math
+% mode: nothing here is a real equation, and math mode is reserved in this file for
+% $\infty$ and $<$ (p. 18). Print sets "A=A" solid; spaced here to match precedent.
+% LETTERSPACING, all settled at 600 dpi. Three runs, and the compositor DROPS an
+% intervening word from the middle of one of them — seventh batch running:
+%   "I d e n t i t e t og M o d s æ t n i n g" — the "og" between them is SOLID,
+%     while both nouns are spaced entire (it also happens to close a line).
+%   "b e g r æ n d s e", "G r u n d e n s" — both spaced, neighbours solid.
+% The first "Identitet" of the page ("Identitet med sig selv") is SOLID: not
+% emphasis. spacing.py's single flag "Jdentitet" (1.33) is the real one.
+Dom, og derfor heller ikke demonstrere sig frem. Men uagtet Kant saaledes søgte at
+fortrænge alle „Dogmata“ fra Philosophiens Enemærker, lader han dog i sine
+„discursive Grundsätze“ og sin dialektiske „Antithetik“ en Rest af Dogmatisme og
+Demonstration tilbage,
+
+\anm{3} I sin Wissenschaftslehre satte Fichte sig den Opgave, at forsone Dogmatisme
+med Kriticisme, og forsaavidt Dogmatismen refererer sig til en „Ding an sich“, maa
+den siges at være grundig overvunden i hans transcendentale Idealisme; derimod
+approberede han Demonstrationen, og udviklede den til sin høieste Stringens. Som den
+første ubetingede Grundsætning: \textit{A} = \textit{A} ophæves i det tænkende Jegs
+Identitet med sig selv, saa udtrykker den anden: \textit{A} er ei =
+% ERRATA APPLIED HERE: the negation dash "---" is supplied before the second A,
+% per the Rettelser. The page prints "A er ei = A".
+--- \textit{A} derimod Jegets Forskjel fra Ikke=Jeg. \emph{Identitet} og
+\emph{Modsætning} give sig altsaa som Udtryk for Jeghedens oprindelige Grundacter.
+Den tredie Hovedsætning: \textit{A} og --- \textit{A}, Jeg og Ikke=Jeg
+\emph{begrændse} hinanden gjensidig, lader sig nu deducere af de tvende foregaaende,
+saa at Eenheden af Realitet og Negation, Identitet og Modsætning, der udgjør
+\emph{Grundens} væsentlige Kjendemærke, allerede modtager Bevisets Form. Idet
+Antithese og Synthese saaledes betinge og integrere hinanden under den fortsatte
+Udvikling, antage de philosophiske Kategorier en Mellemcharacteer af Fasthed og
+Flydenhed, hvorved det hele System afrunder sig i en immanent Demonstration. Medens
+Fichte saaledes kun agtede paa Tankens Nødvendighed, og philosopherede for
+Philosophiens Skyld, fulgte Jacobi derimod Gemyttets Tilskyndelser, og philosopherede
+for Resultatets Skyld. I den faste Overbeviisning, at enhver philosophisk
+Demonstration conseqvent maatte føre enten til Fatalisme (Spinoza) eller til Atheisme
+(Fichte), polemiserede han mod den endelige Reflexions „Durch=
+% --- p. 93 ---
+% The p. 92/93 join falls at a SUSPENDED HYPHEN, not a word break: p. 92 closes
+% „Durch= and p. 93 opens "und Durch=Begriffe“", i.e. "Durch- und Durch-Begriffe".
+% Both hyphens are the Fraktur double hyphen at 8x, so both are kept as "=", per the
+% Dyre=Rige / Ikke=Jeg convention. There is a real word space after the first, so NO
+% trailing % on the p. 92 line above.
+%
+% ERRATA (Rettelser, p. 93 l. 7): the page prints "og mechaniske Betingelser." in
+% "efterviste Forstandsbegrebernes egen Endelighed og mechaniske Betingelser. Ifølge
+% Kant maa den...". The Rettelser directs "Betingethed". DIRECTION FOLLOWED. The
+% word occurs only once on the page, so the site is unambiguous — which matters
+% here, because the Rettelser's line count is off by one against the printed line
+% split, so counting lines would have found the wrong line.
+%
+% PRINTER'S DEFECTS p. 93, both transcribed as printed and merely logged:
+%   * "Demonstrations" — the r is almost wholly unprinted; at 8x only a small
+%     mid-height nub survives between the t and the a. The witnesses fail in
+%     opposite directions (tesseract "Demonst:ations", ABBYY "Demonstrations"), so
+%     the image settles it: cf. the near-blind r of "Grundlag" (p. 81) and
+%     "Fremskridt" (p. 76).
+%   * "Miscredit.." — a DOUBLED full stop, two wedge points side by side at 8x, on
+%     the p. 15 "Pg.." precedent.
+% LETTERSPACING, settled at 600 dpi: "M e t h o d e" (in "philosophisk Methode i
+% Miscredit..") and "F o r= / n u f t k u n s t n e r" (the run carries across the
+% line break). spacing.py's third flag, "Formenz" (1.94), is a false positive: at 8x
+% "Formen;" is solid, and the flag is the semicolon.
+% "(Daseyn zu enthüllen)" is Fraktur German with a raw ü; "Schema" is Fraktur.
+% Fraktur x confirmed: "forvexle" (ABBYY "sorverle", tesseract "forvexle").
+und Durch=Begriffe“, og forsvarede med rhetorisk Styrke Fornuftens umiddelbare
+Gudserkjendelse imod den abstracte Videns Nihilisme. Medens Kant endnu anerkjendte
+Kategoriernes subjective Almeengyldighed, kun at de ikke lode sig anvende paa Tingen
+i sig, saa gik Jacobi, som Hegel allerede har bemærket, et Skridt videre, og
+% ERRATA APPLIED HERE: "Betingethed" for the printed "Betingelser", per the
+% Rettelser.
+efterviste Forstandsbegrebernes egen Endelighed og mechaniske Betingethed. Ifølge
+Kant maa den speculative Videnskab opgives, fordi det nu een Gang er en psychologisk
+Kjendsgjerning, at Erkjendelsesformerne ligge i os selv, og ikke i Tingenes Væsen;
+ifølge Jacobi bliver den sande Begriben umulig, fordi Begrebet, som saadant, selv er
+endeligt, og følgelig incommensurabelt med Sandhedens uendelige Indhold. Naar Kant
+nærmest angreb Metaphysiken fra Stoffets Side, uden at fuldbyrde den mechaniske
+Demonstrations egen Opløsning, saa angreb Jacobi derimod Metaphysikens Form, og søgte
+derved at bringe enhver philosophisk \emph{Methode} i Miscredit..
+
+\anm{4} Naar Kant kalder Philosophen en \emph{Fornuftkunstner}, antyder han dermed,
+at Philosophien ikke kan undvære en bestemt Structur, at dens videnskabelige Indhold
+har sin Gyldighed i Formen; naar Jacobi derimod stiller Philosophen den Opgave, at
+\emph{afsløre Tilværelsen} (Daseyn zu enthüllen), saa minder han os derved om, at
+Videnskabens sande Værd altid beroer paa dens Gehalt. Det philosophiske
+Methodespørgsmaal er derfor saa langt fra at være en tom Formalqvæstion, som et
+mechanisk Schema fra at være et philosophisk System. Formen, der bestemmer Indholdet,
+er igjen bestemt ved Indholdets eiendommelige Beskaffenhed; saa umuligt det er, at
+udvikle et Indhold, uden at give det Form, saa uvidenskabeligt er det paa den anden
+Side ogsaa, at forvexle Indholdet med Stoffet og an%
+% --- p. 94 ---
+% The p. 93/94 join is MID-WORD: p. 93 closes "og an=" and p. 94 opens "vende en
+% allerede færdig Form" — the word is "anvende". Read on the image (PDF 103). The
+% trailing % above holds the halves together.
+% PRINTER'S DEFECT p. 94: after "selv være overflødig." there stands a SHORT
+% MID-HEIGHT STROKE, tight against the point. At 8x it sits at exactly the height
+% and position of an em-dash but only about a third of its length is inked. The
+% well-printed em-dash twelve lines below on this same page ("Indholdsmomenter. ---
+% Hvad den intellectuelle...") gives the comparison. So this is an UNDER-INKED
+% EM-DASH and is transcribed as "---". Alternative rejected: press debris, as at
+% p. 75 — rejected because the stroke is at dash height (not mid-x-height), is
+% perfectly horizontal, and falls exactly where this book sets a sentence-dividing
+% em-dash. The witnesses fail in opposite directions (tesseract "overflodig.-",
+% ABBYY drops it entirely), which is the tell that only the image decides.
+% No letterspacing on this page; spacing.py reports none and the images agree.
+% The mark at this page's foot is a SIGNATURE MARK, not transcribed.
+vende en allerede færdig Form paa et udenfra givet Indhold: Det, der bestemmer
+(Formen), og Det, der bestemmes (Indholdet), reflectere hinanden i den fuldkomne
+Bestemthed. Den, der vil bedømme en Philosophies Gehalt uden Hensyn til dens
+eiendommelige Form, gaaer ud fra den Forudsætning, at Identiteten af Indhold og Form
+maa beroe paa begges Forskjel. Hvis denne Synsmaade ingen Gyldighed havde, vilde
+Philosophiens Historie være meningsløs; thi det historiske Fremskridt er altid
+betinget derved, at de uadæqvate og forældede Former bortkastes, for at deres
+væsentlige Indhold kan reproduceres i en ny Form. Den, der paastaaer, at den
+philosophiske Form ikke kan adskilles fra Philosophiens Indhold, gaaer ud fra den
+Forudsætning, at Formens og Indholdets Forskjel begrunder deres sande Identitet, at
+Forskjellen altsaa er et i Identiteten forsvindende Moment. Hvis denne Paastand var
+aldeles falsk, vilde Videnskaben selv være overflødig. --- Forskjellen imellem Livets
+og Philosophiens Gehalt er nemlig at betragte som en egentlig Formforskjel, efterdi
+alt det, der har Sandhed i Livet, ogsaa maa erkjendes som Sandhed i Philosophien. Det
+Eiendommelige i Philosophiens Indhold vil altsaa beroe paa dens eiendommelige Form;
+de productive Philosopher, der have opdaget nye Former, have med det Samme
+fremdraget nye Indholdsmomenter. --- Hvad den intellectuelle Anskuelse er med Hensyn
+til Indholdet, det er den dialektiske Reflexion med Hensyn til Formen. Al Speculation
+er Intuition; det philosophiske Syn opfatter Tingenes Grundforhold, Livets Skikkelser
+og Tilværelsens Udviklingsstadier i store Omrids, Intuitionen er altsaa et plastisk
+Syn, for hvilket Formen og Methoden umiddelbart give sig tilligemed Indhold og
+Gehalt. Uden speculativt Genie gives der ingen philosophisk Produc%
+% --- p. 95 ---
+% The p. 94/95 join is MID-WORD: p. 94 closes "philosophisk Produc=" and p. 95 opens
+% "tivitet: Philosophien kan ikke læres (Schelling)." — the word is
+% "Productivitet". Read on the image (PDF 104).
+% Fraktur x confirmed: "forvexles" (both witnesses give "-verles"/"-vejles"; the
+% sort's right leg drops below the baseline at 8x, as at p. 55).
+% "Eensidighed" / "eensidig" begin with a Fraktur E, not a G — ABBYY reads
+% "Gensidighed" throughout, the image and tesseract agree on E.
+% No letterspacing on this page. Rejected as an ABBYY artefact: "Kategori e" —
+% the image sets "Kategorie;" solid.
+tivitet: Philosophien kan ikke læres (Schelling). Saalænge Intuitionen imidlertid har
+eensidig Overvægt over Reflexionen, er den videnskabelige Form endnu kun tilstede i
+sin Mulighed; men om end Philosophiens Genius har hævet sig til „Morgenrødens Rige“,
+saa have dog Ideernes geniale Frembrud og Intuitionens Prophetier kun Betydning,
+forsaavidt Philosophien er istand til at gaae ud over Begyndelsen, opfylde
+Spaadommen, og optage Virkelighedens concrete Indhold i articulerede Former.
+Philosophien er Videnskab, og adskiller sig fra Poesien derved, at dens Former vindes
+gjennem selvstændig Reflexion og en alsidig prøvende Meditation; den forudsætter
+altsaa Studium, den retfærdiggjør sin Methode, og maa forsaavidt kunne læres (Hegel).
+
+\anm{5} En Philosophies Eensidighed maa ikke forvexles med dens Ufuldstændighed.
+Ufuldstændigheden viser sig deri, at vigtige Punkter ere forbigaaede eller blot
+foreløbigt behandlede; men Eensidigheden beroer væsentligt derpaa, at visse
+Grundmomenter tilbagetrænges, medens andre derimod fremtræde med utilbørlig
+Overvægt. En Philosophie kan være eensidig, uden at være ufuldstændig, og omvendt,
+ufuldstændig uden at være eensidig. Eensidigheden ligger altsaa i det systematiske
+Anlæg, i Methoden, og refererer sig saaledes paa een Gang baade til Indhold og Form.
+Spinozas System er eensidigt, fordi Substantialiteten her absorberer Subjectiviteten,
+og om Spinoza end havde udviklet det menneskelige Frihedsbegreb nok saa udførligt,
+vilde han dog aldrig have kunnet anerkjende Frihedens Realitet uden at opgive sit
+Princip. Fichtes Idealisme er eensidig, fordi den lader Subjectiviteten fortære
+Substantialiteten. Vistnok har Fichte en Plads for Substantsens Kategorie; men om han
+end havde skrevet Folianter over Substantialitetsbegrebet,
+% --- p. 96 ---
+% SCAN CAVEAT, not a printed feature: a previous reader's YELLOW HIGHLIGHTER crosses
+% four lines here, from "Den sande philosophiske Methode" to "imod Alt“". Tesseract
+% garbles those lines badly and reports them letterspaced, and it inserts quotation
+% marks that are not in the book ("chäracteriseres"som"en"). At 600 dpi the type
+% under the highlight is SOLID: no letterspacing anywhere on this page. The ABBYY
+% layer, which is not fooled by the wash, carries the words and agrees with the
+% image. The highlighting is not transcribed.
+% "cfr." here is FRAKTUR, not antiqua (the f carries the Fraktur descender at 8x);
+% "Pag." is Fraktur and the figures are antiqua, left unitalicised per p. 89's
+% "Pag. 99" and p. 52's "Pag. 11---13". So the whole parenthesis stays upright.
+%
+% END OF § 11 AND OF THE FØRSTE DEEL. The foot carries a rule — but NOT the § -end
+% ornament of pp. 35 and 68. Measured at 300 dpi with the same threshold on all four
+% rules in the book so far:
+%   p. 35: two rules of EQUAL thin weight, ~5 px each, ~4 px gap, x 697--1008 = 311 px
+%   p. 68: the same, ~5--6 px each, ~4 px gap, x 954--1260 = 306 px
+%   p.  5: a THICK rule ~10 px over a THIN hairline ~4 px, ~5 px gap, x ~697--1102 = 405 px
+%   p. 96: a THICK rule ~8--11 px over a THIN hairline ~4 px, ~5 px gap, x 905--1322 = 417 px
+% So p. 96 carries the HEAVIER, WIDER ornament that closes the Indledning at p. 5,
+% not the light twin-rule §-end ornament. RE-MEASURED INDEPENDENTLY by the caller,
+% by longest-contiguous-dark-run per pixel row: p.5 = 0.26 of measure, p.96 = 0.27,
+% against p.35 = 0.20 and p.68 = 0.20 — the two-ornament finding stands. The
+% re-measurement also showed the per-row widths on pp. 5 and 96 to be IRREGULAR
+% (254/336/232/385/403 and 200/288/316/416/142), i.e. a SWELLED rule tapering to
+% points rather than a thick rule over a hairline. See \divrule in the preamble.
+% All four tail rules are now set through \divrule / \secrule; p. 5's coding, which
+% did miss part of the ornament, was retrofitted at the same time.
+% Nothing else stands at this foot: no signature mark, no catchword (the whole band
+% below the rule holds nothing above the scan's edge noise). The faint text visible
+% below the rule is show-through from the verso, p. 97.
+vilde han dog, ifølge sin Grundanskuelse, aldrig have erkjendt dens objective
+Betydning. Den sande philosophiske Methode kan derfor i Almindelighed characteriseres
+som en Totalitetsdialektik, der, for at bruge Professor Sibberns Udtryk, danner sig
+„under en altomfattende Conferens og Debat af Alt imod Alt“ (cfr. Sibbern: Om
+Philosophiens Begreb, Natur og Væsen. Pag. 24; 81).
+
+% The ornament closing § 11 and the FØRSTE DEEL: thick rule over a hairline, ~0.29
+% of the measure. See the measurements above. p. 97 opens the anden Deel and belongs
+% to the next batch, which begins with the full-measure double rule and \deel{}.
+\divrule
 
 % ---- Anden Deel, printed pp. 97--283 (PDF 106--292) ----
 % p.97 opens with the double rule + "anden Deel:" (LOWERCASE as printed) +
