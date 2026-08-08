@@ -69,8 +69,35 @@ print(f"footnotes: {body.count(chr(92)+'footnote')} | "
       f"textit: {body.count(chr(92)+'textit')} | "
       f"sic: {body.count(chr(92)+'sic')}")
 
+# ---------------------------------------------------------------------------
+# QUOTE BALANCE against the LOGGED DEFECTS, not against zero.
+#
+# This book's printer left unmatched quotation marks, which are transcribed as
+# printed. So the raw balance is not supposed to be zero, and — worse — the
+# defects can CANCEL: after p.86 the raw balance returned to 0 not because the
+# quotes are sound but because a missing opener at p.29 and a missing closer at
+# p.86 happened to offset. A bare "balance=0" would have read as all-clear.
+#
+# So: list every logged defect with its page and its effect, and compare the raw
+# balance to the sum. Add a line here whenever a new one is found and logged.
+QUOTE_DEFECTS = [
+    (29, -1, "Sibbern quotation CLOSES with “ and has no opening „ anywhere"),
+    (86, +1, "quotation opened „Hvis A er et … at p.85's foot never closes"),
+]
+
 op, cl = body.count("„"), body.count("“")
-print(f"quotes: „={op} “={cl}  balance={op-cl}   (expect 0 unless a defect is logged)")
+raw = op - cl
+pages_done = max(pages) if pages else 0
+expected = sum(d for pg, d, _ in QUOTE_DEFECTS if pg <= pages_done)
+status = "MATCHES the logged defects" if raw == expected else "*** DOES NOT MATCH ***"
+print(f"quotes: „={op} “={cl}  raw balance={raw:+d}")
+print(f"  expected {expected:+d} from {sum(1 for pg,_,_ in QUOTE_DEFECTS if pg<=pages_done)} "
+      f"logged defect(s) -> {status}")
+for pg, d, why in QUOTE_DEFECTS:
+    if pg <= pages_done:
+        print(f"    p.{pg}: {d:+d}  {why}")
+if raw == expected and expected == 0 and QUOTE_DEFECTS:
+    print("  NB raw zero here is defects CANCELLING, not quotes being sound.")
 
 # The Indhold reproduction in the front matter legitimately uses centre blocks
 # (it is a facsimile of the printed contents, not a structural head), so the

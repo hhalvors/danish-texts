@@ -5,18 +5,23 @@ batch loop. The standing method is `../../../TRANSCRIPTION-PLAYBOOK.md`.
 
 ## CURRENT RESUME POINT
 
-**Next: printed p. 78 (PDF 87)** — continue **Første Deel / Tredie Capitel, § 10
-*Slutningens formelle Gyldighed***. **§ 11 *Slutningens reelle Gyldighed: Beviis og
-Methode*** has not been reached; it closes the Første Deel at p. 96.
+**Next: printed p. 90 (PDF 99)** — continue **Første Deel / Tredie Capitel, § 11
+*Slutningens reelle Gyldighed: Beviis og Methode***, the last § of the Første Deel, which
+runs to **p. 96**. The next batch (pp. 90–96, seven pages) therefore **closes the Første
+Deel**; after it comes p. 97, which opens the **anden Deel** — note the printed lowercase
+`anden Deel:` there, against p. 6's `Første Deel:` and the Indhold's `Anden Deel.`
 
-**p. 77 ends MID-WORD.** The last body line closes `bliver et%` and p. 78 opens
-`hvert universale selv enkelt: …` — the word is ***ethvert***. Batch 6 read that
-continuation on the image itself (PDF 87) rather than taking it on report, per the lesson
-below. The trailing `%` is in place and the blank line is already closed up, so the
-pp. 78–89 fragment must **begin with `hvert`**.
+**p. 89 ends MID-WORD.** The last body line closes `sætte Demonstra%` and p. 90 opens
+`tionen som Betingelse for al Viden, maa man enten, som` — the word is ***Demonstrationen***.
+Batch 7 read that continuation on the image itself (PDF 99). The trailing `%` is in place and
+the blank line is already closed up, so the pp. 90–96 fragment must **begin with `tionen`**.
 
-**The p. 80 errata falls in the next batch:** l. 3 fra oven, `Omsætningen` → **`Oversætningen`**,
-to be applied inline and flagged with `% ERRATA`.
+**Two errata fall in the next batch**, both to be applied inline and flagged `% ERRATA`:
+
+- p. 92, l. 13 f.o.: `A er ei = A,` → **`A er ei = --- A`** (supplying the missing negation
+  dash). NB the Rettelser's own right-hand column misprints `ci` for `ei`; that typo is
+  reproduced in the back-matter transcription but is not part of the correction.
+- p. 93, l. 7 f.o.: `Betingelser` → **`Betingethed`**
 
 ### A process lesson worth more than the page it cost
 
@@ -34,10 +39,18 @@ in the next brief as something to verify rather than as fact.**
 
 `python3 check.py` prints progress; `bash verify.sh` compiles.
 
-**RUNNING QUOTE BALANCE: −1** (as of p. 29). One logged printer's defect accounts for it:
-the Sibbern quotation on **p. 29 closes with “ and has no opening „ anywhere**. Reproduced
-verbatim and flagged inline. Later batches should expect closings = openings + 1 and
-should *not* "fix" it.
+**RUNNING QUOTE BALANCE: raw 0 as of p. 89 — and that zero is a trap.** Two logged
+printer's defects now cancel each other:
+
+| page | effect | defect |
+|---|---|---|
+| 29 | −1 | Sibbern quotation **closes** with “ and has no opening „ anywhere |
+| 86 | +1 | quotation **opened** „Hvis A er et … at p. 85's foot never closes |
+
+Both are reproduced verbatim and flagged inline. A bare `balance=0` would read as all-clear,
+so **`check.py` now carries the defect list explicitly** (`QUOTE_DEFECTS`) and reports the
+raw balance against the expected sum, naming each defect and saying outright when a zero is
+cancellation rather than soundness. **Add a row there whenever a new one is found.**
 
 **Batches are 12 pages**, boundaries aligned so that **p. 97 starts a batch** (the anden
 Deel opening). 23 markers cover pp. 18–283 with no gaps or overlaps.
@@ -269,6 +282,58 @@ emitting the same warning and losing the letter from their PDF metadata. Harmles
 build; worth a sweep some day.
 
 ## DONE so far
+
+- **Batch 7 (pp. 78–89), image-verified. FIRST ERRATA APPLIED.**
+  **p. 80 errata applied and flagged:** line 3 f.o. confirmed on PDF 89 as "tagelse af
+  Omsætningen, og Alhedsslutningen bliver desaarsag"; set as **Oversætningen** with a
+  `% ERRATA` comment. p. 85's own "Oversætningen bliver da en hypothetisk Dom" corroborates
+  the direction. **Keep the asymmetry straight: printer's defects are transcribed as printed
+  and merely logged; Rettelser entries ARE applied.**
+  `\parag{11}{Slutningens reelle Gyldighed: Beviis og Methode.}` placed (p. 88), matching the
+  Indhold. **§ 10 closes with no rule** — measured, not eyeballed: the 111 px band carries a
+  flat ~66 dark px/row, which is the scan's edge noise, where the pp. 35/68 ornament spikes to
+  ~300. Tally: § 5 rule, § 6 none, § 7 none, § 8 rule, § 9 none, § 10 none.
+  **A claim I measured and rejected.** The agent reported that the § thesis is set *one size
+  up* from the body, and flagged it for a possible macro and retrofit across all eleven §§. I
+  measured p. 88 at 400 dpi, taking x-height as the band where a line's ink density is ≥ half
+  its max: **body lines 35–43 px (mean ~39), § 11's thesis lines 38–43 px (mean ~40.5)** —
+  inside the page's own spread. Baseline pitch is ~105 px above and below the head alike. What
+  *is* larger is the § **argument** line, at 58 px, which `\parag` already sets larger. So no
+  size change, no macro, no retrofit; the finding is recorded in the file so it is not revived.
+  What was real is the tooling consequence: `spacing.py` fits one glyph-width model per page,
+  so its pp. 88–89 flags ("poetisk", "logi") are justification artefacts.
+  **No tabular or multi-column layout** in range — the schema letters are inline antiqua
+  (`\textit{E---S---A}`), and p. 78's three Yderligheder are separate capitals with Fraktur
+  "og" between, italicised singly.
+  **Antiqua → `\textit{}`:** *universale/universalia*, *terminus medius*, *termini*, *genus*,
+  the a/b/c and A/E/S placeholders, *universalia ante rem / in re / in mente*, *modus
+  ponens/tollens*, *posita conditione…*, *sublato conditionato…*, *conditio/conditionatum*,
+  *propositio major*, *a non posse…*, *ab esse…*, *principium exclusi medii*, *Analytic. post.
+  c. 1---3*. Two whole-run cases on the p. 67 precedent, where an intervening Danish word is
+  itself antiqua: **"implicite eller explicite"** (p. 84) and the Aristotle reference. "Pag.
+  99" and "(§ 8 Anm. 4)" left unitalicised per pp. 21/52. Note ***comprehensive*** (p. 79) is
+  letterspaced **Fraktur**, not antiqua — long ſ and Fraktur h/v at 4×.
+  **Printer's defects, as printed and logged:** p. 78 **"Uviversalqvalitet"** (wrong sort, v
+  for n — the glyph matches the v two positions later, not the n before it); p. 81 near-blind
+  *r* in **Grundlag** (witnesses fail in opposite directions, "Guundlag"/"Gnindlag"); p. 83
+  **"ngenlunde"** for *ingenlunde*, initial i never set, clean paper and no ghost; **p. 86 a
+  quotation opened at p. 85's foot („Hvis A er et …) that never closes** — the source of the
+  new +1; p. 89 a stray vertical hairline between "den" and "Vished", press debris, logged not
+  transcribed. Wedge full stops confirmed (not commas): "beboet." p. 81, "Analytic." / "post."
+  p. 89.
+  **Greek (p. 89 only):** one normalisation, **ϰ→κ** in *ἐπιστημονικός*. **NOT normalised:
+  συλλογιςμὸς, printed twice with a final sigma standing medially** — the second occurrence is
+  mid-line and mid-word with a correct final ς three letters later for comparison, so a wrong
+  sort on the p. 33 „Ειςαγωγη“ precedent, not a line-break form.
+  Compositor takes in a preceding "et" twice on p. 80 — **sixth batch running**. Rejected as
+  false: **"det andet Schema"** (p. 80 — ABBYY spaces it, the image does not, and it is the
+  exact parallel of p. 79's solid "det første"), "Slutningernes Antal er" (p. 87),
+  Combination/det. (p. 81), udvikles (p. 84), deri (p. 86), poetisk/logisk (p. 89).
+  **Reader's marks (not transcribed):** grey pencil marginal lines at p. 80 left (ll. ~10–12,
+  the Induction definition) and p. 81 right (ll. ~10–14); a brown foxing speck in p. 83's
+  right margin.
+  Compile: **71 pp., 0/0/0/0**; braces 876/876; quotes „74 / “74 = **raw 0, which is the
+  p. 29 −1 and the p. 86 +1 cancelling** — see the trap noted above; suspect readings 0.
 
 - **Batch 6 (pp. 66–77), image-verified.** Closes **§ 8 and the Andet Capitel** at p. 68,
   opens **Tredie Capitel** with **§ 9 *Slutningens logiske Reqvisiter*** and
