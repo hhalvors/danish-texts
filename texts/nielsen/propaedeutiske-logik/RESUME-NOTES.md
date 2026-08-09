@@ -1,16 +1,21 @@
 # Rasmus Nielsen — *Den propædeutiske Logik* (1845): resume notes
 
-## ⏩ PHASE 2 (TRANSLATION) IN PROGRESS — read this section first
+## ✅ PHASE 2 (TRANSLATION) COMPLETE — the whole book, pp. 1–283
 
-Source of truth: `transcription.tex` (Danish), **COMPLETE**.
+Source of truth: `transcription.tex` (Danish), COMPLETE.
 Page-offset: PDF = printed + 9. Scan: `~/bibliotek/Nielsen, Rasmus/1845-propædeutiske-logik.pdf`.
 Method: `../../../TRANSLATION-PLAYBOOK.md`.
 
-### CURRENT RESUME POINT
-Next marker: `% [text to be added: pp. 247--257]` — **§ 19, The Originality
-of the Idea** (opens the Tredie Capitel, The Logic of the Idea; Danish at
-`\parag{19}`, ~L10226). 3 markers remain (§§ 19–21, pp. 247–283 — the last
-37 pages).
+Final state: **0 markers, 0 continuation notes; sandbox compile 207 pp.,
+0 errors, 0 char-warnings** (3 passes). Structural counts match the Danish
+exactly: 21 §§, I/II romsecs, 3 \capitel + 3 \capitelsp, 2 \deel, 2
+\division, 101 \anm, 6 \divrule + 2 \secrule at the same breaks, translated
+Errata leaf. Quote pairs balance (the `''` surplus of 6 is the six `E''`
+placeholders in § 10; "und und" in § 19's Hegel quotation is the mirrored
+p. 253 defect). `catalog.yaml`'s link now reads plain "Translation".
+REMAINS FOR HANS: compile both PDFs locally with the real fonts
+(libertinus + textalpha), check the /dansk/ links resolve, commit and push
+(`publish-danish.sh`).
 German quotation stays as printed in ``…''; Greek copied verbatim incl.
 logged wrong sorts. NB the six `E''` placeholders in § 10 make the file's
 `''` count exceed its ``` `` ``` count by exactly 6 — expected, not an error.
