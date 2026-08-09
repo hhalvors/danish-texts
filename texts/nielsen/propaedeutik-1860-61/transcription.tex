@@ -1,0 +1,1196 @@
+% ============================================================
+%  R. Nielsen, Forelæsninger over „Philosophisk Propædeutik“
+%  fra Universitetsaaret 1860--61.
+%  Kjøbenhavn: Forlagt af den Gyldendalske Boghandling (F. Hegel);
+%  Thieles Bogtrykkeri, 1862.  (482 pp., Fraktur)
+%  TRANSCRIPTION (Danish)
+%  Source: Google scan of the Koninklijke Bibliotheek (The Hague) copy,
+%          bibliotek/Nielsen, Rasmus/1862-forelaesninger_over_Philosophisk_propaed-2.pdf
+%          (byte-identical duplicate there: propaedeutik-1861.pdf).
+%          A second Google scan (British Library copy) is at
+%          https://books.google.com/books?id=83xZAAAAcAAJ and serves as a
+%          second witness where the working scan is doubtful.
+%  PAGE MAP:  see pagemap.py — uniform, printed 1--482 = PDF + 12.
+%          Verified by sweeping the header numeral of every PDF page 13--494
+%          via the scan's text layer: no offset change, no duplicated leaves.
+%          Endpoints to be re-confirmed against the page images by the first
+%          and last batch agents.
+%          Front matter (unpaginated): PDF 3--8 title leaves (two settings,
+%          both 1862, the fuller naming F. Hegel), PDF 9--10 Forord,
+%          PDF 11--12 Indhold.
+%  STRUCTURE (from the Indhold; page numbers of the three parts verified
+%          against the header sweep, sub-sections still to be verified
+%          against the printed heads as transcription reaches them):
+%            I.   Philosophiens Begreb                      pp. 1--29
+%            II.  Philosophien og de særskilte Videnskaber  pp. 30--476
+%                 (A. Mathematiken: Uendelighedsproblemet, from p. 39;
+%                  B. Chemien: Forandringsproblemet, from p. 81;
+%                  Resultat, from p. 167;
+%                  C. Physiologien: Livsproblemet, from p. 177)
+%            III. Philosophien og de akademiske Studier     pp. 477--482
+%  CONVENTIONS: subdivision marks in this book run a) b) c), then Greek
+%          α) β) γ) and doubled αα) ββ) γγ) — the OCR reads the Greek as
+%          a/6/7/B/y; restore the Greek (textalpha is loaded).
+%          The Darwin passage pp. 326--328 was previously transcribed as
+%          the excerpt edition texts/nielsen/propaedeutik-darwin/.
+%  FOOTNOTE MARKS: the one footnote met so far (p. 15) is marked *) in
+%          print, as in the 1850 volume; \thefootnote is set to a constant
+%          *) below on that evidence. Revisit if a later footnote carries
+%          a different printed mark.
+%  PRINTER'S DEFECTS: none logged yet.
+% ============================================================
+\documentclass[12pt,a4paper]{book}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{libertinus}
+\usepackage{libertinust1math}
+\usepackage{textalpha}   % Greek typed directly (α) β) γ) subdivision marks)
+\usepackage{graphicx}    % for \reflectbox (the old Danish »ɔ:« id-est mark)
+\DeclareUnicodeCharacter{0254}{\reflectbox{c}}  % ɔ (U+0254) = reversed c
+\usepackage[danish]{babel}
+\usepackage[protrusion=true,expansion=true]{microtype}
+\usepackage{setspace}
+\usepackage[margin=1.2in]{geometry}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\setlength{\headheight}{28pt}
+\addtolength{\topmargin}{-13.5pt}
+
+% Footnotes as printed: *) — see header. Constant mark, not \fnsymbol (math
+% mode, U+2217) and not footmisc[perpage] (resets on the typeset page).
+\renewcommand{\thefootnote}{*)}
+
+\usepackage{hyperref}
+
+\hypersetup{
+  pdftitle={Forelæsninger over „Philosophisk Propædeutik“ fra Universitetsaaret 1860--61},
+  pdfauthor={R. Nielsen},
+  hidelinks
+}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LE,RO]{\thepage}
+\fancyhead[RE]{\textit{Forelæsninger over „Philosophisk Propædeutik“}}
+\fancyhead[LO]{\textit{\leftmark}}
+
+\setstretch{1.3}
+
+\title{\textbf{Forelæsninger}\\[4pt]
+  \large over\\[4pt]
+  \textbf{\large „Philosophisk Propædeutik“}\\[6pt]
+  \large fra Universitetsaaret 1860--61}
+\author{R.\ Nielsen}
+\date{Kjøbenhavn: Forlagt af den Gyldendalske Boghandling (F.\ Hegel), 1862}
+
+\begin{document}
+\maketitle
+\thispagestyle{empty}
+\newpage
+
+\tableofcontents
+\newpage
+
+%% ============================================================
+%%  FORORD (unpaginated, PDF 9--10)
+%% ============================================================
+\chapter*{Forord}
+\addcontentsline{toc}{chapter}{Forord}
+\label{ch:forord}
+
+% The pp. 1--14 fragment below carries: the Forord text (marked
+% "% --- Forord, PDF 9 ---" and "% --- Forord, PDF 10 ---"), then the
+% chapter head for I. Philosophiens Begreb as printed on p. 1, then the
+% body of pp. 1--14. Later fragments likewise carry any chapter or
+% section head that falls at the start of, or inside, their range —
+% chapter heads live in the fragments, not in this skeleton, so that
+% each fragment still replaces exactly one marker.
+% --- Forord, PDF 9 ---
+Dersom nærværende Skrift tildrager sig nogen Opmærksomhed, vil
+Interessen uden Tvivl være af dobbelt Art. Med Spørgsmaalet om
+Indholdets mulige Værd vil et Fleertal af Læsere, holdende sig til
+Titlens Bogstav, vistnok forene et andet, mere praktisk Spørgsmaal:
+\emph{efter hvilke Principer og i hvilket Omfang er den philosophiske
+Propædeutik her foredraget for de Studerende?}
+
+Det vil da, med Hensyn paa det sidste Spørgsmaal, ikke være nok med
+en Bemærkning som den, at Fremstillingens Motiver, Grundtanker og
+hele Anlæg vel svare til de mundtlige Foredrag, men at Adskilligt,
+hvad det Enkelte angaaer, er forandret, Noget tilføiet, Andet udeladt
+o.~s.~v.; Læseren vil ansee sig berettiget til at vente en tydeligere
+Forklaring.
+
+Det bemærkes derfor udtrykkelig, at med Undtagelse af nogle mindre
+betydelige Redactionsforandringer er hele første Afdeling S. 1--30 en
+ligefrem Gjengivelse af de holdte Forelæsninger. Det Samme gjælder om
+anden Afdelings indledende Stykke: \emph{Almindeligt} S. 30--39, om
+Philosophiens Forhold til Mathematiken S. 39--63, om Philosophiens
+Forhold til Chemien S. 81--100, S. 135--177,
+% --- Forord, PDF 10 ---
+og om Philosophiens Forhold til Physiologien S. 177--180, S. 199--288,
+S. 386--437, S. 475--482.
+
+I Fremstillingen af de øvrige Partier ere derimod betydelige
+Forandringer foretagne; Afsnittet om de psychophysiske Undersøgelser
+har i de mundtlige Foredrag slet ikke været berørt; skærpede og videre
+gaaende Analyser ere her og der indførte, ligesom det da ogsaa
+forstaaes af sig selv, at det Allermeste af Anmærkningernes Indhold er
+tilføiet under Omarbeidelsen.
+
+Da Stræben efter at give Behandlingen navnlig af de physiologiske
+Problemer den Udførlighed, som Undersøgelser af en saa indviklet Natur
+ikke vel kunne savne, medførte en betydelig Udvidelse af anden
+Afdeling, er tredie Afdeling: Philosophien og de akademiske Studier,
+bleven indskrænket til en blot Angivelse af Momenterne og kun tilføiet
+som særlig Afdeling for at vise Gangen i det Hele.
+
+\noindent Den 11te Juni 1862.
+
+\begin{flushright}
+\textbf{R.~Nielsen.}
+\end{flushright}
+
+% (double rule below the signature, closing the Forord as printed)
+
+%% ============================================================
+%%  I. PHILOSOPHIENS BEGREB  (pp. 1--29)
+%% ============================================================
+\chapter*{I.\\ Philosophiens Begreb.}
+\addcontentsline{toc}{chapter}{I. Philosophiens Begreb}
+
+% --- p. 1 ---
+% (chapter opening; no header numeral on this page, signature "1" at foot)
+\section*{A.\\ Modsigelseslære.}
+\addcontentsline{toc}{section}{A. Modsigelseslære}
+
+\textbf{Hvad er Philosophie?} „En Videnskab fuld af Modsigelser!“
+Denne Definition, hvormeget den end, fra een Side betragtet, synes
+anlagt paa at bryde Staven over al Philosophie, er ikke destomindre
+begrundet saavel i Videnskabens Historie, som i Sagens Natur. For
+enhver anden Videnskab vilde en saadan Tilstaaelse vel være
+tilintetgjørende, for Philosophien afgiver den et væsentligt
+Udgangspunkt, et paalideligt Støttepunkt, et fast, urokkeligt
+Grundlag. At Philosophien maa indeholde Modsigelser, er jo en
+Selvfølge, eftersom det netop er den Videnskab, der overalt, saavel i
+Tilværelsen, som i den sunde Forstands Opfattelse af Tilværelsen
+(Propæd. S. 40--44), opdager og paaviser Modsigelser; Philosophien
+bliver just med Hensyn hertil at opfatte som en \emph{almindelig
+Modsigelseslære}.
+
+Som Modsigelseslære maa Philosophien imidlertid ikke blot opdage og
+paavise Modsigelserne, den maa ogsaa prøve Modsigelserne; thi der er
+Forskjel paa Modsigelser. Nogle Modsigelser ere nemlig overfladiske,
+unødvendige, lette at undgaae, andre derimod paatrængende og
+uafviselige; nogle Modsigelser indsnige sig paa Grund af Tankeløshed,
+andre
+% --- p. 2 ---
+fremkunstles ved Spidsfindighed, andre afsløres ved Skarpsindighed;
+nogle Modsigelser spille som i en Tankeleg, andre angive væsentlige
+Knuder, vanskelige, tungt opløselige Problemer.
+
+Til at oplyse, hvor nødvendigt det er, at der, hvad Modsigelserne
+angaaer, gjøres Forskjel imellem det Overfladiske og det Væsentlige,
+det Skarpsindige og det Spidsfindige, kunne følgende Exempler tjene:
+
+\textbf{Løgneren} (ψευδόμενος). Denne Modsigelse fremsættes saaledes:
+Naar En siger, at han lyver, lyver han saa med dette sit Udsagn, eller
+siger han Sandhed? Her fordres til Svar enten Ja eller Nei. „Ja, han
+lyver!“ --- Og siger det selv, nævner Tingen med det rette Navn,
+siger, hvad sandt er, lyver altsaa ikke. „Nei, han lyver ikke, han
+taler Sandhed!“ --- Man maa altsaa troe, hvad han siger; nu siger han
+jo netop, at han lyver; men er det sandt, at han lyver, saa taler han
+jo ikke Sandhed.
+
+At her er en Modsigelse, kan den sunde Forstand let fatte; men hvad er
+det for en Modsigelse, hvori stikker Feilen?
+
+\textbf{Ligestore Størrelser.} At en Størrelse er liig sig selv, og at
+to, tre . . Størrelser ere indbyrdes ligestore, deri seer den sunde
+Forstand ingen Modsigelse; dersom det derimod blev paastaaet, at to
+Størrelser umulig kunne være ligestore med en og samme tredie, og
+følgelig indbyrdes ligestore, fordi det er en Modsigelse, vilde den
+sunde Forstand føle sig krænket. Er her da virkelig nogensomhelst
+Modsigelse i den anførte Sætning? For at indsee, hvad det egentlig
+er, her tales om, maa man udtrykkelig mærke sig, at her ikke tales om
+Ting, der have Størrelse, men om Størrelser. Tales her, ikke om
+Størrelserne selv, men om Ting, der have Størrelse, t. Ex. et Æble, en
+Trekant, en Time o.s.v., da er her ganske vist ikke Spor af
+Modsigelse. At to Trekanter, som, hver for sig, ere ligestore med een
+og samme
+% --- p. 3 ---
+tredie, ere indbyrdes ligestore, forstaaes af sig selv. Saalænge vi
+have med concrete Størrelser at gjøre, kan Forskjellen og Flerheden
+meget vel bestaae med Ligestorheden; men, naar der handles om rene
+Størrelser, stiller Sagen sig anderledes. En Flerhed af Størrelser
+forudsætter med Nødvendighed, at den ene maa kunne adskilles fra den
+anden: uden indbyrdes Forskjel ingen Flerhed. Men hvorved skulle rene
+Størrelser vel adskille sig fra hverandre indbyrdes uden ved
+Storheden? Ere Størrelserne indbyrdes ligestore, saa er jo ethvert
+Glimt af Forskjel forsvunden, dermed er tillige Flerheden forsvunden:
+at flere Størrelser ere indbyrdes lige, vil altsaa med andre Ord sige,
+at det ikke er flere, men een og samme Størrelse, som, hvormange Gange
+den end gjentages, dog ikke mangfoldiggjøres, men vedbliver at være
+den selvsamme.
+
+Vil „den sunde Forstand“ afvise denne Conseqvens, fordi den har noget
+Anstødeligt ved sig, da kan det dog vel ikke uden videre skee ved et
+Magtsprog; den forstandige Afviisning maa lægge an paa at eftervise,
+hvori Misligheden bestaaer, og hvorledes den hæves. Kan een og samme
+Størrelse ved at nævnes tyve Gange blive til tyve indbyrdes ligestore
+Størrelser, saa maa vel een og samme Specie ved at nævnes tyve Gange
+ogsaa kunne blive til tyve Specier; men dersom det ikke er nok at
+gjentage den samme Størrelse, dersom der under Gjentagelsen tillige
+skal tænkes paa en Forskjel, hvorfra skal da Forskjellen komme?
+
+\textbf{Øieblikket.} Dersom det gamle Spørgsmaal: naar døde Sokrates?
+besvares ved at henvise til hans Dødsaar, vil den sunde Forstand neppe
+heri ane nogen Modsigelse. Det skulde da være, at Sokrates forsaavidt
+ikke har noget Dødsaar, som han ikke har været et Aar om at døe: han
+var jo frisk og sund endnu det hele sidste Aar, indtil han drak af
+Bægeret. Men naar man nu, ifølge en vel bekjendt og hjemlet
+Sprogbrug, ved hans Dødsaar betegner det Aar, hvori hans
+% --- p. 4 ---
+Dødsdag faldt, saa er her jo ingen Modsigelse. Vil man indvende, at
+han heller ikke var en heel Dag om at døe, nu, saa tænke man paa hans
+Dødstime, og, vil man endelig gaae til det Yderste, paa hans
+Dødsøieblik. Altsaa: naar døde Sokrates? „I det Øieblik, han ophørte
+at leve!“ Men dette Svar, der kun siger os, at han døde, da han døde,
+er jo intet Svar. Spørgsmaalet gjælder det Tidspunkt i Sokratesses
+Tilværelse, da hans Død indtraf. For at angive dette Tidspunkt, kan
+man nu tænke sig fire Tilfælde: enten døde han, α) imedens han endnu
+levede, eller β) da han allerede var død, eller γ) da han tildeels var
+levende og tildeels død, eller δ) da han hverken var levende eller
+død. Men α) at døe, imedens man endnu lever, at være levende død, er
+dog vel en Modsigelse. At døe, naar man β) allerede er død, er da vel
+ogsaa en Modsigelse. Det Øieblik, da Sokrates døde, maa altsaa have
+været det Øieblik, da han, liggende paa Grændsen mellem Liv og Død,
+befandt sig i en saadan Tilstand, at en Deel af ham, t. Ex. hans
+Fødder, allerede var død, medens en anden Deel endnu var levende. Ved
+denne Forklaring faae vi imidlertid ikke Spørgsmaalet besvaret, men
+kun skudt længere tilbage; thi Spørgsmaalet er: naar døde den allerede
+døde Deel? Svares hertil: den allerede døde Deel døde, da den endnu
+tildeels var levende, tildeels død: saa vil den i Tilfældet γ) skjulte
+Modsigelse være iøinefaldende. At tænke sig Sokrates i en Tilstand,
+da han hverken var levende eller død, er da endelig ogsaa det Samme
+som at tænke sig en Modsigelse (δ); thi hvorlænge lever vel et
+Levende? Indtil det døer!
+
+\emph{„En Philosophie, der er i aabenbar Modsigelse med „den sunde
+Forstand“, er falsk; en Philosophie, der umiddelbart retter sig efter
+den sunde Forstand, er overfladisk. Philosophien vil ikke vilkaarlig
+modsige den naturlige Forstand, men kun vise, at den saakaldte sunde
+Sands, uden at have
+% --- p. 5 ---
+nogen Anelse derom, uophørlig modsiger sig selv.“} (Propæd. S. 41).
+
+Forsaavidt de forskjelligartede Modsigelser udvikle sig under
+Tænkningens Gang, og deres Oprindelse sees fra den subjective Side,
+maa Reflexionens psychologiske Andeel i de for „den sunde Sands“
+anstødelige Modsigelser nærmere bestemmes. De herhen hørende
+Udskeielser lade sig i Korthed charakterisere som de \emph{eristiske},
+de \emph{spidsfindige} og de \emph{sophistiske}.
+
+Eristikens paafaldende Kjendemærke er eensidigt Hang til Kiv og Strid,
+Lyst til overalt at glimre ved Indvendinger, gjøre Vanskeligheder,
+nedrive det almindeligt Antagne og haardnakket forsvare egne afvigende
+Paastande. Hvad den gamle Philosophie angaaer, er det især den med
+den eleatiske beslægtede megariske Skole, der har faaet Navn af
+eristisk; men det kan heller ikke negtes,
+% (a small stray mark stands between "kan" and "heller" in the print —
+%  a speck at hyphen height, read by both OCR witnesses as a hyphen;
+%  grammatically no hyphen is possible here)
+at enhver eiendommelig udviklet Form af Philosophien har sit polemiske
+Element, og at Eristiken, trods alle sine Skyggesider, forsaavidt er
+af umiskjendelig Betydning i Videnskabens Udvikling. Til Indsigt og
+Viden er det nemlig ikke nok, at man danner sig, hvad man saadan
+kalder en fornuftig Mening om Tingene, og ved at forene Sandseindtryk
+med naturlig Dømmekraft ledes til at gjøre Forskjel imellem rigtige og
+urigtige, antagelige og forkastelige Meninger; ved Hjælp af Meninger
+naaer man kun det Sandsynlige, ikke det Sande. Den, der vil hæve sig
+fra den blotte Menen til Viden, maa væbne sig mod Sandsebedrag, lade
+Tænkningen prøve det Antagne, og kun erkjende det for sandt, der lader
+sig tænke, men derimod, uden Hensyn til Mængdens iøvrigt uforgribelige
+Meninger, erklære alt det, der ikke lader sig tænke, for usandt. At
+nu Philosophien paa disse Vilkaar maa komme i mangesidig Conflict med
+den sunde Menneskeforstand, er indlysende. (Jvfr. Philos.\ og
+Mathem. S. 12. Anm. Mathem.\ og Dialektik S. 34--35. S. 116--117.
+S. 131--32 o.s.v.).
+% --- p. 6 ---
+Til stringent Begrebsanalyse udfordres Skarpsindighed; men den
+eensidige, ufrugtbare, ved subtile, men dog kun halvsande eller endog
+usande, Distinctioner blændende Skarpsindighed giver Spidsfindighed.
+Saa let som det er at angive Forskjellen imellem Skarpsindighed og
+Spidsfindighed, naar man blot holder sig ved det Almindelige, saa
+umuligt er det at opstille en for alle enkelte Tilfælde gjældende
+Regel, da een og samme Yttring kan, naar den sees fra en Side, tage
+sig ud som spidsfindig, og dog, fra en anden Side seet, bære Præg af
+sund og sand Skarpsindighed. Den i „Løgneren“ anlagte Modsigelse kan
+tjene til Exempel. Er Opgaven nemlig at indøve den Sandhed, at man
+ikke uden videre skal indlade sig paa at besvare ethvert Spørgsmaal,
+fordi der gives Spørgsmaal, hvori den tilsyneladende tydelige og let
+fattelige Mening, nærmere beseet, er meningsløs, kan „Løgneren“ staae
+som et Mønster paa sand Skarpsindighed; gaaer man derimod troskyldig
+ind paa den forlangte Besvarelse, og det endog saaledes, at man, idet
+man med Forundring seer Bekræftelsen forvandle sig til Benegtelse, og
+Benegtelsen igjen til Bekræftelse, tilsidst indbilder sig at staae
+foran en dyb Gaade, en saare indviklet Knude, hvis Løsning maaskee vil
+udbrede et hidtil ukjendt Lys over „de evige Sandheder“, da har
+Spidsfindigheden overlistet den sunde Forstand og hildet den i sit
+Væv.
+
+I hemmeligt Forbund med Spidsfindigheden og Haarkløveriet finde vi
+Sophisteriet. Sophisten nøies ikke med at paavise Modsigelser, han
+fremkunstler Modsigelser, han leger med Modsigelser, uddrager
+Slutninger, og blænder ved falske Slutninger. Et er det nemlig at
+udhæve Modsigelser, et Andet at misbruge dem i Sophistikens Tjeneste;
+hvor stor Forskjellen er, kan t. Ex. sees af, hvad ovenfor er anført
+om „Øieblikket“. At gjøre opmærksom paa de Modsigelser, Tanken med
+Nødvendighed maa støde paa, naar den vil gjøre sig Rede for
+Øieblikkets Betydning, kan ingen Forstandig ansee
+% --- p. 7 ---
+for Sophisterie; først, naar Talen er om Modsigelsernes Anvendelse,
+bliver Sophisteriet kjendeligt paa det i Slutningerne Falske,
+Uholdbare og Blændende. Vilde saaledes Nogen fra de i Tanken om
+Dødsøieblikket indeholdte Modsigelser slutte til Dødens Utænkelighed,
+fra Dødens Utænkelighed til Dødens Umulighed, og derpaa grunde et nyt,
+med eiendommelig Skarpsindighed udstyret Beviis for Sjælens
+Udødelighed, maatte vi ansee ham for en Sophist.
+
+% (section rule as printed)
+\section*{B.\\ Mulighedslære.}
+\addcontentsline{toc}{section}{B. Mulighedslære}
+
+Skal Philosophien som Modsigelseslære ikke opløse sig i Spidsfindighed
+og Sophisteri, maa den altid fra en eller anden Side see sig istand
+til at magte Modsigelserne; den maa da kunne bestemme deres Forhold
+saavel til Tingene som til vore Reflexioner over Tingene, saavel til
+den objective Væren som til den subjective Tænkning; den maa, idet den
+gjennemskuer Modsigelsens Væsen, opdage Kjendemærkerne paa det i sig
+Tænkelige og det i sig Utænkelige, og derved, saa at sige, aftvinge
+Modsigelsen en paalidelig Maalestok for Antageligt og Forkasteligt,
+Rimeligt og Urimeligt, Muligt og Umuligt: en grundig Modsigelseslære
+er uadskillelig fra en \emph{almindelig Mulighedslære}.
+
+\textbf{Hvad er altsaa Philosophie?} „En Lære om det Mulige.“ Men, da
+Philosophien jo dog umuligt kan være en Lære om alt Muligt, er denne
+Wolfske Definition kun tilfredsstillende paa det Vilkaar, at
+Mulighedens Begreb, dets Omfang, dets Indhold og Forhold til
+Modsigelsen nøiagtig bestemmes. Den Grundsætning: Muligt er Alt, som
+ikke indeholder en Modsigelse (\textit{possibile est, quod non
+implicat contradictionem}), hvilket saa igjen forudsætter, at Alt,
+hvad der indeholder en
+% --- p. 8 ---
+Modsigelse, er umuligt, vil, ifølge vort Foregaaende, neppe afgive
+nogen paalidelig enten dogmatisk eller kritisk Rettesnor.
+
+For det Første er det af sig selv indlysende, at den opstillede
+Grundsætning kun angiver Muligheden formelt, og altsaa er uskikket til
+at orientere os angaaende de reale Muligheder. Selv om vi indtil
+videre erklære Alt, hvad der indeholder en Modsigelse, for umuligt, og
+Alt, hvad der ikke indeholder en Modsigelse, for muligt, vil det
+herved givne Mulighedsbegreb dog være saa negativt, saa tomt og
+svævende, at det aldeles ikke lader sig bringe i nogensomhelst positiv
+Sammenhæng med det Virkelige. For at bestemme de i Virkeligheden
+gjældende Muligheder, er det nødvendigt at kjende de virkelige Ting
+med deres Betingelser og Love; men til Kundskab om virkelige Ting
+naaer man kun ad Erfaringens Vei. Uden Erfaringens Correctiver vil
+den dogmatiserende Tænkning med sine tomme Begreber ligesaa let være
+fristet til at sætte de reale Muligheder for snævre Grændser, som til
+at indrømme dem et for vidt Spillerum. Eller hvem skulde vel endnu
+paa hiin Tid, da Wolf fastsatte Grændserne, og definerede
+Mulighederne, have indseet Muligheden af, at Skibe skulde kunne gaae
+baade imod Vind og Strøm, at Vogne uden Heste skulde kunne løbe, ikke
+som Heste, nei hurtigt som flyvende Fugle, eller Muligheden af, at en
+Mand i London skulde kunne correspondere med en Mand i Calcutta saa
+hurtigt og let, som om de talede sammen. Saalænge Philosophien med
+sine Formalbegreber og Definitioner gjør Forsøg paa at udtømme
+Tilværelsen, og opkaste sig til Dommer over det i Virkeligheden Mulige
+og Umulige, saalænge vil ogsaa den sunde Menneskeforstand faae
+mangfoldig Anledning til triumpherende Anvendelse af Hamlets Ord:
+\textit{There are more things in heaven and earth, Horatio, than are
+dreamt of in your philosophy.}
+
+Men selv om Philosophien opgiver at ville udgrunde de reale
+Muligheders positive, empiriske Indhold, kan den
+% --- p. 9 ---
+alligevel bidrage væsentlig til at rense og forhøie vor Erkjendelse af
+det Mulige, dersom den blot kan sikkre os Mulighedernes negative Side
+ved at bestemme det Umulige. Lader nu det Umulige sig kun erkjende
+som det i sig Utænkelige, og maa det Utænkelige nødvendigviis altid
+være kjendeligt paa Modsigelsen, saa paatrænger sig af sig selv det
+Grundspørgsmaal, \emph{hvorledes det Modsigende da forholder sig til
+det Tænkelige}; her staae vi ved et afgjørende Vendepunkt.
+
+Idet den dogmatiske Philosophie uden videre forudsætter Eenhed af
+Tænken og Væren, gaaer den med det Samme ud fra den Antagelse, at det
+Modsigende ubetinget er et Utænkeligt, og det Utænkelige et Umuligt.
+Men er det Modsigende nu ogsaa i enhver Henseende utænkeligt?
+
+\emph{„Hvad betyder Modsigelsen? Et tilværende Intet er en
+Modsigelse; en rund Fiirkant er en Modsigelse, en flyvende Hest er
+ogsaa en Modsigelse. Ikke desto mindre ere disse Modsigelser af
+forskjellig Art.“} (Propæd. S. 43).
+
+Dersom det i sig selv Modsigende uden videre er utænkeligt, hvorledes
+kommer Tanken da til at opfatte dette Utænkelige? hvordan gaaer det
+til, at vi ikke blot forstaae, hvad der menes med Ordet: Modsigelse,
+men ogsaa klart indsee, hvad der ligger i Modsigelsens Væsen? Sætte
+vi t. Ex. „Noget“ imod „Intet“, „det Værende“ imod „det Ikke-Værende“,
+da falder det jo Tanken ligesaa let at fatte det Negative, som at
+fatte det Positive; stille vi Sætningen: „det Værende er“, imod
+Sætningen: „det Værende er ikke“, da mærker man strax, at en Strid
+mellem Subject og Prædikat er Tanken ligesaa indlysende, som en
+Overeensstemmelse. Men naar nu Tanken ligesaa let opfatter Striden
+som Overeensstemmelsen, ligesaa klart gjennemskuer et tilværende Intet
+som et tilværende Noget, og altsaa forsaavidt finder hiint ligesaa
+tænkeligt som
+% --- p. 10 ---
+dette, hvorledes kan det i sig Stridige og Modsigende da for Tanken
+vise sig som et Utænkeligt, og dette Utænkelige falde sammen med det
+Umulige?
+
+For at rede sig ud af Forlegenheden forsøge man engang at lade
+Forestillingen understøtte Tænkningen. Den rene, abstracte, fra al
+Anskuelse og Forestilling løsrevne Tænken fatter vistnok ligesaa let
+det Negative som det Positive, eftersom det Negative netop er
+Abstractionens egen abstracte Frembringelse; men naar Anskuelsens Lys
+opgaaer, naar Forestillingen træder til, bliver Modsætningen mellem
+det Positive og det Negative, mellem Noget og Intet iøinefaldende; thi
+Noget lader sig anskue, Intet, det rene Intet, lader sig ikke anskue;
+til det Positive svarer en Forestilling, men Intet, det Negative,
+frastøder enhver Forestilling, og bliver desaarsag igjen frastødt og
+forkastet af Forestillingen.
+
+Hvorledes Tænkningen ved at forbindes med Forestillingen kommer til at
+opfatte det Modsigende som det Utænkelige, og det Utænkelige som det
+Umulige, kan sees af Exemplet med den runde Fiirkant. Den Sætning:
+Fiirkanten er rund, lader sig vel tænke, forsaavidt Prædikatets Strid
+med Subjectet lader sig tænke; men den runde Fiirkant lader sig ikke
+forestille, efterdi Forestillingen om det Runde fortrænger og
+udsletter Forestillingen om det Fiirkantede. Tanken, der indseer, at
+den runde Fiirkant gjør en Fordring til Forestillingen, som
+Forestillingen maa forkaste, stempler nu Modsigelsen som noget
+Forkasteligt, erklærer den runde Fiirkant for et Utænkeligt, og dette
+Utænkelige for et Umuligt. At det netop er Anskuelse og Forestilling,
+som i slige Tilfælde maa hjælpe Tanken til at opdage det Utænkelige,
+sees ikke blot af Sætninger, i hvis Bestanddele Forestillingen
+øiensynlig hersker, saasom: Sort er ikke hvidt, Tykt er ikke tyndt,
+men tillige af Exempler, der ikke umiddelbart angive Modsigelsen i Ord
+og Udtryksmaade, som naar man spørger: er
+% --- p. 11 ---
+et regulært Hexaeder muligt? er det muligt, at en med Ellipsen
+parallel Linie kan være en Ellipse? o. s. v.
+
+Dersom vi nu blot kunde stole paa, at Anskuelse og Forestilling altid
+og i alle Tilfælde ville afgive ubedragelige Kjendemærker paa
+Tænkeligt og Utænkeligt, saa havde vi dog her noget Fast at holde os
+til; men see nu til Exemplet med den flyvende Hest! Det forekommer
+dog vist den naturlige Sands, som om her under Benævnelsen: flyvende
+Hest, laa skjult en Modsigelse. Men til hvem skal den sunde
+Menneskeforstand nu henvende sig for at faae det Modsigende opklaret?
+Til Tænkningen! Det hjælper ikke; den rene Tænkning tænker Alt, ogsaa
+det Utænkelige. Til Anskuelsen! Hjælper heller ikke; Anskuelsen
+lever hos Digteren, og Digteren rider paa Pegasus, og Pegasus forliger
+Anskuelsen med alle bevingede Heste. Til en Forening af Tænkning og
+Anskuelse! Men hvorledes kan en Forening af tvende Upaalidelige
+afgive noget Paalideligt? Til Sandseindtryk! Ja, Sandseindtryk kunne
+i Forening med Tænkningen lære os Noget om det Mulige, forsaavidt de
+lære os Noget om det Virkelige, forstaaer sig; men hvad lære de os om
+det blot Mulige, og hvad kunne de vel lære os om det i sig Modsigende
+og Umulige?
+
+For at bestemme Mulighedens Forhold til Modsigelsen, er det fremfor
+Alt nødvendigt at fatte \emph{Modsigelsens Grundsætning}, dens Form,
+dens Gyldighed, dens Anvendelse.
+
+I den formelle Logik finde vi Identitetens og Modsigelsens Sætninger
+saa discret opstillede, at vi derved ikke blot forsynes med to
+Grundsætninger, men ovenikjøbet med to selvstændige Principer. Skulde
+det nu virkelig have Noget at betyde med denne Principernes Tohed,
+maatte vi vel vente en eller anden Oplysning angaaende deres indbyrdes
+principielle Forskjellighed. Men hvori skal Forskjellen egentlig
+bestaae? For at forklare Identitetssætningen: \textit{A} er, hvad
+\textit{A} er, underskyder man Contradictionssætningen, at \textit{A}
+netop er,
+% --- p. 12 ---
+hvad \textit{A} er, fordi \textit{A} ikke er Andet, og ikke kan være
+Andet, end hvad \textit{A} er. Har nu Contradictionsprincipet, og det
+endog, i logisk Forstand, førend det blev født, maattet gjøre Tjeneste
+ved Opstillingen af den rene Identitet, saa er det heller ikke mere
+end billigt, at Identitetsprincipet, efter at det allerede er født, og
+de logiske Fødselsveer lykkelig ere overstaaede, igjen forhjælper
+Contradictionsprincipet til behørig Anerkjendelse. Hvorfor er saa
+ingen Ting det, hvad den ikke er? Svar: fordi enhver Ting er, hvad
+den er. Og hvorfor er enhver Ting, hvad den er? Svar: fordi ingen
+Ting er, hvad den ikke er. Med andre Ord: naar her spørges om
+Identiteten, svarer man med Contradictionen, og naar her spørges om
+Contradictionen, svarer man med Identiteten. Seer man nøiere til, maa
+det unegtelig forekomme den sunde Menneskeforstand, som om her
+egentlig ikke var to, men kun een Grundsætning.
+
+Dog sæt endog, at vi, for saavidt muligt at undgaae Conflict med
+traditionelle Former, lode den formelle Logik beholde sine to
+Grundsætninger ubeskaarede, saa at vi --- for „Vishedens“ og
+„Sandhedens“ og „Determinationens“, „Statueringens“, „Hvadhedens“,
+„Decisionens“, „Eenstemmighedens“ og „Samstemmighedens“ Skyld ---
+bogstavelig fastholdt Identiteten for sig og Contradictionen for sig;
+mon en saadan Fastholden for sig saa maaskee skulde kunne forhjælpe
+den sunde Forstand til klar og tydelig Indsigt i Forholdet mellem det
+Modsigende og det Umulige? Det synes ved første Øiekast, som var her
+endnu nogen Vanskelighed. Har nemlig ethvert \textit{A}, naar det
+blot er, hvad det er, ifølge Identitetsprincipet Krav paa „et gyldigt
+er“: da lader det næsten, som om det Meningsløse og Tankeløse ogsaa
+kunde gjøre Krav, gyldigt Krav paa „et gyldigt er“; kan enhver Ting,
+naar den bare ikke er, hvad den ikke er, tilfredsstille
+Eenstemmigheds- og Samstemmighedsprincipet, hvorfor skulde det
+Stridige, det Urimelige, det i sig Modsigende og Taabelige
+% --- p. 13 ---
+da ikke ogsaa kunne tilfredsstille Eenstemmigheds- og
+Samstemmighedsprincipet?
+
+Men at oversee eller endog forkaste Modsigelsens Grundsætning gaaer da
+heller ikke paa nogen Maade an; tvertimod, naar Tanken forsøger at
+negte Contradictionsprincipets Gyldighed, bliver den netop gjennem
+Negtelsen ledet til at bekræfte den. At sætte: „Sort er hvidt“,
+istedetfor: „Sort er ikke hvidt“, er ikke alene muligt, men fornuftigt
+og nødvendigt, naar den tilsvarende Modsigelse ret skal
+tydeliggjøres; men, idet Modsigelsen paa denne Maade er stemplet som
+Modsigelse, er Grundsætningen hævdet. Det Utænkelige er i denne
+Forstand ikke et Noget, Tanken slet ikke kan tænke, men det Utænkelige
+er den Tanke, Tænkningen, ifølge et i en given Sammenhæng givet
+Formaal, selv fordømmer, en Tanke, der kun bliver til, for at
+forsvinde, en Tanke, ved hvis Ophævelse Tænkningen erkjender sin Lov,
+og tilfredsstiller sig selv. Kun naar det Utænkelige saaledes bestemt
+er sat imod det Tænkelige, da først kan dette siges at være det
+Muliges, hiint det Umuliges logiske Mærke. Umiddelbart kan altsaa
+Modsigelsen, logisk seet, ikke afskaffes. Kunde Modsigelsens
+Grundsætning een Gang for alle afskaffe Modsigelsen, vilde den med det
+Samme gjøre sig selv overflødig. Men naar Tanken ikke kan røre sig,
+uden at Modsigelsen, dens Braad og Spore ogsaa rører sig, staaer
+Grundsætningen ved Magt, fordi Modsigelsens Medvirkning staaer ved
+Magt; for at bestemme det Tænkelige, sigte det Mulige og afvise det
+Umulige, maa Contradictionsprincipet uophørlig modsige Modsigelsen,
+maa ved Modsigelsens Opløsning hævde Modsigelsen.
+
+I Anvendelsen af Contradictionsprincipet sees Forskjellen mellem den
+kritiske og den dogmatiske Philosophie. Enig med Dogmatismen, naar
+det gjælder om at stille Modsigelsen udvortes fjendtlig mod Tanken og
+Tankebevægelsen, afviger den kritiske Philosophie saa fra den
+dogmatiske deri, at den i det Utænkelige kun seer det Umuliges
+subjective, ikke tillige dets
+% --- p. 14 ---
+objective Side. Naar Kant forsøger at tænke sig Verdens Oprindelse,
+støder han ganske rigtigt paa Modsigelsen; det Samme gjentager sig,
+naar han vil tænke Substantialitetens, Nødvendighedens og Frihedens
+Væsen objectivt; den skarpsindige, fra sit Synspunkt conseqvente,
+Tænker er her saa langt fra at blive det Modsigende qvit, at han
+tvertimod, idet han seer Modsigelsen knytte sine Knuder, og sætte sig
+fast i uafviselige Antinomier (Propæd. S. 29--30; Mathem.\ og
+Dialekt. S. 125--126), erklærer den for uovervindelig. Verdens
+objective Væsen hører altsaa, ifølge Kant, til det for os Utænkelige;
+men hvad slutter nu Kant heraf? Ingenlunde, at en objectiv Verdens
+Realitet skulde af den Grund ansees for umulig --- det er en Slutning,
+der først opkommer hos Fichte (Propæd. S. 33.) --- nei, Forfatteren af
+„Kritik der reinen Vernunft“ advarer just imod overilede Slutninger
+fra det subjectivt Utænkelige til det objectivt Umulige. Adskillelsen
+af Tænken og Væren, den kritiske Philosophies oprindelige
+Charakteermærke, grunder sig jo netop paa den Forudsætning, at der for
+den menneskelige Forstand gives væsentlige, nødvendige, uopløselige
+Modsigelser.
+
+Men ere de kantiske Antinomier da virkelig uopløselige? Det kommer
+vel an paa, om man vælger at indrømme Modsigelsen enten en blot
+subjectiv eller en baade subjectiv og objectiv Betydning. Et saadant
+Valg kan naturligviis ikke være vilkaarligt, det maa fremgaae af
+Sagens Natur. Dersom det da nu viser sig, at man, ved at negte
+Modsigelsens objective Gyldighed, fastholde den kritiske Adskillelse
+af Tænken og Væren, og saaledes afvise ethvert Forsøg paa at erkjende
+„\emph{Tingen i sig}“, ingenlunde undgaaer Modsigelsen, men meget mere
+indvikler sig i nye og større Modsigelser: hvad saa?
+
+% (short centred rule after this paragraph, closing the discussion as
+%  printed at the foot of p. 14; p. 15 opens the next section)
+
+% I. Philosophiens Begreb continues; C. Dialektik region.
+% --- p. 15 ---
+\section*{C.\\ Dialektik.}
+\addcontentsline{toc}{section}{C. Dialektik.}
+
+% FOOTNOTE MARK: first footnote of the printing (below) is marked *) both
+% in the text and at the note, which is set off by a short rule; the note
+% continues at the foot of p. 16 without a repeated mark. Plain \footnote{}
+% used pending a decision on \thefootnote.
+
+Hvad er saa Philosophie? „En Tvetydighedslære, en Videnskab om det
+Tvetydige“. Rigtigheden af denne Definition synes idetmindste at finde
+rigelig Stadfæstelse i vort Foregaaende; thi endskjøndt vi vel skjelnede
+imellem Skarpsindighed og Spidsfindighed, maatte vi dog tilstaae, at det
+Samme kunde opfattes baade som spidsfindigt og ikke spidsfindigt; da der
+handledes om en Adskillelse af Tænkeligt og Utænkeligt, fik vi ud, at det
+Utænkelige var Noget, der baade kunde tænkes og dog ikke tænkes; da det
+endelig gjaldt om en Modsigelsens Løsning, endte det med, at Modsigelsen
+baade kunde løses og dog ikke løses. Vil den sunde Forstand finde en
+saadan Forkjærlighed for det Tvetydige mistænkelig, da lægge man Mærke
+til, at Udtrykket: „Tvetydighedslære“ selv er tvetydigt. Medens høiere
+Anviisning til at gjøre det Klare dunkelt, det Tydelige forblommet, det
+Forstandige uforstaaeligt altid bliver at søge hos Sophisterne, maa
+Philosophien see at sætte det Tvetydige i et andet Lys, et Lys, der
+bringer Tvetydigheden til at forsvinde. Som den Videnskab, der overalt i
+det Tvetydige opdager det Tvesidige, og ved Hjælp af Modsigelsen klarer
+Fordoblingen, er Philosophien \emph{Dialektik}\footnote{At Philosophiens
+Form i sit Væsen er dialektisk, maa ikke misforstaaes, som om
+Begrebsudviklingen overalt skulde bære de formelle Antinomier, hvorved
+logiske Overgange motiveres, umiddelbart til Skue; tvertimod! den
+philosophiske Fremstilling kan og bør ogsaa optage refererende,
+beskrivende, kritiserende Bestanddele. Kun dette er afgiørende, at de
+Elementer, som meddeles i Form af Beretning, Beskrivelse, kritisk
+Drøftelse o.\ dsl., overalt vise sig, ifølge Anlæget og den herskende
+Tankestrøm, at tjene det Dialektiske. Der er i den hegelske Methode en
+formel Overspændthed, en logisk Overanstrængelse, som fornemmelig
+fremkaldes ved den Bestræbelse, at lade Fremstillingen paa alle Punkter
+brillere ved
+% (the footnote text continues at the foot of p. 16:)
+dialektiske Lynglimt. Det gaaer med Dialektikens Lynglimt og de
+Elementer, hvori de forberedes, og hvoraf de udvikle sig, paa
+tilsvarende Maade, som med det naturlige Lyn; vel maa Lynilden i Reglen
+forudsætte Skyer, men derfor ere Skyerne dog ikke Lyn.}.
+
+% --- p. 16 ---
+Den Sandhed, at Philosophien efter sin høiere Natur er og maa være
+Dialektik, er kategorisk udtalt af Plato. (Jvfr.\ Propædeut.\ S.\
+124--129; S.\ 150 o.\ fl.). Hos Plato har nu Fremstillingen af det
+Dialektiske (διαλεκτική af διαλέγεσθαι), som bekjendt, antaget Samtalens
+Form, og hermed staaer i Forbindelse, at Dialektikeren just betegnes som
+Den, der i Samtalen forstaaer at spørge og at svare rigtigt (Τὸν δὲ
+ἐρωτᾷν καὶ ἀποκρίνεσθαι ἐπιστάμενον ἄλλό τι σὺ καλεῖς ἢ διαλεκτικόν;
+% „ἄλλό“ with double accent so printed
+\textit{Krat.}\ 390 c.). At det nu ikke er Samtalen, men den ved
+„Sprogets Kunst“ betingede Begrebsudvikling, hvorpaa det i Dialektiken
+væsentlig kommer an, forstaaer sig af sig selv; men at Samtalens Form,
+naar alt Uvedkommende holdes borte, ikke destomindre er en for den
+begyndende Dialektiker meget naturlig Form, kan let oplyses ved nogle
+Exempler.
+
+\textbf{Noget og Andet.}
+\addcontentsline{toc}{subsection}{Noget og Andet}
+A. Dersom Kategorierne „Noget“ og „Andet“ ligefrem udelukkede hinanden,
+var der ingen Dialektik, faldt de uden videre sammen, var der heller
+ingen Dialektik; det Dialektiske viser sig just deri, at de to
+Sætninger: „Noget er, hvad det er, ikke et Andet“, og „Noget er, hvad
+det ikke er, altsaa et Andet“, ikke blot ophæve, men tillige forudsætte
+og begrunde hinanden gjensidig. B. Hviler det Dialektiske paa en saa
+slibrig Grund, da er al Dialektik falsk. A. Hvorledes? B. Den
+opstillede Paastand er i aabenbar Modsigelse med den sunde
+Menneskeforstand, og en \emph{Philosophie, der er i aabenbar Modsigelse
+med „den sunde Forstand“, er falsk}. A. Skal, hvad Du her kalder
+\emph{aabenbar Modsigelse}, uden videre affærdiges ved et umiddelbart
+Skjøn, kan Philosophien ikke tillægge Kjendelsen nogen Betydning; thi en
+\emph{Philosophie, der umiddelbart
+% --- p. 17 ---
+retter sig efter „den sunde Forstand“, er overfladisk}; men vil „den
+sunde Forstand“ nedlade sig til en Undersøgelse, kan Undersøgelsen jo
+let komme i Gang. B. Det skulde da være den anden Sætning, under hvis
+negative Form en eller anden Tvetydighed havde skjult sig, og som
+desaarsag kunde blive Gjenstand for Undersøgelse; i den første Sætning,
+Identitetssætningen, den rene Vishedssætning (\textit{principium
+certitudinis}), kan der ikke være Spor af Tvetydighed. A. Men dersom
+det nu alligevel er den første Sætning, hvori Tvetydigheden,
+Ubestemtheden, og forsaavidt Uvisheden, ligger skjult, hvad saa? B. Saa
+maa det kunne bevises. A. Er det i Logiken aldeles forbudt at udsige
+Andet om Noget, end at det er Noget? B. Ingenlunde, thi hvorledes
+skulde man ved blot at gjentage: Noget er Noget, nogensinde kunne
+bestemme, \emph{hvad} Noget er; derimod gjør Logiken, der ikke ynder
+Tvetydigheder, en bestemt, ligesaa let fattelig som umiskjendelig,
+Forskjel imellem det, at bestemme Noget ved Hjælp af et Andet, og det,
+at sige Andet om Noget, end hvad Noget er. A. Det er altsaa tilladt at
+bestemme, hvad Noget er, ved at bestemme, hvad Noget ikke er? B. Ikke
+alene tilladt, men nødvendigt. A. Det er altsaa nødvendigt, at der i
+Bestemmelsen af Noget maa indeholdes en Bestemmelse af Andet. B. Ogsaa
+dette kan vel indrømmes, dog paa den udtrykkelige Betingelse, at Noget
+netop ved Bestemmelsen udelukker Andet. A. Noget er altsaa? B. Et fra
+Andet Forskjelligt. A. Og naar vi nu, ifølge Betingelsen, udelukke
+Andet, er Noget? B. Et Forskjelligt. A. Men nu er da ogsaa Andet paa
+sin Side? B. Et fra Noget Forskjelligt. A. Og naar vi, ligeledes
+ifølge Betingelsen, lade Andet udelukke Noget, sige vi at Andet er?
+B. Et Forskjelligt. A. Altsaa: Noget er, naar det bestemmes, et
+Forskjelligt, Andet er, naar det bestemmes, et Forskjelligt; Noget er
+altsaa, hvad Andet er, nemlig et Forskjelligt. B. Denne Tvetydighed er
+da let at gjennemskue. Vistnok
+% --- p. 18 ---
+er Noget et Forskjelligt ligesaavelsom Andet, men Forskjelligt og
+Forskjelligt er to Ting, Noget er jo netop et Forskjelligt ved at være
+forskjelligt fra Andet, og Andet et Forskjelligt ved at være
+forskjelligt fra Noget: Noget og Andet ere altsaa endnu, som før,
+indbyrdes forskjellige. A. Ganske vist ere Noget og Andet indbyrdes
+forskjellige, kun en Sophist kunde falde paa at ville negte deres
+Forskjel. Hvad her skulde bevises, var kun dette, at deres Forskjel er
+begrundet i deres Identitet. B. Hvad der er forskjelligt, er ikke
+identisk, hvad der er identisk, er ikke forskjelligt: kun ved rene
+Kategorier kan man sikkre sig saavel imod skjulte Tvetydigheder som imod
+aabenbare Modsigelser.
+
+A. Men, hvis jeg ikke feiler, har Du jo allerede selv ved dine bestemte
+og tydelige Svar givet værdifulde Bidrag til at skjærpe vort Blik for
+den dialektiske Eenhed af Noget og Andet. B. Det skulde jeg meget
+betvivle. A. Du har jo dog fremhævet, at Noget kun lader sig bestemme
+som et Forskjelligt, og, for Tydeligheds Skyld, som et fra Andet
+Forskjelligt? B. Ja, det har jeg fremhævet. A. Du har da med det
+Samme udtrykkelig fordret, at Noget ifølge Forskjelligheden maa opfattes
+som et Andet end det, hvorfra det er forskjelligt. B. Naturligviis.
+A. Noget er altsaa i dine Tanker noget Andet end Andet, i Modsætning
+til Andet, altsaa dog et Andet. B. Dit Ordspil fører til Intet; thi,
+naar Noget opfattes som Andet, bliver det jo et andet Andet, nemlig det
+Andet, som Noget selv er, i Modsætning til alt Andet, som Noget ikke
+er. A. Det kan jeg forstaae; nu taler Du som en sand Dialektiker. Du
+har da nu altsaa selv indseet, at der med Hensyn paa den i Noget
+indeholdte Bestemmelse gives to Slags Andet, nemlig et Andet, som Noget
+selv er, i Modsætning til et andet Andet, som Noget ikke er; at, med
+andre Ord, Noget kun kan udelukke Andet ved selv at være et Andet.
+B. Ja, saalænge man holder sig til saa almindelige Udtryk som Noget og
+Andet,
+% --- p. 19 ---
+kan man jo vel uden stor Vanskelighed indøve den Tankeleg, at gjøre
+Noget til Andet og Andet til Noget; men lader os prøve det med noget
+Bestemt! Viis mig i bestemte Exempler, at Noget virkelig er identisk
+med Andet, og jeg skal indrømme Dig, at der er „sund Forstand“ i det
+Dialektiske. A. Du anseer da et Blad i en Bog for noget Bestemt?
+B. Forstaaer sig. A. De to Sider af et Blad ere da vel ogsaa hinanden
+saa modsatte, at naar vi kalde Forsiden et Noget, maae vi kalde Bagsiden
+et Andet. B. Fortræffeligt! Nu falder det da vel heller Ingen ind at
+identificere Forsiden med Bagsiden, og saa paastaae, at Forsiden er,
+hvad Bagsiden er, fordi de begge ere Sider, eller fordi Forsiden, naar
+Bladet vendes, bliver Bagside, og Bagsiden Forside. A. Men Identiteten
+er da vel ogsaa ved denne Leilighed ligesaa iøinefaldende som
+Forskjellen? B. Jeg kan ingen Identitet see. A. Hvad mener Du da om
+Bladet? B. At Bladet, der har de to Sider, netop bestaaer i Sidernes
+Forskjel og Modsætning! thi dersom de to Sider forvandledes til een
+Side, fik vi jo kun en Overflade, intet Blad. A. Og dersom de to Sider
+saaledes adskiltes, at de derved kom til at tilhøre hver sit Legeme, fik
+vi to Overflader, men intet Blad. B. Men det gjør dog en væsentlig
+Forskjel, om jeg siger: Forsiden er i Bladet forenet med Bagsiden, eller
+jeg siger: Forsiden er, hvad Bagsiden er, Forsiden er Bagside. Det
+Første kan jeg indrømme, det Sidste ikke. A. Dersom Bladet, der
+forener de to Sider, var et tredie for sig ligeoverfor Siderne
+Bestaaende, vare vi vistnok ikke berettigede til at opfatte det som
+Sidernes tilværende Eenhed; men da Bladet selv i dets Adskillelse fra
+Siderne aldeles ikke er til, saa maa den ene Side jo netop i Bladet vise
+sig identisk med den anden. B. Kan man saa maaskee heraf udlede, at
+Forsiden selv baade er Forside og Bagside, og Bagsiden igjen baade
+Bagside og Forside? A. Det er en Conseqvens, Du neppe vil afvise.
+Kalde vi de to Sider α og β, er det jo
+% --- p. 20 ---
+indlysende, at α, som i og for sig hverken er For- eller Bagside, ved
+sin Modsætning til β maa være Forside, forsaavidt β er Bagside, og
+omvendt; α er altsaa ifølge sin Identitet med β baade Forside og
+Bagside. B. Det er en eiendommelig Udvidelse af Begrebet: Identitet.
+Hvad jeg imidlertid har at indvende imod det saaledes udvidede
+Identitetsbegreb, vil jeg dog helst tilbageholde, indtil Du har fremsat
+et Exempel endnu af en anden Beskaffenhed.
+
+A. Hvad mener Du, om vi kaldte det Større et Noget og det Mindre et
+Andet? B. Dette Exempel finder jeg meget passende. A. Og hvad er det
+saa, vi skulle bevise? B. Hvad Andet vel, end at Noget baade er et
+Større og et Mindre, Andet baade et Mindre og et Større, og en og samme
+Størrelse selv baade mindre og større. Og Intet er i Sandhed lettere
+end at bevise alt dette. En flygtig Sammenligning af tre Størrelser:
+$\alpha > \beta > \gamma$ siger os jo strax, at α er et Større,
+forsaavidt β er et Mindre, og β et Større, forsaavidt γ er et Mindre.
+Men hvad følger nu heraf? At β i en Henseende er et Mindre, i en anden
+Henseende et Større, deri er ingen Modsigelse; men dersom Nogen
+paastaaer, at Størrelsen β er paa een Gang og i een og samme Henseende
+baade større og mindre end sig selv, kommer han dog nok i Modsigelse,
+ikke blot med den naturlige Forstand, men med den sande Logik. At een
+og samme Side af samme Blad kan i et Øieblik være Forside, i et andet
+Bagside, og i eet og samme Øieblik, naar det, vel at mærke, betragtes
+fra to modsatte Synspunkter, baade Forside og Bagside, indeholder ingen
+Modsigelse, men en Stadfæstelse af den gamle Regel: \textit{diversi
+respectus tollunt omnem contradictionem}. Ignorerer man derimod
+\textit{diversi respectus}, overseer man, hvad dog allerede Plato og
+Aristoteles, trods deres iøvrigt forskjellige Aandsretning, begge saa
+strengt have indskjærpet, at det i slige Undersøgelser Omspurgte hver
+Gang maa sees at være τὸ αὐτό, og betragtes: κατὰ τὸ αὐτό,
+% --- p. 21 ---
+πρὸς τὸ αὐτό, ἐν τῷ αὐτῷ χρόνῳ: saa kan man jo vel ved pikante
+Identitetsvendinger og overraskende Modsigelser for et Øieblik blænde de
+Uerfarne, men man vil aldrig overbevise den Kyndige, aldrig
+tilfredsstille den forstandige, efter Sandhed forskende Tænkning.
+A. Vigtige, vægtige Ord! Saa har da nu din „sunde Forstand“
+næstendeels faaet Bugt med Modsigelsen og gjort det af med Dialektiken;
+jeg siger: \emph{næstendeels}, thi et lille Punkt er endnu tilbage; det
+er et Punkt, vi endelig maae have klaret; Du vil vist let kunne klare
+det: det angaaer \textit{diversi respectus}, og Du har jo studeret
+\textit{diversi respectus}. B. Studeret? Det er aldrig faldet mig
+ind, at der i Logikens \textit{diversi respectus} var Noget videre at
+studere; jeg har altid antaget, at det var nok, naar man saadan i
+Almindelighed bemærkede, at der gives \textit{diversi respectus}.
+A. Da er det dog vistnok nødvendigt at gjøre Forskjel paa
+\textit{respectus}, siden der nu engang gives \textit{diversi
+respectus}. Om samme Blads to Sider, for at vende tilbage til et af
+vore Exempler, gjælder unegtelig i en Henseende det Samme, at de nemlig
+begge ere Sider, i en anden Henseende det Forskjellige, at den ene er
+Forside, den anden Bagside; i en Henseende det Samme, at de begge
+t.\ Ex.\ ere beskrevne, i en anden Henseende det Forskjellige, at den
+ene t.\ Ex.\ er hvid, den anden rød o.\ s.\ v.\ Ethvert af de
+forskjellige Hensyn kan igjen foranledige nye Hensyn; thi, uagtet der om
+begge Sider gjælder i en Henseende det Samme, at de begge ere beskrevne,
+saa gjælder dog ogsaa, hvad dette Punkt angaaer i en anden Henseende det
+Forskjellige, at den ene nemlig er beskreven med sort Blæk, den anden
+med rødt Blæk. Disse Hensynsfordoblinger kunne fortsættes i det
+Ubestemmelige. Skal nu Tænkningen ikke tabe sig i et uoverskueligt
+Virvar af allehaande
+% doubtful: a mark above the n makes both OCR witnesses read
+% „allehaaude“ here (the parallel word two lines below is plainly
+% „allehaande“); the glyph shape matches n and the mark is taken for an
+% ink speck — rejected reading: allehaaude
+Hensyn til allehaande Henseender og Bemærkninger og Betænkninger og
+Betragtninger, maa der i Logiken nødvendigviis gjøres Forskjel, ikke
+blot imellem væsentlige og uvæsentlige Hensyn, men
+% --- p. 22 ---
+tillige mellem saadanne Henseender, der falde ligegyldigt ud fra
+hinanden, og saadanne, som indeholdes i hinanden, og desaarsag med indre
+Nødvendighed følge af hinanden. At den ene Side af et Blad er
+beskreven, medfører naturligviis ikke, at den anden ogsaa maa være det;
+man kan tage Hensyn til det Første, uden at tage Hensyn til det Sidste;
+det Første kan være, uden at derfor det Sidste er, og der er da heller
+Ingen uden Sophister, der kunde falde paa at sætte det Sidste identisk
+med det Første. Anderledes forholder det sig derimod med det at være
+Forside og det at være Bagside; her er det umuligt at tage Hensyn til
+det Første uden at tage Hensyn til det Sidste; thi disse to
+Tilværelsesmaader ere saaledes indeholdte i eet og samme Tilværende, at
+Hensynet til det Første endog falder sammen med Hensynet til det Sidste:
+det Første er trods Forskjellen, ja i Kraft af Forskjellen,
+\emph{identisk} med det Sidste. Sand Indsigt i Identitetens,
+Forskjellens og Modsigelsens Væsen er betinget af, at man tilstrækkelig
+analyserer \textit{diversi respectus}.
+
+B. Men kan der da virkelig mod den Sætning: \textit{A} er, hvad
+\textit{A} er, gjøres nogensomhelst begrundet Indvending? A. Blandt
+Andet den Indvending, at Sætningen mangler Begrundelse. B. Men, naar
+nu Sætningen er Eet med Principet, Identitetsprincipet,
+Sandhedsprincipet, Vishedsprincipet, \textit{principium certitudinis},
+og selvfølgelig i alle Maader indlysende ved sig selv, behøver den jo
+ingen Begrundelse. A. Er det da af Sætningen umiddelbart indlysende,
+\emph{at} \textit{A} virkelig er? B. Nei, ikke \emph{at} \textit{A}
+virkelig er, men \emph{hvad} \textit{A} er. A. Er det umiddelbart
+indlysende, \emph{hvad} \textit{A} da egentlig er? B. Just ikke,
+\emph{hvad} \textit{A} egentlig er, men at, \emph{dersom} \textit{A}
+overhovedet er, \emph{saa} er \textit{A}, \emph{hvad} \textit{A} er.
+A. Men dersom \textit{A} nu slet ikke er? B. Saa er det dog, hvad det
+er. A. For at være, hvad det er, behøver \textit{A} altsaa ikke engang
+at være? B. Du forstaaer meget godt, hvad jeg mener. A. Her spørges
+ikke om Menen, men om Viden;
+% --- p. 23 ---
+dog, hvad mener Du? B. At selv om \textit{A} er et Ikkeværende, saa er
+det dog, hvad det er, nemlig et Ikke-Værende. A. Men det Ikkeværende
+er dog vel det Samme, som det vi ellers pleie at kalde Intet, ingen
+Ting? B. Naturligviis. A. Altsaa, enten jeg siger: ingen Ting er,
+hvad den er, eller jeg siger: enhver Ting er, hvad den er, saa skulde
+det strax, naturligviis ifølge Identitetsprincipet, Sandhedsprincipet,
+Vishedsprincipet, \textit{principium certitudinis}, være den sunde
+Forstand indlysende, at jeg med begge Sætninger mener Eet og det Samme!
+
+B. Men kan der da anføres Nogetsomhelst til Forsvar for en saa
+selvmodsigende Sætning som: Noget er, hvad det ikke er? A. Blandt
+Andet dette, at en Sætning, der ved sin aabne Modsigelse saa kjækt
+udæsker Tænkningen, maa vække Eftertanken og opfordre til Begrundelse,
+idet den fordrer en Gjendrivelse. B. Men hvorledes skulde man ved
+Grunde gjendrive en Sætning, som umiddelbart gjendriver sig selv?
+A. Den Sætning: Noget er, hvad det ikke er, gjendriver ingenlunde sig
+selv umiddelbart. B. Dersom det i denne Sætning Utænkelige, Urimelige
+og Meningsløse ikke er indlysende ved sig selv, hvad er saa indlysende
+ved sig selv, hvad er saa sund Menneskeforstand? A. Den sunde
+Menneskeforstand seer ingenlunde det absolut Urimelige i, at Noget
+skulde kunne være, hvad det ikke er. B. Altsaa skulde den sunde
+Menneskeforstand kunne tænke sig, at \emph{Noget} --- vel at mærke, til
+en given Tid og i en ganske bestemt Betydning --- \emph{er, hvad det}
+--- til samme Tid og i samme Betydning --- \emph{ikke er}; nei, det er
+dog virkelig for galt. A. Ja, det er virkelig for galt; men en saa
+urimelig Fordring gjør den Sætning: \emph{Noget er} --- vel at mærke,
+naar dets Tilværelse begrundes --- \emph{hvad det ikke er}, --- naar det
+eensidig fastholdes i overfladisk, abstract Umiddelbarhed. B. Ja, det
+er en anden Sag, naar dit Forsvar beroer paa en Fortolkning.
+% --- p. 24 ---
+A. Og da vel ogsaa en anden Sag, naar din Gjendrivelse beroer paa en
+Fortolkning. B. Saa beviis os da engang ved Hjælp af dine dialektiske
+Fortolkninger, at eet og samme Noget kan til een og samme Tid i een og
+samme Henseende være baade, hvad det er, og hvad det ikke er, samt at
+een og samme Størrelse kan paa een Gang være baade større og mindre end
+sig selv. A. Slige Beviser høre under Sophistiken, ikke under
+Dialektiken. B. Men til at bevise, at Noget kan i en Henseende være,
+hvad det i en anden Henseende ikke er, eller, at een og samme Størrelse
+kan i en Relation være et Mindre, i en anden et Større, dertil behøves
+kun \textit{diversi respectus}, ingen Dialektik. A. Men til at bevise,
+at Noget, skjøndt forskjelligt fra Andet, dog væsentlig er Eet med sit
+Andet, fordi begges Tilværen have samme Udspring, samme Rod; til at
+bevise, at den samme Størrelse er af een og samme Grund baade et Større
+og et Mindre, eftersom de to Relationer, de to Henseender have eet og
+samme Punkt, hvori de træffe sammen, nemlig, det at være Størrelse; til
+at bevise, at Identiten
+% „Identiten“ so printed (for „Identiteten“)
+af Noget og Andet, det Større og det Mindre, netop indeholder Grunden
+til, at Noget i Tilværelsen er forskjelligt fra Andet, det Større
+forskjelligt fra det Mindre, dertil behøves Dialektik; thi dette kan
+Dialektiken, men ogsaa kun Dialektiken, bevise.
+
+\textbf{Begreb og Existens.}
+\addcontentsline{toc}{subsection}{Begreb og Existens}
+C. En dialektisk Udvikling af de aprioriske Begrebers indre Sammenhæng
+og Overgang i hinanden er paa Videnskabens nuværende Standpunkt vistnok
+i det Hele at anerkjende; men et andet Spørgsmaal er det, om man, fordi
+det Dialektiske i Philosophien spiller en betydelig Rolle, nu ogsaa af
+den Grund er berettiget til ikke blot at forekaste den formelle Logik,
+at den ikke er dialektisk, men endog i Henhold til et platonisk Udtryk,
+der dog altid kan tages i mere end een Betydning, at forvandle den hele
+Philosophie til lutter Dialektik. A. Havde Du med Opmærksomhed fulgt
+den foregaaende Undersøgelse, vilde Du,
+% --- p. 25 ---
+hvad det første Punkt angaaer, let have overbeviist Dig om, at her ikke
+har været tænkt paa at levere en udførlig Kritik af den logiske
+Formalisme, men kun paa at afvise den Suffisance, hvormed man ikke
+sjældent, under Paaberaabelse af „den sunde Menneskeforstand“, tillader
+sig at henregne enhver logisk Indsigelse mod umiddelbare Grundsætningers
+umiddelbare Gyldighed til Hjernespind og Sophisterie; hvad det andet
+Punkt angaaer, kunne dine Betænkeligheder vel behøve en tydeligere
+Udtalelse. C. Aprioriske Begreber, saasom: Noget og Andet, Væsen og
+Skin, Grund og Følge o.\ dsl., kunne ved Modsigelsens Anvendelse let
+frembringes af hinanden. Den, der sætter Grunden, underforstaaer jo
+allerede Følgen, Grunden er altsaa i Grunden baade sig selv og Følgen;
+men, naar Grunden først paa Grund af Følgen bliver en egentlig Grund,
+saa er jo Grunden Følge, og Følgen Grund. Det Samme er ikke blot i en
+Henseende Grund, i en anden Følge, men de to Henseender falde tillige
+sammen i een Henseende: at dialektisere Begreberne ud af hinanden, er,
+om jeg maa bruge dette Udtryk, det Samme som at dialektisere
+\textit{diversi respectus} ind i hinanden. Hvad de aposterioriske
+Begreber, Erfaringsbegreberne, derimod angaaer, er det umuligt at
+dialektisere Existensen ud af Begrebet; eller hvem vilde vel forsøge at
+dialektisere den virkelige Hest ud af Hestens Begreb, eller den
+virkelige Snegl ud af Sneglens Begreb? Men er det umuligt at
+dialektisere det Existerende ud af dets Begreb, saa er det vel af samme
+Grund ogsaa umuligt at dialektisere det ene Existensbegreb ud af det
+andet, Hestebegrebet t.\ Ex.\ af Fluebegrebet, dette igjen af
+Sneglebegrebet. I Erfaringens Verden falde \textit{diversi respectus}
+udenfor hinanden, og hvor \textit{diversi respectus} falde udenfor
+hinanden, spiller Dialektiken en meget underordnet Rolle. A. Men naar
+det nu ikke vilde lykkes Dig at dialektisere Existensen ud af Begrebet
+(Jvfr.\ Propæd.\ S.\ 31), har Du da aldrig forsøgt at gaae den omvendte
+Vei, at dialektisere Begrebet ud
+% --- p. 26 ---
+af dets Existens, som nu t.\ Ex.\ at dialektisere dine Sneglebegreber ud
+af deres tilsvarende Snegleexistens? C. Man dialektiserer ikke
+Erfaringsbegreber ud af tilværende Gjenstande, man \emph{abstraherer}
+dem. A. Der gives altsaa ikke Noget, man kunde kalde
+Abstractionsdialektik? C. Ikke, saavidt jeg veed. A. Men de af
+Gjenstandene abstraherede Begreber maae dog vel være, ikke blot i vor
+Bevidsthed, men ogsaa i Gjenstandene selv? C. Forstaaer sig, thi
+dersom Begreberne ikke vare i Gjenstandene, kunde de jo ikke abstraheres
+af Gjenstandene. A. Men Gjenstanden, hvoraf Begrebet abstraheres, er
+dog vel ikke selv et Begreb? C. Ingenlunde. A. Derimod kunne
+Begreberne, forsaavidt de ere i Gjenstandene, vel siges at existere?
+C. At Erfaringsbegreberne existere i de existerende Gjenstande, kan
+vistnok Ingen betvivle. A. Her er i een og samme Existens altsaa to
+Existerende, nemlig den existerende Gjenstand, og det i Gjenstanden
+existerende Begreb? C. Nei, saadan kan det ikke tages; det er ikke
+Gjenstanden selv, men dens Materiale, der er Begrebet modsat. A. Vi
+faae vel altsaa tre Existerende: det existerende Materiale, det
+existerende Begreb, og den Gjenstandens Existens, hvori begge existere?
+C. Nei, saadan kan man heller ikke tage det. A. Hvordan skal man da
+tage det? C. Materialet for sig er ikke et særligt Existerende,
+saalidt som Begrebet, men Materialet og Begrebet ere to Sider, nemlig to
+Existenssider af det samme existerende Ene, Gjenstanden. A. Det
+existerende Ene er altsaa i Modsætning til og ligeoverfor de to
+Existenssider det i og for sig Existerende? C. Nei, saadan kan man
+heller ikke tage det; thi, dersom vi lade Abstractionen borttage de to
+Existenssider, vil den existerende Eenhed jo selv blive et Abstractum,
+en Existensside, der ikke existerer. A. Men hvordan skal man da tage
+det? C. Saaledes, at den existerende Eenhed sees at existere i de to
+Existenssider, som da just ogsaa derved komme til at existere i
+uadskillelig Eenhed. A. Altsaa hvormange Dele,
+% --- p. 27 ---
+Beskaffenheder og Sider den existerende Gjenstand end iøvrigt kan have,
+saa tør vi nu, ifølge din Forklaring, antage, at disse Dele med deres
+Sider, Beskaffenheder og indbyrdes Forhold alle ere i lige Grad
+materielle formedelst Materialet og intellectuelle formedelst Begrebet;
+enhver Existensside bliver da paa denne Maade en existentiel Eenhed af
+to Sider, den materielle og den intellectuelle. C. Dette tør vi ganske
+sikkert antage. A. Men det i Gjenstanden Materielle er dog vel et
+Sandseligt, der som sandseligt ikke kan tænkes, og det i Gjenstanden
+Intellectuelle et Usandseligt, et Tænkeligt, der ikke kan sandses?
+C. Fuldkommen rigtigt. A. I den existerende Eenhed er det Utænkelige
+altsaa dog et Tænkeligt, det Usandselige et Sandseligt. C. Det
+forstaaer jeg ikke! A. Saa forstaaer Du jo heller ikke den existerende
+Eenhed; thi hvorledes skulde vel det Tænkelige i en existerende Eenhed
+kunne gjennemtrænge det Sandselige, uden at det Sandselige derved,
+formedelst det Tænkelige, selv skulde blive tænkeligt, og det Tænkelige,
+formedelst det Sandselige, sandseligt? C. Det lader næsten, som om der
+var Noget i, hvad Du siger. A. Existensbegrebet er altsaa et System
+ikke blot af intellectuelle, men tillige af materielle Bestemmelser, et
+System af intellectuelle Sandsebestemmelser, af sandselige
+Intellectualbestemmelser. C. Ja, saaledes er det. A. Men saa
+forraader jo Existensbegrebet en høist paafaldende Modsigelse.
+C. Hvilken Modsigelse? A. At fordre Existens ved at modsætte sig
+Existensen. C. Hvad skal det sige? A. Sættes det hele System af
+sandselige Intellectualbestemmelser i den intellectuelle Form, saa
+forsvinder det Sandselige som et i det Tænkelige ophævet
+Reflexionsmoment, det vil sige: det Existerende forvandler sig til
+Existensbegreb, men Existensen gaaer ud. Sættes omvendt det hele System
+af intellectuelle Sandsebestemmelser i den sandselige Form, svarende til
+umiddelbare Sandseindtryk, saa træder Gjenstanden i Existens, men
+Existensbegrebet gaaer ud.... C. Nei, Existensbegrebet gaaer ikke ud,
+det fuldkommes
+% --- p. 28 ---
+i Existensen: det Existerende er jo, ifølge vort Foregaaende, ikke
+Andet, end det i alle Henseender fuldstændige Existensbegreb. A. Men,
+var det ikke Dig, der, ifølge vort Foregaaende, indrømmede, at
+Gjenstanden, hvoraf Begrebet abstraheres, ikke selv var Begrebet?
+C. Ja, da tænkte jeg paa det abstracte og forsaavidt ufuldkomne Begreb,
+ikke paa det i sig concrete og fuldkomne. A. Det er altsaa dog muligt
+at dialektisere Existensen ud af Begrebet, naar man først har forstaaet
+at dialektisere Begrebet ud af Existensen? C. At bevise dette i
+Gjerningen, vilde vel her være det Samme som at vise det i bestemte
+Exempler.
+
+A. Den sunde Menneskeforstand siger os jo, at Hesten er et Dyr, at
+Fluen er et Dyr, og Sneglen ligesaa; men hvorledes forholde slige Domme
+sig nu egentlig til „Identitets- og Contradictionsprincipet?“ C. Sagen
+er jo ligefrem. A. Ja, Sagen er, at dersom vi lade den formelle
+Identitet gjælde for Prædikatet, saa fornegte vi den i hvert Subject;
+lade vi den derimod gjælde for hvert Subject, saa fornegte vi den i
+Prædikatet. C. Hvorledes? A. Sætte vi ubetinget: Dyr er Dyr, saa
+bliver Hesten Flue, og Fluen Snegl, sætte vi ubetinget: Hesten er Hest,
+Fluen er Flue, Sneglen Snegl, saa er Dyr (Hest) ikke Dyr (Flue),
+d.\ v.\ s., saa modsiger Fælledsprædikatet sig selv, og maa bortfalde.
+C. Denne Vanskelighed lader sig endda nok overvinde. A. Ved eller
+uden Dialektik? C. Uden al Dialektik! man besinde sig blot paa
+Existensbegrebernes faktiske Charakteermærker og den disjunktive Doms
+Forhold til \textit{diversi respectus}. A. Det maae vi endelig høre!
+C. Sammenligne vi Dyrene med Planterne, da sees det, at alle
+existerende Dyreindivider have eet Fælleds: det at være Dyr;
+sammenligne vi derimod Dyreexistenserne med hverandre indbyrdes, da
+viser den ene Dyrerække sig ved givne Charakteermærker forskjellig fra
+den anden. Sammenligne vi Existenserne i den ene Række med Existenserne
+i den anden, da ere Individerne i hver Række hverandre indbyrdes lige;
+men
+% --- p. 29 ---
+sammenligne vi derimod de under en given Række hørende Existenser med
+hverandre indbyrdes, da ville særegne Mærker vise, hvorledes den ene
+Klasse adskiller sig fra den anden, o.\ s.\ v.\ Dyret er altsaa, i
+Modsætning til Planten, hvad Dyret er; men, ifølge almindelige og
+constante Forskjelsmærker, er Dyret, i Modsætning til sig selv, enten
+Bløddyr eller Leddyr eller Hvirveldyr. I Modsætning til Leddyr og
+Hvirveldyr er Bløddyret altid Bløddyr, men i Modsætning til sig selv er
+Bløddyret enten et egentligt Bløddyr eller et Straaledyr. Naar man nu
+saaledes ganske ligefrem i hver Række, hver Klasse, hver Orden, hver
+Familie, veiledet af de ved Erfaringer constaterede Mærker, vedbliver
+med Inddelingerne (\textit{divisiones} og \textit{subdivisiones}),
+indtil man gjennem Slægter og Arter har naaet Individerne; hvad
+Modsigelse er saa heri, og hvad have slige Classifikationer med
+Dialektiken at bestille? A. Det skulde da være, at Dialektiken fik
+Adskilligt med \textit{diversi respectus} at bestille. C. Det har vist
+ingen Fare. A. Siig os da i Kraft af din gjennemførte Classification:
+hvad er egentlig en Hest? C. En Hest (\textit{Equus Caballus}) er,
+efter sit Riges Kategorie, et Dyr, efter sin Rækkes Kategorie, et
+Hvirveldyr, efter sin Klasses Kategorie, et Pattedyr, efter sin Ordens
+Kategorie, en Tykhud, efter sin Familiekategorie, i Slægtskab med Æsler
+og Muuldyr, en egen Artskategorie af en egen Slægtskategorie. A. Det
+var da en skjøn Samling af Kategorier, som her alle maatte forene sig
+for at afgive Hestens concrete Existenskategorie; naar man nu blot ved
+Hjælp af \textit{diversi respectus} kunde faae det rigtig oplyst,
+hvorledes disse mange og forskjellige Kategorier egentlig ere
+sammenvoxne, for ikke at sige: sammenknippede, til een eneste! C. De
+omgive naturligviis hinanden saaledes, at den almindeligere altid
+omslutter den speciellere. A. Dog vel aldrig saaledes, som naar den
+ene Convolut skal omslutte den anden, den ene Ring omgive den anden?
+C. Nei, de hvile paa hverandre, idet den speciellere hver Gang har
+afsat sig paa
+% (p. 29 ends mid-sentence; the sentence continues on p. 30)
+
+% II. Philosophien og de særskilte Videnskaber begins p. 30 (Almindeligt;
+% A. Philosophiens Forhold til Mathematiken: Uendelighedsproblemet from p. 39).
+% [text to be added: pp. 30--44]
+
+% [text to be added: pp. 45--59]
+
+% [text to be added: pp. 60--74]
+
+% B. Philosophiens Forhold til Chemien: Forandringsproblemet begins ~p. 81.
+% [text to be added: pp. 75--89]
+
+% [text to be added: pp. 90--104]
+
+% [text to be added: pp. 105--119]
+
+% [text to be added: pp. 120--134]
+
+% [text to be added: pp. 135--149]
+
+% [text to be added: pp. 150--166]
+
+% Resultat begins p. 167.
+% [text to be added: pp. 167--176]
+
+% C. Philosophiens Forhold til Physiologien: Livsproblemet begins p. 177.
+% [text to be added: pp. 177--191]
+
+% a) Livets Væsen region (α Organismen from ~p. 208).
+% [text to be added: pp. 192--206]
+
+% [text to be added: pp. 207--221]
+
+% [text to be added: pp. 222--236]
+
+% β) Den organiske Type region.
+% [text to be added: pp. 237--251]
+
+% [text to be added: pp. 252--266]
+
+% γ) Det organiske Formaal region.
+% [text to be added: pp. 267--281]
+
+% b) Livets Trin begins ~p. 286; α) Plantelivet from ~p. 291.
+% [text to be added: pp. 282--296]
+
+% [text to be added: pp. 297--311]
+
+% β) Dyrelivet begins ~p. 328; the Darwin passage falls on pp. 326--328
+% (cf. texts/nielsen/propaedeutik-darwin/, transcribed earlier from the
+% British Library scan — collate rather than re-derive).
+% [text to be added: pp. 312--326]
+
+% [text to be added: pp. 327--341]
+
+% [text to be added: pp. 342--356]
+
+% [text to be added: pp. 357--371]
+
+% [text to be added: pp. 372--386]
+
+% γ) Menneskelivet begins ~p. 399.
+% [text to be added: pp. 387--401]
+
+% [text to be added: pp. 402--416]
+
+% c) Sjæl og Legeme begins ~p. 423.
+% [text to be added: pp. 417--431]
+
+% β) Psychophysiske Undersøgelser region (Phrenologie ~p. 438,
+% Psychophysik ~p. 444, Mathematisk Psychologie ~p. 453).
+% [text to be added: pp. 432--446]
+
+% [text to be added: pp. 447--461]
+
+% γ) Den menneskelige Videns Grændser begins ~p. 468.
+% [text to be added: pp. 462--476]
+
+% III. Philosophien og de akademiske Studier begins p. 477
+% (Videnskabelig Tænkning 477; Videnskabernes Sammenhæng 479;
+% Videnskabelig Dannelse 481). Chapter head carried by this fragment.
+% [text to be added: pp. 477--482]
+
+%% ============================================================
+%%  INDHOLD (unpaginated, PDF 11--12) — transcribed LAST, from the image,
+%%  per playbook §6: do not trust the contents OCR, and record any
+%%  divergence between the Indhold and the printed heads as a datum.
+%% ============================================================
+% [Indhold: to be added when the body is complete]
+
+\end{document}
