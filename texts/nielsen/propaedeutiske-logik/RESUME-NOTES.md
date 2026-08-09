@@ -7,8 +7,10 @@ Page-offset: PDF = printed + 9. Scan: `~/bibliotek/Nielsen, Rasmus/1845-propæde
 Method: `../../../TRANSLATION-PLAYBOOK.md`.
 
 ### CURRENT RESUME POINT
-Next marker: `% [text to be added: pp. 203--224]` — **§ 17, Subjectivity and
-Objectivity** (Danish at `\parag{17}`, ~L8576). 5 markers remain (§§ 17–21).
+Next marker: `% [text to be added: pp. 247--257]` — **§ 19, The Originality
+of the Idea** (opens the Tredie Capitel, The Logic of the Idea; Danish at
+`\parag{19}`, ~L10226). 3 markers remain (§§ 19–21, pp. 247–283 — the last
+37 pages).
 German quotation stays as printed in ``…''; Greek copied verbatim incl.
 logged wrong sorts. NB the six `E''` placeholders in § 10 make the file's
 `''` count exceed its ``` `` ``` count by exactly 6 — expected, not an error.
@@ -40,7 +42,24 @@ logged wrong sorts. NB the six `E''` placeholders in § 10 make the file's
   "leres" slips), the Hegel-amphiboly analysis, the three cosmological views
   a)–c), and Anm. 4's predestination/deism/Schelling-Jacobi material. Quoted
   Greek wrong sorts carried (κόςμος, ἐξοχην, ἀποσπεννύμενον, ῥοὴ).
-- Sandbox compile: **151 pp., 0 errors, 0 char-warnings.** 5 markers remaining.
+- **§ 17 (pp. 203–224, Subjectivity and Objectivity)** translated: the
+  ideality/reality category tables, critical idealism vs. mystical realism
+  (the seed-and-plant example), the mechanical relation and first-Mover
+  argument, the Trendelenburg objection, the A/B/C objective-possibility
+  apparatus, the chemical process (with its unclosed parenthesis mirrored),
+  and Anm. 4's occasionalism/naturalism scale incl. the Faust II verse
+  (\begin{verse}, \small, kept in German) and the Hegel Naturphilosophie
+  quotation. "Individium", "Säuern" and the unclosed „Ideens quotation
+  carried as printed.
+- **§ 18 (pp. 225–246, Teleology)** translated, closing the Andet Capitel
+  (its \divrule stands): means/ends and causa finalis vs. causæ efficientes,
+  the mechanic's-machine example, the fatalism dilemma, man as τέλος πάντων
+  χρημάτων, the pantheist α)–γ) objections, the will's dialectic and the
+  three inverted inferences, the collisions (Kircher/Bacon/L'homme machine)
+  and the threefold α)–γ) ground-movement, ending in the approximative vs.
+  absolute solution and the central crisis. The elliptical Danish syntax at
+  the p. 229/230 seam is glossed with "whether … or" (% note at the site).
+- Sandbox compile: **181 pp., 0 errors, 0 char-warnings.** 3 markers remaining.
 - Further fixed terms: Magt = power (vs Kraft = force), Enemagt = sole power,
   Overmagt = overpower, Yttring = utterance, Skranke = barrier (vs Grændse =
   boundary), Anlæg = endowment, Vexelvirkning = interaction (consistently, incl.
