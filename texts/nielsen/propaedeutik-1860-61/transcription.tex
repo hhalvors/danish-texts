@@ -33,10 +33,12 @@
 %          a/6/7/B/y; restore the Greek (textalpha is loaded).
 %          The Darwin passage pp. 326--328 was previously transcribed as
 %          the excerpt edition texts/nielsen/propaedeutik-darwin/.
-%  FOOTNOTE MARKS: the one footnote met so far (p. 15) is marked *) in
-%          print, as in the 1850 volume; \thefootnote is set to a constant
-%          *) below on that evidence. Revisit if a later footnote carries
-%          a different printed mark.
+%  FOOTNOTE MARKS: *) for a page's first note, **) for its second (both
+%          occur on p. 58). Rendered via the footnote counter with an
+%          explicit \setcounter{footnote}{0} after the % --- p. N ---
+%          marker of every printed page carrying a footnote; see the
+%          preamble note. Footnotes so far: pp. 15 (runs over to 16),
+%          34, 48, 55, 58 (two).
 %  PRINTER'S DEFECTS: none logged yet.
 % ============================================================
 \documentclass[12pt,a4paper]{book}
@@ -56,9 +58,14 @@
 \setlength{\headheight}{28pt}
 \addtolength{\topmargin}{-13.5pt}
 
-% Footnotes as printed: *) — see header. Constant mark, not \fnsymbol (math
-% mode, U+2217) and not footmisc[perpage] (resets on the typeset page).
-\renewcommand{\thefootnote}{*)}
+% Footnotes as printed: *) for a page's first note, **) for its second
+% (p. 58 carries both). Not \fnsymbol (math mode, U+2217) and not
+% footmisc[perpage] (resets on the TYPESET page, not the printed one).
+% Instead the mark follows the footnote counter, and the counter is reset
+% by an explicit \setcounter{footnote}{0} placed after the % --- p. N ---
+% marker of EVERY printed page that carries a footnote. Batch agents must
+% include that reset line.
+\renewcommand{\thefootnote}{\ifcase\value{footnote}\or *)\or **)\or ***)\fi}
 
 \usepackage{hyperref}
 
@@ -613,6 +620,7 @@ indvikler sig i nye og større Modsigelser: hvad saa?
 
 % I. Philosophiens Begreb continues; C. Dialektik region.
 % --- p. 15 ---
+\setcounter{footnote}{0}
 \section*{C.\\ Dialektik.}
 \addcontentsline{toc}{section}{C. Dialektik.}
 
@@ -1106,14 +1114,2219 @@ afsat sig paa
 
 % II. Philosophien og de særskilte Videnskaber begins p. 30 (Almindeligt;
 % A. Philosophiens Forhold til Mathematiken: Uendelighedsproblemet from p. 39).
-% [text to be added: pp. 30--44]
+% --- p. 30 ---
+% (p. 30 opens with the last lines of part I's dialogue; the chapter head
+% for II follows mid-page, after a section rule)
+den almindeligere. A. Jo almindeligere en Kategorie er, desto
+abstractere er den; jo abstractere den er, desto fjernere er den fra at
+existere: det Existerende hviler altsaa paa det Ikke-Existerende?
+C. Nei, jeg vilde sige: de hvile paa hverandre saaledes, at den
+almindeligere altid bæres af en speciellere, denne af en endnu
+speciellere, indtil vi komme til den allerspecielleste, der er Eet med
+det Existerende selv. A. Det er altsaa ikke det at være Hest, der
+beroer paa det at være Dyr, men det, at være Dyr, der beroer paa det,
+at være Hest? C. Nei, saadan har jeg dog heller ikke tænkt mig det;
+ja, nu kan jeg i dette Øieblik, reentud sagt, ikke sige, hvordan jeg
+egentlig har tænkt mig det.
 
-% [text to be added: pp. 45--59]
+% (section rule as printed)
 
-% [text to be added: pp. 60--74]
+%% ============================================================
+%%  II. PHILOSOPHIEN OG DE SÆRSKILTE VIDENSKABER  (pp. 30--476)
+%% ============================================================
+\chapter*{II.\\ Philosophien og de særskilte Videnskaber.}
+\addcontentsline{toc}{chapter}{II. Philosophien og de særskilte Videnskaber}
+
+% (short rule between chapter head and section head, as printed)
+\section*{Almindeligt.}
+\addcontentsline{toc}{section}{Almindeligt}
+
+% (block quotation set letterspaced throughout, as printed; the citation
+% is set unspaced)
+\emph{„Med Hensyn paa det Aposterioriske vil Videns Fremskridt vistnok
+være betinget af, at her bestandig indsamles nye Kundskaber, at nye
+Kjendsgjerninger prøves, nye Opdagelser gjøres o.~s.~v.; men er nu
+Sagen hermed afgjort? Dersom Videns Fremskridt i Forhold til det
+Aposterioriske alene opfattes fra denne Side, er det let at afvise
+Philosophien. Kan den ikke engang udtømme det Aprioriske, eftersom jo
+Mathematiken ingen Tak er den skyldig, hvormeget mindre kan den da
+indlade sig med positive Kjendsgjerninger! Vil Historikeren forelægge
+den en Opgave: den kan ikke svare, thi en historisk Opgave besvares
+% --- p. 31 ---
+kun historisk. Vil en Chemiker henvende sig til den: den har intet
+% (small baseline speck between "intet" and "Greb" — both OCR witnesses
+% read a full stop; rejected on zoom as an ink speck, no stop printed)
+Greb paa at experimentere, gjør ingen Opdagelser i Chemien. Vil
+Astronomen hjælpes med en Iagttagelse: den forstaaer ham neppe. Vil
+Lægen bede den om et Raad: den er ukyndig. Selv det, den paa egen
+Haand har udspeculeret angaaende Forholdet imellem Sjæl og Legeme, kan
+Physiologen maaskee desværre ikke engang bruge“.} (Propædeut.
+S. 99--103.)
+
+I hvilket Omfang det gjælder, at Philosophien er Dialektik, sees af
+dens Forhold til Fagvidenskaberne, thi dette Forhold er i strengeste
+Forstand dialektisk. Overseer man det Dialektiske, bliver Forholdet
+tvetydigt og tvivlsomt; thi medens Fagvidenskaberne af Naturen ere
+tilbøielige til at afvise Philosophien, er Philosophien saa igjen,
+naar den opfatter sin Bestemmelse dogmatisk, fra sin Side fristet til
+at ophøie sig selv paa de øvrige Videnskabers Bekostning; Schellings
+Ord: „Speculation er Alt, er i Gud at skue, at betragte det, som er.
+Videnskaben selv har kun forsaavidt Værd, som den er speculativ, det
+er: Contemplation af Gud, som han er“ --- ere i denne Henseende
+charakteristiske. (Propædeut. §~17, S. 81--83).
+
+Hvad der vel i den nyere Tid især har bidraget til at forvirre
+Begreberne, er navnlig den Omstændighed, at Hegel, hvis dybtgaaende
+Opfattelse af Modsigelsen, af det Negative og af Udviklingens
+immanente Methode (Propæd. S. 150--158) maa stille ham saa høit i
+Dialektikernes Række, ikke desto mindre i sin Fremstilling af
+Philosophiens Forhold til Fagvidenskaberne har overseet Forholdets
+Dialektik. Istedetfor at anerkjende de særskilte Videnskabers
+videnskabelige Selvstændighed, slutter Hegel sit propædeutiske
+Overblik over Videnskabernes Encyklopædie (Propæd. S. 84--85) med den
+Erklæring, at Encyklopædien egentlig er „en Fremstilling af
+Philosophiens almindelige Indhold; thi hvad der i Videnskaberne
+% --- p. 32 ---
+er grundet paa Fornuft, afhænger af Philosophien, hvad der derimod er
+i dem af det, der beroer paa vilkaarlige og udvortes Bestemmelser,
+eller, som det hedder, er positivt og statutarisk, ligger udenfor
+den.“ Men saaledes at lade Philosophiens Overlegenhed ligefrem beroe
+paa Fagvidenskabernes Underkastelse, er at tage Sagen udialektisk; at
+see Philosophiens Selvstændighed grunde sig paa dens Afhængighed af de
+selvstændige Fagvidenskaber, er derimod at opfatte Forholdet
+dialektisk.
+
+Fagvidenskabernes Selvstændighed ligeoverfor Philosophien indlyser af
+deres Udviklingsgang; thi de Methoder og Opdagelser, hvorved disse
+Videnskabers store Fremskridt betegnes, ere saa langt fra at kunne
+tilskrives Philosophien, at „de inductive Videnskabers Historie“
+(Whewell) tvertimod vise, i hvilken Grad selvstændig Forskning og en
+til Sagens Natur svarende Fremgangsmaade har været betinget af, at den
+Forskende kunde løsrive sig fra eensidig Paavirkning af philosophiske
+Speculationer (Propæd. S. 167--68). Hvad der i Fagvidenskaberne „er
+grundet paa Fornuft“, afhænger ingenlunde særlig af Philosophien. For
+det Første er det jo ikke Fornuften, der skylder Philosophien, men
+omvendt Philosophien, der skylder Fornuften sin Oprindelse; dernæst,
+og dette er i denne Sammenhæng det Afgjørende, maa det, ikke alene for
+Fagvidenskabernes, men fornemmelig for Philosophiens egen Skyld
+(Propæd. §~23), paa det Eftertrykkeligste fremhæves, at der gives en
+Erkjendelse, som er i strengeste Forstand videnskabelig, uagtet den
+ikke er philosophisk, ja en Tænkning, hvis videnskabelige Energie
+netop beroer paa, at den ikke er philosophisk. Thi at der i den
+empiriske Erkjendelse af det Empiriske er en Sandsningens Vished, en
+Forestillingens Alsidighed, en Anskuelsens Tilgift, der ikke kan
+erstattes af philosophiske Ideeblik, er dog vel ligesaa uimodsigeligt,
+som det er uimodsigeligt, at der gives en exact og kritisk Tænkning,
+der ikke lader sig ombytte med den dialektiske (Mathem. og Dialekt.
+S. 3). De særskilte Videnskabers rationelle
+% --- p. 33 ---
+Eiendommelighed sees da ogsaa deraf, at hver enkelt især forudsætter
+et eget tilsvarende videnskabeligt Talent.
+
+Men opstiller man nu den Sætning: \emph{Fagvidenskaberne ere
+uafhængige af Philosophien, men Philosophien er, navnlig hvad
+Tilegnelsen af det positive Indhold angaaer, afhængig af
+Fagvidenskaberne}, da kan denne i og for sig sande Forudsætning dog
+ogsaa let foranledige en falsk Slutning. Er, siger man, Philosophien
+i Alt, hvad det Exacte, det Empiriske og Positive angaaer, saa
+afhængig af de exacte og positive Videnskaber, da maa denne
+Afhængighed jo aabenbart være et Tegn paa dens Uselvstændighed.
+Hvergang Philosophien nærmer sig til Berøring med et eller andet
+bestemt positivt Emne, være sig af mathematisk, mechanisk, chemisk
+eller historisk Indhold, maa den Philosopherende da naturligviis finde
+sig i, ikke blot at vises tilrette med Kjendsgjerningerne, men endog i
+Begrebsudviklingen selv at blive tilbørlig hovmestereret af
+Fagmanden. Det seer altsaa ud, som vare Begreberne fuldkommen
+tilforladelige, klare, tydelige og i alle Conseqvenser sikkre,
+saalænge de bevares i den Form, hvori Faget bruger dem, men derimod
+priisgivne til Forvanskning, saasnart de gjøres til Gjenstand for
+philosophisk Eftertanke; det seer ud, som skulde den Philosopherende
+laane Alt hos Fagmanden, medens denne for sit Vedkommende kan betragte
+det Philosophiske som et aldeles Ligegyldigt. Denne Synsmaade beroer
+paa en Misforstaaelse. Philosophiens Afhængighed af Fagvidenskaberne
+er, væsentlig seet, et Tegn paa dens Uafhængighed, dens ideelle
+Selvgyldighed.
+
+I Modsætning til Omverdenens materielle Gjenstande ere jo vistnok alle
+Videnskaber ideelle, have alle Idealitet; men i Modsætning til
+Philosophien, som Idealitetens Repræsentant, maae Fagvidenskaberne
+siges at forestille Realiteten. Bestemmes Modsætningen kategorisk,
+vil det Reelle i dets Endelighed kjendes derpaa, at det hævder sig ved
+at udelukke sit Andet, medens det Ideelle just beviser sin Realitet
+derved, at
+% (signature "3" at the foot of p. 33)
+% --- p. 34 ---
+\setcounter{footnote}{0}
+det i sig optager Andet, og igjennem Andet forholder sig til sig
+selv. At Mathematiken som Mathematik, Chemien som Chemie,
+Naturhistorien som Naturhistorie, holde sig hver til
+Sit\footnote{„Der er en Hovedregel, der aldrig kan krænkes ustraffet,
+og som alligevel bestandig krænkes under vor Famlen fremad mod Lyset.
+Det er: \emph{Aldrig at forsøge paa at løse en Videnskabs Problemer
+ved den Ideerække, der tilhører en anden Videnskab.} Der er en Klasse
+Begreber, der tilhører Physiken, en anden, der tilhører Chemien, en
+tredie, der tilhører Physiologien, en fjerde, der tilhører
+Psychologien, en femte, der tilhører Samfundsvidenskaben. Medens alle
+disse Videnskaber ere nøie forbundne, har dog hver sit uafhængige
+Omraade, der maa respecteres.“ G.~H. Lewes: Hverdagslivets
+Physiologie, overs. 1ste Deel. Side 66.}, og, selv naar Bidrag hentes
+fra andre Fag, dog allernærmest og ligefrem have hver med sit Eget at
+gjøre, er just et Kjendetegn paa disse Videnskabers endelige Realitet;
+at Philosophien derimod altid maa have sin ideelle Rigdom i reel
+Fattigdom, sit Positive i sit Negative, er ved en sindrig Mythe oplyst
+af Plato; ved Agathons Gjæstebud lader Plato, som bekjendt, sin
+Sokrates fremstille Eros, den ideale Philosoph, som Søn af Poros og
+Penia.
+
+Den realistiske Videnskab, engang grundlagt, kan vel i Tidernes Løb
+behøve mangfoldig Omdannelse og undergaae mange Forandringer, men dens
+Støtter og Grundvolde ville med alt dette forblive urokkede; skal den
+idealistiske Videnskab derimod omdanne sin Bygning, vil et
+\textit{de omnibus dubitandum} efterhaanden rokke ved alle Støtter;
+hele Bygningen maa da nedrives indtil Grunden, at den i sin nye Stiil
+kan opføres fra Grunden af. Hvergang et sligt Knudepunkt indtræder,
+seer det i Øieblikket jo vistnok ud, som om Realiteten stod paa Spil,
+som var det nu aldeles ude med Philosophien; men Historien stadfæster,
+hvad da ogsaa ligger i Sagens Natur, at slige gjennemgaaende Kriser
+just betegne Vendepunkterne i Philosophiens Gjenfødelse.
+
+% --- p. 35 ---
+% (block quotation letterspaced as printed; citation unspaced)
+\emph{„Fagvidenskaberne ere solide, have altid fast Arbeide, rigeligt
+Udkomme og sikker Anerkjendelse i den lærde Republik; Philosophien er
+i Sammenligning hermed som en Omreisende uden endelig Forsørgelse, en
+svævende Skikkelse, der synker og stiger, døer hen og lever op igjen,
+eftersom Aanden vil det“.} (Propæd. S. 102). --- Men det er dog kun
+fra et aldeles udvortes realistisk Synspunkt, at det Ideelle blot
+opfattes som det Vage, det Ubestemte, i sig Ubestemmelige; den
+dialektiske Form er en i sig bestemt og bestemmelig Form, og
+Philosophiens Forhold til Fagvidenskaberne bliver desaarsag at angive
+kategorisk.
+
+For at Philosophien skal kunne sætte sig i et indre og væsentligt
+Forhold til en særskilt Videnskab, maa den i samme opdage et Problem,
+den tillige kan kalde sit Problem. Til at oplyse, hvorledes et
+saadant \emph{Fælledsproblem} vælges og behandles, ville vi, for ikke
+at sprede Opmærksomheden paa formange Punkter, i det Følgende
+indskrænke os til Exempler, hentede fra Mathematiken, Chemien og
+Physiologien; vi have da saaledes i Mathematiken:
+\emph{Uendelighedsproblemet}, i Chemien: \emph{Forandringsproblemet},
+i Physiologien: \emph{Livsproblemet}.
+
+Men selv om slige Fælledsproblemer, naar de betragtes fra
+Idealitetssiden, ere nok saa charakteristiske, saa er det dog hermed
+ingenlunde afgjort, at de ogsaa vise sig saaledes, naar de opfattes
+realistisk; fordi den Philosopherende i en eller anden bestemt
+Fagvidenskab har mærket sig et eller andet gjennemgaaende Problem,
+derfor er det endnu ikke sagt, at Fagmanden paa tilsvarende Maade vil
+vedkjende sig det samme Problem. Den Chemiker, der absolut vilde
+modsætte sig en philosophisk Opfattelse, kunde jo t.~Ex. raisonnere
+saaledes: „Der gives i Chemien egentlig slet ikke Noget, man kan kalde
+et Forandringsproblem, men vel et Forandringsbegreb, der opstaaer og
+kommer til Anvendelse, forsaavidt
+% (signature "3*" at the foot of p. 35)
+% --- p. 36 ---
+Chemien undersøger de Naturlove, hvorefter Legemernes indre
+Forandringer foregaae. Men Et er det at undersøge de Love, hvorefter
+Forandringerne foregaae, et Andet, at ville udgrunde Forandringens
+Væsen, speculere over dens Mulighed og Umulighed, en Opgave, der er
+Chemien aldeles fremmed.“ I samme Aand kunde en Physiolog, der vilde
+afvise Philosophien, raisonnere saaledes: „Vistnok gaaer Physiologien
+ud fra den Forudsætning, at der er et Noget, vi maae kalde Liv, siden
+der i de levende Organismer er et lovbestemt System af
+Livsphænomener; men da Physiologien væsentlig indskrænker sig til at
+undersøge Phænomenerne, uden at trænge ind i det bagved liggende
+Skjulte, kan man paa ingen Maade indrømme, at her skulde være noget
+egentligt Livsproblem; hvad Livet i sig selv er, et Princip, en Kraft,
+et Produkt af mechaniske og chemiske Kræfters eiendommelige
+Samvirken, ligemeget! man danne sig hvilken individuel Forestilling om
+Livets Væsen, man vil; naar man kun ikke derved afholdes fra at indsee
+Lovenes Gyldighed og eftervise de physiske Aarsager, er Physiologien
+tilfredsstillet.“
+
+De Vanskeligheder, forskjellige Standpunkters naturlige Indflydelse
+paa Opfattelsen af et videnskabeligt Problem altid medfører, forhøies
+betydeligt derved, at der i Undersøgelserne saa let blander sig noget
+Menneskeligt, d.~v.~s. noget Eensidigt, Tilfældigt, Vilkaarligt,
+Lidenskabeligt; da nu Philosophien med al sin Idealitet er, som enhver
+anden Videnskab, undergiven menneskelige Vilkaar, bliver det i denne
+Sammenhæng af Vigtighed ogsaa at tage Sagen fra den reent menneskelige
+Side, og saaledes mærke sig de Forpligtelser og Rettigheder,
+Videnskaberne under gjensidige Conflicter have at opretholde.
+
+At de omhandlede Fælledsproblemer maae i Philosophien tage sig
+anderledes ud, end i Fagvidenskaben, er en Selvfølge.
+Forandringsproblemet er, om ogsaa Chemikeren paa sin Maade vil
+vedkjende sig det, jo alligevel i Chemien
+% --- p. 37 ---
+ingenlunde, hvad det er i Philosophien; ligeledes er Livsproblemet,
+selv naar Physiologen indrømmer dets Realitet, et Andet i
+Physiologien, end det er i Psychologien; den Philosopherende, der
+kjender Problemet i Andethedens Form, og er sig bevidst, at det Samme
+dog ikke er det Samme, maa da fornemmelig lægge an paa at klare
+Udviklingens Betingelser og tydeliggjøre Forvandlingen. Enhver, der
+vil søge Veiledning i en særskilt Videnskab, maa naturligviis sætte
+sig ind i dens Tankegang. Forsømmer den Philosopherende dette,
+misforstaaer han en paagjældende Videnskabs Charakteer enten i det
+Hele eller i væsentlige Enkeltheder, være sig nu, at han tillægger den
+et Formaal, den ikke har, og ikke kan have, eller at han udriver dens
+Læresætninger af deres rette Sammenhæng, og saaledes forvansker dem,
+eller at han, ved at oversee de særegne Forudsætninger og Betingelser,
+under hvilke et givet Begreb med den tilsvarende Betegnelse har dannet
+sig, underlægger Begrebet en falsk Betydning, og paa denne Maade
+kommer til at paatvinge Videnskaben Anskuelser, Resultater og
+Conseqvenser, den ikke kan vedkjende sig, da er Fagmanden i sin Ret,
+naar han tager til Gjenmæle. Denne Ret bliver endog en formelig
+Sandhedspligt, naar slige Misgreb fra Philosophiens Side, hvad ikke
+saa sjældent har været Tilfældet (Propæd. S. 170--171), ovenikjøbet
+ere forenede med den Indbildning, at det er Philosophien, der fra sit
+ophøiede Standpunkt maa føle sig kaldet til at reformere
+Fagvidenskaberne. Men videre end til en Afviisning af philosophiske
+Overgreb kan og bør Fagmanden ikke gaae; gaaer han endnu videre, saa
+at han t.~Ex. ikke nøies med at sikkre Begrebet den Betydning, det har
+i hans Videnskab, men endog i den Grad betragter det som Faget
+tilhørende, at han enten reentud forbyder den Philosopherende at røre
+ved det, eller dog paatager sig at foreskrive, hvorvidt, hvorledes og
+i hvilke Forbindelser Philosophien tør udvikle det laante, af
+% --- p. 38 ---
+Fagvidenskaben godhedsfuldt overladte Begreb: da sees heri ikke blot
+en Anmasselse, men en latterlig Misforstaaelse.
+
+% (block quotation letterspaced as printed; citation unspaced)
+\emph{„Indskrænkede til de forskjellige Bevidsthedsrubrikker ere de
+vundne Begreber endnu saa sammenvoxne med endelige Bestanddele, endnu
+saa betyngede af partikulære Forudsætninger, at de befinde sig som i
+en Tilstand af Ufrihed; de holdes her som Stoffets Fangne indenfor en
+bestemt Synskreds, de ere saa at sige Fagets Livegne, der ikke tør
+forlade den bestemte Arbeidsplads.“} (Propædeutik S. 113.)
+
+Idet nu Philosophien lægger an paa at frigjøre Realbegreberne fra det
+i deres Begrændsning Tilfældige, udfolde Conseqvenserne og bringe de
+schematiske Former i dialektisk Strømning, maa den
+% (raised speck after "den" — both OCR witnesses read an apostrophe;
+% rejected on zoom as an ink speck, nothing printed)
+naturligviis paa sit Omraade, naar den først har draget Begreberne ind
+under sin Synskreds, stillet Problemerne paa sin Maade, og saaledes
+taget hele Behandlingens Ansvar paa sig, have en ubestridelig Ret til
+at anlægge sin Maalestok, indføre sine Betegnelser, sin Sprogbrug, og
+foretage Udviklingen i sin Aand. Staaer det fast, at enhver
+Fagvidenskab i det Væsentlige selv maa indeholde sine egne
+Correctiver, da maa vel ogsaa Philosophien indeholde sine
+Correctiver. En Bedømmelse af de Feil og Misgreb, en Philosopherende
+ved Gjennemførelsen af de dialektiske Analyser muligviis kan have
+begaaet, høre i sidste Instans ikke under Fagvidenskabens, men under
+Philosophiens Forum.
+
+At negte Philosophien fuld videnskabelig Ret til at behandle, hvad den
+fra Fagvidenskaberne har tilegnet sig, paa fri philosophisk Maade, er
+at negte den en eiendommelig Begrebsudvikling, og anvende Magtsprog.
+Skal det gaae ved Magtsprog, ja da kan en Fagmand vel sagtens afgjøre
+Philosophiens Skjæbne ligesaa let, som hiin Kalif afgjorde det
+alexandrinske Bibliotheks Skjæbne: „Enten indeholder det kun, hvad der
+staaer i Koranen, og da er det overflødigt,
+% --- p. 39 ---
+eller det indeholder Andet, og da er det falsk;“ --- „enten indeholder
+Philosophien kun, hvad der staaer i Fagvidenskaben, og da er det
+overflødigt, eller den indeholder Andet, og da er det falsk.“ Det er
+et saracenisk Dilemma; men et saracenisk Dilemma kan ikke bringe
+Philosophien til at opgive sin Ret.
+
+% (section rule as printed)
+\section*{A.\\ Philosophiens Forhold til Mathematiken:\\
+Uendelighedsproblemet.}
+\addcontentsline{toc}{section}{A. Philosophiens Forhold til
+Mathematiken: Uendelighedsproblemet}
+
+% (rule under the section head, as printed; the block quotation is
+% letterspaced as printed, and here — unlike pp. 31, 35 and 38 — the
+% citation is letterspaced too, so it stays inside the \emph)
+\emph{„En philosophisk Ræv eller Maar har listet sig over
+Mathematikens fede Fjerkræ, for at fylde sin schematiske Vom; han vil
+udsuge deres varme Blod, saa at der kun bliver de døde, saft- og
+kraftløse Kroppe tilbage, der da skulle fremstilles som Mathematikens
+driftige, praktiske, rørige Begreber“ (Hr.~Professor Steens
+„Afregning“ S. 7).}
+
+Disse varslende, ja ildevarslende Ord kunne, især naar de sættes i
+Forbindelse med en Erklæring som denne: \emph{„Der er for det Første
+ikke Noget, man kan benævne „Uendelighedsproblemet“ i Mathematiken“}
+(Jvfr. Begrebet: Nøiagtighed. S. 38), jo vistnok ved første Øiekast
+synes at have noget særdeles Afskrækkende; men, naar det saa derhos
+indrømmes, at der gives \emph{„et mathematisk Begreb „Uendelig“, der
+opstaaer og kommer til Anvendelse, og som er yderst vigtigt og tilmed
+vanskeligt, fordi det er af blandet Natur“}, forsvinder det
+Afskrækkende, og her viser sig et Indbydende. Er det mathematiske
+Begreb „Uendelig“, der opstaaer og kommer til Anvendelse, nemlig,
+ifølge Mathematikerens egen Tilstaaelse, \emph{„yderst vigtigt og
+tilmed vanskeligt, fordi det er af blandet Natur“}: saa indeholdes jo
+heri en for Philosophiens Vedkommende
+% --- p. 40 ---
+vel begrundet Opfordring til at undersøge, om dette i Mathematiken saa
+\emph{yderst vigtige og tilmed vanskelige} Uendelighedsbegreb
+% (the line-end "Uende-" of "Uendelighedsbegreb" may also be lightly
+% letterspaced; its second half is set tight, so the emphasis is taken
+% to end at "vanskelige")
+dog ikke paa en eller anden Maade, Mathematikeren maaskee uafvidende,
+skulde hænge sammen med et i det Hele gjennemgaaende mathematisk
+Problem, om Philosophien i dette gjennemgaaende Problem ikke maaskee
+skulde have al Grund til at vedkjende sig sit eget ældgamle
+Uendelighedsproblem, og om Mathematiken, uden at en Mathematiker altid
+saa lige tænker derpaa, dog ikke skulde kunne siges at afgive
+væsentlige og uundværlige Bidrag til dette Problems Løsning.
+
+\subsection*{a) Uendelighedsbegrebet.}
+\addcontentsline{toc}{subsection}{a) Uendelighedsbegrebet}
+
+At Begrebet „Uendeligt“, der i Mathematiken „opstaaer og kommer til
+Anvendelse“, er „yderst vigtigt“, kunne vi strax indrømme; derimod
+maae vi paa det Bestemteste benegte, at Uendelighedsbegrebet skulde,
+som Begreb for sig, være enten vanskeligt eller af blandet Natur. Om
+det Uendelige kan i Almindelighed kun siges dette, at det er en
+Negation af det Endelige, det Ikke-Endelige. Skulde der i en saadan
+Negation skjule sig nogen Vanskelighed, da kunde Vanskeligheden dog
+ikke umiddelbart hidrøre fra Negationen selv, men maatte væsentlig
+være at henføre til det, som ved Negationen blev ophævet. Vil man
+altsaa finde Vanskeligheder ved det mathematiske „Uendeligt“, maa man
+finde tilsvarende Vanskeligheder ved det mathematiske „Endeligt“; gjør
+man ingen Ophævelser over det Sidste, da forraader det kun
+Tankeløshed at gjøre Ophævelser over det Første. Skulde
+Uendelighedsbegrebet være vanskeligt, „fordi det er af en blandet
+Natur“, mon da ikke Endelighedsbegrebet, naar det Endelige særlig
+fremhæves, være af en endnu mere blandet Natur? Vil man indvende, at
+det mathematiske „Endeligt“, der kun gjælder om Størrelserne, ikke om
+Tingene, umuligt kan være af blandet Natur, da bliver man vel ogsaa
+nødt
+% --- p. 41 ---
+til at indrømme, at de Negationer, hvori et saadant „Endeligt“
+forsvinder, ligesaalidt kunne være det.
+
+Begreber af blandet Natur have altid en betænkelig Tilsætning af det
+Begrebløse, og staae som Blandingsbegreber paa det laveste Trin i
+Begrebernes Række. Hvorledes fremkommer et Blandingsbegreb? Derved
+at uligeartede, paa udvortes, tilfældig Maade sammenbragte, Dele
+henføres under en collectiv Eenhed, der da som Følge heraf kommer til
+at indeholde uligeartede, tilfældig sammenbragte Kjendemærker.
+Saaledes ere Begreberne: „Muldjord“, „Gruus“, „Mergel“, ægte
+Blandingsbegreber; men et Gruusbegreb og et mathematisk
+Uendelighedsbegreb --- hvilken Forskjel!
+
+Men, vil maaskee Nogen spørge, naar Begrebet: „Uendeligt“, i hvormange
+og forskjellige Forbindelser det end forekommer, hvormange
+Forvandlinger det end undergaaer, dog altid bevarer een og samme
+uforanderlige Grundbetydning, den nemlig, at være:
+„Endelighedsnegation“, hvordan gaaer det da til, at et saa reent, saa
+negativt logisk Begreb kan i en Mathematikers Øine faae Udseende af at
+være „af en blandet Natur“, eller, hvad der er det Samme, at høre til
+Blandingsbegreberne? Svaret er ikke vanskeligt: \emph{man blander
+Tilfældigt med Væsentligt, man udfinder ved denne Blanding endeel
+forskjelligartede Betydninger; man udleder ikke disse særskilte
+Betydninger af Grundbetydningen, efterviser ikke den enes nødvendige
+Overgang i den anden, men stiller dem udvortes op ved Siden af
+hverandre, gjør dem til Gjenstand for Opregnen, og see, saa gaaer det
+som af sig selv.} Stiller man saadanne Betydninger, som: „Negation i
+positiv Form“, „Umuligt“, „Overgang med noget Qvalitativt“ o.~s.~v.
+udvortes sammen, faaer man strax et Indtryk af det Blandede.
+Hvorledes skal man vel kunne adskille en Negation i positiv Form fra
+en Negation i negativ Form, uden derved, at hiin udtrykker det
+Negative paa middelbar,
+% --- p. 42 ---
+denne paa umiddelbar Maade; men stilles nu det Endelige imod det
+Uendelige, da er det jo ikke det Uendelige, der udtrykker Negationen i
+positiv Form, men tvertimod det Endelige, forsaavidt dette, ihvorvel
+det har en positiv Form, dog middelbart bestemmes som det
+Ikke-Uendelige. At opfatte Negationens eget umiddelbart negative
+Udtryk som dens positive Form røber en comisk Forvexling. Vilde
+Nogen, for at vise sin Skarpsindighed i det Logiske, t.~Ex. paastaae,
+at Sætningen: „$a$ er ikke Noget“, vel var ligefrem benegtende, men
+Sætningen: „$a$ er Intet“, derimod bekræftende, idet Negationen er
+lagt i Ordet: „Intet“, vilde man vistnok let blive enig om at henregne
+slige Skarpsindighedsprøver, formulerede i al Keitethed efter en
+Formellogiks \textit{S} er \textit{Non} --- \textit{P}, om ikke
+ligefrem til det Pedantiske, saa dog til den Art Umodenhedsforsøg, der
+forraader, at den Skarpsindige endnu ikke har lært at distingvere
+imellem frugtbare og ufrugtbare Distinctioner. Indrømmer man nu, for
+ikke at faae Formeget af det logiske Blandingsgods, at Sætningen „$a$
+er Intet“, er ligesaa direct negativ, som „$a$ er ikke Noget“, saa vil
+man vel ogsaa indrømme, at Sætningen: „$a$ er Nul“, er ligesaa direct
+negativ, som: „$a$ er Intet“. Men, staaer det fast, at Tegnet $0$ er
+et ligesaa direct og umiddelbart Negationsudtryk, som Ordet: Intet,
+saa hører der dog en ganske abnorm Skarpsindighed til, for at indsee,
+at medens den Sætning: „imellem $a$ og $a$ er der ikke nogen
+Forskjel“, er ligefrem benegtende, skulde Ligningen $a - a = 0$
+derimod være saa nagelfast i det Positive, at kun en Omskrivningens
+Skrue var istand til at trænge igjennem til Negationen. (Jvfr. Om
+Begrebet: Nøiagtighed. S. 39).
+
+Det er en egen Sag med den logiske Udtydning af mathematiske
+Ligninger; jo større Vægt her lægges paa Begrebssiden, desto mere
+indlyser det, at Philosophien ogsaa her har et Ord at sige. Ifølge
+naturlig mathematisk Tankegang viser Ligningen
+$\frac{a}{0} = \infty$ os det velbekjendte Forhold imellem
+% --- p. 43 ---
+Divisor og Qvotient i dettes yderste Conseqvens: vedbliver Divisor
+under Forudsætning af en constant Dividend, at indsvinde i det
+Uendelige, maa Qvotienten vedblive at voxe i det Uendelige; her er i
+dette Forhold Intet, der minder om det Umulige, Alt tyder tvertimod
+paa det Mulige: til den mindst mulige Divisor svarer den størst mulige
+Qvotient. Vil man, for at det Uendelige kan komme til at betegne det
+Umulige, derimod vælge et andet Synspunkt, og fortolke Ligningen
+saaledes: „Naar der spørges, hvormange Gange skal $0$ gjøres større
+for at give $a$, saa svares i Ord: det kan man ikke frembringe ved at
+multiplicere $0$, men i Tegn: $\frac{a}{0} = \infty$, $0$ skal gjøres
+uendelig mange Gange større, for at give $a$“. (Om Begr. Nøiagt.
+S. 40.) ---, da er en saadan Fortolkning vel skikket til at befordre
+allehaande Indblandinger af et ulogisk Allehaande. Dersom Ligningen
+$\frac{a}{0} = \infty$ virkelig og for Alvor var lagt an paa at
+besvare det i sig urimelige Spørgsmaal: „hvormange Gange skal $0$, det
+absolute $0$, det rene Intet, gjøres større for at give $a$“, da vilde
+Betegnelser som: $\frac{a}{0} = 0$, $\frac{a}{0} = a$, have været
+langt mere adæqvate. Thi af slige Udtryk sees øieblikkelig det
+Umulige, det i Fordringen Absurde, medens Ligningen:
+$\frac{a}{0} = \infty$ ved sin ironiske Anviisning paa det Uendelige
+kun mimisk antyder det i Spørgsmaalet Urimelige, og saa derhos ganske
+rigtig ved „en Negation i positiv Form“ fixerer den Spørgende, fordi
+han spørger, ikke som en mathematisk Tænker, men som en logisk Tosse.
+Opgiver man det logiske Tosseri at ville udregne, hvormange Gange det
+rene Nul skal gjøres større for at frembringe $a$; lader man, for at
+Ligningen kan give nogen Mening, $0$ betegne den mindst mulige
+Divisor, idet $\infty$ betegner den tilsvarende størst mulige
+Qvotient: da sees fra alle Sider,
+% --- p. 44 ---
+hvorledes det Umulige viger Pladsen for det Mulige. Af Ligningen:
+$\frac{a}{0} = \infty$ følger jo ligefrem, i Kraft af det omspurgte
+Forholds Begreb, $a = \infty \frac{a}{\infty} = \infty.0$; ligeledes
+følger af $\frac{b}{0} = \infty$, $\frac{c}{0} = \infty$,
+$\frac{d}{0} = \infty\ldots$ $b = \infty.\frac{b}{\infty} = \infty.0$,
+$c = \infty \frac{c}{\infty} = \infty.0$,
+$d = \infty.\frac{d}{\infty} = \infty.0\ldots$
+% (the multiplication dot after the first ∞ is printed inconsistently:
+% present in the b- and d-equations and at "altsaa: a = ∞.a/∞" below,
+% absent in the a- and c-equations; transcribed as printed)
+Istedetfor Umuligheden af, at $\infty.0$ skulde være istand til at
+give $a$, see vi tvertimod Muligheden af, at $\infty.0$ kan give, ikke
+blot $a$, men $b$, $c$, $d\ldots$, kort saamange forskjellige
+Størrelser, det skal være; istedetfor det korte, afvisende „Umuligt“,
+faae vi jo netop Mulighed paa Mulighed, Muligheder i Overflødighed.
+Dette Resultat er naturligviis saa langt fra at overraske den
+\emph{tænkende} Mathematiker, at det end ikke overrasker den
+almindelige sunde Menneskeforstand. Enhver forstaaer jo, at en
+hvilkensomhelst endelig Størrelse kan --- det er en Mulighed --- siges
+at bestaae af uendelig mange uendelig smaa Dele, altsaa:
+$a = \infty.\frac{a}{\infty} = \infty.0$, og derfor ogsaa kan --- det
+er en Mulighed --- deles i uendelig mange uendelig smaa Dele, altsaa
+$\frac{a}{\infty} = 0$.
+
+Den Fixidee, at Begrebet: „Uendeligt“ skulde, som „Negation i positiv
+Form“, være mere skikket til at betegne „det Umulige“, end Begrebet:
+„Endeligt“, er let at belyse. „Det Umulige“ er nemlig i og for sig
+ligesaa indifferent mod „Uendeligt“ som mod „Endeligt“; thi det
+Umulige viser sig, hver Gang en opstillet Fordring tilintetgjør sig
+selv; men slige, sig selv tilintetgjørende, Fordringer kunne ligesaa
+godt have det Endelige som det Uendelige til Forudsætning. Det er,
+for at blive ved det Uendelige, umuligt at \emph{opregne} alle Led i
+en uendelig Række; det er, for at gaae til det Endelige,
+% (p. 44 ends mid-sentence; the sentence continues on p. 45)
+
+% --- p. 45 ---
+et Menneske umuligt at \emph{tælle til} en Qvadrillion; det er, at
+vi paa een Gang skulle støtte os baade til det Endelige og
+til det Uendelige, umuligt, at en Kugle med en uendelig
+Radius kan være en Kugle, eller et Plan en Kugleoverflade
+med endelig Radius, og ligesaa umuligt er det, at Ligningen:
+$a = 2a = \infty.a = \frac{0}{a}$ kan have Realitet. Vil man i det
+mathematiske Tegnsprog vælge en mere ligefrem Betegnelse for
+noget i sig Umuligt, da er det ikke $0$ og $\infty$, men $\sqrt{-1}$,
+$\sqrt[2m]{-a}$ o.~dsl., man har at holde sig til. (Den af R.~N. gjennemsete
+„Afregning“. Bilag. S. 26--27).
+
+I logisk Almindelighed sees det let, at Begrebet „Uendeligt“
+ikke som Begreb optager ueensartede Bestanddele, og
+altsaa ikke kan regnes til Blandingsbegreberne; at Begrebet
+ikke desto mindre forekommer i flere Betydninger, viser sig i
+et forskjelligt Lys, og forsaavidt kan, naar det behandles
+overfladisk, faae et Anstrøg af at være „af en blandet Natur“,
+har sin Grund i noget ganske Andet: at gjennemtænke Begrebet
+er at udfolde Problemet.
+
+\textbf{b) Uendelighedsproblemet.}
+\addcontentsline{toc}{subsection}{b) Uendelighedsproblemet}
+
+Vilde Nogen begynde en Indsigelse imod en philosophisk
+Henviisning til den Maade, hvorpaa Endelighedsproblemet
+finder sin Løsning i Mathematiken, med følgende Erklæring:
+„Der er for det Første ikke Noget, man kan benævne Endelighedsproblemet“
+i Mathematiken, men vel et mathematisk
+Begreb „Endelig“, der opstaaer og kommer til Anvendelse,
+og som er yderst vigtigt og tilmed vanskeligt, fordi det er af
+% printed thus: the objection opens „Der ... and the compositor closes the
+% quote both after "Endelighedsproblemet" and after "Natur" below without
+% re-opening one before "blandet Natur" — one “ in excess on this page,
+% transcribed as printed (balance -1 here, offset by the +1 on p. 46).
+blandet Natur“: da vilde man dog vistnok finde, at det var
+en underlig Tale. Hvad en endelig Størrelse er, er snart
+sagt, men Problemerne, der angaae de endelige Størrelsers
+indbyrdes Forhold, ere utallige; istedetfor at sige: der gives
+i Mathematiken intet Endelighedsproblem, maatte man da
+% --- p. 46 ---
+snarere sige: der gives i Mathematiken utallige Endelighedsproblemer.
+Dersom nu disse Problemer faldt ud fra hverandre
+i løs Mangfoldighed, saa kunde man vel benegte, at
+der gaves et igjennem dem alle gaaende Almeenproblem, men
+saa maatte man med det Samme benegte, at der gaves en
+mathematisk Methode, at, med andre Ord, Mathematiken var
+en Videnskab. Er Mathematiken en Videnskab, gives der en
+Methode, efter hvilken de forskjellige Endelighedsproblemer
+dannes og løses i systematisk Sammenhæng, saa gives der
+ogsaa et gjennem dem alle gaaende Almeenproblem, et Methoden
+i alle Forgreninger omfattende og bestemmende Grundproblem,
+et Problem, der til sin alsidige Løsning udkræver intet Mindre
+end hele „det Endeliges Analyse.“
+
+Men hvad der saa uimodsigelig gjælder om „Endelighedsproblemet“
+i dets Forhold til „det Endeliges Analyse“, skulde
+dette ikke ogsaa gjælde om Forholdet imellem „Uendelighedsproblemet“
+og „det Uendeliges Analyse“? hvad der saa uimodsigelig
+gjælder om Begrebet „Endelig“ i dets Forhold til
+„Endelighedsproblemet“, at det nemlig ikke er Begrebet, men
+Problemet, hvori Vanskeligheden ligger, skulde dette ikke ogsaa,
+naar vi see nærmere til, befindes at gjælde om Begrebet
+% printer's defect: the quote opened before "Uendelighedsproblemet?" is
+% never closed — verified on the image; transcribed as printed (balance +1).
+„Uendelig“ i dets Forhold til „Uendelighedsproblemet? ---
+
+\emph{α) Begreb og Problem.} Som Særkjende for de
+mathematiske Begreber, hvormegen Lighed de end for Resten
+have med de almeenlogiske, maa det udtrykkelig fremhæves
+(Mathem. og Dial. S. 21--27), at de ere Operationsbegreber;
+heraf følger, at, medens de i deres Almindelighed ingen
+Vanskelighed frembyde, vil den analyserende Tænkning snart
+opdage, at deres eiendommelige Udvikling altid maa foregaae
+i nøieste Forbindelse med de Operationer, hvis logiske Væsen
+ved dem søges opklaret. Hvad en Logarithme er, kan let
+angives i en saa exact Definition, at den sunde Forstand
+formaaer at fastholde Begrebet; men de mangfoldige og
+charakteristiske Conseqvenser, hvori Begrebets Indhold først egentlig
+% --- p. 47 ---
+lader sig tilsyne, komme kun frem under Operationernes
+Gang. Hvad man forstaaer ved at dele en Linie i yderste
+og mellemste Forhold, eller, som det ogsaa hedder, at høidele
+Linien, er snart sagt, og let fattet; Begrebet „høidele“ frembyder
+ingen Vanskelighed; Vanskeligheden, dersom her er nogen,
+er: at løse Høidelingens Problem, og udvikle alle deri indeholdte
+Conseqvenser. Hvad der gjælder om de særskilte Operationsbegreber,
+gjælder ogsaa om de almene; kun af Endelighedsproblemernes
+systematiske Løsning fremlyser det, hvad der
+mathematisk ligger i Begrebet: „Endeligt“; kun en Gjennemførelse
+af „det Uendeliges Analyse“ kan aabne os et videnskabeligt
+Indblik i det mathematiske Uendelighedsbegreb. Af
+Operationsconseqvenserne sees endvidere, at det Uendelige ikke blot
+falder udenfor, men ogsaa indenfor det Endelige (Jvnfr. Phil.
+og Mathem. S. 20--24; Mathem. og Dialekt. S. 28--38),
+at det paa mangfoldige Maader udvikler sig af Endeligheden
+selv: havde der under „det Endeliges Analyse“ ikke oprindelig
+rørt sig og i mange særskilte Glimt yttret sig et gjennemgaaende
+Uendelighedsproblem, var Differential- og Integral-Regningen
+aldrig bleven uddannet. Da Leibnitz løste „Tangentproblemet“,
+var det ikke Tangenten og Secanten, (Jvnfr. Phil. og Mathem.
+S. 64), men det articulerende Vexelforhold af Endeligt og
+Uendeligt, hvorom det væsentlig gjaldt: i „Tangentproblemet“
+sees „Uendelighedsproblemet“.
+
+\emph{β) Mathematisk Opfattelse.} At tænkende Mathematikere,
+hvormegen Vægt de end iøvrigt lægge paa Operationsmethodens
+tilfredsstillende Resultater, dog desuagtet aldrig
+have kunnet faae det i deres Tanker ubegribelige Begreb paa
+en tilfredsstillende Maade adskilt fra den paa dette Begreb
+hvilende Methode, viser Mathematikens Historie lige fra
+Leibnitz og Newton (Jvfr. Mathem. og Dial. S. 90--91,
+S. 95 o. fl.) indtil den nærværende Tid. „For det Første
+kunne vi, naar Principet er ubekjendt, jo ikke vide, om ogsaa
+alle deraf følgende Conseqvenser lade sig indrømme: vi gaae
+% --- p. 48 ---
+\setcounter{footnote}{0}
+som i Blinde, og det turde hænde sig, at vi efter møisommelig
+Anstrengelse tilsidst stødte paa Noget, som netop udviste
+Principets Natur, d.~v.~s. paa Noget, vi ikke kunde begribe. For
+det Andet: er det ikke en skammelig Nedværdigelse af Fornuften,
+at lade den følge en Sammenkjædning af Led, en
+Række, hvis Begyndelse og Ende den ikke kan gjennemskue?
+Det er et stort Onde, der fødes af den Slags Routine:
+vant til at operere uden at indsee Grunden taber Aanden al
+Øvelse i at tænke, og ender med at udføre Alt ganske
+maskinmæssigt“. (Mathem. og Dial. S. III). Disse Savriens
+% "Savriens" as printed (presumably for Savérien); not corrected.
+Betænkeligheder forklare tilstrækkelig den Uro og Spænding,
+hvori det Uendeliges Analyse bestandig har holdt den mathematiske
+Reflexion\footnote{\textit{See Carnot: Reflexions sur la
+Métaphysique du Calcul Infinitésimal. Paris 1797} (übersetzt von
+Hauf. Frankf. a.~M. 1800). Versuch einer Philosophie der Mathematik
+--- mit einer Kritik der Aufstellungen Hegel's über den Zweck und die
+Natur der höheren Analysis --- von H. Schwartz. Halle 1853.}
+(Mathem. og Dial. S. 55--56), hvis Problem
+--- saaledes som en af Berlinerakademiet i Aaret 1784 udsat
+Priisopgave charakteristisk nok udtrykker det, „wie aus einer
+widersprechenden Voraussetzung so viele wahren Sätze haben
+können hergeleitet werden“ --- ikke vil ophøre at vende tilbage,
+om end „Routinen“, den maskinmæssige Færdighed, til enhver
+Tid sikkert vil yde „\textit{habiles Calculateurs}“ saa rigelig
+Tilfredsstillelse, at det let kan undgaae en og anden Regnemesters
+Opmærksomhed, at der i Mathematiken gives Noget, man kan
+benævne „Uendelighedsproblemet“.
+
+\emph{γ) Philosophisk Opfattelse.} „For at gjøre Uendelighedsproblemet
+kjendeligt, maa Reflexionen støtte sig til
+Operationen; for at løse Problemet, maa den tilegne sig den
+i Operationen udtalte Intelligens. At der imellem uendelige
+Størrelser kan være et endeligt Forhold, at en Sum af
+uendelig mange Led kan i nogle Tilfælde udgjøre en endelig,
+% --- p. 49 ---
+i andre en uendelig Størrelse, at en Række, hvis Led forholde
+sig saaledes, at Grændsen for Forholdet af to paa hinanden
+følgende Led giver Qvotienten 1, kan være i nogle
+Tilfælde convergerende, i andre divergerende o.~s.~v. Sligt
+vil overalt undgaae den Tænkning, der ikke ved Operationens
+Vink faaer Øie paa de exacte Bestemmelser. At nu disse
+Bestemmelser i philosophisk Form maae blive dialektiske, medens
+de i mathematisk Form hverken ere eller kunne være det,
+viser en charakteristisk Forskjel imellem Mathematik og Philosophie,
+men ingenlunde nogen Strid. Intet Begreb kan,
+hvor exact det end defineres, holde sig i en mod de øvrige
+Begreber ligegyldig Væren: Begrebernes Gyldighed sees i
+deres Overgange; men de Overgange, den exacte Analyse netop
+gjør ved Operationen, gjør den Operationsbegreberne gjennemtrængende
+Tænkning ved Dialektiken“ (Mathem. og Dial. S. 57.
+Jvfr. S. 59--60). Stilles Endeligt umiddelbart imod Uendeligt,
+da faaer den sunde Forstand uvilkaarlig et Indtryk,
+som var det det Endelige, der i sin Mangfoldighed af Led
+og Forholdsbestemmelser indeholdt Tilværelsens Rigdom, medens
+det Uendelige derimod er et bundløst Intet, øde og
+tomt, som det tomme Rum. Da nu Tanken kun kan bestemme,
+hvad der i sig selv er bestemmeligt, og kun det er
+bestemmeligt, som paa en eller anden Maade lader sig definere,
+og kun det lader sig definere, som lader sig begrændse, og det
+Begrændsede er et Endeligt: saa maa det bestandig forekomme
+Forstanden, som var det kun det Endelige, der lod sig begribe,
+medens det Uendelige, det Ubegrændsede, egentlig slet
+ikke var til at begribe, men, ligerviis som de Gamles Hyle
+(τὸ ἄπειρον), at erkjende ved en Slags uægte Tænkning
+(λογισμὸς νόθος). Hvor denne Misforstaaelse har sat sig
+fast, kan der naturligviis ikke være Tale om nogen nærmere
+Indgaaen paa Uendelighedsproblemet; for at indsee Problemets
+philosophiske Betydning, maa man absolut have idetmindste
+en Anelse om det Endeliges og det Uendeliges
+% --- p. 50 ---
+% degrees are printed as a superscript 0 (not a ring) here and on p. 59;
+% transcribed as ^{0} throughout.
+dialektiske Vexelforhold. „En Vinkel paa $90^{0}$ kan deles i
+uendelig mange uendelig smaa Vinkler, en Vinkel paa $1^{0}$
+ligeledes; en Qvadratmiil kan deles i uendelig mange uendelig
+smaa Qvadrater, en Qvadrattomme ligeledes: hvad følger
+heraf? Lægges Eftertrykket paa det Endeliges Opløsning i
+det Uendelige, da synes vistnok Følgen at være, at her ikke
+længere er Forskjel imellem Vinklen paa $90^{0}$ og Vinklen paa
+$1^{0}$, at Delen bliver liig det Hele, at Grændsen med andre
+Ord er udslettet. Men lægges saa Eftertrykket igjen paa
+det Uendeliges Tilværen i og ved det Endelige, da bliver
+der ikke blot Forskjel imellem Endeligt og Endeligt, imellem
+Delen og det Hele, men her viser sig med det Samme en
+bestemt Forskjel imellem Uendeligt og Uendeligt saavel med
+Hensyn til det uendelig Lille, som til det uendelig Store.
+Det ene uendelige Antal uendelig smaa Vinkler kan da være
+ligesaa forskjelligt fra det andet, som $1^{0}$ fra $90^{0}$; det ene
+uendelige Antal uendelig smaa Qvadrater ligesaa forskjelligt
+fra det andet, som en Qvadrattomme fra en Qvadratmiil.
+At Grændsen i det Endelige ophæves, betyder, at den sættes
+i det Uendelige; at det Uendelige i sig optager Grændsen,
+betyder, at det Endelige sættes. Den dialektiske Eenhed viser
+sig deri, at Grændsen ligesaameget tilhører det Uendelige som
+det Endelige“ (Mathm. og Dial. S. 33). Den Grundtanke,
+at det Uendelige ikke blot udsletter Endelighedens Grændser,
+men tillige optager de ophævede Grændsebestemmelser som
+articulerende Momenter i sin egen Begrebsudvikling, er fra
+Operationernes Standpunkt tilstrækkelig betegnet derved, at
+det Uendelige analyseres.
+
+% The printed head reads "b)." — a second b) after "b) Uendelighedsproblemet"
+% p. 45 — where the Indhold gives "c) Det uendeliges Analyse ... 50".
+% Head kept as printed, Indhold's reading recorded here.
+\textbf{b). Det Uendeliges Analyse.}
+\addcontentsline{toc}{subsection}{b). Det Uendeliges Analyse}
+
+I den Opgave at „analysere det Uendelige“ have altsaa
+Mathematiken og Philosophien et omfattende Fælledsproblem;
+at Problemet imidlertid, idet det optages af Philosophien,
+maa undergaae en Forvandling, at den philosophiske Analyse
+% --- p. 51 ---
+hverken kan eller skal gjennemføres paa samme Maade, som
+den mathematiske, er en Selvfølge: Et er det nemlig at uddanne
+et Begreb til Brug ved derunder hørende Operationer,
+et Andet at gjennemreflectere Operationerne for at tydeliggjøre
+det deri virksomme Begreb. „Hvor flere Videnskaber
+behandle det Samme, vil enhver gjøre Sit tydeligt; men de
+ville aldrig gjøre det Samme tydeligt paa samme Maade.
+Hvad en Udvikling ifølge sit Øiemed maa bestemme med
+største Nøiagtighed, tør en anden efter sit Øiemed kun antyde
+i flygtige svævende Træk, just fordi den skal lade Nøiagtighedens
+Eftertryk falde paa andre Punkter.“ (Begreb. Nøiagt.
+S. 51--52).
+
+Da Mathematiken som Fagvidenskab umiddelbart seer
+paa sit Eget, kan det vistnok i Reglen ikke forudsættes, at
+Mathematikerne som Fagmænd just skulde have enten særlig
+Interesse af eller synderlig Færdighed i at følge Philosophiens
+dialektiserende Analyser; men vel kan det forudsættes, ja i
+Videnskabelighedens Navn ligefrem fordres, at den Fagmand,
+der føler sig kaldet til at fælde Dom over det i en philosophisk
+Fremgangsmaade Eiendommelige, dog idetmindste værdiger
+Sagen saamegen Opmærksomhed, at han fastholder de
+allervæsentligste Udgangspunkter, følger Tankegangen og veed,
+hvorom Talen er. Naar det, for at anføre et Par Exempler,
+udtrykkelig skal udhæves, hvilken Forskjel det gjør, om det er
+Kategorierne: \emph{Deling} og \emph{Sammensætning}, eller:
+\emph{Sammenstykning} og \emph{Bevægelse}, der modsættes hinanden, og
+dette saa oplyses ved en Sammenligning mellem den brudte
+og den krumme Linie saaledes: „For den brudte Linie gjælder
+en Sammensætning, thi dens Dele ere endelige; den er et
+Stykværk, som i Eet og Alt tilhører Endeligheden. For den
+% printer's defect: "Sammensætuing" (turned n) for "Sammensætning" —
+% verified on the image; transcribed as printed.
+krumme Linie gjælder ingensomhelst endelig Sammensætuing,
+ingen, end ikke den allerfineste, Sammenstykning; den skylder
+kun Bevægelsen sin Tilblivelse, thi den tilhører Uendeligheden“
+(Phil. og Mathm. S. 76); mon da Nogen, der fatter,
+% --- p. 52 ---
+hvorom Talen er, ikke strax skulde indsee Umuligheden af at
+charakterisere \emph{Sammenstykningens} Kategorie, uden at forudsætte
+de endelige Deles umiddelbart givne Tilværelse? Skal
+her reflecteres paa, hvorledes alle de Linier, hvoraf den brudte
+Linie sammensættes, de Dele, hvoraf et Hele vorder, selv igjen
+have deres Vorden, da sees alene paa Vorden, ikke paa
+Sammenstykning. Vistnok kan man ogsaa her, forsaavidt det
+ikke gjælder om at klare en Tanke, men kun om at anbringe
+„en Kritik“, paa Fagets Vegne anbringe Følgende: „den rette
+og brudte Linie skylder ikke mindre og ikke mere end den
+krumme Linie Bevægelsen sin Tilblivelse; den krumme Linie
+er sammensat mathematisk af endelige Længder, saavel som
+den brudte og den rette.“ Men hvad vinder Videnskaben
+ved en saadan Kritik? At lade Alt løbe sammen, Dannelse
+ved Sammenstykning og Tilblivelse ved den jævne Overgang, at
+lade Alt komme ud paa Eet: Discretion og Continuitet, Endeligt
+og Uendeligt, Brudt og Ubrudt, Krumt og Lige, Ret og
+Kroget, er dog vist ligesaalidt mathematisk, som philosophisk!
+
+Uvidenhed og Tankeløshed ere ingenlunde altid det Samme;
+man kan være uvidende, uden derfor at være tankeløs; man
+kan være i endelig Forstand vidende, og dog i paafaldende
+Grad tankeløs. Exemplerne ere mangfoldige. Der spørges
+i en philosophisk Undersøgelse, hvorledes man egentlig skal
+tænke sig Liniens Oprindelse i Forhold til Punktet; thi at
+man i Grunden altid har Linien, naar man først har Fladen,
+og Fladen, naar man først har Legemet, forstaaer sig af sig
+selv. „I Forhold til Linien som det Positive er Punktet,
+Liniens Grændse, det Negative; naar Linien er en Forestilling,
+er Punktet en Tanke. I Forhold til Fladen som
+det Positive er Linien, Fladens Grændse, det Negative.
+Fladen forestilles, naar Linien tænkes.“ (Phil. og Math. S.
+65--67). Naar saaledes Spørgsmaalet er, hvorledes Liniens
+Oprindelse egentlig skal tænkes, da det, at lade Linien fremkomme
+ved „Sammensætning af endelige Længder“, kun er at
+% --- p. 53 ---
+forudsætte, hvad først skulde vises, eftersom de endelige Længder
+jo selv ere Linier, og det, at lade Liniens Tilblivelse beroe
+paa Flader, heller ikke gaaer an, da Fladens egen Oprindelse
+nødvendigviis forudsætter Linien; naar nu dette udtrykkelig
+er Spørgsmaalet, og saa en Mand af Faget, en
+Sagkyndig, der kan alle Tilfældene, baade med Linier og
+Flader, med Skjæring og uden Skjæring, møder med den
+Oplysning: „\emph{mathematisk opstaae krumme Linier
+ogsaa ved Fladers indbyrdes Skjæring}“, saa faaer
+man ikke blot en mathematisk Oplysning, men tillige en
+æsthetisk Opmuntring.
+
+\emph{α) Grændser.} Forskjellen imellem den exacte og den
+dialektiske Tænkning er især kjendelig paa en forskjellig Brug
+af Grændsen. „Enten Noget eller Intet“, „enten Positivt
+eller Negativt“, „enten Endeligt eller Uendeligt“, „enten et
+Opnaaeligt eller et Uopnaaeligt“: slige Sondringsdomme forudsætte
+en skarp Betoning af det i Grændsen Adskillende.
+Den skarpt adskillende Grændse, den Grændse, der holder de
+Adskilte saa aldeles udenfor hinanden, at det Ene maa benegtes,
+naar det Andet bekræftes, er \emph{qvalitativ}. Men jo
+mere den contradictoriske Modsætning skjærpes, jo mere udelukkende
+det Qvalitative gjælder, desto mere iøinefaldende bliver
+det, at Grændsen ved at være det Adskillende netop er det
+Forenende. Sætter man saaledes: enten $+a$ eller $-a$,
+saa holdes det Positive vistnok herved udenfor det Negative;
+men da Adskillelsen er saa skarp, at her slet ikke er noget
+Mellemværende, bringes det Positive og det Negative jo netop
+i den adskillende Grændse, Nulpunktet, til umiddelbar Berøring.
+Nulpunktet er altsaa Foreningspunkt for det Positive
+og det Negative, just fordi det er deres Sondringspunkt.
+Sætte vi nu istedetfor det Positive det Endelige, istedetfor det
+Negative det Uendelige, altsaa: enten Endeligt eller Uendeligt,
+saa gjentager sig det Samme. Ved at stirre paa Negationen,
+det i Grændsen Adskillende, faaer man et Indtryk,
+% --- p. 54 ---
+som om det Endelige og det Uendelige holdtes adskilte ved
+et svælgende Dyb: „enten Endeligt eller Uendeligt! man kan
+altsaa blive ved med det Endelige, saalænge man vil, et
+Endeligt er og bliver et Endeligt, aldrig et Uendeligt“. Ved
+at besinde sig paa det i Grændsen Forenende indseer man
+derimod let, at de saaledes Adskilte alligevel maae ligge hinanden
+uendelig nær: „enten Endeligt eller Uendeligt! altsaa,
+naar man ikke har det Endelige, saa har man strax uden
+videre det Uendelige“; hvor det Endelige ophører, begynder det
+Uendelige; Grændsen, Negationen, er altsaa selv det logiske
+Berøringspunkt, det Punkt, hvori de Adskilte træffe sammen:
+her er intet Mellemværende. „Men naar det Endelige og det
+Uendelige paa denne Maade ere hinandens Grændser, maa
+Grændsebestemmelsen blive dialektisk. Har nemlig det Uendelige
+sin Grændse i det Endelige, saa har det jo en Endelighedsgrændse,
+en endelig Grændse, og er selv endeligt. Naaer
+det Endelige omvendt først sin Grændse i det Uendelige, da
+har det jo ingen endelig Grændse, og er følgelig uendeligt“.
+(Phil. og Math. S. 22). Det Uendelige er et Ubegrændset;
+hvorledes kan nu det, der slet ingen Grændser har, selv være
+Grændse? Det Endelige, der overalt har Grændser, forsaavidt
+det ene Endelige begrændser det Andet, kan vel med
+Rette siges at være et i sig Begrændset; men hvorledes kan
+nu det i sig Begrændsede have et Ubegrændset til Grændse?
+Eller gives her maaskee tre Slags Grændser: en Grændse,
+der gjælder for Endeligt, ikke for Uendeligt, en Grændse, der
+gjælder for Uendeligt, ikke for Endeligt, og saa en Grændse,
+der er fælleds for Endeligt og Uendeligt? Men naar dette
+antages, hvorledes forholder det sig da med enhver af disse
+Grændser i Modsætning til det, hvis Grændse den er?
+
+Hvad der med Hensyn paa den mathematiske Udtryksmaade
+let giver Grændsebegrebet et tvetydigt Anstrøg,
+er den Omstændighed, at baade Størrelser og Størrelsesnegationer
+sættes som Grændser, og at $0$ og $\infty$
+% --- p. 55 ---
+\setcounter{footnote}{0}
+ophæve hinanden. Ved $0$ bliver den endelige Grændse sat,
+ved $\infty$ bliver enhver endelig Grændse hævet; en nærmere
+Betragtning vil da let gjøre det indlysende, at begge Negationer
+høre med til en fuldstændig Opfattelse af den qvantitative
+Grændse. Uden Qvalitet ingen Qvantitet, uden Nulgrændse
+ingen Størrelse; men uden en Qvantiteren, der igjen
+ophæver den umiddelbare Nulgrændse, og forvandler det Qvalitative
+til et i Formerelse og Formindskelse svindende Moment,
+gives der heller ingen Størrelse\footnote{„Alt hvad der kan tænkes
+forøget eller formindsket, og som kan opløses i eensartede Dele, kaldes
+Størrelse (\textit{quantum}) og siges at besidde Storhed
+(\textit{quantitas}).“ \ Ramus.}. For at indsee dette, behøver
+man blot at sammenstille $0$, $1$ og $\infty$, thi medens $0$
+betegner den satte Grændse, det abstract Qvalitative, og $\infty$ alle
+mulige Grændsers Ophævelse, den rene Qvantiteren, er Taleenheden
+selv betinget af begge. Sige vi, at en Størrelse $x$
+falder t.~Ex. imellem Grændserne $0$ og $1$, da er det egentlig
+ikke Størrelsen $1$, men det Nulpunkt, hvormed $1$ overskrides,
+der udgjør Grændsen, nemlig Slutningsgrændsen. Kalde vi
+Slutningsgrændsen $0_2$, Begyndelsesgrændsen $0_1$, saa betegner
+$1$, at Afstanden imellem de to Grændser er sat som en i al
+Almindelighed bestemt d.~e. begrændset Størrelse, som Afstandseenhed.
+At $x$, forsaavidt det falder imellem $0$ og $1$,
+kan med uforandret Begyndelsesgrændse variere ved utallige
+Slutningsgrændser, eller, som det hedder, have uendelig mange
+Værdier, lader sig da udtrykke saaledes: $\frac{1}{\infty} = 0$, kun ved
+at dele Eenheden i det Uendelige naaes den virkelige Grændse;
+$\frac{1}{0} = \infty$, indenfor enhver endelig Eenhed falder et uendeligt
+Antal Grændser; eller: $1 = \infty. 0$, den endelige Eenhed
+fremkommer derved, at Grændsen sættes og hæves uendelig
+mange Gange.
+% --- p. 56 ---
+
+Det bestemte Qvantum forudsætter en Qvantiteren indenfor
+qvalitativt bestemmende Nulgrændser. Ifølge de bestemmende
+Negationer ere de endelige Størrelser saa forskjellige
+indbyrdes, at Forskjellen ikke blot kan angives, men endog
+angives exact; ikke nok, at $a$ er større end $b$, her spørges:
+hvormeget større? Men da Størrelsesforskjellen udelukkende
+beroer paa fastsatte Grændser, og ingen endelig Størrelsesgrændse
+staaer saa fast, at den jo, hvad $\infty$ minder om, igjen
+kan hæves, saa kunne de endelige Størrelser forandres, idet
+Grændserne forandres: enhver Størrelse kan som Størrelse
+formeres og formindskes i det Uendelige.
+
+Den dialektiske Eenhed af $0$ og $\infty$, der har sin Bestaaen
+i den endelige Størrelse, $1 = \infty. 0$, udvikler sig exact,
+idet der idelig vexles mellem Fastsætten af Grændser og Overskriden
+af Grændser; saaledes danner der sig en afgjørende Modsætning
+imellem \emph{faste} og \emph{flydende}, \emph{værende} og
+\emph{vordende} Grændser. Den umiddelbare Nulgrændse har ingen Vorden,
+den bliver til, idet den sættes; men da enhver Grændse kan
+overskrides, og Grændseforandringen vedblive saaledes, at den
+ene Grændse uophørlig falder enten indenfor eller udenfor
+den anden, kan Grændsen befinde sig i en Vorden. Grændsen
+for Grændsens Vorden, Slutningsgrændsen, lader sig igjen
+betragte deels som sat, deels som hævet, sat nemlig, forsaavidt
+Størrelsen er endelig, hævet, forsaavidt en endelig
+Størrelse kan i sin Almindelighed være saa stor og saa lille,
+man vil: idet en bestemt Slutningsgrændse sættes, ere utallige
+forudgaaende Slutningsgrændser allerede overskredne, og forsaavidt
+hævede.
+
+\emph{β) Overgange.} I Grændsen reflecteres det Begrændsede.
+At tænke Grændsen uden at underforstaae et
+derved Begrændset, er ligesaa umuligt, som at fatte Betydningen
+af en Negtelse uden at tænke paa det, som derved
+% printer's defect: "ogsao" for "ogsaa" — final o verified on the image
+% (both OCR witnesses agree); transcribed as printed.
+bliver negtet. Den umiddelbare Nulgrændse bliver da ogsao
+ligefrem sat under den Forudsætning, at der i Anskuelsen er
+% --- p. 57 ---
+et Givet, hvis Grændse den er. At saadanne Grændser som
+Punkter, Linier og Flader, uagtet de i og for sig ere rene
+Negationer, dog \emph{anskues} i positiv Form: Punktet som
+Liniens mindste Deel, Linien som Fladens Rand, Fladen
+som en Side af Legemet, er et slaaende Beviis for, at
+Grændsen gaaer i Eet med det Begrændsede. Men naar
+Grændsen nu ikke destomindre adskiller sig fra det Begrændsede
+som Negationen fra det Positive, naar denne Adskillelse
+er i lige Grad gyldig for Tanken og Anskuelsen: saa
+indeholdes heri den Opgave at følge det, som skal begrændses,
+til Grændsen. Hvorledes naaer man nu fra Grændse til
+Grændse? Ved en Bevægelse! Her er oprindelig ingen anden
+Udvei, intet andet Middel. Forsøger man i Tanken at afsætte
+t.~Ex. paa en Linie to Grændsepunkter, $A$ og $B$, i en
+vis Afstand, da maa man, om end ubevidst, foretage en Bevægelse,
+idet man, for at anskue den vilkaarlig valgte Afstand,
+uvilkaarlig lader Blikket gjennemløbe Veien fra $A$ til $B$.
+Blikket maa fæste sig, hvor det vil, det møder paa sin Vei
+kun Grændse, thi hvert Punkt i Linien er i og for sig et
+Grændsepunkt. Idet Blikket bevæger sig hen ad Linien, seer
+det ud, som om det kun fulgte den sig bevægende Grændse,
+det sig bevægende Punkt; herpaa grunder sig den mathematiske
+Forklaring, at Linien fremkommer ved Punktets Bevægelse.
+Da denne Forklaring væsentlig beroer paa et optisk
+Bedrag, er det intet Under, at den falder noget tvetydig ud.
+Hvorledes kan det rene Punkt, Grændsen, det abstract Negative
+bevæge sig? Thi at Anskuelsen, der i sin Umiddelbarhed forudsætter
+det Positive, kan, idet Tanken sætter Negationen,
+overskride enhver Grændse, gaae fra Grændse til Grændse,
+er endnu ingenlunde tilstrækkeligt til at forklare det mathematiske
+Mirakel, at Punktet, den rene Negation, skulde kunne
+bevæge sig, forandre Sted i Rummet, uagtet det ikke indtager noget
+Rum, eller ligesom strække sig, og danne noget saa Positivt,
+som en Længdeeenhed, en Linie. Kunde Linien fremkomme
+% --- p. 58 ---
+\setcounter{footnote}{0}
+ved en Bevægelse af det rene abstracte Nulpunkt, da maatte
+den ogsaa kunne tænkes sammensat af lutter Nulpunkter, af
+$0 + 0\,....\,+ 0$\footnote{At denne Sætning ingenlunde staaer
+i Strid med Ligningen $\frac{a}{\infty} = 0$ opfattet som
+Mulighedsudtryk, indlyser, naar man blot erindrer, at Muligheden just
+beroer derpaa, at $0$ og $\infty$ opfattes, ikke som tomme Negationer,
+men som Symboler paa den størst og mindst mulige Størrelse.}.
+At sætte Grændse umiddelbart ved
+Grændse, er umuligt, thi idet der abstraheres fra det Begrændsede,
+falde de to Grændser sammen; Herbarts „die
+% FOOTNOTE MARK: two footnotes on this page; the first is printed *) as
+% usual, the second (below) is printed **) in text and at the note.
+starre Linie“ er et ligesaa logisk som mathematisk
+Monstrum\footnote{Jvfr. Den Herbartske Philosophie af P.~S.~V.
+Heegaard. Kbhvn. 1861. S. 21--45.};
+kun i Reflexion af et Positivt kan det Negative komme udenfor
+sig selv, kun formedelst et Begrændset kan Grændse følge
+paa Grændse.
+
+Imellem to paa hinanden følgende Grændser er her
+altsaa et Begrændset. Dersom nu dette Begrændsede faldt
+umiddelbart sammen med Grændserne, saa at her intet, slet
+intet Mellemværende var, maatte Grændserne selv falde sammen
+og kunde ikke følge paa hinanden; faldt det Begrændsede som
+et umiddelbart Tilværende imellem de derfra forskjellige
+Grændser, saa var her en endelig Afstand, altsaa utallige
+Grændser mellem to paa hinanden umiddelbart følgende
+Grændser, hvilket er en Modsigelse: i den dialektiske Eenhed
+af Grændsen og det Begrændsede er al Bevægelse begrundet.
+Formedelst Grændsen er Bevægelsen Overgang; den rene
+Grændse er forsaavidt altid Overgangsform. Vistnok gjør
+det en væsentlig Forskjel, om Overgangen anskues i Rummet
+eller blot forestilles som arithmetisk Overgang fra Endeligt
+til $0$, fra Endeligt til $\infty$; men dette staaer fast: uden
+Reflexer af Rum og Tid ingen Bevægelse, uden Bevægelse
+% --- p. 59 ---
+ingen Qvantiteren, uden Qvantiteren intet Qvantum, uden
+Qvantum ingen Mathematik. At udelukke Bevægelseskategorien
+fra den rene Mathematik og endda beholde Kategorierne:
+„Grændse“, „Overgang“, „Tilnærmelse“, er en Modsigelse.
+Hvorledes Kategorierne i Mathematiken vælges, betones og
+anvendes, forsaavidt det technisk gjælder om den meest hensigtssvarende
+Udførelse af exacte Operationer, maa naturligviis
+afgjøres i Mathematiken selv; men Operationsbegrebernes
+logiske Sammenhæng og dialektiske Overgange undersøges i
+Philosophien. Hændes det saa --- thi det kan jo hændes ---
+at en Fagmand, en Routineret, hvis Begrebsmechanik forlængst
+er gaaet i Eet med hans Operationsmechanik, i en
+saadan Anledning bliver høirøstet, og ved høirøstet Anvendelse
+af det saraceniske Dilemma udtrykkelig fordrer, at Philosophien
+skal opgive Dialektiken og ubetinget hylde Begrebsmechaniken:
+da kan en saadan Hændelse dog ikke videre afbryde,
+men snarere fremskynde den dialektiske Udvikling.
+
+Havde Nogen, for at bevise den Sætning, at „Overgangen
+fra Endeligt til Endeligt, falder sammen med Overgangen
+fra Endeligt til Uendeligt“, beraabt sig paa en Ligning
+som: $\mathrm{tg}\,90^{0} - \mathrm{tg}\,(90^{0} \pm \varepsilon)
+= 0$, idet $\varepsilon$ betegner
+et Endelighedspunkt, da havde en Mathematiker her
+ganske vist havt Anledning til at gjøre opmærksom paa Feiltagelsen,
+og imod den falske Ligning at stille den sande:
+$\mathrm{tg}\,90^{0} - \mathrm{tg}\,(90^{0} \pm \varepsilon) =
+\infty$. Men naar der nu i en
+philosophisk Analyse (Jvfr. Phil. og Math. S. 23--24) aldeles
+ikke er Tale om nogen særlig Bestemmelse af Forskjellen
+imellem $\mathrm{tg}\,90^{0}$ og $\mathrm{tg}\,(90^{0} \pm
+\varepsilon)$, men kun om den vel
+bekjendte Kjendsgjerning, at $\mathrm{tg}\,x$ gaaer over fra at være
+endelig til at være uendelig, idet $x$ gaaer over fra en
+% printer's defect: "Mathemathikeren" (Mathe-mathikeren over the line
+% break) for "Mathematikeren" — verified on the image; as printed.
+Værdi, der er mindre end $90^{0}$, til $90^{0}$, hvor vil Mathemathikeren
+% printed "?." — question mark followed by full stop, as printed.
+(Jvfr. Begr. Nøiagt. S. 47, „Afregning“, gjennems.
+S. 7) saa hen med sit $\mathrm{tg}\,90^{0} -
+\mathrm{tg}\,(90^{0} \pm \varepsilon)$?. Er $\varepsilon$
+af en, om end iøvrigt nok saa lille endelig Værdi, altsaa et
+% (p. 59 ends mid-sentence; the sentence continues on p. 60)
+
+% --- p. 60 ---
+\setcounter{footnote}{0}
+Endelighedspunkt\footnote{Man har t.~Ex. $\mathrm{tg}\,90^{0} = \infty$,
+man har $\mathrm{tg}\,(90^{0} \pm \varepsilon)$ endelig; hvorledes kommer
+man nu fra $\mathrm{tg}\,90^{0}$ til $\mathrm{tg}\,(90^{0} \pm
+\varepsilon)$? Aabenbart derved, at $\varepsilon$ som Deel af Buen
+gjennemløbes continuerligt; under denne Bevægelse skeer det saa, at
+Tangens gaaer over fra at være endelig til at være uendelig. Hvorledes
+er nu en saadan Overgang egentlig at tænke? „Den kan“, paastaaer man,
+„kun skee ved et Spring“. Hvad er det da, her overspringes? „Et
+Endeligt!“ Men saa er her jo kun en endelig Afstand mellem Endeligt og
+Uendeligt. Skal nu desuagtet Overgangen fra Endeligt til Uendeligt skee
+ved et Spring, saa maa Overgangen fra Endeligt til Endeligt jo ogsaa,
+naar det gjælder en endelig Afstand, skee ved et Spring; men dersom
+Overgangen gjennem Endeligt kun kan skee ved et Spring, saa er jo al
+continuerlig Overgang, og dermed al mulig Bevægelse, ja al mulig
+Overgang, negtet. „Et Uendeligt!“ Men at komme til det Uendelige ved at
+overspringe det, er dog vel en utaalelig og meningsløs Modsigelse.
+„Hverken et Endeligt eller et Uendeligt!“ Men hvad er saa det for en
+Størrelse, der hverken er endelig eller uendelig? den størst mulige
+endelige Størrelse kan det dog umulig være, thi den størst mulige
+endelige Størrelse har jo netop den Egenskab, at den ved at være
+\emph{hverken} endelig \emph{ei heller} uendelig netop er paa een Gang
+\emph{baade} endelig og uendelig. „Intet!“ Men hvad er det saa for et
+Slags Spring, hvorved Intet overspringes? (Jvfr. Begr. Nøiagtighed.
+S. 45. Den gjennemsete „Afregning“ S. 7).}, saa er
+$\mathrm{tg}\,(90^{0} \pm \varepsilon)$ jo endelig, og Overgangen
+fra Endeligt ($90^{0}$) gjennem et Endelighedspunkt ($\varepsilon$)
+til Endeligt ($90^{0} \pm \varepsilon$) falder altsaa sammen med en
+Overgang fra Uendeligt ($\mathrm{tg}\,90^{0}$) til Endeligt
+($\mathrm{tg}\,(90^{0} \pm \varepsilon)$); er $\varepsilon$ uendelig
+lille, altsaa et Uendelighedspunkt, saa er $\mathrm{tg}\,(90^{0} \pm
+\varepsilon)$ uendelig, og Overgangen fra Endeligt gjennem et
+Uendelighedspunkt til Endeligt (thi $90^{0} \pm \varepsilon$ er dog vel
+ligesaavel af en endelig Værdi som $90^{0}$) falder altsaa sammen med
+Overgangen fra Uendeligt ($\mathrm{tg}\,90^{0} = \infty$) til Uendeligt
+($\mathrm{tg}\,(90^{0} \pm \varepsilon) = \infty$). Hvor stor
+Differensen imellem $\infty$ og $\infty$ forøvrigt
+% --- p. 61 ---
+\setcounter{footnote}{0}
+er, vedkommer ikke Overgangen som Overgang\footnote{Hvor uendelig
+dialektisk Størrelsesbegrebet er, indlyser, naar man t.~Ex. spørger:
+hvor stor er den størst mulige endelige Størrelse? eller: hvor lille er
+den mindst mulige endelige Størrelse? Den i disse Spørgsmaal udtalte
+Fordring indeholder en væsentlig Modsigelse. Der gives ingen endelig
+Størrelse saa stor, at jo dens Grændse kan overskrides, saa at en endnu
+større altid er mulig; heller ikke gives der nogen endelig Størrelse
+saa lille, at en mindre jo altid er mulig; den størst mulige endelige
+Størrelse er, med andre Ord, den uendelig store endelige, og den mindst
+mulige endelige den uendelig lille endelige; ogsaa her viser det sig,
+at det Uendelige ligger, ikke i en Umulighed, men i en Mulighed.
+Hvorledes kan nu Modsigelsen hæves? Ved at see det i Størrelsens
+Grændse Dobbeltsidige, altsaa ved at opfatte Grændsen deels som
+værende og deels som vordende. Størrelsen med værende Grændse, den
+værende Størrelse, maa være saa stor og saa lille, den vil, den er
+altid endelig; med vordende Grændse bevæger Størrelsen, den vordende
+Størrelse, sig derimod enten imod det Større, og fremstiller sig da
+under den \emph{uendelige} Vorden som det uendelig Store, eller imod
+det Mindre, og opfattes da under den \emph{uendelige} Vorden som det
+% printer's defect: "nendelig" for "uendelig" (turned sort) — verified on
+% the image at 3x; both OCR witnesses agree; transcribed as printed.
+uendelig Lille: det nendelig Store og det uendelig Lille ere altsaa
+Størrelser, hvis værende Grændse opløses i Vorden som i uophørlig Voxen
+og uophørlig Aftagen. Hvad er Betegnelsen for den størst mulige
+% printed with a full stop after "Størrelse", though the sentence is a
+% question (the parallel clause that follows has "?"); as printed.
+endelige Størrelse. $\mathrm{Lim}\ x = \infty$! og for den mindst
+mulige? $\mathrm{lim}\ x = 0$. Den Grændse, der adskiller det Endelige
+fra $\infty$ og fra $0$, er, saa at sige, ikke et Haar bredere, end
+den, der adskiller det Endelige fra det Endelige. „Ligger det ene
+Endelighedspunkt det andet uendelig nær, da kan nu det Samme siges om
+$0$ og Endeligt, om $\infty$ og Endeligt“. (Philos. og Math. S. 24).
+Afviser man Dialektiken, forsøger man ved kritisk Sondring: „enten et
+Endeligt eller et Uendeligt“, at fjerne Modsigelsen, bliver den først
+for Alvor paatrængende; forsøger man saa ved allehaande techniske
+Vendinger, Spring og Kunstgreb at tilhylle den overalt lurende
+Modsigelse, vil man ved engang imellem at indlade sig med det Logiske
+let kunne geraade udi adskillige komiske Forlegenheder.
+% (this footnote runs over: the paragraph below is printed, unmarked, at
+% the foot of p. 62 and concludes at the top of the p. 63 notes)
+\par Fastholder man Dilemmaet: „enten er $\varepsilon$ endeligt eller
+det er $0$“, eensidig kritisk, altsaa udialektisk, altsaa:
+„$\varepsilon - 0$ enten endeligt eller $0$“, saa tør man da ligesaa
+lidt om $0$, som om $\infty$, sige, at det ligger det Endelige uendelig
+nær. Vil Mathematikeren hertil svare: „ganske rigtigt! $0$ ligger
+heller ikke Endeligt uendelig nær“, saa maa man igien spørge: hvad
+ligger der da imellem $0$ og Endeligt? Det uendelig Lille tør
+Mathematikeren ikke anføre, thi han har jo udtrykkelig selv sagt:
+„enten er $\varepsilon$ $0$ eller endeligt“. Der ligger altsaa Intet
+imellem $0$ og Endeligt, og dog skulde $0$ ikke ligge det Endelige
+uendelig nær! Paa tilsvarende Maade forholder det sig med $\infty$ og
+Endeligt. Udialektisk fastholder man det Dilemma: enten er $x$ endeligt
+eller uendeligt, \textit{tertium non datur}; altsaa $\infty - x$ enten
+$\infty$ eller endeligt eller $0$; man tør da ligesaa lidt om $\infty$
+som om $0$ sige, at det ligger det Endelige uendelig nær. Men hvad
+ligger der da imellem Endeligt og $\infty$? Vil Mathematikeren svare:
+„der ligger $\infty$!“ saa svarer han jo netop det Modsatte af, hvad
+han egentlig tænkte. Han tænkte nemlig, at der ifølge Ligningen
+$\infty - a = \infty$, for $x = a$, absolut maatte være en uendelig
+Afstand imellem det Endelige og $\infty$, og see, saa forvandler den
+formeentlige Afstand, det \emph{Mellemværende}, sig just til det, der
+igjennem Afstanden skulde naaes, nemlig det Uendelige selv; med andre
+Ord: det Endeliges yderste Grændse kan umuligt overskrides, uden at det
+Uendelige naaes. Det, der ved „den uendelige Afstand“ skulde holdes
+uendelig langt borte fra det Endelige, kommer altsaa dog dette Endelige
+uendelig nær. „Enten Endeligt eller Uendeligt!“ Men saa ligger her jo
+Intet, slet Intet imellem Endeligt og Uendeligt; og dog skal
+$\infty - a = \infty$, $\mathrm{tg}\,90^{0} - \mathrm{tg}\,(90^{0} \pm
+\varepsilon) = \frac{1}{\cos 90^{0}} = \infty$ \emph{være et Beviis, et
+fuldgyldigt mathematisk Beviis for, at der imellem Endeligt og
+Uendeligt er en uendelig Afstand!} Skulde en mathematisk Kritiker, ved
+at buldre med en saadan Logik, virkelig vinde Tilhængere, saa maatte
+man da rigtignok paa Logikens Vegne anvende det gamle Ord: \textit{un
+sot trouve toujours un plus sot, qui l'admire}.}. Den Indvending, at
+Udtrykket: „falde sammen med“, kun betegner „et tilfældigt
+Sammentræf“, er ubeføiet; thi Tangensforandringer
+% --- p. 62 ---
+% (no new footnote mark on this page; its foot carries the unmarked
+% run-over of the p. 61 note, transcribed at the p. 61 anchor above)
+foregaae ikke blot \emph{samtidigt} med, men ere \emph{nødvendige
+Følger} af tilsvarende Vinkelforandringer: at forvexle Conseqvensens
+Fremgang af Forudsætningen med tilfældigt Sammentræf af noget
+Samtidigt, forraader kun Tankeløshed. Ifølge $\frac{1}{a-x} = y$ ville
+Forandringerne i $y$ jo Punkt for Punkt være afhængige af
+Forandringerne i $x$; naar nu $y$, idet $x = a$, gaaer over fra at være
+endelig til at være uendelig, hvo vil da i en saadan Overgang see et
+blot udvortes tilfældigt Sammentræf med den $x$ tillagte Værdi? Er
+$\varepsilon = a - x$ den mindst mulige endelige Differens, saa er det
+Vendepunkt, da $y$ gaaer over fra Endeligt til Uendeligt, ogsaa
+uendelig nær; men heraf følger ingenlunde, at Forskjellen imellem
+Endeligt og $\infty$ skulde lade sig udstykke enten i endelige eller i
+uendelige Subtractionsdifferenser. Skulle Continuitetsspørgsmaalene
+afgjøres ved Beviser af \emph{umiddelbare} Subtractionsdifferenser,
+maae Beviserne rigtignok blive derefter. Ligningen:
+% the minus in the equation below is printed with the Danish
+% division-style minus sign ÷ (on p. 63 the same equation is printed
+% with —); transcribed as printed, \div here, - there.
+$\mathrm{tg}\,90^{0} \div \mathrm{tg}\,(90^{0} \pm \varepsilon) =
+\frac{1}{\cos 90^{0}} = \infty$
+% --- p. 63 ---
+\setcounter{footnote}{0}
+gjælder jo ogsaa for $\varepsilon = 0$. Ved at gjøre den umiddelbare
+Subtractionsdifferens til Maalestok for det Continuerede kommer man da
+til det i logisk Forstand saa overmaade skjønne Resultat, at, efterdi
+$\mathrm{tg}\,90^{0} - \mathrm{tg}\,(90^{0} \pm 0) =
+\frac{1}{\cos 90^{0}} = \infty$, saa maa der nødvendigviis være en
+uendelig Afstand imellem $\mathrm{tg}\,90^{0}$ og $\mathrm{tg}\,90^{0}$,
+eller, hvad her er det Samme, $\mathrm{tg}\,90^{0}$ være uendelig langt
+% (this footnote runs over: its final clause and the further unmarked
+% paragraph "Endnu en Bemærkning ..." are printed at the foot of p. 64)
+borte fra sig selv\footnote{Den Udflugt, at $\infty$ ikke er en
+Størrelse, siger Intet; var $\infty$ ikke en Størrelse, hvorledes kunde
+man da have $\infty - \infty = n$, en bestemt \emph{Størrelsesforskjel}
+imellem to \emph{Ikke-Størrelser}? Hvad det vil sige, at $\infty$ er en
+Størrelse, nemlig en vordende Størrelse, sees t.~Ex. af $\frac{1}{1-3}
+= 1 + 3 + 3^{2} + 3^{3}\,....\,+ 3^{n} + \frac{3^{n+1}}{1-3} =
+\infty - \infty = -\,\frac{1}{2}$, for $n = \infty$. Den Udflugt, at
+$\mathrm{tg}\,90^{0} - \mathrm{tg}\,(90^{0} \pm \varepsilon)$ jo
+% only "Functions" is letterspaced in the print; the word is set
+% "Functions differens" with the gap of the letterspacing.
+egentlig er en \emph{Functions}differens, hjælper heller ikke; thi
+dersom Functionsdifferensen skal faae Betydning i Modsætning til den
+umiddelbare Subtractionsdifferens, maa $\varepsilon$ forvandles til
+Element, og derved Vorden, continuerlig Forandring, Overgang, altsaa
+Bevægelsen være det Afgjørende.
+\par Endnu en Bemærkning til Overveielse. Der opstilles en fra flere
+Sider (Jvfr. Phil. og Math. S. 23--24, Begrebet Nøiagtighed.
+% "Bilag. S. 29": initial verified as Fraktur B (identical sort to
+% "Begrebet" on the same page); both OCR witnesses misread it as V.
+S. 45--47, „Afregn.“ gjennems. S. 7, Bilag. S. 29) belyst Sætning,
+hvori Grundtanken er denne: For at tænke den continuerlige Overgang fra
+Endeligt til $\infty$, er det nødvendigt at see paa Bevægelsen;
+abstraherer man fra Bevægelsen, og holder sig til umiddelbare
+Subtractionsdifferenser, bliver den continuerlige Overgang ufattelig.
+Herimod optræder saa en Mathematiker, som tillige er overordentlig
+Logiker, med den Bekjendtgjørelse, at den opstillede Sætning er falsk,
+grundfalsk. Hvorledes bærer den mathematiske Logiker sig nu ad med at
+bevise sin Paastand? Han paaviser, at Sætningens mathematiske Feil er
+„uendelig stor“, idet han ved Ligningen:
+% displayed equation, printed on its own line in the note; the numerator
+% carries ∓ (minus-over-plus), as printed
+\[ \mathrm{tg}\,90^{0} - \mathrm{tg}\,(90^{0} \pm \varepsilon) =
+\frac{\sin\,(\mp\,\varepsilon)}{\cos 90^{0}\,\cos\,(90^{0} \pm
+\varepsilon)} = \frac{1}{\cos 90^{0}} = \infty \]
+udtrykkelig abstraherer fra Bevægelsen, og ved at abstrahere fra
+Bevægelsen tydelig og uimodsigelig beviser, hvad den angrebne Sætning
+netop stadfæster, at nemlig Beviset for en continuerlig Overgang
+nødvendigviis maa, naar der abstraheres fra Bevægelsen, svigte. Den
+forsøgte Gjendrivelse forvandler sig herved til en udtrykkelig
+Stadfæstelse af det, der skulde gjendrives; altsaa: man vil paavise en
+Sætnings „uendelige mathematiske Feil“, og see, saa kommer man ved et,
+ja det forstaaer sig, naturligviis ubetydeligt mathematisk-logisk
+Feilgreb netop til at bevise Sætningens mathematiske Gyldighed:
+ordentlig Mathematik, overordentlig Logik!}.
+% --- p. 64 ---
+% (no new footnote mark on this page; its foot carries the unmarked
+% conclusion of the p. 63 note, transcribed at the p. 63 anchor above)
+At $\infty$, det i sig Ubegrændsede, kan være Grændse, beroer
+væsentlig paa $0$, den bestemmende Negation, Grændsen selv. At $0$
+ligger det Endelige uendelig nær, vil med andre Ord sige, at Grændsen
+ligger det Begrændsede uendelig nær; men hvad der, med Hensyn paa den
+opnaaelige Grændse, i en Ligning, som $\frac{1}{a-x} = y$, gjælder om
+$a - x = 0$, gjælder jo ogsaa om $y = \infty$. Grændsen $\infty$ er
+altsaa, seet fra dette Synspunkt, ligesaa opnaaelig, som Grændsen $0$.
+Heraf
+% --- p. 65 ---
+\setcounter{footnote}{0}
+forklares det saa igjen, at medens ingen endelig Størrelse kan betegne
+nogen Overgang fra $+$ til $-$, kan $\infty$ derimod betegne denne
+Overgang, ligesaavel som $0$, just fordi $0$ kan betegne den. „Da nu en
+Overgang, hvad Modsætningen af Positivt og Negativt angaaer, kun faaer
+Betydning derved, at det Positive gaaer over i det Negative, og
+omvendt det Negative i det Positive, altsaa derved, at det Positive og
+det Negative begge ere i Overgangen og desaarsag høre med i
+Overgangens Begreb: saa burde saadanne Ligninger, som $\sin 0 = 0$,
+% "cot." with a full stop at its first occurrence, "cot" without at the
+% second; as printed.
+$\mathrm{cot.}\ 0 = \infty$, strengt taget, skrives: $\sin\,(\pm\,0) =
+\pm\,0$, $\mathrm{cot}\,(\pm\,0) = \pm\,\infty$, o.~s.~v. Ved denne
+Adskillelse af $+$ og $-$ i $0$ og $\infty$ opkommer der i disse
+Grændsebetegnelser selv en indre Forskjellighed, der er i høieste Grad
+dialektisk. Betegnelsen $\pm\,0$ udtrykker jo, naar vi see nærmere til,
+at det ene Nul har skilt sig ad i tre forskjellige Nuller, et $+0$, et
+% the minus in "Negation af + og ÷" and in "hvori + og ÷ ere
+% forsvundne" is printed with the Danish division-style minus ÷ (the
+% other minuses on this page are printed —); transcribed as printed.
+$-0$, og det rene neutrale $0$, den skarpe Negation af $+$ og $\div$;
+den samme Adskillelse gjentager sig, hvad $\pm\,\infty$ angaaer; ogsaa
+her er et $+\,\infty$, et $-\,\infty$, og et neutralt $\infty$, hvori
+$+$ og $\div$ ere forsvundne. Naar det altsaa hedder, at $0$ og
+$\infty$ ere Overgangsbetegnelser, kan dette ikke gjælde om det rene
+$0$ eller det neutrale $\infty$, men kun om $\pm\,0$ og
+$\pm\,\infty$\footnote{Kun ved at betragte Nullet fra 3 Synspunkter:
+1) som det Positives Udgangspunkt, 2) som det Negatives Udgangspunkt,
+og 3) som begges adskillende Eenhedspunkt, og lade disse 3
+Bestemmelser reflectere sig i een Grundbestemmelse, tænker man
+Nulbegrebet, det rene Grændsebegreb, som Overgangsbegreb.}. Den Maade,
+% "1^∞": the superscript on 1 is a small ∞, verified on the image at 3x
+% (both OCR witnesses fail on it: "1*" / "1°").
+hvorpaa de saakaldte ubestemte Former: $\frac{0}{0}$, $0.\ \infty$,
+$0^{0}$, $\infty^{0}$ og $1^{\infty}$, behandles i Mathematiken, viser
+tydelig nok, hvad Overgangsformer ville sige.“ (Math. og Dialekt.
+S. 72).
+
+% head printed letterspaced, run-in, matching the Indhold's
+% "γ) Articulationer" (~p. 65 per the Indhold; printed here on p. 65)
+\emph{γ) Articulationer.} Som Overgangsformer betegne $0$ og $\infty$
+altsaa Grændsens dialektiske Eenhed med det
+% --- p. 66 ---
+% (printed: "Be-" ends p. 65, "grændsede" begins p. 66; the word is
+% completed here)
+Begrændsede, og derved Bevægelsen: Overgang forudsætter Bevægelse.
+Forsaavidt de endelige Størrelser bestemmes ved givne Tegn, kunne de,
+uden at nogen Bevægelse mærkes, opfattes af Forestillingen og
+fastholdes i deres Endelighed, endog i den Grad, at det seer ud, som
+var det Uendelige kun en tom Abstraction, en udvortes, oversvævende
+Negation; forsaavidt de endelige Størrelser derimod bestemmes ved
+Relationer og opfattes som Begreber, viser Negationen sig som
+Endeligheden iboende, og det Uendelige articuleres. „Saalænge
+Forestillingen uvilkaarlig hæfter ved Tegnet 1, tager det sig ud, som
+var Eenheden et umiddelbart Noget, et Tilværende, man kunde anskue og
+ligefrem paapege; denne Forestillingens Umiddelbarhed forsvinder, naar
+man begynder at opfatte Eenheden som et Forhold: $\frac{2}{2} =
+\frac{3}{3} = \frac{4}{4}$.“ (Mathem. og Dial. S. 79). Hvad er altsaa
+Eenheden? I og for sig er enhver Størrelse Eenheden: $a = a$, $b = b$,
+$c = c\,....$; saamange forskjellige Størrelser, saamange forskjellige
+Eenheder! Men ingen af de forskjellige Eenheder er Eenheden selv;
+hvorledes komme vi da til den alle Eenheder bestemmende Eenhed? Ved den
+i de ligestore Størrelser udtrykte Ligestorhed! Af $\frac{a}{a} = 1$,
+$\frac{b}{b} = 1$, $\frac{c}{c} = 1\,....$ sees udtrykkelig, at
+Eenheden netop er enhver Størrelses Ligestorhed med sig selv; ved
+særlig at fremhæve den for hver Størrelse gjældende Ligestorhed, og
+igjen sætte denne som Størrelse, have vi den almindelige Eenhed. Som
+Ligestorhedens bestemte Udtryk, som Qvotient af lige Forholdsled, er
+Eenheden uafhængig af Leddenes umiddelbare Forskjellighed; saalænge
+hvert Led blot vedbliver at være sig selv liigt, kunne Leddene
+forandres, voxe og aftage i det Uendelige, uden at slige Forandringer i
+mindste Maade forandre Eenheden. Har man altsaa formedelst det
+Begrændsede ($a = a$, $b = b\,....$): $\frac{a}{a} + \frac{b}{b} +
+\frac{c}{c} + ... =$
+% --- p. 67 ---
+$1 + 1 + 1 + ...$, saa har man ogsaa formedelst det Grændseløse
+% "Lim." capitalised at the first limit, "lim." lower-case at the
+% second; as printed.
+$\left(\mathrm{Lim.}\,\frac{x}{x} = \frac{\infty}{\infty}\right)$:
+$\frac{\infty}{\infty} + \frac{\infty}{\infty} + \frac{\infty}{\infty}
++ ... = 1 + 1 + 1 + ...$ og formedelst Grændsen
+$\left(\mathrm{lim.}\,\frac{x}{x} = \frac{0}{0}\right)$: $\frac{0}{0} +
+\frac{0}{0} + \frac{0}{0} + ... = 1 + 1 + 1 + ...$ Af disse
+Forandringernes Strømme hæver Eenheden sig frem som det Uforanderlige,
+som Qvantiteringens rene Qvantum, det i Bevægelsen Ubevægelige.
+
+Paa Eenheden af den almindelige og særskilte Eenhed, den dialektiske
+Eenhed af Størrelsens Begreb og Størrelsens Værdi beroer Functionen;
+enhver Størrelse er en Function af sig selv og Eenheden: $x = f(x) =
+1. x$ (Jvfr. Math. og Dial. S. 6--7). Af $\frac{f(x)}{x} = 1$,
+Udtrykket for Størrelsens Eenhed med sig selv i Almindelighed, den
+\emph{almindelige Eenhed} ($f(x) = x$), følger
+% in the print the quotient of integrals stands large in the running
+% line, with the limits set above and below the integral signs
+$\frac{\int_{f(x)=0}^{f(x)=1.a} df(x)}{\int_{x=0}^{x=a} dx} =
+\frac{a}{a} = 1$, ɔ: Størrelsens Eenhed med sig selv som særskilt
+Størrelse, den \emph{særskilte Eenhed} ($f(a) = a$).
+
+Fremstilles Overgangen, idet $d.f(x) = dx$, ved $f(x) =
+\int_{x=0}^{x=\infty} dx = \infty$, maa det for Alting fastholdes, at
+her aldeles ikke kan tænkes paa en ligefrem Summation, men kun paa
+Vorden, Tilbliven, intellectuel Bevægelse. Intet har fra Begyndelsen af
+mere bidraget til at forrykke det afgjørende Synspunkt og
+tilbagetrænge den naturlige Begrebsudvikling, end den Omstændighed, at
+Operationsmechaniken altfor meget har behandlet Differentialet snart
+som et umiddelbart Størrelsesatom, snart som et mystisk Nul, istedetfor
+at fatte det
+% --- p. 68 ---
+\setcounter{footnote}{0}
+som Overgangsmoment, og paa tilsvarende Maade betragtet Integrationen
+blot som en Art Summation (Math. og Dial. S. 99--104), istedetfor at
+bestemme den som en Restitution af Endeligt gjennem Uendeligt
+formedelst den for Qvantiteringen gjældende Bevægelse. Hvor umuligt det
+er at forestille sig $\int dx = dx + dx\,....\,= \infty\ dx$ som en
+egentlig Sum\footnote{Vistnok kan $x$, seet under Synspunktet af
+uendelig Discretion, \emph{tænkes opløst} i $dx + dx +\,....$, men Et
+er det at \emph{tænke} den uendelige Discretion, et Andet at
+\emph{addere} $dx$ til $dx$ --- i det Uendelige.}, sees ligefrem deraf,
+at $dx$ som dialektisk Mellembestemmelse imellem $0$ og $x$ umulig kan
+være Addend. For at være Addend maatte $dx$ have umiddelbar endelig
+Tilværen, --- saaledes kan ikke blot $a$, men $\frac{a}{10000}$ være
+Addend; men opfattet som tilværende er $dx$ en saare tvetydig
+Størrelse, for stor til at være Intet, for lille til at være Noget.
+Dette Tvetydige forvandler sig til et i Begrebet Tvesidigt, naar $dx$
+opfattes som den Overgangsbestemmelse, hvorpaa al Bevægelse væsentlig
+beroer. Som Overgangsbestemmelse kan $dx$ ikke i noget Øieblik staae
+stille; dets Væren er Vorden, det forandrer sig og bliver enten $0$
+eller $x$. Vil Nogen indvende, at man dog ikke saaledes ved et Spring
+kan komme fra $dx$ til $x$, men først maa have $2dx$, $3dx$, $....$
+indtil $ndx$, for $n = \infty$, da er det ikke vanskeligt at paavise
+den Begrebsforvirring, som skjuler sig herunder.
+
+For at articulere Bevægelsen bliver det nemlig nødvendigt at skjelne
+imellem en enkelt og en dobbelt Vorden. I den enkelte Vorden er $n$ i
+$ndx$ enten endeligt, eller uendeligt. Forsaavidt $n$ er endeligt, er
+$ndx$ et Element, og som Element et almindeligt $dx$; skal $ndx$ blive
+en endelig Størrelse, maa $n$ være $\infty$. Saalænge her endnu kun
+spørges om det i
+% --- p. 69 ---
+Overgangen Almeenvæsentlige, sees her overalt paa den dialektiske
+Forskjelseenhed af $dx$ og $x$, men derimod ikke paa Forskjellen
+imellem $dx$ og $ndx$; ethvert $ndx$ er under Bevægelsen som Element i
+Begreb med at blive et Endeligt, og som Endeligt at voxe ved et
+Element. Hvor stort Elementet er, kan ved denne Sammenligning, efterdi
+Sammenligningen er umiddelbar, ikke komme i Betragtning, hvor lille den
+endelige Størrelse er, heller ikke; Overgangen beroer just derpaa, at
+det størst mulige Element og den mindst mulige endelige Størrelse ere
+Vexelbestemmelser. Bevægelsen gaaer i den enkelte Vorden fra $0$ til
+$x$ ikke igjennem Myriader af $dx$, men igjennem $dx$. Ved at
+forestille sig den i $\int dx = x$ liggende Opgave løst saaledes: $0 +
+dx + dx +\,....\,+ dx = ndx = x$, hilder man sig i den Fixidee, at
+Rækken skulde indeholde et særligt $dx$, hvis Plads netop betegnede den
+værende Grændse, hvor Elementernes Sum for første Gang gav en endelig
+Størrelse. Forskjellen mellem Addition og Bevægelse er her
+paafaldende. Ved at addere $dx$ til $dx$, naaer man aldrig $x$; $x -
+dx = x - 2dx = x - 3dx = x - ndx$, saalænge $n$ er endeligt, og under
+Additionen er $n$ altid endeligt; ved Bevægelsen naaes derimod
+umiddelbart og øieblikkelig fra $dx$ til $x$, idet $x$ er den mindst
+mulige \emph{endelige} Størrelse. Det $x$, hvortil Bevægelsen
+forvandler det dialektiske $dx$, er igjen dialektisk som Bevægelsen
+selv; det i $x$ Dialektiske følger ligefrem deraf, at enhver Bevægelse
+maa begynde, før den kan ende. Med den begyndende Bevægelse er $dx$
+umiddelbart blevet et $x$, thi Bevægelsen er i sin Umiddelbarhed selv
+Relation, Reflexion; men da Bevægelsen dog endnu kun er i sin
+Begyndelse, er $x$ det mindst Mulige. Standser nu Bevægelsen, just som
+det Begyndte skulde fuldføres, saa falder det Endelige igjen tilbage
+til Elementet: det mindst mulige $x$ er da selv et $dx$. Fuldføres
+derimod den begyndende Bevægelse, da naaes Resultatet, da voxer det
+mindst
+% --- p. 70 ---
+\setcounter{footnote}{0}
+mulige $x$ ud over et mindst Muligt, rodfæster sig i det Endelige og
+bliver derved qvalitativt forskjelligt fra sit Element. Det $x$, der
+fremkommer ved $\int dx = x$, har altsaa, hvor lille det end er (Math.
+og Dial. S. 111--112), den fuldendte Bevægelse til Forudsætning, er af
+en bestemt endelig Værdi, kan som et Endeligt deles i uendelig mange
+uendelig smaa Dele og frembringer saa ved denne Mulighed det Skin at
+være en Sum af utallige $dx$.
+
+De eleatiske Indsigelser imod Bevægelsens Mulighed\footnote{Jvfr.
+Math. og Dialekt. S. 131 o. fl.} lade sig i nærværende Sammenhæng
+henføre til en udialektisk Identificeren af Begyndelse og Fuldendelse.
+For at en Bevægelse kan fuldendes, maa den naturligviis være begyndt;
+sættes nu den begyndende Bevægelse identisk med den fuldendte, saa
+have vi som Modsigelsernes Cardinalpunkt denne vistnok urimelige
+Sætning: „for at en Bevægelse kan fuldendes, maa den allerede forud
+være fuldendt.“ Man fordrer, med andre Ord, en absolut Begyndelse; men
+at fordre en absolut Begyndelse er en Selvmodsigelse, thi ingen
+Begyndelse er eller kan være absolut. Under Bevægelsen er enhver
+Begyndelse Fortsættelse, og enhver Fortsættelse en ny Begyndelse.
+Begyndelsens og Fortsættelsens dialektiske Eenhed er Bevægelsen selv.
+Under Discretionens Synspunkt viser enhver Bevægelse sig derfor ogsaa
+som en Sum af uendelig mange Bevægelser. Seet fra dette Synspunkt
+ligger der unegtelig imellem $x$ og $dx$ uendelig mange $dx$, og
+ligesaa imellem $dx$ og $0$ uendelig mange $\mathrm{Lim.}\,
+\frac{dx}{x}$; men for at indsee, hvorledes en saadan Discretion
+opgaaer i Continuiteten, maae vi særlig betragte den fordoblede
+Vorden, den Vorden, hvori Bevægelse bestemmer Bevægelse.
+
+% --- p. 71 ---
+Haves $f(x) = y = ax$, altsaa (Math. og Dial. S. 84--85) $dy = adx$,
+da viser Forholdet imellem $dy$ og $dx$ hen paa en dobbelt Vorden, en
+Vorden af $x$ ved Tilvæxten $dx = dx$, og en herved bestemt Vorden,
+hvorunder det af $x$ afhængige $y$ voxer ved Tilvæxten $dy = adx$.
+Ihvorvel $dy$ nu er et Element, og som Element en uendelig lille, i
+Sammenligning med en hvilkensomhelst endelig Størrelse forsvindende,
+Værdi, ligesaavel som $dx$, saa sees dog heraf, at det ene Element kan
+være $a$ Gange større end det andet; er f.~Ex. $a = 2$, saa er $dy =
+2dx$, og $dx = \frac{1}{2}dy$; er $a = 3$, saa er $dy = 3dx$, og $dx =
+\frac{1}{3}dy$ o.~s.~fr. At der imellem Elementerne indbyrdes
+imidlertid ikke kan anstilles nogen umiddelbar Sammenligning, at her af
+slige Elementer Intet lader sig danne enten ved Sammenstykning eller
+Udstykning, er let at indsee. Istedetfor af $dy = 2dx$ at aflede $dy -
+dx = dx$, opgiver man Subtractionen som en ufrugtbar Symbolik,
+anvender Divisionen og erholder $\frac{dy}{dx} = 2$,
+Differentialcoefficienten, den Factor, hvormed $dx$ skal multipliceres
+for at give $dy$ (Math. og Dial. S. 81). Hvilken afgjørende Betydning
+for Articulationen af Uendeligt ved Endeligt det har, at Multiplication
+og Division træde istedetfor Addition og Subtraction, lader sig uden
+Vanskelighed oplyse. Størrelsen af en endelig Tidseenhed kan
+umiddelbart angives, ligeledes kan Størrelsen af det Rum, der med en
+vis endelig Hastighed gjennemløbes i en endelig Tid, umiddelbart
+angives; da nu Størrelserne hver for sig ere umiddelbart givne, kan
+Sammenligningen imellem dem ogsaa anstilles paa en saa umiddelbar
+Maade, at Leddene selv bevare en vis Selvstændighed ligeoverfor den
+Relation, hvori de befinde sig til hinanden. Er Hastigheden paa en
+Bane 4 Miil, paa en anden 8 Miil i Timen, da falder den herved givne
+Subtractionsdifferens som af sig selv. Anderledes, naar Tids- og
+Rumselementer træde istedetfor de endelige Tids- og Rumseenheder.
+% --- p. 72 ---
+\setcounter{footnote}{0}
+% (printed: "Hvor-" ends p. 71, "langt" begins p. 72; the word is
+% completed here)
+Hvorlangt er vel et Øieblik? Ja, det kan ikke umiddelbart angives, og
+ligesaa lidt kan det umiddelbart angives, hvor langt et Stykke Vei der
+med en given endelig Hastighed kan gjennemløbes i et eneste Øieblik:
+istedetfor at holde sig i udvortes Relation, maae Elementerne forvandle
+sig til Momenter i en gjennemgaaende Reflexion; hertil behøves
+Multiplication og Division, Produkt og Qvotient. I Produkt og Qvotient
+have Leddene allerede opgivet deres udvortes mod hinanden ligegyldige
+Tilværen og forvandlet sig til reflecterede Forholdsmomenter. Saalænge
+Produkt og Qvotient imidlertid kun dannes af endelige Størrelser, er
+den tilsvarende Reflexion vistnok endnu indskrænket af den blot
+forestillende Opfattelse\footnote{For den endelige Reflexion, den blot
+forestillende Tænkning, tager det sig da ogsaa ud, som om Summen $a +
+b = (a + b)$, var ligesaa reflecteret, som Produktet $a.b = ab$,
+Differensen $a - b = c$, ligesaa reflecteret som Qvotienten
+$\frac{a}{b} = c$.}; men idet Elementerne træde i de endelige
+Størrelsers Sted, maa den sidste Rest af Forestillingens Umiddelbarhed
+forsvinde, og Begrebet, det rene ved Articulationen tydeliggjorte
+Begreb, gjælde. Lade vi $s = 4t$, $ds = 4dt$, $\frac{s}{t} =
+\frac{ds}{dt} = 4$ være forskjellige Udtryk for een og samme
+Hastighed, nemlig 4 Miil i Timen, saa indlyser det, at, uagtet
+Hastigheden er den samme, staaer Hastighedsudtrykket $\frac{ds}{dt}$
+dog i et ganske andet Forhold til Tænkningen, end Udtrykket:
+$\frac{s}{t}$. Qvotienten $\frac{s}{t}$ holder sig endnu i den til
+Forestillingen støttede Relation, men i $\frac{ds}{dt}$ beroer den
+hele Indsigt paa gjennemgaaende Reflexion; i det ved dem bestemte
+Forhold ere $ds$ og $dt$ Intet, slet Intet i og for sig, men Reflexer
+af hinanden,
+% --- p. 73 ---
+og i denne Gjennemsigtighed bestemte ved hinanden, saaledes at de ikke
+yde Forestillingen nogetsomhelst endeligt Tilhold.
+
+Den i sig fordoblede Vorden bliver endnu rigere articuleret, naar den
+til Bevægelsen svarende Hastighed med hvert Øieblik forandres. En
+Bevægelse kan nemlig, hvad Hastigheden angaaer, være uendelig mange
+Forandringer underkastet, og dog, naar ingen af disse Forandringer
+pludselig indtræder, vise sig continuerlig. Continuiteten er betinget
+deraf, at Forandringerne alle ere een og samme høiere Lov undergivne
+og altsaa befinde sig i indbyrdes Afhængighedsforhold af hinanden.
+
+% (the quotation opened here runs past p. 74; the closing mark falls in
+% a later batch — this fragment carries one surplus opening quote on
+% purpose)
+„Forsaavidt $s$ er et i Tiden $t$ allerede gjennemløbet Rum, kan man
+endnu ikke vide, om dette Rum er gjennemløbet med foranderlig eller
+uforanderlig Hastighed. For at bestemme Hastigheden maa man give Tiden
+en Tilvæxt, det vil sige: skaffe Tid til fortsat Bevægelse. Kaldes nu
+Tilvæxten til Tiden $h$, haves, idet $s = f(t)$ Rækken:
+% displayed equation, printed on its own line; denominators 1.2 and
+% 1.2.3 as printed
+\[ f(t + h) = s + \frac{ds}{dt}\,\frac{h}{1} +
+\frac{d^{2}s}{dt^{2}}\,\frac{h^{2}}{1.2} +
+\frac{d^{3}s}{dt^{3}}\,\frac{h^{3}}{1.2.3} +\,.... \]
+Er Tilvæxten $h$ en endelig Størrelse og Hastigheden constant, vil
+hele Rækken indskrænke sig til $f(t + h) = s + \frac{ds}{dt}\,
+\frac{h}{1}$; er $h$ uendelig lille, liig $dt$, vil det Samme gjælde,
+selv naar Hastigheden er variabel. Derimod ville, naar $h$ er endelig,
+Rækkens Led kunne forøges i det Uendelige. Seet fra Begrebets
+Synspunkt, angiver Rækken en Totalitet af objective
+Reflexionsbestemmelser. De enkelte Led kunne, idet $s$ betyder Rummet,
+$v$ Hastigheden og $\varphi$ Kraften, gjengives ved forskjellige til
+hinanden svarende Udtryk:
+% three-line displayed block, printed with the second and third lines
+% aligned on =; set here as successive displays (no amsmath in the
+% preamble)
+\[ f(t + h) = s + \frac{ds}{dt}\,\frac{h}{1} +
+\frac{d^{2}s}{dt^{2}}\,\frac{h^{2}}{1.2} +
+\frac{d^{3}s}{dt^{3}}\,\frac{h^{3}}{1.2.3} +\,.... \]
+\[ = .. + v\,\frac{h}{1} + \frac{dv}{dt}\,\frac{h^{2}}{1.2} +
+\frac{d^{2}v}{dt^{2}}\,\frac{h^{3}}{1.2.3} +\,.... \]
+\[ = .. +\,....\,+ \varphi\,\frac{h^{2}}{1.2} +
+\frac{d.\varphi}{dt}\,\frac{h^{3}}{1.2.3} +\,.... \]
+% --- p. 74 ---
+\setcounter{footnote}{0}
+Kategorierne: \emph{Bevægelse}, \emph{Hastighed}, \emph{Kraft} og
+\emph{Forandring i Kraft} blive saaledes bestemte ved objectiv
+Reflexion\footnote{I hvilken Grad en ellers udviklet Reflexion kan
+forfeile Udviklingen af et Operationsbegreb, naar de Vink, den exacte
+Analyse meddeler, aldeles oversees, har Hegel viist i sin speculative
+Udtydning af Faldbevægelsen (Jvfr. Phil. Propæd. S. 161--167). Den
+bekjendte Sætning, at de med jævnt voxende Hastighed gjennemløbne Rum
+forholde sig som Qvadraterne af de anvendte Tider, udtyder Hegel
+nemlig saaledes, at Qvotienten $\frac{s}{t^{2}}$ bliver en dialektisk
+Conseqvens af Rums- og Tidsbegrebets abstract-aprioriske Forhold: „Die
+der Einheit, als der Form der Zeit, entgegengesetzte Form des
+Außereinander des Raums, und zwar ohne daß irgend eine andere
+% "Qvadrat" (Danish-style Qv also in the German quotation): initial
+% verified as Fraktur Q on the image; the German is set in Fraktur like
+% the Danish, hence no antiqua marking.
+Bestimmtheit sich einmischt, ist das Qvadrat: die Größe außer sich
+% printer's defect: full stop after "vermehrend" before lower-case
+% "aber" (comma expected; possibly a broken sort) — verified on the
+% image at 2x; transcribed as printed.
+kommend in eine zweite Dimension sich setzend, sich somit vermehrend.
+aber nach \emph{keiner andern als ihrer eignen} Bestimmtheit ---
+diesem Erweitern sich selbst zur Grenze machend, und in ihrem
+Anderswerden so sich nur auf sich beziehend“. Det undgaaer da i dette
+Tilfælde Hegels Opmærksomhed, at om ogsaa Bevægelsen i al
+Almindelighed lader sig deducere af Forholdet mellem det rene Rum og
+den rene Tid, en Deduction, der dog altid maa være betinget af
+understøttende Biforestillinger, saa kan Tidens Qvadrat jo dog umulig
+fremkomme uden en varierende Hastighed, og en varierende Hastighed
+umulig uden en tilsvarende Aarsag, her en constant Kraft, der
+paavirker den sig i Rummet efter Inertiens Lov bevægende Materie.}.
+Umiddelbart betegner $s$ en Rumslængde; men i Ligningen $s = f(t)$
+sees denne Rumslængde i Reflexion af en Tidslængde; den skylder jo
+Tiden sin Tilværen, forsaavidt den nemlig er tilbagelagt i en given
+Tid. Umiddelbart betegner $v$ en Hastighed, men i Udtrykket
+$\frac{ds}{dt}$ er Hastighedsbegrebet bestemt ved objectiv Reflexion
+af Rum og Tid i det givne Forhold. Umiddelbart er Kraften betegnet ved
+$\varphi$, dernæst ved Reflexion af Hastigheden og Tiden i det
+bestemte Forhold $\frac{dv}{dt}$, endelig, idet $v = \frac{ds}{dt}$
+gaaer op i Reflexion
+% (p. 74 ends mid-sentence; the sentence continues on p. 75)
 
 % B. Philosophiens Forhold til Chemien: Forandringsproblemet begins ~p. 81.
-% [text to be added: pp. 75--89]
+% --- p. 75 ---
+\setcounter{footnote}{0}
+af Rum og Tid, ved en fordoblet Reflexion i Forholdet
+$\frac{d^2s}{dt^2}$. Paa denne Maade kunne Kraftens Ændringer med
+Hensyn paa Forholdet af Rum og Tid bestemmes som Reflexioner
+af Reflexioner i det Uendelige“. (Phil. Propæd. S. 165--167).
+% (the closing „…“ above ends a quotation opened on p. 74, in the
+%  preceding batch; this fragment therefore closes one more quote
+%  than it opens)
+
+Continuitets- og Discretionsbegrebets dialektiske Vexelbestemmelse
+fremlyser nu af den Maade, hvorpaa den continuerlige
+Bevægelse articuleres, idet Elementerne selv ikke
+blot kunne deles og deles, men endog paa givne Betingelser
+% (the footnote below is marked *) on p. 75 and continues, without a
+%  repeated mark, over the whole foot of p. 76)
+opløses i Elementer af høiere og stedse høiere Orden\footnote{At
+raisonnere saaledes: „Størrelsen $y$ kan tænkes deelt i uendelig
+mange $dy$, lad gaae! men da $dy$ paa denne Maade selv bliver
+den mindst mulige Deel af en Størrelse, kan $dy$ selv dog umulig
+være deelbart, eftersom man ved at dele $dy$ jo maatte faae Dele,
+der vare mindre end den mindst mulige“, --- gaaer ikke an; thi
+$dy = a\,dx$, $dx = \frac{dy}{a}$, og, dersom vi vælge Functionen
+$y = f(x) = x^2$, $dy = 2x\,dx$, $dx = \frac{dy}{2x}$, viser
+tydelig nok, hvad det vil sige, at $dy$ er deelbart. Men dersom
+et Element af første Orden ikke er absolut udeelbart, uagtet det
+qva Element er \emph{uendelig lille}, saa følger det jo af sig
+selv, at Elementer af anden Orden $d^2y$, tredie Orden $d^3y$,
+4de Orden $d^4y$, $n$\textsuperscript{te} Orden $d^ny$ heller
+ikke paa Grund af deres \emph{uendelige Lidenhed} kunne være
+absolut udeelbare. Vistnok kan man i al Almindelighed sætte
+$\frac{d^2y}{dx} = 0$, $\frac{d^3y}{dx^2} = 0$,
+$\frac{d^4y}{dx^3} = 0$, $\frac{d^ny}{dx^{n-1}} = 0$, og hvad
+hermed er eenstydigt $\frac{dx}{d^2y} = \infty$,
+$\frac{dx^2}{d^3y} = \infty$, $\frac{dx^3}{d^4y} = \infty$,
+$\frac{dx^{n-1}}{d^ny} = \infty$, idet man saa ved $0$ og
+$\infty$ betegner, at Elementerne af forskjellig Orden ere
+„\textit{incomparable}“ (Jvfr. Math. og Dialekt. S. 96); men
+heraf følger naturligviis ingenlunde, at $\frac{d^2y}{dx^2}$
+skulde være mindre end $\frac{dy}{dx}$, $\frac{d^ny}{dx^n}$
+mindre end $\frac{d^{n-1}y}{dx^{n-1}}$; tvertimod! Relationerne
+kunne endogsaa medføre $\frac{d^4y}{dx^4} > \frac{d^3y}{dx^3}$,
+$\frac{d^3y}{dx^3} > \frac{d^2y}{dx^2}$,
+$\frac{d^2y}{dx^2} > \frac{dy}{dx}$,
+$\frac{d^ny}{dx^n} > \frac{d^{n-1}y}{dx^{n-1}}$. Jo større
+Qvotienten er, i desto flere Dele maa Dividenden jo være deelt:
+Dividendernes Eiendommelighed bestemmes ved de som Divisorer
+valgte Maalestokke. Imellem Elementerne $dy$ og $d^2y$, $d^2y$
+og $d^3y$ o. s. v. i de anførte Qvotienter er her ingen
+umiddelbart bestemt Relation; den ifølge $y = f(x)$ bestemte
+Relation fremkommer først derved, at Maalestokkene $dx^2$,
+$dx^3$, $dx^4\ldots$ alle ere bestemte ved $dx = dx$. Er
+saaledes $\frac{dy}{dx}$ constant, t. Ex. $= a$, saa er ogsaa
+$\frac{dy}{dx} = \frac{\int dy}{\int dx} = \frac{y}{x} = a$, og
+omvendt. Er $\frac{d^2y}{dx^2}$ constant, t. Ex. $= 2a$, saa er
+ogsaa $\frac{\int\int d^2y}{\int\int dx^2}
+= \frac{\int dy}{\int x\,dx} = \frac{y}{\frac{1}{2}x^2} = 2a$,
+og omvendt; er $\frac{d^3y}{dx^3}$ constant t. Ex. $= 6a$ saa
+er $\frac{\int\int\int d^3y}{\int\int\int dx^3}
+= \frac{\int\int d^2y}{\int\int x\,dx^2}
+= \frac{\int dy}{\int \frac{1}{2}x^2\,dx}
+= \frac{y}{\frac{1}{6}x^3} = 6a$ og omvendt. Slige Relationer
+kunne fortsættes i det Uendelige.}. Dersom
+Rummet $s$ t. Ex. ikke efter Mulighed lod sig dele i lutter
+$ds = ds$, ligesom Tiden $t$ i lutter $dt = dt$, vilde
+Continuiteten selv og følgelig enhver continuerlig Bevægelse
+være ufattelig, Forholdet imellem Hvile og Bevægelse,
+hurtigere og langsommere Bevægelse aldeles ubegribeligt.
+
+„Forskjellen mellem langsom og hurtig Bevægelse maa
+aabenbart beroe derpaa, at den første har mere, den anden
+% --- p. 76 ---
+\setcounter{footnote}{0}
+mindre Hvile i sig, at den første altsaa er Hvilen nærmere
+end den anden; en Bevægelse med en uendelig lille Hastighed
+er jo netop Hvilen saa uendelig nær, at den kan betragtes
+som Hvile\footnote{Jvfr. Math. og Dialekt. S. 55--56.}. Ikke
+desto mindre er Modsætningen mellem
+Hvile og Bevægelse dog qvalitativ: hvad der hviler, bevæger
+% --- p. 77 ---
+sig ikke, hvad der bevæger sig, hviler ikke. Forkaste vi nu
+de uendelige Størrelser, kan Hastighedsforskjellen kun forklares
+deraf, at den rene Bevægelse endelig afbrydes af Hvilen. At
+Legemet paa $A$ i Tidseenheden $t$ kun gjennemløber $s$, medens
+Legemet paa $B$ gjennemløber $s_1 = 8s$, maa altsaa forklares
+saaledes, at hiint Legeme kun bevæger sig i $\frac{1}{8}t$, men
+derimod hviler i $\frac{7}{8}t$. Saalænge Tidseenheden, hvori
+en saadan Afvexling foregaaer, er en Time, er Hvilens Afvexling
+med Bevægelsen iøinefaldende; er Tidseenheden 1 Secund, er
+Afvexlingen mindre paafaldende og tager sig ud som en stødviis
+Bevægelse; i en Tidseenhed af $\frac{1}{100}$ Secund vil
+Afvexlingen slet ikke mærkes, men Phænomenet vise sig som en
+jævn Bevægelse \ldots\ Skal Bevægelsen paa $A$ være
+continuerlig, maae Tiden og Rummet være deelbare i det
+Uendelige; i dette Punkt har Aristoteles seet rigtigt. Men hvad
+Aristoteles ikke har seet og ikke har kunnet see, fordi han
+manglede det Støttepunkt, som kun det Uendeliges Analyse
+kan give, er, at her ved denne Tidens og Rummets uendelige
+Deelbarhed netop danne sig uendelig smaa Størrelser med
+en saadan indbyrdes Forskjel, at de indgaae i bestemte
+Endelighedsforhold med hinanden“. (Math. og Dialekt. S. 144--45).
+Til den constante Hastighed: $v = a = \frac{ds}{dt}$ svarer en
+eenfold Continuitet, en Continuitet, som vi, da den netop betegnes
+derved, at Differentialcoefficienten af første Orden er constant,
+her ville kalde \emph{Continuiteten af første Orden}.
+
+Kan den eenfolde Continuitet kun begribes af en tilsvarende
+eenfold Discretion, der gaaer i det Uendelige, saa
+kan den i sig fordoblede Continuitet da heller ikke begribes
+uden en tilsvarende Discretionsfordobling. Giver den med
+hvert Øieblik forandrede Hastighed os Rækken: $v_1$, $v_2$, \ldots
+% --- p. 78 ---
+\setcounter{footnote}{0}
+$v_{n-1}$, $v_n$ i $n$ paa hinanden følgende Øieblikke, saa at
+$v_p - v_{p-1} = dv$, hvorved Rumstilvæxten $ds$ i hvert $dt$
+successivt forvandles til $ds_1$, $ds_2 \ldots ds_n$, da er her,
+efterdi $v_n \mathrel{{>}\atop{<}} v_{n-1}$ og
+$ds_n \mathrel{{>}\atop{<}} ds_{n-1}$, i disse to Rækker,
+forsaavidt de betragtes \emph{umiddelbart}, ingen Continuitet at
+opdage. Continuiteten, som fordrer, at det Samme maa uden
+Afbrydelse gjentage sig i hvert Øieblik, viser sig først, naar
+vi saavel i Hastigheden som i Rummet opdage Muligheden af et
+under Forandringerne uforanderligt Element. Er det saaledes
+givet, at Kraften $\varphi$ er constant, saa bliver ogsaa den derved
+i hvert Øieblik, $dt = dt$, bevirkede Hastighedsforandring $dv$
+constant; men det hertil svarende constante Rumselement er
+ikke $ds$; det er, ifølge $dv\,dt = d^2s$, netop Elementet
+% (as printed: no full stop after the footnote mark of "d²s*)" before
+%  "Den ved Functionsloven" — the compositor dropped the period;
+%  transcribed as printed)
+$d^2s$\footnote{Ved at anvende Summationssymboliken føres man da
+ogsaa gjennem en umiddelbar Summation af $d^2s$ til Udtrykket
+for $s$ som Function af Tiden.\\
+I 1ste $dt$ er Hastigheden $dv$, og bevirker Rumsforandringen $d^2s$\\
+i 2det $dt$ \dotfill\ $2dv$ \dotfill\ $2d^2s$\\
+i 3die $dt$ \dotfill\ $3dv$ \dotfill\ $3d^2s$\\
+\leavevmode\dotfill\\
+\leavevmode\dotfill\\
+i $n$\textsuperscript{te} $dt$ \dotfill\ $ndv$ \dotfill\ $nd^2s$\\
+Efter Forløbet af Tiden $t$ er her da, idet $t = ndt$,
+$n = \frac{t}{dt}$, tilbagelagt et Rum:
+$(1 + 2 + 3 \ldots + n)d^2s = \frac{1}{2}n(n+1)d^2s
+= \frac{t}{dt}\left(1 + \frac{t}{dt}\right)\frac{d^2s}{2}$,
+som, idet $\frac{t}{dt}$ er uendelig lille i Sammenligning med
+$\left(\frac{t}{dt}\right)^2$ er liig
+$\frac{t^2}{2}\frac{d^2s}{dt^2} = \frac{gt^2}{2}$, det
+sædvanlige Udtryk for Faldloven.} Den ved Functionsloven,
+$s = at^2$, articulerede Continuitet,
+der forudsætter, at Differentialcoefficienten af anden
+Orden er constant, kalde vi da med Hensyn hertil en
+\emph{Continuitet af anden Orden}.
+% --- p. 79 ---
+\setcounter{footnote}{0}
+
+Fordrer den fordoblede Continuitet en fordoblet Discretion,
+saa fordrer paa tilsvarende Maade den tredobbelte
+Continuitet, den nemlig, der svarer til $s = at^3$, en tredobbelt
+Discretion, et Rumselement af tredie Orden. Her er
+det nemlig ikke Kraften selv, $\varphi$, men Kraftforandringens
+Aarsag, $\psi$, der er constant. Kraftforandringen, $d\varphi$, er da
+naturligviis ogsaa constant. Det constante $d\varphi$ bevirker nu i
+hvert Øieblik, $dt$, en constant Forandring i Hastighedstilvæxten,
+som igjen bevirker en constant Forandring, $d^3s = d^3s$,
+i Rumstilvæxtens Tilvæxt; $d^3s$ er altsaa i Rummet
+det til denne Continuitetslov svarende Discretionselement.
+Det er tredie Differentialcoefficient, $\frac{d^3s}{dt^3}$, som
+her er constant. \emph{Continuiteten er af tredie Orden.}
+
+Af de saaledes paaviste Articulationer sees, at Continuiteten
+ingenlunde afbrydes derved, at flere og stedse flere Forandringer
+inddrages under Continuitetsloven. Skulde Continuiteten
+nogensinde briste under Vægten af Forandringernes
+Mængde, da maatte der for Elementernes stigende Orden
+omsider vise sig en uoverstigelig Skranke, uden at dette dog
+hidrørte fra nogen constant Differentialcoefficient; men da
+dette er en Modsigelse, da Elementernes Orden jo kan stige
+og stige i det Uendelige, maa den til en constant
+$n$\textsuperscript{te} Differentialcoefficient,
+$\frac{d^ns}{dt^n} = C$, svarende Continuitet af
+$n$\textsuperscript{te} Orden
+gjælde, ogsaa for $n = \infty$\footnote{Er $s$ en bruden,
+irrational eller transcendent Function af $t$,
+t. Ex. $s = \cos t$, da haves her ikke nogen constant
+Differentialcoefficient; men dette betyder ingenlunde, at
+Continuiteten er brudt, men tvertimod, at den er saa uendelig
+articuleret, at man ikke kan paavise det til en saadan
+Continuitet svarende Discretionsatom isoleret.}.
+
+Samle vi de her vundne Resultater under eet Overblik,
+blive følgende Hovedpunkter især at fremhæve: 1) den
+% --- p. 80 ---
+% (p. 79 ends in the divided word "Om- / stændighed")
+Omstændighed, at der imellem $dx$ og $x$ kan ligge utallige $dx$,
+og, forsaavidt $x$ er afhængig variabel, imellem $0$ og $dx$,
+utallige $d^2x$, imellem $0$ og $d^2x$ utallige $d^3x$ o.s.v.,
+betegner vel, at der imellem de sammenhørende og samtidig
+forsvindende Tilvæxter til den afhængige og uafhængige Variable
+gives varierende Forhold, hvoraf da Differentialer af høiere
+Orden med Nødvendighed fremgaae; men ingenlunde, at $0$,
+$dx$ og $x$ (mindste Endeligt) skulde, hvad Overgangsbegrebet
+i dets Almindelighed angaaer, være adskilte ved utallige
+Mellemled: $dx$ kan, naar det i en til Uafhængigheden svarende
+Umiddelbarhed skal repræsentere den mindst mulige Størrelse,
+umuligt blive mindre uden at blive $0$, og heller ikke større,
+uden at blive $x$. I sin \emph{Umiddelbarhed} er Elementet en
+yderste Discretionsgrændse, et Størrelsesatom, og som saadant
+udeelbart; reflecteret i sine Relationer til andre Elementer kan
+det derimod vise sig uendelig deelbart. Paa Dialektiken af det
+i sig udeelbare-deelbare Element beroer Bevægelsen. 2) Bevægelsens
+Begyndelse skeer ikke umiddelbart med $0$, saalidt som med $x$
+for sig, eller med $dx$, men med en negativ-concret Eenhed af
+alle tre Momenter. „I det absolute Nu er Intet og skeer
+Intet. I det relative Nu sættes det Uendelige som det Endeliges
+Begyndelse: det Endeliges Begyndelse falder altsaa
+sammen med, er i det mathematiske Øieblik samtidigt med
+det Uendeliges Begyndelse. I det empiriske Øieblik sættes
+det Endelige som fuldendt; men i og med denne det Endeliges
+Fuldendelse er en Uendelighed selv fuldendt: det Endeliges
+Fuldendelse falder altsaa sammen med, er i hvert virkeligt
+Øieblik samtidigt med en Uendeligheds Fuldendelse.“ (Math. og
+Dialekt. S. 134--35). 3) Endskjøndt Bevægelser af enhver
+Art altid maae forudsætte idetmindste Biforestillinger, Reflexer,
+af Tid og Rum, saa er Bevægelsen dog i streng mathematisk
+Forstand at indskrænke til den rene Qvantiteren. Da nu en
+Qvantiteren ligesaa nødvendigt forudsætter et qvantiterende
+Qvantum, som Bevægelsen et Noget, der kan bevæge sig,
+% --- p. 81 ---
+medens dog det abstracte Qvantum, der afgiver Qvantiteringens
+umiddelbare Forudsætning, just skylder Qvantiteringen
+sin Tilværen, og derved kommer til at forudsætte det, hvis
+Forudsætning det selv skulde være: saa indsees heraf, at Qvantiteten
+som abstract Begreb først kan faae sin sande Betydning
+i og ved et Tilværende, hvis Qvantitet den er.
+
+Om den rene Mathematik hedder det, at den finder
+„Anvendelse“ paa virkelige Gjenstande (i Mechanik, Astronomie,
+% (as printed: no full stop after the closing parenthesis of
+%  "Optik o. desl.)" — the sentence ends with "desl.)" and
+%  "Væsentlig" begins the next)
+Optik o. desl.) Væsentlig forstaaet forudsætter en saadan
+„Anvendelse“, at det Mathematiske oprindelig er virkeliggjort
+i de Gjenstande, hvorpaa Mathematiken anvendes. En Anvendelse
+af Mathematik paa virkelige Gjenstande vilde være,
+om ikke en reen Umulighed, saa dog en subjectiv Vilkaarlighed,
+dersom det Mathematiske ikke selv med indre objectiv
+Nødvendighed hørte med i Virkelighedens Væsen; men som
+Moment i Virkelighedens Væsen hører det Mathematiske
+tillige med i Philosophien.
+
+% (section rule as printed; signature "6" at the foot of p. 81)
+\section*{B.\\ Philosophiens Forhold til Chemien:\\
+Forandringsproblemet.}
+\addcontentsline{toc}{section}{B. Philosophiens Forhold til
+Chemien: Forandringsproblemet}
+% (short rule under the section head, as printed; the printed head
+%  divides "Forandrings-" / "problemet." across its two lines and
+%  matches the Indhold's reading)
+
+For at fremstille Philosophiens Forhold til Chemien, vil
+det i nærværende Sammenhæng være nødvendigt: a) at
+charakterisere Chemien som særegen Videnskab, b) at paavise,
+hvorledes Forandringsproblemet bliver til under den chemiske
+Analyse, og endelig c) hvorledes Philosophien tilegner sig det
+i Chemien udviklede Problem.
+
+At Philosophien, hvormeget den end fordyber sig i et
+Andet, dog igjennem dette Andet forholder sig til sig selv,
+og forsaavidt bevæger sig paa sine egne Enemærker, vil
+% --- p. 82 ---
+da under Fremstillingens Gang være kjendeligt derpaa, at
+intet Stofagtigt umiddelbart optages udenfra, men alle positive
+Bestanddele tilegnes saaledes, at de til Væsenserkjendelsen,
+hver paa sin Maade, afgive ideelle Bidrag og tjene
+Begrebsudviklingens Dialektik.
+
+\subsection*{a) Chemien som særegen Videnskab.}
+\addcontentsline{toc}{subsection}{a) Chemien som særegen Videnskab}
+% (head as printed, centred; matches the Indhold)
+
+% (the block quotation below is letterspaced as printed; the citation
+%  "(Phil. Propæd. S. 70)" is set normally and stays outside the \emph)
+\emph{„Da Videnskaben har sin Rod i Menneskelivet,
+hvor Phantasiens Idealer gaae forud for Tænkningens,
+er det naturligt, at de forskjellige Videnskaber
+fra først af komme til Verden i Indbildningens
+Svøb og ere behæftede med uvidenskabelige
+Tilsætninger. Saaledes var Astronomien
+længe sammenvoxet med Astrologie, Chemien med
+Alchemie, Philosophien med Mythologie. Vistnok
+ligger det i Videnskabens Drift at hæve Forpupningen,
+bryde sit Hylster og udrense de fremmedartede
+Bestanddele. Men Dannelsen koster Tid,
+Udrensningen Anstrengelse; de Hindringer, Menneskeaanden
+her har at overvinde, ere af forskjellig
+Art.“} (Phil. Propæd. S. 70).
+
+Det er Videnskabens Opgave at trænge ind i Tingenes
+Indre og igjennem Phænomenet at opdage Væsenet; men saa
+anerkjendt denne Fordring end er i abstract Almindelighed,
+saa vanskelig er dens Opfyldelse, naar Opmærksomheden vender
+sig mod det Særegne, det Concrete, det Virkelige. Hvilket
+Phænomen er vel mere bekjendt og mere iøinefaldende end
+Ildphænomenet, og dog, hvad er det Indre i dette Ydre,
+hvad er Flammens Væsen, hvad er Ilden? De Fleste have
+vel, idetmindste som i Forbigaaende, hørt tale om, at der i
+den nyere Tid ved Kunst er udskilt en Mængde Metal-Substanser,
+man forhen ikke kjendte; blandt disse Substanser
+hører da ogsaa Kalium, et tinhvidt, stærkt glindsende, meget
+% --- p. 83 ---
+\setcounter{footnote}{0}
+blødt og smidigt Metal. Kaster man et Stykke af dette
+Metal i Vandet, synker det ikke tilbunds, men bevæger sig
+omkring paa Overfladen, antændes og brænder med en violet
+Flamme; derefter bliver det, som det synes, aldeles borte:
+hvad er nu her foregaaet? Er det Kalium, der har brændt
+Vandet, eller Vandet, der har brændt Kalium? \emph{Hvad er i
+Forbrændingens Phænomen det Brændende, og
+hvad det Brændbare?} Til Besvarelsen af et saadant
+Spørgsmaal har Videnskaben, naar vi, for at begynde med
+Begyndelsen, søge vore første Chemikere iblandt Ægyptens
+Præster, maattet forberede sig i henved 3000 Aar.
+
+\subsection*{α) Chemiens Oprindelse\protect\footnote{\textit{Leçons
+sur la philosophie chimique par Dumas, recueillies par
+Bineau.} \textit{Bruxelles} 1839. Geschichte der Chemie von
+Dr.~H. Kopp. 4 Bd. Braunschweig 1843--47.}.}
+\addcontentsline{toc}{subsection}{α) Chemiens Oprindelse}
+% (head as printed, centred, with the footnote mark *) before the
+%  full stop; matches the Indhold. The note's French title through
+%  "Bruxelles 1839." is antiqua; "Geschichte der Chemie …
+%  Braunschweig 1843--47." is Fraktur. Signature "6*" at the foot
+%  of p. 83)
+
+Hos Ægypterne synes Chemiens Dyrkelse at have udgjort
+en Bestanddeel af de Mysterier, der skjultes i Templerne;
+hos Grækerne gik den chemiske Videns Elementer ligesom
+andre Erfaringskundskaber over i Philosophien; i Middelalderen
+var Chemien som Alchemie en Anviisning til at udgrunde
+Naturens Gaade, og finde de Vises Steen (\textit{lapis
+philosophorum}).
+
+Da Indsigt i Naturkræfternes Sammenhæng ikke mindre
+er af praktisk end theoretisk Interesse og ligesaa meget beroer
+paa rig Erfaring som paa vedholdende Eftertanke, er det
+forklarligt, at Chemiens Studium længe maatte være sammenvoxet
+med forskjellige fremmedartede Bestræbelser, og denne
+Green af Videnskaben længe tjene som Middel, inden den
+kunde frigjøres til at være sit eget Maal og uddannes i reen
+videnskabelig Aand. \emph{Mystisk Speculation, Famlen
+efter Methode og Methodens Opdagelse} ere da de
+Stadier, som her betegne Udviklingens Vei.
+% --- p. 84 ---
+\emph{αα) Mystisk Speculation: Oldtid og Middelalder.}
+Uden Erfaring, ingen Tænkning; men naar Synstingene
+kun flygtig overskues, fordi Iagttagelsens Kunst endnu
+ikke er uddannet, forener den abstraherende Tænkning sig med
+Phantasien og danner saa af faa tilfældige og upaalidelige
+Erfaringer et Begrebssystem, hvis Indhold, hvad det Tilværende
+angaaer, mere tilhører Indbildningen end Virkeligheden.
+Vistnok kunne, hvad den græske Philosophie fra saa
+mange Sider tilstrækkelig viser, Begrebsformer i abstracte
+Retninger udvikles med Klarhed og skarp Conseqvens, uagtet
+Erfaringens Indhold mangler; men spørges her om Existensbegreber,
+de egentlige Realbegreber, indlyser det som af sig
+selv, at Formudviklingen overalt maa være betinget af en
+tilsvarende Indholdsudvikling.
+
+Den Maade, hvorpaa Aristoteles begrunder Tilværelsen
+af fire Elementer, viser just, hvor umuligt det er at bestemme
+Tingens Væsen uden at kjende Tingen. De elementære
+Egenskaber: hed, kold, tør og fugtig, fremhæves nemlig
+saaledes, at hver af dem sættes som Væsenhed for sig, en
+substantiel Form, der bestemmer Materien; saaledes giver da
+en samtidig Forening af Tørhed og Varme \emph{Ildelementet},
+af Varme og Fugtighed \emph{Luftelementet}, af Fugtighed og
+Kulde \emph{Vandelementet}, af Kulde og Tørhed
+\emph{Jordelementet}. Det er en mærkelig Forvexling af
+Virkning med Aarsag, af det Afledede med det Oprindelige, vi
+her møde. Tingen selv, det Existerende, fremkommer jo dog
+ikke ved Egenskabernes, altsaa heller ikke ved Grundegenskabernes
+Forening, men omvendt bliver Egenskabernes og da ogsaa
+Grundegenskabernes Forening sat i og med og formedelst Tingen.
+Her er jo ikke et System af almindelige, for sig bestaaende
+Egenskaber, der indvirke paa Tingene, men et System af
+Ting, der igjennem deres Egenskaber indvirke paa hinanden
+gjensidig; det er f. Ex. ikke Egenskaben: Tørhed, der tørrer
+Tingen, saalidt som det er Egenskaben: Varme, der opvarmer
+% --- p. 85 ---
+% (a small stray mark stands after "Aarsag" in the first line — read
+%  as an ink speck, not a printed stop; rejected reading: "Aarsag.")
+den; Varmens og Tørhedens Aarsag er at søge, ikke i en
+almindelig Væsenhed, men i en betinget Virken. Hvilken
+Indflydelse en saadan fra Philosophien, navnlig fra Aristoteles,
+nedarvet Misviisning maatte udøve paa den i dybe Anelser
+og dunkle men dristige Bestræbelser gjærende Middelalder, er
+det, hvad Chemien særligt angaaer, da heller ikke vanskeligt
+at forestille sig.
+
+Saadanne Stofsubstanser, som Qviksølv og Svovl, maae,
+forsaavidt de høre blandt de udvortes virkelige Ting, jo vistnok
+vise sig som Erfaringsgjenstande, der kræve en tilsvarende
+Iagttagelse; men da Speculationen i slige Stoffer allerhelst
+kun seer en Sandseliggjørelse af visse usandselige, i Materien
+afprægede Væsenheder, skete det efterhaanden, at Alchemisternes
+\textit{Mercurius} og \textit{Sulphur} kom til at betegne, ikke nærmest det
+i Virkeligheden tilværende Qviksølv og Svovl, men fornemmelig
+disse Stoffers metaphysiske Charakterer. Er nu Tingen,
+der efter sin Natur skulde være en Iagttagelsens Gjenstand,
+forvandlet til speculativ Væsenhed, saa ligger det nær at betragte
+det Sandselige som flygtigt Billede af det Oversandselige,
+det Naturlige som Symbol paa det Aandelige. Det
+sorte Pulver, der fremkommer, naar Svovl og Qviksølv rives
+sammen, gaaer ved Glødning over til en rød Masse, nemlig
+Zinnober; i eet og samme Stof ere altsaa Rødt og Sort,
+Symbolerne paa Lys og Mørke, det gode og det onde Princip,
+synlige. Under den Forudsætning, at der i alle Metaller
+fandtes \textit{Mercurius}, det Bestandiges, det Uopløseliges
+Charakteer, lysende i Metalglandsen, og \textit{Sulphur}, det
+Brændbare, Flygtige, Foranderlige, og at Metallernes indbyrdes
+Forskjellighed fornemmelig beroede paa en særegen Blanding og
+„Fixation“ af disse Naturer, førtes Alchemisterne stedse videre
+i deres Bestræbelse for at omdanne, forvandle og forædle
+Metallerne.
+
+„Hvad dengang blev betragtet som Magikernes høieste
+videnskabelige Stræben, gik ud paa at rense det
+% --- p. 86 ---
+\setcounter{footnote}{0}
+% (p. 85 ends "Guddommeligt-", opening the hyphenated compound that
+%  p. 86 completes)
+Guddommeligt-Ligeartede, som forefandtes i den syndige Natur, forenet ved
+modstræbende Elementer; paa det at det, der laae skjult som
+det Guddommelige og Opholdende, i enhver indvortes Form
+kunde virke frit. Dette er Alchemien --- ingen tilfældig
+vilkaarligt udtænkt, men en aldeles væsentlig Bestanddeel af den
+herskende Physik. Alle Physikere søgte de Vises Steen, thi
+der gaves dengang ingen anden Physik, og kunde ingen anden
+opstaae. Fremvirkningen af denne al Tilværelses ædleste
+Kjærne var ligesaavel af religiøs Art, som et physisk Experiment,
+og denne almeenherskende Bestræbelse giver det mest
+slaaende Beviis for Aandens Bundenhed til det Jordiske.
+Det saaledes Rensede, hvori den oprindelige Skabningskraft
+concentrerede sig, maatte, naar den anvendtes paa Makrokosmus,
+fremvirke de ædleste Materier, Ædelstene, og fremfor
+Alt Guldet; men, anvendt paa Mikrokosmus, maatte den paa
+samme Grund, da nemlig det oprindelige opholdende Princip
+% (as printed: a stray full stop stands after "Sundheden" before
+%  "og" — transcribed as printed; rejected reading: a comma with a
+%  broken tail)
+i begge var det samme, befordre Sundheden. og forlænge Livet.“
+(H. Steffens)\footnote{Jvfr. „\emph{Naturvidenskabens Forhold
+til Tidsaldere og deres Philosophie}“, en bedømmende Anmeldelse
+af H. C. Ørsted. Aanden i Naturen. 2. S. 161--62.}.
+
+Mystisk, vidunderlig og gaadefuld maatte den Substans
+jo vistnok være, der ved den blotte Berøring skulde betvinge
+\textit{Sulphur}, fortrylle \textit{Mercurius}, \textit{Metallorum
+Draco}, og forvandle
+ethvert, endog det ringeste Metal til det pure Guld.
+De Vises Steen, den store Elixir, \textit{Magisterium magnum},
+den røde Tinctur, der har Evnen til at forædle Metallerne
+efter en saa uhyre Maalestok, --- \textit{mare tingerem, si
+mercurius esset}, siger Raimundus Lullus, --- og helbrede alle
+Sygdomme, dannes da heller ikke som et Aggregat, men voxer
+indenfra, organisk, som et levende Væsen. Intet Under, at
+Opdagelsen af en saadan Hemmelighed omsider (Basilius
+Valentinus) viste sig at være en ligesaa religiøs som videnskabelig
+% --- p. 87 ---
+Opgave. Stenen, der lyste med et Naadens som med et
+Naturens Lys, udbredte et magisk Skjær over den hele
+Tilværelse; det jordiske Liv med dets Sorger og Lidelser var da,
+seet i dette Lys, som en „Digestion“, en Renselse ved
+% (printer's defect: "shvor" for "hvor" — a stray long s (Fraktur)
+%  stands fused before the h; transcribed as printed)
+„Fermentation“, Graven det Sted, shvor en „Putrefaction“, der
+kun forstyrrede det menneskelige Legemes uædle Bestanddele,
+skulde virke, medens det i Sjælen Udødelige fremgik som ved en
+„Sublimation“ af det ædlere Væsen, en \textit{Quinta Essentia}.
+
+\emph{ββ) Famlen efter Methode: qvalitativ Analyse.}
+Alchemisternes Drømmerier pegede i to Retninger: den
+\emph{metallurgiske} og den \emph{medicinale}. At de Vises Steen,
+naar den engang opdagedes, skulde helbrede alle Sygdomme,
+var naturligviis en Phantasie, der umulig kunde give en
+Opgave; men under denne Phantasie ulmede dog en Gnist af
+noget Rationelt, en Tanke, der, om end i phantastisk Form,
+kom til Gjennembrud i den saakaldte Iatrochemie, Lægechemien;
+Tanken er, at de organiske Functioner beroe paa chemiske
+Processer. Vistnok vare det 16de og 17de Aarhundredes
+Chemikere --- Paracelsus, Van Helmont, Sylvius --- endnu
+ingenlunde istand til at danne sig noget klart Begreb enten
+om de chemiske Processer eller de organiske Functioner, og
+altsaa heller ikke istand til at udfinde nogen bestemt paalidelig
+eller følgerigtig Fremgangsmaade: hvad en Sylvius forklarer
+om den abnorme Fremhersken af Syrer og Ludsalte i Legemets
+Safter, er i Grunden ligesaa utilforladeligt, som hvad en
+Paracelsus aabenbarer os i den Forkyndelse, at enhver Deel
+af det menneskelige Legeme har sit eiendommelige Svovl, sin
+egen Merkurius og sit eget Salt, at Overvægt af Svovl
+giver Feber og Pest, Overvægt af Qviksølv Tungsind og
+Lamhed, Overskud af Salt Vattersot o. s. v.; men den nye
+Retning gav dog ikkedestomindre Undersøgelserne et nyt
+Opsving. At trække „Qvintessensen“ ud af Lægeplanterne,
+at tilberede de mange Slags Tincturer, Essenser, Extracter,
+% --- p. 88 ---
+Decocter og Safter vare Bestræbelser, der vel maatte egne
+sig til at skjærpe Iagttagelsesaanden, mangfoldiggjøre Forsøgene
+og lære den enkelte Forsker at øve sit Blik og sin
+Dømmekraft. Det ligger i Videnskabens Natur, at den kun
+i samme Grad kan blive sig sit Formaal bevidst, som den
+kan blive sig den til Formaalet svarende Fremgangsmaade,
+Methoden, bevidst, og omvendt. Lægechemiens Formaal, skjøndt
+i og for sig fornuftigt, maa, saalænge Forskningen ikke formaaer
+at tilveiebringe Midlerne, saalænge den Undersøgelsens
+Vei, der fører til Maalet, endnu ikke er funden, altid vise
+sig fra en mere eller mindre phantastisk Side; men
+Fremskridtsdialektiken er, at der ogsaa paa Vildfarelsens Vei
+findes Sandheder, blandt Andet den Sandhed, at her er en
+Vildfarelse. Da Iatrochemien var saavidt gjennemført, at
+dens Huulhed og Charlatanerier ret kunde vise sig, var
+Chemien selv ved at følge det andet Spor, det ældgamle
+metallurgiske, kommen til det Vendepunkt, at den omsider kunde
+optræde selvstændig og begynde at operere paa egen Haand.
+
+Chemiens Emancipation er kjendelig paa den forandrede
+Opgave; thi Opgaven er nu i Hovedsagen hverken at forvandle
+Metallerne til Guld, ei heller at finde Medicinens
+Arcanum, et Universalmiddel mod alle Sygdomme, men Opgaven
+er at undersøge de for Stoffernes Adskillelse og Forbindelse
+gjældende Betingelser og Love og fremfor Alt at besvare
+det Spørgsmaal: hvorpaa beroer Forbrændingen? Men
+saa videnskabelig og derhos eiendommelig chemisk denne
+Opgave end stiller sig, saa var det dog umuligt Andet, end at
+de første Forsøg med dens Løsning maatte falde noget
+tvivlsomt ud. Den fra Alchemisterne nedarvede Forudsætning, at
+der i alle Metaller gaves et hypothetisk Grundstof, som
+betingede Forbrændingen, vedblev endnu at gjælde; heller ikke
+kunde man saa let blive den Fordom qvit, at Forbrændingen
+absolut maatte være en Forstyrrelse, en Opløsning, en
+Adskillelse, saa at der af det brændende Legeme gik Noget bort,
+% --- p. 89 ---
+\setcounter{footnote}{0}
+det nemlig, der gik op i Flammen. Deri er imidlertid
+Forbrændingsproblemet væsentlig forskjelligt fra de iatrochemiske
+% (doubtful: a faint dot stands above the comma after "Phantasier",
+%  which would make it a semicolon; read as a comma — the scan's
+%  text layer agrees, and the syntax expects it. Rejected: ";")
+Phantasier, at det, hvormeget Phantastisk der end fra
+Begyndelsen af indblander sig deri, dog ligger Forskningen saa nær,
+at det ved sin egen rationelle Charakteer selv efterhaanden kan
+anvise Veien og føre ind i Methoden.
+
+De Forandringer, alle brændbare Legemer, de organiske
+saavelsom de uorganiske, undergaae i Ilden, sammenfattede
+Stahl\footnote{Georg Ernst Stahl, født i Anspach 1660, blev
+1687 udnævnt til Livlæge hos Hertugen af Weimar, og, efter
+Friedr. Hofmanns Tilskyndelse, 1694 Professor i Medicin ved
+Universitetet i Halle.} under et eneste almeengjældende
+Synspunkt, idet
+han udledte Forbrændingen af et alle Legemer iboende Stof,
+et Brændbarhedsstof, nemlig: Phlogiston. Saaledes dannede
+sig den fra sidste Halvdeel af 17de til henimod Slutningen
+af 18de Aarhundrede --- Stahl, Priestley --- charakteristiske
+Lære om Phlogiston, den phlogistiske Theorie. Ved at prøve
+Analogierne, fremhæve det Almene, drage theoretiske Slutninger
+af Phænomenernes Iagttagelse, og anbringe mere
+omfattende rationelle Synsmaader samlede Videnskaben Kræfter
+og hævede sig saa Trin for Trin i sin eiendommelige
+Skikkelse.
+
+Men trods den lange Række af Forsøg, som alene
+Forbrændingsspørgsmaalet maatte fremkalde, trods den
+Mangfoldighed af Discussioner, det hypothetiske Stof, Phlogiston,
+om det nu, hvad Stahl benegtede, var Svovl, om det ikke
+snarere var en Lysmaterie, eller om det, hvad Andre fandt
+rimeligt, maaskee var Brint, maatte foranledige --- Discussioner,
+som med al deres Svæven dog altid adskilte
+sig fra tomme Speculationer derved, at de alle dreiede sig
+om virkelige Kjendsgjerninger og tilsvarende Forudsætninger:
+saa vare Undersøgelserne dog endnu eensidige og ufuldkomne,
+saalænge der blot lagdes Eftertryk paa Qvaliteten af de givne
 
 % [text to be added: pp. 90--104]
 
