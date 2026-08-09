@@ -7,13 +7,11 @@ Page-offset: PDF = printed + 9. Scan: `~/bibliotek/Nielsen, Rasmus/1845-propæde
 Method: `../../../TRANSLATION-PLAYBOOK.md`.
 
 ### CURRENT RESUME POINT
-Next marker: `% [text to be added: pp. 97--113]` — **§ 12, The
-Dialectical-Speculative Method** (opens the Anden Deel; Danish at `\parag{12}`,
-~L3958). 10 markers remain (§§ 12–21). Sub-chunk the long ones (§ 14 is 27 pp.,
-§§ 16–18 are 21–25 pp. each) with `% [translation continues from p. N]` notes.
-Heavy German quotation begins in the Anden Deel (stays as printed, in ``…''),
-and much inline Greek (copy verbatim from transcription, incl. its logged wrong
-sorts).
+Next marker: `% [text to be added: pp. 203--224]` — **§ 17, Subjectivity and
+Objectivity** (Danish at `\parag{17}`, ~L8576). 5 markers remain (§§ 17–21).
+German quotation stays as printed in ``…''; Greek copied verbatim incl.
+logged wrong sorts. NB the six `E''` placeholders in § 10 make the file's
+`''` count exceed its ``` `` ``` count by exactly 6 — expected, not an error.
 
 ### DONE so far (don't redo)
 - Skeleton `translation.tex`: full preamble (structural macros mirrored from the
@@ -26,7 +24,36 @@ sorts).
   Ch. 3 Inference and Proof (§§ 9–11), incl. all 57 Anm., the a)–c)/1)–3)
   lists, the mus-syllaba display syllogism, and the Heiberg/Sibbern/Schelling/
   Kant/Hegel quotations.
-- Sandbox compile: **79 pp., 0 errors, 0 char-warnings.** 10 markers remaining.
+- **Anden Deel under way**: § 12 (pp. 97–113, the Dialectical-Speculative
+  Method, 6 Anm.) and § 13 (pp. 114–131, Being and Essence, 5 Anm. incl. the
+  Poul Møller quotation, the Kant time-antinomy, the Xenophanes/Gnostic
+  material) translated.
+- **Ch. 1 of the Anden Deel complete**: § 14 (pp. 132–158, Essence and
+  Actuality — matter/force/law, the possibility-scale a)–c) up to the central
+  and miraculous, rational necessity) and § 15 (pp. 159–177, Actuality and the
+  Concept — substance/accident, the four Spinoza Ethics points with Latin
+  quotations verbatim, power/sole power/overpower, Leibnitz monadology, the
+  Hegel Wechselwirkung critique) translated; the closing `\divrule` stands.
+- **§ 16 (pp. 178–202, Ideality and Reality)** translated: the
+  hypostatizing question (hvad kan jeg hypostasere?), the long Schelling and
+  Feuerbach German quotations verbatim (incl. their printed "das"/"nich"/
+  "leres" slips), the Hegel-amphiboly analysis, the three cosmological views
+  a)–c), and Anm. 4's predestination/deism/Schelling-Jacobi material. Quoted
+  Greek wrong sorts carried (κόςμος, ἐξοχην, ἀποσπεννύμενον, ῥοὴ).
+- Sandbox compile: **151 pp., 0 errors, 0 char-warnings.** 5 markers remaining.
+- Further fixed terms: Magt = power (vs Kraft = force), Enemagt = sole power,
+  Overmagt = overpower, Yttring = utterance, Skranke = barrier (vs Grændse =
+  boundary), Anlæg = endowment, Vexelvirkning = interaction (consistently, incl.
+  § 20's title). Quoted-matter misprints carried verbatim (eniin, svivant,
+  vûe/Revúe); the p. 174 doubled "i i" and p. 92-type comma normalized per the
+  standing convention.
+- `catalog.yaml`: "Translation (in progress)" link added under the book's
+  section, pointing at translation.pdf.
+- Added terms fixed in the Anden Deel: Tilværen = subsistence (vs. Tilværelse/
+  Existens = existence), Alexistensen = all-existence, Vexelskin = reciprocal
+  shining, Dybsindighed/Skarpsindighed = profundity/acumen, Forbillede =
+  fore-image; the For Andring pun and εἲς/αἰὼν wrong accents left as printed
+  with % notes.
 - Mirrored-defect decisions taken (be consistent going forward): unbalanced
   quotes mirrored with a `%` note (p. 29 Sibbern close-only, p. 86 open-only);
   quoted-matter wrong sorts copied verbatim (β) for b), συλλογιςμὸς, φαλαρκός,
