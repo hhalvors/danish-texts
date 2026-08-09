@@ -3,7 +3,36 @@
 **Phase 1 (transcription) job.** Read this, then `BATCH-AGENT.md`, then continue the
 batch loop. The standing method is `../../../TRANSCRIPTION-PLAYBOOK.md`.
 
-## CURRENT RESUME POINT
+## ✅ TRANSCRIPTION COMPLETE — printed pp. 1–283, the whole book
+
+Every page image-verified. `check.py`: 283/283, no gaps, no duplicate markers, §§ 1–21
+continuous, braces balanced, 0 suspect readings. `verify.sh`: **205 pp., 0 errors / 0 missing
+characters / 0 undefined control sequences / 0 hyperref token warnings / 0 duplicate PDF
+destinations.** `catalog.yaml` set to `complete`.
+
+**The quote balance closes.** Raw **+4**, matching exactly the seven logged printer's defects
+(pp. 29, 86, 111 at +4 for two quotations, 124, 142, 195, 223). All nine **Rettelser**
+corrections applied and flagged `% ERRATA` at pp. 80, 92, 93, 112, 152, 154, 187, 206, 241.
+
+**What remains, if you want it:** a proofreading pass; the translation (phase 2, see
+`../../../TRANSLATION-PLAYBOOK.md`); and the 600 dpi page cache for PDF 190–292 is still at
+`/sessions/<id>/tmp/pgcache/` (1.2 GB) until the sandbox is recycled.
+
+### A correction to the ornament record, made at the very end
+
+`\divrule` is **thick-over-thin, two bands** — not the single swelled band I recorded at
+batch 8. The batch-8 agent read it correctly as "a thick rule over a thin hairline"; I
+overruled it on a **300 dpi** re-measurement that merged the bands, and the final batch's
+600 dpi sweep found both bands at all three division sites (p. 5 thick 813 px + thin 406;
+p. 96 thick 837 + thin 541; p. 283 thick 744 + hairline 667), against p. 35's `\secrule` of
+twin *equal* thin bands at 624/628. The real distinction is **thick-over-thin versus
+equal-and-thin**, not one band versus two.
+
+**The lesson, worth carrying to the next book: a lower-resolution measurement is not a check
+on a higher-resolution one.** Resolve at the finest scale available before overriding a
+reading — and measuring is not automatically better than looking if you measure too coarsely.
+
+## (superseded) CURRENT RESUME POINT
 
 **Next: printed p. 109 (PDF 118)** — continue **anden Deel / Første Capitel**. § 12 ran past
 p. 108 and **§ 13 *Væren og Væsen*** has not been reached. p. 108 ends **mid-sentence at a

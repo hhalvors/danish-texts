@@ -142,8 +142,9 @@ CHECKS = [
     # technical term; Jord/Ja/Jo/Jordan are ordinary words; Jfr is the standard
     # "jævnfør" abbreviation; and Jacobi is F. H. Jacobi. All correct as J.
     # "Just" (= netop) is an ordinary Danish adverb and is printed with J; both
-    # OCR witnesses agree on it at p.53. "Jern"/"Jernet" (p.209) and "Jesuitismens" (p.238) likewise.
-    (r"\bJ(?!eg\b|eg[a-zæøå]|ord|a\b|o\b|ordan|fr\b|acobi|ust\b|ern|esuit)[a-zæøå]{2,}",
+    # OCR witnesses agree on it at p.53. "Jern"/"Jernet" (p.209) and "Jesuitismens" (p.238) likewise, as are Jurist, Jacob, Jvfr, Jehovisme,
+    # Jehovas -- every remaining hit at completion was a legitimate J.
+    (r"\bJ(?!eg\b|eg[a-zæøå]|ord|a\b|o\b|ordan|fr\b|acobi|ust\b|ern|esuit|urist|acob|vfr\b|ehov)[a-zæøå]{2,}",
      "Fraktur I read as J (Jdee, Jndhold, ...)", body, 0),
     # A straight " used as a quotation mark. Not preceded by a backslash: \" is
     # the umlaut accent command (\"a for ä in "Qvidit\"at", printed p. 32), and

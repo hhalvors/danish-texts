@@ -131,7 +131,15 @@
 %  SCAN CAVEAT 3: printed p.47 (PDF 56) carries a reader's PENCIL UNDERLINE under
 %        "Diremtioner" — wavy, grey, overrunning the word. Not a printed rule.
 %
-%  STATUS: IN PROGRESS -- printed pp. 1--29 done.
+%  STATUS: TRANSCRIPTION COMPLETE -- printed pp. 1--283, the whole book, every page
+%        image-verified. §§ 1--21 all present and continuous; no gaps, no duplicate
+%        page markers; braces balanced; compiles 0 errors / 0 missing characters /
+%        0 undefined control sequences / 0 hyperref token warnings / 0 duplicate
+%        PDF destinations, at 205 pages.
+%        QUOTE BALANCE CLOSES: raw +4, matching exactly the seven logged printer's
+%        defects at pp. 29, 86, 111 (+4, two quotations), 124, 142, 195, 223.
+%        All nine Rettelser corrections applied and flagged % ERRATA at their sites
+%        (pp. 80, 92, 93, 112, 152, 154, 187, 206, 241).
 %        Production scaffolding for this book (pagemap.py, ocr.sh, spacing.py,
 %        check.py, splice.py, verify.sh, BATCH-AGENT.md, RESUME-NOTES.md) lives
 %        in this directory on the editor's machine but is deliberately NOT
@@ -320,16 +328,27 @@
 %  The rule is NOT a Capitel marker — the same narrow double appears mid-Capitel at
 %  p. 35 and at a Capitel end at p. 68.
 %
-%  On pp. 5 and 96 the per-row widths are irregular (254/336/232/385/403 and
-%  200/288/316/416/142), i.e. the band is not a rectangle: it is a SWELLED rule,
-%  thick at the centre and tapering to points — the same class of ornament as the
-%  title page's centre-lozenge fleuron. A swelled rule cannot be had from \rule
-%  without graphics, so it is represented by a plain rule of the measured width.
-%  That approximation is recorded here rather than hidden.
+%  CORRECTED AT 600 DPI (final batch). The division ornament is THICK-OVER-THIN,
+%  two bands, not one. The batch-8 agent read it that way ("a thick rule ~10 px
+%  over a thin hairline ~4 px, ~5 px gap") and I overruled it on a 300 dpi
+%  re-measurement that merged the two bands and reported a single irregular band,
+%  which I then interpreted as a swelled rule. The 600 dpi sweep finds both bands
+%  at all three division sites:
+%      p.  5   thick 813 px (0.287 of measure)  + thin 406 px
+%      p. 96   thick 837 px (0.297)             + thin 541 px
+%      p. 283  thick 744 px (0.263)             + hairline 667 px (0.236)
+%  against p. 35's \secrule, which is TWIN EQUAL THIN bands, 624/628 px
+%  (0.219/0.220) — the distinction that matters is thick-over-thin versus
+%  equal-and-thin, not one band versus two.
+%  The lesson: a lower-resolution measurement is not a check on a higher-resolution
+%  one. Resolve at the finest scale available before overriding a reading.
+%  The second band's width varies (406/541/667 px), consistent with a tapering
+%  element or uneven inking; it is represented here at a fixed 0.22.
 %
 %  These existed as three different hand-rolled spellings before they were
 %  measured. Use the macros; do not hand-roll a tail rule.
-\newcommand{\divrule}{\begin{center}\rule{0.27\linewidth}{0.9pt}\end{center}}
+\newcommand{\divrule}{\begin{center}%
+  \rule{0.27\linewidth}{0.9pt}\\[1.6pt]\rule{0.22\linewidth}{0.4pt}\end{center}}
 \newcommand{\secrule}{\begin{center}%
   \rule{0.20\linewidth}{0.4pt}\\[1.3pt]\rule{0.20\linewidth}{0.4pt}\end{center}}
 
@@ -9975,14 +9994,1731 @@ indtil den physikalske Nødvendighedsformalisme, der forkaster alle
 % the two halves set as one word 'tanquam'. The opening ( is likewise
 % left unclosed here -- it closes after 'Verulam' on p. 241.
 Finalaarsager (\textit{Causarum finalium inquisitio sterilis est, et tan}%
+% --- p. 241 ---
+% p. 240/241 JOINT, closed here: the Bacon quotation (De augm. III 5) is antiqua and
+% breaks MID-WORD at an antiqua hyphen, 'et tan-' / 'quam'. Verified on PDF 250 at
+% 1.6x: the antiqua ends after 'parit.' and 'Baco af Verulam' is FRAKTUR (long-s 'af',
+% Fraktur B and V), so the \textit{} closes at 'parit' and the ( opened on p. 240
+% closes after 'Verulam', followed by a comma. The trailing % on p. 240's last line
+% sets 'tan' + 'quam' as the single word 'tanquam'.
+\textit{quam virgo Deo consecrata nihil parit}. Baco af Verulam),
+% ANTIQUA: 'L'homme machine' with a CAPITAL L, verified at 1x on PDF 250 — not the
+% lowercase 'l'homme' of modern citation. The apostrophe is typographic; the ASCII '
+% in TeX already sets a right quote, so no raw U+2019 is introduced here.
+og gjør Mennesket selv til en Maskine (\textit{L'homme machine}), have, hver paa sin
+Maade, fundet Tilknytningspunkter i Erfaringen.
 
-% [text to be added: pp. 241--252]
+For at forklare de teleologiske Collisioner, er det ikke tilstrækkeligt at skyde
+Skylden paa Enkeltexistensernes Tendens til at isolere sig, og hævde deres
+Selvstændighed lige over for det Almene; thi forsaavidt Individualiteten er
+teleologisk, staaer den selv i oprindelig Relation til det Absolute. Det er en ligesaa
+overfladisk som trøstesløs Anskuelse, at det guddommelige Forsyn først da skulde være
+istand til at tage sig af det enkelte Individ, naar det har faaet sin uendelig store
+% The mark after 'besørget' is the fount's WEDGE FULL STOP, not a comma: at 1.4x it is
+% triangular, sits on the baseline and carries no tail. BOTH OCR witnesses read a
+% comma and both are overruled; the following 'Enhver' is capitalised.
+Huusholdning i det hele Universum besørget. Enhver Mikrokosme har i Grunden samme
+ubetingede Ret som Makrokosmen, og dens Krav paa individuel Tilfredsstillelse stiger
+med det teleologiske Anlæg. Hvis Udviklingen var normal, saaledes at Virkeligheden paa
+alle Punkter congruerede med det sig udfoldende Ideal, da vilde den Bevægelse, hvorved
+de frie Individer blive Midler for hverandre indbyrdes, og den Bevægelse, hvorved de
+uafbrudt vinde deres selvstændige Formaal ud af den almene Vexelvirkning, være
+identiske Bevægelser. Nu er Verdensudviklingen derimod abnorm (i hvilken Betydning,
+maae Religionsphilosophien og Dogmatiken lære os), og denne Abnormitet frembyder en
+saa meget større Forvikling, som den dog allevegne tillige gjennemvirkes af den
+idealiserende og normerende Guddomsvillie. Var det absolute Endemaal blot en Udjævning
+af modsatte Tendenser, da vilde alle individuelle Formaal \textit{eo ipso} mangle
+guddommelig Berettigelse, og maatte da snart bukke under for en overmægtig Nemesis.
+% ERRATA (Rettelser, PDF 293): p. 241 l. 1 fra neden, printed 'θετον' → read 'θεῖον'.
+% The correction IS applied. Verified on PDF 250 at 2x: the printed form has theta,
+% epsilon, tau, omicron, nu and NO iota, so the Rettelser's direction is the omitted
+% iota-with-perispomeni. The fount's script theta ϑ is NORMALISED to plain θ per the
+% repo's standing convention, in the printed form and in the correction alike; the
+% perispomeni is an accent, not a fount variant, so it is set as printed would demand.
+% This is the LAST errata entry that falls in the book after p. 206.
+Men nu beroer Collisionernes Energie netop derpaa, at Enkeltheden har sit θεῖον saa
+% --- p. 242 ---
+fuldt som det Almene. Derfor kunne disse Extremer ligesaa lidt ophæve hinanden, som
+der fra Timelighedens Standpunkt kan sluttes nogen tilfredsstillende Accord imellem
+dem.
 
-% [text to be added: pp. 253--264]
+Betragtede i Idealets Lys, vise de teleologiske Collisioner tilbage til en tredobbelt
+Grundbevægelse i den guddommelige Villie.
 
-% [text to be added: pp. 265--276]
+% The α)/β)/γ) items of §18's close are separate indented paragraphs (measured: first
+% heavy blob at +270 px against the page's left margin). The labels are genuine italic
+% GREEK sorts, α β γ in sequence, verified at 1x on pp. 242, 243 and 249 — unlike the
+% wrong-sort β) of p. 48, where 'b)' was wanted.
+α) Objectivitetens Rige er Viisdommens absolute Formaal, i hvilket den aabenbarer sin
+uendelige Overmagt, og kommer til Herredømme i et System af Functioner og Love.
+Verdenstotaliteten skal og maa bestaae; derfor bestaae alle dens Dele i væsentlig
+Sammenhæng og umiddelbar Vexelvirkning. Hvad enten Delen bevares eller opløses, saa
+skeer det dog, ifølge den objective Conseqvens, alene for Heelhedens Skyld. Dette er
+da Nødvendighedens haarde Lov, at selv den høieste Individualitet, saasnart den
+indtræder som Led i den store Verdenssammenhæng, maa lade sig behandle som Middel og
+% PRINTER'S DEFECT p. 242: in 'lydig' the *i* is almost entirely unprinted — only its
+% dot stands, verified at 1.35x. Both witnesses read "lyd'g". Set as the intended word.
+Object, bære Endelighedens Kors og være lydig indtil Døden. Hvilket indre Værd
+Individet har, kan fra dette Synspunkt aldeles ikke komme i Betragtning. For
+Legemverdenen er Mennesket kun et Legeme; den Steen, der slaaer Manden ihjel, beviser,
+at de begge ere lige for Loven. For det glubende Dyr er Mennesket kun et dyrisk
+Individ; idet de stride med hinanden paa Liv og Død, er Kampens Lov saa upartisk, at
+den Stærkere altid vinder Prisen. I denne hensynsløse, mechaniske Eensformighed med
+% LETTERSPACING p. 242, settled at 0.54x on full-line crops: „Øiemed“ and „Middel“ are
+% both spaced and the intervening 'og' is SOLID — the compositor's habit again. In the
+% closing run 'som det' is SOLID and the spacing begins at 'universaliserende'; on the
+% next line 'de' is spaced and 'Princip.' is not, so the run is exactly
+% 'universaliserende, skjøndt tillige hemmende', carried across the hemmen=/de break.
+Retfærdighedens og Kredsløbets ordinære Muligheder synes Begreberne „\emph{Øiemed}“ og
+„\emph{Middel}“ at forsvinde som tomme Phantasier; og dog er denne Tingenes Orden netop
+Frihedens virkelige, faste Grundlag, der viser os den teleologiske Villie som det
+\emph{universaliserende, skjøndt tillige hemmende} Princip.
 
-% [text to be added: pp. 277--283]
+% --- p. 243 ---
+β) Individualitetens Fuldendelse er Viisdommens absolute Formaal. I denne Relation
+gjør Individet de universelle Magter til sine Tjenere, og bliver derfor at maale med
+sit eget Maal. Men Individets Maal ligger i dets oprindelige Anlæg, i den productive
+Mulighed, der opvælder af det guddommelige Dyb. Det er Individualitetens høieste
+Frihed, at kunne gjøre sit sande Maal til Formaal, og saaledes begynde en reel
+Udvikling, der i sig selv har uendelig Gyldighed. Den Selvbesindelse, hvormed det
+villende Subject forvandler sit Maal til Formaal, er identisk med den Reflexion, hvori
+det opfatter sin Omverden med dens Omstændigheder, Betingelser og Midler. Det er denne
+ideelle Objectiveringsact, der afgjør Subjectets Stilling i Universet, og muliggjør
+den Villiens Overmagt, hvorved Individualiteten seirer. Saaledes er Mennesket istand
+til at beherske Naturen ved Naturens Kræfter, det praktiske Genie istand til at styre
+Folket ved Folket selv, efterdi den teleologiske Enkeltvillie, der selv er
+\textit{causa finalis}, gjennemtrænger alle de umiddelbart virkende Aarsager som den
+% Tesseract reports a DOUBLED comma after this 'Formaal'. At 3.5x there is one comma
+% only, a clean teardrop with its tail; press debris, not a second sort. Not transcribed.
+ideelle \textit{causa efficiens}. Paa alle Tilværelsens Stadier, igjennem alle
+Gradationer gjælder da den Frihedslov, at enhver Enkeltexistens finder sit Maal i sit
+% LETTERSPACING p. 243: 'tilbage' is SOLID and the run begins at 'til' — the run takes
+% in 'til et', as p. 52's took in 'har Schelling'. 'rende' is spaced on the next line,
+% 'Princip.' is not, so the run carries across the frigjø=/rende break.
+Formaal, at Alt beroer paa Individets indre Værd; og vi maae desaarsag føre denne
+teleologiske Bevægelse tilbage \emph{til et uendelig individualiserende og frigjørende}
+Princip.
+
+γ) Erkjende vi den guddommelige Villiesdualisme, der begynder den hele
+Verdensudvikling fra tvende diametralt modsatte Extremer, saa bliver det tillige
+indlysende, at den reale Frihedsdialektik ikke kan bestaae med en ironisk Reflexion,
+men forudsætter en hellig Alvor. Striden imellem Individerne indbyrdes og det Almene
+% --- p. 244 ---
+% PRINTER'S DEFECT p. 244: there is NO full stop after 'guddommelig Villie' — the gap
+% is clean paper at 1.3x and 'Ethvert' follows capitalised. Set as \quad, per
+% "for Lidet" (p. 8), "(Stilpons Kaal)" (p. 40), "(partitio)" (p. 67), "fra Plato"
+% (p. 90). ABBYY supplies a stop that is not on the page.
+er væsentlig en Strid imellem Timelighed og Evighed, Virkelighed og Ideal, kosmisk
+Selvhed og guddommelig Villie\quad Ethvert Grændseskjel, Endeligheden opretter imellem
+det Enkelte og det Almene, er med Hensyn til de ideale Fordringer altid uadæqvat, og
+hvad der fra Idealets Synspunkt er en evig Ret, bliver fra den endelige Virkeligheds
+Side til en Usurpation. Det Almene, der finder sit høiere Udtryk i de forskjellige
+Former af menneskelige Samfund, nøies ikke med, at Individerne offre dets Interesser
+en Deel af deres Selvstændighed. Samfundet er sit eget Formaal; det vil i alle
+Henseender bruge Individerne som sine Midler, og er derfor idelig i Begreb med at
+usurpere. Paa den anden Side kan det frie Individ heller ikke tilfredsstilles ved en
+begrændset Andeel af de almindelige Goder; drevet af Egoitetens aldrig hvilende
+Stimulus, vil Mennesket finde og vinde sig selv i Alt, sætte den hele Verden som
+Middel, og Individerne staae derfor altid rede til at overskride Grændsen og usurpere.
+Det er saaledes ikke blot tvende Sider af een og samme Sag, vi her have for os; men
+enhver af Siderne er selv den hele Sag, saa at den endelige Sondring først naaer sin
+% LETTERSPACING p. 244: ABBYY spaces 'Instans' as well; at 0.54x 'høieste Instans som
+% det' is SOLID and the run is exactly 'totaliserende og fyldestgjørende', across the
+% fyldestgjø=/rende break. ABBYY's 'Instans' rejected.
+Fuldendelse paa Basis af denne Dualisme. Den evige, Alt normerende Villie, der overalt
+sætter Extremernes Midte, og lader Striden ende i Forsoning, bestemmer sig derved i
+høieste Instans som det \emph{totaliserende og fyldestgjørende} Princip.
+
+Saalænge Modsætningen imellem Ideal og Virkelighed vedbliver, kan den teleologiske
+Tvetydighed umulig hæves. Skulde Tildragelserne i Livet opregnes, da vilde der findes
+ligesaa mange, der tale for en hensynsløs Nødvendighed, som for en teleologisk Frihed.
+% --- p. 245 ---
+Den, der paastaaer, at det objective Verdensløb forholder sig ligegyldigt til alle
+subjective Øiemed, har forsaavidt Ret, som den hele Tingenes Orden lader sig betragte
+under Almindelighedens og Nødvendighedens Synsvinkel. Den, der paastaaer, at
+Tilværelsens Kjæde paa utallige Punkter gjennembrydes af en hiinsidig Villie, paa hvis
+% PRINTER'S DEFECT p. 245: 'ogsaaRet' is set SOLID — the word space was never set.
+% Verified at 1.3x (the two words touch; no thin space, no ghost) and both witnesses
+% agree. Transcribed as printed, per 'endydermere' (p. 60).
+Bud den Enkelte ofte reiser sig med absolut Selvvished mod det Almene, har ogsaaRet,
+forsaavidt han opfatter Bevægelsen fra Individuationens og Inderlighedens Standpunkt.
+Den, der forsvarer Tilfælde og Hændelser, drager sine Slutninger af Timelighedens
+Præmisser; thi her gjælder det, at det Incommensurable, der skal ophæves, dog derfor
+endnu ikke er ophævet. Den, der negter Tilfældets og Hændelsens Realitet, uddrager
+derimod sine Slutninger af Evighedens Præmisser; thi her gjælder det, at Intet er saa
+% A comma, not a full stop, after 'normeres' — clear teardrop with tail at 1.25x;
+% ABBYY's period rejected.
+abnormt, at det jo maa normeres, Intet saa hensigtsstridigt, som jo maa bøie sig, og
+blive Middel for det sande Øiemed. Imellem Lovenes Væsen og den evige Viisdom selv er
+enhver Strid utænkelig, men imellem Viisdommens Formaal og Lovenes virkelige
+% LETTERSPACING p. 245: ABBYY spaces 'Derfor bliver Collisionernes Løsning at' as
+% well. At 0.54x that whole clause is SOLID; only 'approximativt' (across the
+% approxi=/mativt break) and 'absolut' are spaced, and the 'deels' before each is
+% solid. ABBYY's run rejected.
+Tilsyneladelse indtræder der formedelst Endeligheden og Timeligheden derimod en reel
+Forskjel. Derfor bliver Collisionernes Løsning at opfatte deels \emph{approximativt},
+deels \emph{absolut}.
+
+Den approximative Løsning bevirkes derved, at Teleologiens universaliserende og
+individualiserende Princip begge udtrykke den samme oprindelige Viisdom. Det objective
+% 'styrende' IS spaced (verified at 0.53x on the full line); the parallel
+% 'prædisponerende' two lines above is SOLID. Reproduced, not regularised.
+Nødvendighedssystem forudsætter ikke blot en prædisponerende Villie; men ved sit
+phænomenale Spil af Tilfælde og Hændelser aabner den tillige den \emph{styrende}
+Viisdom en uendelig Rigdom af Muligheder og Combinationer, der alle lade sig
+gjennemføre, uden at den objective Conseqvens paa nogetsomhelst Punkt afbrydes. Det
+subjective Frihedssystem sætter ikke blot ethvert Individ sit eiendommelige Formaal;
+% --- p. 246 ---
+men da Formaalets Idealitet netop bestaaer deri, at det kan opnaaes ad forskjellige
+Veie, og gjennemføres ved forskjellige Midler, uden selv væsentlig at altereres, saa
+bliver den normerende Viisdom ogsaa fra denne Side bestemt som den ideelle
+\textit{causa efficiens}, der med uendelig dialektisk Boielighed gjennemvirker de
+% The dashes inside this parenthesis are full EM-DASHES, verified at 1x on both sides;
+% 'Tids=alder' carries the Fraktur double hyphen at the line break and is joined here.
+umiddelbart virkende Aarsager. Det væsentlige Sammentræf af den geniale Muligheds
+individuelle Frembrud og Omverdenens objective Betingelser (--- Geniet og dets
+Tidsalder ---) er ikke et blot Lykketræf, thi den evige Viisdom er
+\textit{in, cum et sub}; ei heller lader det sig begribe som Resultat af en mechanisk
+præstabileret Harmonie, thi Endeligheden med dens Tilfældighed repræsenterer paa dette
+Standpunkt den kosmiske Frihed.
+
+Med Collisionernes approximative Løsning vilde den kosmiske Udvikling dog endnu falde
+sammen med den uendelige Progres, og Idealet tilstræbes, uden at kunne opnaaes. Denne
+Modsigelse opløses først i den centrale Mulighed, der sætter Idealet identisk med
+Virkeligheden. Idet den guddommelige Villie centraliserer sig i en virkelig begrændset
+og dog uendelig fri Individualitet, bliver Collisionen spændt til det Yderste; thi den
+kosmiske Virkelighed og det evige Ideal træde nu umiddelbart i Conflict med hinanden.
+Nødvendighedsconseqvensen er, at Objectivitetens Lov fuldbyrdes; men
+Frihedsconseqvensen er, at Subjectivitetens Ideal seirer: Extremernes Medium udvikler
+% GREEK p. 246, read letter by letter at 1.2x: the rho is the fount's cursive ϱ in
+% both words and is NORMALISED to ρ (twice) per the standing convention. The oxia on
+% ή and ό and the perispomeni on ῦ are accents, not fount variants, and stand as printed.
+sig af det totaliserende Princip. Som den approximative Udvikling forbereder
+(πλήρωμα τοῦ χρόνου) den absolute Individualisering af Viisdommens Ideal, saaledes
+forbereder Idealets individuelle Virkeliggjørelse en approximativ Tilegnelse af dets
+uendelige Indhold. Alle Verdenskriser og kosmiske Formationer finde derfor tilsidst
+% --- p. 247 ---
+deres Slutning i den absolute Krisis, hvorved Centraliteten gjennemtrænger alle
+Endelighedens Potenser, og Virkeligheden forklares i sit Ideal.
+
+% TAIL ORNAMENT p. 247, closing § 18 AND the Andet Capitel. MEASURED, not eyeballed,
+% on PDF 256 (paper median 198, text measure 2834 px at 600 dpi):
+%   ink from x 1388 to 2219 = 831 px = 0.293 of the measure, centred on the measure to
+%   within 2 px; rows 1184--1201 only, i.e. ONE band ~15 px deep;
+%   longest contiguous dark run 269 px at a <150 cut, 309 px at <168, 538 px at <183.
+% So it is ONE under-inked SWELLED band, thick at the centre and tapering to points —
+% the pp. 5/96/178 ornament, not the narrow TWO-band \secrule of pp. 35/68 (0.20,
+% ~610 px here), which is not within reach at any threshold. Hence \divrule. NB p. 68
+% closed a § AND a Capitel with the narrow \secrule; here the identical structural
+% position takes the wide one, exactly as at p. 178. Width alone does not identify
+% these ornaments — see the preamble note.
+\divrule
+
+% PRINTED HEADS, verified on PDF 256 at 1x--1.6x:
+%   "Tredie Capitel." — bold Fraktur, letters TIGHT, with a final period.
+%   "Det objective Begrebs Fylde: Ideens Logik." — one size down, WITH a final period,
+%     and unmistakably LETTERSPACED (median inter-blob gap 26 px against 7--9 px in
+%     body lines, 35 gaps ≥ 14 px in the line): D e t  o b j e c t i v e ... So
+%     \capitelsp, not \capitel — the same choice as pp. 114 and 178, against pp. 6/35/68.
+%   "§ 19." then "Ideens Oprindelighed." — the § argument is bold, NOT letterspaced
+%     (median gap 8 px), WITH a final period. Matches the Indhold word for word.
+\capitelsp{Tredie Capitel.}{Det objective Begrebs Fylde: Ideens Logik.}
+\parag{19}{Ideens Oprindelighed.}
+
+% The § 19 thesis opens FLUSH LEFT with a raised initial "S" about 1.5x the body — the
+% same treatment as the "I" of p. 109, the "F" of p. 97 and the "V" of p. 1. Set as
+% ordinary text; only the absent indent is reproduced. (ABBYY reads the initial as
+% "Tom", which is the tell.) TYPE SIZE: baseline pitch ~160 px against ~157 px in the
+% Anm. 1 lines below — inside the spread batch 7 measured and rejected on p. 88, so an
+% ordinary paragraph. LETTERSPACING in the thesis: NONE. Every line was read at 0.52x;
+% the wide word spaces are loose justification, the letters are tight throughout.
+\noindent Som Begrebets Fylde er Ideen den uudtømmelige Kilde, hvoraf Alt oprinder, og
+lader derfor i alle Grundbevægelser sin egen Oprindelighed tilsyne. Igjennem de trende
+Media: Tænken, Anskuen og Villen realiserer det evige Selv Universets ideelle Gehalt i
+trende lige oprindelige Totalitetsformer, og alle Viisdommens Øiemed fuldkommes i de
+tre Grundideer: Sandhed, Liv og Frihed. Da Ideen ikke bliver til formedelst
+Endeligheden, men omvendt alt Endeligt vorder og udvikles i Kraft af Ideen, saa maae
+vi ikke blot erkjende, at Ideen existerer, men endog anerkjende, at den har en absolut
+Existens. Denne evige Idealexistens bliver da i sin Modsætning til den timelige, reale
+Vorden at bestemme som Præexistens.
+
+% The German is set in FRAKTUR inside the Danish quotes, and this page spells it with
+% a capital "Ue": „Ueberschwenglichkeit.“ — verified at 1.5x, U + e, not ü. p. 248
+% sets the same word with a real umlaut, „überschwenglich“. BOTH readings stand; they
+% are not normalised to one another. The full stop is INSIDE the closing quote.
+% LETTERSPACING in Anm. 1, settled at 0.52x on the full lines: \emph{hvilke} twice and
+% \emph{hvorledes} — the three interrogatives of the list, each spaced, everything
+% round them solid.
+\anm{1} Den philosopherende Tænkning er altid udsat for en dobbelt Fare, enten at
+adspredes i Relativitetens overfladiske Stykværk, eller at drukne i det Absolutes
+„Ueberschwenglichkeit.“ Fremstillingen af det objective Begrebs Frihed er derfor lagt
+an paa at vise, \emph{hvilke} Sondringer det absolute Indhold gjennemgaaer, i
+\emph{hvilke} Media de hypostaserede Totaliteter findes, og \emph{hvorledes} Forholdet
+% --- p. 248 ---
+imellem den evige Væren og den timelige Vorden som Følge heraf bliver at bestemme.
+Naar vi da nu til Slutningen erkjende, at Udviklingens Begyndelse, Midte og Ende
+overalt reflectere hinanden, at hele Universet, det ideelle saavelsom det reelle, er
+som ud af eet Stykke; naar vi reducere de mange forskjellige Indhold til Momenter i
+det ene absolute Indhold, de mange særskilte Former til Reflexer i een uendelig
+Formation, saa faae vi dog derfor ikke en vag og „überschwenglich“ Al-Eenhed, men en i
+% 'articuleret' with c, not ABBYY's k: ABBYY substitutes K for Latinate C throughout
+% these pages (Kollisionernes, Kombinationer, Kontemplation, Konseqvens), so it is no
+% witness here; tesseract reads 'culeret'.
+sine relative Totaliteter uendelig articuleret Centraleenhed til Resultat, og komme
+derved til en Indsigt i det objective Begrebs Fylde.
+
+Naar Begrebet tænkes identisk med sit udviklede Indhold eller sin Fylde, bliver det at
+bestemme som Idee. I Ideen maae altsaa alle Modsigelser være løste, og enhver eensidig
+Endelighed forsvunden. For at opfylde denne Fordring, maa Ideen sættes paa een Gang
+baade som en bestemt Side af Sagen, og tillige som den hele Sag, saa at alle dens
+% 'faaer den øieblikkelig sin Modsætning udenfor sig' — verified at 1.05x. ABBYY reads
+% 'saa er den', which the image does not support (the word is one Fraktur f-a-a-e-r).
+Momenter holdes i levende Dialektik; thi saasnart Ideen fixeres som et værende
+Resultat, faaer den øieblikkelig sin Modsætning udenfor sig, og Ordet antager da,
+ligesom ethvert andet Ord i Sproget, Endelighedens og Relativitetens Præg. Saaledes
+kan Ideen t. Ex. modsættes Virkeligheden. „Det er en skjøn Idee,“ hedder det, „kun
+Skade, at den i Virkeligheden ikke lader sig gjennemføre.“ At der nu ligesaa vel kunne
+gives smukke Ideer som gode Forsætter, der aldrig komme til Udførelse, skal det være
+langt fra Philosophien at benegte, eftersom dens egen Historie selv aflægger saa gode
+Vidnesbyrd for Sætningens Rigtighed; men naar Ideen sees i sin sande, evige Gyldighed,
+% The page's last mark is a FULL STOP after 'brister' (verified at 0.53x); tesseract's
+% comma is rejected. p. 249 l. 1 is NOT indented, so it continues this paragraph with
+% a new sentence.
+forvandler den alle Endelighedens Grændser til immanente Bestemmelser, og Udviklingen
+skrider da frem gjennem en Dualisme, der i stedse stigende Potens vender tilbage, uden
+% --- p. 249 ---
+% LETTERSPACING p. 249, all eight calls settled at 0.54x on full lines:
+%   l. 1  'Idealitet og Realitet ere i Ideen Eet' spaced ENTIRE, 'og' and 'ere i'
+%         included; 'begge Extremer' solid.
+%   ll. 6--7  'Subjectiviteten,' and 'og Objectiviteten,' spaced — the second takes in
+%         the 'og', the tenth consecutive batch of this habit; the relative clauses solid.
+%   l. 12 'Slutning i Viisdommens Medium.' spaced; l. 11's 'deres sande' before it is
+%         SOLID (checked at 0.53x, so the run really does begin mid-phrase) and l. 13's
+%         'Oprindelighed er altsaa' is solid too.
+%   'Sandhedens Idee', 'Livets Idee', 'Frihedens Idee' spaced in Anm. 2, the three
+%   Grundideer; the surrounding 'derved bestemt som' / 'lader sig tilsyne som' /
+%   'virkeliggjør det Absolute som' all solid.
+% Punctuation is left outside \emph{} throughout, as elsewhere in the file.
+at Eenhedens Baand brister. \emph{Idealitet og Realitet ere i Ideen Eet}; begge
+Extremer have det samme Indhold, kun Formen er forskjellig. Men denne Formforskjel er
+formedelst Ideen tillige saa absolut, at Indholdet selv derved fordobles, saa at det
+ene Universum opgaaer i tvende Sphærer, og sondres i tvende Verdener.
+\emph{Subjectiviteten}, der anticiperer det Reelle i det Ideelle,
+\emph{og Objectiviteten}, der former det Ideelle i det Reelle, ere i Ideen Eet;
+Extremerne have det samme Indhold. Men Ideens Formforskjel er tillige saa energisk, at
+Dualismen potenseres til en fri Diremtion af det evige Villiesideal og dets timelige
+Udvikling; Extremerne finde først deres sande \emph{Slutning i Viisdommens Medium}.
+Ideen selv i sin Oprindelighed er altsaa at bestemme som Begrebets Fylde, som det
+teleologiske Princip i Totaliteten af sine Momenter, som Viisdommens Maal.
+
+% The point after the 2 in "Anm. 2." is the fount's WEDGE FULL STOP, not a comma
+% (verified at 1.25x); tesseract reads a comma, as it did for "§ 8." on p. 65.
+% PRESS DEBRIS p. 249, not transcribed: an isolated 8 px speck at x≈2395, y≈4494 on
+% PDF 258, in the white band between ll. 23 and 24.
+\anm{2} Som Viisdommens Fylde aabenbarer Ideen sit Indhold i en trefoldig teleologisk
+Bevægelse. α) Ifølge det universaliserende Princip følger Ideebevægelsen Retningen mod
+det Almene, saa at dens hele Indhold gaaer op i Væsenhedens og Evighedens Former. Det
+Absolute bliver derved bestemt som \emph{Sandhedens Idee}. β) Ifølge det
+individualiserende Princip forvandles den prægnante Almindelighed til Mikrokosmens
+eiendommelige Grund, udfolder sin organiserende Virksomhed i timelig Vorden og
+phænomenale Formationer: det Absolute lader sig tilsyne som \emph{Livets Idee}.
+γ) Disse adskilte Potenser finde til Slutningen deres sande Synthese i den praktiske
+Selvbestemmen, hvorved det Individuelle forklares i det Almene, saa at det
+totaliserende Princip virkeliggjør det Absolute som \emph{Frihedens Idee}.
+
+Skjøndt Sandhed, Liv og Frihed ere Aabenbarelser af den ene og samme absolute Idee,
+% --- p. 250 ---
+have disse Grundideer dog hver for sig deres eiendommelige Aprioritet og
+Selvstændighed. Den ene kan ikke ved nogensomhelst udtværende Dialektik forvandles til
+den anden, efterdi enhver af dem forudsætter et særeget Medium, en særegen
+Centralinteresse og eiendommelig Methode. Hvad der bestemmes ved den reflecterende
+Tænkning, kan ikke bestemmes ved Imaginationen, og saa lidt som den rene Contemplation
+er en virkelig Praxis, saa lidt er den praktiske Villiesyttring en logisk
+Tænkningsact. Billedet kan ikke tænkes, Begrebet ikke forestilles; den blotte
+Indbildning er endnu ingen Handling. Ikke desto mindre forudsætte disse Grundacter dog
+hinanden i det Uendelige: der er en Forestillen i al Tænken, en Tænken i al Villen, og
+en Villen i al Erkjenden. Alt kommer da an paa, hvad der i Udviklingen sættes som
+Middel, og Midlet er igjen betinget ved det eiendommelige Formaal. Bestemmes
+Imaginationen og Villien som Midler for Tænkningen, saa fremkommer Philosophien;
+sættes Tænken og Villen omvendt som Momenter i den productive Phantasianskuelse, saa
+erholde vi Poesien; optages endelig Alt, hvad der rører sig i den levende Anskuelse,
+og objectiveres i den reflecterende Tænkning, som Vehikel for Villiens Realisation af
+det Gode, saa fuldender Subjectiviteten sig til ethisk Personlighed.
+
+% 'men Forestillingen tænker jeg ikke' verified at 1.05x; tesseract garbles the phrase
+% ("en Forestillingen hene jeg"). No letterspacing anywhere on p. 250 or p. 251.
+\anm{3} Den Sætning, at Alt er begribeligt, maa ikke misforstaaes, som om den
+virkelige Verden lod sig forvandle til en Tankeverden: jeg begriber formedelst Eenhed
+af Tanke og Forestilling, men Forestillingen tænker jeg ikke; jeg begriber formedelst
+Identiteten af det Almindelige og det Individuelle, men jeg maa dog imaginere mig det
+Individuelle, medens jeg tænker det Universelle. Enhver philosophisk Anstrengelse for
+at omsætte Begrebets Indhold i rene Tanker, maa enten beroe paa et Selvbedrag, eller
+% --- p. 251 ---
+% p. 251 carries no paragraph break at all (no indented line anywhere on the page):
+% Anm. 3 runs from p. 250 straight through it.
+% PRINTER'S DEFECT p. 251: the mark after the antiqua 'universalia' is a FULL STOP
+% where the sense requires a comma. At 6x it is a compact round point sitting on the
+% baseline, with a much fainter DETACHED speck about one diameter below and right of
+% it; an antiqua comma in this fount is a teardrop with an attached descending tail
+% (compare 'efficiens,' on p. 246). Both witnesses read a point. Transcribed as
+% printed; the rejected alternative is a comma whose tail failed to print.
+være forsætlig lagt an paa at tage Livet af Sandheden. Hegelianismen, der kun
+indrømmer, at det Almindelige er i det Enkelte, fordi den deraf kan udlede, at det
+Enkelte er almindeligt, er hildet i den Illusion, at Forestillingen og Skikkelsen,
+naar de ret bearbeides, lade sig forvandle til logiske \textit{universalia}. og har
+% German quotations stay FRAKTUR inside the Danish quotes (verified at 1.2--1.3x);
+% the ü of „überschwenglich“ on p. 248 and these are typed raw per the standing rule.
+% 'et Tankefabrik' — the neuter article is as printed; both witnesses agree.
+desaarsag culmineret i et Tankefabrik, hvor „allerlei Seyn“ bliver indvævet i
+„das allgemeine Denken.“ I Modsætning hertil vil den „moderne Videnskab“ feie Livet
+ud, for at holde Tanken reen, og anbefale de individuelle Skikkelser til den sandselige
+% The range dash is a full EM-DASH at 1.15x, as in "Pag. 11---13" (p. 130) and
+% "Pag. 161---169" (p. 111); the figures are antiqua but left unitalicised per
+% pp. 21/52/89.
+Beskuelse (jfr. Pag. 194---95). Medens Hegelianismen annullerer det anskuelige Liv,
+for at hævde Sandhedens Aprioritet, opoffrer den „moderne Videnskab“ derimod
+Sandhedens objective Gyldighed for en anskuelig Sandseverden. Disse Yderligheder
+forsvinde, saasnart det indsees, at Tanken begriber formedelst Anskuelsen; thi derved
+træder Sandhedsideen i et teleologisk Forhold til Livet. Betragtet i Teleologiens Lys,
+falder Sandheden ikke udenfor Livet, saa at dens Rige blot skulde være at søge
+\textit{in mente nostra}. Alle Sandhedsproblemer ere Livsproblemer; thi Sandheden er
+Livets Dialektik. Forsaavidt denne Dialektik er negativ, viser Sandheden sig som en
+brændende Ild, der fortærer Alt, hvad der stiller sig i Misforhold til dens Idee;
+forsaavidt Dialektiken er positiv, skinner Sandhedsideen som det evige Lys, der
+opklarer Tilværelsens Grund. Men Sandhedsinteressen er ikke umiddelbart identisk med
+Livsinteressen; Sandhedsideen har sit eget Formaal, efterdi den har sit eget Medium.
+Alt i Livet maa beskues, randsages og prøves, for at Sandheden kan vindes; men den
+umiddelbare Livserfaring er kun Middel og Moment: Tanken er Sandhedens Prøvesteen. Da
+% --- p. 252 ---
+% GREEK p. 252 l. 2, read letter by letter at 5x: theta prints as the fount's script ϑ
+% in BOTH words and is NORMALISED to θ (twice) per the standing convention. Accents as
+% printed: oxia on the ό of θεός — NOT the varia that the enclitic-following rule would
+% give, and reproduced as printed; psili on ἐστιν and on ἀλήθεια, oxia on its ή. The
+% final ς of θεός is word-final and correct. The full stop follows the closing paren.
+altsaa Livets Indhold kun har Sandhed formedelst Tanken, og Tanken forudsætter en
+Tænker, saa kræver den absolute Sandhed en absolut Tænker: at negte Gud er at negte
+Sandhedsideens Realitet (θεός ἐστιν ἀλήθεια).
+
+Men at gjøre Sandheden til Eet og Alt, er med andre Ord, at gjøre Tænken og Viden til
+Eet og Alt, og forvandle Gud til en absolut Philosoph. Var det guddommelige Selv ikke
+Andet end en philosophisk Tænker, saa vilde et Verdensbegreb vel være blevet til, men
+aldrig en virkelig Verden. For at tænke Verdensbegrebet, maatte den evige Forstand
+vistnok forudsætte en virksom Imagination, thi et Verdensbegreb uden Verdensbillede
+vilde være aldeles blindt; men saalænge Imaginationen blot er Vehikel for Tanken,
+forsvinde alle Skikkelser som Reflexer i den uendelige Grunden, der omsætter Alt i
+Væsenhedens og Idealitetens Lys. Det er forgjæves, her at ville beraabe sig paa den
+Forudsætning, at den guddommelige Tænken er en energisk Tænken, og den guddommelige
+Phantasie en skabende Phantasie; thi her spørges jo ikke om Phantasiens Kraft, men om
+dens Forhold til Tænkningen og dennes teleologiske Retning.
+
+% PRESS DEBRIS p. 252, not transcribed: a short horizontal stroke at x-height in the
+% word space of 'anskueligt som' (both witnesses report a mark there; at 3x it is a
+% thin tick abutting the crossbar of the t, and the word space itself is very tight).
+% Near-blind full stop after 'Phænomenets Synspunkt' (tesseract reads a semicolon) and
+% after 'plastisk Gestalt' (ABBYY drops it); both are present at 1.15--1.4x. Logged.
+Som Sandheden er Ideens Idealisme, er Livet dens Realisme. Sandheden er usynlig som
+Tanken, Livet anskueligt som Phantasiens Billede. Livsideens Forskjel fra
+Sandhedsideen viser sig deels fra Væsenets, deels fra Phænomenets Synspunkt. Naar
+% GREEK: νοῦς ἀκίνητος, at 1.4x. The kappa prints as the fount's cursive ϰ and is
+% NORMALISED to κ; perispomeni on the ῦ of νοῦς, psili on ἀ, oxia on ί, all as printed.
+Sandhedens Grund er det rolige, ubevægede Væsen (νοῦς ἀκίνητος), saa er Livets Væsen
+den svangre, urolige Grund; naar Sandhedens Phænomen er et negativt, forsvindende
+Skin, saa har Livet derimod sin Existens i en positiv, plastisk Gestalt. Det reale
+Universum bæres af en guddommelig Imagination. Denne Imagination bevæger sig efter sit
+% p. 252's FOOT: the last line ends MID-WORD at the Fraktur double hyphen, 'sin bil='
+% (verified at 0.53x on PDF 261; nothing else stands below it — no signature mark, no
+% catchword, no tail ornament, and no rule anywhere on the page). The trailing % joins
+% 'bil' to whatever pp. 253--264 opens with; that completing fragment is UNVERIFIED
+% here and must be checked on PDF 262 by the next batch.
+eget Formaal, idet den gjør Sandhedens Love til Grundlag for den uendelige
+Productivitet, i hvilken den udtømmer sin bil%
+% --- p. 253 ---
+% JOINT p. 252/253, SETTLED ON THE IMAGE BY THIS BATCH. p. 252's last line ends
+% "den uendelige Productivitet, i hvilken den udtømmer sin bil=" (read at 0.50x on
+% PDF 261); p. 253's first word is "ledſkabende", read at 2.0x on PDF 262 with the
+% initial l unmistakably present. So the word is BILLEDSKABENDE and the sentence is
+% "…i hvilken den udtømmer sin billedskabende Kraft." Both witnesses corroborate
+% ("ledsfabende" / "ledsiabende"; the f is this scan's usual k). The `=` at p. 252's
+% foot is a line-break hyphen inside one word and is therefore not reproduced.
+ledskabende Kraft. Imaginationen er Umiddelbarhedens Form: Contrasterne tilhøre Livet.
+% "Contrasterne" with a Fraktur C, verified at 1.5x; ABBYY's "Kontrasterne" is wrong.
+% PRINTER'S DEFECTS on this page, all transcribed as printed and logged here:
+%  (a) the parenthesis "(--- Tidens Fødsel ---)": the CLOSING dash is set SHORT, about
+%      half the length of its opening mate on the same line, and a space stands before
+%      the ")" (both measured at 1.15x and 2.4x on PDF 262). Transcribed as `---` on the
+%      p. 94 precedent, where an under-inked em-dash was likewise reproduced as `---`.
+%  (b) the Hegel quotation prints "ein und / und dasselbe ist" — the word UND IS
+%      DOUBLED across the line break (line 7 ends "ein und", line 8 opens "und
+%      dasselbe"). Verified at 0.55x; both witnesses agree. Reproduced as printed.
+%  (c) a stray point stands after the line-break `=` of "ligesaa op=" (l. 9), i.e. after
+%      the hyphen and before the line end. Press debris; not transcribable, logged.
+% The Hegel quotation is set in FRAKTUR (no italic) and is NOT letterspaced — ABBYY
+% reports "w o J n n e r e s u n d …" letterspaced; at 0.55x the letters are tight and
+% only the word spaces are wide (loose justification). "u. ſ. w." is long-ſ, i.e. "u. s. w.";
+% tesseract's "u. ﬅ. w." rejected. "Aeusseres" is Ae + ſſ, no umlaut, no ß.
+Paa den ene Side falde Extremerne ud fra hinanden: Fødselen sætter, Døden opløser
+Individualiteten (--- Tidens Fødsel ---); paa den anden Side gaae Extremerne umiddelbart
+op i hinanden: „Das Leben ist, wo Inneres und Aeusseres, Ursache und Wirkung, Zweck und
+Mittel, Subjectivitet und Objectivitet u. s. w. ein und und dasselbe ist“ (Hegel).
+Livsideen forklarer sig i Skjønheden; men Skjønhedens Realitet forudsætter et ligesaa
+oprindeligt Syn, som Sandheden en guddommelig Tanke.
+
+% GREEK, John 8.32, verified word by word at 1.5--2.2x on PDF 262. NORMALISED per the
+% standing convention, with the fount's variants noted: the script ϑ → θ (γνώσεςϑε,
+% ἀλήϑεια, ἐλευϑερώσει), the cursive ϰ → κ (καὶ), the variant ϱ → ρ (ἐλευϑεϱώσει).
+% NOT NORMALISED, because it is a wrong sort and not a fount variant: γνώσεςθε prints a
+% FINAL SIGMA ς standing medially — settled at 2.2x, the glyph carries the ς descender
+% and is plainly distinct from the round σ two letters earlier. Same class as „Ειςαγωγη“
+% (p. 33), συλλογιςμὸς (p. 89) and συμπεράςματος (p. 90); reproduced as printed.
+% A supernumerary stroke at accent height stands over the ε/λ boundary of ἐλευθερώσει
+% (looked at 4x). It is NOT transcribed as an accent: the word's own oxia stands on the
+% ώ, a second accent in one word is orthographically impossible, and the mark sits over
+% the letter join rather than centred on the ε. Read as press debris. Both witnesses
+% garble the cluster in different directions, which is the tell that neither is evidence.
+% No letterspacing anywhere on p. 253 (whole page read at 0.55x; spacing.py silent).
+% A wide word space stands between "Livsideen" and "Tidens" — clean paper at 1.0x, no
+% ghost of an elided "er"; justification only. tesseract's colon after "Sandhedsideen"
+% and its quote mark before "Tidens" are both noise.
+Sandhedsideen er Evighedens, Livsideen Tidens og Timelighedens Fylde; Frihedsideen
+actualiserer begges Forskjel og Eenhed. Betragte vi Forholdet fra Endelighedens
+Standpunkt, da viser det sig, at den frie Villie danner den væsentlige Midte imellem
+Sandhed og Liv, imellem det Almene og det Individuelle. Paa den ene Side tager Villien
+sin umiddelbare Begyndelse fra Drift og Tilbøielighed, paa den anden Side forudsætter
+den Selvbesindelsens Reflexion. Formedelst Villien kan Subjectet fornegte Livets Lyst,
+for at finde Sandheden, og omvendt fornegte Sandheden, for at nyde Livet.
+Vilkaarligheden, der udtrykker Villiens formelle Selvstændighed, beviser, at den ikke
+lader sig aflede af noget andet Princip, men danner et oprindeligt Medium for Ideens
+Frembrud. --- For at realisere det Godes Idee maa det villende Subject fordybe sig i
+Sandheden (γνώσεςθε τὴν ἀλήθειαν, καὶ ἡ ἀλήθεια ἐλευθερώσει ὑμᾶς); men det viser sig
+strax, at Sandhedserkjendelsen er Moment i den praktiske Stræben. Thi deels kan her ikke
+være Spørgsmaal om at hæve Indsigten til absolut Viden; men Opgaven er at anerkjende
+Villiens Lov (Pligten), finde Livets Maal (Idealet) og bestemme de Midler, hvorved dette
+Maal lader sig op%
+% --- p. 254 ---
+naae; deels kan en Theorie om det Gode, var den iøvrigt nok saa fuldendt, dog endnu ikke
+betragtes som det Gode selv. Villien har Livet for sig; thi Selvbestemmelsen forudsætter
+en eiendommelig Naturgrund, og dens praktiske Opgaver maae søges i den virkelige Verden;
+men det viser sig strax, at det umiddelbare Liv er sat som Moment i det Godes Teleologie.
+Vistnok kan der ingen Splid være imellem Frihedens Idee og Individualitetens oprindelige
+Naturgrund (Schelling); men der kan være Splid imellem det Godes Væsen og den naturlige
+Drift (Kant); vistnok kan det frie Individ ikke ville tabe sit Liv, uden at vinde det
+(Qvietisme); men det kan heller ikke vinde det, uden at ville tabe det (Eudaimonisme).
+Friheden, seet fra det absolute Synspunkt, vil altsaa det sande Liv og den levende
+Sandhed; derved løser den sin praktiske Opgave, at forbinde Himlen med Jorden, og
+forklare det Timelige i det Evige.
+
+% LETTERSPACING in Anm. 4, settled at 0.55x, 1.3x and 2.2x on PDF 263 line by line:
+%  - "af dens eget Væsen:" is SOLID; the run begins at "Ideen" and runs to the full stop
+%    ("I d e e n  s e l v  h a r  a b s o l u t  E r i s t e n s ."). ABBYY spaces
+%    "a f d e n s eget Vcesen" as well; the image does not. The terminal full stop is
+%    present, well separated at the right margin, verified at 2.2x.
+%  - "bliver denne Existens igjen at adskille i" is SOLID (ABBYY spaces it; the image
+%    does not); \emph{Præexistens} and \emph{Realexistens.} are spaced, and the
+%    intervening "og" is SET SOLID — verified at 2.2x on the line's last two words, the
+%    o and g adjacent where the -ens before them is plainly opened out. That is the tenth
+%    consecutive batch in which this compositor's letterspaced run drops or takes in an
+%    adjacent short word; reproduced, not regularised.
+% PRINTER'S DEFECT: "tht" for *thi* in "tht Sandhedsdialektiken ophæver" — verified at
+% 1.6x, three sorts t-h-t, the last carrying a crossbar and a curved foot and no dot.
+% Both witnesses read "tht". Transcribed as printed.
+\anm{4} I Ideens Oprindelighed har Anticipationen sin Fylde. Det er saa langt fra, at
+Ideen skulde trænge til nogetsomhelst forefundet Stof, for at gaae over i ydre Existens,
+at alle existentielle Betingelser tvertimod maae udledes af dens eget Væsen:
+\emph{Ideen selv har absolut Existens.} Men ifølge Modsætningen mellem det Evige og det
+Timelige bliver denne Existens igjen at adskille i \emph{Præexistens} og
+\emph{Realexistens.} Gaae vi ud fra den endelige Realexistens, da føres vi i Kraft af
+Sandhedsideen tilbage til Præexistensen; tht Sandhedsdialektiken ophæver den phænomenale
+% PRINTER'S DEFECT above: "tht" for "thi", as printed.
+Vorden som Reflex i den væsentlige Væren. Begynde vi omvendt med Præexistensen, saa føres
+vi formedelst Livsideen over i Realexistensen; thi Livets evige Grund producerer sit
+Indhold i timelige Formationer. --- Denne Dualisme er ikke den platoniske; thi
+Platonismens første Grundfeil bestaaer
+% --- p. 255 ---
+netop deri, at den lader Væren og Vorden, Sandhed og Liv falde eensidig ud fra hinanden.
+(Livsmomentet i det Mythiske; Sandhedsmomentet i det Dialektiske).
+
+% LETTERSPACING, settled at 0.55x and 1.4x on PDF 264:
+%  - the whole question is spaced, across two lines: "H v a d  e r  d e t,  d e r
+%    e g e n t l i g  p r æ e x i s t e r e r,  h v o r l e d e s  b e s t e m m e  v i
+%    s u b j e c t u m  p r æ e x i s t e n t i æ ?" — and "subjectum præexistentiæ" is
+%    ANTIQUA inside the spaced run, so it takes \textit{} inside the \emph{}.
+%    The following em-dash and "Fordi" are Fraktur and solid.
+%  - "at \emph{Alt existerer fra}" is spaced but "Evighed af." at the head of the next
+%    line is SOLID (verified at 1.4x: E-v-i-g-h-e-d set tight). The run therefore stops
+%    at the line break in the middle of its own phrase — the same compositorial habit
+%    again. Reproduced.
+% GREEK on this page, verified at 1.5--1.6x. Normalised: ϰ→κ (οἰκῶν, καὶ, κόσμος,
+% χαρακτὴρ), ϱ→ρ (ἀπρόσιτον, χαρακτὴρ). φ in φῶς is the ordinary φ, not ϕ (checked at
+% 2.2x). NOT normalised, as printed:
+%  - ἀπαύγαςμα prints a FINAL SIGMA medially (p. 33/89/90 precedent, wrong sort);
+%  - ὑποστασεως carries NO accent at all, where ὑποστάσεις four lines below carries its
+%    oxia — the internal contrast is the evidence, so the omission is the compositor's;
+%  - νοητὸς carries a VARIA where an oxia is wanted (the mark leans left, against the
+%    clear oxia of κόσμος beside it) — cf. the graves on διαφορὰ/συμβεβηκὸς at p. 33.
+%  μιᾷ prints alpha with perispomeni + ypogegrammeni, reproduced as U+1FB7.
+Fastholdes nu Eenheden af Præexistens og Realexistens i den skabende Frihedsdialektik,
+opstaaer det Spørgsmaal: \emph{Hvad er det, der egentlig præexisterer, hvorledes bestemme
+vi \textit{subjectum præexistentiæ}?} --- Fordi Alt i en vis Forstand kan siges at være
+fra Evighed af, derfor kan man dog ikke paastaae, at \emph{Alt existerer fra} Evighed af.
+Hvad der gjælder om det Existerende, at det nemlig maa have sit selvstændige
+Middelpunkt, gjælder ogsaa om det Præexisterende. --- Den oprindelige Idee er
+centraliseret i det guddommelige Selv, dette Selv, der hverken kan opstaae eller
+forgaae, hverken aftage eller tiltage i Fuldkommenhed, bærer Alexistensen i sin egen
+Centralbevægelse, og er følgelig præexisterende. Men Ideen er Viisdommens Maal, og
+Viisdommen har i Sandhed, Liv og Frihed sit treenige Formaal; det guddommelige Selv er
+altsaa lige oprindeligt i sine trende Centra: med den absolute Selvfordybelse er Livets
+og Frihedens oprindelige Indhold klaret i Sandhedens Form (φῶς οἰκῶν ἀπρόσιτον); med den
+uendelige Selvobjectiveren er Sandhedens og Frihedens Identitet udpræget i Livets
+anskuelige Form (ἀπαύγαςμα τῆς δόξης καὶ χαρακτὴρ τῆς ὑποστασεως); men Sandhedens og
+Livets Fylde actualiseres i den absolute Frihed, der forudsætter sin egen Præexistens
+(τρεῖς ὑποστάσεις ἐν μιᾷ οὐσίᾳ), idet den producerer den endelige Realexistens.
+
+% "mythisk=platoniske" breaks at the line end, so the connector CANNOT be distinguished
+% from an ordinary break hyphen — in this book a line-break hyphen also prints as `=`.
+% The word is a genuine adjective compound, and the book sets such compounds with the
+% Fraktur double hyphen (kritisk=dialektisk p. 102, dialektisk=speculative § 12), so `=`
+% is written here on the book's own practice. Flagged because it is not verifiable.
+Denne Præexistens er væsentlig forskjellig fra den mythisk=platoniske, der i sin κόσμος
+νοητὸς ikke blot har en præexisterende Gud, men en Mangfoldighed af præexisterende Sjæle.
+Thi den intelligible Verden giver os ikke en Totalitet af færdige Existen%
+% --- p. 256 ---
+% The Sibbern reference: "Program:" is Fraktur, the Latin title is ANTIQUA and breaks
+% across the line as "De / præexistentia" with no hyphen; it ends with a full stop before
+% the Fraktur "og Sammes". Verified at 0.85x and 0.58x. The volume number "I" after
+% „Repertorium“ is an antiqua I; left unitalicised with the figures, per the pp. 21/52/89
+% precedent for "Pag. 24; 81" and "(§ 8 Anm. 4)".
+% QUOTES: „Om den menneskelige Sjæls Subsistents i Liv og Død“) DOES close — the “ stands
+% before the ")" and is visible at 0.58x. tesseract drops it; ABBYY renders it as "^".
+% So NO new QUOTE_DEFECTS row from this page, and none from anywhere in pp. 253--264.
+% "genus" is antiqua; "Grundtypus" and "subsumere" beside it are Fraktur (0.55x).
+% NO letterspacing on p. 256: spacing.py's "Har" (1.32) and the RUN "Men skal" were both
+% checked at 0.55x on the full lines and are solid. Rejected as false.
+ser, men en Totalitet af energiske Anticipationer, et Pleroma af Potenser, der forudsætte
+Endeligheden, for at centralisere sig til eiendommelig Bestaaen, og existere som
+særskilte Organer for teleologiske Functioner. (Jfr. Sibberns Program:
+\textit{De præexistentia, genesi et immortalitate animæ.} og Sammes „Philosophiskt Archiv
+og Repertorium“ I, Pag. 35. „Om den menneskelige Sjæls Subsistents i Liv og Død“). Vi
+maae derfor anerkjende en væsentlig Forskjel imellem Præexistens og Præformation. At
+negte Præformationen, er at fornegte Ideen: at forvandle Præformationen til Præexistens,
+er med andre Ord at gjøre Endeligheden og den ydre Virkelighed overflødig. Har
+Platonismen gjort sig skyldig i den sidste Grundfeil, saa har „den moderne Videnskab“
+derimod gjort sig skyldig i den første.
+
+Det er i nyere Tid næsten blevet til et Valgsprog, at ethvert Individ er sig selv og
+Slægten. Skal denne Sætning tjene til at ophæve al væsentlig Forskjel imellem Individ og
+Slægt, hvorfor vedkjender man sig da ikke Tautologien, og siger ligefrem: ethvert Individ
+er sig selv og sig selv? Men skal Slægtsbegrebet være mere end et nominalistisk
+Abstractum, da maa dets væsentlige Betydning udledes af Præformationen. --- Af Rosens Frø
+spirer ingen Hyacinth, af Hyacinthens ingen Rose. Enhver Organisme har ikke blot et
+eiendommeligt Princip, men ogsaa et særeget Forbillede. Kun formedelst Eenheden af
+Princip og Forbillede er den organiserende Virksomhed tænkelig. Alle Individer, der
+produceres efter samme Forbillede, og udtrykke den samme Grundtypus, subsumere vi under
+samme \textit{genus}; hvad Slægtsbegrebet er i den formelle Logik, er Identiteten af
+Princip og Forbillede i Ideelæren. Forbilledet erholder vel sin virkelige Existens i og
+med den individuelle Skik%
+% --- p. 257 ---
+% GREEK: παραδείγματα (broken παραδείγ=/ματα across the line) and (παράδειγμα), both
+% verified at 1.6--2.0x. Normalised ϱ→ρ in both. "Urbilleder, som" has NO space before
+% the comma (verified at 1.5x; tesseract's "Urbilleder , som" rejected).
+% "historiske Sendelse." ends with the fount's WEDGE FULL STOP, not a comma — solid
+% point, no tail, at 1.4x; tesseract reads a comma, ABBYY a full stop.
+% No letterspacing on p. 257 (0.55x sweep; spacing.py's "uær," is the Greek and "ſor"
+% is "stor" on a loose line). The signature mark "17" at this page's foot is a signature
+% mark, not transcribed.
+kelse; men denne kunde dog umulig realiseres uden i Kraft af Forbilledet. Forbilledet
+selv maa altsaa være i Vorden, og dog over al Vorden, have en ideel og dog virksom
+Tilværen forud for sine Individer. Derfor ere alle Slægter og Arter at betragte som
+væsentlige Urbilleder, som παραδείγματα, der oprinde i den guddommelige Intuition.
+
+Betragte vi Sagen fra Frihedens Synspunkt, maa Individualitetens Ideal ligeledes søge sin
+objective Grund i Præformationen: ethvert Talent har sin Genius. Det staaer i det frie
+Individs Magt at uddanne eller destruere sit eiendommelige Anlæg; men det staaer ikke i
+dets Magt at give sig en anden Naturbestemthed. Subjectet kan flye eller søge sit Ideal;
+men med alle de Midler, der staae til Reflexionens og Villiens Raadighed, er det dog
+intet Menneske muligt at skabe sig en ny Genius. Om end den endelige Villie bortkaster
+Individualitetens oprindelige Forbillede, bliver dette dog ikke forkastet af den evige
+Villie; det guddommelige Selv holder Synet (παράδειγμα) fast, og efter Forholdet til sit
+væsentlige Ideal skal Mennesket dømmes. Heraf lære vi da, hvad det vil sige at forfeile
+sin Bestemmelse.
+
+Jo lavere Individet er stillet, desto dunklere erkjender det sin Præformation. Jo mere
+begavet et Individ er, desto klarere anskuer det sin Præformation. Derfor er det de store
+Genier eiendommeligt, at de ikke blot troe paa deres indre Kald, men ogsaa paa deres
+historiske Sendelse. At En føler Kald til Noget, viser Præformationen subjectivt; at En
+har en Mission, udtrykker dens teleologiske Objectivitet. Som Middelpunkt for en stor
+Verdensmetamorphose, som Organ for den høieste productive Mulighed er Individet
+berettiget til at søge sin Kaldelse i en guddommelig Raadslutning, og vil det i samme
+Grad, som det fatter sin Opgave dybsindigt og
+% --- p. 258 ---
+% GREEK on this page, verified at 1.5--2.6x on PDF 267. Normalised: ϑ→θ (γενέσϑαι,
+% αλήϑεια), ϱ→ρ (Ἀβϱαὰμ, πϱὶν). ἀνάμνησις is regular. TWO readings kept as printed,
+% each against its own neighbour on the same page:
+%  - l. 19 prints "ἐγω εἰμι ἡ αλήθεια" — the ω carries NO oxia and the α of αλήθεια NO
+%    psili (checked at 2.6x, clean paper above both);
+%  - l. 21 prints "ἐγώ εἰμι" WITH the oxia on the ω, three lines below. The internal
+%    contrast is what settles l. 19, so its two omissions are the compositor's.
+%  Ἀβραὰμ sets the psili as a separate raised comma before the capital A, which is how
+%  Ἀ (U+1F08) is cut; reproduced as Ἀ. The varia on ὰ is as printed.
+% NO TAIL ORNAMENT closes § 19. Swept at four cuts (paper−15, −40, −70, −100) over the
+% full 3226 px measure by longest contiguous dark run per pixel row, on this page and on
+% all eleven others: the largest run anywhere inside a text block reaches 0.12--0.18 of
+% measure at paper−15 only and vanishes at paper−40, which is the signature of a text
+% line merging at a near-paper threshold. \secrule at pp. 35/68 is 0.20 in TWO bands and
+% \divrule 0.27 in one swelled band; neither is within reach at any cut, on any page in
+% pp. 253--264. Tally of § ends: … § 18 → division rule, § 19 → NO RULE.
+% The § 20 head: "§ 20." carries a final period; the argument "Ideernes Vexelvirkning."
+% carries a final period too, is bold, is NOT letterspaced (letters tight at 1.25x), and
+% has no Fraktur `=` connector. Matches the Indhold word for word.
+grundigt. Men fra Erkjendelsen af den dybeste Præformation til Antagelsen af en
+individuel Præexistens er der dog endnu et uendeligt Spring (--- Platos mythiske
+ἀνάμνησις ---). Ifølge den productive Mulighed er det existerende Individ kun Moment i
+den oprindelige Verdensplan. Det kan føle sig deelagtiggjort i et evigt Liv, men har dog
+derfor ikke Livet af sig selv; det kan erkjende Sandheden som den Alt beherskende Magt,
+være dens Herredømme frivillig undergivet, men er dog derfor endnu ikke selv fuldkomment
+centraliseret i Sandhedens Fylde. Friheden er altsaa relativ, og Realexistensen falder
+udenfor Præexistensen. Denne Forskjel er imidlertid ingen nødvendig Følge af det
+existerende Jegs empiriske Individualitet; thi ethvert endeligt Jeg har allerede som
+saadant Uendelighedens Form; men Relativiteten er at tilskrive Individets ideelle Mangel
+paa Centralitet. Kun formedelst den centrale Mulighed kan Individualitetens Frihed sættes
+absolut, og det existerende Jeg erkjende sig selv identisk med det præexisterende: den,
+der kunde sige om sig selv: ἐγω εἰμι ἡ αλήθεια, kunde ogsaa vidne om sig selv: πρὶν
+Ἀβραὰμ γενέσθαι ἐγώ εἰμι.
+
+\parag{20}{Ideernes Vexelvirkning.}
+
+% The § 20 thesis is ONE INDENTED paragraph in type one size up from the body, set to
+% the full measure — measured on p. 259, where the thesis and Anm. 1 share the page:
+% x-height band 67--70 px and baseline pitch 183 px for the thesis against 83--85 px and
+% 160 px for Anm. 1. So it is handled like § 18's and § 11's theses: no macro.
+% IT HAS NO RAISED INITIAL, unlike § 19's, and it is INDENTED, not flush left. The "I" of
+% "I Endelighedens" measures w82 h96 above the baseline against w88 h100 for the "E"
+% beside it; what makes it look larger is the Fraktur J-form's descender, which drops
+% 20 px below the baseline. First-ink x is 1072 against ~960 for the continuation lines,
+% i.e. an ordinary paragraph indent. ABBYY runs "IEndelighedens" together, which is only
+% the same tell it gave for § 19's real raised initial — it is not evidence of one.
+% NOT letterspaced anywhere in the thesis (both pages read at 0.55x); spacing.py's
+% "Form" (1.44) on p. 259 is a justification artefact.
+I Endelighedens Medium sondres Ideens Indhold til en uendelig Mangfoldighed af relative
+Ideer og teleologiske Potenser. Forsaavidt Individuationen har sit Udspring fra Ideen
+selv, maa den betragtes som væsentlig og blivende; forsaavidt den derimod kun er en
+Partikularisme, der skylder Naturlivets Ufuldkommenhed eller den subjective Egoisme sin
+Tilværelse, maa den ophæves og forsvinde. Ideernes timelige Vexelvirkning kommer til%
+% --- p. 259 ---
+% "tredobbelt Form :" prints a SPACE before the colon. The line is loosely justified and
+% the gap matches its own word spaces, so it is set down here as justification and
+% transcribed "Form:" — contrast „Formabile ,“ two lines below, where the space before
+% the comma stands on a normally set line and is therefore logged as printed.
+% PRINTER'S DEFECT / SPACING logged: „Formabile ,“ — a space stands between "Formabile"
+% and the comma, and the comma is INSIDE the closing quote (1.2x). The comma-inside-quote
+% is reproduced on the p. 65 („og,“) precedent; the space is not reproducible in running
+% text and is logged here. „Ting,“ eleven lines below sets its comma inside the quote
+% with NO space before it — the two are set differently on the same page.
+% "Formabile" is FRAKTUR, not antiqua — a Latin word set in Fraktur inside the Danish
+% quotes, like the German quotations; compared at 1.2x against the unmistakably roman
+% "genus" of p. 256. So NO \textit{}.
+% "det Gode og det Onde." ends with a wedge FULL STOP, not a comma (0.62x); tesseract's
+% comma rejected, ABBYY agrees.
+% "giennemformer" is printed with "gi", not "gj" — the second sort is a dotted i with no
+% descender, verified at 1.5x against the unmistakable j of "gjort" on p. 260. Both
+% witnesses agree. As printed; the book's usual form is gj-.
+% The "17*" at this page's foot is a signature mark, not transcribed.
+syne i en tredobbelt Form: de teleologiske Potenser excludere hinanden i deres
+umiddelbare Frembrud; de neutralisere hinanden i en overfladisk Reflexion; de ethicere
+hinanden i deres sande, levende og frie Udvikling.
+
+\anm{1} Naar den ydre, sandselige Verden modsættes Ideen, bliver den at betragte som Stof
+og Materiale, som et „Formabile,“ der kan dannes til hvad det skal være. Man adskiller
+den naturlige og den aandelige Verden; men Naturen selv er ikke en „Ting,“ Aanden endnu
+mindre. Forskjellen beroer paa Ideen. Det Samme gjælder om Adskillelsen mellem det
+Levende og det Livløse, det Skjønne og det Uskjønne, det Gode og det Onde. Thi
+Verdensexistenserne kunne være baade organiske og uorganiske, baade skjønne og uskjønne,
+baade gode og onde: altsammen i Relation til Ideen. Det kosmiske Materiale, Almagtens
+umiddelbare Substrat, spiller desaarsag en dobbelt Rolle i den teleologiske Udvikling.
+For det Første viser det sig som et hemmende Princip, der tynger paa Ideen med
+Endelighedens hele Vægt, og synes at hindre dens frie Bevægelse. Dernæst viser det sig
+som det væsentlige Middel, der betinger og befordrer Ideemomenternes nødvendige Sondring,
+og uden hvilket den hele Verdensobjectivering vilde være et tomt Phantasiespil. Som
+objectiv umiddelbar Indifferens er Materien det Medium, formedelst hvilket de
+teleologiske Potenser udtræde af den guddommelige Selvhed, fæste Rod i Endelighedens
+Grund, og begynde en reel Selvudvikling. Materien eller Stoffet kan betragtes som det
+Hylster, hvori Ideernes Mangfoldighed kommer til Verden, og hvori Verdensideen selv
+realiseres. Derfor finde vi ogsaa, at jo kraftigere en Idee udvikler sig, desto mere
+giennemformer den Stoffet, og forvandler det til Moment i sin reelle Tilsyneladelse,
+% --- p. 260 ---
+% GREEK: (τὸ μένον) and (τὸ καταργουμένον), verified at 1.6--2.0x. Normalised ϰ→κ and
+% ϱ→ρ in καταργουμένον. Kept AS PRINTED: καταργουμένον carries its oxia on the ε, where
+% the received form καταργούμενον carries it on the ου — the mark is unmistakably over
+% the ε at 1.6x.
+% "for at skille dem ad" — ABBYY's "stille" is its systematic sk→st failure (cf. its
+% "stjonne", "Videnstab" on these same pages); tesseract's "fille" is f/sk. "skille" is
+% the idiom and the reading.
+% The Steffens quotation is FRAKTUR throughout with raw umlauts and ß (hören, über, dieß,
+% muß, völlig, beschränktesten, Verhältnissen, Völkerstämmen, Persönlichkeit, überhaupt,
+% läßt). It is NOT letterspaced anywhere on p. 260 — whole page read at 0.50x, spacing.py
+% silent. tesseract inserts a spurious opening quote before "Und soll"; there is none.
+% NO reader's marks or highlighter anywhere in pp. 253--264: the background median across
+% the text block runs 195--206 on all twelve leaves, where batch 9 detected the earlier
+% yellow highlighter as a drop to 178--189.
+og omvendt, at det Stofagtige træder desto stærkere frem, jo mere Ideens Kraft aftager.
+
+Følgen af dette Ideens tvetydige Forhold til den reelle Endelighed er, at den sande
+Individuation (τὸ μένον) og den forgjængelige Partikularisme (τὸ καταργουμένον) saaledes
+gaae over i hinanden, at der i mange concrete Tilfælde behøves en fast overmenneskelig
+Forstand, for at skille dem ad. Paa Naturlivets Trin see vi Individuationen seire i
+Skjønheden, den stofagtige Ideeløshed i Uskjønheden (Misfostre); men imellem begge
+Extremer findes en Mangfoldighed af Mellemskikkelser, der i Grunden hverken ere skjønne
+eller uskjønne. I Frihedens Sphære opdage vi den sande Individuation i Talentet og
+Personligheden: uden Talent ingen sand Personlighed; men saalænge Individerne endnu ikke
+have fuldendt deres frie Livsudvikling, er det ofte vanskeligt at udfinde, hvilken
+Begrændsning der kan siges at betinge Talentets Eiendommelighed, og hvormeget man derimod
+maa skrive paa den naturlige Endeligheds eller paa Vilkaarlighedens og Egoismens Regning.
+Steffens, der med en saa genial Energie har gjort Talentets Ret gjældende, opkaster i sin
+„Christliche Religionsphilosophie“ (Erster Theil, Pag. 37) det Spørgsmaal, om virkelig
+alle Mennesker kunne siges at være deelagtiggjorte i Talentets Oprindelighed: „Auch hören
+wir oft das Urtheil über sonst achtbare, gewandte Menschen: sie haben Kenntnisse,
+Geschick, Anlagen, aber keine Talente. Und soll dieß wirklich der Fall sein, wie viel
+mehr muß es von den völlig Ungebildeten, in den beschränktesten Verhältnissen Lebenden
+gelten; ja ganz entschieden von den barbarischen Völkerstämmen, von den Rassen, denen man
+doch nicht die Persönlichkeit abzusprechen wagt, wenn man sie überhaupt von Menschen
+gelten läßt. Und dem in das Thierische ver%
+% --- p. 261 ---
+% LETTERSPACING INSIDE THE GERMAN QUOTATION, and it is measured, not eyeballed, because
+% spacing.py missed it entirely. Gap-width histogram of this page's first line against
+% its neighbours (blank-column runs >= 6 px across the measure): l. 1 carries twelve gaps
+% in the 20--27 px band, where ll. 2--6 carry none above 12 px before their word spaces
+% begin. Twelve is exactly the internal-gap count of "Pescheräh" (7, ſch being one sort)
+% plus "Eskimo" (5). Confirmed at 0.95x: \emph{Pescheräh} and \emph{Eskimo} are opened
+% out, and "Neuholländer," before them and "Talent" after them are SET SOLID. So the
+% compositor spaced the second and third members of a three-member series and left the
+% first and the following noun tight — the same lapse as pp. 20/27/52/59/77/80/92/99/254.
+% Reproduced, not regularised. spacing.py's only flag for this page, "arp" (1.42) in "en
+% skarp Modsætning", was checked at 0.55x and is SOLID — rejected as false.
+sunkenen Neuholländer, \emph{Pescheräh} oder \emph{Eskimo} Talent zuzuschreiben, würde
+fast bizarr und lächerlich erscheinen.“ (Jfr. Heibergs interessante Artikel: „Det
+Nationale og det Provindsielle.“ Intelligensblade, 2det Bind, Nr. 15).
+
+\anm{2} Betragte vi Ideerne i deres umiddelbare, naturlige Frembrud, da er enhver af dem
+en indre, teleologisk Totalitet, der strax lægger an paa at bruge Alt som Middel, for at
+virkeliggjøre sin Typus og sit eiendommelige Formaal. Det følger af Ideernes monadiske
+Charakteer, at den ene maa træde op i en skarp Modsætning til den anden; thi de ere af
+Naturen alle Despoter, ville alle bestige Thronen og være Herskere, men ingen af dem vil
+tjene. De mangfoldige Conflicter imellem Folkeaanderne og Nationerne i Verdenshistorien,
+imellem de forskjellige Confessioner i Kirkehistorien, og imellem Theorierne i
+Videnskabens Historie afgive Exempler. Jo bestemtere Physiognomie og jo større Intensitet
+de modsatte Typer have, desto haardere vil ogsaa Partiernes Kamp være; thi Individuationen
+gaaer her umiddelbart i Eet med Partikularismen; Individerne blive slagne med Blindhed,
+og det ene Partie staaer rede til at tilintetgjøre det andet (Fanatisme).
+
+Enhver Idee har imidlertid efter sit Begreb ikke blot en exclusiv Eiendommelighed, men
+ogsaa en væsentlig Almindelighed i sig; derfor kan Reflexionen ikke udeblive. Det næste
+Skridt er da, at Ideerne begynde at gjenkjende hinanden i de forskjellige Typer;
+Partierne slutte Vaabenstilstand, og Rigorismen giver Plads for Humaniteten. Denne
+Fredsommelighed er desuagtet ikke strax at lide paa, thi modsatte Tendenser lure i
+Baggrunden, og saalænge der er Liv i en Idee, kan den ikke undlade at forfølge sin egen
+Interesse. Forskjellen bliver kun den, at hvad der forhen begyndtes i aaben Kamp, nu
+fortsættes under Intriguens Maske. De mar%
+% --- p. 262 ---
+% LETTERSPACING: \emph{mechaniske eller exclusive} — the run TAKES IN the intervening
+% "eller" and stops before "Vexelvirkning", which is solid (0.55x). ABBYY's "mechani ske"
+% is the tell. Note that the parallel pair "den dynamiske og assimilerende" on the very
+% next line is SET SOLID, so the compositor spaced one member of an opposition and not
+% the other on adjacent lines — logged, not regularised. spacing.py's "traliſere" (1.43)
+% is inside that solid phrase and is rejected.
+% "(Leo X)": "Leo" is Fraktur and the X is an antiqua sort. Left unitalicised with the
+% numerals, per the pp. 21/52/89 precedent; flagged rather than italicised silently.
+% GREEK: τέλος, verified at 2.0x, regular. \textit{mixtum compositum} is antiqua (1.0x).
+querede Typer afslibe deres skarpe Kanter, og Ideerne indtræde i en diplomatisk
+Vexelvirkning, hvorved den ene søger at overliste den anden. Man tænke paa Forholdet
+imellem Philosophie og Theologie, Religion og Kunst: den oprindelige Catholicisme
+begyndte med at sætte sig i et polemisk Forhold til alle Kunster, efterdi de vare
+hedenske (Tertullian); senere listede Kunsten sig atter ind i Kirken som Middel for den
+religiøse Andagt (Irene); endelig blev Kunsten selvstændig, og gjorde Religionen til
+Middel (Leo X).
+
+Naar Ideernes \emph{mechaniske eller exclusive} Vexelvirkning saaledes gaaer over i den
+dynamiske og assimilerende, bliver den Idee altid den seierrige, der bevarer sit τέλος.
+Men undertiden skeer det, at de teleologiske Principer aldeles neutralisere hinanden, og
+Typerne udslettes. Exempler paa saadanne neutraliserede Ideer have vi i alle egentlige
+Kjætterier. Thi naar Kjætteriet ikke skal bedømmes vilkaarligt, og maales med det
+herskende Parties tilfældige Maalestok, men erkjendes som noget i og for sig
+Forkasteligt, da maa dets Forkastelighed bestaae deri, at det amalgamerer heterogene
+Typer, danner et \textit{mixtum compositum}, og lægger an paa at realisere Ideer, der
+efter deres Begreb ere irrealisable. I denne Forstand gives der ikke blot religiøse, men
+ogsaa politiske, æsthetiske og videnskabelige Kjætterier („Zwittergestalten“ ---
+Synkretisme --- Latitudinarisme).
+
+I den mechaniske Vexelvirkning er Ideen borneret (Contraster og Carikaturer), men lever
+dog et kraftigt, substantielt Liv i Individerne; den dynamiske Vexelvirkning nedbryder
+Partikularismens Skillemuur, men lader tillige den typiske Oprindelighed bortdunste i den
+almindelige Dannelsesproces. Derfor er Culturverdenen saa rig paa holdningsløse Reflexer
+og neutraliserede Ideer.
+
+% --- p. 263 ---
+% p. 262 ends on a short line and p. 263 opens with Anm. 3, so this is a CLEAN PARAGRAPH
+% BREAK; the blank line above this marker is correct and must be kept.
+% ANTIQUA: „\textit{Pierre Bayle}“ (roman inside the Danish quotes, 0.62x),
+% \textit{Castitas} (1.0x, against the Fraktur "Kydskheden" beside it), \textit{in praxi}
+% (1.0x, followed by a wedge full stop, not the comma tesseract reads).
+% LETTERSPACING, all four settled at 0.55x: \emph{Aanden og Kjødet} and
+% \emph{Tro og Fornuft, Theologie og Videnskab} — BOTH of these runs TAKE IN the "og",
+% against p. 254's run on the same construction, which drops it; and inside the German,
+% \emph{universelle Geist} and \emph{schlechtweg}, with the "der Geist" standing between
+% them SOLID. "schlecht=weg" breaks at the line end with the Fraktur double hyphen and is
+% one word. In both Danish cases the terminal full stop stands INSIDE the closing quote.
+% NEAR-BLIND MARK, present: the full stop after "Kjødet" before its closing quote. Both
+% witnesses drop it; at 1.5x a point stands on the baseline between the t and the “.
+% PRINTER'S DEFECT: "hedder, det „er Dualisme.“" — a comma is set after "hedder", where
+% the construction wants none. Verified at 0.62x; both witnesses read it. As printed.
+\anm{3} I sin Indledning til „\textit{Pierre Bayle}“ har L. Feuerbach lagt an paa at vise
+Christendommens Uforenelighed med al sand Kunst, Videnskabelighed og Sædelighed. „Den
+christelige Verdens Charakteer,“ hedder, det „er Dualisme.“ Denne Dualisme viser sig fra
+det catholske Standpunkt som en „Modsætning mellem \emph{Aanden og Kjødet}.“ Thi
+Catholicismens specifiske Hoveddyd er --- ikke Kjærligheden, denne vilde være en naturlig
+Dyd, eftersom Naturen ikke har indplantet os Had, men Drift til Kjærlighed --- ikke Troen,
+thi ogsaa til Troen har Mennesket en naturlig Hang --- men \textit{Castitas}, Kydskheden,
+en unaturlig Dyd; „denn nur zu ihr hat die Natur uns keine Neigung gegeben.“ ---
+Malerkunsten har blomstret i Catholicismen; men Kunsten selv skylder ikke den catholske
+Tro, men den kunstneriske Genialitet sin Tilblivelse. For den sande Kunstsands er det
+Religiøse i Billedet ligegyldigt, for den ægte Fromhed er Billedets Skjønhed ligegyldig.
+„Det sande Kunstværk er et Foreningspunkt for den hele Menneskehed.“ --- I den
+protestantiske Kirke fremtræder Dualismen som en „Modsætning imellem \emph{Tro og
+Fornuft, Theologie og Videnskab}.“ Den kirkelige Protestantisme befriede kun det
+praktiske, ikke derimod det theoretiske, intelligente Menneske. Inconseqvensen viser sig
+deri, at Bibelordet hersker i Theorien, Fornuften \textit{in praxi}. Derfor er ogsaa
+Theologien uforsonlig mod Philosophien; thi Theologien, som saadan, støtter sig til et
+Monopol, affecterer ganske særegne Prætensioner lige overfor de andre Videnskaber, og har
+„ein beschränktes, ein befangnes, unfreies Interesse zur Basis.“ Videnskabens Aand er
+derimod „der \emph{universelle Geist}, der Geist \emph{schlechtweg}, der nahmenlose
+Geist: sie ist nicht christlicher, aber auch nicht heidnischer Geist. Es giebt keine
+christliche und
+% --- p. 264 ---
+% The Feuerbach quotation, opened at p. 263's „der universelle Geist, DOES close here:
+% the “ stands after "Philosophie." and is visible at 0.70x. tesseract drops it, ABBYY
+% sees it. So pp. 253--264 add TWENTY balanced pairs and no new QUOTE_DEFECTS row.
+% PRINTER'S DEFECT: "overeie" for *overveie* — the v of the second syllable was never
+% set. Verified at 1.6x: seven sorts, o-v-e-r-e-i-e, with clean paper and no ghost where
+% the v belongs. Both witnesses read "overeie". Transcribed as printed.
+% No letterspacing anywhere on p. 264 (0.62x sweep; spacing.py silent). Note that
+% "Ideernes exclusive og neutraliserende Vexelvirkning" is SOLID here, two pages after
+% p. 262 spaced the same phrase — one more instance of the compositor's inconsistency.
+heidnische Mathematik, keine christliche und heidnische Logik, Psychologie und
+Metaphysik, keine christliche und heidnische Philosophie.“
+
+Den mærkelige Blanding af Kritik og Ukritik, Sandhed og Usandhed, der charakteriserer
+dette og flere lignende Escamoteringsforsøg, beroer øiensynlig derpaa, at Ideernes
+exclusive og neutraliserende Vexelvirkning fremdrages i Flæng, uden at man klart gjør sig
+Rede for deres teleologiske Relation. Ved at accentuere Sandhedsideens exclusive Formaal,
+der ophæver det Individuelle i det Almene, udbringer man det Resultat, at der ligesaa
+lidt gives en hedensk og christelig Philosophie, som en hedensk og christelig Mathematik.
+Men overeie vi Sagen lidt nærmere, da indlyser det af sig selv, at man ikke kan stille
+% PRINTER'S DEFECT above: "overeie" for "overveie", as printed.
+Philosophien paa lige Trin med Mathematiken, uden at forraade en fuldkommen Mangel paa
+videnskabelig Kritik; thi den mathematiske Sandhedserkjendelse er aldeles forskjellig fra
+den philosophiske. At der ikke kan gives nogen væsentlig Forskjel imellem en christelig
+og en hedensk Mathematik, følger ganske ligefrem deraf, at Mathematiken ikke opfatter
+Sandhedsideen i dens uendelige Fylde, men abstraherer fra den concrete Verden, for at
+erkjende Lovenes og de „evige Sandheders“ formelle Totalitet. Til en saadan
+Sandhedserkjendelse har Philosophien derimod aldrig indskrænket sig, og vil heller aldrig
+kunne gaae ind paa en saa tom Abstraction, uden at fornegte sin Natur. At stille
+Sandheden i en exclusiv Modsætning til Livet, er med andre Ord at neutralisere Ideen. Paa
+denne Maade bliver ikke blot Forskjellen imellem den hedenske og den christelige
+Philosophie ophævet, men al sand Originalitet bliver med det Samme banlyst af
+Videnskaben; thi Originaliteten har sin Rod i en subjectiv Naturbestemthed, i en kraftig
+Livsanskuelse, der forklarer det Individuelle i det Almene, og giver Sandhedsideen
+% p. 264's FOOT: the last line ends "og giver Sandhedsideen" — a COMPLETE WORD, no
+% hyphen, mid-sentence. p. 265 opens "sin eiendommelige Grundtypus." (read at 0.50x and
+% 1.40x on PDF 274 by this batch). So no trailing % is wanted here — the newline supplies
+% the word space — but THE BLANK LINE BELOW THIS COMMENT MUST BE CLOSED UP after
+% splicing, or a paragraph break appears that is not in the book.
+% --- p. 265 ---
+sin eiendommelige Grundtypus. Denne Splid imellem Liv og Sandhed lader sig iøvrigt
+tilveiebringe ved et ligesaa simpelt som vilkaarligt Kunstgreb: man holde blot den
+tænkte Almindelighed og den forestillede Enkelthed mod hinanden som forstenede
+Extremer, og den negative Kritik er uigjendrivelig. Derfor hører det ogsaa med til
+den „moderne Videnskabs“ Charakteristik, at Sandhedens almindelige Aand maa blive
+ligesaa unævnelig og ubeskrivelig (der Geist \emph{schlechtweg}, der nahmenlose
+Geist), som Livets individuelle Natur (das Unsagbare; jfr. Pag. 193--95).
+% "schlechtweg" is LETTERSPACED German inside the Fraktur parenthesis (s c h l e c h t=
+% / w e g across the ll. 8/9 break, so the = is the line-break hyphen, not a compound
+% hyphen: the word is the ordinary German "schlechtweg"). Detected mechanically as well
+% as by eye (gap-band run of 5 at x 2398--2797 of a 2798 px measure). "das Unsagbare"
+% and "der nahmenlose Geist" are Fraktur, hence no italic.
+% The dash in "193--95" is set as an EN-dash, not an em-dash: measured on PDF 274,
+% ~39--41 px, against 109 px for the em-dash of p. 268 ("Villiesoekonomie. --- Betragte")
+% and 20 px for one stroke of the compound/line-break "=" on this same page. "Pag." and
+% the figures left unitalicised, per the p. 89 precedent.
+
+Ved Anvendelse af en saadan Kritik kan man neutralisere alle mulige Ideer. Saaledes
+er t. Ex. den almindelige Menneskeaand, naar den opfattes i sin rene,
+„videnskabelige“ Sandhed, hverken en romersk eller en germanisk Aand, men Aanden,
+som saadan, „der nahmenlose Geist;“ den nationale Interesse maa Philosophien altsaa
+erklære for „ein beschränktes, befangnes, unfreies Interesse,“ thi Folkeaanderne
+falde som uvæsentlige og ligegyldige Differenser udenfor Sandheden. Vi beholde da
+som Resultat en philosophisk Patriotisme, hvis praktiske Princip:
+\textit{ubi bene, ibi patria,} beviser, at Nationalitetens Idee er neutraliseret.
+Den religiøse Aand er, ifølge den samme Grundanskuelse, ligesaa lidt en hedensk som
+en christelig Aand; men „die Religion der Zukunft“ er Menneskehedens og
+Lyksalighedens „nahmenlose Geist,“ en neutraliseret Idee, der ikke tillader nogen
+eiendommelig Typus:
+% The semicolon of „…Geist;“ and the commas of „…Interesse,“ and „…Geist,“ stand
+% INSIDE the closing quote, as printed (cf. p. 65 „og,“).
+% "ubi bene, ibi patria," ends with a COMMA, not a full stop: verified at ~8x on
+% PDF 274 — the mark carries a curved tail below the baseline, where this fount's full
+% stop is a diamond wedge sitting on the baseline (compare "jfr." and "Pag." two lines
+% above). BOTH OCR witnesses read a period here; the image overrules them, and the
+% comma is what the sentence wants ("hvis praktiske Princip: … beviser, at …").
+
+% DISPLAYED VERSE (Schiller/Goethe, Xenien) -- measured on PDF 274: three lines, ragged
+% right, indented 278 px = 0.099 of the 2798 px measure, and set ONE SIZE DOWN (ink bands
+% 87/81/72 px against 115--124 px for the body lines above and below), hence \small, on
+% the p. 217 (Faust II) precedent. German, so FRAKTUR and not italic. Line 3 is indented
+% a further 452 px = 0.16 of the measure, represented by the \hspace* below.
+\begin{verse}
+\small
+„Welche Religion ich bekenne? Keine von allen,\\
+Die du mir nennst! und warum keine?\\
+\hspace*{4em}Aus Religion.“
+\end{verse}
+% Line 1 ends with a COMMA, not a full stop (same wedge-versus-tail test as above;
+% ABBYY reads a period). Line 3's mark before the closing “ IS the wedge full stop.
+
+Med Kunsten forholder det sig paa samme Maade, som med Videnskaben. Den
+kunstneriske Idee opfatter Livets og Frihedens anskuelige Individuationer som
+Betingelser og Momenter for sit eget Formaal, og kan forsaavidt sættes i et
+% --- p. 266 ---
+exclusivt eller dog indifferent Forhold til Religionen og det sædelige Gode. I denne
+Forstand gjælder det, hvad Feuerbach anfører (\textit{P. B.} Pag. 77): „Was würdest
+du von dem Verstande eines Menschen halten, welcher die Güte der Gedichte seines
+Freundes also beweisen wollte: Cajus ist ein guter Mensch, ein guter Jurist u. s. w.,
+also sind seine Gedichte auch gut. Du würdest lachen. Und warum? Weil er nicht diese
+von den übrigen Eigenschaften unterschiedne und unabhängige Eigenschaft des
+Dichtens, nicht diese bestimmte Qvalität, aus der allein die Gedichte kommen, sondern
+den moralischen Menschen zum Princip seiner Deduction macht“\quad Den
+psychologisk=moralske Undersøgelse, hvorvidt en Kunstner selv behøver at være
+religiøs, for at kunne behandle religiøse Emner, bevæger sig, egentlig talt, i en
+Cirkel. Fra Kunstværkets Fortræffelighed vil man slutte til Kunstnerens religiøse
+Beaandelse. Men da en saadan Beaandelse netop er nødvendig for den kunstneriske
+Productivitet, saa vil Kunstneren ogsaa for Kunstens Skyld være nødsaget til at gaae
+ind paa alle de religiøse Stemninger, han kan overkomme. Hvorvidt disse Stemninger
+ere hedenske eller christelige, afhænger ikke af nogen individuel eller subjectiv
+Troesbekjendelse; men Alt beroer paa, hvorvidt Sujettet selv er hedensk eller
+christeligt. Give vi derimod Undersøgelsen en ontologisk Retning, faaer Sagen et
+ganske andet Udseende. Thi da Skjønheden selv ikke er Andet end Livets og Frihedens
+phænomenale Fuldendelse, saa ligger det i Sagens Natur, at
+Skjønhedsphænomenernes umiddelbare Forskjel maa være begrundet i en væsentlig og
+ethisk Forskjel imellem Livets og Frihedens Typer. Den græske Aphrodite har en
+ganske anden Skjønhed end den nordiske Freya, og den catholske Madonna kan ikke
+forvexles med en hedensk Gudinde. Denne Forskjel lader sig
+% "P. B." is ANTIQUA (the two roman capitals stand out sharply against the Fraktur
+% "Pag." beside them at ~5x, and ABBYY renders them as garbage, its tell for antiqua);
+% no hyphen between them, against tesseract's "P.-B.". The German quotation itself is
+% FRAKTUR throughout, umlauts raw; "Cajus" is Fraktur too.
+% PRINTER'S DEFECT (p. 266, transcribed as printed, not corrected): the Feuerbach
+% quotation closes „…macht“ with NO full stop before or after the closing quote. Both
+% witnesses agree, and at ~5x the paper after the “ is clean, with the wide
+% sentence-space that follows a full stop. Set as \quad per the pp. 21 / 40 / 67
+% precedent for a full stop the compositor never set.
+% "forvexles" is a Fraktur x (right leg dropping below the baseline), not the r that
+% ABBYY reports here as everywhere.
+% --- p. 267 ---
+ikke begribeliggjøre ved en blot phænomenal Opfattelse; thi alle de Skjønne maa jo i
+formel Henseende være lige skjønne, og tilfredsstille Skjønhedssandsen lige absolut.
+Hvorfra henter da Skjønheden sin Individuation? Fra Livet og Friheden. Freya har en
+anden Skjønhed end Aphrodite, fordi hun har en anden Sjæl. Men den menneskelige Sjæl
+(Gudinder ere jo ogsaa Mennesker), oprindelig bestemt til Frihed, er med det Samme
+sat i en særegen Relation til det Godes Ideal; derved bliver den psychiske Forskjel
+tillige en ethisk Forskjel. Aphrodites Smiil, Freyas Veemod og Madonnas salige
+Moderblik vise hen til forskjellige Trin i Frihedens og Sædelighedens Rige. Fordi
+der altsaa gives en hedensk og en christelig Verden, hver med sine eiendommelige
+Idealer, gives der ogsaa en hedensk og en christelig Kunst,
+% PRINTER'S DEFECT (p. 267, transcribed as printed): this paragraph ends with a COMMA
+% after "Kunst" where a full stop is wanted — the next line begins the Anm. Verified at
+% ~7x on PDF 276: the mark is a hooked stroke descending below the baseline, not the
+% diamond wedge this fount uses for a full stop. Exactly the p. 92 Anm. 2 case
+% ("Demonstration tilbage,"). tesseract reads a comma, ABBYY a period.
+
+\anm{4} For ret at anskueliggjøre Philosophiens og Theologiens uforsonlige Tvedragt,
+har den moderne Kritik bestemt Antithesen saaledes, at Videnskaben kun holder sig til
+„Sagens objective Natur,“ medens Theologien derimod maa søge sit øverste Princip i en
+guddommelig Vilkaarligheds: \textit{sic volo, sic jubeo, stat pro ratione voluntas.}
+Denne Dualisme er aabenbart ligesaa farlig for Philosophien som for Theologien. Kan
+Videnskaben ikke sætte den tomme \textit{voluntas} istedetfor \textit{ratio}, saa kan
+den heller ikke tage \textit{voluntas} bort, og beholde den blinde \textit{ratio}
+tilbage. Indsigten i \emph{Begrebets Frihed} overbeviser os om, at det Alt bevægende,
+sondrende, „Sagens Natur“ determinerende Princip ligesaa lidt kan være en objectiv
+nødvendig \textit{ratio} uden \textit{voluntas}, som en subjectiv formel
+\textit{voluntas} uden \textit{ratio}; thi det evige Selv lader sig kun bestemme som
+Viisdommens Princip \dsi{} som den sande, levende Eenhed af \textit{ratio} og
+\textit{voluntas}. Men hvis nu den teleologiske Villie med Viisdommens Fylde
+% "Vilkaarligheds:" is a plain COLON after the genitive -s, NOT the id-est sign: at ~7x
+% on PDF 276 the sort before the colon is this fount's word-final Fraktur s, joined to
+% "Vilkaarlighed", and the two dots stand upright. Contrast the genuine \dsi{} eleven
+% lines below on the same page (l. 30, "cip ɔ: som"), where the reversed c stands free
+% with a word space on each side — the two were zoomed side by side. ABBYY reads the
+% first as "s:" and the second as "I.-", which is why it is not evidence either way.
+% "determinerende" is FRAKTUR (contrast p. 268's antiqua "constituerende"); "ratio" and
+% "voluntas" are antiqua at every occurrence, and the "og" between them in the last
+% clause is Fraktur, so they are italicised singly.
+% --- p. 268 ---
+til sin uudtømmelige Grund er Alexistensens \textit{constituerende} Princip, saa maa
+den vel ogsaa være Videnskabens, Philosophiens ikke mindre end Theologiens,
+Centralprincip.
+% "Alexistensens" is set SOLID as one Fraktur word, lower-case e, with no compound "="
+% and no capital E: verified at ~6x on PDF 277. Read "Al=Existensens" (i.e. Al-Existens,
+% all-existence) is what the sense wants and is REJECTED as a reading of the page. The x
+% is a Fraktur x; ABBYY gives "Aleristensens", its usual x->r.
+% "constituerende" is ANTIQUA — a lighter roman face, plainly distinct from the Fraktur
+% "Grund er" before it and "Princip" after it at ~6x — hence \textit{}. tesseract's
+% "coustituerend" and ABBYY's "konstituerende" are both artefacts of the face change.
+
+Som teleologiske Potenser ere de relative Ideer oprindelig bestemte til at integrere
+og ethicere hinanden gjensidig. Den \emph{ethicerende} Vexelvirkning viser sig deri,
+at Ideerne indbyrdes blive hinanden baade Formaal og Midler, at de udrense
+Partikulariteten, for at bekræfte Individuationen, og endelig deri, at de, hver for
+sig, fungere som særskilte Led i den absolute Villiesoekonomie. --- Betragte vi
+Forholdet imellem Religionen og Philosophien, da har denne en overveiende
+Sandhedsinteresse, hiin en overgribende Livsinteresse, og begge kunne derfor, ifølge
+Tid og Omstændigheder, geraade i mange Slags Collisioner. Slige Collisioner lade sig
+nu ligesaa lidt ophæve derved, at de religiøse Ivrere sætte Philosopherne i Band, som
+derved, at de raisonnerende Philosopher gjøre et afmægtigt Forsøg paa at afskaffe
+Religionen. Men idet enhver af de modsatte Potenser erholder sin oprindelige Frihed,
+og faaer Lov til at besinde sig paa sit eget Formaal, vil den tillige afgive det
+Grundlag og de Betingelser, der fremme den andens Udvikling. Vil Philosophien
+erkjende den levende Sandhed, saa maa den ogsaa ville anerkjende det sande Liv; idet
+den forfølger sit eget Maal, og prøver Religionens Indhold, gjør den sig med det
+Samme til Organ for det absolute Gode, og baner Vei for den sande Religion. Skal
+omvendt Religionen naae sit eiendommelige τέλος, maa den gjennemtrænge det hele
+Menneske, og følgelig give sig selv Vidnesbyrd ikke blot i Følelser og Handlinger,
+men ogsaa i Ord og Tanker. Men den gjennemførte Tænkning har sit Udtryk i
+Philosophien; vil Religionen altsaa det sande Liv, da maa den ogsaa ville den levende
+Sandhed: det kan da ligesaa
+% "ethicerende" is LETTERSPACED and "Den" before it is SOLID — the compositor's habit of
+% dropping the adjacent word, now in its ninth consecutive batch. Detected mechanically
+% (gap-band run of 11 at x 243--957) as well as at 0.5x.
+% "Ivrere" (zealots) with the Fraktur I, against tesseract's "Jorere".
+% Greek τέλος: no fount variants to normalise; the oxia stands on the epsilon as printed.
+% --- p. 269 ---
+vel være en religiøs=ethisk Handling at philosophere, som at give Almisse. Det
+videnskabelige Medium, i hvilket Philosophiens theoretiske og Religionens praktiske
+Idee gjensidig forklare og ethicere hinanden, er Theologien. Thi Theologien søger ikke
+blot en Livserkjendelse for Sandhedens Skyld, men ogsaa en Sandhedserkjendelse for
+Livets Skyld, og er desaarsag med Rette bleven betragtet som alle Videnskabers
+væsentlige Middelpunkt, som den egentlige og sande Centralvidenskab.
+
+See vi dernæst hen til Forholdet imellem Religionen og Kunsten, da møde vi her en
+væsentlig Forskjel imellem det Ethiske og det Æsthetiske. Æsthetiken viser, hvorledes
+den umiddelbare Ideenydelse tilveiebringes ved Hjælp af Illusionen; Nydelsens Formaal
+er paa alle Punkter præsent: Glæde og Smerte, Lys og Skygge, Idealer og Carikaturer
+vexle i Phænomenets Solglands, uden at man egentlig kan spørge οὗ ἕνεκα; Ethiken
+tager det derimod meget alvorligt med det bestemte Formaal, holder Regnskab med
+Villien, og taaler ingen Illusioner eller fingerede Idealer. Da Tidens virkelige Dage
+og Aar ligge uden Afkortelse imellem Begyndelse og Resultat, ere de ethiske
+Spørgsmaal om Midlerne, Anstrengelsen og Opoffrelsen rene Samvittighedsspørgsmaal.
+Men uagtet den kunstneriske Stræben, som saadan, ikke er umiddelbart ethisk, gaaer
+den dog ud paa at aabenbare det Ethiske, idet den anticiperer Idealets
+Virkeliggjørelse. Har Religionen ingen Sandhed, er det Usynlige i ethisk Forstand
+evigt incommensurabelt med det Synlige, det Aandelige med det Legemlige,saa
+producerer Kunsten ogsaa kun Gjøglebilleder og Illusioner. Har Religionen derimod en
+sand Prophetie og en sand Apokalypse, saa har Kunstens Billedverden ogsaa en dybere
+Mening (ὑπονοια). Den secteriske Opfattelse af
+% "Carikaturer" (broken "Cari=" / "katurer" over the ll. 15/16 break) — the initial sort
+% of l. 16 is a Fraktur k. Settled by measurement on PDF 278, not by eye: the glyph has
+% an ascender (ink from 13 px above the x-height line) and NO descender (its lowest ink
+% row is 117, the same as the following "aturer", where this fount's f drops well below
+% the baseline). "Caricaturer", the expected spelling, is therefore REJECTED — a Fraktur
+% c has no ascender at all — and so is tesseract's "Carifaturer".
+% PRINTER'S DEFECT (p. 269, transcribed as printed): NO WORD SPACE after the comma in
+% "det Legemlige,saa" — at ~6x the comma abuts the long s of "saa" with no gap, on a line
+% whose other word spaces are normal. Both witnesses read it solid. Kept solid on the
+% p. 60 "endydermere" precedent.
+% Greek: οὗ ἕνεκα — the υ of οὗ carries the fount's combined dasia+perispomeni (the same
+% hooked mark as in οὗτος at p. 276's foot), the ε of ἕνεκα dasia+oxia; the kappa is the
+% cursive ϰ, NORMALISED to κ per the standing convention.
+% ὑπονοια is printed WITHOUT the oxia on the first omicron (standard ὑπόνοια) — at ~7x
+% there is a breathing over the υ and clean paper over the ο. Reproduced as printed, on
+% the p. 33 γενων / p. 90 γαρ precedent; the following mark is the wedge full stop.
+% --- p. 270 ---
+Religion og Moral, der lægger an paa at holde Videnskaben og Kunsten ude, for at
+disse „verdslige“ Ideer ei skulle profanere det Hellige, ender i Tautologie og
+Tomhed. Kun derved, at Religionen lader alle kosmiske Potenser udvikle sig med
+relativ Selvstændighed, kan den tillige gjøre dem alle til sine Media og Organer, og
+kun idet den saaledes ethicerer dem alle, actualiserer den sin Fylde.
+
+Da Ideen hverken er en gold Objectivitet eller en subjectiv Formalitet, men en
+levende, uopløselig Eenhed af det Subjective og det Objective, maa den komme til
+individuelt Frembrud i Talentet. I Talentet have vi paa een Gang den objectivt
+bestemte Naturgrund og den subjectivt bestemmende Frihed. Spørgsmaalet om Ideernes
+ethiske Vexelvirkning forvandler sig herved til et Spørgsmaal om
+\emph{Talenternes indbyrdes Forhold}. --- Som Individuationens allerfyldigste Udtryk
+forudsætter Talentet en primitiv Eiendommelighed hos sit Subject, og giver sig
+tilkjende i en original Opfattelse og Fremstilling af Ideefyldens almindelige
+Indhold. Talentet er altid begrændset. Denne Begrændsning er imidlertid saa langt
+fra at være begrundet i nogen oprindelig Splid imellem Ideens Uendelighed og
+Individets Endelighed, at den tvertimod viser sig som en Tilsyneladelse af den
+Ideeverdenens monadiske Sondring, der gjør den subjective Individualitet
+uundværlig. Naar der spørges, hvad det dog egentlig er, der gjør Mennesket til
+Menneske, bliver man ofte staaende ved det Svar, at det er den almindelige Tænken,
+den rene Selvbevidsthed. „Idet Individet besinder sig paa sin Eenhed med Slægten,
+gjør det sin Ret gjældende, og den Enkelte kan da ikke krænkes, uden at
+Menneskeheden krænkes i ham: Det er den almindelige Tænken, der har bevirket
+Slaveriets Ophævelse.“ Denne Synsmaade er imidlertid, naar vi over%
+% --- p. 271 ---
+veie Sagen nærmere, aldeles utilstrækkelig til at begrunde den sande Menneskeret.
+Thi jo mere eensidig den subjective, formelle Lighed accentueres, desto mere
+nedsynke de enkelte Subjecter selv til indifferente Størrelser. Ligger det t. Ex. i
+den philosophiske Idee, at den samme Grunderkjendelse ligesaa let kan udformes og
+artikuleres af \textit{A}, som af \textit{B} eller \textit{C}, saa ere disse
+Individer aldeles ligegyldige Exemplarer; har Ideen ikke den Ene, saa har den den
+Anden til sin Tolk: der gives Exemplarer i Mængde. Kan Ægteskabets Idee
+fyldestgjøres derved, at Manden vælger sig en Hustru, der opfylder de naturlige og
+almeensædelige Betingelser, da kan Valget neppe være saa vanskeligt at træffe; vil
+\textit{A} ikke, saa vil \textit{B}, og ethvert Tab er let at erstatte. Det
+indlyser heraf, at, saalænge denne Anskuelse fastholdes, maae Individerne ikke blot
+være Udødelighedshaabet berøvede (den sande Udødelighed beholder den objective Idee
+for sig selv), men tillige savne den allervæsentligste Garantie for deres personlige
+Ret. Thi saalænge Individerne ere erstattelige, er der Intet til Hinder for, at
+Ideen jo ogsaa til sine Tider kan kræve en Masse af Individer opoffret eller
+forvandlet til Slaver, for derved at fremme sine objective Interesser. Anerkjende vi
+derimod Ideens og Individualitetens væsentlige Eenhed formedelst Talentet, saa
+følger heraf, at Individet er uerstatteligt, og Menneskets Ret garanteret.
+% "Talenternes indbyrdes Forhold" (p. 270) is letterspaced across the ll. 14/15 break,
+% "Forhold." carrying the run to its end; "sig herved til et Spørgsmaal om" before it is
+% SOLID — ABBYY spaces "t i l" and is wrong, checked at ~9x. The p. 270/271 joint is
+% MID-WORD ("over=" / "veie" = overveie), hence the trailing % above.
+% The A / B / C placeholders are antiqua, as at pp. 18, 82 and 92.
+
+At frakjende et Menneske alt Talent, er med andre Ord det samme, som at frakjende
+ham en oprindelig Menneskenatur og give ham Rang med Aber. Men fordi ethvert
+Menneske har en væsentlig Oprindelighed, er det derfor ingenlunde sagt, at det
+altid lykkes at finde og hævde den; thi der gives ogsaa fortrykte og misdannede
+Individer. Ikke blot Barbariet, ogsaa Culturverdenen kan hemme Individualitetens
+sunde og sande Frihed. Idet de mindre begavede Individer modtage
+% --- p. 272 ---
+den store Mangfoldighed af heterogene Dannelseselementer, uden at kunne forvandle
+det overleverede Stof \textit{in succum et sangvinem}, hændes det undertiden, at
+deres ideelle Selvstændighed gaaer saa aldeles tabt, at de, ikke uligt Skriftens
+δαιμονιζόμενοι, tale og handle snart i deres eget, snart i fremmede Aanders Navn.
+Hvor Talentet derimod trænger igjennem, yttrer det sig altid med eiendommelig
+Productivitet. I denne Henseende gives der ikke blot videnskabelige og
+kunstneriske, men ogsaa ethiske og praktiske Talenter (--- χαρίσματα ---).
+% "sangvinem," ends with a COMMA, not a full stop: verified at ~8x on PDF 281 (hooked
+% tail below the baseline, against this fount's diamond wedge). BOTH witnesses read
+% "sangvinem." with a following lower-case "hændes", which would have been a defect; the
+% image overrules them and the comma is what the sentence wants.
+% PRINTER'S DEFECT (p. 272, transcribed as printed): the OPENING em-dash of
+% "(--- χαρίσματα ---)" is partly unprinted. Measured on PDF 281: inked from x 313 to 399
+% with a 4 px break, and its left 27 px is present in only 3 pixel rows against 7 for the
+% right 55 px; the closing em-dash on the same line measures 109 px, exactly the em-dash
+% of p. 268. So one sort, badly inked, not an en-dash — set as --- at both ends.
+% Greek: δαιμονιζόμενοι (broken δαι- / μονιζόμενοι, with an ANTIQUA single hyphen at the
+% break, not the Fraktur =); χαρίσματα with the variant ϱ NORMALISED to ρ.
+
+Talentet har overhovedet ligesaa mange Former, som Ideen har Individuationer.
+Overalt, saavel idet offentlige som i det private Liv, hvorsomhelst der kan virkes i
+en Idees Tjeneste, har Talentet hjemme. Dyden selv er Talentets sædelige Form. Men
+den Begrændsning, der viser sig i det særegne Talents Productivitet, medfører en
+Eensidighed, der igjen maa ophæves formedelst Receptiviteten. Skjøndt Philosophen
+ikke selv er Digter, kan han dog anerkjende, nyde og tilegne sig Poesien; skjøndt
+Villiestalentet ikke altid selv har videnskabelig Productivitet, kan det dog
+befrugtes ved Videnskabens Ideer. I denne Vexelvirkning imellem Productivitet og
+Receptivitet, er der en Given og Modtagen uden Ophør. Enhver Subjectivitet
+deelagtiggjøres i Ideerigets hele Fylde, forsaavidt den nemlig forholder sig
+receptiv; men den bevarer tillige sin monadiske Existens, opfatter Universet
+\textit{suivant son point de vûe}, og fungerer formedelst sin Productivitet som
+eiendommeligt Organ for den teleologiske Centralvillie. Ideernes Rige er herved
+bestemt som \emph{Personlighedens Rige}.
+% PRINTER'S DEFECT (p. 272, transcribed as printed): "saavel idet offentlige" — "i det"
+% is set SOLID as "idet". The line is loosely justified, so a suppressed word space is
+% conspicuous: at ~6x every other space on the line is wide and this one is absent.
+% Both witnesses read "idet". Kept solid on the p. 60 "endydermere" precedent.
+% NEW RAW CODEPOINT, REPORTED NOT TYPED: the French reads "de vûe" with a CIRCUMFLEX u
+% (an older spelling of "vue"), unmistakable at ~7x. Written with the accent command
+% rather than a raw û, since û is not in the tested set for this preamble (the p. 32
+% \"a precedent). Raw û is almost certainly fine under T1 — convert it if you have
+% tested it, as batch 6 did for ß/ä/ö/ü.
+% "Personlighedens Rige" is letterspaced (mechanically detected, two gap-band runs at
+% x 1336--1699 and 1704--2019); ABBYY misses it entirely.
+
+\anm{5} Det personlige Liv i Ideernes Rige er et Liv i Sandhed og Frihed \dsi{} et
+evigt Liv i Fuldendelse og Salighed\quad Den fyldigere Udvikling af Salighedens
+Ideal maa søges i Dogmatiken og Ethiken; kun forsaavidt den de%
+% --- p. 273 ---
+struerende Kritik har forsøgt at bevise Idealets Grundmodsigelse, har Undersøgelsen
+angaaende denne formeentlige Modsigelse sin Plads i Logiken. Den ontologiske Strid
+om Salighedens Realitet lader sig i det Hele taget henføre til følgende
+Hovedbegreber: \emph{Virksomheden, Individuationen og den nye Begyndelse}.
+% PRINTER'S DEFECT (p. 272, transcribed as printed): NO full stop after "Salighed"
+% before "Den fyldigere". At ~7x the paper is clean and the gap is a full sentence
+% space; both witnesses agree. Set as \quad per the pp. 21 / 40 / 67 precedent.
+% The p. 272/273 joint is MID-WORD ("de=" / "struerende" = destruerende), hence the
+% trailing % above.
+% The whole run "Virksomheden, Individuationen og den nye Begyndelse" is letterspaced,
+% "og den nye" INCLUDED — this compositor drops the intervening word about as often as
+% he takes it in, and here he takes it in.
+
+Den negative Kritik urgerer, at al kraftig og personlig Virksomhed nødvendigviis maa
+være betinget ved ydre Skranker og mødende Hindringer. Heraf følger da, at de, der
+haabe paa Saligheden, maae antages at forglemme Virkelighedens strenge Lov, idet de
+hengive sig til umandige Drømmerier. Modsigelsen bestaaer deri, at der søges en
+Nydelse uden Anstrengelse, en Fryd uden Smerte, en Virksomhed uden hemmende
+Skranker.
+
+Kritiken gjør fremdeles opmærksom paa, at al Personlighed forudsætter
+Individualitet, og denne igjen en Partikularitet. Et Beviis herfor hentes fra den
+Erfaring, at de stærkeste Charakterer i Almindelighed ogsaa ere de haardeste og i
+deres Eensidighed meest ubøielige. De altsaa, der begjære et saligt Liv, vise just
+derved, at de ikke selv vide, hvad det er, de begjære. De ville nemlig borttage
+Partikulariteten, Personlighedens uundværlige Grundlag, og dog statuere
+Personlighedens evige Vedvaren.
+
+Det bliver endelig anført som en dybsindig og grundig Indvending mod Idealets
+Gyldighed, at den forestillede Fuldkommenhed ifølge Sagens Natur maa ende i
+Tautologie og Tomhed. I Salighedens Rige, hedder det, skulde jo det fuldkomne Liv
+først egentlig tage sin Begyndelse; men en Tingenes Orden, hvori det Fuldkomne
+allerede er opnaaet, har intet Maal for Individernes Stræben. Timelighedens og
+Historiens Arbeide er tilendebragt, hvad er her altsaa at
+% --- p. 274 ---
+gjøre? See paa hverandre, „sidde paa vaade Skyer og kjede sig.“
+
+Skjøndt nu alle disse kritiske Indvendinger aldeles Intet bevise, hvad
+Fuldkommenhedsidealet angaaer, saa bevise de dog altid Noget, dette nemlig, at
+Philosophien har sin Grund i Friheden, og at der desaarsag gives en dobbelt
+philosophisk Methode, en nedadstræbende og en opadstræbende. Den nedadstræbende
+Philosophie (σοφία ἐπίγειος, ψυχική) charakteriserer sig derved, at den bestandig
+arbeider paa at underordne de høiere Begrebsformer under de lavere; medens den
+opadstræbende Philosophie (ἡ σοφία ἄνωθεν κατερχομένη) idelig søger at vise,
+hvorledes de lavere Livsformer forberede og tjene de høiere. Den destruerende
+Viisdom finder Virksomhedens Begreb i de Sphærer, hvor Arbeide og Nydelse falde paa
+abstract Maade udenfor hinanden. I denne Henseende gjælder det vel, at jo lavere det
+sædelige Individ staaer, desto mere føler det Lovens Aag i Arbeidets Tryk, og venter
+med Længsel paa Hvilens og Nydelsens korte Øieblik; men det gjælder da ogsaa
+omvendt: jo høiere Individualiteten stiger i ethisk Genialitet og personlig Frihed,
+desto mere magter den sine Skranker, og nærmer sig den sande Eenhed af Arbeide og
+Nydelse. Den Paastand, at al sand Energie er grundet i en uopløselig Splid mellem
+Anstrengelse og Hvile, fører conseqvent til det ideeløse Resultat, at Verden er et
+stort Tugthuus, og de forfaldne Subjecter den ethiske Virksomheds uforfalskede
+Mønsterbilleder.
+% PRINTER'S DEFECT (p. 274, transcribed as printed, i.e. as "bevise"): the second
+% "bevise" (l. 4, "saa bevise de dog altid Noget") has a NEARLY BLIND s — at ~7x only a
+% comma-sized fleck of it is inked between the i and the e. tesseract reads "bevi'e",
+% ABBYY "bevi'e"; the well-printed "bevise" two words earlier on the same line settles
+% the word.
+% Greek, both parentheses zoom-verified word by word (Jas. 3:15, 17). Normalised per the
+% standing convention: ϕ->φ twice (σοφία), ϰ->κ twice (ψυχική, κατερχομένη), ϱ->ρ once
+% (κατερχομένη), ϑ->θ once (ἄνωθεν). Accents and breathings reproduced as printed.
+
+Den Fordom, at Individualitet og Partikularitet skulde være coordinerede Begreber,
+har ligeledes sin Rod i en sandselig Synsmaade og en løs Tænkning. Kun i Aggregatet
+finder Partikulariteten sin egentlige Plads. Organismens særskilte Dele staae
+allerede høit over Begrebet om det blotte
+% --- p. 275 ---
+Fragment eller Brudstykke, og i Frihedens Rige ere Sondringen og Eenheden endnu mere
+gjennemgribende. Den nedadstræbende Philosophie gaaer da i dette Tilfælde ud paa, at
+reducere Personlighedens Ideerige til en raa Elementærverden. De Individer, der ikke
+kunne overbevise sig om Muligheden af at overvinde Partikulariteten, vakle bestandig
+imellem tvende Yderligheder: snart betragte de sig som Accidenser, hvis individuelle
+Tilvær høimodig skal offres for det Almene, snart faaer Selvopholdelsesdriften
+derimod en saa afgjort Overvægt, at de concentrere sig til et Slags ideelle Atomer,
+der i Alt kun søge deres Eget. At nu slige høimodige Accidenser og egoistiske Atomer
+ikke høre hjemme i Salighedens Rige, forstaaer sig af sig selv. Men den personlige
+Individualitet er hverken Accidens eller \emph{Atom}; Individuationens Lov er, at
+Subjectiviteten skal søge sin Fylde i den objective Totalitet; jo mere Individet
+lever sig ind i det Universelle, desto mere voxer dets eiendommelige Gehalt:
+Talentets Productivitet staaer i ligefremt Forhold til dets Receptivitet.
+% "Atom" is letterspaced; "Individuationens Lov er, at" after it is SOLID — ABBYY spaces
+% "e r ," and is wrong, checked at ~9x. "voxer" is a Fraktur x.
+
+For Mennesker, der saaledes have vænnet sig til Livets saakaldte daglige Sysler, at
+deres Bevidsthed gaaer op i lutter Endelighed, er det en ganske naturlig Trang at
+søge Tidsfordriv i ledige Timer. Træffer det sig nu en Gang saa uheldigt, at de
+hverken have Arbeide eller Tidsfordriv (ogsaa Søvnen kan i visse Tilfælde betragtes
+som et Slags Tidsfordriv), komme de i stor Forlegenhed, see paa hinanden og kjede
+sig. Man finder sig fremmed i Ideernes Rige, og derfor kjeder man sig. Dette er nu
+altsammen let at forklare. Men hvorledes Philosopher, der ellers føre det store Ord
+om Ideens guddommelige Herlighed, kunne nære en saa uværdig Mistanke mod Ideerigets
+indre Uendelighed, at de foretrække Dødens evige Søvn, for ikke at udsætte sig for en
+% --- p. 276 ---
+evig Kjedsommelighed, vilde være aldeles ubegribeligt, dersom det ikke stod fast, at
+det philosophiske Grundsyn refererer sig til Friheden, og at der ligesaavel gives en
+nedadstræbende, som en opadstræbende Villie. Har det overhovedet nogen Betydning, at
+leve og virke for Ideer, enten disse nu iøvrigt ere theoretiske eller praktiske, da
+følger det ogsaa ligefrem heraf, at Ideen ikke kan være til for den timelige
+Virkeligheds Skyld, men at Timeligheden maa være til for Ideens Skyld, være dens
+uendelige Overmagt og Formaal undergiven. Hvad der til Slutningen skal blive af
+Ideerigets fremadskridende Sondringer og Kriser, beroer altsaa ingenlunde paa
+Timeligheden og Endeligheden; men det omvendte gjælder, at det nemlig beroer paa
+Ideen, hvorledes denne Tingenes Orden skal ende. Løgnen er ufri, afhængig, og kan
+ikke undvære Sandheden; men Sandheden har Ideens Frihed og Fylde, og kan undvære
+Løgnen. Det Onde er ufrit, afhængigt, og maa tage sit Rige til Lehn af det Gode; men
+det Gode er Centralideens Frihed og Fylde, der ikke trænger til det Onde. Ikke den
+sande Naturgrund, ikke de reelle Modsætninger, ikke den frie Dialektik og den
+energiske Villie, men de unaturlige, Virkelighedens og Ideens Begreb modsigende
+Skranker, den retarderende Dialektik og den atomistiske Egoisme er det, der skulle
+forbrænde i Verdenshistoriens store Purgatorium. Lever nu enhver individuel
+Subjectivitet i uopløselig, personlig Eenhed med sin egen relative Idee formedelst
+Talentet, deeltager enhver relativ Idee i Ideerigets hele Fylde formedelst
+Receptiviteten og den ethiske Vexelvirkning, saa vil ogsaa Dybets uudtømmelige
+Mysterium gjennem alle Naturens og Aandens Former, igjennem Personligheder af alle
+Folkeslag og Tungemaal oplade sine Muligheder i en frit strømmende Productivitet. Den
+Slutning, hvorved ὁ αἰὼν οὗτος
+% NO TAIL ORNAMENT anywhere in pp. 265--276, and NO § head: § 20 *Ideernes
+% Vexelvirkning* runs unbroken through this whole batch, taking in Anm. 4 (p. 267) and
+% Anm. 5 (p. 272), and it is still running at the foot of p. 276. § 21 *Idee og Gud*
+% therefore opens at p. 277 or later, NOT in this range. All twelve pages were swept for
+% a rule by longest-contiguous-dark-run per pixel row at three thresholds
+% (paper-15 / -30 / -60) over the text measure: nothing survives paper-30 except a single
+% 207 px run on p. 271 (verso bleed-through), where \secrule would give ~0.20 of the
+% measure (~565 px) and \divrule ~0.27 (~765 px).
+% THE p. 276/277 JOINT: p. 276 ends MID-SENTENCE at a WORD BOUNDARY. Its last word is the
+% complete Greek "οὗτος"; p. 277 opens "transformeres i αἰὼν μέλλων kan derfor med Rette
+% siges at være en ny Begyndelse." — read on PDF 286 by this batch. So NO trailing % is
+% wanted here, but THE BLANK LINE ABOVE THE pp. 277--283 MARKER MUST BE CLOSED UP.
+% Greek ὁ αἰὼν οὗτος: dasia on the article (the mark is small and could be mistaken for
+% an oxia, but it is the article and the shape matches the dasia of ἡ on p. 274), psili
+% on the ι of αἰὼν with varia on the ω, and the combined dasia+perispomeni on the υ of
+% οὗτος, with a final ς. No fount variants to normalise.
+% --- p. 277 ---
+% THE p. 276/277 JOINT, re-read on PDF 285 and PDF 286 by this batch: p. 276's last
+% word is the complete Greek "οὗτος" and p. 277 opens "transformeres i αἰὼν μέλλων kan
+% derfor med Rette siges at være en ny Begyndelse." — a word boundary mid-sentence, so
+% no trailing % is wanted above and the blank line over this marker must be closed up.
+% GREEK p. 277: αἰὼν μέλλων — psili on the ι of αἰὼν and varia on the ω (the same sorts
+% as p. 276's αἰὼν), oxia on the ε of μέλλων. NO article, against p. 276's ὁ αἰὼν οὗτος.
+% No fount variants to normalise here.
+transformeres i αἰὼν μέλλων kan derfor med Rette siges at være en ny Begyndelse.
+
+% § 21 — THE LAST § OF THE BOOK. Measured on PDF 286 at 6x:
+%   "§ 21." centred, then the centred bold argument "Idee og Gud." — bold and NOT
+%   letterspaced (10 blobs, median inter-blob gap 12 px against 8--11 px in body lines;
+%   the letters are tight and the width is that of ordinary bold), WITH a final period.
+%   Matches the Indhold word for word.
+%   THE THESIS IS NEITHER OF THE TWO EARLIER FORMS. It is ONE INDENTED paragraph with
+%   NO raised initial (unlike § 19's) and NOT set one size up (unlike § 20's):
+%   first-ink x = 544 against 432--441 for its continuation lines, i.e. an indent of
+%   111 px, the same 112 px § 20's thesis carries; baseline pitch 160.8 px over nine
+%   intervals against 158.9 px over sixteen intervals in the Anm. 1 paragraphs on the
+%   same page — a 1.2% difference, i.e. the SAME body size, where § 20's thesis measured
+%   183 px against Anm. 1's 160 px. So: ordinary indented paragraph, no macro.
+%   NOT letterspaced anywhere: no run of five or more consecutive inter-blob gaps in
+%   13--70 px survives on any of the ten thesis lines; ABBYY's wide gaps before "og",
+%   "constitutive" and "Ifølge" are loose justification.
+\parag{21}{Idee og Gud.}
+
+% "constitutive" is FRAKTUR, not antiqua — verified at 1.5x: the sort after "con" is a
+% long ſ and the u/v/e are Fraktur forms. So NO \textit{}, on the p. 259 "Formabile"
+% precedent (a Latin word set in Fraktur inside Danish text).
+% PRINTER'S DEFECT p. 277, thesis l. 9: the *i* of "Theismen" is NEAR-BLIND — at 3.4x
+% only a short stub of the stem is inked and the dot never printed; the space for the
+% sort is there. Both witnesses lose it (tesseract "The'smen", ABBYY "Thesmen"). Set as
+% "Theismen" on the p. 57 "Mere" precedent (near-blind sort, intended letter restored,
+% defect logged), NOT as p. 83's "ngenlunde", where the sort was never set at all.
+% SPACE BEFORE THE COLON: this page sets a thin space before the colon ("sige :"), as
+% pp. 280 and 283 do ("Spørgsmaal :", "Sprog :"). Measured 29 px against 8--11 px letter
+% gaps on lines that are NOT loosely justified. Not reproducible in running text; set
+% "sige:" per the p. 259 "Form :" precedent, and logged here once for all three pages.
+Den mystiske Ideeforgudelse har sin Grund i Pantheismen; det ethisk=rationelle Forhold
+imellem Idee og Gud finder sin sande Udvikling i Theismen. Den pantheistiske Dialektik
+er en ironisk Reflexion, der dreier sig om en formel Modsætning imellem Idee og
+Ideeløshed; den theistiske Begrebsdeduction er en Frihedsdialektik, der har den hellige
+Villie til sit constitutive Princip. Ifølge denne Eenhed af det Metaphysiske og Ethiske
+skjelner Theismen skarpt imellem Illusionens og Sandhedens, Verdslighedens og
+Hellighedens Idee.
+
+\anm{1} Den Sætning: „Gud er Idee“, kan ikke umiddelbart vendes om, saa at man uden al
+nærmere Bestemmelse skulde kunne sige: „Ideen er Gud.“ Da Ideen nemlig, forsaavidt den
+fastholdes i sit Almeenbegreb, maa defineres som et teleologisk Princip, seet i
+Belysningen af sin indre, immanente Totalitet; da den relative Idee ikke blot kommer
+tilsyne paa Naturlivets Trin, men fremfor Alt for sit Medium i Subjecternes Frihed, saa
+ligger det i Sagens Natur, at der ligesaa vel kunne gives eensidige og illusoriske
+Ideer, som eensidige og falske Formaal.
+
+% PRESS DEBRIS, NOT TRANSCRIBED: a short stroke stands after the comma of "heraf," at
+% mid-height, above the baseline, where a point or a second comma would sit on it.
+% Tesseract reads "heraf,." and ABBYY "heraf,,"; at 1.25x the mark is a mid-height
+% hairline, so press debris on the p. 75 / p. 89 precedent, not a sort.
+Som det Centrale i Guddommens Væsen er Villie og Frihed, saaledes maa ogsaa enhver Idee
+bedømmes efter det ethiske Forhold, hvori den har sat sig til den evige Viisdom. Det
+indlyser da heraf, at man kan have Genialitetens og Ideens Glands uden derfor at finde
+sig i et personligt Forhold til Centralideen, og omvendt, bøie sig under den hellige
+Villies Lov uden at leve i en umiddelbar Ideenydelse. Denne
+% --- p. 278 ---
+% PRINTER'S DEFECT p. 278: there is NO full stop after "forvender sin Idee" — at 1.4x
+% the gap is clean paper, with no under-inked point and no ghost, and both witnesses
+% lack it. Set \quad per "for Lidet" (p. 8), "(Stilpons Kaal)" (p. 40), "(partitio)"
+% (p. 67), "fra Plato" (p. 90).
+% PRESS DEBRIS, NOT TRANSCRIBED: a raised speck stands just after the full stop of
+% "Fordærvelsen." (ABBYY reads it as an apostrophe). The full stop itself is sound.
+% "høit" is printed with ø — verified at 1.5x on "Diævelen som en høit"; BOTH witnesses
+% read "hoit" here and again on p. 281, and both are wrong (p. 281 checked at 1.3x too).
+% "Existenser" carries the Fraktur E and the Fraktur x: ABBYY reads "E.ristenser", its
+% standing x→r failure, and tesseract "Cristenser".
+% "Anm. 2." lead-in confirmed bold letterspaced at 1.4x; the following "I den" has the
+% Fraktur I, not J (tesseract's "J den" rejected; ABBYY agrees with I).
+% German „…“ quotations: none on this page; "Jacob Böhme" is Fraktur with a raw ö.
+Forskjel er ligesaa praktisk, som theoretisk, ligesaa ethisk, som metaphysisk; thi den
+kosmiske Idee indeholder Muligheden saavel til det Onde, som til det Gode. Barbariets
+Laster ere mindre farlige end Culturens, blandt Andet af den Grund, at Raaheden er uden
+Idee, medens den raffinerede Reflexion derimod er istand til at udgyde en ideel Nimbus
+endog over Svagheden og Fordærvelsen. Jo mere begavet et Individ er, desto dybere er
+ogsaa dets Fald, hvis det forvender sin Idee\quad Den religiøse Dybsindighed har
+desaarsag under forskjellige Billeder anskuet Diævelen som en høit begavet Aand, som
+Christi ældre Broder (Bogomilierne), som den faldne Morgenstjerne (Jacob Böhme).
+
+\anm{2} I den pantheistiske Erkjendelse lyser en Ideernes Morgenrøde, der bebuder den
+oprindende Sol, men selv maa forsvinde i det klare Daglys. Modsætningen imellem
+Pantheisme og Theisme er derfor ikke at betragte som en uopløselig Antinomie imellem
+tvende lige gjennemførte Theorier, men viser sig fra alle Sider som en Modsætning
+imellem en eensidig og en alsidig Verdensanskuelse, saaledes at den sidste indeholder
+den førstes Sandhed.
+
+% "Men langt fra at benegte" — NO punctuation after "fra". Verified at 1.2x: clean
+% paper. Tesseract's "langt fra;" rejected; ABBYY agrees with the clean reading.
+% "i en Villiesaabenbaring, der viser os" — a COMMA, not a semicolon (1.3x); tesseract
+% reads a semicolon. "Villiesaabenbaring" is set solid, one word.
+Hvad Erkjendelsesprincipet angaaer, beraabe Pantheisterne sig paa den
+platonisk=aristoteliske Sætning, at Gud ikke er misundelig, og udlede heraf, at
+Guddommen Intet beholder for sig selv, men lader sit hele Væsensindhold tilsyne i den
+nærværende Verdens Phænomener og Existenser, saa at de, der søge en hiinsidig Gud, ere
+at ligne ved Blinde, der spørge om Tonernes Farve. Men langt fra at benegte den
+guddommelige Væsensaabenbaring, vil den sande Theisme meget mere begrunde den i en
+Villiesaabenbaring, der viser os en sand og levende Eenhed af det Nærværende og det
+Hiinsidige, efterdi den tillige viser os begges Forskjel formedelst Friheden.
+
+% --- p. 279 ---
+% p. 279 opens a NEW paragraph (first-ink x = 711 against a flush margin of 439, i.e.
+% the ~275 px indent this book uses) and it is still inside Anm. 2, which runs from
+% p. 278 to p. 280.
+% The Poul Møller quotation opens with the low mark here and closes with the high one
+% after Conseqventser. — internally balanced, one pair.
+% "coexisterende" has the Fraktur x (ABBYY "coeristerende"); "Continuitet" both times
+% with C (ABBYY "Kontinuitet" once); "uigjennemsigtige" with gj; "orientalske", not
+% tesseract's "orientale".
+% ANTIQUA, LEFT UNITALICISED: the roman numeral "II." and the figures "225" and "102"
+% are antiqua against the Fraktur "Bind" / "Pag." — verified at 0.95x — and are left
+% upright per "Pag. 24; 81" (p. 89) and "Pag. 11---13" (p. 52). The titles "Om
+% Udødeligheden", "Efterladte Skrifter" and "Den moderne Atheisme" are FRAKTUR and
+% carry no quotation marks. "Jvfr." has the Fraktur J (tesseract's "Jofr." rejected).
+Pantheisterne rose sig af en absolut Viden, og have forsaavidt Ret, som de i Alt kun
+søge den fuldkomne Eenhed af Væsen og Phænomen. Men, nærmere beseet, har denne Videns
+Klarhed egentlig sin Grund i den Tautologie, at Enhver, der negter, hvad han ikke kan
+erkjende, ogsaa er i Stand til at erkjende Alt, hvad han ikke negter; ligesom man med
+Rette kan sige om en Mand, at han kan Alt, hvad han vil, naar han kun ikke vil Andet,
+end hvad han kan. Gjøre vi derimod et Indblik i den absolute Videns Idee, da har
+Videnskaben under mange forskjellige Vendinger allerede godtgjort, at en fuldkommen
+Sandhedserkjendelse er uforenelig med den pantheistiske Lære. „Den menneskelige
+Erkjendelse er den høieste Erkjendelse, der gives i Universet; thi Menneskets
+Erkjendelse af Gud er Guds eneste Erkjendelse af sig selv. Den guddommelige Erkjendelse
+savner da i enhver Henseende Continuitet; thi deels er den adsplittet i coexisterende
+monadiske Selvbevidstheder, der ere uigjennemsigtige for hinanden, deels glimter den
+frem i successive Punkter, som uophørlig slukkes igjen forbestandig. Continuitet har da
+dette store bevidstløse Dyr, vi kalde Gud, kun i sin Naturgrund, hvor det med blind
+Almagt sammenholder den vrimlende Mangfoldighed af forgjængelige Væsner, i hvilke det
+deler sig selv. Men Magten og Erkjendelsen lade sig aldrig forene; thi naar der hist og
+her hos Væsnet i dets Menneskeform vaagner en dunkel Erindring om, hvad det er, da har
+det i denne forgjængelige Skikkelse aldeles tabt Almagtens Scepter af sin Haand. Dette
+er Hovedindholdet af den store, orientalske Verdensfabel, som Mennesket i det sidste
+halve Seculum har udarbeidet i saa mange Conseqventser.“ (Poul Møller: Om
+Udødeligheden. Efterladte Skrifter, II. Bind, Pag. 225. Jvfr. P. M. Stilling: Den
+moderne Atheisme, Pag. 102).
+% --- p. 280 ---
+% p. 280 opens FLUSH (first-ink x = 818 against a flush margin of 793--820; the page is
+% slightly skewed, its lower lines starting 25 px further left), so Anm. 2 runs on
+% across the p. 279/280 turn WITHOUT a paragraph break.
+% "Personificationer" with c (ABBYY's k rejected); "afgjørende" with gj; "strax" and
+% "Reflexion" with the Fraktur x; "Proteus", not ABBYY's "Proreus".
+% LETTERSPACING, settled at 1.0x: \emph{Natur eller Skabelse?} — all three words spaced,
+% the intervening "eller" INCLUDED, and the question mark inside the run. The parallel
+% "Natur og Skabelse ere saa langt" eleven lines below is set SOLID (checked at 1.0x;
+% median inter-blob gap 10 px against 24 px in the spaced line) — this compositor's
+% habit of dropping the parallel term, now in its umpteenth batch. Nothing else on the
+% page is spaced.
+% "in re, hvis" — a COMMA. At 3x the mark carries a descending tail curving left;
+% tesseract's full stop rejected, ABBYY agrees.
+Den pantheistiske Identitetslære tilfredsstiller kun, saalænge Bevidstheden, hensjunken
+i Ideebeskuelsen, kan glemme dens Amphibolier og Personificationer. Men saasnart den
+kritiske Reflexion kommer i Bevægelse, opdager den strax, at Ideen er en Trylleperle, og
+Gud Ideernes Proteus. Denne Opdagelse medfører et for Philosophiens Skjæbne afgjørende
+Dilemma; thi enten maa nu den philosophiske Tænker af Utilfredshed med den mystiske
+Guddom hylde den moderne Videnskab, som i Desperation over den speculative Mysticisme
+har besluttet sig til at negte Gudsbegrebet, og befrie Philosophien fra at være
+„Theologiens Tjenerinde“ ved at gjøre den til Sandselighedens Slavinde; eller ogsaa lade
+Philosophien have samme Erkjendelsesprincip, som Theologien, og bekjende Forskjellen
+imellem den guddommelige og den menneskelige Viden.
+
+\anm{3} Da Sandhed, Liv og Frihed have samme Oprindelighed, ligger det i Sagens Natur,
+at den Theorie, der miskjender Sandhedsideen, ogsaa maa forfeile Livets og Frihedens
+Idee. Man har i nyere Tid fremsat det Spørgsmaal: \emph{Natur eller Skabelse?}
+Pantheisterne mene, at man maa forkaste Skabelsen, for at begribe Naturen. Men alle
+Naturideer ere \textit{universalia in re}, og det har i det Foregaaende viist sig, at
+\textit{universalia} umuligt kunde fremtræde \textit{in re}, hvis de ikke tillige vare
+\textit{in mente divina}. Den til sit Begreb udviklede Theisme kan derfor ikke
+anerkjende det opstillede Dilemma. Natur og Skabelse ere saa langt fra at udelukke
+hinanden, at vi tvertimod maae indrømme: der er kun en kosmisk Natur (\textit{natura
+naturans}), fordi der er en Skabelse (\textit{voluntas creans}).
+
+Pantheismens Utilstrækkelighed bliver endnu mere iøinefaldende, naar vi føre
+Betragtningen over paa Frihedens
+% --- p. 281 ---
+% "Ifølge" is printed with f, not the long ſ — verified at 1.5x, the crossbar is there.
+% Both witnesses read s ("Jsolge" / "Isslge"), and both are wrong; the same word on
+% p. 277 they read correctly.
+% "høit" again with ø (see p. 278); "physisk=metaphysiske" with the Fraktur double
+% hyphen; the German „Die Weltgeschichte ist das Weltgericht“ stays FRAKTUR inside the
+% Danish quotes, per the whole book.
+% GREEK p. 281, l. 18: σειρὰ ἐρμαικὴ. Normalised per the standing convention: ϱ→ρ twice
+% (σειρὰ, ἐρμαικὴ) and ϰ→κ once (ἐρμαικὴ). Reproduced as printed, NOT corrected, on the
+% p. 90 οὑτος precedent:
+%   (a) a PSILI, not the dasia of Ἑρμαϊκή, stands over the ε. All four bare breathings
+%       in this batch were measured as connected components at 600 dpi: bboxes
+%       29x33 / 24x29 / 27x30 / 28x31, horizontal ink centroid 0.57--0.58 in every one,
+%       and ink mass above the midline 1.3--1.8 times the mass below it. The two
+%       instances that must be psili (αἰὼν p. 277, ἀποκολοκύν- p. 282) and this ε-mark
+%       are metrically the same sort, and all are top-heavy — the head of
+%       the mark sits at the top with the tail falling away to the left below it, which
+%       is the psili, where a dasia carries its head at the BOTTOM. The
+%       dasia+perispomeni of αἷμα (p. 283) measures 30x38 with a top/bottom mass ratio
+%       of 2.38 and a top width of 30 against a bottom width of 11 — plainly a
+%       different sort — so the fount does distinguish them. DOUBTFUL: at the scan's
+%       native 250 ppi a breathing is ~5 px, so the dasia reading ἑρμαικὴ is rejected
+%       on measurement, not on eyesight.
+%   (b) NO diaeresis on the ι (Ἑρμαϊκή wants one).
+%   (c) a VARIA on the final η before a full stop, where the oxia of the oxytone
+%       ἑρμαϊκή belongs. The varia on σειρὰ, by contrast, is correct.
+% GREEK p. 281, l. 27: κρίσις — ϰ→κ and ϱ→ρ normalised; oxia on the ι, final ς.
+% LETTERSPACING: \emph{Verdensdommen} and \emph{Verdensdommer} — the whole line's median
+% inter-blob gap is 23 px against 9--11 px elsewhere on the page, and the two spaced
+% runs are localised at x512--1262 and x2135--3007 with the intervening "forudsætte en"
+% SOLID. And \emph{Forpligtelsen} three lines below (a 13-gap run at x2049--2928).
+% "Pligtopfyldelsen", the term \emph{Forpligtelsen} answers, is set SOLID across the
+% pp. 281 ll. 29/30 line break — "Pligt=" checked at 1.4x and "opfyldelsen" measured
+% at gaps 4--14 px. Again the parallel term dropped.
+% REJECTED as a false positive: "de høit Begavede" (l. 6), which the gap detector
+% flagged; at 1.3x the letters are tight and the wide spaces are justification.
+historiske og ethiske Gebet. Ifølge den „immanente“ Teleologie maa Pantheisten opfatte
+Historien som et stort og prægtigt Skuespil, Verdensideen halvt i Drømme opfører til sin
+egen Tilfredsstillelse. Individerne, der arbeide i Ideens Tjeneste, dele sig da i tvende
+Classer. Til den første Classe høre Genierne og de høit Begavede; den anden Classe
+indbefatter Massen. Medens hine virke som Ideens fribaarne Sønner med Bevidsthed om det
+store uendelige Maal, arbeide Massens Individer derimod som Ideens Trælle, der indbilde
+sig at fremme deres egne reent menneskelige Interesser, men skuffes ved „Fornuftens
+List.“ Pantheisternes Gud kan aldrig blive Folkenes Gud, thi „Massen“ vilde døe af
+Skræk, hvis den nogensinde saae den store Pan. Det er den gamle
+physisk=metaphysiske Skillemuur imellem de Indviede og de Uindviede, et theosophisk
+Kastevæsen, der hæver sig paa Ny, hver Gang Pantheismen tager et nyt Opsving; thi
+Neoplatonikeren Proklus er ingenlunde den Sidste, der har betragtet sig som
+Slutningsled i σειρὰ ἐρμαικὴ. Ogsaa Theismen vedkjender sig en objectiv
+Frihedsdialektik; men ifølge Villiesteleologien bliver Forskjellen imellem de Frie og
+Ufrie til en ethisk Forskjel: Ingen kan give sig selv Genie, men Enhver kan give sin
+Villie en bestemt Retning mod det Gode. Vel erkjender den theistiske Philosophie et
+Verdensløb; men den anerkjender tillige en styrende Viisdom; vel indseer den, hvilken
+dyb Betydning der ligger i den Sætning: „Die Weltgeschichte ist das Weltgericht“; men
+den begriber tillige, at de relative Kriser maae forberede den absolute κρίσις, og
+\emph{Verdensdommen} forudsætte en \emph{Verdensdommer}.
+
+En sand Grundbetingelse for det sædelige Liv er Pligtopfyldelsen; denne forudsætter
+igjen \emph{Forpligtelsen}. For at prøve en Theories ethiske Styrke, behøver man blot at
+% --- p. 282 ---
+% PRINTER'S DEFECT p. 282: there is NO full stop after "og udøve Gjengjældelsen" — at
+% 1.4x the gap before "Den" is clean paper, and both witnesses lack the point. Set
+% \quad, as for "sin Idee" on p. 278.
+% "en moralsk Verdensorden" — tesseract drops the -sk; the image and ABBYY have it.
+% "Charakterer uden Forskjel" is two words (ABBYY runs them together).
+% GREEK p. 282, ll. 26--27: ἀποκολοκύντωσις, broken "ἀποκολοκύν-" / "τωσις" over the
+% line end — Seneca's Apocolocyntosis, the pumpkinification that answers the
+% "Apotheose (Geniusdyrkelse)" three lines above. ϰ→κ normalised TWICE; psili on the α
+% and oxia on the υ reproduced. Neither witness got within reach of this word
+% (both returned unreadable rubbish for it), so it is read off the image at 2.7x.
+% NO LETTERSPACING anywhere on p. 282 — every line swept, no run of five consecutive
+% inter-blob gaps in 13--70 px, and the whole page read at 0.5x. The wide gaps in
+% "skal den være absolut, da maae" are loose justification.
+undersøge, hvorledes den udvikler Forpligtelsens Begreb. Forpligtelsen er begrundet i et
+immanent Forhold imellem Villien og den sædelige Lov; skal den være absolut, da maae
+begge Forholdets Led ogsaa være lige uendelige Størrelser. Forpligtelsen er allerede
+svækket i den oprindelige Jehovisme, der ikke væsentlig frigjør Individet fra
+Endelighedens og Timelighedens Begrændsning, men virker dog alligevel, efterdi det Gode
+er identisk med Jehovas Villie, som formaaer at opretholde sin Lov, og udøve
+Gjengjældelsen\quad Den er ligeledes svækket i den subjective Idealisme, der erstatter
+det guddommelige Selv ved „en moralsk Verdensorden“; men den opretholdes dog alligevel,
+forsaavidt den subjective, individuelle Villie i den uendelige Stræben erkjender sin
+egen Evighed. Men naar Pantheismen nu borttager saavel den guddommelige som den
+menneskelige Villies evige Selvstændighed, maa den ethiske Idee nødvendigviis tabe sin
+Holdning; thi det er en reen Modsigelse at ville forpligte en endelig Villie til et
+uendeligt Gode. Denne ethiske Slappelse viser sig navnlig deri, at alle eminente
+Charakterer uden Forskjel betragtes som guddommelige Idee=Aabenbarelser. Derved opløses
+den sædelige Dom i en æsthetisk Beundring. Man beundrer den store Helt, den kraftige
+Hersker, den klogtige Politiker (Heine har paa sin Viis beundret baade Luther og den
+hellige Skrift); kort sagt: Enhver, der har havt et mægtig bevæget, interessant Liv, kan
+blive beundret, og erholde sin Apotheose (Geniusdyrkelse); de Ugeniale nøies med en
+ἀποκολοκύντωσις, og hermed er Dommen afsagt. Theismen bliver derimod ikke staaende ved
+den æsthetiserende Modsætning imellem Idee og Ideeløshed, Aand og Aandløshed. Idet den
+hellige Centralvillie anerkjendes som Lovens Princip, og refererer sig til de frie
+Individers indre Uendelighed, er den subjective
+% --- p. 283 ---
+% THE LAST PAGE OF THE BOOK. 18 lines of text, then the tail ornament, then nothing —
+% NO colophon, NO catchword, NO signature mark: the row sweep from the ornament to the
+% page edge (y4415--6500 of 6688) finds no ink above paper noise.
+% GREEK p. 283, l. 10: (σάρξ καὶ αἷμα) — ϱ→ρ and ϰ→κ normalised. Reproduced as printed,
+% NOT corrected: the α of σάρξ carries an OXIA where the varia of Matt. 16, 17's
+% σὰρξ καὶ αἷμα belongs (the mark rises left-to-right at 2.3x, while καὶ's varia on the
+% same line falls). The ι of αἷμα carries the combined dasia+perispomeni — measured as
+% a distinctly different sort from this batch's four bare psili (see the p. 281 note).
+% GREEK p. 283, ll. 12--13: κοσμοκράτορες τοῦ αἰῶνος τούτου (Eph. 6, 12) — ϰ→κ twice
+% and ϱ→ρ twice normalised; oxia on the α of κοσμοκράτορες, perispomeni on the υ of
+% τοῦ and on the ω of αἰῶνος, psili on the ι of αἰῶνος, oxia on the υ of τούτου.
+% LETTERSPACING, measured blob by blob at 600 dpi — and the two calls go opposite ways
+% in each parallel pair:
+%   \emph{Aanden} in "Hvad Aanden er i den religiøs=ethiske Fremstilling" — six blobs
+%     with gaps 17--25 px, where "Hvad", "er" and "den" run at 7--10 px. But "Ideen",
+%     its answering term on the very next line, is SOLID: five blobs with gaps
+%     8, 11, 10, 8 px. Reproduced, not regularised.
+%   THE BOOK'S LAST WORDS: "Logikens Sprog:" is SOLID and only
+%     \emph{prøver Ideerne!} is letterspaced. Gaps: "Logikens" 14, 9, 12, 11, 6, 8, 13;
+%     "Sprog" 7, 10, 11, 9; then "prøver" 30, 24, 22, 27, 27 and "Ideerne!" 24, 29, …
+%     The line's overall median gap of 23 px is the spaced half pulling the median up;
+%     the ABBYY layer, which spaces "S p r o g :" too, is the bad witness the brief
+%     warned of. And the exactly parallel "Religionens Sprog: prøver Aanderne!" one
+%     line above is SOLID THROUGHOUT (gaps 4--12 px, including its own "prøver"), on a
+%     line that reaches the full measure only because "saa hedder det i" follows.
+%     The line is short (it stops at 63% of the measure), so the spacing is Sperrsatz,
+%     not justification.
+Villies metaphysiske Forhold til Ideen i egentlig Forstand bestemt som et personligt
+Forhold, og Forpligtelsen erholder sin absolute Gyldighed. Med denne Adskillelse af
+Verdslighedens og Hellighedens Idee lader den theistiske Philosophie sig ikke blænde af
+Genialitetens Glimmer, eller afspise med mythiske Surrogater. Theisten veed, at den
+dybeste af alle ontologiske Modsigelser er Frihedens Modsigelse imellem Godt og Ondt;
+derfor erkjender han ogsaa, at Villiens Strid med de hemmende Skranker ikke blot er en
+Strid med Trivialitet og Sandselighed (σάρξ καὶ αἷμα), men tillige en Strid med kosmiske
+Potenser, en Strid med de egoistiske Ideer, der trodse den evige Villie, en Strid med
+κοσμοκράτορες τοῦ αἰῶνος τούτου, der ikke blot skulle holde sig i denne Verdens Dom, men
+ogsaa dommes af denne Verdens Dommer.
+
+Hvad \emph{Aanden} er i den religiøs=ethiske Fremstilling, er Ideen i den
+logisk=philosophiske. Naar det derfor hedder i Religionens Sprog: prøver Aanderne! saa
+hedder det i Logikens Sprog: \emph{prøver Ideerne!}
+
+% THE TAIL ORNAMENT THAT CLOSES THE WHOLE WORK — measured, not assumed, and it is
+% \divrule, the top-level division ornament, exactly as at the end of the Første Deel
+% on p. 96. § 21 has NO separate rule of its own: only ONE ornament stands on p. 283,
+% so the § end and the end of the work coincide in it.
+% Longest contiguous dark run per pixel row over the 2824 px measure, at paper−10,
+% −15, −30, −60 and −90 (paper median 200):
+%   band 1, y4361--4394: rises 49, 100, 130, 204, 268, 272, 472, 585 to a 17-row
+%     plateau at 743--744 px, then falls back 741, 659, 488, 387, 205, 92, 41 — a
+%     THICK swelled band, stable at 738 px even at paper−30. 744/2824 = 0.263.
+%   band 2, y4398--4415: the same lens profile at 667--691 px but only ~300 px at
+%     paper−60, i.e. a HAIRLINE. 667/2824 = 0.236.
+% To identify it I re-rendered the three known sites at the same 600 dpi and ran the
+% same sweep:
+%   printed p. 5   (divrule): thick band 813 px = 0.287, then a thin band at 406 px
+%   printed p. 96  (divrule): thick band 837 px = 0.297, then a thin band at 541 px
+%   printed p. 35  (secrule): TWO EQUAL THIN bands, 624 px and 628 px = 0.219 / 0.220
+% So \secrule is twin equal thin bands at ~0.22 and \divrule is a thick swelled band
+% at 0.26--0.30 with a thin band under it. p. 283 is unambiguously the second form.
+% A REFINEMENT OF THE RECORD, worth having: the 300 dpi measurement in RESUME-NOTES
+% describes pp. 5 and 96 as ONE band. At 600 dpi both carry the second, much fainter
+% band as well, so \divrule reproduces a THICK-OVER-THIN ornament, not a single rule —
+% the same trap as the under-inked rule in \deel, one threshold further down.
+\divrule
 
 \begin{center}\rule{0.35\linewidth}{0.4pt}\end{center}
 
