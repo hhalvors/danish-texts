@@ -1,4 +1,59 @@
-# Rasmus Nielsen — *Den propædeutiske Logik* (1845): transcription resume notes
+# Rasmus Nielsen — *Den propædeutiske Logik* (1845): resume notes
+
+## ⏩ PHASE 2 (TRANSLATION) IN PROGRESS — read this section first
+
+Source of truth: `transcription.tex` (Danish), **COMPLETE**.
+Page-offset: PDF = printed + 9. Scan: `~/bibliotek/Nielsen, Rasmus/1845-propædeutiske-logik.pdf`.
+Method: `../../../TRANSLATION-PLAYBOOK.md`.
+
+### CURRENT RESUME POINT
+Next marker: `% [text to be added: pp. 97--113]` — **§ 12, The
+Dialectical-Speculative Method** (opens the Anden Deel; Danish at `\parag{12}`,
+~L3958). 10 markers remain (§§ 12–21). Sub-chunk the long ones (§ 14 is 27 pp.,
+§§ 16–18 are 21–25 pp. each) with `% [translation continues from p. N]` notes.
+Heavy German quotation begins in the Anden Deel (stays as printed, in ``…''),
+and much inline Greek (copy verbatim from transcription, incl. its logged wrong
+sorts).
+
+### DONE so far (don't redo)
+- Skeleton `translation.tex`: full preamble (structural macros mirrored from the
+  transcription: `\deel`, `\capitel`/`\capitelsp`, `\parag`, `\romsec`,
+  `\division`, `\anm` → "Remark N.", `\divrule`/`\secrule`), title page,
+  Contents (mirrors the Indhold, which has no page numbers), § markers,
+  `\secrule`/`\divrule` at the same breaks as the Danish, translated Errata leaf.
+- **Indledning pp. 1–5** (I–II) and the whole **Første Deel pp. 6–96 (§§ 1–11)**
+  translated: Ch. 1 Formation (§§ 1–5), Ch. 2 the Logical Judgment (§§ 6–8),
+  Ch. 3 Inference and Proof (§§ 9–11), incl. all 57 Anm., the a)–c)/1)–3)
+  lists, the mus-syllaba display syllogism, and the Heiberg/Sibbern/Schelling/
+  Kant/Hegel quotations.
+- Sandbox compile: **79 pp., 0 errors, 0 char-warnings.** 10 markers remaining.
+- Mirrored-defect decisions taken (be consistent going forward): unbalanced
+  quotes mirrored with a `%` note (p. 29 Sibbern close-only, p. 86 open-only);
+  quoted-matter wrong sorts copied verbatim (β) for b), συλλογιςμὸς, φαλαρκός,
+  Ειςαγωγη, pricipium); pure typography normalized with a `%` note (comma-for-
+  period p. 92, doubled stops, missing stops after parentheses); § 10's Anm.
+  numbering 1, 1, 3, 4, 5 mirrored as printed; compositor's letterspacing
+  lapses that cross the English word order carried on the sense-phrase only,
+  with a `%` note (pp. 52, 59).
+
+### Book-specific conventions (beyond the playbook)
+- Terminology table is in the header of `translation.tex` — keep it consistent
+  (Begreb=concept, Forestilling=representation, Anskuelse=intuition,
+  Sandsning=sensation, Erkjendelse=cognition, Væren=being, Væsen=essence,
+  Virkelighed=actuality, Ophævelse=annulment, Heelhed=wholeness…).
+- `\anm{N}` renders "Remark N." in English; NO footnotes exist in this book.
+- `\dsi` (ɔ:) in the Danish → `i.e.` in English.
+- Diplomatic quirks mirrored, not normalised: lowercase `second Part:` head
+  (p. 97), colon vs. period in Deel heads, `\capitelsp` for the three
+  letterspaced Anden Deel chapter arguments. Printer's defects and errata are
+  a transcription-layer record; translate the corrected (ERRATA-applied) text.
+- Greek: copy glyphs verbatim (pp. 138, 147, 179, 187, 241…); p. 33's
+  defective "Ειςαγωγη" and p. 48's wrong-sort β) — translate the surrounding
+  prose, reproduce the Greek as transcribed.
+
+---
+
+# Phase 1 (transcription) notes — COMPLETE, kept for reference
 
 **Phase 1 (transcription) job.** Read this, then `BATCH-AGENT.md`, then continue the
 batch loop. The standing method is `../../../TRANSCRIPTION-PLAYBOOK.md`.

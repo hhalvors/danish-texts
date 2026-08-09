@@ -1,0 +1,2942 @@
+% ============================================================
+%  R. Nielsen, "Den propædeutiske Logik" (1845)
+%  "The Propaedeutic Logic"
+%  Kjøbenhavn: Forlagt af Boghandler P. G. Philipsen;
+%  Trykt i BiancoLunos Bogtrykkeri, 1845.
+%  TRANSLATION (English) — from transcription.tex (the source of truth),
+%  itself a diplomatic transcription of the Royal Danish Library scan.
+%
+%  Structure mirrors transcription.tex 1:1: Indledning (I., II.) — Første Deel
+%  (Cap. 1 §§1–5, Cap. 2 §§6–8, Cap. 3 §§9–11) — Anden Deel (Indledning § 12,
+%  Cap. 1 §§13–15, Cap. 2 §§16–18, Cap. 3 §§19–21). The §§ run continuously
+%  1–21 across both Parts. The Første Deel Indledning's two sections are
+%  numbered I./II., NOT §§; the Anden Deel's Indledning IS § 12 — that
+%  asymmetry is in the book and is reproduced.
+%
+%  TERMINOLOGY (keep consistent; Nielsen's Hegelian-Danish school vocabulary):
+%    Begreb = concept                 Forestilling = representation
+%    Almeenforestilling = general representation
+%    Anskuelse = intuition            Sandsning = sensation
+%    Tænkning = thinking              Forstand(ig) = (the) understanding
+%    Fornuft = reason                 Viden = knowledge
+%    Erkjendelse = cognition          Indsigt = insight
+%    Væren = being                    Væsen = essence
+%    Virkelighed = actuality          Gyldighed = validity
+%    Dom = judgment                   Slutning = inference
+%    Beviis = proof                   Heelhed = wholeness/whole
+%    Eenhed = unity                   Mangfoldighed = multiplicity
+%    Ophævelse = annulment (Hegel's Aufhebung; "sublation" where the
+%      dialectical double sense is clearly in play)
+%    Aand = spirit                    Tilværelse = existence
+%  The old id-est mark ɔ: → "i.e." (per the repo playbook). Danish „…“ →
+%  English ``…''. \emph{} (Sperrsatz) carried over 1:1; antiqua \textit{}
+%  for foreign-language matter carried over 1:1. Greek copied verbatim.
+%  NO FOOTNOTES exist in this book; the \anm remarks are inline paragraphs.
+%
+%  Page-offset (per RESUME-NOTES): PDF = printed + 9.
+% ============================================================
+\documentclass[12pt]{book}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage[protrusion=true,expansion=true]{microtype}
+\usepackage[margin=1.4in]{geometry}
+\usepackage{setspace}
+\usepackage{amsmath}
+\usepackage{enumitem}
+\usepackage{libertinus}
+\usepackage{libertinust1math}
+\usepackage{textalpha}   % polytonic Greek copied verbatim from the Danish
+\usepackage{fancyhdr}
+\usepackage[colorlinks=true,linkcolor=black,urlcolor=black,
+  unicode=true,plainpages=false,pdfpagelabels]{hyperref}
+\setlength{\headheight}{15pt}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LE,RO]{\thepage}
+\fancyhead[RE]{\textit{The Propaedeutic Logic}}
+\fancyhead[LO]{\textit{\leftmark}}
+\setlength{\parindent}{1.5em}
+\setlength{\parskip}{0pt}
+\onehalfspacing
+
+% ------------------------------------------------------------
+%  STRUCTURAL MACROS — mirrored from transcription.tex so the two PDFs
+%  render the book's four recurring display forms identically.
+% ------------------------------------------------------------
+
+% A Part opening: full-measure double rule, then the three-line head.
+\newcommand{\deel}[2]{%
+  \par\vspace{1.2\baselineskip}%
+  \noindent\rule{\linewidth}{1.2pt}\par\vspace{2pt}%
+  \noindent\rule{\linewidth}{0.4pt}\par\vspace{0.9\baselineskip}%
+  \begin{center}
+    {\large\bfseries The Propaedeutic Logic's\par}\vspace{0.35\baselineskip}
+    {\bfseries #1\par}\vspace{0.35\baselineskip}
+    {\Large\bfseries\emph{#2}\par}
+  \end{center}
+  \vspace{0.45\baselineskip}
+  \begin{center}\rule{0.20\linewidth}{0.4pt}\end{center}
+  \vspace{0.45\baselineskip}
+  \phantomsection
+  \addcontentsline{toc}{section}{\texorpdfstring{#1\quad #2}{#1 #2}}%
+  \markboth{#1\ #2}{#1\ #2}%
+}
+
+% A Capitel head. As in the transcription: \capitel = plain argument
+% (pp. 6, 35, 68), \capitelsp = letterspaced argument (pp. 114, 178, 247).
+\newcommand{\capitelhead}[3]{%
+  \par\vspace{0.9\baselineskip}%
+  \begin{center}
+    {\bfseries\emph{#1}\par}\vspace{0.25\baselineskip}
+    {\large #3\par}
+  \end{center}
+  \vspace{0.3\baselineskip}
+  \phantomsection
+  \addcontentsline{toc}{subsection}{\texorpdfstring{#1\quad #2}{#1 #2}}%
+}
+\newcommand{\capitel}[2]{\capitelhead{#1}{#2}{#2}}
+\newcommand{\capitelsp}[2]{\capitelhead{#1}{#2}{\emph{#2}}}
+
+% A § head: centred "§ N.", then the centred bold argument.
+\newcommand{\parag}[2]{%
+  \par\vspace{0.9\baselineskip}%
+  \begin{center}
+    {\bfseries \S\,#1.\par}\vspace{0.2\baselineskip}
+    {\bfseries #2\par}
+  \end{center}
+  \vspace{0.25\baselineskip}
+  \phantomsection
+  \addcontentsline{toc}{subsubsection}{\texorpdfstring{\S\,#1.\quad #2}{§ #1. #2}}%
+}
+
+% The Indledning's two sections, headed with a bare roman numeral (I./II.).
+\newcommand{\romsec}[2]{%
+  \par\vspace{0.9\baselineskip}%
+  \begin{center}
+    {\large\bfseries #1\par}\vspace{0.3\baselineskip}
+    {\large\bfseries #2\par}
+  \end{center}
+  \vspace{0.3\baselineskip}
+  \phantomsection
+  \addcontentsline{toc}{subsection}{\texorpdfstring{#1\quad #2}{#1 #2}}%
+}
+
+% A top-level division head ("Introduction." — twice: p. 1 and p. 97).
+\newcommand{\division}[1]{%
+  \par\vspace{1.0\baselineskip}%
+  \phantomsection
+  \addcontentsline{toc}{section}{#1}%
+  \markboth{#1}{#1}%
+  \begin{center}{\Large\bfseries #1}\end{center}
+  \begin{center}\rule{0.35\linewidth}{0.4pt}\end{center}
+  \vspace{0.3\baselineskip}%
+}
+
+% An "Anm." remark: bold letterspaced lead-in, then an ordinary paragraph.
+\newcommand{\anm}[1]{\emph{\textbf{Remark~#1.}}}
+
+% The two tail ornaments, mirrored from the transcription:
+% \divrule closes a top-level division; \secrule closes a §.
+\newcommand{\divrule}{\begin{center}%
+  \rule{0.27\linewidth}{0.9pt}\\[1.6pt]\rule{0.22\linewidth}{0.4pt}\end{center}}
+\newcommand{\secrule}{\begin{center}%
+  \rule{0.20\linewidth}{0.4pt}\\[1.3pt]\rule{0.20\linewidth}{0.4pt}\end{center}}
+
+\begin{document}
+
+\hypersetup{pdftitle={The Propaedeutic Logic},pdfauthor={Rasmus Nielsen}}
+
+\frontmatter
+
+% ============================================================
+% TITLE PAGE — mirrors the 1845 title page (PDF 6).
+% "Lie. theol." is the original's wrong-sort error for "Lic. theol.";
+% normalised in translation.
+% ============================================================
+\begin{titlepage}
+\centering
+\vspace*{3.0cm}
+{\Huge\bfseries The Propaedeutic Logic\par}
+\vspace{1.6cm}
+{\small by\par}
+\vspace{0.7cm}
+{\large\textit{Lic.\ theol.}\ {\LARGE\bfseries R. Nielsen,}\par}
+\vspace{0.4cm}
+{\large Professor of Philosophy.\par}
+\vspace{1.8cm}
+{\Large $\ast$\par}
+\vspace{1.8cm}
+{\Large\bfseries Copenhagen.\par}
+\vspace{0.6cm}
+{\emph{Published by the Bookseller P. G. Philipsen.}\par}
+\vspace{0.35cm}
+{\small\emph{Printed at BiancoLuno's Printing House.}\par}
+\vspace{1.2cm}
+{\large\textit{1845.}\par}
+\vspace{0.8cm}
+{\small Translated from the Danish.\par}
+\end{titlepage}
+
+% ============================================================
+% CONTENTS — mirrors the original Indhold (PDF 8–9), which carries no page
+% numbers against any entry. The generated \tableofcontents below carries
+% this edition's own page numbers.
+% ============================================================
+\chapter*{Contents}
+\markboth{Contents}{Contents}
+\begin{center}\rule{0.35\linewidth}{0.4pt}\end{center}
+{\small\setlength{\parindent}{0pt}\setlength{\parskip}{2pt}
+
+\begin{center}\emph{Introduction.}\end{center}
+\begin{center}I.\\ Formal and Speculative Logic.\end{center}
+\begin{center}II.\\ The Aim of the Propaedeutic Logic.\end{center}
+
+\begin{center}{\bfseries First Part.}\\ {\bfseries\emph{The Doctrine of the Subjective Concept.}}\end{center}
+
+\begin{center}{\bfseries\emph{First Chapter.}}\\ The Formation of the Subjective Concept.\end{center}
+\S\,1.\quad The General Representation.\par
+\S\,2.\quad The Clear and Distinct Intuition.\par
+\S\,3.\quad Insight, or the Subjective Concept.\par
+\S\,4.\quad The Apriority of the Concept.\par
+\S\,5.\quad The Totality of the Concept.\par
+
+\begin{center}{\bfseries\emph{Second Chapter.}}\\ The Presentation of the Subjective Concept: the Logical Judgment.\end{center}
+\S\,6.\quad The Logical Form of the Judgment.\par
+\S\,7.\quad The Logical Content of the Judgment.\par
+\S\,8.\quad The Logical Totality of the Judgment.\par
+
+\begin{center}{\bfseries\emph{Third Chapter.}}\\ The Validity of the Subjective Concept: Inference and Proof.\end{center}
+\S\,9.\quad The Logical Requisites of Inference.\par
+\S\,10.\quad The Formal Validity of Inference.\par
+\S\,11.\quad The Real Validity of Inference: Proof and Method.\par
+
+\begin{center}{\bfseries Second Part.}\\ {\bfseries\emph{The Doctrine of the Objective Concept.}}\end{center}
+\begin{center}\emph{Introduction.}\end{center}
+\S\,12.\quad The Dialectical-Speculative Method.\par
+
+\begin{center}{\bfseries\emph{First Chapter.}}\\ The Formation of the Objective Concept.\end{center}
+\S\,13.\quad Being and Essence.\par
+\S\,14.\quad Essence and Actuality.\par
+\S\,15.\quad Actuality and the Concept.\par
+
+\begin{center}{\bfseries\emph{Second Chapter.}}\\ The Freedom of the Objective Concept.\end{center}
+\S\,16.\quad Ideality and Reality.\par
+\S\,17.\quad Subjectivity and Objectivity.\par
+\S\,18.\quad Teleology.\par
+
+\begin{center}{\bfseries\emph{Third Chapter.}}\\ The Fullness of the Objective Concept: the Logic of the Idea.\end{center}
+\S\,19.\quad The Originality of the Idea.\par
+\S\,20.\quad The Interaction of the Ideas.\par
+\S\,21.\quad Idea and God.\par
+
+}
+\begin{center}\rule{0.35\linewidth}{0.4pt}\end{center}
+
+\cleardoublepage
+\tableofcontents
+
+\mainmatter
+
+% ============================================================
+%  BODY — Danish printed pp. 1–283 (PDF 10–292)
+% ============================================================
+
+% ---- Introduction, printed pp. 1--5 ----
+\division{Introduction.}
+
+\romsec{I.}{Formal and Speculative Logic.}
+
+% Danish p. 1 opens with a raised initial "V"; only the absent indent is
+% reproduced, as in the transcription.
+\noindent By reflecting upon its own thinking, the subject is led to make
+clear to itself the various operations of thought and their mutual
+connection. The first requirement is that thinking be consistent and follow
+its own laws without any regard either to the psychical peculiarity of the
+thinking subject or to the character of the objects to which it might
+otherwise be applied. Formal logic therefore treats thinking as a given
+phenomenon of spirit, without asking after its origin or its objective
+validity. This question is nonetheless so momentous that the whole direction
+and destiny of philosophy depends upon the way in which it is answered. The
+sensualists teach that the soul (\textit{tabula rasa}) receives its original
+content from the sensory impressions of the surrounding world (impressions),
+and end by making thinking a mere shadow of experience. Subjective idealism,
+on the contrary, vindicates the soul's infinite self-activity, and conceives
+the world of experience as the representing I's own unconscious product. Each
+of these theories misjudges human thought. Sensualism undervalues thinking,
+doubts the universal validity of the laws of thought, and can for that reason
+find no truth in the actual world; idealism overvalues subjective thinking,
+denies the world's true actuality, and ends in formal emptiness. Both
+one-sidednesses are overcome in speculative logic, which shows that our
+rational thinking mirrors the reason revealed in the universe.
+
+\anm{1} By making sensation the source of cognition, sensualism was bound to
+lead to skepticism; for sensation refers only to the particular and
+contingent, not to the universal and necessary; experience teaches merely
+\emph{that} something happens, but not \emph{why} it happens; it shows that
+the one follows upon the other, but does not prove that the one is a
+consequence of the other; on such presuppositions it was accordingly
+consistent that Hume contested the concept of causality.
+
+\anm{2} Against Hume's theory Kant raised his opposition. The fundamental
+thought of the Kantian critique of reason is this, that our pure sensory
+intuitions (time and space), categories of the understanding (unity and
+multiplicity, cause and effect, etc.) and ideas of reason (the soul, the
+world, God) cannot have been abstracted from a world of experience lying
+outside consciousness, since they themselves constitute the necessary
+presuppositions without which no experience is possible. But while Kant
+defended the subjective universal validity of the a priori forms, he denied
+them, on the other hand, all objective significance. The whole world of
+experience is consequently to be regarded as a product of two factors, namely
+of the a priori forms and of an unknown object (``das Ding an sich''), whose
+pure essence no one can cognize, because everyone who attempts to cognize it
+thereby at once takes it up into the subjective medium of his own
+consciousness.
+
+\anm{3} The Kantian ``Ding an sich'' was contested by the elder Fichte. It
+is, according to Fichte's view, an absurdity to assume a ``Ding an sich,''
+since such a thing can neither be sensed nor thought. To an object that was
+supposed to lie wholly outside consciousness the subject cannot ascribe
+reality without falling into contradiction with itself; for if anyone says
+that he knows of the existence of such an object, then he has already drawn
+this existence into the circle of consciousness; he then says: I know
+something of an existence of which I nevertheless know nothing at all.
+``Das Ding an sich'' was the last remnant of objectivity that the critical
+idealism left standing. By removing this unknown quantity, idealism became
+wholly subjective, and now concentrated itself in the proposition that the
+whole world is brought forth by the I. In order to understand this bold
+assertion, we must determine more closely the I's essence, its productivity,
+and its freedom.
+
+\begin{itemize}
+\item[a)] The I of which idealism speaks is not the empirical I, which finds
+  itself immediately determined by the various expressions and states of the
+  life of consciousness (I speak, grieve, rejoice, etc.); but the pure
+  I~=~I, the I that in everything thinks itself, without regard to
+  particular limitations and alterations.
+\item[b)] The productivity whereby the I brings forth the whole actual
+  surrounding world is no loose play of fancy, nor an arbitrary imagination
+  which the I could alter or arrest at its pleasure, but an act of
+  necessity, whereby it presupposes those barriers whose infinite annulment
+  conditions its freedom.
+\item[c)] The I's production of the world goes on unconsciously in its own
+  obscure ground of life, and belongs, so to speak, to its nocturnal sphere;
+  hence the universe comes forward with so imposing a power that the subject
+  takes its own vision of the world for an outward, objective actuality.
+  This popular view, however, is only a dream, which vanishes when
+  philosophical thinking awakens. The transition from the standpoint of
+  representation to the standpoint of philosophy is thus a transition from
+  illusion to truth, from unfreedom to freedom.
+\end{itemize}
+
+\anm{4} Speculative logic has in recent times been founded by Hegel.
+
+\romsec{II.}{The Aim of the Propaedeutic Logic.}
+
+It is thus a matter of fact that besides the so-called thinking of the
+understanding, which finds its immediate application in practical life and
+its higher cultivation in mathematics and the empirical sciences, there is
+yet another kind of thinking, namely the dialectical, which conditions all
+higher knowledge, and therefore has its proper home in speculative
+philosophy. Although both these main directions of thinking have their
+origin in one and the same source, the eternal reason, they nevertheless
+form, for the superficial view, so striking an opposition that it often
+seems as though truth were at strife with itself. This opposition shows
+itself not merely in a divergent terminology, but even in the way in which
+the laws of thought themselves are determined and presented, so that one may
+be very well practised in the thinking of the understanding without yet
+finding oneself able either to follow the course of philosophy or to
+appropriate its results. If, then, the propaedeutic logic is to answer to
+its true destination, if it is to orient us in the whole realm of thinking,
+it must necessarily engage with both of the opposed directions of thought.
+By keeping to formal thinking alone it would evidently give too little; by
+losing itself in the solution of speculative problems it would overstep its
+propaedeutic boundary: it therefore occupies a mediating place between
+formal and speculative logic.
+
+\anm{1} In order to accomplish its task, the propaedeutic logic must give a
+comparative presentation of the formal and the speculative operations of
+thought. If this presentation is to succeed, it must be shown step by step
+how a determinate thought-content, after first being regarded with the eye
+of the understanding, changes its appearance when viewed through the glass
+of dialectic. \emph{The Doctrine of the Subjective Concept}, which
+constitutes the first part of the logic, therefore lets thinking seek its
+points of departure, step by step, in the firmer soil of the sense-world and
+of representation, in order thence to rise into the freer air-current of
+speculative cognition. By this movement from below upward we are everywhere
+led from experience into philosophy, from the circle of thought we call our
+own into that world of reason which reveals the divine Thinker. The exercise
+of thought and the insight into the essence of the concept that are hereby
+won introduce, in the next place, a more methodical development of the
+universal forms and principles of thinking and of existence, which is
+presented in the second part of the logic, i.e.\ \emph{in the Doctrine of
+the Objective Concept}. But just as the first main division constantly
+points forward to a higher development of the concept, so must the latter in
+turn everywhere point back to the concepts' empirical existence, and cast
+light upon the actual world.
+
+\divrule
+
+% ---- First Part, printed pp. 6--96 ----
+% The body head prints "Første Deel:" with a colon (the Indhold has a period);
+% the colon is what p. 6 sets and is mirrored here.
+\deel{First Part:}{The Doctrine of the Subjective Concept.}
+\capitel{First Chapter.}{The Formation of the Subjective Concept.}
+\parag{1}{The General Representation.}
+
+% Danish p. 6 opens flush left with a raised initial "L"; only the absent
+% indent is reproduced.
+\noindent Likeness and unlikeness are the simplest forms in which the objects
+of the surrounding world can be presented to thinking consideration. The
+operation of thought that consists in bringing out and holding fast the like
+in unlike objects is an \emph{abstraction}, and the result to which it leads
+a \emph{general representation}, which may be characterized as a sense-image,
+a thought-image, and the fore-image of the concept.
+
+Although two existing things cannot, in one and the same respect, be both
+like and unlike each other, it is nevertheless impossible to think likeness
+except by the help of unlikeness; the more sharply these categories are
+separated, the more clearly it appears that they pass over into each other:
+their boundary is consequently dialectical.
+
+\anm{1} Several objects that have an essential likeness to one another we
+reduce in language to a single common designation, and thereby show that we
+overlook their accidental unlikeness. With language, abstraction begins at
+once; as the child learns to speak, it learns at the same time to abstract.
+The likeness of objects is observed by a comparison that is at first just as
+immediate as sensation itself, and abstraction proceeds, so far, quite
+unconsciously; but since likeness itself is no sensory object that could be
+removed, by outward separation, from the unlikenesses in which it finds its
+expression, abstraction shows itself to be an ideal act, whereby the subject
+itself takes the universal for the essential and lets the accidental
+modifications go --- hence a beginning act of thinking, which needs only to
+be brought to consciousness in order that thinking proper may begin.
+
+\anm{2} To see an object is, in other words, to form for oneself a
+representation corresponding to determinate sensory impressions. That the
+subject itself forms the representation is evident from the fact that the
+image of the object can be reproduced after the object itself has
+disappeared. By sensing a series of different objects there is developed in
+consciousness a circle of different images and representations; by the
+application of comparison and abstraction a general representation is
+obtained. The general representation is in the beginning quite immediate.
+One represents the universal to oneself by setting up a single object as
+exemplar. Universality thus coincides with the image in which it is
+intuited, and is consequently to be regarded as a \emph{sense-image}. But a
+closer examination shows that every exemplar that is to represent pure
+universality gives us both too much and too little. Besides the universal,
+the exemplar expresses also the peculiarity of a determinate object, and so
+contains too much; on the other side it shows universality only in a
+particular shape, and for that reason gives us too little. The subject, which
+now attempts to form a determinate representation of the universal, obtains
+then only an unsurveyable series of exemplars, each of which, taken by
+itself, is equally adequate and equally inadequate. The consequence is that
+the general representation, encumbered with sensuousness, vanishes like a
+phantom-image, and only the thought of the universal, which is itself a
+thought, remains behind. By passing over into thinking, the general image
+becomes, properly speaking, imageless. Thinking is negative insofar as the
+universal is at the same time the invisible, which cannot be represented or
+held fast in any image. Abstracting thought sets the universal free from all
+sensory admixtures; but when it is further considered that the universal
+never exists for itself, but is abstracted from the existing objects, then
+thinking must in turn annul the abstraction, and the eye of the
+understanding must behold the universal in its single exemplars and
+examples. Free thought hovers unceasingly between the imageless and the
+imaged, whereby the general image is transformed into a
+\emph{thought-image}. Accordingly it encloses \emph{and comprehends} all the
+single objects, and in this sense is to be posited as \emph{the fore-image
+of the concept}.
+
+\anm{3} When the universal is held fast by abstraction, it is called an
+abstractum; when on the contrary it is intuited in a determinate exemplar,
+we have it \textit{in concreto}. Yet the relation between the abstract and
+the concrete is determined otherwise in formal than in speculative logic.
+
+\anm{4} As regards the relation between pure likeness and unlikeness, it is
+in the first place evident that they mutually exclude each other, or, in
+other words, that they bound each other. But this does not settle the
+matter; for every negative bounding of thought must also be converted into a
+positive determination of thought. What is the like? Answer: the like is
+unlike the unlike, and thereby like itself. In this lies that the thought of
+likeness not only falls outside the thought of unlikeness, but also
+coincides with it. He who thinks directly of the like thereby thinks
+indirectly of the unlike. Unlikeness is thus the category whereby likeness
+is determined. The boundary between pure likeness and unlikeness can never
+stand still; hence it is said, in the language of dialectic, that they pass
+over into each other. That this dialectic is not arbitrary is proved by the
+history of philosophy itself. For by making the boundary between the like
+and the unlike immovable and undialectical, the Eleatics could prove that
+all becoming was unthinkable. If becoming is to be thought, they said, then
+it must be either the like that comes from the unlike, or the like that
+arises from the like. In the latter case no becoming can take place, for
+since the like is = the like, there is no transition here; in the former
+case something would have to come to be out of nothing, for in the unlike
+the like cannot be contained at all. The Eleatic abstraction betrays its
+one-sidedness in that it will not let the one concept integrate the other.
+
+\parag{2}{The Clear and Distinct Intuition.}
+
+When the object of thinking consideration shows itself as a \emph{unity} in
+a multiplicity, the subjective activity of thought consists: a) in an
+\emph{analysis} or ideal singling-out, whereby the manifold marks and
+determinations that are to be distinguished with respect to the object are
+set apart from one another; b) in an ideal gathering-together or
+\emph{synthesis}, whereby the singled-out plurality is led back to its
+unity. The result won by this double operation of thought is a \emph{clear
+and distinct intuition}. By virtue of the intuition's clearness, the
+objectual unity is singled out from the infinite multiplicity of existence
+and posited as determinate singleness; by the intuition's being made
+distinct, the single object is itself determined by a multiplicity of single
+features, which are comprised within its own unity. Without an analysis and
+synthesis, albeit an unconscious one, no determinate sensation or experience
+is possible; but the analytic and synthetic activity of thinking is from the
+beginning so wholly lost in sensation that the clear and distinct intuition
+itself bears the immediate stamp of sensuousness. Nevertheless the concept
+is here too present as fore-image; for analysis and synthesis cannot be
+applied except to relations; but a relation is itself no sensory object.
+
+When the immediate categories of relation --- unity and multiplicity --- are
+themselves made the object of a thinking inquiry, a dialectical problem
+arises.
+
+\anm{1} Insofar as the universal is the common form in whose likeness the
+mutual unlikeness of the single exemplars vanishes, it shows itself as the
+unity under which the objects can be subsumed; insofar as it also finds its
+concrete expression in each exemplar by itself, its likeness is itself
+further determined by unlikeness, maintains itself in a repetition, and
+passes over into plurality. Hence also most \textit{nomina apellativa} have
+% "apellativa" with a single p is what the Danish page sets; carried as
+% transcribed, per the transcription's note.
+both a singular and a plural.
+
+\anm{2} When that which is apprehended refers not to the sense of sight but
+to that of hearing, there can indeed be no talk of intuition, but there can
+always be talk of a clear and distinct apprehension.
+
+\anm{3} When one speaks of an eye of the understanding, or of a
+thought-vision, these expressions must not be understood merely figuratively;
+for the transition from sensation to thinking cannot take place by a leap.
+As a thinking lies at the ground of all sensation, so an ideal sensing also
+lies at the ground of free thinking; as there is a sensory intuition, so
+there is also an intellectual intuition, and just as one may speak of a
+physical blindness, one may also speak of a mental blindness. But when it is
+now to be stated with determinateness what that ideal is toward which
+thought's gaze turns, there at once arises the difficulty that thought never
+dwells upon anything that can be set out and pointed to as a determinate
+example or a resting shape. While sense settles down to rest with a bounded
+object, thought is on the contrary in eternal unrest, and oversteps every
+boundary. As the sensing eye dwells on the one thing, it has at the same
+time turned itself away from the other; when thought, on the contrary, is to
+hold fast one determination, it always takes another to its aid. Hence the
+clear thought-vision is properly a double vision: a \emph{regard}
+(\textit{Hensyn}). What the \emph{regard} is from the subjective point of
+view, the \emph{relation} is from the objective; therefore thinking always
+aims at finding the determinate relations. In consequence, analysis and
+synthesis acquire a quite different significance for intellectual than for
+sensory intuition. For sense, the intuition is clear when the object in its
+pure singleness comes forward with determinate outlines; but thinking does
+not forget that the singled-out object is itself one among several, that its
+singleness can therefore be determined only with regard to other single
+things, and that it must accordingly be posited as a \emph{separate} object.
+From the sensory side, the intuition is made distinct when the plurality
+contained in the object's unity comes forward as a sum of single features;
+for thought, on the contrary, the intuition can be made distinct only by the
+given single features being determined with regard to one another, and
+posited as members of separate relations.
+
+\anm{4} The relation of unity to plurality is determined by merely
+representational thinking thus: that something which in one respect can be
+regarded as a plurality can in another respect be posited as a unity; but
+dialectical thinking is not content with so external a joining of opposed
+regards; it asks whether unity, when clearly and distinctly thought through,
+does not itself determine itself as a plurality. In Plato's dialogue, the
+Parmenides, Socrates has hit upon the problem, which he propounds roughly
+thus: That I, Socrates, am in one respect a unity, in another respect a
+multiplicity, is not so wonderful; but if anyone could prove to me that ἕν
+was πολλὰ and πολλὰ ἕν, then I should marvel greatly (ἀγαίμην ἂν θαυμαστως,
+ὦ Ζήνων). The Eleatics (Zeno) demonstrated the contradiction that lies in
+the category of plurality. ``If it is assumed that several things exist,
+then their number must be both determinate and indeterminate. The things
+must be thought to make up a determinate number, for they must be just as
+many as they are (neither more nor fewer); but on the other side their
+number must also be thought to be indeterminate; for between the separated
+things there are yet other things, and outside the number of determinate
+things again a number of determinate things; consequently the number of
+things becomes infinite, indeterminable, and thereby in itself
+indeterminate. Since it is now a contradiction to think the number of things
+both as determinate and as indeterminate, plurality is assumed to be
+unthinkable.'' The truth in this is that abstract analysis can go on to
+infinity: every plurality consists of unities, each of these unities is
+again to be thought as a plurality with its unities, and so forth. Abstract
+synthesis likewise goes on to infinity; for the unity in which a plurality
+is gathered is again a member in a series of several similar unities; if
+these are now bound together by a new synthesis, we have once more a unity
+in a new series, and so on. In this respect we must therefore grant the
+Eleatics their point when they maintain that the number of things will
+become infinite if a plurality is assumed at all. But the thought of such an
+infinity stands in no insoluble contradiction with the proposition that the
+number must also be determinate. For when synthesis is everywhere joined
+with analysis, every unity becomes determined by \emph{its} plurality, and
+the number of things in consequence \emph{infinitely determinate}.
+
+\anm{5} If the relation between unity and plurality is considered purely
+quantitatively, unity is posited as continuity, plurality as discreteness.
+Every line represents such a continuity, whose discreteness is again to be
+sought in the line's innumerable points.
+
+\parag{3}{Insight, or the Subjective Concept.}
+
+If an existing object is also to be an object for a comprehending thinking,
+its content must let itself be apprehended in the form of \emph{wholeness
+and parts}. As the whole and its parts are seen mutually to condition and
+determine each other, questions are thereby called forth about
+presupposition and consequence, about ground and consequent, and thinking,
+which now renders to itself an account of the whole complex of determinate
+relations, shows itself as a \emph{reflection}, whereby the subject comes to
+a \emph{concept of the thing}, or to an \emph{insight} into the essence and
+character of things.
+
+The contradiction that lies in the concept of totality itself was brought
+forward early by the Greek philosophers, just as it also plays an important
+role throughout the whole history of philosophy, especially with respect to
+the question of the infinite divisibility of matter. As a contradiction
+between the simple and the composite it was reduced by Kant to an antinomy,
+which in turn found its dialectical resolution in the Hegelian logic.
+
+\anm{1} When unity is posited as wholeness, it is thereby expressed that it
+embraces a multiplicity of single elements, which make up its parts. For
+sensory consideration the whole shows itself merely as the aggregate of the
+parts; for intellectual apprehension, on the contrary, the whole is to be
+determined as the \emph{general} connection of the parts, and the parts as
+members in the whole's \emph{separate} connection. When the whole is given
+as presupposition, the character and mutual relation of the parts follow
+with necessary consequence. Hence it is said in Professor \emph{Sibbern's}
+explicative logic that by cognizing the whole's \emph{mode of existence} one
+comes to see into the parts' \emph{ground of existence} (\textit{ratio
+essendi}). For when something is posited directly in such wise that
+something else is thereby posited indirectly, the former is called the
+ground, the latter the consequent; therefore the ground is always the
+primitive member of the relation, and the consequent its consecutive member.
+
+\anm{2} From the determinate relation between wholeness and parts it is
+evident that the true thought-vision is a double vision. As the whole is
+seen immediately, the parts come mediately into view, and conversely. The
+parts and the whole mirror or reflect one another; hence free,
+self-conscious thinking has also received the name of \emph{reflection}.
+
+\begin{itemize}
+\item[a)] The word reflection is no doubt borrowed proximately from optics;
+  but the natural light is also a copy of the light of thought. There is the
+  same relation between thinking's opposed members as between ``two mirrors,
+  of which the one reflects the other's image, and in this reflection
+  reflects its own'' (cfr. Professor Heiberg: Grundtræk til Philosophiens
+  Philosophie, Pg.\ 34).
+\item[b)] Reflection is also the expression for the \emph{deliberating and
+  testing} thinking. This signification of the word is derived from the
+  foregoing. Only when the one thought is seen in the light of the other
+  does it become evident how far they can subsist with each other or not.
+\item[c)] Finally, reflection can also designate the \emph{reasoning and
+  grounding} thinking; for when two thoughts strive against each other, it
+  becomes a question which of them the subject is to give up, and which to
+  hold fast; this can be decided only by a determinate regard, or by a
+  presupposition that contains the determining ground. The thought of man's
+  freedom, for example, cannot be reconciled with the thought of an
+  inescapable fate: the thinking subject must now hold fast either freedom
+  or fate; if regard is had to conscience and imputability, then the thought
+  of an irresistible fate must be given up; if, on the contrary, regard is
+  had merely to a mechanical necessity of nature, the thought of freedom
+  must vanish. Which regard the subject will take in a given case may in
+  turn depend upon other regards, and so on to infinity. Since every regard
+  contains a partial ground, the thinking that is lost in external regards
+  leads to a reasoning of grounds. Insofar as the actual surrounding world
+  shows us things in their many different combinations and entanglements,
+  reasoning thought becomes necessary in all empirical inquiries. But
+  reasoning thought is nevertheless of finite nature; if it attempts to tear
+  itself loose from given experience, it must end by adducing grounds
+  \textit{pro} and \textit{contra}, without ever reaching the highest and
+  last ground. Only when all outer regards vanish in one fundamental view
+  does reflecting thought take on a philosophical character, and find the
+  infinite presupposition from which all finite relations can be deduced.
+  From the standpoint of finitude, thinking is thorough when it apprehends
+  the matter in its many different relations, the remoter as well as the
+  nearer; from the standpoint of infinity it is thorough only when it seeks
+  and finds the absolute ground. As it is a philosophical affectation to
+  want to apply the infinite forms of dialectic to the finite content of
+  everyday life, or to disdain a reasoning of grounds where what is in
+  question is an understanding critique or an orientation in practical
+  affairs, so on the other hand it betrays a scientific narrowness to want
+  to make one's way through with a merely reasoning thinking when what is at
+  stake is a cognition of the eternal truths.
+\end{itemize}
+
+\anm{3} The result of reflection carried through is \emph{the concept}, as
+such, or the proper thought-result. The concept is thus a thought-whole, or
+a fundamental thought, that lets itself appear in a multiplicity of separate
+thought-determinations and their mutual connection. If it is now asked where
+the concept exists, it may in the first place be said to have its existence
+in the thinking subject's consciousness. The subject sees the object in its
+different relations, abstracts from it the determinate relations, sunders
+(analysis) and unites (synthesis) the partial thoughts in their fundamental
+thought (reflection), and is therefore said to form for itself a
+\emph{concept of the thing}. But insofar as it is the existing object from
+which the subjective concept is abstracted, one can also speak of the
+object's own concept, or of the thought-whole expressed in the object. The
+difference between the object and its concept is, properly speaking, a
+difference between its intellectual and its sensory side, which is more
+closely to be determined as an opposition between the thing's \emph{inner}
+and its \emph{outer}. The outer is for sense, the inner for thought; hence
+the subjective \emph{concept of the thing} is also said to be an
+\emph{insight into the thing} (ἐπιστήμη --- νοητόν).
+
+\anm{4} In order to form a concept of those phenomena that come into view
+piecemeal, without the whole being immediately surveyable, it often becomes
+necessary to imagine for oneself an intellectual whole, or to set up a
+\emph{hypothesis}. The cognition to which the hypothesis leads is, however,
+only finite and relative. Thought hovers between experience and reflection.
+In empirical respect the hypothesis is insufficient; for the parts (the
+outer) \emph{condition} but do not \emph{ground} the whole (the inner), and
+in intellectual respect the insight rests upon a reasoning of grounds that
+lacks the sufficient ground. The hypothesis therefore yields only a
+probability, which must be raised to certainty either by a new experience,
+which then introduces a new inquiry of thought, or by a deeper insight into
+the connection's essential ground (the Copernican hypothesis, Newton). What
+the hypothesis is in relation to the whole, \emph{the conjecture} is in
+relation to a single member missing in the whole. (Jfr.\ Sibberns Logik
+\S\,23.)
+
+\anm{5} Representational thinking determines the relation between the whole
+and the parts thus: the whole is posited = the sum of the parts, but greater
+than any of its single parts. This way of seeing has its full validity so
+long as only finite magnitudes are in question; but it is wholly
+insufficient as soon as the inquiries are carried over into the territory of
+infinity. The spiritualists (Berkeley), who denied the being of matter,
+appealed to the contradiction that lies in the thought of an infinite
+divisibility. Matter, according to their contention, cannot exist at all;
+for since it is thought to consist of infinitely many infinitely small
+parts, every part must become = the whole. Suppose, for example,
+\textit{a} (the part) $<$ \textit{A} (the whole); by multiplying by $\infty$
+on both sides one obtains $\infty$ \textit{a} = $\infty$ \textit{A}, and by
+again dividing both factors by the same magnitude, namely $\infty$, there
+results: \textit{a} = \textit{A}. The mathematicians' objection, that such
+an operation is absurd, cannot refute the spiritualists' theory, for it
+rests precisely upon the admitted absurdity. Equally insufficient is the
+common remark that in the infinite itself no boundary can be set, and that
+greatness and smallness must therefore flow together in the fog of infinity;
+for the task is precisely to let the light of thought disperse this fog, or,
+in other words, to cognize how the finite and the infinite mutually
+determine each other. --- Still more determinately did the problem come
+forward in the Kantian critique of reason, where it was reduced to an
+antinomy lying in the concept of substance:
+
+\emph{Thesis: Every composite substance must consist of simple parts.} If
+not, then every part would in turn be composite, and the resolution of the
+composition would have to be continued until at last the substance came to
+consist of nothing.
+
+\emph{Antithesis: There exists no simple substance.} For no composition is
+possible except in space; now if there were a substance consisting of
+simple parts, then space itself would have to consist of indivisible parts;
+but space can be divided to infinity.
+
+The truth in the Kantian antinomy is, as Hegel has also shown, this: that
+the thought of a whole always carries with it the thought of parts. When a
+certain determinate part is separated from its whole, it is itself posited
+as a whole. The same thing that from one point of view must be regarded as a
+whole must from another point of view be determined as a part; the relation
+turns itself about unceasingly, and every finite boundary is annulled. But
+each time a determinate whole is posited, it enters into a determinate
+opposition to its parts, so that the finite side of the boundary also comes
+into view. Everything then depends solely upon the relation itself being
+more closely determined. The relation between wholeness and parts has a
+certain likeness to the relation between unity and plurality, continuity and
+discreteness; nevertheless an essential difference is here to be observed.
+For when continuity is posited, discreteness has vanished; and when
+discreteness is posited, continuity is broken off. Continuity and
+discreteness can be exchanged with each other to infinity, but they do not,
+properly speaking, reflect each other. This, on the contrary, is the case
+with the whole and the parts; when the whole is posited, the parts are
+posited too, and conversely. Hence this relation is called a \emph{relation
+of reflection} or an \emph{essential relation}.
+
+\anm{6} At its lowest stage, wholeness is a mechanical compositum, which
+shows us the relation from its finite side. On a higher stage stands the
+organic whole; hence there is also said to be an infinite relation between
+life and organism. In its highest development, wholeness is raised to a free
+totality, a reflected \emph{singleness}, in which the concept coincides
+entirely with its object. Thus the whole I is present in each of its
+self-conscious expressions of life, and yet it is a singleness that cannot
+be divided. As sensation \emph{begins} immediately with the single, so
+thinking \emph{ends} with the reflected singleness.
+
+\parag{4}{The Apriority of the Concept.}
+
+Although the subjective concept in its original development is conditioned
+by experience, it nevertheless reflects its own essential determinations
+with such independence and consistency (concept-analysis) that it can by no
+means be a product or empty reflection of experience. Just as little can the
+world of experience be regarded as a product of the subjective I, although
+all experience is conditioned by a priori thinking. Hence formal logic also
+makes a distinction between \emph{a priori and a posteriori concepts}. The a
+priori concepts do not belong merely to the thinking subject, as though they
+formed an impassable gulf between subjective cognition and objective truth,
+but express those \emph{general} fundamental forms which do not presuppose
+special experience, inasmuch as they everywhere find their application to
+the existing objects and their different relations. On the other side, the a
+posteriori concepts, which are abstracted from the objects met with in
+experience, must not be thought to stand indifferent to the subjective laws
+of thought, for thereby they would cease to be true concepts; they are much
+rather to be regarded as the \emph{separate} forms in which a priori
+thinking recognizes its own peculiar content (normal-concepts).
+
+The infinite interaction between subjective thinking and objective reason
+presupposes a creative freedom, as the absolute prius, from which all
+thinking and being have their common origin.
+
+\anm{1} Professor Sibbern, in his explicative logic (2nd edition Pag.\
+190--200), has distinguished between the \emph{pursuing}, the
+\emph{general}, and the \emph{pure concept-analysis}. The \emph{pursuing}
+analysis carries the concept-determinations found in the object out beyond
+the empirical boundary, by making distinct the consequences lying within
+them. The \emph{general} concept-analysis finds the concept in the living
+word, separates the word's original meaning from the derived, shows its
+kinship with other words (synonymics), thereby discovers the essential
+requisites of the concept sought, and is thus able not merely to determine
+but even to correct linguistic usage. The \emph{pure} concept-analysis makes
+distinct thinking's own categories, and plays a chief role in the objective
+logic. In all these kinds of concept-analysis it appears that thinking goes
+out beyond the given, so that the sensualists are wrong in denying its
+independence.
+
+\anm{2} The critical idealism, which indeed concedes to thinking a
+subjective apriority, but denies its power to cognize objective truth, and
+in proof of this appeals to the antinomies, finds its refutation in the
+dialectical resolution of these antinomies. On the other hand the subjective
+idealism, which refers the whole objective world-content to the I's infinite
+apriority, cannot be refuted by the fact that the development of thinking is
+conditioned by experience, since it is not the world of experience's
+necessity but its independence that it denies.
+
+\anm{3} The Cartesian principle: \textit{Cogito, ergo sum}, has found its
+consistent development in the Fichtean ``Wissenschaftslehre.'' The absolute
+subject, I, can doubt everything, only not its own thinking and being. The
+proposition: I \emph{think}, falls immediately together with the
+proposition: I \emph{am}. The subject cannot think without \emph{being}
+thinking, and though it should doubt the validity of all single thoughts, it
+still cannot by any doubt whatever annul the certainty of thinking in
+general, since in order to doubt all thinking it must necessarily think, and
+consequently rely upon thinking in the same instant in which it doubts
+thinking's validity. Whatever does not have this incontestable certainty
+must fall outside science proper. Since science cannot be an aggregate of
+loose representations, since one fundamental truth must run through all
+single truths, all scientific propositions must also let themselves be led
+back to one irrefragable first principle, and from this in turn be deduced.
+If now the I has found this general first principle in its own thinking and
+being, then it has at the same time found the source of truth in itself, and
+philosophy, the pure science, would then according to this theory be in a
+position to comprehend the whole of existence in virtue of the supreme first
+principle, or, in other words, to construct its world \textit{a priori}. The
+truth in this is that scientific thinking can acknowledge nothing but what
+the consistency of thought carries with it, and that the necessity with
+which truth compels from the thinking subject its acknowledgment is the
+purest touchstone of the certain and the uncertain. But the subjective
+idealism's constructing \textit{a priori} carries with it nonetheless a
+one-sidedness that shows itself in several ways (Jacobi's
+knitting-stocking). The subject, which always has its gaze turned toward the
+formal I-hood, loses sight of the actual world and its concrete content.
+Either philosophical knowledge must then be restricted to a small number of
+abstract truths, or else the philosopher who undertakes to construct nature
+and history \textit{a priori} will easily be convicted of having
+insinuated empirical presuppositions contrary to the principle set up.
+Unsuccessful attempts to construct \textit{a priori} what can be cognized
+only in experience's a posteriori medium have contributed above all else to
+bringing philosophy into discredit.
+
+\anm{4} The distinction between a priori and a posteriori concepts refers,
+according to formal logic, to their source or origin. The simplest form in
+which such a distinction can be held fast is this, that the a priori
+concepts are said to be \emph{prior to} the things to which they are
+\emph{applied}; the a posteriori, on the contrary, to follow \emph{after the
+things} from which they are \emph{abstracted}, so that the former have their
+origin from thinking itself, the latter from experience. But more closely
+considered, this opposition cannot maintain itself. It has already appeared
+that the concept of a thing is not to be sought in its accidental outer, but
+in its inner, i.e.\ in its intelligible essentiality. That thinking
+abstracts its empirical concepts from the objects means then, in other
+words, that in their determinate essence it recognizes its own original
+essentiality. Experience is thus no proper source of concepts, but only the
+means whereby the subject's general thinking is enriched with a
+thought-content concrete and distinctly stamped in itself. The concept,
+which with respect to our apprehension may be a posteriori, insofar as a
+special experience has gone before, is yet with respect to the object itself
+a priori, since a thing's inner and outer always stand related as the
+primitive (\textit{dignitate prius}) to the consecutive (\textit{dignitate
+posterius}). The a priori interaction between the thing's concept and our
+comprehending thinking comes into view in the development of the so-called
+\emph{normal-concepts} (jfr.\ Sibbern \S\,47). The normal-concept begins
+\textit{a posteriori}, insofar as its general ground-lines are first
+discovered in an empirically given object; but it shows itself at the same
+time from an a priori side, insofar as it at once becomes evident that the
+actual object does not answer to its demands. This disproportion then leads
+the subject, thinking through the concept's consequences, to imagine or
+construct for itself an object so perfect that the intimated concept finds
+therein its adequate expression. The fruitful application that can in
+actuality be made of such normative concepts (for example in
+crystallography) proves clearly that thorough thinking has found the
+original meaning of things, or, what is the same, that the a priori demands
+that guide the thinker also govern actuality. All so-called a posteriori
+concepts, when they are not confused with mere representations or sensory
+intuitions, are properly to be regarded as special appearances of the
+universal reason, whose apriority is as objective as it is subjective. With
+respect to the method of our comprehension, on the other hand, the
+distinction between a priori and a posteriori concepts may so far have its
+significance, as it reminds the thinking subject of its finitude and
+intellectual limitation. Insofar as the concrete concepts are won \textit{a
+posteriori}, experience must go hand in hand with comprehending thinking;
+insofar as the a posteriori concepts are the a priori thinking's own types,
+experience's sporadic content must be purified in the pure, universal
+dialectic. From the a posteriori side all our cognition is piecemeal, and
+our thinking discursive; according to comprehension's apriority the
+piecemeal must in turn be annulled in the scientific ground-cognition. As
+there must accordingly be empirical sciences, which rest upon the a
+posteriori and follow their own independent method, so there must
+necessarily also be a science of the sciences, namely philosophy, which,
+according to its peculiar method, aims at cognizing truth in its apriority.
+The concrete carrying-through of philosophy is won only through experience,
+and the light that clears up experience streams forth in turn from
+philosophy.
+
+\anm{5} The question of the subjective concept's relation to empirical
+actuality transforms itself, in the highest instance, into a problem
+concerning the relation between \emph{thinking and being}. According to the
+subjective idealism, real being perishes in formal thinking; according to
+the crass empiricism (sensualism), free thinking goes to ground in
+contingent being. Since now each of these theories has shown itself in its
+one-sidedness; since subjective thinking cannot produce the fullness of
+existence, and objective existence can only be thought, because it is
+everywhere subject to the laws of thought, but cannot itself think, since it
+lacks subjective freedom: the finite opposition between thinking and being
+must be led back to its original ground-unity. In this primal ground, or
+original ground, the opposition loses its finitude; for thinking coincides
+at every point with being, and both are so far equally infinite. But on the
+other side this infinite unity cannot be without difference either. If
+thinking and being were in their deepest ground tautological, then the
+finite separation, which is precisely what is to be explained from the
+ground, would be without any ground. The result is accordingly this, that
+the finite, \emph{consecutive} opposition between thinking and being seeks
+its sufficient, \emph{primitive} ground in their infinite, absolute
+opposition, i.e.\ in that concept in which their separation is as infinite
+as their union, so that their outer difference is transformed into an inner,
+\emph{living} unity. The absolute Being, which by virtue of its free
+thinking produces the actual existence, reveals at the same time the reality
+of its own existence in the product of its creative freedom. At this
+turning-point the \emph{logical} passes over into the \emph{theological}.
+Anselm's ontological proof of God's existence is a logical presentation of
+the absolute concept's infinite apriority. The objections that at different
+times (Gaunilo---Kant) have been brought against this proof strike not the
+substance but the form. For the proof's adequate form can properly be
+carried through only in ontology, or the objective logic.
+
+\parag{5}{The Totality of the Concept.}
+
+The complex of all determinations belonging to a concept makes up its inner
+totality or \emph{content}; the number of the existing objects in which the
+concept finds its expression determines its outer totality or
+\emph{extension}. With respect to content and extension, concepts have been
+divided in formal logic into \emph{higher} (\textit{conceptus superiores})
+and \emph{lower} (\textit{conceptus inferiores}), such that the former,
+which have less content but greater extension, comprise the latter under
+themselves. Since this division applies especially to the natural relation
+between genus (\textit{genus}) and species (\textit{species}), the
+superordinate concepts have also generally been called
+\emph{genus-concepts}, the subordinate \emph{species-concepts}.
+
+The dialectical relation between the concept's inner and outer totality led
+the Schoolmen of the Middle Ages to a metaphysical inquiry concerning the
+universality of concepts (\textit{universalia}) and the singleness of things
+(\textit{res, ens, entitas, hæcceitas}). The nominalists
+(\textit{universalia post rem}) misjudged the concept's essential apriority;
+the one-sided realists (\textit{universalia ante rem}) overlooked the
+\textit{principium individuationis}. The true realism (\textit{universalia
+in re}) is at the same time the highest idealism (\textit{universalia in
+mente divina}). The divine thinking, which reflects the absolute concept, is
+one with the creative omnipotence, which brings forth that actuality in
+which the concept's inner totality is sundered and transformed into an outer
+totality of relative concepts, whose existence is posited in and \emph{with}
+the existing things.
+
+\anm{1} The actual concept is a thought-whole that finds its expression in a
+corresponding sensory whole; it is an inner that comes forward in its outer.
+If now the relation between the inner and the outer is to be more closely
+determined, these principal sides again step apart from each other as
+separate totalities. The outer, which is sensed but not thought, is
+indifferent to the inner, which is thought but not sensed; a thing's
+empirical or palpable outward can never be derived from its concept: the
+intellectual and the sensibly real are so far to be regarded as
+incommensurable magnitudes. But on the other side the concept cannot step
+out into actuality without presupposing a stuff or material in which it is
+realized and comes into view: every outer must answer to \emph{its} inner,
+and the object's empirical totality satisfy the concept's demands. If the
+surrounding world is regarded with a sensory eye, it is wholly without
+concept; if on the contrary it is regarded with the eye of thought, the
+concept comes into view in the most various forms. The inadequate relation
+between concept and actuality makes itself known not merely in the
+normal-concepts being hindered in their full emergence (for example, the
+perturbations of the planets; the human organism's want of perfect health),
+but shows itself especially in this, that the concept's content, owing to
+the outer separation of finite things, falls out of itself into so sporadic
+a multiplicity of partial concepts that subjective reflection is not able to
+discover their concrete connection. Instead of reducing the partial concepts
+to moments in the absolute concept's inner totality, subjective thinking
+sets about grouping them according to the various more abstract or more
+concrete fundamental forms, and thereby making distinct to itself the
+concept's outer totality. The \emph{insight} into a concept's essential
+determinations (content) is laid at the ground of a \emph{survey} of the
+number of the objects that are subsumed under it (extension). It lies then
+in the nature of the case that content and extension stand in inverse
+relation.
+
+\anm{2} If the concepts are compared among themselves with respect to
+extension, the higher concept cannot be said to contain the lower within
+itself, just as little as it exhausts all the intellectual determinations of
+the single thing. The higher and the lower concepts then separate from one
+another, owing to the objects' outer existence, in such wise that the
+former, as the more abstract, are indifferent to the latter; they stand to
+one another as wider and narrower schemata, so that the whole comprehending
+is reduced to a mere schematizing.
+
+% The Sibbern quotation below CLOSES with '' but has no opening quote anywhere
+% — a printer's defect on Danish p. 29, deliberately mirrored from the
+% transcription (see its note at that site).
+There are cases in which subjective thinking is not able to derive all the
+object's special concept-determinations from one fundamental determination,
+but must seek different points of departure for its consideration, and
+content itself with a combination of several concurrent concepts, each of
+which belongs to a different sphere. Thus Prof.\ Sibbern adduces (\S\,42)
+that the intellectual penetration into the nature and essence of the
+crystallization-forms of a mineral has its own point of support in the
+mathematical consideration, whereas its investigation in respect of lustre,
+color, and so on has quite another.'' Insofar as a fundamental concept's
+modifications arise from outer concurrences and empirically determined
+circumstances, they can be overlooked as unessential and indifferent; but
+what is thus in one respect unessential is, from another point of view,
+under the presupposition of another fundamental concept, to be regarded as
+essential, and the various regards and combinations that the empirical
+pursuit of thought requires do not concern logic as such.
+
+If on the contrary the concepts' own relations are developed, it appears
+that the higher concepts always have their specific content-determinations
+in the lower. This is already expressed when the superordinate concepts are
+determined as genus-concepts (γένη), the subordinate as species-concepts
+(εἴδη); for here it holds that every genus must contain its species. Life,
+regarded as genus-concept, requires not merely a plant-world and an
+animal-world, but also a human world for its complete expression. Organic
+nature presents this in such wise that the lower potencies of life, which
+win a sporadic existence in separate groups of individuals, whose genera and
+species are in turn relative concept-determinations, make up the basis upon
+which a higher potency of life develops itself. Thus man has the vegetative
+and animal life as basis for the rational. The partial appearances in which
+the concept of life is sundered and realized on the lower stages are
+gathered up and taken in as moments in the higher totality of human life.
+The proposition that man shall comprehend his life rests in the
+presupposition that the concept of life shall be realized in man.
+
+\anm{3} When it is said that the concept, as such, is \emph{the universal},
+this proposition acquires an entirely different meaning according as
+subjective thinking comes to cognition of the universal by an
+\emph{abstraction} or by a \emph{reduction}. If the universal is held fast
+by abstraction, then the highest concept is reduced to an empty schema, an
+intellectual side, a common mark, which serves the reflection that orients
+itself in the outer multiplicity of things as a mere \textit{ratio
+cognoscendi}. But when the universal is cognized in its true universality,
+it is not merely a side of everything, but the essential allness itself, the
+universal that penetrates everything, actualizes itself in everything, so
+that all single thoughts, all existing things, must let themselves be
+reduced to moments in its concrete content. In this sense the general
+concept is apprehended as the absolute concept, as the ground-unity that
+contains the \textit{ratio essendi} of all separate concepts.
+
+When it is further said that the concept is the \emph{separate}, it is
+thereby expressed that multiplicity, difference and opposition belong to its
+intellectual essentiality, that the specific peculiarities and changing
+modifications (διαφορὰ, ἴδιον, συμβεβηκὸς) whereby things separate
+themselves from one another fall under thinking's point of view. Yet in this
+respect too it makes an essential difference whether the subject comes to
+cognition of separateness by mere \emph{comparison} or by an immanent
+\emph{deduction}. For the outer comparison the separate concepts fall apart
+from one another, so that their existence must be sought in the sporadic
+groups of objects, and \emph{combination} unites them according to various
+regards. Universality is here again the empty schema. Deduction, on the
+contrary, presupposes the fundamental concept's concrete universality, from
+which all separate concepts and concept-moments are derived. According to
+outer comparison there is an innumerable host of partial concepts; according
+to deduction the general concept is itself sundered into its separate
+determinations, and thereby completed in a \emph{logical concept-system}.
+The more comprehensive the deduction is, the more it can make mere
+comparison and combination superfluous, the higher lies the concept's
+sphere, and the deeper is the insight.
+
+When it is finally said that the concept itself is the \emph{single}, a
+distinction must be made between the \emph{sensory} and the
+\emph{intellectual}, between the \emph{immediate} and the \emph{reflected}
+singleness. That the sensory singleness (that is to say here, the object in
+its merely empirical wholeness) does not as such concern the concept has
+already been shown in the foregoing, and becomes still more evident when we
+determine more closely the relation between the species-concept and its
+individuals. In relation to the genus, the species-concept is posited as a
+\emph{separate} concept, in which the genus-concept's general content is
+specified; in relation to its individuals, the species-concept must on the
+contrary be developed into a single concept specified within itself, which
+as such is indifferent to the sensory singleness. The distinction Porphyry
+(in his introduction to the Aristotelian categories) has made between γένος,
+εἶδος, ἰδιον on the one side and διαφορὰ, συμβεβηκὸς on the other --- that
+the former, namely, are used of a thing's ``Qvidität'' (ἐν τῷ τί ἐστι
+κατεγορεῖται), the latter of its ``Qvalitet'' (ἐν τῷ ὁποῖόν τί ἐστι κατ.)
+--- is a merely empirical distinction, which falls away when comprehending
+thinking is carried through. The peculiar (τὸ ἴδιον) is just as much a
+qualitative as a ``quidditative'' determination, and the intellectual
+difference (ἡ διαφορὰ) is itself the moment whereby the transition is made
+from the genus-concept to its species-concept. The specification therefore
+cannot stop before the species-concept is absolutely individualized; but
+such a \textit{species infima} is a single concept that maintains itself in
+the changing exemplars, insofar as these are apprehended merely from the
+sensory side. --- Since now the genus-concept is always foundation for the
+species-concept, and this in turn is specified until the rational
+individuation is completed, the universal (the genus) and the separate (the
+species) merge into the concept's intellectual singleness (the logical
+individual).
+
+The universal, the separate and the single concept are then, in consequence,
+not to be regarded as three sorts of concepts, since they much rather
+present the concept reflected in absolute thinking from three principal
+sides; but just as little is their distinction an empty, formal one; for in
+finite existence they fall apart from one another under innumerable
+modifications and relations, and shape themselves into a world of real
+concepts.
+
+\anm{4} Since the actual world presents itself at once both as an infinite
+complex of empirical objects, in which the concept is lost, and at the same
+time as an intellectual world, i.e.\ as a world of concepts, in which the
+sensory things vanish as indifferent magnitudes: there arises the
+metaphysical problem whether the reality of concepts is primarily to be
+sought in things, or the reality of things in concepts. While Plato declared
+himself especially for the latter, Aristotle on the contrary approached the
+former of these views, and Porphyry (Ειςαγωγη: first section) puts the
+% The defective Greek title (no breathing, no accent, final sigma set
+% medially) is as the Danish page prints it; copied verbatim from the
+% transcription, per its note.
+problem in the following terms: αὐτίκα περὶ γενων τε καὶ εἰδῶν, τὸ μὲν εἴτε
+ὑφέστηκεν, εἴτε καὶ ἐν μόναις ψιλαῖς ἐπινοίαις κεῖται, εἴτε καὶ ὑφεστηκότα
+σώματά ἐστιν, ἢ ἀσώματα, καὶ πότερον χωριστὰ, ἢ ἐν τοῖς αἰσθητοῖς, καὶ περὶ
+ταύτα ὑφεστῶτα, παραιτήσομαι λέγειν, βαθυτάτης οὔσης τῆς τοιαύτης
+πραγματείας. Through the whole Middle Ages philosophy proper was occupied
+almost exclusively with the solution of this problem. The crass nominalism
+confused the concept's existence with the sensory singleness, negated the
+reality of concepts, and posited them as empty schemata (\textit{nomina,
+flatus vocis}). The one-sided realism went to the opposite extreme, annulled
+the intellectual singleness, in that it wanted to negate the independence of
+the sensory things, and placed reality in the general fundamental forms and
+unchangeable types. The one-sidedness of both theories was demonstrated by
+Abelard. The fundamental thought in Abelard's demonstration is this, that
+neither party is able to give any true definition of the essence of a thing.
+The nominalists could not define, because they held fast the single without
+acknowledging the universal. For since definition rests upon an essential
+difference between \textit{genus} and \textit{species}, every nominalist
+definition that denies this difference must be wholly indifferent. If the
+concept \textit{animal} is a mere \textit{nomen}, then the concept
+\textit{animal rationale} is also only a \textit{nomen}, and the difference
+between beast and man consequently purely nominal. Just as little could the
+one-sided realists arrive at any true definition; for since they overlooked
+singleness, they had to confine themselves in every proposition to
+predicating the universal of the universal, whereby the concept's
+determinateness was wholly lost. If the man in Socrates, for example, were
+also man in all other individuals, then it would follow that the whole of
+mankind must be sick every time Socrates was sick. These extremes the
+medieval philosophers, with all their reasoning acumen, could not reconcile.
+As realism developed itself to an acknowledgment of individuation, it had to
+seek the concepts' existence in things, and thus came to set up the theory
+of \textit{universalia in re}. But when the existence of concepts and of
+things immediately coincides, thinking must again begin with singleness, and
+abstract the concept from the thing. The concept in its intellectual purity
+thus has validity only for abstracting and reflecting thought. The doctrine
+of \textit{universalia in re} led in this way to the doctrine of
+\textit{universalia in mente nostra}, whereby the developed realism passed
+over into a higher nominalism. The true yield of the Schoolmen's inquiries
+is the recognition that the concept's all-sided existence requires an
+intellectual as well as a sensuous medium. With intellectual freedom the
+concept exists only in comprehending thought (\textit{in mente}); with
+immediate actuality it first comes forward in its sensory material
+(\textit{in re}). But if its reflected being \textit{in mente} is now to let
+itself be reconciled with its immediate existence \textit{in re}, then both
+these extremes must seek their original ground in the divine thinking, which
+is one with the creative productivity. The theory of the empirical realism,
+that the concept exists \textit{in re}, must then be raised to the truth
+that it is actualized by the comprehending omnipotence, which is the free
+cause of things; and the nominalist proposition, that \textit{universalia}
+exist merely \textit{in mente nostra}, subordinated to that proposition
+which is idealism's highest expression: that they exist \textit{in mente
+divina}. Thus the subjective logic points once more to the objective.
+
+\secrule
+
+\capitel{Second Chapter.}{The Presentation of the Subjective Concept: the Logical Judgment.}
+\parag{6}{The Logical Form of the Judgment.}
+
+Language is the intellectual medium in which the thinking subject possesses
+its own concept-content and that of the surrounding world; hence the
+concept's rational purity and freedom can first be presented in words and
+sentences. Since no sentence may be meaningless, the concept is already
+discernible in every intelligible utterance; but if the meaning, as the
+merely represented concept, is to be expressed in the concept's own form,
+then the sentence itself must be transformed into a logical judgment. As the
+judgment's \emph{single concept} (the subject) is subsumed by the copula
+``is'' under its \emph{general concept} (the predicate),
+\emph{separateness}, or the determinate concept, comes into view in the
+difference and unity of the two. The unity of subject and predicate is an
+\emph{identity}, which as such contains its difference; but since this
+difference is in turn different from the identity, \emph{contradiction}
+enters.
+
+The development of the mutual relation and logical significance of the
+principle of identity and the principle of contradiction affords one of the
+most essential points of dispute between the formal and the speculative
+logic.
+
+\anm{1} Every object that answers to its concept can at the same time be
+said to \emph{present} the concept. The simplest way in which a thinking
+subject can show that it has some concept of the thing will thus be to
+point out the objects in which the concept is to be sought. This mimic
+presentation is, however, highly imperfect, and proves that the subject has
+not got beyond ``the general representation'' and ``the clear and distinct
+intuition.'' Hence it is also a criterion of merely representational
+thinking that it more easily produces an example than an adequate
+definition. --- The concept is appropriated with greater freedom when it is
+possessed as guiding norm for an independent construction. The so-called
+``construction-concepts'' (jfr.\ Sibberns Logik Pg.\ 137--163) may properly
+be said to lie on the boundary between theory and practice. The presentation
+of the concept here coincides immediately with its actualization. But the
+mechanical productions, considered in and for themselves, are only ambiguous
+testimonies of subjective insight, since bees, artisans and automata can up
+to a certain point present the concept in the same style. Of thoroughgoing
+significance, on the contrary, is the distinction between the artistic and
+the scientific, the plastic and the logical presentation of the concept's
+content. The plastic presentation keeps closest to \textit{universalia in
+re}, the logical closest to \textit{universalia in mente}. The artist, whose
+thoughts are intellectual visions, expresses the concept \textit{in
+concreto} by presenting its image. That the concept really is in movement
+during artistic production is evident from the fact that art's ideals can be
+developed in the theory of art, so that aesthetics constitutes an integral
+member in the system of philosophy. But the plastic presentation of the
+concept's content shows nonetheless its specific difference from the logical
+in this, that the artist's genial productivity by no means rises in the same
+degree as his reflecting cognition of the concept of art develops. The more
+sensuous art's material is, the more indifferently can it stand toward
+science; the more intellectual, on the contrary, the artistic medium shows
+itself, the more distinctly will the interaction between the logical and the
+plastic presentation come into view. Hence poetry enters into the most
+inward relation to philosophy; for poetry is the art of the word, and the
+word is the medium not only of intuition and representation, but also of
+thought and the concept.
+
+\anm{2} In Plato's dialogue ``Cratylus'' the problem is treated whether the
+word, as such, is originally to be regarded as a natural copy of the thing
+(μίμημα), or perhaps rather as an arbitrary sign (θέσει); this is, in other
+words, the question whether language may be assumed to be a mere product of
+nature, or a means of communication chosen by common agreement. This inquiry
+concerning the origin of language concerns logic only insofar as the
+relation between the thinking subject's receptivity and spontaneity, between
+word and thought, representation and concept, hereby receives a closer
+determination. The Heraclitean view, that the sound of the word is
+originally a sensory imitation of the thing, corresponds to the sensualist
+theory of the \textit{tabula rasa}. The soul, whose self-activity is lost in
+feeling and receptivity, is regarded as an instrument whose tones are
+produced by the impressions of the surrounding world, and the word is
+confused with the immediate sound of nature, which the beast has in common
+with man. The Democritean and sophistic theory of the understanding, which
+denies language's nature-side, is akin to the formal idealism, and moves in
+a tautological circle. The arbitrary choice of the word presupposes a
+reflection, but reflection in turn presupposes language, for all thinking is
+a speaking with oneself. In order to reach an agreement concerning an
+intellectual means of communication, the individuals would already have to
+be in possession of a means of communicating their thoughts to one another.
+The origin of language points to an immediate unity of sensation and
+thinking, a living interaction between the subjective and the objective
+reason, and can therefore, in logical generality, be regarded as a spiritual
+product of nature, which in the development of culture is more and more
+penetrated by free reflection. While Plato especially brings out language's
+nature-side, Aristotle on the contrary urges the culture-side, and regards
+every noun as a free designation (φωνὴ σημαντικὴ κατὰ συνθήκην) of the
+representation in which the soul holds fast the image of a determinate
+object. The single principal words of language can therefore be apprehended
+from a double point of view: partly they are to be seen as involuntary signs
+(τῶν ἐν τῇ ψυχῇ παθημάτων σύμβολα), to which the imagination has bound the
+images of things; partly they are reflection's own thought-symbols, in which
+it unceasingly hovers between representation and concept. It is often the
+case that a concept does not break through, and come to clear development,
+because it lacks its corresponding word --- just as, conversely, the most
+primitive and pregnant expressions gradually fade and lose their freshness
+when the thought-content whose bearers they originally were is diluted and
+trivialized. (Philosophical root-words, categories --- phrases.)
+
+\anm{3} Every word carries a representation with it; but the word standing
+alone gives as yet no meaning. Meaning first arises when the word that
+immediately designates the thing's existence (the noun) is joined with
+another (the verb), which expresses its being and the utterance of its
+existence. Such a combination of words is a \emph{sentence}, which again can
+be considered from the grammatical and from the logical side. From the
+logical point of view, the same relation obtains between the mere sentence
+and the judgment proper as between meaning and concept. As the subject in
+the sentence may be an accidental representation, so also the predicate may
+express a merely passing determination without the stamp of universal
+validity. Sentences such as: the boy plays, the snow melts, \&c., cannot
+therefore without further ado be reckoned among the logical judgments. The
+formal mark whereby the judgment distinguishes itself from the mere sentence
+is not primarily to be sought in the subject, but rather in the copula and
+the predicate. If the thing is held fast in its immediate utterance or
+appearance, the copula can be contained in language's many different active,
+passive and neuter verbs (cryptic sentences). But if predication, as an act
+of thinking, is to come forward with logical universality, then it is at
+once evident that everything that can be affirmed or denied of a given
+object must in the last instance refer to being and not-being. Since now the
+sentence: \textit{A} is, can be opposed both by: \textit{A} \emph{was}, and
+by: \textit{A} is not, it follows that the copula ``is'' must distinguish
+itself from the verb in this, that tenses and moods lose their significance
+in the logical present of the position. As for the predicate, it belongs to
+its essence to express the universal, as such. Hence such utterances as: the
+rose is red, the negro is black, \&c., are likewise not to be regarded
+outright as judgments proper, although from the side of form there is
+nothing to object. Everything here depends upon the significance that is
+ascribed to the grammatical predicates red, black, \&c.; if these are
+apprehended merely as immediate sense-determinations, then the utterances
+named are only sentences; if on the contrary they are \emph{thought} as
+universal determinations in opposition to the subjects' singleness, then we
+have the judgments proper. That the predicate presents the concept's
+universality must not be understood as though it could express the concept
+only \textit{in abstracto}, while the subject gave it \textit{in concreto}.
+In such judgments as: ``Man is rational,'' ``The beast is living,'' the
+predicate is certainly more abstract than the subject, but precisely for
+that reason these judgments are not to be regarded as the concept's adequate
+expression either. In adequate judgments, subject and predicate have the
+same content (for example, God is the absolute Spirit). The reason why the
+subject is nevertheless apprehended as single concept, the predicate as
+general concept, is this, that the subject refers proximately to
+representation, while the predicate refers to thought. Insofar as the
+represented concept is at the same time possessed as a concept set out in
+existential immediacy, the subject expresses its \textit{universale in re},
+which the predicate in turn annuls in reflection, and posits as
+\textit{universale in mente} (Stilpo's cabbage). With respect to the
+concrete subject, the concept's universal determinations are concentrated
+into immediate singleness; with respect to the developed predicate, the
+single concept's content is reflected through into pure universality. Both
+principal sides of the concept are thus each for itself posited as the whole
+concept, and yet these two are, by means of the copula ``is,'' united in one
+positing, which expresses the mutual and thereby separate determinateness of
+both. This separateness comes into view in every judgment; for when it is
+said that the rose is red, there is just as much talk of the red rose as of
+the rose-red.
+
+\anm{4} In every judgment the predicate is to declare \emph{what} the
+subject is. Insofar as the judgment is not entirely adequate, the subject
+may well contain more determinations than the predicate; but this difference
+does not annul the likeness between subject and predicate, insofar as the
+determinations falling outside the predicate must in all such cases be
+assumed to fall outside the judgment as well. To hold fast the unity of
+subject and predicate, formal logic has set up the so-called principle of
+identity: \textit{A} \emph{is} \textit{A}, \emph{every thing is what it
+is.} But on the other side the predicate must nevertheless add a new
+determination to the subject, or at the least render the determination in a
+new form; he who asks what \textit{A} is cannot be satisfied with the answer
+that \textit{A} is \textit{A}, for that he knew already beforehand. By
+urging the formal principle of identity, the Megarian Stilpo contested all
+judgments proper. One could not, in his opinion, say: ``The horse runs;''
+for ``horse'' and ``to run'' are not identical, since the same predicate is
+ascribed also to dogs and lions. Nor could one think the sentence: ``Man is
+good,'' for ``good'' and ``man'' are not the same, since the predicate
+``good'' is predicated also of bread and medicine (Poul Møllers efterladte
+Skrifter, 2det Bind Pg.\ 383). Formal logic therefore also concedes that
+every thing must be determined by its relations to other things, that
+identity as such contains difference, that he who directly declares what the
+thing is thereby also indirectly declares what it is \emph{not}. But as the
+subject's identity with itself passes over, by means of the predicate, into
+difference, thinking must at the same time negate every difference that will
+not merge into the identity, and thereby hold fast the \emph{agreement}
+between subject and predicate. To this end logic sets up its formal
+\emph{principle of contradiction}: ``\textit{A} is not that which \textit{A}
+is not;'' or: ``No thing is that which it is not, and is not that which it
+is;'' or: ``No thing can have predicates that contradict the thing;'' or:
+``All pursuit of thought shall be consistent;'' or: ``The contradictory is
+at the same time the unthinkable.'' What the principle of identity is in the
+positive form, the principle of contradiction is in the negative. The formal
+advance consists in this, that the predicate's agreement with the subject,
+which according to the fundamental proposition of identity is assumed as
+immediately being, becomes reflected through by the application of the
+principle of contradiction, and that subjective thinking has found in this
+reflection its proper touchstone.
+
+\anm{5} As the contradiction is the logical sting that wakes thinking from
+its slumber, and stimulates it to independent activity, so all true thinking
+also aims at overcoming and annulling the contradiction, in order to come
+again to rest and thorough satisfaction. Could thinking find rest in the
+unresolved contradiction, then black would be white, the circle
+four-cornered, truth a lie, the good evil, and the highest philosophy a
+sophistical deception. When the polemic between the defenders of the formal
+and of the speculative logic has at times taken on the appearance as though
+the former merely wished to exclude the contradiction, the latter to adopt
+it, this tension rests only upon a misunderstanding, which a closer
+consideration must make disappear. In formal respect, each of the contending
+parties is compelled to concede to the contradiction the same significance.
+The defenders of formal logic must necessarily take the contradiction up
+into their thinking, immerse themselves in it, in order to be able to
+contest it. For it is not with the contradiction as with an outward enemy,
+whom the well-informed can avoid and thereby escape the danger; the
+contradiction pursues the thinker at every step, so that the true
+development of thought, as regards its formal consistency, consists
+precisely in contradicting the contradiction everywhere, or, what is the
+same, that all thorough thinking goes through sheer contradictions. On the
+other side, the speculative logic cannot defend the contradiction without
+also attacking it. For it wants precisely to prove that formal logic, by
+setting up its principle of contradiction and denying the contradiction its
+logical right, makes itself guilty of an indefensible contradiction.
+Regarded from the purely formal side, the inquiry is thus rather unfruitful;
+but the main thing is that the difference between the logic of the
+understanding and the speculative logic of reason be clearly and
+determinately apprehended. This real difference will come more closely into
+view when, from the double standpoint of the doctrine of thought, we
+consider: a) the concept of the contradiction, b) its relation to the
+thinking consciousness, and c) its scientific solution.
+
+\begin{itemize}
+\item[a)] When the concepts are placed under the point of view of finitude,
+  they can be separated by determinate definitions, and the rule holds that
+  they must not be confounded; if on the contrary they are regarded in the
+  light of infinity, then the one concept must be completed by the other,
+  since every isolated concept-determination is defective and one-sided.
+  This double way of seeing leads us to a determinate distinction between
+  the \emph{superficial} and the \emph{thorough} contradiction. To confuse
+  the like with the unlike, unity with multiplicity, or the whole with the
+  parts, is to make oneself guilty of a superficial contradiction; but he
+  who proves that likeness cannot be without unlikeness, that the concept of
+  unity contains that of multiplicity, thereby points out the thorough
+  contradiction. The difficulty of breaking down representation's finite and
+  immediate barriers, without at the same time volatilizing the concepts'
+  essential difference, stood clear before the Greek philosophers, who
+  recognized how easily a dialectical ἀδολεσχία passes over into φλυαρία.
+\item[b)] It lies then in the nature of the case that formal logic, which
+  apprehends the concepts in their finite relations, must polemicize against
+  the contradiction and regard it as a fault in subjective thinking, while
+  the speculative logic on the contrary refers the contradiction to
+  existence's own ambiguity, and sets a considerable strength of thought in
+  drawing it forth. As formal logic makes only a \emph{critical} application
+  of the contradiction, it proceeds from the presupposition that what
+  contains a contradiction cannot exist. But that this way of seeing is
+  insufficient is already evident from the fact that the thinking of the
+  understanding, under the most various turns, has had to admit to itself
+  that the very highest truths (creation, freedom) appear to it
+  contradictory and incomprehensible. The speculative logic, which makes an
+  \emph{architectonic} use of the contradiction, can on the contrary employ
+  it as a guide from the one sphere of existence to the other. In Plato's
+  philosophical wonder, in the mystics' spirited paradoxes, in the Kantian
+  antinomies, we everywhere sense the contradiction's dialectical
+  pulse-beat. Without a philosophical problem there is no philosophical
+  productivity; but to pose the true problem is, in other words, to
+  apprehend the thorough contradiction.
+\item[c)] The fundamental proposition of formal logic: \textit{Diversi
+  respectus tollunt contradictionem}, must in the speculative logic be
+  converted into: \textit{Diversi respectus faciunt contradictionem}. To
+  solve the contradiction by the help of \textit{diversi respectus} is the
+  same as to let the different regards fall away from one another and lose
+  themselves in a reasoning of grounds; to reduce \textit{diversi respectus}
+  to their contradiction, in order to let them vanish in the deeper
+  fundamental view, is to seek the absolute ground. Formal logic, which
+  merely teaches us to think \emph{about} the objects, takes these as they
+  are given, and ascribes to things an existence closed in itself and
+  indifferent to our subjective movements of thought. Under this
+  presupposition it has its complete validity that the matter in question
+  must be posited as τὸ αὐτό and regarded κατὰ τὸ αὐτό, πρὸς τὸ αὐτό,
+  ἐν τῷ αὐτῷ χρόνῳ. But if it is already a questionable matter that the last
+  of these demands properly cannot be fulfilled at all, since every Now
+  unceasingly vanishes, then it is a still more essential defect that the
+  subject, which sets the one regard up beside the other in order to hold
+  fast an incessant \textit{idem per idem}, must remain standing at
+  consideration and description, without reaching thinking proper. The
+  speculative logic, which thinks through the genetic development of things
+  and concepts, must therefore unceasingly set its paradox against the
+  vulgar tautology. It is not denied that something, insofar as it is
+  posited as one, is regarded from another point of view than when it is
+  posited as several; or that what is determined as ground is determined
+  according to another regard than when the same is determined as
+  consequent. But what is most determinately denied is that these regards
+  should fall indifferently apart from one another. There is \emph{both}
+  identity and difference; but both proceed from one and the same ground;
+  the mere identity without difference is just as contradictory as the mere
+  difference without identity; there is identity \emph{because} there is
+  difference; the determination that hits the identity hits also the
+  difference: the identity is determined \emph{as} difference. There is in
+  the judgment \emph{both} a subject \emph{and} a predicate; but the subject
+  is what the predicate is, precisely \emph{because} subject and predicate
+  are \emph{not} the same. In the unceasing advance of thought and
+  existence, or in the living movement, lies then the true solution of the
+  contradiction.
+\end{itemize}
+
+\parag{7}{The Logical Content of the Judgment.}
+
+Since the judgment has the significance of being the concept's logical
+presentation, it follows that its formal development cannot be separated
+from the concept's content. Insofar as the single judgment, considered in
+and for itself, expresses only a partial thought-result, it presents the
+concept only from a certain side, and the many isolated judgments can
+therefore be classified according to very different regards. Formal logic
+has divided the judgments: a) according to \emph{quality} into: affirmative,
+negative and infinite; b) according to \emph{quantity} into: singular,
+particular and general; c) according to \emph{relation} into: categorical,
+hypothetical and disjunctive; d) according to \emph{modality} into:
+assertoric, problematic and apodictic judgments. But these divisions have
+logical worth only insofar as they also show the gradual rising of insight
+and of the power of judgment.
+
+By the help of the logical judgments, the speculative logic develops the
+concept's own inner and outer sunderings or \emph{diremptions}.
+
+\anm{1} That the judgment is more than a merely subjective act of thinking,
+by which reflection satisfies itself without regard to objective being, is
+already expressed by the copula. Nevertheless, the separation and union of
+subject and predicate, as it takes place in the judgment, is not a movement
+that existence itself realizes: the immediately existing concept passes no
+judgment upon itself; the act of judging goes on in the thinking
+consciousness. Only the thought concept is as such the judgment's content;
+but this is in turn identical with the concept that is, or exists. Hence
+every judgment's logical dignity must be determined as well by the power of
+judgment it requires in the subject as by the objective concept-content it
+presents. It is then self-evident that the judgment's logical content must
+indeed be distinguished from its matter or empirical content. In such
+judgments as: Caius is a man, Pasop is a dog, the matter is indeed
+different, but the logical content still the same.
+
+\anm{2} The qualitative judgment posits the thing as subject and the
+property as its predicate: the rose is red: the single is the universal.
+This identity of the single and the universal is as yet quite abstract, and
+therefore passes over into an equally abstract difference. The red rose is
+immediately determined by its color; but partly the rose itself can be
+thought to exist with another color, and still be a rose; partly the color
+can be met with in other objects, and still be red: the cheek is red, the
+wine is red, and so forth. In the qualitative judgments a contradiction
+therefore comes into view, which has its ground as much in existence as in
+thinking. As regards existence, the one thing is always determined in
+relation to the other; what the one object is in and for itself, it is in
+relation to the other, and it is for that reason continually subject to
+change:
+``At this moment the water is solid, in the next moment fluid,'' ``The leaf
+that is now green will in some time be yellow.'' The existing subject
+unceasingly changes predicates, and the transience of things shows itself as
+an unbroken hovering between \emph{being} and \emph{not-being}. In
+consequence, judging thought must likewise move between \emph{affirmation}
+and \emph{negation}, and separate the judgments of quality into
+\emph{positive} and \emph{negative}. This separation, however, when more
+closely regarded, is no proper division; for the positive judgment shows
+itself in its abstract positivity just as one-sided and untrue as the
+abstractly negative. The single (the concrete thing with all its properties)
+cannot be immediately identical with the abstractly universal (the single
+property). The positive judgment can therefore be resolved a) into two
+% The Greek "β)" standing where "b)" is wanted is the Danish page's own wrong
+% sort (see the transcription's note at p. 48); mirrored as printed.
+tautological sentences: the single is single, the universal is universal,
+and β) into two superficial contradictions: the single is a universal, and
+the universal is a single. Just as little can the merely negative judgment
+be isolated from the positive. When it is said: the rose is red, it is still
+presupposed that it has a color. As the negative judgment negates a
+determinate species-concept, this always happens under the presupposition
+that the genus-concept lying at the ground can be determined in another
+species. If on the contrary the single is held so isolated that the
+genus-concept is negated together with the species-concept, then the
+judgment itself falls outside the concept's sphere: the so-called
+\emph{infinite} judgments (conscience is no elephant; reason is not
+four-cornered) are only thoughtless sentences. That the positive and the
+negative judgment must reflect each other is evident also from the fact that
+only a very slight degree of the power of judgment is needed in order to
+utter them each by itself; whereas the proper insight into the concept's
+essence rests precisely on this, that he who directly passes the positive
+judgment has the negative \textit{in mente}, or conversely is conscious that
+the negative judgment holds only in virtue of the positive.
+
+From the standpoint of the speculative logic, the judgment of quality shows
+itself as the existing concept's own diremption (Hegel: Das Urtheil des
+Daseyns). The existing things pass away; only the concepts in their
+universality endure: \emph{the single, which is a universal,} is dissolved
+and vanishes in the stream of universality. But \emph{the universal is also
+a single}: the concept expresses its existence in the change of things;
+hence single existence is reproduced just as unceasingly as it vanishes.
+--- This diremption of the concept casts a new light upon the strife of the
+nominalists and the realists. The crass nominalists apprehended the
+qualitative judgment according to its immediate content, and thereby came to
+posit a multiplicity of subjects (\textit{res}) without predicates; the
+one-sided realists, who kept to the judgment's abstract form, dissolved
+existence into an aggregate of predicates (fluttering \textit{universalia})
+without determinate subjects (\textit{res}).
+
+\anm{3} The qualitative judgment declares that the universal is to be sought
+in the single, that the predicate ``\emph{inheres in}'' its subject, while
+on the other side it is recognized that the subject is to be subsumed under
+its predicate. Schematizing thought therefore undertakes to test the
+predicate's extension by determining the number of the subjects. This test
+is instituted in the judgments of \emph{quantity}: ``\emph{This} single,
+\emph{some} singles, \emph{all} singles are comprised under the
+universal.'' But such a counting-up has only a faint shadow of comprehension
+to show; reflection loses its way in an outward comparison between the
+universal and the single. If the quantitative judgment is to carry with it
+any true advance in the cognition of the concept, then the comparison must
+pass over into a subsuming reflection, whereby the judgment itself is to be
+characterized as a \emph{comprehensive} or \emph{comprising} judgment.
+According to the qualitative judgment, the subject is immediately set out as
+the substrate (ὑποκείμενον) to which the predicate attaches; the predicate,
+which is chosen immediately, must therefore run through the reflection of
+affirmation and negation. But hereby it takes on a stamp of essential
+self-validity, which is presupposed in the comprehensive judgment, whose
+subjects are comprised --- singly, partially or generally --- under their
+predicate. Hence Hegel calls attention to the fact that the predicates
+adduced in examples of the comprehensive judgment (``Das Urtheil der
+Reflexion'') must be of another kind than those suited to quality. Such
+sentences as: man is mortal, things are useful, and so on, can serve as
+examples. The power of judgment that the comprehensive judgment requires can
+be determined as merely reflecting: through the subjects' separate groups
+thought glimpses the predicate's essential universality. The concept itself
+hereby comes into view as the \emph{relation} of the existing things. But
+this relation has a double side, since it is both changeable, as the things'
+phenomena, and at the same time unchangeable, as the things' essence. If the
+relation is apprehended from its unchangeable side, the concept is
+determined as the things' law, from which there is no exception; if on the
+contrary the relation is regarded from the point of view of changeableness,
+the concept is abstracted as existence's rule, from which there are now
+more, now fewer exceptions. In the merely comprehensive judgment the latter
+way of considering is the predominant one: universality is determined only
+as allness, and the general is not yet posited as the true universal
+(empiricism).
+
+\anm{4} The division of the judgments according to their \emph{relation} has
+the logical significance that the general (the collective universality) is
+developed into true universality, whereby the relation between the
+genus-concept and its species-concepts is essentially determined. The
+categorical judgment's predicate expresses the subject's inner nature and
+essence. The comprehensive sentence: All speaking animals are men, first
+finds its true form in the categorical utterance: The speaking animal is, as
+such, man; whereby thinking presses through the empirical mark into the
+concept's essence, and finds the thing's category. If the categorical
+judgment's content is developed further, herein lies that the thing cannot
+express its immediately determinate concept (its species) without answering
+to its category (i.e.\ its essential general concept, the genus). This
+relation is expressly brought out in the \emph{hypothetical} judgment's
+different forms: If \textit{A} is, then \textit{B} is; if \textit{A} is
+\textit{B}, then \textit{C} must be \textit{D}, and so on. In this
+development, experience passes over into insight and comprehension proper.
+The fact vanishes in its contingency, for the question is not primarily
+whether \textit{A} or \textit{B} actually exists; but thought's law is
+raised to existence's norm; for it is expressly recognized that an
+\textit{A} that cannot be \emph{thought} without \textit{B} cannot
+\emph{be} without \textit{B} either. --- The real and the intellectual
+connection are posited in their essential unity; but this identity, when
+more closely regarded, again leaves an essential contradiction behind.
+Although \textit{B} is posited in and with \textit{A}, \textit{A} and
+\textit{B} are still by no means the same. According to pure thinking they
+stand to each other as ground and consequent, cause and effect, but this
+relation is as yet wholly formal; according to their existence they fall
+immediately apart from each other, and stand as \emph{the condition} to
+\emph{the conditioned}. Reflection, which still hovers between the fact's
+contingency and the thought-law's necessity, seeks an unconditioned as
+foundation for all mutual conditions. This foundation thinking first wins in
+the \emph{disjunctive} judgment: \textit{A} is either \textit{B} or
+\textit{C}, and so on. The subject \textit{A} now expresses the
+genus-concept in its concrete universality, while the genus's determinate
+species are separately posited in the predicate: ``Man is (according to sex)
+either man or woman.'' The essential relation between the genus and its
+species thus finds its logically all-sided expression in the disjunctive
+judgment. As the species-concepts taken together are subordinated to the
+genus-concept, they show themselves at the same time as mutually
+coordinated. The disjunction consists in this, that the species-concepts
+exclude one another, because they, each for itself, are the genus's
+contentful appearances; they are thus \emph{contrary} \emph{because} they
+are \emph{contradictory}, and contradictory because they are contrary.
+
+That the \emph{division} of the judgment, when apprehended from a
+speculative standpoint, is a concept-sundering or \emph{primal division}
+(\textit{Ur=Deling}), is according to relation wholly evident. In order to
+% The Danish page's letterspaced run takes in "har Schelling" as well as "det
+% Absolute" — a compositor's lapse logged in the transcription. The emphasis
+% is carried here on "the absolute" alone, since the lapse cannot be
+% reproduced across the English word order.
+make \emph{the absolute} comprehensible, Schelling (``Philosophie und
+Religion,'' Pag.\ 11---13) has therefore also availed himself of relation's
+forms. ``The first form in which absoluteness can be posited is the
+categorical.'' But since the absolute, as such, is \emph{neither} infinite
+\emph{nor} finite, \emph{neither} ideal \emph{nor} real, \emph{neither}
+subjective \emph{nor} objective, the productive intuition must step in and
+fill the negative reflection's emptiness. ``The second form for the
+absolute's appearance in reflection is the hypothetical.'' When a subject
+and an object are, then the absolute is the identical essence of both.
+Subject and object \emph{condition} each other, but the absolute is their
+\emph{unconditioned} foundation, their positive unity regarded \textit{sub
+specie æternitatis}. ``The third form in which reflection likes to express
+the absolute, and which is especially known through \emph{Spinoza}, is the
+disjunctive.'' There is only one substance, but this can be regarded either
+as purely ideal or as immediately real. Just because the absolute substance,
+according to the disjunctive judgment, is either wholly subjective or wholly
+objective, therefore it is, according to the categorical form of expression,
+neither the one nor the other.
+
+\anm{5} The comprehensive judgment presents the concept's content in
+\emph{empirical} sunderings; the disjunctive reduces the empirical content
+to a moment in the concept's \emph{logical} sunderings. The intellectual
+world and the real world must accordingly be measured by each other: the
+thought concept must have its existence, and every existing thing must in
+turn answer to its concept. This relation, totalized in itself, is now
+further illuminated as we consider the division of the judgments according
+to their \emph{modality}. The \emph{assertoric} judgment expresses the
+obtaining relation between thing and concept in a wholly immediate way:
+``The house is well built; the plan is excellent; the treatise is
+scientific.'' But what in one respect answers to the concept can in another
+respect deviate from it. Against the simple affirmation stands the
+straightforward denial, and the judgment becomes \emph{problematic}. The
+problem thus developed can now neither be solved by a merely empirical
+demonstration, since all actuality must be valued according to the concept,
+nor by a merely formal operation of thought, since the merely thought
+concept to which no actuality corresponds is just as untrue as a merely
+palpable actuality that contradicts its concept. The insight that actuality
+has its truth in the concept, or what is the same, that the concept
+completed in its own inner consistency has found its corresponding outer, is
+presented in the \emph{apodictic} judgment.
+
+As the difference between the thought concept (\textit{universale in
+mente}) and the existing concept (\textit{universale in re}) comes into view
+in modality, so modality in turn can be apprehended from a subjective and an
+objective standpoint. --- It is characteristic of the Kantian philosophy
+that it regards the categories of modality as ``the postulates of empirical
+thinking'' (jfr.\ Kritik der reinen Vernunft, Pag.\ 217---223), whose
+determinations do not concern the object at all, but fall wholly within the
+thinking subject's own reflection. What agrees with experience's formal
+conditions is \emph{possible}; what is in connection with its material
+conditions is \emph{actual}; what finally is determined according to the
+essential unity of both kinds of conditions is \emph{necessary}. By the help
+of the problematic, assertoric and apodictic judgments Kant measured the
+certainty of human cognition, and determined the logical relation between
+\emph{opining}, \emph{faith} and \emph{knowledge}. What is true in the
+Kantian theory is that the concept can, without regard to its material
+existence, have a purely logical existence in the subjective consciousness
+(\textit{universale in mente}); but the system's nominalist limitation shows
+itself in this, that the absolute concept, whose infinite validity, grounded
+in the divine thinking (\textit{universale in mente divina}), is apodictic,
+is confused with the relative concepts, which have an abstract being
+\textit{in mente nostra}, and whose real existence must therefore always be
+regarded as problematic, until experience brings a decisive certainty. ---
+Hegel has therefore rightly transformed the division of the
+modality-judgments into the concept's own primal division (Das Urtheil des
+Begriffs). The fundamental thought herein is that a concept that exists only
+in our own consciousness does not deserve the name of true concept. It is
+then either a mere representation, an imaginary magnitude, of which the
+imagination can produce as many as you please, or else an abstract side of
+the concept, which consequently has not yet been sufficiently thought
+through. When the judgment is adequate, and the diremption complete, the
+predicate, which posits the concept's concrete universality, must have the
+same content as the subject, which presents its immediate singleness. The
+whole concept has, according to the predicate, a reflected-through, logical
+inwardness (\textit{in mente}): this is the concept's infinite ideality and
+freedom; but, according to the subject, the whole concept is at the same
+time posited in a corresponding, outer actuality (\textit{in re}), which
+makes up its determinate reality. The diremption is thus driven to its
+utmost boundary; but since subject and predicate have now also expressly won
+the same content, the copula itself is developed into a full, real being, in
+which the concept's extremes join together into concrete unity.
+
+\parag{8}{The Logical Totality of the Judgment.}
+
+Formal logic has further divided the judgments: a) with respect to the real
+nexus of subject and predicate, into \emph{analytic} and \emph{synthetic};
+b) with respect to the mutual agreement of the different sentences, into:
+α) \emph{agreeing} (\textit{propositiones consentientes}) and β)
+\emph{conflicting} (\textit{prop.\ oppositæ}) judgments, such that the
+former again, according to their subdivisions, are either \emph{identical}
+(\textit{pares, æquipollentes}), \emph{super=} and \emph{subordinate}
+(\textit{subordinatæ}) or \emph{coordinate} (\textit{coordinatæ}), the
+latter partly \emph{contradictory}, partly \emph{contrary}.
+
+Since every judgment's content must always be explicated by the help of
+another judgment, the speculative logic regards all \emph{single} judgments
+as moments in \emph{the judgment's} --- i.e.\ the concept-sundering's ---
+\emph{own logical totality}.
+
+\anm{1} By examining how we come from a judgment's subject to its predicate,
+it may appear partly that the subject according to its concept already
+contains the predicate, partly that a special experience is presupposed in
+order to join the predicate to its subject. In the first case the judgment
+is called \emph{analytic}, because one needs only to make distinct to
+oneself (analyze) the subject's content in order to find the predicate; in
+the latter case, on the contrary, \emph{synthetic}, since predicate and
+subject must each be sought for itself as separate concepts, which first
+upon a logical deliberation let themselves be united. A closer consideration
+shows, however, that it stands with this division as with all the rest; it
+too has only a relative validity. The true analytic judgment is already as
+such synthetic, since every predicate must join a new determination to its
+subject; likewise every synthetic judgment is analytic, since the
+predicate's union with the subject would lack all ground if it did not
+consistently follow from the subject's peculiar character. Without the
+analytic development, comprehension proper would be wholly wanting; without
+the application of synthesis, thinking could make no advance (Kant:
+Erleuterungs= und Erweiterungsurtheile). As the analytic judgments most
+nearly express pure thinking, so the synthetic belong chiefly under
+experience's field of vision; but the infinite unity of both lies at the
+ground of true scientific cognition. As synthesis refers to representation
+and the intellectual intuition, so analysis refers to reflection and the
+pure insight; where synthesis most nearly presupposes difference and
+opposition, analysis rests on identity and contradiction. The sentence: The
+ground has a consequent, looks at first glance like a purely synthetic
+judgment. The ground and the consequent are represented each for itself,
+just as in the sentence: The door has a lock, one first represents to
+oneself the door, then the lock, and finally grasps them both in their
+union. But if the joining of subject and predicate is to express something
+more than a mere fact, then the synthesis must proceed from an analysis.
+That the latter sentence is hard to transform into a purely analytic
+judgment lies precisely in its empirical character. The identity of subject
+and predicate is a merely represented union, upon which the fundamental
+proposition of contradiction finds only a \emph{critical application}. The
+whole analysis aims solely at assuring the thinking subject that in the
+concept of a door there is nothing that contradicts the concept of a lock.
+But that no one who speaks of a door that has a conscience finds credence
+proves, after all, that analytic thinking everywhere keeps a watchful eye on
+experience's synthetic judgments. The first sentence: The ground has a
+consequent, lets itself on the contrary be at once transformed into an
+analytic judgment, just because it is of purely logical nature. There lies
+no more in the ground than what comes into view in the consequent; for the
+ground is ground only insofar as it has a consequent, and as the consequent
+is, so must the ground also be. For pure insight the two concepts show
+themselves as one concept; what the one is \textit{implicite}, the other
+expresses \textit{explicite}. The consequent is thus ground for the ground,
+and the ground a consequent of the consequent. But just as necessary is
+nevertheless the essential difference of the two. The thorough contradiction
+shows itself precisely in this, that analyzing thought each time comes to
+posit their abstract identity when it wants to comprehend their pure
+difference, and conversely must fix their abstract difference when it wants
+to posit their pure identity. This contradiction reflection cannot solve
+except by taking synthesis and intuition to its aid. It is first by means of
+the intellectual intuition, the sound unprejudiced glance, that analysis's
+abstract identity, integrated by synthesis's immediate difference, steps out
+into determinate real opposition. It is therefore an error when many have
+supposed that dialectical thinking should carry with it disdain for
+intuitive cognition, since much rather, if it truly understands itself, it
+must seek to penetrate and illuminate the real content of the represented
+world.
+
+\anm{2} As the sensing consciousness finds the multiplicity of things
+immediately given, so also representational thinking comes to pass a host of
+different judgments, and thereby to develop for itself a circle of sporadic
+cognitions. It therefore becomes necessary to examine how these judgments
+and cognitions stand to one another. For although consciousness in an
+immediate way (--- faith, geniality ---) may possess an intellectual world
+whose harmony and consistency can later be justified by the testing
+reflection, still the uncultivated person, who receives an aggregate of
+heterogeneous influences, intellectual as well as sensory, may often gather
+in his consciousness such representations and concepts as, when brought
+closer together, can by no means be reconciled in one circle of cognition.
+From the subjective point of view, science must therefore be regarded as the
+highest form in which a coherent view of life can be developed and
+presented; and since logic is the general foundation of all scientific
+culture, it cannot remain standing at a piecemeal apprehension of the
+judgment's essence and significance, but must also demonstrate the different
+judgments' inner nexus and totality.
+
+As regards formal logic's division of \textit{propositiones consentientes},
+the doctrine of the \emph{identical} judgments finds its determinate
+application not only in rhetoric, where one and the same fundamental thought
+is to be made intuitable from several different sides, but even in pure
+dialectic, which in its category-analysis makes distinct the concept's
+transitions and nuances. To determine more closely the fluid boundary that
+separates the all-sided development of concept-identity from tautology
+must, however, be left to the presenting subject's scientific tact.
+
+% The Danish page's letterspaced run takes in the article: "de over= og
+% underordnede" is spaced entire (compositor's lapse, logged in the
+% transcription); the emphasis is carried here on the pair of adjectives.
+With the \emph{super= and subordinate} judgments it stands as with the
+super= and subordinate concepts, only that the criteria by which the logical
+subordination is expressed in the judgment's form are determinately brought
+out. It is then presupposed that the judgments in question must have either
+predicate or subject in common. If the predicates are identical, then the
+superordinate judgment has the superordinate subject; for the predicate's
+extension is in this case measured by the subject (All men are mortal, all
+animals are mortal); if the subjects are common, then the superordinate
+judgment has the subordinate predicate; for the predicate's lower (more
+concrete) concept must always be subsumed under the higher (All men have
+sense-organs, all men have eyes).
+
+As regards the \emph{opposed} judgments, it is presupposed that the talk
+turns on one and the same object, wherefore formal logic also sets up the
+rule that the \emph{contrary} judgments must have the same subject, the
+\emph{contradictory} also the same predicate. These and similar
+juxtapositions serve only to justify all the more the proposition that the
+concept's totality can first come into view in a totality of connected
+judgments.
+
+\anm{3} What has already been said of the absolute concept --- namely, that
+it takes up all relative concepts as moments and reflexes in its inner
+totality --- can now also be applied to the judgment, regarded from the
+standpoint of the higher logic. As it is the same thinking I and the same
+judging understanding that utter themselves in all the individual's thoughts
+and utterances, so it is also a proof of cognition's thoroughness, depth and
+coherence that the one judgment lets itself be deduced from the other. While
+formal logic therefore concerns itself most nearly with the judgments in
+their sporadic plurality, the speculative treats of the judgment, according
+to its essential unity, as that concept-sundering which with the concept's
+development runs through its different, lower and higher stages. According
+to the foregoing explication of the judgment's logical content, which began
+with quality's (existence's) positive judgment, and ended with modality's
+(the concept's) apodictic judgment, it has already been established that the
+latter has taken the former up into itself, or, what is the same, that the
+apodictic judgment is the positive judgment's truth; likewise every outward
+separation of the formal and the real nexus between subject and predicate
+must lose its significance when we hold fast the result won above, that the
+judgment in all its forms is both analytic and synthetic. To assure oneself
+that the categorical judgment presupposes analysis just as much as
+synthesis, one needs only to make distinct to oneself the transition from
+the general to the universal. That all men are mortal can first be known
+with complete certainty when it is seen that the concept of mortality is
+contained in the concept of man's natural existence. The separation of
+concept and actuality, which in objective respect makes the judgment
+hypothetical, makes it in subjective sense also problematic, and the
+disjunction whereby a given genus-concept is sundered into its species is in
+turn a presupposition from which the apodictic judgment results. For since
+the apodictic judgment is to express the identity of actuality and concept,
+it necessarily requires a disjunction. For no actual existence is
+purposive, beautiful or good in general; but every thing that answers to
+\emph{its} determination is always good in \emph{its} kind and in \emph{its}
+species. Many unfair and unjust judgments, passed upon moral actions as well
+as upon artistic and scientific performances, arise not merely from the fact
+that the critics often find it most convenient to keep to an immediate
+estimate, and therefore prefer to employ the assertoric mode of expression;
+but the fundamental fault often lies in this, that the proper point of view
+is displaced, because the category under which the object in question is to
+be subsumed is missed altogether.
+
+The categorical judgment receives its closer delimitation by means of the
+disjunctive, and when this is faulty, the apodictic must also become false
+and one-sided. But just for this reason it becomes necessary to distinguish
+between the concept's one-sided and its all-sided expression. Although the
+whole concept is present in each of its principal sides, it is still not
+completed in any single moment. Hence it is also impossible to present the
+whole concept in any isolated judgment whatsoever; for if the judgment has a
+rich and concrete content, its moments must be \emph{analyzed} in a series
+of different judgments; and every judgment whose content is limited and
+one-sided must be synthetically integrated by another judgment, this again
+by another, and so forth. --- The wish to express the highest concept in a
+single judgment hangs together with the endeavor to preserve philosophy's
+kernel in certain determinate principal propositions. True enough, a
+contentful truth can be expressed in an adequate judgment; but even the most
+pregnant proposition will at once sink down into an empty phrase when it is
+torn out of the connection in which it fits, when it is no longer recognized
+as the result of a preceding or the presupposition of a following
+development. Hence the profoundest philosophy has always been the greatest
+offense to so-called sound common sense; for it lies in the nature of the
+case that the deeper the thoughts a philosophy contains, and the less
+trouble one takes to press into its spirit, the more easily will its single
+theses and utterances appear offensive, often even ridiculous.
+
+\anm{4} The difference between the formal and the speculative logic's
+apprehension of the judgment's relation to the concept can be still further
+illuminated by looking to \emph{definition} and \emph{division}.
+
+Insofar as the judgment's predicate expresses what the subject according to
+its concept properly is, the adequate judgment can also be regarded as the
+concept's definition. According to their immediate difference the concepts
+can be separated and characterized just as exactly as the sensory objects.
+It has therefore often been regarded as a proof of clear and acute thinking
+to advance from definition to definition in the course of scientific
+development. By the definition the concept is held fast as a magnitude
+bounded in itself, firm and constant, which under the different
+juxtapositions and turns is to keep the same value, and since every concept
+must contain something peculiar whereby it is known from all others,
+adequate definitions will always have their significance as contributions
+toward clearing up meaning and securing linguistic usage. Nevertheless it is
+chiefly the so-called exact sciences in which definition plays a
+considerable role, just because thinking is here more mechanical than
+organic. For philosophical cognition, on the contrary, such definitions have
+a very subordinate worth. The ideal content that lies in the philosophical
+root-words, such as: essence, ground, substance, and so on, can no more be
+held fast in isolated definitions than the soul in an anatomized body. The
+more thinking is lost in atomistic concepts and sharply bounded definitions,
+the sooner will it approach the comfortless result that truth itself is
+unnameable, incomprehensible and ungraspable; for no living spirit lets
+itself be caught in a net of finite definitions. Formal logic has already
+recognized that the \emph{genetic} definition stands above the
+\emph{nominal}; but first in the stream of dialectic can the relative
+concept's rise, culmination and decline be clearly mirrored, and the genetic
+definition carried through. Since now every judgment contains a relative
+definition, and since the one concept-moment must always be defined by the
+other, it is evident from this that the absolute concept's content can be
+presented only in a \emph{system of judgments}.
+
+To distinguish itself from mere description, the nominal definition must
+characterize the object by determining its concept, and delimit this by a
+statement of \textit{genus proximum} and \textit{differentia specifica}.
+But here a double regard is to be observed: \emph{partly} the concept must
+be sought out in its immediate, empirical existence, and its different forms
+and marks ``\emph{exposed},'' in order to find out its characteristic ---
+and here it will matter whether one seizes an essential determination or
+merely brings out an outer mark (synoptic and heuristic classification);
+\emph{partly} singleness with its concrete peculiarity falls away, since the
+definition does not present the concept's whole content, but only states its
+general outline. The inner determinateness and separateness that the
+definition renounces makes itself known in the logical division.
+
+The transition from definition to division can take place by a double way:
+a) partly the \textit{differentia specifica} stated in the definition can be
+set against another specific difference falling under the same
+\textit{genus}; for when man, for example, is said to be a \emph{rational}
+animal, herein already lies that there are also animals that have no reason;
+which again is the same as that the animal is \emph{either} rational
+\emph{or} irrational, or: that all animals can be divided into the rational
+and the irrational; b) partly the defined concept can be apprehended as a
+new \textit{genus}, which within its own boundaries again yields new
+\textit{differentiæ specificæ}, and thereby sunders itself into new species:
+the rational animal is either religious or irreligious, i.e.\ men can be
+divided into the religious and the irreligious. In the first case the
+disjunctive judgment can immediately be set out as the division's logical
+expression, so that the concept that is divided (\textit{divisum}) is
+posited as subject, while the members of division (\textit{membra
+dividentia}) find their place in the binomial or polynomial predicate. In
+the latter case a subdivision (\textit{subdivisio}) arises, as one of the
+predicate's members is again made subject in a new disjunctive judgment,
+which then so far can be regarded as a consequence of the preceding. So long
+as the disjunctive judgment is not apprehended as the division's logical
+form, it still lacks the decisive determinateness whereby it distinguishes
+itself from a merely problematic mode of expression. The sentence:
+\textit{A} is either \textit{B} or \textit{C}, can namely be resolved into
+two problematic judgments: \textit{A} is perhaps, when more closely
+determined, \textit{B}, not at all \textit{C}; and: \textit{A} is perhaps
+\textit{C}, not \textit{B}. Under this presupposition ``\emph{either}'' ---
+``\emph{or}'' expresses an abstract exclusion, which rests in the
+\textit{pricipium exclusi medii}.
+% "pricipium" (for principium) is the Danish page's own misprint, logged in
+% the transcription; carried as printed since it is quoted Latin matter.
+To characterize the disjunctive judgment more closely, the sentence:
+\textit{A} is either \textit{B} or \textit{C} or \textit{D}\ldots, must be
+equivalent to the sentence: \textit{A} is both \textit{B} and \textit{C} and
+\textit{D}\ldots The disjunction's: \emph{either} --- \emph{or} contains at
+the same time the conjunction's ``\emph{both}'' --- ``\emph{and},'' from
+which the division's relation to the concept is already evident. For if we
+grasp the disjunction from the connecting as well as the excluding side,
+herein lies that the same concept at once separates itself from itself into
+a series of separate concepts, which mutually exclude one another, and
+nevertheless comprises and binds them all within itself by repeating itself
+in each single one. Thus it becomes necessary to seek out a medium in which
+the exclusion and the connection can be thought united. \textit{A}, which in
+one respect is \emph{both} \textit{B} \emph{and} \textit{C}, is in another
+respect \emph{either} \textit{B} \emph{or} \textit{C}. Since both regards
+lie in the disjunction's own essence, formal thinking must bring out a
+universal determination in which the separateness comes into view, and thus
+fixes the determinate \emph{ground of division} (\textit{fundamentum
+divisionis}). It is, for example, a determination common to all triangles to
+have 3 angles and 3 sides. But no actual triangle has angles and sides in
+abstract generality, but always in determinate proportion. If now the
+division is undertaken, it appears quite clearly that the concept's identity
+at the same time grounds its difference, or in other words, that
+\textit{diversi respectus} pass over into each other. For one cannot divide
+the triangles into three-sided and three-sided; for here is an identity
+without difference; nor into right-angled and isosceles; for here is a
+difference that lacks its identity, or, as it is said, the ground of
+division is not held fast. But when we say: the triangles are either
+equilateral or non-equilateral, then it lies in the division's logical
+nature that they are the one because they are the other. The contradiction
+that hides itself in the disjunctive judgment --- that \textit{A} must be
+either \textit{B} or \textit{C}, and yet is also posited as \textit{B} when
+it is posited as \textit{A} --- finds its resolution in the division, which
+sunders and binds the opposed concepts.
+
+What \emph{the division} is from the empirical standpoint, the
+concept-diremption or \emph{the primal division} is from the logical. All
+the rules formal logic sets up for division point to this difference. That
+the division shall determine the concept's extension by a statement of all
+the genus's species means, in other words, that it shall exhaust the
+genus-concept's content. But since every empirically characteristic mark can
+always occasion new divisions or subdivisions, without insight into the
+nature of the genus and the species being thereby increased, such a complete
+enumeration is often as useless as it is difficult. ``Whether to the 67
+species of parrots yet a dozen more can be found is indifferent for the
+exhaustion of the genus-concept'' (Hegel). It is quite another matter that
+detailed classifications may be necessary in order to complete empirical
+knowledge; but they can have no properly logical worth. A division can often
+be complete and correct without therefore being thorough, just as conversely
+it can have a deeper significance without being logically correct (fantastic
+and comic divisions). It is further conceded in formal logic that the
+divided concept must be present whole and undivided in each of the members
+of division; whereby the logical division distinguishes itself from the real
+partition (\textit{partitio}). But from this it can also be seen that the
+true division is grounded in the concept's primal division. When a sensory
+object is divided, each part is only a piece. Hence it is also only the
+elementary and lifeless things that can be taken apart and put together
+without suffering harm, and that precisely because their concept is so
+wholly external; the living organism, which expresses the concept's essence,
+suffers on the contrary by every dismemberment, since it is contrary to the
+concept's intellectual singleness to let itself be carved up. --- As
+regards, now, the relation between the judgment and the division in general,
+they both have the common determination of presenting the concept's
+diremption. The criterion for such a diremption is always this, that the
+concept is separated into two extremes, each of which for itself in its form
+contains the whole concept; but while the judgment most nearly renders the
+concept's single sides and reflexes, and so far lets itself be expressed in
+a determinate sentence, the division on the contrary refers to different
+concept-spheres, so that its content can be explicated only in a totality of
+judgments. As each of the judgment's extremes, by the copula ``is,''
+intimates a medium in which they meet, so it also lies in the division's
+ground that the opposed concept-spheres must join together in a higher and
+more concrete totality.
+
+\secrule
+
+\capitel{Third Chapter.}{The Validity of the Subjective Concept: Inference and Proof.}
+\parag{9}{The Logical Requisites of Inference.}
+
+The mutual relation of the judgments is expressed in the inference, that act
+of thinking whereby a judgment's validity is derived from one or several
+other judgments. According to formal logic there must be distinguished in
+every inference a) one or more presuppositions, premises, b) a
+conclusion-sentence (\textit{conclusum} or \textit{conclusio sensu minus
+proprio}) and c) the whole act of thinking by which the conclusion-sentence
+is derived from the premises (\textit{conclusio sensu proprio}). The
+inference's simplest and yet at the same time complete form is the
+categorical syllogism. The conclusion's subject, the minor concept
+(\textit{terminus minor}), and its predicate, the major concept
+(\textit{terminus major}), must in the syllogism each for itself be joined
+with a third concept, which makes up the middle of the extremes
+(\textit{terminus medius}). Of the two premises formed by this joining, that
+in which the major concept is referred to the middle term is called
+\textit{propositio major}; that, on the contrary, which unites the middle
+term with the minor concept, \textit{propositio minor}. When the middle
+term's relation and significance are distorted, paralogisms and sophisms
+arise.
+
+The speculative logic presents the inference as the extreme totalities'
+dialectical transition into their medium, i.e.\ as a joining-together in
+which the extremes are at once posited and annulled.
+
+\anm{1} As expression of subjective thinking, the judgment proceeds from a
+deliberation; every deliberation takes place in virtue of a judging; thus
+the one judgment has its grounding in the other, or, what is equivalent, the
+judgment has its truth in the inference. Every judgment that does not result
+from an inference still stands as a postulate, which can be both true and
+false, and for that reason both affirmed and denied. If the judgment is
+regarded as answer to a question, then the inference contains the answering
+of a double question, and thereby expresses the judgment's ground. If it is
+thus asked: ``What is God?'' then the preliminary answer: ``God is a
+spirit,'' is to be regarded as an adequate judgment. But if the judgment is
+to be grounded, then the question resolves itself into two others: ``What is
+God, since he is called spirit, and what is spirit, since it is predicated
+of God?'' There is thus sought a third concept, which expresses the identity
+of the subject's and the predicate's unity and difference --- an advance
+whereby the moment of separateness first comes into its full right.
+
+When the difference between subject and predicate does not come forward with
+such independence that the concept grounding the unity of both needs to show
+its relation to each of the members in a separate judgment, the conclusion
+can be derived from one premise, and the inference is characterized as
+immediate. Formal logic distinguishes several kinds of immediate inferences,
+and sets up rules for their application. We thus obtain: a) the inference of
+identity (\textit{ratiocinium ad æquipollens}), b) the inference of
+subordination (\textit{ratiocinium ab universali ad particulare}), c) the
+inference of opposition (\textit{ratiocinium ad oppositum}) and finally d)
+the inference of conversion (\textit{ratiocinium per conversionem}). But
+since none of all these inferences leads to any deeper insight into the
+essence of the concept or of the judgment, they can only be used as simple
+exercises of the understanding.
+
+\anm{2} It is self-evident that the so-called categorical syllogism contains
+all the requisites of inference, since it is first in it that the
+conclusion's subject and predicate are comprehended in their independence,
+and yet at the same time find the separate concept that makes up the union
+of both. Everything thus rests essentially on the middle concept's
+significance and relation to the extremes. Formal logic has for that reason
+set up the following rules:
+
+\begin{itemize}
+\item[1)] \textit{Ex meris negativis nihil sequitur}; quite naturally,
+  since the negation, when it holds for both premises, must cut off every
+  connection between the extremes and the middle concept.
+\item[2)] \textit{Ex meris particularibus nihil sequitur}; for two
+  particular premises make the connection of the extremes and the middle
+  concept doubtful.
+\item[3)] \textit{Conclusio sequi debet partem debiliorem præmissarum}. For
+  nothing can be posited in the conclusion that is not \textit{implicite}
+  presupposed in the juxtaposition of the two premises.
+\end{itemize}
+
+\anm{3} The ambiguity that \textit{diversi respectus} contain, in that they
+both produce and annul the contradiction, shows itself most clearly of all
+in syllogistic. For since every thing can be regarded from more than one
+side, one can always find for a conclusion's subject and predicate more than
+one middle concept, just as conversely the middle concept and its relations
+can in turn be apprehended from several different points of view
+(Leibnitz's combinatorial analysis --- Plouquet's calculus). As subjective
+reflection hereby develops itself into formal freedom, and uses this freedom
+arbitrarily to set truth's semblance in truth's place, syllogistic passes
+over into sophistry. The sophisms of the ancients do not, however, all bear
+the same stamp; for while some, as for example the so-called
+\textit{Elenchus in dictione}:
+
+\begin{center}
+\textit{mus rodit caseum,}\\
+\textit{mus est syllaba,}\\
+\textit{ergo: syllaba rodit caseum.}
+\end{center}
+
+\noindent are so crass that they must be regarded as logical
+``Kjældermænd'' (flat puns), others on the contrary (--- ψευδόμενος,
+σωρείτης, φαλαρκός ---) conceal a dialectical sting, and thereby form a kind
+% φαλαρκός, with ρκ where the Greek wants κρ, is the Danish page's own wrong
+% setting, logged in the transcription; copied verbatim.
+of holding-points for acute thinking. It is the contradictions of the
+represented world and of the so-called sound understanding that have given
+the first impulses to philosophical movements of thought; but so long as a
+more determinate method was still lacking, the deeper reflection had to keep
+to sporadic παράδοξα, and make the problems intuitable by giving them a
+piquant mask. Only as vehicles for ingenious plays of thought do the
+sophisms have a relative significance; when on the contrary they are
+cultivated for their own sake, they testify to philosophy's vanity and
+self-dissolution. Even the theory of the refutation of the sophisms is
+without logical interest; for he who has first learned to think consistently
+and thoroughly will in every case know how to unmask the false, and a
+reasoning that departs altogether from all sound thinking does not even
+deserve to be refuted. Least of all can the rules for such refutations be
+treated in the doctrine of inference; for the syllogism is only the general
+form under which the sophists insinuate the most heterogeneous distortions.
+Aristotle's treatise περὶ σοφιστιχῶν ἐλέγχων therefore yields only a meagre
+profit for logic, but is nonetheless a document remarkable for the history
+of philosophy, insofar as it contains a testimony to the enormous
+thought-empiricism, the wealth of reflection-experiments, in which Greek
+philosophy had to try itself before the systematic logician could appear.
+
+\anm{4} As the judgment is the subjective thought-form that corresponds to
+the objective concept-sundering, so also the syllogism is to be regarded as
+a silhouette, drawn by the understanding, of that infinite circuit in which
+the concept's separated extremes seek their concrete unity. The difference
+between the formal and the speculative apprehension of the inference's
+essence and significance rests then chiefly on this, that the logic of the
+understanding sets up the premises as given sentences, whose middle term
+must be taken as it is found, while the logic of reason on the contrary
+reduces the premises to opposed concept-totalities, whose medium develops
+itself out of their dialectical relation; in the logic of the understanding
+the conclusion (i.e.\ the \textit{conclusum}) is a consequent sentence, a
+result the thinking subject itself draws out; according to the logic of
+reason it is on the contrary the sundered totalities' mutual transition, in
+which they integrate each other --- the joining-together in which they both
+find their subsistence. In the formal inference of the understanding, the
+syllogism, the single members are set out in an outward succession; in the
+true inference of reason they are simultaneous. Thus the coherence of the
+universe consists in an inference: the sun draws the planets to its centre;
+every planet in turn flees the attracting sun, and the medium of the
+centrifugal and the centripetal force is the elliptical movement. The animal
+development of life goes on in the form of inference; for the organism is
+the medium between the life-moments' undivided unity in the soul's inner and
+the functions' multiplicity in the bodily outer. Freedom is an inference: it
+presupposes itself in its endowment, actualizes itself in its striving,
+possesses itself in its result, and the means is always medium between
+purpose and execution. The examples here adduced certainly do not further
+explain either the universe, life or freedom, but they serve nonetheless to
+make intuitable the truth that the inference is the objective form of
+reason, and to make intelligible the Hegelian utterance: ``der Schluß ist
+nicht nur vernünftig, sondern alles Vernünftige ist ein Schluß.''
+
+\parag{10}{The Formal Validity of Inference.}
+
+In order to express its true logical content, the inference must run through
+several stages of development, and the forms of inference can therefore be
+divided: a) according to \emph{quality}, into the inference of separateness,
+of singleness and of universality, such that the \textit{terminus medius},
+which here expresses only an abstract concept-determination, runs through a
+threefold schema: \textit{E---S---A}, \textit{S---E---A} and
+\textit{E---A---S}, in order to mediate the extremes; b) according to
+\emph{quantity}, into the inference of allness, induction and analogy;
+reflection, which empirically gathers and separates the concept's essential
+universality and existential singleness, strives at this stage out beyond
+the rule toward the immanent law; c) according to \emph{relation}, into the
+categorical, hypothetical and disjunctive inference, whereby the concept's
+ideal sundering and actuality's real sundering reflect each other with such
+necessity that the totality comes into view in all forms.
+
+According to the speculative logic, the inference's absolute truth is to be
+explicated in a system of three inferences.
+
+\anm{1} The so-called figures of inference, of which Aristotle set up the
+first three, and later logicians (Galen) added a fourth, are distinguished
+in formal logic according to the place the middle term occupies in the two
+premises. Thus the first figure is characterized by the middle term's being
+subject in the major premise and predicate in the minor; according to the
+second figure the middle term is predicate, according to the third figure
+subject, in both premises. The fourth figure, in which the middle term is
+subject in the minor premise and predicate in the major, forms a superfluous
+contrast to the first. To each of these figures determinate rules are then
+attached: as regards the first figure, the major premise must be universal,
+the minor affirmative, and the whole subsumption follow the general norm:
+\textit{nota notæ est nota rei ipsius}. In the second figure, whose major
+premise must likewise be universal, the one premise is affirmative and the
+other negative; the third figure demands that one of the premises be
+universal, and the minor premise affirmative; the fourth figure is
+artificially produced by various conversions. This schematizing shows that
+each of the concept's principal sides must come forward as \textit{terminus
+medius} in order that the joining of the extremes may be fully grounded;
+but, isolated from their logical content and mutual connection, these
+abstract forms of inference have no deeper significance. By reducing the one
+figure to the other, formal logic awakens a presentiment of their inner
+connection.
+
+% The Danish prints this remark as "Anm. 1." a SECOND time — § 10's remarks
+% run 1, 1, 3, 4, 5 in the original (see the transcription's notes at pp. 75
+% and 79). The printed numbering is mirrored here.
+\anm{1} The inference of quality has the mark that it always keeps to the
+immediate difference and unity of the concept-determinations. What is only a
+single cannot as such be a universal. In order that two such abstract outer
+members may be united, a middle determination is required, which in one
+respect coincides with singleness, in another respect with universality;
+this middle determination is the \emph{separate}. ``Bravery is a virtue,
+Alexander has shown bravery; Alexander is virtuous.'' The qualitative
+inference thus begins with the first figure: \textit{E---S---A}. That this
+inference is very imperfect appears upon closer consideration. The
+conclusion, whose validity was to be derived from the premises, itself
+conditions their truth. For if the conclusion is merely to declare that
+everyone who is brave is also, without any regard to his other qualities,
+virtuous, then the conclusion is only a tautological repetition of the
+\textit{propositio major}, and thinking makes no advance whatever. If on the
+contrary it is to be expressly brought out that a single, determinate
+individual is virtuous on account of \emph{his} bravery, then the inference
+is false, since the conclusion in this case contains more than can be
+derived from the premises. By bringing out another quality in the individual
+concerned, one can therefore also come to an entirely opposite result.
+``The sensuous nature is not virtuous, Alexander has a sensuous nature,
+therefore he is not virtuous.'' Whether a separate and a universal
+concept-determination let themselves be united or not depends then upon the
+concrete single existence, which according to its nature always has several
+different qualities. Singleness must accordingly be laid at the ground of
+the joining of the separate and the universal, whereby the transition takes
+place to the second schema (i.e.\ formal logic's third figure):
+\textit{S---E---A}: ``Man is rational, man is mortal; a mortal is
+rational.'' The separate determination ``mortal'' and the universal
+determination ``rational'' are found united in every human individual. More
+closely regarded, this conclusion likewise expresses no proper inference.
+The singleness or the individual must simply be sought out, and when it is
+found, then the separate and the universal determinations that inhere in it
+are at once discovered by analyzing thought. Hence it is also in itself
+quite indifferent which of the two extremes one will in this case make
+\textit{terminus major}; the conclusion: ``a mortal is rational,'' can
+without further ado be turned about: ``a rational being is mortal.'' The
+proper advance consists consequently in the middle concept's contingency
+being expressly brought out. --- In order to form the true middle between
+the separate and the universal, the single must itself be determined as
+separate; this can happen only in virtue of universality. With this
+presupposition the transition is made to the third schema (formal logic's
+second figure): \textit{E---A---S}. Insofar as this form of inference is
+regarded in its connection with the two preceding, both its premises can be
+said to be formally grounded. For the \textit{propositio major}:
+\textit{S---A} stands as conclusion in the second schema, and the
+\textit{propositio minor}: \textit{E---A} results from the first.
+Nevertheless the middle concept is here too insufficient, since the
+qualitative universality falls outside its singleness and separateness. This
+defect comes into view in the inference's ending in a negative result: ``No
+man is four-legged, the lion is four-legged; the lion is not man.''
+
+It stands with the qualitative inference as with the qualitative judgment;
+its moments can, according to their unity and difference, be reduced to
+tautological sentences and superficial contradictions. \emph{The single is
+only single}, insofar as it is held fast one-sidedly and immediately.
+``This apple'' is, for example, a single, for one is to think neither of its
+manifold qualities, nor of its likeness and unlikeness with others. But
+every other apple is again, taken by itself, a single, a ``this,'' which is
+immediately pointed out. The consideration of the existing things thus leads
+us from the single to the single, without any separateness or universality.
+This tautology shows itself at the same time as a superficial contradiction:
+by repeating itself, \emph{the single becomes universal}, and since this
+repetition cannot be thought without the difference between the several
+singlenesses coming into view, \emph{each single must immediately be
+determined as a separate}. By analyzing the concrete singleness one can
+separate it into a plurality of universal determinations. The single apple
+has thus a certain fragrance, taste, form, weight and so on, and when all
+the universal determinations are separated, the thing's singleness vanishes
+at the same time. As the nominalist annuls \textit{universalia} in
+\textit{res}, so the realist dissolves \textit{res} into its
+\textit{universalia}. If now each \textit{universale} is held fast for
+itself, we have again both a tautology and a contradiction. ``Fragrance is
+fragrance, without regard to that which is fragrant; taste is taste, without
+regard to that which tastes:'' \emph{the universal is universal}. But as the
+fragrance, the taste, the color and the weight are each in particular
+posited as qualitative universalities or universal qualities, each
+\textit{universale} becomes itself single: \emph{the universal is a
+single}. Although now every universal determination must be observed for
+itself, it still cannot be defined except by the help of another universal
+determination, so that the difference between \textit{universalia} is by no
+means indifferent: \emph{the universal is a separate}. It is further evident
+from this that the all-sided determination of separateness is the
+inference's aim --- an aim the qualitative inference cannot realize. In
+order to ground the true unity of the single and the universal, separateness
+must at once be identical with both extremes, and yet at the same time
+different from them both. But now it lies in quality's own concept that the
+separate, when it is held against the single, becomes itself a single, and
+when it is set against the universal, is transformed into an abstract
+universality. Hence the \textit{terminus medius} alternates between the
+three different extremities: \textit{S}, \textit{E} and \textit{A}. Thus one
+can, for example, lay the genus, the separate, at the ground of a joining of
+the individuals and the universe. In its difference from individual and
+universe the genus is then hypostatized and personified. But just as
+immediately one can then also turn the whole form of inference about, and
+declare that the genus exists only in the single individuals, that the
+universal must not be thought separate from the single, and thus make the
+individual \textit{terminus medius} for genus and universe. If it must now
+further be conceded that the individuals unceasingly dissolve and pass away,
+then one needs only to invert the form of inference once more, and lay a
+universal quality (water, air, fire) at the ground of a conclusion of
+individuals and genus. Since it is now an impossibility to state how a
+universal element of nature could have sundered itself into separate
+existences, this inference gives no positive result whatever, but expresses
+only the negative truth that the separate genera and their individuals could
+not exist if they did not have a common natural medium. By leaping from the
+one middle concept to the other, naturalism always confuses the condition
+with the creating ground, and the philosophy of atheism characterizes itself
+by thinking's never going out beyond the qualitative inference.
+
+\anm{3} The formalism in which the inference of quality ends finds its
+purest expression in the inference of quantity. According to its immediate
+quantity-content, the inference can be reduced to the mathematical axiom:
+two magnitudes, each of which is equal to one and the same third, are equal
+to each other; \textit{a} = \textit{b}, \textit{b} = \textit{c}, therefore
+\textit{a} = \textit{c}. But since all the \textit{termini} here have the
+selfsame significance, there can in the logical sense be talk neither of
+concept, judgment nor inference. The inference of quantity must for that
+reason be further developed and determined as the \emph{comprehensive}
+inference, in which the universal and the single hold themselves with
+relative independence over against each other, and therefore seek a more
+concrete \textit{terminus medius}. For the rest, the inference of quantity
+runs through the same schemata as that of quality. In allness the universal
+and the single come immediately into view with their unity and difference.
+Since allness is the collective universality, singleness becomes by its own
+repetition itself universalized; but since every single in turn has its
+independent significance in the allness, universality is at the same time
+based upon singlenesses; the medium or the separate is in this case nothing
+other than the universal's and the single's existential determinateness.
+Hence the comprehensive inference begins, as \emph{inference of allness},
+with the first schema: \textit{E---S---A}. ``\emph{All} (single) men are
+mortal, Caius is \emph{a single} man; therefore C.\ is mortal.'' The
+conclusion is in this form too a tautological repetition of the major
+premise, and the inference of allness is for that reason only to be regarded
+as a transition, so that everything depends upon an actual union of the
+separate and the universal, whose ground is to be sought in singleness. The
+comprehensive inference hereby enters into the second schema:
+\textit{S---E---A}, and is determined as \emph{induction}. According to
+formal logic, inferences of induction are characterized thus: ``one infers
+that a predicate that belongs to \emph{a determinate} number of subjects of
+a certain \textit{genus} must hold for \emph{all} subjects belonging under
+this \textit{genus};'' or: ``What holds of certain species and individuals
+that are subsumed under a universal genus-concept must also hold of the
+whole genus.'' But from this point of view the inference loses its essential
+significance; for if all possible cases are not enumerated, it is
+incomplete, and when they are all adduced, one obtains an addition instead
+of an inference. If induction's logical worth is to be acknowledged, then
+the accent must necessarily fall upon the \textit{terminus medius}, which
+here presents the developed allness. More closely inspected, allness now
+offers a double side; for partly it shows itself to thought as the essential
+universality, partly it is apprehended by immediate observation as the
+common determination of the singlenesses. The essence, the universal, exists
+only in the individuals; one cannot therefore cognize the genus without
+having first observed all its species and individuals; but every following
+individual is always in certain ways different from the preceding, and the
+number of the singlenesses so great that one can never finish the
+observation. Cognition's a priori moment is still hampered by the
+preponderance of the a posteriori, and the result is a combination of
+thinking and sensation, which lies at the ground of all experience. By
+posing a task that cannot be solved, induction marks the logical transition
+to the inference of analogy. Instead of seeking the universal in the sum of
+the singlenesses and losing itself in an endless approximation, thinking now
+posits a given exemplar as immediate expression of the genus-concept and its
+specific determinations, whereby the inference's schema is changed to:
+\textit{E---A---S}. If two subjects have a certain number of predicates in
+common, one infers according to the formal analogy that they must have yet
+more. The earth and the moon have, as planets, several common properties;
+since now the earth is also inhabited, it seems to follow from this that the
+moon must be so too. The moon (\textit{E}) is thus ascribed, on account of
+its likeness with the earth (\textit{A}, insofar namely as the earth in this
+case represents the planet's concept), the particular determination
+(\textit{S}) of being inhabited. The general concept, which fled through
+induction's endless progress, is now immediately held fast as the inference
+of analogy's determinate foundation; but since its appearance is quite
+empirical, it still remains doubtful how many of the particular
+determinations belong to the genus, and consequently can be found again in
+all its species and individuals, and how many on the contrary belong to the
+single exemplar. Even if natural science had not pointed out phenomena that
+conflict with the hypothesis of moon-dwellers, it would still always be
+problematic whether it belonged to the earth as a single individual globe,
+or as the planet-concept's existential expression, to be inhabited by living
+beings. As astrology shows how one can misuse induction and analogy to
+introduce fantastic dream-images into actuality's realm, so Christophobia
+proves on the contrary, insofar as it gives itself a philosophical tinge,
+that the same forms of inference can be used when the aim is to transform
+the historical truth into a dream-image. It is this hovering between the
+immediate experience and the free thinking, between the outer actuality and
+the essential concept, that characterizes the comprehensive inferences, and
+occasions their great ambiguity. Reflection can fall into the
+leading-strings of sensation and empiricism; but the immediate glance of
+thought is again able to penetrate the empirical surface and gather the
+sporadic moments in their essential ground. The rule that develops itself in
+order to become law, the circuit and the endless progress, repetition and
+alternation, belong under this sphere; hope itself is an inference of
+induction. Hence the inference of induction and analogy extends its logical
+dominion all the way from the prosaic probability and the empty surmise,
+through the deep presentiment, to the genial divination.
+
+\anm{4} The opposition between the thought and the existing concept,
+together with the concrete unity of both, is developed in the inference of
+relation, whose mark is that each of the three \textit{termini} itself
+expresses the whole concept-totality. The difference between the extremes
+therefore seems at first glance to concern not so much the content as the
+form; for every single concept, individual, is the general concept's own
+actuality, and the concrete general concept is in turn the actual
+individual's totalized essentiality. But, more closely regarded, the formal
+difference is also to be recognized as a difference in the content itself.
+For as immediate single existence the individual can have many indifferent
+and accidental qualities that fall outside its concept; it can moreover find
+itself in such a state that the essential and original determinations are in
+many ways hidden and hampered, so that the actual exemplar by no means
+expresses the whole concept-content. A similar one-sidedness obtains with
+respect to the general concept, whose separate determinations can appear
+only in and by means of the individual. If the sensuous did not exist, then
+sensuousness could not be either; if the rational did not exist, the thought
+of a universal rationality would be a meaningless abstraction. The true
+unity of the single and the universal is consequently to be determined as
+both extremes' infinite relation, i.e.\ such a joining of both outer members
+that the individual itself is developed to its concept, whereby
+\textit{universalia in re} are transformed into \textit{universalia in
+mente}; while the concept is at the same time individualized, and
+\textit{universalia in mente} converted into \textit{universalia in re}. As
+a natural individual without upbringing, man cannot reach his determination,
+because he lacks the stamp of the universally human, and thus, logically
+speaking, does not answer to his concept; but just as little can a blind,
+habitual submission to the laws of duty and morality satisfy human nature,
+which will always demand an independent appropriation of what is handed
+down, as the free single will's imperishable right. True upbringing is an
+inference of relation, which has the natural individuality and the moral
+laws for its extremes, but the living, personal unity of both for its
+\textit{terminus medius} (--- false originality, formal school, true
+originality; --- mystical self-annihilation, mystical self-deification;
+religious personality ---).
+
+Since the concept's essence in relation to the existing individuals must
+always be the overreaching, insofar as it expresses the things' category,
+the category or the separate concept forms the medium between singleness and
+the abstract universality. Hence relation begins with the \emph{categorical}
+inference after the schema: \textit{E---S---A}. In syllogistic form the
+categorical inference cannot well be distinguished from the inference of
+allness, since the syllogism's middle term is always simply inserted without
+developing itself out of the connection itself. What on the contrary
+distinguishes the categorical inference above the general one is the insight
+into the concept's essence, which makes every enumeration of the special
+cases and empirical appearances superfluous. He who has once fully
+recognized which fundamental determinations belong together in order to
+constitute human nature can always be certain of finding each of these
+again, either \textit{implicite eller explicite}, in the single individuals,
+% "eller" is antiqua in the Danish and stands inside the italic run, per the
+% transcription's note; carried as printed.
+without needing an endlessly continued experience. If such categorical
+certainty were not given, then every question of principle would be
+meaningless, and science itself an impossibility. By means of the
+categorical inference the concept's apriority is first fully acknowledged.
+But as the categorical inference dissolves the existing things into their
+categories, it presents at the same time a one-sided concept-realism
+(\textit{universalia ante rem}), which must be corrected by a higher form of
+inference. That no thing can contradict its category without changing name
+and existence --- from this it does not yet follow that the thing's
+individual determination should immediately coincide with the concept's
+universality; because possibility's extension is determinate, its content is
+not yet for that reason exhausted. In order therefore to satisfy
+individuation and the higher realism (\textit{univ.\ in re}), singleness
+must itself be laid at the ground. The a posteriori (experience and fact)
+thereby steps up anew against the concept, and the mutual relation of both
+is developed in the \emph{hypothetical} inference of the schema:
+\textit{S---E---A}. Since the middle concept is reduced to singleness and
+fact, and consequently must be given immediately, the hypothetical inference
+can express its logical content in the syllogism's form. The major premise
+then becomes a hypothetical judgment, and formal logic now prescribes a
+double method of inference: from the antecedent's correctness one infers by
+\textit{modus ponens} to the consequent's validity, after the rule:
+\textit{posita conditione, ponitur etiam conditionatum}; from the
+consequent's incorrectness one infers on the contrary by \textit{modus
+tollens} to the antecedent's rejectability, according to the rule:
+\textit{sublato conditionato, tollitur etiam conditio}.
+
+Misled by a grammatical regard, formal logic has, however, committed the
+error of confusing \textit{conditio} with \textit{conditionatum}. In a
+judgment such as this: ``If \textit{F} has seen this play, it must have been
+performed,'' the consequent evidently declares the proper condition, the
+antecedent on the contrary the conditioned. The general relation between
+actuality and concept is presented in the \textit{propositio major}, which
+expresses the a priori law of thought without regard to any determinate
+actuality. The minor premise thereby acquires, in consequence, a double
+significance: partly the condition can be negated, in which case the
+conditioned actuality is to be regarded as impossible (\textit{a non posse
+esse ad non esse valet consequentia}); partly the single fact can show
+itself so unambiguous that the presence of its conditions can be derived
+from it (\textit{ab esse ad posse esse valet consequentia}). The application
+of the hypothetical inference serves to make intuitable the true interaction
+between thinking and experience. On this relation rests philosophy's formal
+cultivation and real advance. A philosophical school that, for example,
+overvalues the logical can, as regards principle, always be referred to the
+% The quotation below opens with `` and never closes — the Danish p. 86 sets
+% no closing mark (printer's defect, logged in the transcription); mirrored.
+hypothetical major premise: ``If \textit{A} is a philosophical problem, it
+must be solvable by pure dialectic. So long as such a school is in process
+of forming itself, its adherents will, in the choice and treatment of the
+philosophical tasks, keep to the presupposition's infallibility, and by
+application of \textit{modus ponens} volatilize every problem whose solution
+oversteps the boundaries of formal dialectic. ``If evil is a problem, it
+must find a dialectical solution; now it is a philosophical problem,
+therefore it has no other significance than that which formal dialectic can
+allow it.'' But when the facts speak too loudly against such a reduction,
+philosophy is at last compelled to take a step forward, turn the inference
+about, and avow \textit{modus tollens}: ``If formal dialectic yields
+philosophy's absolute method, then it must be able to solve the problem of
+evil; now it cannot solve it, therefore the method is insufficient.'' If the
+form of inference is apprehended from a general point of view, then the
+one-sidedness lies in this, that the major premise states only an abstract
+necessity, while the minor introduces a pure contingency; hence the
+conclusion still lacks the true grounding. This defect the
+\emph{disjunctive} inference remedies by positing its middle concept as the
+real possibility of the actual existential forms, after the schema:
+\textit{E---A---S}. This schema may indeed seem to deviate from the
+disjunctive inference's usual form: \textit{A} is either \textit{E} or
+\textit{E'}, or \textit{E''}; now \textit{A} is posited as \textit{E},
+therefore it is neither \textit{E'} nor \textit{E''}; but according to the
+significance ascribed above (\S\,8, Remark 4) to the disjunction, the major
+premise, according to its concept, is to be presented thus: \textit{E},
+\textit{E'}, \textit{E''} are, each for itself, to be subsumed under
+\textit{A}; now \textit{A} is determined as \textit{E}, therefore it is in
+this \emph{particular} (\textit{S}) case neither \textit{E'} nor
+\textit{E''}. The general concept (\textit{A}) has now so concrete a content
+that its real possibility preforms the outer actuality. The conditions for
+its stepping out into particular existential forms are indeed still fetched
+from without; but the existence that yields these conditions has itself
+proceeded from the absolute concept's own ground. According to the
+possibilities' inner sundering, \textit{A} is both \textit{E}, \textit{E'}
+and \textit{E''}; but according to actuality's exclusive determinateness it
+cannot be \textit{E'} and \textit{E''} when it is \textit{E}. If the outer
+disjunction were not posited, then possibility would remain eternally
+unactual; if the inner disjunction were only an empty abstraction, the
+exclusive actuality would be impossible. As the disjunctive inference thus
+yields the highest norm for the concept's formal development, it confirms at
+the same time the truth that the absolute concept would have no validity if
+it did not at once exist both \emph{inwardly}, in the all-intelligence's
+infinite freedom, as a realm of sundered possibilities and individualized
+potencies, and \emph{outwardly}, in the universe's immediate actuality,
+whose outer totality stamps out the real disjunction. In essentiality
+mediation holds; in actuality, \textit{principium exclusi medii}; the true
+unity of theory and practice will therefore always rest upon a thorough
+synthesis of mediation and exclusion.
+
+\anm{5} The number of the inferences is, with respect to their separate
+content, as infinite as the multiplicity of thoughts and things. It is
+consequently an impossibility to enumerate all the cases in which they can
+cross one another and pass over into one another. But in all different
+sunderings and joinings the general ground-norm nevertheless holds, that
+each of the three \textit{termini} is to be posited both as extreme and as
+medium. Hence the higher logic teaches that every inference consists in a
+system of three inferences. ``Many disagreements and confusions in science
+have their ground in one's keeping to the single inference instead of to the
+whole system. Hereby arise different, indeed opposite assertions, of which
+each is correct insofar as it is a side of the truth, but incorrect insofar
+as its truth is one-sided. When one says that man's spiritual nature
+develops itself out of the sensuous, or that the body develops the soul, one
+infers according to \textit{E---S---A}. If one says that the sensuous and
+the spiritual are inseparably bound together in the individual, and that
+neither of the two has priority over the other, then it is
+\textit{S---E---A}. And if one finally assumes that it is the spiritual
+nature that lies at the ground of the development of the sensuous, or that
+it is the soul that forms its body, one infers according to
+\textit{E---A---S}. But the whole truth is only in the complete system of
+all three inferences. The first inference is materialism's, the second is
+empiricism's, the third is spiritualism's. But the whole system is
+idealism's.'' Heiberg: Den specul.\ Logik, Pag.\ 99.
+
+\parag{11}{The Real Validity of Inference: Proof and Method.}
+
+Since the formal syllogistic satisfies only the empty reflection, without
+any regard to existence's real content, this defect must in turn be made
+good by a series of immediate presuppositions being taken up outright as
+given points of attachment for reasoning thought. Knowledge proper, or
+scientific cognition, will thus rest upon the mediate or resulting unity of
+thinking and being, which is to be sought in \emph{the proof}. But so long
+as the proof is conditioned by so external a combination of concept and
+actuality, the scientific method can be driven from the one extreme to the
+other. Dogmatism, which builds upon unproven presuppositions, is supplanted
+by criticism, which shakes all positive supports and overturns the thetic
+edifice of doctrine. In order to escape the skeptical confusion, the higher
+knowledge, which has not yet found its true method, must then develop
+itself either into a formal idealism, which absorbs existence's content in
+an immanent demonstration, or into a realism of feeling, which exchanges
+the scientific form for a lyrical rhetoric, and relies upon immediate
+evidence.
+
+The true philosophical method can consist neither in a merely poetic-genial
+unveiling of existence's absolute content, nor in a merely logical formal
+development of the universe's concept-moments, but must justify itself as a
+totality-dialectic, in which existence's principles show themselves with
+their relative significance, and all life's potencies stir according to
+their peculiar validity.
+
+\anm{1} Aristotle (\textit{Analytic.\ post.\ c.\ 1---3}) places the
+difference between syllogism and proof in this, that the syllogism in and
+for itself gives no real cognition (συλλογιςμὸς οὐ ποιήσει ἐπιστήμην),
+% The medially standing final sigma in συλλογιςμὸς (twice) is the Danish
+% page's own wrong sort, logged in the transcription; copied verbatim.
+while the proof (ἀπόδειξις) on the contrary always carries with it the
+certainty that the matter must in itself stand as we think it, wherefore the
+proof can also be called a cognition-syllogism (συλλογιςμὸς ἐπιστημονικός).
+Nevertheless he seeks to refute the view that all cognition of truth should
+be dependent upon syllogistic proofs. By positing the demonstration as
+condition for all knowledge, one must either, as some have wished, deny
+science's possibility, since every inference contains premises that must in
+turn be proved by new inferences, so that the whole conduct of proof loses
+itself in an endless regress; or else, what others have attempted, derive
+the premises from their own conclusions, whereby the so-called
+\textit{circulus in probando} arises, and the proof comes to hover in the
+air. As there are, then, according to Aristotle, truths that can and must be
+demonstrated, so there are also truths that require no proof, since they
+themselves yield the original supporting-points for all demonstration:
+ἀναγκη καὶ τὴν ἀποδεικτικὴν ἐπιστήμην ἐξ ἀληθῶν τ' εἶναι καὶ πρώτων, καὶ
+ἀμέσων, καὶ γνωριμοτέρων καὶ προτέρων, καὶ αἰτίων τοῦ συμπεράςματος. οὑτος
+γαρ ἔσονται καὶ αἱ ἀρχαὶ οἰκεῖαι τοῦ δεικνυμένου (\textit{Anal.\ post.\ c.\
+2}). It is chiefly the assumption of these many ἀρχαί, or principles and
+grounds of cognition, that separates Aristotle from Plato. For while Plato
+aimed especially at explaining the multiplicity of things in virtue of the
+universal concepts' (the ideas') apriority, Aristotle fixed his gaze also
+upon the world of experience, in order to find in it the sporadic points of
+departure, and to lead the existing single concepts (αἱ πρώται οὐσίαι) back
+to their universal fundamental concept. Although now every science has its
+separate presuppositions, still in all of them, even in philosophy, there
+must both be something from which one proves, and also something about which
+the conduct of proof turns; the Aristotelian doctrine of thought can
+therefore be said to have established philosophy's dogmatic method.
+
+\anm{2} After dogmatism in the history of philosophy had run through various
+stages of development, it was in modern times driven to its peak by Christ.\
+Wolf, who methodically cultivated the so-called \textit{methodus
+mathematica}. Since every presupposition in this method coincides with a
+definition that is to express the concept's essential determinations,
+analysis is sufficient to bring out the result already anticipated in the
+definition itself; whereby the whole demonstration acquires a semblance of
+apodictic infallibility. ``The divine Being must, according to its concept,
+possess all perfections; being is a perfection, therefore God must exist.''
+--- The insufficiency of this dogmatic method was demonstrated by Kant
+(jfr.\ Die Disciplin der reinen Vernunft im dogmatischen Gebrauche; Kritik
+d.\ r.\ V.; Methodenlehre 1 Haupst.). While Kant concedes to mathematics
+that it gives a brilliant example of pure reason's self-development without
+experience's help, he at the same time denies the mathematical method's
+applicability in philosophy. The methodical difference is grounded in the
+peculiar nature of the two sciences. For while philosophical cognition
+considers the separate in the universal, i.e.\ holds fast universality
+\textit{in abstracto}, the mathematical on the contrary posits the universal
+in the separate, and thus possesses it \textit{in concreto}; what ``der
+Vernunftgebrauch durch Construction der Begriffe'' is in mathematics, ``der
+Vernunftgebrauch nach Begriffen'' is in philosophy. Mathematics' definitions
+are always infallible, since they are brought forth \textit{a priori}
+together with their corresponding objects; while the philosophical
+definitions on the contrary presuppose a content given in actuality, whose
+determinations cannot be immediately delimited. Mathematics, which
+constructs its concepts in a priori synthesis, can employ the demonstration;
+whereas philosophy, whose universal concepts must always refer to
+``possible experience,'' cannot attain to any speculative synthetic
+judgment, and therefore cannot demonstrate its way forward either. But
+although Kant thus sought to drive all ``dogmata'' from philosophy's
+precincts, he still leaves behind, in his ``discursive Grundsätze'' and his
+dialectical ``Antithetik,'' a remnant of dogmatism and demonstration.
+% The Danish paragraph ends with a comma where a full stop belongs (printer's
+% defect, logged in the transcription); normal punctuation is supplied here.
+
+\anm{3} In his Wissenschaftslehre Fichte set himself the task of reconciling
+dogmatism with criticism, and insofar as dogmatism refers to a ``Ding an
+sich,'' it may be said to be thoroughly overcome in his transcendental
+idealism; on the other hand he approved the demonstration, and developed it
+to its highest stringency. As the first unconditioned principle: \textit{A}
+= \textit{A} is annulled in the thinking I's identity with itself, so the
+second: \textit{A} is not = --- \textit{A} expresses the I's difference from
+the not-I. \emph{Identity} and \emph{opposition} thus give themselves as
+expressions of I-hood's original fundamental acts. The third principal
+proposition: \textit{A} and --- \textit{A}, I and not-I, mutually
+\emph{bound} each other, can now be deduced from the two preceding, so that
+the unity of reality and negation, identity and opposition, which makes up
+\emph{the ground's} essential mark, already receives the form of proof. As
+antithesis and synthesis thus condition and integrate each other in the
+continued development, the philosophical categories take on an intermediate
+character of fixity and fluidity, whereby the whole system rounds itself off
+in an immanent demonstration. While Fichte thus heeded only thought's
+necessity, and philosophized for philosophy's sake, Jacobi on the contrary
+followed the promptings of the heart, and philosophized for the result's
+sake. In the firm conviction that every philosophical demonstration must
+consistently lead either to fatalism (Spinoza) or to atheism (Fichte), he
+polemicized against the finite reflection's ``Durch= und Durch=Begriffe,''
+and defended with rhetorical power reason's immediate cognition of God
+against the abstract knowledge's nihilism. While Kant still acknowledged the
+categories' subjective universal validity, only that they could not be
+applied to the thing in itself, Jacobi, as Hegel has already remarked, went
+a step further, and demonstrated the understanding-concepts' own finitude
+and mechanical conditionedness. According to Kant, speculative science must
+be given up, because it is once for all a psychological fact that the forms
+of cognition lie in ourselves, and not in the essence of things; according
+to Jacobi, true comprehension becomes impossible, because the concept, as
+such, is itself finite, and consequently incommensurable with truth's
+infinite content. If Kant attacked metaphysics chiefly from the side of the
+stuff, without consummating the mechanical demonstration's own dissolution,
+then Jacobi on the contrary attacked metaphysics' form, and sought thereby
+to bring every philosophical \emph{method} into discredit.
+
+\anm{4} When Kant calls the philosopher an \emph{artist of reason}, he
+thereby intimates that philosophy cannot dispense with a determinate
+structure, that its scientific content has its validity in the form; when
+Jacobi on the contrary sets the philosopher the task of \emph{unveiling
+existence} (Daseyn zu enthüllen), he thereby reminds us that science's true
+worth always rests upon its substance. The philosophical question of method
+is therefore as far from being an empty formal question as a mechanical
+schema is from being a philosophical system. The form that determines the
+content is in turn determined by the content's peculiar character; as
+impossible as it is to develop a content without giving it form, just as
+unscientific is it on the other side to confuse the content with the stuff,
+and to apply an already finished form to a content given from without: that
+which determines (the form) and that which is determined (the content)
+reflect each other in the complete determinateness. He who would judge a
+philosophy's substance without regard to its peculiar form proceeds from the
+presupposition that the identity of content and form must rest upon the
+difference of both. If this way of seeing had no validity, then the history
+of philosophy would be meaningless; for the historical advance is always
+conditioned by the inadequate and outdated forms being cast off, in order
+that their essential content may be reproduced in a new form. He who
+maintains that the philosophical form cannot be separated from philosophy's
+content proceeds from the presupposition that the difference of form and
+content grounds their true identity --- that the difference is thus a
+moment vanishing in the identity. If this contention were altogether false,
+science itself would be superfluous. --- The difference between life's and
+philosophy's substance is in fact to be regarded as properly a difference of
+form, since all that has truth in life must also be recognized as truth in
+philosophy. What is peculiar in philosophy's content will thus rest upon its
+peculiar form; the productive philosophers who have discovered new forms
+have at the same time drawn forth new moments of content. --- What the
+intellectual intuition is with respect to the content, the dialectical
+reflection is with respect to the form. All speculation is intuition; the
+philosophical vision apprehends things' fundamental relations, life's
+shapes and existence's stages of development in large outlines; intuition is
+thus a plastic vision, for which form and method give themselves immediately
+together with content and substance. Without speculative genius there is no
+philosophical productivity: philosophy cannot be learned (Schelling). So
+long, however, as intuition has one-sided preponderance over reflection, the
+scientific form is present only in its possibility; but even if philosophy's
+genius has raised itself to ``the realm of the dawn,'' still the ideas'
+genial breaking-forth and intuition's prophecies have significance only
+insofar as philosophy is able to go out beyond the beginning, fulfil the
+prophecy, and take up actuality's concrete content in articulated forms.
+Philosophy is science, and distinguishes itself from poetry in this, that
+its forms are won through independent reflection and an all-sidedly testing
+meditation; it thus presupposes study, it justifies its method, and must so
+far be capable of being learned (Hegel).
+
+\anm{5} A philosophy's one-sidedness must not be confused with its
+incompleteness. Incompleteness shows itself in important points being passed
+over or only provisionally treated; but one-sidedness rests essentially upon
+certain fundamental moments being pushed back, while others on the contrary
+come forward with undue preponderance. A philosophy can be one-sided without
+being incomplete, and conversely incomplete without being one-sided.
+One-sidedness lies then in the systematic plan, in the method, and thus
+refers at once both to content and to form. Spinoza's system is one-sided,
+because substantiality here absorbs subjectivity, and even had Spinoza
+developed the human concept of freedom ever so fully, he would still never
+have been able to acknowledge freedom's reality without giving up his
+principle. Fichte's idealism is one-sided, because it lets subjectivity
+devour substantiality. True enough, Fichte has a place for the category of
+substance; but even had he written folios on the concept of substantiality,
+he would still, according to his fundamental view, never have recognized its
+objective significance. The true philosophical method can therefore in
+general be characterized as a totality-dialectic, which, to use Professor
+Sibbern's expression, forms itself ``under an all-embracing conference and
+debate of everything against everything'' (cfr.\ Sibbern: Om Philosophiens
+Begreb, Natur og Væsen.\ Pag.\ 24; 81).
+
+\divrule
+
+% ---- Second Part, printed pp. 97--283 ----
+% Printed p. 97 sets "anden Deel:" LOWERCASE (against p. 6's "Første Deel:"
+% and the Indhold's "Anden Deel."); the transcription records both readings.
+% The lowercase is mirrored here.
+\deel{second Part:}{The Doctrine of the Objective Concept.}
+\division{Introduction.}
+
+\parag{12}{The Dialectical-Speculative Method.}
+
+% [text to be added: pp. 97--113]
+
+\divrule
+
+% The Capitel arguments of the Anden Deel (pp. 114, 178, 247) ARE letterspaced
+% in the original, unlike pp. 6/35/68 — hence \capitelsp, as in the transcription.
+\capitelsp{First Chapter.}{The Formation of the Objective Concept.}
+\parag{13}{Being and Essence.}
+
+% [text to be added: pp. 114--131]
+
+\parag{14}{Essence and Actuality.}
+
+% [text to be added: pp. 132--158]
+
+\parag{15}{Actuality and the Concept.}
+
+% [text to be added: pp. 159--177]
+
+\divrule
+
+\capitelsp{Second Chapter.}{The Freedom of the Objective Concept.}
+\parag{16}{Ideality and Reality.}
+
+% [text to be added: pp. 178--202]
+
+\parag{17}{Subjectivity and Objectivity.}
+
+% [text to be added: pp. 203--224]
+
+\parag{18}{Teleology.}
+
+% [text to be added: pp. 225--246]
+
+\divrule
+
+\capitelsp{Third Chapter.}{The Fullness of the Objective Concept: the Logic of the Idea.}
+\parag{19}{The Originality of the Idea.}
+
+% [text to be added: pp. 247--257]
+
+\parag{20}{The Interaction of the Ideas.}
+
+% [text to be added: pp. 258--276]
+
+\parag{21}{Idea and God.}
+
+% [text to be added: pp. 277--283]
+
+\divrule
+
+\begin{center}\rule{0.35\linewidth}{0.4pt}\end{center}
+
+% ============================================================
+% ERRATA ("Rettelser") — the original's errata leaf, for the record.
+% All nine corrections are APPLIED in the Danish transcription (and hence
+% reflected in this translation); the leaf is reproduced in translation here.
+% The p. 92 entry misprints "ci" for "ei" in its own right-hand column.
+% ============================================================
+\cleardoublepage
+\chapter*{Errata}
+\markboth{Errata}{Errata}
+{\small\setlength{\parindent}{0pt}
+Page 80 line 3 from above Omsætningen read: Oversætningen\par
+--- \quad 92 \quad --- \quad 13 \quad --- \quad A er ei = A, \quad --- \quad A er ci = --- A\par
+--- \quad 93 \quad --- \quad 7 \quad --- \quad Betingelser \quad --- \quad Betingethed\par
+--- \quad 112 \quad --- \quad 4 from below \quad Daddel \quad --- \quad Dadel\par
+--- \quad 152 \quad --- \quad 8 \quad --- \quad med \quad --- \quad ved\par
+--- \quad 154 \quad --- \quad 15 \quad --- \quad Dyr=Rige \quad --- \quad Dyre=Rige\par
+--- \quad 187 \quad --- \quad 9 \quad --- \quad εἵδη \quad --- \quad εἴδη\par
+--- \quad 206 \quad --- \quad 9 \quad --- \quad en miniatur \quad --- \quad en miniature\par
+--- \quad 241 \quad --- \quad 1 \quad --- \quad θετον \quad --- \quad θεῖον\par
+}
+
+\end{document}
