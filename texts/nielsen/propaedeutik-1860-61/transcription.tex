@@ -13,8 +13,8 @@
 %  PAGE MAP:  see pagemap.py — uniform, printed 1--482 = PDF + 12.
 %          Verified by sweeping the header numeral of every PDF page 13--494
 %          via the scan's text layer: no offset change, no duplicated leaves.
-%          Endpoints to be re-confirmed against the page images by the first
-%          and last batch agents.
+%          Endpoint printed 1 = PDF 13 confirmed by eye; printed 482 =
+%          PDF 494 still owed (the last batch).
 %          Front matter (unpaginated): PDF 3--8 title leaves (two settings,
 %          both 1862, the fuller naming F. Hegel), PDF 9--10 Forord,
 %          PDF 11--12 Indhold.
@@ -37,9 +37,69 @@
 %          occur on p. 58). Rendered via the footnote counter with an
 %          explicit \setcounter{footnote}{0} after the % --- p. N ---
 %          marker of every printed page carrying a footnote; see the
-%          preamble note. Footnotes so far: pp. 15 (runs over to 16),
-%          34, 48, 55, 58 (two).
-%  PRINTER'S DEFECTS: none logged yet.
+%          preamble note. Every note is transcribed WHOLE at its anchor,
+%          even where the printing runs it over one or two following
+%          pages unmarked (pp. 15--16, 189--191, 192--193, 204--205,
+%          210--211, 211--212, 221--222, 224--226, 230--232); the
+%          continuation page then carries no mark and no counter reset.
+%          The single exception is the note anchored on p. 191, whose
+%          run-over is set with \footnotetext on p. 192 (counter left at
+%          0, so \thefootnote prints nothing) because the surrounding
+%          text made a second \footnote unavoidable.
+%          Footnote-bearing pages so far: 15, 34, 48, 55, 58 (two), 60,
+%          63, 75, 76, 78, 79, 83, 86, 89, 101, 115, 178, 179, 181, 184,
+%          185, 186, 187, 189, 191, 192, 194, 199, 202, 204, 206, 208,
+%          210, 211, 213, 214, 217, 220, 221, 224, 230, 236.
+%  EMPHASIS: letterspacing (Sperrsatz) is rendered \emph{}; antiqua set
+%          against the surrounding Fraktur is \textit{}. Both are decided
+%          per occurrence from the page image, never from the OCR — the
+%          same name is antiqua on one page and Fraktur on another.
+%          Sperrsatz is not confined to phrases: whole paragraphs are set
+%          gesperrt (the opening paragraph of section C, p. 177), as are
+%          the opening stretches of long footnotes (pp. 193, 202), and a
+%          gesperrt run characteristically STOPS before the parenthetical
+%          citation that closes it. pp. 177--236 were given a second,
+%          independent emphasis pass (2026-08-10) after the first pass
+%          was found to have missed emphasis on a dozen pages; it is
+%          driven by spacing.py, whose hits are confirmed on the image
+%          one by one, since it yields false positives at justified line
+%          ends and also misses runs outright.
+%  PRINTER'S DEFECTS: transcribed AS PRINTED, never silently corrected,
+%          each logged in a % comment at its site. Consequence: the
+%          „/“ balance drifts off zero on purpose. Logged so far —
+%          pp. 1--176: "Identiten" 24, missing „ before "blandet Natur"
+%          45, unclosed „ 46 (these two cancel), "Sammensætuing" 51,
+%          "ogsao" 56, "Mathemathikeren" and "?." 59, double-accented
+%          "ἄλλό" 16, "nendelig" 61 and a period for ? in its footnote,
+%          "vermehrend. aber" 74, missing stop after "d²s*)" 78, no stop
+%          after "desl.)" 81, stray stop after "Sundheden" 86, "shvor"
+%          87, stray mark before "articuleredes" 95, "Deu" 103,
+%          "forsøge---at" and the "for-/forskjelligt" dittography 119,
+%          unclosed parenthesis in the footnote 115, ink blob 116, "nd"
+%          for "ud" 125, stray comma after "ved" 126, stray hyphen after
+%          "viste" 139, "deune"/"Substaus"/"Deu" 140, speck before dash
+%          142, "Millard" 148, "uforgnderlig" 151, stray stops 159 and
+%          162, "qvantitativk" 160, "Produkt,-" 163, "Realiteteten" 167,
+%          stray stroke in "udelukker vistnok" 174.
+%          pp. 177--236: unclosed „ before "en Mængde" and "o. s. frdls."
+%          183, "Materen" 184, "mnltiplicanda" 185, "Dubois-Raimond"
+%          187, "knn" 189, "Labillarbière" 190, "cbauffés" and "dounera"
+%          191, "Vexelwirkung"/"abäqvaten"/"aüssern" in the footnote 193
+%          (all three are the compositor's German, not ours), ink blot
+%          before "oprundne" 201, "Betydning. naar" (stop for comma)
+%          202, "pùtrescit" (wrong sort, grave-accented u) 199,
+%          "methapysisk" 216, "Kraft." 218, missing opening „ before the
+%          Hegel citation 220--221, "krøben" 224, "Tistand" 227,
+%          "Structnr" and a stray ")" 231, "qvalitativen" and "Körpcrs"
+%          232, "Methaphysiker" 233.
+%  HEAD-FORM VARIANCE (a datum, not an error): where the printed head
+%          disagrees with the Indhold the PRINTED reading is kept and the
+%          variance noted at the site — p. 50 head "b)." against the
+%          Indhold's "c)", p. 103 "γ." against "γ)". The book is itself
+%          inconsistent in its subdivision marks: "γ. Chemiske
+%          Forbindelser." (p. 165 area) and "β. Den organiske Type."
+%          (foot of p. 236) print with a period where the neighbouring
+%          subdivisions print "α)" "β)" "γ)".
 % ============================================================
 \documentclass[12pt,a4paper]{book}
 \usepackage[utf8]{inputenc}
@@ -6804,16 +6864,2189 @@ Betingelser og betingede Virkninger? Reflexer af den i
 % over the boundary.
 
 % C. Philosophiens Forhold til Physiologien: Livsproblemet begins p. 177.
-% [text to be added: pp. 177--191]
+% --- p. 177 ---
+Functionernes System articulerede Vexelvirkning! Og Vexelvirkningen
+selv? En energisk Reflexion af det i alle Aarsager, Ting og
+Betingelser sig selv reflecterende Ene, Principet.
+
+% (short rule as printed, matching the format of the A. and B. heads)
+\section*{C.\\ Philosophiens Forhold til Physiologien:\\
+Livsproblemet.}
+\addcontentsline{toc}{section}{C. Philosophiens Forhold til
+Physiologien: Livsproblemet}
+% (rule under the section head, as printed; matches the Indhold)
+
+% (This opening paragraph of section C is set LETTERSPACED throughout in
+%  the printing — the section's thesis, gesperrt from "Forsaavidt" to
+%  "„en indre Kilde“." — while the parenthetical self-citation that closes
+%  it reverts to ordinary spacing. Verified at 300 dpi 2026-08-10; the
+%  batch agent had reported no emphasis on this page. Cf. the letterspaced
+%  block quotation at the "Almindeligt." head, handled the same way.)
+\emph{Forsaavidt de særskilte Videnskaber have en endelig Begrændsning, ere
+de Fagvidenskaber. Hvor eiendommelig de forskjellige
+Fagvidenskabers Synsmaade dannes, fremlyser, naar de ved at behandle
+et og samme Emne nærme sig til gjensidig Berøring. I Bestemmelsen af
+Sjæl, Liv og Livsprincip viser sig en gjennemgribende Forskjel
+imellem den strengt empiriske Physiologie, for hvilken Organismen er
+„et levende Maskinerie“, der ikke engang behøver en Livskraft til
+„Maskinmester“, og den paa Selviagttagelse grundede Psychologie, der
+opfatter Sjælen som constituerende Væsenhed, og lader Livet opvælde
+af „en indre Kilde“.} (Phil. Propæd. S. 94--95; jvfr. S. 187--88).
+
+Dersom Forholdet mellem Philosophien og den bestemte Fagvidenskab lod
+sig afgjøre ved en Definition, vilde de Grændser, der adskille
+Physiologien fra Psychologien let kunne angives. „Organismers eller
+Organers Virksomhed bestemmes ved deres anatomiske, physikalske,
+chemiske og de deraf afledede eller medvirkende Egenskaber. Den
+specielle Anatomie, Læren om Vævenes Bygning, Physik og Chemie ere
+derfor de Grundpiller, hvorpaa den menneskelige Organismes Physiologie,
+% --- p. 178 ---
+Læren om vort materielle og materielt-psychiske Livs Yttringer og
+Love, hviler. Fremstillingen af Normerne for den reent aandelige
+Virksomhed tilhører Philosophien, nærmest Logiken og Psychologien.“
+(Valentin. Physiologie, ved Hannover. S. 1).
+
+Men, naar Spørgsmaalet er, hvorledes Physiologien, idet den som
+Fagvidenskab ved sine særegne Undersøgelser forfølger sit eget Maal,
+dog desuagtet Skridt for Skridt, om end paa middelbar Maade, arbeider
+Philosophien i Hænderne; naar Spørgsmaalet er, hvorledes Psychologien,
+som uden physiologisk Grundlag maa hjælpe sig med Abstractioner og
+Ordforklaringer, kan i det Enkelte tilegne sig den empiriske
+Forsknings Resultater; naar, med andre Ord, Spørgsmaalet er, hvorledes
+Physiologiens og Philosophiens concrete Fælledsproblem med indre
+Nødvendighed bliver til, ville Definitioner og Bemærkninger ikke
+forslaae. Det vil i denne Henseende være nødvendigt at henvende
+Opmærksomheden saavel paa det i Physiologiens videnskabelige
+Udvikling Historiske, som paa de Fremstillinger, hvorved sagkyndige
+og talentfulde Fagmænd have søgt at gjøre Undersøgelsernes
+væsentlige Udbytte tilgjængeligt for den almindelige Dannelse.
+
+\setcounter{footnote}{0}
+„Ved Physiologien eller Læren om Livet,“ siger Eschricht, (Tolv
+Foredrag. Kbhvn 1850. S. 1--2), „forstaaer man den Lære, som
+fremstiller og søger at forklare den hele Række af Phænomener, der
+udmærke Planter og Dyr fremfor de øvrige Naturlegemer under deres hele
+Tilværelse fra deres Tilblivelse til deres Død. Denne Lære er
+sædvanligviis kun bestemt for Læger og Naturforskere af Faget, men
+det er ikke let at sige, hvorfor den skulde være en lukket Bog for
+ethvert andet dannet Menneske\footnote{„Ingen Videnskab skal være
+noget Enestaaende; den skal sammenknytte sig med alle andre og med
+hele Menneskelivet; uden dette kan Videnskabens Idee ikke
+virkeliggjøres i dens hele Udstrækning.“ H.~C. Ørsted. Naturlærens
+mechaniske Deel. Forord. S.~IV.}. I denne Lære besvares
+% --- p. 179 ---
+og oplyses Spørgsmaal, der mangt et Øieblik uafviseligen maae
+paatrænge sig Enhver, der har Øie og Sands for Naturen, Enhver, der
+glæder sig ved Livet. Spiren i Frøet voxer op til en Blomst eller et
+Træ, Kimen i Ægget bliver til et Dyr --- er der i denne Kime en egen
+Kraft, næsten en Tryllekraft at kalde, ophøiet over alle øvrige
+Naturkræfter? eller opstaaer det Grundeiendommelige i Planternes og
+Dyrenes hele Tilværelse, det vi med eet Ord kalde \emph{Liv}, kun ved deres
+oprindelige særegne Bygning, og denne atter af deres Stoffers
+særegne chemiske Sammensætning?“ --- Her er altsaa Problemet i dets
+Almindelighed; for nu at see, hvorledes den physiologiske Opfattelse
+selv har bevæget sig fra Yderlighed til Yderlighed, fra Antagelsen af
+en over de almindelige Naturkræfter ophøiet magisk Kraft indtil den
+conseqvente Fornegtelse af en eiendommelig Livskraft, ville vi her
+fremhæve nogle under den historiske Udvikling hørende
+Momenter\footnote{Sprengel. Geschichte der Arzneikunde. 5 Theile.
+Halle. 1792--1803. Fortges. von Eble. Wien 1837--40.}.
+
+\setcounter{footnote}{0}
+Paracelsus, som, hvad i forrige Afsnit allerede er fremhævet,
+indførte Lægechemien, antog, at der foruden de chemiske Kræfter i
+Legemet maatte være et Væsen, hvis Styrelse de ellers saa indbyrdes
+forskjellige Functioner vare underlagte. Saae han nu i Kraft af sin
+mystiske Speculation desuden overalt i Makrokosmen aandige Væsener,
+i Luften Sylpher, i Vandet Undiner, i Jorden Pygmæer, i Ilden
+Salamandre, hvad Under da, at han i Mikrokosmen, den individuelle
+Organisme, tillige saae en Livets Dæmon, en „Archeus“, der
+fornemmelig opererede i Maven, ledede Fordøielsen, udskilte de
+ubrugbare og skadelige Dele, forvandlede de nærende til Blod, og
+sørgede for, at hvert Organ i det Hele fik sin behørige Næring.
+Archeus er, ifølge Paracelsus, en selvstændig Aand, hvis Virken ikke
+afhænger af Menneskets Villie. Bliver Archeus mat, slappes hans
+Kræfter, da mærker man
+% --- p. 180 ---
+ogsaa, hvorledes Stofferne i Legemet begynde at gjære og operere, som
+om de befandt sig udenfor Organismen: der indtræder da Forraadnelse
+og deraf følgende secundære Sygdomme. Archeus er Lægens Forbillede;
+det er Archeus, der alene kan helbrede Sygdommen. „Han har Hoved og
+Hænder, og er intet Andet end \textit{spiritus vitæ}, Menneskets
+astraliske Legeme, og foruden ham gives der ingen \textit{spiritus} i
+Legemet.“
+
+I „Archeus“ er Livets Væsen personificeret til en Levende i den
+Levende. Det levende Individ, Mennesket, forholder sig da til sit
+eget Liv som til et fremmed, i sig selvstændigt Væsen, og bliver i
+dette Forhold sig selv en Fremmed: en saadan Personificationsdualisme
+er Tanken utaalelig. Ved at opfatte Livet som den Levendes eget
+Væsen hæves nu vistnok den personlige Dualisme; men forsaavidt Livet
+i dets ideelle Selvstændighed anskues som Sjæl, og Sjælen sees i
+\emph{umiddelbar} Modsætning til Legemet, bliver her dog en Dualisme
+tilbage, om end i formildet Skikkelse. At Modsætningen imellem Sjæl
+og Legeme fastholdes umiddelbart, giver sig da navnlig tilkjende i
+det Spørgsmaal: hvor har Sjælen sit Sæde? Physiologisk taget, hænger
+dette Spørgsmaal paa det Nøieste sammen med Spørgsmaalet om
+Nervernes Udspring. Men Nerverne ere sandselige, Sjælen usandselig;
+det Sandselige er Empiriens, det Usandselige Speculationens
+Gjenstand: den umiddelbare Modsætning vexler med en ligesaa
+umiddelbar Identitet; Følgen er, at det Usandselige idelig behandles
+som et Sandseligt, det Sandselige som et Usandseligt, saa at
+Undersøgelsernes empiriske og speculative Elementer mangfoldig
+blandes. --- Da de fleste Anatomer i det 16de Aarhundrede, med
+Undtagelse af Peripatetikerne, afledede Nerverne fra Hjernen,
+anstrengede Cesalpini sig paa alle Maader for at forsvare
+Aristoteles's Antagelse, at Hjertet maatte være Nervernes Udspring. I
+det levende menneskelige Legeme kunde,
+% --- p. 181 ---
+saaledes argumenterede han, kun een Deel være den første og Sjælens
+Sæde, efterdi der kun var een Sjæl. Da nu det Første der viser sig i
+\textit{punctum saliens} af det befrugtede Æg, er Hjertet, saa er
+Hjertet ogsaa den vigtigste Deel af Legemet og Sjælens Sæde. Men
+antages dette, saa maa Hjertet jo tillige være Fornemmelsernes Sæde
+og altsaa Nervernes Kilde, Noget, som Lidenskabernes Indvirkning paa
+Hjertet da ogsaa tydelig viser. Vel syntes den daglige Erfaring at
+tale for, at Nervekraften maatte hidrøre fra Hjernen, men Cesalpini
+hjalp sig, idet han med Aristoteles antog, at Arterierne først
+ledede Nervekraften fra Hjertet til Hjernen; i Hjernen faldt deres
+Huler da sammen, deres Vægge sondrede sig i Traade, og saaledes
+bleve de til Nerver.
+
+\setcounter{footnote}{0}
+Ligeoverfor Peripatetikerens Syllogismer, Jatrochemikerens Safter og
+begges „animalske Aander“, „Livsaander“, „Livsluft“ o. dsl. hævdede
+den sig nu fremarbeidende Anatomie den videnskabelige Fordring paa
+exacte Undersøgelser. Det 16de Aarhundredes store Anatomer, en Andr.
+Vesalius, en Barth. Eustachius, en Gabr. Faloppia, en Fabricius ab
+Aqvapendente, fik allerede Legemets indre Bygning i mange Dele og fra
+mange Sider seet i et klarere Lys; men det var dog først ved
+Begyndelsen af det 17de Aarhundrede, at det for Physiologien
+afgjørende Vendepunkt indtraadte, da William Harvey opdagede Blodets
+Kredsløb. „Harveys heldigste Tanke,“ siger Eschricht, „laae netop
+deri, at den ældgamle Tro paa Pulsaarernes
+Luftholdighed\footnote{De Gamle bleve nemlig især vildledte af den
+Omstændighed, at Pulsaarerne efter Døden i Reglen findes blodtomme,
+og antoge saa, at de som „Arterier“ ogsaa i levende Live kun
+indeholdt Luft. Det var, ifølge Galens Theorie, i Hjernehulerne, at
+de animale Aander afsondredes. Formedelst Arterierne blev Blodet
+blandet med Livsaand, og førtes saa igjennem Hjernens Vindinger ind i
+hine Huler, for at de animale Aander deraf kunde udsondres.} var
+falsk, og at de saavelsom
+% --- p. 182 ---
+Venerne indeholde Blod. Saasnart denne Tanke var modnet hos denne
+udmærkede engelske Læge, fandt han snart Blodstrømmens Retning,
+ledet deels af den samtidigen af Fabricius ab Aqvapendente gjorte
+Opdagelse af Veneklapperne, deels af den Erfaring, at
+Blodudtømmelser fra en Vene standses ved et Tryk nedenfor, fra en
+Arterie omvendt ovenfor Saaret.“
+
+De Stridigheder, Harveys Opdagelse fremkaldte, havde da ogsaa for den
+videnskabelige Aand i det Hele den gavnlige Virkning, at de rystede
+de Gamles Autoritet, vakte Mistro til aprioriske Theorier og bidroge
+til at lede Forskeren ind paa Kjendsgjerningernes og Inductionens
+Vei. Læren om Blodets Kredsløb, hvortil Cartesius fra sit
+philosophiske Standpunkt da ogsaa snart bekjendte sig, medførte
+uvilkaarlig den Anskuelse, at Blodet i Legemets Karsystem maatte
+bevæge sig paa lignende Maade som Vandet i en hydraulisk Maskine. Da
+man nu i en saadan Maskine kan ved Beregning nøiagtig bestemme
+Forholdet mellem Vandmængden og de bevægende Kræfter: saa laa det
+nær at anstille lignende Beregninger angaaende Blodets Bevægelse.
+Saaledes blev da, især under Indflydelse af den cartesianske
+Philosophie, Physiologien tilsidst opfattet som en Deel af den
+anvendte Mathematik, og den saakaldte iatromathematiske Skole
+opstod.
+
+I Italien virkede Galileis Aand; hans Fostersøn og Apologet, Benedict
+Castelli, var i Florenz med at organisere det af Storhertug Ferdinand
+IIdens Broder, Prinds Leopold, stiftede Akademie, der som et
+\emph{Experimenternes} Akademie fik Tilnavnet del Cimento. I dette Akademie
+dannedes Joh. Alphons Borelli, der tilbragte sine sidste Levedage i
+Rom hos Dronning Christine, til hvis Belæring han udarbeidede sit
+„udødelige Værk“ over Dyrenes Bevægelse (\textit{De motu
+animalium}). I Værkets første Deel bliver blandt Andet
+Muskelbevægelsen udtydet paa en „aldeles ny, ualmindelig klar
+% --- p. 183 ---
+og grundig Maade efter Statikens Love“. Borelli, der betragter
+Knoglerne som Løftestænger, og Musklerne som de Strikker, hvorved de
+bevæges, meddeler i denne Anledning „en Mængde træffende Oplysninger
+om Mechanismen i Fuglenes Flugt, i Fiskenes Svømmen, i Ormenes
+Kryben
+% (printer's defect: the quotation opened with „en Mængde... is never
+%  closed; both witnesses agree it simply runs into "o. s. frdls."
+%  without a closing "“" -- transcribed as printed)
+o. s. frdls.
+% (printer's defect: printed abbreviation is "o. s. frdls.", not the
+%  book's usual "o. s. v."; both OCR and text-layer witnesses agree;
+%  transcribed as printed)
+De iatromathematiske Bestræbelser bleve, i Overeensstemmelse med
+Newtons Principer, endnu videre fremhjulpne derved, at Mænd som
+Bernoullierne (Johan og Daniel) anvendte Differential- og
+Integralregningen samt de krumme Liniers Theorie til at opklare
+Læren om Pulsen, Muskelbevægelserne og andre Functioner i
+Organismen. Efter Hydrodynamikens Grundsætninger forklarede man saa
+tilsidst Safternes Kredsløb og Afsondring i det dyriske Legeme.
+
+Af de anførte Træk vil det imidlertid let sees, at dersom
+Jatrochemien med sin mystiske Dybsindighed ikke kunde tilfredsstille
+Videnskabens Fordringer, saa kunde den iatromathematiske Retning med
+sin klare Forstandighed det heller ikke. For det Første gik den
+mechaniske Opfattelse jo ikke til Grundaarsagen selv, men holdt sig
+til det blot Phænomenale; dernæst var man, hvad det Phænomenale
+angik, ikke engang altid sikker paa Beregningens første
+Forudsætninger, da man, istedetfor at iagttage Naturen, ikke
+sjældent opstillede Hypotheser, for hvis Gyldighed de mathematiske
+Analysers formelle Consequenser kun ydede et Skin af stringente
+Beviser. Havde Jatrochemikerne i Læren om Stoffernes Gjæringer,
+Brusninger og Blandinger kun et høist usikkert physiologisk
+Grundlag, da kunde Jatromathematikeren ved sine Forsøg paa at
+udregne, hvilke Figurer, Vinkler, og Bøininger, der maatte
+forudsættes hos de mindste Dele, hvoraf Karrene og Vævene dannedes,
+just heller ikke vinde noget paalideligt Fodfæste; maatte
+Jatrochemiens Tilhængere, for at tilsløre deres Uvidenhed, ikke
+sjældent gribe til Talemaader og dunkle Udtryk, da manglede det nu
+heller ikke paa Jatromathematikere, der ikke blot, hvad dog endnu er
+forklarligt, kurerede for Congestioner ved Anvendelse af
+Centrifugalkraften,
+% --- p. 184 ---
+men endog med forbausende Held vidste at lade den høiere Algebra
+presse Lægedommen ud af Centripetalkraften.
+
+Trangen til en mere spiritualistisk Opfattelse af Organismens
+Væsen, en Trang, som var bleven tilbagetrængt under den
+fremherskende Interesse for det Mathematisk-Mechaniske, gjorde sig i
+Overgangen fra det 17de til det 18de Aarhundrede, Pietismens
+Periode, atter gjældende og med fornyet Kraft. Den paracelsiske
+Lære om Archeus, som allerede J.~B. van Helmont gav et mere
+rationelt Sving, havde mod Slutningen af det 17de Aarhundrede
+fundet Indgang i de tydske Skoler, og Forudsætningerne for den af
+Stahl udviklede Sjæletheorie laae i Tidsalderen. Som Pietist nærede
+Stahl jo vistnok en vis Ringeagt for „prunkende Lærdom;“ men han
+arbeidede dog i Videnskabens Tjeneste, og hævdede, uagtet hans Lære
+vel ikke var saa original, som han selv ansaae den for, sin Plads
+som første Repræsentant for den dynamiske Skole. Theoriens
+Grundlag kan paa en Maade søges i den cartesianske Opfattelse af
+Materen som det absolut Passive. Legemet har som Legeme aldeles
+ingen Kraft til at bevæge sig; det maa da, saaledes sluttede Stahl,
+være immaterielle Substanser, der sætte det i Bevægelse: enhver
+Bevægelse i Materien har en immateriel
+Aarsag\footnote{For ret at frakjende Materien enhver mulig iboende
+Kraft, gik Stahl endog saavidt, at han frakjendte den Evne til at
+opfylde Rummet. Heraf toge hans Modstandere saa Anledning til at
+beskylde ham for Atheisme; thi, siger Hoffmann (\textit{de
+differentia inter doctrinam mechanicam et Stahlii organicam.\ p.\
+36}), „dersom Gud var første Ophav til alle legemlige Bevægelser, saa
+maatte Gud opfylde Verdensrummet, og altsaa være Eet med Verden, som
+Spinoza allerede har sagt.“ Sprengel. 5ter Theil. S. 19--20.}. De
+Kjendemærker, hvorved Organismen adskiller sig fra de uorganiske
+Legemer, de levende Individer fra de livløse Ting, bleve nu paa det
+Omhyggeligste fremhævede. „Vistnok har
+% --- p. 185 ---
+\setcounter{footnote}{0}
+Organismen i det Hele og efter sin materielle Constitution et
+mechanisk Anlæg, men betragte vi den formelt og specifisk, er den
+uendelig langt fra Mechanismen“. Som Exempel anfører Stahl et Uhr.
+Et Uhr er jo vistnok en Maskine, naar man betragter det efter dets
+Bygning og Sammensætning, men et Organ, naar det er trukket op og
+opfylder den Bestemmelse at angive Klokkeslettet. Med det
+menneskelige Legeme forholder det sig paa lignende Maade: det er en
+Maskine, naar vi see paa dets enkelte Dele, men et Organ, naar vi see
+paa det Øiemed, til hvis Opnaaelse Delene tjene. Organisme er altsaa
+ethvert Legeme, hvis Dele ere dannede til Midler, der virke sammen i
+et fælleds Øiemed. Den immaterielle Substans, hvorfra alle
+Virksomheder og Bevægelser i Organismen udgaae, Virksomheder, hvorved
+Legemets Opholdelse, Integriteten af dets Sammensætning, og i det
+Hele dets forskjellige Formaal tilsigtes og bevares, --- er Sjælen.
+Hvor Virkningerne ere saa indbyrdes lige, er der efter Newtons Regel:
+\textit{principia non esse præter necessitatem mnltiplicanda}, ingen
+Grund til at forudsætte en Fleerhed af Kræfter: Sjælen er, uden
+Bistand af Livsaander, den i Legemet ene virkende Aarsag. Det er de
+Gamles „Natur“, som Etymologien lærer, „thi \textit{Ψυχὴ} kommer af
+\textit{Φύσιν ἔχων}“ (!). Om dette Princip kan man sige, hvad
+Hippokratikeren siger om Naturen: „den gjør uden Underviisning, hvad
+den skal gjøre“, efter at han forud har bemærket: „den gjør det uden
+Overlæg (\textit{οὐκ ἐκ διανοίης}\footnote{Hipp. Epidem. lib. V. 6.
+p. 1184. \textit{ἀπαίδευτος ἡ Φύσις ἐοῦσα καὶ οὐ μαθοῦσα τὰ δέοντα
+ποιέει.} Sprengel. 5ter Theil. S. 25.}).“ Dette Udsagn forklarer nu
+Stahl derhen, at de uvilkaarlige Bevægelser i Legemet vel ogsaa
+udgaae fra Sjælen,
+% --- p. 186 ---
+men at det dog skeer uden Overlæg og klar Bevidsthed.
+
+\setcounter{footnote}{0}
+„Det er,“ siger han, „Forretninger, der følge \textit{ratione} eller
+\textit{λόγῳ}, men ikke \textit{ratiocinio} eller
+\textit{λογισμῷ}.“
+
+Hvor umuligt det imidlertid, ifølge hiin Tids hele Tankegang, maatte
+være at forlige det Organiske med det Mechaniske, kan blandt Andet
+sees af Forhandlingerne mellem Leibnitz og Stahl. Imod Stahls
+psychiske Theorie gjør Leibnitz følgende
+Indvendinger\footnote{\textit{Leibnitii Opera omnia, ed. Dutens.
+Genev. 1768. vol.\ II. P.\ II. p.\ 156.}}: 1) Sjælen kan ikke styre
+Legemet umiddelbart og uafhængigt af Mechanismens Love; 2) Legemets
+Love ere Bevægelseslove, Sjælens ere Morallove, 3) Sjælen er
+ulegemlig, og Legemets første Entelechie, men Legemet har desuden
+endnu en anden Entelechie, nemlig Bevægelseskraften. I sit Svar paa
+disse Indvendinger tillægger saa Stahl Sjælen Udstrækning og
+Materialitet, og forventer Udødeligheden alene af Guds Naade.
+
+Istedetfor at klare Forholdet imellem det Sjælelige og det Legemlige
+kunde da Stridigheder af denne Natur kun tjene til efterhaanden at
+opklare Forskjellen imellem den physiske og den metaphysiske
+Betragtningsmaade, og derved hidføre en bestemtere Adskillelse af
+Physiologie og Psychologie. Men at tænke over det Sjælelige, uden at
+danne sig et Begreb om det Legemlige, er umuligt, og ligesaa umuligt
+er det at undersøge det i Organismen Legemlige, uden at danne sig et
+Begreb om det Sjælelige. Idet Physiologen da fra sit Standpunkt
+kommer i Forhold til Livsproblemet, ledes han unegtelig ind i
+eiendommelige Forviklinger. Physiologen er Physiker; hans første og
+sidste Aarsager ere Tingsaarsager; udover Tingsaarsagerne og deres
+betingede Vexelvirkning kan han som Physiker ikke komme. Men Livet
+er jo metaphysisk; det ligner ikke en Ting, ikke en Tingsaarsag. Det
+seer i Organismen ud, det kan Physiologen ikke negte, som om de
+physiske Livsphænomener dog forudsatte en eiendommelig Kraft, et
+Princip, en egen ideel Causalitet. Er
+% --- p. 187 ---
+nu ikke destomindre enhver Aarsag oprindelig en Tingsaarsag, saa er
+en ideel Causalitet jo kun en Phantasie, en mystisk Speculation;
+Opgaven bliver altsaa at faae det tilsyneladende Princip, den
+ideelle Causalitet, opløst i et System af Tingsaarsager og betingede
+Vexelvirkninger\footnote{Der Charakter der mathematischen Methode,
+die Dubois-Raimond so treffend geschildert hat, fordert, daß die
+Naturforschung, die für das Geschehen in der Natur Ursache und
+Wirkung voraussetzt, und den Grund jeder Bewegung, die
+Grundbewegung jeder Folgebewegung untersucht, das \textit{Prius
+movens} jedes Gliedes ihrer Reihen aufzusuchen bemüht sei, so weit,
+als sie empirische Anknüpfungspunkte findet. Wo diese aufhören, da
+hört auch das Gebiet der Naturforschung auf. A. Kortüm. Anf. Skr.
+S. 3.}.
+
+\setcounter{footnote}{0}
+Dersom man til Beviis for, at der i Organismen virker en ideel, fra
+de physiske Aarsager forskjellig Causalitet, udtrykkelig fordrer, at
+der enten i mechanisk, i chemisk eller i morphologisk Henseende skal
+kunne paavises Phænomener, som ikke lade sig forklare i Conseqvens
+af Naturlove: da maa en videnskabelig gjennemført Physiologie
+nødvendigviis føre til det Resultat, at der ikke gives nogen fra
+Naturens almindelige Kræfter forskjellig Livskraft. At der i
+Organismen løses et til Livets Fordringer svarende System af
+mechaniske Opgaver, er vitterligt, og det bliver, jo dybere
+Videnskaben trænger ind i Sammenhængen, stedse tydeligere, at disse
+Opgaver i Delene som i det Hele, i det Mindste som i det Største,
+overalt løses paa naturlig Maade ved naturlige Midler. „Man har ofte
+sammenlignet Organismen og dens enkelte Dele med en Maskine eller et
+lignende physikalsk-chemisk Apparat. Hjertet ligner et med passende
+Ventiler forsynet Pompeværk, Arterierne elastiske Rørledninger,
+Øiet et \textit{Camera obscura}, Stemmeredskaberne et
+Tungeinstrument; Benene forholde sig som Løftestænger,
+Afsondringsorganerne tildeels som Filtreerapparater“ o. s. v. (Jvfr.
+Propæd. S. 187).
+% --- p. 188 ---
+Vel kunde det ved en foreløbig Betragtning synes, som om de
+saakaldte organiske Stoffer tydede hen paa en eiendommelig
+Causalitet, under hvis Indvirkning de ere dannede. „Vi kunne,“ siger
+Liebig, „sammensætte en Alunkrystal af dens Elementer, af Svovl,
+Ilt, Kalium og Aluminium, fordi vi til en vis Grad kunne raade over
+deres chemiske Slægtskab, over Varmen og dermed over Ordningen; men
+en Sukkerdeel kunne vi ikke sammensætte af dens Elementer, thi ved
+Organiseringen af Sukkeratomets eiendommelige Form medvirkede
+Livskraften, hvorover vor Villie ikke kan byde paa samme Maade, som
+over Varme, Lys, Tyngdekraft o. s. v.“ Physiologen synes altsaa dog
+at maatte anerkjende en Livskraft.
+
+Da det imidlertid ikke kommer an paa Navnet, men paa Sagen, gjælder
+det fremfor Alt om at forstaae, hvad man i anførte Sammenhæng
+egentlig skal tænke sig ved Udtrykket: Livskraft. For det Første
+maae vi da mærke os, at den saakaldte Livskraft her ligefrem stilles
+i Række med de elementære Kræfter, Lys, Varme, Elektricitet o. s. v.
+„Hverken Varme, elektrisk Kraft eller Livskraften er istand til at
+gjøre Delene af tvende ueensartede Materier sammenhængende i en
+Gruppe; alene den chemiske Kraft formaaer dette. Overalt i den
+organiske Natur, i alle Forbindelser, som frembringes i den levende
+Dyre- eller Planteorganisme, møde vi de samme Love, iagttage vi de
+samme faste og ufravigelige Forbindelsesforhold som i den
+uorganiske.“
+
+Man kunde nu forestille sig, at de elementære Kræfter ved
+Livskraften tabte deres Selvstændighed og nedsank til at være
+tjenende Factorer; men ogsaa denne Antagelse maa opgives. Saaledes
+bliver t.~Ex. den chemiske Krafts Eiendommelighed og relative
+Selvstændighed ligeoverfor Livskraften paa det Eftertrykkeligste
+fremhævet. „Hjerne- og Muskelsubstansen, Bestanddele af Blodet,
+Mælken, Galden o. s. v. ere sammensatte Atomer, hvis Dannelse og
+Bestaaen beroer
+% --- p. 189 ---
+paa det mellem deres mindste Dele virksomme Slægtskab. Det er
+Slægtskabet og ingen anden Kraft, der bevirker deres Sammentræden
+\ldots{} Men Lyset, Varmen, Livskraften, Tyngdekraften udøver en
+aldeles afgjørende Indflydelse paa Antallet af de enkelte Atomer,
+som forene sig til et sammensat Atom, saavelsom paa den Maade,
+hvorpaa de leire sig; de betinge Egenskabernes Form, Forbindelsernes
+Eiendommelighed, netop fordi de have den Evne, at meddele hvilende
+Atomer Bevægelse, og at tilintetgjøre Bevægelsen ved Modstand.“
+Istedetfor at virke som Grundaarsag selvstændig formende og
+frembringende, er da Livskraften her tvertimod nedsat til en blot
+medvirkende Aarsag, \emph{en Betingelse}. „Paa Elementernes Sammentræden
+til en chemisk Forbindelse har Livskraften ikke den ringeste
+Indflydelse; intet Element for sig alene er istand til at tjene til
+en Plantes eller den dyriske Organismes Ernæring og Udvikling. Alle
+de Stoffer, der tage Deel i Livsprocessen, ere lavere Grupper af
+enkelte Atomer, som ved Livskraftens Indflydelse træde sammen til
+Atomer af høiere Orden. Under Varmens Herredømme betinger den
+chemiske Kraft de mindst sammensatte Atomgruppers Form og
+Egenskaber; Livskraften betinger de høiere, de organiserede Atomers
+Form og Egenskaber.“ (Chem. Breve. 12te Brev). --- Saalænge man
+endnu enten slet ikke kjendte eller dog knn havde en høist uklar
+Forestilling om „Fordøielsens chemiske Virksomhed,“ kunde man
+sagtens tiltroe „Archeus“, „Sjælen“, „Livsaanderne“ det Vidunderlige.
+Virkede Livskræfterne under Fordøielsen paa selvstændig Maade,
+hvorfor skulde de Vilde da ikke kunne spise Jord og fordøie
+Stene\footnote{At Phænomenet med „\emph{Leerspiserne}“ imidlertid ikke er
+saa ganske ligefrem at forklare, har Lewes udtrykkelig fremhævet.
+„Reisende, der see besynderlige Ting, ere meget bestemte i deres
+Forsikkringer med Hensyn til denne Gjenstand. Humboldt, en Mand,
+hvis Ord med Rette har europæisk Autoritet, bekræfter Gumillas
+Beretning, at Otomakerne i Sydamerika i Oversvømmelsestiden leve
+udelukkende af en fed og jernholdig Leerart, hvoraf enhver Mand
+daglig spiser et Pund eller mere. Den velbekjendte Botaniker og
+Forsker Martins har fortalt mig, at Indianerne ved Amazonfloden
+spise en Slags Leer, endog naar der er Overflødighed af anden
+Næring. Molina siger, at Peruvianerne hyppig spise en sødtsmagende
+Leerart; og Ehrenberg har analyseret den spiselige Leer, der sælges
+paa Torvene i Bolivia, han fandt den sammensat af Talk og Glimmer.
+Indbyggerne i Guiana blande Leer i deres Brød; og Negerne i Jamaica
+skulle, siges der, spise Jord, naar der er Mangel paa anden Føde.
+Efter Labillarbière stille Indbyggerne paa Ny Caledonien deres Sult
+med en hvid, skjør Jordart, som Vauquelin fandt sammensat af
+Magnesia, Kisel, Jernilte og Kridt. Den samme Forfatter fortæller, at
+paa Java laves der en Kage af jernholdig Leer, der søges meget af
+Koner under deres Svangerskab. For at gjøre denne Liste
+fuldstændig, maae vi tilføie Siam, Sibirien og Kamtschatka som
+Lande, hvori der findes Leerspisere.“ Efter at have opregnet denne,
+som han udtrykker sig, „temmelig overraskende Mængde Vidnesbyrd, som
+vi ikke kunne forkaste allesammen, selv om vi antage, at der maa
+indrømmes Skepticismen et vidt Spillerum“ --- vedbliver Lewes:
+„Erkjende vi det for en Kjendsgjerning, at visse Slags Jord ere
+virkelig nærende --- og det er vanskeligt at undgaae en saadan
+Slutning --- ere vi fuldstændig ude af Stand til at give en
+tilfredsstillende Forklaring deraf. Der kastes kun lidt Lys derpaa
+ved den i sig selv rimelige Antagelse, at denne Jord maa indeholde
+organiske Bestanddele; thi vi maae antage, at i ti Pund saadan Jord
+kan der neppe indeholdes tilstrækkeligt organisk Stof til at
+tilfredsstille et voxent Menneskes Fornødenheder. Heller ikke vil
+det skaffe os af med Vanskeligheden at sige, at Jorden kun stiller
+Hungeren uden at ernære Legemet; thi for det Første have vi
+Humboldts Vidnesbyrd for, at Otomakerne leve af denne Leer paa
+Tider, da de mangle anden Føde; og for det Andet kan, selv om den
+\emph{lokale} Hungerfornemmelse lader sig stille ved at bringe Noget ind i
+Maven, den mere betydende \emph{generelle} Hungerfornemmelse ikke
+% --- p. 190 ---
+fjernes herved. Vi maae derfor for nærværende Tid lade os nøie med
+at anerkjende et Faktum, som Videnskaben muligviis senere vil
+forklare.“ Hverdagslivets Physiologie. Første Deel. Overs. S.
+54--55.}? „Man tør kun
+% (this long footnote --- anchored here, at "Stene" --- runs on through
+%  the whole of the printed p. 190, which carries no body text of its
+%  own beyond the two lines given below; it closes at the top of
+%  p. 191. No \setcounter reset falls on p. 190, per the book's
+%  established convention for a footnote that overruns a page
+%  unmarked (cf. pp. 15--16).)
+minde sig, at man tilskrev den dyriske Organisme Evne til at
+frembringe Kalk i Fuglenes Knogler og Æggeskaller,
+% --- p. 191 ---
+Phosphorsyre i Hjernen, Jern i Blodets røde Bestanddele af Stoffer,
+som man ikke engang vidste at betegne ved Navn, medens disse
+Materiers Tilværelse i Organismen ikke nu mere er nogen Gaade, siden
+man har fundet dem som aldrig manglende Bestanddele i
+Næringsmidlerne.“ (Liebig).
+
+\setcounter{footnote}{0}
+Stilles nu Livskraften\footnote{\textit{La vie n'est pour moi rien
+qui ressemble à l'arch\`e suprême de Van Helmont, espèce de souverain
+paraissant avoir son individualité propre, qui siége dans le centre
+phrénique, et gouverne tant bien que mal une foule
+d'\emph{arch\`e} inférieurs domiciliés dans les diverses parties du
+corps, et à chaque instant en révolte contre leur chef. A mes yeux,
+la vie n'a pas davantage d'analogie avec \emph{le principe vital} de
+Barthès, ou mieux de ses disciples, autre entité passablement
+confuse, sans demeure bien déterminée, mais qui veille avec anxiété
+au bon état du corps qui lui est confié, et fait souvent plus de mal
+que de bien en voulant réparer quelque léger dommage. Non, elle est
+tout simplement la cause inconnue d'un ensemble de phénomènes
+spéciaux et particuliers aux êtres vivans, de même que l'électricité
+est pour le physicien la cause inconnue des phénomènes que
+présentent les corps électrisés, de même que la chaleur est la cause
+également inconnue des phénomènes qui se produisent dans les corps
+cbauffés, de même enfin que la force physico-chimique générale, quel
+que soit le nom qu'on lui dounera, sera pour tout esprit sérieux la
+cause sans doute à jamais inconnue des phénomènes propres aux corps
+bruts. La vie n'est pas non plus une force tellement spéciale
+qu'elle soit de sa nature en opposition avec les forces qu'on vient
+de nommer. Sans doute, dans une foule de circonstances, elle modifie
+et contre-balance leur action; mais les forces physico-chimiques,
+mises simultanément en jeu, agissent bien souvent de même les unes
+sur les autres. La chaleur modifie l'action de l'élec-}
+% [footnote continues past the end of this batch, onto printed p. 192]
+} paa lige Trin med de elementære Kræfter, saa staaer kun et Par
+Spørgsmaal tilbage:
+% [this sentence, and the footnote above, both continue onto p. 192,
+%  outside the present batch]
 
 % a) Livets Væsen region (α Organismen from ~p. 208).
-% [text to be added: pp. 192--206]
+% --- p. 192 ---
+\setcounter{footnote}{0}
+% [cross-batch join: the pp. 177--191 batch left its footnote (anchored at
+%  "Stilles nu Livskraften\footnote{...}" on p. 191) deliberately open at
+%  "La chaleur modifie l'action de l'élec-", flagging that it continues onto
+%  this page. This is that continuation (still A. de Quatrefages, discussing
+%  Van Helmont's archè and Barthès' principe vital before naming his own
+%  view). Appended via \footnotetext with the counter left at 0 so no second
+%  mark prints -- the original carries none here either. Caller: confirm the
+%  p. 191 fragment does NOT also duplicate this text.]
+\footnotetext{\textit{tricité, et toutes deux l'emportent, dans certains cas,
+sur la pesanteur, c'est-à-dire sur l'attraction, sur cette force, la plus
+universelle de toutes, et qu'on retrouve dans les corps bruts et les êtres
+vivans tout comme dans les soleils et les mondes. Ainsi entendue, l'idée de
+la vie ne saurait rien avoir qui répugne à l'esprit le plus rigoureusement
+scientifique. C'est tout simplement une force qui vient s'ajouter à
+d'autres forces déjà reconnues et universellement acceptées, et qui, comme
+elles, se constate par ses effets. A. de Quatrefages. Histoire naturelle de
+l'homme. Revue des deux mondes. 15. Décbr. 1860. p 819--20.}}
+hvorfra udgaaer denne Kraft? hvorpaa beroer dens Virksomhed? At lade
+Livskraften i Lighed med Tyngdekraften beroe paa en almindelig Egenskab ved
+Materien, gaaer ikke an; thi Tyngdekraften virker overalt, Livskraften kun i
+den levende Organisme. At lade Livskraften udgaae fra et eget Stof, ligesom
+Svovlkraften fra Svovlet, Iltkraften fra Ilten, gaaer heller ikke an;
+eftersom et eget bestemt Livsstof ikke lader sig paavise. \emph{Den
+saakaldte Livskraft kan altsaa umulig være en egen for sig tilværende
+Kraft, men maa betragtes som Resultant af forskjellige Kræfters, Tyngdens,
+Varmens, magnetiske, elektriske og chemiske Kræfters
+eiendommelige-Samvirken}\footnote{Ifølge dette Resultat maae Physiologerne
+vel omsider ophøre med at addere Livskraften som et forøvrigt ubekjendt
+Primum movens til de andre Kræfter. „Jene Fähigkeit des Primum movens ist
+eine Kraft; sie ist die Kraft, auf welcher als auf seinem wesentlichen
+Moment das Leben beruht; denn die Systeme von constitutiven Elementen ohne
+diese Kraft leben nicht, haben kein Leben. Diese Kraft ob Eigenschaft, ob
+Bewegung, ist die \emph{Lebenskraft} .... Die motorische Kraft des
+cerebrospinalen und die des sympathischen Nervensystems bilden also
+zusammen die \emph{Lebenskraft} .... Lebenskraft ist daher die Summa aus
+der motorischen des cerebrospinalen, und der motorischen Kraft des
+sympathischen Nervensystems. Das Leben selbst aber, als die Fähigkeit des
+Substanzcomplexes, den wir Organismus nennen, durch ein inmitten seiner
+constitutiven Elemente befindliches Primum movens die ihnen proportionalen
+Bewegungen auszuführen, \emph{ist die resultirende Größe der Leistung aus der
+Vexelwirkung des cerebrospinalen und des sympathischen Nervensystems mit
+den passiven Geweben der animalen und der organischen Sphäre, und mit den
+abäqvaten aüssern Lebensbedingungen“.} A. Kortüm. Anf. Skr. S. 89--91.
+% (The run-over of this note occupies the whole footnote block of the
+%  printed p. 193 and is LETTERSPACED from "ist die resultirende" to the
+%  closing “ --- "auszuführen," before it and the "A. Kortüm. Anf. Skr."
+%  citation after it are set normally. Verified at 600 dpi 2026-08-10.
+%  THREE printed forms kept as printed against the compositor's German:
+%  "Vexelwirkung" for Wechselwirkung (the Danish spelling of the compound
+%  carried into the German quotation), "abäqvaten" for adäquaten (turned
+%  d/b), and "aüssern" for äussern (diaeresis set over the u, not the a).
+%  All three are unambiguous at 600 dpi and are not modernised here.)
+\textit{C'est tout simplement une force qui vient s'ajouter à d'autres
+forces .... Quatrefages.}}.
 
-% [text to be added: pp. 207--221]
+% --- p. 193 ---
+Men hvorpaa beroer saa denne eiendommelige Samvirken? Paa et til Delenes
+Ordning og Organernes Indretning svarende System af Betingelser, altsaa
+paa en morphologisk Eiendommelighed. Forudsætter den morphologiske
+Eiendommelighed, den eiendommelige Maade, hvorpaa Organerne dannes og
+Skikkelsen vorder, da heller ikke en eiendommelig, fra de elementære
+Naturaarsager afvigende Causalitet? Ogsaa denne Antagelse hidrører fra
+Ubekjendtskab til den mikroskopiske Bygning, den Atomernes Leiring, hvoraf
+de første Dannelser saavel i Dyret og Planten som i Krystallen væsentlig
+betinges.
 
-% [text to be added: pp. 222--236]
+Det har indtil for faa Aar siden været en almindelig Antagelse, en
+Forudsætning, der paatrængte sig uvilkaarlig, at Planter og Dyr i deres
+inderste mikroskopiske Sammensætning vare væsentlig forskjellige. „Hvilken
+Deel af en Plante man end underkaster mikroskopiske Undersøgelser, altid
+findes den at bestaae af lukkede Blærer, fyldte med Vædske eller fastere
+Stoffer, iøvrigt af forskjellig Form.... Vel findes, navnlig hos de
+høiere Planter, ogsaa Rør af forskjelligt Slags, men disse, vidste man,
+dannes altid ved Udstrækning og især ved Sammensmeltning af de oprindelige
+Smaablærer eller, som de kaldes, Celler.... Lagde man et lille Stykke af
+et andet Organ, af et Dyrelegeme, under Mikroskopet, saa fandt man
+Forholdene ganske forskjellige. Kjød, Sener og Baand f. Ex. viste sig at
+bestaae af lutter Trevler; Brusk af en tæt Masse, indsprængt med mange
+smaa aflange Korn; Nervesystemet deels af Traade, deels af Kugler.“
+(Eschricht).
 
-% β) Den organiske Type region.
+% --- p. 194 ---
+\setcounter{footnote}{0}
+Man er altsaa oprindelig gaaet ud fra den Forudsætning, at der
+nødvendigviis maatte være en gjennemgribende Forskjel ikke blot mellem
+Dyret og Planten, men tillige mellem Planten og Mineralet, en principiel
+Forskjel imellem det Levende og det Livløse. Theologien, der henfører
+Forskjellen mellem de tre Naturriger til særegne Skabelsesacter,
+stadfæstede, hvad der ligesom uvilkaarligt paatrængte sig den sunde Sands,
+og Physiologien fandt den herskende Synsmaade i bedste Overeensstemmelse
+med Kjendsgjerningerne, saalænge de forskjelligartede Legemers indre
+Bygning endnu viste sig saa høist forskjellig. Men just fordi
+Forudsætningen fra Begyndelsen af var saa umiddelbart positiv, bar den
+Negativitetens, Tvivlens og Opløsningens Anlæg i
+sig\footnote{„Sprechen wir ... von einem Naturreiche, so wollen wir damit
+sagen, daß das in ihm zusammengefaßte nicht bloß Product natürlicher
+Kräfte, sondern Naturproduct sei, d. h. daß es seine Existens nicht nur
+einem gesetzlichen aber planlosen Zusammenwirken einzelner Theile der
+Natur verdanke, sondern daß die Natur als Ganzes das Producirende sei, und
+sich der einzelnen natürlichen Kräfte nur als der Mittel nach einem
+vorbestimmten Plane bediene .... Sobald wir nun die unbestimmte
+Voraussetzung, die sich in dem Begriffe der Naturreiche verbarg, auf
+diesen bestimmteren Ausdruck gebracht haben, zeigt sich deutlicher die
+Schwierigkeit, sie zu begründen. .... Die Charaktere ausgebildeter
+thierischer und pflanzlicher Organismen sind so deutlich verschieden, daß
+ihre Trennung in verschiedene Reiche keinem Bedenken unterliegt. Die
+niedersten Formen beider Reiche sind dagegen für unterscheidende
+Erkenntniß zu ähnlich einander, zu sehr mit ihren Eigenschaften eine in
+das Gebiet der andern übergreifend. Die Schwierigkeit, diese Wesen dem
+einen oder dem andern Reiche zuzuweisen, kann nun freilich als die Folge
+unserer beschränkten Beobachtung gedeutet werden, welche die Merkmale,
+die den beständig objectiv vorhandenen scharfen Unterschied zwischen
+Thieren und Pflanzen bestimmen, nicht in jeder äussern Form und Umhüllung
+wahrzunehmen vermag. Sie kann ferner daraus hergeleitet werden, daß eben
+jener scharfe Unterschied, den das unwissenschaftliche Vorurtheil
+voraussetzt, nicht vorhanden sei, und deshalb nie von uns durchgeführt
+werden könne; und zwar kann man diese Meinung beliebig als ein
+Verfliessen beider Reiche in einander, oder als die Annahme eines dritten
+eigenthümlichen Mittelreiches zwischen beiden ausführen, welches ebenso
+wie jene beiden seine Gattungsbegriffe habe, in dem Ganzen seines Gebietes
+aber einer Bildungstendenz folge, die eine Art Mitte zwischen dem Geiste
+des vegetabilischen und dem des animalischen Daseins halte ....“ R. H.
+Lotze. Allgemeine Physiologie des körperlichen Lebens. Leipzig 1851. S.
+487--96.}.
+
+% --- p. 195 ---
+Viste det sig nemlig ved nærmere Eftersyn, at den paaberaabte Forskjel i
+Dyrets, Plantens og Mineralets Bygningsmaade i Grunden hidrørte fra en
+Forvexling af det Afledede med det Oprindelige, at det ingenlunde var
+Uligheden, men tvertimod Ligheden, Eensartetheden, der var det
+Oprindelige, da laae det jo nær at slutte omvendt: Dyrelegemet, Planten og
+Mineralet bestaae af samme mikroskopiske Grunddele; de maae altsaa fra
+Først af være dannede ved samme Naturvirksomhed; der kan altsaa ikke være
+nogen principiel Forskjel imellem Dyr, Plante og Mineral. Var Skillemuren
+mellem Dyre- og Planteriget først nedbrudt, maatte Skillemuren mellem
+Plante- og Mineralriget, og da i det Hele mellem det Levende og det
+Livløse, falde som af sig selv. Faldet var saameget naturligere, som de
+primære Grundstykker, der saa at sige udgjorde Stenene i den gamle Muur,
+stedse mere opløste sig og hensmuldrede, jo længere man betragtede dem
+under Mikroskopet.
+
+Med Mikroskopet bliver Iagttagelsen skarp, exact, penetrerende. Alt som
+man forbedrede Mikroskopet, lærte man tillige at benytte det paa en langt
+mere streng videnskabelig Maade end tidligere, navnlig med Hensyn til
+Plantephysiologien og Infusionsdyrenes Undersøgelse. „Den udmærkede
+engelske Botaniker, Robert Brown, havde opdaget, at der i hver
+Plantecelle i Reglen sidder et lidet fastere Legeme et eller
+
+% --- p. 196 ---
+andet Steds paa dets Indside, og da han fandt dette lille Legeme
+forholdsviis størst i de yngste Celler, anede han allerede dets Betydning
+som den ældste Deel i hver enkelt Celle. Han kaldte det \emph{Cellekjærnen}. En
+yngre udmærket tydsk Botaniker, Schleiden, fik Overbeviisning om, at
+Cellekjærnen i Reglen virkelig er det tidligst dannede, at Cellevæggen
+kommer senere til, medens Celleindholdet optages udvendigt fra og
+undergaaer forskjellige chemiske Forandringer. Han stillede sig dernæst
+det Spørgsmaal, hvorledes under Planternes Væxt den overordentlige
+Formerelse af Cellerne gaaer for sig — thi i samme Forhold som en
+Plantedeel voxer, forøges Cellernes Antal, men aldeles ikke deres Omfang
+— og han meente ved Undersøgelse at have faaet det besvaret saaledes, at
+de nye Celler dannes indeni de ældre, 3--4 eller flere i hver, og blive
+frie ved disse Modercellers Bristning. Dog viste det sig, at i flere
+Tilfælde Celleformerelsen ogsaa skeer derved, at en Celle strækker sig i
+Længden og deler sig ved en Afsnøring. Paa en lignende streng
+videnskabelig Maade blev fra nu af Mikroskopet ogsaa anvendt til de
+dyriske Deles Undersøgelse, navnlig af den tydske Naturkyndige, Theodor
+Schwann. Han gjorde opmærksom paa, at adskillige Dele af Dyrelegemet
+ganske tydeligen vise samme mikroskopiske Bygning som Plantedelene,
+navnlig Fuglenes Fjer og Horndelene i Almindelighed, saasom Overhuden,
+Haarene o. s. v.... Det viste sig, at de mikroskopiske Kugler, hvoraf
+Fedtet bestaaer, ere Celler, hvori Olien udgjør Celleindholdet,
+Blodkornene Celler med Blodrødt; men, hvad der var det vigtigste, Schwann
+efterviste, at Brusk fra først af — saaledes navnlig som den findes i
+Spidsen af en ung Fisks Gjellestraaler — bestaaer af Celler, hvori atter
+dannes nye Celler, altsaa som i Plantedelene, og at disse Celler netop
+ere de Smaakorn, man kjendte i Bruskens tætte Masse, medens denne tætte
+Masse selv kun er at sætte lige med, hvad i Planteanatomien kaldes
+Intercellularsubstans; fremdeles, at naar Brusken forvandles
+
+% --- p. 197 ---
+til Been, er det disse Celler, der deels smelte sammen i Form af Rør,
+Marvrørene, deels fyldes med phosphorsuur Kalk og blive til Beenkorn....
+Ogsaa om Kjødet, der bestaaer af Trevleknipper, viste det sig, at hvert
+saadant Knippe har været en enkelt huul Traad, dannet ved Sammensmeltning
+af en Række Celler; Bindevævet fandtes at bestaae af lutter fine Trevler,
+opstaaede af oprindelige Celler; Nervesystemets Kugler fandtes selv at
+kunne sættes lige med Celler, dets Traade at være Rør, fremkomne af
+Celler.“ ... Alle Planter og Dyr begynde da, ifølge denne Fremstilling, i
+Form af en simpel Celle; „selve Cellen dannes udaf et Moderstof
+(Cytoblastema), paa den Maade, at flere mikroskopiske Smaakorn samle sig
+i en Gruppe (Kjærnen), udenomkring hvilke lægger sig andre, mindre faste
+Dele af Moderstoffet og en ydre tynd Hinde. Ved Krystallisationen
+udskilles af en Opløsning eller, om man vil, en Modervædske, ligeartede
+fastere Stoffer, og udenomkring disse andre ligeartede, de mindste
+udfældede Dele stedse iagttagende en vis Stilling til hinanden indbyrdes,
+hvorved opstaaer en regelmæssig Figur, forskjellig efter Stoffets
+chemiske Natur. Det er sandt, at en vis Forskjellighed mellem hiin
+Celledannelse og denne Krystallisation ikke kan miskjendes. Cellerne ere
+runde, bløde, hule og fyldte med en Vædske, Krystallerne kantede, faste,
+kun i visse Tilfælde indeholdende en Krystallisationsvædske og i
+forholdsviis ringe Mængde. Men ere disse Forskjelligheder væsentlige nok
+til derpaa at begrunde en Tvedeling af samtlige Naturlegemer?“
+(Eschricht. Tolv Foredrag. S. 30--36).
+
+At der imellem organiske og uorganiske Legemer er en Forskjel, endog en
+meget væsentlig Forskjel, vil vistnok Ingen negte; men et andet
+Spørgsmaal er det, hvorvidt Forskjellen er saa gjennemgribende, at
+Organismerne ifølge heraf maae antages at have en egen fra
+Elementærkræfterne forskjellig Causalitet. Vistnok er det System af
+Betingelser, hvorunder Krystallen dannes, langt simplere end det,
+Dannelsen af en
+
+% --- p. 198 ---
+Organisme udkræver; men Forskjellen mellem det Simple, vi kunne overskue,
+fatte, og forsaavidt beherske, og det Indviklede, der unddrager sig vore
+Iagttagelser og Beregninger, kan dog umulig berettige os til at
+forudsætte en over Tingsaarsagerne ophøiet Causalitet for det Indviklede.
+Skulde vi antage et eget Organisationsprincip, fordi Livsbetingelserne
+ere saa mangfoldig sammenslyngede, at vi ikke kunne gjennemskue, hvad der
+egentlig foregaaer i Organismen: maatte vi da ikke ogsaa antage et eget
+selvstændigt Forraadnelsesprincip, naar Betingelserne ere saa forviklede,
+at vi heller ikke her kunne gjennemskue, hvad der egentlig foregaaer? —
+„Standse vi,“ hedder det i en Skitse af Harting, „Livsfunctionerne
+pludseligt og paa en saadan Maade, at Formen, det vil sige Organismens
+Bygning, og tillige den chemiske Sammensætning, bliver uforandret, og
+paa Grund af Omstændighederne er nødt til at blive uforandret, saa vil,
+saasnart den gamle Tilstand atter er tilveiebragt, Livet gaae sin vante
+Gang; med andre Ord: Stof- og Formforandringerne, der udgjøre Livets
+Væsen, ville atter begynde der, hvor de for en Tid bleve afbrudte. Et
+Frø, som beholder sin Spireevne i Aarhundreder, et Hjuldyr, som ligger
+hele Aar indtørret paa en Glasplade, kan man derfor hverken kalde levende
+eller døde. Det er kun organiske Væsener, som under visse bestemte
+Betingelser kunne blive levende, med andre Ord: de have Livsevne.“ Det er
+en vigtig Lære, der lader sig uddrage af den Kjendsgjerning, at saavel
+Dyre- som Planteorganismer kunne, under visse Omstændigheder endog i
+forbausende lange Mellemrum, befinde sig i en saa mærkværdig Tilstand, at
+de, uden at være døde, bogstavelig talt ikke ere levende.
+
+Hvad bliver der nu i en saadan Mellemtilstand af Livsprincipet? „Det
+slumrer“, siger man; „her er et slumrende Liv.“ Det er billedlig Tale;
+det Slumrende maa jo være til, for at kunne slumre: saalænge Livet
+slumrer, er det endnu ikke udslukt, dets indre, stille Virken endnu ikke
+ophørt; men i
+
+% --- p. 199 ---
+\setcounter{footnote}{0}
+den Tilstand, hvorom her tales, er Livsvirksomheden $= 0$, Livet er
+udslukt. Den Modsigelse, at Livet er udslukt, uden at Livsevnen er tabt,
+kan kun finde sin Løsning i den Forudsætning, at det Liv, der ikke er til
+i Virkelighed, dog er i Mulighed. Hvorpaa beroer saa Livets Mulighed? Paa
+dets Anlæg! Og Anlæget? Paa Formen, det vil sige: „Organernes Bygning og
+den chemiske Sammensætning!“ Fra sit physiske Standpunkt er Physiologien
+conseqvent, naar den benegter Tilværelsen af en i sig selvstændig
+Livskraft og lukker Øiet for den ideelle
+Causalitet\footnote{Die Frage, ob es eine Lebenskraft giebt oder nicht,
+ist in der neuesten Zeit wieder lebhaft aufgenommen worden. Wie
+verschieden sie beantwortet wird, sagen uns am besten einige der Männer
+selbst, welche die Nothwendigkeit erkannten, ihr Sein oder Nichtsein auf
+wissenschaftlicher Grundlage zur Entscheidung zu bringen. \emph{Lotze} will,
+daß „die Lebenskraft nicht als die Eine wirkende Kraft des Lebens,
+sondern als die resultirende Größe der Leistung betrachtet werde, die
+aus der Vereinigung unendlich vieler partieller Kräfte unter gewissen
+Bedingungen hervorgeht.“ \emph{Donders}, an eine Stelle aus
+\emph{Sanctorius} anknüpfend: „Corpus humanum cur vivit et non pùtrescit? Quia quotidie
+renovatur,“ fährt fort: „In diesem Wechsel, in diesem Verbrauch von
+Stoff erkennen wir jetzt die unfehlbare Bedingung, den Grund des Lebens.
+Die geheimnißvolle Lebenskraft hat hierin ihr Grab gefunden. Chemische
+Kraft ist es, welche sich in Lebenserscheinungen umsetzt.“ Nach \emph{Büchner}
+„gehört der Begriff Lebenskraft unter jene mystischen, die Klarheit
+naturphilosophischer Anschauung verwirrenden Begriffe, welche eine an
+Naturkenntniß schwache Zeit ausgeheckt hat, und welche von der neueren
+exacten Naturforschung über Bord geworfen sind.“ \emph{Virchow} endlich findet
+in der lebendigen Zelle die Kraft, welche er in folgenden Worten
+andeutet: „in der Analyse der Lebenserscheinungen werden wir immer
+genöthigt sein, neben der Wirkung der dem Stoffe immanenten
+Molecülarkräfte die Nachwirkung einer, von einer früheren
+Stoffcombination übertragenen, immerhin mechanischen Kraft
+zuzulassen.“ --- A. Kortüm. Die Lebenskr. Vorrede.}. Men fordi den
+ideelle Causalitet ikke er nogetsteds at opdage i Physiken, deraf følger
+jo endnu ikke, at en saadan Causalitet ingen
+
+% --- p. 200 ---
+Gyldighed har. De herhen hørende Undersøgelser lade vi i det Følgende
+bevæge sig om de kategoriske Synspunkter: \emph{Livets Væsen, Livets
+Trin, Forholdet imellem det physiske og det sjælelige Liv.}
+
+\subsection*{a) Livets Væsen.}
+\addcontentsline{toc}{subsection}{a) Livets Væsen}
+
+At antage et for organiske Individer gjældende Livsprincip, uden at
+forudsætte et for hele Tilværelsen gjældende Grundprincip, er tankeløst.
+Men hvorledes skulle vi vel overbevise os om, at den udvortes virkelige
+Verden med dens Ting, Tingsaarsager, Betingelser og Love har en saa ideel
+Oprindelse, at dette Hele sammenholdes og bæres af en saa aandig Magt, at
+dette Mangfoldige gjennemvirkes af et eneste, allestedsnærværende
+Princip? Tilværelsen deler sig, — thi dette var jo den Conseqvens,
+hvortil Undersøgelsen angaaende „Forandringsproblemet“ førte os, — i
+tvende hinanden modsatte og dog nødvendig sammenhørende Totaliteter: den
+indre og den ydre, Grundens ideelle og Existensens materielle Totalitet.
+Tingene, der have deres Grund og ere opstaaede af Grunden, maae gaae
+tilgrunde; men hvad der gjælder om Tingene, gjælder jo ogsaa om
+Tingsaarsagerne: i Grunden er ingen Ting oprindelig Aarsag. Ved at gaae
+tilgrunde yder Tingen imidlertid som Aarsagsmoment sit Bidrag til, at en
+anden Ting kan opstaae, en anden Tingsaarsag udtræde af Grunden: de
+existerende Aarsager ere alle uden Forskjel begrundede og foraarsagede.
+Principet, den sande Aarsagernes Aarsag, er altsaa ikke at søge i
+Existensen for sig, thi Existensen har kun afledede, foraarsagede
+Aarsager, ikke heller i Grunden for sig, thi Grunden har kun
+Aarsagsmomenter, ophævede Aarsager, men i begges oprindelig-virksomme
+Eenhed. \emph{Formedelst Aarsagsmomenternes Grundeenhed er Principet en
+ideel Aarsagseenhed, Grundaarsag, og har som Grundaarsag Existensen og de
+existerende Aarsager i sin Magt.}
+
+% --- p. 201 ---
+Hvad der skal virke som Grundaarsag, kan umuligt have umiddelbar
+Existens; men endskjøndt Tilværelsens Princip ikke existerer som en Ting
+for sig, og altsaa intetsteds kan paapeges ligefrem, er det dog saa
+langt fra at være et tomt Tankevæsen, at dette Væsen tvertimod er
+uendelig Formaaen og Virken, den Formaaen, der er Grundens Evne, den
+Virken, der er Existensens Kraft. Hvorvidt en saadan Opfattelse nu i
+Virkeligheden lader sig gjennemføre, maa afgjøres ved en
+Begrebsanalyse, der svarer til Kjendsgjerningerne. Der skal t. Ex.
+dannes et System af Kloder i Rummet; hvad har nu Principet med en
+saadan Dannelse at gjøre? Frembringer Tilværelsens Princip maaskee af
+sig selv paa een Gang baade Masser og Kræfter, fordeler Masserne i
+Rummet, og fastsætter de Love, hvorefter Kræfterne skulle virke?
+Ingenlunde! Det Princip, hvorom her tales, er jo ikke et
+Mirakelprincip, der skaber af Intet, men et Naturprincip, der
+forudsætter sit Materiale. Kan det da begynde med at forudsætte
+Atomerne og selv lægge Kræfterne til? Umuligt! Kan det maaskee begynde
+med at forudsætte Kræfterne og saa selv lægge Atomerne til? Aldeles
+umuligt! Sandheden er, at Materialet med dets Atomer og Masser ikke er
+et Oprindeligt, men tvertimod et Afledet.
+
+I den ydre, materielle Tilværelsesform hævde Atomerne jo vistnok en
+egen mechanisk Selvstændighed; det i denne Selvstændighed Mechaniske
+beroer nemlig paa den Udvorteshed, hvorved Rummet sættes og fyldes;
+Atomerne antage da i denne Udvorteshed Skin af
+% [printer's defect: a stray ink blot sits before "oprundne" in the scan,
+%  right where the compositor would have set a word-initial letter; no
+%  letter appears to be missing from the sense, so nothing is supplied]
+oprundne Existenser, af \textit{facta} uden \textit{fieri}, fordi
+\textit{fieri} er skjult i Grunden, af evige Fakta, \textit{facta, quæ
+non facta sunt}. Men de Masser, der skulde dannes af slige Fakta, og det
+System af Kloder, der igjen skulde dannes af slige Masser, maatte da
+rigtignok dannes under et begrebløst og derfor ubegribeligt Sammentræf
+af endelige, for hverandre tilfældige Betingelser. Et saadant, i Kraft
+af tilfældig Nødvendighed dannet System vilde da være et i sit
+Phænomen fornuftigt,
+
+% --- p. 202 ---
+\setcounter{footnote}{0}
+men efter sin Oprindelse ufornuftigt Hele, en forstandig Conseqvens af
+blinde, grundløse Forudsætninger, en meningsløs Modsigelse. De blinde
+Forudsætninger hæves imidlertid ikke derved, at her uden videre
+underskydes en almægtig Viden, saalidt som det Naturfornuftige hævdes
+derved, at en anaxagorisk \textit{νοῦς} eller platonisk
+\textit{δημιουργός} overtager Principets Rolle. Nei, de blinde
+Forudsætninger hæves, naar der udtrykkelig gjøres Forskjel imellem
+\emph{det at være i Umiddelbarhedens ydre materielle Tilstand og det at
+virke i Reflexionens indre, ideelt overgribende Form;} det
+Grundfornuftige
+hævdes, naar Materiens Punkter, Masser og Kræfter, i hvilken Tilstand
+og paa hvilket Udviklingstrin den ydre existentielle Totalitet end
+fastholdes, erkjendes som Momenter og tjenende Led for den indre
+Totalitet, hvori Grundaarsagen reflecterer sin
+Virken\footnote{Der er et Dilemma, der lader sig fremstille saaledes:
+\emph{Enten maa Alt oprindelig beroe paa Atomer og physiske Aarsager, og
+da ere Philosophiens Grundaarsager, Principer og ideelle Magter kun
+„Speculationer“; eller ogsaa maa Philosophien med sine Principer og
+Fornuftaarsager have Ret, og da er Physikens Lære om Atomerne og de
+physiske Aarsager kun af underordnet Betydning. naar Spørgsmaalet er om
+Sandhedens Erkjendelse.} --- Det vil nu let skjønnes, at en sand
+Naturerkjendelse ikke er mulig, saalænge man med kritisk
+Egensindighed vil hænge sig ved et saadant Dilemma; det er endvidere
+indlysende, at dette i sig grundfalske Dilemma maa give Materialismen
+en absolut Overvægt over Idealismen, thi det er en ubestridelig
+Kjendsgjerning, at Naturvirksomheden paa alle Punkter gaaer igjennem de
+physiske Aarsager. Ethvert nogenlunde besindigt Forsøg paa at hæve
+dette i sine Conseqvenser saa fordærvelige Dilemma maa derfor
+paaskjønnes. „Man setzt im gemeinen Leben das, was den Sinnen
+unzugänglich, in der Materie Bewegung und Veränderung hervorbringt,
+ihr als geistiges Princip \emph{entgegen}, --- die Materie aber, so wie
+das Höhere in ihr Wirkende sind nur verschiedene Stufen geistiger Kraft.
+--- Für unsere Sinne existirt nur die materielle Welt, für unsern
+Geist existiren unmittelbar nur die in der Materie wirksamen Geister.
+Jedes Atom ist ein für sich selbständig Bestehendes, von einer Seele
+Bewegtes --- ist nur diese Seele niederster Art selbst. .... Die
+Thätigkeit des Weltgeistes hat sich aber nicht darauf beschränkt, eine
+unendliche Zahl von Atomen --- Wesen der niedersten Art --- zu
+schaffen, es sollte zu höhern Produkten seiner Wirksamkeit kommen. Es
+sollten in allmählich aufsteigenden Kategorien \emph{geistige Wesen}
+entstehen, welche gleichsam Gedanken des Weltgeistes, an und für sich
+nicht fähig, \emph{sinnlich, materiell wahrnehmbar} zu erscheinen, aber
+mit der Macht begabt sind, sich in die Stoffwelt zu versenken, diese in
+verschiedener Art zu beherrschen, aus ihr sich Leiber zu gestalten und
+mittelst dieser räumlich und zeitlich auszutreten.“ M. Perty.
+Allgemeine Naturgeschichte als philosophische und
+Humanitätswissenschaft. Bern. 1843. 1ster Band. S. 115--116.}.
+
+% --- p. 203 ---
+Her kan da ikke længere spørges, hvorfra Principet faaer sit
+Materiale, thi Atomer og Kræfter ere jo i Grunden Momenter af dets eget
+Indhold; her kan ikke spørges, hvorledes Kraften oprindelig kom ind i
+Materien, og Fornuften ind i Klodernes System, thi Materie og Kraft ere
+jo i deres faktiske Forskjelseenhed Existensvirkninger af
+Grundaarsagen, og Fornuften den Magt, hvormed den magter Betingelser og
+Tingsaarsager; her kan ikke spørges, hvorledes det i sig Ubetingede fra
+Begyndelsen af er bleven indviklet i Betingelsernes Væv, thi det i sig
+Ubetingede er ikke en Ting, hvis Betingethed betegner dens
+Afhængighed, men en virkende Selvhed, som, idet den betinges,
+underlægger sig Betingelserne og hævder sin Oprindelighed. Formen for
+den principielle Virken er i Almindelighed characteriseret derved, at
+der danner sig et relativt sluttet Hele, hvis ideelle Midtpunkt,
+systematiske Leddeling og gjennemgaaende Eenhed Principet actualiserer.
+Alt beroer her paa Modsætningen imellem det Ideelle og det Materielle.
+Denne Modsætning maa i sin yderste Abstraction bestemmes saaledes:
+\emph{det Ideelle er den almene, i sig reflecterede Selvhed, den rene
+Fornuftighed; det Materielle}
+
+% --- p. 204 ---
+\setcounter{footnote}{0}
+\emph{derimod den i det udvortes Enkelte umiddelbart værende
+Andethed.} Da nu Andetheden, det Afledede, ikke desto mindre er
+nødvendig, ja oprindeligt nødvendig for den sin egen Udvikling
+betingende Selvhed, gaaer Virkelighedsprincipet overalt ud paa at
+sammenarbeide de tvende Virksomme. Under denne Sammenarbeiden antager
+da Modsætningen i det Hele en tredobbelt Charakteer.
+
+1) Det begynder paa det laveste Trin med, at det, der angiver
+Udvortesheden, præger og stempler Endeligheden, nemlig det Materielle,
+hersker: den Andethed, hvilken Selvheden oprindelig forudsætter som
+sit Moment, træder da op, ikke som Moment, men i saa kraftig
+Umiddelbarhed, at det Ideelle, hvis Virken er i Reflexion, derunder maa
+holde sig skjult. I beskuelig Form udtrykkes dette saaledes: Atomer og
+Masser svæve i Rummet; det seer ud, som vare de aldeles ligegyldige mod
+hverandre, saa stærk er Andetheden, saa fremherskende Udvortesheden;
+det seer ud, som skulde disse materielle Dele evig været forblevne i
+denne Ligegyldighedstilstand, dersom de ikke tilfældigviis --- en evig
+ubegribelig Tilfældighed! --- vare forsynede med Kræfter, at virksomme
+Forhold kunde dannes. Det er Inertien, Stødet og Tyngden, den
+mechaniske Tiltrækning, som her forestille de active Væsenheder. Men
+hvorfra have disse Væsenheder deres Udspring? De ere Reflexer af den
+gjennem Andetheden virkende Selvhed\footnote{Skjøndt Kategorierne
+kastes noget vel frit imellem hverandre, giver dog følgende
+Beskrivelse et i det Hele sandt Totalindtryk .... Nach einem
+Grundgesetz der ganzen Natur, vermöge welchem auf niederen Stufen
+erscheinende Kräfte auf höheren sich potenzirt wiederholen, zeigen die
+Weltkörper statt der verschwindenden Kleinheit der Kräftepunkte
+riesenhafte Dimensionen .... Entfernung von Centralkörpern, mittlere
+Dichtigkeit, Geschwindigkeit der Bahnbewegung und Axendrehung sind
+nothwendige Bestimmungen, verschiedene Seiten des eigenthümlichen
+Wesens der Weltkörperseelen. All dieses hat sich z. B. zu einem
+Planetensysteme geordnet durch Wechselwirkung und Wechselstellung mit
+den allen Gliedern eines solchen eigenthümlichen Proportionen.
+Verhältnisse dieser Art ordnen sich auf ähnliche Weise, wie etwa jene
+der einzelnen Personen eines Familien- oder der Gewalten eines
+Staatswesens, oder wie sich verschieden schwere, unmischbare
+Flüssigkeiten unter einander schichten --- nach den sich in das
+Gleichgewicht einer bestimmten Modalität setzenden Kräften, ohne daß
+hier von Vorstellung und individuellem Bewusstsein die Rede sein könnte.
+M. Perty. Anf. Skr. S. 120.}. Det Fornuftige kommer, for at udtrykke det i
+Phy-
+
+% --- p. 205 ---
+sikens Sprog, tilsyne i Form af evige, uforanderlige Love; men hvad ere
+de uforanderlige Love vel Andet, end de almene Magters, og igjennem
+disse Selvhedens, abstracte Former? Formedelst Lovene holdes det
+udvortes Mangfoldige under Herredømmet af det indvortes Ene. Lovenes
+Opfyldelse viser os den fra sig selv udgaaende, med sig selv enige, til
+sig selv gjennem Alt tilbagevendende Fornuftighed, den i det Selvløse
+mægtige Selvhed. Den hertil svarende Totalitet er den astronomiske, det
+System af Bevægelser, som \textit{Laplace} har betegnet ved
+\textit{mécanique céleste} (Jvfr. Phil. Propæd. S. 172).
+
+2) Paa det næste Hovedtrin er allerede Andetheden forandret; den har
+altsaa dog ikke kunnet hærde sig mod Selvheden, har ikke kunnet
+skjule, at den med sin umiddelbare Selvstændighed væsentlig er Moment.
+Den mechaniske Andethed er skarp og ligesom forstenet: det Ene kan
+være ved Siden af det Andet, kan berøre, støde, trykke det Andet, kan
+hæfte ved det Andet; men en inderligere Forening, en Berøring, hvorved
+det Ene, qvalitativt forskjelligt fra det Andet, skulde forandre sin
+Qvalitet i Lighed med det Andet, er paa Mechanismens Trin umuligt.
+Fornuften, som ved den mechaniske Udstykning er forhindret fra at
+fordybe sig i Grunden og speile sig i Inderligheden, hævder da
+Selvheden som den almene Væsenhed, en objectiv Magt, der hersker i et
+System af
+
+% --- p. 206 ---
+\setcounter{footnote}{0}
+mechaniske Love. En inderligere Forening, Identiteten af de hinanden
+Modsatte, naaes i det Chemiske. Under de chemiske Processer gaae
+Tingene tilgrunde, for paany at begrundes; her blive de tilværende Led
+Momenter, for at Momenterne igjen kunne blive tilværende Led: det er
+det Fornuftige selv, hvis Væsen er Stoffernes Affinitet. Under
+Legemernes indvortes Forandringer sees den urkraftige, elementære
+Selvhed at fordybe sig i Grunden, artikulere Materien og arbeide sig
+igjennem Andetheden. Den hertil svarende Totalitet er i jordisk
+Concretion den geologiske\footnote{Was einmal die Verhältnisse der
+Erde zu andern Weltkörpern betrifft, so tritt dasjenige, in welchem
+sie zu ihrem Centralkörper, der \emph{Sonne} steht, ungemein überwiegend
+hervor.... Wie durch den Umlauf um die Sonne die Phasen des Jahres
+gegeben werden, so erzeugt die (vielleicht auf Elektromagnetismus
+beruhende) Axendrehung den Wechsel zwischen Tag- und Nachtleben, wobei
+nach einander alle Punkte dem nahen glänzenden Fixstern, zu dessen
+System die Erde gehört, bald zu bald von ihm abgewendet werden. Wie
+aber im Leben eines sekundären Organismus keine bestimmten Abschnitte
+vorhanden sind, sondern jenes als eine stätige Linie erscheint, in
+welcher die wunderbarsten Abwechslungen, ja scheinbar widersprechende
+Erscheinungen, unmerklich in einander verfließen, so auch in den
+Erscheinungen, welche die doppelte Bewegung der Erde zur Folge hat....
+Dieses Verhältniß allein, wenn auch keine andern bekannt wären, würde
+denjenigen genügen, die Erde für einen Organismus zu halten, welche
+das in Rhythmus und Metamorphose begründete tiefere Wesen eines
+solchen begriffen haben.... Kann man auch der Ansicht einer
+Umwandlung der Stoffe, wobei durch organische Thätigkeit der
+Erdorgane, wie im thierischen Leibe, Festes, Flüssiges, Gasiges und
+alle Stoffe in einander umgewandelt, und in jedem Organ des
+Erdganzen eigenthümliche Produkte, Sekreta erzeugt werden, wonach
+auch die Gesteine aus schleimigen Substraten entstehen und fest
+werden, dann regelmässige Krystallformen annehmen, und endlich
+verwesen sollen, nicht unbedingt beistimmen, so muß man einen
+Athmungsproceß von Atmosphäre und Erdfeste unbedenklich zugeben. Er
+erfolgt \emph{rhythmisch}, mit Ueberwiegen bald des einen, bald des
+andern
+Factors, durch aufsteigende und absteigende Ströme in der Atmosphäre,
+und wird schon durch die regelmässigen und unregelmässigen
+Barometerschwankungen angedeutet. .... Die Luftmassen, welche über
+Meer und Erde streichen, müssen Friktions-Elektrizität aufregen; die
+so verschiedenen Massen, aus welchen die Erdrinde besteht, durch ihr
+blosses Aufeinanderliegen Kontaktelektrizität. Auch die ungleiche
+Erwärmung von Luft, Meer und Erde wird elektrische Phänomene
+hervorrufen. Welche auch die nähern Ursachen der \emph{Erdbeben} und des
+\emph{Vulkanismus} sein mögen, ob elektrische Ausgleichungen,
+Schwankungen
+einer unterirdischen Atmosphäre, chemische Bindungen und
+Zersetzungen, das Centralfeuer, oder begleitende Erscheinung
+organischer Umbildungsprozesse --- nie können diese furchtbaren
+Vorgänge als bloß physische oder chemische, sondern sie müssen als
+zum Kreis des Erdlebens gehörig betrachtet werden. --- Wenn nun die
+Erde, wie man nicht bezweifeln kann, im Organismus ist, so muß sie im
+Ganzen, wie ihre Organe im Einzelnen, \emph{veränderliche Stimmungen}
+annehmen können, sie muß \emph{pathologische} Zustände zeigen, die in
+ihrem eignen Entwicklungsgang begründet sind, oder ihr von aussen
+herbeigeführt werden. In solchen Verhältnissen werden wir die Ursache
+abnormer Jahre, so wie des Charakters der Jahrgänge überhaupt,
+ausserordentlicher Vermehrung mancher Thiere und Pflanzen, und jener
+grossen Epidemien zu suchen haben, welche von Zeit zu Zeit die Völker
+heimsuchen. M. Perty. Anf. Skr. S. 436--40.
+% [this footnote's own text runs on past printed p. 206 through the whole
+%  of printed p. 207 before its citation closes; completed here in full,
+%  at its anchor, per this book's established convention for overrunning
+%  footnotes (cf. pp. 15--16) -- the pp. 207--221 batch should NOT
+%  re-transcribe it, and should simply resume body text at "punkt er
+%  Jorden kun et sammenstykket Hele" on printed p. 207.]
+}. „Seet fra Geognosiens Stand-
+% [this body-text quotation opens here with „ and does not close within
+%  this batch -- it continues onto printed p. 207 ("...punkt er Jorden
+%  kun et sammenstykket Hele; ... (Phil. Propæd. S. 186)."), where it
+%  closes with “. Cross-batch quote pair, comparable to the p. 73/75
+%  pair noted in RESUME-NOTES; not a defect. The pp. 207--221 batch
+%  should log the matching closing site.]
+
+% --- p. 207 ---
+% Continues mid-sentence from p. 206 (parallel batch); first words as printed:
+% "punkt er Jorden kun et sammenstykket Hele; fra Geologiens Standpunkt ...".
+% The closing "\quotedblbase ... \textquotedblleft" pair below is a cross-batch
+% quote: the opening low quote is on p. 206 (outside this fragment); only the
+% high closing quote prints here. Not a defect --- both sites should be
+% commented (cf. the p. 73/p. 75 "Forsaavidt" pair already in this file).
+% A German footnote (M. Perty, "Anf. Skr. S. 436--40", on Erdbeben/Vulkanismus)
+% prints at the foot of the printed page 207 as the unmarked run-over of a
+% footnote anchored on p. 206; it is NOT transcribed here. It belongs, whole,
+% in the \footnote{} of its p. 206 anchor. Verify the pp. 192--206 fragment
+% captures it before splicing; if not, retrieve it from PDF page 219 top.
+punkt er Jorden kun et sammenstykket Hele; fra Geologiens
+Standpunkt er Jordlegemet derimod at opfatte som en elementær
+Organisme, et væsentligt Hele, hvis Dele have udviklet sig af et
+indre Anlæg;“ (Phil. Propæd. S. 186). Det jordiske Hele, den
+elementære Organisme, er et Selvhedens Billede: bevæget af et
+Andet, idet det dog bevæger sig selv, magnetisk, idet det
+magnetiserer sig selv, elektrisk, idet det elektriserer sig selv, et
+Laboratorium, der selv bevirker, leder og styrer de chemiske
+Processer.
+
+3) For at det Ideelle kan i Existensen gjennemforme det Materielle,
+og Andetheden blive til det, hvorpaa den oprindelig er anlagt, et
+Moment for den herskende Selvhed,
+% --- p. 208 ---
+\setcounter{footnote}{0}
+maa den i Elementærorganismen virksomme Idealitet potensere sig i
+høiere principielle Fulgurationer og afgive Selvhedspunkter for
+organiske Organismer.
+
+Af Ehrenbergs Mikrogeologie t. Ex. sees disse Fulgurationer, disse
+Livets Gnister i Støvet. „Den, der gjennemseer dette Pragtværks
+store Tavler, vil forbauses og overvældes af de talrige og
+vidunderlige Former af det uendelige Liv, hvis Spor træffes overalt
+i og over den faste Jordskorpe, hvor blot Forskerens velbevæbnede
+Øie formaaer at trænge hen. --- Alt synes at faae Liv; der bliver
+intet Dødt tilbage, Intet, der er af reen uorganisk Oprindelse.
+Denne Livsfylde, der gaaer igjennem alle Tider, overrasker os og
+leder os let til den vildfarende Anskuelse, som allerede Gleichen,
+en af de første mikroskopiske Forskere, nærede, nemlig at hele
+Jorden er dannet af Infusorier. Vi berøres paa en uhyggelig og
+spøgelseagtig Maade af denne tildeels længst begravne, men nu atter
+opstandne Verden, der synes at gjennemtrænge Alt: Polernes og
+Gletschernes Iis, Havets Dynd og de høieste Bjergtoppes Firnsnee og
+løse Jord, det Støv, den henhvirvlende Orkan river med sig, og det
+Gran, der zittrer i den rolige Solstraale, Deltaernes frugtbare
+Jordsmon og Flodernes og Havenes Vand, Jordskorpens faste Steenlag
+og selv Vulkanernes glødende Aske“. (B. Cotta\footnote{Geologiske
+Billeder, ved C. Fogh. Kjøbenhavn. 1859. S. 102---103.}).
+
+Med den organiske Organisme, Organismen i egentlig Forstand, kommer
+Selvheden til umiddelbar Existens; dette er, naturlig seet, Livets
+Oprindelse. Til nærmere Forstaaelse omhandle vi særskilt
+\emph{Organismen, den organiske Type, det organiske Formaal}.
+
+\subsection*{α) Organismen.}
+\addcontentsline{toc}{subsection}{α) Organismen}
+
+I det astronomiske Hele, det System af Verdner, der opfylder
+Himmelrummet, gjælder Materiens Vægt; her er
+% --- p. 209 ---
+Massernes Rige. Men Massernes Rige er dog ogsaa et Lysets Rige: det
+sandselige Lys er Aandens Symbol, en Afglands af den i
+Fornuftgrunden virksomme Idealitet. Allerede i Jordlegemet tvinges
+det Masseagtige ind under articulerende Former; med Organismen
+forsvinder det ganske: Cellen, ubetydelig i Masse, er her det
+betydningsfulde Udgangspunkt. I Dannelsen af den første Celle er
+hele Livsproblemet sammentrængt. Det ved Livsproblemet
+Eiendommelige er, at to saa ueensartede, hinanden saa indbyrdes
+modsatte Aarsager, som Selvaarsag og Stofaarsag, virke sammen i
+umiddelbart kraftig Eenhed; det Eiendommelige er, at Principet i den
+Grad gjennemtrænger det Materielle, at det selv materialiseres, at
+Selvheden legemliggjøres: Organisme er legemliggjort Selvhed. Men
+uagtet Materien optages af det Ideelle, ophører den dog derfor ikke
+at være materiel. Spørgsmaalet bliver altsaa, hvorledes de samme
+Atomer, der udgjøre Bestanddelene i de døde Masser, nu ogsaa kunne
+udgjøre Bestanddelene i den levende Organisme. Det vil med Hensyn
+hertil være vor Opgave at charakterisere Organismen fra et chemisk,
+et morphologisk og et metaphysisk Synspunkt.
+
+For den \emph{chemiske} Analyse er den organiske Forbindelse et
+Affinitetens Produkt, ligesaavel som den uorganiske; Produktet er
+selvløst, derfor kan den organiske Chemie umulig give os nogen
+ligefrem Oplysning om, hvad Livet egentlig er. Middelbart og
+indirect kaster de organiske Forbindelsers Chemie derimod et eget
+Lys paa Livets Virksomhed. Sammenligne vi nemlig det ringe Antal af
+Grundstoffer: Kulstof, Brint, Ilt og Qvælstof, hvoraf de organiske
+Legemer i det Hele bestaae, med den uoverskuelige Mængde
+Forbindelser, som deraf kunne dannes, da faae vi et Indtryk af
+Stoffets Foranderlighed, dets alsidige Eftergivenhed og Villighed
+til at lade sig forme. Hvormange forskjellige Legemer lade sig
+% --- p. 210 ---
+\setcounter{footnote}{0}
+ikke danne af Kulstof, Brint og Ilt, ja, hvormange lade sig ikke
+danne af Kulstof og Brint alene!\footnote{De store Klasser af
+flygtige Olier, til hvilke Terpentinolie, Citronolie,
+Copaivabalsamolie, Rosmarinolie, Enebærolie og andre høre, saa
+forskjellige ved deres Lugt, deres medicinske Virkninger,
+Kogepunkt o. s. v., indeholde Kulstof og Ilt i samme Forhold, ikke
+mere af den ene end af den anden Bestanddeel. I hvilken forunderlig
+Simpelhed viser sig ikke den organiske Natur for os fra dette
+Synspunkt: med to lige Vægtforhold af to Bestanddele frembringer
+den en overordentlig Mangfoldighed af de mærkværdigste
+Forbindelser. Man har opdaget Legemer, der, faste og flygtige ved
+sædvanlig Temperatur, som Rosenoliens krystalliserende Bestanddeel,
+have eens Sammensætning med den Gas, der brænder i vore
+Lyseflammer, og desuden med et Dusin andre Legemer, der alle ere
+høist forskjellige i deres Egenskaber. Liebig. Chem. Breve. Khvn.
+1845. 11te Brev.}
+„De forskjellige Arter af Stivelse som Amylum, Lichenin, Inulin,
+Cellulose og Gummi have det fælleds Udtryk:
+$\mathrm{C}_{12}\mathrm{H}_{10}\mathrm{O}_{10}$, og aldeles
+forskjellige Olier, som Citronolie, Nellikeolie og Terpentinolie,
+have een og samme Formel $\mathrm{C}_{20}\mathrm{H}_{16}$. Man
+hjælper sig hyppigt med den Antagelse, at de samme relative
+Atommængder af disse \emph{isomere} Legemer ere ordnede paa forskjellig
+Maade ... Men“, tilføies der (Physiol. af Valentin; ved Hannover.
+S. 19), „denne Hypothese giver ingen sand Oplysning, og kan ikke
+udjævne det praktisk bestaaende Misforhold mellem det,
+Undersøgelsen fordrer, og det, den for Øieblikket
+formaaer“\footnote{„Læseren kan aabne næsten ethvert Værk om
+Physiologie og organisk Chemie, og han vil der finde Udviklinger af
+Næringens Theorie og de forskjellige Næringsmidlers
+Ernæringsværd, der ere saa nøiagtige og saa afgjørende i deres
+Formler, at han neppe vil høre paa mig med Taalmodighed, naar jeg
+paastaaer, at Nøiagtigheden er bedragerisk, og Doctrinerne
+beviislig urigtige. Ikkedestomindre haaber jeg, inden vi naae
+Enden, at overbevise Læseren om, at Chemien selv er i en altfor
+ufuldkommen Tilstand til at give klare og tilfredsstillende Svar
+paa sine egne
+% (this footnote runs over: the paragraph below is printed, unmarked,
+% at the foot of p. 211, before p. 211's own new "*)" note begins)
+\par Spørgsmaal i denne Retning --- som Mulder og Lehmann oprigtig
+tilstaae --- og fremdeles, at Chemien, selv om vi antage den for
+fuldkommen, bestandig maa være ude af Stand til at løse
+physiologiske Problemer ...... Den philosophiske Digter advarer
+os: „Fra høiere Domstol til lavere\\
+Ei bring din Sag;“\\
+og Appellen fra Physiologien til Chemien er just en saadan Appel
+fra Høiere til Lavere. Analysen af en Nerve vil aldrig kaste Lys
+paa Sandsningen; ingen Opstilling af chemiske Formler vil forklare
+Cellens Form og Egenskaber. Man kan tage en Mechanisme i Stykker og
+ved physiske Love forklare hvert Hjuls og hver Kjædes Virkning og
+Indgriben; men man kan ikke tage en Organisme i Stykker og forklare
+dens Egenskaber ved chemiske Love, som Laboratoriet har viist os
+dem. Dersom der behøves en overvældende Belysning af denne
+iøinefaldende Sandhed, finde vi den i Dyreægget: her er en
+mikroskopisk Kugle, sammensat af Chemikerne velbekjendte Stoffer,
+der potentielt indeholder et Dyr, og som vil reproducere, ikke blot
+Forældrenes Skikkelse, Træk, Væxt og særlige Eiendommeligheder,
+men ogsaa mange af deres erhvervede Vaner, Tilbøieligheder og
+Egenheder; har Chemien i hele sit udstrakte Omraade Noget, der
+svarer hertil? Kan Chemien give os blot en Tilnærmelse til en
+Forklaring heraf? Chemisk Analyse kan føre os til Livets
+Dørtærskel, men ved Dørtærsklen ophører dens Veiledning. Her
+optræder en ny Klasse Forviklinger, maa en ny Række Love
+opdages.“ Hverdagslivets Physiologie (efter George Henry Lewes
+»physiology of common life«). Første Deel. S. 63---65.}). Forudsætte
+vi altsaa, hvad i forrige
+% --- p. 211 ---
+\setcounter{footnote}{0}
+Afsnit udførlig er viist, at Atomerne som Stofpunkter ved hver
+Omordning selv undergaae en materiel Ændring, da bliver
+Foranderligheden saa gjennemgaaende, at de chemiske Love vel kunne
+fyldestgjøres og Slægtskabernes Betydning hævdes, uden at Materien
+desaarsag formaaer at stille det formende Princip nogen væsentlig
+Hindring, endsige da nogen uovervindelig
+Skranke\footnote{Om Beviserne for den absolute Lighed i
+Sammensætning ved høist ulige Egenskaber anfører Liebig (Anførte
+Brev S. 104): „I Cyanursyre, Cyansyrehydrat og Cyamelid har man tre
+saadanne Legemer; det første kan opløses i Vand, er krystallisabelt
+og istand til at danne Salte sammen med Metalilter; Cyansyrehydrat
+er en flygtig, i høieste Grad ætsende Vædske, som ikke kan
+sammenbringes med Vand uden at decomponeres; Cyameliden er en hvid,
+porcellainagtig Masse, der er aldeles uopløselig i Vand. I et
+hermetisk tillukket Glaskar forvandles Cyanursyre under en høiere
+Temperaturs Indflydelse til Cyansyrehydrat, og dette gaaer af sig
+selv ved sædvanlig Temperatur over i Cyamelid, uden at en
+Bestanddeel udtræder, eller et Legeme udenfra optages deri.
+Cyamelid lader sig efter Ønske forvandle til Cyanursyre eller
+Cyansyrehydrat.“
+% (footnote runs over to p. 212 unmarked; transcribed whole at this,
+% its anchor)
+}. Som Stofpunkter maae Atomerne
+% --- p. 212 ---
+% (no new footnote mark on this page; its foot carries the unmarked
+% run-over of the p. 211 note, transcribed at the p. 211 anchor above)
+altid rette deres materielle Eiendommelighed efter den Tilstand,
+hvori de befinde sig, den Sammenhæng, hvori de virke. Da nu intet
+Atom, forsaavidt det er materielt, er selvvirksomt, men ethvert Atom
+altid maa ved Paavirkning vækkes til betinget Virksomhed, saa
+forstaaes heraf, at Atomerne, eftersom Virksomheden aftager, kunne
+nedsynke i en Tilstand af Hvile, og saaledes udgjøre Bestanddelene i
+de døde Masser; men, da Atomerne væsentlig ere Functionspunkter,
+indsees det tillige, at de igjen maae kunne vækkes til
+eiendommelig Virken, ja nogle endog under særegne Betingelser til
+at deeltage i Livsvirksomheden. Men videre end til dette Resultat
+kan den chemiske Analyse umulig føre.
+
+Ifølge den \emph{morphologiske} Opfattelse ere Organismens Dele
+Frembringelser af organisk Virksomhed, ere som Phænomener
+Afbilleder af Livets Væsen; Morphologien lægger afgjørende Vægt
+paa Forskjellen mellem et organisk og et blot chemisk Produkt. Her
+sees da heller ikke paa Begrændsningsformen alene, her sees tillige
+paa den indre Bygning, den mikroskopiske Sammensætning: Anatomien
+maa ligesaavel som Chemien understøtte Morphologien. „Før Bichât,
+der maa kaldes den philosophiske Anatomies Stifter, ansaaes
+Legemet for sammensat af forskjellige Dele eller Organer; naar man
+havde opregnet disse Dele, var man færdig med sin Beskrivelse.
+Bichât tændte et Lys for Videnskaben, da han godtgjorde, at
+Organerne selv bestod af forskjellige Væv eller Grunddannelser,
+% --- p. 213 ---
+\setcounter{footnote}{0}
+der hver for sig bevarede deres eiendommelige Egenskaber, i hvilken
+Deel af Legemet de end fandtes. Hjertet t. Ex. er et Organ, der
+bestaaer af Muskel-Væv, Binde-Væv, Nerve-Væv og Fedt-Væv, idet
+ethvert af disse Væv viser de samme Egenskaber i Hjertet, som det
+viser i ethvert andet Organ; ganske paa samme
+Maade\footnote{Ved Ordene: „ganske paa samme Maade,“ maa man dog
+ikke lade sig forlede til at oversee den væsentlige Forskjel
+imellem et Skib og en Organisme, at nemlig de forskjellige Stoffer,
+hvoraf et Skib dannes, leveres Bygmesteren som Materialier, hvis
+indre Beskaffenhed han maa benytte som et Givet, medens den
+organiserende Værkmester derimod selv væver de forskjelligartede
+Væv, og derved bestemmer deres indre Beskaffenhed. „Vævene ere
+Grundbestanddelene af den dyriske Bygning, og en særlig Green af
+Videnskaben, der bærer Navn af Histologie eller \emph{almindelig}
+Anatomie er indviet til at studere den. Organismen er sammensat af
+Organer, og Organerne af Væv“. (Hverdagsl. Physiol. 1. S. 4.)}
+som de forskjellige Stoffer, hvoraf et Skib er dannet: Træ, Hamp,
+Kobber, Jern, Tjære o. s. v. bevare deres charakteristiske
+Egenskaber, uagtet Træet kan være Ror, Dæk eller Mast og Jernet
+Anker, Søm eller Kjætting.“ (Lewes).
+
+At en Fleerhed af Dannelser ere samtidige i Rummet, at enhver af
+disse Dannelser omdannes med Tiden, at hele Systemer af
+articulerende Formationer underordne sig en herskende Eenhed, ere
+her lige fra Dannelsen af den første Celle indtil Fuldendelsen af de
+meest forskjelligartede Organer med deres Organdele, Begrændsning,
+Skikkelse og Habitus gjennemgaaende Charakteertræk. I Cellen paa
+dens første Dannelsestrin sees allerede foruden Kjernen, hvis en
+saadan findes, Celleslimen (Protoplasma, Cytoblastema),
+Primordialhinden (\textit{utriculus primordialis}), der er qvælstofholdig,
+og Cellehinden, der bestaaer af Cellulose. At nu disse forskjellige
+Dannelser, der gjensidig forudsætte og afgive Forudsætninger for
+hinanden indbyrdes, ere Gjennemgangsled for et formende
+% --- p. 214 ---
+\setcounter{footnote}{0}
+Ene, altsaa Yttringer af eet Væsen, udlægges i Phænomenet derved,
+at Cellen lever som organiseret Eenhed, at det, der saaledes danner
+sig, er eet Levende.
+
+Den levende Celle undergaaer igjen Omdannelser, ja har sit Liv i en
+Række Omdannelser. I sin første Ungdom er Cellen, --- vi tænke
+herved fornemmelig paa Planteorganismer, --- fyldt med ligelig
+fordeelt Protoplasma, der tjener til dens Ernæring, da den i
+Begyndelsen altid voxer meget stærkt; den jævne Fordeling af
+Protoplasmet viger dog snart for en articulerende Sondring ved de
+smaa Cellesaftdraaber; tilsidst flyde Draaberne ganske sammen, og
+de Protoplasmastrømme, der fløde imellem dem, forsvinde. Cellen
+indtræder i et nyt Stadium. Imellem det første og andet Stadium,
+imellem den yngste og den næstyngste Celle er Forskjellen
+charakteristisk. Den næstyngste Celle adskiller sig nu i
+Almindelighed fra den yngste ved større Rumfang, ved tykkere
+Vægge, ved det forsvindende til Parietalstrømme indskrænkede
+Protoplasma. I den unge Celle er der intet Chlorophyl; Chlorophyllet
+(ifølge Mulders Analyse: $\mathrm{C}_{18}\mathrm{H}_{18}\mathrm{N}_2\mathrm{O}_3$)
+danner sig efterhaanden, og skal med sit Amylum igjen afgive
+Næringsstof for nye Celler. Cellen ældes, Chlorophylkornene blive
+sparsommere; den visner og maa tilsidst, idet dens Indhold
+omdannes, selv afgive
+Næringsstof\footnote{Af Cellens Vædske har imidlertid udskilt sig
+faste Stoffer, Sekreter; disse findes, før den endnu er hentørret,
+enten svømmende i Vædsken eller afsættende sig paa
+Cellemembranen; skeer nu Afsætningen lidt efter lidt i en saadan
+Tykkelse, at hele Cellehulheden derved forsvinder, saa er Sekretet
+i de fleste Tilfælde det, man kalder „Træ.“ Træstof, Lignin, som
+efter Wöhlers Angivelse (Org. Chem. ved Scharling S. 59---60)
+antages at være $\mathrm{C}_{35}\mathrm{H}_{48}\mathrm{O}_{20}$,
+udgjør jo Hovedmassen af Træ, Hør, Hamp, Straa, Lærred o. s. v.}.
+
+Organisme, Organ og Organelement ere Kategorier, som i denne
+Sammenhæng gaae flydende over i hinanden. Uagtet
+% --- p. 215 ---
+Celledannelsen ved Deling er den hyppigste, idet alle vegetative
+Organer, ja endog de fleste Reproductionsorganer, herfra have deres
+Oprindelse, saa foregaaer der dog ogsaa en fri Celledannelse,
+altsaa en organisk Nydannelse, i de phanerogame Planters Kiimsæk.
+En saadan Kiimsæk, en saadan momentan Organisme, er oprindelig kun
+et organisk Moment, en større Celle, som viser sig i Kjernen af
+Ægget --- før Befrugtningen. I Kiimsækkens øverste Ende fremkomme
+imidlertid snart to til tre, undertiden flere, tilrundede Legemer;
+det er Cellekjerner, i hvilke man iagttager eet eller flere smaa
+lysende Punkter (Kjernelegemer), organisk-særskilte Middelpunkter.
+Omkring disse af Cellens øvrige vordende Indhold omgivne
+Cellekjerner danner sig nu en Hinde; saaledes have vi Kiimblæren,
+en Organisme, et Organ, et Organelement. Af de to eller flere
+Kiimblærer, der paa denne Maade, som til en Forberedelse, ere
+dannede i Kiimsækken, bliver saa --- efter Befrugtningen --- een
+(eller i nogle Tilfælde faa) udviklet paa de andres Bekostning, og
+nu begynder en Celledannelse ved Deling, hvis første afsluttende
+Resultat er Kimens Dannelse. Men betragte vi Kimen, hvis
+oprindelige Deel er Kiimaxen, da indsees det, at Kimen selv er meer
+end et særeget Organ, at den er en Organisme for sig, en Plante i
+Anlæg. Ved dette sit Anlæg articulerer Planten sig i væsentlig
+forskjellige Organer: Axe og Blade. Kiimaxen bliver nemlig adskilt
+i en opadgaaende Deel, Kiimstænglen (\textit{Cauliculus}) med Kiimblade
+(\textit{Cotyledones}) og Kiimknop (\textit{gemmula}), og en nedadgaaende
+Deel, Rodknoppen. Fra Systemet af de første charakteristiske Dannelser
+kan den morphologiske Udvikling saa endvidere følges gjennem alle
+Phænomener af Omdannelser og Dannelsestrin indtil det Vendepunkt,
+der, idet det afgiver en for den organiske Cyclus gjældende
+Slutning, tillige betegner en ny Begyndelse. At der nu i en saadan
+Phænomenernes Cyclus speiler sig en indre Væsenseenhed, er
+øiensynligt; men fængslet af det Phænomenale kan Morphologien ikke
+fordybe sig i denne Væsenseenhed, ikke naae det formende Princip.
+% --- p. 216 ---
+Skal det være muligt at naae Principet og erkjende, hvad Livet er,
+maa Erkjendelsen være \emph{methapysisk}.
+% printer's error, kept as printed: the letterspaced word here is set
+% "methapysisk" --- an intrusive -h- after the t AND a dropped h after
+% the p --- against "metaphysiske" two lines below. Reading confirmed at
+% 600 dpi in the emphasis re-verification pass, 2026-08-10; an earlier
+% comment here mis-described it as merely a "-th-" variant.
+Den metaphysiske Erkjendelse vindes ikke ved mystisk Speculation,
+saalidt som ved vaklende Hypotheser. En Tænkning, som, for at fatte
+det ellers Ufattelige, sniger sig bagved Kjendsgjerningerne, bagved
+Bevidstheden og med det Samme forbi Vanskelighederne, kan og vil
+Videnskaben ikke anerkjende; her kan ikke og skal ikke anvendes et
+biologisk Seerblik, som, uden at der gives mindste Vink om,
+hvorledes Erkjendelsen naaer til Livets Kilde, strax og uden al
+Uleilighed er ved Kilden, seer dybt i Kilden, beskriver Alt,
+definerer Alt, explicerer Alt, saa at det Hele tilsidst seer ud som
+en forblommet Historie, en trivialiseret Meningsapokalypse. Den
+metaphysiske Erkjendelse, hvorom det her gjælder, maa i alt
+Væsentligt slutte sig saa nøie til de physiologiske
+Kjendsgjerninger og deres exacte Udtydning, at den Sagkyndige Punkt
+for Punkt kan controllere saavel dens empiriske Forudsætninger som
+de Consequenser, den uddrager. Dens Eiendommelighed beroer paa dens
+eiendommelige Form; thi dens Form er Dialektik, en Form, der
+væsentlig svarer til Livet.
+
+Som actuel Eenhed i actuel Modsætning af det Ideelle og det
+Materielle er Livets Væsen dialektisk; Dialektiken bestemmes 1) ved
+Atomernes dobbeltsidige Natur som Stofpunkter og Functionspunkter,
+2) ved Organiseringens dobbeltsidige Vexelvirkning: imellem
+Atomerne indbyrdes og imellem Atomerne og Principet, 3) ved den
+organiske Totalitetsfordobling, at det Indre og Ydre formedelst
+Functionernes ideelle og dog materielle Charakteer articuleres til
+Modsætning af ideel og materiel Organisme.
+
+1) \emph{Atomernes dobbeltsidige Natur gjør Grændsen for det
+Chemiske dialektisk.} Ved at tillægge det chemiske Slægtskab
+Selvstændighed ligeoverfor Varmen, Livskraften o. s. v. kommer man
+fra Chemiens Synspunkt let til at oversee den Omstændighed, at
+Slægtskabet, adskilt fra sine Betingelser, dog
+% --- p. 217 ---
+\setcounter{footnote}{0}
+egentlig talt kun er en Mulighed, ikke en Virkelighed. Vistnok kan
+man, hvad Væsenet angaaer, stille Slægtskabet selvstændigt t. Ex.
+mod Varmen; thi dersom de paagjældende Stoffer ikke vare i det
+fornødne Slægtskab, vilde Varmen umulig kunne fremtvinge nogen
+Forening: Foreningen er alene at henføre til
+Slægtskabsvirksomheden som til den væsentlige Aarsag. Men da den
+væsentlige Aarsag, som for sig alene er en reel Mulighed, kun
+virker formedelst Betingelserne, er Varmevirksomheden, hvad da
+ogsaa Chemien udtrykkelig anerkjender, et i Slægtskabets
+Virksomhed integrerende Moment: den chemiske Forbindelse har i
+denne Henseende ikke to eller flere sammenstykkede Aarsager, men i
+Grunden een Aarsag, det formedelst Varmen virksomme
+Slægtskab\footnote{Naar en forhøiet Temperatur bevirker, at der
+t. Ex. af Metaphosphorsyre dannes Pyrophosphorsyre, og en endnu
+stærkere Glødning, at der af Pyrophosphorsyren igjen dannes
+Metaphosphorsyre, da forandrer Slægtskabsvirkningen sig jo vistnok
+med Varmen; men det er alligevel Slægtskabet selv og intet Andet,
+der virker chemisk. Varmen vækker Slægtskabet til Virksomhed, men
+føier iøvrigt ikke Noget til, fremtvinger ikke Noget, som ikke
+ligger i Slægtskabet selv.}.
+
+Hvad der gjælder om Slægtskabets Forhold til Varmen, gjælder endnu
+i langt høiere Forstand om dets Forhold til den saakaldte
+„Livskraft“. At lade „Livskraftens“ relative Selvstændighed
+ligeoverfor det selvstændige Slægtskab beroe derpaa, at denne Kraft
+i Lighed med Lyset, Varmen og Tyngdekraften skulde have „den Evne
+at meddele hvilende Atomer Bevægelse og at tilintetgjøre Bevægelsen
+ved Modstand“, røber en altfor udvortes og overfladisk
+Forestillingsmaade. Hvad vilde det chemiske Slægtskab vel betyde,
+dersom Delenes gjensidige Tiltrækning, Bevægelse og Leiring kun for
+en Deel, kun saadan halvt om halvt, eller saa omtrent, beroede paa
+Slægtskabet, idet snart en Lysstraale, snart en Varmestraale, snart
+en Livsstraale, og Gud veed,
+% --- p. 218 ---
+hvilke andre Trækninger, Zittringer og Straaler kunde skyde sig ind
+mellem Delene, give Atomerne et lille Skub, og vende hele Forholdet
+om, saa at Slægtskabet, der skulde være Aarsag, tilsidst blev
+Betingelse, og den betingende Kraft Aarsag. At tillægge Varmen og
+Lyset Selvstændighed ligeoverfor det chemiske Slægtskab, hvis
+Virksomhed de betinge, gaaer endda nogenledes an, forsaavidt disse
+Potenser jo antages at have et eget Medium og derhos desuden udøve
+en Virksomhed, der kan falde udenfor det Chemiske; men at gjøre
+Livskraften til „Betingelse“, en Betingelse, der skulde staae i et
+saa udvortes endeligt Forhold til det chemiske Slægtskab, at her
+kunde være Tale om at vække en Bevægelse ved Stød og tilintetgjøre
+den ved Modstand, gaaer paa ingen Maade an. Hvor har da „denne
+Kraft“ sit Medium? eller hvilken Virksomhed udøver vel den
+organiserende „Livskraft“ udenfor, ovenfor, nedenfor eller ved
+Siden af Organismens chemiske Processer? Nei, skal Slægtskabet
+hævde sin Selvstændighed, er det virkelig Alvor med Livets
+Chemisme, da bliver der ingen særegen Kraft. at stille op imod
+Slægtskabskraften, ingen aparte Livskraft til at lede den, rette
+den eller lirke ved den, da bliver, med andre Ord, den organiske
+Virksomhed kun et høiere, til et eget System af Betingelser
+svarende Udtryk for den chemiske.
+
+Men naar det Organiske saaledes i Eet og Alt er blevet chemisk,
+\emph{er det Chemiske selv blevet mere end chemisk}. Dersom det
+Organiske nemlig er et høiere Chemisk, saa er det Chemiske jo
+omvendt et lavere Organisk. Paa denne Maade synes nu vistnok
+Kløften mellem det Livløse og det Levende udjævnet; men hermed er
+Sagen endnu ikke afgjort. Istedetfor at falde paa de organiske
+Individer, er nu Modsætningen mellem Liv og Død lagt ind i Atomerne
+selv: det er Atomerne, der ifølge deres oprindelige Natur tilhøre
+to Sphærer. Der maa altsaa for ethvert paagjældende Atoms Function
+gives et Knudepunkt, hvorigjennem Functionen gaaer
+% --- p. 219 ---
+fra at være elementær-chemisk over til at være organisk-chemisk,
+det Knudepunkt, hvorigjennem Atomet selv gaaer over fra at være
+livløst til at være levende.
+
+Dannes nu Cellen, Organismen fra første Begyndelse, under en
+Vexelvirkning af levende Functionspunkter, og er denne
+Vexelvirkning kun potenseret Chemisme: saa kommer Livet da heller
+ikke som et fremmed Væsen ind i det Legemlige, men udspringer af
+Stoffernes Natur, blusser op ved Atomernes Selvantænding, en Flamme
+af ideel Forbrænding. Begyndelsen skeer altsaa, ifølge denne
+Opfattelse, ikke fra en ubetinget Eenhed, men fra en i sig betinget
+Mangfoldighed. Ligesom de mangfoldige Ætherzittringer først afgive
+en Straale, og de utallige Farvestraaler samle sig til Eenhed i det
+hvide Lys, saaledes afgive de utallige Livspunkter ved deres
+organisk-chemiske Samvirken først den levende Eenhed. Dog neppe har
+Livseenheden samlet sig ud af dette Mangfoldige, før den igjen i
+den Grad concentrerer sig til Selveenhed, at den hæver sig over
+Mangfoldigheden og underlægger sig Stofpunkternes Virksomhed. Men
+at Eenheden saaledes resulterer i Følgesætningen, \emph{er just et
+Beviis for, at den som Princip allerede var med i Forudsætningen}.
+
+Under Selveenhedens Herredømme kommer Atomernes dobbeltsidige
+Natur tilsyne: de ere Livspunkter og dog Stofpunkter; de kaldes
+tillive, deres elementære Function potenseres til Livsfunction.
+Men det er kun for nogle Øieblikke, at det enkelte Materiepunkt
+saaledes kan udholde den ideelle Spænding; dets Stofnatur er
+Idealiteten imod, saa mattes det, saa trænges det ud af
+Livspunkternes Kreds og vender igjen tilbage til det Elementære.
+Skulde dette saa ikke være den egentlige Grund til det i Organismen
+uophørlige Stofskifte?
+
+2) \emph{Organiseringens dobbeltsidige Vexelvirkning gjør
+Bestemmelsen af det Morphologiske dialektisk.} At der imellem de
+Processer, den organiske Chemie
+% --- p. 220 ---
+\setcounter{footnote}{0}
+formaaer at udtyde, og Livsvirksomheden selv maa være en væsentlig
+Forskjel, en betydelig Afstand, er fra mange Sider indlysende.
+Videnskaben er sig da ogsaa i denne Henseende sin Grændse bevidst.
+Allerede den Omstændighed, at de samme chemiske Produkter kunne
+vindes paa forskjellige Betingelser ad forskjellige Veie, viser jo,
+at det meget vel kunde lykkes Chemien at fremstille en Række
+organiske Forbindelser, uden at det derved i mindste Maade blev
+opklaret, hvorledes disse Forbindelser egentlig dannes i
+Organismen selv\footnote{„Opvarmer man det cyansure Ammoniumilte,
+eller koger man Opløsningen heraf i Vand, saa forandres det,
+ifølge en Omordning af Bestanddelene, og uden nogen qvalitativ
+Forandring i dets Sammensætning, til et ganske andet Legeme,
+Urinstof, $\mathrm{C}_2\mathrm{N}_2\mathrm{H}_4\mathrm{O}_2$ (der
+altsaa er metamert med det cyansure Ammoniumilte), der ikke er
+noget Salt, men maa henregnes til de organiske Baser.“ (Wöhler.)
+--- Men heraf lære vi da ikke, hvorledes Urinstoffet dannes i den
+levende Organisme.}.
+Eftertrykket falder nemlig, hvad det Organiske angaaer, ikke paa
+Produktet, der dannes, men paa de Processer, hvorunder det dannes,
+ikke paa det Frembragte, men paa Frembringelsesmaaden.
+
+For den chemiske Analyse maa Frembringelsen og det Frembragte,
+Processen og Produktet falde ud fra hinanden: forsaavidt Processen
+er, er Produktet endnu ikke, forsaavidt Produktet er, er Processen
+forbi; i den organiske Virksomhed er Processen derimod, væsentlig
+seet, reflecteret i sit Produkt, det Frembragte samtidigt med sin
+Frembringelse\footnote{% printer's defect: no opening low quote before
+% this German quotation, which begins directly with "Im Chemismus
+% ...". Its closing high quote prints after "Proceß ist." on p. 221,
+% before the Hegel citation. Transcribed as printed; logged here.
+Im Chemismus sind die sich zu einander verhaltenden Materien zwar
+durch ihren Begriff auf einander bezogen (chemische
+Verwandtschaft) und erhalten somit an sich ihr Product, welches
+nicht schon durch das vorher Vorhandene ihm Gleiche sich erzeugt.
+Seine Hervorbringung aber ist keine Selbsterhaltung . . . Der
+organische Ernährungsproceß ist dagegen eine vollkommene
+Bestimmung der materiellen Vermehrung durch die innere schon
+existirende Form, welche, als das Subjective, oder als die einfache
+% (footnote runs over to p. 221 unmarked; transcribed whole at this,
+% its anchor)
+Form aller Theile sich zu sich selbst, oder jeder gegen die
+übrigen Theile als gegen ein Objectives verhält und nur mit sich
+im Proceß ist.“ Hegel: Philosophische Propädeutik. Berlin 1840.
+S. 167.}: de Kar, hvormed
+% --- p. 221 ---
+% (no NEW footnote mark carried over from p. 220's second note here at
+% the top of the page; its close is transcribed at the p. 220 anchor
+% above. p. 221 does introduce its own first footnote further down,
+% at "Dyret*)", so the counter is still reset below.)
+\setcounter{footnote}{0}
+Organismen opererer, dannes, formes og vedligeholdes ved
+Operationerne selv. Forskjellen imellem de organiske Forbindelsers
+Chemisme og Livsvirksomheden er her iøinefaldende. Var nemlig den
+Virksomhed, vi fra Chemien kjende som Chemisme, den samme som
+Livsvirksomheden, da maatte den jo ogsaa kunne udrette det Samme,
+da maatte den chemiske Kunst omsider kunne vække Livet og beherske
+dets morphologiske Phænomener. Men der er dog vist ingen besindig
+Physiolog, der vedkjender sig den Synsmaade, at den organiske
+Chemie nogensinde skulde bringe det dertil, at den kunde forme
+enten en Stængel eller et Blad eller en Fod eller et Øie eller
+nogetsomhelst Organ enten af Planten eller
+Dyret\footnote{So soll denn auch die Unmöglichkeit, organische
+Formen hervorzubringen, nur darin ihren Grund haben, daß wir die
+dazu nöthigen Bedingungen nicht herbeiführen können. Gelänge uns
+dies, so wäre kein Zweifel: der Homunculus spränge aus dem Tigel.
+Gewiß: wenn alle Bedingungen einer Erscheinung vorhanden sind,
+tritt sie in die Wirklichkeit. So weit aber für jetzt unsre
+Wissenschaft reicht, \emph{ist der organische Proceß selbst die
+nothwendige Bedingung, sollen organische Formen entstehen.}
+Seltsamer Weise wird nun bisweilen von den Vertretern der
+physikalischen Physiologie auf eine ganz unbefangene Weise eben
+diese Bedingung eingeführt, um die organischen Processen zu
+erklären. Die Verdauung sagt man z. B. ist nichts weiter, als ein
+chemischer Proceß. Der Magensaft vollbringt sie auch ausser dem
+Organismus, dieser selbst thut ja nichts weiter dazu, \emph{als daß er
+eben jenen Saft zubereitet.} Oder: wenn der Organismus im Stande
+ist, organische Combinationen und Formen zu erzeugen, wir dagegen
+mit aller unserer Ueberlegung nicht die Spur einer solchen Form
+herausbringen, so hat dieß \emph{nur darin} seinen Grund, daß er mit ganz
+andern Apparaten operirt als wir in unsern Laboratorien
+% (Run-over: the printed p. 221 ends mid-sentence here; the remainder of
+%  this note occupies the whole footnote block of the printed p. 222 and
+%  is transcribed at this anchor, per the book's established practice for
+%  a note that overruns a page unmarked (cf. pp. 15--16, 189--191). No
+%  reference mark and no \setcounter reset falls on p. 222. Font checked
+%  at 300/600 dpi on both pages: the note is set in FRAKTUR throughout,
+%  including the p. 222 portion and the closing citation line --- so no
+%  \textit{} anywhere in it. Reading "ganze" on p. 222 confirmed at
+%  900 dpi (Fraktur n, not a turned u).)
+in unserer Gewalt haben; \emph{daß er statt der Retorten und Tigel aus Metall
+und Glas mit vegetabilischen Zellen und thierischen Häuten arbeitet.} Ja
+freilich, diesem Besitz der organischen Form hat der Organismus seine
+Effecte zu verdanken. Sobald wir aber eben diese Bedingung den
+allgemeinen mechanischen und chemischen Gesetzen hinzufügen, sobald wir
+also behaupten: die organischen Erscheinungen seien nichts anderes als
+die nothwendigen Wirkungen jener Gesetze, jedoch modificirt durch den
+Umstand, daß sich diese Wirkungen an einen bereits vorhandenen
+organischen Keim anlegen, so wird damit die ganze physikalische
+Erklärung des Organismus zu einer Illusion. Es ist gerade so viel, als
+wenn wir sagten: alle Erscheinungen des Organismus sind das Produkt der
+allgemeinen unorganischen Kräfte, nur er selbst nicht. Leib und Seele
+von Julius Schaller. Weimar 1855. S. 154--55.}. Altsaa ifølge Livets Chemisme gaaer det Chemiske
+
+% --- p. 222 ---
+% (p. 222 opens mid-sentence, continuing p. 221. The footnote block printed
+%  at the foot of this page is the RUN-OVER of the Schaller note anchored on
+%  p. 221 --- it is transcribed at that anchor, in the pp. 207--221 fragment,
+%  and is deliberately not repeated here. p. 222 carries no reference mark of
+%  its own (checked at 300 dpi) and therefore no \setcounter reset. Reconciled
+%  at splice time 2026-08-10; the p. 222 portion is Fraktur, not Antiqua, as
+%  a 300/600 dpi check of both pages confirmed.)
+i Eet med det Morphologiske, men i Chemiens Chemisme falder det organisk
+Morphologiske aldeles udenfor det Chemiske. Livets Chemisme er altsaa
+væsentlig forskjellig fra Chemiens.
+
+At enhver Bestanddeel af Cellen, dens Protoplasma, dens Vacuoler, dens
+Primordialhinde o. s. v., maa danne sig Punkt for Punkt ved Atomernes og
+Moleculernes indbyrdes Vexelvirkning, er uimodsigeligt; men derfor er det
+ligefuldt en Illusion, naar man, fordi disse særskilte Bestanddele lade
+sig i en livløs Tilstand fastholde som chemiske Produkter, gjør Cellen
+selv til et chemisk Produkt, naar man, forvexlende Livsfunctionerne med
+Chemiens elementære Functioner, blot seer paa Atomernes Vexelvirkning og
+glemmer Principet. Det er Principet, der gjør Cellen til Celle; det er
+Principvirksomheden, den dobbelte Vexelvirkning, en Vexelvirkning af
+stofagtig Umiddelbarhed og gjennemgaaende Reflexion, hvorved den
+organiske Form bestemmes. Den organiske Form maa nødvendigviis
+forudsætte en stofagtig Umiddelbarhed; thi en abstract-ideel Virken, en
+Reflexion, hvis Led og Factorer ere Reflexer uden Selvstændighed, vil
+uophørlig fortære sine egne Frembringelser og kan ikke give nogen
+udvortes, materiel
+% --- p. 223 ---
+og synlig Skikkelse. Men den organiske Form maa med samme Nødvendighed
+forudsætte et Formende, hvis Virken forvandler det i Materien Frembragte
+til en Afspeiling af Frembringelsen, et reflecteret Moment i Formernes
+System, --- en Energie, som, idet dens Virken gjennem alle betingende
+Mellemled vender tilbage til Eenheden og Selvheden og saaledes hævder den
+i Betingelserne reflecterede Ubetingethed, antager Charakteer af
+principiel Reflexion.
+
+En saadan organiserende, til Principets Natur svarende
+Reflexionsenergie er naturligviis kun „Talemaade“ og „Mundsveir“, naar
+man tankeløst overseer det Dialektiske; men indseer man
+Reflexionsenergiens Dialektik, viser den sig i lige Grad stemmende med
+Begreb og Kjendsgjerning. \emph{Halvdialektisk} slutter „Speculationen“
+saaledes: Jo mere Eftertryk der lægges paa Principets Realitet, desto
+mindre Gyldighed maae de physiske Aarsager have; nu har Livsprincipet
+ubetinget Realitet; ergo ere de physiske Aarsager kun flygtige Momenter
+uden væsentlig Betydning. \emph{Udialektisk} slutter „Empirien“
+saaledes: Jo større Vægt man lægger paa Betingelserne og de physiske
+Aarsager, desto mindre har Principet at betyde; at de physiske Aarsager
+med deres Betingelser ere virksomme paa alle Punkter i Organismen, er
+øiensynligt: vere scire est per causas scire; ergo er Livsprincipet en
+Phantasie. \emph{Dialektisk} sluttes der saaledes: Jo større Energie
+Principet, det i sine Betingelser Ubetingede, under givne Forudsætninger
+udviser, desto større Eftertryk maa der nødvendigviis falde paa de
+tilsvarende Elementæraarsager; nu optræder Principet i den levende
+Organisme med eiendommelig Energie; ergo falder her et væsentligt, et
+principielt Eftertryk paa Elementæraarsagernes og Betingelsernes
+physiske Eiendommelighed.
+% (the Latin "vere scire est per causas scire" is set in the surrounding
+% Fraktur, not Antiqua — checked at 300dpi; transcribed plain, no
+% \textit{}, per the book's per-occurrence font rule)
+
+Jo mere det Materielle, det Stofagtige, fremhæves, desto stærkere
+fremtræder det i Formerne Elementære. Det seer da ud, som vare de
+særskilte Organer, Kar, Væv, Celler og
+% --- p. 224 ---
+\setcounter{footnote}{0}
+Cellegrupper kun physiske Produkter af physiske, under særegne
+Betingelser virkende Tingsaarsager; det seer ud, som var det Hele
+afgjort dermed, at de af mikroskopiske Dele sammensatte Apparater
+dannede de „mange smaa Værksteder, hvis Virksomhed griber ind i
+hverandre, og efter Omstændighederne paa mangfoldige Maader modificeres,
+eftersom de ere labile Indretninger“ (Jvfr. Phil. Propæd. S. 187); det
+seer ud, som havde man forklaret Alt, naar man blot har henvist til
+„det hele Indbegreb af nødvendige Betingelser“, o. s. v.
+
+Hvor urimeligt det er at ville oversee Atomernes og Moleculernes
+Vexelvirkning, hvor urimeligt det er at abstrahere fra Betingelsernes
+System, opfatte Principet som en i sig ubetinget Ting, en mystisk
+Tingsaarsag, der gjør Vold paa Betingelserne, en Bygmester, som, ihvorvel
+det forsikkres, at han virker \emph{indenfra}, dog, nærmere beseet, forraader,
+at han er krøben ind i Huset \emph{udenfra}, har Physiologien fortræffelig
+viist, og dens Argumenter ere, hvad dette Punkt angaaer, baade vægtige og
+slaaende og stærke. Men hvor urimeligt det er at ville oversee
+Grundaarsagen, lukke Øiet for den i Betingelsernes Mangfoldighed
+reflecterede Eenhed, det Ubetingede, og forklare Alt af Aggregationer, er
+Physiologien derimod i sin Iver for at tydeliggjøre „de gunstige
+Betingelser“ paa mange Maader fristet til at oversee. De Argumenter,
+hvormed man fra dette Standpunkt vil bekjæmpe Livsprincipet, idet man som
+oftest --- en komisk Feiltagelse! --- identificerer „Principet“ med
+„Kraften“, og saaledes lader hiint undgjælde for, hvad der med Rette kan
+indvendes imod denne, --- ere da ogsaa i paafaldende Grad overfladiske,
+uholdbare, uvidenskabelige\footnote{\emph{Legemet er eet; alle dets Dele ere
+underordnede, alle ere forbundne til en høiere Eenhed.} Vor Bevidsthed
+\emph{lærer os, at vort Liv er en Eenhed.} --- „Dette Argument“, siger Lewes,
+„peger hen paa en vigtig Kjendsgjerning, men den
+% (the footnote runs over the p. 224/225 break; no new mark on p. 225 —
+%  the whole note is kept here at its p. 224 anchor)
+er galt udtydet. Der er Eenhed, der er en Overeensstemmelse imellem alle
+Organismens Dele. Men dette skal efter min Mening ikke tilskrives et
+Livsprincip, der existerer uafhængigt af Organismen; det skyldes den
+organiske Underordning; alle Delene staae i Forhold til hverandre, alle
+virke i Forening med hverandre ved Hjælp af Nervesystemet, ligesom alle
+Delene af en Armee samvirke ved Hjælp af Officerer og Disciplinen \dots{}
+Man kan dele en Polyp eller en Orm i flere Stykker, og alle Stykkerne
+vedblive at leve og at voxe; men man kan dog ikke antage, at man i
+saadanne Tilfælde har deelt Livsprincipet i flere Principer. Der er et
+Liv i Delene og et Liv, der tilhører den hele Organisme. Hver
+mikroskopisk Celle besidder en uafhængig Tilværelse, gjennemløber sin
+egen Bane fra sin Fødsel til sin Død, og Totalsummen af disse enkelte Liv
+udgjør, hvad man kalder Dyrets Liv: Eenheden er et Aggregat af Kræfter,
+ikke en enkelt styrende Kraft“. (Hverdagsl. Physiol. 2. S. 433--434.)
+
+Det Overfladiske i denne Argumentationsmaade staaer i en mærkelig Strid
+med den Reflexionsenergie og vedholdende Grundighed, hvormed Forfatteren
+ellers behandler sine Opgaver. Det hedder, at Eenheden beroer paa
+Delenes „organiske Underordning“; men naar „hver mikroskopisk Celle
+besidder en uafhængig Tilværelse“, hvad betyder saa „den organiske
+Underordning“? Er „Eenheden et Aggregat af Kræfter“, er her „ingen
+styrende Kraft“, hvordan gaaer det saa med „Armeen“? Hvad udrette saa
+„Officererne“? Hvad betyder „Disciplinen“?
+
+„Jeg har“ --- vedbliver Forfatteren --- „dvælet saameget længere ved
+dette Emne, som, skjøndt Hypothesen om Livsprincipet“ --- han mener
+Livskraften --- „har mistet al Anseelse, den metaphysiske Anskuelse, der
+ligger til Grund for den, ulykkeligviis endnu er for almindelig blandt
+Physiologer, og da det er Hensigten med dette Værk at betragte
+Physiologien endog mere med Hensyn til almindelig Dannelse end som en
+Green af en speciel Videnskab, blev denne Discussion nødvendig“.
+% (printer's speck: a stray mark sits mid-phrase between "Hensyn" and
+%  "til" in the source scan; no corresponding note exists, so it is read
+%  as an ink defect, not a footnote reference, and not reproduced)
+Men har nu Forfatteren ved denne „Discussion“ ikke overskredet den
+Grændse, han selv har foreskrevet sig i sin Physiologie: „\emph{aldrig at
+forsøge paa at løse en Videnskabs Problemer ved den Ideerække, der
+tilhører en anden Videnskab}“? Sæt, at
+% (the footnote runs over the p. 225/226 break too; no new mark on p. 226
+%  — still the same p. 224 note)
+den dannede Læser virkelig bliver enig med Forfatteren og med sig selv
+om, at „Hypothesen om Livsprincipet har mistet al Anseelse“, efterdi „de
+enkelte Liv“ forklares af „de gunstige Betingelser“ og „Totalsummen“ af
+„disse enkelte Liv“, der udgjør „Dyrets Liv“, af et „Kræfternes
+Aggregat“: hvad skal han saa i denne Anledning dømme om den høitidelige
+Anviisning paa „de store Aabenbaringer af det Ubegribelige“, paa „de
+mange Hemmeligheder, der omgive os“? Kan man virkelig forklare
+Livsphænomenerne uden Princip, saa har jo Materialisten fuldkommen Ret,
+saa er her jo intet i sig Ubegribeligt, ingen store Hemmeligheder. Men
+dersom man ikke kan forklare Livsphænomenerne uden at forudsætte en
+ideel, fra de physiske Kræfter forskjellig Aarsag: hvad Ret har man da
+til at forkaste Livsprincipet? At „Fortroligheden med de uorganiske
+Phænomener“ kun altfor let „aftumper Sandsen for deres uudsigelige
+Hemmelighedsfuldhed“, deri maa Forfatteren have Ret; men, spørge vi,
+skulde det at være tjenende Media for den altvirkende Fornuft, den
+ideelle Causalitet, Principet, ikke netop udgjøre et Hovedtræk i de
+uorganiske Phænomeners „uudsigelige Hemmelighedsfuldhed“?}
+% --- p. 225 ---
+% (p. 225's own main text is only this one line above its own footnote
+%  area; the footnote area itself is the p. 224 note's run-over, already
+%  given in full above)
+Jo mere den principielle Reflexion fremhæves, desto klarere indlyser
+det, at „de mange smaa Værksteder“ kun ere
+% --- p. 226 ---
+Gjennemgangspunkter for Selvheden, „Apparater“ for den ene, overgribende
+Værkmester. Kjerne, Plasma, Primordialhinde, Cellehinde forudsætte jo i
+den levende Celle hverandre saa væsentlig, saa oprindelig, at den Maade,
+hvorpaa hver enkelt af slige Bestanddele dannes, netop er formedelst
+Selvheden, den sig selv gjennem Andethed, Forskjel og Fleerhed
+bekræftende Eenhed, bestemt ved den Maade, hvorpaa alle de øvrige Dele,
+hver for sig, og i deres indbyrdes Forhold, dannes. Hvad der gjælder om
+de forskjelligartede Dannelser i hver Celle paa hvert Dannelsestrin,
+gjælder da ogsaa om hvert System af Celler, ja om hvert System af
+Systemer med Overgange, Forviklinger og Sammensmeltninger. De mange
+forskjelligartede Dannelser og Dele ere alle tilsammen Sider, Momenter
+og Reflexer i den ved Atomernes Vexelvirkning articulerede Virken, der
+udtrykker Selvhedens Energie.
+
+Den chemiske Formvirksomhed bringer det kun dertil, at det, som i en
+vis Tilstand, til en vis Tid er et exi-
+% --- p. 227 ---
+sterende Led, en Ting for sig, kan til en anden Tid, i en anden Tistand
+blive Moment for en anden existerende Ting; men dette er just
+Særkjendet for den organiske Formen, at det eiendommelig Formede, denne
+Celle, dette Væv, dette Kar, paa een Gang er et umiddelbart tilværende
+Led i umiddelbar Skikkelse og dog med denne Skikkelse, i denne Tilstand
+tillige Moment for det Hele, en Skikkelsesreflex af samtlige Led i den
+totale Skikkelse.
+
+3) \emph{Den organiske Totalitetsfordobling gjør Forholdet imellem det
+Indre og det Ydre eiendommelig dialektisk.}
+% (head as printed, letterspaced but run in with the paragraph, not
+%  centred like the α)/β) heads — treated as a lower subdivision than
+%  "α) Organismen" (RESUME-NOTES: that heading begins ~p. 208, in the
+%  parallel pp. 207--221 batch); its presumable "1)" and "2)"
+%  predecessors are outside this batch's range and were not seen here.
+%  printer's defect: the letterspaced setting prints "organiske" and
+%  "Totalitetsfordobling" with no visible word-gap between them —
+%  transcribed with a normal space rather than as one fused word)
+En dialektisk Modsætning imellem det Ydre og det Indre gaaer i udstrakt
+Almindelighed gjennem al virkelig Tilværelse. Hvorledes skulde vel Noget
+kunne være til, dersom det hverken var et Ydre eller et Indre. Men
+dersom det Tilværende er et Ydre, da kan det som Ydre kun være til
+formedelst sit Indre, og dersom det Tilværende er et Indre, kan det som
+Indre kun være til formedelst sit Ydre. At være til som et Ydre er at
+være i Umiddelbarhedens sandselige Form; at være til som et Indre er at
+være i Reflexionens væsentlige Form. Den ene af disse Former kan,
+saalænge det kun kommer an paa det abstract Formelle, igjen forvandles
+til den anden, det Indre altsaa selv blive et Ydre, det Ydre et Indre.
+Der er i den hele Virkelighed ingen Bestemmelse saa reflecteret, at den
+jo altid under et eller andet Synspunkt kan sees umiddelbart og
+forsaavidt regnes med til det Ydre; paa den anden Side har end ikke det
+Materielle selv nogen Umiddelbarhed saa stærk, at den jo altid lader sig
+opløse i en eller anden objectiv Reflexion og forsaavidt bringe ind
+under en Kategorie af det Indre. Skal Modsætningen derimod bestemmes in
+concreto, vil dens forskjellige Charakteer naturligviis beroe paa
+Existensernes Eiendommelighed. Det gjør da i denne Henseende en
+væsentlig Forskjel, om det Existerende fremstiller sig som \emph{en Ting}, som
+\emph{et Hele} eller som \emph{en Organisme}.
+% --- p. 228 ---
+I \emph{Tingen} som Ting har Modsætningen mellem det Indre og det Ydre, uagtet
+her er en concret Existens, dog endnu ikke hævet sig over det abstract
+Formelle. Hvad er vel Tingens Ydre? Dette Grønne, dette Faste, dette
+Tunge, dette Kantede, kort: Indbegrebet af Egenskaberne! Og det Indre?
+Det i denne Mangfoldighed reflecterede Ene! --- Tingen selv, der har
+Egenskaberne, Tingen i sig, der holder sig bagved Egenskaberne, er et
+skjult, et gaadefuldt Væsen; det er jo dette Væsen, som, efter hvad
+„Fornuftkritiken“ har lært os, Erkjendelsen aldrig kan naae, fordi
+Forstanden, naar den allermeest anstrenger sig for at trænge ind i
+Tingen som Ting, forvikler sig i Phænomenet, og bliver hængende i
+Egenskaberne. Men med ligesaa megen Ret kunde man nu rigtignok vende
+Forholdet om og paastaae, at Tingen som den umiddelbare Gjenstandseenhed
+netop er det Ydre, det ved sig selv Aabenbare, medens Egenskaberne,
+hvoraf hver enkelt kan kræve et heelt System af væsentlige Relationer,
+for deri at reflectere sig og ved Reflexionen give sig tilkjende,
+derimod udgjøre Bestemmelserne i det egentlige Indre. Hvad Vandet er for
+en Ting, vide vi Alle; men nu er Vandet blaat, nu er det grønt, nu er
+det varmt, nu er det koldt, nu flydende, nu fast, nu luftformigt: hvor
+dybt maa der ikke trænges ind i Existensens Indre, før man kan erkjende,
+hvad saadanne Egenskaber som: grønt og blaat, varmt og koldt, fast og
+flydende, væsentlig betyde!
+
+Opfatte vi dernæst det Existerende som \emph{et Hele}, vil allerede Spændingen
+imellem det Ydre og det Indre give sig tilkjende. Ligeoverfor det Hele
+have Delene en ganske anden Selvstændighed, end Egenskaberne ligeoverfor
+Tingen. Hver enkelt Deel er jo selv et Existerende ligesaavel som det
+Hele, hvorimod ingen enkelt Egenskab kan have selvstændig Existens, men
+er og bliver en Tilværelsesmaade, en Beskaffenhed ved det Existerende.
+Det samme Existerende, der i et givet Exemplar er tungt, er ogsaa
+flydende, er ogsaa grønt, er ogsaa
+% --- p. 229 ---
+koldt; altsaa: det er dette Tunge, der er flydende, dette tunge
+Flydende, der er grønt o. s. v.; forsaavidt Egenskaberne ikke have nogen
+særlig Selvstændighed ligeoverfor Tingen, have de i Tingen selv heller
+ingen særlig Selvstændighed ligeoverfor hverandre indbyrdes. Anderledes
+med Delene! Just fordi Delene have en vis Selvstændighed ligeoverfor det
+Hele, have de ogsaa en vis indbyrdes Selvstændighed ligeoverfor
+hverandre: hvad er da nu i Heelheden selv det Ydre, og hvad er det
+Indre? Overfladisk seet, synes baade Delene og det Hele at optræde som
+Ydre, saa at det Indre bliver aldeles borte. At her ikkedestomindre maa
+være et Indre, mærke vi dog, saasnart der spørges om
+Sammenhængsmaaden, om Forholdet imellem Delenes Beskaffenhed og det
+Heles Bestemmelse. I den mechaniske Heelhed seer det næsten ud, som om
+det Hele og Delene deelte det Ydre og det Indre imellem sig, saa at hver
+Deel som Deel tildeels var et Ydre og tildeels et Indre, og ligeledes
+det Hele som Hele tildeels et Indre tildeels et Ydre. Saaledes høre
+Uhrets Dele: Viserne, Skiven o. s. v., til det Ydre, forsaavidt enhver
+af dem jo fremstiller sig umiddelbart, men til det Indre, forsaavidt
+deres væsentlige Betydning afhænger af Uhrets Indretning, sees i
+Reflexion af Heelhedens Fordring. Men ogsaa det Hele fremstiller sig som
+et Ydre, forsaavidt det umiddelbart fremstiller sig som Indbegrebet af
+de ydre Dele; forsaavidt det derimod væsentlig bestaaer i Delenes
+Sammenhæng og reflecterer sig i Sammenhængsmaaden, er det Hele som
+Heelhed et Indre.
+
+Hvorlidt en saadan deelviis Adskillen af det Indre og Ydre imidlertid
+udholder en kritisk Prøve, kan let vises. Hvad er nu egentlig det Hele?
+„Delenes Sammenhæng!“ Men dersom Delenes Existens falder udenfor deres
+Sammenhæng, saa falde Delene jo udenfor det Hele; som Delenes
+Sammenhæng bliver det Hele altsaa kun en Side af Heelheden, ikke
+Heelheden selv. „Nei, Delenes Existens kan ikke
+% --- p. 230 ---
+falde udenfor det Hele; i Forhold til Heelheden selv ere Delene kun
+Realmomenter, reflecterede i det Heles egen concrete Sammenhæng.“ Men
+naar Delenes Existens forsvinder, forsaavidt de blive Momenter i den
+virkelige Heelhed, faae vi da ikke et Hele, der har fortæret sine egne
+Dele, altsaa et Hele uden Dele? Skulle Delene derimod beholde deres
+Existens, faae vi da ikke et i Delene udstykket Hele, et deelt Hele, et
+Hele, der ikke er heelt? Seet i Modsætning af Indre og Ydre ere da
+Alternativerne disse: enten maa det Hele heelt og udeelt fremstille sig
+som det Ydre, der i de til Realmomenter forvandlede Dele har sit Indre,
+eller ogsaa maa det Hele selv forsvinde som et Indre i Sammenhængen og
+Beskaffenheden af de existerende Dele, hvori det virkelig er deelt; i
+første Tilfælde er det det Hele, der sluger Delene, i sidste Tilfælde
+er det Delene, der sluger det Hele. Her er i en saadan Virkelighed, naar
+den gjennemtænkes, en logisk Revolution af det Indre mod det Ydre, en
+Revolution, der tydelig viser, at det mechaniske Hele ingenlunde
+tilfredsstiller Heelhedens væsentlige Fordring, ikke svarer til
+Begrebet af et sandt Hele. Jo mere Heelheden hæver sig over det blot
+Mechaniske, jo mere Delene veksle imellem det at være existerende Led og
+at være reale Momenter, desto mere nærmer det Virkelige sig til en
+Opfyldelse af Begrebets Love.
+
+Den Virkelighed, hvori Heelhedsproblemet først bliver løst, og det Indre
+sat i Kraft ved sit Ydre, er Organismen; thi \emph{Organismen er just
+det Hele, der formaaer at lade sine Dele paa een Gang være reflecterede
+Momenter og dog existerende Led}\footnote{„Ueberall reicht das Leben so
+weit, als die eigenthümliche Form seines Daseins über die Stoffe der
+Natur eine unmittelbare Herrschaft ausübt, und in diesem Sinne schließt
+der Umkreis des lebendigen Körpers eine gewisse Summe physischer
+Elemente zu einem zusammengehörigen Ganzen ein; Unrecht dagegen würde
+% (footnote runs over the p. 230/231 break; no new mark)
+man haben, wenn man alle Bestandtheile des Körpers lebendig nennen
+wollte.“ Lotze. Allgem. Physiol. S. 592. Denne Betragtningsmaade kan,
+forsaavidt der lægges Eftertryk paa den endelige Modsætning imellem det
+Indre og det Ydre, samt paa de elementære Bestanddeles Vexlen imellem
+levende og livløs Tilstand, meget vel bestaae med den Forudsætning, at
+den principielle Livseenhed udøver et systematisk Herredømme i
+Organismen som et Hele betragtet. At Noget umiddelbart levendegjøres,
+medens Andet deels afdøer, deels tjener som Stof, som Grundlag o. s. v.,
+er i god Overeensstemmelse med den Middelbarhed, hvormed det organiske
+Functionssystem maa bearbeide sit Materiale. „Es gibt Bestandtheile, und
+zu ihnen gehören die meisten Säfte, die in der That den Körper nur als
+benutzbare Materialien durchkreisen, und ein Stück nach innen gezogener
+Aussenwelt darstellend), niemals eine besondere Form eigenthümlicher
+Entwicklung erwerben; es gibt andere, die, wie die Mehrzahl der festen
+Theile, zwar eine dem äussern Naturlauf ungewöhnliche Mischung und Form,
+aber keine Fähigkeit zu Wirkungen erlangen, die den gewohnten Vorgängen
+in der äussern Natur fremd wären; zu ihnen rechnen wir das dienende
+Gerüst des Körpers, alle knöchernen, sehnigen, elastischen Substanzen;
+es gibt ferner zusammengesetztere Theile, die durch ihre Structnr selbst
+einer gewissen Reizbarkeit fähig sind, obgleich auch diese nie lange
+sich nach ihrer Abtrennung von dem ganzen Organismus erhält; zu ihnen
+gehören die Muskeln; endlich gibt es noch größere Theilganze, welche,
+wie die Zweige der Pflanze, die Form des Hauptganzen wiederholen und
+dadurch auch zu einem abgesonderten Leben sich zu entwickeln vermögen“.
+Anfr. Skr. S. 594. Hvad der maa indvendes imod en saadan Synsmaade, er
+væsentlig dette, at her ikke blot abstraheres fra Livsprincipet, men at
+Principet fornegtes, at Livet paa en principløs Maade forklares af de
+elementære Bestanddeles blot physiske Vexelvirkning. „Wie wir \dots{}
+das Leben selbst als eine Verknüpfung physischer Processe betrachten,
+deren Eigenthümlichkeit weniger in der besondern Natur des Verbundenen,
+als in der specifischen Form der Verbindung besteht, so gelten uns auch
+alle Theile eines lebendigen Körpers zunächst nur als physische,
+vorhandene
+% (footnote runs over the p. 231/232 break too; still the same p. 230
+%  note — "vorhandene" here completes into "vorhandene Massen" below,
+%  confirming this really is one continuous quotation, not two)
+Massen, ausgestattet mit allen den molecularen Kräften, die ihrer
+qvalitativen Natur entsprechen, aber ledig aller inneren Heimlichkeiten
+einer latenten Lebendigkeit, durch die sie mehr wären, als ihre
+Verwandten, die noch ausserhalb des organischen Körpers sich im Weltall
+umhertreiben.“ Anfr. Skr. S. 593. --- Den Fixidee, at de moleculære
+Kræfter, „die ausserhalb des organischen Körpcrs sich im Weltall
+umhertreiben“, skulde i sig være selvstændige, afsluttede og fuldendte
+Existenser, der blot behøvede at løbe sammen i en eiendommelig
+Forbindelse for at frembringe et Levende, maa Physiologen virkelig see
+at faae ud af Hovedet, dersom han ellers vil gjøre et Indblik i Livets
+Væsen; thi Udtryk som: „eiendommelig Aggregationsmaade“, „specifisk
+Forbindelsesform“, „gunstige Betingelser“, ere kun Talemaader, saalænge
+man ikke kan gjøre sig noget Begreb om den oprindelige Aarsag.}
+% (this whole footnote is set in the same Fraktur as the body — unlike
+%  the Antiqua-set German quotation on p. 222 — so no \textit{} is
+%  applied to it; "the same [foreign] text may be Antiqua on one page and
+%  Fraktur on another", per the book's convention)
+% --- p. 231 ---
+Den organiske Modsætning af Indre og Ydre gaaer op i organisk Eenhed;
+thi Livet er organiserende Selvhed,
+% --- p. 232 ---
+og Selvheden den Eenhed, der igjennem Fleerhed, Forskjel og Andethed
+udvikler sit Eget. Da nemlig alle Organismens Dele ere Momenter, saa er
+hele Totaliteten herved sat i Inderlighedens, Eenhedens og Selvhedens
+Form; det hele System af Functioner viser sig fra en ideel Side, her er
+i dette Indre en heel, fuldstændig, ideel Organisme. Men da
+Formvirksomheden jo netop har sin Styrke deri, at de beherskede
+Realmomenter tillige optræde som existerende Led, da det just er disse
+Leds materielle Umiddelbarhed, der afgiver den Modstand, paa hvilken det
+formende Princip uafbrudt prøver sin Energie, den Andethed, hvorigjennem
+Selvheden uophørlig bekræfter sin Idealitet: saa har det hele System af
+Functioner tillige en materiel Charakteer, saa er her i dette Ydre en
+heel, fuldstændig, materiel Organisme; altsaa: \emph{to Organismer i een
+Organisme}.
+
+At lade den indre Organisme som et metaphysisk Færdigt være det
+Selvstændige, der ved hyperphysiske Kræfter frembringer den ydre, gaaer
+ikke an; at lade den ydre Organisme som et physisk Færdigt være det
+Selvstændige, hvis elementærphysiske Kræfter frembringe den indre, gaaer
+heller ikke an. Ved at antage det Første forvansker man den Sandhed, at
+% --- p. 233 ---
+\emph{Livet er en Forudsætning for Organismen;} ved at antage det Sidste
+forvansker man den Sandhed, at \emph{Organismen er en Forudsætning for
+Livet.} Den første af disse Misforstaaelser maa belyses i Physiologien,
+den sidste i Philosophien.
+
+Den første Misforstaaelse er paa Videnskabens nuværende Trin let at
+afvise. „Livet“, siger Physiologen, „maa forholde sig som
+Organisationen. En enkelt Celles Liv er \emph{Indbegrebet af denne
+Celles Virksomhed} og er simpelt i samme Forhold, som Organisationen er
+simpel. Livet hos et Dyr med en høit udviklet Organisation er
+\emph{Indbegrebet af alle de Kræfter, der røre sig i den,} og er compliceret i
+samme Forhold, som Organismen er compliceret.“ I saaledes at fremhæve
+Identiteten af Livet og de i Organismen virkende Kræfter har
+Physiologen fra sit Standpunkt nu vistnok aldeles Ret; men Standpunktets
+Eensidighed maa da heller ikke oversees. Det Eensidige viser sig deri,
+at Physiologen, der paa denne Maade gjør Livet til „\emph{en Følge af
+Organismen}“, glemmer, at den paaberaabte Identitet er begrundet i en
+væsentlig Forskjel, at Livet kun er en Følge af Organismen, forsaavidt
+Organismen selv er \emph{en Følge af Livet}.
+
+Den anden Misforstaaelse er paa Videnskabelighedens nuværende Trin
+endeel vanskeligere at bekjæmpe. Hovedvanskeligheden er at faae det
+dialektiske Vexelforhold mellem Betingelserne og det Ubetingede gjort
+ganske tydeligt. For at have noget Bestemt for Øie vælge vi Udtydningen
+af \emph{det hæmmede Liv}. Det Hvedekorn, der i en tretusind Aar har henligget
+i en af Ægyptens Grave, har i disse tretusind Aar bevaret et System af
+Livsbetingelser og dog været uden Liv; hvad har det i disse tretusind
+Aar maattet savne? „Det Ubetingede!“ svarer en Methaphysiker; men
+Physikeren corrigerer ham ved den Bemærkning, at det, her savnes, er saa
+langt fra at være et hyperphysisk Ubetinget,
+% --- p. 234 ---
+at det meget mere er et Indbegreb af velbekjendte physiske Betingelser,
+saasom: Varme, Lys, Fugtighed o. s. v. Hvem af de To har nu Ret? Begge,
+og dog Ingen af dem. Metaphysikeren har Ret, forsaavidt han i det
+hæmmede Liv seer en Standsning af den Virksomhed, der skyldes et
+Ubetinget; men han har Uret, forsaavidt han underforstaaer, at dette
+Ubetingede skulde være bortveget, da det jo tvertimod hviler i den
+organiske Form, hvormed dets ideelle Væsenhed er identisk. Physikeren
+har altsaa Ret, dersom man fortolker hans Erklæring saaledes, at det
+ikke er det Ubetingede, her savnes; men han har Uret i den Maade,
+hvorpaa han forstaaer sin egen Erklæring. Hans Mening er nemlig, at man
+i en Organisme ikke savner det Ubetingede, fordi „et Livsprincip kun er
+en Floskel, som vi bruge for at skjule vor Uvidenhed“, fordi Principet,
+det Ubetingede, er noget i sig ganske Overflødigt, naar man blot har
+Betingelserne.
+
+Der ligger i den abstract-physiske Synsmaade en saa blændende Sophistik,
+at Enhver, der ikke tager sig iagt, maa blive bedaaret. Thi det er
+ganske sandt, at naar man tænker sig alle Livets Grundbetingelser
+forenede i et Sædekorn, saa behøver man kun at lade de elementære
+Betingelser træde til, og Livsvirksomheden vil følge med uafviselig
+Conseqvens. Det Sophistiske ligger deri, at man abstraherer fra det
+Ubetingede, medens man i et Tankeexperiment tilveiebringer Betingelser,
+som kun det Ubetingede selv kan tilveiebringe. Ved en saadan
+Fremgangsmaade er det da en let Sag at reducere, ikke alene
+Livsprincipet, men et hvilketsomhelst andet Realprincip, ja Geniet selv,
+til „en Floskel, som vi bruge for at skjule vor Uvidenhed“. Hvad hører
+der vel til for at digte en shakspearesk Tragoedie? Naturligviis det
+samme Indbegreb af „gunstige Betingelser“, som virkede i Shakspeares
+Bevidsthed, intet Andet!
+
+Den Kjendsgjerning, at et Hvedekorn kan henligge i tretusind Aar og
+endda bevare sin „Spireevne“, er, naar
+% --- p. 235 ---
+den sees i Principet, ligesaa forklarlig som den Kjendsgjerning, at
+Livsfunctionerne, efter at være fuldstændig ophørte i tre Secunder,
+atter kunne indtræde. At det Ubetingede selv er et Betinget, sees deraf,
+at Functionerne gaae til Hvile, naar de fornødne Betingelser mangle; at
+det saaledes Betingede er et Ubetinget, sees deraf, at det øieblikkelig
+forvandler de indtrædende Betingelser til Momenter for sin organiske
+Selvvirksomhed. Denne det Ubetingedes dialektiske Eenhed med
+Betingelserne er et naturligt Udtryk for Fornuftens Gyldighed, en
+Evighedstanke, der ikke taber i Kraft ved at vente paa Betingelser i
+tretusind Aar.
+
+I den ydre, den materielle Organisme er Deelbarheden saa overveiende, at
+Livseenheden adskiller sig i en Flerhed af relativt selvstændige
+Livspunkter, en „Totalsum af enkelte Liv“; i den indre, ideelle
+Organisme er Udeelbarheden saa overveiende, at de særlige Livspunkter
+vise sig som Articulationsmomenter i Livets concrete Eenhed. Er nu
+Modsætningen af den indre og den ydre Organisme begrundet i Eenheden, og
+omvendt Eenheden i Modsætningen, saa følger da ogsaa heraf, at en
+Forandring maa kunne være afgjørende for den organiske Totaleenhed uden
+dog i samme Grad at være det for alle enkelte Dele, og omvendt
+afgjørende for enkelte Dele uden i samme Grad at være det for Eenheden.
+
+„Organismen“ kan jo være død, og mange Organer endda vedblive at leve.
+„Afbrydelsen af det \emph{Forhold} mellem de enkelte Dele af Organismen, der
+bragte alle de med individuel Selvstændighed begavede Dele til virkelig
+Eenhed ved at fremkalde en gjensidig Paavirkning mellem Delene, kan have
+fundet Sted og Eenheden være ophævet; men de med individuel
+Selvstændighed begavede Dele ere ikke tilintetgjorte. Flere Timer,
+efterat et Menneske er dødt, leve hans Muskler og kunne trække sig
+sammen; hans Kjertler leve og kunne afsondre, hans Hjerte lever og kan
+slaae; hans Mave lever og
+% --- p. 236 ---
+\setcounter{footnote}{0}
+kan fordøie“\footnote{Lewes tilføier i en Anmærkning --- efter Ch. Robin:
+\textit{Mémoires de la société de biologie, v. 134---}, at Fordøielsen
+hos visse Fisk endog vedvarer 24 Timer efter Døden. Hverdagsl. Physiol.
+2. S. 459.}. Omvendt kan Organismen i sin indre Totalitetseenhed endnu
+være levende, efterat mange af Delene ere døde. Herved tænkes ikke
+nærmest paa Stofskiftet; thi „den moleculære Død“ foregaaer naturligviis
+uophørlig: Organismen „overlever denne Organernes Død, ligesom Folket
+vedbliver at leve, skjøndt der dagligt døer mange Mennesker“; nei,
+herved tænkes udtrykkelig paa den Kjendsgjerning, at selv de høiere
+Organismer, de, i hvilke den totaliserede Eenhedsenergie er
+fremherskende, kunne miste deres Lemmer og andre væsentlige Dele, uden
+at Døden derfor indtræder. --- Have de anførte Phænomener nu bidraget
+til at anskueliggjøre den i Eenheden begrundede Modsætning, saa skulle
+de følgende Undersøgelser, om muligt, bidrage til at forstaaeliggjøre
+den i Modsætningen actualiserede Eenhed.
+
+\subsection*{β. Den organiske Type.}
+\addcontentsline{toc}{subsection}{β. Den organiske Type}
+% (head as printed: centred, letterspaced, Greek beta + period, no
+%  parenthesis — cf. the earlier "γ. Chemiske Forbindelser." head, same
+%  style. This is the SECOND Greek subdivision of "a) Livets Væsen",
+%  following "α) Organismen" (RESUME-NOTES: begins ~p. 208). It starts
+%  here, at the foot of p. 236 — NOT at p. 237 as the stray comment before
+%  the next marker in transcription.tex currently guesses; that comment
+%  should be corrected when this fragment is spliced in.)
+
+Forsaavidt den indre Organisme afpræger sig i den ydre, bliver den
+organiske Skikkelse fordoblet; her viser sig et i det Sandselige med
+dets Omdannelser reflecteret Usandseligt, en Grundskikkelse, en Type.
+Det gaaer med Typen og dens Afpræg, som med det Indre og det Ydre.
+Modsætningen er almindelig, men bliver i den organiske Form aldeles
+eiendommelig. Overalt, hvor een og samme Art Dannelse gjentager sig med
+Forandringer, vil, hvad Skikkelsen angaaer, det i Forandringerne
+Constante, og just derved Charakteristiske, altid kunne fremhæves som
+Type. Saaledes kunne elementære Dannelser, selv de, der meest beroe paa
+Sammentræf af Betingelser og vexlende Omstændigheder, siges at have
+deres Type. Hvor foranderligt er ikke Skyernes Udseende,
+
+% β. Den organiske Type region — the head itself begins at the FOOT of
+% p. 236 (verified from the image 2026-08-10) and travels in the
+% pp. 222--236 fragment, not here. Printed with a period, not "β)".
 % [text to be added: pp. 237--251]
 
 % [text to be added: pp. 252--266]
