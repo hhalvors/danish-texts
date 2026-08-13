@@ -144,6 +144,13 @@
 %          in a German word) 387, an unclosed „ in the footnote 390.
 %          NOTE "Vexelvirkning" p. 384 is NOT a defect — ordinary Danish;
 %          it is only an error at p. 193, inside a German quotation.
+%          pp. 402--431: missing stop in "f. Ex en Gaas" 405, "qvantitativen"
+%          (wrong for German) in the note 409, a stray hyphen in "in sich-
+%          vermittelt" and the wrong article in "des Lebensidee" in the note
+%          411, an unclosed „ in note *) and an unclosed "(" in note **) 412,
+%          "klare,men" 420, "neueru" for neuern (turned n) in the note 426,
+%          an unopened closing “ in note *) 428, a stray stop after "end
+%          ikke." 430, "Phitosophie" 431, an unclosed "(" 425.
 %  COLLATION: pp. 326--328 collated 2026-08-10 against the excerpt edition
 %          texts/nielsen/propaedeutik-darwin/ (made from the BRITISH
 %          LIBRARY copy) page by page against the Koninklijke Bibliotheek
@@ -174,6 +181,11 @@
 \usepackage{textalpha}   % Greek typed directly (α) β) γ) subdivision marks)
 \usepackage{graphicx}    % for \reflectbox (the old Danish »ɔ:« id-est mark)
 \DeclareUnicodeCharacter{0254}{\reflectbox{c}}  % ɔ (U+0254) = reversed c
+% Ɔ (U+0186) = reversed C. Needed for the apostrophus numerals on p. 425,
+% where Descartes' Amsterdam imprint is dated CIƆ IƆCLXXVII (= 1677) in the
+% old-style Roman form. Without this the build dies with "Unicode character
+% Ɔ not set up for use with LaTeX" and two cascading errors after it.
+\DeclareUnicodeCharacter{0186}{\reflectbox{C}}
 \usepackage[danish]{babel}
 \usepackage[protrusion=true,expansion=true]{microtype}
 \usepackage{setspace}
@@ -15123,12 +15135,19 @@ Organ, der staaer over alle andre Organer; men smukt har ogsaa en Anden,
 efterlignende Aristoteles, sagt, at Forstanden er en Evne, der staaer over alle
 Evner. Thi ligesom Haanden ikke selv er beregnet paa et enkelt bestemt Brug,
 uden netop til paa rette Maade at fatte ethvert Redskab til det meest
-forskjellige Brug, saaledes er Forstanden ikke selv en Fær-
-% NOTE UNFINISHED AT THE END OF THIS BATCH. The p. 401 note breaks off at
-% "en Fær-" at the foot of p. 401 and continues on p. 402, outside this range;
-% its „ is therefore still open here. The pp. 402--416 agent must NOT open a
-% new footnote for the block at the head of p. 402's footnote area — it is this
-% note's run-over, and belongs inside this \footnote{}.
+forskjellige Brug, saaledes er Forstanden ikke selv en Færdighed, men en
+Evne til paa rette Maade at erhverve enhver Færdighed i den meest
+forskjellige Retning. Fordi Mennesket forud for alle Dyr fik Forstanden
+som alle Evners Evne, derfor tilkom ham ogsaa med fuldeste Ret Haanden
+som alle Redskabers Redskab.“ Galenus. Jvfr. Eschricht. Tolv Foredrag.
+S. 290---98.
+% (Run-over folded in 2026-08-10. This note is anchored on p. 401, breaks
+%  mid-word at "en Fær-" at the foot of that page, and completes in the
+%  block printed ABOVE p. 402's own two notes. Transcribed whole here per
+%  the book's practice; p. 402 carries no mark and no counter reset for it,
+%  though it does get one for its own *) and **). The „ opened on p. 401
+%  closes at "Redskab.“"; what follows is the source reference, outside the
+%  quotation. Nothing in the run-over is letterspaced (checked at 300 dpi).)
 }; men Haandens Eien-
 
 % NET QUOTE BALANCE OF THIS FRAGMENT: +2, both unmatched OPENING „, and both
@@ -15141,10 +15160,1154 @@ forskjellige Brug, saaledes er Forstanden ikke selv en Fær-
 % p. 392 fn (1), p. 394 fn (1), p. 395 **) fn (2, one nested), p. 396--397 body
 % (1, crossing the page boundary), p. 399 (3), p. 400--401 body (1, crossing).
 
-% [text to be added: pp. 402--416]
+% (The run-over of p. 401's footnote, which prints above p. 402's own two
+%  notes, has been folded into its anchor on p. 401. Nothing for it here.)
+
+% --- p. 402 ---
+\setcounter{footnote}{0}
+dommelighed er dog, vel at mærke, ligesaa lidt et Fortrin i og for sig, som
+Potens Eiendommelighed. Vil Mennesket rose sig af sine Hænders og Forlemmers
+særdeles Brugbarhed, da maae Flagermusen og Muldvarpen ogsaa kunne rose sig af
+deres Poters og Forlemmers særdeles Brugbarhed. Siger man nu med Galenus, at
+Haanden som alle Redskabers Redskab med fuldeste Ret tilkommer Mennesket, fordi
+Mennesket forud for alle Dyr fik Forstanden som alle Evners Evne: saa er
+Synspunktet væsentlig forandret. Istedetfor at opregne Menneskets legemlige
+Fortrin skulle vi da prøve dets aandelige Fortrin.
+
+Kritiken tilstaaer gjerne, at Mennesket er af alle Dyr det bedst begavede; men
+hvad der især beskjæftiger den nyere Tids naturhistoriske Physiologer, er det
+Spørgsmaal, om der i Henseende til Aandsevnerne kan siges at være en qvalitativ
+Forskjel mellem Mennesket og de øvrige Dyr, eller om man ikke udtrykker Sagen
+nøiagtigere, naar man siger: \emph{her er kun en Gradforskjel.}
+
+Vistnok har t. Ex. Burmeister\footnote{Geologische Bilder. I. Bd. Leipzig
+1851.} betydelig reduceret de Aandsfortrin, hvorved man ellers betegner den
+Kløft, der adskiller Dyret og Mennesket; men med alt dette har han dog troet at
+burde tilkjende Mennesket et stort Fortrin, det Væsensfortrin at være begavet
+med Fornuft. Denne Levning af en forældet Synsmaade har imidlertid C.
+Vogt\footnote{Bilder aus dem Thierleben. Frankf. a. M. 1852.} med kritisk Omhu
+paa Oplysningens Vegne søgt at udrense. Thi hvad er vel Fornuft? „Fornuft“ ---
+siger Burmeister ---
+% The interrupted Burmeister quotation is NOT re-opened at the top of p. 403:
+% the compositor sets „Fornuft“ as a closed pair, then runs the rest of the
+% quotation unquoted until the closing “ at "Grændse.“". That closing “ has no
+% opening partner. Transcribed as printed; see the balance note at the end.
+
+% --- p. 403 ---
+er Evnen til at blive sig Grundene til Phænomenerne bevidst, Evnen til at tænke
+efter over Tingenes Aarsager og af de givne Phænomener at aflede de ikke givne
+Aarsager.
+% A small mark stands after "Phænomener" on this line; the PDF text layer reads
+% nothing there, tesseract reads a full stop. At 300 dpi it is a speck of the
+% same size as several others in the margins of this gathering, and the sense
+% takes no stop; transcribed without one.
+Den forskjellige Grad af Skarphed, hvormed dette skeer, kalde vi Forstand.
+Begge disse den menneskelige Sjæls Egenskaber mangler Dyret. Vel er den dyriske
+Sjæl ikke uden Omdømme, men Dommen er en reen Erfaringsdom, ingen Fornuftdom
+--- deri ligger en skarp, uoverstigelig Grændse.“
+
+Herimod gjør nu Vogt med særdeles Eftertryk gjældende, at Menneskets Dom er fra
+Begyndelsen af en Erfaringsdom ligesaavel som Dyrets. „Et Barn veed ikke, at en
+Steen vil falde, naar den berøves sit Underlag, og Alverdens Eftertanke vilde
+ikke formaae at gjøre Barnet det indlysende, at et Legeme maa falde, saalænge
+Vedkommende endnu ikke har seet et saadant faldende Legeme --- men har Barnet
+gjort en Erfaring desangaaende, er et Legeme engang faldet ned i Hovedet paa
+det: saa fatter det denne Nødvendighed fuldt vel, endog uden at kunne angive
+Grunde, hvorfor Stenen maa falde. Det undviger i Fremtiden uden videre enhver
+Steen, der kunde falde. Ogsaa Dyret gjør dette --- det undviger en Fare, naar
+det kjender den som truende.“
+
+Ligheden mellem Dyr og Menneske falder nu som af sig selv. „At al Erkjenden
+stammer fra Erfaringen og maa, fra alle Sider seet, beroe paa Erfaring, er
+ogsaa for den menneskelige Fornuft en strengt gjældende Lov. At sammenfatte, at
+generalisere Erfaringer, mere formaaer den menneskelige Fornuft da heller ikke,
+kun at den i denne Generaliseren bringer det videre end den dyriske.“ Ved slige
+Beviser skal det saa, ifølge Vogts Forsikkring, være aldeles uimodsigelig
+godtgjort, at Forskjellen mellem Menneskets og Dyrets Fornuftighed kun er en
+Gradforskjel.
+
+At gjøre det Uvidenskabelige og Letfærdige i en saadan Betragtningsmaade ganske
+tydeligt med faa Ord er umuligt.
+
+% --- p. 404 ---
+Vil man beraabe sig paa sund Menneskeforstand og minde om, at selv den klogeste
+Hund staaer uendelig lavere end et jævnt Menneske, kommer man i en mislig
+Situation; deels staaer man Fare for at mishage dem, som, med høiere Sands for
+det Dybe i Naturen, see den uendelig dybe Forstand, der lyser ud af Hundens
+kloge Øine; deels, og dette er det Allerbetænkeligste, er man udsat for, at
+Hundefornuftens ridderlige Talsmand ligefrem sigter En for taabelig
+Forfængelighed, metaphysisk Skolefuxeri og aandeligt Hovmod.
+
+Forsøger man at tage Sagen fra Grunden af og blotte den Tvetydighed, som skjuler
+sig i Forestillingen om \emph{det Indtryk af en uforanderlig Nødvendighed, en
+eneste enkelt Erfaring skulde kunne give baade Barnet og Hunden}, en
+Tvetydighed, som, naar den ret udvikles, absolut maa drive den naturhistoriske
+Physiolog enten til en Hume's Skepticisme, og derved til en Fornegtelse af
+Naturvidenskabens Realitet, eller ogsaa til en ubetinget Anerkjendelse af de
+medfødte Ideers Gyldighed, og derved til Anerkjendelse af en qvalitativ Forskjel
+imellem det Fornuftige i Dyret og Menneskets Fornuft, --- saa fører en slig
+Undersøgelse jo altid ind i nogen Vidtløftighed.
+
+Det kan da, ifølge det Anførte, ikke forundre os, om en og anden dannet Læser,
+en Elsker af Naturen, som uden just at føle sig oplagt til vidtløftige
+Forhandlinger om det Aprioriske gjerne vil holde Skridt med den stedse
+fremadskridende Naturlære, undertiden hildes i dyrevenlige Phantasier over
+„Perfectibiliteten“ og kommer i sine Granskninger til det Resultat, at
+Forskjellen imellem en dannet Mand og en dannet Hund dog i Grunden kun er en
+Gradforskjel.
+
+At philosophiske Tænkere derimod, hvor forskjellig deres Aandsretning end
+iøvrigt kan være, altid ville have stor Vanskelighed ved at tilegne sig den nye
+Lære om Dyrenes „\emph{uendelige Perfectibilitet}“, er begribeligt, og kan sees
+af mange Exempler. --- „Vi kunne“ --- siger en skarpsindig
+
+% --- p. 405 ---
+\setcounter{footnote}{0}
+Tænker --- „afrette Dyrene paa mange Maader, og forsaavidt kunde det have Nytte
+at gjøre flere Forsøg paa at faae flere Dyrs Kræfter gjorte anvendelige til vor
+Nytte og Fornøielse; men for \emph{Dyrenes Skyld ønsker jeg sandelig ikke,} at
+vi skulde gaae for vidt dermed. Al Afrettelse er for Dyret kun en Plage, i alle
+Fald ikke nogen Glæde for det; og hvad de aandelige Fremskridt angaaer, som det
+derved skulde gjøre, saa anseer jeg det for meget problematisk, om det tæmmede
+og afrettede Dyr virkelig er kommen paa et høiere Trin. Snarere troer jeg, at
+f. Ex. den civiliserede Gaardhund og den høitcultiverede Skjødehund ere baade
+dummere og mindre veltilfredse (afseet fra den gode Kost) end den vilde eller
+end deres Fættere, Ræven og Ulven i Skoven. Saaledes tør jeg ikke af min
+„Kjærlighed til og Agtelse for Dyrene“ lade mig forlede til at anbefale ....
+Forslag om at oprette høiere Dannelsesanstalter for velbegavede Dyr, da jeg ikke
+kan haabe, at man her vilde være heldigere end hist, idet man kun vilde opnaae
+meget ubetydelige Resultater efter uhyre Anstrengelser og Opoffrelser. Det kan
+gjerne være, at man kunde lære f. Ex en Gaas at afpille og samle de løse Fjer,
+% PRINTER'S DEFECT, p. 405: "f. Ex en Gaas" --- the abbreviation stop after
+% "Ex" is missing here, though the same page sets "f. Ex. den civiliserede
+% Gaardhund" a few lines above. Transcribed as printed.
+eller en Abe at spille fiirhændigt paa Klaveer eller paa een Gang at spille paa
+Klaveer med Forhænderne og paa Violin med Baghænderne; men jeg befrygter
+desværre, at det ligefuldt vilde have sit Forblivende med den almindelige
+Gaaseforstand og Abekattefornuft\footnote{„Af afdøde Professor J. Ch. Lütkens
+efterladte Papirer“. Tidsskr. for popul. Fremstill. af Naturvidskb. 3die Bd.
+S. 423---24.}.“
+
+% Sub-subdivision set RUN-IN and letterspaced, like αα) Dyret og Mennesket
+% (p. 399) --- not a \subsection*. Transcribed from the page.
+\emph{ββ) Menneskets Bevidsthed.} Er det et stort Misgreb at udstykke Menneskets
+legemlige Eiendommeligheder i en Mangfoldighed af legemlige Fortrin, da er en
+tilsvarende Udstykning, hvad Aandslivet angaaer, aldeles utaalelig. Da det
+sjælelige Liv saavel hos det mere begavede Dyr som hos Mennesket yttrer sig
+igjennem en Fleerhed af Fornemmelser,
+
+% --- p. 406 ---
+Følelser, Erkjendelser og Tilskyndelser, er det en Selvfølge, at Enhver, der vil
+iagttage Sjælens forskjellige Være- og Virkemaader, maa blive opmærksom paa
+denne Fleerhed. Forsaavidt nu Opgaven væsentlig er at see det Mangfoldige
+forklaret i Eenheden, er Psychologien en dialektisk Videnskab; men da dette
+Mangfoldige, for at kunne forklares i Eenheden, først maa tydeliggjøres efter
+Forskjelligheden: har en explicativ Udvikling af Sjæleevnerne naturligviis sin
+store videnskabelige Betydning. Men under den blot explicative Behandling skeer
+det let, at det Dialektiske bliver aldeles overseet; og naar man saaledes
+glemmer det Dialektiske, skeer det let, at Betragtningen af alt det meget
+Indvortes efterhaanden bliver temmelig udvortes.
+
+Jo mere udvortes, sporadisk og aphoristisk Iagttagelsen af de sjælelige
+Phænomener bliver, desto flere Evner, Kræfter, Tilbøieligheder og Sandser vil
+man naturligviis blive vaer saavel hos Dyret som hos Mennesket; jo flere Evner
+og Tilbøieligheder man paa denne Maade bliver vaer, desto Mere bliver der igjen
+at bemærke ved hver Evne og hver Tilbøielighed, deels Dit og deels Dat, deels
+baade Dit og Dat: her bliver Meget at bemærke. Er her da nu baade i indadgaaende
+og udadgaaende og opadgaaende og nedadgaaende Henseende saa saare Meget at blive
+vaer og saamange Ting at bemærke: nu saa er her da ogsaa \textit{diversi
+respectus}, og der hører Besindelse til og Granskning til, inden man ret kan
+faae det Altsammen udparcelleret og classificeret og indregistreret.
+
+Og hvordan gaaer det saa med Forholdet imellem Mennesket og Dyret? Jo mere
+Registermangfoldigheden af de opdagede Evner og Drifter voxer, desto større
+bliver jo rigtignok Summen af de Sjælens og Aandens Fortrin, der udmærke
+Mennesket; men Psychologien undergaaer med det Samme en betænkelig Metamorphose,
+idet den mere og mere aflægger Ligheden med en Videnskab og antager Lighed med
+en Kram-
+
+% --- p. 407 ---
+kiste. Vi have her den Forudsætning, under hvilken vi --- for at blive ved det
+valgte Exempel --- bedst kunne forstaae Stridspunktet mellem Burmeister og Vogt.
+
+Naturforskeren, som fra sit physiologiske Synspunkt ikke kan lukke Øiet for
+Analogierne mellem Dyr og Menneske, er tilfældigviis kommen til at slaae op i et
+gammelt psychologisk Register; idet han nu her er bleven overrasket ved at see
+den runde Sum af Sjæleevner, som ved Indregistreringen i Menneskets „Faveur“ er
+opført under en egen Rubrik, har han naturligviis ikke kunnet modstaae
+Fristelsen til at gjøre et Greb i „Kramkisten“, for ved passende Reduction at
+tilveiebringe en naturligere Ligevægt. Saaledes er da Overskudet af Menneskets
+mange Evner ved Reductionen med Eet bleven indskrænket til een eneste Evne:
+\emph{Fornuften.}
+
+Men er Reductionen først ført saavidt, saa maa den gjennemføres. Hvorledes
+skulde det vel være tænkeligt, at Fornuften kun var virksom i Menneskets, ikke i
+Dyrets Sjæl, eller at den ene og samme uendelige Naturfornuft vel virkede
+fornuftigt i Menneskets Bevidsthedsliv, men i Dyrets derimod ufornuftigt? Her
+har nu Vogt seet rigtigt. Er det Fornuften, der igjennem de første
+Erfaringsindtryk lærer Barnet at kjende Faren og leder det til en ubevidst
+Skjelnen imellem Nødvendigt og Tilfældigt: da maa det Samme gjælde, hvad Dyret
+angaaer; hele Forskjellen er, at Mennesket bliver sig det Fornuftige bevidst paa
+en klarere, tydeligere og friere Maade. Grundforskjellen mellem Mennesket og
+Dyret er da saaledes reduceret til en Bevidsthedsforskjel.
+
+Dyret har Sandsebevidsthed, Mennesket har Selvbevidsthed. \emph{Hvorledes
+forholder Selvbevidsthed sig til Sandsebevidsthed?} dette er Spørgsmaalet.
+
+Forstaae vi ved Sandsebevidsthed den psychiske Reflexion, hvori Selvet
+fornemmer, sandser, forestiller, begjærer, nyder og lider saaledes, at det i sine
+Fornemmelser, Sandsninger, Forestillinger, Begjæringer, Nydelser og Lidelser vel
+er til
+
+% --- p. 408 ---
+med forskjelligt Befindende, men dog derhos altid saa aldeles fortabt i hvert
+Befindende, at det end ikke har Anlæg til at hæve sig over de vexlende Tilstande
+og erkjende sig selv: saa er en uoverstigelig Kløft mellem Sandsebevidsthed og
+Selvbevidsthed med det Samme aabnet.
+
+Hvad der imidlertid bevirker, at den dybtgaaende Forskjel saa let forvexles med
+en Gradforskjel, er ikke vanskeligt at opdage. Ligesom der nemlig i den dyriske
+Bevidsthed gives en Mangfoldighed af Gradationer imellem et Minimum og et
+Maximum, saaledes ogsaa i det menneskelige Bevidsthedsliv. Er der nu i ethvert
+Menneskes Liv en Periode, hvori Bevidstheden kun yttrer sig som
+Sandsebevidsthed, og kan Selvbevidstheden umulig antages for et nyt og særeget
+Væsen, der senere træder til: saa synes jo heraf at fremgaae, at ligesom
+Sandsebevidstheden i Mennesket gradviis stiger til Selvbevidsthed, saaledes maa
+den dyriske Bevidsthed ogsaa gjennem utallige Gradationer kunne nærme sig til,
+ja maaskee endog omsider naae, Selvbevidsthedens Klarhed.
+
+Det er to aldeles forskjellige Arter af Bevidsthed, man her sammenblander.
+Vistnok kan Menneskets Bevidsthed gjennem utallige Gradationer snart klares,
+snart igjen fordunkles, ligesaavel som Dyrets; men derfor er dog den dunkle
+Menneskebevidsthed ikke dyrisk, den klare Dyrebevidsthed ikke menneskelig.
+Menneskebarnet er ikke et genialt Dyr, der siden ved Opdragelse forvandles til
+et Menneske; men Barnet er oprindelig et Menneske og som Menneske adskilt fra
+Dyret: en Kaalorm kan forvandles til en Sommerfugl, men et Dyr kan ikke
+forvandles til et Menneske. Hvad den menneskelige Bevidsthed i dens fulde
+Klarhed, dens høieste Udvikling, sees at være, det er den fra Begyndelsen af i
+Princip og Anlæg. Ligesom Plantelivet i Dyret oprindelig er et andet end i
+Planten, saaledes er ogsaa Bevidsthedslivet i Mennesket oprindelig et andet end
+i Dyret. Just fordi Selvhedsprincipet selv er Livsprincip, naaer Mennesket det
+høiere Maal: \emph{den}
+% The letterspaced run begins with this last word of p. 408 and continues
+% across the page break into the first two lines of p. 409; confirmed at
+% 300 dpi on both pages.
+
+% --- p. 409 ---
+\setcounter{footnote}{0}
+\emph{teleologiske Forskjel mellem Dyret og Mennesket er en
+Sphæreforskjel}\footnote{„Kann das Thier über eine bestimmte Station, welche der
+Mensch überschreitet, schlechterdings nicht hinaus, so mögen wir immerhin diesen
+Unterschied zwischen Mensch und Thier als einen qvantitativen bezeichnen --- er
+ist und bleibt eine feste, unübersteigliche Grenze, eine nie ausfüllbare Kluft,
+über deren Größe wir erst entscheiden könnten, wenn wir die Endpunkte der
+letzten, höchsten Leistungen der thierischen und menschlichen Vernunft genau mit
+einander verglichen hätten ... Sollte also auch eine kluge, entwickelte
+Thierseele in dem Generalisiren d. h. in dem Erkennen der Thatsachen sich
+momentan auf derselben Stufe befinden wie eine unentwickelte, zurückgebliebene
+Menschenseele --- beide Seelen wären doch immer ganz andrer Art.“ J. Schaller.
+Leib und Seele. S. 189---190.
+% PRINTER'S DEFECT (wrong FOR GERMAN, not a Danish spelling): the note prints
+% "qvantitativen" with qv, confirmed at 300 dpi. German requires "quantitativen";
+% the qv-sort is the compositor's Danish habit (cf. Danish "qvalitativ" in the
+% body of pp. 402 and 404, which is correct Danish and is NOT a defect).
+
+Staaer det nu fast, at der imellem den dyriske Bevidsthed og den menneskelige
+Selvbevidsthed er ikke alene en Principforskjel, men en relativ Sphæreforskjel:
+saa sees heraf det Intetsigende i den naturphilosophiske Speculation, at Aben
+skal danne Overgang fra Dyr til Menneske. --- „Da trat das letzte, das
+\emph{gegenwärtige} freie und harmonische Reich der Pflanzen und Thiere neben-
+und nacheinander hervor; und an der Spitze des Thierreichs der zu dem Menschen
+aufstrebende aber noch gefesselte \emph{Affe}, der \emph{primitiv in den
+Thierfesseln, d. h. in der Naturbefangenheit zurückgebliebene Mensch}“.
+Bayrhoffer. Beiträge zur Naturphilosophie. Leipzig 1839. S. 162.}.
+
+At en Mangfoldighed af Analogier imellem Dyrets og Menneskets sjælelige Liv
+lader sig paavise, er uimodsigeligt; men det ligger i Analogiens Væsen, at
+Ligheden forudsætter Ulighed. Opgaven bliver da at undersøge, hvorvidt det i
+givne Tilfælde er den fremherskende Lighed, der reflecterer Uligheden, eller om
+det er den overveiende Ulighed, hvori Ligheden reflecteres. Det er vanskeligere
+at gjennemskue Analogien end at anvende Inductionen: Physiologien, der, ligesom
+Naturforskningen i det Hele, er temmelig sikker paa sine Inductioner, er idelig
+udsat for at lade sig blænde af falske Analogier.
+% A single low mark stands before "falske" on the last line of p. 409; the PDF
+% text layer reads it as an opening „. At 300 dpi it is a speck at the foot of
+% the line, not a pair of commas, and no quotation is opened or closed in the
+% sentence; transcribed without it.
+
+% --- p. 410 ---
+% The p. 409 footnote runs over onto p. 410: the block at the foot of p. 410,
+% "gebliebene Mensch“. Bayrhoffer. Beiträge zur Naturphilosophie. Leipzig 1839.
+% S. 162.", carries NO mark of its own and is transcribed whole at its anchor
+% above. Its first three words, "gebliebene Mensch", are letterspaced, as the
+% end of the run that begins with "primitiv" on p. 409.
+% Sub-subdivision set RUN-IN and letterspaced --- not a \subsection*.
+\emph{γγ) Menneske-Aanden.} Istedetfor at opfatte Menneskets Fortrin for Dyret
+fra den umiddelbart positive Side kunde man til en Forandring begynde med at
+opfatte dem fra den negative Side. At Mennesket kan lyve som ellers intet Dyr,
+kan lee, kan spotte, bedrage, hykle, kan hænge sig, skyde sig og i det Hele
+udvise, saavel imod sig selv som imod Andre, „en Grumhed, hvortil der end ikke
+findes Exempler blandt de vildeste Dyr,“ er en bekjendt Sag. Paa Fordærvelsen og
+dens Muligheder kjende vi det væsentlige Fortrin. Intet Dyr kan saaledes
+fordærve sit Liv og forfeile sit Maal som Mennesket; thi Dyrets Liv er en
+Naturgave, Menneskets en væsentlig Opgave. Som væsentlig Opgave er Livets Maal
+et Selvbevidsthedens Formaal, et Frihedens Ideal. Imod Idealet staaer
+Virkeligheden; men Virkeligheden, den stedfindende Naturlighed, maa bearbeides,
+forandres, omdannes: her maa ikke blot arbeides, her maa tænkes, her maa villes,
+at et Ideal kan virkeliggjøres. Som den existerende Subjectivitet, der
+selvvirksom stræber mod Idealet, er Mennesket væsentlig Aand.
+
+Beviset for, at Aanden i og med Mennesket kommer til Existens paa Jorden, sees i
+den Kjendsgjerning, at overalt, hvor den menneskelige Selvbevidsthed, altsaa det
+egentlige Menneskevæsen, befinder sig i fremadskridende Udvikling, der er
+Culturen grundlagt, der anerkjendes Pligt og Ret, der arbeides ikke blot for
+Livets Ophold, for det Nødtørftige, det Nyttige og det Behagelige, men ogsaa for
+det Rette, det Sande, det Skjønne og Ophøiede. At spørge om Culturens Oprindelse
+er at spørge om Selvbevidsthedens Oprindelse.
+
+Den „naturphilosophiske“ Grundtanke, at Mennesket som existerende Aand maa
+repræsentere en Sammenfatning af det
+
+% --- p. 411 ---
+\setcounter{footnote}{0}
+i Dyrelivets typisk-udadkastede Mangfoldighed Adspredte til indre og høiere
+Eenhed\footnote{„Wie sich bei den Würmern vorzüglich die Ernährung, bei den
+Insecten die Irritabilität, die Respiration und das Gefühl, bei den höhern
+Thieren die Sinne ausgebildet haben, so widerhohlt sich diese Stufenfolge bei
+einem jeden Thier, und bei den höchsten am deutlichsten, indem diese alle
+Momente in sich- vermittelt tragen.
+% PRINTER'S DEFECT, p. 411 note: a hyphen stands after "sich" in mid-line,
+% "in sich- ver-mittelt tragen" (the second hyphen is the line-break hyphen and
+% is closed up here). Confirmed at 300 dpi; both OCR witnesses see the stray
+% mark. Transcribed as printed.
+Auf diese Weise muß die relative Totalorganisation aller Thiere als Ein großes
+Thier betrachtet werden, in welchem eine jede Function eine eigene Sphäre
+bildet, und ein eigenes Leben führt, ein jedes einzelne Thier aber als die
+\emph{concentrirte Totalorganisation unter einer bestimmten Potenz,} der Mensch
+als der Centralpunkt aller Organisationen.“ Steffens. Grundzüge der
+philosophischen Naturwissenschaft. S. 81---82.
+
+Den samme Tanke er under Paavirkning af den hegelske Philosophie udført t. Ex.
+saaledes: „Und mit und nach dem Affen entstand der \emph{Mensch}, die absolute
+Reflexion des Lebensidee in sich, absolute Einzelheit oder \emph{Idealisirung}
+in der Erscheinung, worin sich der thierische Organismus schlechthin vollendet,
+und aus der \emph{vollendeten} Natur die Idee \emph{zum freien Selbst, zum
+freien Geiste, in sich geht}; denn der Geist ist die für sich seiende Idealität,
+und dieses Fürsichsein das ewige Wesen und Streben derselben. Der Mensch ist als
+Thier in wesentlich gleicher Organisation mit den höchsten thierischen Formen.
+Aber weil sich in ihm die Idee des Thiers \emph{vollendet} hat, so wendet sich
+in ihm, der Vollendung, die Idee um und erscheint, wird \emph{wirklich als
+Geist}.“ Bayrhoffer. Beitr. z. Naturphil. S. 165.
+% PRINTER'S DEFECT (wrong FOR GERMAN): "die absolute Reflexion des Lebensidee"
+% --- the printed article is "des", where German requires "der Lebensidee".
+% Both witnesses and the 300 dpi image agree. Transcribed as printed.
+% DOUBTFUL EXTENT: the letterspaced run "zum freien Selbst, zum freien Geiste,
+% in sich geht" is certain through "Geiste,"; "in sich geht" is my reading of
+% the image (the letter gaps are wider than in the neighbouring "denn der
+% Geist ist"), but spacing.py scores "in" below threshold. Rejected
+% alternative: end the run at "Geiste,".
+}, kan naturligviis kun ved en speculativ Misforstaaelse anføres som Beviis for,
+at Menneskeslægten absolut maa nedstamme fra eet Par Forældre. Men endskjøndt de
+herhen hørende Undersøgelser tage deres endog høist forskjellige Udgangspunkter
+i det Empiriske, saa kunne Resultaterne dog ikke klares uden philosophisk
+Indsigt i Forholdet mellem Natur og Aand, Problemet ikke løses uden sand
+Erkjendelse af Aandens Væsen.
+
+Ifølge en i ældre Dage almeengjældende, paa Bibelens Autoritet støttet
+Troesartikel nedstammer den hele Menneske-
+
+% --- p. 412 ---
+\setcounter{footnote}{0}
+slægt fra eet Par Forældre. Her kan under denne Forudsætning vel være Tale om
+forskjellige Racer, men ikke om forskjellige Arter\footnote{Vi minde her om den
+almindelige (Blumenbachske) Inddeling i følgende 5 Menneskeracer: „\emph{1) Den
+kaukasiske Race} med lys Hudfarve, langt og blødt Haar af lysere eller mørkere
+Farve; Øiets Regnbuehinde blaa eller bruun, Ansigtet aflangt og Næsen smal
+(α. den slaviske β. den indogothiske og γ. den semitiske Stamme).
+\emph{2) Den mongolske Race} med olivenguul Hudfarve, sort, stridt, tyndt Haar
+og mørk Regnbuehinde; Ansigtet bredt og fladt med fremstaaende Kindbeen; Næsen
+flad med opadvendte Næsebor; Øinene staae vidt fra hinanden og skraat mod Næsen
+(Mongoler, Chinesere, Lapper, Finner, Polarfolk i Europa og Asien).
+\emph{3) Den amerikanske Race}, som oftest kobberrød, med sort, stridt Haar, et
+bredt, men ikke fladt Ansigt med udstaaende Kinder, lav Pande, bred Mund
+(Nordamerikanske Stammer. Eskimoer og Grønlændere?). \emph{4) Den malaiiske
+Race}: lysebruun med sort, blødt og fyldigt Haar, stor Mund o. s. v.
+\emph{5) Negerracen}: sort, blød Hud, sort, kruset Haar, mørk Regnbuehinde og
+smalt Hoved med fremstaaende Kjæber, tyk, flad Næse og opsvulmede Læber (Negeren
+fra Guineakysten).
+% PRINTER'S DEFECT, p. 412 note *): the „ opened before "1) Den kaukasiske
+% Race" is never closed --- the quoted list simply ends at "(Negeren fra
+% Guineakysten)." and the note runs on. Not repaired; it is the +1 in this
+% fragment's quote count.
+% The enumerating letters of the Caucasian sub-stems are italic ANTIQUA Greek
+% on the page (α, β, γ), as elsewhere in this book's subdivision marks.
+
+En anden Inddeling, foruden denne, findes angivet i „Dyreriget“ af Chr. Lütken.
+1ste Deel. S. 38.}. Efterat den naturhistoriske Forskning i den nyere Tid har
+emanciperet sig fra alle forud fastsatte Dogmer, ere „Polygenisterne“, der aflede
+Slægtens Oprindelse fra flere forskjellige Par, tilhørende hver sin Art,
+imidlertid optraadte imod „Monogenisterne“. Medens Monogenisterne forsvare Læren
+om een Art i flere Racer, søge Polygenisterne at forsvare Læren om een Slægt i
+flere Arter. Vel er Striden endnu ingenlunde udkæmpet; dog synes det, som om
+Seiren tilsidst vil erklære sig for Monogenisterne\footnote{\textit{A. de
+Quatrefages. L'unité de l'espèce humaine,} sammendraget i Afhandlingen: Om
+Menneskeslægtens Eenhed af H. J. Garrigue (Tidsskr. for popul. Fremst. af
+Naturvdskb. 2den Række. 4de Bind. S. 1---77.
+% PRINTER'S DEFECT, p. 412 note **): the parenthesis opened at "(Tidsskr." is
+% never closed; the note ends at "S. 1---77." Transcribed as printed.
+}.
+
+% --- p. 413 ---
+\setcounter{footnote}{0}
+Ved at sammenligne Racerne, saaledes som de forekomme i Plante- og
+Dyreverdenen, med Racerne blandt Menneskene\footnote{Forholdet imellem Art og
+Race bestemmes, ifølge Quatrefages, saaledes: \emph{Arten er Indbegrebet af de
+Individer,} der have mere eller mindre indbyrdes Lighed og nedstamme eller kunne
+betragtes som nedstammende fra eet oprindeligt Par gjennem en uafbrudt Række af
+physiologiske Familier. Naar den Forskjel, der findes mellem et enkelt Individ
+og de andre af samme Art, bliver mere fremtrædende, kaldes den Varietet.
+Varieteten, der som oftest er knyttet til Individet, bliver i nogle Tilfælde
+arvelig, og faaer da Navn af Race. Jvfr. Anf. Skr. S. 5---6.} kommer man til det
+Resultat, at de anatomiske, physiologiske og psychologiske Forskjelligheder, der
+unegtelig findes imellem de forskjellige Grupper af Menneskeslægten, langtfra
+ere saa gjennemgaaende som de Afvigelser, der findes mellem Racer af een og
+samme Dyreart. De mellem Menneskeracerne stedfindende
+Forskjelligheder\footnote{Den meest iøinefaldende Afvigelse ligger i
+\emph{Farven}; men Betydningen heraf forringes i høi Grad, naar man erindrer, at
+Overhuden og den egentlige Læderhud ere aldeles eens hos den Hvide og den Sorte,
+at det altsaa kun er Cellerne i det malpighiske Sliimlag, der hos de Farvede
+indeholde Farvestof, og at der med Hensyn paa Dannelsen af dette Farvestof kan
+foregaae Forandringer saavel hos den Hvide som hos den Sorte.
+
+Som en af den polygenistiske Læres betydeligste nulevende Repræsentanter nævnes
+Agassiz. Agassiz gaaer ud fra \emph{Dyregeographien} og overfører dennes
+Resultater paa Mennesket. Der er, ifølge den Maade, hvorpaa Agassiz bestemmer de
+særskilte Skabelsescentra, ikke mindre end otte store zoologiske Riger:
+\emph{det arktiske, det mongolske, europæiske, amerikanske Rige, Negerriget,
+Hottentotriget, det malaiiske og det australiske Rige.} Hvert af disse Riger har
+sin ved en Localkraft frembragte charakteristiske Fauna og sin ligeledes ved
+Localkraften frembragte charakteristiske Menneskeæt.} ere, ifølge den
+monogenistiske Synsmaade, ikke større, end at de i det Hele meget vel lade sig
+forklare deels af „\emph{Arveligheden}“, deels, og det for-
+
+% --- p. 414 ---
+\setcounter{footnote}{0}
+nemmelig, af „\emph{Mediet}“, idet man saa til Mediet henregner ikke blot de
+physiske Forhold: Klima, Fugtighed, Varme, Næringsmidler o. s. v., men tillige
+de intellectuelle og moralske Omgivelser.
+
+Saa vigtige disse Undersøgelser nu end i natur- og culturhistorisk Henseende
+kunne være, maa det dog fra Humanitetens og Philosophiens Standpunkt strengt
+fastholdes, at det ingenlunde er Spørgsmaalet om Artens Eenhed eller Fleerhed,
+paa hvis Besvarelse det ved Bestemmelsen af Menneskegruppernes indbyrdes
+Slægtskab væsentlig kommer an. Det er ikke den naturlige Herkomst, men den
+aandelige Adkomst, ikke den udvortes Skikkelse, men det indvortes Væsen, der
+gjør Mennesket til Menneske. Var det muligt, at en Aberace kunde forædles i den
+Grad, at Aberne i Udseende tilsidst fik en skuffende Lighed med velskabte
+Mennesker, mon de skjønne menneskelignende Aber med deres Abekatteforstand
+derfor skulde nærme sig til at blive Menneskenes Lige og erholde
+Menneskerettigheder? Tænke vi os omvendt en Menneskerace efterhaanden saaledes
+tiltage i legemlig Styghed, at Individerne ikke blot saae ud som Orang-Utanger,
+men --- \textit{horribile dictu} --- endogsaa fik Hale\footnote{„Indtil de
+allernyeste Tider er man fremkommen med den Paastand, at der gaves Negere med
+Haler. At der nogetsteds skulde findes en Befolkning med denne Særegenhed, er
+lidet rimeligt, og det er ikke engang vist, at den forekommer individuelt; men
+det er forresten aldeles ikke utænkeligt, at der kunde findes saadanne. I
+Fosterlivet er Halen nemlig forholdsviis ligesaa stor som hos Hunden, og det er
+kun ved en Hemning i Udvikling, at den bliver saa ubetydelig hos det normale
+Menneske. Vi behøve altsaa blot at tænke os, at Udviklingen gaaer uhindret for
+sig, for at faae et Individ med en fremstaaende Hale, og denne Eiendommelighed
+vilde da let kunne gaae i Arv.“ --- Om Menneskeslægtens Eenhed. (Anfr. Skr.
+S. 21---22).}: dersom Fornuften, det i Menneskenaturen Væsentlige, med alle
+Aandsevnerne
+
+% --- p. 415 ---
+\setcounter{footnote}{0}
+var bevaret, hvad saa? skulde disse abelignende Mennesker maaskee ikke kunne
+gjøre sig Haab om Anerkjendelse hos „den smukke kaukasiske Race“, ikke gjøre
+Fordring paa fuldstændige Menneskerettigheder? Dilemmaet er: enten Menneske
+eller ikke Menneske; Halvmennesker gives ikke.
+
+Forskernes Bestræbelse for ved historiske Kjendsgjerninger at godtgjøre, at alle
+Folkestammer uden Undtagelse have religiøse Forestillinger og sædelige Begreber,
+er unegtelig af stor Betydning saavel for Videnskaben som for
+Humaniteten\footnote{„De dygtigste Reisende, der have studeret de Vilde med
+største Opmærksomhed, vidne alle om, at der hos dem findes religiøse
+Forestillinger, navnlig Troen paa høiere Væsener og paa et Liv efter dette. I
+lang Tid holdt man sig til Negerne paa Guineakysten, der ved hele deres Udseende
+danne saa stærk en Modsætning til den caucasiske Race, for at bevise, at de
+ogsaa i aandelig Henseende vare aldeles forskjellige og uimodtagelige for
+Civilisation. Men Opdagelserne i Afrika, hvorved man har lært Ashantierne,
+Fantierne, Dahomanerne at kjende, lutter Folk, der i Legemsskjønhed nærme sig
+til Europæerne tiltrods for den sorte Farve, og hvorved man er kommen til
+Kundskab om, at der findes Byer, Kunster, en heel Civilisation hos Negerne, ---
+disse Opdagelser nødte Polygenisterne til at søge deres Beviser andetsteds. Man
+kastede sig da over Hottentotterne og Kafferne, men snart gik det ikke bedre her
+... Campbell fandt allerede paa sin første Reise 1812 en dunkel Forestilling om
+et høiere Væsen hos Buskmændene .... Livingstone, der kjender Sydafrika bedre
+end nogen Anden, erklærer, at alle Folkene der have Troen paa en Gud og et andet
+Liv .... For Sydamerikas Vedkommende afgiver d'Orbigny et ganske lignende
+Vidnesbyrd.“
+
+„I den nyeste Tid er det navnlig Australnegerne, der maae holde for og gjøres
+til Gjenstand for de usandeste Paastande og de meest uberettigede Angreb. Man
+har sagt, at disse Folk lignede Bavianer (ikke engang Orang-Utangen var styg nok
+for at betegne deres Udseende), man har frakjendt dem hvert Spor af Religion,
+Moral, Kunst og Industrie, ja endog Evnen til at hæve sig i Civilisation ved
+Efterligning af Andre. Dette staaer i Strid med de paalideligste Mænds
+Vidnesbyrd, der have bereist Landet ... To Nyhollændere, \emph{Daniel og
+Benilong}, bleve førte til England, opdragne, indførte i den fine Verden og
+opførte sig som sande „Gentlemen“. Men det er ikke blot enkeltstaaende
+Individer, der kunne civiliseres. En Englænder Bateman, der med en Deel Andre
+begav sig til Port Philips paa Sydsiden af Nyholland ... blev forbauset over at
+finde, at de Indfødte havde langt bedre Klæder, Boliger og andre
+Nødvendighedsartikler end deres Landsmænd; men Gaaden løstes snart, da de fandt
+en engelsk Grenadeer, der ved et tidligere Colonisationsforsøg var undvegen og
+bleven Høvding for de Vilde, hvem han nu bibragte en høiere Cultur.“ Om
+Menneskeslægtens Eenhed (Anfr. Tidsskr. S. 24---26).};
+
+% --- p. 416 ---
+% The p. 415 footnote runs over onto p. 416: the block at the foot of p. 416,
+% from "To Nyhollændere, Daniel og Benilong," to "(Anfr. Tidsskr. S. 24---26).",
+% carries NO mark of its own and is transcribed whole at its anchor on p. 415.
+% "Daniel og Benilong" is letterspaced there. p. 416 has no note of its own, so
+% no \setcounter here.
+men det er dog ikke det i Sagen Empiriske, der er det Væsentlige. Det Væsentlige
+er, at Religion og Religiøsitet sees at danne de oprindelige, psychologisk
+nødvendige Forudsætninger for Menneske-Aandens Udvikling, det Væsentlige er, at
+Grundforholdet mellem de religiøse Forestillinger og de humane Formaal
+eftervises.
+
+Mythekritiken, som i den nyere Tid skarpsindig har viist, hvorledes de mythiske
+Guddomme med indre psychologisk Nødvendighed opgaae som ideale Magter,
+overnaturlige Skikkelser, for den menneskelige Phantasie, har med det Samme
+viist, hvad det oprindelig betyder, at Mennesket i sine Guder objectiverer sig
+selv, og at det første Skridt paa Culturens Vei just derfor maa være betegnet
+ved en slig Objectivering. Man behøver altsaa ikke at forudsætte nogen
+overnaturlig Aabenbaring for at forklare sig det Phænomen, at der hos alle
+Folkestammer findes Spor af Religiøsitet og Religion.
+
+Ved at gjøre det Empiriske i Beviisførelsen til Hovedsagen foranlediger man en
+Misforstaaelse. Da Raaheden unegtelig er større hos den ene vilde Folkestamme
+end hos den anden: saa kunde en Kjendsgjerning som den, at man engang traf paa
+en Stamme, hos hvem det ikke var muligt at opdage Spor af religiøse
+Forestillinger, let lede til en Feilslutning. Man kunde da heri ville see et
+Beviis for:
+
+% NET QUOTE BALANCE OF THIS FRAGMENT: 0, but only because two logged printer's
+% defects cancel:
+%   (a) p. 402/403 --- the Burmeister quotation is not re-opened after the
+%       interpolated "--- siger Burmeister ---", so the “ at "Grændse.“" on
+%       p. 403 has no opening partner (-1);
+%   (b) p. 412 note *) --- the „ before "1) Den kaukasiske Race" is never
+%       closed (+1).
+% Everything else pairs: p. 402 body (1), p. 403 body (2), p. 404 body (3),
+% p. 405 body (2, one crossing the p. 404/405 boundary) and fn (1), p. 407 body
+% (2), p. 409 fn (2, the second crossing onto p. 410), p. 410 body (2), p. 411
+% fn (2), p. 412 body (2) and fn (1 more, „Dyreriget“), p. 413 body (1),
+% p. 414 body (1) and fn (1), p. 415 body (1) and fn (3, one crossing onto
+% p. 416).
+% The comment block at the head of this fragment quotes the p. 401 note's
+% run-over verbatim and therefore contains one further closing “ inside a
+% comment; it pairs with the „ at the p. 401 anchor once folded in.
 
 % c) Sjæl og Legeme begins ~p. 423.
-% [text to be added: pp. 417--431]
+% NOTE FOR THE CALLER — the p. 415 footnote does NOT reach p. 417. The foot of
+% p. 417 carries no footnote block at all (both OCR witnesses agree and the
+% 130 dpi spread confirms it: the page ends with the signature "27" below the
+% last body line). So there is nothing here to fold back into p. 415's note;
+% whatever run-over it had must close on p. 416.
+
+% --- p. 417 ---
+% p. 417 opens mid-sentence, continuing p. 416. Printed first words:
+% "enten at Individerne i en saadan Stamme kun vare Halv-". A small raised
+% tick stands before "Stamme" in the scan; at 600 dpi it is a single high
+% speck, not a low „ and not a doubled sort, and "Stamme" is never closed by
+% any quotation mark. Read as a speck and not transcribed. (The same kind of
+% raised tick recurs before "Rumsbevægelser" on p. 429.)
+enten at Individerne i en saadan Stamme kun vare Halvmennesker, eller, dersom de
+antoges for Heelmennesker, at det ikke hører Menneskenaturen oprindelig til at
+have Religion.
+
+Fastholde vi Væsensforholdet imellem de religiøse Forestillinger og de humane
+Formaal, indlyser det, at Humanitetens Grundideer: det Gode, det Skjønne, det
+Sande, maae ikke blot fra Begyndelsen af have oprindelige Støttepunkter i
+Religionen, men ogsaa under Culturens Gang vedblive at staae i inderligt Samqvem
+med det Religiøse. Hvad Begyndelsen angaaer, behøve vi i denne Sammenhæng kun at
+minde om det almindelig anerkjendte Forhold imellem et Folks Mythologie, dets
+praktiske Verdensanskuelse og dets Betydning i Historien. Hvad Fuldendelsen
+angaaer, er Spørgsmaalet mere indviklet. Den Omstændighed, at en fremadskridende
+Cultur altid ender med en Reflexion, der opløser Mytherne og undergraver Troen
+paa de gamle Guder, har --- især i den nyere Tid --- bestyrket Adskillige i den
+Indbildning, at det altsaa maa høre Culturfuldendelsen til at omsætte Troen i
+Viden og derved efterhaanden emancipere Menneskeslægten fra Religionens
+Autoritet.
+
+% "Det Gode." — run-in paragraph head, letterspaced (confirmed at 300 dpi);
+% so are "Det Skjønne." (p. 420) and "Det Sande." (p. 421). Not a sectioning
+% command in the print: they run into the paragraph.
+\emph{Det Gode.} Hvor raae, uklare og forqvaklede et Folkefærds religiøse og
+sædelige Forestillinger end kunne være, saa bevæge de sig dog i Almindelighed om
+de tre Cardinalpunkter: Gud, Dyd, Udødelighed. Det Folkelige er, at Religionens
+Ideer iføre sig Forestillingens beskuelige Billeddragt; selv om Indholdet i sig
+er nok saa aandeligt, vil Formen altid lide af eensidig Udvorteshed og i denne
+Udvorteshed have en betænkelig Tilsætning af det Aandløse. Naar nu den kritisk
+reflecterende Forstand begynder at tage skarpt Sigte paa det Billedlige, det blot
+Udvortes, det mod Aandens Væsen stridende Aandløse, kommer den ved at angribe
+Formen da ogsaa til at angribe Indholdet og til at sætte tomme Abstractioner
+istedetfor ideale Realiteter.
+
+% --- p. 418 ---
+Det er en mærkelig Selvmodsigelse, hvori den negative Kritik hilder sig. Det kan
+umulig være Kritikens Mening, at den Oplyste, der emanciperer sig fra Religionen,
+ogsaa skulde emancipere sig fra Ethiken; tvertimod! man angriber jo netop det
+Religiøse for at rense det Ethiske. Istedetfor at gjøre Retfærdigheden afhængig
+af Gud gjør Kritiken da omvendt Gud afhængig af Retfærdigheden, istedetfor den
+religiøse Troessætning: „Gud er retfærdig“, sætter den sin ethisk-videnskabelige
+Sætning: „Retfærdigheden er guddommelig“. Men ved en saadan Omsætning har den
+kritiske Reflexion, før den endnu veed deraf, gjort et ligesaa væsentligt Angreb
+paa Ethiken som paa Religionen.
+
+At tillægge det Godes Idee evig objectiv Gyldighed, men fornegte Aandens absolute
+Magt og Viden og kun ville see den menneskelige Subjectivitet fra Timelighedens
+og Dødelighedens Synspunkt, fører ind i farlige Modsigelser. Det Godes Idee er en
+Personlighedsidee, der ikke har og ikke kan have ubetinget Gyldighed i
+nogensomhelst abstract objectiv Form. I og for sig er Intet absolut enten godt
+eller ondt; kun formedelst den Gode har det Gode Realitet. Er der Ingen, der er
+absolut god, saa er der heller intet absolut Gode; er den Gode ikke selv evig,
+saa er der ingen Evighed i det Gode. Saadanne ethiske Sætninger som: „det Gode er
+guddommeligt“, „Retfærdigheden er guddommelig“, maae da, naar Reflexionen naaer
+den fulde Klarhed, enten forvandle sig til Talemaader eller søge deres
+Begrundelse i det Religiøse: „Gud er god“, „Gud er den Gode“; „Gud er
+retfærdig“, „Gud er den Retfærdige.“
+
+Hvad der gjælder om Ideens Forhold til Gud, gjælder paa tilsvarende Maade om dens
+Forhold til Mennesket. Ogsaa fra den reent menneskelige Side sees det, at det
+Godes Idee er en Personlighedsidee; det sees af \emph{Forpligtelsen.} Lad Ideen
+for sig være evig, den menneskelige Subjectivitet timelig: hvorledes kan en i sit
+Væsen timelig, dødelig, for-
+% spacing.py scored „Retfærdigheden (1.209) on this page; rejected at 600 dpi
+% — the letters of "Retfærdigheden er guddommelig" are tight and the score
+% comes from the gap at the „ on a loosely justified line. "Forpligtelsen."
+% (0.340) is real and is set above.
+
+% --- p. 419 ---
+gængelig Subjectivitet anerkjende Livsfordringer, der lyde paa en Evighed, som
+ikke vedkommer den, en Tilværen, hvori den ikke selv kan blive deelagtig? Kunde
+den til det nærværende Liv indskrænkede Selvbevidsthed tale til Ideen paa
+menneskelig Viis, da maatte den jo sige: gak Du med dit Dydsprincip og dine
+ideale Pligtbud til Guderne og lær de Udødelige at gjøre det Gode for det Godes
+Skyld, thi at evige Væsener leve for det Evige, er i sin Orden; men lad os
+Dødelige med Fred! Eller er det maaskee ikke ligesaa urimeligt, at en Dødelig vil
+gjøre det Evige til sit Høieste, som om en Udødelig fik isinde at leve for lutter
+Timeligt?
+
+% The FIRST occurrence of the commandment is letterspaced (confirmed at
+% 600 dpi); the second, later on this page, is not.
+\emph{„Du skal ikke slaae ihjel!“} dette Bud, der i en Culturverdens rationelle
+Ethik maa regnes blandt de fundamentale, taber sin ubetingede Gyldighed, naar
+Subjectiviteten kun erkjender sig som timelig. Hvorfor tør det ene Menneske ikke
+myrde det andet? Lyder Svaret saaledes: „hvert Menneskes Liv har i sig selv et
+ubetinget Værd, den menneskelige Subjectivitet har en evig Selvgyldighed,“ da er
+Budet klart og Forpligtelsen til at overholde det indlysende. Men fra den
+negative Reflexions Standpunkt lyder Svaret ganske anderledes. „Hvor Mord og Drab
+ustraffet øves, kan intet Samfund bestaae, ingen Aandsudvikling foregaae. Det
+Godes Idee, der kræver sin evige Ret, idet den kræver sin Aabenbarelse i timelige
+Subjectiviteter, begynder da Aandsudviklingen dermed, at den med psychisk
+Naturnødvendighed fremstiller sig for Menneskets Phantasie i Skikkelse af en
+straffende og belønnende Gud, som for at hævde sit Bud: „Du skal ikke slaae
+ihjel!“ truer ikke blot med timelige, men ogsaa med evige Straffe, og saaledes
+aabner de forpligtede Subjectiviteter Udsigt til et evigt Liv. Først naar
+Aandsudviklingen har naaet sit Høieste, erkjender den selvbevidste Subjectivitet
+sin egen Dødelighed; først paa Oplysningens Trin indseer Mennesket, at
+Religionens forestillede Gud er Ethikens evige
+% The long „Hvor Mord og Drab … quotation opened here is not closed until
+% "mod Ideen.“" at the top of p. 420 — a legitimate cross-page pair.
+
+% --- p. 420 ---
+Idee, og fatter nu i langt dybere Forstand Forpligtelsen til ubetinget Lydighed
+mod Ideen.“
+
+Hvor selvmodsigende denne Forklaring trods al dens tilsyneladende Grundighed er,
+sees let ved nogen Eftertanke. Forpligtelsen til at overholde det Bud: „Du skal
+ikke slaae ihjel!“ kan i et civiliseret Samfund vistnok, uden udtrykkeligt Hensyn
+til Religionens Lære om Gud og det evige Liv, indskjærpes fra saamange Sider,
+fattes og føles paa saamange Maader, at sædelig Dannelse i Forening med de
+borgerlige Love kan --- saalænge Samfundsordenen opretholdes --- afgive
+tilstrækkelig Garantie for Liv og Eiendom. Men heri indeholdes endnu ingen
+rationel Besvarelse af det egentlige Spørgsmaal. I Phænomenet kan det maaskee til
+en vis Tid tage sig ud, som om Individerne med den klare,men forgjængelige,
+% PRINTER'S DEFECT: "klare,men" is set with no word-space after the comma.
+% Both OCR witnesses read it so and the spread confirms it. Left as printed.
+Selvbevidsthed satte Ideen som det Ubetingede; men, see vi nærmere til, saa
+adlyde disse timelige Selvbevidstheder kun et timeligt Samfunds Bud af lutter
+timelige Bevæggrunde. Det maa være saaledes, fordi det ikke kan være anderledes:
+\emph{at agte Menneskets evige uforkrænkelige Ret og dog være sig bevidst, at der
+i det menneskelige Selv intet Evigt er, er en plat Umulighed.}
+
+\emph{Det Skjønne.} Skjøndt vistnok ingen Folkereligion oprindelig er anlagt paa
+at vække og særligt udvikle den æsthetiske Sands: saa kunne Poesiens og Kunstens
+meest ophøiede Idealer dog med Rette siges at have deres Udspring i Religionen.
+Hvor rig en Strøm det religiøse Væld i saa Henseende kan give, derpaa ere de
+græske Gudebilleder og de katholske Helgenbilleder talende Exempler. Forsaavidt
+den stigende Cultur nu frembringer en Reflexion, der omsætter det mythisk
+Forblommede i det bevidst Æsthetiske, synes det jo vel, som om Aandsopgaven
+egentlig var at sætte Kunst og Poesie i Religionens Sted; men en dybere gaaende
+Betragtning viser, at Kunst og Poesie umulig kunne opløse de religiøse
+Forudsætninger uden derved at forberede deres egen Opløsning.
+
+% --- p. 421 ---
+\setcounter{footnote}{0}
+% The Poul Møller quotation that fills the upper half of this page is set in
+% ordinary body Fraktur throughout — eye-checked at 300 dpi, no gesperrt.
+% The suspension points are printed as four spaced stops in both places.
+„Den sande Kunst er en Anticipation af det salige Liv. Den fuldkomne Harmonie
+mellem Universalitet og Individualitet, som finder Sted i Kunstnerens
+Bevidsthed, naar han producerer et ægte Kunstværk, eller hos den, der med ægte
+Receptivitet gjentager den samme Production, er et Billed af de fuldkommen
+Forklaredes Salighed, hvori det individuelle Liv uden Modstand bliver udfyldt af
+den Eviges Villie .... Men Kunsten er kun et Billed paa det salige Liv, fordi
+den bevæger sig i en Verden, der baade fra et Standpunkt, der ligger over den,
+og et Standpunkt, der ligger under den, med Sandhed betragtes som Leg og Skin
+.... Naar da Kunsten er en Anticipation af det mere ætheriske Liv, som hører en
+høiere Tilværelse til, maa der naturligviis findes uforenelige Bestanddele i
+Bevidstheden, idet man paa eengang vil beholde Kunsten og fornegte
+Udødeligheden; og den Kunst, der saa aldeles miskjender sin Betydning, vil,
+efterhaanden som de stridige Antagelser bringes ret i Berøring med hinanden,
+aldeles fortrænges ud af Livet, ligesom et Træ mister sine Blomster, naar dets
+Rod bliver afskaaret. Det er da sandsynligt, at den ret gjennemførte Negation
+først reent vil fortrænge Kunsten, inden Livets Tomhed og Øde ved dette Savn ret
+klart kan blive stillet Tidsalderen for Øie\footnote{Poul M. Møller. Om
+Muligheden af Beviser for Menneskets Udødelighed. Efterladte Skrifter. 5. Bd.
+Khvn 1856. S. 90--92.}.“
+
+\emph{Det Sande.} Kan Culturhistorien aldrig nogensinde naae det Vendepunkt, da
+Menneske-Aanden vil kunne sætte enten det abstract Ethiske eller det blot
+Æsthetiske i Religionens Sted: saa vil det Vendepunkt heller aldrig indtræde, da
+Videnskaben og de videnskabelige Sandheder kunne sættes i Troens Sted.
+Betingelsen for en fremadskridende Aandsudvikling er vistnok en stedse stigende
+Selverkjendelse i Forening med en stedse voxende Naturerkjendelse; men hvorledes
+
+% --- p. 422 ---
+\setcounter{footnote}{0}
+forholder det sig med Fuldendelsen af disse Erkjendelser? I endelig Forstand
+kunne de to Erkjendelser paa mange Maader og i mange Henseender adskilles, men
+ikke i Ideen: en absolut Selverkjendelse uden en tilsvarende Naturerkjendelse er
+et Menneske ligesaa umulig, som en absolut Naturerkjendelse uden en tilsvarende
+Selverkjendelse. Og dog er det først den concrete Eenhed af en fuldendt
+Selverkjendelse og en fuldendt Naturerkjendelse, hvorved en klar og fuldendt
+Aandens Erkjendelse bliver mulig. Hvad her mangler i Viden, maa altsaa, naar
+Aandens Realitet tilfulde skal erkjendes, erstattes ved Troen; saaledes bliver da
+Spørgsmaalet om Troens Forhold til Viden et Livsspørgsmaal, et for
+Menneske-Aanden afgjørende Grundspørgsmaal.
+
+Spørgsmaalet om Tro og Viden antog i den hegelske Philosophie en saa tvetydig
+Skikkelse, at Kritiken i mange Retninger har maattet anstrenge sig, for ret at
+faae det Tvetydige hævet. Tvetydigheden skriver sig oprindelig fra den
+Halvmystik, hvorved den speculative Viden allerede af Schelling var bleven
+betegnet som en absolut Viden, en Viden af det Absolute. \emph{Udadtil} maatte en
+saadan Viden jo vistnok siges at være begrændset, forsaavidt der i de endelige
+Tings Mangfoldighed er Meget, hvorom den Vidende Intet veed; men
+\emph{indadtil} var den absolute Viden Eet med Guds egen Viden, der klarede
+Sandhedens Dyb, Tilværelsens hellige Grund.
+% "Udadtil" and "indadtil" are both letterspaced (confirmed at 300 dpi).
+% spacing.py reported only "indadtil", as a single; "Udadtil" it missed.
+% Its other two singles here, "mangler" (1.440) and "Menneske" (1.334),
+% were rejected on the image — both lines are merely loosely justified.
+
+Naar denne Halvmystik selv bliver opklaret, viser det sig\footnote{„Antages
+Muligheden af, at Mennesket i den nærværende Tingenes Orden kan komme til en
+fuldkommen Erkjendelse, da ere de Videnskabsmænd meest conseqvente, der skildre
+den som en mystisk Anskuelse af Eet og Alt, hvori Modsætningen mellem den
+Anskuende og det Anskuede er aldeles forsvunden. At en saadan Anskuelse af det
+Absolute skulde være en fuldkommen Erkjendelse deraf, er en Paastand, hvis
+Urimelighed ved saa mange sindrige Vendinger af Polemiken er godtgjort, at det
+neppe nuomstunder falder en eneste grundig Videnskabsmand ind at paatage sig dens
+Forsvar. Men enhver apriorisk eller, om man vil, immanent Tænkning, hvorved
+Tilværelsens Grundforhold (jeg mener Guds Forhold til Universet) bliver
+tydeliggjort, maa dog gaae ud fra en dunkel Anskuelse af disse Grundforhold og
+stræbe til en klarere umiddelbar Erkjendelse deraf. Men forsaavidt som en adæqvat
+Anskuelse af Eet og Alt i den nærværende Tingenes Orden ei kan opnaaes af Nogen,
+kan den videnskabelige Tænkning under de os bekjendte Forhold heller aldrig føre
+til Erkjendelsens Fuldendelse.“ Poul Møller. Anfr. Skr. S. 96.}, at den
+menneskelige Viden, saavel hvad Naturerkjendelsen
+
+% --- p. 423 ---
+% The block at the foot of p. 423 is the RUN-OVER of the p. 422 footnote,
+% transcribed whole at its anchor above; no mark and no counter reset here.
+% First two lines of that run-over eye-checked at 300 dpi: ordinary footnote
+% Fraktur, no gesperrt.
+som hvad Selverkjendelsen angaaer, har sin absolute Grændse (Jvfr. Propæd. S.
+66--67) og i denne Grændse en Troens Forudsætning (Jvfr. Propæd. S. 76--77),
+den ikke kan opgive uden at opgive Menneske-Aandens allerhøieste Interesser og
+helligste Formaal.
+
+% HEAD, transcribed from the page: the printed head is "c) Sjæl og Legeme."
+% — lower-case c, round bracket, FINAL FULL STOP — centred on its own line in
+% large bold Fraktur (not letterspaced). The Indhold puts it at ~p. 423 and
+% that is right. Set \subsection* like a) Livets Væsen. / b) Livets Trin.
+\subsection*{c) Sjæl og Legeme.}
+\addcontentsline{toc}{subsection}{c) Sjæl og Legeme.}
+
+% Epigraph, indented as a block under the head, letterspaced throughout —
+% EXCEPT the parenthetical citation "(Propæd. S. 159)." which is set plain
+% (checked at 300 dpi; the gesperrt stops just before the bracket).
+\begin{quote}
+\emph{Virkelighedens objective Begreb er vistnok i Ideen Eet med sit virkelige
+Indhold; men just fordi Identiteten kun er i Ideen, er den i Virkeligheden ikke
+for os, naar Ingen af os er Ideen.}
+
+\emph{Vistnok er Menneskets Væsen i ethvert virkeligt Menneske; men desuagtet kan
+dog intet virkeligt Menneske i Virkeligheden være det Samme som Menneskets Idee.}
+(Propæd. S. 159).
+\end{quote}
+
+Til en nærmere Prøvelse af, hvad philosophisk Tænkning formaaer, og hvorvidt en
+given Philosophie kan antages at have med tilbørligt Hensyn til ubestridelige
+Kjendsgjerninger klaret sig den menneskelige Videns Muligheder, Betingelser og
+Grændser, kan intet Problem være bedre skikket end: \emph{Forholdet imellem Sjæl
+og Legeme.} Da dette Grundforhold, forsaavidt det virkelig lader sig opklare,
+nød-
+
+% --- p. 424 ---
+vendigviis maa have sin Belysning fordoblet saaledes, at det Lys, der udgaaer fra
+det Aprioriske, mødes i ideel Brydning med det, der udgaaer fra det Empiriske:
+lade vi \emph{de metaphysiske Theorier og de psychophysiske Undersøgelser forene
+sig, hver med sine Bidrag, til en nærmere Opklaring af den menneskelige Videns
+Grændser.}
+% The gesperrt runs unbroken from "de metaphysiske" to "Grændser." — four
+% consecutive lines, verified at 300 dpi. spacing.py flagged only its ends.
+
+% HEAD, transcribed from the page: "α) Metaphysiske Theorier." — italic Greek
+% alpha, round bracket, final full stop; centred, letterspaced, on its own
+% line. Single-Greek subdivision, so \subsection* like α) Plantelivet.
+\subsection*{α) Metaphysiske Theorier.}
+\addcontentsline{toc}{subsection}{α) Metaphysiske Theorier.}
+
+Det er en altfor overfladisk Antagelse, at de forskjellige Theorier om Forholdet
+mellem Sjæl og Legeme kun skulde være vilkaarlige Hypotheser, temporære
+Forestillingsmaader, hvis fuldkomne Ugyldighed strax skulde fremlyse deraf, at
+den ene idelig har fortrængt den anden. Vistnok have de hidtil opstillede
+Theorier hver sine Mangler; men i Forhold til som de kunne siges at svare hver
+til sit Vendepunkt i Videnskabens Historie, have de tillige en blivende
+Betydning, forsaavidt enhver af dem fra sit Udgangspunkt og paa sin Maade med
+eiendommelig Kraft og Conseqvens fremhæver og belyser en væsentlig Side af
+Forholdet. Vel er Dualismen bleven afløst af Identitetslæren, men Identitetslæren
+er saa langt fra at hæve det Dualistiske, at vi til en alsidig Belysning af
+Forholdet endog maae vælge Kategorien: \emph{Identitetsdualisme}, som det Udtryk,
+der ret betegner det afgjørende Synspunkt.
+% "Dualismen bleven afløst af Identitetslæren" was checked at 300 dpi and is
+% NOT letterspaced, only loosely justified; "Identitetsdualisme" is.
+
+% Doubled-Greek subdivision set RUN-IN and letterspaced, like αα) Dyr og
+% Plante (p. 329) — not a \subsection*.
+\emph{αα) Dualisme.} Den strengt gjennemførte Adskillelse af det Sjælelige og det
+Legemlige indtræder egentlig først med den cartesianske Philosophie. Det er denne
+Philosophies Fortjeneste at have fastholdt Aanden som Substans for sig i Aandens
+rene Form og derved ladet Naturen, den materielle Substans i Legemlighedens rene
+Form, fremstille sig som Aandens Object, som Tankens Andet, en Gjenstand for
+videnskabelig Betragtning, for mathematisk Beregning. Ligesom Tænkningen er
+Aandens, saaledes er Udstrækningen Materiens substantielle Væsen: Sjælen er en
+tænkende Sub-
+
+% --- p. 425 ---
+\setcounter{footnote}{0}
+stans, Legemet en Maskine\footnote{\textit{Suppono corpus aliud nihil esse quam
+terream statuam seu machinam, quam Deus formet}... \textit{Renati Des-Cartes
+Tractatus de homine Pars I. Art. II.} Til Udtrykket: \textit{seu machinam}, har
+De la Forge tilføiet i Noten: \textit{hæc hypothesis est verissima; nam per
+vocabulum} \emph{\textit{machina}} \textit{aliud nihil intelligi potest quam
+corpus ex pluribus organicis partibus compositum, quæ unitæ in nonnullos motus
+producendos consentiunt, quorum separatæ capaces non forent}... Kategorien
+\textit{machina} passer just til en Synsmaade, der lader Dyrene (Jvfr.
+\textit{Ren. Descartes Dissertatio de methodo. Amstelodami CIƆ IƆCLXXVII p.
+35--36}) være følesløse Automater, et Slags levende Maskiner, der dog ikke ere
+levende.}, hermed er Dualismen indledet\footnote{\textit{Postquam ita
+consideravimus omnes functiones, quæ pertinent ad solum corpus, facile est
+cognoscere nihil in nobis restare, quod debeamus tribuere nostræ animæ, exceptis
+nostris cogitationibus, quæ præcipue duum generum sunt; quædam enim sunt Actiones
+animæ, aliæ ejus Passiones sive Affectus. Ren. Descartes Passiones Pars I.
+articul. XVII.}}. Det er første Gang i Videnskabens Historie, at den sig som Aand
+bevidste Tænkning ret gjør sig fortrolig med den mechaniske Opfattelse af
+Legemverdenen; for at see den Indflydelse, Mechanikens Grundbegreb udøver paa
+Udtydningen af det menneskelige Legemes Indretning, behøver man blot at kaste et
+Blik paa Cartesius's Afhandling om Mennesket (\textit{Ren. Descartes Tractatus de
+homine}\footnote{Selv Overskrifterne udvise dette. \textit{Pars I. De Machina quæ
+corpus constituit. Pars II. Quomodo moveatur hæc Machina. Pars III. De sensibus
+externis in hac Machina. Pars IV. De sensibus internis in hac Machina. Pars V. De
+structura cerebri in hac Machina, et quo pacto ibi spiritus distribuantur ad
+motus sensusque ejus efficiendos.}}.
+% PRINTER'S DEFECT: the parenthesis opened before "Ren. Descartes Tractatus de
+% homine" is never closed — the print reads "… de homine ***)." and the note
+% mark's own ")" is left to stand for the bracket. Reproduced as printed.
+% In the same footnote the Amsterdam date is set with reversed-C sorts,
+% "CIƆ IƆCLXXVII" (= 1677), read at 600 dpi. If Ɔ (U+0186) is missing from
+% libertinus, Ↄ (U+2183) or \reflectbox{C} would be the substitutes.
+Vistnok staaer Begrebet af det Mechaniske for langt under Organismens Begreb, til
+at man derfra turde vente nogen høiere Belysning af det Organiske; men derfor bør
+det dog ikke glemmes, at Mechanikens Begreb er Physikens Fundamentalbegreb, og at
+det just er Cartesius's Fortjeneste at have gjort det første
+
+% --- p. 426 ---
+\setcounter{footnote}{0}
+væsentlige Skridt til at forlige den philosophiske Tænkning med en Kategorie, der
+ellers i al sin Skarphed maatte synes at staae i fiendtlig Modsætning til Aanden
+og alt det Aandelige\footnote{„Kein Physiker und kein Naturphilosoph vor
+Cartesius hat mit gleicher Abstraction das menschliche Bewußtsein so weit von der
+Natur entfernt und zurückgezogen, daß diese als ein \emph{bloßes Object, d. h.
+als ein anderes, fremdes, von dem Geiste entblößtes Wesen} dem menschlichen
+Bewußtsein gegenübertreten konnte. Wenn Geist und Natur \emph{sich in dieser
+Weise} gegenüberstehen als gleichberechtigte Substanzen, deren jede selbständig
+für sich existirt, so kann der Geist fortan nur noch ein \emph{rein objectives,}
+d. h. ein bloß wissenschaftliches Interesse an der Natur fassen, .... so kann die
+Natur nur noch ein \emph{Problem des menschlichen Denkens,} aber nicht mehr eine
+Macht des \emph{menschlichen Gemüthes,} weder eine heimliche noch eine
+unheimliche, bilden; denn die Natur ist kein Gebilde der Phantasie, sondern das
+starre Object des Geistes. Diesen Dienst hat Cartesius, \emph{und er allein,} der
+Philosophie erwiesen: er hat die Natur für sie erobert.“ Kuno Fischer. Gesch. d.
+neueru Philos. 1ster Bd. S. 167.}.
+% PRINTER'S DEFECT in this note: "neueru" for "neuern" — a turned n. Both OCR
+% witnesses read u independently, and p. 428's parallel citation prints
+% "neuern" correctly. Left as printed.
+% Emphasis extents in this note were fixed word by word at 600 dpi. Note the
+% asymmetry the compositor left: "Problem des menschlichen Denkens," is
+% letterspaced from "Problem" on, but in the parallel clause "Macht" is NOT
+% letterspaced and only "menschlichen Gemüthes," is. Reproduced as set.
+% "dem menschlichen Bewußtsein gegenübertreten konnte" is plain, so the first
+% run ends at "Wesen".
+
+Dog videre end til en Objectivering af det Legemlige med dets mechaniske
+Charakteermærker: Udstrækning, Rumopfyldning, Bevægelse ved Tryk og Stød, altsaa
+til en Objectivering af det Legemlige i dets abstracte Modsætning til det
+Aandelige, kunde Cartesius ikke bringe det. Den Udvei, hans Philosophie ikke
+saameget paaviste som indirecte antydede, nemlig at lade Gud selv, den absolute
+Substans, ophæve den dualistiske Modsætning imellem de to relative Substanser,
+Sjælen og Legemet, blev egentlig først bragt til Bevidsthed og fulgt med
+uforbeholden Conseqvens af Malebranche.
+
+Inderlig oprørt over det Falske i Aristoteles's Philosophie udvikler Malebranche
+den Lære: \emph{at der i den hele Verden kun er een sand Aarsag, efterdi der kun
+er een sand Gud; at Naturen eller Tingenes Kraft ikke er Andet end Guds Villie;
+at de naturlige
+% --- p. 427 ---
+% (No blank line before this marker, deliberately: the \emph{} opened on
+%  p. 426 is still open across the page break, and a blank line inside it
+%  would end the paragraph and break the build --- "Paragraph ended before
+%  \text@command was complete". Where a gesperrt run crosses a page, the
+%  marker goes in tight like this.)
+\setcounter{footnote}{0}
+Ting ikke ere virkende Aarsager, men alene Anledningsaarsager (\textit{des causes
+occasionelles}).}
+% The gesperrt block opened on p. 426 ends here; the antiqua parenthesis
+% "(des causes occasionelles)" is itself letterspaced, so it stays inside the
+% \emph{}. Verified at 300 dpi.
+Dette er det saakaldte Occasionalsystem: \textit{systema causarum
+occasionalium}. „Gud behøver ikke Redskaber for at virke (\textit{Dieu n'a pas
+besoin d'instrumens pour agir}); der behøves kun, at han vil det, for at Tingen
+kan være. Hans Magt er hans Villie. Men at meddele sin Magt til et Menneske eller
+til en Engel, kan ikke betyde Andet end at ville, at, naar et Menneske eller en
+Engel vil, at dette eller hiint Legeme sættes i Bevægelse, det da
+bevæges“\footnote{R. Nielsen, \emph{Om Theologiens Naturbegreb}, med særligt
+Hensyn til Malebranche: \textit{De la recherche de la vérité}. I Anledning af
+Reformationsfesten 1855. S. 20--21 o. flgd.}.
+% The title in this note is letterspaced (checked at 300 dpi); spacing.py did
+% not report it.
+
+Med Occasionalisterne (Malebranche og Geulinx) stemmer nu Leibnitz forsaavidt
+overeens, som han heller ikke antager nogen physisk Vexelvirkning mellem Sjæl og
+Legeme; men han afviger dog fra hine deri, at han, istedetfor at lade Gud selv
+som en \textit{deus ex machina} i hvert Øieblik bevirke, at der i Anledning af en
+Bevægelse i Sjælen opstaaer en tilsvarende Bevægelse i Legemet og omvendt --- en
+Virkemaade, der maatte forudsætte en continuerlig Række af Mirakler
+(\textit{miracles déraisonnables}) ---, henfører den stedfindende
+Overeensstemmelse imellem de sjælelige og de legemlige Bevægelser til en ved
+Skabelsen bestemt Harmonie (\textit{harmonia præstabilita}), og indleder paa
+denne Maade en Omsætning af det Overnaturlige i det Naturlige. --- For at
+anskueliggjøre den præstabilerede Harmonie imellem Sjæl og Legeme anfører
+Leibnitz de bekjendte Exempler med Uhrene (\textit{deux pendules bien réglées sur
+le mieux pied}) og med Herren, der betjenes af en Automat; men i denne Anledning
+er det med Rette bemærket, at slige oplysende Exempler kun ere Billeder, og at
+slige Billeder ingenlunde maae forvexles med de Begrebsbestemmelser, der med
+indre
+% "Geulinx" — best reading at 130 dpi and tesseract's; the PDF text layer's
+% "Geuling" rejected (Fraktur x read as g). spacing.py's RUN "Harmonie
+% (harmonia" rejected at 300 dpi: the letters are tight, the line merely
+% loosely justified.
+
+% --- p. 428 ---
+\setcounter{footnote}{0}
+Nødvendighed fremgaae af Grundanskuelsen selv\footnote{In .... drei Punkten, der
+\textit{substantia completa}, der \textit{harmonia præstabilita} und dem
+\textit{vinculum substantiale}, giebt Leibniz dem Körper eine Bedeutung, welche
+dem ursprünglichen Begriffe desselben widerstreitet, und zwar steigert sich mit
+jedem Punkte \emph{die Selbständigkeit des Körpers,} der sich mit jedem Schritt
+weiter aus dem Reich und dem Regime der Monade entfernt. Die \textit{substantia
+completa} erklärt: der Körper ist nicht \emph{Moment,} sondern \emph{Theil der
+Monade;} die \textit{harmonia præstabilita} erklärt: der Körper ist nicht
+\emph{Theil der Monade,} sondern \emph{selbst Monade oder Substanz;} endlich das
+\textit{vinculum substantiale} erklärt: der Körper ist überhaupt nicht Monade,
+sondern eine außer den Monaden befindliche \emph{materielle Substanz}.“ Kuno
+Fischer. Geschichte der neuern Philos. 2 Bd. S. 156.}. Charakteristisk er det, at
+Leibnitz ved at fuldende Dualismen tillige indleder Identiteten.
+% PRINTER'S DEFECT: this note is CLOSED with “ after "materielle Substanz."
+% but was never OPENED — the print begins plainly "In .... drei Punkten"
+% with no „ (verified at 300 dpi). That is the one unmatched mark in this
+% fragment; left as printed. The German of this note is Fraktur; only the
+% Latin technical phrases are antiqua.
+
+Hos Cartesius er Vexelvirkningen mellem Sjæl og Legeme endnu ikke
+ophørt\footnote{\textit{Sciendum quoque, quod, licet anima sit juncta toti
+corpori, in illo tamen est quædam pars, in qua exercet suas functiones specialius
+quam in cæteris omnibus. Et vulgo creditur, hanc partem esse cerebrum aut forte
+cor}.... \textit{Sed rem accurate examinando, mihi videor evidenter cognovisse,
+partem eam corporis, in qua anima exercet immediate suas functiones, nullatenus
+esse cor, neque etiam totum cerebrum, sed solummodo maxime intimam partium ejus,
+quæ est certa quædam glandula admodum parva, sita in medio substantiæ ipsius, et
+ita suspensa supra canalem, per quem spiritus cavitatum cerebri anteriorum
+communicationem habent cum spiritibus posterioris, ut minimi motus, qui in illa
+sunt, multum possint ad mutandum cursum horum spirituum, et reciproce minimæ
+mutationes, quæ accidunt cursui spirituum, multum inserviant mutandis motibus
+hujus glandulæ. Passiones animæ per Renat. Descartes P. I. Articul. XXXI: Dari
+glandulam in cerebro, in qua anima suas functiones specialius quam in aliis
+partibus exerceat. Conf. Articul. XXXII: Quomodo cognoscatur, hanc glandulam esse
+præcipuam animæ sedem. Articul. XXXIV: Quomodo anima et corpus agant in se
+invicem. Concipiamus igitur hic, animam habere suam sedem principalem in
+glandula, quæ est in medio cerebri, unde radios emittit per reliquum corpus,
+opera spirituum, nervorum et ipsiusmet sangvinis, qui particeps impressionum
+spirituum eos deferre potest per arterias ad omnia membra.}}; hos
+Occasionalisterne er
+% This **) note runs over onto p. 429 and is transcribed WHOLE here.
+% Its last word is printed "membra" followed by a small mark that is
+% ambiguous at 600 dpi; read as a full stop (tesseract agrees), with the PDF
+% text layer's comma the rejected alternative.
+
+% --- p. 429 ---
+\setcounter{footnote}{0}
+% The Latin block at the head of p. 429's footnote area is the RUN-OVER of
+% p. 428's **) note, transcribed at its anchor above. No mark, no reset for it.
+Modsætningen imellem det Sjælelige og det Legemlige forsvindende i Forhold til
+Guds Almagt; først hos Leibnitz træder Almagten tilbage uden dog at erstattes af
+nogen physisk Vexelvirkning: Sjælen er som Monade i ingensomhelst Berøring med
+Legemet; hermed er Dualismen fuldendt.
+
+Fra en dobbelt Side har imidlertid Monadelæren antydet Identiteten af det Ideelle
+og det Materielle. Ved at opfatte Monaderne som Kraftpunkter har Monadologien for
+det Første fremstillet det Materielle som et Phænomen af det Ideelle, idet den
+for hver Monades Vedkommende har ladet Materien være et Udtryk for det Passive i
+dens individuelle Begrændsning, et Resultat af dens egne dunkle, forvirrede
+Forestillinger. Endvidere har Monadelæren, hvad Forholdet imellem Sjæl og Legeme
+særligt angaaer, søgt at erstatte den manglende physiske Vexelvirkning ved paa
+aristotelisk Maade at opfatte Sjælen som Legemets Entelechie\footnote{\textit{Et
+tale principium appellamus substantiale, item vim primitivam, ἐντελέχειαν τὴν
+πρώτην, uno nomine \emph{animam}, quod activum cum passivo conjunctum substantiam
+completam constituit. Commentatio de anima brutorum V p. 463--64.} Jvfr. Kuno
+Fischer. Anfr. Skr. S. 148.} og saaledes forhøie den
+teleologisk-metaphysiske Eenhed. Imidlertid er og bliver Standpunktet
+dualistisk; den mechaniske Synsmaade fremhersker i den Grad, at Organismen kun er
+opfattet som „levende Maskine“\footnote{Hvorledes Leibnitz, der opfatter Legemet
+som „en levende Maskine“, kan tilegne sig den aristoteliske Grundtanke, at
+Sjælen er Legemets Entelechie, kunde vel behøve en nærmere Forklaring. Alle
+mechaniske Bevægelser ere Rumsbevægelser (Stedforandringer). Chemien, der
+undersøger Qvalitetsforandringerne, nedsætter allerede de blotte Rumsbevægelser
+til et Underordnet og hæver sig derved over det abstract Mechaniske. Det maa
+udtrykkelig fremhæves, at den aristoteliske Philosophie, der ved sin Polemik mod
+Atomistiken og den philolaisk-platoniske Elementlære bekæmper den mechaniske
+Physik og lægger Vægt paa Stofforvandlingerne, er disponeret for en chemisk
+Naturanskuelse, medens den leibnitziske Monadelære, hvad det Legemlige angaaer,
+lægger afgjørende Eftertryk paa de udvortes Aarsager (\textit{causæ efficientes})
+og er i denne Henseende saa aldeles fortabt i det Mechaniske, at her end ikke.
+findes Spor af Chemisme. At der imellem saa modsatte Anskuelser ikkedestomindre
+kan finde en Tilnærmelse Sted, kan i Korthed oplyses. Naar Aristoteles
+(\textit{de anima}. II. c. 1) gjør Sjælen til Legemets Entelechie
+(\textit{ἐντελέχεια ἡ πρώτη σώματος φυσικοῦ ὀργανικοῦ, --- λόγος σώματος φυσικοῦ
+τοιουδὶ ἔχοντος ἀρχὴν κινήσεως καὶ στάσεως ἐν ἑαυτῷ}), altsaa til dets Form og
+bevægende Aarsag, saa tænker han ikke paa Aanden og dens ideelle Bevægelser, men
+kun paa Bevægelser, der sees i det Legemlige og forsaavidt foregaae i Rummet.
+Fra sit mechaniske Udgangspunkt kan Leibnitz da fastholde Bevægelsens Kategorie
+og udvikle Mechanikens Begreb saaledes, at det udvortes Endelige opløser sig i en
+indvortes Uendelighed. \textit{Mais les machines de la nature, c'est à dire les
+corps vivans, sont encore machines dans leurs moindres parties jusqu'à l'infini.
+Monadologie. Nr. 64. Oper. phil. p. 710.} Den ydre Hensigtsmæssighed (Maskinens
+Kjendemærke) bliver da paa denne Maade forandret til en indre Hensigtsmæssighed
+(Organismens Kjendemærke). \textit{Cette différence ne consistant pas seulement
+dans le degré, mais dans le genre même. Syst. Nouv. Nr. 10. p. 126.} De
+mechaniske Bevægelser i Organismen vise sig som Phænomener, der svare til
+Sjælebevægelserne i Tanker, Forestillinger og Begjæringer, men Sjælebevægelserne
+ere teleologiske.\par
+Med alt dette maae vi dog fastholde, at Leibnitzes Tilegnelse af den aristoteliske
+Entelechie kun skeer ved en Tilnærmelse, en fiin Accommodation, og at Leibnitz
+med Monadelæren vel har vidst at combinere, men ingenlunde i væsentlig Forstand
+at forene „die beiden Principien der Causalität und Teleologie, welche vor ihm
+den weltgeschichtlichen Gegensatz der Systeme und Zeitalter ausmachten.“ Kuno
+Fischer. Anfr. Skr. 2 Bd. S. 149.}.
+% This **) note is one paragraph short of two pages long and runs over onto
+% p. 430, where it fills the whole page; it is transcribed WHOLE here, with
+% its own paragraph break kept as \par.
+% PRINTER'S DEFECT inside it (on the p. 430 portion): a stray full stop after
+% "at her end ikke" — "…at her end ikke. findes Spor af Chemisme." Both OCR
+% witnesses read the stop and it is visible at 600 dpi, faintly inked. Left
+% as printed.
+% POLYTONIC GREEK, two places: "ἐντελέχειαν τὴν πρώτην" in the *) note and the
+% De anima definition in the **) note. Both set in italic antiqua Greek in the
+% print; breathings and the iota subscript of "ἑαυτῷ" read from the 300 dpi
+% image and checked against the PDF text layer, which keeps them. FLAGGED for
+% the caller: the sandbox compile recipe strips textalpha, so these need one
+% look on the real machine, like αὐτοζῶον on p. 380.
+% "\emph{animam}" sits inside a \textit{} run, so it will set upright rather
+% than letterspaced; the letterspacing is real (checked at 300 dpi).
+% A raised tick stands before "Rumsbevægelser" in this note (both OCR
+% witnesses pick it up); at 600 dpi it is a detached speck, like the one on
+% p. 417, and is not transcribed.
+
+% --- p. 430 ---
+% The whole of p. 430 below the two opening lines is the run-over of p. 429's
+% **) footnote, transcribed at its anchor above. No mark, no counter reset.
+% Its first two lines were eye-checked at 300 dpi: ordinary footnote Fraktur.
+% Doubled-Greek subdivision, RUN-IN and letterspaced, like αα) Dualisme.
+% (p. 424). spacing.py reported this page CLEAN and missed it.
+\emph{ββ) Identitetslæren.} Ved at gjennemreflectere Dualismen lærer man at
+indsee Nødvendigheden af en Identi-
+
+% --- p. 431 ---
+\setcounter{footnote}{0}
+tetslære. Identitetslærens Grundlag findes hos Spinoza. Den relative
+Selvstændighed, Cartesius har tillagt Substanserne: Sjæl og Legeme, er i Forhold
+til Gud, den absolute Substans, aldeles forsvindende; idet de relative Substanser
+tabe deres Selvstændighed, tabe de med det Samme deres Substantialitet og
+forvandle sig til Modificationer af een eneste uendelig Substans. Det er denne
+ene uendelige Substans med sine til Aand og Legeme svarende Attributer: Tænkning
+og Udstrækning, der er sin egen (\textit{causa sui}) og alle Tings Aarsag. Den
+ene og samme Tingenes Orden udgjør altsaa en Række af tænkende og en Række af
+udstrakte Existenser (\textit{res}), hiin dannende Aandeverdenen, denne
+Legemverdenen. Men Aand og Legeme ere een og samme Ting; de to Verdener ere to
+Sider af een og samme Verden\footnote{Kuno Fischer: Geschichte der neuern
+Phitosophie. 1ster Band. S. 396 flgd.}.
+% PRINTER'S DEFECT in this note: "Phitosophie" for "Philosophie" — a t where
+% an l belongs. Both OCR witnesses read t independently. Left as printed.
+
+Hvad der gjælder om alle Ting, gjælder naturligviis ogsaa om Mennesket. Som
+endeligt Væsen er Mennesket en Modus af den uendelige Substans, som Modus af
+Tænkningens Attribut \emph{Aand}, som Modus af Udstrækningens Attribut
+\emph{Legeme}. Det, hvorved Mennesket adskiller sig fra andre Ting, er med Hensyn
+til Udstrækningen et mere sammensat Legeme, og som Følge heraf da ogsaa, hvad
+Tænkningen angaaer, en mere sammensat Forestillen. Aanden er Legemets Idee
+(\textit{idea corporis}). Dersom det menneskelige Legeme var en Cirkel, saa vilde
+den menneskelige Aand være hverken mere eller mindre end Ideen af denne Cirkel.
+„Sjælen er“ --- for at bruge Lessings Udtryk --- „det sig tænkende Legeme og
+Legemet den sig udstrækkende Sjæl.“
+% "Aand" and "Legeme" are both letterspaced here, "Attribut" is not
+% (checked at 300 dpi). spacing.py reported this page CLEAN and missed both.
+
+Saa eenfold, overbevisende og uigjendrivelig Identitetslæren end ved første
+Øiekast maa synes, saa bliver den dog ved nærmere Eftertanke høist problematisk.
+Hvorledes kunne to saa grundforskjellige Attributer som Tænkning og Udstræk-
+
+% NET QUOTE BALANCE OF THIS FRAGMENT: −1, and it is a printed defect, not an
+% omission: the p. 428 *) footnote closes a quotation ("materielle Substanz.“")
+% that the compositor never opened. Everything else pairs, including the
+% „Hvor Mord og Drab … mod Ideen.“ quotation that legitimately crosses from
+% p. 419 to p. 420, and the p. 422 footnote's quotation, which crosses the
+% page boundary inside a single \footnote{}.
 
 % β) Psychophysiske Undersøgelser region (Phrenologie ~p. 438,
 % Psychophysik ~p. 444, Mathematisk Psychologie ~p. 453).
