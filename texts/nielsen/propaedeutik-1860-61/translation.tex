@@ -1,0 +1,1505 @@
+% ============================================================
+%  R. Nielsen, Forelæsninger over „Philosophisk Propædeutik“
+%  fra Universitetsaaret 1860--61 (Kjøbenhavn 1862, 482 pp.)
+%  "Lectures on 'Philosophical Propaedeutics' from the
+%   Academic Year 1860--61"
+%  TRANSLATION (English) — from the verified Danish transcription.tex,
+%  which is COMPLETE (pp. 1--482, check.py clean).
+%
+%  Method: prose translation of the whole book, built batchwise.
+%  The `% --- p. N ---` page-break comments are carried over from
+%  transcription.tex verbatim so the two files stay aligned line for line;
+%  chapter/section/subsection heads and \addcontentsline entries mirror the
+%  transcription 1:1. Unfilled spans carry
+%      % [text to be added: pp. X--Y]
+%  markers in reading order. See ../../../TRANSLATION-PLAYBOOK.md.
+%
+%  HOUSE STYLE / KEY TERMS. Settled against the sibling Nielsen and Brøchner
+%  translations in this repository, so that a reader moving between them
+%  meets the same English for the same Danish:
+%    den sunde Forstand      -> "sound understanding"      (in quotes, as printed)
+%    den sunde Menneskeforstand -> "sound human understanding"
+%    Anskuelse               -> intuition       (Anschauung)
+%    Forestilling            -> representation  (Vorstellung)
+%    sandselig / Sandsning   -> sensuous / sensation
+%    Erkjendelse             -> knowledge, cognition
+%    Tilværelse / Existens   -> existence
+%    Væren / det Værende     -> being / that which is
+%    Væsen                   -> essence
+%    Ophæve / Ophævelse      -> sublate / sublation (Aufheben)
+%    Modsigelseslære         -> Doctrine of Contradiction
+%    Mulighedslære           -> Doctrine of Possibility
+%    Tvetydighedslære        -> doctrine of ambiguity
+%    Grundsætning            -> fundamental principle / principle
+%    Sætning                 -> proposition (occasionally "principle")
+%    Skarpsindighed / Spidsfindighed -> acumen / over-subtlety
+%    Bestemmelse             -> determination
+%    Momenter                -> moments
+%    dialektisere            -> dialecticize (Nielsen's own coinage)
+%    Idee                    -> Idea (capitalized where the Hegelian item is meant)
+%  Hegelian capitals: Idea, Concept, Being, Spirit, Nature take a capital where
+%  Nielsen means the technical item; otherwise nouns are lower-cased, despite
+%  Danish orthography capitalizing every noun.
+%
+%  EMPHASIS. The transcription distinguishes THREE printed devices —
+%  \emph{} (letterspacing/Sperrsatz), \textit{} (antiqua against Fraktur,
+%  i.e. Latin/foreign words and italicized names), \textbf{} (bold Fraktur,
+%  used for run-in heads and for the opening question of a section).
+%  All three are carried over unchanged, span for span.
+%
+%  QUOTES. Danish „…“ -> ``…''; a quote inside a quote -> `…'.
+%  ONE DELIBERATE DEPARTURE: Nielsen frequently runs a sample proposition into
+%  his sentence unquoted, relying on the Fraktur/roman contrast and on Danish
+%  word order to set it off ("saasom: Sort er ikke hvidt, Tykt er ikke tyndt";
+%  "Sætte vi ubetinget: Dyr er Dyr"). English has neither resource, and the
+%  sentences become unreadable without a mark. Such propositions are therefore
+%  put in quotation marks here even where the print has none. This is the only
+%  systematic source of the English quote count exceeding the Danish; the
+%  running balance is still expected to be even.
+%  Greek is copied verbatim from the Danish (textalpha loaded); Latin tags
+%  stay Latin in \textit{}; the German and French quotations of the later
+%  parts are to be given verbatim followed by a bracketed English rendering.
+%
+%  FOOTNOTES. Nielsen's own notes keep the printed *) / **) marks, driven by
+%  the footnote counter with \setcounter{footnote}{0} after the page marker of
+%  every printed page carrying a note, exactly as in transcription.tex.
+%  TRANSLATOR'S notes are a separate apparatus: \tnote{...} sets a dagger and
+%  does not disturb the author's counter. They are used sparingly, at the FIRST
+%  occurrence of a technical term whose 19th-century sense diverges from
+%  present-day English, and for the book's internal cross-references.
+%
+%  CROSS-REFERENCES. Nielsen cites his own earlier books by short title:
+%    "Propæd." / "Propædeut."   = Philosophisk Propædeutik i Grundtræk (1857)
+%    "Philos. og Mathem."       = Philosophie og Mathematik (1857 lecture)
+%    "Mathem. og Dialekt."      = Mathematik og Dialektik
+%  These are left as he gives them and glossed once, at the first occurrence.
+%
+%  PRINTER'S DEFECTS in the Danish are logged at their site in the
+%  transcription and cannot be reproduced in English; where one affects the
+%  sense, a % comment marks the spot here too.
+%
+%  STATUS: IN PROGRESS.
+%    DONE — Forord; I. The Concept of Philosophy, pp. 1--29 and the dialogue's
+%           tail on p. 30 (A. Doctrine of Contradiction; B. Doctrine of
+%           Possibility; C. Dialectic, with the two dialogues "Something and
+%           Other" and "Concept and Existence").
+%    NEXT — % [text to be added: pp. 30--38] — II, Almindeligt/General Remarks.
+% ============================================================
+\documentclass[12pt,a4paper]{book}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{libertinus}
+\usepackage{libertinust1math}
+\usepackage{textalpha}   % Greek typed directly (α) β) γ) subdivision marks)
+\usepackage{graphicx}    % \reflectbox, for the old »ɔ:« id-est mark
+\usepackage{tikz}        % the affinity/branching schemes, pp. 95, 96, 389
+\usetikzlibrary{decorations.pathreplacing}
+
+% Double-decomposition scheme, as printed on pp. 95 and 96 — kept identical to
+% the transcription's macro so the later batches can reuse it unchanged.
+\newcommand{\decompscheme}[6]{%
+  \begin{center}
+  \begin{tikzpicture}[baseline,every node/.style={inner sep=1.5pt,outer sep=2pt}]
+    \node[anchor=west] (r1) at (0,2.55) {#1};
+    \node[anchor=west] (r2) at (0,1.70) {#2};
+    \node[anchor=west] (r3) at (0,0.85) {#3};
+    \node[anchor=west] (r4) at (0,0.00) {#4};
+    \node[anchor=west] (p1) at (5.4,2.125) {#5};
+    \node[anchor=west] (p2) at (5.4,0.425) {#6};
+    \draw[decorate,decoration={brace,amplitude=5pt}]
+         (-0.22,2.85) -- (-0.22,1.40);
+    \draw[decorate,decoration={brace,amplitude=5pt}]
+         (-0.22,1.15) -- (-0.22,-0.30);
+    \draw (r1.east) -- (p1.west);
+    \draw (r3.east) -- (p1.west);
+    \draw (r2.east) -- (p2.west);
+    \draw (r4.east) -- (p2.west);
+  \end{tikzpicture}
+  \end{center}}
+\DeclareUnicodeCharacter{0254}{\reflectbox{c}}  % ɔ (U+0254) = reversed c
+\DeclareUnicodeCharacter{0186}{\reflectbox{C}}  % Ɔ, for CIƆ IƆCLXXVII on p. 425
+
+\usepackage[english]{babel}
+\usepackage[protrusion=true,expansion=true]{microtype}
+\usepackage{setspace}
+\usepackage[margin=1.2in]{geometry}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\setlength{\headheight}{28pt}
+\addtolength{\topmargin}{-13.5pt}
+
+% Nielsen's own footnotes, as printed: *) for a page's first note, **) for its
+% second. The counter is reset by an explicit \setcounter{footnote}{0} placed
+% after the % --- p. N --- marker of EVERY printed page that carries a note,
+% exactly as in transcription.tex.
+\renewcommand{\thefootnote}{\ifcase\value{footnote}\or *)\or **)\or ***)\fi}
+
+% Translator's notes: a dagger, and the author's counter left untouched.
+\newcommand{\tnote}[1]{%
+  \begingroup
+  \renewcommand{\thefootnote}{\textdagger}%
+  \footnote{\emph{Translator's note.} #1}%
+  \addtocounter{footnote}{-1}%
+  \endgroup}
+
+\usepackage{hyperref}
+
+\hypersetup{
+  pdftitle={Lectures on ``Philosophical Propaedeutics'' from the Academic Year 1860--61},
+  pdfauthor={R. Nielsen},
+  hidelinks
+}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LE,RO]{\thepage}
+\fancyhead[RE]{\textit{Lectures on ``Philosophical Propaedeutics''}}
+\fancyhead[LO]{\textit{\leftmark}}
+
+\setstretch{1.3}
+
+\title{\textbf{Lectures}\\[4pt]
+  \large on\\[4pt]
+  \textbf{\large ``Philosophical Propaedeutics''}\\[6pt]
+  \large from the Academic Year 1860--61\\[10pt]
+  \normalsize translated from the Danish by H.\ Halvorson}
+\author{R.\ Nielsen}
+\date{Copenhagen: Published by the Gyldendal Bookshop (F.\ Hegel), 1862}
+
+\begin{document}
+\maketitle
+\thispagestyle{empty}
+\newpage
+
+\tableofcontents
+\newpage
+
+%% ============================================================
+%%  TRANSLATOR'S NOTE ON TERMINOLOGY  (not in the Danish)
+%% ============================================================
+\chapter*{Translator's Note on Terminology}
+\addcontentsline{toc}{chapter}{Translator's Note on Terminology}
+\label{ch:tnote}
+
+Nielsen lectured in 1860--61 in a philosophical Danish that had been formed on
+German models, and much of his vocabulary is a set of Danish calques on Kantian
+and Hegelian terms. A few of these words have modern English cognates that mean
+something quite different, and a reader who takes them at face value will be
+misled. The renderings below are used consistently throughout; a dagger
+footnote marks the first occurrence of each in the text.
+
+\begin{description}[leftmargin=2.2em,style=nextline,itemsep=2pt]
+
+\item[\emph{den sunde Forstand} --- ``sound understanding''] Literally ``the
+healthy understanding''; the standing Danish equivalent of German
+\textit{der gesunde Menschenverstand}, and close to English ``common sense.''
+But \emph{Forstand} is \textit{Verstand}, the understanding as opposed to
+reason, and Nielsen's whole argument turns on its being a \emph{faculty} that
+can be shown to contradict itself --- not a stock of shared opinion. He almost
+always sets it in quotation marks, and those are preserved. The fuller form
+\emph{den sunde Menneskeforstand} is given as ``sound human understanding.''
+
+\item[\emph{Anskuelse} --- ``intuition''] \textit{Anschauung}: the immediate
+presentation of an object to sense, in Kant's technical sense. Never
+``opinion'' or ``view,'' which is what the cognate suggests in modern Danish.
+
+\item[\emph{Forestilling} --- ``representation''] \textit{Vorstellung}: the
+mental image or presentation, standing between sensation and concept. Nielsen's
+argument at pp.~10--11 depends on the contrast between what can be
+\emph{thought} and what can be \emph{represented} --- a round square can be
+thought, he says, but not represented.
+
+\item[\emph{sandselig, Sandsning, Sandseindtryk} --- ``sensuous, sensation,
+sense-impression''] \textit{sinnlich}: pertaining to the senses. ``Sensuous''
+here carries none of the modern connotation of ``sensual.''
+
+\item[\emph{Skarpsindighed} / \emph{Spidsfindighed} --- ``acumen'' /
+``over-subtlety''] A matched pair in Danish (\emph{skarp} = sharp,
+\emph{spids} = pointed) that English cannot match morphologically. The first is
+the virtue of exact analysis; the second is its vice --- subtlety that dazzles
+by distinctions only half true. Distinguishing them is the business of
+Part~I.A, and Nielsen insists the same utterance may be either.
+
+\item[\emph{Menen} / \emph{Viden} --- ``opining'' / ``knowing''] The Platonic
+$\delta\acute{o}\xi\alpha$/$\dot{\epsilon}\pi\iota\sigma\tau\acute{\eta}\mu\eta$
+distinction. Nielsen puns on it at p.~22 (``the question is not of opining but
+of knowing --- still, what is your opinion?'').
+
+\item[\emph{Ophæve, Ophævelse} --- ``sublate, sublation''] \textit{aufheben}:
+at once to cancel, to preserve and to raise up. Where the context is plainly
+non-technical the ordinary ``cancel'' or ``annul'' is used instead.
+
+\item[\emph{Tvetydig} / \emph{Tvesidig} --- ``ambiguous'' / ``two-sided'']
+Another pair the English breaks: literally ``two-meaninged'' and
+``two-sided.'' Nielsen's definition of dialectic at p.~15 is that it is the
+science which discovers the two-\emph{sided} in the two-\emph{meaninged}.
+
+\item[\emph{Grund} / \emph{Følge} --- ``ground'' / ``consequent'']
+\textit{Grund}/\textit{Folge}, the logical pair, not cause and effect.
+
+\item[\emph{dialektisere} --- ``dialecticize''] Nielsen's own verb, and
+deliberately ungainly in Danish too: to derive one thing from another by
+dialectic. It is kept rather than paraphrased, since the dialogue of pp.~24--28
+turns on the question of what can and cannot be so derived.
+
+\item[\emph{Grundsætning} / \emph{Sætning} --- ``fundamental principle'' /
+``proposition''] \emph{Sætning} does duty for both ``sentence,''
+``proposition'' and ``theorem''; where Nielsen means one of the laws of
+thought, ``principle'' is used.
+
+\item[\emph{diversi respectus}] Left in Latin, as Nielsen leaves it: the
+scholastic maxim \textit{diversi respectus tollunt omnem contradictionem} ---
+different respects remove every contradiction. It is the hinge of the first
+dialogue, and translating it would blunt the joke that B.\ has never troubled
+to study what a \emph{respectus} is.
+
+\end{description}
+
+\noindent
+Nielsen cites three of his own earlier books by short title, without further
+identification: \textit{Propæd.} or \textit{Propædeut.} is
+\textit{Philosophisk Propædeutik i Grundtræk} (Copenhagen 1857);
+\textit{Philos.\ og Mathem.} is \textit{Philosophie og Mathematik};
+\textit{Mathem.\ og Dialekt.} is \textit{Mathematik og Dialektik}. These are
+left in Danish, as he gives them. All page references in such citations are to
+the Danish originals.
+
+\bigskip
+\noindent
+Nielsen's own footnotes are marked, as in the print, \hbox{*)} and \hbox{**)};
+translator's notes are marked with a dagger and open with the words
+\emph{Translator's note}.
+
+\newpage
+%% ============================================================
+%%  PREFACE  (Forord; unpaginated, PDF 9--10)
+%% ============================================================
+\chapter*{Preface}
+\addcontentsline{toc}{chapter}{Preface}
+\label{ch:forord}
+
+% --- Forord, PDF 9 ---
+Should the present work attract any attention, the interest taken in it will
+doubtless be of two kinds. With the question of the possible worth of its
+contents, most readers, keeping to the letter of the title, will surely join a
+second and more practical question: \emph{on what principles, and to what
+extent, was the philosophical propaedeutic here delivered to the students?}
+
+As regards this latter question, it will not be enough to remark merely that
+the motives, leading ideas and whole design of the present exposition
+correspond to the oral lectures, but that in matters of detail a good deal has
+been altered, something added, something else omitted, and so forth; the reader
+will think himself entitled to a clearer account.
+
+It is therefore expressly noted that, apart from a few less considerable
+editorial changes, the whole of the first part, pp.~1--30, is a
+straightforward reproduction of the lectures as delivered. The same holds of
+the introductory piece of the second part, \emph{General Remarks}, pp.~30--39;
+of Philosophy's Relation to Mathematics, pp.~39--63; of Philosophy's Relation
+to Chemistry, pp.~81--100 and pp.~135--177;
+% --- Forord, PDF 10 ---
+and of Philosophy's Relation to Physiology, pp.~177--180, pp.~199--288,
+pp.~386--437, pp.~475--482.
+
+In the presentation of the remaining portions, by contrast, considerable
+changes have been made. The section on the psychophysical investigations was
+not touched upon at all in the oral lectures; sharper and further-reaching
+analyses have been introduced here and there; and it goes without saying that
+by far the greater part of the contents of the notes was added in the course of
+the revision.
+
+Since the effort to give the treatment of the physiological problems in
+particular that fullness which investigations of so intricate a nature can
+hardly do without brought with it a considerable expansion of the second part,
+the third part --- Philosophy and Academic Study --- has been confined to a
+bare statement of its moments, and is appended as a separate part only in order
+to exhibit the course of the whole.
+
+\noindent 11 June 1862.
+
+\begin{flushright}
+\textbf{R.~Nielsen.}
+\end{flushright}
+
+% (double rule below the signature, closing the Forord as printed)
+
+%% ============================================================
+%%  I. THE CONCEPT OF PHILOSOPHY  (pp. 1--29)
+%% ============================================================
+\chapter*{I.\\ The Concept of Philosophy.}
+\addcontentsline{toc}{chapter}{I. The Concept of Philosophy}
+
+% --- p. 1 ---
+% (chapter opening; no header numeral on this page, signature "1" at foot)
+\section*{A.\\ The Doctrine of Contradiction.}
+\addcontentsline{toc}{section}{A. The Doctrine of Contradiction}
+
+\textbf{What is philosophy?} ``A science full of contradictions!'' However much
+this definition may seem, viewed from one side, designed to pass sentence on
+philosophy altogether, it is nonetheless well founded, both in the history of
+the science and in the nature of the case. For any other science such an
+admission would be annihilating; for philosophy it furnishes an essential
+starting point, a dependable fulcrum, a firm and unshakable foundation. That
+philosophy must contain contradictions is a matter of course, since it is
+precisely the science which everywhere discovers and exhibits contradictions
+--- in existence itself no less than in sound understanding's\tnote{%
+\emph{Den sunde Forstand}: the Danish equivalent of German \textit{der gesunde
+Menschenverstand}, and close to English ``common sense.'' But \emph{Forstand}
+is \textit{Verstand}, the understanding as against reason, and Nielsen's
+argument turns on its being a faculty that can be shown to contradict itself.
+He sets it in quotation marks almost everywhere, and those are kept. See the
+Translator's Note on Terminology.} grasp of existence (Propæd.\ pp.~40--44)%
+\tnote{Nielsen's short titles for his own earlier books, cited throughout
+without further identification: \textit{Propæd.} (also \textit{Propædeut.}) is
+his \textit{Philosophisk Propædeutik i Grundtræk} (Copenhagen 1857);
+\textit{Philos.\ og Mathem.} is \textit{Philosophie og Mathematik};
+\textit{Mathem.\ og Dialekt.} is \textit{Mathematik og Dialektik}. Page numbers
+refer to the Danish originals.} --- and it is just in this respect that
+philosophy is to be understood as a \emph{general doctrine of contradiction}.
+
+As a doctrine of contradiction, however, philosophy must not merely discover
+and exhibit contradictions; it must also test them, for there are differences
+among contradictions. Some are superficial, unnecessary, easily avoided; others
+are insistent and not to be waved aside. Some creep in through thoughtlessness,
+others
+% --- p. 2 ---
+are manufactured by over-subtlety, others again brought to light by
+acumen.\tnote{\emph{Spidsfindighed} and \emph{Skarpsindighed} form a matched
+pair in Danish (\emph{spids} = pointed, \emph{skarp} = sharp) that English
+cannot match. The first names the vice of subtlety that dazzles by
+half-true distinctions; the second the virtue of exact analysis. Distinguishing
+them is the business of this section, and Nielsen insists that one and the same
+utterance may be either.} Some contradictions play about as in a game of
+thought; others mark essential knots, difficult problems not easily untied.
+
+The following examples may serve to show how necessary it is, where
+contradictions are concerned, to distinguish the superficial from the
+essential, the acute from the over-subtle.
+
+\textbf{The Liar} (ψευδόμενος). This contradiction is put as follows: when
+someone says that he is lying, is he lying in that very statement, or is he
+telling the truth? The answer demanded is either yes or no. ``Yes, he is
+lying!'' --- And he says so himself, calls the thing by its right name, says
+what is true, and hence is not lying. ``No, he is not lying, he is speaking the
+truth!'' --- Then one must believe what he says; but what he says is precisely
+that he is lying; and if it is true that he is lying, then he is not speaking
+the truth.
+
+That there is a contradiction here, sound understanding can readily grasp; but
+what sort of contradiction is it, and where does the fault lie?
+
+\textbf{Equal Magnitudes.} That a magnitude is equal to itself, and that two,
+three~.\,.\ magnitudes are equal to one another --- in this sound
+understanding sees no contradiction. But if it were asserted that two
+magnitudes cannot possibly be equal to one and the same third, and hence equal
+to each other, because that would be a contradiction, sound understanding would
+feel itself affronted. Is there then really any contradiction whatever in the
+proposition just cited? To see what is actually being spoken of here, one must
+expressly note that the talk is not of things that have magnitude but of
+magnitudes. If the talk were not of magnitudes themselves but of things that
+have magnitude --- an apple, say, a triangle, an hour, and so on --- there
+would certainly not be a trace of contradiction. That two triangles, each of
+which is equal to one and the same
+% --- p. 3 ---
+third, are equal to one another, goes without saying. So long as we have to do
+with concrete magnitudes, difference and plurality can coexist perfectly well
+with equality; but when it is pure magnitudes that are in question, the matter
+stands otherwise. A plurality of magnitudes necessarily presupposes that the
+one can be distinguished from the other: without mutual difference, no
+plurality. But by what should pure magnitudes be distinguished from one another
+if not by size? If the magnitudes are equal to one another, then every glimmer
+of difference has vanished, and with it the plurality: to say that several
+magnitudes are equal to one another is therefore to say, in other words, that
+they are not several but one and the same magnitude, which, however many times
+it be repeated, is not thereby multiplied but remains the very same.
+
+Should ``sound understanding'' wish to reject this consequence because there is
+something offensive about it, that can hardly be done out of hand by a mere
+dictum of authority; a sensible rejection must set about showing wherein the
+difficulty consists and how it is to be removed. If one and the same magnitude
+can, by being named twenty times, become twenty magnitudes equal to one
+another, then one and the same species must likewise be able, by being named
+twenty times, to become twenty species; but if it is not enough to repeat the
+same magnitude --- if in repeating it a difference must also be thought ---
+then where is that difference to come from?
+
+\textbf{The Instant.}\tnote{\emph{Øieblikket}: literally ``the eye-blink,'' the
+smallest unit of time. ``Instant'' is used rather than ``moment'' throughout,
+to keep the word clear of the Hegelian \emph{Moment} that Nielsen also
+employs.} If the old question --- when did Socrates die? --- is answered by
+pointing to the year of his death, sound understanding will hardly suspect any
+contradiction in that. Unless indeed it be that Socrates has no year of death
+at all, inasmuch as he did not take a year over dying: he was hale and healthy
+through the whole of that last year, until he drank from the cup. But if, in
+accordance with a well-known and warranted usage, one means by his year of
+death the year in which the day of his
+% --- p. 4 ---
+death fell, then there is no contradiction here. If it be objected that he did
+not take a whole day over dying either --- well then, let one think of the hour
+of his death; and if one will go to the very limit, of the instant of his
+death. So then: when did Socrates die? ``At the instant he ceased to live!''
+But this answer, which tells us only that he died when he died, is no answer at
+all. The question concerns the point of time in Socrates' existence at which
+his death occurred. To specify this point of time, four cases may be conceived:
+either he died α) while he was still living, or β) when he was already dead, or
+γ) when he was partly living and partly dead, or δ) when he was neither living
+nor dead. But α) to die while one is still living, to be a living dead man, is
+surely a contradiction. And to die when β) one is already dead is surely a
+contradiction too. The instant at which Socrates died must therefore have been
+the instant when, lying on the border between life and death, he was in such a
+condition that one part of him --- his feet, say --- was already dead while
+another part was still alive. By this explanation, however, the question is not
+answered but only pushed further back; for the question then is: when did the
+already dead part die? If the answer is that the already dead part died when it
+was still partly alive and partly dead, then the contradiction concealed in
+case γ) becomes obvious. And to conceive Socrates in a condition in which he
+was neither living nor dead is, finally, likewise to conceive a contradiction
+(δ); for how long does a living thing live? Until it dies!
+
+\emph{``A philosophy that stands in open contradiction with `sound
+understanding' is false; a philosophy that conforms itself immediately to sound
+understanding is superficial. Philosophy does not wish arbitrarily to
+contradict the natural understanding, but only to show that so-called sound
+sense, without having
+% --- p. 5 ---
+any inkling of it, incessantly contradicts itself.''} (Propæd.\ p.~41).
+
+In so far as contradictions of these various kinds develop in the course of
+thinking, and their origin is viewed from the subjective side, the
+psychological share that reflection has in the contradictions offensive to
+``sound sense'' must be determined more closely. The aberrations belonging here
+may be briefly characterized as the \emph{eristic}, the \emph{over-subtle} and
+the \emph{sophistical}.
+
+The striking mark of eristic is a one-sided bent for quarrel and strife, a
+delight in shining everywhere by objections, in raising difficulties, in
+tearing down what is generally accepted and stubbornly defending one's own
+divergent claims. As for ancient philosophy, it is above all the Megarian
+school, akin to the Eleatic, that has earned the name of eristic; but neither
+can it be denied
+% (a small stray mark stands between "kan" and "heller" in the Danish print;
+%  see the transcription's note at this site)
+that every distinctively developed form of philosophy has its polemical
+element, and that eristic, for all its dark sides, is to that extent of
+unmistakable importance in the development of the science. For insight and
+knowledge it is not enough that one form what is commonly called a reasonable
+opinion about things, and, by combining sense-impressions with natural
+judgment, be led to distinguish correct from incorrect, acceptable from
+objectionable opinions; by means of opinions one attains only the probable, not
+the true. Whoever would rise from mere opining to knowing\tnote{%
+\emph{Menen} and \emph{Viden}, the Platonic pair
+$\delta\acute{o}\xi\alpha$/$\dot{\epsilon}\pi\iota\sigma\tau\acute{\eta}\mu\eta$.
+Nielsen returns to the pun at p.~22.} must arm himself against the deceptions
+of sense, let thought test what has been accepted, and acknowledge as true only
+what admits of being thought --- declaring untrue, without regard to the
+multitude's otherwise unimpeachable opinions, everything that does not admit of
+being thought. That philosophy, on these terms, must come into manifold
+conflict with sound human understanding is evident. (Cf.\ Philos.\ og
+Mathem.\ p.~12, note; Mathem.\ og Dialektik pp.~34--35, pp.~116--117,
+pp.~131--32, etc.)
+% --- p. 6 ---
+Rigorous analysis of concepts demands acumen; but acumen that is one-sided and
+unfruitful, dazzling by distinctions which are subtle yet only half true or
+even untrue, yields over-subtlety. Easy as it is to state the difference
+between acumen and over-subtlety so long as one keeps to generalities, it is
+just as impossible to lay down a rule valid for every particular case; for one
+and the same utterance may, seen from one side, look over-subtle, and yet, seen
+from another, bear the stamp of sound and genuine acumen. The contradiction set
+up in ``the Liar'' may serve as an example. If the task is to drive home the
+truth that one should not undertake off-hand to answer every question, since
+there are questions whose apparently clear and easily grasped sense proves on
+closer inspection to be senseless, then ``the Liar'' may stand as a model of
+genuine acumen. If, on the other hand, one guilelessly takes up the answer
+demanded --- and does so in such a way that, watching with astonishment as the
+affirmation turns into a denial and the denial back into an affirmation, one
+ends by imagining oneself before some deep riddle, some exceedingly intricate
+knot whose solution may perhaps shed a hitherto unknown light upon ``the
+eternal truths'' --- then over-subtlety has outwitted sound understanding and
+caught it in its web.
+
+In secret league with over-subtlety and hair-splitting we find sophistry. The
+sophist is not content to exhibit contradictions; he manufactures
+contradictions, plays with contradictions, draws inferences, and dazzles by
+false inferences. For it is one thing to bring contradictions into relief,
+another to misuse them in the service of sophistic; how great the difference is
+may be seen, for instance, from what was said above about ``the Instant.'' No
+sensible person can regard it
+% --- p. 7 ---
+as sophistry to call attention to the contradictions upon which thought must
+necessarily strike when it tries to give an account of the meaning of the
+instant; only when it is a question of the use made of the
+contradictions does sophistry become recognizable, by what is false, untenable
+and dazzling in the inferences. Thus if anyone were to infer, from the
+contradictions contained in the thought of the instant of death, the
+unthinkability of death, and from the unthinkability of death its
+impossibility, and were then to build upon that a new proof of the immortality
+of the soul, fitted out with a peculiar acumen, we should have to consider him
+a sophist.
+
+% (section rule as printed)
+\section*{B.\\ The Doctrine of Possibility.}
+\addcontentsline{toc}{section}{B. The Doctrine of Possibility}
+
+If philosophy as a doctrine of contradiction is not to dissolve into
+over-subtlety and sophistry, it must always find itself able, from one side or
+another, to master the contradictions. It must then be able to determine their
+relation both to things and to our reflections upon things, both to objective
+being and to subjective thinking; in seeing through the essence of
+contradiction it must discover the marks of what is in itself thinkable and
+what is in itself unthinkable, and thereby, so to speak, wring from
+contradiction a dependable measure of the acceptable and the objectionable, the
+reasonable and the absurd, the possible and the impossible: a thoroughgoing
+doctrine of contradiction is inseparable from a \emph{general doctrine of
+possibility}.
+
+\textbf{What, then, is philosophy?} ``A doctrine of the possible.'' But since
+philosophy cannot possibly be a doctrine of everything possible, this Wolffian
+definition is satisfactory only on condition that the concept of possibility
+--- its extension, its content, and its relation to contradiction --- be
+exactly determined. The principle that everything is possible which does not
+contain a contradiction (\textit{possibile est, quod non implicat
+contradictionem}) --- which in turn presupposes that everything containing a
+% --- p. 8 ---
+contradiction is impossible --- will, on the strength of what has gone before,
+hardly furnish a dependable guiding line, whether dogmatic or critical.
+
+In the first place it is self-evident that the principle as stated specifies
+possibility only formally, and is therefore unfit to orient us with respect to
+the real possibilities. Even if for the time being we declare everything that
+contains a contradiction impossible, and everything that does not contain a
+contradiction possible, the concept of possibility so given will still be so
+negative, so empty and unsettled, that it cannot be brought into any positive
+connection whatever with the actual. To determine the possibilities that hold
+in actuality, it is necessary to know actual things together with their
+conditions and laws; and knowledge of actual things is reached only by the road
+of experience. Without the correctives of experience, dogmatizing thought with
+its empty concepts will be as readily tempted to set the real possibilities too
+narrow bounds as to allow them too wide a play. Or who, back in the days when
+Wolff was fixing the bounds and defining the possibilities, would have seen the
+possibility that ships should be able to go both against wind and against
+current; that carriages without horses should be able to run --- not like
+horses, but swift as flying birds; or the possibility that a man in London
+should be able to correspond with a man in Calcutta as quickly and easily as if
+they were talking together? So long as philosophy, with its formal concepts and
+definitions, attempts to exhaust existence and to set itself up as judge over
+what is possible and impossible in actuality, so long will sound human
+understanding have manifold occasion for the triumphant application of Hamlet's
+words: \textit{There are more things in heaven and earth, Horatio, than are
+dreamt of in your philosophy.}
+
+But even if philosophy gives up trying to fathom the positive, empirical
+content of the real possibilities, it may
+% --- p. 9 ---
+still contribute essentially to purifying and heightening our knowledge of the
+possible, provided only that it can secure for us the negative side of
+possibility by determining the impossible. Now if the impossible can be known
+only as what is in itself unthinkable, and if the unthinkable must always be
+recognizable by contradiction, then the fundamental question presses itself
+upon us of its own accord: \emph{how, then, does the contradictory stand to the
+thinkable?} Here we are at a decisive turning point.
+
+In presupposing without more ado the unity of thinking and being, dogmatic
+philosophy proceeds at the same stroke from the assumption that the
+contradictory is unconditionally an unthinkable, and the unthinkable an
+impossible. But is the contradictory really unthinkable in every respect?
+
+\emph{``What does contradiction mean? An existing nothing is a contradiction; a
+round square is a contradiction; a flying horse is a contradiction too. And yet
+these contradictions are of different kinds.''} (Propæd.\ p.~43).
+
+If what is contradictory in itself is straightway unthinkable, how then does
+thought come to apprehend this unthinkable? How does it happen that we not only
+understand what is meant by the word ``contradiction,'' but also see clearly
+what lies in the essence of contradiction? If we set, say, ``something''
+against ``nothing,'' ``that which is'' against ``that which is not,'' thought
+finds it just as easy to grasp the negative as to grasp the positive; and if we
+set the proposition ``that which is, is'' against the proposition ``that which
+is, is not,'' one notices at once that a conflict between subject and predicate
+is as evident to thought as an agreement. But if thought apprehends the
+conflict as readily as the agreement, sees through an existing nothing as
+clearly as an existing something, and so far finds the former as thinkable as
+% --- p. 10 ---
+the latter --- how then can what is in itself conflicting and contradictory
+show itself to thought as an unthinkable, and this unthinkable coincide with
+the impossible?
+
+To extricate oneself from the difficulty, let one try letting representation
+come to the support of thinking.\tnote{\emph{Forestilling} is
+\textit{Vorstellung}, the mental presentation or image standing between
+sensation and concept; \emph{Anskuelse}, just below, is
+\textit{Anschauung}, intuition in Kant's technical sense --- never ``opinion''
+or ``view.'' The whole argument of this page turns on the contrast between what
+can be \emph{thought} and what can be \emph{represented}.} Pure, abstract
+thinking, detached from all intuition and representation, does indeed grasp the
+negative as readily as the positive, since the negative is precisely
+abstraction's own abstract product; but when the light of intuition dawns, when
+representation joins in, the opposition between the positive and the negative,
+between something and nothing, becomes conspicuous. For something admits of
+being intuited, whereas nothing, pure nothing, does not; to the positive there
+answers a representation, but nothing --- the negative --- repels every
+representation, and is for that reason in turn repelled and rejected by
+representation.
+
+How thinking, by being combined with representation, comes to apprehend the
+contradictory as the unthinkable, and the unthinkable as the impossible, may be
+seen from the example of the round square. The proposition ``the square is
+round'' can indeed be thought, in so far as the predicate's conflict with the
+subject can be thought; but the round square cannot be represented, since the
+representation of the round displaces and effaces the representation of the
+square. Thought, seeing that the round square makes a demand upon
+representation which representation must reject, now brands the contradiction
+as something objectionable, declares the round square an unthinkable, and this
+unthinkable an impossible. That it is precisely intuition and representation
+which in such cases must help thought to discover the unthinkable is seen not
+only from propositions in whose components representation manifestly rules ---
+``black is not white,'' ``thick is not thin'' --- but also from examples that do
+not directly display the contradiction in their words and manner of expression,
+as when one asks: is
+% --- p. 11 ---
+a regular hexahedron possible?\tnote{The example is puzzling as it stands,
+since the regular hexahedron is simply the cube. Nielsen's point is presumably
+that these are questions whose answer cannot be read off the words --- unlike
+``black is not white'' --- so that intuition must be consulted before one can
+say whether a contradiction is present at all.} is it possible for a line
+parallel to an ellipse to be an ellipse? and so on.
+
+If only we could rely on intuition and representation to furnish, always and in
+every case, infallible marks of the thinkable and the unthinkable, we should at
+least have something firm to hold to here; but now look at the example of the
+flying horse! Natural sense surely feels that under the name ``flying horse'' a
+contradiction lies hidden. But to whom is sound human understanding now to turn
+to have the contradiction cleared up? To thinking! That is no help: pure
+thinking thinks everything, the unthinkable included. To intuition! No help
+either: intuition lives with the poet, and the poet rides Pegasus, and Pegasus
+reconciles intuition with every winged horse. To a union of thinking and
+intuition! But how can a union of two unreliables yield anything reliable? To
+sense-impressions! Sense-impressions can indeed, in union with thinking, teach
+us something about the possible, in so far as they teach us something about the
+actual, of course; but what do they teach us about the merely possible, and
+what could they possibly teach us about what is in itself contradictory and
+impossible?
+
+To determine the relation of possibility to contradiction, it is above all
+necessary to grasp \emph{the principle of contradiction} --- its form, its
+validity, its application.
+
+In formal logic we find the propositions of identity and of contradiction set
+out so separately that we are thereby supplied not merely with two fundamental
+principles but, into the bargain, with two independent principles. If there is
+really anything in this duality of principles, we should expect some account of
+the difference of principle between them. But wherein is the difference
+supposed to consist? To explain the proposition of identity --- \textit{A} is
+what \textit{A} is --- one slips in underneath it the proposition of
+contradiction: that \textit{A} is
+% --- p. 12 ---
+what \textit{A} is precisely because \textit{A} is not other, and cannot be
+other, than what \textit{A} is. Now if the principle of contradiction has had
+to do service in setting up pure identity --- and that, in the logical sense,
+before it was even born --- then it is no more than fair that the principle of
+identity, once born and the logical birth-pangs happily over, should in its
+turn help the principle of contradiction to due recognition. Why, then, is no
+thing what it is not? Answer: because every thing is what it is. And why is
+every thing what it is? Answer: because no thing is what it is not. In other
+words: when identity is asked after, one answers with contradiction; and when
+contradiction is asked after, one answers with identity. On closer inspection
+it must undeniably strike sound human understanding that there are here not
+really two fundamental principles but only one.
+
+Yet suppose that, in order so far as possible to avoid conflict with
+traditional forms, we let formal logic keep its two fundamental principles
+undiminished --- so that, for the sake of ``certainty'' and ``truth'' and
+``determination,'' ``statuation,'' ``whatness,'' ``decision,'' ``unanimity''
+and ``concordance,''\tnote{The list is ironic: Nielsen is parading the
+scholastic-sounding coinages under which formal logic defends its two
+principles. \emph{Hvadhed} is a Danish calque of \textit{quidditas},
+``whatness''; \emph{Statuering} is the laying down of something as established;
+\emph{Eenstemmighed} and \emph{Samstemmighed} are ``unanimity'' and
+``concordance.''} --- we held identity literally apart for itself and
+contradiction apart for itself: would such a holding-apart then perhaps help
+sound understanding to a clear and distinct insight into the relation between
+the contradictory and the impossible? At first glance it seems that some
+difficulty still remains. For if every \textit{A}, provided only that it is
+what it is, has by the principle of identity a claim to ``a valid is,'' then it
+looks almost as though the senseless and the thoughtless could likewise make a
+claim --- a valid claim --- to ``a valid is''; if every thing, provided only
+that it is not what it is not, can satisfy the principle of unanimity and
+concordance, why should the conflicting, the absurd, the self-contradictory and
+the foolish
+% --- p. 13 ---
+not be able to satisfy the principle of unanimity and concordance as well?
+
+But to overlook the principle of contradiction, still less to reject it, will
+not do at all; on the contrary, when thought attempts to deny the validity of
+the principle of contradiction, it is led by the very denial to confirm it. To
+posit ``black is white'' instead of ``black is not white'' is not only possible
+but reasonable and necessary if the corresponding contradiction is to be made
+properly plain; yet in being branded in this way as a contradiction, the
+contradiction vindicates the principle. The unthinkable, in this sense, is not
+a something that thought simply cannot think; the unthinkable is the thought
+which thinking itself condemns, in view of a purpose given within a given
+context --- a thought that comes into being only to vanish, a thought in whose
+sublation\tnote{\emph{Ophævelse}, Hegel's \textit{Aufhebung}: at once
+cancelling, preserving and raising up. Where the context is plainly
+non-technical, the ordinary ``cancel'' is used instead.} thinking recognizes
+its own law and satisfies itself. Only when the unthinkable is thus
+determinately set against the thinkable can the latter be called the logical
+mark of the possible and the former that of the impossible. Contradiction,
+then, logically regarded, cannot be abolished outright. Could the principle of
+contradiction abolish contradiction once and for all, it would at the same
+stroke render itself superfluous. But since thought cannot stir without
+contradiction --- its sting and its spur --- stirring too, the principle stands
+in force because the cooperation of contradiction stands in force; in order to
+determine the thinkable, sift the possible and dismiss the impossible, the
+principle of contradiction must incessantly contradict contradiction, must in
+resolving contradiction uphold contradiction.
+
+In the application of the principle of contradiction the difference between
+critical and dogmatic philosophy comes into view. Agreeing with dogmatism in
+setting contradiction outwardly hostile against thought and the movement of
+thought, critical philosophy then diverges from the dogmatic in this: that in
+the unthinkable it sees only the subjective side of the impossible, and not its
+% --- p. 14 ---
+objective side as well. When Kant attempts to think the origin of the world, he
+strikes, quite rightly, upon contradiction; the same recurs when he tries to
+think the essence of substantiality, of necessity and of freedom objectively.
+The acute thinker, consistent from his own point of view, is here so far from
+being rid of the contradictory that on the contrary, seeing contradiction tie
+its knots and settle into antinomies that cannot be waved aside (Propæd.\
+pp.~29--30; Mathem.\ og Dialekt.\ pp.~125--126), he declares it insuperable.
+The objective essence of the world belongs therefore, according to Kant, to
+what is for us unthinkable; but what does Kant infer from this? By no means
+that the reality of an objective world should on that ground be held impossible
+--- that is an inference which first arises with Fichte (Propæd.\ p.~33) ---
+no, the author of ``Kritik der reinen Vernunft'' warns precisely against
+precipitate inferences from the subjectively unthinkable to the objectively
+impossible. The separation of thinking and being, the original characteristic
+mark of critical philosophy, rests precisely on the presupposition that for the
+human understanding there are essential, necessary, insoluble contradictions.
+
+But are the Kantian antinomies really insoluble? That depends on whether one
+chooses to grant contradiction a merely subjective significance, or a
+significance at once subjective and objective. Such a choice cannot of course
+be arbitrary; it must follow from the nature of the case. If, then, it turns
+out that by denying the objective validity of contradiction, holding fast to
+the critical separation of thinking and being, and so rejecting every attempt
+to know ``\emph{the thing in itself},'' one by no means escapes contradiction
+but rather entangles oneself in new and greater contradictions --- what then?
+
+% (short centred rule after this paragraph, closing the discussion as
+%  printed at the foot of p. 14; p. 15 opens the next section)
+
+% I. The Concept of Philosophy continues; C. Dialectic region.
+% --- p. 15 ---
+\setcounter{footnote}{0}
+\section*{C.\\ Dialectic.}
+\addcontentsline{toc}{section}{C. Dialectic.}
+
+% FOOTNOTE MARK: the first footnote of the printing (below) is marked *) both
+% in the text and at the note, which is set off by a short rule; the note
+% continues at the foot of p. 16 without a repeated mark.
+
+What, then, is philosophy? ``A doctrine of ambiguity, a science of the
+ambiguous.'' The correctness of this definition seems at least to find ample
+confirmation in what has gone before. For although we did distinguish between
+acumen and over-subtlety, we had to admit that one and the same thing could be
+taken both as over-subtle and as not over-subtle; when it was a matter of
+separating the thinkable from the unthinkable, what came out was that the
+unthinkable was something that both could and yet could not be thought; and
+when it finally came to a resolution of contradiction, the upshot was that
+contradiction both could and could not be resolved. Should sound understanding
+find such a predilection for the ambiguous suspicious, let it be noted that the
+expression ``doctrine of ambiguity'' is itself ambiguous. While higher
+instruction in making the clear obscure, the distinct veiled and the
+intelligible unintelligible is always to be sought among the sophists,
+philosophy must contrive to set the ambiguous in another light --- a light that
+makes the ambiguity vanish. As the science which everywhere discovers the
+two-sided in the ambiguous,\tnote{\emph{Tvetydig} and \emph{tvesidig}:
+literally ``two-meaninged'' and ``two-sided.'' The definition depends on the
+Danish pair, which English cannot reproduce.} and by means of contradiction
+clarifies the doubling, philosophy is \emph{dialectic}\footnote{That the form
+of philosophy is in its essence dialectical must not be misunderstood as though
+the development of concepts had everywhere to display immediately the formal
+antinomies by which logical transitions are motivated; on the contrary!
+Philosophical exposition can and should also take up reporting, descriptive and
+critical components. The only decisive point is that the elements communicated
+in the form of report, description, critical discussion and the like should
+everywhere show themselves, by the design of the whole and the prevailing
+current of thought, to serve the dialectical. There is in the Hegelian method a
+formal overstrain, a logical over-exertion, brought on chiefly by the endeavour
+to have the exposition sparkle at every point with
+% (the footnote text continues at the foot of p. 16:)
+dialectical flashes of lightning. It is with dialectic's flashes of lightning,
+and with the elements in which they are prepared and out of which they develop,
+as it is with natural lightning: the lightning-fire must as a rule presuppose
+clouds, but the clouds are not on that account lightning.}.
+
+% --- p. 16 ---
+The truth that philosophy by its higher nature is and must be dialectic was
+categorically stated by Plato. (Cf.\ Propædeut.\ pp.~124--129; p.~150 and
+elsewhere.) In Plato the presentation of the dialectical (διαλεκτική from
+διαλέγεσθαι) has, as is well known, taken the form of conversation; and
+connected with this is the fact that the dialectician is characterized
+precisely as the one who in conversation knows how to ask and to answer rightly
+(Τὸν δὲ ἐρωτᾷν καὶ ἀποκρίνεσθαι ἐπιστάμενον ἄλλό τι σὺ καλεῖς ἢ διαλεκτικόν;
+% „ἄλλό“ with double accent so printed in the Danish
+\textit{Krat.}\ 390 c.). That what essentially matters in dialectic is not the
+conversation but the development of concepts conditioned by ``the art of
+language'' goes without saying; but that the conversational form, when
+everything irrelevant is kept out, is nonetheless a very natural form for the
+beginning dialectician, may readily be shown by a few examples.
+
+\textbf{Something and Other.}
+\addcontentsline{toc}{subsection}{Something and Other}
+A. If the categories ``something'' and ``other'' simply excluded one another,
+there would be no dialectic; if they coincided without more ado, there would be
+no dialectic either. The dialectical shows itself precisely in this, that the
+two propositions ``something is what it is, not an other'' and ``something is
+what it is not, hence an other'' not only cancel but also mutually presuppose
+and ground one another. B. If the dialectical rests on so slippery a ground,
+then all dialectic is false. A. How so? B. The claim you have set up stands in
+open contradiction with sound human understanding, and \emph{a philosophy that
+stands in open contradiction with `sound understanding' is false}. A. If what
+you here call \emph{open contradiction} is to be dismissed out of hand by an
+immediate verdict, philosophy can attach no weight to the ruling; for \emph{a
+philosophy that conforms itself immediately
+% --- p. 17 ---
+to `sound understanding' is superficial}. But if ``sound understanding'' will
+condescend to an inquiry, the inquiry can easily be got under way. B. It would
+have to be the second proposition, under whose negative form some ambiguity or
+other has hidden itself, and which might therefore become an object of inquiry;
+in the first proposition, the proposition of identity, the pure proposition of
+certainty (\textit{principium certitudinis}), there cannot be a trace of
+ambiguity. A. But suppose it is after all the first proposition in which the
+ambiguity, the indeterminacy, and so far the uncertainty, lies hidden --- what
+then? B. Then it must be capable of proof. A. Is it altogether forbidden in
+logic to say anything else of something than that it is something? B. By no
+means; for how, by merely repeating ``something is something,'' should one ever
+determine \emph{what} something is? Logic, however, which has no fondness for
+ambiguities, draws a definite distinction, as easy to grasp as it is
+unmistakable, between determining something by means of an other and saying of
+something something other than what it is. A. So it is permitted to determine
+what something is by determining what it is not? B. Not only permitted but
+necessary. A. Then it is necessary that in the determination of something a
+determination of an other be contained. B. That too may be granted --- but on
+the express condition that something, precisely by that determination, excludes
+the other. A. Something, then, is~---? B. A thing different from an other.
+A. And if now, on that condition, we exclude the other, something is~---?
+B. A different thing.\tnote{\emph{Et Forskjelligt}, the substantivized neuter
+adjective: ``a differing one,'' something whose whole character is to be
+different. English has no natural form for it; ``a different thing'' is used
+throughout the exchange, and the reader should hear the emphasis on
+\emph{different} rather than on \emph{thing}.} A. But now the other, on its
+side, is~---? B. A thing different from something. A. And when, likewise on
+that condition, we let the other exclude something, we say that the other
+is~---? B. A different thing. A. So then: something, when determined, is a
+different thing; the other, when determined, is a different thing; something is
+therefore what the other is, namely a different thing. B. This ambiguity is
+easy enough to see through. Certainly
+% --- p. 18 ---
+something is a different thing, just as the other is; but different and
+different are two things --- something is a different thing precisely by being
+different from the other, and the other a different thing by being different
+from something. Something and other are therefore still, as before, different
+from one another. A. Certainly something and other are different from one
+another; only a sophist would take it into his head to deny their difference.
+What was to be proved here was only this: that their difference is grounded in
+their identity. B. What is different is not identical, and what is identical is
+not different: only by pure categories can one secure oneself both against
+hidden ambiguities and against open contradictions.
+
+A. But if I am not mistaken, you have already yourself, by your definite and
+lucid answers, made valuable contributions toward sharpening our eye for the
+dialectical unity of something and other. B. I should very much doubt it.
+A. But you did stress that something can be determined only as a different
+thing, and, for clarity's sake, as a thing different from an other? B. Yes,
+that I did stress. A. Then you have at the same stroke expressly required that
+something, in virtue of that difference, must be taken as an other than that
+from which it is different. B. Of course. A. So on your view something is
+other than the other, in opposition to the other --- and hence, after all, an
+other. B. Your play on words leads nowhere; for when something is taken as an
+other, it becomes another other --- namely the other that something itself is,
+as against all the other that something is not. A. That I can understand; now
+you are talking like a true dialectician. So you have now seen for yourself
+that, with respect to the determination contained in something, there are two
+kinds of other: an other that something itself is, as against another other
+that something is not --- in other words, that something can exclude the other
+only by itself being an other. B. Yes --- so long as one keeps to expressions
+as general as ``something'' and ``other,''
+% --- p. 19 ---
+one can no doubt practise without much difficulty the game of thought of
+turning something into other and other into something. But let us try it with
+something determinate! Show me in definite examples that something really is
+identical with other, and I shall grant you that there is ``sound
+understanding'' in the dialectical. A. You take a leaf in a book to be
+something determinate? B. Naturally. A. And the two sides of a leaf are surely
+so opposed to one another that if we call the front a something, we must call
+the back an other. B. Excellent! Now surely it will occur to no one to identify
+the front with the back, and then maintain that the front is what the back is,
+because both are sides, or because the front becomes the back when the leaf is
+turned, and the back the front. A. But on this occasion too the identity is
+surely as conspicuous as the difference? B. I can see no identity. A. What do
+you think, then, about the leaf? B. That the leaf which has the two sides
+consists precisely in the difference and opposition of the sides! For if the
+two sides were turned into one side, we should get only a surface, not a leaf.
+A. And if the two sides were separated in such a way that each came to belong
+to a body of its own, we should get two surfaces but no leaf. B. Yet it makes
+an essential difference whether I say ``in the leaf the front is united with
+the back'' or ``the front is what the back is, the front is back.'' The first I
+can grant, the second not. A. If the leaf that unites the two sides were a
+third thing subsisting on its own over against the sides, we should certainly
+not be entitled to take it as the existing unity of the sides; but since the
+leaf, taken in separation from the sides, does not exist at all, the one side
+must in the leaf show itself identical with the other. B. Are we then perhaps
+to derive from this that the front itself is both front and back, and the back
+in turn both back and front? A. That is a consequence you will hardly reject.
+If we call the two sides α and β, it is
+% --- p. 20 ---
+evident that α, which in and for itself is neither front nor back, must by its
+opposition to β be front in so far as β is back, and conversely; α is
+therefore, in virtue of its identity with β, both front and back. B. That is a
+peculiar extension of the concept of identity. What I have to object against
+the concept of identity so extended I would rather hold back, however, until
+you have produced one more example of a different sort.
+
+A. What do you say to calling the greater a something and the lesser an other?
+B. That example I find very suitable. A. And what is it, then, that we are to
+prove? B. What else than that something is both a greater and a lesser, the
+other both a lesser and a greater, and one and the same magnitude itself both
+lesser and greater. And in truth nothing is easier than to prove all this. A
+cursory comparison of three magnitudes, $\alpha > \beta > \gamma$, tells us at
+once that α is a greater in so far as β is a lesser, and β a greater in so far
+as γ is a lesser. But what follows from this? That β is in one respect a lesser
+and in another respect a greater --- in that there is no contradiction; but if
+anyone maintains that the magnitude β is at one and the same time and in one
+and the same respect both greater and lesser than itself, he does fall into
+contradiction, and not only with the natural understanding but with true logic.
+That one and the same side of the same leaf can at one instant be front and at
+another back, and at one and the same instant --- when, mark you, it is
+regarded from two opposite points of view --- both front and back, contains no
+contradiction, but a confirmation of the old rule \textit{diversi respectus
+tollunt omnem contradictionem}. If, on the other hand, one ignores the
+\textit{diversi respectus}, overlooking what both Plato and Aristotle, for all
+the difference of their intellectual bent, so strictly inculcated --- that in
+such inquiries what is asked about must each time be seen to be τὸ αὐτό, and
+regarded κατὰ τὸ αὐτό,
+% --- p. 21 ---
+πρὸς τὸ αὐτό, ἐν τῷ αὐτῷ χρόνῳ --- then one may indeed dazzle the
+inexperienced for a moment with piquant turns of identity and surprising
+contradictions, but one will never convince the expert, never satisfy the
+sensible thinking that inquires after truth. A. Weighty words, and important!
+So now your ``sound understanding'' has almost got the better of
+contradiction and finished off dialectic; I say \emph{almost}, for one small
+point still remains --- a point we simply must have cleared up, and one you
+will surely be able to clear up easily: it concerns \textit{diversi respectus},
+and you have of course studied \textit{diversi respectus}. B. Studied? It has
+never occurred to me that there was anything further to study in logic's
+\textit{diversi respectus}; I have always supposed it enough to remark in a
+general way that there are \textit{diversi respectus}. A. Then it is surely
+necessary to distinguish between \textit{respectus}, since there are, after
+all, \textit{diversi respectus}. Of the two sides of the same leaf --- to
+return to one of our examples --- it undeniably holds in one respect that they
+are the same, namely that both are sides, and in another respect that they
+differ, namely that one is front and the other back; in one respect the same,
+that both are, say, written on, in another respect different, that one is, say,
+white and the other red, and so forth. Each of these different respects may in
+turn give occasion for new ones; for although it holds of both sides in one
+respect that both are written on, yet on this very point it also holds in
+another respect that they differ, namely that the one is written in black ink
+and the other in red. These doublings of respect can be continued indefinitely.
+If thinking is not to lose itself in an unsurveyable tangle of all manner of
+regards to all manner
+% (see the transcription's note here: a mark above the n makes both OCR
+%  witnesses read „allehaaude“ in the Danish; the reading was rejected)
+of respects and remarks and considerations and reflections, logic must
+necessarily distinguish not only between essential and inessential respects but
+% --- p. 22 ---
+also between respects that fall indifferently outside one another and respects
+that are contained in one another and therefore follow from one another with
+inner necessity. That one side of a leaf is written on does not of course
+entail that the other must be so too; one can take account of the former
+without taking account of the latter; the former can be without the latter's
+therefore being, and no one but sophists would think of positing the latter as
+identical with the former. It stands otherwise, however, with being front and
+being back: here it is impossible to take account of the former without taking
+account of the latter, for these two modes of existence are contained in one
+and the same existent in such a way that the regard to the former actually
+coincides with the regard to the latter --- the former is, despite the
+difference, indeed in virtue of the difference, \emph{identical} with the
+latter. True insight into the essence of identity, difference and contradiction
+depends on analysing the \textit{diversi respectus} sufficiently.
+
+B. But can any well-founded objection really be made against the proposition
+\textit{A} is what \textit{A} is? A. Among others, the objection that the
+proposition lacks a ground. B. But when the proposition is one with the
+principle --- the principle of identity, the principle of truth, the principle
+of certainty, \textit{principium certitudinis} --- and is of course
+self-evident in every way, it needs no ground. A. Is it then immediately
+evident from the proposition \emph{that} \textit{A} actually is? B. No, not
+\emph{that} \textit{A} actually is, but \emph{what} \textit{A} is. A. Is it
+immediately evident \emph{what} \textit{A} actually is? B. Not exactly
+\emph{what} \textit{A} actually is, but that, \emph{if} \textit{A} is at all,
+\emph{then} \textit{A} is \emph{what} \textit{A} is. A. But suppose \textit{A}
+is not at all? B. Then it is still what it is. A. So in order to be what it is,
+\textit{A} does not even need to be? B. You understand very well what I mean.
+A. The question here is not of opining but of knowing;
+% --- p. 23 ---
+still --- what is your opinion? B. That even if \textit{A} is a non-being, it
+is still what it is, namely a non-being. A. But non-being is surely the same as
+what we otherwise call nothing, no thing? B. Naturally. A. So then, whether I
+say ``no thing is what it is'' or ``every thing is what it is,'' it must at
+once be evident to sound understanding --- by the principle of identity, of
+course, the principle of truth, the principle of certainty, \textit{principium
+certitudinis} --- that with both propositions I mean one and the same thing!
+
+B. But can anything at all be adduced in defence of so self-contradictory a
+proposition as ``something is what it is not''? A. Among other things this:
+that a proposition which by its open contradiction so boldly challenges
+thinking must awaken reflection and call for grounds, in that it demands a
+refutation. B. But how should one refute by grounds a proposition that
+immediately refutes itself? A. The proposition ``something is what it is not''
+by no means refutes itself immediately. B. If what is unthinkable, absurd and
+senseless in this proposition is not self-evident, then what is self-evident,
+and what is sound human understanding? A. Sound human understanding by no means
+sees anything absolutely absurd in something's being able to be what it is not.
+B. So sound human understanding is supposed to be able to conceive that
+\emph{something} --- mark you, at a given time and in a quite definite sense
+--- \emph{is what it} --- at the same time and in the same sense --- \emph{is
+not}; no, that really is too much. A. Yes, that really is too much; but so
+absurd a demand is made by the proposition \emph{something is} --- mark you,
+when its existence is grounded --- \emph{what it is not} only when the
+proposition is held one-sidedly in superficial, abstract immediacy. B. Well,
+that is another matter, if your defence rests on an interpretation.
+% --- p. 24 ---
+A. And another matter too, presumably, if your refutation rests on an
+interpretation. B. Then prove to us, by means of your dialectical
+interpretations, that one and the same something can at one and the same time
+and in one and the same respect be both what it is and what it is not, and that
+one and the same magnitude can at once be both greater and lesser than itself.
+A. Such proofs belong to sophistic, not to dialectic. B. But to prove that
+something can in one respect be what in another respect it is not, or that one
+and the same magnitude can in one relation be a lesser and in another a
+greater, nothing is needed but \textit{diversi respectus}, no dialectic at all.
+A. But to prove that something, though different from the other, is
+nevertheless essentially one with its other, because the being of both has the
+same source, the same root; to prove that the same magnitude is on one and the
+same ground both a greater and a lesser, since the two relations, the two
+respects, have one and the same point at which they meet, namely being a
+magnitude; to prove that the identity
+% (the Danish prints „Identiten“ for „Identiteten“ here; see the transcription)
+of something and other, of the greater and the lesser, contains precisely the
+ground of something's being in existence different from the other, and the
+greater different from the lesser --- for that, dialectic is needed; for this
+dialectic can prove, but dialectic alone.
+
+\textbf{Concept and Existence.}
+\addcontentsline{toc}{subsection}{Concept and Existence}
+C. A dialectical development of the inner connection of the \textit{a priori}
+concepts, and of their transition into one another, is at the present standpoint
+of the science no doubt to be acknowledged on the whole; but it is another
+question whether, because the dialectical plays a considerable part in
+philosophy, one is on that ground entitled not merely to reproach formal logic
+with not being dialectical, but even --- on the strength of a Platonic
+expression which can always be taken in more than one sense --- to transform
+the whole of philosophy into sheer dialectic. A. Had you followed the preceding
+inquiry attentively, you would,
+% --- p. 25 ---
+as to the first point, easily have convinced yourself that there was no thought
+here of delivering a detailed critique of logical formalism, but only of
+rebuffing the self-sufficiency with which one not seldom allows oneself,
+invoking ``sound human understanding,'' to consign every logical objection to
+the immediate validity of immediate first principles to the realm of fancy and
+sophistry; as to the second point, your misgivings could do with a clearer
+statement. C. \textit{A priori} concepts --- such as something and other,
+essence and semblance, ground and consequent, and the like --- can easily be
+produced out of one another by the application of contradiction. Whoever posits
+the ground already implies the consequent; the ground is therefore, at bottom,
+both itself and the consequent.\tnote{Danish \emph{Grund} carries the whole
+weight here: it is at once the logical ground (\textit{Grund} as against
+\textit{Folge}, consequent), the ``bottom'' of a thing, and the ``reason why.''
+Nielsen plays on all three, and the English can only follow at a distance.} But
+since the ground becomes a ground proper only on account of the consequent, the
+ground is consequent and the consequent ground. The same thing is not merely
+ground in one respect and consequent in another; the two respects also coincide
+in a single respect: to dialecticize\tnote{\emph{Dialektisere}, Nielsen's own
+verb and deliberately ungainly in Danish too: to derive one thing out of
+another by dialectic. It is kept rather than paraphrased, since the whole
+dialogue turns on the question of what can and cannot be so derived.} the
+concepts out of one another is, if I may use the expression, the same as to
+dialecticize \textit{diversi respectus} into one another. As for the \textit{a
+posteriori} concepts, the concepts of experience, it is impossible to
+dialecticize existence out of the concept; or who would try to dialecticize the
+actual horse out of the concept of a horse, or the actual snail out of the
+concept of a snail? But if it is impossible to dialecticize the existent out of
+its concept, then presumably it is for the same reason impossible to
+dialecticize one concept of existence out of another --- the concept of a
+horse, say, out of the concept of a fly, and this in turn out of the concept of
+a snail. In the world of experience \textit{diversi respectus} fall outside one
+another, and where \textit{diversi respectus} fall outside one another
+dialectic plays a very subordinate part. A. But if you could not succeed in
+dialecticizing existence out of the concept (cf.\ Propæd.\ p.~31), have you
+never tried going the opposite way --- dialecticizing the concept out
+% --- p. 26 ---
+of its existence, as for instance dialecticizing your concepts of snails out of
+their corresponding snail-existence? C. One does not dialecticize concepts of
+experience out of existing objects; one \emph{abstracts} them. A. So there is
+nothing one might call a dialectic of abstraction? C. Not so far as I know.
+A. But the concepts abstracted from the objects must surely be, not only in our
+consciousness, but also in the objects themselves? C. Naturally; for if the
+concepts were not in the objects, they could not be abstracted from the
+objects. A. But the object from which the concept is abstracted is surely not
+itself a concept? C. By no means. A. Yet the concepts, in so far as they are in
+the objects, may be said to exist? C. That the concepts of experience exist in
+the existing objects, no one can well doubt. A. So in one and the same
+existence there are two existents --- the existing object, and the concept
+existing in the object? C. No, it cannot be taken that way; it is not the
+object itself but its material that is opposed to the concept. A. Then
+presumably we get three existents: the existing material, the existing concept,
+and that existence of the object in which both exist? C. No, one cannot take it
+that way either. A. How, then, is it to be taken? C. The material by itself is
+no separate existent, any more than the concept is; the material and the
+concept are two sides --- two sides of existence --- of the same existing one,
+the object. A. The existing one is, then, over against and in opposition to the
+two sides of existence, the existent in and for itself? C. No, one cannot take
+it that way either; for if we let abstraction remove the two sides of
+existence, the existing unity will itself become an abstraction, a side of
+existence that does not exist. A. But how, then, is it to be taken? C. So that
+the existing unity is seen to exist in the two sides of existence, which
+precisely thereby come to exist in inseparable unity. A. Then however many
+parts,
+% --- p. 27 ---
+qualities and sides the existing object may otherwise have, we may now, on your
+account, assume that these parts, with their sides, qualities and mutual
+relations, are all equally material by virtue of the material and intellectual
+by virtue of the concept; every side of existence thus becomes an existential
+unity of two sides, the material and the intellectual. C. That we may quite
+safely assume. A. But what is material in the object is surely something
+sensuous,\tnote{\emph{Sandselig} = \textit{sinnlich}, pertaining to the senses;
+it carries none of the modern connotation of ``sensual.''} which as sensuous
+cannot be thought, and what is intellectual in the object something
+non-sensuous, something thinkable that cannot be sensed? C. Perfectly correct.
+A. Then in the existing unity the unthinkable is after all a thinkable, and the
+non-sensuous a sensuous. C. That I do not understand! A. Then neither do you
+understand the existing unity; for how should the thinkable in an existing
+unity be able to penetrate the sensuous without the sensuous thereby becoming,
+by virtue of the thinkable, itself thinkable, and the thinkable, by virtue of
+the sensuous, sensuous? C. It almost looks as though there were something in
+what you say. A. The concept of existence, then, is a system not only of
+intellectual but also of material determinations --- a system of intellectual
+sense-determinations, of sensuous intellectual determinations. C. Yes, so it
+is. A. But then the concept of existence betrays a most striking contradiction.
+C. What contradiction? A. That of demanding existence by setting itself against
+existence. C. What does that mean? A. If the whole system of sensuous
+intellectual determinations is posited in the intellectual form, then the
+sensuous vanishes as a moment of reflection sublated in the thinkable --- that
+is to say, the existent transforms itself into the concept of existence, but
+existence goes out. If conversely the whole system of intellectual
+sense-determinations is posited in the sensuous form, answering to immediate
+sense-impressions, then the object steps into existence, but the concept of
+existence goes out.\,.\,.\,. C. No, the concept of existence does not go out;
+it is completed
+% --- p. 28 ---
+in existence: the existent is, by what we have said, nothing other than the
+concept of existence complete in every respect. A. But was it not you who, by
+what we have said, granted that the object from which the concept is abstracted
+was not itself the concept? C. Yes, but I was thinking then of the abstract and
+so far incomplete concept, not of the concept concrete and complete in itself.
+A. So it is after all possible to dialecticize existence out of the concept,
+once one has learned to dialecticize the concept out of existence? C. To prove
+that in deed would here amount to showing it in definite examples.
+
+A. Sound human understanding tells us that the horse is an animal, that the fly
+is an animal, and the snail likewise; but how do such judgments actually stand
+to ``the principle of identity and of contradiction''? C. The matter is plain
+enough. A. Yes, the matter is that if we let formal identity hold for the
+predicate, we deny it in each subject; whereas if we let it hold for each
+subject, we deny it in the predicate. C. How so? A. If we posit
+unconditionally ``animal is animal,'' then the horse becomes a fly and the fly
+a snail; if we posit unconditionally ``the horse is horse, the fly is fly, the
+snail is snail,'' then animal (horse) is not animal (fly) --- that is, the
+common predicate contradicts itself and must fall away. C. This difficulty can
+be overcome well enough. A. With dialectic or without? C. Without any dialectic
+at all! One need only bethink oneself of the factual characteristic marks of
+the concepts of existence, and of the relation of the disjunctive judgment to
+\textit{diversi respectus}. A. That we must certainly hear! C. If we compare
+animals with plants, it is seen that all existing animal individuals have one
+thing in common: being animal. If on the other hand we compare the animal
+existences with one another, then one animal series shows itself, by given
+characteristic marks, different from another. If we compare the existences in
+the one series with the existences in the other, then the individuals within
+each series are alike; but
+% --- p. 29 ---
+if instead we compare the existences belonging to a given series with one
+another, particular marks will show how one class is distinguished from
+another, and so forth. The animal, then, in opposition to the plant, is what
+the animal is; but by general and constant marks of difference the animal, in
+opposition to itself, is either mollusc or articulate or vertebrate.\tnote{%
+\emph{Bløddyr}, \emph{Leddyr}, \emph{Hvirveldyr}, and \emph{Straaledyr} just
+below, are the Danish names of Cuvier's four \textit{embranchements}:
+Mollusca, Articulata, Vertebrata and Radiata. The classification was standard
+in 1861 and has since been abandoned; ``radiate'' covered what we should now
+distribute among the echinoderms, cnidarians and others.} In opposition to
+articulates and vertebrates the mollusc is always mollusc; but in opposition to
+itself the mollusc is either a mollusc proper or a radiate. Now if one simply
+goes on in this way with the divisions (\textit{divisiones} and
+\textit{subdivisiones}) through every series, every class, every order, every
+family, guided by the marks established by experience, until by way of genera
+and species one has reached individuals --- what contradiction is there in
+that, and what have such classifications to do with dialectic? A. Unless it be
+that dialectic finds a good deal to do with \textit{diversi respectus}.
+C. There is surely no danger of that. A. Then tell us, on the strength of your
+completed classification: what actually is a horse? C. A horse (\textit{Equus
+Caballus}) is, by the category of its kingdom, an animal; by the category of
+its series, a vertebrate; by the category of its class, a mammal; by the
+category of its order, a pachyderm; by its family category, akin to asses and
+mules; and a species-category of its own within a genus-category of its own.
+A. A fine collection of categories, then, all of which had to combine here to
+yield the horse's concrete category of existence! If only one could now, with
+the help of \textit{diversi respectus}, get it properly explained how these
+many different categories have actually grown together --- not to say, been
+bundled together --- into a single one! C. They of course enclose one another
+in such a way that the more general always encompasses the more special.
+A. Surely not, though, in the way one envelope encloses another, or one ring
+encircles another? C. No, they rest upon one another, the more special having
+in each case settled upon
+% (p. 29 ends mid-sentence; the sentence continues on p. 30)
+
+% II. Philosophy and the Particular Sciences begins p. 30 (General Remarks;
+% A. Philosophy's Relation to Mathematics from p. 39).
+% --- p. 30 ---
+% (p. 30 opens with the last lines of part I's dialogue; the chapter head
+% for II follows mid-page, after a section rule)
+the more general. A. The more general a category is, the more abstract it is;
+the more abstract it is, the further it is from existing: so the existent rests
+upon the non-existent? C. No, I meant to say: they rest upon one another in
+such a way that the more general is always borne by a more special, this by one
+more special still, until we come to the most special of all, which is one with
+the existent itself. A. So it is not being a horse that depends on being an
+animal, but being an animal that depends on being a horse? C. No, that is not
+how I conceived it either; indeed, at this moment I cannot, to speak plainly,
+say how I actually did conceive it.
+
+% (section rule as printed)
+
+%% ============================================================
+%%  II. PHILOSOPHY AND THE PARTICULAR SCIENCES  (pp. 30--476)
+%% ============================================================
+\chapter*{II.\\ Philosophy and the Particular Sciences.}
+\addcontentsline{toc}{chapter}{II. Philosophy and the Particular Sciences}
+
+% (short rule between chapter head and section head, as printed)
+\section*{General Remarks.}
+\addcontentsline{toc}{section}{General Remarks}
+
+% [text to be added: pp. 30--38]
+
+\section*{A.\\ Philosophy's Relation to Mathematics:\\
+  The Problem of Infinity.}
+\addcontentsline{toc}{section}{A. Philosophy's Relation to Mathematics:
+  The Problem of Infinity}
+
+% [text to be added: p. 39 -- the section's own intro, before a)]
+
+\subsection*{a) The Concept of Infinity.}
+\addcontentsline{toc}{subsection}{a) The Concept of Infinity}
+
+% [text to be added: pp. 40--44]
+
+% Run-in head, not a sectioning command in the Danish; the \addcontentsline is
+% supplied so the Indhold's entry has a counterpart in the contents.
+\addcontentsline{toc}{subsection}{b) The Problem of Infinity}
+% [text to be added: pp. 45--49]
+
+% NB the printed head reads "b)." where the Indhold reads "c)" — see the
+% transcription's INDHOLD COLLATION note.
+\addcontentsline{toc}{subsection}{b). The Analysis of the Infinite}
+% [text to be added: pp. 50--80]
+
+\section*{B.\\ Philosophy's Relation to Chemistry:\\
+  The Problem of Change.}
+\addcontentsline{toc}{section}{B. Philosophy's Relation to Chemistry:
+  The Problem of Change}
+
+% [text to be added: p. 81 -- the section's own intro, before a)]
+
+\subsection*{a) Chemistry as a Distinct Science.}
+\addcontentsline{toc}{subsection}{a) Chemistry as a Distinct Science}
+
+% [text to be added: p. 82]
+
+% The head of α) carries a footnote in the Danish (Leçons ...); carry it over.
+\subsection*{α) The Origin of Chemistry.}
+\addcontentsline{toc}{subsection}{α) The Origin of Chemistry}
+
+% [text to be added: pp. 83--91]
+
+\subsection*{β) Chemical Forces.}
+\addcontentsline{toc}{subsection}{β) Chemical Forces}
+
+% [text to be added: pp. 92--102]
+
+% Printed "γ." with a period, against the Indhold's "γ)" — as transcribed.
+\subsection*{γ. Chemical Combinations.}
+\addcontentsline{toc}{subsection}{γ. Chemical Combinations}
+
+% [text to be added: pp. 103--120]
+% NB pp. 95 and 96 carry the double-decomposition schemes; use \decompscheme.
+
+\subsection*{b) The Problem of Change in Chemistry.}
+\addcontentsline{toc}{subsection}{b) The Problem of Change in Chemistry}
+
+% [text to be added: pp. 121--123]
+
+\subsection*{α) Atom and Equivalent.}
+\addcontentsline{toc}{subsection}{α) Atom and Equivalent}
+
+% [text to be added: pp. 124--129]
+
+\subsection*{β) Atomic Constitution and Crystal Form.}
+\addcontentsline{toc}{subsection}{β) Atomic Constitution and Crystal Form}
+
+% [text to be added: pp. 130--134]
+
+\subsection*{γ) Atom and Substance.}
+\addcontentsline{toc}{subsection}{γ) Atom and Substance}
+
+% [text to be added: pp. 135--142]
+
+\subsection*{c) The Problem of Change in Philosophy.}
+\addcontentsline{toc}{subsection}{c) The Problem of Change in Philosophy}
+
+% [text to be added: pp. 143--144]
+
+\subsection*{α) The Atom as Point of Discretion.}
+\addcontentsline{toc}{subsection}{α) The Atom as Point of Discretion}
+
+% [text to be added: pp. 145--150]
+
+\subsection*{β) The Atom as Point of Function.}
+\addcontentsline{toc}{subsection}{β) The Atom as Point of Function}
+
+% [text to be added: pp. 151--159]
+
+\subsection*{γ) The Atom as the Substantial Moment.}
+\addcontentsline{toc}{subsection}{γ) The Atom as the Substantial Moment}
+
+% [text to be added: pp. 160--166]
+
+\section*{Result.}
+\addcontentsline{toc}{section}{Result}
+
+% [text to be added: pp. 167--176]
+
+\section*{C.\\ Philosophy's Relation to Physiology:\\
+  The Problem of Life.}
+\addcontentsline{toc}{section}{C. Philosophy's Relation to Physiology:
+  The Problem of Life}
+
+% [text to be added: pp. 177--199]
+% NB the opening paragraph of section C (p. 177) is set WHOLLY gesperrt in the
+% print and is \emph{} throughout in the transcription; carry the emphasis over.
+% This span is footnote-heavy (pp. 178, 179, 181, 184--187, 189, 191--194, 199),
+% with several notes running over one or two following pages unmarked.
+
+\subsection*{a) The Essence of Life.}
+\addcontentsline{toc}{subsection}{a) The Essence of Life}
+
+% [text to be added: pp. 200--207]
+
+\subsection*{α) The Organism.}
+\addcontentsline{toc}{subsection}{α) The Organism}
+
+% [text to be added: pp. 208--235]
+
+% Printed "β." with a period, against the Indhold's "β)" — as transcribed.
+% The head stands at the FOOT of p. 236, so the text runs on from p. 236.
+\subsection*{β. The Organic Type.}
+\addcontentsline{toc}{subsection}{β. The Organic Type}
+
+% [text to be added: pp. 236--260]
+
+\subsection*{γ) The Organic Purpose.}
+\addcontentsline{toc}{subsection}{γ) The Organic Purpose}
+
+% [text to be added: pp. 261--285]
+
+\subsection*{b) The Stages of Life.}
+\addcontentsline{toc}{subsection}{b) The Stages of Life}
+
+% [text to be added: pp. 286--290]
+
+\subsection*{α) Plant Life.}
+\addcontentsline{toc}{subsection}{α) Plant Life}
+
+% [text to be added: pp. 291--327]
+% NB pp. 326--328 are the Darwin passage, already translated as the excerpt
+% edition texts/nielsen/propaedeutik-darwin/ — collate against it, and keep the
+% terminology settled there (Paradigme = paradigm, Anlæg = disposition,
+% Selvhed = selfhood, Andethed = otherness, Concretionsloven = law of concretion).
+
+\subsection*{β) Animal Life.}
+\addcontentsline{toc}{subsection}{β) Animal Life}
+
+% [text to be added: pp. 328--398]
+
+% Printed "γ." with a period, against the Indhold's "γ)" — as transcribed.
+\subsection*{γ. Human Life.}
+\addcontentsline{toc}{subsection}{γ. Human Life.}
+
+% [text to be added: pp. 399--422]
+
+\subsection*{c) Soul and Body.}
+\addcontentsline{toc}{subsection}{c) Soul and Body.}
+
+% [text to be added: p. 423]
+
+\subsection*{α) Metaphysical Theories.}
+\addcontentsline{toc}{subsection}{α) Metaphysical Theories.}
+
+% [text to be added: pp. 424--436]
+% NB p. 425 carries Descartes' Amsterdam imprint in apostrophus numerals,
+% CIƆ IƆCLXXVII; the reversed C is declared in the preamble.
+% NB p. 430 head "ββ) Identitetslæren." against the Indhold's "ββ) Identitetslære".
+
+\subsection*{β) Psychophysical Investigations.}
+\addcontentsline{toc}{subsection}{β) Psychophysical Investigations.}
+
+% [text to be added: pp. 437--467]
+% This is the section Nielsen says (Preface) was NOT delivered orally at all.
+
+\subsection*{γ) The Limits of Human Knowledge.}
+\addcontentsline{toc}{subsection}{γ) The Limits of Human Knowledge.}
+
+% [text to be added: pp. 468--476]
+
+%% ============================================================
+%%  III. PHILOSOPHY AND ACADEMIC STUDY  (pp. 477--482)
+%% ============================================================
+\chapter*{III.\\ Philosophy and Academic Study.}
+\addcontentsline{toc}{chapter}{III. Philosophy and Academic Study}
+
+% The three subdivisions of Part III are set RUN-IN, in BOLD Fraktur (not
+% letterspaced), at the head of their paragraph — so no sectioning command,
+% exactly as with the run-in heads elsewhere. The \addcontentsline lines are
+% supplied only so that the Indhold's three entries have counterparts in the
+% table of contents.
+\addcontentsline{toc}{section}{Scientific Thinking}
+\addcontentsline{toc}{section}{The Connection of the Sciences}
+\addcontentsline{toc}{section}{Scientific Cultivation}
+
+% [text to be added: pp. 477--482]
+
+%% ============================================================
+%%  CONTENTS  (the book's own Indhold, printed at the end, p. 482 area)
+%% ============================================================
+\chapter*{Contents.}
+\addcontentsline{toc}{chapter}{Contents (the book's own Indhold)}
+
+% [text to be added: the book's own Indhold, 80 entries, PDF 11--12]
+% Translate the entries to match the heads used above; keep the printed page
+% numbers, which the transcription's INDHOLD COLLATION verified as all correct.
+% Four Indhold entries have NO printed head in the body — "Muligheden og
+% Modsigelsen" (8), "Modsigelsens Grundsætning" (11), "Anvendelse af
+% Modsigelsens Grundsætning" (13), "Tvetydigt og Tvesidigt" (15). Record them,
+% do not reconcile them.
+
+\end{document}
