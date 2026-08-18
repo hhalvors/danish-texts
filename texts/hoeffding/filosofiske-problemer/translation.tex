@@ -14,20 +14,112 @@
 %  Chapter text in OPS/s003–s007; the 63 endnotes in OPS/s010-Notes-01.xhtml,
 %  keyed rw-num-note-N and restored here as \footnote{} at their anchors.
 %
-%  PAGE MAP.  Each endnote in the e-book carries the printed page of the 1902
-%  first edition, "(S. N)".  That yields a page map without a scan:
-%    Indledning  notes  1–3   pp.  2–5      I.   notes  4–25  pp.  6–27
-%    II.         notes 26–51  pp. 28–53     III. notes 52–56  pp. 54–70
-%    IV.         notes 57–63  pp. 71–82+
-%  Ranges are navigational labels, not verified pagination — note 43 reads
-%  "(S. 41)" out of sequence between notes at pp. 43 and 45, and is probably a
-%  mis-set "44". Do not cite these page numbers as the book's.
+%  PAGE MAP — READ OFF THE 1902 PRINT.  The Royal Danish Library scan of the
+%  first edition is at https://www.kb.dk/e-mat/dod/11140400794C-bw.pdf
+%  (local copy: ~/bibliotek/Høffding, Harald/1902-filosofiske-problemer.pdf;
+%  90 printed pages; PDF page = printed page + 13).  The map below is taken
+%  from the scan's own running heads and section openings, not inferred:
+%    Indledning  pp.  1–5
+%    I.   pp.  6–27   §1  6   §2 12   §3 22   §4 25
+%    II.  pp. 28–52   §1 28   §2 31   §3 39   §4 43   §5 48
+%    III. pp. 53–69   §1 53   §2 57   §3 59   §4 62   §5 65
+%    IV.  pp. 70–84   §1 70   §2 72   §3 75   §4 77   §5 78   §6 80   §7 82
+%         A. Det etiske Problem p. 72;  B. Det religiøse Problem p. 78.
+%    Notes printed pp. 85–90.
+%  This SUPERSEDES two earlier maps, both built from the endnotes' own "(S. N)"
+%  refs before the scan was available — one that read II as 28–53 / III 54–70,
+%  and a least-squares correction that read II as 28–51 / III 52–69.  The
+%  regression was close (it got IV's opening exactly, and III to within one
+%  page) but it is no longer needed and should not be relied on.
+%
+%  THE E-BOOK RENUMBERED THE NOTES.  The 1902 print numbers its endnotes
+%  1–60; the SAGA e-book numbers them 1–63.  The offset opens gradually (0 at
+%  note 4, −1 by note 29, −3 from note 41 on), so e-book note N is print note
+%  N−3 in the later chapters.  Every note's own "(S. N)" page ref is identical
+%  in both, so the renumbering did not disturb the page map — but it DID break
+%  the book's two internal note cross-references, which the e-book left
+%  pointing at their old numbers:
+%    e-book note 36 "Se Note 30" — print note 33 → print note 30 = Maxwell /
+%      Hertz.  In e-book numbering that note is 31, not 30 (30 is Mach).
+%    e-book note 40 "Se ovenfor Note 24" — print note 37 → print note 24 =
+%      Ostwald's Naturphilosophie.  In e-book numbering that note is 25.
+%  This translation numbers its footnotes 1–63 in e-book order, so both
+%  references are emended to that sequence: "See Note 31" and "See Note 25".
+%  An earlier note here called "Se Note 30" a probable authorial slip.  It is
+%  not: it is correct in the print, and only the e-book's renumbering broke it.
+%
+%  GREEK.  One Greek quotation only, in the last footnote of the book (note 63,
+%  Plato, Phaedrus 249 C).  The 1902 print sets it in period Greek types, with
+%  the variant rho and theta forms; the e-book preserved those variants but
+%  corrupted the text, substituting Latin o and accented Latin vowels.  Read
+%  off the page image and set here in standard Greek letterforms with the
+%  correct accents: πρὸς οἷσπερ θεὸς ὢν θεῖός ἐστι.  Normalising the variant
+%  letterforms is a typographic decision, not a textual one, on a par with not
+%  reproducing the long s.
+%  This file therefore needs \usepackage{textalpha} to build — as it already
+%  did for the α/β of II §2.  THE SANDBOX RECIPE STRIPS textalpha AND REPLACES
+%  GREEK WITH "[Gr]", so a clean sandbox compile does NOT prove the Greek
+%  renders.  Check note 63 and p. 19 on the first local build.
+%
+%  NOTE 43's "(S. 41)" IS A MISPRINT, as suspected, and it is in the 1902
+%  print too (print note 40) — not an e-book defect.  Its neighbours read
+%  (S. 44) and (S. 45), and II §4 runs pp. 43–47, so the Bradley–Bosanquet
+%  passage falls on p. 44 or 45.  Left as printed; recorded here.
 %
 %  TITLE.  Rendered "Philosophical Problems", the literal title and the one
 %  Fisher's 1905 Macmillan translation uses in its running heads, rather than
 %  its title-page "The Problems of Philosophy" — which collides with Russell
 %  (1912) and misstates a book that is about four problems, not the subject at
 %  large.
+%
+%  INTERNAL CROSS-REFERENCES.  Høffding cites his own sections as "(II, 3)",
+%  "(se III, 2)" and so on.  EIGHT such references occur, and SEVEN of them
+%  name a chapter one higher than the printed chapter numeral — as though the
+%  unnumbered Indledning were counted as chapter I.  Each was checked against
+%  the section it must mean, by content:
+%    III §3  "(se III, 2)"  dynamic/symbolic truth ....... = II §2   emended
+%    III §4  "(II, 3)"      spirit/matter, method ........ = I  §3   emended
+%    III §4  "(II, 3)"      potential psychical energy ... = I  §2/3 emended
+%    III §5  "(Smlg. II, 1)" Plato's Ideas ............... = II §1   CORRECT
+%    III §5  "(Smlgn. III, 4)" direction of change, time .. = II §4   emended
+%    III §5  "(III, 5)"     world-process/thought-work ... ambiguous  KEPT
+%    IV  §6  "(III)"        rationality of existence ..... = III      CORRECT
+%    IV  §6  "(IV, 4)"      metaphysical idealism ........ = III §4  emended
+%    IV  §6  "(III, 1)"     the three kinds of understanding = II §1  emended
+%  (All nine verified against the 1902 print, so none of them is an e-book
+%  artefact; they are Høffding's own.)
+%  The offset is not systematic.  "(Smlg. II, 1)" is right as printed and
+%  cannot be reconciled with "(III, 1)", which points at the same section; and
+%  the bare "(III)" in IV §6 is right while the two chapter-and-section
+%  references beside it in the SAME paragraph are each one chapter high.  No
+%  rule about Høffding's numbering will sort them: only content will.
+%  RULE ADOPTED: emend a reference to the section it demonstrably means, proved
+%  by content, correcting the chapter numeral and leaving the section numeral
+%  alone; where the target cannot be established, keep the reference as printed.
+%  Hence "(III, 5)" stands: it fits II §5 under the offset, but also reads as a
+%  backward glance at the section it sits in, and nothing decides between them.
+%  All references above appear in the English in the book's OWN printed chapter
+%  numbering, so they can be followed.
+%
+%  THE BRACE IN II §5 (p. 51).  Høffding's series of subject- and
+%  object-determinations is printed "S1 { O1 { S2 { O2 ....", with a LEFT BRACE
+%  between the terms.  Verified on the 1902 print itself (scan p. 51, read off
+%  the page image at 400 dpi, not from OCR).  Set as printed.
+%    This corrects an emendation made earlier from Høffding's later books, when
+%  no scan was to hand.  Den menneskelige Tanke (1910) §66 defines a sign "<"
+%  for "ethvert inkonvertibelt, transitivt og asymmetrisk Forhold" and quotes
+%  this very series back as "Rækken S1 < O { S2 …", mixing the two characters
+%  inside one formula; that looked like proof the brace was an OCR error for
+%  "<".  It was not.  The 1902 book uses the brace; the "<" is Høffding's LATER
+%  notation, and the 1910 quotation is either his own modernisation or its
+%  scan's OCR.  Two independent OCR passes — the SAGA e-book and the KB scan —
+%  both read "{", and the page image agrees with them.
+%    The lesson is worth keeping: agreement between Høffding's later usage and
+%  a plausible OCR-confusion story was not evidence about what the 1902
+%  compositor set.  Check the page.
+%  Subscripts: the e-book flattens "(S0)" and "(Os)" to inline letters; the
+%  print sets them as subscripts, lower case ("hverken et So eller Os kunde
+%  bestaa").  Set here as \textsubscript, lower case.
 %
 %  FISHER 1905.  An authorized English translation exists: Galen M. Fisher,
 %  preface by William James (Macmillan, 1905), archive.org/details/
@@ -1477,7 +1569,7 @@ calculation.'' And Hertz says: ``We form for ourselves such inner images
 necessary consequences of the images are always in turn images of the naturally
 necessary consequences of the objects imaged~.... Any other agreement with the
 things, the purpose of our representations does not
-require.''\footnote{See Note 30.} --- The dynamic and symbolic concept of truth
+require.''\footnote{See Note 31.} --- The dynamic and symbolic concept of truth
 is here expressly put in the place of the naively dogmatic one which the
 mechanical view of nature had formerly espoused. What matters is only to find a
 circle of symbols that can be applied with full consistency, and from which
@@ -1563,7 +1655,7 @@ places in space. Only by this geometrical moment's being pushed aside in his
 concept of energy does it become possible for him to believe that the concept is
 without further ado the same for psychical and for physical phenomena, so that
 the problem of ``soul and body'' would be solved by setting it up. See above,
-Note 24.} in the psychical domain the relation of simultaneity does not assume
+Note 25.} in the psychical domain the relation of simultaneity does not assume
 this geometrical form, but appears nonetheless as something ``static'' which
 sets research new tasks when it has happily and successfully found the laws of
 the psychical processes. After the continuity in the processes of development
@@ -1804,31 +1896,780 @@ thereby abolished!} Should it be an illusion, then it is in any case an illusion
 in the second power when one believes one can free oneself from this illusion.
 For us existence never dissolves wholly into thought.
 
-% [translation continues from p. 50] — §5, epub paras 34--41, notes 49--51,
-% pp. 50--53 (Fisher: "Subject and object"): "Endnu fra en tredie Side…"
-% [text to be added: pp. 50--53] — Chapter II §5 (paras 34--41, notes 49--51).
+\noindent\textbf{5.}~From yet a third side the problem of knowledge shows itself
+in its whole sharpness, at the same time as a continual development of knowledge
+shows itself possible. In every act of knowledge a distinction can be drawn
+between \emph{a subjective and an objective element}, between that which knows
+and that which is known --- but both elements are given only in relation to one
+another, though within this relation they can assert themselves in different
+degrees.
+
+What now is subjective, and what is objective, in our knowledge? --- Already
+from the foregoing it will be seen that this question is answered in different
+ways. In the domain of science a tendency asserts itself to charge all
+differences of quality, everything that breaks continuity, and at last perhaps
+even everything that breaks identity, to the subject's account. The
+sense-qualities and the differences of space and time would then be merely
+subjective. What is justified in this way of looking at the matter rests on this,
+that the differences we posit in qualitative, extensive, intensive and protensive
+(temporal) respects depend on our psychical dispositions. Our sensation is a
+discriminating whose result depends on the organization and the previous history
+of the sensing subject. The differences found hold, therefore, only in relation
+to the standpoint of the knowing subject in those various respects. Add to this
+that our attention is discontinuous, moves by leaps to and from its object; by
+that too there come forward differences and interruptions which cannot be charged
+to the object's account.
+
+The dogmatic and speculative tendency in philosophy and in natural science has
+been inclined to take this road. Emancipation from the merely subjective became
+here at the same time an approximation to continuity and identity as the essence
+and the norm of truth.
+
+The critical philosophy emphasizes, in contrast to this, that the qualitative,
+extensive, intensive and protensive differences make up the material given for
+our knowledge and set us the tasks of our inquiry. Just as our personality works
+at gathering its sporadically appearing elements, at harmonizing the conflicting
+tendencies and freeing itself from what is obscure and self-contradictory, so our
+understanding works at transforming the given differences, which for us are
+matters of fact, into stages in one and the same continuous process of
+development, or into forms of one and the same content. The need for continuity
+and identity lies deep in human consciousness, and consciousness therefore seeks
+to find them again in the given content of knowledge. Moreover, consciousness
+cannot itself bring forth the differences which form the material of its working,
+however much the form and the degree in which they appear in consciousness are
+determined by consciousness's own involuntarily operating conditions. --- In the
+discussions of the most recent time concerning the epistemological foundation of
+natural science there shows itself, too, a tendency to derive all points of view
+of unity preponderantly from the economy of the knowing subject.
+
+In reality we never at any time have the pure subject with its forms given in
+opposition to a pure object, or rather to a ``thing in itself'' from which the
+manifoldness of the content of knowledge would derive. \textsc{Kant} concluded
+here too quickly, in supposing that the subjective forms of knowledge could be
+determined once for all, so that the ``matter'' in knowledge would have to be
+derived from ``das Ding an sich''. In the more special development of his theory
+of knowledge he could not, however, avoid coming to ask whence the forms
+derived, and to hint that these too (which are, just as much as the matter,
+factually given, since they must after all be found out by psychological
+analysis) are ultimately determined by the ``Ding an sich''; and since the
+``forms'' designate what is constant in our knowledge, the last presupposition of
+Kant's philosophy becomes something for which he can really give no grounding,
+namely that the ``Ding an sich'' works in a constant manner, since otherwise the
+forms could not subsist, or in any case could not be applied.\footnote{See my
+treatise \textit{Kontinuiteten i Kants filosofiske Udviklingsgang}, p.~26--35.}
+Thus Kant comes to oscillate between the two views described above, though it was
+plainly his intention to hold to the latter. Continuity was for him the common
+fundamental form of the categories, and synthesis was for him the fundamental law
+of the working of the knowing consciousness.
+
+The problem is more involved than Kant saw. When we distinguish between subject
+and object in our knowledge, it is in reality an objectively determined subject
+(\textit{S}\textsubscript{\textit{o}}) that we set in opposition to a
+subjectively determined object (\textit{O}\textsubscript{\textit{s}}). The
+properties or ``forms'' we ascribe to the subject cannot be explained from the
+concept of subject itself (the pure \textit{S}); they stand as facts, just as
+much as all the other properties our knowledge gets to deal with. And the
+properties or determinations we ascribe to the object belong to it always only in
+relation to a subject, and, more precisely, to a subject of a certain special
+constitution. Therefore the problem begins ever anew: whence does the subject get
+its objective (factual) properties, and what relation is there between the
+object's subjective determinations (qualities and so forth) and its essence, as
+this would come forward before subjects of another kind than we?
+
+Here again we meet the irrational, and here we see perhaps most clearly how
+inexhaustible existence is in relation to our knowledge. What was justified in
+Kant's setting up of the concept ``Ding an sich'' lay in this, that a
+limit-concept is needed to express the irrational relation between what he called
+the ``form'' of our knowledge and its ``matter''. If we would keep the concept
+``thing in itself'', we can employ it in Kant's spirit and yet avoid falling into
+the contradictions with which it is burdened in his philosophy, if we use it to
+express the fact that the difference between subject and object always comes into
+force anew, however often we may have found an objective explanation of the
+subject's peculiarities (of \textit{S}\textsubscript{1} by
+\textit{O}\textsubscript{1}) and a subjective explanation of the object's
+peculiarities (of \textit{O}\textsubscript{1} by \textit{S}\textsubscript{2}).
+The irrational shows itself in this, that a continual series-formation (of the
+type: \textit{S}\textsubscript{1}\,\{\,\textit{O}\textsubscript{1}\,\{\,%
+\textit{S}\textsubscript{2}\,\{\,\textit{O}\textsubscript{2}\dots) is possible
+and necessary. Thought must ever anew set about finding predicates for the
+determination of existence, because the source that makes the stream of thought
+possible is inexhaustible. ``The thing in itself'' is the obscure, tacitly
+understood initial representation, which comes forward ever in new ways and
+demands new determinations.\footnote{Compare \textit{Det psykologiske Grundlag
+for logiske Domme.} p.~39\,f.; 46\,f., and (as regards religious judgments)
+\textit{Religionsfilosofi}, p.~67--71.} Perhaps the right symbol for the relation
+of our knowledge to existence would not be an irrational number, but an imaginary
+number, since existence might have attributes which cannot at all be reached or
+determined in the dimensions in which our thought is able to move. The
+possibility of this cannot in any case be disproved. Nor can that other
+possibility, that existence is rational only in a very slight degree, and that it
+might one day turn towards us another side, one that would not make possible the
+building of coherent and applicable series of thoughts; there would then, as I
+have expressed it in another place,\footnote{See my treatise \textit{Filosofien
+og Livet.} (Tilskueren 1901). p.~34. --- On the imaginary in an epistemological
+sense compare \textsc{Wundt}: \textit{System der Philosophie.} p.~195--199.}
+begin a logical ice age for us. The relation between subject and object would not
+come into force at all; neither an \textit{S}\textsubscript{\textit{o}} nor an
+\textit{O}\textsubscript{\textit{s}} could subsist.
+
+When in an earlier connection I used Schiller's words: Eng ist die Welt, und das
+Gehirn ist weit, it now shows itself that the sentence can be reversed: Gross ist
+die Welt, und das Gehirn ist klein! Knowledge is, however rich and powerful it
+may be, always only a part of existence, and the problem of knowledge could be
+solved only if existence as a whole (in so far as it can be thought as a
+completed whole!) could be expressed by the help of a single part of it. Symbolic
+the expression must in any case always remain. Our knowledge gives us, even where
+it reaches highest, only a section of something more comprehensive. Of all the
+possibilities of thought only a single one is represented in the reality we know;
+but the reality we know is itself always only a part of a greater whole --- and
+the relation between part and whole we cannot here determine. We can form no
+exhaustive concept of reality.
 
 % ============================================================
-%  III.  TILVÆRELSESPROBLEMET  (pp. 54--70; notes 52--56)
+%  III.  TILVÆRELSESPROBLEMET  (pp. 52--69; notes 52--56)
 % ============================================================
-\fpchapter{III.\quad The Problem of Existence}
-\label{ch:tilvaerelse}
-
-% [text to be added: pp. 54--70] — epub OPS/s006-Chapter-003.xhtml, notes 52--56.
 % Fisher renders this chapter "The Problem of Being"; "Tilværelse" is kept as
 % "existence" here for consistency with the Introduction, where Høffding names
 % the problem "Problemet om Tilværelsens Natur" and pairs it with the valuing
 % personality's existing. Fisher's section heads: 1. Problem and method /
 % 2. Metaphysic as an art / 3. First type-phenomenon (unity or plurality?) /
 % 4. Second type-phenomenon (spirit or matter?) / 5. (rest or development?).
+\fpchapter{III.\quad The Problem of Existence}
+\label{ch:tilvaerelse}
+
+\noindent\textbf{1.}~Both the problem of consciousness and the problem of
+knowledge point out beyond themselves: the life of consciousness is a part of
+existence, and it is the task of knowledge to understand existence. It is then
+natural to ask what place the life of consciousness occupies in existence, and
+what picture knowledge is able to give us of existence. The problem to which we
+are thus led over we may call the \emph{cosmological}, since it is the problem
+whether a completed world-view is possible: \emph{Kosmos} means existence
+regarded as a whole, and \emph{Logos} means doctrine, view. The word metaphysics
+it will also be warranted to use here, though it has been employed in many
+different senses and is on that account less clear.
+
+The chief difficulty in this problem will be that the cosmological principles,
+the principles which are to lie at the base of the world-view, cannot without
+more ado be fetched from any special domain of experience, since the point would
+precisely be to connect all domains of experience into a whole and to give a
+positive characterization of it.
+
+An attempt to treat the problem of existence will have both a formal and a real
+character: partly it must be asked what demands must be made on the concept that
+is to be able to embrace existence as a whole, and whether it is possible to
+satisfy those demands; partly it must be asked what positive marks can be
+assigned of such a whole, if we are able to form a concept of it.
+
+The \emph{formal} motives for speculation on the nature of existence lie deep in
+the constitution of consciousness and of knowledge. They hang together with the
+need for continuity, the need in which personality and science meet. The very
+essence of thinking expresses itself on all levels and in all forms as a
+gathering-together, a synthesis, and it is then not to be expected that thinking
+should of its own accord halt in its attempt to work together what is
+sporadically given. This striving acquires a special and practical significance
+from the fact that a firm and continuous connection is the only criterion we have
+in doubtful cases when it is a question of distinguishing between dream or
+illusion and reality. The more comprehensive and the more inwardly coherent a
+concept of reality we can form, the greater the certainty it contains. There will
+therefore, on theoretical as well as practical grounds, be an inclination to go
+to the limit and to attempt to continue and to complete what theoretical and
+practical orientation already leads us into. The ideal would be reached if a
+complete harmony could be exhibited between all our experiences, a continuous
+whole into which all the special domains of experience join themselves according
+to their own laws.
+
+But the discussion of the problem of knowledge must already have taught us that
+such a completed world-view is impossible, and that in a certain sense it
+contains a self-contradiction. None of the special domains of experience lies
+before us completed; new experiences and new riddles are always coming up; our
+comprehending thought is always getting new tasks. And since our knowledge always
+works by holding things together and comparing them, every total picture, if it
+were to be an object of completed knowledge, would have to be held together and
+set beside something that was different from it: only so could it get its full
+determinateness; but if there were anything different from it, it would after all
+not be a \emph{total} picture! --- It is here indifferent whether we stop at the
+totality we have attempted to form, or whether we go back to the principle of
+such a totality and call it ``God'' in contrast to the totality itself as ``the
+world''; the antinomy remains the same in both cases.\footnote{Compare on this my
+\textit{Religionsfilosofi}, p.~57--65. --- In the epistemological section of the
+\textit{Religionsfilosofi} I have on the whole already set forth my conception of
+the problem of existence and of its treatment.} The irrational announces itself
+here again, as it did at the problem of knowledge. And there is here surely an
+inner connection. That knowledge could not be completed might hang together with
+existence itself not being completed, not being finished, but being in continual
+becoming, as the single personality is, and as knowledge is. Perhaps it also
+conceals simultaneous disharmonies within itself, which make it impossible for it
+to constitute a harmonious whole. The analogy between the different problems
+would in that case be especially clear. In the various systems men have been too
+sure that existence in itself was a closed and constant whole, and that it was
+only our will and our thought that had always to struggle in order to subsist and
+to win harmony.
+
+A \emph{real} motive for speculation lies in the prominent role which a
+phenomenon, or a domain of experience, or a side of existence can play for us.
+From this there can arise a tendency to lay this phenomenon or this side at the
+base of an interpretation of existence, and to attempt to derive the other
+phenomena or sides from it, or in any case to trace them back to it. The
+different cosmological systems are so many attempts to sound the depths of
+existence, to test how far a thought can cast light over existence. They are a
+series of thought-experiments by which the bearing power of our most important
+thoughts, their capacity to serve as the foundation of a comprehensive
+world-view, has been tried.
+
+Every such attempt goes --- as \textsc{Leibniz} first saw with brilliant clarity
+--- necessarily by the way of \emph{analogy}. --- In all science analogy can
+become of importance. All designations for psychical phenomena were originally
+formed on the basis of an analogy with physical phenomena, and in psychology we
+are constantly compelled to operate with physical analogies; it then becomes an
+important question how far their validity reaches. The causal principle
+expresses, according to Kant, that between the actual events in the world there
+is a relation analogous to that between ground and consequent in our thinking.
+The atomic theory, and on the whole the so-called mechanical view of nature, is
+in the most recent time regarded epistemologically as a great analogy, by whose
+help the qualitative changes in nature can be described and calculated. In
+discoveries too analogy plays a great role: the analogy between chemistry and
+physics helped Robert Mayer to his discovery of the conservation of energy. But
+when analogy is employed metaphysically or cosmologically, it is not \emph{one
+particular} domain of existence that serves to illuminate \emph{another
+particular one}; it is \emph{one particular} domain that is used to express
+existence \emph{as a whole}. This symbolizing becomes of another kind and another
+validity than the symbolizing which finds application within the special domains:
+it cannot be carried through with full consistency, and it cannot be verified.
+Neither the warrant of the analogy nor its limitation can be strictly exhibited.
+In this the cosmological or metaphysical symbols differ from the scientific ones.
+--- As I have sought to show in my \textit{Religionsfilosofi}, the religious
+symbols share the fate of the metaphysical. In both cases an attempt is made to
+form concluding concepts with real validity; the difference rests only on the
+motive that leads to these attempts.
+
+In the problem of knowledge we came likewise to an irrational relation between
+part and whole. There it was a question \emph{how far the whole could be
+expressed in and for a single part}. Here, at the cosmological problem, it is a
+question \emph{how far determinations can be fetched from a single part which
+hold for the whole as such}. It is one and the same relation, coming forward in
+the two problems from different sides. ---
+
+The character and the value of a world-view depend not only on how clearly and
+consistently the analogy is carried through, but also on where the analogy is
+fetched from. The phenomenon (the part or side of experience) on which the
+analogy is built we may call the \emph{primal phenomenon}. This expression stems
+from \textsc{Goethe}. But Goethe understood by a primal phenomenon not merely a
+phenomenon of a typical kind, able to illuminate other phenomena for us; it means
+for him a fact which is at the same time a law, so that one need only utter it in
+order to have explained it, and it must not be regarded as composite, since it is
+itself to be the symbol of everything else, to be a ``limit of our beholding''
+which at once awakens ``the great wonder'' and the feeling that we stand at the
+limit of our capacity!\footnote{\textsc{Goethe}: \textit{Farbenlehre.} §~124;
+175--177. Compare \textit{Gespräche mit Eckermann.} 18. Febr. 1829; 21. Decbr.
+1831. --- Goethe applied this concept not only in the domain of the theory of
+colours, but in magnetism and in botany as well. See \textit{Sprüche in Prosa.}
+(Ueber Naturwissenschaft) and \textit{Gespr. mit Eckermann.} 27. Januar 1830. ---
+\textsc{Hegel} was (as is seen from Goethe's \textit{Nachträge zur Farbenlehre})
+much taken with the concept of the primal phenomenon as Goethe had set it up.}
+--- It is well known what a fateful role this concept played in Goethe's theory
+of colours. By his very definition of it he meant to exclude every further
+investigation and explanation of the phenomenon he chose as ``primal
+phenomenon''. But this defect need not cleave to it. It may very well designate
+the point in our experience from which we attempt to orient ourselves in all
+directions, and yet be itself an object of further investigation and explanation.
+The main thing is that the phenomenon in question should be so peculiar and so
+significant that it can take on a typical character for us. The interpretation of
+existence must always proceed from a single domain, and it can proceed without
+that domain being itself withdrawn from special scientific treatment.
+
+But where now are we to seek the primal phenomenon? On that turns the battle
+between the different world-views. Now it is life, now thought, now matter that
+is made the primal phenomenon and laid at the base of the interpretation. Before
+we go over to considering the most important primal phenomena that have been
+taken into the service of cosmological interpretation, we must nevertheless dwell
+a little on this interpretation itself.
+
+\noindent\textbf{2.}~Metaphysics can become dogmatic, and thereby work harm in a
+scientific respect, in two ways --- partly by cutting off every special
+scientific explanation of the chosen ``primal phenomenon'', partly by conceiving
+its analogizing method as more scientific than it is, and forgetting the
+necessity of continual confirmation by experience. It cannot interfere in the
+housekeeping of the special sciences, in that of the human sciences as little as
+in that of the natural sciences. Its philosophical place is at the boundary of
+scientific thinking; its task is to give a last interpretation. The theory of
+knowledge led us to a limit-concept for that which conditions the continual
+conflict in our conception of the world between quality and quantity, the
+elementary and the ideal concept of cause, subject and object. If we choose to
+call that which contains the ground of these oppositions ``the thing in itself'',
+then this expression designates the philosophical place of metaphysics or
+cosmology.
+
+The last interpretation will have more of the stamp of art than of science. The
+transition from the empirical and critical parts of philosophy (psychology and
+the theory of knowledge) to cosmology presents a certain analogy to the
+transition from historical criticism to the writing of history. The historian
+forms the critically treated material into a total picture of events and
+characters; what is fragmentary is filled out, and a rounding-off is given in
+which the personality of the one who presents it necessarily plays its part. The
+cosmological philosopher will in the same way give us a total picture of
+existence on the basis of our knowledge of it; he will work the scattered
+features together into a totality within which a single element (the primal
+phenomenon) is particularly determinative, so that the timbre of the whole
+depends on it. In the choice of the primal phenomenon and in the carrying through
+of the analogy a decidedly personal element asserts itself. A great philosophical
+system is a work of art, a drama in which the single speeches and scenes join
+together, now more with logical, now more with aesthetic-ethical harmony. The
+systems of Aristotle, Spinoza and Schopenhauer present this character in a
+special degree.
+
+This art will become harder and harder to practise. For in future it will
+presuppose not only that a rich material stands at one's disposal and can be
+shaped with constructive power, but must presuppose as well the ability to avoid
+dogmatizing, to maintain the significance of ideas and of constructions of
+thought without confusing them with absolute truths. The thing is, as
+\textsc{Lessing} said, to think gymnastically, not dogmatically. The art will be
+this: to unite bold development of thought with a wakeful critical consciousness.
+It is this side of the matter that I have particularly emphasized in my treatise
+\textit{Filosofi som Kunst}. Earlier the artistic element in philosophical
+thinking was emphasized by \textsc{Schopenhauer}, who however thinks mostly of
+the \emph{involuntary} coming-to-be of the decisive construction of thought,
+whereby art's ``What?'' takes the place of science's ``Why?'' When
+\textsc{Albert Lange} too called philosophical speculation an art, he was
+thinking rather of the \emph{idealizing} tendency, the need to see in ideal
+images an expression of the highest reality.\footnote{See my \textit{Mindre
+Arbejder}, p.~180--194. --- On Schopenhauer and Lange see \textit{Den nyere
+Filosofis Historie.} II. p.~198\,f.; 501\,f.} --- At the religious problem we
+shall meet a relation akin to the transition from science to art of which we have
+here spoken; only that there it will be a question of a completion of the view of
+\emph{life}, whereas here it is a question of a completion of the view of
+\emph{the world}. ---
+
+It is not, as the history of philosophy shows, at all times that the conditions
+are present for the exercise of the art here spoken of in the grand style. A long
+period of accumulation of material and of points of view, a great concentration
+of mind, and a thought-energy awakened by the sharpening of the problems must be
+present. We find in the history of philosophy that the systems lie gathered in
+certain single periods, and even bound to single places as well. The fifth and
+fourth centuries before Christ created the great Greek systems, and here Athens
+was the philosophical centre. In the seventeenth century arose the principal
+systems of the modern age, which came into being on the basis of the manifold
+material and the new points of view of the Renaissance and of the newly founded
+natural science; here Holland occupies a central position. At the beginning of
+the nineteenth century all the systems of philosophical idealism were founded in
+Jena, where Kant's disciples met with Goethe's disciples and with the champions
+of Romanticism. It is at such points of time that philosophy stands as one of the
+symptoms of the course of the life of the spirit; in the intervening times the
+more special discussion of psychological, epistemological and ethical problems
+goes its quieter way. ---
+
+I now go over to bringing forward the most important primal phenomena which can
+serve as a systematic foundation and have historically rendered such service.
+
+\noindent\textbf{3.}~The first fact which it lies near for philosophy to regard
+as the primal phenomenon in existence is this, that existence is to a great
+extent \emph{intelligible} to us. We can recognize phenomena, infer from one
+phenomenon to another, and find continuity between them. Even though our
+hypotheses are really working hypotheses, and even though the old, naive concept
+of truth must more and more give place to the dynamic or symbolic concept of
+truth (see II, 2), the very fact that with our faculties and our methods we can
+to a certain degree orient ourselves in existence must nevertheless hang together
+with the essence of existence. The applicability of a method always contains a
+testimony about the constitution of its subject-matter. The intelligibility of
+existence for us points to an inner unity in its essence, which lays itself open
+to the day in the lawfulness that the course of phenomena presents. Our very
+criterion of reality consists in firm connection, and it is a natural extension
+of what the application of this criterion establishes when we find in existence a
+\emph{unifying power} by which the single elements and events are bound together.
+Philosophy has a natural tendency to go back to such a principle; Plato and
+Giordano Bruno, Spinoza and Hegel, Fechner and Lotze worked in this direction,
+and even Kant, for all his great critical scruple, has borne witness to the
+significance of this thought. While popular thinking is inclined to seek a
+completion by climbing the ladder of causes so as to end in a first cause --- a
+road that leads only to an endless series --- philosophical thinking seeks its
+completion rather in depth than in length, bethinking itself of what the
+presupposition is for a rational world-picture, however hypothetical, being
+formed at all. \emph{Causality} stands here as the primal phenomenon, and it is
+not least for this reason that the discussion of the causal principle fills so
+large a place in the history of modern philosophy.
+
+Against the monism which thus presses forward one might object that what is
+characteristic of the scientific understanding of phenomena is not only the
+assumption of an inner connection between them, but also the assumption of a
+manifold of elements between which the interaction takes place that the laws
+found by science hold for. Why not regard this manifold as the primal phenomenon,
+so that our metaphysics becomes pluralistic and not monistic?
+
+The answer to this question is given in the fact that all the properties or
+forces with which we equip the elements of existence (whether we represent them
+to ourselves as material atoms or as psychical monads) are fetched from the
+lawlike connection in which those elements are members. The properties of things
+are the constant ways in which they affect one another and are affected by one
+another. ``Force'' is here the element which for us contains the ground of a
+change in one or more other elements. So it goes with the kindred concepts
+energy, capacity, individuality. All these concepts are derivative in relation to
+the concept of law. In the case of individuality one must here think not only of
+the law that holds for the individual's relation to the surrounding world, but
+also of the law for the relation between the individual's inner states.
+
+In the same direction points another consideration. All knowledge begins as
+analysis of given intuitions (observations or recollections). If such an
+intuition is to be able to become an object of analysis, it must come forward as
+a totality embracing an aggregate of elements (parts or properties). Every act of
+knowledge rests on a section cut out of a greater whole: every conceptual
+determination (definition) is a limitation; every judgment rests on
+presuppositions that point out beyond the act of judging itself; every inference
+presupposes several premisses whose validity must often be grounded along highly
+different roads. We always move within a more comprehensive whole, in which the
+conditions must be sought for the single results we arrive at.
+
+When thus, both in the world of reality and in the world of pure thought, the
+particular gets its constitution and its validity from the unitary connection in
+which it occurs, monism will stand as taking a more fundamental starting-point
+than pluralism.
+
+Meanwhile the theory of knowledge does show that there are limits to
+understanding. The empiricist and the sceptic will always be able to stop the
+monistic metaphysician by pointing to the actual limits of knowledge. Not even
+the criterion of reality can we apply everywhere, and so we cannot carry through
+the strict difference between dream and reality. With the same right with which
+one infers from the possibility of rational knowledge to a unifying power in
+existence, one would then, it seems, be able to infer to an irrational element in
+existence, to a cosmological principle which prevented the elements of existence
+from standing in a rationally determinable relation to one another.
+
+From the monistic side it may again be answered that if the unifying power does
+not rule everywhere, that might indicate that existence itself is in becoming, in
+development, and that what stands for us as a lawlike connection presupposes a
+development in the innermost of existence which is not yet completed. It would
+then, from this point of view too, be \emph{time} that conditions the irrational.
+And so long as thought, knowledge, is not finished but is caught up in becoming,
+so long \emph{can} existence as a whole not be finished either. Thought,
+knowledge, is after all a part of existence! And when \emph{it} is in becoming,
+there might well be more that is in becoming. It is the strange contradiction of
+the great rationalistic systems that even if they could explain everything else,
+they could not explain the striving and labouring thought whose products they
+are. In Plato and Spinoza, in Hegel and Boström this contradiction comes forward.
+
+\emph{Critical monism}, which holds fast to the validity of time and thereby to
+the incompletability of existence as well as of knowledge, may very well build
+its world-view on causality and rationality as primal phenomena. It then finds in
+existence a struggling unifying power which through progressive development is
+carried out beyond what is sporadic and conflicting. Perhaps new elements are
+always arising which have in their turn to be worked together, and development
+must then always begin anew. The work of thought is hereby seen in a cosmic
+light: a constant connection between our methods and hypotheses and the real
+processes of existence is after all the goal thought sets itself (even when it
+exchanges the static concept of truth for the dynamic); and if thought succeeds
+in approaching this goal, existence will thereby have become more rational than
+it was before, since a new constant and harmonious relation has been realized.
+The thinker to whom it is given to work forward in this direction may with right
+say: ``Ort für Ort \textit{sind} wir im Innern'' --- however distant and exalted
+thought's highest ideal may stand before him.
+
+\noindent\textbf{4.}~Can we not attempt a real, positive determination of the
+principle of unity which, on the hypothesis just developed, holds existence
+together in its innermost? --- Every attempt in this direction must make use of
+analogy in a particularly high degree. We have here no such fundamental fact to
+point to as we had in setting up that hypothesis, where we could support
+ourselves on the connection of the problem of existence with the problem of
+knowledge. In a closer determination of the principle of existence, thought will
+be led to the most fundamental difference which the phenomena accessible to us
+present: the difference between the spiritual and the material. There seems here
+to be a forced choice for every attempt in a cosmological direction.
+
+How I stand, in a purely methodical and empirical way, to the problem of the
+relation between spirit and matter I have already developed (I, 3). But the
+question comes up here again from another point of view. For whether we are
+methodically and empirically dualists, materialists or monists, it may be asked
+how we think the fundamental essence of existence --- what the underlying
+attribute is, that under which we finally --- when we think our last thought ---
+think existence.
+
+If I lay at the base the analogy with what is extended and movable in space, then
+my metaphysics, and not merely my method, becomes materialistic. As a concluding
+hypothesis \emph{materialism} has the advantage that it gives us the picture of a
+great continuity, and that we need not leave what is intuitable. Materialism is a
+childlike and naive conception; it is man's first philosophy. But the impression
+of the connection and the extent of the material world exercises a constantly
+overwhelming power, so that attempts in a materialistic direction come forward
+again and again, even if since the appearance of the critical philosophy they
+cannot present themselves with the dogmatic assurance of former times. They will
+always run aground, partly on the impossibility of tracing the spiritual back to
+the material, partly on the epistemological scruple that we have the material
+always only \emph{as object} for consciousness, and that if materialism were
+right there could exist nothing \emph{for which} the material could become object
+or phenomenon. \textsc{Hobbes}, whose thinking went strongly in a materialistic
+direction, nevertheless halted at precisely this consideration, that of all
+phenomena \emph{the very fact that something can become a phenomenon for us} is
+the most important.
+
+In contrast to materialism, \emph{metaphysical idealism} lays at the base the
+analogy with spiritual phenomena. It can empirically espouse dualism (like
+\textsc{Lotze}) or materialism (like \textsc{Schopenhauer}) or Spinozistic monism
+(like \textsc{Leibniz, Fechner} and \textsc{Wundt}). The last thought is in all
+forms this, that only the analogy with the spiritual states we know from
+ourselves gives us a key to the understanding of the innermost essence of
+existence. Ourselves alone do we know from within, everything else merely from
+without! Psychological experience already teaches us that there are many degrees
+and kinds of spiritual existence, and if we would use it for the interpretation
+of the whole of existence, of its innermost ground and its ultimate elements,
+then we must naturally think these series of degrees and of qualities continued
+without limit. This idealistic cosmology can be varied in many ways, and appears
+historically in many forms, conditioned especially by the other motives that
+determine the world-view (for example the tendency to optimism or to pessimism,
+chief weight on thought or on will, and so forth). It appears already in the
+Indian ``Upanishads'': in the doctrine that Bráhman (the world-principle) is
+Atman (soul).
+
+Sometimes it is denied that it is an inference from analogy that one here relies
+on, and it is maintained that metaphysical idealism (or idealistic cosmology) has
+been reached along the strict road of logical construction, of the dialectical
+method. But even the proudest edifice of thought that men have believed
+themselves able to raise in this way, \textsc{Hegel}'s system, really comes to
+showing that everything in existence hangs together as inwardly as the thoughts
+in the human mind: it is in reality the latter that is used as the basis for an
+analogizing, since it stands as the best example of an inward
+totality.\footnote{See \textit{Den nyere Filosofis Historie.} II. p.~165\,f. ---
+It is characteristic that the English thinkers who in the most recent time have
+worked with some of Hegel's fundamental thoughts concede that what is in question
+here is analogy rather than demonstration. \textsc{Francis Bradley} does not
+consider even the analogy defensible; the highest reality can, according to him,
+be called neither soul nor body, though the soul more than the body has that
+combination of extent and unity, that ``self-consisting'', which is the mark of
+true reality. (\textit{Appearance and Reality.} p.~307; 357). --- In his treatise
+\textit{Hegel's treatment of the categories of the idea} (Mind 1900. p.~149\,ff.)
+\textsc{Mc.~Taggart} states that we have only a single example of the category
+``spirit'', which in Hegel acquires a theological or cosmological significance.
+--- When one distinguishes (as \textsc{A. E. Taylor} in Mind 1900 p.~245) between
+two idealistic schools, one standing nearest to Leibniz and Lotze and one
+standing nearest to Hegel, I must maintain that it is the first of these schools
+that has most clearly seen the real philosophical foundation of metaphysical
+idealism. (That it is an analogy with the human mind that lies at the base in
+both cases, Taylor really concedes himself when he says that both tendencies are
+agreed on ``the main principle that it is in mind, and nowhere else, that we are
+face to face with the central reality of the universe''. ibid.)} ---
+
+The idealistic analogizing could lead to a concluding solution only if we had
+means of determining in a positive way the different degrees and kinds of
+spiritual existence which must be found in the world if metaphysical idealism is
+right. But we cannot, as has already shown itself in an earlier connection
+(I, 3), get further here than to the negative concept of potential psychical
+energy. A verification of idealism is therefore impossible. And even if it could
+be carried through in full, there would still remain the difficulty that the
+material can as little be derived from the spiritual as the spiritual from the
+material.
+
+But it is by no means certain that we have a forced choice between a
+materialistic and an idealistic solution of the problem of existence. The
+difference between matter and spirit is certainly a chief difference in the
+content of our experience; but no proof can be given that there are not in
+existence other fundamental forms (``attributes'') than these two. \emph{If} the
+problem of existence is to be solved out of human experience, then one of those
+two possibilities must be chosen. But the question is whether our experience
+presents us with elements enough for a real solution. The richness of existence
+may be much greater than the possibilities of our experience. Here again it may
+hold that the world is great and our brain is small; here again we strike on the
+irrational. Could it be proved that the difference between spirit and matter was
+contradictory and not contrary, so that an absolute either-or lay before us, the
+problem of existence would be simpler than it is --- and yet more involved than
+human thought, which is inclined to think itself fully equipped for religious and
+metaphysical speculations, has often supposed. \emph{Critical monism}, which
+strives to hold fast the thought of unity without dogmatizing, must impress upon
+us that we here lack the conditions for a complete solution. That there is a
+possibility of more forms than our experience presents may indicate that the
+whole problem lies deeper than has been supposed. There might, for example, be a
+fundamental property of existence of which both spirit and matter were
+consequences, and the insolubility of the problem for us might come of our not
+knowing this fundamental property.
+
+\noindent\textbf{5.}~A third primal phenomenon we have when we have made our
+choice between subsistence and development (being and becoming). Ancient thinking
+was throughout inclined to hold to subsisting being; it was a philosophy of
+concepts, which above all sought to trace phenomena back to fixed concepts of
+kinds. Plato's theory of Ideas forms here the high point (compare II, 1). And it
+--- or the same tendency of mind that has found expression in it --- comes
+forward not seldom in more recent inquiry as well, and that not only in
+philosophy but everywhere in science where the battle is fought for fixed,
+unchangeable species or types. Even where ancient thinking assumed a development,
+it was particularly inclined to assume a rhythmical process which brought the
+same states and events with it again and again. Development as an ever
+forward-advancing series of changes is a modern idea, due to widened experience
+in the domain of history as well as of nature, but one which has also taken shape
+under the influence of the Persian-Christian type of religion.\footnote{Compare on
+this type my \textit{Religionsfilosofi.} p.~50; 121\,f.; 273\,f.}
+
+That the concept of development comes to play so great a role for the thinking of
+the modern age hangs together with the causal concept's having come forward so
+strongly. The more the elementary concept of cause, through continued inquiry,
+approaches the ideal concept of cause, the more does the causal relation come to
+designate a continuous process in which the following members are determined by
+the preceding. And the concept of development comes forward as soon as it shows
+itself that the \emph{direction} is essential, so that time cannot be reversed
+(compare II, 4). While the formal sciences, which rest on the principle of
+identity, can go forwards and backwards in their series of thoughts, the
+time-relation, and particularly the direction of time, acquires a decisive
+significance for the real sciences, and these thereby retain a historical
+character. Here the very concept of event is a primal phenomenon. But in the
+concept of development there lies this, that not merely does something happen,
+but that through the series of events states are reached which have a certain
+character of wholeness, a manifold of elements being connected in such a way
+that, in spite of their difference of kind, they work in firm connection with one
+another and with a certain completeness over against their surroundings. Most
+fully, and with a great wealth of examples, \textsc{Herbert Spencer} has analysed
+the concept of development and maintained the combination of differentiation and
+concentration as its essential feature. It is by this concept as measure that we
+determine what --- from a purely theoretical point of view --- is to be called
+``lower'' and ``higher'' within a changing series of states or forms.
+
+In spite of its connection with the causal concept, the concept of development is
+an independent concept which cannot be derived from the general concept of cause
+(though it presupposes it). The causal principle would hold even if only a
+rhythmical oscillation took place, without progressive formation of new states of
+wholeness. Development stands as a fact of experience which casts light on the
+nature of existence. It was in and for itself quite possible that the different
+causal series in existence should either not meet at all, or else meet only in
+order to collide in a disharmonious way. Now experience shows that under certain
+conditions they can meet in such a way that they are combined into more composite
+processes and give rise to peculiar wholes. The coming-to-be of the stellar
+systems, the arising, the subsistence and the unfolding of life, the existence of
+the life of the soul and of social, historical human life are testimonies to an
+individualizing and totalizing tendency in existence. These phenomena constantly
+set inquiry the greatest problems; when we point to them here as primal
+phenomena, we decide nothing about whether these problems can be solved or not,
+but regard them merely as characteristics of existence as it once for all is. It
+is certainly --- this must be added here --- a great misunderstanding when it is
+often supposed that these phenomena would be more remarkable if they could
+\emph{not} be explained by the help of laws that science can find. On the
+contrary: if a ``natural'' explanation of them can be found, it will be possible
+to infer with greater certainty than before that the individualizing and
+totalizing tendency lies deeply grounded in the kernel of existence.
+
+But how deeply? Experience shows us not only, and often, a purely external and
+indifferent relation between different causal series, but also, and often,
+collisions between them, or at any rate disharmonious relations which hamper or
+hinder the arising or the subsistence of individualities and totalities. And
+after development follows dissolution, and the question becomes whether through
+the rhythmical alternation of these processes a progressive course of development
+can be traced, or whether we must halt at the ancient thought of rhythm as the
+last thought.
+
+Here the irrational comes forward again, and it comes forward here in a sharper
+form than at the earlier points where we met it; it designates here what hampers
+and dissolves, the tendency to remain standing at, or to return to, the most
+elementary forms of existence. Existence gives us here, the more inquiry
+penetrates into it, the picture of a struggle --- the great struggle which all
+forms of existence that bear the stamp of individuality and of totality must wage
+in order to subsist. The struggle itself is again two-sided: it can be a means to
+development, but it can also be a road to destruction; and which of these
+possibilities is the preponderant one?
+
+At the same time there shows itself here still more clearly than at the earlier
+points the impossibility of forming an absolutely completed concept of existence
+as a whole: if the conflict between elements and totalities is an
+\emph{essential} feature of existence, then it is a feature that can always be
+found only in limited sections of existence, not in existence regarded as a
+whole, since an absolute whole can meet no outward resistance, can be engaged in
+no struggle. We must content ourselves with saying that wherever we come upon
+existence, we find that within it such a conflict between elements and totalities
+goes on. The great question is whether through this conflict it is the elements
+or the totalities (the solar systems, the organisms, the souls, the societies)
+that carry off the victory. Empirically we stand here in the midst of the great
+world-process, and can get no further than to maintain that it is no purely
+subjective measure we apply when we designate one form of existence as higher or
+lower than another, since development is a phenomenon characteristic of all the
+existence we know --- a primal phenomenon. ---
+
+By the result at which we thus end in the matter of the problem of existence, a
+natural transition to the last problem, the problem of valuation, becomes
+possible.
+
+If existence were finished, harmonious and unchangeable, no ethics would be
+possible. All ethics demands a work performed; but there would be no room for any
+work if everything consisted in eternal and actual completedness. Precisely this,
+that all individualities and totalities must struggle in order to subsist ---
+that there are constantly disharmonies to overcome, sporadic tendencies to
+connect --- precisely this makes an ethics possible. For ethics investigates the
+principles of a carrying-further of the individualizing and totalizing tendency
+which experience exhibits in existence. Ethics rests on a self-contradiction if
+the course of the world does not partly proceed, or cannot partly proceed,
+through human will, just as it partly proceeds or can proceed through human
+thought-work (III, 5). Ethics then takes up the problem of continuity where the
+first three problems let it go.
+
+Still more clearly does the religious problem find a point of attachment in the
+foregoing consideration, since it --- as I shall attempt to show --- concerns the
+continuity of values under the struggle of existence.
 
 % ============================================================
-%  IV.  VURDERINGSPROBLEMET  (pp. 71--; notes 57--63)
+%  IV.  VURDERINGSPROBLEMET  (pp. 70--84; notes 57--63)
 % ============================================================
+% The numbered run-in divisions here run 1--7 STRAIGHT THROUGH and do not
+% restart at B: §1 is a chapter introduction standing before A, §§2--4 fall
+% under A (a = §2, b = §3--4), and §§5--7 under B.  Verified against the epub's
+% own h2/h3 headings.
 \fpchapter{IV.\quad The Problem of Valuation}
 \label{ch:vurdering}
 
-% [text to be added: chapter IV opening, pp. 71--] — epub OPS/s007-Chapter-004.xhtml.
+\noindent\textbf{1.}~That the problem of valuation is set up as a separate
+problem presupposes a distinction between understanding and valuation which has
+not always been acknowledged, and which has not yet made its way through. There
+has been an inclination in philosophy to let the two run into one: thus Plato's
+``Ideas'' and Spinoza's ``substance'' are at once an expression of the two
+thinkers' understanding of existence and of their admiration for it. In any case
+men have been inclined to let valuation be a mere consequence of understanding,
+while conversely mystical and theological tendencies have been inclined to let
+understanding be dependent on valuation. Wholly independent of one another they
+certainly are not: understanding has its value, and would not be possible if that
+were not so, since men would not otherwise strive after it --- for some, indeed,
+the joy of knowledge is the highest of all; and valuation can become an object of
+psychological and historical understanding, since all value rests on the relation
+of experiences and states to life at its various levels, to life's subsistence
+and its development. The problem of valuation will therefore also show itself to
+present an analogy to the three first, theoretical problems. It is in the domain
+of valuation, as in the domain of personality, of knowledge and of existence, the
+principle of continuity that leads to the decisive problems.
+
+\emph{Value} belongs to everything that brings a satisfaction with it or
+relieves a need. Sometimes it is only through a satisfaction's arising that we
+become aware that there has been a gap in our existence; sometimes this gap is
+felt beforehand and causes a want or calls forth impulse and desire. When what is
+valuable does not immediately fall to our lot, we make it an \emph{end} and seek
+means of attaining it. Whatever stands as a means of attaining something
+immediately valuable acquires a mediate value for us. In our values and our ends
+the innermost essence of our feeling and our will makes itself known. Just as the
+concept of end depends on the concept of value, so the concept of \emph{norm}
+depends in turn on the concept of end: the norm is the rule for the activity
+necessary to the attainment of the end.\footnote{In my \textit{Etik} (2nd ed.,
+p.~21) I did not enter more closely into the relation between the concepts value,
+end and norm. See instead \textit{Det psykologiske Grundlag for logiske Domme.}
+p.~47 (compare p.~65) and my \textit{Religionsfilosofi.} p.~12.} --- It had a
+fateful influence on the treatment of the problem of valuation that
+\textsc{Immanuel Kant} wanted to reverse the relation and to derive the concepts
+of end and of value from the concept of norm (``law''). That is a psychological
+impossibility.
+
+Now experience shows that for different individuals, and for the same individual
+at different times, different values hold. I have already mentioned the value of
+knowledge; besides it there are to be mentioned especially the values attached to
+the impulse of self-preservation and to the subsistence and development of life
+in larger or smaller circles --- to movement and activity --- to images (those of
+reality or of fantasy), and so forth. If a comparison is to be instituted between
+different values --- and every conscious valuation consists in such a comparison
+--- then a \emph{fundamental value} must be presupposed, from which the order of
+rank of the different values can be fixed. A determinate value must be laid at
+the base and furnish the measure for all other values, if consistent thinking and
+discussion is to become possible in the domain of values. From a given
+fundamental value there can then --- on the presupposition of sufficient
+experience --- be constructed a system of valuation in which every single value
+gets its place according to its relation to the fundamental value. Thinking,
+``practical reason'', is needed in order to determine this relation, and also in
+order to find means and ways of producing or finding out the several values under
+certain given conditions. But on bare ground no valuation (or ``revaluation'') is
+possible. The concept of fundamental value is, within the problem of valuation
+(that is, in ethics and the philosophy of religion), what the concept of primal
+phenomenon is within the problem of existence (that is, in metaphysics). ---
+
+The problem of valuation divides into two problems, the ethical and the
+religious. Ethical valuation concerns human actions, qualities and orderings of
+life (institutions); religious valuation reaches further and values existence
+according to the fate of values in the world of reality. Within both problems the
+relation between continuity and discontinuity will --- as at the earlier problems
+--- show itself to be of decisive significance.
 
 \section*{A.\quad The Ethical Problem}
 \label{sec:etiske}
@@ -1836,18 +2677,422 @@ For us existence never dissolves wholly into thought.
 \subsection*{a.\quad Ethical Work}
 \label{sec:etiske-arbejde}
 
-% [text to be added: IV.A.a] — epub OPS/s007-Chapter-004.xhtml.
+\noindent\textbf{2.}~There is, as the discussion of the problem of existence has
+shown, room for a work by which existence is developed further. Such a work is
+performed in all human culture, but quite particularly in ethical striving. This
+may be designated as a striving to bring forth greater continuity, partly within
+the single personality, partly between the different personalities among
+themselves. The measure of ethical striving, and so the principle of ethical
+valuation, will show itself to be determined by the principle of continuity.
+
+Personality presupposes continuity, and this is in turn conditioned by there
+being one fundamental value which determines the value of the several moments,
+periods of life, capacities and impulses. Development into a true personality
+presupposes a striving out beyond what is momentary and what is sporadic --- an
+overcoming of the tendency of the single moment or the single need to isolation
+and sole dominion. The thing is to work the several moments and elements
+harmoniously into the life of personality as a whole. Here is a work to be done,
+a struggle to be come through, which in different individuals demands different
+degrees of energy.
+
+There are ethical standpoints which assert the right of the several moments and
+impulses, of the successive and simultaneous differences, over against the whole
+of life. But this does not conflict with the measure's being fetched from the
+principle of continuity. Such standpoints may be warranted in so far as they
+demand that the subordination of moments and special impulses to the whole of
+life be grounded. Continuity does not mean absence of difference, but the
+ordering of the differences into a graded series. Life as a whole can always be
+called to account by the single element of life. It will always stand as an
+imperfection when a moment, a period of life, a capacity, an impulse is made a
+\emph{mere} means without acquiring independent value. The art will be to let
+them have immediate and mediate value at once. --- And in so far as the ethics of
+the moment or of the speciality appears in absolute form and proclaims the
+sovereignty of the single moment or element, one will often find at the base the
+presupposition that life as a whole is represented by, or is concentrated in, the
+single moment or the single need, so that all other considerations pale. So it is
+in the great moments of self-sacrifice, where a man --- as \textsc{Aristotle}
+says --- ``would rather perform one great and beautiful action than many small
+ones''; and so it is where a man sees the calling of his whole life in the
+special development of a single capacity. Or one believes in a harmony between
+all the different moments of life, so that a complete absorption in each of them
+becomes possible without the satisfaction of the single moment depriving the
+other moments of anything. So \textsc{Aristippus} seems to have thought of it. Or
+the highest is placed in a hovering above the several moments and occupations,
+with the possibility of alighting at will, and without being bound, on the single
+point for a while. So in the ``aesthetic'' view of life depicted by
+\textsc{S. Kierkegaard} in Part I of \textit{Enten-Eller}. Under all these forms
+there plainly lies a regard for the whole of life in the background.
+
+If a contradiction is experienced between what is momentary or sporadic and the
+need for wholeness, there will arise a more or less conscious and a more or less
+energetic striving to develop the personality into a work of art, in which every
+single moment and every single capacity gets its place and comes into its own. No
+element in the personal life is then regarded as a mere means, but always at the
+same time as an end. What is a means or a point of transition for the development
+of the personality shall so far as possible have immediate value itself. It is
+\emph{the unforgettable fundamental thought of Greek (Platonic-Aristotelian)
+ethics} concerning the harmonious unfolding of the life of the soul as the great
+task --- a fundamental thought which has its significance quite particularly
+under modern culture's tendency to isolate or to mechanize the several elements
+of life. \textsc{Rousseau} and \textsc{Schiller} have renewed this ancient
+fundamental thought --- against modern labour-helotism, and against dalliance and
+decadence.
+
+But the problem of continuity comes up again, and in a very sharp form, at the
+question of the possibility that the single personality can form a completed
+world for itself, and whether that would be the most valuable thing. Not only
+must the individual always enter into relations of interaction with other
+personalities in order to obtain means for his own development. There is also a
+need for self-surrender, which can appear in different forms and which can lead
+to ascribing immediate value to other personalities. The individual is thereby
+drawn into the great realm of personalities; and just as the question before was
+how far the several elements of life could be harmoniously ordered into the whole
+of life of the single personality, so it now becomes a question how far the
+several personalities can develop independently and yet in harmony with one
+another, so that there can subsist \emph{a social whole of life} in analogy with
+the individual whole of life. It is continuity within continuity that is here
+striven towards. The measure of a society's perfection will --- in virtue of the
+principle of continuity, which here shows itself plainly in its connection with
+the principle of welfare --- be this: in what degree every personal being is
+placed and treated in such a way that it does not stand as a mere means, but
+always at the same time as an end. It is \textsc{Kant}'s famous proposition, with
+a different grounding from the one he gave.\footnote{Compare my \textit{Etik}. 2,
+p.~144--151.} Stoic and Christian ethics and the modern social and political
+development lead in the same direction. The declaration of the ``rights of man''
+(whether we regard it as a symptom or as a programme) rests on this
+presupposition, and the sting in the social question has come about through this
+presupposition not having been satisfied. In the discussion of more special
+ethical and legal-philosophical questions too --- for example on the grounding of
+monogamy and on the development of the penal system --- this principle furnishes
+the measure. ---
+
+Ethical work thus shows itself as a peculiar continuation of the great process of
+existence. But the whole train of thought by which I have sought to ground this
+point of view runs into difficulties which sharpen the ethical problem. We meet
+here again the irrational.
 
 \subsection*{b.\quad The Rationality of Ethical Valuation}
 \label{sec:etiske-rationalitet}
 
-% [text to be added: IV.A.b] — epub OPS/s007-Chapter-004.xhtml.
+\noindent\textbf{3.}~Ethics would be a more perfect science than it is if the
+carrying through of the principle of continuity did not run into great
+difficulties.
+
+Every ethical argument holds only on the acknowledgement of a determinate
+fundamental value which determines all special valuations. One may take one's
+stand on the standpoint of the single moment or the single impulse, or on that of
+the isolated personality, or on that of the family, or the class, or the state,
+or humanity. The question is whether all such standpoints can really be brought
+into harmony with one another, as has been assumed above; and the question is
+especially whether it is possible, by way of argument, to bring a man who
+consistently and with the requisite ruthlessness holds fast to one of these
+standpoints over to one of the others. Between the fundamental value and the
+special values a rational relation can perhaps be exhibited, so that one who
+avows a fundamental value, and is sufficiently acquainted with the actual
+conditions under which it is to be held fast, can be logically compelled to
+concede the inferences one draws from the fundamental value. Thus self-assertion
+and self-surrender have each their logic, and so too have the feeling for family
+and the feeling for nation. But what when it is a question of \emph{transition
+from one fundamental value to another}? Here inner consistency is not enough.
+Consistency can only unfold and bring to consciousness what --- under certain
+given, actual conditions --- follows from the fundamental value.
+\textsc{Socrates} became the founder of ethics by his demand for self-knowledge,
+which was in reality a demand to become clear about one's fundamental value and
+about what follows consistently from it. But how the fundamental value is
+procured, and whether there are not in fact different values which claim to be
+fundamental values, he did not discuss more closely.
+
+A fundamental value forms itself by a psychological and historical process which
+presupposes more operative elements than logical consistency and knowledge of
+facts. Through displacement of motive and of value\footnote{Compare my
+\textit{Psykologi.} VI. B., 1--5. --- \textit{Etik} 2 XIII., 4.} one fundamental
+value can pass over into another; but \emph{while} such a fundamental change is
+going on in the domain of the life of feeling and will, it will be of no use to
+argue from the presuppositions which only come to be present when the process is
+finished. In education one cannot without more ado argue with the child from the
+presuppositions of adults; the child has precisely first to acquire those
+presuppositions. And so it goes too with the great process of education that goes
+on in history. \emph{During} the education and the development there are of
+course other fundamental motives at work than those which only become the result
+of the whole process. He who is being educated will therefore not be able
+rationally to understand the system by which he is being educated. ``Wer kann der
+Raupe, die im Staube kriecht, von ihrem künftigen Futter sprechen?''
+
+There does not, now, take place an evenly advancing education in history from
+primitive fundamental values to higher ones (that is to say: to such as those who
+have acquired them call higher in comparison with the primitive). History is the
+great battlefield of fundamental values. Here individual stands against
+individual, individual and society against each other, and society stands against
+society, and it is often only after violent conflicts that a new fundamental
+value can be fixed in the minds of men. An example of this is the way in which
+the conquests of Alexander and of the Romans prepared the way for the development
+of the general feeling of humanity. During this great struggle ethical thinking
+can play a part only indirectly: by drawing the determinate consequences of each
+single position, and by illuminating the significance of those consequences by as
+many experiences as possible --- that is, by furthering self-knowledge in the
+spirit of Socrates. In the struggle itself, or in the education, what is called
+for is an art; science does not suffice, however significant a contribution it
+may often make.
+
+But we do not abandon the principle of continuity because we stand at the
+boundary of scientific ethics. There, where it is not possible to pursue
+continuity further in purely ethical form, we seek to trace it out in
+psychological and historical form. Ethics passes at this point over into
+psychology and into sociology.
+
+While I have sought in my \textit{Etik} to show that justice, conceived as an
+inner harmonious relation between self-assertion and self-surrender, and also
+between feeling and thinking, is the highest quality of character, this has been
+disputed by philosophical thinkers who maintain that in self-assertion and in
+self-surrender such different tendencies (or, as I should say, fundamental
+values) make themselves known that it is not possible to unite them in one
+embracing concept.\footnote{\textsc{Francis Bradley}: \textit{Appearance and
+Reality.} p.~414--418. --- \textsc{A. E. Taylor}: \textit{The Problem of
+Conduct.} London 1901. p.~201.} And in popular literature self-surrender
+(altruism) has been asserted just as ruthlessly by \textsc{Leo Tolstoy} as
+self-assertion has by \textsc{Friedrich Nietzsche}. Here we have an example of a
+strife between fundamental values that press forward at the same time. There will
+probably always, in actual human life, be oscillations between these two opposite
+poles. In the race as a whole both self-assertion and self-surrender have their
+function to exercise. But the valuation of the single oscillation in the one or
+the other direction will always depend on whether it leads forward in the
+direction of an ordering of life within which every single personality can
+develop as peculiarly and independently as possible, in such a way that precisely
+thereby it renders the best help to the equally peculiar and independent
+development of others. In individuals self-assertion and self-surrender will
+stand in highly different relations to one another, and the harmony between the
+two, in which on my view justice consists, will therefore appear with a highly
+different timbre in different persons and at different times. But that too
+belongs to the richness of life --- and to its continuity. The manifoldness of
+the nuances conditions the connection and makes it different from a dead
+uniformity, which has no value either from an ethical point of view or from any
+other.
+
+\noindent\textbf{4.}~Another difficulty, one connected with discontinuity, arises
+from the fact that the inferences drawn under certain conditions from a
+fundamental value have to be applied to \emph{individuals who come with highly
+different inner and outer conditions} for satisfying the demand which such an
+inference grounds. Aptitudes and impulses are not the same in all individuals,
+either in kind or in degree. One and the same demand addressed to different
+individuals therefore lays on them a highly different ethical work. The
+starting-point and the initial speed are different. Some individuals are perhaps
+already on the way to an involuntary performance of the content of the demand
+before the demand becomes conscious to them; others must struggle laboriously to
+lay the first foundation. The law, the demand, must therefore be set differently
+for different persons if it is really to become the same for all. Each must be
+taxed according to ability. A thoroughgoing individualization of the ethical
+demand must be undertaken, if ethics itself is not to sin against the proposition
+that personality is always an end and never merely a means. The ethical demand
+shall not be an abstract or external command, but shall answer to the ethical
+possibilities in the single personality and be able to develop them further.
+Legislation and pedagogy cannot here be kept absolutely apart from one another.
+But this makes ethical decisions difficult in the several cases.\footnote{Compare
+my \textit{Etik}. 2, p.~70--73.} Here again the world --- the world of
+personalities --- is great, and our brain is small. Ethical thinking cannot
+formulate a law that can be applied without more ado in the manifoldness of life.
+And yet we must assume that in each single case only one single decision can be
+the right one (Eng ist die Welt, und das Gehirn ist weit). Our ethical thoughts
+circle about the narrow way that leads to ethical truth, and work their way
+forward to it through a constant struggle with the irrational, which they seek to
+overcome by finding as great an approximation as possible. Here, as within the
+problem of knowledge, we do not end with an absolute conclusion, but hear an
+Excelsior! --- even where our thought has strained itself to the utmost.
 
 \section*{B.\quad The Religious Problem}
 \label{sec:religiose}
 
-% [text to be added: IV.B, to p. 82+] — epub OPS/s007-Chapter-004.xhtml, notes
-% through 63. This is the longest single span in the book (~45k characters of
-% Danish); split it across several batches with continuation notes.
+\noindent\textbf{5.}~The very fact that a religious problem exists already shows
+the significance of continuity. For that religion has become problematic hangs
+together with a division of labour, a differentiation, having set in within the
+domain of the spiritual life. In religion's classical ages it stands as the one
+concentrated form in which all the requirements of the life of the spirit are
+satisfied; religion is as such not merely help and comfort, but is poetry,
+morality and science, or it is at any rate able to take these domains up into
+itself in an organic way. After these various domains have emancipated
+themselves, and each develops according to its own laws, the question arises how
+far the life of the spirit --- as regards value --- has preserved its continuity
+through that transition from concentration to differentiation. That a
+psychological and a historical continuity is present there is no reason to doubt;
+but has not value been lost for human life by that transition?
+
+The answers to this question sound highly different. Some are content that the
+same dogmas are still taught as in the old days. From another side it is
+maintained, on the contrary, that this dogmatic continuity means nothing: the
+essential thing is whether life is led in the same way --- whether there is
+ethical continuity --- whether ``the Christianity of the New Testament'' still
+exists. And finally there are those who hold that with the division of labour in
+cultural history the age of religion is past, and that this means no loss of
+value but on the contrary a gain for the life of the spirit. Besides these
+principal standpoints, which can themselves appear in different nuances, there is
+a series of different and less characteristic standpoints.
+
+The answering of the question depends of course on what one takes to be the
+essential thing in religion. Continuity cannot appear in such features as
+separate the different religions and religious standpoints from one another; one
+must seek out the most deeply moving tendencies, which can reveal themselves
+under highly different forms, and which may perhaps also continue to work after
+the division of labour in cultural history has come into force. This is the task
+of the philosophy of religion, and it seeks to solve it especially along two
+roads. First, it institutes a comparison between religion and other sides of the
+life of the spirit in order to find in which region of the life of the spirit
+religion belongs; it seeks to determine religion's psychological place. And
+secondly, it institutes a comparison between the most important historical forms
+of religion in order to see whether the psychological determination found wins
+confirmation in experience.\footnote{In my \textit{Religionsfilosofi} I have ---
+for a more comprehensive illumination of the problem --- instituted, besides the
+psychological-historical investigation, an epistemological and an ethical one as
+well. Here, in this shorter presentation, I keep especially to the
+psychological-historical investigation, and only indicate quite briefly, here and
+there, the epistemological and the ethical points of view.}
+
+In both investigations we shall have occasion to see that it is not only the
+principle of continuity that leads to the posing of the religious problem, but
+that the very concept of religion hangs very closely together with this
+principle.
+
+\noindent\textbf{6.}~The religious feeling can be placed in a clear and simple
+relation to the other feelings when it is conceived as determined by the
+experiences man makes concerning the fate of values in the world of reality. It
+is thereby seen at once in its difference from and in its connection with the
+other feelings. To every feeling there corresponds a value. The feeling of life,
+the intellectual, the aesthetic and the ethical feeling thus make known different
+kinds of value. The maintenance and development of life, truth, beauty and
+goodness are values man can have a part in without religious feeling. But when it
+shows itself that life, truth, beauty and goodness must struggle in order to
+subsist in the world, there arises a peculiar feeling which is no longer
+determined by those values in and for themselves, but by their subsistence, their
+advance or their decline in existence, so far as man is able to survey it. The
+experiences man makes about this will be able to give rise to a need to believe
+that the values subsist, even where they no longer make themselves known in the
+reality man can survey, or even if they no longer appear in the same forms as
+hitherto. Man will be most inclined to assume that the value which subsists is
+the same one he has hitherto had a part in; but he may develop to the point of
+holding fast that the empirical values must perish in order that a higher and
+more comprehensive connection of values may be satisfied. From men's
+representations of a world of gods and of a life beyond, one comes to know which
+values have lain nearest their hearts, and in what degree they have reconciled
+themselves to the thought that the empirical values must undergo a more or less
+essential metamorphosis if a subsistence of value is to be possible. In the end
+what subsists is something that no eye has seen and no ear has heard. Religious
+faith asserts a continuity in the domain of values beyond every possible
+experience. This continuity of value may be of different content and extent. But
+there will be a tendency to extend it beyond the human world and to conceive
+existence as a home for the development and the subsistence of values. This
+religious faith in continuity forms an analogy to the intellectual presupposition
+of the rationality of existence (III), and the difficulties it has to struggle
+with are analogous too.
+
+Religious faith will have in particular a certain likeness to (and a certain
+sympathy with) metaphysical idealism (III, 4). But it does not stand or fall with
+it. The essential thing in religious faith is not the intellectual satisfaction
+it can afford. The circle of representations in which religion is expressed does
+not belong to its innermost psychological essence. What is central in religion is
+--- if the psychological determination given is correct --- an interest of
+feeling and of will. Intellectually we ask only about recognition (identity),
+consequence (rationality) and causal connection (causality) (II, 1). Faith is
+always only an \emph{object} for science, never itself science. It arises through
+the harmonious or disharmonious relation between the picture of reality which
+knowledge gives man, and the values which stand for man as the highest.
+
+Possibly the difference we are compelled to make between value and reality holds
+only from a human standpoint. But --- another standpoint we cannot, once for all,
+take up.
+
+The faith in the subsistence of value can itself acquire value by keeping courage
+up in the struggle for life, and by spurring us to find new values as equivalents
+for the values that disappear. Even one who assumes that the age of religion is
+past --- an assumption which, if it is to be more than an assertion or a wish,
+must be grounded epistemologically, psychologically and ethically --- even he
+will surely feel a need to find equivalents for the loss of value suffered
+through religion's disappearance. In this sense a religious problem exists also
+for one who holds that religion's kernel disappears along with its shell. For
+religion, by asserting the subsistence of value, acquires value itself, value in
+the second power. And it designates in particular one of the most concentrated
+forms of spiritual life that experience offers: it stands, where it is genuine
+and original, as the collected result of man's life of feeling and will, and it
+gets itself expression in the mightiest and noblest images that man's life of
+representation commands. Probably this concentrated life-process will always
+express itself under new forms --- whether or not one goes on using the word
+religion.
+
+\noindent\textbf{7.}~A confirmation of the characterization given of what is
+essential in religion may be sought in the fact that the differences between the
+religions, or between the religious standpoints among themselves, can simply and
+easily be explained from it. These differences rest partly on differences in the
+values in whose subsistence there is belief, partly on differences in the
+conception of reality that lies at the base, partly on differences in experience
+concerning the relation between the values and reality.
+
+The differences with respect to \emph{the values} appear in the historical
+religions in what is regarded as the task of the gods --- what one thinks of the
+gods as struggling for --- or, to use an expression of \textsc{Plato}'s, in
+\emph{that which makes God divine}.\footnote{\textsc{Plato}: \textit{Phaedrus.}
+p.~249 C (πρὸς οἷσπερ θεὸς ὢν θεῖός ἐστι). (More exactly translated: ``that in
+which it is God's divinity to live''.)} It may be the purely physical maintenance
+of life and the enjoyments attached to it, or it may be the good, the beautiful
+and the true. Historians of religion emphasize the transition from
+nature-religion to ethical religion as the most significant within the history of
+religion; but this transition rests precisely on a transition from the more
+elementary values to the ideal values as that which lies at the base of the
+relation to the gods --- what the gods guard, and to which they themselves owe
+their divinity. At the same time the more external relation between the powers
+man believes himself to stand in relation to, and that which those powers guard,
+falls away, and the gods themselves become more immediate representatives of the
+valuable which they uphold --- indeed become one with it. An ever more inward
+connection between the religious and the ethical can be traced in religion's
+development, and religion tends more and more to become a projection of the
+ethical.
+
+When \emph{the picture of reality} is altered by advancing knowledge, there
+occurs a no less decisive alteration in religion's character than when the values
+lying at the base are altered. The most conspicuous religious crises are due to a
+new conception of reality. Religion has here on the whole behaved receptively
+towards the knowledge developed along another road, but has afterwards sought to
+take it up and to use it as a foundation for its images. Thus animism, the
+knowledge of the stars, the doctrine of the transmigration of souls, Indian and
+Greek philosophy, Copernicanism and more recent natural science, speculative and
+critical philosophy have successively intervened --- now as welcome forms for the
+religious life of representation, now as widening impulses, now as hostile
+tendencies.
+
+But the decisive thing will always be \emph{the relation between the values and
+reality}. According as this relation appears in man's experience of life as
+harmonious or as disharmonious, religion will acquire a different character; and
+in the highest religions both life's disharmonies and its harmonies will find
+their place --- there the religious mood will first reach height and firmness
+when it has worked its way through conflict and suffering to blessedness. The
+strength of the disharmonies then becomes only a testimony to the strength of the
+victorious harmony. But to this comes another relation. Religion will acquire a
+different character according as what is highest in value is thought as
+subsisting eternally, raised above all becoming and change, so that life in time
+is in the end an illusion, or as the valuable itself unfolding in time and
+struggling for its subsistence in the course of the changes. On this difference
+rests the opposition between the Indian-Greek type of religion and the
+Persian-Christian type.
+
+It seems then that it is no alien measure we apply to the religions when we
+characterize and value them according to the way in which, and the degree to
+which, the principle of the subsistence of value appears in them. It is a measure
+that naturally presents itself for a comparative consideration of the history of
+the religions and of religious standpoints.
+
+The second of the types of religion named stands in history as the victorious
+one. It has certainly not reached its definitive form. If it comes to take on new
+forms, that will be due, as in the past, to prophetic personalities. They alone
+are able to weave the Godhead a new garment.
+
+For the philosopher the essential interest is to exhibit that so long as a
+religious problem subsists, it hangs closely together partly with the need for
+continuity, partly with the time-relation, partly with the ethical values. The
+kinship and the inner connection between the great problems of the human spirit,
+the practical as well as the theoretical, here come plainly forward.
+
+And at all the problems we end --- when we see the opposition in its sharpest
+form --- in the eternal strife, a strife in which the spiritual powers of men
+shall ever anew be tried. But because we cannot solve the great problems, we can
+nevertheless see the way that leads forward in such a manner that the right both
+of thought and of life is maintained. The insolubility of the problems means
+really only this: that however far we get in our inquiry and our thinking, there
+form themselves for us ever new horizons, new goals and new tasks.
 
 \end{document}
