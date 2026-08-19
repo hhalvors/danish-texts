@@ -1,0 +1,773 @@
+% ============================================================
+%  Harald Høffding, "Begrebet Analogi"
+%  "The Concept of Analogy"
+%  Det Kgl. Danske Videnskabernes Selskab,
+%  Filosofiske Meddelelser I, 4.
+%  København: Bianco Lunos Bogtrykkeri, 1923.
+%
+%  TRANSLATION (English).  TRANSLATION-ONLY PROJECT: no Danish
+%  transcription is produced or published.
+%
+%  ---------------------------------------------------------------
+%  SOURCES, AND A WARNING ABOUT THE SCAN
+%  ---------------------------------------------------------------
+%  Base text: the DRM-free Danish e-book (SAGA / Lindhardt og
+%  Ringhof, ISBN 9788726363067), an OCR of the 1923 print.  A copy
+%  sits in this directory, gitignored by the blanket *.epub rule.
+%
+%  Page-accurate second witness: the Royal Danish Academy's own
+%  digitisation of the 1923 printing,
+%  <http://publ.royalacademy.dk/books/109/740>, on disk as
+%  ~/bibliotek/Høffding, Harald/begrebet-analogi.pdf (142 pp.,
+%  ABBYY FineReader Server, 2019).
+%
+%  ** THAT FILE IS STRUCTURALLY DAMAGED, AND THE DAMAGE IS AT THE
+%  SOURCE ** -- the Academy's own download is byte-for-byte the same
+%  file.  Its page tree is malformed from object 685 onward.  qpdf
+%  cannot reconstruct it, MuPDF refuses it outright, Ghostscript
+%  aborts at page 4 of 142, and poppler's pdftotext returns one page
+%  of text out of 142.  So NOTHING in the Linux sandbox can read it,
+%  and an agent that tries will conclude, wrongly, that there is no
+%  second witness.
+%
+%  It IS readable on the host, through the PDF tooling there
+%  (read_pdf_pages).  Every page checked so far comes back clean.
+%  Use that route, and keep the print open alongside the e-book, as
+%  on "Filosofiske Problemer" and "Totalitet som Kategori".
+%
+%  ---------------------------------------------------------------
+%  THE PAGE MAP -- FROM THE BOOK'S OWN INDHOLD
+%  ---------------------------------------------------------------
+%  Like "Totalitet som Kategori" and unlike "Filosofiske Problemer",
+%  the 79 endnotes carry no printed "(S. N)" page references; all 79
+%  were checked.  The map below therefore comes from the print
+%  itself -- the INDHOLD on p. 138 -- not from a reconstruction.
+%
+%    PRINTED PAGE = PDF PAGE - 2.  (PDF 5 = p. 3, PDF 82 = p. 80,
+%    PDF 140 = p. 138.)  Text runs pp. 3-137; INDHOLD on p. 138.
+%
+%    Indledning                                    3
+%    I.   Uvilkaarlige Analogier                   7
+%    II.  Analogi og Logik                        37
+%    III. Analogi mellem Erkendelsesfunktioner    61
+%    IV.  Analogi mellem Erkendelsesomraader      79
+%           A. Logik og Aritmetik                 80
+%           B. Aritmetik og Geometri              85
+%           C. Formal og real Videnskab           89
+%           D. Naturvidenskab og Aandsvidenskab  109
+%           E. Etik og teoretisk Videnskab       119
+%           F. Verdensanskuelse og Videnskab     124
+%    V.   Poetisk og religiøs Symbolik           129
+%
+%  Even so, THE MARKERS BELOW ARE KEYED TO CHAPTER + SECTION-NUMBER
+%  + E-BOOK PARAGRAPH, NOT TO PAGES, and no page number is invented
+%  for a seam that has not been read off the print.  Each batch
+%  verifies the printed pages of its own sections as it goes.
+%
+%  ---------------------------------------------------------------
+%  THE CONTENTS PAGE DISAGREES WITH THE CHAPTER HEADS
+%  ---------------------------------------------------------------
+%  Recorded, not normalised, per the repo's editorial stance.  The
+%  INDHOLD on p. 138 letters chapter IV's six divisions A.--F.; the
+%  heads at the top of the text itself number them 16.--21., in the
+%  continuous 1--22 sequence that runs through the whole book.
+%  VERIFIED on p. 80, whose head reads "16. Logik og Aritmetik."
+%  The chapter heads are followed here, being the reading at the
+%  head of the text and the one consistent with the run-in numbering
+%  of every other division in the book.
+%
+%  ---------------------------------------------------------------
+%  STRUCTURE
+%  ---------------------------------------------------------------
+%  An Indledning and five chapters, with TWENTY-TWO numbered
+%  divisions running STRAIGHT THROUGH the book (1--22) rather than
+%  restarting at each chapter.  The print sets them two different
+%  ways, and this translation mirrors that:
+%
+%    * Indledning and chapters I--III and V: RUN-IN numbers, set here
+%      with \hnum (= \noindent\textbf{N.}~).
+%    * Chapter IV: REAL HEADINGS for 16--21, set here with
+%      \subsection*.  Section 15 is NOT in chapter III -- it is the
+%      untitled introduction standing at the head of chapter IV,
+%      before the first heading, and is set run-in like the rest.
+%      (This resolves the one structural question left open by the
+%      survey: chapter III carries 12--14 only.)
+%
+%    ch.   title                                  pp.      §§       notes
+%    ---   -----------------------------------    -------  ------   -----
+%    (--)  Indledning                             3--6     1        --
+%    I     Uvilkaarlige Analogier                 7--36    2--5     1--17
+%    II    Analogi og Logik                       37--60   6--11    18--29
+%    III   Analogi mellem Erkendelsesfunktioner   61--79   12--14   30--40
+%    IV    Analogi mellem Erkendelsesomraader     79--128  15--21   41--77
+%            16. Logik og Aritmetik
+%            17. Aritmetik og Geometri
+%            18. Formal og real Videnskab
+%            19. Naturvidenskab og Aandsvidenskab
+%              (with a "Tillæg til § 19" on Hobbes)
+%            20. Etik og teoretisk Videnskab
+%            21. Verdensanskuelse og Videnskab
+%    V     Poetisk og religiøs Symbolik           129--137 22       78--79
+%
+%  Lettered run-in subdivisions (a., b., c., ...) occur inside §§ 3,
+%  4, 14, 18 and 19.  The e-book gives them no styling and none is
+%  added; they are left as plain text at the head of the paragraph,
+%  unlike the section numbers, which the user's specification sets
+%  bold.
+%
+%  ---------------------------------------------------------------
+%  THE TERMINOLOGY ANCHOR IS HØFFDING'S OWN ENGLISH
+%  ---------------------------------------------------------------
+%  Høffding published the English counterpart of the 1905 essay that
+%  this book expands: "On Analogy and its Philosophical Importance",
+%  Mind 14, no. 54 (April 1905), pp. 199--209 -- a paper read to the
+%  Jowett Society in Oxford, 26 November 1904, and referred to by
+%  Høffding himself in ch. IV § 18 i.  Openly readable at
+%  <https://archive.org/details/sim_mind_1905-04_14_54>.
+%
+%  It is authoritative in a way Fisher's 1905 translation of
+%  "Filosofiske Problemer" was not: it is the author's own English.
+%  Its central sentence fixes this book's title concept --
+%
+%      "Analogy is likeness of the relations of different objects,
+%       not likeness of single qualities."   (Mind, p. 200)
+%
+%  -- confirming the rendering of "Forholdslighed" as LIKENESS OF
+%  RELATION that this repo's translations of "Filosofiske Problemer"
+%  and "Totalitet som Kategori" had already settled on other grounds.
+%
+%  Where his 1905 English and the repo's settled vocabulary disagree,
+%  the repo is followed and the disagreement recorded, since four
+%  Høffding volumes here already share a vocabulary that must stay
+%  consistent.  The three disagreements found, in full, are:
+%     "Grund og Følge"  -- his English: "reason and consequence";
+%                          used here: "ground and consequent".
+%     "uvilkaarlig"     -- his English: "spontaneous" (Mind p. 208,
+%                          "the spontaneously developed world-views");
+%                          used here: "involuntary".
+%     "Bestaaen" (of value) -- his English: "persistence";
+%                          used here: "subsistence".
+%  All three are one-command reversals if a later editor prefers the
+%  author's own word; see RESUME-NOTES.md.
+%
+%  Terms his 1905 English CONFIRMS, and which are used here:
+%  likeness of relation; analogies of experience (Kant); scheme;
+%  symbol; image; totality; whole; multiplicity; unity; receptivity
+%  and activity; world-view; the fate of values.  His own footnote on
+%  Mind p. 205 gives the symbol/scheme distinction that ch. I § 5
+%  turns on, referred to Kant, Kritik der Urtheilskraft § 59: "the
+%  first is a concrete image, the second an abstract sign".
+%
+%  ---------------------------------------------------------------
+%  SMALL CAPS
+%  ---------------------------------------------------------------
+%  The print sets cited authors' names in small caps -- 179 spans,
+%  122 of them in chapter IV.  All are carried as \textsc{}, per the
+%  convention established in "Filosofiske Problemer".  The e-book
+%  swallows the space that follows every such span; those are
+%  restored silently and the class of defect is logged once.
+% ============================================================
+
+\documentclass[12pt]{book}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage[protrusion=true,expansion=true]{microtype}
+\usepackage[margin=1.3in]{geometry}
+\usepackage{setspace}
+\usepackage{amsmath}
+\usepackage{enumitem}
+\usepackage{libertinus}
+\usepackage{libertinust1math}
+\usepackage{textalpha}
+\usepackage{fancyhdr}
+\usepackage[colorlinks=true,linkcolor=black,urlcolor=black,
+  pdftitle={The Concept of Analogy},
+  pdfauthor={Harald Høffding}]{hyperref}
+\renewcommand{\thechapter}{\Roman{chapter}}
+\setlength{\headheight}{15pt}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LE,RO]{\thepage}
+\fancyhead[RE]{\textit{The Concept of Analogy}}
+\fancyhead[LO]{\textit{\leftmark}}
+\setlength{\parindent}{1.5em}
+\setstretch{1.3}
+
+% run-in division number (Høffding's numbering, continuous 1--22)
+\newcommand{\hnum}[1]{\noindent\textbf{#1.}~}
+
+\title{The Concept of Analogy}
+\author{Harald Høffding}
+\date{Translated from the Danish\\[0.6em]
+  \small \textit{Det Kgl.\ Danske Videnskabernes Selskab},\\
+  \textit{Filosofiske Meddelelser} I, 4.\\
+  Copenhagen: Bianco Lunos Bogtrykkeri, 1923}
+
+\begin{document}
+\maketitle
+\tableofcontents
+
+
+% ============================================================
+%  INDLEDNING -- pp. 3--6 -- § 1 -- no notes
+% ============================================================
+
+\chapter*{Introduction}
+\addcontentsline{toc}{chapter}{Introduction}
+\markboth{Introduction}{Introduction}
+\label{ch:intro}
+
+\hnum{1} In this treatise I have set myself the task of continuing the closer
+investigation of some of the fundamental concepts which, in my book
+\textit{Den menneskelige Tanke} [The Human Thought] (1910), I attempted to
+exhibit as the most characteristic for human cognition, such as we know it
+after its development hitherto. I have thus wished to give a companion piece to
+the treatise on \textit{Totalitet som Kategori} (Videnskabernes Selskabs
+Skrifter. 1917) and to the treatise on \textit{Relation som Kategori}
+(Videnskabernes Selskabs filosofiske Meddelelser. 1920), and it is the concept
+of analogy that I shall here investigate more closely.
+
+Provisionally, analogy can be defined as likeness of relation between two
+subject-matters, that is to say, a likeness which does not hold of single
+properties of those subject-matters or of single parts of them, but of the
+relation of properties to one another or of parts to one another. There may be
+a very great difference between two subject-matters' properties or parts, each
+taken by itself, and yet there may be a likeness in the relation between the
+properties or between the parts. Analogy is thus a peculiar kind of likeness.
+It stands in a certain sense further from identity (absolute likeness) than
+qualitative likeness, composite likeness and coincidence do, which concern only
+single properties or parts, and which more easily form transitional forms to
+identity (cf.\ \textit{Den menneskelige Tanke} § 21). Yet it must be remarked
+that there is not only an identity of subject-matter, but also an identity of
+relation, and already Aristotle distinguishes between quantitative analogy
+(ἰσότης λόγων), proportionality in the strict sense, and qualitative analogy,
+which may hold, e.g., between geometrical figures or between organs in
+different living beings. And there is besides an identity of difference, which
+lies at the base of the formation of an identically varying difference-series
+(\textit{Den menneskelige Tanke} § 65) and especially of the formation of the
+identical quality-series that are fundamental for exact science (number, time,
+degree, place) (\textit{Den menneskelige Tanke} §§ 76--82).
+
+Both totality and relation I have given a place among the categories, that is
+to say, among the fundamental concepts, the forms of thought, which at
+science's present stage play an essential role in thought-work, determining its
+tasks and its whole direction (\textit{Den menneskelige Tanke} §§ 51--52; 57).
+Neither Aristotle nor Kant has given analogy a place among the categories, and
+in \textit{Den menneskelige Tanke} I followed them in this. Yet in that work I
+was led to lay much weight on the fact that, in contrast to purely formal
+thinking (logic and arithmetic), analogy plays an essential role in all
+thinking about real subject-matters. The opposition between identity (identity
+of subject-matter in logic, identity of difference and identity of relation in
+arithmetic) and analogy is therefore of great importance for the right
+apprehension of the nature and the validity of our cognition. But when analogy
+really plays so great a role, while identity is properly an unattainable ideal
+outside the formal world of abstractions, it might be warranted to give it a
+place in the series of the categories; and in the table of categories to be
+found on the last page of the treatise \textit{Totalitet som Kategori} this has
+in fact been done. It is entered there among the formal categories, immediately
+after the concept of identity, because it lies at the base of that reduction of
+relations of quality which --- with the help of points of view of identity ---
+takes place in the stricter development of the concepts of number, time, degree
+and place. Such series form intermediate members between absolute
+identity-series and qualitatively different series of subject-matters. They are
+formed by analogizing abstraction from the latter. It is here that analogy
+especially shows its importance. It should now be the task of the present
+treatise to follow the concept of analogy further in its more special
+importance for human cognition.
+
+I dwell first on the involuntary analogies which make themselves felt in
+primitive men and in children, but also, at the high points of the life of the
+spirit, in the genius. They do not come forward as analogies for the
+consciousness in question itself; that is possible only for the critical
+consciousness, which has learned to distinguish between analogy and identity
+and to see that every grounding and proving transition of thought takes place
+in virtue of identity. Thereafter I go on to investigate analogy from a formal
+logical point of view, and in the following sections I seek to exhibit
+analogies between cognition's different functions and between its different
+domains.
+
+Provisionally it may be remarked that analogy's importance for cognition shows
+itself in three different respects.
+
+Its greatest importance it certainly has by working in a scouting,
+anticipating and spurring manner. Categories in general lay themselves open to
+view in the questions that are put (\textit{Den menneskelige Tanke} § 52).
+Analogy may be the actual road to true cognition, even if the analogy's
+validity is afterwards rejected. One can, after all, draw a correct conclusion
+from false premisses. Naturally one cannot prove that the conclusion is correct
+except by finding the right premisses; but it often happens that an assumption
+stands for us as true, and that precisely thereby it sets us the task of
+finding out why it is at bottom true. The premisses (the right premisses) are
+often the last thing to be found; but one would not seek after them if an
+analogy had not first led us to an assumption and thereby set us a task. The
+analytic method rests on this, that a task has been set us, and that one then
+seeks the conditions for solving that task. If the right premisses are then
+found, one perhaps rejects the analogy that showed the way --- not only if it
+is false, but also if it is unnecessary. The ground for an analogy's being set
+up will lie in this, that there is a break in a continuous connection which has
+formed itself involuntarily for us, and which an involuntary need leads us to
+hold fast as long as possible. Analogy may here lead to an intellectual
+venture, which is sometimes crowned with success. One may apply to analogy what
+Pascal says of the imagination in general, that it deceives all the more easily
+because it does not always deceive (\textit{d'autant plus fourbe qu'elle ne
+l'est pas toujours}). If it does not deceive, or if it shows itself to be
+dispensable, it is replaced by a determination of relation which is finally
+grounded in identity.
+
+But analogy is not merely preparatory. It may be the last bond of union between
+different subject-matters or series of subject-matters which cannot be reduced
+in such a way that a single subject-matter or a single series of
+subject-matters is seen to lie at the base, or in such a way that they are all
+seen to have their ground in more deeply lying subject-matters or series of
+subject-matters. A certain rounding-off and survey becomes possible, in the
+face of such subject-matters, only by the help of analogy. We do not thereby
+obtain an explanation of why there are different subject-matters or series of
+subject-matters, but we establish the actual state of the case, namely that at
+certain points we get no further than to a connection, a synthesis, which
+builds only on the remotest degree of likeness --- which analogy is. It will
+appear that both in the face of cognition's different functions (see ch.\ III)
+and in the face of its different domains (see ch.\ IV) we are finally placed in
+this way. We end then in open questions, since it remains undecided whether a
+further reduction, a more deeply lying continuity, might be found, or whether
+there are here, in the nature of things, differences which are at any rate
+irreducible for us. Questions can thus be not only the beginning of wisdom, but
+also its end.
+
+It will have its interest, finally, to dwell somewhat on analogies whose
+importance lies in their being expressions of poetic and religious moods ---
+expressions which may recall now the analogies of involuntary mental life, now
+the seeking and finding of scientific thinking. Especially will intimations or
+hopes of a unity and a continuity lying deeper than experience can exhibit find
+expression in this kind of analogy.
+
+
+% ============================================================
+%  I. UVILKAARLIGE ANALOGIER -- pp. 7--36 -- §§ 2--5 -- notes 1--17
+% ============================================================
+
+\chapter{Involuntary Analogies}
+\label{ch:1}
+
+\hnum{2} As already remarked, analogy does not always presuppose that a
+distinction has expressly been drawn between different subject-matters, or
+respectively between their properties or parts, and that afterwards, in a
+certain opposition to the differences, a connection is brought about between
+the subject-matters on the basis of a likeness of relation. In involuntary
+mental phenomena, such as sense-intuition, memory and imagination, it cannot
+always be shown that the elements are first present as separated and only
+afterwards enter into combination. The importance of these involuntary mental
+processes lies precisely in this, that they bring about wholes, combinations,
+which can be analysed only afterwards. Reflection constantly needs a material,
+but this material need not, as has often been believed, consist in a multitude
+of independent elements; it may be wholes, which it is then reflection's task
+to resolve into elements that may not without more ado be regarded as identical
+with the elements to which the involuntarily formed wholes are due. For newly
+emerging elements may at once and involuntarily be woven together with
+consciousness's given content, so that perhaps no alteration at all is noticed.
+All the same, there is a tendency in reflection to regard the elements which
+its analysis finds as the whole's original, elementary foundation. There is
+here an analogy present, which at most can seek its justification in the
+continuity with which the transition can take place from an involuntarily
+formed mental continuum to the differentiation to which the very arising of
+reflection already testifies. Properly, when we speak of the most primitive and
+involuntary mental processes, all designations fall short, and this is no
+wonder, since language's psychological designations are fetched from the
+clearly differentiating, critically reflecting mental life. The very expression
+``analogy'' we here use in an analogizing manner. It is here as when one speaks
+of ``unconscious inferences''. These are not inferences in the proper sense,
+but processes, transitions, which can be interpreted in analogy with the proper
+inferences. The same holds further (as I have already shown in my
+\textit{Psykologi} and later in \textit{Den menneskelige Tanke} § 5) when we
+set up the concept of synthesis as an expression for the nature of all
+conscious life. In epistemology, where we investigate the possibilities of
+scientific cognition, we must also discuss the possibility that the given might
+consist of a heap of equally great and mutually irreducible differences. Only
+an approximation to such a chaotic difference-series can be exhibited (as also
+to its counterpart, an absolute identity-series); there would in any case be
+needed a searching and strenuous reflection to establish that such a series
+really lay before us in a determinate given case.
+
+In the manner in which a single lived experience, from the very moment of its
+conception, is connected with other simultaneous or past lived experiences, or
+with traditions into which the individual has lived himself so that these too
+can be regarded as lived experiences, there lies already an interpretation. The
+further back we come towards what we call the primitive man's stage, the closer
+lived experience and interpretation move to one another, and finally there is
+no opposition between them to be found. When we nevertheless attempt to hold
+them apart, we make use of an analogy with what first makes itself felt for
+testing reflection. And, as has been said, the very concept of analogy is used
+analogically when we say that primitive men interpret every new lived
+experience in analogy with what they know from the traditions into which they
+have lived themselves. --- In my treatise \textit{Oplevelse og Tydning} I have
+sought to describe different ways in which the relation between lived
+experience and interpretation comes forward historically, as regards ecstatic
+experiences. ---
+
+In his important work \textit{Les fonctions mentales dans les sociétés
+inférieures} (1910), \textsc{Lévy-Bruhl} has criticized the formerly common
+conception that primitive man apprehends everything on the likeness of himself,
+anthropomorphizes or analogizes. It is, on his conception, not comparison or
+reflection that is at work here, but an entirely immediate identifying. In
+primitive man there always lie traditions at the base, with which the new that
+is lived through involuntarily melts together. The representations handed down
+from the tribe make themselves felt with such strength of feeling that no need
+for reflection arises. What deviates in high degree from what has been handed
+down is provisionally not noticed; only later is an interpretation perhaps
+thought out that agrees with the tradition. When the savage sees an image of an
+object he knows, the image as image brings him nothing new, for the image is
+the object itself, however he may afterwards arrange this relation for himself.
+And with all the logical consistency which already distinguishes this stage ---
+which Lévy-Bruhl has wrongly called the ``prelogical'' --- the savage therefore
+fears to become dependent on one who has an image of him, and he fears that he
+will come to suffer want of game when a European has drawn or photographed many
+wild animals in the district and has departed with the pictures. And as it goes
+with images, so it goes also with names and with ceremonies: they are what they
+mean. Images, names and ceremonies are indeed only a part of a whole which has
+other properties besides those that are depicted or named; but this part
+\textit{is} the whole. Lévy-Bruhl finds in this identifying of part and whole
+--- what he calls ``loi de participation''\footnote{To this corresponds what
+\textsc{Grønbech} (\textit{Primitiv Religion,} p.\ 8) calls
+``Helhedsrealisme'' [realism of the whole], and which is characteristic for the
+primitive mental life.} --- the most characteristic peculiarity of the
+primitive mental life. It is certain that the interpretation which primitive
+man institutes under the influence of a tradition embraced with heartfelt
+adherence and reverence cannot follow the principles of formal logic. These
+make themselves felt only when doubt has been awakened; but he is accustomed to
+regard the tradition as a self-evident foundation for his apprehension of
+everything that happens. The basis of interpretation is not the work of
+reflection. But it may lead to misunderstanding when Lévy-Bruhl declares
+(p.\ 425) that the collective representations governed by the ``law of
+participation'' are ``indifferent to the logical law of contradiction''. A
+distinction must be drawn between the given basis of interpretation (here: the
+tradition held fast in reverence, which is once for all stamped by the ``law of
+participation'') and the interpretation of single phenomena that takes place on
+the ground of this basis. Reflection works at all times and on all levels of
+culture on the ground of determinate presuppositions which cannot themselves at
+once be made an object for reflection. On the basis which primitive man once
+for all has, it is entirely consistent that he does not understand why the
+European distinguishes between the image and the thing. When Lévy-Bruhl calls
+``the primitive mentality'' ``prelogical'', this fits the basis of
+interpretation, not the interpretation made on the ground of that
+basis.\footnote{Dr.\ \textsc{Albert Schweitzer}, who works as a physician in
+the primeval forests of equatorial Africa, writes, after several years' stay
+among the negroes: ``The natural man thinks more deeply than one commonly
+believes. Even if he can neither read nor write, he yet institutes reflections
+to a far wider extent than we suspect.'' (\textit{Mellem Floder og Urskov.}
+Danish transl.\ 1922. p.\ 134.)} As there will later be occasion to mention,
+Lévy-Bruhl has himself in another connection maintained, and rightly, that
+human consciousness, as regards the ultimate basis for judgments and
+inferences, properly never quite loses its ``prelogical'' character. There will
+always be presuppositions present which we do not and cannot bring forward,
+even in our most logical reflection. --- As regards especially the close
+connection between name and thing, one can find examples of it even today.
+There is a tendency to regard the terminology one uses oneself as the only
+``right'' one, and the language one speaks oneself seems to be one with the
+thing, while foreign languages' designations often seem foreign to the things.
+It is told of a German who visited Paris that he reported home that there they
+called bread ``pain'', and added, ``Wir nennen es Brot, und es ist doch auch
+Brot!''
+
+Tradition comes forward for the savage as a closed whole, within which he has
+no ground for making any distinction. There provisionally rules an immediate
+belief in the validity of the representations handed down, just as in the
+sense-perceptions that immediately appear. And the expression ``belief in'' is
+even too reflected, for no distinction at all is drawn between the belief and
+that which is believed in. The very concept of reality or validity is first
+formed when doubt has made itself felt. The fundamental proposition in
+accordance with which thinking provisionally goes (though it is of course not
+formulated) can be expressed by the question ``Why not?'' Why not rely on
+everything that comes forward for us with living force as sensation or as
+tradition? Only later does one learn to ask ``Why?'' --- and reflection can
+then even reach the point of directing this question against the very thing
+that has hitherto formed the undisputed basis. For that it is required that new
+lived experiences should appear so numerous, and with such a peculiarity
+deviating from everything customary, that they can gain power over what one has
+already lived oneself into. \textsc{Albert Schweitzer} declares, as the result
+of several years' living together with negroes in Central Africa: ``One must
+not believe that one has got to the bottom of the negro's world of thought if
+one has got no further than to look at his superstitious representations and
+his inherited rules of law. Innermost in him there lives a dark intimation that
+the apprehension of what is good must come by way of reflection'' (\textit{Mellem
+Floder og Urskove} p.\ 136). The self-sacrificing physician, who through
+historical criticism had learned to distinguish between the Christian dogmas
+and the ethical idealism that comes forward in the Sermon on the Mount and in
+the parables, experienced this especially when he sought to explain his
+religious apprehension to the negroes. Yet he experienced also that, alongside
+the ``morality of the heart'' that could be called forth in them, there long
+maintained itself a desire to lie and to steal, and a need for revenge which
+according to their own traditions was their right and perhaps even their duty.
+
+I must here interpolate the remark that when in my \textit{Psykologiske
+Undersøgelser} (p.\ 24 f.) I say that in the relation between new lived
+experiences and practised, customary representations the chief weight lies on
+the new, which ``sets the whole process going'', this presupposes another stage
+of development than the undisturbed primitive mentality, where the new so
+easily glances off against the customary and is able to gain power in the mind
+only when it comes forward in a particularly insistent manner. ---
+
+If one asks after the origin of the system of collective representations that
+makes itself felt in the savage and determines his interpretation of what meets
+him, Lévy-Bruhl answers that it ``is lost in the night of time''. And since
+every human group hitherto met with comes forward with certain collective
+representations, we cannot exhibit any absolutely first beginning. We must
+here, as with the question of the origin of language,\footnote{Cf.\
+\textsc{Otto Jespersen:} \textit{Language, its Nature, Development and Origin.}
+(1922). p.\ 416 f.\ on the method in the discussion of the question of the
+origin of language. One must (as already, in their way, Madvig and Whitney had
+maintained) start out from the manner in which language actually develops, that
+is, from its history, and from there infer back to a more primitive language
+than any of those we know.} content ourselves with analogies fetched from the
+levels of culture that lie nearest to us, and these analogies must of course be
+used with great caution. We see that on the levels of culture we know, the
+traditions that lie at the base of each new generation's spiritual development
+undergo constant alterations, additions and displacements, which for an
+essential part are due precisely to the new generation's own experiences and
+reflection. The collective is constantly altered under the influence of the
+individual. We cannot, as was often attempted in earlier times, think of a time
+when there was nothing collective, or when what collective there was was due
+exclusively to single individuals' experience and reflection. But just as
+little can we think of a time when minds were governed exclusively by common
+traditions, without individual experiences and thoughts exercising any
+influence whatever. It must be assumed that on all levels of development there
+has taken place a reciprocal action between the common and the individual, and
+the difference of the levels can consist only in this, that on earlier levels
+the common, on later levels the individual, has the greatest influence --- yet
+so that there is again and again a swinging to and fro between the different
+factors' predominance. Even on the most primitive levels we know, individual
+differences can make themselves felt and deviations from the tribe's belief
+come forward.\footnote{See my treatise \textit{Sociologi og Religionsfilosofi}
+(in the book \textit{Oplevelse og Tydning}. 1918) p.\ 131--138.} And the
+examples of such things would undoubtedly be still more numerous if we had more
+knowledge of life within primitive societies than we have. We should have found
+remarkable deviations and initiatives which now are drowned for us in the
+ruling traditions.
+
+Primitive conditions of life present great uni\-for\-mity, and therewith great
+com\-mu\-nity, in the experiences which the single individuals can make. And on
+account of the constant living together in group and family, the single man's
+special experiences and inventions will very quickly become common property,
+and his name will be forgotten. Added to this, the practical demand constantly
+makes itself felt; action is required, and life is for a great part lived as
+reflex-life and instinct-life. Every representation gets its essential
+importance by releasing movement. But for that it is not necessary to enter
+into the whole connection to which the representation's content belongs. A
+single part or a single property is enough to release action, and one need not
+distinguish between part and whole; the part stands involuntarily as a sign of
+the whole. The image, the name or the sign works as if the object itself were
+given in it. The instinct has enough in an intimation to begin to stir. In the
+fact that a part can thus have the same influence as the whole, and that it may
+even be advantageous that time and force are not expended on investigating
+whether the whole is really represented by the single part or property, there
+might lie an access to an understanding of the ``law of participation'' or the
+``realism of the whole''. And when a part thus shows itself again and again, in
+the race's experience, to have the same practical importance as the whole, one
+sees the possibility that there may be formed a circle of collective
+representations which obey the law of participation, and which it may be
+difficult for new lived experiences to break.
+
+Purely logically, this identifying of part and whole (\textit{pars pro toto})
+can be formulated as an inference in the second figure: the part releases a
+certain movement, which the whole would release; therefore part and whole are
+the same! And this is precisely one of the ways in which an inference from
+analogy can be formulated. When an instinctive action can lead astray, this
+hangs together with the fact that the ``inference'' in question is wrong. Only
+within quite determinate limits, which the consciousness governed by an
+unconditional impulse to action does not give itself time to establish, can it
+do to identify part and whole. Neither instinct nor prelogical mentality can
+therefore maintain itself longer than the inference from analogy practically
+suffices. Doubt will be awakened when this is no longer the case. A closer
+psychological investigation will be able to elucidate this relation more nearly
+and thereby cast light on the involuntary analogies.
+
+% [text to be added: ch. I § 3 --- e-book paras 9--24, notes 5--9.
+%  Recognition (Genkendelse) in three lettered runs: a. paras 10--14
+%  (kinds of recognition; G. E. Müller's lectures, Betz); b. paras
+%  15--18 (partial recognition, sense-illusion, participation);
+%  c. paras 19--24 (likeness, Schlüter, active substitution).
+%  ~17.5k characters --- one full batch on its own.]
+
+% [text to be added: ch. I §§ 4 and 5 --- e-book paras 25--43,
+%  notes 10--17.  § 4 (paras 25--33): involuntary analogies in the
+%  child's play and language and in the genius; two lettered runs,
+%  a. paras 26--28, b. paras 29--33; the Einfühlung discussion with
+%  Carl Lange.  § 5 (paras 34--43): the symbol, resting on
+%  participation; Goethe's ``Alles Vergängliche ist nur ein
+%  Gleichniss'' stands as a one-line paragraph (para 38) and is left
+%  in German, set as verse; medieval thinking; dogma; Jesus'
+%  parables; symbol passing into allegory.  ~18.3k characters.]
+
+
+% ============================================================
+%  II. ANALOGI OG LOGIK -- pp. 37--60 -- §§ 6--11 -- notes 18--29
+% ============================================================
+
+\chapter{Analogy and Logic}
+\label{ch:2}
+
+% [text to be added: ch. II §§ 6 and 7 --- e-book paras 1--10,
+%  notes 18--20.  § 6 (paras 1--5): likeness and difference woven
+%  together in the involuntary analogies; Plato's Idea of likeness;
+%  ``participation''; the fundamental law of synthesis.  § 7 (paras
+%  6--10): the two outermost limits of cognition (the chaotic
+%  difference-series and the absolute identity-series); the task of
+%  epistemology; the subject of the judgment; the principle of
+%  identity.  ~13.9k characters.]
+
+% [text to be added: ch. II §§ 8 and 9 --- e-book paras 11--16,
+%  notes 21--24.  § 8 (paras 11--12): the analogies of prescientific
+%  thought-life; Boutroux, De la contingence des lois de la nature
+%  (1875).  § 9 (paras 13--16): cognition of laws as a limitation of
+%  the freedom to form connections of representations; identity
+%  between examples; what never comes forward for immediate
+%  observation.  ~12.1k characters.]
+
+% [text to be added: ch. II §§ 10 and 11 --- e-book paras 17--29,
+%  notes 25--29.  § 10 (paras 17--21): Aristotle first drew out the
+%  concepts of analogy and inference from analogy; deduction and
+%  induction; Kant on a kind of inferring that is neither.  § 11
+%  (paras 22--29): the series-types run through --- indeterminately
+%  and regularly varying difference-series, symmetrical series,
+%  progressive difference-series, absolute identity-series --- with
+%  analogy surviving even where absolute identity-series can be
+%  formed.  The series vocabulary is FIXED by
+%  ../totalitet-som-kategori/RESUME-NOTES.md; use it unchanged.
+%  ~15.6k characters.]
+
+
+% ============================================================
+%  III. ANALOGI MELLEM ERKENDELSESFUNKTIONER -- pp. 61--79
+%       §§ 12--14 -- notes 30--40
+% ============================================================
+
+\chapter{Analogy between Functions of Cognition}
+\label{ch:3}
+
+% [text to be added: ch. III §§ 12 and 13 --- e-book paras 1--10,
+%  notes 30--33.  § 12 (paras 1--6): no sharp oppositions between the
+%  functions of mental life --- sensation and reflection, memory- and
+%  imagination-intuition, the feelings (Carl Jørgensen,
+%  Følelseslivets Grundelementer, 1920), the will.  § 13 (paras
+%  7--10): continuity within psychology against the analogy between
+%  psychology and epistemology; Kant on ``even the plain human
+%  understanding''; the apprehension of time, and the concepts of
+%  number, degree and place.  ~15.4k characters.]
+
+% [text to be added: ch. III § 14 --- e-book paras 11--22, notes
+%  34--40.  Fundamental thoughts recurring through the history of the
+%  sciences, in four lettered runs: a. paras 12--15 (the history of
+%  atomic theory; Democritus, Newton, Meyerson); b. paras 16--17
+%  (ancient against modern science); c. paras 18--19 (the 17th and
+%  19th centuries; Ledende Tanker i det 19.\ Aarhundrede);
+%  d. paras 20--22 (Hans Brøchner on the history of philosophy).
+%  ~15.7k characters.  NOTE: § 15 is NOT here --- it opens ch.\ IV.]
+
+
+% ============================================================
+%  IV. ANALOGI MELLEM ERKENDELSESOMRAADER -- pp. 79--128
+%      §§ 15--21 -- notes 41--77.  The longest chapter, ~82.5k characters, and
+%      the only one whose divisions carry real headings (16--21).
+%      122 of the book's 179 small-caps spans fall here.
+% ============================================================
+
+\chapter{Analogy between Domains of Cognition}
+\label{ch:4}
+
+% [text to be added: ch. IV §§ 15, 16 and 17 --- e-book paras 1--14,
+%  notes 41--51.  § 15 (paras 1--2) is the untitled chapter
+%  introduction, set run-in with \hnum; the two headed sections then
+%  follow.  § 16 Logic and Arithmetic (paras 3--10): the postulate of
+%  the possibility of repetition, ``mathematical induction'' or ``the
+%  law of repetition''; Frege, Hilbert.  § 17 Arithmetic and Geometry
+%  (paras 11--14): the Greek distinction; Zeuthen's last writing.
+%  ~15.2k characters.]
+
+\subsection*{16. Logic and Arithmetic}
+
+\subsection*{17. Arithmetic and Geometry}
+
+\subsection*{18. Formal and Real Science}
+
+% [text to be added: ch. IV § 18, first part --- e-book paras 15--21,
+%  notes 52--56.  The relation between the concepts of ground and
+%  cause; then Kant in five lettered runs: a. (para 17) the causal
+%  relation in the Analytic; b. (para 18) the three analogies of
+%  experience, the second the most important; c. (para 19) all three
+%  together saying that all subject-matters lie in one nature;
+%  d. (para 20) the ``schematisms''; e. (para 21) why Kant's
+%  conception could not at once prevail.  ~12.8k characters.
+%  Høffding's own English for Grund og Følge is ``reason and
+%  consequence'' (Mind 1905, p.\ 203); the repo's settled ``ground
+%  and consequent'' is used --- see the header.]
+
+% [text to be added: ch. IV § 18, second part --- e-book paras 22--28,
+%  notes 57--63.  The impossibility of deriving qualitative
+%  differences from the equations of mechanics; the Marburg school on
+%  the elimination of the qualitative; Comte and the positivists;
+%  Maxwell and Mach; then f. (paras 26--28) the categories laying
+%  themselves open to view in the questions that are put, and analogy
+%  as heuristic ground for questioning and seeking. ~11.0k characters.]
+
+% [text to be added: ch. IV § 18, third part --- e-book paras 29--34,
+%  notes 64--69.  g. (paras 29--31) heuristic analogies within one
+%  and the same domain; the concepts of totality and of development;
+%  analogy against homology in biology since Owen.  h. (para 32) the
+%  understanding of organic life.  i. (paras 33--34) the disagreement
+%  over analogy's importance in the scientific sense, closing on
+%  Høffding's own Oxford lecture of 1904 --- i.e.\ on the Mind 1905
+%  paper that is this translation's terminology anchor.  ~12.6k
+%  characters.]
+
+\subsection*{19. Natural Science and the Human Sciences}
+
+% [text to be added: ch. IV § 19, first part --- e-book paras 35--44,
+%  notes 70--72.  Whether there is at bottom any science but the
+%  human sciences; a. (para 39) refers back to Totalitet som
+%  Kategori; b. (paras 40--44) psychology and physiology, the
+%  measurability of physiological processes, and finally the relation
+%  between the concepts of personality and organism.  ~12.0k
+%  characters.]
+
+% [text to be added: ch. IV § 19 Tillæg, and § 20 --- e-book paras
+%  45--53, notes 73--75.  Paras 45--48 are the ``Tillæg til § 19''
+%  (Appendix to § 19) on Hobbes and Frithiof Brandt's monograph; the
+%  heading is set run-in and italic in the e-book and is kept so.
+%  § 20 Ethics and Theoretical Science (paras 49--53): why ethics is
+%  put in a certain opposition to theoretical science; interests
+%  other than the purely intellectual; analogies between different
+%  wholes.  ~14.7k characters.]
+
+\subsection*{20. Ethics and Theoretical Science}
+
+\subsection*{21. World-view and Science}
+
+% [text to be added: ch. IV § 21 --- e-book paras 54--58, notes
+%  76--77.  Wundt's true word that it is easier to reject all
+%  metaphysics than to act on the rejection; part and whole;
+%  Parmenides, Spinoza and Hegel as the most pronounced cosmological
+%  systems; and the close --- cosmology cannot become science, it
+%  stands between science and art.  ~7.5k characters.]
+
+
+% ============================================================
+%  V. POETISK OG RELIGIØS SYMBOLIK -- pp. 129--137 -- § 22 -- notes 78--79
+% ============================================================
+
+\chapter{Poetic and Religious Symbolism}
+\label{ch:5}
+
+% [text to be added: ch. V § 22 --- e-book paras 1--17, notes 78--79.
+%  The whole chapter is one division.  Absorption in involuntary
+%  analogies; Schiller on the cultural advance when the image can be
+%  enjoyed as image; the poet's feeling as primary, and the reader's
+%  different position; Metafor och Fiktion (Lund 1922); the divorce
+%  of lived experience from interpretation; religion sharing
+%  cosmology's problem, the part standing for the whole; Stanley
+%  Hall, Jesus Christ in the light of Psychology; and the closing
+%  paragraph referring to Høffding's own Religionsfilosofi.
+%  Para 17 is a rule of underscores, the e-book's own end-ornament,
+%  and is NOT reproduced --- see totalitet-som-kategori/RESUME-NOTES,
+%  which established that these ornaments are the e-book's, not the
+%  print's.  ~13.9k characters.  THIS BATCH FINISHES THE BOOK.]
+
+\end{document}
