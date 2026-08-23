@@ -292,3 +292,207 @@ See `../../../TRANSCRIPTION-PLAYBOOK.md` for the batch-dispatch protocol, and
 same author, genre and era (including how its one real offset change was tracked, and
 how its Indhold pass caught two printer variants — for contrast with this book, which
 has no Indhold at all).
+
+---
+
+# PHASE 2 — TRANSLATION (English), started 2026-08-23
+
+Source of truth: `transcription.tex` (Danish), COMPLETE (see above). Method:
+`../../../TRANSLATION-PLAYBOOK.md`. `translation.tex` built from scratch this
+session — no prior skeleton existed.
+
+## CURRENT RESUME POINT
+Next marker: `% [text to be added: pp. 33--42]` — Lecture IV, "Personlig Hjælp."
+Read the Danish from `transcription.tex` starting at `\chapter*{IV. Personlig
+Hjælp.}` (line 908 as of this session).
+
+## DONE so far (don't redo)
+- Preamble built, mirroring `transcription.tex` (libertinus/libertinust1math/
+  textalpha, danish→english babel, enumitem, fancyhdr, constant `\thefootnote{*)}`).
+  Title/author/date translated. All 13 chapter headings (Preface + I--XII)
+  laid in as `\chapter*{}` + `\addcontentsline` + `\label{ch:forel<N>}` +
+  `\markboth{}`, mirroring the transcription's labels 1:1.
+- **Preface** (pp. 0--0) — translated in full.
+- **Lecture I, "Introduction: a Fantasy"** (pp. 1--11) — translated in full,
+  including the Hamlet quotation, the Orpheus/Lot's-wife/plow-hand passage,
+  and the closing "By their fruits shall ye know them" (Matt. 7:16/20).
+- **Lecture II, "Aesthetic and Religious Fantasy: a Personal Difference"**
+  (pp. 12--22) — translated in full, including the Hakon Jarl/Oehlenschläger
+  passage, the wandering-fiddler tale, the Ecce Homo line, several Gospel
+  parable/miracle passages, and the Michelangelo Last Judgment passage.
+- **Lecture III, "The Eternal Life: a Personal Need"** (pp. 23--32) —
+  translated in full, including the Samson's-riddle passage, the
+  tiger/dove/Philistine passage, the Tantalus/Greek-Tartarus passage, and the
+  closing Matt. 5:6 beatitude.
+
+Sandbox compile after pp. 1--32 (Preface + Lectures I--III): **47 pages, 0
+errors, 0 char-warnings** (lmodern/babel substitution). 9 of 13 markers
+remain.
+
+## Conventions specific to this book
+- Quotes: uniform ``…'' for every level, including nested speech inside a
+  longer quoted passage (the Danish itself reuses „…" at every level; no
+  distinct single-quote nesting introduced in English).
+- Two printer's-defect comments carried forward from the transcription and
+  reproduced as `%` comments at their sites in `translation.tex`, translated
+  into English: the p.12 Forskiel/Forskjel spelling variant (untranslatable —
+  both render as "difference"; comment explains this) and the p.16 stray
+  double-period after "Noget"/"anything." Also carried: the p.12 broken
+  sentence "Aabenbaringen er kun for Troen. for den Troende" (printer's
+  period-for-comma, translated literally with the same broken punctuation and
+  the same explanatory comment).
+- "Videnskab"/"Videnskabelig" → "science"/"scientific," matching the
+  established Nielsen-corpus convention (see `propaedeutiske-logik/translation.tex`).
+- Biblical quotations rendered in a KJV-adjacent register rather than a
+  word-for-word gloss of the Danish (e.g. "we walk by faith, and not by
+  sight"; "Blessed are they that hunger and thirst after righteousness, for
+  they shall be filled"), matching the author's own practice of quoting
+  scripture from memory/paraphrase rather than a fixed translation.
+- Proper names (Hakon, Thora, Axel, Valborg — Oehlenschläger's characters)
+  left unchanged, per the standing convention.
+
+## Not yet done
+Lectures VII--XII (pp. 68--144), all still marked `% [text to be added]`.
+
+## Update (same session, continued)
+- **Lecture IV, "Personal Help"** (pp. 33--42) — translated in full, including
+  the long Quaker-speech pastiche and the Niobe passage.
+- **Lecture V, "Company in Solitude: a Personal Task"** (pp. 43--54) —
+  translated in full, including this book's one footnote (p.49, the Kierkegaard
+  "den Enkelte"/"the single individual" note) and both printer's-defect
+  passages (the unclosed quote after "I am the Truth," and the run-together
+  "holy.falls"), reproduced with matching `%` comments.
+- **Lecture VI, "Great Men: Personal Superiority"** (pp. 55--67) — translated
+  in full, including the long first-person satirical narrative (the Republic/
+  drum-major story) and all four logged page-defect comments (superscript
+  ink-speck, missing opening quote, "Admindelse"/"Aamindelse" doubtful
+  reading, stray punctuation after "independence,").
+
+Sandbox compile after pp. 1--67 (Preface + Lectures I--VI): **69 pages, 0
+errors, 0 char-warnings**. 6 of 13 markers remain (Lectures VII--XII).
+
+Next marker: `% [text to be added: pp. 68--79]` — Lecture VII, "Ubetydelige
+Mennesker" ("Insignificant People").
+
+## Update (same session, continued further)
+- **Lecture VII, "Insignificant People"** (pp. 68--79) — translated in full:
+  the long first-person tale of the nephew, Aunt Clara, and the family's
+  ruin/redemption. Two printer's-defect comments carried over (missing
+  opening quote before "Her fortune?"; unclosed quote after "worse.").
+- **Lecture VIII, "A Tutor"** (pp. 80--92) — translated in full: the
+  allegorical "lost children's book" frame with its three tableaux (The
+  Student, The Invalid, The Forsaken One) plus the closing frame-story pages.
+  Both \textit{} instances (Prima Donna, con amore) carried over; closing
+  printed-rule comment noted.
+
+Sandbox compile after pp. 1--92 (Preface + Lectures I--VIII): **85 pages, 0
+errors, 0 char-warnings**. 4 of 13 markers remain (Lectures IX--XII).
+
+Next marker: `% [text to be added: pp. 93--104]` — Lecture IX, "Skyld i
+Skrøbelighed" ("Guilt in Frailty").
+
+## Update (same session, continued further still)
+- **Lecture IX, "Guilt in Frailty"** (pp. 93--104) — translated in full,
+  including the recurring refrain "Skyld, den Skyld, der er i Skrøbelighed" /
+  "guilt, the guilt that is in frailty" (kept plain except at its first
+  appearance, p.95, and its final appearance, p.104, matching the
+  transcription's zoom-confirmed Sperrsatz findings); \textit{camera obscura}
+  (p.101) and \emph{ubetydelig}/\emph{insignificant} (p.102) carried over;
+  closing printed-rule comment noted. The p.102 "Øjeblik"/"Øieblik"
+  printer's-spelling-variant is untranslatable (both render as "moment") and
+  was not given an inline comment — it's recorded here instead rather than in
+  translation.tex, to avoid cluttering the file with a note that carries no
+  translation consequence.
+
+Sandbox compile after pp. 1--104 (Preface + Lectures I--IX): **93 pages, 0
+errors, 0 char-warnings**. 3 of 13 markers remain (Lectures X--XII).
+
+Next marker: `% [text to be added: pp. 105--117]` — Lecture X, "Den Stærke og
+den Skrøbelige: et personligt Mellemværende" ("The Strong and the Frail: a
+Personal Reckoning").
+
+## Update (same session, continued yet further)
+- **Lecture X, "The Strong and the Frail: a Personal Reckoning"** (pp.
+  105--117) — translated in full. Key terminology decision: "Mellemværende"
+  (the chapter's key recurring term, literally an unsettled matter/account
+  between two parties) rendered consistently as "reckoning" throughout, not
+  just in the title, so "et Mellemværende" = "a reckoning," "Timelæreren" =
+  "the Tutor." \emph{Jeg er Sandheden}/\emph{I am the Truth} (p.106, confirmed
+  Sperrsatz) and \textit{par renommée} (p.111) carried over. The "personlig i
+  den sidste Time"/"personally in the last hour" refrain (~7 occurrences,
+  pp.113--117) confirmed NOT letterspaced anywhere in the Danish — left plain
+  throughout, contrasting with the Lecture IX refrain (which was letterspaced
+  at first/last occurrence); noted inline that refrains must be checked case
+  by case. Two printer's defects carried over as `%` comments: the unclosed
+  quotation after "...bleven myndig!" (p.106) and the stray "under-de" hyphen
+  (p.109, untranslatable, noted rather than forced). The p.107 "Punker"
+  spelling slip (missing t) is untranslatable and was not given an inline
+  comment, same treatment as the p.102 Øjeblik/Øieblik variant in Lecture IX.
+
+Sandbox compile after pp. 1--117 (Preface + Lectures I--X): **101 pages, 0
+errors, 0 char-warnings**. 2 of 13 markers remain (Lectures XI--XII).
+
+Next marker: `% [text to be added: pp. 118--131]` — Lecture XI,
+"Personlighedens Vilkaar" ("The Conditions of Personality").
+
+## Update (same session, continued once more)
+- **Lecture XI, "The Conditions of Personality"** (pp. 118--131) — translated
+  in full, including the Paul/Damascus-road, Luther/Erfurt, and "the young man
+  under the tree" passages. Both mid-lecture display sub-headings carried over
+  as `\begin{center}\textbf{}\end{center}` ("The Breakthrough of Truth in the
+  Personal," p.120; "Conscience," p.125), matching transcription.tex's
+  first-occurrence-in-the-book finding for that structural device.
+  \emph{conscience before God and men} (p.126, confirmed Sperrsatz) carried
+  over; the "For Gud!"/"Before God!" phrase nearby was checked in the
+  transcription and confirmed NOT letterspaced despite an OCR false
+  positive — left plain, per the source. One printer's defect carried over
+  as a `%` comment: the Acts 9 citation (p.120) that closes, resumes
+  unquoted, then closes again without a matching reopening — reproduced with
+  the same unmatched closing quotation mark. The p.126 "Ivren"/missing-e
+  spelling defect is untranslatable and was given a brief inline comment
+  (unlike the Øjeblik/Punker treatment) since transcription.tex flagged it
+  explicitly as a doubtful reading, not just an OCR ambiguity.
+
+Sandbox compile after pp. 1--131 (Preface + Lectures I--XI): **109 pages, 0
+errors, 0 char-warnings**. 1 of 13 markers remains (Lecture XII, the book's
+final chapter).
+
+Next marker: `% [text to be added: pp. 132--144]` — Lecture XII, "Personlig
+Stræben: en Slutning" ("Personal Striving: a Conclusion"), the book's last
+chapter.
+
+## TRANSLATION COMPLETE (same session)
+- **Lecture XII, "Personal Striving: a Conclusion"** (pp. 132--144) —
+  translated in full, including the Paul-in-prayer passage, the "converted
+  striving" musician allegory (the god of tones/Apollo-Marsyas passage), the
+  fourfold "May we not be beguiled by the false imagining!" refrain (checked
+  individually, plain weight throughout, consistent with the pp.105-117 and
+  pp.132-144 refrain findings), and the closing Scripture catena (1 Cor.
+  15:41-43, echoing Phil. 3:12-13 and 2 Cor. 12:10 earlier in the chapter).
+  The lecture opens by quoting, verbatim, the book's own opening sentence
+  from Lecture I ("Dersom der er noget Spørgsmaal...") — reused the exact
+  English wording already on record for that sentence, rather than
+  re-translating it, so the echo reads identically in both places. One
+  doubtful reading carried over as a comment: the p.132 "Dersom Nogen i
+  selv vil" (transcription.tex flags this as a probable printer's dropped
+  "kke" from "ikke"). Two printer's-defect quote comments carried over: the
+  unclosed „ before "Kommer til mig!"/"Come unto me!" (p.133) and the plain
+  "For Guds Skyld" phrases (no new defect there, just noted). Closing
+  printed-rule comment notes this is the last page of the whole book.
+
+**Sandbox compile, final: 117 pages, 0 errors, 0 char-warnings, 0 markers,
+0 continuation notes.** `translation.tex` is complete, all 13 sections
+(Preface + Lectures I--XII) filled in, mirroring `transcription.tex` 1:1.
+
+`catalog.yaml`'s `om-personlig-sandhed` entry: added a Translation link
+alongside the existing Transcription link (status was already `complete`
+from the transcription phase; the entry now serves both PDFs).
+
+## Remaining steps (per TRANSLATION-PLAYBOOK.md §6 — none done by the assistant)
+1. Compile both `transcription.pdf` and `translation.pdf` locally with the
+   real fonts (`libertinus`, `libertinust1math`, `textalpha`, `babel`) — the
+   sandbox only ever substituted `lmodern` and cannot exercise the real
+   build.
+2. Confirm both PDF links in `catalog.yaml` resolve once published.
+3. Commit and push (`~/hhalvors.github.io/publish-danish.sh "message"`) —
+   the user's own step, not the assistant's.
