@@ -58,9 +58,15 @@
 %        A single missing page would have inverted it. So a WHOLE LEAF — two
 %        pages — is absent between the title page and PDF 7. PDF 2--5 were
 %        checked and are genuinely blank, so the leaf is not merely misfiled.
-%        The KB colour PDF (kb.dk/e-mat/dod/110208016515-color.pdf) may be a
-%        different digitisation and has NOT been checked. Until it is, the
-%        preface is transcribed as the fragment it is, and marked as such.
+%        THE KB COLOUR PDF (kb.dk/e-mat/dod/110208016515-color.pdf) HAS NOW
+%        BEEN CHECKED AND LACKS THE LEAF TOO. Both digitisations are of the
+%        same copy — KB shelfmark DA 1.-2.S 2 8° — so the leaf is presumably
+%        missing from that copy rather than skipped by the scanner. No other
+%        copy has been found (Google Books, nb.no). The preface is therefore
+%        transcribed as the fragment it is, and marked as such at its site.
+%        Whether the leaf survives in the physical volume, and whether KB holds
+%        a second copy, is on the standing list of library tasks in the repo
+%        root (KB-VISIT-TODO.md).
 %
 %  STRUCTURE (from the Indhold, PDF 8):
 %        Første Deel. Forholdet imellem Philosophien og Historien, betragtet i
@@ -162,23 +168,32 @@
 %        textalpha/greek-fontenc in text mode. Same for ϕ ϖ ϱ ϐ ϵ ϲ -> φ π ρ β ε σ.
 %        Accents and breathings are NOT fount variants — reproduce them exactly.
 %
-%  BATCH SEAMS: the file was built by splicing thirteen page-range fragments
-%        into a skeleton that separated them with blank lines. A blank line is a
-%        paragraph break, so at every seam where the printed text simply runs on
-%        it had to go — at p. 96/97 it was breaking a word in half. Which seams
-%        run on was settled by MEASUREMENT, not by reading: for each seam page,
-%        the left edge of its first full-measure line was compared with the
-%        median left edge of the lines below it, on the page image.
-%        ELEVEN seams continue the previous paragraph (indent within ±10 px):
-%        pp. 13, 25, 49, 61, 73, 85, 97, 109, 121, 133, 157 — blank line removed.
-%        TWO begin a new indented paragraph: p. 37 (+223 px) and p. 145 (+230 px)
-%        — blank line kept.
-%        NB the folio at the head of the page must be excluded from that
-%        measurement, and on many leaves a sliver of the facing leaf's black edge
-%        survives the crop and joins the folio's row band, making the folio look
-%        like a full-measure line and putting its own left edge — about 1300 px
-%        in — forward as the paragraph indent. Ignoring the right-hand 8 % of the
-%        sheet fixes it. Without that, every seam reads as a new paragraph.
+%  PARAGRAPHING ACROSS THE LEAF — and how it was got wrong twice.
+%        The file was built by splicing thirteen page-range fragments into a
+%        skeleton that separated them with blank lines. A blank line is a
+%        paragraph break, so wherever the printed text simply runs on across a
+%        leaf, that blank invents a paragraph the book does not have — and at
+%        the p. 96/97 seam it was splitting a word in half.
+%        The first pass audited only the thirteen BATCH SEAMS and removed eleven
+%        blanks (pp. 13, 25, 49, 61, 73, 85, 97, 109, 121, 133, 157), keeping the
+%        two that open a genuinely indented paragraph (pp. 37, 145).
+%        THAT WAS NOT ENOUGH: the same fault sits at page joints INSIDE a batch,
+%        which the seam audit never looked at. It was caught by eye in the built
+%        PDF, at p. 147, after the edition had been called complete. A full audit
+%        of all 162 markers then found eight more false breaks (pp. 64, 68, 90,
+%        94, 98, 102, 147, 161) and five pages that DO open an indented paragraph
+%        and had been run on (pp. 33, 41, 51, 57, 115). All thirteen are fixed.
+%        `paragraphs.py` now performs that audit and should be run before any
+%        future publication of this file. It decides by two independent tests —
+%        the left edge of the page's first full-measure line against the margin
+%        below it, and whether the previous page ends mid-word or mid-sentence —
+%        and reports, rather than acts on, anything the two disagree about.
+%        THE IMAGE TEST ALONE IS NOT SAFE. Two traps: the folio, joined to a
+%        residual sliver of the facing leaf's black edge, poses as a full-measure
+%        line whose own left edge reads as a 1300 px indent; and a centred § head
+%        measures as a huge indent. Even trimmed and guarded it still gives four
+%        false positives here (pp. 8, 12, 14, 151), all rejected by the text test
+%        and all confirmed flush on the image.
 %
 %  PAGE-JOINT WORD BREAKS: a word broken across a printed page boundary is
 %        joined with `\-%` at the end of the last line of the earlier page —
@@ -227,22 +242,36 @@
 %        breathing, σύ with an acute for a grave, ἀν without its grave, Θεος
 %        without an accent.
 %
-%  QUOTATION MARKS: *** THIS BOOK DOES NOT USE THE DANISH LOW-HIGH PAIR „…“
-%        ANYWHERE. *** It sets a RAISED mark, U+201D ”, at BOTH ends of every
-%        quotation — in Bøggild's preface and throughout the body alike, the
-%        opening mark at cap height, never on the baseline.
-%        This was NOT assumed: it was found independently by four transcribers
-%        working from the image at 2--6x — the front-matter pass and the passes
-%        for pp. 1--12, 13--24 and 25--36 — and pp. 1--36 contain 64 raised
-%        marks and not one „ or “. It is reproduced as printed.
-%        The consequence for verification is that there is no signed balance to
-%        take. check.py therefore runs a PARITY test on the single character
-%        instead, which is a weaker instrument: it cannot tell an unclosed
-%        quotation from an unopened one, and two defects on one page cancel
-%        invisibly. So every quotation-mark defect must ALSO be logged by hand,
-%        both at its site and in check.py's QUOTE_DEFECTS table.
+%  QUOTATION MARKS: *** A QUOTATION IN THIS BOOK USES ONE SORT AT BOTH ENDS. ***
+%        It does NOT use the Danish low-high pair „…“ that opens on the baseline
+%        and closes at cap height. The editor, reading the paper, reports that
+%        the opening and closing marks are meant to sit at the SAME HEIGHT — and
+%        which height that is varies:
+%          * the BODY, throughout, uses the RAISED mark U+201D ” at both ends.
+%            Found independently by six transcribers working from the image at
+%            2--6x, over the front matter and the whole body.
+%          * SOME NOTES use the LOW mark „ at both ends instead. Printed p. 50's
+%            Guerike note is the clear case: both of its quotations open low and
+%            close low. Measured against the line's own baseline and x-height,
+%            its three marks sit in one vertical band, while the closer in
+%            p. 63's note sits distinctly higher.
+%        Both are reproduced as printed; p. 50 accordingly reads „…„ twice.
 %
-%  QUOTE BALANCE: (none logged yet — see check.py)
+%        NOT YET RE-EXAMINED under this principle: the notes on pp. 48, 70, 79,
+%        84 and 106, transcribed „…“ by the batches that read them, before the
+%        same-height principle was known. If it holds everywhere, their closers
+%        are low rather than high. Whoever settles that should MEASURE rather
+%        than look — the two heights differ by well under a millimetre on the
+%        page, and a 1-bit scan flatters whichever reading you expect.
+%
+%  QUOTE BALANCE: there is no single signed balance to take, because a „ used as
+%        a closer has no matching “ and would otherwise read as an unclosed
+%        quotation. check.py therefore runs two tests — a signed „ vs “ balance
+%        and a parity test on ” — each compared against a hand-kept table of
+%        sites. That table currently carries p. 49 (a quotation opened and never
+%        closed, as printed), p. 50 (the two low-at-both-ends quotations above),
+%        p. 80 (an outer quotation opened raised and never closed) and p. 151
+%        (the same). Both tests are consistent with it.
 %
 %  STATUS: TRANSCRIPTION COMPLETE — the front matter and printed pp. 1--162,
 %        the whole of the book that survives in this scan, every page
@@ -1689,6 +1718,10 @@ undværes og dog staaer udenfor Videnskabens Grændser, maa man vel
 skjelne imellem de Elementer, der forberede Videnskaben og
 Videnskaben selv; og vigtige ere de Følger, der flyde af denne
 Adskillelse.
+% The printed page opens an INDENTED new paragraph (image-verified,
+% ~225 px against this page's own body margin), so the blank line below
+% is a real paragraph break, not batch-skeleton residue.
+
 % --- p. 33 ---
 Vi geraade da for det Første ikke oftere paa den Afvei, under Navn af
 Videnskab at falbyde Rudimenta blandede med trivielle Begreber, i den
@@ -2014,6 +2047,10 @@ Hypothesen netop er Tænkningens egen nødvendige Betingelse. Denne Modsigelse
 kunne vi da kalde den \emph{ontologiske}.
 % The letterspacing runs over the line break: "onto-" ends the penultimate line
 % and "logiske." the last. Both halves measured; \emph{} covers the whole word.
+% The printed page opens an INDENTED new paragraph (image-verified,
+% ~225 px against this page's own body margin), so the blank line below
+% is a real paragraph break, not batch-skeleton residue.
+
 % --- p. 41 ---
 Det næste positive Grundlag fremkommer, naar man gaaer ud fra at negere
 % ERRATA, applied: the page prints "næsten" (verified on the image at 6x, and a
@@ -2382,6 +2419,16 @@ dialektisch=speculative Richtung herrührte.}. --- Paa den anden Side kan Calvin
 % "Neander" and "Augustinus" are both letterspaced in the note; "Infralapsarier"
 % is not. Read at 1.15x. "Abtheil," carries a comma, not a period.
 da han
+% *** QUOTATION MARKS IN THIS NOTE: LOW AT BOTH ENDS. ***
+% Both Guerike quotations open with the low „ and CLOSE with the low „ —
+% „Die heilsam … weiter etc.„ and „Gott also … cap. XIV.).„ — and are set so
+% here. They were first transcribed as closing with a raised ”, on a 4x reading;
+% the editor then read the paper and reported that this book means its opening
+% and closing marks to sit at the SAME HEIGHT, which a measurement against each
+% line's own baseline and x-height bears out: this note's marks sit in one
+% vertical band, while the closer in p. 63's note sits distinctly higher.
+% So the note is consistent Danish setting with the low sort, not a mixed pair,
+% and there is no compositor's defect here to log.
 % --- p. 50 ---
 \setcounter{footnote}{0}
 har givet Præmisserne, ikke undlade til Gunst for den menneskelige Erkjendelse at
@@ -2402,7 +2449,7 @@ im Verhälltnisse zu der selbst gotteslästerlich conseqventen Calvins ist also
 kurz diese: Seligkeit und Hoffnung ist nach beiden nur ein Werk der göttlichen
 Gnade, Verdamniß eine Folge der eignen Schuld. Während aber nun die
 Concordienformel demüthig bei diesem letzteren Satze stehen bleibt . . . . .
-argumentirt Calvin weiter etc.” Men naar Guerike fandt for godt at tilføie:
+argumentirt Calvin weiter etc.„ Men naar Guerike fandt for godt at tilføie:
 „Gott also hat selbst die Sünde der Menschen gewollt. Diese letzte,
 nothwendige, ob auch noch so bemäntelte Schlußfolge . . . . . synes han ved at
 tilføie denne nye Slutning selv at have syndet imod den fromme Ærefrygt for det
@@ -2412,7 +2459,7 @@ besvarede sin Tids irreligieuse Stræben efter at begribe de guddommelige
 Mysterier: \textit{Arripiunt subito, fatcor, profani homines in prædestinationis
 materia, quod vel carpant, vel cavillentur, vel allatrent, vel subsannent. At si
 nos absterret eorum procacitas, celanda crunt præcipua quæquc fidei dogmata.
-(Instit. christ. rcl. De prædest cap. XIV.).}”}. Det er altsaa aabenbart, at
+(Instit. christ. rcl. De prædest cap. XIV.).}„}. Det er altsaa aabenbart, at
 % NOTE ON THIS NOTE --- it is the heaviest in the range and runs on to p. 51.
 % Setting: "Guerike" is letterspaced at its first occurrence and NOT at its
 % second ("Men naar Guerike fandt"); read at 0.62x. The German is Fraktur, so no
@@ -2424,7 +2471,6 @@ nos absterret eorum procacitas, celanda crunt præcipua quæquc fidei dogmata.
 %     straight by the Danish "synes han ved at tilføie". Read at 0.62x.
 %   * the Calvin Latin is never OPENED: the line begins flush left with
 %     "Arripiunt", with no mark before it (checked at 2.5x, 150 px of clear
-%     paper), yet it CLOSES with a raised ” after "XIV.)." on p. 51.
 %   * FOUR e/c SUBSTITUTIONS IN THE LATIN, all transcribed as printed and all
 %     verified at 8x: "fatcor" for fateor, "crunt" for erunt, "quæquc" for
 %     quæque, "rcl." for rel. (Calvin, Instit. III.xxi: "Arripiunt subito,
@@ -2443,9 +2489,12 @@ nos absterret eorum procacitas, celanda crunt præcipua quæquc fidei dogmata.
 %     ordinary compositor's failure. Worth a look at the KB colour PDF.
 %   * the Latin ends "XIV.)." --- period, paren, period --- then the raised ”.
 %     "prædest" carries no point.
-% Quote parity contributed by this note: „=2, ”=2. Two of the three quotations
 % are defective, and they cancel in a parity test, which is why they are logged.
 man ikke paa udvortes Maade kan opstille hiin Adskillelse.
+% The printed page opens an INDENTED new paragraph (image-verified,
+% ~225 px against this page's own body margin), so the blank line below
+% is a real paragraph break, not batch-skeleton residue.
+
 % --- p. 51 ---
 % NO \setcounter HERE, AND NONE IS MISSING: p. 51 carries no note of its own.
 % The block below its rule is the tail of p. 50's note ("subsannent. At si nos
@@ -2689,6 +2738,10 @@ der Kirche als allgemeine Lehre der Kirche geltend machen. \textit{p.\ 505.}}.
 % "müsste" is set with long-s + s, not ß. "p. 501---504." and "p. 505." both
 % read at 1.35x (the Fraktur OCR gives 509 for the second and the ABBYY layer
 % gives 501 for the first; the image gives 504 and 505).
+% The printed page opens an INDENTED new paragraph (image-verified,
+% ~225 px against this page's own body margin), so the blank line below
+% is a real paragraph break, not batch-skeleton residue.
+
 % --- p. 57 ---
 \setcounter{footnote}{0}
 Men herved glemmer man at foretage den Negation og Restauration af
@@ -2946,7 +2999,6 @@ Sandheden i uforfalsket Skikkelse, greb man med Begjerlighed \emph{den hellige
 Skrift} som Troens sande Grundpille.
 % --- p. 64 ---
 \setcounter{footnote}{0}
-
 Dog er dette ikke at forstaae saaledes, som om man ved at urgere den hellige
 Skrift kun vilde paa positivistisk Maade opstille en forstenet Norm, saa at
 Katholicismen, der alt længe havde gjort sig til af sin Læres
@@ -3106,7 +3158,6 @@ Evangelium am Ostermont. Luc. \textit{24, 13, 25}, zu Coburg geh.
 % half stand at the head of p. 68's block. Given entire here.
 % --- p. 68 ---
 \setcounter{footnote}{0}
-
 I det Momenterne saaledes flyde uendeligt over i hinanden, see vi den
 objective Aand være reelt tilstede i Luther, see den gjøre hans Aand til et
 Organ for sig, i det han som en \textit{ἄνθρωπος πνευματικὸς} prøver Alt
@@ -4129,7 +4180,6 @@ Munden:\par
 % at y=3540 with white above and below) and it is distinct from the footnote
 % rule at the left margin higher up the page. Rendered here as a plain centred
 % rule; a macro for the broken form would be an improvement.
-
 % p. 90 OPENS A NEW PARAGRAPH (its first line is indented); hence the blank
 % line above the marker.
 % --- p. 90 ---
@@ -4313,7 +4363,6 @@ göttlicher Verstand gehört, sollte eine Gesetzgebung vom Himmel nöthig sein?}
 % sentence ("hartnäckig gewesen seyn ... nöthig sein?") stands at the TOP of
 % p. 94's footnote block, above p. 94's own mark, and was read off PDF 103.
 % The Fraktur double-hyphen of "Natur= und Vernunftgebote" is kept as "=".
-
 % p. 94 OPENS A NEW PARAGRAPH (its first line is indented).
 % --- p. 94 ---
 \setcounter{footnote}{0}
@@ -4502,7 +4551,6 @@ paa den anden Side.
 % "Gjenstande" here and in l. 6 was read "Gjeustande" by BOTH OCR witnesses,
 % which would have made it a fourth turned n. It is not: at 2x both letters
 % close at the top, like the n of "endelige" beside it. Set as "Gjenstande".
-
 % --- p. 98 ---
 Ved \emph{Villien} er Mennesket istand til med sin hele Subjectivitets Kraft at
 hengive sig under det evige og uendelige Rige, og ved denne Hengivelse bevares
@@ -4650,7 +4698,6 @@ ad salutem ducit. Bengel.}}.
 % in antiqua; note 2) is antiqua Latin throughout, hence one \textit{}.
 % --- p. 102 ---
 \setcounter{footnote}{0}
-
 Ligesom den hellige Skrift har to forskjellige Sider, hvorfra den bør
 behandles, saaledes gaaer det nu ogsaa den hellige Historie. Betragter man den
 fra dens rationelle Side, om vi saa maae sige, vil man kjende de i
@@ -5167,6 +5214,10 @@ til den speculative Dogmatik.}.
 % none. The rejected alternative is a point. Transcribed as printed.
 % TYPE: x and y are antiqua against the Fraktur and take \textit{}; \dsi is
 % the printed ɔ: sign, twice.
+% The printed page opens an INDENTED new paragraph (image-verified,
+% ~225 px against this page's own body margin), so the blank line below
+% is a real paragraph break, not batch-skeleton residue.
+
 % --- p. 115 ---
 Man faaer ofte at høre, at den hellige Skrift ikke udgjør et philosophisk
 System, at den er populair; men denne ligesaa trivielle som sande Bemærkning
@@ -6414,7 +6465,6 @@ P. \textit{41}.} staaer i Modsætning
 % The note RUNS OVER onto p. 147, where its last two lines ("Valgsprog: ... P.
 % 41.") stand under the rule above p. 147's own note. The whole of it is set here.
 % No paragraph break anywhere on p. 146: every line begins at the same left edge.
-
 % --- p. 147 ---
 \setcounter{footnote}{0}
 % NOTE on the reset: the block under the rule on this page begins with two lines
@@ -6986,7 +7036,6 @@ urokkeligt fast ved Grundmiraklerne, for i deres Lys at kunne betragte de
 speciellere Mirakler. Christusphænomenets Restauration bør da foregaae paa en
 saadan Maade, at de enkelte Beretninger om hans Liv beholde hver sin Plads, for
 saaledes hver paa sin Maade at aabenbare Incarnationens Idee.
-
 % --- p. 161 ---
 % NO FOOTNOTE on this page. The rule below is the Slutning divider, not a
 % footnote rule --- what follows it is display and body type, not small type.
