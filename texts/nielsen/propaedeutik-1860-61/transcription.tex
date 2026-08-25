@@ -236,6 +236,40 @@
 %          * Part III's three subdivisions are listed at the rank of
 %            "Almindeligt"/"Resultat" although printed run-in.
 % ============================================================
+%
+%  PAGE-JOINT AND PARAGRAPH REPAIR (2026 pass; seventh and last file swept):
+%        Built by splicing page-range fragments into a skeleton that separated
+%        them with blank lines, so a leaf the printed text runs across acquires
+%        a paragraph the book does not have. Repaired here:
+%          * 3 FALSE paragraph breaks removed (pp. 252, 267, 462)
+%          * 13 MISSING paragraph breaks added (pp. 6, 138, 188, 216, 228, 291,
+%            315, 368, 377, 378, 386, 467, 468), each measuring +55 to +59 px
+%            against its own body margin, with a sample image-verified
+%          * a trailing % added to all 164 bare \setcounter{footnote}{0} lines.
+%            A bare one contributes an interword space: harmless where the page
+%            continues a sentence, wrong at a joint that breaks a word. 31 lines
+%            in this file already carried it; now all 195 do. (Checked first
+%            that none of the 164 follows a line already ending in %, which
+%            would be the only case where the change removes a WANTED space.)
+%        NO page-joint hyphens: this file never had any.
+%
+%  THE SIX BARE HYPHENS AT LINE ENDS HERE ARE NOT DEFECTS. Every one is a
+%        SUSPENDED hyphen — "Ilte- og Brintesyrer", "Salmiak- og Alundelene",
+%        "Grændse- eller Tilnærmelsesformer", "neben- und nacheinander",
+%        "Eenstemmigheds- og ..." — where the hyphen must print AND a space must
+%        follow. Do not join them.
+%
+%  SEVENTEEN MARKERS ARE LEFT ALONE AND NEED AN EYE (pp. 110, 194, 195, 250,
+%        260, 277, 327, 354, 356, 359, 387, 391, 404, 413, 417, 461, and p. 63).
+%        On each, the previous page ends on a full stop, a blank line is present,
+%        and the measurement says the page opens flush — which would make the
+%        blank wrong. BUT ON THIS SCAN THE "FLUSH" VERDICT IS NOT RELIABLE:
+%        pp. 110 and 194 measured +13 and -42 px and are, on the image, plainly
+%        INDENTED, so their blank lines are correct. p. 63 is the converse — it
+%        measures +292 px but opens flush, the reading having landed on a
+%        displayed formula. Nothing was changed at any of these seventeen.
+%        `paragraphs.py` reports them as UNCERTAIN by design and does not act.
+% ============================================================
 \documentclass[12pt,a4paper]{book}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
@@ -549,6 +583,9 @@ nu Philosophien paa disse Vilkaar maa komme i mangesidig Conflict med
 den sunde Menneskeforstand, er indlysende. (Jvfr. Philos.\ og
 Mathem. S. 12. Anm. Mathem.\ og Dialektik S. 34--35. S. 116--117.
 S. 131--32 o.s.v.).
+% The printed page opens an INDENTED new paragraph (+55 to +59 px against
+% this page's own body margin at 200 dpi; image-verified on a sample).
+
 % --- p. 6 ---
 Til stringent Begrebsanalyse udfordres Skarpsindighed; men den
 eensidige, ufrugtbare, ved subtile, men dog kun halvsande eller endog
@@ -847,7 +884,7 @@ indvikler sig i nye og større Modsigelser: hvad saa?
 
 % I. Philosophiens Begreb continues; C. Dialektik region.
 % --- p. 15 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 \section*{C.\\ Dialektik.}
 \addcontentsline{toc}{section}{C. Dialektik.}
 
@@ -1482,7 +1519,7 @@ at udelukke sit Andet, medens det Ideelle just beviser sin Realitet
 derved, at
 % (signature "3" at the foot of p. 33)
 % --- p. 34 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 det i sig optager Andet, og igjennem Andet forholder sig til sig
 selv. At Mathematiken som Mathematik, Chemien som Chemie,
 Naturhistorien som Naturhistorie, holde sig hver til
@@ -1968,7 +2005,7 @@ S. 95 o. fl.) indtil den nærværende Tid. „For det Første
 kunne vi, naar Principet er ubekjendt, jo ikke vide, om ogsaa
 alle deraf følgende Conseqvenser lade sig indrømme: vi gaae
 % --- p. 48 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 som i Blinde, og det turde hænde sig, at vi efter møisommelig
 Anstrengelse tilsidst stødte paa Noget, som netop udviste
 Principets Natur, d.~v.~s. paa Noget, vi ikke kunde begribe. For
@@ -2228,7 +2265,7 @@ let giver Grændsebegrebet et tvetydigt Anstrøg,
 er den Omstændighed, at baade Størrelser og Størrelsesnegationer
 sættes som Grændser, og at $0$ og $\infty$
 % --- p. 55 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 ophæve hinanden. Ved $0$ bliver den endelige Grændse sat,
 ved $\infty$ bliver enhver endelig Grændse hævet; en nærmere
 Betragtning vil da let gjøre det indlysende, at begge Negationer
@@ -2336,7 +2373,7 @@ bevæge sig, forandre Sted i Rummet, uagtet det ikke indtager noget
 Rum, eller ligesom strække sig, og danne noget saa Positivt,
 som en Længdeeenhed, en Linie. Kunde Linien fremkomme
 % --- p. 58 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 ved en Bevægelse af det rene abstracte Nulpunkt, da maatte
 den ogsaa kunne tænkes sammensat af lutter Nulpunkter, af
 $0 + 0\,....\,+ 0$\footnote{At denne Sætning ingenlunde staaer
@@ -2417,7 +2454,7 @@ S. 7) saa hen med sit $\mathrm{tg}\,90^{0} -
 af en, om end iøvrigt nok saa lille endelig Værdi, altsaa et
 % (p. 59 ends mid-sentence; the sentence continues on p. 60)
 % --- p. 60 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 Endelighedspunkt\footnote{Man har t.~Ex. $\mathrm{tg}\,90^{0} = \infty$,
 man har $\mathrm{tg}\,(90^{0} \pm \varepsilon)$ endelig; hvorledes kommer
 man nu fra $\mathrm{tg}\,90^{0}$ til $\mathrm{tg}\,(90^{0} \pm
@@ -2455,7 +2492,7 @@ Overgangen fra Uendeligt ($\mathrm{tg}\,90^{0} = \infty$) til Uendeligt
 ($\mathrm{tg}\,(90^{0} \pm \varepsilon) = \infty$). Hvor stor
 Differensen imellem $\infty$ og $\infty$ forøvrigt
 % --- p. 61 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 er, vedkommer ikke Overgangen som Overgang\footnote{Hvor uendelig
 dialektisk Størrelsesbegrebet er, indlyser, naar man t.~Ex. spørger:
 hvor stor er den størst mulige endelige Størrelse? eller: hvor lille er
@@ -2556,7 +2593,7 @@ maae Beviserne rigtignok blive derefter. Ligningen:
 $\mathrm{tg}\,90^{0} \div \mathrm{tg}\,(90^{0} \pm \varepsilon) =
 \frac{1}{\cos 90^{0}} = \infty$
 % --- p. 63 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 gjælder jo ogsaa for $\varepsilon = 0$. Ved at gjøre den umiddelbare
 Subtractionsdifferens til Maalestok for det Continuerede kommer man da
 til det i logisk Forstand saa overmaade skjønne Resultat, at, efterdi
@@ -2622,7 +2659,7 @@ $a - x = 0$, gjælder jo ogsaa om $y = \infty$. Grændsen $\infty$ er
 altsaa, seet fra dette Synspunkt, ligesaa opnaaelig, som Grændsen $0$.
 Heraf
 % --- p. 65 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 forklares det saa igjen, at medens ingen endelig Størrelse kan betegne
 nogen Overgang fra $+$ til $-$, kan $\infty$ derimod betegne denne
 Overgang, ligesaavel som $0$, just fordi $0$ kan betegne den. „Da nu en
@@ -2730,7 +2767,7 @@ Operationsmechaniken altfor meget har behandlet Differentialet snart
 som et umiddelbart Størrelsesatom, snart som et mystisk Nul, istedetfor
 at fatte det
 % --- p. 68 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 som Overgangsmoment, og paa tilsvarende Maade betragtet Integrationen
 blot som en Art Summation (Math. og Dial. S. 99--104), istedetfor at
 bestemme den som en Restitution af Endeligt gjennem Uendeligt
@@ -2792,7 +2829,7 @@ til Elementet: det mindst mulige $x$ er da selv et $dx$. Fuldføres
 derimod den begyndende Bevægelse, da naaes Resultatet, da voxer det
 mindst
 % --- p. 70 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 mulige $x$ ud over et mindst Muligt, rodfæster sig i det Endelige og
 bliver derved qvalitativt forskjelligt fra sit Element. Det $x$, der
 fremkommer ved $\int dx = x$, har altsaa, hvor lille det end er (Math.
@@ -2852,7 +2889,7 @@ Bane 4 Miil, paa en anden 8 Miil i Timen, da falder den herved givne
 Subtractionsdifferens som af sig selv. Anderledes, naar Tids- og
 Rumselementer træde istedetfor de endelige Tids- og Rumseenheder.
 % --- p. 72 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 % (printed: "Hvor-" ends p. 71, "langt" begins p. 72; the word is
 % completed here)
 Hvorlangt er vel et Øieblik? Ja, det kan ikke umiddelbart angives, og
@@ -2927,7 +2964,7 @@ hinanden svarende Udtryk:
 \[ = .. +\,....\,+ \varphi\,\frac{h^{2}}{1.2} +
 \frac{d.\varphi}{dt}\,\frac{h^{3}}{1.2.3} +\,.... \]
 % --- p. 74 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 Kategorierne: \emph{Bevægelse}, \emph{Hastighed}, \emph{Kraft} og
 \emph{Forandring i Kraft} blive saaledes bestemte ved objectiv
 Reflexion\footnote{I hvilken Grad en ellers udviklet Reflexion kan
@@ -2970,7 +3007,7 @@ gaaer op i Reflexion
 % (p. 74 ends mid-sentence; the sentence continues on p. 75)
 % B. Philosophiens Forhold til Chemien: Forandringsproblemet begins ~p. 81.
 % --- p. 75 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 af Rum og Tid, ved en fordoblet Reflexion i Forholdet
 $\frac{d^2s}{dt^2}$. Paa denne Maade kunne Kraftens Ændringer med
 Hensyn paa Forholdet af Rum og Tid bestemmes som Reflexioner
@@ -3041,7 +3078,7 @@ hurtigere og langsommere Bevægelse aldeles ubegribeligt.
 „Forskjellen mellem langsom og hurtig Bevægelse maa
 aabenbart beroe derpaa, at den første har mere, den anden
 % --- p. 76 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 mindre Hvile i sig, at den første altsaa er Hvilen nærmere
 end den anden; en Bevægelse med en uendelig lille Hastighed
 er jo netop Hvilen saa uendelig nær, at den kan betragtes
@@ -3081,7 +3118,7 @@ kan den i sig fordoblede Continuitet da heller ikke begribes
 uden en tilsvarende Discretionsfordobling. Giver den med
 hvert Øieblik forandrede Hastighed os Rækken: $v_1$, $v_2$, \ldots
 % --- p. 78 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 $v_{n-1}$, $v_n$ i $n$ paa hinanden følgende Øieblikke, saa at
 $v_p - v_{p-1} = dv$, hvorved Rumstilvæxten $ds$ i hvert $dt$
 successivt forvandles til $ds_1$, $ds_2 \ldots ds_n$, da er her,
@@ -3121,7 +3158,7 @@ der forudsætter, at Differentialcoefficienten af anden
 Orden er constant, kalde vi da med Hensyn hertil en
 \emph{Continuitet af anden Orden}.
 % --- p. 79 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 
 Fordrer den fordoblede Continuitet en fordoblet Discretion,
 saa fordrer paa tilsvarende Maade den tredobbelte
@@ -3278,7 +3315,7 @@ den nyere Tid ved Kunst er udskilt en Mængde Metal-Substanser,
 man forhen ikke kjendte; blandt disse Substanser
 hører da ogsaa Kalium, et tinhvidt, stærkt glindsende, meget
 % --- p. 83 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 blødt og smidigt Metal. Kaster man et Stykke af dette
 Metal i Vandet, synker det ikke tilbunds, men bevæger sig
 omkring paa Overfladen, antændes og brænder med en violet
@@ -3396,7 +3433,7 @@ Metallerne.
 „Hvad dengang blev betragtet som Magikernes høieste
 videnskabelige Stræben, gik ud paa at rense det
 % --- p. 86 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 % (p. 85 ends "Guddommeligt-", opening the hyphenated compound that
 %  p. 86 completes)
 Guddommeligt-Ligeartede, som forefandtes i den syndige Natur, forenet ved
@@ -3510,7 +3547,7 @@ kunde man saa let blive den Fordom qvit, at Forbrændingen
 absolut maatte være en Forstyrrelse, en Opløsning, en
 Adskillelse, saa at der af det brændende Legeme gik Noget bort,
 % --- p. 89 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 det nemlig, der gik op i Flammen. Deri er imidlertid
 Forbrændingsproblemet væsentlig forskjelligt fra de iatrochemiske
 % (doubtful: a faint dot stands above the comma after "Phantasier",
@@ -3623,7 +3660,7 @@ det Ildnærende? Naar et Legeme ved Forbrænding tiltager i Vægt,
 hvordan er det da tænkeligt, at Forbrændingen kan beroe paa en
 Udsondring af Phlogiston? hvorledes kan et
 % --- p. 92 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 Legeme ved at tabe Noget af sin Masse blive tungere? hvoraf kommer
 det, naar et Legeme brænder i atmosphærisk Luft, at da ikke blot en
 Bestanddeel af denne Luft absorberes, men at det brændte Legeme
@@ -3698,7 +3735,7 @@ Metaller, laa den Tanke nær, at det maatte være det Metallerne
 iboende Svovlvæsen og det ordinære Svovl, der paa Grund af
 Slægtskabet sympathiserede: Sympathie og Antipathie
 % --- p. 94 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 vare i Middelalderens Naturbetragtning de afgjørende
 Kategorier\footnote{„Efterdi Organismens Idee var det
 instinktagtige Grundlag for alle deres (de middelalderlige
@@ -4068,7 +4105,7 @@ Forbindelse} er et Concretionsbegreb; men et Concretionsbegreb har
 mange punktuelle Bestemmelser. Til nærmere Indsigt i det nævnte
 Begreb er det da nødvendigt at forstaae
 % --- p. 104 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 det \emph{Tegnsprog}\footnote{Betegne vi, for at holde os til et
 allerede anført Exempel, ved $\mathrm{N}$ 14 Vægtdele Qvælstof, ved
 $\mathrm{O}$ 8 Vægtdele Ilt, saa lade de 5 Qvælstofforbindelser sig
@@ -4116,7 +4153,7 @@ det Samme, udtaler en stor og omfattende Sandhed. Hvor indholdsrig
 og gjennemgaaende denne Grundsandhed er, kan først tilfulde
 erkjendes, naar Aarsagernes og Betingelsernes
 % --- p. 105 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 % (batch pp. 105--119. Berzelius equivalent-notation is used on pp. 107--108
 % and 114--117: dots printed above a symbol count its oxygen equivalents
 % (1 dot = 1 Ilt-æqvivalent); rendered here with \dot/\ddot and, for three
@@ -4290,7 +4327,7 @@ ved deres Forbindelse hinandens fremstikkende Egenskaber.
 Videre kunde man saa med den phlogistiske Forudsætning
 ikke komme.
 % --- p. 109 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 
 Med Lavoisier begynder den nye Forskning; men Lavoisier,
 der i Forbrændingen overalt kun saae en Virkning af Iltaarsagen,
@@ -4487,7 +4524,7 @@ som det kulsure Natron. Fremskridtet skeer bestandig
 derved, at de charakteristiske Mærker, Iagttagelsen udfinder
 % (signature "8" printed at the foot of p. 113)
 % --- p. 114 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 og prøver, ved Reflexionen forvandles til væsentlige Bestemmelser
 i det paagjældende Realbegreb.
 
@@ -4530,7 +4567,7 @@ Hensyn til de sig deri befindende Æqvivalenter Metal. Kun
 under Forudsætning af en \emph{valgt} Maalestok kan Noget
 maales, kun paa Betingelse af faste Udgangspunkter kunne
 % --- p. 115 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 de i sig bestemte Relationer exact bestemmes; man har da,
 ligeledes efter Overeenskomst, givet det Qvantum Syre, der
 mætter et Æqvivalent Base, Navn af et \emph{Æqvivalent
@@ -4718,7 +4755,7 @@ Skjøndt den reelle Analyse for sig betragtet er en
 sandselig Tingsanalyse, fører den dog conseqvent til Tingenes
 Begreb, forsaavidt den fører til Indsigt i Stoffernes
 % --- p. 119 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 Vexelvirkning. Ved at see, hvorledes Adskillelse betinger Forbindelse
 og Forbindelse igjen Adskillelse, hvorledes Synthesen
 forudsætter Analysen og igjen fremhjælper Analysen, hvor
@@ -4991,7 +5028,7 @@ sandsynlig, men dog ingenlunde ligefrem beviislig Forudsætning.
 Berzelius, hvem Atomlærens støchiometriske Uddannelse
 fornemmelig skyldes, gik nemlig, hvad de gasformige
 % --- p. 126 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 % (printed stray comma after "ved" — transcribed as printed)
 Stoffer angaaer, ud fra den Forudsætning, at lige Rumfang
 maatte ved, lige Tryk og lige Temperatur indeholde et lige
@@ -5072,7 +5109,7 @@ andet. Hvorledes Produkter, som dannes af samme Bestanddele,
 just ved Maal og Grændse erholde en til Æqvivalentforholdene
 svarende Charakteer, kunne vi, da Ilten jo
 % --- p. 128 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 % (printed: "for-" ends p. 127, "binder" begins p. 128; the word is
 %  completed here)
 forbinder sig med alle hidtil bekjendte Grundstoffer undtagen
@@ -5128,7 +5165,7 @@ Syrling, Undersyre, Syre, Oversyre (Svovlundersyrling, Svovlsyrling,
 Svovlsyre); forskjellige Iltningsgrader af basiske Legemer
 give: Underilte, Forilte, Mellemilte eller Dobbeltilte, Tveilte.}.
 % --- p. 129 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 
 Den alsidige Maade, hvorpaa Dannelserne individualiseres
 ved Maal og Grændse, viser tydeligt nok, at de paagjældende
@@ -5207,7 +5244,7 @@ i forskjellige Former (Dimorphie, Polymorphie).
 For at forstaae de herunder hørende Discussioner, maae
 vi vel mærke os, at det ikke blot er Benævnelsen „chemisk
 % --- p. 131 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 Sammensætning“, som er tvetydig, forsaavidt herved eensidig
 kan tænkes deels paa de forbundne Bestanddele selv, deels paa
 det Forhold, hvori de ere forbundne, men at her tillige i
@@ -5245,7 +5282,7 @@ Talen er om Dimorphien, ved de forskjellige Former udtrykkelig
 tænke paa Former, der henhøre under to forskjellige
 % (signature "9*" printed at the foot of p. 131)
 % --- p. 132 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 Systemer. Et Stof er f. Ex. ikke dimorph, fordi det krystalliserer
 snart i Rhombedodekaedret (Granatoedret), snart i det
 trapezoidale Ikositetraeder (Leucitoedret), da begge disse Former
@@ -5320,7 +5357,7 @@ altid vise fuldkomment den samme Form, at altsaa de
 Vinkler, som Facetterne danne med hinanden, ikke altid ere
 ganske identiske; slige Afvigelser lade sig alle forklare ved
 % --- p. 134 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 Betragtninger, der i Eet og Alt støtte sig til den atomistiske
 Theorie.
 
@@ -5365,7 +5402,7 @@ til Chlorets, som 4,948 til 1,330, eller, hvad der er det Samme,
 som deres Æqvivalenter 12,6 Jod til 3,52 Chlor.“ Liebig.}.“
 
 % --- p. 135 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 % (batch pp. 135--149. The page begins mid-paragraph. The footnote block
 %  of p. 135 opens with the unmarked run-over of p. 134's note ("til
 %  Chlorets, som 4,948 til 1,330, eller, hvad der er det Samme, som
@@ -5477,6 +5514,9 @@ Betydning derpaa, at eet og samme Grundstof kan ved
 Krystalliseringsmaaden adskille sig i to Substanser; thi Forskjellen
 imellem Diamant og Graphit kan vistnok med Rette kaldes
 substantiel.
+% The printed page opens an INDENTED new paragraph (+55 to +59 px against
+% this page's own body margin at 200 dpi; image-verified on a sample).
+
 % --- p. 138 ---
 I existentiel Umiddelbarhed synes Substantialiteten at
 være ligefrem kjendelig paa Varigheden, paa den Udholdenhed,
@@ -5593,7 +5633,7 @@ Vexelforholdet imellem Erfaring og Tænkning. Et givet Produkt
 være t. Ex. $\mathrm{C}_6\mathrm{H}_{12}\mathrm{O}_4$, altsaa ifølge den empiriske Formel
 bestaaende af 6 Atomer Kulstof, 12 Atomer Brint, 4 Atomer
 % --- p. 141 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 Ilt: hvad er det nu for en Substans? Her er i dette Stof
 en Mulighed til to Substanser, en Dobbelthed, som finder
 sin Forklaring deri, at den empiriske Formel sondres i to
@@ -6099,7 +6139,7 @@ Forandring i Atomerne end den, der angaaer Sted og Stilling,
 idet Sted og Stilling ere udvortes for Atomerne selv
 ligegyldige Bestemmelser. Men at lade Atomernes Væsen
 % --- p. 154 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 forholde sig ligegyldigt imod deres gjensidige Tiltrækning, er
 jo ikke engang muligt i Mechaniken; kunne to Masser kun
 tiltrække hinanden derved, at Atomerne i hver af dem
@@ -6178,7 +6218,7 @@ $\mathrm{C}_2\mathrm{H}_2\mathrm{O}_3 + \mathrm{C}_4\mathrm{H}_{10}\mathrm{O}$,
 er jo vistnok ethvert af
 de elementære Atomer, trods Omflytningen, sig selv liigt,
 % --- p. 156 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 nemlig som Functionspunkt: $\mathrm{C} = \mathrm{C}$,
 $\mathrm{H} = \mathrm{H}$, $\mathrm{O} = \mathrm{O}$;
 men under den betingede Vexelvirkning faaer dog hvert
@@ -6591,7 +6631,7 @@ og Brintens Atomer. Uden en saadan Forvandling er, som
 vi have seet, Vandets Tilblivelse --- naar det, vel at mærke,
 skal være et virkeligt, ikke blot for „vore ufuldkomne Sandser“
 % --- p. 166 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 tilsyneladende, Vand --- umuligt. Af blotte Tingsaarsager kan
 ingen Ting fremkomme; Tingsaarsagen virkeliggjør da ogsaa
 kun Aarsagsbegrebet paa en aldeles udvortes, endelig og
@@ -6970,7 +7010,7 @@ Uselvstændighed. Reflexionen er i sin energiske og substantielle
 Væsenhed Magt. Ved Magt sættes de i Grunden reflecterede
 Momenter som virkelige Existenser, som særskilte Ting: herfra
 % --- p. 176 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 stammer den materielle Discretion, herfra Atomernes Vrimmel,
 herfra Aggregaternes og Massernes Tilværen i Rummet.
 Ved Magt sættes de virkelige Existenser, de særskilte Ting,
@@ -7067,7 +7107,7 @@ Udvikling Historiske, som paa de Fremstillinger, hvorved sagkyndige
 og talentfulde Fagmænd have søgt at gjøre Undersøgelsernes
 væsentlige Udbytte tilgjængeligt for den almindelige Dannelse.
 
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 „Ved Physiologien eller Læren om Livet,“ siger Eschricht, (Tolv
 Foredrag. Kbhvn 1850. S. 1--2), „forstaaer man den Lære, som
 fremstiller og søger at forklare den hele Række af Phænomener, der
@@ -7098,7 +7138,7 @@ fremhæve nogle under den historiske Udvikling hørende
 Momenter\footnote{Sprengel. Geschichte der Arzneikunde. 5 Theile.
 Halle. 1792--1803. Fortges. von Eble. Wien 1837--40.}.
 
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 Paracelsus, som, hvad i forrige Afsnit allerede er fremhævet,
 indførte Lægechemien, antog, at der foruden de chemiske Kræfter i
 Legemet maatte være et Væsen, hvis Styrelse de ellers saa indbyrdes
@@ -7159,7 +7199,7 @@ ledede Nervekraften fra Hjertet til Hjernen; i Hjernen faldt deres
 Huler da sammen, deres Vægge sondrede sig i Traade, og saaledes
 bleve de til Nerver.
 
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 Ligeoverfor Peripatetikerens Syllogismer, Jatrochemikerens Safter og
 begges „animalske Aander“, „Livsaander“, „Livsluft“ o. dsl. hævdede
 den sig nu fremarbeidende Anatomie den videnskabelige Fordring paa
@@ -7288,7 +7328,7 @@ Kjendemærker, hvorved Organismen adskiller sig fra de uorganiske
 Legemer, de levende Individer fra de livløse Ting, bleve nu paa det
 Omhyggeligste fremhævede. „Vistnok har
 % --- p. 185 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 Organismen i det Hele og efter sin materielle Constitution et
 mechanisk Anlæg, men betragte vi den formelt og specifisk, er den
 uendelig langt fra Mechanismen“. Som Exempel anfører Stahl et Uhr.
@@ -7319,7 +7359,7 @@ udgaae fra Sjælen,
 % --- p. 186 ---
 men at det dog skeer uden Overlæg og klar Bevidsthed.
 
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 „Det er,“ siger han, „Forretninger, der følge \textit{ratione} eller
 \textit{λόγῳ}, men ikke \textit{ratiocinio} eller
 \textit{λογισμῷ}.“
@@ -7368,7 +7408,7 @@ als sie empirische Anknüpfungspunkte findet. Wo diese aufhören, da
 hört auch das Gebiet der Naturforschung auf. A. Kortüm. Anf. Skr.
 S. 3.}.
 
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 Dersom man til Beviis for, at der i Organismen virker en ideel, fra
 de physiske Aarsager forskjellig Causalitet, udtrykkelig fordrer, at
 der enten i mechanisk, i chemisk eller i morphologisk Henseende skal
@@ -7388,6 +7428,9 @@ Ventiler forsynet Pompeværk, Arterierne elastiske Rørledninger,
 Tungeinstrument; Benene forholde sig som Løftestænger,
 Afsondringsorganerne tildeels som Filtreerapparater“ o. s. v. (Jvfr.
 Propæd. S. 187).
+% The printed page opens an INDENTED new paragraph (+55 to +59 px against
+% this page's own body margin at 200 dpi; image-verified on a sample).
+
 % --- p. 188 ---
 Vel kunde det ved en foreløbig Betragtning synes, som om de
 saakaldte organiske Stoffer tydede hen paa en eiendommelig
@@ -7507,7 +7550,7 @@ Materiers Tilværelse i Organismen ikke nu mere er nogen Gaade, siden
 man har fundet dem som aldrig manglende Bestanddele i
 Næringsmidlerne.“ (Liebig).
 
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 Stilles nu Livskraften\footnote{\textit{La vie n'est pour moi rien
 qui ressemble à l'arch\`e suprême de Van Helmont, espèce de souverain
 paraissant avoir son individualité propre, qui siége dans le centre
@@ -7540,7 +7583,7 @@ Spørgsmaal tilbage:
 %  outside the present batch]
 % a) Livets Væsen region (α Organismen from ~p. 208).
 % --- p. 192 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 % [cross-batch join: the pp. 177--191 batch left its footnote (anchored at
 %  "Stilles nu Livskraften\footnote{...}" on p. 191) deliberately open at
 %  "La chaleur modifie l'action de l'élec-", flagging that it continues onto
@@ -7623,7 +7666,7 @@ smaa aflange Korn; Nervesystemet deels af Traade, deels af Kugler.“
 (Eschricht).
 
 % --- p. 194 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 Man er altsaa oprindelig gaaet ud fra den Forudsætning, at der
 nødvendigviis maatte være en gjennemgribende Forskjel ikke blot mellem
 Dyret og Planten, men tillige mellem Planten og Mineralet, en principiel
@@ -7782,7 +7825,7 @@ det Slumrende maa jo være til, for at kunne slumre: saalænge Livet
 slumrer, er det endnu ikke udslukt, dets indre, stille Virken endnu ikke
 ophørt; men i
 % --- p. 199 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 den Tilstand, hvorom her tales, er Livsvirksomheden $= 0$, Livet er
 udslukt. Den Modsigelse, at Livet er udslukt, uden at Livsevnen er tabt,
 kan kun finde sin Løsning i den Forudsætning, at det Liv, der ikke er til
@@ -7886,7 +7929,7 @@ af endelige, for hverandre tilfældige Betingelser. Et saadant, i Kraft
 af tilfældig Nødvendighed dannet System vilde da være et i sit
 Phænomen fornuftigt,
 % --- p. 202 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 men efter sin Oprindelse ufornuftigt Hele, en forstandig Conseqvens af
 blinde, grundløse Forudsætninger, en meningsløs Modsigelse. De blinde
 Forudsætninger hæves imidlertid ikke derved, at her uden videre
@@ -7956,7 +7999,7 @@ Denne Modsætning maa i sin yderste Abstraction bestemmes saaledes:
 Fornuftighed; det Materielle}
 
 % --- p. 204 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 \emph{derimod den i det udvortes Enkelte umiddelbart værende
 Andethed.} Da nu Andetheden, det Afledede, ikke desto mindre er
 nødvendig, ja oprindeligt nødvendig for den sin egen Udvikling
@@ -8022,7 +8065,7 @@ fordybe sig i Grunden og speile sig i Inderligheden, hævder da
 Selvheden som den almene Væsenhed, en objectiv Magt, der hersker i et
 System af
 % --- p. 206 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 mechaniske Love. En inderligere Forening, Identiteten af de hinanden
 Modsatte, naaes i det Chemiske. Under de chemiske Processer gaae
 Tingene tilgrunde, for paany at begrundes; her blive de tilværende Led
@@ -8121,7 +8164,7 @@ Processer.
 og Andetheden blive til det, hvorpaa den oprindelig er anlagt, et
 Moment for den herskende Selvhed,
 % --- p. 208 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 maa den i Elementærorganismen virksomme Idealitet potensere sig i
 høiere principielle Fulgurationer og afgive Selvhedspunkter for
 organiske Organismer.
@@ -8188,7 +8231,7 @@ Forbindelser, som deraf kunne dannes, da faae vi et Indtryk af
 Stoffets Foranderlighed, dets alsidige Eftergivenhed og Villighed
 til at lade sig forme. Hvormange forskjellige Legemer lade sig
 % --- p. 210 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 ikke danne af Kulstof, Brint og Ilt, ja, hvormange lade sig ikke
 danne af Kulstof og Brint alene!\footnote{De store Klasser af
 flygtige Olier, til hvilke Terpentinolie, Citronolie,
@@ -8256,7 +8299,7 @@ opdages.“ Hverdagslivets Physiologie (efter George Henry Lewes
 »physiology of common life«). Første Deel. S. 63---65.}). Forudsætte
 vi altsaa, hvad i forrige
 % --- p. 211 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 Afsnit udførlig er viist, at Atomerne som Stofpunkter ved hver
 Omordning selv undergaae en materiel Ændring, da bliver
 Foranderligheden saa gjennemgaaende, at de chemiske Love vel kunne
@@ -8308,7 +8351,7 @@ havde opregnet disse Dele, var man færdig med sin Beskrivelse.
 Bichât tændte et Lys for Videnskaben, da han godtgjorde, at
 Organerne selv bestod af forskjellige Væv eller Grunddannelser,
 % --- p. 213 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 der hver for sig bevarede deres eiendommelige Egenskaber, i hvilken
 Deel af Legemet de end fandtes. Hjertet t. Ex. er et Organ, der
 bestaaer af Muskel-Væv, Binde-Væv, Nerve-Væv og Fedt-Væv, idet
@@ -8343,7 +8386,7 @@ og Cellehinden, der bestaaer af Cellulose. At nu disse forskjellige
 Dannelser, der gjensidig forudsætte og afgive Forudsætninger for
 hinanden indbyrdes, ere Gjennemgangsled for et formende
 % --- p. 214 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 Ene, altsaa Yttringer af eet Væsen, udlægges i Phænomenet derved,
 at Cellen lever som organiseret Eenhed, at det, der saaledes danner
 sig, er eet Levende.
@@ -8412,6 +8455,9 @@ Slutning, tillige betegner en ny Begyndelse. At der nu i en saadan
 Phænomenernes Cyclus speiler sig en indre Væsenseenhed, er
 øiensynligt; men fængslet af det Phænomenale kan Morphologien ikke
 fordybe sig i denne Væsenseenhed, ikke naae det formende Princip.
+% The printed page opens an INDENTED new paragraph (+55 to +59 px against
+% this page's own body margin at 200 dpi; image-verified on a sample).
+
 % --- p. 216 ---
 Skal det være muligt at naae Principet og erkjende, hvad Livet er,
 maa Erkjendelsen være \emph{methapysisk}.
@@ -8453,7 +8499,7 @@ Selvstændighed ligeoverfor Varmen, Livskraften o. s. v. kommer man
 fra Chemiens Synspunkt let til at oversee den Omstændighed, at
 Slægtskabet, adskilt fra sine Betingelser, dog
 % --- p. 217 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 egentlig talt kun er en Mulighed, ikke en Virkelighed. Vistnok kan
 man, hvad Væsenet angaaer, stille Slægtskabet selvstændigt t. Ex.
 mod Varmen; thi dersom de paagjældende Stoffer ikke vare i det
@@ -8556,7 +8602,7 @@ uophørlige Stofskifte?
 Bestemmelsen af det Morphologiske dialektisk.} At der imellem de
 Processer, den organiske Chemie
 % --- p. 220 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 formaaer at udtyde, og Livsvirksomheden selv maa være en væsentlig
 Forskjel, en betydelig Afstand, er fra mange Sider indlysende.
 Videnskaben er sig da ogsaa i denne Henseende sin Grændse bevidst.
@@ -8606,7 +8652,7 @@ S. 167.}: de Kar, hvormed
 % the top of the page; its close is transcribed at the p. 220 anchor
 % above. p. 221 does introduce its own first footnote further down,
 % at "Dyret*)", so the counter is still reset below.)
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 Organismen opererer, dannes, formes og vedligeholdes ved
 Operationerne selv. Forskjellen imellem de organiske Forbindelsers
 Chemisme og Livsvirksomheden er her iøinefaldende. Var nemlig den
@@ -8724,7 +8770,7 @@ Jo mere det Materielle, det Stofagtige, fremhæves, desto stærkere
 fremtræder det i Formerne Elementære. Det seer da ud, som vare de
 særskilte Organer, Kar, Væv, Celler og
 % --- p. 224 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 Cellegrupper kun physiske Produkter af physiske, under særegne
 Betingelser virkende Tingsaarsager; det seer ud, som var det Hele
 afgjort dermed, at de af mikroskopiske Dele sammensatte Apparater
@@ -8875,6 +8921,9 @@ concreto}, vil dens forskjellige Charakteer naturligviis beroe paa
 Existensernes Eiendommelighed. Det gjør da i denne Henseende en
 væsentlig Forskjel, om det Existerende fremstiller sig som \emph{en Ting}, som
 \emph{et Hele} eller som \emph{en Organisme}.
+% The printed page opens an INDENTED new paragraph (+55 to +59 px against
+% this page's own body margin at 200 dpi; image-verified on a sample).
+
 % --- p. 228 ---
 I \emph{Tingen} som Ting har Modsætningen mellem det Indre og det Ydre, uagtet
 her er en concret Existens, dog endnu ikke hævet sig over det abstract
@@ -9141,7 +9190,7 @@ efterat et Menneske er dødt, leve hans Muskler og kunne trække sig
 sammen; hans Kjertler leve og kunne afsondre, hans Hjerte lever og kan
 slaae; hans Mave lever og
 % --- p. 236 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 kan fordøie“\footnote{Lewes tilføier i en Anmærkning --- efter Ch. Robin:
 \textit{Mémoires de la société de biologie, v. 134---}, at Fordøielsen
 hos visse Fisk endog vedvarer 24 Timer efter Døden. Hverdagsl. Physiol.
@@ -9219,7 +9268,7 @@ i et System af Forandringer. Heraf følger da, at Krystallens virkelige
 Skikkelse maa være et umiddelbart Udtryk af Typen, enten Udtrykket saa
 iøvrigt er adæqvat, eller ikke, hvorimod
 % --- p. 238 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 Organismen altid vil udvise en bestemt Forskjel imellem den væsentlige og
 den umiddelbare Skikkelse, saa at Typen ikke ligefrem falder sammen med
 det Ydre, men reflecteres deri: Krystaltypen er et \emph{Schema}, den
@@ -9290,7 +9339,7 @@ Zinnober, et fast, haardt Svovl og et gjennemsigtigt, blødt Svovl, der
 lader sig trække i lange Traade, Glasset i Tilstand af et
 uigjennemsigtigt, mælkehvidt Legeme, der er saa haardt, at
 % --- p. 240 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 det giver Gnister ved at slaaes mod Staal, og i sædvanlig gjennemsigtig
 Tilstand med muslet Brud. Disse i deres Egenskaber saa ulige Tilstande
 ere i det ene Tilfælde betingede ved en regelmæssig, i det andet ved en
@@ -9504,7 +9553,7 @@ Charakteermærker vedblive dog under alle slige Forandringer ---
 idetmindste i overordentlig lange Tidsrum, --- at hæve sig frem med
 Præget
 % --- p. 246 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 af et Oprindeligt, et i sig Uforanderligt.\footnote{Kun en med
 Kjendsgjerningerne stemmende Udvikling af Principet i dets
 paradigmatiske Vexelvirkning med de vexlende Betingelser kan lede til
@@ -9538,7 +9587,7 @@ sig som Anlæg en real Mulighed; men derfor er dog endnu ikke enhver real
 Mulighed et Anlæg. Der er i den kulsure Kalk, der bundfældes, en real
 Mulighed til Kalkspath, men der er
 % --- p. 247 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 ogsaa en real Mulighed til Arragonit, og just fordi her er real Mulighed
 til begge Dele, er her ikke særligt Anlæg til nogen af
 Delene.\footnote{Betragte vi de chemiske Grundstoffer under eet Overblik,
@@ -9607,7 +9656,7 @@ dem, der fra Begyndelsen af bestemmes til at følge paa en Række af
 formidlende Mellembestemmelser. Med Sirenknoppens første Cellevæv er ikke
 blot den articulerede Knop, Knoppen med de færdige
 % --- p. 249 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 Knopskjæl, men tillige de Blomster, der dog først fremkomme mod
 Udviklingens Slutning, forudbestemte; og dog, hvilken Afstand imellem den
 udfoldede Blomst og de taglagte Knopskjæl, ja, hvilken Forskjel imellem
@@ -9682,7 +9731,7 @@ Interesse. Medens Nogle (Schleiden) kun tillægge Individerne Realitet,
 ville Andre (Lindley) tillige opfatte Arterne, ja Andre (Fries) endog
 baade Arterne og Slægterne som Naturens Værk; hvorimod de Fleste synes at
 % --- p. 251 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 betragte Familier, Ordener o. s. v. som rene
 Abstractioner\footnote{\textit{Schleiden säger (Morph. II. Ed. 2,
 p. 25)}: „Hier muß man festhalten, daß die Natur unserer
@@ -9724,7 +9773,6 @@ let sammenblander aldeles forskjelligartede Udgangspunkter, forvexler de
 kategoriske Bestemmelser og befinder sig i megen Uklarhed angaaende
 Realitet og Existens. Under Behandlingen af Spørgsmaalet om Individ og
 Art gjør det jo en principiel Forskjel, om
-
 % ============================================================================
 % NOTE FOR THE CALLER — the p. 251 footnote joint.
 % There is NO run-over to fold into the p. 251 anchor. The Schleiden/Lindley/
@@ -9737,9 +9785,8 @@ Art gjør det jo en principiel Forskjel, om
 % 600 dpi: the note begins with the mark "*)" and with a capitalised new
 % sentence ("Vi anmärka till en början…"), not mid-sentence.
 % ============================================================================
-
 % --- p. 252 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 man begynder med uden videre at forudsætte de existerende
 Individer og saa ved at gruppere disse efter Ligheder abstraherer
 Begreberne: Art, Slægt o. s. v., eller man begynder med at undersøge de
@@ -9817,7 +9864,7 @@ skulde blive til slet Intet,
 Kan en Entelechie, engang udviklet, igjen udslettes, saa har Paradigmet
 ingen Oprindelighed, Selvheden ingen Energie,
 % --- p. 254 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 Livet intet Princip, saa falde vi igjen tilbage i det Meningsløse. Men
 ihvorvel den ideelle Entelechie ikke kan tilintetgjøres, saa kan den dog
 heller ikke holde sig som et umiddelbart Existerende, naar det Materielle
@@ -9889,7 +9936,7 @@ det da fast, at den substantielle Fornufteenhed maa med indre Nødvendighed
 have det i sin Magt at forvandle ethvert Element i den ydre Mangfoldighed
 til Realmoment i sit rige Indhold: da staaer det ogsaa fast, at
 % --- p. 256 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 Fornufteenhedens substantielle Selvudvikling maa gaae i Eet med en
 substantiel Erindring.
 
@@ -10012,7 +10059,7 @@ H. G. Bronn. Stuttgart, 1860. S. 274.}. En saadan
 %  „Charles Darwin, über die Entstehung der Arten“ is FRAKTUR here, as is
 %  „Physiol. af Valentin ved Hannover“: both rejected for \textit.)
 % --- p. 259 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 Totalvirkning er ikke et Resultat, der kan fremkomme stykkeviis og ændres
 stykkeviis; den concentrerede Totalvirkning er heel og udeelt i Anlægets
 allerførste Begyndelse, i de første Punkter, i enhver af „de kornede
@@ -10190,7 +10237,7 @@ Blainville par Flourens. Académie des sciences. Paris, 1854, p. 14.}};
 %  orientation is not determinable at 900 dpi; set »…« here, as in the
 %  p. 251 note, the closing mark being read as « by both OCR witnesses.)
 % --- p. 263 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 men, hvad der i høi Grad mangler Naturforskeren, er klar og tydelig
 Indsigt i Teleologiens Betydning for den objective Naturerkjendelse. Det
 er nemlig ikke sjældent at høre en Naturforsker, især naar han i populære
@@ -10350,7 +10397,6 @@ eiendommelige Former og
 %  this page and the „forudsætter, at det Indre kan i Inderlighed hæve sig
 %  over det Ydre“ passage was checked on the image and confirmed normally
 %  set — it is only a widely justified line.)
-
 % γ) Det organiske Formaal region — the head itself falls on p. 261
 % (verified from the image 2026-08-10) and travels in the pp. 252--266
 % fragment, not here. A „ opened near the foot of p. 266 closes on p. 267.
@@ -10365,9 +10411,8 @@ eiendommelige Former og
 % fragment carries ONE unmatched closing “ by design (14 „ against 15 “).
 % Everything else in the range balances.
 % ============================================================================
-
 % --- p. 267 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 Sammenføininger netop, hvert paa sit Sted, egne sig til den mindre og større
 Grad af Bevægelighed, Legemet i dets forskjellige Dele udkræver: da faae vi
 unegtelig et Indtryk, som var det Hele anlagt af en selvbevidst Viisdom,
@@ -10441,7 +10486,7 @@ er viist, ikke blive staaende ved det mechaniske Hele. Hvad Kant tilskriver vor
 discursive Forstand, angaaer ikke Forstanden, men kun Forstaaelsen af det
 Mechaniske, en til
 % --- p. 269 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 Naturmechanismen svarende Forstandsmechanisme. At den menneskelige Forstand
 meget vel formaaer at tænke, og da vel ogsaa forsaavidt begribe
 „Naturprodukter, ved hvilke det Hele er Delenes Tilblivelsesgrund og Prius,“
@@ -10520,7 +10565,7 @@ Alternativerne: enten en Seende, og da
 %  „kurde“ — but the sort is the ordinary Fraktur d, cf. „da“ on the same line;
 %  inking, not a defect.)
 % --- p. 271 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 med Øine, eller uden Øine, og da en Blind; enten en Tænkende, og da med Hjerne,
 eller uden Hjerne, og da en Tankeløs; enten en Villie, og da med
 Selvfornemmelse og Viden, eller uden Viden, og da uden Villie. At slige
@@ -10584,7 +10629,7 @@ den Maalestok, hvorefter Øiets Fuldkommenhed maa bedømmes, er Synet jo Formaal
 % (spacing.py reports no letterspacing on this page, and the image confirms it.
 %  „Moleschott“ and „C. Vogt“ are FRAKTUR — checked and rejected for antiqua.)
 % --- p. 273 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 Hjerne kun Virkeliggjørelsen af en real Mulighed, ikke Fuldførelsen af et i sig
 bestemt, paa bevidst Tænkning udtrykkelig sigtende Anlæg: da vilde jo en
 Menneskehjerne, der var aldeles uskikket til Tænkning, men et forøvrigt sundt
@@ -10661,7 +10706,7 @@ behøve i denne Sammenhæng kun at besinde os paa det allerede Udviklede.
 %  above it.)
 
 % --- p. 275 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 At den physiske Aarsag ikke har nogen særlig, af Grundaarsagen uafhængig
 Selvstændighed, er fra mange Sider viist i det Foregaaende. Mechaniken lærer
 os, at enhver virkende Aarsag i Grunden er at betragte som et Integral, hvis
@@ -10700,7 +10745,7 @@ udøve over den: at Fornuften
 %  checked at 600 dpi and REJECTED — every one of them a justified-line
 %  artefact; this page carries no Sperrsatz.)
 % --- p. 276 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 hersker endogsaa over det Ufornuftige, forstaaes kun deraf, at det Ufornuftige,
 Fornuftens Andet, dens Anstød, Skranke og Modstand, betinger dens Energie,
 hører med i dens Væsen, og altsaa dog er fornuftigt. Det er saaledes ikke
@@ -10991,7 +11036,7 @@ Udvikling, hver Skikkelsesreflex i den organiske Selvhedserindring være
 bevaret som objectivt Moment, naar det sidste Stadium, det Stadium, der
 betegner Forbilledets
 % --- p. 284 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 synlige Fuldendelse, er naaet\footnote{Zunächst ist hier darauf ein
 entschiedenes Gewicht zu legen, daß man unter dem Begriffe der
 thierischen Individuen nur materiell abgeschlossene morphologische Facta
@@ -11139,7 +11184,7 @@ Sind wir im Innern.“
 %  two lines quoted back from Haller). Transcribed as printed; this is the
 %  single unmatched “ in the pp. 282--296 fragment (net balance --1).
 % --- p. 288 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 Her er i disse Stemningers Udtalelse fra begge Sider Noget, der tiltaler,
 og Noget, der frastøder den sunde Sands.
 
@@ -11171,7 +11216,7 @@ Grændse kan trænge ind i Naturens Indre, saa spørges: \emph{til hvilken
 Grad, til hvilken Grændse?} Den Videnskab, der principielt besvarer
 dette Spørgsmaal, er
 % --- p. 289 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 ikke Naturlæren, men Philosophien\footnote{Philosophien er nemlig en
 videnskabelig Ideelære (Propæd. S. 118--198) under den Forudsætning, at
 den tillige er en videnskabelig Erkjendelseslære. (Propæd. S.
@@ -11203,7 +11248,7 @@ Naturvidenskabens Opdagelser, om end disse glimrende Opdagelser
 fortsættes gjennem Aartusinder, dog i al deres Mangfoldighed ere
 utilstrækkelige til
 % --- p. 290 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 at aabne Menneskets Øie for Naturens „egentlige Indre“, dersom
 Philosophien ikke følger med og bearbeider Systemet af de til
 Kjendsgjerningerne svarende Kategorier saaledes, at Ideen speiler sig
@@ -11256,6 +11301,9 @@ forkaste de i sig reflecterede Naturkategorier, har man imidlertid ikke
 alene brudt Staven over Philosophiens „Ideer“, men selv over
 Naturvidenskabens „Love“; thi ogsaa Lovene ere jo Reflexionskategorier:
 man slipper aldrig forbi Hume!}.
+% The printed page opens an INDENTED new paragraph (+55 to +59 px against
+% this page's own body margin at 200 dpi; image-verified on a sample).
+
 % --- p. 291 ---
 % (the whole of this page's foot is the unmarked run-over of the p. 290
 %  footnote, transcribed above at its anchor: it begins "Sandsen,
@@ -11367,7 +11415,7 @@ maa væsentlig sees paa det Indvortes, \emph{paa Grundformen.}
 Vi sætte det kryptogame Sporegjemme (\textit{sporangium}) imod det
 phanerogame Frøgjemme (\textit{pericarpium}). Skulde
 % --- p. 294 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 vi nu dømme efter det Udvortes alene, da vilde det i sin Grundform
 Lavere vistnok meget ofte fremstille sig for os, som om det var det
 Høiere. Saaledes have Mosserne et af et stort Cellecomplex dannet
@@ -11403,7 +11451,7 @@ Udførelse af det kryptogame Anlæg; men hverken Mossernes eller
 Brægnernes Sporehuse naae Bladformen.}, dets indre Bygning beroer dog
 kun paa
 % --- p. 295 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 % (the foot of this page opens with the unmarked run-over of the p. 294
 %  footnote --- "af det kryptogame Anlæg; men hverken Mossernes eller
 %  Brægnernes Sporehuse naae Bladformen." --- printed ABOVE this page's own
@@ -11451,7 +11499,7 @@ Støvsækkens mandlige Sædstof (Pollen, navnlig det i Pollinarrøret, det
 forlængede Pollenkorn, Organiserede) og den i Æggets Kiimsæk
 indesluttede Kiimcelle hos Phanerogamerne.}. At
 % --- p. 296 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 nu Forplantningen, Formaalet selv, er noget Væsentligt, forstaaer sig;
 men --- siger man maaskee --- „Forplantningens Midler, Maaden, hvorpaa
 Forplantningen skeer, synes jo at være noget aldeles Uvæsentligt; eller
@@ -11575,7 +11623,7 @@ men Archegoniets
 % (the foot of this page carries the whole run-over of the p. 298 note,
 %  including its Danish second paragraph, transcribed above at its
 %  anchor; the counter is reset here for this page's OWN first note.)
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 Centralcelle, der befrugtes umiddelbart\footnote{Den befrugtede
 Centralcelle udvikler sig saa, navnlig hos Brægnen, til et Sporangium, i
 hvilket de spiredygtige Sporer fremkomme. „Forkimen, der udvikler sig af
@@ -11626,7 +11674,7 @@ Iagttagelserne gaae, aldrig udviser nogen Polaritet; hvorimod
 Phanerogamens Kiim, selv om den, som f. Ex. hos Melampyrum, kun bestaaer
 af to Celler, udtrykker Articulationen i
 % --- p. 301 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 en polær Modsætning mellem et Opad og et Nedad\footnote{Den Celle, som
 har været vendt imod Kiimhullet (\textit{micropyle}), afgiver nemlig
 Rodenden, medens den fra Kiimhullet bortvendte Celle afgiver den
@@ -11688,7 +11736,7 @@ Blomstdannelsen her foregaaer, charakteriserer imidlertid særligt det
 Høidepunkt, hvorpaa Acacien staaer. Efter mange Svingninger gjennem det
 Uregelmæssige
 % --- p. 303 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 (\textit{Papilionaceæ}) naaes i Blomstdannelsen her det Regelmæssige;
 den regelmæssige undersædige Blomst --- just den Form, hvori
 Blomstindividerne træde tydeligst frem --- har et meget stort, men
@@ -11764,7 +11812,7 @@ Bægerblad, paa et femte Kronblad, paa et sjette Støvblad, paa et syvende
 Frugtblad. --- Fordres endnu et yderligere Beviis for, at Plantens Dele
 ikke fremkomme ved endelig
 % --- p. 305 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 Sammenstykning, men udvikles indenfra af eet sig differentierende Anlæg,
 saa at Organernes Forskjellighed og indbyrdes bestemte Forhold
 væsentlig grunder sig paa Paradigmets teleologiske Fordringer: da behøve
@@ -11861,7 +11909,7 @@ Kambialring, snart derimod samlede, krandsstillede og i Vexelforhold til
 Kambialringen, er en Kjendsgjerning; men hvor finde vi saa den Idee, som
 siger os, hvoraf det
 % --- p. 308 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 egentlig kommer, at det just er de tofrøbladede Planter, der have
 Kambialringe, ikke de eenfrøbladede? Saalænge man tager Sagen i al
 Almindelighed og holder den i det Svævende, kan man jo vistnok meget let
@@ -12030,7 +12078,7 @@ som det Positive, det i Virkeligheden Tilværende; derfor siger den sunde Sands:
 „jeg seer nok Planten, men Plantens Idee seer jeg ikke.“ Deri har den sunde
 Sands nu forsaavidt fuldkommen Ret, som det jo ikke er
 % --- p. 313 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 det umiddelbart Positive, der er Ideen. Dersom det umiddelbart Positive var
 Ideen, saa maatte Dyret jo æde Ideen, naar det æder Planten, saa maatte man da
 ogsaa kunne sønderrive Ideen, naar man sønderriver Planten, koge Ideen, naar
@@ -12059,7 +12107,7 @@ Evne til enten selv at bestaae som selvstændig Organisme eller dog idetmindste
 til at frembringe en saadan, opdager man let, at Planten, det vegeterende
 Exemplar, ikke er et enkelt Individ, men en Yngel
 % --- p. 314 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 af Individer. Hvert Skud (\textit{turio}), hver Knop (\textit{gemma}), hvert
 Blad\footnote{Alexander Braun. Das Individuum der Pflanze. Berlin 1853.}, ja
 selv en Deel af et Blad, kan jo under gunstige Betingelser afgive en reel
@@ -12088,6 +12136,9 @@ der tillader at see Plantelivet i dets rette Lighed og Ulighed med Dyrelivet
 i deres gode Ret som saadanne og de to Kjøn ligesaa lidt her som andetsteds
 forenede i eet Væsen.}“ (Steenstrup\footnote{Unders. over Hermaphroditismen.
 S. 85---86.}).
+% The printed page opens an INDENTED new paragraph (+55 to +59 px against
+% this page's own body margin at 200 dpi; image-verified on a sample).
+
 % --- p. 315 ---
 Kritisk stiller nu Sagen sig saaledes. Afviser man --- hvad her vistnok er al
 mulig Grund til --- Læren om Hermaphroditismen, da maa man ogsaa conseqvent
@@ -12145,7 +12196,7 @@ Enkeltfunctionerne i deres Fleerhed og Særskilthed det Underordnede; det følge
 da af Sagens Natur, at hele Eftertrykket maa falde paa Eenheden selv, den sig i
 Heelheden localiserende Eenhed, Principeenheden.
 % --- p. 317 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 Istedetfor et eneste absolut Individ eller en Samvæxt af absolute Individer have
 vi altsaa i Planten et \emph{System af organiske Individuationer.} Dette System
 giver os da, forsaavidt det omfatter de for den særlige Plantes hele Levnetsløb
@@ -12209,7 +12260,7 @@ bryde denne skjøre Stængel, end med at sønderrive en Snor eller bryde et Glas
 „dersom den levende Plante virkelig er Eet med den sig deri
 % the quotation opened here closes on p. 319 („dersom ... Værk!“)
 % --- p. 319 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 realiserende Idee, saa“ --- siger man --- „maa Ideen rigtignok være et afmægtigt
 Skyggevæsen, siden man med saa ringe Uleilighed kan tilintetgjøre dens
 Værk!“\footnote{„Wollten wir irgend eine Idee als die wirkende Macht ansehen,
@@ -12333,7 +12384,7 @@ i Abstractionen ud, som om det var een eneste, de enkelte Dannelser begrundende
 Form, en Grundform. En saadan Form er et dødt Abstractum; hvor overfladisk at
 betragte den levende Art
 % --- p. 323 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 paa samme Maade! I den levende Art er Formvirksomheden væsentlig
 Principvirksomhed; den eiendommelige Form, hvori Arten som Art udtaler sin
 Existens, er oprindelig bestemt ved Anlæg og Præformation. Den i Anlæget
@@ -12429,7 +12480,7 @@ Slægten, Slægten
 % Darwin passage pp. 326--328 falls wholly inside ONE batch and can be
 % collated against the excerpt edition as a unit. 342--356 onward unchanged.
 % --- p. 326 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 % COLLATION NOTE (pp. 326--328). These three pages exist as a separate edition,
 % texts/nielsen/propaedeutik-darwin/transcription.tex, made from the BRITISH
 % LIBRARY Google copy; the present text is collated against it word by word on
@@ -12578,7 +12629,7 @@ Grundidee, i Dybet.
 Som organisk Natur er Ideen Liv, og den levende Existens, væsentlig seet, en
 Idee-Existens; men Idee-Existensen
 % --- p. 329 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 forudsætter en totaliseret Modsætning af det Indre og det Ydre, og denne
 Modsætning forudsætter igjen sin totaliserede Eenhed. Idet Selvheden vinder i
 subjectiv Bestaaen ved at concentrere sig til et sig fornemmende Selv, en Sjæl,
@@ -12623,7 +12674,7 @@ dunkel, af ingen Betydning. Imod Analogien med Amoeber og Rhizopoder, hvad
 Udviklingsmaaden og den saakaldte Sarcodesliim angaaer, staaer en ligesaa
 fremherskende Analogie med Svampene.};
 % --- p. 330 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 den første derimod er af reen theoretisk Natur og frembyder aldeles ingen
 Vanskelighed. Dyret har en Sjæl, Planten ikke; denne Adskillelse er ligesaa
 principmæssig som populær.
@@ -12652,7 +12703,7 @@ N. Pringsheim. 3ter Band. Berlin 1861. S. 48.}, saa følger heraf en tredobbelt
 Opgave: at bestemme, hvad Fornemmelsen er, hvorledes Fornemmelse forholder sig
 til Vilkaarlighed, og hvorledes Fornemmelsens og Vilkaarlighedens
 % --- p. 331 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 Functioner forholde sig til de Organer, de materielle Media, hvoraf de
 betinges.
 
@@ -12694,7 +12745,7 @@ sie sich zu einem höheren Dasein auf; sie gehen über in die Pflanze, in welche
 für sie ein neuer Läuterungsproceß beginnt. Die Beseelung der Pflanzen.
 Studien. Leipzig 1855. S. 149--150.}. Glasset, der klinger,
 % --- p. 332 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 lader jo sin Stemme høre, og gjør ligesom et Forsøg paa at tale. Er Affectionen
 en Fornemmelse, hvorfor skulde Lyden da ikke være en Røst? „Alt, hvad der er
 til, har Stemme, har Røst, men de ere derefter. Den Stav, der slaaer paa en
@@ -12722,7 +12773,7 @@ Sjæl. Ogsaa Planten har en Virksomhed, der gaaer ud over det Nærværende. Den
 forfølger et fjernt Maal, og det ikke blot lidende, automatisk, omtrent som
 naar Bevægelserne i det
 % --- p. 333 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 optrukne Uhrværk fuldende deres Kredsløb, men den stræber selvvirksomt, med en
 vis Frihed i Valget af sine Midler, med en udholdende, ligesom overlagt Iver
 imod dette Maal. Den søger at opholde sig selv, den sætter sig i Modsætning til
@@ -12749,7 +12800,7 @@ Det i denne Betragtningsmaade Tvetydige, Uklare og Uholdbare er let at opdage.
 Her maa skjelnes, og skjelnes skarpt, imellem det Livløse og det Levende,
 imellem det blot Levende og det Besjælede, imellem physisk Affection og psychisk
 % --- p. 334 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 Fornemmelse\footnote{I et ligesaa skarpsindigt som yndigt og vittigt Foredrag
 --- Studien. Die Beseel. d. Pfl. --- har Schleiden tilretteviist de
 Physiologer, som i deres mystiske Uklarhed endnu vedblive at begave Planten med
@@ -12894,7 +12945,7 @@ bevidst?“ besvares udtrykkelig med: „Nei, Indtrykket er vedblevet.“
 Fornemmelsen hører altsaa ikke op, fordi man ophører at have Fornemmelsen; man
 kan altsaa have Fornemmelser, som man ikke har.}, men om
 % --- p. 338 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 Fornemmelser, der ikke bemærkes, ikke udtrykkelig bringes til Bevidsthed; men
 hvad opnaaer man saa herved? At lægge Modsigelsen ind i Bevidstheden selv! man
 bliver ved Conseqvensen nødt til at indrømme, at der gives en ubevidst
@@ -12975,7 +13026,7 @@ Plante. Muskler og Nerver, som i de høiere Dyreklasser betinge Bevægelserne,
 mangle hos Planterne; Bevægelsesphænomenerne i de høiere Grupper af Planteriget
 kunne desaarsag ikke vel sammenlignes med de
 % --- p. 341 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 vilkaarlige Bevægelser i Dyreriget, der staae under Sensoriets
 Indflydelse\footnote{H. Schacht. Lehrbuch der Anatomie und Physiologie der
 Gewächse. 2ter Theil. Berlin 1859. S. 504--505.}.“
@@ -13106,7 +13157,7 @@ Kimen, der lidt efter lidt voxer og forvandler sig til en
 % "Valentin."), and a stop is what the following "Men, maae vi spørge"
 % requires. Set as a stop.
 % --- p. 345 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 Kylling, medens Blommen og Hviden i Grunden kun er det
 \emph{Næringsstof}, paa hvis Bekostning denne Kimens Væxt og Forvandling
 tilveiebringes.“ (Eschricht\footnote{Tolv Foredr. S. 3.}).
@@ -13137,7 +13188,7 @@ Fordringer svarende Forandringer, Kimen undergaaer. „De Forandringer,“
 Den udbreder sig noget mere til alle Sider og sondrer sig i to Lag,
 hvoraf det øverste er
 % --- p. 346 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 mere gjennemsigtigt og kaldes det \emph{animale} eller \emph{dyriske}
 Blad, det nederste er mere melkehvidt og kaldes det \emph{vegetative}
 eller \emph{Sliimbladet.} At de kaldes saaledes, er, fordi af det øverste
@@ -13246,7 +13297,7 @@ indre Bevægelse af Sammensætning og Opløsning,
 % "blev kaldt tillive igjen": both witnesses read "faldt", the standard
 % Fraktur f/k confusion; the image gives k.
 % --- p. 349 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 der paa een Gang foregaaer overalt og uafbrudt“; men dette passer kun paa
 Ernæringen og omfatter ikke alle Hovedphænomenerne, medens der ved den af
 Herbert Spencer foreslaaede Definition, nemlig: „Livet er den endelige
@@ -13276,7 +13327,7 @@ er levende, at den har Sensibilitet til Hoveddrivfjeder; og dens
 Bevægelser, som kaldes mechaniske eller automatiske, \emph{bestemmes alle
 ved en Impuls, som udgaaer fra ledende Fornemmelser.} Den adskiller sig
 % --- p. 350 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 fremdeles fra en Maskine derved, at der kan udvikle sig nye Evner i den
 .... Nye Forbindelser mellem de enkelte Led opstaae, saa at en Forening
 af Bevægelser, der idag er umulig, maaskee kan være let om en
@@ -13315,7 +13366,7 @@ skal tænke sig noget Bestemt derved og opfatte det i et Begreb. At
 Organismen er en levende Maskine, kan nemlig betegne to aldeles modsatte
 Ting: det kan betegne, at Organismen er levende, fordi den er en
 % --- p. 351 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 Maskine, men det kan ogsaa betegne, at Organismen er levende, uagtet den
 er en Maskine. I første Tilfælde beroer Organismens Liv paa Maskineriets
 Fuldkommenhed; i sidste Tilfælde danner det Organiske en charakteristisk
@@ -13386,7 +13437,7 @@ et mechanisk Hele er Maskine og arbeider,
 % p. 351 note, transcribed whole at its anchor; no mark and no counter
 % reset here.
 % --- p. 353 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 sætter det Kræfterne til og kan ikke virke for nogen Selvvedligeholdelse;
 forsaavidt det i sin Virken er anlagt paa at vedligeholde de bevægende
 Kræfter, udfører det intet Arbeide og er ikke i Charakteer af Maskine;
@@ -13426,7 +13477,7 @@ idet den anden aftager, og har naaet sit Maximum, naar den anden er 0.}.
 % same quantity; both reproduced as printed.
 
 % --- p. 354 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 I et saadant \textit{Perpetuum mobile} have vi da et Billede paa
 Kræfternes Vedligeholdelse; men denne Vedligeholdelse er just betinget
 deraf, at her ikke er nogen udvortes Modstand, at her, med andre Ord,
@@ -13470,7 +13521,7 @@ $A_0$, $A_1$, $A_2$ \ldots\ danne en aftagende geometrisk Række.}.
 % reference back to it a few lines later is printed "(1)" without a stop.
 
 % --- p. 355 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 At hele Systemer af mechaniske Functioner ere medvirkende i den levende
 Organisme og høre med til Organisationen selv, kan Ingen drage i Tvivl;
 men denne Omstændighed kan paa ingen Maade retfærdiggjøre Benævnelsen:
@@ -13554,7 +13605,7 @@ iøinefaldende Misforstaaelser.
 % „menter“.
 
 % --- p. 357 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 
 Er Organismen alligevel --- i Grunden --- et Slags Maskine, „en levende
 Maskine“: da er det jo ganske i sin Orden, at man i en saadan halvt
@@ -13587,7 +13638,7 @@ Maskine“, hvi skulde man da ikke give den organiske Maskine, der selv kan
 fabrikere baade Sæd og Æg --- ikke alene vexelviis Sæd til en andens Æg
 og Æg
 % --- p. 358 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 til en andens Sæd, men (hvad der jo næsten tyder paa en
 misundelsesværdig αὐτάρκεια) Sæd til sine egne Æg, Æg til sin egen Sæd,
 --- Fortrinet for den, der er saa eensidig construeret, at den kun kan
@@ -13669,7 +13720,7 @@ Spørgsmaalets logiske Side aldeles forqvaklet.}
 At anerkjende den principielle Forskjel imellem Maskine og Organisme,
 imellem den blot physiske og den organiske
 % --- p. 360 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 Proces, er at anerkjende et Organisationsprincip; men at
 \emph{anerkjende et Organisationsprincip er at anerkjende et
 Livsprincip.} Maa det nu forudsættes, at Organismen, Plantens saavelsom
@@ -13773,7 +13824,7 @@ seer roligt bort fra den, naar den bestemt modsiger Tanken om, at Hjernen
 udelukkende er Sædet for Bevidsthed eller Sandsning. Vi kunne ikke
 tilstede to Slags Maal og Vægt.
 % --- p. 363 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 Hvis det Beviis, som Dyrene afgive, er godt i et Tilfælde, maa det være
 godt i et andet. Hvad siger da den sammenlignende Anatomie? En
 Betragtning af Hvirveldyrene viser, at der finder en mærkværdig
@@ -13840,7 +13891,7 @@ maa \emph{føle}, følger deraf ikke, at det \emph{tænker}. Ethvert Dyr maa
 \emph{Stedbevægelse}. Tænkning er Resultatet af en mere sammensat
 Organisation,
 % --- p. 365 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 end der er givet ethvert Dyr; men Bevidsthed er Attribut for hver dyrisk
 Organisme. Hvor simple end Bevidsthedens Former ere hos de lavere Dyr,
 maa den dog være væsentlig beslægtet med de mere sammensatte Former hos
@@ -13875,7 +13926,7 @@ betragte Nervekraften som noget Særeget --- hvis det er Elektricitet, er
 det Elektricitet under visse særegne Forhold, som give den en egen
 Charakteer, \emph{der alene findes i den levende Nerve.}“
 % --- p. 366 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 
 Hvad der i Almindelighed betegnes ved Ordet: „Nervekraft“ lader sig
 adskille i „to meget forskjellige Kræfter, der svare til to meget
@@ -13948,6 +13999,9 @@ vedblive at betegne de bagerste Nerver.“}.
 % printer's defect: in „forskjelligartede“ (gesperrt, foot of p. 367) the
 % final e is a turned/battered sort and prints as a reversed e; both OCR
 % witnesses read it as o. Transcribed as e.
+% The printed page opens an INDENTED new paragraph (+55 to +59 px against
+% this page's own body margin at 200 dpi; image-verified on a sample).
+
 % --- p. 368 ---
 Det er, som man heraf seer, i god Overeensstemmelse med de opstillede
 Grundsætninger, at Lewes, istedetfor at antage eet Centralorgan for
@@ -14013,7 +14067,7 @@ Er Bevidstheden „med de mere sammensatte Former hos de høiere Dyr“ kun et
 System af organiske Yttringer uden noget sig derigjennem yttrende Selv,
 saa komme vi jo dog
 % --- p. 370 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 til at „hylde Descartes's Hypothese, at alle Dyr ere levende Maskiner,
 hvis Bevægelser ere ganske bevidstløse“; thi --- det er en uundgaaelig
 Conseqvens --- alle organisk-selvløse Bevægelser ere
@@ -14083,7 +14137,7 @@ Forstand, hvori vi her tage Ordet. Naar der saaledes falder et Lysskjær
 paa Øiet under Søvnen, pirres det hele Sandseapparat for Synet, medens
 Organet
 % --- p. 372 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 for Perception er uvirksomt\footnote{Todd og Bowman: \textit{Physiological
 Anatomy}, I. 402. --- Hverdagsl. Physiol. 2. S. 55.}.“ See vi derimod Forholdet
 fra dets anden Side, ledes vi til at give Lewes Ret i, at „en specifisk Pirring
@@ -14262,8 +14316,11 @@ unquam prorsus in nihilum abire} \dots\ Herbart. Kl. phil. Schr. II. S. 373. ---
 % reference (Herbart … Philosophie) reverts to Fraktur. "l" is Herbart's sign
 % for the logarithm, printed as a roman ell.
 Jvfr. Heegaard. Den Herbartske Philosophie. S. 159--178.}.
+% The printed page opens an INDENTED new paragraph (+55 to +59 px against
+% this page's own body margin at 200 dpi; image-verified on a sample).
+
 % --- p. 377 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 Tør vi nu ansee det for afgjort, at ingen, om end nok saa umærkelig,
 Fornemmelse er mulig uden en Medvirkning, var det endog kun en
 Differentialvirkning, af Opmærksomheden og derved af Selvet: saa tør vi da ogsaa
@@ -14306,8 +14363,11 @@ chaque \emph{embranchement} reste la même, et que, cette forme changeant d'un
 % surrounding French is not. There is a small speck after "reste" which the
 % PDF text layer reads as a comma; at 570 dpi it sits below the baseline and
 % is detached — transcribed as no punctuation.
+% The printed page opens an INDENTED new paragraph (+55 to +59 px against
+% this page's own body margin at 200 dpi; image-verified on a sample).
+
 % --- p. 378 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 % Above the *) note this page carries the run-over of the p. 377 footnote
 % ("tème nerveux est tout l'animal … p. 98."), unmarked; it is transcribed
 % whole at its anchor on p. 377.
@@ -14402,7 +14462,7 @@ legemlige Sider afgiver saa det articulerede Sjælephænomen, der i sin materiel
 Umiddelbarhed tager sig ud som en Totalitet for sig, et individuelt tilværende
 Legeme.
 % --- p. 381 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 Er det nu virkelig den ene og samme Sjæl, som i sin fuldstændige Udvikling lever
 paa een Gang baade legemlig og sjælelig: da kan det ikke længere falde os
 ubegribeligt, at der, hvad Zoologien lærer, maa findes en charakteristisk
@@ -14431,7 +14491,7 @@ Bezug auf ihre morphologische Ausbildung unter einander zusammen, so daß eine
 Modification des einen eine ähnliche in \emph{einem} andern nicht bloß, sondern
 mehr oder weniger in \emph{allen} anderen zur Folge hat.“}.
 % --- p. 382 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 Det er umuligt, at nogen legemlig existerende Sjæl kan være fornemmende uden at
 være sandsende; hvorimod det vel er muligt, at Sandsningen hos det lavt staaende
 Individ kan være i saa ringe Grad articuleret, at her ligesaa lidt kan tales om
@@ -14558,8 +14618,11 @@ verschmolzen anlangt, zu trennen; weder die Verbindungsfaser, noch ein solches
 Vermögen ist zu finden. Sie will durch Spaltung eines Thieres den Theil mit dem
 Seelensitze vom Theile ohne Seele trennen, und beide Theile bleiben beseelt.“
 Elemente der Psychophysik. 2ter Theil. S. 414.}.
+% The printed page opens an INDENTED new paragraph (+55 to +59 px against
+% this page's own body margin at 200 dpi; image-verified on a sample).
+
 % --- p. 386 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 Naar man blot vil opgive den sensualistiske Mistydning og indsee, at det
 ingenlunde er det nervøse Centralorgan, der bliver sig bevidst formedelst
 „Neuriliteten“, men omvendt Sjælen, der bliver sig bevidst formedelst
@@ -14611,7 +14674,7 @@ Kjendsgjerninger er Naturideen aabenbaret.
 
 % γ) Menneskelivet begins ~p. 399.
 % --- p. 387 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 % ===== JOINT WITH p. 386 =================================================
 % p. 387 carries NO run-over of the p. 386 footnote. Checked on the spread at
 % 130 dpi and again at 300 dpi: the p. 386 note ("…für die Systematik gelten.
@@ -14663,7 +14726,7 @@ vergleich. Anatomie S. 33--34.};
 % carry the double long-s, while "daß", "muß", "Schluß" carry ß.
 for at opdage Typerne og erkjende
 % --- p. 388 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 % (Above the rule at the foot of this page stands the run-over of the p. 387
 % note — no mark, no counter reset here; it is transcribed at its anchor.)
 deres objectivt aprioriske Gyldighed maa Tankens Blik gjennem Kjendsgjerningerne
@@ -14758,7 +14821,7 @@ Denne Forskjellighed erholder en endnu større Rigdom af teleologiske
 Charakteertræk derved, at det i Udførelsen af den enkelte Type ikke er et enkelt
 abstract Maal, for hvilket
 % --- p. 390 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 alle organiske Betingelser blive Midler, men et System af særskilte, deels
 sideordnede, deels over- og underordnede, Formaal, som realiseres. Vistnok er
 Typen: \emph{Fugl}, eiendommelig bestemt ved Formaalet: \emph{at flyve}; men da
@@ -14801,7 +14864,7 @@ Grundz. der vergl. Anatom. S. 34.
 }.
 
 % --- p. 391 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 % (The foot of this page carries first the run-over of the p. 390 note — no mark
 %  and no counter reset for it — and then this page's own note *) below.)
 Af denne Vexelbestemmelse er „Formens Bevægelse“ indenfor Grændserne for en
@@ -14835,7 +14898,7 @@ de Ducrotay de Blainville par Flourens. p. 13--14.}
 % "XVIII\textsuperscript{e}" renders the printed superior e of "XVIIIe siècle".
 }. Er
 % --- p. 392 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 Flagermusen et Exempel paa, hvorledes et særeget Formaal kan medføre en
 usædvanlig Forandring i en given Type: saa er \textit{Apteryx australis} igjen
 et Exempel paa, hvorledes det ved en Type tilsigtede Formaal kan i nogle
@@ -14895,7 +14958,7 @@ betænke, at Sjælen som Dyreorganismens Princip eo ipso maa være Princip for d
 saaledes organiserede Individers Instincter og Drifter. Dyret, der kommer til
 Verden, er derfor strax orienteret: Ællingen
 % --- p. 394 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 \emph{søger}, Kyllingen \emph{skyer} Vandet; enhver af de unge Skabninger er
 ligesom forud underrettet om sin Bestemmelse og sit Livs Vilkaar. Som ved en
 Inspiration have de forskjelligartede Individer en klar og sikker Viden om, hvad
@@ -14925,7 +14988,7 @@ Række 3die Bind. S. 2.}. Bevidstheden, hvori det vexler mellem Dunkelhed og
 Klarhed, maa ofte famle, Villien paa Grund af de vexlende Motiver ofte blive
 vaklende; men Instinctet, den ubevidste Forstand, famler ikke,
 % --- p. 395 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 Driften, den determinerede Tilskyndelse, gjør ikke tvivlraadig\footnote{I
 Instinctet falder Driften sammen med den umiddelbare Naturforstand; men da denne
 Naturforstand dog yttrer sig i og ved Selvet, kan det Umiddelbare hæves til
@@ -15088,7 +15151,7 @@ miskjendte Dyrevæsen „komme til sin Ret“.
 Hvad nu for det Første Vurderingen af de legemlige Fortrin angaaer, har Kritiken
 et temmelig let Spil, eftersom
 % --- p. 400 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 Forgjængerne i denne Henseende unegtelig have begaaet iøinefaldende Misgreb. Ved
 at udhæve en Fleerhed af særskilte Sider som ligesaa mange særskilte Fortrin og
 opgjøre Regnskabet saaledes, at Menneskets hele Fortrin bliver en Sum af mange
@@ -15120,7 +15183,7 @@ egentlig ved den opreiste Stilling? „Mennesket, skabt i Guds Billede, løfter 
 Pande og hæver sit Blik mod de evige Stjerner; Dyret, hvis Krop er i Strækning
 med Jorden, luder mod Jorden
 % --- p. 401 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 og taber sig i det Forkrænkelige!“ Men for det Første kan man nu ikke sige om
 alle Dyr, at de lude mod Jorden; man kan f. Ex. ikke sige det om Giraffen,
 heller ikke om Gemsen, i det Hele ikke om de fleste Dyr af Hjorteslægten. For
@@ -15270,7 +15333,7 @@ iøvrigt kan være, altid ville have stor Vanskelighed ved at tilegne sig den ny
 Lære om Dyrenes „\emph{uendelige Perfectibilitet}“, er begribeligt, og kan sees
 af mange Exempler. --- „Vi kunne“ --- siger en skarpsindig
 % --- p. 405 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 Tænker --- „afrette Dyrene paa mange Maader, og forsaavidt kunde det have Nytte
 at gjøre flere Forsøg paa at faae flere Dyrs Kræfter gjorte anvendelige til vor
 Nytte og Fornøielse; men for \emph{Dyrenes Skyld ønsker jeg sandelig ikke,} at
@@ -15399,7 +15462,7 @@ høiere Maal: \emph{den}
 % 300 dpi on both pages.
 
 % --- p. 409 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 \emph{teleologiske Forskjel mellem Dyret og Mennesket er en
 Sphæreforskjel}\footnote{„Kann das Thier über eine bestimmte Station, welche der
 Mensch überschreitet, schlechterdings nicht hinaus, so mögen wir immerhin diesen
@@ -15473,7 +15536,7 @@ er at spørge om Selvbevidsthedens Oprindelse.
 Den „naturphilosophiske“ Grundtanke, at Mennesket som existerende Aand maa
 repræsentere en Sammenfatning af det
 % --- p. 411 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 i Dyrelivets typisk-udadkastede Mangfoldighed Adspredte til indre og høiere
 Eenhed\footnote{„Wie sich bei den Würmern vorzüglich die Ernährung, bei den
 Insecten die Irritabilität, die Respiration und das Gefühl, bei den höhern
@@ -15561,7 +15624,7 @@ Naturvdskb. 2den Række. 4de Bind. S. 1---77.
 }.
 
 % --- p. 413 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 Ved at sammenligne Racerne, saaledes som de forekomme i Plante- og
 Dyreverdenen, med Racerne blandt Menneskene\footnote{Forholdet imellem Art og
 Race bestemmes, ifølge Quatrefages, saaledes: \emph{Arten er Indbegrebet af de
@@ -15623,7 +15686,7 @@ vilde da let kunne gaae i Arv.“ --- Om Menneskeslægtens Eenhed. (Anfr. Skr.
 S. 21---22).}: dersom Fornuften, det i Menneskenaturen Væsentlige, med alle
 Aandsevnerne
 % --- p. 415 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 var bevaret, hvad saa? skulde disse abelignende Mennesker maaskee ikke kunne
 gjøre sig Haab om Anerkjendelse hos „den smukke kaukasiske Race“, ikke gjøre
 Fordring paa fuldstændige Menneskerettigheder? Dilemmaet er: enten Menneske
@@ -15855,7 +15918,7 @@ Betragtning viser, at Kunst og Poesie umulig kunne opløse de religiøse
 Forudsætninger uden derved at forberede deres egen Opløsning.
 
 % --- p. 421 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 % The Poul Møller quotation that fills the upper half of this page is set in
 % ordinary body Fraktur throughout — eye-checked at 300 dpi, no gesperrt.
 % The suspension points are printed as four spaced stops in both places.
@@ -15886,7 +15949,7 @@ Videnskaben og de videnskabelige Sandheder kunne sættes i Troens Sted.
 Betingelsen for en fremadskridende Aandsudvikling er vistnok en stedse stigende
 Selverkjendelse i Forening med en stedse voxende Naturerkjendelse; men hvorledes
 % --- p. 422 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 forholder det sig med Fuldendelsen af disse Erkjendelser? I endelig Forstand
 kunne de to Erkjendelser paa mange Maader og i mange Henseender adskilles, men
 ikke i Ideen: en absolut Selverkjendelse uden en tilsvarende Naturerkjendelse er
@@ -16042,7 +16105,7 @@ at man derfra turde vente nogen høiere Belysning af det Organiske; men derfor b
 det dog ikke glemmes, at Mechanikens Begreb er Physikens Fundamentalbegreb, og at
 det just er Cartesius's Fortjeneste at have gjort det første
 % --- p. 426 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 væsentlige Skridt til at forlige den philosophiske Tænkning med en Kategorie, der
 ellers i al sin Skarphed maatte synes at staae i fiendtlig Modsætning til Aanden
 og alt det Aandelige\footnote{„Kein Physiker und kein Naturphilosoph vor
@@ -16088,7 +16151,7 @@ at de naturlige
 %  would end the paragraph and break the build --- "Paragraph ended before
 %  \text@command was complete". Where a gesperrt run crosses a page, the
 %  marker goes in tight like this.)
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 Ting ikke ere virkende Aarsager, men alene Anledningsaarsager (\textit{des causes
 occasionelles}).}
 % The gesperrt block opened on p. 426 ends here; the antiqua parenthesis
@@ -16127,7 +16190,7 @@ indre
 % (harmonia" rejected at 300 dpi: the letters are tight, the line merely
 % loosely justified.
 % --- p. 428 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 Nødvendighed fremgaae af Grundanskuelsen selv\footnote{In .... drei Punkten, der
 \textit{substantia completa}, der \textit{harmonia præstabilita} und dem
 \textit{vinculum substantiale}, giebt Leibniz dem Körper eine Bedeutung, welche
@@ -16173,7 +16236,7 @@ Occasionalisterne er
 % ambiguous at 600 dpi; read as a full stop (tesseract agrees), with the PDF
 % text layer's comma the rejected alternative.
 % --- p. 429 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 % The Latin block at the head of p. 429's footnote area is the RUN-OVER of
 % p. 428's **) note, transcribed at its anchor above. No mark, no reset for it.
 Modsætningen imellem det Sjælelige og det Legemlige forsvindende i Forhold til
@@ -16370,7 +16433,7 @@ mellem Sjæl og Legeme Principielle (Propæd. S. 28--29), er
 dens Betydning med Hensyn paa Identitetslærens videre Udvikling
 dog umiskjendelig. Paa det dogmatiske
 % --- p. 434 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 Standpunkt blev Naturen vel et videnskabeligt Object for Aanden,
 men da Dogmatismen jo netop charakteriserer sig ved den
 Umiddelbarhed, hvormed den stoler paa Erkjendelsens Mulighed,
@@ -16657,7 +16720,7 @@ phrenologiske Organer; paa denne Maade vilde en skarpsindig
 Phrenolog vel være istand til at udpege os idetmindste en halv
 Snees tilforladelige Tyveorganer,
 % --- p. 442 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 uden just dertil at behøve en halv Snees udvalgte
 Cranier\footnote{„Es ist ein grosses Vorurtheil des allgemeinen
 Publikums, die Wissenschafft habe nur immer aufzubauen; sie hat
@@ -16731,7 +16794,7 @@ eiendommelige Virksomheder, der betinge de mentale Functioner.
 Hvor altsaa Hjernens Figur, Volumen og physiske Beskaffenhed i
 mærkelig Grad afviger
 % --- p. 444 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 fra det Normale, der maae vi ogsaa vente, at Afvigelserne ville
 vise deres Indflydelse paa Aandsvirksomheden. --- „Et vist
 Udbytte have Undersøgelserne i denne Retning vistnok bragt. Det
@@ -16804,7 +16867,7 @@ Geistige in nächster Beziehung steht, in Betracht gezogen wird.“
 Fechner. Anfr. Skr. 1ster Theil. S. 10.}.
 
 % --- p. 446 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 At det nødvendigviis maa være den ydre Psychophysik, ikke
 den indre, der danner Grundlaget for den hele Videnskab, er
 indlysende. Vel gives der et System af indvortes Erfaringer
@@ -16845,7 +16908,7 @@ større Tilvæxt maa den erholde, for
 % seines Nachbars ...), so p. 446's note ends on its own page. Nothing to fold
 % back.
 % --- p. 447 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 at den Fornemmelsesforandring, Tilvæxten fremkalder, kan være
 ligesaa stærk som den, der fremkaldes ved en mindre Tilvæxt til en
 svagere Paavirkning\footnote{„Das Wort seines Nachbars hört man sehr
@@ -16885,7 +16948,7 @@ tænkes udtrykt i exact Form, altsaa $\gamma = f(\beta)$; til nærmere
 Bestemmelse af denne Function tjener den weberske Lov: at
 Fornemmelsestilvæxten,
 % --- p. 448 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 $d\gamma$, er proportional med de relative Incitamenttilvæxter
 $\frac{d\beta}{\beta}$, der mathematisk udtrykkes ved Ligningen:
 \[ d\gamma = \frac{K d\beta}{\beta} \quad (1), \]
@@ -16918,7 +16981,7 @@ men ogsaa af Logarithmesystemets Basis. (2) kalder Fechner
 \emph{Maalformlen}; Forholdet $\frac{\beta}{b}$ giver han det særegne
 Navn:
 % --- p. 449 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 \emph{den fundamentale Incitamentsværdi eller: Incitamentets
 Fundamentalværdi}\footnote{To Følelser være $\gamma$ og $\gamma^{1}$, de
 til samme svarende Incitamenter $\beta$ og $\beta^{1}$. Vi have da
@@ -16991,7 +17054,7 @@ compliceret som det, der udtrykkes ved: $y = k\,\log\frac{x}{a}$, kan
 nemlig med større Sandsynlighed antages at finde Sted imellem to saa
 ueensartede Virksomheder som en reen physisk og en reen
 % --- p. 451 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 psychisk, end imellem to saa eensartede Virksomheder som en udvortes og
 indvortes legemlig\footnote{Den Omstændighed, at Formlen:
 $d\gamma = K\frac{d\beta}{\beta}$ ved de Forsøg, som ere anstillede for
@@ -17108,7 +17171,7 @@ Standpunkt og kommer derved til at oversee Pointen.} er at forstaae, kan
 sees af Herbarts Methode.
 
 % --- p. 454 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 % [p. 454: the footnote block of this page opens with the unmarked tail of
 % the *) note anchored on p. 453 (Erdmann ... oversee Pointen.), which is
 % transcribed whole at its anchor above. No mark or counter reset for it
@@ -17210,7 +17273,7 @@ Styrke. $a$ og $b$ være to Forestillinger, Modsætningsgraden $m$; det,
 som $a$ taber, er da proportionalt med $mb$, omvendt proportionalt med
 $b$ og
 % --- p. 457 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 med $a$; dette giver da $mb\,.\,\frac{1}{b}\,.\,\frac{1}{a}$, altsaa
 Forholdet $\frac{m}{a}$. Paa samme Maade sees det, som $b$ taber, at
 være $\frac{m}{b}$; altsaa ville disse Forhold ogsaa kunne udtrykkes ved
@@ -17381,7 +17444,7 @@ $bc^{2} + ac^{2} - ab^{2} = 0$ eller
 $c = b\sqrt{\frac{a}{a + b}}$.
 
 % --- p. 461 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 At Resten for $c$ bliver 0, vil med andre Ord sige, at Forestillingen
 $c$ bliver fuldstændig fordunklet af $a$ og $b$; disse holde den da i
 Bevidsthedens Horizont. Selv om $c$ er mindre end
@@ -17408,7 +17471,6 @@ naturlige er, at Forestillinger begynde med at være uhæmmede, og nu,
 forsaavidt flere indbyrdes modsatte træffe sammen, danne en
 Hæmningssum. Det begynder altsaa ikke med Ligevægt, men med en Stræben
 efter Ligevægt. For at Ligevægten kan opnaaes, maa Hæmningssummen
-
 % γ) Den menneskelige Videns Grændser begins ~p. 468.
 % NOTE TO CALLER: p. 462 carries NO run-over of p. 461's footnote. The foot of
 % p. 462 opens with a fresh *) note. The joint is clean: p. 461 ends
@@ -17426,9 +17488,8 @@ efter Ligevægt. For at Ligevægten kan opnaaes, maa Hæmningssummen
 % NOTE ON THE GREATER-OR-LESS SIGN: the printed sign is > set over <.
 % No amssymb here, so it is built
 % with \stackrel, as the dotted capitals earlier in this file are.
-
 % --- p. 462 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 synke, idet den fordeler sig paa de enkelte Forestillinger: hermed er
 Forestillingernes Bevægelse givet.
 
@@ -17472,7 +17533,7 @@ thi $2 \times \frac{1}{4} = \frac{1}{2}$, og $2 \times 0{,}2211$ er ikke meget
 afvigende fra $0{,}3934$. Vælge vi derimod $8 \times \frac{1}{4} = 2 = t$, da
 er $0{,}8646$ ikke engang $4 \times 0{,}2211$.}, dog først kan blive
 % --- p. 463 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 % the foot of this page carries FIRST the run-over of p. 462's **) note (the
 % table and the paragraph beginning „I Begyndelsen bliver Hæmningen...“), set
 % without a mark, and THEN this page's own *) note. No counter reset for the
@@ -17576,7 +17637,7 @@ hertil maatte hæmmes af $b$, altsaa: $\frac{b\alpha^{2}c^{2}}{N}$. Naar dette
 Qvantum er større, end Resten var for $b$, nemlig $\frac{b^{2}}{a+b}$, før $c$
 optraadte, maa $b$ trænges ud af Bevidstheden;
 % --- p. 466 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 er det liigt denne Rest, gaaer $b$ netop til Bevidsthedens Nulpunkt, og er det
 mindre end denne Rest, bliver $b$ indenfor Bevidstheden. Hvorvidt $b$ skal
 enten trænges ud over Grændsen eller berøre Grændsen eller endnu ikke naae
@@ -17605,8 +17666,11 @@ Indtraadte, angives ved følgende Ligning:
 
 $(P-p)dt = dp$, eller $t = \mathrm{l.}\frac{P}{P-p}$, idet $p = 0$ skal give
 $t = 0$, altsaa: $p = P(1-e^{-t})$.
+% The printed page opens an INDENTED new paragraph (+55 to +59 px against
+% this page's own body margin at 200 dpi; image-verified on a sample).
+
 % --- p. 467 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 Men, idet $P$ hæver sig, faaer $\Pi$ med det Samme en til Sammensmeltningen
 eller Complicationen svarende Hjælp $= \frac{r\varrho}{\Pi}$. I $P$ (eller
 rettere: i Sjælen, forsaavidt det er Sjælen, der forestiller $P$) er der
@@ -17634,8 +17698,11 @@ Da $t = 0$ giver $\omega = 0$, og følgelig $\frac{c}{\varrho} = 1$,
 $\varrho = c$, faaes
 \[ e^{\frac{r}{\Pi}t} = \frac{\varrho}{\varrho - \omega}, \]
 som giver ovenstaaende Formel.}
+% The printed page opens an INDENTED new paragraph (+55 to +59 px against
+% this page's own body margin at 200 dpi; image-verified on a sample).
+
 % --- p. 468 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 Heraf sees da, hvorledes $\omega$ afhænger af $\varrho$, $r$, $t$ og $\Pi$.
 1) Den Deel af $\Pi$, der efter Forløbet af Tiden $t$ er indtraadt i
 Bevidstheden, nemlig $\omega$, forholder sig ligefrem som det Qvantum af
@@ -17823,7 +17890,7 @@ endog forviklet System af exacte Conseqvenser kunne føre til charakteristiske,
 for Aandsmechaniken betegnende Resultater. Havde Forudsætningerne været
 intetsigende, maatte
 % --- p. 474 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 Resultaterne jo ogsaa have været det; havde Forudsætningerne været falske,
 maatte Resultaterne jo her eller der være komne i Strid med de psychologiske
 Kjendsgjerninger.
