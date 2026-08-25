@@ -496,3 +496,46 @@ from the transcription phase; the entry now serves both PDFs).
 2. Confirm both PDF links in `catalog.yaml` resolve once published.
 3. Commit and push (`~/hhalvors.github.io/publish-danish.sh "message"`) —
    the user's own step, not the assistant's.
+
+---
+
+## PAGE-JOINT AND PARAGRAPH REPAIR — 2026 pass
+
+Third book swept. The fault was found and traced in
+`texts/nielsen/speculative-methode`; read that book's RESUME-NOTES for the
+anatomy, and `evangelietroen-theologien`'s for the first port.
+
+**This book was the worst affected in the repo.**
+
+- **9 bare-hyphen page joints** → `\-%` (pp. 6, 10, 14, 24, 35, 37, 72, 116, 127)
+- **55 false paragraph breaks removed.** They run almost continuously from p. 44
+  to the end, so the second half of the edition carried a spurious paragraph at
+  nearly every leaf.
+- **6 missing paragraph breaks added** (pp. 5, 11, 17, 18, 26, 42).
+
+Samples of every class were checked on the page image before editing. The built
+PDF compiles at 117 pages, 0 errors, and contains no `word- word` artefact.
+
+`paragraphs.py` here does the audit; run it before publishing. Calibrated on this
+scan over 83 known continuations and 47 known openings: continuations −9 to
++14 px, openings +57 to +92, threshold 35.
+
+**Two traps particular to this scan**, both of which produced confident nonsense
+before being fixed:
+
+1. The dark right-hand edge reaches past 8 % of the sheet on many leaves and
+   connects text lines **vertically**, so a row-profile line finder merges five
+   lines into one 150 px band and reads that band's left edge as the first line.
+   Hence the adaptive `content_box` and the rule discarding any "line" taller
+   than a tenth of the text block.
+2. Residual **gutter ink** bleeds into scattered rows and drags their left edge
+   70–100 px left of the true margin. Two such lines among the first eight pull a
+   plain median left and turn an ordinary continuation into a phantom +102 px
+   indent — printed p. 44 did exactly that, and was caught only because the text
+   test contradicted it. The margin is now a trimmed median.
+
+**Three markers were decided on the text alone**, the image being unusable or
+wrong: pp. 67 and 144 yield too few full-measure lines to measure, and p. 120
+reads +214 px but opens flush (checked by eye) while the previous page ends
+mid-sentence. All three continue the previous paragraph.
+

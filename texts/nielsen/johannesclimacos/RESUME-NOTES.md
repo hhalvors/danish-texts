@@ -1227,3 +1227,41 @@ the existing transcription section.
 - Publish via `~/hhalvors.github.io/publish-danish.sh "message"` when
   ready, which rebuilds PDFs, regenerates the site, and pushes both
   repos.
+
+---
+
+## PAGE-JOINT AND PARAGRAPH REPAIR — 2026 pass (translation.tex only)
+
+Fourth file swept. The fault was found in `texts/nielsen/speculative-methode`;
+read that book's RESUME-NOTES for the anatomy.
+
+`transcription.tex` here carries **no page markers**, so it cannot have the
+fault. Only `translation.tex` was affected.
+
+- **9 page-joint hyphens**, decided **one by one rather than swept**, because
+  they are not all the same thing:
+  - eight are word-division hyphens that exist only because the *Danish* page
+    broke there → invisible `\-%` (pp. 47, 56, 74, 83, 90, 99, 104, 108);
+  - **p. 107 is a real English compound**, "many-" + "sidedness", whose hyphen
+    must still print → bare `%`, which kills the newline's space and keeps the
+    hyphen;
+  - **pp. 47 and 56 were DOUBLED** — the next page opened with a hyphen too, so
+    "think-" / "-ing" and "dis-" / "-solved" typeset as "think- -ing". The
+    leading hyphen was removed in both.
+- **12 false paragraph breaks removed** (pp. 38, 47, 55, 63, 71, 79, 87, 95, 103,
+  111, 119, 127) — all but one exactly eight pages apart, i.e. at the batch seams.
+- **5 missing paragraph breaks added** (pp. 26, 52, 54, 92, 97).
+
+Compiles at 86 pages, 0 errors, no `word- word` artefact left, and the audit now
+reports nothing at all — not even an UNCERTAIN.
+
+**Paragraphing was measured against the Danish original**, at
+`~/bibliotek/Nielsen, Rasmus/Kierkegaards_Johannes_Climacus_og.pdf`, offset
+PDF = printed + 8. A translation should paragraph as its original does, and the
+English text cannot say where the Danish page opened a paragraph.
+
+`paragraphs.py` here does the audit; run it before publishing. This scan gives
+the cleanest separation of the four books swept so far — continuations −6 to
++6 px, openings above +40, nothing in between anywhere — which is what a 1-bit
+600 ppi Google scan buys over the colour JPX ones.
+

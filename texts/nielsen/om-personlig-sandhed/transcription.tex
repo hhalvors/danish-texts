@@ -11,6 +11,42 @@
 %             Forord (unfoliated, 1 leaf)  =  PDF 8
 %             No Indhold anywhere in this scan (front or back) — see RESUME-NOTES.md.
 % ============================================================
+%
+%  PAGE-JOINT AND PARAGRAPH REPAIR (2026 pass; third book swept, after
+%        speculative-methode where the fault was found and evangelietroen-
+%        theologien):
+%        This file was built by splicing page-range fragments into a skeleton
+%        that separated them with blank lines. A blank line is a paragraph
+%        break, so wherever the printed text ran on across a leaf the splice
+%        invented a paragraph; and a word broken across a leaf was joined with a
+%        BARE hyphen, which typesets as "Ufuld- kommenhed" — hyphen AND space,
+%        inside the word. Repaired here:
+%          * 9 bare-hyphen joints -> `\-%` (pp. 6, 10, 14, 24, 35, 37, 72, 116,
+%            127)
+%          * 55 FALSE paragraph breaks removed — by far the worst in the repo.
+%            They run almost continuously from p. 44 to the end of the book, so
+%            the second half of this edition had a spurious paragraph at nearly
+%            every leaf.
+%          * 6 MISSING paragraph breaks added (pp. 5, 11, 17, 18, 26, 42), each
+%            confirmed on the page image to open with the printed indent.
+%        Samples of every class were checked on the image before editing, and
+%        the built PDF now contains no "word- word" artefact at all.
+%        `paragraphs.py` in this directory performs the audit and should be run
+%        before any future publication. Calibrated on this scan: continuations
+%        measure -9 to +14 px, paragraph openings +57 to +92, so its 35 px
+%        threshold sits in an empty gap.
+%        TWO TRAPS PARTICULAR TO THIS SCAN, both of which produced confident
+%        nonsense first: the dark right-hand edge reaches past 8 % of the sheet
+%        and connects text lines vertically, so a row-profile line finder merges
+%        five lines into one band; and residual gutter ink drags scattered lines
+%        70-100 px left of the true margin, which on printed p. 44 turned an
+%        ordinary continuation into a phantom +102 px indent. The margin is
+%        therefore a trimmed median, not a plain one.
+%        Three markers remain UNCERTAIN and were decided on the text alone —
+%        pp. 67 and 144, whose pages yield too few full-measure lines to
+%        measure, and p. 120, where the image reads +214 px but the page in fact
+%        opens flush (checked by eye) and the previous page ends mid-sentence.
+% ============================================================
 \documentclass[12pt,a4paper]{book}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
@@ -132,6 +168,10 @@ Mon denne Tids Oplyste, der have seet bag Sløret, og seet, at der er intet Ande
 Tidens Tanker skifte med Tiden; men Menneskets Natur er den samme til alle Tider.
 
 Lad os da udføre Billedet videre, og forestille os de talrige Skarer samlede paa hiint ubekjendte Sted, hvor Synet viste sig: mon de vilde hilse det Overnaturlige med Jubel, som man hilser en smilende Udsigt? Ingenlunde. De vilde forstumme af Ærefrygt, de vilde tabe sig i stille Beskuelse. Den sædvanlige Regel, at der, hvor Mængden er, der er ogsaa Larmen, vilde her ikke gjælde. Her kunde være Millioner, og dog ikke høres et forstyrrende Raab; her kunde være en Verden af Mennesker, og dog en Verden saa stille, som da Adam blev skabt, og den første Luftning gik igjennem Paradiis.
+% The printed page opens an INDENTED new paragraph (measured on the
+% page image against this page's own body margin), so the blank line
+% below is a real paragraph break.
+
 % --- p. 5 ---
 I denne Taushed vilde Menneskene da lytte til Tonerne, og alt som de lyttede, vilde Harmonierne blive dem forstaaelige; det vilde gjentone i deres Indre: de vilde uvilkaarlig drages henad imod den Egn, hvorfra Tonerne kom; de vilde bevæge sig fremad som i Takt og Rhytmus: jo længere det gik fremad, desto stærkere vilde Bevægelsen blive. Dersom Intet standsede dem, vilde de sikkerlig glemme Alt, hvad der var bagved, og, underlig grebne af en salig Forudfølelse, drage, hver med Sine, lige ind i Evighedens Land.
 
@@ -139,7 +179,7 @@ Men, dersom de nu bleve standsede; dersom der nu pludselig blev lagt et Ildhav i
 
 Skulde vi vel tænke saa lavt om vor Slægt, vor Natur og os selv, og vanære Den, der dannede os? Er det dog ikke langt sømmeligere at antage, at Menneskene, beaandede af det salige Syn, og lokkede af de hellige Toner, vilde skareviis kaste sig i Flammerne, forvissede om, at det Jordiske dog alligevel ikke var deres væsentlige Deel, men at det sande Selv var det Evige indviet?
 
-Og dersom Prøven blev endnu strengere; dersom det nu ikke var et Hav af Flammer, der gjorde Skilsmisse mellem Her og Hisset, men en uoverstigelig Muur med utallige snævre Indgange, en Indgang for hvert Menneske; og dersom der ved Indgangen stod en Veiviser, bestikket til at advare Enhver, at Ingen ubesindig skulde vove sig ud over det Ende-
+Og dersom Prøven blev endnu strengere; dersom det nu ikke var et Hav af Flammer, der gjorde Skilsmisse mellem Her og Hisset, men en uoverstigelig Muur med utallige snævre Indgange, en Indgang for hvert Menneske; og dersom der ved Indgangen stod en Veiviser, bestikket til at advare Enhver, at Ingen ubesindig skulde vove sig ud over det Ende\-%
 % --- p. 6 ---
 lige; og dersom Veiviseren nu begyndte at foreholde den Eenlige, hvor lang og tornefuld og møisommelig Veien var; at det forholdt sig med hine lysende Kyster, som med de fjerne Bjerge, der vise sig for den Reisende: de synes at være saa nær, og ere dog langt borte; at det altsaa gjerne kunde vare halvtredsindstyve, ja maaskee halvfjerdsindstyve Aar, inden Vandreren naaede Maalet: hvad skulde vi da antage? Skulde vi da antage, at Mennesket, mismodigt ved Forestillingen om den trange Vei i de mange Aar, strax vilde vende tilbage, sigende ved sig selv: „Det er formeget. Et Spring i Flammerne vilde jeg nok have vovet, thi herlig er Udsigten, og der er noget forunderlig Saligt i disse Toner; et Spring i Flammerne, og det var gjort med det Samme; men --- saa lang en Vei, 50, maaskee 70 Aar under Byrder og Besværligheder, nei, det er formeget! Nu føler jeg først, hvor Endeligheden tynger; det er den timelige Tid, der trykker hvert Timelighedens Barn: jeg er da Jord, og skal blive til Jord igjen, og dermed er det forbi.“
 
@@ -167,7 +207,7 @@ Hvad er Æren, naar vi tage Phantasien bort? Hvor bliver Sømmelighedsfølelsen,
 
 „Men“ --- vil man maaskee spørge --- „er der da virkelig Nogen i vor Tid, der tænker paa at afskaffe Phantasien? Vel sandt, vor Tid er ikke phantastisk: den veed at skjelne mellem Drøm og Virkelighed; men det er jo netop et Fortrin, hvorfor vi kunne takke Oplysningen. Oplysningen klarer Phantasien, og fortrænger Phantasteriet; men Phantasteri er jo netop Misbrug af Phantasie.“
 
-Jeg svarer: her er en Vanskelighed i den nærværende Tid, der ikke saaledes har været i nogen Fortid, og det er en Vanskelighed med Phantasien. Det skal indrømmes, at den nyere Tid har klaret en Adskillelse mellem det Virkelige og det Phantastiske, som tidligere Tider ikke saaledes have gjennemskuet; men, at Adskillelsen mellem Phantasiens ideale og Virke-
+Jeg svarer: her er en Vanskelighed i den nærværende Tid, der ikke saaledes har været i nogen Fortid, og det er en Vanskelighed med Phantasien. Det skal indrømmes, at den nyere Tid har klaret en Adskillelse mellem det Virkelige og det Phantastiske, som tidligere Tider ikke saaledes have gjennemskuet; men, at Adskillelsen mellem Phantasiens ideale og Virke\-%
 % --- p. 10 ---
 lige materielle Ret derunder er bleven opfattet paa en ligesaa eensidig som utilfredsstillende Maade, paastaaer jeg; og beviser min Paastand ved at pege paa det Religiøse.
 
@@ -182,6 +222,10 @@ Have de Ret i denne Paastand, da have de Ret i Mere; thi da have de jo ogsaa Ret
 Skulde dette nu være den høieste personlige Sandhed? Skulde den høieste personlige Sandhed være saa personlig oprørende?
 
 Middelalderen var i sin Hovedretning religiøs; et Beviis herpaa er, at den havde en særegen virksomt skabende religiøs Phantasie.
+% The printed page opens an INDENTED new paragraph (measured on the
+% page image against this page's own body margin), so the blank line
+% below is a real paragraph break.
+
 % --- p. 11 ---
 Reformationen var i sin Grund religiøs, og hvilke forunderlige Phantasiens Kræfter rørte sig ikke i Luther.
 
@@ -257,7 +301,7 @@ Vi blive klarsynede; det forekommer os, --- thi saa herlig er Poesien --- som
 om vi saae Menneskene og Tilværelsen ind i Hjertet, saae Livets Gaader og
 deres Løsning; og dog er det Altsammen Illusion. Det forekommer os, som om vi
 saae ind i os selv, og saae, hvor inderligt vi dog i Grunden elske det Gode og
-hade det Slette; hvor vi dog sympa-
+hade det Slette; hvor vi dog sympa\-%
 % --- p. 14 ---
 thisere baade med Modet og Tapperheden og Standhaftigheden og den
 Kjærlighedens Troskab, som dog tilsidst vil seire. Ja, saa herlig er Poesien,
@@ -359,6 +403,10 @@ phantastisk Væsen, der svæver i Skyerne, er ikke en mythisk Personification af
 en enkelt Naturkraft eller en enkelt Lidenskab, er heller ikke en Gud af
 Marmor; han er et Menneske i Kjød og Blod, som en af os, og dog --- det blev
 jo sagt om ham: \emph{see, hvilket Menneske!}
+% The printed page opens an INDENTED new paragraph (measured on the
+% page image against this page's own body margin), so the blank line
+% below is a real paragraph break.
+
 % --- p. 17 ---
 Men, svare maaskee denne Tids Fornuftige: „det kan nu være meget smukt for
 hvem, der blot vil troe; men denne Tid er ikke Troens Tid. Vi have tænkt
@@ -391,6 +439,10 @@ Midtpunkt, Troens Kjerne. Vi vende nu tilbage til den religiøse Phantasie.
 For at holde os saa nær til det saakaldte Virkelige, som muligt, ville vi
 begynde med at forestille os, at der i Aabenbaringsphænomenet var saa lidt for
 Phantasien, som muligt.
+% The printed page opens an INDENTED new paragraph (measured on the
+% page image against this page's own body margin), so the blank line
+% below is a real paragraph break.
+
 % --- p. 18 ---
 Den sande Personlighed vilde da i Tidens Fylde være fremtraadt som Menneske
 iblandt Mennesker; og det vilde ligefuldt være et Under, hvorledes dette
@@ -588,7 +640,7 @@ et Gjensyn“; i Hverdagslivet kommer Forstanden, og giver Tvivlen Ret: „der
 er vist intet Gjensyn“.
 
 Følelsen og Forstanden modsige hinanden indbyrdes; hvilken af Parterne har
-nu Ret? thi de kives og strides uop-
+nu Ret? thi de kives og strides uop\-%
 % --- p. 24 ---
 hørlig. Besindigheden siger: de To maae ikke saadan strides; de maae
 smukt forliges. Den sande Følelse kan dog umulig være saa uforstandig, og
@@ -656,6 +708,10 @@ Legeme kan kun ernæres paa den Betingelse, at en forberedende Ernæring
 allerede er foregaaet i et andet Legeme; for at jeg kan bespises, maa en
 Anden allerede have bespist sig selv --- for min Skyld; nu opkommer
 Næringssorg, Kiv og Strid i Bespisningsanstalten.
+% The printed page opens an INDENTED new paragraph (measured on the
+% page image against this page's own body margin), so the blank line
+% below is a real paragraph break.
+
 % --- p. 26 ---
 Enhver af de Spisende ernærer sig jo egentlig kun for sin egen Skyld, og
 for at opholde sin Art; ikke desto mindre maae Mange af disse Spisende dog
@@ -963,7 +1019,7 @@ Kisten, og græde bitterlig, naar de bære ham bort, som om det virkelig
 var ham, ham selv, de skulde lægge ned i Jorden. Saa bære de den Døde
 bort; og Ligskarens Alvor og Gravklokkens Klang og den Smule Jord, der
 buldrer paa Kisten, alt Dette fylder dem med Gru for den Dødes Skyld; thi
-Be-
+Be\-%
 % --- p. 35 ---
 dragersken bruger Døden som et Gøglebillede, at de Bedaarede skulle
 stirre ned i Gravens Mørke, og ikke see i Aandens Lys.“
@@ -1031,7 +1087,7 @@ Syndere skjælve for Dommeren selv, den Retfærdige.“
 Hermed var det jo, at Qvækertalen endte. Det er en Eensidighed, at søge
 det Gode, det Rette i hvad man kalder Sagens Natur; det Gode er, naar vi
 tage det skarpt, ikke i Sagen, men i Personligheden. Alt det Sædelige er
-person-
+person\-%
 % --- p. 37 ---
 ligt; der kan umulig tilkomme de sædelige Ideer større Gyldighed, end
 der kan tilkomme Personligheden selv.
@@ -1210,6 +1266,10 @@ Niobe kjendt og fattet dette Bud, da var hun, om end nedbøiet som Job,
 dog ikke forvandlet til Steen. Det kolde Bud, der ved første Øiekast
 seer ud som Døden, var da blevet hende et Livets Bud, der forkynder
 Saligheden.
+% The printed page opens an INDENTED new paragraph (measured on the
+% page image against this page's own body margin), so the blank line
+% below is a real paragraph break.
+
 % --- p. 42 ---
 „Hvi skulde disse Børn da gives mig, hvi skulde jeg da trykke dem til
 mit Bryst, og føle denne Glæde, denne Salighed, naar de igjen saa
@@ -1262,7 +1322,6 @@ For at drøfte denne Sag grundig, tør vi ikke indskrænke os til at tænke paa 
 Hvad nu for det Første en vedvarende Eensomhed angaaer, da maa den vistnok være yderst piinlig, i Særdeleshed af den Grund, at den er saa nøie forbunden med Taushed.
 
 Hvor piinlig en vedvarende Taushed maa være, kan sees paa de Munke, der have aflagt det strenge Taushedsløfte. Naar disse Forpiinte engang imellem faae Tilladelse til at tale sammen, er Trangen til Meddelelse saa mægtig, at de
-
 % --- p. 44 ---
 tilsammen bruse ud i en stor fælleds Ordstrøm; de mange Taler bryde da frem i eet Nu ligesom Straaler af mange Sprøiter, og Totalvirkningen bliver saa overvættes, at den snarere minder om en Sluse, end om en Samtale.
 
@@ -1279,7 +1338,6 @@ At leve i Selskabet og finde sig tilfreds i al Omgjængelighed, deri er der da i
 Paa et saadant, noget eenligt, idealistisk Standpunkt kan den Emanciperede da røre sig temmelig ugeneert, more sig med Tilværelsen, spille Bold med de borgerlige Realiteter: „god Næringsvei, godt Levebrød, godt Svogerskab, en god Ven,“ o. s. v.
 
 Naar dette Spil øves i nogen Tid med lidt Talent, vil det altid gjøre sin Virkning; Enhver maa jo let kunne indsee, at en Personlighed, der er hævet over slige Borneertheder, umulig kan være noget Hverdagsmenneske. Det satirisk Vrængende er jo netop et Tegn paa Overlegenhed; den Overlegne er allerede noget udenfor, eller rettere: ude over Selskabet,
-
 % --- p. 45 ---
 altsaa noget eensom, og kan allerede af den Grund fordre en ikke ringe Anerkjendelse af Selskabet.
 
@@ -1303,7 +1361,6 @@ Men paa den anden Side, naar jeg saa igjen seer paa Selskabet, seer jeg dog alli
 Nei, da priser jeg Fleerheden; jo Flere her ere desto bedre; men det er jo netop Fleerheden, der udgjør Selskabet, altsaa: jo større Selskab, desto større Udmærkelse for den Udmærkede. Og --- lad os nu være ærlige --- hvoraf kommer det vel, at vi fornuftige Mennesker altid saa gjerne gaae i Selskab og gjøre Selskab, stort Selskab? Det kommer jo deraf, at vi elske det Udmærkede, og saa gjerne ville see de Udmærkede. Dersom der ikke var noget Udmærket ved det, saa var det jo ikke Uleiligheden værd at gjøre saa store Selskaber.
 
 Hermed troer jeg da at have godtgjort, at der gives en Selskabelighed, der er ligesaa fornem som Eensomhed. Efter
-
 % --- p. 47 ---
 at have ført Forhandlingen til dette Punkt, maa jeg her afbryde, idet jeg anbefaler denne vigtige Sag til videre selskabelig Drøftelse.
 
@@ -1322,7 +1379,6 @@ Den blot humane Dannelse kan imidlertid aldrig forarbeide det Individuelle og de
 Efter Grækernes og Romernes Synsmaade vare Personerne nærmest at betragte som Individer, og disse Individer uberettigede ligeoverfor Staten som Stat. Det var ikke blot Trællene, der vare de menneskelige Rettigheder berøvede; selv de frie, fremragende Mænd vare i Ideen Samfundets Trælle: det var endnu ikke blevet til Alvor med det Personlige.
 
 At Guderne, disse æsthetiske Personificationer, ikke kunde frigjøre Menneskene, forstaaes af sig selv. Statens Væsen var den egentlige Guddom; den sande Gud var altsaa Selskabets Gud. Kun forsaavidt Individerne troede paa Staten, troede de paa Guderne: en saadan Tro kan da med Rette
-
 % --- p. 48 ---
 kaldes en Selskabstro. Det var ikke den enkelte Borger tilladt at have sin egen Samvittighed, sin egen Tro; den almene fælleds Samvittighed var i Staten: her var Troen i Selskabet tillige en Tro paa Selskabet.
 
@@ -1338,7 +1394,6 @@ Paa Aabenbaringens Trin vendes Forholdet om. I den fuldkomne Aabenbaring træder
 Derved, at denne Ene --- „\emph{den Enkelte},“ saaledes stiller sig frem som Den, der forsamler de Mange ved at kalde hver Enkelt personlig til sig, er Selskabstroen principielt afskaffet. At erkjende dette er en ufravigelig Betingelse for at erkjende den personlige Sandhed.\footnote{At den Tænker, der i vor Tid sigtede, og traf „den Enkelte“ kategorisk, traf --- i Centrum, er ikke en smigrende Indrømmelse, der skal gjøres et Individ; det er en personlig Indrømmelse, der skal gjøres Sandheden. Vil man af individuel Forkjærlighed for Dit og Dat snige sig forbi „den Enkelte,“ og trumphe i Selskabet; da kan Man qvakle med „Reformerne“, saameget man vil: til Aandens Samfund naaer man ikke, thi man naaer ikke det Personlige.}
 
 Da den sande Personlighed selv vilde aabenbare sig, levede han ikke som et isoleret Individ, som en Eremit i
-
 % --- p. 49 ---
 Ørkenen. Tvertimod, hvor han fremtraadte, forsamledes Menneskene; hvor han viste sig, var der gjerne stort Selskab. Saa talede han engang til en Forsamling af Tilhørere; men Talen var ikke til Selskabets Behag: det var --- en haard Tale.
 
@@ -1366,7 +1421,6 @@ Den, der personlig tilegner sig den personlige Sandhed, er i Eensomhed, forsaavi
 At være selskabelig er at være i Adspredelse; at være samlet i Aandens Samfund er at være i Andagt.
 
 Naar der tales til en Forsamling som til en Mangfoldighed af Individer, enten saaledes, at Talen udtrykkelig fremhæver de Forskjelliges particulære Interesser, eller
-
 % --- p. 51 ---
 saaledes, at en almindelig Sag fastholdes, der interesserer Alle, være sig i reen Almindelighed, eller blot deelviis fra en vis Side: da tales der til et Selskab.
 
@@ -1397,7 +1451,6 @@ Ved Ordet: „Næste“, et Ord, der i vort Sprog end ikke har noget Fleertal, h
 Alle Mennesker i deres Alhed kan Ingen elske; en saadan Kjærlighed er en sentimental Phantasie. At elske blot sine Egne, sine Venner og Paarørende er Hedenskab. At elske det almene Bedste høiere end de enkelte Mennesker er en verdslig Idee-Kjærlighed, der meget vel bestaaer med Ærgjerrighed og Herskesyge.
 
 Ordet: „Næste“ fjerner ethvert egoistisk Hensyn. Det sikkrer os, at vi ikke forvexle det virkelige Menneske med en af Menneskehedens Ideer; det sikkrer os, at vi ikke gjøre Persons Anseelse, ikke spørge om Ven eller Uven, men kun om
-
 % --- p. 53 ---
 Mennesket; det sikkrer endelig, at vi, istedetfor at forelske os i en vis Mængde, en vis Classe, et vist Parti, hver Gang faae med et enkelt bestemt Menneske at gjøre. Ved Næstens Forhold til Næsten er det personlige Forhold mellem de mange Enkelte udtrykkelig betegnet.
 
@@ -1451,7 +1504,6 @@ uopnaaeligt, forstaaer sig.“
 
 „Men indseer Du da ikke,“ sagde han, „at, naar der er en saa viid
 Afstand imellem det Ideale og det Virkelige, saa
-
 % --- p. 56 ---
 vil jo heraf følge, at det ideale Indtryk ikke kan være virkeligt, og
 det Virkelige ikke idealt?“
@@ -1496,7 +1548,6 @@ Paamindelse, der ansporede min Flid.“
 „Neppe 20 Aar gammel, havde jeg allerede endt mine akademiske
 Studier, og ved alle Examina bestaaet med Udmærkelse. Min Fader
 glædede sig i den Grad over det
-
 % --- p. 57 ---
 lykkelige Udfald, at han, skjøndt en saadan Rundhaandethed vistnok
 var meget over hans Kræfter, tilstod mig en anseelig Sum til en
@@ -1534,7 +1585,6 @@ Cicerone.“
 ført til mine Ønskers, til min Reises Maal, og naaede den Gade, hvor
 Folketoget bevægede sig opad mod det store Torv. Vi gjorde Holdt, min
 Fører og jeg, nær ved Torvet, just som Processionen nærmede sig. I
-
 % --- p. 58 ---
 denne Situation kunde jeg da uforstyrret overskue det Hele, og nyde
 det storartede Indtryk.“
@@ -1573,7 +1623,6 @@ disse Ord anbragt, saae paa mig med et Ansigt, hvori jeg ret kunde
 læse hans personlige Overlegenhed, og sagde, idet han med nedladende
 Fortrolighed slog mig paa Skulderen: „Uskyldige parvenu, Du har nok
 aldrig været i
-
 % --- p. 59 ---
 Republiken før, siden Du ikke veed, at den Mand, vi hæve saa høit,
 bør tage Hatten af for den offentlige Mening.“
@@ -1658,7 +1707,6 @@ Opvarteren var taus, og Lægen havde confiskeret Aviserne.“
 „Da Lægen omsider fandt mig saa vel, at jeg igjen turde gaae ud,
 mødte min Cicerone med et polidsk Ansigt (hvori jeg da igjen
 opdagede Glimt af personlig Overlegenhed), og
-
 % --- p. 61 ---
 tilbød, at, dersom det nu var mig beleiligt, vilde han gjerne vise
 mig Tidens, Republikens, Aarhundredets første Mand.“
@@ -1747,7 +1795,6 @@ begrundet i personlig Overlegenhed.
 Uden levende Vexelvirkning med den sig igjennem de givne
 Institutioner yttrende Folkevillie, er en fornuftig Statsstyrelse
 utænkelig. Den Styrende maa have en inderlig
-
 % --- p. 63 ---
 Overbeviisning herom; thi for Ideen er han kun berettiget,
 forsaavidt han tør ansee sig som Organ for den væsentlige
@@ -1787,7 +1834,6 @@ Men Faren fra den modsatte Side er ligesaa truende. At tænke ringe
 om Individerne og foragte Mængdens Dom er vistnok fristende for Den,
 der har Magten, og kun ønsker at nyde den. Men, naar Statsideen
 løsrives fra Det, der
-
 % --- p. 64 ---
 gjærer i Masserne og vil arbeide sig frem i Individerne, bliver den
 en Magthaveriets Fixidee, der mangler human Berettigelse. En saadan
@@ -1825,7 +1871,6 @@ At arbeide for et Maal, som for sit Livs høieste Opgave, og dog være
 sig bevidst, at dette Maal er et Forsvindende; at vove det Yderste,
 for at virkeliggjøre en Plan, og dog hvert Øieblik være beredt paa at
 opgive denne Plan, naar
-
 % --- p. 65 ---
 Hensynet til det Høieste kræver det; at være frygtet af Saamange og
 dog allermeest frygte for sig selv: lige modstridende Bestemmelser
@@ -1901,7 +1946,6 @@ kun den, at Ansvarligheden for Menneskers Domstol kun altfor ofte maa
 savne den behørige Strenghed og Alvor. Det sande Fremskridt vil da
 uden Tvivl bestaae deri, at de Styrende, foranledigede ved deres
 menneskelige
-
 % --- p. 67 ---
 ufuldkomne Ansvarlighed, tage Mod til sig, og appellere til den
 personlige Sandhed, for at faae den fuldkomne Ansvarlighed og dermed
@@ -1924,7 +1968,6 @@ For den personlige Selvfølelse er det vistnok meget nedslaaende at maatte tilst
 Enhver fornemmer strax, hvor slibrigt dette Punkt er, da Udtrykkene: „betydelig“ og „ubetydelig“ jo kunne tages i høist forskjellige Betydninger. Skal den herved antydede Undersøgelse føre til noget Resultat, da bliver Opgaven, at tydeliggjøre, hvorledes det Ideale kan sænke sig i det saakaldte Ubetydelige, kan skjule sig bag Phænomenet, og just derved forvandle endogsaa det Smaalige, og hæve det Hverdagsagtige til høiere personlig Betydning.
 
 En saadan Bevægelse kan umulig tydeliggjøres i en almindelig Betragtning; thi den almindelige Betragtning maa enten oversee det Ubetydelige, eller tabe sig i Ubetydeligheder. Det eiendommelige Vexelspil af Betydeligt og Ubetydeligt, der allermeest charakteriserer Hverdagslivet (et Vexelspil, hvorunder det meest Betydningsfulde ofte nok slaaes hen i en
-
 % --- p. 69 ---
 Ubetydelighed, medens omvendt det Ubetydelige igjen kan høine sig, og faae Betydning), dette Vexelspil lader sig kun tydeliggjøre i en individuel Fremstilling af det Individuelle.
 
@@ -1937,7 +1980,6 @@ For at undgaae unyttige Vidtløftigheder, skal jeg da igjen tillade mig at indf�
 „Noget Udbytte vilde jeg imidlertid dog have af mit Uheld. „Har jeg end ikke endnu kunnet opdage, hvor den personlige Overlegenhed er“, tænkte jeg, „saa vil jeg dog idetmindste slibe mine Briller til at see, hvor den personlige Overlegenhed ikke er“. Med dette Forsæt begyndte jeg da i al Stilhed at øve mig i det Kritiske, det Nivellerende, det Negative.“
 
 „Alle Personer i vor temmelig udbredte Omgangskreds maatte nu passere Revue for mine kritiske Briller; jeg skjærpede Censuren til Trods for Liberalismens Fremskridt; jeg holdt Mynstring over Ubetydelighederne. Enhver, der ikke kunde bestaae for min ideale Domstol, blev, hvor skikkelig og brugbar Personen end for Resten kunde være, uden Naade degraderet, og sat i Rang med det runde Nul. Der var næsten Ingen, der kunde bestaae; de Fleste faldt ynkelig igjennem. En heel Skare af Bekjendte, fjernere og nærmere,
-
 % --- p. 70 ---
 Huusvenner, Huusveninder, Onkler, Fættere, Cousiner og Halvcousiner havde jeg allerede rejiceret; de havde alle temmelig godvillig fundet sig i at blive opløste i skikkelige Nulliteter. Kun Een stod endnu tilbage, en Eneste i Skikkelse af en gammel Jomfru, min Moders Halvsøster, Familiens Tante. Denne gamle Jomfru var stædig, og vilde slet ikke lade sig opløse. Hun blev standhaftig ved den Paastand, at hun var en virkelig Ener, og vilde paa ingen Maade gaae op i Nul.“
 
@@ -1953,8 +1995,7 @@ Huusvenner, Huusveninder, Onkler, Fættere, Cousiner og Halvcousiner havde jeg a
 % rhetorical questions as the paragraph before it ("Hendes Skjønhed?" ...
 % "Prætensioner.") -- it is only closed later, by the closing mark after
 % "Torvene." on p. 72.
-Hendes Formue? Ja, var det endda en formuende Tante, en riig Tante, en Tante, der kunde minde En om, at der er Noget til i denne Verden, der kaldes et Testamente; ja, det var en anden Sag. Saa kunde hun da (idetmindste i hendes egne Øine) være berettiget til at optræde med Aplomb; thi et Testamente er en Tantes Aplomb. En riig Tante, der har det store Testamente i sin Lomme, har med det Samme den hele store Familie i sin Lomme. Det er en ægte Tante; hun er gedigen. En saadan ægte, gedigen Tante er langtfra en Ubetydelighed: hun er en virkelig Størrelse, endnu mere, hun er en ideal Størrelse, en mythologisk Figur, en Lykkens Gudinde. Hun seer sig om i Familiens Kreds, som vilde hun sige: „Elsker mig nu, mine Børn, betænker, hvem jeg er; jeg er jo Lykkens Gudinde, dog ikke den blinde, nei den seende. Lad mig nu see Eders Ømhed, Eders Kjærlighed, Eders Hengivenhed: Ingen af Eder kan jo vide, hvem der tilsidst bliver den lykkelige“. En saadan ægte, gedigen Tante er da heller intet kjedeligt Inventarium, langtfra! hun er et oekonomisk Factotum, et Huusorakel, et personificeret Familielotteri; et Lotteri, der befordrer Moraliteten. En saadan Tante anstiller jo Dydsøvelser med den hele Familie: Enhver gjør sin Indsats i Forekommenhed, i fiin Opmærksomhed, i ømme Kjærtegn; den Ene overbyder den Anden, thi Ingen kan jo vide, hvor det store Lod tilsidst vil falde. En saadan ægte gedigen Tante er som en Aand, en Sibylla: der er noget Prophetisk ved hende. Jo ældre hun bliver, desto mere prophetisk bliver hun: hun er elskværdig-prophetisk, og prophetisk-elskværdig. Jo magrere hun bliver, desto elskværdigere bliver hun; jo svagere hun bliver, jo mere hun virrer med Hovedet, desto stærkere trækker hun, desto større Forhaabninger vækker hun. — Havde Tante havt slige gyldne Egenskaber; jeg skulde tilgivet hende, om hun gjorde nogen Fordring paa personlig Overlegenhed, ja, jeg skulde tilgivet hende; thi denne lumpne Verden er nu engang saaledes. Men Tante og Formue! det er vist længe, siden de To saae hinanden sidst; derom vidner ikke blot Kni-
-
+Hendes Formue? Ja, var det endda en formuende Tante, en riig Tante, en Tante, der kunde minde En om, at der er Noget til i denne Verden, der kaldes et Testamente; ja, det var en anden Sag. Saa kunde hun da (idetmindste i hendes egne Øine) være berettiget til at optræde med Aplomb; thi et Testamente er en Tantes Aplomb. En riig Tante, der har det store Testamente i sin Lomme, har med det Samme den hele store Familie i sin Lomme. Det er en ægte Tante; hun er gedigen. En saadan ægte, gedigen Tante er langtfra en Ubetydelighed: hun er en virkelig Størrelse, endnu mere, hun er en ideal Størrelse, en mythologisk Figur, en Lykkens Gudinde. Hun seer sig om i Familiens Kreds, som vilde hun sige: „Elsker mig nu, mine Børn, betænker, hvem jeg er; jeg er jo Lykkens Gudinde, dog ikke den blinde, nei den seende. Lad mig nu see Eders Ømhed, Eders Kjærlighed, Eders Hengivenhed: Ingen af Eder kan jo vide, hvem der tilsidst bliver den lykkelige“. En saadan ægte, gedigen Tante er da heller intet kjedeligt Inventarium, langtfra! hun er et oekonomisk Factotum, et Huusorakel, et personificeret Familielotteri; et Lotteri, der befordrer Moraliteten. En saadan Tante anstiller jo Dydsøvelser med den hele Familie: Enhver gjør sin Indsats i Forekommenhed, i fiin Opmærksomhed, i ømme Kjærtegn; den Ene overbyder den Anden, thi Ingen kan jo vide, hvor det store Lod tilsidst vil falde. En saadan ægte gedigen Tante er som en Aand, en Sibylla: der er noget Prophetisk ved hende. Jo ældre hun bliver, desto mere prophetisk bliver hun: hun er elskværdig-prophetisk, og prophetisk-elskværdig. Jo magrere hun bliver, desto elskværdigere bliver hun; jo svagere hun bliver, jo mere hun virrer med Hovedet, desto stærkere trækker hun, desto større Forhaabninger vækker hun. — Havde Tante havt slige gyldne Egenskaber; jeg skulde tilgivet hende, om hun gjorde nogen Fordring paa personlig Overlegenhed, ja, jeg skulde tilgivet hende; thi denne lumpne Verden er nu engang saaledes. Men Tante og Formue! det er vist længe, siden de To saae hinanden sidst; derom vidner ikke blot Kni\-%
 % --- p. 72 ---
 beriet i hendes Privatoekonomie, men hendes gammeldags velconserverede Pynt er jo nærved at præke paa Torvene.“
 
@@ -1965,7 +2006,6 @@ beriet i hendes Privatoekonomie, men hendes gammeldags velconserverede Pynt er j
 „Saa maatte jeg da see at faae Luft paa en anden Maade. Jeg samlede mig et forholdsviist talrigt og taknemmeligt Privatauditorium, bestaaende af mine egne Søskende, Brødre og Søstre, der alle vare yngre end jeg.“
 
 „Tantens Navn blev aldrig nævnet i mine Foredrag; men til vor ungdommelige Underholdning udkastede jeg forskjellige, i mine Tanker ret satiriske Skitser af en qvindelig Individualitet, jeg kaldte gammel Værdighed. I de meest lunefulde Situationer, jeg kunde overkomme, udmalede jeg da for mine Tilhørere og Tilhørerinder, hvorledes gammel Værdighed forener det Ziirlige med det Sparsommelige; hvorledes gammel Værdighed forbauses for sine Fireskillingspræsenter, som Sultan Soliman for Morgianas „Vinteræbler“; hvorledes gammel Værdighed fører sin Person, som En, der skal i Statsraadet; hvorledes gammel Værdighed sidder
-
 % --- p. 73 ---
 i Statsraadet og virrer med Hovedet, som om hun vilde sige: her er kun lidet Haab, dersom I vente en Thronarving.“
 
@@ -1992,7 +2032,6 @@ En Dag, — jeg erindrer det endnu saa tydelig — da min Moder ret havde morali
 „Da jeg havde sagt dette, reiste min Moder sig fra sin Stol, inderlig samlet, underlig forvandlet; det var, som blev hun et Hoved høiere; jeg syntes at see den personlige Overlegenhed blive til for mine Øine.“
 
 „Du spørger, min Søn,“ — begyndte hun, idet hun qvalte en Taare — „Du spørger, Frederik, hvad Tante Clara har klaget over? Hun har ikke klaget; hun klager aldrig. Hun har lidt meget, gjennemgaaet meget; Gud forbyde, at
-
 % --- p. 75 ---
 Nogen af Eder, mine Børn, skulde lide, hvad hun har lidt; men hun klager aldrig, hun beklager sig aldrig.“
 
@@ -2022,7 +2061,6 @@ Nogen af Eder, mine Børn, skulde lide, hvad hun har lidt; men hun klager aldrig
 „Det Værelse, hvori min Moder i vore Velmagts-Dage pleiede at opholde sig, og som vi Børn for Spøg kaldte „vor Frues Herlighed“, var nu berøvet alle sine Prydelser; et simpelt Bord med nogle tilsvarende Stole var traadt i Stedet for de elegante Meubler. Der sad nu min Moder i Krogen, og stirrede paa det Tomme.“
 
 „Det var henad Efteraaret — tillad mig her at være lidt
-
 % --- p. 77 ---
 omstændelig — det var en Eftermiddag henimod Aften, jeg kom just hjem fra en af mine første Informationer. Jeg vidste, hvilket Syn der ventede mig, naar jeg traadte ind, jeg blev derfor gaaende lidt i Corridoren, og lod Indgangen fra Trappen aaben, for Lysets Skyld, og for at aande friere.“
 
@@ -2047,7 +2085,6 @@ Men Tanten, der aldrig yndede, hvad hun kaldte høitidelige Scener, vendte sig h
 Efter gjentagen Anstrengelse lykkedes det hende virkelig ved hendes ubegribelige Aandskraft at kalde min Moder til nogen Besindelse.
 
 Hun gik derpaa umærkelig over i den mere daglige Omgangstone, og talte praktisk om praktiske Anliggender. Hun forklarede os nu, hvad vi aldrig havde drømt om, at hun, langt fra at være fattig, endog var meget formuende. Hun havde, sagde hun, længe frygtet, hvad nu var skeet, og havde altid sparet for vor Skyld. Hendes Capital var ved lykkelige
-
 % --- p. 79 ---
 Omstændigheder steget til meer end det Dobbelte, og det var nu hendes eneste Glæde, det Eneste, hun som gammel Jomfru havde at leve for, at sikre os et anstændigt Udkomme.
 
@@ -2199,7 +2236,6 @@ altid godt, at være lidt forud for de Andre.“
 
 Den Studerende vilde nu ordentlig ønske, at der var en Sagkyndig,
 hun kunde tale med, at hun kunde faae en Time
-
 % --- p. 84 ---
 i det Personlige. Som hun sidder i disse Tanker, banker det paa
 Døren. Det er en mager, smal, koparret, langtrukken, men klarøiet
@@ -2322,7 +2358,6 @@ Fattighuset.
 
 Men de Erindringer, hun i denne Anledning havde opfrisket, og den
 moralske Tvang, hun havde maattet paalægge
-
 % --- p. 87 ---
 sig, for at skjule sin Melancholie, havde nu den sørgelige
 Virkning, at Melancholien blev endnu stærkere og var nærved at
@@ -2435,7 +2470,6 @@ Hovedet, det følte hun meget godt. Vilde han hende Noget, da maatte
 han strax erklære, om han turde love hende, at han ved sine Timer
 kunde bringe hende saa vidt, at hun med det Allerførste kunde blive
 Gouvernante (paa dette Sted kunde hun nu ikke
-
 % --- p. 90 ---
 længere holde det ud); hvis ikke, var han med samt sin Viisdom en
 stakkels hjælpeløs Staadder, og maatte strax forlade hende.“
@@ -2472,7 +2506,6 @@ Historien ende. Hvorlænge den Tjenende blev der paa Stedet, og
 hvor hun siden kom hen i Verden, er jo ligegyldigt, naar blot
 Timelæreren giver hende en god Underviisning. Skulde hun saa gaae
 i sin Moders Spor, og ende
-
 % --- p. 91 ---
 med at blive begravet fra Fattighuset; det gjør saa ikke Noget.
 Nei, det gjør slet ikke Noget; den Gamle vil nok blive ved, at
@@ -2513,7 +2546,6 @@ godt høre, at det kimer.
 
 Saadan bliver nu Timelæreren ved hele Bogen igjennem at gaae
 omkring under mange Forklædninger til alle Slags
-
 % --- p. 92 ---
 Mennesker i alle Stillinger. Han lærer dem, der ville lade sig
 belære; han revser dem, der ville lade sig revse; han trøster alle
@@ -2701,7 +2733,6 @@ Haand til Brug for en Erkjendelse af den personlige Skyld.
 At dømme retfærdig over Næstens Samvittighedstilstand er aldeles
 umuligt, og derfor er ethvert Forsøg i denne Retning utilbørligt; men at
 lade forestillede Personer,
-
 % --- p. 97 ---
 Personligheder, hvis Indre man selv danner og følgelig gjennemskuer,
 undergaae en Dom, er en uskyldig Sag. Vi ere i dette Tilfælde som
@@ -2738,7 +2769,6 @@ At han efterlader sin Familie i timelig Hjælpeløshed, er kun en Brøde,
 forsaavidt det er en Følge af hans Forfængelighed; men hvad har han
 gjort, for at berede Sine en Vei til aandelig Hjælp? Intet. Han var jo
 ellers virksom nok i andre Henseender. Han sparede Intet paa sine Børns
-
 % --- p. 98 ---
 % cross-page hyphenation "Under-\nviisning" (p.97 ends "Under-") silently
 % rejoined as "Underviisning".
@@ -2779,7 +2809,6 @@ takke Faderen for) jo allerede noksom begeistret for „det Store.“ For at
 see den personlige Overlegenhed, reiser han udenlands: han er jo endnu
 en Umyndig. Tilværelsen, der i Grunden mener det godt med ethvert
 Menneske, kommer da ogsaa den Umyndige til Hjælp: han er
-
 % --- p. 99 ---
 heldig nok til at naae Republiken i rette Tid, og see det rette Exemplar
 af Storhed.
@@ -2898,7 +2927,6 @@ ligesaa personlig skyldig, som ved den tomme Higen efter Adspredelse.
 
 Er der nu en Skyld, der viser sig, ikke blot hver Gang Dorskheden faaer
 Overhaand, men ligesaa meget hver Gang
-
 % --- p. 102 ---
 et Menneske begynder at grue for det Kjedsommelige i de ham anviste
 Vilkaar; saa indsees heraf, hvilken Anstrengelse der vilde udkræves, naar
@@ -2947,7 +2975,6 @@ rettelig.
 
 Men det Forfængelige frister den Forfængelige: at være i en saadan
 udvortes Ubetydelighed og dog saa indvortes
-
 % --- p. 103 ---
 berettiget til noget langt Bedre forekommer hende som en Uret, hvorved
 Tilværelsen krænker hende. Det er denne Følelse, der gjør hende bitter,
@@ -2992,7 +3019,6 @@ Kun endnu en Bemærkning om Slutningen.
 
 Opfattelsen af det Personlige kan naturligviis ikke være den samme hos
 Børn, som hos Voxne. I den barnlige
-
 % --- p. 104 ---
 % cross-page hyphenation "Be-\nvidsthed" (p.103 ends "Be-") silently
 % rejoined as "Bevidsthed".
@@ -3048,7 +3074,6 @@ bliver sin egen Lærer. Jeg antager da ikke længere Noget, blot fordi en
 Lærer har sagt det, eller fordi det staaer i en Bog: jeg maa selv undersøge,
 selv prøve, selv indsee Sandheden. Intet Menneske har da Lov til at stille
 sin
-
 % --- p. 106 ---
 umiddelbare Autoritet imellem mit Øie og Sandheden. Enhver, som forsøger
 % "Die" in the OCR -- Ø/D confusion, confirmed by zoom to be the recurring
@@ -3214,7 +3239,6 @@ ved bedre praktiske Midler.
 
 Det Sande, der oprindelig er tilsigtet med det befalede Skriftemaal, er at
 forbinde det Ideale med det Virkelige, ikke
-
 % --- p. 110 ---
 blot i Almindelighed, men personlig i hvert Menneskes Liv. Denne Opgave kan
 den evangeliske Kirke umulig løse. Den kan som Kirke aldrig naae gjennem
@@ -3249,7 +3273,6 @@ forskjelligt Udseende.
 Det evige og dog timelige, det er: personlige Mellemværende ifører sig, saa
 at sige, Costume efter Tid og Leilighed. Snart viser det sig for Mennesket
 under Skikkelse af
-
 % --- p. 111 ---
 noget Udvortes, eller dog som Noget, den Paagjældende skal og bør henvende
 sig til. Det beroer altsaa paa Mennesket selv, hvorvidt det vil benytte
@@ -3293,7 +3316,6 @@ Ideale, der søger Mennesket.
 
 Det gjælder „at arbeide, medens det er Dag, der kommer en Nat, da Ingen kan
 arbeide.“ Den Gamle, der hviler de
-
 % --- p. 112 ---
 magre Hænder paa den store Bog, har endt sit Arbeide. Han er ved dette
 Arbeide hverken bleven Helt eller Martyr, men slet og ret et
@@ -3339,7 +3361,6 @@ en uudgrundelig Barmhjertighed, der antager sig den Skrøbelige,
 % "stræbt thi der har", "sit virkelige", "vist ife", "den sidste Time.") --
 % the ink line under the glyphs, not letterspacing, widened their apparent
 % advance.
-
 % --- p. 113 ---
 og giver sig tilkjende i det reent Menneskelige. Dette reent Menneskelige
 er da det Mellemværende i Beaandelsen.
@@ -3383,7 +3404,6 @@ udfordrede Retfærdigheden og stod, --- en ubøielig Tilskuer! ved sine
 Sønners Rettersted: det skulde maaskee have vakt deres Beundring, der
 forgude det Almene, det skulde maaskee have givet ham et Navn som en
 Brutus,
-
 % --- p. 114 ---
 et Eftermæle som en Brutus; men det skulde ikke have frelst ham fra Selvets
 Braad: det skulde ikke have hjulpet ham personlig i den sidste Time.
@@ -3459,8 +3479,7 @@ udtrykkelig et Forpligtelsens Notabene, i hvert Tilfælde et Angerens
 Mærke.
 
 Saaledes, det antage vi, maa den Gamle være gaaet frem ved ideal
-Underviisning i Selvunderviisning; kun saa-
-
+Underviisning i Selvunderviisning; kun saa\-%
 % --- p. 116 ---
 ledes har han gjennem sit Livs ubetydelige Gjerninger kunnet vinde
 personligt Udbytte; kun saaledes har han under fortsat Anstrengelse med
@@ -3496,7 +3515,6 @@ ordinære Hjælp i den sidste Time.
 
 Og i den sidste Time, naar Legemet er saa svagt, saa svagt; og i den
 sidste Time, naar Sjælen er saa mat, saa
-
 % --- p. 117 ---
 mat; ja, i den sidste Time, der kan have saa mørke Øieblikke, er det jo dog
 % "Dieblikke" in the OCR -- Ø/D confusion again, confirmed by zoom
@@ -3573,7 +3591,6 @@ vil; denne Aand retter sig altsaa hverken efter de blotte Naturanlæg
 eller efter en blot udvortes Orden: den kalder, hvem den vil, naar den
 vil, og paa hvilken Maade den vil. Alle maae da, hver efter sin Evne,
 virke med den yderste
-
 % --- p. 120 ---
 Anstrengelse, og holde sig beredt; thi Enhver kan jo faae en overordentlig
 Kaldelse.
@@ -3665,7 +3682,6 @@ Ruden ind i en af disse dunkle Celler.
 
 Her ligger Broder Martin paa sit Ansigt, ukjendt i Verden og forladt af
 Verden: hans Afmagt kommer af den megen
-
 % --- p. 122 ---
 Fasten. Hans Dør er lukket af; den Dør har alt i flere Dage været lukket:
 den Fastende har glemt at lukke Døren op, og kan nu ikke høre dem, der
@@ -3704,7 +3720,6 @@ Spiren til den personlige Selvstændighed ligger endnu som i Dvale. Skal
 et Gjennembrud finde Sted, maa det komme til et Sammenstød imellem Det,
 Individet bærer i sig selv, og Det, der bydes i det Overleverede. Ogsaa
 Hverdagslivet har sine skjulte
-
 % --- p. 123 ---
 Conflicter, her foregaae daglig mangehaande stærkere og svagere
 Brydninger.
@@ -3818,7 +3833,6 @@ angaaer, saa maa det Apostoliske være Høiden.
 
 En Apostel er dog visselig en Mand, der kan offre sig for den ethiske
 Idee. Naar en Paulus prædiker, da prædiker
-
 % --- p. 126 ---
 han ikke med Ord: han prædiker med sit Liv; naar en Paulus tugter, da
 tugter han ikke med Ord: han tugter med sit Liv; naar en Paulus trøster,
@@ -3862,8 +3876,7 @@ rive sig løs fra Gud; han vovede ikke at forvandle sin Samvittighed til
 den rene Selvbevidsthed.
 
 Men — det maa heller ikke glemmes — Luther gik endnu kun i sit sextende,
-vi gaae jo i vort nittende Aar-
-
+vi gaae jo i vort nittende Aar\-%
 % --- p. 127 ---
 hundrede: skulde vi ordinære Mennesker i det nittende Aarhundrede
 maaskee uden videre kunne vove, hvad den store Mand i det sextende
@@ -4088,7 +4101,6 @@ Men Troen maa jo dog have sin Grund. Hvori skulle vi da søge
 Troens egentlige Grund? I vor uendelige Trang til Aandens Liv, det
 Liv, der er i Idealet. Har Han, der er vort Forbillede, taget feil af
 det Personlige; har Han, der
-
 % --- p. 133 ---
 siger: Jeg er Sandheden, dog alligevel taget feil af Sandheden, og
 spildt sit Liv paa en sværmerisk Indbildning, en phantastisk
@@ -4268,7 +4280,6 @@ blev Han maaskee skaanet? Bleve hans Sendebud maaskee skaanede?
 
 Vel er det sandt --- i Troen sandt, --- at disse Sendebud, efter hans
 Ord, der udsendte dem, kunde „røre ved
-
 % --- p. 137 ---
 Slanger, kunde træde paa Øgler og Drager, kunde drikke Gift, og det
 skulde endda ikke skade dem.“ Ja, her er Bistand! Men er det
@@ -4309,7 +4320,6 @@ Naturlige i os nu uden videre i dette Punkt var enigt med det
 Aandelige, saa behøvedes her ingen særlig Forsigtighed. Vi kunde
 da ligefrem holde os til Forjættelsen: „Beder, saa skulle I faae“ ---
 ikke alene det Aandelige, men
-
 % --- p. 138 ---
 ogsaa det Timelige; thi der er visselig En, der kan give os baade
 timelige og aandelige Goder i overflødig Maade.
@@ -4393,7 +4403,6 @@ naaet ligefrem ved en ligefrem Stræben.
 
 For nu at gjøre den omvendte Stræben kjendelig, anbringe vi en
 Mellemstørrelse mellem den aldeles Ubegavede og
-
 % --- p. 140 ---
 den tilfulde Begavede. Det er da et Menneske, der er saa meget
 begavet, at han kan stræbe, og derhos saa lidet begavet, at han
@@ -4432,7 +4441,6 @@ erstattes i min uendelige Glæde.“
 
 Dersom der nu virkelig var en saadan Tonernes Gud; dersom denne
 Gud da vilde forklæde sig som Hyrde, og stige
-
 % --- p. 141 ---
 ned fra Olympen, --- ikke for at høre paa Menneskenes Musik, men
 for at lade sig høre, og derved erfare, om der var Nogen iblandt de
@@ -4474,7 +4482,6 @@ skrøbelig, da er han \emph{mægtig}.
 
 Saa naaer han ikke Idealet ligefrem; naaede han det ligefrem, da
 maatte han jo standse. Men han er ustandselig,
-
 % --- p. 142 ---
 han jager derefter --- forglemmende, hvad der er bagved, og
 rækkende efter det, som er foran, iler han mod Maalet.
@@ -4523,7 +4530,6 @@ strengt, saa koldt, saa fattigt ud med denne Stræben
 % occurrences on this page (and once more on p.143) -- plain weight
 % every time, no Sperrsatz anywhere. Consistent with the finding on
 % pp.105-117 that a repeated refrain is not automatically emphasised.]
-
 % --- p. 143 ---
 i dens Begyndelse; men den har dog i sig en indre Rigdom, en Livets
 Varme, en Forjættelse og en Forvisning, hvorom det sandselige
@@ -4563,7 +4569,6 @@ den Stræbende.
 
 Saa være denne Slutning da en Paamindelse om den virkelige
 Begyndelse; saa modtage denne Forsamling, Enhver
-
 % --- p. 144 ---
 især blandt Tilhørere og Tilhørerinder, min oprigtige Tak for den
 velvillige Opmærksomhed, hvormed De have fulgt et Foredrag, som
