@@ -195,6 +195,24 @@
 %        false positives here (pp. 8, 12, 14, 151), all rejected by the text test
 %        and all confirmed flush on the image.
 %
+%  PAGE-JOINT WORD BREAKS — and the second, quieter half of the same fault.
+%        Fixing the hyphen is not enough. A word broken across a printed page
+%        boundary is joined with `\-%` (below), but the joint also has to survive
+%        whatever stands between the two halves in the file, and at 59 page
+%        markers that is a `\setcounter{footnote}{0}` line. Its trailing newline
+%        is an interword space. Where the page merely continues a sentence that
+%        space is harmless — the previous line's newline already supplied one and
+%        TeX collapses the pair — but where the joint breaks a WORD there is no
+%        other space, and "gjennem Til\-%" + a bare \setcounter line + "egnelsen"
+%        typesets as "Til egnelsen". Six words in this book were split that way.
+%        They survived the first repair of the hyphens precisely because the
+%        hyphens had by then been fixed correctly: the defect looked mended in
+%        the source and was still there in the PDF.
+%        Every \setcounter{footnote}{0} in the body therefore carries a trailing
+%        `%`. It is bookkeeping and must contribute nothing to the typeset line.
+%        The general lesson, which cost three passes to learn: VERIFY A JOINT IN
+%        THE BUILT PDF, not in the source.
+%
 %  PAGE-JOINT WORD BREAKS: a word broken across a printed page boundary is
 %        joined with `\-%` at the end of the last line of the earlier page —
 %        a discretionary hyphen plus a comment that eats the newline — so that
@@ -341,6 +359,15 @@
 % that carries a note is what makes the restart happen; check.py enforces it.
 % Not footmisc[perpage], which resets on the typeset page instead.
 \renewcommand{\thefootnote}{\arabic{footnote})}
+% NB every \setcounter{footnote}{0} in the body is written with a trailing % .
+% It is bookkeeping, not text, and must contribute nothing to the typeset line.
+% Without the %, its newline becomes an interword space — harmless where the page
+% simply continues a sentence (the space is already there from the previous
+% line's newline, and TeX collapses the pair), but WRONG at a page joint that
+% breaks a word: "gjennem Til\-%" then a bare \setcounter line then "egnelsen"
+% typesets as "Til egnelsen". Six words in this book were split that way, and it
+% survived the first repair of the bare-hyphen joints because the hyphen itself
+% had been fixed correctly and the space came from somewhere else.
 
 % ------------------------------------------------------------
 %  STRUCTURAL MACROS — use these, do not hand-roll centre blocks.
@@ -1036,7 +1063,7 @@ saa at disse ere den væsentlige Tilværelses Phænomener, men ikke kunne
 fastholdes i og for sig; og Erfaringen viser, at selv de, der med den største
 Iver hengive
 % --- p. 12 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 % THE PRINTED FOOTNOTE MARK ON THIS PAGE IS AN ASTERISK, "*)", NOT "1)".
 % It is the only note in pp. 1--12 and the first in the book, and it is set
 % with a star rather than a figure. \thefootnote will print "1)"; the printed
@@ -1251,7 +1278,7 @@ Sagen fra denne Side, kommer man ind paa en, saa at sige, historisk Idealismes
 Standpunkt, hvilken idetmindste har Ret deri, at Tænkningen og Fornuften søge
 sig selv i Historien. Det er imidlertid saa%
 % --- p. 19 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 langt fra, at denne Idealisme frakjender den vulgaire Empirie al Auctoritet, at
 den meget mere bekræfter samme, ikkun med den Forskjel, at Historiens tvende
 Momenter, det Reale og det Ideale, ikke opfattes, som om deres Forening skulde
@@ -2229,7 +2256,7 @@ i den, at Verdenssjelens Idee nødvendigt maa gaae over til den abstracte
 Personligheds Idee? Dette kan neppe benegtes; men Grunden dertil er ikke
 saameget hiin Læres større Begribelighed, som langt snarere dens
 % --- p. 46 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 % THE PRINTED FOOTNOTE MARK ON THIS PAGE IS AN ASTERISK, "*)", NOT "1)" ---
 % read at 5x. It is the second such in the book (cf. p. 12) and the only note
 % in pp. 37--48 that is not a plain figure. \thefootnote will print "1)".
@@ -2304,7 +2331,7 @@ har endog sin naturlige Grund i det gjensidige Afhængighedsforhold, hvori
 Videnskabens Discipliner staae til hverandre, hvilket medfører, at ingen af dem
 kan blive fuldkom\-%
 % --- p. 48 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 ment afsluttet, fordi den enes Fuldstændighed beroer paa den andens. Saalænge de
 tvende forskjellige Betragtningsmaader af Gjenstandene, den vulgaire gjennem
 Sandserne og den speculative gjennem Tænkningen, kun optage hinanden, idet de
@@ -2370,7 +2397,7 @@ Men forsøger man nu at henføre alle Ting til to Klasser, de begribelige og de
 ubegribelige, saa at de skulle staae afsondrede hver paa sin Side, vil man i
 Sandhed komme til det Resultat, at de enten alle ere begribelige, eller at slet
 % --- p. 49 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 % JOINT WITH p. 48, verified on the image at 0.42x: p. 48 ends "eller at slet"
 % and p. 49 opens "ingen af dem er det." --- "slet", not "let" (the Fraktur OCR
 % reads "let"; the ABBYY layer and the image both give "slet").
@@ -2430,7 +2457,7 @@ da han
 % So the note is consistent Danish setting with the low sort, not a mixed pair,
 % and there is no compositor's defect here to log.
 % --- p. 50 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 har givet Præmisserne, ikke undlade til Gunst for den menneskelige Erkjendelse at
 fuldende sin Slutning; han refererer derfor Alt til et \textit{decretum
 absolutum} hos Gud, der overgaaer al menneskelig Forstand, og kommer saaledes i
@@ -2662,7 +2689,7 @@ fuldkommen Identitet, saa at hans Historie med fuld Ret kunde kaldes hellig og
 guddommelig. Og da han var gaaet bort til Faderen og havde udsendt Aanden,
 gjennemtrængte Gudslivet paa en saadan Maade Apostlene og alle de Troende, var
 % --- p. 55 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 Evnen til at gjøre Mirakler i saa fuldt Maal tilstede, aabenbarede Himlens Engle
 sig saa klart for Alle, kundgjorde de guddommelige Raadslutninger sig saa
 tydeligt i Modstandernes (\textit{τῶν θεομάχων}) Rænker, at vi ogsaa med største
@@ -2702,7 +2729,7 @@ den Almægtiges Majestæt, og omringet af seierrige Martyrers Hærskare tilsmile
 den fromme \emph{Gudsmoder} de bedende Pilegrime, medens Paradisets Indvaanere
 juble og Helvedes Uhyrer bæve.
 % --- p. 56 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 Saaledes holder Kirken paa eengang Jorden og Himmelen, det Nærværende og det
 Tilkommende, det Naturlige og det Overnaturlige i sin Favn, saa at Kirkens
 Historie i Ordets fuldeste Forstand er Katholikerne en hellig Historie.
@@ -2743,7 +2770,7 @@ der Kirche als allgemeine Lehre der Kirche geltend machen. \textit{p.\ 505.}}.
 % is a real paragraph break, not batch-skeleton residue.
 
 % --- p. 57 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 Men herved glemmer man at foretage den Negation og Restauration af
 Phænomenerne, vi ovenfor have omtalt (§ 4); der indfinder sig da en vis kirkelig
 Sensualismus, idet den hellige Aands uforanderlige Former paatrykkes det
@@ -2774,7 +2801,7 @@ er saaledes vel Aanden, der gjør ham til Præst, men der er intet andet
 Kjendemærke paa Aandens Præsents, end Ordinationen, \dsi{} Ingen bliver Præst,
 fordi han har Aanden, men
 % --- p. 58 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 Enhver, der er Præst, har Aanden\footnote{\textit{Quodsi rasuram, unctionem et
 longam tunicam tantum possunt ostendere pro suo sacerdotio, permittimus illis
 gloriari. Lutherus de instituendis ministris.} Smlgn. \textit{Dr.} F. C. Baur.
@@ -2808,7 +2835,7 @@ Vanskelighed, at Katholicismen har indstiftet forskjellige Grader i
 Præstestandens og den kirkelige Jurisdictions Hierarchie\footnote{Smlgn. Clausen
 Cathol. og Protest. \textit{P.\ 91} f.}; Muligheden af Sandhedens For\-%
 % --- p. 59 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 vanskning forgrenes kun herved endmere. Hvad hjælper det nemlig, at Presbyternes
 Meninger rette sig efter Biskoppernes, dersom Biskopperne modsige hverandre
 indbyrdes. Det bliver da nødvendigt at have en synlig Styrer, til hvem man kan
@@ -2842,7 +2869,7 @@ Objectivitetens høieste Spidse --- er gaaet over til og forsvundet i en
 vilkaarlig Subjectivitet, hvis hele Ufeilbarhed bestaaer deri, at den erklærer
 sig for ufeilbar. Derfor kunne
 % --- p. 60 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 alle katholske Institutioner, uagtet de ere af en saadan Beskaffenhed, at de
 kunne være Former for den hellige Aand, tillige, naar de tilegnes paa udvortes
 Maade, fastholdes i og for sig.
@@ -2882,12 +2909,12 @@ Gjenstandene i Guds Rige ved at fixeres i concrete Billeder blive de jordiske
 Gjenstande sideordnede, saa at det Hellige profaneres, medens paa den anden Side
 de himmelske Væseners Nedstigen i jordiske Skikkelser medfører, at timelige
 Gjenstande tillægges guddommelig Hellighed, fordi de indeslutte det Guddommelige
-i sig, saa at det i sig Vanhellige bliver Gjenstand for Til-
+i sig, saa at det i sig Vanhellige bliver Gjenstand for Til\-%
 % --- p. 61 ---
 % ELISIONS. Throughout pp. 61--72 the notes set elisions as three, four or six
 % spaced points. They are uniformly rendered \ldots here; the printed count is
 % not reproduced.
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 bedelse\footnote{Samlgn. Hegel, Geschichte der Philosophie. \textit{3}ter
 Band, P.~\textit{253} f.}. Da denne barbariske Confusion af modsatte
 Elementer havde lagt sig klart for Dagen i Bestyrelsens Theokratie, i
@@ -2926,7 +2953,7 @@ nødvendigviis gjennemtrænge den subjective; vi kunne ellers ikke være ligesaa
 visse og faste i Besiddelsen af Tingen selv, som vi ere det i Besiddelsen af
 vor
 % --- p. 62 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 egen Selvbevidsthed. Først hvor dette Forhold er umiddelbart tilstede, er der
 en sand Tro. --- Det er ved en saadan Tro saa langt fra, at det subjective
 Liv hæmmes af de objective Baand, at Subjectet meget mere med fuld Tillid
@@ -2955,7 +2982,7 @@ menneskelige Vildfarelsers Historie blev fremdraget for Lyset.
 % "Schutz=Schriften" and "Allersündigste" are both broken over a line with the
 % Fraktur double hyphen; only the first is a real compound rule in the setting.
 % --- p. 63 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 % The printed § head agrees with the Indhold here: "Troen og den hellige
 % Skrift." Verified on the image at 3x.
 \parag{14}{Troen og den hellige Skrift.}
@@ -2998,7 +3025,7 @@ som kanoniske; da nu den religieuse Bevidsthed i disse Bøger havde anskuet
 Sandheden i uforfalsket Skikkelse, greb man med Begjerlighed \emph{den hellige
 Skrift} som Troens sande Grundpille.
 % --- p. 64 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 Dog er dette ikke at forstaae saaledes, som om man ved at urgere den hellige
 Skrift kun vilde paa positivistisk Maade opstille en forstenet Norm, saa at
 Katholicismen, der alt længe havde gjort sig til af sin Læres
@@ -3042,7 +3069,7 @@ S.~S.}; men man maa vel mærke, at de, opdragne som de
 % Danish. It is given entire here, at its mark, and p. 65's own note block
 % below therefore begins at the printed "1)".
 % --- p. 65 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 vare, i den katholske Kirke og den af Hjertet hengivne, vare saa
 gjennemtrængte af Kirkelæren i dens Heelhed, at de, hvad ogsaa deres
 Fortolkning tilstrækkeligt beviser, ikke saameget øste Troens Grunddogmer af
@@ -3067,7 +3094,7 @@ rechten Buchstaben oder Worte im Ebräischen hat, wie die Jüden spotten
 \ldots\ ich liesse die Jüden mit ihrem Verstande und Buchstaben zum Teufel
 fahren, und führe mit S.~Augustini Verstande ohne ihre Buchstaben zum Himmel.
 Auslegung der letzten Worte Davids \textit{2}~Sam. \textit{23, 1---7}. Schr.
-\textit{IV. 303}.}. Og ikke var dette at undre over, thi trods Ti-
+\textit{IV. 303}.}. Og ikke var dette at undre over, thi trods Ti\-%
 % "øste" (from "øse", to draw or scoop) --- read at 4x: the initial is ø, not
 % e, and the second letter is a long s, not f. Both OCR witnesses fail here
 % ("este", "oste").
@@ -3076,7 +3103,7 @@ Auslegung der letzten Worte Davids \textit{2}~Sam. \textit{23, 1---7}. Schr.
 % closing citation stands at the head of p. 66's footnote block. Given entire
 % here; p. 66's block below therefore begins at the printed "1)".
 % --- p. 66 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 dernes Forskjelligheder havde den hellige Aand været den samme, og den kunde i
 Sandhed have havt Christus i Tanken, skjøndt den henvendte sine Ord til
 Jøderne\footnote{Saaledes kan Luther selv ikke afholde sig fra, tvertimod sit
@@ -3103,7 +3130,7 @@ vedholdende Studium af Traditionerne og Skriften. Der var saaledes foregaaet
 en sand Forsoning af det objective og subjective Moment; at han gjorde sin
 subjective Frihed gjældende, sees deraf, at ingen udenfra given Mening
 fremkaldte en blind Underkastelse hos ham; men den objective Realitet var
-ligesaavel bevaret, thi han erkjendte, at man kun gjennem Til-
+ligesaavel bevaret, thi han erkjendte, at man kun gjennem Til\-%
 % LETTERSPACING IN NOTE 1, read off the image at 4x. The compositor spaced the
 % Noah allegory in four separate runs, leaving three stretches inside it solid:
 % "Noah den Weinberg pflanzet und des Weins trincket," / "truncken wird" /
@@ -3117,7 +3144,7 @@ ligesaavel bevaret, thi han erkjendte, at man kun gjennem Til-
 % "rühmen.." is transcribed with TWO points, as printed: at 8x both marks sit
 % on the baseline and are the same size. Probably a foul sort, not an ellipsis.
 % --- p. 67 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 egnelsen af de objective Phænomener kan komme til Sandheden\footnote{So Gott
 sein Heiliges Evangelium hat aus lassen gehen, handelt er mit uns auf
 zweierley Weise. Ein äusserlich; das andere mahl innerlich. Aüsserlich handelt
@@ -3157,7 +3184,7 @@ Evangelium am Ostermont. Luc. \textit{24, 13, 25}, zu Coburg geh.
 % THIS NOTE RUNS ON: note 3) begins in p. 67's block and its last line and a
 % half stand at the head of p. 68's block. Given entire here.
 % --- p. 68 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 I det Momenterne saaledes flyde uendeligt over i hinanden, see vi den
 objective Aand være reelt tilstede i Luther, see den gjøre hans Aand til et
 Organ for sig, i det han som en \textit{ἄνθρωπος πνευματικὸς} prøver Alt
@@ -3194,7 +3221,7 @@ det, de havde hørt, til deres sande Eiendom, uden ved selv at gjøre det til
 Gjenstand for en Undersøgelse; heller ikke rokkedes herved Talerens
 Overbeviisning
 % --- p. 69 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 om sin Læres Sandhed, da han jo netop haabede ved en grundig og aaben
 Undersøgelse af Sagen ogsaa at kunne overbevise Andre om Sandheden af det,
 hvortil han selv ad Overbeviisningens Vei var kommen, og at kunne tilbageføre
@@ -3227,7 +3254,7 @@ Subjectivitet ligeoverfor Subjectivitet, for gjennem denne Ildprøve at komme
 % "Conciliernes" on this same page, and is plainly not the Fraktur E of
 % "Enigheden" seven lines above it. NOT in the Rettelser list; not corrected.
 % --- p. 70 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 til Vished om, hvo der ere de sande Præster\footnote{Det var derfor
 naturligt, at Paven ikke hastede med for Protestanternes Skyld at sammenkalde
 et Concilium; thi han vilde befale, disse derimod disputere og „føre deres Sag
@@ -3268,12 +3295,12 @@ Haand, som Zvingli med Taarer i Øinene rakte ham, efterat de, uden at blive
 enige, havde afhandlet Alt ligefra Legemets metaphysiske Egenskaber til
 Skriftens ubetydeligste Partikler, med de Ord: „Ihr habt einen andern Geist,
 denn wir!“}. Det var Følelsen af dette Aandsslægtskab, vakt ved Mesterens
-stærke Røst, der grund-
+stærke Røst, der grund\-%
 % The mark of note 2 on this page is heavily inked and its outline is broken;
 % at 12x it is a figure 2, and the body's reference mark is a clean 2). Set as
 % the plain next number.
 % --- p. 71 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 lagde den Kirke, hvortil vi bekjende os; og saa hurtigt trængte denne Følelse
 igjennem, at der, uagtet den subjective Luther, om vi saa maae sige, forlod
 Conciliet i Worms som en Fredløs, neppe vare \textit{10} Aar forløbne, før
@@ -3314,7 +3341,7 @@ Luther: Wache auf die edle Freiheit! var en Røst, der neppe havde gjenlydt
 over Tydskland, før den kaldte de meest forskjellige Stridsmænd til Vaaben.},
 at selv Forkjæmperne
 % --- p. 72 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 ofte gyste tilbage; man kan da ikke undre sig over, at de nu søgte, saavidt
 muligt, at opføre en Dæmning mod den rivende Strøm. Men til at give Læren den
 nødvendige Fasthed, var hiin offentlige Troesbekjendelse det bedste Middel.
@@ -3362,7 +3389,7 @@ Locor. Theol. præfatio.}}. Men herved fremkom tillige lidt efter
 % against the upright antiqua of the rest; \emph{} inside \textit{} reverts to
 % upright and so preserves that contrast, which is what it is for.
 % --- p. 73 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 % *** THE JOIN WITH THE PREVIOUS BATCH. *** The first three lines of p. 73's
 % footnote block are the tail of p. 72's note 1 --- "et amplector doctrinam
 % Ecclesiæ Vitebergensis et conjunctarum, qui sine ulla dubitatione consensus
@@ -3432,7 +3459,7 @@ redt und thut. Wieder die himmlischen Prophet. Schrifft. \textit{XIX. p.
 % "wüsten" for "wüßten" is as printed (long s, not ß --- the glyph has no
 % descender and no ß-bowl at 8x).
 % --- p. 74 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 kunne finde fuldkommen Hvile i sin Substants, maa den ogsaa have den fuldeste
 Tillid til den Grundvolds Fasthed, hvorpaa den støtter sig; thi har den kun
 sin Grund i sig selv, da ophæver den sig selv. Derfor kan Troen ikke møde
@@ -3468,7 +3495,7 @@ finder Sted, er et andet Spørgsmaal.
 Den absolute Tro overgiver i ubetinget Underkastelse det hele Menneske til
 Gud; den erkjender ikke blot i praktisk
 % --- p. 75 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 Henseende Naturens store Fordærvelse og de gode Gjerningers Afmagt, men
 kalder ogsaa i theoretisk Henseende den formørkede Fornuft tilbage til
 Lydighed under Troen\footnote{\textit{Hominis intellectus et ratio in rebus
@@ -3503,7 +3530,7 @@ man
 % OUTSIDE the \textit{} so that they render upright against the italic, which
 % is exactly the contrast the page prints.
 % --- p. 76 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 seer himmelske Skikkelser aabenbare sig; Alt, hvad der høres med Ørerne og
 sees med Øinene, er Kjendsgjerninger for den fromme Troende. I Alt, hvad der
 fremskinner i Phænomenerne, ere den guddommelige Sandheds Mysterier
@@ -3541,7 +3568,7 @@ oplyser denne Bevidstheden
 % glyph alone. It is set as "I" (pars I) because p. 80's note cites the very
 % same locus as "Qvenst. p. I pg. 77 Θέσις."
 % --- p. 77 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 til at see klart og rigtigt\footnote{\textit{\ldots\ adeo ignorans et perversa
 est ratio illa, ut etiamsi ingeniosissimi et doctissimi homines in hoc mundo
 Evang. de Filio Dei et promissiones divinas de æterna salute audiant, tamen
@@ -3610,7 +3637,7 @@ non divinam fidem, sed opinionem tantum humanam generant \ldots} Samme
 % separate raised mark BEFORE the capital, in the older manner; it is set here
 % as the precomposed Ἔ.
 % --- p. 78 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 Side skulle vi jo kjende Aabenbaringens Phænomener og anvende dem paa vort
 eget Liv; dersom nu den menneskelige Fornuft maatte erklære dem for at
 modsige hverandre, saa at vi altid maatte være i Tvivl om deres Sandhed, blev
@@ -3642,7 +3669,7 @@ bekjendte Sætning, at hvad der er virkeligt, ogsaa maa være muligt
 % the image at 4x in each case. \textit{} only.
 % "Samme" and "smlgn." inside the notes are Fraktur and stand outside \textit{}.
 % --- p. 79 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 Lov medfører, at Logiken selv snart gjør Afkald paa, snart opfordres til
 Brugen af sine egne Regler. I Treenighedsdogmet tier saaledes Logiken; thi
 een Gud har aabenbaret sig i tre Personer, altsaa kan Een være i Tre; derimod
@@ -3671,7 +3698,7 @@ denne Behandlingsmaade ikke kunde komme til nogen Indsigt i den guddommelige
 Naturs Væsen, men kun befæstede en ydre Kundskab til dens Mysterier, og disse
 ikke droges frem af de Phænomener, hvori de vare fremtraadte, men meget mere
 forbleve indesluttede i dem, var en Adskillelse mellem Ideen og dens ydre
-Form naturligviis umulig, og man knyt-
+Form naturligviis umulig, og man knyt\-%
 % *** PRINTER'S DEFECT IN THE FOOTNOTE MARKS: p. 79 sets 1) TWICE. *** The
 % mark of the SECOND note in the block is printed 1), not 2). Read at 12x and
 % compared glyph for glyph with the 1) of note 1 on the same page (identical:
@@ -3687,7 +3714,7 @@ Form naturligviis umulig, og man knyt-
 % "consequentes" in the body is set with qu and "conseqventes" in the note
 % with qv, on the same opening. Both as printed.
 % --- p. 80 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 tede kun det ydre Baand mellem Dogmatiken og den hellige Historie end
 fastere. Man havde forkastet menneskelige Traditioner og opgivet
 Catholikernes τερατολογία; man var derfor saameget nidkjærere i at værne om
@@ -3807,7 +3834,7 @@ godtgjøre Muligheden af alle Momenternes gjensidige Bestaaen.
 % "Grammatica" and "Logica" in the p. 81 half of the note are sloped antiqua
 % against the upright antiqua of the rest, hence \emph{} inside \textit{}.
 % --- p. 82 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 Dette besværlige Arbeide maatte da Fornuften paatage sig at udføre ved sine
 Bekræftelser, Benægtelser, Adskillelser, Inddelinger og Undtagelser. Og idet
 den nu i den subtile Analyse af de enkelte Momenter angav τὸ ζητούμενον,
@@ -3852,7 +3879,7 @@ Hø og Straa, det viser først den fremgryende Dag, den prøvende Ild.
 Den absolute Overeensstemmelse mellem Væsenet og dets Phænomener, hvorpaa
 denne Bygning hviler, ophæver sig selv.
 % --- p. 83 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 Thi da den guddommelige Natur ikke har aabenbaret sig i eet, men i flere
 Phænomener, ikke er udtrykt paa een, men paa mange, hverandre modsigende
 Maader, maa der i Sandhed i ethvert Udtryk for Gudsideen være Noget, mere
@@ -3895,7 +3922,7 @@ System og kun den subjective Tro i sin fulde Ubestemthed bliver tilbage.
 % "Quia"/"Quenst."/"nequit"/"aliquam" are set with qu on this page where other
 % pages use qv. As printed; not normalised.
 % --- p. 84 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 Man kan da indrømme, at een Gud har aabenbaret sig i tre Personer, og dog paa
 samme Tid efter den ovenfor anførte Regel slutte, at, hvor der tales om tre
 Personer i Gud, kan det paa Grund af Guds Eenhed kun være at tage i figurlig
@@ -3928,7 +3955,7 @@ Smlgn. \textit{Dr.} K.~H. Hagenbach: Vorles. üb. W. Geschicht. d. Reform.
 Om de syncretistiske Stridigheder, der give rige Bidrag til hiin Tidsalders
 Charakteristik, smlgn. J.~G. Walch. R. Str. \textit{1} Theil, §~\textit{5},
 P. \textit{216} ff.}; derfra det Frugtesløse i Syncretisternes Bestræbelser
-efter at at holde Middelveien; derfra Heftigheden, Partisygen, Fana-
+efter at at holde Middelveien; derfra Heftigheden, Partisygen, Fana\-%
 % *** PRINTER'S DEFECT, transcribed as printed: "efter at at holde
 % Middelveien" --- "at" set twice. Read at 5x; both OCR witnesses have it.
 % NOT in the Rettelser; not corrected.
@@ -4183,7 +4210,7 @@ Munden:\par
 % p. 90 OPENS A NEW PARAGRAPH (its first line is indented); hence the blank
 % line above the marker.
 % --- p. 90 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 Grundfeilen i Undersøgelsen ligger altsaa deri, at man ikke slutter fra den sig
 aabenbarende Guds Sanddruhed til Sandheden af de Phænomener og Former, gjennem
 hvilke Aabenbaringen skeer, men at man gjennem en Undersøgelse af Phænomenerne
@@ -4365,7 +4392,7 @@ göttlicher Verstand gehört, sollte eine Gesetzgebung vom Himmel nöthig sein?}
 % The Fraktur double-hyphen of "Natur= und Vernunftgebote" is kept as "=".
 % p. 94 OPENS A NEW PARAGRAPH (its first line is indented).
 % --- p. 94 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 Ikke blot det gamle Testamentes Engleaabenbarelser, men ogsaa det nyes ere at
 betragte som menneskelige Illusioner. Den sunde Fornuft lærer os jo, at da der
 ingen Engle lade sig tilsyne for os, kan heller ikke Gabriel have forkyndt
@@ -4508,7 +4535,7 @@ subjective Ratio\-%
 % where the printed text runs on. See the PAGE-JOINT and BATCH-SEAM notes in the
 % header for how all thirteen seams were decided.
 % --- p. 97 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 % JOINT WITH p. 96, verified on PDF 105 at 0.75x: p. 96's last body line ends
 % "...Empirismen og den subjective Ratio=" and this page opens "nalisme". The
 % footnote block of p. 96 ends on p. 96 (its last note line stops short at
@@ -4587,7 +4614,7 @@ derfor modtages, som de ere os givne i Aabenbaringen; --- i den kritiske
 Theologie derimod kan den uendelige Gud ikke indeholdes i eller indskrænkes
 ved nogen Form; derfor maae de Phæno\-%
 % --- p. 99 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 mener og Former, gjennem hvilke de guddommelige Ting ere os aabenbarede, kun
 betragtes fra Menneskets Standpunkt. Det synlige og det usynlige,
 Erkjendelsens og Troens Rige kunne altsaa, ihvormeget de end divergere, ikke
@@ -4660,7 +4687,7 @@ historiske Side
 % Left as printed. No note and no display matter on this page; the whole page
 % is one running paragraph, with no indent anywhere in its 32 lines.
 % --- p. 101 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 maa Skriften være Gjenstand for Kritikens Undersøgelse, og man maa her
 indrømme, at man kan have forskjellige Meninger og yttre Tvivl om Meget
 angaaende de enkelte Skrifters Oprindelse og Uoverensstemmelsen mellem de
@@ -4697,7 +4724,7 @@ ad salutem ducit. Bengel.}}.
 % TYPE: note 1) is Danish Fraktur with the abbreviation "Dr." and the figures
 % in antiqua; note 2) is antiqua Latin throughout, hence one \textit{}.
 % --- p. 102 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 Ligesom den hellige Skrift har to forskjellige Sider, hvorfra den bør
 behandles, saaledes gaaer det nu ogsaa den hellige Historie. Betragter man den
 fra dens rationelle Side, om vi saa maae sige, vil man kjende de i
@@ -4938,7 +4965,7 @@ vare underkastede, tilføiet de nødvendige psychologiske Bemærkninger og
 saaledes med temmelig Sikkerhed lært den Mening af de enkelte Ord og Udtryk at
 kjende,
 % --- p. 109 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 % JOINT WITH p. 108, verified on the image (PDF 117 foot / PDF 118 head, 0.55x):
 % p. 108 ends "...at kjende," --- a whole word followed by a comma --- and
 % p. 109 opens "som Forfatterne maae antages". NO word is broken at this joint,
@@ -5038,7 +5065,7 @@ naar de have Troen, ere indtraadte i det
 % NO letterspacing: spacing.py's RUN on "moralsk Kraft" is justification, not
 % Sperrsatz, checked at 0.55x.
 % --- p. 111 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 samme reelle Eenhedsforhold med Gud og Christus, --- et Forhold, uforstaaeligt
 for Alle, der ikke ved at fødes af Gud blive θείας κοινωνοὶ φύσεως ---, eller
 om Meningen er den, at Christus og Faderen ere Eet i samme Forstand, som de
@@ -5104,7 +5131,7 @@ Man vil maaskee indvende, at denne Skriftens Oeconomie er det bedste Beviis
 paa Sandheden af den Yttring, man saa ofte hører, at Gud ikke vil give
 Menneskene nogen objec\-%
 % --- p. 113 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 tiv Indsigt i de guddommelige Ting, saa at alle de Vanskeligheder, vi før have
 omtalt, netop hidrøre derfra, at vi have tillagt den objective Lære en altfor
 stor Betydning, --- og at Skriften selv bestyrker denne Mening ved at
@@ -5146,7 +5173,7 @@ om Maaden, hvorpaa Verden er skabt. Thi undersøger jeg, hvad
 % as plain θ and φ, per the header. "Joh. 1, 5" is as printed (the place is
 % 1 John 1, 5).
 % --- p. 114 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 Skabelsen er, kan jeg ikke undgaae at erklære Skabelsen for en Handling af
 Guds absolute Frihed; jeg tænker da, saavidt muligt, den absolute Frihed; men
 dette udfordrer, at jeg maa have en Forestilling om Friheden, og er nu denne
@@ -5357,7 +5384,7 @@ at antage, at Gud fra Christi Tid lige indtil Trajan talede
 % p. 118 carries NO note and no rule; two paragraph breaks, at "Forholder
 % Sagen" (+194 px) and at "Vi tvivle ingenlunde" (+237 px).
 % --- p. 119 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 umiddelbart gjennem visse fromme Mænd, men fra den Tid af lod Menneskenes Tale
 om de guddommelige Ting være uafhængig af enhver guddommelig Indvirkning. ---
 Den samme Usikkerhed viser sig, naar Talen er om Forholdet mellem Skriftens
@@ -5403,7 +5430,7 @@ vil fremføre! Siger Du, at Du slet ingen Metaphysik følger,
 % two were cropped at the same scale and compared. The openness is the wider
 % word-spacing of a short-set first paragraph, not Sperrsatz.
 % --- p. 120 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 troe vi Dig ikke; siger Du derimod, at Du ikke selv veed, hvilken Metaphysik
 Du følger, ville vi troe Dig\footnote{Es hilft der Theologie nichts, sich
 dagegen zu sträuben, zu sagen: sie wolle nichts von Philosophie wissen, es
@@ -5833,7 +5860,7 @@ negeret og et nyt, fuldkomnere, Religionen mere tilfredsstillende Phænomen ved
 Ideens egen Kraft træde i dettes Sted. Denne Negation og Restauration foretager
 den menneskelige Selvbevidsthed sig efter et vist Instinct, saa at
 % --- p. 129 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 det Samme, der bevirker, at Phænomenet udsmykkes i Ideens Interesse, tillige
 skaffer det Tiltro som objectivt og reelt.
 
@@ -5896,7 +5923,7 @@ antages at hidrøre fra subjectiv Religieusitet, kunde de dog ikke opstaae uden
 en eller anden tilstrækkelig Grund, da de gjælde og finde Tiltro hos Flere paa
 eengang. Grunden og Anledningen er altsaa
 % --- p. 131 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 det objective Moment i Mirakelberetningerne, Formerne derimod, hvori de ere
 indklædte, skyldes Tilskuerne og Tilhørerne: man kan derfor med Rette kalde
 saadanne Beretninger \emph{Myther}.
@@ -5932,7 +5959,7 @@ Bevidsthed immanent Virksomhed af Gud:
 
 Men da saaledes disse Gudsaabenbaringer, af hvad Be\-%
 % --- p. 132 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 skaffenhed de nu end ere, udgjøre et nødvendigt Stadium i
 Aabenbaringshistorien, henhøre de ogsaa til den kosmiske Mediation og ere ikke
 at ringeagte. Det er saa langtfra, at de maae betragtes som opdigtede Fabler,
@@ -6015,7 +6042,7 @@ imod Religionsideen selv. Thi forsaavidt Christus var et Menneske, kunde han
 hverken, som enkelt Individ, rumme Guds hele Fylde i sig, eller aabenbare denne
 for sine Samtidige. Skriftens Fremstilling kan
 % --- p. 134 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 saaledes ikke give Hverdagserfaringen Mere, end visse Fragmenter og Grundrids af
 det sande Messiasbillede\footnote{Smlgn. Strauß: L.~J. Schlußabhandlung.}. ---
 % p. 134, note: printed mark is the plain 1). The final mark after
@@ -6121,7 +6148,7 @@ Forestillingers Skyggeverden, fra paany at træde frem, --- eller om det er
 Sandhedens evige Ideer, paa hvis Ruiner den speculative Philosophie har opbygget
 sit
 % --- p. 137 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 Pallads, og som derfor atter efter længere eller kortere Tids Forløb ville
 sprænge deres Fængsel og hævne den dem tilføiede Overlast. Frygter ikke, ville
 de sige, vi ere gode Christne! Den Gud vi prædike, er det ikke den absolute
@@ -6310,7 +6337,7 @@ Identitet, den er netop den evige Spore til Stræben efter det evige Liv, den er
 Guds helligste Mysterium; Smerten er Salighed; --- men det er en Salighed, der
 minder om Djævelens Skoggerlatter! Den menneskelige Selvbevidst\-%
 % --- p. 143 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 hed hører det og gyser; thi jo opmærksommere den betragter dette Riges
 Elementer, desto skarpere og klarere seer den Smertens Modsigelse under tusinde
 forskjellige Skikkelser gjennemstrømme alle dets enkelte Dele. Men naar den i
@@ -6353,7 +6380,7 @@ Videnskaben. Den menneskelige Fornuft bevæger sig i to modsatte Retninger, fra
 % full measure (2852 px, the page's own right edge), measured row by row.
 Gud til Verden og sig selv, fra sig selv og Verden
 % --- p. 144 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 til Gud. Vel var det ikke at vente, at denne Overgang i vor syndige og endelige
 Verden skulde foregaae roligt og uden Afbrydelse; men vi see dog stedse, at
 Fornuften, uagtet den ofte synes aldeles at vende sig bort fra Christi Sandhed,
@@ -6428,7 +6455,7 @@ som den Treenige, og saa fremdeles. Det er fornuftstridigt at ville drage nogle
 af disse Elementer i Tvivl, i den Tanke ved Hjælp af andre Elementer at komme til
 en dialektisk Nødvendighed af det,
 % --- p. 146 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 der er Gjenstand for Tvivl; thi nærer man virkelig Tvivl om et eller andet
 Moment, maa man ogsaa nødvendigt tænke de øvrige positive Momenter, med hvilke
 det staaer i Sammenhæng, paa en saadan Maade, at Tvivlen om hiint ligger skjult i
@@ -6466,7 +6493,7 @@ P. \textit{41}.} staaer i Modsætning
 % 41.") stand under the rule above p. 147's own note. The whole of it is set here.
 % No paragraph break anywhere on p. 146: every line begins at the same left edge.
 % --- p. 147 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 % NOTE on the reset: the block under the rule on this page begins with two lines
 % that carry no mark of their own --- they are the tail of p. 146's note and are
 % inside that \footnote. The reset is for p. 147's OWN note, marked 1).
@@ -6608,7 +6635,7 @@ appellere til eet Mirakel, som Udgangspunkt for dens hele Pragmatisme, Skabelsen
 nemlig. Det samme gjælder om Panlogismen; thi medens den har opdaget
 Illusionsmomentet i de christelige
 % --- p. 151 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 Traditioner, saa at disse ikke længere fremstille os Gud umiddelbart nærværende,
 indrømmer den dog tillige, at den objective Aand ene og alene gjennem dette
 Illusionsstandpunkt har kunnet naae det Oplysningsstandpunkt, der udmærker vor
@@ -6661,7 +6688,7 @@ Betragter man derfor Miraklerne isolerede, synes de fornuftstridige; men Grunden
 hertil er netop den, at det Umiddelbare altid bestemmes af det Middelbare,
 ligesom dette atter alene bestemmes af hiint. Betragtes de derimod i det almin\-%
 % --- p. 152 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 delige Lys af Alt det, der gaaer forud for dem og følger efter dem, ere de af
 logisk Natur og kunne som en Følge deraf ogsaa begribes. Miraklet kan derfor
 kaldes en Anticipation af det Forhold, som ifølge den religieuse Aand
@@ -6694,7 +6721,7 @@ tilbørligt Hensyn til Mediationens reelle Moment (smlgn. § \textit{22}). Og na
 den endelig indvender, at Christus, som individuelt Phænomen, hverken er Mere
 eller
 % --- p. 153 ---
-\setcounter{footnote}{0}
+\setcounter{footnote}{0}%
 Mindre, end det, der fremstiller sig for os i hans phænomenale
 Tilværelse\footnote{Allein, wie Schmid gründlich nachgewiesen hat, ein
 geschichtliches Individuum ist eben nur das, was von ihm erscheint; sein inneres

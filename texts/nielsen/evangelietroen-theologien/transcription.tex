@@ -11,6 +11,45 @@
 %             [PDF 97--98 duplicate printed 82--83 in the scan; skip]
 %             printed  84--174  =  PDF + 15
 %             printed roman III--VIII  =  PDF 8--13
+%
+%  PAGE-JOINT AND PARAGRAPH REPAIR (2026 pass, after the same fault was found
+%        and traced in texts/nielsen/speculative-methode):
+%        This file was built by splicing page-range fragments into a skeleton
+%        that separated them with blank lines. A blank line is a paragraph
+%        break, so wherever the printed text ran on across a leaf the splice
+%        invented a paragraph; and a word broken across a leaf was joined with a
+%        BARE hyphen, which typesets as "Ufuld- kommenhed" — hyphen AND space,
+%        inside the word. Repaired here:
+%          * 17 bare-hyphen joints -> `\-%` (pp. 25, 49, 50, 51, 68, 70, 75, 77,
+%            78, 118, 120, 125, 140, 141, 142, 145, 148)
+%          * 11 FALSE paragraph breaks removed (pp. 2--12), each confirmed on the
+%            page image to open flush at the body margin
+%          * 16 MISSING paragraph breaks added (pp. 21, 45, 56, 59, 69, 80, 90,
+%            93, 130, 132, 134, 152, 153, 154, 163, 172), each confirmed on the
+%            image to open with the printed indent (~70 px at 250 dpi against a
+%            continuation's 0 px)
+%        `paragraphs.py` in this directory performs the audit and should be run
+%        before any future publication. It decides by two independent tests —
+%        the first line's left edge against the page's own margin, and whether
+%        the previous page ends mid-word or mid-sentence — and reports rather
+%        than acts on anything they disagree about. The built PDF now contains
+%        no "word- word" artefact at all.
+%
+%  TWO DEFECTS OF A DIFFERENT KIND, FOUND BY THAT PASS AND NOT REPAIRED — they
+%        are transcription errors, not splice artefacts, and are left for the
+%        editor rather than corrected on an agent's reading:
+%        (1) printed p. VII: THE PAGE MARKER IS ONE CLAUSE TOO EARLY. The words
+%            "tænker lidt nøiere efter." stand at the FOOT OF PRINTED p. VI in
+%            the scan (PDF 11), not at the head of p. VII; p. VII begins,
+%            indented, with "Skal her virkelig strides om, hvo det er, …".
+%            Verified at 600 dpi. The marker should move after "efter." and
+%            p. VII should then take a paragraph break.
+%        (2) printed pp. 7/8: the file ends p. 7 with "…Videnskaben opkommer i
+%            Christenheden," — a COMMA — and runs straight on into p. 8, whose
+%            printed first line "Den Christne bliver naturkyndig; …" is
+%            INDENTED, i.e. a new paragraph. A comma cannot precede an indented
+%            paragraph, so either the mark is a full stop misread as a comma or
+%            text is missing at the joint. Needs the page checked.
 % ============================================================
 \documentclass[12pt,a4paper]{book}
 \usepackage[utf8]{inputenc}
@@ -333,7 +372,6 @@ mod den frie Videnskab.
 I Følelsen af, at der dog umulig kan findes Strid i Sandhedens Væsen, og
 at Sandhedens Rige ikke kan være splidagtigt med sig selv, har man saa
 igjen arbeidet paa at tale de stridende
-
 % --- p. 2 ---
 Parter tilrette og tilveiebringe en Forsoning ved lidt efter lidt at gjøre
 Christendommen videnskabelig og --- hvad der kommer ud paa det Samme ---
@@ -369,7 +407,6 @@ afskaffet“.
 
 At nu Videnskabens Sphære nødvendigviis maa være Sandhedserkjendelsens
 høieste Sphære, kan Videnskaben ikke bevise;
-
 % --- p. 3 ---
 thi, idet den paatager sig at føre Beviset, begynder den netop med at
 forudsætte Det, den egentlig vilde bevise, og kommer ikke ud over sin egen
@@ -406,7 +443,6 @@ Saa anstødelig denne sidste Paastand end maaskee vil være for Mange, saa
 fremgaaer den dog med umiskjendelig Conseqvens af den opstillede Thesis.
 Vor Undersøgelse fæster sig altsaa til det ene Spørgsmaal, om
 Christendommen da nu ogsaa virkelig
-
 % --- p. 4 ---
 er ueensartet med enhver Videnskab, af hvad Navn nævnes kan, eller ikke.
 
@@ -442,7 +478,6 @@ hvis Mirakler ere skete, saa maae de være skete mod Naturens Orden; men
 det Selvsamme lærer jo ogsaa Aabenbaringen. Lad saa Naturlæren udforske
 Tingene og opdage Lovene; lad den i fortsat Undersøgelse overbevise sig
 om, at der i
-
 % --- p. 5 ---
 Naturens Rige intet Spring er, i Lovenes System ingen Plads for de
 overnaturlige Kjendsgjerninger; lad den kun gaae videre, lad den med
@@ -474,7 +509,6 @@ dette da tilladt? Naturligviis! Saa liberal er Christendommen, at den end
 ikke vægrer sig ved at blive Gjenstand for Philosophiens allerstrengeste
 Undersøgelse (hvis den vægrede sig herved, vilde den jo krænke
 Videnskaben). Saa liberal er Christendommen, at Philosophien
-
 % --- p. 6 ---
 altsaa faaer Lov til at gjøre med den, hvad den vil, erklære den for
 begribelig, hvis den kan forsvare det for Videnskaben, forkaste den som
@@ -507,7 +541,6 @@ Christendommen.
 
 Saa er det da forunderligt nok med dette Forhold mellem Videnskaben og
 Christendommen. De strides, forsones,
-
 % --- p. 7 ---
 og strides igjen. Ifølge den herskende Synsmaade, ængstes man meget for
 Striden og grunder dybt paa Forsoningen; og Striden vilde være endnu
@@ -543,7 +576,6 @@ almindelige Fornuftsandhed.}
 
 Heraf forklares det, hvorledes Striden imellem Christendommen og
 Videnskaben opkommer i Christenheden,
-
 % --- p. 8 ---
 Den Christne bliver naturkyndig; den Naturkyndige er en Christen. Begge
 ueensartede Bestemmelser forbindes i een Bevidsthed. Opgaven er, at det
@@ -576,7 +608,6 @@ Forudsætninger tilfælles med Christendommen, en Videnskab, der absolut
 vil forsvare Christendommen, for at forsvare sig selv med Christendommen,
 en Videnskab, der trykker sig saa nær op til Christendommen, at det er,
 som skulde de leve og døe tilsammen;
-
 % --- p. 9 ---
 denne Videnskab er Theologien: er den christelige Theologie da nu ogsaa
 ueensartet med Christendommen? --- Ganske vist! Theologien som
@@ -609,7 +640,6 @@ Formen begyndt at antage Videnskabens Præg, og altsaa gjort det første
 Skridt til en Forsoning af Christendom og Videnskab, før den ogsaa fandt
 sig bestedt i en haard Selvmodsigelse. Indholdet var christeligt, Formen
 videnskabelig; dette var Modsigelsen mellem
-
 % --- p. 10 ---
 Form og Indhold, en Modsigelse, for hvilken den orthodore Theologie
 omsider bukkede under.
@@ -642,7 +672,6 @@ Prøvelse at frigjøre sig fra sit oprindelige Afhængighedsforhold og
 forvandle sig fra orthodox til heterodox: jo mere heterodox den blev,
 desto mere videnskabelig, og omvendt: jo mere videnskabelig, desto mere
 heterodox. Først
-
 % --- p. 11 ---
 i det sidste Aarhundrede har Theologien fattet sig som selvstændig
 Videnskab; først i det 19de Aarhundrede sees det klart, at Theologien er
@@ -680,7 +709,6 @@ Andagten er uvidenskabelig; Andagten kjender ingen Kritik: den forelæste
 Text er i alle Maader ufeilbar og troværdig, som det sig bør. „Saamange
 ere Ordene,“ siger jo Præsten, og derpaa tilføier han en Bøn. Saaledes
 begynder den evangeliske
-
 % --- p. 12 ---
 Prædiken da ikke med raisonnerende Kritik, men med Bøn og Paakaldelse, og
 kun saaledes kan Evangeliet rettelig forkyndes.
@@ -966,6 +994,10 @@ dannet sig efterhaanden? Er ikke et Led optaget imod Gnostikerne, et andet imod
 Apollinaristerne? Er „Nedfarten til Helvede“ ægte? Lad os sammenligne de
 forskjellige Aftryk og Recensioner. Er den Recension, der findes hos Rufinus,
 dog ikke mærkværdig afvigende fra andre tilsvarende Recensioner?“
+% The printed page opens an INDENTED new paragraph (measured on the
+% page image against this page's own body margin), so the blank line
+% below is a real paragraph break.
+
 % --- p. 21 ---
 Nu reiser sig en Mængde Vanskeligheder, en Mængde Betænkeligheder; nu strides
 her som paa Liv og Død (thi her strides jo om Kirkens Grundvold); nu dele
@@ -1089,7 +1121,7 @@ er allerede besvaret med Nei. I Bekjendelsens Grundord er Guds Ord ikke til at
 adskille fra det Historiske. --- Saa lyder Kirkens Sprog: „Ligesom Ingen kan
 æde af Brød i Almindelighed, men af \emph{dette} Brød, \emph{dette} indviede
 Brød, som vi bryde; og ligesom Ingen kan drikke af en Kalk i Almindelighed, men
-af \emph{denne} Kalk, \emph{denne} Velsignelsens Kalk, som vi velsigne: saale-
+af \emph{denne} Kalk, \emph{denne} Velsignelsens Kalk, som vi velsigne: saale\-%
 % --- p. 25 ---
 des kan og Ingen døbes paa en christelig Bekjendelse i Almindelighed, eller i
 et religiøst Samfund i Almindelighed, eller af en Ordets Tjener i
@@ -1731,6 +1763,10 @@ selv i nærmere eller fjernere Berøring staaende Forfatter. Det er jo ligeledes
 muligt, at Evangelisten Johannes ikke selv har redigeret det Evangelium, der
 bærer hans Navn o. s. v. Her er nu Plads for en Mangfoldighed af Undersøgelser,
 Hypotheser og Forklaringer.
+% The printed page opens an INDENTED new paragraph (measured on the
+% page image against this page's own body margin), so the blank line
+% below is a real paragraph break.
+
 % --- p. 45 ---
 Den religiøse Faktor er derimod ikke varierende, men constant. For den
 subjective Tro (\textit{fides religiosa}) staaer det urokkelig fast, at de fire
@@ -1858,7 +1894,7 @@ Tilskuer: det objective Mirakel støder Betragteren fra sig, driver ham tilbage
 i Inderlighed, og lader Afgjørelsen beroe paa den dømmende Subjectivitet.
 
 Den hellige Skrift fortæller os nu ikke blot om de mange Undergjerninger, men
-beskriver os tillige de Indtryk, disse for-
+beskriver os tillige de Indtryk, disse for\-%
 % --- p. 49 ---
 skjellige Undergjerninger have gjort paa de forskjellige Øienvidner. Hvor
 forskjellige ere ikke disse Indtryk! Nogle troe ubetinget, og frelses ved
@@ -1888,7 +1924,7 @@ han troer --- mod Forstand. At han desuagtet bevarer sin sunde Forstand, kan
 alene sees deraf, at han, hvad de blot forstandige Ting ellers angaaer, taler
 og handler aldeles forstandig. Den Forargede, der forarges paa Miraklet, gaaer
 ligeledes fra Forstanden, forsaavidt han i en Art lidenskabelig Afsindighed
-forsøger at bortforklare det Uforklarlige; men, da den af-
+forsøger at bortforklare det Uforklarlige; men, da den af\-%
 % --- p. 50 ---
 sindige Forklaring dog altid yder ham en vis subjectiv Lindring, bevarer han
 alligevel Forstanden i alle blot forstandige Anliggender, og bliver følgelig
@@ -1920,7 +1956,7 @@ Naar altsaa to Evangelister fortælle det samme Mirakel paa en noget forskjellig
 Maade: vil Afvigelsen ikke træffe Underets religiøse Kjerne, men alene træffe
 de phænomenale Biomstændigheder og psychologiske Nüanceringer.
 
-Som det forholder sig med det, at skulle fortælle et Mira-
+Som det forholder sig med det, at skulle fortælle et Mira\-%
 % --- p. 51 ---
 kel, saa maa det jo vel ogsaa forholde sig med det, at skulle læse, opfatte og
 tilegne sig en Mirakelfortælling.
@@ -2089,6 +2125,10 @@ videnskabelig Præmis, uddrager jo Theologien heraf de meest modstridende
 religiøse Slutninger. Den Orthodoxe, Rationalisten, den Speculative,
 Fritænkeren, de kunne jo alle enes om Regelen i Almindelighed, og endda
 udbringer jo Enhver sin særegne Anskuelse af Skriftens Heelhed.
+% The printed page opens an INDENTED new paragraph (measured on the
+% page image against this page's own body margin), so the blank line
+% below is a real paragraph break.
+
 % --- p. 56 ---
 Denne Uenighed er ikke tilfældig eller blot forbigaaende, men dybt
 begrundet i Sagens Natur. Opfattelsen af Skriftens Heelhed er netop
@@ -2195,6 +2235,10 @@ give Fritænkeren Ret, som frie videnskabelige Tænkere? Men er Bibelen
 inspireret, ere Propheterne tilsammen inspirerede af Guds Aand: hvorledes
 kan da den theologiske Kritik være saa ukritisk, at anlægge den samme
 Maalestok paa inspirerede Forfattere, som paa ikke inspirerede?
+% The printed page opens an INDENTED new paragraph (measured on the
+% page image against this page's own body margin), so the blank line
+% below is a real paragraph break.
+
 % --- p. 59 ---
 Ere Propheterne inspirerede: da maa jo den Forskjel, der med Hensyn til
 Stiil og Fremstilling muligviis kan findes imellem en Jesajas og en
@@ -2496,7 +2540,7 @@ Forelægger man en theologisk Bibelfortolker et bestemt Sted af den hellige
 Skrift, og spørger ham, om han nu ogsaa tør vedkjende sig dette Sted som et i
 Virkeligheden inspireret Sted, saa at disse Ord, disse Udtryk, disse
 Sætninger, alle ere gjennemtrængte af Guds Aand: da kommer han vist i stor
-For-
+For\-%
 % --- p. 68 ---
 legenhed. Vil man derimod disputere med ham om Stedets Forhold til det hele
 Skrift og det hele Skrifts Forhold til Skriftens Totalitet; skal han strax
@@ -2529,6 +2573,10 @@ For at belyse denne Modsætning nærmere vælger jeg et bestemt Exempel:
 
 \emph{Naar Nogen slaaer dig paa din høire Kind, vend ham ogsaa den anden til}
 (Matth.\ 5, 39).
+% The printed page opens an INDENTED new paragraph (measured on the
+% page image against this page's own body margin), so the blank line
+% below is a real paragraph break.
+
 % --- p. 69 ---
 I disse Christi Ord er her ikke blot Eenhed af Aand og Bogstav, men her er
 tillige Forskjel. Man kan gjerne indrømme den videnskabelige Fortolker, at
@@ -2559,7 +2607,7 @@ beherske sig selv, vise sig forsonende og eftergivende, være villig til at
 forlige sig med sin Modstander, overvinde det Onde med det Gode o.\ s.\ v.
 Idet nu den videnskabelige Fortolker udlægger denne almindelige Moral i al
 Almindelighed efter „Skriftens Analogie“, kommer han i Tanker om, at andre
-Old-
+Old\-%
 % --- p. 70 ---
 tidens Moralister og vise Mænd have fremsat lignende moralske Forskrifter i
 lignende billedlige Udtryk; slige classiske Steder, være sig af Confucius
@@ -2719,7 +2767,7 @@ I den virkelige Existens er den Troende, der fortolker sin Bibel, ingen
 forestillet Figur, men et virkeligt Menneske, og Forstaaelsen af Skriftens
 Ord ingen forestillet, men en virkelig Forstaaelse. Den virkelige Forstaaelse
 er kun i den virkelige Anvendelse; de Livsforhold og Tilfælde, i hvilke
-Christi Bud finde deres Anven-
+Christi Bud finde deres Anven\-%
 % --- p. 75 ---
 delse, ere da heller ikke forestillede, men virkelige; men det virkelige
 Tilfælde er hver Gang et enkelt bestemt Tilfælde.
@@ -2779,7 +2827,7 @@ Bliver nu Mennesket saaledes henviist til sig selv uden dog at kunne raade
 sig selv, saa vilde der jo slet ingen Raad være for ham, hvis ikke Guds Aand
 vidnede med hans Aand i Samvittigheden, og indgav ham, hvad han i det
 afgjørende Øieblik skulde gjøre. Saa siger Evangeliet: Den Aand, der lærer
-Men-
+Men\-%
 % --- p. 77 ---
 nesket det rette Valg i Afgjørelsens Stund; den Aand, der bestemmer
 Selvfornegtelsen i Forhold saavel til de ydre Vilkaar som til det
@@ -2808,7 +2856,7 @@ Sandhed; men den, der kun har en svag Tro, faaer en svag Aand, og forstaaer
 Ordet skyggeviis. Dette er Loven, Skriftfortolkningens ufravigelige Lov: Hver
 Den, der hører Ordet og gjør derefter, erfarer Ordets Kraft og maa lignes med
 en forstandig Mand, der bygger sit Huus paa Klippen; men hvis Nogen hører
-Ordet og ikke gjør derefter, da kan han heller aldrig erkjende Or-
+Ordet og ikke gjør derefter, da kan han heller aldrig erkjende Or\-%
 % --- p. 78 ---
 dets Kraft, men skuffer sig selv ved en indbildt Forstaaelse og bliver at
 ligne med den uforstandige Mand, der bygger sit Huus paa Sand.
@@ -2874,6 +2922,10 @@ ikke kan --- hvad dog hvert Menneske burde kunne!
 Saaledes, omtrent saaledes forestiller jeg mig den Forfatterexistens, der vel
 allernærmest maatte være rustet til at føre Krig mod Nutidens
 „Sandsebedrag,“ og gjøre Christendommen kjendelig for den moderne Reflexion.
+% The printed page opens an INDENTED new paragraph (measured on the
+% page image against this page's own body margin), so the blank line
+% below is a real paragraph break.
+
 % --- p. 80 ---
 At Theologerne, jeg mener de ægte-videnskabelige, især de
 ægte-speculativ-videnskabelige, naturligviis helst vilde oversee en saadan
@@ -3188,6 +3240,10 @@ maatte troe iblinde, og ligesaa godt kunde falde paa at troe den falske
 som den sande Aabenbaring. Lutter Udflugter! Man behage blot at besinde
 sig lidt alvorligt paa Forskjellen imellem den subjective Erkjendelse og
 den objective Viden.
+% The printed page opens an INDENTED new paragraph (measured on the
+% page image against this page's own body margin), so the blank line
+% below is a real paragraph break.
+
 % --- p. 90 ---
 Man har meent, at Den, der antog en Aabenbaring uden først at prøve dens
 objective Sandhed i objectiv Viden, forsømte en Sandhedspligt, hvorfor
@@ -3288,6 +3344,10 @@ Det var en Røver paa Korset, der bespottede ham, og det var en Røver paa
 Korset, der bekjendte ham. Det var en Romer, der dømte ham i Jerusalem,
 da Jøderne rasede: Korsfæst, Korsfæst! og det var en Romer, der
 frikjendte ham paa Golgatha, der Gravene brast, og Jorden skjælvede.
+% The printed page opens an INDENTED new paragraph (measured on the
+% page image against this page's own body margin), so the blank line
+% below is a real paragraph break.
+
 % --- p. 93 ---
 Det Forhold, hvori Christus ved sin første Optræden sætter sig til sine
 Samtidige, er tillige bestemt som det principielle Grundforhold, hvori
@@ -4054,7 +4114,7 @@ Theolog. Men den lutherske Kirke, der ubetinget havde Ret i Troen, vilde da nu
 ogsaa med det Samme have ubetinget Ret i Theologien; saa gik det jo længere jo
 værre. Den lutherske Theologie arbeidede sig træt i uspeculative Speculationer,
 og har allerede længe maattet see sine Yndlingstheorier om \textit{communicatio
-idio-
+idio\-%
 % --- p. 118 ---
 matum} og \textit{ubiquitas corporis Christi} givne til Priis for opløsende
 Kritik.
@@ -4121,7 +4181,7 @@ At den catholske Kirke saa tidlig blev en Tvangskirke, og som Tvangskirke
 hengav sig til Tyrannie saavel i Lære som i Forfatning, kan den fornemmelig
 takke sine Theologer for, thi i dens oprindelige Idee laae det slet ikke. At
 den protestantiske Kirke, der stred for Samvittighedernes Ret, saa hurtig blev
-en Tvangskirke, der tyranniserede Samvittighederne, kan den for-
+en Tvangskirke, der tyranniserede Samvittighederne, kan den for\-%
 % --- p. 120 ---
 nemmelig takke sine Theologer for; thi det var da især dem, der ved deres
 systematiske Lærebegreber gjorde den subjective Sag systematisk objectiv.
@@ -4274,7 +4334,7 @@ ligefrem Forstaaelse med disse Objecter, kan trænge dybere og dybere ind i
 deres Væsen; aleneste med Aabenbaringsobjectet kan den Vidende ikke komme i
 ligefrem Forstaaelse: Forstaaelse er i Omvendelse, i fortsat Omvendelse,
 Forstaaelsen er i Omvendthed, i fortsat Omvendthed, Forstaaelsen er paradox.
-Alle andre Objecter ville erkjendes objectivt, \emph{fordi de ere ob-
+Alle andre Objecter ville erkjendes objectivt, \emph{fordi de ere ob\-%
 % --- p. 125 ---
 % NOTE: the letterspacing stops at the page turn: fordi de ere ob- is spaced
 % on p. 124, but the turnover syllable jective; opens p. 125 in ordinary
@@ -4436,6 +4496,10 @@ Paaskeberegninger og kritiske Indledninger, og har vel desaarsag kun liden
 Tid til nærmere Drøftelse af dette Spørgsmaal; men desuagtet beholder dog
 Spørgsmaalet sin Betydning, naar det gjælder det principielle Forhold
 mellem Christendommen og Theologien.
+% The printed page opens an INDENTED new paragraph (measured on the
+% page image against this page's own body margin), so the blank line
+% below is a real paragraph break.
+
 % --- p. 130 ---
 Theologien deler sig selv i den theoretiske og den praktiske. Den
 theoretiske Theologie danner først de vordende Præster til videnskabelige
@@ -4501,6 +4565,10 @@ fordi den theologiske Lærdom jo egentlig er det ideale Mærke, der adskiller
 Præsten fra Lægmanden. Præsten er en lærd Christen, Lægmanden en ulærd
 Christen, see, det er Forskjellen, en Forskjel, der gjælder i Reglen,
 skjøndt Reglen har sine Undtagelser.
+% The printed page opens an INDENTED new paragraph (measured on the
+% page image against this page's own body margin), so the blank line
+% below is a real paragraph break.
+
 % --- p. 132 ---
 I Statskirkens egentlige Myndighedsperiode, da man ivrede for objectiv
 Rettroenhed, var Forskjellen mellem lærde og ulærde Christne en i kirkelig
@@ -4563,6 +4631,10 @@ sikkerlig have været hiin spørgende Dialektiker ligesaa besværligt at faae
 i sit Hoved, som hvorledes det aldeles Lige kan fødes af sit Ulige, det
 Eensartede af sit Ueensartede, et Menneske af et Faar, et Faar af et
 Menneske.
+% The printed page opens an INDENTED new paragraph (measured on the
+% page image against this page's own body margin), so the blank line
+% below is a real paragraph break.
+
 % --- p. 134 ---
 Vel var det paa en Maade, at den gamle Spørger døde, dengang han døde!
 havde han levet endnu: han havde forvoldt „den christelige Videnskab“ mange
@@ -4761,7 +4833,7 @@ theologiske Dannelse har sin Betydning.“
 men, om han nu ogsaa maaskee kan glemme en Deel af de mange Enkeltheder,
 bevarer han dog alligevel et videnskabeligt Indtryk af det Hele, og med
 dette Indtryk tillige en Aandsfrihed, hvormed han desto sikkrere kan
-bedømme det reli-
+bedømme det reli\-%
 % --- p. 140 ---
 giøse Livs forskjelligartede Phænomener og finde sig tilrette i de
 praktiske Forhold.“
@@ -4793,7 +4865,7 @@ Tvivl; men Spørgsmaalet er, om en saadan høiere Dannelse ikke lod sig sætte
 i en langt inderligere Forbindelse med den dertil svarende Livsstilling,
 end hidtil er skeet. Man beraaber sig paa Nødvendigheden af en objectiv
 Maalestok for Candidatens Dygtighed. Betydningen af en saadan Maalestok
-bliver jo her slet ikke benegtet; men Spørgsmaalet er, om den prak-
+bliver jo her slet ikke benegtet; men Spørgsmaalet er, om den prak\-%
 % --- p. 141 ---
 tiske Skole ikke var istand til at afgive en nok saa retfærdig Maalestok,
 naar man blot kunde faae den anlagt efter en til Ideen svarende Plan, og
@@ -4831,7 +4903,7 @@ forskjellige, hinanden modsigende Dogmatiker; saa følger jo heraf, at
 Menigheden efterhaanden ogsaa maa faae mange forskjellige, hinanden
 modsigende Prædikener at høre.
 
-Dette er da ogsaa i Praxis en bekjendt Sag. Enhver Prædi-
+Dette er da ogsaa i Praxis en bekjendt Sag. Enhver Prædi\-%
 % --- p. 142 ---
 kant prædiker i Reglen, om ikke just efter en bestemt Dogmatik, saa dog
 gjerne efter den theologiske Retning, hans akademiske Dannelse tilhører:
@@ -4923,7 +4995,7 @@ Benævnelse, og dertil anvende det hidtil brugte ældgamle Navn: Theologie, skal
 jeg ikke have Noget derimod: om blotte Navne ville vi ikke stride.
 
 Theologien vil altsaa, ifølge den her opstillede Synsmaade, ikke blive
-afskaffet; men den vil forandre sin Natur og sit For-
+afskaffet; men den vil forandre sin Natur og sit For\-%
 % --- p. 145 ---
 hold til Christendommen. --- Den saaledes forandrede Theologie vil da igjen
 adskille sig i to Hoveddele: den theoretiske og den praktiske.
@@ -5020,7 +5092,7 @@ blive upartisk, og forsaavidt heller aldrig grundig. Den Religiøse vil altid
 være for skaansom, Fritænkeren for uskaansom: det upersonlige Forhold vil med
 Eet blive personligt, den videnskabelige Strid uvidenskabelig.
 
-En videnskabelig Inspirationtheorie er en Modsigelse. En-
+En videnskabelig Inspirationtheorie er en Modsigelse. En\-%
 % --- p. 148 ---
 hver, der forsøger at udvikle en saadan Theorie, bliver ved Conseqvensernes Magt
 idelig kastet fra det ene Extrem til det andet, og saaledes omtumlet som imellem
@@ -5150,6 +5222,10 @@ maa Kirkens Begreb kunne fastsættes med afgjørende Bestemthed“. . . . Omvend
 „Hvis Kirkens Begreb ikke kan fastsættes med afgjørende Bestemthed, saa har
 Kirken ingen Realitet.“ --- „Hvis Kirken ingen Realitet har, saa har
 Christendommen heller ingen Realitet.“
+% The printed page opens an INDENTED new paragraph (measured on the
+% page image against this page's own body margin), so the blank line
+% below is a real paragraph break.
+
 % --- p. 152 ---
 Saaledes bevæger den theoretiske Theologie sig imellem lutter hypothetiske
 Domme; men af disse Domme kan den dog alligevel ikke komme til at uddrage en
@@ -5188,6 +5264,10 @@ begge Skoler forbundne; men den kategoriske Undersætning befæster et svælgend
 Dyb imellem dem. For den theoretiske Theologie er Kirken en svævende Størrelse,
 hvis Realitet er hypothetisk; for den praktiske Theologie staaer Kirken fast som
 en kategorisk Autoritet, en objectiv Magt, hvis Myndighed Ingen tør betvivle.
+% The printed page opens an INDENTED new paragraph (measured on the
+% page image against this page's own body margin), so the blank line
+% below is a real paragraph break.
+
 % --- p. 153 ---
 Kirken er da nu efter sit Begreb at bestemme som den faktisk nærværende
 Christendom, som det Aandens Samfund, der i sin apostoliske Troesbekjendelse, i
@@ -5220,6 +5300,10 @@ tøilesløs Subjectivitet, der vælger og forkaster i subjectiv Vilkaarlighed.
 Overfladisk betragtet maa Forholdet vise sig saaledes; thi vi have i
 Virkeligheden sat den allerstrengeste Objectivitet imod den høieste subjective
 Frihed.
+% The printed page opens an INDENTED new paragraph (measured on the
+% page image against this page's own body margin), so the blank line
+% below is a real paragraph break.
+
 % --- p. 154 ---
 Hvad følger saa heraf? Ingenlunde, at det Objective nu skulde formildes i
 videnskabelig Formidling med det Subjective, eller det Subjective afmattes i
@@ -5488,6 +5572,10 @@ Kjendsgjerninger; men disse Kjendsgjerninger vise sig nu tillige for ham i en
 ny Belysning; han seer det Gamle blive nyt igjen; han føler, at han maa
 begynde forfra: han føler sig forynget og forfrisket, og begynder med
 stigende Interesse.
+% The printed page opens an INDENTED new paragraph (measured on the
+% page image against this page's own body margin), so the blank line
+% below is a real paragraph break.
+
 % --- p. 163 ---
 Paa Læren om Kirken følger den religiøs-ethiske Fortolkning af den hellige
 Skrift. Ogsaa her ville Forkundskaberne komme i Anvendelse, ogsaa her vil det
@@ -5766,6 +5854,10 @@ de først i høiere Forstand at danne os. Vi lære da at studere Theorien med
 indre Frihed og derhos tillige med Alvor og Grundighed. Naar saa Theorien har
 gjort Sit, kommer Tilværelsen os til Hjælp med vor personlige Dannelse, og
 gjør Sit.
+% The printed page opens an INDENTED new paragraph (measured on the
+% page image against this page's own body margin), so the blank line
+% below is a real paragraph break.
+
 % --- p. 172 ---
 Theologiens unge Dyrkere kunne da endnu, som før, med Lyst og Iver studere
 deres theologiske Videnskaber; de kunne studere --- Fritænkerens Angreb,

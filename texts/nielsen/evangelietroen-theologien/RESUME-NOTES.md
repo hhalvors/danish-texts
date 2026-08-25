@@ -365,3 +365,56 @@ PY
 be letterspaced in the print. It is *not* marked in the transcription yet. Check it
 when doing the Forord emphasis pass; Nielsen letterspaces the
 *stride for* / *strides om* distinction elsewhere, so it is likely real.
+
+---
+
+## PAGE-JOINT AND PARAGRAPH REPAIR — 2026 pass (pilot for the whole repo)
+
+The fault was found and traced in `texts/nielsen/speculative-methode`; this book
+was the pilot for sweeping it. Read that book's RESUME-NOTES for the anatomy.
+
+**Two mechanical faults, both from the splice, both now repaired here:**
+
+- **17 bare-hyphen page joints** → `\-%` (pp. 25, 49, 50, 51, 68, 70, 75, 77, 78,
+  118, 120, 125, 140, 141, 142, 145, 148). A bare hyphen before the marker line
+  typesets as »Ufuld- kommenhed« — hyphen AND space, inside the word.
+- **11 false paragraph breaks removed** (pp. 2–12) and **16 missing ones added**
+  (pp. 21, 45, 56, 59, 69, 80, 90, 93, 130, 132, 134, 152, 153, 154, 163, 172).
+
+The built PDF now contains no `word- word` artefact anywhere, and compiles at
+143 pages with 0 errors.
+
+**The missing breaks were the majority**, and they are only findable from the
+page images — which is the argument for doing this per book with its own scan
+and page map rather than as a text-only sweep.
+
+`paragraphs.py` here does the audit. Ported from the other book; only the
+constants differ, because that scan is 1-bit at ~300 ppi and this one is colour
+JPX at 250 ppi. Calibrated on 130 known continuations and 35 known paragraph
+openings: continuations measure 0 px (5th–95th percentile −4 to +4), new
+paragraphs +69 to +84, so the 35 px threshold sits in an empty gap.
+
+**Traps this scan adds** (all fixed in `paragraphs.py`, all of which produced
+confident nonsense first): a dark band runs the full width at the very top of
+every leaf and reads as a full-measure line starting at x=0, which makes every
+page look like a −137 px hanging indent; even-numbered PDF pages carry the
+facing leaf's dark edge down the right side; and one cached render came out
+truncated and had to be re-made.
+
+## Two defects of a different kind — NOT repaired, for the editor
+
+Both surfaced from the audit's UNCERTAIN list, where the image says "new
+paragraph" and the text says "continues". In both the image was right and the
+text test was wrong, and the reason is a transcription error rather than a
+splice artefact — so they are recorded, not corrected.
+
+1. **Printed p. VII: the page marker is one clause too early.** The words
+   »tænker lidt nøiere efter.« stand at the **foot of printed p. VI** in the scan
+   (PDF 11); printed p. VII begins, indented, with »Skal her virkelig strides om,
+   hvo det er, …«. Verified at 600 dpi. The marker should move after »efter.«,
+   and p. VII should then take a paragraph break.
+2. **Printed pp. 7/8.** The file ends p. 7 with »…Videnskaben opkommer i
+   Christenheden,« — a comma — and runs on into p. 8, whose printed first line
+   »Den Christne bliver naturkyndig; …« is **indented**. A comma cannot precede
+   an indented paragraph, so either the mark is a full stop misread as a comma or
+   something is missing at the joint. Needs the page read.
