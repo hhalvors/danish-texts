@@ -25,6 +25,35 @@
 %  STATUS: front matter (Foreword + Introduction, fol. III–XIII)
 %  translated; body pp. 1–89 and Contents outstanding.
 % ============================================================
+%
+%  PAGE-JOINT AND PARAGRAPH REPAIR (2026 pass; sixth item swept):
+%        Built by splicing page-range fragments into a skeleton that separated
+%        them with blank lines, so a leaf the printed text runs across acquires a
+%        paragraph the book does not have, and a word broken across a leaf was
+%        joined with a BARE hyphen, printing as "Stør- relse".
+%        Repaired here: 2 page-joint hyphens (pp. 10, 82);
+%        1 MISSING paragraph break added at p. 13 (image-verified); 0 false
+%        breaks — this file was the cleanest of the six on that count.
+%
+%  THIS BOOK FORCED TWO CORRECTIONS TO THE AUDIT ITSELF, and they were general
+%        enough that the five books swept before it were re-run against them:
+%          (a) the "black edge" ink threshold was 0.45, which is right for a
+%              solid scan edge but on this Google scan catches ordinary dense
+%              Fraktur TEXT LINES (47 rows a page exceed it, peaking at 0.51).
+%              The crop was eating a quarter off the top and bottom of every
+%              page. Raised to 0.80.
+%          (b) the audit took the first FULL-MEASURE line as the page's first
+%              line, assuming body lines are justified. But a page often opens
+%              with the SHORT TAIL of a paragraph carried over from the previous
+%              leaf, and skipping it measures the line below — six pages here
+%              reported a phantom +75 px indent that way. Re-running the earlier
+%              books under the corrected rule found SIX GENUINE MISSING BREAKS
+%              they had been passed clean on: p. 20 of Om personlig Sandhed and
+%              pp. 17, 36, 48, 76, 117 of the Johannes Climacus translation.
+%        The engine now lives once, in texts/_paragraphs_core.py, because six
+%        copies of it had drifted apart; paragraphs.py here supplies only this
+%        book's constants.
+% ============================================================
 \documentclass[12pt]{book}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
@@ -815,7 +844,7 @@ in x, and x in c; the numerator presupposes a looking to the
 denominator, and the denominator to the numerator: that is
 subjective reflection. If an equation such as $\frac{dy}{dx} = c$ is
 chosen, the numerator is no immediate term, but a reflex of a
-magnitude vanished in vanish-
+magnitude vanished in vanish\-%
 % --- p. 10 ---
 ing, and the same holds of the denominator dx; as the two reflexes
 are reflected in each other and form the quotient, the reflection
@@ -931,6 +960,10 @@ not-knowledge.
 The contradictions with which finite knowledge is burdened on all
 sides gather at last into the one: omniscience is necessary and yet
 incomprehensible.
+% The printed page opens an INDENTED new paragraph (measured on the
+% page image against this page's own body margin), so the blank line
+% below is a real paragraph break.
+
 % --- p. 13 ---
 That omniscience is necessary shines forth from the original essence
 of knowledge. For since all determinations of existence are, in the
@@ -3467,7 +3500,7 @@ determined as spirit.
 
 The spirit is neither pure reason in abstract generality nor yet a
 singular subject with abstract arbitrariness. In the spirit as
-spirit, reason-necessity has pene-
+spirit, reason-necessity has pene\-%
 % --- p. 82 ---
 trated arbitrariness: the self-determination utters itself in a
 system of objective otherness-determinations; thus the spirit is

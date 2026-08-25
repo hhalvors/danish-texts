@@ -10,6 +10,41 @@
 %          https://archive.org/details/revue-de-metaphysique-et-de-morale-30-2
 %  PAGE MAP:  see pagemap.py.  OFFSET NOT YET VERIFIED.
 % ============================================================
+%
+%  PAGE-JOINT AND PARAGRAPH REPAIR (2026 pass; fifth item swept, after
+%        speculative-methode where the fault was found, evangelietroen-
+%        theologien, om-personlig-sandhed and johannesclimacos):
+%        Both files here were built by splicing page-range fragments into a
+%        skeleton that separated them with blank lines. A blank line is a
+%        paragraph break, so wherever the printed text ran on across a leaf the
+%        splice invented a paragraph the article does not have.
+%        Repaired in this file:
+%          * 2 page-joint hyphens -> `\-%` (pp. 232 "con-"/"sidérant" and 236
+%            "concep-"/"tion")
+%          * 9 FALSE paragraph breaks removed (pp. 231--239, nine consecutive
+%            leaves), every one of them plainly mid-sentence
+%          * 0 missing paragraph breaks
+%          * SEPARATELY, 8 printed LINE-break hyphens that had been left bare
+%            mid-page and printed as "précipita- tion", "pour- quoi",
+%            "primi- tive", "mar- quée", "souf- france", "pro- vincial",
+%            "chris- tianisme", "pro- blèmes". These are not the page-joint
+%            fault at all — they are ordinary line divisions in the printed
+%            French that were never closed up — but they produce exactly the
+%            same artefact and are fixed the same way. The `\emph{}` spanning
+%            the "pro-"/"vincial" break was preserved.
+%        `paragraphs.py` in this directory performs the audit and takes either
+%        file as its argument. Run it before any future publication.
+%        ITS ONE HARD PROBLEM HERE IS THE RUNNING HEAD, which is full-measure
+%        and lies in BOTH directions: on even pages the Revue sets the folio out
+%        in the left margin, so the head begins ~340 px LEFT of the block and the
+%        page reads as a -337 px hanging indent; on odd pages the head is
+%        CENTRED, so it begins ~100 px RIGHT of the block and is
+%        indistinguishable from a paragraph indent — printed p. 245 was reported
+%        as +97 px on that mistake and in fact opens flush. Two guards are needed
+%        together: the line must sit in the text block AND not be followed by the
+%        extra white space that separates a head from the body. With both,
+%        continuations measure -19 to +20 px and the one paragraph opening +77.
+% ============================================================
 \documentclass[12pt,a4paper]{article}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
@@ -525,7 +560,6 @@ et de misère qu'est leur nature. La pensée pourra bien les enlever
 dans ses hautes régions, mais la concupiscence et les passions
 les ramèneront toujours vers la fange d'en bas. L'homme doit être
 amené à comprendre quel « monstre incompréhensible » il fait, et
-
 % low-confidence on p.230: II., INTELLECTUELLES.
 % low-confidence on p.230: “,  taines
 % low-confidence on p.230: qu'étant
@@ -546,7 +580,6 @@ amené à comprendre quel « monstre incompréhensible » il fait, et
 % low-confidence on p.230: qu'est
 % low-confidence on p.230: et, les
 % low-confidence on p.230: d'en
-
 % --- p. 231 ---
 seule la vraie Religion lui fournira la clef de sa nature avec les voies
 et moyens de résoudre les divisions intimes qui le déchirent. Pascal
@@ -588,8 +621,7 @@ son attente, il constata plus de détachement encore que dans le cas
 de la géométrie (fr. 144 Br.). Lui-même se jeta à corps perdu dans
 la nouvelle étude se désintéressant de plus en plus de ses premiers
 travaux scientifiques. Dans une lettre au célèbre mathématicien
-Fermat, il écrit vers la fin de sa vie (10 août 1660) que, tout en con-
-
+Fermat, il écrit vers la fin de sa vie (10 août 1660) que, tout en con\-%
 % low-confidence on p.231: eb
 % low-confidence on p.231: l'angoisse
 % low-confidence on p.231: s'ou-
@@ -610,7 +642,6 @@ Fermat, il écrit vers la fin de sa vie (10 août 1660) que, tout en con-
 % low-confidence on p.231: l'étude
 % low-confidence on p.231: dans
 % low-confidence on p.231: :
-
 % --- p. 232 ---
 sidérant toujours la géométrie comme le domaine le plus élevé où
 puissent s'exercer les facultés de l'esprit, il la regarde désormais
@@ -628,7 +659,7 @@ jamais la dignité que confère la pensée (fr. 346-348). Mais cette
 pensée tant exaltée par Pascal se réduisait de plus en plus, pour
 lui, à n'être qu'une servante de l'explication théologique. De même
 que, pendant sa période « mondaine », il avait décrit la passion de
-l'amour comme consistant dans une concentration, une précipita-
+l'amour comme consistant dans une concentration, une précipita\-%
 tion de toutes les pensées vers un seul but, de même, maintenant
 que la religion était devenue sa passion dominante, il n'admettait
 que des pensées orientées dans cette seule direction.
@@ -639,7 +670,7 @@ quelques années, dans la métaphysique hégélienne, l'idéale philosophique,
 tandis qu'aux yeux de Pascal la pensée idéale se trouvait
 représentée par la géométrie. Dans un système comme celui de
 Hegel, où une nécessité intérieure enchaîne toutes les parties les
-unes aux autres, il n'est rien qui n'ait sa place logiquement mar-
+unes aux autres, il n'est rien qui n'ait sa place logiquement mar\-%
 quée. La Poésie, la Religion, la Science n'étaient donc pour Kierkegaard
 que les formes diverses ou successives d'une même et
 divine vérité. Tel fut le rêve de sa jeunesse, dont il finit enfin par
@@ -658,8 +689,6 @@ de la connaissance (\emph{Postscriptum définitif non scientifique}, 1846)%
 .
 Il montre que même s'il existait une connaissance absolue, chacun
 de nous serait obligé pourtant de commencer, à un point déterminé,
-
-
 % low-confidence on p.232: ,
 % low-confidence on p.232: 1
 % low-confidence on p.232: Il
@@ -674,7 +703,6 @@ de nous serait obligé pourtant de commencer, à un point déterminé,
 % low-confidence on p.232: -
 % low-confidence on p.232: scientifique,, 1846)*,
 % low-confidence on p.232: 1,, Alsluttende, uvidenskabelig, Efterskrift.
-
 % --- p. 233 ---
 pris dans le domaine de l'expérience, le raisonnement qui devait
 nous élever à ce stade supérieur, et pourquoi, alors, à tel point
@@ -715,7 +743,6 @@ comme une tangente à la circonférence (plus exactement : aux circonférences)
 de la vie. À un seul point il y a, momentanément, un
 contact, qui est aussitôt suivi par un contact à un autre point. Donc ;
 des amours qui changent et pas de mariage ; des camaraderies et
-
 % low-confidence on p.233: jusqu'aux
 % low-confidence on p.233: :
 % low-confidence on p.233: d'accord
@@ -731,7 +758,6 @@ des amours qui changent et pas de mariage ; des camaraderies et
 % low-confidence on p.233: court
 % low-confidence on p.233: “, cir-, -
 % low-confidence on p.233: il!
-
 % --- p. 234 ---
 pas d'amitiés ; des occupations improvisées et pas de devoirs professionnels ;
 des jouissances intellectuelles et point de science ! Si
@@ -777,7 +803,6 @@ même au point le plus décisif, ce bond ne prend jamais, chez
 Kierkegaard, le caractère de l'extase. Et, dans une certaine mesure,
 la continuité subsiste, puisque notre énergie synthétique reste
 l'échelle commune à tous les types de vie personnelle. D'ailleurs
-
 % low-confidence on p.234: occupations, pro-
 % low-confidence on p.234: ecrit
 % low-confidence on p.234: ;, rapport
@@ -793,7 +818,6 @@ l'échelle commune à tous les types de vie personnelle. D'ailleurs
 % low-confidence on p.234: #, qu'il
 % low-confidence on p.234: :
 % low-confidence on p.234: qu'on, comme
-
 % --- p. 235 ---
 Pascal emploie au fond la même mesure ; il la tire du rapport entre
 le fonds plus ou moins riche qu'offre une existence et l'énergie de
@@ -836,8 +860,7 @@ considérons ce qui l'a fait naître.
 Les premières générations chrétiennes vécurent dans l'attente
 d'un retour prochain du Christ, qui devait clore les destinées du
 monde par un jugement universel. Au début, cette attente constituait
-la croyance des chrétiens ; elle réglait leur vie et leur concep-
-
+la croyance des chrétiens ; elle réglait leur vie et leur concep\-%
 % low-confidence on p.235: [
 % low-confidence on p.235: et
 % low-confidence on p.235: l'unique
@@ -854,17 +877,16 @@ la croyance des chrétiens ; elle réglait leur vie et leur concep-
 % low-confidence on p.235: És'assimilant
 % low-confidence on p.235: d'aller
 % low-confidence on p.235: du
-
 % --- p. 236 ---
 tion de la vie. Dans la perspective d'une catastrophe imminente
 d'où naîtraient un nouveau ciel, une terre nouvelle, les devoirs
-purement humains ou sociaux perdaient leur urgence. C'est pour-
+purement humains ou sociaux perdaient leur urgence. C'est pour\-%
 quoi il n'est pas question, dans le Nouveau Testament, d'art, de
 science, de vie publique ; la vie de famille elle-même n'était admise
 que sous certaines réserves. La morale du Nouveau Testament devait
 être ce que M. Albert Schweitzer a bien nommé une « éthique intérimaire
 ». Tous les efforts, tous les projets convergeaient sur un
-unique but sis dans un avenir voisin. Pour cette chrétienté primi-
+unique but sis dans un avenir voisin. Pour cette chrétienté primi\-%
 tive, l'avènement du règne de Dieu, auquel il est fait allusion dans
 la prière dominicale, prenait un sens très précis : on n'entendait
 point par là demander vaguement l'obtention de biens spirituels.
@@ -896,7 +918,6 @@ Religieux et religieuses renoncent à la vie dans le siècle afin de
 pouvoir se consacrer entièrement à l'au-delà, à la seule chose nécessaire.
 C'est par eux que subsiste la filiation du christianisme originel.
 Aux laïques incombe la tâche de continuer la vie humaine sous
-
 % low-confidence on p.236: ;, imminente
 % low-confidence on p.236: purement
 % low-confidence on p.236: |
@@ -917,7 +938,6 @@ Aux laïques incombe la tâche de continuer la vie humaine sous
 % low-confidence on p.236: ,
 % low-confidence on p.236: nouveaux.
 % low-confidence on p.236: origi-
-
 % --- p. 237 ---
 l'influence des directeurs de conscience par lesquels l'Église exerce
 son action de contrôle sur les âmes. Saint Augustin (\emph{De civitate
@@ -930,7 +950,7 @@ du christianisme originel pour toutes les formes de culture
 ne devait jamais cesser de prévaloir dans une certaine pratique.
 Sans entrer au couvent, sa vie des dernières années n'en fut pas
 moins d'un moine. À ses yeux, les temps qui nous séparent du
-retour du Christ ne doivent être qu'attente ardente et que souf-
+retour du Christ ne doivent être qu'attente ardente et que souf\-%
 france. La scène de Gethsémani représente bien, selon lui, la situation
 permanente du vrai chrétien. Nous devons vivre en contemporains
 actifs des souffrances du Sauveur. Une seule fois, à Gethsémani,
@@ -948,7 +968,7 @@ de l'Éden.
 
 La direction des âmes telle que la pratiquaient les pères jésuites
 apparaissait à Pascal comme un accommodement criminel de la vie
-selon le Christ à la vie selon le monde, et, dans les \emph{Lettres à un pro-
+selon le Christ à la vie selon le monde, et, dans les \emph{Lettres à un pro\-%
 vincial}, il a élevé contre les abus des jésuites une vive protestation.
 Sauf des erreurs de détail, il a raison au point de vue rigoureusement
 chrétien. Du Nouveau Testament à la casuistique des jésuites l'éthique
@@ -961,7 +981,6 @@ premiers temps avec ceux d'aujourd'hui}.
 
 S'il y a tant d'écart entre les deux catégories de chrétiens, c'est
 parce qu'à présent le baptême précède l'instruction des mystères de
-
 % low-confidence on p.237: :, ,
 % low-confidence on p.237: ;
 % low-confidence on p.237: foyaume
@@ -976,9 +995,8 @@ parce qu'à présent le baptême précède l'instruction des mystères de
 % low-confidence on p.237: d'un
 % low-confidence on p.237: s'était,
 % low-confidence on p.237: °
-
 % --- p. 238 ---
-la religion, tandis qu'à l'origine, personne n'avait accès au chris-
+la religion, tandis qu'à l'origine, personne n'avait accès au chris\-%
 tianisme sans avoir été bien instruit de sa doctrine et sans avoir
 renoncé au monde. C'est qu'alors la distinction s'imposait entre le
 « siècle » et l'Église, tandis qu'aujourd'hui l'Église a admis le siècle
@@ -998,7 +1016,7 @@ condamnées par le pape comme hérétiques n'étaient pas dans l'ouvrage
 de Jansénius intitulé \emph{Augustinus}, et il refusait au pape le droit
 d'ériger en fait acquis un point expressément vérifiable par tout le monde.
 À une occasion antérieure, il avait déjà, dans son \emph{Mémoire sur
-le Vide}, repoussé l'ingérence de l'autorité religieuse dans les pro-
+le Vide}, repoussé l'ingérence de l'autorité religieuse dans les pro\-%
 blèmes des sciences expérimentales. Et dans sa \emph{18\textsuperscript{e} Provinciale} il expose
 que si l'opinion de Galilée sur le mouvement de la terre est une
 erreur, ce n'est pas un décret du pape qui le démontrera, et qu'au cas
@@ -1017,7 +1035,6 @@ Jansénius, en la reprenant, avait accentué l'opposition à la théologie scola
 et son autorité n'est pas plus infaillible en matière de foi que
 lorsque les faits sont en cause. C'est que le Pape doit veiller à tant
 d'affaires qu'il n'a pas le temps de s'occuper des choses de la foi
-
 % low-confidence on p.238: ‘
 % low-confidence on p.238: qu'alors
 % low-confidence on p.238: qu'aujourd'hui
@@ -1040,7 +1057,6 @@ d'affaires qu'il n'a pas le temps de s'occuper des choses de la foi
 % low-confidence on p.238: après
 % low-confidence on p.238: logiescolastique, et, jésuite.
 % low-confidence on p.238: d'affaires
-
 % --- p. 239 ---
 (fr. 882). Mais si Rome condamne la vérité, il faut crier d'autant plus
 fort ; il faut en appeler au ciel. « Il est meilleur d'obéir à Dieu qu'aux

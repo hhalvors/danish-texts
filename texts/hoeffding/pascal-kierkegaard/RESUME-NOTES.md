@@ -208,3 +208,54 @@ The lesson for the next French book: **translating is itself the best proofreadi
 pass**, because it forces every sentence to be parsed. Budget for a correction
 round on the transcription while translating, and do not treat `check.py` coming
 back clean as evidence that the text is right — it checks structure, not sense.
+
+---
+
+## PAGE-JOINT AND PARAGRAPH REPAIR — 2026 pass
+
+Fifth item swept. The fault was found in `texts/nielsen/speculative-methode`;
+read that book's RESUME-NOTES for the anatomy.
+
+**transcription.tex**
+- 2 page-joint hyphens → `\-%` (p. 232 "con-"/"sidérant", p. 236 "concep-"/"tion")
+- 9 false paragraph breaks removed — **pp. 231–239, nine consecutive leaves**,
+  every one plainly mid-sentence
+- 0 missing paragraph breaks
+- **and a separate defect: 8 printed LINE-break hyphens left bare mid-page**,
+  printing as "précipita- tion", "pour- quoi", "primi- tive", "mar- quée",
+  "souf- france", "pro- vincial", "chris- tianisme", "pro- blèmes". Not the
+  page-joint fault — these are ordinary line divisions in the printed French
+  that were never closed up — but the same artefact and the same fix. The
+  `\emph{}` spanning "pro-"/"vincial" was preserved.
+
+**translation.tex**: 1 false break (p. 239). Nothing else.
+
+Both compile at 23 pages with no `word- word` artefact left, and the audit
+returns nothing for either file.
+
+### The running head is the hard part of this article
+
+`paragraphs.py` here takes either file as its argument. Its one real problem is
+that the Revue's running head is full-measure, so a naive left-edge test takes it
+for a body line — **and it lies in both directions**:
+
+- **even** pages set the folio out in the LEFT MARGIN, so the head begins ~340 px
+  left of the text block and the page reads as a −337 px hanging indent;
+- **odd** pages CENTRE the head, so it begins ~100 px right of the block and is
+  indistinguishable from a paragraph indent. Printed p. 245 was reported as a
+  +97 px indent on exactly that, and in fact opens flush.
+
+Neither guard works alone: skipping any line followed by extra white space
+over-skips on pages carrying a section space or a footnote rule (pp. 236 and 237
+walked past the body and reported −323 and −127 px). Requiring the line to sit
+within [margin−60, margin+400] lets the centred odd-page head through. **Both
+together** give a flat measurement — continuations −19 to +20 px, the single
+paragraph opening +77.
+
+### Still outstanding elsewhere in the repo
+
+The mid-page line-break hyphen is its own small population, separate from the
+page-joint one: 2 in `hoeffding/relation-som-kategori/transcription.tex` and 4 in
+`nielsen/propaedeutik-1860-61/transcription.tex`, neither of which has any
+page-joint hyphens at all.
+

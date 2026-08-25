@@ -64,6 +64,35 @@
 %  and battered sorts (62, 65, 72, 73). Quote-balance runs 13/13 — no
 %  unmatched quotation marks in this book.
 % ============================================================
+%
+%  PAGE-JOINT AND PARAGRAPH REPAIR (2026 pass; sixth item swept):
+%        Built by splicing page-range fragments into a skeleton that separated
+%        them with blank lines, so a leaf the printed text runs across acquires a
+%        paragraph the book does not have, and a word broken across a leaf was
+%        joined with a BARE hyphen, printing as "Stør- relse".
+%        Repaired here: 7 page-joint hyphens (pp. 10, 47, 64, 68, 75, 81, 82);
+%        1 MISSING paragraph break added at p. 13 (image-verified); 0 false
+%        breaks — this file was the cleanest of the six on that count.
+%
+%  THIS BOOK FORCED TWO CORRECTIONS TO THE AUDIT ITSELF, and they were general
+%        enough that the five books swept before it were re-run against them:
+%          (a) the "black edge" ink threshold was 0.45, which is right for a
+%              solid scan edge but on this Google scan catches ordinary dense
+%              Fraktur TEXT LINES (47 rows a page exceed it, peaking at 0.51).
+%              The crop was eating a quarter off the top and bottom of every
+%              page. Raised to 0.80.
+%          (b) the audit took the first FULL-MEASURE line as the page's first
+%              line, assuming body lines are justified. But a page often opens
+%              with the SHORT TAIL of a paragraph carried over from the previous
+%              leaf, and skipping it measures the line below — six pages here
+%              reported a phantom +75 px indent that way. Re-running the earlier
+%              books under the corrected rule found SIX GENUINE MISSING BREAKS
+%              they had been passed clean on: p. 20 of Om personlig Sandhed and
+%              pp. 17, 36, 48, 76, 117 of the Johannes Climacus translation.
+%        The engine now lives once, in texts/_paragraphs_core.py, because six
+%        copies of it had drifted apart; paragraphs.py here supplies only this
+%        book's constants.
+% ============================================================
 \documentclass[12pt]{book}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
@@ -823,7 +852,7 @@ reflecteret i b, og b i a, c i x, og x i c; Tælleren forudsætter
 Henblik til Nævneren, og Nævneren til Tælleren: det er subjectiv
 Reflexion. Vælges en Ligning som: $\frac{dy}{dx} = c$, saa er
 Tælleren intet umiddelbart Led, men en Reflex af en i Forsvinden
-forsvunden Stør-
+forsvunden Stør\-%
 % --- p. 10 ---
 relse, og det Samme gjælder om Nævneren dx; idet de to Reflexer
 reflecteres i hinanden og danne Quotienten, bliver Reflexionen
@@ -933,6 +962,10 @@ optaget Bestemmelsen: Ikke-Viden.
 De Modsigelser, hvormed den endelige Viden fra alle Sider er
 behæftet, samle sig tilsidst i den ene: Alvidenhed er nødvendig og
 dog ubegribelig.
+% The printed page opens an INDENTED new paragraph (measured on the
+% page image against this page's own body margin), so the blank line
+% below is a real paragraph break.
+
 % --- p. 13 ---
 At Alvidenhed er nødvendig, fremlyser af Videns oprindelige Væsen. Da
 nemlig alle Tilværelsesbestemmelser ere i logisk Forstand
@@ -2230,7 +2263,7 @@ hvorved den skal opfyldes: mellem Fordringen og Opfyldelsen
 ligger Anlæget.
 
 Anlæget er Opfyldelsens reale Mulighed, Fordringens
-første, umiddelbare Tilfredsstillelse. Men denne Umiddel-
+første, umiddelbare Tilfredsstillelse. Men denne Umiddel\-%
 % --- p. 47 ---
 barhed er i sig selv utilfredsstillende; thi det strider mod
 Anlægets Væsen at forblive i umiddelbar Tilstand af Anlæg.
@@ -2843,7 +2876,7 @@ Udvikling, saa er Idealismen objectiv.
 Den subjective Idealismes videnskabelige Grundlag er objectivt; dens
 Theser, Antitheser og Syntheser have, skjøndt de alle angaae
 Subjectivitetens Væsen, og Indholdet forsaavidt er subjectivt,
-desuagtet Præg af objective, almeen-
+desuagtet Præg af objective, almeen\-%
 % --- p. 64 ---
 gyldige Læresætninger og maae af den Grund siges at indeholde
 objective, almeengyldige Sandheder.
@@ -2989,7 +3022,7 @@ Verden angaaer, bliver det Overgribende, kunde det vel synes, som om
 den grundige Realisme uden videre maatte falde sammen med den
 objective Idealisme. Dette er imidlertid en overfladisk Betragtning.
 Vel maa Realismen for Sandhedens Skyld lægge Vægt paa Begrebet,
-ligesaa vel som Idealismen; men det realistiske Begreb er væ-
+ligesaa vel som Idealismen; men det realistiske Begreb er væ\-%
 % foot of p. 67 carries the sheet signature »5*«
 % --- p. 68 ---
 senlig forskjelligt fra det idealistiske, hiint er et Vidensbegreb,
@@ -3260,7 +3293,7 @@ den ideelle Objectivering svarer Idealismen, til den reelle
 Realismen.
 
 Kun det Objectiverede er Object; altsaa: som Objectiveringen er, maa
-Objectet være, som Objectet er, maa Ob-
+Objectet være, som Objectet er, maa Ob\-%
 % --- p. 75 ---
 jectiveringen være: Objectet har sin Sandhed i Objectiveringen, og
 omvendt.
@@ -3497,7 +3530,7 @@ fremstille det i sig Nødvendige, det Almeenfornuftige, maae vi
 særlig nævne Mathematik og rationel Mechanik. Men at det er en
 Mathematiker aldeles umuligt at stille nogensomhelst bestemt Opgave
 uden at sætte og forudsætte Noget vilkaarligt, vil Enhver ved blot
-at gjøre et Forsøg overbevise sig om. Det er saa langt fra, at For-
+at gjøre et Forsøg overbevise sig om. Det er saa langt fra, at For\-%
 % --- p. 81 ---
 nuften skulde modsætte sig dette Vilkaarlige, at den uden en i
 Udgangspunkterne vilkaarlig Sætten og Forudsætten umulig kan komme
@@ -3534,7 +3567,7 @@ er den absolute Subjectivitet at bestemme som Aand.
 
 Aanden er hverken den rene Fornuft i abstract Almindelighed ei
 heller et Enkeltsubject med abstract Vilkaarlighed. I Aanden som
-Aand har Fornuftnødvendigheden gjennem-
+Aand har Fornuftnødvendigheden gjennem\-%
 % foot of p. 81: printer's signature line »R. Nielsen: Grundideernes
 % Logik.« with sheet numeral »6«
 % --- p. 82 ---

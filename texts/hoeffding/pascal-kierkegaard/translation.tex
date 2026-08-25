@@ -35,6 +35,30 @@
 %  Fragment references "(fr. 144 Br.)" are Brunschvicg's numbering of the
 %  Pensées and are kept verbatim.
 % ============================================================
+%
+%  PAGE-JOINT AND PARAGRAPH REPAIR (2026 pass; fifth item swept, after
+%        speculative-methode where the fault was found, evangelietroen-
+%        theologien, om-personlig-sandhed and johannesclimacos):
+%        Both files here were built by splicing page-range fragments into a
+%        skeleton that separated them with blank lines. A blank line is a
+%        paragraph break, so wherever the printed text ran on across a leaf the
+%        splice invented a paragraph the article does not have.
+%        Repaired in this file: 1 FALSE paragraph break (p. 239). No hyphen
+%        joints and no missing breaks. The transcription alongside carried nine
+%        false breaks and ten hyphens; see its header.
+%        `paragraphs.py` in this directory performs the audit and takes either
+%        file as its argument. Run it before any future publication.
+%        ITS ONE HARD PROBLEM HERE IS THE RUNNING HEAD, which is full-measure
+%        and lies in BOTH directions: on even pages the Revue sets the folio out
+%        in the left margin, so the head begins ~340 px LEFT of the block and the
+%        page reads as a -337 px hanging indent; on odd pages the head is
+%        CENTRED, so it begins ~100 px RIGHT of the block and is
+%        indistinguishable from a paragraph indent — printed p. 245 was reported
+%        as +97 px on that mistake and in fact opens flush. Two guards are needed
+%        together: the line must sit in the text block AND not be followed by the
+%        extra white space that separates a head from the body. With both,
+%        continuations measure -19 to +20 px and the one paragraph opening +77.
+% ============================================================
 \documentclass[12pt,a4paper]{article}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
@@ -754,7 +778,6 @@ himself would therefore not be orthodox, and his authority is no more infallible
 in matters of faith than when facts are in question. For the Pope has to attend
 to so many affairs that he has not the time to occupy himself with the things of
 faith
-
 % --- p. 239 ---
 (fr. 882). But if Rome condemns the truth, one must cry out all the louder; one
 must appeal to heaven. ``It is better to obey God than men'' (fr. 920). Pascal's
