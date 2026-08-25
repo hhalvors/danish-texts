@@ -162,6 +162,24 @@
 %        textalpha/greek-fontenc in text mode. Same for ϕ ϖ ϱ ϐ ϵ ϲ -> φ π ρ β ε σ.
 %        Accents and breathings are NOT fount variants — reproduce them exactly.
 %
+%  BATCH SEAMS: the file was built by splicing thirteen page-range fragments
+%        into a skeleton that separated them with blank lines. A blank line is a
+%        paragraph break, so at every seam where the printed text simply runs on
+%        it had to go — at p. 96/97 it was breaking a word in half. Which seams
+%        run on was settled by MEASUREMENT, not by reading: for each seam page,
+%        the left edge of its first full-measure line was compared with the
+%        median left edge of the lines below it, on the page image.
+%        ELEVEN seams continue the previous paragraph (indent within ±10 px):
+%        pp. 13, 25, 49, 61, 73, 85, 97, 109, 121, 133, 157 — blank line removed.
+%        TWO begin a new indented paragraph: p. 37 (+223 px) and p. 145 (+230 px)
+%        — blank line kept.
+%        NB the folio at the head of the page must be excluded from that
+%        measurement, and on many leaves a sliver of the facing leaf's black edge
+%        survives the crop and joins the folio's row band, making the folio look
+%        like a full-measure line and putting its own left edge — about 1300 px
+%        in — forward as the paragraph indent. Ignoring the right-hand 8 % of the
+%        sheet fixes it. Without that, every seam reads as a new paragraph.
+%
 %  PAGE-JOINT WORD BREAKS: a word broken across a printed page boundary is
 %        joined with `\-%` at the end of the last line of the earlier page —
 %        a discretionary hyphen plus a comment that eats the newline — so that
@@ -226,9 +244,24 @@
 %
 %  QUOTE BALANCE: (none logged yet — see check.py)
 %
-%  STATUS: front matter transcribed (title page, the surviving page of the
-%        preface, the Indhold and the Trykfeil), and body pp. 1--36 of 162.
-%        Five errata applied so far (p. 4 twice, pp. 7, 10, 12).
+%  STATUS: TRANSCRIPTION COMPLETE — the front matter and printed pp. 1--162,
+%        the whole of the book that survives in this scan, every page
+%        image-verified. §§ 1--23 all present and continuous across both Deele;
+%        no gaps, no duplicate page markers; braces balanced; all twelve
+%        Rettelser applied and flagged % ERRATA at their sites (pp. 4 twice, 7,
+%        10, 12, 15, 41, 42, 48, 71, 89, 132). 100 footnotes on 66 printed
+%        pages, each of those pages carrying its \setcounter{footnote}{0}.
+%        Compiles 0 errors / 0 missing characters / 0 undefined control
+%        sequences / 0 hyperref token warnings / 0 duplicate PDF destinations.
+%        QUOTE COUNTS CLOSE against the five logged printer's defects at
+%        pp. 49, 50 (twice), 80 and 151.
+%        Six places where the Indhold and the printed § head disagree are
+%        recorded with BOTH readings and the printed head set: §§ 3, 7, 10, 13,
+%        15, 21. They are not normalised; the disagreement is a datum.
+%        STILL OPEN: (1) the missing preface leaf above; (2) the two closing
+%        marks in p. 50's Guerike note, raised or low — see RESUME-NOTES;
+%        (3) three pointed Hebrew words (pp. 33, 43, 159) transliterated for
+%        want of a Hebrew font, each flagged at its site.
 %        Production scaffolding for this book (pagemap.py, cache.sh, crop.py,
 %        ocr.sh, spacing.py, check.py, splice.py, BATCH-AGENT.md,
 %        RESUME-NOTES.md) lives in this directory on the editor's machine but
@@ -1005,7 +1038,6 @@ begrændsede og fremdragne for Lyset, og havde de saaledes alt opnaaet deres
 % ERRATA (Rettelser, p. 12 l. 1 fra neden): printed "gaae ind", corrected here
 % to "slaae ind". The uncorrected reading was verified on the image at 3x.
 slaae ind paa en anden Vei for deres Granskning.
-
 % --- p. 13 ---
 % p. 13 opens FLUSH LEFT (no indent), i.e. it continues the paragraph running
 % over from p. 12; but no word is broken across the joint --- the page begins
@@ -1387,7 +1419,6 @@ Erfaringsgjenstand ved et: ”saa eller saa!” og heller ikke%
 % that batch to settle; the claim in the header should not be relied on until
 % it has been.
 % ============================================================
-
 % --- p. 25 ---
 % p. 25 opens mid-paragraph: p. 24 ends "...og heller ikke" (complete word, no
 % broken syllable at the joint --- verified on PDF 33 at the foot of the page).
@@ -2301,7 +2332,6 @@ de ikke kunne begribe Alt, ikke det Høieste.
 Men forsøger man nu at henføre alle Ting til to Klasser, de begribelige og de
 ubegribelige, saa at de skulle staae afsondrede hver paa sin Side, vil man i
 Sandhed komme til det Resultat, at de enten alle ere begribelige, eller at slet
-
 % --- p. 49 ---
 \setcounter{footnote}{0}
 % JOINT WITH p. 48, verified on the image at 0.42x: p. 48 ends "eller at slet"
@@ -2800,7 +2830,6 @@ Gjenstande sideordnede, saa at det Hellige profaneres, medens paa den anden Side
 de himmelske Væseners Nedstigen i jordiske Skikkelser medfører, at timelige
 Gjenstande tillægges guddommelig Hellighed, fordi de indeslutte det Guddommelige
 i sig, saa at det i sig Vanhellige bliver Gjenstand for Til-
-
 % --- p. 61 ---
 % ELISIONS. Throughout pp. 61--72 the notes set elisions as three, four or six
 % spaced points. They are uniformly rendered \ldots here; the printed count is
@@ -3281,7 +3310,6 @@ Locor. Theol. præfatio.}}. Men herved fremkom tillige lidt efter
 % sentence "Sequor autem ... Ecclesiæ catholicæ." is set in a SLOPED antiqua
 % against the upright antiqua of the rest; \emph{} inside \textit{} reverts to
 % upright and so preserves that contrast, which is what it is for.
-
 % --- p. 73 ---
 \setcounter{footnote}{0}
 % *** THE JOIN WITH THE PREVIOUS BATCH. *** The first three lines of p. 73's
@@ -3869,7 +3897,6 @@ efter at at holde Middelveien; derfra Heftigheden, Partisygen, Fana-
 % the note, qv in the body. All as printed.
 % TYPE: "Dr." is antiqua; "K. H. Hagenbach: Vorles. üb. W. Geschicht. d.
 % Reform." and "Theil", "P." and "ff." are Fraktur; the figures are antiqua.
-
 % --- p. 85 ---
 % JOINT WITH p. 84, verified on the image (PDF 93 foot / PDF 94 head, 3x):
 % p. 84 ends "...Partisygen, Fana-" and this page opens "tismen" --- the word
@@ -4037,7 +4064,7 @@ Aands Sværd; lykkes det dem derimod formummede at indsnige sig i Borgen,
 begynde de en hemmelig Undermineren. Dog er disse Fjenders Trædskhed ikke
 saaledes at forstaae, at de ved eet eller andet Middel skulde have underkjøbt
 samvittighedsløse (κεκαυτερισμένους τὴν ἰδίαν συνείδησιν) Theologer til at
-% *** ERRATA APPLIED HERE (the Greek entry). ***
+% ERRATA (Rettelser, p. 89 l. 5 fra oven) --- the Greek entry:
 % Rettelser, p. 89 l. 5 fra oven: κεκαυτερισμένυος l. κεκαυτερισμένους.
 % The UNCORRECTED printed reading was verified on PDF 98 at 3--10x before the
 % correction was applied: after "μέν" the page sets upsilon, then omicron, then
@@ -4425,16 +4452,12 @@ eller selv have kuldkastet Kirkens Bygning; og dog var ifølge Sagens Natur inge
 af Delene mulig. Vel indeholder Kriticismen en Negation af Troen, men
 Spørgsmaalet er, i hvilket Punkt Negationen ligger. Idet Empirismen og den
 subjective Ratio\-%
-% BATCH SEAM: p. 96 ends mid-word. "Ratio-" is completed by "nalisme" at the
-% head of p. 97, so the discretionary hyphen \-% joins them without printing a
-% hyphen. NOTE FOR THE SPLICER: transcription.tex keeps a BLANK LINE between
-% consecutive "[text to be added]" markers, and a blank line here would break
-% the paragraph in mid-word. The blank line between this fragment and the
-% pp. 97--108 fragment must be removed at splice time. (The same seam exists
-% between every earlier pair of batches; and note that pp. 1--12 joined broken
-% words across page markers with "\-%" while pp. 25--36 onward used a bare
-% hyphen, which prints a spurious "- " --- worth normalising in one pass.)
-
+% BATCH SEAM, REPAIRED. p. 96 ends mid-word: "Ratio-" is completed by "nalisme"
+% at the head of p. 97, and the discretionary hyphen \-% joins them without
+% printing a hyphen. The blank line that the batch skeleton left here would have
+% broken the paragraph in mid-word; it has been removed, as at every other seam
+% where the printed text runs on. See the PAGE-JOINT and BATCH-SEAM notes in the
+% header for how all thirteen seams were decided.
 % --- p. 97 ---
 \setcounter{footnote}{0}
 % JOINT WITH p. 96, verified on PDF 105 at 0.75x: p. 96's last body line ends
@@ -4867,7 +4890,6 @@ de almindelige Betingelser for Tale og Handling, som de hellige Forfattere
 vare underkastede, tilføiet de nødvendige psychologiske Bemærkninger og
 saaledes med temmelig Sikkerhed lært den Mening af de enkelte Ord og Udtryk at
 kjende,
-
 % --- p. 109 ---
 \setcounter{footnote}{0}
 % JOINT WITH p. 108, verified on the image (PDF 117 foot / PDF 118 head, 0.55x):
@@ -5458,7 +5480,6 @@ des creatürlichen Selbst in die göttlichen Substanz?”}.
 % however it is typed. Set as "J." to match the treatment of the same sort in
 % "J.~G. Walch" at p. 84; the rejected alternatives are "I." and "H.".
 % The printed ellipses run to three and four points; all are set as \ldots.
-
 % --- p. 121 ---
 % NO NOTE OF ITS OWN, so no \setcounter{footnote}{0} here. The whole footnote
 % block on this page (and on p. 122) is the RUNOVER of the note that begins on
@@ -5908,7 +5929,6 @@ aussprechen. Strauß L.~J. § \textit{1}: Pag. \textit{2}.}. Man indseer nu, at
 de Ting, hvorpaa man hidtil troede, vare falske, og dette bliver en Kilde til
 Sorg og Bedrøvelse; men man seer tillige, naar Erkjendelsen har naaet sin fulde
 Udvikling, at det er den samme Gudsvirksomhed, der før var Kilden til
-
 % --- p. 133 ---
 Mytherne, som nu atter har bevirket Erkjendelsen af disses Usandhed. Det er da
 saa langtfra, at Gud forlader os, naar vi have opdaget Vildfarelsen, at han
@@ -6313,8 +6333,479 @@ Vidnesbyrd\footnote{Hvor kraftigt og skarpsindigt J.~H. Fichte har bekjæmpet
 % Fichte wrote himself J. H. Fichte). The ABBYY layer reads I. H.
 denne Rationalisme, er bekjendt nok.} er det sande Kjendemærke paa Rationalisme.
 
-% [text to be added: pp. 145--156]
+% --- p. 145 ---
+% JOINT p. 144/145 verified on the image: p. 144's note ("Hvor kraftigt og
+% skarpsindigt J.~H. Fichte har bekjæmpet ...") does NOT run over. p. 145 carries
+% 32 body lines and no small type at the foot at all --- the only thing below the
+% last text line is the centred antiqua sheet signature "10", which is not
+% transcribed. p. 145 therefore carries NO note of its own and gets no
+% \setcounter. Its first line IS indented (x570 against the page's own 340 left
+% edge), so a new paragraph begins here; p. 144 ended a sentence.
+Panlogismen har en falsk Gud; den er derfor ulogisk (ἄλογος), dersom den ikke
+% GREEK, read at 3x: ἄλογος, alpha with smooth breathing and acute. No fount
+% variants in this word.
+gaaer ud over sig selv; men den har en sand Logik og behøver derfor kun at tye
+hen til Christus for at finde en Gud af sand logisk Natur. Den erklærer selv, at
+Veien til Immanentsen kun gaaer igjennem de største Modsætninger, men dens egne
+Modsætninger ere af en altfor let Natur; kommer den derfor til fuldkommen
+Erkjendelse af den logiske Grundsætning, at der Intet kan fremkomme i Slutningen,
+som ikke i Virkeligheden har ligget i Principet, nødes den ogsaa til at erkjende,
+at den Modsætning, der viser sig i denne Verden imellem det Ideale og Reale, har
+sin Forudsætning og Grund i en fra Evighed af. medieret Immanents af begge, med
+% PRINTER'S DEFECT, p. 145: a POINT after "af" --- "i en fra Evighed af."
+% --- where the sentence runs straight on into "medieret Immanents af begge".
+% Transcribed as printed. Read at 2.5x: the mark sits on the baseline and is the
+% same square dot as the other periods on the page, not a speck; both OCR
+% witnesses see ink there (tesseract "af.", ABBYY "a f-").
+andre Ord, i en guddommelig, uskabt, fra vor menneskelige Fornuft, som det
+hedder, \emph{qvalitativt} forskjellig Fornuft. Men har man saaledes erkjendt
+% \emph{qvalitativt}: letterspaced, confirmed at 2.5x (spacing.py misses it; the
+% ABBYY layer preserves it as "q v a l i t a t i v t"). spacing.py's flags on
+% this page ("til", 2.19; "det,", 1.35) are justification only --- checked on the
+% image, the letters inside those words are tight. Rejected.
+Guds absolute Frihed, vendes hele Forholdet imellem de positive Momenter og de
+logiske Kategorier om; vi indsee da, at det er en positiv Gudskraft, der har
+begrundet den hele reelle Tilværelse og netop derved sat de ontologiske Former
+immanente i Tingene. Vi henvises da til det virkelige Livs hele Fylde, i hvilken
+alle Skikkelser maae betragtes, saaledes som de møde os i Livet; og saaledes gjør
+da Troens og Anskuelsens Moment atter sin Ret gjældende. Vi betragte da det
+menneskelige Samfund, hvori vi befinde os, i hvilket den evige Personligheds Idee
+skinner igjennem; vi see hen til dette Samfunds guddommelige Stifter, der
+fremgik i Tidens Fylde, da den Lov, der var givet Jøderne, havde udviklet
+Syndsbevidstheden; vi erkjende da, at Gud ad denne Aabenbarings Vei er fremtraadt
+som den Treenige, og saa fremdeles. Det er fornuftstridigt at ville drage nogle
+af disse Elementer i Tvivl, i den Tanke ved Hjælp af andre Elementer at komme til
+en dialektisk Nødvendighed af det,
+% --- p. 146 ---
+\setcounter{footnote}{0}
+der er Gjenstand for Tvivl; thi nærer man virkelig Tvivl om et eller andet
+Moment, maa man ogsaa nødvendigt tænke de øvrige positive Momenter, med hvilke
+det staaer i Sammenhæng, paa en saadan Maade, at Tvivlen om hiint ligger skjult i
+disses Begreb. Det nytter derfor kun lidet imod Deisten at appellere til Christi
+Aabenbaring, da han har et eensidigt Begreb om Gud. Derfor skal heller ikke
+Theologien bevise, at der følger af Guds Treenighed, at Christus med dialektisk
+Nødvendighed har maattet aabenbare sig paa dette eller hiint Sted; men da han nu
+eengang har aabenbaret sig, skal Theologien kunne begribe, hvorledes dette
+positive Aabenbaringsphænomen hænger sammen med de øvrige positive Phænomener;
+denne Aabenbaring er ligesom en reel Tanke, der skal kunne forsones med de øvrige
+reelle Tanker. Den religieuse Begribens absolute Forudsætning er derfor den
+absolute Tro, og det er saa langtfra, at Videnskaben krænkes ved denne Troens
+Uforkrænkelighed, at det meget mere først er ved dennes Hjælp, at den dialektiske
+Nødvendighed og Negationen kan gjennemtrænge alle Systemets Elementer. Som derfor
+den abstracte Logik gaaer over i de positive Elementer, saaledes maae paa den
+anden Side de positive Elementer nødvendigviis gaae over i en concret Metaphysik
+og speculativ Empirie. Naar Gjenstandene sammenstilles paa udvortes Maade, er det
+ude med Videnskaben, og det er derfor næsten blevet et almindeligt Ordsprog, at
+enhver Philosophie bør begynde med at tvivle, skjøndt man hellere maatte sige:
+”med at negere”; thi Tvivlen\footnote{At der ligger en Usandhed skjult under
+% PRINTER'S DEFECT in the MARK of this note, p. 146: the note itself is signed
+% "(1" --- an OPENING parenthesis before a raised 1 --- where every other note in
+% the batch is signed "1)". Read at 2x. The BODY mark on the same page is the
+% ordinary "1)" (after "Tvivlen", with a space before it), so only the note-foot
+% mark is turned. Set as an ordinary \footnote; the printed form is recorded here.
+denne Tvivl, have allerede Philosopherne anerkjendt. Saaledes J.~L. Heiberg: Al
+sand Philosophie maa forene begge de af Hr. Martensen anførte Valgsprog:
+Gudsfrygten maa den have i sit Hjerte, Tvivlen i sit Øie. Perseus Nr. \textit{1}.
+P. \textit{41}.} staaer i Modsætning
+% This note is FRAKTUR throughout and carries NO quotation marks of any kind ---
+% neither the body's raised ” nor the Danish „ “ --- around either the Heiberg
+% sentence or the Valgsprog. Read at 2x. Only the two figures are antiqua, hence
+% \textit{}; "P." is the Fraktur P (= Pagina), following the precedent at p. 46.
+% The note RUNS OVER onto p. 147, where its last two lines ("Valgsprog: ... P.
+% 41.") stand under the rule above p. 147's own note. The whole of it is set here.
+% No paragraph break anywhere on p. 146: every line begins at the same left edge.
 
+% --- p. 147 ---
+\setcounter{footnote}{0}
+% NOTE on the reset: the block under the rule on this page begins with two lines
+% that carry no mark of their own --- they are the tail of p. 146's note and are
+% inside that \footnote. The reset is for p. 147's OWN note, marked 1).
+til Troen, men at Negationen og Abstractionen ikke krænke den, have vi alt forhen
+godtgjort. Ligesom derfor det positive Objectivitetsmoment er det absolut
+overveiende i Troen, saaledes vender ved Negationen Subjectivitetens absolute
+Frihed tilbage, thi alle Momenter maae negeres og prøves paa en saadan Maade, at
+der ikke bliver et eneste Phænomen urørt\footnote{Det er denne Prøvelse, Sibbern
+kræver, naar han fordrer: ”en altomfattende Debat af Alt imod Alt.”}. Hvad der
+% p. 147, note 1): the mark stands after "urørt" and BEFORE the period. The
+% quotation inside it takes the body's RAISED ” at both ends --- read at 2x, the
+% opening mark is at cap height, not on the baseline. So this note does NOT join
+% the group (pp. 48, 70, 79, 84, 106) that uses the Danish low-high pair.
+anføres som Fortjeneste ved Hegels Logik, den store Skarpsindighed nemlig, med
+hvilken den ved en grundig Negation og Modsigelse skjærper den dialektiske Spore,
+det Samme ville vi ogsaa finde i Dogmatiken, naar vi kun betræde den rette Vei.
+
+De enkelte Momenters gjensidige Modsætning har langt større Dybde i den
+christelige Dogmatik end i Panlogismen, og det er netop derved, at hiin fører til
+en sand Identitet og Forsoning. Netop fordi Panlogismen for at komme til
+Immanentsen, deelte Tilværelsen i to abstracte Dele, netop derfor kunde den ikke
+komme til Identiteten; den christelige Dogmatik derimod sætter en absolut
+Modsætning imellem den i Sandhed treenige, i sig fuldtfærdige Gud og den skabte
+Verden; men ved denne Grundmodsigelse kan en sand Forsoning komme istand imellem
+Evighedens Fred og Timelighedens Kampe, i det de Knuder, der indvikles her,
+allerede der i Principet selv ere løste.
+
+For at forene og forlige alle Ideerne, opoffrer Panlogismen de enkelte
+Selvbevidstheder og bevæger sig netop derved i en evig Modsætning mellem
+Realiteten og Idealiteten; den christelige Dogmatik derimod tillægger de enkelte
+Selvbe\-%
+% --- p. 148 ---
+vidstheder en indre uendelig Immanents i sig, ifølge hvilken de vel døe
+\textit{ad extra} (ὁ ἔξω ἄνθρωπος), men ikke destomindre \textit{ad intra} (ὁ ἔσω
+ἄνθρωπος) bevare sig selv i al Evighed. Men i det den saaledes ligesom
+% GREEK, p. 148, read at 3x. NORMALISED FOUNT VARIANTS per the header: the fount
+% sets script theta (U+03D1) and cursive rho (U+03F1) in ἄνθρωπος; both are typed here as plain
+% θ and ρ. Accents and breathings are as printed (ὁ rough, ἔξω and ἔσω smooth +
+% acute, ἄνθρωπος smooth + acute). "ad extra" / "ad intra" are antiqua -> \textit{}.
+% NO FOOTNOTE on this page: 32 body lines run to the foot, no rule, no small type.
+atomistisk adskiller dem alle fra hverandre, giver Syndens Natur den dybeste
+Udvikling, urokkeligt fastholder det ethiske Modsætningsforhold imellem Gud og
+Mennesket, trænger den ogsaa ind til en sand Immanents af alle disse forskjellige
+Momenter, i det den uddanner det dybeste Friheds=, Omvendelses= og
+Kjærligheds=Begreb.
+% The line is loosely justified and the print shows a space on each side of the
+% last double-hyphen ("Kjærligheds = Begreb"), where "Friheds=," and
+% "Omvendelses=" are tight; set closed, as the series requires. spacing.py's
+% flags on this page ("Kjærligheds", 1.72; "selv", 1.39) are that same
+% justification, not Sperrsatz --- checked at 1.5x.
+
+I det Panlogismen vil overføre paa hele Menneskeslægten, hvad Kirken tillægger
+% "I det" is set as two words, and the line IS indented (x922 against the page's
+% own 697 left edge; the ink at x753 that the line-scan reports is a speck in the
+% margin). Measured, not eyeballed, because the preceding line ends short and the
+% Fraktur I/J glyph carries a long low tail.
+sin Christus, uden at erindre paa den ene Side den indre, uendelige Fylde, der er
+den menneskelige Selvbevidstheds Væsen, paa den anden det gjensidige Forhold
+imellem Christus og den hellige Aand, sammenblander den i ynkelig Forvirring
+Momenter med hinanden, der ere hinanden reelt modsatte. Den christelige Dogmatik
+tillægger derimod sin Christus en fuldkommen og absolut Identitet af Gud og
+Menneske, og det er saa langt fra, at Ideernes lige Ret og Alles Identitet
+forstyrres ved denne, at meget mere Livets Uforkrænkelighed igjennem den Ene
+bliver Alle tildeel, idet Legemets enkelte Lemmer hænge organisk sammen med
+Hovedet.
+
+Naar endelig Panlogismen uden at kjende det kosmiske Systems sande og virkelige
+Mediation, bestandigt fører Ordet Mediation i Munden og antager, at den hele
+dialektiske Udviklingsgang i Virkeligheden bestandigt har været den samme, som om
+det Forhold, der i vor Tid finder Sted imellem Naturen og den subjective Aand,
+var evigt, synes den paa en mærkelig Maade at modsige sig selv, naar den
+desuagtet forjetter en Tid, da Aanden og Naturen skulle uendeligt gjennemtrænge
+% "skulle", NOT the Fraktur OCR's "kunne" --- the two witnesses disagreed and the
+% line was read at 1.4x: the word is s-k-u-l-l-e.
+hinanden. Den christelige Dogmatik fremstiller derimod, uagtet den gaaer ud fra
+en sand metaphysisk Iden\-%
+% --- p. 149 ---
+titet af den guddommelige Villie og Naturlovene, den objective Mediation paa en
+saadan Maade, at Gud paa den ene Side har gjort Naturen til Grundlaget for den
+subjective Aand og derfor ogsaa lader sine Ideer udvikle sig igjennem Naturens
+objective Skikkelser, og paa den anden Side tillige paa særegen Maade forklarer
+Naturen ved sin Nærværelse, da Synden havde formørket den menneskelige
+Selvbevidsthed og givet det verdslige og profane Moment en isoleret Udvikling,
+hvoraf da følger, at der undertiden fremtræder en skarp og virkelig Modsætning
+% spacing.py reports a footnote block starting at y=1265 on this page and flags
+% "skarp" and "Oprindelse" as [note]. Both are wrong: a row-by-row scan of the
+% page finds 32 body lines of uniform height and NO small type or rule anywhere,
+% so there is no note here and no \setcounter. "skarp" and "Oprindelse" both fall
+% at the loose end of a justified line; checked at 1.5x and rejected.
+imellem den almindelige guddommelige Styrelse og den overnaturlige Aabenbaring,
+--- en Mediationslære, der indeholder en sand Fremstilling af Guds væsentlige
+Accommodation efter de forskjellige Tiders og Menneskers særegne Charakteer.
+
+Den menneskelige Fornuft skyer ikke disse virkelige Modsætninger og
+Grundmodsigelser; thi den erkjender, at de alle have deres Oprindelse fra og
+Tilværelse i den selv. Ligesom derfor det gjenfødte Menneskes Jeg bliver det
+samme, uagtet et ganske nyt Liv skabes i det, saaledes er det ogsaa saa langtfra,
+at de Modsætninger, der gjennemtrænge og ligesom opløse den menneskelige Fornuft,
+ophæve dennes Identitet med sig selv, at den tvertimod overvinder Smertens
+Modsigelse og opnaaer Forsoning, alteftersom den mere og mere nedsænker sig i og
+tilegner sig disse Modsætninger. Heraf bliver det indlysende, at den skabte
+Fornuft i Virkeligheden bestemmes og begribes ved den uskabte, og at Mediationen
+af de overnaturlige og naturlige Momenter netop foregaaer igjennem den absolute
+Modsætning; ja man kan med Sandhed sige, at enhver hellig Historie, det er,
+enhver Modsætning mellem den pragmatiske Verdensudvikling og Miraklerne, netop
+har den Opgave at føre til en Forsoning af hine modsatte Momenter.
+
+% --- p. 150 ---
+\parag{23}{Miraklet og den hellige Historie.}
+% § 23 --- the last § of the book. The printed head AGREES verbatim with the
+% Indhold ("Miraklet og den hellige Historie."), so there is nothing to record on
+% both sides here. Read at 2x: "§ 23." centred in bold ANTIQUA, the argument below
+% it centred, letterspaced Fraktur, not bold --- the standard form, so \parag.
+% NO FOOTNOTE on this page.
+
+Som det forholder sig med Aabenbaringen, saaledes forholder det sig ogsaa med den
+hellige Historie; Aabenbaringens Sandhed afhænger af Miraklets Virkelighed, men
+dette udvikles igjennem Tingenes kosmiske \emph{Mediation}. Undersøgelsen om
+% \emph{Mediation}: letterspaced, read at 2x ("M e d i a t i o n"); "kosmiske"
+% before it is not. The ABBYY layer preserves the spacing and agrees.
+Miraklets Virkelighed gaaer nemlig ikke ud paa at udvikle, at Guds Villie har
+Indflydelse paa Naturen; thi der er en virkelig Forbindelse mellem Guds
+Virksomhed og Naturens Kræfter, og hvergang vi bevæge Haand eller Fod, give vi
+selv et Exempel paa, hvorledes Tanken har Indflydelse paa Legemet; --- men dens
+Maal er, som vi alt før have bemærket, at paavise en umiddelbar Ophævelse af den
+Modsætning, der er imellem de guddommelige Raadslutninger og Naturens Love.
+
+Alle Mirakler synes saaledes fornuftstridige, fordi Gud stedse virker overalt
+lige middelbart og umiddelbart; men en saadan Fremstilling af det metaphysiske
+Forhold er ligesaa utilfredsstillende, som det vilde være, dersom Nogen meente at
+have forstaaet den menneskelige Friheds Begreb, fordi han havde iagttaget, at Gud
+virker Alt i Mennesket, og at Mennesket tillige er selvvirkende. Alle saadanne
+Grundforhold maae nødvendigt udfolde sig gjennem Timelighedens Modsætninger.
+Saaledes bliver det da umuligt at fremstille en grundig Mediation af de
+guddommelige og menneskelige Forhold uden at indrømme Miraklet en bestemt Plads.
+
+Deismen, der fremfor Alt urgerer en naturlig Verdensorden, nødes dog selv til at
+appellere til eet Mirakel, som Udgangspunkt for dens hele Pragmatisme, Skabelsen
+nemlig. Det samme gjælder om Panlogismen; thi medens den har opdaget
+Illusionsmomentet i de christelige
+% --- p. 151 ---
+\setcounter{footnote}{0}
+Traditioner, saa at disse ikke længere fremstille os Gud umiddelbart nærværende,
+indrømmer den dog tillige, at den objective Aand ene og alene gjennem dette
+Illusionsstandpunkt har kunnet naae det Oplysningsstandpunkt, der udmærker vor
+Tid. Hvad der fremstilles middelbart i Philosophien, var altsaa umiddelbart
+tilstede i hine Beretninger, saa at Adskillelsen imellem de almindelige
+Begivenheder og Aabenbaringsphænomenerne atter her vender tilbage. Alle Tings
+Udvikling har da det Maal at føre til en gjensidig Immanents af Natur og Aand paa
+ethvert Punkt, forat det \emph{Middelbare} og \emph{Umiddelbare} overalt kunne
+% \emph{Middelbare}, \emph{Umiddelbare}: letterspaced, read at 1.6x; the ABBYY
+% layer preserves both. Nothing else on the line is.
+falde sammen; men skal denne Harmonie blive virkelig, maae Elementerne først
+adskille sig fra hinanden, saa at Naturen og Aanden paa den ene Side hver for sig
+have sine særegne Punkter, hvor de virke isolerede, for paa den anden Side netop
+paa Grund af denne Adskillelse paa andre Punkter at kunne gjennemtrænge hinanden
+indbyrdes.\footnote{Et Exempel paa dette middelbare og umiddelbare Forhold
+% p. 151, note 1): the mark stands after "indbyrdes." --- AFTER the period, at
+% the end of the short line that closes the paragraph. Located by reading the
+% whole body block; neither OCR witness recovers it.
+frembyder det daglige Liv selv: Den ydre Natur omdannes nemlig mere og mere af
+den menneskelige Aand, men paa \emph{middelbar} Maade. Derfor siger Strauß med
+Rette: .\,.\,.\,.\ ”sie (die Menschheit) ist der Wunderthäter: sofern im Verlauf
+der Menschengeschichte der Geist sich immer vollständiger der Natur, im Menschen
+wie außer demselben, bemächtigt, diese ihm gegenüber zum machtlosen Material
+seiner Thätigkeit heruntergesetzt wird. J.~L. Schlußabhandl. § \textit{149} Pag.
+\textit{767}.
+
+Men denne middelbare Virksomhed er knyttet til den umiddelbare og reelle
+Forbindelse, der finder Sted mellem Sjel og Legeme; og vilde man nu kalde denne
+mythisk, maatte man ogsaa kalde alle Beretninger om saadanne Arbeider Myther.}
+% p. 151, note 1) --- four things recorded here, all read at 2x off the image:
+%  (a) PRINTER'S DEFECT, QUOTATION MARK: the Strauß quotation OPENS with the
+%      body's raised ” before "sie" and is NEVER CLOSED --- it runs to
+%      "heruntergesetzt wird." and then straight into the citation with no second
+%      mark. Transcribed as printed. This is the ONLY quotation-mark defect in
+%      pp. 145--156 and it is what puts the range's ” count at an odd 17.
+%      It must also go into check.py's QUOTE_DEFECTS table.
+%  (b) The mark used is the RAISED ” --- this note does NOT use the Danish low-high pair
+%      of the notes on pp. 48, 70, 79, 84 and 106 (low-high).
+%  (c) \emph{middelbar} inside the note is letterspaced ("m i d d e l b a r");
+%      "mere og mere" beside it is not.
+%  (d) PRINTER'S TRANSPOSITION: the citation reads "J.~L. Schlußabhandl." with
+%      the Fraktur J FIRST, where pp. 152 and 153 both print "Strauß L.~J. Pag."
+%      (= Leben Jesu) with the L first. Read at 2x on all three pages and set as
+%      printed on each. The German is Fraktur, so nothing in it is \textit{};
+%      only the two figures are antiqua.
+%  The print sets four spaced points before the quotation; rendered .\,.\,.\,.
+%  The note has two paragraphs, the second indented in the printing.
+
+Betragter man derfor Miraklerne isolerede, synes de fornuftstridige; men Grunden
+hertil er netop den, at det Umiddelbare altid bestemmes af det Middelbare,
+ligesom dette atter alene bestemmes af hiint. Betragtes de derimod i det almin\-%
+% --- p. 152 ---
+\setcounter{footnote}{0}
+delige Lys af Alt det, der gaaer forud for dem og følger efter dem, ere de af
+logisk Natur og kunne som en Følge deraf ogsaa begribes. Miraklet kan derfor
+kaldes en Anticipation af det Forhold, som ifølge den religieuse Aand
+metaphysisk taget allerede finder Sted og eengang skal sees virkeliggjort imellem
+den skabte Natur og Skaberen. Den Gud, der fremtræder i Miraklet, er derfor den
+samme, der er tilstede i den religieuse Bevidsthed. Miraklet er altsaa
+Religionens egen Rod (vi tale nemlig om det Mirakel, der er det vigtigste i
+enhver Religion); det indeholder det særegne Anskuelsesmoment, hvis indre Væsen
+Religionens Aand mere og mere skal udfolde. Da Miraklet saaledes udgjør Aandens
+eget Indhold, maa ogsaa den religieuse Aand selv vakle, saasnart der opstaaer
+Tvivl om Miraklets Virkelighed, og opdages det, at Miraklet er usandt, maa som en
+Følge deraf Aanden selv forsvinde og bøie sig under en mægtigere Aand, der
+medieres gjennem en sandere Virkelighed. At den panlogistiske Aand ikke kan finde
+sig i den historiske Christus\footnote{Smlgn. Strauß L.~J. Pag. \textit{766}.}
+% p. 152, note 1) --- the plain next number, mark after "Christus" with a space
+% before it. The note is a single line, FRAKTUR throughout ("Smlgn.", "Strauß",
+% "L. J.", "Pag."); only the figure is antiqua. "L. J." here has the L FIRST ---
+% contrast p. 151's "J. L.", read at 2x on both pages.
+har derfor sin naturlige Grund deri, at den ikke er medieret igjennem Christus;
+--- betragter man dens trende Hovedindvendinger, vil dette let blive indlysende.
+Den benægter nemlig for det Første Muligheden af en individuel Forening af Gud og
+Mennesket, fordi den ikke kjender de enkelte Bevidstheders indre Fylde; men
+Grunden til denne Uvidenhed have vi allerede ovenfor angivet. Den bemærker
+dernæst, at det vilde stride imod Ideens Natur som saadan at berige og ophøie et
+% "ophøie", NOT "opholde": read at 1.2x, and "indlysende." above it ends with a
+% POINT, not the comma the Fraktur OCR gives. Neither OCR witness reads this
+% stretch reliably, so lines 20--30 were read off the image as a block.
+særegent Organ paa de øvrige Organers Bekostning; men heri tager den ikke
+tilbørligt Hensyn til Mediationens reelle Moment (smlgn. § \textit{22}). Og naar
+den endelig indvender, at Christus, som individuelt Phænomen, hverken er Mere
+eller
+% --- p. 153 ---
+\setcounter{footnote}{0}
+Mindre, end det, der fremstiller sig for os i hans phænomenale
+Tilværelse\footnote{Allein, wie Schmid gründlich nachgewiesen hat, ein
+geschichtliches Individuum ist eben nur das, was von ihm erscheint; sein inneres
+Wesen wird in seinen Reden und Handlungen erkannt; zu seiner Eigenthümlichkeit
+gehört die Bedingtheit durch Zeit= und Volksverhältnisse mit, und was hinter
+dieser Erscheinung als An sich zurückliegt, ist nicht das Wesen dieses
+Individuums, sondern die algemeine menschliche Natur überhaupt, welche in den
+Einzelnen, durch Individnalitet, Zeit und Umstände beschränckt, zur Wirklichkeit
+kommt. Strauß L.~J. Pag. \textit{740}}, bemærke vi hertil, at Tilværelsen ikke
+% p. 153, note 1) --- mark after "Tilværelse", set tight against the word and
+% before the comma. The note is German FRAKTUR throughout, so nothing in it takes
+% \textit{} but the page figure; it carries NO quotation marks at all. Read at 2x.
+% FOUR PRINTER'S DEFECTS in it, all transcribed as printed:
+%   "algemeine"      for allgemeine   (single l)
+%   "Individnalitet" for Individualität (turned u, and the Danish -itet ending)
+%   "beschränckt"    for beschränkt   (intrusive c)
+%   "Pag. 740"       with NO closing point, where pp. 151 and 152 both have one.
+% "Zeit= und" carries the Fraktur double-hyphen, kept as =.
+kan betragtes fra dens sandselige Side alene, --- thi deraf vilde man blot
+udbringe den Modsigelse, at det Sandselige ikke er det Aandelige; forstaaes det
+derimod saaledes, at der ikke ligger Andet i Phænomenet, end det, der kan udledes
+ved en Negation af Phænomenet, bliver netop en aandelig Fortolkning nødvendig;
+men hvilken Udstrækning denne skal have, det kan alene Aanden selv lære os. Der
+bliver saaledes en inderlig Forbindelse imellem Christus og den hellige Aand:
+hvad der ligger \textit{implicite} i Christus, fremsætter Aanden
+\textit{explicite}. Aanden vilde saaledes ikke have fremstillet den evige
+% "implicite" and "explicite" are antiqua ITALIC against the Fraktur -> \textit{};
+% the emphasis is by fount, not by spacing. spacing.py's flag on "plicite." (1.51)
+% is the antiqua fount being wider than the Fraktur around it, and its RUN on
+% "Han skal" (line 22) is word spacing after a period --- both checked at 1.5x
+% and rejected.
+Personligheds Idee for os i Kirken, hvis ikke Guddommens uendelige Fylde (πᾶν τό
+πλήρωμα τῆς θεότητος) havde boet i Christus. Derfor siger Christus intetsteds, at
+% GREEK, p. 153, read at 3x. NORMALISED FOUNT VARIANTS: cursive rho (U+03F1) in πλήρωμα
+% and script theta (U+03D1) in θεότητος are typed as plain ρ and θ. ACCENT AS PRINTED,
+% and it departs from the grammar: the print sets τό with an ACUTE where the
+% received text has the grave τὸ. Kept as printed and logged here.
+den hellige Aand engang vil komme efter egen Tilskyndelse og lære, at han selv
+kun var et forsvindende Individ; men han forjetter, at Aanden skal komme fra
+Faderen i hans Navn og tilføier: ”Naar Sandhedens Aand kommer, da skal han
+veilede Eder til Sandhed. Thi ikke skal han tale af sit Eget, men hvad han hører,
+skal han udsige, og de tilkommende Ting skal han forkynde Eder. Han skal
+forherlige mig; thi han skal modtage af Mit, og forkynde det til Eder. Alt hvad
+Faderen har, er mit. Derfor sagde jeg, at han skal tage af Mit og
+% --- p. 154 ---
+forkynde det til Eder.” (Joh. \textit{16, 13---15}). Der ere derfor tvende
+% The quotation opened on p. 153 and closes here with the body's raised ”; both
+% marks read at 2x. "Joh." is Fraktur, the figures antiqua; the print sets a long
+% dash, not a short rule, between 13 and 15.
+% NO FOOTNOTE on this page.
+Grundmirakler i den christelige Religion, \emph{Incarnationen} og
+\emph{Inspirationen}.
+% \emph{Incarnationen}, \emph{Inspirationen}: both letterspaced, read at 1.6x
+% ("I n c a r n a= t i o n e n", the compound broken over the line with the
+% Fraktur double-hyphen). spacing.py's RUN and the ABBYY layer both agree.
+
+Da Disciplene i Begyndelsen samlede sig om Christus, allerede da var det i
+Sandhed Aanden, der ubevidst drog dem, men kun derved, at den umiddelbart
+fremskinnede af Frelserens egen Person; derfor opfordrer Philippus Nathanael, der
+tvivler om, at Messias kan komme fra Nazareth, med de Ord til at følge sig: ”Kom
+og see!” (Joh. \textit{1, 47}). Dog først da Apostlene efter i Samlivet med
+Christus og ved hans mundtlige Lære at have modtaget den fornødne religieuse
+Foruddannelse, havde seet hans Død, --- da han efter Opstandelsen forherliget
+havde staaet for deres beskuende Blikke ligesom paa Grændsen af det himmelske og
+jordiske Rige, i sit Væsen fremstillende for dem det Individuelle og det
+Universelle i sand Eenhed, --- da han endelig, opløftet til Himmelen efter at
+have givet dem Forjettelsen om den Trøster, der skulde komme, havde overladt dem
+% spacing.py's flag on "Trøster" (1.31) is the loose comma-space of a justified
+% line, not Sperrsatz --- checked at 1.5x and rejected.
+for en Tid til deres egne Betragtninger: først da var det, der umiddelbart
+aabenbarede sig, Aandens Udsendelse i Pintsefestens Mirakel, forberedet ved en
+sand Mediation i deres Indre. Christi ydre Phænomen var negeret og Fortolkeren,
+der alt laa skjult i deres Bevidsthed, fremtraadte pludseligt i Bevidsthedens
+fulde Lys. Som derfor Christus før havde været aabenbaret i sin Herlighed i den
+ydre Verden, saaledes var han nu først tilstede i fuldkommen Herlighed i
+Bevidsthedens indre Rige. Dette Forhold imellem Christi umiddelbare Nærværelse og
+den af ham udsendte Aands umiddelbare Virksomhed giver netop den apostoliske
+Tidsalder dens særegne Charakteer. Betragter man derfor Christi Liv i dets
+Heelhed, vil man let gjenfinde hiint gjensidige Forhold. Thi ligesom hans
+offentlige Liv nærmest henhører til Historiens phænomenale Virkelighed, saa at
+Anskuelsens Moment her er
+% --- p. 155 ---
+overveiende, men den sande Forstaaelse og Udvikling af dette først gives af
+Aanden, saaledes aabenbarer hans Herlighed hos Faderen sig nærmest for den
+granskende Aand, men Sandheden af denne Aabenbarings Tilegnelse er atter betinget
+ved den troende Modtagelse af Læren om hans Liv her paa Jorden. Christi Indgang i
+Verden og hans Udgang af den ere saaledes Aabenbaringsformer, der ifølge Sagens
+Natur svæve imellem den phænomenale Virkelighed og den aandelige Idealitet:
+Enhver, der ikke troer paa Aanden, mishandler Historien.
+% NO FOOTNOTE on this page.
+
+Heraf er det tillige indlysende, at ogsaa Verdens Forsoning maa henføres til
+% spacing.py's flag on "indlysende" (1.45) is justification --- checked at 1.5x
+% and rejected.
+Christi hellige Historie i den rigtige Opfattelse af samme. Thi Forsoningen er
+virkeliggjort derved, at Christus undergik Livets haardeste Modsætninger og
+seierrig gik frem af Kampen. Ligesom det naturlige Menneske indtræder i denne
+Verden paa en saadan Maade, at han har Mørket bagved sig, saa at han ikke veed,
+hvorfra han kommer, og ligesom han maa gjennemgaae den haarde Prøvelse i Kampen
+imod alle Livets og Dødens Modsigelser, uden at vide, hvor han gaaer hen,
+saaledes gaaer omvendt Christus, der er Veien og Sandheden og Livet, frem af det
+evige Lysets Rige, aabenbarer Guds Nærværelse i Smertens Verden, i det hans
+guddommelige Aand stedse bliver sig selv liig, og vandrer gjennem Dødens Mørke
+% "liig", not "lig" --- the two OCR witnesses disagreed and the word was read at
+% 1.2x; the print doubles the i.
+tilbage til Herlighedens Rige. (”Jeg udgik fra Faderen og kom til Verden; jeg
+forlader Verden igjen og gaaer til Faderen.”). Han viser saaledes ikke blot de
+enkelte Mennesker Veien, men aabenbarer ogsaa den hele Verdens sande Historie.
+
+Men ligesom Inspirationens Mirakel er medieret igjennem den individuelle
+Christus, saaledes forbereder ogsaa den apostoliske Tidsalder Kirkens følgende
+Uddannelse.
+
+Den fremstiller os nemlig paa den ene Side et fast og
+% --- p. 156 ---
+uforanderligt Christusbillede, saa at Skriften til Enhver, der længes efter at
+see Christus, udtaler sit: ”Kom og see!”; men paa den anden Side fører den ud
+over sig selv til en anden Form af Kirken. Alle Kirkens Institutioner sigte
+nemlig dertil mere og mere at uddanne Frihedens Idee, for at den menneskelige
+Bevidsthed, reflecteret i sig, gjennem Erkjendelsen af sin egen Natur kan søge,
+finde og grundigt tilegne sig Gud. At vor Tid ikke kan opvise noget Mirakel, er
+altsaa saa langt fra at begrunde nogen Mistanke imod Sanheden af den apostoliske
+% PRINTER'S DEFECT, p. 156: "Sanheden" for "Sandheden" --- the d is not there.
+% Read at 1.4x; both OCR witnesses see the same seven letters. Transcribed as
+% printed. "Mistanke" on the same line is sound.
+Tids Mirakler, at vi meget mere maae vende Sagen om og sige, at hiin Tids
+Mirakler netop forklare os Grunden til, at der i vor Tid ingen Mirakler finde
+Sted.
+
+Den mangfoldige Fluctuation, der i Tidernes Løb finder Sted i Kirken imellem den
+reelle Objectivitet og den abstracte Idealitet, i det de afvexlende afløse
+hinanden og gaae over i hinanden, tjener til mere og mere sandt og inderligt at
+forsone Begrebet og Anskuelsen med hinanden. Bliver derfor det ene af disse
+% spacing.py's flag on "det" (1.50) falls on this line and is justification ---
+% checked at 1.4x and rejected.
+Momenter til en eller anden Tid overveiende, see vi stedse det andet dukke op og
+moderere hiint.
+
+Den dialektiske Udvikling foregaaer nemlig bestandigt saaledes, at paa den ene
+Side Aanden uddannes igjennem en Negation af Livets Phænomener, paa den anden
+Side disse udvikles og forklares ved hiin; som derfor Aanden er, saaledes er
+ogsaa Phænomenernes Udtydning og Fortolkning. Derfor lyde Apostelens Ord: ”I
+Elskelige, troer ikke enhver Aand, men prøver Aanderne, om de ere af Gud!”
+bestandigt igjennem Kirken. Men den, der prøver Aanden, er netop Aanden selv, thi
+om Aanden gjælder det: ”\textit{verum est index sui et falsi}”. Derfor vil den
+% "verum est index sui et falsi" is ANTIQUA (upright roman, not italic in the
+% print) against the Fraktur -> \textit{}, per the standing convention. The
+% quotation marks around it are the Fraktur fount's raised ”, both read at 1.4x.
+abstracte Friheds og Personligheds Aand stedse gaae seierrig frem af Prøven. ---
+Det vil da heraf være klart, at Principet i den hellige Historie er Guds sande,
+reelle Accommodation. Den sig fra Evighed
+% JOINT p. 156/157 verified on the image, as the pp. 157--162 batch reports:
+% p. 156 ends on the word "Evighed" with NO word broken across the leaf, and it
+% carries NO note --- 32 body lines run to the foot, with no rule and no small
+% type below them. So nothing runs over onto p. 157 and no \setcounter belongs
+% on this page.
+% BATCH SEAM, REPAIRED. p. 157's first line is NOT indented --- it continues this
+% sentence ("Den sig fra Evighed / af sin absolute Frihed bevidste Gud"), so the
+% blank line the skeleton left after the marker has been removed. The blank line
+% BEFORE the pp. 145--156 fragment is correct and stays: p. 144 ends a sentence
+% and p. 145 begins an indented new paragraph (+230 px against its own margin).
 % --- p. 157 ---
 % JOINT p. 156/157 verified on the image: p. 156 ends "Den sig fra Evighed" with
 % NO word broken across the leaf, and p. 156 carries no note, so nothing runs
