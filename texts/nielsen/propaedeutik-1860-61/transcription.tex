@@ -259,16 +259,36 @@
 %        "Eenstemmigheds- og ..." — where the hyphen must print AND a space must
 %        follow. Do not join them.
 %
-%  SEVENTEEN MARKERS ARE LEFT ALONE AND NEED AN EYE (pp. 110, 194, 195, 250,
-%        260, 277, 327, 354, 356, 359, 387, 391, 404, 413, 417, 461, and p. 63).
-%        On each, the previous page ends on a full stop, a blank line is present,
-%        and the measurement says the page opens flush — which would make the
-%        blank wrong. BUT ON THIS SCAN THE "FLUSH" VERDICT IS NOT RELIABLE:
-%        pp. 110 and 194 measured +13 and -42 px and are, on the image, plainly
-%        INDENTED, so their blank lines are correct. p. 63 is the converse — it
-%        measures +292 px but opens flush, the reading having landed on a
-%        displayed formula. Nothing was changed at any of these seventeen.
-%        `paragraphs.py` reports them as UNCERTAIN by design and does not act.
+%  EVERY UNCERTAIN MARKER HAS NOW BEEN READ, one page image at a time —
+%        eighteen of them — and they split 12 to 6, which is the whole argument
+%        for not having swept them on the measurement:
+%          * SIX open FLUSH, so the paragraph runs on and the blank line was
+%            wrong. Removed: pp. 63, 195, 359, 387, 417, 461. (p. 102 also opens
+%            flush and already had no blank; nothing to do there.)
+%            A PATTERN WORTH CARRYING TO OTHER BOOKS: p. 63 and p. 461 follow a
+%            DISPLAYED FORMULA at the foot of the previous page
+%            ($\frac{1}{\cos 90^{0}} = \infty$ and $c = b\sqrt{a/(a+b)}$), and
+%            p. 417 follows a COLON. A display or a colon at the page foot is a
+%            continuation, not an ending — and both wreck the measurement,
+%            because the reading lands on the display instead of the body line.
+%          * TWELVE open INDENTED, so their blank lines are CORRECT and were
+%            kept: pp. 110, 194, 250, 260, 277, 327, 354, 356, 391, 404, 413, 480.
+%        HAD THESE BEEN SWEPT ON THE MEASUREMENT — as the earlier per-book fixers
+%        in this pass did, removing a blank wherever the image read flush —
+%        TWELVE CORRECT PARAGRAPH BREAKS WOULD HAVE BEEN DESTROYED.
+%        On this scan the "flush" reading is simply not reliable: pp. 110 and 194
+%        measured +13 and -42 px and are plainly indented, p. 480 measured -3 px
+%        and is indented, while p. 63 measured +292 px (the reading landed on the
+%        displayed formula) and is plainly flush. A POSITIVE INDENT READING CAN
+%        BE TRUSTED HERE; A FLUSH READING CANNOT.
+%        p. 277 needs a deeper crop than the rest to see at all: it carries only
+%        two body lines above its footnote rule.
+%
+%  KNOWN PERMANENT FLAGS from paragraphs.py on this file, all verified and all
+%        to be left alone: p. 63 as a MISSING break (+292 px, the display-line
+%        reading; the page opens flush and is correctly run on), and the twelve
+%        indented pages above as UNCERTAIN (the measurement calls them flush;
+%        the paper says otherwise, and the paper wins).
 % ============================================================
 \documentclass[12pt,a4paper]{book}
 \usepackage[utf8]{inputenc}
@@ -7708,7 +7728,6 @@ aber einer Bildungstendenz folge, die eine Art Mitte zwischen dem Geiste
 des vegetabilischen und dem des animalischen Daseins halte ....“ R. H.
 Lotze. Allgemeine Physiologie des körperlichen Lebens. Leipzig 1851. S.
 487--96.}.
-
 % --- p. 195 ---
 Viste det sig nemlig ved nærmere Eftersyn, at den paaberaabte Forskjel i
 Dyrets, Plantens og Mineralets Bygningsmaade i Grunden hidrørte fra en
@@ -13712,7 +13731,6 @@ Handwörterbuch der Physiologie von R. Wagner. 4r Bd. 1853, Art. Zeugung
 S. 742 flg. og i Vergleichende Anatomie und Physiologie von C. Bergmann
 und R. Leuckart. 1852, \emph{Hermaphroditismus} S. 585 og 589 er
 Spørgsmaalets logiske Side aldeles forqvaklet.}
-
 % --- p. 359 ---
 % The whole of p. 359's foot, and the first three lines of p. 360's foot,
 % are the run-over of the p. 358 footnote, transcribed whole at its anchor
@@ -14671,7 +14689,6 @@ Kjendsgjerninger er Naturideen aabenbaret.
 % unmatched CLOSING “ here, and (b) the unclosed „ of the p. 386 footnote,
 % giving one unmatched OPENING „. They cancel in the count but are two
 % independent facts, not a matched pair.
-
 % γ) Menneskelivet begins ~p. 399.
 % --- p. 387 ---
 \setcounter{footnote}{0}%
@@ -15756,7 +15773,6 @@ end hos den anden: saa kunde en Kjendsgjerning som den, at man engang traf paa
 en Stamme, hos hvem det ikke var muligt at opdage Spor af religiøse
 Forestillinger, let lede til en Feilslutning. Man kunde da heri ville see et
 Beviis for:
-
 % NET QUOTE BALANCE OF THIS FRAGMENT: 0, but only because two logged printer's
 % defects cancel:
 %   (a) p. 402/403 --- the Burmeister quotation is not re-opened after the
@@ -15773,14 +15789,12 @@ Beviis for:
 % The comment block at the head of this fragment quotes the p. 401 note's
 % run-over verbatim and therefore contains one further closing “ inside a
 % comment; it pairs with the „ at the p. 401 anchor once folded in.
-
 % c) Sjæl og Legeme begins ~p. 423.
 % NOTE FOR THE CALLER — the p. 415 footnote does NOT reach p. 417. The foot of
 % p. 417 carries no footnote block at all (both OCR witnesses agree and the
 % 130 dpi spread confirms it: the page ends with the signature "27" below the
 % last body line). So there is nothing here to fold back into p. 415's note;
 % whatever run-over it had must close on p. 416.
-
 % --- p. 417 ---
 % p. 417 opens mid-sentence, continuing p. 416. Printed first words:
 % "enten at Individerne i en saadan Stamme kun vare Halv-". A small raised
@@ -17442,7 +17456,6 @@ fuld Modsætning, saa vil ifølge vort Foregaaende Resten for $c$ blive
 $c - x_{c} = c - \frac{ab(b + c)}{bc + ac + ab}$, som kan blive 0, naar
 $bc^{2} + ac^{2} - ab^{2} = 0$ eller
 $c = b\sqrt{\frac{a}{a + b}}$.
-
 % --- p. 461 ---
 \setcounter{footnote}{0}%
 At Resten for $c$ bliver 0, vil med andre Ord sige, at Forestillingen
