@@ -1,0 +1,1401 @@
+% ============================================================================
+%  F. C. Sibbern, "Logik som Tænkelære."
+%  Ny Udarbeidelse, endnu som foreløbigt Aftryk for Tilhørere.
+%  Kjøbenhavn: Trykt hos Directeur Jens Hostrup Schultz,
+%              Kongelig og Universitets=Bogtrykker, 1827.
+%  TRANSCRIPTION (Danish) — from the Royal Danish Library scan.
+%
+%  WHICH BOOK THIS IS — DO NOT GET THIS WRONG.
+%      The title page reads *Logik som Tænkelære*. This is NOT the 1835 *Logik
+%      som Tænkelære fra en intelligent Iagttagelses Standpunct og i
+%      analytisk-genetisk Fremstilling*, a different and still undigitised book.
+%      This is the 1827 "Ny Udarbeidelse", i.e. the SECOND EDITION of
+%      *Logikens Elementer* (1822) — hence the directory name and the catalog
+%      id `logikens-elementer`. Sibbern's own Fortale settles it in its first
+%      sentence: "Man vil ved at sammenligne nærværende Udgave med den første
+%      letteligen bemærke ...". Do not "correct" the directory or the catalog id.
+%
+%  SCAN: ~/bibliotek/Sibbern, Frederik/logik.pdf
+%      KB / ABBYY Recognition Server, 407 PDF pages, JBIG2-encoded, ~14.6 MB.
+%      KB record: "Kjøbenhavn : trykt hos Jens Hostrup Schultz, 1827. XXII, 378 s."
+%      JBIG2 decodes slowly: ~1.5 s/page at 300 dpi, ~6 s at 600. `pypdf` cannot
+%      extract the images at all without a `jbig2dec` binary — use `pdftoppm`.
+%
+%  ---------------------------------------------------------------------------
+%  PAGE MAP (VERIFIED, UNIFORM — do not re-derive, do not hard-code an offset)
+%
+%      front matter   roman  I--XXII  ->  PDF = roman   +  3   (PDF  4-- 25)
+%      body           printed 1--378  ->  PDF = printed + 25   (PDF 26--403)
+%
+%      Both runs uniform. No leaf was scanned twice and no leaf was dropped.
+%      pagemap.py is the single source of truth.
+%
+%      Verified three ways:
+%      (1) All 407 pages rendered at 200 dpi, top-15% strip cropped, upscaled 3x,
+%          OCR'd under the Fraktur model at --psm 6. 229 pages yielded a printed
+%          numeral; 205 of them give offset exactly +25. The 24 that do not are
+%          all single-digit misreadings whose neighbours are +25 — chiefly a "1"
+%          read as "4" in the hundreds place (PDF 128 -> "403" for 103,
+%          155 -> "430" for 130, 163--165 -> "438/439/440" for 138/139/140).
+%      (2) ARITHMETIC CLOSURE, which is the real proof. KB gives the extent as
+%          "XXII, 378 s." Front matter PDF 4--25 is 22 pages = XXII. Body
+%          PDF 26--403 is 403-26+1 = 378 = the printed extent exactly. A
+%          duplicated or dropped leaf anywhere would break this.
+%      (3) Endpoints read off the image: PDF 28=3, 60=35, 100=75, 200=175,
+%          300=275, 400=375, 402=377; roman side PDF 10=VII, 11=VIII, 12=IX,
+%          14=XI, 16=XIII, 17=XIV, 18=XV, 20=XVII, 22=XIX, 24=XXI.
+%
+%      DO NOT USE THE ABBYY TEXT LAYER FOR THE PAGE MAP. It was run with a Latin
+%      model over Fraktur and misreads the numerals badly: a sweep over it
+%      produced a spurious 20-page "+15" cluster from 5->6 confusions and a
+%      "-275" cluster from contents cross-references bleeding into the first
+%      line. It is a fine second witness for WORDS and useless for NUMBERS.
+%
+%      Structure outside the body range:
+%          PDF   1     KB digitisation notice (not part of the book)
+%          PDF   2-3   Kongelige Bibliotek stamp leaves
+%          PDF   4     title page                     [roman I]
+%          PDF   5     verso, blank                   [roman II]
+%          PDF   6-7   Fortale                        [roman III--IV]
+%          PDF   8-25  Oversigt (contents), ending in the Rettelser leaf
+%                                                     [roman V--XXII]
+%          PDF  26     printed p. 1 (numeral not printed on the page)
+%          PDF 403     printed p. 378, last page of text (inside §. 176)
+%          PDF 404-407 blank / back cover
+%
+%  ---------------------------------------------------------------------------
+%  TYPE AND EMPHASIS — READ THIS BEFORE MARKING ANY EMPHASIS
+%
+%  TYPE: Fraktur body. Latin, foreign words, all figures, the § sign and the
+%      rubric letters A.--F. are set in ANTIQUA against the Fraktur -> \textit{}.
+%      This is a logic textbook and carries a great deal of inline Latin
+%      (divisio, contradictio, quà, "diversus respectus tollit omnem
+%      contradictionem") and single-letter variables (A, B, S, P, Non-P).
+%
+%  THIS BOOK DOES NOT MARK INLINE EMPHASIS BY LETTERSPACING. It marks it by
+%      setting the emphasised words in SCHWABACHER against the surrounding
+%      Fraktur -> \emph{}. Verified at 900 dpi on roman V by comparing the same
+%      word in both faces on one page: "Erkjendelse" in §.2 and in §.4;
+%      "Tænkning" in §.2 (twice) and in §.3; "Stof" in §.2 and in §.4. The
+%      capitals differ unmistakably (Schwabacher E, T, S are round and open).
+%      The stroke weight and ink density are the SAME in both faces, so no
+%      density test separates them, and a glyph-width fit trained on the
+%      pure-Fraktur Fortale separates them only partially (Schwabacher ratios
+%      1.11--1.17 against Fraktur 0.92--1.04, with a contaminated middle band).
+%      Schwabacher must therefore be called by eye, at 3x or better.
+%
+%  LETTERSPACING (Sperrsatz) -> \sperr{}, and in this book it is used for
+%      DISPLAY HEADS and for the "Anm." lead-in, not for running emphasis:
+%      "Logik" and "Tænkelære" on the title page, "Fortale.", "Oversigt.",
+%      "Rettelser.", the Capitel labels, and "A n m." Occasional letterspaced
+%      words do occur inside the Oversigt (§.170 "Definition"; the "er" of
+%      §.108) and are marked.
+%
+%  Emphasis FOLLOWS THE PAGE, not the word: "a priori" is antiqua italic in
+%      §.6 and ordinary Fraktur in §.81, and both are transcribed as printed.
+%
+%  EMPHASIS IN THE OVERSIGT IS DELIBERATELY NOT MARKED. Roughly a third of the
+%      words in the eighteen Oversigt pages are Schwabacher. Marking them
+%      reliably needs a dedicated pass at 3x over all eighteen pages; marking
+%      half of them correctly is worse than marking none. What IS marked there
+%      is only what is unambiguous at reading scale: \sperr{} for genuine
+%      letterspacing and \textit{} for antiqua Latin. This is a known,
+%      deliberate gap in the edition, not an oversight.
+%
+%  THE FRAKTUR DOUBLE HYPHEN is printed as "=" in compounds and is KEPT as "=":
+%      Sammenhængs=Analyse, Begrebs=Analyse, Classifications=System, ideel=reel,
+%      Universitets=Bogtrykker, Tænknings=Activiteter, §. 70=71.
+%      Do not silently turn it into "-".
+%
+%  QUOTATION MARKS. The Danish low-high „...“ is the repo's default, but
+%      SIBBERN'S PRINTER DOES NOT USE IT IN THE FORTALE. Both marks of the one
+%      quotation on roman III are RAISED — English-style closing marks in both
+%      positions — verified at 450 dpi. Transcribed there as the LaTeX ligature
+%      ''...'' so that the printed form is reproduced without introducing a new
+%      non-ASCII character, with a % comment at the site. Check each quotation
+%      in the body against the image rather than assuming either form.
+%
+%  RUNNING HEADS: none in the original. The folio is an antiqua numeral centred
+%      at the HEAD of the page (measured on printed p. 26). Sheet signatures sit
+%      at the foot — "(b)" on roman XVII, "(b*)" on roman XIX, "(15)" on printed
+%      p. 225, "(19)" on p. 26. They are not text and are not transcribed.
+%
+%  ---------------------------------------------------------------------------
+%  STRUCTURE (from the printed Oversigt, roman V--XXII, read off the image)
+%
+%  There are EXACTLY TWO levels above the §: a CAPITEL level and, inside the
+%  First Capitel only, a lettered A.--F. RUBRIC level. There is NO Deel and NO
+%  Afdeling anywhere in the book. The Indledning (§§ 1--7) stands before the
+%  First Capitel and is not part of it; the First Capitel has an Indledning of
+%  its own (§§ 8--11) before rubric A.
+%
+%      Indledning.                                  §§   1--  7   pp.   1-- 25
+%      Første Capitel.                              §§   8--100   pp.  26--245
+%          Indledning.                              §§   8-- 11   pp.  26-- 29
+%          A. Reel Sammenhængs=Analyse ...          §§  12-- 59   pp.  30--152
+%          B. Reel Synthese, ...                    §§  60-- 67   pp. 153--178
+%          C. Sammenlignings=Analyse ...            §§  68-- 74   pp. 179--207
+%          D. Begrebs=Analyse.                      §§  75-- 83   pp. 208--225
+%          E. Begrebers synthetiske Combination.    §§  84-- 85   pp. 226--227
+%          F. Om Begreber i Almindelighed.          §§  86--100   pp. 228--245
+%      Andet Capitel.                               §§ 101--128   pp. 246--311
+%      Tredie Capitel.                              §§ 129--164   pp. 312--362
+%      Fjerde Capitel.                              §§ 165--176   pp. 363--378
+%
+%  THE §§ RUN CONTINUOUSLY 1 --> 176 ACROSS THE WHOLE BOOK. They do not restart
+%      at any Capitel or rubric. So a repeated \parag number is an error and a
+%      hole in the range is a dropped § head. Two irregularities are in the
+%      book itself, not in the transcription:
+%          §§ 39 og 40 share ONE Oversigt entry and one page (101). In the print
+%              "§. 39 og" stands alone on its own line above "§. 40."
+%          §. 95 is SPLIT into "95 a" and "95 b" (superscript a / b), pp. 238
+%              and 240. The Rettelser leaf refers to "§. 95, b", confirming it.
+%      Distinct numbered Oversigt entries: 177.
+%
+%  A CAPITEL RANGE runs from its first §'s printed page to the page before the
+%      next division's first §. The rubric ranges above were closed the same
+%      way. NOTE: the Oversigt gives only the page on which each § BEGINS, so a
+%      rubric HEAD's own page is not fixed by it. There are page gaps between
+%      the last § of one rubric and the first § of the next (148 -> 153,
+%      201 -> 208, 223 -> 226), and the rubric head stands somewhere inside the
+%      gap. The skeleton below therefore does NOT pre-place the A.--F. heads;
+%      each batch agent inserts \rubrik{...} where the head actually falls and
+%      reports the page, so the marker range can be closed exactly.
+%
+%  §. HEAD FORM (measured on fourteen sampled pages: 1, 5, 6, 26, 30, 62, 101,
+%      173, 246, 289, 312, 344, 363, 378 — the whole span of the book):
+%      A § head is a BARE, CENTRED "§. N." standing alone on its own line. It
+%      carries NO argument or rubric line beneath it: the arguments printed in
+%      the Oversigt are the Oversigt's, and are not repeated at the head. The §
+%      sign and the numeral are antiqua; there is a period after the sign and a
+%      period after the numeral. Constant across all fourteen sampled pages.
+%      Measured on printed p. 26: the head line spans x[605,697] (w=92) against
+%      a measure of x[192,1097], head centre 651 against measure centre 644;
+%      on p. 62 "§. 23." spans x[587,690], centre 638.
+%      HENCE \parag TAKES ONE ARGUMENT (the number only) — see the macro below.
+%      This is a real difference from the Nielsen books, whose \parag{n}{argument}
+%      takes two. Do not copy the Nielsen signature into this book.
+%
+%  ANM. REMARKS. Each § is followed by one or more "Anm." remarks, numbered per
+%      § and RESTARTING at 1 (Anm. 1., Anm. 2.) — so they are not checked for
+%      continuity. The lead-in is LETTERSPACED FRAKTUR ("A n m.") with an
+%      antiqua numeral; it is not italic and not Schwabacher.
+%      THE REMARK BODIES ARE NOT SET IN SMALLER TYPE. Measured, not eyeballed:
+%      on printed p. 62 the §. 22 body has a baseline pitch of 54.0 px at 300 dpi
+%      against the Anm. body's 54.5 px (ratio 1.009), x-height 22 px against
+%      22 px (ratio 1.000); on printed p. 1, 53.5 against 55.0 (ratio 1.028).
+%      Both blocks are set to the same measure (x ~ 202-1099 against 191-1094),
+%      first line indented ~87 px. Same type.
+%
+%  NO FOOTNOTES were found on any of the fourteen sampled pages, and Sibbern
+%      cross-references inline instead ("Jfr. min Psychologie §. 59, Anm. 1"),
+%      so the "Anm." remarks do the work footnotes would do. Measured with a
+%      foot-region rule sweep at paper-median -15/-25/-40, gutter columns above
+%      45% density masked: every wide hit came in at ink density 0.01--0.02,
+%      i.e. a single-pixel scan artefact and not a rule; the full-width bands at
+%      y-fraction 0.01 and 0.99 are the scanner's black page edges. No *), †) or
+%      1) marks anywhere in the sample. The centred 393 px ornament at the foot
+%      of printed p. 378 (y 1689--1704) is an end-of-book tailpiece, not a note
+%      rule. THIS IS A SAMPLE, NOT A PROOF: if a real note turns up in a batch,
+%      say so, and \renewcommand{\thefootnote} to the printed mark — NOT
+%      \fnsymbol (math mode, gives U+2217) and NOT footmisc[perpage] (which
+%      resets on the typeset page, not the printed one).
+%
+%  CAPITEL HEAD FORM, measured on printed p. 26: letterspaced Fraktur "Første
+%      Capitel." centred (x[412,886]), then three centred Fraktur argument
+%      lines, then a centred rule 116 px x 7 px (x[596,712]) — a short thick
+%      rule, ~0.13 of the measure — then "Indledning." centred, then "§. 8."
+%      The Capitel ARGUMENT is not letterspaced as a whole, but one key word in
+%      it is: "Omdømmer" in the Andet Capitel argument and "Slutninger" in the
+%      Tredie Capitel argument. Check each head against its page.
+%
+%  ---------------------------------------------------------------------------
+%  ERRATA — the book's own "Rettelser", printed on roman XXII.
+%
+%  The Rettelser leaf is reproduced verbatim in the front matter below, since it
+%  is part of the printed book. SETTLED 2026-08-26 (editor's decision): per the
+%  repo's editorial stance (CLAUDE.md) the body text is transcribed AS PRINTED
+%  and each erratum is logged in a "% ERRATA:" comment at its site, NOT applied.
+%  Every batch agent must follow this. (This differs from
+%  texts/nielsen/propaedeutiske-logik, where the errata were applied inline;
+%  most of Sibbern's are substantive cross-reference corrections by the author
+%  rather than compositor's slips, which is why they are left standing here.)
+%  The affected body pages are:
+%      24, 36, 41, 44, 49, 52, 76, 89, 99, 111, 114, 118, 170, 173, 193, 202,
+%      205, 226, 233, 240, 242, 243, 289.
+%  Two of them are structural and worth knowing in advance:
+%      p. 240 l.18  "§. 96" should read "§. 95, b"  — confirms the 95 a/b split
+%      p. 289 top   "Anm. 2 falder bort"            — an Anm. to be struck
+%  The Rettelser also fix the reference "§. 62" to "§. 70=71" three times, and
+%  give Sibbern's cross-reference abbreviation in LOWER CASE ("jfr.", p. 226)
+%  where the body normally has "Jfr.".
+%
+%  ---------------------------------------------------------------------------
+%  PRINTER'S DEFECTS — transcribed AS PRINTED, each flagged at its site.
+%      This is a diplomatic transcription; the compositor is not corrected.
+%
+%      roman I    the city is spelled two ways on one page: "Kiøbenhavns" (with
+%                 i) in the author's designation, "Kjøbenhavn." (with j) in the
+%                 imprint. Both verified at 450 dpi. Transcribed as printed.
+%      roman IV   l.11 "indbegreben" is printed with a word-space inside it,
+%                 "indbe greben". SETTLED 2026-08-26: reproduced AS PRINTED, per
+%                 CLAUDE.md's editorial stance. The first transcribing pass had
+%                 joined the word; the join was undone. Do not re-join it — a
+%                 spell-checker will want to, and it is a printed reading.
+%
+%  QUOTE BALANCE: 0 as of the front matter. No quote-affecting defect found yet.
+%      check.py compares the raw „/“ balance against its QUOTE_DEFECTS table
+%      rather than against zero, because defects CANCEL: a missing opener on one
+%      page and a missing closer on another restore a raw zero that reads as an
+%      all-clear. Add every new defect to that table AND to this header.
+%
+%  ---------------------------------------------------------------------------
+%  OCR NOTES for whoever transcribes the body (the harness is untracked, so this
+%  is the only place these survive).
+%
+%      OCR quality is GOOD under `-l Fraktur --psm 6`; the OCR can carry the
+%      words and the image only has to carry structure and emphasis. The PDF's
+%      own ABBYY layer is a useful SECOND WITNESS for words because it fails
+%      differently (it mangles æ/ø and reads long-s as f), and is useless for
+%      numbers.
+%
+%      THIS SCAN'S SIGNATURE ERROR: a Fraktur ";" reads as "z" — sigz, Tingz,
+%          sammez. Deliberately not sed'd, because a blanket rule would eat
+%          proper names and Latin; check.py flags every word-final z instead.
+%          Danish native words do not end in z, so nearly every hit is real.
+%      f/k/s confusion inside words: Adsfillelse->Adskillelse,
+%          Modfætning->Modsætning, fættes->sættes, forfjellige->forskjellige.
+%      "?" standing for a k/sk ligature: logi?->logisk, Logi?->Logik.
+%      v read as o (selo->selv, objectio->objectiv); y read as v (deryed->derved).
+%      dropped ø surfacing as o/s/d: gjore->gjøre, Sporgsmaal->Spørgsmaal,
+%          hsre->høre, prdve->prøve, dverste->øverste.
+%      F read as S at the head of a word: Sorandringer->Forandringer.
+%      "§" reads as "$" ($. 41. for §. 1.).
+%      Proper names break the model badly — Treschow came out as "Tre\{<ow" on
+%          printed p. 315. Check every name against the image.
+%      The J->I correction is a WHITELIST, not a general rule: Jeg, Ja, Jo, Jord
+%          are ordinary words and "Jfr." (= jævnfør) is Sibbern's constant
+%          cross-reference abbreviation.
+%      Gutter noise is heavier here than on the Nielsen books: --psm 6 reads the
+%          facing leaf's black edge as a stray column of | j y Y 1 ¡ » á þ at
+%          BOTH margins. Ignore those columns entirely.
+%      The Oversigt's OCR is NOT TRUSTWORTHY for page numbers. Both layers —
+%          Fraktur tesseract AND ABBYY — agreed on a wrong printed page number in
+%          five entries, all overruled by the image:
+%              §  24  both read 63   image reads  68
+%              §  27  both read 74   image reads  73
+%              §  30  read 73 / 79   image reads  78
+%              § 118  both read 280  image reads 286
+%              § 149  both read 340  image reads 341
+%          Confirmed shared pages (not errors): §§ 19/20 p. 59, §§ 29/30 p. 78,
+%          §§ 75/76 p. 208, §§ 109/110 p. 265, §§ 135/136 p. 320,
+%          §§ 151/152 p. 344, §§ 155/156 p. 347.
+%
+%  ---------------------------------------------------------------------------
+%  SPOT-CHECK (2026-08-26, independent of the transcribing pass)
+%      roman I (title page) and roman X (an ordinary Oversigt page) were
+%      re-read against the scan by an agent that had not written them.
+%      roman X: AGREES entry for entry. All ten entries §§ 43--52 present, none
+%          duplicated, and every printed page number in the right-hand column
+%          confirmed on the image (105, 106, 107, 111, 112, 113, 114, 115, 116,
+%          118). Wording agrees. The "Side." column label is really printed.
+%      roman I: two omissions found and CORRECTED here —
+%          (i) a THIRD rule, 0.20 of the measure and ~8 px thick, stands between
+%              the imprint and the date and had not been transcribed;
+%          (ii) "Kjøbenhavn." in the imprint is itself letterspaced and had not
+%              been marked \sperr.
+%          Everything else on the page confirmed, including the two spellings of
+%          the city and the three-way rule distinction.
+%      The Oversigt's unmarked Schwabacher emphasis was confirmed as the known,
+%      deliberate gap described above, not as an error of transcription.
+%
+%  STATUS
+%      FRONT MATTER COMPLETE — roman I--XXII (PDF 4--25): title page, blank
+%          verso, Fortale, the full Oversigt, and the Rettelser leaf, all
+%          transcribed from the image.
+%      BODY NOT STARTED — printed pp. 1--378. The skeleton below carries one
+%          batch marker per division, eleven in all, contiguous over 1--378.
+%          Batches are 12--17 printed pages, so a marker is SPLIT into
+%          batch-sized markers when the batch is dispatched; splice.py matches a
+%          fragment to its marker by the FIRST--LAST pair in the fragment's own
+%          filename, so the split marker and the fragment name must agree
+%          exactly. See the note at the head of the body skeleton.
+% ============================================================================
+
+\documentclass[12pt]{book}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[danish]{babel}
+\usepackage[protrusion=true,expansion=true]{microtype}
+\usepackage[margin=1.4in]{geometry}
+\usepackage{setspace}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{libertinus}
+\usepackage{libertinust1math}
+\usepackage{textalpha}   % no Greek found so far; loaded so that a later batch
+                         % can type polytonic Greek directly without a preamble
+                         % change mid-book.
+\usepackage{fancyhdr}
+% plainpages=false + pdfpagelabels: the title page, the roman front matter and
+% the arabic body would otherwise all produce a PDF destination called "page.1",
+% and pdfTeX drops the duplicates with a warning on every build.
+% The PDF metadata is set with \hypersetup AFTER \begin{document}, NOT as
+% package options here: as an option the "æ" of the title reaches hyperref while
+% fontenc still has it as the T1 command \T1\ae, which hyperref cannot put in a
+% PDF string ("Token not allowed in a PDF string") and silently drops.
+\usepackage[colorlinks=true,linkcolor=black,urlcolor=black,
+  unicode=true,plainpages=false,pdfpagelabels]{hyperref}
+
+% A Capitel argument may carry \sperr / \textit / \\ inside it (the letterspaced
+% key word "Omdømmer" in Capitel II, "Slutninger" in Capitel III), and \capitel
+% puts the argument into the ToC. Those tokens are legal in the printed ToC line
+% but NOT in a PDF bookmark string: hyperref warns "Token not allowed in a PDF
+% string" on every build and silently drops the word. Neutralise them for the
+% bookmark only, which is cleaner and more durable than hand-writing a plain
+% duplicate of each argument into \texorpdfstring.
+\pdfstringdefDisableCommands{%
+  \def\sperr#1{#1}%
+  \def\textit#1{#1}%
+  \def\emph#1{#1}%
+  \def\\{ }%
+}
+
+\setlength{\headheight}{15pt}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LE,RO]{\thepage}
+\fancyhead[RE]{\textit{Logik som Tænkelære}}
+\fancyhead[LO]{\textit{\leftmark}}
+\setlength{\parindent}{1.5em}
+\setlength{\parskip}{0pt}
+\setstretch{1.3}
+
+% ============================================================================
+%  STRUCTURAL MACROS — use these, do not hand-roll centre blocks.
+%  They exist so that every batch renders the book's recurring display forms
+%  identically, and so that check.py can count them. check.py reports a
+%  hand-rolled \begin{center}{\bf...} display head in \mainmatter as suspect.
+%  If you need a form that has no macro here, REPORT IT and let the caller add
+%  one; in particular do not hand-roll an \addcontentsline with a bare \quad in
+%  it, which hyperref rejects with a warning on every build.
+% ============================================================================
+
+% Letterspacing (Sperrsatz). In THIS book letterspacing marks DISPLAY HEADS and
+% the "Anm." lead-in, not running emphasis — running emphasis is Schwabacher,
+% which \emph{} carries. Keep the two distinct: \sperr = letterspaced in the
+% print, \emph = Schwabacher in the print.
+\newcommand{\sperr}[1]{\textls[180]{#1}}
+
+% ---------------------------------------------------------------- body heads
+
+% A Capitel head: letterspaced Fraktur label, the argument beneath it, then the
+% short thick centred rule measured on printed p. 26 (116 px x 7 px at 300 dpi,
+% ~0.13 of the measure).
+%   \capitel{Første Capitel.}{Om den undersøgende og behandlende ...}
+% The argument is not letterspaced as a whole, but one key word inside it may be
+% ("Omdømmer" in Capitel II, "Slutninger" in Capitel III) — mark that word with
+% \sperr inside the argument, and check each head against its own page.
+\newcommand{\capitel}[2]{%
+  \par\vspace{1.3\baselineskip}%
+  \begin{center}
+    {\large\sperr{#1}\par}\vspace{0.45\baselineskip}
+    {#2\par}
+  \end{center}
+  \vspace{0.35\baselineskip}
+  \begin{center}\rule{0.13\linewidth}{1.4pt}\end{center}
+  \vspace{0.45\baselineskip}
+  \phantomsection
+  \addcontentsline{toc}{chapter}{\texorpdfstring{#1\ #2}{#1 #2}}%
+  \markboth{#1}{#1}%
+}
+
+% A lettered rubric head, A.--F., inside the First Capitel. The letter is
+% printed in ANTIQUA on its own centred line above the rubric heading; the
+% heading may run to several centred lines, separated with \\.
+%   \rubrik{A.}{Reel Sammenhængs=Analyse\\eller\\Reelle Gjenstandes Analyse ...}
+% The rubric heads are NOT pre-placed in the skeleton: the Oversigt gives only
+% the page on which each § begins, so a rubric head's own page falls somewhere
+% in the gap before the next §. Insert it where it actually stands and report
+% the page.
+\newcommand{\rubrik}[2]{%
+  \par\vspace{1.1\baselineskip}%
+  \begin{center}
+    {\large\textit{#1}\par}\vspace{0.35\baselineskip}
+    {#2\par}
+  \end{center}
+  \vspace{0.5\baselineskip}
+  \phantomsection
+  \addcontentsline{toc}{section}{\texorpdfstring{#1\ #2}{#1 #2}}%
+}
+
+% A centred group head standing alone — used for "Indledning.", both the
+% book's own (before the First Capitel) and the First Capitel's internal one.
+\newcommand{\gruppe}[1]{%
+  \par\vspace{0.9\baselineskip}%
+  \begin{center}{#1\par}\end{center}
+  \vspace{0.4\baselineskip}
+  \phantomsection
+  \addcontentsline{toc}{section}{#1}%
+}
+
+% A § head. ONE ARGUMENT — the number only.
+% MEASURED on fourteen pages spanning the whole book: a § head is a bare,
+% centred "§. N." on its own line, antiqua sign and numeral, with NO argument
+% line beneath it. The arguments printed in the Oversigt are the Oversigt's and
+% are not repeated at the head. Do not give this macro a second argument.
+%   \parag{12}      ->   §. 12.
+% Irregular numbers occur and are passed through as text:
+%   \parag{39 og\\ \S.~40}   (two lines, as printed)
+%   \parag{95 \textsuperscript{a}}
+\newcommand{\parag}[1]{%
+  \par\vspace{0.9\baselineskip}%
+  \begin{center}{\textit{\S.\,#1.}\par}\end{center}
+  \vspace{0.35\baselineskip}
+  \noindent\ignorespaces
+}
+
+% An "Anm." remark lead-in. Letterspaced Fraktur "A n m." with an antiqua
+% numeral; the remark BODY is set in the SAME type size as the § body (measured
+% — see the header), so no \small here. Anm. numbers restart at 1 in each §.
+%   \anm{1}   ->   Anm. 1.        \anm{}   ->   Anm.
+\newcommand{\anm}[1]{%
+  \par\vspace{0.5\baselineskip}%
+  \noindent\sperr{Anm.}\ifx&#1&\else~\textit{#1}.\fi\enspace\ignorespaces
+}
+
+% ------------------------------------------------------- Oversigt (contents)
+%  The Oversigt is reproduced as a FACSIMILE of the printed contents, not as a
+%  structural apparatus; this edition's own page numbers come from the generated
+%  \tableofcontents that follows it. check.py's hand-rolled-head test runs only
+%  over \mainmatter for exactly this reason.
+
+\newcommand{\ovhead}[1]{%
+  \begin{center}{\Large\sperr{#1}}\\[1.2ex]\rule{0.30\linewidth}{0.4pt}\end{center}
+  \vspace{0.6\baselineskip}
+}
+
+% The right-aligned "Side." column label, printed once at the head of every
+% Oversigt page.
+\newcommand{\ovside}{\par\nopagebreak\hfill{\footnotesize Side.}\par\nobreak\vspace{0.2\baselineskip}}
+
+\newcommand{\ovgroup}[1]{%
+  \par\vspace{0.7\baselineskip}\begin{center}{#1\par}\end{center}
+  \vspace{0.3\baselineskip}}
+
+\newcommand{\ovcap}[2]{%
+  \par\vspace{1.0\baselineskip}%
+  \begin{center}{\sperr{#1}\par}\vspace{0.3\baselineskip}{#2\par}\end{center}
+  \vspace{0.4\baselineskip}}
+
+\newcommand{\ovrubrik}[2]{%
+  \par\vspace{0.9\baselineskip}%
+  \begin{center}{\textit{#1}\par}\vspace{0.25\baselineskip}{#2\par}\end{center}
+  \vspace{0.4\baselineskip}}
+
+\newcommand{\ovnote}[1]{%
+  \par\vspace{0.5\baselineskip}\begin{center}\begin{minipage}{0.86\linewidth}
+  \centering #1\end{minipage}\end{center}\vspace{0.4\baselineskip}}
+
+% One § entry, leader-dotted to its printed page number.
+%   \ovline{12}{Det givne Mangfoldige maa først analyseres ...}{30}
+\newcommand{\ovline}[3]{%
+  \par\vspace{0.25\baselineskip}%
+  \noindent\hangindent=2.8em\hangafter=1
+  \textit{\S.\,#1.}\quad #2%
+  \nobreak\ \leaders\hbox to 0.55em{\hss.\hss}\hfill\ \textit{#3}\par}
+
+\hyphenation{Sam-men-hængs-Ana-lyse Sam-men-lig-nings-Ana-lyse
+  Grund-fore-stil-lin-ger Er-kjen-del-sen Frem-gangs-maa-der
+  Til-freds-stil-lel-se Be-grebs-be-stem-mel-ser Clas-si-fi-ca-tions-Sy-stem}
+
+\begin{document}
+\hypersetup{
+  pdftitle={Logik som Tænkelære (1827)},
+  pdfauthor={F. C. Sibbern},
+  pdfsubject={Transcription from the Royal Danish Library scan}
+}
+\frontmatter
+\pagestyle{empty}
+
+% =====================================================================
+%  F. C. Sibbern, *Logik som Tænkelære* (1827)
+%  FRONT MATTER, roman I--IV  =  PDF pp. 4--7
+%      roman I    title page
+%      roman II   verso, blank
+%      roman III  Fortale, first part
+%      roman IV   Fortale, conclusion, dated and signed
+%
+%  Transcribed from the image (KB scan, 300 dpi, with 450--900 dpi zooms
+%  on the title-page imprint and the quotation in the Fortale).
+%
+%  TYPOGRAPHIC CONVENTIONS USED HERE -- macros NOT yet in transcription.tex.
+%  The caller must add them (or substitute):
+%      \sperr{...}   letterspaced (Sperrsatz) words. Used on this book for
+%                    DISPLAY heads only -- "Logik", "Tænkelære", "Fortale.",
+%                    "Oversigt.", the Capitel heads. \emph{} is an acceptable
+%                    stand-in if a separate macro is not wanted.
+%      \textit{...}  Latin/foreign set in antiqua against the Fraktur.
+%  This book's INLINE emphasis is NOT letterspacing: it is SCHWABACHER set
+%  against the Fraktur (see the header of oversigt.texfrag). No inline
+%  emphasis occurs in the Fortale.
+%
+%  QUOTATION MARKS. Sibbern's printer does NOT use the Danish low-high
+%  „...“ here. Both marks of the one quotation on roman III are RAISED
+%  -- English-style closing marks in both positions -- verified at 450 dpi.
+%  Transcribed as the LaTeX ligature '' ... '' so that no new non-ASCII character is introduced
+%  and check.py's „/“ balance stays at zero. See the % comment at the site.
+%
+%  The Fraktur double hyphen is kept as "=" in compounds, per the book's
+%  conventions (Universitets=Bogtrykker).
+% =====================================================================
+
+
+% --- roman I ---
+% Title page, PDF 4. Centred display Fraktur throughout. Two rules:
+%   (a) a small lozenge/leaf ornament rule under the author block;
+%   (b) a thick-over-thin double rule above the imprint.
+% "Logik" and "Tænkelære" are letterspaced; "Tænkelære" is the largest
+% type on the page (117 px against 90 px at 450 dpi). "Kjøbenhavn." in
+% the imprint is letterspaced too — found on the 2026-08-26 spot-check,
+% missed by the first pass.
+% THREE rules stand on this page, and they are distinct ornaments:
+%   0.42 of measure  lozenge with hairline extensions, under the author block
+%   1.00 of measure  thick (~8 px) over thin (~3 px), ~7 px apart, above the
+%                    imprint
+%   0.20 of measure  a plain ~8 px rule between the imprint and the date
+% All three measured at 450 dpi over a 1363 px measure.
+% NOTE: the page spells the city two ways -- "Kiøbenhavns" (with i) in the
+% author's designation, "Kjøbenhavn." (with j) in the imprint. Both verified
+% at 450 dpi; transcribed as printed, not normalised.
+\begin{center}
+  {\Huge\sperr{Logik}}\\[2.2ex]
+  som\\[2.2ex]
+  {\Huge\sperr{Tænkelære}}\\[3.5ex]
+  af\\[1.8ex]
+  {\large Dr. Frederik Christian Sibbern,}\\[0.4ex]
+  {\footnotesize Professor i Philosophien ved Kiøbenhavns Universitet.}\\[3ex]
+  % ornament rule (lozenge with hairline extensions)
+  \rule{0.42\linewidth}{0.4pt}\\[3.5ex]
+  {\large Ny Udarbeidelse,}\\[0.6ex]
+  endnu som foreløbigt Aftryk for Tilhørere.\\[4ex]
+  % thick-over-thin double rule
+  \rule{\linewidth}{1.4pt}\\[-1.2ex]
+  \rule{\linewidth}{0.4pt}\\[4ex]
+  {\large\sperr{Kjøbenhavn.}}\\[0.8ex]
+  {\large Trykt hos Directeur Jens Hostrup Schultz,}\\[0.3ex]
+  {\footnotesize Kongelig og Universitets=Bogtrykker.}\\[2.2ex]
+  % A THIRD rule, between the imprint and the date: 279 px = 0.20 of the
+  % 1363 px measure, ~8 px thick, at 450 dpi. Added on the 2026-08-26
+  % spot-check; the first pass missed it. Distinct from the 0.42-measure
+  % lozenge ornament above and from the full-measure thick-over-thin pair.
+  \rule{0.20\linewidth}{1.0pt}\\[2.2ex]
+  1827.
+\end{center}
+
+
+% --- roman II ---
+% Verso of the title page. Blank; no printed numeral, no signature.
+
+
+% --- roman III ---
+% PDF 6. No printed numeral on this page: the display head stands instead.
+% "Fortale." is letterspaced, with a lozenge ornament rule beneath it.
+% The first word opens with a large two-line ornamental initial M.
+\begin{center}
+  {\Large\sperr{Fortale.}}\\[1.6ex]
+  \rule{0.30\linewidth}{0.4pt}
+\end{center}
+
+Man vil ved at sammenligne nærværende Udgave med den første letteligen
+bemærke, at, om end Grundanskuelsen og Fremgangsmaaden i det Hele er bleven
+den, den var, saa er nærværende Udgave dog saa forskjellig fra hiin, at
+Forholdet imellem begge, naar det skulde tilkjendegives nøiagtigt, maatte
+udtrykkes ved at kalde denne en ny Udarbeidelse, som da jo ogsaa den første
+Udgave blot var udgivet som ''Manuskript for Tilhørere,'' fordi
+% Both quotation marks here are RAISED in the print (English-style closing
+% marks in both positions), not the Danish low-high „...“.
+% Verified at 450 dpi. Set as '' ... '' so the printed form
+% is reproduced without a new non-ASCII character.
+Forf. ønskede at kunne gjennemarbeide den endnu engang. Men ved den
+Omarbeidelse, den nu er undergaaet, er Bogen dog endnu ikke, hvad Forfatteren
+ønskede, at den skulde være, eller hvad han troer, at kunne, under fortsat
+Eftertænkning, gjøre den til; hvorfor han ikke ønsker den betragtet som gjort
+færdig fra hans Haand. Han har derfor --- ligesom han strax, da han lod
+Trykningen begyndes, besluttede kun at lade et, for en Bog som denne, ikke
+stort Oplag foranstalte deraf --- ogsaa endnu ikke villet lade den komme for
+Lyset anderledes, end som foreløbigt Aftryk, for sine Tilhøreres Skyld, uagtet
+han denne Gang vil lade den komme i Boghandelen.
+
+Forfatteren bliver ved at benytte den Leilighed, hans Stilling giver ham, til
+at lade sit Skrivt undergaae den Prøve, et Skrivt kommer til at blive
+underkastet, naar der holdes gjentagne Forelæsninger derover, en Prøve, der
+torde være en af de solideste af alle; især da den vil kunne befordre den, som
+tænkende Venner ville kunne lade det vederfares. Hvad der især staaer tilbage,
+er for det første, i Henseende til Realiteten, en mere tilfredsstillende
+Opklaring af nogle enkelte Partier, som endnu ei ere fremstillede
+fyldestgjørende, dernæst ogsaa en nærmere Bestemmelse i Henseende til
+adskillige Problemer, som Anordningen frembyder, f. Ex. den rette Plads for
+Læren om et Begrebs Determinationer og om Definitioner og
+% --- roman IV ---
+% PDF 7. No printed numeral on this page either.
+Inddelinger; men endeligen staaer, hvad Bogen heelt igjennem angaaer, endnu
+tilbage en nøiere Omsorg for at give den de Fortrin i Henseende til Foredraget
+og det Enkeltes Fremstilling, eller hvad man kalder Formen, hvilke den endnu
+maa savne. Man vil bemærke, at Forfatteren af denne Bearbeidelse af Logiken
+har forsøgt, hvad man ved historiske Værker kalder: paa ny at udarbeide dem
+efter Kilderne. Idet han vilde forsøge at fremstille Logiken saaledes, at den
+kunde fortjene Navn af Tænkelære --- et Navn, som Prof. Twesten i Kiel har
+været resolut nok til, at nægte den sædvanlige Logik, sin egen indbe greben
+% PRINTER'S DEFECT, REPRODUCED AS PRINTED: "indbegreben" carries a word-space
+% inside it, "indbe greben" (roman IV, l. 11). Compositor's spacing, not a
+% variant spelling. The first pass joined the word and logged the join; per
+% CLAUDE.md's editorial stance the compositor is not corrected silently, so the
+% split is now reproduced and logged here instead. (Editor's decision,
+% 2026-08-26.) Do not "fix" this.
+--- og søgte at tage Alt saa meget mueligt fra første Haand, ved umiddelbar
+Iagttagelse af Tænkningen, især i dens videnskabelige Stræben, uden at lade sin
+Gang i denne Henseende bestemmes ved den Gang, Andre havde gaaet, gav Sagen ham
+saameget at gjøre, at Formen derover for det første kom til at staae tilbage;
+thi til at kunne tilfredsstille de Fordringer, man desto heller gjør til sig
+selv i Henseende til denne, jo mere hiin er bleven En kjær og magtpaaliggende,
+udfordres, at man allerede maa være saa raadig over sit Stof, at man kan bevæge
+sig deri med Lethed. Havde det ikke for mine Forelæsningers Skyld været
+nødvendigt, at lade den nærværende Udarbeidelse trykke strax, saa havde jeg
+saare gjærne ladet den blive beroende hos mig selv, til jeg kunde have ladet
+den undergaae den Regeneration, som jeg, dersom det forundes mig at opleve et
+nyt Oplags Fornødenhed, haaber da at kunne lade den finde.
+
+\begin{center}
+  Kjøbenhavn den 20\textsuperscript{de} Juli 1827.
+\end{center}
+\begin{flushright}
+  Sibbern.
+\end{flushright}
+
+\cleardoublepage
+\pagestyle{fancy}
+
+% =====================================================================
+%  F. C. Sibbern, *Logik som Tænkelære* (1827)
+%  OVERSIGT (contents), roman V--XXII  =  PDF pp. 8--25
+%  Ends with the book's Rettelser (errata) leaf, roman XXII.
+%
+%  Transcribed FROM THE IMAGE, page by page (playbook §6), with the
+%  Fraktur-tesseract layer and the PDF's own ABBYY layer used only as two
+%  independent second witnesses. Every printed page number was read off the
+%  image; the two OCR layers agreed on a wrong number in five places
+%  (§§ 24, 27, 30, 118, 149) and both were overruled by the image.
+%
+%  MACROS ASSUMED -- none of these is in transcription.tex yet. Add them, or
+%  substitute; the fragment is otherwise plain text.
+%      \ovhead{...}                 the "Oversigt." display head (letterspaced)
+%      \ovside                      the right-aligned "Side." column label,
+%                                   printed once at the head of every page
+%      \ovgroup{...}                a centred group head ("Indledning.")
+%      \ovcap{head}{argument}       a Capitel head with its argument block
+%      \ovrubrik{A.}{lines}         a lettered rubric (A.--F.) with its heading
+%      \ovnote{...}                 a parenthetical editorial note, centred and
+%                                   set between entries
+%      \ovline{n}{argument}{page}   one § entry, leader-dotted to the page no.
+%      \sperr{...}                  letterspaced words
+%      \textit{...}                 Latin/foreign set in antiqua
+%
+%  ------------------------------------------------------------------
+%  EMPHASIS -- READ THIS BEFORE ADDING ANY \emph TO THIS FILE.
+%
+%  This book does NOT mark inline emphasis by letterspacing. It marks it by
+%  setting the emphasised words in SCHWABACHER against the surrounding
+%  Fraktur. Verified at 900 dpi on roman V by comparing the same word in both
+%  faces on one page: "Erkjendelse" in §.2 and in §.4; "Tænkning" in §.2
+%  (twice) and in §.3; "Stof" in §.2 and in §.4. The capitals differ
+%  unmistakably (Schwabacher E, T, S are round and open); the stroke weight
+%  and the ink density are the SAME in both faces, so no density test
+%  separates them, and a glyph-width fit trained on the pure-Fraktur Fortale
+%  separates them only partially (Schwabacher ratios 1.11--1.17 against
+%  Fraktur 0.92--1.04, with a contaminated middle band).
+%
+%  Roughly a third of the words in the Oversigt are Schwabacher. Marking them
+%  reliably needs a dedicated pass at 3x or better over all eighteen pages;
+%  that was beyond this batch's budget, and marking half of them correctly is
+%  worse than marking none. SO: NO INLINE EMPHASIS IS MARKED BELOW. What is
+%  marked is only what is unambiguous at reading scale --
+%      \sperr{} for genuine letterspacing (display heads; §.170 "Definition";
+%               the "er" of §.108), and
+%      \textit{} for Latin set in antiqua.
+%  Emphasis follows the page, not the word: "a priori" is antiqua italic in
+%  §.6 but ordinary Fraktur in §.81, and both are transcribed as printed.
+%  ------------------------------------------------------------------
+%
+%  The Fraktur double hyphen is kept as "=" in compounds
+%  (Sammenhængs=Analyse, Classifications=System, ideel=reel, §. 70=71).
+%
+%  Sheet signatures at the foot -- "(b)" on roman XVII, "(b*)" on roman XIX --
+%  are not text and are not transcribed.
+% =====================================================================
+
+
+% --- roman V ---
+\ovhead{Oversigt.}
+
+\ovgroup{Indledning.}
+\ovside
+\ovline{1}{Begreb om Logik. Dens Forskjel fra den psychologiske Lære om
+  Forstanden. Benævnelser. Forskjel imellem naturlig og videnskabelig Logik:
+  speculativ og beskrivende Logik.}{1}
+\ovline{2}{Om den umiddelbare Erkjendelse, som gaaer i Forveien for Tænkning,
+  og giver den dens Stof eller Materie. Begreb om Tænkning i almindelig
+  Forstand}{5}
+\ovline{3}{Forskjel imellem Tænkningens Form og dens Gehalt. Logik som Lære om
+  den videnskabelige Tænkning. Hvorvidt den er en blot formal Videnskab. Om den
+  skal være et Videnskabens Organon, eller blot dens Kanon}{6}
+\ovline{4}{Begreb om Tænkning i videnskabelig Forstand. Den derved vundne
+  Erkjendelse er en middelbar. Modsætning imellem Anskuelse og Tænkning, og det
+  i to Henseender. Nærmere Betragtning af Tænkningens forskjellige Stof}{10}
+\ovline{5}{Hvilke Hovedpuncter der ere at bemærke, naar der er Spørsmaal om
+  Tænkningens almindeligste Formaal i det Hele. Herved om den dobbelte Betydning
+  af Ordet Sandhed, og om den forskjellige Væren eller Væsenhed (Realitet), der
+  kan tillægges en Gjenstand}{13}
+
+% --- roman VI ---
+\ovside
+\ovline{6}{Hvorledes Tænkningens Gang og Maade bestemmes paa den ene Side ved
+  visse Grundforestillinger og Grundforudsætninger \textit{a priori}, som ligge
+  til Grund for den}{20}
+\ovline{7}{Paa den anden Side ved Beskaffenheden af det Givne, hvorpaa den
+  gaaer ud}{25}
+
+\ovcap{Første Capitel.}{Om den undersøgende og behandlende Tænknings
+  forskjellige Fremgangsmaader, og den Erkjendelse, som derved opnaaes.}
+
+\ovgroup{Indledning.}
+\ovline{8}{Det umiddelbart Givne er enten noget Enkelt eller noget
+  Mangfoldigt}{26}
+\ovline{9}{Hvorvidt det Enkelte kan give Tænkningen noget Stof}{26}
+\ovline{10}{Hvorledes det Mangfoldiges Betragtning kan føre til en tredobbelt
+  Undersøgelse og Behandling}{27}
+\ovline{11}{De hertil svarende Tænkningens Fremgangsmaader. At disse deels
+  kunne have reelle Anskuelser, deels Begreber til Gjenstande}{29}
+
+\ovrubrik{A.}{Reel Sammenhængs=Analyse\\
+  eller\\
+  Reelle Gjenstandes Analyse ifølge Grundbegrebet om reel Sammenhæng.}
+\ovline{12}{Det givne Mangfoldige maa først analyseres. Forskjellig Brug af
+  dette Ord}{30}
+\ovline{13}{Det første Skridt er her Anskuelsens Fuldendelse. Hvorpaa den
+  beroer}{32}
+
+% --- roman VII ---
+\ovside
+\ovline{14}{Derved erholdes tillige en orienterende Almeenforestilling. Om og
+  hvorvidt denne er et Begreb}{34}
+\ovline{15}{Det næste Skridt er, formedelst en intellectuel Analyse, at komme
+  til Indsigt i Tingens Sammenhæng, m. m., og derved at komme til Begreb om den.
+  Nærmere om denne nye Erkjendelses Forhold til Anskuelsen og Iagttagelsen, og
+  dens eiendommelige Beskaffenhed. Hvad Art af Sammenhæng her betragtes. Det
+  Aprioriske, som her ligger til Grund}{37}
+\ovline{16}{Om Begrebets og Begribningens Udvikling, og hvorledes den kan føre
+  til et heelt reelt Begrebssystem}{43}
+\ovline{17}{Dobbelt Art af Begriben og Begreb: Sammenhængsbegreb og
+  Realbegreb. Nærmere om begges Forhold til hinanden og Beskaffenhed}{44}
+
+\ovnote{(Nu følger en nærmere Udvikling af Maaden, hvorpaa vi komme til den
+  intellectuelle Erkjendelse og af dennes egen Beskaffenhed, samt
+  Beskaffenheden af Det i Tingene, hvorpaa den gaaer ud.)}
+
+\ovline{18}{Trende Tænknings=Activiteter, som indtræde under den betragtede
+  Fremgangsmaade. Hvorledes de gribe organiskt i hinanden}{55}
+\ovline{19}{Forskjel imellem dem og selve den Erkjendelse, hvortil de føre, og
+  som formedelst dem fremstilles}{59}
+\ovline{20}{Til denne Erkjendelse komme vi paa en middelbar Maade}{59}
+\ovline{21}{Men en umiddelbar intellectuel Skuen ligger dog derved til Grund,
+  og hiin Erkjendelse beroer paa den ene Side herpaa}{60}
+\ovline{22}{Men paa den anden Side beroer den paa en Tænkningens
+  Tilfredsstillelse}{61}
+\ovline{23}{Denne maa finde Sted baade i formel og i materiel Henseende.
+  Forskjel imellem at gjøre sig et Begreb om Noget, og at begribe det. Hvorledes
+  Begreb kan erholdes paa en mere eller mindre middelbar eller umiddelbar Maade.
+  Herved om Hypotheser}{62}
+
+% --- roman VIII ---
+\ovside
+\ovline{24}{Hvad der giver den intellectuelle Erkjenden Charakteren af en
+  Erkjenden. Om flere Slags Nødvendighed, og den derpaa beroende forskjellige
+  Art af Erkjendelse. Bemærkning angaaende Ordet: Erkjendelse}{68}
+\ovline{25}{Erkjendelsen betragtet som grundet. Forskjel imellem to Slags
+  Grunde}{71}
+\ovline{26}{Hvori en Tings Grund egentligen ligger}{72}
+\ovline{27}{Hvorledes vi, under den betragtede Fremgangsmaade, komme til den
+  intellectuelle Erkjenden ifølge Raisonnement og tilmed paa en discursiv
+  Maade}{73}
+\ovline{28}{Tænkningen, idet den søger Tilfredsstillelse, søger det
+  Forstandsmæssige i Tingene, hvilket nu og kan kaldes noget Intellectuelt.
+  Herved om den forskjellige Betydning af Ordet Begreb, da det tages baade i
+  objectiv og i subjectiv Forstand}{75}
+\ovline{29}{Det Intellectuelle i Tingen kan og kaldes det Ideelle i den}{78}
+\ovline{30}{Dette Intellectuelle og Ideelle er at betragte som en egen
+  Gjenstand, en Tænkningsgjenstand, for sig}{78}
+\ovline{31}{Det hæves frem som saadant formedelst en Abstraction, og Begrebet
+  træder derved frem som abstract, under den her beskrevne Tænkningens Gang er
+  det tillige abstraheret}{81}
+\ovline{32}{Forskjel imellem Betragtning \textit{in abstracto} og
+  \textit{in concreto}. Intuition}{82}
+\ovline{33}{Forholdet imellem det Intellectuelle i Tingen og dens Udvortes.
+  Hiint er det i sig selv Primitive og Constitutive, dette det i sig selv
+  Secundære og Consecutive i Tingen. Lignende Forhold imellem Tingens
+  Realbegreb og dens Sammenhængsbegreb}{85}
+
+% --- roman IX ---
+\ovside
+\ovline{34}{Der indtræder da nu en Omvending, ifølge hvilken hiint i sig selv
+  Primitive nu bliver Det, hvorfra der gaaes ud}{87}
+\ovline{35}{Idet Gjenstanden herved i og for Anskuelsen paa en eftergjørende
+  Maade construeres, eller genetiskt fremstilles, danner der sig et Tankeheelt,
+  hvilket --- idet Gjenstandens Indhold derved Led for Led udtydes, og det
+  tilsvarende Begrebssystem Led for Led deduceres --- selv kan siges at blive
+  construeret. Nærmere Bemærkning over, hvad et Begrebs Construction vil
+  sige}{88}
+\ovline{36}{Hvorledes det Intellectuelle og til Grund Liggende i Tingen træder
+  frem for Betragtningen som Tingens Natur og Væsen. Bemærkninger over disse
+  Udtryk. Om Experimenteringen}{91}
+\ovline{37}{Hvorledes Begrebet som det til Grund Liggende medfører visse
+  Begrebsbestemmelser; for det første \textit{sensu activo}. Hvorledes enhver af
+  dem kan træde frem for sig, og antage Charakteren af et
+  Beskaffenhedsbegreb}{97}
+\ovline{38}{Om Begrebsbestemmelser \textit{sensu passivo}, og Begrebets
+  Bestemmelse ved dem}{100}
+% §§ 39 and 40 share one entry and one page number; "§. 39 og" stands alone on
+% its own line above "§. 40." in the print.
+\ovline{39 og\\ §.~40}{Dobbelt Svar paa det Spørsmaal: Hvori Begrebet
+  egentligen bestaaer. Paa den ene Side bestaaer det deri, at der indsees og
+  begribes; paa den anden Side bestaaer det i det Indbegreb af
+  Begrebsbestemmelser, hvilke erkjendes som tilsammenhørende, og sees i deres
+  Eenhed}{101}
+% DOUBTFUL READING: the "af" before "Begrebsbestemmelser" sits in the gutter at
+% the extreme left of roman IX and is barely inked; tesseract read "1", ABBYY a
+% comma. "af" is the only reading that construes ("det Indbegreb af
+% Begrebsbestemmelser"); the rejected alternative was a bare comma with no
+% preposition.
+\ovline{41}{Hvad et Begrebs Indhold er}{103}
+\ovline{42}{Om det i intellectuel Henseende Væsentlige, og det endnu desuden
+  Tiltrædende}{104}
+
+% --- roman X ---
+\ovside
+\ovline{43}{\textit{Essentialia constitutiva} og
+  \textit{essentialia consecutiva}}{105}
+
+\ovnote{(Nu følger en nærmere Betragtning af den discursive og discuterende
+  Tænkning (§. 27), som udfordres for at komme til Begreber, og af den
+  Begrebsudvikling, hvortil den fører).}
+
+\ovline{44}{Hvorledes Begribningen, som en Indtrængen i det Forstandsmæssige,
+  der er i Tingen selv, hviler i et dobbelt Støtte= og Udgangspunct}{106}
+\ovline{45}{Hvorledes under den Undersøgelse, som fører til Begrebet, visse
+  Forstandsfordringer danne sig og søge Fyldestgjørelse. Noget indenfra
+  Kommende mødes med det udenfra Givne}{107}
+\ovline{46}{Hvorledes vi herunder orientere os i Gjenstandens Betragtning, og
+  til hvilke Adskillelser og Indsigtens Udvidelser denne Orientering kan
+  føre}{111}
+\ovline{47}{Den orienterende Adskillen af Gjenstandens Hovedsider og
+  Hovedpartier}{112}
+\ovline{48}{Den partielle Begriben og Begrebsdannelse, som deraf vil kunne
+  blive en Følge}{113}
+\ovline{49}{Om Modsætningen hertil: det altomfattende Begreb, eller
+  Totalbegrebet}{114}
+\ovline{50}{Hvorledes der atter, hvad dette sidste angaaer, er at skjelne
+  imellem Grundbegrebet og det fuldelige Totalbegreb eller det totale
+  Specialbegreb. Den gradvise Begriben}{115}
+\ovline{51}{I Henseende til Grundbegrebet skjelne vi igjen imellem det første
+  og nærmeste Grundbegreb og det totale Grundbegreb. Hvorledes de herved
+  adskilte Hensyn kunne staae hinanden mere eller mindre nær}{116}
+\ovline{52}{Hvorledes Begrebet kan gaae ud over det Givne. Først ved at
+  uddanne sig til Normalbegreb}{118}
+
+% --- roman XI ---
+\ovside
+\ovline{53}{Dernæst ved at overføres paa ganske andre Gjenstande, end de
+  givne, og tjene til disses Opklaring og Forstaaelse}{120}
+\ovline{54}{Hvorledes det Foregaaende fører til at skjelne imellem en
+  Gjenstands Grundnatur med den tilsvarende Grundtypus, og dennes særdeles
+  Modificationer i Gjenstanden. Forskjel imellem det relativ Væsentlige og det
+  relativ Tilfældige i Gjenstanden. Hvorledes hiin Skjelnen imellem Grundnatur
+  og Modificationer viser sig i sin Gyldighed paa flere Maader. Dobbelt Art af
+  Modificerende. Hvorledes den i det Specielle gaaende intellectuelle
+  Indtrængen i een Gjenstands hele Beskaffenhed, for at udgrunde dennes
+  Hvorledes og Hvorfor, kan føre ind i en stor Kreds af Undersøgelser, idet den
+  i samme Grad trænger dybere ind}{122}
+\ovline{55}{Grundbegrebet træder frem som et Begreb for sig, formedelst en
+  Abstraction, som vi kalde den blot orienterende eller relative. Om den
+  objective Gyldighed af en saadan Abstraction. --- Den eensidige orienterende
+  Abstraction; den blot eensidige Abstraction; de fixe Abstractioner eller
+  Betragtningerne \textit{in abstracto} efter fixe Synspuncter}{132}
+\ovline{56}{Grundbegrebet har sit eget Indhold, men dette er mindre end
+  Specialbegrebets. Mere og mindre fundamentelle Begreber; mere og mindre
+  sammensatte}{137}
+\ovline{57}{Grundbegrebet som det Primitive, og som Udgangspunctet for en
+  logisk Deduction og et logiskt Begrebssystems Dannelse}{140}
+\ovline{58}{Hvorledes et Grundbegreb i Almindelighed har Charakteren af
+  generelt. Om Specialbegrebet kan dette ei gjelde. Om en virkelig Fælledshed
+  for flere kan siges at være væsentlig for et Grundbegreb. To Arter af saadan
+  Fælledshed; høiere og lavere Begreber}{141}
+
+% --- roman XII ---
+\ovside
+\ovline{59}{Hvorvidt den hele Classe af de, paa den hidtil forfulgte Vei
+  erholdte, intellectuelle Erkjendelser eller Begreber gaaer ud paa det mere
+  Værende, og derfor er af høiere Gyldighed, end de reelle Anskuelser}{148}
+
+\ovrubrik{B.}{Reel Synthese,\\
+  eller\\
+  reelle Anskuelsers eller Gjenstandes Frembringelse ved en selvstændig
+  synthetisk Fremgangsmaade.}
+\ovline{60}{Selvstændig synthetisk Fremgangsmaade. Flere Slags Exempler
+  derpaa}{153}
+\ovline{61}{Dertil udkræves: visse Elementer (Enkeltheder), hvoraf --- et
+  Schema, hvori --- en reel Activitet, hvorved --- og en Norm (et Begreb),
+  hvorefter der construeres. Constructionsbegreber; hvad de have tilfælleds med
+  de forhen betragtede Begreber}{157}
+\ovline{62}{Hvorledes vi komme til denne Classe af Begreber. At Gjørligheden
+  af Det, et saadant Begreb gaaer ud paa, maa godtgjøres, hvor det ei indlyser
+  af sig selv}{160}
+\ovline{63}{Hvorvidt med disse Begreber en sand Begriben er forbunden; hvad
+  der giver dem Charakteren af egentlige Sammenhængsbegreber. --- Hvorledes der
+  i den construerede Anskuelse eller Gjenstand kan vise sig at ligge Mere, end
+  vi ved Constructionen have nedlagt i den; hvorledes dette Mere er at udfinde
+  og erkjende}{163}
+
+% --- roman XIII ---
+\ovside
+\ovline{64}{Hvorledes og hvorvidt der ad denne Vei danne sig Realbegreber, og
+  hvilke Forskjelle der i denne Henseende ere at bemærke}{168}
+\ovline{65}{Hvorvidt her de i den construerede Anskuelse eller Gjenstand
+  indbefattede Enkeltheder blive Gjenstande for særegne Begreber}{172}
+\ovline{66}{Hvorledes under den regelmæssige synthetiske Fremgangsmaades Gang
+  høiere og mere fundamentelle Begreber danne sig tidligere, end de lavere og
+  mere specielle. Forskjellen imellem Væsentligt og Tilfældigt anvendt her.
+  Hvori Begrebets høiere Frihed viser sig her}{175}
+\ovline{67}{Om de her betragtede Begrebers objective Gyldighed eller
+  Realitet}{178}
+
+\ovrubrik{C.}{Sammenlignings=Analyse\\
+  eller\\
+  Gjenstandes og Begrebers Analyse og Ordning ifølge Grundbegrebet om Lighed
+  og Sammenhæng formedelst Lighed.}
+\ovline{68}{Hvorpaa denne Tænkningens Virksomhed i Almindelighed gaaer ud;
+  hvad dertil udfordres}{179}
+\ovline{69}{Hvorledes den heri indtrædende og til Grund liggende Erkjendelse
+  af det Lige i ellers ulige Gjenstande viser sig som en Erkjendelse af ideel
+  og intellectuel Art. Flere Beskaffenheder ved den. Hvad der til Fremhævelsen
+  af hiint Lige i det ellers Ulige udfordres}{181}
+\ovline{70}{Hvorvidt den sig herved dannende Erkjendelse er et Begreb}{186}
+\ovline{71}{Om og hvorvidt dette bestaaer i en Indsigt. Definition paa
+  Almeenbegreb. Hvorledes ogsaa Erkjendelsen af det Ulige, betragtet som det
+  Charakteristiske antager en begrebsmæssig Charakteer. Hvorvidt
+  Almeenbegreberne gaae ud paa det mere Værende, og derfor ere af høiere
+  Betydenhed, end de individuelle Anskuelser. Om de kunne hæve sig til en
+  høiere Frihed ved at gaae ud over det Givne}{188}
+
+% --- roman XIV ---
+\ovside
+\ovline{72}{Hvad der udfordres, for at Lighedernes og Ulighedernes Erkjendelse
+  skal kunne føre til en bestemt Ordnen. Hvorledes deres større eller mindre
+  Væsentlighed bestemmes og bedømmes. Egentlige Slægtsbegreber. Hvori deres
+  Indhold bestaaer}{194}
+\ovline{73}{Logisk Over= og Underordning. Slægter og Arter.
+  Classifications=System. Forskjel imellem Classification i synoptisk og i
+  heuretisk Henseende; naturlig og konstig Classification}{198}
+\ovline{74}{Hvorledes Tænkningen ad denne Vei endvidere kan føre til en
+  Sammenhængs= og Realbegriben, idet Rækker eller Rækkesystemer dannes.
+  Sammenhængen er her at kalde ideel=reel. Denne kan undertiden vise sig ved
+  Siden af den egentligen reelle. Til et Rækkesystem kunne vi komme deels ad
+  Iagttagelsens, deels ad den selvstændige Productions Vei}{201}
+
+\ovrubrik{D.}{Begrebs=Analyse.}
+\ovline{75}{Spørsmaalet er nu, hvorvidt de forhen beskrevne Fremgangsmaader
+  kunne anvendes paa Begreber}{208}
+\ovline{76}{Simpel intellectuel Analyse}{208}
+\ovline{77}{Begrebsanalyse blot som Forfølgelse af et Begrebs
+  Conseqvents}{209}
+\ovline{78}{Den mere egentlige Begrebsanalyse}{211}
+\ovline{79}{Hvorledes denne for det første blot kan gaae ud paa Begrebet
+  saaledes, som det er givet i den almindelige Forestillingsmaade, og udtaler
+  sig i Sprogbrugen}{212}
+
+% --- roman XV ---
+\ovside
+\ovline{80}{Hvorledes denne Analyse i sin Forfølgelse, naar den skal føre til
+  Begrebets grundige Bestemmelse, maa gaae tilbage til en reel
+  Sammenhængs=Analyse, eller til en Sammenlignings=Analyse}{214}
+\ovline{81}{Den egentlige rene Begrebsanalyse. Den gaaer ud paa de almindelige
+  Grundbegreber a priori, og de speciellere Begreber, hvori de træde frem under
+  særdeles Modificationer. Saadanne ere deels de rene almindelige
+  Forstandsbegreber, hvilke vi og kunne kalde de rene Reflectionsbegreber,
+  hvortil alle de almindelige Forholdsbegreber henhøre, deels Ideerne,
+  forsaavidt disse træde frem i Begrebers Form}{215}
+% "a priori" here is set in FRAKTUR, not in the antiqua italic used for it in
+% §. 6. Transcribed as printed; not italicised.
+\ovline{82}{At ogsaa denne Art af Analyse maa, for at Erkjendelsen kan
+  fuldende sig, føre til en Deduction og synthetisk Fremgangsmaade; men at
+  dette dog ei ophæver den logiske Realitet af denne Art af
+  Begrebsanalyse}{220}
+\ovline{83}{Den hidtil betragtede Begrebsanalyse kan kaldes den objective
+  eller reelle Begrebsanalyse. Om en derfra aldeles forskjellig subjectiv,
+  eller blot logisk Begrebsanalyse, der ogsaa kan kaldes den blot
+  formelle}{223}
+
+\ovrubrik{E.}{Begrebers synthetiske Combination.}
+\ovline{84}{Hvori den bestaaer; hvorledes den maa skee}{226}
+\ovline{85}{Om de derved dannede Begrebers Realitet}{227}
+
+% --- roman XVI ---
+\ovside
+\ovrubrik{F.}{Om Begreber i Almindelighed.\\
+  (Resultater af det Foregaaende.)}
+\ovline{86}{Almindelig Definition paa Begreb}{228}
+\ovline{87}{Tre Slags Begreb}{229}
+\ovline{88}{Hvad de indbyrdes have Fælleds og Forskjelligt}{230}
+\ovline{89}{Om det Dialectiske ved de to af disse tre Arter, nemlig ved
+  Almeen= og ved Realbegreberne}{231}
+\ovline{90}{Almindelig Udsigt over, hvorledes vi komme til enhver af de tre
+  Arter af Begreber}{233}
+\ovline{91}{Fire almindelige Dannelsesmaader}{234}
+\ovline{92}{De tre Hovedactiviteter, som vise sig i den undersøgende
+  Fremgangsmaade. Af Combination i Særdeleshed gives der fire Arter}{234}
+\ovline{93}{At Begrebsdannelsen dog egentligen beroer, deels paa intellectuel
+  Skuen, deels paa conseqvent Tankeforfølgelse og Tænknings Tilfredsstillelse.
+  --- Hvorvidt Begreber ere discursive Erkjendelser}{235}
+\ovline{94}{Begrebers Inddeling efter deres Kilde i Begreber
+  \textit{a posteriori} og Begreber \textit{a priori}. Hovedclasserne af de
+  sidste. Absolut og relativ Aprioritet}{236}
+\ovline{95 \textsuperscript{a}}{Forskjel imellem Begreb og dets Gjenstande,
+  Begreb og reel Anskuelse}{238}
+\ovline{95 \textsuperscript{b}}{Forskjel imellem Begrebet selv og de
+  Modificationer, hvorunder det træder frem}{240}
+\ovline{96}{Begrebets Indhold og Omfang}{241}
+\ovline{97}{Grundbegreber og Specialbegreber, høiere og lavere}{242}
+\ovline{98}{Disses indbyrdes Forhold i Henseende til Indhold og Omfang}{243}
+\ovline{99}{De forskjellige Begrebssystemer}{244}
+\ovline{100}{At Begreber overalt træde frem under Form af Omdømmer}{245}
+
+% --- roman XVII ---
+\ovcap{Andet Capitel.}{Om Begrebers og overhovedet Erkjendelsers Fremstilling
+  ved Hjelp af \sperr{Omdømmer} og disses Natur og Beskaffenhed i
+  Almindelighed.}
+\ovside
+\ovline{101}{Omdømmet som væsentlig Fremtrædelsesform for Begreb og al ifølge
+  Tænkning sig dannende Erkjendelse. Forskjel imellem egentlige Omdømmer og
+  Sætninger med Omdømmets Form}{246}
+\ovline{102}{Hvad der i et Omdømme er at adskille. Dobbelt Betydning af
+  Ordet: Prædicat. Definition paa Omdømme. Kryptiske Sætninger}{249}
+\ovline{103}{Hvorledes den Erkjendelse, som i et Omdømme udtaler sig,
+  forholder sig til dette selv, og hvor den er at søge i samme}{251}
+\ovline{104}{Omdømmet nærmere betragtet: det er 1) en Position og kun
+  een;}{253}
+\ovline{105}{2) en Henførelse af en Forestilling til en anden; 3) en
+  Bestemmelse af en Forestilling ved Hjelp af den anden; 4) en Forbindelse af
+  en Forestilling med en anden: to Maader, hvorpaa Omdømmet kan
+  betragtes}{254}
+\ovline{106}{Et Omdømme er endeligen 5) en saadan Sammensættelse af Tvende til
+  Eet, at de dog deri blive staaende som Tvende}{256}
+\ovline{107}{Hvad det vil sige, at Subjectet siges at være Prædicatet.
+  Forskjellig Kraft af dette Udtryk}{258}
+\ovline{108}{Dobbelt Betydning af det logiske \sperr{er} i Henseende til den
+  reale Nexus imellem Subject og Prædicat}{263}
+\ovline{109}{Den nærmere Betragtning af Omdømmet gaaer ud fra at betragte det
+  som Resultat af en Tænkning}{265}
+\ovline{110}{Hvorledes da Modsætningen imellem et Ja og et Nei træder frem.
+  Prædicat i vidtløftig og i indskrænket Betydning}{265}
+
+% --- roman XVIII ---
+\ovside
+\ovline{111}{Hvorledes Omdømmer overhovedet kunne inddeles i fire
+  Hoved=Henseender}{269}
+\ovline{112}{Almindelig Bemærkning angaaende de formelle Inddelinger. Hvad der
+  ved enhver af dem i det Følgende er at iagttage}{270}
+\ovline{113}{Inddelingen i Henseende til Qvaliteten}{271}
+\ovline{114}{Hvorledes vi komme til flere formelle Inddelinger}{276}
+\ovline{115}{Inddeling i Henseende til Qvantiteten}{277}
+\ovline{116}{De Hovedarter af Omdømmer, der vise sig, naar begge de anførte
+  Inddelinger forbindes med hinanden}{280}
+\ovline{117}{Inddeling i Henseende til Modaliteten. Qvalitetsforskjellenes
+  Indflydelse paa denne Inddeling. Almindelige Slutningsregler, som her ere at
+  bemærke}{281}
+\ovline{118}{Inddeling i Henseende til Relationen. Nærmere om det hypothetiske
+  Omdømmes Beskaffenhed. To Maader, paa hvilke samme kan betragtes}{286}
+\ovline{119}{Det disjunctive Omdømme}{291}
+\ovline{120}{Hvorledes Relationsinddelingen lader os see to ganske
+  forskjellige Arter af Forhold, som ved et Omdømme ere at ponere}{292}
+\ovline{121}{Om enkelte og sammensatte Sætninger}{293}
+\ovline{122}{Om flere Omdømmers indbyrdes Overeensstemmelse og
+  Ikke=Overeensstemmelse, og de logiske Inddelinger af Omdømmer, som i denne
+  Henseende ere at gjøre}{295}
+\ovline{123}{Omdømmers forskjellige Beskaffenhed med Hensyn til den reelle
+  Nexus imellem Subject og Prædicat. Omdømmers forskjellige Gehalt}{298}
+\ovline{124}{Forskjel imellem de egentlige dømmende og de ikke egentligen
+  dømmende Sætninger}{300}
+
+% --- roman XIX ---
+\ovside
+\ovline{125}{Til de sidste høre de blot begrebsopstillende og de blot
+  beskrivende Sætninger}{301}
+\ovline{126}{Fremdeles de identiske Sætninger. Dobbelt Betydning af dette
+  Udtryk}{302}
+\ovline{127}{Om de egentlige dømmende Sætninger: disse ere enten analytiske
+  eller synthetiske. Flere Maader, hvorpaa analytiske Sætninger kunne danne
+  sig}{304}
+\ovline{128}{Overgang til Læren om Slutninger}{311}
+
+\ovcap{Tredie Capitel.}{Om Maaden, hvorpaa Erkjendelser kunne vise sig som
+  grundede og gyldige, i Almindelighed, og om \sperr{Slutninger} i
+  Særdeleshed.}
+
+\ovline{129}{Den første og øverste af de logiske Grundsætninger, som i denne
+  Henseende ere at bemærke: Identitetsprincipet}{312}
+\ovline{130}{Contradictionsprincipet}{314}
+\ovline{131}{Udelukkelsesprincipet}{317}
+\ovline{132}{At disse Grundsætninger ere blot formelle. Ethvert Omdømme maa
+  have en materiel Grund}{317}
+\ovline{133}{Et Omdømmes Sandhed kan enten være givet umiddelbart eller
+  middelbart}{318}
+\ovline{134}{I første Tilfælde er det enten givet \textit{de facto} eller som
+  Axiom. To Slags Axiomer. Om ikke enhver Sætning, hvorved et Factum udsiges,
+  kan siges at danne sig ved Slutning}{319}
+\ovline{135}{Hvad der forstaaes ved at bevise: to Slags Beviis}{320}
+\ovline{136}{Begreb om Slutning; hvad deri er at bemærke}{320}
+\ovline{137}{Almindelig Regel for alle Slutninger}{324}
+
+% --- roman XX ---
+\ovside
+\ovline{138}{Hvad der hører Logiken til, i Læren om Slutninger at
+  oplyse}{325}
+\ovline{139}{Hvorledes vi i Almindelighed kunne gaae frem, for at udfinde og
+  bestemme de forskjellige Slags Slutninger i formel Henseende}{326}
+\ovline{140}{Om de umiddelbare Slutninger i Almindelighed}{329}
+\ovline{141}{Om Identitets=, Underordnings= og Modsætningsslutningen i
+  Særdeleshed}{330}
+\ovline{142}{Begreb om Conversionsslutning}{331}
+\ovline{143}{Dens forskjellige Arter}{332}
+\ovline{144}{Hvorledes hypothetiske og disjunctive Sætninger kunne blive
+  Gjenstande for Conversionsslutning}{333}
+\ovline{145}{Om den middelbare Slutning i Almindelighed}{334}
+\ovline{146}{Dens første Art, den kategoriske Syllogismus, i Almindelighed
+  betragtet}{335}
+\ovline{147}{Den naturligste Fremgangsmaade i samme: den første Figur}{336}
+\ovline{148}{Hvorledes i alt fire Figurer lade sig tænke}{339}
+\ovline{149}{Den anden Figur}{341}
+\ovline{150}{Den tredie Figur}{342}
+\ovline{151}{Den fjerde Figur}{344}
+\ovline{152}{Almindelige Regler for alle kategoriske Syllogismer}{344}
+\ovline{153}{Den middelbare Slutnings anden Hovedart. Den almindelige
+  hypothetiske Slutning}{345}
+\ovline{154}{Speciel Art af hypothetisk Slutning}{346}
+\ovline{155}{Den middelbare Slutnings tredie Hovedart: den disjunctive
+  Slutning. Apagogiskt Beviis}{347}
+\ovline{156}{Dilemma}{347}
+\ovline{157}{Sammenkjædede Slutninger. Sorites}{348}
+
+% --- roman XXI ---
+\ovside
+\ovline{158}{Enthymema. Epichirema}{349}
+\ovline{159}{Slutninger betragtede fra den reale Side. Udsigt over de
+  forskjellige Arter af Beviser}{350}
+\ovline{160}{Inductions= og Analogieslutning}{352}
+\ovline{161}{Forklaringsslutninger. Beviis af Indicier}{354}
+\ovline{162}{Demonstrationerne}{356}
+\ovline{163}{De begrebsforfølgende Beviser. De ere enten simple analytiske
+  Beviser, eller debatterende og discuterende Argumentationer, eller
+  Deductioner}{357}
+\ovline{164}{Adskillige Feil, som ved Slutninger maae undgaaes, i Henseende
+  til Det, hvorfra, og Det, hvorpaa der gaaes ud}{360}
+
+\ovcap{Fjerde Capitel.}{Om videnskabelig Fremstilling i Almindelighed og
+  Beskrivelse, Definition og Inddeling i Særdeleshed.}
+
+\ovline{165}{Begreb om Videnskab i Almindelighed}{363}
+\ovline{166}{Forskjellig Methode i den videnskabelige Fremstilling}{364}
+\ovline{167}{Begrebers Forfølgelse i to Retninger, med Hensyn til det dobbelte
+  Slags Sammenhæng}{365}
+\ovline{168}{Hvad der ligger til Grund for al Videnskab, som systematisk}{366}
+\ovline{169}{Om de to Slags Beskrivelse}{367}
+\ovline{170}{Begreb om \sperr{Definition}. Hvorledes den er forskjellig fra
+  Beskrivelse}{368}
+\ovline{171}{Almindelige Regler for Definitioner}{370}
+\ovline{172}{Flere Arter af Definition. Hvad der hører til at udfinde
+  Definitioner. Hvorledes vi ledes hen til dem ad flere Veie}{371}
+
+% --- roman XXII ---
+\ovside
+\ovline{173}{Inddeling i Almindelighed. Den logiske Inddeling i Særdeleshed.
+  Hvad der ved samme er at bemærke}{374}
+\ovline{174}{Regler for samme. --- Inddeling efter Leddenes Antal}{376}
+\ovline{175}{Reel Inddeling}{377}
+\ovline{176}{Distinction imellem en Gjenstands forskjellige Sider.
+  Bemærkninger angaaende flere Slags Distinction}{378}
+
+% Lozenge ornament rule, then the errata leaf. The Rettelser are the LAST
+% printed matter of the front matter; PDF 26 begins printed p. 1. There is no
+% second errata leaf at the end of the volume (PDF 404--407 are blank / cover).
+\begin{center}
+  \rule{0.34\linewidth}{0.4pt}\\[2.5ex]
+  {\large\sperr{Rettelser.}}
+\end{center}
+
+% Printed as a three-column list: the page number, the line number, and the
+% correction; the repeated words "Pag." and "Lin." are replaced by a dash in
+% every line after the first. Set here as plain lines, since only the wording
+% matters for the edition.
+\begin{flushleft}
+Pag. 24 Lin. 16, istedetfor Lit. C læs: B, §. 62.\\
+--- 36 --- 2, istedetfor §. 62 læs: §. 70=71.\\
+--- 41 --- 4, istedetfor B læs: C.\\
+--- 44 --- 22, istedetfor §. 62 læs: 70.\\
+--- 49 --- 3, efter desl. sluttes Parenthesen.\\
+--- 52 --- 8 fra neden, den blotte formale Begriben læs: den blotte
+Sammenhængsbegriben.\\
+--- 76 --- 12, hvilket læs: hvilke.\\
+--- 89 --- 19 og 20, den læs: det.\\
+--- 99 --- 18, isted. §. 62 læs: §. 70=71.\\
+--- 111 --- 6 fra neden, eller læs: deels til en.\\
+--- 114 --- 16 fra oven, kunne de Ord og skeer styrkeviis falde bort.\\
+--- 118 --- 12, efter kunne sættes: undertiden.\\
+--- 170 --- 9, isted. §. 73 læs: §. 74.\\
+--- 173 --- 9, isted. §. 73 læs: §. 74, Anm. 5.\\
+--- 193 --- 23, isted. §. 73 læs: §. 74.\\
+--- 202 --- 4, isted. og læs: af.\\
+--- 205 --- 6, isted. §. 70 læs: §. 71.\\
+--- 226 --- 13 fra neden, efter 57 sættes: jfr. §. 77, Anm.\\
+--- 233 --- 6 fra neden, efter Sammenhængsbegreber sættes: saavelsom
+Realbegreber.\\
+--- 240 --- 18, maae istedetfor §. 96 sættes: §. 95, \textsuperscript{b}.\\
+--- 242 --- 11 fra neden, §. 72 læs: §. 73.\\
+--- 243 --- 16, 83 læs: 84.\\
+--- 289 øverste Linie, Anm. 2 falder bort.
+\end{flushleft}
+% The Rettelser confirm that the book has Anm. remarks numbered per § (p. 173
+% "§. 74, Anm. 5"; p. 289 "Anm. 2") and that Sibbern's cross-reference
+% abbreviation is "jfr." in lower case here (p. 226), not "Jfr.".
+
+\cleardoublepage
+\tableofcontents
+
+\mainmatter    % sets arabic numbering itself — do not add \pagenumbering here
+
+% ============================================================================
+%  BODY — printed pp. 1--378 (PDF 26--403).
+%
+%  One batch marker per division, derived from the
+%  printed Oversigt. The eleven ranges below are contiguous and cover 1--378
+%  exactly, so check.py's gap test is meaningful from the first batch on.
+%
+%  HOW TO USE A MARKER. Batches are 12--17 printed pages, so a division marker
+%  is normally SPLIT into batch-sized markers before dispatch: the single marker
+%  for pp. 30--152 becomes a stack of markers of the same form reading
+%  30--44, 45--59, 60--74 and so on, until the division is covered.
+%  (No literal marker text is written out in this comment, deliberately: a
+%  second copy of a marker string anywhere in the file makes splice.py refuse to
+%  run, because it insists on finding exactly one copy of the marker it wants.)
+%  splice.py matches a fragment to its marker by the FIRST--LAST pair parsed out
+%  of the fragment's own FILENAME (pp30-44.texfrag), so the split marker and the
+%  fragment name must agree exactly, character for character. Never edit
+%  transcription.tex from inside a batch agent.
+%
+%  HEADS. The Capitel heads and the two "Indledning." heads are pre-placed
+%  below, because the Oversigt fixes their pages (a Capitel begins on the page
+%  of its first §, and printed p. 26 was verified on the image). The A.--F.
+%  rubric heads are NOT pre-placed: the Oversigt gives only the page on which
+%  each § begins, and there is a gap between the last § of one rubric and the
+%  first § of the next (148->153, 201->208, 223->226), so each rubric head
+%  stands somewhere inside its gap. The batch agent inserts \rubrik{...} where
+%  the head actually falls, reports the page, and the range is closed then.
+%  If a head turns out to stand EARLIER than the marker range assumed, say so
+%  and the marker boundary moves.
+% ============================================================================
+
+\gruppe{Indledning.}
+% §§ 1--7.  Printed p. 1 carries no folio (the numeral is not printed on it).
+% Division marker pp. 1--25 split for dispatch, 2026-08-26.
+% § starts inside this range (from the Oversigt): §.1 p.1, §.2 p.5, §.3 p.6,
+% §.4 p.10, §.5 p.13, §.6 p.20, §.7 p.25.
+% [text to be added: pp. 1--13]
+% [text to be added: pp. 14--25]
+
+
+\capitel{Første Capitel.}{Om den undersøgende og behandlende Tænknings
+forskjellige Fremgangsmaader, og den Erkjendelse, som derved opnaaes.}
+% Head verified on the image, printed p. 26 (PDF 51): letterspaced Fraktur
+% label centred x[412,886], three centred Fraktur argument lines, then a centred
+% rule 116 px x 7 px (x[596,712]) at 300 dpi, then "Indledning.", then "§. 8."
+
+\gruppe{Indledning.}
+% §§ 8--11, the First Capitel's own Indledning, before rubric A.
+% [text to be added: pp. 26--29]
+
+% --- rubric A. --- §§ 12--59.  Insert here, at its true page:
+%     \rubrik{A.}{Reel Sammenhængs=Analyse\\
+%       eller\\
+%       Reelle Gjenstandes Analyse ifølge Grundbegrebet om reel Sammenhæng.}
+% Division marker pp. 30--152 split for dispatch, 2026-08-26. Only the first
+% batch is split off so far; split the remainder as batches are dispatched.
+% § starts in the first batch: §.12 p.30, §.13 p.32, §.14 p.34, §.15 p.37,
+% §.16 p.43, §.17 p.44.
+% [text to be added: pp. 30--44]
+% [text to be added: pp. 45--152]
+
+% --- rubric B. --- §§ 60--67.  The head falls between p. 148 (§. 59) and
+%     p. 153 (§. 60); insert it where it stands and report the page:
+%     \rubrik{B.}{Reel Synthese,\\
+%       eller\\
+%       reelle Anskuelsers eller Gjenstandes Frembringelse ved en selvstændig
+%       synthetisk Fremgangsmaade.}
+% [text to be added: pp. 153--178]
+
+% --- rubric C. --- §§ 68--74:
+%     \rubrik{C.}{Sammenlignings=Analyse\\
+%       eller\\
+%       Gjenstandes og Begrebers Analyse og Ordning ifølge Grundbegrebet om
+%       Lighed og Sammenhæng formedelst Lighed.}
+% [text to be added: pp. 179--207]
+
+% --- rubric D. --- §§ 75--83.  The head falls between p. 201 (§. 74) and
+%     p. 208 (§. 75):
+%     \rubrik{D.}{Begrebs=Analyse.}
+% [text to be added: pp. 208--225]
+
+% --- rubric E. --- §§ 84--85.  The head falls between p. 223 (§. 83) and
+%     p. 226 (§. 84):
+%     \rubrik{E.}{Begrebers synthetiske Combination.}
+% [text to be added: pp. 226--227]
+
+% --- rubric F. --- §§ 86--100:
+%     \rubrik{F.}{Om Begreber i Almindelighed.\\
+%       (Resultater af det Foregaaende.)}
+% [text to be added: pp. 228--245]
+
+
+\capitel{Andet Capitel.}{Om Begrebers og overhovedet Erkjendelsers Fremstilling
+ved Hjelp af \sperr{Omdømmer} og disses Natur og Beskaffenhed i Almindelighed.}
+% §§ 101--128.  "Omdømmer" is letterspaced in the Oversigt's form of this
+% argument; VERIFY it against the printed head on p. 246 and, if the head
+% differs from the Oversigt, record BOTH readings rather than normalising them
+% (repo CLAUDE.md, editorial stance).
+% [text to be added: pp. 246--311]
+
+
+\capitel{Tredie Capitel.}{Om Maaden, hvorpaa Erkjendelser kunne vise sig som
+grundede og gyldige, i Almindelighed, og om \sperr{Slutninger} i Særdeleshed.}
+% §§ 129--164.  Same caution: "Slutninger" letterspaced per the Oversigt;
+% verify against the printed head on p. 312.
+% [text to be added: pp. 312--362]
+
+
+\capitel{Fjerde Capitel.}{Om videnskabelig Fremstilling i Almindelighed og
+Beskrivelse, Definition og Inddeling i Særdeleshed.}
+% §§ 165--176.  Printed p. 378 is the last page of text and ends inside §. 176;
+% it carries a centred 393 px tailpiece ornament at the foot (y 1689--1704 at
+% 300 dpi), which is an end-of-book ornament and not a footnote rule.
+% [text to be added: pp. 363--378]
+
+
+\backmatter
+\end{document}
