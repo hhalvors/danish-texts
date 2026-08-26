@@ -35,21 +35,35 @@
 %        than acts on anything they disagree about. The built PDF now contains
 %        no "word- word" artefact at all.
 %
-%  TWO DEFECTS OF A DIFFERENT KIND, FOUND BY THAT PASS AND NOT REPAIRED — they
-%        are transcription errors, not splice artefacts, and are left for the
-%        editor rather than corrected on an agent's reading:
-%        (1) printed p. VII: THE PAGE MARKER IS ONE CLAUSE TOO EARLY. The words
-%            "tænker lidt nøiere efter." stand at the FOOT OF PRINTED p. VI in
-%            the scan (PDF 11), not at the head of p. VII; p. VII begins,
-%            indented, with "Skal her virkelig strides om, hvo det er, …".
-%            Verified at 600 dpi. The marker should move after "efter." and
-%            p. VII should then take a paragraph break.
-%        (2) printed pp. 7/8: the file ends p. 7 with "…Videnskaben opkommer i
-%            Christenheden," — a COMMA — and runs straight on into p. 8, whose
-%            printed first line "Den Christne bliver naturkyndig; …" is
-%            INDENTED, i.e. a new paragraph. A comma cannot precede an indented
-%            paragraph, so either the mark is a full stop misread as a comma or
-%            text is missing at the joint. Needs the page checked.
+%  TWO DEFECTS OF A DIFFERENT KIND, found by that pass and NOW REPAIRED. Both
+%        came from paragraphs.py's UNCERTAIN list — pages where the image said
+%        "new paragraph" and the text said "continues mid-sentence". Neither was
+%        a splice artefact; both were settled at 600 dpi.
+%
+%        (1) printed p. VII: THE PAGE MARKER SAT ONE CLAUSE TOO EARLY, and has
+%            been moved. The words "tænker lidt nøiere efter." are at the FOOT OF
+%            PRINTED p. VI — its last two lines read "Hvor mislig min Opgave
+%            imidlertid viser sig, maa vist Enhver indrømme, / der tænker lidt
+%            nøiere efter." — and p. VII opens, indented, with "Skal her virkelig
+%            strides om, ...". The contradiction the audit reported WAS the
+%            misplaced marker. p. VII now also takes its paragraph break.
+%
+%        (2) printed pp. 7/8: the printing has A COMMA AND A PARAGRAPH BREAK AT
+%            THE SAME JOINT, which is odd enough to set out. p. 7 ends
+%            "...opkommer i Christenheden," — a comma, not a full stop, verified
+%            at 600 dpi and ~1.7x, where the mark plainly carries a descending
+%            tail. The line is short but the page is NOT short: p. 7's text ends
+%            at y4370 of 4908 and p. 8's at y4337. And printed p. 8 then opens an
+%            INDENTED new paragraph. Both features are now reproduced — the comma
+%            stands and the paragraph break is set. Previously the two pages ran
+%            together as one paragraph, reproducing neither.
+%            Sense-wise the comma reads as a colon-like pause introducing the
+%            elaboration that follows ("Den Christne bliver naturkyndig; den
+%            Naturkyndige er en Christen"), which may be why it was set.
+%            paragraphs.py will GO ON REPORTING p. 8 AS UNCERTAIN for as long as
+%            the book exists, because a comma before an indented paragraph is
+%            exactly the contradiction it is built to notice. That flag is
+%            expected and correct; do not "resolve" it by changing the text.
 % ============================================================
 \documentclass[12pt,a4paper]{book}
 \usepackage[utf8]{inputenc}
@@ -266,8 +280,19 @@ betydningsløst at tilbyde en Strid om Troeserkjendelsens Princip, og beder
 desaarsag den velvillige Læser at tage til Takke med mine Bidrag.
 
 Hvor mislig min Opgave imidlertid viser sig, maa vist Enhver indrømme, der
+tænker lidt nøiere efter.
+
+% MARKER MOVED (2026). It stood before "tænker lidt nøiere efter.", which put
+% those words at the head of p. VII. They are at the FOOT OF PRINTED p. VI:
+% verified at 600 dpi, where p. VI's last two lines read
+%   "Hvor mislig min Opgave imidlertid viser sig, maa vist Enhver indrømme,
+%    der tænker lidt nøiere efter."
+% and p. VII opens, INDENTED, with "Skal her virkelig strides om, ...".
+% Found by paragraphs.py, which flagged the page UNCERTAIN because the image
+% said "new paragraph" while the text said "continues mid-sentence" — the
+% contradiction was the misplaced marker itself.
 % --- p. VII ---
-tænker lidt nøiere efter. Skal her virkelig strides om, hvo det er, der har
+Skal her virkelig strides om, hvo det er, der har
 seiret i Striden, hvor nær ligger da ikke den Mistydning, at den foregivne
 Interesse for Opfattelsen af et Princip dog maaskee alligevel kun tjener som et
 af de Paaskud hvormed en selvisk Lidenskab vil besmykke en anmassende
@@ -576,6 +601,18 @@ almindelige Fornuftsandhed.}
 
 Heraf forklares det, hvorledes Striden imellem Christendommen og
 Videnskaben opkommer i Christenheden,
+
+% AS PRINTED, AND THE COMBINATION IS ODD ENOUGH TO RECORD. Printed p. 7 ends
+% "...opkommer i Christenheden," — a COMMA, not a full stop: verified at 600 dpi
+% and ~1.7x, where the mark plainly carries a descending tail. The line is short
+% and sits at the page's normal foot (p. 7's text ends at y4370 of 4908, p. 8's
+% at y4337, so p. 7 is not a short page), and PRINTED p. 8 THEN OPENS AN
+% INDENTED NEW PARAGRAPH, also verified at 600 dpi.
+% So the printing has a comma AND a paragraph break at the same joint. Both are
+% reproduced: the comma stands, and the paragraph break is now here. Earlier the
+% two pages were run together as one paragraph, which reproduced neither.
+% Sense-wise the comma reads as a colon-like pause introducing the elaboration
+% that follows, which may be why the compositor set it.
 % --- p. 8 ---
 Den Christne bliver naturkyndig; den Naturkyndige er en Christen. Begge
 ueensartede Bestemmelser forbindes i een Bevidsthed. Opgaven er, at det

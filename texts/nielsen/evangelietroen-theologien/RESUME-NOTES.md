@@ -401,20 +401,54 @@ page look like a −137 px hanging indent; even-numbered PDF pages carry the
 facing leaf's dark edge down the right side; and one cached render came out
 truncated and had to be re-made.
 
-## Two defects of a different kind — NOT repaired, for the editor
+## Two defects of a different kind — NOW REPAIRED
 
-Both surfaced from the audit's UNCERTAIN list, where the image says "new
-paragraph" and the text says "continues". In both the image was right and the
-text test was wrong, and the reason is a transcription error rather than a
-splice artefact — so they are recorded, not corrected.
+Both came from `paragraphs.py`'s UNCERTAIN list, where the image said "new
+paragraph" and the text said "continues mid-sentence". Neither was a splice
+artefact. Both were settled at 600 dpi.
 
-1. **Printed p. VII: the page marker is one clause too early.** The words
-   »tænker lidt nøiere efter.« stand at the **foot of printed p. VI** in the scan
-   (PDF 11); printed p. VII begins, indented, with »Skal her virkelig strides om,
-   hvo det er, …«. Verified at 600 dpi. The marker should move after »efter.«,
-   and p. VII should then take a paragraph break.
-2. **Printed pp. 7/8.** The file ends p. 7 with »…Videnskaben opkommer i
-   Christenheden,« — a comma — and runs on into p. 8, whose printed first line
-   »Den Christne bliver naturkyndig; …« is **indented**. A comma cannot precede
-   an indented paragraph, so either the mark is a full stop misread as a comma or
-   something is missing at the joint. Needs the page read.
+### 1. The p. VII marker sat one clause too early — moved
+
+"tænker lidt nøiere efter." is at the **foot of printed p. VI**, whose last two
+lines read:
+
+> Hvor mislig min Opgave imidlertid viser sig, maa vist Enhver indrømme,
+> der tænker lidt nøiere efter.
+
+and printed p. VII opens, indented, with "Skal her virkelig strides om, …". The
+marker now sits after "efter.", and p. VII takes its paragraph break. **The
+contradiction the audit reported was the misplaced marker itself** — which is a
+useful thing to know about that flag: it does not only catch paragraphing.
+
+### 2. pp. 7/8 — a comma AND a paragraph break at the same joint
+
+The suspicion was that the comma should be a full stop. It should not: at 600 dpi
+and ~1.7× the mark after "Christenheden" plainly carries a **descending tail**.
+It is a comma, and the transcription was right about it.
+
+Nor is p. 7 a short page — its text ends at y4370 of 4908 against p. 8's y4337 —
+so the short last line is a paragraph ending, not a page ending early. And
+printed p. 8 **does** open an indented new paragraph.
+
+So the printing really does have a comma and a paragraph break at the same
+joint. Both are now reproduced; previously the two pages ran together as one
+paragraph and reproduced neither. Sense-wise the comma reads as a colon-like
+pause introducing the elaboration that follows ("Den Christne bliver
+naturkyndig; den Naturkyndige er en Christen"), which may be why it was set.
+
+**`paragraphs.py` will keep reporting p. 8 as UNCERTAIN forever**, because a
+comma before an indented paragraph is exactly the contradiction it exists to
+notice. The flag is expected and correct. Do not "resolve" it by changing the
+text.
+
+---
+
+## Note on the page-image caches
+
+Every `paragraphs.py` reads a cache under `/tmp`, and **the sandbox clears
+`/tmp` between sessions** — the audit then reports "no usable page image" for
+every marker, which looks alarming and means nothing. Rebuild first: this book's
+cache is 183 pages of the scan rendered at 250 dpi greyscale, one PNG per PDF
+page, named `pg-<PDFpage>.png`. Takes about three passes of a couple of minutes.
+Watch for the occasional truncated PNG — one appears most times — and delete and
+re-render it, or Pillow throws "image file is truncated".
