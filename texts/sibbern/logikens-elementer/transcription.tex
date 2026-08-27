@@ -146,8 +146,16 @@
 %      at any Capitel or rubric. So a repeated \parag number is an error and a
 %      hole in the range is a dropped § head. Two irregularities are in the
 %      book itself, not in the transcription:
-%          §§ 39 og 40 share ONE Oversigt entry and one page (101). In the print
-%              "§. 39 og" stands alone on its own line above "§. 40."
+%          §§ 39 og 40 share ONE OVERSIGT ENTRY and one page number (101), and
+%              in the OVERSIGT "§. 39 og" stands alone on its own line above
+%              "§. 40." — BUT THE BODY DOES NOT MERGE THEM. Verified at 600 dpi
+%              on the pages themselves: the body prints two ordinary single-line
+%              heads, "§. 39." on p. 101 and "§. 40." on p. 102. The merge and
+%              the two-line head are the Oversigt's alone. Both readings stand,
+%              each in its own place (CLAUDE.md) — the body has \parag{39} and
+%              \parag{40}, the Oversigt keeps its combined \ovline. NB the
+%              Oversigt's page number for the pair is right for §. 39 and wrong
+%              for §. 40, which begins on p. 102.
 %          §. 95 is SPLIT into "95 a" and "95 b" (superscript a / b), pp. 238
 %              and 240. The Rettelser leaf refers to "§. 95, b", confirming it.
 %      Distinct numbered Oversigt entries: 177.
@@ -186,6 +194,18 @@
 %      22 px (ratio 1.000); on printed p. 1, 53.5 against 55.0 (ratio 1.028).
 %      Both blocks are set to the same measure (x ~ 202-1099 against 191-1094),
 %      first line indented ~87 px. Same type.
+%
+%  GREEK. The book quotes Greek inline. First occurrence printed p. 19
+%      (Plato, Phaed. 78, "ἅπερ ἀεὶ κατὰ ταὐτὰ καὶ ὡσαύτως ἔχει"), next p. 40
+%      ("νοητόν"). All of it is polytonic and none of it uses an LGR-fatal
+%      variant sort (ϑ ϰ ϕ ϖ ϱ ϐ ϵ ϲ) — verify.sh lints the source for those,
+%      because the sandbox cannot compile Greek at all and maps it to a
+%      placeholder. textalpha is loaded in the preamble for exactly this.
+%      KNOWN INCONSISTENCY, not yet normalised: the accented vowels are encoded
+%      two ways — precomposed monotonic tonos (ό U+03CC, ύ U+03CD) in "νοητόν",
+%      polytonic oxia/varia/psili (U+1F00--U+1F7F) in the Plato. Both render
+%      identically under textalpha and neither is fatal, so nothing was changed
+%      silently; a normalisation pass over the whole book should settle it once.
 %
 %  NO FOOTNOTES were found on any of the fourteen sampled pages, and Sibbern
 %      cross-references inline instead ("Jfr. min Psychologie §. 59, Anm. 1"),
@@ -237,6 +257,27 @@
 %      roman I    the city is spelled two ways on one page: "Kiøbenhavns" (with
 %                 i) in the author's designation, "Kjøbenhavn." (with j) in the
 %                 imprint. Both verified at 450 dpi. Transcribed as printed.
+%      p.  3      the quotation opening ''om Erkjendelse og Granskning ... is
+%                 NEVER CLOSED. Both marks in this book's Fortale are raised, so
+%                 the quotation is set with the '' ligature and the low/high
+%                 „/“ balance check is untouched by it — which is why there is
+%                 no QUOTE_DEFECTS row for it. Do not "close" it.
+%      p. 25      swelled tailpiece rule at the foot, 533 x 11 px at 300 dpi
+%                 (0.51 of the measure). An ornament, not a rule of structure;
+%                 no macro, set as a plain centred \rule.
+%      p. 26      the printed Capitel head reads "Forste Capitel." with an
+%                 UNSLASHED o, against the Oversigt's "Første Capitel."
+%                 A wrong sort: verified at 5x against the plainly slashed ø of
+%                 "undersøgende" on the head's own argument line, and both OCR
+%                 engines read a plain o too. BOTH readings stand, each in its
+%                 own place. See the note at the head itself.
+%      p. 26      §. 8 opens with an enlarged initial D (66 px against a 51 px
+%                 cap). Not reproduced; no macro invented for it.
+%      p. 28      "men of ganske" for "men af ganske". As printed.
+%      p. 35      "Sammensattelse" — a long-s sort where a short s is wanted.
+%      p. 39      "saa saa" — the word is set twice.
+%      p. 39      "i et ganske Lys": the compositor dropped "andet"
+%                 ("i et ganske andet Lys"). As printed.
 %      roman IV   l.11 "indbegreben" is printed with a word-space inside it,
 %                 "indbe greben". SETTLED 2026-08-26: reproduced AS PRINTED, per
 %                 CLAUDE.md's editorial stance. The first transcribing pass had
@@ -448,20 +489,31 @@
 % Irregular numbers occur and are passed through as text:
 %   \parag{39 og\\ \S.~40}   (two lines, as printed)
 %   \parag{95 \textsuperscript{a}}
+% THE FIRST LINE AFTER A § HEAD IS INDENTED IN THE PRINT. The first version of
+% this macro ended \noindent and set it flush left; the batch agent on pp. 26--29
+% measured the indent and reported it. Two things are needed to get it back:
+% \begin{center} is a trivlist and sets \@endpe, which suppresses the indent of
+% the paragraph that follows it whatever you do — so the head is centred with
+% {\centering ...\par} instead — and the indent is then put in by hand, because
+% \indent after vertical material is not reliable here.
 \newcommand{\parag}[1]{%
   \par\vspace{0.9\baselineskip}%
-  \begin{center}{\textit{\S.\,#1.}\par}\end{center}
-  \vspace{0.35\baselineskip}
-  \noindent\ignorespaces
+  {\centering\textit{\S.\,#1.}\par}%
+  \vspace{0.35\baselineskip}%
+  \noindent\hspace{\parindent}\ignorespaces
 }
 
 % An "Anm." remark lead-in. Letterspaced Fraktur "A n m." with an antiqua
 % numeral; the remark BODY is set in the SAME type size as the § body (measured
 % — see the header), so no \small here. Anm. numbers restart at 1 in each §.
 %   \anm{1}   ->   Anm. 1.        \anm{}   ->   Anm.
+% The "Anm." lead-in stands at the head of an INDENTED first line in the print,
+% like any other paragraph opening — measured on pp. 26--29. Hence the explicit
+% indent rather than \noindent.
 \newcommand{\anm}[1]{%
   \par\vspace{0.5\baselineskip}%
-  \noindent\sperr{Anm.}\ifx&#1&\else~\textit{#1}.\fi\enspace\ignorespaces
+  \noindent\hspace{\parindent}\sperr{Anm.}\ifx&#1&\else~\textit{#1}.\fi
+  \enspace\ignorespaces
 }
 
 % ------------------------------------------------------- Oversigt (contents)
@@ -1317,19 +1369,899 @@ Realbegreber.\\
 % Division marker pp. 1--25 split for dispatch, 2026-08-26.
 % § starts inside this range (from the Oversigt): §.1 p.1, §.2 p.5, §.3 p.6,
 % §.4 p.10, §.5 p.13, §.6 p.20, §.7 p.25.
-% [text to be added: pp. 1--13]
-% [text to be added: pp. 14--25]
+% --- p. 1 ---
+% Printed p. 1 carries NO folio -- the numeral is not printed on this page
+% (verified on the image, PDF 26). Expected, not a scan fault.
+% The "Indledning." display head, with its rule above and below, stands at the
+% head of this page and is already set by \gruppe{Indledning.} in the skeleton.
+% Sheet signature "(1)" at the foot: not text, not transcribed.
+% EMPHASIS: none on this page. "Logiken", "Logik", "Lære" and "rene Tænkning"
+% were each compared at 3x against the Fraktur controls ("Forfatter", p. 2;
+% "Forskjel", p. 9) and are ordinary Fraktur, not Schwabacher.
+\parag{1}
+Tænkningens Natur og Grundbeskaffenhed, saaledes som den i og for sig er,
+uafhængigt af Menneskenes subjective Forskjelligheder, altsaa som den hos de
+tænkende Subjecter bør at være, er den Gjenstand, hvorpaa Logiken gaaer ud.
+Logik kan derfor siges at være en Lære om den rene Tænkning, eller om
+Tænkningen, saaledes som den er beskaffen, naar den er rigtig.
+
+\anm{1} Det er blot Tænkningen, ikke det tænkende Subject, der i Logiken skal
+betragtes. Derfor høre ei heller herhen de Betragtninger, hvortil Erfaring kan
+føre over det forskjellige Udseende, Tænkningens Virksomhed kan have hos
+forskjellige Individer, de forskjellige Anlæg, der herunder kunne lægge sig for
+Dagen, de Udviklingstrin, der herved kunne være at adskille, de Færdigheder,
+der i denne Henseende kunne opnaaes, de Eensidigheder, der kunne faae
+Overhaand, o. s. v. Jfr. min Psychologie §. 59, Anm. 1. (Den her bemærkede
+Forskjel kan man gjøre sig klar, ved at tænke sig Forskjellen imellem
+Bedømmelsen af en videnskabelig Bog, naar der blot sees paa Gjenstandens
+% --- p. 2 ---
+videnskabelige Behandling, og naar der derimod tages Hensyn til dens Forfatter
+og de Aandsgaver og den Aandsretning, han derved har lagt for Dagen). Ei heller
+tages her de mange Gjenstande, med hvilke Tænkningen kan sysselsætte sig, og
+deres reelle Forskjelligheder i Betragtning, men allene selve den Tænkning,
+hvorved vi komme til visse Forestillinger om, eller i Henseende til, disse
+Gjenstande.
+
+\anm{2} Logik kan paa dansk kaldes Tænkelære. Den er ogsaa bleven kaldet
+Forstandslære, ligeledes, skjønt ikke passende, Fornuftlære (f. Ex. af
+Reimarus). Til sine Tider har man ogsaa givet den Navn af \emph{Dialectik}: et
+Exempel er Melanchthons \textit{Dialectica}, der er en Logik, udført ganske
+efter Aristoteles, hos hvem ellers dette Navn kun betegner den Deel af Logiken,
+der afhandler den Art af Erkjendelse og Vished som finder Sted ved saadanne
+Gjenstande, \textit{de quibus in utramqve partem disputari potest}. Derfor have
+ogsaa andre Aristotelikere, f. Ex. Goclenus, inddeelt Logiken i
+\textit{Logica}, i indskrænket Forstand, \textit{Apodictica} og
+\textit{Dialectica}. Hos Platon (\textit{de republ. lib. VII.}, cfr. hans
+Phædros), er \emph{Dialectik} noget ganske Andet, end Logik, idet den hos ham
+betegner den philoso%
+% EMPHASIS on p. 2: only the two occurrences of "Dialectik" are Schwabacher
+% (round open D, wide bowls), verified at 3x against the Fraktur "Deel" of
+% l. 17 on the same page. "Tænkelære", "Forstandslære" and "Fornuftlære" are
+% ORDINARY FRAKTUR: their F is the angular Fraktur F, identical to the control
+% "Forfatter" two lines above, not the round Schwabacher F of p. 8 "Formlære".
+% ANTIQUA: Dialectica, de quibus ... potest, Logica, Apodictica, Dialectica,
+% de republ. lib. VII.  "Goclenus", "Reimarus", "Aristoteles", "Platon" and
+% "Phædros" are Fraktur and are NOT italicised.
+% "utramqve" is spelt with qv in the print (checked at 3x).
+% --- p. 3 ---
+phiske Sphære, dog at det kun er dennes ene Grundelement, som derved betegnes.
+Men hvori dette bestaaer, hører det ikke herhen at oplyse. (See derimod mit
+Skrivt: ''om Erkjendelse og Granskning §. 14, \textit{pag.} 128).
+% PRINTER'S DEFECT: the quotation opened before "om" is never closed. Both
+% marks in this book are RAISED (English-style closing marks in both
+% positions) and are set here as '' per the convention fixed in the front
+% matter; there is simply no second mark before the ")". Transcribed as
+% printed. Because the marks are ASCII '' and not the low/high Danish pair,
+% this does not move
+% check.py's quote balance, so no QUOTE_DEFECTS row is needed.
+% "pag." is antiqua; "§. 14" and "128" are antiqua figures, left unmarked per
+% the Oversigt's convention for inline § references.
+
+\anm{3} Vistnok kan den sunde Tænkning gaae for sig, uden at dens Former og
+Reglerne for den, som saadanne, komme til Klarhed, og sættes ud fra hinanden,
+og for at komme til at tænke sundt behøves altsaa Logikens Studium ikke
+nødvendigviis. Det er derfor bleven bemærket, at en saakaldet naturlig Logik,
+det er en Bevisthed om Tænkningens Fordringer, uden videnskabeligt Studium af
+samme, kan erstatte den videnskabelige, som da ei heller denne strax føder en
+sund Tænkning af sig, da Det, der indsees og erkjendes, derfor endnu ikke strax
+gaaer over i den umiddelbare practiske Leven og Virken, og bliver dennes
+herskende Sjæl. Men i Videnskabernes Studium og under den derved opstaaende
+videnskabelige Tænken, vil dog Fornødenheden af at komme til Klarhed over,
+hvad man gjør, og hvorledes man skal komme til sit Maal, ofte opfordre til at
+overveie, hvad Tænkning og Methode overhovedet, og hvad disse eller hine
+Tænkningens enkelte Fremgangsmaader, Fordringer og Bestræbelser i
+Særdeleshed, ere, og saaledes de Undersøgelser komme i Bevægelse, der, naar de
+udføres i deres hele Sammenhæng, danne Logiken. Saa at en videnskabelig Logik
+under en videnskabelig Stræbens Udvikling i Al%
+% Sheet signature "(1*)" at the foot; not text.
+% EMPHASIS on p. 3: none. "naturlig Logik" and "videnskabelig Logik" were both
+% compared at 3x with "Logiken" on p. 2 and p. 5 and are the same Fraktur L.
+% --- p. 4 ---
+mindelighed ikke kan andet end fremkomme. At gjøre sig Rede for sin egen
+Gjøren kan ikke heller andet, end at have en bestemt Indflydelse paa denne
+Gjøren selv, saasnart den skal skee med Bevidsthed, ifølge Selvbestemmelse og
+Overveielse. Ikke at tale om, at Tænkningen nok saa fuldt, som mange andre
+Gjenstande, kan fortjene sin videnskabelige Betragtning. --- Iøvrigt bemærke
+vi, at, naar Mathematikens Studium ofte er bleven priset som den bedste
+praktiske Skole for grundig Tænkning, saa er dette ikke aldeles grundet, da
+dette Studium kun danner til, og over i, en vis Art af Tænkning. Mere
+omfattende er aabenbar den Dannelse, som Grammatik og Classikernes Studium,
+endog allene fra Sprogets Side, giver. Imidlertid bør ikke blot Mathematik
+læres, men ogsaa mathematisk Anskuelse og Tænkning øves, i den lærde
+Underviisning, og betragtes som et almindeligt Dannelsesmiddel ved Siden af
+Philologie og Historie.
+
+\anm{4} Naturligviis vil Tænkningen først da erkjendes fra Grunden af og
+tilfulde, naar det sees, hvorledes den gaaer frem af Det, der overhovedet
+udgjør alle Tings, og tilmed al Erkjendelses, sidste Grund. Hvortil
+foregaaende høiere philosophiske Speculationer vilde behøves, ved hvilke først
+Det maatte være erkjendt, hvoraf Tænkningens Natur og Væsen derpaa kunde
+philosophiskt deduceres. En speculativ Logik vilde da opstaae. Men bedst
+begyndes dog med en li%
+% EMPHASIS on p. 4: none. "speculativ Logik" checked at 3x -- Fraktur.
+% --- p. 5 ---
+gefrem Iagttagelse og Analyse af Tænkningens Natur og Beskaffenhed, som vi
+forefinde den. Denne Vei ville vi gaae her; og saaledes bliver Det, der skal
+leveres her, den reflecterende eller beskrivende Logik. Tænkningens
+Activiteter eller Virksomheder, med deres Normer og styrende Grundbegreber,
+lade vi da ligesom opstaae for vore Øine, som de selv efterhaanden, under den
+fremadskridende Tænkning over Gjenstandene, indtræde og vise sig.
+Fremstillingen vil da her blive en analytisk=genetisk.
+% "analytisk=genetisk": the Fraktur double hyphen stands MID-LINE here, so it
+% is a compound hyphen and is kept as "=".
+\parag{2}
+Vort første Spørsmaal bliver nu naturligviis det: hvad Tænkning er. Men et
+udtømmende og aldeles tilfredsstillende Svar herpaa kan naturligviis først
+gaae frem af de logiske Undersøgelser selv. Ikkun med en foreløbig Bestemmelse
+af Begrebet Tænkning kunne vi begynde.
+
+Iagttage vi denne da, som den forefindes, saa see vi, at en anden Art af
+Erkjendelsesvirksomhed gaaer foran for den, nemlig en Erkjenden, hvorved
+Noget, som umiddelbart fremstiller sig som givet, opfattes og forestilles paa
+en ligesaa umiddelbar Maade, og nu frembyder de Gjenstande, hvorpaa Tænkningen
+\emph{gaaer ud}, som paa sit \emph{Stof}, der ogsaa kaldes Tænkningens
+\emph{Materie}. Denne paa sig selv beroende, umiddelbare \emph{Erkjenden}, der
+begynder som en \emph{Fornemmen}, og ofte fra først af kun giver en ubestemt og
+uklar Forestilling, kalde vi, naar den har uddannet
+% "Spørsmaal" is printed without the g throughout this batch (pp. 5, 10, 13);
+% not normalised to "Spørgsmaal".
+% --- p. 6 ---
+sig til sin Fuldkommhed, saa at dens Gjenstand med Bestemthed og Klarhed
+udsondrer sig fra alle andre, og forestilles for sig, en \emph{Anskuen},
+ligesom og de derved erhvervede Erkjendelser kaldes \emph{Anskuelser}.
+
+Ved de ved disse Anskuelser erkjendte Gjenstande sættes Tænkningen i
+Bevægelse, idet de foranledige til, til de umiddelbar givne Forestillinger
+endnu at føie andre. Men enhver Sysselsættelse med Forestillinger kan ikke
+kaldes Tænkning (den blotte løse Phantaseren ifølge Ideeassociationens egen
+Gang hører ei dertil, skjønt den vel stundom kaldes saa). Allene
+Forestillingernes planmæssige, eller ved en vis Grundforestilling om Eenhed og
+Sammenhæng ledede, Sammenknytning, Bestemmelse og Dannelse, er egentlig
+Tænkning.
+\parag{3}
+Men der er Forskjel imellem den blot i formel \emph{Henseende} rigtige, og den
+i reel \emph{Henseende} grundige, til sand Erkjendelse førende, Tænkning.
+
+Til hiin er det nok, at den, gaaende ud fra Nogetsomhelst, i at undersøge
+eller behandle dette, er i Overeensstemmelse med Tænkningens Grundformer,
+eller at der er tænkt paa den rette \emph{Maade} (i logisk Forstand); til den
+sidste derimod udfordres, at den staaer i det rette \emph{Forhold} til
+Gjenstanden, eller svarer til denne og trænger ind i den, d. e. i dens Natur og
+Væsen. Herved erholder Tænkningen først Ge%
+% EMPHASIS on p. 6: the two "Henseende" carry the round, open Schwabacher H --
+% compared at 3x with the Fraktur H of "Herved" in the last line of this same
+% page, which settles it. "Maade" and "Forhold" likewise Schwabacher.
+% NOT emphasised: "logisk Forstand" (l. 26) -- its F is the angular Fraktur F,
+% unlike the round Schwabacher F of "Forstand" on p. 10; and "egentlig
+% Tænkning" (l. 18), whose T matches the Fraktur T of p. 5.
+% --- p. 7 ---
+halt, som beroer paa, om og hvorvidt den deels arbeider sig frem til, deels
+sættes i Bevægelse af, en grundig Erkjendelse.
+
+Der kan nu spørges, om Logiken blot skal oplyse Tænkningens Natur i hiin
+Henseende, eller tillige betragte den i sidste Henseende. Begge Dele høre
+aabenbart til den fuldelige Oplysning af Tænkningens Natur; og begge Dele
+hænge ogsaa paa det nøieste sammen. Hvorfor vi her afhandle begge tilsammen,
+idet vi tænke os Logiken som Læren om den videnskabelige Tænkning: et Udtryk,
+der, efter sin Etymologie og sin Brug, betegner en Tænkning, som gaaer ud paa
+at tilfredsstille baade i Henseende til Form og i Henseende til Gehalt.
+
+\anm{1} Da Logiken blot undersøger den Aandsvirksomhed, hvorved enhver
+Videnskab overhovedet kommer i Stand, og bestemmer, hvad der i enhver
+Videnskab i Henseende til Form og Methode, saavel i det Enkelte, som i det
+Hele, maa iagttages, saa er den i Forhold til de andre Videnskaber, bleven
+kaldet en formel Videnskab, og har undertiden faaet Navn af
+\emph{Formalphilosophie}, Instrumentalphilosophie.
+
+Men herved er for det første at bemærke: at den dog i sig selv er ligesaa
+reel, som nogen anden; kun at Tænkningen selv her er Tænkningens reelle
+Gjenstand og Materie. Dernæst er det klart, at Tænkningen giver enhver
+Videnskab ei blot dens \emph{Form}, men ogsaa dens \emph{Gehalt}, da den først
+af den andetsteds fra
+% EMPHASIS on p. 7: "Form" and "Gehalt" in the LAST paragraph are Schwabacher
+% (round open F and G, wide lowercase); the "Form ... Gehalt" pair in l. 15 of
+% the SAME page is ordinary Fraktur -- compared at 3x, the H of "Henseende"
+% there matches the Fraktur "Herved" control. Emphasis follows the page.
+% "Formalphilosophie" carries the round Schwabacher F; the following
+% "Instrumentalphilosophie" does NOT and is left unmarked -- a genuine, if odd,
+% asymmetry in the print, checked twice.
+% NOT emphasised: "en formel Videnskab" (borderline; the V could not be
+% separated from the Fraktur V with confidence, so it is left unmarked).
+% --- p. 8 ---
+hentede \emph{materielle Erkjendelse} danner en \emph{Erkjendelse med Indsigt}.
+Ligesom derfor Tænkningen med Rette kan kaldes al Videnskabs \emph{Organ}, saa
+bør Logiken ogsaa saaledes føre os ind i den ægte videnskabelige Tænkning, at
+den kan fortjene Navn af et Videnskabens \emph{Organon}, og være Mere, end et
+blot Videnskabens \emph{Kanon}. Ved dette Navn tænkes blot paa en logisk
+\emph{Formlære}, der kun leverer Regler og Cauteler, som under Tænkningen
+skulle udgjøre den Rettesnor, Tænkningen ei maa afvige fra, medens den selv
+bevæges af noget Andet, som fremkalder den og udgjør Sjælen i den. Men ligesom
+at have Kundskab om et Sprogs Former endnu ikke er at være trængt ind i dets
+Aand, saaledes er en blot logisk Formlære endnu ikke ægte videnskabelig Logik.
+Iøvrigt bemærkes, at Udtrykket \emph{Organon}, hvormed Samlingen af
+Aristoteles's logiske Skrivter først blev betegnet, er taget i en anden
+Betydning, end den her omhandlede, af \emph{Baco}, i hans \textit{novum
+organon}, ligeledes af \emph{Krug} i hans ''\emph{neues Organon}.'' Men
+\emph{Lambert} forstod derved Logik.
+% EMPHASIS on p. 8: the FIRST "Formlære" (l. 8--9) is Schwabacher, the SECOND
+% (l. 16) is Fraktur -- the two stand nine lines apart on one page and were set
+% side by side at 3x; this pair is the cleanest Schwabacher/Fraktur control in
+% the batch. "Udtrykket" is Fraktur, the "Organon" after it Schwabacher.
+% The three proper names Baco, Krug, Lambert are Schwabacher ("Lambert" against
+% the Fraktur "Ligesom" of l. 2); "Aristoteles's" is Fraktur.
+% "novum organon" is antiqua and lower case in the print.
+% Both marks around "neues Organon." are RAISED, set here as '' per the
+% front-matter convention.
+
+\anm{2} Idet vi i det Følgende ville afhandle Logiken, betragtet som Læren om
+den videnskabelige Tænkning, komme vi tillige til at afhandle Alt, hvad der
+danner Tænkningen i mere almindelig Forstand; thi alt dette kan ogsaa komme
+frem i den videnskabelige. Den tilbørlige Oplysning af dennes Natur fordrer
+ogsaa, at vi overalt ere opmærksomme paa, hvad der
+% --- p. 9 ---
+følger af Tænkningens almindelige Fremgangsmaaders Natur, og altsaa udfordres
+til dens formelle Rigtighed, og hvad der derimod udfordres til virkelig
+Erkjendelse af, og Indsigt i, Gjenstandenes Beskaffenhed, Natur og Væsen,
+altsaa i reel Henseende er fornødent; men denne Forskjel maa, ligesom
+Modsætningen mellem \emph{Form} og \emph{Gehalt}, ikke forvexles med
+Forskjellen imellem Det, der i formel, og Det, der i materiel Henseende vil
+være at bemærke, en Forskjel, der beroer paa Modsætningen imellem \emph{Form}
+og \emph{Materie}.
+
+\anm{3} Hvor nøie Undersøgelsen af Det, som i reel Henseende er at bemærke,
+hænger sammen med det i formel Henseende Fornødnes Oplysning, kunne vi let
+see, ved f. Ex. at bemærke, hvorledes man dog ei kan rigtigen oplyse, hvad det
+er at danne sig et Begreb \emph{om} Noget, uden tillige at gjøre sig Rede for,
+hvad det er at \emph{begribe} Noget (see §. 23 Anm. 1); ligesaa, hvorledes man
+dog ei kan opstille, fuldstændigen og rigtigen, alle Slutningens
+\emph{Former}, uden at gaae ind i en Undersøgelse af, hvilke forskjellige Veie
+der kan gaaes, naar det gjelder at godtgjøre eller bevise Noget; men
+\emph{bevise} betegner den i reel Henseende gyldige Slutning, ligesom
+\emph{begribe} den \textit{realiter} grundede Begrebsdannelse.
+
+Imidlertid see vi let, at der dog ogsaa, naar her den i reel Henseende
+grundede Tænknings Natur og Beskaffenhed undersøges, kun
+% EMPHASIS on p. 9: "Henseende" is FRAKTUR on this page (four times), against
+% the Schwabacher "Henseende" of p. 6 -- emphasis follows the page. The
+% preposition "om" is Schwabacher, and so is the second "bevise" while the
+% first is Fraktur. "realiter" is antiqua.
+% --- p. 10 ---
+bliver Tale om dens Hvorledes, ikke om Noget af det, hvad der ifølge samme
+erkjendes. Logiken skal lære, hvad der hører til grundigen at studere
+Naturens, Livets, Sandhedens Bog, ei, hvad denne Bog indeholder. Dog skal den
+kun oplyse os om hiint fra den objective Side (§. 1 Anm. 1), ei med Hensyn til
+det granskende Individs subjective Forhold.
+\parag{4}
+Den videnskabelige Tænkning sættes i Bevægelse ved Spørsmaal over det for
+Anskuelsen, eller i og for Fornemmelsen, sig Fremstillende, hvilke
+tilkjendegive, at vi ikke nøies med det saaledes umiddelbart Givne, men kræve
+en anden og bedre Erkjendelse; og da Tænkningen netop gaaer ud paa denne, som
+paa sit \emph{Formaal}, saa kunne vi give det foreløbige Begreb om Tænkning i
+videnskabelig \emph{Forstand}, at den er den Aandsvirksomhed, hvorved vi,
+gaaende ud fra noget Givet, søge, ved det Givnes Undersøgelse eller
+Behandling, at komme til, og ogsaa virkelig kunne komme til, en ny og bedre
+Erkjendelse, og sammes Fuldendelse ved fuldkommen Fremstilling.
+
+Tænkningen viser sig herved fra først af vistnok som en
+Erkjendelsesvirksomhed, men endnu ikke som den, der selv er en Erkjenden, kun
+som den Aandsbevægelse, hvorved en ny Erkjenden kan komme i Stand. Den nye
+Erkjenden formedelst Tænkning bliver forsaavidt en \emph{middelbar}, det er en
+saadan, der saaledes staaer
+% EMPHASIS on p. 10: "Formaal" and "Forstand" carry the round Schwabacher F;
+% "Fuldendelse" and "Fremstilling" in the same paragraph do NOT (angular
+% Fraktur F) and are left unmarked -- the three were set side by side at 3x.
+% --- p. 11 ---
+i Forhold til, og viser hen til, (refererer sig til) en vis anden
+foregaaende, at den forudsætter denne som sin Betingelse.
+
+Anskuelse og Tænkning vise sig allerede her som dem, der staae i en bestemt
+\emph{Modsætning} til hinanden.
+
+\anm{1} At der af Tænkningen fremhæver sig en egen selvstændig, Tænkningen
+tilhørende, Erkjenden af ganske anden Natur, end den uafhængigt af bevidst
+Tænkning sig dannende Anskuen, vil vise sig i det Følgende (§. 15). Men da vil
+der ogsaa sees (§. 21), at der i denne Erkjenden indtræder en ny Art af
+Anskuen, en \textit{intellectuel} \emph{Anskuen}, i \emph{Modsætning} til
+hvilken vi kalde hiin første Anskuen, vi her have betragtet, den
+\emph{reelle}. Tænkningen refererer sig saaledes paa en dobbelt \emph{Maade}
+til en Anskuen, deels til en saadan, der, uafhængigt af den, gaaer i Forveien
+for den, deels til en saadan, som hæver sig frem i Tænkningen selv, og ifølge
+den selv. Paa begge kan den siges at gaae ud, men paa forskjellig
+\emph{Maade}.
+
+\anm{2} Til det umiddelbar Givne, paa hvis Undersøgelse eller Behandling
+Tænkningen gaaer ud, hører ikke blot det Indbegreb af Anskuelser, vi ved den
+lavere Sandsning erholde, men ogsaa andre Anskuelser og Iagttagelser; f. Ex.
+de mentale Grundanskuelser saavelsom den ifølge samme indtrædende
+Productivitet, hvorfra Mathematiken gaaer ud, (dog ei undersøgende, men
+behandlende, saaledes, at Noget frembrin%
+% "intellectuel" is ANTIQUA in the print; the following "Anskuen" is
+% Schwabacher. "§. 15" and "§. 21" both read from the image (the ABBYY layer
+% gives 16 for the first).
+% --- p. 12 ---
+ges, hvilket da bliver Gjenstand for en reel Anskuen, og derpaa videre kan
+blive Gjenstand for den undersøgende Tænkning); ligeledes den indre
+Vaerblivelse og Iagttagelse, hvorpaa Samvittighedens Yttringer give et
+Exempel; ja den umiddelbare Bevidsthed af vor egen Tænkning kan, saaledes som
+det just her i Logiken er Tilfældet, afgive, hvad man kalder \emph{Stoffet}
+for Tænkningen.
+
+Iøvrigt er det at bemærke, at vel det umiddelbart Givne ofte har Charakteren
+af en egentlig Anskuelse strax, d. e. forud for al Betænkning eller tænkende
+Betragtning, men at det dog ei sjeldent først uddannes til egentlig Anskuen
+ved Tænkningen selv; ja at det i visse Tilfælde ikke engang kan siges at
+antage denne Charakteer, men bliver staaende som \emph{Fornemmelse}. Hvorfor
+vi ogsaa i det Følgende ville kalde den umiddelbare \emph{Erkjenden}, til
+hvilken Tænkningen refererer sig, som til Det, den skal opklare,
+\emph{Anskuelse} eller \emph{Fornemmelse}; dog ville vi ogsaa undertiden, for
+Kortheds Skyld, blot kalde den Anskuelsen, indskydende os under det bekjendte:
+\textit{a potiori fit denominatio}.
+
+\anm{3} Anskuelsen forudsættes her som given. Hvorledes den kan være det, og
+hvad det vil sige, at den er det, saa og, hvorfor ikke Alt, hvad vi kunne
+erkjende, fremstiller sig for os saa umiddelbart, have vi lige saa lidet at
+undersøge her, som vi her, hvor vi tage og betragte Erkjendelsen, som vi
+forefinde den, gaae ind i
+% "Vaerblivelse" as printed (both OCR witnesses agree; checked at 3x).
+% "strax" (l. 12) is Fraktur and is NOT emphasised.
+% --- p. 13 ---
+nogen Undersøgelse over al Erkjendelses Muelighed overhovedet.
+
+\anm{4} Det Spørsmaal: \emph{hvorfor vi dog ei nøies med det Givne}, fører til
+en Betragtning over vor Stræben efter Erkjendelse, som den, der udspringer af
+en indre Tilskyndelse eller Drivt, hvorved tillige en Lyst og Interesse
+fremkaldes. Men denne Betragtning er en psychisk=pathologisk.
+\parag{5}
+Det Nye, eller Bedre, eller Nye og Bedre, hvorpaa Tænkningen gaaer ud som paa
+sit \emph{Formaal}, kunne vi sige i Almindelighed at være Sandheds
+\emph{Erkjendelse} og dennes videnskabelige Fremstilling; thi for den første
+(reelle) Anskuen viser det Sande sig endnu ikke i sin fuldkomne Sandhed; og
+kun ved den fuldkomne Fremstilling deraf fuldendes Erkjendelsen selv. En
+nærmere Overveielse af, hvad hertil hører, vil lære os, hvilke de
+\emph{Hovedpuncter} ere, vi have at agte paa, naar vi foreløbigen ville sætte
+ud fra hinanden, hvorpaa Tænkningen, under sin Stræben efter Sandheds
+fuldelige Erkjendelse, maa gaae ud.
+
+Idet Tænkningen gaaer ud fra Anskuelsen, bliver dens første \emph{Formaal}
+naturligviis at fuldende denne Anskuen selv. Men herved ere to Ting at
+bemærke, deels hvorledes Tænkningen fører til at fuldkommengjøre den givne
+Anskuelse i og for sig, eller fører til at \emph{skue} tilfulde, hvad der er
+givet at \emph{skue}, deels hvorle%
+% "psychisk=pathologisk": the Fraktur double hyphen stands mid-line, so it is a
+% compound hyphen and is kept as "=".
+% EMPHASIS on p. 13: the whole clause "hvorfor vi dog ei nøies med det Givne"
+% is Schwabacher (checked word by word at 3x). "Erkjendelse" in "Sandheds
+% Erkjendelse" is Schwabacher but "Sandheds" is not, and the "fuldelige
+% Erkjendelse" ten lines lower is ordinary Fraktur -- emphasis follows the
+% instance, not the word. "Fremstilling" (l. 14) is Fraktur, against the
+% Schwabacher "Formaal" of l. 11 on the same page.
+% --- p. 14 ---
+% SEAM WITH THE PREVIOUS BATCH. Printed p. 14 opens with "des", completing
+% "hvorle=" at the foot of printed p. 13 (verified on the image, PDF 38, last
+% line: "fulde, hvad der er givet at skue, deels hvorle="). The joint word is
+% "hvorledes". Per the repo's page-marker convention (a word broken at a page
+% foot is written whole BEFORE the marker) the whole word belongs at the END of
+% the pp. 1--13 fragment; nothing of it is repeated here.
+den ogsaa kan føre til nye Opfattelser og Anskuelser af samme Slags, som de
+først givne, idet den leder den anskuende Erkjenden i at søge og finde dem.
+Vi mene herved Det, man kalder \emph{at anstille Iagttagelser}.
+(See videre §. 13 og Anm. 2 dertil).
+
+Men Tænkningen gaaer nu ogsaa ud over den hele Art af Erkjenden, der ved
+Anskuelsen erholdes, og fører til en eiendommelig, Tænkningen selv tilhørende,
+høiere Erkjenden, der gaaer ud paa Tingenes Sammenhæng, Forhold og Grunde. Thi
+alt Dette fremstiller sig ikke for den ligefremme reelle Anskuen, men kun for
+en særegen høiere Erkjenden, som gaaer frem af Tænkningen selv, og skyldes
+denne; hvilket endnu mere gjelder om det Tingenes sande (indre) Væsen, hvilket
+vi søge at udgrunde, naar vi eftergranske Tingenes sidste Grunde. Ved denne
+Erkjendelse bliver ogsaa --- og derfor kaldes den en høiere --- Tingene selv
+først skuede i deres rette Lys og erkjendte tilfulde. Ikke nøiet med alt det
+ved Anskuelsen Givne, søger Tænkningen endnu noget ganske Andet, hvorved det
+skal gjøres forstaaeligt, forklares og erkjendes, som det egentligen, eller i
+sit Væsen, er. Begreber og Ideer, som rene Tankegjenstande, og deres
+Forfølgelse, Sammenstillinger og Forbindelser, ere Gjenstandene for den nye og
+bedre Erkjenden, hvortil denne Tænken skal føre. Dog bemærke vi, at det kun ere
+Begreberne, ei Ideerne, hvormed Logiken har at gjøre.
+
+% --- p. 15 ---
+Vi have her betragtet Tænkningen, som den, der gaaer ud paa i givne Gjenstande
+at opfatte eller udfinde og erkjende Alt, hvad der i dem er og forefindes,
+saaledes som det i dem er givet. Men ligesom der allerede under denne Opfatten
+eller Udfinden og Erkjenden viser sig en frembringende Virksomhed, saa kan
+denne ogsaa træde frem for sig paa en selvstændig Maade. Denne
+selvfrembringende Virksomhed, eller \emph{Productivitet}, gaaer da Tænkningen
+ud paa at lede, og nu kunne da baade Fremgangsmaaderne ved denne
+\emph{Productivitet}, saa og de derved frembragte nye Anskuelser (som en egen
+ved Forstanden frembragt Mangfoldighed af umiddelbart anskuelige Gjenstande)
+frembyde et nyt Stof for den efter Sammenhæng og Forhold granskende Tænkning
+(hvorpaa Mathematiken er et stort Exempel).
+
+Ved alle disse nye Erkjendelser indtræder iøvrigt, hvad Erkjendelsens
+Fuldkommelse angaaer, hiin til den umiddelbare Anskuen gjorte Fordring, at de
+skulle være fuldkomment uddannede, eller være fuldendte i sig. Hvorved det vil
+beroe paa en nærmere Overveielse, om her ogsaa kan blive Tale om en
+Erkjendelsens Udvidelse formedelst Iagttagelser paa en reen
+\emph{intellectuel Vei} (d. e. paa en reen Begrebsanalyses Vei).
+% "intellectuel Vei" is Schwabacher; the "Vei" of "Begrebsanalyses Vei" on the
+% next line is ordinary Fraktur (the two V's differ). Verified at 1.35x.
+
+De forskjellige nye Erkjendelser ere, forsaavidt de ikke bestaae i blotte
+Anskuelser, men kun erkjendes formedelst Tænkning, middelbare. Men
+% --- p. 16 ---
+da den umiddelbare Erkjenden dog er en mere fuldkommen, end den middelbare, saa
+hører til at fuldende eller fuldkomme hine Erkjendelser endnu at hæve dem til
+Umiddelbarhed, eller bringe dem denne saa nær, som mueligt. (Jfr. §. 23
+Anm. 2).
+
+En Modsætning imellem selve den Sandhed, der skal erkjendes, og denne dens
+Erkjendelse, viser sig her overalt. Dog kan kun den Antagelse, der virkelig
+gaaer ud paa det Sande, kaldes en egentlig Erkjendelse (jfr. §. 24 Anm. 2).
+% "Jfr." above with a capital Fraktur I; "jfr." here in lower case, as printed
+% (the Rettelser leaf shows Sibbern uses both).
+Erkjendelse er Sandhedens egen Fremtræden for et erkjendende Subject. Men da
+dette Subject dog kun kan have Erkjendelsen ved at fremstille den for sig, og
+heri dog en Afvigelse fra det Sande er muelig, saa kan overalt spørges, om det
+Antagne ogsaa er det Sande, og Antagelsens Vished og Paalidelighed bliver nu
+forsaavidt ogsaa et særegent Formaal for den efter fuldkommen Erkjendelse
+stræbende Tænkning. (Herom især i Læren om Slutninger; see dog og §. 23
+Anm. 3).
+
+Den erkjendte Sandheds fuldkomne videnskabelige Fremstilling, ved hvilken først
+Erkjendelsen bliver aldeles fuldendt, er endeligen det sidste Formaal, hvortil
+Tænkningen stræber at komme.
+
+\anm{1} Vi see altsaa, at der i al Erkjendelse først kan skjelnes imellem
+Erkjendelsen selv og dens Fremstilling. Hvad hiin angaaer, da er den deels at
+betragte fra den \emph{objective} Side, deels
+% --- p. 17 ---
+fra den \emph{subjective}. I sidste Henseende er der Spørsmaal om Vished og
+Paalidelighed. I første Henseende skjelne vi imellem Det, hvad der erkjendes,
+og den Grad af Fuldkommenhed, hvormed der erkjendes. Hvad de givne Anskuelser
+angaaer, kommer blot den sidste her i Betragtning (thi hvad der anskues, bliver
+anskuet uafhængigt af al (bevidst) Tænkning); hvad derimod den af Tænkningen
+fremgaaende nye Erkjendelse angaaer, komme begge Dele i Betragtning.
+Anskuelsens Fuldkommenhed beroer deels paa dens Fuldendelse i sig, deels paa
+dens Udvidelse. Den \emph{intellectuelle} Erkjendelse derimod gaaer, i
+Henseende til Det, hvad der skal erkjendes, deels ud paa de givne Gjenstandes
+indvortes \emph{Natur og Beskaffenhed}, deels gaaer den ud paa Det, hvad der
+leder os i vor \emph{Productivitet} og de derved fremkomne
+\emph{Productioners Natur og Beskaffenhed}. I Henseende til den
+\emph{intellectuelle} Erkjendens Fuldkommelse endeligen gaaer Tænkningen først
+ud paa det samme, hvorpaa den ved Anskuelsens Fuldendelse gaaer ud, dernæst
+gaaer den ud paa at hæve den \emph{intellectuelle} Erkjendelse til
+Umiddelbarhed.
+
+Betragte vi Sagen nærmere, saa kunne vi sige, at Alt her dreier sig om de to
+Hovedgjenstande: Anskuelser og Begreber, men især om de sidste, som Gjenstande
+for en egen af Tænkningen udspringende Erkjenden, skjønt ogsaa hine ei blot ved
+Tænkning kunne uddannes, som givne,
+% Sheet signature "(2)" at the foot of printed p. 17; not text, not transcribed.
+% "givne" is broken giv=/ne across the foot of p. 17; written whole here.
+% --- p. 18 ---
+men ogsaa ifølge Tænkning kunne frembringes, som nye.
+
+\anm{2} Sandhed og Erkjendelse ere \emph{Correlata}. Sandhed i
+\emph{subjectiv} Betydning tænkes her (foreløbigen, see ellers: Om Erkjendelse
+og Granskn. §. 11), som en Antagelses Overeensstemmelse med Noget, hvortil den
+skal svare, d. e. med sin Gjenstand. Sandhed modsættes da \emph{Vildfarelse}.
+% "Correlata" is Latin but is set in SCHWABACHER here, not in antiqua, so it
+% takes \emph and not \textit. Emphasis follows the page, not the word.
+
+Det Spørsmaal, hvorledes vi dog komme til en saadan Gjenstand, da det for den
+nærmere Reflection synes at vise sig, at vi overalt kun have med en Antagelse
+og Forestilling at gjøre og med intet Andet, gaae vi ikke ind i her, hvor vi
+deels ikkun have Tænkningen, ikke Erkjendelsen overhovedet, at undersøge, deels
+endnu kun gaae ud paa at skildre og oplyse hiin, som vi forefinde den.
+
+Men Sandhed betegner endnu noget ganske Andet, end en Beskaffenhed ved vor
+Erkjenden. Idet Sandheden viser sig for os som Det, vi ville erkjende, er den
+(i \emph{objectiv} Betydning) Erkjendelsens Formaal. Men at erkjende Sandheden
+er at erkjende Tingene, som de \emph{i sig selv} ere, det er: som de
+\emph{i Sandhed} ere. Her modsættes Sandhed og Skin hinanden, og Sandhed falder
+sammen med \emph{Væren, Væsenhed, Realitet}. Om Gjenstanden selv har Sandhed,
+spørges nu. Den er desto mere \emph{sand}, jo mere den egentligen kan siges
+\emph{at være}. Der kan nemlig tales om høiere og ringere Grad af Væren, af
+% --- p. 19 ---
+Sandhed og Væsenhed. Der gives baade en \emph{absolut} og en \emph{relativ}
+Væren. Hiin er ubetinget og bestandig, \emph{permanent}. Det, der fuldkomment
+har denne Væren, er det Evige, der tillige, forsaavidt det sees i Modsætning
+til det lavere Værende, kaldes det Uendelige. Hvad der derimod fremstiller sig
+i Rummet med Omgrændsninger i dette, eller opstaaer i Tiden og forandres i
+denne, tilmed er omskifteligt og forgjængeligt, har ikkun en aldeles
+\emph{relativ} Tilvær, og ikke nogen sand og ægte (høiere) Væsenhed, skjønt det
+i sin Sphære vistnok beholder sin Gyldighed, og har sin Virkelighed og
+Realitet. Hvorimod Det, der, om end i Rum og Tid og under vexlende Skikkelser,
+dog træder frem som det altid Selvsamme og sig selv Lige,
+% GREEK. The parenthesis is set in antiqua: the quotation in ITALIC Greek, the
+% reference "Plat. Phæd. 78" in UPRIGHT roman. Both are given \textit here, per
+% the book's convention that antiqua against Fraktur is marked \textit.
+% Plato, Phaedo 78d. THIS IS THE FIRST GREEK IN THE BOOK -- the preamble loads
+% textalpha for exactly this, but it has never been compile-tested. Precomposed
+% (NFC) codepoints used beyond plain Greek: U+1F05 U+1F00 U+1F76 U+1F70 U+1F50
+% U+1F61 U+03CD U+1F14.
+(\textit{ἅπερ ἀεὶ κατὰ ταὐτὰ καὶ ὡσαύτως ἔχει Plat. Phæd. 78}), som det
+Permanente og Constante, der betinger og bestemmer hine Vexel underkastede
+Skikkelser, hvori det træder frem, allerede kan siges at have en ægte Væsenhed
+og høiere Væren, og at være af uendelig Natur og Art, om det end i Forhold til
+det høieste Værende, det sande Evige, er betinget og afhængigt, og altsaa i
+denne Henseende endnu kun er af endelig Art og Udspring. Det har, som staaende
+midt imellem det Evige og det aldeles Endelige, en \emph{relativ} Absoluthed og
+Uendelighed.
+
+Om det \emph{absolut} Sande i Tingene, der ogsaa udgjør, hvad man kalder deres
+sidste Grund, om Væren og Væsenhed, saavel den \emph{absolute}
+% Sheet signature "(2*)" at the foot of printed p. 19; not text.
+% "absolute" is broken abso=/lute across the foot of p. 19 and is Schwabacher on
+% both halves; written whole here, before the marker.
+% --- p. 20 ---
+som den \emph{relative}, handler iøvrigt ikke den blotte Tænkelære eller Logik,
+vi her afhandle.
+
+\anm{3} Opmærksomme paa Tænkningens forskjellige Hovedformaal i forskjellige
+Henseender, eller bedre paa de ved Tænkningens ene Hovedformaal, Sandheds
+fuldkomne Erkjendelse, adskillelige Hovedpuncter, der maae haves for Øie under
+Bestræbelsen efter at naae dette Hovedformaal, gjør os allerede en saadan
+foreløbig Overveielse, som den her strax har kunnet anstilles. Allerede de
+overalt tilbagevendende Spørsmaal: \emph{hvorledes? hvad? hvorfor?} vise hen
+derpaa, idet de vise hen paa de af Tænkningen selv (cfr. næste §.) fremgaaende
+Fordringer, der ved den selv skulle fyldestgjøres, naar den forskjellige
+Betydning og Kraft, ethvert af dem kan have, bemærkes. (Hvorledes seer Tingen
+ud? hvorledes er den i sig beskaffen? Hvad er det for en Ting? hvad er den
+egentligen, eller i sig selv? hvorfor antage vi dette? hvorfor er det saa? Med
+det Spørsmaal: hvorved? har Logiken ikke at gjøre).
+% The closing parenthesis (Hvorledes seer Tingen ud? ... at gjøre) is ordinary
+% FRAKTUR throughout -- only the three words "hvorledes? hvad? hvorfor?" eleven
+% lines above it are Schwabacher. Checked side by side at 1.3x.
+
+\parag{6}
+Tænkningen fremkaldes og foranlediges vel fra først af ved de, uafhængigt af
+samme, givne Gjenstande, men kunde dog ei opstaae og træde frem som
+undersøgende eller behandlende, dersom der ikke i den selv laae Noget, som gjør,
+at vi ikke lade os nøie med det Givne og dettes ligefremme Anskuelse, men kræve
+Andet og Mere. Dette viser da hen paa
+% --- p. 21 ---
+noget Oprindeligt i Tænkningen, hvoraf den udspringer, og hvorved den
+bestemmes og ledes.
+
+Vi see ogsaa let, at overhovedet al Tænkning nødvendigviis forudsætter noget
+oprindeligen i den selv til Grund Liggende, som gjør, at den i ethvert Tilfælde
+gaaer den Gang, den gaaer. Thi naturligviis maa Tænkningen, som enhver Art af
+Virksomhed, have sin eiendommelige Natur, og gaae frem paa visse Maader ifølge
+denne dens egen Natur, altsaa maa den og have sine, i den selv liggende, Love,
+hvorved den bestemmes og hvorefter den virker. Men hertil maae da nu,
+forsaavidt den gaaer for sig med Bevidsthed, svare visse Grundforestillinger,
+hvorved den ledes og bestemmes.
+
+Dette sees ogsaa i de Spørsmaal, hvorved Tænkningen sættes i Bevægelse. De
+forudsætte at der bevæger sig Noget i Tænkningen, som gjør, at vi spørge og
+søge, og at vi netop spørge saaledes, som vi spørge, og ved denne Spørgen just
+søge Det, hvad vi søge (at vi f. Ex. spørge: hvorfor er det saa? hvorved er det
+blevet saa? og altsaa søge en Grund og Aarsag, hvilket vi ei kunde, dersom ei
+Tanken om en Grund og Aarsag hævede sig frem i Tænkningen, og fremkaldte disse
+Spørsmaal). I Spørsmaalet selv træde da hine Grundforestillinger frem, forend
+endnu Noget i Gjenstandene, som kunde svare til dem, er fundet. Ja de træde
+frem med et Krav paa Tilfredsstillelse, og tilmed
+% "tilmed" is broken til=/med across the foot of p. 21; written whole here.
+% --- p. 22 ---
+med en Grundforudsætning om, at noget Saadant, som Det, de kræve, maa være at
+finde i Gjenstandene (at der, for at blive ved Exemplet, maa være Grund og
+Aarsag til Tingene). Grundforestillingen træder da nu ogsaa frem som den,
+hvortil det Eftersøgte maa svare, for at vi kunne vorde tilfredsstillede ved
+det Resultat, hvortil Tænkningen ifølge sin Søgen kommer, (Det, vi søge som
+Grund og Aarsag, maa være noget Saadant, at vi kunne erkjende det for Grund og
+Aarsag).
+
+Saaledes viser sig da strax i Tænkningens første Begynden en Modsætning imellem
+de uafhængigt af Tænkningen givne Anskuelser, og visse forudgaaende af
+Tænkningen selv fremtrædende Grundtanker, der deels ere Grundforestillinger,
+deels visse hertil svarende Grundforudsætninger, og siges at være givne
+\textit{a priori}, hvorimod hine Anskuelser siges at være erhvervede
+\textit{a posteriori}.
+
+\anm{1} Hvad Tænkningen overalt søger, er \emph{Eenhed, Sammenhæng og Grund},
+og at trænge ind i Tingenes Væsen. Disse ere de første Grundforestillinger
+\textit{a priori}, vi have at bemærke. Iøvrigt ville de naturligviis under
+Tænkningens Betragtning efterhaanden blive at bemærke, og denne Sag paa sit
+Sted nærmere i det Hele afhandlet.
+
+\anm{2} At det i Særdeleshed er en aldeles \textit{a priori} indtrædende
+Grundtanke, det Begreb om Væren og Væsenhed, som i Betragtningerne i Anm. 2 til
+forrige §. var i Bevægelse, er
+% THREE antiqua settings of "a priori" on this page, and they differ: the first
+% two (lines 18 and 23) are antiqua ITALIC with the "priori" letterspaced; the
+% third (line 29, in Anm. 2) is antiqua UPRIGHT roman, "priori" letterspaced.
+% "a posteriori" (line 19) is antiqua italic. All four are given \textit, per
+% the book's convention; the italic/upright distinction is recorded here only.
+% --- p. 23 ---
+klart nok. Naar der grundes over, hvad der har høiere, hvad der har ringere
+Væren, samt bestemmes, hvorved hiin udmærker sig fra denne, saa ligger derved
+en \emph{Maalestok eller Norm} for Bedømmelsen til Grund, som ikke kan være
+hentet fra Betragtningen af de Gjenstande, hvis høiere eller ringere Væsenhed
+skal bestemmes, da her ei er Tale om et Forhold imellem Gjenstandene indbyrdes,
+men om en Beskaffenhed, som tillægges dem med Hensyn til Noget, der ligger
+ovenfor deres hele Sphære, nemlig netop selve hiin Grundtanke om Væren og
+Væsenhed.
+
+\anm{3} Ville vi nærmere gjøre os Rede for, hvorledes noget Aprioriskt viser
+sig at ligge til Grund ved ethvert af de i forrige §. bemærkede Hovedpuncter,
+saa see vi let, at enhver af de der adskilte Arter af Undersøgelse forudsætter
+noget Oprindeligt i Tænkningen, hvilket fremkalder den, og bestemmer dens Gang,
+hver Behandling noget, som leder den, og gjør, at den skeer paa en vis Maade.
+
+Er det end Anskuelsens egen Beskaffenhed, som opfordrer til den middelbare
+Erkjendelses=Virksomhed formedelst Tænkning, hvorved den skal fuldkommes, saa
+er det dog en \emph{Grundtanke om Fuldendthed i Opfattelse og Anskuelse},
+hvorved denne Tænkning sættes i Bevægelse og ledes; thi Anskuelsen kan ei vise
+sig som trængende til slig Fuldendelse, uden ifølge et ved en saadan Grundtanke
+fremkaldet Savn og Krav. Og den samme er det da ogsaa, som leder til den
+% "Erkjendelses=Virksomhed": the Fraktur double hyphen falls at the line end,
+% but the second element is capitalised, so it is a real compound hyphen and is
+% kept as "=" per the book's convention, not resolved as line-break hyphenation.
+% --- p. 24 ---
+Iagttagelse, hvorved Anskuelsen udvider sig, fordi det Givne findes ikke at
+være tilfredsstillende.
+
+Hvorledes den hele Tænkning, som fører til Begreber og Ideer, fremkaldes og
+ledes ved de Grundforestillinger, vi i Anm. 1 til denne §. have nævnet, vil
+allerede her foreløbigen i det Hele let kunne bemærkes, men i det Følgende
+nærmere vise sig. (See f. Ex. §. 15, Anm. 6, §. 60).
+
+\emph{Productiviteten} ledes og styres naturligviis i det Hele ved
+Grundforestillingerne om Eenhed og Sammenhæng (Planmæssighed,
+Hensigtsmæssighed); men her udvikle sig endog de specielle Begreber paa en
+saadan Maade, at de vise sig som aprioriske, hvilket paa sit Sted (see Første
+Cap. under Lit. \textit{C}) vil blive viist.
+% ERRATA: the book's Rettelser leaf (roman XXII) reads "Pag. 24 Lin. 16,
+% istedetfor Lit. C læs: B, §. 62." Printed p. 24 line 16 is the line
+% "Cap. under Lit. C) vil blive viist." above. Per the editor's decision of
+% 2026-08-26 the Rettelser are NOT applied: the body is transcribed AS PRINTED
+% ("Lit. C") and the correction is recorded here only. The "C" is antiqua, as
+% the rubric letters A.--F. are throughout.
+
+Om den ved Hjelp af Tænkning erhvervede høiere Erkjendelses Fuldendelse gjelder
+naturligviis i denne Henseende det samme, som om den reelle Anskuelses
+Fuldendelse.
+
+At hiin nye og høiere Erkjendelse skal, saavidt mueligt, hæve sig til
+Umiddelbarhed, er en Fordring, som allene Tænkningen selv kan gjøre, idet den
+sætter den umiddelbare Erkjenden over den middelbare ifølge en oprindelig
+Grundtanke om Værd og Betydenhed i denne Henseende; (som da overhovedet Værd
+ikkun kan bedømmes efter større eller ringere Overeensstemmelse med Tænkningens
+egne Grundfordringer).
+
+Vished kræver, prøver og bedømmer naturligviis Tænkningen selv efter sin egen
+Maalestok,
+% --- p. 25 ---
+da det just er Tænkningen selv, som derved skal tilfredsstilles og ligesom
+beroliges.
+
+Den erkjendte Sandheds fuldkomne videnskabelige Fremstilling maa naturligviis,
+som en \emph{Productivitet}, ledes ved Grundforestillingerne om Sammenhæng og
+Eenhed, og tilfredsstille med Hensyn til disse.
+
+\parag{7}
+Men bestemmes end Tænkningens Gang og Maade paa den ene Side vistnok ved dens
+egen oprindelige Natur og de aprioriske Grundforestillinger, saa beroer den dog
+paa den anden Side naturligviis tillige paa Anskuelsernes Beskaffenhed,
+forsaavidt denne kan udfordre eller medføre forskjellig Art af Randsagelse
+eller Behandling, hvorved da dog deres formelle Beskaffenhed allene kan komme i
+Betragtning. Fra denne Betragtning gaae vi ud, idet vi nu undersøge, hvilke
+Tænkningens forskjellige Fremgangsmaader ere, og hvorledes derved en ny og
+bedre Erkjendelse, især en høiere \emph{intellectuel} Erkjendelse, opstaaer og
+danner sig.
+% "Randsagelse" as printed (Fraktur d + long s), an older spelling of
+% "Ransagelse"; both OCR layers agree, and the "d" is clear at 1.35x.
+
+% TAILPIECE. Printed p. 25 is the last page of the Indledning and its text
+% stops less than two thirds down the page. Below it, measured at 300 dpi on
+% PDF 50: a centred swelled rule (lozenge), x[347,880] = 533 px, y[1608,1625],
+% about 0.51 of the 1040 px measure and 11 px at its thickest, tapering to a
+% hairline at both ends. It is a tailpiece ornament, not a footnote rule and
+% not a Capitel rule; the Capitel head that follows is already in the skeleton.
+% Rendered here with the same idiom the title page and the Rettelser leaf use
+% for lozenge ornaments. There is no macro for a tailpiece -- report to caller.
+\begin{center}\rule{0.51\linewidth}{0.4pt}\end{center}
 
 
-\capitel{Første Capitel.}{Om den undersøgende og behandlende Tænknings
+% PRINTED-HEAD vs OVERSIGT VARIANT — RECORDED, NOT NORMALISED (CLAUDE.md).
+%   the Oversigt, roman VI, reads   "Første Capitel."
+%   the printed head, p. 26, reads  "Forste Capitel."   <- WRONG SORT, unslashed o
+% Verified at 5x against the plainly slashed ø of "undersøgende" on the head's own
+% argument line, so the comparison is within one line of type; BOTH OCR engines
+% also read a plain o. It is a compositor's wrong sort, not a spelling variant.
+% The printed head is what stands here, per the diplomatic stance; the Oversigt's
+% "Første Capitel." stands unaltered in the front matter. Do not reconcile them.
+\capitel{Forste Capitel.}{Om den undersøgende og behandlende Tænknings
 forskjellige Fremgangsmaader, og den Erkjendelse, som derved opnaaes.}
-% Head verified on the image, printed p. 26 (PDF 51): letterspaced Fraktur
-% label centred x[412,886], three centred Fraktur argument lines, then a centred
-% rule 116 px x 7 px (x[596,712]) at 300 dpi, then "Indledning.", then "§. 8."
+% Head verified on the image, printed p. 26 (PDF 51): the label IS letterspaced;
+% nothing inside the argument is; the argument's line-breaking matches the
+% Oversigt word for word. Rule re-measured at cuts of paper-median -15/-25/-40/-60,
+% stable at all four: 117 px x 5--7 px, x[596,712] at 300 dpi (confirming the
+% earlier 116 x 7). Then "Indledning." plain, then "§. 8."
+% §. 8 opens with an enlarged initial D (66 px against a 51 px cap) — no macro
+% for it; recorded here rather than invented.
 
 \gruppe{Indledning.}
 % §§ 8--11, the First Capitel's own Indledning, before rubric A.
-% [text to be added: pp. 26--29]
+% --- p. 26 ---
+% ===========================================================================
+% HEAD VERIFICATION, printed p. 26 (PDF 51) --- the heads themselves are in the
+% skeleton above and are NOT repeated here.  Findings:
+%
+% (1) THE PRINTED LABEL READS  "Forste Capitel."  --- with an UNSLASHED o.
+%     The skeleton (whose wording came from the Oversigt) reads "Første".
+%     Verified at 5x: the glyph is a plain Fraktur o with an empty counter and
+%     no diagonal, set beside the unmistakably slashed ø of "undersøgende" in
+%     the argument's own first line and of "øvrige" lower on this same page.
+%     Both OCR engines independently read "o" (tesseract "Forste", ABBYY
+%     "Forske").  A wrong sort, i.e. a printer's error for "Første".  Per this
+%     edition's stance it should stand as printed and be logged, not corrected.
+%
+% (2) The label IS letterspaced ("F o r s t e   C a p i t e l ."), centred.
+%     NO word inside the argument is letterspaced; the argument is three
+%     centred lines of plain Fraktur, broken:
+%         Om den undersøgende og behandlende Tænk=
+%         nings forskjellige Fremgangsmaader, og den
+%         Erkjendelse, som derved opnaaes.
+%     Word for word this agrees with the skeleton's argument.
+%
+% (3) THE SHORT RULE re-measured at 300 dpi, longest contiguous dark run per
+%     pixel row, thresholds paper-median -15 / -25 / -40 / -60 (paper median
+%     238): identical at every cut --- full-width run of 117 px on rows
+%     y691--y695, x[596,712], inside a 10-px ink band y687--y696 whose top and
+%     bottom rows taper to ~48 px.  So 117 px x 5--7 px at x[596,712]:
+%     the recorded "116 px x 7 px, x[596,712]" is confirmed to within a pixel.
+%
+% (4) "Indledning." is a plain centred Fraktur line, NOT letterspaced.
+% ===========================================================================
+\parag{8}
+% § 8 opens with an ENLARGED initial D --- 66 px tall against 51 px for the "H"
+% of "Hvorved" two lines below (300 dpi, ratio 1.29).  Not a two-line drop
+% cap.  No macro exists for it; set as ordinary text.  Because of it, § 8's
+% first line is flush left, unlike §§ 9--11 (see the note under \parag{9}).
+Det umiddelbart Givne fremstiller sig enten som noget \emph{Mangfoldigt},
+eller som noget \emph{Enkelt}. Hvorved naturligviis menes Noget, som er
+mangfoldigt eller enkelt for Anskuelsen. Om Det, der træder lige saaledes
+frem for Tænkningen, er her endnu ei Tale (see derimod \textit{\S.\,56},
+Anm. \textit{2}).
+
+\parag{9}
+% INDENTATION, reported not repaired: in the print the first line after a §
+% head is INDENTED (§ 9 begins at x=283 against a left margin of 187 at
+% 300 dpi; likewise §§ 10 and 11 and both "Anm." paragraphs).  \parag and
+% \anm both end in \noindent, so this fragment cannot reproduce it without
+% editing the macros.  § 8 is the sole exception, and only because of its
+% enlarged initial.
+Det \emph{Enkelte}, som Enkelt, maa erkjendes ved blot Anskuen, uden at nogen
+Tænkning kan træde ind med i denne Erkjendelse for at fuldende den, eller
+give den en Fortrinlighed, hvortil den blotte Anskuen ei var nok. Dens
+Fuldendthed beroer allene paa den \emph{Klarhed} og \emph{Be}stemthed,
+% The Schwabacher STOPS AT THE LINE BREAK: "...den Klarhed og Be=" closes the
+% line in Schwabacher (round K, round double-bowl B), "stemthed," opens the
+% next in plain Fraktur.  Verified at 3x.  Transcribed as printed.
+hvormed der ligefrem anskues, og hvormed Anskuelsen udsondrer sig fra andre.
+Kun forsaavidt kan en Tænken være medvirkende hertil, som Anskuelsen
+fuldkomnest vil udsondre sig fra de øvrige, og træde med Bestemthed frem for
+sig, naar den sammenstilles og sammenlignes
+% "Bestemthed" in "træde med Bestemthed frem" is FRAKTUR --- an angular B, quite
+% unlike the round Schwabacher B of "Be=" four lines above.  Not emphasised.
+% --- p. 27 ---
+med andre, for bedre at sees i sin Eiendommelighed og med sit særegne Præg.
+Men da forudsættes strax en Fleerhed af Gjenstande, som sammenstilles, altsaa
+noget Mangfoldigt. Iøvrigt bliver det Enkelte derved endnu ikke til Gjenstand
+for nogen Erkjendelse formedelst Tænkning.
+% Nothing from here to the end of the Anm. is Schwabacher: "Fleerhed",
+% "Mangfoldigt", "Enkelte", "Sammenhæng", "Led", "Blive", "Betragtning",
+% "Intet" and "Mangfoldighed" are all plain Fraktur at 3x.  In particular the
+% "Fleerhed" three lines up is Fraktur, while the "Fleerhed" lower on this same
+% page (in § 10) is Schwabacher --- the same word in both faces on one page.
+
+\anm{}
+Det vil det derimod blive, naar det betragtes i sin Sammenhæng med andre
+Gjenstande. Men da er det ei mere det Enkelte, blot som Enkelt, der er
+Tænkningens Gjenstand, men en vis Mangfoldighed, hvortil det henføres, som
+Led. Blive vi staaende ved det Enkeltes Betragtning allene, saa er herved
+Intet videre for Tænkningen at gjøre eller at udfinde.
+
+\parag{10}
+Det \emph{Mangfoldiges} Betragtning derimod sætter en Tænkningens Virksomhed
+i Bevægelse, der fører til nye og bedre Erkjendelser, som erholdes ved
+Tænkningen selv.
+
+Det kan enten umiddelbart være givet som en sammensat Gjenstand, det er: som
+en Mangfoldighed, hvori der strax, saaledes som den er given, sees en saadan
+Forbindelse, at det Mangfoldige viser sig som et vist \emph{Heelt}; eller
+ogsaa viser Mangfoldigheden sig blot som en \emph{Fleerhed}, en Samling eller
+Række, af særskilte (isolerede) Gjenstande, hvilke træde frem hver for sig,
+og iøvrigt kunne være, hver for sig, enten enkelte eller sammensatte.
+% "Heelt" (round H) and "Fleerhed" (round F) are Schwabacher here; "Samling",
+% "Række", "særskilte" and "(isolerede)" are Fraktur --- the parenthesis carries
+% a long s, so it is not antiqua.  The semicolon after "Heelt" is real: it is
+% the word-final "z" that tesseract reports as "Zeeltz".
+% --- p. 28 ---
+I hiint førstnævnte Tilfælde gaaer naturligviis Tænkningen, der søger Eenhed
+og derfor eftergransker Eenheden, hvor den viser sig, ud paa at udfinde
+Gjenstandens egen (reelle) Sammenhæng.
+
+I sidstanførte Tilfælde kan der vistnok gaaes ud paa det samme, idet der
+eftergranskes, om ikke Gjenstandene, deres Særskilthed uagtet, dog ere Dele
+af et større Heelt. Men betragtes Gjenstandene blot som isolerede, saa vil
+den efter Eenhed søgende Tænkning, eftersom det Mangfoldige ei er givet den
+som eet Heelt, selv søge at bringe en Eenhed og Heelhed tilveie.
+
+Dette kan for det første skee, idet den sammenstiller og ordner dem, nemlig
+efter deres \emph{Ligheder og Uligheder}, hvilke den da nu gaaer ud paa at
+udfinde, hvorved igjen en vis (blot logisk) Sammenhæng imellem dem kommer
+tilsyne, men of ganske anden Art end hiin reelle.
+% PRINTER'S ERROR, TRANSCRIBED AS PRINTED: "men of ganske anden Art", for
+% "men af".  Verified at 5x --- the glyph is an unambiguous Fraktur o, a closed
+% round bowl with no stem, set beside the stemmed a of "ganske" and "anden" a
+% few letters away.  The ABBYY layer normalises it to "af"; tesseract reads
+% "of".  p. 28 is NOT among the pages listed in the book's Rettelser, so this
+% is an uncorrected wrong sort, not an erratum.
+
+Men dernæst kan ogsaa en Sammenhæng bringes frem, ved at gjøre de givne
+Gjenstande til \emph{Stof}, ikke for en \emph{Undersøgelse}, men for en vis
+\emph{Behandling}, hvorved af dem noget Nyt frembringes, nemlig nye
+sammensatte Gjenstande, hvorved de bringes i Forbindelser, hvilke aldeles
+ikke vare givne, ei heller allene beroe paa Noget, de givne isolerte
+Gjenstande selv indeholdt, men paa den frembringende og Frembringelsen
+styrende Virksomhed, hvis Natur da derved tillige bliver Betragtningens og
+% "Stof", "Undersøgelse" and "Behandling" are Schwabacher (round S, round U,
+% round double-bowl B, wide bodies).  The second "Undersø=" --- the one broken
+% across the page foot just below --- is FRAKTUR, and so is "Betragtningens".
+Undersø%
+% --- p. 29 ---
+gelsens Gjenstand. (Sammenhængen bliver da reel).
+
+Heraf sees nu Mueligheden af flere forskjellige Tænkningens
+\emph{Fremgangsmaader eller Methoder}, hvilke deels føre til givne
+Anskuelsers Uddannelse, eller nye Anskuelsers Dannelse, deels, og
+fornemmeligen, til Begreber og disses Uddannelse, idet de lede til at
+erkjende Eenhed og Sammenhæng, Forhold, Grunde.
+% DOUBTFUL READING, alternative rejected: a faint mark stands between "hvilke"
+% and "deels".  The ABBYY layer reads it as a comma; tesseract reads nothing.
+% At 5x it is a small square dot on the baseline, far fainter and smaller than
+% the real comma after "Methoder," seven words earlier on the same line, and
+% it has none of that comma's tail.  Read here as a speck or a broken sort and
+% left unset; "hvilke," was the alternative rejected.
+
+\anm{}
+Vi sige, at Gjenstanden for Anskuelsen kan være given som en Mangfoldighed,
+der udgjør et Heelt. I sig selv forudsætter imidlertid en saadan Anskuen
+allerede en vis Tænken, hvorved det Mangfoldige paa en vis Maade (tilmed
+ifølge et Begreb) er sammenfattet til Eenhed. Men denne Tænken er under
+Gjenstandens Anskuelse endnu ei traadt frem for sig, eller har endnu ei viist
+sig som saadan. See min Psychologie \textit{1}ste Deel pag. \textit{144},
+\textit{194}, \textit{222}.
+% No Schwabacher anywhere in this Anm.: "Mangfoldighed", "Heelt", "Tænken",
+% "Maade", "Begreb" all carry the pointed Fraktur capitals.
+% DOUBTFUL READING, alternative rejected: the first page-number is damaged.
+% "144" is transcribed; the middle and last figures are broken, but the last
+% carries a clear mid-height crossbar, which the antiqua "1" of "194" beside
+% it does not --- so a broken "4", not a "1".  Alternative rejected: "141".
+
+\parag{11}
+Til Begreber komme vi altsaa deels ved Hjelp af en \emph{analytisk
+Fremgangsmaade eller ad Analysens Vei}, deels formedelst en
+syn\emph{thetisk Fremgangsmaade eller ad Synthesens Vei}. Analysen kan igjen
+gaae to Veie, og der gives altsaa to \emph{Hovedarter af Analyse}; den gaaer
+enten ud paa at undersøge Gjenstandenes \emph{reelle Sammenhæng}, eller paa
+at udfinde deres \emph{Ligheder og Uligheder} og deres \emph{Sammenhæng med
+Hensyn til disse}.
+% The Schwabacher again STOPS AT A LINE BREAK, this time mid-word: "...en syn="
+% closes its line in plain Fraktur and "thetisk" opens the next in
+% Schwabacher.  Verified at 2.4x against the plainly Fraktur "deels formedelst
+% en" that precedes it on the same line.  Transcribed as printed, hence the
+% odd-looking "syn\emph{thetisk ...}".
+% "Analysen kan igjen gaae to Veie" is Fraktur; so is the "og deres" between
+% "Uligheder" and "Sammenhæng".
+%
+% RUBRIC A. IS **NOT** ON p. 29.  The last text line of p. 29 is "hæng med
+% Hensyn til disse." at y[1907,1949] of 2254 rows; below it the page carries
+% nothing but two scan specks (ink 24 and 69 px at paper-median -15, x-spans
+% of 3 px and 249 px, no line structure).  The head must stand at the top of
+% p. 30; the pp. 30--44 agent should place \rubrik{A.}{...}.
 
 % --- rubric A. --- §§ 12--59.  Insert here, at its true page:
 %     \rubrik{A.}{Reel Sammenhængs=Analyse\\
@@ -1339,8 +2271,1955 @@ forskjellige Fremgangsmaader, og den Erkjendelse, som derved opnaaes.}
 % batch is split off so far; split the remainder as batches are dispatched.
 % § starts in the first batch: §.12 p.30, §.13 p.32, §.14 p.34, §.15 p.37,
 % §.16 p.43, §.17 p.44.
-% [text to be added: pp. 30--44]
-% [text to be added: pp. 45--152]
+% --- p. 30 ---
+Men i alle Tilfælde kunne det baade være reelle Gjenstande (d. e. saadanne, som
+fremstille sig for den reelle Anskuen eller for Fornemmelsen), saa og allerede
+erholdte Begreber, om hvis Analyse eller synthetiske Forbindelse der bliver
+Spørsmaal.
+
+Vi skjelne saaledes imellem den \emph{reelle Analyse og Begrebsanalysen}, og,
+hvad hiin angaaer, imellem den \emph{reelle Sammenhængs=Analyse, og
+Sammenlignings=Analysen} (Ord, vi ville vælge, for at faae korte Betegnelser).
+Ogsaa hvad \emph{Begrebsanalysen} angaaer vil der vise sig Grund til at skjelne
+imellem en \emph{reel Begrebsanalyse}, og en \emph{logisk}.
+
+Synthesen vil ligeledes være af to Slags: den \emph{reelle Synthese}, og
+\emph{Begrebers synthetiske Combination}.
+
+% RUBRIC A. STANDS HERE, on printed p. 30, in the middle of the page — after
+% the "Synthesen vil ligeledes..." paragraph and immediately above "§. 12."
+% It is NOT at the head of the page and it is NOT on p. 29.
+% Verified against the image: "A." is antiqua, centred, on its own line; the
+% heading below it is centred Fraktur in three printed lines,
+%     Reel Sammenhængs=Analyse / eller / Reelle Gjenstandes Analyse ifølge
+%     Grund=begrebet om reel Sammenhæng.
+% (the break in "Grundbegrebet" is only a line-end division, so the third line
+% is set here as one). The wording, the "=" in "Sammenhængs=Analyse" and the
+% line-breaking agree EXACTLY with the Oversigt's \ovrubrik{A.}: no
+% printed-head/contents disagreement to record here.
+% NO RULE under the head: a rule sweep over the whole leaf at paper-median-15
+% (and at -25, -40) finds no horizontal run anywhere between the last text line
+% of the paragraph and "§. 12." The only wide runs on the page are the black
+% scan edge at rows 0--45. \rubrik draws no rule, which is therefore correct.
+\rubrik{A.}{Reel Sammenhængs=Analyse\\
+  eller\\
+  Reelle Gjenstandes Analyse ifølge Grundbegrebet om reel Sammenhæng.}
+
+\parag{12}
+
+Til fuldelig Erkjendelse af en given Gjenstand, som allerede for Anskuelsen
+fremstiller sig som sammensat, eller som saadan, hvori paa en eller anden Maade
+en Fleerhed er forenet til Eet, (være det nu en Fleerhed af Dele, som ere
+udenfor hinanden i Rummet, eller følge efter
+% --- p. 31 ---
+hinanden i Tiden, saaledes som de enkelte Facta, der udgjøre een
+sammenhængende Handling, eller ogsaa en Fleerhed af Egenskaber hos en
+Gjenstand, eller af dens Virksomheder og Yttringer, eller et blot Indbegreb af
+Phænomener, der fremstille sig som sammenhørende), udfordres allerførst, at der
+\emph{sættes ud fra hinanden} eller \emph{analyseres}, hvad der i Gjenstanden er
+og forefindes, saa at det, i det Enkelte og i det Hele, aldeles erkjendes (og
+udtrykkes i den derom dannede Forestilling), som det i Gjenstanden selv viser
+sig at være.
+
+\anm{1} At det dernæst udfordres, at man søger at see Gjenstanden i dens
+Forbindelse med andre, hvorledes den udgjør et Led i, og har sin bestemte Plads
+og Betydning i, et større Heelt, ville vi paa sit Sted faae at see (§. 17). Her
+blive vi endnu staaende ved at betragte den som et Heelt for sig.
+
+\anm{2} Ordet \emph{Analyse} bruge vi her i en saa omfattende Betydning, at vi
+dermed betegne Alt, hvad vi paa dansk kalde at \emph{sætte ud fra hinanden}, der
+er det eneste af de her sig frembydende Udtryk, som er ganske adæqvat. Ordet
+\emph{Analyse} bruges ellers i Almindelighed paa en mere indskrænket Maade, og
+anvendes kun ved visse Arter af saadan Adskillelse. Iøvrigt er det snart
+Gjenstanden selv, hvormed Analysen foretages, snart Forestillingen om den, eller
+Det, hvad der ved dens Betragtning fremstiller sig for os.
+% --- p. 32 ---
+\parag{13}
+
+\emph{Det Første} bliver da at adskille alle Gjenstandens Enkeltheder, saa at
+enhver af dem, anskues for sig med \emph{Bestemthed og Klarhed}. Derved bliver
+Anskuelsen \emph{tydelig}, hvilket den tillige maa være med \emph{Nøiagtighed og
+Fuldstændighed}.
+
+Derfor maa der og efterforskes, om der ikke i det givne Hele endnu er Mere at
+blive vaer, end der allerede har fremstillet sig for Anskuelsen, saaledes som
+den er given. I hvilket Tilfælde Anskuelsen maa fuldstændiggjøres ved
+Iagttagelser (cfr. §. 5, pag. 13=14).
+
+Den udviklede Anskuelses Fremstilling som Erkjendelse, ved Hjelp af Ord, er en
+\emph{Beskrivelse}. Denne gaaer kun ud paa Tingens Udvortes. Enhver af
+Gjenstandens Enkeltheder bliver derved til Gjenstand for en egen reel Anskuelse
+eller Forestilling.
+
+\anm{1} \emph{Tydelighed} modsættes, som en høiere \emph{Klarhed}, den blotte
+\emph{Klarhed}, hvortil allene udfordres, at Gjenstanden tilstrækkeligen kan
+adskilles fra alle andre. \emph{Tydelighed} er ei blot det Heles, men og alle
+dets Enkeltheders \emph{Klarhed}, saa at den opnaaes ved \emph{Klarhedens
+Forfølgelse} i det Enkelte. Men da alt det Enkelte i Gjenstanden maa virke med
+til at give Total=Forestillingen, saa maa det ogsaa alt tilsammen være traadt
+ind med i Gjenstandens Erkjendelse; \emph{Tydeligheden} beroer altsaa, som og
+Udtrykket lærer, paa at Det, der i den blot klare Erkjendelse i sig selv
+allerede havdes, bliver ud%
+% --- p. 33 ---
+trykkeligen bemærket, og hævet frem for Betragtningen, hvert for sig. --- Hvad
+den enkelte Anskuelse angaaer (see §. 9), da kan den, som enkelt, ikkun have
+\emph{Klarhed}, men deraf kan ei følge, at den skulde ansees for en Anskuelse af
+ringere Fuldkommenhed, end den sammensatte \emph{tydelige}.
+
+Men hvori bestaaer \emph{Nøiagtigheden} egentligen? For det første er den
+vistnok ikke andet, end den Fuldkommenhed i \emph{Tydeligheden}, som opnaaes,
+ved en til de mindste Dele eller Enkeltheder forfulgt \emph{Adskillelse og
+Udvikling}. \emph{Tydeligheden} beroer da mere paa at sætte tilstrækkeligen ud
+fra hinanden, \emph{Nøiagtigheden} derimod mere paa at opfatte hver adskilt
+Enkelthed ganske, som den er, med den fuldkomneste Iagttagelse af dens hele
+Eiendommelighed. Men dernæst viser sig \emph{Nøiagtigheden} --- og herved især i
+dens Forskjellighed fra \emph{Tydeligheden} --- i de specielle Forholds
+tilstrækkelige Iagttagelse og Bestemmelse. Hvorved vi da naturligviis paa dette
+Sted ei kunne tænke paa andre Forhold, end de for den umiddelbare reelle
+Anskuelse sig fremstillende Forhold, til hvis nøiagtige Bestemmelse ofte
+Sammenligning ved Hjelp af Maal og Vægt er fornøden. Om et andet Slags Forhold,
+der ere Gjenstande for en intellectuel Erkjendelse, tales i §. 15.
+
+\anm{2} Bestræbelsen gaaer her ud paa, at den betragtede Gjenstand ganske kan
+blive skuet eller forestillet saaledes, som den fremstiller sig i og for den
+reelle Anskuelse, eller i og for
+% --- p. 34 ---
+% Sheet signature "(3)" stands at the foot of printed p. 33; not text.
+Fornemmelsen. Men i denne Anskuelsens eller den af Fornemmelsen udspringende
+Forestillings Fuldendelse ere, som vi allerede i §. 5 (pag. 13=14) have
+bemærket, to Ting at adskille: først, hvorledes den ved Hjelp af Tænkning
+fuldkommengjøres i og for sig, idet tænkende Betragtning fører til at see
+tilfulde, hvad der er givet at skue; dernæst hvorledes Tænkningen her ogsaa kan
+føre til nye Anskuelser eller Opfattelser, af samme Slags, som de først givne,
+idet den fører til at søge og finde \emph{Mere}, end det allerede Givne, fordi
+dette viser hen paa \emph{Mere}. Herved erholdes da nye \emph{Erkjendelser}, men
+de faaes ved den samme Art af Anskuen, som den første; thi det \emph{Mere} kan
+her vel siges ved Hjelp af Tænkningen selv at blive fundet og draget frem, men
+dog kun forsaavidt den fremkalder, eller fører til, den Anskuen, hvorved det
+findes og erkjendes.
+
+\parag{14}
+
+Under den forhen betragtede Fremgangsmaade bliver Undersøgelsen og Udviklingen
+endnu staaende ved Anskuelsen. En bedre og fuldstændigere Erkjendelse erholdes
+derved, men endnu ikke en i Gjenstandens Væsen mere indtrængende, ikke en ny Art
+af Erkjenden. Imidlertid fører den dog strax naturligen til en vis ud over den
+umiddelbare Anskuen gaaende Erkjendelse, nemlig til en \emph{orienterende
+Almeenforestilling}, der kan tjene som Norm og Leder ved Betragtningen, Analysen
+og Beskrivelsen af andre Gjen%
+% --- p. 35 ---
+stande af samme Art, ja af saadanne som blot ere af lignende Art.
+
+\anm{1} Hvad de Gjenstande angaaer, som ganske ere af eens Art, eller dog kunne
+betragtes som eensartede (hvorved vi her naturligviis mene den
+\emph{Eensartethed}, som existerer for Anskuelsen), saa tjener Analysen og den
+derved erholdte udviklede Erkjendelse af een endog til ligefrem at oplyse dem
+alle, der derved alle tages under eet som Gjenstande for den samme Forestilling,
+den samme Erkjendelse og Beskrivelse.
+
+\anm{2} Allerede i denne Henseende kan en saadan orienterende
+Almeenforestilling ikke uden Føie kaldes et Begreb, og kaldes i Almindelighed
+saa. Thi de mange Gjenstande, som derved tages under eet, kunne ved denne
+Sammensattelse siges at blive medomfattede af, eller medindbegrebne i, den
+% PRINTER'S DEFECT, printed p. 35: "Sammensattelse" is set with a long s
+% (verified at 6x against the f of "medomfattede" on the same line and the f of
+% "Sammenfatten" two lines below). Almost certainly a compositor's slip for
+% "Sammenfattelse" — the word is picked up as "Sammenfatten" immediately after.
+% Transcribed AS PRINTED; not in the book's own Rettelser.
+erholdte Erkjendelse, hvilken \emph{Sammenfatten under eet og Omfatten}, som en
+Art af \emph{Omgriben}, kan kaldes en \emph{Begriben}; ligesom den Fleerhed af
+Gjenstande, som saaledes tages under eet, kaldes et \emph{Indbegreb af
+Gjenstande}. Imidlertid er hermed dog endnu ikke forbunden nogen
+\emph{Indsigt}; thi hverken indsees herved Gjenstandens Natur og Væsen, ei heller
+indsees der, hvad der bør at indbefattes med i et bestemt Indbegreb af
+Gjenstande. At imidlertid en saadan orienterende Almeenforestilling kan uddanne
+sig til et mere egentligt Begreb, et \emph{Almeenbegreb}, hvortil den sidst%
+% --- p. 36 ---
+% Sheet signature "(3*)" stands at the foot of printed p. 35; not text.
+nævnte Indseen udfordres, vil blive viist paa sit Sted (§. 62).
+% ERRATA (Rettelser, roman XXII): "Pag. 36 Lin. 2, istedetfor §. 62 læs:
+% §. 70=71."  NOT APPLIED — the body stands as printed, per the editorial
+% decision of 2026-08-26. "(§. 62)" above is printed p. 36, line 2.
+
+Mere viser der sig her en Indsigt i en anden Henseende, nemlig forsaavidt den
+orienterende Almeenforestilling tjener til Veiledning ved de andre lignende
+Gjenstandes Betragtning, og til at bringe indbyrdes Overeensstemmelse imellem
+flere slige Analyser. Men Indsigten gaaer her dog kun ud paa
+\emph{Fremgangsmaaden og Orienteringens Maade}; man lærer denne af den ene Art
+af Gjenstande, og seer nu, hvorledes man kan og skal overføre den paa de andre,
+i hvilke man da orienterer sig, idet man i dem, Led for Led, søger det
+Tilsvarende op, paa samme Maade, som man fandt det i hiin. Men en Indtrængen i
+Tingens Natur og Væsen er denne Indsigt endnu ikke, ofte er den langt fra at
+være det. Imidlertid kan den dog have sit sande videnskabelige Værd. (Et
+Exempel derpaa er den anatomiske Fremstilling eller Beskrivelse af Menneskets
+Hjerne, der, uagtet den kun giver en saa omstændelig og nøiagtig, som mueligt,
+udviklet Anskuelse, intet sandt Begreb, og saaledes i Hovedsagen bliver
+ufyldestgjørende, dog bliver saa oplysende og frugtbar i den sammenlignende
+Anatomie, som Normalforestilling, hvorefter man orienterer sig ved
+Betragtningen af Hjernen og Nervesystemet hos andre Dyr, i sammes ofte meget
+afvigende Former hos disse).
+
+Idet vi tillægge den orienterende Almeen%
+% --- p. 37 ---
+forestilling Navn af Begreb, kunne vi kalde den et \emph{Begreb til
+Sammenligning}.
+
+\parag{15}
+
+Det næste Skridt bliver nu, at de adskilte Enkeltheders Sammenhæng, deres
+indbyrdes Forhold ifølge denne Sammenhæng, og enhver Enkeltheds deraf følgende
+Betydning i det givne Hele, undersøges og erkjendes saaledes, at det sees,
+hvorledes disse Enkeltheder ere forenede i Gjenstanden til eet Heelt, og
+hvorledes just de og ingen andre i deres Forening danne denne Gjenstand.
+
+Herved gjøres denne da til Gjenstand for en intellectuel Betragtning (en
+Betragtning med Forstandens Øie), og til hiin ved den reelle Analyse fuldendte
+reelle Anskuelse knytter sig nu, --- formedelst en Analyse i intellectuel
+Henseende, der nu ogsaa finder Sit i Gjenstanden at sætte ud fra hinanden, ---
+en ny eiendommelig, Tænkningen tilhørende, Art af Erkjendelse, nemlig en
+\emph{intellectuel Erkjendelse} (\emph{Forstandserkjendelse}), der fører til
+Indsigt i Tingen, hvorved vi komme til et Begreb om Gjenstanden, idet vi fatte
+og begribe dens Beskaffenhed.
+
+\anm{1} Den saaledes erhvervede \emph{intellectuelle Erkjendelse, Begrebet},
+bliver dernæst --- og dette er i den Tænkningens Fremgangsmaade, vi her
+betragte, det tredie Skridt --- hævet frem som Noget for sig, altsaa og som
+Gjenstand for en egen Forestilling, forskjellig fra Forestillingen om den reelle
+Gjenstand formedelst
+% --- p. 38 ---
+en \emph{ideel Udsondring} eller en \emph{Abstraction}, hvorved den tillige
+viser sig som den, der kan overføres paa andre Gjenstande. Men denne Sag komme
+vi først længere hen til at omhandle, naar den paa sit Sted frembyder sig, under
+vor Undersøgelses og Udviklings Gang. Endnu dvæle vi ved nærmere at sætte ud fra
+hinanden, hvad der ligger i denne intellectuelle Erkjendelse, hvorledes den
+erhverves, og hvad der ligger til Grund for den, samt hvorved den antager
+Charakteren af en Erkjendelse: Spørsmaal, som vi imidlertid i Udviklingen ikke
+kunne eller ville adskille saaledes, som de her ere adskilte, da de
+Bemærkninger, hvortil de føre, gribe ind i hinanden paa flere Puncter.
+
+\anm{2} Ved den beskrevne --- fuldstændig Sondring og fuldstændig Erkjendelse
+af Sammenhæng søgende --- Tænkning vil nu og den videre fremadskridende Anskuen,
+Iagttagelsen, der gaaer ud paa at skue Mere, end det allerede Givne, fordi dette
+viser hen paa Mere, kunne blive, deels fremkaldt, deels ledet og styret, idet
+baade Bestræbelsen efter at begribe, saa og den sig dannende Begriben selv, kan
+føre til at indsee Nødvendigheden af, for at naae til en fuldstændig
+Erkjendelse af en vis Sammenhæng, at undersøge Mere endnu, end det allerede
+Betragtede, og nu tillige leder os i Henseende til Maaden, hvorpaa dette Mere
+maa være at finde.
+
+\anm{3} At den her betragtede intellectuelle Indtrængen i en Gjenstands
+indvortes Be%
+% --- p. 39 ---
+skaffenhed er af ganske anden Art, end hiin udviklede reelle Anskuen, hvorom i
+næstforrige §. er bleven handlet, sees let; ligeledes, at ikke enhver nøiagtig
+og fuldstændig Tydeliggjørelse af det Mangfoldige, der i en Gjenstand er at
+bemærke, altsaa ikke enhver Analyse, strax fører dertil. En sædvanlig
+mineralogisk Beskrivelse, en chemisk Analyse, giver endnu ikke en egentlig
+Indsigt i Tingen eller et egentligt Begreb, om den end vel giver en orienterende
+Almeenforestilling af den Art, hvorom vi i forrige §. have talt.
+
+Men er der ofte saaledes et stort Skridt fra den nøiagtig udviklede Anskuelse
+til Begrebet, saa gives der igjen Tilfælde, hvor begge hænge saa saa nøie
+% PRINTER'S DEFECT, printed p. 39: "saa saa" is set twice (dittography),
+% verified at 3x. Transcribed AS PRINTED; not in the book's own Rettelser.
+sammen, at den nøiagtige Anskuelse eller Opfattelse af Tingens Udseende ikke kan
+indtræde, uden en vis Indsigt i Tingens Sammenhængsmaade og dens Deles Forhold
+ifølge denne Sammenhæng. (En compliceret Maskine, betragtet som given
+Gjenstand, et Skibs Takkelage, Blodcirculations= og Respirationssystemet kunne
+give Exempler.) [Hvorledes den Betragtning, der gaaer ud paa et Begreb, kan føre
+til, at det selvsamme Udvortes kan vise sig i et ganske Lys, end under den
+% PRINTER'S DEFECT, printed p. 39: "i et ganske Lys, end under..." — the sense
+% requires "i et ganske andet Lys"; the word "andet" is simply not in the line
+% (verified at 3x: "vise sig i et ganske Lys, end under den blotte nøiag="),
+% and the setting is tight, not spaced. Transcribed AS PRINTED; not in the
+% book's own Rettelser.
+blotte nøiagtige simple Iagttagelse og Beskrivelse, kan en Wernersk Beskrivelse
+af en Chrystallisation, sammenholdt med en mathematisk=chrystallographisk
+Fremstilling deraf, lære. Naar hiin kun lader Chrystallisationens hele Udseende
+træde frem for Anskuelsen, saa giver denne os derimod de Chrystallen om%
+% --- p. 40 ---
+grændsende Fladers mathematiske Udtydning, ifølge en Indsigt i Chrystallens
+mathematiske Grundbeskaffenhed. Jfr. Tidsskr. f. Naturvid. No. 12, pag.
+292=302.]
+
+\anm{4} Sammenhæng, Forhold og Enkelthedernes derved bestemte Betydninger i det
+givne Hele, overhovedet alt Det, der er Gjenstand for Begribningen, kan, som
+Noget, der ei fremstiller sig for Anskuelsen eller Fornemmelsen, men allene for
+den Betragtning formedelst Tænkning, vi have kaldet den intellectuelle, kaldes
+det Intelligible (\textit{νοητόν}) i Tingen, men har iøvrigt naturligviis
+% GREEK — REPORT TO THE CALLER. This is the first Greek in the edition. The
+% word is set in antiqua italic against the Fraktur, in parentheses, and reads
+% nu-omicron-eta-tau-omicron(accent)-nu. At 6x the accent over the second
+% omicron is a single short slanted stroke; acute (νοητόν) is the standard and
+% much the likelier reading, but grave (νοητὸν) cannot be excluded from this
+% scan. THE PREAMBLE MUST BE CHECKED before this compiles: libertinus carries
+% Greek, but nothing in transcription.tex yet declares a Greek font or script.
+ligesaa fuldkommen Virkelighed, som Tingens for den reelle Anskuen eller for
+Fornemmelsen sig fremstillende Udvortes.
+
+Saa væsentligen begge Erkjendelsesarter, den reelle og den intellectuelle, ere
+forbundne og tilsammen fornødne til fuldkommen Erkjendelse, idet Tingens
+anskuelige Beskaffenhed først ved Indsigt i dens Sammenhængsmaade sees i sit
+rette Lys, men Sammenhæng dog igjen forudsætter en Gjenstand, hvis Sammenhæng
+den er, saa ere dog begge saa ueensartede, at, hvad der fremstiller sig for den
+ene, ikke kan fremstille sig for den anden. (De blot sandselige Beskaffenheder,
+skues ligesaalidet med Forstandens Øie, som Sammenhængen sees ved Sandserne).
+
+\anm{5} Som de, ifølge hvilke i Gjenstanden selv Enkelthederne virkelig ere
+forbundne paa en vis Maade, ere Sammenhæng og Forhold her \emph{reelle}, hvilket
+vi kalde dem til Forskjel
+% --- p. 41 ---
+fra et andet Slags Sammenhæng og Forhold, der blot ere \emph{logiske}, fordi de
+kun viser os de enkelte Gjenstande forbundne i og for vor Betragtning; hvorom
+længere hen (under Lit. \textit{B}).
+% ERRATA (Rettelser, roman XXII): "Pag. 41 Lin. 4, istedetfor B læs: C."
+% NOT APPLIED — "Lit. B" above is printed p. 41, line 4, and stands as printed.
+% The "B" is antiqua, as the rubric letters A.--F. are throughout.
+
+Man seer iøvrigt let, at det er med Hensyn til Sammenhængens egen Beskaffenhed,
+vi kalde den \emph{reel}; hvorimod i Henseende til den Maade, hvorpaa den
+erkjendes, al Sammenhæng, som overhovedet Alt, hvad der kun formedelst Tænkning
+kan erkjendes, er noget \emph{Ideelt}, som vi længere hen paa sit Sted (§. 29)
+ville komme til at bemærke.
+
+\anm{6} Da den virkelige Sammenhæng i en bestemt given Gjenstand kun kan
+erkjendes ved at undersøge dens egen Beskaffenhed, som den viser sig at være,
+saa maae vi her gaae fra Gjenstanden til Begrebet, vi maae gjennem den reelle
+Anskuelse føres til den intellectuelle Erkjenden, og det Begreb, der ad denne
+Vei erholdes, er altsaa, sammenlignet med den reelle Anskuen, \textit{posterius},
+altsaa er det et Begreb \textit{a posteriori} (jfr. §. 6). Men \emph{til Grund}
+for den hele analyserende og undersøgende Tænkning, som \emph{fører os til}
+dette Begreb, ligger en apriorisk Grundforestilling om Sammenhæng overhovedet,
+tilligemed en lige saa apriorisk Grundforudsætning om, at der overalt i alle Ting
+er Sammenhæng; d. e. at der i Mangfoldigheden er en saadan Eenhed, at hiin
+derfor er at betragte som en Heelhed.
+% --- p. 42 ---
+Ligesom Grundforestillingen om Sammenhæng, ere ogsaa de deri liggende
+Forestillinger om \emph{Eenhed og Heelhed} aprioriske. Ligeledes er den Eenhed
+og Heelhed, vi her have nævnet, den \emph{reelle}, forskjellig fra den blot
+logiske, hvorom vi tale andetsteds (jfr. forrige Anm.).
+
+\anm{7} Endnu maa bemærkes, at, om end vel enhver intellectuel Erkjenden,
+hvorved Sammenhængsmaaden i en vis Mangfoldighed erkjendes, er en Begriben, saa
+er dog det at skue en vis Mangfoldighed i dens Eenhed, eller at skue
+Mangfoldigheden som Udtrykket af et vist Ene, der paa en ideel Maade skues deri,
+ikke altid en Begriben. En Begriben er Eenhedens Anskuelse ikkun da, naar og
+forsaavidt en Sammenhængs Maade iagttages og indsees, og tilmed en Følge sees,
+og en Tænkningens Nødvendighed viser sig, hvormed det Ene erkjendes at følge af,
+eller med, det Andet. Derfor er den Anskuelse eller Beskuelse, for hvilken en
+Individualitet med alle dens Yttringer, Træk og Egenskaber, især som Gjenstand
+for konstnerisk Fremstilling, (hvad man i Poesie og dannende Konst kalder en
+Charakteer), viser sig i sin Eenhed, saa at i den hele Mangfoldighed, hvori den
+udtaler sig, den selv, som det deri sig aabenbarende ene individuelle Væsen,
+træder frem for Phantasiens Øie og (paa en ideel Maade) anskues, --- ikke nogen
+Begriben. Men vil man retfærdiggjøre en saadan konstnerisk Fremstilling ved at
+vise, at saadanne Egenskaber saale%
+% --- p. 43 ---
+des kunne findes samlede, og saaledes kunne yttre sig i et Individ, saa
+indtræder et Begreb, og en Stræben efter at vække en Begriben.
+
+\parag{16}
+
+Ligesom det udfordres til den reelle Anskuelses Fuldendelse, udfordres det og
+til Begribningens, at den skal være \emph{tydelig, nøiagtig og fuldstændig},
+idet Alt, hvad der hører til Sammenhængens Erkjendelse, alle Forholdene imellem
+Enkelthederne, og Betydningen af enhver af disse, oplyses og erkjendes for sig,
+og sees i sin Følge af den hele Sammenhæng.
+
+Men saaledes fører da det fuldkomne Begreb om Gjenstanden, hvilken vi ifølge det
+Foranførte her bestandigen tænke os som en saadan, der indbefatter en
+Mangfoldighed i sig, (see §. 10 og 12) til et heelt Indbegreb af intellectuelle
+Erkjendelser, nemlig til ligesaa mange, som der ere Enkeltheder og Forhold at
+adskille, da der ved enhver af disse bliver Noget for Forstanden at bemærke.
+Disse Erkjendelser ere alle ogsaa Begreber, da de gaae ud paa, at der indsees og
+begribes, hvorledes ethvert af Forholdene, enhver af Enkelthederne, gaaer frem
+af den hele Sammenhæng, og hører med til at danne denne. Da nu ogsaa alle disse
+Begreber hænge væsentligen sammen, og danne en Heelhed, fordi de alle tilsammen
+høre med til Erkjendelsen af den givne Gjenstands Totalsammenhæng, der er een,
+saa kunne de ogsaa siges at udgjøre et System af
+% --- p. 44 ---
+Begreber. Et saadant kan altsaa gaae frem af een Gjenstands grundige
+intellectuelle Analyse.
+
+Men altid maae vi heri skjelne imellem den Mangfoldighed, som saaledes ved den
+intellectuelle Analyse sættes ud fra hinanden, og den Indsigt, der, som ledende
+Grunderkjendelse, gjør at vi see alt Dette, som væsentligen sammenhængende.
+
+\anm{1} Til Forskjel fra et andet Slags System af Begreber, hvis Gjenstande
+blot for vor Betragtning stilles sammen, hvorom vi paa sit Sted (§. 64) komme
+til at handle, ville vi kalde det, hvorom der her er Tale, et \emph{reelt
+Begrebssystem}, fordi her Gjenstandene for alle de enkelte Begreber, d. e. de
+mange Enkeltheder og deres Forhold, i Virkeligheden ere forbundne med hinanden.
+
+\anm{2} Dette fører os til at see, hvorledes et Begreb kan have en større eller
+mindre \emph{reel Omfatning}, ligesom dets Gjenstand kan have den. Men
+\emph{reel Omfatning} maa ei forvexles med \emph{Omfang} (see §. 62).
+% ERRATA (Rettelser, roman XXII): "Pag. 44 Lin. 22, istedetfor §. 62 læs: 70."
+% NOT APPLIED — "(see §. 62)" above is printed p. 44, line 22 (counted from the
+% first line of text under the folio), and stands as printed.
+Hiin beroer paa Indbegrebet af de Enkeltheder, der ved Begrebet sees i deres
+reelle Sammenhæng; dette paa Mængden af de Gjenstande, hvori det samme Begreb
+gjenkommer som det \emph{Lige}.
+
+\parag{17}
+
+Men i den beskrevne Begriben og Begrebsdannelse er en væsentlig Forskjel at
+bemærke, idet der her viser sig en dobbelt Art af Begriben. Hvad nemlig den
+givne, analyserede Gjen%
+% END OF BATCH. Printed p. 44 ends mid-word: "Gjen=" at the foot. The trailing
+% "%" above eats the newline, so the word closes across the splice.
+% CORRECTED after the pp. 45--59 batch read p. 45 on the image: the tail is
+% "stand", not "standen", and the joint word is "Gjenstand" — p. 45 opens
+% "stand i det Hele angaaer, da indsees her ...". The pp. 30--44 agent had
+% predicted "standen" without having the page; the prediction was wrong and the
+% seam is right. This is why a batch verifies its own first word rather than
+% trusting the previous batch's note.
+% The same trailing-% device is used at every mid-word page break inside this
+% batch (pp. 32/33, 34/35, 35/36, 36/37, 38/39, 39/40, 42/43).
+% Round 2 split, 2026-08-26. § starts from the Oversigt:
+%   §.18 p.55, §.19 p.59, §.20 p.59 | §.21 p.60, §.22 p.61, §.23 p.62,
+%   §.24 p.68, §.25 p.71, §.26 p.72, §.27 p.73 | §.28 p.75, §.29 p.78,
+%   §.30 p.78, §.31 p.81, §.32 p.82, §.33 p.85, §.34 p.87, §.35 p.88 |
+%   §.36 p.91, §.37 p.97, §.38 p.100, §§.39 og 40 p.101, §.41 p.103, §.42 p.104
+% --- p. 45 ---
+stand i det Hele angaaer, da indsees her, hvorledes Sammenhængen deri (eller
+som det ofte hedder og kan hedde, hvorledes dens Indretning) er beskaffen,
+eller hvorledes det Mangfoldige deri er forbundet til Eenhed. Hvad derimod
+Enkelthederne og de enkelte Forhold angaaer, da indsees der, hvorfor de ere,
+og hvorfor de ere saaledes beskafne, som de ere, idet der indsees, hvorledes
+den hele Gjenstands Sammenhængsmaade fører dem saaledes med sig; saa at de,
+med den Beskaffenhed, de have, sees som medfornødne, (integrerende), eller dog
+medhenhørende Led i dette Hele. (Forsaavidt nogen Enkelthed ikke viser sig i
+dette Lys, staaer den endnu som ikke medomfattet af Begribningen, og betragtes
+da enten som endnu uoplyst, eller som tilfældig.)
+
+Naar altsaa, hvad Gjenstanden i det Hele angaaer, blot dens \emph{indvortes
+Beskaffenhed} eller dens \emph{Tilværelsesmaade} begribes, saa indsees derimod,
+hvad Enkelthederne og Forholdene angaaer, tillige deres
+\emph{Tilværelsesgrund} (\textit{ratio essendi}), og deres \emph{reelle
+Betydning} i det givne Hele. Det Hele bliver kun fremstillet, eller beskrevet,
+efter dets indvortes Beskaffenhed; Enkelthederne blive derimod tillige
+\emph{udtydede}.
+
+Den første Art af Indseen eller Begriben kunne vi kalde en
+\emph{Sammenhængsbegriben}, og Begrebet et \emph{Sammenhængsbegreb}; den sidste
+derimod (med Hensyn til Brugen af Ordet Realitet) en \emph{real Begriben}, og
+Begreberne \emph{Realbegreber}.
+
+% --- p. 46 ---
+En Begriben af hiin Art ligger her til Grund for Begribningen af sidste Art;
+thi det er Sammenhængsbegrebet om den hele Gjenstands Hvorledes (dens
+indvortes Hvorledes nemlig, der ikke maa forvexles med dens udvortes
+Beskaffenhed), hvoraf Indsigten i alt det Enkeltes Hvorfor, hvoraf altsaa den
+reale Begriben i Henseende til alt dette Enkelte, gaaer frem.
+
+Om den hele Gjenstand danne vi os derimod ikke herved et Realbegreb. Skulle vi
+komme til et saadant, saa maae vi søge at udfinde, til hvilken større Tingenes
+Orden, eller mere omfattende Kjæde af Ting, den givne Gjenstand saaledes
+henhører, at den viser sig som et medhenhørende Led deri, saa at dens reale
+Betydning og Tilværelsesgrund deraf kan indsees.
+
+Der maa da gaaes til et større Heelt, hvis Sammenhæng maa fattes og indsees
+saavidt, at den givne Gjenstands Realbegreb deraf kan udledes. Bestandigen see
+vi altsaa her en Sammenhængsbegriben at ligge til Grund for den reale
+Begriben.
+
+Men hvad den givne Gjenstand angaaer, er igjen at bemærke, at omvendt Begrebet
+om den er desto fuldkomnere, jo mere, naar det reale Begreb derom er gaaet frem
+af Indsigten i en større Tingens Orden, nu dens Hvorledes indsees som Følge af
+dens Hvorfor.
+
+\anm{1} Vi bemærke let, at Udtrykket: en Gjenstands Sammenhæng er tvetydigt, da
+det baade kan bruges til at betegne Sammen%
+% --- p. 47 ---
+hængen i den, og dens Sammenhæng med andre; dog betegner det, naar det staaer
+uden videre, naturligen kun det Første. Vi kunne adskille denne dobbelte Art af
+reel Sammenhæng, eller rettere den reelle Sammenhæng i disse to Henseender, ved
+at kalde hiin Gjenstandens \emph{indvortes Sammenhæng eller dens Sammenhæng i
+sig}, denne derimod dens \emph{Sammenhæng med andre}. At kalde denne sidste
+Gjenstandens \emph{udvortes Sammenhæng}, gaaer ikke an, da der ved dette Udtryk
+ligesaa godt kan tænkes paa Det, vi kunne kalde Gjenstandens \emph{udvortes
+Sammenhængsmaade}, menende derved den til Gjenstandens Udvortes henhørende
+Forbindelse imellem dens Dele, der allerede fremstiller sig for den reelle
+Anskuelse, naar ved denne en Totalforestilling erholdes, uden at der endnu er
+Tale om en Indsigt i den. Erkjendelsen af Gjenstandens \emph{Sammenhæng i sig},
+giver Det, vi have kaldet et \emph{Sammenhængsbegreb}; hvorimod dens
+\emph{Sammenhæng med andre} hører som Led med hen til den større Tingenes
+Orden, hvis Udfindelse og Erkjendelse kan føre til et Realbegreb om
+Gjenstanden.
+
+\anm{2} Dog kan ogsaa Gjenstandens Sammenhæng med andre komme i Betragtning ved
+at udfinde og oplyse dens Sammenhæng i sig. Thi da de Enkeltheder, der i en
+Gjenstand ere at adskille, ei blot kunne være Dele, som, paa en reen
+mathematisk Maade, i Rummet eller Tiden ere udenfor hinanden, men ogsaa
+% --- p. 48 ---
+Beskaffenheder hos den, Yttringer af den eller andre Phænomener ved den, som
+ligefrem vise hen til Noget udenfor Gjenstanden, fordi de kun i Henseende til
+noget Saadant overhovedet kunne finde Sted, saa maa Gjenstanden i alle saadanne
+Henseender betragtes i dens Forhold til, og Sammenhæng med, andre Gjenstande,
+for at dens egen indvortes Sammenhæng (Indretning, Organisation o. s. v.) kan
+blive fattet og forstaaet.
+
+Imidlertid er et saadant Hensyn til Tingens Sammenhæng med andre endnu ikke et
+Hensyn til den reale Betydning, Tingen har som Led i et større Heelt, eller til
+dens Realbegreb. Men endog til dette maa der ikke sjeldent trænges ind, fra
+dette maa der ikke sjeldent gaaes ud, for at fatte en Tings Sammenhæng i sig.
+Hvilket ikke blot gjelder, hvor Gjenstanden ligefrem er given som
+medhenhørende Led og Deel af et vist større Heelt, (som f. Ex. Hjertet i det
+menneskelige Legeme, eller Tænkningen, der findes som et integrerende Led i vor
+Erkjendelsesvirksomhed, og selv naar blot dens indvortes Beskaffenhed i sig
+skal oplyses, maa tages som saadant); men ogsaa, hvor Gjenstanden fremstiller
+sig for Anskuelsen som et Heelt for sig, kan det undertiden vise sig, at
+Gjenstandens Hvorfor, (dens Bestemmelse, Hensigt, eller dens reale Betydning)
+maa indsees, for at Sammenhængsbegrebet kan dannes. (Derpaa kan en Soelskive,
+et Uhr og mangeslags Maskiner, der skulle tjene
+% --- p. 49 ---
+til bestemte Øiemeder, (vi tage dem her som givne Gjenstande), tjene til
+Exempler; ligeledes en Statsindretning, et Hospital, o. m. desl.
+% ERRATA (Rettelser, roman XXII): "Pag. 49 Lin. 3, efter desl. sluttes
+% Parenthesen." NOT APPLIED — printed p. 49 line 3 ends "o. m. desl." with no
+% closing parenthesis, verified on the image at 450 dpi. The parenthesis opened
+% at "(Derpaa kan en Soelskive" (printed p. 48, foot) is therefore never closed
+% in the print; this batch's round-parenthesis balance is +1 as a result.
+Dog er det ofte i
+Tilfælde af denne Art, ligesom ogsaa undertiden selv da, naar Tingen ligefrem
+viser sig at være en Deel af et større Heelt, ikke nødvendigt at gaae ganske
+ind i det reale Begreb om Gjenstanden; ei sjeldent behøver man kun ganske
+løseligen at fatte det, for at kunne forstaae Sammenhængen deri. [Med Rette
+bemærker \emph{Platon i Kratylos}, at det ofte hører den Ene til at forfærdige
+en Ting, (hvortil et Sammenhængsbegreb om dens Indretning udfordres), en Anden
+at forstaae sig paa dens Brug, og derfor ogsaa at bedømme dens Værd (men en
+Tings Værd beroer altid paa dens Betydning som indgribende Led i en vis
+Tingenes Orden, en vis større Indretning); at forstaae sig paa et Orgels
+Indretning, som Orgelbyggeren, er noget Andet, end at vide, hvad Orgelet er og
+betyder, hvad det formaaer og kan være, i den Forstand, hvori en Virtuos paa
+Orgelet, eller en stor Componist for samme veed det. --- Et Exempel paa, at
+Sammenhængen i en Gjenstand, uagtet denne ligefrem giver sig os som Led af et
+vist Heelt, dog kan udvikles, uden at der gaaes særdeles ind i dens reale
+Betydning i dette Hele, kan den logiske Lære om Slutningerne være, saaledes som
+den efter Aristoteles har uddannet sig]. Men gives der saaledes Tilfælde, hvori
+man \emph{ganske}, andre, hvori
+% --- p. 50 ---
+man dog noget, mere eller mindre, maa gaae ind i Betragtningen af en Tings
+reale Betydning, dens Hvorfor eller Tilværelsesgrund, for at kunne erholde et
+Sammenhængsbegreb om den, saa gives der andre Tilfælde, da Gjenstande, der vise
+sig som Heelheder for sig, ogsaa kunne fremstilles i deres hele indvortes
+Sammenhæng, uden at der bliver noget Spørsmaal om deres Hvorfor eller
+\textit{ratio essendi}. Ofte hører endog Spørsmaalet herom hen i en ganske
+anden Sphære, end Betragtningerne over, og Udviklingen af, deres Hvorledes.
+(Saaledes har Grammatiken intet at gjøre med Sprogets, eller med et vist
+bestemt Tungemaals, \textit{ratio essendi}; men denne Undersøgelse er, hvad
+Sprog i Almindelighed angaaer, en psychologisk, og psychisk=anthropologisk,
+hvad et vist bestemt Sprog angaaer, en historisk og historisk=anthropologisk.
+Anatomie og Physiologie give ogsaa Exempel paa et meget omfattende
+Sammenhængsbegreb om en Gjenstand, hvis Hvorfor derved aldeles ikke kommer til
+Spørsmaal. Det vilde høre til en ganske anden Undersøgelse at gaae ind i,
+hvorfor Mennesket er til under legemlig Form, og det med en saadan
+Organisation, som den, vi see ham at have).
+
+Imidlertid maa det dog ei lades ubemærket, at den fulde Indtrængen i en
+Gjenstands reale Betydning, i dens væsentlige Medhenhøren til en større
+Tingenes Orden, ikke kan andet, end at lade os see dens hele Hvorledes i et
+% --- p. 51 ---
+andet og klarere Lys, og at erkjende dette dybere, end den blotte Iagttagelse
+af dette dens Hvorledes, som det forefindes, vil kunne det; hvorved det da
+ogsaa, hvad Gjenstandens Enkeltheder angaaer, langt anderledes vil kunne sees,
+hvad de ere og betyde. (Saaledes kan den menneskelige
+Erkjendelsesvirksomheds hele Beskaffenhed blive os forstaaelig, i Henseende til
+dens Hvorfor, naar vi gaae ud fra et Sammenhængsbegreb om den menneskelige
+selvbevidste Leven, men hiin vil dog blive os langt mere forstaaelig i dens
+reale Betydning, naar vi fatte den reale Betydning af denne selvbevidste Leven
+selv og af Det, der giver den Charakteren af Personlighed og Frihed, og deraf
+indsee, hvi Det, Mennesket skal erkjende, ikke gives ham umiddelbart og uden
+videre, ganske af sig selv. Og dette kan da atter vise os Tænkningen i dens
+dybere Betydning).
+
+\anm{3} Vi see her overalt Forskjellen imellem Undersøgelsen af et Hvorledes,
+og et Hvorfor. Hiint fører til en \emph{beskrivende Fremgangsmaade}; dette
+fremkalder en \emph{udgrundende Betragtning}.
+
+\anm{4} Det forstaaer sig af sig selv, at den Enkelthedernes Udtydning, hvorved
+deres reale Betydning i det givne Hele indsees, ogsaa kan lære at see dem som
+dem, der ingen sand real Betydning have, ingen sand Væsentlighed, men kun synes
+at være Noget; men da maa dog denne deres Indtræden uagtet deres Uvæsentlig%
+% --- p. 52 ---
+hed, denne deres Tilsyneladenhed, begribes (som naar Planeternes tilsyneladende
+Tilbagegang sees som Følge af Planetsystemets Beskaffenhed og Jordens Stilling
+i dette System). Det reale Begreb om Gjenstanden er her netop det, at den kun
+har Realitet, som et paa denne bestemte Maade sig indfindende Skin.
+
+\anm{5} Overhovedet bemærke vi, at den reale Begriben og Udtydning kan antage
+en forskjellig Charakteer. Snart lader den os see Tingen (Enkeltheden) som
+medfornødent Led i det Hele, altsaa egentligen see dens virkelige Tilværelses
+Grund, snart derimod blot som saaledes medhenhørende, eller medfølgende, at kun
+dens Muelighed indsees, eller dens muelige Tilværelses Grund. Derpaa kan den
+chrystallographiske Udtydning af en vis Flade paa en Chrystal give Exempel.
+Ogsaa hvad det Onde angaaer, kan Realbegrebet derom kun beroe paa, at indsee
+den væsentlige Medfornødenhed af Det, hvoraf det Ondes Muelighed gaaer frem.
+Dets Virkelighed kan kun tages som Factum.
+
+\anm{6} Den blot formale Begriben hviler tilsidst i sig selv allene, eller i en
+ligefrem Skuen.
+% ERRATA (Rettelser, roman XXII): "Pag. 52 Lin. 8 fra neden, den blotte formale
+% Begriben læs: den blotte Sammenhængsbegriben." NOT APPLIED. Line 8 from the
+% foot of printed p. 52 is the "Anm. 6." line above; the print reads "Den blot
+% formale Begriben" (not "blotte" — verified on the image at 450 dpi), and
+% stands as printed.
+Da et realt Begreb derimod ikkun opstaaer, idet Gjenstanden
+sees som medhenhørende Led i et større Heelt, altsaa sees i Forhold til noget
+Andet end den selv, til hvilket den er at henføre, saa er den reale Begriben,
+ifølge sin Natur, \emph{relativ}.
+
+% --- p. 53 ---
+Det, hvortil den refererer sig, eller hvoraf den afhænger og hvorpaa den
+beroer, er egentligen Erkjendelsen af den hele Sammenhæng i det større Hele,
+hvoraf den betragtede Gjenstand er et Led. Af denne Sammenhængs totale
+Beskaffenhed følger alle de deraf omfattende enkelte Leds, eller enkelte
+Gjenstandes, Væsentlighed. Vel referere de sig formedelst denne Sammenhæng
+(eller ere at henføre) \emph{til hinanden}, og det faaer det Udseende, som om
+den ene af dem er, som den er, fordi den anden er, som den er:
+Sammenhængsmaaden bestaaer just i en vis Nexus eller Forbindelse imellem de
+enkelte Led, ifølge hvilken det ene af dem fører det andet med sig, eller ved
+sin Beskaffenhed viser hen paa det andet; der kunne ogsaa gives enkelte Led,
+fra hvilke der maa gaaes ud, som fra dem, hvorpaa det især kommer an. Men i sig
+selv er det dog den hele i det givne Hele udtrykte Sammenhæng, der, bestemmende
+alle Enkelthedernes Forhold til hinanden, bestemmer enhver Enkeltheds Hvorledes
+og Hvorfor, idet den medfører dem alle paa eengang i samlet Heelhed. (Saaledes
+er det klart, at naar i en Periode i grammatikalsk Forstand, i et Sted hos en
+Forfatter, det ene Ord siges at føre det andet med sig, da er det egentligen
+Totaliteten af Det, der udsiges, som fører alle Ordene saaledes med sig, som
+dem, hvori det i deres samlede Indbegreb udtrykker sig.
+% A small raised comma-shaped speck stands before "hvori" in the print, and is
+% read by both OCR engines as an apostrophe. Judged scan dirt, not type — the
+% same speck recurs on pp. 55 and 59 — and so not transcribed.
+Dog bemærke vi, at
+dette blot kun betræffer Hovedledene i det Hele;
+% --- p. 54 ---
+visse mindre Dele eller Bidele kunne have deres Grund i særlige modificerende
+Omstændigheder).
+
+Gjøres nu denne større Heelhed selv til Gjenstand for en Tænkning, der gaaer ud
+paa at udgrunde dens Hvorfor, og erholdes et Realbegreb om den, derved, at den
+sees som væsentligt Led af en endnu større Heelhed, saa overstiges derved de
+Skranker, indenfor hvilke hiin første reale Begriben var bleven staaende, og
+den reale Begribens Sphære udvides. Men selv om heri det høieste Formaal
+opnaaedes, nemlig Erkjendelsen af en alle givne Gjenstande, der paa nogen Maade
+monne frembyde sig, omfattende Sammenhæng, vilde dog den reale Begriben endnu
+altid være en \emph{relativ}, fordi den dog bestandigen vilde være en Begriben
+ifølge en Sammenhæng, altsaa ifølge det Enes Henførelse til det Andet, og alle
+Tingenes Forhold til hinanden indbyrdes. En real Begriben kan overhovedet ikke
+andet, end at dreie sig i en Sphære af Relationer.
+
+\anm{7} Begribningen viser sig her som den, der er af \emph{organisk} Natur.
+Thi Enkelthederne vise hen til den hele Sammenhæng i dens Heelhed, og dennes
+Erkjendelse er den egentlige \textit{primus motor} i den hele Begriben, hvorfra
+den gaaer ud, og hvortil den gaaer tilbage, og hvori den hviler, om man end
+under Udtydningen eller Forklaringen vistnok gaaer fra Led til Led. Ikkun den
+for det Hele til Grund liggende Grundtanke lader os skue hver Enkelthed i sin
+Betyd%
+% --- p. 55 ---
+ning, og gjør, at vi begribe dens Hvorledes. Hvilket ligefuldt gjelder, hvad
+enten Gjenstanden selv er et \emph{organiskt} Heelt, eller ikke.
+
+\anm{8} Skal den Relativitet, vi her have skildret og viist som væsentligen
+forbunden med al real Begriben, aldeles overvindes, saa maa der gaaes over til
+en Erkjenden, der ei mere gaaer ud paa Sammenhæng eller Indsigt ifølge
+Sammenhæng, altsaa til en Erkjenden, \emph{som er høiere end en Begriben}. Det
+skeer, idet der stiges til Erkjendelsen af Noget, som, uagtet det begrunder en
+Sammenhæng, dog ei selv er hverken en Grund=Sammenhæng, eller et Led af en
+saadan, og tilmed ei heller har sin reale Betydning ifølge en Sammenhæng, men
+som med Hensyn til den Sammenhæng, det begrunder, er \emph{Eet og Alt}. Et
+saadant Noget er et \emph{høieste Princip}, hvilket som det Alt begrundende
+overalt er tilstæde og lever i det ved samme begrundede Indbegreb af
+sammenhængende Enkeltheder eller Led. Et saadant begribes ikke, men erkjendes
+kun ved at skues, ved en høieste intellectuel Anskuen. Dog Betragtningen over
+den Erkjenden, som indtræder, naar Erkjendelsen stiger saa høit, hører
+andensteds hen.
+
+\parag{18}
+
+Overveie vi nærmere, hvorledes vi komme til den intellectuelle Erkjendelse, som
+vi nu have betragtet med Hensyn til dens Gehalt, saa bemærke vi, hvad den
+Tænkningens Activitet angaaer,
+% --- p. 56 ---
+som fører til den, at der i den beskrevne analyserende Fremgangsmaade ere
+trende Tænkningens Acter at adskille. Thi for det første viser sig deri en
+\emph{Sondring eller Adskillelse}, hvorved, i reel Henseende, de mange
+Enkeltheder, og i intellectuel Henseende, disses indbyrdes Forhold og reale
+Betydninger, skues eller betragtes som forskjellige, hver for sig. Men for at
+denne kan skee planmæssigen, maae først alle Hoveddelene adskilles, og hver af
+disse for sig analyseres. Saaledes maa altsaa, som anden Hovedactivitet, en
+\emph{Sammenlignen}, hvorved der skjelnes imellem de eensartede Enkeltheder,
+der selv under Sondringen skulle blive sammen, og de ueensartede, der skulle
+sondres, gaae Haand i Haand med Sondringen. Men Hovedsagen er endeligen den
+\emph{Sammenfatten til Eenhed}, hvorved det Hele (virkelig eller i
+Indbildningskraften) igjen enten construeres ved alle Enkelthedernes
+Forbindelse, eller, fremstilles som det opstaaer og danner sig, saa at alle
+Enkelthederne sees at komme frem i deres Affølge af, eller Medfølge med,
+hinanden.
+
+Først under denne \emph{eftergjørende Construction eller genetiske
+Fremstilling} fatte og indsee vi Sammenhængen, eller Maaden, hvorpaa alle
+Enkeltheder ere forenede, tilfulde. En \emph{synthetisk Fremgangsmaade} gaaer
+saaledes i eet med den \emph{analytiske}, og denne tjener hiin til Forberedelse
+og Anviisning. Men da den hele Fremgangsmaade dog gaaer ud fra at sætte ud fra
+hinan%
+% --- p. 57 ---
+den, hvad der i Gjenstanden selv forefindes, saa kan dog den Maade, paa hvilken
+vi her komme til Erkjendelsen, kaldes \emph{Analysens Vei}. Men bedre kalde vi
+den den \emph{analytisk=genetiske Fremgangsmaade}.
+
+\anm{1} Den eftergjørende Construction eller genetiske Fremstilling viser sig
+herved for os som Det, hvorpaa det tilsidst kommer an, da den er Det, hvorved
+først den fulde Indsigt og Erkjendelse lægger sig for Dagen. Analysen eller den
+analyserende Undersøgelse er Opsøgelsen af hiin Constructions Maade. Den er en
+Udvikling af, og Eftertænkning over, det Givne, for at komme til Erkjendelse
+af, hvad der saaledes ligger til Grund i dette Givne, at vi, gaaende ud derfra,
+nu kunne lade det Hele opstaae for os. Men dette \emph{til Grund Liggende} selv
+construeres her ingenlunde.
+
+\anm{2} De trende anførte Virksomheder gribe her organiskt i hinanden, da de
+gjensidigen forudsætte hinanden. For hensigtsmæssigen at adskille og derved ei
+at gaae famlende og usikkert tilværks, maa man allerede, ved et almindeligt
+Overblik over alle Gjenstandenes Enkeltheder, foreløbigen have bemærket deres
+Forbindelsesmaade og Forhold, men dette kan dog igjen ikkun skee, idet de
+forskjellige Enkeltheder, hvis Forbindelsesmaade og Forhold bemærkes, skues som
+forskjellige, altsaa skjelnes fra hinanden, hvilket dog kun hiint Blik paa
+Sammenhængen i det Hele, kan lære os at gjøre paa den rette Maa%
+% --- p. 58 ---
+de. Delene skues kun som Dele, der kunne adskilles, og ere at adskille, idet
+det Hele iagttages i sin Heelhed, men dette Hele sees dog kun som et Heelt,
+idet Delene iagttages. Den Sammenligning i Henseende til Delenes Eensartethed
+eller Ueensartethed, der til Adskillelsen, tilmed ogsaa til Sammenfattelsen, er
+fornøden, forudsætter ligeledes Det, hvortil den selv maa forudsættes; thi kan
+der paa den ene Side ikke skjønnes, hvad der skal adskilles, og hvad der selv
+under Adskillelsen skal forblive uadskilt, uden formedelst hiin Sammenlignen,
+saa maa dog igjen denne ledes ved et Blik paa det Hele, der allene kan lære,
+hvad der, ifølge Sammenhængsmaaden i det Hele, er at behandle som eensartet
+eller ueensartet. Saa at den Erkjendelse, der først skal komme i Stand, det
+Begreb om Tingen, hvortil vi skulle komme, maa selv have viist sig og lede
+Tænkningen, naar denne methodiskt skal kunne føre til den; kun dette Begreb
+selv kan være den ledende Norm for den Analyse, som just vil finde dette
+Begreb; hvad vi under den eftergjørende Construction skulle hæve frem og bringe
+til at vise sig, maa selv styre denne Construction. (Hvorledes paa den ene Side
+Enkelthederne og en Analyse af deres Beskaffenhed leder til at fatte det Hele i
+dets totale Sammenhæng, og dog igjen netop først et Blik paa det Hele kan lære
+os at fatte Enkelthederne rigtigt, og tage dem for Det, de ere, derpaa kan
+Udfindelsen af Sammenhængen i,
+% --- p. 59 ---
+og Meningen af, et Sted, hos en Autor byde os et talende Exempel.) Et
+umiddelbar Forstandens Blik er her eet og alt; Sammenhængen maa netop
+vaerblives, og Analysen fører ei heller til den paa anden Maade, end ved at
+vække denne ligefremme Vaerbliven.
+
+\parag{19}
+
+Ved Hjelp af de tre anførte Activiteter skeer den Undersøgen og Behandlen,
+formedelst hvilken vi deels føres til den intellectuelle Erkjenden, ved at
+føres til at bemærke, udfinde, mere og mere at fatte, og tilsidst ganske at
+trænge ind i, Gjenstandens Sammenhæng, dens Enkeltheders Forhold ifølge denne
+Sammenhæng og enhver Enkeltheds deraf følgende Betydning i det givne Hele, deels
+derpaa fremstille den saaledes vundne Erkjendelse og derved fuldende den, en
+Fremstilling, der forsaavidt den skeer ved Ord, bliver til en Art af
+Beskrivelse, \emph{en intellectuel Beskrivelse}.
+
+Men forskjellig fra denne undersøgende, behandlende og fremstillende
+Fremgangsmaade, er den intellectuelle Erkjendelse selv, hvortil den fører, og
+som ved den fremstilles. Hiin gaaer ud paa den Mangfoldighed, som skal sættes
+ud fra hinanden, og sees i sin Sammenhæng, denne gaaer ud paa den Indsigt, der
+lader os fatte og erkjende denne Sammenhæng, d. e. Eenheden i hiin
+Mangfoldighed.
+
+\parag{20}
+
+Til denne intellectuelle Erkjendelse komme
+% --- p. 60 ---
+vi ikke paa samme umiddelbare Maade, hvorpaa i den reelle Anskuelse eller
+Fornemmelse Gjenstanden med dens Enkeltheder fremstiller sig for os, men kun
+paa en (mere eller mindre) middelbar Maade, da dertil deels forudsættes denne
+reelle Anskuen eller Fornemmen, hvorved den Gjenstand gives, hvis indvortes
+Beskaffenhed skal erkjendes, deels den Tænkningens Undersøgelse hvorved, ifølge
+en vis Fremgangsmaade, Gjenstandens indvortes Beskaffenhed udfindes.
+% As printed: no comma after "Undersøgelse". Both OCR witnesses agree with the
+% image; not emended.
+
+\parag{21}
+
+Imidlertid maa dog Alt, hvad der her bliver Gjenstand for den intellectuelle
+Erkjenden (Sammenhængen med Enkelthedernes deraf følgende Forhold og
+Betydninger) ganske tages og erkjendes, som det selv er og forefindes. Den
+intellectuelle Erkjenden viser sig herved som \emph{en Opfatten eller Udfinden}
+af noget Givet, ganske som dette selv fremstiller sig for den intellectuelle
+Vaerbliven og Iagttagen. Heri maa ogsaa, uagtet det Middelbare i den Maade,
+hvorpaa vi komme til saaledes at blive vaer og at udfinde Gjenstandens
+indvortes Beskaffenhed, dog altid gaaes ud fra \emph{Noget}, som umiddelbart
+bemærkes under den undersøgende Betragtning, og nu leder denne videre; og
+dernæst maa der bestandigen, Skridt for Skridt, ligefrem og umiddelbart
+indsees, at det Ene fører det Andet med sig, at med og af det Ene det Andet
+følger, og at altsaa Totalforestillingen maa dannes saaledes, som den dannes;
+hvilken det Enes
+% --- p. 61 ---
+\emph{Affølge} af, eller \emph{Medfølge} med, det Andet er Det, vi kalde
+\emph{Conseqventsen}. Og saaledes finde vi ogsaa her i intellectuel Henseende
+en vis umiddelbar, paa sig selv beroende, \emph{Erkjenden}, altsaa, da ogsaa
+den kan og maa have sin Klarhed og Bestemthed, en vis intellectuel Skuen; og vi
+see den at ligge til Grund for den hele Art af Erkjendelse, den hele Indsigt og
+Begriben, hvortil Tænkningen fører.
+
+\anm{} Angaaende denne intellectuelle Skuen see videre Anm. 2 til §. 23.
+% "§. 23" read off the image at 2.4x. tesseract gives "§. 2I"; the ABBYY layer
+% and the image both give 23, and the cross-reference is mutual (Anm. 2 to
+% §. 23, printed p. 63, refers back to §. 21).
+
+\parag{22}
+
+Men om end den intellectuelle Erkjendelse saaledes paa den ene Side viser sig
+som en intellectuel Vaerbliven og Skuen og en derpaa grundet Antagen, og
+forsaavidt stemmer overeens med den ved den reelle Anskuelse opstaaende
+Erkjenden, saa er den dog paa den anden Side mere, end en blot Opfatten og
+Skuen, da den tillige skal svare saaledes til Tænkningens Krav og Fordringer,
+at den bliver indlysende og derved tilfredsstillende. Dette giver den først
+Charakteren af en \emph{Begriben}, og herved viser den sig, som den, der ei
+blot i Henseende til Det, hvad der erkjendes, men ogsaa i Henseende til
+Erkjendelsesmaaden, er af ganske anden Art, end den reelle Anskuen. Naar denne
+blot tager det Givne som Givet og derved lader det beroe, saa søger den
+intellectuelle Indtrængen i Gjenstandene at finde Noget, som svarer til
+Tænkningens egne oprindelige Grundbegreber og For%
+% --- p. 62 ---
+dringer, og kun forsaavidt den i Gjenstandene finder Noget, som tilfredsstiller
+i Henseende til disse, bliver Erkjendelsen en Indseen og Begriben.
+% NO emphasis on this page: "Indseen", "Begriben", "Erkjendelsen" and
+% "Modsætning" all carry the pointed Fraktur capitals, checked at 2.4x against
+% the round Schwabacher "Begriben" of p. 61 in the same zoom.
+
+\anm{} Skjønt intellectuel Skuen og Begriben her danne en Modsætning, idet de
+betegne to modsatte Sider, hvorfra den intellectuelle Erkjenden er at betragte,
+saa gaae dog begge her aldeles i eet. Netop kun i og formedelst Begribningen
+danner sig den intellectuelle Skuen og har kun sin Bestaaen i denne Begriben;
+men atter er Begribningen, Skridt for Skridt, en ligefrem Skuen, hvorved der
+ligefrem sees, at saaledes og ikke anderledes fører det Ene det Andet med sig.
+
+\parag{23}
+
+Den Tilfredsstillelse, der søges, maa finde Sted baade i formel og i materiel
+Henseende (§. 3 Anm. 2); og den indholdsgyldige Indsigt maa have sit Grundlag i
+begge Dele. Den første beroer paa Forestillingsmaadens Samstemming i sig selv,
+i Overeensstemmelse med, hvad der i Almindelighed logiskt udfordres til Eenhed,
+Sammenhæng og Conseqvents. Den anden beroer paa Forestillingsmaadens
+Samstemming med, og Tilsvarenhed til, alt det Givne, hvortil udfordres, at der
+sees, at dette just viser tilbage til denne og til ingen anden
+Grundsammenhængsmaade, at det kun paa denne og paa ingen anden Maade er at
+sammenfatte eller at
+% --- p. 63 ---
+construere. Herpaa beroer det dannede Begrebs Realitet.
+
+\anm{1} Vi bemærke her, at der er Forskjel imellem at gjøre sig et Begreb om
+Noget, og at begribe det eller have Begreb derom (have Indsigt deri). Det
+sidste er en Erkjendelse, der maa have objectiv Gyldighed, Realitet, hiint kan
+derimod maaskee kun være en Forestillingsmaade, der er ugrundet. Imidlertid maa
+dog et saadant Begreb svare til de almindelige logiske Betingelser for al
+Begribning overhovedet, eller være dannet saaledes, at der i
+Forestillingsmaaden er Sammenhæng og Eenhed, saa at Sagen lader sig tænke. Det
+maa altsaa være \textit{formaliter} rigtigt dannet. Men kun, naar det tillige
+er \textit{materialiter} gyldigt, kan man sige, at Gjenstanden derved begribes.
+
+\anm{2} Skjønt vi fra først af altid komme til Begrebet paa en middelbar Maade,
+kan Sammenhængen i Gjenstanden dog ofte --- især naar alle Enkelthederne kunne
+overskues, og det fra flere Sider --- indlyse saa ligefrem, naar den først er
+fattet, at der ei videre kan være Tale om Begrebets Realitet, eller Sandhed og
+Grundethed, ja at Sammenhængen endog strax, ved første Blik fattes ganske
+ligefrem og umiddelbart. Overhovedet kan den intellectuelle Erkjenden, som
+hviler paa et Grundlag af intellectuel Skuen (see §. 21), ogsaa uddanne sig saa
+vidt, at i mangt et Tilfælde, alt Det, der paa den intellectuelle Maade
+erkjendes, ogsaa kan siges,
+% --- p. 64 ---
+heelt som det erkjendes, at blive skuet i Gjenstanden, ligesaa umiddelbart og
+ligefrem, bestemt og klart, som Gjenstandens for den reelle Anskuen sig
+fremstillende Udvortes. Og saaledes see vi Tænkningen at kunne føre til en
+intellectuel Anskuelse (jfr. §. 4, Anm. 1).
+% "en intellectuel Anskuelse" is NOT emphasised: at 2.4x the A of "Anskuelse"
+% is the same pointed Fraktur A as the control "Anm." three words later. The
+% phrase looks heavier at page scale only because of ink spread on this line.
+
+\anm{3} Men ofte kan, især af Mangel paa sandselig Overskuelse, eller
+overhovedet af Mangel paa Overskuelse af det givne Reelle, en Gjenstands
+Sammenhæng kun udfindes paa en mere middelbar Maade, idet der gaaes ud fra
+visse Enkeltheder og iagttagne Forhold, fra hvilke der sluttes videre fremad,
+indtil alt samler sig til en i sig selv samstemmende Eenhed, paa en med det
+Givne aldeles samstemmende Maade. Sammenhængens Udfindelse og Fremstilling
+bliver da her især kaldet en \emph{Forklaring}, og naar den endnu kun skeer
+forsøgsviis og beholder noget Uvist, kaldes den en \emph{Hypothese}. Herved
+forstaae vi altsaa en, ifølge en Slutning fra visse Data, foreløbigen, paa egen
+Haand, dannet Forestilling om Sammenhængen i et givet Indbegreb af Enkeltheder
+(Phænomener), som Forsøg, for at prøve, om de alle saaledes passe ind i denne
+Sammenhæng, at de derved tilfulde kunne begribes.
+% The H of "Hypothese" is the round Schwabacher H; the control is "Herved" two
+% words later, which carries the angular Fraktur H. The definitional sentence
+% that follows ("Herved forstaae vi altsaa ...") is ORDINARY Fraktur throughout
+% --- its S in "Slutning" matches the Fraktur control --- although at page scale
+% the whole block reads as heavier.
+
+Om Gyldigheden eller Realiteten af en saadan Forestillingsmaade, bliver der da
+Spørsmaal, indtil ikke blot Mueligheden af, at Sammenhængen er den antagne, men
+og Nødvendigheden af at antage denne og ingen anden, er
+% --- p. 65 ---
+indlysende, hvorved først Antagelsen bliver til Vished. Tilnærmelsen dertil er
+desto større, jo flere af hinanden uafhængige Phænomener, eller andre givne
+Enkeltheder kunne forklares af den antagne Sammenhængsmaade, uden at der endnu
+er funden nogen, som strider derimod. De ere da, saafremt de virkeligen, uden
+at afhænge af hinanden indbyrdes, vise hen paa den samme Sammenhæng, og det fra
+forskjellige Sider, lige saa mange selvstændige Vidnesbyrd for Antagelsens
+Rigtighed. (Saaledes som man f. Ex. i Fixstjernernes Aberration har et eget for
+sig bestaaende Vidnesbyrd for, at Jorden gaaer omkring Solen). Men selv om alle
+af den undersøgte Sammenhæng medomfattede Enkeltheder ere udfundne og fundne i
+Overeensstemmelse med Antagelsen, beholder den dog endnu Charakteren af en
+Hypothese, saa længe dens Tilforladelighed allene beroer paa, at alle
+Phænomener kunne forklares ved den. Den fuldkomne Vished opnaaes først, naar
+det bliver klart, at ingen anden Forbindelsesmaade er tænkelig, hvilket, da det
+er noget Negativt, kun kan indsees ligefrem, naar den høiere Grund findes og
+erkjendes, som medfører og begrunder den hele Sammenhæng, og nu lader den skues
+som den eneste, der kan finde Sted, eller dog som den eneste antagelige. Thi
+Eet er selve Sammenhængens fulde Oplysning, et Andet den udenfor samme liggende
+Grund, som gjør, at den er til. Dog maa naturligviis Antagelsen af denne Grund
+% Sheet signature "(5)" at the foot of printed p. 65; not text.
+% --- p. 66 ---
+have sin Bestaaen i sig, uafhængigt af Hypothesen.
+
+Et saadant Forsøg paa at udfinde en endnu skjult Sammenhæng i givne
+Enkeltheder fører undertiden til at forudskikke eller tilføie visse
+\emph{Hjelpehypotheser}. Saadanne gjøre imidlertid Hovedhypothesen betænkelig,
+naar blot denne har ført til dem, og de ingen videre Støtte have; men have de
+en saadan, kunne de ofte være af væsentlig Betydenhed, som integrerende Led i
+den hele Forklaring. (Et Exempel kan Det, som fremsættes for at forklare,
+hvorfor Ebbe og Flod, der ere at ansee for Følger af Maanens Attraction, dog
+overalt indtræder en Tid efter, at Maanen er gaaet igjennem Meridianen, være
+for os her, da vi her, hvor vi blot søge et Exempel, vel kunne betragte den
+hele Lære herom som en Hypothese).
+
+Men Bestræbelsen efter at forklare kan undertiden endog føre videre, nemlig
+til, foruden de givne Enkeltheder selv, endnu at antage Tilværelsen af visse
+andre \emph{Enkeltheder, (Facta eller reelle Gjenstande)}, der nu, tilsammen
+med hine virkeligen forefundne, tænkes at danne et vist sammenhængende Heelt,
+(som naar et Capillairsystem antages at forbinde Venernes og Arteriernes
+yderste Spidser med hinanden, eller en vis Feiltagelse af en Afskriver for at
+forklare et Sted hos en Autor). Til saadan Antagelse kan der forsaavidt vise
+sig Anledning, som de bemærkede Enkeltheder sees ei at være tilstrækkelige til
+at
+% The emphasis runs over the parenthesis: the E of the second "Enkeltheder",
+% the F of "Facta" and the G of "Gjenstande" are all the round Schwabacher
+% forms, checked at 3.2x against the pointed Fraktur E of "de givne
+% Enkeltheder" two lines above. "Facta" is Latin but is set in SCHWABACHER, not
+% antiqua, so it takes \emph and not \textit.
+% --- p. 67 ---
+danne en Heelhed efter den antagne Sammenhæng. Men egentligen og strengt taget
+gaaer dette udenfor en Hypotheses Skranker, da den kun skal gaae ud paa at
+forklare en Sammenhæng eller Forbindelsesmaade, ei føie noget til Det, hvis
+Sammenhæng skal forklares. De Enkeltheder, Phænomener, hvorpaa der bygges,
+skulde, strengt taget, være virkelig givne, Data. Saadanne Gisninger, hvorved
+visse Phænomener eller Omstændigheder \textit{in facto} supponeres, ere
+imidlertid ofte naturlige nok, men, hvor det kan skee, bør de formodningsviis
+tilføiede Enkeltheder efterspores saaledes, at de kunne opdages selv, som
+virkelige, ved samme Art af reelle Anskuen, hvorved det Hele, om hvis
+Sammenhæng spurgtes, blev givet; saa at snarere en Iagttagelse eller
+Eftersøgelse bør fremkaldes og sættes i Bevægelse ved hiin Antagelse, end en
+Forklaring derpaa bør støttes, saalænge ikke Gisningen er af den Natur, at den
+understøttes ved den betragtede Sags hele Beskaffenhed og talende Analogier
+(som mange philologiske Conjecturer). Undertiden kan en Antagelse svæve paa
+Grændsen imellem en Hypothese og en Conjectur (som Schleiermachers Maade at
+forklare, hvorledes Lukas's Evangelium er opstaaet ved en Sammenføining af
+flere, forhen existerende, mindre, skrivtlige Overleverelser; dog er denne
+Forestillingsmaade vel rigtigst at kalde en Hypothese). Aldeles forkastes bør
+derimod en saadan Fremgangsmaade, som ved, istedetfor
+% "Saadanne Gisninger" is NOT a new paragraph: measured, printed p. 67 carries
+% no indented line at all, so the whole page continues the paragraph begun on
+% p. 66. "Gisninger" is ordinary Fraktur (checked at 2.6x).
+% Sheet signature "(5*)" at the foot of printed p. 67; not text.
+% --- p. 68 ---
+de givne Phænomener, at antage andre, som ei ere givne, men om hvilke, hvis de
+antoges, de samme Spørsmaal maatte gjøres, som om hine, ei blot overhovedet
+trykkes af saadanne Gisningers Mislighed, men ogsaa, istedetfor at føre
+nærmere til Opgavens Løsning, rykker den længere ud, og lader den staae under
+en ny Skikkelse. Derimod kan der være grundet Anledning til at forsøge en
+Forklaring, som, om den antages for grundet, vækker de samme Spørsmaal op
+igjen, naar Noget, som under andre Former allerede er fundet og erkjendt, synes
+at gjenkomme her under en ny Form; thi da reduceres det mere specielle
+Spørsmaal til et almindeligere, hvilket, saafremt ellers Antagelsen er grundet,
+er et Fremskridt i Opklaringen. (Jfr. om Erkjendelse og Granskning, pag.
+101=103).
+% "pag." is Fraktur; "101=103" are antiqua figures joined by the Fraktur double
+% hyphen, left unmarked per the convention fixed at printed p. 3.
+
+\parag{24}
+
+Det Foregaaende fører os ligefrem til at see, hvad der giver den intellectuelle
+Erkjenden \emph{Charakteren af en Erkjenden}.
+
+Det, der overhovedet giver en Forestilling Charakteren af en Erkjendelse, er at
+der tillægges Forestillingen Realitet eller objectiv Gyldighed, det er en af
+Forestillingen selv uafhængig Gyldighed. Men hvad der gjør, at der tillægges
+den denne Gyldighed, er altid en Forestillingen ledsagende \emph{Nødvendighed},
+som gjør, at vi ikke kunne forestille os Sagen anderledes. Men denne
+Nødvendighed er ved den blotte Fornem%
+% --- p. 69 ---
+men og reelle Anskuen \emph{en physisk}, der følger af en Affection; derved
+føle vi os nødte, og den viser sig ikke for os anderledes, end som en
+\emph{Nødvendighed}, der blot føles. I Begribningen derimod og den derved sig
+dannende intellectuelle Erkjenden, er den Nødvendighed, der gjør, at der
+tillægges den Gyldighed, en intellectuel \emph{Nødvendighed}, som ei blot føles
+(hvilket her endog er det senere), men sees og indsees, idet Det, der medfører
+den, sees, som Det, der ikke kan andet end at medføre den. Af denne
+intellectuelle Nødvendighed, naar den erkjendes og føles, udspringer den
+Indlysen eller den Evidents, i hvilket Det, der umiddelbart og ligefrem skues,
+tillige sees som det eneste Muelige, eller som Det, der, paa dette Sted og i
+denne Forbindelse, allene kan tilfredsstille Tænkningen. Og dette gjelder ei
+blot om den reale Begriben, hvor dette især er klart, men ogsaa om
+Sammenhængsbegribningen; thi denne indtræder dog kun, idet vi saaledes see
+Maaden, hvorpaa det Mangfoldige i Gjenstanden er forbundet, at vi indsee, at
+det Givne kun paa saadan Maade, og ikke paa nogen anden, kan forbindes til
+Eenhed, og at altsaa den eftergjørende Construction eller genetiske
+Fremstilling af Tingen kun kan skee saaledes og ikke anderledes.
+% The Schwabacher/Fraktur split on this page is confirmed independently by the
+% ABBYY layer, which renders the SCHWABACHER word as "Nødvendighed" (with ø) and
+% every Fraktur one as "Nodvendighed" (with o). Emphasised here: "en physisk",
+% "Nødvendighed, der blot føles", "intellectuel Nødvendighed". NOT emphasised:
+% "er den Nødvendighed, der gjør", "Af denne intellectuelle Nødvendighed",
+% "Dog er der imellem den Nødvendighed", "kun er en Nødvendighed".
+
+Dog er der imellem den Nødvendighed, der indtræder i Sammenhængsbegribningen,
+og den, der finder Sted ved den reale Begriben, den Forskjel, at den første kun
+er en Nødvendighed
+% --- p. 70 ---
+for vor Skuen og Construeren, den sidste derimod gaaer ud paa Tingens egen
+Tilvær og Beskaffenhed; denne er en reel Nødvendighed, der maa tænkes at finde
+Sted med Hensyn til Tingen selv, hiin derimod kunne vi kalde en logisk
+Nødvendighed, da dog Sammenhængen blot tages som forefunden. Imidlertid
+erkjendes den dog kun, idet den viser sig som den eneste Maade, hvorpaa der kan
+være Eenhed i en saadan Mangfoldighed, som den givne er: et saadant Ydre sees
+som Det, hvori den indvortes Sammenhæng nødvendigviis maa være denne; og en
+saadan Sammenhæng indsees at være den eneste, der kan ligge til Grund for et
+saadant Ydre. Saa at Nødvendigheden ogsaa her endnu er intellectuel, ei en blot
+ydre og physisk Nødvendighed, saaledes som den, hvormed under den lavere
+Sandsning Gjenstandene formedelst Affectioner paanøde sig os.
+% Neither "reel Nødvendighed" nor "logisk Nødvendighed" is emphasised here:
+% both carry the pointed Fraktur N, checked at 2.6x against the round
+% Schwabacher N of "Grundbegrebet Nødvendighed" in Anm. 1 immediately below.
+
+\anm{1} At Grundbegrebet \emph{Nødvendighed}, saavel overhovedet, som reel
+Nødvendighed i Særdeleshed, er en i og med Tænkningen selv (\textit{a priori})
+sig fremstillende Grundtanke, er klart deraf, at Tænkningen, idet den søger at
+begribe, især naar den søger et Hvorfor, søger Nødvendighed, og at den kun
+tilfredsstilles, naar den finder denne Nødvendighed. Dog træder denne
+Grundtanke, uagtet den ligger til Grund i den formale Begriben, først frem som
+saadan, i den reale; thi her træder den først ind i Spørsmaalet og eftersøges.
+% --- p. 71 ---
+\anm{2} Vi ville angaaende Udtrykket Erkjendelse, her gjøre den Bemærkning, at
+det baade (i en mere subjectiv Forstand) betegner at antage \emph{Noget} for
+gyldigt (kjende det for gyldigt) ifølge en, enten i sig, eller dog for os,
+tilstrækkeligen indlysende og tilfredsstillende, tilmed tilstrækkeligen nødende
+Grund; saa og (i en mere objectiv Forstand) at trænge ind i en Tings sande
+Beskaffenhed, eller satte Tingen i dens sande \emph{Væsen} (kjende den til
+Grunden). I hiin Forstand er det en Forestilling, en Paastand, Sætning, der
+erkjendes; i sidste Tilfælde er det Tingen selv, der erkjendes. I denne sidste
+Forstand svarer det til \textit{ἐπιστήμη}, hvilket Schleiermacher, i sin
+Oversættelse af Platon, giver ved \emph{Erkenntniß}, ikke ved \emph{Wissen}.
+% PRINTER'S ERROR, transcribed as printed: "eller satte Tingen i dens sande
+% Væsen" --- "satte" for "sætte". Verified at 2.6x: the vowel is a plain
+% Fraktur a, not the æ of "sættes" elsewhere on p. 72. Both OCR witnesses agree.
+% GREEK. The word is set in a light antiqua Greek and is very faintly inked on
+% this leaf; re-rendered at 600 dpi and contrast-stretched, the opening
+% "ε π ι" is legible and the ending is "-μη" with an accent over the preceding
+% letter. Read as ἐπιστήμη, which the sense requires (Schleiermacher's
+% "Erkenntniß" against "Wissen"). The breathing and the acute cannot be
+% separated from the paper grain, so they are supplied from the standard form;
+% alternative rejected: γνῶσις, which does not fit the letter count or the
+% visible ε at the head. No variant Greek sorts used.
+% "Erkenntniß" and "Wissen" are German and are set in SCHWABACHER, not antiqua
+% (the ABBYY Latin model reads them "Lrkenntnist" and "rvissen", the signature
+% of the round Schwabacher E and W), so they take \emph.
+
+\parag{25}
+
+Det, der giver den paa den intellectuelle Maade dannede Forestilling
+Charakteren af en Erkjendelse, kan ogsaa siges at være Det, at den betragtes
+som grundet. Denne Bestemmelse følger ligefrem af den foregaaende; thi
+Nødvendigheden forudsætter Noget, som medfører den, men dette viser sig da som
+dens Grund. Imidlertid er det dog kun den intellectuelle Nødvendighed, og den
+Erkjendelse, hvortil denne fører, der betragtes som grundet; idet der herved
+sees paa Det, som begrunder den. Den af ligefrem reel Anskuelse eller
+Fornemmelse følgende Nødvendighed er det ogsaa, men der tænkes ved den ikke paa
+nogen Grund. Kun den intellec%
+% --- p. 72 ---
+tuelle Betragtning fremkalder Tanken om en Grund.
+
+Grund kalde vi overhovedet Noget, forsaavidt det nødvendigviis fører noget Vist
+med sig (eller forsaavidt tilligemed samme nødvendigviis noget Vist maa være
+eller sættes), saaledes at dette kun kan være eller sættes at være, naar hiint
+er eller sættes at være forud. (Hvorved vi bemærke, at der her ei tænkes paa
+Noget, der er \textit{prius tempore}, men paa Det, der er \textit{prius
+essentia, dignitate}).
+% Neither the paragraph-initial "Grund" nor "Noget" is emphasised here: both
+% carry the pointed Fraktur capital, checked at 2.6x against the Schwabacher
+% "Noget" of p. 71.
+
+Saadanne Grunde ere deels \emph{Erkjendelsesgrunde} (\textit{ratioues
+cognoscendi}), deels \emph{Tilværelsesgrunde} (\textit{rationes essendi}). De
+første medføre den logiske Nødvendighed, de sidste den reale. Hvorledes begge
+ofte hænge nøie sammen, ofte derimod ligge i forskjellige Sphærer, vil sees af
+det ved Forskjellen imellem Sammenhængsbegribningen og den reale Begriben
+(§. 17) Bemærkede.
+% PRINTER'S ERROR, transcribed as printed: "ratioues" for "rationes". Verified
+% at 2.6x --- the fourth-from-last letter is an unmistakable antiqua u with the
+% bowl at the foot, against the clear n of "cognoscendi" beside it and of
+% "rationes essendi" on the next line. tesseract also reads "ratioues".
+% "(§. 17)" read off the image; tesseract gives "§. 47", the ABBYY layer and
+% the image both give 17, and §. 17 (printed p. 44) is indeed the § on the
+% difference between Sammenhængsbegreb and Realbegreb.
+
+\parag{26}
+
+Grunden til en Gjenstand tænkes i Almindelighed som en anden Gjenstand, med
+hvilken den omspurgte staaer i saadan Forbindelse, at hiin, ifølge den dem
+forbindende Sammenhæng, maa have denne til Følge, eller i Følge med sig. Men i
+Sammenhængen, som udtrykker sig i alle de her tilsammenhørende Gjenstandes
+samlede Indbegreb, ligger da altsaa egentligen Grunden, som søges; thi med den
+ere alle de enkelte Gjenstande givne, af denne forklares de. (Jfr. §. 17,
+Anm. 6).
+% --- p. 73 ---
+Granskningen efter Grunde søger efter en altomfattende Totalsammenhængs
+Erkjendelse, og vil med denne naae sit høieste Formaal og komme til Hvile. Men
+en saadan Totalsammenhængs Erkjendelse er et Begreb, og naar ifølge saadan
+Erkjendelse de enkelte Gjenstandes særdeles Realbetydninger og deres
+Beskaffenhed erkjendes, dannes om disse Begreber; men ved den samme Erkjendelse
+sees de ogsaa som nødvendige Følger af hiin Totalsammenhæng, og forklares
+tilmed derved saaledes, at Spørsmaalet om deres Grunde derved besvares: saa at
+Granskningen efter deres Grunde falder sammen med Udgranskningen af deres sande
+Begreber, og at med disse ogsaa hine ere fundne. Naar den Grundtanke, det
+Begreb, er fundet, hvorved Tingens Væsentlighed, og med denne tillige Grunden
+til dens Grundform og hele Beskaffenhed indsees, saa at Tingen blot viser sig
+som en Virkeliggjørelse af den Tanke, saa er Tingen forklaret. (See herved mit
+Skrivt: om Erkjendelse og Granskning §. 9, pag. 88, hvor dette udførligen er
+omhandlet og oplyst).
+% No quotation marks before "om" here, unlike the parallel citation on printed
+% p. 3; checked on the image. Nothing to balance.
+
+\parag{27}
+
+Ligesom den intellectuelle Erkjenden, \textit{qvâ} Begriben, viser sig at
+bestaae i Mere, end en blot ligefrem Opfatten eller Modtagen, og derpaa sig
+støttende Antagen og Erkjenden, saaledes er det og Mere, end en ligefrem
+Betragten og iagttagende Eftersporen, hvorved vi komme til den. Hvad vi i
+Gjenstanden under den in%
+% --- p. 74 ---
+tellectuelle Analyse og Betragtning bemærke og blive vaer, mødes saaledes med
+de Tænkningens Grundforestillinger, som derved sættes i Bevægelse hos os, at
+vi, idet vi gjennemgaae hiint, prøve, hvorledes det vil tages og sees, for at
+samle sig for os til Eenhed og Sammenhæng, og til en baade i sig og med Hensyn
+til det Givne tilfredsstillende Totalforestilling.
+
+Vi komme her altsaa til Begrebet paa en \emph{discursiv Maade, raisonnerende,
+eller discuterende}: Udtryk, som, hver paa sin Maade, betegne, under
+Betragtningen af en Sag, at forfølge en Tankegang, for, idet man agter paa,
+hvortil ethvert Punct, som bemærkes, viser hen, eller videre fører, eller hvad
+der følger med det og af det, at søge at komme efter, hvorledes man kan og skal
+tage Tingen, idet man, efter visse Grundforestillinger, prøver, hvad der deri
+viser sig som grundet og antageligt. Med Hensyn hertil kan nu ogsaa den
+omhandlede Art af Begreber kaldes \emph{discursive Erkjendelser}.
+% The emphasised run ends at "discuterende": the M of "Maade" inside it is the
+% round Schwabacher M, while the M of "hver paa sin Maade" on the very next
+% line is the angular Fraktur M (checked at 2.4x in one zoom, side by side).
+
+\anm{1} Vi kunne her strax gjøre den psychologiske Bemærkning, at vi af det
+angivne Begreb om Raisonnement let see, hvorledes ei blot de almindelige
+logiske Grundbegreber, men og tilvante Forestillingsmaader og Synspuncter let
+faae megen Indflydelse paa Tankegangene og Dommene om en forekommende
+Gjenstand, fordi ogsaa de under sammes Betragtning hæve sig frem, og mødes med
+samme som Grundlag for Prøvelsen. Men dette gjør let, at Gjenstan%
+% END OF BATCH. Printed p. 74 ends mid-word: "Gjenstan=" at the foot, completed
+% by "den" (or "dene") at the head of printed p. 75. The trailing "%" above eats
+% the newline, so the pp. 75-- fragment must begin its first line of text with
+% that completion after its own "% --- p. 75 ---" marker line.
+% Both "Anm. 4" readings on this batch's pp. 70 and 74 are in fact "Anm. 1":
+% the antiqua 1 of this book is read as 4 by BOTH OCR layers. Checked on the
+% image at 2.4x on p. 70 and at page scale on p. 74.
+% --- p. 75 ---
+% SEAM: printed p. 74 ends mid-word "Gjenstan=" at the foot (verified on the
+% image, PDF 99 last line: "Men dette gjør let, at Gjenstan="). The pp. 60--74
+% fragment must therefore end with "Gjenstan%" so that this page's first word
+% "den" completes it as "Gjenstanden".
+den kun sees i deres Lys, ei i det Lys, hvori den ved retteligen at discuteres,
+vilde stille sig selv. Hvilket da føder det eensidige, ja det \emph{løse}
+Raisonnement af sig, der bygger paa eengang staaende Begreber, uden at drage dem
+ind med i Discussionen, hvor dette dog hørte med til Sagens rette Behandling.
+
+\anm{2} Hvorledes Tænkningen under den discursive Form, idet det Ene holdes mod
+det Andet, og Spørsmaal opstaae og føre, det Ene til det Andet, udvikler sig
+saaledes, at Modsætningen imellem Bekræftelse og Benægtelse, Muelighed og
+Antagelighed med flere Tænkningens Grundyttringer og Grundbegreber komme til at
+træde ud, ville vi oplyse i Læren om Omdømmer, da Tænkningen som discursiv,
+gaaer frem under en bestandig Dømmens Form.
+
+\parag{28}
+
+Forsaavidt Tænkningen søger og finder det Indlysende og derved Tilfredsstillende,
+søger og finder den det med den selv Overeensstemmende i Gjenstanden. Der indsees
+og begribes kun, idet der sees, under Forudsætning af noget vist Givet, hvorledes
+Alt i Gjenstanden er, som Tænkningen (Forstanden) selv vilde fordre eller dog
+vente det. Herved mødes den intellectuelle Betragtning med noget Forstandsmæssigt
+i Tingene. (Vor Forstand søger Forstand i T ngene, søger Conseqvents,
+% PRINTER'S DEFECT, printed p. 75 line 27: "Tingene" is printed "T ngene" — the
+% "i" failed to print and leaves a clean gap. Transcribed as printed. Both OCR
+% witnesses and the 600 dpi image agree; the same word stands correctly two
+% lines above.
+Planmæssighed, Hensigtsmæssighed, Udtryk, hvoraf snart det ene, snart det andet,
+er det rettest betegnende, og den til%
+% --- p. 76 ---
+fredsstilles kun, forsaavidt den finder noget Saadant i dem).
+
+Derfor kan Det i Tingene, hvorpaa den intellectuelle Erkjenden gaaer ud
+(Sammenhængen, og Enkelthedernes derved bestemte Forhold og deres deraf følgende
+Betydninger), selv siges at være noget Intellectuelt, et Ord, hvorved vi ikke,
+som ved Ordet: Intelligibelt (§. 15, Anm. 4) betegne, at det er Gjenstanden for,
+men at det er Udtrykket af, en Intelligents.
+
+\anm{1} Tingene vise sig herved for os som dem, i og ved hvilket i en
+% ERRATA (Rettelser, roman XXII): "Pag. 76 Lin. 12, hvilket læs: hvilke."
+% NOT APPLIED — "hvilket" above stands on printed p. 76, line 12 (counted from
+% the first line of text under the folio) and is transcribed as printed.
+forstandsmæssig Tingenes Orden, eller under Tingenes forstandsmæssige Gaug, et
+% PRINTER'S DEFECT, printed p. 76 line 14: "Gang" is printed "Gaug" (the "n" is
+% set as a "u" — the u-bow is clearly present at 600 dpi). Transcribed as
+% printed. Both OCR witnesses read "Gaug" independently.
+System af Tanker og Begreber realiserer sig, eller træder ud i Virkeligheden.
+
+\anm{2} Begrebet viser sig her baade som Det, hvad vi i Gjenstanden skulle
+erkjende, for at den kan blive os forstaaelig og begribelig, saa og som Det,
+ifølge hvilket i Gjenstanden selv (uden alt Hensyn til vor Begriben), det
+Mangfoldige er forbundet til Eenhed, og Gjenstanden har sin Betydning. I begge
+Henseender betragte vi Begrebet som intellectuel Gjenstand, altsaa som noget
+Objectivt. Men nu kaldes ogsaa vor Erkjendelse af dette i Gjenstanden
+fremtrædende Begreb selv et Begreb, som den os i vor Begriben ledende
+Grundtanke, og denne adskilles nu, (som vort Begreb i subjectiv Betydning), fra
+Tingens Begreb (i objectiv Betydning). Naar vi for at betegne hiint sige:
+Begrebet om en Gjen%
+% --- p. 77 ---
+stand, saa bruge vi til at betegne dette flere Udtryksmaader, som kunne sees af
+følgende Exempler: Begrebet Troe, Aarsagsbegrebet, Begrebet af det Lunefulde;
+Skjønhedens Begreb.
+
+\anm{3} Begrebet, i subjectiv Betydning, som en Erkjendelse, der fører en
+Begriben med sig, eller rettere selv bestaaer i en Begriben, kan nu naturligviis
+fastholdes i en Forestilling og under Forestillings Form, hvorved det da
+(fornemmeligen ved Hjelp af Omdømmer, formedelst Ord) ligesom materialiseres og
+gjøres til Bestanddeel af den Forestillingskreds, der er det indre Substrat eller
+Materiale, hvori Aanden kommer til en timelig Bestaaen. Derved træder til det
+Intelligible (\textit{νοητόν}), det \textit{φάντασμα}, uden hvilken det, som
+Aristoteles (\textit{περὶ μνήμης}) bemærker, ikke kunde blive Gjenstand for en
+egentlig Huskning. Men at kalde denne Forestilling et Begreb, eller at kalde et
+Begreb en Forestilling, er vistnok en ikke god Brug af Ordene, om end en
+almindelig, undertiden endog vanskelig at undgaae. Begrebet er ikke
+Forestillingen, men er den bestemmende Tanke, som gjør, at en saadan Forestilling
+dannes.
+
+\anm{4} Da en Gjenstands Sammenhængsbegreb ikkun fører os til at sammenfatte det
+Mangfoldige i Gjenstanden til Eenhed, og blot er Normen for den fuldkomne
+Tydeliggjørelse og Construction af Anskuelsen, hvorved den fuldkomne Erkjendelse
+af Gjenstanden, saaledes som den nu eengang \emph{er given}, kommer i Stand,
+% --- p. 78 ---
+men Realbegrebet derimod først fører til at erkjende Væsentligheden af hele
+Gjenstanden selv, saa den nu ikke mere tages som blot given, men tillige
+erkjendes som den, der maa være, og ligesom af Forstanden selv fordres, saa ere
+blot Realbegreberne at betragte som Tingenes Begreber i egentlig og strengere
+videnskabelig Betydning, Tingenes Begreber \textit{κατ' ἐξοχήν}.
+
+\parag{29}
+
+Det Intellectuelle kalde vi fremdeles ogsaa det Ideelle i Gjenstanden med Hensyn
+til, at det ikke erkjendes ifølge et umiddelbart Indtryk, men kun, idet vi
+tænkende trænge ind deri, og idet vi deri finde Noget, som er i
+Overeensstemmelse med vore oprindelige Grundbegreber, og ifølge heraf danne os
+Forestillingen derom.
+
+Ogsaa den intellectuelle Erkjendelse kan nu kaldes en \emph{ideel}. I
+Modsætning hertil er det, at den første umiddelbart givne Anskuen er bleven
+kaldet den \emph{reelle}.
+
+\parag{30}
+
+Ligesom dette Intellectuelle og Ideelle i Gjenstanden erkjendes ved en ganske
+anden Art af Erkjenden og Skuen, end dens Udvortes, saaledes er det ogsaa at
+betragte som noget fra dette forskjelligt Andet, hvilket fremstiller sig for os i
+og gjennem dette Udvortes. Hiin kan derfor betragtes som det mere \emph{Indre} i
+Gjenstanden, dette som det mere \emph{Ydre}.
+
+Denne Modsætning træder nu ogsaa frem som saadan i og for Tænkningen; det
+Intellec%
+% --- p. 79 ---
+tuelle og Ideelle i Gjenstanden, viser sig da som \emph{Noget for sig}, eller som
+en egen Tænkningsgjenstand, der nu ogsaa bliver Gjenstand for en egen
+Forestilling for sig, adskilt fra Forestillingen om Gjenstanden, saaledes som den
+ligefrem giver sig os i den reelle Anskuen.
+
+\anm{} At vi med Føie betragte det Intellectuelle i Tingen, eller Det, der i den
+fremstiller sig for den intellectuelle Erkjendelse, som en egen
+Tænkningsgjenstand for sig, indlyser især, naar Sammenhængsmaaden i Gjenstanden
+sees at kunne gjenfindes eller gjenudtrykkes ligesaadan i andre Gjenstande, end
+den givne; (især naar den sees at kunne gjenkomme under nye udvortes Skikkelser,
+eller Udseender, uafhængigt af den givne specielle Gjenstands særegne udvortes,
+d. e. for den reelle Anskuelse sig fremstillende, Beskaffenhed, saa at, uagtet
+alle Enkeltheder i den nye Gjenstand ere andre og af andet Udseende, dog
+Sammenhæng, Forhold og Enkelthedernes Betydning blive de selvsamme, en Sag, vi
+længere hen komme til at betragte nærmere. Allerede formedelst den productive
+Indbildningskraft kunne vi ei sjeldent, om ingen saadan ny Gjenstand opsøges og
+findes i Virkeligheden, udkaste og frembringe os en ny reel Anskuelse, hvori vi
+lade den selvsamme Sammenhængsmaade komme frem igjen). Den i Gjenstandene
+erkjendte Sammenhæng sees da ganske tydeligen at være, og tilmed at kunne hæves
+frem for Betragtningen som, en særegen Tænkningsgjen%
+% PRINTER'S DEFECT, printed p. 79 last line: a comma stands after "som"
+% ("Betragtningen som, en særegen Tænkningsgjenstand"). Transcribed as printed.
+% --- p. 80 ---
+stand for sig, forskjellig fra Gjenstandenes for den reelle Anskuen sig
+fremstillende Udseender eller Skikkelser, hvilke, om de end vistnok tildeels,
+nemlig i deres Grundtræk, beroe paa hiin Sammenhæng, dog kunne omskiftes paa
+mange Maader, uden at den betragtede Sammenhængsmaade derfor behøver at blive en
+anden. --- Imidlertid er det dog ikke noget væsentligt ved denne, at den skal
+kunne gjenkomme saaledes under flere Skikkelser. Ogsaa om dette ikke er
+Tilfældet, eller der ikke tænkes derpaa (f. Ex. ved at give Begreb om
+Sammenhængen i Pauli Brev til Romerne, eller Maaneskifterne, med hvad dertil
+videre hører), maa dog det Intellectuelle og til Grund Liggende, ved hvis
+Erkjendelse vi komme til Indsigt i Tingen, sees som saadant, i dets
+Forskjellighed fra Det, hvori det ligger til Grund og udgjør Sammenhængen, og
+hvori det giver os Indsigt, og maa derfor hæve sig frem for Betragtningen som
+\emph{Noget for sig}. [Eet er aabenbar, for at tage et nyt Exempel, den levende
+Følelse af Kjærligheden med den deraf udviklede levende Bevidsthed af, og
+Forestilling om, Alt, hvad der ligger i den, (d. e. det hele Indbegreb af dens
+constituerende Momenter, dens Yttringer og Virkninger); et Andet, derimod det ved
+Eftertænkning herover dannede Begreb, som giver os Indsigt i Kjærlighedens Natur,
+ved at lade os see alt hiint, som ligger i den (hiint hele Indbegreb) i dets
+væsentlige Sammenhæng i sig. Hiin levende Be%
+% --- p. 81 ---
+vidsthed og Forestilling kan Digteren i høi Grad have og fremstille, uden at have
+hævet dette Begreb saaledes frem, som det derimod hører den videnskabelige
+Betragtning til, at gjøre det].
+
+\parag{31}
+
+Vi ere her komne til Det, vi i Udviklingen af den Tænkningens Gang, vi her have
+for os, kunne betragte, som det \emph{tredie Skridt} (cfr. §. 15, Anm. 1),
+\emph{Abstractionen}. Herved forstaae vi en, ikke \emph{reel Adskillelse}, men
+\emph{ideel Udsondring}, hvorved det Intellectuelle i en Gjenstand hæves frem som
+Noget for sig, forskjelligt fra den udvortes Skikkelse, hvori det i den givne
+Gjenstand viser sig for os. Herved træder da nu ogsaa det Ideelle frem som
+saadant; og Begreberne vise sig som de, der udgjøre en særskilt \emph{Classe af
+Erkjendelser}.
+
+Som Det, der blot ved en fra Tingens udvortes Udseende sig løsrivende Betragtning
+formedelst reen Tænkning, kan opfattes og sees reent i og for sig, siges det
+Intellectuelle at være noget \emph{Abstract}. Dog betræffer Ordet
+\emph{abstract} vel nærmest og egentligst vor Erkjendelse deraf, altsaa Begrebet
+i subjectiv Forstand, og den Forestilling, hvori dette udtrykkes.
+
+Vi kalde her Begrebet \emph{abstract} med Hensyn til Maaden, hvorpaa det
+\emph{haves}. Men naar det er erholdt ad Analysens Vei, er det ogsaa at kalde
+\emph{abstraheret}, med Hensyn til Maaden, hvorpaa vi ere \emph{komne til det}.
+(Hvorimod der gives andre Tilfælde, f. Ex. naar vi komme til
+% --- p. 82 ---
+det ved en synthetisk Combination, da det vel kan kaldes abstract, men ikke
+abstraheret; hvorvidt de mathematiske Begreber og andre, der opstaae under en
+reel Syntheses Gang, ere det, ville vi paa sit Sted faae at see).
+
+\anm{} Hvad der, idet det letter Abstractionen, tillige gjør, at den saa
+naturligen indfinder sig hos Mennesket, saasnart det tænker, er \emph{Sproget og
+Talen}. Cfr. min Psychologie §. 9, Anm. 2, og §. 60, Anm. 1. I det Mennesket,
+hos sig selv eller til Andre, taler om Gjenstandene, ledsager han deres reelle og
+intellectuelle Beskuelse med en abstract Tankefremstilling, der i Talen træder
+frem for sig. Men herom nærmere i det Følgende (§. 35).
+
+\parag{32}
+
+Saa naturligt det er, og væsentligen medhenhørende til den hele Tænkningens Gang,
+vi her beskrive, at Abstractionen indtræder, saa er det dog saa langt fra, at den
+ideelle Erkjendelse, som derved hæver sig frem, og faaer Charakteren af en
+abstract, skulde rive sig aldeles løs fra den reelle Anskuelse, at tvertimod
+begge ere væsentligen sammenhængende. Det Ideelle skal vel tænkes for sig, men
+derfor skal ei det udvortes reelt Anskuelige tænkes borte. Ligesom Tingens
+anskuelige Beskaffenhed, eller dens Udvortes, først ved Indsigt i dens indre
+Sammenhæng sees i sit rette Lys (ja undertiden ei engang kan (sandseligen)
+opfattes rigtigen uden Noget af denne Indsigt, see §. 15, Anm. 3),
+% --- p. 83 ---
+saaledes forudsætter paa den anden Side enhver Erkjendelse af en vis indre
+Sammenhæng en Gjenstand, hvis Sammenhæng den er, og denne Gjenstand maa altsaa
+derved haves bestemt for Øie, ganske saaledes, som den er, med dens hele
+Udvortes.
+
+Imidlertid ophæver dette ikke Det, vi forhen have bemærket, at det Ideelle maa
+hæve sig frem som Noget for sig, under den abstracte Form. Men det fører os til
+at see, at det kan betragtes paa en dobbelt Maade, deels, som det kaldes,
+\textit{in abstracto}, deels ganske saaledes, som det udtrykker sig i en given
+Gjenstand og giver denne sit Præg, eller, som det hedder, \textit{in concreto}.
+
+Begge Betragtningsmaader bør forbindes med hinanden. Efterat have betragtet
+Sammenhængen, med hvad dertil videre hører, \textit{in concreto}, man maa ogsaa
+hæve den frem for sig som Gjenstand for en abstract Betragtning, men at have
+Erkjendelsen under denne Form er atter ikke nok, naar ei en fuldkommen Anskuelse
+af Sammenhængens Fremtræden \textit{in concreto} dermed er forbunden.
+[Grammatikeren føler vist lige meget Nødvendigheden af, baade at fremstille og
+oplyse Sprogets Regler, d. e. dets Former, i og ved talende Exempler, saa og at
+give dem det abstracte Udtryk, (og derved at fremstille dem i deres
+Almindelighed). Arithmetiken kan ligeledes give os et stort Exempel. Men alle
+Videnskaber ere Exempler herpaa; da de alle maa re%
+% --- p. 84 ---
+ferere sig til Gjenstande, som ere givne \textit{in concreto}, og dog
+nødvendigviis, som Videnskaber, træde frem i den abstracte Form.]
+
+I en harmonisk Forening af klart udviklet umiddelbar Anskuelse og den
+intellectuelle Indtrængen i Tingens Indre, der giver Indsigt i det saaledes
+Skuede, bestaaer Det, vi kalde \emph{Intuition}.
+
+\anm{1} Da Intuitionen er den fuldendte Skuen, altsaa den meest i sig beroende
+Erkjenden, det Middelbare i den intellectuelle Erkjendelse derimod især viser sig
+i det Discursive, saa staae det Intuitive og det Discursive i en vis Modsætning
+til hinanden. Man kalder en Erkjendelse \emph{intuitiv}, forsaavidt den gaaer
+frem af ligefrem Anskuen, \emph{discursiv}, forsaavidt den gaaer frem af et
+Raisonnement.
+
+\anm{2} Det er det Intellectuelle, der her snart betragtes \textit{in
+abstracto}, snart \textit{in concreto}, eller: snart for sig, som det rene
+Ideelle, snart som det træder frem i Det, der er Gjenstand for den umiddelbare
+Fornemmen eller Anskuen. Det er saaledes baade at betragte som noget Abstract,
+saa og som noget \textit{in concreto} Tilstædeværende, fordi det ganske er
+tilstæde i den concrete Gjenstand. (Den Sammenhængsmaade eller Sprogform, som i
+en grammatikalsk Regel udtrykkes \textit{in abstracto}, og tilmed i dens
+Almindelighed, den samme træder ogsaa frem i ethvert Exempel derpaa, og kan siges
+at træde frem deri, eller \textit{in hoc concreto} at være tilstæ%
+% --- p. 85 ---
+de; det Begreb, som i en Maskine er realiseret, er virkelig udtrykt i Maskinen,
+og fremstiller sig for os i samme, som det, der ligesaa fuldt er og forefindes
+deri, som Maskinens Udvortes er og forefindes).
+
+\emph{Concret} kaldes her den givne Gjenstand, forsaavidt Alt, hvad der er i den,
+og hører med til at give den sin Bestaaen, altsaa baade det Reelle og Ideelle,
+betragtes i eet og som eet, saaledes som det i Gjenstanden findes samlet
+(sammenvoxet, forsaavidt den altsaa paa eengang frembyder os, som man i sin Tid
+sagde, \textit{formam} og \textit{subjectum formæ}). Forsaavidt hører altsaa det
+Ideelle i den ligesaavel til det Concrete, som dens Udvortes hører dertil.
+
+\anm{3} Men da det Ideelle i den, som vi i det Følgende ville faae at see, som
+oftest tillige er at betragte som Noget, der kan forekomme i forskjellige Udtryk
+eller Fremtrædelser, saa bliver i Særdeleshed ogsaa dette Specielle ved
+Gjenstandene kaldet det Concrete ved dem. Og derfor blive de reelle Anskuelser
+ofte kaldede concrete Forestillinger i Modsætning til Begreberne, som de
+abstracte. Men egentligen er kun den hele Gjenstand med dens hele Beskaffenhed,
+saavel i ideel som i reel Henseende, at kalde concret; derimod kan Begrebet
+betragtes baade \textit{in abstracto} og \textit{in concreto}.
+
+\parag{33}
+
+Spørge vi om Forholdet imellem Begge: det intellectuelle Ideelle eller Indre, og
+det reelle
+% --- p. 86 ---
+Ydre, saa see vi let at hiint, som Det, der bestaaer i den Maade, hvorpaa alt det
+Mangfoldige i Gjenstanden er forbundet til Eenhed, er Det, hvorved dette, eller
+Tingens hele Udvortes, bestemmes, eller ifølge hvilket dette Udvortes har den
+Form, det har, og tilmed forsaavidt har det Udseende, det har. Hiint er saaledes,
+som det, der giver Gjenstanden dens Form, selv at betragte som dens indvortes
+Form, der, naar den erkjendes, ogsaa udgjør Normen for den eftergjørende
+Construction eller genetiske Fremstilling.
+
+Herved viser det Intellectuelle sig da som \emph{det til Grund liggende},
+\emph{det Constitutive}, og tilmed som det i sig selv \emph{Første eller
+Primitive} (\textit{dignitate prius}) i Gjenstanden, om det end, i Henseende til
+Maaden, hvorpaa vi komme til det, naar det skeer ad den her forfulgte
+Tænkningens Vei (ad Analysens Vei), viser sig senere. Hvorimod Tingens Udvortes,
+uagtet vi see det først, dog som det \emph{Consecutive}, er det i sig selv
+\emph{Secundære}.
+
+Det samme Forhold, hvori Begrebet saaledes viser sig at staae til det reelle
+Udvortes, hiints Prioritet fremfor dette, finder nu ogsaa Sted imellem det reale
+Begreb og Sammenhængsbegrebet. Naar Tingens indvortes Sammenhængsmaade indsees af
+dens reale Betydning, saa træder denne ogsaa frem som det i sig selv
+\emph{Primitive}, hiin som det \emph{Secundære}.
+% --- p. 87 ---
+
+\anm{} Saaledes er det i Erkjendelsen; men er og i Gjenstanden selv, uden Hensyn
+til vor Erkjenden, Realbetydning og Grundform det Primitive og Constitutive?
+Dette Spørsmaal er ikke mere blot logiskt. Imidlertid see vi let, hvorpaa det her
+kommer an. Dersom Gjenstanden forefindes som en planmæssig frembragt Ting, f. Ex.
+et Product af menneskelig Konst, saa har naturligviis Forestillingen om en
+Betydning, den skulde have, og om Maaden, hvorpaa den skulde bringes i Stand,
+bestemt og ledet Frembringeren, og Tingens Begreb var her altsaa i Virkeligheden
+det første, Tingen det efterfølgende, der først fremkom ifølge hiint. Men ogsaa i
+Naturens Frembringelser kunne vi ei tænke os Forholdet anderledes, end at, med
+Kraften eller Naturvirksomheden, tillige den Maade, hvorpaa den virker, den Maade
+altsaa, hvorpaa det Mangfoldige forbindes og sættes i Forhold til hinanden,
+altsaa Begrebet, i Gjerningen er det mere Primitive. Og at saa Gjenstandens
+Realbetydning ogsaa maa være det, er da ligeledes klart.
+
+\parag{34}
+
+En ligefrem Følge bliver det nu, at Det, der saaledes viser sig som det i sig selv
+Første og Constitutive, nu ogsaa tages som saadant. Da indtræder der en
+Omvending, hvorved Det, som blev Undersøgelsens Resultat (Det, hvortil den
+tilsidst kom), nu bliver Det, hvorfra der gaaes ud. Alt det Mangfoldige, som i
+Gjen%
+% --- p. 88 ---
+standen er at bemærke, og som under Analysen blot fremstilles som Det, der
+saaledes forefindes, bliver nu ifølge Begrebet (som det Ledende og Bestemmende
+heri) \emph{opklaret og gjort begribeligt}, ved at fremstilles i dets Affølge af,
+eller Medfølge med, hinanden i den totale Sammenhæng, ifølge dennes totale
+Beskaffenhed. En Grundbetragtning af det Hele i dets Heelhed bliver da Det,
+hvorfra der gaaes ud, som fra Det, der baade betragtes som Tingens og som
+Erkjendelsens Grundlag (\textit{totum est parte sua prius}). --- Den totale
+Beskaffenhed kan ogsaa selv igjen i dens Heelhed blive opklaret og gjort
+begribelig ved at sees som en Følge af Gjenstandens reale Begreb. Da bliver dette
+at sætte, som det Første, hvorfra der gaaes ud. Til den fuldkomne Begriben og
+Begrebsudvikling hører altsaa: for det Første at fatte og vise Tingens
+Realbetydning eller dens Tilværelsesgrund; dernæst at see og vise dens indvortes
+Sammenhæng og dens derved bestemte \emph{Hvorledes} i dens hele Følge af hiint
+dens \emph{Hvorfor}; og nu af dens saaledes indseete Totalbeskaffenhed at
+begribeliggjøre alle dens Enkeltheder, baade i Henseende til deres
+\emph{Hvorledes} og deres \emph{Hvorfor}.
+
+\parag{35}
+
+Men idet Gjenstanden herved fremstilles saaledes, at den ligesom opstaaer eller
+danner sig for vore Øine, udfolder sig ogsaa den intellectuelle Erkjendelse i
+dens hele Sammenhæng, og der danner sig, tilligemed det \emph{reelle Hele} for
+An%
+% --- p. 89 ---
+skuelsen, tillige et Tankeheelt, hvorved den intellectuelle Erkjenden træder frem
+som saadan, og fremstiller sig; derved fuldender den sig da tillige.
+
+Her viser sig altsaa en dobbelt Construction: den eftergjørende Construction
+eller genetiske Fremstilling af det reelle Hele, og den logiske Construction af
+det Tankehele, med det deri liggende System af Begreber (§. 16), hvorved hiint
+reelle Hele opklarer sig for os og bliver til Gjenstand for en Indsigt.
+
+Det formedelst denne Construction (der i Almindelighed skeer ved Hjelp af Ord og
+Tale) sig uddannende Tankehele, refererer sig naturligviis, Led for Led, til Alt,
+hvad der i den reelle Gjenstand fremstiller sig for Anskuelsen (eller
+Fornemmelsen), og faaer saaledes i det Hele Charakteren af en Fremstillen eller
+beskrivende Udvikling; men forsaavidt den i det Enkelte gaaer ud paa at give
+Realbegreber, faaer den en anden Charakteer, og kan nu faae et dobbelt Udseende.
+% ERRATA (Rettelser, roman XXII): "Pag. 89 Lin. 19 og 20, den læs: det."
+% NOT APPLIED — the two "den"s are the one in "forsaavidt den i det Enkelte"
+% (printed p. 89 line 19) and the one in "faaer den en anden Charakteer"
+% (line 20), counted from the first line of text under the folio. Both stand as
+% printed.
+Forsaavidt Gjenstanden nemlig med alle dens Enkeltheder betragtes som en given
+Gjenstand, hvorpaa der peges hen, udvikler hiint Tankehele sig som det, hvorved
+Alt, hvad der i Gjenstanden bemærkes, bliver udtydet, og derved stillet i sit
+rette Lys. Men forsaavidt vi tænke os det reelle Hele at danne sig for vore Øine,
+træder hiint Tankehele frem som en \emph{Deduction}, en Udleden eller Afleden,
+idet der vises, hvorledes ifølge den Grundtanke, hvorfra
+% END OF BATCH. Printed p. 89 ends at a word boundary — "... den Grundtanke,
+% hvorfra" — with no hyphen; the sentence continues on printed p. 90. The
+% pp. 90-- fragment therefore begins with an ordinary word, not a word-tail.
+% --- p. 90 ---
+% SEAM with pp. 75--89: printed p. 89 ends "...idet der vis=/ses, hvorledes
+% ifølge den Grundtanke, hvorfra" -- a COMPLETE word, no line-end division.
+% Verified on the image of PDF 114 at 600 dpi. p. 90 opens a fresh word.
+der gaaes ud (være det nu det reale Begreb af den hele Ting, eller blot
+Sammenhængsbegrebet i dets Totalitet), saadanne og saadanne Enkeltheder og
+saadanne Forhold maae finde Sted, eller komme frem. (Herved bliver det især
+klart, hvorvidt Indsigten gaaer, og hvad der endnu kan være bleven staaende som
+uforstaaet, eller endnu ei tilfulde fattet og indseet, hvad der altsaa endnu
+fordrer en Udgrunden (§. 17, Anm. 3).
+% PRINTER'S DEFECT (parenthesis): the parenthesis opened at "(Herved bliver det
+% især klart" is never closed. The line ends "...en Udgrunden (§. 17, Anm. 3)."
+% with a single ")" -- which closes the inner reference only -- and the next
+% line begins the "Anm. 1." remark. Verified at 600 dpi. Transcribed as printed;
+% the paragraph therefore carries one unclosed "(".
+
+\anm{1} Man seer let, at det er Begrebssystemet med ethvert dertil hørende
+Begreb, som her deduceres, medens Gjenstanden, eller det reelle Hele paa en
+eftergjørende Maade construeres. Men ved hiin Deductions Udførelse (saavelsom
+ved den udtydende Betragtnings Udførelse, naar Begrebsudviklingen antager denne
+Form) bliver et Tankeheelt dannet, og ligesom nu dette kan siges at blive
+frembragt eller construeret, kan forsaavidt ogsaa ethvert deri fremkommende
+Begreb siges at blive det.
+
+\anm{2} Idet Tænkningen heri gaaer frem paa en vis Maade, kan den ogsaa siges at
+gaae en vis Gang, der da kaldes Tankegangen; men med dette Udtryk betegnes ogsaa
+undertiden hiint Tankehele selv.
+
+\anm{3} Den her omtalte Construction af et Begreb (i egentlig Forstand) maa vel
+adskilles fra den, sædvanligen, f. Ex. hos Kant, saakaldte Begrebs=Construction,
+hvorved blot menes en adæqvat Construction af den Anskuelse, der skal være
+Begrebets Udtryk. Da det at
+% --- p. 91 ---
+construere dog egentligen vil sige, formedelst en synthetisk Fremgangsmaade at
+bringe noget frem, saa kan et Begreb dog ikke siges at være construeret, forend
+det selv saaledes er fremkommet som et nødvendigt Led i et vist Tankeheelt; men
+dette kan kun skee derved, at der, idet det reelle Hele udføres, hvori et vist
+mere omfattende Begreb skal sees realiseret, nu tillige vises, at og hvorledes
+hiint Begreb tillige deri maa blive realiseret, fordi dets Gjenstand maa blive et
+væsentligen medhenhørende Led i hiint større reelle Hele. Man construerer
+Begrebet om et Hjerte eller et Blodcirculationssystem, idet man viser, hvorledes
+et Hjerte eller et Blodcirculationssystem, ifølge Begrebet om en vis dyrisk
+Organisation, nødvendigviis maa findes med som Led i en saadan dyrisk
+Organismus. Det er selve den ideelle Erkjendelse, selve Indsigten, Begrebet, ---
+den Tanke, som skal lade os see Tingen i dens Betydning, og lade os forstaae dens
+Hvorledes, --- som man her lader genetiskt opstaae som et Led i et Tankeheelt (i
+en Lærebygning). Men man seer let, at logisk Construction her ganske løber ud paa
+det samme, som Deduction. At deducere er at indsee, hvorledes der skal
+construeres i reel Henseende, men denne Indsigts Udførelse i en Fremstilling er
+en logisk Bestemmen, Dannen, Construeren.
+
+\parag{36}
+
+Det til Grund liggende Indre og Ideelle i Gjenstanden, som nu for den
+intellectuelle Be=
+% --- p. 92 ---
+tragtning udfolder sig i den hele Deduction, viser sig her ikke allene som Det,
+der bestemmer Gjenstandens Beskaffenhed og udgjør Sammenhængen i den, men ogsaa
+som Det, der selv saaledes er bestemmet i sig og har en saadan Beskaffenhed, at
+hvad der hører dertil, ogsaa i sig hører sammen; saa at, da deri det Ene med en
+intellectuel Nødvendighed fører det Andet med sig, naar Noget deraf er givet, det
+øvrige vil forstaae sig af sig selv, og altsaa for den forstandige Betragtning
+være givet tillige, idet Conseqventsen (§. 21) ligefrem vil føre dertil; hvorimod
+naar Noget deri paa en vis Maade tænktes at være anderledes, maatte det Hele
+tænkes at have en dertil svarende anden Beskaffenhed. (Vi komme herved tilbage
+til den Betragtning, at Tingene ere at ansee som realiserede eller til Udførelse
+og Virkelighed bragte Tanker, at der altsaa er \emph{Mening} i dem). Den til
+Grund liggende Total=Sammenhæng i Tingen sees da saaledes at fordre sine bestemte
+Betingelser for at træde frem, og at have sit Bestemte ifølge med sig.
+
+Forsaavidt det til Grund Liggende i Tingen saaledes viser sig at have sin indre
+Conseqvents i sig, kalde vi det \emph{Tingens Natur og Væsen}. Disse to Puncter
+ere altsaa herved at bemærke, at det skal vise sig som Det, der ligger til Grund,
+og at det skal vise sig at have sin indre Conseqvents i sig; saa at det ikke blot
+bestemmer Tingens Sammenhæng (hvilket det kunde gjøre,
+% --- p. 93 ---
+om det selv ogsaa var noget aldeles vilkaarligt, f. Ex. en af Menneskehænder paa
+Faae og Maae frembragt Ting), men at der ogsaa er Sammenhæng i det til Grund
+liggende Intellectuelle selv.
+
+\anm{1} Man seer let, at Udtrykket en Tings Natur og Væsen betegner det samme som
+Tingens Begreb (i dette Ords objective Betydning), men at derved tænkes paa, at
+dette viser sig for os saaledes, at vi kunne forfølge og udvikle det i dets indre
+Conseqvents. Hvortil det iøvrigt ikke er nødvendigt, at Tingens reale Begreb skal
+være udfundet, da allerede Indsigten i dens Sammenhæng i og for sig kan lade os
+see en heel intellectuel Conseqvents i den. (Læren om Planetsystemets indvortes
+Hvorledes kan herpaa være et Exempel, ligeledes det Begreb, Chrystallographien
+giver om Chrystallisationerne, hvor, af visse, ad den Vei, vi have kaldet
+Analysens Vei, udfundne Grundbestemmelser, alt det øvrige sees at kunne udledes
+som Det, der under hines Forudsætning kun kan være saaledes, ei anderledes. Flere
+Exempler kunne tages af Anm. 2 til §. 47). Dog ville vi ei undlade at bemærke, at
+dette dog kun gjelder, forsaavidt, indenfor en saadan blot
+Sammenhængsbegriben, en Realbegriben i Henseende til det Heles Enkeltheder
+indtræder, da Conseqventsen i Tingen kun kan sees, naar det Ene sees i dets
+væsentlige Affølge af, eller Medfølge med, det Andet; men dette er at see dets
+Hvorfor.
+% --- p. 94 ---
+
+\anm{2} Udtrykkene Natur og Væsen kunne, som vi her tage dem, bruges overalt,
+hvor der er Tale om Sammenhængen i en Ting, om Indsigt og Begreb (der kan
+ligesaavel tales om Teglbrændingens eller den ostindiske Handels, som om
+Tyngdens og Faldets, eller Menneskets Natur og Væsen). I Almindelighed staae
+ogsaa begge Udtryk sammen, men undertiden sættes eet af dem, snart dette, snart
+hiint, allene.
+
+Vil man iøvrigt skjelne imellem begge, da synes der, saaledes som Ordene her
+bruges, ved Ordet: Natur, især at sees paa Tingens Eiendommelighed i Henseende
+til Fremtrædelses= og Yttringsmaade, ved Væsen derimod at sees paa, at Tingen
+derved er den Ting, den er. Men ligesom hiin, eller Tingens eiendommelige
+Tilværelsesmaade, just gjør, at den er denne Ting (\textit{forma dat rei esse}),
+saa hænge ogsaa Natur og Væsen uadskilleligen sammen.
+
+Om den metaphysiske Betydning af, og Forskjel imellem, begge tale vi ikke her.
+
+\anm{3} Vi see her, hvorledes det ofte kan være mueligt, at en Gjenstand \emph{i
+det Hele} kan blive os forstaaelig, uagtet vi endnu ei have iagttaget det hele
+Indbegreb af dens Enkeltheder, idet vi allerede forinden forstaae, som man kalder
+det, en halvqvædet Vise.
+
+\anm{4} Her er Stedet, hvor \emph{Experimenteringen viser sig for os i sit rette
+Lys.} Vi sætte derved Tingene i visse bestemte Forhold, søge at sætte os i
+Besiddelse af alle Om=
+% --- p. 95 ---
+stændigheders Beherskelse, idet vi saa meget mueligt udelukke alle dem, som vi ei
+kunne beherske, og bestemme, hvilke vi ville lade komme i Betragtning, og søge nu
+at komme efter, hvorledes Tingen under disse Forhold vil vise sig; vi forandre da
+Forholdene, og forsøge det samme; og forelægge derved Naturen alleflags
+% PRINTER'S DEFECT (wrong sort): "alleflags" stands for "alleslags". The
+% compositor has set an "f" where the long "ſ" belongs. Measured at 600 dpi and
+% compared with two unambiguous controls on the same opening: the ligature here
+% has a crossbar crossing the stem on BOTH sides, exactly like the "fl" of
+% "flere" two lines below, and unlike the left-nub-only "ſl" of "ſlet" (p. 99)
+% or the "ſ" of "forſøge" (p. 95). Transcribed as printed, not corrected.
+Spørsmaal, for paa denne Maade fra flere Sider at trænge ind i Tingens Natur og
+Væsen. Især anvendes Experimenter, naar man er kommet saavidt, at man har dannet
+sig en Forestilling om Sammenhængen i et vist Indbegreb af Phænomener, og vil
+prøve denne sin Forestillingsmaade. Men herved ligger da netop den Forudsætning
+til Grund, at der er en saadan Conseqvents i Tingens Natur og Væsen, at den,
+under visse bestemte forandrede Forhold, vil træde frem med visse dertil svarende
+Forandringer i Yttring og Fremtræden, hvorved Alt vil vise sig saaledes, som det
+under saadanne forandrede Forhold maa vise sig, naar Tingens Natur og Væsen med
+Conseqvents bevarer sig, eller, saa at sige, naar Tingen handler i Conseqvents
+med sig selv. --- Iøvrigt maa erindres, at vel Experimentets Mislykkelse (d. e.
+dets Udfald mod Forventningen) er et afgjørende Beviis for, at en dannet
+Hypothese ikke kan være rigtig, eller i det mindste, at der endnu mangler Noget i
+Erkjendelsen; men at derimod Experimentets Udfald i Overeensstemmelse med
+Hypothesen, endnu ei strax afgjør dennes Rigtighed, men kun kan
+% --- p. 96 ---
+tjene, som eet Vidnesbyrd for den, og saaledes er at sætte i Classe med andre
+Vidnesbyrd for en Hypothese; jfr. §. 23, Anm. 3.
+
+% PRINTER'S DEFECT (bracket): this paragraph opens with a square bracket "["
+% (verified at 600 dpi -- it is a bracket, not a parenthesis) which is never
+% closed: §. 36 ends "...om der gives romantiske Charakterer." at the head of
+% p. 97 with no "]". Transcribed as printed.
+[Til saadanne Experimenter høre ei blot de med selve den for Anskuelsen givne
+Gjenstand foretagne Forsøg, hvorved Naturens Virksomheder eller frie menneskelige
+Yttringsmaader paa bestemte Maader bringes til at vise sig under bestemte
+Forhold; men ogsaa saadanne Tankeexperimenter, hvorved vi forsøge Noget i vor
+egen Forestillingsmaade, for at prøve, hvorledes en Anskuelse eller
+Tankebestemmelse under visse Forhold vil vise sig for os, og derefter at prøve
+dens egen Gyldighed. Derhen høre deels saadanne i den reelle Anskuelse (ved
+Indbildningskraften) foretagne Forestillingsforsøg, som det er, hvorpaa der f.
+Ex. i Ørsteds Naturlære §. 49 findes et Exempel, deels saadanne, der foretages
+med et Begreb, naar der, især ved Hjelp af enkelte Exempler, prøves, hvorledes
+ifølge samme Dommen vilde falde ud over disse eller hine bestemte under Begrebet
+henregnelige Gjenstande eller Tilfælde, eller hvorvidt ifølge et saadant Begreb
+disse eller hine Combinationer vilde være muelige, eller vilde komme til at see
+ud; hvorved da Begrebet, idet der vil sees, om samme vil præstere, hvad det
+skulde, i bestemte Tilfælde, selv vil blive nærmere prøvet; som naar man prøver
+sit Begreb om Skjønhed i dets Overførelse paa visse Gjenstande, eller i at
+forsøge, hvorvidt nu og Hæslighed beroer paa det Mod=
+% --- p. 97 ---
+satte deraf, eller prøver sit Begreb om det Romantiske ved at spørge sig, om der
+gives romantiske Charakterer.
+
+\parag{37}
+
+Idet en Tings Begreb viser sig for os som Det, der paa den ene Side bestemmer
+Gjenstandens Beskaffenhed, men paa den anden Side selv i sig er bestemmet
+saaledes, at det har sin Sammenhæng i sig, see vi det at bestaae i et Indbegreb
+af Begrebsbestemmelser eller Determinationer, og det i en dobbelt Henseende.
+
+For det første kunne vi kalde dem saaledes \textit{sensu activo}, idet Alt, hvad
+der hører med til Begrebet, ifølge dets indre Conseqvents, er Noget, som Begrebet
+fører med sig, og som udfordres hos Gjenstanden, eller maa findes hos denne
+ifølge Begrebet; saa at altsaa Gjenstandens Beskaffenhed derved bestemmes.
+
+Forsaavidt enhver af Gjenstandens Enkeltheder sees at gaae frem af dens Begreb
+(dens Natur og Væsen), ere Begrebets Determinationer lige saa mange, som
+Gjenstanden har Enkeltheder. Men de maae ei forvexles med disse
+\emph{Enkeltheder} selv. Det, hvorpaa Begrebsbestemmelserne gaae ud, er, at
+Gjenstanden maa have saadanne Enkeltheder.
+
+Idet nu herved Gjenstandens \emph{Beskaffenhed} (Ordet taget i Singularis,
+saaledes at Gjenstandens Beskaffenhed kun tænkes at være een) bestemmes, saa
+svare dertil hos Gjenstanden lige saa mange \emph{Beskaffenheder} (Ordet taget i
+% Sheet signature "(7)" at the foot of printed p. 97; not text.
+% --- p. 98 ---
+Pluralis og tillige i blot logisk Forstand), eller lige saa mange Bestemmelser
+\textit{sensu passivo} (Bestemtheder), som der ere Enkeltheder; da det med Hensyn
+til enhver af disse sees at være en Følge af Begrebet, at Gjenstanden har en
+saadan Enkelthed.
+
+\anm{1} Eet er Enkeltheden selv (der da blant andet ogsaa kan være en Egenskab,
+eller Beskaffenhed i reel Forstand), et Andet er Enkelthedens Væsentlighed, eller
+Tilstædeværelse som medhenhørende til Begrebets Realisation (Eet er det Grønne
+selv i en Plante, et Andet er det, at den er grøn, eller Grønheden: af hvilket
+Exempel Forskjellen imellem Beskaffenhed i reel og i logisk Forstand kan sees.
+Eet er, for at tage et andet Exempel, et Dyrs Organisation og Functioner selv, et
+Andet, at Dyrets Begreb medfører, at Dyret har saadan Organisation og saadanne
+Functioner). Derfor gives der ogsaa ingen Enkelthed, der kan findes hos en
+Gjenstand, uden at den Beskaffenhed, at den har den, kan søge og finde sin egen
+Benævnelse, og derved træde frem som Gjenstand for en egen Forestilling for sig.
+Forskjelle af den Art, som den imellem det Grønne og Grønheden, haves der, eller
+dannes ved givne Anledninger, mange. I andre Tilfælde hjelper man sig paa andre
+Maader. (Ikke blot, s. Ex., Liv, men ogsaa Belivethed, Levendhed, om man tør
+bruge dette Ord, eller Det, at være levende; ikke blot Forstand, Fornuft, Frihed,
+men ogsaa Begavethed, som det kaldes, med
+% --- p. 99 ---
+% READING: the mark closing "o. s. v" at the end of printed line 2 is a single
+% blob at 600 dpi, larger and lower than the periods after "o" and "s"; both OCR
+% witnesses read something beyond a plain period there. Set here as the usual
+% "o. s. v.," -- the alternative reading rejected is a bare "o. s. v." with no
+% comma before "træde".
+Forstand, Fornuftighed, Det, at et Væsen har Frihed, eller er et Væsen med Frihed
+o. s. v., træde
+op som Gjenstande for egne Forestillinger. Udtryk for saadanne Forestillinger
+kunne træffes i næsten alle Definitioner --- i Almindelighed i Form af
+Adjectiver).
+
+\anm{2} Men ere disse Forestillinger, eller rettere disse i egne Forestillinger
+for sig fremtrædende Begrebsbestemmelser, nu ogsaa at kalde Begreber?
+
+De ere, som et Begrebs Bestemmelser, som Led i en intellectuel Erkjendelse, selv
+intellectuelle og ideelle, og, forsaavidt de træde frem for sig, abstracte.
+Ligeledes kunne saadanne blotte \emph{Beskaffenhedsbegreber}, som vi ville kalde
+dem, antage Charakteer af orienterende Almeenforestillinger, eller af Fælleds=
+eller Almeenbegreber (jfr. §. 14, Anm. 2 og §. 62).
+% ERRATA (Rettelser, roman XXII): "Pag. 99 Lin. 18, isted. §. 62 læs: §. 70=71."
+% NOT applied, per the edition's errata policy. The body reads "§. 62" exactly as
+% printed; verified at 600 dpi, and the site is printed line 18 of p. 99, which
+% matches the Rettelser leaf's line reference exactly.
+Saaledes som vi her komme til dem, sees de ogsaa som Følger af Begrebet, og
+forsaavidt er en Realbegriben forbunden med dem. Men de ere her dog kun
+Gjenstande for en Indseen eller Begriben, ikke selv saadanne Forestillinger, i
+Kraft af hvilke der begribes: de blive blot selv begrebne. Forsaavidt ere de
+altsaa ikke selv at kalde Realbegreber. Om Sammenhængsbegreb kan her slet ikke
+være Tale, da i en enkelt abstract Begrebs=Determination intet Mangfoldigt kan
+være at adskille.
+
+\anm{3} Endnu maae vi erindre, at Enkelthedernes egne reale Begreber ikke maae,
+om de end udledes af Tingens Begreb, forvexles med
+% Sheet signature "(7*)" at the foot of printed p. 99; not text.
+% --- p. 100 ---
+de Begrebsbestemmelser eller Determinationer, hvorom her tales. Vi maae skjelne
+imellem Begrebet om den hele Gjenstand, som et Begreb for sig, og Begreberne om
+Enkelthederne. Naar en Enkeltheds reale Betydning, ifølge Totalbegrebet, indsees,
+giver dette os dens reale Begreb. Men til den hele Gjenstands Begreb hører, at
+den skal have en saadan Enkelthed med en saadan real Betydning. (Naar jeg
+indseer, at et Uhr, saasnart det skal komme i Stand formedelst en mechanisk
+Indretning, maa have en Pendul, en Uroe, eller ellers en Regulator til at gjøre
+Bevægelsen aldeles jevn, saa er denne Indsigt, som Led i Begrebet om Uhr, en til
+dette Begreb henhørende Begrebsbestemmelse, men med Hensyn til Begrebet om
+Uhr=Pendul, Uroe eller Regulator for Bevægelsens Hastighed, giver denne Indsigt
+mig det reale Begreb om disse Gjenstande. Og sees det, hvorfor denne Regulator i
+et vist Slags Uhr just skal have den Form, en Uroe har, faaes et Realbegreb om
+denne i Særdeleshed).
+
+\parag{38}
+
+Men Begrebets Determinationer kunne nu ogsaa betragtes som de, hvorved Begrebet
+selv determineres eller bestemmes, at det derved selv faaer en bestemt
+Beskaffenhed, som det, der just fører dette og intet andet Indbegreb af
+Determinationer med sig. De blive da tillige Begrebets egne Determinationer
+\textit{sensu passivo}, og herpaa pleier man ved det Udtryk: Begrebsbestemmelser
+nærmest at tænke. I deres Tilsammen=
+% --- p. 101 ---
+tagelse eller Sammenfattelse, danne disse Begrebsbestemmelser Begrebets
+Bestemmelse (Ordet taget i Singularis).
+
+% STRUCTURE -- REPORT. The Oversigt gives "§§. 39 og 40" as ONE entry against
+% printed page 101, but the BODY does not: printed p. 101 carries a plain,
+% single-line, centred "§. 39." and printed p. 102 carries a plain, single-line,
+% centred "§. 40." Both verified at 600 dpi. There is NO two-line "§. 39 og /
+% §. 40." head anywhere in this stretch. The irregularity is the Oversigt's
+% alone; the body heads are perfectly regular, so \parag{39} and \parag{40}.
+\parag{39}
+
+Dette fører til at see, at der kan gives et dobbelt Svar paa det Spørsmaal,
+\emph{hvori et Begreb egentligen \sperr{bestaaer}?}
+% EMPHASIS -- NEW FORM, REPORT. "hvori et Begreb egentligen bestaaer?" is set in
+% Schwabacher against the surrounding Fraktur, AND the word "bestaaer" is
+% letterspaced within it ("b e s t a a e r"). Measured at 600 dpi. The two
+% devices are nested in the print, hence \sperr{} inside \emph{}, which is the
+% first running (non-display, non-"Anm.") use of \sperr in the body.
+
+Paa den ene Side er Begrebet, som den Indsigt og Grundtanke, hvorfra den hele
+Bestemmen gaaer ud, og hvorved eller hvorefter Alt bestemmes, det bevægende
+Første (\textit{primus motor}) i den hele Tænkning, ved hvilken hiin Bestemmen
+skeer og det hele Indbegreb af Begreber om Gjenstandens Enkeltheder og disses
+Forhold udvikles og fremstilles. (Begrebet træder ud eller træder frem heri; men
+ligesom der i en menneskelig Tale er Forskjel imellem Meningen og Meningens
+Udtryk, selv om begge Dele vise sig som dem, der gaae ganske op i hinanden,
+saaledes er der ogsaa her Forskjel imellem Begrebet, som det Bestemmende, og det
+Indbegreb af Bestemmelser, hvori det viser sig og som gaae frem af det; uagtet
+her er den fuldkomneste Uadskillelighed af begge). Forsaavidt er det ikke i Det,
+der i Kraft af samme forstaaes og udvikles, bestemmes og udtales, men i den
+Grundtanke, der, som Sjælen i denne Forstaaen og Udviklen, denne Bestemmen og
+Udtalen, leder og bevæger den, at det egentlige Begreb viser sig, at det haves og
+fastholdes. Det bestaaer altsaa i den rene ideelle Skuen, Indseen og Begriben, i
+Deduceringens og Bestemningens
+% --- p. 102 ---
+levende Virksomhed selv. Fra denne Side viser nu og Begrebet sig som det
+\emph{rene Ene}, der ej er eet med den Mangfoldighed af Determinationer, hvis
+Eenhed det udgjør. Saa at det forsaavidt, om det end bestemmer sin Gjenstands
+Udseende eller Skikkelse, dens udvortes Form, dog selv kan kaldes skikkelsesløst
+% GREEK. The parenthesis is set in antiqua Greek, italic, in a smaller size, with
+% the period INSIDE the closing bracket and no further stop after it -- so the
+% sentence ends on ")". Read at 600 dpi enlarged 4x. The word is Plato's
+% ἀειδές (Phaedo 79a-b; the same dialogue the book already quotes on printed
+% p. 19). Codepoints used, NFC: U+1F00 U+03B5 U+03B9 U+03B4 U+03AD U+03C2.
+% None of the LGR-fatal variant sorts (ϑ ϰ ϕ ϖ ϱ ϐ ϵ ϲ) occurs. The accent over
+% the second epsilon is faint on the scan; oxia/tonos, not varia, is assumed.
+(\textit{ἀειδές.})
+
+\parag{40}
+
+Men skjønt Begrebet paa den ene Side maa betragtes paa denne Maade, (skjønt det
+som det, der udgjør Eenheden i en Mangfoldighed og bestemmer sin Gjenstands
+Skikkelse, ikke selv kan være beheftet med saadan Mangfoldighed og Skikkelse),
+saa kan det dog paa den anden Side ikke erkjendes som det Begreb, det er, og
+adskilles fra andre Begreber, uden at sees som den bestemmende Norm eller
+Grundtanke, hvoraf netop et saadant og intet andet Indbegreb af Bestemmelser
+gaaer frem, eller at sees som det Ene, der bestemmer Realbetydningen, og udgjør
+Eenheden, netop i denne Mangfoldighed og i ingen anden, netop paa denne Maade og
+paa ingen anden. Og fra denne Side viser sig ethvert Begreb som det, der, fordi
+det medfører bestemte Determinationer og derved paa bestemte Maader adskiller sig
+fra andre Begreber, selv maa være noget vist Bestemt, med en bestemt
+Fremtrædelsesform og Grundskikkelse. Men denne dets Grundskikkelse er ingen
+anden, end den, at Begrebet er Det, der bestemmer og medfører, at dets Gjenstand
+har disse eller hine bestemte Beskaffenheder.
+% --- p. 103 ---
+
+\anm{} Imidlertid er den Mangfoldighed, hvis Erkjendelse og Udvikling vistnok ei
+blot behøves til, men og falder sammen med, Begrebets egen Erkjendelse og
+Tydeliggjørelse, ikke blot en Mangfoldighed hos Gjenstanden, men ogsaa en
+Mangfoldighed i det Intellectuelle selv (jfr. §. 15 og §. 36), dog altid med
+\emph{Hensyn} til Gjenstanden; den er hiint, som Indbegrebet af Gjenstandens ved
+Begrebet bestemte Beskaffenheder, dette, som Indbegrebet af de Begrebets
+Determinationer, hvorved noget bestemmes hos Gjenstanden.
+
+\parag{41}
+
+Heraf sees nu, hvorledes et Begreb kan have et Indhold, og hvad et Begrebs
+Indhold, --- hvorved man forstaaer alt Det, som ved et Begreb skal tænkes, og som
+tilmed, naar Begrebet skal erkjendes tilfulde, maa sættes ud fra hinanden, ---
+egentligen er: at det nemlig er Indbegrebet af de Bestemmelser eller
+Beskaffenheder, som ifølge Begrebet maa findes hos dets Gjenstand. (Til Indholdet
+af Begrebet om et Dyr s. Ex. hører, at dette, nemlig Dyret selv, har Sensibilitet
+og Irritabilitet).
+
+\anm{1} Spørger man nu, om det er Begrebet eller Gjenstanden, som egentligen
+indeholder Det, som her kaldes Begrebets Indhold, saa svare vi, blivende ved det
+givne Exempel: Sensibilitet og Irritabilitet findes hos Dyret selv ---
+indeholdes altsaa i dette, altsaa i Gjenstanden; men naar disse Enkeltheder sees
+som Følger af Begrebet Dyr, saa er det Begrebet, der sees at
+% --- p. 104 ---
+medføre, at det har dem; og dette er Noget, som altsaa hører til Begrebet. At
+indeholdes deri kan det dog egentligen ikke siges.
+
+\anm{2} Et Begrebs Indhold er ei det samme som dets reelle Omfatning (see §. 16,
+Anm. 2), skjønt hiint afhænger af denne. Hiint er i logisk eller intellectuel
+\emph{Henseende}, hvad denne er i reel Henseende.
+% EMPHASIS. Only the FIRST "Henseende" is Schwabacher; the second, in "i reel
+% Henseende", is ordinary Fraktur. The two capitals stand five words apart on
+% consecutive lines and the difference is unmistakable at 600 dpi.
+
+\parag{42}
+
+Alt, hvad der sees at høre til en Tings Natur og Væsen, eller følger af dens
+Begreb, altsaa ogsaa Alt, hvad der hører med til Begrebets Indhold, kaldes, naar
+det betragtes som saadant, \emph{væsentligt} (\textit{essentiale}) ved den.
+
+Men herfra have vi endnu ikke Anledning til at undtage Noget af alt Det, som
+findes hos den Gjenstand, vi forudsætte som given. Der kan ikke være noget
+Enkelt, som findes hos Gjenstanden, hvorom der jo kan spørges, hvorledes det
+kommer til at være i den eller hos den, og Oplysningen derom hører til den
+fuldstændige intellectuelle Erkjendelse af Tingen, saa at ingen af dens
+Enkeltheder derfra kan være undtagen; om enhver af dem maa det kunne indsees, at
+dens Tilvær hos Tingen, og just dens, og ingen andens istedetfor den, er en Følge
+af denne Tings Natur. Men Tingens, saavelsom enhver Enkeltheds, Udseende
+derimod, eller dens udvortes Beskaffenhed, som denne viser sig for Fornemmelsen
+eller den reelle Anskuen, kan, som saadan, aldrig udledes med af Tingens Begreb,
+fordi den
+% Round 3 split, 2026-08-26. § starts from the Oversigt:
+%   §.43 p.105, §.44 p.106, §.45 p.107, §.46 p.111, §.47 p.112, §.48 p.113,
+%   §.49 p.114, §.50 p.115, §.51 p.116, §.52 p.118 | §.53 p.120, §.54 p.122,
+%   §.55 p.132 | §.56 p.137, §.57 p.140, §.58 p.141, §.59 p.148 | (none)
+% pp. 149--152 is the RUBRIC B HEAD HUNT: §. 59 is the last § of rubric A and
+% begins p. 148; §. 60 is the first of rubric B and begins p. 153. So the B head
+% stands somewhere in 149--152 (or at the foot of 148). That batch places it.
+% [text to be added: pp. 105--119]
+% [text to be added: pp. 120--134]
+% [text to be added: pp. 135--148]
+% [text to be added: pp. 149--152]
 
 % --- rubric B. --- §§ 60--67.  The head falls between p. 148 (§. 59) and
 %     p. 153 (§. 60); insert it where it stands and report the page:
