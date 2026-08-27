@@ -195,6 +195,62 @@
 %      Both blocks are set to the same measure (x ~ 202-1099 against 191-1094),
 %      first line indented ~87 px. Same type.
 %
+%  UNRESOLVED: THE FACE OF "intellectuel*" AND "abstract*".
+%      An open question of the edition, recorded here because it is not settled
+%      and because a later reader must not mistake the current text for a
+%      finding. As the file stands, every occurrence of these two stems in
+%      pp. 1--152 is transcribed as PLAIN FRAKTUR (unmarked), except one stray
+%      \textit{intellectuel} around p. 11 which is certainly wrong either way.
+%
+%      Six independent readers of the scan have split, and not along the lines
+%      one would expect:
+%        two dedicated audits (sampling pp. 11--104 plus p. 149, at up to
+%          ~1500 dpi effective) found SCHWABACHER — this book's emphasis face —
+%          in 16 of 16 occurrences, with no exceptions, and concluded the
+%          setting is LEXICAL for these stems rather than page-by-page emphasis.
+%          Their evidence: a blackletter ſt ligature in "abſtracte"; a swash
+%          blackletter J in "Jntellectuelle" (pp. 78, 103); a letter-for-letter
+%          match with "relativ." on p. 52, itself independently called
+%          Schwabacher; and direct contrast with true antiqua (§ signs, figures,
+%          Latin) on the same lines.
+%        the batch agent on pp. 105--119 agreed for its own pages (p. 105, all
+%          four occurrences Schwabacher) but found "abstraheres" (p. 106) and
+%          "abstraherede" (p. 110) in ORDINARY FRAKTUR — already an exception to
+%          "no exceptions".
+%        the batch agents on pp. 120--134 and pp. 135--148 read ALL of their
+%          occurrences as ORDINARY FRAKTUR, itemised by page:
+%          intellectuel* pp. 121, 122, 124, 128, 132, 133 (x2), 135, 137,
+%          143 (x3), 144; abstract* pp. 132, 133, 137, 138 (x2), 140, 141.
+%        WORST: printed p. 149 was read TWICE, at 600 dpi both times, and called
+%          Fraktur once and Schwabacher once. Same word, same page, opposite
+%          calls.
+%
+%      So the question is NOT decided by looking harder — that has now been
+%      tried three times. Note also that the pp. 105--119 agent found the same
+%      contested face on "criticeres", "totale", "speciale", "reale",
+%      "partiel", "integrerende", "individualiserer", and that "Intelligibelt"
+%      and "Intelligents" (p. 76) were called Schwabacher while "logisk"
+%      (p. 104) is plainly Fraktur — which is either a wider lexical class of
+%      Latinate loanwords set in Schwabacher, or a systematic misreading of
+%      Fraktur under magnification. Those are very different editions.
+%
+%      NOTHING HAS BEEN CHANGED on the strength of a contested reading, and no
+%      search-and-replace has been run: this repo has been burned once by a
+%      global replace (see TRANSCRIPTION-PLAYBOOK §6). Until it is settled, new
+%      batches transcribe these words PLAIN, so that the whole file is
+%      consistently wrong in one direction rather than inconsistently right,
+%      and one deliberate pass can fix it.
+%
+%      A METHOD THAT HAS NOT YET BEEN TRIED, and which does not depend on an
+%      agent's eye: the OCR itself discriminates the faces. Several batch
+%      agents independently observed that Schwabacher garbles the Fraktur
+%      tesseract model in characteristic ways (E -> "L", F -> "S", N -> "U" or
+%      "L"/"C", M -> "VT", ø -> "s") while Fraktur reads clean. Cropping every
+%      occurrence and classifying it by whether the Fraktur model returns the
+%      word cleanly or garbled is mechanical, reproducible, and checkable, and
+%      it should be run over the whole book in one pass before anything is
+%      marked.
+%
 %  GREEK. The book quotes Greek inline. First occurrence printed p. 19
 %      (Plato, Phaed. 78, "ἅπερ ἀεὶ κατὰ ταὐτὰ καὶ ὡσαύτως ἔχει"), next p. 40
 %      ("νοητόν"). All of it is polytonic and none of it uses an LGR-fatal
@@ -427,6 +483,36 @@
 % which \emph{} carries. Keep the two distinct: \sperr = letterspaced in the
 % print, \emph = Schwabacher in the print.
 \newcommand{\sperr}[1]{\textls[180]{#1}}
+
+% DOUBTFUL EMPHASIS — \umph{...}, "unresolved emph".
+%
+% The problem this solves: when a reading is genuinely ambiguous, transcribing it
+% plain and transcribing it \emph{} both ASSERT something the scan does not
+% settle, and both throw away the fact that it was ever in doubt. A later reader
+% cannot tell a confidently-plain word from one that three agents argued over.
+%
+% So: mark the doubt in the source and defer the rendering.
+%     \umph[class]{word}
+% renders the word PLAIN by default — the more conservative claim — and renders
+% it \emph{} as soon as its class is switched on, with ONE line in the preamble:
+%     \umphon{schwab}
+% The optional class key is what makes this usable: different doubts are
+% independent, and flipping the Schwabacher question must not also flip an
+% unrelated one-off. Default class is "misc". Classes in use are listed in the
+% UNRESOLVED section of the header above; add a line there when you add one.
+%
+% The key is greppable, so `grep -c 'umph\[schwab\]' transcription.tex` is the
+% work list, and check.py counts \umph by class. This is a convention of THIS
+% file; if it is adopted repo-wide, move the definition and document it in
+% TRANSCRIPTION-PLAYBOOK.md.
+\makeatletter
+\newcommand{\umphon}[1]{\expandafter\def\csname umph@#1@on\endcsname{}}
+\newcommand{\umph}[2][misc]{%
+  \@ifundefined{umph@#1@on}{#2}{\emph{#2}}}
+\makeatother
+% ---- the switches. Uncomment a line to render that class as emphasis. ----
+% \umphon{schwab}   % intellectuel* / abstract* etc — see UNRESOLVED in the header
+% \umphon{misc}     % one-off doubtful emphasis calls
 
 % ---------------------------------------------------------------- body heads
 
@@ -4216,10 +4302,1545 @@ fordi den
 % pp. 149--152 is the RUBRIC B HEAD HUNT: §. 59 is the last § of rubric A and
 % begins p. 148; §. 60 is the first of rubric B and begins p. 153. So the B head
 % stands somewhere in 149--152 (or at the foot of 148). That batch places it.
-% [text to be added: pp. 105--119]
-% [text to be added: pp. 120--134]
-% [text to be added: pp. 135--148]
-% [text to be added: pp. 149--152]
+% --- p. 105 ---
+% SEAM VERIFIED ON THE IMAGE. Printed p. 104 ends "... aldrig udledes med af
+% Tingens Begreb, fordi den"; printed p. 105 begins, at the head of its first
+% line, "ei hører til dens intellectuelle Erkjendelse." No word is broken across
+% the joint, so no trailing % is needed at the end of p. 104.
+%
+% ==========================================================================
+% EMPHASIS IN THIS BATCH -- READ BEFORE RECONCILING, AND SEE THE RETURN NOTE.
+%
+% Schwabacher against Fraktur is marked \emph{} as usual, and the calls below
+% were made at 600 dpi on word-level crops, using the CAPITALS as the
+% discriminator (Schwabacher N, H, M, G, S, E, L, F, T are round and open; the
+% lower-case a and o of this Fraktur are round enough to prove nothing).
+% Controls used on the same lines: p. 119 \emph{Normalanskuelse} (round N)
+% against plain "Normaltilstanden" (Fraktur N); p. 114 \emph{Hovedbegreb}
+% (round H) against plain "Hovedbegreber" six lines above (Fraktur H);
+% p. 107 "Sit" and "Undersøgelse" (both Fraktur) against \emph{Støtte=}.
+%
+% BUT: this batch turns up a SECOND, DIFFERENT use of the same face, and the
+% two must not be conflated. Bare LATINATE LOANWORDS are set in Schwabacher
+% here irrespective of context, including in flatly unemphatic prose:
+%     p. 105  intellectuelle / intellectuel / Intellectuelle (all four
+%             occurrences, incl. "ingen intellectuel Udvikling", where nothing
+%             is being emphasised), and "Standpunct"
+%     p. 107  intellectuelle (twice), individualiserer
+%     p. 113  partiel        p. 114  partielle
+%     p. 115  totale         p. 116  reale (twice), totale, Specialbegreb
+%     p. 117  totale, speciale, (integrerende)
+%     p. 118  speciale, totale
+%     p. 119  criticeres -- the decisive one: it stands between "bedømmes" and
+%             "vurderes", both plainly Fraktur, in a list where no emphasis is
+%             possible, and it alone is Schwabacher.
+% Per the standing instruction these are LEFT PLAIN in this fragment, matching
+% pp. 1--104. They are NOT marked and are listed here so the whole class can be
+% reconciled in one pass. COUNTER-DATUM for the same adjudication: the
+% abstract* family is NOT in this class -- "abstraheres" (p. 106) and
+% "abstraherede" (p. 110) are ordinary Fraktur, checked at 600 dpi.
+% What IS marked \emph{} below is only Schwabacher on NATIVE Danish words,
+% which the loanword habit cannot explain.
+% ==========================================================================
+ei hører til dens intellectuelle Erkjendelse. Der bliver altsaa altid Noget i
+Tingen, til hvilket ingen intellectuel Udvikling og Fremstilling kan naae, og
+som ved denne aldrig kan gives eller erstattes. (Det Intellectuelle og det blot
+Reelle eller Reelt=Anskuelige ved Tingen ere incommensurable).
+
+Saaledes see vi altsaa, at vi, betragtende Tingen fra det intellectuelle
+Standpunct, kunne skjelne imellem det til Tingens \emph{Begreb Henhørende} og
+Det, som endnu desuden træder til eller kommer til, hvilket blot existerer for
+Anskuelsen eller for Fornemmelsen.
+% EMPHASIS. "Begreb Henhørende" is Schwabacher: the H of "Henhøren=" is the
+% round, open Schwabacher H, unmistakable beside the Fraktur T of "Tingens" on
+% the same line. ABBYY corroborates by misreading it "Legreb Henhørende".
+% "intellectuelle Standpunct" is Schwabacher too but is held back under the
+% loanword quarantine above -- both words are Latinate.
+
+\anm{} Til Tingens Natur og Væsen overhovedet kan imidlertid dette sidste, lige
+saavel som hiint, siges at høre, da ogsaa Tingens Udseende hører med til, at
+Tingen er den, den er, og har den Eiendommelighed, den har. Men det sees ei som
+væsentligt, eller som medhenhørende til Tingens Væsen, fordi det ei er eller kan
+være Gjenstand for nogen Indseen, men kun for en ligefrem Opfatten eller
+Fornemmen. Dog er her endnu ingen Anledning til herpaa at grunde en Forskjel
+imellem det Væsentlige og Tilfældige, en Adskillelse, hvortil vi først længere
+hen komme (see §. 54).
+
+\parag{43}
+
+Skjønt Alt, hvad der hører til Tingens Natur og Væsen, eller til dens Begreb,
+følger med hinanden og hører væsentligen sammen, saa viser sig deri dog, under
+Udviklingen deraf, naar vi
+% --- p. 106 ---
+see paa den indre Sammenhæng i dette Intellectuelle selv, Noget som det mere
+Første (mere Primitive), Noget derimod, som det mere Efterfølgende (mere
+Derivative), hiint som Det, hvoraf det andet er en Følge, dette som Det, der
+følger af det Første. Derfor er der at gjøre Forskjel imellem det
+\emph{Grundvæsentlige} i en Gjenstand (\textit{essentiale constitutivum}), og
+Det, der hører til de \emph{væsentlige Følger deraf} (\textit{essentialia
+consecutiva}), hvilke sidste da kunne vise sig som mere eller mindre afledede
+eller secundære.
+% EMPHASIS. "Grundvæsentlige" and "væsentlige Følger deraf" are Schwabacher --
+% the round open G, the round F of "Følger", and every letter wider than the
+% Fraktur of "hvilke sidste da kunne vise sig" on the line below. Both are
+% native Danish, so the loanword habit does not explain them. The two Latin
+% parentheses are antiqua roman, much lighter than either Fraktur face, and
+% ABBYY drops them entirely, which is its signature for antiqua.
+
+Imidlertid følger heraf endnu ikke, at de sidste skulde være mindre væsentlige,
+\reflectbox{c}: mindre medhenhørende til Tingens Væsen, eller mindre
+nødvendige, end hiint Første. Ofte viser sig Tingens Betydenhed først i dens
+væsentlige Følger, og altid hører det til det fuldkomne Begreb om Tingen, at
+see, hvorledes Grundvæsenet træder ud i de væsentlige Følger, eller fører dem
+med sig, og hvorledes de alle høre til at udgjøre Tingens hele Natur og give den
+dens hele Beskaffenhed.
+% CHARACTER -- REPORT. The sign printed after "mindre væsentlige," is the
+% 19th-century Danish abbreviation for "det er": a REVERSED c followed by a
+% colon (U+0254 + colon), read at 600 dpi -- not the letter o, and not a
+% semicolon. U+0254 is NOT in this file's existing non-ASCII inventory and
+% would be fatal under inputenc/T1 on the user's machine, so it is set with
+% \reflectbox{c}, which graphicx (already loaded in the preamble) supplies and
+% which reproduces the printed glyph exactly. No new package and no new
+% codepoint. First occurrence in the body; if the caller prefers a macro,
+% \newcommand{\detmener}{\reflectbox{c}:} would do it.
+
+\parag{44}
+
+Vi see her bestandigen, hvorledes Begribningen er en Indtrængen i den i
+Gjenstanden selv sig aabenbarende Forstandighed, og hvorledes vi, om end
+Begrebet abstraheres af det Givne, og maa tages, som det selv i dette Givne
+fremstiller sig for os, dog ikke erholde og besidde det ved, og i Kraft af,
+denne dets Givethed allene, men tillige ved, og i Kraft af, den Samstemming med
+Forstanden i os, som gjør, at Tænkningen deri fin%
+% --- p. 107 ---
+der Conseqvents, Planmæssighed, Hensigtsmæssighed (kort deri finder Sit, cfr.
+§. 22, 28, 36). Begribningen har saaledes et dobbelt \emph{Støtte=} og
+Udgangspunct, eet i det Givnes Undersøgelse og Betragtning, et andet i de
+Tænkningens Fordringer, som ved Begrebet og Gjenstanden skulle komme til
+Tilfredsstillelse.
+% EMPHASIS -- PARTIAL, REPORT. Only "Støtte=" is Schwabacher (round open S,
+% round tt and e). "og Udgangspunct" is ordinary Fraktur: its U is letter for
+% letter the U of "Undersøgelse" two words later on the same line, checked side
+% by side at 600 dpi. So the compositor emphasised the first half of the
+% compound only. Transcribed as printed; not extended over the whole phrase.
+% "Sit" three words earlier is Fraktur (Fraktur S) and is NOT emphasised,
+% though the sense would allow it.
+
+\parag{45}
+
+Disse sidste ere fra først af ganske almindelige og ubestemte, som de
+almindelige, for al Tænkning til Grund liggende, Grundbegreber \textit{a priori}
+(see §. 6) føre dem med sig. Men idet vi, under den i Tingen indtrængende
+Undersøgelses Gang, see visse bestemte af Tingens Enkeltheder i et vist Lys, i
+en vis Sammenhæng og Forbindelse, saa fører dette med sig, at vi, i Conseqvents
+deraf, vente at finde visse andre Enkeltheder og Forhold beskafne paa en vis
+dertil svarende Maade, saa at, naar disse ei findes saaledes, lades vi uvisse om,
+hvad enten endnu Noget i den givne Gjenstand er bleven ubemærket, som kan bringe
+Det, der saaledes sees i Strid med hiint først Fastsatte, i Harmonie med dette,
+eller om det Hele vil sees og tages paa en anden Maade. Under denne
+Conseqventsens \emph{Forfølgelse} individualiserer sig saaledes den
+intellectuelle \emph{Fordring eller Forventning} mere og mere.
+% ANTIQUA. "a priori" is antiqua here, as the header records for §. 6; ABBYY
+% drops "priori" altogether, its signature for antiqua. "cfr." above is Fraktur
+% and is left plain, as elsewhere in the file.
+% EMPHASIS. The F of "Forfølgelse", "Fordring" and "Forvent=" is the round
+% Schwabacher F; the F of "Fastsatte", "Forhold" and "Fordringer" on the same
+% page is the Fraktur F. All three emphasised words are native Danish. Note the
+% split: "intellectuelle" between them is Schwabacher as well but is quarantined
+% under the loanword note above, which is why the \emph{} run is broken here.
+
+\anm{1} Dette maa dog ikke forstaaes, som om vi fordrede, hvorledes Gjenstanden
+skal være, Noget, hvorom her ei kan være Tale, da vi her tænke os at have en
+given Gjenstand for
+% --- p. 108 ---
+os, i hvis givne Natur og Væsen vi skulle trænge ind; men Fordringen gaaer her
+blot ud paa, hvad der i det givne Indbegreb af Enkeltheder og Forhold, saaledes
+som disse ere givne, udfordres til, at Tænkningen skal finde deri en saa
+tilfredsstillende Conseqvents, at et tilfredsstillende Begreb kan danne sig.
+Fordringen betræffer kun vor Tilfredsstillelse, og er her kun en betinget, men er
+dog af deciderende Virkning. Den gaaer frem af en Indsigt i, hvad Conseqventsen
+af det allerede Erkjendte fører med sig; og den maa føre til, at enten de endnu
+ei tilfulde undersøgte Enkeltheder og Forhold just vise sig aldeles saa, som de
+ifølge Fordringen ventes, eller at disses Betragtning leder til at indsee, at
+Tingens Begreb ikke ganske var truffet i det allerede Erkjendtes Udtydning, ja at
+vel endog den hele forfulgte Conseqvents, og tilmed den ifølge deraf gjorte
+Fordring, maa opgives, fordi Sagen vil tages og sees ganske anderledes. Men selv
+i dette Tilfælde viser Fordringen sin Gyldighed og Kraft, da dens hypothetiske
+Anerkjendelse førte til at omstøde den hele Hypothese. Altid vil Tingens rette
+Sammenhæng, naar den udfindes, føre sine Conseqventser med sig, til hvilke
+Tingen maa sees at svare, naar denne Sammenhæng skal erkjendes for den rette; og
+den kan kun udfindes, idet en vis Sammenhængsmaade viser sig og forfølges;
+hvorunder vi da først maa see hine Conseqventser som Conseqventser, dernæst see
+det i Tingen Givne netop at svare til dem; saa at de under Udvik%
+% NO EMPHASIS on printed p. 108: no Schwabacher word found on the page.
+% --- p. 109 ---
+lingen altid antage eller kunne antage Charakteren af Fordringer, eller dog af
+Forventninger, der, naar et Begreb ad den forfulgte Vei skal danne sig, maae
+tilfredsstilles. (Vi søge f. Ex. at trænge ind i Meningen af et vanskeligt Sted
+hos en Autor: Meningen synes os nu, ifølge den hele Sammenhæng, at være en vis:
+men svarer nu alt det Enkelte ogsaa hertil og bliver forstaaeligt derved? eller
+er et eller andet Tillægsord, en Mellemsætning o. s. v., maaskee ei at bringe i
+Harmonie dermed? Have vi truffet det Rette, saa maae disse Enkeltheder forstaaes
+saa og saa; men tillader Sprogets Natur, Ordenes Betydninger, at tage disse
+Enkeltheder saaledes? Og stemmer nu det Følgende med vor Forklaring? d. e.
+stemmer det med (eller er der Noget deri, som strider imod) Det, hvad vi i
+Conseqvents af vor Forklaring af hiint Sted, maatte vente eller fordre at finde
+i dette Følgende?)
+
+\anm{2} Hvorledes noget indenfra eller af Tænkningen selv Kommende mødes med det
+udenfra Givne, og hvorledes Begribningen først indtræder, naar dette sees i sin
+Samstemming med hiint, bliver især klart under den eftergjørende Construction
+eller genetiske Fremstilling, der her indtræder og under hvilken der først ret
+begribes (§. 18), idet under samme først Nødvendigheden af at sammenfatte paa
+\emph{een vis Maade} ret viser sig. Fornemmeligen sees dette, naar denne
+Construction eller genetiske Fremstilling endog træder frem med en vis
+Selvstændighed, idet vi, efter at
+% EMPHASIS. "een vis Maade" is Schwabacher: the M is the round Schwabacher M,
+% nothing like the Fraktur M, and tesseract garbles it to "Ulaade" -- garbling
+% is this scan's reliable tell for the face. ALTERNATIVE REJECTED: at reading
+% scale "genetiske Fremstilling" looked emphasised in both of its occurrences
+% on this page; at 600 dpi its F is letter for letter the F of "Fornemmeligen"
+% and "Fordringer" on the same page, i.e. ordinary Fraktur. Not marked.
+
+% --- p. 110 ---
+have trængt ind i Tingens Sammenhæng og ligesom fattet dens Mening, nu i Følge
+deraf paa fri Haand construere os dens hele Skikkelse med alle dens Enkeltheder,
+og derpaa vende tilbage til den givne Gjenstand, for at prøve vor Constructions
+Gyldighed ved at sammenholde det derved frembragte Forstandsproduct med
+Gjenstanden, og nu finde den grundet: en Fremgangsmaade, der, naar Gjenstandens
+Mangfoldighed er stor og indviklet, ofte er aldeles fornøden. Cfr. Anm. 3 til
+§. 23.
+
+(Et smukt og lærerigt Exempel frembyder den mineralogiske Chrystallographie. Man
+er her først kommen til at fatte eller forstaae Chrystallernes Figurer, nemlig
+Sammenhængen imellem de Flader, der ofte paa forskjellig Maade omgrændse
+chrystalliserede Mineralier af selvsamme Art, efterat man har begyndt,
+formedelst en selvstændig mathematisk Fremgangsmaade, ifølge visse ved
+Agtpaagivenhed paa de givne Chrystallisationer og Eftertænkning derover
+abstraherede mathematisk=physiske Grundnormer, og i Overeensstemmelse med de ved
+enhver Art af Chrystaller forefundne empiriske Data, at construere sig
+fuldkomne Chrystallisationer, og derpaa at bestemme alle de Variationer af Form,
+der ifølge deres Grundnatur ere tænkelige, og nu at bruge disse fuldkomnere
+Fremstillinger til derefter at orientere sig ved de ofte i Naturen saa høist
+ufuldkomment uddannede Former, og ved Hjelp deraf at udtyde disses Enkeltheder,
+deres Flader og Kanter. Hvorunder
+% NO EMPHASIS on printed p. 110. NB "abstraherede" here is ordinary FRAKTUR at
+% 600 dpi -- see the abstract* counter-datum in the head note.
+% "mathematisk=physiske" breaks at the line end exactly at its own compound
+% hyphen ("mathematisk=" / "physiske"), so the printed "=" is kept.
+
+% --- p. 111 ---
+hine Constructioner da bestandigen komme til Prøve, om nu og Alt i Tingen svarer
+til dem og deres Conseqventser).
+
+\anm{3} Hvad vi have sagt om det, under Sammenhængens Undersøgelse, og de sig
+visende Conseqventsers Forfølgelse, mere og mere sig individualiserende
+Forstandskrav, --- hvis Tilfredsstillelse hører med til det fulde Begrebs
+Dannelse, med mindre det opgives, fordi det viser sig, at man ei har truffet det
+Rette, --- sees især tydeligen i Experimenteringen (jfr. §. 36, Anm. 4).
+
+\parag{46}
+
+Vi see her Begribningen og Begrebsbestemmelsen som den, der danner sig, idet vi
+søge at orientere os i Gjenstandens Betragtning, eller søge at lede os frem, og
+at samle alt det Givne for os til en Eenhed ved at fremhæve og forfølge visse
+Hovedpuncter (visse Hovedenkeltheders og Hovedforholds Beskaffenhed,
+Sammenhængsmaade og Betydning), hvorfra vi gaae ud, for under deres Forfølgelse
+at opklare os det Hele. Men denne Orientering har, under den intellectuelle
+Indtrængen i Gjenstanden, naturligen en orienterende Skjelnen og Adskillen til
+Følge, som deels kan føre til en \emph{deelviis, eller gradviis}, Begriben og
+Begrebsbestemmen (see §. 48 2c.), men paa den anden Side ogsaa kan føre til en
+friere Betragtning, der gaaer ud over det Givne, og dog har sin Realitet og
+Gyldighed (see §. 52=53).
+% ERRATA: "Pag. 111 Lin. 6 fra neden, eller læs: deels til en." -- i.e. for the
+% "eller" of "en deelviis, eller gradviis" read "deels til en", giving
+% "deels kan føre til en deelviis, deels til en gradviis, Begriben". Line 6
+% from the foot of the page is indeed "deels kan føre til en deelviis, eller
+% gradviis, Be=", counted on the image. NOT APPLIED, per the errata policy;
+% transcribed as printed.
+% EMPHASIS. "deelviis, eller gradviis" is Schwabacher across all three words,
+% against the Fraktur of "deels kan føre til en" earlier in the same line.
+% ABBREVIATION -- REPORT. "(see §. 48 2c.)" carries the Fraktur et-ligature for
+% "etc.", printed as the "2c." form. Transcribed literally as "2c."; first
+% occurrence in the body, so there is no precedent in the file yet.
+
+% --- p. 112 ---
+\parag{47}
+
+En orienterende Adskillen fremkaldes for det første naturligen, naar den
+orienterende Betragtning fører til at bemærke flere Hoved=Indbegreb af
+Enkeltheder og Forhold, som ved Gjenstanden ere at adskille (være det flere
+Hovedsider, hvorfra Gjenstanden kan sees, efter de forskjellige
+Hovedrelationer, hvori den staaer, eller flere Hovedpartier, som i Gjenstanden
+selv adskille sig for Betragtningen), og naar det nu tillige viser sig, at disse,
+hvert for sig, have deres egen Art af Sammenhængsmaade, og fordre deres egne
+Udgangspuncter for Undersøgelsen, deres egne Tankegange eller
+Tankeforfølgelser, ja vel endog vise hen paa forskjellige intellectuelle
+Støttepuncter og Grundlag for Forklaringen og Begribningen (saaledes som den
+intellectuelle Indtrængen i Chrystallisationsformernes Natur og Væsen hos et
+Mineral har sit eget Støttepunct og Grundlag i en mathematisk Betragtning).
+% The § head stands at the very top of printed p. 112, above the first line of
+% text; the folio "112" is above it. No emphasis found on this page.
+
+\anm{} Bestaae Hovedpartierne i forskjellige udenfor hinanden liggende
+Hoveddele, saa kan hiin orienterende Adskillen og Skjelnen siges at være saa
+ligefrem grundet i Tingen, at hver af de saaledes adskilte Betragtningsrækker
+finder sin særskilte Gjenstand for sig umiddelbart i Tingen selv. Men ofte er
+det først den orienterende Betragtning, der drager et vist Indbegreb af
+Enkeltheder saaledes frem, at dette nu først ifølge heraf træder ud som en egen
+Gjenstand for sig. Især gjelder dette, naar det, der bringer til at adskille
+% --- p. 113 ---
+visse Hovedsider hos Gjenstanden, er visse uafhængigt af den dannede
+Hoved=Synspuncter, hvorunder den viser sig at kunne --- og, naar den skal
+oplyses paa en udtømmende Maade, at maatte --- stilles (som naar Kunstværker
+betragtes fra et moralsk eller et historiskt Synspunct).
+
+\parag{48}
+
+Til en partiel Begriben og Begrebsbestemmen komme vi, under denne Adskillen,
+naar, og forsaavidt, et adskillet og fremhævet Hoved=Indbegreb af Enkeltheder og
+Forhold saaledes sees i sin indbyrdes Sammenhæng, og samler sig til Eenhed, at
+den derved vundne Indsigt og Erkjendelse, paa en for Tænkningen
+tilfredsstillende Maade, afrunder sig til et (om end i det Enkelte endnu i mangt
+et Punct ubestemt) Heelt. Mueligheden heraf er det især, som viser os hiin
+orienterende Adskillen som grundet.
+% "partiel" is Schwabacher here (round p, e, a against the Fraktur B of
+% "Begriben" beside it) but is a bare Latinate loanword and is therefore left
+% plain, under the quarantine in the head note. "historiskt" above is printed
+% with the kt, as transcribed.
+
+\anm{} Saaledes kan vel Intet være mere naturligt, end at der har dannet sig en
+egen mineralogisk Chrystallisationslære; at Undersøgelsen af det menneskelige
+Legems chemiske Bestanddele adskilles, som en Betragtning for sig, fra den
+almindelige physiologiske Lære om Menneskets Organisation og Functionernes
+Sammenhæng og Forhold; at det vegetative Liv i Dyret i Betragtningen adskilles
+fra det animalske; at Logiken træder frem som en Lære om Tænkningen i og for sig
+betragtet, uagtet denne i Virkeligheden ei findes eller kan findes saaledes for
+sig; at Læren om den menneskelige Erkjendelse betragtes
+% Sheet signature "(8)" at the foot of printed p. 113; not text, not transcribed.
+% --- p. 114 ---
+uafhængigt af Læren om Følelserne, o. s. v., o. s. v. Utallige Adskillelser
+gjøres saaledes, hvorved den samme Gjenstand fra sine forskjellige Sider, eller
+med Hensyn til sine forskjellige Forhold og Beskaffenheder, bliver Gjenstand for
+ganske forskjellige Betragtningsrækker, ja endog afhandles i forskjellige
+Videnskaber, det er: betragtes som henhørende under forskjellige Hovedbegreber
+og Begrebssystemer, der hver for sig gaae ud paa een af den hele Gjenstands
+Hoveddele eller Hovedsider, og deri besidde deres eiendommelige Gjenstand for
+sig.
+
+\parag{49}
+
+Men denne partielle Begriben, Begrebsbestemmen og Begrebsuddannelse bliver dog
+eensidig, og skeer stykkeviis, indtil Alt, hvortil den i de forskjellige
+Henseender har ført, samler sig i et \emph{altomfattende Hovedbegreb}, eller i
+en \emph{Totalbegriben}, hvori det alt sees i sin totale Sammenhæng, og sees, i
+Forbindelse og Eenhed, at gaae frem af den hele Gjenstands eiendommelige Natur
+og Væsen, saaledes som den i sin Heelhed er given.
+% ERRATA: "Pag. 114 Lin. 16 fra oven, kunne de Ord og skeer styrkeviis falde
+% bort." -- i.e. the words "og skeer stykkeviis" may be struck. Line 16 counted
+% from the head of the page (the folio not counted, the § head counted as a
+% line) is "dig, og skeer stykkeviis, indtil Alt, hvortil den", which confirms
+% the reference. The Rettelser leaf itself misprints "styrkeviis" for the body's
+% "stykkeviis"; the body reading is "stykkeviis", verified at 600 dpi.
+% NOT APPLIED; transcribed as printed.
+% EMPHASIS. "altomfattende Hovedbegreb" is Schwabacher -- its H is the round
+% open Schwabacher H, and the plain "Hovedbegreber" eight lines above on this
+% same page has the Fraktur H; the two were compared side by side at 600 dpi
+% and are the cleanest control in the batch. "Totalbegriben" likewise (round
+% Schwabacher T). "sin totale Sammenhæng" that follows is NOT marked: only
+% "totale" is Schwabacher there and it falls under the loanword quarantine.
+
+Men selv under denne Totalbegriben, hvori Alt tages under eet, og sees som lige
+væsentligen tilsammenhørende og medindbefattet i Conseqventsen af Tingens Natur
+og Væsen, beholder dog hiin orienterende Adskillen sin relative Gyldighed, til
+at lade os see hvert Led paa sit Sted og i sine Forbindelser i det givne Hele, og
+lade os see de forskjellige Forhold og Sammen%
+% --- p. 115 ---
+hængsmaader i deres forskjellige Betydenhed indenfor den hele Sammenhæng; saa at
+det altid er af Vigtighed at vide, i hvad Henseende man betragter et givet Led
+eller Punct, og fra hvilket Standpunct, og hvor man altsaa besinder sig i det
+hele Begrebssystem.
+
+\parag{50}
+
+Men selv hvad den altomfattende eller alsidige Begriben, eller Totalbegrebet
+angaaer, fører den orienterende Betragtning til at skjelne imellem det første
+Grundlag for samme, eller \emph{Grundbegrebet}, og det aldeles udførte eller
+fuldendte Begreb, hvilket vi ville kalde Tingens totale \emph{Specialbegreb},
+eller dens \emph{fuldelige Totalbegreb}.
+
+Imellem begge ligger naturligviis mangen Begriben og Begrebsbestemmen, som
+danner en Overgang, idet Totalbegribningen skrider gradviis frem. Den kan
+herunder staae paa forskjellige Trin, paa ethvert med en vis Fuldendelse i sig.
+
+Til \emph{Grundbegrebet} komme vi, naar Gjenstandens Sammenhængsmaade i det Hele
+fremstiller sig for os i sine Grundtræk, idet vi see alle Hovedpartierne eller
+Hovedsiderne saaledes i deres Forbindelse, at deres Sammenhængsmaade, deres
+Forhold og deres Betydning med Hensyn til hinanden indbyrdes i det Hele
+indlyser, uagtet endnu ikke alt Det, der ved enhver af dem for sig kan være at
+bemærke, er undersøgt, eller udfundet og begrebet. En Gjenstands Na%
+% EMPHASIS. Both occurrences of "Grundbegrebet", "Specialbegreb", "fuldelige"
+% and "Totalbegreb" are Schwabacher on this page (round open G, round S, round
+% T), against the Fraktur of "og det aldeles udførte eller fuldendte Begreb"
+% around them. These are the terms §. 50 is defining. "totale" before
+% "Specialbegreb" is Schwabacher too and is quarantined, hence the emphasis
+% starts one word late.
+% DOUBTFUL READING RESOLVED: "Totalbegribningen skrider gradviis frem".
+% tesseract read "rider", ABBYY "strider"; the image gives "skrider" at 600 dpi.
+% Sheet signature "(8*)" at the foot of printed p. 115; not text.
+% --- p. 116 ---
+tur og Væsen kan saaledes ofte allerede siges i det Hele at være fattet og
+erkjendt, medens dog mangt et Spørsmaal angaaende Gjenstanden endnu staaer
+ubesvaret tilbage. (Saaledes kan man fuldkomment have forstaaet Indretningen af
+en vis Maskine, som saadan, uden endnu at have taget de Beskaffenheder ved samme
+i Betragtning, som have deres Grund i locale Forhold, Naturen af de Materialier,
+hvoraf den ifølge slige locale eller andre Forhold er bleven forfærdiget,
+o. s. v.; ligeledes kan man tilfulde have forstaaet et Sted hos en Forfatter, og
+være i Stand til at forklare og tyde det, uden at have taget Hensyn til det
+Numerøse deri, eller hvad der i Henseende til Ordenes Valg, eller Constructionens
+Maade, kan have sin Grund i temporaire Forhold, eller i Forfatterens
+eiendommelige Skrivemaade).
+
+\anm{} Den her bemærkede Forskjel imellem Grundbegrebet og det totale
+Specialbegreb kan naturligviis anvendes paa ethvert af Gjenstandens
+Hovedpartier for sig, forsaavidt samme behandles som en egen Gjenstand for sig.
+% Here "Grundbegrebet" is FRAKTUR (Fraktur G) while "totale Specialbegreb" is
+% Schwabacher -- the reverse of p. 115. Since the Schwabacher part is Latinate
+% throughout, nothing is marked on this page. Reported.
+
+\parag{51}
+
+Overveie vi nærmere, hvorledes vi skulle komme til Gjenstandens Grundbegreb, saa
+bemærke vi: Tingens reale Betydning bestemmer Hovedpunctet til at gaae ud fra, i
+at oplyse dens Natur og Væsen, der fuldkomnest forstaaes, naar hiint er
+udfundet; men Tingens reale Betydning bestemmes ved dens Plads, som medfor%
+% --- p. 117 ---
+nødent (integrerende) eller medhenhørende Led i det større Hele, hvortil Tingen
+nærmest henhører. Tingens første og nærmeste Grundbegreb kan altsaa siges at
+være udfundet, naar heraf Tingens Hvorfor saaledes er indseet, at dens Hvorledes
+i det Hele deraf kan udledes eller forklares. Men da dette er mueligt, uagtet
+visse Hovedpartier ved Tingen, visse Hovedsider eller Hovedhensyn, som vise hen
+paa en større og fjærnere Tingenes Orden, endnu ei ere tagne i Betragtning, saa
+viser der sig i Grundbegribningen selv en Forskjel imellem Tingens totale
+Grundbegreb, og hiint dens første og nærmeste Grundbegreb, hvilket vi og kunne
+kalde dens speciale Grundbegreb, som det, der lader os see det meest
+\emph{Eiendommelige} i Tingen, altsaa det, som meest bestemmer dens Betydning
+paa dens Plads og dens Form og Skikkelse. Et saadant kan danne sig, og derved
+Tingen allerede forstaaes i dens Eiendommelighed i og for sig, medens der endnu
+kunne være store, vidtomfattende Undersøgelser tilbage, for at komme til dens
+totale Grundbegreb. (Et Exempel kan den menneskelige Organismus give os, der,
+som saadan, saa ganske bestemmes ved Organisationen, at en fuldkommen
+Indtrængen i alle Functioners og Organers Sammenhæng, Forhold og Betydning, kan
+siges at være Det, hvorpaa Begrebet derom beroer, hvorimod Undersøgelsen af dens
+chemiske Bestanddele, saavel i det Hele, som hvad hver Deel for sig angaaer, kan
+betrag%
+% The word broken at the foot of p. 116 is "medfor= / nødent" = "medfornødent";
+% both OCR engines give "medfor" for the first half, and the image confirms the
+% "=" is the line-break hyphen.
+% EMPHASIS. Only "Eiendommelige" is marked: its E is the round open Schwabacher
+% E, and both OCR engines garble it ("Liendommelige"), this scan's tell for the
+% face. On this page "totale", "speciale" and "(integrerende)" are Schwabacher
+% and "Grundbegreb" is Fraktur every time -- the Latinate adjective alone
+% carries the face. Quarantined, not marked; see the head note. ABBYY reports
+% "G r u n d b e g r i b - ningen" as letterspaced: it is NOT, at 600 dpi; that
+% is justification stretch on a tight line, and spacing.py finds nothing here.
+% --- p. 118 ---
+tes som fjærnere, og ikke at vedkomme hiint Tingens første og specielle
+Grundbegreb; hvorimod den bliver aldeles nødvendig for at komme til Tingens
+totale Grundbegreb, især forsaavidt det kan vise sig, at Stoffets, og derfor
+ogsaa Næringsmidlernes, Beskaffenhed har en bestemt Indflydelse paa
+Functionernes Gang).
+
+\anm{} De ifølge den intellectuelle Orientering adskilte Hovedhensyn ligge
+hinanden snart mere, snart mindre nær, og staae især ogsaa snart i nær, snart
+kun i en fjærn Forbindelse med Tingens speciale Grundbegreb, ja kunne betragtes
+som dette uvedkommende (saaledes er i en vis given Maskine Constructionen og
+Alt, hvad denne fører med sig, Hovedsagen; Hensynet til Materialiernes
+Beskaffenhed ligger fjærnere, men dog nær nok, saasnart deres Valg sees at have
+sin Grund i, at de bedst svare til Grundbegrebets Fordringer; hvorimod dette
+Hensyn ligger fjærnt, ja er at betragte som Begrebet om Maskinen, \textit{qvâ}
+Maskine, uvedkommende, naar dette Valg har havt sin Grund i locale
+Omstændigheder, og det dobbelt, naar det ikke er Maskinens locale Anbringelse,
+men den Omstændighed, at disse Materialier vare lettest at faae, eller andet
+sligt, som sees at have medført just disse Materialiers Valg).
+% ERRATA: "Pag. 118 Lin. 12, efter kunne sættes: undertiden." -- i.e. after the
+% "kunne" of "med Tingens speciale Grundbegreb, ja kunne", which is line 12
+% counted from the head of the page, insert "undertiden". NOT APPLIED;
+% transcribed as printed.
+% ANTIQUA. "qvâ" (so spelled, with v, and with a CIRCUMFLEX, not a grave --
+% read at 600 dpi enlarged) is antiqua against the Fraktur; ABBYY drops it
+% entirely. "â" is already in this file's non-ASCII inventory, so nothing new.
+% Both OCR engines mangled the word beyond recognition, which is why it had to
+% be read off the image.
+% "speciale"/"totale" on this page are Schwabacher, "Grundbegreb" Fraktur;
+% quarantined as above. Nothing else on the page is emphasised.
+
+\parag{52}
+
+Er Begribningen en Indtrængen i den i Gjenstanden selv sig aabenbarende Mening
+eller Forstandighed, saa indlyser ogsaa Mueligheden
+% --- p. 119 ---
+af, at Gjenstandens fuldkomne Forstaaelse under den orienterende Adskillen kan
+føre til en Construction, hvorved vi ifølge Gjenstandens erkjendte Begreb
+frembringe et fuldkomnere Udtryk af den, end det i Gjenstanden givne, og nu
+derved, idet vi see, hvorledes den ifølge sit Begreb skulde være, oplyse og tyde
+den ufuldkomnere Skikkelse, hvori vi forefinde Begrebet udtrykt. (Saa at vi,
+ligesom det ellers hedder: \textit{verum est index sui et falsi}, ogsaa kunne
+sige: \textit{perfectum est index sui et imperfecti}). Vi uddanne da den til
+Begrebet svarende Anskuelse saaledes, at den bliver en \emph{Normalanskuelse},
+hvorefter den i Virkeligheden givne Gjenstand nu ikke blot gjøres forstaaelig og
+opklares, men ogsaa bedømmes, criticeres og vurderes, som mere eller mindre
+svarende til Normaltilstanden. Disse Normalanskuelser med deres Begreber, der nu
+ogsaa kaldes \emph{Normalbegreber} (s. Ex. Begrebet om en \emph{normal
+Legemsbygning}), vise da, om end intet Givet stemmer overeens med dem, dog deres
+Realitet og Gyldighed, deels derved, at de blive et Grundlag for de
+ufuldkomnere Formers Opklaring, deels derved, at de som en Art af
+\emph{Mønstere} afgive gyldige Normer eller Maalestokke for den større eller
+ringere Værd, der med Hensyn til Begrebet er at tillægge de givne Gjenstande.
+% EMPHASIS -- the cleanest page in the batch. "Normalanskuelse",
+% "Normalbegreber", "normal Legemsbygning" and "Mønstere" are Schwabacher: the
+% N of "Normalanskuelse" and "Normalbegreber" is the round open Schwabacher N,
+% while "Normaltilstanden" and "Normalanskuelser" in the very same sentences
+% have the Fraktur N -- the same word in both faces, three lines apart. Both
+% OCR engines garble the Schwabacher ones ("LTormalan|kuelse", "Cormalbegreber",
+% "WMonstere"/"Mynsters") and read the Fraktur ones cleanly.
+% "criticeres" is Schwabacher as well, standing between the Fraktur "bedømmes"
+% and "vurderes" where no emphasis is possible. Left plain under the loanword
+% quarantine; it is the single strongest datum for that reading in the batch.
+% "s. Ex." here, not "f. Ex." as on p. 109: both OCR witnesses read s
+% independently, and ABBYY's own bias is to turn long-s INTO f, not the reverse.
+% The file already has "s. Ex." twice.
+
+\anm{} Et lærerigt Exempel paa Anvendelsen af Regelen: \textit{perfectum est
+index sui et imperfecti}, have vi i Chrystallisationslæren; see
+% Printed p. 119 breaks here, mid-sentence but at a word boundary; the Anm.
+% continues on p. 120, which is the next batch. No trailing % is wanted.
+% --- p. 120 ---
+% SEAM VERIFIED ON THE IMAGE (PDF 144, foot): printed p. 119 ends with the complete
+% word "see" — "...have vi i Chrystallisationslæren; see" — and NO word is broken
+% across the 119/120 joint. p. 120 opens flush left, mid-sentence, with "ovenfor".
+ovenfor Anm. 2 til §. 45. Iøvrigt kan ogsaa Virkeligheden selv frembyde Grundformer,
+hvilke som Normalbegreber kunne tjene til andre Grundformers Forstaaelse (saaledes som
+f. Ex. Menneskets Anatomie og Physiologie bliver en ledende Norm for de lavere
+Dyreformers Studium); men en reen intelligent Erkjenden maa her dog først lære os i
+visse givne Grundformer at erkjende saadanne Normer, og maa bestemme Valget.
+
+\parag{53}
+
+Vi see her Tænkningen at gaae ud over det Givne og sin første nøie Vedhængenhed eller
+Tilknytning til dette Givne, og at træde frem som en friere, mere selvstændig Erkjenden.
+Den samme Begrebets høiere Frihed viser sig dernæst ogsaa deri, at det kan gjenerkjendes
+under ganske nye Former, og tilmed overføres paa ganske andre Gjenstande, end de ere,
+man ved at komme til det, havde for Øie, saa at det endog kan overføres til ganske andre
+Erkjendelseskredse, og tjene til disses Opklaring og Forstaaelse. (Som naar vi indsee, at
+Begreberne: Organisation, Assimilering, \textit{nisus formativus}, der ere hentede fra
+% ANTIQUA, verified at 300 dpi on the page image: "nisus formativus" is set in a light
+% roman against the surrounding Fraktur; "Organisation" and "Assimilering" beside it
+% are ordinary Fraktur and are left plain.
+den under Legemlighedens Form fremtrædende Naturs Betragtning, have fuld Anvendelse paa
+det reent Sjælelige, eller naar vi, ved at overveie Betydningen af Menneskets Tilvær
+komme til at betragte de menneskelige Bevidstheder som en høiere guddommelig Aands
+Materiale, uagtet dog Begrebet om Materie er hentet fra le-
+% --- p. 121 ---
+gemlige Tings Betragtning. --- Hvilken Frihed i Begrebet forudsætter det ikke i
+Insecternes Trachealsystem at see deres Respirationssystem?)
+
+\anm{1} Spørge vi, hvorledes vi dog kunne gaae saaledes, ei sjeldent endog i høi Grad,
+udenfor Det, hvad Tænkningen i de virkelig givne Gjenstande ligefrem iagttog, saa see vi,
+at vi kun kunne det, fordi vi nu ei længere erkjende og besidde Begrebet i Kraft af den
+blotte Givethed, men i Kraft af vor Indtrængen i Gjenstandens indre Mening, idet vi nu
+ved en intellectuel Erkjenden ligesom skue Tingen ind i Hjertet (for at bruge et oftere
+% "intellectuel" here is ORDINARY FRAKTUR — reported, not marked. See the note at the
+% end of this fragment for the whole batch's evidence on intellectuel*/abstract*.
+anvendt Udtryk), og nu altsaa erkjende den ifølge dens Forstandighed, saa at vi forstaae
+den, om den endog kun halvt og ufuldkomment har udtrykt, hvad den havde at udtrykke; see
+det i §. 28 og 36 anførte, der herved erholder ny Styrke.
+
+\anm{2} Til den ved Begrebets fuldelige Forstaaelse indtrædende høiere og friere
+Erkjenden komme vi enten, idet den af Grundformens fuldelige Erkjendelse følgende Indsigt
+i Enkelthedernes Realbetydning leder til at see, hvorledes disse Enkeltheder kunne
+fremtræde med forskjellige varierende, og derfor og med fuldkomnere Former, (som naar det
+ydre Reale, eller det materielle Substrat, for et Liv eller en Leven sees ogsaa at kunne
+være et Materiale af aandelig Art), eller idet Erkjendelsen af den hele Gjenstands
+Realbegreb fører til at see det samme med Hensyn til den hele Grundform (som
+% --- p. 122 ---
+naar Mandigheden, Tapperheden, \textit{ἀνδρεία}, den ene af de Gamles fire
+% GREEK, in antiqua italic Greek against the Fraktur, verified at 8x. Read as ἀνδρεία:
+% the smooth breathing over the initial alpha is clear; the accent over the -ει- is
+% faint at 300 dpi and the standard accentuation is assumed. Alternative rejected:
+% ἀνδρεῖα (neuter plural), which the singular "den ene af de Gamles fire Cardinaldyder"
+% excludes. No LGR-fatal variant sort (ϑ ϰ ϕ ϖ ϱ ϐ ϵ ϲ) occurs; codepoints beyond plain
+% Greek are U+1F00 (already used on printed p. 19) and U+03AF (the same precomposed
+% monotonic family as ή/ό/ύ already in this file). REPORTED.
+Cardinaldyder, sees ogsaa at kunne komme frem under Skikkelse af Taalmod); eller ogsaa
+idet, uden at vi ere komne i Besiddelse af Gjenstandens Realbegreb, det erkjendte
+Sammenhængsbegreb (f. Ex. Begrebet om en af de nys omtalte Chrystallisationsformer) hæves
+til Normalitet blot ifølge et Grundbegreb om Planmæssighed, Harmonie, hvilket blot
+udtrykker en alsidigen fuldendt Eenhed i en Mangfoldighed efter en vis given Grundnorm.
+
+\parag{54}
+
+Saavel forsaavidt den orienterende Adskillen og gradvise Begriben fører til et
+Grundbegreb om Tingen, som Grundlag for Indsigten i dens Natur og Væsen, som og
+forsaavidt Begrebet gaaer ud over det Givne, danner der sig for den intellectuelle
+Betragtning en Modsætning imellem: paa den ene Side Tingens Grundnatur eller Grundvæsen,
+(hvilken nu ogsaa har sin egen Grundform eller Grundtypus i Følge med sig), med alle
+sammes væsentlige Følger (cfr. §. 43), og paa den anden Side de særdeles Modificationer,
+Fremtrædelsesformer, eller Artninger, hvorunder denne Grundnatur eller Grundform træder
+frem i den givne Gjenstand. Til saadanne særlige Modificationer regnes, forsaavidt et
+orienterende Grundbegreb (§. 50) danner sig, alt Det, som i Tingen ikke kan udledes
+heraf, men fordrer sin Oplysning og Forklaring fra andre Sider; forsaavidt et Normalbegreb
+% --- p. 123 ---
+(§. 52) danner sig, bliver baade alt det Ufuldkomne eller Ufuldendte, som sees i
+Gjenstanden, saa og Normaltilstanden selv, der dog ogsaa kun er een blant flere muelige,
+at regne til de specielle Fremtrædelsesformer; endeligen forsaavidt Begrebet med Frihed
+overføres paa andre Gjenstande (§. 53), er alt Det at regne dertil, hvorfra der sees bort,
+idet der overføres.
+
+Modificationerne blive her, med Hensyn til Grundbegrebet, betragtede som tilfældige,
+forsaavidt hiint kan træde frem uafhængigt af dem. Men forsaavidt den specielle Gjenstand
+skal erkjendes og forklares ganske saaledes, som den er given, forsaavidt det altsaa
+gjelder dens totale Specialbegreb, maae alle Modificationerne tages i Betragtning, som
+væsentligen medhenhørende, da de alle høre med til, at Tingen er den, den er. De ere
+altsaa, i een Henseende, at betragte som tilfældige, men vise sig, i en anden Henseende,
+som væsentlige. Betydningen af disse Udtryk er altsaa relativ. (Hvorimod den Modsætning
+imellem det Væsentlige og det endnu desuden Tiltrædende, som vi have mødt i §. 42, er en
+i logisk Henseende absolut Modsætning. I metaphysisk Henseende derimod gives der Intet
+absolut Tilfældigt; men vel en absolut Væsenhed; jfr. §. 5, Anm. 2).
+
+\anm{1} Forskjellen imellem Tingens Grundnatur og dens specielle Modificationer træder
+især bestemt frem, og viser sig i sin Gyldighed, naar den samme Grundbeskaffenhed gjensin-
+% --- p. 124 ---
+des under forandrede Forhold med forandrede Modificationer, men just dog saa, at derved
+den samme Grundbetydning med den samme Grundtypus sees at ligge til Grund (som naar man
+gjensinder det Samme, der constituerer den \textit{κατ' ἐξοχήν} saakaldte Jalousie, deels
+% ANTIQUA. Set exactly as the same phrase already stands on printed p. 78 of this file
+% (\textit{κατ' ἐξοχήν}, ASCII apostrophe).
+i de forskjellige Udseender, den i Elskov kan antage, deels i saa megen anden Jalousie).
+Grundbebegrebet finder her sin egen Gjenstand for sig i Det, hvad de flere Ting have
+% PRINTER'S DEFECT, transcribed AS PRINTED and not corrected: the line turn reads
+% "Grundbe=" / "begrebet", i.e. "Grundbebegrebet" — the syllable "be" is set twice.
+% Confirmed at 2.6x on the image and independently by the ABBYY layer, which also gives
+% "Grundbe-" / "begrebet". Read: Grundbegrebet. REPORTED.
+fælleds.
+
+Men den intellectuelle Orientering med Hensyn til en Gjenstands Beskaffenhed og Natur kan
+dog ogsaa føre til at bemærke denne Forskjel i Tilfælde, hvor man kun har med den ene
+Gjenstand at gjøre. (Som naar man, ved at bestemme den Linie, hvori en kastet Steen vil
+falde, skjelner imellem denne Linie, som den ifølge Kastets Natur i for sig maa tænkes at
+% PRINTER'S DEFECT, as printed: "i for sig", where the parallel two lines below reads
+% "Jordens Bane i og for sig". Both witnesses (tesseract and the ABBYY layer) give
+% "i for sig"; the "og" is simply not on the page. Not corrected.
+være, og den Afvigelse heri, som Modstanden af det Fluidum, hvorigjennem den bevæger sig,
+fører med sig; eller naar man skjelner imellem Jordens Bane i og for sig, og de
+Perturbationer deri, som foraarsages ved de øvrige Planeters Indvirkninger.
+Naturhistorikerne lade sig ikke heller afholde fra at skjelne imellem \textit{genus} og
+\textit{species}, Slægts= og Artsbeskaffenhed, om de end endnu kun vide et eneste
+% ANTIQUA, verified at 5x: "genus" and "species" (all four occurrences) are set in a
+% light roman; the Danish gloss "Slægts= og Artsbeskaffenhed" beside them is Fraktur.
+\textit{species} at henføre under et \textit{genus}).
+
+Forskjellen viser sig i alle saadanne Tilfælde, især som grundet da, naar det bestemt
+sees, at \emph{Noget} hos Gjenstanden er at udlede af Tin-
+% EMPHASIS AT A PAGE BREAK — REPORTED. "Noget" here is Schwabacher (tesseract reads its
+% capital as "Lt": "Ltoget"). The word "Tingens" is DIVIDED across the 124/125 joint and
+% the two halves are set in different faces: "Tin=" at the foot of p. 124 is ordinary
+% Fraktur, "gens" at the head of p. 125 is Schwabacher. Verified at 6x on both leaves.
+% The \emph{} group is therefore opened on the p. 125 side, exactly as printed.
+% --- p. 125 ---
+\emph{gens egen indre Natur}, som denne i og for sig maa tænkes at være, \emph{Andet}
+derimod har sin Grund i Omstændigheder eller Forhold, som ligge udenfor den, men under
+% EMPHASIS, verified at 6x: "gens egen indre Natur" and "Andet" are Schwabacher — round
+% open e, round-bowled g, and the distinctive Schwabacher N — against the angular
+% Fraktur of "som denne i og for sig" and "derimod har sin Grund i Omstændigheder eller
+% Forhold", which are left plain.
+hvilke hiin dens indre Natur, og hvad denne medfører, saaledes træder frem, at de faae
+Indflydelse paa Tingens Formation, og gjøre Deres til at bestemme dens hele Beskaffenhed
+(som i de nysanførte Exempler).
+
+Dog maa det bemærkes, at specielle Modificationer, der naar man orienterer sig i
+Gjenstandens Undersøgelse letteligen erkjendes for at være saadanne, ikke altid vise hen
+paa udvortes Omstændigheder og Forhold, men ofte sees at have deres Grund i Tingens indre
+Natur i og for sig, i hvilken vi da skjelne imellem Noget mere Almindeligt, eller
+% EMPHASIS. Of the three "Noget" on this page the FIRST ("imellem Noget mere
+% Almindeligt") is ordinary Fraktur and is left plain; the second and third are
+% Schwabacher. Verified side by side at 2.2x: the two faces stand three words apart on
+% consecutive lines and the capital N is unmistakable. "Almindeligt", "Charakteer" and
+% "Tingen" around them are Fraktur.
+\emph{Noget}, som under mangeslags Forandringer kunde tænkes at blive og at give Tingen
+den samme reale Betydning, og \emph{Noget}, som giver Tingen dens speciellere, men dog i
+dens eget indre Natur grundede Charakteer, der maa antages at høre med til at give den
+dens eiendommelige Betydning i den særdeles Tingenes Orden, hvori Tingen med hiin
+Grundtypus denne Gang kommer frem. (Saaledes er der i Elskov Meget, som, uagtet det sees
+at høre væsentligen med til dens hele Eiendommelighed, dog sees ikke at høre til
+Kjærlighedens Grundnatur, men kun til denne eiendommelige Fremtrædelse deraf; og
+unægteligen fattes Elskovs Natur og Væsen desto grundige-
+% --- p. 126 ---
+re, jo mere den sees som en saadan eiendommelig Modification af Kjærlighed overhovedet,
+jo mere altsaa denne betragtes som Grundlaget, og det nu sees, hvorledes Kjærlighedens
+Grundvæsen træder frem i Elskovens eiendommelige Natur. --- At høire og venstre Hjerte
+danne eet Hjerte, og at de begge have Forkamre, kan allerede, naar man gjør sig Hjertets
+% spacing.py flags "eet" here as a single at 1.48. Checked on the image: it is ordinary
+% Fraktur on a loosely justified line, NOT emphasis. Left plain.
+hele Bestemmelse og dets deraf følgende Indretning i det Hele begribelig, vise sig som en
+særdeles Modification, men dog maa denne dets særegne Beskaffenhed hos Mennesket og
+Pattedyrene betragtes som grundet i deres Organisations egen \emph{indre Natur}).
+% EMPHASIS, verified at 2.2x: only "indre Natur" (set "in=" / "dre Natur" across the
+% line turn) is Schwabacher; the preceding "Organisations egen" is Fraktur. Tesseract
+% drops the Schwabacher capital N altogether here, reading "dre atur)".
+
+\anm{2} Endnu er det af Vigtighed at bemærke, hvad de anførte Exempler allerede let gjøre
+opmærksom paa, at Grundformen, Grundbegrebet, kan staae i et dobbelt Forhold til den
+concrete Skikkelse eller Gjenstand, hvis Grundform, hvis Grundbegreb, den sees at være.
+\emph{Deels} --- og dette er det mere almindelige --- viser sig os deri noget saaledes
+til Grund Liggende, som virkelig selv kan siges at komme igjen under alle Modificationer,
+% EMPHASIS, verified at 2.2x: both "Deels" on this page are Schwabacher (round D, round
+% e, wider fit) against the Fraktur "dette", "derimod". The lower-case "deels ... deels"
+% of printed p. 132 is by contrast ordinary Fraktur and is left plain there.
+fordi det selv ikke medfører nogen bestemt Skikkelse, men blot udgjør de almindelige
+Grundtræk, der i det Concrete kunne nærmere bestemmes og udføres paa varierende Maader.
+\emph{Deels} derimod fører Grundbegrebet en saadan Grundform med sig, at denne kræver en
+bestemt concret Skikkelse, eller en bestemt Art af concrete Skikkelser, og dog
+% --- p. 127 ---
+har den givne Gjenstand, hvis Grundbegreb gives os, en anden Skikkelse, hvori hiin ikke
+egentligen kan siges at træde modificeret frem. (Dette er Tilfældet med Jordens Bane om
+Solen, naar den indsees i sig selv at være en Ellipse, hvilket den dog i Virkeligheden,
+formedelst Perturbationerne, aldrig er; ligeledes have vi et Exempel i den krumme Linie,
+som et kastet tungt Legeme beskriver, naar denne bestemmes saaledes, at Parabelen sees at
+være dens Grundtypus, uagtet den, formedelst Mediets Modstand, i Virkeligheden aldrig er
+en saadan). Her har Grundbegrebet Noget af Charakteren af et Normalbegreb, skjønt dog
+Grundformen her ei er det Fuldkomne i samme Art, --- saaledes at det kunde betragtes som
+en Modification ved Siden af de andre, som samme Grundbegrebs Udtryk, --- men egentligen
+er en Form af anden Art, der ei kan siges at høre under samme Begreb, som de specielle
+Former (de kastede Legemers Baner ere slet ikke modificerede Parabler, men ere Linier af
+anden Art; paa egentlige Modificationer af Parabler have vi derimod Exempler i de
+forskjellige Parabler, som tunge Legemer, kastede under forskjellige Vinkler vilde
+beskrive i et Rum, hvori intet Medium gjorde Modstand). Naar i det førstanførte Tilfælde
+det Specielle mere har Charakteren af egentlig Modification, saa har det her i den sidste
+Art af Tilfælde Charakteren af modificerende Afvigelse.
+% The whole foot of p. 127 is heavily inked on this leaf and reads as if bolder; checked
+% at 2.2x, it is Fraktur throughout. No emphasis on this page.
+% --- p. 128 ---
+\anm{3} Vi blive her letteligen vaer, hvorledes den ganske i det Specielle gaaende
+Bestræbelse efter, at opnaae en fuldkommen Indsigt i en eneste Gjenstands Natur og
+Beskaffenhed, kan føre ind i en stor Kreds af sammenhængende Undersøgelser. Thi jo mere
+der gaaes ind i det Specielle, jo mere altsaa Begrebet vil omfatte Alt, hvad der i den
+concrete Gjenstand er givet, desto mere fordres Hensyn til en større, mere omfattende,
+Sammenhæng. Men idet Tænkningen udvider sig i denne Henseende \textit{realiter}, eller i
+% ANTIQUA, verified on the image: "realiter" (divided "rea-" / "liter") is set in a light
+% roman. A small speck of ink stands before "Men" three words above; it is dirt, not a
+% quotation mark, and is not transcribed.
+Henseende til Omfatning (§. 16), trænger den ogsaa dybere ind i Henseende til den
+intellectuelle Orientering og Grundbegrebets Fremhævelse. Netop jo mere man søger at
+udvide den reale Begribens Sphære saaledes, at et givet Heelt henføres til det større
+Hele, hvoraf det findes at være et Led, og saa fremdeles, desto mere ville ogsaa de
+forefundne Former vise sig som blotte særlige Modificationer af visse almindelige
+Grundformer. Og omvendt, jo mere der bliver Spørsmaal om, hvorfor disse just ere saaledes
+% ORTHOGRAPHY, as printed: "Spørsmaal", without the g, here and at every one of the six
+% occurrences in this batch (pp. 128, 131, 132, 133 twice, 134 twice). Verified at 4x on
+% printed p. 134 and confirmed independently by the ABBYY layer, which — reading with a
+% Latin model — also gives "Sporsmaal". Not normalised to "Spørgsmaal".
+modificerede og ikke anderledes, desto mere maa Betragtningen gaae ind i en Sammenhængs
+Udgrundelse.
+
+Vi ville oplyse alt dette, idet vi i et bestemt Exempel forfølge Betragtningen til alle
+Sider. Vi tage Hjertet i det menneskelige Legeme. Da det ligefrem forefindes som et Lem i
+et organiskt Heelt, kan allerede Sammenhængsbegrebet derom ikke gives, uden at tage Hensyn
+% --- p. 129 ---
+til dets reale Betydning, dets Bestemmelse, dets Function. Men for at begribe dets
+% This opening line is heavily inked and looks like a different face at page scale;
+% checked at 2.4x, it is ordinary Fraktur. No emphasis on this page.
+Indretning behøver man dog kun at see, at det skal optage Blodet fra Legemet, sende det
+til Lungen, modtage det igjen fra denne og sende det ud igjen. Dette giver os da Hjertets
+første og nærmeste Grundbegreb (§. 51). Gaaer man nu, i at udgrunde denne Functions hele
+Beskaffenhed, ganske ind i det Enkelte, saa vil dette kunne føre til at indsee, hvilken
+Bygning af hele Brystet, med de deri liggende Organer, er den hældigste for
+% "hældigste", as printed (not "heldigste"): both witnesses agree, tesseract giving
+% "hældigste" and the ABBYY layer "hceldigste". Verified on the image.
+Respirationens, og den Hjerte og Lunge med hinanden forbindende Circulations Gang, og
+altsaa vil et Normalbegreb herom kunne danne sig. Men Udtydningen af de Enkeltheder, som
+ved og i Hjertet iagttages, kan nu ogsaa allerede føre til at indsee, at et Hjerte ret vel
+kunde tænkes under en anden Form (høire og venstre Hjerte for sig, uden Forkamre, det
+arterielle Hjerte endog som en blot Aorta), og man er nu orienteret, naar man i andre Dyr
+finder slige Afvigelser i Form; saa at nu et mere almindeligt Begreb om Hjerte overhovedet
+hæver sig frem som Grundbegreb. Men nu spørges da dog ogsaa, hvorfor Menneskets Hjerte er
+saa sammensat. Uden en Eftertænkning over, hvad høiere Organisationsformer overhovedet
+føre med sig, og hvorfor de føre det med sig, er Svaret ei at erholde. Antage vi nu f. Ex.
+(det fremsættes her ganske hypothetiskt, blot for Exemplets Skyld), at Svaret bliver, at
+den tiltagende Son-
+% Sheet signature "(9)" stands at the foot of p. 129 and "(9*)" at the foot of p. 131.
+% Not text; not transcribed.
+% --- p. 130 ---
+dring og Mangfoldighed (Differentering) i det fuldkomnere Dyr ogsaa fører med sig, at i
+Functionernes Gang flere og flere Mellemled træde ind imellem, hvorved den hele Proces
+drages længere ud, det samme repeterer sig flere Gange, og at dette, hvorved Functionen
+synes at opholdes, just skeer for at bringe, med den større Langsomhed, en større Rolighed
+og Adstadighed ind i de organiske Processer, for at Livet desmere kan finde Tiden fri til
+% "desmere": the word is divided at the line turn, "des=" / "mere", so the print gives it
+% as one word. Both witnesses show the division. The reading "des mere" (two words)
+% cannot be excluded on the image, but nothing on the page supports it.
+andre høiere Virksomheder; eller, for ei at udtrykke Sagen teleologiskt, at det til høiere
+Virkemaader sig fremarbeidende Liv nu med det samme kommer til større Ro i Henseende til
+de lavere Functioner, idet det tillige kommer til større Kraftighed i Henseende til de
+samme, og at hiin mere sammensatte Organisation deraf er Udtrykket: saa see vi, hvilken
+omfattende og ny Betragtning over Livet maatte aabne sig, for at komme til et saadant
+Svar. --- Men et fuldkomment Realbegreb om Hjertet er endnu ei erholdt, det er endnu ikke
+skuet som væsentligt, integrerende, Led i Organismen. Som saadant sees det først, naar vi
+fatte den reale Betydning af det Hele, hvoraf det nærmest viser sig som Deel, det forenede
+Blodcirculations= og Respirationssystem, om hvilket vi allerede maatte danne os et
+Sammenhængsbegreb, for at kunne forstaae Hjertets Indretning. Vi see vel Hjertet som
+integrerende Led i dette System, saa at, naar dette skal være saaledes, som det i det Hele
+er, maa Hjertet
+% --- p. 131 ---
+vistnok ogsaa være. Men hvorfor maa hiint System være? spørge vi videre. For at, bliver
+Svaret, Blodet, som den Vædske, hvoraf alle Dele skulle erholde Det, de til
+Vedligeholdelse og Virksomhed behøve, kan føres hen til alle disse Dele, og at fra dem
+igjen alt Det, der under den bestandige Gjenfødelsesproces skal undergaae en Fornyelse ved
+Paavirkning af Luften, kan føres tilbage, og bringes i Berøring med denne Luft. Men sees
+dette at være hiint Blodcirculations= og Respirationssystems reelle Betydning i Legemet,
+saa indsees ogsaa snart, at det samme paa en anden Maade maatte kunne opnaaes, at f. Ex.,
+istedetfor at her Blodet opsøger Luften og rinder hen til et Organ, hvori det kan mødes
+med den, Luften selv trængte ind omkring til alle Legemets Dele og opsøgte
+Ernæringsvædsken. Man vilde saaledes ved det fuldkomne Begreb om hiint Systems egentlige
+Væsen, nemlig dets egentlige Realbetydning, allerede kunne ledes til \textit{a priori} at
+% ANTIQUA, verified on the image: "a priori" is set in roman against the Fraktur.
+udkaste sig et saadant Respirationssystem, som Trachealsystemet er hos Insecterne, eller
+man vilde i det mindste dog være orienteret, naar man nu fandt det i Virkeligheden, saa at
+altsaa hele Blodcirculations= og Respirationssystemet selv nu vilde vise sig som en
+Artning eller speciel Fremtræden af et almenere Grundbegreb. Men saa bliver da
+Spørsmaalet: hvorfor antager den hele Function eller Proces hos det fuldkomnere Dyr just
+hiin Form. Fremdeles bliver endnu den reale
+% --- p. 132 ---
+Betydning af den hele ved Hjelp af hiint forenede Blodcirculations= og
+Respirationssystem skeende bestandige Reproductionsproces Gjenstand for Spørsmaal. Svaret
+herpaa maa hentes fra Ideen om Liv og Leven, og det en Leven, som tager Skikkelse og
+individualiserer sig i en legemlig Form, og nu sees ikke at kunne vise sig som kraftig
+bestaaende Leven, uden under en bestandig Bearbeiden af sit legemlige Materiale. Men vi
+ville ei forfølge Exemplet videre.
+
+\parag{55}
+
+Idet der skjelnes imellem Grundbegrebet og de specielle Modificationer, hvorunder hiint
+sees at træde frem i Gjenstanden, hæver hiint, nemlig Grundbegrebet, sig frem som et eget
+Begreb for sig, og kan nu ogsaa fastholdes som saadant. Saaledes indtræder da en anden Art
+af Abstraction, eller ideel Udsondring, end den, hvorom forhen er handlet (§. 31). Hist
+havde vi endnu den givne Gjenstand i dens Heelhed, eller ganske saaledes, som den viser
+sig for den forenede reelle og ideelle Skuen, for Øie, med Alt, hvad der gjør den til den,
+den er. Nu derimod have vi seet, hvorledes Tænkningen, under den intellectuelle
+Indtrængen i en Gjenstands Natur og Væsen, for at orientere sig og at see Alt i dets rette
+Lys, naturligen bringes til --- deels under Gjenstandens egen Undersøgelse og Forklaring,
+deels ved det derved vundne Begrebs Overførelse paa andre Gjenstande, for at opklare
+disse --- at see bort fra visse af Gjen-
+% --- p. 133 ---
+standens Enkeltheder og Forhold, som fra de mindre væsentlige, der enten endnu ikke, eller
+nu ikke mere skulle tages i Betragtning, og at hæve Indbegrebet af de øvrige, som de mere
+% spacing.py reports a RUN "ille sulle" here (= "ikke ... skulle"). Checked on the image:
+% ordinary Fraktur on a loosely justified line, not emphasis. Left plain.
+væsentlige, frem for sig, som Gjenstand for en egen Sammenfatten til Eenhed, til at danne
+et Begreb, der da ikke bliver det adæqvate Begreb om Tingen, men bliver Begrebet om den
+Grundtypus, hvoraf nu Tingens hele Begreb bliver at betragte som en speciel Fremtrædelse,
+en speciel Form eller Art.
+
+Denne Abstraction, hvorved der abstraheres fra Noget i Gjenstanden, hvilket som det
+Speciellere udelukkes fra Betragtningen, og kun Noget Vist i den, som det mere til Grund
+Liggende, hæves frem for sig som Gjenstand for en egen intellectuel Betragtning, og gjøres
+til Gjenstand for et eget Begreb, ville vi kalde den blot orienterende, ligeledes den blot
+relative Abstraction. (Denne er det, der i Almindelighed menes, naar der tales om
+% This is the sentence that DEFINES the two terms, so it is the natural place for
+% Schwabacher. Checked at 2.4x: "orienterende", "relative", "Abstraction" and "abstracte"
+% are ALL ordinary Fraktur — same angular a, same b, same s. Sibbern does not mark the
+% definiendum here. Left plain. See the closing note.
+Abstraction og abstracte Forestillinger).
+
+\anm{1} Hvor naturligt og ligefrem den hele intellectuelle Indtrængen i Gjenstandenes
+Natur og Væsen fører til en saadan Abstraction, gaaer frem af alt Foregaaende. Men om dens
+objective Gyldighed opstaaer der Spørsmaal [et Spørsmaal, der bevægede sig igjennem hele
+% SQUARE BRACKETS, as printed: the digression is enclosed in [ ... ], the "[" here on
+% p. 133 and the "]" on p. 134 after "vil kunne vende tilbage". Verified on both images
+% and in the ABBYY layer. This matches the bracketed digression already recorded on
+% printed pp. 150--151.
+Middelalderen i Realismens og Nominalismens Strid; der ogsaa allerede tidligt, under en
+anden Form, er kommen i Bevægelse i den græske Philosophering, i Cynikeren Antisthenes's
+% --- p. 134 ---
+og i Megarikernes logiske Discussioner af Prædicatets egentlige Betydning i Omdømmet, og
+der til alle Tider vil kunne vende tilbage]. Spørsmaalet er det: om Slægts= og
+Artsforskjelle ere grundede i Naturen selv, eller blot i vor Betragtningsmaade, ifølge den
+Maade, hvorpaa vi orientere os i Naturens Betragtning; ligeledes om Forskjellen imellem,
+hvad en Ting er i og for sig, og, hvorledes dens Natur og Grundtypus træder frem under
+visse modificerende Forhold, er saaledes grundet i Naturen, eller ikke (f. Ex. om Tigeren
+kan siges at være en Kat, eller om vi blot til vor Opklaring bruge denne Sammenstilling;
+om Jordens Bane i sig selv er en Ellipse, eller om et saadant I sig selv i Naturen ei er
+% "et saadant I sig selv": the capital is the Fraktur I/J form used for the preposition
+% "i", read here as I per the file's convention. Not the whitelisted "Jfr.".
+grundet, men Jordens egentlige Bane er ingen anden, end den, den virkelig gaaer, og som
+hvert Aar er en ny ifølge Perturbationerne; i hvilken Henseende Betydningen af
+Spørsmaalet om det saakaldte \textit{principium individuationis} indlyser). En egen
+% ANTIQUA, verified on the image: "principium individuationis" (divided "individua-" /
+% "tionis") is set in a light roman against the Fraktur.
+Vending faaer Sagen, naar Spørsmaalet bliver det, om ikke endog Orienteringsmaaden selv
+kun har en subjectiv Gyldighed, saa at Andre kunne tænkes at orientere sig anderledes
+(f. Ex. see Perturbationerne som lige saa constitutive i at bestemme Jordens Bane, som
+Det, der gjør, at vi betragte Ellipsen som dens Grundtypus), ja derved endog at komme til
+et ganske andet System af almindelige Begreber, end det er, der ligger til Grund i vort
+hele Sprog, og har fixeret sig i dette, og
+% p. 134 ends here, mid-sentence, with "og" and NO dash after it — verified at 2.6x on
+% the last line (tesseract's trailing "---" is gutter noise from the facing leaf).
+
+% =====================================================================================
+% BATCH NOTES, pp. 120--134 (agent, 2026-08-27)
+%
+% STRUCTURE. § heads found exactly where the Oversigt puts them: §. 53 on p. 120,
+%   §. 54 on p. 122, §. 55 on p. 132. The ten-page stretch pp. 122--131 with no § head
+%   is real: §. 54 runs from p. 122 to p. 131 and its Anm. 3 (p. 128) carries the whole
+%   Hjerte example through pp. 128--132. Anm. numbering restarts in each §, as the
+%   standing brief says: §. 53 has Anm. 1--2, §. 54 has Anm. 1--3, §. 55 has Anm. 1.
+%   NO rubric head (A.--F.) and no Capitel head falls anywhere in pp. 120--134.
+%   NO footnote on any of the fifteen pages. No running heads; folio is a centred
+%   antiqua numeral at the head; sheet signatures "(9)" p. 129 and "(9*)" p. 131.
+%   No erratum in this range (the Rettelser jump from p. 118 to p. 170) — checked.
+%
+% QUOTES. No Danish quotation mark of either kind occurs in pp. 120--134. Balance 0/0,
+%   so it adds nothing to the running defect total.
+%
+% intellectuel* / abstract*, THE CONTESTED QUESTION — evidence, not a ruling.
+%   Every occurrence in this batch is ORDINARY FRAKTUR, and all are transcribed plain:
+%     p. 121 "ved en intellectuel Erkjenden"      Fraktur
+%     p. 122 "for den intellectuelle Betragtning" Fraktur
+%     p. 124 "Men den intellectuelle Orientering" Fraktur
+%     p. 128 "den intellectuelle Orientering"     Fraktur
+%     p. 132 "den intellectuelle Indtrængen"      Fraktur
+%     p. 133 "en egen intellectuel Betragtning"   Fraktur
+%     p. 133 "hele intellectuelle Indtrængen"     Fraktur
+%     p. 132 "en anden Art af Abstraction"        Fraktur
+%     p. 133 "Denne Abstraction", "der abstraheres", "den blot relative Abstraction",
+%            "om Abstraction og abstracte Forestillinger"   ALL Fraktur
+%   What settles it: this batch contains SEVEN certain Schwabacher words (p. 124
+%   "Noget"; p. 125 "gens egen indre Natur", "Andet", "Noget" ×2; p. 126 "indre Natur",
+%   "Deels" ×2), so the two faces can be compared directly on the same leaves. The
+%   letterforms that decide it are (a) the capital N — Schwabacher's is round-shouldered
+%   and tesseract reads it as "L" or "C" or drops it entirely ("Ltoget", "Loget",
+%   "Coget", "dre atur"), while the Fraktur N is read correctly every time; (b) the
+%   lower-case e — round and open in Schwabacher, angular in Fraktur; (c) fit — the
+%   Schwabacher words are visibly wider. Under all three tests the intellectuel* and
+%   abstract* words fall on the Fraktur side, including p. 133's definition sentence,
+%   where an emphasis would have been most expected.
+% =====================================================================================
+% --- p. 135 ---
+% SEAM VERIFIED ON THE IMAGE (PDF 159, 600 dpi): printed p. 134 ends
+% "...i vort hele Sprog, og har fixeret sig i dette, og" — the last word on the page
+% is a complete "og", with NO hyphen and NO dash after it. NO word is broken across
+% the 134/135 joint; p. 135 opens mid-sentence with "derved hos alle de Nationer".
+% (Tesseract's trailing "—" on p. 134 is edge noise, not ink.)
+derved hos alle de Nationer, i hvis Sprog det ligger til Grund, og hvis hele Cultur
+derved er bleven bestemt.
+
+\anm{2} Ved den orienterende og relative Abstraction, vi her have omhandlet, have vi
+endnu kun tænkt paa den, hvorved et Grundbegreb, en Grundtypus eller en
+Grundbetydning, hæver sig frem som Begreb for sig. Men ogsaa den partielle Begriben
+(§. 48) kan føre til en saadan Abstraction, hvilken vi da ville kalde den
+\emph{eensidige orienterende} Abstraction, som den, hvorved Det, hvad der viser sig
+% EMPHASIS, verified at 600 dpi: "eensidige orienterende" is SCHWABACHER (round open
+% e, round o, round-bowled d with a straight ascender, round g) against the Fraktur of
+% "saadan Abstraction, hvilken vi da ville kalde den" on the line above. The following
+% "Abstraction" is ORDINARY FRAKTUR — its A, b and long-s+t are identical to the "Abstraction"
+% of the previous line. So the emphasis covers the modifier only, not the noun; the same
+% pattern recurs at "\emph{fixe} Abstractioner" on pp. 136 and 137.
+hos Gjenstanden, naar den betragtes fra een af dens Hovedsider, eller i een
+Hovedhenseende, hæves frem for sig til en egen Sammenfattelse til Eenhed og et eget
+Begrebs Dannelse.
+
+Viser sig her det for sig fremhævede Hovedpartie af Gjenstandens Enkeltheder saaledes
+adskilt i Gjenstanden selv, at Anskuelsen allerede kan isolere det, saa kan dets
+særlige Fremhævelse ei betragtes som en Abstraction eller ideel Udsondring, men er
+blot en orienterende Adskillen, om ogsaa vel Udtrykket ''at abstrahere fra'' ofte
+% QUOTATION MARKS, verified at 600 dpi: BOTH marks are RAISED — English-style closing
+% marks in both positions — exactly as in the Fortale (roman III). Transcribed with the
+% LaTeX ligature ''...'' per the convention set in the transcription.tex header, so that
+% the printed form is reproduced without a new non-ASCII character. "at abstrahere fra"
+% itself is ordinary Fraktur, not emphasised.
+bruges derom (hvorimod vel et saadant Hovedparties Grundbegreb, naar det hæver sig
+frem for sig, bliver Gjenstand for en egentlig Abstraction, hvilket er en anden Sag).
+Men er det blot i og for den intellectuelle Betragtning, at et saadant Hovedparthie
+% "Hovedpartie" / "Hovedparties" / "Hovedparthie" — the compositor spells the word three
+% ways within eleven lines. All three read clearly at 600 dpi; transcribed as printed.
+% "intellectuelle" here is ORDINARY FRAKTUR (angular e with a diagonal bar, Fraktur ll),
+% not Schwabacher and not antiqua — see the note at the end of this fragment.
+(et Indbegreb af Tingens Egenskaber, Virkninger, Forhold) isolerer
+% --- p. 136 ---
+sig, saa indtræder den Art af Abstraction, vi have kaldet den
+\emph{eensidige orienterende}.
+
+\anm{3} Det, der giver denne Art af Abstraction, saavel som Grundbegrebets ideelle
+Udsondring, sin Betydning, Værd og Realitet, er, at den blot træder frem som
+orienterende, saa at altsaa, i at bestemme Begrebet om de givne Gjenstande, som de
+ere, eller til at opklare deres Natur og Væsen, det Specielles Betragtning, i dets
+hele Udstrækning, faaer sin fulde Indflydelse. Skeer dette ikke, saa bliver
+Abstractionen en \emph{\sperr{blot} eensidig (og derfor ureal --- ikke=grundig)}, hvad
+% EMPHASIS -- NESTED DEVICES, verified at 600 dpi. The whole run "blot eensidig (og
+% derfor ureal --- ikke=grundig)" is SCHWABACHER, and the word "blot" is ADDITIONALLY
+% LETTERSPACED within it ("b l o t"). The control is on the very next line, where
+% "hvad enten blot een Hovedside" is ordinary, unspaced Fraktur — the two "blot"s stand
+% four words apart in two different faces. Hence \sperr{} inside \emph{}, the same
+% nesting already used at \parag{39} ("hvori et Begreb egentligen \sperr{bestaaer}?").
+enten blot een Hovedside, eet Synspunct (eller blot nogle) hæver sig eensidigen frem,
+med de øvriges Tilbagetrængelse, eller ogsaa Grundbegrebet med alle dets
+Bestemmelser hæver sig overvægtigt frem, med Tilsidesættelse af det Specielles
+Betragtning efter dets eiendommelige Beskaffenhed \textit{in concreto}. (En Mangel,
+hvorunder især al Jurisprudents, fornemmeligen den \emph{criminalistiske}, lider, og
+% "in concreto" is ANTIQUA (upright roman, light) -> \textit{}; "criminalistiske" is
+% SCHWABACHER (round c, r, m, n, a; blackletter long-s+t and long-s+k ligatures, so NOT antiqua)
+% against the Fraktur of "fornemmeligen den" before it and "lider" after it.
+det næsten uundgaaeligen, fordi den skal give almindelige Bestemmelser, udenfor
+hvilke Dommeren ei maa gaae; \emph{ikke at tale om}, at den, som den er, lider af
+% PRINTER'S DEFECT: a small stray vertical tick stands in the space immediately before
+% "ikke" (ABBYY reads it as "^", tesseract as a broken bar). It is a speck or a broken
+% sort, not a mark of punctuation, and is not transcribed. Reported.
+% "ikke at tale om" is SCHWABACHER; "at den, som den er" resumes Fraktur.
+visse Hovedsynspuncters eensidige Fremhævelse).
+
+\anm{4} Hvorledes endeligen en saadan Afvigelse fra den grundige Indtrængcn i en
+% PRINTER'S ERROR, TRANSCRIBED AS PRINTED: "Indtrængcn" — the penultimate letter is a
+% "c" (open, no crossbar), not an "e"; verified at 600 dpi against the unambiguous "e"
+% of "grundige" three words earlier. Both OCR witnesses independently read "c". Read
+% "Indtrængen". The same wrong sort recurs on printed p. 138, line 2.
+Gjenstands Natur og Beskaffenhed kan udarte til \emph{fixe} Abstractioner, hvorved
+der danne sig \emph{fixe} Synspuncter, hvilke da bestemme, i hvad Lys
+% --- p. 137 ---
+Gjenstandene blive seete, uden at Begrebet om enhver ny forekommende kommer til at
+blive et Resultat af en intellectuel Indtrængen i dens egen Natur, som den er og vil
+sees og tages, og af en altomfattende Discussion (see §. 27, Anm. 1) --- lærer
+% The cross-reference reads "Anm. 1", not "Anm. 4": tesseract is right and the ABBYY
+% layer wrong here. Verified at 600 dpi. The "Anm." of this inline cross-reference is
+% letterspaced in the print and its numeral is antiqua, but it is set plain here, with
+% the other inline cross-references already in this file ("see §. 23 Anm. 1", §. 9 etc.).
+Videnskabernes Historie næsten heelt igjennem. Saadanne \emph{fixe} Abstractioner ere
+det især, der menes, men dog ogsaa de blot eensidige overhovedet, naar en Tings
+Betragtning \textit{in abstracto}, og de abstracte Begreber nævnes og omtales som
+% "in abstracto" ANTIQUA -> \textit{}. The Danish "abstracte" two words later is
+% ORDINARY FRAKTUR and is left plain — see the closing note.
+medførende ugyldige Forestillingsmaader.
+
+\parag{56}
+
+Som Begreb for sig fører Grundbegrebet sit eget Indbegreb af Begrebsbestemmelser,
+altsaa sit eget Indhold, med sig, hvilket naturligviis bliver mindre (nemlig
+indbefattende en ringere Mangfoldighed), end det specielle Begrebs Indhold. Thi ved
+Grundbegrebets Dannelse sees der bort fra en Deel af Tingens Enkeltheder, medens
+Specialbegrebet maa omfatte dem alle; men Begrebets Determinationer svare i
+Mangfoldighed til de Tingens Enkeltheder, som medomfattes af Begribningen, og derved
+sees at danne en Sammenhæng og Eenhed (see §. 37 og 41). Naturligviis gjelder om et
+saadant Grundbegreb, naar Spørsmaalet er, hvori det egentligen bestaaer, det samme
+% "Spørsmaalet", without the g, as printed here and on p. 148; verified at 600 dpi.
+som er bemærket i §. 39=40 angaaende Begreb og Begribning overhovedet.
+% "39=40" carries the Fraktur double hyphen in the print and is kept as "=".
+% --- p. 138 ---
+Det sees nu ogsaa let, at der, under den gradvise Indtrængcn i Gjenstandens Natur og
+% PRINTER'S ERROR, TRANSCRIBED AS PRINTED: "Indtrængcn" again, the same wrong "c" sort
+% as on p. 136; verified at 600 dpi, and both OCR witnesses agree. Read "Indtrængen".
+Væsen, ville kunne danne sig Begreber, som med Hensyn til det totale Specialbegreb
+ere at betragte som Grundbegreber, men dog selv atter vise sig som specielle Former
+for et endnu dybere liggende, mere abstract, Grundbegreb. Saaledes kan da
+Abstractionen have forskjellige Grader eller Trin, og der kunne gives mere og mindre
+abstracte Begreber (Sammenhænge, Grundnaturer): Begreber, som ere
+Fremtrædelsesformer for dybere Grundbegreber, men atter selv ligge til Grund i
+speciellere Begreber. Vi skjelne altsaa imellem \emph{mere og mindre fundamentelle}
+Begreber.
+% EMPHASIS, verified at 600 dpi: "mere og mindre fundamentelle" SCHWABACHER against
+% the Fraktur of "altsaa imellem" before it and "Begreber." after it. Note that "mere
+% abstract" and "mere og mindre abstracte" earlier on this same page are NOT emphasised
+% — they are ordinary Fraktur — so the mark is not simply attached to "mere og mindre".
+
+\anm{1} Naturligviis kan et Grundbegreb ikke træde frem i nogen reel Gjenstand, uden
+i og igjennem en eller anden af sine specielle Artninger, og saaledes har det ikke
+sine egne reelle Gjenstande for sig, hvorpaa det gaaer ud, forskjellige fra
+Gjenstandene for de specielle Begreber, men har netop de samme Gjenstande, som disse,
+kun at det ikkun gaaer ud paa visse Grundbeskaffenheder, visse Hovedenkeltheder og
+Forhold hos dem. Imidlertid viser det sig dog som et i og for sig bestaaende Begreb
+derved, at det ei er bundet til nogen saadan bestemt Form i Særdeleshed, men
+ligefuldt træder frem i enhver af dem, faasnart der er flere, og, hvor saadanne ei
+findes, dog vil kunne tænkes varieret paa flere Maader.
+% --- p. 139 ---
+\anm{2} Da det Indbegreb af Bestemmelser, der i sin Sammenfattelse danner det mere
+fundamentelle Begrebs Indhold, er mindre end det, der danner det mindre fundamentelle
+Begrebs Indhold, saa kaldes undertiden hiint det \emph{mere enkelte}, dette det
+\emph{mere sammensatte} Begreb. Men er 'end denne Udtryksmaade i een Henseende
+% PRINTER'S MARK, TRANSCRIBED AS PRINTED: a raised comma stands before "end" —
+% "Men er 'end denne Udtryksmaade". Verified at 600 dpi; both OCR witnesses record it.
+% Presumably an elision mark (for "endog"?); it is not a quotation mark, and nothing
+% opens or closes against it. Set with the ASCII ' so that it prints as a raised comma.
+grundet (see §. 40), saa er det paa den anden Side dog at erindre, at, forsaavidt
+Begrebet egentligen maa siges at bestaae, ikke i dets Indbegreb af Bestemmelser, men
+i den Indsigt, hvorved disse sees i deres Tilsammenhøren og Eenhed (§. 39), kunne
+alle Begreber lige meget- siges kun at gaae ud paa det \emph{Ene} i en Mangfoldighed,
+% PRINTER'S DEFECT, TRANSCRIBED AS PRINTED: a spurious hyphen after "meget". The word
+% is divided across the line as "lige me=" / "get- siges", i.e. the line-end division
+% takes the ordinary Fraktur double hyphen "=", and then a SECOND, single hyphen "-"
+% stands after "get" in mid-line. Verified at 600 dpi; both OCR witnesses record it.
+% Read "lige meget siges".
+% "Ene" is SCHWABACHER — its capital E is the round, open Schwabacher E, which is why
+% tesseract read it as "Lne" and could not match it to a Fraktur sort.
+og forsaavidt ogsaa alle lige meget at være enkelte. --- Hvad Begrebernes
+\emph{concrete} Gjenstande angaaer, kan man just ikke egentligen sige, at det mere
+fundamentelle Begrebs Gjenstande ere mindre sammensatte, end det mere specielle
+Begrebs; thi \emph{concrete} Gjenstande for dem begge ere de selvsamme Ting. Men det
+% EMPHASIS -- NOTE A DIVERGENCE FROM THE EARLIER PAGES. The Danish adjective "concrete"
+% is SCHWABACHER here (both occurrences), and again twice on p. 140 and once on p. 142;
+% verified at 600 dpi against the Fraktur "Gjenstande"/"Begrebernes" beside it. Earlier
+% in this file (pp. 88--91 as it stands) "concrete"/"concret" is ordinary Fraktur and is
+% transcribed plain. Both are right: emphasis follows the page, not the word.
+mere specielle og forsaavidt mere sammensatte Begreb udgjør Normen, eller den
+bestemmende Grundtanke for et større Indbegreb af sin Gjenstands Enkeltheder eller
+Bestemmelser, end det er, hvilket det mere fundamentelle Begreb medfører; saa at der
+altsaa i den samme Gjenstand, naar den betragtes som Gjenstand for det mere specielle
+Begreb, maa tages Hensyn til Mere af den Mangfoldighed, den frembyder for Anskuelsen,
+end naar den tages som Gjenstand for hiint.
+% --- p. 140 ---
+\parag{57}
+
+Idet det fundamentelle Begreb viser sig som det til Grund liggende i de specielle
+Former, hvori det træder frem under visse Modificationer, viser det sig for
+Betragtningen som det mere \textit{Primitive} og \textit{Constitutive}. I Begrebets
+% ANTIQUA, verified at 600 dpi: "Primitive" and "Constitutive" are set in upright roman
+% (light, modern serifs, roman P and C) against the Fraktur "mere" and "og" around them.
+% The intervening "og" is Fraktur, hence two \textit{} groups rather than one.
+Fremstilling træder det da naturligen frem som Udgangspunctet for, eller det første
+bestemmende Led i, en Deduction, hvorved Specialbegrebet, eller de flere
+Specialbegreber ved Siden af hinanden (saafremt der nemlig ere flere, som skulle
+opklares), deduceres.
+
+Denne Deduction ville vi, til Forskjel fra den i §. 35 omhandlede, kalde den
+\emph{logiske Deduction}. Hist svarede til hvert deduceret Begreb en egen reel
+Gjenstand, eller en egen reel Enkelthed i den hele Gjenstand. \emph{Her} derimod
+% EMPHASIS, verified at 600 dpi: "Her" is SCHWABACHER — the capital is the round, open
+% Schwabacher H — while "Hist" eight words earlier is ordinary Fraktur H. The two stand
+% in the same sentence-pair and the contrast between the faces is unmistakable at 3x.
+% "derimod" resumes Fraktur, so only the one word is marked.
+svarer dertil kun en vis Art eller Form, en abstract Forestilling: først om et første
+til Grund Liggende i Gjenstanden, og i Særdeleshed, hvis der ere flere, om Det, disse
+alle have tilfælleds. I det speciellere Begreb tages dernæst dette sammen med flere
+speciellere Beskaffenheder hos Gjenstanden, til at danne en ny Eenhed. Og denne sees
+derpaa igjen som til Grund liggende i en endnu speciellere Form; og saaledes kan det
+gaae flere Trin nedad, til endelig den givne \emph{concrete} Gjenstand, i dens hele
+\emph{concrete} Beskaffenhed, opklares. Deductionen er altsaa en Udførelse af den
+Tankegang, der leder til at indsee, hvorledes et vist Grundbegreb kan træde frem i
+visse Modi=
+% --- p. 141 ---
+ficationer, og hvert af disse igjen i visse speciellere. (Som naar først et Begreb om
+Lidenskab og lidenskabelig Sindsstemning gives, dernæst sees, hvorledes den kan
+antage Charakteren af en Jeghedssyge, og \textit{in specie} af Reflectionssyge, og
+% "in specie" ANTIQUA -> \textit{}. "Jeghedssyge" keeps its J: the word is built on
+% "Jeg", which the J->I whitelist deliberately does not touch.
+hvorledes denne atter deels kan have en mere cholerisk, deels en mere melancholsk
+Charakteer, men atter ogsaa træder frem i Forfængeligheden med en mere sangvinisk
+Charakteer.)
+
+\emph{En synthetisk Fremgangsmaade} indtræder saaledes da nu ogsaa her, naar
+% EMPHASIS, verified at 600 dpi: SCHWABACHER (round E, s, y, n, t, h, F, r, m, g, a, o,
+% d) against the Fraktur "indtræder" that follows it on the same line.
+Begrebers Udgrundelse og Erkjendelse ad denne Vei fuldendes. Eet Begreb, som
+Grundbegreb, sættes som det første Grundbegreb; under et bestandigt Hensyn til den
+Sphære af reelle Gjenstande, hvorpaa den hele Begriben og Begrebsbestemmen gaaer ud,
+og i Overeensstemmelse med Det, hvad denne Sphære fører med sig og fordrer, udkastes
+og bestemmes nu de mere og mere specielle Begreber, saaledes som det sees, at de maae
+indtræde som Artninger og Udtryk af det første Begreb, ifølge dettes egen Natur paa
+den ene, men den reelle Sphæres Beskaffenhed paa den anden Side. Et saadant
+\emph{blot logiskt System} af Begreber viser først ethvert specielt Begreb i sit rette
+Lys, som en vis paa en eiendommelig Maade bestemmet og modificeret, eller beskaffet,
+Grundform.
+
+\parag{58}
+
+Ligesom den abstracte Erkjendelse, som fremkaldes ved den orienterende Adskillen, har
+% "abstracte" and "orienterende Adskillen" are ORDINARY FRAKTUR here, verified at
+% 600 dpi — although "eensidige orienterende" was Schwabacher on pp. 135 and 136.
+ogsaa
+% --- p. 142 ---
+det derved fremhævede Grundbegreb, --- ifølge den dermed forbundne Distinction
+imellem samme og de Modificationer, hvorunder det træder frem --- under de
+foregaaende Betragtninger allerede viist sig som det, der har Charakteren af et
+\emph{generelt eller almindeligt}, hvilket som det Constante, sig selv Lige, kan
+% EMPHASIS, verified at 600 dpi: "generelt eller almindeligt" SCHWABACHER against the
+% Fraktur "hvilket som det" following. The next line, "Constante, sig selv Lige", is
+% ordinary Fraktur and is NOT marked, though at reading scale it invites the mistake.
+gjenkomme (gjenfindes, eller tænkes gjenudtrykt) i forskjellige Gjenstande, hvorimod
+det Specielle hos Gjenstanden, med Hensyn til Grundformen, viser sig som det
+Foranderlige og Omskiftelige (det Modificable og Variable).
+
+Grundbegrebets eller Grundformens Gjentagelighed kan her endog betragtes som en
+Gjentagelighed uden Ende, d. e. i en Fleerhed uden Tal. Thi kan Grundformen (og hvad
+der følger af den og beroer paa den) opfattes for sig, uafhængigt af dens særegne
+Modification, saa at denne sidste er noget Andet, end Grundformen selv, saa kan
+Grundformen Intet indeholde, som kunde forhindre, at jo hiin ydre
+Fremtrædelsesmaade kan undergaae forskjellige Modificationer eller Artninger, hvis
+Forskjellighed da ikke heller kan finde nogen Grændse i den Grundform, paa hvilken de
+forsaavidt ei beroe.
+
+\anm{1} Udtrykket: \emph{generelt, almindeligt} bruges naturligviis baade om
+Grundformen selv, saa og om dens Erkjendelse, samt om Forestilingen derom. Den
+% PRINTER'S ERROR, TRANSCRIBED AS PRINTED: "Forestilingen", with a single l. The word is
+% divided at the line end as "Forestil=" / "ingen"; verified at 600 dpi, and both OCR
+% witnesses agree. Read "Forestillingen".
+\emph{concrete} Gjenstand betragtes i Modsætning hertil som \emph{individuel}.
+% --- p. 143 ---
+Det totale Specialbegreb kan naturligviis ikke have Charakteren af et almindeligt,
+eller af fælleds for flere Gjenstande: et ganske adæqvat Begreb om en vis given
+Gjenstand, efter alle dens Beskaffenheder og Forhold, kan saalidet have Charakteren
+af gjentageligt, som Gjenstanden selv kan være det. [Den Erkjendelse, der danner sig
+% UNCLOSED SQUARE BRACKET -- PRINTER'S DEFECT, REPORTED. This "[" is verified on the
+% image at 600 dpi. The bracketed digression runs to the end of the paragraph on
+% printed p. 144, "...i denne Sammenhæng af denne Talende." — where there is NO closing
+% "]": verified at 600 dpi, the line ends with a plain full stop and white space. No "]"
+% stands anywhere on pp. 143--148. (The printer does use the pair elsewhere: p. 134 ends
+% "...vil kunne vende tilbage]." for a bracket opened before this batch's range.)
+ifølge en intellectuel Indtrængen i og deraf udspringende Indsigt i, eller en
+Forstaaen og grundig intellectuel Opfattelse af, et Sted hos en Autor, et Digter=
+eller andet Konstværk, et vist Lands eller Terrains Natur, en vis Stats (Chinas eller
+Engellands) Statsforfatning, en given historisk Begivenhed eller Handling, en vis
+bestemt Forbrydelse, et vist bestemt krigeriskt, eller andet Foretagende --- er
+unægteligen et Begreb, forbundet med en Begriben, og kan have Alt, hvad der ifølge
+det Foregaaende udfordres til et Sammenhængs= og Realbegreb; men kan dog ikke som
+saadant føres over paa nogen anden Gjenstand. (Det er det bekjendte Leibnitziske
+\textit{principium indiscernibilium}, vi her berøre; men dettes metaphysiske Betydning
+% ANTIQUA -> \textit{}. "Leibnitziske" itself is Fraktur, with the tz ligature as printed.
+hører det ei herhen at vise). Selv om et Sted hos en Autor indeholder en almeen
+Sandhed, har det dog som et hos denne Autor i denne Sammenhæng forekommende Sted sin
+Individualitet, og kræver ogsaa som saadant sin intellectuelle Oplysning; og har
+Tanke og Udtryk den Fuldendthed og fuldkomne Sammensmeltning, som vi betegne ved
+Ordet \emph{classiskt},
+% EMPHASIS, verified at 600 dpi: "classiskt" SCHWABACHER against the Fraktur "Ordet".
+% Both instances of "intellectuel"/"intellectuelle" on this page are ordinary Fraktur.
+% --- p. 144 ---
+eller har det det særegne Udtryksfulde, individuelt Betegnende og Prægnante, som
+f. Ex. saa mangt et Sted i den hellige Skrivt, saa har det derved en Individualitet,
+som gjør, at Det, der i samme er Gjenstand for den intellectuelle Betragtning, om der
+end deri udtaler sig en almeen Sandhed, dog i dette sit Udtryk træder frem med en saa
+individuel Bestaaen, at et andet Udtryk ogsaa strax vilde give os Tanken selv
+anderledes modificeret, altsaa give os et andet Specialbegreb, selv om man vil see
+bort fra den Betydning, Stedet har derved, at det er sagt i denne Sammenhæng af denne
+Talende.
+% This is where the bracket opened on p. 143 ought to close, and does not — see the note
+% there. Nothing on this page is emphasised: "individuelt Betegnende og Prægnante",
+% "intellectuelle" and "individuel Bestaaen" are all ordinary Fraktur at 600 dpi.
+
+\anm{2} Det maa herved ellers bemærkes, at vi om det fuldkomne Specialbegreb, der kun
+har sin ene Gjenstand, ofte ikke bruge det Udtryk: Begrebet om Tingen, men derimod
+vel tale om det Begreb, vi forbinde med Tingen. Med Alt, hvad vi see, læse o. s. v.,
+maae vi, forsaavidt det taler til Forstanden, forbinde et Begreb, men dette har (naar
+vi ikke betragte Gjenstanden som Exempel paa sin Art, men betragte den som individuel
+Gjenstand, ganske, som den giver sig os) umiddelbart slet ikke Charakteer af et
+Almeenbegreb, skjønt vel et saadant kan hæve sig frem deraf; og dette gjør, at ogsaa
+Benævnævnelsesmaaden forandrer sig paa den anførte Maade.
+% PRINTER'S ERROR, TRANSCRIBED AS PRINTED: "Benævnævnelsesmaaden" — a dittography. The
+% word is divided across the line as "Benæv=" / "nævnelsesmaaden"; verified at 600 dpi,
+% and both OCR witnesses agree. Read "Benævnelsesmaaden".
+
+\anm{3} Et Grundbegreb træder altid frem med Charakteren af et almindeligt. Men idet
+vi bruge dette Udtryk derom, maae vi be=
+% --- p. 145 ---
+mærke, at skjønt et Grundbegreb naturligen strax antager Charakteren af almindeligt,
+saa at der kan spørges om flere muelige Modificationer deraf, kan dog det tilsvarende
+Reelles særdeles Beskaffenhed medføre, at det i Virkeligheden ikke har flere
+Gjenstande, end een. Og forsaavidt hører den virkelige Gjentagelighed, eller den
+reale Muelighed af Fælledshed for flere, ikke egentligen til et Grundbegrebs, en
+Grundforms, Væsen.
+
+Exempler kunne naturligviis allerførst søges i saadanne individuelle Gjenstande, som
+f. Ex. Pauli Brev til Romerne, hvor allerede Grundbegrebet om Tankegangen deri, d. e.
+Begrebet om Grundtrækkene i denne Tankegang, har, ligesom disse Grundtræk selv, en
+for individuel Charakteer, til at kunne tænkes som fælleds for flere, skjønt de vel
+forsaavidt have hine Charakteer af Almeent, at de kunne analogiskt sammenlignes med
+% "hine Charakteer" — plural demonstrative with a singular noun, as printed; verified at
+% 600 dpi and confirmed by both OCR witnesses. Not emended.
+noget Andet, og overføres derpaa, samt derfor ogsaa omvendt ved Hjelp af Sligt, som
+ved Hjelp af en Analogie, oplyses. Men endnu i langt mindre individuelle Gjenstande,
+i Gjenstande af universel Betydenhed, finde vi Exempler, der allerede vise sig som
+saadanne derved, at Ordene ei admittere en Pluralis, eller og, forsaavidt de antage
+den, forandre Betydning. Saaledes ere Begreberne: Forstand, Fornuft, ligeledes:
+Natur, Tid, Rum, Sandhed, Skjønhed, Philosophie, og enhver Videnskabs Begreb
+% NOT emphasised: the whole list "Forstand, Fornuft ... Philosophie" is ordinary Fraktur
+% at 600 dpi, as is the parallel list "Tiden, Rummet, Mathematiken, Philosophien" on
+% p. 146. At reading scale both look like display and both invite a false \emph{}.
+overhovedet (Ordene tagne i
+% Sheet signature "(10)" stands at the foot of this page; not text, not transcribed.
+% --- p. 146 ---
+den Betydning, hvori vi tage dem, naar vi nævne dem med den bestemte Artikel i
+Singularis: Tiden, Rummet, Mathematiken, Philosophien) Begreber, der ikke admittere
+% As printed: no comma after the closing parenthesis before "Begreber".
+nogen Pluralis, og ikke kunne tænkes som Fælledsbegreber.
+
+Men herved er det dog at erindre, at disse Begreber, som anvendelige i mange
+Tilfælde, og saaledes overførlige paa mange Gjenstande, nemlig i at bedømme, hvad der
+i givne Tilfælde eller Gjenstande svarer til dem (hvilket da i Sproget især skeer ved
+tilsvarende Adjectiver, der kunne forekomme i Pluralis), have en Charakteer af
+\emph{generelle}, i en anden Henseende, end den, vi forhen havde for Øie, da vi
+betragtede Begreberne som Tingens gjentagelige, eller under flere Former
+tilbagevendende Grundtyper og Grundbetydninger. Og saaledes see vi, at et Begreb paa
+en dobbelt Maade kan have Charakteren af Fælledsbegreb, deels som egentligen
+\emph{generelt}, og deels som \emph{\sperr{generelt}=anvendeligt}. (Exempler af egen
+% EMPHASIS -- NESTED DEVICES AGAIN, and the reading is flagged as the less certain of
+% the two. "generelt=anvendeligt" is SCHWABACHER (round g, e, n, r, l, a, v, d) beyond
+% doubt; within it the first element, "generelt", additionally appears LETTERSPACED,
+% the letters standing perceptibly further apart than in "anvendeligt". The ABBYY layer
+% independently renders it "g e n e r e l t - anvendeligt", which is that layer's way of
+% recording letterspacing. Marked \sperr{} inside \emph{} on that basis; if the caller
+% judges the extra spacing to be nothing but the Schwabacher's natural fit, drop the
+% \sperr{} and leave \emph{generelt=anvendeligt}.
+Art have vi i Vandet, Guldet, Jernet. Ligeledes i Det, vi tænke paa ved Udtrykkene:
+Mennesket, Insectet, Dyret).
+% NOT emphasised: both lists are ordinary Fraktur at 600 dpi.
+
+\anm{4} Ligesom et Begreb kan være \emph{mere eller mindre fundamentelt}, kan det
+ogsaa være \emph{mere eller mindre generelt}. Indbegrebet af de Gjenstande, for
+hvilke Begrebet er fælleds, og som altsaa kunne siges at være Gjenstande for samme,
+kaldes \emph{Begrebets Omfang}. Det mere specielle Begrebs hele Omfang udgjør
+% "for samme" is NOT letterspaced, though the ABBYY layer renders it "for s a m m e";
+% checked at 600 dpi, it is ordinary Fraktur at ordinary fit.
+saaledes en Deel af det mere fundamentelle Be=
+% --- p. 147 ---
+grebs Omfang, saafremt dette nemlig tillige er mere generelt; og ifølge heraf siges
+hiint (det specielle Begreb) at indbefattes under dettes Omfang. Med Hensyn hertil,
+altsaa i en \emph{blot logisk Henseende}, kaldes dette \emph{det høiere}, hiint
+\emph{det lavere} Begreb. Men herom vil blive handlet nærmere paa sit Sted.
+% EMPHASIS, verified at 600 dpi: "blot logisk Henseende", "det høiere" and "det lavere"
+% are SCHWABACHER; the article "det" belongs to the emphasis in both cases (its round d
+% is unmistakable in "det lavere"), while "hiint" and "Begreb" resume Fraktur.
+
+\anm{5} Med den her betragtede Forskjel imellem \emph{høiere og lavere} Begreber,
+eller Begreber af \emph{større og af mindre logiskt Omfang}, maa ikke forvexles den
+forhen (§. 16) fundne Forskjel imellem de i reel Henseende \emph{mere omfattende og
+mindre omfattende} Begreber, hvis større eller ringere reelle Omfatning eller
+Udstrækning beroer paa den større eller ringere Mangfoldighed hos den reelle
+Gjenstand, hvis Sammenhæng de omfatte og udtrykke. Naar det høiere Begreb er af
+større Omfang (i Henseende til Mængden af de Gjenstande, hvori det gjenkommer som det
+til Grund Liggende), men af mindre Indhold, end det lavere (see §. 56), saa har
+derimod det i reel Henseende mere omfattende Begreb, da det bestemmer og udgjør
+Eenheden for et større Indbegreb af reelle Enkeltheder, og tilmed fører et større
+Indbegreb af Bestemmelser med sig, et større Indhold, end det derved bestemte og
+deraf \textit{realiter} deducerede mindre omfattende Begreb, der ingenlunde er en Art
+% "realiter" ANTIQUA -> \textit{}: upright roman, verified at 600 dpi.
+deraf, eller indbefattes derunder som lavere. Om Omfang er der her aldeles ikke Tale.
+Det logiske Begrebssystem, der ved den logiske Deduction og den derved
+% The later occurrences of "høiere", "lavere", "mere omfattende" and "mindre omfattende"
+% in this Anm. are ordinary Fraktur; only the first pair of each is emphasised.
+% Sheet signature "(10*)" stands at the foot of this page; not text, not transcribed.
+% --- p. 148 ---
+bestemte logiske Over= og Underordning, kommer i Stand, er ogsaa et ganske andet, end
+det forhen (§. 16) betragtede reelle Begrebssystem, hvori de enkelte Begreber
+deduceres ved at indsee den Maade, hvorpaa deres Gjenstande væsentligen vise sig at
+hænge sammen med hinanden.
+
+\parag{59}
+
+Endnu have vi tilsidst det Spørsmaal at gjøre os, hvorvidt der kan tillægges de
+saaledes udfundne og udviklede Begreber en \emph{høiere Gyldighed og Væsenhed}, en
+\emph{høiere} Betydenhed og Værd eller Dignitet, end Gjenstandenes for den reelle
+% EMPHASIS, verified at 600 dpi: "høiere Gyldighed og Væsenhed" is SCHWABACHER (the V of
+% "Væsenhed" is the round Schwabacher V), and the second "høiere" is Schwabacher too;
+% but "Betydenhed" and "Værd eller Dignitet" that follow are FRAKTUR — the V of "Værd"
+% is the angular Fraktur V, side by side with the round V of "Væsenhed" one line above.
+Anskuen fremtrædende Skikkelser eller Udseender, og tilmed tillægges de til hine
+svarende Erkjendelser en Fortrinlighed fremfor de blotte reelle Anskuelser. Men denne
+Sag indlyser letteligen. Som Det, der er det Bestemmende og Betingende i Gjenstanden,
+viser Begrebet sig som det mere \emph{Ubetingede}, ligesom det og, hvor der kan være
+Tale om Vexel og Omskiftning, viser sig som det mere \emph{Faststaaende og Blivende,
+Constante og Permanente}, overalt som det mere \emph{Værende}. Ved Begreberne ledes
+% EMPHASIS, verified at 600 dpi: the three predicates are SCHWABACHER, the repeated
+% "det mere" before each of them is Fraktur. The clearest control is "Værende. Ved
+% Begreberne" — a round Schwabacher V and an angular Fraktur V in adjacent words.
+vi ogsaa, og orientere os ved saa mange nye ideligen vexlende Gjenstandes
+Erkjendelse, Bedømmelse og Behandling. Ja en Gjenstands ydre Skikkelse kan ofte ikke
+engang skues tilfulde uden med og formedelst dens Begreb; see §. 15, Anm. 3. (Et Blik
+paa al videnskabelig Stræben, saavelsom paa det practiske Menneskeliv lærer snart at
+erkjende Begrebernes høiere Væsentlighed).
+% SEAM AT THE OTHER END, verified on the image: p. 148 ends here, with a complete
+% sentence and a closing parenthesis. No word is broken across the 148/149 joint —
+% which agrees with the independent verification made by the pp. 149--152 batch.
+% ===========================================================================
+% CONTESTED WORDS: THE FACE OF "intellectuel*" AND "abstract*" ON pp. 135--148
+% Every occurrence in this batch was read at 600 dpi against the Fraktur beside
+% it. ALL of them are ORDINARY FRAKTUR — angular e with a diagonal crossbar,
+% Fraktur ll, Fraktur long-s+t — not Schwabacher (which on these pages is unmistakable:
+% round open e, round o, round-bowled d) and not antiqua (which on these pages is
+% unmistakable too: "in concreto" p. 136, "in abstracto" p. 137, "Primitive"/
+% "Constitutive" p. 140, "in specie" p. 141, "principium indiscernibilium" p. 143,
+% "realiter" p. 147, all upright roman). So they are transcribed plain, which
+% agrees with pp. 1--104 as the file stands.
+%   intellectuel*  p. 135 "den intellectuelle Betragtning"        FRAKTUR
+%                  p. 137 "en intellectuel Indtrængen"            FRAKTUR
+%                  p. 143 "en intellectuel Indtrængen"            FRAKTUR
+%                  p. 143 "grundig intellectuel Opfattelse"       FRAKTUR
+%                  p. 143 "sin intellectuelle Oplysning"          FRAKTUR
+%                  p. 144 "den intellectuelle Betragtning"        FRAKTUR
+%   abstract*      p. 138 "mere abstract, Grundbegreb"            FRAKTUR
+%                  p. 138 "mere og mindre abstracte Begreber"     FRAKTUR
+%                  p. 137 "de abstracte Begreber"                 FRAKTUR
+%                  p. 140 "en abstract Forestilling"              FRAKTUR
+%                  p. 141 "den abstracte Erkjendelse"             FRAKTUR
+%   The nouns "Abstraction"/"Abstractioner"/"Abstractionen" (pp. 135, 136, 137)
+%   are Fraktur throughout as well, even where the adjective beside them is
+%   Schwabacher ("\emph{eensidige orienterende} Abstraction", "\emph{fixe}
+%   Abstractioner"). That asymmetry is the single most useful control on these
+%   pages: the same noun stands twice on p. 135 in the same face while the
+%   modifier changes face between the two lines.
+% ===========================================================================
+% --- p. 149 ---
+% SEAM VERIFIED ON THE IMAGE: printed p. 148 ends with a complete sentence,
+% "...lærer snart at erkjende Begrebernes høiere Væsentlighed)." — full stop and
+% closing parenthesis at the foot. NO word is broken across the 148/149 joint.
+% p. 149 opens a fresh remark paragraph, "Anm. 1.", indented, at the head of the
+% page (the folio "149" above it is the only other thing on the line).
+% NO § head and NO rubric head stands anywhere on pp. 149--152; see the note at
+% the end of this fragment for where rubric B. actually falls.
+\anm{1} Det Anførte, der skal tjene til at vise, hvorledes Tænkningen fører til en
+høiere Erkjenden (see §. 5 pag. 14 og 18), gjelder naturligviis kun, forsaavidt
+Begreber adskilles fra concrete Anskuelser og modsættes dem. Her er altsaa ikke Tale om
+% ANTIQUA, observed and transcribed plain per the house convention for
+% cross-references elsewhere in this file ("(see §. 9)", "(cfr. §. 5, pag. 13=14)"):
+% in "(see §. 5 pag. 14 og 18)" above, the "§", the figures 5, 14, 18 AND the
+% abbreviation "pag." are all set in antiqua against Fraktur "see" and "og".
+% Verified at 600 dpi. Only one other place in the book italicises it
+% (\textit{pag.} 128, printed p. 3); the two other cross-references leave it plain,
+% and this follows those.
+Modsætningen imellem Begrebet og Gjenstandens Erkjendelse, thi til denne hører, om den
+end \textit{qvam maxime tages in concreto}, dens Natur og Væsen, altsaa dens Begreb,
+% ANTIQUA, verified at 600 dpi: the antiqua run is the WHOLE clause
+% "qvam maxime tages in concreto" — the Danish verb "tages" is set in antiqua too,
+% not only the Latin frame. It is "qvam" with a v (not "quàm"), and there is no
+% grave accent. The surrounding "om den end" and "dens Natur" are Fraktur.
+med; men her tales kun om Forskjellen imellem Erkjendelsen af Tingens Indre, og af dens
+Udseende (dens Fremtræden for Fornemmelse eller reel Anskuelse). Ogsaa maa det
+bemærkes, at her kun handles om, hvilken Erkjendelse der er den bedre og høiere.
+(Hvorledes Sagen kan være for Følelsen, derom handles ei her. En bedre og dybere
+Erkjendelse er aabenbar, selv hvad til Exempel Kjærligheden angaaer, den Indsigt, som en
+intellectuel Indtrængen i dens Natur og Væsen giver, end den Forestilling derom og det
+% OPEN QUESTION REPORTED, NOT RESOLVED: "intellectuel" here is FRAKTUR, not antiqua.
+% Verified at 600 dpi against the neighbouring Fraktur "Indsigt" and "Indtrængen":
+% same face, same weight, same long-s forms. Transcribed plain, per the standing
+% instruction. ("concrete" three lines above is Fraktur as well.)
+Kjendskab dertil, som faaes derved, at man oplever den i sig, naar hertil ikke videre
+træder nogen Tænkning, som opklarer den. Men et Andet er det, om ei her, for Følelsen og
+for Livet, Kjærlighedens Fornemmelser ere af større Betydenhed, end Indsigten deri; det
+vil her sige, om det ei er mere at have Tingen og nyde dens velgjørende Virkninger, end
+at have Begreb om den; men man glemme ei, at i at have Tingen, har man ogsaa Det i
+samme, hvorpaa Begrebet gaaer ud, om
+% --- p. 150 ---
+det end maaskee ikke er traadt ud for en tænkende Betragtning, thi dens Natur og Væsen
+er tilstæde i den).
+
+\anm{2} Endnu er at bemærke, at Erkjendelsen af en Gjenstands Begreb, idet den viser
+Tingen i sin relative Væsentlighed, saa at den nu ei mere staaer som et blot forefundet
+(tilfældigt) Phænomen, først fører til den fuldkomne Erkjendelse af selve Gjenstandens
+egen Virkelighed, naar der maaskee ellers kunde spørges, om den overhovedet er Noget,
+eller blot er et Skin. Men naturligviis bestemmer Begrebet da ogsaa Arten og Graden af
+Gjenstandens Realitet, idet den bestemmer, i hvad Henseende den har objectiv Gyldighed.
+% ALL FRAKTUR on this page, verified at 600 dpi: "relative", "Phænomen", "objectiv",
+% "Objectivitet", "Realitet" are set in the same Fraktur as their neighbours. There is
+% no antiqua anywhere on printed p. 150, and spacing.py finds no letterspacing.
+Dens erkjendte Betydning i det Indbegreb af Ting, hvori den findes, den Grund, ifølge
+hvilken, og den Maade, paa hvilken, den kommer til at træde frem med i dette Indbegreb
+af Ting, lader os naturligviis først see den med Præget af den Objectivitet, der bliver
+at tillægge den. Saa at Begrebet bestemmer, hvorvidt, eller med hvad Ret, Anskuelsen
+selv kan træde op som Erkjendelse. [Saaledes pleier det at omtvivles, ja vel stundom at
+% SQUARE BRACKETS, as printed: Sibbern encloses this long digression in [ ... ].
+% The opening "[" stands here on p. 150; the closing "]" is on p. 151 after
+% "en Bestaaen i Rummet". Both verified on the image at 600 dpi — they are square
+% brackets, not parentheses. The pair is balanced inside this fragment.
+nægtes, at en Tings Farve, Smag, Lugt er Noget hos Tingen, eller har nogen objectiv
+Gyldighed i denne, medens saadan Gyldighed aldeles tillægges dens Haardhed eller
+Blødhed, dens Figur, Tyngde o. desl. Hvorfor dog? fordi vi nødvendigviis tænke os Tingen
+(den legemlige nemlig, der her er taget som Ex
+% --- p. 151 ---
+empel) i Rummet og med bestemte Beskaffenheheder eller Bestemmelser med Hensyn til
+% PRINTER'S DEFECT, TRANSCRIBED AS PRINTED, printed p. 151 lines 1--2: the first line
+% ends "bestemte Beskaffenhe=" and the second begins "heder", so the compositor has set
+% the syllable "he" twice — "Beskaffenheheder" for "Beskaffenheder". Verified at
+% 600 dpi; both OCR witnesses read it the same way. It is NOT in the book's own
+% Rettelser leaf (p. 151 is not among the errata pages). Not corrected here.
+Rummet og til Det, der kan ville fortrænge den fra sit Sted, ligeledes med Hensyn til
+Jordklodens Tiltrækning. Farve derimod, endnu mere Lugt og Smag, synes at være mere
+tilfældige, eller dog kun at være til for vor Sandsning, ei, som hine, at vedkomme
+Tingens egen individuelle Bestaaen. Men kommer man først til at see Det hos Tingen, der
+gjør, at den har en vis Farve, at den lugter og smager paa en vis Maade, (og en Grund i
+Tingen selv maa dog dens Farve, Smag, Lugt have), i dets reelle Sammenhæng med dens hele
+øvrige Beskaffenhed, saa at det viser sig, at den ei kan andet, end just at fremkalde
+saadanne Affectioner hos os, kommer man overhovedet til Begreber, reale Begreber, om
+enhver bestemt Farve, Smag, Lugt, saa ville disse Beskaffenheder snart erkjendes for
+lige saa objectivt gyldige som Tyngde, Haardhed o. s. v. Hvad der gjør, at de sidste
+snarere synes at have Objectivitet, er just, at det ved deres Erkjendelse til Grund
+liggende Intelligente saa tydeligen træder frem; thi Forstanden selv fører det med sig,
+at Beskaffenheder af en saadan Art maae findes hos Ting, som skulle have en Bestaaen i
+Rummet].
+
+\anm{3} Imidlertid forstaaer det sig af sig selv, at, om end Begreberne ere af større
+Realitet og Gyldighed, end de ydre Skikkelser, hvilke ved dem begribes (nemlig begribes,
+hvad
+% --- p. 152 ---
+deres Tilvær og deres Grundform angaaer), saa beroer dog denne deres Realitet paa
+Realiteten af den hele Sphære overhovedet, hvortil disse Ting, med disse deres
+Grundformer og med deres reale Betydninger, der jo overhovedet kun ere relative
+(§. 17, Anm. 6) høre hen. Skulde et heelt Indbegreb af visse givne Anskuelser eller
+% In the cross-reference "(§. 17, Anm. 6)" the "Anm." is ORDINARY Fraktur — it is NOT
+% letterspaced, unlike the display lead-ins "A n m. 1." / "2." / "3." on pp. 149--151.
+% Verified at 600 dpi. So it takes no \sperr. The "§" and the figures 17 and 6 are
+% antiqua, transcribed plain as elsewhere in this file.
+Phænomener aldeles ikke være Udtryk af noget Sandt eller Virkeligt, men kun et blot Skin
+og Intet videre, saa kan naturligviis Erkjendelsen af deres Sammenhæng og de deri
+indbefattede Enkeltheders Realbetydninger i det saaledes Givne, skjønt denne Erkjendelse
+betyder mere, end den blotte Anskuelse af hine Phænomener, dog ei heller have nogen
+videre Gyldighed. Saa at med Gjenstandens større eller ringere Realitet ogsaa
+Begrebernes Realitet kan være forskjellig; thi de ere overhovedet kun disse Begreber,
+ved at være disse Gjenstandes Grundformer og Realbetydninger eller bestemmende
+Realgrunde. Men det er netop den dybere gaaende Tænkning selv, altsaa det grundigere
+Begreb selv, der lærer saaledes at vurdere Realiteten. Realitet er overhovedet kun et
+relativt Begreb. Tingenes egentlige Realitet kan kun bestemmes ved at see hen til Noget,
+som har en fuldkommen absolut Realitet i og ved sig selv allene. Alle Gjenstandes
+egentlige Realitet maa beroe paa den Realitet, de have formedelst denne høieste
+Relation, eller med Hensyn til det høieste Reale. (Nogen Realitet maa imidlertid
+aabenbart Alt have,
+% The parenthesis opened at "(Nogen Realitet" is still open at the foot of p. 152; it
+% closes on printed p. 153, "...vilde være aldeles ubegribeligt)." — that is the LAST
+% line of §. 59 and belongs to the pp. 153--178 batch. This fragment therefore ends
+% with one unclosed "(" ON PURPOSE. Every other bracket in it is balanced:
+% parentheses 9 open / 8 close, square brackets 1 / 1, braces 4 / 4, no „ “ quotation
+% marks at all on any of these four pages.
+%
+% RUBRIC B. IS NOT ON pp. 149--152. All four pages were read at 300 dpi and the
+% doubtful places re-read at 600 dpi: pp. 149--152 are continuous prose, the whole of
+% it §. 59's remarks Anm. 1--3, with no display line of any kind and no rule.
+% Rule sweep (longest contiguous dark run per pixel row, threshold at paper-median
+% -15, -25 and -40, margins and the black scan edge excluded): NOTHING above 60 px
+% anywhere on printed pp. 149, 150, 151, 152 or 153 below the top scan edge. The only
+% full-width runs are the scanner's black leaf edge at rows 0--95.
+%
+% The rubric B. head stands MID-PAGE ON PRINTED p. 153 (PDF 178): after the closing
+% line of Anm. 3 ("...vilde være aldeles ubegribeligt).", the last text line of §. 59)
+% and immediately above "§. 60." — the same mid-page position rubric A. has on p. 30,
+% and it carries no rule. The pp. 153--178 batch must place it. Measured at 600 dpi,
+% the PRINTED head reads, in six centred lines, the "B." in antiqua:
+%
+%       B.
+%       Reel Synthese
+%       eller
+%       Reelle Anskuelsers eller Gjenstandes Frem=
+%       bringelse ved en selvstændig synthetisk Frem=
+%       gangsmaade.
+%
+% (the two "=" are line-end divisions only, so the words are "Frembringelse" and
+% "Fremgangsmaade"), i.e.
+%
+%     \rubrik{B.}{Reel Synthese\\
+%       eller\\
+%       Reelle Anskuelsers eller Gjenstandes Frembringelse ved en selvstændig
+%       synthetisk Fremgangsmaade.}
+%
+% TWO DISAGREEMENTS WITH THE OVERSIGT, both recorded rather than normalised:
+%   (1) the printed head has NO COMMA after "Reel Synthese"; the Oversigt (roman XII,
+%       \ovrubrik{B.}) prints "Reel Synthese,".
+%   (2) the printed head has "Reelle" with a CAPITAL R; the Oversigt has lower-case
+%       "reelle". Both OCR witnesses read a capital, and the glyph at 600 dpi is the
+%       same Fraktur capital R as in "Reel" on the line above.
+% Rubric A.'s head on p. 30 agreed with its Oversigt entry exactly, so this is the
+% first head/contents disagreement in the book.
 
 % --- rubric B. --- §§ 60--67.  The head falls between p. 148 (§. 59) and
 %     p. 153 (§. 60); insert it where it stands and report the page:
