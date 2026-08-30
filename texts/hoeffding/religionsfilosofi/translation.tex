@@ -1,19 +1,50 @@
 % ============================================================
 %  H. Høffding, Religionsfilosofi
-%  Copenhagen and Christiania: Gyldendalske Boghandel
-%  Nordisk Forlag, 1901. Second edition 1906.
 %  TRANSLATION (English)
-%  Translated from the Danish transcription (transcription.tex).
+%
+%  EDITION.  This translation follows the THIRD EDITION, whose
+%  preface Høffding signed "Carlsberg d. 28. Februar 1924".
+%  The book was first published 1901 (2nd ed. 1906); the
+%  catalog entry is filed under 1901 for that reason, but the
+%  text translated here is the 1924 revision, which is
+%  Høffding's own final version.
+%
+%  In the Fortale til tredie Udgave Høffding records what he
+%  changed:
+%    - the epistemological section (ch. II) was SHORTENED,
+%      "kun det strengt nødvendige" retained, because he had
+%      since treated the matter in Den menneskelige Tanke
+%      (1910), Totalitet (1917), Relation (1921), Analogi (1923);
+%    - the two groupings of religious-psychological types were
+%      MERGED ("en Sammenarbejdelse af de to ... Grupperinger").
+%      Accordingly the 1901 subsection "Hovedgrupper af
+%      personlige Forskelligheder" (III.E.b) is ABSENT from the
+%      3rd ed. and has been dropped from this translation;
+%    - a number of notes were DELETED as outdated or
+%      superfluous, and new ones added.
+%
+%  SOURCE.  Translated from the Lindhardt og Ringhof e-book
+%  (ISBN 9788726277555, 2020), which sets the 3rd edition.
+%  Per the repo rule, the Danish e-book text is NOT transcribed,
+%  committed, or published: the epub is gitignored and only this
+%  English translation goes on the site.  The partial
+%  transcription.tex in this directory is keyed to the 1901
+%  text and is no longer the source of truth for the translation;
+%  it is retained but unlinked from the catalog.
+%
 %  Cf. B. E. Meyer's 1906 translation (The Philosophy of
-%  Religion, London: Macmillan), which is based on the German
-%  edition and differs in places from the Danish original.
+%  Religion, London: Macmillan), which renders the FIRST edition
+%  by way of the German, and so differs from this text both in
+%  substance and in what it contains.
 % ============================================================
 \documentclass[12pt,a4paper]{book}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{libertinus}
 \usepackage{libertinust1math}
+\usepackage{textalpha}
 \usepackage[english]{babel}
+\usepackage{enumitem}
 \usepackage[protrusion=true,expansion=true]{microtype}
 \usepackage{setspace}
 \usepackage[margin=1.2in]{geometry}
@@ -41,8 +72,9 @@
 \author{Harald Høffding\\[4pt]
   \small Translated from the Danish}
 \date{Copenhagen and Christiania:\\
-  Gyldendalske Boghandel, Nordisk Forlag\\
-  1901. Second edition 1906.}
+  Gyldendalske Boghandel, Nordisk Forlag\\[6pt]
+  \small First edition 1901; second edition 1906.\\
+  \small \textit{Translated from the third edition of 1924.}}
 
 \begin{document}
 \maketitle
@@ -60,15 +92,71 @@
 \newpage
 
 %% ============================================================
+%%  PREFACE TO THE THIRD EDITION
+%% ============================================================
+\chapter*{Preface to the Third Edition}
+\addcontentsline{toc}{chapter}{Preface to the Third Edition}
+\label{ch:fortale3}
+\markboth{Preface to the Third Edition}{}
+
+\noindent When I worked out my \emph{Philosophy of Religion} in the
+years 1896--1901, I had not yet given any fuller account of
+epistemology. Nor had I arrived at one when the second edition was due
+to appear (1906). Later I set out my epistemological position in ``The
+Human Thought'' (1910) and in a series of investigations bearing on the
+subject of the present book (on Totality 1917, on Relation 1921, and on
+Analogy 1923). It has thereby been possible, in this third edition, to
+shorten the epistemological section; on several points I could now
+simply refer to the works named, which would otherwise have required
+detailed justification. Only the strictly necessary epistemological
+content has been retained. In the religious-psychological section too I
+was able to refer to works that threw light on the topics (``The Great
+Humour'' 1916; ``Experiences and Interpretations'' 1918; ``Leading
+Thoughts in the Nineteenth Century'' 1920; together with the essay
+``Foreword and Postscript to my Philosophy of Religion,'' printed in
+``Minor Works''). I have besides carried out a consolidation of the two
+groupings of religious-psychological types, determined by different
+points of view, between which I earlier thought it possible to
+distinguish. Of the notes, a number have been omitted as outdated or
+superfluous. Where it was necessary, I have added new notes.
+
+The book's fundamental thought has remained the same. Its significance
+has confirmed itself to me over the years by what I have experienced or
+learned. Often it is precisely objections that have led to fresh
+corroboration. The book's fundamental thought is not a key that unlocks
+everywhere, but it leads one to pose fruitful questions and to enter
+upon investigations that one would otherwise be inclined to think
+superfluous. It warns against dogmatism of every kind, and it points at
+the same time to a deep-lying human need that can hardly die out so long
+as the life of the spirit is not being extinguished. It does not solve
+the great problem it treats, but it can lead to ever-renewed reflection.
+And I hope that the book will continue to work in the direction here
+indicated.
+
+\bigskip
+
+\begin{flushright}
+Carlsberg, 28 February 1924.\\
+\textsc{Harald Høffding}.
+\end{flushright}
+
+\newpage
+
+%% ============================================================
 %%  I. PROBLEM AND PROCEDURE
 %% ============================================================
 \chapter{Problem and Procedure}
 \label{ch:problem}
 
+% The e-book sets this epigraph without word spaces and with corrupted
+% breathings/accents ("Οὕϰἑστιλὐεινἀγνοοῦντατò δεσμόν"), plainly a defect of
+% the 2020 digitisation rather than a reading of the print. Word division and
+% diacritics restored here; the epub's form is recorded above. Aristotle,
+% Metaphysics III.1, 995a29.
 \begin{flushright}
-\textit{ou lyseis agnoōn ton desmon.}\\
+Οὐκ ἔστι λύειν ἀγνοοῦντα τὸ δεσμόν.\\
 \textsc{Aristotle}.\\[4pt]
-\textit{(One cannot untie a knot without knowing where it is bound).}
+\textit{(One cannot loose a knot without knowing where the binding lies).}
 \end{flushright}
 
 \bigskip
@@ -99,7 +187,10 @@ originality draws all strength and interest to itself; partly the great
 times of organization, in which all existing culture is shaped or bent
 into obedience under the highest religious ideas. In such classical
 times there is a great unity, or at least a great harmony, in the domain
-of spiritual life. Christianity had such a classical time in the age of
+of spiritual life; the division of labour that sets in at a certain stage
+of cultural development has not yet made itself felt in this domain.
+% 3rd-ed. addition: the "Arbejdsdeling" clause is not in the 1901 text.
+Christianity had such a classical time in the age of
 the primitive Christian community, and later in the great organizational
 period at the height of the Middle Ages. A religious problem forms only
 when other sides of spiritual life---science and art, morality and
@@ -168,7 +259,7 @@ inner coherence and consistency which in every domain is the ultimate
 mark of truth, and which must therefore also be required in the domain
 of the philosophy of religion. But the philosophy-of-religion enterprise
 will be most fruitful where religion and its phenomena are not placed in
-relation to an already completed philosophical conception, but are
+relation to some completed philosophical conception or other, but are
 illuminated by a philosophizing that is itself in the process of
 investigating whether a completion is possible at all. The task is to
 discuss religion's relation to spiritual life. Religion is itself a kind
@@ -191,9 +282,15 @@ discussed. The conscious insight into the impossibility of a solution
 (\textit{docta ignorantia}) naturally invites one to investigate whether
 it is then so absolutely necessary that a solution be found. In
 addition, one's eye will be sharpened for the particular conditions
-under which our spiritual culture lives, conditions which would probably
-not continue to persist, just as they even now do not exert equal
-influence on all personalities.
+under which our spiritual culture lives, and above all for the
+significance of the division of labour in the spiritual domain, through
+which the religious problem becomes a special form of the general
+problem of culture.
+% REVISED IN THE 3RD ED. The 1901 text continued instead: "...conditions
+% which would probably not continue to persist, just as they even now do
+% not exert equal influence on all personalities." The 1924 text drops
+% that clause and substitutes the division-of-labour point, matching the
+% new clause added above in the "classical times" paragraph.
 
 A philosophy-of-religion investigation can suitably be arranged so as to
 consist of an epistemological, a psychological, and an ethical part.
@@ -204,7 +301,7 @@ for human beings the explanation of existence in its entirety and in its
 individual parts. But when an independent science has developed, another
 kind of understanding or explanation appears alongside the religious
 one, and the question becomes whether these two kinds are compatible.
-Possibly the situation might be that the new, scientific mode of
+Many hold that the relation is this, that the new, scientific mode of
 explanation increasingly replaces the religious explanation where
 particulars are concerned, but that it cannot be applied to existence
 considered as a whole---to what one customarily calls the ``first'' or
@@ -249,7 +346,7 @@ way, for the ultimate standard for judging religion must belong to the
 ethical domain, where the final reckoning of the spiritual account takes
 place.---
 
-Within the framework here indicated, we should be able to find room for
+Within the framework here indicated, we shall be able to find room for
 all essential aspects of the religious problem. I wish to treat this
 problem not only with the intellectual interest that is aroused by a
 great and comprehensive subject, but also in the mood that comes from
@@ -412,22 +509,41 @@ human beings who profess it. For one cannot seriously believe in the
 persistence of values that one does not know at least approximately from
 one's own experience.---
 
-It is to Kant's philosophy that we owe the independence of the problem
-of value from the problem of knowledge. He taught us to distinguish
-between evaluation and explanation. That this distinction cannot,
-however, be a complete opposition is clear from the fact that it must
-depend on the laws and forces of existence whether something can acquire
-value for us and whether we can make the valuable into an end that can
-be realized. The religious problem can therefore not be separated from
-the other philosophical problems, even though it is most advantageous to
-treat it by itself. It presents a clear analogy with the other problems.
-The fundamental philosophical problem concerns the continuity of
-existence in its relation to the special and individual forms of
-existence. And if the hypothesis that the proposition of the persistence
-of value is the religious axiom turns out to be well-founded, then the
-religious problem concerns the continuity of existence from a
-distinctive point of view and thus falls under the fundamental problem
-as a special form of it.
+% REVISED IN THE 3RD ED. — the largest change in chapter I.
+% The 1901/1906 text closed the chapter with a passage on Kant and the
+% fundamental problem: "It is to Kant's philosophy that we owe the
+% independence of the problem of value from the problem of knowledge. He
+% taught us to distinguish between evaluation and explanation. [...] The
+% fundamental philosophical problem concerns the continuity of existence in
+% its relation to the special and individual forms of existence. And if the
+% hypothesis that the proposition of the persistence of value is the
+% religious axiom turns out to be well-founded, then the religious problem
+% concerns the continuity of existence from a distinctive point of view and
+% thus falls under the fundamental problem as a special form of it."
+% The 1924 text deletes all of that and substitutes the passage below on
+% value and wholeness, with cross-references to Den menneskelige Tanke
+% (1910) and Totalitet som Kategori (1917) — books that did not exist when
+% the first edition was written. The "special form" formula survives, but
+% relocated and recast: it now appears earlier in the chapter, where the
+% religious problem is called a special form of the general problem of
+% culture. The full 1901 wording is kept in transcription.tex.
+
+Every application of the concept of value presupposes a relation to a
+whole whose persistence and development require definite conditions.
+Such wholes are organisms, personalities, societies, and finally the
+human race. In an individual whole endowed with consciousness (a
+personality), feelings of pleasure and displeasure, in all their various
+degrees and forms, appear as symptoms of a need to maintain or to call
+forth the conditions of the whole's persistence. Here, then, value is
+known by immediate experience. But by way of analogy the concept of
+value---and with it the concept of wholeness, which makes rational
+discussion of values possible---can be applied to all wholes.---A fuller
+demonstration than can be given here of the significant connection
+between the concepts of value and wholeness I have attempted in
+\emph{Den menneskelige Tanke} (pp. 238--241; 346--349) and in
+\emph{Totalitet som Kategori}, ch.~5.
+
+\begin{center}---\end{center}
 
 
 %% ============================================================
@@ -835,10 +951,13 @@ aspect of eternity,'' we survey great regions of existence.
 
 % [text to be added]
 
-\subsection{Main Groups of Personal Differences}
-\label{ssec:pers-groups}
-
-% [text to be added]
+% DROPPED IN THE 3RD EDITION. The 1901/1906 text had a subsection here,
+% "Hovedgrupper af personlige Forskelligheder" (Main Groups of Personal
+% Differences). It is absent from the 3rd ed., which runs straight from
+% "Personlighedsprincipets Betydning og Berettigelse" to "Buddha og Jesus" —
+% this is the "Sammenarbejdelse af de to ... Grupperinger af
+% religionspsykologiske Typer" announced in the 1924 Fortale. Retained as a
+% comment so the divergence from the first edition stays on the record.
 
 \subsection{Buddha and Jesus}
 \label{ssec:buddha-jesus}
