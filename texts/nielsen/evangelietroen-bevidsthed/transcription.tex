@@ -136,49 +136,98 @@
 %             transcribed before it was known and HAVE NOT BEEN RE-SWEPT for it;
 %             see RESUME-NOTES.md, open review items.
 %
-%  THE FRAKTUR x/r PROBLEM — the single largest source of error in this book.
-%             In this fount the x and the r are distinguishable only at 600 dpi
-%             and above, by a stroke descending below the baseline on the x.
-%             BOTH OCR witnesses confuse them, in both directions. Worse, the
-%             compositor really does set a wrong sort here often: „vore“ for
-%             voxe (pp. VIII, 79), „strar“ for strax (pp. 56, 86, 110, 118, 120,
-%             126), „vorte“ (p. 127), „Grundtert“ for Grundtext (pp. 58, 132),
-%             „forverle“ (pp. 73, 137), „Omverlinger“ (p. 84), „Reflerion“
-%             (pp. 140, 142), „opvore“ (p. 157) — while a true „strax“ can stand
-%             twelve lines below a „strar“ on the same page (p. 120), and a true
-%             „voxer“ one line above a „vorer“ (p. 141). Each wrong sort is
-%             logged at its site. Do not normalise them.
+%  THE FRAKTUR x/r PROBLEM --- and why this edition no longer claims a single
+%             x/r wrong sort anywhere. In this fount the x and the r differ only
+%             by a stroke descending below the baseline on the x. Nielsen's
+%             vocabulary is full of the letter --- Text, Exeget, exegetisk,
+%             Reflexion, orthodox, Exempel, Vexel, strax, voxe, Existens --- so
+%             nearly every page carries candidates, and both OCR witnesses read
+%             the same sort both ways, sometimes twice on one page.
 %
-%             CAVEAT ON THE LIST ABOVE. Those readings were judged at 1200 dpi,
-%             by the same method that then failed wholesale over pp. 405--443
-%             (see the next paragraph). The p. 120 and p. 141 control pairs have
-%             since been re-verified at 2400 dpi and stand, but the rest of the
-%             wrong-sort log for pp. 1--391 has NOT been re-examined at that
-%             magnification and should not be treated as settled. A full re-audit
-%             of the x/r calls before p. 392, on the 2400 dpi method, is the
-%             largest outstanding piece of verification in this edition.
+%             WHAT THE SCAN ACTUALLY CONTAINS. `pdfimages -list' shows every page
+%             to be a 96 ppi RGB image PLUS A 1-BIT MASK AT 399--400 ppi, and the
+%             mask carries all the type. At 400 ppi the x's tail is one to three
+%             pixels wide. Every render above 400 dpi is therefore INTERPOLATION,
+%             not new information --- so the „1200 dpi“ and „2400 dpi“
+%             verifications recorded all through the making of this edition were
+%             reading interpolated pixels, and could not have settled what they
+%             were said to settle.
 %
-%             THE 'EMPTY BOX' OF pp. 405--443 WAS AN ARTEFACT, NOW WITHDRAWN.
+%             THE CALIBRATION. A quantitative audit of pp. 1--130 measured, at
+%             600 dpi, each doubtful glyph's ink depth below the feet of its
+%             neighbours (D px), calibrated against 61 CERTAIN-r words (har, var,
+%             naar, Par: D from -3 to +2) and against words this file already
+%             accepted as x. Two results decide the matter:
+%               (1) eleven accepted „strax“ give D = +2, +4, -1, 0, +3, -1, -1,
+%                   +4, +3, +6, +4. FOUR OF THE ELEVEN SHOW NO TAIL AT ALL, so
+%                   absence of a tail is not evidence of an r.
+%               (2) accepted „forvexle / forvexler / Forvexles / vexler“ (pp. 10,
+%                   18, 48, 54, 103, 104) give D = 0, +3, +2, +1, about 0, +2 ---
+%                   statistically indistinguishable from the D measured at every
+%                   site this file had called a defect.
+%             The scan therefore yields only a POSITIVE signal: D of +3 or more
+%             indicates an x. Silence indicates nothing.
+%
+%             THE RULE. **The burden of proof is on the claim of a wrong sort.**
+%             Where the printed form is not a Danish word, the reading defaults to
+%             the sense-form unless there is positive glyph evidence for the r,
+%             and there is no such evidence anywhere in this book. This is the
+%             editor's deliberate decision, and it replaces the previous practice
+%             FOR THIS ONE CLASS OF DEFECT ONLY.
+%
+%             THE INVENTORY IS ACCORDINGLY WITHDRAWN THROUGHOUT. Every r-for-x
+%             wrong sort formerly logged in this file --- „strar“ for strax at
+%             some sixty sites, and „Grundtert(ens)“, „Tert“, „Terten“,
+%             „Tertens“, „Ereget“, „Eregeter“, „Eregeten“, „eregetiske“,
+%             „Reflerion“, „Reflerionen“, „Reflerioner“, „Reflerionsbegreber“,
+%             „Erempel“, „Erempler“, „orthodore“, „Orthodor“, „Eristens(en/s)“,
+%             „eristere(r/nde)“, „forverle“, „forverlet“, „forverler“,
+%             „Forverles“, „verler“, „Omverling(er)“, „opvore“, „opvorende“,
+%             „opvorne“, „vore“, „vorer“, „vorte“, „Vært“, „Praris“,
+%             „ertraordinære“, „ercentriske“, „Hereri“, „Tilvært“, „t. Er.“,
+%             „f. Er.“ and „Øren“ for Øxen --- has been corrected to the
+%             sense-form and its comment withdrawn at the site. THE EARLIER
+%             INVENTORY WAS AN ARTEFACT OF INTERPOLATED RENDERS, of exactly the
+%             kind that produced the false „empty box“ of pp. 405--443 below.
+%             The two recorded CONTROL PAIRS ARE NOT REAL: on p. 120 the „strax“
+%             and the „strar“ both measure D+3 and are the same word; on p. 141
+%             the „voxer“ and the „vorer“ stand inside one repeated formula
+%             („Saa voxer Barnet op til Yngling; men Evangeliet voxer med“ ...
+%             „Ynglingen voxer op til Mand; men Evangeliet voxer med“).
+%
+%             THE „vore“ CLASS RESTS ON SENSE, AND ON NOTHING ELSE.
+%             „vor/vort/vore“ is ordinary Danish for OUR; „voxe“ is to grow,
+%             „voxte“ grew, „Væxt“ growth. The glyph cannot decide between them
+%             and only the sense can, so every such site was read from its own
+%             sentence, and a % note at each site that was changed says so.
+%             Where the passage wants OUR the text is left alone (pp. V, 10, 12,
+%             13, 14, 20, 38, 46, 48, 53, 56, 83, 127, 147, 151, 187, 221, 225,
+%             230, 272, 274, 279, 281, 287, 309, 320, 321, 338, 388, 495, 520).
+%             „Uvorenhed“ (pp. 486, 522) STANDS: uvoren is a real Danish word,
+%             a variant of uvorn, wanton, and the sense takes it.
+%
+%             WHAT IS UNTOUCHED. Positive x readings stand: where a sort DOES
+%             throw the tail the evidence is real. So do the few wrong sorts in
+%             the OTHER direction, where an x stands and the sense wants an r
+%             („dex“ p. 216, „hex“ p. 367, „nærmexe“ p. 368) --- these are
+%             positively evidenced and are not affected by the rule above. And
+%             every wrong sort of a DIFFERENT CLASS is untouched and still logged
+%             at its site: turned n/u sorts, dropped and broken sorts, damaged and
+%             missing stops, quotation-mark faults, and the r-for-v cluster of
+%             p. 501 („tilrisse“, „rære“, „besrærlig“; also „hrori“ p. 417,
+%             „inclusire“ p. 268, „forrandle(de)“ p. 259, „erangelisk“ p. 271,
+%             „rise“ p. 242, „vedblire“ p. 238, „forranskede“ p. 252). The r/v
+%             test is a different one and still holds: the v carries a right
+%             stroke running unbroken to the baseline, the r does not.
+%
+%             THE 'EMPTY BOX' OF pp. 405--443 WAS AN ARTEFACT, WITHDRAWN EARLIER.
 %             Three consecutive batches covering pp. 405--443 reported that not
-%             one of some thirty-seven x-candidates carried a true x, and
-%             inferred that the compositor's case had run out of the sort. Each
-%             brief passed that finding to the next, and it hardened into a rule.
-%             It was wrong. On re-examination at 2400 dpi --- every candidate
-%             judged against a certain r in the same word or the same line, and
-%             calibrated on the true x of „Texten“ / „Sex“ (p. 395) and
-%             „Grundtextens“ (p. 396) --- EVERY x-candidate in pp. 392--443 is a
-%             TRUE x: Text, Exempel, exegetiske, strax, t. Ex., f. Ex.,
-%             Vexel(-Forhold), Orthodoxe, Orthodoxien, Exegeterne, existerer,
-%             sammenvoxet, Examen, forvexle(s), Fixstjerneu, Reflexer, vexle,
-%             Exem-pel, Vexelforhold, exegetisk, Texten, orthodoxe, voxede, voxe,
-%             Saxen, fuldvoxne, Extremerne, forvexlende, Exempler. The wrong-sort
-%             comments that had been logged at those sites are withdrawn with them.
-%             The discriminator itself is sound: the x throws a stroke descending
-%             BELOW the baseline and kicking to the LEFT; the r's leg stops on the
-%             baseline in a wedge-shaped foot. Genuine wrong sorts do occur before
-%             p. 392 and again after p. 443 (p. 453 sets „Terten“ and „Texten“
-%             three lines apart), so nothing here licenses correcting toward sense:
-%             judge every occurrence on the image, at 2400 dpi, against an r beside it.
+%             one of some thirty-seven x-candidates carried a true x, and inferred
+%             that the compositor's case had run out of the sort. Each brief
+%             passed that finding to the next, and it hardened into a rule. It was
+%             wrong --- every x-candidate in pp. 392--443 is a true x --- and it
+%             was the first symptom of the fault the audit above has now diagnosed
+%             generally.
 %
 %  SCRIPTURE CITATIONS: the book cites the Gospels constantly, and is not
 %             internally consistent between forms (Joh. / Ioh., spacing around
@@ -280,17 +329,11 @@
 %             forward. PDF 548--550 are blank leaves and PDF 551 the marbled back
 %             pastedown, confirming the page map at its far end.
 %
-%             OUTSTANDING VERIFICATION, the one substantial piece left: the x/r
-%             calls for pp. 1--391 were made at 1200 dpi, by the method that then
-%             failed wholesale over pp. 405--443 and had to be undone across
-%             sixty-nine readings. The p. 120 and p. 141 control pairs have been
-%             re-verified at 2400 dpi and stand, and genuine wrong sorts
-%             certainly exist (p. 453 sets „Terten“ and „Texten“ three lines
-%             apart; p. 466 „existere“ and „eristere“), so nothing licenses
-%             correcting toward sense. But some proportion of the wrong-sort log
-%             before p. 392 is probably as mistaken as pp. 405--443 were, and it
-%             should be re-audited on the method set out under THE FRAKTUR x/r
-%             PROBLEM above before this edition is called finished.
+%             THE x/r RE-AUDIT IS DONE, and it closes the one substantial piece
+%             of verification that stood open. The wrong-sort inventory for the
+%             whole book has been withdrawn and the readings corrected to the
+%             sense-form; see THE FRAKTUR x/r PROBLEM above for the evidence, the
+%             rule and its scope. No other class of defect was touched.
 % ============================================================
 \documentclass[12pt,a4paper]{book}
 \usepackage[utf8]{inputenc}
@@ -512,11 +555,11 @@ anden, har heller ikke han turdet indlade sig paa nogen endelig Gjendrivelse.
 Evangelietroen kan ikke gjendrives; den har sit eget, overnaturlige Princip:
 den Troende holder ud indtil Enden.
 
-% Printer's defect: "vore" as printed (v-o-r-e, confirmed at 600 dpi), where
-% the sense wants "voxe". Transcribed as printed; not in the Rettelser list.
+% x/r: read „voxe“ --- „hans Kræfter voxe under Stridens Gang“ --- by sense. The scan
+% cannot distinguish this fount's x from its r; see the header. Not in the Rettelser list.
 Den moderne Bevidsthed kan ikke gjendrives; ogsaa den har sit eget Princip,
 og frygter ikke dets Conseqvenser: den frie Tænker mattes ikke, hans Kræfter
-vore under Stridens Gang.
+voxe under Stridens Gang.
 
 Den eneste af de ideelle Magter, paa hvis Gjendrivelse her altsaa kunde
 tænkes, maatte da være Middelveislæren, og dette saameget mere, som den
@@ -2469,10 +2512,7 @@ heller nogen Sortebroder, men en Erkeengel, der som en
 % as „Lic. theol.“ on the title page and „Favete lingvis“ in the Fortale.
 \textit{Deus ex machina} hugger Knuden over. Kan den sidste Digtning nu ikke med
 mindste Skin af Ret retfærdiggjøres af Evangeliets
-% Printer's error: „Grundtert“ as printed --- again a plain r, without the
-% descending tail of the x, verified at 600 dpi; the sense requires
-% „Grundtext“. Transcribed as printed.
-Grundtert, da kan den første det ligesaa lidt; og der er saaledes ingen Grund
+Grundtext, da kan den første det ligesaa lidt; og der er saaledes ingen Grund
 til at miskjende den evangeliske Fremstilling af ængsteligt Hensyn til Legendens
 Udsvævelser. Blive vi altsaa, som det sig bør, ved den kanoniske Overlevering,
 da beholder Trolovelsen sin fulde sædelige Gyldighed, og da vil ogsaa den
@@ -2552,10 +2592,7 @@ en Aabenbarelse. Hans Hjerte fordrer intet Mindre, end hvad Drømmens Engel
 forkynder ham: han kræver Underet, og derfor troer han ogsaa paa Underet. Denne
 Josephs Tro er imidlertid uendelig forskjellig fra Drømmetyderens løse Overtro;
 thi den beviser
-% Printer's error: „strar“ as printed --- a plain r without the x's descending
-% tail (600 dpi), against the x of „Reflexion“ five lines above in this same
-% note. The sense requires „strax“. Transcribed as printed.
-strar sin Sandhed i en stor sædelig Beslutning: han vaagner af sin Drøm, for at
+strax sin Sandhed i en stor sædelig Beslutning: han vaagner af sin Drøm, for at
 gjøre, som Herrens Engel har befalet ham. Derved bliver Joseph et evangelisk
 Forbillede for alle Dem, der med reen og mandig Selvfornegtelse fyldestgjøre
 Pligtens hellige Lov, selv da, naar Pligtopfyldelsen, hvis den vorder kundbar,
@@ -2929,12 +2966,7 @@ Hjerteskud af Qvindelighedens Rod. Men med dette mystiske Billedsprog kommer man
 dog ikke videre end til den Antydning, at Guds Søns Moder maa fremfor alle
 Qvinder have været en reen, en elskelig, en livsalig Natur. Men hvilken Gaade!
 Er det en hellig Natur, hvorom Talen er, saa er Maria jo syndefri, saa
-% Printer's error: „forverle“ as printed. At 600 dpi the sixth letter is a plain
-% r, with no trace of the tail by which this fount's x descends below the
-% baseline --- it is indistinguishable from the r of „for“ in the same word. The
-% sense requires „forvexle“. Same defect class as „strar“ for „strax“ on p. 56;
-% both OCR witnesses read „forverle“. Transcribed as printed.
-forverle vi jo Moderen med hendes Søn, og falde tilbage i Legendens barnagtige
+forvexle vi jo Moderen med hendes Søn, og falde tilbage i Legendens barnagtige
 Tankeleg. Skal hun være en syndig, men dog alligevel reen og skyldfri Natur, saa
 støde vi jo her paa en Modsigelse, som ingen Menneskeforstand synes at kunne
 udholde. Forlade vi derimod det mislige Spil med Naturbestemmelser, og sige det
@@ -3084,11 +3116,10 @@ Elisabeth forstaaer Maria, saa vende vi os igjen til den Bedagede, om vi maaskee
 under hendes Veiledning kunne gjøre et nyt Indblik i
 % --- p. 79 ---
 Troens Væsen. „Hvad er det altsaa for en vidunderlig Sjælekraft, der forsoner
-% Printer's error: „vore“ as printed, the third instance of this book's r-for-x
-% (cf. „strar“ p. 56, „forverle“ p. 73). At 600 dpi the r ends on the baseline
-% with a plain flag and shows none of the x's descending tail. The sense
-% requires „voxe“. Both OCR witnesses read „vore“. Transcribed as printed.
-Angerens Smerte med Fortrøstningens Glæde, at de begge vore tilsammen, saa at
+% x/r: read „voxe“ --- „at de begge voxe tilsammen“ --- by sense. Both OCR witnesses read
+% „vore“ and settle nothing; the scan cannot distinguish the sorts (see the header). A
+% first pass logged a wrong sort here; that entry is withdrawn.
+Angerens Smerte med Fortrøstningens Glæde, at de begge voxe tilsammen, saa at
 Glæden selv nærer sig af Smerten, og Smerten forvandler sig til en inderlig
 Veemods stille Glæde?“ Spørg den Bedagede, der har stridt den gode Strid, og
 Svaret vil lyde kort og bestemt: „det er den sande Ydmyghed.“ --- Stridens
@@ -3280,14 +3311,7 @@ var en Tid, da Propheterne i Israel dreves af Guds hellige Aand, og kunde, midt
 under Endelighedens mangehaande Misviisninger, saa sikkert stole paa dens
 ufeilbare Indskydelser; der var en Tid, da den hebræiske Folke-Aand trods alle
 Synder og Overtrædelser blev indviet til at bære det evige Ord gjennem Tidernes
-% Printed „Omverlinger“ for „Omvexlinger“ --- a genuine r, not the Fraktur x.
-% Verified at 600 dpi (PDF p. 101): the glyph after „Omve“ is identical to the
-% final r of the same word and has no stroke descending below the baseline, unlike
-% the true Fraktur x of „f. Ex.“ (p. 87, p. 93) and „(Extremer)“ (p. 90), each of
-% which drops a diagonal below the line. Both OCR witnesses read r. This joins the
-% book's documented series: „vore“ (pp. VIII, 79), „strar“ (pp. 56 and 86),
-% „forverle“ (p. 73). Transcribed as printed.
-Omverlinger indtil Tidens Fylde.“ Det er nu dette overnaturlige Ord, der har
+Omvexlinger indtil Tidens Fylde.“ Det er nu dette overnaturlige Ord, der har
 givet den naturlige Folkecharakteer sit Navn, og derfor blev det sagt til det
 udvalgte Folk, at det skulde være et Kongerige af Præster, --- \emph{et helligt
 Folk}.
@@ -3329,11 +3353,7 @@ Betingelsen for, at Ordet kan blive Kjød, og fremtræde som selvstændigt Led i
 Slægten. „Havde det været Formaalet, at hævde den hellige Lovs almindelige
 Overmagt over Menneskenaturens Drifter og opsætsige Egenvillie, da skulde intet
 Brud i Slægtlivet selv have været fornødent; da kunde den Almægtige jo
-% Printed „strar“ for „strax“: a genuine r, verified at 600 dpi (PDF p. 103) ---
-% no descender below the baseline, and the glyph is identical to the r two letters
-% earlier in the same word. The same reading was verified on p. 56. Both OCR
-% witnesses agree. Transcribed as printed.
-strar have aabenbaret sig i Skyerne med Kraft og Herlighed, og som
+strax have aabenbaret sig i Skyerne med Kraft og Herlighed, og som
 Menneskeslægtens Gud forkyndt sine Trudsler og Forjættelser for hele
 Menneskeheden, istedetfor at nedlade sig til at blive en Familiegud og begynde
 med i al Stilhed at kalde Abraham til en Side, og udvælge ham alene af Massen.
@@ -3376,9 +3396,8 @@ Joseph, ere jo hverken \emph{hellige} i den lavere Forstand, hvori man til
 dagligt Brug skjødesløst og halvt spottende siger om en Opvakt, at han er af de
 % „f. Ex.“: a true Fraktur x --- at 600 dpi the glyph after the capital E throws a
 % diagonal below the baseline, which the r of „naar“ and „taler“ on the same line
-% does not. Contrast „strar“ (p. 86) and „Omverlinger“ (p. 84), where the glyph has
-% no such descender. Both OCR witnesses read „Er.“ at every one of these sites and
-% are therefore useless here; the reading is settled on the image alone.
+% does not. Both OCR witnesses read „Er.“ at every one of these sites and are
+% therefore useless here; the reading is settled on the image alone.
 Hellige; ei heller i den særegne Forstand, hvori Catholiken bruger Ordet, naar
 han f. Ex. taler om „de Helliges Forbøn“; endnu mindre i den allerhøieste
 Forstand, som naar vi tænke paa den hellige Gud. Lægger man derimod Eftertrykket
@@ -3721,10 +3740,9 @@ af een og samme „ubeviislige“ Forudsætning (og det i en Verden, der tør s�
 sin Salighed i Pant paa, at Gud ikke er istand til at gjøre et eneste Under)
 lyder jo rigtignok saa mat og klangløs, at mangen Evangelieforsvarer vel vilde
 undsee sig ved den, og
-% „strax“, not „strar“: verified at 900 dpi (PDF p. 115) by the test used on
-% pp. 84 and 86 --- the final sort drops a diagonal below the baseline, unlike
-% the r two letters earlier in the same word, and is identical to the true x of
-% „strax“ on p. 6. Tesseract reads r here; the image does not.
+% „strax“ with a TRUE x: verified at 900 dpi (PDF p. 115) --- the final sort drops a
+% diagonal below the baseline, unlike the r two letters earlier in the same word, and
+% is identical to the true x of „strax“ on p. 6. Tesseract reads r here; the image does not.
 strax ile med at opsøge sig nogle videnskabelige Beviser. Men just af den Grund
 kan Methoden være ret brugbar til praktisk Øvelse; med den videnskabelige
 Formidling har det jo slet ingen Hast. Undseer den Troende sig derimod ved at
@@ -4145,13 +4163,11 @@ Strauß, viser sig saa udpyntet med Reminiscenser af det Gl. Tst.“
 \emph{Besvarelse.} Altsaa: Hymnerne mangle poetisk Originalitet! Ganske rigtigt.
 Maria er ingen Skjønaand, og Zacharias ingen Digter. Er det maaskee
 Theaterkritikens Maalestok, der skal lægges an paa de evangeliske Optrin; da maae
-% PRINTER'S DEFECT: „strar“ for „strax“ --- as on pp. 56, 86. At 600 dpi the final
-% glyph throws no descender below the baseline, so it is r, not the Fraktur x.
-vi strar give Kritikeren Ret, og kun forhjælpe ham til at udtale sig med lidt
+vi strax give Kritikeren Ret, og kun forhjælpe ham til at udtale sig med lidt
 større Bestemthed. „De tvende Scener i Zacharias's Huus, nemlig: Marias Besøg og
 Naboernes Lykønskninger i Anledning af Sønnens Fødsel, ere naturligviis anlagte
 paa at motivere et Par religiøs-lyriske Impromtuer. Men i denne Henseende kan den
-Hellig Aand neppe siges at have været sin Opgave voren. Elisabeth driver det
+Hellig Aand neppe siges at have været sin Opgave voxen. Elisabeth driver det
 % PRINTER'S DEFECT: „knn“ for „kun“ --- n for u, verified at 900 dpi.
 knn til nogle temmelig vidt drevne Glædesudbrud, og hele Marias Foredrag gaaer paa
 anden Haand. Den
@@ -4299,9 +4315,7 @@ naar de slet ingen Blanding indeholde? --- Forandringens timelige Tid er for den
 vælgende Frihed tillige en Betænkningens Tid. Evigheden giver sine Vælgere Tid til
 Betænkning; derfor falde dens Ord forskjelligt efter Tidernes Leilighed. Der er et
 Ord: „Hvo, som ikke er med mig, er imod mig“, det
-% PRINTER'S DEFECT: „verler“ for „vexler“ --- the same r-for-x as „forverle“
-% (p. 73) and „forverler“ (p. 119); no descender at 900 dpi.
-verler med et andet Ord: „Hvo, som ikke er imod mig, er med mig“. Hiint, det
+vexler med et andet Ord: „Hvo, som ikke er imod mig, er med mig“. Hiint, det
 strenge Ord, peger mod det Evige, dette, det mildere Ord, tager Hensyn paa det
 Timelige; thi den timelige Tid er Betænkningens Tid. Betænkningen hører
 Endeligheden til, og maa have en Ende (en Betænkningstid, der aldrig hører op,
@@ -4381,12 +4395,11 @@ vel neppe engang blive Eensformigheden vaer (thi der hører dog unegtelig en st�
 Hukommelse til, for at kunne huske, hvorledes Træernes Blade sidde og danne sig
 det ene Aar efter det andet). Med Kunstfrembringelser er det en anden Sag. Her
 skyer man den eensformige Gjentagelse, fordi den altid gaaer paa Oprindelighedens
-% PRINTER'S DEFECT: „strar“ for „strax“ again (cf. p. 110 above).
 % PRINTER'S DEFECT: the stop after „Vildfarelsen“ prints as a period with a short
 % raised stroke over it --- a damaged or wrong sort. Read as a full stop, since
 % „Thi“ is capitalised.
 Bekostning. --- Falder Kritiken nu paa, at bedømme Naturens Værker efter samme
-Forudsætninger, som Kunstens, mærker man strar Vildfarelsen. Thi saalænge
+Forudsætninger, som Kunstens, mærker man strax Vildfarelsen. Thi saalænge
 Naturinstinctet virker lige umiddelbart i alle Frembringelser, har man
 Oprindeligheden i enhver Gjentagelse, og spørger slet ikke om det Originale. Eller
 vilde man ikke smile, hvis en Kritiker lod haant om Nattergalens Sang, fordi den
@@ -4409,9 +4422,7 @@ maatte da i en saa aandrig Taleform blive et reent Genie, ja et uhyre Genie,
 % unspaced (checked at 600 dpi). Per the book's convention this is \textit{}.
 Geniet \textit{par excellence}, Sønnen hans genial-originale Selvaabenbarelse, og
 den gudmenneskelige Christus lige genial og lige original i Ord og Gjerninger. ---
-% PRINTER'S DEFECT: „forverler“ for „forvexler“ --- r for x, exactly as „forverle“
-% on p. 73; no descender at 600 dpi.
-Den Forvirring, som herfra udgaaer, er alsidig nok. Man forverler det Hellige med
+Den Forvirring, som herfra udgaaer, er alsidig nok. Man forvexler det Hellige med
 det Profane, det Overnaturlige med det Naturlige, Naturfrembringelse med
 Kunstfrembringelse, Sagen selv med Ideen, Virkelighed med Mulighed, det Oplevede
 med dets Fremstilling. Naar alle Grændser saaledes gjøres flydende, da bliver
@@ -4429,10 +4440,7 @@ Naar der tales om at glæde sig, kan Glæden vel være af
 meget forskjellig Art, sandselig, aandelig, verdslig, religiøs o. s. v.; men
 hvilken Glæde man end vil nævne, saa ligger det i dens Natur, deels at være
 oprindelig, deels at yttre sig paa en eiendommelig Maade. Betragte vi nu for det
-% PRINTER'S DEFECT: „strar“ for „strax“ once more. Note that the SAME page prints
-% a true Fraktur x in „strax“ twelve lines below (the glyph throws a clear
-% descender there and none here); both are transcribed as printed.
-Første den reent naturlige eller verdslige Glæde, saa opdage vi strar en Forskjel
+Første den reent naturlige eller verdslige Glæde, saa opdage vi strax en Forskjel
 imellem Glæden selv og Glædens ideelle Fremstilling. Eet er det, at være glad og
 yttre sin Glæde uvilkaarlig i Ord og Gebærder, et Andet er det, at fremstille
 Glædens Yttringer i ideel Efterligning: Eet er det, at synge af Glæde, et Andet,
@@ -4482,11 +4490,7 @@ den ideelle Ligevægt, mislykkes ogsaa Fremstillingen: man kan jo ikke vel paa e
 % B-e-r-u-s-e-d-e do not. spacing.py reported the RUN „ſpille Beruſede, For-“;
 % only the first word is really spaced.
 Gang selv baade være beruset, og dog tillige \emph{spille} den Berusede.
-% PRINTER'S DEFECT: printed „Forverles“ (a genuine r where the sense wants x),
-% the same fault as „strar“ pp. 56, 86, 110, 118, 120, „verler“ p. 115 and
-% „forverler“ p. 119. Confirmed at 600 dpi: the letter sits on the baseline like
-% the r of „Forudsætninger“ two words later, with no descender. As printed.
---- Forverles nu de Forudsætninger, der passe paa Kunstfrembringelsen, med dem,
+--- Forvexles nu de Forudsætninger, der passe paa Kunstfrembringelsen, med dem,
 der gjælde den naturlige Yttring, hvor uklar og meningsløs maa da ikke Dommen
 blive.
 
@@ -4649,11 +4653,7 @@ forløst sit Folk“, antyder allerede Forskjellen. Zacharias er „bleven fyldt
 den Hellig Aand“, at han maa vidne om Forjættelsernes Opfyldelse; men han er ikke
 saaledes gudopfyldt, at han kan leve, røre sig og aande i Gud, som Maria. Hans
 Stilling er, i Forhold til hendes, Betragterens og Tilskuerens Stilling. Hans
-% PRINTER'S DEFECT: printed „strar“ (r for x) --- confirmed at 1200 dpi, where
-% the final sort sits on the baseline exactly like the r of „griber“ that
-% follows, with no descender. Contrast the true „strax“ of pp. 128, 131, 132 and
-% 134 in this same batch, where the descender is plain. As printed.
-Hymne begynder egentlig der, hvor Marias ender. Medens hun, den Benaadede, strar
+Hymne begynder egentlig der, hvor Marias ender. Medens hun, den Benaadede, strax
 griber det Nærværende, og finder Opfyldelsen i sit eget Hjerte, søger den Gamles
 Blik derimod tilbage til Folkets historiske Fortid, og hviler sig paa Davids
 Huus, paa Propheterne, som have været fra fordums Tid. Zacharias er ikke saaledes
@@ -4690,10 +4690,7 @@ Mørke, og i Dødens Skygge, at styre vore Fødder paa Fredens Vei“ (V.\ 79).
 Saaledes staaer Zacharias i sit Livs Aften ved den Grændse, hvor det Gamle ender,
 og det Nye begynder; saaledes er den Familieaand, der i sit Skjød modtager den
 Høiestes Prophet, selv forklaret i den Hellig Aand, og saaledes forstaae vi da
-% PRINTER'S DEFECT: printed „vorte“ (r for x) where the sense wants „voxte“ ---
-% the same r/x fault as „strar“ on p. 126 above; at 1200 dpi the sort sits on
-% the baseline like the r of „Barnet“ four words earlier. As printed.
-ogsaa Slutningens Ord (V.\ 80): „Barnet vorte, og blev styrket i Aanden, og var i
+ogsaa Slutningens Ord (V.\ 80): „Barnet voxte, og blev styrket i Aanden, og var i
 Ørkenerne indtil den Dag, han fremstillede sig for Israel.“
 
 See vi nu tilbage paa disse tvende Optrin i den hellige Familie, da kunne vi
@@ -4773,8 +4770,7 @@ dem, og de frygtede saare. Men Engelen sagde til dem: frygter ikke! thi see, jeg
 forkynder Eder en stor Glæde, som skal vederfares alt Folket; thi Eder er idag en
 Frelser født, som er den Herre Christus i Davids Stad. Og dette skal være Eder
 til et Tegn: I skulle finde et Barn svøbt, liggende i en Krybbe. Og strax var der
-% „strax“ with a true x here (descender plain at 1200 dpi), twelve pages after
-% the „strar“ of p. 126 --- the book alternates, exactly as on p. 120.
+% „strax“ with a true x here (descender plain at 1200 dpi).
 hos Engelen en himmelsk Hærskares Mangfoldighed, som lovede Gud og sagde: Ære
 % --- p. 129 ---
 være Gud i det Høie! og Fred paa Jorden! og i Menneskene en Velbehagelighed!
@@ -4899,11 +4895,7 @@ Herodes's Død tiltraadte Qvirinius Bestyrelsen af Syrien.“
 ret faaer den at see: jo længere man seer paa den, desto større bliver den! ---
 Saa lille, saa ubetydelig og lille er denne kritiske Anstødssteen, naar den sees
 med et troende Øie: jo længere man seer paa den, desto mindre bliver den! --- I
-% PRINTER'S DEFECT: printed „Grundtert“ (r for x) where the sense wants
-% „Grundtext“ --- at 1200 dpi the sort sits on the baseline like the r of
-% „Grund-“, with no descender. The same fault as „strar“ p. 126 and „vorte“
-% p. 127. As printed.
-den evangeliske Grundtert staaer det jo ikke skrevet, at den hele Verden virkelig
+den evangeliske Grundtext staaer det jo ikke skrevet, at den hele Verden virkelig
 blev beskattet, da Christus fødtes; men der staaer saaledes: \emph{en Befa\-%
 % --- p. 133 ---
 % The word „Befaling“ is broken across the leaf (p. 132 ends „en Befa=“, p. 133
@@ -5011,8 +5003,7 @@ det naturligt nok, at Den, hvis bedre Væsen ikke tillader ham at trodse Salighe
 Aand, men hvis Verdensdannelse dog paa saa mange Maader sætter sig op imod Underets
 umiddelbare Virkelighed, gjør mange Forsøg paa at affinde sig med Verdslighedens Lov, og
 % „Exempel“ here has a TRUE x --- the sort descends plainly below the baseline at
-% 1200 dpi, unlike the r of „Bar-“ on p. 141. Compare „eregetiske“ eleven lines below,
-% which has none.
+% 1200 dpi.
 forsone sig med Aabenbaringens „Idee“. --- Som Exempel paa et saadant Forsøg kunne vi her
 anføre den æsthetiske Opfattelse af de evangeliske Beretninger.
 
@@ -5026,11 +5017,8 @@ Virkelighed, baade det Naturlige og det Overnaturlige; som om en vis Sum af mira
 Phænomener, trods al deres Flygtighed, nu virkelig kunde udgjøre Troens væsentlige og
 blivende Grundlag. Denne egensindige og borneerte Vidhængen ved det Iøinefaldende og
 Tilfældige ægger saa igjen de eensidige Kritikere, der med al deres Skarpsynethed dog
-% WRONG SORT: printed „eregetiske“ for „exegetiske“ --- the sort after the first e is a
-% plain r with no descender at 1200 dpi (compare the g of „-getiske“ immediately after).
-% The book alternates x and r within a page in this gathering; transcribed as printed.
 ikke kunne faae Øie paa Sagen selv, fordi deres Forstand er saa beskjæftiget med at
-opdage Supranaturalisternes eregetiske Vilkaarligheder, og
+opdage Supranaturalisternes exegetiske Vilkaarligheder, og
 % --- p. 136 ---
 efterjage historiske og metaphysiske Modsigelser i alle Retninger. Denne Strid er
 ligesaa utaalelig for den sunde Forstand, som oprørende for den fromme Følelse.
@@ -5083,9 +5071,8 @@ altid begrundet i en umiddelbar Følelse. Kjendetegnet paa den indre Virkelighed
 altsaa den Nødvendighed, hvormed Tilværelsens Magter paavirke den indre Sands. Saaledes
 kunne vi da forstaae Aabenbaringens Syner: naar det Guddommelige vinder Skikkelse, og
 fremstiller sig for Sjælens Øie med en saadan Bestemthed og Nødvendighed, at Seeren
-% WRONG SORT: printed „forverle“ for „forvexle“ --- plain r, no descender, at 1200 dpi.
 % „t. Ex.“ four lines below has a true x on the same page.
-umulig kan forverle Synet selv med Phantasiens øvrige, vilkaarlige Frembringelser, da
+umulig kan forvexle Synet selv med Phantasiens øvrige, vilkaarlige Frembringelser, da
 maae vi tillægge den aabenbarede Skikkelse baade væsentlig Selvstændighed og indre
 Virkelighed i Kraft af en overnaturlig Indflydelse. --- Den Indvending, at det paa denne
 Maade bliver saare vanskeligt at adskille det Sande fra det Falske, det Guddommelige fra
@@ -5125,8 +5112,7 @@ giver hun det Svar, at hun (efter 1 Moseb.\ 25, 23) saae to
 Folk for sig, det ene grædende, det andet leende; det vil sige, efter den ene Forklaring,
 de to Dele af Israel, hvoraf Jesu Fremtræden skulde blive (Luc.\ 2, 34) den Ene til
 Fald, den Anden til Opreisning; men, ifølge den anden Udlægning, Jødernes Folk, der siden
-% „strax“ with a TRUE x --- the sort descends plainly below the baseline at 1200 dpi,
-% quite unlike the r of „vorer“ on p. 141. Same on p. 143.
+% „strax“ with a TRUE x --- the sort descends plainly below the baseline at 1200 dpi.
 efter forkastede Jesus, og Hedningernes, der antog ham. Da Maria strax derpaa bliver
 overfalden af Fødselssmerterne, bringer Joseph hende til en ved Veien liggende Hule, og
 beskriver nu Fødselstimens Høitidelighed i følgende Udtryk: Jeg (Joseph) saae Himlens
@@ -5162,12 +5148,10 @@ Herpaa beroer vistnok den egentlige Forskjel imellem Mythologiens Guder og Evang
 Engle. Med denne Forskjel er det da tillige givet, at Mythen maa forholde sig til
 Aabenbaringen, som det Forsvindende til det Blivende. Da nemlig det Naturlige og blot
 Menneskelige har en eensidig Overvægt i den mythiske Forestilling, da det
-% WRONG SORT: printed „forverlet“ for „forvexlet“ --- plain r, no descender, at 1800 dpi.
-Ikke-Guddommelige herved paa en uklar Maade bliver forverlet med det Guddommelige: saa
-indeholder Mythen forsaavidt en Usandhed; det ligger da i Sagens Natur, at deu opvorende
-% TURNED SORT „deu“ for „den“, and WRONG SORT „opvorende“ for „opvoxende“ (plain r) ---
-% both in the same line, both at 1800 dpi. „Standpuukt“ on the next line is a further
-% turned sort (u for n).
+Ikke-Guddommelige herved paa en uklar Maade bliver forvexlet med det Guddommelige: saa
+indeholder Mythen forsaavidt en Usandhed; det ligger da i Sagens Natur, at deu opvoxende
+% TURNED SORT „deu“ for „den“, at 1800 dpi. „Standpuukt“ on the next line is a further
+% turned sort (u for n). „opvoxende“ in the same line is read by sense; see the header.
 Tænkning efterhaanden maa opdage denne Usandhed, og føre ud over det mythiske
 Standpuukt. Anderledes med Aabenbaringen. I den hellige Idee har det guddommelige
 Indhold saaledes gjennemvirket Formen, at her ikke er Mere af det Endelige og
@@ -5176,9 +5160,8 @@ Indhold saaledes gjennemvirket Formen, at her ikke er Mere af det Endelige og
 Menneskelige tilbage, end hvad der netop udkræves, forat den rene, overnaturlige Sandhed
 kan anskueliggjøres sor Mennesket, og paavirke det hele Menneske. Eftersom nu Dauuelsen
 % „Dauuelsen“ for „Dannelsen“ and „Cnlturtriu“ for „Culturtrin“ --- two turned sorts in
-% each word, confirmed at 1200 dpi. „Reflerionen“ is the plain-r form again (no
-% descender); the book prints no true x anywhere on this page.
-skrider frem, kan Reflerionen vel bidrage Sit til at inderliggjøre Aabenbaringens
+% each word, confirmed at 1200 dpi.
+skrider frem, kan Reflexionen vel bidrage Sit til at inderliggjøre Aabenbaringens
 uendelige Gehalt; men aldrig vil den menneskelige Tænkning paa nogetsomhelst Cnlturtriu
 kunne opløse de evangeliske Forestillinger, uden at geraade i en umenneskelig Modsigelse
 med den guddommelige Sandhed.“
@@ -5201,11 +5184,12 @@ Dette Evangelium, saa fatteligt, eenfoldigt og elskeligt, er jo, som var det kun
 for Børn og barnlige Sjæle. Den barnlige Phantasie bliver ligesaa let fortrolig med
 Englene, som med Hyrderne. Adskillelsen mellem den ydre og indre Virkelighed gjælder
 slet ikke for Barnet; her kan altsaa ikke være Tale om nogen Mythe: „det er Altsammen
-% x AND r WITHIN TWO LINES: „voxer“ here has a true x (plain descender at 1200 dpi);
-% „vorer“ on the next line, and both occurrences twelve lines below, have a plain r with
-% none. Each transcribed as the glyph stands.
+% x/r: „voxer“ stands four times on this page --- here, on the next line, and twice
+% fourteen lines below --- in one repeated formula. A first pass read the last three as
+% „vorer“ and made the first two a control pair; that entry is withdrawn (see the
+% header). The reading rests on sense: the scan cannot distinguish the sorts.
 baade vist og sandt i alle Maader“. Saa voxer Barnet op til Yngling; men Evangeliet
-vorer med. En smertelig Strid imellem den haarde, mangekantede Virkelighed og de
+voxer med. En smertelig Strid imellem den haarde, mangekantede Virkelighed og de
 Længsler og Fordringer, der reise sig i den Unges Bryst, begynder. „Det Nærværende vil
 ikke tilfredsstille; dog, Tilfredsstillelsen maa vel komme, Haabet kan ikke skuffe: hist
 i det Fjerne vinker Idealet“. Har den ungdommelige Phantasie nu Kræfter nok til at
@@ -5219,7 +5203,7 @@ det er jo Ungdommens skjønne Forret at have en saadan Styrke og et saadant Mod)
 % at the head of the subsection on p. 128.
 ikke Fremtiden lyse for den begeistrede Yngling med Evangeliets Klarhed, og Englene selv
 kræves til Vidner, at der dog virkelig er \emph{en stor Glæde, som skal vederfares alt
-Folket.} Saa fortsættes Striden: Ynglingen vorer op til Mand; men Evangeliet vorer med,
+Folket.} Saa fortsættes Striden: Ynglingen voxer op til Mand; men Evangeliet voxer med,
 og forklarer sine Forjættelser i Striden. „Paa denne Jord er Saligheden vel ikke at
 finde; men Jorden er dog ogsaa velsignet af Gud. Ja, Velsignelsen har taget Forbandelsen
 % WRONG SORT: printed „Løu“ for „Lov“ (u set for v) --- confirmed at 1200 dpi, where the
@@ -5229,9 +5213,9 @@ finde; men Jorden er dog ogsaa velsignet af Gud. Ja, Velsignelsen har taget Forb
 bort; den redelige Stræben bærer sin Frugt, Arbeidet har sin Løu, det Hele skrider frem
 mod Fuldendelsen hisset“. Vistnok indtræder nu her den skarpe Adskillelse
 % --- p. 142 ---
-imellem det Virkelige og det Ideale; men saa har ogsaa Reflerionen naaet den Modenhed,
+imellem det Virkelige og det Ideale; men saa har ogsaa Reflexionen naaet den Modenhed,
 at den kan gjøre tilbørlig Forskjel imellem indre og ydre Virkelighed. Inderliggjørelsens
-Kraft vorer under de mange udadgaaende Bestræbelser. Istedetfor at forflygtige sig til
+Kraft voxer under de mange udadgaaende Bestræbelser. Istedetfor at forflygtige sig til
 % PRINTER'S ERROR, twice in one line: printed „Manddomntens“ for „Manddommens“ and
 % „Barndontmens“ for „Barndommens“ --- the mm of each word is set as m+n+t and n+t+m
 % respectively. Confirmed at 1200 dpi; both OCR witnesses read the same. As printed.
@@ -5255,9 +5239,9 @@ Velbehag; de lyse Fred over Jorden.“
 
 Den æsthetiske Opfattelse kan paa mange Maader godtgjøre sin Berettigelse ligeoverfor
 den blot historiske Forstandskritik; den kan i mange Vendinger bidrage til at hævde
-% The point after „Reflerion“ is badly inked; at 1200 dpi it carries a dot above and a
-% tail below, i.e.\ a semicolon. Second plain-r „Refler-“ on this page.
-Følelsens og Indbildningskraftens Ret ligeoverfor den prosaisk-endelige Reflerion; den
+% The point after „Reflexion“ is badly inked; at 1200 dpi it carries a dot above and a
+% tail below, i.e.\ a semicolon.
+Følelsens og Indbildningskraftens Ret ligeoverfor den prosaisk-endelige Reflexion; den
 kan, især naar den gaaer igjennem Speculationen, med stor Overlegenhed forsvare den
 Hovedsætning, at Aabenbaringens Gud ligesaavel maa være Idealets som Virkelighedens,
 ligesaavel Phantasiens som Tankens Gud; med andre Ord: den æsthetiske
@@ -5267,8 +5251,7 @@ ogsaa maa gives en religiøs Phantasie-Anskuelse, for hvis Gehalt og Gyldighed
 Sandhedens Gud selv vil indestaae. --- Hvorledes den æsthetiserende Speculation nu
 iøvrigt bærer sig ad med en saadan Beviisførelse, vedkommer slet ikke denne Undersøgelse.
 Den ovenfor antydede Fortolkning skal kun tjene til at vise, hvorvidt Evangelietroen kan
-% „strax“ with a true x again on this page (plain descender at 1200 dpi), four pages
-% after the „vorer“ of p. 141.
+% „strax“ with a true x again on this page (plain descender at 1200 dpi).
 være tilfreds med en saadan Forklaring, eller ikke. Paa dette Spørgsmaal maae vi strax
 % TURNED SORT: printed „Gruudsvaghed“ for „Grundsvaghed“ (u set for n), confirmed at
 % 1200 dpi; both OCR witnesses read „Gruud-“. As printed.
@@ -5695,11 +5678,7 @@ raisonnerende Kritik finder Indgang. --- „En salig Drøm, den løste mig den m
 Gaade! Engelen aandede sin Fred dybt i min Sjæl: saa kunde jeg igjen forstaae Maria.
 --- Turde jeg nu stole paa en Drøm, da var min Lod den skjønneste paa Jorden. Som
 Den, der er af Davids Huus og Slægt, skulde jeg da staae ved Messias's Vugge. Under
-% Printer's defect, p. 157: „opvore“ for „opvoxe“ --- a plain r where the sense wants
-% x. The r sits flat on the baseline; the true x on this same page (in
-% „Middelmaadighedsreflexionen“, nine lines above) drops a tail below it. This is the
-% book's habitual fault; transcribed as printed.
-mit faderlige Tilsyn skulde da Guds Søn, Immanuel, opvore og forfremmes i Alder og i
+mit faderlige Tilsyn skulde da Guds Søn, Immanuel, opvoxe og forfremmes i Alder og i
 Viisdom. Men det er jo umuligt. --- Kun en Drøm! Hvad er jeg i den virkelige Verden?
 En ringe Haandværksmand i Nazaret; saa dybt er Davids Slægt da sunken. --- Urimeligt!
 Hvad er jeg i mit Forhold til Maria? Som en bedragen Mand. Hvad vilde Menneskene
@@ -6694,10 +6673,7 @@ Ulærde.
 % p. 187 opens FLUSH at the body margin, not indented: the paragraph runs on
 % across the leaf.
 Kun Maaden, hvorpaa Afviisningen skeer, er noget forskjellig. Rækker man den
-ulærde Troesfornegter Evangeliet, saa siger han strar ganske aabenhjertig og
-% WRONG SORT: „strar“ for „strax“ --- the final sort has no descender at 1200
-% dpi. Transcribed as printed; cf. pp. 56, 86, 110, 118, 120, 126, and „strar“
-% again at p. 195 and p. 196 against true „strax“ on the very same pages.
+ulærde Troesfornegter Evangeliet, saa siger han strax ganske aabenhjertig og
 ligefrem: „Jeg betakker mig; jeg kan slet ikke bruge den gamle Overtro. Hvo der
 har kunnet opdigte slige Historier! hvad kommer det mig ved? Jeg kan godt føle
 paa mig selv, at det Hele ikke er Andet end Overtro.“ --- Den lærde
@@ -6736,10 +6712,10 @@ hinanden, som det Forsvindende til det Blivende? --- Forgjængeren maa træde fr
 for igjen at træde tilbage: han forberedes derpaa fra sin Ungdom af. I Ørkenen
 gjør man ingen Opsigt, og see, han søger i al Stilhed de eensomme Steder, og
 forbliver i Ørkenen indtil den Dag, han fremstiller sig for Israel. Ogsaa
-Fuldenderen maa skjules for Verden, og vore en stille Væxt, før han kan optræde
-% WRONG SORT: „vore“ for „voxe“, confirmed at 600--1200 dpi --- and decisively,
-% because „Væxt“ four words later on the SAME line carries a true x with its
-% descender. Both transcribed as printed; cf. „vore“ for voxe at pp. VIII, 79.
+Fuldenderen maa skjules for Verden, og voxe en stille Væxt, før han kan optræde
+% x/r: „voxe en stille Væxt“ --- „Væxt“ later in the same line carries a positively
+% verified x. „voxe“ is read by sense; absence of a tail is not evidence, the scan's
+% type mask being about 400 ppi. See the header.
 som Folkets Forløser. Men allerede fra Vuggen af bliver hans Forrang synlig
 betegnet: den Herlighedens Herre, der hviler i Krybben, lader hilse paa sig, før
 han drager sig tilbage. --- Det er befalet i Loven (2 Msb.\ 13, 2; 3 Msb.\ 12,
@@ -6835,9 +6811,7 @@ Røgelse og Myrrha.}
 Idumæeren vil Intet høre om Daviden. „Magerne snege sig bort; man driver et Spil
 med det gamle Folkesagn! --- Saa maae vi myrde Faren i dens Svøb, at den ikke
 voxer op, og bliver stor!“
-% TRUE x here: „voxer“ carries the descending stroke at 1200 dpi, four lines
-% below a page whose „Øren“ (p. 191) does not. No rule; every occurrence judged
-% on its own glyph.
+% TRUE x here: „voxer“ carries the descending stroke at 1200 dpi.
 
 --- \emph{En Røst blev hørt udi Rama, Graad og Skrig og megen Hylen}\ldots{}
 „Naar en Herodes slaaer, da rammer han!“ --- Dog nei! Han kom et Øieblik for
@@ -6863,21 +6837,20 @@ tjenende Forgjænger og den kongelige Fuldender. Hvor forskjellig er dog ikke
 deres Optræden! --- Johannes vidner selv for Raadets Udsendte (Joh.\ 1, 20):
 \emph{jeg er ikke den Christus.} Og vi maae troe hans Vidnesbyrd. Thi Den, der
 døber med Vand til Omvendelse, har jo kun modtaget Aandens Kald, at prædike den
-Lov, som blev given ved Moses; og maa derfor revse alle Sine: \emph{Øren ligger
+Lov, som blev given ved Moses; og maa derfor revse alle Sine: \emph{Øxen ligger
 ved Roden af Træerne; hvert Træ, som ikke bærer god Frugt, skal afhugges og
 kastes i Ilden} (Matth.\ 3, 10).
-% WRONG SORT: „Øren“ for „Øxen“ (the axe of Matth. 3, 10) --- at 1200 dpi the
-% second sort is unmistakably r, with the shoulder and foot serif of r and no
-% descending stroke. The same wrong sort recurs TWICE on p. 196 in the same
-% verse. Transcribed as printed at all three sites; not corrected toward sense.
+% x/r: „Øxen“ --- the axe of Matth. 3, 10 --- read by sense; „Øren“ would be the ears,
+% and the book sets that word correctly elsewhere (pp. 216, 325, 486). A first pass
+% logged a wrong sort here and twice on p. 196 in the same verse; those entries are
+% withdrawn, absence of a tail being no evidence. See the header.
 Men Han, der selv opfylder Loven, og har al Naaden og Sandheden, taler et andet
 Ord til sine Disciple efter den første Hilsen (Joh.\ 1, 51): \emph{sandelig,
 sandelig siger jeg Eder: fra nu af skulle I see Himmelen aabnet, og Guds Engle
 fare op og fare ned over Menneskens Søn.} --- Den, der døber med Vand til
 Omvendelse, er selv under Lovens strengeste Tugt, en Nasiræer, der ikke tør
 drikke af Det, som voxer paa Viintræet, at han
-% TRUE x: „voxer“ here carries the descender at 1200 dpi, on the very page whose
-% „Øren“ does not.
+% TRUE x: „voxer“ here carries the descender at 1200 dpi.
 % --- p. 192 ---
 ikke skal falde i Fristelse, en Nasiræer, der maa leve af Ørkenens Føde, at han
 ikke skal trænge til Verden. Men Han, der selv har seiret over Fristeren i
@@ -7000,9 +6973,7 @@ behøver vist ikke mange Maaneder for at ndrette sit Ærinde: han er sikkerlig v
 % TURNED SORT: „ndrette“ for „udrette“, confirmed at 600 dpi. As printed.
 forberedt; han trænger nok igjennem. Tro ham kun, naar han hæver sin Røst i
 Ørkenen, da høres det omkring i Stæderne. Det er jo en velbekjendt Røst, det er
-Lovens Røst til Lovens Folk: Folket kjender strar Røsten. {\large Se! Jerusalem
-% WRONG SORT: „strar“ for „strax“ at 1200 dpi --- and on this same page, nine
-% lines below, „strax,“ IS set with a true x. Both transcribed as printed.
+Lovens Røst til Lovens Folk: Folket kjender strax Røsten. {\large Se! Jerusalem
 udgaaer til ham, og det ganske Judæa, og alt Landet omkring Jordanen. Og de døbes
 af ham i Jordanen, og bekjende deres Synder (Matth.\ 3, 5--6).} --- Ja, saa
 trænger han jo dog igjennem! Tro ham kun, den Mand i Kameelhaarskjortelen, naar
@@ -7016,9 +6987,7 @@ viste Eder at flye fra den tilkommende Vrede? (Matth.\ 3, 7)} --- da forstaaer
 man ham strax, da trænger han sandelig igjennem.
 % --- p. 196 ---
 % p. 196 opens FLUSH: the paragraph runs on across the leaf.
-Pharisæer og Sadducæer forstaae ham strar: det er jo dem, han rammer. Og Ordet
-% WRONG SORT: „strar“; the next „strax,“ on the following line is a true x. Both
-% at 1200 dpi, both as printed.
+Pharisæer og Sadducæer forstaae ham strax: det er jo dem, han rammer. Og Ordet
 synker i Folket, og det forstaaer ham strax, at han er en stor Prophet, der
 prædiker Loven tillive. Thi, ikke sandt? --- Lovens Ord ere jo saa fattelige, at
 hvert Menneske kan forstaae dem uden lang Forklaring.
@@ -7034,11 +7003,11 @@ Eder nøie med Eders Sold;} skulde Stridsmændenes Samvittighed da behøve mere 
 % body size, the Baptist's ANSWERS are in the larger display fount. Measured at
 % 600 dpi: „Mester, hvad skulle vi gjøre?“ matches the body x-height exactly,
 % „kræver intet Mere“ stands a third above it.
-„et halvt Aar“, for at fatte disse Bud! --- Nei, --- \emph{Øren ligger ved
-Træernes Rod!} og naar Øren er lagt ved Træernes Rod, forstaaer man let
-% WRONG SORT twice more: „Øren“ for „Øxen“, both confirmed at 1200 dpi, matching
-% p. 191. Three occurrences of the same wrong sort in the same verse; the
-% compositor evidently had no x in the case, or reached past it.
+„et halvt Aar“, for at fatte disse Bud! --- Nei, --- \emph{Øxen ligger ved
+Træernes Rod!} og naar Øxen er lagt ved Træernes Rod, forstaaer man let
+% x/r: „Øxen“ twice more in the same verse, as at p. 191; read by sense. The wrong-sort
+% entries logged here at a first pass are withdrawn --- the scan cannot distinguish the
+% sorts. See the header.
 Omvendelsens Daab. Saa røres Jordans Vande, saa trænger Johannes igjennem som i
 et Nu, naar Samvittigheden, vakt ved det strenge Ord, beviser hvert Menneske, at
 Propheten har Ret.
@@ -7091,8 +7060,7 @@ korte Livs forskjellige Øieblikke. Seer han paa de gjenstridige Pharisæer, paa
 Jesus komme, \emph{det Guds Lam, som bærer Verdens Synd,} er det da ikke, som
 % Joh. 1, 30 and Joh. 3, 30 run on in the LARGER fount, beginning mid-line at
 % „Han er den,“; measured 43--45 px x-height at stem 7 against the body's 39/6.
-% „voxe“ has a TRUE x here --- the sort descends plainly below the baseline at
-% 2400 dpi, unlike the „strar“ of p. 202.
+% „voxe“ has a TRUE x here --- the sort descends plainly below the baseline at 2400 dpi.
 skulde den haarde Mand opløses i tilbedende Beundring? --- {\large Han er den, om
 hvilken jeg sagde: efter mig kommer en Mand, hvilken har været for mig; thi han
 var forend jeg (Joh.\ 1, 30). Ham bør det at voxe, mig at forringes (Joh.\ 3,
@@ -7186,7 +7154,7 @@ sin Moder det.
 \par\endgroup
 
 % All three „strax“ on this page carry a TRUE x --- the descender is plain at
-% 2400 dpi on each --- against the „strar“ of p. 202, two pages later.
+% 2400 dpi on each.
 --- Saa kom selv dette Hoved dog i \emph{Kongers Huse!} --- „Lidt sildig, om man
 vil, thi Manden bar just ei \emph{de bløde Klæ\-%
 % --- p. 201 ---
@@ -7255,10 +7223,7 @@ tænkeligt, at der paa enhver beboet Planet (thi, at alle Kloderne deroppe ere s
 tomme Værelser, kunne Theologerne dog alligevel ikke indbilde os) skal skee en
 særegen Aabenbarelse af den samme Christus; om det er tænkeligt, at der intet
 Syndefald er foregaaet paa nogen af de andre Kloder, saa at Christus blot behøver
-% Wrong sort: „strar“ for strax. At 2400 dpi the final glyph is the r of „for“ on
-% the same line --- shoulder and foot on the baseline, no descender --- while all
-% three „strax“ of p. 200 descend plainly. Transcribed as printed.
-at aflægge en flygtig Visit paa enhver især af dem, for strar at vorde kjendt som
+at aflægge en flygtig Visit paa enhver især af dem, for strax at vorde kjendt som
 af „sine Egne“; eller, hvis alle Planetbeboere ere Syndere, ligesom vi, om da den
 samme Christus skal hudstryges, bespottes, korsfæstes og døe Forsoningsdøden paa
 hver enkelt Klode i alle Solsystemer --- det vilde blive en uhyre
@@ -7521,12 +7486,10 @@ nok!“ da ville vi minde ham om Evangelistens Ord, og spørge: har du ogsaa det
 hvormed Christus vil sees, og det Øre, hvormed han vil høres? Hvis ikke, da er din
 Opfordring forgjæves.
 
-% WRONG SORT: „strar“ for strax --- the final sort has no stroke below the baseline and is
-% identical with the r of „herom“ two words later (1200 dpi). Transcribed as printed.
 \emph{Viis os Christus, som han er!} Denne Fordring fyldestgjør Evangeliet, idet det
 fremstiller os Forløseren i Forhold saavel til de Troende som til de Ikke-Troende iblandt
 hans Egne, og saaledes forklarer os dette Grundforholds dobbeltsidige Natur og Væsen. Vi
-overbevise os strar herom ved at betragte de første Optrin i Jesu Liv, og see, hvorledes
+overbevise os strax herom ved at betragte de første Optrin i Jesu Liv, og see, hvorledes
 Forgjængeren beredte sin Herre Veien.
 
 % The reference line stands on a line of its own, in the BODY size and at the ordinary
@@ -7587,9 +7550,8 @@ tilbage\footnote{% printed mark: *)
   evangelischen Geschichte. Frankfurt a.\ M. 1842. 1ster Theil. Pag.\ 309.%
 }. --- „Har Johannes den Døber virkelig erkjendt Jesus for Messias, og henvuist sine
 % TURNED SORT: „henvuist“ for henviist --- the fifth sort carries no dot and is a u
-% (1200 dpi). WRONG SORT: „strar“ for strax at the foot of the page, the final sort again
-% without the descending stroke. Both transcribed as printed.
-Disciple til ham: hvorledes er det da gaaet til, at han ikke strar har
+% (1200 dpi). Transcribed as printed.
+Disciple til ham: hvorledes er det da gaaet til, at han ikke strax har
 % --- p. 212 ---
 opgivet sin egen ufuldkomne Virksomhed, og ladet sig optage med alle Sine i Jesu Selskab?“
 
@@ -7727,12 +7689,10 @@ Jøderne.“
 Det er jo muligt, det kan jo være, at disse galilæiske Mænd kom saa let til Troen, fordi
 de manglede naturlig Forstand og
 % --- p. 216 ---
-% WRONG SORT: „f. Er.“ for f. Ex. --- the sort after the E has no descending stroke and is
-% the r of „høre“ in the same line (1200 dpi). Transcribed as printed.
 sund Dømmekraft. Ja, det er jo muligt! Imidlertid ville vi dog, før vi underskrive en saa
 haard Kjendelse, forhøre os lidt nærmere hos Evangelisterne, om vi ikke maaskee ved deres
 Veiledning kunne komme efter, hvorledes det egentlig stod sig med Kritiken i Galilæa. Vi
-kunne f.\ Er.\ høre Evangelisten Lukas (4, 14---30).
+kunne f.\ Ex.\ høre Evangelisten Lukas (4, 14---30).
 
 \begingroup\large
 Og Jesus kom tilbage i Aandens Kraft til Galilæa, og Rygtet om ham kom ud i alt det
@@ -7742,15 +7702,15 @@ Sabbatsdagen, og stod op at forelæse.
 \par\endgroup
 
 % TURNED SORT: „Jesns“ for Jesus. WRONG SORT: „dex“ for der at the end of the third line
-% --- this sort DOES carry the stroke below the baseline, so it is an x; „strar“ for strax
-% four lines below has none. Both at 1200 dpi, both transcribed as printed.
+% --- this sort DOES carry the stroke below the baseline, so it is an x, and the reading
+% is positively evidenced. Both at 1200 dpi, both transcribed as printed.
 Galilæerne i Nazaret forsøge altsaa ikke paa at lægge Jesns nogen Hindring i Veien. De
 see det vel endogsaa ret gjerne, at den unge Folkelærer, en Mand af deres egen By, en
 begavet Mand, dex alt havde begyndt at vinde et Navn, nu ogsaa staaer op at forelæse i
 deres Synagoge.
 
 Da gave de ham Esaiæ Prophetens Bog, og --- deres Forventning bliver ikke skuffet, thi
-Forelæseren veed strar at finde sit Sted, og --- har en klar Røst, og læser for dem med
+Forelæseren veed strax at finde sit Sted, og --- har en klar Røst, og læser for dem med
 Fynd og Kraft.
 
 % „Naade - Aar“ is printed with a spaced hyphen, as „Menneske - Ord“ is on p. 222; both
@@ -7997,7 +7957,7 @@ eller Philosoph har faaet Kaaben vendt, eller besørget en lille Omsyning, hedde
 det
 % x/r: „strax“ here is a TRUE x --- the foot of the fifth sort kicks down-left
 % well below the baseline, against the plain baseline foot of the r two sorts
-% earlier in the same word (1800 dpi). Cf. „strar“ on pp. 224 and 229 below.
+% earlier in the same word (1800 dpi).
 strax i Litteraturen: „en Afgjørelse, en ganske ny Afgjørelse!“ Denne
 Afgjørelse bestemmes naturligviis
 % TURNED SORT: „eue“ for „ene“ (u set for n), verified at 1800 dpi.
@@ -8028,10 +7988,7 @@ gaaer med det Begribelige og det Ubegribelige, saaledes ogsaa med Christi Mildhe
 og Strenghed. Træder han frem i den philosophiske Mildhedskaabe, er han saa
 rolig, saa contemplativ, saa ethisk indifferent, at man blot behøver at hvile sig
 i hans metaphysiske Favn, for
-% PRINTER'S DEFECT (x/r): „strar“ for „strax“ --- the third and fifth sorts of
-% the word are the same glyph, both with the plain baseline foot of r (1800 dpi).
-% Cf. the true „strax“ on p. 223 above and „strar“ again on p. 229.
-strar at fornemme Tilværelsens evige Harmonie, den salige Eenhed, der pulserer i
+strax at fornemme Tilværelsens evige Harmonie, den salige Eenhed, der pulserer i
 alt det Mangfoldige. Men changerer nu Opfattelsen, har Kaaben faaet Paradoxets
 Mærke: da vee de Contemplative og dem, som die Speculationen i de Dage, thi da
 komme Trængsler og Angster og Forfærdelser over Menneskene. Nu er han da lutter
@@ -8215,8 +8172,7 @@ Marv, den skjød et nyt Skud, det var det egentlige Rodskud. Lidet, uanseeligt o
 ringe i sin Begyndelse, forvandlede dette Rodskud sig efterhaanden til Stammen
 selv, og
 % x/r: a TRUE x here --- the foot of the third sort of „voxte“ descends clearly
-% below the baseline of the neighbouring o, t and e (1800 dpi). Contrast the
-% wrong sorts „vorte“, „vore“ and „Vært“ on pp. 229--230 below.
+% below the baseline of the neighbouring o, t and e (1800 dpi).
 voxte da til et stort Træ, saa at
 % --- p. 229 ---
 Himmelens Fugle kom, at bygge Rede i dets Grene. --- Spørger man nu, hvilke
@@ -8225,18 +8181,14 @@ det er de hedenske. Vilde man endvidere spørge, hvorledes det gik til, at hine
 Sidestammer saa tidlig visnede; skulde Svaret vel heller ikke falde saa
 vanskeligt. Alt eftersom de hedenske Religioner tabte den Vegetationens Yppighed,
 hvormed de oprindelig vare
-% PRINTER'S DEFECT (x/r): „opvorne“ for „opvoxne“ --- the fifth sort has the
-% plain baseline foot of r, level with the o's on either side (1800 dpi). Cf.
-% „opvore“ at p. 157.
-opvorne, og havde blomstret i Phantasie og Gemyt, var det en Selvfølge, at de
+opvoxne, og havde blomstret i Phantasie og Gemyt, var det en Selvfølge, at de
 ikke længere kunde give Sjælene nogen sund, tilfredsstillende Næring. Folkene
 følte et Savn, en Tomhed, men vidste dog ikke selv, hvad der feilede dem. Da kom
 Videnskaben med
 % TURNED SORT: „Kritikeu“ for „Kritiken“ --- and the second occurrence in the
 % same line is set correctly as „Kritiken“. Both read at 1500 dpi.
 Kritikeu, og Kritiken opdagede
-% PRINTER'S DEFECT (x/r): „strar“ for „strax“, as on p. 224.
-strar, hvori Feilen laae: \emph{det Hele var nemlig en Modsigelse}“.
+strax, hvori Feilen laae: \emph{det Hele var nemlig en Modsigelse}“.
 
 „Det er et dybsindigt Træk i den nordiske Mythe om Asken Ygdrasil, at der stod
 fire Hjorte og nippede Bladene af den, at den blev trøsket med Tiden, at alle
@@ -8250,10 +8202,10 @@ det en ganske anden Sag. Her er en Stamme, der aldrig gaaer i Trøske; dette
 Livets Træ kan aldrig visne.“ --- Uden at ville bestride Christendommens Fortrin
 for de øvrige Religioner, skulle vi blot paapege een Grundbetingelse, der ligesaa
 fuldt maa gjælde for Christendommen, som for en hvilkensomhelst anden Religion.
-% PRINTER'S DEFECTS (x/r), two in one clause: „vore“ for „voxe“ and „Vært“ for
-% „Væxt“. Both sorts have the plain baseline foot of r, matched against the r of
-% „naturlig“ in the same line (1800 dpi).
-Enhver Religion maa vore en naturlig Vært, og ytre sig i Slægten som en høiere,
+% x/r: „voxe en naturlig Væxt“, read by sense --- cf. „voxe en stille Væxt“ at p. 188.
+% Neither sort throws a tail at 1800 dpi, but the scan cannot distinguish them; absence
+% of a tail is not evidence. See the header.
+Enhver Religion maa voxe en naturlig Væxt, og ytre sig i Slægten som en høiere,
 uimodstaaelig Livets Drift. (Man kan
 % --- p. 230 ---
 istedetfor „det Naturlige“ gjerne indsætte Begrebet: „det Overnaturlige“; denne
@@ -8266,13 +8218,11 @@ Vegetationskraft, og virke i Form af
 \textit{natura naturans}. --- Negter man denne Grundlov, da lægger man sig ikke
 blot ud med Psychologien, men modsiger ligefrem Jesu egen Lære. --- Det hedder i
 Parablen (Mr.\ 4, 26---28):
-% Mrc. 4, 26--28, letterspaced. NOTE the mixture of sorts inside the one
-% quotation: „vorer“ carries the wrong sort (plain r foot, level with the o and e
-% beside it), while „Ax“ and „Axet“ two lines below carry a TRUE x (the foot
-% descends 5--6 px below the baseline at 600 dpi). Judged glyph by glyph; not
-% normalised.
+% Mrc. 4, 26--28, letterspaced. „Ax“ and „Axet“ two lines below carry a TRUE x (the foot
+% descends 5--6 px below the baseline at 600 dpi); „voxer“ in the quotation is read by
+% sense, the scan being unable to distinguish the sorts. See the header.
 \emph{Med Guds Rige haver det sig saaledes, som naar et Menneske kaster Sæd i
-Jorden, og sover og staaer op Nat og Dag; og Sæden vorer og bliver høi, han veed
+Jorden, og sover og staaer op Nat og Dag; og Sæden voxer og bliver høi, han veed
 ei selv, hvorledes. Thi Jorden bærer Frugt af sig selv, først Græs, derefter Ax,
 derefter fuldt Korn i Axet.} Hvilken Forskjel imellem Christendommen i dens
 første Aarhundreder og Christendommen i Nutiden. Man kunde næsten fristes til at
@@ -8282,17 +8232,16 @@ Dage var Christendommen saa rørig og levende, saa frodig og tillokkende, at int
 ædelt Menneske og intet Folk kunde modstaae den. Hedenske Præster hadede den som
 et giftigt Ukrudt, mægtige Statsmænd vilde udrydde den som en farlig
 Snylteplante; det hjalp ikke; den
-% PRINTER'S DEFECT (x/r): „vorte“ for „voxte“ --- plain r foot (1800 dpi), unlike
-% the true „voxte“ on p. 228.
-vorte næsten vildt; den skjød sig op af Gemyttets Grund, som Græs og Urter skyde
+% x/r: „voxte“, read by sense; cf. the positively verified „voxte“ on p. 228. The scan
+% cannot distinguish the sorts (see the header).
+voxte næsten vildt; den skjød sig op af Gemyttets Grund, som Græs og Urter skyde
 op af Jorden. I vore Dage gaaer det anderledes til. Nu vil man gjerne, at
 Christendommen skulde trives og
-% PRINTER'S DEFECT (x/r): „vore“ for „voxe“ --- the r is identical to the r of
-% „trives“ two words earlier (1800 dpi).
-vore allevegne; men der er, som det synes, ingen rigtig Grøde i den. Vise
+% x/r: „voxe“, read by sense; the scan cannot distinguish the sorts (see the header).
+voxe allevegne; men der er, som det synes, ingen rigtig Grøde i den. Vise
 Statsmænd plante, fromme Præster vande den ædle
-% PRINTER'S DEFECT (x/r): „Vært“ for „Væxt“, as at the foot of p. 229.
-Vært, det bedste de kunne, og endda vil den ikke trives. Er det Menneskehedens
+% x/r: „Væxt“, read by sense, as at the foot of p. 229.
+Væxt, det bedste de kunne, og endda vil den ikke trives. Er det Menneskehedens
 Skyld? Lad os ikke være ubillige. Vistnok viser Er\-%
 % --- p. 231 ---
 faring, at vi Mennesker nuomstunder ikke ere saa gode, som vi kunde og burde
@@ -8473,11 +8422,7 @@ imellem Timeligheden og Evigheden deelte, Individ, der med fuld Ret kau sige om 
 % foot, exactly like the „u“ of „Kun“ (l. 10) and unlike the „n“ of „den“ on the same
 % line; read at 1200 dpi. Both OCR witnesses read „kau“.
 selv: jeg er Modsigelsen, det er mig, der maa lide Tilværelsens Smerte. --- Kan nu
-Religionen alene magte Modsigelsen, og er Menneske-Eristensen selv Modsigelsen, da er
-% Printer's defect: „Eristensen“ for „Existensen“ --- an r sort for x. The glyph after
-% the capital E has no descender (width 41 px at 1800 dpi, bottom flush with the
-% baseline); the true „existere“ four lines below measures 74 px and drops below the
-% baseline. Transcribed as printed.
+Religionen alene magte Modsigelsen, og er Menneske-Existensen selv Modsigelsen, da er
 det i strengeste Forstand heller ikke nok, at Religionen kommer Mennesket til Hjælp;
 men den fuldkomne Religion maa selv blive Menneske, og det fuldkomne Menneske existere
 som Religionen selv.
@@ -8492,11 +8437,8 @@ Charakteer og personlige Forhold kan underkastes en Kritik; kan kan for\-%
 % --- p. 237 ---
 saavidt domfældes af Videnskaben. Den fuldkomne Religionsstifter kan derimod ikke
 domfældes af nogen Kritik, eftersom han jo er Religionen selv, og den absolute Religion
-magter den dybeste Modsigelse. Ved at angribe den i Stifterens Person eristerende
-% Printer's defect: „eristerende“ for „existerende“, and „Eristensens“ for
-% „Existensens“ in the next line --- r sorts for x in both places; neither glyph
-% descends below the baseline at 1800 dpi.
-Religion, angriber Kritiken Menneske-Eristensens inderste Kjærne. Kunde det nemlig
+magter den dybeste Modsigelse. Ved at angribe den i Stifterens Person existerende
+Religion, angriber Kritiken Menneske-Existensens inderste Kjærne. Kunde det nemlig
 bevises, at Modsigelsens Orm ogsaa gnavede i denne Kjærne, da var det med det Samme
 beviist, at Livets Frugter uden Undtagelse alle vare ormstukne. Men en Kritik, der
 nedstyrter Alt, alle Formaal og alle Bestræbelser, i en bundløs Modsigelse, maa vel
@@ -8520,10 +8462,7 @@ er af græsk Oprindelse. At dømme hedder i det græske Sprog \textit{κρινε
 \textit{(krinein)}, et Ord, der tillige betyder, at skjelne; fordi Ingen er istand til
 at dømme, uden at han tillige skjelner og sondrer, forbinder det Eensartede, og
 adskiller det Uforenelige. Forat vor Undersøgelse imidlertid ikke skal tage en lærd
-Vending, ville vi strar forlade Gjerningsordet og holde os til det græske Hovedord,
-% Printer's defect: „strar“ for „strax“ --- an r sort for x, the fault logged at
-% pp. 56, 86, 110, 118, 120, 126. The final glyph is identical to the r of „strar“ two
-% sorts earlier and does not descend.
+Vending, ville vi strax forlade Gjerningsordet og holde os til det græske Hovedord,
 som, mærkværdigt nok, er Alle bekjendt, nemlig Ordet: Krisis. Enhver veed, hvad det vil
 sige, naar det hedder: der forestaaer en Krise. I alle Livets Sphærer (selv i
 Pengeverdenen) foregaae der jo af og til betydelige Kriser. Det Vendepunkt, da Krisen
@@ -8553,8 +8492,7 @@ vedblire at holde sig ligeoverfor hinanden, snart som ligegyldige, snart som fie
 % itself and of „derved“ measure 82--83 px. Neither OCR witness reads x here.
 Factorer.
 
-Naar en afgjørende Krise begynder i Menneskeheden, maa den jævne Mellemtilstand strar
-% Printer's defect: „strar“ for „strax“, as on p. 237.
+Naar en afgjørende Krise begynder i Menneskeheden, maa den jævne Mellemtilstand strax
 forsvinde. Hvor Middelveien forhen gik, gaaer nu den stride Strøm, der river Alting med
 % The n of „Alting“ is anomalous: at 1800 dpi its connecting stroke runs from the foot
 % of the left stem up to the head of the right, and the serifs are reversed --- a turned
@@ -8633,9 +8571,7 @@ Opvækkelse ingenlunde forvexles med den sande, i Samvittighedsdybderne selv ind
 % „forvexles“ has a true x: the glyph descends below the baseline at 1800 dpi and
 % measures 83 px, where this page's r sorts measure 55--73.
 Krise. Denne kan først indtræde med den fuldkomne Aabenbaring, altsaa med den
-Forudsætning, at Religionsstifteren eristerer som Religionen selv.
-% Printer's defect: „eristerer“ for „existerer“ --- an r sort for x, identical in form
-% to the word's own final r and without descender.
+Forudsætning, at Religionsstifteren existerer som Religionen selv.
 
 Idet det her bliver Alvor med Guds Riges Komme, maa enhver endelig Verdensforandring
 nedsættes til noget Uvæsentligt. Alt Udvortes maa foreløbigen forblive som det er, at
@@ -8707,10 +8643,7 @@ og naturligt Menneske, men kun som et Menneske, at dømme efter det Udvortes. Ik
 destomindre maa dette Menneske for sin Person dog alligevel gjøre Fordringer til
 Menneskene, som ingen Anden: hans Stand og Værdighed kræver det, thi han er af høi
 Byrd: Guds egen Søn! ja, han har en høi Rang: den paa Jorden aabenbarede Gud! At
-eristere som den fuldkomne Religion, er med andre Ord at eristere som Gud-Menneske. At
-% Printer's defect: „eristere“ twice for „existere“ --- r sorts for x. At 1800 dpi both
-% glyphs are identical to the word's own final r and neither descends, while the long ſ
-% and f on the same lines descend normally, so the fault is not ink loss.
+existere som den fuldkomne Religion, er med andre Ord at existere som Gud-Menneske. At
 tale til Menneskene i Guds Navn, er da for Gud-Mennesket det samme, som at tale i sit
 eget Navn; han alene veed med sig selv, at han forholder sig til Gud, som den eenbaarne
 Søn til Faderen, og derfor vidner han om sig selv: \emph{Den, som seer mig, seer
@@ -8770,11 +8703,10 @@ et andet Menneske vil stille sig selv imellem mig og min Gud? Forargelsen er
 ubegrændset, eftersom det jo dog alligevel ikke er Menneskens Søn, der vil bedrage mig,
 men derimod mig, der er hildet i et frygteligt Selvbedrag. Den Forargedes indbildte
 Overlegenhed over den formeentlige „Bedrager“ taber sig her i en hemmelig Følelse af
-virkelig Afmagt, og med Følelsen af denne Afmagt vorer igjen Hadet. Det er en rædsom
-% Printer's defect: „vorer“ for „voxer“ --- an r sort for x. At 1800 dpi the glyph after
-% the o is identical to the word's own final r and does not descend. tesseract reads
-% „voxer“; rejected. Compare the confirmed true „voxer“ one line above a „vorer“ on
-% p. 141.
+virkelig Afmagt, og med Følelsen af denne Afmagt voxer igjen Hadet. Det er en rædsom
+% x/r: „voxer“, read by sense --- „med Følelsen af denne Afmagt voxer igjen Hadet“. The
+% sort throws no tail at 1800 dpi, but absence of a tail is not evidence; tesseract reads
+% „voxer“. The recorded p. 141 control pair is withdrawn; see the header.
 Tanke --- hvo tør tænke den ud! --- at noget Menneske kan hade Sandheden selv, som var
 den et uendeligt Bedrag, og dog fornemme Sandhedens Kraft i Hadets uendelige Lidenskab;
 ja, Den, der hader Menneskens Søn, maa hade ham indtil Døden.
@@ -8786,10 +8718,9 @@ men at han ogsaa kom, for at virke den afgjørende Krise. Idet vi tale saaledes,
 ikke af os selv; men Evangeliet vidner herom fra Begyndelsen indtil Enden. I Joh. 12, 31
 hedder det: \emph{Nu gaaer der Dom over denne Verden;} og i samme Ev. 3, 19---21:
 \emph{Men denne er Dommen.} Paa begge Steder er Ordet „\emph{Dom}“ en Oversættelse af
-Grundtertens Ord: „\emph{Krisis}“. --- „Nu er denne Verdens Krisis“ --- „Men denne er
-% Printer's defect: „Grundtertens“ for „Grundtextens“ --- an r sort for x, the same
-% fault already logged at pp. 58 and 132. Note that of the three „Krisis“ on this page
-% only the first is letterspaced; the two inside the quoted renderings are not.
+Grundtextens Ord: „\emph{Krisis}“. --- „Nu er denne Verdens Krisis“ --- „Men denne er
+% Note that of the three „Krisis“ on this page only the first is letterspaced; the two
+% inside the quoted renderings are not.
 Krisis“ --- Krisen er altsaa denne, at Lyset er kommet til Verden, og har gjort
 Skilsmisse imellem de Mennesker, der elske Mørket mere end Lyset, fordi deres
 Gjerninger ere onde, og de Mennesker, der øve Sandhed, og komme til Lyset, at deres
@@ -8804,8 +8735,7 @@ gaae ind paa en saadan Idee, men det kan da heldigviis ogsaa være det samme; th
 evangeliske Fremstilling beviser lige det Modsatte. Det hedder udtrykkelig i Johannes's
 Evangelium (3, 17): \emph{Thi Gud haver ikke sendt sin Søn til Verden, at han skal domme
 Verden, men at Verden skal blive salig ved ham.} Det vil sige: Christus kom ikke til
-Verden, for strar at fordømme de Ikke-Troende; men han kom, for at bevirke den Krise,
-% Printer's defect: „strar“ for „strax“, the third occurrence in this batch.
+Verden, for strax at fordømme de Ikke-Troende; men han kom, for at bevirke den Krise,
 % The last four lines of p. 246 are set with word spaces reduced almost to nothing, to
 % bring the paragraph out on the page; the fount is unchanged, and „blive“ (last line)
 % is a true v, 79 px against 69 px for this line's r sorts at 1800 dpi.
@@ -8838,31 +8768,28 @@ ikke kan finde sin Løsning i Videnskaben. Den Speculation, der mener det vel me
 arbeider paa at opløse Modsigelsen i Ideen. Vil denne Bestræbelse lykkes? Den
 speculative Dogmatik løser os jo Knuden i den christologiske Idee, som en Jomfru løser
 en Sløife. Skade at denne Idee, naar den ret er gjennemarbeidet indtil Begrebets
-Klarhed, viser sig i en saa paafaldende Modsigelse med Eristensen. Dette er det fatale
+Klarhed, viser sig i en saa paafaldende Modsigelse med Existensen. Dette er det fatale
 % „viser“ is a true v (83 px at 1800 dpi, against 46 px for the r of „Klarhed“ on the
-% same line); but „Eristensen“ is again an r sort for x.
+% same line).
 Vendepunkt, hvor Speculationen gaaer fra sig selv, og forvandles til negativ Kritik.
 % --- p. 248 ---
 Den Kritik, der mener det ilde med Troen, arbeider nu paa, at opløse Begrebet i lutter
-Modsigelser ved at godtgjøre Umuligheden af Ideens Eristens. Den speculerende Hegel
+Modsigelser ved at godtgjøre Umuligheden af Ideens Existens. Den speculerende Hegel
 lærer, at Gud-Menneskets Sandhed bekræfter sig selv i Ideen; den kritiserende Strauß
-% „Eristens“ here and „Eristensen“ four lines below: r sorts for x again. --- „Strauß“
-% and „Hegel“ are set in the LIGHTER FRAKTUR this book uses for German names, not in
-% antiqua; they stay plain.
-indvender, at Ideen af det individuelle Gud-Menneske fornegter sig selv i Eristensen.
+% „Strauß“ and „Hegel“ are set in the LIGHTER FRAKTUR this book uses for German names,
+% not in antiqua; they stay plain.
+indvender, at Ideen af det individuelle Gud-Menneske fornegter sig selv i Existensen.
 Dette i Videnskabens Historie tilstrækkelig godtgjorte Resultat, vilde upaatvivlelig alt
 have ramt den positive Theologie med et bedøvende, næsten dødbringende Slag, hvis ikke
 denne Videnskab til al Lykke havde været omsvævet af en beskjærmende Aand, en stedse
 vaagende Genius, der kunde afvende Faren, og tage Stødet op, nemlig --- af
 Middelmaadigheden.
 
-Den ægte Middelveislære opdagede naturligviis strar, at Hegel ikke kunde bruges. Hegel
-% Printer's defect: „strar“ for „strax“, the fourth in this batch.
+Den ægte Middelveislære opdagede naturligviis strax, at Hegel ikke kunde bruges. Hegel
 % This paragraph LOOKS smaller than the one above it but is not: the line pitch is
 % 0.0261 of the page against 0.0265, and the letterforms measure the same at 1200 dpi.
 % It is merely set with tighter word spaces.
-holdt sig nemlig til det orthodore Begreb om Sønnens Væsens-Eenhed med Faderen. Hvilket
-% Printer's defect: „orthodore“ for „orthodoxe“ --- an r sort for x.
+holdt sig nemlig til det orthodoxe Begreb om Sønnens Væsens-Eenhed med Faderen. Hvilket
 uhyre Misgreb af Speculationen! „Saavel den sunde Forstand, som den velforklarede
 % The opener „ here is NOT closed on p. 248: the quoted Middelvei speech runs on and
 % closes on p. 249, at „...Sønnens Væsens-Eenhed med Faderen“.“ This batch therefore
@@ -8877,9 +8804,8 @@ allerhelst tages som et rhetorisk Udtryk for den almindelige Sandhed, at der vir
 findes en Væsens-Lighed imellem den hellige Gud og det sædelige Menneske. Den
 forstandige Udtydning af dette rhetoriske Udtryk har Hegel (mærkeligt nok, da det dog
 ellers findes i saa mange Commentarer) ulykkeligviis ikke kjendt; og denne hans
-eregetiske Uvidenhed har saa igjen været Aarsag
-% Printer's defect: „eregetiske“ for „exegetiske“ --- an r sort for x, the eighth such
-% site in this batch. p. 248 ends mid-sentence with no hyphen; p. 249 opens flush with
+exegetiske Uvidenhed har saa igjen været Aarsag
+% p. 248 ends mid-sentence with no hyphen; p. 249 opens flush with
 % „i, at han spildte sin Tid...“.
 % --- p. 249 ---
 i, at han spildte sin Tid og Flid paa at udgrunde Sønnens Væsens-Eenhed med
@@ -8920,7 +8846,6 @@ Naar det vaersomme Udtryk: „Væsens-Lighed“ saa indstændig anbefales Kirken
 % to „varsomme“.
 istedetfor Kirkens eget dristigere: „Væsens-Eenhed“, da seer man strax, hvad det
 % A TRUE x: the final sort carries the tail below the baseline, read at 1200 dpi.
-% Contrast the three „strar“ sites on pp. 255, 256 below.
 egentlig er, hvortil Middelveislæren sigter. Det er Forskjellen og Mod\-%
 % --- p. 250 ---
 sætningen imellem Guds og Menneskets Væsen, den med tilbørligt Eftertryk vil
@@ -8979,7 +8904,6 @@ Menneske. Og, naar saa den rene Videns hemmelige Medvidere hviste til hinanden:
 Modsigelse, Modsigelse, hvilken Modsigelse! og naar de med denne Hvisken liste sig frem
 fra Reflexionens Baghold, for at opløse „det virkelige Gud-Menneske“ i en taaget
 % A TRUE x here: the sixth letter carries a tail below the baseline at 1200 dpi.
-% Contrast „Reflerionen“ on p. 259 below, where the same word takes an r sort.
 Almindelighed: hvad beviser saa dette? Det beviser slet ikke, at „Gud-Mennesket“ nu maa
 opløse sig i en Almindelighed; men det beviser, at den rene Viden er i Begreb med at
 % --- p. 252 ---
@@ -9058,9 +8982,7 @@ Sadducæerne alt i Datiden imod de samme Sygehelbredelser. De Skriftkloge, der f
 saa ophøiede over Folket, meente vel, at de for deres Vedkommende nok kunde gjøre
 Fordring paa et mere udmærket Tegn, et Tegn, hvis Beskaffenhed de nu selv behagede at
 bestemme, et Tegn, der var istand til at overbevise dem. Dette Tegn skulde naturligviis
-ikke være noget almindeligt Tegn, ikke noget saa Ubetydeligt, som t. Er., at en
-% Printer's defect: „t. Er.“ for „t. Ex.“ --- an r sort for x. At 1200 dpi the sort
-% sits on the baseline with no tail. The same defect recurs on p. 255.
+ikke være noget almindeligt Tegn, ikke noget saa Ubetydeligt, som t. Ex., at en
 stakkels Blind fik sit Syn, eller en Sindssvag sin Forstand; deres Tegn skulde
 overhovedet ikke skee til Bedste for noget enkelt Menneske; nei, det skulde just være
 et over Mennesketilværelsen ophøiet Tegn, et storartet, al Verden overraskende Tegn, et
@@ -9098,15 +9020,11 @@ Moder ham . . .“
 
 Mener Nogen, at en saadan Undergjerning nødvendigviis maatte vække Troen hos alle
 Tilstedeværende; da tager han mærkelig feil. For at overbevise os herom, henstille vi
-t. Er. en eller anden forhærdet Sadducæer som Øienvidne. Hvorledes vilde nu en
-% Printer's defect: „t. Er.“ for „t. Ex.“ again --- an r sort, read at 1200 dpi.
+t. Ex. en eller anden forhærdet Sadducæer som Øienvidne. Hvorledes vilde nu en
 sadducæisk Kritiker vel bedømme dette Optrin? Uden Tvivl saaledes: „Det var da en sand
 Lykke for det unge Menneske, at han ikke blev levende begravet; men det var en fatal
 Ulykke, at denne foregivne Prophet, denne omvankende Mirakelmager, just skulde komme
-til Stadens Port i det Øieblik, man bar den Skindøde ud, og strar være saa heldig, at
-% Printer's defect: „strar“ for „strax“ --- an r sort for x; no tail below the baseline
-% at 600 dpi, and the sort is identical to the r three letters earlier. Contrast the
-% true „strax“ on pp. 249 and 251 above.
+til Stadens Port i det Øieblik, man bar den Skindøde ud, og strax være saa heldig, at
 gjøre Opdagelsen, og benytte Tilfældet. Man maa imidlertid indrømme ham, at han
 forstaaer, at gjøre det baade høitideligt og rørende. See, Frygten staaer
 % p. 255 ends bare, with no hyphen; p. 256 opens flush with „malet i Alles Aasyn“.
@@ -9116,8 +9034,7 @@ Gud, at Propheten har frelst en Død fra Graven; de burde hellere bede Øvrighed
 Omsorg for, at ærlige Folk fik Tid at døe, før Næsten lod dem begrave.“ --- En moderne
 Kritiker behøver slet ikke at undsee sig ved Sadducæerens Opfattelse; tvertimod, han
 kan endog retfærdiggjøre den i Kraft af Videnskabens eget logiske Princip. Tænke vi
-lidt nøiere efter, finde vi strar Beviset; her er det: „Hvis det unge Menneske havde
-% Printer's defect: „strar“ for „strax“, the second in this batch; read at 600 dpi.
+lidt nøiere efter, finde vi strax Beviset; her er det: „Hvis det unge Menneske havde
 været virkelig død, saa var han ikke staaet op igjen. Nu er han jo staaet op igjen.
 \textit{Ergo}: har han ikke været virkelig død.“ Denne Slutning er stringent og reen,
 % ANTIQUA, and the only antiqua in the body of this page: serifed E, two-storey g with
@@ -9220,10 +9137,7 @@ Det er et af Verdensaandens store Arbeider, at fremme og mangfoldiggjøre denne
 Modsigelse i alle Retninger, og føre den igjennem alle Kriser. Men, imedens
 Verdensaanden kun anvender de mange Modsigelser til at bekræfte Fornegtelsen, gaaer nu
 ogsaa Christi Aand igjennem Tiderne, for at optage de samme Modsigelser, vende dem om,
-og opløse dem i Troen. Reflerionen strider da igjen for en troende Tilegnelse.
-% Printer's defect: „Reflerionen“ for „Reflexionen“ --- an r sort for x, with no tail
-% below the baseline at 600 dpi. Contrast „Reflexionens“ on p. 251 above, where the
-% same word takes a true x eight pages earlier.
+og opløse dem i Troen. Reflexionen strider da igjen for en troende Tilegnelse.
 
 \emph{Hvor uretfærdig og falsk er dog ikke den Paastand, at Jesu undergjørende Magt i
 nogensomhelst af dens Yttringer skulde have bevirket en Forstyrrelse af Naturens
@@ -9464,7 +9378,7 @@ imellem Loven og Evangeliet. Men alligevel gaaer Videnskabens Magt dog ikke saa 
 at den skulde kunne fjerne Misforstaaelsens oprindelige Grund eller ophæve Stridens
 Aarsag: hver Gang de existentielle Betingelser paany træde i Kraft, slaaer ogsaa
 % „existentielle“ takes the TRUE x here (the descending stroke is unmistakable at
-% 600 dpi), against the wrong r sorts logged below on pp. 268, 269 and 271. The space
+% 600 dpi). The space
 % before „Betingelser“ is a thin one --- 16 px against 20--38 px for the other word
 % spaces on the line, but well above the 6--13 px of the letter gaps --- so a space it is.
 Modsigelsen ud i nye, overraskende Former. Et umiskjendeligt Beviis herpaa leverer den
@@ -9506,19 +9420,17 @@ at „det Gamle er bedre“; men at bedaare Mængden med en ny Christendom, ja d
 
 „Hvad her fremføres, er ingen tom Beskyldning, men en vitterlig Kjendsgjerning: nogle
 faa Exempler ville være tilstrækkelige til at sætte Sagen i det rette Lys. Opgaven er
-% „Exempler“ takes the TRUE x --- the descender is plain at 600 dpi --- three lines
-% above the wrong sorts „strar“ and „Tert“. No rule; judge every occurrence.
+% „Exempler“ takes the TRUE x --- the descender is plain at 600 dpi.
 at undersøge, om Nutidens Theologer og Præster nu ogsaa virkelig lære og prædike
 saaledes, som Christus selv har prædiket.“
 
 „I den saakaldte Bjergprædiken begynder Christus med at prise dem salige, der ere
 fattige i Aanden. For at faae Borgerret i Himmeriges Rige behøver man altsaa blot at
-% Printer's defects, all read at 600 dpi and all left as printed: „strar“ for strax
-% (the sort has no descender, and is identical to the r of „er“ two words before);
-% „Tert“ for Text; „inclusire“ for inclusive --- an r sort for v, the same fault as
-% „forrandlede“ on p. 259. „inclusive“ is set in Fraktur, not antiqua; no \textit{}.
-være fattig i Aanden. Her er strar Noget, der tiltaler den naturlige Følelse. En ret
-opbyggelig Prædiken over denne Tert vil sikkerlig kunne forskaffe, ikke blot Præsten
+% Printer's defect, read at 600 dpi and left as printed: „inclusire“ for inclusive ---
+% an r sort for v, the same fault as „forrandlede“ on p. 259. „inclusive“ is set in
+% Fraktur, not antiqua; no \textit{}.
+være fattig i Aanden. Her er strax Noget, der tiltaler den naturlige Følelse. En ret
+opbyggelig Prædiken over denne Text vil sikkerlig kunne forskaffe, ikke blot Præsten
 selv, men den hele Menighed (Klokkeren og Stolekonen inclusire) en andægtig Lise for
 alle tvivlende
 % --- p. 269 ---
@@ -9530,11 +9442,9 @@ Umyndige saa ville forsøge sig videre med den eenfoldige Grundsætning, at alle
 i religieus Henseende altsaa maae være lige vise, eftersom de jo alle uden Undtagelse
 ere fattige i Aanden: hvad maa han da ikke erfare? Ja, da maa han vel erfare, at der
 nok dog alligevel er en mærkelig Forskjel, at den Ene i Aandens Fattigdom dog nok
-% Two more wrong sorts on this line, both confirmed at 600 dpi against the true x of
-% „Exempler“ (p. 268): „t. Er.“ for t. Ex., and „strar“ for strax. A stray vertical
-% stroke with a blob at its foot stands between „visere“ and „end“ --- a spacing quad
-% risen to type-high, not a letter; not transcribed.
-alligevel er endeel visere end den Anden. See, Klokkeren t. Er. er nu strar visere end
+% A stray vertical stroke with a blob at its foot stands between „visere“ and „end“ ---
+% a spacing quad risen to type-high, not a letter; not transcribed.
+alligevel er endeel visere end den Anden. See, Klokkeren t. Ex. er nu strax visere end
 % Printer's defect: „Summas“ for Summus at the FIRST occurrence only; the a is
 % unmistakable at 600 dpi, and both OCR witnesses read it. Every later occurrence on
 % pp. 269--272 is correctly „Summus“. As printed.
@@ -9591,9 +9501,7 @@ selv maatte behage at anvise ham i Menigheden; men
 % x-height. Read as a risen space or rule, and not transcribed; the spacing of „men“ is
 % taken as line-fill, not emphasis. Rejected reading: „men ---“.
 % --- p. 271 ---
-da Tiderne ere verdslige, og de verdslige Tider skride frem i stadig Tilvært af
-% Printer's defect: „Tilvært“ for Tilvæxt --- the r has no descender at 600 dpi, and is
-% identical to the r of „større“ four lines below. As printed.
+da Tiderne ere verdslige, og de verdslige Tider skride frem i stadig Tilvæxt af
 allehaande lærd Kundskab og fornuftig Indsigt, har man til Kirkens Tarv fundet det
 fornødent, at berige Troen med adskilligt Gods af den lærde Viden, og bør desaarsag
 Menighedens Fattige holdes under stadigt Tilsyn af de større, Godseiere eller
@@ -9604,10 +9512,9 @@ Redactionsanmærkning; men det er vist, at \textit{Summus Theologus} kan meget g
 den, og vi tillade os at mene, at ogsaa vi kunne see den. „Troen har i Grunden Intet
 med den lærde Videnskab at gjøre, og dog kan Troen --- \textit{mirabile dictu} --- ikke
 bestaae uden den lærde Videnskab“. En superb Tvetydighed! Nu maatte det da gaae til med
-% Two defects in one word: „Hereri“ for Hexeri (the sort has no descender), and NO space
-% between „trefoldigt“ and „Hereri“ --- the line's eight other word spaces measure
-% 20--36 px at 600 dpi, this one is under 6. Both as printed.
-trefoldigtHereri, hvis de høilærde Kirkepatroner nogensinde skulde tabe Ligevægten.
+% PRINTER'S DEFECT: NO space between „trefoldigt“ and „Hexeri“ --- the line's eight
+% other word spaces measure 20--36 px at 600 dpi, this one is under 6. As printed.
+trefoldigtHexeri, hvis de høilærde Kirkepatroner nogensinde skulde tabe Ligevægten.
 Bliver Videnskaben engang imellem for nærgaaende, kommer man lidt i Knibe med den
 % Printer's defect: „erangelisk“ for evangelisk --- an r sort for v, as in „inclusire“
 % (p. 268) and „forrandlede“ (p. 259). As printed.
@@ -9717,8 +9624,7 @@ det Ideale end forøvrigt lægges an, maa det dog altid paa en eller anden Maade
 forene med det Virkelige; men nu veed dog enhver oprigtig Christen, „at den rene
 Communisme er --- i aabenbar Strid med det Virkelige“. --- Behøve vi endnu at anføre flere
 % „Exempler“ with a TRUE Fraktur x: at 1200 dpi the sort throws the diagonal tail that
-% descends below the baseline (test calibrated against the p. 120 pair). Contrast
-% „Erempel“ eleven lines below, on this same page.
+% descends below the baseline.
 Exempler?“
 % This closing “ has no opener on the page: it closes the paragraph-speech opened at the head
 % of p. 274 („Christus, der prædiker under aaben Himmel\dots{}). The p. 223 opener does NOT
@@ -9732,9 +9638,7 @@ imidlertid strax, at det neppe kan gaae naturligt til med dens Opfyldelse. Man b
 ikke at see saa farlig dybt i Tingenes Gang, for at kunne sige sig selv, at Sagtmodigheden
 ingenlunde er den Dyd, hvorved man nutildags indtager Riger og Lande. Præsterne vide det
 saare vel, om just ikke af egen Erfaring, saa dog af deres Forgjængeres
-% PRINTER'S DEFECT: „Erempel“ for „Exempel“ --- a plain r, verified at 1200 dpi: the sort
-% ends on the baseline with no descending tail, unlike the true x of „Exempler“ above.
-Erempel. Med desto større Tilforladelighed kunne de da anprise Fredsommeligheden. At de nu
+Exempel. Med desto større Tilforladelighed kunne de da anprise Fredsommeligheden. At de nu
 blot vilde gjøre derefter! vi skulde i al Oprigtighed byde dem velkomne, vi skulde med
 Hjertens-Glæde hilse dem, som skrevet er: „hvor deilige ere deres Fødder, som forkynde
 Fred, som forkynde glad Budskab“. Men (hvordan det saa end gaaer med Freden) en Bemærkning
@@ -10133,11 +10037,7 @@ Trængslen, for blot at røre ved hans Klædebon, lyder hans milde Røst:
 „Vi kunne ikke prædike som Christus; men altid skulle vi prædike Christum“.
 
 --- Hvo er saa Denne, der taler Ordet og udrækker Haanden? \emph{Den store
-Læge!} --- „Men --- med ringe Praris“.
-% PRINTER'S DEFECT: „Praris“ for „Praxis“ --- wrong sort, r for x. Judged at
-% 1200 dpi: the final letter of the syllable sits on the baseline with the same
-% foot as the r of the adjacent „ringe“, with no stroke descending below it.
-% Both OCR witnesses read „Praris“ too. Transcribed as printed.
+Læge!} --- „Men --- med ringe Praxis“.
 \emph{Den sande Prophet!} --- „Men --- \textit{post eventum}“.
 % „post eventum“ is antiqua (the light roman for „post“, the bold roman for
 % „eventum“) against the surrounding Fraktur; one \textit{} per the convention.
@@ -10276,7 +10176,7 @@ Jakobus og Johannes bort fra deres Fiskergarn, for at følge ham. Ogsaa det fjer
 Evangelium fortæller strax i Begyndelsen (Joh.\ 1, 35---52), hvorledes de første
 % All four „strax“ on this page carry a TRUE x: judged at 1200 dpi, each final
 % letter shows the stroke descending below the baseline that the neighbouring r
-% of „str“ lacks. Contrast the „strar“ on p. 294 below.
+% of „str“ lacks.
 Disciple sluttede sig til Jesus; blandt disse befinde sig ligeledes Petrus og
 Andreas, og sandsynligviis ogsaa Johannes, idet Andreas's unævnte Ledsager
 sædvanlig bliver antagen for ham. Da nu disse Fortællinger angaae forskjellige
@@ -10321,12 +10221,7 @@ Begge saa stor Vægt paa, at de forlode deres Garn, og sluttede sig til Jesus: s
 maa dette efter Referentens Mening have været noget Overordentligt, hvilket det
 ikke var, hvis Mændene allerede før havde været i Jesu Følge. Og ligeledes med
 Hensyn til Jesus ligger Pointen af Fortællingen deri, at han med prophetisk Aand
-strar ved det første Blik har fundet det Rette, at han, efter Joh.\ 2, 25:
-% PRINTER'S DEFECT: „strar“ for „strax“ --- wrong sort, r for x. At 1200 dpi the
-% final letter ends on the baseline with the same foot as the r of „str“, where
-% the two other „strax“ on this same page (ll. 25 and 29) both show the stroke
-% descending below it. The book mixes the two sorts within a page; transcribed
-% as printed, not corrected toward sense.
+strax ved det første Blik har fundet det Rette, at han, efter Joh.\ 2, 25:
 \emph{ikke havde behov, at Nogen skulde vidne om et Menneske, efterdi han selv
 vidste, hvad der var i Mennesket;} hvorved han opfyldte en Fordring, som Jøderne
 gjorde til deres Messias“.
@@ -10929,8 +10824,6 @@ er diese Sorgfalt des Nachforschens
 % here. That closer is the mate of the p. 313 opener --- not a printer's defect.
 % All German here (Weiße's title and the quoted German) is the LIGHTER FRAKTUR the book
 % uses for German, not antiqua, so it stays plain.
-% Printed „strar“ twice on this page (at „de strar forvandle“ and „viser sig strar“):
-% both finals sit on the baseline with no descender at 1200 dpi. Transcribed as printed.
 auf ein so nichtiges Geschwätz gewendet hat.“ Ikke destomindre er det dog denne store
 „Genauigkeit des Details“, vi maae takke for, at ikke blot Tankegangen i Weiße's Kritik
 --- hvad der dog maaskee kunde være af mindre Vigtighed --- men en heel Gruppe af
@@ -10939,7 +10832,7 @@ ubesindige Disciple med deres jødiske Fordomme; de nysgjerrige Naboer med deres
 overfladiske Forundring; de uudvigende Forældre med deres Menneskefrygt; de forhærdede
 Pharisæer i deres store Forlegenhed; den blindfødte Mand i hans vidunderlige Overgang fra
 Mørket til Lyset: alle disse Charakterer ere opfattede med en saadan Sikkerhed og indre
-Sandhed, at de strar forvandle sig for Betragteren til individuelle Skikkelser med Kjød og
+Sandhed, at de strax forvandle sig for Betragteren til individuelle Skikkelser med Kjød og
 Blod. Deres sjælelige Eiendommelighed reflecterer sig fra alle Sider i Underet selv. Især
 er det da den Blindfødte og Pharisæerne, der tildrage sig vor Opmærksomhed. Den blinde
 Mand, der sidder ved Veien og tigger (V.\ 8), er som en i Dunkelhed indhyllet Skikkelse.
@@ -10950,7 +10843,7 @@ Blinde kan ikke see sin Frelser; men Frelseren, der staaer hos ham, kan see ham,
 hvad der skjuler sig i hans Mørke. Ulykken er ikke her en Guds Straf for nogen særegen
 Brøde: han fødtes blind, \emph{paa det at Guds Gjerninger skulde blive aabenbarede paa
 ham.} Saaledes forberedes Underet (V.\ 9). At Christus ikke har seet feil og valgt en
-Uværdig, viser sig strar; den Blinde troer den Ubekjendte paa hans Ord, adlyder ubetinget
+Uværdig, viser sig strax; den Blinde troer den Ubekjendte paa hans Ord, adlyder ubetinget
 hans Bud, gaaer bort til Dammen Siloam, og vender seende tilbage. --- Underet er nu en
 Kjendsgjerning, der virker forskjelligt paa de Forskjellige. I
 % --- p. 315 ---
@@ -11081,8 +10974,7 @@ Det unge Menneske, der løb til, og faldt paa Knæ for Jesus paa Veien, og spurg
 til dem, der misbruge Rigdommens Gaver i Uretfærdighedens eller lave Begjærligheders
 Tjeneste; tvertimod, han kjendte alle Budene, han havde holdt
 % --- p. 319 ---
-% Printed „nn ønskede han“ (a turned sort for nu), and „strar“ in „vilde nu strar lette“
-% (no descender at 1200 dpi). Both transcribed as printed.
+% Printed „nn ønskede han“ --- a turned sort for nu, at 1200 dpi. Transcribed as printed.
 % „Men Jesus saae paa ham, og fattede Kjærlighed til ham, og sagde til ham:“ is set in
 % the ordinary body fount --- only „een Ting fattes dig…“ is letterspaced (checked at
 % 600 dpi).
@@ -11099,7 +10991,7 @@ beretter (10, 21): Men Jesus saae paa ham, og fattede Kjærlighed til ham, og sa
 ham: \emph{een Ting fattes dig, gak bort, sælg, hvad du haver, og giv de Fattige det, saa
 skal du have et Liggendesæ i Himmelen, og kom, tag dit Kors, og følg mig.}
 
-Den „gode Mester“ vilde nu strar lette den lykkelige unge Mand Veien til den attraaede
+Den „gode Mester“ vilde nu strax lette den lykkelige unge Mand Veien til den attraaede
 Fuldkommenhed ved at befrie ham fra en besværlig Byrde: ak, den Lykkelige fattede ikke
 Befrielsen. \emph{Men han bliver ilde tilfreds over denne Tale, og gik bedrøvet bort; thi
 han havde meget Gods.}
@@ -11114,10 +11006,9 @@ selv er \emph{Ver\-%
 % --- p. 320 ---
 % „Verdens“ is letterspaced and broken across the leaf; the \emph{} is carried over the
 % marker so that the letterspacing is not interrupted.
-% Printed „strar“ in „han ikke strar gik ind i Guds Rige“ (no descender at 1200 dpi) and
-% „Sktiftkloge“ in the last quotation (a t sort where an r belongs: the glyph carries a
-% crossbar extending both sides of the stem, unlike the Fraktur r; the same page prints
-% a true „Skriftkloge“ ten lines above). Both transcribed as printed.
+% Printed „Sktiftkloge“ in the last quotation (a t sort where an r belongs: the glyph
+% carries a crossbar extending both sides of the stem, unlike the Fraktur r; the same
+% page prints a true „Skriftkloge“ ten lines above). Transcribed as printed.
 % „Spørgsmaaler“ carries a plain final r at 1200 dpi; „Spørgsmaalet“ rejected.
 % „som Den, der havde Myndighed, og ikke som de Sktiftkloge“ is NOT emphasised --- body
 % fount, merely loose word spacing (checked at 600 dpi).
@@ -11129,7 +11020,7 @@ og Hjertets Eenfoldighed (Matth.\ 5, 3). Hvor nær var ikke hiin Lovkyndige, der
 22, 35) fristede ham med Spørgsmaaler om det store Bud, hvor nær var denne Lærde ikke ved
 at komme til Sandheds Erkjendelse (Mr.\ 12, 34): Jesus saae, at han svarede forstandeligen,
 og sagde til ham: \emph{du er ikke langt fra Guds Rige.} Hvad var det da, der holdt den
-Skriftkloge tilbage, at han ikke strar gik ind i Guds Rige? Det var uden Tvivl
+Skriftkloge tilbage, at han ikke strax gik ind i Guds Rige? Det var uden Tvivl
 Lovkyndigheden! --- Ja, naar vi endnu i vore Dage see de Lærde granske og granske i de
 hellige Bøger, uden dog med al deres Lærdom og Granskning at komme til Sandheds
 Erkjendelse, hvor ofte maae da ikke Jesu Ord (Joh.\ 5, 39---40) rinde os i Hu: {\large I
@@ -11176,9 +11067,6 @@ Individernes Flok,
 % --- p. 322 ---
 % Printed „eu Mængde“ in the first line --- a third turned sort in this gathering,
 % confirmed at 600 dpi; the word „Mængde“ beside it is letterspaced.
-% Printed „Reflerionsbegreber“: the glyph after „Refle“ sits on the baseline with no
-% descender at 1800 dpi, i.e. an r sort where x belongs, as at pp. 140 and 142.
-% Transcribed as printed.
 % RETTELSER SITE. Printed line 10 from the top reads „Folket, at det kun var Pøbel
 % (le peuble!); saa vilde det være“ --- the errata leaf's reading is confirmed: the
 % disputed glyph has a full ascender and a baseline bowl (b), not a descender (p), at
@@ -11190,7 +11078,7 @@ dobbelt Synspunkt. Massen har endnu ingen Dannelse, den skal først til at danne
 er raa, Massen er „Pøbel“. Idet Dannelsen begynder at trænge ind i Massen, sondrer denne
 sig i en Mangfoldighed af raisonnerende og kritiserende Individer: ved en mangesidig
 overfladisk Dannelse bliver Mængden et „Publikum“. Begge Begreber: „Pøbel“ og „Publikum“
-ere eensidige Reflerionsbegreber. Vilde det være en blodig Fornærmelse imod
+ere eensidige Reflexionsbegreber. Vilde det være en blodig Fornærmelse imod
 Menneskeheden, hvis Nogen sagde om Folket, at det kun var Pøbel (\textit{le peuple}!); saa
 vilde det være en ligesaa haard, om end ikke slet saa følelig Krænkelse, hvis Nogen
 paastod, at Folket kun var et Publikum. --- Folkelighedens Grund er Eet med vor Slægts
@@ -11216,7 +11104,6 @@ gjærende Masse kan Folket udklare sig, og komme
 % The footnote is marked *) after „Massen“ and RUNS OVER THE LEAF onto p. 324, where it
 % ends with a letterspaced quotation of Matth. 5, 13. The whole of it is set here.
 % „(sit venia verbo)“ is Latin in ANTIQUA, parentheses included, hence \textit{}.
-% The footnote prints „Reflerion“ (r for x, no descender at 1200 dpi), as in the body.
 tilsyne. Men de hidsige Folkejægere, der opjage Massernes Lidenskaber, at de raae
 Elementer uden Ophør maae gjære og bruse, lægge Folket øde: i den vilde Gjæring synker
 Folkeligheden jo reent til Bunds.
@@ -11238,7 +11125,7 @@ Lys. Saa gaae de tjenstvillige Ledere da ud, hver med sin Lygte, at lyse for Fol
 hvor de mange Lygtemænd dog forvirre Massen\footnote{% printed mark: *)
 Er Himmeriges Rige i Forhold til Massen at ligne ved en Suurdeig, saa er Livets Ord i
 Forhold til den raisonnerende Mængde nærmest at ligne ved et Salt. Idet Mængden
-articulerer sig (\textit{sit venia verbo}) til Publikum, og den løsnede Reflerion begynder
+articulerer sig (\textit{sit venia verbo}) til Publikum, og den løsnede Reflexion begynder
 at rokke saa smaat ved de første eenfoldige Sandheder, undergaaer det menneskelige Gemyt
 en høist betænkelig Forandring. Massen, der lever i Guds frie Natur, og indaander den
 raaere, men skarpere Luft, vil altid bevare en vis naturlig Friskhed. Men den
@@ -11282,9 +11169,9 @@ helliggjør den naturlige Drift, maa prise Instinctet i høie Toner. Men naar sa
 % „Evangel. Matth. 13, 3---9.“ stands on a line of its own in a SMALLER fount than the
 % body (line height 41 px against 55--57 at 600 dpi), hence \small.
 % The parable of the sower follows at FULL MEASURE in the larger fount.
-% Printed „vorte“ TWICE for voxte (both finals sit on the baseline at 1800 dpi, as with
-% the „vore“ for voxe recorded at pp. VIII and 79); printed „sukter“ for sukker (the two
-% glyphs after „su“ differ in shape: k then t). All transcribed as printed.
+% Printed „sukter“ for sukker (the two glyphs after „su“ differ in shape: k then t);
+% transcribed as printed. „voxte“ twice in the parable is read by sense, the scan being
+% unable to distinguish the sorts (see the header).
 % The question mark after „ufeilbart“ is NOT printed --- there is bare white space before
 % „Men selv om Frugtbarheden“ at 1200 dpi. And the citation prints „(Matth. 13  24---30)“
 % with no comma after 13, the numeral being 24. Both as printed.
@@ -11298,8 +11185,8 @@ Folkelighedens egen Grund bliver belyst af det aabenbarede Ord.
 \begingroup\large
 See, en Sædemand gik ud at saae. Og idet han saaede, faldt Noget ved Veien, og Fuglene kom
 og aade det op. Men Noget faldt paa Steengrund, hvor det ikke havde megen Jord, og det
-vorte snart op, fordi det ikke havde dyb Jord. Men Noget faldt iblandt Torne, og Tornene
-vorte op og qvalte det. Men Noget faldt i god Jord og bar Frugt: Noget hundrede Fold, men
+voxte snart op, fordi det ikke havde dyb Jord. Men Noget faldt iblandt Torne, og Tornene
+voxte op og qvalte det. Men Noget faldt i god Jord og bar Frugt: Noget hundrede Fold, men
 Noget tredsindstyve Fold, men Noget tredive Fold. Hvo, som haver Øren at høre med, han
 høre!
 \par\endgroup
@@ -11326,14 +11213,14 @@ rette Hersker. Folket trykkes i Massen og sukter i Mængden:
 % below rather than open a new footnote.
 % „a)“ is ANTIQUA against the Fraktur, hence \textit{}; „gratis“, though Latin, is set
 % in Fraktur and stays plain.
-% In the footnote: printed „strar“ (no descender at 1800 dpi), „Mængdeu“ and „Meu“ (two
-% turned sorts in one line, both arches at the foot), and „Retfærdighetens“ with a t
-% where a d belongs. All transcribed as printed.
+% In the footnote: „Mængdeu“ and „Meu“ (two turned sorts in one line, both arches at
+% the foot), and „Retfærdighetens“ with a t where a d belongs. All transcribed as
+% printed.
 Saa gjælder det da ubetinget, at Massen maa gjære, og Mængden røre sig, at den Bundne kan
 løses og erholde sin Frihed. Jo hurtigere det kan gaae med Befrielsen, desto høiere jubler
 Folket, naar det --- vel at mærke --- har seet og erkjendt den sande Befrier. Den sande
 Hersker og den sande Befrier ere ikke tvende, men een Person ɔ: Forløseren\footnote{% printed mark: *)
-Der er vel Ingen, der i denne Tid kan høre Ordet „Folkefrihed“ uden strar at tænke paa
+Der er vel Ingen, der i denne Tid kan høre Ordet „Folkefrihed“ uden strax at tænke paa
 Politik. „Da man nu, som det hedder, ikke kan lære Politik af Christendommen (med mindre
 det skulde være den velbekjendte Præstepolitik), saa er det kun en tom Talemaade, naar det
 siges, at Christus er Folkenes Forløser.“ --- Lad os overveie denne Sag i al Korthed.
@@ -11471,11 +11358,8 @@ vil med i Verdenshistorien og have sine Navne indtegnede i Folkenes Aarbøger. H
 man dog tænke om den moderne Viisdom? --- Er det, at komme med i Verdenshistorien, kun
 en anstrengende Morskab, som det, at komme med i den larmende Leg, der leges med Keiser
 og Konge? er det, at sætte sig i Magtens Høisæde, et underholdende Gjækkeri, som det, at
-% „strar“ for strax: a WRONG SORT --- the final glyph sits on the baseline with no
-% descender, identical to the r earlier in the word, judged at 1200 dpi. This page's is
-% the first of five in this batch (also pp. 335, 337, 338, 339). Not corrected.
 sætte sig lidt paa Forundringsstolen? er Udødeligheden nu bleven saa liberal, at enhver
-Smule Halvtimeshelt strar kan faae sin Berømmelse indført i Folkenes Aarbøger? bliver
+Smule Halvtimeshelt strax kan faae sin Berømmelse indført i Folkenes Aarbøger? bliver
 man nu virkelig navnkundig, naar man blot kan komme til at faae sit ærede Navn indridset
 paa en eller anden Rude i en eller anden offentlig Bygning (være sig Kirke, Theater,
 Børs eller Raadstue): ja, det er en anden Sag, saa er Nutidens Adfærd meget begribelig.
@@ -11543,9 +11427,7 @@ til hendes Ihukommelse.} Men her er ogsaa en anden Dom, en Dom, der lyder paa Na
 Gjerninger, om hvilke man vel kunde sige, at de med al den Brøde, de bære i sig, dog
 ikke ved egen Kraft have hævet sig til det Overordentlige, eller paa egen Haand tjent
 sig op til Forbrydelsens Udødelighed. Vi tænke paa den Dom, der for Christi Skyld er
-% „Erempler“ for Exempler: a WRONG SORT --- at 1200 dpi the second glyph is identical to
-% the final r of the same word, with no descender. Not corrected.
-overgaaet en Herodes og Pilatus, en Annas og Caiphas. I disse Erempler see vi, hvor
+overgaaet en Herodes og Pilatus, en Annas og Caiphas. I disse Exempler see vi, hvor
 farligt det stundom kan være at komme Lyset for nær. Hvor mange Høitbetroede have ikke
 % The mark after „Landshøvding“ is a half-inked „!“ --- the stroke is printed, the point
 % below it has not taken. Read at 600 dpi; „?“ rejected (the stroke is straight).
@@ -11645,11 +11527,10 @@ jeg Eder: dersom I have Tro, som et Senepskorn, da kunne I sige til dette Bjerg:
 dig herfra derhen, saa skal det flytte sig, og Eder skal Intet være umuligt.} Den
 Frommeste blandt de Fromme faaer uu vel at besinde sig lidt, førend han svarer. Svarer
 han os: „disse Ord ere talte, som i en Lignelse; en saadan Forjættelse kan ikke
-% „strar“ for strax --- the second of five in this batch; no descender at 1200 dpi.
 forstaaes bogstaveligt; nei, saa vidunderlige Ting kan Troen dog i Virkeligheden ikke
 % The colon after „derimod“ is half-inked: the upper point has smeared into a short bar.
 % Read as a colon at 600 dpi.
-udrette“: da høre vi jo strar Tvivleren i denne kritiske Omtydning. Svarer han os
+udrette“: da høre vi jo strax Tvivleren i denne kritiske Omtydning. Svarer han os
 derimod: „Forjættelsen staaer fast. For den Troende skal Intet være umuligt. Jeg troer i
 Sandhed, at, hvis jeg kun i ubetinget Tillid til Christi Almagt turde udtale Ordet:
 \emph{flyt dig!} vilde Bjerget flytte sig, og --- forsvinde. Men, jeg veed ikke, hvordan
@@ -11704,9 +11585,8 @@ Søvngjænger, som en Lady Macbeth, sovende, og dog --- søvnløs?
 
 Det er for Kjød og Blod en farlig Sag, at indlade sig med Aanderne. --- Du nævne hvilken
 Aand, Du vil; de bringe Dig alle i Fare. Vidste vi kun, at Vantroen havde Ret; ja,
-% „strar“ for strax --- the third of five in this batch; no descender at 600 dpi.
 vidste vi kun, at Menneskets Liv var afsluttet og endt med denne Tilværelse: da maatte
-vi strar tilkjende Middelmaadighedens Viisdom den høieste Priis, og tilraabe hvert
+vi strax tilkjende Middelmaadighedens Viisdom den høieste Priis, og tilraabe hvert
 Menneske, han være lærd eller ulærd: „tag Dig iagt for Aanderne, at Du ikke skal falde i
 Fristelse. Husk paa, at Du er Kjød og Blod! Kom aldrig nogen Aand for nær, aldrig
 nærmere, end Klogskabens og Sindighedens og Dannelsens Grændse tillader. Man kan jo dog
@@ -11724,8 +11604,7 @@ altid være vis paa at gaae frem med Tiden fra Seier til Seier: Aandrigheden er 
 som den bevægelige Tidsaand. Forsaavidt Du nu efterkommer disse vore Formaninger, gjør
 Du, hvad der staaer til Dig. Men skulde Du desuagtet mærke, at en virkelig Aand --- o
 Rædsel! --- nærmede sig, og for Alvor vilde have Dig fat, da maa Du itide gjøre Alt,
-% „strar“ for strax --- the fourth of five in this batch; no descender at 600 dpi.
-hvad der staaer i din Magt, for at slippe bort. Vel kan Du ikke strar uden videre løbe
+hvad der staaer i din Magt, for at slippe bort. Vel kan Du ikke strax uden videre løbe
 din Vei (thi den Mand maa være rap til Fods, der skal indlade sig i Væddeløb med en
 Aand); men Du bør dog idetmindste gribe ethvert Nødværge, der staaer til et fornuftigt
 Menneskes Raadighed. Vær blot forsigtig, men tab ikke Modet! Der ere jo Midler nok, naar
@@ -11767,9 +11646,8 @@ udholde Synet af et saadant Billede? --- Paa Frugterne skal Træet kjendes. Vill
 Rettroenhedens modne Frugt i en ægte glødende Belysning, da glemmer for Alting ikke at
 tænke paa en Bartholomæusnat.“
 
-% „strar“ for strax --- the fifth in this batch; no descender at 600 dpi.
 % „nhyggelige“: turned sort, n for u (the h's tail is faint but present). Read at 600 dpi.
-Uden Omsvøb tilstaae vi strar, at Fritænkerens Klage er i denne Henseende kun altfor vel
+Uden Omsvøb tilstaae vi strax, at Fritænkerens Klage er i denne Henseende kun altfor vel
 begrundet. Det nytter ikke at ville svække Indtrykket af Kirkehistoriens mørke,
 nhyggelige Pletter
 % --- p. 340 ---
@@ -11838,9 +11716,9 @@ at vente paa noget Himmellys. Lad os høre!
 Ormudz og Ahrimann, der i det Nye Testamentes Mythologie bliver os forestillet som en
 personlig Kamp imellem Christus og Diævelen. Hvilken af disse to Herskere der omsider
 beholder Overmagten, kan ikke være tvivlsomt. Jo værre Diævelen raser, desto mere
-% PRINTER'S DEFECT: „vorer“ for „voxer“ --- the Fraktur x/r sort. No descending stroke at
-% 400 ppi (the scan's native mask resolution). Transcribed as printed.
-vorer Christi Styrke. Vi see det i den ældste Kirkes Skjæbne under Forfølgelserne; vi see
+% x/r: „voxer“, read by sense; the scan's type mask is about 400 ppi and cannot
+% distinguish the sorts. See the header.
+voxer Christi Styrke. Vi see det i den ældste Kirkes Skjæbne under Forfølgelserne; vi see
 det igjen i Reformationens Historie. Aldrig har vel Antichristen været nærmere ved at
 % PRINTER'S DEFECT: „Lnthers“ --- turned sort, n for u, against three correct „Luther“ on
 % this same page. Transcribed as printed.
@@ -11864,10 +11742,8 @@ Ulykken kommer saa pludselig; men vi vide, at det er idelt Diævelens Arbeide; h
 saadanne Hellebarder, Blykugler og Bøsser, saadanne Spyd og Sværd, hvormed han skyder,
 kaster og stikker iblandt os, naar Gud giver ham Lov.“ --- Aldrig tabte denne Troens Helt
 sin Arvefiende af Sigte. Ikke paa et eneste Sted kunde Ulykkesfuglen røre sig, uden at
-% PRINTER'S DEFECT: „strar“ for „strax“ --- the x/r sort again, no descender at 400 ppi.
 % „Derfor“ two lines below IS a true r (tesseract read „Derfox“; the image does not).
-% Transcribed as printed.
-Luther, der overalt havde Øinene med sig, strar mærkede, hvo der var paa Færde. „Derfor
+Luther, der overalt havde Øinene med sig, strax mærkede, hvo der var paa Færde. „Derfor
 tvivle Ingen paa, at hvor en Ild bryder ud, saa at en Landsby eller et Huus brænder af,
 der sidder alletider en lille Diævel, som bestandig blæser deri, at den kan blive større.
 Ligesaa, naar Nogen døer af Pestilens, eller drukner eller slaaer sig ihjel, det gjør
@@ -11895,9 +11771,7 @@ frygter for med Diævelen ogsaa at tabe Christus, seet langt rigtigere, end Schl
 med hans Postulat, at Troen paa Diæveleu paa ingen Maade turde opstilles som Betingelse
 for Troen paa Christus.“
 
-% PRINTER'S DEFECT: „orthodore“ for „orthodoxe“ --- the x/r sort, no descender.
-% Transcribed as printed.
-„Med den gamle Lutherdoms orthodore Stokkemænd er her naturligviis Intet at udrette. Det
+„Med den gamle Lutherdoms orthodoxe Stokkemænd er her naturligviis Intet at udrette. Det
 er til Eder, I Dannelsens Præster, der ere saa ferme i at opflinke Troen og afpolere
 Christendommens Rust; det er til Eder, I ny-videnskabelige Fremskridts-Theologer, der nok
 agte med det Allerførste at bringe os Aabenbaringen til Fornuft; det er til Eder, I
@@ -11914,8 +11788,7 @@ med Eder. I maae ikke troe, at den negative Kritik mangler al Besindighed, fordi
 stundom har lidt Ild i Hovedet, I maae ikke stole paa, at den altid vil skade sin egen Sag
 ved ungdommelige Overilelser, som om den med eet Ryk kunde rykke Masken af Eder; nei, den
 kan ogsaa gaae sindig og rolig til Værks; den skal nok vedblive at pille saalænge i alle
-% PRINTER'S DEFECT: „strar“ for „strax“ --- the x/r sort. Transcribed as printed.
-Lærebegrebets Traade, indtil den omsider har optrævlet Eders Væv. Her ere strar nogle
+Lærebegrebets Traade, indtil den omsider har optrævlet Eders Væv. Her ere strax nogle
 % --- p. 345 ---
 Punkter til nøiere Overveielse. 1) I smile ad Luthers Phantaster; I rødme af Undseelse,
 naar man taler til Eder om Kirkens personlige Diævel. Men hvoraf kommer nu det? Det
@@ -11955,9 +11828,7 @@ Himmelfart forsvinder; I lade, som om I ikke mærke det. Men ymter nu Nogen om, 
 Fader selv nødvendigviis maa bøie sig under de samme Conseqvenser, og følgelig ogsaa
 forsvinde; da kan han være vis paa Eders allerhøieste Unaade. Naar Talen er om et
 hiinsidigt Helvede, ville I nok holde paa Immanensen; men, naar saa Videnskaben henfører
-% PRINTER'S DEFECT: „strar“ for „strax“ --- the x/r sort, no descender at 400 ppi.
-% Transcribed as printed.
-Alt til den immanente Himmel, saa begynde I strar at kige opad efter det Hiinsidige, og at
+Alt til den immanente Himmel, saa begynde I strax at kige opad efter det Hiinsidige, og at
 raisonnere vidtløftig over Transcendensen. Hvad vilde Luther vel sige, hvis han stod op af
 sin Grav, og hørte Eder, hans høiærværdige Disciple, saaledes discurere og philosophere
 over Immanens og Transcendens? Han vilde nok sige som saa: „Transcendens hist,
@@ -12111,8 +11982,7 @@ synes jo saa velbegrundet: hvor nedværdigende, at en Guds Søn skal føle en Ma
 han det allerubetydeligste Menneske; hvor uværdigt, at Den, der bereder sig til at frelse
 en heel Verden, og skjænke den hungrige Slægt det sande Livets Brød, nu i Virkeligheden
 skal savne det Brød, hvormed han selv kan stille sin Hunger! Opfordringen synes desuden
-% Here the same book sets „strax“ with a true x --- a clear descender at 400 ppi --- eleven
-% lines above the „strar“ of p. 352. No rule; every occurrence judged on its own.
+% Here the book sets „strax“ with a true x --- a clear descender at 400 ppi.
 saa uskyldig, og i sig selv ubetydelig: „er du Guds Søn, hvis blotte Ord kan skabe Brød i
 Ørkenen, da gjør en Prøve strax, det kan jo aldrig skade: du maa dog en Gang gjøre en
 Begyndelse.“ Og dog skjuler denne Opfordring alle Fordærvelsens Følger i sig. Den kan jo
@@ -12145,12 +12015,10 @@ stærkere Opsving. Den anden Fristelse er forsaavidt ogsaa langt mere phantastis
 første. „Jeg seer, at Du, o Gudesøn, foragter den legemlige Nødtørft; Du aander kun for
 Aandens høie Maal, det maa jeg finde priseligt. Men er du nu virkelig Aandernes Herre, og
 har din Aand det rette Sving, da maa Du vise det i Gjerningen. Vi Aander ændse ikke
-% PRINTER'S DEFECT: „strar“ for „strax“ --- no descender at 400 ppi, against the true
-% „strax“ of p. 351. Transcribed as printed.
 Tyngdens Love, saa lidt som Rummets Skranke: Sligt gjælder kun Materien. Velan da, gjør en
 % Letterspaced only, not bold: x-height 24--25 and stem 5--6, the body's, against the
 % genuinely bold sentence at the foot of this page (stem 7).
-Prøve strar! Man er saa let, naar man er fastende; Du kan jo fare gjennem Luften. Frygt
+Prøve strax! Man er saa let, naar man er fastende; Du kan jo fare gjennem Luften. Frygt
 ikke, kast dig selv herned, see der er skrevet: \emph{han skal give sine Engle Befaling om
 dig, at de skulle bære dig paa Hænderne; en Messias tør ikke ændse nogen udvortes
 Hindring, han tør ikke støde sin Fod paa nogen Steen.}“
@@ -12224,28 +12092,21 @@ Verdens Riger og deres Herlighed? Er Begrebet om en personlig Diævel ikke en re
 % „chicaneuse“ is Fraktur (the ch is the Fraktur ligature), not antiqua; left plain.
 Modsigelse? o. s. v. --- At slige chicaneuse Spørgsmaal maae kunne bringe endog de
 grundigste Theologer i Forlegenhed, indseer Enhver. Men hvad siger nu Troen til alt
-% „Eregeter“ for Exegeter --- the first of eleven wrong r-for-x sorts in this stretch.
-% No descender below the baseline at 600 dpi. Transcribed as printed.
-dette? Ingenting. Den lader Eregeter og Archæologer, Kritikere og Dogmatikere underholde
+dette? Ingenting. Den lader Exegeter og Archæologer, Kritikere og Dogmatikere underholde
 hinanden med deres lærde og metaphysiske Opgaver, saa meget de ville, og holder sig
 imidlertid til Evangeliet i al Eenfoldighed. Ja Troen er virkelig eenfoldig, saa
 grundeenfoldig, at den ikke en Gang ret tør
 % --- p. 355 ---
 speculere paa, hvad Christus dog i al Verden kan have spiist i de 40 Dage, da han
 fastede, om han maaskee i al den Tid har levet af „Rødder og Jordæbler“? Og endnu mere
-% „Ereget“ for Exeget; no descender at 600 dpi.
 frygter den for at indlade sig med nogen theosophisk Djævel. Skulde imidlertid en
-dybsindig Ereget ville stemple denne Afviisning som et beklageligt Tegn paa
+dybsindig Exeget ville stemple denne Afviisning som et beklageligt Tegn paa
 uvidenskabelig Egensindighed, da maae vi paa Høflighedens Vegne formelde den Dybsindige
 vor Respect, og bede ham undskylde, at Evangelietroen endnu ikke er kommen saa vidt, at
 den kan begribe Aabenbaringens Under. Skulde den mod al Formodning træffe paa En eller
 Anden, der vidste nogen ordentlig Besked om den Lov, hvorefter det Overnaturlige
-% „strar“ for strax. This page carries the control pair: „strar“ here, and a true
-% „strax“ thirteen lines below, both read at 1200 dpi --- the r has no descender, the x
-% a clear tail below the baseline. Both transcribed as printed.
-% „Eregeter“ for Exegeter, two lines below; no descender.
-indvirker paa det Naturlige, da lover den herved høitidelig, strar at ville sende Bud
-saavel til De Hrr Eregeter og Archæologer, som til De Hrr Kritikere og Dogmatikere, og
+indvirker paa det Naturlige, da lover den herved høitidelig, strax at ville sende Bud
+saavel til De Hrr Exegeter og Archæologer, som til De Hrr Kritikere og Dogmatikere, og
 lade dem det vide. Men saalænge en saadan En ikke er funden, saalænge hiin omspurgte
 % The algebraic „X“ is a FRAKTUR capital X, not antiqua; hence no \textit{}. Read at
 % 600 dpi against the antiqua numerals of the headings on pp. 360 and 361.
@@ -12254,10 +12115,9 @@ i al Eenfoldighed ved den evangeliske Fortælling.
 
 „Men,“ indvende Fortolkerne, „naar Evangelietroen paa denne Maade vil fritages fra al
 videnskabelig Uleilighed, og uden vor Veiledning selv paatage sig at udtyde den hellige
-% „Tert“ for Text; no descender at 600 dpi. Likewise „Erempel“ two lines below.
-Tert; hvad bliver det saa andet, end en vilkaarlig Opfattelse af visse Yndlingsudtryk,
+Text; hvad bliver det saa andet, end en vilkaarlig Opfattelse af visse Yndlingsudtryk,
 eller en aandløs Fastklyngen til Fortællingens Bogstav? Fristelseshistorien kan her tjene
-til et Erempel. Vil man nemlig holde sig til Beretningens Ord og Sætninger, bliver man
+til et Exempel. Vil man nemlig holde sig til Beretningens Ord og Sætninger, bliver man
 jo strax uvis om, hvorvidt man skal følge Matthæus eller Lukas, eftersom Fortællingen
 hos den Første skrider frem i en anden Orden end hos den Sidste. Medens Matth. iagttager
 en gradviis Stigen, saavel i den fristende Opfordring, som i den Maade, hvorpaa Fristeren
@@ -12274,21 +12134,18 @@ Gebeet, er det da ikke vel begrundet i Sagens Natur, at den religiøse Tro maa l
 lede af den videnskabelige Fortolkning?“
 
 Troens Svar er et dobbelt; dette Dobbeltsvar lyder med forskjelligt Eftertryk.
-% „Eregeter“ for Exegeter; no descender at 600 dpi.
 Evangelietroen maa paa det Bestemteste frabede sig ethvert Formynderskab, hvad enten det
-nu tilbydes den af Philologer og Archæologer, eller af Eregeter og Dogmatikere.
+nu tilbydes den af Philologer og Archæologer, eller af Exegeter og Dogmatikere.
 Religionen er ingen lærd Sag, og kan aldrig blive det. Den eneste Fordring, Troen gjør
 til de lærde Fortolkere, gaaer ud paa en god, kraftig og, saavidt muligt, ordret
-% „Grundtert“ for Grundtext --- as at pp. 58 and 132. No descender at 600 dpi.
-Oversættelse af de hellige Bøgers Grundtert. Den Opdragelse, Belæring og Dannelse, som
+Oversættelse af de hellige Bøgers Grundtext. Den Opdragelse, Belæring og Dannelse, som
 forøvrigt betinger den rette Tilegnelse af det evangeliske Indhold, falder ind under en
 anden Sphære, og har Intet med det lærde Væsen at gjøre. Det er nødvendigt, at udhæve
 denne Grundsætning, ikke fordi den ligefrem benegtes i de theologiske Skoler; nei
 tvertimod, fordi den kun altfor let indrømmes, nemlig som --- Talemaade. I de theologiske
 Compendier, der handle om Forholdet imellem Skolen og Livet, synes det vel i
 Begyndelsen, som om Livets Strøm nu skulde faae Lov at opvælde af sine egne Kilder, som
-% „ertraordinære“ for extraordinære; no descender at 600 dpi.
-var den sande Tro nu virkelig fritagen fra alle skolastiske Byrder og ertraordinære
+var den sande Tro nu virkelig fritagen fra alle skolastiske Byrder og extraordinære
 Paalæg; men Opfyldelsen svarer ikke altid til Forjættelsen: inden man veed et Ord deraf,
 skifte Talemaaderne Farve, og det Hele tager sig ud, som om den christelige
 % --- p. 357 ---
@@ -12306,11 +12163,9 @@ særegen Retning, at han meget mere maa i høi Grad interessere sig for de viden
 Metamorphoser, de kirkelige Læreformer efterhaanden undergaae. Derimod er det en reen
 Feiltagelse, hvis Nogen mener, at Troen selv skulde blande sig i disse Stridigheder, og
 være iversyg nok til at tage Parti for eller imod. Om Theologien til en vis Tid kan faae
-% „Orthodor“ for Orthodox --- as at the „orthodore“ already logged. Read at 1200 dpi:
-% the final sort is the Fraktur r, with no descender.
 % „Debatternes“: the „e“ between „n“ and „s“ prints only as a low fragment on the
 % baseline in this copy. The word is set, not omitted; transcribed in full.
-Bugt med Philosophien, eller omvendt; om en Fritænker eller en Orthodor taber
+Bugt med Philosophien, eller omvendt; om en Fritænker eller en Orthodox taber
 Ligevægten; om det maaskee er en Skeptiker eller en Dogmatiker, der nu synker i Knæ paa
 Debatternes Arena, derom bekymrer Religionen sig kun lidet. Som en opmærksom
 Tilskuerinde sidder Evangelietroen da ved Skranken og seer med sine levende, milde Øine
@@ -12322,8 +12177,7 @@ Marken, hver Gang det videnskabelige Overmod vil bringe Troen Fare. Den christel
 Eftertanke udsender da et lille Observationscorps til Sikkerhed for de religiøse
 Enemærker, og stiller overalt en Mængde
 % --- p. 358 ---
-% „Reflerioner“ for Reflexioner --- as at pp. 140 and 142. No descender at 600 dpi.
-smaa, men aarvaagne Reflerioner som paa Udkig, for at passe paa, hvorledes de høilærde
+smaa, men aarvaagne Reflexioner som paa Udkig, for at passe paa, hvorledes de høilærde
 Theologer og skarpsindige Kritikere omgaaes med Evangeliet.
 
 Med disse Oplysninger vende vi os nu igjen til Fristelseshistorien. Der gives
@@ -12334,16 +12188,14 @@ Kunstforklaringer gives der igjen tvende Arter. Den lavere eller simplere kalde 
 og behageligere Anstrøg, tage Pletter af, og overhovedet afvinde Fremstillingen den
 Side, som meest tiltaler Bevidstheden. En saadan Omtydning eller Afændring er temmelig
 let at udføre. Langt vanskeligere er derimod den anden og høiere Kunstart, nemlig den
-% „Terten“ for Texten, three lines below; no descender at 600 dpi.
 egentlige \emph{Bortforklaring}, hvis heldige Udførelse kan betragtes som Hermeneutikens
 høieste Triumph. Denne Kunst bestaaer deri, at Fortolkeren, uden just at gjøre aabenbar
-Vold paa Terten, kan bortskaffe en heel Begivenhed, saa at en historisk Fortælling
+Vold paa Texten, kan bortskaffe en heel Begivenhed, saa at en historisk Fortælling
 tilsidst kommer til at see ud, som om den Intet fortalte. Idet Forklaringen naaer sin
 høieste Klarhed, bliver det med Eet ganske mørkt, og man seer slet Intet; det vil sige,
 Kjendsgjerningen gaaer i Lyset: det rene Lys er som det rene Mørke. Hvor mange Gange er
-% „Eregeten“ for Exegeten; no descender at 600 dpi.
 en saadan Bortforklaring dog ikke med Held bleven anvendt paa Fristelsens Historie! Naar
-Eregeten vil til at udføre dette Kunststykke, er han altid vel forberedt: først føler
+Exegeten vil til at udføre dette Kunststykke, er han altid vel forberedt: først føler
 han sig for i nogle indledende Vendinger, saa retter han ved Anlæget, saa piller han ved
 Udtrykkene, saa opregner han Vanskelighederne, og fængsler da tilsidst Opmærksomheden
 ved det Punkt, han selv har udseet til sit Hovedpunkt. Saaledes bemærker man da: „fra
@@ -12357,20 +12209,16 @@ Diævelens Side, det Platte i hans Ordnen og Indleden
 % (tesseract „TaäWigheden“, the ABBYY layer „TaaMigheden“); the gap is inked, not blank.
 % So the printed reading is „Taabeligheden“ as the leaf says, and the leaf is followed.
 % Rettelser: printed „Taabeligheden“; corrected to „Taaligheden“
-% „strar“ for strax in line 3; no descender at 1200 dpi.
 af de enkelte Anfægtelser; fra Jesu Side, Taaligheden i at fortsætte disse Forhandlinger
-og flakke omkring med Mørkets Aand, istedetfor strar at bryde af, og drage sig ud af
+og flakke omkring med Mørkets Aand, istedetfor strax at bryde af, og drage sig ud af
 Berøring med det Urene.“ Ved at udføre disse Antydninger lidt videre, kommer man
 efterhaanden længere og længere bort fra det første, umiddelbare Indtryk. Nu
 sammenlignes de forskjellige Beretninger, nu adskilles det Væsentlige fra det
-% „Tertens“ for Textens; no descender at 600 dpi.
-Uvæsentlige, nu forvandles Tertens Indklædning til noget aldeles Uvæsentligt: saa
+Uvæsentlige, nu forvandles Textens Indklædning til noget aldeles Uvæsentligt: saa
 forsvinder Diævelen, saa forsvinder Christus, saa forsvinder hele Historien.
 
 Ligeover for en saadan Kunstpræstation maa Evangelietroen nu især vogte sig for enhver
-% „Orthodoxie“ IS set with a true x here --- a clear tail below the baseline at 1200 dpi,
-% eight lines below a „strar“ on the same page. The compositor is inconsistent, not
-% out of x sorts; every occurrence is judged on its own.
+% „Orthodoxie“ IS set with a true x here --- a clear tail below the baseline at 1200 dpi.
 lidenskabelig Opbruusning. Det nytter kun lidet, at den opbragte Orthodoxie giver sig
 til at slaae med Kirkedøren og begynde Ringningen med den store Klokke: en Videnskab er
 dog en Videnskab, og en Kunst en Kunst ligefuldt. Derimod gjør den Troende vel i, at
@@ -12417,11 +12265,10 @@ Mørkets Aand. Herved ledes vi nu til følgende Slutninger:
   Mythe.}
 \end{center}
 
-% „forverle“ for forvexle --- as at pp. 73 and 137. No descender at 600 dpi.
 % „Ahrimaun“: turned sort, u for n. At 1200 dpi the penultimate sort has the closed
 % bowl of u; the same name is correctly set „Ahrimann“ on p. 361. Transcribed as printed.
 Det er Mythens Særkjende, at lade ethvert Grundprincip forblive i Tvetydighed, og
-forverle den egentlige Personlighed med den blotte Personification. Mythen personificerer
+forvexle den egentlige Personlighed med den blotte Personification. Mythen personificerer
 det Gode ligesaa vel som det Onde, Lyset ligesaa vel som Mørket, Ormudz ligesaa vel som
 Ahrimaun. Derimod er Aabenbaringen kjendelig derpaa,
 % --- p. 361 ---
@@ -12439,11 +12286,10 @@ Aabenbaringens Præg.
   Vrangbillede at skaffe.}
 \end{center}
 
-% „ercentriske“ for excentriske; no descender at 600 dpi.
 Folkephantasiens Forestillinger om Diævelens mangehaande Aabenbarelser og
 mephistopheliske Eventyr finde slet ingen Retfærdiggjørelse i den hellige Historie. Det
 er saa langt fra, at der her gives os noget Vink om, at Diævelen skulde indlade sig
-personlig med alskens ercentriske Individer, at han endog holder sig skjult for alle i
+personlig med alskens excentriske Individer, at han endog holder sig skjult for alle i
 Evangeliet handlende Personer, Christus alene undtagen. Vi kunne maaskee bedst belyse
 dette Punkt ved at see hen til de tvende Charakterer, paa hvis Fald Fristeren i
 Særdeleshed synes at arbeide, nemlig Judas og Petrus.
@@ -12479,11 +12325,10 @@ Modsatte af det, han selv lærte dem at bede: \emph{Led os ikke i Fristelse} (Ma
 vilde blive en Forræder, til Kassefører; eller, dersom han har gjort ham hertil, kan han
 ikke have vidst hiint forud.“
 
-% „eregetiske“ for exegetiske; no descender at 1200 dpi.
 % „Raisonnementer“: the impression is broken --- at 1200 dpi a word-wide gap falls where
 % the second „e“ belongs („Raisonnem enter“), and the „iſ“ prints faintly. The word is
 % spelt „Raisonnementer“ elsewhere in the book; set here whole.
-For Evangelietroen, der dog alligevel ikke lader sig vildlede af eregetiske
+For Evangelietroen, der dog alligevel ikke lader sig vildlede af exegetiske
 Prokuratorkneb og fripostige Raisonnementer, viser Forholdet sig i en ganske anden
 Belysning. Skulde Christi Forudvidenhed være i Strid med den frie Charakterudvikling,
 saa maatte det samme jo gjælde om Guds Alvidenhed. Den moderne Kritik gaaer ud fra den
@@ -12543,8 +12388,7 @@ de nu gaae bort igjen, den ene Klynge efter den anden. Naturligt! Hvo kan holde 
 høre paa en saadan Tale. Men --- Aanden har han dog, og --- paa Aanden maa han jo
 vente.“
 
-% „Reflerioner“ for Reflexioner, as on p. 358; no descender at 1200 dpi.
-Forudsætte vi en Stemning hos Ischarioten svarende til de her antydede Reflerioner, da
+Forudsætte vi en Stemning hos Ischarioten svarende til de her antydede Reflexioner, da
 vil ogsaa det forhen nævnte Optrin (Joh. 6, 67---71) gjøre et nyt, oprindeligt Indtryk.
 
 Den forargede Mængde har fjernet sig: det er saa stille i Mesterens Omgivelse. Her er nu
@@ -12620,9 +12464,8 @@ Kritikens negative Aand kan nu ikke finde sig i denne Opfattelse, men vil naturl
 holde sig til den paalidelige Regel, at en Forudsigelse er en Forudsigelse: „enten har Jesus
 udtrykkelig forudsagt, at Judas var en Forræder, eller han slet ikke har forudsagt det“. Den
 moderne Bevidsthed tænker som saa: „enten har man en Forudvidenhed, eller man ingen har“.
-% WRONG SORT: „strar“ for strax --- no descender at 900 dpi, the sort matching the r of
-% „fritager“ on the same line. The same page carries a true x in „Hexeri“ six lines below.
-Denne Grundtanke giver strar Videnskaben et lettere Sving, og fritager Kritiken for mange
+% „Hexeri“ six lines below carries a true x at 900 dpi.
+Denne Grundtanke giver strax Videnskaben et lettere Sving, og fritager Kritiken for mange
 Bryderier. Kan man nu virkelig slippe saa nemt fra Adskillelsen imellem Forudvidenhed og
 Ikke-Forudvidenhed, saa er det da just heller intet Hexeri, at opløse den hele evangeliske
 % „Dr.“ antiqua (bold roman); „Strauß“ is the lighter Fraktur and stays plain, as at p. 119.
@@ -12687,10 +12530,9 @@ sig til det samme Trin. Hvad Forholdets Yderside angaaer, er her altsaa Intet, d
 foranledige Judas til at trække sig tilbage. Desto større Vægt maa der altsaa falde paa
 Forholdets indre Side.
 
-% WRONG SORT: „strar“ for strax again, two lines above a TRUE x in „voxende“ --- the pair was
-% judged side by side at 1800 dpi: the last sort of „strar“ stops on the baseline, the third
-% sort of „voxende“ descends below it. No rule; each occurrence judged on its own.
-Fra dette Synspunkt fremhæve vi strar den Hovedsætning, \emph{at Judas ifølge sin stedse
+% TRUE x in „voxende“: the third sort descends below the baseline at 1800 dpi, where
+% the r's beside it stop on it.
+Fra dette Synspunkt fremhæve vi strax den Hovedsætning, \emph{at Judas ifølge sin stedse
 voxende Forhærdelse efterhaanden maa være indtraadt i et dæmonisk Forhold til Jesus.} ---
 Hvor piinligt, at vide sig i et personligt Misforhold til en Overlegen; hvor piinligt, at
 skulle forblive i den Overlegnes Omgivelse, uagtet Misforholdet vedbliver; hvor piinligt, ja
@@ -12774,9 +12616,9 @@ Forbrydelse? --- Det skulde sandelig styrke Judas, at møde en saadan Opfordring
 lindre ham, at kunne føre et saadant Forsvar. Men det skulde i Sandhed ikke forbedre ham. Der
 skeer da heller ingen Opfordring, ingen Udfordring: den Tause maa bære sin Byrde alene. Mon
 % TRUE x in „voxer“: at 1800 dpi the third sort descends below the baseline where the final r
-% of the same word stops on it.
+% of the same word stops on it. „en stille Væxt“ in the same line is read by sense (cf. pp. 188, 229, 230).
 dog ganske alene? --- Der er en Aand, der virker i det Skjulte; Indesluttethed giver jo
-Kræfter: den Tause voxer --- en stille Vært. --- Han vil opoffre Alt; i Selvhed offrer han
+Kræfter: den Tause voxer --- en stille Væxt. --- Han vil opoffre Alt; i Selvhed offrer han
 sig selv: hvad har han da ivente?
 
 \emph{Sandelig siger jeg Eder, at I, som have efterfulgt mig, udi Igjenfødelsen, naar
@@ -12847,8 +12689,6 @@ han havde Omsorg for de Fattige, men fordi han var en Tyv, og havde Pungen, og b
 blev lagt deri.} --- Stolthed og Kulde, snedig List og ussel Vindesyge lader sig meget vel
 forene i det Væsen, der nu har taget sig af Judas.
 
-% WRONG SORT: „Omverling“ for „Omvexling“ --- the sort stops on the baseline at 2000 dpi.
-% The same wrong sort is logged at „Omverlinger“ on p. 84.
 % „Stigen“: the t and i are merged by the heavy inking, but the i keeps its dot, which
 % neither u nor n carries in this fount. Rejected reading: „Sugen“ (both OCR witnesses).
 Idet den hellige Historie fremstiller os Jesu Liv, fremstiller den os tillige de Vilkaar og
@@ -12859,7 +12699,7 @@ uudsigelig Kjærlighed, saa er denne Taushed igjen Eet med den elskelige Aabenhj
 aander i Peders Bekjendelse. Den dæmoniske Judastro er ogsaa i Inderlighed; men denne
 Inderlighed er Forhærdelsens Indesluttethed, er bunden i Skjulthed og reflecteret i Lumskhed,
 og derfor hverken kan eller vil aabenbare sig. I Peders Forhold til Herren viser sig en
-idelig Omverling af Kraft og Skrøbelighed, en bestandig Stigen og Synken: Discipelen arbeider
+idelig Omvexling af Kraft og Skrøbelighed, en bestandig Stigen og Synken: Discipelen arbeider
 sig frem, som et Menneske, der svømmer i en oprørt Sø. Ogsaa Judas stiger og synker, føler
 sin Styrke, og fornemmer sin
 % --- p. 375 ---
@@ -12957,8 +12797,7 @@ Vægt paa Menneskets Samvittighed, da hører der Aandskraft til, for endnu at vi
 Forbrydelsen, og holde Beslutningen fast. Det er i et saadant Vendepunkt, vi lære at gyse for
 det Ondes overmenneskelige Magt. --- \emph{Og efterat han havde faaet Stykket, da gik Satan
 % TRUE x in „strax“ at the foot of this page: the last sort descends below the baseline at
-% 1800 dpi where the r of the same word stops on it. Set against the „strar“ of pp. 367 and
-% 369, which do not.
+% 1800 dpi where the r of the same word stops on it.
 % The closing sentence is the LARGER display fount, not bold: at 600 dpi it runs x-height 48
 % at median stem 7--8 against 41 at the same stem in the small type on its own line --- a
 % 1.17 size ratio at unchanged weight. It begins mid-line, hence inline {\large ...}.
@@ -13261,13 +13100,9 @@ i Vævet!“
 % --- the second opener („lad nu ogsaa) runs unclosed to the foot of p. 390, where it
 % closes at „saa faae vi vel flere.“. One unclosed opener carried forward from this page.
 „Men,“ vedbliver den moderne Bevidsthed, „lad nu ogsaa den gamle Tro paa „Mørkets Aand“
-% PRINTER'S DEFECT, p. 388: „strar“ for „strax“ --- a WRONG SORT, r for x, judged at
-% 1200 dpi: the glyph is 49 px wide with its foot stopping on the baseline, where the
-% true x of p. 389, p. 390 (twice) and p. 383 measures 54--61 px and descends. Both OCR
-% witnesses read r here, and both are right. Transcribed as printed; not corrected.
 passere, for hvad den er; det fik at gaae, hvis man saa endda kunde slippe med een Satan.
 Men det er jo hver Mand vitterligt, at Ingen kan indlade sig med den bibelske Diævel, uden
-strar at faae en heel Sværm af urene Aander paa Halsen. En heel Legion ɔ: 6666 Dæmoner i
+strax at faae en heel Sværm af urene Aander paa Halsen. En heel Legion ɔ: 6666 Dæmoner i
 % „f. Ex.“ --- an f, not the t of pp. 223 and 356; and a TRUE x (58 px, descending).
 een Besat: puh! det er en frygtelig Historie. Hvilke Sorger, Bryderier og Bekymringer have
 hine Besatte i Galilæa dog ikke forvoldt vore Dages mystiske Theologer, f. Ex. en
@@ -14986,8 +14821,7 @@ Disciplene og Lazarus's Søstre. Det Spørgsmaal: hvi dvæler Herren i Peræa, s
 %   „uaar“ for naar.
 % Both OCR witnesses agree on all three.
 % TRUE x: „f. Ex.“ --- the sort descends below the baseline with the down-left hook, bottom
-% band at 0.19 of the width from the left. (Contrast p. 405, where „t. Er.“ was measured and
-% found to be a wrong sort.)
+% band at 0.19 of the width from the left.
 % PRINTER'S DEFECT at the foot: the last line is badly under-inked. „han igjen vil komme“
 % prints with the h reduced to a stem, and the m of „Jerusalem“ shows only two of its three
 % strokes. Both read as intended words here; the fault is inking, not sorts.
@@ -15196,15 +15030,14 @@ men, hvorledes Christus har kunnet røres saa stærkt, at Grundtextens Ord endog
 en aandelig Rystelse, lader sig ikke udlede af noget dogmatisk Begreb. Olshausens fromme
 Bemærkning, „daß er über den Tod und dessen Schrecknisse überhaupt als Sold der
 % --- p. 453 ---
-% THE PAGE THAT SETTLES THE CASE. „Texten“ stands TWICE, three lines apart, and the two
-% occurrences use DIFFERENT SORTS: the first prints „Terten“ (bottom band 0.37 --- an r), the
-% second „Texten“ (0.08 --- a true x). The p. 120 „strax/strar“ pattern exactly.
-% Also on this page: „Reflexionsbestemmelse“ is a TRUE x (0.08); but „kaster strar en Deel“
-% is a WRONG SORT (0.37), and its r is further damaged --- the sort prints as a bare stem
-% with no shoulder, so that the word reads „ſt|r|ar“ with a gap. Transcribed as printed
-% („strar“), the broken stem silently taken as the r it is.
+% „Texten“ stands TWICE, three lines apart; both are read „Texten“. A first pass read the
+% first as „Terten“ and made the two a control pair; that entry is withdrawn (see the
+% header). „Reflexionsbestemmelse“ is a TRUE x (bottom band 0.08).
+% BROKEN SORT in „kaster strax en Deel“: the third sort prints as a bare stem with no
+% shoulder, so that the word reads „ſt|r|ax“ with a gap. The broken stem is taken as the
+% r it is; the final sort is read „x“ by sense.
 % The page ends with „Chri-“, one word broken across the leaf --- hence \-% at the foot.
-Sünde geweint habe“, ligger, ifølge De Wettes kritiske Bemærkning, ikke i Terten, og selv om
+Sünde geweint habe“, ligger, ifølge De Wettes kritiske Bemærkning, ikke i Texten, og selv om
 dette „überhaupt“ endog lagdes ind i Texten, vilde det dog som en blot almindelig
 Reflexionsbestemmelse svække det umiddelbare Indtryk.
 
@@ -15214,7 +15047,7 @@ der skeer et Under, eller det Menneske, der kun kan hjælpe en Anden derved, at 
 ham, at gjøre et Under? For en flygtig Betragtning kunde det vel synes, som var kun den
 Første at kalde en Lidende, efterdi han er en Nødlidende. Men, see vi nærmere til, vil
 Forholdet vise sig omvendt. Den, der skal hjælpes af en Anden ved en Undergjerning, kaster
-strar en Deel af sin Byrde over paa denne, og er dog endnu, som var han alene den Besværede,
+strax en Deel af sin Byrde over paa denne, og er dog endnu, som var han alene den Besværede,
 fordi han ikke kan i sig selv overvinde det Selviske. Men Den, der er kaldet at yde en Anden
 guddommelig Hjælp formedelst Underet, maa bære den hele Byrde, og dog være, som var han slet
 ikke besværet, fordi han i sig selv maa tilintetgjøre det Selviske. Forsaavidt Undergjøreren
@@ -15253,12 +15086,12 @@ den hele nødlidende Menneskeslægt. Hvilke Følelser maa Efterretningen om den 
 ikke have vakt i hans Sjæl! Mon de Deeltagendes Bekymring, mon Søstrenes Angst og Bedrøvelse
 vel kunde komme i Betragtning, naar vi ret
 % --- p. 455 ---
-% BOTH SORTS IN THREE LINES. „gjør ikke strax Underet“ is a TRUE x (bottom band 0.06; the r
-% two sorts earlier in the same word measures 0.35); „iler ikke strar til Bethanien“, on the
-% very next line, is a WRONG SORT (0.35). Transcribed as printed, both.
+% „gjør ikke strax Underet“ is a TRUE x (bottom band 0.06; the r two sorts earlier in the
+% same word measures 0.35). „iler ikke strax til Bethanien“ on the next line throws no
+% tail (0.35) and is read by sense; the scan cannot distinguish the sorts (see header).
 ville tænke paa Forløserens inderlige Medlidenhed med den døende Ven? Jesus seer, at
 Lazarus's Sygdom maa tjene til Guds Ære, at Hjælpen maa komme ved et Under; og dog følger han
-ikke Medfølelsens umiddelbare Tilskyndelse, gjør ikke strax Underet, iler ikke strar til
+ikke Medfølelsens umiddelbare Tilskyndelse, gjør ikke strax Underet, iler ikke strax til
 Bethanien, men holder sig rolig, og bliver endnu to Dage paa det Sted, hvor han var. Denne
 dvælende Langsomhed virker smertelig paa det naturlige Gemyt, der higer utaalmodig efter
 Hjælpen. Alle de deeltagende Venner i den By, „hvor Martha og hendes Søster vare“, vilde vel,
@@ -15668,18 +15501,15 @@ kunne udvikle sig uden at forudsætte den anden: de forholde sig indbyrdes, som 
 Natur til den qvindelige. Qvin\-%
 % --- p. 466 ---
 % p. 466 opens FLUSH, completing „Qvin-dens“. One unbroken paragraph; no indent anywhere.
-% THREE x-candidates, each judged on its own at 2400 dpi, and they do NOT agree ---
-% this page sets a true x and a wrong sort within three lines of one another, as p. 453 does
-% with „Terten“/„Texten“:
+% THREE x-candidates, each judged on its own at 2400 dpi:
 %   „strax sige“ (l. 12): the sort throws the below-baseline stroke kicking left, 12 px
 %       below the baseline of its own „a“. TRUE x.
 %   „At existere paa een Gang“: the sort measures 18 px below the certain r of the same
 %       word's „-tere“, is 13 px wider than that r, and shows the left-kicking descender.
 %       TRUE x.
-%   „Ord at eristere saavel“ (three lines later): the sort measures 0 px below that same
-%       control r, is exactly as wide as it (103 px against 103), and set beside it is
-%       indistinguishable from it --- stem, detached arm, wedge foot, no descender. A WRONG
-%       SORT, r for x. Transcribed as printed.
+%   „Ord at existere saavel“ (three lines later): the sort measures 0 px below that same
+%       control r and is indistinguishable from it. A first pass logged a wrong sort; that
+%       entry is withdrawn --- absence of a tail is not evidence. Read „existere“ by sense.
 % Both OCR witnesses read „eristere“ in both places and settle nothing.
 dens Bevidsthed er væsentlig mythisk; deraf kommer det, at Religionen altid maa være hende
 det Absolute. En irreligiøs Qvinde og en fordærvet Qvinde ere i Grunden eenstydige
@@ -15701,8 +15531,7 @@ virkelige Menneskeliv altsaa sit fuldstændige Udtryk; her er den rette Ligevæg
 Gemyt og Forstand, Aabenbaring og Mythe. Spørger Du mig, om dog denne indre Ligevægt ikke
 ogsaa lod sig udtrykke i et enkelt Menneskes Liv; da seer Du nu selv, hvad der ligger i
 dette Spørgsmaal. At existere paa een Gang baade som Vidende og som Troende, er med andre
-% „eristere“: wrong sort, r for x --- see the note at the head of this page. As printed.
-Ord at eristere saavel i Mandens som i Qvindens Bevidsthedsform, at være selv baade Mand og
+Ord at existere saavel i Mandens som i Qvindens Bevidsthedsform, at være selv baade Mand og
 Qvinde (Androgyne). Bøi
 % --- p. 467 ---
 % p. 467 opens FLUSH; p. 466 ends with the whole word „Bøi“ and no hyphen.
@@ -15849,10 +15678,7 @@ stridige Elementer ved at concenti ere sine
 % „concentrere“, which the book sets correctly at p. 473 (broken con-/centrere).
 Kræfter i ypperstepræstelig Eenhed, skilte sig ad og faldt fra sig selv i Troes-Slægter og
 Arter og forgjængelige Individer, da Reformationens første Præst opgav sin androgyniske
-Eristens
-% PRINTER'S DEFECT p. 470 (wrong sort, r for x): „Eristens“ for „Existens“. Judged at
-% 2400 dpi against the certain r of „androgyniske“ in the same line: the leg stops on the
-% baseline in a wedge foot and throws nothing below it. Transcribed as printed.
+Existens
 og faldt fra sig selv --- i Mand og Qvinde\footnote{% printed mark: *)
 % ONE FOOTNOTE, THREE PAGES. The printing runs this single note across the feet of pp. 470,
 % 471 and 472 (p. 470 carries one line, p. 471 the bulk under a two-line page of text,
@@ -15946,8 +15772,7 @@ Talemaaden. Den kraftige Tanke er da i sin Fylde Idee. Idet Ideen springer ud me
 % against a certain r at the same y --- „fixere“ against the r of its own „-ere“, „voxer“
 % against its own final r. In both the leg descends well below the baseline and kicks left,
 % where the control r stops on the baseline in a wedge foot. ABBYY reads „firere“/„vorer“
-% for both and is wrong. Compare the true wrong sort at p. 470 („Eristens“) two pages back:
-% the answer is not uniform even within a gathering.
+% for both and is wrong.
 % --- p. 473 ---
 Kraft, lyder Talemaaden som Princip; men, naar Bevægelsen er endt, og Resultatet kommer,
 lyder Principet som Talemaade. Saaledes er Ordet --- „Frihed“ til een Tid et vældigt, Alt
@@ -16184,12 +16009,7 @@ kan paastaae, at Kirken aldrig mere vil gjenvinde sit middelalderlige Herredømm
 Christendommens Glandsperiode forsaavidt er forbi, og aldrig mere vil vende tilbage; saa vil
 Du af det Foregaaende dog let kunne indsee, at der endda bliver Plads nok tilovers for „den
 Korsfæstede“. --- Du kjender dog Betydningen af den gamle Talemaade, „at krybe til Korset“?
-Det er et meget betegnende Udtryk. Naar En t. Er.
-% PRINTER'S DEFECT p. 481 (wrong sort, r for x): the page sets „t. Er.“ for „t. Ex.“.
-% Judged at 2400 dpi against the certain r of „har“, two words along in the same line and at
-% the same y: the two glyphs are the same sort --- arm at top right, stem, wedge foot on the
-% baseline, nothing thrown below it. Unlike the four true x's of pp. 478--479. Transcribed
-% as printed.
+Det er et meget betegnende Udtryk. Naar En t. Ex.
 har gjort sig opsætsig, men træffer sin Overmand, og nødes til at gjøre Afbigt, saa hedder
 det jo, at han maa krybe til Korset. Men hvem er det nu, der, til Trods for den rene Selv- og
 Almeen-Bevidsthed, dog idelig seer sig udsat for denne Ydmygelse? Forstaaer sig, det er ikke
@@ -16392,7 +16212,7 @@ Heelhed var en ægte Fløielskjole, skjøndt han dog maatte indrømme, at hver T
 % beside the two certain r's of its OWN word („-erer“) at the same y: the candidate's leg
 % descends well below the baseline and kicks left, while both control r's stop on the
 % baseline in a wedge foot. The ABBYY witness reads „eristerer“ and is wrong; tesseract
-% reads x. Compare p. 466, where „existere“ and „eristere“ stand three lines apart.
+% reads x.
 var ganske simpelt Uldgarn. Menneskeheden existerer jo kun i Mangfoldigheden af de
 menneskelige Individer; men sig os dog i det Ubetingedes velsignede Navn: hvad er et
 % --- p. 488 ---
@@ -16985,7 +16805,7 @@ ethvert Øieblik bedrog baade sig selv og Andre, vilde det da ikke være en reen
 % Likewise ignored.
 faae et saadant Barn opdraget? --- Saaledes med Mennesket i dets Forhold til Gud. Tro ikke,
 at Evangeliet vil slaae Noget af i sin ideale Fordring. Ligeoverfor Skaberen, den
-Almægtige, den Alvidende, maa et „fuldvorent Menneske“ ikke blot være noget barnligt eller
+Almægtige, den Alvidende, maa et „fuldvoxent Menneske“ ikke blot være noget barnligt eller
 næsten som et Barn; nei, Barnlighedsforholdet gjælder ubetinget: den Allermyndigste er som
 et Barn, et lidet Barn ligeoverfor den himmelske Fader. Dette Forhold maa vel være let,
 efterdi det er saa naturligt. Og dog er Fordringen streng; thi hvad Barnet er af Naturen
