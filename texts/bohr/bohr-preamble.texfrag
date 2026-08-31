@@ -1,0 +1,128 @@
+% ===========================================================================
+%  bohr-preamble.texfrag
+%
+%  Shared preamble for all eight volumes of
+%      Niels Bohr, Philosophical Writings / Filosofiske Skrifter
+%
+%  \input by each volume's transcription.tex (Danish) and translation.tex
+%  (English) as ../bohr-preamble.texfrag.  Not a standalone document: it has
+%  no \begin{document}, hence the .texfrag extension (see the root Makefile).
+%
+%  Each volume file must set, BEFORE \input-ing this file:
+%      \def\bohrlang{danish}  or  \def\bohrlang{english}
+%      \def\bohrvol{I}        (volume number, roman)
+%      \def\bohrtitle{...}    (volume title)
+%      \def\bohrsubtitle{...} (collected-edition imprint line)
+%      \def\bohrrunning{...}  (short running head)
+% ===========================================================================
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{libertinus}
+\usepackage{libertinust1math}
+\usepackage[\bohrlang]{babel}
+\usepackage[protrusion=true,expansion=true]{microtype}
+\usepackage{textalpha}          % Greek in running text (ħ, ν, λ, Δ …)
+\usepackage{amsmath}
+\usepackage{setspace}
+\usepackage[
+  margin=1.25in,
+  marginparwidth=0.95in,
+  marginparsep=0.14in
+]{geometry}
+\usepackage{marginnote}
+\usepackage{fancyhdr}
+\usepackage{hyperref}
+
+\setstretch{1.25}
+
+% ---------------------------------------------------------------------------
+%  PAGINATION MARKERS
+%
+%  The point of this edition: every page boundary of the ORIGINAL published
+%  article is marked, so a scholar can cite the first printing, and every page
+%  boundary of the COLLECTED volume is marked, so a scholar can cite the
+%  edition everyone actually owns (Ox Bow in English, Philosophia in Danish).
+%
+%      \opage{349}   original article page 349 begins here
+%                    -> LEFT margin, bold, square brackets:   [349]
+%
+%      \vpage{74}    collected-volume page 74 begins here
+%                    -> RIGHT margin, italic, vertical bars:  |74|
+%
+%  Both are zero-width and safe mid-paragraph (marginnote, not marginpar, so
+%  they do not float and do not vanish inside lists, quotes or footnotes).
+%
+%  Place the marker at the exact word where the new page begins, e.g.
+%      ...og det er derfor \opage{350}nødvendigt at...
+%  A marker that opens a paragraph goes before the first word, not before the
+%  blank line.
+%
+%  Set \pagemarksfalse to typeset a clean reading copy with no margins marks.
+% ---------------------------------------------------------------------------
+\newif\ifpagemarks
+\pagemarkstrue
+
+\renewcommand*{\marginfont}{\footnotesize}
+
+\newcommand{\opage}[1]{%
+  \ifpagemarks
+    \reversemarginpar
+    \marginnote{\textbf{[#1]}}%
+    \normalmarginpar
+  \fi
+  \ignorespaces}
+
+\newcommand{\vpage}[1]{%
+  \ifpagemarks
+    \normalmarginpar
+    \marginnote{\textit{\textbar#1\textbar}}%
+  \fi
+  \ignorespaces}
+
+% ---------------------------------------------------------------------------
+%  ESSAY HEADINGS
+%
+%  \essay{Title}{Year}      opens an essay: new page, title, year.
+%  \provenance{...}         the original publication line, set small and
+%                           italic under the title. This is the human-readable
+%                           twin of the \opage numbers: it names the printing
+%                           whose pagination the [n] markers record.
+%  \collected{...}          the collected-volume pages this essay occupies,
+%                           i.e. what the |n| markers count through.
+% ---------------------------------------------------------------------------
+\newcommand{\essay}[2]{%
+  \clearpage
+  \phantomsection
+  \section*{#1}%
+  \addcontentsline{toc}{section}{#1}%
+  \markboth{#1}{#1}%
+  \nopagebreak
+  {\raggedright\large\textit{#2}\par}%
+  \medskip}
+
+\newcommand{\provenance}[1]{%
+  \nopagebreak
+  {\raggedright\small\textit{First published:} #1\par}%
+  \smallskip}
+
+\newcommand{\collected}[1]{%
+  \nopagebreak
+  {\raggedright\small\textit{In this edition:} #1\par}%
+  \bigskip}
+
+% Editorial interpolation, distinct from Bohr's own square brackets.
+\newcommand{\ed}[1]{{\textlangle}#1{\textrangle}}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\textsc{\bohrrunning}}
+\fancyhead[R]{\small\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+
+\hypersetup{
+  pdfauthor={Niels Bohr},
+  pdftitle={\bohrtitle},
+  hidelinks,
+  bookmarksnumbered=false
+}
