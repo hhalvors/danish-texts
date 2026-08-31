@@ -17,7 +17,9 @@ biology and to human cultures.
 ## The text
 
 Eight volumes are planned, four Danish and four English; this is volume II
-of each. The Danish follows *Filosofiske Skrifter*, Bind II (Forlaget
+of each. Both sides are **transcriptions of published texts**, not translations
+made here: the English is Bohr's own published English, most of it written by him
+in that language. The Danish follows *Filosofiske Skrifter*, Bind II (Forlaget
 Philosophia, København 2013, with the Niels Bohr Arkiv); the English follows
 Woodbridge, Conn.: Ox Bow Press, 1987. Reprint of Atomic Physics and Human Knowledge, John Wiley & Sons, New York 1958.
 

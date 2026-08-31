@@ -15,7 +15,9 @@ Rutherford Memorial Lecture.
 ## The text
 
 Eight volumes are planned, four Danish and four English; this is volume III
-of each. The Danish follows *Filosofiske Skrifter*, Bind III (Forlaget
+of each. Both sides are **transcriptions of published texts**, not translations
+made here: the English is Bohr's own published English, most of it written by him
+in that language. The Danish follows *Filosofiske Skrifter*, Bind III (Forlaget
 Philosophia, København 2013, with the Niels Bohr Arkiv); the English follows
 Woodbridge, Conn.: Ox Bow Press, 1987. Reprint of Interscience Publishers, New York 1963.
 

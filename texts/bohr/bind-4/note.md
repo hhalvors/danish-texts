@@ -17,7 +17,9 @@ an appendix — the Faraday Lecture, and the 1950 Open Letter to the UN.
 ## The text
 
 Eight volumes are planned, four Danish and four English; this is volume IV
-of each. The Danish follows *Filosofiske Skrifter*, Bind IV (Forlaget
+of each. Both sides are **transcriptions of published texts**, not translations
+made here: the English is Bohr's own published English, most of it written by him
+in that language. The Danish follows *Filosofiske Skrifter*, Bind IV (Forlaget
 Philosophia, København 2013, with the Niels Bohr Arkiv); the English follows
 Ed. Jan Faye and Henry J. Folse. Woodbridge, Conn.: Ox Bow Press, 1998. An independent selection: it is NOT a translation of Philosophia's Bind IV.
 

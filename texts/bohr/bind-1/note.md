@@ -16,7 +16,9 @@ of 1931 — the essays in which complementarity is first stated in print.
 ## The text
 
 Eight volumes are planned, four Danish and four English; this is volume I
-of each. The Danish follows *Filosofiske Skrifter*, Bind I (Forlaget
+of each. Both sides are **transcriptions of published texts**, not translations
+made here: the English is Bohr's own published English, most of it written by him
+in that language. The Danish follows *Filosofiske Skrifter*, Bind I (Forlaget
 Philosophia, København 2013, with the Niels Bohr Arkiv); the English follows
 Woodbridge, Conn.: Ox Bow Press, 1987. Reprint of Cambridge University Press, 1934.
 
