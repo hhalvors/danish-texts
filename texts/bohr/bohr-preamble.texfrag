@@ -63,6 +63,13 @@
 \newif\ifpagemarks
 \pagemarkstrue
 
+% Set by the standalone offprint wrappers under parts/<lang>/, which declare the
+% switch themselves BEFORE loading this file. In an offprint the essay is the
+% whole document, so \essay must not open with \clearpage.
+\makeatletter
+\@ifundefined{ifoffprint}{\newif\ifoffprint\offprintfalse}{}
+\makeatother
+
 \renewcommand*{\marginfont}{\footnotesize}
 
 \newcommand{\opage}[1]{%
@@ -92,7 +99,7 @@
 %                           i.e. what the |n| markers count through.
 % ---------------------------------------------------------------------------
 \newcommand{\essay}[2]{%
-  \clearpage
+  \ifoffprint\else\clearpage\fi
   \phantomsection
   \section*{#1}%
   \addcontentsline{toc}{section}{#1}%
