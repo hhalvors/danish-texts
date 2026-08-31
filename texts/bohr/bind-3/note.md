@@ -82,6 +82,28 @@ Because of this, `[n]` on the Danish side marks the first printing of the text
 otherwise the English or German article whose pagination the literature cites.
 Each essay's *First published* line names it, so it is always clear which.
 
+## Links to the original printings
+
+Each essay's *First published* line carries a DOI, or two: the original article's
+own DOI where the publisher has registered one, and the *Niels Bohr Collected
+Works* chapter, which reproduces essentially everything Bohr published. Both are
+live links in the PDF.
+
+The Collected Works link matters most for the pieces that will never have a DOI
+of their own — the Danish articles in *Fysisk Tidsskrift*, *Naturens Verden*,
+*Tilskueren* and *Ingeniøren*, and the congress volumes and Festschriften. Every
+piece with a separate printing carries at least one resolvable link; only the
+prefaces, which were written for their volumes, carry none.
+
+Where a piece appeared in more than one place, both are given: Bind I's
+*Atomteorien og Grundprincipperne*, for instance, links its Danish first printing
+in the 1929 Naturforskermøde proceedings and its German printing in
+*Naturwissenschaften* 18. Where no DOI exists but the article is on JSTOR, a
+stable JSTOR URL stands in.
+
+Each link was verified by matching the registered volume and page range against
+the citation recorded here, not merely by matching a title.
+
 ## Rights
 
 Unlike everything else in this collection, these texts are **not public
