@@ -1,7 +1,7 @@
 ---
 kind: note
 author: bohr
-work: bind-3
+work: bind-3-da
 title: "Atomfysik og menneskelig erkendelse II / Essays 1958–1962 on Atomic Physics and Human Knowledge"
 updated: "2026-08-31"
 abstract: >

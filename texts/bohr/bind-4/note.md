@@ -1,7 +1,7 @@
 ---
 kind: note
 author: bohr
-work: bind-4
+work: bind-4-da
 title: "Supplementsbind / Causality and Complementarity: Supplementary Papers"
 updated: "2026-08-31"
 abstract: >

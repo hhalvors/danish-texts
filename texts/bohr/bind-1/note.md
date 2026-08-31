@@ -1,7 +1,7 @@
 ---
 kind: note
 author: bohr
-work: bind-1
+work: bind-1-da
 title: "Atomteori og naturbeskrivelse / Atomic Theory and the Description of Nature"
 updated: "2026-08-31"
 abstract: >
