@@ -22,17 +22,18 @@ Philosophia, København 2013, with the Niels Bohr Arkiv); the English follows
 Woodbridge, Conn.: Ox Bow Press, 1987. Reprint of Atomic Physics and Human Knowledge, John Wiley & Sons, New York 1958.
 
 | # | Danish | English | First published |
-|---|--------|---------|-----------------|
+|---|---|---|---|
+| 0 | Forord | *(Danish only)* | Skrevet til Atomfysik og menneskelig erkendelse, København 1957. Dateret København, august 1957. Den engelske Preface står i Ox Bow-udgaven, s. v–vi |
 | 1 | Indledning | Introduction | Atomic Physics and Human Knowledge, John Wiley & Sons, New York 1958, pp. v–vi, 1–2 |
-| 2 | Lys og liv | Light and Life | Nature 131 (1933) 421–423, 457–459 |
-| 3 | Biologi og atomfysik | Biology and Atomic Physics | Celebrazione del secondo centenario della nascita di Luigi Galvani, I. Rendiconto generale, Tipografia Luigi Parma, Bologna 1938, pp. 68–78 |
-| 4 | Fysikkens erkendelseslære og menneskekulturerne | Natural Philosophy and Human Cultures | Congrès international des sciences anthropologiques et ethnologiques, compte rendu de la deuxième session, Copenhagen 1938, Ejnar Munksgaard, Copenhagen 1939, pp. 86–95 |
-| 5 | Diskussion med Einstein om erkendelsesteoretiske problemer i atomfysikken | Discussion with Einstein on Epistemological Problems in Atomic Physics | P.A. Schilpp (ed.), Albert Einstein: Philosopher–Scientist, The Library of Living Philosophers, Vol. VII, Evanston, Illinois 1949, pp. 201–241 |
-| 6 | Kundskabens enhed | Unity of Knowledge | L. Leary (ed.), Unity of Knowledge, Doubleday & Co., New York 1955, pp. 47–62 |
-| 7 | Atomerne og den menneskelige erkendelse | Atoms and Human Knowledge | ? –- verify against Bohr-AtomsHumanKnowledge-1958.pdf in the bibliotek |
-| 8 | Fysikken og livets problem | Physical Science and the Problem of Life | Atomic Physics and Human Knowledge, John Wiley & Sons, New York 1958, pp. 94–101 (first printed there) |
+| 2 | Lys og Liv | Light and Life | Nature 131 (1933) 421–423, 457–459 |
+| 3 | Biologi og Atomfysik | Biology and Atomic Physics | Celebrazione del secondo centenario della nascita di Luigi Galvani, I. Rendiconto generale, Tipografia Luigi Parma, Bologna 1938, pp. 68–78 |
+| 4 | Fysikkens Erkendelseslære og Menneskekulturerne | Natural Philosophy and Human Cultures | Congrès international des sciences anthropologiques et ethnologiques, compte rendu de la deuxième session, Copenhagen 1938, Ejnar Munksgaard, Copenhagen 1939, pp. 86–95; also Nature 143 (1939) 268–272 |
+| 5 | Diskussion med Einstein om erkendelsesteoretiske Problemer i Atomfysikken | Discussion with Einstein on Epistemological Problems in Atomic Physics | P.A. Schilpp (ed.), Albert Einstein: Philosopher–Scientist, The Library of Living Philosophers, Vol. VII, Evanston, Illinois 1949, pp. 201–241 |
+| 6 | Kundskabens Enhed | Unity of Knowledge | L. Leary (ed.), Unity of Knowledge, Doubleday & Co., New York 1955, pp. 47–62 |
+| 7 | Atomerne og den menneskelige Erkendelse | Atoms and Human Knowledge | Dædalus 87 (1958) 164–175; address to the Royal Danish Academy of Sciences, Copenhagen, October 1955 |
+| 8 | Fysikken og Livets Problem | Physical Science and the Problem of Life | First printed in Atomic Physics and Human Knowledge, John Wiley & Sons, New York 1958, pp. 94–101; based on a Steno Lecture to the Danish Medical Society, Copenhagen, February 1949 |
 
-*Status: skeleton. 8 pieces scaffolded; no text transcribed yet.*
+*Status: skeleton. 9 pieces scaffolded; no text transcribed yet.*
 
 ## Editorial note
 
@@ -48,14 +49,41 @@ working between the two has had to convert by hand. Here both are marked:
 - **`|n|`**, italic, in the **right** margin — page *n* of the **collected
   volume**: Ox Bow Press in English, Philosophia in Danish.
 
+**Ox Bow is the touchstone for the English series** — that is what a
+"PWNB II, p. n" citation means to a reader. As it happens the choice costs
+nothing for vols I--III: each was checked against the printed Ox Bow copy and
+each reproduces its source photographically, so Ox Bow and the first printings
+(Cambridge 1934, Wiley 1958, Interscience 1963) agree page for page.
+
 Markers sit at the exact word the page turns on. They are set with `marginnote`
 rather than `\marginpar` so that they survive inside block quotations, lists and
 footnotes, where `\marginpar` silently drops them. Because the collected editions
 reset the type, the two series interleave irregularly; that is the point.
 
-Transcription follows the house rule for this repository: the text is
-diplomatic. Printer's errors are set as printed and logged in a `%` comment at
-the site, never silently corrected.
+## The Danish text is Philosophia's, and Philosophia modernises
+
+One departure from this repository's usual practice has to be stated plainly.
+The Danish here follows *Filosofiske Skrifter* (Philosophia 2013), which keeps
+Bohr's titles in their original orthography but **modernises the prose** —
+*legemernes ligevægt og bevægelser* where 1925 printed *Legemernes Ligevægt og
+Bevægelser*. So the Danish is not a diplomatic transcription of a first printing
+in the way the rest of this collection is.
+
+That is deliberate. Most of these pieces were written and first published in
+English or German; Philosophia's Danish is itself a translation, and for them
+there is no original Danish to be faithful to. Setting the minority that *were*
+first printed in Danish from their own first printings, while taking the rest
+from Philosophia, would produce a volume in two orthographies. Philosophia
+throughout is the coherent choice.
+
+Within that text the transcription is diplomatic in the usual sense: set as
+printed, errors preserved and logged in a `%` comment at the site, never
+silently corrected.
+
+Because of this, `[n]` on the Danish side marks the first printing of the text
+*in whatever language it appeared*: a Danish printing where one exists,
+otherwise the English or German article whose pagination the literature cites.
+Each essay's *First published* line names it, so it is always clear which.
 
 ## Rights
 
