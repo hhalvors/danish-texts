@@ -71,7 +71,7 @@ is at pp. 18–29, not the pp. 14–22 previously inferred from search hits.
 | 3 | H. Holst, »Tidsproblemet« | 15 (1916–17) | 1–13 | 603–615 |
 | 4 | Carl Emil Walsøe, »Omkring Videnskabens Grænse« | 15 (1916–17) | 13–17 | 615–619 |
 | 5 | H. M. Hansen, »Relativitetsprincipet« | 15 (1916–17) | 18–29 | 620–631 |
-| 6 | Helge Holst, »Relativitetsprincipet« | 15 (1916–17) | 166–168 | 784–786 |
+| 6 | Helge Holst, »Relativitetsprincipet« | 15 (1916–17) | 165–168 | 783–786 |
 | 7 | **K. Kroman, »Et Par yderligere Bemærkninger om »Relativitetsprincipet««** | **15 (1916–17)** | **192–205** | 814–827 |
 
 Kroman's own closing article confirms the shape. At printed p. 193 he writes
@@ -81,10 +81,14 @@ treatise, Dr. H. M. Hansen, I am on the other hand, epistemologically speaking,
 in strong disagreement.* Three treatises answered him, and Hansen wrote the
 third: items 3, 4 and 5, in that order.
 
-Holst and Walsøe SHARE p. 13: Holst ends in its top third, and Walsøe's title
-block, byline, first eight lines and two footnotes fill the rest of it, which is
-why p. 14 already carries Walsøe's running head. The article was catalogued
-here as pp. 14–17 until the pages were read; it is pp. 13–17.
+**Three of these articles begin partway down the last page of the one before**,
+under the previous article's running head — which is why the running heads give
+the wrong extent every time and why three of the seven entries in this table had
+to be corrected against the pages. Walsøe shares p. 13 with the end of Holst's
+»Tidsproblemet« (catalogued 14–17, actually 13–17); Holst's second piece begins
+in the lower half of p. 165 (catalogued 166–168, actually 165–168); and Kroman's
+1917 reply begins partway down p. 192, under P. O. Pedersen's running head. In
+this journal, always read the page before the apparent first page.
 
 Walsøe belongs to the debate rather than merely sitting between its parts. His
 p. 17 describes itself as »denne Antydning fra Trediemand af en Mulighed for
