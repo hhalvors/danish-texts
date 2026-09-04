@@ -86,15 +86,28 @@
 %  antiqua against Fraktur and is rendered \textit{}; in an all-antiqua book
 %  there is no such distinction to record, and inventing one would be an
 %  editorial claim the page does not support. \textit{} therefore appears
-%  in the body of this file exactly ONCE, for the Greek (below); check.py
-%  flags every other occurrence.
+%  in the body of this file exactly TWICE -- both are the print's own
+%  italic sorts, not editorial italicisation, and both are cases where a
+%  single letter or a foreign alphabet made the book's normal device
+%  (letterspacing) unusable -- and check.py flags every other occurrence.
 %
 %  GREEK: ONE passage only, printed p. 63 -- the Aristotelian tag
 %  »τοῦ μὴ ὄντος …« -- and the book sets it in an accented ITALIC Greek
 %  fount. That italic is the print's own, not an editorial italicisation of
-%  a foreign phrase, so it is rendered \textit{} and is the single sanctioned
-%  exception to the rule above. The ABBYY layer reads the passage;
-%  tesseract -l dan does not.
+%  a foreign phrase, so it is rendered \textit{} and is the first of the two
+%  sanctioned exceptions to the rule above. The ABBYY layer reads the
+%  passage; tesseract -l dan does not.
+%
+%  A SECOND, isolated italic sort stands on p. 171: the one-letter word
+%  "i" in "Al Virkelighed er i Substantsen" (Cap. 9, opening page). Confirmed
+%  on the verification pass of 4 September 2026 (EMPHASIS-171-188.md Job 1)
+%  at 600--1000 dpi crops against roman "i"s on the same page and against
+%  the p. 63 Greek for calibration: a genuine curved, calligraphic italic
+%  sort, not a rotated or damaged roman one. Both OCR witnesses garble it
+%  (tesseract reads "Z"). Read as the compositor's only available device for
+%  emphasising a single letter, where letterspacing cannot apply --
+%  parallel to the Greek case, where the device is unavailable for a
+%  different reason (a foreign alphabet).
 %
 %  THE OLD ID-EST MARK ɔ: (a reversed c followed by a colon) is used
 %  constantly -- about 75 instances, from p. 37 to p. 170, concentrated in
@@ -4493,8 +4506,6 @@ selve Dyden og Af\-%
 % batch's fragment; join with no space, per BATCH-AGENT.md's
 % word-break rule. p. 107 itself carries no footnote, as the recon
 % survey predicted.
-
-
 % =====================================================================
 %  SJETTE CAPITEL  (printed pp. 108--131 = PDF 118--141)
 %  Opens PART WAY DOWN p. 108, so no \chapter* here -- the head is emitted
@@ -4503,12 +4514,1037 @@ selve Dyden og Af\-%
 %  of the doctrine. Not footnotes.
 %  p. 130 note 2 CONTINUES at the head of p. 131's note block.
 % =====================================================================
+% --- p. 108 ---
+\setcounter{footnote}{0}%
+hængigheden af Gud som Løn, Frihed og Lyksalighed; ---
+2) at den giver os Sindsro ligeoverfor det, der ikke staaer
+i vor Magt (ɔ: som ikke følger af vor Natur), fordi vi vide,
+at Alt med samme Nødvendighed følger af Guds evige decretum
+som Triangelens Egenskaber følge af dens Væsen; --- 3) at den
+bidrager til at fremme det sociale Liv idet den lærer, ikke at
+hade, foragte, spotte, vredes eller misunde, og idet den gjør
+Enhver fornøiet med Sit og tilbøielig til at hjælpe sin Næste,
+ikke af quindagtig Medlidenhed, Partiskhed eller Overtro, men
+alene efter Fornuftens Tilskyndelse; --- 4) endelig deri, at den
+ikke er lidet nyttig for Samfundet, idet den viser, paa hvilken
+Maade Borgerne maae styres og ledes, nemlig saaledes, at de
+ikke blive Trælle, men frit udrette hvad der er det Bedste (Eth.
+II, 49. schol.). --- Hvad Spinoza her har fremhævet som »Nytten«
+ved sin Lære, vil finde sin nærmere Udvikling og Forstaaelse i
+de følgende Capitler. Ved Bestemmelsen af Erkjendelsens Arter,
+og af Forholdet mellem Ideen og de andre Tankemodi, som Villie,
+Attraa o. desl., er nemlig Grundlaget givet for Opfattelsen af
+det, der specielt udgjør Indholdet af den spinozistiske
+Ethik\footnote{„Ethica universalis“, tract. theol.-polit. pag. 46.}:
+\emph{Læren om Mennesket i dets Trældom og i dets Frihed}, og af
+denne ville de tre næste Afsnit give en Fremstilling.
 
-% [text to be added: pp. 108--119]
+% This enumeration "1) 2) 3) 4)" (the four uses of Spinoza's doctrine) is
+% BODY TEXT, not footnote text -- confirmed on the 600 dpi image: it is set
+% in the same full body type as the surrounding paragraph, unlike the
+% smaller note fount below the rule. Contrast the superficially similar
+% 1)2)3)4) list on pp. 95-96, which IS footnote text (RESUME-NOTES.md).
+% The rule closing Femte Capitel reads as a DOUBLE rule at 600 dpi,
+% confirmed on the image (cf. the double rule at pp. 43, 64, 82; contrast
+% the single rule closing Tredie Capitel, batch 6).
+\bigskip
+\begin{center}\rule{2.5cm}{0.4pt}\end{center}
+\bigskip
 
-% [text to be added: pp. 120--131]
+\begin{center}
+{\large\textbf{Sjette Capitel.}}\\[4pt]
+\textbf{Mennesket som naturæ pars. Affecterne. Menneskets
+Trældom.}\\[6pt]
+\rule{2cm}{0.4pt}
+\end{center}
+\addcontentsline{toc}{chapter}{Sjette Capitel. Mennesket som naturæ pars. Affecterne. Menneskets Trældom}
+\markboth{Mennesket som naturæ pars}{Mennesket som naturæ pars}
+\bigskip
 
+Nødvendighedens Tanke, der hos Spinoza behersker
+Opfattelsen af Naturen i dens Enhed med Gud og som den
+uendelige Række af de enkelte Ting, maa ogsaa beherske
+% --- p. 109 ---
+\setcounter{footnote}{0}%
+Opfattelsen af det menneskelige Væsen som virkende og
+lidende. Idet Spinoza gaaer ud fra Substantsens Begreb,
+kan han ikke opfatte Mennesket som løsrevet fra Naturens
+evige altomfattende Orden, som en Stat i dennes Stat, kun
+styret og bestemt af sin egen grundløse, ubetingede Frihed.
+Han kan ikke betragte det, der, som foregaaende i den
+menneskelige Aand, røber dens Afmagt og Ubestandighed,
+som noget Tilfældigt, som en Gjenstand for Beklagelse,
+Spot og Afsky, men kun som Noget, der maa begribes i
+sin Nødvendighed ved Naturens Magt, der mathematisk
+strængt maa udledes af de naturlige
+Aarsager\footnote{jfr. tract. polit. Cap. I, 4: ut ea, quæ ad
+hanc scientiam [ɔ: politicam] spectant, eadem animi libertate,
+qua res mathematicas solemus, inquirerem, sedulo curavi,
+humanas actiones non ridere, non lugere, neque detestari, sed
+intelligere: atque adeo humanos affectus, ut sunt amor, odium,
+ira, invidia, gloria, misericordia et reliquæ animi
+commotiones non ut humanæ naturæ vitia, sed ut proprietates
+contemplatus sum, quæ ad ipsam ita pertinent, ut ad naturam
+aëris æstus, frigus, tempestas, tonitru et alia huiusmodi, quæ
+tametsi incommoda sunt, necessaria tamen sunt, certasque
+habent causas, per quas eorum naturam intelligere conamur, et
+mens eorum vera contemplatione æque gaudet, ac earum rerum
+cognitione, quæ sensibus gratæ sunt.}. »Der skeer
+Intet i Naturen, der kan tilskrives en Mangel ved denne;
+thi Naturen er bestandig den samme og overalt een, og
+dens Magt (virtus) og Handlekraft er bestandig den samme;
+det vil sige: Naturens Love og Regler, efter hvilke Alt
+skeer, og Alt forandres fra en Form til en anden, ere overalt
+og bestandig de samme, og Opfattelsen af hvilkesomhelst
+Tings Natur maa derfor bestandig være den samme, nemlig
+ved Naturens universelle Love og Regler. Hadets, Vredens,
+Misundelsens Affecter o. desl. følge derfor, naar de betragtes
+efter deres Væsen (in se) af den samme Naturens
+Nødvendighed og Magt (virtus), som de øvrige enkelte Ting,
+og have derfor bestemte Aarsager, ved hvilke de erkjendes,
+og visse Egenskaber, der ere ligesaa værdige til at begribes
+af os som enhver anden Tings Egenskaber, ved hvis blotte
+% No closing « appears on the image before "Jeg vil derfor" -- the quote
+% is left unbalanced as printed; not corrected, per editorial stance.
+Betragtning vi frydes. Jeg vil derfor afhandle Affecternes
+% --- p. 110 ---
+\setcounter{footnote}{0}%
+Natur og Kræfter og Aandens Magt over dem paa samme
+Maade, paa hvilken jeg har afhandlet Guds og Aandens
+Væsen, og jeg vil betragte de menneskelige Handlinger og
+Attraaer, ganske som om Talen var om Linier, Flader eller
+Legemer« (Eth. III. præfat.)\footnote{Eth. IV. 57. schol.: Sane
+humani affectus, si non humanam, naturæ saltem potentiam et
+artificium non minus indicant, quam multa alia, quæ
+admiramur, quorumque contemplatione delectamur.}.
+Den Ethik, der kan finde sin Plads i det Spinozistiske
+System, kan altsaa ikke hvile paa Forudsætningen af en
+individuel Frihed, ikke stille Opgaver, som Friheden
+gjennem et Valg skal realisere, ikke tale om et ved dette
+Valg bestemt Godt eller Ondt. Den bliver \emph{den
+menneskelige Aands Naturlære}, dens Opgave er ikke, at stille
+en Fordring til Mennesket, men at see det menneskelige
+Væsen i Naturens evige og nødvendige Loves Lys, og ved
+disse Love, der udtrykke en Virksomhed, at udlede, hvad
+der med evig Nødvendighed følger af det menneskelige
+Væsens Begreb. Denne Opgave faaer strax en forskjellig
+Form efter den dobbelte Opfattelse af det Endelige, idet
+Menneskets Væsen enten betragtes som abstract endeligt
+eller i sin Enhed med det Uendelige. I hiin Betydning sees
+det under den ydre Nødvendigheds Lov, i denne under den
+indre Nødvendigheds, Frihedens, idet det sees i Enhed med
+den eneste causa libera; i hiin opfattes Mennesket altsaa i
+sin Trældomstilstand, i denne i sin Frihed. Spinoza holder
+denne dobbelte Opfattelse ude fra hinanden, undtagen
+forsaavidtsom de almindelige Bestemmelser kunne anvendes
+paa begge Synsmaader og Definitionerne omfatte begge.
+Han udvikler først Consequentserne af den første
+Betragtningsmaade, for gjennem dem at føre denne tilbage til
+den sidste.
 
+Opfattes Mennesket først i Almindelighed som en enkelt
+Modus i det Uendelige, saa bestemmes det som \emph{handlende}
+% The compositor letterspaces "handlende" and "lidende" separately; the
+% connecting "og" between them is set in ordinary (unspaced) type on the
+% image. Transcribed as printed -- cf. the partial-spacing case at p. 71
+% ("n a t u r a naturans", first word only).
+og \emph{lidende}. »Jeg kalder det at \emph{handle}, naar Noget skeer
+i os eller udenfor os, til hvilket vi ere \emph{adæqvat Aarsag}
+% --- p. 111 ---
+\setcounter{footnote}{0}%
+ɔ: naar der af vor Natur følger Noget i os eller udenfor
+os, der kan forstaaes klart og tydeligt ved den alene. Der\-%
+imod kalder jeg det at \emph{lide}, naar der skeer Noget i os,
+eller naar der af vor Natur følger Noget, til hvilket vi kun
+ere partiel (uadæquat) Aarsag« (Eth. III, def.
+2)\footnote{„\emph{Causam adæquatam} appello eam, cuius effectus
+potest clare et distincte per eandem percipi. \emph{Inadæquatam}
+autem seu partialem illam voco, cuius effectus per ipsam
+solam intelligi nequit (Eth. III. def. 1). jfr. Eth. IV. App. C.
+1: Omnes nostræ cupiditates ex necessitate nostræ naturæ ita
+sequuntur, ut vel per ipsam solam tanquam per proximam
+causam possint intelligi, vel quatenus naturæ sumus pars,
+quæ per se absque aliis individuis non potest adæquate
+% No closing “ appears on the image after "concipi." -- the quote opened
+% by the footnote's „ is left unbalanced as printed; not corrected, per
+% editorial stance (cf. the same defect on p. 109).
+concipi.}.
+Da der af ethvert Existerendes Væsen bestandig følger
+en Virkning, maa Mennesket bestandig være bestemmet, og
+denne Bestemmethed er \emph{Affecten}\footnote{Eth. III, 56. dem.:
+prout unusquisque --- --- afficitur, hoc est, prout eius natura
+hoc aut alio modo constituitur. --- Eth. III. Affect. def. 1.
+explic.: per affectionem humanæ essentiæ quamcumque
+eiusdem essentiæ constitutionem intelligimus, sive ea sit
+innata, sive quod ipsa per solum cogitationis sive per solum
+extensionis attributum concipiatur, sive denique quod ad
+utrumque simul referatur.}: per affectum intelligo corporis
+affectiones, quibus ipsius corporis agendi potentia augetur
+vel minuitur, juvatur vel coërcetur, et simul harum
+affectionum ideas (Eth. III. def.
+3.)\footnote{Denne Definition er almindelig, idet Affecten
+bliver en Handlen naar vi ere den adæquate Aarsag til
+Affectionen, i modsat Tilfælde en Liden (sammest. explic.).}.
+Denne almindelige Definition af Affecten faaer nu sin
+nærmere Bestemmelse ved hvad der i de foregaaende Capitler
+er udviklet om Aandens Natur, om Attributernes Forhold
+til hverandre, og om Substantsen som virkende. Aanden
+er handlende forsaavidt den har adæquate Ideer, idet
+disses Virkninger begribes alene ved den menneskelige
+Aands Væsen; den er lidende forsaavidt den har uadæquate
+ɔ: idet den »har Noget, der indeslutter en Negation«, eller
+forsaavidtsom den betragtes som en Deel af Naturen, der
+ikke kan forstaaes klart og tydeligt uden andre Dele. Jo
+% --- p. 112 ---
+\setcounter{footnote}{0}%
+flere uadæquate Ideer Aanden har, desto mere er den altsaa
+udsat for Lidenskaber (lidende Tilstande), jo flere adæquate,
+desto mere er den handlende (Eth. III, 1. 3. schol. jfr.
+Cap. 5 og Eth. II, 11. Coroll.). Fornuft og Handlen, Ima\-%
+gination og Liden blive Paralleler. --- Af Attributernes For\-%
+hold til hverandre følger, at hverken Legemet kan bestemme
+Aanden til at tænke eller Aanden Legemet til Bevægelse
+eller Hvile (Eth. III, 2), saa at altsaa Legemets og Aandens
+handlende og lidende Tilstande ikke ere Følger af hinanden,
+men ere simul natura, og Aandens Attraa og Legemets
+Bestemmelse er een og samme Ting, der kun betegnes med
+forskjellige Navne (decretum --- determinatio) eftersom den
+sees under de to forskjellige Attributer. --- Af Substantsens
+Natur som activ følger, at de enkelte modi, som Ting, der
+paa en bestemt og begrændset Maade udtrykke Guds At\-%
+tributer, ogsaa udtrykke hans potentia (der er liig hans
+Væsen), og da en Tings Væsen kun kan bekræfte, ikke be\-%
+nægte sig selv, saa kan enhver Ting kun tilintetgjøres af
+en ydre Aarsag, og den maa, saavidt den er i sig (in se)
+stræbe\footnote{Conatus opfattes som Stræben efter \emph{at
+bevare} hvad der allerede er tilstede: Eth. III, 12. 13. jfr.
+25. 7. Coroll. 3. dem. 28 f.} uden nogen Tidsbegrændsning, at
+vedblive i sin
+Væren\footnote{Unaquæque res, quantum \emph{in se} est, in
+suo esse perseverare conatur (Eth. III. 6). Udtrykket \emph{in
+se} er her paafaldende, da det strængt taget kun kan siges om
+Substantsen, at den er in se. Der ligger maaskee deri en
+Antydning af, at den som enkelt opfattede Ting \emph{kun i sin
+Enhed med Substantsen er activ}. Opfattet som enkelt Led i
+den uendelige Kjæde vilde den menneskelige Aand consequent
+ligesaalidt kunne opfattes som activ som den kan have
+adæquate Ideer. Hvad Spinoza fra et Cartesiansk Standpunkt
+udvikler i Cog. metaph. II. c. 12, faaer ingen Anvendelse paa
+hans eget, der opfatter Aanden som modus, ikke som
+\emph{endelig Substants}. --- Maaskee kunde dog Udtrykket:
+quantum \emph{in se} est, kun være en urigtig Sprogbrug for:
+quantum in ea est, hvilket Udtryk altid bruges i tract.
+theol.-polit. og tract. polit. hvor denne Tanke kommer frem
+(jfr. ogsaa Eth. IV. App. c. 25). Den gamle hollandske
+Oversættelse giver ingen Oplysning, da den oversætter
+% --- p. 113 ---
+ganske efter Ordene: Yder ding poogt, voor zo veel als't in
+zich is, in zyn wesen te volharden.“}, og denne Stræben er
+selve Tingens Væsen (Eth.
+\setcounter{footnote}{0}%
+III, 6 f.) og findes i den menneskelige Aand baade forsaa\-%
+vidt denne constitueres af adæquate og af uadæquate
+Ideer\footnote{Man maa her erindre, at Spinoza, idet han
+betragter Aanden som Ideen om det existerende Legeme,
+opfatter denne Idee som sammensat af mange andre Ideer, af
+hvilke nogle ere adæquate, andre uadæquate
+% printed "ifr." -- a misread j, not a broken sort per the standing
+% rule (JBIG2-TEST.md): set the sense-reading, log the doubt.
+(jfr. Eth. III, 3. dem. II, 15. 19. 38), og at de uadæquate Ideer,
+der, førte tilbage til Gud, ere adæquate, udvikle sig med
+samme Consequents som de adæquate (Eth. II, 36).}.
+Denne Stræben, der altsaa er det simple Udtryk for
+det actuelle Væsen som activt, er den første Grundaffect.
+Henføres den til Aanden alene, kaldes den
+\emph{Villie} (voluntas); henføres den baade til Aand og
+Legeme, kaldes den \emph{Attraa} (appetitus), og denne bliver
+altsaa ikke Andet end selve Menneskets Væsen, af hvis Natur
+det, der tjener til dets Bevaren, følger med Nødvendighed,
+saaledes, at Mennesket er bestemt til at bevirke det. Fra
+appetitus adskilles cupiditas kun derved, at den i Regelen
+refereres til Mennesket, forsaavidt det er sig sin Attraa
+bevidst (cupiditas est appetitus cum eiusdem conscientia,
+Eth. III, 9. schol.)
+Til Attraaen som Grundaffect maa der nu, naar det
+menneskelige Væsen opfattes som enkelt, begrændset Led
+i Aarsagernes og Virkningernes uendelige Kjæde, og dets
+Handlekraft altsaa opfattes som den, der baade kan forøges
+og formindskes, knytte sig to andre: den, der udtrykker
+Overgangen til en større, og den, der udtrykker Overgangen
+til en mindre Fuldkommenhed: \emph{Glæde og Sorg}\footnote{\emph{Lætitia}
+er: passio, qua mens ad maiorem perfectionem transit;
+--- \emph{tristitia} er: passio, qua mens ad minorem transit
+perfectionem (Eth. II, 11. schol.) jfr. Eth. III, 57. dem.:
+lætitia et tristitia est ipsa cupiditas sive appetitus, quatenus
+a causis externis augetur vel minuitur, juvatur vel coërcetur,
+hoc est, est ipsa cuiusque natura. De refereres nærmest til
+Aanden alene, \emph{hilaritas og melancholia} derimod til hele
+det menneskelige Væsen.}. Kun
+disse og Attraaen kunne være Grundaffecter; af dem maae
+alle andre udledes.
+
+% --- p. 114 ---
+\setcounter{footnote}{0}%
+Idet Aanden er bestemt som idea corporis, følger det,
+med Hensyn til de tre Grundaffecter, at der i Aanden ikke
+kan gives en Idee, der udelukker Legemets Existents, da
+en saadan vilde stride mod Aandens Væsen, men at tvært\-%
+imod Aandens Natur først og fremmest maa udtrykke sig i
+at affirmere Legemets
+Existents\footnote{Naar Aanden opfattes som idea ideæ,
+udtrykker den sig som en Stræben efter at forestille sig hvad
+der bekræfter dens egen Virkekraft, og idet den betragter sig
+selv og sin Virkekraft, føler den Glæde (Eth. III, 53 f. jfr.
+V, 15. dem.), medens den derimod føler Sorg naar den
+forestiller sig sin Afmagt, ɔ: naar dens Stræben efter at
+forestille sig, hvad der bekræfter dens Virkekraft, hæmmes
+(Eth. III, 55. dem.)}, og at den, da Ideen om
+alt det, der forøger eller formindsker vort Legemes Kraft
+til at
+handle\footnote{Spinoza opstiller det som et Postulat, at det
+menneskelige Legeme kan afficeres paa mange Maader, ved
+hvilke dets Handlekraft forøges eller formindskes, og
+ligeledes paa andre Maader, der hverken forøge eller
+formindske den. Han henviser til Laanesætningerne fra
+Physiken (Eth. II, 13), og af denne Henvisning synes det at
+fremgaae, at Handlekraftens Forøgelse eller Formindskelse
+maa tænkes at finde Sted derved, at Legemets Dele, medens
+den gjensidige Meddelelse af Bevægelse bibeholdes, blive
+større eller mindre, og at Legemet som Heelhed, ligeledes
+med Bibeholdelse af hint Forhold, sættes i Bevægelse eller
+Hvile (Eth. III, postul. 1).} maa forøge eller formindske selve Aandens
+Kraft til at
+tænke\footnote{„Quum supra dixerim, mentis cogitandi
+potentiam augeri vel minui, nihil aliud intelligere volui, quam
+quod mens ideam sui corporis vel alicuius eius partis
+formaverit, quæ plus minusve realitatis exprimit quam de suo
+corpore affirmaverat. Nam idearum præstantia et actualis
+cogitandi potentia ex objecti præstantia æstimatur“ (Affect.
+gener. defin., explic.).}, maa have en Stræben efter at fast\-%
+holde den Idee, der bekræfter det menneskelige Legemes
+Væsen og at fjerne den, der benægter
+det\footnote{Dette sidste skeer ved at en modsat Idee erindres
+(fastholdes).} (Eth. III,
+10---13). Ved den sidste Bestemmelse er der allerede naaet
+til de første af de afledede Affecter: \emph{Kjærligheden og
+Hadet}, der i Virkeligheden ikke ere Andet end \emph{Glæde
+og Sorg}, ledsagede af Ideen om den ydre Aarsag
+% --- p. 115 ---
+% No footnote on this page (confirmed on image; RECON.md's survey agreed).
+(Eth. II, 13. schol.), og hvis Eiendommelighed bliver klar
+af det allerede Udviklede.
+
+I Deductionen af de afledede Affecter fremtræder den
+Spinozistiske Grundanskuelse med skarpt udpræget Eiendommelighed.
+Han giver i den en \emph{Lidenskabernes
+Naturhistorie}, og betragter med Naturforskerens lidenskabsløse
+Ro Lidenskaben som et af det menneskelige Væsen
+med Nødvendighed fremgaaende Naturphænomen. I Grundaffecterne
+fandt dette Væsen i dets Bestemmethed sit almindeligste
+Udtryk, men dette almindelige Udtryk individualiseres
+nu ved tiltrædende Factorer, og af de forskjellige
+Combinationer fremgaae som nødvendige Producter de afledede
+Lidenskaber.
+
+Disses Mangfoldighed er begrundet deels i Imaginationens
+og Erindringens Natur, der gjør det muligt at bevare
+Indtrykket af Affectionerne efterat de ydre Gjenstande
+ikke mere ere nærværende, og derved at combinere Lidenskaberne
+og at stille den ene imod den anden; --- deels i
+det menneskelige Legemes Natur som sammensat, idet det
+saaledes samtidig kan afficeres paa flere Maader; --- deels
+i Vexelvirkningen med de ydre Gjenstande, i Affectionen
+ved deres Affectioner, i Collisionerne med deres Lidenskaber;
+--- deels i Forestillingen om Gjenstandenes Gradforskjel,
+og endelig --- hvad der gjør Nuanceringen uendelig
+--- i Individernes uendelige Forskjellighed og i de ydre
+Gjenstandes uendelige Mangfoldighed. Men gjennem alle
+de afledede Lidenskaber vise Grundlidenskaberne sig, og i
+Virkeligheden ere hine kun selve disse, benævnede med forskjellige
+Navne efter deres forskjellige Relationer og denominationes
+extrinsecæ (Eth. III. Affect. defin. 48. explic.).
+
+En Affection, der har funden Sted samtidig med en
+anden, maa, efter Ideeassociationens Love, gjentage sig
+naar denne anden gjentager sig (Eth. III, 14), og saaledes
+kan enhver Gjenstand per accidens blive Aarsag til Glæde,
+Sorg og Attraa (saaledes opstaae sympathia, antipathia, propensio,
+aversio, desiderium; prop. 15), og til de af dem afledede
+Lidenskaber (III, 50). Ifølge den Egenskab ved Ima\-%
+% --- p. 116 ---
+\setcounter{footnote}{0}%
+ginationen, at den afficerende Tings Billede bevares indtil
+Tingens Existents udelukkes ved en anden Idee, maa det
+forestillede Ikke-Nærværende virke som et Nærværende indtil
+andre Ideer gjøre det usikkert eller benægte det (spes,
+metus, securitas, desperatio; prop.
+18)\footnote{Frygt og Haab ere bestandig sammenknyttede.
+Eth. III, 50. schol.}.
+
+I Forholdet til den ydre Gjenstand følger det af Selvopholdelsesattraaens
+Natur, at vi, ligesom vi med Hensyn
+til os selv stræbe at bekræfte, hvad der glæder, at benægte,
+hvad der smerter, maae have den samme Stræben med Hensyn
+til hvad vi elske, den modsatte med Hensyn til hvad
+vi hade (pr. 25 f.), og at denne Stræben maa udtrykke sig
+baade i Forestilling og Handlen (pr. 28) forsaavidt den ikke
+hæmmes ved Forestillingen om Følgerne (metus, timor, verecundia,
+consternatio; prop. 39). Forestillingen om det
+Elskedes og det Hadedes Glæde og Smerte maa hos os
+fremkalde Glæde og Smerte i modsat
+Forhold\footnote{Dog er Glæden over det Hadedes
+Tilintetgjørelse blandet med Sorg, idet det Hadede er os
+ligt. Eth. III. 23. schol. 47.}, og efter
+Graden bestemt ved Kjærlighedens og Hadets Grad. Aarsagen
+til den elskede Gjenstands Glæde og den hadedes
+Smerte maa blive Gjenstand for vor Kjærlighed, Aarsagen
+til den elskedes Smerte og den hadedes Glæde for vort
+Had (commiseratio, favor, indignatio, invidia; prop. 19---24).
+Kjærlighed maa indeslutte Attraa efter
+Gjenkjærlighed\footnote{Beviset for denne Sætning er
+charakteristisk for Spinozas Opfattelse. Det føres saaledes:
+Vi stræbe, saavidt det staaer i vor Magt, at forestille os den
+Gjenstand, vi elske, fremfor alle andre Ting. Er den liig med
+os, da ville vi, idet det med os Liges Affection, gjennem
+Forestillingen (efter Ideeassociationens Love, jfr. pr. 27)
+fremkalder en lignende Affection hos os, stræbe efter at
+fremkalde Glæde hos den fremfor hos andre, eller, med andre
+Ord, vi ville stræbe efter, at den elskede Gjenstand føler
+Glæde, ledsaget af Forestillingen om os ɔ: at den elsker os
+(Eth. III, 33). --- Idet det Enkelte opfattes som enkelt, maa
+det opfattes som egoistisk; men Egoismen er hos Spinoza
+forsvindende ligesom Endeligheden (jfr. S. 70 f.).}, og
+den Glæde, denne fremkalder, bestemmes ved Kjærlighedens
+Grad. Foretrækker den, vi elske, en Anden, maa Kjærlig\-%
+% --- p. 117 ---
+\setcounter{footnote}{0}%
+heden blive til Had (idet Attraaen efter at forestille Gjenkjærligheden
+hæmmes), og den for os Foretrukne maa blive
+Gjenstand for Skinsyge (zelotypia). --- Glædens og Sorgens,
+Kjærlighedens og Hadets Intensitet maa bestemme den deraf
+opstaaede Attraaes Intensitet. --- Had, opstaaet af Kjærlighed,
+maa blive intensivere end om Kjærligheden ikke var
+gaaet forud (idet en desto større Attraa hæmmes); det
+Samme maa gjælde om Kjærlighed, opstaaet af Had. Forestillingen
+om uforskyldt Had maa fremkalde Had til den
+Hadende;\footnote{Ligheden fremkalder nemlig samme
+Affect, og det, at den Hadende er den eneste Aarsag,
+indskrænker Hadet til ham.} Forestillingen om ufortjent Kjærlighed maa fremkalde
+Kjærlighed. --- Had maa styrkes ved gjensidigt Had,
+men bringes til at vakle ved Forestillingen om Kjærlighed
+hos den Hadede (ira, vindicta, gratia, gratitudo). Kjærligheden
+og Hadet mod hvad vi forestille os som frit, maa
+blive større end mod hvad vi forestille os som nødvendigt,
+idet det Frie forestilles for sig alene, det Nødvendige sammen
+med et Andet, dets
+Aarsag (prop. 34---44.
+49)\footnote{Af samme Grund vil den Gjenstand, der ikke
+har noget Særeget, men kun hvad der er fælles for flere, kun
+afficere os i ringere Grad (admiratio, consternatio, horror,
+devotio, irrisio). Admiratio er ikke en Affect, men et
+forstærkende Motiv ved de andre Affecter.}.
+
+Ved \emph{Ligheden} med hvad vi hade eller elske kan
+en Gjenstand per accidens blive Gjenstand for Had eller
+Kjærlighed; men idet Ligheden tillige forudsætter Forskjellighed,
+kan den samme Ting blive Gjenstand for en dobbelt
+Lidenskab (animi fluctuatio, der ogsaa kan opstaae ved det
+sammensatte menneskelige Væsens forskjellige Paavirkning
+ved den samme Gjenstand; prop. 16 f. 46.). --- En Affect
+hos den med os lige Gjenstand maa, naar vi ikke iforveien
+staae i et Affectforhold til Gjenstanden, gjennem Forestillingen
+om Affecten fremkalde en lignende (Imaginationen
+indeslutter nemlig baade vort og det ydre Legemes Natur,
+og forsaavidt de congruere overføres det enes Affecter paa
+det andet; --- commiseratio, æmulatio), og Attraaen, som
+% --- p. 118 ---
+\setcounter{footnote}{0}%
+vore egne Affectioner fremkalde, fremkaldes ved det med
+os Liges. Vi maae derfor stræbe efter at gjøre det, som
+Andre betragte med Glæde, og at undgaae det, som Andre
+betragte med Uvillie (benevolentia, misericordia, ambitio,
+humanitas, laus, vituperium, gloria, pudor, acquiescentia in
+se ipso, poenitentia, superbia); vi maae bestyrkes i vor
+Kjærlighed og vort Had ved Forestillingen om Overensstemmelse
+med de med os Lige, medens Uoverensstemmelse
+med dem maa fremkalde Vaklen mellem de modsatte
+Affecter\footnote{Kan Gjenstanden for Kjærligheden kun tilhøre
+Een, maa Egoismen træde frem (see Anm. 3, S. 116), og
+vi maae stræbe efter at bevirke, at den, hvem vi forestille os
+som glædende sig derved, ikke kommer i Besiddelse deraf; og
+saaledes bliver den samme Eiendommelighed ved den
+menneskelige Natur, der var Grunden til, at Menneskene
+vare medlidende, Grund til, at de ere misundelige og
+ærgjerrige (prop. 32. jfr. 55. schol.). --- Den samme
+Selvhævdelsens Attraa, der ligger saa dybt i den menneskelige
+Natur, bevirker ogsaa, at Ydmyghed og Selvforagt (humilitas
+og abjectio) ere saa sjeldne som Lidenskaber, og at de i
+Regelen ere et Skjul over Ærgjerrighed og Misundelse
+(ambitio og invidia) (Aff. def. 29. expl.).} (prop. 27. 29. 30. 31. 45).
+
+I det menneskelige Legemes og i Affecternes Begreb
+ligger endelig, hvad der giver Muligheden til uendelig mange
+Nuancer og Combinationer, at den samme Gjenstand kan
+afficere forskjellige Mennesker forskjelligt og det samme
+Menneske forskjelligt til forskjellige Tider (pr. 51), at der
+af hver Affect gives saamange Arter, som der gives Objecter,
+der afficere os (idet enhver Affection indeslutter den
+ydre Gjenstands
+Natur)\footnote{Eth. III, 56. dem.: natura uniuscuiusque
+passionis ita necessario debet explicari, ut obiecti, a quo
+afficimur, natura exprimatur.} og at ethvert Individs Affecter
+ere forskjellige efter dets Væsens Forskjellighed, der udtrykker
+sig i Affecterne. (Dyrenes Lidenskaber ere forskjellige
+fra de tilsvarende Lidenskaber hos Menneskene i samme
+Grad som Dyrenes og Menneskenes Væsen er forskjelligt:
+fertur quidem equus et homo libidine procreandi, at ille
+libidine equina, hic autem humana).
+
+% --- p. 119 ---
+\setcounter{footnote}{0}%
+I det Udviklede er, idet Mennesket opfattes som Led i
+den uendelige Række, Affecterne opfattede som
+passione\footnote{Ved Opfattelsen af Lidenskaberne som passiones
+gaaes der alene ud fra Legemet (Eth. III, App., IV, 7), ved
+Talen om dem som actiones, fra Aanden; jfr. tract. polit. II,
+11: Aandens, ikke Legemets Styrke, bestemmer den
+menneskelige Magt (potentia).}, ogsaa Glæden, thi endskjøndt det kunde synes, at denne,
+som Overgang til en større Fuldkommenhed, maatte være
+en actio, saa er der dog, ved den quantitative Forskjel i
+Forholdet mellem de adæquate og de
+uadæquate\footnote{Man erindre, at: ideas inadæquatas habere
+er $=$ imaginari $=$ pati. jfr. Eth. IV, 59 schol., V, 1. 11.} Ideer i
+Menneskets Aand, en Mulighed for at tænke sig en \emph{Tilnærmelse}
+til det Adæquate, der, saalænge dette endnu
+ikke er naaet, maa kaldes en passio (jfr. Eth. III, 57. dem.
+58. IV, 39. dem.).
+
+Den almindelige Bestemmelse af Affecten, som lidende
+Tilstand i Aanden (animi pathema), kan nu gives saaledes:
+den er
+% printed "coufusa" -- an n/u confusion of the kind demonstrated in
+% JBIG2-TEST.md (not a broken sort per the standing rule); sense-reading
+% "confusa" set here.
+confusa idea, qua mens maiorem vel minorem
+sui corporis vel alicuius eius partis existendi vim quam
+antea\footnote{Ved disse Ord er der ikke udtrykt en
+Sammenligning med en tidligere Tilstand; men „at den Idee,
+der constituerer Affectens Væsen (formam) bekræfter Noget om
+Legemet, der udtrykker en høiere eller ringere Realitet end
+den tidligere“. Ved denne Bekræften gaaer Aanden over til en
+høiere eller lavere Fuldkommenhed.} affirmat, et qua data ipsa mens ad hoc potius quam
+ad illud cogitandum determinatur (Affect. gener. def.).
+
+Betragter man fra det Synspunkt, der er taget, Mennesket
+i dets Forhold til Naturen, og sammenligner man
+dets Magt med de ydre Aarsagers Magt, da vil det vise
+sig, at den af Affecterne beherskede Tilstand er at opfatte
+som en Trældomstilstand, i hvilken Menneskets Væsen ikke
+kan hævde sig. Det følger, som et Axiom, af Tanken om
+det Endelige som enkelt, at der ikke kan gives nogen enkelt
+Ting uden at der maa gives en anden enkelt Ting, der er
+stærkere, og af hvilken hiin kan tilintetgjøres (Eth. IV.
+axiom.). Den Kraft, med hvilken Mennesket stræber at be\-%
+% --- p. 120 ---
+vare sin Existents, maa derfor, som endelig, uendeligt over-
+gaaes af de ydre Aarsagers Magt, saaledes at det bliver
+umuligt, at det ikke skulde være Forandringer underkastet.
+Da en Affects Magt og Varighed maa bestemmes ved den
+ydre Aarsags Magt sammenlignet med vor, saa kan den
+have en overvældende Magt over vore actiones, og Menne-
+sket bliver bestandig afhængigt af Lidenskaberne og ude af
+Stand til at værge sig imod deres Magt; det maa følge og
+adlyde Naturens almindelige Orden og læmpe sig derefter
+saavidt Tingenes Natur fordrer det. Med mechanisk Nød-
+vendighed kæmpe Affecterne i Mennesket mod hverandre;
+den stærkere overvinder nødvendigviis den svagere, og kun
+en Affect kan hæve Affecten, idet den legemlige Affection,
+der ligger til Grund for den, maa vedvare indtil den hæves
+af en stærkere og modsat legemlig Affection.
+
+Affecternes Styrkeforhold beregnes med mathematisk
+Sikkerhed efter de tidligere udviklede Bestemmelser. Det
+Nærværende maa virke stærkere paa os end det Forbigangne
+og det Tilkommende, og af dette det Nærmere stærkere end
+det Fjernere. Det Nødvendige maa have Overvægt over det
+Tilfældige, det Forbigangne over det ikke nærværende Til-
+fældige; Attraaen, der opstaaer af Glæde, maa, under lige
+Forhold, blive mægtigere end Attraaen, der opstaaer af Sorg.
+Erkjendelsen af det Gode og det Onde\footnote{Ved Godt og Ondt forstaaes nemlig kun hvad der er os nyttigt eller
+skadeligt, ɔ: hvad der forøger eller formindsker vor Handlekraft,
+altsaa det, der fremkalder Glædens og Sorgens Affect, fra hvilken
+Ideen om Affecten kun adskilles i Tanken (Eth. IV, 8 dem.)}, der ikke er Andet
+end selve Glædens og Sorgens Affecter som bevidste, kan
+ikke derved, at den er sand, overvinde Affecterne; thi intet
+Positivt i disse hæves ved det Sandes Nærværelse\footnote{Dette er en Følge, baade af alle Ideers lige Forhold til Gud som
+adæquate, og af Imaginationens Forhold til det menneskelige Legeme,
+hvis Affection bliver ogsaa efterat Vildfarelsen er hævet.}; men
+kun forsaavidt den betragtes som Affect, og som saadan
+kan den, da Attraaen, der opstaaer af den, maa begribes
+% --- p. 121 ---
+\setcounter{footnote}{0}%
+alene ved vort Væsen og bestemmes med Hensyn til Styrke
+alene ved vor Magt (Eth. IV, dem.), hæmmes og tilintet-
+gjøres ved mange andre Attraaer, der opstaae af udenfra
+fremkaldte Affecter, og det navnlig naar disses Gjenstand
+er et Nærværende, medens dens er et Tilkommende eller
+Tilfældigt (Eth. IV, 14--17).
+
+Fra Trældomstilstanden er der derfor ingen Udvei saa-
+længe Mennesket opfattes abstract som enkelt. Ligesom
+Consequentserne af denne Opfattelse ved Erkjendelseslæren
+førte til Umuligheden af at Aanden adæquat kunde opfatte
+sig selv, saa at den som en kun \emph{forvirret} Idee kom i
+Strid med sit eget Begreb som Legemets Idee, saaledes
+kommer ogsaa her, consequent tænkt, det menneskelige
+Væsen, der altid bliver lidende, i Strid med sit eget Begreb
+som activt. Opgaven maa ogsaa her blive at hæve denne
+Modsigelse ved at opfatte det menneskelige Væsen i dets
+Sandhed i det Uendelige, altsaa som frit; men idet i det
+Uendeliges Sphære Tidsforholdene ikke have Betydning, og
+en \emph{Overgang} fra det Endelige til det Uendelige bliver
+ligesaa umulig som en Overgang fra dette til hint, kan Op-
+gaven ikke blive at see Mennesket \emph{successivt befriende}
+sig fra sin Trældomstilstand; men at begribe det i dets
+\emph{evigt og nødvendigt værende Frihed}, ved hvilken Træl-
+dommen viser sig at være et Skin. Saaledes opfatter Spi-
+noza Sagen i Ethikens sidste Bog, hvor han handler om
+den menneskelige Frihed; men som en Forberedelse til denne
+Opfattelse giver han Udviklinger, der, medens de endnu lader
+Forestillingens almindelige Opfattelse af Mennesket staae
+som Udgangspunkt, og derfor synes at lære den \emph{succes-
+sive} Befrielse og at stille denne som \emph{Opgave} for en
+Handlen, for den nærmere Betragtning vise en nødvendig
+Begrebsudvikling og en Tilbageføren af det Endelige til dets
+evigt værende Væsen. Dog lader det sig ikke nægte, at
+der paa dette Punkt kommer nogen Usikkerhed ind hos
+Spinoza. Medens han paa den ene Side (see nedenfor),
+opfatter den adæquate Erkjendelse af Gud, i hvilken Fri-
+heden er givet, som \emph{henhørende til Menneskets}
+% --- p. 122 ---
+\setcounter{footnote}{0}%
+Væsen, altsaa som evigt værende; opfatter den menneske-
+lige Natur som en Enhed (res particularis æterna), i hvilken
+de som enkelte forestillede Mennesker ere saaledes forenede,
+at deres Selvopholdelsesdrift gjennem dette Fælles er en
+Drift til Opholdelse af de andre Menneskers Natur; og lader
+al Begrændsning, endog den, der synes at antage positive
+Former, som Forbrydelsen, forsvinde som et blot Negativt,
+saa hævder dog paa den anden Side Enkelthedens Adskil-
+lelse sig: det, der hørte med til det menneskelige Væsen,
+sættes som noget Sjeldent (Eth. IV. App. c. 13. V, 42.
+schol.), og det, der opfattedes som et Forsvindende, faaer
+Magt til at fastholde Tanken, saa at denne, paa det for-
+svindende Grundlag, kan opføre en Art Pædagogik og en
+Politik, og selv hvor den menneskelige Aand er opfattet i
+sin Frihed og i sin Væren i Gud, bevarer den endnu sin
+\emph{bestemte} Existents i den guddommelige intellectus (Eth.
+V. 40. schol.). Den samme Trang, der paa det rent Meta-
+physiskes Gebeet tvang Endeligheden frem, gjør sig her
+gjældende; men den har her faaet en større Intensitet ved
+den ubevidst virkende Sympathie for det Humane.
+
+Som en Forberedelse til den sande Opfattelse af den
+menneskelige Frihed udvikler Spinoza først \emph{hvad For-
+nuften foreskriver med Hensyn til Affecterne}, og
+da herved en Maalestok for Bedømmelsen af dem er givet,
+bestemmer han dem som \emph{gode eller onde} efter deres
+Overensstemmelse med den menneskelige Natur, og idet
+gjennnem disse Udviklinger Forholdet kommer frem mellem
+den \emph{Frie og Trællen}, er Veien banet til, afgjørende at
+lade \emph{Befrielsen} vise sig som en værende Frihed.
+
+Bestemmelsen af, hvad Fornuften fordrer af os med
+Hensyn til Affecterne, bliver, idet »\emph{Fornuftens Fordring}«
+og »Naturens Attraa« er den samme Ting benævnt med to
+Navne, ensbetydende med hvad der følger af det menneske-
+lige Væsens Begreb, idea hominis, der ikke er et Imagina-
+tionens Ideal\footnote{Et saadant danne vi f. Ex. naar vi, efter forvirrede Billeder af
+mange enkelte Menneskers ydre Skikkelse, danne en universel Fore-
+stilling om Mennesket, og nu referere de enkelte Mennesker til
+dette Ideal.}, men Udtrykket for det menneskelige Væsen
+% --- p. 123 ---
+\setcounter{footnote}{0}%
+% Audit 120-131: scan shows "som res particularis æterna" NOT letterspaced
+% (checked at 600 dpi) -- removed erroneous \emph from the prior batch.
+som res particularis æterna (jfr. de intell. emend. S. 388 f.).
+% "Dette opstilles som" is NOT letterspaced; only "exemplar humanæ
+% naturæ, quod intueamur" is (checked at 600 dpi) -- partial run, cf.
+% BATCH-AGENT.md's p. 71 "natura naturans" case.
+Dette opstilles som \emph{exemplar humanæ naturæ, quod
+intueamur} (Eth. IV. præf.), og idet det som enkelt fore-
+stillede Menneske refereres til det, som til sin Sandhed,
+kunne de ellers kun subjective og relative\footnote{Saaledes som disse Begreber i Regelen opfattes, betegne de intet
+Reelt i Tingene, betragtede i og for sig; men ere kun Forestillings-
+modi, som vi danne efter Tingenes tilfældige Forhold til os (saa-
+ledes, at den samme Ting kan kaldes god, ond eller ligegyldig efter
+vor individuelle Forskjellighed), eller idet vi sammenligne Tingene
+indbyrdes eller med en universel Forestilling, og nu opfatte det,
+at den enkelte udtrykker mindre Realitet, som en Mangel ved dens
+Væsen. Men idet den samme Nødvendighedens Lov behersker Alt,
+og idet Alt, hvad der er og skeer, afhænger af den uendelige gud-
+dommelige Naturs Nødvendighed, saa bliver Alt fuldkomment efter
+sit Væsens Grad (thi Fuldkommenhed er liig Realitet, Væren), der
+bliver ikke Plads for noget Ufuldkomment, der tilkommer ingen
+Tings Natur Andet end hvad der efter Tingenes Sammenkjædning
+følger af den virkende Aarsags Bestemthed, og hvad der følger af
+den, skeer nødvendigviis. Intet kan skee imod Guds Villie, d. e.
+imod den guddommelige Naturs Lov, ikke engang det, vi kalde For-
+brydelser o. desl.; thi det udtrykker ikke en Væsensbestemmelse,
+et Positivt, men kun en Negation. I Neros Modermord var saa-
+ledes det Positive ikke Forbrydelsen, men den ydre Handling og
+Forsættet, der vare lige med Orests Handling og Forsæt. Det, der
+constituerede Forbrydelsen, var det, at han ved denne Handling
+viste sig utaknemmelig, ulydig og uden Medlidenhed. Men Intet af
+dette udtrykker Væsen, og derfor er Gud ikke Aarsag dertil, uagtet
+han er Aarsag til Neros Handling og Forsæt. Det Negative i Hand-
+lingen forsvinder idet den føres tilbage til Gud, ligesom det Nega-
+tive i de uadæquate Ideer forsvinder ved denne Tilbageførelse, og
+ligesom Begrændsningen og Negationen i de endelige modi ophæves,
+idet de, under deres tilsyneladende Enkelthed og uendelige For-
+andring, sees at være med ophævet Begrændsning i det uforander-
+lige, uendelige Ene. I den uadæquate, ufuldkomne Erkjendelse
+ligger altsaa Oprindelsen til alle hine Forestillingsmodi, og de tabe
+deres Betydning med den (jfr. Eth. I, 36. schol. IV. præf. 64, 73
+schol. De intell. emend. pag. 360. Cog. metaph. I, c. 6. II, c. 8.
+Princ. phil. Cart. I, 4 ax. 4. Ep. 32. 34. 36. tr. polit. II, 8. tract.
+theol. polit. pag. 177.)} Betegnelser:
+% --- p. 124 ---
+\setcounter{footnote}{0}%
+\emph{Godt og Ondt, Fuldkomment og Ufuldkomment} finde
+en fra det Enkeltes Synspunkt berettiget Anvendelse paa
+det, der nærmer til eller fjerner fra dette Forbillede, saa-
+% Audit 120-131: "Godt" and "Ondt" individually letterspaced here
+% (checked at 600 dpi) -- missed by the prior batch.
+ledes, at \emph{Godt} bliver det, som vi med Vished vide at være
+nyttigt for os, \emph{Ondt} det Modsatte (Eth. IV. def. 1 og 2)\footnote{% Audit 120-131: "Godt" (opening word) and "Døden" letterspaced in
+% this note, checked at 600 dpi -- missed by the prior batch; "Dødens"
+% immediately after "Døden" is NOT spaced.
+\emph{Godt} bliver saaledes det, der disponerer det menneskelige Legeme
+til at paavirkes og virke paa mange Maader, idet Aandens Kraft til
+at percipere svarer til Legemets Kraft til at handle. Ligeledes er
+det godt, der bevarer Forholdet i Bevægelse og Hvile mellem Legemets
+Dele, da en Forandring i dette Forhold tilintetgjør det menneskelige
+Legeme og bringer det til at gaae over i en anden Form. (Dette
+er \emph{Døden}, men Dødens Begreb faaer for Spinoza et større Om-
+fang end der almindeligen gives det, idet det ikke blot betegner
+Forvandlingen til et Liig, men enhver Forandring af et saadant Om-
+fang, at Naturen viser sig som en anden, Eth. IV, 39. schol.).
+Ogsaa maa alt det være nyttigt, der befordrer Menneskenes Forening,
+medens det Modsatte er skadeligt (Eth. IV, 38--40).}.
+Fornuften kan ikke fordre Noget, der strider imod Na-
+turen; da derfor Enhver efter sin Naturs nødvendige Love
+attraaer det Nyttige og flyer det Skadelige, saa maa For-
+nuften fordre, at Enhver skal elske sig selv, at han skal
+søge det, der i Sandhed er ham nyttigt, at han skal attraae
+hvad der fører til en større Fuldkommenhed, og, i Alminde-
+lighed, at han skal stræbe efter, saavidt hans Magt naaer,
+at bevare sit Væsen. Dette er Fornuftens Fordring fordi
+det er Naturens Nødvendighed. \emph{Denne Stræben er selve
+Dyden.} Dyden er liig med selve Menneskets Væsen op-
+fattet som activt\footnote{Eth. IV. defin. 8: Per virtutem et potentiam idem intelligo; hoc
+est: virtus, quatenus ad hominem refertur, est ipsa hominis essen-
+tia seu natura, quatenus potestatem habet quædam efficiendi, quæ
+per solas ipsius naturæ leges possunt intelligi.}, altsaa med humana potentia. Da den
+er Eet med selve Menneskets Væsen, attraaes den for sin
+egen Skyld, og Grundattraaen: Attraaen efter Selvbevarelse,
+bliver dens første og eneste Grundlag, da det at være er
+Betingelsen for at være lykkelig, at handle vel og at leve
+vel\footnote{Eth. IV, 20. schol.: nemo igitur, nisi a causis externis victus, suum
+utile appetere sive suum esse conservare negligit.}. --- Idet Dyden sættes som Eet med potentia, kan
+% --- p. 125 ---
+\setcounter{footnote}{0}%
+kun den handle dydigt, der har adæquate Ideer; thi kun
+forsaavidt vi have disse ere vi handlende (»nos eatenus tan-
+tummodo agimus quatenus intelligimus.« Eth. IV, 24. dem.).
+Det fuldstændige Udtryk for den dydige Handlen bliver alt-
+saa: ex ductu rationis agere, vivere, suum esse conservare,
+ex fundamento proprium utile quærendi (Eth. IV. 24). Ratio
+udtrykker nemlig Aanden forsaavidt den begriber klart og
+tydeligt\footnote{Idet Fornuften opfatter Tingene under Evighedens og Nødvendig-
+hedens Form, opfatter den dem ikke i Relation til Tiden, der kun
+er en Imaginationens Bestemmelse, og maa derfor foretrække det
+% scan reads "mindve" here, not a word; differs from "mindre" by one letter
+% (v/r) -- sense-reading "mindre" set per the JBIG2 single-sort rule, doubt logged
+større Gode for det mindre, det mindre Onde for det større uden
+Hensyn til om de ere nærværende eller tilkommende (Eth. IV.
+62. 65 f.).}. Og idet den kun kan bekræfte sit eget Væsen,
+kan det, hvorefter den byder os at stræbe, kun blive at be-
+gribe (intelligere), og kun det, der fører hertil, eller for-
+hindrer heri, kunne vi med Vished vide at være godt eller
+ondt. \emph{Det Gode er altsaa Erkjendelsen}\footnote{Paa dette Punkt træde Spinozismens Motiver og eiendommelige
+Charakteer frem for afgjørende at hævdes ved Ethikens Afslutning.
+Spinoza udvikler ikke det Legemliges Forhold til den Sætning,
+at Erkjendelsen er Selvopholdelsens egentlige Maal.}\emph{, det
+høieste Gode den høieste Erkjendelse: Erkjen-
+delsen af Gud, og Aandens høieste Dyd er at er-
+kjende Gud (Eth. IV. 28)}\footnote{Hominis, qui ratione ducitur, finis ultimus, \emph{hoc est, summa cu-
+piditas}, qua reliquas omnes moderari studet, est illa, qua fertur
+ad se, resque omnes, quæ sub ipsius intelligentiam cadere possunt,
+adæquate concipiendum (Eth. IV. App. c. 4). Nulla igitur vita
+rationalis est sine intelligentia, et res eatenus tantum bonæ sunt,
+quatenus hominem juvant ut mentis vita fruatur, quæ intelligentia
+definitur. Quæ autem contra impediunt, quominus homo rationem
+perficere et rationali vita frui possit, eas solummodo malas esse
+dicimus (ibid. c. 5). Beatitudo nihil aliud est quam ipsa animi
+acquiescentia, quæ ex Dei intuitiva cognitione oritur. Intellectum
+perficere nihil aliud est, quam Deum, Deique attributa, et ac-
+tiones, quæ ex ipsius naturæ necessitate consequuntur, intelligere.
+In hoc uno (ɔ: intellectum perficere) summa hominis felicitas
+seu beatitudo consistit (ibid. c. 4).}.
+% --- p. 126 ---
+\setcounter{footnote}{0}%
+Ligesaa nødvendigt som det, Fornuften foreskrev med
+\emph{Hensyn til os selv}, fulgte af vort Væsens Begreb, følger
+det, den foreskriver med \emph{Hensyn til Forholdet til Andre},
+af de almindelige Begreber. Idet Tingene kun ere enkelte
+og forskjellige ved Begrændsningens Negation, og denne er
+Kilden til impotentia, der er Magtens ɔ: Dydens Modsæt-
+ning, saa maa, jo mere Begrændsningen hæves, Afmagten
+hæves og Dyden tilnærmes, idet vor Handlekraft forøges ved
+Forbindelse med det Ensartede. Det, hvis Natur var abso-
+lut forskjellig fra vor, kunde hverken være nyttigt eller
+skadeligt; det, der stemmer overens med vor Natur, maa
+være nyttigt ɔ: godt, idet der bliver en Enhed i den fælles
+Natur, saa at den ene Tings Selvopholdelsesattraa umiddel-
+bart kommer den anden tilgode\footnote{Denne Begrundelse er af Betydning for Spinozas Opfattelse af det
+Fælles (commune). Den enkelte Ting er i sin Selvopholdelse
+umiddelbart Eet med den anden idet det Fælles er deres positive
+Enhed (Eth. IV, 31 dem. jfr. 35 dem.).}. Nytten tiltager i samme
+Grad som Overensstemmelsen, saaledes, at naar to Individer,
+der fuldkommen vare af samme Natur, forenedes, saa vilde
+de danne et Individuum, der havde dobbelt saa stor Magt
+som det enkelte. For Mennesket er derfor Intet nyttigere
+end Mennesket, og Menneskene kunne ikke ønske noget
+Bedre for at vedligeholde deres Væsen, end at de alle stem-
+mede saa fuldkommen overens i Alt, at Alles Sjæle og
+Legemer ligesom dannede een Sjæl og eet Legeme, og at
+de alle i Forening, saavidt de formaaede det, stræbte at be-
+vare deres Væsen og at fremme det fælles Nyttige. Men
+som beherskede af Affecter, kunne Menneskene ikke siges
+at stemme overens i Natur; thi dette er en positiv Be-
+stemmelse, Affecten (som impotentia)\footnote{Eth. IV. 37. schol. 1: impotentia in hoc solo consistit, quod homo a
+rebus, quæ extra ipsum sunt, duci se patiatur, et ab iis ad ea agen-
+dum determinetur, quæ rerum externarum communis constitutio,
+non autem ea, quæ ipsa ipsius natura, in se sola considerata,
+postulat.} en negativ. Endog
+det enkelte Menneske stemmer i den Tilstand ikke overens
+% --- p. 127 ---
+\setcounter{footnote}{0}%
+med sig selv, endnu mindre de forskjellige, der ved Liden-
+skaberne kunne blive hverandre modsatte. Kun som ledede
+af Fornuften stemme de med Nødvendighed overens; thi
+kun de fornuftige Handlinger begribes ved den menneske-
+% Audit 120-131: only "Fornuftens" is letterspaced here (checked at
+% 600 dpi); "Erkjendelse af det Gode og Onde" is NOT -- trimmed from
+% the prior batch's over-wide \emph.
+lige Natur alene som nærmeste Aarsag, og idet \emph{Fornuftens}
+Erkjendelse af det Gode og Onde nødvendigviis er sand, saa
+maae de Handlinger, der fremgaae af Fornuften, nødvendig-
+viis indeholde hvad der er et Gode for den \emph{menneskelige
+Natur}, og altsaa for ethvert Menneske (jfr. S. 122 f., Anm. 1
+S. 126). Idet den Enkelte ledes af Fornuften, bliver hans Stræben
+efter det for ham Nyttige umiddelbar nyttig for de Andre
+og desto nyttigere jo stærkere den er. I Fornuften, der
+udtrykker den fælles menneskelige Natur, er nemlig Ad-
+skillelsen hævet, og Selvopholdelsesdriften ikke længere
+egoistisk. Den Fornuftiges, ɔ: den Dydiges, høieste Gode:
+Erkjendelsen af Gud, det fuldkomneste Væsen, uden hvilket
+\emph{Intet kan være eller begribes}, maa være fælles for Alle
+og kunne besiddes af Alle, \emph{»thi det hører til den
+menneskelige Aands Væsen at have en adæquat Er-
+kjendelse af Guds evige og uendelige Væsen«} (Eth. IV. 36.
+schol.). I den Attraa, med hvilken den Fornuftige attraaer
+dette Gode for sig selv, ligger ogsaa umiddelbart Attraaen
+af det for de Andre, og det i desto høiere Grad jo større
+Gudserkjendelsen er\footnote{En Gradation i Gudserkjendelsen faaer kun sin Betydning for den
+almindelige Forestilling, ikke for Spinozas eiendommelige Opfattelse;
+jfr. Cap. 8.}. Paa dette Punkt viser sig saaledes
+Betydningen af \emph{Samfundsforholdet} mellem Menneskene
+(see næste Capitel), og den sande Betydning af Reli-
+gionen: »hvad vi attraae og virke, hvad vi ere Aarsag til
+forsaavidt vi have Ideen om Gud, eller forsaavidt vi erkjende
+Gud, henregner jeg til Religionen« (Eth. IV. 37. schol. 1)\footnote{jfr. Eth. IV, 73. schol.: vera vita et religio. Om Religionen i Ordets
+sædvanlige Betydning jfr. Cap. 7.}.
+\emph{Det viser sig ligeledes her, at der ogsaa gives Af-
+fecter, der have deres Oprindelse fra Fornuften,}
+% --- p. 128 ---
+\setcounter{footnote}{0}%
+% Audit 120-131: this run is discontinuous, checked at 600 dpi --
+% "og ere active." is spaced, then "Disse maae henføres til de to af
+% Grund-" is NOT, then "affecterne: Attraa og Glæde; thi Sorgen
+% forudsætter en" is spaced again, then "Liden." is NOT. Trimmed from
+% the prior batch's single \emph spanning the whole stretch.
+\emph{og ere active.} Disse maae henføres til de to af Grund-
+\emph{affecterne: Attraa og Glæde; thi Sorgen forudsætter en}
+Liden. Den af Fornuften opstaaede Attraa kalder Spinoza
+\emph{fortitudo} (idet den udtrykker Menneskets Magt) og deler
+den i: \emph{animositas} ɔ: den Attraa, ved hvilken man
+stræber at bevare sin Væren alene efter Fornuftens For-
+skrift; --- og \emph{generositas} ɔ: den Attraa, ved hvilken
+man stræber efter, alene efter Fornuftens Forskrift at for-
+binde de andre Mennesker med sig i et Venskabsforhold
+(Eth. III. 59. schol.)\footnote{Modificationer af \emph{animositas} blive: temperantia, sobrietas, animi
+præsentia o s. v., af \emph{generositas}: modestia, clementia o. s. v.}. Generositas bliver saaledes ikke
+forskjellig fra \emph{pietas} ɔ: den Attraa efter at gjøre vel, der
+fremkaldes derved, at vi leve efter Fornuftens Bydende\footnote{Denne Villie er afhængig af idea Dei, der sættes som liig med spi-
+ritus Christi. Eth. IV. 68. schol.},
+eller fra \emph{honestas}, der i Eth. IV. 37. schol. 1. defineres
+ganske paa samme Maade som den\footnote{\emph{honestum} kaldes det, som de af Fornuften ledede Mennesker
+rose, \emph{turpe} det, der forhindrer Venskabsforholdet (Eth. IV. 37.
+schol. 1). \emph{Probi} kaldes de, der have en klar Idee om Gud, ved
+hvilken alle deres Handlinger og Tanker bestemmes; \emph{improbi} de,
+\emph{der ikke besidde Gudsideen} (qui Dei ideam haud possident)
+men kun Ideerne om de jordiske Ting, ved hvilke deres Handlinger
+og Tanker bestemmes (Ep. 36).}.
+
+% Audit 120-131: only "Godt og Ondt" is letterspaced here (checked at
+% 600 dpi); "Anvendes Bestemmelserne" is NOT -- trimmed from the prior
+% batch's over-wide \emph.
+Anvendes Bestemmelserne \emph{Godt og Ondt} paa de
+enkelte Affecter, saa maa Consequentsen blive, at de af dem
+kaldes gode, der betegne en Magt, de derimod onde, der
+betegne en Afmagt\footnote{„nostræ actiones, hoc est, cupiditates illæ, quæ hominis potentia
+seu ratione definiuntur, semper bonæ sunt, reliquæ autem tam bonæ
+quam malæ possunt esse“ (Eth. IV. App. Cap. 3).}. Dyden bestemtes jo som Magt, som
+Selvhævdelse (opfattet i den rette Betydning), ikke som Selv-
+tilintetgjørelse; thi intet Positivt hæves ved Enheden med
+Substantsen. De Affecter, der udtrykke Selvhævdelsen, ere
+gode, idet de udtrykke en Overgang til en større Fuld-
+kommenhed; de, der udtrykke en Hæmmen af vort Væsens
+% --- p. 129 ---
+\setcounter{footnote}{0}%
+Grundstræben, der kun kan finde Sted udenfra\footnote{Eth. IV. App. c. 6: quia omnia illa, quorum homo efficiens est
+causa, necessario bona sunt, nihil ergo mali homini evenire potest
+nisi a causis externis; nempe quatenus pars est totius naturæ,
+cuius legibus humana natura obtemperare, et cui infinitis modis
+pæne sese accommodare cogitur.}, ere onde.
+Gode ere derfor Glæde, hilaritas, og den Attraa og den
+Selvfølelse, der opstaaer af Fornuften\footnote{Eth. IV, 45. schol. 2: quo maiori lætitia afficimur, eo ad maiorem
+perfectionem transimus, hoc est, eo nos magis de natura divina
+participare necesse est.}; onde ere ikke blot
+Affecter som Sorg, Melancholie, Had, Fortvivlelse, Stolthed
+og den med denne og med Misundelse beslægtede Ringeagt
+for sig selv (abiectio), men ogsaa saadanne, der, om de end
+hos det ikke af Fornuften ledede Menneske kunne blive
+nyttige som Modvægt mod modsatte og skadeligere, dog
+indeslutte en Sorg, og derfor i og for sig ere skadelige,
+saaledes: Frygt, Haab, Ydmyghed, Anger, Medynk, Und-
+seelse. Saadanne Affecter, der referere sig til en partiel
+Affection, der kan faae Overmaal, som Lystfølelse og Smerte-
+følelse (titillatio og dolor), kunne per accidens baade blive
+gode og onde, dog er hiin nærmest god, denne ond. \emph{At-
+traaerne} ere i det Hele gode eller onde eftersom de op-
+staae af Affecter, der ere gode eller onde. Men alle de,
+der opstaae af Affecter, der ere passiones, ere blinde, og
+vilde ikke være til nogen Nytte for Menneskene, naar de
+let kunde ledes til at leve efter Fornuftens Bydende, thi
+\emph{ved Fornuften kunne vi bestemmes til alle de
+Handlinger, til hvilke vi bestemmes af en Affect,
+der er en Liden} (Eth. IV, 59)\footnote{I enhver lidende Tilstand er nemlig vor Handlekraft mindre end den,
+der følger af vor Naturs Nødvendighed, betragtet alene i sig selv
+(Eth. IV. 59). Ogsaa Glæden er en passio forsaavidt vor Handle-
+kraft ikke forøges til det Punkt, at den begriber sig og sine Hand-
+linger adæquat (Eth. IV. 59. dem.). Overgangen til en \emph{større}
+Fuldkommenhed er altsaa, paa de lidende Tilstandes Gebeet, kun
+\emph{Overgangen til en mindre Ufuldkommenhed. Det positive
+Udtryk faaer kun Betydning saalænge Forestillingen om et værende}
+Endeligt fastholdes; idet denne Forestilling opløser sig, maa først
+det positive Udtryk ombyttes med det negative, og derpaa Over\emph{gangen idethele vise sig som et Negativt, et Ikke-Værende} (jfr.
+Cap. 8.).}.
+% Footnote 3 above is printed as one continuous note: it opens on
+% p. 129 and its text runs on into the note block of p. 130, ending
+% there with "Ikke-Værende (jfr. Cap. 8.)." before p. 130's own note 1
+% begins. Whole note kept at its mark, per BATCH-AGENT.md.
+% Scan prints "de lid nde Tilstandes Gebeet" -- a gap where "lidende"
+% should read (cf. "I enhver lidende Tilstand" at the head of this
+% same note); transcribed as the sense-reading "lidende", doubt logged.
+% Letterspacing in this note is not continuous: "større" is spaced
+% alone; then a normal stretch; then "Overgangen til en mindre ...
+% et værende" is spaced; then "Endeligt fastholdes ... derpaa Over-"
+% is NOT spaced (checked at 600 dpi); spacing resumes only on
+% "-gangen" of "Overgangen" (a compositor's line broke the word
+% "Over-/gangen" at this exact point) through "Ikke-Værende". Compare
+% BATCH-AGENT.md's p. 71 "n a t u r a naturans" case: the compositor
+% spaces only part of a word here too; transcribed as printed.
+
+% --- p. 130 ---
+\setcounter{footnote}{0}%
+Gjennem disse forberedende Udviklinger viser For-
+skjellen sig nu mellem den \emph{Frie og Trællen} (den Vise og
+den Uvidende), og af denne giver Spinoza, inden han gaaer
+over til sin Ethiks afgjørende Afslutning, en Skildring (Eth.
+IV, 67 ff.), i hvilken Endelighedens og Relativitetens Sphære
+endnu ikke er forladt saaledes som den bliver det ved hiin
+Afslutning. Medens Trællen ledes af Affecten, bestemmes
+ved ydre Aarsager, og derfor, hvad enten han vil eller ikke,
+maa gjøre hvad han ikke forstaaer, saa ledes den Frie kun
+af sit eget Væsen, Fornuften, den klare og tydelige Er-
+kjendelse, og gjør derfor kun det, han erkjender for det
+Væsentlige, og af den Grund attraaer (Eth. IV. 66. schol.).
+Idet han kun bestemmes ved Fornuften, der er hans Væsen,
+og idet Fornuften er Aanden \emph{som activ}, saa kunne ingen
+andre Affecter findes hos ham end Glædens og den for-
+nuftige Attraaes active Affecter\footnote{jfr. Eth. IV. App. c. 25: in communibus --- colloquiis cavebit ho-
+minum vitia referre, et de humana impotentia non nisi parce loqui
+curabit: at largiter de humana virtute seu potentia, et qua via possit
+perfici, ut sic homines, non ex metu aut aversione, sed solo læti-
+tiæ affectu moti, ex rationis præscripto, quantum in se est, co-
+nentur vivere.}. Han ledes altsaa ikke af
+Frygt til det Gode, thi Frygten er en Sorg, men hans At-
+traa \emph{søger directe} det Gode, da den opstaaer af Erkjen-
+delsen af dette, der er Eet med Glædens Affect som be-
+vidst (see ovenfor S. 120). Ligeledes flyer den kun indi-
+recte det Onde, da Erkjendelsen af dette, som den bevidste
+tristitia, er en uadæquat Erkjendelse\footnote{Erkjendelsen af det Onde er en uadæquat Erkjendelse fordi den er
+liig med den bevidste tristitia. Sorgen er nemlig en Overgang til
+en mindre Fuldkommenhed, der ikke kan forstaaes ved Menneskets
+Væsen alene og derfor er en passio, der afhænger af uadæquate
+Ideer, saa at Erkjendelsen af den kun kan blive uadæquat. Havde
+vi kun adæquate Ideer ɔ: fødtes vi som frie, vilde vi ikke danne
+Begrebet Ondt, og altsaa heller ikke dets Modsætning: Begrebet
+Godt (Eth. IV. 64. 68).}.
+% Footnote 2 above likewise runs on: it opens on p. 130 and its text
+% continues into the note block of p. 131, ending there with "Begrebet
+% Godt (Eth. IV. 64. 68)." before p. 131's own note 1 begins. Whole
+% note kept at its mark.
+% --- p. 131 ---
+\setcounter{footnote}{0}%
+Han tænker mindst
+af Alt paa Døden, hans Visdom er en Tænken over Livet
+(vitæ meditatio). Han lader sig ikke paavirke af de Ufries
+Affecter, men stiller Kjærlighed\footnote{Eth. IV. App. c. XIX--XX sættes animi libertas som Grund til
+Kjærlighed. --- Voluntas constans et in omnibus determinata op-
+fattes som en Egenskab ved intellectus. Ep. 60.} og Høimodighed imod
+Had; han bevarer Uafhængighed af de Uvidende, han er
+ene istand til Taknemmelighed; han handler altid med Tro-
+skab; han er friere i Staten, hvor han lever efter den fælles
+Beslutning, end i Ensomheden, hvor han kun adlyder sig
+selv; han hader Ingen, misunder Ingen, foragter Ingen,
+vredes paa Ingen; hvad han attraaer for sig selv, attraaer
+han ogsaa for de Andre; han overveier fremfor Alt, at Alt
+følger af den guddommelige Naturs Nødvendighed\footnote{Eth. IV. App. c. 32: Quod (ɔ: at vi som Deel af Naturen maa
+følge dens nødvendige Orden) si clare et distincte intelligamus, pars
+illa nostri, quæ intelligentia definitur, hoc est, pars melior nostri,
+in eo plane acquiescet, et in ea acquiescentia perseverare conabitur.
+Nam quatenus intelligimus, nihil appetere, nisi quod necessarium
+est, nec absolute, nisi in veris acquiescere possumus; adeoque,
+quatenus hoc recte intelligimus, eatenus conatus melioris partis no-
+stri cum ordine totius naturæ convenit.}, og at
+hvad han derfor forestiller sig som besværligt og ondt, og
+hvad der synes ugudeligt, uretfærdigt, forfærdeligt og skjæn-
+digt, kun gjør det fordi han betragter Tingene forvirret og
+lemlæstet, og derfor stræber han først og fremmest at be-
+gribe Tingene som de ere i sig, og at fjerne Hindringerne
+for den sande Erkjendelse, som Had, Vrede, Misundelse,
+Spot, Hovmod o. desl., og, saavidt det staaer til ham, at
+\emph{handle vel og at være glad} (Eth. IV, 73. schol.); thi
+derved udtrykker han sit Væsen, Fornuften.
+
+Den menneskelige Frihed er saaledes seet i sin Mod-
+sætning til Menneskets Trældomstilstand indenfor Endelig-
+hedens Gebeet: det staaer nu kun tilbage, at see Mennesket
+som frit i dets evige og nødvendige Forhold til Gud, den
 % =====================================================================
 %  SYVENDE CAPITEL  (printed pp. 132--161 = PDF 142--171)
 %  Opens PART WAY DOWN p. 132, so no \chapter* here -- the head is emitted
@@ -4516,12 +5552,243 @@ selve Dyden og Af\-%
 %  The densest footnote stretch in the book: p. 148 carries three notes and
 %  a genuine mixed quotation pair »…“; p. 156 carries five.
 % =====================================================================
+% --- p. 132 ---
+% "causa libera" checked at 600 dpi (p. 132, l. 1): set in plain roman, NOT
+% letterspaced -- the batch's \emph{} here was an over-extension and has
+% been removed. Contrast "Staten og Religionen" and "den evigt værende
+% menneskelige Frihed" below, both confirmed spaced on the same page.
+eneste causa libera, og at lade dette Forhold kaste et Lys tilbage paa det under Hensynet til den almindelige Forestilling Udviklede. Men paa dette Punkt er det det passende Sted til at indskyde Spinozas Lære om \emph{Staten og Religionen}, der, idet den tager denne Forestilling til Udgangspunkt, supplerer det nyligt Udviklede, og tillige indirecte baner Veien for den fuldstændigere Forstaaelse af Læren om \emph{den evigt værende menneskelige Frihed}, som Spinoza udvikler i Ethikens sidste Bog.
 
-% [text to be added: pp. 132--142]
+% The rule closing Sjette Capitel reads as a DOUBLE rule at 600 dpi,
+% confirmed on the image (cf. the double rule at pp. 43, 64, 82, 108;
+% contrast the single rule closing Tredie Capitel, batch 6, and Cap. 4,
+% p. 71).
+\bigskip
+\begin{center}\rule{2.5cm}{0.4pt}\end{center}
+\bigskip
 
-% [text to be added: pp. 143--152]
+\begin{center}
+{\large\textbf{Syvende Capitel.}}\\[4pt]
+\textbf{Naturretten. Religionen.}\\[6pt]
+\rule{2cm}{0.4pt}
+\end{center}
+\addcontentsline{toc}{chapter}{Syvende Capitel. Naturretten. Religionen}
+\markboth{Naturretten. Religionen}{Naturretten. Religionen}
+\bigskip
+Spinozas Lære om \emph{Samfundsforholdet} tager, ligesom den egentlige Ethik, sit Udgangspunkt fra Mennesket, forestillet som en enkelt modus, som et afhængigt Led i Naturens Orden, i Aarsagernes og Virkningernes uendelige Kjæde. Opfattet som saadant er Mennesket (jfr. forrige Capitel) behersket af den ydre Nødvendigheds almindelige Lov; det er bestandig bestemt ved passive Affecter, der virke efter deres mathematisk beregnelige Styrkeforhold, og, ved den Magt, de modtage fra de ydre Aarsager (jfr. Eth. IV, 3. 6), ere istand til at overvælde selve Erkjendelsen af det Gode og Onde, der kun virker mod dem forsaavidt den selv antager Affectens Form. Mennesket er her ligesom en af de flygtige Figurer, der ved Bevægelsens Love dannes i den uendelige Udstrækning, for atter at omformes og tilsidst at forsvinde i dennes Enhed idet Begrændsningen som blot negativ forsvinder. Fra hint Synspunkt, der er Imaginationens, saae vi, at Befrielsen fra Affecterne, fra Trældomstilstanden, staaer som et Maal, der kun tilnærmelsesviis kan naaes, da det Endelige som Endeligt ikke kan blive con\-%
+% --- p. 133 ---
+gruent med det Uendelige, og under den \emph{relative} Forskjel mellem Trællen og den Frie, den Uvidende og den Vise, udgjøre de Frie og Vise kun et lille Antal. Idet derfor den menneskelige Natur ved Selvhævdelsesdriften stræber efter den Enhed, der forøger dens Magt, saa maa det, der skal kunne indvirke paa alle Mennesker, og være istand til at danne Grundlaget for det Samfundsforhold, der, som Erfaringen viser, findes overalt, ikke blot hos civiliserede Mennesker, men hos Barbarer, ikke være det Fornuftige alene, men Affecten. Affectens Begreb maa derfor blive Udgangspunktet for Læren om Staten; i dens mechaniske Love maae Lovene søges for Statens Tilbliven og Vedvaren, og da Mennesket som bestemt ved den er enkelt og isoleret, maa den individuelle Selvopholdelsesdrift, den \emph{egoistiske} Attraa, danne Grundlaget, \emph{Naturlove}, ikke \emph{ethiske} Love, blive det Bestemmende. Men ligesom vi i Læren om Erkjendelsen og Affecterne saae, at Opfattelsen af Mennesket som enkelt ophævede sig selv, saaledes ville vi ogsaa see det her. Gjennem Affecten som det Phænomenale ville vi see Menneskets sande Væsen, Fornuften, i hvilken alle Mennesker ere i Enhed, virke som Foreningens dybere Grund og bestemme dens Væsen og Øiemed. Strømningen gaaer her, som overalt hos Spinoza, tilbage til \emph{Enheden i det Uendelige}, og om denne Enhed end paa dette Gebeet efter Sagens Natur ikke naaes, saa antydes den dog, og de dragne Linier convergere forat mødes i eet Punkt ved Ethikens Afslutning. Mod dette Punkt vil derfor Udviklingen vise hen; men af de tidlige udviklede nødvendige Inconsequentser i Spinozas Lære om det Endelige vil det blive Følgen, at dette hyppigt fastholder Tanken som om det havde Virkelighedens Gyldighed, og at hint Punkt kun sees som i det Fjerne.
 
-% [text to be added: pp. 153--161]
+Idet Læren om Samfundet gaaer ud fra det enkelte, ved Naturens almindelige Love beherskede Menneske, maa dettes Væsen først bestemmes i denne Isolerethed, \emph{Menneskets Naturtilstand}. Bestemmelsen hentes fra det almindelige metaphysiske Forhold mellem Gud og de enkelte
+% --- p. 134 ---
+\setcounter{footnote}{0}%
+% Scan reads "Tings" (l. 2 of this para, in the spaced run) and "Tiugs"
+% (l. 6, "den naturlige Tiugs Ret") for what is evidently the same word;
+% "Tiugs" is not a Danish word and differs from "Tings" by one letter
+% (n/u), so per the standing JBIG2 rule the sense-reading "Tings" is set
+% at both sites and the doubt logged here rather than at the site twice.
+Ting. Da disse kun have Existents og Vedvaren ved Guds evige Magt, saa er \emph{de naturlige Tings Magt, ved hvilken de ere og virke,} selve Guds (Naturens) Magt. Men da Gud har Ret til Alt, og hans Ret er liig hans Magt, betragtet som absolut fri, saa bestemmes den naturlige Tings Ret til at existere og handle ved dens Magt, der udtrykker Guds absolute frie Magt paa en bestemt Maade. \emph{Jus naturæ}\footnote{„Naturen har Ret til Alt“; tract.-theol.-polit. pag. 175. Som Synonymer sættes sammesteds: jus naturæ, institutum naturæ, regulæ naturæ uniuscuiusque individui.} er altsaa Naturens Magt (naturalis potentia) ɔ: dens Love, efter hvilke Alt skeer, og som ikke forstyrres af en indbildt menneskelig Frihed. Hvad ethvert enkelt Individ gjør efter sin Naturs Love, det gjør det med den fuldkomneste Naturens Ret (\emph{summo naturæ jure}). Men som Deel af Naturen er Mennesket ikke blot bestemt ved Fornuften, men ogsaa ved Lidenskaberne; i begge Tilstande virker Selvopholdelsens Attraa, og i begge er den et Udtryk for vis naturalis; thi om end Lidenskaberne, refererede til Menneskene alene, ere passiones, saa ere de dog bestemte ved Naturens Love, Virkninger af Naturens Magt, og i samme Forhold som denne udtrykkes ved dette eller hint Menneskes Natur, deeltager Mennesket i Naturens Ret, der ikke skilles fra Magten. Det gjør derfor ingen Forskjel, om Mennesket er viist eller uvidende; hvad det i begge Egenskaber attraaer og handler, det attraaer og handler det med Naturens fulde Ret (tract. polit. II, 8). I denne Tilstand bliver altsaa Egoismen det Enebestemmende, Enhver bindes kun ved sin egen Attraa\footnote{Eth. IV. 37. schol. 2.: Existit unusquisque summo naturæ jure, et consequenter summo naturæ jure unusquisque ea agit, quæ ex suæ naturæ necessitate sequuntur, atque adeo summo naturæ jure unusquisque judicat, quid bonum, quid malum sit, suæque utilitati ex suo ingenio consulit, seseque vindicat, et id, quod amat, conservare, et id, quod odio habet, destruere conatur. jfr. Eth. IV. App. c. 8.}. Et Løfte f. Ex. om at gjøre Noget, man efter sin Ret kunde undlade, har altsaa
+% --- p. 135 ---
+\setcounter{footnote}{0}%
+her kun Gyldighed saalænge den Lovendes Villie er uforandret. Den, der har Magt til at bryde Løftet, har i Virkeligheden ikke opgivet sin Ret, men kun »givet Ord«. Naar han derfor indseer eller troer at indsee --- og efter Naturens Ret er han Dommer i sin egen Sag --- at han ved at opfylde Løftet vil have mere Skade end Nytte, saa vil han bryde Løftet, og gjøre dette efter Naturens Ret (II, 12).
+
+Denne jus naturæ, »under hvilken alle Mennesker fødes, og de fleste leve«, forbyder derfor Intet uden hvad Ingen attraaer og Ingen formaaer, hverken Strid eller Had, eller Vrede, eller Svig, eller overhovedet Nogetsomhelst, hvortil Attraaen tilskynder. »Og dette er ikke forunderligt; thi Naturen omfattes ikke af (non continetur) den menneskelige Fornufts Love, der kun tage Hensyn til Menneskenes sande Nytte og Opholdelse, men af uendelig mange andre, der have Hensyn til den evige Orden i hele Naturen, i hvilken Mennesket er en lille Deel, og af hvilken Orden, som vi kun kjende ufuldstændig, ethvert Individ med Nødvendighed bestemmes i sin Existents og Virken«\footnote{jfr. tract. polit. II. 1--8; tract. theol.-pol. pag. 176 ff. --- De sidst citerede Sætninger faae deres Gyldighed idet Menneskene opfattes som enkelte imellem utallige andre Enkeltheder, og idet Forskjellen mellem ratio som „universel Erkjendelse“ og den intuitive Viden fastholdes.}.
+
+Idet Menneskene saaledes kun ere egoistisk bestemte ved Affecterne, ere de forskjellige og hverandre modsatte\footnote{Lededes de alene af Fornuften, vilde deres Attraa og Ret ikke komme i Collision (Eth. IV. 37. schol. 2).}, og saaledes farligere for hverandre end noget andet Væsen. \emph{Menneskene ere af Naturen Fjender} (tr. polit. II, 14); thi den er meest min Fjende, hvem jeg i høieste Grad maa frygte og vogte mig for. I dette Fjendskabsforhold staaer hver Enkelts Selvopholdelsesattraa i Modsætning til alle de Andres, hans Ret staaer imod deres, \emph{det bliver derfor umuligt for den Enkelte at hævde sin Ret,} eftersom denne bestemmes ved Magten, og den Enkeltes Magt er
+% --- p. 136 ---
+\setcounter{footnote}{0}%
+utilstrækkelig ligeoverfor alle de Andres. Naturretten existerer derfor mere i Forestillingen end i Virkeligheden (opinione quam re); den Enkeltes Magt bliver hæmmet ved Frygten, og med Magten formindskes Retten. Saaledes viser det sig ogsaa her, hvorledes Opfattelsen af den Enkelte som Enkelt er usand og hæver sig selv. Kun ved Foreningen med de Andre, ved Ophævelsen af den isolerede Existents, bliver Retshævdelsen og et menneskeligt, navnlig et fornuftigt, Liv muligt, idet Forbindelsen med det med os Lige giver større Magt, og altsaa ogsaa større Ret. \emph{Attraaen efter Selvopholdelsen driver derfor med Nødvendighed til Attraaen efter Forening}\footnote{Tract. polit. II, 15: concludimus, jus naturæ, quod humani generis proprium est, vix posse concipi, nisi ubi homines jura habeant communia, qui simul terras, quas habitare et colere possunt, sibi vindicare, seseque munire, vimque omnem repellere et ex communi omnium sententia vivere possunt.}. Og denne Attraa fremgaaer med en saadan Styrke af Frygten for Ensomheden, at alle Mennesker maa siges, af Naturen at attraae Samfundsforholdet (status civilis), og at de aldrig fuldstændig kunne ophæve dette (tr. polit. VI, 1). Hos Mennesket, betragtet som bestemt ved Affecterne, maa nu en Affect (som Frygt, Haab, Hævngjerrighed), ikke Fornuften, fremtræde som det, der tilskynder til Forening og sikkrer denne\footnote{Forat de enkelte Mennesker kunne være trygge og have Tillid til hverandre, maae deres Affecter beherskes ved en Affect, og dette skeer ved Statens Magt, der indgyder Frygt (Eth. IV, 37. schol. 2). --- I det Hele bliver det, ved Indretningen af Staten og ved Hensynet til dens Bevaring, det Væsentlige, at beregne Affecternes Balance, og at indrette Staten saaledes, at Realisationen af det for den Nyttige, baade hvad de Herskende og de Beherskede angaaer, er sikkret, hvilket end deres Sindelag er, enten de altsaa gjøre det frivillig eller tvungne gjennem Affecterne. Intet, der vedkommer det almindelige Vel, bør overlades til en Enkelts Paalidelighed (fides); thi derved vilde Statens Bestaaen være priisgivet Tilfældet, medens Opgaven netop er at bevare den, da Statens Opløsning ikke gaaer for sig uden de voldsomste Omvæltninger, og med Hensyn til Statens Sikkerhed gjør det ingen Forskjel, ved hvilket Sindelag Menneskene bevæges til at bestyre den vel, naar den kun bestyres vel.}.
+% --- p. 137 ---
+\setcounter{footnote}{0}%
+Men den dybere Grund til Foreningen ligger i Fornuften; thi idet den Fornuftige er meest sui juris (II, 11), saa maa Attraaen efter at hævde sin Ret tillige blive en Attraa efter det Fornuftige, og dette var jo (see forrige Capitel) det i alle Mennesker Lige, der som den menneskelige Naturs Enhed forener dem i det høieste Godes Enhed. Denne dybere Grund for Foreningen vil da ogsaa blive det, der bestemmer dens Øiemed, og som væsenlig og \emph{positivt} sammenholder den (jfr. det Efterfølgende).
+
+Idet nu den Enkelte, forat forøge sin Magt og hævde sin Ret, indgaaer Forening med Andre, opgiver han sin Existents som isoleret, og existerer fra nu af kun som et Led af Samfundet. Hans Rets Omfang bestemmes ved Forholdet til Samfundets Magt, han har nu kun den jus in naturam, som den fælles Ret (jus commune) indrømmer ham. Han er forpligtet til at gjøre hvad der paalægges ham ved fælles Beslutning, og kan med Rette tvinges dertil. Den fælles Ret, der bestemmes ved Mængdens Magt, er Statsmagten (imperium)\footnote{Tract. polit. III. 2: imperii seu summarum potestatum jus. --- I Samfundet opstaaer Begrebet om en persona civilis (en Collectivpersonlighed), til Forskjel fra persona naturalis, tract. polit. X, 2.}, hvilken den besidder absolut, der ved fælles Overenskomst har Bestyrelsen af Staten. Tilstanden i Samfundet er, i Modsætning til Naturtilstanden (status naturalis), en \emph{status civilis}; hele imperii corpus er \emph{civitas}\footnote{Civitas er: societas legibus et potestate sese conservandi firmata. Eth. IV. 37. schol. 2.}; dens fælles Anliggender, der ere afhængige af den, som har Herredømmet, er \emph{respublica}. Borger (\emph{civis}) er den, der i Kraft af jus civile nyder Statssamfundets Fordele. Undersaat (\emph{subditus}) kaldes han forsaavidt han er pligtig at adlyde Statens Love og Institutioner. Fjende (\emph{hostis}) er Enhver, der lever udenfor Staten og ikke er Bundsforvandt.
+% The scan reads "Bundsforvandi." (with an i, no footnote mark follows);
+% not a word, and differs from "Bundsforvandt" (confirmed at p. 141,
+% "Bundsforvandte") by one letter, so sense-reading set per the standing
+% JBIG2 rule.
+% The quotation below is set off by a short rule and a gap, as a footnote
+% block normally is, but tests as full body type at 600 dpi -- clearly
+% larger than the smaller note fount of footnotes 1) and 2) that follow
+% it -- and carries no footnote mark of its own (footnote marks 1) and 2)
+% are already accounted for by "imperium" and "civitas" above). Transcribed
+% as a continuation of the body paragraph, per the p. 108 precedent for
+% distinguishing body type from note type at this rule.
+„Thi Aandens Frihed eller Styrke (fortitudo) er en privat Dyd, men Statens Dyd er Sikkerheden“ (tract. polit. I, 6. VI, 3. X, 4. 9).
+
+% --- p. 138 ---
+% Genuine new indented paragraph at the top of this page (confirmed at
+% 600 dpi), hence the blank line before this marker.
+\setcounter{footnote}{0}%
+Først i dette nye Forhold faae Bestemmelserne peccatum, justitia o. desl. Betydning. I Naturtilstanden gives der ingen Forseelse (peccatum ɔ: actio, quæ jure fieri nequit), eller, hvis Nogen forseer sig, forseer han sig imod sig selv, ikke mod Andre; thi Naturens Lov forbyder kun hvad Ingen formaaer. Ogsaa de af Affecterne ledede Mennesker følge Naturens nødvendige Orden ɔ: Guds institutum, der er evig og ikke kan krænkes, og deraf følger: »at den Uvidende og aandeligt Afmægtige efter Naturens Ret ikke er mere forpligtet til at indrette sit Liv viseligt end den Syge til at leve med et sundt Legeme.« Begrebet Forseelse kan først blive forstaaeligt i Samfundet, hvor det ved hele Statens fælles Ret bestemmes hvad der er godt og hvad der er ondt, og Ingen gjør Noget med Ret, uden hvad han gjør med det fælles Samtykke\footnote{Peccatum bliver altsaa liig med inobedientia, meritum med obedientia (Eth. IV. 37. schol. 2).}. Efterfølgelsen af denne fælles Villie\footnote{Denne er lex civilis, der afhænger af Menneskenes Godtbefindende, medens lex naturalis afhænger af Naturens Nødvendighed; jfr. tract theol.-polit. pag. 43.} er \emph{Lydigheden} (obsequium), der kun forsaavidt kan bestemmes som Villien til at følge Fornuftens Bud (hvilket er den sande Frihed), som en virkelig Statsenhed kun kan tilveiebringes ved fornuftige Retsbestemmelser, og den bedste Stats Retsbestemmelser maae fastsættes efter Fornuftens Bydende.
+
+Hvad der gjælder med Hensyn til Forseelse og Lydighed, gjælder ogsaa med Hensyn til \emph{Retfærdighed og Uretfærdighed}. I Naturtilstanden gives der Intet, der kan siges med Rette at være den Enes og ikke den Andens; men Alt tilhører Alle forsaavidt de have Magt til at hævde det for sig. Men i Staten, hvor det ved den fælles Ret bestemmes, hvad der tilhører den Enkelte, der kaldes den \emph{retfærdig}, der har en bestandig Villie til at give Hver Sit, \emph{uretfærdig} den, der stræber at tilegne sig hvad der er en Andens.
+
+% --- p. 139 ---
+% Genuine new indented paragraph at the top of this page (confirmed at
+% 600 dpi), hence the blank line before this marker.
+\setcounter{footnote}{0}%
+Idet den almindelige Sætning, at \emph{Ret bestemmes ved Magt,} ligesaavel gjælder om Samfundet som om den Enkelte, saa giver dets overveiende Magt det Ret til, ligeoverfor den Enkelte at bestemme, hvorledes han skal leve, hvilket ikke kan overlades til den Enkeltes Godtbefindende uden at Samfundstilstanden atter vender tilbage til Naturtilstanden. Af samme Grund maa Samfundsmagten selv være sine Loves eneste Fortolker. Den Enkelte er altsaa ikke sui juris, men civitatis juris; hvad Staten bestemmer at være retfærdigt og godt, maa ansees for at være bestemt af Enhver, og om end Undersaatten finder Statens Beslutninger ubillige, maa han adlyde dem. \emph{Den Enkeltes naturlige Ret ophører imidlertid ikke egentlig i Samfundstilstanden}\footnote{Paa dette Punkt afviger Spinoza fra \emph{Hobbes}. Ep. 50: Quod ad politicam attinet, discrimen inter me et Hobbesium --- --- in hoc consistit, quod ego naturale jus semper sartum tectum conservo, quodque supremo magistratui in qualibet urbe non plus in subditos juris quam juxta mensuram potestatis, qua subditum superat, competere statuo, quod in statu naturali semper locum habet. jfr. Bruders Udgave af Spinozas Værker. Vol. III. pag. 213. Anm.}; thi i den, saa fuldt som i Naturtilstanden, handler Mennesket efter sin Naturs Love og sørger for sin egen Nytte. I begge Tilstande ledes det af Frygt og Haab; men den væsentlige Forskjel er, at i Samfundet Alle frygte det Samme, og at Grunden til Tryghed, samt Maaden at leve paa, er een for Alle, hvilket ikke ophæver den Enkeltes Dømmeevne. Thi den, der beslutter, at adlyde alle Statens Befalinger, enten fordi han frygter dens Magt eller fordi han elsker Tryghed, han sørger efter sit Sind (ex suo ingenio) for sin Tryghed og sit Gavn. Ikke heller strider Retsoverførelsen, Underkastelsen under en Andens Dom, mod Fornuftens Bud; thi det viste sig jo, at det i Naturtilstanden var umuligt at gjøre sin Ret gjældende, hvorimod Statssamfundet og Overholdelsen af de fælles Love baner Veien dertil, saa at altsaa den Fornuftige ɔ: den Frie, finder sig i det mindre Onde, i et enkelt Punkt
+% --- p. 140 ---
+\setcounter{footnote}{0}%
+at maatte underordne sig under det Ufornuftige, da det langt overveies af de Goder, der følge af Samfundet; thi Fornuften byder at vælge det mindre Onde naar det fører til et større Gode.
+
+Desuden maa det, med Hensyn til det tilsyneladende Farlige og Fornuftstridende i Retsoverførelsen, ikke oversees, at denne har sine naturlige Grændser. Ligesom nemlig i Naturtilstanden det Menneske var meest mægtigt (potens) og meest sui juris, der lededes af Fornuften, saaledes vil den Stat være den mægtigste, og meest sui juris, der er grundet paa Fornuft og styres af denne. Statens Ret bestemmes nemlig ved den Mængdes Magt, der ledes som ved eet Sind; men kun Fornuften er det, hvori Menneskene stemme overeens, og Enheden vil kun finde Sted naar Staten stræber efter hvad den sunde Fornuft tilsiger at være det for alle Mennesker Nyttige\footnote{Enighed, grundet paa Frygt, er kun grundet paa noget Negativt (Eth. IV. App. c. 16. tract. polit. X, 8) og er sine fide. Dens positive Grund er Retfærdighed, Billighed og Redelighed.}. Statens Magt er altsaa betinget ved dens Fornuftighed, og dens Magt, og altsaa ogsaa dens Ret, formindskes desto mere jo flere der oprøres ved ufornuftige Bud af den, og ved deres Modstand give den Anledning til Frygt. Heri ligger der saaledes et Værn for den Enkelte, og desuden bliver der bestandig et Gebeet, der unddrager sig Statens Magt, nemlig alt det, der ikke kan paavirkes ved Belønninger eller Trusler, saaledes Dømmekraftens Udsagn, Overbevisningen\footnote{Paa dette Gebeet kommer den Enkelte væsentlig til at forholde sig blot til det Guddommelige. Forholdet til andre Enkelte og til Staten forsvinder her. jfr. tract. polit. III, 10: mens, quatenus ratione utitur, non summarum potestatum, sed sui juris est.}, Kjærlighed, Had o. desl.; ligeledes det, der er den menneskelige Natur saameget imod, at Mennesket foretrækker ethvert Onde derfor, f. Ex. at aflægge Vidnesbyrd imod sig selv, at dræbe sine Nærmeste, ikke at stræbe efter at undgaae Døden. Til dette har Staten ikke Ret til at tvinge; thi en Ret, til hvilken Ingen var
+% --- p. 141 ---
+bunden, vilde være en Selvmodsigelse. Mod Ufornuft og Fordomme, ogsaa religiøse, har Staten derimod en ubetinget Ret (tract. polit. III, 7--9. jfr. tract. theol.-polit. c. XVII).
+
+Idet jus summæ potestatis ikke er Andet end selve Naturens Ret, saa følger det af sig selv, at \emph{to forskjellige Stater forholde sig til hinanden som to Individer i Naturtilstanden}. De ere altsaa af Naturen Fjender og have Ret til at paaføre hinanden Krig og undertvinge hinanden. Stille de sig i et Fredsforhold til hinanden, ere de Bundsforvandte (confoederatæ), og deres Forbund vedvarer saa længe som dets Aarsag, nemlig Frygt for Tab eller Haab om Fordeel. Er denne Aarsag hævet, har hver Stat Ret til at hæve Forbundet, og man kan ikke sige, at den Stat, der bryder det, handler troløst; thi Retten var lige for begge, og Forbundet forudsatte de bestemte Forhold. Staten sørger ved dette Brud kun for sin egen Sikkerhed ligeoverfor den anden, og det bliver endog en ligefrem Pligt for Statsmagten at bryde Løftet, naar den har lovet en anden Stat Noget, som siden enten Tiden eller Fornuften viser at være stridende mod Undersaatternes Vel (tract. polit. III, 11--14).
+
+\emph{Den øverste Statsmagt} er ligesom Samfundets Sjæl (imperii mens), der skal lede Alle; den repræsenterer derfor alene Statens Ret til at bestemme hvad der er godt og ondt, billigt og ubilligt ɔ: hvad Alle, som Enkelte og i Forening, skulle gjøre og lade; den maa altsaa give Love, fortolke dem og dømme, erklære Krig og slutte Fred, idethele bestyre alle offentlige Anliggender uden Undtagelse. Tager man Begreberne Lov og Forseelse i den ovenfor udviklede strængere Forstand, maa man sige, at Statsmagten ikke kan være bunden ved Love, da den selv bestemmer disse, og at den altsaa ikke kan forsee sig. Tager man derimod Begreberne i videre Forstand, saa kan Staten siges at forsee sig, naar den gjør det, der maa blive dens Ødelæggelse, naar den handler imod Fornuften, der gjør den sui juris, naar den gjør hvad der med Nødvendighed --- og den menneskelige Naturs Nødvendighed kan Statsmagten ikke forandre, --- til\-%
+% --- p. 142 ---
+\setcounter{footnote}{0}%
+intetgjør Ærbødigheden og Frygten for den, og, ved at forvandle disse til Forbittrelse, forvandler Samfundstilstanden til en Naturtilstand. Den Contract eller de Love, ved hvilke de Enkelte have overført deres Ret paa Statsmagten, kunne brydes i Interesse af det fælles Vel; men hvad der er til det fælles Vel, kan efter Statens Ret (jure civile) kun den, der har Herredømmet, afgjøre, og da han har Fortolkningsretten, kan Ingen, efter Statens Ret, hævde Lovenes Overtrædelse imod ham. Ere Lovene imidlertid krænkede saaledes, at de Flestes Frygt er forvandlet til Forbittrelse, da er med det Samme Staten opløst og Contracten hævet, og Retten hævdes da ikke jure civili, men jure belli. Grunden til at holde Contracten bliver altsaa for Statsoverhovedet den samme som i Naturtilstanden Grunden for den Enkelte til ikke at dræbe sig selv (tract. pol. IV, 1--6).
+
+% Footnote 3 below quotes two parallel Spinoza passages differing only in
+% their final verb: "secure et commode vivere" and "secure et optime
+% vivere". The compositor letterspaces the whole phrase the first time
+% but, the second time, only the one word that differs ("optime");
+% transcribed as printed, per BATCH-AGENT.md's p. 71 "natura naturans"
+% precedent for partial-phrase spacing -- not regularised to match.
+Sammenligner man de forskjellige Samfundsformer med hverandre, da maa den betragtes som \emph{den bedste}, der bedst realiserer hvad der tilsigtedes ved Foreningen. Dette var umiddelbart Hævdelsen af Retten, men da Magten hertil baade for Staten og den Enkelte betingedes ved at de lededes af Fornuften og handlede efter dens Love, saa bliver den \emph{bedste} Stat den fornuftigste\footnote{Tract. polit. II, 21: Optimi imperii jura ex rationis dictamine institui debent.}; thi idet Fornuften fuldstændigst udtrykker Retten og Magten, udtrykker den fuldstændigst Øiemedet. Idet Fornuftens Væsen er \emph{den sande Erkjendelse} af det Guddommelige og af vor Enhed med og i det, og idet denne Erkjendelse er vort høieste Gode, kan Statens Øiemed ogsaa bestemmes ved den\footnote{De intell. emend. pag. 361.}. Det kan ligeledes bestemmes som Fred og Sikkerhed (pax et vitæ securitas; tract. polit. V, 2 f. III, 6)\footnote{Som Statens Øiemed sættes (tract. polit. III, 6): pax, securitas, propulsio miseriæ; jfr. tract. theol.-polit. pag. 34: finis universæ societatis et imperii est, \emph{secure et commode vivere} (sammest: pag. 177: secure et \emph{optime} vivere); jfr. ogsaa Eth. IV. App. c. 14.} saa at
+% --- p. 143 ---
+\setcounter{footnote}{0}%
+saa at den Stat bliver den bedste hvor Menneskene leve samdrægtigen og hvers Ret bevares ukrænket, medens den uroligste Stat, idet den meest nærmer sig til Naturtilstanden, mindst kommer til at svare til sit Begreb. Ved Freden i Staten forstaaes nemlig ikke det Negative: Fraværelsen af Krig, eller: dorsk Ro, men noget Positivt. Den er en Dyd, der kun opstaaer af Sjælsstyrken (animi fortitudo), og er det Samme som Borgernes standhaftige Villie til at adlyde Lovene. Det fredelige (samdrægtige) Liv i Staten bliver altsaa at opfatte som det sande menneskelige Liv, og dette bliver væsentlig bestemt ved Fornuften, vera mentis virtute et vita, idet den udtrykker den menneskelige Natur som Enhed. Bestemmelsen af Statens Øiemed som Fred og Samdrægtighed og som Fornuft og Erkjendelse falder altsaa sammen, og fra Fornuften er ligeledes \emph{Friheden}\footnote{Tract. theol-polit. pag. 226 f.: Ex fundamentis reipublicæ sequitur, finem eius ultimum non esse dominari, nec homines metu retinere et alterius juris facere, sed contra unumquemque metu liberare, ut secure, quoad eius fieri potest, vivat, hoc est, ut jus suum naturale ad existendum absque suo et alterius damno optime retineat. Non, inquam, finis reipublicæ est, homines ex rationalibus bestias vel automata facere, sed contra ut eorum mens et corpus tuto suis functionibus fungantur, et ipsi libera ratione utantur, et ne odio, ira vel dolo certent, nec animo iniquo invicem ferantur. \emph{Finis ergo reipublicæ revera libertas est.}} uadskillelig, da kun den er fri, der handler fornuftigt. --- Om Statens Øiemed naaes eller ikke, betragter Spinoza mere som Samfundets end som den Enkeltes Fortjeneste eller Feil; homines enim civiles non nascuntur sed fiunt (tract. pol. V, 2).
+
+De enkelte \emph{Statsformer} adskiller Spinoza efter Antallet paa dem, til hvem Statens Ret er overdraget. Er Herredømmet hos et Raad, der dannes af hele Mængden, er det \emph{Demokratie}; bestaaer Raadet kun af nogle Udvalgte, \emph{Aristokratie}; er hele Magten i Eens Hænder: \emph{Monarchie}. Han stiller disse 3 Former ved Siden af hverandre, og vil vise Muligheden af, at i enhver af dem Statens Øiemed kan naaes; dog betragter han dem ikke som lige
+% --- p. 144 ---
+\setcounter{footnote}{0}%
+gode, men giver Demokratiet Fortrinnet\footnote{tract. polit. XI, 1: tertium et omnino absolutum imperium, quod democraticum appellamus. VIII, 3: si quod imperium absolutum datur, illud revera est, quod integra multitudo tenet. VIII, 7: quo jus summæ potestatis majus est, eo imperii forma cum ratione magis convenit; jfr. tract. theol.-polit. pag. 216: eodem modo, ac in imperio democratico fieri ostendimus, ubi omnes communi consensu deliberant, ex solo rationis dictamine vivere. Dog indrømmer Spinoza (tract. polit. XI, 2), at Aristokratiet vilde være det fortrinligste, hvis Valget af Patricierne alene lededes af Fornuften.}, saavel fordi det er det stærkeste (\emph{omnino absolutum imperium}), som og fordi der er mindre Fare for ufornuftige Beslutninger, % Scan reads "dceltage" for "deltage" (differs by one inserted letter; JBIG2
+% symbol-matching scan, no sort-level claim possible per BATCH-AGENT.md).
+% Sense-reading set, doubt logged.
+naar saa Mange deltage i Regjeringsmagten (tract. theol. polit. pag: 180, tract. polit. VIII, 6), og endelig, fordi det giver størst Frihed og Lighed (tract. polit. X, 8). Ved Udviklingen af de enkelte Statsformer er hans Hovedopgave den at vise, hvorledes de maae indrettes forat farefulde Omvæltninger kunne undgaaes og den engang bestaaende Form bevares (tract. polit. VI, 2). Under Forudsætning af, at Fornuften beherskede Alle, vilde Enhver frivillig underordne sig under Samfundet; thi Fornuften, det positivt Forenende, vilde sammenknytte Alle. Men da Forudsætningen er, at Massen af Menneskene beherskes af Affecterne, maae Affecterne balanceres ved Affecter, i Fornuftens Interesse; der maa i Institutionerne gives en Tilknytning for Alles Interesser, en Modvægt mod de Herskendes ufornuftige Lidenskab. Kun ved denne Ligevægt tilveiebringes Ro og gjennem den kan det Fornuftige hævde sig. Nødvendigheden af at finde en Modvægt mod de Herskendes Lidenskaber og en Garantie for Statsformens Bestaaen fremtræder stærkest ved Monarchiet, der efter sin Natur er meest udsat for Omvæltning. Thi om end Despotiet synes at medføre Stabilitet, saa er denne kun \emph{negativ}, Trældom og Dorskhed, ikke positiv, Tryghed og Enighed. Tværtimod ligger der i Monarchiet som absolut ikke blot noget Forhadt for Undersaatterne, og Noget, der strider mod den menneskelige Naturs
+% --- p. 145 ---
+\setcounter{footnote}{0}%
+Love\footnote{Tract. polit. VII, 14: imperio absoluto uti principi admodum periculosum, subditis admodum odiosum, et institutis tam divinis quam humanis adversum, ut innumera ostendunt exempla.}, men der ligger ogsaa en Modsigelse deri, idet den Enkeltes Personlighed, uanseet alle de Tilfældigheder, for hvilke den er udsat (tract. pol. VIII, 3), ikke kan indeslutte den Magt, der kan betrygge hans Ret, hvorfor han altid maa søge sig Hjælp, saa at Monarchiet i Virkeligheden bliver et skjult Aristokratie, og Tilstanden i det voldsom, unaturlig og elendig\footnote{Tract. polit. VI, 8: sequitur, regem eo minus sui juris, et subditorum conditionem eo miseriorem esse, quo magis absolute civitatis jus in eundem transfertur.}. Kun idet Monarchens Magt indskrænkes, saa at selve Grundloven gjøres uafhængig af Kongens Villie (VII, 1), og Kongens Magt »bestemmes alene ved selve Folkets Magt og bevares ved selve Folkets Beskyttelse« (VII, 31), kan Monarchiets Tryghed og Undersaatternes Fred sikkres\footnote{Dette er berettiget og strider ikke imod Kongens Værdighed: nam fundamenta imperii veluti regis æterna decreta habenda sunt, adeo ut eius ministri ei omnino obediunt, si, quando aliquid imperat, quod imperii fundamentis repugnat, mandata exsequi velle negent. --- Monarchiet skal indrettes saaledes, ut omne jus sit regis explicata voluntas, at non ut omne regis voluntas jus sit. (tract. polit. VII, 1, jfr. Sammenligningen med Aristokratiet VIII, 3).}.
+
+De nærmere Bestemmelser for Indretningen af de forskjellige Statsformer\footnote{tract. polit. Cap. 6---11.} have ikke philosophisk Interesse. Dette Gebeet er, efter Spinozas Opfattelse, ikke den i strængere Forstand philosophiske Tænknings, men Sandsynlighedens (jfr. Ep. 60). De Bestemmelser, han giver, have derfor kun Betydning som praktiske Beregninger, der referere sig til Noget, der efter sit Væsen ikke har Bestaaen, og som bestandig lader den sandere Grund, det egentlige Væsen, i hvilket det gaaer tilbage, skinne igjennem sig, om end kun som i det Fjerne. Men imod denne dybere Grund gaaer Retningen, og idet den viser sig (jfr. næste Capitel), forsvinder det Forhold, paa hvilket Læren om Staten hvilede.
+
+% --- p. 146 ---
+% Genuine new indented paragraph at the top of this page (confirmed at
+% 600 dpi), hence the blank line before this marker.
+\setcounter{footnote}{0}%
+I Udførelsen af denne i det Enkelte faaer det imidlertid, som allerede ovenfor antydedes, med Hensyn til Spinozas Opfattelse af Grundbegreberne Interesse at see, hvorledes den endelige Realitet uvilkaarligen hævder en Betydning for Tanken, og, med Hensyn til den specielle Videnskabs Udvikling, hvorledes Spinoza, i sin Sympathie for den fornuftige Frihed, paa mange Punkter berører en nyere Tids Statsorden og hævder Humanitetens Fordringer (med Hensyn til Afskaffelse af Tortur, til Retten til Tænke-, Tale- og Religionsfrihed o. desl.).
+
+I Fremstillingen af Læren om Statens Ret er det Punkt blevet paaviist, hvor Statens Forhold til \emph{Religionen} kommer frem. Dette Forhold kan først fuldstændig bestemmes naar Religionens Væsen er udviklet, og med det Samme vil da \emph{Videnskabens} rette Forhold til begge blive klart.
+
+Det er i Tractatus theologico-politicus at Spinoza udvikler sin Opfattelse af \emph{Religionens} Væsen og dens Forhold til Staten og Philosophien. For ikke at misforstaae de Udviklinger, han giver, er det her, mere end noget andet Sted, nødvendigt at erindre den Betydning, han indrømmer Accommodationen\footnote{Tract. de intell. emend. pag. 361 anfører han blandt de foreløbige Leveregler: ad captum vulgi loqui et illa omnia operari, quæ nihil impedimenti adferunt, quo minus nostrum scopum (ɔ: at naae det høieste Gode) attingamus. Nam non parum emolumenti ab eo possumus acquirere, modo ipsius captui, quantum fieri potest, concedamus, adde, quod tali modo amicas præbebunt aures ad veritatem audiendam.}. Hensigten med Afhandlingen var, som det allerede blev angivet i Cap. 1, at skaffe Plads for den frie Philosopheren, og, forat opnaae dette, maatte \emph{deels} Philosophien skilles fra Troen (Religionen), og begges forskjellige Charakteer paavises; \emph{deels} maatte den religiøse Friheds Uadskillelighed fra Statens Frihed, og Statsmagtens Myndighed i Forhold til det Religiøse godtgjøres (jfr. tract. theol.-polit. præf. samt pag. 30, 160. 166). Men derved maatte alle de herskende Forestillinger om Religionens
+% --- p. 147 ---
+\setcounter{footnote}{0}%
+Væsen og Skriftens Betydning paavirkes, mange Fordomme maatte fjernes, og efter disse Fordommes Natur og den Stands Charakteer\footnote{„Summum odium, quale theologicum esse solet.“} der forsvarede dem, og i dem sit eget Herredømme, maatte det skee med Varsomhed. Spinoza søger derfor ikke blot at benytte de Tilknytningspunkter, han kunde finde i sine Landsmænds republicanske Frihedsfølelse og i deres historiske Erfaringer, men i sine Udviklinger læmper han sig saameget som muligt efter den herskende Forestilling, bruger i sin Beviisførelse dens Former og dens Vaaben, tilegner sig dens Udtryk, og sørger kun for at lægge et andet Indhold ind i disse, saaledes at de, der vare fortrolige med hans Tanker, kunde gjenfinde dem i de fremmede Former, de, der ikke kjendte dem, forberedes til at opfatte dem. Erindrer man ikke bestandig dette, vil man ikke kunne undgaae at misforstaae Spinozas Skrift, saaledes som næsten alle hans Samtidige gjorde, og man vil da finde Modsigelser deri mod hans philosophiske Grundanskuelse, der ikke lade sig fjerne.
+
+Af det i 5te og 6te Capitel Udviklede er det blevet tydeligt, hvilken Erkjendelsens Form Spinoza sætter som den sande, og hvilket Maal han stiller for denne Erkjendelse. \emph{Fornuften} er den sande, adæquate Erkjendelse, Gudserkjendelsen dens Maal, og idet den fuldender Erkjendelsen, fuldender den ogsaa Handlingen. Den \emph{sande} Religion\footnote{Tract. theol.-polit. pag. 53: Deum sapienter timere, hoc est, vera religione colere. Eth. IV, 73 schol.: quæ ad veram vitam et religionem spectant.}, til Forskjel fra Religionen i den almindelige Betydning, er da den af Gudserkjendelsen fremgaaende Handlen (jfr. foreg. Cap. og Eth. IV, 37. schol. 1). En høiere Erkjendelse end Fornuftens kan ikke gives; thi dens Gudserkjendelse er adæquat, dens »naturlige Lys«\footnote{Lumen naturale (lumen naturæ), spiritus, intellectus (int. naturalis) og ratio bruges som Synonymer. Fornuften bestemmes som tilstrækkelig til den sande Erkjendelse af Gud (tract. theol.-polit. pag. 54), som et fortrinligere Middel til en saadan end det Historiske i Skriften (pag. 64), som stemmende overens med cognitio supranaturalis (pag. 139), som \emph{nødvendig} for Gudserkjendelsen (saa at Troen alene bliver utilstrækkelig; pag. 156), som Guds verum syngraphum (pag. 168), som ufordærvet og ufordærvelig (præf.; pag. 168: profecto non satis mirari possum, quod rationem, donum maximum et lucem divinam, mortuis literis et quæ humana malitia depravari potuerunt, submittere velint, et quod nullum existimetur scelus, contra mentem, verum Dei syngraphum, indigne loqui, eamque corruptam, cæcam et perditam statuere, at maximum habeatur scelus, talia de litera et verbi Dei idolo cogitare. Ep. 74: Ratione --- vero Dei verbo, quod in mente est, quodque nunquam depravari nec corrumpi potest. jfr. Ep. 36).} er et gud\-%
+% --- p. 148 ---
+\setcounter{footnote}{0}%
+dommeligt Lys, idet den er en evig, umiddelbar, uforstyrrelig, ufeilbar, vis Aabenbarelse af Guds idea og natura, ikke i Ord, »men paa en langt fortrinligere Maade«\footnote{% NOTE 1 -- genuine mixed quotation pair, as printed: the first three
+% sub-quotes open with the low mark and close with the raised mark
+% (this book's ordinary „...“ usage), but the final, longer quote opens
+% with the guillemet » and closes with the SAME raised mark, not with
+% «. This is one of only two mixed »...“ pairs in the book (the other
+% is the note on pp. 75--76); logged in RESUME-NOTES' quote-balance
+% ledger. Transcribed exactly as printed, not normalised.
+Tract. theol.-polit. pag. 2, jfr. pag. 144: „Dei æternum verbum et pactum“ og „vera religio“ er „divinitus inscripta hominum cordibus ɔ: humanæ menti“, og den er »verum Dei syngraphum, quod ipse suo sigillo, nempe sua idea, tanquam imagine suæ divinitatis consignavit.“} Dens Aand er en spiritus Dei, spiritus sanctus, spiritus divinus; gjennem den udtrykker sig en lex divina universalis, og den bliver overensstemmende med lex catholica\footnote{Ved Udtrykket: catholica, betegner Spinoza nemlig det for alle Mennesker Fælles, der som saadant maa stemme overens med Fornuften og det naturlige Lys. Saaledes bestemmes religio catholica (der skarpt adskilles fra rel. \emph{Romana}) som lex divina, per prophetas et apostolos universo humano generi revelata (præfat.), den sættes som synonym med religio \emph{toti humano generi universalis} (pag. 148), og som maxime \emph{naturalis} (pag: 149); der tales om en rel. catholica lumine naturali et prophetia revelata (Ep. 49), om catholica documenta rationis (tract. theol.-pol. pag. 217), om en \emph{lex} catholica, der bliver liig med lex divina universalis (pag. 151 f.), og om en \emph{fides} catholica (pag. 160), hvis Gjenstand bliver Religionens væsentlige, med
+% Scan reads "Fornufteu" for "Fornuften" (n/u confusion; JBIG2 symbol-matching
+% scan, no sort-level claim possible -- same pattern as Element/Elemeut (p.9),
+% under/nnder (p.36), Foruden/Fornden (p.39) already logged in RESUME-NOTES.
+% Sense-reading set, doubt logged.
+Fornuften overensstemmende Indhold.}, religio catholica, fides catholica.
+
+Tales der derfor om en \emph{overnaturlig} Erkjendelse\footnote{Spinoza afviser selv, hvor han kritiserer Forestillingen om Miraklerne, Adskillelsen mellem det, der er over Naturen, og det, der er mod Naturen, idet hint sættes indenfor Naturens Grændser, og altsaa maa gjøre et Brud paa dens evige Orden.} (cognitio supranaturalis), da er det at vente, at Spinoza maa
+% --- p. 149 ---
+\setcounter{footnote}{0}%
+have brugt dette Udtryk uegentligt, og at man vil finde dette antydet hos ham. Dette bekræfter sig ogsaa strax ved hans Udvikling af de religiøse Grundforestillinger: \emph{Aabenbaringen} og \emph{Prophetien}. Prophetien definerer han først i Almindelighed som: rei alicuius certa cognitio a Deo hominibus \emph{revelata}. Men da »Aabenbaringen« saaledes ogsaa kommer til at omfatte den naturlige Erkjendelse, idet denne afhænger af Gudserkjendelsen og af hans evige decretum\footnote{Tract. theol.-polit. pag. 216: Religio eadem est, et a Deo æque \emph{revelata}, sive hoc sive illo modo (ɔ: sive religionem lumine naturali sive prophetico \emph{revelatam} concipiamus) hominibus innotuisse supponatur. Jfr. Cog. metaph. II, c. 12: decreta Dei, \emph{lumine naturali revelata}.}, saa adskilles nu den naturlige Erkjendelse nærmere fra den overnaturlige derved, at denne (»quæcunque illa sit«, pag. 1) »strækker sig ud over hins Grændser«\footnote{Tract. theol.-polit. pag. 14: Non dubium est, eos multa extra \emph{intellectus limites} percipere potuisse.}, og at »den for sig betragtede menneskelige Naturs Love ikke kunne være dens Aarsager« (jfr. Definitionen paa Affecterne som lidende Tilstande). Denne specifiske Aabenbarings Charakteer maa Skriften lære os at kjende, da den er en empirisk Gjenstand, der ikke kan bestemmes ved intellectus. Som dens \emph{Midler} angiver Skriften nu Ord, Tegn eller begge Dele i Forening, og da enten virkelige eller imaginære. Men idet Spinoza fører en ironisk Argumentation fra Skriftens Fortællinger, reiser han talrige Vanskeligheder, som han ikke løser, mod Ordenes og Tegnenes Virkelighed, og da Ord og Tegn endog som virkelige tilhøre Imaginationen, kan han slutte med det Resultat: at »foruden Christus Ingen har modtaget Guds Aabenbaring paa anden Maade end ved \emph{Imaginationens} Hjælp, nemlig gjennem Ord eller Billeder«, saaledes at Aabenbaringen og Prophetien sættes sammen med Imaginationen som fremgaaende af denne (jfr. tract. theol.-polit. pag. 13 f.). Med det Samme
+% --- p. 150 ---
+\setcounter{footnote}{0}%
+adskilles de fra intellectus, »thi da begribes Tingene, naar de opfattes ved Aanden alene (pura mente) uafhængigt af Ord og Billeder« (pag. 50). Hos \emph{Christus}\footnote{Hvor Spinoza omtaler \emph{Christendommen}, maa man erindre, at han bruger „christiana religio“ som ensbetydende med „amor, gaudium, pax, continentia et erga omnes fides“ (tract. theol.-polit. præf.), altsaa med hvad han selv forstaaer ved religio (Eth. IV. 37. schol. 1), og betragter den som i dens Simpelhed (pag. 143 f.) overensstemmende med Fornuften. \emph{Christi Aand} betegner derfor Retfærdighed og Kjærlighed til Næsten (Ep. 49. 74), og den, der har denne Kjærlighedens Aand, selv om han bekjender sig til en anden Religion end den christelige (Ep. 49), han kjender Christus „efter Aanden“ og Christus er i ham (pag. 164). Denne Aand bliver liig med idea Dei, „af hvilken det alene afhænger, at Mennesket er frit“ (Eth. IV, 68. schol.); den indeslutter i sig Saligheden (tract. theol.-polit. pag. 65); ved den opfatter man „Guds Love“ som „evige Sandheder.“ Saaledes bliver den liig med spiritus sanctus. \emph{Christus} selv bliver opfattet symbolsk som „Guds evige Søn ɔ: Guds evige Viisdom, der har aabenbaret sig i alle Ting, men meest i den menneskelige Aand, og allermeest (omnium maxime) i Jesus Christus“ (Ep. 21). Og som historisk, \emph{menneskelig} Person tillægges der Christus en adæquat Erkjendelse, saa at han bliver ligesom Afbilledet af Guds Viisdom (tract. theol.-polit. pag. 7. 50), han kaldes os Dei, en Lærer, der var sendt ad solam legem universalem docendum (pag. 56). Men Incarnationens Dogma i dets kirkelige Form betragter Spinoza som absurd: det, at det Uendelige skulde have antaget en endelig Natur, betragter han som ligesaa selvmodsigende, som om Cirkelen havde antaget Quadratets Natur (Ep. 21, jfr. Ep. 23. 74 og de intell. emend. pag. 374.). Og med Incarnationens Dogma forkaster han alle de andre Dogmer, der stride imod Fornuften, „det sande Guds Ord, der er i vor Aand og aldrig kan fordærves.“ Han kalder dem „horribilia secreta“ (Ep. 74), „absurda arcana“ (tract. theol.-polit. præf.). Fortællingen om Christi Opstandelse og Himmelfart forklarer han symbolsk (Ep. 23 og 25), og overhovedet erklærer han det at kjende Christus efter Kjødet (secundum carnem) for ikke at være nødvendigt til beatitudo (Ep. 21).} er Aabenbaringen ikke gjennem Imaginationen og ved dens Midler, men »umiddelbart, Aand til Aand« (de mente ad mentem); men derved bliver han ikke specifisk forskjellig fra de andre
+% --- p. 151 ---
+% No footnote on this page.
+\setcounter{footnote}{0}%
+Mennesker; thi ogsaa i deres Aand er »Guds Aand og hans evige Udsagn (sententiæ) indskrevne.«
+
+At Propheterne havde Guds Aand, betegner derfor, efter det G. Testamentes Sprogbrug, hvilken Spinoza udførlig udvikler, ikke, at de havde en høiere Indsigt, men alene, at de vare i Besiddelse af en \emph{særegen og ualmindelig} Dyd (Evne), at de dyrkede Dyden med Standhaftighed, og at de fornam Guds Ord eller Tanke, samt endelig, at man ikke begreb Aarsagen til den prophetiske Erkjendelse. Efter hvilke Naturlove denne fandt Sted, lader Spinoza staae uafgjort.
+
+Af Imaginationens Betydning for Prophetien følger nu (efter Imaginationens Væsen; jfr. S. 88 ff.), at Propheterne have opfattet næsten Alt i Lignelser og Gaader, og alt Aandeligt i legemlige Former, samt, at Prophetien, ligesom Imaginationen, maa være foranderlig, kortvarig, og ikke, saaledes som Fornuften, kan indeslutte Vished (tract. theol.-polit. cap. 1). Derfor maatte Propheterne selv have en ydre Garantie. Denne fik de i \emph{Tegnene}; men den Vished, disse kunde give, var kun en moralsk, idet ogsaa falske Propheter gjorde Tegn (og desuden kan Tegnet overhovedet, efter sin Natur som Gjenstand for Imaginationen, ikke give en virkelig Vished). Den største moralske Vished maa søges i \emph{Propheternes moralske Charakteer}, dog bliver ogsaa denne igjen ufuldkommen, idet Ingen er fuldstændig dydig. Med Hensyn til Tegnene følger det nu atter af deres Forhold til Imaginationen, at de maatte rette sig efter Prophetens Forestillinger og Fatteevne, og derfor være forskjellige for de forskjellige. Af samme Grund maatte Aabenbaringens Indhold og Form være foranderlig efter Propheternes forskjellige Temperament, Livsforhold og Meninger, og efter Indbildningskraftens eiendommelige Disposition. Dette udfører Spinoza omstændeligt, støttende sig paa Udsagn af Skriften, men saaledes, at hans Lære om Imaginationen og Affecterne bestandig skinner igjennem den bibelske Demonstration. Resultatet bliver altsaa, at Propheterne have havt forskjellige, ja modsatte Meninger, og mange For
+% --- p. 152 ---
+\setcounter{footnote}{0}%
+domme (med Hensyn til det blot Speculative, ikke med Hensyn til hvad der angaaer Retskaffenhed og gode Sæder), og at Prophetien aldrig har gjort Propheterne indsigtsfuldere (doctiores), men har ladet dem blive i deres forudfattede Meninger, og at vi derfor aldeles ikke ere forpligtede til at have Tro paa dem\footnote{Tract. theol.-polit. pag. 28: Concludimus itaque, nos prophetis nihil aliud teneri credere præter id, quod finis et substantia est revelationis (ɔ: vera vita).} med Hensyn til det rent Speculative (tract. theol.-polit. pag. 21). Ligeledes maa man antage, at \emph{Propheterne have været uvidende om mange Ting}, hvilket allerede ligger deri, at de vare hildede i deres Tids almindelige Forestillinger, som man af mangfoldige Exempler fra det gamle Testamente kan see. Grunden, hvorfor de anbefales, bliver altsaa ikke deres Indsigt\footnote{Tract. theol.-polit. pag. 23: Nihil enim singulare de Dei attributis docuerunt, sed admodum vulgares de Deo habuerunt opiniones, ad quas etiam eorum revelationes accommodatæ sunt. jfr. Ep. 32.} eller Aandsoverlegenhed, men deres Fromhed og Bestandighed; deres Opgave har været at lære den sande Dyd, og deraf følger det deels, at de have maattet findes hos alle Nationer (Cap. 3), deels, at de kun ere Autoriteter for os med Hensyn til hvad der angaaer den.
+
+Forholdet mellem den naturlige Erkjendelse og den saakaldte overnaturlige Aabenbaring viser sig altsaa at være det, at hiin indbefatter den evige, uforanderlige, almeengyldige, ved sig selv visse Sandhed\footnote{Sammesteds pag. 173 f.: De veritate --- --- et certitudine rerum, quæ solius sunt speculationis, nullum spiritus testimonium dat præter rationem, quæ sola, ut jam
+% Scan reads "ostendimas" (not a Latin word; differs from "ostendimus" by
+% one letter -- JBIG2 symbol-matching scan, no sort-level claim possible
+% per BATCH-AGENT.md). Sense-reading set, doubt logged.
+ostendimus, veritatis regnum sibi vindicavit. --- Spiritus sanctus „giver kun Vidnesbyrd om \emph{gode Gjerninger},“ og dette Vidnesbyrd er Eet med „den Sindsro, der opstaaer i Aanden af de gode Gjerninger.“}, denne derimod, som bestemt ved Imaginationens Form, ogsaa i Indholdet er paavirket af den, og derfor vel kan indeholde »Mere« end hin, men ikke mere Sandhed\footnote{% NOTE 4 runs over from p. 152 onto p. 153; per this book's convention the
+% whole note belongs to its mark, so the continuation is transcribed here
+% in full. It sits at the head of p. 153's note block, before that page's
+% own note 1 (out of scope for this batch), and closes the Latin
+% parenthesis left open after "Cart. II, 13." The phrase "legitime
+% argumentari" is letterspaced in the print (spans a line break on p.
+% 153) and is rendered \emph{} accordingly.
+Cognitio naturalis og revelatio kunne derfor sættes som Modsætninger (tract. theol.-polit. pag. 141, jfr. princ. phil. Cart. II, 13. schol. Cog. metaph. II. c. 12), og Forholdet mellem cognitio supranaturalis og \emph{legitime argumentari} bestemmes som et omvendt Forhold (tract. theol.-polit. pag. 139). Det „Mere“ i Aabenbaringen bliver „res imperceptibiles, quas tantum imaginari possumus“ (pag. 97).}
+% --- p. 153 ---
+\setcounter{footnote}{0}%
+Imagination og »Aabenbaring« blive saaledes uadskillelige. Den store Mængde af Mennesker ledes ikke af den fornuftige Indsigt, men af Affecterne. De maae altsaa paavirkes gjennem disse, og da Affecterne ere forbundne med Imaginationens uadæquate Forestillinger, blive disse Midlet. Men idet Fornuftens Sandheder optages i disses Form, forandre de deres Natur, og \emph{Religionens} Grundforestillinger blive uadæquate. Medens saaledes Fornuften opfatter Tilværelsen som behersket ved den guddommelige Naturs Nødvendigheds Lov, seer Virkningen sammenknyttet med Aarsagen ved Nødvendighedens Baand, saa opfatter Forestillingen Loven\footnote{I denne Betydning modsættes Lov og æterna veritas (pag. 51), Lov og Morallærdomme (pag. 87 f.), Lovgiver og Lærer (pag. 89). Loven i den vulgære Betydning kan Mennesket overtræde, men ikke Guds æternum decretum, der er „in universa natura inscriptum“ (tract. polit. II, 22).} som en vilkaarlig, givet af Gud paa samme Maade som menneskelige Love gives, og vilkaarlig sat i Forbindelse med Belønning og Straf, der ved Haab og Frygt kunne bevæge Menneskene til at gjøre og lade det Befalede eller Forbudte. Den universelle, naturlige \emph{lex divina}, der efter mit Væsens Natur\footnote{Netop derfor er den universel, ikke knyttet til Løfter og Trusler, og indesluttende beatitudo (Cap. 4---5). --- Den Dydige vil gjøre det Gode og undlade det Slette fordi det stemmer med hans Natur, ikke fordi en Lov sætter Belønninger eller Straffe derfor (Ep. 34).} bestemmer dets høieste Fuldkommenhed som Erkjendelsen af Gud og den deraf følgende Kjærlighed til Gud, forandrer sig til en speciel Lov, der ikke kan undvære særegne, Indbildningskraften paavirkende \emph{Ceremonier}, og maa støttes ved noget Historisk og ved \emph{Erfaringen}, hvilken ikke kan give en klar Indsigt, men kun fremkalde Lydighed og Devotion. Fornuftens Anskuelse af Naturens ubrødelige Orden forvandles til Forestillingen om
+% --- p. 154 ---
+\setcounter{footnote}{0}%
+\emph{Mirakler}\footnote{Om Miraklerne jfr. Cog. met. II. c. 9. 12. Ep. 23. 74.}, om en overnaturlig umiddelbar guddommelig Indgriben, der suspenderer de evige Naturlove, Guds Væsens egne Love; og man troer nu i dem at have et sikkrere Beviis for Guds Væsen og Existents end i hine Love selv, medens dog en saadan Afvigelse fra de almindelige Naturlove vilde føre en Splid ind i Naturens Orden og bringe vor Aands oprindeligste Begreber, der staae og falde med dens Gyldighed, i Strid med sig selv, omstyrte enhver Sikkerhed og netop gjøre Guds Tilværelse umulig\footnote{Tract. theol.-polit. pag. 77: Quidquid contra naturam est, id contra rationem est, et quod contra rationem, id absurdum est, et proinde etiam refutandum. Miraklet bliver et relativt Begreb og betegner kun: opus, cuius causam naturalem exemplo alterius rei solitæ explicare non possumus, vel saltem ipse non potest, qui miraculum scribit aut narrat. --- Spinozas Kritik af Miraklerne faaer indirecte Anvendelse paa Begrebet: Aabenbaring, hvortil han ogsaa selv giver Anvisning (pag. 81).}.
+
+Af denne Grundforskjel mellem Fornuftens og den religiøse Forestillings Opfattelse, følger det, at \emph{Skriften}, der indeholder Aabenbaringen, er et særeget Gebeet, med en eiendommelig, ved Mængdens Fatteevne betinget Charakteer, og at \emph{Skriften og Philosophien derfor maae sættes som gjensidig uafhængige}. Skriften maa betragtes som et historisk Givet, der maa opfattes som saadant, altsaa fortolkes ved sig selv. Fortolkningen maa forholde sig rent objectivt, ikke bevise dens Sandhed, men constatere det Factiske\footnote{Tract. theol.-polit. pag. 87: tota bibliorum cognitio ab iisdem solis est petenda. --- pag. 84: dico methodum interpretandi scripturam haud differre a methodo interpretandi naturam, sed cum ea prorsus convenire. --- pag. 86: de solo sensu orationum, non autem de ejus veritate laboramus. Dog maa nødvendigviis, efterat det Factiske er udfundet, Fornuften bedømme Aabenbaringens (Prophetiens) Sandhed (Ep. 34. Cog. metaph. II. c. 8. Tract. theol.-polit. pag. 167 f.: Verum quidem est, scripturam per scripturam interpretandam esse, quamdiu de solo orationum sensu et mente prophetarum laboramus, sed postquam verum sensum eruimus, necessario judicio et ratione utendum, ut ipsi assensum præbeamus).}. Midlet hertil er en uhildet \emph{Skrifttheorie},
+% --- p. 155 ---
+\setcounter{footnote}{0}%
+bygget paa Kundskab til Skriftens Sprog, til Bøgernes Historie, til de enkelte Forfatteres personlige Liv, Tidsforhold og Skjæbner.
+
+Skriften vil, saaledes betragtet, vise sig som bestaaende af meget uensartede Bøger, fra forskjellige Tider, som en ufuldstændig Samling af historiske Actstykker. Det vil vise sig, at der i den ikke findes nogen Overensstemmelse med Hensyn til det Speculative, der efter Prophetiens Natur maa være forskjelligt opfattet af de forskjellige Propheter; men kun med Hensyn til det Praktiske\footnote{Med det nye Testamente er Forholdet et noget andet end med det gamle, da hos Apostlene Aabenbaringens Element træder tilbage for den naturlige Erkjendelse; dog findes der ogsaa hos dem Uoverensstemmelser.}. Skriften kan kun kaldes \emph{hellig og guddommelig} fordi den har Hensyn til Fromhed og Religion; disse Betegnelser ere betingede ved den Brug, der gjøres af Sagen. »Nihil extra mentem absolute, sed tantum respective ad ipsam sacrum aut profanum aut impurum est.« \emph{»Guds Ord«} maa faae et langt mindre Omfang end Skriften, der kun kaldes Guds Ord fordi den indeholder det for Religionen Væsentlige. Medens Skriften er undergaaet mangfoldige Forandringer, er \emph{Guds Ord, der indeholdes i den, uforvansket.} Omfanget af »Guds Ord«, af Skriftens væsentlige Lære, maa bestemmes ved Skriftens Øiemed: at gjøre sig forstaaelig for alle Mennesker. Det kan altsaa ikke indbefatte subtile Speculationer, der kun ere tilgængelige for Faa, men kun de allersimpleste Ting, som endog den Allerenfoldigste kan fatte. Da den ikke vil lære Videnskab, saa fordrer den ikke Indsigt, men kun Lydighed (pag. 154), og da Lydighed mod Gud alene viser sig i Kjærlighed til Næsten, saa bliver Guds Ords væsentlige Indhold: at elske Gud over alle Ting og sin Næste som sig selv (pag. 151), samt de Sætninger, der med nødvendig Consequents følge heraf: »at Gud existerer, bærer Omsorg for Alle, at han er almægtig, at det efter hans Beslutning gaaer de Fromme godt, de Ugudelige
+% --- p. 156 ---
+\setcounter{footnote}{0}%
+ilde, og at vor Frelse alene er afhængig af hans Naade«, og endelig de almindelige moralske Forskrifter, der ere bestemtere Udtryk derfor\footnote{Tract. theol.-polit. pag. 151. jfr. pag. 63 og pag. 163 f.: De væsentlige Dogmer ere indeholdte i den Sætning: dari ens supremum, quod justitiam et caritatem amat, cuique omnes, ut salvi sint, obedire tenentur, eumque cultu justitiæ et caritate erga proximum adorare. Deri ligger: 1) Deum, hoc est ens supremum, summe justum et misericordem, sive veræ vitæ exemplar existere; 2) Eum esse unicum; 3) Eum ubique esse præsentem, vel omnia ipsi patere; 4) Ipsum in omnia supremum habere jus et dominium, nec aliquid jure coactum, sed ex absoluto beneplacito et singulari gratia facere; 5) Cultum Dei eiusque obedientiam in sola justitia et caritate sive amore erga proximum consistere; 6) Omnes, qui hoc vivendi ratione Deo obediunt, salvos tantum esse, reliquos autem, qui sub imperio voluptatum vivunt, perditos; 7) Denique Deum poenitentibus peccata condonare (ellers vilde nemlig Alle fortvivle, medens denne Tro bestyrker Kjærligheden til Gud). De forskjellige mulige Opfattelser af disse Sætninger have ingen Indflydelse paa Troen, naar de kun ikke indvirke skadeligt paa Handlingen. --- Det sees let, at der blandt de angivne Bestemmelser forekomme flere, hvilke Spinoza ellers forkaster
+% Scan reads "sem" (not a Danish word; differs from "som" by one letter --
+% JBIG2 symbol-matching scan, no sort-level claim possible per
+% BATCH-AGENT.md). Sense-reading "som" set, doubt logged.
+som anthropomorphistiske (f: Ex. Guds justitia og misericordia, jfr. pag. 50, 51, 158), og at Udtrykkene ere holdte saaledes, at hans egen Anskuelse kan lægges ind deri, saaledes f. Ex. ved Læren om Syndernes Forladelse.}. Skriften fordrer altsaa kun den Erkjendelse, der er nødvendig til Lydighed. Idet nemlig Mennesket paa dette Standpunkt betragtes som kun ledet ved Affecter, ikke ved Indsigt; faaer kun den Erkjendelse Betydning, der i Affecters Form kan paavirke Affecterne, altsaa kun saadanne Forestillinger om Gud, der directe kunne paavirke Menneskenes Handlemaade, f. Ex. Forestillingen om den guddommelige Retfærdighed og Kjærlighed, hvorimod Menneskene, med Hensyn til Erkjendelsen af Guds Væsen, saaledes som det er i sig, uden directe Hensyn til den menneskelige Handlen, kunne »sine scelere toto coelo errare« (pag. 157). Først Forholdet til Handlingerne giver Meningerne Charakteer af fromme eller ufromme:
+% Opening mark confirmed at 600 dpi: low double comma „ (not a guillemet).
+% This quotation opens „ on p. 156 and closes « on p. 157 (below) -- a
+% genuine mixed pair, the opposite direction from the two confirmed cases
+% at pp. 75-76 and note 1 p. 148 (which open » and close “). Third mixed
+% pair in the book; transcribed as printed, not "balanced".
+„saaledes at, hvis Nogen, ved at troe det Rette, bliver gjenstridig (contumax), saa har han i Virkeligheden en ugudelig Tro,
+% --- p. 157 ---
+\setcounter{footnote}{0}%
+hvis Nogen derimod, ved at troe det Falske, bliver lydig, saa har han en from Tro
+% Closing mark confirmed at 600 dpi: guillemet « (angled chevron, matching
+% the book's » set elsewhere on this page), not a curly “. Pairs with the
+% „ opening at the end of p. 156 above -- see comment there.
+«. Det, der fordres i Skriften, er den simple Tro: »At troe paa Gud, have Ærefrygt for ham, eller, hvad der er det Samme, at adlyde Gud« (pag. 160). Troen som objectiv bliver derfor ikke et Indbegreb af Dogmer, men den er intet Andet end »at have en saadan Forestilling (talia sentire) om Gud, at den ikke kan undværes for Lydigheden imod ham, og at omvendt, naar Lydigheden er givet, denne Forestilling maa blive en uadskillelig Følge.« (pag. 161). Den er altsaa ikke frelsende »per se«, men blot »ratione obedientiæ«, og den, der i Sandhed er lydig, har nødvendigviis en sand og saliggjørende Tro. Troen bedømmes \emph{alene} efter Gjerningerne, og fordrer ikke saameget sande som fromme (pia) Dogmer ɔ: saadanne, der bevæge Sindet til Lydighed (dog maa den, der vedkjender sig dem, ikke indsee, at de ere falske, thi da bliver Antagelsen af dem en Umulighed). Enhver har derfor ogsaa Ret til at fortolke Dogmerne saaledes som de meest blive egnede til at tilskynde ham til Lydighed.
+
+Efterat Troens Væsen saaledes er bestemt, kan nu Forholdet mellem den og Philosophien definitivt angives: \emph{»Philosophiens} Maal er intet andet end Sandheden, \emph{Troens} intet andet end Lydighed og Fromhed\footnote{Tract. theol.-polit. pag. 170: Ratio regnum veritatis et sapientiæ [est], theologia autem pietatis et obedientiæ; jfr. princ. phil. Cart. II. 13. schol.}. Philosophiens Grundlag er Almeenbegreberne (notiones communes), og den har sin Kilde i Naturen alene; Troens Grundlag derimod er Historien og Sproget, og dens Kilde er alene Skriften og Aabenbaringen« (tract. theol.-polit. pag. 165). Der er altsaa intet Fællesskab og intet Slægtskab mellem begge; de ere himmelvidt forskjellige. Troen gjør intet Indgreb i Friheden til at philosophere, den indrømmer Enhver Ret til at have hvilkesomhelst Meninger, og fordømmer kun dem som Kjættere og Schismatikere, der prædike Opsætsighed, Had, Kiv og Vrede, medens den kun regner dem for fromme,
+% --- p. 158 ---
+\setcounter{footnote}{0}%
+der efter deres Forstands Evner tilskynde til Retfærdighed og Kjærlighed. Ligesom Skriften ikke skal omfortolkes efter Fornuften, saaledes skal Fornuften ikke underordne sig under Skriften. Den Sætning, paa hvilken hele Theologien\footnote{Tract. theol.-polit. pag. 170: Theologien er liig med revelatio, quatenus indicat scopum, quem diximus Scripturam intendere (nempe rationem et modum obediendi, sive veræ pietatis et fidei dogmata), hoc est, id quod proprie vocatur Dei verbum.} hviler, at Menneskene kunne være salige alene ved Lydighed uden Erkjendelsen af Tingene\footnote{Hoc est, quod ad salutem sive beatitudinem satis sit, divina decreta tanquam jura sive mandata amplecti, nec opus sit, easdem ut æternas veritates concipere, non ratio, sed revelatio docere potest. --- Spinozæ Opera ed. Paulus I, S. 442).}, lader sig vel ikke bevise ved Fornuften og det naturlige Lys, der maa sætte Saligheden som Eet med Gudserkjendelsen. Consequent maatte den altsaa forkastes; thi Fornuften alene afgjør Sandheden (pag. 170), ogsaa med Hensyn til Forstaaelsen af Dogmerne. Men denne Consequents udtaler Spinoza ikke, han nøies med at give Præmisserne dertil. Derimod anfører han, hvad der kan give denne Lære en »moralsk Vished.« Det bliver væsentlig \emph{Propheternes Autoritet}, der grunder sig paa deres Læres moralske, med Fornuften stemmende Indhold, og som bringer os til at antage: »at de ikke svigefuldt, men med fuld Overbevisning (ex vero animo) have lært, at Menneskene blive salige ved Lydighed og Tro, og da de ovenikjøbet have bekræftet dette ved Tegn, saa overtales vi til at troe, at de ikke have sagt det letsindigt (temere), og ikke heller været afsindige da de propheterede.« Desuden indeholder ogsaa denne Lære, der kan antages uden Fare og Skade, en stor Trøst for dem, der ikke ere ret stærke i Fornuften (qui ratione non ita pollent). »Thi da ubetinget Alle kunne adlyde, medens der derimod, i Sammenligning med hele Menneskeslægten, kun ere faa, der erhverve sig en blot ved Fornuften ledet Dyd, saa vilde vi, hvis vi ikke havde dette Vidnesbyrd af Skriften, mistvivle om næsten Alles Frelse« (cap. XV. Slutningen). Man maa derfor ikke
+% --- p. 159 ---
+\setcounter{footnote}{0}%
+uden videre forkaste denne Lære fordi den ikke mathematisk kan bevises\footnote{Hvorledes Spinozas Yttringer om Saligheden ved Lydighed ere at forstaae, ligger umiddelbart i hans Lære om Affecterne og Imaginationen. I en af de sildigere tilføiede Noter til tract. theol.-polit. (jfr. Bruders Udgave III, S. 217) stiller han „Kjærligheden til Gud“, der er en Dyd, som med Nødvendighed er det Menneske iboende, der erkjender Gud, imod „Lydigheden“, der blot tager Hensyn til den Befalendes Villie, ikke til Tingens Nødvendighed og Sandhed. Den er altsaa betinget ved Imaginationens Opfattelse af de evige Sandheder som vilkaarlige Love: en Opfattelse, som Fornuften berigtiger, og idet den berigtiges, saa gaaer Lydigheden strax over til Kjærlighed, der følger med samme Nødvendighed af den sande Erkjendelse, som Lyset af Solen. „\emph{Ex rationis igitur ductu Deum quidem amare, sed non obedire ei possumus}“ jfr. tract. polit. II, 22.}.
+
+Af det,- der ved Capitlets Begyndelse blev udviklet angaaende Statens og Statsmagtens Ret, følger, idet det anvendes paa det Religiøse, at \emph{jus circa sacra} maa være hos Statsoverhovedet. Da Retfærdighed og Kjærlighed nemlig ikke ere de herskende Magter i Naturtilstanden, men kun blive det i Staten, saa kunne de først faae Retskraft ved Statens Ret, og dette er det Samme som: ved deres Beslutning, der have Retten til at herske. Men da Guds Rige alene bestaaer i Retfærdighedens og Kjærlighedens Ret (Lov), saa bliver Følgen atter, \emph{at Gud ikke har noget Rige uden gjennem dem, der have Herredømmet.} Dette fremgaaer ogsaa deraf, at Fornuften ikke begriber, at Gud som Fyrste og Lovgiver giver Menneskene Love (see ovenfor), idet altsaa de guddommelige Lærdomme ikke kunne faae Lovskraft umiddelbart fra Gud, men maae faae den middelbart gjennem dem, der have Ret til at herske og give Love, og Gud kun gjennem dem bliver Styrer og Hersker over de menneskelige Anliggender. Den guddommelige Ret maa altsaa afhænge af Statsmagtens Beslutning\footnote{Angaaende Omfanget af Statsmagtens Ret ligeoverfor Kirken jfr. tract. theol.-polit. pag. 221.}, og For-
+% --- p. 160 ---
+\setcounter{footnote}{0}%
+tolkningen deraf maa ligeledes tilkomme denne. Religionens ydre Gudsdyrkelse (cultus externus) og al Udøvelse af Fromheden maa rettes efter Statens Fred og Samdrægtighed. Uden Staten kan nemlig intet Godt bestaae, derfor maa Statens Vel være den høieste Lov; men hvad der er Statens Vel, kunne kun Statens Styrere afgjøre; deres Ret er det altsaa at bestemme, paa hvilken Maade Enhver skal udvise Fromhed (pietas) imod sin Næste, det vil sige: paa hvilken Maade Enhver er forpligtet til at adlyde Gud\footnote{Vi ere pligtige, at vise pietas mod Alle; Hensynet til det Almindelige bliver derfor bestemmende, men dette Hensyn tages af Statsoverhovedet.}. Undersaatternes Pligt er det, i denne Henseende ubetinget at adlyde Øvrighedens Befalinger, og dennes Ret begrændses kun ved Umulighed og Fornuftstridighed. »Selve Fromheden og den \emph{indre} Gudsdyrkelse,« (Ipsa pietas et Dei \emph{internus} cultus), bliver et Gebeet, Statsmagten ikke kan naae til\footnote{Den Enkeltes jus libere sentiendi de religione, libere judicandi, eandemque sibi explicandi et interpretandi, er uafhændelig (tract. theol.-polit. pag. 103; jfr. pag. 215. 225. Religionen som bestaaende i animi simplicitas og veracitas er nullius juris neque autoritatis publicæ. pag. 102. --- Friheden i de religiøse Meninger ligger forøvrigt allerede i Spinozas Opfattelse af Religionens Forhold til Imaginationen.}, men den kan heller ikke ville gjøre Indgreb deri, thi Statens og Fromhedens Øiemed er det samme: Kjærlighed (caritas) og Enighed (tract. theol.-polit. c. 16. 19. jfr. tract. polit. III, 10. VI, 40. VII, 26, VIII, 46 ff.).
+
+Af denne Statsmagten tilkommende Ret og af Religionens Væsen bliver nu atter Følgen, at det vil være farligt for Staten og for selve Religionen naar Geistligheden faaer Lov til at decretere Love og Dogmer, at henføre det rent Speculative til den guddommelige Ret, og at give Love om disputable Meninger. (Dette paavises i Cap. 18 ved Exempler fra Jødernes Historie). I denne Retning kan derfor \emph{Videnskaben} fordre Statens Beskyttelse mod geistlige Anmasselser. Og Staten maa overhovedet respectere \emph{Tænke\-%
+% --- p. 161 ---
+\setcounter{footnote}{0}%
+friheden}, da Retten til at tænke er uafhændelig\footnote{Tract. theol.-polit. pag. 231: Omnes homines non possunt eadem sentire. --- pag. 227: Fieri non potest, ut omnes æque eadem sentiant et uno ore loquantur.}, \emph{ligeledes Friheden til at udtale sine Tanker,} der er saa dybt begrundet i den menneskelige Natur, at den ikke kan berøves Menneskene. Dog kan Talefriheden forsaavidt begrændses som den umiddelbart indeslutter en Handling eller har en fjendtlig Tendents imod Statsmagten (pag. 227. 228). Men ethvert uberettiget Forsøg paa at undertrykke Tænke- og Talefrihed maa blive frugtesløst og tillige farligt for Statsmagten selv og skadeligt for Moraliteten og den offentlige Ro, idet det vil fremkalde Troløshed, Hykleri, Opsætsighed, Splid og Statens Tilbagegang i aandelig Henseende. Statens Øiemed er jo ogsaa netop, ikke at kue, men at befrie fra Frygt, at gjøre den fornuftige Udvikling eller Friheden mulig: finis reipublicæ revera \emph{libertas est.} Den bedste Stat maa derfor indrømme Enhver den samme Frihed til at philosophere som Troen indrømmer Enhver (pag. 229). Og at den Tænkefrihed, der fordres, er mulig uden Skade for det almindelige Vel, og at Øvrighedens Anseelse er tilstrækkelig til at forebygge Misbrug, viser Spinoza ved et Exempel fra sit Fædreland, ved Byen Amsterdams Exempel, hvor de forskjellige Secter og Nationer leve sammen i Enighed og Fred. Han kan da slutte Afhandlingen med det Resultat: »Intet er til større Betryggelse for Staten end at Fromheden og Religionen \emph{alene} sættes i Udøvelsen af Kjærlighed og Billighed, og at Statsmagtens Ret baade med Hensyn til det Hellige og det Verdslige kun udstrækkes til Handlingerne, saa at det forresten indrømmes Enhver at tænke hvad han vil, og at udtale hvad han tænker« (pag. 233, jfr. Fortalen).
+
+% The closing rule for Syvende Capitel reads as a DOUBLE rule at 600 dpi
+% (cf. the double rule at p. 43, 64, 82, 108, 132; contrast the single
+% rule closing Tredie Capitel). Markup below follows BATCH-AGENT.md's
+% fixed template regardless of single/double, per the convention used
+% at the Cap. 4/5 boundary.
+\bigskip
+\begin{center}\rule{2.5cm}{0.4pt}\end{center}
+\bigskip
 
 \newpage
 
@@ -4537,19 +5804,794 @@ selve Dyden og Af\-%
 \textbf{Menneskets Frihed og Evighed.}
 \end{center}
 
-% [text to be added: pp. 162--170]
+% --- p. 162 ---
+I 6te Capitel blev, gjennem Læren om Affecterne og
+deres Magt over Mennesket, Menneskets Trældomstilstand
+udviklet. Gjennem Bestemmelsen af Fornuftens Forhold til
+Affecterne og disses ved dette Forhold betingede Opfattelse
+som gode og onde førtes der hen til Modsætningen mellem
+den Fries og Trællens (den Vises og den Uvidendes) Begreb;
+men denne Modsætning holdtes endnu som relativ, indenfor
+et Mere og et Mindre. Den samme Relativitet blev tilbage
+ved Læren om Samfundsforholdet og om Religionen, om end
+dens Ophævelse laae som en simpel Consequents i de givne
+Antydninger. Der staaer nu tilbage, afgjørende at bestemme
+hvad der tidligere kun antydedes: Begrebet om den menneskelige
+\emph{Frihed}; men foreløbig faaer Udviklingen af dette Begreb
+atter Formen af en Lære om \emph{Befrielsen}; netop fordi Udgangspunktet
+oprindelig er taget fra det som enkelt, endelig modus
+forestillede Menneske, der beherskes af Affecterne. Ud fra
+selve det som endeligt Opfattede skal Muligheden af Endelighedens,
+Begrændsningens, Overvindelse paavises; men denne
+Overvindelse kan kun blive partiel: det Endeliges i det
+Uendelige gaaende Tilnærmelse til det Uendelige. Men gjennem
+Betragtningen af Fornuften, af Aandens Væsen bryder da
+den sande Opfattelse frem: Begrændsningen%
+% p.162: image reads "Begrændssingen" (ss, no n) -- not a word; the same
+% root is correctly printed "Begrændsningens" three lines above. JBIG2 scan
+% (single-sort confusion, see header §6 / JBIG2-TEST.md); sense-reading set,
+% not logged as a printer's defect.
+ og Tiden forsvinder; Evigheden som værende opsluger Tidens Vorden i sig.
 
+Paa dette Punkt vil det være nødvendigt, nøie at agte
+paa de Antydninger til den rette Opfattelse, der ere givne
+hos Spinoza. Netop her, hvor han stærkest støder sammen
+med den almindelige Bevidsthed, maa han udtrykke sig tillæmpende,
+og ligesom tilsløre sin Anskuelse.
 
+Af Udviklingen af Affecternes Væsen som passive fulgte
+det, at de havde deres Oprindelse fra de forvirrede og uklare
+Ideer. Ved dem var Aanden lidende, medens den er hand\-%
+% --- p. 163 ---
+\setcounter{footnote}{0}%
+lende som frembringende klare og tydelige. Disse sidste
+maae altsaa blive det væsentligste Middel mod Affecterne\footnote{Ligesom der ved Udviklingen af den menneskelige Trældom blev
+gaaet ud fra Legemet, saaledes gaaes der, ved Udviklingen af Friheden,
+ud fra Aanden. Uvilkaarlig røber sig en Dualisme.}
+idet de selv virke som \emph{active} Affecter. Affecten, der er
+en Liden, ophører at være dette saasnart vi danne os en
+klar og tydelig Idee om den; thi den er kun Liden som
+forvirret Idee, og den Idee, vi danne os om den, er ikke
+forskjellig fra selve Affecten forsaavidt denne henføres til
+Aanden alene (Eth. V. 3). Men da der i alle Ting er noget
+Fælles, og det Fælles kun kan opfattes adæquat, saa gives
+der ingen Affection af Legemet, om hvilken vi jo kunne
+danne os en eller anden klar og tydelig Idee, saa at det
+altsaa staaer i Enhvers Magt, idetmindste deelviis at skaffe
+sig Herredømmet over Affecterne. Idet Affecten bliver Gjenstand
+for en klar og tydelig Erkjendelse, bliver Aanden,
+naar den afficeres ved den, bestemt til at tænke det, som
+den opfatter klart og tydeligt, og hvori den fuldkommen
+hviler; og selve Affecten sondres, opfattet saaledes, fra
+Tanken om den ydre Aarsag (idet ved Tanken om det
+Fælles Begrændsningens Adskillelse er hævet) og forbindes
+med sande Tanker. Ved denne Adskillelse ophører ikke
+blot den lidenskabelige Kjærlighed og det lidenskabelige
+Had (jfr. disses Definitioner); men de Attraaer, der pleie
+at opstaae af disse Affecter, forhindres, ved at blive fornuftige,
+i at stige til Overmaal. Det er nemlig den samme
+Attraa, ved hvilken Menneskene siges at handle og lide;
+saaledes er ambitio og pietas den samme Attraa efter at
+Menneskene skulle leve efter vort Sind; men hiin er ufornuftig,
+denne fornuftig, idet hiin er opstaaet af uadæquate,
+denne af adæquate Ideer (Eth. V, 4 schol.).
+
+Den adæquate Erkjendelse af Affecten er altsaa det
+væsentligste Middel imod denne som Liden. Idet den opfatter
+det Fælles, ophæver den, som vi saae, Forestillingen
+om den ydre, enkelte Aarsag, og befrier os fra det liden\-%
+% --- p. 164 ---
+\setcounter{footnote}{0}%
+skabelige Forhold til denne; men tillige bevirker den, idet
+vi ved den opfatte Tingene som \emph{nødvendige}, at vi afficeres
+mindre af dem end om vi opfattede dem som frie
+(Eth. V, 5); og derved at den opfatter det altid nærværende
+og altid lige Fælles, blive de active Affecter, der fremgaae
+af den, med Hensyn til Tidsvarigheden stærkere end de,
+der referere sig til enkelte Ting, som kunne betragtes som
+ikke-nærværende; de Aarsager, der fremkalde dem, blive
+mangfoldigere, og ved deres Samvirken stærkere. Og idet
+Aanden, saalænge den ikke kæmper med Affecter, der ere
+vor Natur modsatte ɔ: der forhindre Aanden i at begribe,
+har Magt til, som activ Tankemodus, at danne klare og
+tydelige Ideer, og at udlede andre deraf, --- hvormed det,
+paa Grund af Aandens og Legemets Parallelisme, følger, at
+Legemets Affectioner samtidig sammenknyttes efter Fornuftens
+Orden\footnote{Spinoza nødes ved Antagelsen af denne Parallelisme, idet han statuerer
+en legemlig Affection, der svarer til Aandens adæquate Idee,
+til at statuere en Imagination, der har samme Gjenstand som Forstanden
+(Eth. V, 1. 12. dem.), og saaledes kun uegentlig kan beholde
+hint Navn (jfr. Eth. II, 17 schol.).} --- saa faaer den herved en større Modstandskraft
+mod de lidende Tilstande, der ikke saa let kunne
+forstyrre det fornuftigt Sammenkjædede som det Usikkre
+og Vage.
+
+Idet Alt, hvad vi begribe klart og tydeligt, føres tilbage
+til Gud, og idet der i hver Affect er Noget, der kan begribes
+saaledes, kan Aanden føre enhver Affect tilbage til
+ham. Men idet Mennesket begriber sig selv og sine Affecter
+klart og tydeligt, \emph{elsker det Gud}, og det i desto
+høiere Grad jo mere omfattende Erkjendelsen er (Eth. V,
+14 f.). Kjærligheden opstaaer idet Ideen om Gud ledsager
+den tydelige Idee (jfr. Definitionen paa Kjærligheden). Den
+maa, fremfor alt Andet, optage Aanden, da den fremkaldes
+ved enhver Affection. Hade Gud kan Ingen; thi da Gudsideen
+i os er klar og tydelig, saa \emph{handle} vi idet vi have
+% --- p. 165 ---
+\setcounter{footnote}{0}%
+den, og følgelig kan ingen Sorgens Affect opstaae deraf\footnote{Gud kan ikke engang siges, forsaavidt han er Tingenes Aarsag, at
+være Aarsag til Sorg naar de afficere os; thi forsaavidt vi begribe
+Sorgens Aarsag, ophører den at være en lidende Tilstand ɔ: ophører
+den at være Sorg, og forsaavidt vi altsaa begribe Gud som Sorgens
+Aarsag, føle vi Glæde (Eth. V, 18. schol.).}. Den kan, som det for
+alle Mennesker fælles høieste Gode,
+ikke heller besmittes ved Misundelsens eller Skinsygens Affect,
+men styrkes bestandig mere jo flere Mennesker vi
+forestille os som forenede med Gud ved det samme Kjærlighedens
+Baand. Der gives ingen Affect, der er den directe
+modsat og som kan tilintetgjøre den; \emph{den er derfor den bestandigste af alle Affecterne},
+og forsaavidt den
+refereres til Legemet (quatenus ad corpus refertur), kan den
+ikke tilintetgjøres uden med selve Legemet (Eth. V, 20.
+schol.). Da dens Gjenstand er uforanderlig og evig, og i
+Sandhed i vor Magt, saa faaer den selv Gjenstandens Uforanderlighed\footnote{jfr. de intell. emend. pag. 357 f.}, kan bestandig blive stærkere, mere og mere
+fortrænge de passive Affecter og udfylde Aandens største
+Deel.
+
+Endnu paa dette Punkt altsaa, hvor Spinoza har bragt
+Kjærligheden til Gud frem som den stærkeste og uforanderligste
+Affect, ligeoverfor hvilken ingen modsat Affect kan
+bestaae, bliver Mennesket dog endnu sat som ikke fuldkommen
+befriet fra Affecterne\footnote{Heri ligger den samme Modsigelse som der fremkom i Læren om
+Erkjendelsen og om Affecterne ved Opfattelsen af Mennesket som
+abstract endeligt.}; men kun som indskrænkende
+disse til et lille Omraade; og Forskjellen mellem den Frie
+og Trællen bliver endnu quantitativ bestemmelig ved det
+forskjellige Forhold mellem de adæquate og uadæquate Ideer,
+af hvilke hvers Aand bestaaer. Denne Standsen i en Tilnærmelse
+har, som allerede berørt, sin Grund i det tagne
+Udgangspunkt; men i Begrebet om Erkjendelsen af Gud og
+Kjærligheden til Gud er der givet et Synspunkt, fra hvilket
+dette Udgangspunkt forsvinder, og den for Spinozas Grund\-%
+% --- p. 166 ---
+\setcounter{footnote}{0}%
+anskuelse consequente Opfattelse kommer frem. Denne
+fremstiller Spinoza ved Slutningen af sin Ethik; men deels
+saaledes, at han i Udtrykkene læmper sig efter den almindelige
+Forestilling, deels saaledes, at han ved Slutningen
+atter tilføier Bestemmelser, der væsentligen angaae den relative,
+blot quantitative Modsætning.
+
+Han danner Overgangen fra Læren om Midlerne mod
+Affecterne til de nye Udviklinger ved de Ord (Eth. V, 20.
+schol.), at han nu har afsluttet hvad der angaaer \emph{det nærværende
+Liv} (vitam præsentem), og at det nu er Tiden
+til at gaae over til det, der henhører til Aandens Vedvaren
+(durationem) uden Hensyn til Legemet\footnote{jfr, Eth. V, 40. schol.: de mente, quatenus sine relatione ad corporis existentiam consideratur.}. Ved Udtrykket:
+»det nærværende Liv« er Forholdet til Imaginationen antydet,
+idet Tidsbestemmelserne kun have Betydning for
+denne. Ved Udtrykket \emph{duratio} er det antydet, at Talen
+om Aanden uden Relation til Legemet\footnote{Eth. V, 23: Mens humana non potest cum corpore absolute destrui,
+sed ejus aliquid remanet, quod æternum est.} er accommoderende,
+thi vi tilskrive ikke den menneskelige Aand en Vedvaren
+(duratio), der kan bestemmes ved Tid uden forsaavidt den
+udtrykker Legemets actuelle Existents ɔ: ipsi durationem
+non tribuimus nisi durante corpore (Eth. V, 23. demonst.);
+og det er efter Spinozas Grundopfattelse ligesaa%
+% p.166: image reads "llgesaa" (double l, no i) -- not a word; JBIG2 scan
+% (single-sort confusion, see header §6 / JBIG2-TEST.md); sense-reading
+% "ligesaa" set, not logged as a printer's defect.
+ umuligt,
+at tænke en Aand uden Legeme, som et Legeme uden
+Aand (jfr. Ep. 58). Hvad der derfor udvikles under en Tilknytning
+til Forestillingen om Sjælens Udødelighed, er en
+\emph{Udvikling af Aandens sande, evige Væsen som det
+under Evighedens Form opfattede Legemes Idee.}
+
+Aandens høieste Dyd ɔ: dens væsentlige Natur (V,
+25. dem.), og derfor dens høieste \emph{Stræben}, er at begribe
+Tingene ved den »tredie Erkjendelsesart«, \emph{den intuitive}
+% p.166: letterspacing covers only "den intuitive" -- the noun "Viden"
+% beginning the next line is set in plain roman, as printed; not regularised
+% (cf. BATCH-AGENT.md's p.71 "natura naturans" case).
+Viden, der skrider frem fra den adæquate Erkjendelse
+af Guds Attributer til den adæquate Erkjendelse af Tingenes
+Væsen. Denne Erkjendelse af Tingene er \emph{directe} Er\-%
+% --- p. 167 ---
+\setcounter{footnote}{0}%
+kjendelse af Gud; thi ved den erkjendes de i deres Enhed
+med ham (Eth. V, 24, jfr. Eth. II, 45. schol., tract. theol.-
+polit. pag. 46 f.). Den udtrykker fuldkomnest det menneskelige
+Væsen i dets Activitet, den er altsaa Kilden til den
+høieste acquiescentia ɔ: den høieste Glæde, ledsaget af
+Ideen om sig og sin Dyd. Men idet denne Erkjendelsesart%
+% p.167: image reads "Erkjendelsdsart" (d for e) -- not a word; JBIG2 scan
+% (single-sort confusion, see header §6 / JBIG2-TEST.md); sense-reading
+% "Erkjendelsesart" set (cf. the correctly-printed occurrences of the same
+% word elsewhere on this and the facing page), not logged as a printer's
+% defect.
+begriber Tingene i Gud, ledsages Glæden nødvendigviis af
+Ideen om Gud som Aarsag, og derved opstaaer \emph{amor Dei
+intellectualis} ɔ: en Kjærlighed til Gud, ikke forsaavidt
+vi gjennem Imaginationen forestille os ham som nærværende;
+men forsaavidt vi ved Fornuften (intellectus) begribe, at han
+er evig (Eth. V, 32. schol.).
+
+Men paa dette Punkt falder der, gjennem den høieste
+Erkjendelses Væsen, og gjennem den intellectuelle Kjærlighed
+til det Evige, et Lys tilbage paa den foregaaende Udvikling.
+Den tredie Erkjendelsesart kan nemlig vel opstaae
+af den anden, hvis Ideer ogsaa ere sande og adæquate,
+men ikke af den første, Imaginationen, med dens ufuldstændige
+og forvirrede Ideer\footnote{Benægtelsen af denne Overgang fra den uadæquate til den adæquate
+Erkjendelse ɔ: fra Aandens Væren som endelig til dens Enhed med
+det Uendelige, er den nødvendige Parallel til Benægtelsen af Overgangen
+fra Substantsens Uendelighed til existerende endelige Ting
+(jfr. Cap. 2).}. Men kun for den første
+Erkjendelsesart har Tiden Betydning; den adæquate Erkjendelse
+er i Evighedens Form; for den bliver Tiden et
+Uvirkeligt, Forsvindende. Den tredie Erkjendelsesart har sin
+adæquate (formale) Grund i \emph{Aanden som evig} ɔ: i Aanden,
+forsaavidt den udtrykker Legemets Væsen under Evighedens
+Form, ikke forsaavidt den udtrykker Legemets nærværende,
+actuelle Existents, der er Betingelsen for Imaginationen og
+for Opfattelsen af Tingene i Relation til Tid og Varighed.
+Men idet Aarsagen, Aanden, er evig, maa Virkningen, den
+intuitive Erkjendelse, nødvendigviis ogsaa være det; den er
+en evig logisk Følge af Aandens Natur (Eth. V, 33. schol.).
+
+At Aanden er \emph{evig}, følger deraf, at der i Gud, som
+Aarsag, ikke blot til det menneskelige Legemes Existents,
+% --- p. 168 ---
+\setcounter{footnote}{0}%
+men ogsaa til dets Væsen, --- hvilket derfor med evig Nødvendighed
+maa erkjendes ved selve Guds Væsen, --- maa
+gives en Idee, der udtrykker det menneskelige Legemes
+Væsen under Evighedens Form. Men da den menneskelige
+Aand er Ideen om det menneskelige Legeme, maa hiin Idee
+henhøre til Aandens Væsen, der saaledes bliver evigt. Denne
+Aandens Evighed kan, da Evighed ikke har noget Forhold
+til Tid, ikke være Gjenstand for en Erindring; men vi have
+dog Bevidstheden derom; thi »Aandens Øine, ved hvilke den
+seer og iagttager Tingene, ere selve Beviserne« (Eth. V,
+23. schol., jfr. 34. schol.). Erindringen og alle Imaginationens
+Bestemmelser ere knyttede til Legemets Vedvaren
+(duratio); men Aanden udtrykker ikke blot Legemet som actuelt,
+forsaavidt den opfatter det i Relation til Tid og Sted,
+men ogsaa forsaavidt den begriber det som indbefattet i
+Gud og følgende af den guddommelige Naturs Nødvendighed\footnote{jfr. Eth. V, 36. schol.: quia nostræ mentis essentia in sola cognitione consistit, cuius principium et fundamentum Deus est, hinc
+perspicuum nobis fit, quomodo et qua ratione mens nostra secundum essentiam et existentiam ex natura divina sequatur, et continuo a Deo pendeat.}, altsaa forsaavidt den begriber det som reelt, som
+havende Existents ved Guds evige Væsen ɔ: \emph{som evigt}
+(Eth. V, 29. schol. 30. dem.). Saaledes bestemt er Aanden
+en evig Tankemodus (æternus cogitandi modus), der bestemmes
+ved en anden evig Tankemodus, medens denne
+atter bestemmes ved en anden og saaledes i det Uendelige,
+saaledes at alle i Enhed (simul) constituere Guds evige
+og uendelige intellectus«%
+% p.168: closing « after "intellectus" has no matching opening » anywhere
+% in this sentence or the preceding one; kept as printed (structural
+% defect -- an opening » appears to be missing from the compositor's
+% setting of this Ethics quotation). Affects the whole-file »« ledger.
+ (Eth. V, 40. schol.).
+
+Idet Aanden og den høieste Erkjendelsesform er evig,
+\emph{ikke vorder} (V, 31. schol.), saa maa ogsaa \emph{den intellectuelle}
+Kjærlighed til Gud være evig, og den maa
+være den eneste evige Kjærlighed. Den er selve Guds
+Kjærlighed, med hvilken Gud elsker sig selv (Gud elsker
+sig selv idet han som uendelig er i Besiddelse%
+% p.168: image reads "Besiddclse" (c for e) -- not a word; JBIG2 scan
+% (single-sort confusion, see header §6 / JBIG2-TEST.md); sense-reading
+% "Besiddelse" set, not logged as a printer's defect.
+ af en uendelig
+Fuldkommenhed, ledsaget af Ideen om sig selv som
+% --- p. 169 ---
+\setcounter{footnote}{0}%
+causa sui, V, 35. dem.), ikke som uendelig, men forsaavidt
+han bestemmes ved den menneskelige Aands Væsen betragtet
+under Evighedens Form, eller, med andre Ord:
+Aandens intellectuelle Kjærlighed til Gud er en Deel af den
+uendelige Kjærlighed, med hvilken Gud elsker sig selv (V,
+36). Forsaavidt Gud altsaa elsker sig selv, elsker
+han Menneskene, og Guds Kjærlighed til Menneskene og
+Aandens intellectuelle Kjærlighed til Gud er Eet og det
+Samme%
+% p.169: image reads "Sanime" (ni for m) -- not a word; JBIG2 scan
+% (single-sort confusion, m/ni pattern, cf. header §6 / JBIG2-TEST.md
+% "Egoisinen" for "Egoismen"); sense-reading "Samme" set, not logged as
+% a printer's defect.
+\footnote{Naar det i prop. 17 benægtes, at Gud i egentlig Forstand elsker,
+saa gjælder denne Benægtelse Kjærligheden som passio, og naar den
+opfattes saaledes, bliver det usandt at fordre Gjenkjærlighed af Gud
+(V, 19). Men i den intellectuelle Kjærlighed er Aanden i Enhed
+med Gud, forholder sig ikke til ham som en Anden, den er derfor
+Eet med Guds umiddelbare Vished om sin uendelige active Væren,
+og Udtrykket Kjærlighed betegner et qualitativt Andet end paa
+hint Sted.}. Idet den med Nødvendighed følger af Aandens
+Væsen, forsaavidt den betragtes som en evig Følge af Guds
+Natur, saa kan der ikke gives Noget, der er den modsat,
+eller som kan ophæve den; thi noget Saadant vilde være
+en Modsætning til det Sande, og, idet det fik Magt over
+dette, gjøre det til det Falske\footnote{Forholdet er altsaa her et andet end med Hensyn til de enkelte
+Ting, der betragtes med Relation til en vis Tid og et vist Sted; thi
+om disse gjælder, ifølge Quantitetens Natur, det Axiom, at der i
+Naturen ikke gives nogen enkelt Ting uden at der jo gives en anden,
+der er mægtigere og stærkere, og af hvilken hiin kan tilintetgjøres.
+Men Opfattelsen af Tingene som enkelte er paa dette Punkt
+forladt.}.
+
+Den intellectuelle Kjærlighed er, som Aandens høieste
+Udtryk, vor \emph{Frihed}\footnote{Frihed forudsætter Existents ved sig selv (Eth. I, defin. 7, jfr. I,
+17. Coroll.), altsaa Enhed af Væsen og Existents, Substantsens
+Grundbestemmelse. Idet der tillægges Aanden Frihed, er den altsaa
+seet i Enhed med Substantsen, saa at dennes Bestemmelse umiddelbart
+kan overføres paa den.} (V., 36. schol.) og vor \emph{Salighed}
+(beatitudo). Salighed udtrykker ikke en Overgang til en
+større Fuldkommenhed, men en evig Besiddelse af Fuldkommenheden
+(Eth. V. 33. schol.). Den er Eet med selve
+% --- p. 170 ---
+Dyden, ikke en Belønning for denne; kun i selve den active
+Magt, Saligheden udtrykker, bestaaer vor Dyd ɔ: vor active
+Evne (Eth. V, 42).
+
+Paa dette Punkt er den spinozistiske Ethik og det spinozistiske
+System afsluttet. Gjennem den tilsyneladende
+Vorden i Tiden, gjennem Forestillingen om de enkelte endelige
+Ting, ere vi vendte tilbage til Tanken om den ene,
+uendelige, evige Væren, \emph{der er, og ikke vorder}, der, som
+sin egen Aarsag, sætter sig selv i sin indre Fylde af evige
+modi. Den samme Anskuelse, der dannede sig for Aanden
+ved Opfattelsen af den uendelige Udstrækning, der gjennem
+Bevægelsens og Hvilens Love uendeligt modificeret evig var
+sig selv liig, træder ogsaa frem her paa Aandens Gebeet.
+Den evige Tænkning, der er Substantsens active Væsen, er,
+som uendeligt modificeret ved Ideerne, evigt sig selv liig.
+Hvad der er Begrændsning og Negation, er evigt forsvundet;
+de ufuldstændige, uadæquate Ideer ere, seete fra dette Synspunkt,
+sande og adæquate, og beherskede af samme Nødvendighedens
+evige Lov. Kun det Evige er, og i det Eviges
+Lys forsvinder det, der viste sig i Tidens Form, og det
+forsvinder, ikke som Noget, der har været; men dets Væren
+er dets Forsvinden. Den menneskelige Aand er efter sit
+positive Væsen, intellectus, i Enhed med Substantsen, omsluttet
+af Guds evige Idee, af den intellectuelle Kjærlighed,
+med hvilken han elsker sig selv.
+
+Fra dette Synspunkt maae de Sætninger forstaaes, som
+Spinoza, atter tilnærmende sig Forestillingens (Imaginationens)
+Opfattelse, tilføier ved Slutningen af sin Ethik (V, 38. ff.).
+I disse bestemmes Aanden endnu som en \emph{Sammensætning}
+af adæquate og uadæquate Ideer; Fornuften indtager
+i den Pladsen \emph{ved Siden} af Imaginationen; det Evige i
+Aanden bliver en større eller mindre \emph{Deel}; det, som Døden
+ikke kan berøre, sammenlignes, som det \emph{mere} Fuldkomne,
+med det Forgængelige, og Modsætningen mellem den Vise
+og den Uvidende (prop. 42. schol.) taber sin Ubetingethed
+ved begrændsende Bestemmelser. Men i Spinozas Sætning:
+at det Evige ingen Relation har til det Endelige, er Cor
 % =====================================================================
 %  NIENDE CAPITEL  (printed pp. 171--180 = PDF 181--190)
 %  Opens PART WAY DOWN p. 171, so no \chapter* here -- the head is emitted
 %  inline inside the fragment below (BATCH-AGENT.md §Heads). The Indhold's
 %  `171' for this chapter is the damaged sort noted above.
 % =====================================================================
+% --- p. 171 ---
+rectivet givet for hiin Deling af Aanden; det, der kaldes
+Aandens \emph{bedre Deel}: Intelligentsen (Eth. IV, App. c. 32),
+bliver det ene Virkelige og Active i den (V, 40. Coroll.),
+og den quantitative Sammenligning afvises (sammesteds).
+Og idet den Vise sættes som »sui et Dei et rerum \emph{æterna}
+quadam \emph{necessitate} conscius,« er Overgangen og Gradforskjellen
+atter hævet, den evige Væren hævdet, og Systemets Ende sluttet
+sammen med dets Begyndelse.
+% partial letterspacing, printed exactly so: "æterna" and "necessitate"
+% spaced, "quadam" between them and "sui et Dei et rerum" before are
+% plain roman -- transcribed as printed, cf. p. 71 "naturana naturans"
+% convention (BATCH-AGENT.md).
 
-% [text to be added: pp. 171--180]
+\bigskip
+\begin{center}\rule{2.5cm}{0.4pt}\end{center}   % rule closing Ottende Capitel -- printed DOUBLE, set single by edition convention
+\bigskip
 
+\begin{center}
+{\large\textbf{Niende Capitel.}}\\[4pt]
+\textbf{Charakteristik og Kritik af Spinozismen.}\\[6pt]
+\rule{2cm}{0.4pt}
+\end{center}
+\addcontentsline{toc}{chapter}{Niende Capitel. Charakteristik og Kritik af Spinozismen}
+\markboth{Charakteristik og Kritik af Spinozismen}{Charakteristik og Kritik af Spinozismen}
+\bigskip
 
+Gjennem det i de foregaaende Afsnit Udviklede ere
+Momenterne givne til den fuldstændige Bestemmelse af Spinozismens
+eiendommelige Charakteer. For at fastsætte denne
+maa der gaaes ud fra hvad der var Systemets væsentlige
+Opgave, dets indre Drivefjeder, der aldrig ophører at virke
+selv hvor i Gjennemførelsen uensartede Elementer trænge
+sig ind. Hvad der er Afvigelse fra Grundtanken, bliver ikke
+Gjenstand for Charakteristiken af Systemet, men for Kritiken
+af det.
+
+Vi saae, at Grundtanken var Substantsens Begreb i dets
+Uendelighed, at Tænkningens Opgave var at see den som al
+Virkelighed, at dens indre tilskyndende Attraa var, energisk
+at fastholde Uendelighedens Tanke, som omsluttende
+Alt. Al Virkelighed er \textit{i} Substantsen, Substantsen er al
+% CONFIRMED italic on verification pass (EMPHASIS-171-188.md Job 1), not
+% plain roman: 600 dpi crops at 1000% show a genuine italic sort -- curved
+% calligraphic stem, hooked/curled foot, slanted axis -- categorically
+% different from every roman "i" on this page (cf. "Virkelighed",
+% "indre", "tilskyndende" two lines above, all upright straight-stemmed).
+% Calibrated against the book's only other italic, the Greek on p. 63,
+% which is also a distinct slanted/cursive fount against the roman body.
+% Both OCR witnesses garble it (tesseract reads "Z"), consistent with an
+% atypical glyph shape. This is a second, sole exception to the book's
+% letterspacing-only emphasis convention: a single-letter word cannot be
+% letterspaced for emphasis, so italic is the compositor's only device
+% here, just as for the non-Latin Greek alphabet on p. 63.
+Virkelighed, det er Systemets Grundtanke, og ved den er
+det bestemt som \emph{pantheistisk}. Men denne Bestemmelse
+skiller det endnu ikke fra mange andre Systemer af helt
+forskjellig Oprindelse, den bliver kun en Fællesbetegnelse,
+der maa modtage sin Artforskjel. Denne er givet ved det
+i Forholdet mellem de to Attributer satte Nødvendigheds\-%
+% --- p. 172 ---
+begreb som Formen for Substantsens Væren. Vi saae, at
+Substantsbegrebet havde sin Oprindelse fra Begrebet om det
+tænkende Jeg; det var, efter sin Herkomst, Tankens objectiverede
+uendelige Væsen. Men vi saae tillige, at Tanken,
+der havde sondret Naturen ud fra sig som sin Modsætning,
+og som, idet den bestemte denne abstract som sin Modsætning,
+ikke havde anden Bestemmelse for den end Udstrækningens
+abstracte Begreb, maatte søge sit Indhold i
+Naturen, og idet den i Substantsens Enhed atter sattes i
+Enhed, men kun i \emph{Parallelismens} Enhed, med denne,
+saa maatte den abstract opfattede Naturs Lov, Nødvendighedens
+Lov, blive Tankens Form, og som Tankens Form
+tillige Formen for Tankens objectiverede uendelige Væsen.
+Om altsaa ogsaa Udgangspunktet oprindelig er taget fra
+Selvbevidstheden, bliver Formen for Substantsens Væren
+\emph{ikke Selvbevidsthedens Synthese, men Causalitetens
+umiddelbare Selv-Vished i dens Nødvendighed}. Idet Substantsen,
+causa sui, af Tanken opfattes i hele
+den Rigdom af Bestemmelser, der med evig Nødvendighed,
+i uendelige Modificationer, følge tidløst af dens Væsen, er
+Formen for denne evige Udfoldelse, der ikke skilles fra sin
+Kilde, Nødvendighedens Lov. Substantsen er nødvendig
+Aarsag til nødvendige Virkninger, ikke frit Ophav til
+frit satte Øiemed, og idet Virkningerne i Forestillingen
+sondres fra deres Aarsag, bliver deres uendelige Række behersket
+af den ydre Nødvendigheds tvingende Lov.
+
+Systemets pantheistiske Grundcharakteer faaer herved
+en nærmere Individualisering. \emph{Det uendeligt Værende}
+bliver den, i sin Enhed med Tanken umiddel\emph{bart selvvisse,
+nødvendige Naturmagt}. »Gud eller Naturen« udtrykker
+dette Begreb.
+% partial letterspacing, printed exactly so: within "umiddelbart" only
+% the second half "bart" is spaced (the "umiddel-" line-end portion is
+% plain roman), and the run continues spaced through "selvvisse,
+% nødvendige Naturmagt" -- confirmed at 600 dpi, not a justification
+% artifact (the following quoted »Gud eller Naturen« on the same line
+% is plain roman). Cf. p. 71 "naturana naturans" convention.
+
+Men ved denne Bestemmelse af Substantsen er den
+menneskelige Tankes Forhold til den givet, og gjennem
+Tænkningens derved betingede Charakteer bestemmes Systemets
+Charakteer atter nærmere. Tanken er i Substantsen
+med umiddelbar Vished, der gjenfinder sit Væsen i denne.
+Idet Begrændsningen kun er et Negativt, er enhver virkelig
+% --- p. 173 ---
+Adskillelse hævet, enhver Skepsis udelukket med Hensyn
+til det Uendelige. Det Uendelige er den menneskelige
+Tankes første Tanke, dens oprindelige Vished om sig selv.
+Og i det Uendelige er den i Enhed med sin Modsætning:
+Udstrækningen. Som Udtryk for den samme Substants gaae
+de to Attributers Modi parallele; en Skepsis med Hensyn
+til Naturen er herved hævet. I denne umiddelbare Vished
+og Sikkerhed ligger Systemets Charakteer som \emph{Dogmatisme}.
+Tanken kan ikke vende sig kritisk mod sig selv;
+thi den har intet for sig bestaaende Selv: den er kun i det
+Uendelige og i det »i Enhed med hele Naturen«. Og idet
+det er \emph{Tanken} som denne bestemte Form af det menneskelige
+Væsen, med Udelukkelse af andre Aandens Former,
+som Følelse o. desl., der gjenfinder sig i Substantsen, og
+derfor bestemmes som det eneste adæquate Udtryk for det
+menneskelige Væsen, er Tanken, Fornuften, ene bestemmende
+Sandheden, den er den uforstyrrelige Aabenbaring
+af det Guddommelige, der indeslutter Vished og er eneste
+Dommer over det Falske og Sande. Derved faaer Systemet
+Charakteren af \emph{Rationalisme}: hvad der ikke congruerer
+med Tankens almeengyldige Bestemmelser, afviser det som
+tilhørende den usande og ufuldstændige Forestilling.
+
+Endelig er i den dobbelte Bestemmelse af Substantsens
+Begreb og af Tankens Forhold til den Bestemmelsen givet
+af Tankeudviklingens Form. Aandens Existentsform er, ligesom
+Substantsens, Causaliteten i dens Selvvished: af Aanden
+som activ Tankemodus udvikle sig de med mathematisk
+Nødvendighed sammenkjædede adæquate Ideer, der danne
+en Parallel til Tingenes ved Naturnødvendighedens Lov
+sammenkjædede Række. Tankens Udfoldelse er altsaa i den
+mathematiske Nødvendigheds Form; men idet den sande
+Erkjendelse er i Evighedens Element, forsvinder Udviklingen
+som Udvikling i Substantsens Enhed, der i sin evige Fylde
+viser sig for \emph{den intuitive Viden}, som med eet Blik
+seer Substantsen i dens Uendelighed med det, der uendeligt,
+med evig Nødvendighed følger af dens Væsen.
+
+% --- p. 174 ---
+Bestemmelserne \emph{Pantheisme og Naturalisme} betegne
+altsaa Systemet fra den objective Side, Bestemmelserne
+\emph{Dogmatisme og Rationalisme} fra den subjective, men
+de to Sider kunne ikke adskilles; Dogmatismens Charakteer
+er, ligesaavel som Rationalismens, given i de objective Bestemmelser.
+
+Idet Systemets Charakteer saaledes er fastsat, bliver
+den Grundlaget for Kritikens Opgave. Denne faaer sin Begrændsning
+ved det allerede historisk Givne, Philosophien
+i dens fremadskridende Udvikling betegner Ensidigheden i
+det Spinozistiske System, idet den integrerer dette. Under
+Fremstillingen af Spinozas Forhold til den sildigere Philosophie
+(see næste Capitel) ville Resultaterne af denne objective,
+indirecte, historiske Kritik blive antydede. I dette
+Capitel vil Kritikens Opgave da blive den, at bedømme Spinozismen
+fra \emph{dens eget} Standpunkt, at undersøge, hvorvidt
+den har naaet det Maal, den selv har stillet sig, om
+den har kunnet gjennemføre sin Grundtanke, om ikke Inconsequentser
+ere trængte ind, og om da ikke disse med
+Nødvendighed ere fremkaldte ved Grundtankens Mangelfuldhed,
+og derfor deels godtgjøre dennes Uskikkethed til
+at omslutte hvad den vilde omslutte, deels stille Fordringen
+til andre Grundbestemmelser, hvorved der føres over til
+den historiske fremskridende Udvikling.
+
+Fra denne Kritiks Omraade er da foreløbig afviist ethvert
+Problem, der ikke er opstaaet indenfor den ved Systemet
+givne Grundanskuelse. Saalænge Tanken consequent
+udfolder sig uden at berøre et saadant Problem, er Fordringen
+til den om at løse det ubegrundet. Lykkes det
+den at afslutte sig til en indre Helhed uden at naae til
+det, er Problemet med det Samme afviist som uberettiget.
+Først ved Inconsequentser taber Tanken denne Afvisningsret.
+
+Dernæst følger det af sig selv, at saadanne Modsigelser
+i Systemet, der kun ere \emph{tilsyneladende}, ikke blive
+Gjenstand for Kritiken. Af saadanne findes der netop hos
+Spinoza, paa Grund af hans eiendommelige Opfattelse af
+% --- p. 175 ---
+\setcounter{footnote}{0}%
+det Endelige, en Mængde, og det er netop paa dem, at
+f. Ex. Bayles og de fleste af Spinozas samtidige Modstanderes
+Kritik støtter sig. I det Foregaaende ere flere saadanne
+blevne paaviste, og Modsigelsen er viist at være hævet naar
+den sees fra Spinozas Synspunkt; de ville derfor her blive
+forbigaaede.
+
+Sin Opgave har Spinozismen stillet sig ved sit Grundbegreb,
+og dette, saae vi, var Substantsen, opfattet i sin
+strænge Uendelighed, og i Parallelismen af sine gjensidigen
+absolut uafhængige Attributer. Opgaven er da, at tænke
+Uendelighedens Tanke saaledes, at Endeligheden paa intet
+Punkt fæstner sig ligeoverfor den, medens dog Uendeligheden
+faaer en Fylde; og dernæst: at tænke sig denne Fylde
+udtrykt i de af hinanden uafhængige Attributer, af hvilke
+hvert udtrykker det Uendelige helt.
+
+Først altsaa skal Uendelighedens Tanke tænkes som
+\emph{indholdsrig}. Som saadan kan den kun tænkes, naar
+Substantsen i sig sætter et Andet, en virkelig bestaaende
+Modsætning, der dog er optaget i dens Enhed, bunden af
+den. Men her træder strax Vanskeligheden frem. Den
+uendelige Substants kan ikke sætte en Modsætning i sig
+selv, dens Værens Form er den uendelige Causalitet, der,
+som uendelig, kun sætter sig selv som uendelig, og umiddelbart
+er Eet som Aarsag og Virkning. Begrændsning vilde
+kun være Negation, men det Uendelige kan ikke negere sig
+selv, altsaa ikke begrændse sig selv; ved selve dets Tanke
+er Endelighedens Tanke udelukket\footnote{Kunde Tanken udlede
+et bestaaende Endeligt af det Uendelige, da maatte, efter
+Spinozas Opfattelse af Forholdet mellem Tanken og
+dens Gjenstand, en tilsvarende Udvikling, altsaa et
+\emph{Tidsforhold}, sættes i det kun ved \emph{Evighedens} Form
+bestemte uendelige Værende.}. Men den menneskelige
+Tankes Drift til Selvbekræftelse, til Tænken, til Philosopheren,
+hviler paa Existentsadskillelsen mellem det Endelige og det
+Uendelige: hæves det Endelige absolut i Tanken, tilintetgjøres
+den menneskelige Tænknings Mulighed, det at philosophere
+bliver en Selvmodsigelse. Dette fremtvinger Dobbelt\-%
+% --- p. 176 ---
+\setcounter{footnote}{0}%
+heden i Opfattelsen af det, der bliver Substantsens Virkning.
+Seet fra Substantsbegrebet af, med Fastholdelse af den
+Sætning, at Begrændsning er Negation, naaes der kun fra
+Uendeligt til Uendeligt. Substantsen som causa og som
+causatum er i evig modsætningsløs Enhed med sig selv.
+Men idet Adskillelsen evigt er hævet, synker Begrebet forskjelsløst
+sammen i sig selv, den menneskelige Tanke udaander
+ligesom i dets lufttomme Rum. Derfor tvinger Tankens
+Trang en fyldigere Anskuelse frem: det Uendelige, der
+med evig Nødvendighed følger af Substantsens Natur (Eth.
+I, 16), bliver til et i sin Enhed med sig selv uendeligt
+Modificeret. I Udstrækningens Uendelighed fremgaae de
+\emph{uendelig mange modi} efter Bevægelsens og Hvilens uforanderlige
+Love; i Tankens Uendelighed fremgaae Ideerne i
+deres Uendelighed af Fornuftens evige Lov; i begge Attributer
+danner der sig et Billede af et i sig bevæget evigt
+uforandret Liv, der udtrykker den samme Uendelighed og
+fjernt antyder en \emph{organisk} Opfattelse. Men de Love, der
+bringe den af Enheden bundne Mangfoldighed ind i Uendeligheden,
+staae ubegrebne\footnote{Deri, at Modificationernes
+Mangfoldighed ikke kan deduceres, og derfor staaer som
+ubegreben, ligger umiddelbart, at den endelige Bevidsthed,
+den uadæquate Erkjendelse, ikke heller bliver deduceret.
+Den bliver, ligesom det bestaaende Endelige, en Forudsætning,
+der opløser sig i Modsigelser, og forsvinder idet den
+gaaer tilbage i det Uendelige.}, og idet Endelighedens Tanke
+overalt opløser sig i Modsigelser (jfr. S. 79, Anm. 2, S. 89,
+121 og 136), og Begrændsningen kun bliver et Forsvindende
+--- og kun saaledes kan den opfattes hvor Causaliteten, ikke
+Øiemedet, er Grundbegrebet, --- forsvinder det fyldigere
+Billede atter i Abstractionens Forskjelsløshed. Men om det
+end bestandig forsvinder, sættes det dog bestandig paany,
+thi kun ved det faaer Tanken Bevægelse, først ved det undgaaer
+den at benægte sig selv. De almindelige Inconsequentser,
+dette maa føre til, ere fremhævede ved Slutningen
+af andet Capitel (S. 63 f.). I de speciellere Udviklinger ere
+Følgerne deraf paaviste i det Enkelte. Det var Dobbelt\-%
+% --- p. 177 ---
+\setcounter{footnote}{0}%
+heden i Opfattelsen af det Endelige, der forstyrrede Grændsen
+mellem Imaginationen og Fornuften, mellem ratio og
+scientia intuitiva, der gav den universelle Erkjendelse en tvivlsom
+Sandhed, der gjorde Begrebet: det Fælles, svævende
+imellem at betyde den for virkelig adskilte enkelte Ting
+fælles Egenskab, og det positive Ene, der er det Reelle i
+de som enkelte kun forestillede Ting; det var den, der lod
+de absolut forskjellige\footnote{De forholde sig til hinanden som
+ens til non-ens, som Uendeligt til Endeligt.} adæquate og
+uadæquate Ideer forenes i den menneskelige Aand i et
+usikkert Naboskab; der fastholdt Tanken paa Gebeter, som,
+strængt taget, kun tilhøre Imaginationen, og det var endelig
+den, der, selv efterat det Enkelte var opfattet under
+Evighedens og Nødvendighedens Form, det Uendeliges Værens-Form,
+fastholdt det som res \emph{particulares} æternæ. Men
+paa dette sidste Punkt bryder Modsigelsen afgjørende frem.
+Idet den menneskelige Aand i den intuitive Viden, der er
+dens Væsens evige Bestemmelse (jfr. Cap. 8), sættes som en
+æternus cogitandi modus, der er en Deel af Guds uendelige
+intellectus (Eth. V, 40. schol.), saa maa enten denne modus,
+der, om den end er evig, dog er enkelt, udtrykke Substantsens
+Uendelighed, hvilket er umuligt, eller den maa forsvinde
+som enkelt i det Uendelige, og i sin Forsvinden benægte
+sig selv, og gjøre Substantsen indholdsløs. Paa dette
+Punkt vises der derfor afgjørende hen paa en anden Bestemmelse
+af Grundbegreberne. Opfattelsen af Begrændsning
+blot som Negation gjorde det Uendelige abstract og
+bragte Tænkningens Drift i Modsigelse med sig selv. Dette
+viser hen paa den Fordring, at opfatte Begrændsningen som
+Væsenets Selvbegrændsning, som dets Selvbestemmelse i
+dets selvvirksomme Adskillelse fra andre, --- paa \emph{Monadens}
+Begreb, og med dette Begreb integrerer Leibnitz Spinozas
+Grundtanke (see følgende Capitel).
+
+\emph{Den anden} Opgave, Spinozismen havde stillet sig,
+var, at opfatte Substantsens Attributer, Tanke og Udstræk\-%
+% --- p. 178 ---
+ning, som selvstændige, idet de, uden at indeslutte hinandens
+Begreb, hver for sig udtrykke Substantsen, og altsaa at
+udlede Alt, hvad der med Nødvendighed fulgte af det enkelte
+Attributs Natur, af det alene uden Hensyn til det andet.
+Under den samme Causalitetens Form skulde da Tanke og
+Udstrækning have været opfattede med de parallele Rækker
+af deres Modificationer. Men hvor Imaginationens Begreb
+og Aandens lidende Tilstande udvikles, der gaaer Spinoza
+ud fra Legemets Forhold; kun gjennem disse kunne vi danne
+os en Anskuelse af de forvirrede, ufuldstændige Ideers Væsen,
+navnlig bliver Erindringens Natur kun gjort anskuelig ved
+Legemets Evne til at bevare de modtagne Indtryk, og Spinoza
+kommer her endog til at tale om Legemets Paavirkning
+ved ydre Aarsager som Grund til de forvirrede Ideer
+(de emend. intell. p. 384), og om Indvirkninger, der forhindre
+Aanden i at tænke (Eth. V, 10). Og paa den anden Side,
+hvor Spinoza udvikler Menneskets Frihed, dets Væsen som
+handlende, som bestemt ved Fornuften og dens adæquate
+Ideer, tages Udgangspunktet alene fra Aanden; kun ud fra
+den danner der sig Anskuelsen af det »imago«, der svarer
+til det klart og tydeligt Opfattede (Eth. V, 12), og der tillægges
+den nu Magten til at ordne Legemets Affectioner
+(Eth. V, 10 schol.). Parallelismen er saaledes ikke gjennemført;
+der vakles, som overalt, hvor det ene Absolutes Virkningsarter
+sættes som constituerende absolut forskjellige
+Existentsformer, mellem en Sammensmelten og en skjult
+Dualisme. Hos Spinoza er Tanken paa den ene Side i sin
+Form bestemt ved Naturvirksomhedens Form, og i denne
+Form udtrykker den, idet den i Substantsen er i Enhed med
+Udstrækningen, dennes umiddelbare Vished om sig selv.
+Den er saaledes baade ved Form og Indhold bestemt ved
+Udstrækningen; thi Bestemmelsen for den selv bliver at
+være den sig selv \emph{umiddelbar} visse Tanke om \emph{Udstrækningen}.
+Paa den anden Side griber den, ved i sit
+eget Begreb at indeslutte Modsætningens Bestemmelse, ud
+over denne, der ogsaa oprindelig kun er bestemt ved Tankens
+abstracte Form og derfor har modtaget Bestemmelser,
+% --- p. 179 ---
+\setcounter{footnote}{0}%
+der stride mod dens eiendommelige Væsen (f. Ex. Bestemmelsen
+som udelelig). Denne ubevidste gjensidige Bestemmen
+bringer ogsaa undertiden Spinoza til, ligesom uvilkaarligen,
+at anvende Begreber, der ere udelukkede ved Grundbestemmelsen,
+saaledes \emph{Øiemedets} Begreb (f. Ex. Eth. IV.
+App. C. 4. Tract. polit. V, 2. De emend. intell. S. 360);
+og den Dualisme, der bliver tilbage i Grunden, fremkalder
+det uopløselige Problem om de utallige Attributer og deres
+Forhold til Tænkningen (jfr. S. 85 f.).
+
+Men idet Spinoza saaledes paa de to afgjørende Punkter
+ikke har kunnet løse den af ham selv stillede Opgave, faaer
+Kritiken ikke blot Ret til at erklære Grundopgaven for
+uløst, men den faaer et videre Spillerum, idet det gjennem
+Inconsequentserne Antydede bliver berettigede Fordringer til
+Systemet. Den faaer Ret til, at fremhæve mod Spinoza
+\emph{Systemets abstracte Charakteer}, der bringer Alt til
+at synke sammen i Substantsens forskjelsløse Enhed, og
+under den Skintilværelse, der levnes det Endelige, kun lader
+det blive bestemt ved en \emph{quantitativ} Forskjel, i hvilken
+alle Modsætningers Energie lammes\footnote{Idet Forskjellen
+kun bliver quantitativ, taber ogsaa den Bestemmelse
+hos Spinoza, at en ydre Indvirkning bestemmes baade ved det
+Virkendes og det Paavirkedes Natur, sin Betydning. Individualitetens
+Vedvaren under den quantitative Forandring, under
+Affectionerne, bliver uforklarlig.}, endog Modsætningen
+mellem det Gode og det Onde, og enhver Fylde forsvinder
+idet Individualiteten bliver et relativt, svævende Begreb, der
+ikke sættes ved en indre Væsenseiendommelighed, men ved
+Udstrækningsmodificationernes og de dertil svarende Ideers
+udenfra bevirkede Sammenslutning (jfr. Cap. 5). Den kan
+fremhæve, --- hvad der deels ligger i denne Abstraction, deels i
+Attributernes ubevidste gjensidige Bestemmen, --- at der ingen
+eiendommelig Bestemmelse kan gives for den \emph{menneskelige
+Aand} som qualitativ forskjellig fra de øvrige modi,
+hvortil der dog er stillet en Fordring i Systemets Udgangspunkt,
+og at der derfor ligesaalidt bliver Plads for et frit
+% --- p. 180 ---
+\setcounter{footnote}{0}%
+Udgangspunkt for Selvbestemmelse, for en individuel Frihed,
+for Øiemed, som for det derved betingede Ethiske\footnote{Ligesom
+Physiken blev Metaphysik, bliver Ethiken Physik.}. Den
+kan fremhæve, at alt det i Aanden, der ikke bestemmes ved
+Tænkningen, er udelukket fra dens Væsen, og at derfor hele
+Sphærer af Aandens Liv, som Kunsten, heelt ere ignorerede,
+andre, som Religionen, kun opfattede efter deres Forhold
+til den forstandige Tanke. Den kan fremhæve, at paa Naturens
+Gebet det i Principet givne Dynamiske indenfor det
+Endeliges Grændser overvældes af det Mechaniske, og at
+det Organiskes Begreb gjøres umuligt ved Substantsens Modsætningsløshed.
+Den kan endelig fremhæve, at Systemet
+ikke har godtgjort Muligheden af det Begreb, med hvilket
+det slutter: den af den intuitive Erkjendelse fremgaaende
+intellectuelle Kjærlighed til Gud; at det Problem, der er
+givet i den enkelte Aands intuitive Erkjenden --- et Problem,
+der, gjennemtænkt, vilde gjøre Dogmatismen til \emph{Kriticisme}
+--- ikke er løst, og at Systemet kun har givet sig
+Umulighedens Dispensation fra at løse det. Og den maa,
+selv om den indrømmende fastholder dette afsluttende Begreb,
+fremhæve dets fattige Indhold, der er betinget ved at
+Aanden bestemmes som Legemets (Udstrækningens) Idee,
+og Udstrækningen kun ved Quantitet, Bevægelse og Hvile.
+Den intuitive Viden, der kun faaer dette Indhold, om end i
+Uendelighedens Form, bliver abstract og fattig, og den intellectuelle
+Kjærlighed til Gud berøres af denne Fattigdom.
+Men paa dette Punkt gjælder det dog, ikke at oversee hvad
+der saa tidt hændes abstracte Systemer, at Menneskeaanden,
+og endnu mere vel Menneskehjertet, lægger sit rigere Indhold
+ind i de abstracte Former, og nu gjennem en Illusion
+seer disse som fyldige ved hint Indhold. Hvad der rammer
+Spinozismen som System, rammer ikke Spinoza som Tænker.
+I hans Tankes ophøiede Ro, i hans Livs energiske Alvor,
+i den Kjærlighed, med hvilken han gjennem Resignationens
+Luttring nedsænkede sin Tanke og sin Villie i det uendelige
+Ene, udtaler sig et dybere Indhold, et rigere Væsens Drift
 % =====================================================================
 %  TIENDE CAPITEL  (printed pp. 181--188 = PDF 191--198)
 %  Opens PART WAY DOWN p. 181, so no \chapter* here -- the head is emitted
@@ -4557,7 +6599,325 @@ selve Dyden og Af\-%
 %  The book ends on p. 188; there is no colophon, no errata leaf and no
 %  advertisement. The BSB ink stamp at the foot of p. 188 is not text.
 % =====================================================================
+% --- p. 181 ---
+end det, han har kunnet fæstne i Tankens Former, og disses
+Mangel maa ikke bringe til at oversee hint.
 
-% [text to be added: pp. 181--188]
+Ville vi nu, efterat have ladet Kritiken fremhæve det
+Mangelfulde i Spinozas Philosophie, angive hans blivende
+Betydning, saa maae vi ikke indskrænke den til det af hine
+Mangler Uafhængige: at han har stillet den Fordring, at
+ogsaa Naturens Substrat skulde opfattes som activt, ligesom
+han i sin paa Tilværelsens Principer hvilende Erkjendelseslære
+energisk har fastholdt Tænkningens Activitet, --- at
+han i sin Lære om Affecterne har givet et varigt Grundlag
+for hvad man kunde kalde den menneskelige Aands Naturhistorie,
+--- og at han har hævdet Philosophiens Selvstændighed
+og Uafhængighed af det Religiøse, saa at han, ene i sin
+Tid, \emph{kun} har villet være Tænker, og i sin Tænkning havde
+sin Religion; men vi maae sætte den deri, at han, antydende
+Ideen om en Al-Organisme (jfr. især Eth. II, 13. schol. og
+Ep. 15), imod Dualismen, imod Adsplittelsen af Tilværelsens
+Enhed, har villet tænke Uendelighedens Alt omsluttende
+Tanke, søge den dybere Grund, i hvilken den menneskelige
+Aands uendelige Væsen er i activ Enhed med Naturens
+uendelige Væsen. Og skjøndt han kun har bestemt denne
+Enhedsgrund som fortærende Modsætningerne, saa er dog
+den Tanke, der var hans Philosophies indre tilskyndende
+Magt, alle Tankers Grund, og, om den end optager andre
+Bestemmelser i sig, bliver den dog den, der bærer disse, som
+den uendelige værende Tanke omsluttende bærer Naturen og
+Menneskeaanden, der grunde i den.
+
+\bigskip
+\begin{center}\rule{2.5cm}{0.4pt}\end{center}   % rule closing Niende Capitel -- printed DOUBLE, set single by edition convention
+\bigskip
+
+\begin{center}
+{\large\textbf{Tiende Capitel.}}\\[4pt]
+\textbf{Spinozas Forhold til den sildigere Philosophie.}\\[6pt]
+\rule{2cm}{0.4pt}
+\end{center}
+\addcontentsline{toc}{chapter}{Tiende Capitel. Spinozas Forhold til den sildigere Philosophie}
+\markboth{Spinozas Forhold til den sildigere Philosophie}{Spinozas Forhold til den sildigere Philosophie}
+\bigskip
+
+Spinozas System var i sin hele Charakteer altfor fremmedt
+for den almindelige Bevidsthed, og altfor skarpt sin Tids
+% --- p. 182 ---
+almindelige Retning modsat, til at det skulde kunne have faaet
+en umiddelbar gjennemgribende Indflydelse. Individualitetens
+Forsvinden i det Uendelige, Tilintetgjørelsen af enhver anthropomorphistisk
+Forestilling om Gud, Overførelsen af Naturnødvendighedens
+Lov paa hans Væsen og paa hans Virkninger,
+den ved den pantheistiske Grundanskuelse betingede Ophævelse
+af Modsætningen mellem et existerende Godt og Ondt, Opfattelsen
+af de religiøse Grundbestemmelser som blotte Forestillingsformer,
+stødte for stærkt an mod den religiøse Bevidsthed,
+som Protestantismen havde lært at accentuere Individualiteten
+og i Kampen for Saligheden at skærpe Modsætningen
+mellem det Gode og det Onde. Spinozas Tanker forfærdede,
+bortstødte, forstodes ikke. I Mysticismens Hensynken i det
+Guddommelige havde Hjertet fundet sin Tilfredsstillelse;
+det var \emph{Hjertets} Gud, til hvilken Mystikeren gav sig hen,
+og hos hvem han under Hengivelsen endnu bevarede sig
+selv. Men Spinozas Uendelige er \emph{Tankens} Uendelige, der
+ikke giver Gemyttet en Erstatning for Hengivelsen.
+
+Det er derfor ikke til at undres over, at Spinoza kun
+har funden faa samtidige Disciple. Kun af een have vi et
+Skrift i Spinozas Aand, nemlig \emph{Abrah. Joh. Cuffeler's}:
+specimen artis ratiocinandi naturalis et artificialis ad pantosophiæ
+principia manuducens (1684) --- en Art Logik. Et
+andet Skrift, af Præsten \emph{van Leenhoff}: Hemel op aarden
+(Himmelen paa Jorden), der da det udkom (1703) vakte
+megen Kamp, indeholder kun, saavidt man kan slutte af
+Referaterne hos Bayle og Brucker, en Lære om Dydens
+selvstændige Værd, og om Resignationen under den begrebne
+Nødvendigheds Lov, der, om end paavirket ved Spinozismen,
+ikke gaaer tilbage til dennes første Principer.
+
+Men om end Spinoza kun fandt faa Tilhængere, saa
+blev dog Spinozismen, som Navn for noget Uforstaaet og
+Afskyet, snart et Kjætternavn, med hvilket man gjensidigen
+stemplede hinanden, og meget Fritænkeri har vel ogsaa givet
+sig et fornemmere Udseende ved at tilegne sig dette Navn.
+Derfor kan en omtrent samtidig Forfatter: \emph{Roellius} (de
+religione naturali, § 151, pag. 166, citeret af Brucker)
+% --- p. 183 ---
+sige: Spinozam tota armenta in Belgio sequi ducem. Men
+af flere af de endnu bevarede Stridsskrifter mod Spinoza,
+der, skjøndt angribende ham, paadroge deres Forfattere Beskyldningen
+for at være hans hemmelige Tilhængere, seer
+man, hvor svævende og ubestemt man opfattede Spinozismens
+Charakteer, ligesom ogsaa den hele polemiske Literatur
+uden Undtagelse viser, at Spinoza bestandig misforstodes
+netop i de væsentligste Punkter: i Opfattelsen af
+Endelighedens Forhold til Gud og af det Guddommeliges
+Værens Form. Fra Forestillingen om det Endelige som
+reelt existerende, og om Gud som vilkaarligt virkende, ---
+Forestillinger, man ikke kunde opgive uden at opgive den
+hele Grundvold, paa hvilken man stod, kæmpede man mod
+Spinoza, og drog absurde Consequentser ud af hans Lære.
+
+Det maatte derfor blive Spinozismens Skjæbne, først
+sildig at virke: den har været som en Kjærne, indesluttet i
+faste Skaller, der maa ligge længe i Jorden før den kan
+spire, men som da ogsaa udfolder sig i en desto kraftigere
+Væxt.
+
+Kun paa een af Spinozas Samtidige har hans Tænkning
+havt en Indflydelse, der har faaet Betydning for Historien;
+men denne Indflydelse har været gjennem Modsætningen,
+som et Incitament til en selvstændig Tankeudvikling, der
+danner en integrerende Modsætning til Spinoza. Denne
+Samtidige er \emph{Leibnitz}. Vel har Leibnitz kun sjelden udtalt
+sig om sit Forhold til Spinoza, hvem han idethele omtaler
+med diplomatisk Forsigtighed, og endnu mindre sat
+bestemte Punkter i sin Lære i en directe Forbindelse med
+hans, men der er dog Sammenligningspunkter nok tilstede,
+som baade kunne danne en for begge Systemer oplysende
+Parallelisme, og tillige, medens de godtgjøre Leibnitzes Eiendommelighed,
+vise en Lighed med hans Forgænger, der
+neppe overalt kan forklares uden en bestemt Paavirkning.
+Hvor Ligheden ligger i Tidsalderens Philosophies hele Charakteer,
+der taler Intet for en Afhængighed; saaledes naar
+Leibnitz mødes med Spinoza i at opfatte Ideerne som Aandens
+oprindelige Eiendom; naar han lader Mechanismen,
+% --- p. 184 ---
+hvilken han ellers anviser et bestemt Gebet, gjøre sig
+gjældende ogsaa indenfor Aandens og det Organiskes Grændse,
+og naar han hævder Philosophiens Betydning i Forholdet
+til det Religiøse. Men paa en mere afgjørende Maade
+minder Leibnitz's Bestemmelse af Substantsens Væsen som
+Kraft om Spinozas Opfattelse af den som Causalitet; ---
+Leibnitz's Grundbegreb: \emph{Monaden}, minder om de i Spinozas
+Physik hypothetisk antagne \emph{Corpora simplicissima}
+(jfr. Eth. II, 13), navnlig naar man med Bestemmelsen af
+deres Forhold til det universelle Individuum sammenholder
+Bestemmelserne om den nødvendige Harmonie mellem Delene
+og Helheden (Ep. 15), der danner en Parallel til den i Monadens
+Begreb givne harmonia præstabilita; --- det for Leibnitzes
+hele Lære afgjørende Begreb: \emph{de forvirrede Forestillinger},
+der altid involvere Uendeligheden, minder om
+Spinozas Opfattelse af Aanden som sammensat af et uendeligt
+Antal Ideer, svarende til Legemets uendelige Sammensætning,
+og af disse Ideer som kun uadæquat existerende i
+den enkelte Aand (som ideæ confusæ); --- Sammenstillingen
+af de klare og tydelige Ideer med Handlen, af de forvirrede
+med Liden, og Tilbageførelsen af Handlen til Aanden, af
+Liden til Legemet, er den samme i begge Systemer; ligeledes
+Parallelismen mellem Sjæl og Legeme, Legemets Fuldkommenheds
+Betydning for Sjælen, Opfattelsen af hele Universet
+som indeholdende Liv, af Forkjel som \emph{Grad}forskjel,
+% partial letterspacing, printed exactly so: "Grad" spaced, "forskjel"
+% plain roman -- transcribed as printed, cf. p. 71 "natura naturans"
+% convention (BATCH-AGENT.md).
+og af Død og Tilbliven som en continuerlig Overgang.
+
+Men gjennem denne Lighed, der tyder hen paa et Slægtskab,
+træder Grundforskjellen frem. Naar Leibnitz opfatter
+Substantsens Væsen som Virksomhed, saa bestemmes denne
+Virksomhed umiddelbart som \emph{Selv-Virksomhed}, i Betydning
+af: \emph{individuel} Bestemmen og Afsondren fra andre. Den
+ene uendelige Substants bliver til de \emph{uendelig mange}
+Monader, der, begrændsede \emph{ved sig selv}, i deres Uafhængighed
+ved deres Grændse udtrykke det ideelle Forhold
+til alle de andre, og paa individuel Maade indeslutte hele
+Universet i sig. Men Leibnitzes Opfattelse af Virksomhed
+som \emph{Selvvirksomhed} staaer atter i Forbindelse med, at
+% --- p. 185 ---
+Kraften opfattes som et \emph{aandeligt} Princip, at Monade
+bliver ensbetydende med Sjæl, og at \emph{Aandens} Form,
+til afgjørende Adskillelse fra Spinoza, bliver \emph{Selvbevidsthedens
+Synthese}, ikke Causalitetens umiddelbare
+Selvvished. Og denne Opfattelse af Aandens Form, der er
+en logisk Consequents af Opfattelsen af den som oprindelig
+frembringende Ideer, der ere i den, og constituerer en specifisk
+Forskjel mellem dens og Materiens Væreform, betinger
+nu Opfattelsen af Guds Væsen, af det Endelige, af Aandens
+Handlen, og af Forholdet mellem Tanke og Udstrækning.
+I Guds Væsen bliver ikke den mathematiske Nødvendigheds
+Lov bestemmende, men en hypothetisk, moralsk Nødvendighed:
+en Nødvendighed, betinget ved Hensynet til det Bedste,
+bestemmer Villien. Øiemedets Begreb faaer atter sin Gyldighed
+for Gud og det Endelige, det bliver den forklarende
+Forudsætning for de virkende Aarsager, for Mechanismen.
+Det Endeliges Tilblivelse bliver ikke en Virkning af Nødvendighed,
+men af Guds Frihed, af hvilken Tingenes Existents
+afhænger, medens deres Væsen med evig uforanderlig
+Nødvendighed er givet i Guds. Det Endelige faaer et
+Centrum for Selvvirksomheden, en Frihed i Afhængigheden,
+en Selv-Determination, der ogsaa gjør det Onde muligt.
+Den menneskelige Aand bliver ikke længer en modus cogitandi,
+men et uforgængeligt principium cogitationis. Og
+Udstrækningen bliver nu ikke længere Attribut, ikke noget
+Reelt, der i sin Uendelighed udtrykker det Guddommelige,
+den bliver kun Phænomenet for de enkelte Substantsers
+Sammensætning. Det Blivende, Reale, Active, er kun de
+enkelte Substantser, Monaderne, hvis Væsen er aandeligt;
+Legeme, Materie, Udstrækning bliver det Passive, Ikke-Reale,
+der kun har sin Bestaaen i den forvirrede Forestilling. Med
+eet Ord altsaa: Individualiteten, der giver den uendelige
+Total-Organisme Fylde, bryder frem med Selvbevidsthedens
+Form, og det, der ikke udtrykkes ved denne Form: det Materielle,
+taber sin Rang som Aandens Parallel, og bliver
+Phænomen, om end i Phænomenet en Parallelisme afspeiler
+sig.
+
+% --- p. 186 ---
+Saaledes udtrykker Leibnitz selv, i Forholdet til Spinoza,
+sit Systems Grundbegrebs, Monadens, eiendommelige Natur.
+Paavirkningen omsættes i selvstændig Frembringen, det udenfra
+Givne bliver til et Incitament for den skabende Eiendommelighed.
+Og ved denne Eiendommelighed integrerer
+han Spinoza.
+
+I Tidsrummet mellem Leibnitz og de sidste Decennier
+af forrige Aarhundrede var Spinoza næsten glemt. \emph{Wolf}
+polemiserede imod ham (i sin theologia naturalis), men med
+halve Begreber og uden at forstaae ham, og Tidsalderens
+Retning var ugunstig for en dybere Tænkning. Mod Aarhundredets
+Slutning paaberaabte den \emph{franske Materialisme}
+sig Spinoza som Autoritet. I hans Gudsbegreb saae
+den kun Naturens Begreb, i hans Lære om Nødvendigheden
+fandt den sin Determinisme, i hans Lære om Aandens Forhold
+til Legemet sin Sensualisme. Det idealistiske Grundlag
+hos ham oversaae den; den bragte ikke hine Bestemmelser
+i Forbindelse med hans Anskuelsers Helhed, men tilegnede
+sig desto ivrigere Enkelthederne af hans Polemik
+mod de theologiske Forestillinger, og af hans Kritik.
+
+I Tydskland fandt Spinoza samtidig en beslægtet Aand
+\emph{i Lessing}, der ikke kunde finde Hvile i sin Tids aandløse
+Philosophie, og idet han ikke selv havde Magten til at frembringe
+en indholdsrigere, søgte tilbage til Fortiden. Den
+Strid, der vaktes, da \emph{Jacobi} røbede Hemmeligheden med
+Lessings Spinozisme, er bekjendt. Det viste sig under denne
+Strid, at Jacobi, der, ligesom Leibnitz, ved sin Eiendommelighed
+var Spinoza modsat, men i sin Genialitet havde den
+sympathetiske Forstaaen af Modsætningen, var den eneste,
+der var trængt dybere ind i Spinozas Tanker, medens \emph{Mendelssohn
+og Herder}, den Første endog uden den udvortes
+Kundskab til Spinozismen, ved en Misforstaaelse af
+den søgte at bringe den sammen med den Leibnitziske Theodicees
+trivialiserede theistiske Begreb.
+
+Denne Strid om Spinoza kaldte atter Studiet af ham
+tillive, og Philosophiens nye Retning gav snart dette en afgjørende
+Betydning. Da \emph{Kant} havde gjort Dogmatismens
+% --- p. 187 ---
+\setcounter{footnote}{0}%
+ubeviste Forudsætning: Erkjendelsens Mulighed, til Problem,
+og under Forsøget paa dets Løsning havde givet de Præmisser,
+af hvilke \emph{Fichte} drog Consequentserne ved at lægge
+al Virkelighed ind i Selvbevidstheden, fremtvang dennes
+Dialektik atter Trangen til et objectivt Supplement. Selve
+Fichte maatte, paa sin Philosophies senere Udviklingsstadium,
+søge et saadant, og kunde da kun søge det hos den Philosophie,
+der var Selvbevidstheds-Systemets skarpeste Modsætning:
+hos Spinozismen med dens absolute \emph{Væren}. Den
+samme Trang drev \emph{Novalis og Schleiermacher} til en
+enthusiastisk Tilknytning til Spinoza, der dog ikke tilintetgjorde
+deres Eiendommelighed. Den fandt endelig sit adæquateste
+Udtryk hos \emph{Schelling}, da han i Stedet for den
+Fichte'ske Philosophies subjective Princip: Selvbevidstheden,
+satte det subjectivt-objective: \emph{Fornuften}, det Absolute, der
+er det Subjectives og Objectives Indifferents, den absolute
+Identitet, der aldrig ophæves som Identitet, saaledes at
+Alt, hvad der er, er denne absolute Identitet selv, at der
+intet Endeligt er, men Alt er selve Uendeligheden, der kun
+i sin Værens Form berøres af den quantitative Differents
+mellem overveiende Subjectivitet og Objectivitet, men i sit
+Væsen er og bliver absolut Totalitet. Gjennem det absolute
+Identitetssystems Grundbegreb virker saaledes Spinozismens
+Grundbegreb trods de forskjellige historiske Forudsætninger,
+og Schelling forkaster først Spinozismen som »ensidig
+realistisk«\footnote{\emph{Schelling}: philos. Schriften I, S. 417 ff.}, da han ved sin »positive« Philosophie gjør et
+Forsøg paa at sætte Theismen i Pantheismens Sted.
+
+Ogsaa \emph{Hegels} Philosophie faaer Spinozismen til Grundlag
+og anerkjender den udtrykkelig som saadant\footnote{Med Hensyn til Hegels Forhold til Spinoza jfr. man \emph{Hegels}
+sämmtl. Werke. Bd. I, S. 60---79. III, 117 f. 178. 396 ff. 466.
+IV, 194 f. V, 9 ff. VI, Fortale S. XVII. S. 301. 303. 310 f.
+313. 391. 403. XII, 442---449. XV, 336 ff. 341 ff. 359. 362 f.
+365 ff. XVII, 7 ff.}. Men
+det Spinozistiske Substantsbegreb, i hvilket Hegel ikke finder
+% --- p. 188 ---
+\setcounter{footnote}{0}%
+Activitetens Bestemmelse, fordrer han fuldstændiggjort ved
+Subjectivitetens Form for at det gjennem denne kan rives ud
+af sin Abstraction og Ubevægelighed, og opfattes som \emph{Aand}
+og som \emph{Frihed}, som »absolut \emph{Person}«, ikke blot som
+den absolute \emph{Gjenstand} (»die absolute Sache«).
+
+Saaledes griber Spinozas Indflydelse ind endnu paa det
+System, der staaer som det sidste historisk afsluttede. Spinozismen
+virker her gjennem Ensartetheden, som et med
+Tidsalderens herskende philosophiske Retning Beslægtet, og
+som et saadant endnu Virkende bliver den Gjenstand for lidenskabelig
+og hyppigt misforstaaende Polemik fra den Tænker,
+der, ligesom hele den nyeste Philosophie, anerkjender Kant,
+men kun ikke hans Philosophies idealistiske Centrum, for
+sin Tænknings Udgangspunkt, --- fra \emph{Herbart}\footnote{Jfr. f. Ex. \emph{Herbart}: Allgemeine Metaphysik, I, S. 128---190 og
+mange Steder i anden Deel. Analytische Behandlung des Naturrechts
+und der Moral S. 32---43. S. 242 o. fl. St.}.
+
+Ved denne Indflydelse paa vor Tids Philosophie retfærdiggjøres
+ogsaa den Betydning, der i dette Skrift er tillagt
+Spinoza som Repræsentant for den nyere Idealismes
+Begyndelsespunkt. Spinoza og Hegel betegne de to Endepunkter;
+Hegels Philosophie har kun været mulig ved Spinoza,
+Spinozas Philosophies dybere Motiver forstaaes først
+fuldstændig ved Hegel.
+
+% End of the book (printed p. 188). Below the footnote block the print
+% carries a typographic tailpiece: a single tapered (lens-shaped) ornamental
+% rule, centred, of the kind conventionally closing a Thieles Bogtrykkeri
+% volume -- not one of the plain straight rules used at chapter ends
+% elsewhere in this book, so not reproduced with \rule{} here. Below that,
+% blank space, then the BSB ink stamp ("Bayerische Staatsbibliothek
+% MÜNCHEN") -- not text, not transcribed (RESUME-NOTES, BATCH-AGENT.md).
+% No colophon, no errata leaf, no publisher's advertisement follows.
 
 \end{document}
