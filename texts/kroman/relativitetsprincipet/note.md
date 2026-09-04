@@ -69,7 +69,7 @@ is at pp. 18–29, not the pp. 14–22 previously inferred from search hits.
 | 1 | H. M. Hansen, »Relativitetsprincipet« — lecture to a joint meeting of Fysisk Forening and Mathematisk Forening, 11 April 1912 | 10 (1911–12) | 251–281 | **not digitised** |
 | 2 | **K. Kroman, »Relativitetsprincipet«** | **14 (1915–16)** | **1–30** | 331–360 |
 | 3 | H. Holst, »Tidsproblemet« | 15 (1916–17) | 1–13 | 603–615 |
-| 4 | C. E. Walsøe, »Omkring Videnskabens Grænse« | 15 (1916–17) | 14–17 | 616–619 |
+| 4 | C. E. Walsøe, »Omkring Videnskabens Grænse« | 15 (1916–17) | 13–17 | 615–619 |
 | 5 | H. M. Hansen, »Relativitetsprincipet« | 15 (1916–17) | 18–29 | 620–631 |
 | 6 | Helge Holst, »Relativitetsprincipet« | 15 (1916–17) | 166–168 | 784–786 |
 | 7 | **K. Kroman, »Et Par yderligere Bemærkninger om »Relativitetsprincipet««** | **15 (1916–17)** | **192–205** | 814–827 |
@@ -80,6 +80,11 @@ derimod erkendelsesteoretisk set meget uenig« — *with the author of the third
 treatise, Dr. H. M. Hansen, I am on the other hand, epistemologically speaking,
 in strong disagreement.* Three treatises answered him, and Hansen wrote the
 third: items 3, 4 and 5, in that order.
+
+Holst and Walsøe SHARE p. 13: Holst ends in its top third, and Walsøe's title
+block, byline, first eight lines and two footnotes fill the rest of it, which is
+why p. 14 already carries Walsøe's running head. The article was catalogued
+here as pp. 14–17 until the pages were read; it is pp. 13–17.
 
 Walsøe belongs to the debate rather than merely sitting between its parts. His
 p. 17 describes itself as »denne Antydning fra Trediemand af en Mulighed for
@@ -228,13 +233,16 @@ copyright, does not hold here. Danish term is life plus seventy.
 | K. Kroman | 26 July 1925 | since 1996 — **clear** |
 | Helge Holst | 1944 | since 2015 — **clear** |
 | H. M. Hansen | 13 June 1956 | **1 January 2027** |
-| C. E. Walsøe | *not established* | **unknown — must be checked** |
+| C. E. Walsøe | *not established* | **unknown — held indefinitely** |
 
 So items 2, 3, 6 and 7 — both Kroman articles and both Holst pieces — can be
 transcribed and published now. Items 1 and 5, Hansen's two contributions, are
 still in copyright for a few months yet. Item 4 is unresolved: nothing is known
 here about C. E. Walsøe, not even a death date, so his term cannot be computed
-and his article must not be published until someone establishes it. Transcribing them now is fine; publishing them is not, and
+and his article must not be published until someone establishes it. The article
+itself is a dead end: the byline is bare »Af / C. E. Walsøe.«, with no title,
+affiliation, town or dateline anywhere, and the *) on its title is the
+Redaktion's own disclaimer, not a note on the author. Transcribing them now is fine; publishing them is not, and
 the debate can go up complete at the new year. Worth deciding deliberately,
 since it is also the first time this collection would carry a 20th-century text
 whose author's term has not run.

@@ -85,6 +85,16 @@
 \usepackage{libertinust1math}
 \usepackage{textalpha}   % Greek in text, typed directly
 \usepackage{amsmath}     % this debate has real formulas; see CONVENTIONS
+
+\usepackage{graphicx}    % for \reflectbox, below
+% The old Danish id-est sign »ɔ:« (p. 18). T1 has no OPEN O, so it is built
+% from a reflected c, as texts/brochner/det-religioese does.
+\DeclareUnicodeCharacter{0254}{\reflectbox{c}}
+
+% FOOTNOTES. The printing marks them *) and **), restarting on each printed
+% page. A fixed mark will not do here, so the counter is reset at the page
+% starts that need it (the resets are in the body, at the page markers).
+\renewcommand{\thefootnote}{\ifcase\value{footnote}\or *)\or **)\else \arabic{footnote})\fi}
 \usepackage[danish]{babel}
 \usepackage[protrusion=true,expansion=true]{microtype}
 \usepackage{setspace}
@@ -107,13 +117,13 @@
 
 \setstretch{1.3}
 
-\title{\textbf{[Svar til Professor Kroman]\\[4pt]\large\textnormal{\textit{title not yet verified --- read it off the contents leaf}}}}
+\title{\textbf{\guillemotleft Relativitetsprincipet\guillemotright}}
 \author{H.\ M.\ Hansen}
-\date{\textit{Fysisk Tidsskrift} 15 (1916--17), c.\ pp.~14--22}
+\date{\textit{Fysisk Tidsskrift} 15 (1916--17), pp.~18--29}
 
 \begin{document}
 \maketitle
 
-% [text to be added: pp. 14--22 — RANGE NOT YET VERIFIED]
+% [text to be added: pp. 18--29]
 
 \end{document}
