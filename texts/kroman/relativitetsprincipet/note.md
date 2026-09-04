@@ -61,7 +61,7 @@ as one application of a thirty-year-old commitment, not as a late aberration.
 **Revised 2026-09-04, from the scan itself.** The table below used to have five
 items and one of them was wrong. With the volumes in hand the exchange turns out
 to run to **seven**, and the extra two are not in any bibliography consulted:
-a second piece by Holst, and a mediating article by C. E. Walsøe. Hansen's reply
+a second piece by Holst, and a mediating article by Carl Emil Walsøe. Hansen's reply
 is at pp. 18–29, not the pp. 14–22 previously inferred from search hits.
 
 | | Author, title | Volume | Pages | PDF pages |
@@ -69,7 +69,7 @@ is at pp. 18–29, not the pp. 14–22 previously inferred from search hits.
 | 1 | H. M. Hansen, »Relativitetsprincipet« — lecture to a joint meeting of Fysisk Forening and Mathematisk Forening, 11 April 1912 | 10 (1911–12) | 251–281 | **not digitised** |
 | 2 | **K. Kroman, »Relativitetsprincipet«** | **14 (1915–16)** | **1–30** | 331–360 |
 | 3 | H. Holst, »Tidsproblemet« | 15 (1916–17) | 1–13 | 603–615 |
-| 4 | C. E. Walsøe, »Omkring Videnskabens Grænse« | 15 (1916–17) | 13–17 | 615–619 |
+| 4 | Carl Emil Walsøe, »Omkring Videnskabens Grænse« | 15 (1916–17) | 13–17 | 615–619 |
 | 5 | H. M. Hansen, »Relativitetsprincipet« | 15 (1916–17) | 18–29 | 620–631 |
 | 6 | Helge Holst, »Relativitetsprincipet« | 15 (1916–17) | 166–168 | 784–786 |
 | 7 | **K. Kroman, »Et Par yderligere Bemærkninger om »Relativitetsprincipet««** | **15 (1916–17)** | **192–205** | 814–827 |
@@ -233,16 +233,27 @@ copyright, does not hold here. Danish term is life plus seventy.
 | K. Kroman | 26 July 1925 | since 1996 — **clear** |
 | Helge Holst | 1944 | since 2015 — **clear** |
 | H. M. Hansen | 13 June 1956 | **1 January 2027** |
-| C. E. Walsøe | *not established* | **unknown — held indefinitely** |
+| Carl Emil Walsøe | 1951 | since 2022 — **clear** |
 
-So items 2, 3, 6 and 7 — both Kroman articles and both Holst pieces — can be
-transcribed and published now. Items 1 and 5, Hansen's two contributions, are
-still in copyright for a few months yet. Item 4 is unresolved: nothing is known
-here about C. E. Walsøe, not even a death date, so his term cannot be computed
-and his article must not be published until someone establishes it. The article
-itself is a dead end: the byline is bare »Af / C. E. Walsøe.«, with no title,
-affiliation, town or dateline anywhere, and the *) on its title is the
-Redaktion's own disclaimer, not a note on the author. Transcribing them now is fine; publishing them is not, and
+So items 2, 3, 4, 6 and 7 can be transcribed and published now. Only items 1
+and 5, Hansen's two contributions, are still in copyright, and only until the
+end of this year.
+
+Walsøe took some finding, because the article is a dead end: the byline is bare
+»Af / C. E. Walsøe.«, with no title, affiliation, town or dateline anywhere, and
+the *) on its title turns out to be the Redaktion's own disclaimer that the
+piece »maa siges at falde uden for Tidsskriftets Ramme« — not a note on the
+author. He is **Carl Emil Walsøe, b. 25 May 1870 in Copenhagen, d. 1951**:
+cand. polyt. 1896, engineering assistant at the State Railways, telegraph
+engineer from 1903, district engineer at Post- og Telegrafvæsenet 1926–40.
+Kraks Blå Bog 1949 has the birth date and career; his son Sven's 1957 entry
+supplies the death year. What makes this more than a match on initials is the
+list of his own writings in the 1949 entry — »Den ny Naturvidenskab og vor
+gamle Kristentro. Et Forsøg paa en principiel Orientering« (1938) and »De tre
+Planer. Legeme, Sjæl, Aand.« (1947). A polytechnically trained engineer writing
+on the boundary between the new physics and religious conviction is exactly the
+author of a 1916 piece called »Omkring Videnskabens Grænse«, and exactly the
+contributor a physics journal's editors would disclaim. Transcribing them now is fine; publishing them is not, and
 the debate can go up complete at the new year. Worth deciding deliberately,
 since it is also the first time this collection would carry a 20th-century text
 whose author's term has not run.
