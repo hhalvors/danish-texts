@@ -58,15 +58,37 @@ as one application of a thirty-year-old commitment, not as a late aberration.
 
 ## The debate
 
-Five items in *Fysisk Tidsskrift*, in order:
+**Revised 2026-09-04, from the scan itself.** The table below used to have five
+items and one of them was wrong. With the volumes in hand the exchange turns out
+to run to **seven**, and the extra two are not in any bibliography consulted:
+a second piece by Holst, and a mediating article by C. E. Walsøe. Hansen's reply
+is at pp. 18–29, not the pp. 14–22 previously inferred from search hits.
 
-| | Author, title | Volume | Pages | In the scan |
+| | Author, title | Volume | Pages | PDF pages |
 |---|---|---|---|---|
 | 1 | H. M. Hansen, »Relativitetsprincipet« — lecture to a joint meeting of Fysisk Forening and Mathematisk Forening, 11 April 1912 | 10 (1911–12) | 251–281 | **not digitised** |
-| 2 | **K. Kroman, »Relativitetsprincipet«** | **14 (1915–16)** | **1–30** | `RA1-PA1`–`RA1-PA30` |
-| 3 | H. Holst, »Tidsproblemet« | 15 (1916–17) | 1–13 | `RA3-PA1`–`RA3-PA13` |
-| 4 | H. M. Hansen, reply | 15 (1916–17) | c. 14–22 | `RA3-PA14`–`RA3-PA22` |
-| 5 | **K. Kroman, »Et Par yderligere Bemærkninger om »Relativitetsprincipet««** | **15 (1916–17)** | **192–205** | `RA3-PA192`–`RA3-PA205` |
+| 2 | **K. Kroman, »Relativitetsprincipet«** | **14 (1915–16)** | **1–30** | 331–360 |
+| 3 | H. Holst, »Tidsproblemet« | 15 (1916–17) | 1–13 | 603–615 |
+| 4 | C. E. Walsøe, »Omkring Videnskabens Grænse« | 15 (1916–17) | 14–17 | 616–619 |
+| 5 | H. M. Hansen, »Relativitetsprincipet« | 15 (1916–17) | 18–29 | 620–631 |
+| 6 | Helge Holst, »Relativitetsprincipet« | 15 (1916–17) | 166–168 | 784–786 |
+| 7 | **K. Kroman, »Et Par yderligere Bemærkninger om »Relativitetsprincipet««** | **15 (1916–17)** | **192–205** | 814–827 |
+
+Kroman's own closing article confirms the shape. At printed p. 193 he writes
+»Med Forfatteren af den tredie Afhandling, Hr. Dr. H. M. Hansen, er jeg
+derimod erkendelsesteoretisk set meget uenig« — *with the author of the third
+treatise, Dr. H. M. Hansen, I am on the other hand, epistemologically speaking,
+in strong disagreement.* Three treatises answered him, and Hansen wrote the
+third: items 3, 4 and 5, in that order.
+
+Walsøe belongs to the debate rather than merely sitting between its parts. His
+p. 17 describes itself as »denne Antydning fra Trediemand af en Mulighed for
+[…] at udløse Spændingen og bilægge Striden mellem de to Parter« — *this
+suggestion, from a third party, of a way to release the tension and settle the
+dispute between the two parties.* He is trying to mediate between Kroman and the
+physicists. Hansen's own opening at p. 18 registers the same pile-up: »Den
+Interesse for Relativitetsspørgsmaalet, som flere Artikler i Fysisk Tidsskrift i
+den senere Tid har givet Vidnesbyrd om…«
 
 Hansen's 1912 lecture is the first real introduction of special relativity to a
 Danish audience, and it is what provoked Kroman three years later. H. M. Hansen
@@ -78,9 +100,8 @@ closed the debate without adding anything new. From about 1920 — the year
 Einstein visited Copenhagen, and the year after Eddington — Danish physicists
 appear simply to have accepted the theory.
 
-Item 4 is the one gap. Its citation is cut off mid-line in the only bibliography
-found that lists the whole exchange, and the fastest way to settle it is the
-contents pages of vol. 15 in the scan named below, which contains that volume.
+Item 1 is now the only gap: Google's run of the journal skips vols 10–12, so
+Hansen's 1912 lecture has to be ordered from KB. Everything else is in hand.
 
 ## Høffding's reply
 
@@ -158,19 +179,27 @@ citations above.
 
 ## Transcribing the debate
 
-Four of the five items can be transcribed from the Google file. The page-id
-column above is Google's own addressing inside `Tr4ZAAAAIAAJ`, established by
-searching within the volume: `RA1` is vol. 14 and `RA3` is vol. 15, and the
-plain `PA` pages at the front are vol. 13. Three checks confirm the mapping.
-»Sandheden er ikke dobbelt« is found at vol. 14 **p. 15** — which is exactly the
-page Høffding's footnote cites, so his reference points at this sentence.
-»Tidsproblemet« returns hits on `RA3-PA1` through `RA3-PA13`, matching Holst's
-printed range. And »Et Par yderligere Bemærkninger« heads `RA3-PA192`.
+Six of the seven items are in the Google file and the page map is now
+**measured, not guessed**. `pagemap.py --detect` in each article directory
+reports the offset; the three settled so far are
 
-Item 4 is located but not yet pinned: »H. M. Hansen« hits `RA3-PA17` and
-»Prof. Kroman« hits `RA3-PA18` and `RA3-PA21`, which places his reply between
-Holst's article and p. 22. Read the exact range off vol. 15's contents leaf at
-`RA3-PP5`/`RA3-PP7` before splitting.
+    Kroman 1915   printed   1-30   = PDF 331-360   (offset 330)
+    Holst 1916    printed   1-13   = PDF 603-615   (offset 602)
+    Kroman 1917   printed 192-205  = PDF 814-827   (offset 622)
+
+**The numerals alone do not identify an article in this bind.** Each of vols
+13, 14 and 15 has its own pp. 1-30, so the detector finds three offsets that fit
+Kroman 1915's numerals perfectly -- 12, 330 and 602. What breaks the tie is
+reading the pages: PDF 331 opens »Relativitetsprincipet«. / Af / K. Kroman., and
+PDF 345 carries »Sandheden er ikke dobbelt«, which is printed p. 15 and so
+exactly the page Høffding's footnote cites. Offset 602 turned out to be Holst's
+article, which is how item 3's page map got settled in the same pass. The
+detector now prints every tied candidate rather than choosing one silently.
+
+Note also that the offset is **not constant across vol. 15**: it is 602 at the
+front and 622 by p. 192, because unpaginated advertisement leaves are bound in
+(PDF 795 is an ad for H. Struers kemiske Laboratorium). Each article's offset
+must be measured for that article. Never carry one across.
 
 Item 1 is the gap: Google's run of *Fysisk Tidsskrift* is vols 7–9, 13–15,
 16–18, 26–27 and 30–31 — **vols 10–12 are missing**, and Danmarks Tekniske
@@ -199,10 +228,13 @@ copyright, does not hold here. Danish term is life plus seventy.
 | K. Kroman | 26 July 1925 | since 1996 — **clear** |
 | Helge Holst | 1944 | since 2015 — **clear** |
 | H. M. Hansen | 13 June 1956 | **1 January 2027** |
+| C. E. Walsøe | *not established* | **unknown — must be checked** |
 
-So items 2, 3 and 5 — both Kroman articles and Holst — can be transcribed and
-published now. Items 1 and 4, Hansen's two contributions, are still in copyright
-for a few months yet. Transcribing them now is fine; publishing them is not, and
+So items 2, 3, 6 and 7 — both Kroman articles and both Holst pieces — can be
+transcribed and published now. Items 1 and 5, Hansen's two contributions, are
+still in copyright for a few months yet. Item 4 is unresolved: nothing is known
+here about C. E. Walsøe, not even a death date, so his term cannot be computed
+and his article must not be published until someone establishes it. Transcribing them now is fine; publishing them is not, and
 the debate can go up complete at the new year. Worth deciding deliberately,
 since it is also the first time this collection would carry a 20th-century text
 whose author's term has not run.
