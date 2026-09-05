@@ -9,8 +9,115 @@ without giving up science.
 ## Files
 - Scan: `bibliotek/Nielsen, Rasmus/1850-evangelietroen-theologien.pdf` (195 PDF pp., 37 MB).
   Same file as KB `e-mat/dod/11030800271D.pdf`.
-- Transcription: `transcription.tex` (this dir). Translation: not begun.
+- Transcription: `transcription.tex` (this dir). **COMPLETE.**
+- Translation: `translation.tex`. **PHASE 2 IN PROGRESS — see §PHASE 2 below.**
 - Catalog entry: `catalog.yaml`, author `nielsen`, id `evangelietroen-theologien`.
+
+---
+
+# ✅ PHASE 2 (TRANSLATION) — STARTED 2026-09-05
+
+`translation.tex` created: full preamble, the whole skeleton (Preface, twelve
+lecture heads with their arguments translated, Postscript, Indhold, both closing
+rules), and **14 batch markers** in reading order.
+
+**DONE: the Forord (pp. III–VIII) and lectures I, II and III (pp. 1–37).**
+Sandbox compile after lecture III: **61 pp., 0 errors, 0 char-warnings.**
+
+Verification, each batch against its Danish span (comment lines stripped):
+
+| batch | pp. | paragraphs | `\emph{}` | `\textit{}` | page markers | quotes dk | quotes en |
+|---|---|---|---|---|---|---|---|
+| Forord | III–VIII | 27/27 | 2/2 | 3/3 | 6/6 same joints | 27/27 | 27/27 |
+| I | 1–13 | 52/52 | 8/8 | 2/2 | 13/13 same joints | 13/13 | 13/13 |
+| II | 14–25 | 38/38 | 13/13 | 5/5 | 12/12 same joints | **22/21** | 21/21 |
+| III | 26–37 | 38/38 | 16/16 | 12/12 | 12/12 same joints | **18/19** | 19/19 |
+
+The two bolded Danish counts are the **logged printer's defects, and are
+correct** — II is net **+1**, III net **−1**, so the running total is back to
+**0** at the end of lecture III and matches `check.py`'s +1 after II. The English
+balances at 0 in every batch by design.
+
+## CURRENT RESUME POINT
+Next marker: `% [text to be added: pp. 38--51, Fourth Lecture]`.
+Then V 52–65 · VI 66–80 · VII 81–96 · VIII 97–111 · IX 112–128 · X 129–143 ·
+XI 144–158 · XII 159–174 · Postscript 173–174 · Indhold (twelve entries).
+**11 markers remain.**
+
+Lecture IV is the **first lecture with footnotes** (Phase 1 notes: 13 in the
+book, `\thefootnote` renewed to `*)` in both files). Carry each `\footnote{}` at
+the same anchor word and translate its content; leave cited work-titles in their
+own language.
+
+**Translation reads `transcription.tex`, not the scan or the images** — so
+unlike Phase 1 it is cheap and can be done inline in the main conversation, ~10
+printed pages per batch. The subagent discipline in this file applies to the
+transcription phase only.
+
+## Terminology is fixed in translation.tex's comment header — read it first
+`Evangelietroen` = the faith of the Gospel · `ueensartet med` = **heterogeneous
+with** (the thesis word) · `Videnskab` = science (Wissenschaft, never natural
+science) · `Existens` = existence · `Forargelse` = offense · `halvspeculativ` =
+half-speculative · `at stride for` / `at strides om` = strive **for** / dispute
+**about**. The full list is in the header. Do not let these drift between
+batches — the argument becomes unreadable if they do.
+
+## Editorial decisions taken in the Forord batch
+- **Danish printer's defects are NOT reproduced in the English.** The Danish
+  transcribes them as printed and runs a deliberate **+2** quote balance; the
+  English closes quotations where the sense ends and logs each divergence in a
+  `%` note. **The English is expected to balance at 0.** Do not "fix" the Danish
+  to match, or the English to mismatch.
+- **No emphasis added anywhere the print does not letterspace.** Two `\emph{}`
+  were added in drafting on the `for`/`about` contrast in Forord ¶2 and then
+  **removed**; a `%` note at that site says so. The contrast carries on the
+  prepositions alone.
+- **„en Anden“ is rendered ``another'' and left unglossed.** It is Kierkegaard,
+  and the anonymity is Nielsen's point.
+- The **prayer quotation** is Englished from Nielsen's Danish, not swapped for a
+  published English *Sickness unto Death*.
+- The **two real 1850 variants stand in both witnesses** (lecture VIII head
+  "half-philosophical" vs Indhold "half-speculative"; lecture X head/Indhold
+  punctuation). `%` notes sit at both sites in the translation. Do not normalise.
+
+### The four defects handled so far, and how
+Each is logged in a `%` note at its site in `translation.tex`:
+1. **p. 15** — the Religious man's second speech has one `„` and two `“`. The
+   mark the print omits is the **outer opener**: the single `„` opens the creed
+   recitation, the first `“` closes it, the second closes a speech never opened.
+   The English supplies the outer opener and sets the creed as an inner `` `…' ``.
+2. **pp. 23–24** — `„lad os kun indrømme` is opened and never closed. The English
+   closes after "left out?", where the sense ends.
+3. **pp. 24–25** — one `“` closes both the inner and the outer quotation. The
+   English closes both.
+4. **p. 26** — a closing `“` with no opener anywhere in the quotation. The
+   English supplies the opener at Christ's words.
+Also **p. 35**, no full stop before a closing `“` (English supplies it), and
+**p. 32** `Refomatorerne` for `Reformatorerne`, which the English *does*
+reproduce as "Refomers", since a misspelling carries across where a quote mark
+cannot.
+
+### One correction worth not repeating
+In the Luther passage (p. 31) the Danish emphasises **two** spans —
+`\emph{betyde}` and `\emph{mit Legeme Legemes Tegn}` — leaving `er` unemphasised
+and letting the second span cover both terms. It was first drafted in English as
+**four** spans and corrected back to two. The odd distribution is the print's.
+This is the second time in this project that tidying an irregularity would have
+falsified the witness; the emph counts in the table above are what caught it.
+
+## ⚠ Carried over from Phase 1 — still live for the translator
+- **Never global-replace `half-speculative`.** `halvspeculative` is Nielsen's own
+  term in **13** places; a global fix for the one heading would corrupt twelve.
+  Scope every correction to its block.
+- Sandbox compile needs Greek neutralised and `textalpha` stripped, else ~22
+  bogus "Unicode character not set up" errors. That is the rig, not the file.
+
+## Outstanding from Phase 1, unchanged by this batch
+The Forord emphasis pass on pp. III and V–VIII is **still not done** — absence of
+`\emph{}` there means "not yet checked", not "not emphasized". The one live
+candidate is the p. IV RUN `Men strides`. **If that pass adds emphasis to the
+Danish, mirror it into the English**; a `%` note in Forord ¶2 of
+`translation.tex` flags the spot.
 
 ## ⚠ PAGE MAP — NOT UNIFORM. Use `pagemap.py`; never hard-code +13.
 The leaf bearing **printed pp. 82–83 was scanned twice** — it appears at PDF 95–96
