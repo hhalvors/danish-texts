@@ -1,0 +1,478 @@
+% =====================================================================
+%  H. Brøchner
+%  Den græske Philosophies Historie i Grundrids.
+%  (= Philosophiens Historie i Grundrids, 1. Deel.)
+%  Kjøbenhavn: P. G. Philipsens Forlag, 1873.   274 pp. + Rettelser.
+%  Printer: Bianco Lunos Bogtrykkeri.
+%
+%  DIPLOMATIC TRANSCRIPTION (Danish).
+%
+%  THE SOURCE IS NOT A KB SCAN.  Every other Brøchner edition in this repo
+%  is transcribed from a Royal Danish Library digitisation; this one could
+%  not be.  KB's copy (Den Sorte Diamant, shelfmark 14,-29-8°) is
+%  UNDIGITISED and catalogued "Digitalisering eller læsesal", i.e. it is a
+%  digitisation-on-demand candidate; it is on the KB visit list.  What is
+%  transcribed here is the HARVARD copy -- Widener Library, shelfmark
+%  Phil 801.18.3, barcode 3 2044 020 596 763 -- digitised by Google and
+%  obtained from HathiTrust (item id hvd.hnqnwx) on 5 September 2026.
+%  Should the KB copy be digitised later, this edition should be collated
+%  against it: the two are copies of the same 1873 printing, but only a
+%  collation can show whether they are of the same setting throughout.
+%
+%  THE SCAN.  597 PDF pages carrying BOTH PARTS of the work bound together:
+%  1. Deel at PDF 1--292, 2. Deel at PDF 293--597.  The second part is a
+%  separate edition in this repo (texts/brochner/philosophiens-historie-2)
+%  with its own page map, because IT RESTARTS THE PAGINATION AT 1.
+%  Page images are 1-bit CCITT G4 at 600 ppi, one image per page -- there is
+%  no low-resolution RGB layer and no separate mask, unlike the KB scans, so
+%  `pdftoppm -r 600` is 1:1 and is the whole of the evidence; anything above
+%  it interpolates.  THE PIXEL DIMENSIONS VARY FROM PAGE TO PAGE, the Google
+%  capture having been cropped leaf by leaf: 2758 x 4512 (PDF 20), 2768 x
+%  4524 (PDF 60), 2916 x 4492 (PDF 135), 2838 x 4488 (PDF 289).  Do not take
+%  any one of them for the page size, and do not compute a measurement from
+%  an assumed one.
+%
+%  This header is the publication of record for the edition: the page map,
+%  the errata, the emphasis and normalisation conventions, and the log of
+%  printer's defects.  The per-book harness (pagemap.py, ocr.sh, check.py,
+%  joints.py, splice.py, spacing.py, RECON.md, RESUME-NOTES.md) is
+%  deliberately untracked, so an outside reader checking this edition
+%  against the scan gets this header and note.md and nothing else.
+% =====================================================================
+%
+%  ---------------------------------------------------------------
+%  1. PAGE MAP  (verified by eye, recon pass, 5 September 2026)
+%  ---------------------------------------------------------------
+%  THE MAP IS UNIFORM.  No leaf was scanned twice; there is no offset step.
+%
+%      printed   1--274   =   PDF page N + 15      (PDF  16--289)
+%
+%  Verified by reading the printed folio off the IMAGE at PDF 17, 27, 40,
+%  61, 88, 115, 150, 189, 210, 245, 269, 288 and 289 -- thirteen readings
+%  spread across the volume, every one agreeing -- and corroborated by a
+%  folio sweep of the Google text layer over all 597 pages of the file,
+%  which contradicts the map nowhere.
+%
+%  TWO PAGES CARRY NO FOLIO, both by design: printed 1 (PDF 16, the display
+%  opening "Indledning.") and printed 11 (PDF 26, "Første Hovedafsnit.").
+%  Neither has a folio at head or foot.
+%
+%  TRAP.  Printed p. 1 carries a bold "1" low on the page and well right of
+%  the centre of the measure.  IT IS THE SHEET SIGNATURE, NOT A FOLIO.
+%  Signatures 1--7 stand in that same position on printed 1, 17, 33, 49,
+%  65, 81 and 97, and starred forms ("13*") occur mid-gathering.  Anyone
+%  re-deriving the offset from that "1" will corrupt the whole book.
+%  Signatures are not transcribed.
+%
+%  Front matter, all unnumbered in the print:
+%    PDF  1  HathiTrust cover sheet (not part of the book)
+%    PDF  2  Widener barcode label
+%    PDF  3  Harvard College Library bookplate
+%    PDF  4--5, 7--8  blank leaves
+%    PDF  6  endpaper carrying the presentation inscription (§6 below)
+%    PDF  9  GENERAL TITLE PAGE of the whole work, naming both parts
+%    PDF 10  PART TITLE PAGE, "Den græske Philosophies Historie i Grundrids"
+%    PDF 11  verso of the part title: the printer's imprint,
+%            "Bianco Lunos Bogtrykkeri."  (not blank, and not a stamp leaf)
+%    PDF 12--13  Forord, 2 pp., unnumbered.  THERE ARE NO ROMAN FOLIOS
+%            ANYWHERE in this book.
+%    PDF 14--15  Indhold af første Deel, 2 pp., unnumbered
+%    PDF 16  body begins = printed p. 1
+%
+%  Back matter:
+%    PDF 290  the unnumbered "Rettelser." leaf (§5); pagemap.py handles it
+%             as internal printed p. 275
+%    PDF 291--292  blank leaves
+%
+%  ---------------------------------------------------------------
+%  2. WHAT IS TRANSCRIBED, AND HOW
+%  ---------------------------------------------------------------
+%  Diplomatic.  19th-century orthography exactly as printed: Philosophie,
+%  Ideelæren, Charakteer, høiere, aa, capitalised nouns.  Printer's errors
+%  are transcribed AS PRINTED, logged in a % comment at the site, and never
+%  silently corrected -- including those the author himself lists on the
+%  Rettelser leaf (§5).  Balance counts therefore drift off zero on
+%  purpose; the running total is in RESUME-NOTES.md.
+%
+%  TYPEFACE.  ANTIQUA, like the 1869 Bidrag and unlike the Fraktur
+%  det-religioese and svar-nielsen: upright roman throughout, no long s, no
+%  Fraktur letterforms.  No sans-serif anywhere in the book -- the display
+%  line of the part title page is a bold CONDENSED SERIFED roman, not the
+%  grotesque used on the 1869 sibling's title page.  Section and chapter
+%  heads use a bold display fount; the divisional ornament under a head is
+%  a short centred hairline, while the ornament on the two title pages is a
+%  DOUBLE rule (two parallel hairlines).
+%
+%  ITALIC IS RESERVED FOR TWO THINGS, and neither is emphasis:
+%    (a) GREEK.  The book's Greek fount is a cursive; every Greek word is
+%        wrapped \gk{} (see the preamble).
+%    (b) the Forord's dateline, "Kjøbenhavn, den 30te Mai 1873."
+%  LATIN AND OTHER FOREIGN MATTER IS SET UPRIGHT, in the same roman as the
+%  Danish -- ratio, Stob. Ecl. phys., Metaph. VII, 7 were all read on the
+%  image.  Do NOT wrap foreign matter in \textit{}; wrap it in \emph{} only
+%  where it is letterspaced in the print.
+%
+%  EMPHASIS IS LETTERSPACING (Sperrsatz), and it is heavy in this book.
+%  Set \emph{}.  spacing.py detects it mechanically; runs of flagged words
+%  are reliable, and single-word flags are real more often here than in the
+%  1869 sibling, but every flag is confirmed on the image.
+%
+%  QUOTATION MARKS ARE GUILLEMETS, «...», pointing INWARD.  The book has no
+%  low-high „...“ at all.  Ten quotations were read on the image (printed
+%  13, 55, 67, 88, 188, 231, 272) and every one opens « and closes »; no
+%  reversed »...« pair was found in this part, unlike the 1869 sibling.
+%  That is a sample of ten out of some fifty-seven, not a census: read
+%  every guillemet and set what is printed, and expect the balance to drift
+%  if a reversed pair does turn up.
+%
+%  DASHES.  Measured at 600 dpi (1:1; body 10 pt, one em ~ 83 px) on
+%  printed 10, 202 and 225: hyphens 41--45 px, dashes 66--88 px, the dash
+%  population one broad cluster from 0.8 to 1.05 em with nothing at an en
+%  (~42 px) that is not a hyphen.  THE SCAN DOES NOT ESTABLISH A SEPARATE
+%  EN-DASH SORT (PLAYBOOK §2 rule 1), so every dash is set ---.
+%
+%  THE «ɔ:» MARK is present (printed 135, 213, read on the image).  Both
+%  OCR witnesses mangle it, so its true count is unknown and every page
+%  must be read for it.
+%
+%  «ë» IS REAL ORTHOGRAPHY here -- Ikosaëdret, Dodekaëdret, Oktaëdret
+%  (printed 30, 120) -- not OCR damage.
+%
+%  FOOTNOTES.  The mark is *) and ONLY ONE LEVEL IS USED in this part: the
+%  Google layer has 30 occurrences of *) and none of **) or ***), and no
+%  page carries two notes.  The note fount is a smaller upright roman, not
+%  bold (the 1-bit binarisation makes it look bold in a render).  The
+%  separator rule is left-flush and is not transcribed.  Sixteen pages
+%  carry a note -- printed 25, 26, 28, 55, 59, 78, 79, 93, 101, 115, 146,
+%  150, 156, 177, 195, 213 -- from a sweep of the bottom third of all 274
+%  pages, cross-checked against the Google layer's inventory; the two
+%  methods agree exactly.
+%
+%  NOT TRANSCRIBED: sheet signatures; the left-flush footnote separator;
+%  the HathiTrust/Google furniture burnt into the page image (a grey strip
+%  in the left margin and a "Digitized by Google | Original from HARVARD
+%  UNIVERSITY" footer band, both of which the OCR reads); and all
+%  manuscript matter (§6).
+%
+%  ---------------------------------------------------------------
+%  3. THE INDHOLD AND THE CHAPTER HEADS GENUINELY DISAGREE
+%  ---------------------------------------------------------------
+%  Systematically, and the disagreement is a datum, not an error to be
+%  normalised.  THE INDHOLD prints "Kapitel:" followed by a colon and sets
+%  the ordinal of the period LETTERSPACED ("den græske Philosophies
+%  f ø r s t e Periode").  THE PRINTED HEAD prints "Kapitel." with a full
+%  stop, on its own line above a rule, and does NOT letterspace the
+%  ordinal.  Both readings are transcribed where they occur.
+%
+%  Two further Indhold datums:
+%    * the book is inconsistent about whether a page range is inclusive --
+%      46--49 is followed by 50--53, but 41--45 by 45--46.  Not normalised.
+%    * "Første Hovedafsnit: Den græske Philosophie" is given as 11--258
+%      while "Anhang" runs 258--274; whether the Anhang sits inside or
+%      outside the Hovedafsnit is not settled by the Indhold, and on the
+%      page the Anhang is a top-level flush-left bold entry like the
+%      Kapitel entries.
+%
+%  Andet Kapitel is set one level down: its subtitle "Sokrates." is in the
+%  small bold section fount, not the large roman the other chapters use.
+%
+%  CHAPTER HEADS DO NOT FALL AT THE TOP OF A PAGE.  Printed 21, 65, 81,
+%  195, 255 and 258 all open with running text and the head arrives partway
+%  down.
+%
+%  ---------------------------------------------------------------
+%  4. GREEK
+%  ---------------------------------------------------------------
+%  8194 Greek characters on 163 of the 274 pages of this part -- the Greek
+%  of the whole work is essentially here; Anden Deel has 104 characters.
+%  The fount is a cursive, hence \gk{}.
+%
+%  UNLIKE THE 1869 BIDRAG, THE TEXT LAYER READS GREEK.  That book's ABBYY
+%  layer contained zero Greek characters and every Greek word had to be
+%  eyeballed.  Here there are two witnesses that fail differently -- the
+%  Google layer and tesseract -l dan+grc -- and over 17 sampled pages they
+%  agree on only 43% of tokens (Google 468 tokens, tesseract 277).  So
+%  roughly half the Greek still has to be read on the image at 600 dpi.
+%
+%  FOUR TRAPS IN THE GREEK FOUNT, all calibrated on the image:
+%    * κ and χ are the same x-form; the descender is the ONLY difference.
+%      Both OCR witnesses guess.  Decidable by eye, but only by looking.
+%    * the fount prints the VARIANT SORTS ϑ (theta) and ϱ (rho).  THE
+%      EDITION SETS THE ORDINARY θ AND ρ and logs the variant in a %
+%      comment at the site -- the 1869 sibling's practice, adopted here so
+%      that the two Brøchner editions can be searched alike.  The variant
+%      is a fact about the fount, not about the word.
+%    * COMPOUND BREATHING-PLUS-ACCENT DOES NOT RESOLVE at 600 dpi -- in
+%      αἴτιον, εἶναι it is a blob.  NEVER supply it from knowledge of
+%      Greek; a supplied accent is fabricated evidence (PLAYBOOK §2
+%      rule 2).  Flag it instead.
+%    * on printed 188 the accents are illegible under a reader's
+%      manuscript glosses, and the Google layer silently supplies the
+%      expected ones there.  Do not trust it on that page.
+%
+%  ---------------------------------------------------------------
+%  5. THE "Rettelser." LEAF  (PDF 290, unnumbered)
+%  ---------------------------------------------------------------
+%  Five entries, transcribed at 600 dpi and set at the end of this file.
+%  NOT APPLIED to the text, as everywhere in this repo.
+%
+%  A SECOND ERRATA LIST EXISTS.  Anden Deel carries a "Trykfeil og
+%  Rettelser" leaf (its PDF 298--299) which opens "1ste Deel." and so
+%  corrects THIS part as well.  Both lists belong to the record of this
+%  edition; neither is applied.  The second is transcribed in the header of
+%  texts/brochner/philosophiens-historie-2/transcription.tex.
+%
+%  ---------------------------------------------------------------
+%  6. THIS COPY IS ANNOTATED  (evidence about the copy, not the edition)
+%  ---------------------------------------------------------------
+%  Nothing in this section is transcribed into the text.  It is recorded
+%  because a reader collating this edition against the same scan will meet
+%  it, and because it bears on the provenance.
+%
+%  PDF 6, the front endpaper, carries a pasted-on presentation slip in ink,
+%  "Hr. stud. mag. K. Kroman / venskabeligst / fra / Forf."; below it, in
+%  ink, "K. Kroman. / Januar 1874."; a binder's instruction "Bibeholdes ved
+%  / Indbindingen"; and a pencil line, "Skæres ganske(?) / lidt.", whose
+%  reading is uncertain.  The recipient is Kristian Kroman (1846--1925),
+%  then a student, later professor of philosophy at Copenhagen and himself
+%  catalogued in this repo -- so this is the author's own presentation copy
+%  to Kroman, six weeks after the second part was published.
+%
+%  Manuscript ink in the TYPE AREA on printed 144, 188 and 232.  Printed
+%  144 is the dangerous one: THE READER HAS APPLIED AN ERRATUM OVER THE
+%  PRINTED TYPE.  Transcribe the PRINTED reading, never the reader's
+%  correction.  Printed 188's Greek accents are obscured by glosses (§4).
+%
+%  ---------------------------------------------------------------
+%  7. OPEN ITEMS AT SKELETON TIME
+%  ---------------------------------------------------------------
+%    * printed 10 carries a two-column displayed schema with a swash brace;
+%      it needs its own job, and the LaTeX construction chosen must be
+%      recorded here.
+%    * the L3/L4 section heads are not enumerated; every short centred line
+%      is to be reported by the batch agent.
+%    * ten guillemet pairs out of ~57 were read; the rest are unchecked.
+%    * the preamble's Greek coverage is smoke-tested below but the Greek
+%      here is far heavier than in the 1869 sibling.
+% =====================================================================
+
+\documentclass[12pt,a4paper]{book}
+\usepackage{fontspec}
+\usepackage{libertinus}  % engine-aware: loads libertinus-otf under LuaLaTeX
+\usepackage{graphicx}    % for \reflectbox (the old Danish »ɔ:« id-est mark)
+\usepackage{newunicodechar}
+\newunicodechar{ɔ}{\reflectbox{c}}
+\usepackage[danish]{babel}
+\usepackage[protrusion=true,expansion=true]{microtype}
+\usepackage{setspace}
+\usepackage[margin=1.2in]{geometry}
+\usepackage{enumitem}
+\usepackage{amsmath}
+\usepackage{fancyhdr}
+\setlength{\headheight}{28pt}
+\addtolength{\topmargin}{-13.5pt}
+\usepackage{hyperref}
+
+\hypersetup{
+  pdftitle={Den græske Philosophies Historie i Grundrids},
+  pdfauthor={H. Brøchner},
+  hidelinks
+}
+
+% Only ONE footnote level is used in this part (header §2), but the
+% sibling's mapping is kept so that a second note found later does not
+% silently become a dagger.  NOT \fnsymbol (math mode, gives U+2217) and
+% NOT footmisc[perpage], which resets on the TYPESET page, not the printed
+% one.
+\renewcommand{\thefootnote}{%
+  \ifcase\value{footnote}\or *)\or **)\or ***)\or \dag)\or \dag\dag)\else
+  \arabic{footnote})\fi}
+
+% A short centred divisional rule, as printed above every display head.
+% NOT the footnote separator, which is left-flush and is LaTeX's job.
+\newcommand{\divrule}{\begin{center}\rule{2cm}{0.4pt}\end{center}}
+
+% The DOUBLE rule of the two title pages: two parallel hairlines, short and
+% centred.  Distinct from \divrule; it occurs only on the title pages.
+\newcommand{\dblrule}{\begin{center}%
+  \rule{2cm}{0.4pt}\\[1.2pt]\rule{2cm}{0.4pt}\end{center}}
+
+% The book's Greek fount is a CURSIVE and Libertinus Serif's Greek is
+% upright, so every Greek word is wrapped \gk{...}.  One macro rather than
+% a bare \textit{}: it is greppable, it records the FOUNT as a fact about
+% the print rather than as an emphasis, and a future engine or font change
+% is a one-line correction here.  Where a Greek word is ALSO letterspaced,
+% write \emph{\gk{...}}; slant and emphasis are independent.
+\newcommand{\gk}[1]{\textit{#1}}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LE,RO]{\thepage}
+\fancyhead[RE]{\textit{Den græske Philosophies Historie i Grundrids}}
+\fancyhead[LO]{\textit{\leftmark}}
+
+\setstretch{1.3}
+
+\title{\textbf{Den græske Philosophies Historie}\\[2pt]
+  \large i\\[6pt]
+  \textbf{\Large Grundrids}}
+\author{Dr.\ H.\ Brøchner\\[4pt]
+  \small Professor i Philosophien}
+\date{Kjøbenhavn: P.\ G.\ Philipsens Forlag, 1873}
+
+\begin{document}
+\maketitle
+\thispagestyle{empty}
+\newpage
+
+% =====================================================================
+%  FRONT MATTER
+% =====================================================================
+
+\chapter*{Forord.}
+\markboth{Forord}{Forord}
+% [text to be added: PDF 12--13, unnumbered.  Head "F o r o r d ."
+%  letterspaced, short centred rule, raised initial D.  Letterspaced matter
+%  inside includes "Eduard Zellers", the title of the 1869 Bidrag, and
+%  "Schweglers".  Dateline "Kjøbenhavn, den 30te Mai 1873." is ITALIC
+%  (the only italic in the book outside the Greek); signature
+%  "H. Brøchner." bold, flush right; short centred rule at the foot.]
+
+\chapter*{Indhold af første Deel.}
+\markboth{Indhold}{Indhold}
+% [text to be added: PDF 14--15, unnumbered.  Transcribe from the IMAGE,
+%  not the OCR (PLAYBOOK §6).  RECON.md §3 carries a full reading to
+%  collate against.  Column head "Side" on BOTH pages.  Top-level entries
+%  bold and flush left with bold page ranges; numbered sub-entries indented
+%  with the figure bold; ranges use an em-dash.  The letterspaced ordinals
+%  ("f ø r s t e", "a n d e n", "t r e d i e") and the colon after
+%  "Kapitel" are the Indhold's own readings and differ from the printed
+%  heads -- see header §3.  Do not normalise.]
+
+% =====================================================================
+%  BODY.  printed 1--274 = PDF 16--289  (pagemap.py is the authority).
+%
+%  THE DISPLAY HEADS ARE NOT IN THIS SKELETON, AND THAT IS DELIBERATE.
+%  In this book a chapter head never falls at the top of a page: printed
+%  21, 65, 81, 195, 255 and 258 all open with running text and the head
+%  arrives partway down.  A skeleton that emitted \section*{} between two
+%  markers would therefore split a single printed page across two
+%  fragments, which puts that page's `% --- p. N ---' in one batch and its
+%  remainder in another -- exactly the gap/dupe condition check.py exists
+%  to catch.  So the batch agent writes the head, the \divrule and the
+%  \markboth INLINE, at the point on the page where the book prints them.
+%  Put a %% on any \markboth or \setcounter line that lands between the two
+%  halves of a word broken across a line, or joints.py will report it.
+%
+%  THE MARKERS BELOW PARTITION 1--274 EXACTLY: contiguous, no overlap, no
+%  gap.  The book's own section ranges overlap at their endpoints (46--49
+%  is followed by 50--53 but 41--45 by 45--46), so they cannot be used as
+%  batch boundaries; they are given as comments instead.  Batches run 10--12
+%  pages, and the Greek-heavy stretches 129--190 and 202--225 are cut short
+%  on purpose (header §4: roughly half the Greek must be read on the image).
+% =====================================================================
+
+% [text to be added: pp. 1--10]
+%   Indledning §§1--3 (pp. 1--10).  Printed 1 has NO folio and its bold "1" is
+%   the sheet signature.  Printed 10 carries the two-column schema with the
+%   swash brace -- give it its own job and record the LaTeX chosen in the header.
+
+% [text to be added: pp. 11--20]
+%   Head "Første Hovedafsnit." / "Den græske Philosophie." opens printed 11,
+%   which also has NO folio.  §§1--2 of the Hovedafsnit run 11--21.
+
+% [text to be added: pp. 21--32]
+%   "Første Kapitel." head falls PARTWAY DOWN printed 21.  §§1--3 (Oversigt;
+%   De gamle Joniere; Pythagoræerne) run 21--32.  Notes *) on 25, 26, 28.
+
+% [text to be added: pp. 33--44]
+%   §§4--5, Eleaterne (32--41) and Herakleitos (41--45).
+
+% [text to be added: pp. 45--56]
+%   §§6--8, Empedokles, Atomisterne, Anaxagoras.  Note *) on 55.
+
+% [text to be added: pp. 57--68]
+%   §§9--10 and then "Andet Kapitel." / "Sokrates.", whose head falls partway
+%   down printed 65.  "Sokrates." is set in the SMALL bold section fount.
+%   Notes *) on 59.
+
+% [text to be added: pp. 69--80]
+%   Sokrates, continued (to 81).  Notes *) on 78, 79.
+
+% [text to be added: pp. 81--92]
+%   "Tredie Kapitel." head falls partway down printed 81.  §§1--2, Oversigt
+%   over anden Periode (81--85) and De eensidige Sokratikere (85--99).
+
+% [text to be added: pp. 93--104]
+%   De eensidige Sokratikere concluded; §3 Platon opens 99.  Note *) on 93, 101.
+
+% [text to be added: pp. 105--116]
+%   Platon.  Greek load rising.  Note *) on 115.
+
+% [text to be added: pp. 117--128]
+%   Platon.
+
+% [text to be added: pp. 129--140]
+%   Platon concluded (133); §4 Det ældre Akademie (133--134); §5 Aristoteles
+%   opens 134.  GREEK-HEAVY FROM HERE TO 190.
+
+% [text to be added: pp. 141--150]
+%   Aristoteles.  PRINTED 144 CARRIES A MANUSCRIPT ERRATUM APPLIED OVER THE
+%   TYPE -- transcribe the PRINTED reading, never the reader's correction.
+%   Notes *) on 146, 150.  Short batch: heavy Greek.
+
+% [text to be added: pp. 151--160]
+%   Aristoteles.  Note *) on 156.  Short batch: heavy Greek.
+
+% [text to be added: pp. 161--170]
+%   Aristoteles.  Short batch: heavy Greek.
+
+% [text to be added: pp. 171--180]
+%   Aristoteles.  Note *) on 177.  Short batch: heavy Greek.
+
+% [text to be added: pp. 181--190]
+%   Aristoteles.  PRINTED 188: the Greek accents are obscured by the reader's
+%   manuscript glosses and the Google layer silently supplies the expected
+%   ones.  Flag; do not supply.  Short batch: heavy Greek.
+
+% [text to be added: pp. 191--201]
+%   Aristoteles concluded (193); §6 Den peripatetiske Skole (193--194);
+%   "Fjerde Kapitel." head falls partway down printed 195.  §§1--2 of the
+%   third period run 195--201.  Note *) on 195.
+
+% [text to be added: pp. 202--213]
+%   §3 Stoicismen (201--214).  Greek-heavy.  Note *) on 213.
+
+% [text to be added: pp. 214--225]
+%   §4 Epikuræismen (214--223); §5 Skeptikerne og det mellemste Akademie
+%   (223--229).  Greek-heavy.
+
+% [text to be added: pp. 226--237]
+%   §§5--7, to De dualistiske Systemer (235--243).
+
+% [text to be added: pp. 238--248]
+%   §7 concluded; §8 Nyplatonismen (243--254).
+
+% [text to be added: pp. 249--258]
+%   Nyplatonismen concluded (254); "Femte Kapitel." head partway down 255;
+%   and "A n h a n g ." (bold, LETTERSPACED) opens partway down printed 258.
+%   Two display heads in one batch.
+
+% [text to be added: pp. 259--268]
+%   Anhang: Philosophien i den christelige Oldtid og Middelalder.
+
+% [text to be added: pp. 269--274]
+%   Anhang concluded.  Printed 274 is the last page of the body.
+
+% =====================================================================
+%  BACK MATTER
+% =====================================================================
+
+\chapter*{Rettelser.}
+\markboth{Rettelser}{Rettelser}
+% [text to be added: PDF 290, unnumbered = internal printed p. 275.
+%  Five entries, read at 600 dpi; RECON.md §11 carries the reading.
+%  NOT APPLIED to the text.  See header §5 for the second errata list,
+%  printed in Anden Deel, which corrects this part as well.]
+
+\end{document}

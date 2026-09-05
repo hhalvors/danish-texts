@@ -1,0 +1,2582 @@
+% =====================================================================
+%  H. Brøchner
+%  On the Religious in its Unity with the Human.
+%  A Positive Supplement to "The Problem of Faith and Knowledge".
+%  Copenhagen: P. G. Philipsen, 1869.   [IV] + 211 pp.
+%
+%  ENGLISH TRANSLATION
+%  Status: IN PROGRESS. Translated from transcription.tex (the Danish
+%  diplomatic transcription, COMPLETE), never from the scan.
+%  Structure mirrors transcription.tex 1:1: the same divisions and heads,
+%  the same paragraphing, page markers % --- p. N --- at the same joints,
+%  footnotes at the same anchors with the same per-printed-page reset, and
+%  the transcribed centred rules at the same eighteen places.
+%
+%  This is the positive sequel to `problemet-tro-viden' (1868), which is
+%  complete in this collection in both languages. The conventions below are
+%  INHERITED from that volume's translation so the pair reads as a pair;
+%  where this book forces a new decision it is marked NEW below.
+%
+%  RIGHTS: clear. Brøchner died 1875; long in the public domain.
+%
+%  ---------------------------------------------------------------
+%  TRANSLATION CONVENTIONS
+%  ---------------------------------------------------------------
+%  Standing method: ../../../TRANSLATION-PLAYBOOK.md.
+%
+%  INHERITED from problemet-tro-viden (do not diverge without recording it):
+%   * Erkjendelse -> "cognition"; Viden -> "knowledge". The distinction is
+%     load-bearing in both books -- the sibling's title is "The Problem of
+%     Faith and Knowledge" -- and the two words are never swapped.
+%   * ophæve / Ophævelse -> "abolish" / "abolition", or "supersede" where
+%     the sense is a superseding rather than an annulling. NOT "sublate":
+%     the sibling volume avoids it, and so does this file.
+%   * Quotation marks: Danish „…“ -> English curly doubles ``…''.
+%   * Emphasis: every \emph{} of the Danish is carried over as \emph{}.
+%   * Latin -> \textit{}; Greek glyphs copied verbatim from the Danish and
+%     the surrounding prose translated (textalpha is loaded for this).
+%   * The old id-est mark ɔ: -> "i.e."
+%   * Em-dash ---. Proper names unchanged.
+%   * Register: scholarly, moderately literal but readable. Brøchner's
+%     syntax is long and nominalised; compound coinages are kept rather
+%     than dissolved, to match the sibling.
+%
+%  NEW, forced by this book:
+%   * ANTIQUA LATIN. The Danish distinguishes SPACED antiqua
+%     (\emph{\textit{…}}) from TIGHT antiqua (\textit{…}) -- "causa sui" is
+%     spaced on p. 68, "modus" tight on p. 83, "conditio sine qua non" on
+%     p. 59 half and half. In English, italic no longer marks the Latin off
+%     from the surrounding Fraktur, because there is no Fraktur; italic now
+%     does double duty for Latin AND for emphasis. The distinction is kept
+%     mechanically all the same -- \emph{\textit{…}} where the Danish has
+%     it, \textit{…} where it does not -- so the two files stay
+%     comparable, and the loss of the fount contrast is recorded here
+%     rather than silently absorbed.
+%   * ANTIQUA GUILLEMETS. Where the printing puts «…» round antiqua Latin
+%     rather than the usual „…“ -- («Deum pati»), p. 41 -- the guillemets
+%     are KEPT as printed, per the playbook's rule for foreign-language
+%     guillemet terms. They are the one exception to ``…''.
+%   * LETTERSPACING THAT BREAKS MID-WORD. The compositor's spacing is
+%     inconsistent across line breaks and sometimes starts or stops inside
+%     a word (Aands-functioner p. 6, \emph{Tids}bestemmelsen p. 18,
+%     Væsen\emph{stotaliteten} p. 19, \emph{Livsforhold i Be}tydning
+%     p. 32). Where the English word divides at a comparable point the
+%     partial run is reproduced; where it cannot, the emphasis is placed on
+%     the whole English word and a comment records what the printing does.
+%     Either way the RUN COUNT is preserved, so the parity check holds.
+%   * HEADS. The book's Indhold and its printed heads disagree in eight
+%     places (listed in transcription.tex §3). Several of the divergences
+%     are Danish-internal and vanish in English -- "Det"/"De" at p. 90,
+%     the enumerator styles 1)/1. -- so they are recorded in comments at
+%     the Indhold and at the head, not manufactured in the English.
+%   * INDHOLD. The book's own contents leaf is translated as a list rather
+%     than replaced by \tableofcontents (which is what the sibling volume
+%     does), because here it is a bibliographic object in its own right:
+%     it carries six rubric lines that appear nowhere in the body, two body
+%     heads that it omits, and a page range that contradicts itself. All of
+%     that is reproduced.
+%
+%  BUILD: pdflatex (libertinus + libertinust1math), like the Danish.
+%  Sandbox compile-test per TRANSCRIPTION-PLAYBOOK.md §5.
+% =====================================================================
+
+\documentclass[12pt,a4paper]{book}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{libertinus}
+\usepackage{libertinust1math}
+\usepackage{textalpha}   % Greek (τέλος etc.), copied verbatim from the Danish
+\usepackage{graphicx}
+% The Danish needs \reflectbox{c} for the id-est mark ɔ:. The English
+% renders that mark "i.e.", so the declaration is not needed for the body;
+% it is kept so the file compiles unchanged if a quotation ever restores it.
+\DeclareUnicodeCharacter{0254}{\reflectbox{c}}
+\usepackage[english]{babel}
+\usepackage[protrusion=true,expansion=true]{microtype}
+\usepackage{setspace}
+\usepackage[margin=1.2in]{geometry}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\setlength{\headheight}{28pt}
+\addtolength{\topmargin}{-13.5pt}
+\usepackage{hyperref}
+
+\hypersetup{
+  pdftitle={On the Religious in its Unity with the Human},
+  pdfauthor={H. Brøchner},
+  hidelinks
+}
+
+% The book prints *) and **), restarting on every printed page. The counter
+% is reset at the page marker of every note-bearing page, exactly as in the
+% Danish. (footmisc[perpage] is wrong here: it resets on the TYPESET page.)
+\renewcommand{\thefootnote}{%
+  \ifcase\value{footnote}\or *)\or **)\or ***)\else \arabic{footnote})\fi}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LE,RO]{\thepage}
+\fancyhead[RE]{\textit{On the Religious in its Unity with the Human}}
+\fancyhead[LO]{\textit{\leftmark}}
+
+\setstretch{1.3}
+
+\title{\textbf{On the Religious\\[2pt] in\\[2pt] its Unity with the Human}\\[10pt]
+  \large A Positive Supplement to\\ ``The Problem of Faith and Knowledge''\\[10pt]
+  \normalsize\textit{Om det Religiøse i dets Enhed med det Humane}}
+\author{Dr.\ H.\ Brøchner\\[4pt]
+  \small Professor of Philosophy\\[4pt]
+  \small Translated from the Danish}
+\date{Copenhagen: P.\ G.\ Philipsen, 1869}
+
+\begin{document}
+\maketitle
+\thispagestyle{empty}
+\newpage
+
+% =====================================================================
+%  CONTENTS  (printed pp. [III]--IV)
+%  The book's own contents leaf, translated. Its printed page ranges are
+%  reproduced EXACTLY as printed, including the one that contradicts
+%  itself (entry 2 given 167--201 while its own sub-entry a) is given
+%  165--167), and the six rubric lines that appear here and nowhere in the
+%  body. Top-level entries are bold Fraktur in the print; the rubric lines
+%  are letterspaced; the Greek enumerators α) β) γ) are antiqua italic.
+% =====================================================================
+\chapter*{Contents}
+\addcontentsline{toc}{chapter}{Contents}
+\markboth{Contents}{Contents}
+
+\begingroup
+\setstretch{1.15}
+\begin{list}{}{%
+  \setlength{\leftmargin}{2.2em}\setlength{\itemindent}{-2.2em}%
+  \setlength{\itemsep}{2pt}\setlength{\parsep}{0pt}}
+
+\item[] \hfill Page
+
+\item \textbf{Introduction} \dotfill 1--4.
+
+\item \textbf{I. On the Relation of Unity between True Cognition and True
+  Action} \dotfill 5--29.
+
+\item \textbf{II. On the Presence of the Essential Marks of the Religious
+  in its True Sense in True Cognition and True Action, and on their
+  Relation of Unity to the Former} \dotfill 30--63.
+
+\item[] \hspace{1.2em} 1. The Essence of the Religious \dotfill 30--43.
+\item[] \hspace{1.2em} 2. Cognition's Relation to the Religious according
+  to its Ideal Determinateness \dotfill 43--51.
+\item[] \hspace{1.2em} 3. The Relation of the Will and of Action to the
+  Religious according to its Ideal Determinateness \dotfill 51--56.
+\item[] \hspace{1.2em} 4. The Reconciliation of the Human Spirit in the
+  Ethical-Human Life Resting upon True Cognition \dotfill 56--63.
+
+\item \textbf{III. The Central Ethical-Religious Problems, Apprehended
+  from the Standpoint of Knowledge} \dotfill 64--201.
+
+\item[] \hspace{1.2em} \emph{Preparatory Developments of Concepts:}
+\item[] \hspace{1.2em} 1. The Concept of the Absolute \dotfill 64--89.
+% The Danish Indhold reads „De menneskelige Væsens Begreb“ where the
+% printed head on p. 90 reads „Det menneskelige Væsens Begreb“. The
+% divergence is a Danish article form and has no English counterpart; it is
+% recorded here and at the head rather than manufactured in the English.
+\item[] \hspace{1.2em} 2. The Concept of the Human Being, Determined in
+  Relation to the Absolute and to the Totality of Existence \dotfill 90--97.
+\item[] \hspace{1.2em} \emph{Comparison of the Conception Developed with}
+% Indhold: „1) Ludvig Feuerbachs“ / „2) den Hegelske Philosophies“ -- both
+% genitive and both carrying an enumerator, where the run-in heads on
+% pp. 97 and 126 have neither. The genitive hangs on the rubric line above.
+\item[] \hspace{1.2em} 1) Ludvig Feuerbach's \dotfill 97--126.
+\item[] \hspace{1.2em} 2) that of the Hegelian philosophy \dotfill 126--128.
+\item[] \hspace{1.2em} \emph{Development of the Problems:}
+\item[] \hspace{1.2em} 1. On the Freedom of the Will \dotfill 128--143.
+\item[] \hspace{1.2em} 2. On the Essence and Possibility of Evil \dotfill 144--152.
+\item[] \hspace{1.2em} 3. The Self-Dissolution of Evil as the Possibility
+  of Reconciliation \dotfill 152--159.
+\item[] \hspace{1.2em} \emph{Further Developments towards the Problem of Evil:}
+% Indhold: without „i det Onde“, which the printed head on p. 159 carries.
+\item[] \hspace{1.2em} 1. The Relation between the Moment of Necessity and
+  the Moment of Freedom \dotfill 159--164.
+\item[] \hspace{2.4em} a) in the Realisation of Evil \dotfill 159--162.
+\item[] \hspace{2.4em} b) in the Abolition of Evil \dotfill 162--164.
+% --- p. IV ---
+% As printed: entry 2 is given 167--201 while its own sub-entry a) is given
+% 165--167, and the printed head stands on p. 164. Not in the Trykfeil.
+% Reproduced as printed.
+\item[] \hspace{1.2em} 2. Reconciliation, its Source and Goal \dotfill 167--201.
+\item[] \hspace{2.4em} a) that which is operative in Reconciliation \dotfill 165--167.
+\item[] \hspace{2.4em} b) that which is to be attained in Reconciliation \dotfill 167--168.
+\item[] \hspace{2.4em} \emph{Conditions for the Completeness of Reconciliation:}
+% Indhold: „Skyldens Ophævelse“; the printed head on p. 168 reverses the
+% word order, „Ophævelsen af Skylden“. Both render as "the abolition of
+% guilt"; the variance is recorded, not manufactured.
+\item[] \hspace{2.4em} α) The Abolition of Guilt \dotfill 168--176.
+\item[] \hspace{2.4em} β) The Ethical as a Determination of Totality for
+  Human Life \dotfill 177--182.
+\item[] \hspace{2.4em} γ) The Eternity-Determinateness of the Individual
+  Human Life Answering to the Concept of the Ideal \dotfill 182--190.
+\item[] \hspace{1.2em} \emph{Comparison of the Conception Developed of
+  Reconciliation with}
+\item[] \hspace{1.2em} 1) the abstract metaphysical conception of
+  Reconciliation \dotfill 190--192.
+\item[] \hspace{1.2em} 2) the Christian doctrine of Reconciliation \dotfill 192--201.
+
+\item \textbf{Conclusion} \dotfill 202--210.
+
+\end{list}
+\endgroup
+% NOTE, as in the Danish: the Indhold has NO entry for the two body heads
+% „a) Opfattelsen af Synden og af dens Virkning.“ (p. 193) and
+% „b) Opfattelsen af Forsoningen og af Ophævelsen af Syndens Virkninger.“
+% (p. 195). It runs straight from 2) 192--201 to Slutning. Both heads are
+% real and are set in the body, here as there.
+
+% =====================================================================
+%  BODY
+% =====================================================================
+
+% The body of printed pp. 1--4 carries NO printed head whatever: the text
+% begins directly, with a two-line ornamental initial. „Indledning“ is the
+% Indhold's word for it, supplied editorially -- as in the Danish, where the
+% head is bracketed for the same reason.
+\chapter*{[Introduction]}
+\addcontentsline{toc}{chapter}{[Introduction]}
+\markboth{Introduction}{Introduction}
+
+% --- p. 1 ---
+% p. 1 carries NO printed head of any kind: the text begins directly with a
+% two-line ornamental initial N (set here as an ordinary letter, per the
+% book's conventions). The signature numeral „1“ at the foot is not
+% transcribed. „Indledning“ is the Indhold's word only, supplied editorially
+% by the skeleton above, and bracketed there as in the Danish.
+The present work, whose publication has been delayed by circumstances
+independent of the author's will, attaches itself most closely to the
+historical-critical treatise: Problemet om Tro og Viden, in which
+% The Danish sets the title PLAIN -- no letterspacing, no other device -- and
+% so does the English. Italicising it here would add an emphasis run the
+% printing does not have and break parity with the Danish.
+reference is made to it in several places, and reproduces, like that treatise,
+in all essentials unchanged, the content of a university lecture course. It
+forms the positive supplement to that treatise, whose result, from the nature
+of the case, had essentially to be negative; and taking its starting point
+from this negative, it seeks, presupposing the developments by which that
+result was established, the definitive determination of faith's relation to
+knowledge.
+% The Danish prints „ved hvilket“ where one would expect „ved hvilke“. It is
+% a real word in the language and so stands as printed and is not logged as a
+% defect; the disagreement is Danish-internal and has no English counterpart.
+
+The result, of a negative kind, to which all the developments given in the
+earlier work (in the ``preliminary determinations of concepts'', in the
+critique of theology's standpoint and of the attempt to bring about a
+reconciliation by a distinction of principle) have led, may be summed up in
+the following points:
+
+% Displayed enumeration, printed with the numeral at the left margin and the
+% text hanging: „1.“ and „2.“, both wholly on p. 1.
+\begin{enumerate}[label=\arabic*., leftmargin=*, labelsep=1em,
+                  topsep=0.35\baselineskip, itemsep=0.35\baselineskip]
+\item Between faith in the sense of positive religion, i.e. faith as ``faith
+  in revelation'', and knowledge there arises --- whether the standpoint be
+  taken in the positively religious or in science --- in virtue of their
+  different content and their different source, an unabolishable incongruence,
+  an irreconcilable opposition.
+% The Danish sets „Incongruents“; the initial is the Fraktur I/J sort,
+% normalised to I per the house convention (ABBYY reads it „Jncongruents“).
+\item It therefore becomes impossible that faith (in the sense indicated) and
+  knowledge should be united without discord in the same consciousness, should
+  preserve their validity for the same personality.
+\end{enumerate}
+
+% --- p. 2 ---
+This negative result now converts itself immediately into a positive one
+differing from it only formally. If the opposites are irreconcilable in
+consciousness, then it becomes a necessity that a \emph{choice} be made
+% letterspaced: „v æ l g e s“ only; the following „disse“ is set tight. The
+% English run falls on "choice", the word the Danish spaces.
+between these opposites, of which one must be the expression of the human
+spirit's highest energy, must enclose within itself the goal of its highest
+striving.
+
+This choice, whose necessity under that presupposition is not to be evaded, is
+then, with respect to its character, to be formally determined thus: that in
+accordance with the demand which lies in the unity of the human being and of
+human self-consciousness, it must be such a choice as one in which the
+spirit's fundamental activities are in harmony within themselves and with one
+another, in which therefore the being, undivided and unmutilated, is in unity
+with itself in its cognising and its willing.
+
+When this determination is taken as the norm, it becomes clear what direction
+the choice can and must take, what can and must become the object of the
+choice.
+
+For from the developments given in the earlier work it emerges that faith, as
+faith in the sense of the positive religions, \emph{cannot} be chosen if the
+demand set up above is to be fulfilled. That it cannot be so chosen lies
+partly in its relation to the practical, partly in its relation to the
+theoretical. It cannot be chosen because, in the practical respect, it cannot
+% Both occurrences of „Theoretiske“ on this page are set TIGHT in the Danish,
+% not letterspaced; the BATCH-AGENT calibration set wrongly lists one as
+% spaced. No \emph{} on "theoretical" here, accordingly.
+become the forming principle for the wholeness of an ethical human life,
+cannot form human nature. For on the standpoint of positive religion the
+source of the ethical demand becomes the supranatural, transcendent subject of
+revelation, distinguished from the human being, whose will is absolute
+arbitrariness; and the demands of this will cannot therefore be congruent with
+the essential demand of the human spirit. And when positive religion has been
+clarified into the highest form of a religion of spirit, then its ``ethical''
+demand requires the denial of the natural, that is, of something fundamental
+in the human being, of something that \emph{must} assert itself in its
+essentiality. --- If we look to the theoretical, then faith cannot be chosen
+because it cannot round itself off into a totality, because, while it cannot
+make itself inde\-%
+% --- p. 3 ---
+\setcounter{footnote}{0}% (no space: the word is broken across pp. 2/3, as in the Danish)
+pendent of knowledge, it cannot take up into itself what is essential in
+knowledge, cannot see through and explain knowledge\footnote{Cf.\ Problemet om
+Tro og Viden, pp.\ 195; 210 f.}.
+% printed mark: *) --- the only note on p. 3, set below a short rule.
+% The work-title reference is left in Danish, per the playbook: it names the
+% sibling volume, which this collection catalogues under its Danish title.
+% The signature „1*“ at the foot of p. 3 is not transcribed.
+Knowledge must then, as an essential determination in human nature,
+inevitably assert itself as justified over against faith, and bring discord
+into the consciousness that was to be filled by faith. A relation of
+subordination on knowledge's part is excluded by the kind of the opposition
+and by the essence of knowledge. When faith is chosen, therefore, the being's
+harmony and its inner reconciliation cannot be attained.
+
+But when the demanded goal cannot be attained through the choice of faith,
+then there shows itself, through what was developed in the previous work, a
+possibility that it can be attained through a choice of knowledge. For in that
+knowledge is chosen, that is chosen which, by being an expression of the
+universality of the human being, has the capacity to unfold itself as a
+totality resting in itself with an inner infinity. In that knowledge is
+chosen, that is chosen in which the being in its unity becomes manifest to
+itself, that which in the indivisible human spirit holds the ideal principate,
+and which therefore can become the norm for a true ethical \emph{wholeness of
+life}. In that knowledge is chosen, there is finally chosen that which, as
+enclosing the cognition of the spirit's \emph{whole} life and development of
+life, can see through the essence of the finite forms of religion and
+comprehend them in their springing from human nature in its unfolding, and
+therefore does not retain a disturbing barrier of consciousness within them;
+and which therefore also, in separating out within the historical forms of
+religion the transient and finite from the abiding and essential, can stand in
+harmony with and take up into itself this essential element, which is
+precisely the religious according to its true and eternal significance.
+
+How now, from this standpoint of the necessity of a choice, and of a choice so
+determined, a \emph{reconciling} solution of the problem of the relation of
+faith and knowledge becomes possible; how the right and validity of knowledge
+can be asserted without faith being violated in its truth, without the
+% --- p. 4 ---
+religious that is demanded by a need of the human spirit being denied --- this
+it will be the task of the developments that follow to make clear. Their
+course is determined by the nature of the task. \emph{First} it will be
+necessary to establish that there is present, conditioned by the unity of
+essence, a relation of unity between true cognition and true action, ethical
+action. \emph{Thereafter} it shall be shown that the essential marks of the
+religious in its true and eternal sense --- faith and devotion --- are
+inseparable from true cognition and true action, and that these are therefore
+in harmony with the religious and bear it within themselves, so that human
+life, according to its harmonious unity with itself in the totality of its
+fundamental functions, can show itself as penetrated by the religious. And
+\emph{finally} the possibility shall be shown that out of philosophy's
+% „Og“ is set tight in the Danish; only „e n d e l i g“ is letterspaced, and
+% it is broken „en=/delig“ across the printed line.
+concepts of the concretely determined Absolute --- the highest determination
+of knowledge --- and of the human being in its relation to the principle and
+to real existence, there can be developed a view of life that can satisfy
+ethically and religiously, and that there can be attained those essential
+determinations of the ethical and religious relation of which it has been
+asserted that they can be derived only from a principle of will and of faith
+absolutely heterogeneous with the principle of knowledge. Here, then, the
+central ethical-religious problems --- the problems of the freedom of the
+will, of the possibility and actuality of ethical evil, and of reconciliation
+and restitution --- will come up for discussion.
+
+In connection with these developments there will at the same time be made
+clear the relation of the view of life indicated to those conceptions which
+offer real or apparent points of contact with it, and the critique of them
+given, partly directly, partly indirectly.
+
+\begin{center}\rule{2cm}{0.4pt}\end{center}
+% RULE, p. 4: the Introduction closes with a short centred DOUBLE rule --- two
+% parallel hairlines --- standing below the last line of type, the rest of the
+% leaf blank. The same weight as the division-closing rules of pp. 29, 63, 201
+% and 210, and unlike every other rule in the book. Set with the single \rule
+% this edition uses throughout, as in the Danish.
+
+\chapter*{I.\\ On the Relation of Unity between True Cognition and True Action.}
+\addcontentsline{toc}{chapter}{I. On the Relation of Unity}
+\markboth{I. On the Relation of Unity}{I. On the Relation of Unity}
+
+% --- p. 5 ---
+% p. 5 is the opening page of division I. The \chapter* head is in the skeleton
+% and is not repeated here; the short centred rule below it is head ornament
+% and is not transcribed at all. p. 5 carries no folio (by design) and opens
+% with a two-line ornamental initial G, set as an ordinary letter.
+%
+% NOTE on letterspacing across a line break, which happens repeatedly in this
+% division: where a letterspaced word runs over a line ending, the compositor
+% sometimes spaced only the part standing on the first line and set the
+% continuation tight, so \emph{} sometimes ends inside a word. The opposite
+% also occurs. The practice is genuinely inconsistent and is not normalised in
+% the Danish; in the English the emphasis falls on the corresponding element
+% and the RUN COUNT is preserved, with a comment wherever the English word
+% cannot divide where the Danish one does.
+The fundamental relation between cognition and will, as primitive forms of
+expression of the human being, has been indicated in the earlier work
+(pp.\ 134 ff.), and to the determinations there given I may at this place
+refer back. The conception there asserted was this: that the human being,
+whose indivisible unity is posited by the concept of subjectivity and impresses
+itself in the unity of self-consciousness, is according to its fundamental
+concept a selfhood-energy, and that this determination of the selfhood-energy
+is the pervading universal which gives itself its peculiar forms of activity
+in cognition and will. In these peculiar forms of expression, then, the
+universal determinateness of the being reveals itself; they become primitive
+functions of the selfhood-energy; and while their originality encloses their
+peculiarity and their self-validity, their relation to the universal
+determination of the selfhood-energy --- the determination inherent in the
+particular --- encloses this: that they are governed by the unity of the
+being, that they reflect one another's formal determinatenesses, and that the
+essential energy therefore preserves its unity in the twofold form of
+appearance. By the \emph{equal} relation in which cognition and will have been
+shown to stand to the determination of the energy, that confusion of concepts
+is removed which, through an arbitrary and unclear extension of the concept
+\emph{drive}, identifies drive with the energy and thereby procures for the
+will an illusory precedence in the human being, without being able, then, to
+explain the origin of cognition, or of consciousness generally;
+% --- p. 6 ---
+\setcounter{footnote}{0}% p. 6 carries TWO notes, printed *) and **)
+without being able to remove the confusion that ``the drive'' is itself to
+posit what the drive, in the \emph{proper} sense of the word, strives to hold
+fast \emph{or} to remove; and without being able to account for the fact that
+the first expression of the selfhood-energy, as unconscious organic forming,
+continues \emph{after} the will has been actualised, and continues
+\emph{independently} of the will. Through the critique of this one-sided and
+unclear conception the primitivity both of cognition and of will has been
+asserted; and when the question of the ideal principate was raised, this was
+assigned to cognition in virtue of its relation to that fundamental
+determination in the human being, \emph{essential universality}, by which the
+human being categorically distinguishes itself from the other stages of the
+development of life\footnote{Cf.\ Problemet om Tro og Viden, p.\ 137; Et Svar
+til Prof.\ Nielsen, pp.\ 12 f.}.
+% printed mark: *) --- first of the two notes on p. 6, below a short rule.
+This ideal principate of cognition reveals itself also in
+\emph{consciousness's} relation to the particular functions of spirit. As
+functions of the human selfhood-energy they are \emph{accompanied by
+consciousness}, and are precisely thereby functions \emph{of spirit}; but
+% letterspacing: „A a n d s =“ at the line end is spaced, „functioner,“ on the
+% next line is set tight. The English compound will not divide at the same
+% point, so the run falls on the corresponding element, "of spirit".
+consciousness stands according to its concept in another relation to cognition
+and thought than, for example, to the will; it becomes the \emph{abstract,
+formal,} expression of cognition, that which can be unfolded into an
+\emph{appropriating cognition}, into \emph{comprehending} thinking, into the
+transparency of spirit to itself in its content; and the fact that it enters
+into relation to the different functions of spirit, in becoming the form of
+their being-for-the-self, points precisely to the ideal principate of
+cognition, and to the possibility of a transparency of the self to itself
+through cognition in the self's various peculiar forms of
+expression\footnote{With respect to the charge which a critic has brought
+against me of confounding what is essentially different, I remark only --- what
+every thoughtful reader of the earlier work will surely have seen --- that I do
+not identify the \emph{immediate forms of consciousness} with unfolded
+\emph{scientific cognition}, but maintain only that what comes forward in those
+forms of immediacy is partly such as can be unfolded in clear cognition, and
+partly a \emph{resulting} immediate, and more precisely such a one as has
+resulted from a preceding \emph{cognition}. Just as little do I confound the
+\emph{subjective} with the \emph{objective}; rather I maintain that the former,
+as an expression of the subject's \emph{being}, has the same transparency for
+cognition, i.e. for a \emph{theoretical} cognition, as has that immediate.}.
+% printed mark: **) --- the second note on p. 6. Its text RUNS OVER onto p. 7
+% in the print, where it fills the last six lines below the rule; it is set
+% here in full at its call, and the page marker below stands at the beginning
+% of p. 7's body text, as in the Danish.
+% --- p. 7 ---
+When this fundamental point --- the being's undivided unity in cognition and
+will, and the ideal principate of cognition --- has already been won as a
+result in the earlier work, then at this place the \emph{relative} opposition
+is to be more closely elucidated which must come forward in virtue of the
+peculiarity of the fundamental functions and in virtue of the conditions of
+the development of spirit, but through which, in virtue of the fundamental
+relation, harmony --- the unity grounded in essence --- must actualise itself
+as governing the opposition.
+
+\emph{The relative opposition} in which cognition and will come forward in
+their independence is to be apprehended first as an opposition
+\emph{of concept}, and thereafter as an opposition \emph{of facticity}.
+% „B e g r e b s modsætning“ and „F a c t i c i t e t s modsætning“: in both
+% compounds only the first element is letterspaced in the Danish and the
+% second set tight. Two lines below, the whole word is spaced throughout.
+
+\emph{The opposition of concept} between the two primitive functions has
+already been indicated in ``Problemet om Tro og Viden'' (pp.\ 135 f.). It
+showed itself as coming forward immediately in the difference of formal
+determinateness; but the difference of form was seen not to constitute an
+abstract opposition, since the determinations which expressed it pointed to
+one another and developed out of one another, so that the fundamental
+functions reflected one another's formal determinatenesses.
+% PRINTER'S DEFECT here in the Danish: „hinandes“ as printed, for
+% „hinandens“ --- a dropped n, fully legible at 300 dpi and read so by both
+% OCR witnesses, with „hinandens“ set correctly on p. 5. Orthographic, and so
+% not reproducible in English; recorded here.
+Thereby it became possible that beneath the difference of form the
+\emph{essential} unity of the content can be preserved: a unity which is
+required by the fact that the same undivided being gives both forms their
+content. When thus, in the ethical resolution, the cognition of duty is
+converted into a willing of duty --- when therefore that which as an object of
+cognition has the form of possibility is posited in the form of actuality in
+the I --- then this \emph{determinate} content is in both forms
+\emph{essentially} unchanged, and must be so already for this reason, that
+otherwise the fulfilment of duty in the action would \emph{not} be a
+fulfilment of this determinate thing cognised as duty; and in the preceding
+% --- p. 8 ---
+cognition the universal determination of possibility is so punctualised in
+relation to the existing subject, and the object of cognition so brought into
+relation to the cognising \emph{being}, so seen as an essential determination
+which is required to be posited as a determination of reality, that the
+conversion into a content of will cannot abolish the essential unity of the
+content.
+
+That the difference between cognition and will does not transform itself into
+an \emph{abstract} opposition shows itself also indirectly when we elucidate
+the attempt to assert such an opposition through the opposition between the
+``theoretical'' and the ``practical consciousness'', between ``theoretical''
+and ``practical cognition'' (thinking).
+
+With respect to this theory we touch only upon what we have shown elsewhere:
+the lack of clarity in the application of the categories of which it makes
+itself guilty, in that the concepts consciousness, cognition and thinking are
+used indiscriminately without clear delimitation, and cognition, which relates
+itself to action, is confounded with the act of will itself, the resolution of
+the will. Disregarding this confused application of the concepts, and
+distinguishing what has been called practical cognition from the immediate
+``practical consciousness'' --- which is partly a consciousness of the
+subject's state in the practical respect, of the subject's resolution of will
+and of the motive, the factually moving, and partly a consciousness of the
+ethically a priori, of the practical demand --- we investigate how the sought
+opposition between a theoretical and a practical cognition is to be
+determined.
+
+It will then be immediately evident here that there cannot be two essentially
+distinct kinds of cognition, two absolutely heterogeneous forms of cognition,
+since in that case the determination of cognition would transform itself into
+a purely contentless name and in its duality could not be the property of the
+same cognising being. An opposition which springs from the ground of the same
+being must preserve within itself the essential unity. And therefore it is to
+be held fast that cognition, \emph{as} cognition, in every form and in every
+application, must preserve its essential determinateness.
+% --- p. 9 ---
+The opposition between a ``theoretical'' and a ``practical'' cognition then
+becomes a merely relative opposition between a cognition which is determined
+solely by the laws of thought and which has theoretical insight as its result,
+and a cognition which is determined also by motives of will (laws of will) and
+which has action, resolution, as its result.
+
+The designation of practical cognition as determined by motives of will points
+partly to this cognition's presuppositions and starting points (premisses),
+partly to its being affected by the will in the course of its advance. Its
+starting points are practical incitements: partly promptings of drive, partly
+effects of an ethical a priori (grounds of conscience). From these starting
+points, which stand as something given, ``practical'' cognition then advances
+in the same way as the theoretical, which draws consequences from its
+premisses, partly from unresolved ones and partly from transparent ones. ---
+Cognition's being affected in the course of its advance may proceed from a
+more clearly or a more obscurely conscious will, which either supplements
+incomplete premisses, or corrects one-sided theories, or hinders true
+cognition. In the first case the will supplies a starting point which, in
+order to be used, must not stand in conflict with what is theoretically
+cognised. The relation here forms an analogy to that in which, in theoretical
+reasoning, an unproved current opinion (a prejudice) is used. In the second
+case the will inserts a corrective which cognition acknowledges as its own,
+and which forms the starting point for a new inference. Here too the
+theoretical domain offers perfectly corresponding analogies (cf.\ Problemet om
+Tro og Viden, pp.\ 144 f.). --- In the last case the relation is more
+complicated. During cognition's advance the will works partly by bringing
+forward instances that can prevent a conclusion, and partly by spacing out the
+unfolding of the premisses from the conclusion, the resolution, whereby the
+clarity of cognition can be obscured, and contradicting instances, specious
+grounds and pretexts can take on the appearance of vali\-%
+% --- p. 10 ---
+dity. To this hindering there is formed, in the theoretical domain, the
+analogy of the working of prejudices upon cognition.
+
+The \emph{result} of ``practical cognition'' is partly the acceptance of a
+doctrine which relates itself to the subject's action, to its practical life,
+and partly an inference in the direction of action, which is converted into a
+resolution. If the result is the acceptance of a doctrine, then this
+acceptance comes forward as an inference which proceeds with necessity from
+its premisses; but among these premisses there may be found, according to what
+has been developed above, such as have been inserted by the will. If the
+result is resolution, as resolution to the determinate action, then the
+preceding act of cognition --- to which the resolution in the proper sense
+always points back --- is, like the cognition upon which the acceptance of the
+practical doctrine depended, and like the cognition which drew consequences
+from practical premisses, in its form not essentially different from the
+theoretical; but this would be impossible if an absolute heterogeneity
+separated ``practical'' and ``theoretical'' cognition from one another. For
+cognition is only what it is by its form; but by form is then of course
+understood something other and more than the empty syllogistic form applied
+\emph{externally} to an arbitrary content.
+
+The result with respect to the cognition which relates itself to the practical
+is therefore this: that in virtue of its form and in virtue of its relation to
+the universal concept of cognition, and likewise in virtue of the relation of
+the practical --- of the starting points and of the result --- to the human
+\emph{being}, it must be essentially one with the cognition designated as
+% letterspacing: „Menneske“ is set tight in the Danish, only „v æ s e n e t ,“
+% is spaced. The English compound divides at the same point.
+theoretical. All cognition is \emph{as} cognition theoretical. That cognition
+can be applied in a practical direction, and in this application be affected
+by the will, proves nothing for an essentially distinct practical cognition;
+for a unity of the will with cognition comes forward \emph{everywhere}, its
+reciprocal action with cognition becomes manifest in the domain of
+indisputably theoretical cognition as well, and theoretical cognition can
+\emph{as such} become an object of the will.
+% --- p. 11 ---
+That the relation is of this kind will become still more evident when the
+\emph{marks of character} are examined by which the alleged abstract
+opposition between theoretical and practical cognition is \emph{described}:
+% The Danish sets „abstrakte“ with k here, where the book's usual form is
+% „abstract“ (pp. 8, 13, 15). Orthographic, and not reproducible in English.
+they will all show themselves as leading back from the relative difference to
+the essential unity.
+
+When the opposition is first characterised thus, that the \emph{theoretical}
+consciousness (cognition) is \emph{impersonal} and the \emph{practical
+personal}, then this opposition, as an abstract and exclusive opposition,
+shows itself untenable already for this reason: that theoretical cognition, as
+the expression of the unity of that being whose fundamental determination is
+personality, must not merely be an expression of personality in general, but
+must have for its final goal a cognition of personality in its connection with
+the whole of existence and in its subordination under the principle of
+existence. In this cognition of the personal self, the cognition of objective
+real existence --- of that world of corporeality to which personality stands
+in relation through its side of reality and its conditions of reality --- will
+then also show itself as having ``personal'' significance. That determination
+of theoretical cognition as impersonal encloses the consequence that
+\emph{theoretical cognition, although a primitive expression of the self,
+cannot become self-cognition}, inasmuch as it finds its limit in the very self
+which is the source of this cognition. If, in order to maintain the assertion
+of theoretical cognition's impersonal character, one were to lay the emphasis
+on this, that the cognition of the self too, as theoretical cognition, must
+remain in the form of the universal, and that therefore the personal self can
+through it be cognised only in an impersonal manner --- then it would have to
+be urged against this that the universal in such cognition is not held fast in
+the original form of abstraction, but is constantly more and more punctualised
+towards concretion, so that what remains ``impersonal'' in theoretical
+cognition would designate only what remains relative in the punctualisation of
+the universal; and this relative element is moreover such
+% --- p. 12 ---
+as is not merely abiding in theoretical cognition, but is and must be so in
+the resolutions of the will as well, precisely because these are conscious and
+are expressions of spirit, and as such are raised above that form of
+singularity which belongs to natural existence and to natural determination by
+drive.
+
+The object of impersonal, theoretical cognition is determined as the
+\emph{objectively valid}, that of personal, practical cognition as the
+\emph{subjectively valid}, and an abstract opposition is made between the
+objectively universally valid and the subjectively universally valid. When,
+however, that self-contradicting limit upon theoretical cognition is removed,
+it shows itself to comprehend also that which, as a ``subjectively valid'',
+was set in opposition to the objectively valid, and to comprehend not merely
+what, in virtue of its connection with cognised human nature, has validity in
+its universality for all subjects, but also what, as determined in its
+concretion by co-operating universal grounds, has validity for this determinate
+subject.
+
+Only in virtue of this relation can there be any talk of a ``subjectively
+universally valid'', whereas the abstract opposition between the subjective
+and the objective must lead to letting \emph{individual} subjectivity as such
+determine the valid as it \emph{wills} to determine it, and so to letting the
+subjective grounds become one with individually accidental grounds, promptings
+of drive and the like --- to letting ``grounds of will'' become such as an
+arbitrary will makes into grounds.
+
+If the opposition between the two kinds of cognition is then determined thus,
+that theoretical cognition is moved by \emph{necessity} while practical
+cognition ``\emph{is grounded in freedom}'' --- the former, as lost in the
+universal, being compellingly determined by incontrovertible grounds of
+knowledge, the latter, as conditioned by regard for the self, resting on
+grounds of conscience --- then this opposition too shows itself to be
+dialectical. Theoretical cognition is governed by necessity where the
+presuppositions of the inference are fully transparent, where the proof
+acquires stringency through clear and complete pre\-%
+% --- p. 13 ---
+misses. But just as fully is ``practical cognition'' determined with necessity
+where these conditions are present, where the presuppositions are given clear
+and complete. What produces the appearance of an abstract opposition is
+\emph{the difference in concretion} between the object of practical cognition
+and certain spheres of the theoretical. In the domain of the concretely
+ethical a seemingly unabolishable difference may persist, precisely on account
+of the incompleteness of the premisses, in the same way as within the
+theoretical, in the more concrete domains. The difference can maintain itself
+because the manifold presuppositions are not clarified and are therefore
+partially supplemented in an individual manner. Thus, under the same
+presuppositions, the necessity is the same. And the necessity which determines
+theoretical cognition is, when the cognition is \emph{comprehending} and as
+such \emph{appropriating}, an expression of \emph{the lawfulness of the
+cognising being itself}, and thus converts itself into \emph{freedom}. In the
+form of unfree necessity theoretical cognition comes forward only where what
+is given in sensation is determinative in its foreignness. But to this stage
+there corresponds that stage in the development of practical ``cognition''
+where the regard for the self which determines it is regard for something
+obscurely drive-like, by which the will is brought under natural necessity.
+Only as the expression of something essential has the subject's need, which
+determines that ``cognition'', any warrant; but as an expression of the being
+this need bears at once the stamp of true necessity and of freedom, while the
+so-called ``freedom'' of determination by drive is unfree necessity, just as
+the necessity of sensation is. In theoretical and in practical cognition
+alike, therefore, \emph{both the} determinations come forward which were to
+% letterspacing: „b e g g e  d e“ ends the line and is spaced in the Danish;
+% „Bestemmelser,“ opening the next line is set tight. The English breaks at
+% the same point.
+constitute the sharp opposition; the real relation becomes obscure only
+through this, that the individual who acts ``arbitrarily'' does not become
+conscious of being, precisely in this action, unfree.
+
+When finally the opposition is determined in this way, that theoretical
+cognition is to be \emph{disin}\-%
+% --- p. 14 ---
+\setcounter{footnote}{0}% p. 14 carries one note, printed *)
+\emph{terested, contemplative, without responsibility}, while the practical is
+% the letterspacing of „u i n t e r = / e s s e r e t“ IS carried across the
+% page break in the Danish; both halves are spaced on the image. The English
+% divides the word at the same joint.
+\emph{interested}, moved by \emph{fear and hope}, an object of
+\emph{responsibility} --- then this opposition stands as the previous ones do.
+Theoretical consciousness is \emph{disinterested} when ``interested'' is taken
+in the sense of egoism; it is on the contrary interested in the highest degree
+when interest is taken in the sense of a striving towards an essential end,
+and this end for theoretical cognition is precisely the self's clarity about
+itself, its being for itself as self-conscious according to its total
+concretion. That spirit theoretically finds rest in any result whatever to
+which the consequences of the presuppositions lead is correct only in so far
+as spirit can halt momentarily at that result; but in the untrue or only
+half-true result there is always a stimulus which again awakens cognition's
+interest for a new investigation and again drives it forward, precisely
+because the untrue result cannot come into accord with, or comprehend, that
+totality of cognition which cognition according to its essence must strive to
+work out\footnote{Theoretical cognition's interest in its result comes
+strikingly forward in its supplementing of the incomplete premisses of the
+inductive inference.}.
+% printed mark: *) --- the only note on p. 14, below a short rule.
+
+Theoretical cognition is to be \emph{contemplative}, absorbed in the grounding
+of the objective; but it is so only in the sense limited by the earlier
+determinations. From the contemplative, self-forgetting absorption in the
+universal and objective it seeks back to the punctual and to that
+self-cognition towards which an irresistible inner need drives it; and in
+striving towards its goal there is, in cognition's \emph{struggle} for the
+appropriation of actuality, in the \emph{true} cognition's struggle against
+the untrue, something corresponding to the will's conflict with existence, to
+its struggle for its realisation, to the good will's struggle against evil.
+
+Theoretical cognition is finally to be \emph{without}
+% --- p. 15 ---
+\emph{personal responsibility}, the practical accompanied by the consciousness
+of such. This opposition too is untenable in the form in which it is set up.
+That with respect to the consciousness of responsibility there is a difference
+between the \emph{act of will} and the activity of thought, when regard is had
+only to this, that the former intervenes determiningly in reality while the
+latter does not, at any rate not in a conscious manner, goes without saying.
+But the activity of cognition does not therefore fall outside responsibility.
+The act of cognition, which is subject to \emph{the norm of the idea of
+truth}, has in that norm an ``ought'', in relation to which there is a
+consciousness of responsibility. When responsibility in general points to
+this, that what the individual is responsible for is the individual's own
+deed, that it proceeds from the individual's being, and that it stands in
+relation to a higher, more comprehensive law, then responsibility becomes
+common to what proceeds from the activity of cognition and from that of the
+will; and it must become so all the more, since the normal activity of
+cognition is, as will appear in what follows, the condition of the normal
+activity of the will. Cognition's connection with responsibility is therefore
+not to be apprehended merely thus, that the will's relation to cognition can
+bring cognition under responsibility, but thus, that cognition \emph{in and
+for itself}, by its relation to the individual's being and to the higher law
+of truth, comes under it.
+
+Through the consideration of the marks of character by which an abstract
+opposition between ``theoretical'' and ``practical cognition''
+(consciousness), and thereby between cognition and will, was to be maintained,
+we are thus led to the \emph{same re}sult as above: that the \emph{abstract
+% letterspacing: „s a m m e  R e =“ closes the line spaced in the Danish,
+% „sultat“ opens the next line tight. The English divides at the same joint.
+opposition} yields its place to an \emph{essential unity} which
+\emph{governs} the \emph{relative} difference, and \emph{must} do so, on
+account of the relation of the primitive expressions of the being to the unity
+of the being. This result will now receive a new confirmation when we consider
+the \emph{opposition of facticity} between cognition and will, the opposition
+into which they can enter towards one another in the course of the individual
+development of the life of spirit.
+
+A \emph{factual} opposition comes forward at the imperfect stages of
+% --- p. 16 ---
+\setcounter{footnote}{0}% p. 16 carries TWO notes, printed *) and **)
+development of cognition and will: partly under the form of a one-sided
+development of cognition or of will; partly under the form of an indifference
+of the will towards, or an independence of it from, cognition; partly under
+the form of the act of will's opposition to cognition.
+
+The \emph{first} of these forms of divergence finds its
+explanation\footnote{Cf.\ Problemet om Tro og Viden, pp.\ 136 f.} in the
+sporadic element which comes forward, and must come forward, at the
+subordinate stages of development, but which at the highest stage of
+development --- the stage at which cognition and will are determined by reason
+in their concrete content --- must be joined together in unity and harmony.
+And unity is not merely the goal of the development: in the course of the
+diverging development there is a pointer towards it in this, that the
+one-sided development of cognition is defective not merely with respect to
+will but also with respect to cognition itself, just as the one-sided
+development of will is defective not merely with respect to cognition but with
+respect to will as well --- so that the belonging-together and reciprocal
+conditioning of what has been separated becomes plain. Cognition developed
+one-sidedly, and not united with a development and firmness of will in the
+personality, will always show itself to be an abstract and uncarried-through
+cognition; a will developed one-sidedly, and not united with the richness and
+clarity of cognition, will show itself to be a will not yet purified through,
+and therefore not liberated from the instinctive, the fanatical and the
+violent, and thereby from the egoistic.
+
+In the \emph{second} form of the difference an effect of the sporadic
+likewise\footnote{The same work, pp.\ 142 ff.} makes itself felt, as where one
+acts from a mere prompting of drive or in blind passion; or else the
+resolution has only an incomplete cognition for its presupposition, and one
+acts from the immediacy of the concentrated personality. With respect to this
+last case there has been shown, in the earlier work (p.\ 144), the form
+% --- p. 17 ---
+\setcounter{footnote}{0}% p. 17 carries TWO notes and RESTARTS at *)
+under which, in such a resolution, a preceding cognition that has ``gone back
+into immediate being in spirit'' is at work\footnote{A more thorough
+psychological observation will show that the concept of a determinateness of
+the will proceeding from a cognition that has gone back into immediate being
+--- cognition taken in the widest sense of the concept --- finds application
+also in the will's first expressions in the child, since the ``pronouncedness''
+of these expressions follows step by step the pronouncedness of the life of
+representation.}. The relation between the resolution and the incomplete
+presupposition of cognition has its exact parallel within the theoretical, in
+the inference which, with an incomplete empirical foundation --- an experience
+not exhausted --- for its presupposition, states the universal not
+hypothetically but categorically.
+
+In the \emph{third} form of divergence there makes itself felt partly\footnote{Problemet
+om Tro og Viden, p.\ 144.} a working of the ethically a priori in the will's
+determining of itself in opposition to one-sided theory, and partly a
+counter-working of the will against the true, through an affecting of
+cognition and through a hindering of cognition's realisation. With respect to
+the activity which the ethically a priori exercises in consciousness,
+``Problemet om Tro og Viden'', p.\ 145, has pointed to the parallel with the
+working which the a priori exercises within the theoretical, and it has been
+established that the \emph{ethically} a priori, as an \emph{essence}-determination
+and as an expression of the \emph{undivided} being for which \emph{knowledge}
+too is an expression, must also be a \emph{knowledge}-determination and be
+transparent to cognition, so that its
+% letterspacing: „V æ s e n s =“ and „V i d e n s =“ close their lines spaced
+% in the Danish; „bestemmelse“ opens the following line tight in both cases.
+% The English compounds divide at the same joint.
+working is a working of that which finds its place within knowledge and enters
+into the system of knowledge's fundamental concepts. --- As regards the will's
+conflict with what is cognised as true, this will show itself to take place
+only in relation to an \emph{imperfect} cognition, and therefore to be
+confined to those stages of development at which the power of the sporadic is
+unconquered. A sharper psychological and ethical observation will confirm that
+clear, \emph{concrete} cognition is never powerless against the will, that it
+is impossible to act against
+% The signature numeral „2“ at the foot of p. 17 is not transcribed.
+% --- p. 18 ---
+such an \emph{actual} cognising. Could the will withstand what was in this way
+cognised as the \emph{being's} determination, as the being's demand, then it
+would act merely in virtue of the essenceless, or the being would have to be
+split into two heterogeneous parts; but the former is self-contradictory, and
+such a split in the being, according to which the will would be something
+irrational and cognition something rational, is an empty representation, which
+becomes no less empty if, instead of a split, a ``defectiveness'' in the being
+is spoken of by way of postulate. In such cases as seem to speak for the will's
+unconditional power to withstand cognition, cognition will partly show itself
+to be incomplete in such a way that in its abstraction it as it were gives
+room for the conflicting action; and partly it will appear that cognition, as
+not yet fully unfolded, is by an act of will --- more clearly or more obscurely
+conscious --- which affects the direction of thought, brought outside the focus
+of consciousness, moved off into a distance of time for consciousness, and
+thereby obscured and hindered, so that it can be paralysed by a conflicting
+illusory cognition, an excuse, a pretext; and only through such a spacing-out
+does the conflicting action become possible. The clear cognition of what is
+unethical in an action, of its opposition to a preceding better cognition,
+sets in only \emph{after} the action. Here the \emph{time}-determination
+acquires a decisive significance.
+% letterspacing: „T i d s“ is spaced and „bestemmelsen“ runs on tight, within
+% one and the same line, in the Danish. The English divides at the same joint.
+
+While thus the factual divergence which at the imperfect stages of development
+can take place between cognition and will does not show itself to be of such a
+kind as to abolish the inner unity, this inner unity --- in which cognition
+and will stand as expressions of the same being --- finds its impress in that
+parallelism between the universal stages of development of cognition and of
+will which comes forward in spite of the unlike development the two functions
+of spirit may have in the individual. Just as cognition develops from its
+first form, sensation, through the involuntary formation of universal
+representations, to a conscious and progressive separating out of the
+universal in the concept, so the will develops from the first, immediate,
+single determinateness by drive,
+% --- p. 19 ---
+\setcounter{footnote}{0}%
+through a determinateness by involuntarily formed \emph{practical universal
+representations} --- produced by a spontaneously arising momentary and partial
+reflection, such as make themselves felt in an abiding inclination --- to a
+determinateness by consciously formed principles, maxims, out of which the
+unity of a view of life may then proceed.
+
+The harmony and unity to which there was a pointer even in the divergence
+itself then comes forward unveiled at that stage of development of cognition
+and will at which the human spirit has attained to clarity about itself
+according to its concrete essential determination. In that the human spirit
+here becomes conscious in cognition of the content of its being, it expresses
+this content of cognition in the determinateness of the will: the will makes
+that content of cognition, in which the being becomes manifest to
+\emph{itself}, into \emph{its own} content, realises the being in its own
+form, in the resolution; and it does so in virtue of the necessity lying in
+the unity of the individually-universal, ideally-real being, in virtue of that
+law of the being which lets the being manifest itself in its \emph{total}
+formal determinateness, and therein manifest itself in harmony with
+itself\footnote{Cf.\ Problemet om Tro og Viden, p.\ 142.}.
+% printed mark: *) --- the only note on p. 19, below a short rule.
+In the resolution the will is determined by the necessity of the being; but
+inasmuch as this necessity is the necessity of its \emph{own} being, the will
+is \emph{self}-determining through freedom.
+% letterspacing: the line closes with the spaced „s e l v =“ and
+% „bestemmende“ opens the next line tight. The English divides at the same
+% joint.
+In order that the being may realise itself in an act of will, in the proper
+sense of that concept, it must first have become manifest to itself in
+cognition; but the will's self-determining is maintained through that relation
+to the essence-\emph{totality}.
+% letterspacing: the spacing begins MID-WORD in the Danish, at the linking
+% „s“ --- „Væsen“ is tight and „s t o t a l i t e t e n“ is spaced, all on one
+% line. The English hyphenates the compound so the run can begin at the same
+% point in the word.
+
+\begin{center}\rule{2cm}{0.4pt}\end{center}
+% A short centred rule stands here on p. 19, between the two paragraphs; it is
+% a thought-break in the running text, not a head. A SINGLE hairline, like
+% every rule in the book but the five doubles of pp. 4, 29, 63, 201 and 210.
+
+If, after having elucidated the universal relation between the theoretical and
+the practical, we seek the closer determination of \emph{cognition's true
+form} --- of the form which is the goal of its development --- then it is to
+be found from the fundamental relation of consciousness. In the relation given
+in the human spirit between self-consciousness and consciousness there lies
+% --- p. 20 ---
+the necessity of a striving to bring all content of consciousness under the
+unity of self-consciousness, to abolish the foreignness of the object of
+consciousness and to make it transparent for spirit in a comprehending
+cognising, in which the self has its ideal unfolding and its self-revelation,
+in that it ideally appropriates actuality. Only in such a comprehending
+cognising, in which the content of consciousness forms for spirit a unity
+answering to the unity of self-consciousness, is that contradiction abolished
+which lies in the relation of consciousness: that the object is in my
+consciousness as a determination of \emph{my} consciousness, and yet
+according to its content is something foreign to me; and only in such
+cognising is that contradiction likewise abolished, that spirit --- which in
+self-consciousness relates itself to itself in an infinite manner and is in
+unity with itself --- is at the same time foreign to itself through the
+foreign content which the self comprehends.
+% letterspacing: only „m i n“ is spaced in the Danish (the first „min“ four
+% words earlier is tight, on the same line); „Bevidstheds Bestemmelse“ opens
+% the next line tight.
+But when such a leading back of the content of consciousness to transparent
+unity with self-consciousness is cognition's demand, determined by the
+fundamental psychological relation, then such a leading back and such a unity
+become possible only on condition of a cognition of the principle which is the
+principle of unity of the self and of existence; and cognition's true form
+then becomes a principle-determined unity of cognition, in which the self, in
+cognising itself as an organic member ordered into the totality governed by
+the principle, can cognise itself according to its concretion. Such a form of
+cognition, in its essence like that which philosophy according to its concept
+is to give, must --- in virtue of its relation to the original demand of
+consciousness, in virtue of its universal principle, in virtue of the kind of
+thought it presupposes, in virtue of the consciousness it encloses of the
+essence and fundamental relation of thought, in virtue of its combining of the
+a priori and the empirical --- claim for itself the place of cognition's
+τέλος.
+% Greek, antiqua italic with accent in the printing, read off the image;
+% neither OCR witness reads it. Copied verbatim, per the cluster convention.
+
+If we seek \emph{action's true} form, then this must be determined from the
+will's fundamental relation to the essence of the self-conscious spirit. Since
+man is a self-conscious being and as self-conscious is a willing being, that
+working which in the animal, as unconscious and unfree fulfilment of drive, is
+only a
+% --- p. 21 ---
+deed acquires the character of \emph{action}, i.e. of a \emph{conscious}
+working proceeding from \emph{will}. More closely, the nature of action is to be
+determined thus: that it is not merely accompanied by the consciousness
+\emph{that} one is acting, but is determined by the consciousness of
+\emph{why} one is acting. Action as action, in the proper sense of the word,
+is directed towards a goal, an \emph{end}, is guided by this, is a conscious
+working for the attainment of this end. Action's goal, the consciously willed
+end, may, seen from the standpoint of the objective, show itself as an
+immediate or as a mediate goal: as that which stands directly in relation to
+the will and is willed for its own sake, or as that which stands in relation
+to the will only through something else and is willed for the sake of
+something else, as a means to the attainment of the end. But when, with
+respect to the objective, we speak of a willing of it for its own sake, this
+is nevertheless to be understood only in comparison with the objective means,
+not so that the subject's relation to itself is excluded, or the agent's
+subjective interest in the objective forgotten. The subject of action relates
+itself, as subject, at every point to itself; in determining the objective as
+an end, it determines it as \emph{its} end, and relates itself \emph{to
+itself} in the realisation of the end, wills \emph{itself} in willing the
+objective. Through the relation to the objective we are therefore led back to
+the relation to the subject; and that we are led back to it lies in the very
+essence of subjectivity, in its fundamental determination: to be for itself in
+its other. The end of action becomes then everywhere the subject itself, and
+this holds also of the action through which the subject gives itself up to the
+higher; for through self-surrender the higher self-affirmation is won.
+
+But when the determination given holds of \emph{all} action, then within it
+falls the opposition between \emph{true} and \emph{untrue} action.
+% letterspacing: „a l“ closes its line spaced in the Danish, „Handlen“ opens
+% the next tight.
+Action's truth is determined by the truth of the will (of the will's
+determinateness); but the will's truth is determined by whether the willing
+subject, in willing \emph{itself}, wills itself \emph{according to its truth},
+% --- p. 22 ---
+i.e. according to its \emph{essential determination}, and more closely,
+according to its \emph{full} essential determination. \emph{True action} is
+therefore that in which the will makes the realisation of the being --- of
+which the will is a primitive expression --- into its end, in which the will
+therefore works as \emph{essence-willing}.
+
+In opposition to this true form of action, which we anticipatively designate
+as \emph{ethical} action, the \emph{untrue} form of action becomes --- setting
+aside for the present the unethical action, whose essence will be determined
+later --- the \emph{not yet} ethical, imperfect action, which proceeds from
+the subject's willing of itself according to its particular determinateness of
+immediacy, according to its finitude and contingency, according to its
+phenomenal existence. Such a willing becomes a willing by the subject of
+itself according to its ungoverned side of sensibility --- sensibility being
+taken here in the widest compass of the concept --- as an unconsciously
+egoistic willing of enjoyment. In this form of action, and in the will from
+which it proceeds, there lies an inner contradiction which reveals its untruth.
+When the self, as sensibly determined, wills enjoyment, it wills \emph{itself}
+through enjoyment, in that in enjoyment it wills its self-affirmation as
+sensible. But in willing enjoyment the self wills that which is
+\emph{independent} of the self's willing and which according to its nature is
+\emph{changeable} --- that, therefore, which \emph{cannot} be governed by the
+will and which in its incommensurability with the self's universal essence
+\emph{cannot} be held fast by the will. And in willing itself in the ununified
+manifoldness and essenceless changeableness of enjoyment, the self wills
+itself in a determinateness --- the determinateness of sensible externality
+--- in which its unity is abolished; it wills itself, therefore, in that in
+which, while it seeks a self-affirmation, it \emph{loses itself}; it wills
+itself as not-self. The inner contradiction is abolished only when the will
+--- which as an expression of the being must according to its concept be
+essence-willing --- becomes a willing of that which in truth \emph{can} be
+willed, because it is one with the essence of the willing subject: a willing
+of that in which the self affirms itself according to its unity and abiding
+essentiality, according to the infinity of its essence. To such a willing of
+itself
+% p. 22 carries NO footnote --- the page was on the brief's list of
+% note-bearing pages, but the image shows an unbroken type block.
+% --- p. 23 ---
+there is, at the imperfect stages of development of the will, a pointer, as to
+the goal at which the will finds rest, in that the will realises what was
+obscurely striven for at those lower stages of development. The goal of will
+and action, which is determined by the self and in which the self relates
+itself to itself, must from the beginning be covertly determined from
+\emph{the self's unity} --- a determining which betrays itself through the
+working-forth of the universal --- and as the self becomes clear to itself
+according to its essence, it must \emph{consciously} and \emph{freely} be
+determined from \emph{the self's content-rich unity}, so that the self
+according to its \emph{total} essential determinateness, according to its true
+universality and infinity, becomes the contradiction-free τέλος of will and
+action. But such a willing by the self of itself according to its truth,
+according to the infinity of its essence, is \emph{ethical} willing.
+% Greek: a second τέλος, at the head of a line on p. 23, likewise read off the
+% image; ABBYY drops the word entirely.
+
+For this ethical, essential willing a twofold determination has been indicated
+in what immediately precedes, and the two stand in the closest inner
+connection. The ethical is constituted in that the self wills itself
+\emph{according to its essence}, and in that --- this being the condition of
+the former --- it draws itself out of its immediate being with that being's
+unfreedom, finitude and changeableness, and by \emph{freedom} determines
+itself \emph{as spirit} according to its \emph{inner infinity}. At the stage
+which lies before the ethical, the self willed that which as finite is
+something vanishing and is independent of the will; it willed \emph{itself},
+therefore, in what is something vanishing and something foreign to the self,
+that is to say, it lost itself. As it becomes conscious of the transitoriness
+of what is willed and of the contradiction lying therein, the opposition comes
+forward between the transitory finite and the infinite and unconditioned;
+there shows itself a \emph{choice}; and as the will, in despair of the finite,
+frees itself from the finite and chooses the infinite, the ethical breaks
+through. But the infinite is chosen precisely in that the self chooses itself
+according to its essence; for that means: according to the
+\emph{determination of eternity} within it, according to its \emph{eternal
+validity}. In this \emph{resolution of choice}, which is a \emph{self-acquiring
+of freedom}, the oppositions in the choice receive a new elucidation and a new
+% --- p. 24 ---
+\setcounter{footnote}{0}%
+determination: the determination of the \emph{good} and the \emph{evil} ---
+concepts which first belong in the ethical domain; and in the ethical choice
+the good is chosen.
+
+In choosing itself according to its essence and through the choice willing its
+essence, the self has therefore made a movement of \emph{infinity}: its
+\emph{immediate} being according to its determinateness by \emph{nature} is
+converted into a being of \emph{spirit} through \emph{itself}, through its
+\emph{freedom}.
+% letterspacing: „N a t u r“ is spaced and „bestemthed“ runs on tight in the
+% same line; „ved s i g / s e l v“ carries the spacing across the line break.
+In that the self, through that infinitising choice, chooses and wills itself,
+it wills itself \emph{absolutely}, i.e. \emph{as an absolute}; and \emph{only
+itself}, i.e. \emph{its own essence}, can the self will absolutely; but this
+willing is possible only in that it wills the \emph{Absolute} in the self.
+\emph{The self} which chooses itself by the absolute willing of the ethical
+resolution has a \emph{twofold} significance: it is the \emph{ideal, universal
+self}, the self's absolute essence, that is chosen; but the choosing self,
+which chooses that essence as \emph{its own}, is the \emph{individual self},
+which in choosing that other self chooses itself in its individuality. This is
+to say: it \emph{takes over} its own development, lying prior to the ethical
+choice; but in taking it over in the choice of the ideal self, it takes it
+over as that development shows itself in the ideal self's light. In other
+words: it passes the ethical judgement of \emph{repentance} upon that
+development; it \emph{transforms} itself in principle in the ethical
+resolution, in virtue of its fundamental essence. In this repentant choosing
+the self gathers itself together in its whole finite concretion; and while in
+the choice it as it were takes itself out of finitude, it is in the most
+absolute continuity with finitude and has itself as its task in its ethically
+chosen concrete actuality --- an actuality which is to be worked through by,
+and penetrated with, the universal, so that the actual self is determined by
+the ideal self which it has within it, and expresses at one and the same time
+the individual and the universally human\footnote{Cf.\ the developments in
+\emph{Kierkegaard}'s Enten --- Eller, II.}.
+% printed mark: *) --- the only note on p. 24, below a short rule. The name
+% „K i e r k e g a a r d s“ is letterspaced Fraktur, not antiqua; the run
+% falls on the name here too, the genitive standing outside it.
+
+For \emph{ethical willing}, whose essence and task are thus determined, there
+now shows itself --- both in its first constituting of itself and in its
+unfolding in action's con\-%
+% The Danish prints „deres“ (for „dens“) here; transcribed as printed there,
+% and having no English counterpart, recorded only.
+% --- p. 25 ---
+crete determinateness --- \emph{true cognition} as an essential and necessary
+\emph{condition}.
+
+For the immediate working of the ethically a priori, by which such a
+presupposition of cognition might seem to be replaced, shows itself
+insufficient. That the a priori has an activity which reveals itself in
+conscience is incontrovertible; but in order that this activity may be raised
+above a merely enveloped (implicit) presence in the form of the merely
+instinctive and drive-like, it presupposes a development of cognition, just as
+the logically a priori presupposes such a development in order to be freed
+from what hinders and obscures it. In that first working the ethically a
+priori works immediately together with promptings of drive, works itself under
+the form of a prompting of drive --- for example under the form of sympathy,
+of natural love --- but is not clarified into ethical freedom. Therefore the
+ethically a priori in its immediate working is insufficient as a regulative
+for action. In the immediate prompting, which is not yet clarified through by
+cognition, it remains constantly uncertain how far what prompts is something
+in truth a priori, and as such a true essential determination, or whether it
+is not something untrue, an expression of something unwarranted, something
+phenomenal and contingent. And since the a priori \emph{as} a priori has the
+stamp of the abstract, it becomes, when it is not unfolded into concretion by
+cognition, insufficient for the determination of the concrete action. When
+action is called for, the subject will come to seek the determinateness of the
+action outside the abstract norm, in its own unclarified, nature-determined
+immediacy, in which it is not conscious of itself according to its essence;
+and there will then arise a dividedness and doubleness in the will, since the
+universal and the particular, the norm and the concrete content of the action,
+cannot be willed as one. This contradictory doubleness can vanish only when
+the essential demand unfolds itself in concrete determinateness for cognition.
+
+The diversity of what at different times, at the different stages of human
+development, has been held
+% --- p. 26 ---
+to be morally right confirms the insufficiency of the immediate prompting by
+the a priori. One need take as an example only the manner in which the feeling
+of reverence for the divine, or the immediate feeling of piety towards
+parents, has found its expression.
+
+In virtue of the ethically a priori there may be an immediate consciousness of
+an ethical obligation, as an obligation towards something higher; but the
+clear consciousness of \emph{that which obliges} is conditioned by true
+cognition, and likewise the \emph{assured} consciousness of the concrete
+content of the obligation is conditioned by such cognition --- by the concrete
+cognition of that which obliges and of the \emph{essential determinateness}
+and \emph{essential content} of the one obliged.
+% Printer's defect here in the Danish: the page prints „I n h o l d“
+% (letterspaced) for „Indhold“ --- the „d“ simply absent, verified on the image
+% and read so by both OCR witnesses. Orthographic, and so not reproducible in
+% English; recorded here.
+Instinctively one may live in accordance with the moral, in that the
+objectively moral --- custom and tradition --- immediately determines the
+acting individual, who in a relation of piety subordinates itself to this
+objective as to a higher power in which it feels something akin to itself, and
+whose law it therefore follows, not as a foreign law. Instinctively the
+immediate consciousness may grasp the good, may act in the spirit of morality,
+in that it, unconsciously affected by the surrounding moral element of life,
+acknowledges something universal and ideal as the norm of action, gives up the
+egoistic, and in the particular action acts with the will of resignation,
+guided by its determinateness in principle. But custom and tradition, the
+surrounding moral atmosphere of life --- whether they be the resultant of the
+immediate working of the a priori or of a preceding cognition which has as it
+were been deposited in immediate being --- can be the secure norm only when
+they can again be freed, in living cognition, from the immediate form in which
+something contingent and foreign may cling to them. The clear, free, assuring
+consciousness of the moral and of the inner connection within it can be
+attained only through such a cognition as separates out the contingency of
+immediacy, and more determinately through that kind of cognition by which what
+is cognised can acquire inner unity and necessity --- there\-%
+% --- p. 27 ---
+fore through the principle-determined cognition whose essence has been
+developed above. Such a cognition has, in its incompleteness --- inseparable
+from the conditions of human development --- and in its relative abstraction,
+the essential truth and the possibility of as it were growing out from its
+centre and filling out its forms without their being displaced. With such
+cognition for its presupposition the ethical will acquires its true form,
+precisely because the being is in that cognition clear to itself; and in its
+liberation from finite entanglement, from the obscurely drive-like which in
+itself is the changeable and which, even in its direction towards the good,
+knows no limit, the ethical will acquires that true resoluteness, firmness and
+purity which is conditioned by the being-for-cognition of what is willed. The
+subject's concrete cognition of its essence and of the true demand of that
+essence acquires here its decisive practical significance.
+
+From what has been developed it becomes clear that cognition's significance
+for the ethical already comes forward where the ideal self is to be made
+\emph{with consciousness} into the object of the will, where something
+\emph{absolute} and \emph{unconditioned} announces itself and is to be
+separated out from what veils and obscures it. But it comes forward still more
+clearly when the idea of the good is to be realised in the \emph{concretion}
+of the moral will, to be worked out in the actuality of a wholeness of life
+--- when, what becomes identical with this, the self's willing of itself
+according to its ideal essence is to attain the concrete form of actuality of
+the ethical action, the realisation of the human being through free human
+action, action in truth agreeing with itself and with its own essence. For
+only through the true and concrete cognition of the self's essence and of its
+fundamental relation does free action become in its determinateness action
+\emph{determined by reason}, does the ethical unfold its rational content
+\emph{clearly and unmixed}. Since the \emph{ethically a priori} in its
+abstraction meets with something concretely given, with something
+\emph{empirical}, then in this meeting --- which is to lead to a determining
+of the latter by the former, to an unfolding of the abstract ethical
+consciousness of essence into an essential consciousness of actuality --- only
+the true form of cognition, which acknowledges the
+% --- p. 28 ---
+\setcounter{footnote}{0}%
+a priori and realises its essential unity with the empirical --- a cognition,
+therefore, of the kind determined above --- can be guiding in the last
+instance. Only through it can the self's willing of its essence become a
+willing of the essence according to its complete concrete determinateness;
+only through it can the self in its acting truly ``will one
+thing''\footnote{Cf.\ Section III (on the realisation of the ideal).}. ---
+% printed mark: *) --- the only note on p. 28, below a short rule. „III“ is
+% set in antiqua, as all figures in this book are; not italicised.
+
+An expression of this significance of cognition for action is the fact that
+\emph{ethics}, the scientific cognition of the ethical, must acquire its
+\emph{essential} significance for that ethical. If \emph{scientific} cognition
+is cognition's clearest and most complete unfolding, then what has been said
+of true cognition must find its immediate application to it.
+
+Since ethical action is determined as action's true form on the ground that
+the will from which it proceeds is an \emph{essence}-willing, a willing of the
+self according to its essential determinateness, ethical action acquires its
+\emph{norm} in the \emph{human being}, its \emph{law} in the being's own law
+of activity, and its task becomes to express the total actual personality.
+% letterspacing: „V æ s e n s“ closes spaced and „villen“ runs on tight, in
+% the same line. The English compound divides at the same joint.
+Herewith there is once more a pointing back to \emph{the opposition to the
+positively religious}. This opposition shows itself here partly as an
+opposition between the being's indwelling law and the supranatural,
+arbitrarily determined law of action, partly as an opposition between an
+ethical life which comprehends the total, real existence and a life which, as
+obeying the supranatural demand, flees away from the natural, relates itself
+negatively to the natural through asceticism, and expresses the spirit-side of
+the being in an abstractly spiritualistic way.
+
+\begin{center}\rule{2cm}{0.4pt}\end{center}
+% A short centred rule stands here on p. 28, between „spiritualistisk.“ and
+% the closing summary: a thought-break, not a head rule. A SINGLE hairline.
+
+The result of the developments given in the foregoing we sum up in the
+following propositions:
+
+\begin{enumerate}[label=\arabic*., leftmargin=*, labelsep=1em,
+                  topsep=0.35\baselineskip, itemsep=0.35\baselineskip]
+\item True cognition, which is chosen in the choice between \emph{knowledge}
+  and \emph{faith}, becomes the condition of the clearly con\-%
+% --- p. 29 ---
+  scious willing of the ethical, and of the ethical's concrete unfolding into
+  a wholeness which comprehends the life of the actual personality.
+\item The personal life can be clarified through by true principle-determined
+  cognition, and this cognition can, as it advances in concretion, win such a
+  punctuality that the concrete ethical action can find in it its
+  \textit{ratio sufficiens}.
+% antiqua Latin on p. 29, upright in the print; \textit{} per the house
+% convention taken from the 1868 volume, and TIGHT antiqua, so no \emph{}.
+\item The true unity of theory and practice, of the ``theoretical'' and the
+  ``practical'' consciousness, is present in this relation, in which the
+  subject's consciousness of its action and of its ``grounds of will'' is in
+  harmony with its theoretical cognition of its essence and of the essence's
+  demand; --- and it is present \emph{only} in this.
+\item In virtue of this relation between cognition and ethical action, since
+  no splitting into incommensurable forms takes place within cognition, all
+  that is truly ethical must be a rational ethical, just as all true ethics is
+  a rational ethics. An antirational ethical is a self-contradiction, an
+  antirational ethics an absurdity.
+\end{enumerate}
+
+\begin{center}\rule{2cm}{0.4pt}\end{center}
+% p. 29 is the last page of division I and is a short page: the type block
+% ends after item 4 and a short centred rule closes the division. The rule is
+% printed as a DOUBLE rule (two thin lines); set here with the same single
+% \rule used for the other short rules in this book.
+
+\chapter*{II.\\ On the Presence of the Essential Marks of the Religious in its True Sense in True Cognition and True Action, and on their Relation of Unity to the Former.}
+\addcontentsline{toc}{chapter}{II. On the Presence of the Essential Marks}
+\markboth{II. On the Presence}{II. On the Presence}
+
+% --- p. 30 ---
+\setcounter{footnote}{0}%
+% p. 30 carries the division head II (already in the skeleton), then a short
+% centred rule (not transcribed, per the book's convention for rules under
+% display heads), then the bold centred sub-head below. The text opens with an
+% enlarged initial capital, set normally.
+\section*{1. The Essence of the Religious.}
+
+The expression for the religious relation which was used in the ``preliminary
+determinations of concepts'' in ``Problemet om Tro og Viden'' to designate that
+relation according to its ideal determinateness becomes here our starting
+point, and through the analysis of it we shall be able to reach the more
+concrete unfolding of the concept of the religious.
+
+We there determined the religious relation as ``\emph{the absolute
+relation}\footnote{If it should seem to ``inverted'' dialecticians
+contradictory to speak of an \emph{absolute relation}, because relation
+expresses \emph{relativity}, we need presumably only recall the Absolute's
+relation to itself, and spirit's infinity-relation to itself in the concretion
+of self-consciousness.} \emph{to the Absolute}'' --- by an expression,
+therefore, which not merely in form approaches S.\ Kierkegaard's usual
+designation of the stage of a religiousness not yet Christian, which he
+characterises as ``the absolute direction towards the absolute τέλος'', but
+which has already been used by him where he sets the religious absolute
+relation beside the relative relations, which with him comprehend the ethical
+relations as well, and in which that absolute relation is not to exhaust
+itself or become concrete. While we thus appropriate his
+% printed mark: *) --- the only note on p. 30, below a short rule.
+% Greek: τέλος, antiqua italic with acute in the print, read off the image; the
+% ABBYY layer carries no Greek at all. The second quotation, „den absolute
+% Retning mod det absolute τέλος“, is NOT letterspaced, though the first is;
+% the English follows.
+% --- p. 31 ---
+designation of the concept, it will nevertheless appear through the
+developments that follow how in our conception this designation acquires
+another significance than it had with Kierkegaard --- already where he speaks
+of the pre-Christian religious stage, and still more determinately where he
+speaks of the paradoxically religious.
+
+If we analyse the determination of the religious relation as the absolute
+relation to the Absolute, then the analysis leads us to the following
+consequences, through which the concept acquires its more concrete
+determinateness.
+
+a) \emph{With respect to the Absolute}, which is the object of the relation,
+the fundamental determination encloses the following:
+% the enumerators a)--h) on pp. 31--41, and the Greek α) β) on p. 31, are
+% antiqua italic in the print; set plain here, as in the Contents.
+
+α) The ``Absolute'' which is the object of the religious relation can be an
+absolute \emph{for us} only when it is \emph{our} Absolute, i.e. when it stands
+in a relation of \emph{essential unity} to us. In an opposition of essence
+there would lie immediately a determination irreconcilable with absoluteness.
+Against this unity of essence the ethical ``absolute distinction'' between God
+and guilty man, so strongly accentuated by Kierkegaard, does not tell; for the
+determination of guilt lies, as will be more closely developed under III,
+within the relation of immanence, and therefore makes no definitive breach in
+the unity of essence.
+% letterspacing: „V æ s e n s e n h e d s =“ closes the line spaced and
+% „Forhold til os.“ opens the next tight; the capital F shows this is a real
+% hyphenated compound, not a broken word. The English run falls on the same
+% element.
+
+In the positive religion's conception of the relation between God and man
+there is a doubleness present. On the one side likeness is accentuated, out of
+the immediate religious need: man is posited as created in God's image; but on
+the other side the reflection determined by the form of representation leads to
+accentuating the opposition between the transcendent God and man, and this
+opposition fixes itself as an unabolishable one (cf.\ Section III, on
+reconciliation).
+
+β) The object of the religious relation can be the Absolute for us only when it
+is \emph{the in truth infinite}. Only the in truth infinite can be absolutely
+willed, absolutely sought through the need of the \emph{whole} human being; and
+only what we will absolutely, absolutely strive towards, is for
+% --- p. 32 ---
+us an absolute. A willing of something finitely determinate is a finite
+willing, and the relation to it a finite, relative relation. This
+determination --- that the Absolute must be the in truth infinite --- is
+inseparable from the other, that it must stand in a relation of essential
+unity to us. For it can be the in truth infinite only when it is not separated
+from us by the barrier of a represented, and therefore finitely determined,
+transcendence.
+
+Only these more formal determinations of the Absolute are necessary in the
+present connection; the more concrete determinations of the concept will be
+given under III, Chapter 1.
+
+b) \emph{With respect to the subject of the relation: man}, it follows from
+the determination ``the absolute relation'' that the subject must be present
+in the relation according to its essence's \emph{inner infinity}, that is to
+say, according to its \emph{whole} essential determinateness, according to the
+totality of its \emph{universal} essence. The religious relation cannot,
+therefore, be a relation which relates itself to a single side of the human
+spirit or to a single fundamental function, even if this were thought to
+enclose the others within itself as moments --- whereby the others would enter
+the relation precisely only \emph{in the determinateness} they could have as
+moments; but it must be a relation into which the fundamental functions of the
+human spirit, as totalised within themselves, enter equally. Just as it
+therefore becomes a one-sidedness in the \emph{Hegelian} philosophy of
+religion that it apprehends the religious relation exclusively as a relation
+of \emph{cognition}, so it becomes just as fully a one-sidedness to determine
+it as a mere relation of \emph{will}, or to designate it as what has been
+called, with a somewhat unclear expression, a relation of \emph{life}, in
+\emph{opposition} to a relation of cognition. The religious relation is a
+\emph{life-relation in the sen}se of a relation which comprehends \emph{the
+whole of human life}; but human life, the life of spirit, is the life of
+cognition just as much as of will and of feeling; it is therefore apprehended
+in a one-sided and imperfect manner when it is apprehended only as opposed to
+cognition. But since the relation comprehends the totality of human life, the
+relation of will acquires on the other side a just as decisive and primitive
+significance, and it
+% letterspacing on p. 32 breaks in the middle of compounds and runs past the
+% word: „E r k j e n = d e l s e s“ spaced with „forhold“ tight; the same for
+% „V i l l i e s forhold“ and „L i v s forhold“; and „L i v s f o r h o l d  i
+% B e =“ is spaced while „tydning“ on the next line is not. The English
+% reproduces the last of these by breaking "sense" at the same joint.
+% --- p. 33 ---
+\setcounter{footnote}{0}%
+can step into the foreground where reconciliation is \emph{sought}. The will
+in the relation to the Absolute is, when the relation is in truth, the
+religiously determined, \emph{ethical} will, which actively transforms
+existence through the relation. Through this will the relation becomes a
+relation of \emph{conscience}. That the relation is a \emph{relation of
+personality} points back equally to cognition and to will\footnote{Cf.\ the
+preceding Section.}: what is a fundamental expression of the being is at the
+same time a fundamental expression of the personality; otherwise the
+determination of personality would stand in a merely contingent relation to
+the being, which is immediately self-contradictory.
+% printed mark: *) --- the only note on p. 33, below a short rule.
+
+That towards which spirit infinitely strives through the absolute relation so
+apprehended is \emph{reconciliation}, and the religious life becomes a life
+for spirit's reconciliation \emph{within itself and with its ground of
+essence}. This is as yet more a \emph{metaphysical} determination of the
+religious relation, and it is reached already through the concept of spirit as
+that which according to its essence is infinite, and which, in order to find
+rest in itself, strives to realise this infinity within itself, but first
+realises it through the absolute relation to the in truth infinite, to its own
+and to existence's ground of essence. The specifically ethical-religious
+determination of the relation --- the determination of reconciliation as
+reconciliation of \emph{guilt} --- will be developed only later.
+
+Since the equal entry of the \emph{whole} human spirit into the religious
+relation is thus accentuated, the divergent conceptions are to be touched upon
+which emphasise the one-sidedly limited determination of a \emph{life-relation}.
+We may here take account partly of \emph{Grundtvig}, partly of
+\emph{Martensen}.
+
+With the \emph{former} an emphasis is laid on the relation of \emph{life} in
+the sense of a relation of \emph{immediacy}, which is so apprehended that the
+immediacy acquires the aesthetic character of sensible presence and comes to
+enclose within itself the moment of the magical. In the conception of the
+working of the ``living Word'', of the power of the sacrament,
+% signature numeral „3“ at the foot of p. 33 (first page of the gathering);
+% not transcribed.
+% --- p. 34 ---
+spirit's relation of freedom to spirit here gives room for a magical working;
+and while the religious consciousness, which by a postulate cuts reflection
+off at a determinate point, at the symbol, seeks rest in an unshakable,
+immovable objectivity, it exchanges the in truth religious relation for an
+aesthetic, poetic relation, in which the personality has not itself made the
+movement of infinity through true inwardisation, in which it does not know
+infinite resignation, but relates itself to the divine without knowing the
+seriousness of the relation, without remembering that the possibility of doubt
+becomes at every moment that which must be overcome if the relation is to be
+in truth, and that the anxiety of uncertainty becomes the ground upon which
+the victorious certainty of the relation of faith is to rest. Since, with a
+half-conscious shyness of thought, there is unclear talk of a relation of life
+into which the life of thought is not taken up, it is overlooked at this
+standpoint that a relation through cognition, through thought --- precisely
+because cognition is the being's expression, because it is the form of
+realisation for the relation of essence --- becomes in the true sense a
+relation of life, and that it leads to \emph{that} immediate unity which can
+be thought in the domain of the life of spirit.
+
+With \emph{Martensen} there comes forward an endeavour to bring the
+\emph{whole} of human life into the religious relation: \emph{faith} is
+determined as \emph{a unity of religious feeling, cognition and will}. But in
+virtue of the subordinate and governed position which he lets cognition occupy
+in relation to faith, and in virtue of the conception he asserts of the
+\emph{will} as ``the concluding moment in religious consciousness'', this
+endeavour is not realised, and the relation of cognition is pressed back.
+Since the religious God-relation is separated from the speculative and the
+aesthetic, which are determined as relations ``at second hand'', while the
+religious becomes an \emph{existential relation}, a ``consciousness of the
+God-relation which is one with the personal living and being in this
+relation'', then in this form of separation what is essential in the relation
+of cognition is pushed aside; the one-sided distinction between the impersonal
+and the personal is
+% --- p. 35 ---
+asserted also for that true, concrete cognition in which the self seeks a
+satisfaction for its deepest need, grounded in the essence of its personality.
+And this one-sided pressing back of the moment of cognition betrays itself
+also in the closer developments, in which the religious relation is
+characterised as a \emph{holy} relation, a relation of \emph{conscience}; for
+through these determinations it is to be expressed that the relation of
+religion is a relation to the ``\emph{personal}'' God, in \emph{that}
+conception of the concept which raises it above the ``logical'' and makes the
+\emph{will} the organ of the God-relation.
+
+c) With respect to the \emph{relative} relations it follows from the
+determination of the religious relation as the \emph{absolute} one that this
+relation cannot fall outside them, but must comprehend them, penetrate them
+and make them absolute through their unity with it. In this unity --- a unity
+conditioned by the ethical becoming something all-comprehending --- the
+relative relations must acquire a higher significance, so that they can become
+adequate expressions of the religious, which has its concrete unfolding in
+them.
+% unlike a) on p. 31 and b) on p. 32, only „r e l a t i v e“ is letterspaced
+% here; „Med Hensyn til de“ is set tight. The English follows.
+
+This determination receives its sharper elucidation by a comparison with S.\
+\emph{Kierkegaard}'s conception of the relation between the absolute religious
+τέλος and the relative ones. As he seeks the expression for that form of
+religiousness which is not yet that of the paradoxically religious, the
+\emph{first} expression of religious existence becomes for him \emph{the
+absolute direction (respect) towards the absolute} τέλος, \emph{expressed in
+action in the transformation of existence}. In the relation to the absolute
+τέλος \emph{all} the moments of finitude are to be once and for all reduced,
+in action, to what must be given up in relation to eternal blessedness; only
+on condition of this exceptionless surrender is the existing individual in
+actuality to relate himself to the absolute τέλος, to will it absolutely. As
+the absolute τέλος for the willing individual who wills to strive absolutely,
+it is to be so abstract that, aesthetically regarded, it is the poorest
+representation; the willing individual is not even to will to know anything of
+this τέλος beyond that it exists; for
+% --- p. 36 ---
+\setcounter{footnote}{0}%
+as soon as he comes to know something of it, he is already to begin to be
+delayed in his course. The absolute τέλος is then not to be possessed at rest
+in existence; the whole time, the whole of existence, becomes the time of
+expectation. Mediation is to have no place here, because the existing
+individual is prevented from gaining such a footing outside existence that
+from it he could mediate what moreover, by being in becoming, withdraws itself
+from completedness. In relation to the absolute τέλος, that mediation takes
+place is to mean precisely that the absolute τέλος is reduced to a relative
+τέλος. It is not to be true that the absolute τέλος becomes concrete in the
+relative; for resignation's absolute distinction is at every moment to secure
+it against all fraternising. The absolute relation is to be able to demand the
+renunciation of \emph{all} the relative ones. But for that very reason the one
+who relates himself to the absolute τέλος is nevertheless to be very well able
+to be in the relative ones; it will be precisely in renouncing that the
+absolute relation is practised: the relation which rests on the absolute
+distinction, the relation to that which is won only by absolutely venturing
+all\footnote{\emph{Kierkegaard}: Afsluttende Efterskrift, pp.\ 295 ff.}.
+
+In the first determination of the religious relation thus more closely
+developed, there are already indicated in Kierkegaard the consequences which
+come forward decisively where at last, within Christianity, the demand of the
+religious is raised so high that it consumingly burns up all finitude and with
+it all those ethical relations which, seen from this height, come under the
+determination of finitude. The religious relation here acquires the utmost
+abstraction: it can become the power which with the force of infinity draws
+the existing individual out of finitude and constantly gives him the direction
+towards the eternal; but it cannot win shape in the existing individual,
+cannot form his concrete actuality; for, as I have shown in another
+place\footnote{Problemet om Tro og Viden, p.\ 221.}, it becomes only a
+\emph{demand} that the individual should be able at one and the same time to
+relate himself absolutely to the absolute τέλος and relatively to the relative
+ones,
+% printed marks on p. 36: *) and **), below a short rule. The name in the
+% first note is letterspaced Fraktur: „K i e r k e g a a r d“.
+% --- p. 37 ---
+in which the former is not to become concrete. But by this abstraction, which
+unavoidably attaches itself to the religious relation, that relation acquires
+precisely the character of \emph{relativity} and loses the possibility of
+expressing the highest energy of the undivided human being; and in the finite
+which it is to be able to demand be given up there is also that which, as
+something essential, is something that cannot be given up: the ethical
+relations as a totality. A corrective against that conception lies already in
+this, that with Kierkegaard the fundamental ethical relation comes into being
+only as a relation of will to \emph{the eternal}, and that the determination
+of the eternal in the domain of the ethical is not to be distinguished from
+the determination of it at that stage of the religious which we have
+characterised. If this is held fast, then the ethical cannot be apprehended as
+a stage of transition in the sense that there could be an ethical life which
+was not yet religious; rather the ethical becomes ethical only by being from
+the first religious. And precisely for that reason the religious stands in
+such a relation to the ethical that it must always find its expression in the
+ethical --- so that there cannot be thought a surrender, warranted by the
+religious, of the totality of the ethical, of all the ethical relations, but
+the renunciation of an ethical relation must always be in virtue of a higher
+and more comprehensive ethical, and religious renunciation must therefore
+always be borne by ethical action.
+
+d) The first, essential determination of the religious relation was therefore
+that it was an \emph{absolute, infinite} relation. And in the concept of the
+human spirit, in its essential determination, lies the \emph{necessity} of
+such a relation for the human spirit. Infinity is its essence, its true
+element of life; only in a relation of infinity can it therefore come to rest,
+and so that it stands in an absolute relation --- i.e. in a relation of
+infinity --- not merely according to a single one of its fundamental functions
+but according to their totality. Even when the content of spirit is converted
+into the form of \emph{feeling}, the relation's absoluteness can be preserved,
+since feeling, in totalised unity with cognition and will, becomes that
+intensive form of immediacy of spirit whose content has the infinite richness
+of unfolded possibility, and which at every
+% --- p. 38 ---
+moment can become mobile and be clarified through in cognition and will.
+
+e) That first determination of the religious relation, as the absolute
+relation to the Absolute, now acquires a \emph{more concrete} form in that the
+limitation of \emph{existence}, the determinateness by \emph{finitude}, of the
+human being that enters the religious relation is accentuated. At this point,
+however, only the general determinations to which this standpoint leads are to
+be indicated; the closer consequences --- namely with respect to the
+significance of the temporal relation for the ethical-religious life, for
+guilt and its abolition --- will be shown in the last Section.
+
+The new determinations that come in, and that express that the absolute
+relation to the Absolute is the absolute relation to the Absolute of a human
+spirit which is \emph{according to its essence infinite} but which
+\emph{exists in determinateness by finitude}, are the determinations of
+\emph{faith} and of \emph{self-surrender}. Of these, when they are
+distinguished, the first points rather to cognition, the second to will --- but
+so that faith's cognition must according to its truth be determined as being
+in inner, harmonious unity with the will, and self-surrender's will as
+standing in the same relation of unity to cognition.
+
+f) The determination of \emph{faith} comes forward in that the finite
+consciousness is, out of its determinateness by finitude, to grasp the
+infinite and eternal in the form of certainty and to hold it fast as that
+which penetrates and determines finitude. Faith is a postulate of cognition,
+an inference incommensurable with its premisses: in the relation to the
+eternally present it leaps over the intermediate links of grounding cognition
+and grasps the eternally present as this present; it transforms the
+uncertainty of what is to come into the certainty of something present. In
+this relation faith shows itself to stand at one and the same time in relation
+to the being's determinateness by finitude and to its determinateness by
+infinity. Faith is only as that certainty which is born of uncertainty, which
+as it were unwinds itself out of uncertainty; and through the uncertainty
+which at every moment is to be conquered, finitude betrays itself. But that
+certainty can be won through
+% --- p. 39 ---
+\setcounter{footnote}{0}%
+uncertainty, that uncertainty \emph{can} be conquered, shows the infinity of
+spirit. That which warrants faith's postulate, that which fills out the
+distance between its premisses and its conclusion, is \emph{the essential
+determination of the human spirit}, which with the necessity of the
+\emph{a priori} points to \emph{the Absolute} as that without which
+consciousness would lose its hold upon itself. It is the being's infinity
+which, through the enclosure of finitude, compels consciousness to acknowledge
+the infinite and eternal\footnote{Immediately there lies in this as yet only
+such an acknowledgement as can be united with an averted disposition, as when
+it is said of the demons in the New Testament that they believe in God and
+tremble. But when the infinite is to be acknowledged as the in truth infinite,
+then this acknowledgement is conditioned by a faith which acknowledges the
+infinite and eternal in its validity as the ideal of human life, by a faith
+which is in unity with self-surrender. In that relation in which faith stands
+beside an averted disposition, the divine becomes, through the
+\emph{opposition} to the self's abstract infinity, only an abstract infinite,
+in reality therefore only a finite, with the form of negative infinity. The
+rest of infinity which spirit seeks, because infinity is its essential
+determination, is therefore found only where faith and self-surrender are in
+unity, i.e. where faith is according to the completeness of its essence.}. And
+through the infinity of the \emph{being} there works the infinity of the
+\emph{principle}, by which the being has its being. That postulate of faith
+has therefore at once a human and a divine origin; it is an expression of the
+unity of the working of the human and of the divine spirit.
+% printed mark: *) --- the only note on p. 39, below a short rule.
+
+As such a postulate of cognition faith is at work in that, in the ethical
+choice, man's living is determined by the infinite and eternal; and as such it
+is at work in that the infinity of life is held fast in the particular action
+which fills out human life and which, as \emph{ethical}, confirms that
+primitive choice's constituting of the character of the life of spirit.
+
+In the ethical choice and in the ethical action which confirms the choice
+there reveals itself the \emph{true form of the unity of cognition and will}
+in the relation of faith. The choice, and the action which rests upon the
+choice, is at one and the same time
+% --- p. 40 ---
+\setcounter{footnote}{0}%
+the expression of that energy of cognition with which cognition breaks through
+the finitude that veils infinity and with the power of its own essence grasps
+infinity, and the expression of the will's resolution. The will, which through
+cognition is clear about itself, demands as the goal in which it, as
+essence-willing, can come to rest, the infinite, which is the condition of the
+infinity of essence; it demands the infinite in order to be able to be
+itself\footnote{The will's possible resistance to the divine will be
+elucidated under Section III.}. And just as the will demands the Absolute in
+order to rest in it, so also does feeling first find rest in it; and feeling
+preserves the Absolute's absoluteness in that at every moment of its intensive
+concentration it as it were conceals within itself the memory of cognition and
+the tension towards will.
+% printed mark: *) --- the only note on p. 40, below a short rule.
+
+g) The determination of \emph{self-surrender} comes forward in that the
+particular finite will is to break through the determinateness by finitude in
+which it immediately has its life, in order to will infinitely, and in this
+willing --- which is a willing of the true infinity of its own essence --- to
+enter into the absolute relation, to set itself in unity with the in truth
+infinite, to let itself be determined by the in truth infinite as a member of
+that totality, that community of spirit, which the infinite governs.
+
+Self-surrender is first the self-surrender of \emph{the choice}, the choosing
+will's decisive surrender in principle of the determinateness by finitude in
+order to be able to grasp infinity. But the moment of the constituting choice
+is to be unfolded so as to comprehend a \emph{whole} life, in whose particular
+actions the choice, formed into an abiding resolution, repeats itself, through
+the confirmation of the will's first surrender of the finite content of will
+and of its own selfishness. In the choice and in the repetition of the choice,
+self-surrender acquires on the one side the form of resignation, of dying away
+from immediacy (S.\ Kierkegaard), of inwardisation, of ``self-annihilation''
+in the sense of the abolition of the selfish; and on the other side --- since
+the goal is a regaining by the self of itself according to its determinateness
+by eternity and in concrete actuality --- the form of a self-assertion
+according to the self's
+% --- p. 41 ---
+\setcounter{footnote}{0}%
+truth. But since such a regaining, such a self-asserting, is possible only
+through the unity with the divine, which is the principle of the being,
+self-surrender acquires the form of a surrender to the working of the divine
+(«\textit{Deum pati}») --- a surrender which is not merely the purification of
+the finite will but, as its infinitising, the expression of its highest
+energy: it becomes a suffering which is one with the highest
+acting\footnote{With S.\ \emph{Kierkegaard} religious suffering and
+self-annihilation are set in opposition to the ethical self-assertion in which
+the existing individual, by ``repenting through'', is to find himself again.
+This opposition hangs together with the conception of the ethical stage as a
+stage of transition. If the ethical is apprehended in that original unity with
+the religious which has been shown above, then already the ethical
+self-assertion becomes a self-assertion through unity with the self's absolute
+principle, and the opposition between the religious and the ethical relation
+is abolished.}.
+% printed mark: *) --- the only note on p. 41, below a short rule.
+% ANTIQUA LATIN, p. 41: «Deum pati» is set in upright antiqua inside FRENCH
+% GUILLEMETS -- the guillemets are antiqua too, and are the one place in the
+% book where the usual „…“ is not used. Latin -> \textit{} per the house
+% convention; the guillemets are KEPT as printed rather than converted to
+% ``…'', per the playbook's rule for foreign-language guillemet terms.
+% Tight antiqua, so no \emph{}.
+
+Its \emph{definitive} determination self-surrender acquires in that the
+subject which surrenders itself to the divine determines its own life in the
+determinateness by finitude as \emph{guilt} --- in that self-surrender
+therefore becomes one with consciousness's repentant acknowledgement of guilt,
+and with its striving after that guilt's reconciliation in God through a
+divine working. This determination is here only touched upon; its closer
+development will be given under Section III, as will the demonstration of its
+relation to the determinations of the Christian.
+
+In self-surrender, in which the will's working comes forward primitively, this
+will is, as emerges from the earlier developments, conditioned by and in unity
+with cognition. And just as fully as self-surrender beneath the infinite must
+be determined as the will's goal, so must it also be determined as cognition's
+and as feeling's; for when the cognising spirit, through the surrender of its
+finitude, finds rest in self-surrender to the infinite, spirit as feeling
+finds rest in that self-surrender which is the self-surrender of the feeling
+of absolute dependence.
+
+h) In the foregoing it has already been indicated how
+% --- p. 42 ---
+the moment of faith and the moment of self-surrender in the religious relation
+stand in the closest connection with one another. Their concepts presuppose
+one another, and in their full and true significance they cannot be thought
+without one another. Faith presupposes, as was shown (p.\ 39 note),
+self-surrender in order to be able to be faith in the in truth infinite; it
+presupposes self-surrender in order to be able to grow its own growth; and it
+bears self-surrender within itself, since as a grasping and a holding fast of
+the eternal --- which in faith's certainty is lifted out of the uncertainty of
+doubt --- it is a self-giving of spirit to the eternal truth in which human
+life as a whole finds rest. And just as faith presupposes self-surrender, so
+self-surrender presupposes faith, precisely in order to be able to be
+self-surrender to the \emph{true} divine, i.e. in order in truth to be able to
+be self-surrender; and that action of self-surrender by which the self wins
+its life through the surrender of its life's selfishness is such that life can
+be regained in its truth and eternity only through faith in the eternal, to
+which life can thus be surrendered.
+% letterspacing on p. 42: „s a n d e“ only --- „Guddommelige“ that follows it
+% is tight. The English run falls on the same element.
+
+i) If we sum up the given determinations of the essence of the religious
+relation, then religion, according to its ideal significance, becomes the
+absolute relation to the Absolute as the true infinite standing in a relation
+of essential unity with us. It becomes a relation which, as grounded in the
+human being itself, comprehends the whole of human life, all the fundamental
+activities of spirit. It becomes --- since man is seen as a unity of infinity
+and finitude --- a relation of faith and of self-surrender; a relation through
+which the human spirit, entangled in finitude and bound in guilt, finds
+reconciliation within itself and with its own origin.
+% the enumerators i) on p. 42 and a)--e) on pp. 44--51 are antiqua italic in
+% the print, exactly like a)--h) on pp. 31--41; set plain here, following the
+% convention already established for pp. 30--41 and in the Contents.
+
+\begin{center}\rule{2cm}{0.4pt}\end{center}
+% A short centred rule stands here on p. 42, between „med sit Ophav.“ and the
+% paragraph on the positive religions; a thought-break in the running text,
+% not a head. Same treatment as the rules on pp. 19 and 28. A SINGLE hairline.
+
+The relation between religion in the sense indicated and the \emph{positive}
+religions is indicated in its main features in the ``preliminary
+determinations of concepts'' in the earlier work; it will emerge more
+determinately from the developments that follow.
+
+The relation of the conception developed above to S.\ \emph{Kierkegaard}'s
+determinations of the essence of the religious has
+% --- p. 43 ---
+\setcounter{footnote}{0}%
+already been partly touched upon. It shows itself at first glance that this
+conception has essential points of connection in his determination of that
+stage of religiousness which is not yet that of the paradoxically religious;
+but an incisive difference came forward in the difference of conception of the
+religious's relation to the ethical, of the absolute relation's relation to
+the relative ones. From \emph{Kierkegaard}'s determination of the religious as
+the \emph{paradoxically} religious that conception must of course diverge
+still more decisively. What sharpens the difference here is the opposition
+between immanence and abstract transcendence; between the view of the human
+\emph{being}'s imperturbability and man's \emph{essence}-transformation
+through sin; between the maintaining of cognition in the religious relation
+and its annihilation through the paradox, the absolutely incomprehensible;
+between the acknowledgement of the real's essential validity and essential
+unity with the ideal in existence's principle, in existence's wholeness and in
+the human being\footnote{Cf.\ the following Section (III).}, and
+Christianity's absolutely spiritualistic conception, which with Kierkegaard
+becomes manifest in the negative consequences with which he concludes. With
+these oppositions an essential difference in the conception of reconciliation
+will also show itself to stand in connection.
+% PRINTER'S DEFECT, p. 43: the Danish prints „Tilintetgjørrelse“, with a
+% doubled r. Orthographic, and so not reproducible in English; recorded here.
+% letterspacing across the line break, p. 43: the compositor spaces only the
+% SECOND half of „Menneske-væsenets“ and only the FIRST half of
+% „Væsens-forvandling“. The English compounds are hyphenated so that each run
+% can fall on the same half of the word.
+% printed mark: *) --- the only note on p. 43, below a short rule. The Roman
+% numeral „(III)“ in it is antiqua, as all figures and Roman numerals in this
+% book are; not italicised.
+
+\section*{2. Cognition's Relation to the Religious according to its Ideal Determinateness.}
+% Bold centred head in two lines, standing mid-page on p. 43 above a short
+% centred rule (rule not transcribed). Agrees with the Contents exactly.
+
+In order that cognition's relation to the religious, in the ideal sense of
+this concept, may show itself as a relation of unity, it must be established
+that cognition, by its relation to the human being and by the form in which it
+expresses the being, can become the medium for a relation of infinity, an
+absolute relation; that it can have absolute significance for the human
+spirit; and that it encloses within itself that moment of faith and
+% --- p. 44 ---
+of self-surrender which showed itself to be an essential mark of the
+religious.
+
+a) The condition for cognition's being able to become, for the human spirit,
+the form of an absolute relation is that it can preserve the object's true
+infinity within the relation. That it must be able to preserve the
+determinateness by infinity lies already, so far, in cognition's form, in that
+this form is determined by the universal; and this universal --- whose being
+as universal for human consciousness is conditioned by the being's inner
+infinity --- stands in essential connection with the infinite. But in order
+that through this form of cognition the infinite may be preserved as the in
+truth infinite, cognition's form of universality must be in concrete unity
+with the other fundamental forms of the concept. In order that it may be this,
+it is presupposed that cognition in the relation to the Absolute does not
+stand in abstract opposition to what is just as fully a fundamental function
+of spirit, and that it does not become a one-sided form of spirit's activity,
+isolated from what supplements and totalises it. As such it would, for
+example, unavoidably have to be apprehended if it were separated from the will
+by an absolute heterogeneity of principle; for in this separation the will
+would appropriate the determination of singularity as its fundamental form and
+let cognition's form of universality become that of abstract universality,
+while the will's form of singularity, in its separation from the universal,
+would become precisely only the form of immediate natural singularity. In this
+abstract opposition neither of the functions of spirit would be apprehended
+according to its truth, i.e. as an expression of the undivided, total human
+spirit, and neither of them would come in truth to relate itself to the
+infinite, because the infinite in its true infinity could not be for either of
+them.
+
+With respect to the relation between the formal determinatenesses of the
+primitive functions of spirit, what is needful has been developed in the
+previous Section and in the earlier work, pp.\ 134 ff. It has been shown in
+what relation cognition's determinateness by universality stands to the
+particular and the concrete, and how the will's determinateness by singularity
+--- precisely because the \emph{will's} singularity is ``singularity of
+spir\-%
+% --- p. 45 ---
+it'' --- unfolds the determinateness of the universal out of itself. Of what
+nature the will's determinateness by singularity is shows itself already
+through the fact that the will has its limit in the organism against the
+singularity and immediacy of nature-determined reality; and the will's
+psychological relation to that determinateness by drive out of which it
+unfolds itself in the course of the development of the life of spirit, and
+into which it is unconsciously converted as acting upon the self's natural
+side, its organism --- as for example when an act of will calls forth a
+momentary or a mechanically continued movement --- points to a limit of the
+will as will, by which its form of singularity is determined. If, however, in
+order to maintain the absolute heterogeneity, one were to let the will's
+universal set itself up as something absolutely heterogeneous from cognition's
+universal, then such a doubling of the universal into two absolutely
+heterogeneous kinds of universal, yet designated by the same common
+determination, would immediately enclose a self-contradiction, an absurdity.
+From what has been developed in the foregoing it therefore emerges that for
+that cognition which, as an essential expression of the human spirit undivided
+within itself, cannot be held fast in abstract separation from what is just as
+fully a primitive expression of spirit, and which is therefore not
+one-sidedly determined by a single fundamental form of the concept --- for
+such cognition the Absolute can be an object according to its truth, as the in
+truth infinite; and its infinity can be preserved under the relative
+abstraction. It can therefore be present for cognition in the form in which it
+is the object of religion according to religion's ideal significance, in which
+it is the object of faith as that which is demanded by the human spirit, as
+that goal of spirit in which the being's claim finds satisfaction, in which
+spirit first finds rest.
+
+b) That cognition can have \emph{absolute} significance for the human spirit
+--- that significance, therefore, which it must be able to have in order to be
+able to express the religious relation --- shows itself first through this,
+that cognition, in virtue of its relation to the human being, must be \emph{an
+end in and for itself}. It becomes an end in that it is a realisation of a
+fundamental determination in the human spirit, and more closely, of the
+determination which is according to
+% letterspacing p. 45: „a b s o l u t“ (not „Betydning“), and the whole phrase
+% „Ø i e m e d  i  o g  f o r  s i g“; the second „Øiemed“, two lines below,
+% is tight. The English follows in both places.
+% --- p. 46 ---
+the concept principal in spirit; but this means: it is an end as the being's
+realisation in one of the being's fundamental forms. But since it is a form
+for the realisation of the universal being, it is the form for the individual
+spirit's expansion so as ideally to take up the whole of infinite existence;
+it is the energy which ideally binds the individual spirit together with this
+whole of existence. Thereby cognition's absolute significance shows itself
+from a new standpoint; for in realising spirit's determinateness by
+universality, and in ideally binding spirit together with the whole of
+existence, it binds spirit together with existence's principle, the Absolute,
+which as such is cognition's principle and moving power, that upon whose
+cognition all true cognition rests. Cognition therefore acquires, from this
+standpoint, absolute significance because it realises that relation of spirit
+to the Absolute which is laid down in the human being; and since this
+realising of the human being's deepest relation is seen as being only through
+the working of the indwelling Absolute, cognition's absolute significance
+shows itself once more in a new light, which makes it still clearer how spirit
+can relate itself religiously in cognition and to cognition.
+
+From the standpoints emphasised, cognition has as yet been directly regarded
+only according to its significance in the \emph{theoretical} respect, through
+which it already shows itself as a self-valid end for that being which in
+cognition realises itself according to a fundamental determination within
+itself, and which precisely only in relating itself to cognition as an end can
+be present in cognition with spirit's whole power, with that love of cognition
+by which alone cognition becomes productive and creative, animated by the
+idea. But since now the human being --- which in cognition realises itself and
+realises its ideal unity with existence and with existence's principle --- as
+a being which comprehends a \emph{totality} of functions, enters as an active
+\emph{member} into a whole of existence and becomes conscious of itself as
+such, cognition's absolute significance is also to be seen from the standpoint
+of \emph{action}. How it is to be
+% letterspacing p. 46: „t h e o r e t i s k“ (not „Henseende“),
+% „T o t a l i t e t“, „L e d“ (which stands at the head of its line, „activt“
+% before it tight), and „H a n d l i n g e n s“ (not „Synspunkt“).
+% --- p. 47 ---
+apprehended from this standpoint emerges from what was developed in the
+previous Section. Only through cognition does that action become possible in
+which the individual works according to its absolute determination, which is
+the being's realisation through the will's freedom. Cognition showed itself to
+become the presupposition of such an action, partly by its clarifying,
+liberating, purifying influence upon the will, partly as determining the
+content of the true will. From this standpoint --- where cognition shows
+itself as a function within an organic wholeness of life, while it works as a
+condition, as a means, for the ethical --- it is at the same time to be seen
+as an ethical \emph{end}, and as working towards its own realisation in
+working towards the realisation of that unity of life in which it has its
+truth. And since cognition exercises upon the other activities of spirit, upon
+the life of feeling and the life of imagination, the same purifying and
+clarifying influence which it exercised upon the will, it shows itself in its
+relation to them too in its significance as realising the inner unity and
+harmony of the total human being; and this standpoint thus leads back to the
+first, from which cognition was seen as a realisation of the human being.
+
+c) That there is in cognition a moment of \emph{faith} --- not in the Jacobian
+sense of an immediate certainty of being, but in a sense in which the
+fundamental determination of the religious relation of faith is preserved ---
+shows itself at \emph{every} stage of cognition's development. This moment of
+faith is covertly present in the lower forms of cognition everywhere where a
+universal is asserted on the ground of the particular that is incongruent with
+it. Where a universal law asserts in virtue of the incompletely given
+particular, where the incomplete premiss of induction is therefore given
+validity as a complete one, there the universal is brought forward in that the
+empirical is supplemented in virtue of something a priori, that is, in virtue
+of a claim of the \emph{being} to unity and lawfulness. And what thus already
+shows itself where in a lower sphere a \emph{relative universal} comes
+forward, shows itself still more plainly where the \emph{universal in the
+highest sense}, the \emph{total existence's}
+% letterspacing p. 47: „Ø i e m e d“ (not „ethisk“); „T r o e n s“;
+% „e t h v e r t“, with „Trin“ on the next line tight --- as printed;
+% „V æ s e n e t s“, with the following „For=“ tight;
+% „r e l a t i v t  A l m e n t“, spaced through the line break; and
+% „h ø i e s t e  F o r s t a n d  A l m e n e“ and „t o t a l e
+% T i l v æ r e l s e s“ as two runs, the „den“ between them tight. The run
+% stops at the page break: „universelle Princip“ on p. 48 is tight.
+% --- p. 48 ---
+universal principle, is grasped by cognition out of incomplete presuppositions.
+For since one goes beyond experience's unavoidable incompleteness, the
+unity-principle of an existence not exhausted by experience is grasped, not as
+that whose certainty experience secures, but as that which is reached by a
+necessary postulate out of the individual consciousness, which without it
+would lose its hold upon itself, become uncertain of its own unity, be
+confused within itself. This postulate of the principle --- which as
+existence's principle is the human spirit's principle of life --- comes
+forward also in that cognition which is the presupposition of the primitive
+ethical choice by which the self constitutes itself as an ethical self; and
+just as, therefore, the cognition upon which this choice rests encloses the
+moment of faith, so this moment is present also in that cognition for which
+the incomplete premisses of the particular ethical action acquire validity as
+complete ones, as an action's \textit{ratio sufficiens}.
+
+In this --- that it is a demand proceeding with necessity from the being's own
+source, and a demand which encloses the immediate acknowledgement of what is
+demanded --- the faith which cognition encloses agrees with the faith which
+has been determined as the distinguishing mark of the religious. But the faith
+which is present in cognition itself must have the character of the
+\emph{rational}. In demanding the Absolute, its demand rests upon the thinking
+human being's consciousness of itself; it does not come into conflict with
+that consciousness, but confirms it. Faith as rational faith becomes a faith
+in that which is higher than the individual, in that it is the principle which
+grounds the individual spirits and the whole of existence; but which, in being
+determined as higher, is at the same time determined as of the same essence,
+precisely because it is the \emph{principle} of the human being and of
+existence. And since the being from which the religious demand of faith
+proceeds is an indivisible unity, there lies in this incontrovertibly that
+this demand, in order in truth to express the being's claim, cannot stand in
+conflict with any true expression of the being, and therefore not with
+thought, with cognition. Faith in the sense of the in truth reli\-%
+% antiqua on p. 48: „ratio sufficiens“, upright antiqua in the print; set
+% \textit{} per the house convention, tight, so no \emph{}.
+% letterspacing p. 48: „R a t i o n e l l e s“ (not „Charakteer“) and
+% „P r i n c i p“ in „Menneskevæsenets og Tilværelsens P r i n c i p.“
+% --- p. 49 ---
+gious can therefore not be a faith which stands in principle opposed to
+knowledge; by this disharmony in principle it would show itself not to have
+its source in the essential. This faith must, in virtue of the being's unity,
+stand in harmony in principle with knowledge; but in virtue of the human
+spirit's determinateness by finitude, faith must, as \emph{anticipating the
+result}, acquire an \emph{abiding} significance as something necessary for the
+human spirit. It is the form of the indispensable anticipation of certainty;
+it is the demand grounded in essence, which has the being's own necessity; it
+is therefore not like an uncertain knowledge, but like an inference without
+premisses which nevertheless has incontrovertible certainty, because the
+premisses are hidden in the being itself. But precisely therefore, precisely
+because faith draws its certainty from this source in the being, it cannot
+come into conflict with what springs clearly and transparently from the same
+source. Where, therefore, that which is posited as a determination of faith
+incontrovertibly conflicts with knowledge --- and it does so when it conflicts
+not merely with this or that determination of knowledge, but with what makes
+knowledge knowledge, with \emph{knowledge's principle, the principle of
+grounding and of necessity} --- there it cannot have truth. But in such
+conflict with knowledge's very principle stands, for example, faith in the
+miracle, when the miracle is taken in the sense in which positive religion
+takes it, not in the effaced and falsified sense in which it is taken by a
+half-theological inverted speculation.
+
+When ``faith'' at the stage of the positive religions appears with a claim to
+unconditional validity, then it must support this claim either upon its divine
+origin or upon its springing from what is innermost and most essential in the
+human spirit. If it supports the claim upon its springing from the
+transcendent divine --- and only when the divine is so apprehended do the two
+standpoints fall outside one another --- then faith with its supernatural
+origin and its supernatural content must be posited as raised above all
+knowledge and at the same time as standing in
+% letterspacing p. 49: „f o r e g r i b e n d e  R e s u l t a t e t“ (spaced
+% through the line break), „b l i v e n d e“ (with „Betydning“ tight), and the
+% run „V i d e n s  P r i n c i p ,  B e g r u n d e l s e n s  o g
+% N ø d v e n d i g h e d e n s“ --- the second „Princip,“ that closes the
+% phrase is tight. The English follows in each case.
+% --- p. 50 ---
+\setcounter{footnote}{0}%
+opposition to all knowledge. But since knowledge is seen as an expression of
+that human nature which has its springing from God, there arises not merely a
+discord between the divine's opposed forms of revelation, in faith and in
+thought, but there arises an unabolished and unabolishable discord in the
+human spirit, which is to deny one expression of essence in order to
+acknowledge an effect proceeding from the same source from which the human
+being itself has sprung. If then, in order to maintain the necessity of
+acknowledging ``revelation'', reference is made to the demand of personality,
+to a norm within personality, then the last of the standpoints indicated above
+has hereby been put in the place of the first. But when faith then rests upon
+the being's inescapable claim, then what was said above holds again: that this
+being's unity must preserve the harmony between the expressions of the being;
+and a harmony is then required between faith's content and what is essential
+in knowledge. As surely as there have been, and constantly can be, false forms
+of the positively religious --- forms of doctrine and cultus which most deeply
+offend the moral consciousness\footnote{It is here sufficient to recall the
+Near Eastern religions.} --- and as surely as conscience can be entangled and
+unclear in the individual, so surely is a norm required which cannot be sought
+in something absolutely heterogeneous with knowledge, but must be sought in
+knowledge's negative corrective, in that veto of knowledge which must retain
+its validity; because, when knowledge is denied, that regulative is lost by
+which a distinction can be drawn between the true faith grounded in the being
+and that which is only an expression of finite craving and desire, of
+something unessential and particular in human nature. Knowledge's relation to
+the proposition of faith may be such that knowledge must halt at a
+\textit{non liquet}; but knowledge's relation can never become such that it
+must approve what indisputably contradicts its \emph{principle}, annihilates
+it \emph{as} knowledge.
+
+d) In cognition, as cognition is according to its truth, there is finally
+present that moment of \emph{self-surrender} which characterised the in truth
+religious relation. In all true cognition there is a purification of thought,
+a surrender of individual
+% antiqua on p. 50: „non liquet“, upright antiqua; neither OCR witness marks
+% it, and it is the second Latin tag on this stretch besides „ratio
+% sufficiens“ (p. 48). Tight antiqua, so no \emph{}.
+% letterspacing p. 50: „P r i n c i p“ and „s o m“ in „modsiger dens
+% P r i n c i p, tilintetgjør den s o m Viden.“, and „H e n g i v e l s e n s“.
+% printed mark: *) --- the only note on p. 50, below a short rule.
+% --- p. 51 ---
+entanglement, opinion and prejudice --- in one word, of thought's selfishness;
+there is in it a self-surrender to truth's absolute power. And this
+self-surrender, which is present in all true cognition, shows itself most
+clearly in that relation in which cognition, in virtue of the being's demand
+of faith, surrenders itself to the infinite that satisfies the being's need.
+In this surrender, which is conditioned by an inner necessity of the being,
+cognition is in unity with the will; and in being itself infinitised in the
+surrender, cognition clarifies that will whose choice is determined by the
+same power of the being.
+
+e) The result of what has been developed is therefore that cognition in its
+truth stands in an essential relation of unity to the religious in its ideal
+determinateness, to the religious faith which is the expression of the human
+being's infinite demand. Under the conditions of finitude of the human spirit
+there is indeed as it were an interval between faith and knowledge, but an
+interval which must be able to be traversed by knowledge. A discord in
+principle, unabolishable, becomes an impossibility, because that faith which
+abolished knowledge's essential determination would precisely thereby show
+itself as not according with faith's own essence. Under the changing of its
+historical forms faith has a development, and its essential connection with
+knowledge shows itself in this, that this development of faith is not torn
+loose from that of knowledge, is not without the liberating knowledge.
+% p. 51: a short centred rule stands between this paragraph and the sub-head
+% below --- a rule above a display head, and so not transcribed, as at p. 30.
+
+\section*{3. The Relation of the Will and of Action to the Religious according to its Ideal Determinateness.}
+% Bold centred head in two lines, p. 51. Agrees with the Contents exactly.
+
+In determining the relation of the will and of action to the religious, the
+same standpoints will have to be brought to bear as were emphasised in the
+foregoing with respect to cognition.
+
+a) There is then first to be brought out that the possibility of an absolute
+relation to the Absolute through the will is present, in that the will, in its
+harmony with cognition and in its being clarified through by the universal,
+has the capacity to pre\-%
+% No letterspacing anywhere on p. 51 --- checked line by line at 260 dpi.
+% --- p. 52 ---
+serve its object's true infinity --- a capacity which would have to be denied
+if one let an absolute heterogeneity separate the will from cognition, or if,
+on the ground of an unclear representation of the being's ``defectiveness'',
+an \emph{abiding} irrational element in the will were postulated. The Absolute
+is present as absolute in the will's form as \emph{the good}, and man's
+willing of the good is in unity with the cognition of it. As this willing of
+the Absolute as the good impresses itself in action, this action acquires ---
+as will be more closely developed in what follows --- the shape of a
+realisation of the good in the form of the human being, governed by the will's
+unconditional submission to the Absolute's demand; so that this realising,
+through the unconditional submission, becomes the expression of the
+realisation of essential unity with the divine (ὁμοιωθῆναι θεῷ), and therefore
+the form of an absolute relation of will to the Absolute.
+% GREEK on p. 52: „ὁμοιωθῆναι θεῷ“, antiqua italic, broken „ὁμοιω-/θῆναι“
+% across the line in the print. Neither OCR witness reads any of it, and p. 52
+% is not in the recon pass's Greek list; it exists only because it was caught
+% by eye. Copied verbatim from transcription.tex, not retyped.
+% The parenthesis „hvad der i det Efterfølgende nærmere vil blive udviklet“ is
+% printed with plain commas, not parentheses; set with dashes here for English
+% readability, the punctuation carrying no emphasis either way.
+
+b) The \emph{absolute significance} of true willing and of true acting for the
+human spirit shows itself immediately, in that the will as
+\emph{essence}-willing conditions the unfolding of the human being's endowment
+in real actuality, and constitutes the true relation to the Absolute. As shown
+above, this twofold standpoint comes together into an inseparable unity.
+
+When, in the development of the ethical's coming into being in the individual,
+the expression was used that the self in the ethical choice chooses and wills
+\emph{itself absolutely}, there was a pointer to this: that such choosing is
+possible only through the self's standing in a \emph{relation of essential
+unity to the Absolute}; for only in virtue of such a relation can it be chosen
+absolutely. That expression must be taken as the starting point, because, if
+we determined the object of the choice as the absolute idea of the good, the
+choice of this as that which is to be realised in \emph{human} action would be
+identical with the choice of the \emph{humanly good}, of the \emph{ideally
+human}. In this the absolute idea is for man in \emph{the determinateness of
+his essence}, and in being realised through the free will, actuality is given
+to the idea. Beyond the determination of the ideally human
+% letterspacing p. 52: „b l i v e n d e“ (not „Irrationelt“); „d e t  G o d e“
+% at its FIRST occurrence only --- the two that follow are tight;
+% „a b s o - / l u t e  B e t y d n i n g“, spaced through the line break;
+% „V æ s e n s“ with „villen“ tight, i.e. only the first half of the compound;
+% „s i g  a b s o l u t“; „V æ s e n s = / e n h e d s f o r h o l d  t i l
+% d e t  A b s o l u t e“; „m e n n e s k e l i g“ with „Handling“ tight;
+% „m e n n e s k e l i g t  G o d e“; „i d e a l t  M e n n e s k e l i g e“;
+% and „d e t s  V æ s e n s  B e s t e m t h e d“. The last line of the page
+% repeats „det idealt Menneskelige“ TIGHT --- as printed, not regularised, and
+% the English repeats it without \emph{} accordingly.
+% --- p. 53 ---
+as the task of human action we cannot come. We can realise only that Absolute
+which is \emph{our} absolute essence, actualise only that ideal which is
+\emph{our} ideal. From the determination of the ethical task as the
+realisation of the idea of the good as such we are at once led back to the
+limit indicated, by the fact that what realises must be congruent with what is
+to be realised; the Absolute can then be \emph{positively} realised by us only
+in so far as it expresses itself in the determinateness of our essence. But
+this limitation of the positive expression for the idea's realisation through
+the will does not exclude, but precisely presupposes, another negative form of
+realisation, in which the idea makes itself felt \emph{as such}. If we see the
+human individual ordered as a member into a principle-determined organised
+totality, then it follows indeed from its determinateness as a single organic
+member that it can positively express the principle only through the active
+unfolding of the individuality's own essence; but in the form of negation
+(self-surrender) it expresses the whole as whole, the principle as principle,
+in virtue of the whole's and the principle's presence within it in the
+abstract form of possibility. Through that determination of the ethical choice
+and the ethical task which was our starting point there is therefore a pointer
+to the relation to the Absolute as that by which the self in its ideality can
+become an absolute task to itself, and which acquires presence in the
+ethically unfolded self; and the absolute significance of ethical willing and
+acting therefore shows itself from a twofold standpoint.
+
+To the same result we are led when we start from the other expression for the
+ethical choice: that the self in that choice chooses \emph{itself according to
+its essential determinateness}. For the choice of the self according to its
+essence is a choice of the being \emph{according to its total concretion}, and
+therefore according to its determinateness \emph{as an organic member in a
+totality of existence}. In cognising itself in this determinateness, the self
+is from the beginning in relation to that principle which is the governing
+principle of life of the total existence. The I's self-assertion in the
+ethical choice is only through the principle's working through the I,
+% letterspacing p. 53: „v o r t“ twice; „p o s i t i v t“; „s o m
+% s a a d a n.“ (spaced through the line break); „s i g  e f t e r  s i n
+% V æ s e n s b e s t e m t h e d“; „e f t e r  d e t s  t o t a l e
+% C o n c r e t i o n“; and „s o m“ at the end of a line followed by
+% „o r g a n i s k  L e d  i  e n  T i l v æ r e l s e n s  T o t a l i t e t.“
+% --- ONE emphasis carried across the break, not two. The English keeps it as
+% one run accordingly.
+% --- p. 54 ---
+and in that the I asserts itself, but asserts itself in its being ordered into
+the totality, its self-assertion is only as self-surrender to the principle.
+And what holds of the I's relation in the ethical choice holds of its relation
+in the particular ethical action, for which this choice forms the foundation.
+As the ethical wins concretion, and ethical willing forms itself as that
+willing of the being according to its completeness which has been clarified by
+true cognition, the relation is at every point posited to that totality into
+which the self as ethical freely orders itself, and to the totality's
+principle. The relation which was posited in the ethical choice, when the
+ethically a priori first acquired validity for the will, is preserved as this
+a priori wins fullness in the concrete action. The twofold standpoint for the
+ethical's absolute significance thus gathers itself once more into unity.
+
+When the relation to the Absolute which is constituted in the ethical choice
+is posited as preserved everywhere in ethical action, this leads to an
+essential consequence --- already drawn above from another standpoint --- for
+the conception of the \emph{particular} ethical relations. From the fact that
+in these relations in their singularity there is at every point a relation to
+the Absolute working through them, it follows that the particular ethical
+relations, which in their isolation would have to be determined as merely
+relative relations, become relations with absolute significance, expressions
+of the absolute relation. The absolute relation is seen as comprehending all
+the ethical relations, as indwelling in them, and as unfolding through them a
+concrete content and winning the shape of actuality. Thereby the particular
+ethical relations acquire a higher significance; and in apprehending them in
+this significance the subject relates itself religiously to the ethical, which
+now in its articulation acquires absolute validity, becomes an absolute end
+for the subject.
+
+It is only another expression for the same thing when it was said that the
+ethical can never as a whole be given up for a religious τέλος which as an
+absolute should raise itself above everything ethical. It cannot, because the
+ethical is an expression of essence, because through its relation to the
+Absolute it has absolute
+% GREEK on p. 54: „τέλος“, antiqua italic. tesseract renders it „7é4o0ç“ and
+% the ABBYY layer drops it altogether; p. 54 is not in the recon pass's Greek
+% list. Copied verbatim from transcription.tex.
+% letterspacing p. 54: only „s æ r l i g e“, at its FIRST occurrence; the
+% second occurrence eight lines below is tight, and „ethiske Forhold“ is tight
+% in both. As printed, and so in the English.
+% --- p. 55 ---
+significance, and because it stands in indissoluble connection with the
+religious. In the collision in actuality between the different forms of the
+ethical, the ethical from one sphere may give way to the ethical from another
+which comes forward with the right of the higher universal; but in resigning a
+single one of the ethical relations --- which, as members in the ethical
+totality, are according to their essence absolute relations --- the
+resignation of the particular relation is in virtue of the ethical totality,
+which in the resignation \emph{integrates itself}. The resignation of the
+particular ethical relation is therefore in virtue of the ethical itself;
+there arises no absolute relation outside the ethical, but the Absolute
+becomes omnipresent within the ethical.
+
+c) In the ethical thus apprehended --- the expression of true, essential
+willing and acting --- the moment of faith has already been shown to be
+present. It has been shown that it comes forward not merely in the ethical
+choice's first grasping of the Absolute, but everywhere in the choice's
+confirmation in repetition, in every ethical resolution in which the
+individual determines itself to action in spite of cognition's incompleteness
+and the uncertainty of realisation, of the outcome; and it comes forward
+likewise in that the individual, under the incomplete realisation of the
+ethical demand, acknowledges in the indwelling, through-working principle ---
+with which it is in unity through love's self-surrender --- that which
+ethically completes.
+
+d) The moment of self-surrender in the ethical has already been touched upon,
+in that the negative form for the realisation of the absolute good was
+indicated, and in that it was shown that the self's assertion of itself, as an
+assertion of the self according to its essence's \emph{complete}
+determinateness --- according to which it is a moment in a whole governed by
+the principle --- became one with a self-surrender of love and of resignation
+to that principle by which the self's essence is, and in which it first finds
+itself again according to the truth of its essence. This holds with respect to
+the first ethical choice and to each particular ethical action. Since now
+ethical self-assertion is self-assertion through self-surrender, \emph{love}
+is the principle of the ethical; and since the self is seen in relation to the
+Absolute and to the spir\-%
+% letterspacing p. 55: „i n t e g r e r e r  s i g  s e l v.“;
+% „f u l d s t æ n d i g e“ (with „Bestemthed“ tight); „K j æ r l i g h e d e n“.
+% The section letters „c)“ and „d)“ are antiqua, as „a)“/„b)“ on pp. 42--52.
+% --- p. 56 ---
+itual wholeness of life into which it is ordered, love's object becomes the
+Absolute, the principle, and man \emph{as} man (the neighbour). In the
+relation of love to man the relation of love to the Absolute is revealed: in
+the ethical-religious relation to humanity there is a relation to the
+Absolute, which is humanity's ground of life. In this love of the Absolute and
+of man \emph{as} man, self-love is transfigured and man's innermost essence
+revealed. ``Only that man is something who loves something, and what a man is
+shall be known by what he loves''. (Feuerbach).
+% The Feuerbach quotation, checked at ~490 dpi in the Danish: low „ opening,
+% high “ closing, and the full stop stands AFTER the closing mark, not before
+% it. „(Feuerbach).“ runs on as the last, short line of the same paragraph; it
+% is not set off. The English keeps the stop outside the quotation mark and
+% the attribution running on, as printed.
+
+e) Thus the result with respect to the will's relation to the religious
+becomes the same as with respect to cognition's. The relation between the will
+in its truth --- the essence-willing at work in ethical action --- and the
+religious according to its ideal determinateness is a relation of unity, and
+must be so, because a fundamental function of the being cannot contradict what
+expresses the human being's deepest claim, its infinite demand.
+% A short centred rule stands between this paragraph and the sub-head below ---
+% a rule above a display head, and so not transcribed, as at pp. 30 and 51.
+
+\section*{4. The Reconciliation of the Human Spirit in the Ethical-Human Life Resting upon True Cognition.}
+% Bold centred head in two lines, p. 56; agrees with the Contents. The line
+% break falls after „sande“; „ethisk=humane“ is the ordinary Fraktur hyphen.
+
+When human life is unfolded in harmonious unity of true cognition and true
+action; when cognition in its truth bears within itself faith according to the
+ideal significance of that concept; when the ethical action, in which the
+human being according to its concretion finds its realisation, has as ethical
+action the true stamp of the religious; and when finally the human being
+through cognition and action stands in relation to an existence and to a
+principle of existence from which all dualistic dividing has been removed ---
+then the conditions are present without which spirit cannot find rest and
+reconciliation. What proceeded immediately from the essence of the human
+spirit was a striving after the realisation of its inner infinity as a
+% letterspacing p. 56: only „s o m“, twice, in „Mennesket s o m Menneske“ ---
+% in both places the neighbouring „Mennesket“/„Menneske“ is TIGHT. The
+% compositor spaced the little word alone; the English does the same.
+% --- p. 57 ---
+true infinity; and this realisation can take place only on the conditions that
+spirit's activities are not divided, that they do not follow heterogeneous
+laws, and that spirit in its relation to existence and to the principle is not
+hindered by the finitude-barrier of a dualism. But in the true cognition of
+the Absolute, of the totality of existence and of the self; in the true
+ethical willing, which equally accentuates the self's self-assertion and its
+ordering into the totality, its spirit-side and its nature-side; in the true
+religious relation, which as the absolute relation penetrates the relative
+ones and in them wins concretion --- in these this concrete infinity is
+present; and since cognition, morality and religiousness are harmoniously
+bound together, the condition is brought about under which spirit's original
+striving can come to rest, under which spirit's reconciliation with itself in
+its actuality can take place --- a reconciliation which must be lacking so
+long as spirit is divided by conflicting powers, so long as consciousness is
+split within itself, at every moment torn asunder by doubt about cognition's
+truth and about action's validity. Only through that harmonious realisation of
+all the powers of the life of spirit does human life also become in truth a
+\emph{human} life according to the full significance of that concept; and the
+character of humanity reveals itself in the \emph{universal} love of humanity,
+of the human \emph{as} human.
+
+When at this point of the development --- where \emph{guilt}, the breach in the
+ethical, and the possibility of restitution in spite of that breach, have not
+yet been treated --- reconciliation is spoken of, then of course this concept
+is partly to be taken in a more abstract, more metaphysical sense: in the
+sense it must acquire when one starts from infinity as an essential
+determination, and when the form is sought under which the striving after
+infinity that has proceeded from the ground of the human being can find its
+satisfaction. And partly the actuality of reconciliation remains as yet only
+\emph{hypothetical}, in that only the general conditions are indicated
+\emph{without which it does not become} thinkable. But when in what follows
+reconciliation is developed in more concrete determinateness as \emph{the
+reconciliation of guilt},
+% letterspacing p. 57: „h u m a n t“ (Liv tight); „u n i v e r s e l l e“;
+% „s o m“ alone in „det Menneskelige s o m menneskeligt“, the same idiom as on
+% p. 56; „S k y l =/d e n“, spaced through the line break, with „Bruddet“
+% tight; „h y p o t h e t i s k“; „u d e n  h v i l k e  d e n  i k k e
+% b l i v e r“ with „tænkelig.“ tight; and „S k y l d e n s  F o r =“ running
+% over onto p. 58, where „s o n i n g,“ is spaced too --- ONE emphasis carried
+% across the page turn, so the English \emph{} likewise spans the page marker.
+% --- p. 58 ---
+then this more concrete determination must have that more abstract one for its
+presupposition and condition; it will not abolish it, but fill it out.
+
+In the sense in which reconciliation is spoken of at this point of the
+development, this concept designates first \emph{spirit's reconciliation
+within itself}, as grounded in spirit's inner harmony, in the inner unity of
+all the functions of spirit, in the being's undivided working. This conscious
+harmony, resting upon true cognition, and the reconciliation which it
+encloses, differ essentially from the immediate harmony of beauty of \emph{the
+Greek consciousness} with its illusory reconciliation. In the Greek spirit's
+harmony of beauty the oppositions were brought to unity only in an illusory
+manner, precisely because the form of union was beauty's immediacy, the
+\emph{immediate} connection of the \emph{originally different}. As soon as
+this harmony, which was there for intuition, was to be determined by thought,
+the oppositions parted; and Greek thought's determinateness by the form of
+intuition let the parted oppositions become fixed in the separation without
+being able to bring about a higher reconciliation. Therefore Greek
+consciousness hovers between the immediate unity of beauty and the
+unreconciled opposition which unavoidably succeeds it; and because that unity
+of beauty in its immediacy does not have the true form of the life of spirit,
+spirit lacks in it the deeper inwardisation, and precisely therefore that
+inner infinity which is the condition of the in truth ethical; and likewise
+there is lacking the possibility that life's concrete content can unfold
+itself for the ethical consciousness as a principle-determined unity. Since
+that unity which we have determined as the unity of the in truth human life
+--- as a freely acquired unity, transparent for cognition, resting upon
+another determination of the fundamental relation in the human and in
+existence --- is secured against dividedness, it encloses the possibility of
+that reconciliation which the Greek spirit, in virtue of its form of
+consciousness, had to lack.
+
+To the determination of the human spirit's reconciliation within itself there
+attaches itself then the determination of its \emph{reconciliation with its
+% --- p. 59 ---
+divine principle}; and this determination of reconciliation shows itself to
+stand in necessary connection with the first, in that only in spirit's
+reconciliation with its indwelling principle can its inner reconciliation
+become complete --- just as, conversely, the reconciliation with the
+principle, which is the undivided spirit's reconciliation, can be accomplished
+only as spirit wins the inner reconciliation. Reconciliation with the
+principle takes place in that the unity of essence becomes conscious and finds
+its expression, negative and positive; it takes place in that man's relation
+to the Absolute becomes an absolute relation, through the unconditionedness of
+faith and of self-surrender. For the reconciled consciousness the Absolute is
+the through-working power of life which, in virtue of the unity of essence,
+can unconditionally govern human thought and determine human will, and in
+which the self in the highest sense can find itself again. How this
+finding-again becomes possible in spite of guilt it will be the task of the
+following Section to show.
+
+The human spirit's reconciliation is finally to be apprehended as its
+\emph{reconciliation with existence and within existence}. It acquires this
+determination in that man becomes conscious of himself as ordered into an
+organic existence whose principle is the human being's principle, whose
+governing laws are reason's inviolable laws, and in that he joins himself in
+love with that wholeness of life in which he constitutes a member.
+
+When it has now become clear from the foregoing that what is the
+\textit{conditio} \emph{\textit{sine qua non}} for spirit's true
+reconciliation, for its reconciliation in actuality, is present in that form
+of religiousness which we may call \emph{the religiousness of humanity}, then
+it will also become clear that it cannot be found within the positive
+religions.
+
+What prevents this is, in one word, the limitation by \emph{finitude} in the
+positively religious. The striving after the in truth infinite, which is the
+distinguishing mark of the religious in the ideal sense, is also the moving
+power in the historically appearing positive forms of religion; but
+% ANTIQUA LATIN on p. 59: the whole of „conditio sine qua non“ is antiqua, and
+% within it „s i n e  q u a  n o n“ is ALSO letterspaced while „conditio“ is
+% tight. Latin -> \textit{} per the house convention; the letterspacing is
+% carried by the extra \emph{} round the spaced half, exactly as in the Danish.
+% This is the clearest case in the book of why the spaced/tight antiqua
+% distinction is worth keeping mechanically: in English the two halves would
+% otherwise be indistinguishable.
+% Other letterspacing p. 59: „g u d d o m m e l i g e  P r i n c i p;“ (the
+% run-over from p. 58); „F o r s o n i n g  m e d  T i l v æ r e l s e n  o g
+% i  T i l v æ =/r e l s e n.“; „H u m a n i t e t e n s  R e =/l i g i ø s i t e t“;
+% and „E n d e l i g =/h e d s“ with „begrændsningen“ TIGHT --- the same
+% half-spaced compound as „Aands“functioner on p. 6.
+% --- p. 60 ---
+\setcounter{footnote}{0}%
+this striving acquires, as has been shown in another place\footnote{Cf.\
+Problemet om Tro og Viden, p.\ 33.}, its limitation by finitude through the
+peculiar formal determinateness of the theoretical and practical spirit at the
+stage of these religions.
+% printed mark: *) --- the only note on p. 60, below a short rule. The
+% asterisk stands after „Sted“, before „er viist“.
+
+That the human spirit, at the stage of the positive religions, must lack the
+conditions for reconciliation shows itself from the various standpoints from
+which the concept of reconciliation was apprehended above.
+
+The human spirit at the stage of the positive religions \emph{cannot} attain
+the \emph{inner reconciliation}, spirit's harmonious unity with itself. It
+cannot, because the functions of spirit are in conflict with one another and
+within themselves, and because this conflict is such as cannot be abolished.
+Cognition and will, both of which are held fast in a determinateness by
+finitude, must abidingly diverge; between knowledge and faith there arises an
+insoluble contradiction, and likewise between the action determined by the
+true cognition of the being's law and the action which is fulfilment of the
+supranatural principle's arbitrary command. This finds its expression also in
+the fact that the positive religion's determinateness by finitude makes the
+religious relation --- the relation to the transcendent divine --- into a
+\emph{particular} relation, which separates itself from the other essential
+and, as such, warranted human relations, and negates them in laying claim to
+spirit's whole power. The reconciliation which spirit was to attain in the
+exclusive God-relation would --- if a reconciliation could be thought where
+something essential is sought to be negated --- at all events not be able to
+become a reconciliation \emph{within actuality}, not the reconciliation within
+itself of the spirit existing in the concretion of actuality. It would become
+a reconciliation in a faith which, as relating itself to the supranatural,
+loses knowledge from sight, and in an action in which the ethical is absorbed
+into an abstract asceticism or into an arbitrary statutory element.
+
+% [text to be added: pp. 60--63, Division II continued]
+
+\chapter*{III.\\ The Central Ethical-Religious Problems, Apprehended from the Standpoint of Knowledge.}
+\addcontentsline{toc}{chapter}{III. The Central Problems}
+\markboth{III. The Central Problems}{III. The Central Problems}
+
+% [text to be added: pp. 64--201, Division III]
+
+\chapter*{Conclusion.}
+\addcontentsline{toc}{chapter}{Conclusion}
+\markboth{Conclusion}{Conclusion}
+
+% [text to be added: pp. 202--210, Conclusion]
+
+\chapter*{Errata:}
+\addcontentsline{toc}{chapter}{Errata}
+\markboth{Errata}{Errata}
+
+% [text to be added: p. 211, the Trykfeil leaf]
+% NOTE the printed spelling of the heading: „Trykfeil:“, with -ei-. The
+% leaf carries three blocks, only the first of which belongs to this book;
+% the other two are errata for „Problemet om Tro og Viden“ and for „Et Svar
+% til Prof. R. Nielsen“, and are reproduced as printed, as in the Danish.
+
+\end{document}
