@@ -10,44 +10,141 @@ without giving up science.
 - Scan: `bibliotek/Nielsen, Rasmus/1850-evangelietroen-theologien.pdf` (195 PDF pp., 37 MB).
   Same file as KB `e-mat/dod/11030800271D.pdf`.
 - Transcription: `transcription.tex` (this dir). **COMPLETE.**
-- Translation: `translation.tex`. **PHASE 2 IN PROGRESS — see §PHASE 2 below.**
+- Translation: `translation.tex`. **COMPLETE.**
 - Catalog entry: `catalog.yaml`, author `nielsen`, id `evangelietroen-theologien`.
+  Both sections set to `status: complete`; a Translation link was added.
 
 ---
 
-# ✅ PHASE 2 (TRANSLATION) — STARTED 2026-09-05
+# ✅ PHASE 2 (TRANSLATION) — COMPLETE, 2026-09-05
 
-`translation.tex` created: full preamble, the whole skeleton (Preface, twelve
-lecture heads with their arguments translated, Postscript, Indhold, both closing
-rules), and **14 batch markers** in reading order.
+The whole book: Forord (pp. III–VIII), all twelve lectures (pp. 1–172), the
+Efterskrift (pp. 173–174) and the Indhold. **0 markers, 0 continuation notes.**
 
-**DONE: the Forord (pp. III–VIII) and lectures I, II and III (pp. 1–37).**
-Sandbox compile after lecture III: **61 pp., 0 errors, 0 char-warnings.**
+Final sandbox compile (three passes, `lmodern` substituted, Greek neutralised):
+**147 pp., 0 LaTeX errors, 0 missing-character warnings.**
+
+## Whole-book verification against the Danish (comment lines stripped)
+
+Every structural count is identical:
+
+| element | dk | en |
+|---|---|---|
+| `\chapter*` | 15 | 15 |
+| `\addcontentsline` | 15 | 15 |
+| `\markboth` | 14 | 14 |
+| argument blocks (`center`+`itshape`) | 12 | 12 |
+| `\indpost` (12 uses + 1 definition) | 13 | 13 |
+| `\footnote{}` | 13 | 13 |
+| `quote` environments | 2 | 2 |
+| `\rule` | 5 | 5 |
+| `\emph{}` | **108** | **108** |
+| `\textit{}` | **53** | **53** |
+| `\label{}` | 14 | 14 |
+| Greek spans | 15 | 15 |
+
+- **Paragraph blocks: 611 / 611.** The sequence of LaTeX commands through the
+  whole body is byte-identical between the two files.
+- **Page markers: 180 / 180, identical, in the same order.** Arabic run 1–174
+  with **no gaps**.
+- **Quote marks: Danish 244/242 (net +2, the logged defects); English 244/244
+  (net 0).** Both are the intended values.
+- Braces balanced (353/353), `$` even.
+
+### Thesis vocabulary, section by section
+`ueensartet` / `eensartet` / `heterogen` against `heterogeneous` / `homogeneous`:
+**109 / 109**, matching in every one of the fifteen sections individually
+(I 29, II 10, III 2, IV 7, V 11, VI 6, VII 5, VIII 6, IX 6, X 7, XI 2, XII 5,
+Indhold 13, Forord and Efterskrift 0). Other fixed terms also match:
+`Forargelse`/offense 20/20, `Inderlighed`/inwardness 29/29,
+`halvspeculativ`/half-speculative 18/18, `Troesridder`/knight of faith 3/3,
+`Paradox`/paradox 43/43.
+
+⚠ **A regex trap worth recording**, because it produced a false alarm on the
+final pass: `[Uu]?eensartet` does **not** match the inflected Danish forms
+`ueensartede` / `eensartede`, which end **-de**, not **-tet**. Counting with it
+made the English look inflated by ~34 occurrences. The correct pattern is
+`[Uu]?[Ee]ensarte[dt]\w*`. Anyone re-auditing this book's key term must use it.
+
+### Typesetting
+20 overfull hboxes under the `lmodern` test rig, worst 31.6pt (long
+unhyphenatable compounds such as "half-speculative", "religious-scientific").
+For comparison the **Danish transcription produces 67** under the same rig, so
+the English is the better-set of the two; most should resolve under the real
+`libertinus` + `microtype`. Nothing to fix, but worth a glance on the local build.
 
 Verification, each batch against its Danish span (comment lines stripped):
 
-| batch | pp. | paragraphs | `\emph{}` | `\textit{}` | page markers | quotes dk | quotes en |
-|---|---|---|---|---|---|---|---|
-| Forord | III–VIII | 27/27 | 2/2 | 3/3 | 6/6 same joints | 27/27 | 27/27 |
-| I | 1–13 | 52/52 | 8/8 | 2/2 | 13/13 same joints | 13/13 | 13/13 |
-| II | 14–25 | 38/38 | 13/13 | 5/5 | 12/12 same joints | **22/21** | 21/21 |
-| III | 26–37 | 38/38 | 16/16 | 12/12 | 12/12 same joints | **18/19** | 19/19 |
+| batch | pp. | paragraphs | `\emph{}` | `\textit{}` | notes | page markers | quotes dk | quotes en |
+|---|---|---|---|---|---|---|---|---|
+| Forord | III–VIII | 27/27 | 2/2 | 3/3 | — | 6/6 | 27/27 | 27/27 |
+| I | 1–13 | 52/52 | 8/8 | 2/2 | — | 13/13 | 13/13 | 13/13 |
+| II | 14–25 | 38/38 | 13/13 | 5/5 | — | 12/12 | **22/21** | 21/21 |
+| III | 26–37 | 38/38 | 16/16 | 12/12 | — | 12/12 | **18/19** | 19/19 |
+| IV | 38–51 | 50/50 | 11/11 | 7/7 | 4/4 | 14/14 | 18/18 | 18/18 |
+| V | 52–65 | 60/60 | 8/8 | 5/5 | 3/3 | 14/14 | **28/27** | 28/28 |
+| VI | 66–80 | 44/44 | 7/7 | 1/1 | — | 15/15 | 14/14 | 14/14 |
+| VII | 81–96 | 45/45 | 4/4 | 3/3 | 2/2 | 16/16 | 18/18 | 18/18 |
+| VIII | 97–111 | 39/39 | 12/12 | 4/4 | 2/2 | 15/15 | 19/19 | 19/19 |
+| IX | 112–128 | 49/49 | 8/8 | 5/5 | 2/2 | 17/17 | 28/28 | 28/28 |
+| X | 129–143 | 48/48 | 2/2 | 2/2 | 0/0 | 15/15 | 15/15 | 15/15 |
+| XI | 144–158 | 52/52 | 14/14 | 1/1 | 0/0 | 15/15 | **13/12** | 13/13 |
+| XII | 159–172 | 38/38 | 1/1 | 2/2 | 0/0 | 15/15 | 1/1 | 1/1 |
 
-The two bolded Danish counts are the **logged printer's defects, and are
-correct** — II is net **+1**, III net **−1**, so the running total is back to
-**0** at the end of lecture III and matches `check.py`'s +1 after II. The English
-balances at 0 in every batch by design.
+Page markers are at identical joints in every batch. Greek spans also match where
+they occur: VI 2/2 (πνεῦμα, γράμμα), VII 5/5 (the Aristotle tag), VIII 2/2
+(κρύψις, κένωσις), XII 2/2 (the οὑ ἕνεκα, breathing-only as printed) — all copied
+verbatim. `quote` environments 1/1 in VII (Schiller, *Wallensteins Lager*) and
+1/1 in X (the Goethe couplet). XII's two closing `\rule`s carry over 2/2.
+
+The bolded Danish counts are the **logged printer's defects, and are correct**:
+II **+1**, III **−1**, IV 0, V **+1**, VI–X 0, XI **+1**, XII 0 → running total
+**+2** at p. 172. That is exactly the `check.py` figure recorded at the top of
+this file ("Quote balance is +2 and that is correct"), reached independently by
+translating. The English balances at 0 in every batch by design.
+
+**The footnote inventory closed as predicted.** All 13 are placed in the Forord–IX
+span (4 in IV, 3 in V, 2 in VII, 2 in VIII, 2 in IX); X, XI and XII each verify
+**0/0**, which is the confirmation that the count was right.
 
 ## CURRENT RESUME POINT
-Next marker: `% [text to be added: pp. 38--51, Fourth Lecture]`.
-Then V 52–65 · VI 66–80 · VII 81–96 · VIII 97–111 · IX 112–128 · X 129–143 ·
-XI 144–158 · XII 159–174 · Postscript 173–174 · Indhold (twelve entries).
-**11 markers remain.**
+**None — both phases are complete.** Postscript pp. 173–174 verified 12/12
+paragraphs, and the Indhold 16/16 blocks with 12/12 `\indpost` entries.
 
-Lecture IV is the **first lecture with footnotes** (Phase 1 notes: 13 in the
-book, `\thefootnote` renewed to `*)` in both files). Carry each `\footnote{}` at
-the same anchor word and translate its content; leave cited work-titles in their
-own language.
+## The two genuine 1850 variants — verified present and distinct in the English
+These are in the printing itself, not errors, and must never be reconciled:
+
+| | lecture head | Indhold | survives translation? |
+|---|---|---|---|
+| VIII | `halvphilosophiske` → "half-philosophical" (p. 97) | `halvspeculative` → "half-speculative" | **yes** — check here first if anyone "tidies" the two |
+| X | `giældende` … `Theorien, thi` (p. 129) | `gjældende` … `Theorien; thi` | **half.** The comma/semicolon is reproduced in both files; `gjældende`/`giældende` is purely orthographic, both render "in force", so **that half of the variant lives only in the Danish** |
+
+⚠ **A correction to an earlier note in this file.** A previous revision said the
+Indhold prints lecture VI's range as `66—86` and that this wrong range should be
+reproduced. That is **false**. `66—86` was the ABBYY layer's error, corrected
+during Phase 1; the Indhold itself reads **`S. 66—80`**, which agrees with lecture
+VII opening on p. 81. Both files carry 66–80. There is nothing to reproduce
+faithfully here — the print is simply right.
+
+## Open item carried into the translation
+The **closing fleuron on p. 174** (a stroke flaring into two leaves flanking a
+ring) is still stood in for by `\rule{0.22\textwidth}{0.4pt}` — now in **both**
+files. If it is ever replaced with a real glyph (pifont, or a `❦`-class sort),
+change it in `transcription.tex` and `translation.tex` **in the same pass**, or
+the two editions stop matching. A `%` note sits at the site in each file.
+
+## Footnote handling (settled in lecture IV)
+`\renewcommand{\thefootnote}{*)}` is in both preambles, so notes print `*)` as
+the 1850 setting does. Rules used:
+- The **German** quotations from De Wette (V, two notes) stay in German, as
+  Nielsen printed them — he quoted them untranslated for a readership that read
+  German. Only `S.` → `p.`/`pp.` and `A. Skr.` → `Op. cit.` are Englished.
+- The **Kierkegaard** note in IV (`Johannes Climacus`) is Englished from
+  Nielsen's Danish, like the Forord's prayer quotation.
+- Nielsen's **cross-references to his own book** keep the Danish title
+  *Evangelietroen og den moderne Bevidsthed* inside the notes; in the body, where
+  he names it as a work he is describing, it is given in English (*Gospel Faith
+  and the Modern Consciousness*).
 
 **Translation reads `transcription.tex`, not the scan or the images** — so
 unlike Phase 1 it is cheap and can be done inline in the main conversation, ~10
@@ -63,11 +160,20 @@ half-speculative · `at stride for` / `at strides om` = strive **for** / dispute
 batches — the argument becomes unreadable if they do.
 
 ## Editorial decisions taken in the Forord batch
-- **Danish printer's defects are NOT reproduced in the English.** The Danish
-  transcribes them as printed and runs a deliberate **+2** quote balance; the
-  English closes quotations where the sense ends and logs each divergence in a
-  `%` note. **The English is expected to balance at 0.** Do not "fix" the Danish
-  to match, or the English to mismatch.
+- **Danish printer's defects are NOT reproduced in the English — no exceptions.**
+  The Danish transcribes them as printed and runs a deliberate **+2** quote
+  balance across the book; the English closes quotations where the sense ends,
+  supplies missing full stops, and spells misspellings correctly, logging each
+  divergence in a `%` note at its site. **The English is expected to balance at
+  0 in every batch.** Do not "fix" the Danish to match, or the English to
+  mismatch.
+  ⚠ **This rule was tightened after lecture III.** `Refomatorerne` (p. 32) was
+  first carried into the English as "Refomers", which contradicted the rule as
+  stated; it is now "Reformers". The reasoning, recorded so it is not relitigated:
+  the Danish *is* the diplomatic witness and carries every defect, while an
+  English typo invented to "match" a Danish one is a witness to nothing — there
+  is no 1850 English setting for it to be faithful to. Later misspellings
+  (`lil` p. 41, `medele` p. 42, `Mennneske` p. 73) follow the tightened rule.
 - **No emphasis added anywhere the print does not letterspace.** Two `\emph{}`
   were added in drafting on the `for`/`about` contrast in Forord ¶2 and then
   **removed**; a `%` note at that site says so. The contrast carries on the
@@ -92,10 +198,35 @@ Each is logged in a `%` note at its site in `translation.tex`:
    English closes both.
 4. **p. 26** — a closing `“` with no opener anywhere in the quotation. The
    English supplies the opener at Christ's words.
-Also **p. 35**, no full stop before a closing `“` (English supplies it), and
-**p. 32** `Refomatorerne` for `Reformatorerne`, which the English *does*
-reproduce as "Refomers", since a misspelling carries across where a quote mark
-cannot.
+Also **p. 35**, no full stop before a closing `“` (English supplies it).
+
+### The misspellings and stray marks, all handled the same way
+Danish keeps them as printed; English gives the correct word; a `%` note sits at
+each site in both files:
+**p. 32** `Refomatorerne` · **p. 41** `lil` for `til` · **p. 42** `medele` for
+`meddele` · **p. 73** `Mennneske` (three n's) · **p. 103** `mataphysisk` ·
+**p. 105** `(V 5--13)` missing its period · **p. 116** `ramme` for `samme` ·
+**p. 126** `1813` for `1843` (the date of *Frygt og Bæven*; English gives 1843) ·
+**p. 71** a raised speck after `Magt` where no punctuation belongs (nothing
+transcribed in either file) · **p. 111** the `er-`/`erkjendes` line-break
+doubling and **p. 167** the `Utaalmo-`/`modighed` doubling, both already resolved
+in the transcription · **p. 138** `Dannelse,og` with no space after the comma ·
+**p. 141** `allerde` for `allerede` · **p. 142** `Menighedeine` (a dotted i where
+an r belongs) for `Menighederne` · **p. 143** a worn `t` so that `at` prints as
+`ai` · **p. 151** a closing `“` set *before* its full stop (English puts it in the
+ordinary place) · **p. 162** no comma after `Strenghed` · **p. 168** `ved dette
+Universitetet`, a double definite that English has no analogue for and which is
+therefore rendered plainly.
+Two further **unclosed quotations** beyond the Forord–III set: **p. 57** the
+`„Weil` footnote (lecture V) and **pp. 154–155** `„et tveegget Sværd` (lecture XI).
+Both stay open in the Danish and are closed in the English where the sense ends.
+Two further sites are **not** defects and must not be "fixed":
+- **p. 118** (Danish) `ere ikke` — `spacing.py` flags a run; the 400 dpi image
+  shows a later reader's **pencil underline**, not letterspacing. No emphasis.
+- **pp. 124–125** `fordi de ere ob-/jective;` — the letterspacing stops at the
+  page turn and the turnover syllable is set normally. Both files carry the
+  emphasis over the **whole word**. In the same sentence only `uagtet` /
+  "although" is spaced; `det er objectivt` that follows is not.
 
 ### One correction worth not repeating
 In the Luther passage (p. 31) the Danish emphasises **two** spans —
