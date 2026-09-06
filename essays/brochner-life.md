@@ -3,37 +3,8 @@ kind: essay
 title: "Between Two Bombardments"
 subtitle: "A Life of Hans Brøchner"
 updated: "2026-09-06"
-about:
-  - author: brochner
-    work: bemaerkninger-daaben
-  - author: brochner
-    work: jodiske-folk
-  - author: brochner
-    work: kierkegaard-virksomhed
-  - author: brochner
-    work: spinoza
-  - author: brochner
-    work: problemet-tro-viden
-  - author: brochner
-    work: svar-nielsen
-  - author: brochner
-    work: brandes-levned
-  - author: brochner
-    work: det-religioese
-  - author: brochner
-    work: bidrag-philosophiens
-  - author: brochner
-    work: kristelige-humane
-  - author: brochner
-    work: ubevidste-bevidste
-  - author: brochner
-    work: philosophiens-historie
-  - author: brochner
-    work: giordano-bruno
-  - author: brochner
-    work: erindringer-kierkegaard
-  - author: brochner
-    work: efterladte-manuskripter
+about-authors:
+  - brochner
 abstract: >
   The catalog bio sketches the professor. A Fredericia local-history page adds
   the life behind him: a childhood cut short by his mother's death, a Roman
