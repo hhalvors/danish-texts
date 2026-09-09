@@ -1,0 +1,2259 @@
+% ============================================================
+%  R. Nielsen, Natur og Aand.
+%  Bidrag til en med Physiken stemmende Naturphilosophie.
+%  Kjøbenhavn: Forlagt af J. H. Schubothes Boghandel, 1873.
+%  (xiv + 549 pp., ANTIQUA)
+%  TRANSCRIPTION (Danish)
+%
+%  ------------------------------------------------------------------
+%  TWO WITNESSES. Both are in bibliotek/Nielsen, Rasmus/.
+%
+%  WORKING SCAN — Natur_og_aand.pdf, Google Books, 689 PDF pages,
+%      600 ppi 1-bit JBIG2, one image per leaf, with a Google OCR text
+%      layer. Every script reads this one.
+%      It is a SAMMELBAND: PDF 572--689 are a second work, Grundideernes
+%      Logik i kort Begreb (1870), transcribed separately at
+%      texts/nielsen/grundideernes-logik-kort-begreb/. Nothing above
+%      PDF 571 belongs to this edition. The "689 pp." that stood in
+%      catalog.yaml was this PDF's page count, not the book's extent.
+%  KB COLOUR SCAN — natur-og-aand-kb-color.pdf, Royal Danish Library
+%      digitise-on-demand (www.kb.dk/e-mat/dod/130001514629-color.pdf),
+%      575 PDF pages, 300 ppi RGB JPEG, no text layer, A DIFFERENT
+%      PHYSICAL COPY.
+%
+%  WHY BOTH. The working scan is JBIG2, a symbol-substitution codec: it
+%      can replace a glyph image with a visually similar one from its
+%      dictionary, silently, and zooming in only renders the substitution
+%      larger. So a doubtful SINGLE GLYPH is never settled on the working
+%      scan — it is settled on the KB copy, which is continuous-tone and
+%      cannot substitute a symbol. The KB copy also answers the second
+%      question: where both copies agree, a defect is the compositor's
+%      and not this copy's. crop.sh defaults to the KB scan for this
+%      reason.
+%
+%  PAGE MAPS — see pagemap.py. Both are UNIFORM; no leaf is duplicated
+%      or dropped anywhere in either scan.
+%          printed 1--549  =  working PDF + 21    (PDF  22--570)
+%          printed 1--549  =  KB PDF      + 19    (PDF  20--568)
+%      Working scan verified by reading the folio out of the text layer
+%      of all 689 PDF pages: 539 of the 549 body pages yield a folio and
+%      every one gives +21, a contiguous run from PDF 22 to PDF 570 with
+%      no sustained exception; the ten silent pages are bridged by their
+%      neighbours. KB scan verified by CONTENT rather than folio digits —
+%      each sampled leaf OCR'd and its words matched against the working
+%      scan's text for the printed page the offset predicts — at 23
+%      samples from printed p. 2 to p. 549, all matching at +19 with a
+%      word overlap of 0.95--1.00, both endpoints included.
+%
+%  THREE MISPRINTED FOLIOS, in the type and not in the digitisation:
+%          printed 357  prints as  "257"
+%          printed 394  prints as  "294"
+%          printed 395  prints as  "295"
+%      The neighbours are correct on both sides (355, 356, [257], 358,
+%      359 and 393, [294], [295], 396, 397) and the KB copy also prints
+%      "295" on p. 395, so both copies carry it. The pages are marked
+%      here by their true number and the misprint is logged at the site.
+%
+%  THE BOOK'S OWN ERRATA. A Trykfeil leaf follows p. 549 (working PDF
+%      571), unfoliated. It is transcribed in full at the end of this
+%      file. Per the house rule the text is transcribed AS PRINTED and
+%      Nielsen's corrections are NOT silently applied; where a batch
+%      reaches a page the Trykfeil touches, the correction is noted in a
+%      % comment at the site so a reader can see both.
+%
+%  INDHOLD/HEAD COLLATION. The contents pages and the printed chapter
+%      heads disagree in one place, and the disagreement is recorded
+%      rather than normalised, per the house rule:
+%          Anden Deel, first chapter — the Indhold reads "Tredie
+%          Kapitel", the head on p. 197 reads "Første Kapitel".
+%          Checked on the image. The head is followed here.
+%      All nine chapter heads were verified against their printed pages
+%      (pp. 1, 62, 125, 197, 250, 318, 375, 445, 509), not taken from
+%      the Indhold. Two of the nine do NOT open a page: Tredie Kapitel
+%      of Første Deel stands part-way down p. 125, and Tredie Kapitel of
+%      Tredie Deel part-way down p. 509. The custom heading macros below
+%      therefore never force a page break — using \chapter would have
+%      invented one at both.
+%      One further variant is NOT yet adjudicated: the Indhold reads
+%      "Det elektro-chemiske System" where the run-in head on p. 300
+%      appears to read "Det elektrochemiske System". Check on the image
+%      when that batch is done and record both readings if they differ.
+%
+%  MATHEMATICS. Unlike every other book in this repo, this one contains
+%      real mathematics — Kepler's laws derived in a footnote on p. 160
+%      with polar coordinates and integrals, and lighter algebra through
+%      the mechanics chapters. Roughly 83 pages carry it. The OCR is NOT
+%      a witness on those pages and the batch markers below say so.
+%      Set formulas in LaTeX math mode preserving the printed notation,
+%      including Nielsen's own spellings (cos, sin, tang, Radius vector)
+%      and his variables; do not modernise, do not tidy his notation.
+%
+%  OCR. This is the first book in this repository whose OCR genuinely
+%      carries the words: it is antiqua, the scan is clean, and
+%      tesseract -l dan on the native 600 ppi leaf returns correct
+%      Danish with the line breaks and the printed word-break hyphens
+%      intact. ocr.sh therefore has an EMPTY sed table, deliberately —
+%      seeding it from a Fraktur book's harness would rewrite text that
+%      is already right. One mechanical fix IS safe and is applied:
+%      Å/å do not exist in this orthography (the letter entered Danish
+%      only with the 1948 reform; this book writes aa throughout), so
+%      any Å the OCR produces — it likes "Ånden Deel" for "Anden Deel"
+%      and "Å." for "A." — is certainly an error.
+%
+%  CONVENTIONS. 1873 orthography exactly as printed: aa not å,
+%      capitalised nouns, Christendommen, Videnskaben, høiere. Danish
+%      quotation marks „…“ low-high. Em-dash ---. Letterspaced emphasis
+%      -> \emph{}; run spacing.py, which is calibrated for this scan.
+%      Latin and some proper names are set in italic against the
+%      surrounding roman -> \textit{}, and each occurrence follows its
+%      own page. The a)/b)/c) division heads are RUN-IN — printed on
+%      the same line as the paragraph they open -> \runin{}.
+%      Printer's defects are transcribed as printed and logged in a %
+%      comment at the site; the quote balance is expected to drift off
+%      zero as a result and the running total belongs in RESUME-NOTES.
+%      Word-breaks: the compositor's line-break hyphen must be resolved
+%      when the text reflows — write  Cau\-%  (joints.py enforces this).
+%      The printed word-division mark is a single raised hyphen throughout
+%      — settled in batch 1; see WORD-DIVISION MARK below.
+%
+%  QUOTATION HABIT OF THIS BOOK — found in batch 1, and expected to recur.
+%      Where a quotation is broken by an interpolation („hedder det“,
+%      „hedder det i Thesis“), the compositor RE-OPENS with „ afterwards and
+%      still closes only once, at the end. Seen on pp. 10, 11 and 16, in both
+%      copies. It is the house habit, not a slip, and it is transcribed as
+%      printed — so each instance pushes the running „/“ balance up by one.
+%      DO NOT "fix" these. The balance is expected to climb through the book;
+%      every unbalanced page must carry a % comment at the site, and a
+%      quotation that merely runs across a page boundary (p. 9 into p. 10) is
+%      not a defect and gets none.
+%
+%  WORD-DIVISION MARK — settled. A single, slightly raised hyphen, uniform
+%      through the pages examined so far, verified on the KB copy. tesseract
+%      renders it as "=" fairly often; that is an OCR artefact and not the
+%      type. (The "Andet=" noticed on p. 549 while surveying is the same
+%      artefact, so the doubt recorded above is resolved: the book does not
+%      vary its mark.)
+%
+%  FOOTNOTES. *) is confirmed as the book's mark. p. 12 carries TWO notes,
+%      printed *) and **), handled there with a local \renewcommand around
+%      the second. If further two-note pages turn up, follow that pattern.
+%
+%  PRINTED RULES. A short centred rule stands between some divisions, and its
+%      length varies between occurrences. That variation is not reproduced:
+%      \streg serves throughout (see the macro's comment). Note each occurrence
+%      in a % comment at the site.
+%
+%  GREEK. The book has both monotonic and polytonic Greek (ἅπτεσθαι, p. 26).
+%      textalpha handles both — twenty-odd books in this repository already
+%      carry polytonic Greek under textalpha with their PDFs built, ἅ among
+%      them — so no extra package is needed. The sandbox compile test cannot
+%      show this, because stripping textalpha is what that test does; map
+%      Greek to a placeholder to test the rest of the file, and never delete
+%      Greek from the source.
+%
+%  MATHEMATICAL NOTATION — precedent set in batch 4 (pp. 39--47), to be
+%      followed by every later mathematical batch:
+%        * Nielsen writes "tg", not "tang" or "tan" -> \operatorname{tg}.
+%        * The period between "tg α" and "x" is HIS multiplication mark and
+%          is kept.
+%        * He prints ÷ where a modern text prints a minus sign (p. 46, second
+%          equilibrium equation, against + in the first). ÷ was the ordinary
+%          Danish minus of the period, so this is his notation, not a
+%          compositor's fault; the Trykfeil leaf does not touch it. Set \div
+%          and note it at the site.
+%        * Printed variables are upright roman. This is NOT reproduced:
+%          forcing \mathrm throughout would clutter past usefulness, so the
+%          default math italic stands. Isolated variables in running prose
+%          (x, y, s, t, g) stay as plain text, as printed.
+%        * spacing.py flags algebra as letterspacing. Ignore it on formula
+%          lines entirely; it is only a witness on running prose.
+%
+%  STATE. Batches 1--4 (pp. 1--47) and the Trykfeil leaf transcribed and
+%      verified; 44 batches outstanding, plus the Indhold and the
+%      Indledning. See RESUME-NOTES.md for the production log and
+%      BATCH-AGENT.md for the batch brief.
+% ============================================================
+
+\documentclass[12pt,a4paper]{book}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{libertinus}
+\usepackage{libertinust1math}
+\usepackage{amsmath}     % this book has real mathematics; see the header
+\usepackage{textalpha}   % Greek typed directly (θ, ω, π occur in the physics)
+\usepackage{graphicx}    % for \reflectbox (the old Danish »ɔ:« id-est mark)
+\DeclareUnicodeCharacter{0254}{\reflectbox{c}}  % ɔ (U+0254) = reversed c
+\usepackage[danish]{babel}
+\usepackage[protrusion=true,expansion=true]{microtype}
+\usepackage{setspace}
+\usepackage[margin=1.2in]{geometry}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\setlength{\headheight}{28pt}
+\addtolength{\topmargin}{-13.5pt}
+
+% Footnotes are marked *) in this book (p. 160 and the other mathematical
+% footnotes). \fnsymbol is NOT used: it is a math-mode command and gives
+% U+2217. footmisc[perpage] is NOT used either: it resets on the TYPESET page,
+% not the printed one, so a second note on a reflowed page silently becomes a
+% dagger. If a page ever turns out to carry two notes, deal with it there.
+\renewcommand{\thefootnote}{*)}
+
+% The book has NO running heads: the folio stands alone at the top of each
+% page. Reproduced.
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[C]{\thepage}
+\renewcommand{\headrulewidth}{0pt}
+
+% ---------------------------------------------------------------------------
+% Heading macros. None of them forces a page break, because two of the nine
+% chapter heads do not open a page (pp. 125 and 509) — see the header.
+% ---------------------------------------------------------------------------
+\newcommand{\deel}[2]{%
+  \par\vspace{2.2\baselineskip}%
+  {\centering\large #1\par\vspace{0.3\baselineskip}\Large #2\par}%
+  \addcontentsline{toc}{part}{#1 #2}%
+  \vspace{1.4\baselineskip}\par\nointerlineskip}
+\newcommand{\kapitel}[2]{%
+  \par\vspace{1.8\baselineskip}%
+  {\centering #1\par\vspace{0.25\baselineskip}\large #2\par}%
+  \addcontentsline{toc}{chapter}{#1 #2}%
+  \vspace{1.1\baselineskip}\par\nointerlineskip}
+\newcommand{\afdeling}[2]{%
+  \par\vspace{1.3\baselineskip}%
+  {\centering #1\par\vspace{0.2\baselineskip}\normalsize #2\par}%
+  \addcontentsline{toc}{section}{#1 #2}%
+  \vspace{0.8\baselineskip}\par\nointerlineskip}
+% A short centred rule is printed between some divisions. Its printed LENGTH
+% varies from one occurrence to the next, and that variation is NOT reproduced
+% typographically -- one rule serves throughout, following the decision taken
+% in brochner/det-religioese. Two batch agents independently invented
+% 0.12\textwidth and 0.20\textwidth before this macro existed; both were
+% normalised. Where a rule occurs, note it in a % comment at the site.
+\newcommand{\streg}{\begin{center}\rule{2cm}{0.4pt}\end{center}}
+
+% Run-in head: a) b) c) are printed on the same line as the paragraph they
+% open, letterspaced. \runin{a) Det leddeelte Hele.} at the head of the
+% paragraph, NOT on a line of its own.
+\newcommand{\runin}[1]{\emph{#1}\hspace{0.4em}}
+% Greek-letter sub-heads α) β) γ) are run-in likewise.
+\newcommand{\subrunin}[1]{\emph{#1}\hspace{0.4em}}
+
+\setstretch{1.15}
+
+\title{Natur og Aand\\[0.4em]
+  \large Bidrag til en med Physiken stemmende Naturphilosophie}
+\author{R.\ Nielsen}
+\date{Kjøbenhavn: Forlagt af J.\ H.\ Schubothes Boghandel, 1873}
+
+\begin{document}
+\maketitle
+\tableofcontents
+
+
+% ============================================================
+%  FRONT MATTER
+% ============================================================
+%
+% The Indhold (printed V--X, working PDF 12--18) is transcribed LAST, from
+% the image, once the body is done and every chapter and division head has
+% been read off its own page. It is not reconstructed from the OCR: the
+% contents-page OCR of this scan already carries known damage — it renders
+% the Greek sub-heads α β γ as "a", "B"/"ß"/"P", "y"/"7", and it has dropped
+% or garbled several leaders — and a chapter argument taken from it would
+% import those errors into the edition. The one collation already made from
+% it is recorded in the header.
+
+% [text to be added: Indhold, printed pp. V--X]
+
+% The Indledning is printed XI--XIV. Its first leaf, printed XI, carries no
+% folio in either scan; XII--XIV do. The Indhold lists it as "XI--XIV".
+
+% [text to be added: Indledning, printed pp. XI--XIV]
+
+
+% ======================================================================
+%  Første Deel — Første Kapitel: Grundlagsbegreber   (printed pp. 1–61)
+% ======================================================================
+
+\deel{Første Deel.}{Den mechaniske Natur.}
+
+\kapitel{Første Kapitel.}{Grundlagsbegreber.}
+
+%  --- A. Rum og Tid  (pp. 1–18) ---
+
+% --- p. 1 ---
+\afdeling{A.}{Rum og Tid.}
+
+Da alle udvortes Ting ere til i Rummet og umulig kunde være til,
+dersom Rummet ikke var; da Tingene opstaae og forgaae i Tiden og
+umulig kunde enten opstaae eller forgaae, hvis der ingen Tid var, saa
+følger jo vistnok heraf, at Rum og Tid maae høre med til
+Naturtingenes Væsen, at de, med andre Ord, maae betragtes som de
+første almene, altomfattende Naturformer. Men uagtet Rum og Tid ere
+almeengyldige Naturformer, skal det dog i det Følgende vise sig, at
+disse Formers naturlige Bestaaen har en aandelig Grund; at de kun ere
+Gjenstandsformer ved at være Selvhedsformer, kun objective ved at
+objectiveres af den evige Aand.
+
+\runin{a) Rummet.} De vigtigste Bidrag til dybere Forstaaelse af
+Rummets Natur vil man i den nyere Philosophie
+% --- p. 2 ---
+fornemmelig søge hos Kant og Hegel; men de to Synsmaader maae
+behandles med Kritik, thi, overfladisk seet, er den ene i Modsigelse
+med den anden.
+
+Kant stiller sig, som bekjendt, paa et ubetinget subjectivt Standpunkt
+og betragter Rummet som en apriorisk Sandseform, en blot menneskelig
+Bevidsthedsform. Rummet er intet fra Erfaringen laant Begreb; for at
+kunne betragte Tingene i Rummet, maae vi selv medbringe
+Rumsanskuelsen. Man kan umulig forestille sig, at der intet Rum er;
+men man kan meget vel forestille sig, at der ingen Gjenstande ere i
+Rummet. Naar der tales om mange Rum, er det ikke at forstaae, som var
+der Tale om Dele, hvoraf et Hele var sammensat: de mange Dele flyde
+sammen i et eneste med vor nødvendige Sandseanskuelse givet Rum. Heraf
+uddrages saa den Slutning, at det ikke er Tingen i sig men kun
+Phænomenet af Tingen, d. v. s. Tingen som Synsting, der opfattes i
+Rummet; hvad ogsaa kan udtrykkes saaledes, at \emph{Rummet kun er en
+Selvhedsform, men ingen i sig gyldig Andethedsform.}
+
+I skarp afgjørende Modsætning til Kant staaer Hegel paa et absolut
+objectivt Standpunkt. For ham er Rummet i sin „abstracte
+Almindelighed“ den første Naturform, den umiddelbart nødvendige Form
+for \emph{udvortes Væren}. For at tydeliggjøre, hvad der ligger i
+Begrebet af Rummets „ideelle Vedsidenafhinanden“,
+% Trykkefeil: det andet Anførselstegn aabnes med » (Gaaseøie) og
+% lukkes med “; begge Exemplarer (Google og KB) sætte det saaledes.
+»Værenudenforhinanden“, osv., vælger han at paavise, hvorledes Rummet
+seer ud i vor Forestilling. For at bevise, at Rummet svarer til vor
+Tanke, maae vi, siger han, sammenligne vore Rumsforestillinger med de
+Bestemmelser, der ligge i vort Begreb. De mange \emph{Her} og
+\emph{Der} i Rummet ere ved Siden af hverandre; det ene \emph{Her} er
+fuldkomment det samme som det andet, og denne abstracte Fleerhed ---
+uden sand Afbrydelse og Grændse --- er netop Udvorteshed. Rummet med
+de utallige Punkter er lutter Discretion; men denne Discretion er igjen
+flydende
+% --- p. 3 ---
+Eenhed, Eenhed i „Udenforhverandre“, fuldkommen Continuitet. Punktet
+har kun Betydning, forsaavidt det indtager et Rum, altsaa er et
+Udvortes mod sig selv og Andet; i Punktet selv er der da igjen et
+Foroven, et Forneden, et Høire, et Venstre, thi et sidste \emph{Her}
+gives ikke. Udenfor sin Grændse er Rummet bestandig „hos sig selv“:
+det Continuerende er discret; det Discrete continuerende. Eenheden af
+begge Momenter, Discretion og Continuitet, er „Rummets objectivt
+bestemte Begreb“. Det er da ifølge denne Synsmaade saa langt fra, at
+det objective Rum skulde beroe paa nogensomhelst subjectiv Anskuelse,
+at det tvertimod som „en usandselig Sandselighed“, hvilende paa sit
+eget Begreb, afgiver Naturtingenes Grundlag: \emph{Rummet er
+Andethedsform uden at være Selvhedsform.}
+
+Ved at holde de to Opfattelser skarpt mod hinanden vil man let
+overbevise sig om, at de begge ere eensidige.
+
+At Kant med Rette gjør Rumsformen til en menneskelig
+Bevidsthedsform, kan udtrykkelig sees af Hegels Beviisførelse; thi
+denne Beviisførelse støtter sig Punkt for Punkt til menneskelig
+Anskuen, menneskelig Tænken og Viden. Vor Indsigt i det objective Rums
+Gyldighed afhænger absolut af dets Gyldighed for os. Rummet bestemmes
+som den „\emph{abstracte}“ Form for udvortes Væren; men det er os ---
+ikke Naturen --- der abstrahere Formen. De mange forskjellige
+„\emph{Her}“ og „\emph{Der}“ maae sættes og udslettes; men det er os
+--- ikke Naturen --- der sætte dem og slette dem ud. Eenheden af
+„Discretion“ og „Continuitet“ er at tænke i Forskjel, og Forskjellen
+igjen i Eenhed; men det er os --- ikke Naturen --- der maae tænke denne
+Forskjelseenhed: for at Rummet kan vise sig som objectivt Begreb, er
+det os, der maae begribe.
+
+Men at Hegel desuagtet har Ret, idet han gjør Rummet til et objectivt,
+af os uafhængigt Begreb, bliver omvendt kjendeligt paa den Kantiske
+Beviisførelse. Kant fastholder,
+% --- p. 4 ---
+at Phænomenerne, de sandselige Ting, umulig kunne opfattes uden
+Rummet; hermed har han da tillige indrømmet, at Rummet er en for
+Synstingene nødvendig, objectiv Form. Tingene i Naturen blive jo ikke
+sandselige derved, at vi sandse dem; men vi sandse dem, fordi de i sig
+ere sandselige. Saa lidt som det er vort Syn, der gjør Tingene synlige,
+eller vor Tænkning, der gjør dem tænkelige, ligesaa lidt er det vor
+Rumsanskuelse, der giver dem Tilværelse i Rummet. Dersom den
+Skillevæg, Kant har reist mellem Tingenes Væsen i sig og deres
+Phænomener, var mere end en kritisk Indbildning, da var det aldeles
+utænkeligt, at dette ubekjendte, mod Rummet ufordragelige Væsen skulde
+være istand til at afgive noget Erfaringsindhold og udenfra fylde den
+tomme Anskuelse med virkelige Gjenstande.
+
+Altsaa: hver Gang Rumsformen udelukkende gjøres til Andethedsform,
+forvandler den sig og bliver en Selvhedsform; og naar den udelukkende
+fastholdes som Selvhedsform, forvandler den sig igjen og bliver en Form
+for Andet. Dette viser da tydelig nok, at Rummet umulig kunde være en
+virkelig sand Naturform, dersom denne Naturform ikke fra Evighed af fik
+objectiv Væren i guddommelig Anskuen. Det Kantiske Feilsyn bestaaer
+ikke deri, at han gjør Rummet til en Anskuelsesform, men deri, at han
+vilkaarlig indskrænker Rumsformen til at være en blot menneskelig
+Selvhedsform, og netop derved kommer til at benegte dens objective
+Gyldighed. Hegels Feil er ikke den, at han hævder Rummets
+Objectivitet; men Grundfeilen er, at han i sin Naturphilosophie ligesom
+i sin Logik bestandig overseer, at intet Objectivt er til, uden det,
+som objectiveres, og at ingen Objectivering er mulig uden et
+objectiverende Selv. At den menneskelige Bevidsthed tilkjender Rummet
+i Naturen udvortes Væren, beroer i Grunden paa den stiltiende
+Forudsætning, at det Verdensrum, vi i vor Naturbetragtning antage for
+objectivt, fra Begyndelsen af maa være --- objecti\-%
+% --- p. 5 ---
+veret af den skabende Aand. Stjernehimlen gjør et symbolsk Indtryk;
+det er den menneskelige Anskuen, der under sin Selvudviden i Rummets
+Uendelighed mødes med den guddommelige som Øie med Øie.
+
+Hvorledes det, hvad Rumsobjectiveringen angaaer, nærmere forholder sig
+med Vexelbestemmelsen af Selvhed og Andethed, kan sees ved en
+Betragtning af Rummets Dimensioner. Længde, Brede og Høide ere i
+Rummet forskjellige og dog ikke forskjellige. Der maa nødvendig gjøres
+Forskjel mellem de ovenanførte Hovedretninger; thi uden en saadan
+Forskjel vilde der ingen Bestemmelser være i Anskuelsen, og da heller
+intet objectivt bestemt Rum. Men hvorpaa beroer Forskjellen? Længde er
+Høide, og Høide er igjen Brede: den ene Dimension er, hvad den anden
+er, og kan ombyttes med den anden. De sættes samtidig og udslettes
+samtidig; de forudsætte hinanden i det Uendelige. Heraf sees, at de tre
+Dimensioner i deres udvortes Gjensidighed ere dobbeltsidige
+Bestemmelser, Selvhedsbestemmelser og Bestemmelser for Andet. Som
+Selvhedsbestemmelser ere de vilkaarlige, som Andethedsbestemmelser
+tilfældige, som objectiverede, altsaa objective
+Gjensidighedsbestemmelser indbyrdes nødvendige. Vælge vi f. Ex. et
+retvinklet Coordinatsystem med Axerne $X$, $Y$ og $Z$, er
+Objectiveringen let at belyse. De tre Axer maae have et
+Skjæringspunkt. Hvor er nu dette Skjæringspunkt i Rummet selv? Overalt
+og ingensteds. Punktet er kun objectivt ved at objectiveres. For at
+objectiveres, maa det sættes; for at sættes, maa det sættes vilkaarlig,
+altsaa ved en Selvbestemmelse. Vilkaarligheden er nødvendig; thi
+hvilket Sted, vi end vælge, saa kunde vi dog lige saa godt have valgt
+et andet Sted. Ved at være sat er Punktet blevet objectivt; det har
+faaet en forestillet Tilværelse og afgiver nu en Bestemmelse for Andet,
+nemlig for Axerne. I denne objective Bestemthed er Punktet at tage som
+givet; nu er det netop her, ikke der.
+% --- p. 6 ---
+Dets Tilværelse er tilfældig, thi Axerne kunde lige saa godt have
+skaaret hverandre i et hvilketsomhelst andet Punkt. Men Tilfældigheden
+er nødvendig, thi hvilket Punkt der end var givet, kunde der jo med
+lige Grund være givet et andet. Hvad der gjælder om Skjæringspunktet,
+gjælder deelvis om Axerne. Det er vilkaarligt at gjøre $Z$ til
+Høide-, $X$ til Længde- og $Y$ til Brede-Axe; men har Vilkaarligheden
+en Gang givet dem denne Betydning, saa have Høide, Længde og Brede som
+Bestemmelser for hverandre indbyrdes, altsaa som
+Andethedsbestemmelser, ogsaa derved erholdt en objectiv, tilfældig
+Tilværen. Tilfældigheden i denne Tilværen er lige saa uundgaaelig
+d. v. s. lige saa nødvendig som Vilkaarligheden. Det Vilkaarlige og
+det Tilfældige gjøre da heller ikke Nødvendigheden Afbræk; tvertimod,
+disse Grundlagsbestemmelser kunne med Rette siges at afgive
+Forudsætninger, uundværlige Betingelser for en exact Objectivering af
+den betingede Nødvendighed. Antages et Punkt $M$, hvis Coordinater i
+det givne System ere $x$, $y$ og $z$, og hvis Afstand fra
+Skjæringspunktet kan betegnes ved $r$, da vil en Ligning som:
+\[
+  r^2 = x^2 + y^2 + z^2
+\]
+uvilkaarlig minde om den Mangfoldighed af Rumsbestemmelser, som i
+deres exacte Nødvendighed alle ere betingede, subjectivt af
+vilkaarlige, objectivt af tilfældige Forudsætninger.
+
+De tre samværende Axer ere i deres udvortes, umiddelbare Tilfældighed
+uden indbyrdes Relationer; først med Viden komme Relationerne, og med
+Relationerne Nødvendigheden. Her er, naar vi tage al Viden bort, ikke
+engang tre Axer, thi Trehed fordrer, at en Viden af de to forener sig
+med en Viden af den tredie. Forestillingen om en abstract objectiv
+Trehed hidrører fra en Samviden, som den objectiverende Bevidsthed,
+uden at tænke derpaa, selv underskyder. Det er uimodsigelig vist, at
+den anførte, til Axerne
+% --- p. 7 ---
+svarende Ligning har objectiv Gyldighed, naar den vel at mærke,
+objectiveres i Viden; men naar der ingen Viden er, saa er Ligningen
+meningsløs. \emph{Al objectiv Relation er subjectivt begrundet i
+Reflexion}; det er en Objectiveringens Lov, saa streng som nogen
+Naturlov.
+
+I den Schellingske Naturphilosophie tales der mystisk dybsindig om en
+Naturen iboende Anskuen, en objectiv Naturens Phantasie, en ubevidst
+Naturviden o. desl. Hvor grundløse slige Talemaader ere, viser sig
+hver Gang Blikket fæstes paa noget Bestemt. Skulde Rummets tre
+Dimensioner være satte af en ubevidst Viden, da maatte der i denne
+Viden jo være en Samviden af dem alle tre, en Viden, hvori hver enkelt
+af dem blev bestemt med Hensyn paa de to andre. Den ubevidste Viden
+skulde da være \emph{en Viden af Hensyn}; her er Modsigelsen. En Viden
+af Hensyn er en de enkelte Bestemmelser oversvævende Viden, d. e. en
+Selvviden. For at $X$ kan bestemmes med Hensyn paa $Y$ og $Y$ med
+Hensyn paa $X$, maa den bestemmende Viden nødvendig oversvæve baade
+$X$ og $Y$. En saadan Oversvæven er kun mulig, naar det samme Selv,
+der er vidende om $X$, ogsaa er vidende om $Y$. Men naar Viden af
+Andet, ifølge Sagens Natur, er uadskillelig fra Selvviden, saa ere jo
+saadanne Dybsindigheder som: „en ubevidst Naturviden“, „et sig
+anskuende Rum“ i Lighed med „en sig tænkende Luft“, „en sig begribende
+Materie“, at henføre, ikke til „den strenge Videnskab“, men til de
+utopiske Speculationer.
+
+At bestemme Rummet er at sætte Grændser i Rummet. Her viser sig da en
+qvalitativ Forskjel mellem Grændsen, det Negative, og det begrændsede
+Rum, det Positive. Det Negative er for Tanken, det Positive for
+Anskuelsen. Det første absolut Negative er Punktet. Ved Bestemmelsen
+af Punktet opkommer en eiendommelig Strid mellem Anskuen og Tænken.
+Tanken fordrer, at Punktet skal være uden Udstrækning; Anskuelsen
+fordrer, at det skal have en, om
+% --- p. 8 ---
+end nok saa lille, Udstrækning. Hvis Tanken ikke skeer Fyldest, bliver
+Punktet en Flade, intet Punkt; hvis Anskuelsen ikke tilfredsstilles,
+kan Punktet ikke indtage noget Sted: et reent Tankepunkt er ikke noget
+Punkt i Rummet. Modsigelsens Løsning er en Reflexion, hvori Anskuelse
+og Tanke vexelviis ophæve og bekræfte hinanden. Forsaavidt Tanken
+ophæver Anskuelsen, bliver Rumselementet, det Positive, fortæret af det
+Negative og sat som Punkt. Forsaavidt Anskuelsen ophæver Tanken,
+bliver det Negative omsat i det Positive, og Punktet sat som Element.
+For Tanken er Punktet Liniens Grændse, men for Anskuelsen er det
+Liniens Element; for Tanken er Linien Fladens Grændse, men for
+Anskuelsen Fladens Element; saaledes er da ogsaa Fladen igjen baade
+Legemets Grændse og dets Element. Liniens Element kan integreres til
+Linie, Fladens til Flade, Legemets til Legeme; men Grændsen selv, det
+absolut Negative, kan ikke integreres.
+
+Som det Negative, det Ikke-Værende, kan Grændsen altsaa ikke sætte
+Rummets Væren nogen Skranke; der er Rum paa begge Sider af Grændsen;
+Grændsen er selv den negative Eenhed, hvori de Begrændsede enes og
+skilles. Overalt hvor Tanken sætter en Grændse i Rummet, gaaer
+Anskuelsen ud over Grændsen og opdager et nyt Rum. Rummet er fuldt af
+Grændser, thi Grændsen er allevegne, og dog grændseløst, thi Grændsen
+overskrides allevegne. At ombytte en Grændse, som overskrides, med en
+ny Grændse, som igjen overskrides, er Hemmeligheden: det uendelige Rum
+er kun objectivt for en uendelig Objectivering.
+
+\runin{b) Tiden.} Rummets uendelige Udstrækning er begrundet i
+Grændsens uendelige Vorden. Denne Vorden, der sætter Forskjel mellem
+den svundne, den værende og den kommende Grændse, viser hen til en
+anden fra Rummet forskjellig Naturform: den i Udstrækningen skjulte
+Succession
+% --- p. 9 ---
+tilhører Tiden. Ligegyldigt mod sin Grændse, er Rummet ligegyldigt mod
+sin Vorden; det Rum, som kommer, naar Grændsen overskrides, var der
+allerede forud, og det, som har været, er der endnu; Forskjellen er kun
+en Skygge af Tiden. I Tiden selv er Forskjellen mellem det, som har
+været, det som er, og det, som vil komme, derimod en væsenlig, om end
+endnu udvortes Forskjel.
+
+At Tidsformen oprindelig er en Selvhedsform, kan sees af den Reflexion,
+hvori Anskuelsen opløses. Tiden har kun een Dimension,
+\emph{Længden}; men denne er i Tredelingen af Fortid, Nutid og Fremtid
+saa brudt, at kun en gjennemgaaende Tænkning er istand til at fastholde
+Eenheden. Fortiden er til i Erindring, men Erindring er en
+Selvhedsact; Fremtiden er til i Forventning, men Forventning er en
+Selvhedsact. Den Tidsdeel, der skulde kunne siges at have en
+umiddelbar, af erindrende og forventende Subjectivitet uafhængig Væren,
+skulde da være Nutiden. Men Nutiden er, naar vi see nærmere til, lige
+saa reflecteret som Fortid og Fremtid. Opfattes Nutiden som det
+absolute Øieblik, saa opfattes den ikke som Tid, men som Tidsgrændse,
+den Grændse, hvori Fortid og Fremtid berøre hinanden. Denne Grændse,
+det rene Nu, er et Ikke-Værende, et mathematisk Nulpunkt. Opfattes
+Nutiden som relativt Øieblik, som Tidselement, da er den Vedvaren,
+Anskuelsen underskyder, i uophørlig Flugt fra Forbigangenhed til
+Tilkommelse d. e. fra Ikke-Væren til Ikke-Væren. Vel kan et
+Tidselement opfattes constant, $dt = dt$, naar det anvendes som Maal
+for et Rumselement; men Sætningen: Nu er Nu, bliver en modsigende Dom,
+thi Subjectets Nu er forbi, naar vi komme til Prædicatets. Fastholdes
+Nutiden som endelig, værende Tid, da er det alene Subjectivitetens
+Erindring og Fremsyn, som i reflecteret Eenhed formaae at lade
+Anskuelsen strække sig hen ad en vilkaarlig nærværende Tidslængde.
+
+Hegels Dialektik af hvad han kalder „Tidens Dimen\-%
+% --- p. 10 ---
+sioner“, er fra den objective Side fiin og skarp. Det er Vorden, hvis
+abstracte Eenhedsmomenter, hvert for sig, ere satte som det Hele, men
+under modsatte Bestemmelser. De to Bestemmelser, Fortid og Fremtid,
+ere saaledes hver især en Eenhed af Væren og Intet; men de ere ogsaa
+forskjellige. Denne Forskjellighed kan kun være den mellem Opstaaen og
+Forgaaen. „Den ene Gang, i Forgangenheden (Hades), er Væren
+Grundlaget, hvorfra der begyndes; Forbigangenheden har virkelig været
+som Verdenshistorie, Naturbegivenheder; men sat under Bestemmelsen af
+Ikke-Væren, der træder til. Den anden Gang er det omvendt; i den
+tilkommende Tid er Ikke-Væren den første Bestemmelse, Væren den senere,
+om end ikke efter Tiden. Midten er begges indifferente Eenhed“ o. s.
+fremdl. Det er fortræffeligt. Men i skjærende Modsigelse med disse
+objectiverede Begrebsbestemmelser, Bestemmelser, der aabenbart skyldes
+en selvbevidst, objectiverende Subjectivitet, staaer en Erklæring som
+den, at Forskjellen mellem Objectiviteten og en mod samme subjectiv
+Bevidsthed aldeles ikke vedkommer Tidens Begreb. „Tiden, hedder det,
+% Anførselstegnet aabnes paany efter Indskuddet „hedder det“; kun eet
+% lukkende “ staaer, ved Citatets Slutning. Saaledes trykt.
+„er det samme Princip som den rene Selvbevidstheds Jeg $=$ Jeg: men
+det samme eller det eenfolde Begreb endnu i sin hele Udvorteshed og
+Abstraction som den anskuede blotte \emph{Vorden} --- den rene
+I-sig-Væren, som en slet og ret Udenfor-sig-Kommen.“ --- Under slige
+Vendinger bliver den klare Objectivering af Tiden, en Objectivering,
+som kun er mulig for den vidende Aand, skudt tilside, og Fixideen om en
+sig anskuende, tænkende Naturform, en sig selv begribende Tid omtaager
+Bevidstheden.
+
+Som Vordens Form har Tiden et Vordende til Forudsætning.
+Vexelbestemmelsen af Tidens Vorden og det i Tiden Vordende kaster Lys
+paa Forholdet mellem det Objective og det Subjective. Fra den
+objective Side gaaer Tiden i Eet med det, som foregaaer i Tiden: det
+vordende Indhold udlægger sit Væsen i Vordens Form og meddeler Formen
+% --- p. 11 ---
+sine Prædicater. Tiden vorder, Tiden iler, løber; Tiderne omskiftes
+(tempora mutantur), der er gode Tider, onde Tider o. s. v. Fra den
+subjective Side bliver Formen derimod fastholdt i abstract
+Almindelighed for sig til Forskjel fra Indholdet. Alt Endeligt
+begynder i Tiden og ender i Tiden, men Tiden selv har hverken
+Begyndelse eller Ende. Sættes et første, absolut Begyndelsespunkt, da
+opdager Tanken let den Modsigelse, at der altsaa maa have været en Tid,
+da der endnu ingen Tid var. Sættes et sidste, absolut Endepunkt, maa
+Følgen blive, at der tilsidst vil komme en Tid, da der ingen Tid er.
+Gjør Hegel Uret i at fastholde den objective Tid uden Hensyn til en
+objectiverende Selvviden, da gjør Kant ogsaa Uret i at lade det
+Subjective og det Objective falde fra hinanden i to Stykker. Hvorledes
+en saadan Udstykning maa blive en Snare, hvori den endelige Forstand
+fanger sig selv, er paa det Klareste viist i „Antinomien“ af Verdens
+Oprindelse.
+
+% Anførselstegnet aabnes paany efter Indskuddet „hedder det i Thesis“;
+% kun eet lukkende “ staaer, ved Citatets Slutning. Saaledes trykt i
+% begge Exemplarer (Google og KB).
+„\emph{Verden}, hedder det i Thesis, „\emph{har en Begyndelse i
+Tiden}“; thi hvis man antog det Modsatte, da maatte der til ethvert
+givet Tidspunkt være forløbet en heel Evighed, og en uendelig Række af
+paa hinanden følgende Tilstande være afsluttet. \emph{Verden}, siger
+Antithesis, \emph{har ingen Begyndelse i Tiden}; thi i modsat Fald
+maatte der forud for Verdens Begyndelse være en tom Tid, men i en tom,
+for alle Betingelser blottet Tid kan ingen Ting begynde.
+
+Ifølge Thesis bestaaer en Rækkes Uendelighed deri, at den aldrig lader
+sig „fuldende ved successiv Synthese“. Hvad betyder dette Aldrig? At
+Fuldendelsen udsættes i en uendelig Tid. Sætningen kan altsaa
+udtrykkes positivt saaledes: for at afslutte en uendelig Række ved
+successiv Synthese fordres en uendelig Tid; eller: ved at fortsætte den
+successive Synthese i en uendelig Tid danner Forestillingen en Række af
+uendelig mange Led, en uendelig Række.
+% --- p. 12 ---
+% Denne Side bærer TO Fodnoter, mærkede *) og **).
+Rækkedannelsen bliver den samme, enten vi begynde i Endeligheden og
+nærme os Uendeligheden, eller vi ud fra Uendeligheden nærme os
+Endeligheden.\footnote{% trykt Mærke: *)
+I Rækken $\dfrac{1}{1-x} = 1 + x + x^2 + \ldots x^{n-1} + x^n +
+\dfrac{x^n + 1}{1 - x}$ er $x^n$ det almindelige Led; sættes $n = o$,
+% „n = o“ er trykt med Bogstavet o, ikke med Nullet; saaledes gjengivet.
+faae vi $x^0 = 1$; sættes $n = \infty$, faae vi $x^\infty$; men Veien
+fra 1 til $x^\infty$ og fra $x^\infty$ til 1 er lige lang: den er
+uendelig.} Imellem et i Timeligheden givet Tidspunkt og en Begyndelse
+i Evigheden ligger der da en uendelig Tid. Der er altsaa slet ingen
+Modsigelse i, at en uendelig Række af Tilstande kan „til ethvert givet
+Tidspunkt“ være afløbet. Skulde Beviset for Thesis have Noget at
+betyde, da maatte det være beviist, enten: at en uendelig Række umulig
+kan dannes i en uendelig Tid, eller: at der mellem en Begyndelse i
+Evigheden og et timeligt Tidspunkt umulig kan ligge en uendelig Tid.
+Men at føre Beviis for slige Umuligheder er umuligt.
+
+Hvad Antithesis angaaer, maa Eftertrykket falde paa Begyndelsens
+Relativitet. Enhver endelig Begyndelse forudsætter en foregaaende og
+afgiver Forudsætning for en efterfølgende. Dette skulde nu ifølge
+Kants Tankegang bevise Umuligheden af en \emph{første} Begyndelse. Men
+nei. Lad de endelige Begyndelser kun svare til Leddene i en uendelig
+Række; der er slet Intet i Veien for, at Rækken kan begynde med et
+første endeligt Led, thi dette Led har jo netop samme almindelige
+Forudsætning som alle de følgende: den uendelige Række er en successiv
+Udfoldning af den Function, der indeslutter Uendelighedens Grund.%
+\renewcommand{\thefootnote}{**)}%
+\footnote{% trykt Mærke: **)
+Den uendelige Række: $1 + x^2 + x^3 + \ldots$ har sin Grund og
+% Trykfeil i Rækken: Leddet $x$ mangler mellem 1 og $x^2$; saaledes trykt.
+Forudsætning i Functionen $F(x) = \dfrac{1}{1-x}$; den uendelige Række
+$1 + \dfrac{x}{1} + \dfrac{x^2}{1.2} + \dfrac{x^3}{1.2.3} + \ldots$
+har sin Grund og Forudsætning i Functionen $f(x) = e^x$; der er
+Exempler nok i Mathematiken.}%
+\renewcommand{\thefootnote}{*)}
+Skulde Be\-%
+% --- p. 13 ---
+viset for Antithesis have nogen sand Gyldighed, da maatte det være
+beviist, at en Begyndelse i Tiden umulig kan bestaae med en uendelig,
+være sig fortidig eller fremtidig, Succession af endelige
+Begyndelser. Men dette er, af gode Grunde, ikke blevet beviist.
+
+At Striden mellem det Endelige og Uendelige, hvorpaa Antinomien er
+bygget, væsenlig grunder sig paa et kritisk Brud mellem Bevidstheden
+selv og den objective Væren, er let at indsee. Hvortil svarer vel
+Endeligheden? Til den Objectivitet, som Sandsningen kan fatte og
+Forestillingen fastholde. I denne Henseende er det da ganske rigtigt,
+at en uendelig Tidsrække hverken lader sig sandse eller forestille.
+Hvorledes komme vi da til Uendeligheden? Ad Tankens Vei. Vi gaae, som
+det hedder i Mathematikens Sprog, til Grændsen; det vil sige: Tanken
+løser Endeligheden op i dens yderste Grændse, sætter Negationen af det
+Endelige. Det skeer ved et Spring. Skal der til den saaledes satte
+Uendelighed nu ogsaa svare en egen Objectivitet, da er det vistnok
+klart, at Objectiviteten i det Uendelige maa komme i Strid med
+Objectiviteten i det Endelige. Men istedenfor at skyde Skylden paa
+Tidsanskuelsen, skulle vi tvertimod erkjende, at det netop er Tiden,
+der i naturlig Forstand stræber at forlige det Endelige med det
+Uendelige. Tiden er Succession, og Successionen en udvortes Overgang,
+der i lige Grad tilfredsstiller Forestilling og Tanke. Ved
+Successionen følger Endeligt paa Endeligt; hvert endeligt Led bliver
+successivt til for Forestillingen. Forestillingen kan da ikke forlange
+Mere end, at Successionen fremdeles skal vedblive. Men Successionens
+Vedbliven er netop Uendelighedens Tilbliven; den tilblivende
+Uendelighed maa da ligeledes tilfredsstille Tanken. Objectivt seet, er
+Successionen en Vorden; men naar Vorden i Tid er den udvortes Maade,
+hvorpaa det Endelige uophørlig gaaer over i det Uendelige,
+% --- p. 14 ---
+og omvendt: saa have jo begge, det Endelige og det Uendelige i Tiden
+som Tid, lige megen Objectivitet.
+
+For at skærpe Antinomiens Braad har Kant slaaet Tid og Evighed sammen
+i Eet og dog stillet dem op i den skarpeste Modsætning. Da Verden, for
+den uendelige Tidsrækkes Skyld, ikke kan være fra Evighed af, maa den
+have en Begyndelse i Tiden; det er Thesis. Da der ellers forud for en
+Begyndelse i Tiden maatte ligge en uendelig, tom Tid (en tom Evighed),
+maa Verden være fra Evighed af; det er Antithesis. Her alterneres
+mellem Tid og Evighed, og saa er Tiden dog Evighed, og Evigheden Tid
+--- i det Uendelige. Sagen er, at der til Grund for al Vorden maa
+ligge en Væren, som ikke vorder. Denne i sig reflecterede Væren,
+Væsenet, reflecteres nemlig i sit Andet, i Phænomenet. I Kraft af denne
+dobbeltsidige Reflexion har Væsenet sin indre Uendelighed i Selvhedens
+Form, der er Andethedsformernes ydre Uendelighed modsat. Den ydre
+Uendelighed svarer til Tiden, den indre til Evigheden. Der er en
+qvalitativ Forskjel mellem Tid og Evighed.
+
+Paa denne Forskjel grunder sig igjen Forskjellen mellem
+\emph{Begyndelse} og \emph{Oprindelse}. Begyndelsen skeer i Tiden, men
+Oprindelsen udgaaer fra Evigheden. Det absolute Væsen er evigt,
+uoprundet, ophøiet over Tiden; det relative Væsen har derimod sin
+Oprindelse fra det Absolute og er ifølge sin Relativitet Tiden
+underlagt. Oprindelse viser hen paa Selvvæsenets Objectivering af sit
+væsenlige Andet, paa Aandens Objectivering af Naturen, Guds
+Objectivering af Verden; Oprindelse er Overgang fra Evighed til Tid.
+Men Begyndelse er en Tidskategorie; Begyndelsen forudsætter
+Oprindelsen, thi den tilhører Tiden, den uendelige lige saa vel som den
+endelige: den uendelige Tid er en Succession af lutter endelige
+Begyndelser. Aanden er evig i Tiden over Tiden; men den timelige
+Verden er ikke evig, om end dens Vorden er fra evig Tid.
+
+% --- p. 15 ---
+% I Overskriften staaer der i Satsen et løst Mellemrum inde i Ordet:
+% „Mellemvære nde.“ Begge Exemplarer (Google og KB) vise det; her sat
+% som eet Ord.
+\runin{c) Rummets og Tidens Mellemværende.} Dersom Naturbegreberne:
+Rum og Tid, i ubevidst Viden vare istand til at begribe sig selv, hvert
+især, og hinanden indbyrdes; dersom de ved fælles begribende
+Anstrengelse virkelig evnede at frembringe noget saa Haandgribeligt som
+det, vi kalde Materie, da vilde den moderne Naturpantheisme unegtelig
+kunne rose sig af et sikkert Fodfæste i „den strenge Videnskab“; men
+Fixideen bliver kjendeligere med hvert Skridt, Begrebsudviklingen gjør.
+
+Den Hegelske Deduction af Sted, Bevægelse og Materie er i denne
+Henseende lærerig. Ordene ere dunkle, men Tanken er klar. Rummet med
+sin ligegyldige Discretion og sin lige saa ligegyldige Continuitet er
+en Modsigelse, der løser sig op i Tiden. Men Tiden for sig er ogsaa en
+Modsigelse; thi det Nærværende er en ustandselig Omsætning af det
+Forbigangne i det Tilkommende: de adskilte Momenter opløse sig i
+umiddelbar Indifferens. Det concrete Punkt, hvori de fra begge Sider
+sammenfaldende Modsigelser falde sammen, er „\emph{Stedet}“. Stedet er
+Eenhed af „\emph{Her}“ og „\emph{Nu}“ og derved udtrykkelig sat som
+Eenhed af Rum og Tid. Det ved Her og Nu bestemte Sted viser imidlertid
+ud over sig selv hen til et andet ved Her og Nu bestemt Sted; denne
+Stedets Vorden er „\emph{Bevægelsen}“. Men Her og Nu er allevegne; det
+bestemte Sted er i al Ubestemthed kun det almindelige Sted:
+Bevægelsens modsigende Momenter falde sammen i umiddelbar Eenhed;
+denne umiddelbart tilværende Eenhed er „\emph{Materien}“. „Materien er
+\emph{uigjennemtrængelig} og gjør \emph{Modstand}, er et Føleligt,
+Synligt o. s. v. Disse Prædicater ere ikke Andet, end at Materien
+deels er for den bestemte Iagttagelse, overhovedet \emph{for et Andet},
+men deels ogsaa \emph{for sig}. Begge ere Bestemmelser, hvilke den
+just har som Identiteten af Rum og Tid, af det umiddelbare
+\emph{Udenforhverandre} og \emph{Negativiteten} eller af den for sig
+værende Enkelthed.“
+
+% --- p. 16 ---
+Denne Deduction og dens Dialektik er characteristisk for
+% Anførselstegnet aabnes paany efter Indskuddet „hedder det“; kun eet
+% lukkende “ staaer, ved Citatets Slutning (efter „Existens.“).
+% Saaledes trykt i begge Exemplarer (Google og KB).
+Immanensphilosophien. „Rummet, hedder det, „er ikke adæqvat med sit
+Begreb; det er derfor Rummets Begreb selv, der i Materien skaffer sig
+Existens.“ Tydeligere kan Læren om det objective Begrebs
+mirakelgjørende Evne ikke udtales. Men Trylleriet forsvinder, og
+Miraklet kaldes igjen tilbage ved en Forklaring som følgende: „Man
+har,“ tilføies der, „ofte begyndt med Materien, og da anseet Rum og Tid
+for dens Former. Det Rigtige heri er, at Materien er det Reale ved Rum
+og Tid. Men disse maae, paa Grund af deres Abstraction, her forekomme
+som det Første, og saa maa det vise sig, at Materien er deres
+Sandhed.“ Den sidste af disse Udtalelser tiltræde vi ubetinget; men
+den staaer i skrigende Modsigelse med den første. Er det virkelig
+Rummets Begreb, som i Forening med Tidens har formaaet at give Materien
+Tilværelse, da kan Materien, det Reale, umulig være det Første; den maa
+saavel i subjectiv som i objectiv Forstand være det Andet, det
+Afledede. Skal Materien derimod i sig selv være det Første, fordi den
+er det Concrete, der i sig optager Rummet og Tiden som abstracte
+Former, da er det jo dog en vanvittig Paastand, at det Abstracte skulde
+have frembragt det, hvoraf det selv er abstraheret, at Rummet,
+tilskyndet af sit eget urolige, fra Materien abstraherede Begreb,
+skulde have skabt Materien.
+
+Abstraction, Modsigelse, Negativitet, uendelig Negativitet o. s. v.
+ere Selvhedskategorier, der tilvisse have Gyldighed i den uendelige
+Objectivering; men de misforstaaes, misbruges og tages forfængelig,
+naar de uden videre lægges ind i det Objective, saa at der tillægges
+dem udvortes Væren. Rum og Tid ere Former, hvis abstracte Væren maa
+integreres ved en fuldstændigere Tilværen: de maae have et
+\emph{Mellemværende}, der optages i dem, og hvori de optages. Men
+Abstraction og Integration ere Tankehandlinger, Functioner af
+objectiverende Selvhed. Hvilken Realitet, det
+% --- p. 17 ---
+fordrede Mellemværende skal have, vil da beroe paa Objectiveringen.
+For den abstracte Objectivering, forsaavidt det endnu kun gjælder om en
+almindelig Bestemmen af Sted og mechanisk Bevægelse, er et forestillet
+Mellemværende tilstrækkeligt.
+
+Ingen Bevægelse er mulig uden et Noget, som kan bevæge sig. Bevægelsen
+foregaaer i Rummet, men det sig Bevægende er forskjelligt fra Rummet,
+thi Rummet bevæger sig ikke. Stedforandringen er en Forandring i
+Rummet, men uden at Rummet forandres. Forandringen skeer med det
+Bevægede, der gaaer over fra Sted til Sted; og dog er det ikke det
+Bevægede selv, men kun Stedet, der forandres. Stedet tilhører ikke det
+Bevægede, thi det tilhører Rummet; og dog tilhører det ikke Rummet for
+sig, thi det bliver først i Bevægelsen til Sted ved at indtages af det
+Bevægede. Stedet er hverken ligefrem værende eller ikkeværende; det er
+en objectiv Relationsbestemmelse, der er objectivt reflecteret.
+Bevægelsen foregaaer i Tiden, og det i Tiden Bevægede er forskjelligt
+fra Tiden; men Tiden indgaaer i Bevægelsen paa en anden Maade end
+Rummet. Rummets Steder ere samtidig værende, nemlig efter Mulighed;
+ethvert tilbagelagt Sted kan desaarsag igjen indtages. Men Tidens
+Øieblikke svinde, og ethvert forsvundet Øieblik er uigjenkaldelig tabt.
+Med det Bevægelige til Mellemværende faae da Rum og Tid hver sin
+reflecterede Andeel i Bevægelsen. Den bestemte Bevægelse er Hastighed,
+og Hastigheden en Qvotient, hvori Rumselementet som Tæller og
+Tidselementet som Nævner reflectere hinanden objectivt,
+$\dfrac{ds}{dt} = v$; men paa Objectiveringens Vilkaar: den
+objectiverende Reflexion er subjectiv.
+
+Hvilken Begrebsforvirring der kan opstaae, naar man i Bevægelsens
+Phænomen absolut vil tænke det Objective uden at betænke dets Forhold
+til den objectiverende Subjec\-%
+% --- p. 18 ---
+tivitet, er bekjendt. Eleaternes Piil, der flyver i det uendelige Rum,
+er nu her, nu her, altid nu her! og kommer ikke af Stedet. Det er et
+objectivt Extrem, der ophæver sig selv. For at Bevægelsen kan blive
+til, maa Betragteren erindre, sammenfatte og anskue, nemlig de Steder,
+det Bevægede har tilbagelagt og fremdeles tilbagelægger. Intet Under,
+at det objective Extrem hos Eleaterne slog over i et subjectivt, saa at
+hine ubøielige Tænkere reentud erklærede al Bevægelse for Skin og
+Bedrag. Men at ogsaa det Modsatte kan skee, at nemlig det Subjective
+ved et logisk Selvbedrag kan slaae over i det Objective, er af den
+Hegelske Dialektik indlysende. Medens Zeno, for at faae Pilen til at
+staae stille, viser hen til det uendelige Rum, hvori al Relativitet er
+forsvundet, holder Hegel Stedbestemmelsen fast i Tanken. „Her er tre
+Steder: det, som er, det næstfølgende og det forladte. Men det er
+tillige kun eet Sted, hine Steders almene Sted, et i alle Forandringer
+Uforandret“. Man lærer heraf, hvorledes Abstractionen, Modsigelsen og
+Negationen drive hinanden frem. At de tre Steder ere eet Sted, beroer
+paa en Abstraction, idet der abstraheres fra den Forskjel i udvortes
+Væren, der netop er betegnende for Rummet. Det er tillige en
+Modsigelse; men denne af Abstractionen betingede Modsigelse bliver
+opløst derved, at den i Treheden negerede Eenhed igjen negeres i den
+almene Eenhed, det Blivende, saa at „Vedvaren (die Dauer) efter sit
+Begreb er Bevægelsen“. At Naturen ikke paa egen Haand anstiller slige
+Reflexioner, men overlader det til Subjectiviteten, maa vel
+indrømmes. Ikke desto mindre bliver det subjectivt reflecterede
+Bevægelsesbegreb ligefrem erklæret for et ikke subjectivt, men blot
+objectivt Naturbegreb og ovenikjøbet gjort til Eet med Bevægelsen selv.
+
+Som abstracte, mellem Væren og Ikke-Væren svævende Former ere Rum og
+Tid uden særlig Selvstændighed; deres Tilværen afhænger af det
+Mellemværende, hvori de forenes,
+%  --- B. Materie og Kraft  (pp. 19–38) ---
+% --- p. 19 ---
+altsaa af det Indhold, hvormed de fyldes: i denne Afhængighed sees
+deres Idealitet. Fyldes Rummet og Tiden med Drømmebilleder, have de
+kun en drømt Tilværen; fyldes de med en Verden af poetiske Skikkelser,
+opnaae de en æsthetisk Tilværen; først med et Indhold af virkelige
+Ting blive de virkelige. Gjælder det, som vi have seet om Formerne,
+at deres objective Væren beroer paa Objectivering, da maa det Samme
+nødvendig gjælde om det Indhold, hvormed de fyldes.
+
+% Kort centreret Streg trykt her, mellem Afdeling A og Afdeling B.
+\streg
+
+\afdeling{B.}{Materie og Kraft.}
+
+Rummets Virkelighed falder sammen med dets virkelige Udfyldning. Det
+Rumudfyldende, Materien, og det i Rummet Virksomme, Kraften, tilhøre
+Naturen, men sættes af Aanden; Opgaven er at vise, hvorledes de to
+Grundlagsbestemmelser: Oprindelse fra Aand og naturlig Realitet
+forudsætte hinanden.
+
+\runin{a) Materien.} Naturens første umiddelbare Reale er ikke et
+Begreb, men et sandseligt Tilværende, hvori et Begreb existerer.
+Existensbegrebet er et Realitetsbegreb; det gjælder da først og
+fornemmelig om at indsee Forholdet mellem Begreb og Realitet.
+
+At forudsætte Realiteten og udelukke Begrebet er betegnende for
+Materialismen. Det Eensidige i denne Synsmaade bestaaer ikke deri, at
+den tillægger Materien Realitet, thi hvis Materien kun var et Skin,
+saa var Naturgrunden udhulet; men Eensidigheden er, at Materien gjøres
+til noget
+% --- p. 20 ---
+i sig Absolut, til et evigt, ubetinget Værende, af hvis Grunddele Alt
+sammensættes og dannes. Disse Grunddele, Atomerne, opfattes paa een
+Gang baade som Massedele og som absolute Realpunkter. Det er en
+Modsigelse, thi dersom Atomerne ere Massedele, saa ere de relative; ere
+de derimod absolute, saa er al virkelig Relation imellem dem umulig.
+At tillægge Atomerne Egenskaber er at gjøre dem relative, thi det ene
+Atoms Egenskab faaer i Tiltrækning og Frastødning kun Betydning ved det
+andets Egenskab. At forudsætte Atomernes absolute Eenhed med deres
+Egenskaber er at indrømme deres absolute Relativitet og nedsætte dem
+til Momenter for hverandre indbyrdes. Med denne Conseqvens har
+Materialismen opløst sig selv.
+
+At sætte Begrebet som Realitet og Realiteten som Begreb er betegnende
+for Idealismens Eensidighed. Idealismen er magtesløs; den miskjender
+Modsætningen af det Ideelle og det Reelle, af Aand og Materie, og
+indseer ikke, at der til et mægtigt Indre maa svare et mægtigt Ydre.
+Idealismen vil forvandle Materiens Begreb til virkelig Materie; det er
+en ufrugtbar Speculation. Modsætningen af Begreb og Materie er en
+Modsætning i Magt, en Modsætning saa haard og stærk, at
+Eenhedsbegrebet falder sammen med Begrebet af Almagt, absolut
+overgribende Selvmagt. Selvmagtens indre oprindelige Modsætning er
+Gjenstandsmagt, Magt i Andet; det første Ydre for Magt i Andet er
+Materien. Derfra Atomernes Vrimmel: lutter Andethedspunkter,
+Realitetspunkter. Den qvalitative Modsætning af Aand og Materie er
+betegnet ved Magtens Udslag. Udslaget er ikke blindt, det er en
+Grundhandling i Kraft af almægtig Begriben: Begrebet er Realitetens
+Grund, Realiteten Begrebets Existens.
+
+En umiddelbar Gjenstandsmagt uden tilsvarende Begreb er lige saa
+umulig, som et existerende Magtbegreb uden Gjenstand. Man kan ikke
+dele det Existerende i to absolut forskjellige Arter: et Existerende
+\emph{med} Grund og et Existe\-%
+% --- p. 21 ---
+rende \emph{uden} Grund; thi Existensens Væsen er at have en Grund.
+Den reale Grund er en i Magtbegrebet opløst Existens; det Existerende,
+der ingen Grund har, existerer ikke, dets Tilværen er et huult
+Phænomen, et Skin.
+
+Materialismens Grundvildfarelse viser sig nu deri, at den gjør den
+„fra Evighed af existerende“ Materie til et Existerende uden Grund.
+Atomerne, de absolute Existenser, paa hvis Adskillelse og Forbindelse
+alle endelige, materielle Dannelser beroe, forholde sig da til de
+virkelige Ting i deres Endelighed, som det Grundløse til det
+Begrundede! En unaturligere Adskillelse af Grund og Existens kan ikke
+gives. Materialismen har et skarpt Blik for Realiteten som
+Gjenstandsmagt. Den begynder med et Magtsprog, peger paa
+Kjendsgjerningen, tager det Existerende som et ufravigelig Givet; det
+er sundt og rigtigt. Men at oversee Magtbegrebet og fornegte
+Existensens Væsen for at bygge paa et Existerende uden Grund, er
+usundt og falsk.
+
+Den objective Idealisme holder paa Begrundelsen, idet den holder sig
+til Begrebet; men Grundfeilen er, at den overseer Gjenstandsmagten og
+udsletter Forskjellen mellem Reflexion i Viden og Reflexion i Magt.
+Hvad dette Misgreb har at betyde, kan i Materien sees paa Atomer og
+Masse. Den existerende Masse har Atomerne til Grundlag; men Atomernes
+Existens har igjen den forudsatte Masse til Grundlag. For at danne
+Grundlag, maa et Existerende gaae til Grunde. Det Existerende
+forestilles; men Grunden og Grundlaget tænkes. At Atomerne existere
+betyder, at de sættes i Forestillingen, medens den underforstaaede
+Masse sættes i Tanken; er Massen derimod i Forestillingen, idet
+Atomerne underforstaaes, saa er det Massen, der existerer. Atomernes
+Undergang i Massen og Massens Opløsning i Atomerne ere imaginære
+Bevægelser, der foregaae indenfor Tanken og Forestillingen; det er en
+Reflexion, som, hvormange Begrebsbestemmelser den end optager, aldrig
+kommer ud over en
+% --- p. 22 ---
+forestillet Existens med en tænkt Grund, aldrig naaer Virkeligheden.
+
+I Magtreflexionen begyndes der udtrykkelig ud fra Virkeligheden,
+forsaavidt der begyndes i det Existerende med Gjenstandsmagten;
+Grunden er et Magtbegreb, og Grundlagsbestemmelserne Realmomenter af
+opløst Existens. Overgangen fra Existens til Grund, og fra Grund til
+Existens, er en væsenlig Forandring, en objectiv Magthandling, en
+Naturbegivenhed. Massen existerer, og Atomerne existere; og dog er her
+ikke paa een Gang to Slags Existerende eller to Lag Existens. Falder
+Existensen i Massen, saa have Atomerne ophørt at existere; de ere som
+Grundlagsmomenter optagne i Massens Existens. Men da Atomerne gik
+under, foregik der virkelig Noget: de nærmede sig hverandre, opgave i
+Sammenhæng (Cohæsion) deres Selvstændighed og bleve Momenter i Massen.
+Falder Existensen i Atomerne, saa er Massen opløst: den er gaaet
+under. Men da Massen gik under, foregik der virkelig Noget: den
+opløste sig og tabte i Opløsningen sin Selvstændighed. At Massen tabte
+sin Selvstændighed er Grunden til, at Atomerne fik Selvstændighed og
+kom til at existere. Atomernes Existens har lige saa vist sin reale
+Grund i Massens Undergang, som Massens Existens har sin reale Grund i
+Atomernes Undergang. I denne Magtreflexion er det Ene ikke et
+ubetinget Første, og det Andet et Afledet, men begge Existenser,
+Atomernes og Massens, ere lige oprindelige og lige afledede. Undergang
+er da heller ikke Tilintetgjørelse; det Existerende, der gik under i et
+andet Existerende, kommer igjen til Existens, naar den paa dets
+Undergang beroende Existens gaaer under.
+
+Den Reflexion af Magtbegreb og Gjenstandsmagt, der afgiver den
+mechaniske Naturs almindelige Grundlag, er overalt kjendelig paa en
+brat Omsætten af existerende Led i Momenter, af Momenter i existerende
+Led. Magtbegrebets
+% --- p. 23 ---
+reflecterede Eenhed med Gjenstandsmagten er udtrykt i den haardeste
+Modsætning. Det Existerende er intet Begreb; det er Gjenstand,
+virkelig Kjendsgjerning. Begrebet existerer ikke; det reflecteres i
+opløst Existens som Grund og Grundlag. Men Eenheden er igjen lige saa
+mægtig som Modsætningen: det Existerende har Grunden i sig:
+Gjenstanden er sit virkeliggjorte Begrebs materielle Udtryk. Fra
+Reflexionens Side er Begrebet det Overgribende; fra Gjenstandssiden er
+det Kjendsgjerning og Kjendsgjerning først og sidst. Den uendelige
+Vexelbestemmelse af Reflexion og Kjendsgjerning, Grund og Existens, er
+Actualitetens Form for \emph{Magt i Andet}. Men Magt i Andet
+forudsætter Selvmagt; Kjendsgjerningernes iboende Begreber maae
+begribes af overgribende Enemagt: \emph{den mechaniske Naturmagt bæres
+af Aandens Almagt.}
+
+I hvilken Betydning den existerende Materie maa siges at være den
+første mechaniske Fremstilling af Magt i Andet, kan sees af de
+Egenskaber, Physiken særlig har tillagt den som Materie. Materien er
+\emph{sandselig}, ikke blot for os, men i sig selv. At tænke Materien
+er at forvandle den til et Tankevæsen og fornegte dens Existens. Er
+Materien for Aanden kun et Tankevæsen, saa er hele Naturen et Skin.
+Men Sandheden er, at Materiens Væsen er et Magtvæsen; dens Begreb er et
+i Magten omsat Vidensbegreb, dens Existens en Gjenstandsmagt, en
+Modstand for Tanken, en umiddelbar Gjenstand, ogsaa for Aanden. At
+være Aandens umiddelbare Gjenstand, Anskuelsens reale Andet, en
+Grændse for Tanken, er at være sandselig. Materien er
+\emph{rumopfyldende}. Den begrændsede Materie indtager sit Sted og
+gjør Modstand mod anden Materie, der vil indtage det samme Sted; denne
+Modstandsmagt er Andethedsmagt, Magt til at udelukke Andet fra Andet.
+Materien er \emph{deelbar}. Deelbarhed beroer paa Andethed. Massen er
+Et, Atomerne et Andet. Massens Eenhed er ingen Selveenhed, men
+% --- p. 24 ---
+Eenhed af Andet med Andet; Massen bestaaer ved sit Andet, thi den
+bestaaer af Atomer. Skulde Atomerne absolut bestaae ved sig selv, da
+kunde det dog umulig være som mathematiske Punkter; det maatte da være
+som smaa Masser. Men hvad der gjælder om de større Masser, gjælder om
+de mindre, mindste, allermindste: Massen bestaaer i Andet ved Andet.
+Hvert enkelt Atom har samme Bestaaen som alle andre. Realiteten af eet
+Atom er Realiteten af alle; men Realiteten af alle er Massen: Atomerne
+bestaae i Massen, altsaa i Andet. Materien er \emph{ligegyldig mod
+Hvile og Bevægelse}; denne Ligegyldighed er ret et charakteristisk
+Tegn paa Andethed. At Materien er underlagt Inertiens Lov, bliver
+ogsaa betegnet ved, at den er villieløs, hvilket med andre Ord vil
+sige, at den er uden Selvbestemmelse. Den kan ikke, naar den er i
+Hvile, bestemme sig til Bevægelse, men maa bestemmes af Andet; den kan
+ikke, naar den er i Bevægelse, bestemme sig til Hvile, men maa
+bestemmes af Andet. Denne Lære om Materiens selvløse Selvstændighed
+(Inertie) har afgjørende Betydning for Erkjendelsen saavel af Materiens
+Væsen som af Bevægelsens Love.
+
+Ikke desto mindre vil Immanenslæren som speculativ Naturphilosophie
+endnu til Trods for empirisk Physik og rationel Mechanik hævde den
+mystiske Forestilling om en Materien iboende Selvhed, en stille Længsel
+efter Befrielse, en skjult Evne til at sætte sig selv i Bevægelse.
+Materien, siger Hegel, er Bortfjernelse i Rummet. Den gjør Modstand,
+støder sig selv bort fra sig selv: det er \emph{Repulsionen}, hvorved
+den sætter sin Realitet og fylder Rummet. Men de Enkeltled, der
+repelleres fra hverandre, ere alle Eet. At det er det samme Ene, som
+ved at støde sig selv fra sig selv ophæver Enkeltleddenes Fjernelse,
+deri bestaaer \emph{Attractionen}. Begge tilsammen udgjøre som Tyngde
+Materiens Begreb. Tyngdens Eenhed er kun „en Skullen, en Længsel, den
+% Citatet aabnes her og lukkes først paa næste Side („naaes ikke.“);
+% en Anførsel, der løber over et Sideskifte, ikke en Trykfeil.
+ulyksaligste Stræben, hvortil Materien evig er
+% --- p. 25 ---
+fordømt; thi Eenheden kommer ikke til sig selv, den opnaaes ikke.“
+Materien kan imidlertid trøste sig med, „at den ikke er saa dum“ ---
+som Physikerne --- „at den skulde holde Eet og Flere ud fra
+hinanden.“ Det er kun i den endelige Sphære, i Kredsen af „de selvløse
+Legemer“, at Materien lider af Træghed; i sit „frie Begreb“, i den
+„himmelske Sphære“ har Materien Selvhed og bevæger sig selv.
+
+Idet Immanenslæren paa denne Maade træder polemisk op mod Physiken,
+kommer den med det Samme i en mislig Stilling til Aandslæren. For at
+bøde paa Savnet af Aandens begribende Selvmagt og lade Naturen begribe
+% Trykfeil: der staaer „sin egne Begreber“ i begge Exemplarer.
+% Bogens egen Trykfeil-Fortegnelse retter: „Side 25 Linie 11 f. o.
+% sin --- læs sine“. Her gjengivet som trykt.
+sin egne Begreber, anbringes Personificationer: til Erstatning for den
+udelukkede Aand indføres Aandrigheder. „Ligesom Tiden er den eenfolde
+formelle Natursjæl, og Rummet ifølge Newton Guds Sensorium, saaledes er
+Bevægelsen Begrebet af den sande Verdenssjæl. Vi ere vante til at
+ansee den for Prædicat, Tilstand, men den er i Virkeligheden Selvet,
+Subjectet som Subject, det Blivende i al Forsvinden.“ Ligesom
+Bevægelsen er det væsenlige Selv, saaledes er Materien i det Uendeliges
+Mechanik naturligviis det virkelige Selv. Den Kjendsgjerning, at
+Materie bevæger Materie i det Uendelige, forklares ved en logisk
+Omskrivning derhen, at Materien altsaa \emph{bevæger sig selv}. Ved
+slige Forklaringer bliver Naturudviklingens Begreb fra Grunden af
+mystificeret.
+
+\runin{b) Kraften.} Materien bevæger og bevæges; den ene Masse bevæger
+den anden: Materien har Bevægelsens Grund og Aarsag i sig selv, men
+under Andethedens Form. Først naar det tydelig indsees, at det
+nødvendig hører med til dens rumopfyldende Realitet at kunne bevæge og
+lade sig bevæge, er Materiens Begreb udtømt. Det er ikke Bevægelsens
+abstracte Formbestemmelse, men den virkelige Bevægelse, hvorom her
+handles. Vi maae see os om efter et
+% --- p. 26 ---
+Grundphænomen, hvoraf det klarest kan vise sig, hvad det Bevægende
+egenlig er.
+
+Man har fra et endelig mechanisk Synspunkt henviist til
+\emph{Stødet}. Under to sammenstødende Legemers Berøring foranlediger
+den gjensidige Modstand en Kamp om Stedet, der synes at afgive
+tilstrækkelig Grund til Stedforandring, altsaa til Bevægelse. Grunden
+er saa meget naturligere, som den øiensynlig ligger i den Realitet,
+hvormed enhver Masse indtager sit Sted. Umiddelbar Berøring
+% Græsk, sat med kursiv græsk Skrift: ἅπτεσθαι (spiritus asper og
+% akut over alfa, læst paa KB-Exemplaret).
+(ἅπτεσθαι) er da ogsaa af Aristoteles sat som Betingelse for, at den
+ene Materie kan indvirke bevægende paa den anden. Men at Stødet ikke
+kan være det Bevægende selv, er indlysende. Stødet forudsætter nemlig,
+at de to sammenstødende Legemer enten begge maae have bevæget sig i
+modsat Retning, eller, hvis Retningen er den samme, maa enten det ene
+have bevæget sig med større Hastighed end det andet eller det ene have
+bevæget sig og det andet været i Hvile. Det sees da fra alle Sider, at
+Stødet ikke kan være det egenlig Bevægende; det er jo selv et Resultat
+af Bevægelse.
+
+For at undgaae den forudsatte Bevægelse, kunde man forsøge at sætte det
+Bevægende i et Tryk og gjøre \emph{Trykket} til et Grundphænomen. Tryk
+og Modtryk udtrykke nu ligefrem den med Materiens Realitet identiske
+Modstandsmagt; Bevægelsen indtræder som en nødvendig Følge, hvis
+Forudsætning er, at Ligevægten mellem Tryk og Modtryk ophæves.
+Bevægelsen begynder med en Stræben til Bevægelse; en saadan Stræben
+ligger virkelig i Trykket, og Forklaringen har forsaavidt en Grund; men
+det er en utilstrækkelig Grund: her forudsættes et Noget, som endnu
+ikke er begrundet. Trykkets Phænomen kan tydes deels saaledes, at
+begge Legemer, hvert fra sin Side, stræbe at trænge ind i hinanden,
+medens de dog gjensidig modstaae hinanden; deels saaledes, at kun det
+ene er paatrængende, det andet blot modstaaende. I begge Tilfælde
+falder Bestræbelsen sammen med Paatræn\-%
+% --- p. 27 ---
+genheden; og Spørgsmaalet bliver, hvorfra Paatrængenheden da hidrører.
+Paatrængenhed forudsætter Nærmelse: to adskilte \emph{Massers
+gjensidige Nærmelse} maa altsaa være det søgte Grundphænomen.
+
+To i Rummet adskilte Masser, \textit{A} og \textit{B}, ville, naar
+uvedkommende Hindringer tænkes borte, nærme sig hinanden, altsaa komme
+i Bevægelse; men hvad er Grunden? Hegel beraaber sig paa Tyngden og
+sætter Tyngden i en fælles Søgen efter et fælles, udenfor Masserne
+liggende Midtpunkt. „Midtpunktet, siger han, er ikke at tage som
+% Indskuddet „siger han“ bryder Citatet, men her aabnes der IKKE paany
+% med „; Anførselstegnene balancere altsaa paa denne Side.
+materielt; thi det Materielle er netop det, at have sit Midtpunkt
+\emph{udenfor sig}. Ikke Midtpunktet, men en Stræben efter det, er
+Materien immanent. Tyngden er saa at sige den Bekjendelse, Materien
+aflægger om Intetheden af sin udvortes Væren for sig, om sin
+Uselvstændighed, sin Modsigelse.“ Men at tillægge Masserne et saadant
+indre Savn, en Higen mod et udenfor værende Ideelt er vel poetisk. men
+% Trykfeil: Punktum, hvor Meningen kræver Komma --- „poetisk. men ikke
+% videnskabeligt“. Saaledes trykt i begge Exemplarer (Google og KB);
+% ikke rettet i Bogens egen Trykfeil-Fortegnelse.
+ikke videnskabeligt; ligesom det da ogsaa udtrykkelig strider mod den
+haarde Andethed, den selvløse Selvstændighed, at forklare Massernes
+gjensidige Nærmelse af dunkel Sympathie og digte en --- naturligviis
+ubevidst --- Længsel ind i \textit{A} efter \textit{B}, besvaret af en
+--- naturligviis ubevidst --- Længsel i \textit{B} efter \textit{A}.
+Den strenge Mechanik har en anden Udtydning. \textit{A}, hedder det,
+tiltrækker \textit{B}, fordi \textit{B} tiltrækker \textit{A}: det i
+begge Masser, ja i hvert Atom af begge Masser, Tiltrækkende er
+\emph{Kraften}.
+
+Kraften er, mechanisk forstaaet, Bevægelsens Aarsag; men --- tilføier
+Physiken --- en ubekjendt Aarsag. Vi skulle nu nærmere undersøge,
+hvorledes det egenlig forholder sig med „den ubekjendte Aarsag, vi
+kalde Kraft“. Naar det hedder, at vi ikke vide, hvad Kraft er, saa
+bliver der stiltiende underforstaaet, at vi endda nok vide, hvad
+Materie er. Men dersom Materien virkelig er en bekjendt Størrelse, da
+er det umuligt, at Kraften i sin eiendommelige Sammen\-%
+% --- p. 28 ---
+hæng med Materien kan være os aldeles ubekjendt. Kraften, det
+Usandselige, svarer til Materien, det Sandselige, som Magtreflexionen
+til den umiddelbare Gjenstandsmagt: Materien er det Ydre, Kraften det
+Indre. Men et Indre kan aldrig vise sig ligefrem; at det viser sig,
+vil sige, at det yttrer sig; det reflecterer sig i sit Ydre og maa
+kjendes paa sine Yttringer. En Sætning som den: vi vide ikke, hvad
+Kraft er i sig selv, vi kjende kun dens Yttringer, dens Virkninger,
+udsiger da slet intet Andet, end hvad der ligger i Reflexionens Natur,
+at nemlig det Indre nødvendig maa kjendes paa sit Ydre. Det abstract
+logiske Væsen reflecterer sig i Skin af Skin, men Magtens Reflecteren
+er en Virken, dens Phænomener ere Kjendsgjerninger: som
+Magtreflexionens kategoriske Udtryk er Kraften ikke en i menneskelig
+Indbildning „hypostaseret Tanke“, men en i sine Virkninger reflecteret
+Kjendsgjerning. Kraften som Indre er Intet i sig selv absolut; det
+Indre er en Mulighed, som først ved at yttre sig og virke bliver til
+Virkelighed. Den ovenanførte Sætning kan da ikke i objectiv Forstand
+betragtes som nogen sikker Betegnelse for den menneskelige Videns
+absolute Grændse, men vel som en subjectiv Antydning af Uklarhed over
+Tænkningens, Reflexionens, særlig Magtreflexionens Væsen.
+
+Hvor uklar og svævende den sædvanlige Forestilling om Kraft er,
+fremlyser af den Maade, hvorpaa dens Forhold til Materien nærmere
+bestemmes. Paa den ene Side taler man, som om Materien var Et og
+Kraften noget ganske Andet. Det er da ikke Massen \textit{A}, der ved
+Tiltrækning sætter \textit{B} i Bevægelse; nei, det er Kraften, den i
+\textit{A} værende Tiltrækningskraft, hvorved Bevægelsen af \textit{B}
+foraarsages, og omvendt: det er ikke \textit{B}, men Kraften i
+\textit{B}, der bevæger \textit{A}. Masserne bevæges, men Kræfterne
+bevæge: Materien er \emph{passiv}, Kraften \emph{activ}. Paa den anden
+Side taler man igjen, som om Kraften kun var en Egenskab ved Materien.
+% --- p. 29 ---
+Saa bliver det da virkelig Massen \textit{A}, der i Egenskab af Masse
+tiltrækker \textit{B}, og omvendt. Den sidste Synsmaade staaer i
+øiensynlig Strid med den første. Ved at gjøre Kraften til Materiens
+Egenskab og, hvad den almindelige Tiltrækning angaaer, ovenikjøbet til
+Grundegenskab lader man Kraftens Begreb uden videre gaae op i
+Materiens. Ifølge den første Synsmaade skulde her være to Væsener, men
+ifølge den sidste er her kun eet Væsen. Som Egenskab ved Materien
+% „høist“: begge OCR-Vidner læse „heist“, men ø'et staaer tydeligt paa
+% KB-Exemplaret. Læsningen „heist“ forkastet.
+kommer Kraften i en høist betænkelig Stilling til Materiens øvrige
+Egenskaber, navnlig til Inertien. Ifølge Inertien kan Materien kun
+bevæges, men ikke bevæge; ifølge Kraften kan den kun bevæge, ikke
+bevæges. Det maa da synes, som var Materien en sig selv modsigende
+Realitet. Som det Rumopfyldende har Materien desuden en Deel
+Egenskaber tilfælles med Rummet, for ikke at tale om en Mængde
+umiddelbare Sandselighedsegenskaber, der ikke vel lade sig forlige med
+Kraften som Kraft. Thi man vil dog ligesaa lidt kunne tale om en bred
+Kraft, en rund Kraft, en fiirkantet Kraft, som om en tynd eller tyk
+eller graa Kraft.
+
+De anførte Vanskeligheder bortfalde, naar vi holde os til den ovenfor
+angivne Vexelbestemmelse af Magtreflexion og umiddelbar
+Gjenstandsmagt. Materien er paa sin Maade reflecteret, nemlig i
+gjensidig Begrundelse af Atomer og Masser; Kraften er paa sin Maade
+% „iøinefaldende“: begge OCR-Vidner læse „ieinefaldende“; ø'et staaer
+% tydeligt paa KB-Exemplaret.
+umiddelbar, nemlig i sine Yttringer. Og dog er Forskjellen
+iøinefaldende; thi for Materien er Umiddelbarheden, men for Kraften er
+Reflexionen det Afgjørende. Reflexionen af Magt er noget Mere end en
+logisk Speilen af det Ene i det Andet, den er en virkelig Bestemmen, en
+Virken, hvori det viser sig, hvad det Ene formaaer over det Andet. Det
+er netop en saadan Formaaen, der mechanisk udtaler sig i Bevægelsen.
+Bevægelsen af \textit{B} reflecterer Kraften i \textit{A}, idet
+Bevægelsen af \textit{A} reflecterer Kraften i \textit{B}. Den
+gjensidige Bevægelse er et Phænomen af Magtreflexionens Væsen: den i
+Væsen overgribende Reflexion
+% --- p. 30 ---
+beviser, at det Almene i Leddenes Relation behersker de særskilte Led.
+Physiken er forsaavidt i sin gode Ret, naar den opfatter Kraften, det
+Active, som Væsenhed for sig til Forskjel fra den træge Materie, det
+Passive. Men herved overseer Physiken dog ikke, at de to Væsener i
+Grunden ere Sidebestemmelser af samme Væsen. Magtreflexionens Eenhed
+med Gjenstandsmagten fremhæves udtrykkelig derved, at Kraften opfattes
+som Materiens egen reflecterede Bestemthed, altsaa som dens Egenskab.
+Som Materiens gjennemgaaende Egenskab er Kraften noget Andet end en
+umiddelbar Qvalitet eller Beskaffenhed, den er et kategorisk Udtryk,
+ikke for Materiens sandselige Realitet, men for dens reflecterede
+Væsen, dens iboende Energie, dens Indre. Hermed forsvinder
+Modsigelsen mellem Kraften som reflecteret Egenskab og Materiens
+øvrige, umiddelbare Egenskaber. De umiddelbare Egenskaber tilhøre
+\emph{det Extensive}, men Bestemmelserne ved Kraften tilhøre \emph{det
+Intensive}, thi de tilhøre Reflexionen, vel at mærke: Reflexionen i
+Magt. „Man kan“, hedder det om Tyngdepunktet i den mechaniske
+Naturlære, „forestille sig Tingene, som om hele Legemets Vægt var
+forenet i Tyngdepunktet, og alle de øvrige Dele ingen Vægt havde.“
+Denne Forestilling er mere end en Forestilling; det er en virkelig
+Sandhed. Den paa Delene fordeelte Tyngde, Tyngden i det Extensive,
+forvandles i Magtreflexionen til Tyngde-Eenhed, en Tyngde i det
+Intensive: Tyngdepunktet \emph{er} det intensive
+Eenhedspunkt.\footnote{% trykt Mærke: *)
+Jevnfr. Mathematik og Dialektik. S. 129--131.}
+
+Gyldigheden af Ovenstaaende bliver endnu nærmere at prøve, forsaavidt
+det gjælder en endelig Tydning af Tiltrækningens ellers saa gaadefulde
+Phænomen. Masserne \textit{A} og \textit{B}, der paa Afstand udfylde
+hver sit Rum, synes slet ikke at have Noget med hinanden at gjøre; og
+dog have de med hinanden at gjøre, thi de nærme sig hinanden. Det er
+en
+% --- p. 31 ---
+forunderlig Modsætning af Væsen og Existens, Magtreflexion og
+Gjenstandsmagt, som i Phænomenet lader sig tilsyne; Existensen siger
+Et, Væsenet et Andet. Gaadens Løsning ligger i den Indsigt, at den
+materielle Virkelighed gjennem Væsen og Existens har udtalt to
+modsatte, men lige uafviselige Fordringer, og at
+Tiltrækningsphænomenet netop er begge Fordringers Opfyldelse. Den
+første Fordring er, at de materielle Led maae have umiddelbar
+Selvstændighed; denne Selvstændighed er anskueliggjort i Massernes
+sandselige Existens. Existensen svarer til Stedet. Hver Masse
+indtager sit Sted, og det kan let forekomme Beskueren, som var den
+rumopfyldende Realitet det fuldstændige Udtryk for Materiens
+Virkelighed. Det er imidlertid et Sandsebedrag; det, der saaledes sees
+i umiddelbar Existens, er kun en halv Virkelighed. Existensen skjuler
+Noget i de existerende Led, der kun kan komme tilsyne i Reflexionens
+Form som Væsen. Den anden Fordring er, at Væsenet maa reflectere sig i
+Leddenes Relation, i Massernes indbyrdes Forhold. Forholdsled uden
+Forhold er en lige saa ufuldbaaren Tanke, som Forhold uden Forholdsled.
+Ere Leddene virkelige, maae Forholdene ogsaa være det; deres
+Virkelighed er i deres Virksomhed, og denne Virksomhed er Forholdets
+Realitet. Naar Magten reflecteres i Forhold af virkelige Led, viser
+Væsenet sig som Kraft. Massernes Afstandsforhold bliver ved Kraften et
+virksomt, altsaa virkeligt Forhold. I Masserne er Materiens Existens
+begrændset, indskrænket til Stedet; Masserne ere som virkelige Led
+Momenter i Virkeligheden. Som Væsen derimod gaaer Kraften fra Masse
+til Masse ud over Grændsen, altsaa ud over Stedet, og
+Virkelighedsmomentet sees i den gjensidige Stedforandring. At Kraften
+gaaer gjennem Rummet, at Masserne virke paa Afstand, er et mechanisk
+betegnende Udtryk for den Vexelbestemmelse af Magtreflexion og
+Gjenstandsmagt, der gjør Virkeligheden fuldstændig.
+% --- p. 32 ---
+Den tilsyneladende Modsigelse, at en Masse har Kraft til at bevæge en
+anden Masse, men ikke Kraft til at bevæge sig selv, har med det Samme
+fundet sin Løsning. Materiens Virkelighed er en Selvstændighed i
+Andethedens Form, en selvløs Selvstændighed. Selvløshed er
+Uselvstændighed; den materielle Virkelighed er en uselvstændig
+Selvstændighed. Uselvstændigheden er Materiens Inertie,
+Selvstændigheden dens Kraft. Inertien er, at Materien bevæges af
+Andet, Kraften er, at den bevæger Andet. I de hinanden tiltrækkende
+Masser ere Inertie og Kraft paa begge Sider forenede: Kraft er
+Inertiens Complement, Inertie er Receptivitet for Kraften. Saaledes
+ere da ogsaa Selvstændighed og Uselvstændighed paa begge Sider
+forenede. Massen \textit{A} har Selvstændighed, den sætter ud fra sit
+Sted \textit{B} i Afhængighed; men \textit{B} har ogsaa Selvstændighed
+og sætter ud fra sit Sted \textit{A} i Afhængighed. Relativiteten er,
+at begge Masser i deres Selvstændighed ere uselvstændige. Her behøves
+ingen udvortes Betragter for at sammenholde de to Steder i
+Forestillingen og bestemme deres Afstand; thi saa gjennemgaaende er
+Relativiteten, at det i Virkeligheden er Masserne, der gjensidig
+bestemme hinandens Steder: Materiens Relativitet er i Bevægelsen
+virkelig formedelst Kraften.
+
+\runin{c) Materiens og Kraftens reflecterede Eenhed: Aand og Materie.}
+Den hertil førte Udvikling har Magtens Idealitet, den reflecterede
+Magt, til Grundlag; dens Betydning staaer og falder med Besvarelsen af
+det Spørgsmaal: \emph{hvorledes er Magtreflexionen mulig?} At
+graviterende Masser optræde som Magthavere, der i Forhold til Størrelse
+udøve et vist Herredømme over hverandre, er kun en figurlig Talemaade,
+saalænge Kjendsgjerningens Mulighed ikke er indseet. Det er, som
+allerede viist, Vexelbestemmelsen af Led og Momenter, hvorpaa det
+kommer an. Efter det Ydre, i Udstykningens og Deelthedens Form, ere
+Mo\-%
+% --- p. 33 ---
+menterne virkelige Masser; deres Reflexion er Relation, og Relationen
+Vexelvirkning. Men i Begrebet, efter det Indre, ere de virkelige Masser
+Momenter af samme Eenhed, Reflexer af een og samme Begriben. At begribe
+er at magte. Det er da klart, at den almægtige Begriben, der forener
+alle særskilte Magtbegreber i det almene Begrebs Eenhed, maa foregaae i
+en Alt begribende Selvmagt. Kun en uendelig Selvmagt, et vidende Selv,
+der objectiverer i Magt, formaaer at give de objective Begrebers System
+Virkelighed i Massernes Existens og hæve sig over Stykværket.
+Reflexionen af Magt i Andet har sin Grund i reflecterende Selvmagt;
+hermed er Materiens absolute Afhængighed af Aanden erkjendt i Begrebet.
+
+Videnskabens Historie lærer, at alle naturphilosophiske Forsøg paa at
+opklare Forholdet mellem Materie og Bevægelse, Materie og Kraft, hidtil
+ere strandede paa en total Miskjendelse af Forholdet mellem Aand og
+Materie. Materiens Eenhed med Kraften er nemlig reflecteret saaledes,
+at den, foruden at være en logisk Eenhed i Væsen, tillige er en virkelig
+Eenhed i Kjendsgjerning. Reflexionen, hvori den dobbeltsidige Eenhed
+begrundes, er selv dobbeltsidig; det er en Reflexion af Materiens og
+Kraftens Væsen; men det er med det Samme en Reflexion af den existerende
+Materie og Kraftens Yttring. Sættes Eenheden i Væsen, som naar man
+siger: Materie og Kraft ere i Grunden det Samme, saa brydes den i
+Existens; thi den existerende Materie er ikke Kraft, og den virkende
+Kraft er ikke Materie. Sættes Eenheden i Existens, som naar man siger:
+Kraften er materiel (den atomistiske Opfattelse) eller: Materien er et
+Product af Kræfter (den dynamiske Opfattelse), saa kommer
+Væsensforskjellen tilsyne i Reflexionen; thi Materien er et Ydre,
+Kraften et Indre. Skal Eenheden erkjendes i Dobbeltreflexion af Væsen i
+Væsen, af Kjendsgjerning i Kjendsgjerning, da er det kun muligt derved,
+at Selvmagt og Magt i Andet, Væ\-%
+% --- p. 34 ---
+sensmagt i Idealitet og Gjenstandsmagt i Realitet, afgive saa stærke,
+saa haarde Extremer, at Aandens Almagt kan vise sig som absolut
+overgribende Enemagt.
+
+Uden Selvhed ingen Reflecteren, og omvendt; uden et reflecterende Selv
+ingen Reflexion; uden Reflexion ingen Relation; uden Reflexion i Magt
+ingen virksom Relation, ingen Aarsag og Virkning, ingen Vexelvirkning.
+I Begribningens Form er Magtreflexionen subjectiv; i Begrebets, det
+Begrebnes, Form er den objectiv; i Reflexion af subjectiv og objectiv
+Reflexion er Objectiveringen fuldendt.
+
+\subrunin{α) Subjectiv Magtreflexion.} Selvmagt er ikke Magtens tomme,
+% Bogens første græske Underoverskrift. Bogstavet er læst paa Siden selv
+% (KB-Exemplaret): et utvetydigt α, ikke det „a“, som Indholdets OCR giver.
+% Overskriften er indløbende, sat i samme Linie som det Afsnit, den aabner,
+% og spærret; Punktum efter „Magtreflexion“, ikke Komma.
+blot formelle Lighed med sig selv uden indre Forskjel og Modsætning, som
+naar den uendelige Magt uden videre antages for værende og bestemmes ved
+en tautologisk Sætning: Magt $=$ Magt, $A = A$. Nei, Selvmagten maa
+udtrykkelig sætte sin egen Lighed og derved gjøre den til Selvlighed.
+Dette kan i Virkeligheden kun skee derved, at Magteenheden viser sig
+forskjellig fra sig selv, fordobler sig gjennem Andet og bekræfter sig
+ved Modsætning til Andet. Kun den Bekræftelse, hvori det samme Væsen er
+i Resultatet sin egen Forudsætning og i Forudsætningen sit eget
+Resultat, kan i Sandhed kaldes \emph{Selv}bekræftelse, en Bekræftelse af
+\emph{Selvet}.
+% Kun Forleddet „Selv“ er spærret i „Selvbekræftelse“; „bekræftelse“ er
+% sat med almindelig Skrift. Ordet er ét Ord, ikke to.
+
+Jo større Selvstændighed det Andet har, desto mægtigere er det sig
+derved bekræftende Selv, thi Selvet reflecterer sig subjectivt ved at
+magte sit Andet: jo stærkere Modstanden er, desto større er den Magt,
+hvormed den ophæves. Heraf sees, at Selvmagten ikke kan opfattes som et
+umiddelbart Værende, en absolut, mod alt Andet ligegyldig Substans.
+Selvmagtens Væren er Virken, og denne Virken en uendelig Reflecteren af
+sig selv i Andet, af Andet i sig selv. Den indre Bevægelse, bvori den
+% TRYKFEIL: „bvori“ trykt for „hvori“ — en urigtig Type, b for h. Bugten
+% er lukket og svarer nøiagtig til b'et i „bestaaer“ i samme Linie; begge
+% Exemplarer (Arbeidsscanningen og KB's Farvescanning) har samme Form, saa
+% Feilen er Sætterens. Trykfeilsbladet retter den ikke. Gjengivet som trykt.
+evig bestaaer, er en Kredsbevægelse. Den absolute Selvmagt forlader ikke
+sig selv, fordi den gaaer ud fra sig selv; den naaer ikke hen
+% --- p. 35 ---
+til sit Andet som til et udvortes Givet, thi den har sit Andet i sig
+selv; den forandres ikke, thi den magter sit Andet; Bevægelsen er ingen
+Uro, thi Selvet er i sin Bevægelse hos sig selv, dets Bevægelse er
+Hvile; det hviler i sig selv paa sig selv: \emph{den absolute Selvmagt
+er Aand.}
+
+For Aanden som Aand er hele den materielle Verden et Intet og dog et
+virkeligt Noget. Begge Bestemmelser forliges i den Grundbestemmelse, at
+den materielle Verden er Aandens Andet. Som Andet for Aanden er det
+Materielle Moment for den almægtige Selvreflecteren, men Intet, slet
+Intet i sig selv: kun Aanden, det Ene, er, alt Andet er Intet. Som
+Andet for Aanden er det Materielle virkeligt, det er jo
+Gjenstandsmagt, Selvbekræftelsens indre Modstandsmagt, Maalestok for
+Aandens Almagt. Var Materien et Skin, og Verden en Drøm, saa var Aanden
+selv en Drøm, saa var der ingen, enten indvortes eller udvortes,
+Realitet, ingen, enten ideel eller reel, Virkelighed.
+
+\subrunin{β) Objectiv Magtreflexion.} Den umiddelbare og dog
+% Bogstavet læst paa Siden (KB-Exemplaret): β, ikke „B“, „ß“ eller „P“,
+% som Indholdets OCR giver. Indløbende Overskrift som α) ovenfor.
+reflecterede Eenhed af Materie og Kraft er en Magteenhed. Men den
+objective Eenhed af Magt er tillige en brudt Magt, Magt i Andet,
+Mangfoldighedsmagt; herpaa beroer dens eiendommelige Reflexion.
+Reflexionen er kjendelig paa Tyngden. Physiken opfatter Tyngden fra tre
+Synspunkter: som \emph{Egenskab} ved Materien, som særegen \emph{Kraft}
+og som en Universet omspændende \emph{Magt}. Som Egenskab er Tyngden
+reflecteret i Massernes Selvstændighed, som Kraft i deres indbyrdes
+Vexelvirkning, som Verdensmagt i de store Love. Det er fra alle tre
+Sider samme Væsen, samme Magt, samme Substantialitet; hver Side af
+Magten reflecterer de to andre saaledes, at den selv maa siges at være
+den hele Magt. Have vi for os de virkelige Masser, saa have vi i deres
+fælles Egenskab Kraften, i Kraften Tiltrækningen og i Tiltrækningen den
+som Magt almindelige Tyngde. Ere de tiltrækkende Kræfter givne, saa
+have vi med det Samme
+% --- p. 36 ---
+Masserne, thi Masserne ere jo i denne Belysning intet Andet end
+Kræfternes Existens, og Kraft og Masse igjen Momenter af Tyngden som
+Magt. Have vi endelig Tyngden som Magt, da er Massernes Existens med
+den tilsvarende Kræfternes Fordeling netop dens egen Realitet, Udslag af
+det Særskilte, hvori den bestaaer som det Almene. Fra alle Sider er
+altsaa den objective Magt reflecteret.
+
+Men den objective Magt kan ikke reflectere sig selv ved sig selv; det
+kan kun Selvmagten. Lad os igjen see paa de to Masser. Det bevægende
+$A$ er Aarsag, Bevægelsen af $B$ Virkning. Aarsagen, der er Realitet i
+$A$, er Idealitet i $B$, thi Aarsagens Idealitet er at være ---
+reflecteret --- i sin Virkning. Da nu $A$ er fjernet fra $B$, saa har
+det jo som Aarsag sin Virkning udenfor sig, er som Realitet fjernet fra
+sin Idealitet. Og dog er Idealiteten i Aarsagen, og Aarsagen er i $A$.
+$A$ kan da umulig være fjernet fra, hvad det selv er; det maa, saa sandt
+det har Aarsagen i sig, nødvendig ogsaa have Idealiteten i sig. Denne
+Modsigelse, at nemlig hver Masse har sin Idealitet i sig ved at have den
+udenfor sig, er en Modsigelse i den objective Reflexion, som klarlig
+beviser, at den ikke kan bære sig selv, men maa bæres af Aanden. Fra
+Aanden, i og ved Beaandelsen, faaer Massens Realitet en Tilgift, hvori
+det Ideelle objectivt og væsenlig ener sig med det Reelle, denne
+ideel-reelle Tilgift er Kraften. Formeldelst Kraften er Materien i $A$
+% TRYKFEIL: „Formeldelst“ trykt for „formedelst“ — et Bogstav l for meget.
+% Overstaven mellem „Forme“ og „delst“ staaer tydelig i begge Exemplarer.
+% Trykfeilsbladet retter den ikke. Gjengivet som trykt.
+efter Mulighed mere end Materie, den er Aarsag. At Virksomheden
+indtræder, at Aarsagen bliver virkelig og faaer sin Virkning, er
+objectiv Reflexion i Magt. Dersom den objective Magt ikke blev
+reflecteret i Aanden, saa var Tyngden ikke den almene Magt, saa var der
+ingen almene Magter i Naturen, saa vare Lovene umulige. Den objective,
+almene Magt er ikke en Abstraction af Masser og Kræfter, men deres egen
+substantielle Væsenhed, deres iboende Grundlag. Den objective Magt
+reflecterer sig --- ved at blive reflec\-%
+% --- p. 37 ---
+teret; den er i Virkeligheden objectiv, men --- ved at være
+objectiveret.
+
+\subrunin{γ) Objectivering i Magt.} Naturbegrebene have dobbeltsidig
+% Bogstavet læst paa Siden (KB-Exemplaret): γ, ikke „y“ eller „7“, som
+% Indholdets OCR giver. Indløbende Overskrift som α) og β) ovenfor.
+% „Naturbegrebene“ staaer saaledes trykt her; længere nede i samme Afsnit
+% skriver Bogen „Naturbegreberne“.
+Bestaaen, Bestaaen i virkelige Ting og Bestaaen i Selvets Begriben. Det
+Sidste betinger det Første; Begreberne kunde ikke give sig Afpræg i
+tilværende Gjenstande, dersom de ikke selv vare prægede af uendelig
+Begriben. Det er jo ikke de sandselige Naturting, som i objectiv
+Forstand bestemme Begreberne, men det er omvendt Naturbegreberne, som
+usandseligt bestemme de sandselige Ting. For at være Tingens
+bestemmende Væsen, maa Begrebet i sig selv nødvendig have Bestemthed,
+maa være forud bestemt til at afgive Bestemmelse. Massens bestemte
+Begreb bliver ikke først til ved Hjælp af existerende Masser, ei heller
+Kraftens Begreb ved allerede tilværende Kræfter. Hvis Masser og Kræfter
+havde en af Begreber uafhængig Tilværelse, saa vilde Tingene med det
+Samme kunne undvære alle Begreber; der vilde slet ingen Fornuft være i
+Naturen. Hvis Begrebernes Tilblivelse faldt umiddelbart sammen med
+Tingenes, vilde det være aldeles umuligt at sige, hvorfra det
+Bestemmende kom. Det kunde da ikke være Begrebet, der bestemte Tingen,
+thi Begrebet skulde jo netop blive bestemt ved Tingen; men at det heller
+ikke kunde være den i sig bestemte Ting, der bestemte Begrebet, er en
+Selvfølge, eftersom det for en Ting Bestemmende just er dens Begreb.
+Det staaer altsaa fast, at Naturbegreberne maae have en af Tingenes
+Existens uafhængig, for Tingene selv afgjørende Bestemthed i sig.
+Hvorfra faae nu Begreberne denne indre, for al ydre Tilværelse
+uundværlige Bestemthed? Fra en Begriben. At bestemme Begreber er at
+begribe; at fremstille de i sig bestemte og desaarsag bestemmende
+Begreber i Existeren og Existens er ikke at \emph{begribe}, det er at
+\emph{virke}. Naturen fremstiller Begreber, udformer Begreber, men den
+begriber ikke, den virker. Aandens ideelle Virken
+% --- p. 38 ---
+er Begriben, Naturens Gjengivelse af det Begrebne er ikke Begriben, det
+% Komma, ikke Punktum, efter det første „Begriben“; efterprøvet paa
+% KB-Exemplaret. Sætningsrækken er komma-føiet, saaledes som trykt.
+er reel Virken, materiel Virksomhed, Begrebsbestemmelsernes Udfoldning i
+sandselig-virkelige Kjendsgjerninger.
+
+Modsætningen af Aandens Begriben og Naturens Virken er begrundet i
+Reflexionen af subjectiv og objectiv Magtreflexion, et alsidigt Udtryk
+for Objectivering i Magt. I den subjective Magtreflexion, den ideelle
+Objectivering, have Naturbegreberne Tilværen som aandelige
+Magtbestemmelser, afgjørende for al materiel Existeren. Men under
+Idealitetens Form, i Selvmagtens Begriben, have Begreberne ikke selv
+Existens, deres Tilværen, en Væren i Viden, er Magtbestemmelsernes
+uendelige Vexelskin af hverandre indbyrdes; det Enkelte og Særskilte
+reflectere sig her i det klare, frie Almene: Magt i Andet er Moment for
+Selvmagten. Fra Existenssiden, altsaa fra Natursiden, falder
+Eftertrykket derimod paa Magten i Andet, paa Gjenstandsmagten, paa
+Realiteten, og den reelle Objectivering afsætter Begreber i tilsvarende
+Objecter. Objecterne ere Gjenstande, en Vrimmel af Enkeltled, Atomer og
+Masser. Det som Begreb bestemmende Almene gaaer her umiddelbart op i
+det Enkelte, bindes i Magt af Enkeltled, af udvortes Objecter. Saa
+hedder det i Physikens Sprog: kun Enkeltleddene, Grunddelene med de
+deraf sammensatte Ting, have i Naturen Existens; det Almene existerer
+ikke. Og dog er det just det Almene, der kommer til Existens; det
+bliver jo netop gjennem Udslag af Enkeltled objectiveret i Magt.
+Enkeltleddene virke, antage ved deres Vexelvirkning Præg af det
+Særskilte og hjemfalde til det Almene; saa viser det sig, at det Enkelte
+og det Særskilte ere det Almene underlagte. Den objectivt reflecterede
+Magt, Naturens, Objectivitetens almene Magt, kommer til Existens i
+Tingenes Kræfter og de Love, hvorunder Kræfterne virke.
+
+% Efter sidste Linie paa s. 38 staaer en kort, centreret Streg, som
+% afslutter Afdeling B. Findes i begge Exemplarer. Gjengivet.
+\streg
+
+%  --- C. Kræfter og Love  (pp. 39–61) ---
+
+%  MATHEMATICAL — work from the image; the OCR is not a witness here.
+% --- p. 39 ---
+\afdeling{C.}{Kræfter og Love.}
+
+I objectiv Reflexion er den almene Magt baade Existensen selv og
+Existensens Væsen; men Forskjellen mellem Væsen og Existens er lige saa
+mægtig som Eenheden. Magten i Andet, der er Eet med sig selv i Væsen,
+er forskjellig fra sig selv i Existensen; den bestaaer med denne
+Forskjellighed som Gjenstandsmagt i Leddenes Masser og som virkende
+Kræfter i Leddenes Vexelvirkning; men den har ogsaa Bestaaen i
+Væsenhedens almene Form som hvilende, Alt bestemmende Magt, nemlig i
+Lovene. Kræfternes Yttringer ere Kjendsgjerninger, men Lovene see ud som
+Tanker, mægtige Tanker, Naturtanker. At kjende de virkende Kræfter og
+Betingelserne for deres Virksomhed er at kjende Lovene; og dog ere
+Kræfterne ikke Love, og Lovene ikke Kræfter. For at komme til Indsigt i
+den almene Forskjelseenhed af Kræfter og Love, skulle vi nu fra et
+mechanisk Synspunkt undersøge Lovenes
+% Spærret Sats, efterprøvet paa KB-Exemplaret: hele Leddet fra
+% „Oprindelse“ til „Sammenhæng“ er spærret. Punktum, ikke Komma, efter
+% „Sammenhæng“; tesseract læser her Komma.
+\emph{Oprindelse, Opfyldelse og indbyrdes Sammenhæng}.
+
+\runin{a) Forestillede Kræfter: Lovenes Oprindelse.}%
+„Forstanden“, siger Kant, „laaner ikke sine (aprioriske) Love fra
+Naturen, men den foreskriver den disse.“ Denne Sætning viser hen til
+Lovenes subjective Oprindelse og retfærdiggjøres ved talløse Exempler
+fra den analytiske Mechanik. Dersom to lige store Kræfter virke paa et
+materielt Punkt i modsat Retning, maae de ophæve hinanden, og Punktet
+forblive ubevæget; det er en Lov. At denne Lov har objectiv Gyldighed,
+er lige saa indlysende, som at dens Gyldighed er uafhængig af al
+Erfaring. Lovens almene Gyldighed ligger i den Nødvendighed, hvormed den
+opstillede Forudsætning afgiver sin Følgesætning: Loven er i logisk Form en
+% --- p. 40 ---
+hypothetisk Dom, i mathematisk Form en Ligning. Der ligger ingen Vægt
+paa, hvorvidt det antagne Tilfælde forekommer i den ydre Natur eller
+ikke, thi Loven er Sagens Natur; den har sin Natur i sig selv. Det er
+det tænkende Selv, der opstiller Forudsætningen; det er det tænkende
+Selv, der drager Conseqvensen; det er det tænkende Selv, der giver sig
+selv Loven og forvisser sig om dens Objectivitet. Der er hverken i
+Himlen eller paa Jorden nogen udvortes Magt, der formaaer at omstøde den
+i Tankens Medfør givne Lov eller gjøre den tvivlsom; den eneste
+Magthaver, der er i Stand til at ophæve Loven, er den lovgivende
+Subjectivitet. Vel kan Subjectiviteten ikke modsige Loven uden at
+modsige sig selv; men den kan ophæve den ved at ophæve Forudsætningen,
+den kan forandre den ved at forandre Forudsætningen.
+
+At en Lov maa forandre sig, naar dens Forudsætning forandres, er selv en
+Lov. Dersom de to i modsat Retning virkende Kræfter ere ulige store, maa
+Punktet komme i Bevægelse, og Kræfternes Differens vil da være den
+bevægende Kraft; men dersom de to Kræfter danne en hvilkensomhelst
+Vinkel med hinanden, vil det ved første Øiekast see ud, som havde vi
+faaet en ny Lov. Den Nødvendighed, hvormed Loven gjælder, er nemlig
+altid bunden til en Forudsætning af een eller flere Betingelser, og
+følgelig ikke en absolut, men hypothetisk Nødvendighed. Ved at indføre
+snart færre, snart flere Betingelser i Forudsætningen og lade
+Betingelserne vexle kan den lovgivende Subjectivitet lade den ene Lov
+fremgaae af den anden, kan paa denne Maade anlægge og udvikle Systemer
+af Love. Vi see det paa Kræfternes Parallelogram. Man skulde troe, at
+her blev opstillet en egen Lov for et eget specielt Tilfælde; men den
+Tænkende opdager snart, at det tilsyneladende specielle Tilfælde netop
+er det almindelige Tilfælde, thi to paa eet
+% --- p. 41 ---
+Punkt virkende Kræfter maae jo altid danne en Vinkel med hinanden.%
+% Fodnotemærket er *), som Bogens øvrige. Een Fodnote paa denne Side.
+% Formlerne ere satte efter Billedet, ikke efter OCR'en. Rodtegnets
+% Streg dækker hele Udtrykket, ogsaa „cos (P. Q)“; i KB-Exemplaret er
+% Stregen sat af to Stykker, hvilket ikke er gjengivet.
+\footnote{De to Kræfter være $P$ og $Q$ og deres Resultant $R$. For
+Kræfternes Parallelogram gjælder da Ligningen:
+$R = \sqrt{P^2 + Q^2 + 2\,P\,Q \cos (P.\,Q)}$. Er nu Vinkelen
+$(P.\,Q) = 0^{\circ}$, saa er $\cos = 1$, og $R = P + Q$; er Vinkelen
+$(P.\,Q) = 180^{\circ}$, saa er $\cos = -1$, og $R = P-Q$.
+Parallelogrammets Lov er en Grundlov for Sammensætning og Opløsning af
+mechaniske Kræfter, hvoraf et uendeligt System af særskilte Love lader
+sig udvikle.}
+
+Bevægelsen efter Diagonalen i Parallelogrammet er, væsenlig seet, en
+sammensat Bevægelse, thi den Kraft, hvorved den bestemmes, er en
+Samvirken af to Sidekræfter; men ligesom Forskjellen mellem enkelt og
+sammensat Kraft kun er relativ, saaledes er ogsaa Forskjellen mellem
+enkelt og sammensat Bevægelse relativ. Den ved Diagonalen betegnede
+Resultant kan i sin Fortsættelse selv blive en Sidekraft, hvis Vinkel
+med en anden tilsvarende afgiver en ny Resultant i en ny Retning, saa at
+Bevægelsens Spor ved den endelige Forandring bliver en brudt Linie.
+Skeer Forandringen continuerlig saaledes, at Sidekræfterne
+(Composanterne) uophørlig omsættes i en Resultant, og Resultanten igjen
+i en Sidekraft, saa fremkommer der en krum Linie.
+
+Det sande Begreb om Bevægelsen i den krumme Linie, hvis Lov Mechaniken
+nøiagtig bestemmer, hviler paa en Opløsning af to Lag Misforstaaelse. De
+Gamle meente, at det hørte til visse Legemers eiendommelige Væsen at
+bevæge sig i Curver, at navnlig de himmelske Legemer, ifølge deres
+høiere Natur, bevægede sig i Cirkelbaner. Det var en Misforstaaelse. Ved
+at opløse denne Misforstaaelse blev Physiken en exact Videnskab. Men for
+at tydeliggjøre den sammensatte Bevægelse, maatte man tye til
+Udstykning. Under Udstykningen bliver den krumme Linie til en brudt
+Linie: Brudstykkerne være saa smaa, de ville, det bliver
+% --- p. 42 ---
+dog altid Brudstykker. Herved fremkom en ny Misforstaaelse.
+Udstykningsmethoden har i den Grad forarget den nyere
+Naturphilosophie, at Speculationen aabenlyst har brudt med den
+mechaniske Physik og søgt Sandheden i en modificeret Opfattelse af den
+antike Forestilling. Hegel er saa vred over Udstykningen, at han ikke
+blot forbyder Physiken --- hvad han dog i rigeligt Maal indrømmer
+Logiken --- en egen Brug af Abstractionen, men han gaaer endog saa vidt,
+at han vil have Forestillingen om Kræfter ganske udryddet. „Newton“,
+siger han, „forsikkrer, at en Blykugle \textit{in coelos abiret et motu
+abeundi pergeret in infinitum}, dersom (rigtignok: dersom) man blot
+kunde meddele den den fornødne Hastighed. En saadan Adskillen af den
+udvortes og den væsenlige Bevægelse tilhører hverken Erfaringen eller
+Begrebet, men alene den abstraherende Reflexion.“ Ved at indføre
+„Forestillingen om Kræfter“ skal Newton trods alle sine Reservationer,
+have gjort den sande Naturerkjendelse et betydeligt Afbræk. Det er
+speculative Misforstaaelser. Disse Misforstaaelser opløse sig og
+forsvinde, naar Forholdet imellem Continuiteten, Udstykningen og den
+uendelige Discretion tilstrækkelig opklares.
+
+Kastes et Legeme i skraa Retning op efter, da kan den til Stødet
+svarende Kraft betragtes som en Sammensætning af to Kræfter, af hvilke
+den ene vilde føre Legemet lodret opad, efter Y-Axen, den anden drive
+det vandret fremad, efter X-Axen. Dersom nu enhver anden Paavirkning
+tænkes borte, vil Legemet gaae efter Diagonalen i det Rectangel, som
+Coordinaterne x og y danne med hinanden, og den i Tiden t gjennemløbne
+Bane s være ligestor med $\sqrt{x^2 + y^2}$. Den af s og x dannede
+Vinkel $\alpha$ vil være constant, og dens Tangens $\frac{y}{x}$
+selvfølgelig ogsaa. I et saadant Tilfælde er det da ligegyldigt, om man
+fremhæver Continuiteten eller Udstykningen eller Discretionens Uende\-%
+% --- p. 43 ---
+lighed. Hvert endeligt Stykke af s er et Continuum, og de vilkaarlig
+satte Grændser gjøre intet Afbræk; men s kan ogsaa opløses i Elementer
+svarende til Elementer af x og y:
+\[
+ds = \sqrt{dx^2 + dy^2};\quad \frac{y}{x} = \frac{dy}{dx}.
+\]
+
+Anderledes, naar Legemet under Bevægelsen forestilles at være en lodret
+nedadgaaende Paavirkning underkastet; her viser der sig en væsenlig
+Forskjel mellem Udstykning og Continuitet.
+
+Forestilles Paavirkningen at indtræde efter visse Mellemrum, saa vil s
+adskille sig i endelige Stykker, $s_1$, $s_2$, $s_3$ o. s. fremdl.;
+Vinkelen $\alpha$ vil hver Gang forandre sig, idet hvert Stykke af s
+faaer en egen Heldning mod Abscisseaxen, og $\frac{y}{x}$ erholde
+forskjellige Værdier. Ethvert Stykke er Diagonal i et Kræfternes
+Parallelogram, hvis ene Side er en Fortsættelse af den forrige
+Resultant, og hvis anden Side dannes af den tiltrædende Paavirkning:
+Legemets Bane bliver en brudt Linie, hvis Dele kunne maales og nøiagtig
+bestemmes.
+
+Ombyttes den deelvise Paavirkning med en continuerlig som f. Ex. Tyngden
+g, saa forandrer s sin Retning continuerlig, og Banen bliver en krum
+Linie. Ligefrem i Continuitetens Form kan en saadan Bane ikke bestemmes,
+thi Forandringens Uendelighed for sig kan ikke bestemmes. Ligefrem i
+Udstykningens Form kan Banen heller ikke bestemmes, thi Udstykningen er
+en endelig Discretion, der bryder Continuiteten. Kun den
+Vexelbestemmelse af Endeligt og Uendeligt, der betinges af uendelig
+Discretion, hvorved en Operation med Elementer kan blive ligesaa exact,
+som en Regning med endelige Størrelser, kan løse Udstykningen op i en
+endelig Bestemmen af det Uendelige.
+
+% Bogen skriver „tg“, ikke „tang“ eller „tan“; gjengivet som trykt.
+% Punktummet efter α er Bogens eget Multiplicationstegn, ogsaa som trykt.
+Ligningen: $y = f\,(x) = \operatorname{tg} \alpha .\, x -
+\frac{g}{2\,a^2 \cos^2 \alpha}\, x^2$
+% --- p. 44 ---
+viser, hvorledes den mindste Forandring i x continuerlig medfører en
+tilsvarende Forandring i y; hvoraf igjen følger en continuerlig
+Forandring i s. Den Maade, hvorpaa y afhænger af x, udtrykker Loven. Vi
+have i Loven det for Phænomenernes Uendelighed --- den uendelige Mængde
+af enkelte Tilfælde --- bestemmende Almeenvæsen. Men i denne Uendelighed
+have vi tillige Endeligheden. Paa væsenlig Maade er Endeligheden
+bestemt ved den bestemte Function; i Tilsyneladelsernes udvortes, paa
+Deling og Udstykning anlagte Form kommer det Endeliges Uendelighed
+tilsyne i Enkeltværdiernes Vrimmel. Overgangen fra Endeligt til
+Uendeligt og fra Uendeligt til Endeligt bestemmes ved Elementernes
+indbyrdes Forhold. Hvert Element af Curven falder sammen med et
+tilsvarende Element af Curvens Tangent; hvorledes, d. e. efter hvilken
+Lov denne Tangent i det Uendelige forandrer sin Retning, sees af
+Ligningen: $\frac{dy}{dx} = \operatorname{tg} \alpha -
+\frac{g}{a^2 \cos^2 \alpha}\, x = \varphi\,(x)$.
+
+Hvad der gjælder om Loven, gjælder ogsaa om Kræfterne. Kræfternes
+Opløsning er ingen ligefrem Udstykning; det er en Analyse, hvorunder
+hver Sidekraft ved en for Videnskaben nødvendig Abstraction bliver
+fremhævet for sig. Fra Væsenets Side er enhver af Sidekræfterne et
+Moment af Resultanten. Hvor en Udstykning virkelig finder Sted, er det
+Naturens egen Udstykning, Existensen selv, som i Andethedens Form gjør
+den ene Kraft uafhængig af den anden. Heller ikke er Kræfternes
+Sammensætning en simpel Addition; den i Resultanten virkende Kraft er
+Sidekræfternes Eenhed, en Eenhed, hvori deres Selvstændighed ganske er
+ophævet. Her er ikke, hvad dog Hegel paastaaer, mindste Grund til, paa
+Begrebets Vegne, at gjøre nogensomhelst Indsigelse mod Physikens
+Analyser.
+
+Men er det nu, strengt taget, Lovene, der bestemme
+% --- p. 45 ---
+Kræfterne, eller kunde man ikke maaskee vende Forholdet om og sige, at
+det egenlig er Kræfterne, der bestemme Lovene? En overfladisk
+Opfattelse af den Maade, hvorpaa den rationelle Mechanik fremstiller
+sine Opgaver, synes nærmest at tale for det Sidste. Et Exempel. Der
+meddeles et Legeme en vis Hastighed i en hvilkensomhelst, kun ikke
+lodret, Retning, hvorpaa det overlades til Tyngdens Paavirkning: af
+hvilken Beskaffenhed vil Banen blive? Svaret er, at Banen, naar
+Bevægelsen antages at foregaae i det lufttomme Rum, maa blive en
+Parabel. Loven for Parablen er altsaa Loven for Bevægelsen. De
+forestillede Kræfter og de opstillede Betingelser synes her at være det
+Første, og Loven det Andet, som deraf afledes; altsaa: Kræfterne
+bestemmes ved Forestilling, Loven ved Tænkning, og det Tænkte afhænger
+af det Forestillede. Hvor eensidig denne Synsmaade er, fremlyser af
+Forholdet mellem Forestilling og Tænkning. Den blot forestillende
+Bevidsthed erkjender slet ikke Loven. Den kan ikke engang uden Tankens
+Bistand stille det Forestillede op som en Forudsætning; thi
+Forudsætningen er kun i Reflexion af sin Conseqvens, men Conseqvensen
+er kun for Tanken. En Bestemmen af Kræfterne ved den blotte Forestilling
+er en Indbildningsact, en flygtig, foreløbig Bestemmen, der taber al
+Betydning, naar Tanken mangler. Den bestemmende Forestilling er en
+Function af Tanken; den forudskikkes af Tanken selv og staaer fra
+Begyndelsen af i Tænkningens Tjeneste.
+
+Fra Mechanikens Synspunkt faaer Sagen let et Udseende, som om Tankens
+Opgave udelukkende var at opdage Lovene, som om Lovene i og ved sig selv
+vare objective uden at trænge til Objectivering. Objectiveringen skulde
+altsaa blot være for Subjectivitetens, ikke for Lovenes Skyld. Det er en
+Illusion, som den strenge Videnskab øieblikkelig vil forkaste, naar den
+bliver opmærksom paa den. Dersom den lovopdagende Subjectivitet ikke
+selv var lovgivende, kunde
+% --- p. 46 ---
+den slet ikke opdage Lovene, den kunde jo ikke dømme om Betingelserne,
+ikke adskille det Mulige fra det Umulige, ikke bestemme det hypothetisk
+Nødvendige, ikke forvisse sig om de foregivne Loves aprioriske
+Gyldighed. Og hvad bliver der af de objective Love, naar de skilles fra
+den lovgivende, objectiverende Subjectivitet? Døde, meningsløse Formler!
+En Ligevægtslov for to ved en Linie forbundne Punkter, der paavirkes af
+Kræfterne $P_i$ og $P_m$, hvis Vinkler med X-Axen ere $\alpha_i$ og
+$\alpha_m$, idet den ubekjendte Kraft i Forbindelseslinien er $R$, dens
+Vinkel med X-Axen $\delta$, $\varphi_i$ og $\varphi_m$ vilkaarlige
+Vinkler, præformeres for et System af flere indbyrdes forbundne Punkter
+ved Ligningerne:
+% Anden Ligning har ÷ hvor den første har +. Efterprøvet paa
+% KB-Exemplaret ved høi Forstørrelse: Tegnet er utvivlsomt ÷, og begge
+% Exemplarer stemme. ÷ var i dansk Sats paa denne Tid det gængse
+% Minustegn, saa dette er formodenlig Nielsens egen Notation og ikke en
+% Sætterfeil; Trykfeilbladet nævner ikke Stedet. Gjengivet som trykt.
+% Prikkerækkerne staae som fire spatierede Punkter i begge Ligninger.
+\begin{align*}
+P_i \cos (\alpha_i - \varphi_i) + R \cos (\delta - \varphi_i) + \ .\ .\ .\ . &= 0\\
+P_m \cos (\alpha_m - \varphi_m) \div R \cos (\delta - \varphi_m) + \ .\ .\ .\ . &= 0
+\end{align*}
+Men saa lidt som disse Ligninger i sig selv vilde have Betydning, dersom
+Ingen forstod dem, ligesaa lidt vilde den ved Ligningerne præformerede
+Lov i sig selv have mindste Gyldighed, dersom der ingen, hverken
+menneskelig eller guddommelig Subjectivitet var, der kunde tænke Loven,
+med selvlovgivende Forvisning opdage Loven, objectiverende hævde Lovens
+Objectivitet.
+
+\runin{b) Virkelige Kræfter: Lovenes Opfyldelse.} Fra det subjective
+Synspunkt, forsaavidt der blot handles om forestillede Kræfter, er
+Overeensstemmelsen mellem den guddommelige og menneskelige Fornuft
+gjennemgaaende; thi Naturlovene ere Tankelove, og Tankelovene paa een
+Gang baade menneskelige og guddommelige. Men uagtet alle Naturlove ere
+Tankelove, ere Tankelovene i deres frie Idealitet dog endnu ikke
+Naturlove. Opfattede for sig, have de tænkte Love kun en ideel, ved
+Forestillingerne articuleret Objectivitet; i Naturen selv have derimod
+Lovene en til Kræfterne svarende materiel Virkelighed; denne Virkelighed
+er deres Opfyldelse.
+
+Fra det objective Synspunkt, forsaavidt der udtrykkelig
+% --- p. 47 ---
+sees paa Naturvirkeligheden, kommer Dualismen, den principielle Forskjel
+mellem guddommelig og menneskelig Objectivering igjen tilsyne. Fra den
+guddommelige Side maae vistnok alle Kjendsgjerninger kunne afledes af de
+bestemmende Love; men fra menneskelig Side maae de virkelige Love
+udledes af givne Kjendsgjerninger.
+
+Vel kunne de i factiske Natursætninger som i et guddommeligt Magtsprog
+udtalte Love, hvor eiendommelige de end ere, ikke tænkes at staae i
+Strid med de almindelige Fornuftlove; men det gjør dog en væsenlig
+Forskjel, om Lovene behandles som abstract-almene Formbestemmelser,
+altsaa \emph{mathematisk}, eller de paavises i anskuelig Eenhed med det
+Virkelighedsindhold, hvori de have deres Opfyldelse,
+% Trykfeil: „alsaa“ for „altsaa“. Bogstavet t mangler. Efterprøvet paa
+% KB-Exemplaret, hvor Ordet ligeledes staaer „alsaa“, medens det
+% samme Ord tre Linier ovenfor staaer „altsaa“; Feilen er altsaa
+% Sætterens og ikke dette Exemplars. Bogens eget Trykfeilblad retter
+% den ikke. Gjengivet som trykt.
+alsaa \emph{physisk}.
+
+„Ligesom Mathematiken“, siger H. C. Ørsted, „maa behandle
+Naturgjenstandene paa sin egen Viis, saaledes ogsaa Physiken. Idealet
+for hiin er at udrette Alt uden at laane Noget af Erfaringen, og naar
+den, ifølge Umuligheden af ganske at naae Idealet, gjør et Laan af
+Erfaringen, maa dette være noget saa almindeligt, saa lidet
+individualiseret som muligt. Det hører til dens Kunstfuldkommenhed,
+hellere at gaae de vidtløftigste Omveie, end at optage Erfaringens
+fremmede Stof i sig. Ganske anderledes forholder det sig med
+Naturlæren. Naturen er dens videnskabelige Eiendom; den laaner ikke
+deraf, men øser deraf som af sin egentlige Kilde. Dens Ideal er det at
+fremstille Gjenstandene for Anskuelsen“ --- altsaa Lovene i deres
+Opfyldelse --- „og med Hensyn herpaa bearbeider den Former og
+Størrelser.“
+
+Den videnskabelige Betydning, der tilkjendes Physiken som
+Erfaringslære, er naturligviis afhængig af den Maade, hvorpaa
+Erfaringens Væsen i det Hele bliver opfattet. Sand Erfaring beroer paa
+en ligelig Samvirken af Sandsning og Tænkning; men denne Samvirken kan
+forvanskes, eftersom
+
+%  MATHEMATICAL — work from the image; the OCR is not a witness here.
+% [text to be added: pp. 48--61]
+
+
+% ======================================================================
+%  Første Deel — Andet Kapitel: Mechaniske Aarsager   (printed pp. 62–124)
+% ======================================================================
+
+\kapitel{Andet Kapitel.}{Mechaniske Aarsager.}
+
+%  --- A. Mechanisk Idealitet  (pp. 62–86) ---
+
+%  MATHEMATICAL — work from the image; the OCR is not a witness here.
+% [text to be added: pp. 62--70]
+
+%  MATHEMATICAL — work from the image; the OCR is not a witness here.
+% [text to be added: pp. 71--79]
+
+% [text to be added: pp. 80--86]
+
+%  --- B. Mechanisk Realitet  (pp. 87–105) ---
+
+%  MATHEMATICAL — work from the image; the OCR is not a witness here.
+% [text to be added: pp. 87--95]
+
+%  MATHEMATICAL — work from the image; the OCR is not a witness here.
+% [text to be added: pp. 96--105]
+
+%  --- C. Grundaarsagen: det første Bevægende  (pp. 106–124) ---
+
+%  MATHEMATICAL — work from the image; the OCR is not a witness here.
+% [text to be added: pp. 106--114]
+
+%  MATHEMATICAL — work from the image; the OCR is not a witness here.
+% [text to be added: pp. 115--124]
+
+
+% ======================================================================
+%  Første Deel — Tredie Kapitel: Himlens Mechanik   (printed pp. 125–196)
+% ======================================================================
+
+%  NOTE: this chapter head does NOT open a page. It stands
+%  part-way down printed p. 125, below the close of the
+%  preceding chapter. The head is therefore NOT pre-placed here:
+%  the agent transcribing p. 125 writes it, in its printed
+%  position, as  \kapitel{Tredie Kapitel.}{Himlens Mechanik.}
+
+%  --- A. Verdensbygningen  (pp. 125–146) ---
+
+% [text to be added: pp. 125--138]
+
+% [text to be added: pp. 139--146]
+
+%  --- B. Solsystemet og Universet  (pp. 147–171) ---
+
+%  MATHEMATICAL — work from the image; the OCR is not a witness here.
+% [text to be added: pp. 147--155]
+
+%  MATHEMATICAL — work from the image; the OCR is not a witness here.
+% [text to be added: pp. 156--164]
+
+%  MATHEMATICAL — work from the image; the OCR is not a witness here.
+% [text to be added: pp. 165--171]
+
+%  --- C. Solsystemets Oprindelse  (pp. 172–196) ---
+
+%  MATHEMATICAL — work from the image; the OCR is not a witness here.
+% [text to be added: pp. 172--180]
+
+% [text to be added: pp. 181--196]
+
+
+% ======================================================================
+%  Anden Deel — Første Kapitel: Elementerne   (printed pp. 197–249)
+% ======================================================================
+
+\deel{Anden Deel.}{Den elementære Natur.}
+
+\kapitel{Første Kapitel.}{Elementerne.}
+
+%  --- A. Elementernes Oprindelse  (pp. 197–214) ---
+
+% [text to be added: pp. 197--214]
+
+%  --- B. Elementer og Naturgrund  (pp. 215–232) ---
+
+% [text to be added: pp. 215--232]
+
+%  --- C. Elementer og Legemer  (pp. 233–249) ---
+
+% [text to be added: pp. 233--249]
+
+
+% ======================================================================
+%  Anden Deel — Andet Kapitel: Elementære Functioner   (printed pp. 250–317)
+% ======================================================================
+
+\kapitel{Andet Kapitel.}{Elementære Functioner.}
+
+%  --- A. Dynamiske Functioner: Lys og Varme  (pp. 250–273) ---
+
+%  MATHEMATICAL — work from the image; the OCR is not a witness here.
+% [text to be added: pp. 250--258]
+
+% [text to be added: pp. 259--273]
+
+%  --- B. Leddelende Functioner: Magnetisme og Elektricitet  (pp. 274–293) ---
+
+%  MATHEMATICAL — work from the image; the OCR is not a witness here.
+% [text to be added: pp. 274--287]
+
+% [text to be added: pp. 288--293]
+
+%  --- C. Legemdannende Functioner: Chemisme  (pp. 294–317) ---
+
+% [text to be added: pp. 294--307]
+
+% [text to be added: pp. 308--317]
+
+
+% ======================================================================
+%  Anden Deel — Tredie Kapitel: Det elementære Hele: Jordlegemet   (printed pp. 318–374)
+% ======================================================================
+
+\kapitel{Tredie Kapitel.}{Det elementære Hele: Jordlegemet.}
+
+%  --- A. Jordlegemets Sammensætning  (pp. 318–345) ---
+
+% [text to be added: pp. 318--331]
+
+% [text to be added: pp. 332--345]
+
+%  --- B. Jordklodens historiske Udvikling  (pp. 346–361) ---
+
+% [text to be added: pp. 346--361]
+
+%  --- C. Jordlegemet som elementær Organisme  (pp. 362–374) ---
+
+%  MATHEMATICAL — work from the image; the OCR is not a witness here.
+% [text to be added: pp. 362--374]
+
+
+% ======================================================================
+%  Tredie Deel — Første Kapitel: Det organiske Livs Oprindelse   (printed pp. 375–444)
+% ======================================================================
+
+\deel{Tredie Deel.}{Den organiske Natur.}
+
+\kapitel{Første Kapitel.}{Det organiske Livs Oprindelse.}
+
+%  --- A. Liv og Organisme  (pp. 375–400) ---
+
+% [text to be added: pp. 375--388]
+
+% [text to be added: pp. 389--400]
+
+%  --- B. Organiske Grundformer  (pp. 401–423) ---
+
+% [text to be added: pp. 401--414]
+
+% [text to be added: pp. 415--423]
+
+%  --- C. Grundformernes Systematik  (pp. 424–444) ---
+
+% [text to be added: pp. 424--437]
+
+% [text to be added: pp. 438--444]
+
+
+% ======================================================================
+%  Tredie Deel — Andet Kapitel: Organiske Naturer   (printed pp. 445–508)
+% ======================================================================
+
+\kapitel{Andet Kapitel.}{Organiske Naturer.}
+
+%  --- A. Plantenaturen  (pp. 445–465) ---
+
+% [text to be added: pp. 445--458]
+
+% [text to be added: pp. 459--465]
+
+%  --- B. Dyrenaturen  (pp. 466–490) ---
+
+%  MATHEMATICAL — work from the image; the OCR is not a witness here.
+% [text to be added: pp. 466--474]
+
+%  MATHEMATICAL — work from the image; the OCR is not a witness here.
+% [text to be added: pp. 475--483]
+
+% [text to be added: pp. 484--490]
+
+%  --- C. Menneskenaturen  (pp. 491–508) ---
+
+%  MATHEMATICAL — work from the image; the OCR is not a witness here.
+% [text to be added: pp. 491--508]
+
+
+% ======================================================================
+%  Tredie Deel — Tredie Kapitel: Slutning: Natur og Aand   (printed pp. 509–549)
+% ======================================================================
+
+%  NOTE: this chapter head does NOT open a page. It stands
+%  part-way down printed p. 509, below the close of the
+%  preceding chapter. The head is therefore NOT pre-placed here:
+%  the agent transcribing p. 509 writes it, in its printed
+%  position, as  \kapitel{Tredie Kapitel.}{Slutning: Natur og Aand.}
+
+%  --- A. Naturen skabes af Aanden  (pp. 509–522) ---
+
+%  MATHEMATICAL — work from the image; the OCR is not a witness here.
+% [text to be added: pp. 509--517]
+
+% [text to be added: pp. 518--522]
+
+%  --- B. Naturen bæres af Aanden  (pp. 523–534) ---
+
+% [text to be added: pp. 523--534]
+
+%  --- C. Naturen forklares af Aanden  (pp. 535–549) ---
+
+% [text to be added: pp. 535--549]
+
+
+% ============================================================
+%  TRYKFEIL — the book's own errata leaf, unfoliated, working PDF 571.
+%  Transcribed as printed. Nielsen's corrections are NOT applied to the
+%  text above; each is noted in a % comment at its site instead, so that
+%  a reader sees both what was printed and what the author wanted.
+% ============================================================
+
+% ============================================================
+%  TRYKFEIL --- the book's own errata leaf.
+%
+%  WHERE IT IS. An unfoliated leaf following printed p. 549.
+%      working scan (Google)   PDF 571
+%      KB colour scan          PDF 569
+%  Its verso is blank in both copies (KB PDF 570). The leaf carries the
+%  errata table and NOTHING else: no colophon, no printer's name, no
+%  advertisement, no folio.
+%
+%  THE TWO COPIES AGREE THROUGHOUT, entry for entry and glyph for glyph.
+%  Every reading below was read off the image at high zoom on BOTH scans.
+%  The OCR of this leaf is not a witness and was not used: tesseract loses
+%  the column alignment, mangles the ditto marks, and misreads the four
+%  mathematical entries.
+%
+%  TYPOGRAPHY OF THE LEAF.
+%    - "Trykfeil." is centred and BOLD; it is the only bold line on the
+%      leaf. None of the book's heading macros fits an unfoliated errata
+%      leaf, so it is set here directly rather than with \kapitel etc.
+%    - A short centred rule stands under the heading, and a DOUBLE rule
+%      (two parallel lines, set right of centre) closes the table. Per the
+%      house rule \streg serves for both and the difference in the printed
+%      ornament is not reproduced. Two rules, therefore two \streg.
+%    - The leaf is set in a size smaller than the text: \small.
+%    - LETTERSPACING. The corrected reading is letterspaced wherever the
+%      corrected WORD differs from the printed one, and is NOT letterspaced
+%      where only punctuation or a single letter/label changes (pp. 180,
+%      183, 233, 443) or where the correction is mathematical (pp. 60, 79,
+%      160, 169, and the "= 0, o. s. v." of p. 163). Letterspacing is
+%      \emph{} here as everywhere in this edition. The pattern is regular
+%      and was checked entry by entry on both copies.
+%
+%  DITTO MARKS. The Side and Linie columns repeat by ditto, printed „ --
+%  the low double comma, the same sort as the book's opening quotation
+%  mark. They are transcribed AS PRINTED, and the EDITORIAL EXPANSION of
+%  each is given in the % comment heading its row, so that this fragment
+%  can be grepped as a lookup table without emending the page. Three rows
+%  print NO ditto at all in the Side column -- it is simply left blank --
+%  and are transcribed so: p. 163 lines 10 and 8 f. n., p. 178 line 9 f. o.
+%
+%  ABBREVIATIONS. f. o. = fra oven (from the top); f. n. = fra neden (from
+%  the bottom); læs = read. Line counting on the printed page INCLUDES the
+%  footnote lines and EXCLUDES the signature mark -- verified on p. 257,
+%  where "13 f. n." lands on the first line of the footnote, and on p. 357,
+%  where "2 f. n." lands on the last text line but one.
+%
+%  p. 257 AND p. 357 ARE TWO DIFFERENT ENTRIES, not a folio confusion. The
+%  book misprints p. 357's folio as "257" (see the file header), so the
+%  pair invites suspicion; both were checked against their pages and both
+%  are right. p. 257 line 13 f. n. is the footnote opening "Reflection
+%  (Tilbagekastning) og Refraction (Brydning)"; p. 357 line 2 f. n. reads
+%  "i den tertiære Perioder (Molassegruppen)".
+%
+%  PRINTER'S DEFECTS ON THE LEAF ITSELF, both copies, transcribed as printed:
+%    - p. 79 entry: the em-dash between the wrong and the corrected reading
+%      is MISSING -- the line reads "Q_k læs Q'_k". Every other entry on the
+%      leaf carries the dash.
+%    - p. 60 entry: the minus sign in the subscript of the corrected reading
+%      prints as two short strokes, "n--1", in both copies. The sense-reading
+%      n-1 is set here; the doubled stroke is a battered or doubled rule, not
+%      a second character.
+% ============================================================
+
+\clearpage
+
+% The heading is centred and bold; it is not one of the book's numbered heads.
+{\centering\large\textbf{Trykfeil.}\par}
+
+\streg  % short centred rule under the heading
+
+\begingroup
+\small
+\setlength{\tabcolsep}{4pt}
+\begin{center}
+\begin{tabular}{@{}l r l r l l@{}}
+% p. 25, line 11 f. o.: sin -> læs sine
+Side & 25 & Linie & 11 & f.\ o. & sin --- læs \emph{sine}\\
+% p. 60, line 1 f. n.: sidste Led i Tælleren (x-x_n) -> læs (x-x_{n-1})
+% „ = Side, „ = Linie (ditto in both columns)
+„ & 60 & „ & 1 & f.\ n. & sidste Led i Tælleren $(x-x_{n})$ --- læs $(x-x_{n-1})$\\
+% p. 79, line 1 f. o.: Q_k -> læs Q'_k   [NO em-dash printed; see header]
+% „ = Side, „ = Linie
+„ & 79 & „ & 1 & f.\ o. & $Q_{k}$ læs $Q'_{k}$\\
+% p. 113, line 8 f. n.: blive til -> læs blive til.
+% „ = Side, „ = Linie
+„ & 113 & „ & 8 & f.\ n. & blive til --- læs \emph{blive til.}\\
+% p. 136, line 14 f. o.: Hældning -> læs Heldning
+% „ = Side, „ = Linie
+„ & 136 & „ & 14 & f.\ o. & Hældning --- læs \emph{Heldning}\\
+% p. 140, line 2 f. n.: quiqvam -> læs quidqvam
+% „ = Side, „ = Linie
+„ & 140 & „ & 2 & f.\ n. & quiqvam --- læs \emph{quidqvam}\\
+% p. 160, line 13 f. n.: c/mu i Tælleren -> læs c^2/mu
+% „ = Side, „ = Linie
+„ & 160 & „ & 13 & f.\ n. & $\dfrac{c}{\mu}$ i Tælleren --- læs $\dfrac{c^{2}}{\mu}$\\
+% p. 163, line 13 f. o.: det Antilogiske -> læs det Antilogiske,
+% „ = Side, „ = Linie
+„ & 163 & „ & 13 & f.\ o. & det Antilogiske --- læs \emph{det Antilogiske,}\\
+% p. 163, line 10 f. n.: være med -> læs være, med
+% Side column BLANK on the leaf (no ditto printed); „ = Linie
+ & & „ & 10 & f.\ n. & være med --- læs \emph{være, med}\\
+% p. 163, line 8 f. n.: = 0; -> læs = 0, o. s. v.
+% Side column BLANK on the leaf (no ditto printed); „ = Linie
+ & & „ & 8 & f.\ n. & $=0$; --- læs $=0$, o.\ s.\ v.\\
+% p. 164, line 15 f. o.: pertuberede -> læs perturberede
+% „ = Side, „ = Linie
+„ & 164 & „ & 15 & f.\ o. & pertuberede --- læs \emph{perturberede}\\
+% p. 169, line 19 f. o.: E = 2e, -> læs ε = 2e,
+% „ = Side, „ = Linie. The corrected symbol is a Greek small epsilon,
+% lunate on both copies -> \varepsilon.
+„ & 169 & „ & 19 & f.\ o. & $E=2e$, --- læs $\varepsilon = 2e$,\\
+% p. 176, line 4 f. n.: Ingriben -> læs Indgriben
+% „ = Side, „ = Linie
+„ & 176 & „ & 4 & f.\ n. & Ingriben --- læs \emph{Indgriben}\\
+% p. 178, line 5 f. o.: dem. -> læs den.
+% „ = Side, „ = Linie
+„ & 178 & „ & 5 & f.\ o. & dem. --- læs \emph{den.}\\
+% p. 178, line 9 f. o.: hældende -> læs heldende
+% Side column BLANK on the leaf (no ditto printed); „ = Linie
+ & & „ & 9 & f.\ o. & hældende --- læs \emph{heldende}\\
+% p. 180, line 13 f. n.: c) Systemets -> læs b) Systemets
+% „ = Side, „ = Linie
+„ & 180 & „ & 13 & f.\ n. & c) Systemets --- læs b) Systemets\\
+% p. 183, line 9 f. n.: Qvadratet*) -> læs Qvadratet*).
+% „ = Side, „ = Linie. The correction adds the full stop after the
+% footnote mark; the mark itself is unchanged.
+„ & 183 & „ & 9 & f.\ n. & Qvadratet*) --- læs Qvadratet*).\\
+% p. 184, line 2 f. n.: ans -> læs aus
+% „ = Side, „ = Linie
+„ & 184 & „ & 2 & f.\ n. & ans --- læs \emph{aus}\\
+% p. 206, line 3 f. o.: tilstrækkelig; -> læs tilstrækkeligt;
+% „ = Side, „ = Linie
+„ & 206 & „ & 3 & f.\ o. & tilstrækkelig; --- læs \emph{tilstrækkeligt;}\\
+% p. 224, line 5 f. o.: mechaniske -> læs chemiske
+% „ = Side, „ = Linie
+„ & 224 & „ & 5 & f.\ o. & mechaniske --- læs \emph{chemiske}\\
+% p. 233, line 13 f. n.: B. -> læs C.
+% „ = Side, „ = Linie. A division label, not a word.
+„ & 233 & „ & 13 & f.\ n. & B. --- læs C.\\
+% p. 256, line 12 f. n.: vil -> læs ville
+% „ = Side, „ = Linie
+„ & 256 & „ & 12 & f.\ n. & vil --- læs \emph{ville}\\
+% p. 257, line 13 f. n.: Reflection -> læs Reflexion
+% „ = Side, „ = Linie. This is the real p. 257 (the footnote), NOT the
+% leaf whose folio misprints as "257"; see the header.
+„ & 257 & „ & 13 & f.\ n. & Reflection --- læs \emph{Reflexion}\\
+% p. 287, line 15 f. n.: Polentialet -> læs Potentialet
+% „ = Side, „ = Linie
+„ & 287 & „ & 15 & f.\ n. & Polentialet --- læs \emph{Potentialet}\\
+% p. 355, line 11 f. o.: Organismens -> læs Organismernes
+% „ = Side, „ = Linie
+„ & 355 & „ & 11 & f.\ o. & Organismens --- læs \emph{Organismernes}\\
+% p. 357, line 2 f. n.: Perioder -> læs Periode
+% „ = Side, „ = Linie. This is the leaf whose folio misprints as "257".
+„ & 357 & „ & 2 & f.\ n. & Perioder --- læs \emph{Periode}\\
+% p. 407, line 6 f. o.: anticulerede -> læs articulerede
+% „ = Side, „ = Linie
+„ & 407 & „ & 6 & f.\ o. & anticulerede --- læs \emph{articulerede}\\
+% p. 414, line 4 f. n.: tl -> læs til
+% „ = Side, „ = Linie
+„ & 414 & „ & 4 & f.\ n. & tl --- læs \emph{til}\\
+% p. 418, line 4 f. o.: betegne -> læs betegner
+% „ = Side, „ = Linie
+„ & 418 & „ & 4 & f.\ o. & betegne --- læs \emph{betegner}\\
+% p. 430, lines 2--3 f. n.: Phænomer -> læs Phænomener
+% „ = Side, „ = Linie. The only entry spanning two lines; the printed
+% line reference is "2-3" with a short dash.
+„ & 430 & „ & 2--3 & f.\ n. & Phænomer --- læs \emph{Phænomener}\\
+% p. 443, line 13 f. o.: Synsvidde -> læs Synsvidde.
+% „ = Side, „ = Linie. The correction adds the full stop only.
+„ & 443 & „ & 13 & f.\ o. & Synsvidde --- læs Synsvidde.\\
+% p. 479, line 2 f. o.: Cascuta -> læs Cuscuta.
+% „ = Side, „ = Linie. Last entry on the leaf; the full stop after
+% "Cuscuta" is printed and may simply close the table.
+„ & 479 & „ & 2 & f.\ o. & Cascuta --- læs \emph{Cuscuta.}\\
+\end{tabular}
+\end{center}
+\endgroup
+
+\streg  % the leaf closes with a DOUBLE rule; \streg per the house rule
+
+\end{document}
