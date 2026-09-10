@@ -183,6 +183,12 @@
 %          (x, y, s, t, g) stay as plain text, as printed.
 %        * spacing.py flags algebra as letterspacing. Ignore it on formula
 %          lines entirely; it is only a witness on running prose.
+%        * PRIMES AND RAISED NUMERALS ARE BOTH USED, AND INCONSISTENTLY.
+%          p. 276 prints e' with a true prime; pp. 279, 280 and 287 print m1
+%          and e1 with a RAISED NUMERAL ONE; p. 150's note likewise sets y1
+%          with a numeral (flag and foot serif, identical to the 1 in
+%          1 + e cos v). Both are read off the KB copy and both are kept as
+%          printed. Do not normalise them to one another.
 %        * ENUMERATIONS KEEP ONE FACE. Where a member of an enumeration carries
 %          a prime or an index, the whole enumeration is set in math, so that
 %          m, m', m'' does not change face part-way along the list. Set in
@@ -222,9 +228,15 @@
 %      the margin can enter the OCR. Read the KB copy.
 %      TALLY so far: of the errata sites reached, the pencil had got to
 %      pp. 79, 113, 160, 163 (three entries), 176, 178 (two), 180, 183, 184,
-%      206, 224, 233, 256 and 257; it had NOT got to pp. 164 or 169, where the
-%      fault is genuinely in the type. So it is thorough but not exhaustive,
-%      and each site must be checked rather than assumed either way.
+%      206, 224, 233, 256, 257 and 287; it had NOT got to pp. 164 or 169,
+%      where the fault is genuinely in the type. So it is thorough but not
+%      exhaustive, and each site must be checked rather than assumed either
+%      way.
+%      A THIRD WAY THE PENCIL ENTERS THE TEXT: at p. 263 the hand draws a
+%      small cross in the margin before "At Varmen", and BOTH OCR witnesses
+%      render it as the letter t. So the marks reach the transcription not
+%      only as forged accents and marginal words but as ordinary letters
+%      inside ordinary words.
 %
 %  EMPHASIS IS NEVER SETTLED ON THE WORKING SCAN. This is the single most
 %      important methodological point in this file, and it was established by
@@ -250,6 +262,12 @@
 %           reports is still good evidence; a single flagged word is not, and
 %           loose justification mimics letterspacing. It also MISSES real
 %           emphasis — inside quotation marks, and two-letter words.
+%      THE TRAP AT WHOLE-PARAGRAPH SCALE: on p. 284 the entire Hegel
+%      quotation reads BOLD on the working scan and is plain roman on the KB
+%      copy. Nothing is underlined there and nothing is letterspaced -- it is
+%      the thresholding alone, over a whole quoted passage. If a long passage
+%      looks emphatic, that is the likeliest explanation.
+%
 %      Separately, the working copy carries a previous reader's PENCIL
 %      underlining and marginal strokes (pp. 35, 37, 63, 64, 66 so far), which
 %      tesseract transcribes and which can read as emphasis. The KB copy, being
@@ -303,10 +321,11 @@
 %      shape at other division boundaries -- the Indhold's spans overlap by a
 %      page precisely because divisions open part-way down a leaf.
 %
-%  STATE. Batches 1--23 (pp. 1--258) and the Trykfeil leaf transcribed and
+%  STATE. Batches 1--26 (pp. 1--293) and the Trykfeil leaf transcribed and
 %      verified. FØRSTE DEEL COMPLETE (pp. 1--196). Anden Deel: Første Kapitel
-%      complete (pp. 197--249), Andet Kapitel begun. Nearly half the book.
-%      25 batches outstanding, plus the Indhold and the Indledning. See RESUME-NOTES.md for the production log and
+%      complete, Andet Kapitel complete through division B (p. 293). PAST THE
+%      HALFWAY MARK. 22 batches outstanding, plus the Indhold and the
+%      Indledning. See RESUME-NOTES.md for the production log and
 %      BATCH-AGENT.md for the batch brief.
 % ============================================================
 
@@ -10092,15 +10111,1383 @@ er kun et Beviis paa, at den hverken er eller vil være Philosophie.
 % S. 258 slutter midt i Ordet „fastholder“: Orddelingen løber over
 % Batchgrændsen, og S. 259 begynder med „holder“.
 Physiken fast\-%
+% --- p. 259 ---
+% Orddelingen fra S. 258 („Physiken fast-“) opløses her: S. 259 begynder
+% med „holder“, midt i Ordet og uden ny Paragraf.
+holder sit Standpunkt, kjender sine Opgaver og veed, hvad den som
+forskende Videnskab har at gjøre. Den kan, hvad Lysets Naturside
+angaaer, ikke nøies med almindelige Tale\-%
+maader om „Oscilleren“, „Reflecteren“, „Manifesteren“; den udvikler
+Svingningslæren i et exact System af Functioner og Love. Idet Physiken
+udtrykkelig forudsætter Synsvirksom\-%
+% „er“ er spærret begge Steder; efterprøvet paa KB-Exemplaret.
+% spacing.py finder ikke tobogstavs-Fremhævelser.
+heden, lærer den ikke, hverken at Lysstyrken ligefrem \emph{er} et
+Qvadrat af Udsvinget, ei heller, at Svingningstiden \emph{er} Farven,
+saa at 500 Billioner Svingninger i Secundet ere Rødt og 733 Billioner
+Violet; men den lærer, at de for\-%
+skjellige Lysfornemmelser, som Øiet modtager, ere Virkninger af
+forskjellige tilsvarende Aarsager, og paaviser i denne Hen\-%
+seende nøiagtig, at Lysstyrken er en Function af Udsvinget, og Farven
+en Function af Svingningstiden. Physiken lærer ikke, at Lysstraalerne
+ere materielle Linier, der udskydes knippeviis fra det lysende Legeme;
+den lærer tvertimod, at de ere mathematiske Linier, Radier d. v. s.
+Retningslinier, paa hvilke Bølgefladerne staae lodrette. Udtryk som
+Lyskegler, Lyscylindre, Straalebundter o. desl. ere deels geometriske
+Formbestemmelser, deels figurlige Betegnelser, sigtende til at sikkre
+Forestillingen og understøtte Anskuelsen. Optiken deler og sammensætter
+Farvestraalerne, ikke i materiel For\-%
+stand, men paa tilsvarende Maade som Mechaniken deler og sammensætter
+% Fodnotetegnet staaer EFTER Punktummet: „Kræfterne.*)“. Een Fodnote
+% paa Bladet.
+Kræfterne.\footnote{Dette kan blandt Andet sees deraf, at Cauchy
+f. Ex. indfører imaginære Bølger i Analysen. Jvnfr. Holten. Anf.
+Skrift. S. 280.} Physiken kan, hvad Bølgetheo\-%
+rien angaaer, umulig antage, at det hvide Lys er en Sum af deri
+tilværende Farver; thi naar alle Farver smelte sam\-%
+men i det Hvide, saa blive de jo netop ved denne Sammen\-%
+smeltning ophævede; Svingningerne for det hvide Lys maae da danne en
+Fællesbølge, hvori de særskilte Farvebølger ere optagne og indeholdte.
+Derimod antager den, og det med
+% Arkmærket „17*“ staaer nederst paa S. 259; det er ikke Text og
+% gjengives ikke.
+% --- p. 260 ---
+fuld Ret, at det hvide Lys er den Virkelighed, hvori alle Farverne have
+deres Mulighed, at de forskjellige Farver fremkomme, naar Lyset brydes,
+og Fællesbølgen skiller sig i særskilte Bølger med særskilte
+Svingningstider.
 
-% [text to be added: pp. 259--273]
+Havde den speculative Naturphilosophie seet sig i Stand til at gjøre
+lige saa tilstrækkeligt Rede for de subjective Functioner i
+Synsvirksomheden, som Physiken har gjort Rede for de objective i
+Naturvirksomheden: da vilde det have staaet anderledes til med
+Opfattelsen af Lysets Idealitet, end det nu gjør.
+
+At sætte Lysets Idealitet i „Materiens rene Selvhed“ er meningsløst,
+thi Materien har slet ingen Selvhed; det er just Materiens Charakteer
+at være det selvløse Andet. Der gives lige saa lidt nogen umiddelbart
+og ligefrem lysende Materie, som der gives nogen seende, sig selv
+anskuende Materie. Det i Materien Lysende er en Virksomhed, men en
+Virksomhed i Andethedens Form; derfor kan dette Lysende hverken lyse
+for sig selv eller for nogensomhelst Materie. Dette er Modsigelsen, at
+det i Materien Lysende ikke kan lyse, med mindre det optages i en
+Synsvirksomhed, altsaa i en Selvvirksomhed; først idet
+Selvvirksomheden indtræder, faaer Naturen, saa at sige, Gavn af
+Virksomheden i Andet, thi nu kan det Lysende lyse, nu kan Materien
+blive belyst.
+
+At Synsvirksomheden, skjøndt betinget og bestemt ved
+mechanisk-dynamiske Aarsager, gjør det, som ikke i sig selv er Lys, til
+et Lysende, gjør Functioner af Andet til Func\-%
+tioner af sit Eget, af Selvheden, er i Idealitetens Form et kategorisk
+Udtryk for Lysets subjective Væsen.
+
+% Det græske Bogstav er læst paa KB-Exemplaret: γ, ikke „7“ eller „y“,
+% som OCR'en giver. Overskriften er indløbende og spærret; Bindestregen
+% i „reel-ideelle“ staaer i Trykken (efterprøvet paa KB-Exemplaret).
+\subrunin{γ) Lysets reel-ideelle Natur.} Fra objectiv Side er Lyset en
+Function af den svingende Æther; deri bestaaer dets Realitet. Fra
+subjectiv Side er det en Function af det seende Selv; deri bestaaer
+dets Idealitet. Lyset er altsaa en uopløselig, i sit Væsen reflecteret
+Eenhed af Reelt og Ideelt, af Objectivt og Subjectivt. Ikke desto
+mindre er
+% --- p. 261 ---
+denne uopløselige Eenhed dog paa Endelighedens Trin op\-%
+løselig; den objective Synsvirksomhed falder i Virkeligheden udenfor
+den subjective. Lyset skinner jo, enten vi see det eller ikke; Dagens
+Sol vilde lyse over Jorden, om ogsaa alle Dyrs og Menneskers Øine vare
+lukkede. Saa stærk er Grund\-%
+fornemmelsen af det Selvgyldige i Lysets Skin, dets vexlende Klarhed og
+Tingenes Farver, at vi hvert Øieblik fristes til at lægge dets
+Idealitet over i den ydre Natur: kun naar vi ved at conferere med den
+speculative Naturphilosophie ret ere komne til Besindelse, forgaaer
+Fristelsen.
+
+Den Modsigelse, at Lyset i Naturen ikke har Idealitet, og at Lysets
+Natur dog er baade reel og ideel, denne til\-%
+syneladende, i Skinnet som Skin tilværende Modsigelse kan fra et blot
+endeligt Synspunkt ikke løses; dens Løsning er i Grundforholdet af
+Natur og Aand. Dersom Aanden, den i sig almægtige Aand, der begrunder
+og bærer Alnaturen, blot var et tænkende, ikke tillige et anskuende,
+seende Væsen, saa vilde Naturlysets Begreb i Virkeligheden være lige
+saa modsigende som Begrebet af en rund Fiirkant. Men Aanden er
+anskuende, seende, objectiverende Selvmagt; i Selvmagtens Objectivering
+har Lyset en objectiv naturlig, af al endelig Seen uafhængig Idealitet.
+
+Naar det imidlertid særlig fremhæves, at Naturlyset, det Lys, hvorom
+her tales, er, ikke et aandeligt, men et sandseligt Lys, saa reiser sig
+en Indvending. Sandseligt er Lyset jo kun, forsaavidt det kan sandses
+og sees med sand\-%
+selige Øine. Skulde Aanden ved sin Seen og Anskuen give Lyset sandselig
+Idealitet, da maatte denne Seen og Anskuen jo være sandselig, ikke
+aandelig; Aanden som Aand maatte da have sandselige Øine. Vi maae, hvad
+den Slags Ind\-%
+vendinger angaaer, afvise alle løse Forestillinger af en løs\-%
+% Blyantsstreger langs Margenen paa S. 261 (den tidligere Ejers Haand);
+% tesseract læser dem som „|“ i Linieanfangene. De ere ikke Text.
+agtig Indbildningskraft. Her spørges ikke, hvilke og hvor\-%
+mange Øine Aanden har, eller hvorledes en Aand seer ud med sandselige
+Øine; her spørges, hvorledes det er muligt,
+% --- p. 262 ---
+at Lyset kan have en af endelig Seen uafhængig Idealitet, og Svaret
+lyder: det er kun muligt i Kraft af en uendelig Seen; kun muligt
+derved, at hele Naturen har sin Idealitet af Aanden.
+
+At Naturens Idealitet og dens sandselige Realitet ikke endelig
+sammensættes, men ere begrundede i oprindelig Een\-%
+hed, kan erkjendes af Grundmediet. I Grundmediet have de ueensartede
+% Fodnotetegnet staaer FORAN Kommaet: „Functioner*), deres“. Een
+% Fodnote paa Bladet.
+Aarsager, hvis Samvirken er Særkjendet for alle æsthetophysiske
+Functioner\footnote{Jvnfr. Grundideernes Logik I. S. 369--87.}, deres
+fælles Udspring. Fra Eenheden i Grundmediet slaaer Adskillelsen ud i
+Gjen\-%
+standsmediet; herpaa beroer al Endelighedens Udstykning. Udvortes seet,
+staae Øiet og Lyset i et tilfældigt Forhold; de kunne mødes tilfældig
+og skilles tilfældig, thi Øiet kan være uden Lys, og Lyset uden Øie.
+Men i Natur og Væsen ere Øiet og Lyset hinanden forudsættende
+Begreber, Real\-%
+begreber af samme Begriben: Lysets Begreb er oprindelig reflecteret i
+Øiets Begreb, ligesom Øiets Begreb, hvad dets Bygning noksom viser, er
+reflecteret i Lysets Begreb: paa den dobbeltsidige Reflexion af
+Lysbegrebet i Ætheren og Lysbegrebet i Øiet beroer Lysets reel-ideelle
+Natur.
+
+% Indløbende Overskrift, efterprøvet paa KB-Exemplaret: „Varmen.“ er sat
+% med halvfed Skrift, „b)“ med almindelig Antiqva. Denne Udgave gjengiver
+% ikke Forskjellen mellem halvfed og spærret; se Hovedet.
+\runin{b) Varmen.} Ogsaa om Varmen gjælder det, at det Objective
+bestemmes subjectivt; Følelsen er for Varmen, hvad Synet er for Lyset.
+Ikke desto mindre viser her sig dog en Forskjel; thi i Læren om Varmen
+spiller den udvortes umid\-%
+delbare Objectivitet en langt mere fremtrædende Rolle end i Læren om
+Lyset. I alle Lysphænomener maa Lysvirkningen uafbrudt bestemmes ved
+Synet; men saaledes kunne Varme\-%
+phænomenerne ikke bestemmes ved Følelsen. Følelsen er et høist
+ufuldkomment Varmemaal; saa maa den objective Side, de Forandringer,
+som Varmen bevirker i Legemerne, Udvi\-%
+delsen navnlig, fra Begyndelsen af fremhæves. Udvidelsen
+% --- p. 263 ---
+ligger til Grund for Constructionen af Thermometret. Ved Thermometret
+forandres det Subjective i Opfattelsen til et Objectivt for Synet, den
+objective Sands træder i Følelsens Sted: Varmen, skjøndt usynlig,
+bliver synlig. Men uagtet Varmen er anderledes reel end Lyset, vil det
+dog i god Overeensstemmelse med Physiken kunne godtgjøres, at ogsaa den
+har sin Idealitet, og at det netop er denne Idealitet, der begrunder
+dens reelle Virksomhed.
+
+% Det græske Bogstav er læst paa KB-Exemplaret: α, ikke „a“ eller „&“,
+% som OCR'en giver. Overskriften er indløbende og spærret.
+\subrunin{α) Varmens ideelle Væsen.} Physiken taler om „den ubekjendte
+Aarsag til det, vi kalde Varme“. Hvorledes det i Grunden forholder sig
+med Forestillingen om bekjendte Virkninger af en ubekjendt Aarsag, er
+allerede oplyst i Læ\-%
+ren om Kraften. Vi have, hvad Varmen angaaer, endnu kun at paavise,
+hvorledes Aarsagsbegrebet oprindelig forhol\-%
+der sig til Begrebet af den elementære Function. I Kjends\-%
+gjerningens Form, altsaa udenfor Begrebet, bliver Functionen
+sammenstykket af endelige Forudsætninger. Varmens Aarsag, det
+Varmende, forestilles som et Noget for sig, et ubekjendt Stof, medens
+Virkningen, den Forandring, som foregaaer med det opvarmede Legeme,
+iagttages for sig og inddrages under det Bekjendte. Opvarmingen,
+Functionen selv, bliver da fra dette Synspunkt baade uforklarlig og
+forklarlig: uforklarlig, forsaavidt den har en ubekjendt Aarsag;
+forklarlig, forsaavidt de synlige Virkninger lade sig iagttage.
+Ander\-%
+% Et Blyantskors staaer foran „At Varmen“ (den tidligere Ejers Haand);
+% begge OCR-Vidner læse det som Text („t“). Det er ikke Text.
+ledes, naar Functionen opfattes efter sit Begreb, altsaa fra Væsenets
+Side. At Varmen væsenlig bestaaer i en Virk\-%
+somhed, vil vist Ingen negte. Man kan nu foreløbigt gjøre sig hvilke
+Forestillinger om det Materielle i Aarsagen, man vil, saa er det dog
+uimodsigeligt, at det Varmende er en Aarsag, der udtrykkelig maa
+bestemmes og kjendes af sine Virkninger. Skulde Varmen uden videre være
+Egenskab ved et Varmestof, og et Legemes Opvarming alene bestaae i, at
+det varme Stof i ringere eller større Mængde trængte ind i Legemet, saa
+var der slet ingen Varmevirksomhed: Opvar\-%
+% --- p. 264 ---
+mingen selv var en reen Indbildning. Varmestoffet bliver jo ikke
+opvarmet, thi det er varmt. Legemet bliver heller ikke opvarmet, thi
+Varmen i Legemet vedkommer egenlig ikke Legemet; det er ifølge denne
+Forudsætning ikke Legemet, men Varmestoffet, hvori Varmen er, og
+Varmestoffet er varmt. Vil man nu ikke blive staaende ved den tomme,
+intetsigende Forestilling, at det Varme er et Varmestof og Varmestoffet
+det Varme: saa maa man nødvendig indrømme, at Varmen er Virksomhed, og
+at det, der varmes, lige saa vel deeltager i Virksomheden, som det, der
+varmer. At der er Noget, som varmer, beroer paa, at der er Noget, som
+modtager Varme, som lader sig varme. Men det: at modtage Varme, lade
+sig varme, er lige saa vist betinget af en Virksomhed, som det: at
+varme. Det Virkende og det Lidende falde ikke som to Ting ud fra
+hinanden: det Virkende er lidende, og det Lidende virkende. Her er ikke
+en ubekjendt Aarsag i udvortes Modsætning til en bekjendt Virkning, thi
+Aarsagen reflecteres i sin Virkning, og Virkningen i sin Aarsag: den
+elementære Function er en Function af dynamisk Vexelvirk\-%
+ning. Varmen som Aarsag, Varmen som Virkning og den til
+Vexelvirkningen svarende Opvarming ere Sidebegreber af eet og samme
+Naturbegreb, Varmens Realbegreb. Dette Realbegreb er Varmens Idealitet.
+
+Betragtet for sig som en almindelig, i sine Virkninger reflecteret
+Aarsag, er Varmen ikke en extensiv, men en in\-%
+tensiv Størrelse. Den stiger og synker i continuerlige Over\-%
+gange, og der er lige saa lidt nogen absolut Grændse for dens Synken
+som for dens Stigen. Den hele Varme er i hver Varmegrad, og dog er
+Varmen forskjellig fra sig selv i sine forskjellige Grader. Den har
+efter sin Idealitet alle Betingelser indesluttede i sit Realbegreb; den
+voxer og af\-%
+tager i sig selv, ved sig selv, ud af sig selv: der er Intet udenfra,
+som kommer til enten at give eller at borttage Varme.
+
+% --- p. 265 ---
+Men, indvender man, Legemerne, der opvarmes, komme jo dog til udenfra!
+Det er, hvad Væsenet angaaer, en stor Misforstaaelse. Ligesom Aarsagen
+maa reflectere sig i sine Virkninger, saaledes maae igjen de mange paa
+Legemerne reflecterede Virkninger reflectere sig i Aarsagen. Hvad
+Le\-%
+gemerne i andre Henseender ere for sig og hvorfra de komme, vedkommer
+ikke Varmen; kun hvad de efter deres Deel\-%
+agtighed i Varmevirksomheden vise sig at være, vedkommer Varmen. De
+legemlige Tilstandsformer have ingen Bestaaen udenfor eller ved Siden
+af den almindelige Varme; de ere tvertimod Gjennemgangsformer for
+bestemmende Varmevirk\-%
+somhed, Phænomener af Varmens Væsen, Functioner af be\-%
+stemte Varmegrader. At Tilstandsformerne staae i Varmens Tjeneste og
+udgjøre Momenter af Varmens Begreb, kan sees paa Overgangene. Gaaer et
+Legeme over fra fast til fly\-%
+dende eller fra flydende til luftformig Tilstand, saa bindes der Varme;
+er Overgangen den omvendte, saa frigjøres der Varme. Heraf sees, at
+Varmen kommer til Existens i Form af legemlige Tilstande, at hver
+Tilstandsform for sig udtryk\-%
+kelig repræsenterer en vis bestemt Kapital af Varme. At Varmen bindes,
+betyder, at Kapitalen forøges, fordi den ind\-%
+trædende Tilstand selv er Maalet for den forøgede Kapital; at Varmen
+frigjøres, betyder, at der skeer et Afdrag paa Kapitalen, fordi den
+indtrædende Tilstand netop er Existens\-%
+udtrykket for den formindskede Kapital. Gjøres Varmefylden til Maal,
+saa gjentager sig det Samme: Legemerne maales med hverandre, idet de
+maales med Varmen: men Varmen maales formedelst Legemerne med sig selv,
+thi der maales jo med Varmeeenheder. Fra dette Synspunkt viser det sig,
+at de iøvrigt forskjelligartede Legemsbegreber alle ere ind\-%
+begrebne i Varmens almene Realbegreb; det er Varmens ideelle Væsen.
+
+% Det græske Bogstav er læst paa KB-Exemplaret: β, ikke „P“ eller „ß“,
+% som OCR'en giver. Overskriften er indløbende og spærret.
+\subrunin{β) Varmens reelle Væsen.} Fra Idealitetens Synspunkt gaaer
+Virken og Virksomhed op i Reflecteren og
+% --- p. 266 ---
+Begriben; men Magtreflexionen fordrer tillige det Omvendte, at nemlig
+den virkelige Begriben bliver paa reel Maade ud\-%
+trykt i Virken og Virksomhed. For Reflexion og Begreb ere de virksomme
+Led Reflexer, Momenter, Sidebestemmelser; for den sandselige,
+udadgaaende Virksomhed, den i Kjends\-%
+gjerninger synlige Virkelighed, ere Realbegrebets væsenlige Momenter
+existerende, virksomme Led. Saaledes faaer Var\-%
+men sin Realitet i Kraft af sit Realbegreb. Varmen som almindelig
+Aarsag, maa da, ligesom Lyset, have sit stofagtige Grundlag og deri en
+særlig Bestaaen for sig. I Modsætning hertil optræde saa de
+forskjellige Legemer, hvert med sin materielle Selvstændighed, og komme
+udenfra ind under den i forskjelligt Maal sig meddelende Varme og
+meddele igjen hverandre Varme. Opvarmingen, som netop beroer paa, at
+den reelle Modsætning af Varme og Legeme omsættes i reel Eenhed, faaer
+herved Charakteer af materiel Virksomhed. At en virkelig
+Modsætningseenhed umulig kan opfattes som ligefremt værende, er let at
+indsee. Den umiddelbart væ\-%
+rende Modsætningseenhed er nemlig en Modsigelse, efterdi den er
+sammensat af to hinanden udelukkende Bestemmelser. Sættes Modsætningen
+værende, saa er Eenheden udelukket; sættes Eenheden værende, saa er
+Modsætningen udelukket: Modsigelsens Løsning er Virksomhed.
+Virksomheden, Op\-%
+varmingens dynamiske Function bestaaer i en uophørlig Om\-%
+sætten, en Vexelvirkning, hvorunder Eenheden gaaer frem af
+Modsætningen, saa at Varmen bliver legemlig, og Legemerne varme, og
+Modsætningen igjen af Eenheden, saa at der dog er en virkelig Forskjel
+mellem Varmen og Legemerne. Her\-%
+ved er Varmens reelle Væsen bestemt i Almindelighed.
+
+% „Hvorledes“ er spærret; efterprøvet paa KB-Exemplaret.
+Skal dette virkelige Væsen nu nærmere undersøges; skal Undersøgelsen
+gaae i det Enkelte; er det Virksomhedens indre materielle
+\emph{Hvorledes}, der er Undersøgelsens Gjen\-%
+stand, da har Physiken vistnok Grund til at tale om det „Ubekjendte“ i
+Varmens Aarsag. Det Ubekjendte, saaledes
+% --- p. 267 ---
+forstaaet, bliver ad Iagttagelsernes Vei at opdage ved en Tilnærmelse.
+Det ligger nær at lade Varmen have samme Grundlag som Lyset; saa
+antager Physiken da, at Varmen i Analogie med Lyset maa beroe paa
+Svingninger i Ætheren. Det Realbegreb, hvortil Naturphilosophien har at
+% „Analogie“ er spærret; efterprøvet paa KB-Exemplaret.
+holde sig, er altsaa Begrebet \emph{Analogie}.
+
+Som Kjendsgjerningsbegreb viser Analogien overalt i Ligheden en
+kjendelig Ulighed, men i Uligheden atter en kjendelig Lighed; thi
+Ligheden maa i Grundlaget være det Overgribende. Hvad Straalevarmen
+angaaer, staaer Ligheden med Lyset i Forgrunden; hvad Varmeledningen og
+en Deel andre Phænomener angaaer, synes det derimod som om Ulig\-%
+heden var i Begreb med at tilsløre Ligheden. Det er en bekjendt Sag, at
+Varmen kan udbrede sig i Straaler ligesom Lyset; at Varmestraalerne
+brydes og brydes forskjelligt, lige\-%
+% Lighedstegnet er sat i Mathematik for Afstandens Skyld; i Trykken
+% staaer det som et almindeligt Lighedstegn midt i Prosaen.
+som Lysstraalerne, at de tilbagekastes efter samme Love: Udfaldsvinklen
+$=$ Indfaldsvinklen o. s. fremdl. Hvad For\-%
+skjellen mellem gjennemsigtige og uigjennemsigtige Legemer er for
+Lyset, det er --- hvad Melloni har viist --- Forskjellen mellem
+gjennemstraalelige (diathermane) og uigjennemstraale\-%
+lige (athermane) Legemer for Varmen. I alt dette er Lig\-%
+heden paafaldende. Men Varme er ikke Lys; Uligheden kommer da ogsaa
+tilsyne, blandt Andet deri, at mørke Le\-%
+gemer, Legemer, som ikke udstraale Lys, kunne udstraale Varme. Saa
+optager Analogien Uligheden i Ligheden, og Forklaringen er, at de
+blotte Varmestraaler, om de end, hvad Tyndall nylig har viist, kunne
+gaae igjennem Øiets Vandmedium, dog ikke kunne paavirke Synsnerven,
+fordi Bølgerne ere for brede og Svingningerne for langsomme.
+
+Lighedens Bekræftelse gjennem Uligheden sees paa en slaaende Maade,
+blandt Andet deraf, at et mørkt Legeme, et Stykke Jern f. Ex., som
+under Ophedningen udsender be\-%
+standig mere og mere brydbare Straaler, bliver lysende, idet
+% --- p. 268 ---
+det bliver glødende, først rødglødende og omsider hvid\-%
+glødende.
+
+Anderledes, naar Varmen ikke forplanter sig ved Straa\-%
+ling, men ved Ledning, idet den ved umiddelbar Berøring gaaer over fra
+det ene Legeme til det andet og udbreder sig gjennem den hele Masse.
+Her bliver Uligheden saa stor, at Analogien ved første Øiekast synes at
+forsvinde; thi til den høist charakteristiske Forskjel mellem gode og
+slette Varmeledere svarer ingen saadan Forskjel mellem gode og slette
+Lysledere. Men Uligheden bøier sig atter ind under Ligheden, og
+Forklaringen er, at Varmebølgerne, de Æther\-%
+svingninger, der i Legemet frembringe Varme, tillige bringe Legemets
+egne Smaadele i Svingning. Den eiendommelige Vexelvirkning mellem de
+svingende Ætherdele og Legemets svingende Smaadele finder en
+Bekræftelse i Læren om Varme\-%
+fylden og Atomvarmen: Analogien er gjenoprettet.
+
+De Forsøg, der fra flere Sider (Redtenbacher og Clau\-%
+sius) gjøres paa at danne sig en ret tydelig Forestilling om Forholdet
+mellem Ætherens og Smaadelenes Svingninger, alt\-%
+saa om Vexelvirkningens indre Hvorledes, have ingen viden\-%
+skabelig Betydning som svævende Hypotheser, men vel en Betydning, om
+der derved engang kunde naaes en Forud\-%
+sætning, som virkelig begrundede Varmelovene, thi derved vilde der
+aabnes os et dybt og sikkert Indblik i Varmens reelle Væsen.
+
+% Det græske Bogstav er læst paa KB-Exemplaret: γ. Overskriften er
+% indløbende og spærret; Bindestregen i „ideel-reelle“ staaer i Trykken
+% (efterprøvet paa KB-Exemplaret).
+\subrunin{γ) Varmens ideel-reelle Natur.} Hvor inderlig
+Natursammenhængen er mellem Varmens ideelle og reelle Væsen, kan sees
+paa Lovene. Varmen gjennemtrænger og udvider alle Legemer; denne
+Grundlov er i lige Grad afgjørende for Legemernes og for Varmens Natur.
+Det Rea\-%
+listiske er, at Varmen og Legemerne have hver sin Natur, hvormed de
+indgaae i Vexelvirkning; det Idealistiske er, at de to Naturer i
+Grunden ere een Natur, og at det netop er Grundnaturens Eenhed, der
+gjør Vexelvirkningen og dermed
+% --- p. 269 ---
+Lovenes Opfyldelse mulig. Begge Opfattelser finde ligelig Bekræftelse i
+Læren om Cohæsionen.
+
+Ifølge den realistiske Opfattelse ville Legemets Grund\-%
+dele, dersom Varmen ikke virkede, kun trække sig sammen, hvisaarsag
+ethvert Legeme fastnes og stivner i Kulden; men den Grunddelene
+omgivende Æther virker ved sine Svingnin\-%
+ger frastødende, fjerner de zittrende Dele fra hverandre og bevirker en
+Udvidelse. Cohæsionen beroer altsaa paa en i Legemerne virksom
+Dobbeltnatur: Ætherdelenes og Grund\-%
+delenes. Den realistisk mechaniske Synsmaade opløser sig imidlertid ved
+sig selv i den idealistisk dynamiske. Det er en Kjendsgjerning, at det
+ingenlunde altid er forhøiet Varme, der foraarsager et Legemes
+Udvidelse, men at en Formind\-%
+% Gradtegnene ere sat i Mathematik; Tallene ere i Trykken almindelige
+% Ziffre med hævet Ringtegn.
+skelse af Varme kan bevirke det Samme. Reent Vand ved $4^{\circ}$
+udvider sig ved at opvarmes, men det udvider sig ogsaa ved at afkjøles.
+Nu vilde det dog være inconseqvent, hvis man paastod, at Aarsagen til
+Vandets Udvidelse over $4^{\circ}$ skulde ligge i de svingende
+Ætherdele, Aarsagen til dets Udvidelse under $4^{\circ}$ derimod i de
+svingende Vanddele. Men naar Ætherdelene og de legemlige Grunddele
+under den dy\-%
+namiske Vexelvirkning have lige væsenlig Andeel i Udvidel\-%
+sen, saa vil dette jo med andre Ord sige, at Varmens og Vandets Natur
+virke som een Grundnatur. De to Naturers Eenhed har sit exacte Udtryk i
+Loven; Loven er Væsen, thi den er Begreb.
+
+Betragte vi de særskilte Love, saa vender den realisti\-%
+ske Adskillelse tilbage: Dobbeltnaturen træder frem, men altid paa
+Eenhedens d. e. Idealitetens Grundlag. Loven for faste Legemers
+Udvidelse bliver i sin Almindelighed at ud\-%
+trykke saaledes: Coefficienten for Rumfangets Udvidelse er tre Gange
+saa stor som Coefficienten for Længdeudvidelsen. I dette Almindelige er
+Væsenseenheden, altsaa Idealiteten udtalt.
+Længdeudvidelsescoefficienten, det Tal, som angiver, hvor stor en Deel
+af sin Længde ved $0^{\circ}$ Legemet udvider
+% --- p. 270 ---
+sig under en Varmeforhøielse fra $0^{\circ}$ til $100^{\circ}$, er
+imidlertid forskjellig for de forskjellige Legemer, Platin, Glas, Jern,
+Kobber o. s. v. Falder nu denne Forskjel udenfor eller in\-%
+denfor Varmens Natur? I Realiteten falder den udenfor, thi
+Coefficienterne beroe paa Legemernes Eiendommelighed, og ere forsaavidt
+Varmen uvedkommende. Og dog falder den i Idealiteten indenfor; thi den
+virkelige Udvidelse maa jo ifølge Loven altid forudsætte en virkelig
+Coefficient, og den ene virkelige Coefficient er ved Bestemmelsen af
+Varmevirksom\-%
+heden lige saa væsenlig som den anden: Coefficienternes Forskjellighed
+er en nødvendig Betingelse for særlige Yttrin\-%
+ger af Varmens Natur. --- Loven for Smeltningen har sit almindelige
+Udtryk i de to Bestemmelser: Smeltepunktets Uforanderlighed og
+Varmebindingen. Det Realistiske sees nu strax af Smeltepunkternes
+Beliggenhed i forskjellige Høi\-%
+% Tegnet foran 39 er ÷, Nielsens Minustegn (jvnfr. S. 46 og Husreglen i
+% Hovedet), læst paa KB-Exemplaret. Det staaer her i løbende Prosa, ikke
+% i en Formel; Gradtegnene ere sat i Mathematik.
+der --- naar Isen smelter ved $0^{\circ}$, saa smelter hamret engelsk
+Jern ved $1600^{\circ}$ og Qvægsølv ved $\div\,39^{\circ}$ --- men den
+for\-%
+skjellige Varmebinding beviser igjen det Idealistiske, at nem\-%
+lig de legemlige Forskjelligheder lige saa meget angaae Var\-%
+men som Legemerne, thi den bundne Varme er jo lige saa vel Grunden til
+den forandrede Tilstand, som Tilstandsforan\-%
+dringen til Varmebindingen: den bundne Varmes Natur er Tilstanden, og
+Tilstandens Natur den bundne Varme. --- Naar Varmegraden i et Legeme,
+hvis Vægt er m, og hvis Varmefylde er c, forøges eller formindskes t
+% Bogstavstørrelserne m, c, t og Productet mct staae i Trykken som
+% opret Antiqva midt i Prosaen; de gjengives efter Husreglen som
+% almindelig Text, ikke i Mathematik.
+Grader, maa Legemet modtage eller afgive en Varmemængde, som kan
+udtrykkes ved Productet mct. Denne Lov, der i Productet udtaler, at
+Vægt, Varmefylde og Varmegrad ikke blot ere Factorer af mathematisk
+Multiplication, men Realmomenter i et virkeligt Naturbegreb, viser da
+ogsaa, ligesom i det Hele alle Varmelove, hvor inderlig Varmens og
+Legemernes Natur gjennem alle reale Forskjelligheder udgjøre een
+udelelig Grundnatur.
+
+Varme uden Legemer og Legemer uden Varme ere
+% --- p. 271 ---
+unaturlige Ting. Vel kommer det subjective Moment i Var\-%
+mens Væsen ikke saaledes umiddelbart tilsyne som i Lyset; men
+Realbegrebet, det gjennemgaaende Magtbegreb, der gjør de virkelige
+Forskjelligheder til Momenter for den virksomme Eenhed, er for Varmen
+lige saa subjectiv-objectivt som for Lyset. Varmen har ligesom Lyset
+sine reelle Betingelser og Kilder i Naturen, fordi den ligesom Lyset
+har sine ideelle Betingelser og Kilder, sit Realbegreb, i Selvmagtens
+uende\-%
+lige Begriben, i Aanden.
+
+% Indløbende Overskrift, efterprøvet paa KB-Exemplaret: „Lys og Varme.“
+% er sat med halvfed Skrift, „c)“ med almindelig Antiqva. Der staaer
+% lidt større Luft over Linien end mellem to almindelige Afsnit; det
+% gjengives ikke.
+\runin{c) Lys og Varme.} De dynamiske Functioner af Lys og Varme
+forudsætte, som vi have seet, et almindeligt materielt Grundlag,
+hvorpaa Lysvirksomheden bliver reel og Varmevirksomheden ideel, dog
+saaledes, at Idealiteten er i Lyset, Realiteten i Varmen det
+Overgribende. Der danner sig altsaa paa Grundlaget to med hinanden
+analoge og dog forskjelligartede Functionssystemer.
+
+At Lyset med al sin Realitet er idealistisk, sees paa dets Forhold til
+Synet. Hele den udvortes Verden er en Verden af Lysbilleder, fordi det
+er en Verden af Synsbille\-%
+der. Vi mene at see de virkelige, materielle Gjenstande selv, men det
+er, hvad Optiken tilstrækkelig beviser, en Indbild\-%
+ning. Det Rum med Gjenstande, vi see i Værelset, har lige saa lidt
+umiddelbar Virkelighed, som Rummet med de Gjen\-%
+stande, vi see i Speilet. Vel er der en virkelig Forskjel mellem det
+speilede Rum og Rummet i Værelset, men denne Forskjel bliver ikke
+objectiveret ved det blotte Syn. I Lyset for Synet er Alting Skin,
+Gjenskin, Vexelskin; Farvernes Forskjellighed beroer paa en
+Skinforskjel: det er en gjennem\-%
+gaaende Illusion. Men denne Illusion er intet Bedrag; den er tvertimod
+en Tingenes Idealitet, hvormed de vise sig som Phænomener i synlige
+Former og Forhold og deri lægge deres Væsen for Dagen.
+
+Men hvad er nu Legemverdenen i Forhold til Varmen?
+% --- p. 272 ---
+Varmen behersker Tilstandsformerne: alle faste Legemer kunne smelte.
+Vel har man hidtil, hedder det, ikke for\-%
+% Anførselstegnene staae som trykt: „om end ... Varmegrader“. — det
+% sluttende Tegn staaer FORAN Punktummet (efterprøvet paa
+% KB-Exemplaret). Citatet er sluttet paa Siden; Balancen forbliver nul.
+maaet at smelte Kul, „om end flere Physikere have paa\-%
+staaet at have fundet Spor af Smeltning paa Kanterne af de Diamanter,
+de have gjort Forsøg med. Efter Analogien maa man slutte, at der ikke
+gives noget fuldkomment usmelteligt Legeme, men at alle vilde smelte,
+naar man kun kunde frem\-%
+bringe tilstrækkeligt høie Varmegrader“. Efter Analogien maa man da
+ogsaa slutte, at alle Legemer ved tilstrækkelig høie Varmegrader kunne
+fordampe. Med Hensyn paa Var\-%
+men er hele den legemlige Verden efter sit materielle Væsen at opfatte
+som en Verden af Dampe; Forskjellen mellem disse Dampe er igjen, naar
+Varmen tænkes at overskride alle be\-%
+kjendte Grændser og stige til mythisk Hede, forsvindende. Alt er en
+Damp, og Materien en eensformig, rumopfyldende Væren; det er Varmens
+Dom om den legemlige Verden. Skjøndt der intet Illusorisk er i
+Varmevirksomheden, er Idealiteten dog kjendelig derpaa, at Legemernes
+umiddelbare Selvstændighed gaaer til Grunde i Varmen: Varmen er alt\-%
+saa den Inderlighedens Grund, hvorpaa deres ydre Frem\-%
+træden, deres eiendommelige Tilværen, i Almindelighed beroer.
+
+De to Functionssystemer, Lysets og Varmens, fremgaae af eet
+Grundsystem; i dette Grundsystem ere alle Legem\-%
+verdenens Realbegreber indesluttede; hele Naturen er af een Støbning,
+et Totalbegreb, der begrundes og bæres af uende\-%
+lig Begriben.
+
+Men at Legemerne i Kraft af det omfattende Total\-%
+begreb dog ogsaa have en egen Selvstændighed over for Lys og Varme, kan
+sees paa Egenskaberne. Farve f. Ex. er lige saa vel en Egenskab ved
+visse Legemer som ved Lyset. Det Legeme, der tilbagekaster de røde
+Straaler, er rødt; det, der tilbagekaster de blaae, er blaat. De i
+denne Henseende meget indviklede Forhold beroe lige saa meget paa
+Lege\-%
+% --- p. 273 ---
+% Fodnotetegnet staaer EFTER Punktummet: „Brydbarhed.*)“. Een Fodnote
+% paa Bladet.
+mernes indre Bygning, som paa Lysstraalernes
+Brydbarhed.\footnote{Jvnfr. Holten. Lysets Naturl. S. 190, 308 o. fl.
+St.} Hvad Varmen angaaer, saa vise Legemerne ved Forskjellen mellem
+deres Smeltepunkter, Varmebinding, Varmefylde, Gjen\-%
+% Forkortelsen staaer som trykt: „o. s. frmdls.“ (begge OCR-Vidner
+% stemme), medens S. 267 har „o. s. fremdl.“
+nemstraalelighed, Varmeledning o. s. frmdls., at det er dem, der ved
+deres forskjellige Egenskaber bringe noget Eiendom\-%
+meligt med ind i den almindelige Varmevirksomhed.
+
+Ved at sættes i Forhold til Lys og Varme sættes Le\-%
+gemerne tillige i Forhold til hverandre indbyrdes. Lader man
+Varmestraaler, som ere gaaede igjennem en Glasplade, falde paa en Plade
+af Allun, indsuges de næsten aldeles, hvorimod en Allunplade lader saa
+omtrent alle de Varme\-%
+straaler gaae igjennem sig, som i Forveien ere gaaede igjen\-%
+nem en Plade af Citronsyre. Lysstraaler, som ere gaaede igjennem et
+grønt Glas, kunne, som bekjendt, let gaae igjen\-%
+nem et andet grøntfarvet Glas, men indsuges, naar de falde paa et rødt
+Glas.
+
+Legemernes Eiendommelighed er et Individuelt, der tjener det
+Universelle og magtes af det Almene ved at gjøre det Modstand. Vare
+Legemerne saa uselvstændige, at Lyset virkelig kunde forvandle dem til
+Skin, da vilde det rene, ubrudte Lys uden Skygger og uden Farver være
+som det rene Mørke. Som Lysphænomener ere Legemerne Phæno\-%
+mener af deres eget Væsen, idet de ere Phænomener af Ly\-%
+sets Væsen. Hvis alle Legemer havde eet og samme Smelte\-%
+punkt, saa at Varmen samtidig kunde forvandle dem alle til Damp, da
+vilde den almene Varme være lige saa eensformig og betydningsløs, som
+den almene Damp i det almene Rum. Det kan da ogsaa siges, at Legemerne
+ved at være Phæno\-%
+mener af Varmens Væsen i Grunden ere Phænomener af deres eget Væsen.
+
+% S. 273 slutter midt i Ordet „Eiendommelighed“: Linien ender
+% „Eiendom-“, og S. 274 begynder med „melighed“. Orddelingen løber over
+% Batchgrændsen; næste Batch (S. 274--287) fortsætter umiddelbart.
+% Arkmærket „18“ staaer nederst paa S. 273; det er ikke Text.
+% Afdeling A slutter ikke her: Stregen og Overskriften „B.“ staae et
+% Stykke nede paa S. 274 og skrives af næste Batch.
+Lægges der nu særlig Vægt paa Legemernes Eiendom\-%
+%  --- B. Leddelende Functioner: Magnetisme og Elektricitet  (pp. 274–293) ---
+%  MATHEMATICAL — work from the image; the OCR is not a witness here.
+% --- p. 274 ---
+% S. 274 aabner midt i et Ord: forrige Batch (S. 259--273) slutter med
+% Orddelingen „Eiendom-“, og denne Side begynder med „melighed“. Ingen
+% Afsnitsdeling ved Sideskiftet.
+melighed og den i det Almene reflecterede Selvstændighed, saa antager
+det dynamiske, de legemlige Individualiteter iboende, Almene nye
+eiendommelige Former, og Functionerne forandre deres Charakteer i
+Medfør af det Særskilte.
+
+% Afdeling A slutter fire Linier nede paa S. 274; derefter en kort,
+% centreret Streg og saa Overskriften B, som paa S. 87, 106, 215 og 233.
+% Efter Husreglen gjengives Stregens Længde ikke: \streg tjener overalt.
+\streg
 
 %  --- B. Leddelende Functioner: Magnetisme og Elektricitet  (pp. 274–293) ---
+% Overskriften er læst paa Siden selv (KB-Exemplaret), ikke i Indholdet:
+% „B.“ paa egen Linie, derunder over to Linier „Leddelende Functioner:
+% Magnetisme og Elektricitet.“ med Kolon, sat med fed, spærret Skrift.
+\afdeling{B.}{Leddelende Functioner: Magnetisme og Elektricitet.}
 
-%  MATHEMATICAL — work from the image; the OCR is not a witness here.
-% [text to be added: pp. 274--287]
+I Forhold til Lyset og Varmen udvise Legemerne vel en Mængde
+forskjellige Egenskaber, hvorved de gjøre deres indbyrdes Ulighed og
+tilsvarende Selvstændighed gjældende; men Modsætningen af det
+Individuelle og det Almene udlignes dog i de blot dynamiske Functioner
+paa en saadan Maade, at Almeenbestemmelserne beholde en eensidig
+Overvægt. Først idet de dynamiske Functioner gaae over til at blive
+leddelende Functioner, Functioner af polære Modsætninger, saaledes som
+i Magnetisme og Elektricitet, begynde de legemlige Eiendommeligheder
+at træde frem i fuld Belysning; men, mærkeligt nok, begynder da ogsaa
+det i Legemvæsenet Selvegne ret at vise sig som en uigjennemtrængelig
+Gaade.
 
-% [text to be added: pp. 288--293]
+Det Almene i Magnetisme og Elektricitet er hverken saaledes Eet med
+den veielige Materies Væsen, at det kan opfattes som en værende
+Egenskab i Lighed med Tyngden; ei heller har det en saa eensartet
+gjennemgaaende Væren for sig, at det kan henføres til et eensformigt
+forestillet Grundlag i Lighed med Lys og Varme. Tvertimod! Naar man
+forsøger at fastholde navnlig Elektricitetens Væsen som noget for sig
+Almindeligt, være sig i Ætheren eller et andet ube\-%
+% --- p. 275 ---
+kjendt Fluidum, saa gaaer det sammen med de paagjældende Legemer; og
+naar man saa vil holde det fast i de særskilte Legemer, saa frigjør
+det sig og antager Præg af det Almene.
+
+Det Gaadefulde forøges endnu mere ved den Uro og Spænding, som herved
+opstaaer mellem Forestilling og Tænkning. Physikeren nøies ikke med at
+iagttage Phænomenerne og abstrahere Lovene; han føler Trang til at
+danne sig en Forestilling om, hvad det indre Virksomme egenlig er. Men
+det indre Virksomme er Væsen, og et Væsen lader sig ikke forestille.
+Hvad er Magnetisme? En særegen Kraft i visse Legemer! Denne Forklaring
+tilfredsstiller hverken Forestillingen eller Tanken. Forestillingen er
+ikke i Stand til at holde fast paa det Særegne i Kraften, thi ingen
+Kraft lader sig ligefrem forestille. Heller ikke kan det Særegne ved
+den magnetiske Kraft fastholdes af Tanken; Tanken fordrer noget
+Almeengyldigt og Nødvendigt, men denne Kraft er jo netop saa særegen,
+at Ingen aner, hvorfra den kommer, hvorfor just netop Jernertsen og
+Jern fremfor saa mange andre Legemer skulle være begavede med den
+magnetiske Kraft.
+
+Lige saa utilforladelige ere de Forestillinger, man ved Tænkningens
+Understøttelse har dannet sig om Elektriciteten. Dufay antog, at der
+var to Slags Elektriciteter eller elektriske Fluida, hvorimod Franklin
+paastod, at der kun var een Slags; og, hedder det, „det forrige
+Aarhundredes Strid mellem Franklinisterne eller Unitarierne og
+Dualisterne kan endnu ikke betragtes som endelig afgjort“.
+
+End ikke ved at holde sig til Lovene kan Iagttageren sikkre sig nogen
+tydelig Forestilling om den fælles virkende Aarsag. I Analogie med
+Magnetismen antager man, at Elektriciteten e i et Punkt maa i et andet
+% Formlen er læst paa KB-Exemplaret: $\mu$ staaer FORAN Brøken, ikke i
+% Nævneren. Typen er opret Antiqva; efter Husreglen (Batch 4) gjengives
+% det ikke.
+Punkt i Afstanden r frembringe en fordelende Kraft
+$K = \mu \dfrac{e}{r^{2}}$. Ved Forsøg kan det endvidere godtgjøres,
+% Arksignaturen „18*“ staaer forneden paa S. 275. Ikke Text.
+at to smaa Legemer med
+% --- p. 276 ---
+Elektricitetsmængderne e og e' maae i Afstanden r frastøde hinanden
+% Her staaer Apostroffen (Prim) paa e', medens Trykken paa S. 279, 280
+% og 287 bruger et hævet Ettal (m$^1$, e$^1$). Begge Former ere læste
+% paa KB-Exemplaret og gjengives, som de staae.
+med en Kraft $F = \mu \dfrac{ee'}{r^{2}}$. Antages nu i begge Udtryk
+$\mu$ for identisk, saa skulde man da mene, at Ligningen for den
+bevægende Kraft F og Ligningen for den fordelende Kraft K maatte vise
+hen til een og samme Grundkraft, een og samme fælles Aarsag; men en
+skarpsindig Physiker lader sig ikke blænde af en blot formel
+% trykt Mærke: *) --- det staaer EFTER Punktummet.
+Lighed.\footnote{%
+„Det har været den hidtil herskende Anskuelse, at den elektriske
+% Prikkerækken staaer som fire spatierede Punkter, som trykt.
+Fordeling . . . . skyldes Elektriciteternes indbyrdes Tiltrækninger og
+Frastødninger, og at disse sidste gaae over til de tilsvarende
+mechaniske Kræfter mellem de elektriske Legemer indbyrdes, naar
+Elektriciteten ved omgivende Isolatorer er bunden til Legemerne. Den
+første Antagelse er en fra vort Kjendskab til Legemernes indbyrdes
+Tiltrækninger og Frastødninger hentet Analogie; men denne er neppe
+skikket til at kunne gjennemføres videre, deels fordi den fordelende
+Kraft i et Punkt fremtræder uafhængig af den i dette Punkt
+tilstedeværende Elektricitet, deels ogsaa fordi Virkningerne af denne
+Kraft ikke ere en Acceleration af Elektricitetens Bevægelse i dette
+Punkt, men maae maales med Mængden af den gjennemstrømmende
+Elektricitet. Men selv om denne Forestilling alligevel fastholdes, saa
+kunne disse Kræfter ikke, fordi Elektriciteten møder en Modstand, uden
+videre betragtes som Aarsag til et mechanisk Tryk paa Legemet i en
+bestemt Retning, thi denne „Modstand“ er ikke Andet end en større
+specifisk Lednings\-%
+modstand“. L. Lorenz. Forelæsninger over Naturlære. Kbhvn.\ 1870.
+S.\ 192--193.}
+
+Over for alt dette i Hypotheser og Forestillinger Gaadefulde og
+Usikkre har Naturphilosophien at fastslaae to aldeles sikkre
+% Spærringen er efterprøvet paa KB-Exemplaret og er ægte: den løber
+% fra „alle“ til „Opfyldelse.“ paa S. 277. Tallene „1)“ og „2)“ ere
+% IKKE spærrede og staae derfor udenfor \emph.
+Grundsætninger: 1) \emph{alle Legemer, hvor eiendommelige de end i
+Egenskaber og Forbin\-%
+delser ere, ere realiserede Magtbegreber, saa at enhver Kraftyttring
+er en naturlig Begrebs\-%
+yttring}; 2) \emph{Magtbegrebernes Udtryk i Existens giver sig særlig
+tilkjende i Lovene, thi det Al\-%
+% --- p. 277 ---
+menes Sammengaaen til Eenhed med det Individuelle er alene at see i
+Lovenes Opfyldelse.} Forholdet mellem Physik og Naturphilosophie vil
+da med Hensyn paa disse to Grundsætninger være at bestemme saaledes:
+Physiken gaaer ud fra Kjendsgjerningerne og opdager Lovene;
+Naturphilosophien gaaer ud fra de opdagede Love og udvikler
+Naturbegreberne.
+
+De leddelende Functioner faae altsaa naturphilosophisk Betydning
+derved, at de Trin for Trin lede til stedse dybere Indblik i
+Individualiseringen af de legemlige Grundforhold. Det vil da kunne
+sees, hvorledes den polære Modsætning viser sig først mere udvortes
+% De tre Ord ere spærrede; efterprøvet paa KB-Exemplaret.
+umiddelbart i \emph{Magnetismen}, dernæst mere indvortes reflecteret i
+\emph{Elektriciteten} og tilsidst udfolder sin dobbeltsidig
+articulerende Vexelvirkning i \emph{Elektromagnetismen}.
+
+% Indløbende Overskrift, læst paa Siden selv (KB-Exemplaret): sat med
+% fed Antiqva, ikke spærret.
+\runin{a) Magnetismen.} En Tiltrækning efter Tyngdens Lov forudsætter
+i det Mindste to Led, to Masser eller Massedele; desuagtet er heri
+ingen egenlig Leddeling; den ene Masse er som den anden, og enhver
+Forskjel i Egenskaber, selv i Størrelse, er Tyngdens Væsen,
+almindelig taget, uvedkommende. Anderledes med Tiltrækningen mellem to
+Magneter; hver af dem har sine Poler, de uligeartede Poler tiltrække,
+de ligeartede frastøde hinanden; Tiltrækning betinges af Frastøden, og
+omvendt; saa virker Pol imod Pol, Led imod Led: det er leddannende
+Functioner. I Polerne er den ene Masse ikke blot udenfor den anden,
+men Andetheden er accentueret to Gange, den ene Pol er den anden
+qvalitativt modsat; Sydpolen har sit bestemte Andet i Nordpolen, og
+just derfor er Tiltrækningen gjensidig; derimod har Sydpolen kun et
+% TRYKFEIL: „Eensformighedon“ for „Eensformigheden“ --- en urigtig Sats
+% (o for e). Begge Exemplarer vise det, altsaa Sætterens Feil;
+% Trykfeilbladet retter det ikke. Gjengivet som trykt; læs
+% „Eensformigheden“.
+formelt Andet i en anden Sydpol; Eensformighedon er i Strid med
+Leddelingens Princip, og Frastødningen er gjensidig. Hvor oprindelig
+de modsatte Led forudsætte hinanden, sees i Kjendsgjerningen deraf, at
+man vel kan skaffe sig Magneter
+% --- p. 278 ---
+med mange Poler, men ikke en Magnet, som kun har een Pol. Den polære
+Modsætning er begrundet i qvalificeret Eenhed; Eenheden er en ved
+Leddeling udtrykkelig bestemt Modsætningseenhed.
+
+% „Ligevægtsrum“ er spærret; efterprøvet paa KB-Exemplaret.
+Umiddelbart seet, tager det sig ud, som sad den magnetiske Kraft i
+enhver af Magnetens Poler, medens der i det saakaldte
+\emph{Ligevægtsrum} ingen saadan Kraft var; men allerede Gilbert har
+viist, at Leddelingen er gjennemgaaende. Ved at bryde en Stangmagnet
+midt over, faaer man ikke to halve Magneter, hver med sin Pol, men to
+hele, hver med to Poler. Delen er et fuldstændigt Hele, og Delingen
+kan fortsættes indtil de mindste Enkeltheder: det leddeelte Hele
+bestaaer af lutter leddeelte Dele (Smaamagneter, Elementærmagneter).
+
+Den gjennemgaaende Leddeling aabner os et Indblik i det Heles
+Sammenhæng; Grunden til, at de virksomme Poler danne sig henimod
+Endefladerne, ligger nemlig deri, at Smaamagneterne i Ligevægtsrummet
+udligne og ophæve hverandres Virkninger, hvorved der fremkommer en
+egen, af Forholdene betinget Modsætning mellem bunden og fri
+% trykt Mærke: *) --- det staaer EFTER Punktummet.
+Magnetisme.\footnote{%
+„Tænke vi os, at i en Staalstang alle de smaa Dele under Indflydelse
+af den samme magnetiserende Kraft vare blevne lige stærkt magnetiske,
+med Polerne vendte eens og i Stangens Længderetning, saa vilde Polerne
+for den frie Magnetisme være beliggende i Stangens Endeflader, idet de
+overalt lige store Magnetkræfter indenfor disse ganske maatte ophæve
+hinandens ydre Virkninger. Denne magnetiske Tilstand kan imidlertid
+ikke bestaae paa Grund af Elementærmagneternes fordelende Virkninger
+paa hinanden indbyrdes, hvorved der fremkommer Forandringer i den
+indre Magnetisme, som deels bestaae i en Svækkelse, og denne maa da
+være størst i Stangens Længdeaxe, deels i en Forstærkning, som bliver
+størst paa Midten af Stangen.“ Lorenz. Anf.\ Skrift. S.\ 144--45.}
+
+% --- p. 279 ---
+Vil man nu sige, at de magnetiske Functioner vel forudsætte en
+Leddeling, men ikke selv ere leddelende, da maae vi for det Første
+nøies med at henvise til, hvad Physiken kalder „den fordelende Kraft“.
+Et Stykke Jern bliver ved Berøring med en Magnetpol selv en Magnet,
+der kan bære smaa Stykker Jern. Vistnok er den fordelende Kraft endnu
+kun en overfladisk Forestilling, forsaavidt den umiddelbart
+forudsætter, hvad den egenlig skulde forklare, nemlig
+Elementærmagneternes Polaritet; ikke desto mindre kaster den dog et
+eiendommeligt Lys paa sin egen Forudsætning og afslører en Cohæsionens
+Hemmelighed.
+
+% „Coercitivkraften“ er spærret; efterprøvet paa KB-Exemplaret.
+Her viser sig nemlig et eget Forhold mellem Smaadelenes Bevægelighed
+og Massens Fasthed, et Forhold, der nærmere bestemmes ved
+% Efter „Jernet.“ staaer i Arbeidsscanningen et Tegn, som tesseract
+% læser som Tankestreg; KB-Exemplaret har intet: kun almindeligt
+% Sætningsmellemrum. Ingen Streg gjengivet.
+\emph{Coercitivkraften}. Staalet magnetiseres vanskeligere end det
+bløde Jern, men holder saa igjen fastere paa sin Magnetisme; Grunden
+er, at Coercitivkraften i Staalet er større end i Jernet.
+Varmeforandringer, Stød, Rystelser o.\ desl.\ svække
+Coercitivkraften, idet de forandre Cohæsionen.
+
+Den Fordeling, som en Magnet frembringer, navnlig i blødt Jern, virker
+altid forstærkende tilbage paa Magnetens indre Magnetisme, men snart
+forstærkende, snart svækkende paa dens frie Magnetisme --- atter en
+Modification af leddelende Virksomhed.
+
+Magnetismens mechaniske Virkninger minde i visse Henseender om
+% Hævet Ettal, ikke Prim: „m og m$^1$“, læst paa KB-Exemplaret.
+Tyngdens. To Magnetpoler, i hvilke Mængden af fri Magnetisme er m og
+$m^{1}$, ville i en Afstand r virke paa hinanden med en Kraft K, som
+kan bestemmes ved Ligningen $K = \dfrac{mm^{1}}{r^{2}}$; og dog er,
+som ovenfor antydet, den magnetiske Tiltrækning qvalitativt
+forskjellig fra Tyngdens; en Staalnaal f.\ Ex.\ bliver ikke tungere,
+fordi den bliver magnetiseret. Regnes Indflydelsen af den frastødende
+Pol med, da vil den hele Virkning af en Magnetstang paa
+% --- p. 280 ---
+% trykt Mærke: *) --- det staaer EFTER Punktummet.
+særlig givne Betingelser vise sig at staae i omvendt Forhold af
+Afstandens tredie Potens.\footnote{%
+Hansteen. Untersuchungen über den Magnetismus der Erde. Christiania
+1819. --- Om Gauss's Formel $K = \dfrac{mm^{1}}{r^{p}}$ jvnfr.
+% „Anfr. Skr.“ staaer saaledes paa begge Exemplarer, medens Noten S. 278
+% skriver „Anf. Skrift.“ Gjengivet som trykt.
+% Efter „Leipzig 1866.“ staaer paa KB-Exemplaret INGEN Tankestreg, kun
+% Sætningsmellemrum; tesseract læser en Streg i Arbeidsscanningen.
+Lorenz. Anfr.\ Skr.\ S.\ 152--56. A.\ Wüllner. Lehrbuch der
+Experimentalphysik. 2ter Band. Leipzig 1866. Wirkung magnetischer
+Massen auf einander aus der Ferne. S.\ 540--58; Versuche von Gauss.
+S.\ 558--64.}
+
+Idet Magnetnaalen peger, som det hedder, imod Nord, peger den med det
+Samme paa en Magnetisme, der ikke lader sig forklare af umiddelbart
+tilværende Smaamagneter, nemlig paa Jordmagnetismen. Det er et Spring
+fra det Particulære over i det Totale. Totalitetsmagnetismen viser fra
+mange Sider hen til forskjelligartet leddelende Virksomhed, et
+vidtforgrenet System af articulerende Functioner. Den gamle
+Forestilling om Magnetbjerge i Nærheden af Jordens Poler er forlængst
+opgivet; Jorden er magnetisk, fordi den uafbrudt bliver magnetiseret.
+De periodiske Forandringer, baade de daglige og de seculære, hvilke
+Naalen er underkastet deels med Hensyn paa Declination, deels paa
+Inclination, ere, ligesom ogsaa Forandringerne i Jordmagnetismens
+Styrke (Intensiteten), Vidnesbyrd om, at det Constante i den
+magnetiserende Virksomhed paa eiendommelig Maade er forenet med det
+Variable. Det Umiddelbare i Phænomenerne har i Væsenet selv en
+gjennemgaaende Magtreflexion til Forudsætning. Foreløbig tager det sig
+ud, som om det hele System af magnetiske Kræfter dreiede sig inde i
+Jorden fra Øst til Vest.
+
+En nærmere Opklaring af den mulige Grund til de magnetiske Phænomener
+kan i Forhold til Physikens nuværende Standpunkt først gives, naar
+Magnetismen bringes i
+% --- p. 281 ---
+Forbindelse med et andet, endnu dybere indgribende System af
+leddelende Functioner.
+
+% Indløbende Overskrift, læst paa Siden selv (KB-Exemplaret): sat med
+% fed Antiqva, ikke spærret.
+\runin{b) Elektriciteten.} Analogien mellem Magnetisme og Elektricitet
+er iøinefaldende paa Grund af den polære Modsætning; men hvad det
+indre Virksomme angaaer, maa Ligheden snarere synes at tilhøre det
+% spacing.py udpegede „det“ og „frit“; KB-Exemplaret viser almindelig
+% Antiqva --- det er Anførselstegnene og ikke Spærring.
+Phænomenale end Væsenet. Magnetismen er nemlig som „Kraft“ og
+„Egenskab“ bundet til det magnetiske Legeme, medens Elektriciteten
+„frit kan gaae over fra det ene Legeme til det andet“, og ved denne
+Overgang viser sig analog med Varmen. Der er, hvad Ledningen angaaer,
+en saa mærkelig Forbindelse mellem Elektricitet og Varme, at man
+saavel for Metallerne som for deres Legeringer har fundet de samme
+Forhold mellem deres Ledningsevne for Varmen som for deres elektriske
+Ledningsevne. Dersom Varmen havde Poler, vilde det ligge nær at
+opfatte Elektriciteten som en polariseret Varme; men da ingen
+Kjendsgjerning tyder hen paa, at der skulde være en positiv Varmepol,
+der tiltrak en negativ og frastødte en anden positiv, da der ved
+bunden og frigjort Varme forstaaes noget ganske Andet end ved bunden
+og fri Elektricitet, da Varmen, med andre Ord, kun er qvantitativt,
+ikke qvalitativt forskjellig i sig selv, saa indsees heraf, at der maa
+være en Grundforskjel mellem Elektricitet og Varme.
+
+Det er charakteristisk at see, hvorledes Varmen og Elektriciteten,
+hvor inderlig de end ere forenede, dog i væsenlig Forstand spille hver
+sin Rolle i Legemverdenen. Ud fra sit usynlige, almene Grundlag
+bevæger Varmen sig igjennem de mangeformigt forskjellige Legemer,
+løser, saavidt den formaaer, Forskjellighederne op i det Eensformige,
+udsletter de legemlige Individualiteter og sætter sit Høieste i at
+forvandle det Hele til Damp. I Modsætning hertil maa Elektriciteten
+netop siges at være lagt an paa at hævde Forskjellighederne i Kraft af
+et Fælles, articulere det Selvegne
+% --- p. 282 ---
+og gjøre de legemlige Individualiteter gjældende. Vel kan Varme
+omsættes i Elektricitet, og Elektricitet i Varme; men dette betyder
+ingenlunde, at Elektricitet og Varme ere Eet og det Samme; det er
+tvertimod en Tilkjendegivelse af, at Forskjellen bevares i Eenheden.
+Til Forskjelseenhedens Udvikling svarer Formvirksomheden. Naar det
+Fælles er sat, kræver Formen det Særlige; og naar det Særlige er sat,
+kræver den igjen det Fælles. Saaledes arbeide Varmen og
+Elektriciteten, hver paa sin Maade, i Formens Tjeneste. Og dog er det
+kun Formbevægelsens Extremer, ikke den substantielle Formvirksomhed
+selv, vi endnu have for os. Vel har Elektriciteten for sig en
+almindelig gjennemgaaende Væsenhed i Lighed med Varmen; thi at
+Glaselektriciteten kaldes positiv, Lakelektriciteten negativ, vil jo
+ingenlunde sige, at Elektriciteterne i det ene Legeme skulde være af
+en anden Natur end i det andet; tvertimod! de samme to forskjellige
+Arter af Elektricitet findes i ethvert Legeme, kun at de i Legemets
+saakaldte naturlige Tilstand ophæve hinanden: den negative
+Elektricitet er i alle Legemer sig selv lig som negativ, den positive
+som positiv. Den præluderende Formvirksomhed viser sig i, at
+Forskjellen mellem det Almene og det Individuelle er umiddelbar lige
+saa vel som Eenheden. Vel maa det fra Synspunktet af det Almene tage
+sig ud, som var Elektriciteten et vist fælles Noget, der løb igjennem
+Legemerne, bredte sig paa Overfladerne efter disses forskjellige Form,
+gik fra det ene Legeme over paa det andet o.\ s.\ v.; men see vi
+nærmere til, saa tyder alt dette hen paa Virksomheder og Forandringer
+i de paagjældende Legemer selv. Elektriciteten nedsætter ikke
+Legemerne til blotte Gjennemgangsled for overalt at sætte sig i
+eiendommelige Forhold til sig selv alene; det er lige saa meget
+Legemerne, som formedelst Elektriciteten sætte sig i et eiendommeligt
+Forhold til hverandre indbyrdes.
+
+Hvor dybt Elektriciteten er impliceret i de forskjellige
+% --- p. 283 ---
+Legemers Eiendommelighed, kan allerede sees af den Maade, hvorpaa den
+vækkes. Den vækkes ved Gnidning; men Gnidningen gjør netop de
+legemlige Forskjelligheder kjendelige; det er et betegnende Udtryk for
+Forskjellen mellem Glasset og Lakket, at de to Legemer ved at gnides
+med det samme Stof, Uld eller Silke, blive, det første positivt, det
+% Sætningen mangler Komma efter „Elektricitet“ og efter Parenthesen
+% „(Influenselektricitet af første Art)“; begge Exemplarer vise det.
+% Gjengivet som trykt.
+sidste negativt. Den vækkes ved Fordeling. Er et Legeme A ladet
+f.\ Ex.\ med positiv Elektricitet vil det gjennem et isolerende
+Mellemrum virke paa et andet Legeme B saaledes, at der ved Fordeling i
+B fremkommer negativ Elektricitet paa de Dele af Overfladen, der ere A
+nærmest (Influenselektricitet af første Art) men i den fra A fjerneste
+Overflade derimod positiv Elektricitet (Influenselektricitet af anden
+Art). Hertil svare saa igjen den stærkere eller svagere Tiltrækning,
+thi da Fordelingen er størst i de gode Ledere, maa Tiltrækningen til
+% „Isolatorer“ er spærret; efterprøvet paa KB-Exemplaret.
+disse ogsaa være stærkest. Den eiendommelige, ved Elektriciteten
+bestemte, Forskjel mellem gode, halvgode og slette Ledere,
+\emph{Isolatorer}, der er saa betegnende for Leddelingen, vil Varmen
+ikke blot ændre, men ved høiere Grader endog udslette: man kjender
+intet Legeme, som i Glødhede forbliver Isolator. Men naar Varmen ikke
+virker hæmmende, men betingende, er Leddelingen saa udpræget, at endog
+den blotte Berøring af to forskjellige Legemer er nok til at vække
+Elektriciteten. Hvor qvalitativt eiendommelig Modsætningen er, kan
+sees af en Række som: Zink, Bly, Jern, Kobber, Sølv, Guld, Platin, i
+hvilken ethvert foregaaende Led bliver positivt elektrisk ved Berøring
+med et efterfølgende. Den elektriske Forskjel mellem Zink og Kobber og
+den elektriske Forskjel mellem Kobber og Platin ere tilsammen lig den
+elektriske Forskjel mellem Zink og Platin; eller: naar man paa en
+Zinkplade lægger en Kobberplade og paa denne en Platinplade, er den
+elektriske Spænding i Endepladerne netop lige saa stor, som om man
+havde lagt Platinpladen og Zinkpladen umiddelbart paa hinanden.
+
+% --- p. 284 ---
+% Hele S. 284 staaer i almindelig Antiqva. Arbeidsscanningen (JBIG2)
+% gjør Satsen fed og faaer Hegel-Citatet til at see spærret ud;
+% KB-Exemplaret viser lys, almindelig Skrift overalt --- ingen \emph.
+Den Egenhed, Spænding og Prikkenhed, Legemerne udvise ved den polære
+Modsætning, har foranlediget Hegel til ret eftertrykkelig at
+indskærpe, hvad Idealismen selv i den allernyeste Tid endnu saa gjerne
+vil bilde sig ind, at de elementære Legemer i Grunden ere
+Selvvæsener. „Reflexionen“, siger han, „er vant til at opfatte
+Legem-Individet som noget Dødt, der kun kommer i udvortes mechanisk
+Berøring eller træder i chemisk Forhold. --- Vi derimod opfatte den
+elektriske Spænding som den Legemet egne Selviskhed, der er physisk
+Totalitet og hævder sig i Berøring med et andet. Det er den egne
+Vrede, Legemets egen Opbrusen, som vi see; der er Ingen tilstede uden
+det selv, allermindst en fremmed Materie. Dets ungdommelige Mod slaaer
+ud, det sætter sig paa Bagbenene; dets physiske Natur tager sig sammen
+mod at indlade sig med Andet, og det som en abstract Lysets Idealitet.
+Ikke blot vi sammenligne Legemerne, men de sammenligne sig selv og
+hævde sig deri som physiske; det er en Begyndelse til det Organiske“
+o.\ s.\ v. --- Det er Immanensphilosophiens evige Manie: kan man ikke
+gjøre Aanden til Materie, saa maa man absolut kunne gjøre Materien til
+Aand; kan man ikke forklare den bevidste Villie af mechanisk
+Tiltrækning, saa maa man forklare den mechaniske Tiltrækning af en
+ubevidst Villie; kan man ikke udlede Selvet af det Selvløse, saa er
+der intet Andet for end at gjøre de elementære Legemer, de selvløse
+Individer til Selvvæsener. Forsøget er lige genialt, enten det er „de
+physiske Totaliteter“ eller de nøgne Atomer, de rene „Kraftpunkter“,
+der gjøres til Selvvæsener.
+
+Men skal det være Alvor med Selvheden, da maa det ogsaa være Alvor med
+Andetheden; skal Aanden være Aand, da faaer man vel at lade Materien
+være Materie og tage de physiske Legemer for, hvad de i Kjendsgjerning
+ere, livløse, selvløse Realiteter. Den eiendommelige Forening af det
+Almeenlegemlige med det i Legemerne Sær\-%
+% --- p. 285 ---
+egne, som Elektriciteten udviser, giver tydelig tilkjende, at baade
+Legemerne selv og de Grunddele, hvoraf de bestaae, maae have en
+selvløs Selvstændighed. Det er jo netop Kjendetegnet paa det Selvløse,
+at alle Yttringer af et paagjældende Legemes Eiendommelighed kunne
+nøiagtig bestemmes og maales ved Paavirkninger, der udgaae fra andre
+Legemer, saa at Action og Reaction, bestemte ved et exact Forhold
+mellem Inertie og Kraft, indtil de allermindste Enkeltheder svare til
+hinanden. De mechaniske Love ere i strengeste Forstand Andethedslove;
+men de forskjellige exacte Maalinger af Elektricitetens fordelende
+Kraft, dens Tæthed, Spænding, Strømstyrke o.\ s.\ v., sætte det
+udenfor al Tvivl, at de i særlig Forstand elektriske Virkninger ere i
+enhver Henseende Andethedslovene underlagte, lige saa vel som de
+% trykt Mærke: *) --- det staaer FORAN Punktummet, som trykt.
+mechaniske\footnote{%
+I t Secunder vil den Elektricitetsmængde, som ved Strømstyrken s er
+gaaet igjennem Ledningen, være $e = st$; det er en Andethedslov; Ohms
+Lov er en Andethedslov o.\ s.\ fremd.}.
+
+Ved at udlade en Leydenerflaske gjennem en Multiplicators
+Traadvindinger faaer man en elektrisk Strøm, der dog øieblikkelig
+ophører; ved Voltastøtten (og de galvaniske Batterier) faaer man en
+perennerende Strøm. Volta sammenlignede sin Støtte med et overordenlig
+stort, men svagt ladet Batteri af Leydenerflasker, som øieblikkelig
+ladede sig selv igjen, naar det var udladet: Elektriciteten i
+Leydenerflasken og Elektriciteten i Støtten er altsaa væsenlig samme
+% trykt Mærke: **) --- det staaer FORAN Punktummet, som trykt.
+% Noten løber over Bladet: den begynder forneden paa S. 285 og
+% fortsættes forneden paa S. 286 (fra „som et saadant Element“).
+% Efter Husreglen staaer den hel ved sit Mærke.
+Elektricitet. Ikke desto mindre er Virkemaaden forskjellig%
+\renewcommand{\thefootnote}{**)}%
+\footnote{%
+„Naar en Leydenerflaske udlades, saa er det ikke alene overalt den
+samme Elektricitetsmængde, som gaaer igjennem Ledningen; men
+Elektricitetsmængden er ogsaa den samme, hvad enten Ledningstraaden er
+% Prikkerækken staaer som fire tætte Punkter, som trykt --- til Forskjel
+% fra de spatierede Punkter i Noten S. 276.
+kort eller lang .... Anderledes forholder det sig med den
+Elektricitet, som et galvanisk Element frembringer; man behøver i
+Reglen kun at slutte det med en Tangensbussole for at kunne iagttage
+Virkningen paa Magnetnaalen af den langt betydeligere Mængde
+Elektricitet, som et saadant Element i hvert Secund sender igjennem
+Ledningstraaden, men indskyder man en lang Metaltraad i Ledningen, saa
+viser Bussolen, at Strømstyrken derved i en kjendelig Grad er bleven
+formindsket.“ L. Lorenz. Forelæsn. S.\ 213--14.}%
+\renewcommand{\thefootnote}{*)}%
+.
+
+% --- p. 286 ---
+De forskjellige Virkemaader lede ikke ligefrem til Forstaaelse af det
+indre Hvorledes, men til Opdagelse af forskjellige Love og derved til
+Forestillingsmaader, som ved Lovenes Hjælp maae bringes til indbyrdes
+Overeensstemmelse, reduceres til faste, almindelige Forudsætninger og
+efterhaanden tydeliggjøres i en saadan Sammenhængseenhed, at de afgive
+Realmomenter for en stedse rigere Udvikling af Elektricitetens
+eiendommelig articulerede Naturbegreb: Reduction og Deduction betinge
+hinanden gjensidig.
+
+% Tegnet foran E er Nielsens MINUS (÷), læst paa KB-Exemplaret;
+% jvnfr. Husreglen fra Batch 4 (S. 46).
+Om Strømmen og det Strømmende kan man vistnok danne sig forskjellige
+Forestillinger; thi ihvorvel det er givet, at der i Ledningstraaden er
+$+$ E ved Støttens positive og $\div$ E ved dens negative Pol;
+% TRYKFEIL: efter „Hvorledes“ staaer Punktum, hvor Meningen kræver
+% Komma. Begge Exemplarer vise Punktum (uden Kommahale og med
+% Sætningsmellemrum efter), altsaa Sætterens Feil; Trykfeilbladet
+% retter det ikke. Gjengivet som trykt; læs „Hvorledes,“. Den forkastede
+% Læsning er Komma.
+ihvorvel det tør antages, at Strømmen maa være en Dobbeltstrøm, nemlig
+en Bevægelse af de modsatte Elektriciteter i modsat Retning: saa er
+det indre Hvorledes. den uophørlige Omsætning af Positivt i Negativt
+og af Negativt i Positivt, af Frastøden i Tiltrækning og Tiltrækning i
+% trykt Mærke: *) --- det staaer FORAN Punktummet, som trykt.
+% Noten løber over Bladet: den begynder forneden paa S. 286 og
+% fortsættes forneden paa S. 287 (fra Formlen „V = ...“) helt til
+% „forblive uforandret det samme.“ Efter Husreglen staaer den hel ved
+% sit Mærke, og Sidemærket for S. 287 staaer derfor efter hele Noten,
+% dér hvor Brødtexten paa S. 287 begynder („philosophien").
+Frastøden under hele Bevægelsen, dog derved ingenlunde
+tydeliggjort\footnote{%
+Hvorledes Weber har søgt at forklare de elektrodynamiske Kræfter ved
+at gaae ud fra de hvilende Elektriciteters indbyrdes Frastødninger og
+Tiltrækninger, er en indviklet Undersøgelse, der hører under
+Fagvidenskaben. Kun eet Punkt skal særlig fremhæves. Imod Indsigelsen
+af Helmholtz, at der i den Weberske Formel er en Modsigelse mellem
+Loven for den elektriske Kraft og Loven for Kraftens Vedligeholdelse,
+har Weber i sit Indlæg fremhævet, at det nærmere bestemte Princip for
+Energiens Vedligeholdelse kun da finder Anvendelse paa to Elementer,
+naar begges Potential er af lige Form. For to elektriske Elementer i
+Afstanden r, med en Constant c, er Potentialet:
+% Formlerne ere læste paa KB-Exemplaret. Det hævede Ettal i $ee^1$ og
+% $mm^1$ er et Ettal, ikke en Prim. Minus i Parenthesen er en
+% almindelig Minusstreg, ikke Nielsens ÷.
+\[
+V = \frac{ee^{1}}{r}\left(\frac{1}{cc}\cdot\frac{dr^{2}}{dt^{2}} - 1\right);
+\]
+for to ponderable Smaadele er det derimod:
+\[
+V = \frac{mm^{1}}{r}.
+\]
+Seer man nu bort fra Fortegnet, saa behøver man ikke at tillægge c en
+uendelig stor, men kun en meget stor Værdi, for at faae samme
+Potential for de ponderable som for de imponderable Elementer. (Er
+% TRYKFEIL: „Polentialet“ for „Potentialet“ --- en urigtig Sats (l for
+% t). Trykfeilbladet retter det: S. 287, Linie 15 f. n.: „Polentialet
+% --- læs Potentialet“. KB-Exemplaret trykker „Polentialet“; i
+% Arbeidsscanningen har den blyantsførende Haand trukket en Tværstreg
+% gjennem l'et og gjort det til et t. Gjengivet som trykt.
+nemlig Loven for Tiltrækningen betegnet ved $f(r) = \dfrac{\mu}{r^{2}}$,
+saa er, med Hensyn til Polentialet,
+$\int f(r)dr = \varphi(r) = - \dfrac{\mu}{r}$; jvnfr. C. Ramus.
+Analytisk Mechanik. S.\ 53--54; S.\ 59--60). Pointen er, at den
+Newtonske Gravitationslov, saavidt den er stadfæstet ved
+Kjendsgjerninger, skal kunne gaae ind under den Weberske Lov. Jvnfr.
+Zöllner, Ueber die Natur der Cometen. Vorrede. S.\ LXIV flgd.;
+Stykket: Ueber die allgemeinen Eigenschaften der Materie.
+S.\ 313--41.
+
+Hvis der nu virkelig er fundet eller kan findes en Lov for
+Elektriciteten, der i sig optager Newtonsloven, da vil der jo vistnok
+tillige aabnes Naturphilosophien et dybere Indblik i Lovenes og derved
+i Realbegrebernes indre Sammenhæng; men Grundforholdet mellem Natur og
+% Tegnet efter „Gjenstandsmagt“ er læst som Komma: Meningen kræver det
+% (tre Led i Opregningen), tesseract læser Komma, og Mellemrummet efter
+% er almindeligt Ordmellemrum, ikke Sætningsmellemrum. Den forkastede
+% Læsning er Punktum, som KB-Exemplarets lave Opløsning i Notesatsen
+% ikke afgjør.
+Aand, mellem Gjenstandsmagt, Realbegreb og begribende Selvmagt, vil
+være og forblive uforandret det samme.}. Det eneste for Natur\-%
+% --- p. 287 ---
+philosophien afgjørende Udbytte er: at Materien viser sig articuleret
+indtil de mindste Dele; at den gjennemgaaende Articulation beroer paa
+en ved Realbegrebet punktlig bestemt Samvirken af det legemlig
+Individuelle med et Almeenlegemligt; at det er denne Samvirken, der i
+Leddelingens Form sikkrer de elementære Legemer, de selvløse Væsener,
+en i alle, saavel qvalitative som qvantitative, Relationer
+uselvstændig Selvstændighed.
+
+% Indløbende Overskrift, læst paa Siden selv (KB-Exemplaret): sat med
+% fed Antiqva, ikke spærret. Den falder paa S. 287, ikke S. 288.
+% S. 287 slutter midt i Ordet „elektriske“: Orddelingen løber over
+% Batchgrændsen, og S. 288 begynder med „triske“.
+\runin{c) Elektromagnetismen.} Forholdet mellem de to Arter af
+leddelende Functioner, de magnetiske og de elek\-%
+% --- p. 288 ---
+% BLADET AABNER FLUGT (uden Indrykning) og MIDT I ET ORD: forrige Blad
+% ender paa „elek-“, og Sætningen fra S. 287 fortsættes her. Ingen ny
+% Afsnitsbegyndelse. Overskriften „c) Elektromagnetismen“ staaer altsaa
+% IKKE paa dette Blad, men paa S. 287 (forrige Batch).
+% Arbeidsexemplaret har en lodret Blyantsstreg i venstre Margen ned ad
+% hele Bladet; den er ikke Text.
+triske, er igjen bestemt ved en Leddeling. Det er det første Stød til
+en videre gaaende Bestemmen af dette leddelende Vexelforhold, der
+giver H. C. Ørsteds Opdagelse sin verdenshistoriske Betydning.
+„Den Lighed, som i flere Henseender finder Sted imellem Elektricitet
+og Magnetisme, havde allerede længe bragt Physikerne til at formode,
+at disse to Kræfter maatte staae i et nøiere Forhold til hinanden. Dog
+vare alle Forsøg paa at paavise et saadant forgjæves, til Ørsted 1820
+viste, at en elektrisk Strøm i Nærheden af en Magnetnaal bringer denne
+ud af sin Stilling. Leder man nemlig en elektrisk Strøm fra Syd til
+Nord under en Magnetnaal, vil dennes Nordende gjøre et Udslag imod
+Øst, og efter nogle Svingninger vil den komme i Hvile i en Stilling,
+der nærmer sig desto mere til at være lodret paa den magnetiske
+Meridian altsaa paa Strømmens Retning, jo stærkere Strømmen er.
+Bringes Magnetnaalen under Strømmen, vil Nordenden gjøre Udslag imod
+Vest. Ved Modvægt kan man bringe en Heldingsnaal til at ligge vandret;
+anbringes en saadan paa den østlige Side af Strømmen, vil Nordenden
+give et Udslag nedad, anbringes den paa den vestlige, vil Nordenden
+gjøre et Udslag opad. Vendes Strømmens Retning om, gaae Udslagene i
+% Fodnotemærket staaer EFTER det lukkende Anførselstegn: „Nordenden.“*)
+modsat Retning, og Sydenden drives altid i modsat Retning af
+Nordenden.“%
+\footnote{% trykt Mærke: *) --- eneste Note paa S. 288.
+C. Holten. Læren om Naturens almindelige Love. Kjøbenhavn 1870.
+S. 318--19.}
+
+Det blev nu, da Opdagelse fulgte paa Opdagelse, efterhaanden klart, at
+„den elektromagnetiske Kraft“ var i sit Phænomen et Enkeltled, der
+tilhørte en vidt omfattende Kjæde. Saaledes viste Ampère, at der i
+Forholdet mellem to Strømledere var „en elektrodynamisk Kraft“, som
+yttrede sig snart i en Frastødning snart i en Tiltrækning, hvoraf
+fulgte, at to parallele Strømledere maae tiltrække hinanden, naar
+Strømmene gaae i samme Retning, men frastøde
+% --- p. 289 ---
+hinanden, naar de gaae i modsat Retning. Han gik videre og paaviste,
+at to strømledende Spiraler tiltrække og frastøde hinanden som to
+Magneter. Han gik endnu videre, idet han søgte at bevise, at
+Magnetismen egenlig var et eiendommeligt Phænomen af Elektriciteten.
+
+En Skruetraad af Kobber, hvorigjennem der ledes en elektrisk Strøm,
+virker aldeles paa samme Maade som en dermed lige stor Magnet. Man kan
+nu betragte en Magnetstang som et Bundt lineære Magnetstænger, der dog
+paa Grund af deres gjensidige Indvirkninger ikke ere ganske
+retliniede, men noget udbuede mod Magnetens Axe; disse lineære
+Magneter ere saa igjen at betragte som en Række Elementærmagneter af
+ulige Styrke. Ifølge Ampère's Forklaring vil da enhver
+Elementærmagnet forholde sig som en cirkulær elektrisk Strøm, hvis
+Plan er lodret paa Elementærmagneternes Axe, og den lineære Magnet
+repræsentere en Række af slige Strømme. Et saadant System af
+% SPÆRRING, efterprøvet paa KB-Exemplaret: Spærringen begynder ved
+% „enhver“ (ikke ved „at“) og løber ubrudt til og med „Solenoider.“,
+% ogsaa hen over Orddelingen „Sole-/noider“ i Satsen. Det er den eneste
+% Spærring paa S. 288--291.
+Strømledere kaldte Ampère en Solenoide, og Forklaringen er: at
+\emph{enhver Magnet kan betragtes som et System af Solenoider.}
+
+Dersom det nu blot lod sig antage, at elektriske Strømme kunde
+vedligeholde sig og det endog i gode Ledere uden enten at afgive eller
+modtage noget Arbeide, saa var Magnetismen med det Samme deduceret af
+Elektriciteten; men Antagelsen er urimelig. Undersøgelsen maa da
+fortsættes ud fra et andet Udgangspunkt.
+
+Ved Hjælp af stærke Elektromagneter har Faraday anstillet Forsøg over
+de forskjellige Legemers magnetiske Forhold og fundet, at alle Legemer
+i større eller mindre Grad blive paavirkede af Magnetismen, dog med
+den Forskjel, at nogle blive tiltrukne, andre --- „de diamagnetiske“
+--- derimod frastødte af en stærk Magnetpol. „Den magnetiske Fordeling
+i de diamagnetiske Legemer voxer ved svagere magnetiserende Kræfter
+% Arkmærket „19“ staaer forneden paa S. 289; det er ikke Text.
+proportionalt med disse, men over\-%
+% --- p. 290 ---
+skride de en vis Grændse, nærmer Fordelingen sig et vist Maximum.
+Dette er altsaa det Samme, som finder Sted ved de magnetiske Legemer,
+men disse sidste naae hurtigere denne Grændse, og det kan derfor
+hænde, at Legemer, som indeholde en Blanding af magnetiske og
+diamagnetiske Stoffer, f. Ex. Trækul eller jernholdigt Vismuth, vise
+sig magnetiske ved svagere magnetiserende Kræfter, men diamagnetiske
+ved stærkere, idet nu Virkningen af det diamagnetiske Stof faaer
+Overvægten. Til de stærkest diamagnetiske Legemer høre Vismuth,
+Phosphor og Antimon. Vand og Qviksølv vise sig diamagnetiske, medens
+Opløsninger af Salte, som indeholde magnetiske Metaller, i Reglen ere
+magnetiske. Ilten viser sig at være magnetisk, de fleste andre
+Luftarter ere derimod diamagnetiske. Alle Legemer ere, ifølge
+Becquerels Antagelse, meer eller mindre magnetiske, og viser et Legeme
+sig diamagnetisk, saa er det kun fordi det er omgivet af et mere
+magnetisk Medium. Indeslutter man saaledes en fortyndet Opløsning af
+svovlsuurt Jernforilte i et Glasrør, saa er dette Rør magnetisk i
+Luften, men diamagnetisk, naar det holdes nedsænket i en concentreret
+Opløsning af det samme Salt, fordi denne Opløsning er stærkere
+magnetisk. --- Da imidlertid et Legeme i det lufttomme Rum ogsaa kan
+% SATSFEIL, efterprøvet paa KB-Exemplaret: det andet „l“ i „tillige“
+% staaer hævet over Skriftlinien (Typen sidder for høit i Satsen).
+% Begge Exemplarer vise det, altsaa Sætterens Feil og ikke Exemplarets.
+% Gjengivet som almindeligt „tillige“; Feilen kan ikke sættes.
+forholde sig diamagnetisk, nødes man altsaa tillige til at antage, at
+% Fodnotemærket staaer EFTER det lukkende Anførselstegn og med
+% Mellemrum: „Rum.“ *)
+der kan finde en magnetisk Fordeling Sted i det lufttomme Rum.“ %
+\footnote{% trykt Mærke: *) --- eneste Note paa S. 290.
+% TRYKKEFEIL i Sidetallet, efterprøvet paa KB-Exemplaret: mellem „2“ og
+% „7“ staaer et Mellemrum af een Types Bredde med en lille Prik paa
+% Linien --- altsaa en Type, som ikke er kommet til Tryk. Begge
+% Exemplarer vise det Samme, saa Feilen er Sætterens. Meningen er
+% aabenbart „277--79“ (jvnfr. Noten S. 292: „Lorenz. Anf. Skr. S. 270.“),
+% men Texten gjengives som TRYKT.
+% NB. Her staaer „Lorenz“ UDEN Punktum efter Navnet; S. 292 staaer
+% „Lorenz.“ med Punktum. Begge gjengives som trykte.
+Lorenz Anf. Skr. S. 2.7--79.}
+Denne sidste Omstændighed sætter et Spørgsmaalstegn til Forklaringen
+istedenfor et Punktum. Sammenstilles nu Ampère's Theorie med det store
+Resultat af Faradays Undersøgelser, da sees det, at Magnetismen har
+ophørt at være noget Particulært: den magnetiske Leddeling er i sin
+Art lige saa gjennemgaaende som den elektriske.
+
+% --- p. 291 ---
+Grunden saavel til den magnetiske som til den elektriske Polaritet er
+væsenlig at søge i det oprindelige Forhold mellem det Reelle i
+Gjenstandsmagten og det Ideelle i Selvmagten. At Leddelingen ikke kan
+forklares af Gjenstandsmagten d. e. af Tingenes materielle Existens
+alene, er let at indsee. Begynde vi med Elementærmagneterne, saa maa
+enhver saadan magnetisk Grunddeel jo være deelt i tre Dele af hvilke
+den ene er en Nordpol, den anden en Sydpol og den tredie en neutral
+Midte; men see vi nærmere til, saa falder enhver af disse Dele igjen i
+tre Dele. Den Deel, der danner Nordpolen, er, naar den skilles fra de
+to andre, selv den hele Elementærmagnet med Nordpol, Sydpol og neutral
+Midte o. s. fremd. Modsigelsen er, at hver Deel af det magnetiske Hele
+skal være en i Rummet existerende Deel, at enhver saadan Deel igjen
+kan deles og at den deelte Deel selv er et Hele. Den samme Modsigelse
+gjentager sig ved Elektriciteten. I sin naturlige Tilstand skal hver
+Deel af Legemet have begge Elektriciteter i indifferent Eenhed. Naar
+de to Elektriciteter ere Eet, saa er Legemet ikke elektrisk, det vil
+sige: saa er Elektriciteten ikke; naar Elektriciteten er, saa er den
+neutrale Eenhed ikke. Men naar den virkelige Elektricitet kun er i
+Toheden, hvorledes kan den mulige da være i Eenheden? Elektricitetens
+forskjelsløse Eenhed er jo netop dens Umulighed! Disse Modsigelser
+kunne alene løses under den Forudsætning, at Tohedens Eenhed er i
+Realbegrebet, altsaa i Magtens Idealitet, og at Eenhedens Tohed netop
+paa Grund heraf under givne Betingelser kommer til Udslag i materiel
+Existens, altsaa i Magtens Realitet. Dette tydeliggjør vel ikke
+Virkemaaden selv, men det kaster Lys paa det Virksommes Væsen.
+
+Ved at henføre det i Phænomenet Værende til det i Væsenet Virksomme er
+Ampère's Theorie vel skikket til at belyse den articulerede
+Totalitets Indre og lede til en Forklaring af Jordmagnetismen.
+% Arkmærket „19*“ staaer forneden paa S. 291; det er ikke Text.
+„Som bekjendt paavirkes en
+% --- p. 292 ---
+Magnetnaal af Jorden ligesom af en fjern Magnet, og ganske paa samme
+Maade forholder Jorden sig ogsaa til de elektriske Strømledere.
+Saaledes stiller en bevægelig plan Strømkreds sig lodret paa den
+magnetiske Meridian, idet den ogsaa med Hensyn til Jorden forholder
+sig som en magnetisk Plade, hvis nordmagnetiske Side vil vende mod
+Nord; i den nederste Deel af Lederen vil Strømmen altsaa gaae fra Øst
+til Vest. Paa samme Maade vil den strømledende, bevægelige Spiral
+stille sig med Axen i den magnetiske Meridian, og man kan endog faae
+en bevægelig Deel af en Strømleder til at rotere ved Jordmagnetismen
+alene. Alle disse Virkninger kunne vi nu med langt større
+Sandsynlighed tilskrive elektriske Strømme i Jordens Indre end
+virkelig tilstedeværende Magnetisme. Man har i Virkeligheden allerede
+i den os tilgængelige Deel af Jordens Overflade iagttaget snart svage
+snart stærkere elektriske Strømme, og det er derfor sandsynligt, at
+der ogsaa længere nede i Jordens Indre findes elektriske Strømme, hvis
+% Fodnotemærket staaer EFTER det lukkende Anførselstegn og med
+% Mellemrum: „Overfladen.“ *)
+samlede Virkninger det er, vi iagttage paa Overfladen.“ %
+\footnote{% trykt Mærke: *) --- eneste Note paa S. 292.
+Lorenz. Anf. Skr. S. 270.}
+
+% FORTEGNENE: Sætningen sætter „+ E og --- E“. Minusset er her en
+% almindelig vandret Streg af Tankestregens Længde, IKKE Nielsens
+% Divisionsminus „÷“ (jvnfr. S. 46 og S. 233). Efterprøvet paa
+% KB-Exemplaret. Gjengivet som trykt, altsaa med ---.
+Her er i disse Kjendsgjerninger et eget Kræfternes Sammenspil, et
+mærkværdigt Vexelspil af det Mangeformige og dog Eensformige. Nordpol
+og Sydpol, + E og --- E i endeløse Gjentagelser: det seer eensformigt
+ud. Men hvilken Mangfoldighed af qvalificerende Virksomheder og
+qvalitativt bestemte Differenser kommer der dog ikke paa dette
+forholdsviis eensformige Grundlag tilsyne! Det er naturnødvendige
+Yttringer af punktlig bestemte Forudsætninger, hensynsløse Udbrud af
+indre Hensyn; den reelle Grund er uden Hensyn, thi den rationelle er
+lutter Hensyn.
+
+% SPÆRRING, efterprøvet paa KB-Exemplaret: „telluriske“ (S. 292) og
+% „kosmiske“ (S. 293) ere spærrede; Modstillingen løber over Bladskiftet.
+At Functionerne af magnetisk og elektrisk Polaritet med deres
+indbyrdes polære Krydsninger ikke blot ere \emph{telluriske},
+gjældende blot for det jordiske Hele, men
+% --- p. 293 ---
+ogsaa \emph{kosmiske}, gjældende for hele Solsystemet, at der kan
+% TRE NOTER paa dette Blad, trykte *), **) og ***); de to sidste sættes
+% med lokale \renewcommand, som strax efter stilles tilbage.
+% De to første Mærker staae FORAN Kommaet: „Nordlyset*),“ og
+% „Zodiakallyset**),“; det tredie staaer inde i Sætningen uden foregaaende
+% Tegnsætning: „Cometerne***) ere Phænomener“.
+tales om et magnetisk Uveir lige saa vel som om et elektrisk, at
+Nordlyset%
+\footnote{% trykt Mærke: *) --- første af tre Noter paa S. 293.
+% Noten ender UDEN Punktum efter Sidetallet: „Love. S. 285“. Efterprøvet
+% paa KB-Exemplaret; begge Exemplarer vise det Samme, altsaa Sætterens
+% Udeladelse. Gjengivet som trykt.
+At der maa være et eget Forhold mellem Magnetismen og Nordlyset,
+antydes allerede derved, at den lysende Bue, det som oftest danner,
+staaer lodret paa den magnetiske Meridian, og at Nordlyset indvirker
+paa Magnetnaalene selv der, hvor det ikke kan sees. Man har i Paris
+iagttaget stærke Svingninger af Magnetnaalen paa samme Tid, som man i
+Christiania eller i det nordlige Skotland saae Nordlys. C. Holten.
+Naturens almind. Love. S. 285}, Zodiakallyset%
+\renewcommand{\thefootnote}{**)}%
+\footnote{% trykt Mærke: **) --- anden af tre Noter paa S. 293.
+% TRYKFEIL, efterprøvet paa KB-Exemplaret: der staaer „Phoshorescensen“
+% (uden det andet p). Begge Exemplarer vise det Samme, altsaa Sætterens
+% Feil. Gjengivet som trykt.
+Om „Corona, Zodiakallys, Nordlys og Phoshorescensen af den dunkle
+Himmelgrund i dens Relation til Maanen“ see Zöllner, Anf. Skr.
+S. 127--30.}%
+\renewcommand{\thefootnote}{***)}%
+, ja endog Tiltrækningsforholdet mellem Solen og Cometerne%
+\footnote{% trykt Mærke: ***) --- tredie af tre Noter paa S. 293.
+% TRYKFEIL, efterprøvet paa KB-Exemplaret: Noten slutter „Anfr. Skr.“
+% med indskudt r, hvor Bogen ellers overalt sætter „Anf. Skr.“ Begge
+% Exemplarer vise det Samme. Gjengivet som trykt.
+Om Olbers som Begrunder af den elektriske Comettheorie, jvnfr. Zöllner
+S. 146 flgd. Om „Forskjellen mellem den graviterende og den elektriske
+Fjernvirken paa ponderable Masser“ fastsætter Zöllner Følgende:
+„Staaer et Legeme samtidig under Indflydelse af Gravitation og fri
+Elektricitet af et andet, saa vil ved tiltagende Masse Gravitationen,
+ved aftagende Masse derimod Elektriciteten have Overvægt som bevægende
+Kraft. Desaarsag staae Cometkjernerne som draabeflydende Masser under
+Indflydelse af Gravitationen, de udviklede Dampe som Aggregater af
+meget smaa Massedele under Indflydelse af Solens frie
+Elektricitet.“ Anfr. Skr. S. 117--120.}%
+\renewcommand{\thefootnote}{*)}
+ere Phænomener af elektrisk eller elektromagnetisk Oprindelse, tør
+vel i Almindelighed antages, uagtet Physiken endnu ikke er istand til
+at paavise Aarsagsforbindelserne i det Enkelte. Det for Realbegrebet
+Afgjørende er, at den gjennemgaaende Leddeling afgiver en væsenlig
+Forudsætning for al formende, legemdannende Naturvirksomhed.
+
+% AFDELINGENS SLUTNING. Texten paa S. 293 hører op omtrent en Trediedeel
+% nede paa Bladet; derunder staaer blankt Rum og saa en kort centreret
+% Streg (enkelt trykt), omtrent midt paa Bladet --- som ved S. 146.
+% Under den følger Notestregen og de tre Noter, og INTET mere.
+% Afdeling B slutter altsaa reent forneden paa dette Blad: Overskriften
+% „C. Legemdannende Functioner: Chemisme.“ staaer IKKE her, men begynder
+% S. 294 (næste Batch, som altsaa selv skal sætte den).
+% Efter Husreglen gjengives Ornamentets Længde ikke: \streg tjener overalt.
+\streg
 
 %  --- C. Legemdannende Functioner: Chemisme  (pp. 294–317) ---
 
