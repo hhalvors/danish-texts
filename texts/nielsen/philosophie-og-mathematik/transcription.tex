@@ -29,6 +29,13 @@
 %  STATUS: IN PROGRESS. Done: preamble + title page (front matter).
 %        Body not yet begun. Resume at printed p.3 (PDF 8). See RESUME-NOTES.md.
 % ============================================================
+%
+%  ORIGINAL PAGINATION (2026-09-12): the printed-page numbers already
+%  recorded in this file as "printed p.N" comments are now also set in
+%  the text as \opage{N}, showing as a marginal [N]. 75 markers.
+%  The comments are unchanged and remain the record of the PDF page and
+%  of any note made at the page. \opage means the number was established
+%  at the image by hand; nothing here was placed by alignment.
 \documentclass[12pt]{book}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
@@ -57,6 +64,10 @@
 \setlength{\parskip}{0pt}
 \setstretch{1.3}
 
+% ---- original-page markers (paginate.py) ----
+\usepackage{marginnote}
+\newcommand{\opage}[1]{\marginnote{\footnotesize\textit{[#1]}}}
+\newcommand{\apage}[1]{\marginnote{\footnotesize\textit{[#1]}}}
 \begin{document}
 
 % ============================================================
@@ -97,13 +108,13 @@
 % ============================================================
 
 % ---- printed p.3 (PDF 8): opening statement (stands alone on the page) ----
-\noindent Nærværende Afhandlings Forfatter, som hverken er eller vil være
+\opage{3} \noindent Nærværende Afhandlings Forfatter, som hverken er eller vil være
 Mathematiker, har i Philosophien, den almindelige Videnskabslære, fundet
 Opfordring til at lære ogsaa Mathematikens Sprog, og med Hensyn paa de ledende
 Grundbegreber, saavidt muligt, sætte sig ind i dens Tankegang.
 
 % ---- printed p.4 (PDF 9): "Rettelse." (errata). Original page (letterspaced
-%      heading) reads only:
+\opage{4} %      heading) reads only:
 %        S. 25, Linie 9: Tilnærmelse til et Uopnaaeligt; læs: Tilnærmelse til
 %        et Opnaaeligt.
 %      Per repo convention the errata page is NOT reproduced as body text;
@@ -112,7 +123,7 @@ Grundbegreber, saavidt muligt, sætte sig ind i dens Tankegang.
 
 % ============================================================
 % ---- printed p.5 (PDF 10) ----
-\begin{center}
+\opage{5} \begin{center}
   {\large\bfseries I.}\par\vspace{4pt}
   {\Large\bfseries Mathematiske Functioner.}\par\vspace{4pt}
   \rule{2.5cm}{0.4pt}
@@ -142,7 +153,7 @@ Forhold. En Størrelse kan, saa at sige, ansættes til forskjellige Bestillinger
 kan som Addend $(a+x)$, som Factor $(ax)$, som Potensexponent $(a^{x},\ x^{a})$,
 som Logarithme o.\ s.\ v. erholde en
 % ---- printed p.6 (PDF 11) ----
-meget forskjellig Indflydelse, og forsaavidt optræde i forskjellige Functioner.
+\opage{6} meget forskjellig Indflydelse, og forsaavidt optræde i forskjellige Functioner.
 
 Her er imidlertid en anden Side af Begrebet, som især maa fremhæves i
 Størrelseslæren. Man taler ikke blot om at fungere, at være i Function; man
@@ -172,7 +183,7 @@ I Functionen ere altsaa Størrelserne foranderlige; men Størrelser kunne jo
 ogsaa være uforanderlige. At enhver Størrelse maa være sig selv lig, og at
 enhver Størrelse kan ved Forøgelse eller Formindskelse i hvert Øieblik blive
 % ---- printed p.7 (PDF 12) ----
-sig selv ulig, er en Modsigelse, der løses i Functionsbegrebet. I og for sig er
+\opage{7} sig selv ulig, er en Modsigelse, der løses i Functionsbegrebet. I og for sig er
 ingen Størrelse enten uforanderlig eller foranderlig, thi ingen Størrelse er
 Noget alene i og for sig. Om den særegne Størrelse derimod i sit Forhold til
 andre Størrelser skal spille den Uforanderliges eller Foranderliges, og, i
@@ -211,7 +222,7 @@ altsaa paa Indsigten, kan sees af følgende Exempel.
 At $\frac{1}{1-x} = 1 + x + x^{2} + \ldots$ vil give en uendelig Række, bevises
 ikke ved at fortsætte Divisionen i det Uendelige,
 % ---- printed p.8 (PDF 13) ----
-men ved at forstaae, hvad Divisionen paa given Forudsætning nødvendigviis fører
+\opage{8} men ved at forstaae, hvad Divisionen paa given Forudsætning nødvendigviis fører
 med sig.
 
 Hvor let en Række Tilfælde, der gaae ind under en Regel, kan bedrage, naar man
@@ -248,7 +259,7 @@ logarithmiske Function. $a^{z} = x$, $z = \log x$; $a^{t} = y$, $t = \log y$,
 kan ikke godtgjøres ved noget Beviis. Her kan ikke være Tale enten om Tilfælde
 eller om Regel eller om Lov; her handles om
 % ---- printed p.9 (PDF 14) ----
-en Begrebsbestemmelse for Logarithmen, en Angivelse af dens Kategorie. Men er
+\opage{9} en Begrebsbestemmelse for Logarithmen, en Angivelse af dens Kategorie. Men er
 Logarithmens Kategorie først fastsat, da gjælder som Lov i Kraft af Begrebet:
 $a^{z}a^{t} = a^{z+t} = xy$, og $z+t = \log(xy) = \log x + \log y$.
 
@@ -284,7 +295,7 @@ forskjelligt i de forskjellige Folkesprog; men Mathematiken nøies ikke med
 Ordet; uafhængig af Folkesprogenes Forskjellighed har den exacte Videnskab sit
 eget Sprog: $f(x+y) = f(x)\,f(y)$ er hverken dansk eller fransk, men mathematisk.
 % ---- printed p.10 (PDF 15) ----
-At den Betegnelse, Mathematiken anvender, nu ogsaa virkelig er et Sprog i
+\opage{10} At den Betegnelse, Mathematiken anvender, nu ogsaa virkelig er et Sprog i
 strengere Forstand, end f.\ Ex. Nodesproget i Musiken, sees deraf, at det ikke
 indskrænkes til at angive forskjellige Regningsoperationer, men udtrykker
 Modsætninger, uddrager Slutninger, og paaviser Forskjellen imellem det Mulige og
@@ -316,7 +327,7 @@ mathematiske.} er henvist til et grammatisk Folkesprog, betjener Mathematiken
 sig væsentlig af et pasigraphisk Tegnsprog: denne Sprogforskjellighed maa vel
 have sin dybere Grund.
 % ---- printed p.11 (PDF 16) ----
-Forsaavidt et Sprog udtrykker Tanker og Begreber, udtrykker det, hvorledes det
+\opage{11} Forsaavidt et Sprog udtrykker Tanker og Begreber, udtrykker det, hvorledes det
 Almene og det Individuelle skilles i Abstractioner og forenes i Domme, sondres i
 Domme og forbindes i Slutninger.
 
@@ -351,7 +362,7 @@ gjælder ikke blot om de saakaldte identiske Ligninger, som: $A = A$, men om en
 hvilkensomhelst Ligning. Hvad der staaer paa den ene Side af Lighedstegnet
 forestiller nemlig Subjektet, og det, der
 % ---- printed p.12 (PDF 17) ----
-staaer paa den anden Side, Prædikatet; men det er jo for enhver Ligning aldeles
+\opage{12} staaer paa den anden Side, Prædikatet; men det er jo for enhver Ligning aldeles
 ligegyldigt, fra hvilken Side den læses. Er $f(x+y) = f(x) + f(y)$, saa er
 naturligviis ogsaa $f(x) + f(y) = f(x+y)$. I det mathematiske Sprog er
 Prædikatet congruent med Subjektet, thi Mathematiken er en exact Videnskab.
@@ -380,7 +391,7 @@ Mathematik til praktisk Behov. Udtryk som: „tung, tungere, hurtigt, hurtigere,
 varmt, varmere“, falde endnu udenfor det Mathematiske; men, naar der udtrykkelig
 spørges: „hvor tungt?“
 % ---- printed p.13 (PDF 18) ----
-„hvor meget tungere“? o.\ s.\ v., kan Svaret neppe savne et mathematisk Element.
+\opage{13} „hvor meget tungere“? o.\ s.\ v., kan Svaret neppe savne et mathematisk Element.
 
 Den mathematiske Tænknings eiendommelige Forhold til det Almeenlogiske viser
 sig maaskee meest paafaldende, naar Mathematiken selv tager Ordet, for at stille
@@ -412,7 +423,7 @@ forgjæves bryder sit Hoved med at løse den.
 Den, der forstaaer det mathematiske Sprog, finder Opgaven let, ja for ethvert
 Tilfælde væsentlig lige let; thi
 % ---- printed p.14 (PDF 19) ----
-Ligningen $\dfrac{x}{a_1}+\dfrac{x}{a_2}+\dfrac{x}{a_3}+\dots\dfrac{x}{a_n}=1$,
+\opage{14} Ligningen $\dfrac{x}{a_1}+\dfrac{x}{a_2}+\dfrac{x}{a_3}+\dots\dfrac{x}{a_n}=1$,
 som giver $x = \dfrac{1}{\frac{1}{a_1}+\frac{1}{a_2}+\frac{1}{a_3}+\dots
 \frac{1}{a_n}}$, passer for alle mulige Tilfælde. Denne det Almenes Opgaaen i de
 enkelte Tilfælde er afgjørende for den mathematiske Erkjendelse.
@@ -447,7 +458,7 @@ det Enkelte, det Uforanderlige og det Foranderlige.
 Med det logiske Formelvæsen er det paa Videnskabernes nuværende Trin kun maadelig
 bevendt; med de mathematiske Formler har Sagen en anden Sammenhæng.
 % ---- printed p.15 (PDF 20) ----
-Imod det logiske Formelvæsen gives et videnskabeligt Middel: en sund og skarp
+\opage{15} Imod det logiske Formelvæsen gives et videnskabeligt Middel: en sund og skarp
 Dialektik; imod det mathematiske Formelvæsen behøves intet Middel, thi Indsigt i
 de virkelige Love er betinget af Indsigt i de mathematiske Formler\footnote{Ved
 sine Formler egner Mathematiken sig just til at udtrykke de virkelige Love.
@@ -478,7 +489,7 @@ dermed er Overgangen ikke gjort. Bevidstheden kan ofte komme et nyt Begreb meget
 nær, kan skimte det som i en Dæmring, og dog kan Begrebet atter svinde, og blive
 borte.
 % ---- printed p.16 (PDF 21) ----
-Skal et nyt Begreb opgaae for Erkjendelsen, er det ikke nok, at Undersøgelsen
+\opage{16} Skal et nyt Begreb opgaae for Erkjendelsen, er det ikke nok, at Undersøgelsen
 fører hen til det Vendepunkt, hvor det har sit Udspring (thi saa vare vel
 Nutidens store Opdagelser alt skete for Aarhundreder siden); for at et nyt Begreb
 kan blive til i Erkjendelsen, kræves, at Tanken ret faaer Øie paa det, optager
@@ -509,7 +520,7 @@ Som mathematisk Dom vil Ligningen ikke logisk udsige, hvad Multiplicationen ente
 er eller ikke er, men derimod i den exacte Form paavise, hvorledes
 Multiplicationens intellectuelle Handling hænger sammen med Additionens.
 % ---- printed p.17 (PDF 22) ----
-Hvad Dialektiken er i Philosophien, er den intellectuelle Handling med sine
+\opage{17} Hvad Dialektiken er i Philosophien, er den intellectuelle Handling med sine
 praktiske Overgange i Mathematiken. At Sagen forholder sig saaledes, kunne vi
 oplyse ved et Tilbageblik.
 
@@ -540,7 +551,7 @@ x = \frac{1}{\dfrac{1}{\varphi(1)}+\dfrac{1}{\varphi(2)}+\dots\dfrac{1}{\varphi(
 \dots\dfrac{1}{\varphi(n)}} = F(\varphi(p)) = f(p).
 \]
 % ---- printed p.18 (PDF 23) ----
-Da der i Udtrykket for $x$ findes i Nævneren en Sum af Formen $\frac{1}{\varphi(p)}$,
+\opage{18} Da der i Udtrykket for $x$ findes i Nævneren en Sum af Formen $\frac{1}{\varphi(p)}$,
 der jo er en Function af $\varphi(p)$, og hele Summen følgelig en Function af
 $\varphi(p)$, saa er ogsaa $1$, divideret med Summen, en Function af
 $\varphi(p)$. Det Uforanderlige og det Foranderlige ville paa denne Maade
@@ -580,7 +591,7 @@ $A_3 = -(a_1a_2a_3 + a_1a_2a_4 + \dots a_1a_2a_n + a_2a_3a_4 + \dots
 a_{n-2}a_{n-1}a_n) = f_3(a_1\,a_2\,a\dots a_n) = $ Summen af Producterne af 3 og 3
 $a$ med modsat Tegn; her samvirke første og anden Grundfunction.
 % ---- printed p.19 (PDF 24) ----
-$A_n = (-1)^{n}(a_1\,a_2\,a_3\dots a_n) = f_n(a_1, a_2, \dots a_n) = $ Produktet af
+\opage{19} $A_n = (-1)^{n}(a_1\,a_2\,a_3\dots a_n) = f_n(a_1, a_2, \dots a_n) = $ Produktet af
 alle $a$ med modsat Tegn, naar $n$ er ulige. Det er altsaa den anden
 Grundfunction her optræder.
 
@@ -618,7 +629,7 @@ Uendelighedsproblemet er Mathematikens og Philosophiens store Fælledsproblem.
 Men, før man ret kan tænke paa Løsningen af et Problem, maa man allerførst see at
 lade Problemet blive til. Nærværende Problem er nu af
 % ---- printed p.20 (PDF 25) ----
-den Beskaffenhed, at det kun da kan staae klart for Bevidstheden, naar
+\opage{20} den Beskaffenhed, at det kun da kan staae klart for Bevidstheden, naar
 Mathematiken vil hjælpe Philosophien med at stille det frem.
 
 Med Interesse for Problemet følge vi da den af Mathematiken betegnede Vei.
@@ -655,7 +666,7 @@ $u_n = f_1(n) = a + nx$:
 
 β) Den harmoniske Række, ifølge hvilken $u_n = f_2(n) = \dfrac{1}{a+nx}$:
 % ---- printed p.21 (PDF 26) ----
-\[
+\opage{21} \[
 \dots\ \frac{1}{a-3x},\ \frac{1}{a-2x},\ \frac{1}{a-x},\ \frac{1}{a},\
 \frac{1}{a+x},\ \frac{1}{a+2x},\ \frac{1}{a+3x}\ \dots
 \]
@@ -693,7 +704,7 @@ Uendelige“, thi deres saakaldte Identitet er en reen Tautologi.
 Som dialektisk Videnskab har Philosophien ikke kunnet blive staaende ved slige
 Tautologier. At det Uendelige ikke
 % ---- printed p.22 (PDF 27) ----
-er endeligt, vil jo med andre Ord sige, at det er en Grændse for det Endelige,
+\opage{22} er endeligt, vil jo med andre Ord sige, at det er en Grændse for det Endelige,
 altsaa det Ikke-Endelige. Det Endelige, der er det Ikke-Uendelige, er da med det
 Samme en Grændse for det Uendelige. Men naar det Endelige og det Uendelige paa
 denne Maade ere hinandens Grændser, maa Grændsebestemmelsen blive dialektisk.
@@ -740,7 +751,7 @@ Mathematiken med rene Ord: „uendelig mange, uendelig smaa“. Det
 \end{tikzpicture}
 \end{center}
 % ---- printed p.23 (PDF 28) ----
-Uendelige bliver altsaa baade som det uendelig Store og det uendelig Lille
+\opage{23} Uendelige bliver altsaa baade som det uendelig Store og det uendelig Lille
 omsluttet af endelige Grændser. Men, dersom det Uendelige virkelig omsluttes af
 endelige Grændser, maa det jo dog, det siger den sunde Forstand, paa en eller
 anden Maade selv være endeligt.
@@ -806,7 +817,7 @@ forstaaer sig af sig selv; at $\angle x = 0$ dog alligevel betragtes som værend
 sees deraf, at Cosinus jo kun kan være en Vinkels Cosinus, og at $\cos 0$
 ligesaavist er en reel Størrelse, som $\cos 1^{\circ}$.
 % ---- printed p.24 (PDF 29) ----
-% FIGURE (printed p.24): a detail of the circle — centre C, horizontal radius to
+\opage{24} % FIGURE (printed p.24): a detail of the circle — centre C, horizontal radius to
 %   D, two close rays CA and CD' rising to the right, angle x = angle DCA.
 \begin{center}
 \begin{tikzpicture}[scale=2.1]
@@ -855,7 +866,7 @@ Det er med denne Antydning naturligviis ikke Meningen, at ville indblande det
 uvidenskabelige Analogier. Den flygtige Hentydning til det Æsthetiske skulde blot
 tjene til at udhæve Forskjellen imellem den dobbelte
 % ---- printed p.25 (PDF 30) ----
-Maade, hvorpaa det Endeliges Forhold til det Uendelige bliver opfattet.
+\opage{25} Maade, hvorpaa det Endeliges Forhold til det Uendelige bliver opfattet.
 
 Hvad ligger der da i Begrebet: Tilnærmelse, uendelig Tilnærmelse?
 
@@ -918,7 +929,7 @@ f(x) = y = \frac{b}{a}\sqrt{x^{2} - a^{2}};
 \]
 for Hyperblens Asymptote:
 % ---- printed p.26 (PDF 31) ----
-$f_1(x) = y_1 = \dfrac{b}{a}x$. Altsaa er
+\opage{26} $f_1(x) = y_1 = \dfrac{b}{a}x$. Altsaa er
 \[
 \begin{aligned}
 y_1 - y &= \frac{b}{a}\left(x - \sqrt{x^{2}-a^{2}}\right)
@@ -958,7 +969,7 @@ Henseende, naar man vel at mærke seer tilbage, en virkelig Tilnærmelse.
 Dialektiken kunde nu vistnok i denne Sammenhæng meget let confundere
 „\textit{diversus respectus}“, og aflokke den
 % ---- printed p.27 (PDF 32) ----
-formelle Logik den Tilstaaelse, at den, ifølge egen Forklaring, altsaa dog kun
+\opage{27} formelle Logik den Tilstaaelse, at den, ifølge egen Forklaring, altsaa dog kun
 seer Tilnærmelsen som --- Bortfjernelse, kun seer fremad, forsaavidt den seer
 tilbage, og at just dette er en Modsigelse; men vi have stillet os for
 Mathematikens Forum, og tør ikke foregribe dens Kjendelse.
@@ -998,7 +1009,7 @@ Led blive mindre og mindre, og altsaa nærme sig $0$.
 Mathematiken kan ikke, som den formelle Logik, slaae sig til Ro ved en Forklaring
 af „uendelig Tilnærmelse“ i
 % ---- printed p.28 (PDF 33) ----
-Ord; den bruger sit Tegnsprog, og articulerer Begrebet, idet den for enhver
+\opage{28} Ord; den bruger sit Tegnsprog, og articulerer Begrebet, idet den for enhver
 uendelig Række udfinder Relationen imellem de enkelte Led.
 
 For at dette kan skee, maa Functionsbegrebet antage en bestemt Charakteer: $f(x)$
@@ -1029,7 +1040,7 @@ Foranderlige til at gaae op i det Uforanderlige, og, saa at sige, fange de
 uendelige Muligheder i Relationernes Net.
 
 % ---- printed p.29 (PDF 34) ----
-Saaledes bliver da for det Første hver Coefficient kjendelig paa den tilsvarende
+\opage{29} Saaledes bliver da for det Første hver Coefficient kjendelig paa den tilsvarende
 Potens. Have, for at holde os til det givne Exempel, Potensfactorerne
 $x^{m}z^{n}$ i den ene Række Coefficienterne $A_m A_n$, i den anden
 $A_{m+n}\dfrac{(m+n)}{1}\dfrac{(m+n-1)\dots(m+1)}{2\cdot 3\dots n}$\footnote{Man
@@ -1058,7 +1069,7 @@ n(n+2)\,(n-n+1)}$ saa at han ikke strax seer det maskerede Nul.} og er forvisset
 om, at den ikke skuffer. Har altsaa Mathematikeren nu i det Hele sikkret sig
 Relationen imellem Potenserne og deres Coefficienter, saa benytter han
 % ---- printed p.30 (PDF 35) ----
-igjen denne Relation til dermed at udfinde Relationen imellem Coefficienterne
+\opage{30} igjen denne Relation til dermed at udfinde Relationen imellem Coefficienterne
 indbyrdes.
 
 I den anførte Række bliver saaledes den hele Vrimmel af mulige Coefficienter
@@ -1091,7 +1102,7 @@ naturlige, neperske, Logarithmesystem.
 Ved Relationen imellem den exponentielle og den logarithmiske Function bliver
 Coefficienten $A_1$ omsider bestemt i
 % ---- printed p.31 (PDF 36) ----
-Formlen $A_1 = \dfrac{\log a}{\log e}$\footnote{Er $a^{\frac{1}{A_1}} = e$, saa
+\opage{31} Formlen $A_1 = \dfrac{\log a}{\log e}$\footnote{Er $a^{\frac{1}{A_1}} = e$, saa
 er $\dfrac{1}{A_1}\log a = \log e$, og $\log a = \log e\, A_1$; altsaa:
 $A_1 = \dfrac{\log a}{\log e}$ (idet $\log$ betegner Logarithmen i et vilkaarligt
 System).}, en Relation, der naturligviis igjen fører ind i nye Relationer.
@@ -1127,7 +1138,7 @@ sammen med Functionsbegrebet; Uendelighedens Indhold kan altsaa først udfolde s
 i de forskjelligartede Functioners systematiske Samvirken.
 
 % ---- printed p.32 (PDF 37) ----
-Til Belysning af Functionernes Systematik maa fremhæves a) at deres Udvikling
+\opage{32} Til Belysning af Functionernes Systematik maa fremhæves a) at deres Udvikling
 kan føres tilbage til een Grundformel, b) at deres Vexelforhold og gjensidige
 Overgange vise hen til en fælleds Oprindelse, c) at den ene Function i
 fortløbende Række kan udvikles af den anden.
@@ -1169,7 +1180,7 @@ For $f(x) = ax = A_0 + A_1 x + A_2 x^{2} + \dots$ maa $A_0$ blive $= 0$,
 $A_1 = a$, $A_2$, $A_3 \dots = 0$.
 
 % ---- printed p.33 (PDF 38) ----
-For $f(x) = x^{a} = A_0 + A_1 x + A_2 x^{2}\dots$ faaer ligeledes kun et enkelt
+\opage{33} For $f(x) = x^{a} = A_0 + A_1 x + A_2 x^{2}\dots$ faaer ligeledes kun et enkelt
 Led Betydning, dersom $x$ er eenleddet; er $x$ toleddet, t.\ Ex.\ $= y+z$,
 gjengiver Rækken Binomialformlen.
 
@@ -1234,7 +1245,7 @@ i Sinus-Rækken: $B_1 = 1$, $B_3 = \frac{(-1)^{\frac{3+3}{2}}}{1\cdot 2\cdot 3} 
 \]
 
 % ---- printed p.34 (PDF 39) ----
-Den Eiendommelighed, hvormed disse Functioner udtræde af Grundformlen, giver sig
+\opage{34} Den Eiendommelighed, hvormed disse Functioner udtræde af Grundformlen, giver sig
 naturligviis ogsaa tilkjende i Udviklingens Resultat:
 \[
 \cos x = 1 - \frac{x^{2}}{1\cdot 2} + \frac{x^{4}}{1\cdot 2\cdot 3\cdot 4}
@@ -1248,7 +1259,7 @@ Naar een Grundlov saaledes sondrer sig i forskjellige Udviklingslove, af hvilke
 enhver igjen kan betragtes som særskilt Grundlov, for nye Udviklingslove, enhver
 af disse igjen
 % ---- printed p.35 (PDF 40) ----
-for nye o.\ s.\ v., sees i Sammenhængen det Systematiske, og i den systematiske
+\opage{35} for nye o.\ s.\ v., sees i Sammenhængen det Systematiske, og i den systematiske
 Sammenhæng den Maade, paa hvilken de endelige Relationer blive Bestemmelser for
 det Uendelige. Her viser sig Forskjellen imellem System og Schema. Et Schema
 giver kun endelige Rubrikker, men en systematisk Udvikling gaaer frem af Sagens
@@ -1285,7 +1296,7 @@ Overgang til $y = \dfrac{x\log a}{\log b}$, som er algebraisk.
 Det Samme gjælder om Grændsen mellem den exponentielle Function og den
 logarithmiske. I Rækken for den
 % ---- printed p.36 (PDF 41) ----
-exponentielle Function blev (II,\ 2) Coefficienten: $A_1$ bestemt ved et
+\opage{36} exponentielle Function blev (II,\ 2) Coefficienten: $A_1$ bestemt ved et
 logarithmisk Udtryk, nemlig $A_1 = \dfrac{\log a}{\log e}$, man erholder altsaa:
 \[
 a^{x} = 1 + \frac{\log a}{\log e}\,x + \left(\frac{\log a}{\log e}\right)^{2}
@@ -1327,7 +1338,7 @@ e^{x} = 1 + \frac{x}{1} + \frac{x^{2}}{1\cdot 2} + \frac{x^{3}}{1\cdot 2\cdot 3}
 + \dots
 \]
 % ---- printed p.37 (PDF 42) ----
-Sætter man i denne Ligning $x\sqrt{-1}$ istedetfor $x$, erholder man:
+\opage{37} Sætter man i denne Ligning $x\sqrt{-1}$ istedetfor $x$, erholder man:
 \begin{multline*}
 e^{x\sqrt{-1}} = 1 + \frac{x\sqrt{-1}}{1} + \frac{(x\sqrt{-1})^{2}}{1\cdot 2}
 + \frac{(x\sqrt{-1})^{3}}{1\cdot 2\cdot 3} + \frac{(x\sqrt{-1})^{4}}{1\cdot 2\cdot
@@ -1360,7 +1371,7 @@ exponentielle Function, og Cirkelbuen som Function af de trigonometriske Linier
 reductibel til Logarithmen." Ramus.\ Algbr.\ Functsl.\ S.\ 15.}.
 
 % ---- printed p.38 (PDF 43) ----
-Det systematiske Samqvem imellem den exponentielle Function og de trigonometriske
+\opage{38} Det systematiske Samqvem imellem den exponentielle Function og de trigonometriske
 er altsaa bragt istand ved Anvendelse af en imaginær Størrelse, $\sqrt{-1}$; men
 en imaginær Størrelse hører jo, ifølge Definitionen, til det Umulige. Ved det i
 sig Umulige er da en virkelig Reduction bleven mulig: hvorledes er nu dette at
@@ -1391,7 +1402,7 @@ muligt, som ved første Øiekast synes umuligt, og, omvendt, Meget i Grunden
 umuligt, som en Uindviet let antager for muligt.
 
 % ---- printed p.39 (PDF 44) ----
-Ja, saa dialektisk er Mulighedsgrændsen, endog paa det mathematiske Omraade, at
+\opage{39} Ja, saa dialektisk er Mulighedsgrændsen, endog paa det mathematiske Omraade, at
 den exacte Videnskab selv i mange Puncter endnu neppe formaaer at holde den
 fast.\footnote{For ikke at opholde os ved Spørgsmaal som: er det muligt, at finde
 en omfattende Lov for Bestemmelse af Primtallene? er det muligt, at finde en
@@ -1463,13 +1474,13 @@ i den uendelige Række, tilhobe ere imaginære. En reel Logarithme af $-a$ er
 altsaa dog en Umulighed.}
 
 % ---- printed p.40 (PDF 45) ----
-At Grændserne hævdes, idet de overskrides, viser forøvrigt, hvorledes
+\opage{40} At Grændserne hævdes, idet de overskrides, viser forøvrigt, hvorledes
 Definitioner og Overgange, mekanisk Inddeling og uendelig Articulation betinge
 hinanden i et videnskabeligt System. Forsaavidt de enkelte Functioner stilles som
 i Rubrikker ved Siden af hinanden, og holdes imod hinanden, stilles de
 realistisk: jo fastere den endelige Modsætning holdes, desto
 % ---- printed p.41 (PDF 46) ----
-stærkere er Realismen. Den mathematiske Praktik betvinger imidlertid selv denne
+\opage{41} stærkere er Realismen. Den mathematiske Praktik betvinger imidlertid selv denne
 Realisme, idet den lader enhver af de adskilte Functioner optage de øvrige i sin
 Selvudvikling. Hver Function vender altsaa gjennem de øvrige tilbage i sig selv,
 har altsaa de øvrige som Momenter i sin Begrebsbestemmelse og sit Indhold; dette
@@ -1508,7 +1519,7 @@ Lysvirkningen, og klare sig Forskjellen imellem det Gjennemsigtige og det
 Uigjennemsigtige.
 
 % ---- printed p.42 (PDF 47) ----
-Hvad den sandselige Lysvirkning angaaer, er det jo Mellemleddenes Dunkelhed,
+\opage{42} Hvad den sandselige Lysvirkning angaaer, er det jo Mellemleddenes Dunkelhed,
 Midlernes Endelighed, som lader os føle det Middelbare.
 
 Den, der vil kjende Skikkelser, der bevæge sig bag en Skillemuur, maa ad en Omvei
@@ -1537,7 +1548,7 @@ klares, jo mere gjennemsigtige Mellemleddene blive, desto mere vil derfor ogsaa
 det Middelbare opgaae i høiere Umiddelbarhed.
 
 % ---- printed p.43 (PDF 48) ----
-Det er for den mathematisk Dannede ligesaa let at gjennemløbe Beviset for
+\opage{43} Det er for den mathematisk Dannede ligesaa let at gjennemløbe Beviset for
 $A_m A_n = A_{m+n}\dfrac{(m+n)(m+n-1)\dots(m+1)}{1\cdot 2\cdot 3\dots n}$ i
 ovenanførte Sammenhæng, som for Begynderen at forstaae den Slutning: $A > B$,
 $B > C$, altsaa $A > C$.
@@ -1581,7 +1592,7 @@ X_{m+n}(h+k)^{m+n}\dots
 \]
 kan af det sidst anførte Led udvikles en
 % ---- printed p.44 (PDF 49) ----
-uendelig Række, som blandt sine utallige Led maa indeholde følgende:
+\opage{44} uendelig Række, som blandt sine utallige Led maa indeholde følgende:
 \[
 X_{m+n}\frac{(m+n)(m+n-1)\dots(m+1)}{1\cdot 2\dots n}
 \]
@@ -1621,7 +1632,7 @@ X_n &= \frac{X_{n-1,1}}{n} = \frac{f^{n}(x)}{1\cdot 2\dots n}
 \end{align*}
 
 % ---- printed p.45 (PDF 50) ----
-Kjender man altsaa den Maade, hvorpaa $X_1$ fremkommer af $X_0$, saa kjender man
+\opage{45} Kjender man altsaa den Maade, hvorpaa $X_1$ fremkommer af $X_0$, saa kjender man
 med det Samme den Maade, hvorpaa hvert efterfølgende Led fremkommer af sit
 foregaaende. Er Relationen mellem første og andet Led indlysende, bliver med det
 Samme Relationen mellem første og tredie, første og fjerde, første og tusinde Led
@@ -1659,7 +1670,7 @@ Opgavens Løsning er nødvendigviis betinget af den givne Sammenhæng, men det e
 dog Tanken, der stiller sig Opgaven, og udfinder Veien.
 
 % ---- printed p.46 (PDF 51) ----
-At sætte $x = \dfrac{1}{A_1}$ seer ved første Øiekast ud som et sindrigt Paafund,
+\opage{46} At sætte $x = \dfrac{1}{A_1}$ seer ved første Øiekast ud som et sindrigt Paafund,
 thi det er en Udvei, Friheden har fundet; men, nøiere overveiet, er Udveien
 foreskreven. Frihedens Valg er grundet i Sagens Nødvendighed.
 
@@ -1697,7 +1708,7 @@ Uendelige.
 I Tilnærmelsen til et Uopnaaeligt fandt Uendelighedsproblemet først sit beskuelige
 Udtryk; de endelige Relationers
 % ---- printed p.47 (PDF 52) ----
-indre Uendelighed viste os dernæst Veien til Problemets Løsning.
+\opage{47} indre Uendelighed viste os dernæst Veien til Problemets Løsning.
 
 At en saadan Løsning ikke alene vedkommer Mathematiken, men i høieste Grad
 Philosophien, kan allerede sees af den Modsigelse, hvori Knuden er knyttet.
@@ -1734,7 +1745,7 @@ Saalænge $x$ kun er en endelig Størrelse, kan intet af Leddene bortkastes;
 imidlertid kan man dog ved at dividere med $x^{n}$ omforme den hele Qvotient uden
 at forandre dens Værdi. Altsaa:
 % ---- printed p.48 (PDF 53) ----
-\[
+\opage{48} \[
 f(x) = \frac{\dfrac{a}{x^{n}} + \dfrac{a_1}{x^{n-1}} + \dfrac{a_2}{x^{n-2}}
 + \dots a_n}{\dfrac{b}{x^{n}} + \dfrac{b_1}{x^{n-1}} + \dfrac{b_2}{x^{n-2}}
 + \dots b_n}
@@ -1773,7 +1784,7 @@ For at fatte den Relativitet, som Tilnærmelsen indfører i det Uendelige, maae 
 betragte de uendelige Størrelser, 0 og $\infty$, deels i Forhold til de endelige,
 deels i Forhold til hinanden indbyrdes.
 % ---- printed p.49 (PDF 54) ----
-\[
+\opage{49} \[
 a > b; \quad \text{men } a\cdot\infty = b\cdot\infty, \quad a\cdot 0 = b\cdot 0.
 \]
 \[
@@ -1809,7 +1820,7 @@ For at see, hvorledes den Modsigelse, der ligger i Begrebet: uendelig Størrelse
 opløses i den mathematiske Fremstilling, kunne vi for et Øieblik lade den
 uendelige Tilnærmelse standse for en endelig Grændse. Hvor denne
 % ---- printed p.50 (PDF 55) ----
-Grændse sættes, er i Begrebet ligegyldigt, da den kun sættes, for øieblikkelig at
+\opage{50} Grændse sættes, er i Begrebet ligegyldigt, da den kun sættes, for øieblikkelig at
 overskrides.
 
 Størrelsen $1{,}000{,}000$ forestiller for et Øieblik $\infty$, Qvotienten
@@ -1841,7 +1852,7 @@ omvendt give den endelige Forskjel en uendelig Betydning. Er her imellem $x^{2}$
 og $x$ en bestemt endelig Forskjel, fordi $x$ er endelig, saa er her nu tillige
 imellem
 % ---- printed p.51 (PDF 56) ----
-$\infty^{2}$ og $\infty$ en bestemt Uendelighedsforskjel, og ligesaa imellem
+\opage{51} $\infty^{2}$ og $\infty$ en bestemt Uendelighedsforskjel, og ligesaa imellem
 $0^{2}$ og 0.
 
 Istedetfor at sprænge det Endelige, og med det Absolutes tilintetgjørende
@@ -1879,7 +1890,7 @@ og $\psi(a+h)$ efter stigende Potenser af $h$,
 hvor $\alpha$ og $\beta$ ere positive, efterdi $h = 0$ skal reducere begge
 Udviklingerne til 0. Man har da:
 % ---- printed p.52 (PDF 57) ----
-\[
+\opage{52} \[
 f(a+h) = \frac{\varphi(a+h)}{\psi(a+h)} = h^{\alpha_1-\beta_1}\,
 \frac{A_1 + A_2 h^{\alpha_2-\alpha_1} + A_3 h^{\alpha_3-\alpha_1} + \dots}
      {B_1 + B_2 h^{\beta_2-\beta_1} + B_3 h^{\beta_3-\beta_1} + \dots}
@@ -1928,7 +1939,7 @@ med det Endelige, og det Uopnaaelige altsaa dog opnaaet.
 Forsaavidt her er Tale om Tilnærmelse, ligger det Uendelige bestandig udenfor det
 Endelige, og er desaarsag
 % ---- printed p.53 (PDF 58) ----
-det Uopnaaelige. Til Opnaaelse af det Uopnaaelige maa her da fra dette Standpunkt
+\opage{53} det Uopnaaelige. Til Opnaaelse af det Uopnaaelige maa her da fra dette Standpunkt
 gjøres et Spring; men, for at der dog heller ikke skal springes Formeget over, maa
 Springet saa igjen være tilstrækkelig forberedt ved Tilnærmelse.
 
@@ -1959,7 +1970,7 @@ bliver Uendeligheden forestillet som en sig fortsættende Endelighed, en endelø
 Endelighed, et Endeligt, der aldrig faaer Ende; i
 $\dfrac{1}{a-a} = \dfrac{1}{0} = \infty$ seer Tanken derimod det
 % ---- printed p.54 (PDF 59) ----
-Uendelige som et i Qvotienten udtalt Begreb, en indre Forholdsbestemmelse, for
+\opage{54} Uendelige som et i Qvotienten udtalt Begreb, en indre Forholdsbestemmelse, for
 hvilken de endelige Led kun ere Momenter.
 
 I Ligningen $2 = 2$, er et Endeligt forestillet uden Hensyn til det Uendelige; i
@@ -1997,7 +2008,7 @@ Differentialet.
 At Differentialet netop maa bestemmes ved en Functionsgrændse, hvori det Endelige
 enes med det Uendelige
 % ---- printed p.55 (PDF 60) ----
-som med 0, altsaa: som med sin egen Negation, lader sig, ifølge Mathematikens
+\opage{55} som med 0, altsaa: som med sin egen Negation, lader sig, ifølge Mathematikens
 Anviisning, fremstille saaledes: er $f(x) = y$, saa er $f(x + h) = y + k$; er
 t.\ Ex.\ $f(x) = x^{2} = y$, saa er $f(x + h) = (x + h)^{2} = x^{2} + 2xh + h^{2}
 = y + k$. Da nu $x^{2} = y$, saa bliver $k$ jo ikke $= h$, men $= 2xh + h^{2}$.
@@ -2034,7 +2045,7 @@ f(x + h) = f(x) + f'(x)\,\frac{h}{1} + f''(x)\,\frac{h^{2}}{1\cdot2}
 erholdes: $f(x + h) - f(x) = f'(x)\,\dfrac{h}{1} + f''(x)\,\dfrac{h^{2}}{1\cdot2}
 + f'''(x)\,\dfrac{h^{3}}{1\cdot2\cdot3} \dots$, og, ved at dividere med $h$,
 % ---- printed p.56 (PDF 61) ----
-\[
+\opage{56} \[
 \frac{f(x + h) - f(x)}{h} = f'(x) + f''(x)\,\frac{h}{1\cdot2}
 + f'''(x)\,\frac{h^{2}}{1\cdot2\cdot3} + \dots
 \]
@@ -2077,7 +2088,7 @@ $f'(x + h) = \dfrac{dy}{dx} + k'$, altsaa:
 \]
 $= f''(x)$; men $k' = d\cdot\dfrac{dy}{dx}$,
 % ---- printed p.57 (PDF 62) ----
-altsaa er
+\opage{57} altsaa er
 \[
 \lim\frac{k'}{h} = \frac{d\cdot\frac{dy}{dx}}{dx},
 \]
@@ -2120,7 +2131,7 @@ a^{x+h} - a^{x} = a^{x}(l.\,a)\,\frac{h}{1} + a^{x}(l.\,a)^{2}\,
 - \log e\,\frac{1}{x^{2}}\,\frac{h^{2}}{2} \dots
 \end{gather*}}
 % ---- printed p.58 (PDF 63) ----
-\[
+\opage{58} \[
 a^{x+h} = a^{x}a^{h} = a^{x}\left(1 + (l.\,a)\,h + (l.\,a)^{2}\,\frac{h^{2}}{1\cdot2}
 + \dots\right)
 \]
@@ -2160,7 +2171,7 @@ Under disse Forhold kan her da ikke længere være Tale enten om et blot Endelig
 eller om Spring eller om Tilnærmelse, men kun om Bestemthed, indre uendelig
 Bestemthed.
 % ---- printed p.59 (PDF 64) ----
-Hvor eiendommelig Tankeretningen maa blive, naar det Endelige saaledes uafbrudt
+\opage{59} Hvor eiendommelig Tankeretningen maa blive, naar det Endelige saaledes uafbrudt
 skal bestemmes ved det Uendelige, sees uvilkaarlig af de Principer\footnote{Til
 Oplysning om sammensatte Functioners Differentiation, der ligesom afgiver de
 intellectuelle Typer, hidsættes Følgende I) $day = ady$, naar $a$ er constant, thi
@@ -2225,7 +2236,7 @@ Uendeligt med Uendeligt: $dzdy = 0\cdot0 = 0^{2}$, som bortfalder; med andre Ord
 $ce'aB = dzdy$ betragtes som et Punkt, medens $adaB = ydz$ og $ABBc = zdy$ regnes
 med som uendelig smaa Rectangler.}.
 % ---- printed p.60 (PDF 65) ----
-\begin{center}
+\opage{60} \begin{center}
 \textbf{c) Differentialcoefficienternes indbyrdes Forhold.}
 \end{center}
 \phantomsection
@@ -2249,7 +2260,7 @@ Lad Qvotienten $\dfrac{dy}{dx} = \dfrac{0}{0}$ være, hvad forøvrigt ikke maa t
 altfor bogstaveligt, t.\ Ex.\ $= \dfrac{2}{3}$; man vilde da tage meget feil, om man
 deraf sluttede, at $\dfrac{d^{2}y}{dx^{2}} = \dfrac{0^{2}}{0^{2}}$,
 % ---- printed p.61 (PDF 66) ----
-altsaa maatte være $\left(\dfrac{2}{3}\right)^{2}$,
+\opage{61} altsaa maatte være $\left(\dfrac{2}{3}\right)^{2}$,
 $\dfrac{d^{3}y}{dx^{3}} = \left(\dfrac{2}{3}\right)^{3}$ o.\ s.\ v. Vistnok er
 $d^{n}y$ i Almindelighed af samme Orden, det vil sige: comparabel med $dx^{n}$, thi
 kun for specielle Værdier af $x$ haves enten $f^{n}(x) = 0$ eller
@@ -2276,7 +2287,7 @@ $v = \dfrac{dx}{dt}$, saa er jo $dv = d\cdot\dfrac{dx}{dt}$;
 $\varphi = \dfrac{dv}{dt}$ bliver da $= \dfrac{\frac{d^{2}x}{dt}}{dt}
 = \dfrac{d^{2}x}{dt^{2}}$;
 % ---- printed p.62 (PDF 67) ----
-Naar altsaa første Differentialcoefficient betegner en Hastighed, betegner anden
+\opage{62} Naar altsaa første Differentialcoefficient betegner en Hastighed, betegner anden
 Differentialcoefficient den i Øieblikket virkende Kraft.
 
 Et andet, ligesaa fatteligt Exempel kan hentes fra Maximum og Minimum.
@@ -2331,7 +2342,7 @@ Cirklen, naar i ovenstaaende Figur sættes $OB = x$, $Bm = y$, $OO' = 2r$,
 $x : y = y : 2r - x$; $y^{2} = 2rx - x^{2}$; $y = \pm\sqrt{2rx - x^{2}}$. Er
 $x = r$, saa er $y = CM$, og i sit Maximum.
 % ---- printed p.63 (PDF 68) ----
-Ifølge den høiere Analyse haves, da $y = f(x) = \pm\sqrt{2rx - x^{2}}$,\footnotemark
+\opage{63} Ifølge den høiere Analyse haves, da $y = f(x) = \pm\sqrt{2rx - x^{2}}$,\footnotemark
 \[
 \frac{dy}{dx} = \pm\frac{r - x}{\sqrt{2rx - x^{2}}}, \quad\text{og}\quad
 \frac{d^{2}y}{dx^{2}} = \pm\frac{-\sqrt{2rx - x^{2}}
@@ -2364,7 +2375,7 @@ Resultat: $\pm\dfrac{-\sqrt{2rx - x^{2}}
 For enhver uendelig lille Tilvæxt til $x$, faaer $y$ sin ligeledes uendelig lille
 Tilvæxt: de anførte Værdier udtrykke
 % ---- printed p.64 (PDF 69) ----
-Forholdet imellem de uendelig smaa Tilvæxter. Af Figuren sees, hvad da ogsaa ligger
+\opage{64} Forholdet imellem de uendelig smaa Tilvæxter. Af Figuren sees, hvad da ogsaa ligger
 i Sagens Natur, at enhver Tilvæxt for $y$ maa blive positiv, indtil $y$ naaer sit
 Maximum, derefter negativ o.\ s.\ v.
 
@@ -2445,7 +2456,7 @@ Figuren B er $\dfrac{k}{h} = \operatorname{tg} v$, og $v$ den Vinkel, Secanten d
 med den positive Retning af $x$nes Axe. Idet Skjæringspunkterne, $p$ og $o$, rykke
 hinanden nærmere, nærmer Secanten sig til at blive „rørende", og vil i det
 % ---- printed p.65 (PDF 70) ----
-Øieblik Punkterne falde sammen, være Tangent. Da nu
+\opage{65} Øieblik Punkterne falde sammen, være Tangent. Da nu
 $\dfrac{k}{h} = \operatorname{tg} v$, saa maa $\lim\dfrac{k}{h} = \dfrac{dy}{dx}$
 være $\operatorname{tg}\alpha$, idet $\alpha$ er den Vinkel, Tangenten til Punktet
 $(x, y)$ danner med $x$nes Axe.
@@ -2482,7 +2493,7 @@ I Forhold til Linien som det Positive er Punktet, Liniens Grændse, det Negative
 naar Linien er en Forestilling, er Punktet en Tanke. I Forhold til Fladen som det
 Positive, er Linien, Fladens Grændse, det Negative: Fladen
 % ---- printed p.66 (PDF 71) ----
-forestilles, naar Linien tænkes. I Forhold til Legemet, det Positive, er Fladen,
+\opage{66} forestilles, naar Linien tænkes. I Forhold til Legemet, det Positive, er Fladen,
 Legemets Grændse, det Negative.
 
 I Forhold til det endnu ubestemte Sted, det Negative, er det bestemte Punkt det
@@ -2516,7 +2527,7 @@ bestaae, ikke af utallige Smaalinier, men af uendelig mange Ikke-Linier. Men at
 tænke sig en virkelig, positiv Linie sammensat af uendelig mange Ikke-Linier, falder
 vel omtrent ligesaa vanskeligt, som at tænke
 % ---- printed p.67 (PDF 72) ----
-sig en virkelig positiv Tak sammensat af uendelig mange Utak.
+\opage{67} sig en virkelig positiv Tak sammensat af uendelig mange Utak.
 
 Hvad Mathematiken egentlig lægger i det Udtryk: „uendelig mange uendelig smaa
 Dele", kan imidlertid ikke kjendes af Talemaader; det maa vise sig i Gjerningen.
@@ -2551,7 +2562,7 @@ Værdi altsaa kan være baade endelig og uendelig.
 Mathematiken indlader sig da heller ikke paa at bestemme $dx$ umiddelbart, være sig
 som Punkt eller som Linie;
 % ---- printed p.68 (PDF 73) ----
-$dx$ bestemmes kun i et Forhold som f.\ Ex.\ af $dy$; saaledes at Forandringsloven
+\opage{68} $dx$ bestemmes kun i et Forhold som f.\ Ex.\ af $dy$; saaledes at Forandringsloven
 kan vise sig i $f(x) = y$.
 
 I $f(x) = y$ maa Tilvæxten for $x$, den Uafhængige, naturligviis være constant; thi
@@ -2650,7 +2661,7 @@ $AC = x$;\quad $BC = y$.
 
 ikke blot i begge Tilfælde ville være indbyrdes ulige, men
 % ---- printed p.69 (PDF 74) ----
-Uligheden derhos tillige forskjellig for ethvert af de forskjellige Tilfælde.
+\opage{69} Uligheden derhos tillige forskjellig for ethvert af de forskjellige Tilfælde.
 
 Fastholder man nu den Forudsætning, at ethvert mathematisk Punkt maa som Negation af
 al Størrelse være 0, saa at $0 = 0$ i dette Tilfælde er som Intet $=$ Intet; da er
@@ -2692,7 +2703,7 @@ Men, naar Sagen opfattes saaledes, vende de gamle Vanskeligheder tilbage; det er
 kun ved et Spring, man her kan naae fra $n$ til $\infty$, og naar man saa,
 naturligviis ved at overspringe uendelig mange Led, har gjort dette Spring,
 % ---- printed p.70 (PDF 75) ----
-er Summen, $\infty\, dx$, endda en saa ubestemt Størrelse, at den kan sættes
+\opage{70} er Summen, $\infty\, dx$, endda en saa ubestemt Størrelse, at den kan sættes
 $= x$, $= \dfrac{1}{2}x = 1000\,x$, $= \dfrac{1}{1000}x$ o.\ s.\ f.
 
 En Sum er efter sit Begreb et Antal, et endeligt Tal. En uendeligt Antal, en
@@ -2759,7 +2770,7 @@ og
 \cos B = 1 - \frac{B^{2}}{1\cdot2} + \frac{B^{4}}{1\cdot2\cdot3\cdot4} \dots
 \]
 % ---- printed p.71 (PDF 76) ----
-Altsaa er
+\opage{71} Altsaa er
 \[
 \begin{aligned}
 a &= b\left(1 - \frac{C^{2}}{1\cdot2} \dots\right)
@@ -2803,7 +2814,7 @@ Intgr.\ S.\ 308) lader sig naturligviis endnu mindre behandle ved ligefrem
 Summation, end f.\ Ex.\ Rækken:
 $1 + \frac{1}{2} + \left(\frac{1}{2}\right)^{2} + \dots$}.
 % ---- printed p.72 (PDF 77) ----
-Leibnitz, der opdagede Differentiationen, som den directe Tangentmethode, fandt i
+\opage{72} Leibnitz, der opdagede Differentiationen, som den directe Tangentmethode, fandt i
 Integrationen den omvendte Tangentmethode.
 
 Med Hensyn paa Cirklen blev i det Foregaaende $y = f(x) = \pm\sqrt{2rx - x^{2}}$
@@ -3084,7 +3095,7 @@ Ellipsen, erholder man ved Reduction
   {a^{2}(a^{2}-x^{2})}},
 \]
 % ---- printed p.78 (PDF 83) ----
-altsaa
+\opage{78} altsaa
 \[
 ds = dx\,\sqrt{\frac{a^{4} + (b^{2}-a^{2})\,x^{2}}{a^{4}-a^{2}x^{2}}},
 \]
@@ -3138,7 +3149,7 @@ $AB = a$.
 \end{center}
 
 % ---- printed p.79 (PDF 84) ----
-kunde man næsten antage, at Mathematiken virkelig havde isinde at
+\opage{79} kunde man næsten antage, at Mathematiken virkelig havde isinde at
 sammentælle de utallige $adx$, og sammenstykke det endelige Rectangel
 af uendelig mange uendelig smaa Rectangler. Dette er dog en
 Misforstaaelse. Opgaven forvandles, idet den løses. I
@@ -3266,7 +3277,7 @@ Grunddelenes Uforanderlighed ved at beraabe sig paa det Mathematiske,
 er Slutningen falsk.}.
 
 % ---- printed p.81 (PDF 86) ----
-Exempel. Af den rationelle Mekanik er Forholdet mellem Hastigheden:
+\opage{81} Exempel. Af den rationelle Mekanik er Forholdet mellem Hastigheden:
 $v = \dfrac{dx}{dt}$, og den bevægnede Kraft:
 $\varphi = \dfrac{d^{2}x}{dt^{2}}$, allerede fremhævet.
 
@@ -3293,7 +3304,7 @@ o.\,s.\,v.
 Constantens Betydning fremlyser iligemaade af Arealberegningen.
 
 % ---- printed p.82 (PDF 87) ----
-Bestemmer man Trekantens Areal ved Formlen $y\dfrac{x}{2}$ fra
+\opage{82} Bestemmer man Trekantens Areal ved Formlen $y\dfrac{x}{2}$ fra
 Endelighedens Synspunkt, saa maa man fra Uendelighedens Standpunkt
 anvende Formlen: $\int y\,dx = \dfrac{xy}{2} + C$. Her forudsættes da,
 at $x$, den Uafhængige, og $y$, den Afhængige, variere i det
@@ -3415,7 +3426,7 @@ integrere 3 Gange med Hensyn til de Variable, hvorved Volumen er
 udtrykt. Altsaa integreres først med Hensyn til $\Theta$, den Vinkel,
 som fremkommer, idet
 % ---- printed p.84 (PDF 89) ----
-$dm$ dreies i Cirkel om $AM$ (Grændserne ere $0^{\circ}$ og
+\opage{84} $dm$ dreies i Cirkel om $AM$ (Grændserne ere $0^{\circ}$ og
 $360^{\circ}$, $\int_{0}^{2\pi}$); dernæst integreres med Hensyn til
 $\alpha$ (Grændserne ere $0^{\circ}$ og $180^{\circ}$,
 $\int_{0}^{\pi}$, thi, naar Halvcirklen bevæger sig om sin Diameter,

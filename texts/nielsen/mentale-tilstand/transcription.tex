@@ -1,0 +1,1487 @@
+% ============================================================
+%  R. Nielsen, "Om S. Kierkegaards „mentale Tilstand“".
+%  Nordisk Universitets-Tidsskrift, Fjerde Aargang, Tredie Hefte.
+%  Kjøbenhavn 1858, pp. 1–29.
+%
+%  TRANSCRIPTION (Danish) — from the Google Books scan.
+%  Scan: ~/bibliotek/Nielsen, Rasmus/Om_S_Kierkegaards_mentale_tilstand.pdf
+%        (46 PDF pp., Google Books, Harvard College Library copy, shelf-mark
+%        pencilled "Scan 6664.585.5"; 600 ppi bitonal. An identical earlier
+%        download sits beside it as Kierkegaards_mentale_tilstand.pdf — same
+%        46 pages, same image objects; either may be used.)
+%
+%  PAGE MAP (verified 2026-09-12: every body numeral read off the PDF text
+%  layer in sequence, endpoints eye-confirmed on the images):
+%        printed  1–29  =  PDF + 12   (PDF 13–41), uniform, no gaps, no dupes
+%        PDF 1–10   Google/library front matter, the volume's half-title and
+%                   title leaves.
+%        PDF 11–12  the journal's FORORD and the lists of contributors and
+%                   commissioners — NOT part of this article.
+%        PDF 42     blank.  PDF 43–46  library date slip and back leaves.
+%        Folio AND running head are both suppressed on printed p. 1.
+%        Trap: the bottom right of pp. 1, 3, 17, 19 carries a SHEET SIGNATURE
+%        (1, 1*, 2, 2*), not a folio. Folios proper sit at the OUTER TOP.
+%
+%  TYPEFACE: ANTIQUA throughout — a Didone roman — body, heads and footnotes
+%        alike. There is NO ITALIC anywhere in the article, and no Fraktur and
+%        no Greek. German quoted in the body is set in the same roman (p. 25,
+%        "Ja, ich bin der Atheist und Gottlose!"). OCR pipeline accordingly
+%        uses tesseract -l dan, with the PDF's own Google text layer as the
+%        second witness (~0.80 type-level agreement, measured on pp. 5, 13, 23).
+%
+%  CONVENTIONS: diplomatic transcription; 1858 orthography as printed;
+%  printer's errors transcribed as printed and logged in % comments at the
+%  site, never silently corrected.
+%
+%   ö / ø  — BOTH SORTS OCCUR AND THE COMPOSITOR MIXES THEM. ö (o-diaeresis)
+%        is the default and by far the commoner (hörte, sögte, förste, gjöre,
+%        Öine, Berömmelse); but ø turns up, twice within twelve lines of an ö
+%        on p. 19 ("under Øine", "Følgeblade") and again on p. 23 ("Øiet").
+%        No OCR engine preserves the distinction — every one flattens it — so
+%        each o-with-a-diacritic is an image decision. Transcribed as printed.
+%   aa    — always aa, never å. Not one ring in the article (saaledes, maatte,
+%        ogsaa, Aandsanstrængelser). æ is a true ligature throughout.
+%   EMPHASIS is LETTERSPACING (Sperrsatz) ONLY, rendered \emph{}. Since the
+%        article has no italic at all, every \emph{} in this file is a
+%        letterspacing call. spacing.py finds them mechanically; it is an aid,
+%        and the image is the authority.
+%   QUOTES „…“ as printed: opening low, closing raised, UNEQUAL heights, never
+%        ”. No guillemets anywhere in the 1858 printing (the modern spelling of
+%        the title with » « is not the book's). NESTED QUOTATIONS REUSE THE
+%        SAME PAIR (pp. 21, 23), so the quote-balance count in check.py is
+%        unreliable on this text and a non-zero balance is not by itself a
+%        defect — see the log below.
+%   SPACED PUNCTUATION. The scan shows a thin space before , . : ; ? ! in
+%        stretched lines ("Dage , hörte") and none in tight ones. It is
+%        justification, not copy, and is NOT reproduced; the few places where
+%        it survives in an unstretched short line are logged rather than set.
+%   ELLIPSES are spaced full stops, four or five of them, and the count varies
+%        (p. 1 opens with five). The printed count is reproduced.
+%   NOT TRANSCRIBED: running heads, folios, sheet signatures, catchwords, and
+%        the library's pencil marks and stamps. The running head's final
+%        punctuation varies from page to page (p. 17 »Tilstand".«, p. 21
+%        »Tilstand"«, p. 25 »Tilstand."«); recorded here as a datum, not set.
+%
+%  FOOTNOTES: two only, on printed pp. 17 and 25, both marked *), both set
+%        smaller under a short left-hand rule, numbering restarting per page.
+%        Hence \renewcommand{\thefootnote}{*)} rather than \fnsymbol (which is
+%        math mode and gives U+2217) or footmisc[perpage] (which resets on the
+%        TYPESET page, not the printed one).
+%
+%  STRUCTURE: none — no sections, no numbering, no ornaments. Rules occur only
+%        on p. 1 (two, around the epigraph), pp. 17 and 25 (footnote rules) and
+%        p. 29 (a short terminal rule). The long Kierkegaard quotations are NOT
+%        block quotations: full measure, same size, ordinary paragraph indent,
+%        delimited by „…“ and occasionally letterspaced for prominence (p. 2).
+%        The article ends cleanly on p. 29 ("… i det förste Afsnit.") with no
+%        signature, no dateline and no "Fortsættes".
+%
+%  STATUS: COMPLETE. pp. 1–29 transcribed and image-verified page by page,
+%        2026-09-12, in two batches (1–15, 16–29). Every page was rendered and
+%        read; doubtful glyphs were cropped at 900–1200 ppi.
+%
+%  ö / ø CENSUS (the distinction no OCR preserves; settled on the images).
+%        FOUR ø in the whole article, all in the second half; every other
+%        o-diacritic — some 300 of them — is ö:
+%          p. 19  (Følgeblade   and   under Øine,   (the latter on the same
+%                 line as höieste, which is the calibration)
+%          p. 23  ikke et Blink med Øiet
+%          p. 28  „störe Gud“ — a WRONG SORT: store is meant, and the same
+%                 Kierkegaard sentence is set „store Gud“ with a plain o on
+%                 p. 24. Logged below as a printer's error as well.
+%        pp. 1–15 contain no ø at all.
+%
+%  SECOND QUOTATION PAIR. On pp. 6–7 the fount runs out of the proper sorts
+%        and the compositor sets five quotations with substitute ,, and ''
+%        instead of „ and “. These are set here as „ … “ and each site is
+%        flagged in a % comment — the one place in this file where a
+%        typographic accident has been normalised rather than reproduced,
+%        because the substitute sorts carry no sense and the „…“ pair is what
+%        the compositor was reaching for. Reversible from the comments.
+%
+%  PRINTER'S DEFECT LOG (all transcribed as printed, flagged in % comments at
+%  their sites):
+%        p. 1   words dropped: „er jeg saa rigtignok ogsaa Magt“
+%        p. 10  „charakterisk“ for charakteristisk
+%        p. 13  „i“ set twice across the line break
+%        p. 14  battered em-dash after „Troen“
+%        p. 22  „christendum“ — the word-space dropped
+%        p. 26  broken em-dash sort
+%        p. 27  two damaged em-dashes (one broken at the waist, one printing a
+%               vertical shoulder)
+%        p. 28  „störe Gud“ for store Gud (see the ö/ø census above)
+%        p. 29  „först“ — the t has lost its left crossbar and prints like f/ſ
+%        p. 29  „Forudsætninger.,“ — a full point set before the comma
+%        p. 29  „komme“ for komne
+%        Battered and part-filled t and r sorts are common throughout and are
+%        not individually logged. Ink specks that could be read as accents
+%        (p. 6 „et“, p. 11 „Side“, p. 21 before „den bagvendte“) are read as
+%        specks and not transcribed.
+%
+%  VARIANTS WITHIN THE ARTICLE, recorded and not normalised:
+%        p. 18  „min Persons Forskjellighed“ where p. 15 has Personligheds
+%        p. 21  „Inderligjörelse“   vs   p. 22  „Inderliggjörelse“
+%        „Til Selvprövelse“ is letterspaced on p. 18 but NOT on pp. 21 and 27.
+%
+%  ELLIPSES, as counted on the images: five points on pp. 1, 16 (×3) and 17;
+%        four on pp. 19, 21, 22 (×3), 23 (×3), 24, 25 (×2), 26; three on
+%        pp. 11, 26 and 27.
+%
+%  QUOTE BALANCE: +4, and all four are deliberate. This book's nested
+%        quotations REUSE the „…“ pair rather than switching sorts, so an
+%        opening mark is regularly left unclosed where the inner quotation
+%        ends. The four sites: p. 12 „Hvor er i Guds Huus… (closes on an
+%        ellipsis, no closing mark); p. 22 „Skulde dette höre…; p. 23 „Lad os
+%        antage…; p. 25 the letterspaced display. Nobody should "fix" this to
+%        zero. (p. 7 has an orphan CLOSING mark after „Öine,“ which cancels an
+%        earlier opening, so the raw count understates the reuse.)
+%
+%  EMPHASIS: 12 calls, all letterspacing. pp. 1 (Scharling, Engelstoft),
+%        2 (the thirteen-line Kierkegaard quotation), 11 (the title-list),
+%        12 (Christelige Talers; „Forvar din Fod…“), 14 („Til Selvprövelse“,
+%        „Indövelse i Christendom“), 17 (the display from „Var“ through
+%        „— er dette Sandhed?“, resuming plain at „vare der vistnok“),
+%        18 („Til Selvprövelse“), 25 (the display „Hvad der skal gjöres…“,
+%        ending after „Anden.“; „Exempel:“ and the bracketed source are plain),
+%        25 (in the footnote, „Aarstal og Datum“).
+%
+%  TERMINAL RULE on p. 29 measures 0.26 of the measure; set at 0.25.
+% ============================================================
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[danish]{babel}
+\usepackage[protrusion=true,expansion=true]{microtype}
+\usepackage[margin=1.3in]{geometry}
+\usepackage{setspace}
+\usepackage{libertinus}
+\usepackage{libertinust1math}
+\usepackage{fancyhdr}
+\usepackage[colorlinks=true,linkcolor=black,urlcolor=black,
+  pdftitle={Om S. Kierkegaards „mentale Tilstand“},
+  pdfauthor={R. Nielsen}]{hyperref}
+
+\setlength{\headheight}{15pt}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\textit{Om S.\ Kierkegaards „mentale Tilstand“}}
+\fancyhead[R]{\thepage}
+\setlength{\parindent}{1.5em}
+\setstretch{1.3}
+
+% the book marks both its footnotes *) and restarts per printed page
+\renewcommand{\thefootnote}{*)}
+
+\begin{document}
+
+% --- p. 1 ---
+% Head of the article. Folio AND running head are both suppressed on this page;
+% the sheet signature "1" at the foot right is not transcribed.
+% Title and byline are centred in the same antiqua, larger and heavier than the
+% body; a short centred rule stands above and below the epigraph.
+\begin{center}
+  {\large Om S.\ Kierkegaards „mentale Tilstand“.}
+
+  \medskip
+  Af Prof.\ R.\ Nielsen.
+\end{center}
+
+\bigskip
+\begin{center}\rule{0.25\linewidth}{0.4pt}\end{center}
+\bigskip
+
+\begin{quote}\small
+% EPIGRAPH, quoted from Nyt Theologisk Tidsskrift 8:1 (1857), 203--204.
+% It opens with FIVE spaced full stops and then a large two-line raised initial
+% T (of „Til“); the initial is not reproduced here.
+% LETTERSPACING: „Scharling“ and „Engelstoft“ are letterspaced — confirmed on
+% the image at 600 ppi. Nothing else in the epigraph is.
+% ö/ø: hörte, sögte, Berömmelse are all o-DIAERESIS. No ø on this page.
+. . . . . Til noget af det Besynderligste, som vi have oplevet i vore
+Dage, hörte ikke saameget det, at et Menneske, om hvis mentale
+Tilstand i det sidste Afsnit af hans Liv, man ikke kan have nogen
+sikker Dom, sögte en herostratisk Berömmelse ved at udslynge For\-%
+nærmelser og Beskyldninger mod en Mands Charakteer . . . ., men
+% four points before the comma here; five after "var." below. Counted at 1200 ppi.
+endnu forunderligere var. . . . .\quad Nyt Theologisk Tidsskrift, udgivet
+af Dr.\ C.\ E.\ \emph{Scharling} og Dr.\ C.\ T.\ \emph{Engelstoft}, 8de Bind.
+1ste Hefte 1857, S.\ 203 og 204.
+\end{quote}
+
+\bigskip
+\begin{center}\rule{0.25\linewidth}{0.4pt}\end{center}
+\bigskip
+
+For at kunne have „nogen sikker Dom“ om S.\ Kier\-%
+kegaards „mentale Tilstand“, være sig i det förste eller
+det sidste Afsnit af hans Liv, er det en ufravigelig Be\-%
+tingelse, at man dog med nogen Eftertanke besinder sig
+paa, hvad det da i sin Heelhed er, „dette Menneske“
+egentlig vilde, hvilke Kræfter han udfoldede, hvilke Mid\-%
+ler han anvendte, hvilke Vaaben han brugte.
+
+„I Qvaler, som sjældent et Menneske oplevede dem,
+i Aandsanstrængelser, der i Löbet af 8 Dage vel vilde
+beröve en Anden Forstanden, er jeg saa rigtignok ogsaa
+% PRINTER'S ERROR: words have dropped out here. „er jeg saa rigtignok ogsaa
+% Magt“ is unintelligible; Kierkegaard's own text runs „...er jeg saa rigtignok
+% ogsaa i Besiddelse af en Magt“. Verified at 900 ppi that nothing stands at
+% either line end. Transcribed as printed.
+Magt, unegtelig en for et stakkels Menneske forförerisk
+Bevidsthed, dersom Qvalen og Anstrengelsen ikke i den
+Grad var det Overveiende, at ofte nok mit Önske er
+% --- p. 2 ---
+% The pencilled shelf-mark "Scan 6664.585.5", the marginal pencil note beside
+% the letterspaced quotation, and the Harvard date-stamp are not transcribed.
+Döden, min Længsel Graven, min Begjæring, at mit Ön\-%
+ske og min Længsel snart maatte opfyldes.“
+
+Den, der saaledes selv anmelder sin Optræden, maa,
+dersom han ellers er ved Samling, tilvisse have en Byrde
+paa sin Samvittighed; maa, dersom han virkelig veed,
+hvad han siger, for Alvor have Noget at sige. Hvad
+vil han da? „Redelighed!“
+
+Og hvad er det saa han har at sige?
+
+% LETTERSPACED (Sperrsatz) throughout, from „Dette to stendom.“ — thirteen
+% lines. The compositor closes up the last words of the fullest lines
+% („har Du“, „mindre, Du“), but the run is continuous; checked line by line
+% on the image. This is the long letterspaced quotation of the article.
+\emph{„Dette skal siges, saa være det da sagt:
+Hvo Du end er, hvilket Dit Liv forresten, min
+Ven, --- ved (hvis Du ellers deeltager i den) at
+lade være at deeltage i den offentlige Guds\-%
+dyrkelse som den nu er (med Paastand paa at
+være det nye Testamentes Christendom) har Du
+bestandigt een og en stor Skyld mindre, Du
+deeltager ikke i at holde Gud for Nar ved
+at kalde det nye Testamentes Christendom,
+hvad der ikke er det nye Testamentes Chri\-%
+stendom.“}
+
+Det er stærke Ord, en Gru opvækkende Dom. Er
+Den, der tör tale saaledes, og dömme saaledes, nu ogsaa
+virkelig en Berettiget; trues da ikke Samfundet med en
+Aandskrise, der i sine Fölger kunde blive betænkelig for
+Staten, farlig for Folkets aandelige Ro?
+
+„Hermed --- ja, o Gud skee nu hvad Din Villie er,
+uendelige Kjærlighed! --- hermed har jeg talet.“
+
+Dette er jo vistnok religiöst; men er det dog maa\-%
+skee ikke igjen altfor religiöst?
+
+„Maaskee skal Een höre saaledes, at han gjör, hvad
+jeg siger, en Anden saaledes, at han forstaaer det som
+Gud velbehageligt, mener at vise Gud en Dyrkelse ved
+at deeltage i at löfte Skrig imod mig: ingen af Delene
+vedkommer mig; mig vedkommer kun, at det skal siges.“
+
+Her er i alt Dette en Resignation, en Besluttethed,
+en Pathos, der unegtelig tyder hen paa en ganske sær\-%
+egen „mental Tilstand“; men hvilken? Man lytter, og
+% --- p. 3 ---
+% The sheet signature "1*" at the foot right is not transcribed.
+% ö/ø: spörger, Öjeblik, Tröst, velgjörende, indrömme, gjöre, paanöde, förste
+% (twice), mörke, Indrömmelse — every one o-DIAERESIS at 900--1200 ppi. No ø.
+spörger med Ængstelse hvilken? Lykkes det nu i et saa
+kritisk Öjeblik Tidens meest Klarsynede at gjennemskue
+den Optrædendes „mentale Tilstand“, og overbevise sig
+om, at det ingenlunde er en Berettiget, man har for sig,
+men en sindssvag Herostrat, et stakkels Genie, der i
+Overspændthed er gaaet saavidt, at han er gaaet fra
+Forstanden; da fatter Samtiden strax, at Manden er gal, og
+% a speck of ink above the comma after „Tröst“ makes tesseract read a
+% semicolon; at 900 ppi it is a comma.
+det er Samtiden en stor Tröst, „at Manden er gal“. Thi, det
+forstaaer sig, naar Manden er gal, saa er Spændingen
+endt, Krisen overstaaet, og „Redeligheden“ falder af
+sig selv.
+
+De Klarsynede, som speculere i Fordelen af at ud\-%
+brede og vedligholde den for Sjælenes Ro saa velgjörende
+Mistanke mod Ks.\ „mentale Tilstand“, ere da naturlig\-%
+viis ogsaa paa det Rene med sig selv om, hvorledes
+denne Mistanke kan fra mere end eet Synspunkt finde
+sin Bestyrkelse.
+
+Man kan fra den ene Side indrömme Sandheden af
+Alt, hvad K.\ siger om Forskjellen imellem det nye Te\-%
+stamentes Christendom og Nutidens Christendom; man
+kan beundre den Skarpsindighed, Klarhed, Conseqvens
+og Sikkerhed, hvormed han forstaaer at gjöre Uligheden
+indlysende, og endda finde hans „mentale Tilstand“ be\-%
+klagelig. Hans Aandsforvirring bestaaer da ingenlunde
+% an ink speck sits under the second e of „seer“; the word is „seer“.
+deri, at han ikke seer, hvad Christendom oprindelig er,
+men deri, at han for ramme Alvor vil paanöde os „det
+nye Testamentes Christendom“, vil skrue Tidsalderen til\-%
+bage til hiint historisk overvundne Standpunkt; „altsaa
+endnu hiin förste ubetingede Tro paa Gudmenneskets
+Mirakler, endnu hiint förste asketiske Verdenshad, hiin
+mörke Livsanskuelse: Manden er jo gal!“
+
+Fra den anden Side begynder man derimod med
+den Indrömmelse, at det nye Testamentes Christendom
+er den eneste for alle Tider gjældende Christendom.
+Ks.\ Feil er da ikke den, at han endnu i vore Dage
+fordrer Evangeliet anerkjendt; men Vildfarelsen er, at
+% --- p. 4 ---
+% ö/ø: nödvendigste, tör, anföres (twice), nödvendigt, förste (twice), Höide,
+% höist, höi, frastöde — all o-DIAERESIS, checked at 900 ppi. No ø.
+han ikke ret kjender Evangeliet, efterdi han ikke seer,
+at det netop er det nye Testamentes Christendom, som
+for Tiden finder sit væsentligste Udtryk, sine bedste Be\-%
+tingelser og nödvendigste Garantier i det Bestaaende.
+„Ulykkelige Sindssvaghed, at han dog ikke kunde see,
+at det kun er et Udvortes, her er forandret, ikke det
+Indvortes; ikke see, at Menighedslivet endnu er beteg\-%
+net med den samme Broderkjærlighed, som i det nye
+Testamente; ikke fik Naade til at see, at Ordets Tjenere,
+dersom det kom derpaa an, strax ere villige til at for\-%
+lade Alt for Christi Skyld, og altsaa endnu, paa nogle
+Smaaforandringer nær, ligne Disciplene i det nye Testa\-%
+mente; den stakkels Forblindede!“
+
+Den Omstændighed, at man saaledes ad to forskjel\-%
+lige Veie kan komme til samme Resultat angaaende Ks.
+„mentale Tilstand“, tör man imidlertid ikke forhaste sig
+med at udtyde, som havde vi her to Beviser, der smel\-%
+tede sammen til gjensidig Forstærkning. De angivne
+Synspunkter ere jo hinanden saa modstridende, at hvad
+der fra den ene Side anföres som Beviis paa Sanddruhed,
+maa fra den anden Side anföres som Tegn paa Afsindig\-%
+hed, en indre Modsigelse, der just ikke egner sig til at
+sikkre Dommen.
+
+Nei, for at have en sikker Dom om Ks.\ „mentale
+Tilstand“ i det sidste Afsnit af hans Liv, er det nödven\-%
+digt, at man forud danner sig en sikker Dom om hans
+„Forfattervirksomhed“ i det förste Afsnit. Denne Dom
+har i selvbehagelig Overfladiskhed hidtil holdt sig saa
+svævende, og heri ligger Grunden til, at Misforstaaelsen
+paa det Sidste maatte voxe til en saadan Höide.
+
+Vistnok vakte K.\ ved sin förste Optræden Opmærk\-%
+somhed, men det i hans Stiil og Skrivemaade saa höist
+Eiendommelige bevirkede strax, at han i ligesaa höi
+Grad maatte frastöde Nogle, som tiltrække Andre. Til
+et andet, for dybere gaaende Kritik mere gunstigt Tids\-%
+punkt kunde dette maaskee have havt den gavnlige
+% --- p. 5 ---
+% ö/ø: Fölge, Först, fölge, Skjön, Religiöse, förste, föler, Rörende, afdöde,
+% Sönnen (twice), böie, hört, fölte, skjönt — all o-DIAERESIS. No ø.
+Fölge, at hans Anskuelse strax fra de modsatte Stand\-%
+punkter var bleven saa stærkt belyst, at den almindelige
+Bevidsthed fra Först af havde kunnet fölge med; nu
+derimod blev Opfatningen i det Hele overladt det indi\-%
+viduelle Skjön, Kritiken gik om i Negligé: de forskjellige
+Meninger gjaldt efter Smag og Behag.
+
+Saaledes, for her at holde os til det Religiöse, mente
+Nogle, at K.\ egentlig manglede Alvor, medens Andre
+fandt hos ham den strengeste Alvor. Blandt disse Sidste
+stod endog Biskop Mynster selv. Allerede de förste
+„opbyggelige Taler“ gjorde et saa alvorligt Indtryk paa
+den gamle Biskop, at denne, idet han med Vægt udtaler
+sin Anerkjendelse, endog föler sig bevæget til at give et
+psychologisk Bidrag til nærmere Forstaaelse af den unge
+Mands besynderlige Alvor.
+
+„Det har for mig,“ siger Biskop Mynster (Kirkelig Pole\-%
+mik. Intelligensblade, udg.\ af J.\ L.\ Heiberg. Jan.\ 1844.)
+noget Rörende, at Mag.\ Kierkegaard stedse helliger sine
+opbyggelige Taler til sin afdöde Faders Minde. Thi og\-%
+saa jeg har kjendt denne agtværdige Mand; han var en
+slet og ret Borger, gik fordringsfri sin stille Gang gjen\-%
+nem Livet, havde aldrig gjennemgaaet nogetsomhelst
+„philosophisk Bad“. Hvorledes skeer det da, at Sönnen
+i sin rige Dannelse, saa ofte han vil nedskrive opbygge\-%
+lige Taler, stedse vender Tanken hen til hiin Mand, der
+længesiden er indgangen til Hvile? Hvo der har læst
+den deilige Tale --- eller lad os kun kalde den Prædi\-%
+ken --- „Herren gav, Herren tog, Herrens Navn være
+% the same Job text is quoted again on p. 9, there with a semicolon:
+% „...Herrens Navn være lovet;“. Both readings stand as printed.
+lovet,“ vil forstaae det. Sönnen har, ligesom jeg, seet
+den gamle Fader ved bittre Tab, han har seet ham folde
+sine Hænder, böie sit ærværdige Hoved, han har hört
+hans Læbe udsige hiint Ord, men tillige seet hans hele
+Væsen udsige det paa en saadan Maade, at han fölte,
+hvad han saa skjönt udvikler om Job, at „ogsaa den er
+en Menneskenes Lærer, der ingen Lære havde at over\-%
+give Andre, men efterlod Slægten sig selv som et For\-%
+% --- p. 6 ---
+% ö/ø: fölt, Sönnen, Sörgehuset, fölende, religiöse (twice), religiös,
+% frastödte (twice), höieste, Öine, berömte, tilföier — all o-DIAERESIS. No ø.
+billede, sit Liv som Veiledning for ethvert Menneske“,
+der saae det; han har fölt, at den Gamle havde i sit
+fromme Ord overvundet Verden. Og hvad Sönnen der
+i Sörgehuset saae hos sin gamle Fader, det nedskrev han
+i en Prædiken, som vil tiltale, vederqvæge ethvert fölende
+Hjerte.“ . . . .
+
+Var den almindelige Dom om Ks.\ „religiöse Alvor“
+allerede noget usikker, saa blev den videnskabelige Dom
+om hans religiöse Begrebsudvikling endog aldeles for\-%
+% a small slanted ink mark stands over the e of „et“ here, and both OCR
+% witnesses read „ét“. Set „et“: the same phrase is printed „Troen er et
+% Paradox“, unaccented, on p. 10, and stray specks of this size are common
+% on these pages (cf. „Side“ p. 11, „seer“ p. 3).
+virret; han kaldte jo Troen et Paradox, og betjente sig
+% QUOTE SORTS: from here to the end of p. 7 the compositor twice sets the
+% quotation marks from SUBSTITUTE sorts — two separate low commas for the
+% opening and two raised turned commas for the closing — visibly wider and
+% lighter than the „ and “ sorts used everywhere else. Sites: „den indirecte
+% Meddelelsesform“ and „Paradoxet“ here, „höieste Problemer“ and „Frygt og
+% Bæven“ on p. 7, and the closing after „Öine,“ on p. 7. Normalised to „…“
+% here; the substitution is recorded, not set.
+af „den indirecte Meddelelsesform“: han frastödte de
+Speculative, han frastödte Theologerne.
+
+At Forkastelsen af den indirecte Form dog endnu
+ligesaalidt var eenstemmig, som Forargelsen paa „Para\-%
+doxet“ almindelig, kan udtrykkelig sees blandt Andet af
+den Maade, hvorpaa Biskop Mynster i ovennævnte Ar\-%
+tikel tillige omtaler „Frygt og Bæven“. „Jeg har ogsaa“,
+siger Biskoppen, „læst det mærkelige Skrift: „Frygt og
+Bæven“, og hvad jeg endog kan have savnet deri, da
+visselig ikke en dyb religiös Grund, ikke et Sind, der
+er mægtigt til at træde Livets höieste Problemer under
+Öine; det har levende mindet mig om det berömte Sted
+hos Jacobi: „Ja, ich bin der Atheist und Gottlose, der
+dem Willen, der Nichts will, zuwider, lügen will, wie Des\-%
+demona sterbend log, lügen und betrügen will, wie der
+für Orest sich darstellende Pylades u.\ s.\ w.\ (Jacobi an
+Fichte S.\ 32), hvoraf det dog ingenlunde er en Efterlig\-%
+ning eller Efterklang.“ Under denne Vending lægger
+altsaa Biskoppen selv Vægt paa den indirecte Meddelelse,
+og afviser dem, der vilde beskylde Forfatteren for „uti\-%
+dig Jagen efter det Pikante“, idet han, efter at have
+udtalt sig angaaende Bogens Titel, udtrykkelig tilföier:
+„Saaledes har denne Kamp under Frygt og Bæven ikke
+det Mindste tilfælles med den velbehagelige Leflen, hvor\-%
+med de moralske Genier hige efter at komme i saadanne
+Forhold, hvor de kunne vise, at de ikke forgjæves have
+% --- p. 7 ---
+% The sheet signature "2" at the foot right is not transcribed.
+% ö/ø: göttlich, förste, mödte, religiös (three times), höieste (twice), Öine
+% (three times), stöttede, indrömmer, Selvfölge, indrömme, nödvendige,
+% Indrömmelsen, hörer, Spög — all o-DIAERESIS. No ø.
+læst Schelling, at de ogsaa ere istand til „einzig göttlich
+zu handlen.“
+
+Havde Biskop Mynster nu virkelig kunnet bevare
+dette sit förste Indtryk af, at han her i „Frygt og Bæ\-%
+ven“ mödte „en dyb religiös Grund“, et Sind, der var
+mægtigt til at træde Livets höieste Problemer under
+% UNBALANCED QUOTATION, as printed: this closing mark (in the substitute
+% sort) has no opening mark of its own — Nielsen runs Mynster's words on
+% from the quotation of p. 6. Logged, not repaired; nested quotations in this
+% article reuse the same pair, so the balance count is unreliable here.
+Öine,“ havde han i denne Henseende havt Tillid til sin
+egen Dom, var selv traadt disse „höieste Problemer“
+under Öine, og saaledes ved sit Exempel bleven en Vei\-%
+ledning for de Mange, der saa gjerne stöttede sig til
+hans Autoritet: hvor vilde Sagens Gang da ikke fra Be\-%
+gyndelsen af have taget en ganske anden Vending!
+Naar man indrömmer en Forfatter hans Forudsætninger,
+da er det jo en Selvfölge, at man ogsaa maa indrömme
+ham Forudsætningernes nödvendige Conseqvenser, at sige,
+dersom Indrömmelsen beroer paa Indsigt, og ikke paa en
+flygtig Stemning. Men i „Frygt og Bæven“ have vi jo
+de principielle Forudsætninger. Det hörer just med til
+det Eiendommelige i Kierkegaards Væsen, at han fra
+Begyndelsen af er saa enig med sig selv, saa indvortes
+færdig. Han var ikke en Ung, der med Aarene blev
+gammel, ikke en Lystig, der siden blev saa alvorlig,
+ikke en Æsthetiker, der senere blev religiös; nei,
+han var oprindelig Alt, hvad han var, i eiendom\-%
+melig Fordobling, i sin Ungdom gammel, i sin Spög al\-%
+% spacing.py flags a run of spaced punctuation in the next line
+% („glad , i sin Strenghed mild , i sin“); it is justification of a stretched
+% line, not copy, and is closed up.
+vorlig, i sin Smerte glad, i sin Strenghed mild, i sin
+Bitterhed veemodig: Kierkegaard er i den Grad en aprio\-%
+risk Natur, at han næsten mangler det Perfectible.
+
+I „Frygt og Bæven“ er Principet udtalt, fuldstændig ud\-%
+talt; vi see i dette Skrift som i et Speil Forfatterens hele in\-%
+tellectuelle Physiognomie. Er der nu i dette Physiognomie
+noget væsentlig Fordreiet; da er det i Sandhed paafaldende,
+at en Mand, som Biskop Mynster, har gjennem disse for\-%
+dreiede Træk kunnet mene at see --- „en dyb religiös
+Grund“. Eller, dersom her i dette Anlæg er noget Falsk,
+og dette Falske, hvad det jo maa være, forsaavidt det
+% --- p. 8 ---
+% ö/ø: Öie, höieste, Öine, Rastlös, overströmmende, Slör, gjennemföre,
+% höieste, löst, förste, hörte, frastöde, föiede, nöd, Strötanker,
+% iöinefaldende — all o-DIAERESIS. No ø.
+ligger i Forudsætningerne og fremgaaer af Principerne,
+endog er et Grundfalsk; er det da ikke uforklarligt, at
+en Kjender som Biskop Mynster, istedetfor strax at faae
+Öie paa dette Grundfalske, har kunnet lade sig blænde,
+endog i den Grad, at han bag den pseudonyme Charac\-%
+teermaske har troet at opdage en med sin egen beslæg\-%
+tet Aand, „et Sind, der var mægtigt til at træde Livets
+höieste Problemer under Öine“?
+
+Rastlös og med overströmmende Productivitet arbei\-%
+dede K.\ i en Række Aar paa at klare, hvad han kaldte
+sine „Existensproblemer.“ Hans indirecte Meddelelse,
+der bag sit Slör bevarede Inderligheden, mildnede det
+Polemiske, og satte forligende Skilsmisse imellem Virkelig\-%
+heden og Idealiteten, skaffede Ro, saa at den taktiske
+Fremrykken kunde skee i al Stilhed.
+
+Det var Kierkegaards Plan at gjennemföre en Re\-%
+vision af Existenskategorierne, og udskille dem af den
+Forplumring, hvori en misledet Videnskabelighed havde
+neddraget „Livets höieste Problemer“. Han har löst
+denne Opgave med en Sikkerhed, Grundighed og Alsi\-%
+dighed, der i kommende Tider vil hjemle ham Plads
+blandt Tænkerne af förste Rang. Men trods hans Ag\-%
+telse for sand Videnskabelighed, hvor Videnskab gjælder,
+og uagtet han i Gjerningen er Systematiker trods Nogen;
+saa hörte det dog væsentlig med til den Skjærpelse af Inder\-%
+lighedsproblemerne, han havde foresat sig, idelig, endog
+systematisk, at bryde den systematiske Form, overalt at fra\-%
+stöde det dumt Videnskabelige. Han anvendte denne Taktik
+med stor Behændighed, föiede Bygning til Bygning, og nöd
+omsider den Tilfredsstillelse, at Krandsen allerede vaiede
+paa Anlægets sidste Bygning, da paragraphisk Alvor kom
+til, og naturligviis ansaae det Hele for en Masse „Strö\-%
+tanker, Aphorismer, Indfald og Glimt.“
+
+At Kierkegaard vilde „Speculationen“ tillivs, og at
+det især gik ud over „Systemet“ var en saa iöinefaldende
+Kjendsgjerning, at der endog var dem, som mente, at
+% --- p. 9 ---
+% ö/ø: dömmer, Jödedom, ifölge, religiöst-ethiske, nödvendigt, gjör, Fölelse,
+% Fölgende, hörer, berört, fölende — all o-DIAERESIS. No ø.
+han udgav Troen for et Paradox alene for at drille „Sy\-%
+stemet“. Herom kan man kun sige, at Enhver dömmer,
+som han har Forstand til, og derhos minde om „Stadier\-%
+nes“ Motto: „Solche Werke sind Spiegel, wenn ein Affe
+hinein guckt, kann kein Apostel heraus sehen.“
+
+Hvor magtpaaliggende det maatte være K.\ reent
+praktisk og for Existensens Skyld at faae „Speculatio\-%
+nen“ adskilt fra „Troen“, vil man forstaae, naar man
+seer hen til den dogmatisk-speculative Retnings inderlige
+Sammenhæng med, hvad den nyere Philosophie fra Spi\-%
+noza af har kaldet „Immanensen“. I Immanensen er
+ikke alene den hedenske Ethik i dens ædleste, sokratiske
+Form, begrundet, men selv indenfor Jödedom og Chri\-%
+stendom gives der, ifölge Ks.\ Opfatning, en folkelig hu\-%
+man Tilegnelse af den aabenbarede Religion, der i en
+vis Maade ligeledes svarer til Immanensen. Det er saa
+langt fra, at K.\ vil have dette religiöst-ethiske Mellem\-%
+stadium overseet, forkastet eller ringeagtet, at han tvert\-%
+imod har stræbt at udvikle dets Betydning i en Række
+af „opbyggelige Taler.“
+
+Til „en sikker Dom“ om Ks.\ Forfattervirksomhed
+er det nödvendigt, at her igjen lægges Eftertryk paa
+denne, under de seneste Stridigheder kun altfor meget
+overseete, Side af hans Productivitet; thi disse Taler have
+just det Milde, Besindige, Stilfærdige, det Vækkende og
+dog Beroligende, som man ellers mener at savne hos
+K., og hvori man saa pleier at sætte det ægte Evange\-%
+liske. Hvilken Forskjel det i saa Henseende gjör, om
+man i sin Dom ledes af umiddelbar Fölelse, eller af en
+tydelig Tanke, en bestemmende Kategorie, kan sees
+af Fölgende. Blandt de opbyggelige Taler hörer just
+ogsaa den over Jobs Ord: „Herren gav, Herren tog,
+Herrens Navn være lovet;“ denne Tale fandt Biskop
+Mynster, som allerede berört, saa opbyggelig, at den
+maatte kunne „tiltale, vederqvæge ethvert fölende Hjerte“,
+og vilde saa af den Grund kalde den en Prædiken. Her
+% --- p. 10 ---
+% ö/ø: berömte, fölende, Höide, gjör — all o-DIAERESIS. No ø.
+% PRINTER'S ERROR in the first word-group: „charakterisk“ for
+% „charakteristisk“. Confirmed at 1200 ppi; both OCR witnesses agree.
+% Transcribed as printed.
+er et charakterisk Træk. Den berömte Prædikant ap\-%
+pellerer til „ethvert fölende Hjerte“, og vil have den
+opbyggelige Tale om Job kaldet „Prædiken“, hvorved
+han da tilkjendegiver, at den i Talen udviklede Livsan\-%
+skuelse holder Höide med den i det kirkelige Foredrag;
+den dialektiske Forfatter, hvis Bestræbelse det er, at faae
+de forskjelligartede Existenskategorier udklarede, vil
+derimod ikke have sin Tale kaldet Prædiken, fordi han
+vil, at „Prædiken“ skal svare til det Christelige, og veed
+med sig selv, at denne hans Tale ikke udtrykker det i
+egentlig Forstand Christelige. Hans Replik igjennem
+Pseudonymen i „Uvidenskabelig Efterskrift“ S.\ 204 og
+205 viser dette. „Mag.\ Kierkegaard har formodentlig nok
+vidst, hvad han gjorde, da han kaldte de opbyggelige
+Taler: opbyggelige Taler, samt hvorfor han afholdt sig
+fra Brugen af christelig-dogmatiske Bestemmelser, fra at
+nævne Christi Navn o.\ s.\ v., hvad man ellers i vor Tid
+gjör frisk væk, medens Kategorierne, Tankerne, det Dia\-%
+lektiske i Fremstillingen kun er Immanensens. Som de
+pseudonyme Skrifter, foruden hvad de directe ere, indi\-%
+recte ere en Polemik mod Speculationen, saaledes ere
+disse Taler det ogsaa, ikke derved, at de ikke ere spe\-%
+culative, men derved, at de ikke ere Prædikener.“
+
+Man vil let forstaae, at her ikke er Tale om „en
+christelig Strenghed ligeoverfor en given christelig Mild\-%
+hed“; her handles om at finde „Redelighed“ i Principerne,
+hævde Evangeliet dets Eiendommelighed, og afværge,
+at det kategorisk forvexles med et dermed beslægtet,
+men dog underordnet Resignationens og Fromhedens
+Standpunkt. De, som med nogen Opmærksomhed og Ef\-%
+tertanke have fulgt den kierkegaardske Bevægelse, maae
+jo vide, at denne Forfatter ikke lod det beroe ved at
+lade nogle Pseudonymer opbyde en glimrende Dialektik
+for at udvise „Stadier paa Livets Vei“, og med formel
+Skarpsindighed hævde den Paastand, at Troen er et Pa\-%
+radox; men, at det i den Grad var ham om Sagens rette
+% --- p. 11 ---
+% ö/ø: religiös-praktiske, Gjennemförelse, gjöre, religiöst, Angerlöse —
+% all o-DIAERESIS. No ø.
+Forstaaelse og religiös-praktiske Gjennemförelse at gjöre,
+at han i en rig Mangfoldighed af populære Foredrag:
+% LETTERSPACED: the run of Kierkegaard's titles, from „Opbyggelige“ through
+% „Fredagen“. The following „o. s. v.“ is set in ordinary spacing.
+\emph{Opbyggelige Taler i forskjellig Aand, Kjærlighe\-%
+dens Gjerninger, Christelige Taler, Taler ved
+Altergangen om Fredagen} o.\ s.\ v., har paa det
+Omhyggeligste viist, og i de forskjelligste Fortoninger
+belyst, hvad Kategorierne gjælde, hvorledes der, om
+muligt, skulde virkes paa Folket, hvorledes der skulde
+tales i Menigheden.
+
+„Menigheden! Men er det da virkelig ikke sandt,
+hvad dog fra saamange Sider forsikkres, at S.\ Kierke\-%
+gaard kun vilde være „hin Enkelte“, og forsaae sig paa
+„den Enkelte“, i den Grad, at han aldeles oversaae
+Menigheden?“ Nei, det er virkelig usandt, kategorisk
+usandt. Kun ved forstærket Eftertryk paa „den Enkelte“
+blev det ham muligt at sikkre Menighedsbegrebet mod
+Forvexling med Samfund af lavere Orden; „forsaavidt“,
+siger han, „der, religiöst, er „Menighed“, da er dette et
+% a thin slanted ink mark stands over the final e of „Side“ here. Read as a
+% speck, not an acute: „Sidé“ is not a word, and specks of this size recur on
+% these pages (cf. „et“ p. 6, „seer“ p. 3). Set „Side“.
+Begreb, som ligger paa den anden Side af „den Enkelte“,
+og som for Alt ikke maa forvexles med, hvad der poli\-%
+tisk kan have Gyldighed, Publikum, Mængde, det Nu\-%
+meriske o.\ s.\ v.“
+
+% THREE spaced full stops here, counted at 900 ppi — the only three-point
+% ellipsis in pp. 1--15; the others run to four or five.
+„Mig, den opbyggelige Forfatter, var og er det der\-%
+for en Glæde, at ogsaa . . . De blive flere, som blive
+opmærksomme paa det om „den Enkelte“; det var og
+er mig en Glæde, thi vistnok har jeg Tro paa min Tankes
+Rigtighed trods hele Verden, men hvad jeg dog næst
+den sidst opgav, er min Tro paa de enkelte Mennesker.
+Og dette er min Tro, at saa meget Forvirret og Ondt
+og Afskyeligt der kan være i Menneskene, saasnart de
+blive det Ansvar- og Angerlöse „Publikum“, „Mængde“
+o.\ D., ligesaa meget Sandt og Godt og Elskværdigt er
+der i dem, naar man kan faae dem Enkelte. O, og i
+hvilken Grad skulde Menneskene ikke blive --- Mennesker
+og Elskelige, naar de vilde blive Enkelte for Gud!“
+(„Om min Forfattervirksomhed“, S.\ 12).
+% --- p. 12 ---
+% ö/ø: Religiöse, spögende, Röst, Söndagspræst, höres, förste, Höiröstethed,
+% gjöre (twice), höie, Skjönhed, stöde — all o-DIAERESIS. No ø.
+Den udelukkende Interesse, hvormed K.\ arbeidede
+for det Religiöse, gav sig da ogsaa tilkjende derved, at
+han ikke blot skrev Prædikener, men tillige nu og da
+paa given Anledning virkelig prædikede, helst til Alter\-%
+gang om Fredagen. Hvorfor han just foretrak Fredagen,
+forklarede han engang i en Samtale paa sin spögende
+Maade, idet han beklagede, at han ikke havde Röst
+til at være Söndagspræst, og höres af Saamange, men
+dog mente, at han med sin svagere Stemme vel kunde
+være skikket til Fredagspræst.
+
+Til nærmere Bestemmelse af det Synspunkt, hvor\-%
+under K.\ vilde have det i egentlig Forstand christelige
+% LETTERSPACED: the book-title „Christelige Talers“ and, below, the whole of
+% the sermon-title „Forvar din Fod, naar Du gaaer til Herrens Huus.“
+Foredrag opfattet, ville vi her henvise til \emph{Christelige
+Talers} tredie Afdeling, og fremhæve nogle Punkter af
+den förste Tale: „\emph{Forvar din Fod, naar Du gaaer
+til Herrens Huus.}“ Talen begynder saaledes:
+
+„Hvor er i Guds Huus Alt saa stille, saa trygt.
+Den, der træder derind, ham er det, som var han med
+et eneste Skridt kommen til et fjernt Sted, uendelig langt
+borte fra al Larm og Skrig og Höiröstethed, fra Tilvæ\-%
+relsens Forfærdelser, fra Livets Storme, fra rædsomme
+Begivenheders Optrin eller deres forsmægtende Forvent\-%
+ning. Og hvor Du vender dit Blik hen derinde, vil Alt
+gjöre Dig tryg og rolig. Den ærværdige Bygnings höie
+Mure, de staae saa faste, de værne saa tilforladeligt om
+det sikkre Tilflugtssted, under hvis mægtige Hvælving Du
+er fri for ethvert Tryk. Og Omgivelsens Skjönhed, dens
+Pragt vil gjöre Dig Alt venligt, saa indbydende, den vil
+% the quotation closes on an ellipsis with NO closing quotation mark; as
+% printed, not repaired.
+ligesom indynde det hellige Sted hos Dig. . . . .
+
+Læseren forstaaer, at denne tiltrækkende Beskrivelse
+netop skal bruges til dermed at stöde fra. „Hvor bero\-%
+ligende, hvor inddyssende, ak, og hvormegen Fare i
+denne Tryghed!“
+
+Ja, men Taleren er alligevel ingen Fanatiker, der
+kun veed at ivre mod et Udvortes, ingen Billedstormer,
+der reformerer ved at slaae istykker; heller ikke er
+% --- p. 13 ---
+% ö/ø: söge, höie, Oplöftelse, religiös, höre, Prövelser, försögt, Öiemed,
+% Höide, nödvendigviis, söge, lös, religiöse, Religiöse — all o-DIAERESIS.
+% No ø.
+han en Ukjærlig, der ingen Sympathi kan have med
+dem, som fra „Larm og Skrig“, fra „Tilværelsens For\-%
+færdelser“ og fra „Livets Storme“ söge et „Tilflugtssted“
+bag de „höie Mure“, en Sjælens Oplöftelse under den
+„mægtige Hvælving“. Det er en religiös Tænker, der i
+Talen vil advare mod den farligste, meest bedaarende
+af alle Illusioner, Andagtens nemlig, naar Andagten er
+en æsthetisk Stemning, en blid Illusion. „Hvor beroli\-%
+gende, hvor inddyssende, ak, og hvormegen Fare i
+denne Tryghed! Og derfor er det dog sandeligen saa,
+at det egentligen kun er Gud i Himlene, der i Livets
+Virkelighed ret tilgavns kan prædike for Menneskene,
+thi han har Omstændighederne, har Skjæbnerne, har
+% four points after „Magt.“, five after „Beroligelse!“ — counted at 900 ppi.
+Bestræbelserne i sin Magt. . . . . Men i Guds Huus, i
+% „i Guds Huus, i / i det pragtfulde Guds Huus“ — the „i“ is printed twice,
+% at the end of one line and again at the head of the next. As printed.
+i det pragtfulde Guds Huus, naar Præsten prædiker ---
+til Beroligelse!“ . . . . . „For Alvor vil man Intet höre
+om det Forfærdelige, man vil lege det efter, omtrent,
+som naar i Fredstider Krigerne eller rettere Ikke-Krigerne
+lege Krig; man vil kunstnerisk fordre Alt af Taleren,
+men selv vil man verdsligt og ugudeligt i Guds Huus
+sidde ganske tryg, fordi man jo nok veed, at den Magt
+har ingen Taler, den Magt, som kun Styrelsen har, at
+gribe et Menneske, at kaste ham hen i Omstændighe\-%
+dernes Vold, at lade Tilskikkelser og Prövelser og An\-%
+fægtelser i Alvor prædike for ham til Opvækkelse.“
+
+Efter de Forestillinger, man fra flere Sider har for\-%
+sögt at udbrede iblandt Folket, skulde Udenforstaaende
+nu vente, at Talens Öiemed altsaa var, at opskrue
+Prædikeforedragets Strenghed til en saadan Höide, at
+Folk derved nödvendigviis maatte afskrækkes fra at
+söge Kirken. Enhver, der har læst Talen, veed, hvor
+lös, hvor overfladisk og falsk denne Forestilling er. Vel
+er Talen streng, men dog kun streng, forsaavidt den
+religiöse Fordring i sig selv er streng; her er i Talen
+ingen Overdrivelse; her, som overalt i det Religiöse, er
+den uendelige Strenghed igjen væsentlig Mildhed.
+% --- p. 14 ---
+% ö/ø: Besöget, ifölge, gjöre, Selvprövelse, Indövelse, henföres, förste,
+% förer — all o-DIAERESIS. No ø.
+% PRINTER'S DEFECT: the first em-dash below (after „Troen“) is a battered
+% sort, part of the rule not inked, so that it prints like a short broken
+% double stroke. Set as an em-dash.
+„Naar Troen“ --- saaledes slutter Talen --- „sees fra
+dens ene, den himmelske Side, da seer man kun Salig\-%
+hedens Gjenskin i den; men seet fra dens anden, den
+blot menneskelige Side, seer man idel Frygt og Bæven.
+Men saa er jo ogsaa den Tale usand, der idelig og
+aldrig anderledes end indbydende, lokkende, vindende
+vil tale om Besöget i Herrens Huus, thi fra den anden
+Side seet, er det forfærdeligt. Derfor er ogsaa den Tale
+usand, der tilsidst endte med ganske at skrække Men\-%
+neskene bort fra at komme i Herrens Huus, thi fra den
+anden Side seet er det saligt, een Dag i Guds Huus
+bedre end tusinde ellers“. . . . . „Thi til Taleren hedder
+det: brug al den Dig forundte Evne, villig til enhver
+Opoffrelse og Eftergivenhed i Selvfornegtelse, brug den
+til at vinde Menneskene --- men vee Dig, om Du vinder
+dem saaledes, at Du udelader Forfærdelsen; brug derfor
+al den Dig forundte Evne, villig til ethvert Offer i Selv\-%
+fornegtelse, brug den til at forfærde Menneskene --- men
+vee Dig, om Du ikke bruger den i Grunden dog, for at
+vinde dem for Sandheden.“
+
+Da Christendommen, ifölge Kierkegaards Opfattelse,
+ikke er, hvad man saadan uden videre kalder en Lære,
+men i væsentlig Forstand „en Existensmeddelelse“, var
+det ham især magtpaaliggende at gjöre det saa tydeligt,
+som muligt, hvorledes den Talendes egen Existens, uden
+at Fordringens Strenghed gav det Menneskelige Paaskud
+til at unddrage sig Forpligtelsen, og endda frisk væk be\-%
+raabe sig paa „Troen“ og paa „den rene Lære“, kunde
+og burde forholde sig til „Existensmeddelelsen“. I denne
+Henseende faaer endog den forskjellige Maade, hvorpaa
+han lod sine Skrifter udgaae, en mere end tilfældig Be\-%
+% LETTERSPACED: the two book-titles „Til Selvprövelse“ and
+% „Indövelse i Christendom“.
+tydning. Sit Skrift: „\emph{Til Selvprövelse}“ udgav han
+f.\ Ex.\ i sit eget Navn, „\emph{Indövelse i Christen\-%
+dom}“, henföres derimod, i förste Udgave, til en Pseudo\-%
+nym. Dette er nu ret betegnende for hvad han kalder
+sin „Taktik“. Til det Sprog „Anti-Climacus“ förer i
+% --- p. 15 ---
+% ö/ø: Indövelsen, hidrörende, Höieste, höres, bör (twice), gjöre,
+% Indrömmelse, Först, Selvprövelse, nöiagtig, höiærværdig, överste,
+% tilhörer, Inderliggjörelse, utilböielig, rörer, förste — all o-DIAERESIS.
+% No ø.
+„Indövelsen“ svarer en saa anstrengt Existens, at For\-%
+fatteren just af den Grund har stillet sig bag Pseudo\-%
+nymen, og kun anmeldt sig som Udgiver: „I dette
+Skrift, hidrörende fra Aaret 1848, er Fordringen til det
+at være Christen tvunget op til et Idealitetens Höieste.
+Dog siges, fremstilles, höres bör jo Fordringen, der bör,
+christeligt, ikke slaaes af paa Fordringen, ei heller den
+forties --- istedetfor at gjöre Indrömmelse og Tilstaaelse
+sig selv betræffende.“ Det Skrift derimod, han ligefrem
+har paatrykt sit Forfatternavn, skal ved den Aand og
+Tone, hvori Fremstillingen fra Först til Sidst er holdt,
+minde Læseren om det Afstandsforhold, hvori han selv
+befinder sig til Idealerne.
+
+„Lad mig“, siger han (Til Selvprövelse, S.\ 16),
+„nöiagtig bestemme, hvor jeg, saa at sige, er. Der er
+iblandt os en höiærværdig Olding, denne Kirkes överste
+Geistlige; det han, hans Prædiken har villet, det samme
+er det, jeg vil, kun en Tone stærkere, hvad der ligger
+i min Personligheds Forskjellighed, og hvad Tidens For\-%
+skjellighed kræver“. . . . . „Væsentligen tilhörer jeg Gjen\-%
+nemsnittet, og her er det jeg har arbeidet for Uro i
+Retning af Inderliggjörelse“.
+
+„Thi christelig er der to Arter sand Uro. Uroen i
+Troesheltene og Sandhedsvidnerne, hvilken sigter til at
+reformere et Bestaaende. Saa langt har jeg aldrig vovet
+ud; det er ikke Noget for mig, og forsaavidt Nogen i
+Samtiden kunde synes at ville vove saa langt ud, var
+jeg ikke utilböielig til at tage Polemik imod ham, for at
+bidrage til, at det maatte blive aabenbart, om han er
+den Berettigede“. . . . .
+
+„Istedetfor selv tomt og opblæst at udgive mig
+for et Sandheds-Vidne og foranledige Andre til dumdri\-%
+stigt at ville være det Samme, er jeg en umyndig Digter,
+der rörer ved Hjælp af Idealerne.“
+
+Saavidt om „Forfattervirksomheden“ i det förste Af\-%
+snit. Lykkes det nu den uhildede Iagttager ved disse
+% --- p. 16 ---
+og lignende Træk at danne sig en nogenlunde „sikker
+Dom“, om S.\ Kierkegaards Grundtanker og Bestræbelser
+i dette förste Afsnit af hans offentlige Liv, da vil en
+„sikker Dom“ om hans „mentale Tilstand“ i det sidste
+Afsnit falde som af sig selv. Som Forudsætningerne ere,
+ere ogsaa Conseqvenserne, at sige, naar man har en Mand
+for sig, som vil, hvad det end koster, være conseqvent.
+At indrömme Forudsætningerne er altsaa med det Samme
+at vedkjende sig Conseqvenserne, at sige, hvis Indröm\-%
+melsen beroer paa Indsigt, ikke paa en flygtig Stemning.
+
+Dersom det nu altid var en saa ganske ligefrem
+Sag, at Conseqvensernes Overeensstemmelse med deres
+Forudsætninger strax maatte falde endog en overfladisk
+% „Öinene“: ö (diaeresis) confirmed at 600 ppi. No ø anywhere on p. 16.
+Betragter i Öinene, vilde udförligere Oplysninger her
+være overflödige. Men Enhver, der kjender Noget til
+Livets Conflicter, veed med sig selv, at det Tilfælde
+endda just ikke saa sjældent indtræffer, da det faaer
+Udseende af conseqvent Holdning, hvad dog i Grunden
+er jammerlig Inconseqvens, medens omvendt, det som
+efter Skinnet ligner et Brud paa al Conseqvens, er i sit
+Væsen det eneste conseqvente. Jo mere Inderlighed
+Sagen har, desto smerteligere ville Collisionerne föles;
+er det Inderlighedsproblemerne selv i deres Maximum,
+hvorom det gjælder, vil Knuden snart strammes i den
+Grad, at det kan blive Alvor med det berömte Sted hos
+% German quoted in the same antiqua; „lügen“ with a true ü.
+Jacobi: „Ja, ich bin der Atheist und Gottlose, der, dem
+Willen, der Nichts will, zuwider, lügen will, wie Desde\-%
+% FIVE printed points (the first close up to „log“, then four spaced).
+mona sterbend log. . . . .“
+
+Som Bindeled imellem förste og sidste Afsnit af vor
+Forfs.\ offentlige Liv have vi „Indövelse i Christendom“. Til
+det nye Oplag af dette Skrift har K.\ (Fædrel.\ 16.\ Mai 1855
+Nr.\ 112) sendt et veiledende Ord. „Denne Bog har jeg“,
+siger han, „ladet udgaae i et aldeles uforandret Oplag, fordi
+% FIVE points here and five again at „Maade“ below.
+jeg betragter den som et historisk Actstykke. . . . . Min
+tidligere Tanke var: skal det Bestaaende forsvares, er
+dette den eneste Maade. . . . . Paa den Maade kommer
+% --- p. 17 ---
+% Sheet signature „2“ at the foot of this page: not transcribed.
+der dog Sandhed ind i det Bestaaende, det forsvarer
+sig ved at dömme sig selv, det vedgaaer den christelige
+Fordring, gjör Tilstaaelse sig selv betræffende om sin
+% FIVE points.
+Afstand. . . . . Dette var i mine Tanker den eneste Udvei
+til, christeligt, at forsvare det Bestaaende, og for ikke
+at forskylde paa nogensomhelst Maade at gaae for hur\-%
+tigt tilværks, vovede jeg at give Sagen den Vending, for
+at see, hvad den gamle Biskop vilde gjöre derved.
+Hvis der var Kraft i ham, maatte han gjöre Eet af To:
+enten afgjort erklære sig for den Bog, vove at gaae med
+den, lade den være Forsvaret, der afværger, hvad Bogen
+digterisk indeholder, Sigtelsen mod hele den officielle
+% Nested quotation reusing the same „…“ pair, as everywhere in this article.
+Christendom, at den er en Öienforblændelse „ikke en
+suur Sild værd“; eller saa afgjort som muligt kaste sig
+mod den, stemple den som et gudsbespotteligt og van\-%
+helligt Forsög, og erklære den officielle Christendom for
+den sande Christendom. Han gjorde ingen af Delene,
+han gjorde Intet; han saarede blot sig selv paa Bogen,
+og mig blev det tydeligt, at han var afmægtig.“
+
+Det er ikke her Stedet at imödegaae alle Indven\-%
+dinger af alle Slags, som ere reiste mod S.\ Kierkegaard
+paa det Sidste. Skjöndt Beskyldningerne ere mange, er
+Skylden dog kun een: Conseqvensen! For Conseqven\-%
+sens Skyld ville vi her indskrænke os til to fremragende
+Punkter: „Angrebet paa Biskop Mynster“, og Angrebet
+paa det Bestaaende.
+
+% The footnote is marked *) in the printing, set smaller under a short
+% left-hand rule at the foot of the page; the mark stands after „1854“.
+Da Dr.\ Sören Kierkegaard, Mandagen den 18de De\-%
+cember 1854 ved sin Artikel\footnote{Artiklen skreven i Februar 1854.} i „Fædrelandets“ Nr.\ 295,
+% LETTERSPACED DISPLAY. The Sperrsatz begins at „Var“ and runs, unbroken
+% and through both quotation pairs and the dash, to the question mark;
+% „vare der vistnok“ resumes ordinary spacing on the same line.
+begyndte med det Spörgsmaal: \emph{Var Biskop Mynster
+et „Sandhedsvidne“, et af „de rette Sandheds\-%
+vidner“, --- er dette Sandhed?} vare der vistnok
+Mange, der forargedes, Mange, der raabte paa Inconse\-%
+qvens, Mange, der tænkte paa „herostratisk Berömmelse
+ved at udslynge Fornærmelser“ o.\ s.\ v., men, som det
+% --- p. 18 ---
+lod til, ikke ret Mange, der besindede sig paa, at den
+Opsigt vækkende Indsigelse i det Væsentlige, hvad den
+afdöde Biskop angaaer, ikke indeholdt noget Nyt, ikke
+indeholdt Andet, end hvad K.\ allerede forud, om end i
+mildere Tone, havde sagt Biskop Mynster selv i hans
+% „Öine“ here is ö, not ø — checked at 600 ppi against the ø of p. 19.
+aabne Öine offentlig og saa tydelig, at Vedkommende
+ikke kunde misforstaae det, og det uden at enten Bi\-%
+skoppen selv eller Nogen iblandt hans Tilhængere den\-%
+gang saameget som gjorde Mine til at have Noget der\-%
+imod at indvende.
+
+Den offentlige og bestemte Indsigelse imod, at Biskop
+Mynster anvises Plads blandt „de rette Sandhedsvidner“,
+% LETTERSPACED: the title only, inside its quotation marks.
+er at læse i Skriftet: „\emph{Til Selvprövelse}“ S.\ 16 og 17.
+Efterat K.\ nemlig S.\ 16 med de allerede citerede Ord:
+„Der er iblandt os en höiærværdig Olding, denne Kirkes
+överste Geistlige; det han, hans Prædiken har villet,
+det Samme er det, jeg vil, kun en Tone stærkere, hvad
+% „min Persons Forskjellighed“ — so printed here, where the same sentence
+% was quoted on p. 15 as „min Personligheds Forskjellighed“, and is quoted
+% again with „Personligheds“ eleven lines below. Transcribed as printed.
+der ligger i min Persons Forskjellighed“, har i Udtryk
+saa betegnende, at Ingen kan tage feil af, hvem „den
+höiærværdige Olding, denne Kirkes överste Geistlige“,
+% No dash at the end of this line or the next: OCR invents one; the image
+% shows the line ending flush after „Mynsters,“.
+er, sammenlignet sin Virksomhed med Biskop Mynsters,
+og altsaa ligefrem stillet sig ved hans Side, ja, med den
+Tilföining: „en Tone stærkere, hvad der ligger i min
+Personligheds Forskjellighed“, endog --- thi i slige Sager
+gjælder det hverken om Höflighed eller Fornærmelse,
+men om Sandhed --- om man saa vil, ved hans höire
+Side; er det en Selvfölge, at ethvert Ord, hvormed K.
+charakteriserer sin Afstand fra „Troesheltene“ og „Sand\-%
+hedsvidnerne“, nödvendigviis ogsaa kommer til at gjælde
+for Biskoppen. Naar han da siger om sig selv, at han
+„væsentligen tilhörer Gjennemsnittet“, siger han det
+Samme om Biskop Mynster; naar han om „Uroen i
+Troesheltene og Sandhedsvidnerne, hvilken sigter til at
+reformere et Bestaaende,“ siger: „Saa langt har jeg al\-%
+drig vovet ud, det er ikke Noget for mig, og forsaavidt
+Nogen i Samtiden kunde synes at ville vove saa langt
+% --- p. 19 ---
+% Sheet signature „2*“ at the foot of this page: not transcribed.
+% THIS PAGE MIXES THE TWO SORTS: ø in „Følgeblade“ (l. 19) and „Øine“
+% (l. 31), ö everywhere else, including „Öine“ eight lines above the first
+% ø. Each verified at 600 and 1200 ppi.
+ud, var jeg ikke utilböielig til at tage Polemik imod
+% FOUR points here (not five).
+ham“. . . .; da maa Enhver, der har lært at læse, uvil\-%
+kaarlig forstaae det Sagte, som om der stod: „Saa langt
+have vi, Biskop Mynster og jeg, aldrig vovet ud, det
+er ikke Noget for os; og forsaavidt Nogen i Samtiden
+kunde synes at vove saa langt ud, vare vi, Biskop
+Mynster og jeg, ikke utilböielige til at tage Polemik
+imod ham.“ Kort, hvergang Kierkegaard ved sine „Ind\-%
+römmelser“ og „Tilstaaelser“ bukker for „Troesheltene“,
+og böier sig for „Sandhedsvidnerne“, seer det i Læserens
+Öine livagtig ud, som om han just holdt Biskop Mynster
+ved Haanden, for derved at formaae denne Kirkens
+„överste Geistlige“ til at gjöre det Samme.
+
+Havde nu enten Biskoppen selv eller Nogen af hans
+Nærmeste fölt sig overbeviist om, at her ved denne
+Sammenligning var skeet et Overgreb; hvorfor blev det
+da ikke sagt K.\ strax og lige ud? Man kunde jo, thi
+% ø: „Følgeblade“ — the slash is unmistakable at 600 ppi.
+som K.\ senere har sagt (Følgeblade til: Dette skal siges)
+„ved saadanne Forretninger bruger man Ordene sandt
+som en beskrivende Naturforsker, Complimenter have
+ikke hjemme her,“ have sagt ham uden Omsvöb: „Ved
+saaledes at sammenligne Dig med „denne Kirkes överste
+Geistlige,“ er det ikke Biskop Mynster Du fornærmer,
+men Du krænker Sandheden, idet Du ved en saa upassende
+Sammenligning forvirrer Begreberne. Du vil klare Exi\-%
+stenserne; hvad er vel din Existens? Du kan gjerne
+være Forfatteren med „den rige Dannelse,“ „den dybe
+religiöse Grund,“ „det Sind, som er mægtigt til at træde
+% ø: „Øine“ — and „höieste“ on the very same line is ö.
+Livets höieste Problemer under Øine,“ men din Existens?
+Ja, deri har Du Ret, den „tilhörer Gjennemsnittet.“ Men
+Biskop Mynsters Existens, saaledes mærket som den er,
+med Byrdernes, Korsenes, Lidelsernes Tegn, tilhörer ikke
+Gjennemsnittet; eller kan Du i selvsyg Forblindelse maa\-%
+skee ikke see, at Biskop Mynster, foruden hvad han er i den
+humane Retning, tillige er et Andet og Höiere, end de
+Mænd, vi ellers regne blandt Landets Ypperste, at han
+% --- p. 20 ---
+just er et Sandhedsvidne, et af de rette Sandhedsvidner,
+et Led i den hellige Kjæde?“
+
+Havde man fra först af været saa aabenhjertig, saa
+var K.\ naturligviis strax bleven orienteret; nu derimod,
+da man iagttog Taushed, drömte han vist ikke om, at
+det maaskee kun var en diplomatisk Taushed, men tog,
+som man seer, Tausheden ligefrem for en stiltiende Ind\-%
+römmelse. „Saaledes var,“ siger han i Indsigelsen, „naar
+man lægger det nye Testamente ved Siden, Biskop Mynsters
+Christendoms-Forkyndelse en, især for et Sandhedsvidne,
+mislig Christendoms-Forkyndelse. Men da var der, mente
+jeg, det Sande hos ham, at han, hvad jeg holder mig
+fuldt forvisset om, var villig til at tilstaae for Gud og
+sig selv, at han ingenlunde, ingenlunde var et Sandheds\-%
+vidne, --- just denne Tilstaaelse var i mine Tanker det
+Sande.“
+
+Hvor er altsaa det Inconseqvente? Havde K.\ tidligere
+begyndt med at complimentere Biskop Mynster som „Sand\-%
+hedsvidne,“ fordi han nu af visse Grunde saa godt kunde
+lide Biskop Mynster; men sidenefter reist en „herostratisk“
+Indsigelse imod at kalde Biskop Mynster et Sandheds\-%
+vidne, fordi han nu fölte sig fornærmet, og ikke længere
+kunde lide Biskop Mynster: det havde været inconse\-%
+qvent. Havde han derhos, for at dække sin Inconseqvens,
+gjort Qvakleri med Ordet: Sandhedsvidne, at det jo f.\ Ex.\ baade
+kunde betyde Dit og betyde Dat, at han vistnok
+tidligere var uforvarende kommen til at bruge det Udtryk:
+Sandhedsvidne, men dog paa ingen Maade havde meent,
+at man derved skulde tænke sig: det rette Sandhedsvidne,
+nu derimod, da han just vilde paapege, hvad man skulde
+tænke sig ved det rette Sandhedsvidne, faldt Biskop
+Mynster igjennem: da havde en saadan Adfærd ikke
+blot været inconseqvent, men den havde været foragtelig.
+Nu derimod, da det for Gud og hver Mand er vitterligt,
+at Kierkegaard selv i sidste saavelsom i förste Afsnit af
+sit Liv fastholder det samme, det selvsamme Begreb om
+% --- p. 21 ---
+„Sandhedsvidnet,“ og i Forhold til det at være Sandheds\-%
+vidne giver os i Grundtræk det samme, det selvsamme
+Billede af Biskop Mynster: hvori bestaaer saa det In\-%
+conseqvente? hvad er det, som i denne hans Fremgangs\-%
+maade skal egne sig til at vække Mistanke mod hans
+„mentale Tilstand“?
+
+% NOT letterspaced here, though the same title is letterspaced on p. 18
+% and again, unspaced, on p. 27. Checked on the image.
+Hvorledes Kierkegaard vilde have det i sit anförte
+Skrift (Til Selvprövelse S.\ 17) givne Tilsagn, at han, for\-%
+saavidt Nogen i Samtiden kunde synes at ville vove „saa
+langt ud“ (at han nemlig i Lighed med „Sandheds\-%
+vidnerne“ vilde reformere et Bestaaende) ikke var util\-%
+böielig til „at tage Polemik imod ham,“ forstaaet, har han
+viist i sin Artikel (Fædrel.\ 31.\ Jan.\ 1851 No.\ 26) mod
+Dr.\ Rudelbach. Artiklen begynder saaledes: „Yttringen fin\-%
+des“ (i Dr.\ Rudelbachs Skrift om det borgerlige Ægteskab
+1851) „p.\ 70. I Texten staaer: Sandelig, Kirkens dybeste
+% FOUR points.
+og höieste Interesse i vore Dage er. . . . netop at blive
+% Suspended hyphen kept as printed.
+emanciperet fra det, man med Rette kan kalde Vane- og
+Statschristendom. Hertil saa Noten 121. Det er det
+samme som en af vore meest udmærkede Skribenter fra
+de sidste Dage, Sören Kierkegaard, söger at indprente,
+indpræge, og, som Luther siger: inddrive alle dem, som
+ville höre.“
+
+Denne Artikel er i Overeensstemmelse med Kierke\-%
+gaards Princip affattet i streng conservativ Aand. „Intet,“
+hedder det, „er jeg saa betænkelig ved som ved Alt,
+hvad der endog blot smager af denne usalige Forvexling
+af Politik og Christendom, en Forvexling, der saa let
+kan bringe en ny Art Kirkereformation op og i Mode,
+% Both OCR witnesses read a dash before „den“; at 600 ppi the mark is a
+% speck in the left margin, well outside the measure and a fraction of a
+% dash's width. Not transcribed.
+den bagvendte Reformation, der reformerende sætter et
+nyt Slettere i Stedet for et gammelt Bedre, medens det
+dog skal være vist og sandt, at det er en Reformation,
+i hvilken Anledning hele Byen bliver illumineret. Christen\-%
+% „Inderligjörelse“ with one g, as printed; „Inderliggjörelse“ with two on
+% p. 22. Both transcribed as they stand.
+dom er Inderlighed, Inderligjörelse. Ere til en given
+Tid de Former, hvorunder der skal leves, ikke de fuld\-%
+komneste: nu, i Guds Navn; kan man faae dem bedre:
+% --- p. 22 ---
+% FOUR points.
+vel. Men væsentligen: Christendom er Inderlighed.“ . . . .
+„Skulde dette höre med til sand Christendom, denne Tro
+paa de politisk opnaaede, frie Institutioners frelsende
+Magt, saa er jeg ingen Christen, ja endnu værre, jeg er
+et reent Djævelens Barn; thi, oprigtig talt, jeg har end\-%
+og Mistanke til disse, politisk opnaaede, frie Institutioner,
+især til deres frelsende og gjenfödende Magt. Det er
+% PRINTER'S ERROR: „christendum“ set as one word, the word-space dropped
+% (Kierkegaard's text reads „saa christen dum er jeg“). As printed.
+min Christendom, eller saa christendum er jeg, som da
+forresten aldrig har befattet mig med „Kirke“ og „Stat“
+--- det er meget for stort for mig . . . . Jeg har heller
+aldrig kjæmpet for „Kirkens“ Emancipation, saa lidet som
+for den grönlandske Handels, Qvindernes eller nogen\-%
+somhelst anden Emancipation. Jeg har som Enkelt, med
+Sigtet „den Enkelte,“ tilsigtende Inderliggjörelse i Christen\-%
+dom i „den Enkelte,“ conseqvent, med Aandens Vaaben,
+ene og alene med Aandens Vaaben, kjæmpet for at gjöre
+opmærksom paa og mod at lade sig bedrage af „Sandse\-%
+bedrag“ . . . . „Det er ikke udvortes fra Christendommen
+skal hjælpes, ved Institutioner og Constitutioner, og da
+allermindst, naar disse ikke, paa gammelt Christeligt,
+skulde lidende tilkjæmpes ved Martyrier, men paa Politisk,
+% Printed with a thin space on each side of the hyphen
+% („selskabeligt - venskabeligt“) in this stretched line; closed up here as
+% justification, per the convention for spaced punctuation.
+selskabeligt-venskabeligt vindes ved Ballotation eller i
+Tallotteriet --- at hjælpes paa den Maade er tvertimod
+dens Undergang.“
+
+Dersom Nogen imidlertid i disse Yttringer af et „con\-%
+servativt“ Sindelag mener at finde et Beviis for, at
+Kierkegaard herved saa ligefrem havde forskrevet sig
+til det Bestaaende, at han ikke, uden udtrykkelig at bryde
+med sine egne Principer, nogensinde kunde tillade sig
+at angribe det Bestaaende; da vil en Saadan, ved at
+see lidt nærmere til, let overbevise sig om, at han har
+taget mærkelig feil.
+
+„Lad mig dog,“ hedder det som i en Efterskrift til
+Artiklen, „tilföie Fölgende, for at, hvad jeg siger, ikke
+skal blive misforstaaet, som var det min Mening, at
+Christendom ene og alene bestod i at finde sig i Alt be\-%
+% --- p. 23 ---
+% ø on this page: „Øiet“ only; every other o-diacritic is ö.
+træffende de ydre Former“ . . . . „I Apostlernes Gjer\-%
+ninger læse vi de Ord: man bör adlyde Gud mere end
+Mennesker. Altsaa der gives Tilfælde, hvor et Bestaaende
+kan være af den Beskaffenhed, at den Christne ikke bör
+finde sig deri, ikke bör sige, at Christendom just er
+denne Ligegyldighed for det Udvortes.“
+
+„Men lad os nu see, hvorledes Apostlerne ikke bare
+sig ad, --- thi hvorledes disse ærværdige Skikkelser bare
+sig ad, det veed vel Enhver.“ „Apostlerne gik ikke saa\-%
+dan og snakkede med hinanden og sagde: „Det er
+utaaleligt, at Synedriet sætter Straf paa Ordets For\-%
+kyndelse, det er Samvittighedstvang. Dog, hvad skulle
+vi gjöre? Skulle vi ikke see at blive nogle Stykker, og
+saa indgive en Adresse til Synedriet, eller see at komme
+med paa en Synode; det var ikke umuligt, at vi saa
+ved at holde sammen med hvad der ellers er vore Fjender,
+kunne ved Ballotation faae Majoriteten, og vi da kunne
+faae Samvittighedsfrihed til at forkynde Ordet.“ Gud i
+Himlene! Ærværdige Skikkelser, tilgiver, at jeg har maat\-%
+tet tale saaledes, det var nödvendigt.“
+
+„Hvorledes bare de sig derimod ad --- thi der er
+dog vist Adskillige, der have glemt det.“ . . . . „Apost\-%
+len er væsentligen en eenlig Mand.“ . . . . „Lad os an\-%
+tage, at En möder ham, der siger: Veed Du, at Syne\-%
+driet har sat Hudflettelse paa at forkynde Ordet. Apost\-%
+len svarer: Naa, har Synedriet det, saa vil jeg altsaa
+blive hudflettet. Imorgen sætter Synedriet Dödsstraf.
+Apostlen svarer: Naa, har Synedriet gjort det, saa vil
+jeg altsaa blive henrettet. Han lader det Bestaaende
+bestaae; ikke et Ord, ikke en Stavelse, ikke et Bogstav
+i Retning af Forandring i det Udvortes, ikke den flygtigste
+% ø: „Øiet“.
+Tanke i hans Hoved, ikke et Blink med Øiet, ikke en
+% „Apostelen“ here, „Apostlen“ four times above. As printed.
+Mines Bevægelse i denne Retning. „Nei,“ siger Apostelen,
+„lad det kun staae urokket fast, dette Bestaaende, thi
+dette staaer med Guds Hjælp ogsaa urokket fast, at idag
+bliver jeg hudflettet, imorgen henrettet, eller, hvad der
+% --- p. 24 ---
+er det Samme, idag forkynder jeg Ordet, og imorgen,
+Amen.“
+
+„Og her et christeligt Memento. Ordenligviis er
+Christendom indenfor Christenhed just Ligegyldighed for
+det Udvortes i Selvbekymring. Men colliderer En saa\-%
+ledes med det Bestaaende, at det kunde falde ham ind,
+% „store Gud“ with a plain o here; the same phrase is reset on p. 28 with
+% an ø sort (see the note there).
+at det er et Samvittighedsspörgsmaal, --- store Gud, et
+Samvittighedsspörgsmaal! --- og han vover at sige dette:
+da har han at være eenlig Mand, at stride lidende, at
+vælge Martyriet. Samvittighed og Samvittighedssag kan
+--- dette er evig vist og ligger i Sagen selv, thi Sam\-%
+vittighed er ingen numerisk Bestemmelse --- kun re\-%
+præsenteres af eenlig Mand og i Charakteer, ved Hand\-%
+ling.“ . . . .
+
+Da denne Artikel --- just en Artikel efter Biskop Myn\-%
+sters Hjerte --- saae Lyset, var der neppe Nogen iblandt
+dem, der dengang holdt paa det Bestaaende, som heri
+fandt noget Stödende, end sige da, noget saa Stödende,
+at det i fjerneste Maade kunde vække Mistanke mod
+Forfatterens „mentale Tilstand.“ De i Artiklen udtalte
+Grundsætninger ere da ogsaa virkelig, det maa Enhver,
+der vil bruge sin Forstand, indrömme, af den Natur, at
+baade Staten og Christendommen, at sige, det nye Te\-%
+stamentes Christendom kunne, hver efter sin Interesse,
+vedkjende sig dem. Det, der i religiös Henseende for\-%
+aarsager Staten de mange Plagerier, Sammenstöd og uhyg\-%
+gelige Bryderier, er ingenlunde „eenlig Mand, der væl\-%
+ger at stride lidende“, men meget mere det politiserende
+Kirkevæsen, den religiöse Verdslighed, der dog vil over
+det Verdslige, den Samvittighedernes Selskabsdrift, der
+grunder sin Frihed paa „Ballotation.“ „Alt, hvad der
+er Parti og vil virke som Parti, maaskee endog intrigue\-%
+rende --- naar det mod et Bestaaende vil beraabe sig
+paa „Samvittighed“, da forskylder det en Usandhed“, er
+en Grundsætning, som, mærkværdigt nok, i lige Grad, om
+end i modsat Aand, kan hyldes af Statsmænd og Apostler.
+% --- p. 25 ---
+Spörge vi nu, hvorvidt Kierkegaards, som det synes,
+i höieste Grad agiterende, voldsomme og revolutionære
+Optræden i de sidste Afsnit af hans Liv, uden Omsvöb,
+undskyldende Vendinger eller spidsfindige Kunstgreb la\-%
+der sig bringe i Overeensstemmelse, i grundig, sand og
+fuldstændig Overeensstemmelse med Tankegangen i nys\-%
+nævnte fredsommelige Artikel, er Svaret ikke langt borte.
+Kun maae vi, hvad de sidste Optrin angaaer, ikke glem\-%
+me, at Buen er spændt, ikke glemme, hvad det var for
+et höittravende „Vidnesbyrd“, der gav Anledning til, at
+Buen saaledes blev spændt, ikke glemme, at Inderlig\-%
+hedsknuden er strammet, at det nu er Alvor, virkelig
+% The German is NOT enclosed in quotation marks here.
+Alvor med „det berömte Sted“ hos Jacobi: Ja, ich bin
+der Atheist und Gottlose!
+
+% LETTERSPACED DISPLAY: „Exempel:“ is in ordinary spacing; the Sperrsatz
+% opens at the quotation mark and closes after „Anden.“, the bracketed
+% source that follows being ordinary again. The quotation is never closed
+% — there is no “ before the parenthesis — so it stands +1 in the balance.
+% The second footnote of the article, mark *), three lines under a short
+% left-hand rule, its last four words letterspaced.
+Exempel: \emph{„Hvad der skal gjöres --- det skee
+nu ved mig eller ved en Anden.} (Anden Pintse\-%
+dag 1854.\footnote{Her kan gjentages, hvad K.\ selv udtrykkelig fremhæver i en
+tidligere Artikel (Ved Biskop Mynsters Död): „Man bemærke
+\emph{Aarstal og Datum}“.} S.\ Kierkegaard. Fædrelandet, 22.\ Marts 1855.
+Nr.\ 69.)
+
+„Der skal först og fremmest, efter den störst mulige
+Maalestok, gjöres en Ende paa hele den officielle --- vel\-%
+meente --- Usandhed, der --- velmeent --- fremkogler og
+opretholder det Skin, at det er Christendom, man forkyn\-%
+der, det nye Testamentes Christendom. I denne Hen\-%
+seende gjælder det om ikke at skaane.“ . . . .
+
+„Naar saa det er gjort, skal Sagen vendes saaledes:
+er det sande Sammenhæng dog ikke egentlig dette, at
+det, fra Slægt til Slægt, er gaaet saaledes til Agters for
+os Mennesker, . . . . at vi, istedetfor den uforskammede
+Sludder om, at Christendommen er perfectibel, at vi
+gaae fremad, ja, at Christendommen maaskee ikke en\-%
+% Suspended hyphen („Dusin- og Snese-Mennesker“) kept as printed.
+gang mere tilfredsstiller --- at vi, usle, jammerlige Dusin- og
+Snese-Mennesker, til syvende og sidst virkeligen ikke
+% --- p. 26 ---
+kunne bære dette Guddommelige, som er det nye Te\-%
+stamentes Christendom; og at vi for saavidt maae nöies
+med den Art Religiösitet, som nu er den officielle, efterat
+det, vel at mærke, er gjort kjendeligt, at den ingenlunde
+% FOUR points here, THREE at „Salighed“ five lines below.
+er det nye Testamentes Christendom. . . . Saaledes maa
+Sagen vendes; bort, bort, bort med al Öienforblindelse,
+frem med Sandheden, ud med Sproget: vi duer ikke til
+at være Christne i det nye Testamentes Forstand, --- og
+dog trænge vi til at turde haabe en evig Salighed.“ . . .
+„Naar saa Sagen er vendt saaledes, saa vil det vise sig,
+om der er noget Sandt i dette, om det har Styrelsens
+% The dash here prints in two pieces, the middle of the sort having failed;
+% it is an em dash, set as one.
+Samtykke, --- hvis ikke, saa maae Alt briste, at der i
+denne Rædsel atter maatte blive Individer til, som kunne
+bære det nye Testamentes Christendom. Men Ende,
+Ende skal der gjöres paa den officielle --- velmente ---
+Usandhed.“
+
+Men er det dog ikke oprörende? „Ja, ich bin der
+Atheist und Gottlose, der dem Willen, der Nichts will, zu\-%
+wider, lügen will.“ Havde K., istedetfor at indlade sig paa
+saa „radicale“ Fordringer og „pessimistiske“ Anskuelser,
+kunnet beqvemme sig til at slaae ind paa en jævnere Vei;
+havde han, træt af sin Stilling som „eenlig Mand“, om\-%
+sider fulgt den christelige Selskabsdrift, eller, for at vælge
+et bedre Udtryk, været saa „kjærlig“ at være som Andre,
+og virke som Andre: det vilde være gaaet ham ganske
+anderledes. Havde han, istedetfor at ivre mod „den
+officielle Christendom“, og vække Skandale, viist den
+Besindighed at fremkomme f.\ Ex.\ med et Forslag til Ordning
+% „det skulde sikkert engang være lykkedes ham“ — as printed.
+af den forventede Kirkeforfatning; det skulde sikkert en\-%
+gang være lykkedes ham „at komme med paa en Sy\-%
+node“; og var han först kommen med paa Synoden, og
+havde faaet Ordet paa Synoden, maaskee endog de fleste
+Stemmer ved „Ballotationen“, da skulde vist ingen for\-%
+sigtig Mand have vovet at sige höit om S.\ Kierkegaard,
+at han nu handlede inconseqvent, eller tillade sig at ind\-%
+vende Noget mod hans „mentale Tilstand.“
+% --- p. 27 ---
+Den jævne Vei var indbydende nok; hvorfor valgte
+han da ikke den jævne Vei?
+
+At blænde de Tankelöse er en fattig Kunst; men
+Enhver, som vil see, maa kunne see, at K.\ ikke uden
+at bryde med sine Forudsætninger kunde indlade sig paa
+Reformer ad fredelig Vei. For ham var der kun Valg
+mellem Eet af To: enten blive staaende, som hidtil, paa
+den Sætning: „Ordentligviis er Christendom indenfor
+„Christenhed“ just Ligegyldighed for det Udvortes i Selv\-%
+bekymring,“ eller, naar Tingenes Gang tog ham dette
+„Ordentligviis“ bort, da saa resolut, saa ubetinget, saa
+afgjörende, som muligt, angribe det Bestaaende.
+
+„Saa omhyggeligt som der hidtil er blevet skjult
+over, hvilken min Opgave kunde blive, saa forsigtigt
+som jeg er bleven bevaret i den uigjennemtrængeligste
+Ukjendelighed: saa afgjörende skal jeg ogsaa nu, da
+Öieblikket er kommen, gjöre det kjendeligt. Det Spörgs\-%
+maal, hvad Christendom er, og dermed igjen Spörgs\-%
+maalet om Stats-Kirke, hvad man nu vil kalde det, Sam\-%
+mensætningen eller Sammenholdet af Kirke og Stat skal
+bringes til den yderste Afgjörelse. Det kan og skal ikke
+% THREE points.
+gaae, som det Aar efter Aar gik.“ . . .
+
+Men er det da ikke aabenbart Oprör? Naar K.\ i
+% NOT letterspaced here (cf. p. 18, where the same title is).
+Skriftet: „Til Selvprövelse“, S.\ 16, spörger: „Saa forkynder
+jeg da maaskee Tumult, Alts Omvæltning, Uorden?“ og
+derpaa svarer: „Sandeligen nei“; kunde man da ikke
+med Hensyn paa „Öieblikkene“ vende hans Ord som
+Vaaben mod ham, og sige: „Sandeligen jo. Nu forkyn\-%
+der du Tumult, Alts Omvæltning, Uorden!“? Denne Sag
+er ikke indviklet. Det kierkegaardske Sprog er, uden
+Omsvöb, revolutionært. „Thi ikke sandt, Du menige
+% This dash prints broken in the middle — the sort has lost its waist;
+% an em dash, set as one.
+Mand, det kan Du meget godt forstaae --- jeg mener, at
+just Du kan langt lettere og bedre forstaae det, end de\-%
+% The dash at the end of this line prints with a vertical shoulder rising
+% from its right end (a damaged or foul sort); an em dash by its place and
+% length, set as one.
+moraliserede Præster og en fordærvet Fornemhed ---
+ikke sandt, dette kan Du ypperligt forstaae, at Eet er
+at forfölges, mishandles, hudflettes, korsfæstes, hals\-%
+% --- p. 28 ---
+hugges o.\ D., et Andet, comfortabelt indrettet, med Fa\-%
+milie, jævnt avancerende, at leve af at skildre, at en An\-%
+den blev hudflettet o.\ s.\ v.“ Dette Sprog er revolutio\-%
+nært, ingen Agitator skal saa let byde over.
+
+Desuagtet er Kierkegaards Optræden det Revolutio\-%
+nære fuldstændig modsat; vi have i denne Henseende
+uimodsigelige Beviser. „Colliderer En saaledes med det
+Bestaaende, at det kunde falde ham ind, at det er et
+% ø AND PRINTER'S ERROR: „støre“, an ø sort where „store“ is meant — the
+% same Kierkegaard sentence is set „store Gud“ on p. 24 with a plain o.
+% The slash is unambiguous at 1200 ppi and the two settings were compared
+% side by side. Transcribed as printed.
+Samvittighedsspörgsmaal, --- støre Gud, et Samvittigheds\-%
+spörgsmaal! --- og han vover at sige dette, da har han
+at være eenlig Mand, at stride lidende, at vælge Marty\-%
+riet.“ Disse Ord har Kierkegaard under sin sidste Op\-%
+træden samvittighedsfuldt stræbt at sætte i Charakteer;
+vi kunne nok fremhæve denne Kjendsgjerning, uden at
+vi just derfor behöve at tale höitravende, og compli\-%
+mentere den Afdöde som Martyr, eller som „Sandheds\-%
+vidne.“ K.\ var og blev under hele Striden en „eenlig
+Mand“: der var Ingen, der hjalp ham, Ingen, der kunde
+i endelig Forstand komme ham til Hjælp. Selv om der
+havde været, hvad der dog nok ikke var, En eller An\-%
+den iblandt os, som, med samme Sikkerhed paa Katego\-%
+rierne, tillige havde havt Resoluthed og Mod til at vove
+ligesaa langt ud; det var dog ikke blevet til endeligt
+Sammenhold imellem de Tvende: hver af de Stridende,
+om de end i bedste Forstaaelse havde stridt i samme
+Aand, for samme Sag, skulde dog have stridt for sig,
+som eenlig Mand. Men at en saadan Fremgangsmaade
+er det stik Modsatte af den revolutionære, seer dog vel
+Enhver. Dersom man overseer denne Modsætning, hvor\-%
+ledes vil man da forklare sig, at Kierkegaards revo\-%
+lutionære Sprog kunde blive hört af „den menige Mand“,
+uden at Nogen i Mængden rörte saameget som en Finger
+til Angreb paa det Udvortes? Eller vidste Kierkegaards
+Ord maaskee ikke at finde Veien til Lidenskaberne?
+Mangler hans Sprog maaskee det Opflammende, der el\-%
+lers saa let bevirker en Bruusning? Eller kunde „den
+% --- p. 29 ---
+menige Mand“ i sin Eenfoldighed dog alligevel ikke rig\-%
+tig forstaae ham, naar han sagde, „at Eet er at forfölges,
+mishandles, hudflettes, korsfæstes, halshugges o.\ dsl.,
+et Andet, comfortabelt indrettet, med Familie, jævnt
+avancerende, at leve af at skildre, at en Anden blev
+hudflettet?“ Eller var det maaskee Præstekirkens apo\-%
+stoliske Myndighed, der imponerede den menige Mand?
+
+At den kierkegaardske Indsigelse, den stærkeste som i
+nyere Tid er gjort mod et bestaaende Kirkevæsen, en Ind\-%
+sigelse, der, idet den löd hele Landet over med Gjenklang
+% PRINTER'S DEFECT: „först“ — the t has lost the left arm of its crossbar
+% and prints like f (or a long ſ). „Först“ two sentences below, and
+% „förste“ in the last line of the article, both have a sound t.
+i tusinde og atter tusinde Sjæle, dog först og sidst löd
+saaledes, at hver Mand begreb, at det ikke var en Om\-%
+væltning i det Udvortes, men en Forandring i det Ind\-%
+vortes, hvorom det gjaldt, derfor have vi ikke blot Fol\-%
+kets Besindighed og sunde Sands --- den sunde Sands
+kunde dog i Sligt desværre let bedaares af en Agitator,
+--- men væsentlig og kategorisk Kierkegaards Position som
+„eenlig Mand“, at takke.
+
+Hvad her nu forövrigt er opnaaet ved den kierke\-%
+gaardske Indsigelse, kan ikke oplyses i denne Sammen\-%
+hæng. Opgaven var i nogle Træk at paavise Conseqven\-%
+% PRINTER'S ERROR: a full point stands before the comma after
+% „Forudsætninger“ — a clean round stop on the baseline, the same size as
+% the comma beside it, checked at 1200 ppi. As printed.
+serne af hans Forudsætninger., den indre Overeensstem\-%
+melse af hans Ord og Handling fra Först til Sidst. De,
+som beklage, at de ikke kunne have „nogen sikker Dom“
+om dette Menneskes „mentale Tilstand i det sidste Afsnit
+af hans Liv“, bör alvorlig overveie, om Grunden hertil
+dog alligevel ikke skulde ligge hos dem selv, at de nem\-%
+% PRINTER'S ERROR: „komme“ for „komne“. As printed.
+lig i deres Forskninger endnu ikke ere komme saavidt,
+at de kunne have nogen sikker Dom om „dette Menne\-%
+skes“ Forfattervirksomhed i det förste Afsnit.
+
+% End of the article. A short centred rule, then about a third of a page of
+% white: no signature, no dateline, no „Fortsættes“.
+\begin{center}\rule{0.25\linewidth}{0.4pt}\end{center}
+
+\end{document}
