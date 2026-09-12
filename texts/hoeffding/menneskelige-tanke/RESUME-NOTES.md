@@ -721,3 +721,43 @@ Emphasis is also true italics for ordinary words (e.g. *hvilken* … *hvilken*, 
 
 ## Conventions
 See ../../../TRANSLATION-PLAYBOOK.md plus the book-specific notes above.
+
+## Original pagination — done 2026-09-12
+
+All 392 pages marked: 391 `\apage{N}` placed by `paginate.py apply` against
+`scan.pdf` (offset 15, measured from ten folios in the scan's running heads,
+unanimous), plus `\opage{134}` for the page transcribed by hand. Strictly
+increasing 1--392, **no gaps**. Builds with all 392 markers rendering.
+
+### p.134 was missing — transcribed and restored 2026-09-12
+
+The text ran from p.133 directly into the Part III heading; printed p.134 had
+been skipped by a batch, the same fault logged above for pp.179--180. Found by
+the pagination alignment, which could not place p.134 because none of its text
+was here: between the markers, 90% of scan p.133 was present and 0% of p.134.
+
+Now transcribed from the image (PDF p.149) — one paragraph, opening "Den
+moderne Videnskab er bleven sig bevidst…" and closing "…at Problemerne ere
+blevne færre." — with the letterspaced names \emph{Kopernikus},
+\emph{Bruno}, \emph{Descartes}, \emph{Kant} per this book's convention,
+and the end-of-Part-II rule restored after it. Coverage of scan p.134 between
+its markers is now 100%, against 90--92% for neighbouring pages.
+
+Remaining: promote `\apage` to `\opage` for any page checked at the image.
+
+### Collation against the scan (2026-09-12) — two corrections, one marker to move
+
+`paginate.py audit` compares each marked page with the same page of `scan.pdf`.
+Median coverage 85%; misses are mostly OCR noise and the fact that footnotes
+print at the foot but sit inline in the LaTeX. The outliers repaid reading:
+
+- **p.133 "deri finder man Fremskridtet"** — printed reads **han**. Corrected.
+- **p.133 "historiske Totaliteter. Det er de individuelle Totaliteter"** —
+  printed reads **"historiske Emner."** The transcriber's eye had skipped to
+  the "Totaliteter" of the following line. Corrected. p.133 coverage 90% → 95%.
+- **`\apage{10}` is ~720 letters too late.** p.9 runs long by 719, p.10 short
+  by 722, neighbours within 3. Not missing text — move the marker to "er af
+  Betydning, en uvilkaarlig Stræben efter at bringe Harmoni tilstede".
+
+~60 pages sit >12 points below the median and have not been read. Worth a
+session with `paginate.py audit hoeffding/menneskelige-tanke --worst 60`.

@@ -10,6 +10,39 @@ sandbox (0 errors, 0 missing-character warnings, 72 pp.). Marked `complete` in
 `catalog.yaml` pending a local compile with the real fonts (libertinus +
 textalpha) and a commit/push so the GitHub Pages links resolve.
 
+**`transcription.pdf` in this directory is stale** — it predates the 2026-09-12
+repairs below. Rebuild via `~/hhalvors.github.io/publish-danish.sh`.
+
+## 2026-09-12 — repairs to the Art. I digitised transcript
+The Art. I text came from a digitised transcript of SiU, not from page images,
+and carried that transcript's page-foot damage. Full log, with SiU and MfL page
+numbers for every site, is now in the **`transcription.tex` comment header** —
+that is the record of publication; this is only the production note.
+
+Summary: 24 paragraphs rejoined (each had been split mid-sentence at a page
+foot); 4 sheet-signature asterisks deleted from the text (SiU 172, 175, 186,
+213); 3 sentence-final full stops restored (SiU 171, 236, 244, all confirmed
+against MfL); Art. I's 4 missing footnotes supplied from the MfL first printing
+and normalised SiU-style (SiU 171, 174, 185, 212 = MfL 3, 6, 15, 38); the OCR
+junk `*dolgoeO*` at SiU 189 resolved to `Ug.x` (MfL 19, the antiqua x of the
+school mark "ug med kryds").
+
+### Open review items
+1. **Collate the four restored footnotes against SiU pp. 168--253** when the
+   volume is to hand. They are reconstructions from MfL, not readings of the
+   copy-text; SiU's wording, and its placement of the mark relative to the
+   sentence stop, may differ. This is the one outstanding scholarly debt.
+2. Closing high quote is written two ways in the file: literal `“` twice and
+   LaTeX `` `` `` twice. Both typeset identically; balance is 4 open / 4 close.
+   Normalise if it ever matters.
+3. Art. I uses ` - ` for the dash (31x) where Art. II uses ` --- ` (13x). The
+   Art. I hyphens are almost certainly the digitised transcript flattening em
+   dashes. The 4 restored footnotes use `---`.
+4. Footnote marks are printed `*)` throughout MfL but set here with plain
+   `\footnote{}` numbering (1--13 continuous across both articles). If per-page
+   `*)` is wanted, `\renewcommand{\thefootnote}{*)}` in the preamble --- not
+   `\fnsymbol`, not `footmisc[perpage]` (see TRANSCRIPTION-PLAYBOOK §4).
+
 ## Two-part provenance (important)
 The essay appeared in *Maanedsskrift for Litteratur* 17 (1837) in two
 installments:
