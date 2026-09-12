@@ -1267,3 +1267,24 @@ See `../../../TRANSLATION-PLAYBOOK.md` and, for the Fraktur OCR/letterspacing/
 footnote discipline, the precedents in `../theologiens-naturbegreb/RESUME-NOTES.md`
 and `../../brochner/problemet-tro-viden/RESUME-NOTES.md` (both Fraktur). For the
 book-class preamble and deep sectioning, see `../videnskabslaere/transcription.tex`.
+
+
+## Source scan (located 2026-09-12)
+
+Scan: `~/bibliotek/Nielsen, Rasmus/1864-grundideernes-logik.pdf`
+
+Matched by 12-gram overlap between this transcription's letter stream
+and the PDF's text layer (30%). Not yet verified page by page —
+`paginate.py probe` against it is the check.
+
+### The broken comment sequence is a defect in the comments, not in the book
+
+The 425 `% p. N` comments run pp. 1–455 but advance in twos from p. 323 onward,
+and p. 417 appears twice — so `convert` alone would make a wrong sequence
+visible and authoritative-looking.
+
+Probing against the scan settles it: **offset 38, unanimous from 450 folios,
+456/456 pages matched (100%), monotonic.** The printed pagination is continuous;
+roughly half the marks in the later part of the book were simply never written
+down. So the job here is `apply`, not `convert` — or a merge that keeps the 425
+hand-made marks as `\opage` and fills the gaps with `\apage`. Do not convert.

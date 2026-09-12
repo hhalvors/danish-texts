@@ -29,6 +29,10 @@ Total: 392 printed pp. / 413 PDF pp.
 aa (not å); capitalized nouns; **Ti / ti** for "thi" (for/because); **idethele** as one word;
 modern **gennem** (not gjennem); **skønt** (not skjønt); but **Skjul**, **afgjørende** keep j;
 Existens, Villie, exakt/experimental (x), f.\ Ex., o.\ s.\ v., d.\ v.\ s.
+**i Regelen** (not Reglen); **Principet** (not Princippet); **stansede** (not
+standsede); adverbial **-t** is kept — egentligt, stadigt, samtidigt,
+oprindeligt, gensidigt, selvfølgeligt, navnligt, foreløbigt, tilstrækkeligt
+(confirmed at the image 2026-09-12; the transcription had modernised these away).
 
 ## Structure (from Indhold, PDF pp. 12–13) — printed-page starts
 - I. Tankens Psykologi (Funktioner) — p.1 ; A. Psykisk Energi p.1, B. Anskuen… p.37,
@@ -744,6 +748,190 @@ and the end-of-Part-II rule restored after it. Coverage of scan p.134 between
 its markers is now 100%, against 90--92% for neighbouring pages.
 
 Remaining: promote `\apage` to `\opage` for any page checked at the image.
+
+### FULL COLLATION — all 392 pages read at the image (2026-09-12)
+
+The pass below measured ~0.9 errors per page and said the book needed full
+re-collation rather than spot repair. That is now done.
+
+**Method: collated, not re-transcribed.** Re-transcription is the process that
+produced these errors — an agent re-typing a page it has read. Collation is a
+comparison: the reader holds both the existing text and the page and reports
+differences, which is checkable in a way generation is not. It also preserves
+the paragraphing, emphasis, Greek and footnote work that *was* done against
+images and is largely sound. Forty subagents, ten pages each, every page read at
+300–600 dpi and compared word by word, body and footnotes. Then a second-eye
+pass over every suspected printer's error, at 600 dpi with glyph comparison
+against the same letter elsewhere on the page.
+
+**What it found, beyond the 113 corrections of the previous pass:**
+
+- **~210 further transcriber's errors.** The predicted classes dominated:
+  dropped short words leaving grammatical Danish behind (p.328 "Værdiernes
+  Verdener ere afsluttede" for the printed "ikke ere afsluttede"; p.179
+  "afhænger alene af" for Maxwell's "afhænger ikke af"), and the adverbial -t
+  modernised away — about thirty instances.
+- **47 printer's errors restored as printed**, each with a `%` comment. One
+  claim was rejected on second reading (p.167 — the colon's lower dot merely
+  failed to ink) and one reversed: the `---` on p.22 was a transcriber's
+  *addition*, now removed.
+- **39 paragraph breaks restored** — destroyed by `paginate.py apply`, not by
+  any transcriber. Plus 6 the print has that were missing, and 6 the
+  transcription had that the print does not.
+- **~50 page markers moved to the true turn and promoted to `\opage`.** Many sat
+  after a footnote or after a sectioning command, which put the Part II, III and
+  IV title blocks and eight section heads on the wrong page. 69 `\opage` / 326
+  `\apage` now.
+
+**Two traps for whoever works on this next.**
+
+1. The paragraph-restoration script located each break by position in the
+   *letter stream*, which skips LaTeX commands — so twice it inserted a blank
+   line *inside* a command argument (`\emph{` / `\subsection*{`), which the
+   text-only checks did not see and only the compile caught. If you do anything
+   like this again, check for `\command{` followed by a blank line before you
+   trust it.
+2. `pdftotext … | grep -c` counts *lines*, not occurrences, so it will tell you
+   392 markers render when the true number is lower. Count with `grep -o | wc -l`.
+   The real figures: 196 marginal numbers rendered before this pass, 290 after.
+   `marginnote` silently drops notes that collide, so neither is 392, and that is
+   a pre-existing limitation, not a defect introduced here.
+
+**State:** `verify` — 392 marks, 1–392, strictly increasing, 0 non-consecutive
+steps. `audit` — median 98%, no page more than twelve points below. Build — 306
+pp., 0 missing characters, no error the pre-collation file did not also produce.
+`ocrdiff.py` — 36 residual candidates book-wide, all scan OCR by construction,
+since every page has now been read.
+
+**OPEN — needs your decision, not a reader's.** The print sets some footnote
+work-titles ROMAN where this file italicises them (confirmed roman: pp. 200,
+266, 268, 279, 281, 283, 312, 315) and genuinely italicises others (pp. 191,
+195, 261, 263). The print is inconsistent and the transcription normalised it.
+Following the page case by case means re-reading every footnote title in the
+book — bounded, but real. Nothing changed on this account except specific
+italic *boundaries* inside titles (pp. 85, 244, 312, 315, 326).
+
+Full per-wave findings, including everything deliberately not applied, are in
+the session's working notes rather than here; the header of `transcription.tex`
+carries the durable record.
+
+### Second collation pass (2026-09-12) — 90 pages read, 113 corrections
+
+Method, in the order that kept it cheap. `paginate.py audit` now scores by
+trigram, so the median is **98%**, not the 85% of the first pass, and only five
+pages sat more than twelve points below it: 272, 312, 10, 293, 201. Each was
+classified **before** any image was opened, by letter counts between markers:
+all five showed a matched pair of opposite excursions (p.271 +749 / p.272 −758,
+p.311 +689 / p.312 −714, p.292 +392 / p.293 −402, p.200 +176 / p.201 −165,
+p.9 +719 / p.10 −722) with every neighbour inside ±60. Misplaced markers, not
+lost text — and all five markers turned out to sit just after a long footnote,
+which is how the aligner had been fooled.
+
+That left the audit with nothing to say, so a second, independent check was
+built: a **word-level diff of the scan's own OCR text layer against
+transcription.tex**, page by page, keeping only divergences with three exactly
+matching words on each side and discarding substitution patterns that recur
+across the book (those are the scan's OCR habits, not errors). 4,145 raw
+divergences → 214 anchored → 115 candidates. It is free, it uses no images, and
+it rediscovered every error the image readers had found independently.
+
+That tool is now **`ocrdiff.py`** at the repo root, beside `paginate.py`
+(untracked, like `build_tex.py` and the playbooks). Run it on any marked book:
+
+```sh
+python3 ocrdiff.py hoeffding/menneskelige-tanke
+python3 ocrdiff.py hoeffding/menneskelige-tanke --first 340 --last 392
+```
+
+**Run it over ranges as well as whole.** Its "repeated pattern = OCR habit"
+filter is frequency-based, so a real error that recurs — exactly what the
+adverbial -t class does — is suppressed whole-book and reappears when the range
+is narrowed. A 53-page slice of this book surfaced `egentligt` (p.349, a second
+instance) and `virkeligt` (p.383) that the whole-book run had swallowed. Neither
+is corrected here; they are unread at the image.
+
+The candidates were then read at the image by subagents, in page blocks.
+
+**Result: 90 printed pages read — 32 collated in full, 58 checked at the listed
+candidates. 113 transcriber’s errors corrected, 12 printer’s errors logged,
+11 markers moved, 17 promoted to `\opage`.** Every correction is listed by page
+in the comment header of `transcription.tex`.
+
+#### The error rate — this is the finding that matters
+
+Of the **32 pages collated in full, 29 errors** — about **0.9 per page**, and
+those pages were not selected for being suspect (8 of them were a deliberate
+random control sample: 47, 98, 152, 219, 260, 288, 341, 378; 6 errors on 8
+pages). p.133 was not unlucky; it was typical.
+
+**This book needs full re-collation, not spot repair.** On that rate roughly
+**300 errors remain** in the 302 pages not yet read. Do not treat the corrected
+pages as evidence that the rest is sound.
+
+Two patterns account for much of it, and both are invisible to any check that
+only asks whether the Danish reads well:
+
+- **Dropped short words that leave a grammatical sentence behind** — "kun",
+  "ikke", "ny", "et", "den", "ogsaa den Vej", "nu bagefter". p.336 read "Disse
+  to Emner kunne reduceres til hinanden" where the page prints **ikke**
+  reduceres: the transcription said the opposite of the original and still
+  scanned as good Danish.
+- **The adverbial -t silently modernised away** — egentligt, stadigt,
+  samtidigt, oprindeligt, gensidigt, selvfølgeligt, navnligt, foreløbigt,
+  tilstrækkeligt. Confirmed at the image in a dozen places.
+
+1910 forms restored where the page sets them: **i Regelen** (not Reglen),
+**Principet** (not Princippet), **stansede** (not standsede). Add these to the
+Orthography list above.
+
+#### Printer's errors — worth a second eye
+
+Eleven silent corrections made during transcription were reversed, so the text
+now reads as printed, each with a `%` comment at the spot: pp. 9 *indistinete*,
+51 *Sinnesorgene*, 116 *men* for *med*, 132 *et* for *at*, 152 *Benouvier*,
+176 *Rationatitetens*, 201 *Anfangsgrunde*, 214 *irrekdutible*, 271 *tilsetde*,
+293 *donnies*, 322 *Antimonier*. p.341 *hin* for *hine* was already as printed
+and is now logged. These are the least certain items in the pass: each rests on
+one reading of one page, and restoring a typo is the one edit that looks like a
+mistake if it is wrong.
+
+#### Markers
+
+Eleven were placed late — the aligner had matched past a footnote or a heading:
+pp. 10, 52, 126, 201, 214, 219, 260, 272, 293, 312, 317. All moved to the true
+turn and promoted to `\opage`. pp. 219, 293 and 312 turn inside a word
+(*lige|saa*, *„Fri|heden“*, *be|tragtes*); p.52's marker now precedes the
+subsection head printed at the top of that page. Six more checked and found
+already correct were promoted too: 47, 98, 152, 288, 341, 378. Now 18 `\opage`
+/ 374 `\apage`.
+
+**Note for the next book:** a marker sitting immediately after a long
+`\footnote{...}` is the signature of this failure. `paginate.py` should probably
+take its anchor from the page's first *body* line rather than the first text it
+can match.
+
+#### State after the pass
+
+- `paginate.py verify`: 392 marks, pp. 1–392, strictly increasing, 0
+  non-consecutive steps, median 2099 chars between markers.
+- `paginate.py audit`: median **98%**; **no page more than twelve points below
+  it**; worst now p.326 at 87%, then 230 (88), 52 (89), 163 (89), 60 (89).
+  Those remaining dips are OCR noise and footnote placement — checked by letter
+  count, they are not one-sided shortfalls.
+- Compile test (sandbox substitution recipe): 306 pp., 0 missing characters,
+  392 markers rendering, and exactly the 22 `Undefined control sequence` reports
+  the pre-collation file also produces (an artefact of stripping babel).
+- Not committed. Not resolved: p.301 comma-for-period (may be a damaged type),
+  p.315 footnote "p," and p.200's Russell title set roman on the page against
+  the book's own italic-title convention.
+
+#### Where to resume
+
+Full collation of the 302 unread pages. The cheap order: re-run the OCR
+word-diff first (it costs nothing and finds the dropped-word class), then read
+in blocks, and do not trust a page because the audit likes it — the audit liked
+every page in the control sample.
+
 
 ### Collation against the scan (2026-09-12) — two corrections, one marker to move
 

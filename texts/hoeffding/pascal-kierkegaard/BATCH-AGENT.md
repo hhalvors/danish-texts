@@ -70,3 +70,58 @@ tercentenary number; it is not a translation. Set it as printed.
   `pagemap.py`; do not count pages by hand.
 - Høffding's own French is idiosyncratic in places and a native editor may have
   left it alone. Do not smooth it.
+
+---
+
+### Copy-text discipline — read this before you write a word
+
+You are copying, not composing. Where the text layer and the page agree, the
+words are already settled, and your job is to carry them across unchanged —
+including every word you would have phrased differently, every spelling that
+looks like a mistake, and every short word you might not notice dropping.
+
+This is not a hypothetical risk. Collating *Den menneskelige Tanke* against its
+scan in 2026 found about **0.9 errors per page** through the whole book, and
+two-thirds of them were readings the OCR had already got right. They were
+introduced between the OCR and the file, by agents doing exactly this job.
+The four ways it happened:
+
+- **dropped short words that leave grammatical Danish behind** — *kun*, *ikke*,
+  *ny*, *og*, *saa*. One page read "Disse to Emner kunne reduceres til hinanden"
+  where the page prints **ikke** reduceres: the opposite of the original, and it
+  read perfectly well.
+- **archaic forms modernised.** The 1910/19th-c. orthography is data.
+  `egentligt`, `navnligt`, `stadigt`, `oprindeligt`, `gensidigt`,
+  `selvfølgeligt`, `i Regelen`, `Principet`, `stansede` are correct as they
+  stand. Do not strip a trailing *t*, do not double a consonant, and never
+  assume an archaic form is OCR noise.
+- **printer's errors silently corrected.** If the PAGE is wrong — a broken
+  letter, a transposed pair, a misspelt name — transcribe it **as printed** and
+  log it in a `%` comment at the spot. Never silently correct the print. If you
+  find yourself about to fix something, that is the moment to write a comment
+  instead.
+- **paraphrase of a whole clause.** If you are reconstructing a sentence from
+  its sense, stop and look at the page.
+
+When you are unsure between two readings, do not pick the one that reads better.
+Render the page and look.
+
+### Diff your fragment against the scan before you return it
+
+Structural checks cannot see a missing „ikke“. This one can, and it costs
+nothing:
+
+```sh
+python3 ../../../ocrdiff.py --frag .parts/pp<FIRST>-<LAST>.texfrag
+```
+
+It prints every place your words diverge from the OCR's, with three exactly
+matching words on each side, labelled by class (`dropped word`, `adverbial -t
+dropped`, `form modernised?`, `likely OCR`). Expect roughly ten items on a
+thirteen-page batch, and expect about half to be the scan's fault. **Settle
+every one at the image** — correct your fragment, or satisfy yourself the OCR is
+wrong. Do not return a fragment with unresolved items. If the scan has no usable
+text layer this check does not apply; say so when you return.
+
+*(This brief predates the PROMPT BODY convention; include the two
+sections above in whatever prompt you give the batch agent.)*
