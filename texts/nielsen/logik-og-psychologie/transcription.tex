@@ -330,6 +330,66 @@
 %  Where all three agree the reading is safe; where two differ, the image
 %  decides. No reading is settled by a witness alone against the image.
 % =====================================================================
+% ---------------------------------------------------------------------
+%  ACCURACY  [2026-09-13]   ***  THIS TEXT IS NOT RELIABLE  ***
+%
+%  Sampled 6 random printed pages at the image against this file
+%  (pp. 69, 129, 363, 376, 405, 454 -- deterministic seeded rule,
+%  REPAIR-PLAYBOOK.md section 3).  7 errors found: 1.17 errors per page.
+%
+%  That is worse than Den menneskelige Tanke (~0.9/page), which is this
+%  corpus's calibration case.  Over 482 pp. it implies of the order of
+%  550 errors in this book.
+%
+%  The errors the sample turned up have been applied and are logged at
+%  their sites.  On p. 405 alone:
+%    - a clause paraphrased: the page reads "skulde gaae for vidt
+%      dermed"; the file had "skulle gjøre store Anstrengelser i denne
+%      Retning";
+%    - a whole sentence absent: "Al Afrettelse er for Dyret kun en
+%      Plage, i alle Fald ikke nogen Glæde for det".
+%  Both were confirmed independently against the scan's own text layer.
+%  Also three ø/o confusions (pp. 363, 454) and a misread citation.
+%
+%  WHY THIS BOOK IS BAD  [re-diagnosed 2026-09-13]
+%
+%  Not the scan.  The scan's own text layer got RIGHT the very words this
+%  file got wrong -- "anfoere foelgende", "f. Ex" without the point, and
+%  the whole dropped "Al Afrettelse..." sentence.  That is the Den
+%  menneskelige Tanke signature: errors introduced by re-writing the page
+%  from comprehension instead of copying it.
+%
+%  There are TWO error populations here, and they need different tools:
+%
+%   (1) MECHANICAL, and systematic to this book: oe losing its slash.
+%       ocrdiff sees 28 instances (forste/foerste, hoiere/hoeiere,
+%       folge/foelge, skjonne/skjoenne, gjennemfort/gjennemfoert, ...),
+%       plus latinised spellings (characteer/charakteer,
+%       electricitet/elektricitet).  For this class the scan's text layer
+%       is a RELIABLE witness, so it can be adjudicated with no page
+%       images and no agents at all.  Beware genuine pairs (lov/loev).
+%
+%   (2) SEMANTIC: paraphrase and dropped sentences, as on p. 405.
+%       ocrdiff CANNOT see these -- the p. 405 loss is absent from its
+%       output even before filtering, because a long divergence breaks
+%       its anchoring.  Only a page-by-page reading finds them.
+%
+%  WHY NOBODY NOTICED, and a warning for the rest of the corpus:
+%  ocrdiff discards any divergence whose (kind, tex-word, scan-word)
+%  triple recurs more than twice, treating recurrence as OCR noise.  A
+%  systematic TRANSCRIBER fault recurs too, so the filter hid 24 of the
+%  28 oe-slips and kept 4.  A random 15-candidate draw from the 250
+%  survivors -- 101 of which are the near-worthless DITTO class -- then
+%  caught none of the 4, and the book was recorded as "ocrdiff precision
+%  0/15", i.e. as a book the cheap tool cannot help.  The opposite is
+%  true.  That figure has been withdrawn in ACCURACY-LEDGER.tsv.
+%  (Checked: religionsphilosophie and det-religioese have 0 hidden
+%  oe-slips, so this fault is this book's own, not pipeline-wide.)
+%
+%  PLAN: the cheap mechanical pass first, then FULL COLLATION (5C) for
+%  the semantic class.  Do not cite this text until that is done.
+% ---------------------------------------------------------------------
+
 
 \documentclass[11pt]{book}
 \usepackage[utf8]{inputenc}
@@ -13392,7 +13452,9 @@ Functioner .... Men saa spørger jeg, hvad vi skulle gjøre med den
 Kjendsgjerning, at mange Dyr slet ikke have den store Hjerne, og at
 der endog blandt Fiskene findes idetmindste een, der ikke har Spor
 deraf (og Zoologerne ville maaskee endnu finde mange andre), saa at,
-medmindre vi erklære, at Amphioxus og alle de hvirvelløse Dyr ere
+% [2026-09-13] accuracy sample: the file modernised the page's unslashed
+% "hvirvellose" to "hvirvelløse". Restored as printed (diplomatic).
+medmindre vi erklære, at Amphioxus og alle de hvirvellose Dyr ere
 Maskiner uden Følelse eller Bevidsthed af nogen Art, ere vi nødte til
 at indrømme, at der kan findes Bevidsthed uden det Organs
 Tilstedeværelse, der siges at være dens udelukkende
@@ -14948,8 +15010,14 @@ mange Exempler. --- „Vi kunne“ --- siger en skarpsindig
 Tænker --- „afrette Dyrene paa mange Maader, og forsaavidt kunde
 det have Nytte at gjøre flere Forsøg paa at faae flere Dyrs
 Kræfter gjorte anvendelige til vor Nytte og Fornøielse; men for
-\emph{Dyrenes Skyld} ønsker jeg sandelig \emph{ikke}, at vi skulle
-gjøre store Anstrengelser i denne Retning. Hvad de aandelige
+% [2026-09-13] accuracy sample: the file read "...at vi skulle gjøre store
+% Anstrengelser i denne Retning. Hvad de aandelige...". The page reads as
+% below: a clause was paraphrased AND the sentence "Al Afrettelse er for
+% Dyret kun en Plage, i alle Fald ikke nogen Glæde for det" was dropped
+% entirely. Restored from the image; confirmed against the scan text layer.
+\emph{Dyrenes Skyld} ønsker jeg sandelig \emph{ikke}, at vi skulde
+gaae for vidt dermed. Al Afrettelse er for Dyret kun en Plage, i
+alle Fald ikke nogen Glæde for det; og hvad de aandelige
 Fremskridt angaaer, som det derved skulde gjøre, saa anseer jeg det
 for meget problematisk, om det tæmmede og afrettede Dyr virkelig
 er kommen paa et høiere Trin. Snarere troer jeg, at f. Ex. den
@@ -14961,14 +15029,17 @@ mig forlede til at \emph{anbefale}.... Forslag om at oprette høiere
 Dannelsesanstalter for velbegavede Dyr, da jeg ikke kan haabe, at
 man her vilde være heldigere end hist, idet man kun vilde opnaae
 meget ubetydelige Resultater efter uhyre Anstrengelser og
-Opoffrelser. Det kan gjerne være, at man kunde lære f. Ex. en Gaas
+% [2026-09-13] accuracy sample: the page omits the point after "Ex" here
+% (it has "f. Ex." correctly eleven lines above). Restored as printed.
+Opoffrelser. Det kan gjerne være, at man kunde lære f. Ex en Gaas
 at afspille og samle de løse Fjer, eller en Abe at spille
 fiirhændigt paa Klaveer eller paa een Gang at spille paa Klaveer
 med Forhænderne og paa Violin med Baghænderne; men jeg befrygter
 desværre, at det ligefuldt vilde have sit Forblivende med den
 almindelige Gaaseforstand og
 Abekattefornuft\footnote{„Af afdøde Professor J. Ch. Lütkens
-efterladte Papirer“. Tidsskr. for popul. Fremstill. af Naturvidsk.
+% [2026-09-13] accuracy sample: the page reads "Naturvidskb.", not "Naturvidsk."
+efterladte Papirer“. Tidsskr. for popul. Fremstill. af Naturvidskb.
 3die Bd. S. 423--24.}.“
 % printed mark: *)
 
@@ -16670,7 +16741,9 @@ fuldstændig overvundet Standpunkt og kommer derved til at oversee Pointen.%
 % --- p. 454 ---
 \opage{454} \setcounter{footnote}{0}%
 Uden at gaae nærmere ind paa det Eiendommelige i den herbartske
-Metaphysik indskrænke vi os i nærværende Sammenhæng til at anfore folgende
+% [2026-09-13] accuracy sample: the page has slashed ø in both words;
+% the file had dropped both slashes.
+Metaphysik indskrænke vi os i nærværende Sammenhæng til at anføre følgende
 Sætninger: Sjælen er kun een, men Forestillingerne ere mange. De mange og
 forskjellige Forestillinger kunne umulig forenes i een Bevidsthed, medmindre
 Forskjelligheden udlignes. I samme Grad som Forestillingerne ere hinanden

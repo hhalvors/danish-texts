@@ -34,6 +34,38 @@
 %      been left as a literal hyphen, which rendered as "Videns- kritik";
 %      corrected. Suspended hyphens ("Livs- og Verdenslov") are kept.
 % ============================================================
+% ---------------------------------------------------------------------
+%  ACCURACY  [2026-09-13]   ***  MEASURED BAD, NOT YET REPAIRED  ***
+%
+%  Sampled 6 random printed pages at the image against this file
+%  (pp. 88, 92, 312, 334, 411, 413 -- deterministic seeded rule,
+%  REPAIR-PLAYBOOK.md section 3).  4 errors found: 0.67 errors per page,
+%  which over 456 pp. implies of the order of 300 errors.
+%  FULL COLLATION (section 5C) earned.  All four fell on p. 312 and are
+%  applied and logged at the site, except as noted:
+%    - printer's "Folhold" silently corrected to "Forhold" (restored);
+%    - "Anfr. Str." for the page's "Anfr. Skr." (corrected);
+%    - "Str." for "Skr." in the (Prof. ... 1ste Bind S. 159.) citation
+%      (corrected);
+%    - the "Prof."/"Pros." half of that citation is UNRESOLVED and left
+%      as transcribed, held PRN for a second eye.
+%
+%  SYSTEMATIC, and larger than the sample: this file carries
+%  "Anfr. Skr." 31 times against "Anfr. Str." 13, and "Pros. Skr." 9
+%  against "Prof. Str." 6.  Roughly 19 further instances of the same
+%  citation error are likely elsewhere in the book.
+%
+%  ALSO SUSPECTED, not verified: the page marker for 313 sits about 20
+%  lines too late -- printed p. 312 appears to end at "en tom
+%  Formalisme.", yet two further paragraphs are assigned to it.
+%
+%  ocrdiff precision on this scan: NOT ESTABLISHED.  The adjudicating
+%  agent returned a demonstrably false claim about its own inputs (that
+%  its candidate pages came from a different book; they did not), so its
+%  0-of-15 verdict was discarded rather than recorded.  Re-adjudicate
+%  before relying on ocrdiff for this book.
+% ---------------------------------------------------------------------
+
 \documentclass[12pt]{book}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
@@ -8811,14 +8843,23 @@ ophævet, som dets Størrelse ikke er blot relativ, som Gradens, men tillige abs
 o.\ s.\ v. ere absolute Størrelser, uagtet de tillige betegne en Relation til det, hvoraf de ere Maal
 \ldots\ Graden kan udvides i det Uendelige, men Maalet kan være
 % p. 312
-\opage{312} fuldt, og er da afsluttet\footnote{Heiberg.\ Anfr.\ Str.\ S.~27. (Prof.\ Str.\ 1ste Bind S.~159.)}.“
+% [2026-09-13] accuracy sample: the page reads "Skr." in both citations here,
+% not "Str." (fraktur k misread as t). PRN: the "Prof."/"Pros." half is
+% UNRESOLVED -- the reading agent read long-s at 600 dpi, the scan's text
+% layer reads f. Left as transcribed pending a second eye.
+% NOTE: this error is systematic, not local. This file carries "Anfr. Skr."
+% 31 times against "Anfr. Str." 13, and "Pros. Skr." 9 against "Prof. Str."
+% 6, so ~19 further instances are likely elsewhere in the book.
+\opage{312} fuldt, og er da afsluttet\footnote{Heiberg.\ Anfr.\ Skr.\ S.~27. (Prof.\ Skr.\ 1ste Bind S.~159.)}.“
 --- Det Eftertryk, som ved denne Maalets Deduction af Graden er lagt paa Vexelbestemmelsen af det
 ligesidede og det uligesidede Forhold, leder til den Formodning, at her i Begrebet skulde være en eller
 anden immanent Negation, der viste Nødvendigheden af, at det ene af disse Forhold integrerede det andet.
 Men hvor er denne Negation? I Overgangen fra Noget til Andet, fra Eet til Flere, fra Continuitet til
 Discretion kan en immanent Negation paavises; men en Negation, der fører fra det ligesidede Forhold til
 det uligesidede, er ikke til at opdage. Det hedder, som ovenfor er anført i Læren om Forholdet, at „paa
-samme Maade som Eenheden betinger Antallet, saaledes betinger det ligesidede Forhold den uendelige Række
+% [2026-09-13] accuracy sample: the page prints "Folhold" here (printer's l
+% for r); the file had silently corrected it. Restored as printed (diplomatic).
+samme Maade som Eenheden betinger Antallet, saaledes betinger det ligesidede Folhold den uendelige Række
 af uligesidede“. Men med hvad Grund kan da en Række som: $2 : 4$, $2 : 6$, $2 : 8 \ldots$, siges at være
 betinget af Rækken: $1 : 1$, $2 : 2$, $3 : 3$? Her er i en saadan Sammenstilling end ikke Glimt af
 Nødvendighed for, at man først maa have en constant Exponent, før man kan tænke sig en variabel; ja det
