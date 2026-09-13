@@ -1,5 +1,18 @@
 # Standing brief for a transcription batch subagent
 
+> **The job is to transcribe these pages _and establish that the transcription
+> is accurate_. Those are not two jobs.** A fragment whose words have not been
+> compared against a second reading of the page is not finished work, however
+> clean its structure, its emphasis and its markup are. You are already
+> rendering the pages and already hold the OCR: checking your own words against
+> them is the cheapest thing you will do in this batch. Deferred, the same check
+> costs a second transcription — that is not hypothetical, it is what *Den
+> menneskelige Tanke* cost, ~350 errors found by forty agents re-reading all 392
+> pages, to recover what the first agents had in context and discarded.
+> See "Diff your fragment against the scan before you return it", below.
+
+
+
 > The general method lives in `../../../TRANSCRIPTION-PLAYBOOK.md`. This file is the
 > book-specific prompt body for *Den propædeutiske Logik* (1845). If the two disagree,
 > the playbook is the method and this is the instance.
@@ -271,8 +284,13 @@ matching words on each side, labelled by class (`dropped word`, `adverbial -t
 dropped`, `form modernised?`, `likely OCR`). Expect roughly ten items on a
 thirteen-page batch, and expect about half to be the scan's fault. **Settle
 every one at the image** — correct your fragment, or satisfy yourself the OCR is
-wrong. Do not return a fragment with unresolved items. If the scan has no usable
-text layer this check does not apply; say so when you return.
+wrong. Do not return a fragment with unresolved items.
+
+This book's witness is the scan's **embedded text layer** — `ocrdiff.py`
+finds it itself, no argument needed.
+
+There is no version of this job that skips the check. If you believe your
+book is an exception, stop and say so rather than returning unchecked words.
 
 ### What to return
 150 words at most: pages written; the `\emph{}` / `\textit{}` decisions you made and what
@@ -280,4 +298,11 @@ image evidence settled them; any printer's defect logged; any errata applied; an
 reading with the alternative you rejected; your fragment's own brace/quote counts.
 **Do not** quote the transcription back — it is in the fragment. Do not paste OCR output.
 
-**Also report the `ocrdiff.py` result**: how many divergences it found, how many were transcription error (corrected), and how many were the scan's. If any remain unresolved, say which and why.
+**Report the check, in exactly this form**, as the last line of your return:
+
+```
+OCRDIFF: <witness> | <n> candidates | <n> corrected | <n> witness's fault | <n> unresolved
+```
+
+e.g. `OCRDIFF: embedded | 11 candidates | 4 corrected | 7 witness's fault | 0 unresolved`.
+Unresolved must be 0. The caller cannot tell "found nothing" from "never ran" unless you say.

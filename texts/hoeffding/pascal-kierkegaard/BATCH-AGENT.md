@@ -1,5 +1,18 @@
 # Batch-agent brief — Høffding, « Pascal et Kierkegaard » (1923)
 
+> **The job is to transcribe these pages _and establish that the transcription
+> is accurate_. Those are not two jobs.** A fragment whose words have not been
+> compared against a second reading of the page is not finished work, however
+> clean its structure, its emphasis and its markup are. You are already
+> rendering the pages and already hold the OCR: checking your own words against
+> them is the cheapest thing you will do in this batch. Deferred, the same check
+> costs a second transcription — that is not hypothetical, it is what *Den
+> menneskelige Tanke* cost, ~350 errors found by forty agents re-reading all 392
+> pages, to recover what the first agents had in context and discarded.
+> See "Diff your fragment against the scan before you return it", below.
+
+
+
 Paste the body below into a subagent, filling in PAGE RANGE and MARKER.
 One agent per batch. Agents run concurrently and **must not edit
 `transcription.tex`** — each writes a fragment; the caller splices.
@@ -120,8 +133,26 @@ matching words on each side, labelled by class (`dropped word`, `adverbial -t
 dropped`, `form modernised?`, `likely OCR`). Expect roughly ten items on a
 thirteen-page batch, and expect about half to be the scan's fault. **Settle
 every one at the image** — correct your fragment, or satisfy yourself the OCR is
-wrong. Do not return a fragment with unresolved items. If the scan has no usable
-text layer this check does not apply; say so when you return.
+wrong. Do not return a fragment with unresolved items.
+
+This book's scan has **no usable embedded layer**. Build the witness yourself:
+run tesseract over your pages with the model named above, write it to
+`.parts/ocr/pp<FIRST>-<LAST>.txt`, and pass `--ocr .parts/ocr/pp<FIRST>-<LAST>.txt`.
+It will be noisier than ABBYY — more candidates will be the witness's fault.
+That is the cost of the step, not a reason to skip it.
+
+There is no version of this job that skips the check. If you believe your
+book is an exception, stop and say so rather than returning unchecked words.
 
 *(This brief predates the PROMPT BODY convention; include the two
 sections above in whatever prompt you give the batch agent.)*
+
+
+**Report the check, in exactly this form**, as the last line of your return:
+
+```
+OCRDIFF: <witness> | <n> candidates | <n> corrected | <n> witness's fault | <n> unresolved
+```
+
+e.g. `OCRDIFF: embedded | 11 candidates | 4 corrected | 7 witness's fault | 0 unresolved`.
+Unresolved must be 0. The caller cannot tell "found nothing" from "never ran" unless you say.
