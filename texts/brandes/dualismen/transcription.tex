@@ -1,0 +1,2423 @@
+% ============================================================
+%  Georg Brandes, Dualismen i vor nyeste Philosophie
+%  Kjøbenhavn: Forlagt af den Gyldendalske Boghandel (F. Hegel).
+%  I. Cohens Bogtrykkeri.  1866.   (76 pp., antiqua)
+%  TRANSCRIPTION (Danish)
+%
+%  ---- SOURCES -----------------------------------------------------------
+%  This edition was made from TWO scans of two different physical copies,
+%  and uses both.  Identity is the sha256, not the filename.
+%
+%  COPY-TEXT / image of record, and witness 1:
+%      bibliotek/Brandes, Georg/Dualismen_i_vor_nyeste_philosophie.pdf
+%      Google Books (British Museum copy), 82 pp, 600 dpi bitonal JBIG2,
+%      with an embedded text layer.
+%      sha256 62393babbe7a6d8f5c198ba5ba60716f1ca278f9c4f154b031695a661d2de63a
+%
+%  Witness 2 (never copy-text; an independent machine reading):
+%      bibliotek/Brandes, Georg/dualismen-kb.pdf
+%      Royal Danish Library, 89 pp, 250 ppi colour, ABBYY Recognition Server.
+%      sha256 21c194347c101781b33a4181981fd29a2ae8f7b0938168f982c83f67d14e1ad2
+%
+%  Why two.  The copy-text scan is bitonal JBIG2, and JBIG2's symbol-dictionary
+%  mode is the one compression scheme known to substitute whole glyphs rather
+%  than degrade them.  A substitution invented by a compressor cannot also
+%  appear in a 250 ppi JPEG of a different copy, so anything the two layers
+%  agree on was not manufactured between them.  Every batch of this book was
+%  diffed against BOTH layers before it was spliced.  The two-witness set-up
+%  was tested before it was trusted: nine disagreements between the layers were
+%  adjudicated at 350--900 dpi during set-up, and in every one the 600 dpi image
+%  was clean and correct, the error lying in one OCR engine.  No JBIG2 glyph
+%  substitution was found in this scan.
+%
+%  ---- PAGE MAP ----------------------------------------------------------
+%  see pagemap.py — both offsets are uniform end to end.
+%      printed 1--76  =  PDF +  4   (Google, PDF  5--80)
+%      printed 1--76  =  PDF +  7   (KB,     PDF  8--83)
+%
+%  Verified 2026-09-20 AT THE IMAGE, not from a text layer: the folio was read
+%  off the Google scan on printed 8, 9, 15, 16, 17, 24, 26, 39, 40, 41, 46, 48,
+%  54, 56, 59, 60, 61, 69, 70, 71, 74, 75, 76 and off the KB scan on 8, 15, 16,
+%  39, 40, 41, 75, 76; every numeral matched.  Corroborated independently by
+%  aligning the two text layers at +4/+7: mean per-page token agreement 0.966
+%  (min 0.831) across all 70 body pages, which a one-leaf drift anywhere would
+%  collapse to near zero.  No rescanned leaf, no plate.
+%
+%  COLLATION.  The arabic sequence counts the preliminary leaves, but none of
+%  them carries a printed folio, and the four chapter openings drop theirs too.
+%      printed  1  PDF  5   half-title
+%      printed  2  PDF  6   blank (British Museum stamp)
+%      printed  3  PDF  7   title page
+%      printed  4  PDF  8   blank (British Museum stamp)
+%      printed  5  PDF  9   Indhold
+%      printed  6  PDF 10   blank
+%      printed  7  PDF 11   body begins, chapter 1
+%      printed 76  PDF 80   last page of text, ending with the Efterskrift
+%      PDF 81--82           publisher's advertisement list, outside the sequence
+%  The first folio actually printed is 8, on PDF 12.  There is no dedication,
+%  motto, epigraph, preface or errata leaf: the preliminaries are exactly the
+%  three printed pages above.  Printer's signatures 2--6 fall at pp. 17, 33,
+%  49, 65.
+%
+%  ---- EDITORIAL STANCE --------------------------------------------------
+%  Diplomatic.  Nineteenth-century orthography exactly as printed
+%  (Philosophie, høiere, Videnskaben, capitalised nouns, aa).
+%
+%  THE BOOK IS INCONSISTENT WITH ITSELF and is not normalised in either
+%  direction.  Audited at the image, occurrence by occurrence:
+%      Deel  p. 70          against  Del   pp. 19, 27, 38, 45, 60, 66, 74
+%      deels p. 59          against  dels  p. 42
+%      heelt p. 61          against  helt  pp. 27, 40, 56, 58
+%      naturligviis p. 59 ONLY; the other eleven occurrences read naturligvis
+%  Settled archaic forms throughout: een, eet, seer, seet, veed, Eenhed, puur.
+%  Forms that look archaic but are not: kvantvis, ligervis, kvæles.
+%  Steen / Been / Meer do not occur in this book at all.
+%  Printer's errors are transcribed AS PRINTED and logged in a % comment at
+%  the site, never silently corrected — so the quote-balance count may drift
+%  off zero on purpose; each such drift is logged below and in RESUME-NOTES.
+%
+%  EMPHASIS.  Letterspacing (Sperrsatz) is this book's ONLY emphasis device;
+%  there is no italic anywhere in it, and Brandes letterspaces whole clauses,
+%  not just single words.  Letterspacing is rendered \emph{}.  NEITHER TEXT
+%  LAYER RECORDS IT — both flatten it — so every \emph{} in this file was
+%  decided at the image, assisted by spacing.py's mechanical measurement.
+%
+%  FOOTNOTES.  Marked *) and, where a page carries two, **).  The mark is
+%  therefore NOT constant in this book, unlike Evangelietroen og Theologien,
+%  and \thefootnote is redefined per note at the site (see below).  The note
+%  on printed p. 11 runs over onto p. 12.
+%
+%  FOREIGN MATTER.  French (trinité chrétienne p. 56, n'observe p. 65) and
+%  Pièce (p. 76) are set in the ordinary roman, with NO contrasting face, so
+%  they take no \textit{}.  There is no Greek in this book.
+%
+%  ---- HOW THIS BOOK'S ACCURACY WAS ESTABLISHED --------------------------
+%  Word-accuracy: every batch diffed against BOTH witnesses before splicing
+%  (ocrdiff.py).  7 batches, 62 candidates (58 Google, 4 KB), 0 transcription
+%  errors corrected, 62 the witness's fault, 0 unresolved.  No divergence
+%  appeared in both diffs at once.  See TRANSCRIPTION-PLAYBOOK.md §3 step 4.
+%
+%  THE INSTRUMENT WAS TESTED BEFORE IT WAS TRUSTED.  A clean diff means
+%  nothing unless the diff can fail, so three faults of the classes that
+%  matter were planted in the finished pp. 7--15 fragment and both diffs
+%  re-run.  Result: a dropped „ikke“ was caught by BOTH witnesses, and a
+%  substituted content word (Videnskaben -> Videnskabet) by both.  A
+%  MODERNISED ARCHAIC FORM (naturligviis -> naturligvis) WAS CAUGHT BY
+%  NEITHER, because both layers modernise that word themselves.  That is the
+%  method's real blind spot: it is blind exactly where both machine readings
+%  share an error, and no amount of diffing will show it.
+%
+%  So the blind spot was measured directly rather than assumed small.  A
+%  dedicated orthographic audit read every candidate at the image and found:
+%    * the doubled-vowel family is MIXED in this book and both layers report
+%      it correctly (the table under EDITORIAL STANCE above);
+%    * naturligviis is printed on p. 59 and on p. 59 only, of twelve
+%      occurrences -- the Google layer is wrong there and right elsewhere;
+%    * the class both layers DO share is capital Æ, which Google reads as E
+%      or A at pp. 19, 29, 36, 64, 70, 73, and æ in Propædeutik in the notes
+%      to pp. 55 and 59.  Every one was read at the image and is correct here.
+%    * neither layer is reliable on punctuation anywhere in this book, so
+%      every dash, quotation mark and stop in this file came from the image.
+%  The two layers agree on 91.1% of word slots; they can be trusted on the
+%  book's letters nearly everywhere and on its punctuation nowhere.
+%
+%  INDEPENDENT COLLATION.  Because every batch reported 0 corrections -- the
+%  pattern the playbook says to distrust -- the result was measured instead of
+%  accepted.  14 of the 70 body pages (20%) were drawn by a SEEDED random
+%  generator (seed 18661220, so the sample is reproducible and was not chosen
+%  after the fact) and read at the image, word by word, against this file by
+%  two agents that had not transcribed the book and were told to assume it
+%  wrong: pp. 18, 31, 32, 33, 38, 47, 54, 57, 58, 61, 63, 64, 67, 74.
+%      Result: 0 discrepancies.  0 word-level, 0 orthographic, 0 punctuation,
+%      0 emphasis, 0 structural.  Measured rate 0.00 errors per page; with 14
+%      clean pages the 95% upper bound is ~0.21 errors per page.
+%  A third check settled seven doubled-word sites found by a mechanical sweep
+%  (all seven are Brandes's own repetition or carry punctuation between them;
+%  all correct as transcribed) and re-verified emphasis boundaries at p. 26,
+%  p. 76 and two randomly drawn sites.
+%
+%  PAGE JOINTS.  splice.py separates fragments with a blank line, which TeX
+%  reads as a paragraph break, so a sentence running across a batch boundary
+%  silently acquires a break the book does not have.  joints.py found three
+%  (pp. 16, 36, 66); each was repaired and then VERIFIED AT THE IMAGE, since
+%  the repair itself was made from the file and not from the page.  All three
+%  pages open flush at the body margin -- measured at 200 dpi as +1, 0 and 0
+%  px against a paragraph indent of +56 to +58 px elsewhere in the book -- so
+%  the text does run on and the repairs are right.  No word is broken across
+%  those three turns.  Intra-page paragraphing at each joint matches the image
+%  and nothing was swallowed.  joints.py still reports pp. 3 and 5: those are
+%  the front-matter \begin{center} blocks and are FALSE POSITIVES -- do not
+%  "fix" them.
+%
+%  WHAT IS STILL UNMEASURED.  The collation sample is 20% of the body; a rate
+%  around 0.1 errors per page cannot be excluded by a sample this size, and
+%  the remaining 56 pages have been checked by the two diffs and by their own
+%  transcribing agent, but not by a second reader.  Of the 22 footnotes, those
+%  on the sampled pages were read; the rest rest on their batch agent's
+%  reading.  spacing.py is unreliable inside footnote type -- it missed a
+%  four-word letterspaced run in the note to p. 21 -- so footnote emphasis
+%  throughout was decided by eye and is the weakest class in the edition.
+% ============================================================
+\documentclass[12pt,a4paper]{book}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{libertinus}
+\usepackage{libertinust1math}
+\usepackage{graphicx}    % for \reflectbox (the old Danish »ɔ:« id-est mark)
+\DeclareUnicodeCharacter{0254}{\reflectbox{c}}  % ɔ (U+0254) = reversed c
+\usepackage[danish]{babel}
+\usepackage[protrusion=true,expansion=true]{microtype}
+\usepackage{setspace}
+\usepackage[margin=1.2in]{geometry}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\setlength{\headheight}{28pt}
+\addtolength{\topmargin}{-13.5pt}
+
+% Footnotes as the 1866 printing sets them: *) and **), not 1, 2, 3.
+% This book is NOT like Evangelietroen og Theologien, where every note was *)
+% and a constant \thefootnote sufficed: here several printed pages carry two
+% notes, and the second is **).  Neither \fnsymbol (math mode: sets U+2217
+% ASTERISK OPERATOR, not a text asterisk) nor footmisc[perpage] (resets on the
+% TYPESET page, not the printed one) is right.  Instead the mark is set
+% explicitly at each site with \fnmark{*)} or \fnmark{**)}, which restores the
+% default afterwards so a missed one cannot silently propagate.
+\renewcommand{\thefootnote}{*)}
+\newcommand{\fnmark}[2]{\renewcommand{\thefootnote}{#1}\footnote{#2}%
+  \renewcommand{\thefootnote}{*)}}
+
+\usepackage{hyperref}
+\hypersetup{
+  pdftitle={Dualismen i vor nyeste Philosophie},
+  pdfauthor={Georg Brandes},
+  hidelinks
+}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LE,RO]{\thepage}
+\fancyhead[RE]{\textit{Dualismen i vor nyeste Philosophie}}
+\fancyhead[LO]{\textit{\leftmark}}
+
+\setstretch{1.3}
+
+\title{\textbf{Dualismen}\\[6pt]
+  \large i vor nyeste Philosophie}
+\author{G.\ Brandes}
+\date{Kjøbenhavn: Forlagt af den Gyldendalske Boghandel (F.\ Hegel), 1866}
+
+% ---- original-page markers (paginate.py) ----
+% \opage{N} is written BY HAND, at the word printed page N begins on, by
+% someone who read the page.  \apage{N} is reserved for markers placed
+% afterwards by machine alignment; never write it by hand.
+\usepackage{marginnote}
+\newcommand{\opage}[1]{\marginnote{\footnotesize\textit{[#1]}}}
+\newcommand{\apage}[1]{\marginnote{\footnotesize\textit{[#1]}}}
+\begin{document}
+\maketitle
+\thispagestyle{empty}
+\newpage
+
+\tableofcontents
+\newpage
+
+%% ============================================================
+%%  PRELIMINARIES (printed pp. 1--6 = PDF 5--10)
+%%  Transcribed from the image at 400--900 dpi, not from either text layer:
+%%  the playbook is explicit that contents-page OCR is unreliable, and the
+%%  Google layer does in fact render the p. 47 head with a spurious space
+%%  before the stop.
+%% ============================================================
+\chapter*{Titelblad og Indhold}
+\addcontentsline{toc}{chapter}{Titelblad og Indhold}
+\label{ch:prelim}
+
+% --- p. 1 ---
+% Half-title.  Both lines letterspaced, `Dualismen' in a larger size; a short
+% centred rule below.  The ink shelfmark across the top right corner is a
+% British Museum accession mark, not printed matter.
+\begin{center}
+\opage{1}\emph{\Large Dualismen}\\[10pt]
+\emph{i vor nyeste Philosophie.}\\[14pt]
+\rule{2cm}{0.4pt}
+\end{center}
+
+% --- p. 2 ---
+% Blank; British Museum oval stamp only.
+\opage{2}
+
+% --- p. 3 ---
+% Title page.  `Dualismen' is a large display face and is NOT letterspaced
+% here, unlike the half-title.  The slanted stroke under `G. Brandes.' and the
+% pen-flourish beside it are manuscript ink in this copy, not a printed rule.
+\begin{center}
+\opage{3}{\Large\textbf{Dualismen}}\\[10pt]
+\emph{i vor nyeste Philosophie.}\\[14pt]
+\textbf{Af}\\[10pt]
+\emph{G.\ Brandes.}\\[16pt]
+% Publisher's device: a buckled garter enclosing an intertwined script
+% monogram, the garter lettered clockwise `1770 · SG · JD · FH ·' — the
+% Gyldendal founding year and the initials of its successive proprietors.
+% The inner monogram is two intertwined script capitals: read as GB, but the
+% left letter could equally be a looped S (i.e. SG, Søren Gyldendal), and at
+% 600 dpi bitonal the two cannot be separated.  DOUBTFUL — not resolved.
+[Forlagsmærke]\\[16pt]
+\emph{\textbf{Kjøbenhavn.}}\\[4pt]
+Forlagt af den Gyldendalske Boghandel (F.\ Hegel).\\[4pt]
+{\small\emph{I.\ Cohens Bogtrykkeri.}}\\[6pt]
+1866.
+\end{center}
+
+% --- p. 4 ---
+% Blank; British Museum oval stamp only.  No printer's imprint on the verso,
+% no copyright notice, no dedication.
+\opage{4}
+
+% --- p. 5 ---
+% Indhold.  The entries carry NO chapter numbers, though the chapter heads in
+% the body do, and they end in NO full stop, though the heads do.  Both
+% disagreements are recorded rather than normalised; see the chapter heads
+% below.  Leaders are spaced full stops and their number carries no meaning.
+\begin{center}
+\opage{5}\emph{\textbf{Indhold.}}\\[4pt]
+\rule{1.5cm}{0.4pt}
+\end{center}
+
+\begin{flushleft}
+\hfill\textbf{Side}\\[2pt]
+Indledning \dotfill 7\\
+Den absolute Uensartethed \dotfill 25\\
+Det Antirationelle \dotfill 47\\
+Dualismens Consequenser \dotfill 55
+\end{flushleft}
+
+\begin{center}
+\rule{1.5cm}{0.4pt}
+\end{center}
+
+% --- p. 6 ---
+% Blank.  No stamp, no printed matter.
+\opage{6}
+
+%% ============================================================
+%%  1. INDLEDNING  (printed pp. 7--24 = PDF 11--28)
+%%  Head as printed: `1.' on its own line, then `Indledning.' — both bold and
+%%  centred, the title NOT letterspaced; the page drops its folio; the first
+%%  word opens with an enlarged capital.
+%%  Indhold reads `Indledning', without number and without stop.
+%% ============================================================
+\chapter*{1.\ Indledning.}
+\addcontentsline{toc}{chapter}{1. Indledning}
+\markboth{Indledning}{Indledning}
+\label{ch:1}
+
+% --- p. 7 ---
+% Chapter opening: the head `1.' / `Indledning.' is already set in the
+% skeleton and is NOT repeated here.  p. 7 drops its folio (first printed
+% folio in the whole book is 8, on the next leaf).  The first word opens with
+% an enlarged capital D — a printer's device, not emphasis, so no markup.
+% No letterspacing anywhere on pp. 7--15: spacing.py flagged `Der' (p. 7,
+% 1.21), `have' (p. 8, 1.18) and `fri' (p. 11, 2.45), and all three were read
+% at 600--900 dpi and are ordinarily set.  No footnote on pp. 7, 8, 9, 13, 14.
+\opage{7}Der er i Prof.\ R.\ Nielsens Opfattelse af Forholdet mellem
+Videnskaben og Bibeltroen Noget, der nødvendigt maa vinde ham Manges
+Hjerter. Man fornemmer en med Tilfredshed forenet Beroligelse, en glædelig
+Bekræftelse paa, hvad man maaskee uden meget Haab har ønsket, ved at høre en
+Tænker udtale sig saa strengt om den menneskelige Tankes Afmagt, ved at see
+en saa stor og omfattende philosophisk Begavelse være sig Philosophiens
+Begrændsning saa bevidst. Man kom til Philosophen kun altfor vant til den
+indtil det Trivielle gjentagne Phrase, at den Dannede --- undertiden med
+Stolthed, undertiden med Smerte --- føler sig løsreven fra de
+Forudsætninger, hvorpaa den Ulærde og Enfoldige med Fortrøstning bygger, og
+man gaaer bort, bestyrket i sin Tillid til, at det kun er den overfladiske og
+umodne Philosophie, der fører bort fra Bibeltroen, men ikke den sande, dybe,
+virkelige Forstaaelse af, hvad der kan forstaaes. Og i Tilfredsstillelsen
+blander sig Beundring. Det er den samme Mand, der med saa megen Iver og Varme
+har hævdet Fagviden%
+% --- p. 8 ---
+% First page in the book to carry a printed folio.
+\opage{8}skabernes Selvstændighed imod en overmodig Speculations
+Anmasselser, som staaende paa Høidepunktet af sin Tids Videnskabelighed,
+iført sin Genialitets og sin Dannelses Styrkebelte har Maadehold,
+Besindighed, Ydmyghed og Pietet nok til at erklære, at Livet er Mere end
+Betragtningen, Charakteren Mere end Intelligentsen, Praxis Mere end Theorie
+og Religionen høiere end Videnskaben. Andre Tænkere, ringere Tænkere,
+fremmede, især tydske, Philosopher have ladet sig forlede til det ilde
+berygtede moderne Fritænkeri, have vakt Forargelse ved Angreb paa det, som
+Aarhundreders Tradition har stemplet som helligt: vor egen Philosophie vil
+% The colon after `helligt' is on the page at 600 dpi and in the KB layer;
+% the Google layer drops it.
+under denne Tænkers Auspicier gaae i et bedre Spor; uden at give Afkald paa
+den Frihed, der er Tankens Ret og Livsbetingelse, vil den, ren for de
+Udskeielser, hvortil Videnskaben ellers overalt i Europa og tildels ogsaa her
+i Danmark har hengivet sig, bevare Ærefrygten for det Hellige i værdig
+Selvbeherskelse. Hvo har ikke nok af den golde Polemik, af
+Nedbrydelseslysten og Tilintetgjørelsesraseriet, hvad er smukkere og bedre
+end denne saa oprigtigt og kraftigt ytrede Bestræbelse for dog endelig engang
+at stifte Fred mellem Magter, der hver for sig af uendelig Betydning
+fredeligt burde samvirke til et fælles Maal!
+
+I disse eller lignende Udtryk vil Beundringen klæde sig, og den Kreds, der
+taler saaledes, er neppe lille. Thi denne Philosophie er i mere end een
+Henseende en Forsoningens Philosophie. Den forsoner
+% --- p. 9 ---
+\opage{9}ikke blot Principer, men Partier, den søger sine Venner i modsatte
+Leire: Har den end, hvad det Religiøse angaaer, sit hele Idee-Indhold fra
+Kierkegaard, saa er den dog hævet over, hvad den maa opfatte som en
+Indskrænkning bos dette store Genie, den seer
+% PRINTER'S ERROR, transcribed as printed: `bos' for `hos'.  Verified at
+% 900 dpi in the Google (British Museum) copy and at 400 dpi in the KB copy —
+% both print a closed bowl, i.e. b, not the open shoulder of h.  Both text
+% layers independently read `bos'.  The error is in the forme, not the copy.
+ikke alene som næsten Alle det i mange Maader Vækkende og Gode i det Liv, der
+er udgaaet fra Grundtvig og hans Tilhængere, men den har Øie for den dybe
+Sandhed i Grundtvigs Opdagelse, som Kierkegaard og saa Mange med ham ere ude
+af Stand til at finde Synspunktet for. Thi denne Philosophie forstaaer at
+vurdere den friske Umiddelbarhed saa godt som den gjennemførte Reflexion; kun
+Mellemsphæren, kun den uklare Sammenblanding af det Videnskabelige og det
+Religiøse, med eet Ord Theologien er den fjendsk; og dog --- den er forvisset
+om, at Theologerne, naar de ret faae Syn paa, hvad i høieste Forstand er
+deres egen Interesse, ville føle Trangen til at samles under dens brede
+Vinger med deres forhenværende Modstandere; thi hvad de bedste iblandt disse
+ville, det vil ogsaa den: det ubeskaarne uantastelige Bibelords Hellighed,
+Troens Uafhængighed af den stadigt mere fordringsfulde og hensynsløse moderne
+Videnskab. Den indeslutter sig endelig ikke med sine Indviede i et afspærret
+Rum, den er betænkt paa at skaffe sig Udbredelse til de almindeligt Dannede,
+ja til Folkets store lærvillige Masse, som det er en Lyst at undervise for
+den, der er lykkelig nok til at have Evnen dertil, den er ligesaa populær,
+% --- p. 10 ---
+\opage{10}naar den vender sig udad, som den er streng og exact i sit Forhold
+indadtil, ligesaa blød og forsonlig, naar det gjælder om at forene, hvad
+Stort og Udmærket vort Fædreland har frembragt i gudelig og kirkelig
+Retning\fnmark{*)}{Se f.\ Ex.\ Nord.\ Universitetstidskr.\ Tillægshefte til
+10de Aarg.\ 1866 p.\ 75.}, som den er charakterfast og ubønhørlig imod
+% Printed mark: *) — one note only on this page.  `Se', single e, against
+% `See' in the note on p. 15; both as printed.
+Theologiens (for Almenheden ligegyldige) Formidlingsforsøg.
+
+Hvor meget er der ikke i et saadant Program, der tiltaler det Bedste i
+Mennesket, og som til alle Tider vilde gjøre Indtryk paa enhver moden og
+udviklet Aand, og hvor Meget er her endelig ikke, der maa ramme netop vor
+Tids og vort Lands Mennesker!
+
+Det 19de Aarhundrede gjorde tidlig Front mod det 18des Philosophie; men
+hertillands maaskee mere afgjort, i hvert Fald mere udholdende, end
+nogensteds, og den danske Litteratur bærer, hvor heftigt vore Theologer end
+have befeidet hinanden, hverken mange eller stærke Spor af den kritiske
+Bevægelse, der i indeværende Aarhundrede charakteriserer den tydske og
+franske Videnskab. Tiden for de religiøse Bevægelsers Gjenfødelse har Intet
+tilovers for Rationalismen, den afskyer den gamle Rationalismes Fladhed, den
+tvivler høiligt paa, at der kan komme noget Godt ud af paany at rokke ved det
+positivt Religiøses Autoritet, den seer nødig Opgivelsen af nogetsomhelst af
+Aabenbaringens Udenværker; thi den føler Nødvendigheden af „principiis
+obstare.“ Denne
+% --- p. 11 ---
+\opage{11}Aandsretning kommer Prof.\ Nielsen imøde. Han sikrer det Positives
+alleryderste Forskandsning, idet han anbringer et gabende Svælg imellem
+Videnskaben og Religionen, og kaster Theologerne paa Hovedet ned deri.
+
+Men det 19de Aarhundrede er tillige Naturvidenskabens og de store
+Opdagelsers Tidsalder. Er den klar over Noget, saa er det over det, at paa
+Videnskabens Omraade maae vi have Marken fri, maae vi kunne forske og
+bestemme uanfægtet af en forældet Orthodoxies forudfattede og indskrænkede
+Domme. Denne Bevidsthed kommer Prof.\ Nielsen imøde. Naar Talen er om
+Videnskab, da er Talen ikke om Tro, da staaer Prof.\ --- eller vil
+idetmindste staae --- fri og uhindret af enhversomhelst bindende Fordom,
+ingen nok saa utaalmodig Fritænker har herom kunnet udtale sig heftigere end
+han.
+
+Hvad vil man da Mere, hvad kan man endnu ønske udover denne storartede
+Gjennemførelse af suum cuique! hvo vil vel her gjøre Indsigelse, med
+Undtagelse maaskee af Efternøleren, der endnu ikke forstaaer, at Dogmatikens
+Tid er forbi, eller af den Bornerte, der ikke kan taale, at den store
+Almenhed delagtiggjøres i Philosophiens Resultater, eller den Enkelte, der
+optræder ikke for Sagens Skyld, men for at bringe sit eget lille Jeg i
+Forgrunden ved Hjælp af den store Sag\fnmark{*)}{Jfr.\ R.\ Schmidt: Om
+Selvmodsigelsen i Prof.\ Nielsens Lære pag.\ 44.\endgraf
+Ligesom Hr.\ Schmidt antager, at der maa ligge noget moralsk Graverende til
+Grund for den Handling at træde op imod Prof.\ Nielsen, saaledes kan Hr.\
+Henrik Scharling ikke fatte, at man udtaler sig mod Theologien af andre
+Grunde end personlige. Han erklærer, at jeg synes at staae i den Formening,
+at naar Theologien ikke kan gjøre mig til en Christen, saa er den ufrugtbar
+og upraktisk og tilføier belærende, at man naturligvis ligesaa lidt kan blive
+en Christen alene ved at studere Theologie, som man kan gjenvinde sin Helbred
+alene ved at studere Medicin. Skjøndt Hr.\ Scharlings Morsomhed som
+Litteraturens Mentor ikke er ubekjendt, og skjøndt man jo vel maa være
+forberedt paa at træffe nogen Familiaritet med Alvidenheden i et theologisk
+Ugeskrift, var dette Udbrud af Hr.\ Scharling mig dog en kjær Overraskelse.
+Det er saa behageligt i et Tidsskrift at finde Oplysninger til sin egen
+Sjælehistorie og tilmed Oplysninger, som man tilforn var ganske uvidende
+om.}?
+% Printed mark: *).  THIS NOTE RUNS OVER ONTO PRINTED p. 12: the first
+% paragraph (`Jfr. R. Schmidt … pag. 44.') and the opening of the second
+% (`Ligesom Hr. Schmidt antager, at der maa ligge') stand at the foot of
+% p. 11; the second paragraph continues, unmarked and below a fresh rule, at
+% the foot of p. 12 from `noget moralsk Graverende'.  Set here as ONE note at
+% its mark on p. 11, per BATCH-AGENT.md.  `\endgraf' rather than `\par'
+% because \fnmark is not \long and a literal \par token in its argument
+% aborts the compile.  `naturligvis' (not `naturligviis') is as printed —
+% confirmed at the image, and both layers agree.
+
+% --- p. 12 ---
+\opage{12}Lad os engang vende Medaillen og see den paa den anden Side. Denne
+Lære, der tiltaler saa meget Godt i Menneskene og viser sig saa
+tidssvarende, skulde den mon ikke ogsaa henvende sig til noget mindre Godt,
+til det Lavere, ja til det Laveste i os? Vi Mennesker ere af Naturen
+tilbøielige til Slaphed, Delthed, Adsplittethed. De Fleste have gjerne een
+Livsanskuelse i Glæde, en anden i Sorg, een i Hjemmet, en anden i Kirken.
+Læreren hylder helst eet Princip, naar han taler, et andet, naar han handler,
+Præsten har Møie med at leve som han prædiker, Kjøbmanden har gjerne een
+Moral i Forretninger, en anden i Livet, og Digteren besynger tidt og ofte
+Ide%
+% --- p. 13 ---
+\opage{13}aler, som allermindst gjenfindes i hans egne Handlinger. Den ene
+Sphære kommer jo ikke den anden ved, den ene Haand behøver jo ikke at vide,
+hvad den anden gjør. Og nu Videnskabsmanden! Opdragen i en vis bestemt
+kirkelig Tro, fra Barndommen af paavirket af en vis bestemt tilfældig
+Forestillingskreds, den, som hersker i hans Kirke, i hans Land og i den By,
+hvori han lever, møder han i Videnskaben Facta, der staae i Strid med denne
+Tro. Her er en Kamp at udstride, en Seir at vinde. Men kunde Freden ikke
+faaes for bedre Kjøb? Forfærdelige Tanke, at den Tro der prædikes i Ebeltoft
+eller i Paris eller i St.\ Petersborg ikke skulde være den høieste Sandhed!
+Forfærdelige Utroskab, at bryde med en Tro, til hvilken Ens ebeltoftske eller
+parisiske eller St.\ Petersborgske Forældre satte al deres Lid! Hvad er da
+naturligere end den praktiske Udvei at være En i Videnskaben, en Anden i sit
+Liv, at leve Livet igjennem i en chaotisk Verdensanskuelse med Brokker af
+Fortidens og Stumper af Nutidens Livsbetragtning, men dog i sine Skrifter at
+fremtræde iført det 19de Aarhundredes videnskabelige Drapperi.
+
+Dog saa naturligt dette end falder, der er noget Pinligt i denne Halvhed.
+Man samler sig vel nødigt til den kraftige, enkelte Afgjørelse, men man lider
+heller ikke at vakle principløst mellem modsatte Synsmaader. Ingen Accord!
+det er jo Løsenet i vore Dage, saa langt heller en dygtig Disharmoni!
+Halveres vil man, naar det ikke kan være anderledes, men saa
+% --- p. 14 ---
+\opage{14}vil man ogsaa halveres tilgavns. Hvilken Lindring for den
+bespændte Sjæl giver nu ikke den nye Lære, der vel nødtvungen indrømmer
+Videnskaben dens Ret, men ligefuldt lader mig min Barnetro, ja om det saa
+skulde være min Ammestuelærdom i god Behold, som kort sagt hæver
+Principløsheden selv til Princip og skjænker den Usikre netop hvad han
+attraaer, at maatte blive hel i Halvheden, at maatte aande fuldt ud som et
+dobbelt Menneske. Hans Forstand trænger til Luft: den faaer et Spillerum, en
+Tumleplads uden Grændser, hans Følelse, der ligger i Splid med Forstanden,
+hans Villie, der i Trang til udvortes Støtte, vanskeligt slipper nogen fra
+Fædrene overlevet Troessætning, behøver intet Afkald at gjøre. Troen er
+berettiget, saasnart den blot er fast, dens Rige er uden Skranker, dens
+Omraade har ingen Grændse tilfælles med Erkjendelsens Land. Hvert af de
+tvende Riger har sine Love, sin Regent, ja sin Gud, de kunne ikke splidagtigt
+strides om det Sande; thi selve denne dybe Splid imellem dem, det er
+% NOT a defect of the printing: the Google (British Museum) copy shows a
+% loose space inside `selve' (`thi s elve'), but the KB copy at the same line
+% is normally spaced, so it is a slipped space in that one impression.  Both
+% text layers read `selve'.  Transcribed `selve'.
+Sandheden, det er Freden. Som naar tvende Stormagter staae fuldtrustede imod
+hinanden, men Mægling indtræder, ingen Krig bryder ud, og der stiftes et
+Forlig, i hvilket hver af Parterne fuldtbevæbnet forbeholder sig alle sine
+Rettigheder, saaledes kvæles her Debatten under en uveirssvanger Pause: ingen
+af de to Modstandere opgiver en Tøddel. Betragtet som en midlertidig
+Situation eller som en Vaabenhvile efter fordums Kampe kan denne Stilstand
+have sin Nytte, den er endog af Værdi for Viden%
+% --- p. 15 ---
+\opage{15}skaben, hvis denne virkelig faaer Lov til at leve sit Liv
+uforstyrret af fremmed Indblanding; men skal den opfattes som en Afgjørelse
+af Striden, som den længe ventede Løsning af et stort Problem --- og for
+dette bliver den udgivet\fnmark{*)}{See f.\ Ex.\ „Fædrelandet“ 1866 Nr.\
+172.} --- da er dens Svaghed saa iøinefaldende, at det vilde være
+% Printed mark: *).  `See', double e, as printed — cf.\ `Se' on p. 10.
+beskjæmmende for vor Videnskab, om den ikke blev paapeget.
+
+Vi saa, hvad der kunde friste endogsaa Videnskabsmanden til at slutte sig til
+den nye Lære og for sin Part realisere den. Men kan Fristelsen blive selv ham
+for stærk, hvor meget større maa den da ikke være for Lægmanden. Sæt han fra
+sin Barndom af har en Trang til ubetinget Hengivelse og inderlig Tro. Sæt
+saa, at, naar hans Hjerte søger den positive Religion, hans Fornuft samtidig
+frastødes af mangen med Religionen, som det synes, uopløselig forbunden
+Cruditet. Forkaster han den nu ubetinget, da forsmægter hans Hjerte bestandig
+under sit Savn, antager han den derimod uden Forbehold i dens overleverede
+Skikkelse, da er det, som sloges der ham et Jernbaand om Panden. Saaledes
+sidder han fast i Valgets Dilemma. Sæt saa, at han en Aften træder ind i en
+Høresal, hvor Tilhørere af begge Kjøn, Dannede og Udannede, have trængt sig
+sammen. Det Foredrag, han kommer til at høre, er rettet mod den speculative
+Theologie. Med al den Sikkerhed, som Lærdom, logisk Virtuositet og livfuld
+Veltalenhed giver, fremstiller Taleren,
+% p. 15 ends mid-sentence; `fremstiller Taleren,' continues on p. 16, which
+% belongs to the next batch.
+% --- p. 16 ---
+% Continues the sentence broken at the foot of p. 15 (`fremstiller Taleren,').
+% No footnote on p. 16.  No letterspacing: spacing.py flagged `man' (1.18,
+% `da man har lært'), read at 700 dpi and ordinarily set.
+% The em-dashes round `naturligvis bestandig fra Videnskabens Standpunkt' are
+% on the image; the Google layer renders the first as nothing and the second
+% as a hyphen glued to `Usandsynligheden' (ORTHOGRAPHY §3d).
+% `naturligvis', single i, as printed — p. 16 is in the eleven (ORTHOGRAPHY §1).
+% Google invents a full stop after `videre, han'; KB and the image have none.
+\opage{16}hvor farligt det i Troessager er at række Videnskaben, om det saa
+kun var den lille Finger. Paa Videnskabens Vegne nedlægger han Protest mod de
+bibelske Underes Troværdighed. Han fremstiller maaskee først --- naturligvis
+bestandig fra Videnskabens Standpunkt --- Usandsynligheden, Absurditeten af
+nogle af de Mirakler, der for hans Tilhøreres Phantasie kun have liden Nimbus,
+men som ere deres Forstand til des mere Anstød. Endnu føler den lyttende Kreds
+sig ikke foruroliget, snarere fornemmer den en Sindets Lettelse ved engang at
+give den tilbagetrængte Forargelse frit Løb. Men Taleren gaaer videre, han
+nærmer sig maaskee Mirakler, der for Alle staae som hellige Mysterier, det
+synes et Øieblik, som vilde han forgribe sig paa dem, og en Bæven gjennemfarer
+Forsamlingen. Consequensen af Theologernes Forklaringsforsøg er nu gjort
+tydelig. Da vender Taleren Foredragets Timeglas. Med varm Begeistring, med
+endnu større Veltalenhed fremstiller han Miraklet seet i Troens Lys. Og nu, da
+den kritiske Tilbøielighed har faaet Lov at udrase, nu, da man har lært at
+skjælve for den Tankegang, man nylig var villig til at slaae ind paa, nu
+omfatter man med samme Lidenskab Stort og Smaat, det mest ophøiede religiøse
+Bud og det mindst betydende Under, Alt synes lige helligt og kostbart, da
+Faren for at miste det neppe er forvunden. Hvad har nu Tilhøreren i en saadan
+Time ikke gjennemfølt og gjennemlevet, hvor have alle hans Evner tumlet sig
+frit! Fornuften og Troestrangen ere lige tilfreds\-%
+% --- p. 17 ---
+% Printer's signature `2' stands alone at the foot of this page, below the
+% footnote: it is not text and is not transcribed.
+% One footnote, mark *).  No letterspacing on the page or in the note —
+% checked at 700 dpi, the note included, because spacing.py's fit is unreliable
+% in the smaller footnote type (see p. 21).
+% `Propædeutik' with the ligature, as printed and as Google reads it here;
+% ORTHOGRAPHY §3b records Google losing the same æ in the notes to pp. 55, 59.
+\opage{17}stillede, hin fordi den har faaet Tilladelse til at kaste hele
+Mirakelflokken ud af Videnskabens Forport, denne, fordi den har faaet
+fuldkommen Frihed til at lukke hele den samme Skare ind ad den Bagport, som
+aabnes den i Individets praktiske Existens. Frem og tilbage synes lige langt;
+men den Hørende har brugt sine aandelige Kræfter, og han har een Gang for alle
+lært, hvorledes han har at behandle Forstanden, hver Gang dens Utaalmodighed
+paany skulde udsætte ham for Forargelsens Anfægtelser. I hans Glæde undgaaer
+det ham, at hvad her er foretaget kun er en fingeret Bevægelse, at, da det
+Gudsbegreb og det Begreb om Verden, som Prof.\ N.\ stiller imod Theologiens,
+efter Prof.'s egen Opfattelse ikke er det sande, ikke er det, som har Realitet,
+saa er den Strid, som her er ført mod den speculative Theologie kun en
+Skinkamp, en kvantvis Fægtning, som Holberg kalder det, og Alt, hvad her er
+skeet, kun en Ompostering af det Suprarationale fra Videnskabens til Livets
+Omraade, en taktisk Forandring, analog med den, som vilde være indtraadt i
+Chemien, hvis Chemikerne i sin Tid vare blevne enige om, ikke mere at taale
+Phlogiston i deres Videnskab, men kun for udenfor Videnskaben at være des mere
+glødende forvissede om dets Existens.
+
+Eller den Famlende og Usikre tyer maaskee til Litteraturen og standser en
+skjøn Dag ved Læsningen af en Pagina som denne\fnmark{*)}{R.\ Nielsen:
+Forelæsninger over Philosoph.\ Propædeutik. Efteraarshalvaar 1865 pag.\ 159.},
+% Printed mark: *) — one note only on this page.  It sits between `denne' and
+% the following `)', i.e. `denne*),'; the comma is outside the mark.
+der indeholder Slutningen
+% --- p. 18 ---
+% PRINTER'S ERROR, transcribed as printed: the letterspaced word reads
+% `teleolo-' at the line end and `logisk,' at the head of the next, i.e.
+% `teleolologisk' — the syllable `lo' is set twice.  Read at 700 dpi on both
+% lines.  Both text layers independently give the same doubled form, and the
+% word is set correctly (`teleologisk', and NOT letterspaced) fourteen lines
+% below in C.'s second speech, which is what shows the first to be a slip of
+% the compositor's.  Not corrected.
+% The letterspacing of `teleolologisk' is on the image and in KB's spurious
+% internal spaces (`t e l e o l o - l o g i s k'); spacing.py flagged both
+% halves.  It is the only emphasis on the page.
+% The quotation closes with THREE spaced full stops (counted at 700 dpi),
+% against the six on p. 24.
+\opage{18}af en Samtale, hvori Theologiens Forsvarer kommer ynkeligt tilkort.
+Theologen C.\ har opstillet den Sætning, at i objectiv Betydning er Alt eller
+Intet at kalde Under. Hertil bemærker saa A.\ som følger:
+
+„At et Menneske vandrer paa Havet uden at synke, er da ligesaa stemmende med
+Naturlovenes Uforanderlighed, som at En falder i Vandet og drukner? C.\
+Mennesket, der ellers er underkastet Tyngdens Love, kan meget vel vandre paa
+Havet, naar det skeer \emph{teleolologisk}, ifølge en fortsat Skabelse! A.\ Men
+saa har det, hvad Naturlovenes Uforanderlighed angaaer, vel heller ikke, naar
+vi ret besinde os, noget for den dybere Tænkning Anstødeligt, at en Pave, Leo
+XII.\ har kunnet beatificere Minoriten Julianus, som i vort vantro,
+revolutionære nittende Aarhundrede fik stegte Fugle til at flyve? C.\ At jeg
+for mit Vedkommende antager Underet med de stegte Fugle for en dum Fabel, en
+Præsteløgn, hidrører slet ikke fra, at jeg i Begivenheden selv seer noget Brud
+paa Naturlovenes Uforanderlighed; men simpelthen derfra, at jeg ikke er
+Catholik og følgelig ikke kan overbevise mig om, at Begivenheden er skeet
+teleologisk, ifølge en fortsat Skabelse. Var jeg Catholik og havde en Catholiks
+Tro, da skulde jeg vel være istand til at forsone min Tro med min Viden, mit
+Skabelsesbegreb med mit Naturbegreb . . .“
+
+Hvad er her nu skeet? Idet Theologiens Forklaringsforsøg ere latterliggjorte,
+idet den indbildte Forstaaelse af Underet har vist sig at være indbildt,
+% --- p. 19 ---
+% `Ælde' with the capital ligature, READ AT THE IMAGE at 700 dpi — the Google
+% layer gives `Elde' (ORTHOGRAPHY §3a, the p. 19 entry); KB has `Æ lde'.
+% Every other word on pp. 16--24 opening with a capital vowel was checked at
+% the image for the same fault, and none is an Æ.
+% `Del', single e, as printed — p. 19 is in the seven (ORTHOGRAPHY §2).
+% `din' is letterspaced: confirmed at 700 dpi, flagged by spacing.py, and
+% split as `d in' by KB.  The only emphasis on the page.
+% Google reads `sympatketiske'/`bar sin Grund' in KB; the image has
+% `sympathetiske' and `har sin Grund'.
+% Printer's signature `2*' stands alone at the foot: not text.
+% NB the reported speech opened here at `At jeg for mit Vedkommende' carries
+% NO opening „ on the page — checked at 700 dpi — though it is closed with “
+% on p. 20 at `Almagt.“'.  Transcribed as printed; see the note there.
+\opage{19}rammer Spotten ikke alene den speculative Dogmatik, som den der ---
+principielt --- formaaer at begribe et saa afsindigt Under, men som den, der
+ikke er istand til at afvise det. Saaledes falder der da et latterligt Skjær
+over selve den miraculøse Verden, som Dogmatiken behandler, den Verden nemlig,
+hvori stegte Fugle kunne bringes til at flyve. Atter her føler den
+sympathetiske Læser sin Forstand tilfredsstillet; skjøndt Intet ved sin Ælde
+ærværdigt Mirakel er bleven bragt endog blot under Skyggen af en
+Forstandskritik, saa gotter man sig dog ved Tanken om, at man for sin Del ikke
+er nødsaget til at tye til saadanne Argumenter som C.\ for at værge sig mod
+Antagelsen af den Art Mirakler, som det med Fuglene. Men denne Følelse har sin
+Grund i ren Illusion. Thi optager man Samtalens Traad og retter Repliken mod
+Hr.\ A., da vil det vel vise sig, at hans Argumenter ikke ere et Haar bedre end
+hans ydmygede Modstanders, og at hans Situation er nok saa besynderlig som
+Hr.\ C.'s. Spørger man ham nemlig blot med nogle Ords Forandring saaledes: Har
+det da, hvad Naturlovenes Uforanderlighed angaaer, for \emph{din} inderste
+Bevidsthed noget Anstødeligt, at en Mand i vort Aarhundrede fik stegte Fugle
+til at flyve? da maatte Svaret lyde som saa: At jeg for mit Vedkommende antager
+Underet for en dum Fabel, en Præsteløgn, hidrører slet ikke fra, at jeg i
+Begivenheden seer et Brud paa Naturlovenes Uforanderlighed, thi indeholder den
+end et saadant, tør jeg dog ikke be\-%
+% --- p. 20 ---
+% UNPAIRED CLOSING QUOTE, transcribed as printed: `Almagt.“' closes a reported
+% speech that was never opened with „ on p. 19.  Read at 700 dpi on both
+% leaves.  This is the first of the two places in this batch where the quote
+% count drifts off zero on purpose; the second is on p. 24.  Batch total:
+% 7 opening „ against 9 closing “ — the drift is exactly these two.
+% No footnote, no letterspacing (spacing.py: none; confirmed at the image).
+% `venter vel ikke, at det vil skee' — comma, as Google and the image have it;
+% KB reads a semicolon and is wrong.  `Fortællinger' (KB: `Fortælling'),
+% `Regnbuens Fremkomst' (KB: `i remkomst') — both settled at the image.
+\opage{20}negte dets Mulighed, men simpelthen deraf, at jeg ikke er Catholik og
+følgelig ikke troer, at der er skeet Mirakler paa Jorden siden det første
+Seculum; derfor brugte jeg Ordene: „i vort vantro, revolutionære nittende
+Aarhundrede“. Var jeg en Catholik, og havde en Catholiks Tro, da skulde jeg vel
+være istand til at forsone min Tro med min Viden; thi jeg staaer ikke min
+Fornuft til Regnskab for, hvad jeg troende antager. Naturlovenes
+Uforanderlighed er en Norm, som kun staaer fast i en Naturforfatning, der
+forefindes i Videnskaben og paa Papiret, men som ikke har hjemme i den
+virkelige Verdensforfatning, hvortil jeg i min Existens forholder mig som en
+lydig Undersaat. Mod den strider intet Mirakel, som Troen erklærer for helligt
+og som styrker Forvisningen om Altets absolute Afhængighed af den ubetingede
+Almagt.“ Med andre Ord: ogsaa Hr.\ A.\ har den Mening, at i og for sig er
+Naturlovenes Uforanderlighed ikke til Hinder for, at de stegte Duer kunne flyve
+os ind i Munden; han venter vel ikke, at det vil skee, men kun fordi den Tid,
+hvori Sligt hændtes, er omme.
+
+Naar man til En af vore Ny-Orthodoxe, der ikke ville indrømme Fornuft eller
+Videnskab den svageste Ret til at tale med om Religionens Gjenstand, bemærker,
+at det dog i vore Dage ikke gaaer an at fastholde Fortællinger som den om
+Sprogenes Oprindelse fra Guddommens Vrede over en formastelig Taarnbygning
+eller om Regnbuens Fremkomst som corporlig Ting i Anledning af en bestemt
+historisk
+% --- p. 21 ---
+% One footnote, mark *), set after `afgjøre' and before the full stop:
+% `at afgjøre*).' — read at 700 dpi.
+% TWO letterspaced passages, and spacing.py found only the first:
+%   body   — `vil' in `Hvad Bibelen vil lære os' (flagged; confirmed at
+%            700 dpi, and split as `v il' by KB);
+%   NOTE   — `Troen, Religionen, Videnskaben, Villien', a run of four nouns
+%            with their commas, NOT flagged by spacing.py, which does not fit
+%            the smaller footnote type reliably.  Confirmed at 700 dpi against
+%            `taler om' and `som om personlige Væsener' on the same two lines,
+%            which are tight.  KB's `T ro en , R e lig io n e n , V idenskaben,
+%            Villien' is the corroborating signal (ORTHOGRAPHY §3g).
+%   NOT letterspaced, though KB splits them: `Udtryk', `kun et blandt',
+%   `Vidnesbyrd', the title `Indledning til Ethiken' (quoted only), and
+%   `Dyden er ingen Fersken' — all four read at 700 dpi and ordinarily set.
+%   This is ORTHOGRAPHY §3g-bis: KB's splits inside a footnote are mostly noise.
+% `Natur- eller Sprogvidenskab' keeps a REAL hyphen — suspended compounding,
+% not a line-break hyphen.
+% `beroer' (KB: `heroer'), `skjønne' (KB: `skjønue') — settled at the image.
+\opage{21}eller uhistorisk Begivenhed uden som skjønne og poetiske Sagn, saa
+svarer den Paagjældende i Almindelighed, at Bibelen slet ikke vil lære os nogen
+Natur- eller Sprogvidenskab, overhovedet slet ikke vil berige vor Viden, at
+dette er en usalig Misforstaaelse o.\ s.\ v. Dette Svar beroer tydeligt nok
+paa en Feiltagelse. Hvad her siges om Bibelen gjælder ikke den, men den
+religiøse Forkyndelse, det sædelige Bud. Dette henvender sig ikke til vor
+Videbegjærlighed, vil ikke bibringe os nogen Kundskab om Sprogenes eller
+Naturphænomenernes Oprindelse. Hvad Bibelen \emph{vil} lære os, er vanskeligt
+at afgjøre\fnmark{*)}{At et saadant Udtryk hyppigt høres, er kun et blandt
+mange Vidnesbyrd om den høist ucorrecte Sprogbrug, der har indsneget sig hos
+os, i Kraft af hvilken man bl.\ A.\ taler om \emph{Troen, Religionen,
+Videnskaben, Villien} som om personlige Væsener. Exempler paa denne
+Metaphorphilosophie yder Dr.\ Heegaards „Indledning til Ethiken“ i rigeste
+Maal. Her blot eet: Naar han pag.\ 446 erklærer, at Villiens Concentration ud
+over det Rationelle er et Skridt, hvorved Villien ikke gjør sig nogensomhelst
+theoretisk Betænkelighed, da mindes man om det Gamle: Dyden er ingen Fersken.
+Man kunde med samme Ret tale om Skridt, hvorved Hjertet ikke gjør sig mindste
+Hovedbrud.}. Men spørger man simpelthen, om Bibelen ikke --- hvad enten den nu
+vil det eller ei --- lærer os noget Saadant, da bliver Svaret Ja, og den
+Orthodoxe har følgelig, hvis han opgiver Bibelens Autoritet med Hensyn til
+disse Punkter, en Gang for alle brudt med sit Princip.
+
+Det kunde nu synes, som om en Discipel af
+% --- p. 22 ---
+% No footnote, no letterspacing (spacing.py: none; confirmed at the image).
+% `den ethiske Fordring, der sikrer' — the comma is on the image but sits low,
+% dropped almost to the descender line; KB misses it, Google has it.
+% Google's layer puts a lone `.' between `Ukrænke-' and `lighed': that is a
+% speck of dirt in the gutter, and so is the mark between `selv' and `det'.
+% `forhaabentlig' (KB splits it `forhaa bentlig' in Google, `forhaabentlig' in
+% KB) and `altfor' (KB: `altfoi') — settled at the image.
+% `Prof. N.s Lære' — no apostrophe, as printed, against `Prof.'s' on p. 17.
+\opage{22}Prof.\ Nielsen i dette Tilfælde ganske vilde kunne undgaae de
+Vanskeligheder, hvori den Orthodoxe her finder sig hildet. Thi Ingen har jo
+stærkere end Theologiens utrættelige Bekjæmper gjort Adskillelse imellem det,
+der vedkommer den religiøse Bevidsthed og det, der ikke vedkommer den. Man
+skulde troe, at disse Facta som betydningsløse for det religiøse Liv efter
+Prof.\ N.s Lære maatte hjemfalde til Videnskabens Kritik og saaledes tabe deres
+exceptionelle Stilling. Men nei, det viser sig, at de opfattes som hellige
+Kjendsgjerninger. De bevares i fuld Ukrænkelighed som Mumier af den selv det
+Døde ikke opgivende Tro, og det er, saa uforstaaeligt det end lyder, det Ethiske
+i Mennesket, den ethiske Fordring, der sikrer disse Lig mod den kritiske
+Opløsning: den ethiske Grundfordring nødvendiggjør et ethisk Ideal; det Gode
+kan ikke existere uden den Gode, den absolut Gode atter kun som almægtig, den
+Almægtige kun som absolut skabende, Skabelsen kan atter kun være foregaaet i de
+sex Dage, (v.\ Heegaard anf.\ St.\ p.\ 392) og hermed ere de første Led knyttede
+af den Kjæde, der vel maa tænkes at skulle sammenlænke alle det gamle og nye
+Testamentes hellige Facta. Den er ikke udført endnu, men Paavisningen af den
+hele Nexus vil forhaabentlig ikke lade altfor længe vente paa sig, og den
+fuldstændige Sammenstilling vil da ligge for som et gjennemført System, hvilket
+det ikke vil være raadeligt for Nogen at understaae sig til at kalde
+theologisk. Spørger man altsaa Prof.
+% --- p. 23 ---
+% No footnote, no letterspacing (spacing.py: none; confirmed at the image).
+% Four quotation marks on the page and they balance: „Et ligefrem … reale.“
+% and „Men“ … „indseer Du … det ei?“.
+% `nødvendigvis', single i, as printed.  `Viden til Dommer' (KB: `Yiden'),
+% `uhistoriske', `Konster' — settled at the image.
+\opage{23}Nielsens Discipel: Kan man forkaste det gamle Testamentes Fortælling
+om den babyloniske Sprogforvirring eller det nye Testamentes om Dæmonernes
+Uddrivelse og endda forholde sig til det sædelige og religiøse Ideal, da vil han
+maaskee i det første Øiebliks Forbløffelse svare: Ja; men saasnart han har
+sundet sig, vil han consequent benegte det: det Ethiske kan ikke undvære det
+Religiøse, det Religiøse ikke Aabenbaringen, Aabenbaringen ikke disse
+Forudsætninger. Sæt saa man indvendte: Forsøg dog engang at see frit og lige
+paa Tingen, døm uden alle Bihensyn, antager Du disse Facta eller ei? da vilde
+Svaret nødvendigvis lyde omtrent som følger: „Et ligefrem Ja eller Nei kan jeg
+ikke give paa dit Spørgsmaal; thi ellers vilde jeg gjøre Viden til Dommer om
+Ting, der ligge udenfor dens Competence. Som sanddru Menneske antager jeg i
+Sandhedens Interesse, at disse saakaldte Facta ere ganske uhistoriske, men som
+moralsk Individualitet antager jeg i det Godes Navn disse samme Facta for
+fuldstændigt paalidelige og reale.“
+
+„Men“ udbryder Spørgeren „indseer Du da ikke, at der gives en tredie simplere
+Betragtningsmaade af saadanne Beretninger. Jeg spørger Dig ikke, om de ere
+sande, thi med Ordet Sandhed kan der gjøres mange Konster, men svar blot paa,
+om Du antager, at det, de meddele, nogensinde er skeet. Troer Du, at Regnbuen
+blev sat paa Himlen, eller troer Du det ikke, troer Du at hine Afsindige vare
+besatte af Dæmoner, eller troer Du det ei?“ Da lyder Svaret atter:
+% --- p. 24 ---
+% Last page of chapter 1.  The chapter ends with the verse; below it, a third
+% of the way down an otherwise blank page, stands a short centred DOUBLE rule
+% (two thin rules, about 1.7 cm wide, centred on the measure).  Nothing else
+% is printed on the leaf.  p. 25 opens chapter 2 and is another batch.
+% No footnote, no letterspacing anywhere on the page — the verse included,
+% read at 700 dpi: it is set in the ordinary roman, in the body size, and its
+% only distinguishing marks are the indentation and the surrounding space.
+% SECOND UNPAIRED CLOSING QUOTE, transcribed as printed: the reported speech
+% `I det Sandes Interesse …' opens with NO „ (read at 700 dpi) but closes with
+% “ after the points.  Cf.\ p. 20.  Batch quote count: 7 „ against 9 “.
+% SIX spaced full stops after `derimod', counted at 700 dpi by column
+% projection — not three, as on p. 18.  The raised speck above the first is
+% dirt on the sheet, not a seventh point.
+% THE VERSE: two lines, centred neither on the measure nor on each other but
+% set as a block indented about 2.9 em from the text left margin, both lines
+% flush at that indent (the opening „ aligns with the `J' below it, not hung
+% outside).  No attribution, no source line, no rule above or below it, and
+% the second line is NOT further indented.  Set here as a `verse'.
+\opage{24}I det Sandes Interesse antager jeg o.\ s.\ v., i det Godes Navn
+fastholder jeg derimod . . . . . .“ og dermed maa vel Samtalen være endt. Men
+her kommer selv det forsonligste Sind til at mindes det lille, skarpe Vers:
+
+\begin{verse}
+„For Aandens Sol eller Præstepraasen?\\
+Ja eller Nei! kun ingen Vaasen!“
+\end{verse}
+
+\begin{center}
+% The chapter-end ornament: a short centred double rule on the lower part of
+% p. 24.  Not a page rule and not a footnote rule.
+\rule{1.7cm}{0.4pt}\\[1.5pt]
+\rule{1.7cm}{0.4pt}
+\end{center}
+
+%% ============================================================
+%%  2. DEN ABSOLUTE UENSARTETHED  (printed pp. 25--46 = PDF 29--50)
+%%  Head as printed: `2.' / `Den absolute Uensartethed.'
+%%  Indhold reads `Den absolute Uensartethed', without number and without stop.
+%% ============================================================
+\chapter*{2.\ Den absolute Uensartethed.}
+\addcontentsline{toc}{chapter}{2. Den absolute Uensartethed}
+\markboth{Den absolute Uensartethed}{Den absolute Uensartethed}
+\label{ch:2}
+
+% --- p. 25 ---
+% Chapter opening: the head `2.' / `Den absolute Uensartethed.' is already set
+% in the skeleton and is NOT repeated here.  p. 25 drops its folio (first folio
+% in this chapter is 26).  The first word opens with an enlarged capital D — a
+% printer's device, not emphasis, so no markup.  The head is bold and is NOT
+% letterspaced: spacing.py flagged `absolute' (1.24) on this page, and that
+% flag is the bold head, read at 600 dpi.  No letterspacing anywhere in the
+% body of p. 25; no footnote on pp. 25--29, 31, 33, 34.
+\opage{25}Det træffer sig saa heldigt eller saa uheldigt, alt efter det
+Standpunkt, hvorpaa man befinder sig, at Prof.\ R.\ Nielsen i Spidsen for sin
+Lære om Forholdet mellem det Religiøse og det Videnskabelige opstiller en
+Grundsætning, hvorpaa den hele Bygning hviler. Man behøver da ikke
+møisommeligt at opspore Theoriens Grundtanke, den er udtrykt saa bestemt, at
+den paa ingen Maade kan forfeiles; dersom man nu ikke kan gaae ind paa den,
+saa behøver man ikke at indlade sig med det Øvrige; thi enten er hin Tanke
+følgerigtigt gjennemført, og da vil den gjennemtrænge den hele Udvikling og
+paa alle Punkter umuliggjøre En Tilegnelsen, eller den er ikke udfoldet ved
+% `En Tilegnelsen' read at 600 dpi and confirmed in both layers.  Not an error:
+% `En' is the old capitalised indefinite pronoun in the dative ("for one"), as
+% in `det gjør En Livet surt'.  Left exactly as printed.
+Consequens, og saa kan man jo endnu langt mindre ønske et nærmere
+Bekjendtskab med alle Enkeltheder. Denne Sætning, der i adskillige Artikler i
+„Fædrelandet“ er bleven betegnet som en tydelig Selvmodsigelse, lyder
+saaledes: Samme Bevidsthed kan uden Modsigelse forene Tro og Viden som
+absolut uensartede Principer. „Uden Modsigelse“ det er den Sikkerhedsventil,
+der er anbragt for at forhindre Sætningen fra at springe
+% --- p. 26 ---
+% THE DENSEST EMPHASIS PAGE IN THE BATCH.  Brandes letterspaces the two general
+% propositions he is about to attack, and leaves his own two interpolations
+% (the ɔ: gloss, and the `skulle vi springe' aside) in ordinary type.  All four
+% spans below were settled at 600 dpi, not from spacing.py alone: the two RUNs
+% it reports are real and are here extended to their true boundaries, and its
+% `Tvivl:' (1.49), `be-' (1.24) and `lute:' (1.52) are justification gaps, read
+% at the image and NOT marked.  `klart' (1.23) IS letterspaced and is marked.
+% Neither text layer records any of this, and the Google layer additionally
+% scrambles this page's line order.
+\opage{26}i Luften, og den Undersøgelse, der her skal anstilles, gaaer kun ud
+paa at prøve, hvorvidt Ventilationen er tilstrækkelig. Den opstillede Sætning
+er en Grundsætning; men det er neppe for dristigt at spørge, hvorpaa den
+hviler. Den maa vel sagtens hvile paa de almindelige Sætninger, \emph{at
+overhovedet to absolut uensartede Ytringer kunne være Ytringer af det Samme}
+--- Tro og Viden ere jo principielle Ytringer ɔ: Ytringer af et Væsen, ---
+\emph{og at overhovedet to absolut uensartede Principer kunne} --- skulle vi
+springe „uden Modsigelse“ over? --- \emph{forenes i een og samme Bevidsthed}.
+Lad os et Øieblik antage at denne sidste Sætning var sand, hvorfor staaer der
+da „kunne“ og ikke „maae“? Kunne de forenes, saa kunne de ogsaa ikke forenes,
+der er da ingen Nødvendighed, som tvinger. Og gjælder ikke det Samme, naar man
+tager de to bestemte Principer: Tro og Viden? Uden Tvivl: altsaa man kan
+forene dem og man kan lade være ɔ: Foreningen har ingen Almengyldighed.
+% `Almengyldighed' with a single e here, against `Almeengyldighed' on p. 28.
+% Both readings verified at the image; the book's own inconsistency, not
+% normalised in either direction.
+Men naar saa er, hvad bevirker da, at den, som forener dem, virkelig forener,
+hvad der kan forenes? Her spørges, om dette lader sig gjøre \emph{klart}? Idet
+Striden og Forsoningen mellem Tro og Viden af Prof.\ Nielsen er ført fra
+Videnskabens Omraade over paa „Existensens“, er det blevet vanskeligt at have
+Øie med, hvorledes den egentlig tænkes; thi paa Existensen kan man anvende det
+gamle Udtryk, som Hegel brugte om Schellings Absolute: den er den Nat, hvori
+alle Katte ere graae.
+% --- p. 27 ---
+\opage{27}Det saakaldte Existentielle, der gjør saa stærkt et Krav paa at
+gjælde for Livets sande fuldblodige Concretion, er i Virkeligheden lige det
+Modsatte, en puur Abstraction, nemlig det, der bliver tilbage, naar man fra
+Menneskeaandens Tilværelse in toto subtraherer alt det Theoretiske; det er da
+lige saa langt fra, at det efter den brugelige philosophiske Jargon sensu
+eminenti existerende Menneske fører et sandt og ægte Menneskeliv, som den
+Hund, hvilken en Naturforsker experimenterende har berøvet en Del af Hjernen,
+% `Del' and `helt' and `naturligvis' on this page are the modern forms, read at
+% the image; see ORTHOGRAPHY.md §2.  `puur' above is archaic, also as printed.
+kan siges at leve Livet helt og virkeligt. Hvad der foregaaer i „Existensen“
+lader sig da hverken let eller sikkert controllere. Men da Prof.\ Nielsen jo
+fremfor Alt vil Klarhed, saa gaaer det naturligvis ikke an, at han paa noget
+Punkt og mindst paa det afgjørende slukker Lyset, saa at Ingen kan see, hvad
+der foregaaer, og først tænder det igjen, naar der er bragt ind og ud, hvad
+der skulde bringes ind og ud i Theoriens Interesse. Hvad er det altsaa, som
+bevirker den mulige Forenings Virkeliggjørelse? Ja hvad Andet er her at tye
+til end den krasseste Umiddelbarhed, den personlige Trang, der idetmindste
+\emph{kan} opfattes som en Sag, der er aldeles individuel. Dette er altsaa det
+af saa stort et Chorus hilsede Philosophiens Mageløse: en høiere Brutalisme
+% The colon after `Mageløse' is on the page at 600 dpi and in the KB layer; the
+% Google layer drops it.
+paa Basis af Instinct, umiddelbar Forvisning eller Andet af den Art. Skulle vi
+antage denne Lære, lader os da først opgive at være Aander!
+
+Idet man tager sin Tilflugt til den umiddelbare
+% --- p. 28 ---
+\opage{28}Praxis, der som saadan er uden Almeengyldighed, er man berettiget
+til at tilfredsstille sin personlige Trang, som man lyster. Men skjøndt
+Consequensen uafviseligt er denne, saa drager Prof.\ Nielsen den dog ikke
+ligefrem. Hvilken er da den Kilde, hvoraf Philosophen øser det Indhold,
+hvormed han udfylder den ene af de i den almindelige Sætning opstillede tomme
+Rammer? Det er Aabenbaringen, Skriften, Religionen, hvormed da uden videre
+menes den christelige Aabenbaring, Skrift, Religion, som denne opfattes i de
+protestantiske Lande og navnlig i den seneste Tid er bleven opfattet i
+Danmark. Dette kan den Videnskabsmand, der tager Prof.\ Nielsens Theori til
+Rettesnor, kun gjøre derved, at han efter at have gereret sig som en subtil
+Aand, i en Haandevending forvandler sig til en Kulsvier, der med et bredt Smil
+svarer paa Ens Indvendinger, at hvad man troer, det troer man og ingen Snak om
+den Ting --- for saa atter, naar den Pust er overstaaet, at kaste Vamsen,
+vadske sig, rede sit Haar, tage sort Kjole paa og atter være subtil Aand. Hvis
+En skulde begaae den Blasphemi at spørge, hvad \emph{Begreb} man skal gjøre
+sig om en Aabenbaring i Almindelighed og den christelige i Særdeleshed, saa er
+man Kulsvier og siger: Hvad der staaer, det staaer der. Staaer der, at man
+selv skal bage sit Brød, saa skal man selv bage sit Brød, staaer der ikke
+Noget om, at man selv skal brygge sit Øl, saa behøver man ingen Skrupel at
+gjøre sig med Hensyn til Øllet. Staaer der, at man skal angre sine
+% --- p. 29 ---
+% CAPITAL Æ.  `Ære være ham' below was read at 600 dpi on this page: the book
+% prints the Æ ligature.  The Google layer renders it `Ere' (ORTHOGRAPHY.md
+% §3a); KB has it right.  Every other word on pp. 25--35 beginning with a
+% capital vowel was checked against KB for the same failure and none was found.
+% spacing.py reports no letterspacing here, and KB's `ved d e n ,' is NOT
+% emphasis: read at 900 dpi, the letters of `den' are set at the same advance
+% as those of `kunde' beside it, and the gap is the justification space before
+% the comma.  Not marked.
+\opage{29}Synder, saa skal man angre sine Synder; staaer der at Gud har skabt
+Verden i 6 Dage, saa har han gjort det i 6 Dage, for stod der, at han havde
+gjort det i 7 eller 14 Dage, saa havde han gjort det i 7 eller 14 Dage o.\ s.\
+v. (Se Dr.\ Heegaards Fremstilling af Prof.\ Nielsens Lære „Indledn.\ til
+Ethiken“ p.\ 392). Aabenbaringen er et Paradox, et absolut Paradox og som
+saadant uden al Rationalitet. Spørg altsaa ikke: Hvad er en Aabenbaring?
+eller: maa man drage Consequenser af det, som i en Aabenbaring er givet?
+eller: hvor vidt maa man drage dem? Saadanne Spørgsmaal gjøre fornuftige
+Mennesker, men det er ingen Konst at være fornuftig. Konsten er i samme
+Øieblik, som slige Spørgsmaal gjøres, at sætte Ønskehatten paa Hovedet og saa
+er man Kulsvier, hvis man ønsker det. Thi det forstaaer sig: er man berettiget
+til at gaae endog kun en Linie udenfor de Grændser, Aabenbaringens Ord (6 ikke
+7 eller 14) have draget, saa forsvinder det Overordentlige og saa er
+Standpunktet forladt. --- Altsaa: man er Kulsvier, det er den ene Side af
+% The colon after `Altsaa' is on the page and in KB; the Google layer drops it.
+Sagen. Blev man staaende ved den, da kunde man endnu blive Gjenstand for
+Sympathie og Agtelse. Respect for Kulsvieren, der i Sandhed er, hvad han
+kalder sig! Ære være ham, naar han som Kulsvierne i Plougs „Fredericiaslaget“
+gaaer løs paa sit Maal og slaaer for sin Fane „med Kulsviernæver og
+Kulsviertro“! Men naar han paa samme Tid som han er Kulsvier, skal være den
+videnskabeligt dannede Mand, da maa hans Fordring paa
+% --- p. 30 ---
+% FOOTNOTE, printed mark *).  It begins on p. 30 and RUNS OVER onto p. 31,
+% where the continuation is set below the rule with no repeated mark; it is set
+% here as one note at its mark on p. 30.  \endgraf would be needed for a second
+% paragraph, but the note is a single paragraph.
+%
+% PRINTER'S DEFECT inside this note, transcribed as printed and NOT corrected:
+% the quotation from Prof. N. is CLOSED with “ after `Brøde' but was never
+% OPENED — the compositor set only a colon after `saaledes'.  Verified at 600
+% dpi on the Google copy.  This is the batch's only quote-balance drift: the
+% fragment therefore runs one „ short of its “, on purpose.
+\opage{30}at betragtes som en helstøbt Skikkelse opbringe ethvert
+sandhedskjærligt Sind.
+
+Der staaer jo skrevet, at Døden kom ind i Verden ved Synden. Den orthodoxe
+Opfattelse heraf er den, at Døden ikke staaer i noget væsenligt Forhold til
+den menneskelige Organisme; havde de første Mennesker ikke syndet, vilde deres
+Legemer have været uforgjængeligt, uopløseligt, uangribeligt af Sygdom og
+% `Legemer have været uforgjængeligt' — the singular adjective against the
+% plural noun is the book's; both layers and the image agree.  As printed.
+Svækkelse. Men de syndede, og dermed var denne Fuldkommenhedstilstand
+forspildt. Den moderne Videnskab er forlængst paa det Rene med, at Døden ikke
+blot har rammet mangfoldige Dyreslægter, før Menneskene vare dannede, men at
+Døden staaer i et nødvendigt Forhold til det organiske Liv. Her sige altsaa
+Videnskaben og Orthodoxien hinanden skarpt imod; mod Orthodoxiens: „Døden er
+kommen ind i Verden med Synden“, stiller Videnskaben sit „Nei! Døden er ikke
+kommen ind i Verden med Synden“ paa samme Vis som den mod Orthodoxiens:
+„Verden er skabt i 6 Døgn“ stiller sit „Nei! Verden er ikke skabt i 6 Døgn,
+eftersom der er gaaet Tusinder af Aar, inden Jorden er bleven, som den
+er“\fnmark{*)}{Naar Prof.\ N.\ (Grundid.\ s.\ Logik II p.\ 456) udtaler sig
+saaledes: Det staaer fast, naar man blot ikke vil lade Videnskabens
+„Forløsning“ gjøgle med Troen, at der har været Smerte og Død til i Millioner
+Aar, før Mennesket fremtraadte paa Jorden. Og det staaer fast, naar man blot
+ikke vil lade Troens „Forløsning“ gjøgle med Viden, at Døden er Syndens Sold
+og Naturens Forkrænkelighed en Aandens Brøde“, da er Orthodoxiens haarde
+Sætning her enten forflygtiget til en puur Aandrighed, til en dristig
+Betegnelse af def uomtvistelige Slægtskab mellem Synd og Død, eller ogsaa er
+% PRINTER'S ERROR, transcribed as printed: `def' for `det'.  Read at 900 dpi —
+% the third letter carries the hooked top and two-sided crossbar of f, against
+% the flat-topped t of `det' elsewhere in the same line of the note.  Both text
+% layers independently read `def'.  The error is in the forme.
+Forsoningen aldeles ufattelig; og naar Dr.\ Heegaard (Indledn.\ til Eth.\ p.\
+394) erklærer, at man maa holde paa de 6 Dage, fordi man dog umuligt kan være
+troende Geolog eller geologisk Troende, saa er dette et daarligt og
+intetsigende Ordspil; thi den som --- det være sig nu som troende eller vidende
+--- antager Nogetsomhelst om Jordens Tilblivelse, han har en Antagelse, som
+Geologien kan corrigere.}. Nu er
+% --- p. 31 ---
+% The footnote block at the foot of this page is the RUN-OVER of the p. 30
+% note, not a note of its own: it carries no mark.  It is set above, at its
+% mark.  Three letterspaced `over' here, all confirmed at 600 dpi and all
+% flagged by spacing.py (1.27, 1.30, 1.27).  The fourth `over', in `Nemesis
+% over den' below, is ordinarily set and is NOT marked.
+\opage{31}Prof.\ Nielsens Paastand jo den, at man uden Modsigelse kan forene
+saadanne to Sætninger i sin Bevidsthed. Hvad er det da, som hidfører dette
+forbausende Resultat? Svar: De ere absolut uensartede.
+
+Man veed næsten ikke, hvorover man ved dette Svar skal undre sig mest,
+\emph{over} at saadanne Sætninger virkelig skulle udgives for absolut
+uensartede, eller \emph{over} at overhovedet absolut uensartede Phænomener
+skulle kunne rummes af eet Jeg, eller endelig \emph{over}, at selve den
+absolute Uensartethed skal være Grunden til det fredelige Forhold dem imellem.
+Man fatter vel saa Meget, at hine Sætninger forsonligt skulle kunne bestaae
+ved Siden af hinanden, fordi de saa omhyggeligt skulle holdes ude fra
+hinanden, at det aldrig kommer til gjensidig Berøring, og man seer det maaskee
+--- i Parenthes bemærket --- som en Nemesis over den i sin dialektiserende
+% Both em-dashes here are on the page; the Google layer loses them entirely
+% (it reads a stray `C' for the first and nothing for the second).
+Bestræbelse forhen saa yderligt gaaende Dialektiker, at det her er en
+Kriticisme, der skal frelse Theorien. Man begriber
+% --- p. 32 ---
+% FOOTNOTE, printed mark *).  Set at its mark, which the book places after
+% `o. s. v.' and before the closing full stop.
+\opage{32}vel ogsaa nok, at Sætningernes absolute Uensartethed kan være
+Grunden til, at de ikke kunne modsige hinanden, da Betingelsen herfor jo
+maatte være den, at de kunde sammenlignes, hvilket forudsætter Ensartethed
+indtil en vis Grad. (Ensartethed indeslutter naturligvis Uensartethed og er
+altid relativ, ellers var den Enshed.) Men hvad man aldeles ikke indseer, er,
+at den absolute Uensartethed kan være Grunden til, at to Principer, Ytringer,
+Sætninger kunne forsones; tvertimod er den en afgjørende Grund til, at de
+aldeles ikke kunne forsones, da de ikke engang kunne komme i Forhold til
+hinanden. Absolut Uensartethed er et andet Udtryk for absolut Uforenelighed.
+Prof.\ Nielsen kunde derfor lige saa godt have givet sin Sætning denne Form:
+Absolut uforenelige Principer kunne forenes eller være ikke absolut
+uforenelige --- Alt uden Modsigelse; han har sagt det, men med andre Ord. Da
+% The em-dash before `Alt' is on the page and in KB; the Google layer drops it.
+jeg i sin Tid i „Fædrelandet“ stemplede det som en Selvmodsigelse at lade Tro
+og Viden, naar de bestemtes som absolut uensartede Principer, forenes i samme
+Bevidsthed, reiste man sig fra flere Sider redebon til med tillidsfuld
+Overlegenhed at vise mig, at mit Angreb paa Prof.\ Nielsen beroede paa en
+fuldkommen Misforstaaelse; hvor jeg satte et \emph{skjøndt}, der satte Prof.\
+et \emph{fordi} o.\ s.\ v.\fnmark{*)}{se Høffding: „Philosophie og Theologie“
+p.\ 41. R.\ Schmidt: „Om Selvmodsigelsen o.\ s.\ v.“ p.\ 17. Heegaard:
+Indledn.\ t.\ d.\ r.\ Ethik p.\ 389.}. Der gives en Slutningsmaade, der er
+% `p. 17' is lower case on the page; the Google layer capitalises it (`P. 17').
+% Both \emph{} spans here were read at 600 dpi.  spacing.py caught only
+% `fordi' (1.29); `skjøndt' is letterspaced too, and KB's `s k j ø n d t'
+% corroborates it (ORTHOGRAPHY.md §3g).
+ligesaa farlig og mindst lige%
+% --- p. 33 ---
+% The page turn falls INSIDE `ligesaa'.  The lone numeral at the foot of this
+% page is printer's signature 3, not text, and is not transcribed.
+% No letterspacing on pp. 33 or 34.
+\opage{33}saa almindelig som Fusentastens: jeg kan ikke forstaae den Mand,
+følgelig har han Uret, det er Eftersnakkerens: jeg forstaaer denne Mand,
+følgelig har han Ret. Lærlingen begynder med at staae undrende, usikker, fuld
+af Spørgsmaal og Tvivl overfor Lærerens Tale, men naar det saa --- ofte
+pludseligt --- gaaer op for hans Bevidsthed, hvorledes Læreren egentlig tænker
+sig Sagen, paa hvilken Maade han vil have det Udviklede forstaaet, saa bliver
+han tidt og ofte i sin Glæde over at fatte, hvad der for Mange og saa nylig
+for ham selv var en Gaade, i samme Øieblik en Tilhænger og des mere ubetinget,
+jo mere uselvstændig han af Naturen er. En saadan Lærling udleder naturligvis
+enhver Indsigelse mod hans Mesters Lære i det heldigste Tilfælde af
+Misforstaaelse og Uvidenhed, i værste Fald af en moralsk Depravation, og man
+maa holde hans Standpunkt Noget tilgode: at En kunde forstaae, hvad Læreren
+vilde, og endda have Noget at indvende derimod, det er ikke faldet ham ind i
+hans dristigste Drømme. Jeg skulde da altsaa ikke have forstaaet, at den
+absolute Uensartethed netop var Betingelsen for den meget omtalte Forsoning.
+Hvorvel jeg allerede dengang udviklede min Anskuelse temmelig omstændelig, og
+navnlig ikke som det for nylig usandfærdigt er bleven sagt af Hr.\ Clemens
+Petersen trak mig tilbage, da Modparten „gjorde Mine til at føre Sagen ind i
+en gjennemgaaende Forhandling“, vil jeg dog her optage dette Stridspunkt
+paany. Sagen er ganske simpel. Hvis saadanne to Sætninger,
+% --- p. 34 ---
+\opage{34}som a) „Verden er skabt i 6 Døgn“, b) „Verden er ikke skabt i 6
+Døgn“ ere absolut uensartede, saa er dette det Samme som, at den ene er en
+Ytring af et Væsen (essentia), der er absolut uensartet med det Væsen, hvoraf
+den anden er en Ytring. Fiat applicatio --- den R.\ Nielsen, der udsiger
+% `Fiat applicatio', `essentia', `in toto' and `sensu eminenti' are set in the
+% ordinary roman with no contrasting face; no \textit{} — see the header.
+Sætningen a, er en absolut anden end (uensartet med) den, der udsiger
+Sætningen b; at kalde dem begge med samme Navn er en uskyldig Morskab ligesom
+Hostrups Indfald i „Soldaterløier“ at kalde alle tre Arvinger Peter. At Prof.\
+Nielsen kalder sig selv med samme Navn i begge Tilfælde, er en Caprice, man
+kan lade ham, naar man blot passer, ikke at lade sig vildlede deraf. Her er
+imidlertid ikke blot to Personer, men to Personer, der høre hver til sin med
+den anden absolut uensartede Verden; thi enhver Spaltning af et Subject er en
+Spaltning af hele den objective Verden, der speiler sig i Subjectet, eftersom
+dette dog i sidste Instans er en Ytring af hin; er Subjectet delt, saa kommer
+det principielt deraf, at den hele Verden har spaltet sig (essentia) forud.
+Man bør da ikke spørge, hvorledes det staaer sig med en Mands Selvbevidsthed,
+naar han huser saadanne hinanden modsigende Grundanskuelser; thi en saadan
+Mand kan ikke existere. Den absolute Uensartethed er den absolute Dualisme;
+men den absolute Dualisme er en Maskeradespøg, en Attrappe, der skjuler en
+virkelig Ensartethed og Enhed.
+
+Da man fra det engang indtagne Standpunkt ikke gaaer udenfor de Træk,
+Aabenbaringen indbefatter,
+% --- p. 35 ---
+% FOOTNOTE, printed mark *).  The `3*' at the foot is printer's signature, not
+% text.  `udenfor' and `paa' are letterspaced (spacing.py 1.26 and 1.26, both
+% confirmed at 600 dpi); spacing.py's `Eventyr,' (1.42) is the justification
+% gap before the comma and is NOT marked.
+\opage{35}kan man ikke yderligere vise dets Urimelighed: den christelige
+Aabenbaring indeholder jo nemlig en --- naar Hensyn tages til den nye Lære ---
+forbausende Mængde af fornuftige Sandheder, der ikke lade sig studse op til de
+nu saa yndede Paradoxer\fnmark{*)}{Angaaende dette Punkt er der i vor nyere
+Litteratur bleven drevet den uheldigste Misbrug med Ord, idet enhver i det nye
+% A small raised mark stands between `nyere' and `Litteratur' on the page and
+% is recorded by BOTH text layers as an apostrophe.  Read at 900 dpi it is a
+% speck of ink at ascender height, not a sort: Danish takes no apostrophe here.
+% Not transcribed.  (Compare ORTHOGRAPHY.md §3e, where the Google layer alone
+% promoted a speck to a full stop; here both engines did.)
+Testamente udtalt Sandhed betegnes som ikke opkommet i noget Menneskes Hjerte
+eller Hjerne. Enhver Sætning, som Mennesker kunne opfatte og forstaae, maa
+Mennesker imidlertid fra først af have undfanget; thi at frembringe og opfatte
+er een og samme Sag seet fra to forskjellige Sider. Dernæst betegnes enhver
+saadan Sandhed som paradox, det Humane modsat: saaledes skal det f.\ Ex.\ være
+en paradox, en positiv-christelig Sætning den, at man skal elske sine Fjender.
+Men i Virkeligheden seet er det slet ikke mod Forstand eller Fornuft, men mod
+Sandseligheden, den strider; at man ikke skal gjengjælde Ondt med Ondt er et
+rent Fornuftbud. Var Alt det paradoxt, som kommer i Strid med vor sandselige
+Drift, da var Fornuften selv det Paradoxe.}. Derimod er der, naar man, hvad
+man er berettiget til at gjøre, stiller sig \emph{udenfor} Standpunktet
+(christelig Aabenbaring), men \emph{paa} dets Grundsætning i dennes
+% `Grundsætning' is set with a visible gap after `Grundsæt' — a loose space in
+% the forme, recorded by both layers.  It is one word and is set as one word.
+almindelige Form (Muligheden af absolut uensartede Ytringers Forening) et
+uendeligt Spillerum for de vildeste Forsøg paa at tilfredsstille den praktiske
+% The Google layer invents a full stop after `vildeste'; the page has none.
+Interesse, den personlige Trang. Saadanne ere allerede skete; se de
+mangfoldige positive Religioner, der jo i Eventyrlighed overgaae de egentlige
+Eventyr, og dog netop
+% --- p. 36 ---
+% Continues from p. 35, which ends `og dog netop' at a clean word boundary
+% (the rest of p. 35 is taken up by its footnote and the signature `3*').
+% CAPITAL Æ: `Æren' read at 900 dpi on the Google image (the ligature is
+% unambiguous).  The Google layer reads `Eren' here, as the audit predicted;
+% KB reads `Æ ren'.  Every other word-initial capital vowel in pp. 36--46 was
+% checked at the image as well (Ens, Ende, Exempel, Element, Eftertrykket,
+% Efterskrift, Eng, En, Egnens, End, Et, Ensartethed, Er, Ex.) — all are plain
+% E/A, no further Æ in this range.
+% `lendset' is as printed (l-e-n-d-s-e-t, read at 900 dpi; both layers agree).
+% No letterspacing on this page: spacing.py detected none, and KB's `jo b ed re'
+% is ordinary ABBYY splitting — the phrase is normally set on the image.
+\opage{36}ere Frugten af den dybeste personlige Trang. Alle disse maa Prof.\
+Nielsen lade gjælde; om de have et fornuftigt Ideeindhold eller ei, gjør jo
+fra et overfornuftigt Standpunkt Intet til Sagen. Man kan ikke engang sige:
+% The colon after `sige' is on the image and in the KB layer; the Google layer
+% drops it (cf. the dropped colon at p. 59 recorded in ORTHOGRAPHY.md §3e).
+jo galere, jo bedre; thi Alt kan fordre lige Rang, hvor den personlige Trang,
+renset eller lendset for al Fornuft, er Maalestok. Det, at man som Dyrker af
+sin Gud og Dyrker af sin Videnskab paastaaer absolut stridige Udsagn, er fra
+Midten af det 19de Aarhundrede at regne ikke til Hinder for, at man udtaler
+den klare, ja den høieste Sandhed. Det er Danmark, som har Æren af denne
+Opdagelse, ved Siden af hvilken man maaskee kan stille N.\ F.\ S.\
+Grundtvigs, men visselig hverken Ole Rømers eller H.\ C.\ Ørsteds.
+
+Men man behøver ikke at blive staaende herved, de positive Religioner have
+ikke udelukkende Ret til Tilfredsstillelsen af den antirationelle Trang. Det
+er min Trang og ingen Andens, jeg skal fyldestgjøre; om jeg derved kommer til
+at leve i et Mylr af absolut uensartede Ytringer, hvad gjør det? Det strider
+mod Fornuft, mod Tanke, Fornuft! Tanke! De have ingen Stemme, hvor det
+% `Tanke,' — COMMA, not a full stop.  The two layers disagree (Google comma,
+% KB period) and the glyph is a filled blob, so it was measured at 900 dpi:
+% 19x27 px, identical to the certain comma after `Verdensprincip' on p. 37,
+% whereas this page's periods measure 19x19 and its open commas 21x40.  The
+% counter has simply filled with ink.  KB is wrong here.
+gjælder det Høieste. Man kan vælge hvilken modsigende Antagelse, man vil;
+naar man erklærer den fordret af Ens personlige, Ens ethiske Trang, kan Prof.\
+Nielsen Intet indvende mod den. Til Anskuelighed heraf blot et enkelt
+overfornuftigt Træk. Hvis En har den personlige Tro, at Martin Luther var en
+Incarnation --- vel ikke af det
+% --- p. 37 ---
+% No footnote, no letterspacing (spacing.py: none).
+\opage{37}hele Verdensprincip, men af Siriusprincipet f.\ Ex., og hvis han saa
+for den Samme som vidende har været den bekjendte Reformator, der aldeles
+Intet har med Siriusprincipet at gjøre, hvad vil det da gavne at kalde Sligt
+urimeligt og unaturligt? Sandsynlighed og Fornuft have paa dette Punkt jo
+Intet at sige. Eller skulde Philosophen virkelig ville søge Beroligelse i den
+% `Eller skulde' — no comma after `Eller'; KB inserts one, the image has none.
+Tanke, at Ingen vil falde paa rene Urimeligheder, skulde han blive reduceret
+til at appellere til Sandsynligheden, hin det Paradoxes Arvefjende,
+Sandsynligheden af at Ingen vil falde paa Noget, der i den Grad strider mod
+Fornuften? Thi denne er jo dog den eneste, der kunde have Noget imod saadanne
+Antagelser at indvende, Overfornuften vilde jo see Alt, og see, det var saare
+godt. Skulde Principernes Forfægter virkelig blive indskrænket til at ville
+til det Yderste have i Principet, hvad han paa det Bestemteste vil have sig
+% `Yderste' — CAPITAL Y, read at the image.  The Google layer lowercases it;
+% KB has the capital.
+frabedt i Virkeligheden?
+
+Da den hele besynderlige Lære saa vanskeligt lader sig tydeliggjøre, naar man
+gaaer lige løs paa Sagen, have Tid efter anden Tilhængere af Prof.\ Nielsen
+vist Publicum den Velvillie at oplyse Forholdet ved Billeder eller Analogier.
+Uden at opholde os ved, hvor mislig en slig Oplysning efter sit Væsen er,
+ville vi blot see, med hvad Held, den er foretaget. For ikke at lade noget
+Herhenhørende uomtalt, vil jeg minde om, at Hr.\ Clemens Petersen engang for
+nogle Aar siden fremstillede Forholdet mellem Forestilling og Begreb paa det
+religiøse Om%
+% --- p. 38 ---
+% `Del' (not `Deel') as printed — see ORTHOGRAPHY.md §2; read at the image.
+% LETTERSPACING inside the Heegaard quotation: `kan', `fordi', `uagtet', all
+% three confirmed at 300 dpi (wide, even inter-letter gaps) and flagged by
+% spacing.py at 1.25/1.36/1.32.  spacing.py also flagged `(det' at 1.25; the
+% image shows `(det contemplative)' ordinarily set — the parenthesis inflates
+% the predicted width.  REJECTED.
+% No footnote on this page.
+\opage{38}raade ved følgende Billede. Naar, hed det sig omtrent, En seer en
+Møllevinge dreie sig om sin Axe, og man spørger den Paagjældende, om den
+yderste eller inderste Del af Vingen har den hurtigste Bevægelse, da vil han,
+hvis han retter sig efter det sandselige Indtryk, uvilkaarligt svare: de gaae
+lige hurtigt [?]; begrebsmæssigt opfattet gaaer derimod naturligvis den
+% `[?]' is printed, square brackets and all — Brandes's interpolation into
+% Clemens Petersen's parable, not an editorial mark.
+yderste Ende meget hurtigere end den inderste. Saa lidet, hed det nu, som man
+burde „pine Forestillingen til at see Begrebet“, saa lidet burde man
+paatvinge Tanken Forestillingens Illusion: Saaledes ogsaa i det Religiøse;
+der gives een Sandhed for Forestillingen, en anden, hin første modsigende,
+for Tanken, ingen af disse gjør den anden noget Afbræk. --- Dette var
+Lignelsen; man seer, den svarer til Prof.\ Nielsens Theorie, og at Hr.\
+Petersen altsaa, hvad ikke Mange vide, har anden Fortjeneste af denne Sag end
+den at være Professorens Panegyrist. Tør man slutte fra hans Lignelse, da
+blive de religiøse Forestillinger lutter Sandsebedrag af tvivlsom
+Uundgaaelighed. Hr.\ Petersen synes imidlertid at have villet godtgjøre noget
+ganske Andet.
+
+Dernæst har Dr.\ Heegaard (Indledn.\ til Ethiken p.\ 389) leveret en
+oplysende Parallel. Hans Ord ere disse: „Paa dette (det contemplative) Trin i
+% `Parallel' — the r is damaged in this copy (Google reads `Parallel', KB
+% `Paiallel'); the image shows r with a broken leg.  Set at p. 39 line 1 of
+% the Indhold-style spelling `Parallel' again, undamaged, which settles it.
+Bevidstheden \emph{kan} der ingen Strid indtræde mellem Tro og Viden, netop
+\emph{fordi} de ere uensartede og ikke, som man ved en besynderlig
+Misforstaaelse oftere (sic!) har villet gjøre gjældende, \emph{uagtet} de ere
+uensartede
+% --- p. 39 ---
+% LETTERSPACING: `kunne', confirmed at the image (spacing.py 1.23).
+% spacing.py also flagged `deten' at 1.25 — a mis-segmentation, no such word;
+% nothing else on the page is letterspaced.  REJECTED.
+% No footnote on this page.
+\opage{39}Principer; dette „uagtet“ involverer nemlig, at Troens og Videns
+Sphærer skulde \emph{kunne} begrændse hinanden, hvilket er umuligt, saalænge
+Bevidstheden er oversvævende. Vi vælge et Exempel: Den contemplative
+Bevidsthed kan uden Modsigelse rumme paa eengang et æsthetisk og et
+astronomisk Problem, ikke uagtet, men netop fordi de ere uensartede; den kan
+naturligvis ikke til samme Tid have dem begge i Bevidstheden, men den kan
+fordybe sig i ethvert af dem, saameget den vil, uden at det ene Problem
+nogensinde kan lide Afbræk ved det andet, just fordi de vise hen til
+uensartede Udgangspunkter.“ Det turde være unødigt at give nogen Commentar
+til dette Sted, det maa vel være aabenbart selv for den lettest Bedaarede, at
+der her end ikke er Spor af Analogi tilstede. Man vil iøvrigt bemærke, at
+Dr.\ Heegaard omhyggeligt undlader at kalde Uensartetheden absolut. Da jeg
+først bestred Prof.\ Nielsens Brug af dette Udtryk, kappedes DHrr.\ Schmidt
+og Høffding om at forklare mig, at det just var deri, Hemmeligheden stak;
+havde Uensartetheden været relativ, da var det en ganske anden Sag, da vilde
+Forsoningen have været umulig. Dr.\ Heegaard synes dog at have opdaget, at
+man ved at lægge Eftertrykket paa dette Punkt kom fra Scylla i Charybdis.
+
+Den tredie og mest omtalte Parallel er den, Hr.\ Rud.\ Schmidt har draget
+mellem dette Forhold, og Forholdet mellem Poesiens og Virkelighedens Sandhed.
+Denne Analogi har noget større Interesse, da
+% --- p. 40 ---
+% `helt og holdent' — the modern form, as printed (ORTHOGRAPHY.md §2 records
+% `helt' at p. 40); read at the image.
+% No letterspacing (spacing.py: none).  KB's `N ei', `U d try k' and
+% `U dtryk' are ABBYY splitting, not Sperrsatz: all three are ordinarily set
+% on the image.  No footnote on this page.
+\opage{40}Kierkegaard maaskee flygtigt har antydet den, se hans Benyttelse af
+% `se', single e, as printed — contrast `See' opening the p. 42 footnote and
+% `See vi da nu tilbage' on p. 43, both double-e.  All three read at the image.
+Gorgias's: Den Bedragne er visere end den Ikke-Bedragne, smlgn.\ Afsluttende
+Efterskrift p.\ 349. Spørgsmaalet er da først og fremmest, om de tvende Led
+ere absolut uensartede. Man maa strax svare Nei; thi Benegtelsen ligger
+allerede i selve de brugte Udtryk: have begge Sandhed, saa ere de begge
+Momenter i Sandhedens Rige, og det er da saa langt fra, at der her kan være
+Tale om absolut Uensartethed, at der endog maa være et Element, hvori Poesie
+og Virkelighed ere absolut ensartede. Hvis nemlig Sandhed er et Begreb, der
+virkelig kan anvendes paa dem, eller, for at bruge et inderligere Udtryk, en
+Væsensbestemmelse ved dem, saa maa denne helt og holdent gjennemtrænge dem
+begge, gjennemtrænge enhver af deres andre Bestemmelser. Begge ere da
+Ytringer af en dem omfattende Totalitet. Saavidt i Almindelighed. Men det
+viser sig ikke mindre klart, naar man griber dette Forhold i et bestemt
+Exempel. Hr.\ R.\ Schmidt har brugt et saadant, som Prof.\ Nielsen ved ikke
+at underkjende det har lyst i Kuld og Kjøn. Han har anført den Folketro, at
+naar Engen damper en Sommermorgen, da er det Mosekonen, der brygger: ligesom
+der i dette Tilfælde for den Dannede ingen Modsigelse er mellem den poetiske
+Tro og den naturvidenskabelige Erkjendelse, saaledes er der heller ingen
+Modsigelse mellem Troens og Videns uensartede Antagelser. Men for det Første
+er Phantasiengen og den virke%
+% --- p. 41 ---
+% LETTERSPACING: `jeg' and `Staten', the contrasted pair in the Fuursøen
+% example — confirmed at the image (spacing.py 1.24 / 1.30).
+% Both em-dashes in `Mosekonen --- absolut naturligvis ---, hvad' are on the
+% image; the Google layer renders them as hyphens and misreads the comma after
+% the second as a quotation mark (ORTHOGRAPHY.md §3d records this very line).
+% `naturligvis', single i, as printed.  No footnote on this page.
+% NB the Google layer opens a spurious blank line before `Menneskes
+% Opløftelse'; the image shows the text running on without a paragraph break.
+\opage{41}lige Eng ikke absolut uensartede og følgelig ligesaa lidt de
+tilsvarende Opfattelser. Skil Mosen fra Mosekonen --- absolut naturligvis
+---, hvad er saa den sidste for Indbildningskraften? Folketroens
+Personification er jo ikke Andet end Virkelighedens Reflex i Phantasien, der
+uophørlig maa arbeide med det Virkelige for at frembringe Noget, der ikke er
+Virkelighed og dog er Virkelighed; for at forstaae dette, maa man bruge
+Dialektik, men Dialektiken er jo i denne Sag een Gang for alle devoveret. For
+% `devoveret.' ends the sentence with a full stop on the image; KB reads a
+% comma.
+det Andet er her ingen Analogi; thi, da den Eng, som Folkepoesien har, i
+Almindelighed vil kunne betegnes som en Phantasieng, men den, som den
+naturvidenskabelige Opfattelse rettes paa, er den virkelige Eng, forholde de
+sig ikke til een og samme Gjenstand. Man kunde da ligesaa godt kalde det en
+Modsigelse af samme Art som den mellem Tro og Viden, naar jeg paa een Gang
+siger, at \emph{jeg} eier Fuursøen (Maleri af N.\ N.) og at \emph{Staten}
+eier Fuursøen (den virkelige). En anden Sag er det, ifald man paastaaer, at
+den virkelige Engs Damp er en Virkning af, at Mosekonen brygger, og saa
+tillige siger, at den lige saa fuldt er en Virkning af physiske Aarsager: Da
+have vi en Analogi, en Modsigelse som den, hvorom Talen er; thi naar f.\ Ex.\
+Orthodoxien antager et Menneskes Opløftelse fra Jorden og gradvise Svæven ind
+i den dogmatiske Himmel, og Videnskaben benegter dette Under først i Kraft af
+Tyngdeloven, dernæst fordi man, om man end løftes nok saa høit i
+% --- p. 42 ---
+% FOOTNOTE on this page, printed mark *) — one note only.
+% `dels' twice, the modern form, as printed (ORTHOGRAPHY.md §2); read at the
+% image.  `nødvendigvis', single i.  `Stof' with a single f, against `Stoffet'
+% two lines later; both as printed.
+% No letterspacing in the body.  KB splits nearly every word of the footnote
+% (`In d b ild n in g sk ra ft'), which is ABBYY degrading in the small type,
+% not Sperrsatz — the footnote is ordinarily set on the image.
+\opage{42}Veiret, dog aldrig kommer ud af denne Verdens astronomiske Himmel
+og ind i den transscendente, saa er det det selvsamme Punkt, den selvsamme
+Himmelfart, hvorom de begge tale. --- Den søgte Analogi findes da heller ikke
+% PRINTER'S DEFECT, transcribed as an em-dash: the dash after `tale.' took ink
+% only along its lower edge and prints as a short low stroke at the baseline,
+% about a third the length of the two well-inked em-dashes lower on this same
+% page.  Read at 900 dpi.  The Google layer records a hyphen, KB drops it
+% entirely.  The construction (full stop + em-dash + capital) is the book's
+% own, cf. `noget Afbræk. --- Dette' on p. 38.
+her. Men uanseet dette, selv naar man vil nøies med i Analogiens Interesse at
+betone den Lethed, hvormed i det brugte Exempel to uensartede Opfattelser
+glide hen over hinanden uden gjensidig Paavirkning, da glemmer man dels ---
+og dette er meget slemt --- at Virkelighedserkjendelsens Fremskriden
+umuliggjør Brugen af visse tilforn vel brugelige
+Phantasiudtryk\fnmark{*)}{See Ørsted: Aanden i Naturen II.\ p.\ 4. „For en
+Indbildningskraft, der har tilegnet sig et levende nærværende Billede af
+Verdenssystemet, er Udtrykket Jordens Grundvold ikke bedre end Grundvolden
+for en velophængt Lysekrone, men om muligt endnu mindre passende“.}, dels
+overseer man, at hin saakaldte Gliden hen over hinanden i Virkeligheden ikke
+er noget Saadant, men snarere maatte bestemmes som den ene Opfattelses
+Indtrængen i den andens Lacuner eller Porer, muliggjort ved, at ingen af dem
+er ret fuldstændig. Derfor har f.\ Ex.\ Digteren des friere Haand over det
+historiske Stof, jo mere ubekjendt det er for hans Publicum; hvis dette maa
+forudsættes bekjendt med hvert lille Træk i Stoffet, da vil han nødvendigvis
+være meget bunden. Det vilde imidlertid være, hvad Kierkegaard kalder
+„Parenthesdurchløberi“ at indlade sig paa en nøiere Drøftelse heraf i
+% --- p. 43 ---
+% `momentvis', single i (ORTHOGRAPHY.md §1).  `duæ veritates' is set in the
+% ordinary roman with no contrasting face, so it takes no markup.
+% No letterspacing (spacing.py: none).  No footnote on this page.
+\opage{43}Anledning af det Spørgsmaal, hvorpaa det kommer an. Det Afgjørende
+er og bliver, at den poetiske Illusion som et fuldstændigt Unicum aldeles
+ikke er nogen Analogi: den er vel at mærke kun poetisk, naar den momentvis
+afvexlende er og er ophævet, den er vel at mærke kun poetisk som bevidst; thi
+Fuglene, som hakke i de malte Bær, eller Lazaronerne i Neapels Smaatheatre,
+% `hakke' on the image; KB reads `bakke'.
+der med Fagter røbe Helten, hvor Skurken har skjult sig, ere ikke naaede til
+den poetiske Illusion. Det Besynderligste er imidlertid, at Forsvarerne af
+denne Analogi først vilde være rent galt farne, hvis man vilde holde den for
+Alvor fast; thi den, der vil tillægge en eller anden bestemt religiøs
+Forestilling den fuldeste Virkelighed, han har dog handlet sig selv imod,
+saasnart han jævnfører den med det rent Imaginære --- det være nu nok saa
+skjønt og nok saa betydningsfuldt, baade langt skjønnere og langt mindre
+taaget end Mosekonens Bryg. Bliver Mosekonen derimod forvandlet til en
+virkelig Person, da have vi en af de antirationelle Sandheder, for hvilke
+Prof.\ Nielsen consequent maa bøie sig, og da have vi i fuld Gang Spillet med
+de to, hvilke Prof.\ Nielsen forfægter paa godt Dansk, men bekjæmper, naar de
+optræde som Middelalderens duæ veritates.
+
+See vi da nu tilbage paa det, som her er indvendt mod den nye Lære, hvad
+Betydning faaer saa den hele Opstilling af absolut uensartede Principer,
+% --- p. 44 ---
+% LETTERSPACING: `ere' in `naar absolut uensartede Gjenstande ere, saa ere de
+% ikke absolut uensartede' — the first `ere' only, confirmed at the image
+% (spacing.py 1.25).  The second is ordinarily set.
+% `væsenligt' as printed.  No footnote on this page.
+\opage{44}Ytringer, Sandheder eller hvad man skal kalde disse ilde stedte
+Væsener? Skulde det ikke forholde sig med dem som med de Byer, hvilke
+Potemkin viste sin Keiserinde som Vidnesbyrd om Egnens blomstrende Tilstand?
+De vare nemlig i egentlig Forstand kun opstillede, thi de existerede ikke.
+Subjectivt seet kan der for os umuligt gives absolut uensartede Gjenstande;
+de maatte jo som Aarsager betragtede fremkalde absolut uensartede
+Bevidsthedsytringer i det følgelig aldeles spaltede Subject. Kan da objectivt
+seet nogensomhelst Ytring, der fremgaaer af et Tilværelsesprincip eller af et
+Indbegreb af Objecter, der danne en Totalitet, være absolut uensartet med
+nogensomhelst anden? Tænk det og Du kommer i Selvmodsigelse, idet Du sætter
+en Helhed og nægter hvad der følger deraf. At være, det er at være indbefattet
+i en Tilværelse; naar absolut uensartede Gjenstande \emph{ere}, saa ere de
+ikke absolut uensartede. Man gjøre en Prøve med hvilkesomhelst Gjenstande,
+Ytringer, Phantasier eller hvad man vil, og man vil finde, at selv om de
+udelukke hinanden i en vis Henseende, gjøre de det dog i en anden Henseende
+ikke, idetmindste forsaavidt som de begge kunne falde i eet Subject. Prøv:
+„en gul Symphoni“, det kan ikke siges og dog ere Tone og Farve væsenligt
+ensartede som Bølgephænomener; „en ligesidet retvinklet Trekant“, det gives
+ikke og dog betegne begge Tillægsord mulige Bestemmelser ved Be%
+% --- p. 45 ---
+% FOOTNOTE on this page, printed mark *), keyed to `Trekant*)' in the first
+% line.  `Del' (not `Deel') at `for en stor Del Prof. Nielsen selv', as
+% printed (ORTHOGRAPHY.md §2); read at the image.
+% No letterspacing (spacing.py: none); KB's spaced-out footnote is ABBYY
+% degrading in the small type, as on p. 42.
+\opage{45}grebet Trekant\fnmark{*)}{End ikke saadanne udprægede Modstandere
+som Digterne Hr.\ Henrik Scharling og Hr.\ Rud.\ Schmidt ere absolut
+uensartede. Der gives tvertimod Punkter, hvor en absolut Ensartethed finder
+Sted imellem dem. Et saadant rammer Hr.\ Schmidt med megen Sikkerhed, naar
+han i sin Bog: „Er Hr.\ Lic.\ Henrik Scharling en alvorlig Mand?“ pag.\ 80
+fremsætter den Formodning, at Hr.\ Scharling nu „som sædvanlig har digtet os
+noget Slet“.}. Tag det, som aldeles ingen Betydning har: det Meningsløse, det
+% The colon after `har' is on the image and in the KB layer; the Google layer
+% drops it.
+Ikkeværende, skil det absolut fra det, som er, og det kan ikke engang
+udsiges; selv dette, der synes at maatte have Privilegium paa at existere,
+sondret fra sit Modsatte, er intet Andet end en Reflex af dette. Men naar
+Uensartetheden i absolut Forstand selv her ikke har nogen Magt, hvor meget
+mindre har den det da der, hvor Alt tillægges Tilværelse og Realitet.
+
+Man vilde gjøre mig høilig Uret, hvis man antog, at jeg ved at fremsætte rent
+elementære Sandheder som disse, noget Øieblik har indbildt mig at lære en
+Tænker som Prof.\ Nielsen Noget, han ikke selv fuldt saa godt vidste, Noget,
+han ikke selv har udtalt, længe før jeg for min Part havde Anelse derom. Jeg
+skylder for en stor Del Prof.\ Nielsen selv, at jeg er istand til at modsige
+ham; men det forholder sig jo ikke saaledes med Sandheden, at den, der som et
+af dens Organer har meddelt den, senere efter Behag kan tage sin Gave
+tilbage, naar den som Vaaben selv i den Svagestes Haand vilde være stærk nok
+til at for%
+% --- p. 46 ---
+% Last page of chapter 2.  Eight lines of text, then a short centred double
+% rule closing the chapter; p. 47 opens chapter 3 and is not part of this
+% batch.  The page carries no folio-side ornament and no footnote, and nothing
+% on it is letterspaced (spacing.py: none).
+\opage{46}styrre en dristig anlagt Theorie, opført paa et skrøbeligt
+Grundlag, en Theorie, der vil hæmme den aandelige Fremskriden, der vil spærre
+Veien for enhver Stræben efter at bringe Harmoni tilveie mellem Fornuft og
+Religion, mellem Menneskeaandens intellectuelle og dens ethisk-religiøse
+Krav, og som saaledes forstyrrer enhver Arbeiden paa Løsningen af en af
+Menneskeslægtens store Fremtidsopgaver.
+
+\begin{center}
+\rule{2cm}{0.4pt}\\[-4pt]
+\rule{2cm}{0.4pt}
+\end{center}
+
+%% ============================================================
+%%  3. DET ANTIRATIONELLE  (printed pp. 47--54 = PDF 51--58)
+%%  Head as printed: `3.' / `Det Antirationelle.'
+%%  Indhold reads `Det Antirationelle', without number and without stop.
+%%  NB the Google text layer renders this head with a space before the stop
+%%  (`Det Antirationelle .'); the image shows no such space.  OCR artefact.
+%% ============================================================
+\chapter*{3.\ Det Antirationelle.}
+\addcontentsline{toc}{chapter}{3. Det Antirationelle}
+\markboth{Det Antirationelle}{Det Antirationelle}
+\label{ch:3}
+
+% --- p. 47 ---
+% Chapter opening: the head `3.' / `Det Antirationelle.' is already set in the
+% skeleton and is NOT repeated here.  The page drops its folio and opens with
+% an enlarged capital `M'; the enlarged capital is not marked up.
+% NO LETTERSPACING on this page.  spacing.py flagged `Det' (1.26), `Man' (1.23)
+% and `Liv' (1.60); all three were rejected at the image.  `Det' is the display
+% head, `Man' measures wide only because of the enlarged M (the `an' is tight),
+% and `Liv' is ordinary type — the detector caught a speck of foul ink above
+% the `v'.  KB's `L itteratur' is ABBYY splitting, not Sperrsatz: confirmed
+% solid at the image.
+% `Bedste' carries a small ink blot below the B; the reading is unambiguous.
+\opage{47}Man kan sige sig selv, hvad Følgen maa blive, naar en Tænker overseer
+hine elementære Sandheder og til Bedste for en personlig Trang, der naar der
+tillægges den Almeengyldighed, bliver en Særhed, der piner og trykker Andre,
+forsøger paa at holde det Uholdbare fast. Følgen har allerede vist sig. Den er
+et Begrebsanarchie, en Begrebsforvirring, der undergraver den Grund, hvorpaa
+vor Videnskab bygges, og for hvilken Theorierne hos Dr.\ Heegaard sikkert er
+det mest fortvivlede Udtryk, som nogen Litteratur i den Retning har at opvise.
+Thi hvad have vi nu? Vi have den velbekjendte Metaphysik og den velbekjendte
+Logik med deres Begreber, fribaarne, fødte af Natur og Fornuft, levende deres
+Liv i en Verden, i hvilken de ere indordnede som Led og hvor deres Væsen
+udfoldes og kommer til sin Ret.
+% `Ret.' — FULL STOP, read at the image.  The layers disagree (Google period,
+% KB comma); Google is right here.
+Og saa have vi paa den anden Side en Verden, hvor de maa gjøre den laveste
+Trælletjeneste, den Tjeneste nemlig, i hvilken Trællen maa fornægte sin
+Herkomst og sit Væsen. Thi disse samme Begreber og Magter anvendes jo i den
+antirationelle Verden saaledes, at de slet intet
+% --- p. 48 ---
+% ONE letterspaced word: the second `Intet' (`ja at de I n t e t skulle
+% udtrykke'), read at the image and corroborated by KB's `de I n t e t'.  The
+% FIRST `Intet' three words earlier (`at de Intet skulle') is set solid, and so
+% is the whole of the following line — checked at the image, because Brandes
+% normally letterspaces a clause, not a word.  Here he does not.
+% THREE EM-DASHES on this page, all taken from the image: after `Consequens',
+% and the pair round `som man siger, indtil Skjorten'.  The Google layer drops
+% all three (it prints a blank or nothing); KB has them.
+\opage{48}Rationelt maa udtrykke. Gjøre de nemlig dette, saa forvandle de med
+det Samme de impotente Magter, for hvilke de skulle gjøre Hoveri, de saakaldte
+Kategorier: det Paradoxe, det Antirationelle, det Positive, til rationale
+Størrelser, hvad disse frygte for som visse Væsener ifølge Sagnet frygte Dagen.
+Hine Lysets Børn tvinges da til at udslukke ogsaa deres Lys for at der kan
+herske det forønskede Mørke. Man tage hvilke Begreber man vil: Princip, Lov,
+Consequens --- de anvendes saaledes, at de Intet skulle udtrykke af deres
+Væsens Indhold, ja at de \emph{Intet} skulle udtrykke, for at de kunne betegne
+det, deres Tyranner ere; thi disse ere Intet uden dem, de have underkuet, og
+blive, naar de have underkuet dem, dog ikke Andet end Jammerlighed: af Andre
+maae de laane Alt, --- som man siger, indtil Skjorten --- og saa give de sig
+Mine af at være det aandelige Livs
+% NO FULL STOP after `aandelige'.  The Google layer reads `det aandelige. Livs'
+% and KB reads it solid; the mark was measured at 900 dpi.  It is 12x14 px,
+% area 115, and its foot sits 10 px ABOVE the baseline; the certain full stop
+% after `udtrykke' in line 1 of this page measures 22x22, area 307, with its
+% foot ON the baseline.  It is a speck of foul ink, not a period — the same
+% class of Google error as the invented stop at p. 59 (ORTHOGRAPHY.md §3e).
+% `det aandelige Livs egentlige Capitalister' is also the only reading that
+% construes.
+egentlige Capitalister, eller rettere sagt, saa udgives de derfor.
+
+I det Øieblik man virkelig tager Læren om det Antirationelle paa Ordet, saa
+standser al Discussion, ja al Meddelelse; det skeer ikke, fordi man ikke rigtig
+har forstaaet Prof.\ Nielsen, men netop naar man rigtig har forstaaet ham: man
+kunde ikke misforstaae ham stærkere end ved at give sig til at drøfte Sagen med
+ham, han kunde ikke sætte en Begynder paa en vanskeligere Prøve end ved at
+opfordre ham til en fælles Drøftelse. At det forholder sig saa, skal jeg
+forsøge paa at vise, naturligvis vel vog\-%
+% `naturligvis' — single i, as ORTHOGRAPHY.md §1 records for p. 48.
+% --- p. 49 ---
+% The word `vog-/tende' is broken across the page turn; resolved with \-%.
+% Printer's signature `4' stands alone at the foot of this page: it is not text
+% and is not transcribed.
+% No footnote.  No letterspacing: spacing.py detected none and none is visible;
+% KB's `Frim urer', `E r', `Han del', `Frim u reriet', `Ud tryk' are all ABBYY
+% splitting at line ends and at ordinary justification gaps.
+\opage{49}tende mig for at falde i den Snare, Sagen ifølge sin Natur lægger for
+Enhver, der indlader sig med den.
+
+For det Første er enhver Meddelelse umuliggjort: Naar en Frimurer vil prøve, om
+en Anden er Frimurer, saa spørger han ikke den Anden derom, siger ikke heller,
+at han selv er det, han bruger overhovedet ikke Ord for at give og modtage
+denne Meddelelse, han kan tale om Vind og Veir, om Handel og Politik, ja han
+kan endogsaa tale om Frimureriet, men vil han opnaae sit Maal, bruger han et
+Meddelelsesmiddel, der ligger ganske udenfor Sproget: han seer at faae
+Leilighed til at give den Andens Haand et eiendommeligt Tryk. Er den
+Paagjældende nu ikke Frimurer, saa mærker han blot et Tryk eller han mærker
+Intet: er han Frimurer, saa forstaaer han Meddelelsen og meddeler sig igjen.
+Paa lignende Maade forholder det sig med den antirationel-religiøse Ethiker;
+han kan lige saa lidt som Frimureren meddele sig igjennem Sproget, der jo er et
+System af Tegn for Tanke- og Fornuftbestemmelser, men da han paa den anden Side
+ikke som Frimureren kan bruge Haanden istedenfor Ordet, vælger han Sprogets Ord
+til Betegnelse for Noget, der er ligesaa uafhængigt af de Fornuftbestemmelser,
+de betegne, som Frimurerens Meddelelse er uafhængig af det Haandtryk, han
+giver. Dette Noget er jo nemlig kun til for Organet for det
+Antirationel-Religiøse, men er slet ikke til for den Fornuft, for hvilken
+Sproget er Udtryk og Meddelelsesmiddel. Kan hint Noget nu ikke
+% --- p. 50 ---
+% ONE footnote, mark *), set at the closing quote of `Side“'.  Read for
+% letterspacing BY EYE at the image (spacing.py is unreliable in footnote type,
+% BATCH-AGENT.md §5): the note is set solid throughout.  It does NOT run over
+% onto p. 51, which carries a footnote of its own.
+% Two em-dashes round `thi ogsaa det er en Hemmelighed', taken from the image.
+% The quotation is „…“ low-high, tight against `Side' with no space before the
+% footnote mark; the Google layer sets it `,dialektisk … Side " *)'.
+% No letterspacing in the body either.
+\opage{50}meddeles gjennem Sproget, saa kan det naturligvis ligesaa lidt
+meddeles ved noget andet Middel, der staaer under det Rationelles Lov;
+Meddelelsens Vei er en Hemmelighed for Enhver, der ikke besidder Organet. Naar
+man spørger, hvorfor da Sproget bruges, da maa dette uden Tvivl --- thi ogsaa
+det er en Hemmelighed --- betragtes som et Incitament for at den hemmelige
+Meddelelse kan træde i Kraft; spørger man derimod, hvorfor netop Sproget
+bruges, da er dette uforstandigt spurgt, eftersom det samme Spørgsmaal kunde
+gjøres med Hensyn til ethvert andet rationelt Middel og om de hemmelige Midler
+kan der ikke spørges, da Spørgning er en rationel Act.
+
+Lad os see Rigtigheden heraf i nogle Exempler. Naar der f.\ Ex.\ er Tale om en
+antirationel-religiøs Ethik, saa betegner Ordet Ethik i den
+Antirationel-Religiøses Mund og for den Antirationel-Religiøses Øre vel den
+Fornuftbestemmelse, som Ordet udtrykker, men for det antirationel-religiøse
+Organ betegner det noget ganske Andet, som vi, netop fordi det falder udenfor
+al Fornuft, her umuligt kunne betegne. Naar det videre siges, at den paradoxe
+Ethik „dialektisk forstaaet har sin rationelle
+Side“\fnmark{*)}{Heegaard anf.\ Skr.\ p.\ 439.}, saa kan for det Første Ordet
+dialektisk ikke betegne den Fornuftbestemmelse, for hvilken det er Udtryk, men
+det betegner en Eiendommelighed ved det Antirationelle, der kun kan fattes af
+Organet og som dette
+% --- p. 51 ---
+% ONE footnote, mark *), set immediately after `hedder,'.  Read for
+% letterspacing BY EYE: set solid.  It does not run over onto p. 52.
+% Printer's signature `4*' stands alone at the foot, below the note: not text.
+% `Incitament.' — FULL STOP before `Naar', read at the image; KB reads a comma
+% (`Incitament, N aar') and is wrong.
+% No letterspacing on the page.  KB's `E t og Alt', `Betyd ning', `N aar' are
+% ABBYY artefacts, rejected at the image.
+% `naturligvis' — single i, as ORTHOGRAPHY.md §1 records for p. 51.
+\opage{51}optager i sig, foranlediget derved, at Fornuften opfatter hvad Ordet
+udtrykker, for det Andet kan Ordet rationel paa ingen Maade have sin vedtagne
+Betydning, men det antyder kun en ny Eiendommelighed, for hvis Optagelse af
+Organet Bestemmelsen det Rationelle er Incitament. Naar det endelig
+hedder,\fnmark{*)}{Heegaard p.\ 406, 439, 445.} at det Antirationelle i Ethiken
+fremkommer som en Consequens af det Rationelle, saa betegner Ordet Consequens
+her naturligvis ikke, hvad det synes at betegne, men endnu en ny og interessant
+Eiendommelighed ved det Antirationelle, til hvis Optagelse
+Fornuftbestemmelsen Consequens inciterer. Ja selv om Udtrykket det
+Antirationelle gjælder dette. Kun for Tanken og Fornuften er det antirationelt;
+det, for Opfattelsen af hvilket det er Incitament, kan altsaa ikke være det
+Antirationelle, men er Noget, om hvis Forhold til, om hvis Gyldighed eller
+Ugyldighed for Tanken der ikke kan være Tale, da dets Eiendommelighed i Et og
+Alt kun er for Organet. Og saaledes overalt: Ordene med deres
+Fornuftbestemmelser ere ligesaa mange Incitamenter, der foranledige det
+antirationel-religiøse Organ til dets mange særegne Functioner, for hvilke
+disse Ord aldeles ikke ere Udtryk; ihvad hine end ere, meddeles kunne de ikke.
+
+Det Samme, der er Grunden til, at det Antirationelle ikke lader sig meddele,
+begrunder ogsaa, at det ikke kan objectiveres og overhovedet ikke tænkes
+% --- p. 52 ---
+% No footnote, no letterspacing (spacing.py: none; confirmed at the image).
+% `„absolut“' — low-high quotes, set TIGHT, with the comma outside the closing
+% mark.  Google reads `„absolut “' with a space; that is the justification
+% artefact of ORTHOGRAPHY.md §3f and KB reads `„absolut"'.  Both are wrong.
+% Two em-dashes round `der forholder sig til det Ideelle', from the image.
+\opage{52}eller gjøres til Gjenstand for nogen Erkjendelse, i hvilken
+Tænkningen er et Moment. Grunden er den, at det falder absolut udenfor al
+Rationalitet. At der maa lægges Eftertryk paa „absolut“, er en Selvfølge, da
+Intet i Tilværelsen gaaer op i Rationalitet, da det Rationelle overalt
+forudsætter det Reelle, uden hvilket det selv ingen Realitet besidder. Men
+Rationelt og Reelt gjennemtrænge hinanden, saa de høre til hinandens Væsen,
+eller bestemtere: det er samme Væsen, der adskiller sig i sine to Væsenssider.
+Det Rationelle staaer da under det Reelles Lov og det Reelle under det
+Rationelles. Viser der sig derfor et Reelt, der ganske unddrager sig det
+Rationelles Lov, saa kan selvfølgelig ingen rationel Bestemmelse i mindste
+Maade udtrykke dets Væsen, og det kan hverken være til for Tænkningen --- der
+forholder sig til det Ideelle --- eller for den Erkjendelse, der svarer til det
+Reelle, fordi Tænkningen overalt er et Moment i den, ligesom det Ideelle
+overalt er et Moment i det Reelle. Bestemmelsen det Reelle kan da lige saa lidt
+som nogen anden anvendes paa det Antirationelle, den er kun som hine tidligere
+nævnte Incitament for, at Organet kan fungere i en vis bestemt Retning. Det
+Samme gjælder saa om Ordet fungere og de øvrige Udtryk, der alle betegne Noget,
+hvori er et Rationelt.
+
+Hvis det Antirationelle ikke opfattes saaledes, saa forvandles det til et
+Rationelt; thi et Rationelt er et Noget, der er reelt, et Reelt er et Noget,
+der er
+% --- p. 53 ---
+% ONE letterspaced word: `kjende' in `Vi k j e n d e altsaa ikke noget
+% Antirationelt'.  Read at the image: `Vi' immediately before it is SOLID, and
+% so is the whole of the following line (`altsaa ikke noget Antirationelt,
+% kjende intet Organ'), which was checked because the second `kjende' five
+% words later is the same word unemphasised.  spacing.py flagged `kjende' only,
+% and the image agrees.
+% KB's `h ø re r' (`hvortil da hører') and `e r' (`tirationelle er, det er')
+% were both checked at the image and are SOLID — ABBYY noise, not Sperrsatz.
+% One em-dash after `aldeles ikke udtrykke', from the image.
+\opage{53}rationelt, men et Antirationelt er et Noget, der hverken er reelt
+eller rationelt, der ikke er et Antirationelt, der vel kan kaldes saa, men dog
+egentlig ikke kaldes saa med Rette, da det aldeles Intet kan have at gjøre med
+det Udtryk, hvormed det benævnes. Deraf følger saa tillige, at der ingen
+Videnskab kan dannes om det; der kan meget vel dannes et System af Tanker, men
+dette vil blot sige et System af Incitamenter for det Antirationelles
+hemmelighedsfulde Virken, som hine Tanker aldeles ikke udtrykke --- hvortil da
+hører, at Ordet Incitament heller Intet udtrykker, der angaaer Forholdet mellem
+det Rationelle og det Antirationelle, da der slet intet Forhold er. At der
+ingen Kritik kan gives af det Antirationelles Fremstilling, da der ingen
+Fremstilling kan findes af det; at ingen Discussion kan tænkes med den, der
+staaer paa det Antirationelles Standpunkt, behøver man nu kun at minde om,
+eftersom Kritik og Discussion ere Acter, der staae under det Rationelles Lov.
+
+Naar vi sluttelig erindre, at det at kjende er en rationel Act, hvilket ikke er
+det Samme som en blot rationel, saa følger det af sig selv, at vi ikke kjende
+noget Reelt, der ikke tillige er rationelt. Vi \emph{kjende} altsaa ikke noget
+Antirationelt, kjende intet Organ for det Antirationelle. Er det da ikke? Nei;
+thi det at være har en rationel Side; at sige, at det Antirationelle er, det
+er: at sige, at det er rationelt.
+% --- p. 54 ---
+% Last page of chapter 3.  FIVE lines of text, continuing the paragraph begun
+% on p. 53 (the first line is flush to the margin, not indented), then a short
+% centred double rule closing the chapter — the same ornament that closes
+% chapter 2 on p. 46.  The rest of the leaf is blank.  The page drops nothing
+% else: no footnote, no signature, no letterspacing (spacing.py: none;
+% confirmed at the image).
+% p. 55 opens chapter 4 and is not part of this batch.
+\opage{54}Hvad skulle vi da sige om det? Vi kunne Intet sige, ligesaa lidt
+bekræfte som benægte Noget derom, og man maa fremfor Alt erindre, at hvad her
+er sagt om det, Intet udtrykker om dets Væsen, er absolut og ubetinget fremmed
+for det.
+
+\begin{center}
+\rule{2cm}{0.4pt}\\[-4pt]
+\rule{2cm}{0.4pt}
+\end{center}
+
+%% ============================================================
+%%  4. DUALISMENS CONSEQUENSER  (printed pp. 55--76 = PDF 59--80)
+%%  Head as printed: `4.' / `Dualismens Consequenser.'
+%%  Indhold reads `Dualismens Consequenser', without number and without stop.
+%%  p. 76 closes the chapter and then carries an unheaded Efterskrift.
+%% ============================================================
+\chapter*{4.\ Dualismens Consequenser.}
+\addcontentsline{toc}{chapter}{4. Dualismens Consequenser}
+\markboth{Dualismens Consequenser}{Dualismens Consequenser}
+\label{ch:4}
+
+% --- p. 55 ---
+% Chapter opening: `4.' / `Dualismens Consequenser.' is already set by the
+% skeleton's \chapter*, so it is NOT repeated here.  The page drops its folio
+% and opens with an enlarged capital `N' (two lines deep); per the batch brief
+% the enlarged capital is not marked up.  spacing.py's `single?: Dualismens
+% (1.24)' is the chapter head, which is set in a larger display face, not
+% letterspaced --- read at the image.  No letterspacing anywhere on p. 55.
+% TWO footnotes, marks `*)' and `**)'.  `Propædeutik' has the æ ligature: read
+% at 600 dpi.  The Google layer reads `Propedeutik' (ORTHOGRAPHY.md §3b); KB
+% reads `P hil. P ropæ deutik'.  Neither was copied.
+\opage{55}Naar der er kommen en lille, næsten usynlig Revne i et Glas, saa kan
+den undertiden, efter længe at have holdt sig paa samme Punkt, med Eet slaae
+igjennem og spalte hele Glasset. Naar en af det menneskelige Legemes
+Extremiteter angribes af en Sygdom, da kan Skaden fra dette Udgangspunkt æde
+sig ind i Legemet og angribe dets Sundhed i sin Rod. Saaledes er det gaaet med
+den Dualisme, der tidligt\fnmark{*)}{Phil.\ Propædeutik 1857 p.\ 77.} ytrede
+sig i Prof.\ Nielsens Anskuelse af Forholdet mellem Tro og Viden. Den syntes
+længe uskadelig for hans Theorie; thi den angik jo ikke Theorien selv, den
+beroede jo kun paa, at denne Theorie ingen Indflydelse fik paa hans Praxis; men
+nu har den slaaet saa kraftigt igjennem, at den er trængt ind i selve hans
+philosophiske Grundanskuelse\fnmark{**)}{Bemærkninger om theoretisk og praktisk
+Erkjendelse. Nord.\ Universitetstidsskr.\ Tillægshefte til 10de Aargang, 1866.
+Kjbh.}. I en vis Forstand kunde dette synes forunderligt: man skulde troe, at
+det ingen Virkning vilde have paa
+% --- p. 56 ---
+% One footnote, mark `*)'.  Its page reference is 343: read at 600 dpi.  The KB
+% layer reads `p. 543' --- KB is wrong, as ORTHOGRAPHY.md §3g-bis predicts for
+% footnotes.
+% `helt ind i Videnskaben' --- SINGLE e, as printed (cf. `heelt' p. 61).
+% The French is set in the ordinary roman, no contrasting face, so no markup:
+% `comme une base, qui peut porter la trinité chrétienne'.  Both accents are
+% acute and were read at the image.
+% No letterspacing on this page (spacing.py: none; confirmed at the image).
+\opage{56}Philosophens Lærebygning, at han udenfor sin Videnskab havde en
+uvidenskabelig Forvisning. Selv om Prof.\ Nielsen vilde gaae saa vidt at
+forbyde os at anvende den Theorie, han gav os, nuvel --- kunde man sige --- saa
+lad os idetmindste være theoretiske i Theorien. Var Meningen ikke den, hvorfor
+har da Professoren vel ellers saa tidt og med saa stor Fornøielse fortalt os
+Anecdoten om Laplaces Svar paa Napoleons Spørgsmaal? Vilde det ikke være høist
+forunderligt, om den Philosoph, der saa stærkt har betonet Videnskabens Protest
+mod ethvertsomhelst Dogme, skulde ende med som Victor Cousin i Frankrig at
+frembyde sit Gudsbegreb „comme une base, qui peut porter la trinité
+chrétienne“?\fnmark{*)}{se Grundid.\ s.\ Logik II.\ p.\ 343.} Men Sagen er den,
+at netop fordi den Adskillelse, som Prof.\ Nielsen vil anbringe mellem Livet og
+Videnskaben er saa chimærisk, netop derfor strækker Existensens Spaltning, den
+„psychologiske“ Splid sig helt ind i Videnskaben, hvorhen den aldeles ikke
+skulde kunne naae. I sine „Bemærkninger om theoretisk og praktisk Erkjendelse“
+har Professoren ladet Spaltningen fra det religiøse Omraade slaae over paa det
+ethiske, og fra det ethiske paa Erkjendelsens. Her er det da ikke blot Religion
+og Videnskab, men Handlen og Erkjenden og indenfor Erkjendelsen igjen den
+theoretiske og den „praktiske“ Erkjendelse, der staae som absolut uensartede
+overfor hinanden. Det har hermed
+% --- p. 57 ---
+% THE MARK `*)' IS PRINTED TWICE ON THIS PAGE AND THERE IS ONLY ONE NOTE at the
+% foot (`Heegaards Fremstilling...'), both quotations being from Heegaard.  The
+% note is set here at the first mark; the second occurrence, after
+% `Genesis“', is transcribed as the literal `*)' the page prints, since it
+% refers back to the same note.  Read at 600 dpi: the second mark is a SINGLE
+% asterisk, not `**)'.  The footnote itself carries no letterspacing (checked
+% by eye at 600 dpi; KB's `F rem stillin g', `L æ re' are ABBYY noise).
+% FOUR letterspaced runs, all read at 600 dpi:
+%   `Kraft af den samme Udviklingslov som gjælder indenfor det Rationelle'
+%   `Fornuft'          (`bestemmer det Logiske' is NOT spaced)
+%   `ved det Antilogiske'   (`og omvendt“' is NOT spaced --- checked)
+%   `(et Antilogisk)'  --- the parentheses share the widened spacing
+%   `Paradox'          --- in `„et rationelt Paradox“' ONLY the last word is
+%                          letterspaced; `et ratio-/nelt' is set solid.
+\opage{57}haft samme Forløb som med Paradoxet. Om et Paradox, et absolut
+Paradox i og for sig kan man mene hvad man vil; men hvad man saa mener, maa det
+dog vel være klart, at et formidlet Paradox er en fuldkommen Uting. Man vil
+ogsaa erindre, hvor latterlig Kierkegaard fandt al „Skimten“ ligeoverfor det
+absolute Paradox (Afsl.\ Eftskr.\ p.\ 433); men hvad er det vel Andet end den
+aller morsomste „Skimten“ naar det hedder\fnmark{*)}{Heegaards Fremstilling af
+Prof.\ Nielsens Lære, Indledn.\ til Ethiken p.\ 439.} at „det paradoxe
+Standpunkt fremkommer i \emph{Kraft af den samme Udviklingslov som gjælder
+indenfor det Rationelle}“ og at „den rationelle Videnskab fordobler sit
+Synspunkt saaledes, at den paa eengang erkjender det Paradoxes existentielle
+Ubegribelighed og just i Kraft af denne Erkjendelse tillige opdager den
+Udviklingslov, hvorefter Videnskaben giver en Afspeiling af det Paradoxes
+Genesis“*).
+% `*)' above: the page's second, repeated reference to the note already set.
+Saaledes kommer det relative Paradox til at forberede det absolute og bane
+Veien for det. Medens det dog endnu i Grundid.\ s.\ Logik II.\ p.\ 278 hedder
+at „Magten i sit Væsen er lige saa rationel som Viden,“ og at „den uendelige
+\emph{Fornuft} bestemmer det Logiske \emph{ved det Antilogiske} og omvendt“
+bliver hos Dr.\ Heegaard selve det at ville, forsaavidt det er et for den
+theoretiske Viden Incommensurabelt (\emph{et Antilogisk}) kaldt „et rationelt
+\emph{Paradox}“ (p.\ 441) og dette vakre Begreb
+% --- p. 58 ---
+% TWO footnotes, marks `*)' and `**)'; the second reads `P. 66.' with a CAPITAL
+% P, read at 600 dpi.  (The batch brief warned the Google layer might be silent
+% about the second note; in this extraction it is not --- it reads `** ) P. 66.'
+% --- and the image carries both.)  Neither note is letterspaced.
+% ONE letterspaced run: `ikke ligefrem' in `at Praxis ikke ligefrem lader sig
+% aflede af Theorie'.  The SECOND `ikke ligefrem' on this page (`at
+% Videnskaben ikke ligefrem kan modbevise Miraklet') is set solid --- read at
+% the image, and spacing.py flags only the first.
+% `helt ned i Immanensens' --- single e, as printed.
+% `Prof.:' --- the colon is on the image and in KB; the Google layer drops it.
+\opage{58}danner saaledes den forønskede Overgang. Som det Paradoxe nu her har
+skudt Rødder helt ned i Immanensens rationelle Verden, saaledes ogsaa den
+absolute Uensartethed.
+
+Det er imidlertid vanskeligt nok paa dette Punkt at faae en tilstrækkelig skarp
+og afgjort Udtalelse af Prof.\ Nielsen. Han bruger vel stærke Ord, men han
+tilføier gjerne en lille Bisætning eller Bibestemmelse, der atter berøver
+Ordene deres „resolute“ Præg, han tager med den ene Haand, hvad han har givet
+med den anden. Han befæster Gabet mellem Praxis og Theorie, han synes endog at
+gaae saa vidt, at han vil negte, at overhovedet Theorien som saadan lader sig
+overføre i Praxis; thi --- hedder det --- „det, der erkjendes theoretisk, kan
+ikke erkjendes praktisk“\fnmark{*)}{Anf.\ Sted p.\ 69.}. Denne Paastand synes
+dog at være af en Uforsigtighed, der idetmindste har det for sig at være
+„resolut“. Men rettede nu En det Spørgsmaal til Prof.: Siger Du da virkelig, at
+Praxis ikke lader sig aflede af Theorie? da kan han svare med sine egne Ord:
+Ingenlunde, jeg har kun sagt, at Praxis \emph{ikke ligefrem} lader sig aflede
+af Theorie\fnmark{**)}{P.\ 66.}. Og hvo i al Verden vilde modsige det? Paa
+samme Maade erklærede Hr.\ Professoren i Indledningen til Grundid.\ s.\ Logik
+I, at Videnskaben ikke ligefrem kan modbevise Miraklet. En værdifuld Kategori,
+den
+% --- p. 59 ---
+% One footnote, mark `*)'.  `Propædeutik' again with the æ ligature, read at
+% 600 dpi; the Google layer reads `Propedeutik'.  Unlike the p. 55 note, this
+% one prints a full stop after `Propædeutik'.  No letterspacing in the note
+% (read by eye at 600 dpi, since spacing.py is unreliable in footnote type).
+% ORTHOGRAPHY, all three read at the image and NOT normalised in either
+% direction: `deels ... deels' (p. 42 prints `dels'), and `naturligviis' ---
+% the ONLY one of the book's twelve occurrences that doubles the i.  The Google
+% layer silently modernises it (ORTHOGRAPHY.md §1); KB has it right.
+% `Fremdeles:' HAS a colon --- on the image and in KB; Google drops it.
+% `Oprindelighed med Tanken (p. 68)' --- no stop after `med'; Google's `med.'
+% is a speck promoted to a full stop (ORTHOGRAPHY.md §3e).
+% ONE letterspaced run: `ikke ligefrem' in line 1.  `den absolute Uensartethed
+% var bevist' is NOT letterspaced --- the wide gaps there are justification,
+% the letters within each word are tight (read at 600 dpi).
+\opage{59}Kategori: \emph{ikke ligefrem}, værdig den Mand, der saa skarpt har
+bebreidet den speculative Dogmatik „den svampagtige Blødhed, hvormed Kategorien
+Grad overalt i ethvert nok saa afgjørende Dilemma, deels direkte, deels
+indirekte maa figurere“\fnmark{*)}{Phil.\ Propædeutik. Efteraarshalvaar 1865
+p.\ 173.}.
+
+Fremdeles: Prof.\ sprænger Broen i Luften mellem Tanken og Villien, efter
+først at have slettet Følelsens Territorium ud af sit Landkort og delt denne
+svagere Magts Besiddelse mellem hine eneraadige Magthavere. Han tillægger ikke
+blot Villien lige Oprindelighed med Tanken (p.\ 68), men lægger en saadan Vægt
+paa Gjendrivelsen af den Hegelske Vildfarelse, at Villien kun er en
+Modification af Tænkningen, at man skulde troe, den absolute Uensartethed var
+bevist, saasnart blot denne Misforstaaelse var gjendrevet. Men Spørgsmaalet er
+jo her slet ikke det, om Villien lader sig aflede af Tanken eller omvendt, men
+om begge disse Væsensytringer ikke lade sig aflede af et og samme Grundvæsen.
+Negtes dette, da have vi Dualismen, ren og skjær. Men det Afgjørende eller
+rettere Mangelen paa Afgjørelse er ogsaa her, at det i Virkeligheden kun
+tilsyneladende benegtes. Thi indvender man, at Tanken og Villien dog staae i
+uafbrudt Forhold til hinanden, da svarer Prof.\ blot: det har jeg jo aldrig
+lagt Skjul paa „men Tanken er derfor ikke Villie, Villien ikke Tanke o.\ s.\
+v.“ (p.\ 67) hvad det naturligviis ikke kunde falde noget
+% --- p. 60 ---
+% No footnote on this page.
+% ONE letterspaced run: `grændsende', broken across the line as `g r æ n d-' /
+% `s e n d e' and read at the image.  spacing.py flags both halves separately.
+% ORTHOGRAPHY: `anden Del p. 457' --- single e, as printed (cf. `Deel' p. 70),
+% and `naturligvis' single i in the quoted passage (cf. p. 59 above).
+% The quotation `„En mat Idee ...' OPENS here and does not close until
+% `Slutningen.“' on p. 61: the „ on this page is deliberately unmatched.
+\opage{60}Menneske ind at benegte. Forsøger man da for at naae tilbage til
+Centrum at vende Prof.s egne Ord imod ham, som følger: Hvis „Religionen
+forudsætter en Aabenbaring og Aabenbaringen et Under, men Videnskaben fornegter
+Underet og forkaster Aabenbaringen“ (p.\ 63) saa kan den Form af det Religiøse,
+der lader sig forene med Videnskaben, kun være en saadan, der er uden Undere og
+uden Aabenbaring --- da svarer Prof.\ Nielsen bittert, at „slige
+Expectorationer mere charakterisere de livlige end de grundige Hoveder“ (p.\
+73) uanseet, at det er ham selv, der har opstillet Præmisserne, af hvilke denne
+Slutning med Nødvendighed maa drages. Opgiver man da Modet og indvender blot
+tilsidst, at Prof.s Anskuelse da maa være en aabenbar Dualisme, kan
+„Bemærkningernes“ Forf.\ med Rette svare: Jeg siger det jo selv, jeg er
+næstendels Dualist; thi --- hedder det --- „der gives i Aandslivet stærke til
+Dualisme \emph{grændsende} Modsætninger“ (p.\ 66). Næstendels-Dualismen er
+beslægtet med den af Prof.\ N.\ saakaldte „Middelveis-Theologie“; man fanger
+den ikke, den er saa smidig at den glider Enhver, der vil gribe den, afhænde.
+
+Det er skjønne, sande og begeistrede Ord, som Grundideernes Logiks Forf.\
+udtaler i anden Del p.\ 457: „En mat Idee har naturligvis matte Extremer med
+svag Midte og mat Sammenslutning, derfor er den immanente Speculation altid saa
+ængstelig for hvad der kunde ligne en Dualisme. Den mægtige, i
+% --- p. 61 ---
+% One footnote, mark `*)' (the asterisk is ink-damaged on this copy but is a
+% single star at 600 dpi).  No letterspacing in the note.
+% ORTHOGRAPHY: `heelt ud' --- DOUBLE e, as printed, the book's one `heelt'
+% against `helt' on pp. 27, 40, 56, 58.  Read at the image.  Do not normalise.
+% No letterspacing in the body of this page (spacing.py: none; confirmed).
+% The closing “ in line 4 closes the quotation opened on p. 60.
+% KB reads `relative”' with the wrong closing mark; the image has „…“.
+\opage{61}Væsen guddommelige Idee har derimod mægtige Extremer, dens Udslag i
+kraftig Dualisme er kun Forudsætning for den uendelige Overlegenhed, hvormed
+den fuldfører Slutningen.“ Men hvad hjælper det os, at disse Ord ere sande,
+naar i det Psychologiske „Slutningen“ udebliver og uforsonlige Modsigelser
+stilles Ansigt til Ansigt mod hinanden. Vi skylde alle Prof.\ Nielsen Tak og
+Anerkjendelse for den Energi, hvormed han har forfulgt det Ideelle heelt ud i
+dets Modsætnings yderste Extrem, Beundring for den geniale Tillid, hvormed han
+altid har følt sig forvisset om, at det vel skulde lykkes at vise selv det
+Stridigstes Eenhed i den mægtige Idee; vi høre ham uden Uvillie tale haant om
+dem, der vilde skræmmes selv af Skyggen af en Dualisme; men, det forstaaer sig,
+dog kun saa længe, som den virkelige Dualisme ikke bliver udgivet --- som
+Manden i Eventyret --- for sin egen Skygge. Er Tilliden hos Læreren først
+bleven til Overmod, da svinder hos Lærlingen Trygheden for Følelsen af en
+virkelig Søndersplittelse, en Spaltning, der ikke lader sig skjule under
+ubestemte Vendinger, som de nylig anførte, et Brud, der ingenlunde lader sig
+klinke ved den Art Dialektik, der bestaaer i en Sammentvingen af modsigende
+Udtryk som „rationelt Paradox“ eller „absolut uensartede Ytringer, der vise sig
+relative“\fnmark{*)}{Bemærkningerne p.\ 65.}.
+
+Heldigvis lader „Bemærkningernes“ Forf.\ sig ikke
+% --- p. 62 ---
+% No footnote on this page, and no letterspacing: spacing.py's `single?: Sag'
+% and `single?: der' were both rejected at the image (ordinary type, wide
+% justification gaps only).
+% `væsentlig praktisk' here has the t; p. 63 prints `væsenlig'.  Both stand as
+% printed.
+% The quotation `„Vistnok falde ...' opens here and closes at `Bevis.“' on
+% p. 63, so the „ on this page is deliberately unmatched.
+\opage{62}nøie med at udtale almindelige Sætninger, han vælger bestemte
+Exempler til Oplysning af det Fremsatte; men som det i en saa mislig Sag var at
+vente, Prof.\ N.\ er sært uheldig med de Exempler, han giver. Han udtrykker sig
+(p.\ 69) paa følgende Maade: „Vistnok falde saadanne Kategorier som Valgfrihed,
+Valg, Beslutning o.\ fl.\ ind under Tankens Belysning, forsaavidt de klare sig
+i sædelig Erkjendelse; men i Principet ere de ligefuldt Villies-Kategorier,
+deres Erkjendelse er væsentlig praktisk. Det, der erkjendes theoretisk, kan
+ikke erkjendes praktisk; det nytter ikke at beraabe sig paa, at Indholdet, der
+erkjendes, er det Samme, kun Erkjendelsesmaaden forskjellig; i enhver
+afgjørende Erkjendelse bliver Indholdet bestemt ved Maaden, og Maaden ved
+Indholdet. At Modet som Dyd kan erkjendes i Theorien, maa indrømmes; --- men
+dersom det Mod, der erkjendes theoretisk, virkelig i Eet og Alt var det samme,
+det selvsamme, som det, der erkjendes praktisk, hvad vilde saa heraf følge?
+Heraf vilde jo følge, at en dygtig theoretisk Tænker, uden at vove Noget, uden
+at udsætte sit Liv for nogen virkelig Fare, maatte kunne tænke sig saaledes ind
+i det sande Mod, at han i Virkeligheden med det Samme tænkte det sande Mod ind
+i sig, og saaledes ved objectiv Tænkning, hvor feig han for Resten var af
+Naturen, virkelig blev modig. Men at den, der i Virkeligheden er feig, om han
+end tænker nok saa theoretisk, ligesaa lidt kan tilspeculere sig virkeligt Mod,
+som den, der er uden Penge, om han
+% --- p. 63 ---
+% No footnote, no letterspacing (spacing.py: none; confirmed at the image).
+% `væsenlig er praktisk' --- WITHOUT the t, as printed here, against
+% `væsentlig' on p. 62.  Read at the image; both layers agree.  Not normalised.
+% The closing “ in line 3 closes the quotation opened on p. 62.
+% `Bemærkningerne“,' --- KB reads `gerne11' (its usual garbling of “).
+\opage{63}end vilde tænke theoretisk objectivt, til han revnede, kan
+tilspeculere sig virkelig Penge, trænger ikke til Bevis.“
+
+Jeg skal ikke videre opholde mig ved det sidste Exempel med Pengene, som man
+ikke skal kunne tilspeculere sig, om man saa tænkte, indtil man --- efter
+Prof.\ N.s kraftige Udtryk --- revnede; jeg troer, man uden Chicane kan
+paastaae, at enhver Kjøbmand, ja endog blot enhver Børsspiller, der har
+speculeret, vil kunne lære Prof.\ Nielsen, at man kan speculere sig Penge til,
+og Penge fra. Eller er det maaskee i Ordene „theoretisk objectivt“ at Pointen
+stikker? Jeg troer dog knap, at Børsspeculationer kunne henregnes til den
+subjective, den ethisk-praktiske Tænkning. Men hvad jeg vil holde mig til, er
+Exemplet med Modet. Thi dette Exempel er et Vidnesbyrd fremfor alle om den
+Mangel paa Klarhed og besindig Eftertanke, der charakteriserer hele den nye
+Lære. Først gjøres der en Inddeling af Kategorierne i Villieskategorier og
+Videnskategorier; saa siges der om de første, at deres Erkjendelse væsenlig er
+praktisk; dernæst nævnes Modet som Exempel. At Prof.\ Nielsen lægger Vægt
+herpaa, det sees deraf, at dette Exempel ikke alene forekommer een Gang i
+„Bemærkningerne“, men hos Echoet Hr.\ Dr.\ Heegaard fulde fire Gange, nemlig
+p.\ 385, 399, 400, 405. Hvis her nu med Modet mentes den Uforsagthed, der
+næsten som et physisk Anlæg kan være eet Menneske medfødt og et andet berøvet,
+da vilde Den visselig med Rette
+% --- p. 64 ---
+% No footnote on this page.
+% CAPITAL Æ: `Æren kræver' --- the ligature read at 600 dpi (ORTHOGRAPHY.md
+% §3a lists p. 64 among the six places the Google layer loses it; it reads
+% `Eren' here, KB reads `Æ ren').  Every other word-initial capital vowel in
+% pp. 55--65 was checked at the image as well (Eet, En, Er, Erkjendelse,
+% Exempel, Extremer, Et, Alt, Andet, Aandens, Anlæg) --- all plain E/A.
+% PRINTER'S ERROR, transcribed as printed: `Den thoretiske Erkjendelse' for
+% `theoretiske'.  Read at 600 dpi; both layers agree on `thoretiske'.
+% `tungnem' (not Google's `tunguem') and `overvinder' (not KB's `oven inder')
+% read at the image.
+% THREE letterspaced passages, all read at the image:
+%   `praktisk'  in `Modet som praktisk Bestemmelse'
+%   `Dyd'       in `Modet som Dyd'
+%   `hvor ivrigt han saa bestræber sig for at gjøre det til Et og Alt.'
+\opage{64}være latterliggjort, som troede, at han, hvor feig han end af Naturen
+var, kunde ved objectiv Tænkning blive modig --- af Naturen. Men hvad da blev
+sagt om Modet som \emph{praktisk} Bestemmelse, vilde rigtignok uheldigvis ogsaa
+gjælde i samme Maal om alle de theoretiske Anlæg; thi man kan ligesaa lidt,
+naar man af Naturen er tungnem, sentænkende og svagtbegavet tilspeculere sig
+medfødt Lærenemhed, Skarpsindighed eller Vid. Men da her nu, som det siges,
+udtrykkeligt sigtes til Modet som \emph{Dyd}, er den Bestemmelse som gives,
+ligefrem falsk: Den thoretiske Erkjendelse af, hvad Sandheden byder, hvad et
+Pligtforhold er, hvad Æren kræver, hvad et Fædreland vil sige, kan og skal
+gaae saaledes over i Kjød og Blod, at den bekjæmper og overvinder den naturlige
+Forsagthed, hvor denne staaer Udførelsen af det Rette imod. Hvo der negter
+Muligheden heraf, han burde ikke driste sig til at føre Livets Sag contra
+Theorierne; thi han røber sig selv som Stuephilosoph, som ren Theoretiker,
+hvormeget han saa lovpriser, ja forguder det Praktiske, \emph{hvor ivrigt han
+saa bestræber sig for at gjøre det til Et og Alt.}
+
+Thi ret beseet, hvad gjør Prof.\ Nielsen Andet? Han taler vel om den dobbelte
+Verden, han synes vel tidt at være ren Dualist, men i sidste Instans vil man
+finde, at det gaaer ham som alle Dualister, de ere det nødvendigvis kun
+tilsyneladende, de nødes, naar det kommer til Stykket, til at bortkaste det ene
+af de tvende modstaaende Led, som de have bragt i
+% --- p. 65 ---
+% No footnote.  The numeral `5' standing alone at the foot is printer's
+% signature 5 (the signatures fall at pp. 17, 33, 49, 65), not text.
+% TWO letterspaced passages, read at the image:
+%   `Aandens Liv er i Villien'  (the closing “ and stop are not spaced)
+%   `forklare'  in `vil forklare os Tilværelsen'
+% `thi naar galt skal være kan hin Side opofres' --- as printed: the gap after
+% `være' is a justification gap, there is NO dash and NO comma on the image
+% (checked at 600 dpi).  A comma may have dropped out in the forme; not
+% supplied.
+% FRENCH, set in the ordinary roman with no contrasting face, so no markup.
+% Every accent read at 600 dpi: `siècle' and `Où' and `mise à' grave;
+% `volonté', `idées', `isolées', `faculté', `élevée' acute; `l'âme', `l'être'
+% circumflex.  `francais' is printed WITHOUT the cedilla --- as printed.
+% `XIXe' sets a raised e.  After `volonté' the page prints FOUR spaced dots;
+% set here as \dots followed by a stop, which is the nearest LaTeX equivalent.
+% PRINTER'S INCONSISTENCY, transcribed as printed: the long French quotation
+% is CLOSED at `est moi“' but was never opened --- there is no „ before
+% `Il n'observe' on the image.  This leaves the fragment with one unpaired
+% closing “; it is the page's, not the transcriber's.
+% Also as printed: `par analyse.' takes a FULL STOP (round, no tail at 600 dpi;
+% KB reads a comma) and the next sentence opens with a lower-case `c'est'.
+\opage{65}unaturlig Spænding mod hinanden. Det viser sig, at Prof.\ N.,
+polemiserende mod det at gjøre Tanken til Alt og Tænkningen til Eet med det
+hele Menneske, (p.\ 68) i Virkeligheden gjør en anden af Menneskeaandens
+Ytringer, nemlig Villiens Liv til Alt, til det Hele; thi naar galt skal være
+kan hin Side opofres, men ikke denne (p.\ 76). Man høre Forf.s egne Ord: „Den,
+der sætter Tanken ind paa praktisk Erkjendelse af en hellig Villie, gaaer
+maaskee glip af Theorien, men han vinder Livet, Aandens evige Liv; thi
+\emph{Aandens Liv er i Villien}“. Er det en Philosoph eller er det en Præst, en
+Tænker eller en Moralist, som taler? Af den der taler med en sædelig eller
+gudelig Tendens for Øie, finder man et saadant Udtryk berettiget og billiger
+det gjerne; men af den, der vil \emph{forklare} os Tilværelsen som Tænker?
+
+Man burde maaskee undre sig mindre derover, siden man ogsaa i andre
+Litteraturer træffer paa ganske tilsvarende Misvisninger. Se f.\ Ex.\ Taine:
+„Les philosophes francais du XIX\textsuperscript{e} siècle“ om Maine de Biran
+p.\ 59: Il n'observe que le moi, l'âme, l'être, la substance. Où les
+trouve-t-il? Dans la volonté\dots. Ainsi le moi n'est plus ce tout indivisible
+et continu, dont nos idées, nos plaisirs, nos peines sont les parties
+composantes, isolées par fiction et par analyse. c'est une force ou faculté,
+portion du tout, mise à part, élevée au-dessus de toutes les autres. Le reste
+est mon bien: celle-ci est moi“. Paa denne Maade charakteriserer den aandrige
+Franskmand denne Lære, der gjør
+% --- p. 66 ---
+% Continues from p. 65 at a clean word boundary: p. 66 opens `Villien til det
+% hele Menneske.'  KB reads `Yillien' (its characteristic V->Y); the image has
+% the V.
+% Every word-initial capital vowel in pp. 66--76 was read at the image for the
+% Google-loses-Æ class (ORTHOGRAPHY.md §3a).  Two genuine Æ found, both as the
+% audit predicted: `Æren' p. 70 and `Ære' p. 73 (see the comments there).  All
+% the rest are plain E/A: Eet, Er, En, Een, Endnu, Existensen, Erkjendelse,
+% Eiendommelighed, Eenhed, Efterskrift, Element, Ethik, Andet, Aanden, Amphi-
+% bier, Afkald, Afstand, Aandløshed.
+% No letterspacing on this page (spacing.py: none; confirmed at the image).
+% Both em-dashes on this page were taken from the image: Google renders the
+% first as a hyphen and the second as `-—', KB gets both right.
+\opage{66}Villien til det hele Menneske. Men skjøndt saaledes Phænomenet ikke
+ere enestaaende, maa jeg dog bekjende, at jeg for min Del blev høilig
+% `Del' here, NOT `Deel' --- p. 70 below prints `Deel'.  Both read at the
+% image; the book is inconsistent with itself and is not normalised
+% (ORTHOGRAPHY.md §2).
+forbauset, da jeg i Slutningen af Prof.\ N.s Afhandling stødte paa det Sted,
+der begynder saaledes: „Skulde det endnu virkelig hvad Nogle paastaae være den
+ene og samme Bevidsthed umuligt at anerkjende baade det Praktiske og
+Theoretiske, Tro og Viden,“ --- man vil erindre at Prof.\ med disse Ord
+betegner den positive Religion og Menneskeaandens intellectuelle Fordring ---
+„da vilde det i alt Fald blive det Theoretiske, ikke det Praktiske, der maatte
+opgives“. Hvorledes? Sagen er da altsaa ikke sikret og bevist, det kan endnu
+være muligt, at Dualismen ikke lader sig gjennemføre, at man maa opgive at
+sige baade Ja og Nei? Og jeg, som troede at denne Opfattelse --- efter Forf.s
+Mening --- var aldeles gjendrevet, som manglende de nødtørftigste
+Forudsætninger i Dialektik og Psychologie (se p.\ 65). Denne pludselige
+Indrømmen af det Modsattes Mulighed har noget meget Beroligende. Det gjælder
+da nu om at forandre Taktik, det er ikke mere Dualismen der skal angribes, det
+er Udveien ud af den, som det bliver Opgaven at spærre. Denne Udvei findes nu
+antydet i forskjellige Udtryk hos Prof.\ Nielsen og hans Tilhængere,
+Bevægelsen forekommer i forskjellige Former, men i Virkeligheden er den let at
+gjenkjende som een og den samme.
+
+Paa dette Sted hedder det først og fremmest, at skal en af Siderne opgives,
+saa maa det blive den
+% --- p. 67 ---
+% No footnote.  No letterspacing: spacing.py flagged a `single? ,er' (1.23),
+% which is the opening „ of „er praktisk' read as a comma --- ordinary spacing
+% at the image.  The signature `5*' at the foot is not text.
+\opage{67}theoretiske. Man mærker vel, at Skibet er i Havsnød, det kan kun
+frelses ved at kaste sin Ballast overbord: hvis det derved kun ganske sikkert
+opnaaer at kæntre, saa er dets Undergang gjort saa temmelig indlysende. I ren
+Almindelighed betragtet har nu den valgte Udvei noget meget Komisk. Hele
+Læren bestod jo væsenligt deri, at man tog Kierkegaards „Øieblikket“ i den ene
+Haand, Ørsteds „Aanden i Naturen“ i den anden, klappede dem sammen og indbandt
+dem i Eet. Optræder nu En med den Indvending, at denne Forbindelse eller
+Sammenbindning ikke godt gaaer an, og er han paastaaelig nok til ikke at ville
+give efter, nu vel! saa vil Modparten ikke være den stridige, men skjærer
+Ørsted fra og beholder Kierkegaard. Men hvad bliver der saa tilbage af den
+hele Lære, som man paa saa taabelig en Maade har betegnet som den Mands
+største Fortjeneste, hvis velerhvervede Berømmelse beroer paa ganske andre og
+anderledes ægte videnskabelige Bedrifter, hvad indeholder den da, som ikke
+langt bedre, rigere, fuldere er sagt af Kierkegaard?
+
+Underkaste vi nu Sagen en nærmere Betragtning, hvorledes beviser Prof.\
+Nielsen da Muligheden af at opgive det Theoretiske? „Existensen,“ hedder det,
+„er praktisk; en Bevidsthed kan existere uden at være theoretisk; men en
+Bevidsthed kan ikke være theoretisk uden at existere. Det er altsaa muligt at
+sætte Existensen øverst og beholde Theorien.“ Er denne Sophisme ogsaa passende
+for en Tænker, en Tænker
+% --- p. 68 ---
+% No footnote, no letterspacing.
+\opage{68}af Prof.\ Nielsens Rang? Det er jo et Ordspil, en spøgefuld Spillen
+med et dobbelttydigt Ord. Først tages Ordet „existere“ i rent abstract
+Betydning som det at være til, og saa hedder det med Rette, at en Bevidsthed
+ikke kan være theoretisk uden at existere, derpaa tages det i den særegne,
+nylig indførte Bemærkelse af Livet for de praktiske Ideer og nu hedder det om
+Existensen, at den selvfølgelig maa sættes øverst. Ak! det „øverst og nederst“
+det er Prof.\ Nielsen en dyrebar Betegnelse; kunde de hinanden modsigende
+Ytringer virkelig forsones, saa var det saa vist eet og det samme, hvor paa
+Lav jeg satte dem. Hvis Troens Superioritet ikke maa yttre sig i en Omformning
+af Viden, er det ikke godt at fatte, hvori den bestaaer. Men altsaa: fordi man
+ei kan theoretisere uden at existere ɔ: spise, drikke, sove etc., derfor maa
+% `ɔ:' --- the old Danish id-est mark (reversed c + colon, U+0254), read at
+% 900 dpi: the glyph is an unmistakable reversed c, not an o and not a plain
+% colon.  Google drops the reversed c and leaves a bare `:'; KB reads `o:'.
+% The preamble already maps U+0254 to \reflectbox{c}; the same mark occurs in
+% the pp. 25--35 fragment.
+en positiv Troes Paradoxer sættes over Menneskeaandens fornuftige Resultater.
+Men ligemeget med den svage Begrundelse. Lad os blot undersøge i og for sig,
+om det Theoretiske ogsaa lader sig opgive! Ja, hvis Theorien virkelig var eet
+med den systematiserede Videnskab og denne igjen eet med saa og saa mange
+trykte i Papir- eller Læderbind indbundne Blade, da lod det sig gjøre at lade
+Videnskaben ligge og lade Theorien være Theorie. Men hvis det ikke forholder
+sig saaledes, hvis der i den simpleste Samtale mellem en Bonde og en Fisker,
+hvis der i den jævneste Udtalelse af to enfoldige Tanker, mellem hvilke der er
+Sammenhæng og i hvis Række%
+% --- p. 69 ---
+% The page turn falls INSIDE the word `Række-/følge' (p. 68 ends `Række-',
+% p. 69 opens `følge'), so the marker is set mid-word: the `%' after `Række'
+% eats the newline, and the comment lines contribute nothing, so `Række' joins
+% directly to `følge' across the page turn.
+% No footnote.  No letterspacing: spacing.py flagged `single? Vil-' (1.21),
+% which is the hyphenation fragment of „Vil-/liens Concentration' --- ordinary
+% spacing at the image.
+\opage{69}følge der er Consequens --- hvis der, siger jeg, i disse ganske
+ligefremme og dagligdags Phænomener er en spirende Videnskab, en elementær
+Theorie, hvad da? Nei, Videnskabens Væsen er ikke afhængig hverken af Papir og
+Trykkersværte eller af System og Fuldstændighed, Theorien er tilstede overalt,
+hvor en fornuftig Erkjendelse finder Sted, den være nok saa abrupt, nok saa
+enfoldig. At opgive Theorien gaaer da ikke saa let.
+
+En anden Form for den samme Tankegang forekommer hos Dr.\ Heegaard anf.\ Sted
+p.\ 447. Fremstillingen er der lagt an paa at charaktisere den „Villiens
+% PRINTER'S ERROR, transcribed as printed: `charaktisere', not
+% `charakterisere'.  Read at 900 dpi --- c-h-a-r-a-k-t-i-s-e-r-e, no `er'
+% syllable.  Google reads `charaktisere' too; KB reads `charaklisere'.
+Concentration ud over det Rationelle“ der findes hos den Paradoxet Troende.
+Den er saa stærk, at under den alle Hensyn til Theorien forsvinde, „ja,“ siges
+der, „end ikke den rationelle Ethik paa sit Maximum kan her komme i
+Betragtning“. Godt! saalænge Individet ikke har denne Concentration, er det
+kun halvveis troende, og en halv Tro er ingen Tro; saasnart det derimod har
+hævet sig til Troens Høide, har det jo tabt al Theorie aldeles afsyne. Hvilken
+tydeligere Udtalelse af Dualismens Umulighed kan man vel ønske end denne, der
+er givet af dens egen Begrunder og sat i Pennen af en af dens blindeste
+Forsvarere!
+
+Til denne Vending slutter sig saa den, hos Kierkegaard imponerende, men her
+uheldige, at den sande Troende ingen Tid har til at beskjæftige sig med
+% --- p. 70 ---
+% ONE footnote, mark `*)' --- SINGLE asterisk, read at 900 dpi both at the
+% mark (`Theorie*).') and at the foot.  The Google layer renders the body mark
+% as `** )'; that is OCR noise, there is no second note on this page.
+% CAPITAL Æ: `Æren' read at the image, the ligature unambiguous.  Google reads
+% `Eren', exactly as the audit predicted (ORTHOGRAPHY.md §3a); KB has `Æ ren'.
+% `Deel' here, against `Del' on pp. 66 and 74 --- as printed, not normalised.
+% `ligervis' and `naturligvis' both print a SINGLE i (ORTHOGRAPHY.md §1).
+% No letterspacing: spacing.py's two flags (`an-', `op-') are hyphenation
+% fragments; the footnote was read for letterspacing BY EYE and is set in
+% ordinary spacing throughout.
+\opage{70}den videnskabelige Theorie\fnmark{*)}{See Heegaard p.\ 395, smlgn.\
+% `See' with double e in this note, against `Se' in the note to p. 72 below.
+% Both read at the image; the book is inconsistent and is not normalised.
+% `p. 395' --- read at 900 dpi: the first digit is the flat-topped old-style 3,
+% distinct from the 5 that closes the same number.  KB reads `595'.
+Nielsen: Evangelietroen og Theologien p.\ 155.}. Hvis denne Vending ikke
+opklarer Andet, saa viser den idetmindste, at vore Theoretici, ligervis som de
+gamle Vikingekonger, der tilfredse med Æren gjerne afstode fra deres Deel af
+Byttet, høimodigt for deres egne Personer gjøre Afkald paa den Tro, de som
+Feltherrer saa tappert tilkjæmpe de Andre.
+
+Endnu en Udvei erindrer jeg at have hørt Prof.\ Nielsen antyde paa sine
+Forelæsninger; da jeg ikke har noget trykt Document at støtte mig til, berører
+jeg den naturligvis med et vist Forbehold, om jeg end ikke tvivler paa, at
+Prof.\ N. vil vedkjende sig at have fulgt den Tankegang, hvorpaa det her
+kommer an. Prof.\ omtalte det Bibelsted, hvor der fortælles, at Himmelen
+aabnede sig, og Aanden foer ned som en Due, det samme Sted, som Hr.\ A.\ C.\
+Larsen har anført i sin Bog „Samvittighed og Videnskab“ pag 59. Det
+% `pag 59' --- NO stop after `pag' here, against `pag. 95' in the note to
+% p. 72.  Read at the image; transcribed as printed.
+Spørgsmaal blev opkastet, om Videnskaben nu her turde anbringe sin profane
+Kritik, og kræve den Troende til Regnskab for, hvorledes han bærer sig ad med
+at fastholde en Hvælving, naar han veed, der ingen er, med at troe, den
+aabnede sig, med at opfatte Duen som Andet og Mere end et rent Symbol, naar
+han veed, at Aanden umuligt kryber sammen til en Due. Dette var Spørgsmaalet,
+om end udtrykt i andre Ord. Prof.\ dadlede nu den Aandløshed, der
+% --- p. 71 ---
+% No footnote, no letterspacing.
+\opage{71}hang sig i det enkelte Billede, der ikke forstod, at for Troen vare
+disse Billeder i Flyden og Strømning, i en uophørlig Bevægelse, under hvilken
+det var ligesaa umuligt for Kritiken at gribe som for Forstanden at fatte dem.
+Naar man hører Sligt første Gang, da skammer man sig over at have været saa
+aandløs, man føler sig tilmode som en beskjæmmet Chicaneur; men ved nøiere
+Eftertanke viser det sig ogsaa her, at Standpunktet kun lader sig hævde, naar
+% `her,' --- COMMA.  KB reads a full stop; the image has a comma.
+dets Eiendommelighed opgives, og den stærke Spænding mellem Troens og Videns
+Synsmaader slappes. Nylig saa vi, at man hjalp sig ved at kaste Theorien
+tilside, her synes det omvendt at gaae ud over Troen. Thi den klare,
+historiske Virkelighed, som den Troende maa tillægge de hellige
+Kjendsgjerninger, hvis han ikke til sin Forundring vil see sig enig med
+Rationalisten, synes her at vige Pladsen for en mystisk Halvvirkelighed, en
+ideel Realitet, der Intet har at sige der, hvor det netop gjælder om Existens
+og Factum.
+
+Men tilbage til Prof.\ Nielsens Opofrelse eller mulige Opofrelse af Theorien
+til Bedste for det praktiske Liv. Hvad er det vel, der skal opnaaes derved?
+ganske for Intet pleier man ikke at gjøre endog blot et muligt Offer.
+
+Det er Villiens Oprindelighed og Selvtilstrækkelighed, der skal sikres,
+forsaavidt er Offeret forklarligt nok. Uforklarligt er det derimod, at noget
+Synderligt kan antages at være vundet derved. Thi det maa dog vel staae fast,
+at Villien i og for sig er en
+% --- p. 72 ---
+% ONE footnote, mark `*)' (single asterisk, read at the image at the mark and
+% at the foot).  The note was read for letterspacing BY EYE: ordinary spacing.
+% No letterspacing in the body either.
+\opage{72}ganske ligesaa immanent, ligesaa lidet overnaturlig Ytring af det
+Menneskelige som Tanken. Det er jo dog en Opfattelse, der tilhører en forældet
+Tids Naivetet, at visse af Menneskelivets og visse af Jordelivets Phænomener
+eller Ytringer ere mere supranaturale end de andre. Formedelst en saadan
+Opfattelse rystede mangen gammel troende Jøde paa Hovedet, da Olien i den
+kjøbenhavnske Synagoges evige Lampe blev afløst af Gas. Thi Gas, det er et
+revolutionært Element, høist naturligt, høist aandigt, og det Lys, som den
+spreder, er stærkt og skarpt, Olie derimod er en blid tyktflydende Vædske, der
+har gammel Hævd paa sig som den eneste rette Lysbringer og som desuden er i
+Familie med Salvelse og alt andet Deslige. Skal nu Tanken paa samme Maade
+bestemmes som profan, Villien derimod udgives for at være i Slægt med det
+Positive? Er Villien da Tro eller Villien det Organ, hvormed Troen gribes? Ja
+det paastaaes, men denne Paastand er aldeles falsk. Villien er ikke saadan
+halvt om halvt en transscendent og aabenbaret Magt, den er rent menneskelig,
+rent fornuftig. Er Troens Gjenstand et Under, saa er Troen selv lige saa fuldt
+et Under\fnmark{*)}{Se „Philosophiske Smuler“ pag.\ 95.}, og Villien er ikke
+% `Se' (single e) and `pag.' (with stop) here, against `See' and `pag' on
+% p. 70 --- both as printed.
+Underet nærmere end Tanken. Men paa dette Punkt gjør Prof.\ Nielsen sig
+skyldig i en Række af Tilsnigelser og han, der saa haardnakket har bekjæmpet
+den speculative Dogmatiks Sophismer, fremsætter en
+% --- p. 73 ---
+% CAPITAL Æ: `Ære' read at 900 dpi.  Google reads `Are'; KB reads `Æ re'.
+% `Ringhed' --- the R's leg is broken in the inking and Google reads `Kinghed';
+% at 900 dpi the bowl and the shoulder of an R are clear, and KB has `Ringhed'
+% (ORTHOGRAPHY.md §3e).
+% `for megen' is TWO words at the image; KB runs them together.
+% No footnote.  No letterspacing: spacing.py's `single? ikke' (1.21) is the
+% `maaskee ikke for megen' of this line, ordinary spacing at the image.
+\opage{73}Sophisme, maaskee mindre blændende, men ikke mindre forkastelig end
+dens. Det hedder i „Bemærkningerne“: „Skulde Nogen imidlertid være saa livlig
+i Hovedet og saa let i Tankerne, at det virkelig løber rundt for ham, hvad der
+skal staae øverst og hvad der skal staae nederst, Troen eller Viden, men af
+lutter Livlighed forvexler Øverst med Nederst og Nederst med Øverst, lad ham
+forsøge at simplificere Forholdene ved at kaste Troen, Villiesidealet,
+Charakterprincipet bort og leve paa den rene Theorie: han undgaaer dog ikke
+Fordoblingen“. Hvilken Fart! hvilke Spring som med Syvmilestøvler! fra
+Existensen til Troen, fra Troen til Villiesidealet og Charakterprincipet! Jeg
+arrogerer mig maaskee ikke for megen Ære ved at antage, at det er min Ringhed,
+som er ment med den fortumlede Livlige, og at den anførte Passus er fremkaldt
+ved en Ytring af mig i „Fædrelandet“ for 16de Februar 1866. Men hvis saa er,
+hvor har jeg vel talt om at kaste først Troen i ren Almindelighed, saa
+Villiesidealet og Charakterprincipet bort? Saa lidt som det er mig, der
+anbefaler den Kur, at amputere Hovedet for at frelse Livet, saalidet ønsker
+jeg nogen anden Lemlæstelse af det Menneskelige, hvorved intet Andet opnaaes
+end at Feberen --- paa Holbergsk --- forlader den Syge. Hvad Andet har vel jeg
+% Both dashes are em-dashes at the image; Google renders the first as `-' and
+% the second as `--'.
+i mine Bladartikler forsøgt at godtgjøre, end at to absolut uensartede
+Principers Forening i samme Bevidsthed er umulig? Hvor staaer det skrevet, at
+den, der opgiver den positive Religion,
+% --- p. 74 ---
+% No footnote, no letterspacing.
+% `Del' (not `Deel') --- read at the image; cf. p. 70.
+\opage{74}opløser det Religiøse selv i det Videnskabelige? Een saadan
+Personlighed som den amerikanske Præst Theodor Parker er Vidnesbyrd nok om
+denne Paastands Løshed. Og hvordan vil man vel overbevise om, at den, der
+bryder med Orthodoxien, svigter Villiesidealet, at den, der vil bevare
+Charakterens Eenhed i det theoretiske og i det praktiske Liv, at han
+bortkaster Charakterprincipet? Hvordan vil man godtgjøre, at det er paa denne
+% `bortkaster Charakterprincipet' --- no stop after `bortkaster'.  KB inserts
+% one; the image has none.
+Side Charakterløsheden, paa hin derimod, at Fastheden findes? Den nye Lære maa
+her, som saa tidt, henvise til Livet og hvad Livet lærer. Hvad lærer da Livet,
+hvad Svar giver det? Ja her, som bestandig, er Vanskeligheden den, at Livet
+lærer Enhver et Forskjelligt. Men kan der fra den nye Læres Side vel indvendes
+Noget, naar En for sin Del erklærer, at de sandeste Charakterer, den reneste
+Villie har han fundet paa den Side, hvor efter Theorien de „intellectuelle
+Amphibier“ skulde opholde sig, men derimod de strømmende, de i intellectuel
+Begeistring vibrerende Aander der, hvor efter Theorien Charakterens Fasthed
+netop skulde findes. Af egen Drift vilde vel Ingen bruge et saa svagt, saa
+fruentimmeragtigt Argument, men jeg seer ikke rettere, end at Prof.\ Nielsen
+selv er den, som har hjemlet Brugen.
+
+Der forekommer i Aandens Verden hyppigt Phænomener af en saa afgjørende
+Betydning, at de have Krav paa vor Interesse, ligegyldigt om de opdukke i nok
+saa stor en Afstand fra os eller midt i vort eget
+% --- p. 75 ---
+% No footnote.  No letterspacing: spacing.py's `single? Man' (1.17) is the
+% sentence-opening `Man har beraabt sig', ordinary spacing at the image with a
+% wide justification gap before it.
+\opage{75}Fædreland; der gives andre som vi ingen Opmærksomhed vilde skjænke,
+hvis de vare opstaaede i China eller i Amerika eller i Tydskland, men som vi
+føle os forpligtede til at anerkjende eller bestride, ene og alene fordi deres
+Nærhed i Tid og Rum udruster dem med en Magt, som deres indre Værd aldrig i og
+for sig vilde forlene dem. Prof.\ Nielsens Lære om Forholdet mellem Religion
+og Videnskab hører til den sidste Klasse. Grunden til, at vi Danske bør agte
+paa den, er den, at den er dansk. Dog, hvad siger jeg, dansk! er denne
+unaturlige, med sig selv splidagtige Lære dansk? Den er det kun i Ordets
+bogstavelige Forstand; i dybere og sandere Mening dansk er den rigtignok meget
+langt fra at kunne kaldes, saalænge man hævder den danske Tænkning Sundhedens
+og Klarhedens Egenskaber, saalænge man er enig om, at den danske Tankegang vel
+ikke er mørkeræd som saa tidt den franske, men endnu mindre dunkel som saa
+hyppigt den tydske og allermindst er lyssky eller lovløs. Den er da blot dansk
+i Henseende til sin Oprindelse og forsaavidt som dens Tilblivelse kun er
+begribelig ud fra givne historiske Forudsætninger paa dansk Grund. Man har
+beraabt sig paa dette Forhold til Fortiden for at hævde den nye Læres
+Nødvendighed, for at fremstille enhver Opposition imod den som et afmægtigt
+Forsøg paa at holde Tidens eget vældige Hjul tilbage, men man har,
+beskjæftiget, som man var, med at føle Verdenshistoriens Puls, glemt at,
+% PRINTER'S ERROR, transcribed as printed: a comma after `glemt at'.  Read at
+% the image; both layers have it too.  `glemt at, Spørgsmaalet her ikke er,'
+Spørgsmaalet her ikke er,
+% --- p. 76 ---
+% LAST PAGE OF THE BOOK.  Structure at the image, top to bottom:
+%   1. the chapter's last paragraph, running on from p. 75 and ending
+%      `sin Arveret til Sandhedens Trone.';
+%   2. a short CENTRED RULE, about one-sixth of the measure, set in the white
+%      space below it --- reproduced here as \rule;
+%   3. the unheaded closing note, set as an ORDINARY INDENTED PARAGRAPH in the
+%      body type (no heading, no smaller face, no display indentation), opening
+%      with the LETTERSPACED lead-in `Efterskrift:' followed by an em-quad of
+%      space and then `En, efter at dette Skrift var'.  The letterspacing was
+%      confirmed at 900 dpi: E-f-t-e-r-s-k-r-i-f-t carries the same widened
+%      gaps as the book's other Sperrsatz, and the colon sits after the
+%      trailing letterspace.  It is the ONLY emphasis in pp. 66--76.
+%      spacing.py did NOT detect it --- another instance of the fit failing on
+%      a short isolated run.  The colon is set inside \emph{} because the gap
+%      before it is the letterspacing's own trailing space.
+%   4. a DOUBLE RULE (two parallel lines, about one-third of the measure,
+%      centred) closing the page well below the note.  Not reproduced: it is
+%      the printer's terminal ornament, not part of the text.
+%   5. `26 JY 67' --- British Museum accession datestamp, NOT text.
+%   6. `6' at the foot --- the printer's signature, NOT text.
+% `Pièce' carries a GRAVE accent: read at 900 dpi, the stroke descends left to
+% right.  The KB layer reads an acute (`Piéce'); Google and the image have the
+% grave.  It is set in the ordinary roman with no contrasting face, so it takes
+% no markup --- cf. `trinité chrétienne' p. 56 and `n'observe' p. 65.
+% The quotation marks around the title are „…“ at the image; Google collapses
+% the opening one to `,,' and the closing one to `"'.
+% No footnote on this page.
+\opage{76}om Theorien er fattelig som et naturligt Foster af en tidligere
+Tilstand eller forklarlig som Undflyen af en dobbelt Ild: men om den er
+fyldestgjørende, om den er sand, om den Bram, hvormed den af Tilhængere
+forkyndes, paa nogen Maade er berettiget, og man har ikke betænkt, at enhver
+eklektisk Lære med samme Lethed kan godtgjøre sin ægte Herkomst og sin
+Arveret til Sandhedens Trone.
+
+\begin{center}
+\rule{0.16\textwidth}{0.4pt}
+\end{center}
+
+\emph{Efterskrift:} En, efter at dette Skrift var givet i Trykken, udkommen
+Pièce af Prof.\ R.\ Nielsen „Svar til Hr.\ Dr.\ phil.\ Pastor Zeuthen“
+foranlediger mig ikke til nogen Tilføielse eller Rettelse i det Skrevne. Den
+indeholder for største Delen kun Optryk af Forf.s Udfald mod Martensens
+Dogmatik.
+
+\end{document}
