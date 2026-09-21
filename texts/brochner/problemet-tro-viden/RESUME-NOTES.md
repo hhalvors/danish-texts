@@ -367,3 +367,103 @@ On inspection the pp. 118–161 region is patchy, not just missing footnotes. Co
   footnotes on **p.173+** belong to Block D, not this region.
 Phase 2: translate the whole book into `translation.tex`, front-to-back, block by block.
 Final: compile both PDFs, set catalog.yaml status to complete. (User commits/pushes; do not.)
+
+============================================================
+# Repair programme — full collation (REPAIR-PLAYBOOK.md §5C), started 2026-09-21
+============================================================
+
+**Ground truth, established 2026-09-21 before any dispatch.** Scan
+`~/bibliotek/Brøchner, Hans/1868-problemet-tro-viden.pdf`, sha256
+`dfb663931ed9f23fcd7f97d598437ac7b614bf4487e8b0d44ac8b87ca622040c` — hash confirmed by
+hand on the device and again on the staged copy; 241 pp., ABBYY layer. **PDF = printed + 9,
+uniform**: all 202 folios readable in the text layer give +9 (spot rows: Forord p.2=PDF 11,
+ch. I p.9=PDF 18, ch. III p.51=PDF 60 and p.91=PDF 100, ch. IV p.121=PDF 130, p.141=PDF 150,
+p.191=PDF 200, Slutning p.225=PDF 234, p.226=PDF 235); each agent re-reads the folio at the
+image. PDF 8–9 = *Indhold* (not transcribed in this file).
+
+**Witness: the embedded ABBYY layer.** The `ocr/` crib in bibliotek scores 55% of ≥3-letter
+tokens in-vocabulary vs 72–82% for the layer; not used.
+
+**Method: full collation**, 10 printed pages per agent, 23 agents in 4 waves
+(1: pp.1–60, 2: 61–120, 3: 121–180, 4: 181–226). Brief = `pgtools/COLLATE-BRIEF.md`
+(rebuilt 2026-09-21 — it did not exist) + `BATCH-AGENT.md` (new). One `OCRDIFF:` line per
+wave below (per-agent breakdown underneath it). `.bak` per wave:
+`transcription.tex.bak.collate-waveN`.
+
+## Waves
+
+### Wave 1 — pp. 1–60, 2026-09-21. 6 agents × 10 pp. SPLICED + VERIFIED.
+OCRDIFF: embedded ABBYY | pp.1-60 | 228 candidates | 17 real | 211 witness's fault | 0 unresolved
+  (per agent: 1-10 36/6/30/0 · 11-20 34/3/31/0 · 21-30 42/4/38/0 · 31-40 34/1/33/0 · 41-50 38/0/38/0 ·
+   51-60 44/2/41/1 — the 1 unresolved, p.57 "sattes", settled by the blind reader as printed)
+Found by reading: 123 FIX claimed (Forord pp.1–7 alone 45 — derived/modernised text: skarp→klar,
+gode→klare, "man maa therefore"→"maa derfor", Konseqvents→Conse-, andetsteds→andensteds …),
+157 EMPH, 6 PRN/turned sorts. Blind second reader on 53 items: 51 agree; 2 collator claims REFUTED
+and not applied (p.50 Conseqventser, p.55 Conseqvents — page reads Consequ-). Applied: 276 edits
++ 10 manual; 60 markers placed as \opage (53, 57 restored). Word diff vs .bak: 356 hunks, all inside
+pp.1–60, file tail after \apage{61} byte-identical. Sandbox compile (mathptmx substitute, Greek
+mapped): 168 pp., 0 errors, 0 missing chars — same as the pre-wave file. .bak =
+transcription.tex.bak.collate-wave1.
+
+### Wave 2 — pp. 61–120, 2026-09-21. 6 agents × 10 pp. SPLICED + VERIFIED.
+OCRDIFF: embedded ABBYY | pp.61-120 | 183 candidates | 2 real | 181 witness's fault | 0 unresolved
+  (per agent: 61-70 47/1/46/0 · 71-80 30/0/30/0 · 81-90 23/1/22/0 · 91-100 23/0/23/0 · 101-110 30/0/30/0 ·
+   111-120 30/0/30/0)
+Found by reading: 29 FIX (hæver→hævder ×2, ophævede→uophævede, gjorte→givne, see→skee ×2, for→før,
+lost run-in head "S. Kierkegaard. —" p.118, a dropped "et" p.75, "det er"/"der i" p.79 …), 469 EMPH,
+8 printer's readings restored (liberium, Bevidstbed, λὸγος, Autorttet, Uuderet, nn, Anrendelsen, man).
+Blind second reader on 70 items (incl. the 4 Forord Conseq- variants): all agree with the collators.
+3 spurious paragraph breaks removed (pp.63, 65, 81). 60 markers → \opage (112 restored).
+Applied with tools/apply2.py (sequential; the first applier corrupted overlapping edits in this
+wave — caught by the brace/duplication checks before anything was written — and was retired;
+wave 1 re-derived with apply2 matches what was committed). Word diff vs wave-1 file: 856 hunks,
+all in pp.61–120; head and tail byte-identical; no new repeated n-grams; sandbox compile 168 pp.,
+0 errors, 0 missing chars. .bak = transcription.tex.bak.collate-wave2.
+
+### Wave 3 — pp. 121–180, 2026-09-21. 6 agents × 10 pp. SPLICED + VERIFIED.
+OCRDIFF: embedded ABBYY | pp.121-180 | 237 candidates | 2 real | 235 witness's fault | 0 unresolved
+  (per agent: 121-130 49/0/49/0 · 131-140 42/0/42/0 · 141-150 31/2/29/0 · 151-160 39/0/39/0 ·
+   161-170 37/0/37/0 · 171-180 39/0/39/0)
+Found by reading: 19 FIX (lost run-in head "R. Nielsen. —" p.126; dropped "i" pp.136, 175; added "i"
+p.173; Erkjanden→Erkjenden ×2; Fordobling→Fordobbling ×2; Gyldigshed→Gyldighed p.148 (collator
+called it a printer's reading; two blind readers read Gyldighed); dashes/commas), ~300 EMPH,
+8 printer's readings restored (Indivirer, Tlifælde, "den,", Villle, Modsætniugen, "er er",
+ikkeheller; Gjenstaud-type). 2 spurious paragraph breaks removed (145, 161); rule added p.160.
+Blind reader on 49 items: 3 disagreements settled by a third reading (p.126 run-in spaced;
+p.148 Gyldighed; p.162 Villle). 60 markers → \opage (137, 164, 178 restored).
+Verify: 524 word hunks all in pp.121–180, head/tail byte-identical, braces 0, no new repeats,
+compile 168 pp. 0 errors 0 missing. .bak = transcription.tex.bak.collate-wave3.
+
+RESUME POINT (if the session stops here): waves 1–3 spliced (pp.1–180). Wave 4 (pp.181–226)
+is COLLATED and blind-checked but NOT yet spliced — its results were in the session scratch and
+would have to be re-collated if lost. Then: header, ledger → repaired, repair-queue.py,
+6-page |post re-sample, essay-quotation check.
+
+### Wave 4 — pp. 181–226, 2026-09-21. 5 agents. SPLICED + VERIFIED.
+OCRDIFF: embedded ABBYY | pp.181-226 | 164 candidates | 0 real | 164 witness's fault | 0 unresolved
+  (per agent: 181-190 36/0/36/0 · 191-200 33/0/33/0 · 201-210 31/0/31/0 · 211-220 39/0/39/0 ·
+   221-226 25/0/25/0)
+Found by reading: 14 FIX + 5 ø restored (Kløften, Kløft p.214; Religiøsitet- pp.222–223, both
+readers), ~175 EMPH, 6 printer's readings (dogmatkske, Nyttte, Forudsætsætninger, nundgaaelig,
+Overlegeuhed …). Refuted by the blind reader, NOT applied: p.199 "kages" (page: tages).
+p.212 suspect settled: page prints "belyste*)". Paragraphs: +2 (182, 226), −3 (191, 218, 220).
+Markers: all 226 now \opage (205 restored), 0 \apage left. Compile 168 pp., 0 errors, 0 missing.
+.bak = transcription.tex.bak.collate-wave4.
+
+## COLLATION COMPLETE — 4 waves, 4 OCRDIFF lines. Ledger: repaired (2026-09-21).
+(The "RESUME POINT" note after wave 3 is superseded.) Post-repair re-sample, seed |post,
+pp.48, 75, 103, 106, 149, 217: 0 word errors; 8 emphasis-extent disagreements (pp.103, 106),
+not applied. Open items are listed in the transcription.tex header ("STILL OPEN").
+NOTE for the translation: the RESUME-NOTES claim above that Brøchner transliterates Greek in the
+Antiquity section is WRONG — the page prints Greek type (Νοῦς, φρόνησις, νόησις τῆς νοήσεως,
+νοῦς ποιητικός, πίστις, εἰκασία). translation.tex follows the false claim.
+
+### translation.tex — Greek brought into line with the print (2026-09-21)
+The transliteration convention in the Phase-2 handoff above is withdrawn: Brøchner prints Greek type
+throughout. Changed in translation.tex (backup translation.tex.bak.greek-20260921): ipse dixit →
+αὐτὸς ἔφα (p.4); nous/phronesis → Νοῦς/φρόνησις, nous → Νοῦς, noesis noeseos → νόησις τῆς νοήσεως,
+nous poietikos → νοῦς ποιητικός (p.12); "faith" → "faith, πίστις", pistis → πίστις, doxa → εἰκασία
+(a content correction: the page prints εἰκασία), pistis (Rhetoric) → πίστεις (p.13); sentence-initial
+γνῶσις → Γνῶσις (p.16). Κόσμος (p.18) and λόγος (p.90) stay in their correct forms in English; the
+Danish keeps the printer's Κόςμος / λὸγος with comments. Sandbox compile: 172 pp., 0 errors,
+0 missing, same as before.
