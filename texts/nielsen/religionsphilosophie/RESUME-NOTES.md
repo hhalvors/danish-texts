@@ -1047,3 +1047,161 @@ wrong here** — "150" for 130 and "592" for 392 — both misreadings off the or
 170 dpi render of the errata page. The second had also prompted a spurious note that
 the errata cited a page beyond the 537-page body; it does not. Every RETTELSER page
 number falls inside the body.
+
+---
+
+# Repair programme — full collation (REPAIR-PLAYBOOK.md §5C), started 2026-09-21
+
+**Ground truth, established 2026-09-21 before any dispatch.** Scan
+`~/bibliotek/Nielsen, Rasmus/1869-religionsphilosophie.pdf` (the notes above call it
+`religionsphilosophie.pdf`; same file, renamed), sha256
+`6de1f8224b838e3811a34eb5b71dfb0621e0227c7db0116002b63a12deb03be7` — confirmed by hand on
+the device and on the staged copy; 557 pp. **Map = kb() above, not flat**: folio read from
+the text layer on 522 of 537 body pages agrees with it, 0 disagree (PDF 339's folio OCRs as
+"32"), which covers the misbound run pp.260–273 (+15) and 274–275 (−1). All 537 `printed p.N
+(PDF M)` comments agree with kb(). Bodleian second witness `bodleian.pdf` sha256 88af4021…
+(= bibliotek `religion-1869.pdf`), PDF = printed + 14.
+
+**Method: full collation** — the 12-page sample found 0.17/pg and ocrdiff 0/15 rules out
+§5B. 10 printed pages per agent, 54 agents, waves of 6 (wave k = pp. 60k−59 … 60k; wave 9 =
+pp.481–537). Brief = `pgtools/COLLATE-BRIEF.md` + `BATCH-AGENT.md` (new, 2026-09-21).
+**Hint sheets are built with the embedded layer REMAPPED through kb()** — the stock
+`ocrdiff.py --frag --offset 13` compares pp.260–273 with the wrong PDF pages (validated:
+two planted dropped „ikke“ on pp.265/268 caught by the remapped run, 0 by the stock run).
+One `OCRDIFF:` line per wave below. `.bak` per wave: `transcription.tex.bak.collate-waveN`.
+Blind second reader per wave on every PRN/UNSURE/non-emphasis FIX before applying.
+
+## Waves
+
+### Wave 1 — pp. 1–60, 2026-09-21. 6 agents × 10 pp. SPLICED + VERIFIED.
+OCRDIFF: embedded ABBYY (kb-remapped) | pp.1-60 | 191 candidates | 0 real | 191 witness's fault | 0 unresolved
+  (per agent: 1-10 25/0/25/0 · 11-20 30/0/30/0 · 21-30 37/0/37/0 · 31-40 35/0/35/0 · 41-50 38/0/38/0 · 51-60 26/0/26/0)
+Found by reading: 2 FIX (p.26 „løb“→„lød“; p.39-note title „Der christliche Glaube“ is roman, not
+\textit), 3 printer's errors the file had silently corrected, restored as printed with comments (p.13
+„Umiddelharhed“, p.58 „omkrives“, p.60 „I Kraft of“), 2 already-as-printed misprints given comments
+(p.11 „Adpredelsen“, p.41 „Aandvilliens“), 10 emphasis corrections (pp.6, 12 ×2, 13, 19, 39-note, 57 ×2),
+2 lost paragraph breaks restored (at the p.38/39 and p.58/59 turns). All 537 markers OK in range.
+Blind second reader on 17 items: all agree with the collators; p.40-note „Absolute,“ settled as comma
+(file already right). Verify: braces 0, markers 537 contiguous/kb-correct, quote balance 7 (unchanged),
+head/tail and all pages outside 1–60 byte-identical, no new doubled 4-grams; sandbox compile
+(mathptmx, Greek mapped) 403 pp., 0 errors, 0 missing = the untouched original built the same way.
+Results + blind Q/A in `.parts/collation/`. .bak = transcription.tex.bak.collate-wave1.
+
+### Wave 2 — pp. 61–120, 2026-09-21. 6 agents × 10 pp. SPLICED + VERIFIED.
+OCRDIFF: embedded ABBYY (kb-remapped) | pp.61-120 | 189 candidates | 0 real | 189 witness's fault | 0 unresolved
+  (per agent: 61-70 30/0/30/0 · 71-80 30/0/30/0 · 81-90 27/0/27/0 · 91-100 38/0/38/0 · 101-110 30/0/30/0 · 111-120 34/0/34/0)
+Found by reading: 1 FIX (p.78 „forskjelligt“→„forskjellig fra“, modernised); 7 printer's readings the file
+had silently corrected, restored with comments (p.73 „Bevidtshed“, p.92 „immancnte“, p.92 „Beviis, Den“,
+p.93 „Tilværelse, Hvad“, p.97 „Bevidthed“, p.99 μυστὴριον with GRAVE — the old note calling p.99 „✓ correct“
+was wrong —, p.101 „o. s. v, Paa“); p.106 note ellipsis is four points, set `.\ .\ .\ .`; emphasis: p.63
+\emph{Troen} removed (one loose gap, not Sperrsatz), p.81 ×3 extents; 3 lost paragraph breaks restored
+(turns 64/65, 72/73, 93/94). Blind second reader on 15 items: all 15 agree with the collators.
+Verify: braces 0, 537 markers contiguous/kb-correct, quote balance 7, head/tail and all pages outside
+61–120 identical, no new doubled 4-grams, compile 403 pp. 0 errors 0 missing (= original).
+Fixed in the applier this wave: `% sic` comments now quote only the changed words and never carry an
+\opage (one draft comment did, which would have looked like a 538th marker to a naive regex).
+.bak = transcription.tex.bak.collate-wave2.
+
+### Wave 3 — pp. 121–180, 2026-09-21. 6 agents × 10 pp. SPLICED + VERIFIED.
+OCRDIFF: embedded ABBYY (kb-remapped) | pp.121-180 | 202 candidates | 1 real | 201 witness's fault | 0 unresolved
+  (per agent: 121-130 34/0/34/0 · 131-140 40/1/39/0 · 141-150 42/0/42/0 · 151-160 33/0/33/0 · 161-170 25/0/25/0 · 171-180 28/0/28/0)
+Found by reading: 2 FIX (p.137 „Tavshed“→„Taushed“, modernised — the one real hint so far; p.143
+„Villiesenhed“→„Villieseenhed“); printer's readings restored with comments: p.147 „Saligbedshaab“, p.158
+two-point ellipsis „maa .\ .\ med“, p.159 „Modsætnig“, p.162 „systême“ (CIRCUMFLEX — the old sic comment
+said acute, and the file had é; both corrected); comments added to already-as-printed p.155 „(rød Jord,)“
+and p.170 „den uendelig Enemagt“. Emphasis: p.158 ×4 and p.166 extents (connectives „og“/„samt“ solid).
+3 lost paragraph breaks restored (turns 134/135, 167/168, 174/175). Blind second reader on 13 items:
+all 13 agree. Verify: braces 0, 537 markers ok, quote balance 7, pages outside 121–180 identical,
+no new doubled 4-grams, compile 403 pp. 0 errors 0 missing. .bak = transcription.tex.bak.collate-wave3.
+
+### Wave 4 — pp. 181–240, 2026-09-21. 6 agents × 10 pp. SPLICED + VERIFIED.
+OCRDIFF: embedded ABBYY (kb-remapped) | pp.181-240 | 161 candidates | 0 real | 161 witness's fault | 0 unresolved
+  (per agent: 181-190 21/0/21/0 · 191-200 26/0/26/0 · 201-210 36/0/36/0 · 211-220 35/0/35/0 · 221-230 18/0/18/0 · 231-240 25/0/25/0)
+Found by reading: 0 FIX. Printer's readings restored with comments: p.195 „i Styrelsen; synes“ (stray
+semicolon) and „Villieseenhed den“ (no comma) — both silently regularised before; p.209 „Gudsforhøldet“
+(wrong ø sort; clear in the Bodleian, both readers). Comments added to already-as-printed citation slips
+p.187 „(Ps. 139, 33)“ and p.188 „(Ps. 41)“ (= Ps. 51) — possibly authorial. Emphasis: pp.192–193 spurious
+\emph over a whole sentence removed. 2 lost paragraph breaks restored (turns 221/222, 225/226). p.200 (the
+KB ink-transfer page) collated against the Bodleian: agrees. Blind second reader on 8 items: all agree.
+Verify: as before, all clean; compile 403 pp. 0/0. .bak = transcription.tex.bak.collate-wave4.
+
+### Wave 5 — pp. 241–300 (includes the misbound run 260–275), 2026-09-21. 6 agents × 10 pp. SPLICED + VERIFIED.
+OCRDIFF: embedded ABBYY (kb-remapped) | pp.241-300 | 182 candidates | 1 real | 181 witness's fault | 0 unresolved
+  (per agent: 241-250 30/0/30/0 · 251-260 32/0/32/0 · 261-270 27/0/27/0 · 271-280 33/1/32/0 · 281-290 32/0/32/0 · 291-300 28/0/28/0)
+Folios on all pages matched the kb() map, incl. p.260=PDF 275, 274–275=PDF 273–274, 276=PDF 289.
+Found by reading: 3 FIX (p.276 dropped „det“ in „geraader det det dog“ — the one real hint; p.287 note
+„S. 580“→„S. 380“, citation; p.294 „alene“→„aleneste“). Printer's readings restored with comments: p.259
+„Sandsynlighed, Og“, p.277 „blevetfuld stændig“, p.281 άμαρτια (acute printed for the rough breathing),
+p.289-note „blaudt“; comment added to already-as-printed p.252 „Luk, 4, 6“. Emphasis: p.247 spurious
+removed, p.256, p.275 ×5 („Menneske“ solid), p.289-note ×2 (the old n.b. comment there was wrong and is
+rewritten). 5 lost paragraph breaks restored (turns 243/244, 248/249, 262/263, 282/283, 297/298). The
+p.299 „Sønnner“ sic comment's wording corrected. p.106 ellipsis reverted to `\dots` (house convention:
+point-count is not recorded except the anomalous two-point one at p.158).
+Blind second reader on 21 items: 17 agree; HELD OPEN, not applied: p.289-note „V 4.“ (KB shows no
+point, the Bodleian shows one), p.282 „Idèal“ (KB shows the grave, the Bodleian none — file keeps KB),
+p.262 „Linned“ (odd glyph in both copies; collator: not ø, blind reader: reads as ø — file unchanged).
+Verify: all clean; compile 403 pp. 0/0. .bak = transcription.tex.bak.collate-wave5.
+
+### Wave 6 — pp. 301–360, 2026-09-21. 6 agents × 10 pp. SPLICED + VERIFIED.
+OCRDIFF: embedded ABBYY (kb-remapped) | pp.301-360 | 194 candidates | 2 real | 192 witness's fault | 0 unresolved
+  (per agent: 301-310 34/1/33/0 · 311-320 32/1/31/0 · 321-330 29/0/29/0 · 331-340 29/0/29/0 · 341-350 34/0/34/0 · 351-360 36/0/36/0)
+Found by reading: 10 FIX — p.303 „Magt“;“→„Magt“,“; p.309 Greek ἀρρήτως … ἀνεκδιηγήτως → ἀῤῥητως …
+ἀνεκδιηγητως (NO accents printed; the old "verified" comment was wrong and is rewritten); p.316
+„Dybder“→„Dybheder“ and „mig“*)?“→„mig“?*)“; p.319 „Forløsnings-“ ADDED (eye-skip from the line below);
+p.341 „afhandlet:“→„;“; p.348 „tøisløs“→„tøilesløs“; p.349 full stop after the Hase note call restored;
+p.353 „Frihed.“→„Frihed,“; p.355 „forsvundet“→„forsvunden“. Printer's readings restored with comments:
+p.302 „Dagen eg Timen“, p.344 „jnst“, p.355-note „S, 314“, p.358 „Svovlpølen, I“; comments added to
+already-as-printed p.330 „Ortodoxiens“, p.334-note „Proprædeut.“. Emphasis: p.303, p.322, p.328 „Gud og
+Verden“, p.343, p.357 ×2. Blind second reader on 22 items: 20 agree. HELD, not applied: p.321 „…
+Aabenbarelse og Personlighedens …“ and p.328 „Skaber og Skabning“ — blind reader sees „og“ SPACED there,
+collator solid; file keeps \emph over „og“. Verify: all clean; compile 403 pp. 0/0.
+.bak = transcription.tex.bak.collate-wave6.
+
+### Wave 7 — pp. 361–420, 2026-09-21. 6 agents × 10 pp. SPLICED + VERIFIED.
+OCRDIFF: embedded ABBYY (kb-remapped) | pp.361-420 | 174 candidates | 0 real | 174 witness's fault | 0 unresolved
+  (per agent: 361-370 24/0/24/0 · 371-380 26/0/26/0 · 381-390 33/0/33/0 · 391-400 34/0/34/0 · 401-410 30/0/30/0 · 411-420 27/0/27/0)
+Found by reading: 7 FIX — p.366 „skaansellos“→„skaanselløs“; p.373 „ved“→„veed“ (modernised) and
+„Enkelthed“→„Enkeltheds“; p.381 καταλλαγή→καταλλαγὴ (GRAVE; the Greek table in these notes calling it
+„✓ correct“ was wrong, and the p.381 sic comment is amended); p.389 „Grund-“ ADDED before „Uklarheden“
+(eye-skip); p.413 a PARAPHRASED clause restored („Evigheden er det i Øieblikket absolut Nærværende. Den,
+der er fordybet …“ — the file had fused two sentences); p.415 „er Glæden“ ADDED (eye-skip). Printer's
+readings restored with comments: p.372 HEAD „dobbeltsidigc“, p.381 „Distinctioner;“, p.385 „Liv eg Død“,
+p.414 ellipsis „Maalet. ,\,.\,.“. Emphasis: p.373-note „Grund“ removed, p.392, p.406, p.416. 2 lost
+paragraph breaks restored (turns 398/399, 399/400). Blind second reader on 19 items: all agree; p.362
+„bliver“ (c-like e, no positive signal) left as is. Verify: all clean; compile 403 pp. 0/0.
+.bak = transcription.tex.bak.collate-wave7.
+
+### Wave 8 — pp. 421–480, 2026-09-21. 6 agents × 10 pp. SPLICED + VERIFIED.
+OCRDIFF: embedded ABBYY (kb-remapped) | pp.421-480 | 182 candidates | 1 real | 180 witness's fault | 1 unresolved
+  (per agent: 421-430 31/0/31/0 · 431-440 21/1/19/1 · 441-450 23/0/23/0 · 451-460 35/0/35/0 · 461-470 31/0/31/0 · 471-480 41/0/41/0;
+   the 1 unresolved = p.435 „ai“/„af“, settled by the blind reader as a broken f — file keeps „af“)
+Found by reading: 5 FIX — p.428 „Propheter“→„Profeter“; p.438-note dropped „det“ („og det Gode“);
+p.458 colon restored („altsaa:“); p.472 „;“→„,“; p.475/476-note „bevæge“→„bestemme“ (eye-skip). Printer's
+readings restored with comments: p.428 „I see, Thi“, p.451 „Ordet. lever“, p.463 „Attributcr“, p.466
+„guddommeligo“, p.476-note „Virkuing“. Emphasis: p.430, p.446 (old comment claiming the „og“ spaced was
+wrong — rewritten), p.462, p.463. Paragraphing: one SPURIOUS break removed at the 439/440 turn (p.440 is
+flush left). The p.476 „eight lines“ comments corrected to 15. Blind second reader on 16 items: all agree.
+Verify: all clean; compile 403 pp. 0/0. .bak = transcription.tex.bak.collate-wave8.
+
+### Wave 9 — pp. 481–537, 2026-09-21. 6 agents (the last 7 pp.). SPLICED + VERIFIED.
+OCRDIFF: embedded ABBYY (kb-remapped) | pp.481-537 | 158 candidates | 3 real | 155 witness's fault | 0 unresolved
+  (per agent: 481-490 24/0/24/0 · 491-500 31/2/29/0 · 501-510 33/1/32/0 · 511-520 30/0/30/0 · 521-530 27/0/27/0 · 531-537 13/0/13/0)
+Found by reading: 6 FIX — p.496 „vilde“→„ville“; p.498 dropped „de“; p.502 „Skulde“→„Skulle“; p.509
+dropped „for“ („blot for forsvarlig“); note-call after the full stop at pp.500, 536. Printer's readings
+restored with comments: p.492 „Eenbed“, p.502 „Brng“, p.524-note „sigc“, p.526 HEAD „Vcxelvirkningen“,
+p.527 „lovgivendo“, p.530 „Apostelmenighcdens“, and **p.522: the print TRANSPOSES the two footnotes** (the
+*) call after „Tider.“ carries the Martensen note, the **) call after „Ord“.“ carries „Anfr. Skr. S. 424.“);
+the file had silently reassigned them by sense — now as printed, with comments. Comment added: p.481
+turned e in „Bestemmǝlser“. ~16 emphasis extents (pp.482, 485, 497, 517, 519, 522–524, 532, 536). Blind
+second reader on 19 items: all agree; p.527 Greek (Ἔδοξε / ἡμῖν) left OPEN, comment added (two readers
+now see no breathing on the E; the 2026-08 note saw one at 700 dpi). .bak = transcription.tex.bak.collate-wave9.
+
+## COLLATION COMPLETE — 9 waves, 9 OCRDIFF lines, all 537 pages. Ledger: repaired (2026-09-21).
+Totals: 36 transcriber's errors corrected (24 word-level), 41 silently corrected misprints restored as
+printed + 10 comments added, 58 emphasis, 17 lost paragraph breaks + 1 spurious. ~77 transcriber faults
+over 537 pp. ≈ 0.14/pg — consistent with the 12-page sample's 0.17. ocrdiff: 1,633 candidates, 8 real.
+Post-repair re-sample (seed |post: pp.54, 131, 164, 187, 235, 471): 0 confirmed errors; one flagged mark
+(p.131 „Modsigelsen;“ read as a colon) was overturned 2–1 by the collator and a third reader at
+1000–1200 dpi (worn semicolon). STILL OPEN items are listed in the transcription.tex header.
+NOT DONE: translation.tex and the old indledning/ folder were not touched; note.md not updated;
+catalog.yaml not touched.
