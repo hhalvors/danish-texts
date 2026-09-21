@@ -467,3 +467,15 @@ nous poietikos → νοῦς ποιητικός (p.12); "faith" → "faith, πί
 γνῶσις → Γνῶσις (p.16). Κόσμος (p.18) and λόγος (p.90) stay in their correct forms in English; the
 Danish keeps the printer's Κόςμος / λὸγος with comments. Sandbox compile: 172 pp., 0 errors,
 0 missing, same as before.
+
+### translation.tex synced to the collated transcription (2026-09-21)
+Whole book split by \chapter/\section/\subsection (49 units, 1:1 with the Danish), each unit
+revised against the repaired Danish by minimal edit: ~50 sense-changing word corrections carried
+over, emphasis rebuilt run-for-run (\emph/\textit counts now equal the Danish in every unit;
+1,707 \emph each), 3 omitted footnotes translated (pp.13, 126, 132; footnotes now 69 = 69),
+run-in heads pp.118/126, rules pp.122/160, paragraphing matched. Only paragraph mismatch: p.153,
+where the repaired Danish runs point "4." on with no break (PRN on the Danish side — check the
+image; the English keeps 4 as its own \medskip'd point). Other PRN (English unchanged): p.132
+"objective evil" for "objective Ydre"; p.122 "altsaa" untranslated; p.119 typo "overloking" (since fixed);
+p.125 book-title italics on "Concluding Unscientific Postscript" removed to mirror the Danish.
+Compile (lmodern recipe): 182 pp., 0 errors, 0 char-warnings. Backup translation.tex.bak.sync-20260921.

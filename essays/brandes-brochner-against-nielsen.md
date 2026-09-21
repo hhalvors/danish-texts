@@ -43,10 +43,10 @@ Both critics fix the thesis in one sentence, and the difference between their
 sentences is instructive. Brandes (*Dualismen*, p. 25): „Samme Bevidsthed kan
 uden Modsigelse forene Tro og Viden som absolut uensartede Principer“ — "the
 same consciousness can without contradiction unite faith and knowledge as
-absolutely heterogeneous principles." Brøchner (*Problemet*, p. 126), printing
-the whole sentence letterspaced, adds that they can be so united *netop paa Grund
-af deres absolute Uensartethed*, "precisely on account of their absolute
-heterogeneity." The clause answers Nielsen's defenders — Brandes names Høffding,
+absolutely heterogeneous principles." Brøchner (*Problemet*, p. 126) adds,
+letterspacing the clause, that they can be so united netop *paa Grund af deres
+absolute Uensartethed*, "precisely on account of their absolute heterogeneity."
+The clause answers Nielsen's defenders — Brandes names Høffding,
 Rudolph Schmidt and Heegaard (*Dualismen*, p. 32n) — who complained that critics
 read Nielsen's "because" as an "although." Heterogeneity is not an obstacle the
 union overcomes; it is the reason no conflict can arise, as a melody cannot
@@ -153,7 +153,7 @@ means faith in revelation, the faith of a positive religion, whose mythical and
 historical content cannot be separated from it, and not Jacobi's immediate
 certainty (pp. 31–35). The preface announces that the theory leads „til en
 factisk Dualisme i Menneskevæsenet … til Bevidsthedens uundgaaelige
-Selvopløsning“ (p. 6). The arguments reduce to seven.
+Selvopløsning“ (pp. 6–7). The arguments reduce to seven.
 
 **R1. What is new in Nielsen is not sound, and what is sound is not new
 (pp. 26–30, 212–213).** Nielsen claims, against Kierkegaard, that the two spheres
@@ -167,13 +167,13 @@ the contradictions lie.
 
 **R2. The borrowed vocabulary is equivocal (pp. 130–133).** "Existence" means
 first individual being, then being-as-will; the slide is a sleight of hand, since
-„Bevidstheden er kun existerende som værende theoretisk“ (p. 131). "Subjective"
+„*Bevidstheden er kun existerende som værende theoretisk*“ (p. 131). "Subjective"
 is doubled likewise, so that it is forgotten that subjective truth is
 *appropriated objective* truth (pp. 132–133).
 
 **R3. Distinctness is not heterogeneity (pp. 133–153).** Nielsen is right that
 will cannot be reduced to thought, but „ved en Subreption“ he turns this
-distinctiveness into an *opposition* carried over from form to content (p. 134).
+distinctiveness into an opposition carried over from form to content (p. 134).
 Will and cognition are two forms of one self-activity, and passing between them
 changes form, not content (pp. 135–140). The courage example equivocates between
 disposition and virtue (pp. 140–142 — Brandes's B6 again). And if knowledge
@@ -187,7 +187,7 @@ posit unity in the Absolute and dualism in existence is „*en Modsigelse*“
 thought cannot cognize its own absolute limitation, for inasmuch as it cognized
 it, it would at once set and abolish the boundary" (p. 158). Appeal to a wider
 subject that knows the limit presupposes the heterogeneity it was meant to prove
-(pp. 158–159). Brøchner's alternative is „en bestandig bevægelig Grændse“, a
+(pp. 158–159). Brøchner's alternative is „*en bestandig bevægelig Grændse*“, a
 boundary always in motion (p. 160).
 
 **R5. Faith and knowledge claim the same object (pp. 177–195).** This is the
@@ -195,10 +195,10 @@ core. Unlike fantasy, faith posits its object as *real*, as knowledge does
 (pp. 178–179). The "absolute mystery" at the boundary either merely names their
 mutual limitation — „*Troen er altsaa Videns Mysterium, Viden Troens*“ (p. 184)
 — or, taken as a medium of transition, reintroduces homogeneity. Hence: „Tro og
-Viden gjøre hver for sig *Krav paa hele Aanden*; de forholde sig begge til
-*Virkeligheden som Heelhed og til denne Virkeligheds Princip*, altsaa til *samme
-Object*, og idet de skulle gjøre det *som absolut uensartede*, saa ligger heri
-*Modsigelsens og Adsplittelsens Uundgaaelighed*“ — "faith and knowledge each make
+Viden gjøre hver for sig Krav paa *hele* Aanden; de forholde sig begge til
+*Virkeligheden* som Heelhed og til *denne Virkeligheds Princip*, altsaa til *samme
+Object*, og idet de skulle gjøre det som *absolut uensartede*, saa ligger heri
+Modsigelsens og Adsplittelsens *Uundgaaelighed*“ — "faith and knowledge each make
 claim to the whole spirit … hence to the same object, and inasmuch as they are to
 do it as absolutely heterogeneous, there lies herein the contradiction's and the
 division's unavoidability" (p. 187). Separating faith from mere opinion does not
