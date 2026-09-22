@@ -1203,8 +1203,11 @@ over 537 pp. ≈ 0.14/pg — consistent with the 12-page sample's 0.17. ocrdiff:
 Post-repair re-sample (seed |post: pp.54, 131, 164, 187, 235, 471): 0 confirmed errors; one flagged mark
 (p.131 „Modsigelsen;“ read as a colon) was overturned 2–1 by the collator and a third reader at
 1000–1200 dpi (worn semicolon). STILL OPEN items are listed in the transcription.tex header.
-NOT DONE: translation.tex and the old indledning/ folder were not touched; note.md not updated;
-catalog.yaml not touched.
+translation.tex: made by Hans from the collated transcription, 2026-09-21/22 (not part of this repair).
+Structural parity checked 2026-09-22: 537 \opage (contiguous), 94 footnotes, heads/§ marks, \textbf
+all match the Danish 1:1; \emph 352 vs 353 is the p.197/198 hyphenated „vi-|l“ (two \emph in the
+Danish, one „will“ in the English) — not a discrepancy; 0 errors in translation.log.
+NOT DONE: old indledning/ folder untouched; note.md not updated.
 
 ---
 
@@ -1232,5 +1235,5 @@ as the base for chunks 01–02 and corrected against the collated Danish.
   footnote on pp.288–90, the footnotes on p.522 that may be transposed, the
   Bible references kept as printed where they look like Nielsen's own slips,
   "Mosebrand" on p.43x, and "Object/Gjenstand" on p.416.
-- catalog.yaml: the translation is still `status: to-do`. It has deliberately
-  not been changed until Hans has reviewed the draft and built the PDF.
+- catalog.yaml: translation flipped to `status: complete` with a Translation link
+  to translation.pdf, at Hans's request, 2026-09-22 (validate-catalog.py: 0 problems).
