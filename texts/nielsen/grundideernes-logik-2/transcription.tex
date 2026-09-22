@@ -35,12 +35,33 @@
 %  Doubtful readings logged as "% UNSURE:" (24). Quote balance off zero by 11,
 %  every instance a logged defect in the print.
 %
+%  ACCURACY [2026-09-22]: sampled 6 pages at the image (printed 152, 172,
+%  309, 329, 386, 390; chosen by REPAIR-PLAYBOOK.md §3's deterministic rule,
+%  seed "nielsen/grundideernes-logik-2|v1") by a reader who had not
+%  transcribed the book, no OCR consulted: 0 word errors, rate bounded at
+%  <=0.5/page (95%). NOT a full collation. The same pass adjudicated 15
+%  ocrdiff candidates drawn from elsewhere in the book: 0 of 15 were real
+%  transcription errors (all OCR faults of the layer: ellipsis read as "11",
+%  the β) heading read as "3", line-duplications, footnote-order artifacts).
+%  Observed, not counted, at the sampled pages: the ou/ø class again
+%  (p.152 mirakuløs, p.172 afgjørende and fuldførte, p.310 Beviisførelse,
+%  p.325 bør, all on weakly inked leaves, with clear ø elsewhere on the same
+%  pages); and p.283 "Conseqvens" read from letterform plus the book's habit
+%  rather than from a clean impression (p.286 is sharp), which wants a second
+%  eye.
+%
 %  OPEN:
-%   * Hebrew (p.55 note, 12 runs) needs a Hebrew font or the pdflatex build
-%     fails; pointing unverifiable at scan resolution.
+%   * Hebrew (p.55 note): RESOLVED 2026-09-22. Set with cjhebrew, which does
+%     pointed Hebrew under plain pdflatex; the build needs that package and no
+%     font change. The pointing is still an editorial reading: the BL scan is
+%     1-bit and the type has broken up, so the consonants and word order are
+%     certain and the individual points are not (see the UNSURE note at the site).
 %   * o/ø: early batches logged some faint ø as PRINTER "o" (e.g. pp.318--328
 %     dodelig, tankelos, indholdslos, noiagtig); the rule adopted later is that
 %     only a positive signal counts. Review these PRINTER notes.
+%   * MARK: the \opage{152} marker sits before "kun"; p.152 begins mid-word
+%     and the marker belongs at "natur\opage{152}ligviis". Other sampled
+%     markers, including the mid-word ones at pp.172/173, are correctly placed.
 %   * Heading forms: minor heads (α)/β)/γ) with "Functioner af ...") are set
 %     centred on their own line; the αα)/1)/2)/3) heads run in. Only B./a./b.
 %     heads have toc entries. A normalisation pass against the Indhold is
@@ -65,6 +86,7 @@
 \usepackage{libertinus}
 \usepackage{libertinust1math}
 \usepackage{textalpha}   % polytonic Greek typed directly
+\usepackage{cjhebrew}    % pointed Hebrew, p. 55 note (pdflatex-safe)
 \usepackage{fancyhdr}
 \usepackage[colorlinks=true,linkcolor=black,urlcolor=black,
   pdftitle={Grundideernes Logik II},
@@ -1571,16 +1593,22 @@ Men her hugger Heiberg nu Knuden over, istedenfor at løse den. For at blive For
 „Ethvert Omdømme“ --- hedder det\footnote{Den speculative Logik §~144. Anm.~3.}% note *)
 {} --- „er positivt, thi enten det Almindelige, hvorunder det Enkelte subsumeres, er bestemt positivt eller negativt, saa er selve Subsumtionen altid en positiv Act.“ Dette maa indrømmes; men i Indrømmelsen sees da ogsaa strax Fordringen paa en væsentlig Formudvikling. Reflecteres her nemlig paa Domsacten, altsaa paa det i Functionen Subjective, da viser det sig, at Subsumtionens positive Act væsentlig er tre Positioner: Positionen af Subjectet, Positionen af Prædicatet, Positionen af Subjectets og Prædicatets Eenhed. Vi kunne nu gjerne begynde med den Forudsætning, at her væsentlig kun er een eneste logisk Dom; men da Tankeformen altid ændres med Sprogformen, og ingen enkelt Form er absolut adæqvat, saa indsees, at den ene Dom nødvendig maa udvikle sig til en Fleerhed af Domme, idet den ene Form udvikler sig til en Fleerhed af Former. Reflectere vi paa Positionen af Subjectets og Prædicatets Eenhed, altsaa paa \emph{Copula}, da kan man vel indrømme, at Forskjellen mellem Subject og Prædicat er „en Reflexionsforskjel, hvori det Ene kun er, hvad det Andet er“; men Reflexionsforskjellen er derfor ligefuldt en væsentlig Forskjel: det Ene er alligevel ikke, hvad det Andet er. Vistnok siger Dommen, at Subjectet er, hvad Prædicatet er, at Subjectet %
 % --- p. 55 ---
-\opage{55}er sit Prædicat; men Dommen siger jo ogsaa, at Subjectet ikke er Prædicat, Prædicatet ikke Subject. Sættes nu Subjectets og Prædicatets Væren umiddelbart som een og samme Væren, er Dommen positiv, og den positive Dom bestemt ved Formen: S er P. Sættes omvendt Subjectets og Prædicatets Væren som en med sig ueens, i sig selv forskjellig Væren, saa er Subjectet ikke, hvad Prædicatet er; Dommen er altsaa negativ, og den negative Dom bestemt ved Formen: S er ikke P. Umiddelbart og efter Erkjendelsens Indhold kan den positive Dom jo vistnok stilles selvstændig imod den negative: her er forsaavidt to forskjellige Domme. Det er da ogsaa paa denne Forskjellighed, at Logiken reflecterer, naar den inddeler Dommene efter deres \emph{Qvalitet}: i \emph{positive}, \emph{negative} og \emph{uendelige}. Men, væsentlig seet, er her kun een Dom. Den positive Dom faaer kun logisk Betydning i Reflexion af den negative, ligesom omvendt den negative Dom maa blive uendelig og i sin Uendelighed meningsløs, dersom den ikke kan reflectere sig i sin tilsvarende positive. Hvorledes de sprogformende Functioner forberede de tankeformende, sees da i denne Sammenhæng deraf, at der gives et sprogligt Udtryk for et Subjects Væren eller Ikke-Væren af sit Prædicat.\footnote{At Copula „er“ ikke findes i det hebraiske og aramaiske Sprog, er i Religionsstridighedernes Historie særlig fremhævet med Hensyn paa de sakramentale Ord: \textit{hu dami, hu gufi}.%
-% *** HEBREW IN THE PRINTING --- SUBSTITUTION, NOT A TRANSCRIPTION. ***
-% The page sets the pointed Hebrew phrase הוּא דָמִי, הוּא גוּפִי ("this is my blood,
-% this is my body"). This edition is built with pdfLaTeX + Libertinus and has
-% NO Hebrew font, so the phrase is transliterated, following the repo
-% convention (speculative-methode pp. 33, 39, 159; treschow/menneskelige-natur
-% p. 115). If cjhebrew is installed the glyphs can be restored with
-% \usepackage{cjhebrew} and \cjRL{...}; not compile-tested.
+\opage{55}er sit Prædicat; men Dommen siger jo ogsaa, at Subjectet ikke er Prædicat, Prædicatet ikke Subject. Sættes nu Subjectets og Prædicatets Væren umiddelbart som een og samme Væren, er Dommen positiv, og den positive Dom bestemt ved Formen: S er P. Sættes omvendt Subjectets og Prædicatets Væren som en med sig ueens, i sig selv forskjellig Væren, saa er Subjectet ikke, hvad Prædicatet er; Dommen er altsaa negativ, og den negative Dom bestemt ved Formen: S er ikke P. Umiddelbart og efter Erkjendelsens Indhold kan den positive Dom jo vistnok stilles selvstændig imod den negative: her er forsaavidt to forskjellige Domme. Det er da ogsaa paa denne Forskjellighed, at Logiken reflecterer, naar den inddeler Dommene efter deres \emph{Qvalitet}: i \emph{positive}, \emph{negative} og \emph{uendelige}. Men, væsentlig seet, er her kun een Dom. Den positive Dom faaer kun logisk Betydning i Reflexion af den negative, ligesom omvendt den negative Dom maa blive uendelig og i sin Uendelighed meningsløs, dersom den ikke kan reflectere sig i sin tilsvarende positive. Hvorledes de sprogformende Functioner forberede de tankeformende, sees da i denne Sammenhæng deraf, at der gives et sprogligt Udtryk for et Subjects Væren eller Ikke-Væren af sit Prædicat.\footnote{At Copula „er“ ikke findes i det hebraiske og aramaiske Sprog, er i Religionsstridighedernes Historie særlig fremhævet med Hensyn paa de sakramentale Ord: \cjRL{hU' dAmiy}, \cjRL{hU' gUpiy}.
+% *** HEBREW: SET AS HEBREW (was transliterated until 2026-09-22). ***
+% The page sets the pointed phrase הוּא דָמִי, הוּא גוּפִי ("this is my blood, this is
+% my body"). It is now reproduced with cjhebrew, which typesets pointed Hebrew
+% under plain pdfLaTeX and needs no font change to the Libertinus body text.
+% cjhebrew input is a transliteration of its own: ' = alef, U = vav with dagesh
+% (shuruq), A = qamats, i = hiriq, y = yod; final forms are automatic. So
+% hU' dAmiy = הוּא דָמִי and hU' gUpiy = הוּא גוּפִי. Each \cjRL group is internally
+% right-to-left while the surrounding Danish stays left-to-right, which puts the
+% two phrases, the comma and the full stop exactly where the 1866 page has them.
+% Other books in this repo still transliterate this sort of phrase
+% (speculative-methode pp. 33, 39, 159; treschow/menneskelige-natur p. 115);
+% they can be converted the same way.
  Et Sprog kan have den abstracte Copula, uden at det just derfor har et til Kategorien \emph{Væren} svarende Abstractum (saaledes er f.~Ex. det franske \textit{être} ikke Væren, men Substans), men et Sprog, der ikke har den abstracte Copula, vil vanskelig frembyde adæqvate Udtryk for Kategorier som Væren og Ikke-Væren.}% note *)
-% BUILD: the Hebrew above is Unicode; the pdflatex preamble has no Hebrew font, so the real build will need one (or a substitute) here.
+% BUILD: set with cjhebrew (TeX Live package, pdflatex-safe). The Unicode Hebrew
+% in the comment above is for reading the source only and is never typeset.
 % UNSURE: Hebrew pointing. BL copy (1-bit, 600 ppi, broken type) confirms the letters (הוּא twice with shuruq; ד-מ-י; ג-ו-פ-י) and word order, but the qamets under dalet and the hiriqs under mem and pe cannot be made out with certainty
 % NOTE: "S", "P" here and below are set in antiqua capitals in the print; left roman, not \textit.
 
