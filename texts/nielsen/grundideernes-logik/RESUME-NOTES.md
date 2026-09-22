@@ -1288,3 +1288,26 @@ Probing against the scan settles it: **offset 38, unanimous from 450 folios,
 roughly half the marks in the later part of the book were simply never written
 down. So the job here is `apply`, not `convert` — or a merge that keeps the 425
 hand-made marks as `\opage` and fills the gaps with `\apage`. Do not convert.
+
+---
+
+## 2026-09-22: FULL COLLATION + TRANSLATION — both COMPLETE
+
+Collation (REPAIR-PLAYBOOK §5C): 49 subagents × ~10 pp., all 484 printed pages
+(Forord, VII–XXXIV, 1–456) at the image. Applied: 94 transcriber's errors, 38
+silently-corrected printer's errors restored + 15 commented, 198 \emph fixes, 50
+page markers moved to the exact turn, duplicate \opage{417} deleted. Full log in
+the transcription.tex ACCURACY header; ledger row updated (status repaired).
+Backup: transcription.tex.bak.20260922-precollation (untracked; delete when happy).
+OPEN (not applied, listed in the header): 138 STRUCT/UNSURE/HEAD/OSLASH items —
+mostly paragraph breaks the file has or lacks at page turns, n/u turned-letter
+doubts, and the αα/ββ/γγ run-in heads that the file sets as centred heads.
+Antiqua is unmarked in the body throughout (transcriber's convention).
+
+Translation: translation.tex, 27 batches from the collated text. All 484 page
+markers carried (roman \opage{VII}.. in the front matter), per-page EN/DA word
+ratio 0.9–1.45 on every page, sandbox compile 399 pp., 0 errors.
+Known loose ends: citation style for German volume numbers varies between
+batches ("6ter Band" vs "vol. 6"); a few Danish misprints were rendered as the
+intended word (e.g. "Arogonit" → aragonite). A read-through for terminology
+drift across batch seams has not been done.

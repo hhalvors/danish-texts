@@ -479,3 +479,11 @@ image; the English keeps 4 as its own \medskip'd point). Other PRN (English unch
 "objective evil" for "objective Ydre"; p.122 "altsaa" untranslated; p.119 typo "overloking" (since fixed);
 p.125 book-title italics on "Concluding Unscientific Postscript" removed to mirror the Danish.
 Compile (lmodern recipe): 182 pp., 0 errors, 0 char-warnings. Backup translation.tex.bak.sync-20260921.
+
+## 2026-09-22: three translation corrections (found while translating Nielsen's reply)
+- p.132 "objective evil" -> "the objective external" (det objective Ydre).
+- p.122 "Svaret er altsaa" -> "The answer is therefore" (altsaa had been left untranslated).
+- p.187 "et lidet heldigt Forsøg" -> "a not very successful attempt" (was "a little
+  successful attempt", which reversed the sneer). Nielsen quotes this on p. 49 of
+  *Brøchners philosophiske Kritik*; the two translations now agree.
+Backup: translation.tex.bak.fixes-20260922.

@@ -1,0 +1,2042 @@
+% =====================================================================
+%  R. Nielsen, HR. PROFESSOR BRØCHNERS PHILOSOPHISKE KRITIK GJENNEMSEET.
+%  Kjøbenhavn. Forlagt af den Gyldendalske Boghandel (F. Hegel).
+%  Trykt hos J. H. Schultz. 1868.   52 pp. (text pp. 3--52).
+%
+%  Diplomatic transcription from a Google Books digitisation of the
+%  British Museum (now British Library) copy, shelfmark "8467.bbb.41"
+%  (written on the title page), `bibliotek/Nielsen, Rasmus/
+%  1868-brochners-kritik.pdf`, 60 PDF pages, 354.72 x 580.32 pt, each
+%  body page one 1-bit JBIG2 image at 600 ppi,
+%  sha256 6597e922a147fcff515f6019ca31ce6fd35f195f092be01397f42f2fa933104d.
+%
+%  The middle round of a three-part exchange: Brøchner, Problemet om Tro
+%  og Viden (1868) -> this reply -> Brøchner, Et Svar til Professor
+%  R. Nielsen (1868; texts/brochner/svar-nielsen), whose p. 3 quotes this
+%  title with "gjennemseet af R. Nielsen".
+%
+%  The exact title, from the title page (PDF 5): "Hr. Professor Brøchners"
+%  / "Philosophiske Kritik" (capital P on the title page and wrapper; the
+%  text itself writes "philosophiske Kritik", p. 3, p. 52) / "gjennemseet"
+%  (letterspaced) / "af" / "R. Nielsen." (letterspaced). No apostrophe in
+%  "Brøchners" (Google's metadata adds one).
+%
+%  This header is the edition's apparatus. The transcription harness
+%  (pagemap.py, ocr.sh, spacing.py, check.py, splice.py, joints.py) is not
+%  tracked in git and is unrunnable without the scan, so everything an
+%  outside reader needs in order to check this text against the scan is
+%  recorded here.
+%
+% ---------------------------------------------------------------------
+%  1. PAGE MAP  (verified by eye 22 Sep 2026; see pagemap.py)
+% ---------------------------------------------------------------------
+%
+%      printed 3--52   =   PDF page - 4      (PDF 7--56)
+%      title leaf pp. [1]-[2] = PDF 5-6
+%
+%  Uniform. The head of every one of PDF 7--56 was rendered and its folio
+%  read on the image: 4--52 in unbroken sequence on PDF 8--56, no leaf
+%  missing or doubled, no misprinted folio. p. 3 (PDF 7) is the opening
+%  page and carries no folio. The embedded layer's folios agree throughout.
+%
+%  Leaves (PDF pages), none of them transcribed except the title page:
+%      PDF   1--2   Google Books notices (English, Danish)
+%      PDF   3      front wrapper: the title repeated inside a ruled frame
+%      PDF   4      inside front wrapper: publisher's advertisement of
+%                   Nielsen's own writings ("Paa den Gyldendalske Boghandels
+%                   Forlag er udkommet følgende Skrifter af Professor
+%                   R. Nielsen"), in Fraktur
+%      PDF   5      TITLE PAGE = p. [1] (ms. shelfmark, a pencil mark and
+%                   underline at the author's name: not transcribed)
+%      PDF   6      p. [2], blank but for the British Museum stamp
+%      PDF  56      p. 52: text ends, closing rule, BM accession date stamp
+%      PDF  57      advertisement leaf (Brandes, Dualismen i vor nyeste
+%                   Philosophie; Hegaard; Nielsen/Hegaard, om Tro og Viden;
+%                   Martensen, Den danske Folkekirkes Forfatnings-Spørgsmaal)
+%      PDF  58      advertisement (Bjørnson, Fiskerjenten; Ibsen, Peer Gynt;
+%                   Welhaven, Samlede Skrifter; "Jesu Christi
+%                   Lignelser")
+%      PDF  59      blank
+%      PDF  60      back wrapper: the PDF 58 advertisement in a second setting
+%  There is no Forord, no Indhold, no Rettelser.
+%
+% ---------------------------------------------------------------------
+%  2. STRUCTURE  (from the images, not the OCR)
+% ---------------------------------------------------------------------
+%
+%  One continuous polemic, pp. 3--52, with no heads, no numbered sections
+%  and no internal rules. p. 3 opens without a title, on a large initial
+%  capital "I et for nylig udgivet Skrift: Problemet om Tro og Viden, ..."
+%  (set as ordinary text). p. 52 ends "... i Hr. Prof. Bröchners
+%  philosophiske Kritik." followed by a short closing rule.
+%  "§ 15" (p. 11) is a citation, not a head.
+%
+% ---------------------------------------------------------------------
+%  3. TYPOGRAPHY AND TRANSCRIPTION CONVENTIONS
+% ---------------------------------------------------------------------
+%
+%  Body in ANTIQUA (roman) throughout -- unlike Brøchner's reply, which is
+%  Fraktur. aa (not å). Emphasis is by LETTERSPACING -> \emph{} (e.g. p. 3
+%  "Problemet om Tro og Viden", p. 25 "sin Form"); the notes use it too.
+%  Latin and other foreign words are set in the same roman as the body
+%  ("Non datur metaphysica in mathesin via", p. 25; "instar omnium",
+%  p. 51) and are NOT marked; \textit{} only where the image shows a true
+%  italic, which set-up did not find.
+%
+%  The name is printed in TWO forms, Brøchner and Bröchner (the latter
+%  with a diaeresis ö, some thirty times, the former about ten), each
+%  verified on the image at set-up. Both are transcribed as printed.
+%
+%  Quotation marks „...“, low-high. Long rule (pause, and page ranges such
+%  as "S. 178---195") -> ---. The id-est mark ɔ: (p. 22) is typed U+0254.
+%  Footnotes marked *), **) per printed page (p. 25 carries two):
+%  \thefootnote gives *), **), ***), reset by \setcounter{footnote}{0}%
+%  after every page marker. The p. 50 note runs over onto p. 51; it is set
+%  whole at its call with a % comment where the printed page turns.
+%  Line-break hyphens are resolved (Cau\-%).
+%
+% ---------------------------------------------------------------------
+%  4. WORD-ACCURACY
+% ---------------------------------------------------------------------
+%
+%  Word-accuracy: every batch diffed against the embedded (Google) text
+%  layer before splicing (ocrdiff.py), and again against an independent
+%  tesseract -l dan witness. 4 batches; embedded: 7 candidates, 0
+%  transcription errors corrected, 0 unresolved; tesseract: 119
+%  candidates, 0 corrected, 0 unresolved. See TRANSCRIPTION-PLAYBOOK.md
+%  §3 step 4.
+%  Because two batches were drafted from the embedded layer, the diff
+%  against that layer is not independent of them; each batch agent
+%  therefore also read every page of its range at the image against the
+%  fragment (48 layer faults removed there: dropped dashes, joined words,
+%  a scrambled pair of lines on p. 19, lost quotes and commas).
+%  Then a full second collation of ALL 50 pages at the image (200-600
+%  ppi, no OCR consulted) by two readers who had not transcribed, 22 Sep
+%  2026: 7 errors found and corrected (0.14/page): a silently corrected
+%  printer's error (p. 12 Opmærhsomhed), a comma for a semicolon (p. 7),
+%  two specks read as full stops (pp. 9, 26), an emphasis extent (p. 29),
+%  a spurious paragraph break at the p. 28/29 seam, a word division
+%  (p. 48 "der i"). Items the collators left doubtful are kept as
+%  transcribed with a % comment at the site (pp. 9, 10, 13, 26).
+%  The p. 32 range dash was normalised to --- like pp. 45, 47, 51.
+%
+% ---------------------------------------------------------------------
+%  5. PRINTER'S DEFECTS LOG
+% ---------------------------------------------------------------------
+%
+%  All transcribed as printed, with a % comment at the site:
+%  p. 6 "man reddedes" in a quotation where Problemet S. 193 has "men" ·
+%  p. 12 Opmærhsomhed (Opmærksomhed) · p. 24 "i „i sin Form“" (doubled i)
+%  · p. 24 methaphysisk, p. 25 methaphysiske · p. 25 note "eg" (og) ·
+%  p. 27 Piligt (Pligt) · p. 32 Forelæs-/læsninger (dittography across the
+%  line break) · p. 36 "jer erkjender" (p. 29 quotes it as "jeg") ·
+%  p. 38 kvilket (hvilket) · p. 45 imellen (imellem) · p. 46 phychologisk
+%  · p. 47 a „ printed as ",." · p. 49 a ;-shaped mark before „Hr. ·
+%  p. 50 note mathemathiske.
+%  Not defects: Brøchner/Bröchner both occur and are kept as printed;
+%  Væsensvillen (in quotations from Brøchner) is a real form, not a defect.
+%  Quote balance „“ is 0 (203/203).
+%
+% =====================================================================
+\documentclass[11pt]{book}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{libertinus}
+\usepackage{libertinust1math}
+\usepackage{textalpha}
+\usepackage{graphicx}
+\DeclareUnicodeCharacter{0254}{\reflectbox{c}}
+\usepackage{amsmath}
+\usepackage[danish]{babel}
+\usepackage{fancyhdr}
+\setlength{\headheight}{28pt}
+\addtolength{\topmargin}{-13.5pt}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LE,RO]{\thepage}
+\fancyhead[RE]{\textit{Hr. Professor Brøchners philosophiske Kritik}}
+\fancyhead[LO]{\textit{gjennemseet af R. Nielsen}}
+\renewcommand{\thefootnote}{\ifcase\value{footnote}\or *)\or **)\or ***)\else
+  \arabic{footnote})\fi}
+\usepackage{setspace}
+\setstretch{1.3}
+\usepackage{marginnote}
+\newcommand{\opage}[1]{\marginnote{\footnotesize\textit{[#1]}}}
+\newcommand{\apage}[1]{\marginnote{\footnotesize\textit{[#1]}}}
+
+\begin{document}
+
+\frontmatter
+\begin{titlepage}
+\centering
+\vspace*{3cm}
+{\Large Hr. Professor Brøchners}\\[1em]
+{\Huge Philosophiske Kritik}\\[2em]
+{\large \emph{gjennemseet}}\\[1.5em]
+{\small af}\\[1.5em]
+{\large R. \emph{Nielsen}.}\\[5em]
+% [publisher's device: roundel with monogram, not transcribed]
+Kjøbenhavn.\\[0.5em]
+Forlagt af den Gyldendalske Boghandel (F. Hegel).\\[0.3em]
+{\footnotesize Trykt hos J. H. Schultz.}\\[0.5em]
+1868.
+\end{titlepage}
+
+\mainmatter
+
+% --- p. 3 ---
+\opage{3}\setcounter{footnote}{0}%
+% [p. 3 opens without a head; the first letter "I" is a large initial, set here as an ordinary letter]
+I et for nylig udgivet Skrift: \emph{Problemet om
+Tro og Viden}, har Hr. Professor Brøchner, efter at
+have afhandlet og gjendrevet adskillige andre Theorier,
+tilsidst af nogle fra mine Leilighedsskrifter og en Andens
+Referat laante Udtalelser sammensat sig et Noget, han
+kalder min „Theorie“. Ved at underkaste dette Noget
+en udførlig philosophisk Kritik har Hr. Prof. med kjen\-%
+delig Selvfølelse, vægtige Grunde og mange Beviser for\-%
+visset sig om, at min „Theorie“ ikke duer, og anbefalet sin
+% [a dot stands in the right margin, outside the measure, after "sin": a speck, not transcribed]
+som den eneste rette. Da jeg nu i denne Anledning kom\-%
+mer til at gjennemsee Hr. Professorens philosophiske
+Kritik, bliver det altsaa min Opgave at udfinde, hvilke
+Bestanddele af den mig tillagte Theorie, jeg kan vedkjende
+mig, og hvorledes det forholder sig med de mange Bevi\-%
+ser og vægtige Grunde.
+
+For at forstaae en Kritiker, maa man fremfor Alt
+mærke sig hans Standpunkt. Det Standpunkt, hvorpaa
+Hr. Prof. Br. har stillet sig, er naturligviis „det strengt
+videnskabelige“. I hvad han kalder Theoriens Conse\-%
+qvenser, med Hensyn til det Psychologiske (S. 178---195),
+med Hensyn til det Ethiske (S. 195---199) og med Hen\-%
+syn til det Religiøse (S. 199---210), har den kritiserende
+Forfatter sammenhobet endeel formeentlige og virkelige
+% --- p. 4 ---
+\opage{4}\setcounter{footnote}{0}%
+Modsigelser, der klarligen skulle bevise, at den af mig
+opstillede Troestheorie maa forkastes, naar man anlægger
+Videns Maalestok. Hvad er nu herved opnaaet? Netop
+hvad jeg ønsker. Langt fra at undergrave min Troes\-%
+lære, har Kritiken just bidraget Sit til at stadfæste, hvad
+jeg ved enhver Leilighed atter og atter indskærper, at
+Troeslæren umulig kan bestaae for Videnskabens Dom\-%
+stol, at den derfor hverken kan eller vil underkaste sig
+Videns Afgjørelse. Forsaavidt er Hr. Prof., ifølge en
+videnskabelig Selvskuffelse, kommen til at give en Stad\-%
+fæstelse, hvor han meente at præstere en Gjendrivelse.
+Men saa meget jeg end paaskjønner den i Kritikens
+Gjendrivelse indeholdte Stadfæstelse, saa eftertrykkelig
+maa jeg tillige paatale den „Vilkaarlighed“, hvormed den
+kritiserende Forfatter har undladt at tage Hensyn til det
+Eiendommelige ved den Theorie, han vil gjendrive. I
+den af mig antydede\footnote{Min Religionsphilosophie er endnu ikke udkommen.}
+Troeslære bliver Troen jo ingen\-%
+lunde opfattet som en paa blind Autoritet og dunkel
+Følelse støttet Antagelse af disse eller hine overnaturlige
+Kjendsgjerninger, men paa inderlig bevidst Tilegnelse,
+personlig Selvforstaaelse; Troen er, ifølge min Opfattelse,
+ikke tankeløs, men væsentlig selvtænkende, et oprindeligt
+Livsprincip og just derfor et eiendommeligt Tankeprincip.
+
+Det er Troen, ikke som umiddelbar Antagelse, men som
+Tankeprincip, jeg har tillagt en egen \emph{Kritik}, idet jeg har
+skjelnet skarpt imellem \emph{Troeskritik} og \emph{Videnskritik}.
+Hvad har nu Hr. Prof. Brøchners Kritik i denne An\-%
+ledning bragt for Lyset? To formelle Indsigelser, af
+hvilke den første ophæver sig selv, fordi den er over\-%
+flødig, og den sidste falder bort, fordi den er ubegrundet.
+Den første (S. 190---91) lyder paa, at Videnskritiken
+ikke kan vedkjende sig Troeskritiken, og herom er slet
+% --- p. 5 ---
+\opage{5}\setcounter{footnote}{0}%
+ingen Strid; den anden lyder paa, at Troeskritiken strider
+imod Troens Væsen, men den er uden Begrundelse.
+Til Beviis for, at den er uden Begrundelse, lade vi Hr.
+Prof. selv tale (S. 192---93): „Naar f. Ex. Fortællingen
+om Paradiset „med alle deri indeholdte Charakteertræk“,
+siges at have væsentlig og sand Virkelighed, saa er for
+Viden en „indre“ Virkelighed, en „høiere Virkelighed“,
+i hvilken alle i hiin Fortælling indeholdte Charakteertræk
+ere bevarede, kun en Phantasievirkelighed, og Troen vil
+ikke nøies med en sublimeret Virkelighed, der mangler
+den Facticitet, paa hvilken Troen som Tro maa lægge
+afgjørende Vægt. Troen fordrer, at det Factiske con\-%
+gruerer med det Ideelle, med Troesidealet, at Virkelig\-%
+heden i denne Forstand bliver en høiere Virkelighed, men
+den protesterer paa det Bestemteste mod hiin Fordobling
+af Virkeligheden, der berøver Troens Gjenstand det Histori\-%
+skes reale Betydning. Vilde man saaledes lade Christi
+Fødsel, Død og Opstandelse foregaae, ikke i den ydre
+historiske Virkelighed, i hvilken Menneskelivet har sin
+Skueplads, men kun i hiin høiere Virkelighed, til hvilken
+de, som gaaende ind under Underets Begreb, efter Theorien
+maae høre hen, saa maatte Troen heri see en Tilintet\-%
+gjørelse af hele Christendommens Grundlag. Og Viden\-%
+skaben vilde kun kunne give den Ret deri, ligesom den
+paa egne Vegne overhovedet, medens den protesterer imod
+at unddrages den sande Idealitetens Virkelighed, ligesaa
+bestemt maa protestere mod en Fordobling, der forfalsker
+Idealitetens Virkelighed ved at sætte en Bastardvirkelig\-%
+hed, født af Phantasien, istedet, og som ovenikjøbet maa
+blive vilkaarlig og inconseqvent. Ethvert Under maatte
+faae hiin høiere Virkelighed til sit Element, men af de
+Undere, der have et Ydre, tør man kun føre dem,
+der kunne reduceres til Visioner, til „Udslag“ af den
+Troendes indre Forhold til det Guddommelige, tilbage
+% --- p. 6 ---
+\opage{6}\setcounter{footnote}{0}%
+til den, idetmindste tør man kun gjøre det uforbeholdent
+med Hensyn til dem. Saaledes kan f. Ex. Miraklet med
+den brændende Tornebusk blive en indre Virkelighed,
+men nu saadanne Mirakler som f. Ex. Overgangen over
+det røde Hav, eller Vandets Fremspringen af Klippen
+ved Moses's Slag? Disse tør man ikke berøve den ydre
+Realitets Virkelighed, og hvorfor ikke? Mon af en Troes\-%
+grund? Nei, af et inconseqvent, fra Troens Synspunkt
+vilkaarligt, rationelt Hensyn til de historiske Kjendsgjer\-%
+ninger, der jo tale for, at Jøderne i den ydre Virkelig\-%
+heds Forstand kom over det røde Hav, og at de tør\-%
+stende Vandrere i Ørkenen ikke maatte nøies med et „in\-%
+dre“, „subjectivt“ Vand, eller et „tilkommende“ Vand,
+% sic: "man reddedes" as printed; Problemet (S. 193), which is being quoted, has "men reddedes"
+man reddedes fra at omkomme ved et i den ydre Virke\-%
+ligheds Forstand virkeligt Vand, som Troen endnu søger
+i en virkeligt existerende Kilde“\footnote{Som Anmærkning tilføies: „Jfr. 4 Moseb. XX, 11: og de drak
+deraf, og deres Qvæg.“ % [the closer is on the image a raised mark of the 9-shaped form; typed “ by convention]
+}.
+
+Dette Stykke Kritik er mærkeligt i to Henseender.
+
+For det Første kan da heraf sees, at den Theorie,
+Hr. Prof. angriber, ikke er min Theorie. Det Troesbe\-%
+greb, han lægger til Grund, er i den Grad afvigende fra
+mit, at jeg ikke vil spilde et Ord paa at belyse Afvigel\-%
+sen. Den Opfattelse af Underet, han tillægger mig, „con\-%
+gruerer“ med min som Fiirkanten med Cirkelen; Enhver,
+som blot vil kaste et Blik i mine Skrifter, kan overbe\-%
+vise sig derom. Jeg har, idet jeg paa det Bestemteste
+opfatter Begrebet Under ikke som Vidensbegreb, men
+som Troesbegreb, aldeles ingen Trang eller Tilskyndelse
+til at faae den objective Virkelighed, hvor den virkelig
+udgjør et uundværligt Moment i Troesphænomenet, bort\-%
+forklaret. Det er i Sandhed ikke mig, der har forsøgt
+paa at lade enten Israeliterne eller deres Qvæg slukke
+% --- p. 7 ---
+\opage{7}\setcounter{footnote}{0}%
+Tørsten i subjectivt Vand: Hr. Prof. Brøchners „subjec\-%
+tive Vand“ udspringer alene fra hans egen „Kilde“.
+
+For det Andet lære vi af ovenstaaende Udtalelse,
+hvor umyndig, tankeløs og ubehjælpsom Troen dog er,
+naar den forlades af den høie Videnskab. Den stakkels
+videnskabsløse Tro har da ikke engang saamegen Dømme\-%
+kraft, at den i en bibelsk Fortælling kan gjøre Forskjel
+imellem ydre og indre Virkelighed, imellem Aand og
+Bogstav; hvorfra skulde den vel ogsaa faae Dømmekraft,
+naar al Dømmekraft bliver til i Videnskaben og tilhører
+Videnskaben? Heraf kan man da nok forklare sig, at
+den om Videnskritiken uvidende Tro, hvad Fortællingen
+om Paradiset angaaer, maa enten tage Alt bogstaveligt
+eller forkaste Alt. Til at skjelne mellem lavere og høiere
+Virkelighed, mellem materiel Virkelighed og Aandsvirke\-%
+lighed, Virkelighed for Aanden, hører jo sund Forstand;
+men hvorfra skulde den til sig selv overladte Tro faae
+sund Forstand, naar al Forstand er en Frugt af Viden\-%
+skaben og tilhører Videnskaben? Troen som Tro kan
+for den objective Videns Øine gjøre; hvad den vil,
+den er forloren. Forsøger den ved en Kritik at udskille,
+hvad der ikke vedkommer dens Væsen, saa har den jo
+allerede forgrebet sig paa „Fornuften“, har med det
+Samme begyndt at „rationalisere“ sig selv og forberedt
+sin Undergang i Videnskaben. Forsmaaer den al Kritik,
+og griber iblinde, hvad der tiltaler dens „dunkle, selviske
+Drift“, saa forraader den selv sin medfødte Tankeløshed;
+den objective Viden vil, for at sige det kort, Intet høre
+om Troestanker: Troen er dum og skal være dum, og
+derved bliver det.
+
+Spørge vi, hvad der berettiger den philosophiske
+Kritik til saa ubetinget at hævde Videns Eneret i Aan\-%
+dens Verden, da maae vi naturligviis, for at finde det
+rette Svar, gaae tilbage til „Grundlaget“. Forfatterens
+% --- p. 8 ---
+\opage{8}\setcounter{footnote}{0}%
+eneste Lys er Videnskabens Lys; thi Troen er kun et
+Mysterium, og Mysteriet det yderste Mørke. Men naar
+Videnskaben uden videre faaer Lov til at afvise enhver
+anden Maalestok end sin egen; naar alle Forhand\-%
+linger om Tro og Viden fra Begyndelsen af føres ude\-%
+lukkende fra Videns Standpunkt, naar Alt afgjøres i Vi\-%
+den og ved Viden: hvad Under da, at „Problemet om
+Tro og Viden“ falder ud til Videns Fordeel! Vel seer
+det ud, som skulde Videnskaben gjennem Kritiken godt\-%
+gjøre sin Ret til at opløse Troen, den positive Tro paa
+Aabenbaringens Under; men det er et Skin. Videnskaben
+beviser ikke sin Ret; den postulerer den kun; thi ethvert
+Beviis er et Vidensbeviis, altsaa et Beviis, der forudsæt\-%
+ter, hvad der netop allerførst skulde bevises, nemlig, at
+Vidensbeviset har Gyldighed paa Troens Omraade:
+Grundbeviset mangler, og, da Grundbeviset mangler, be\-%
+væger den hele Beviisførelse sig afvexlende mellem petitio
+principii og circulus in probando.
+
+Strax i Begyndelsen (S. 130) fremsættes til min
+store Overraskelse den Paastand, at jeg, for at hævde
+„Modsætningen mellem Existens (Liv) og Viden (Theorie)“
+og mellem „Subjectivt og Objectivt“ tager Existensens
+Begreb i „en vilkaarlig Dobbeltbetydning“ og derpaa
+bygger „en sophistisk Slutning“. --- „\emph{Existensen}“, siges
+der, „tages nemlig \emph{først}, for at hævdes som almeen
+Forudsætning og nødvendig Betingelse for enhver con\-%
+cret Bestemmelse, altsaa ogsaa for Viden, i Betydningen
+af \emph{individuel Væren i Almindelighed, og der\-%
+efter}, for at der gjennem Begrebet Existens kan hæv\-%
+des det Praktiske en Prioritet og en Overvægt, i Betyd\-%
+ningen af \emph{Villiesværen} („Existensen er praktisk“).
+Uden denne Tilsnigelse vilde Argumentationen, der skal
+føre til, at det er muligt at sætte Existensen øverst og dog
+beholde Theorien, men umuligt at sætte Theorien øverst
+% --- p. 9 ---
+\opage{9}\setcounter{footnote}{0}%
+og dog beholde Existensen, og videre til at godtgjøre
+Troens Superioritet over Viden, slet ikke kunne skride
+fremad. Og i Beviset for hiin Sætning indeslutter den
+første Præmis: en Bevidsthed kan existere uden at være
+theoretisk, men ikke være theoretisk uden at existere,
+tillige en Usandhed. Al Væren i Individualitetens Form % [a raised speck, half the size of a full stop and above the base line, stands between "Al" and "Væren"; not transcribed (collation 2026-09-22)]
+er Existens; der kan altsaa gives en saadan Existens,
+der ikke er Bevidsthed, ikke theoretisk. Men naar
+\emph{Bevidsthed} bliver Existensens Subject, saa \emph{indeslutter
+Existens Theorien}, thi \emph{Bevidstheden er kun exi\-%
+sterende som værende theoretisk}“. Tot verba...,
+vi skulle nu see, hvad der ligger i disse verba!
+
+At jeg virkelig har brugt og endnu fremdeles agter
+at bruge Ordet Existens ikke blot om den lavere, ube\-%
+vidste, men ogsaa om den høiere, selvbevidste Tilværen
+i „Betydningen af individuel Væren i Almindelighed“,
+indrømmer jeg uden Forbehold; men hvorledes der i en
+med almindelig Sprogbrug overeensstemmende Anvendelse
+af et almindelig bekjendt Ord skal kunne skjule sig enten
+„Tvetydighed“ eller „Uklarhed“ eller „Tilsnigelse“,
+formaaer jeg ikke at indsee. Overalt, hvor Modsætningen
+mellem \emph{Existens} og \emph{Theorie} omhandles i mine Skrifter,
+bliver Ordet \emph{Theorie} udtrykkelig taget eenstydigt med
+Ordet \emph{Videnskab, videnskabelig objectiv Viden}.
+Naar jeg siger, at en Bevidsthed kan existere uden at
+være theoretisk, men ikke være theoretisk uden at existere,
+saa hører der i Sandhed en egen Art Skarpsindighed til
+for at misforstaae Meningen; thi Meningen er, at en
+Bevidsthed kan existere uden at være videnskabelig, men
+ikke være videnskabelig uden at existere. Men naar
+dette uimodsigelig og uden alle Omsvøb er Meningen,
+den klare, iøinefaldende Mening, udkræves der da ikke
+logiske Briller af usædvanlig Slibning for i en saa simpel
+% --- p. 10 ---
+\opage{10}\setcounter{footnote}{0}%
+Sætning at opdage „Uklarhed“, „Vilkaarlighed“, „Til\-%
+snigelse“ og „Sophistik“?
+
+Men, vil man maaskee indvende, Uklarheden bliver
+jo beviist, og det allerede paa de første Sider (S. 131 flgd.)
+og det med Hensyn saavel paa Opfattelsen af „det Sub\-%
+jective“ som af „det Objective“. Vi ville da, førend vi
+gaae videre, standse lidt ved disse Kategorier og betragte
+dem nærmere hver for sig.
+
+Der indvendes, at „Subjectiviteten“ og „det Sub\-%
+jective“ tages i „\emph{Dobbeltbetydning}, saaledes at det
+snart kommer til at udtrykke det tilfældigt Individuelle
+og det Egoistiske, der falder udenfor det objectivt Gyldige,
+snart Subjectivitetens almene Form“. Det oversees, siger
+den kritiserende Forfatter, at Subjectivitetens Form og\-%
+saa rummer det objectivt Gyldige, at Subjectet optager
+det som Norm i sig „uden at Indholdet forandres, at den
+subjective Handling kan have objective Principer, at der
+er et objectivt Sandt og Gyldigt i den fornuftbestemte
+Subjectivitet. Subjectivitetens, Livets Standpunkt kommer
+i hiin“ (min!) „Opfattelse til at falde sammen med Ego\-%
+ismens Standpunkt“. I denne Fremstilling har Kritiken
+indlagt Noget, som ikke vedkommer mig. I min Op\-%
+fattelse af Subjectivitetens Væsen falder Eftertrykket
+ingenlunde paa Modsætningen mellem det Individuelle
+og det Almene, thi enhver existerende Subjectivitet er
+som saadan individuel-almeen, men derimod paa Mod\-%
+sætningen mellem lavere og høiere Selvhensyn: det lavere
+Selvhensyn er \emph{egoistisk}, det høiere er \emph{religiøst}. Paa
+Egoismens Trin kommer Individualiteten i mangfoldig
+Conflict med Tilværelsens objective Magter; den af
+Troens Princip bevægede Subjectivitet vil derimod, idet
+den ikke opgiver, men kraftig hævder sit indivi\-%
+duelle Væsen, vide sig forsonet saavel med Naturens
+som med Aandens guddommelige Love.
+
+% --- p. 11 ---
+\opage{11}\setcounter{footnote}{0}%
+Ifølge min Synsmaade er det saa langt fra, at det
+objectivt Almene skulde være istand til at fortære det
+subjectivt Individuelle, at Selvhensynet, det egne, per\-%
+sonlige Selvhensyn, tvertimod bliver desto stærkere,
+dybere, inderligere, jo høiere Subjectiviteten staaer i Aan\-%
+dens Rige. Skulde det virkelig forholde sig saaledes,
+som Hr. Prof. Brøchner paastaaer, at „Subjectet optager
+det objectivt Gyldige“ --- vel at mærke det i \emph{Viden
+og Videnskab} objectivt Gyldige --- „som Norm i sig,
+uden at Indholdet forandres, at den subjective Handling
+kan have objective“ --- vel at mærke, Videns og Viden\-%
+skabens objective --- „Principer“, at „Subjectivitetens og
+Livets Standpunkt“ i modsat Fald maa „falde sammen
+med Egoismens Standpunkt“: da, ja da følger uimod\-%
+sigelig heraf, at den positive Religion maa afskaffes.
+Skulde det religiøse Selvhensyn virkelig være Egoisme,
+Troen paa en personlig Gud Egoisme, Troen paa Sjælens
+Udødelighed Egoisme, Aabenbaringstroen i det Hele Ego\-%
+isme, saa kan det jo rigtignok ikke negtes, at Evangeliet, trods
+Selvfornegtelse, Taalmod og Kjærlighed, oprindelig er ---
+ved „dunkelt Instinkt“ og „selvisk Drift“ et Foster af skjult
+Egoisme, og Helten fra Gethsemane den største Egoist,
+der har levet paa Jorden.
+
+Som Beviis paa min uklare og feilagtige Opfattelse
+af det Objective anføres Følgende (S. 132---33): „Paa
+samme Maade som Subjectivitetens Begreb, faaer ogsaa Ob\-%
+\emph{jectivitetens} Begreb en \emph{Dobbeltbetydning}. Hvor % ["Ob-" at the line end is set solid; only "jectivitetens" is letterspaced]
+Subjectivitetens Hovedstadier udvikles“ --- her henvises
+til min philosophiske Propædeutik § 15 --- „betyder det
+Objective snart det objective Ydre, eller det blot abstracte
+Almene, snart det det Subjectives Totalitet omfattende
+Almene og Almeengyldige. Og idet den abstracte Mod\-%
+sætning definitivt fastholdes, bliver det vilkaarligt igno\-%
+reret, at paa de forskjellige Stadier Subjectets Bestemthed
+% --- p. 12 ---
+\opage{12}\setcounter{footnote}{0}%
+--- hvad der især fremtræder tydeligt paa det Stadium,
+der betegnes som den uendelige Subjectivitets, --- netop
+er i Kraft af hvad der er bestemt som Tilværelsens ob\-%
+jective Princip, og at den udtrykker dette. Det bliver
+overseet, at den subjective Sandhed netop er den til\-%
+egnede og i Tilegnelsen med sig væsentlig lige objective
+Sandhed“.
+
+At den philosophiske Kritiker her paa en temmelig
+ukritisk Maade har sammenblandet to aldeles forskjellige
+Arter af det Almeengyldige, det subjective og det ob\-%
+jective, kan let paavises. Det er, besynderligt nok,
+% sic: "Opmærhsomhed" for "Opmærksomhed", as printed (collation 2026-09-22, 600 ppi)
+undgaaet hans Opmærhsomhed, at hvad der paa det af
+Propædeutiken anførte Sted siges om „den uendelige
+Subjectivitet“, ikke sigter til at bevise dens Sandhed,
+men til at bevise dens Usandhed. Der staaer: „I kraftig
+Eensidighed vælges mellem tvende hinanden modsatte
+Udveie. Deels bliver det Objective under alle Skikkelser
+saaledes nedsat til et blot Middel, at den nydende Indi\-%
+vidualitet kan gjøre sig selv til Tingenes Herre (Hedo\-%
+nisme, Aristipp), deels bliver det Objective som det Al\-%
+meenfornuftige saaledes indaandet i Bevidstheden, at alt
+Endeligt forvandles til et Ligegyldigt; luttret og hærdet i
+uendelig Resignation, vil den handlende Subjectivitet bestem\-%
+me sig selv, idet den bestemmes af Skjæbnen (Stoicisme; Zeno,
+Epictet)“. At herved sigtes paa en ved det Objective frem\-%
+kaldt Selvskuffelse, er klart af Sammenhængen, og bliver
+til Overflod udtrykkelig sagt i det Næstfølgende, hvor
+Charakteristiken af „\emph{den absolute Subjectivitet}“
+begynder med følgende Ord: „Den formelle Selvbefrielse % [the opening mark is faint and small on the image; read as „]
+ender i det Negative; Subjectiviteten“ --- den Subjectivitet,
+der vil bestemme sig i Kraft af Tilværelsens objective
+Princip --- „søger Livet, men finder Døden“. Det er
+Mere end en Fordreielse af mine Ord, det er en gjennem\-%
+gaaende Misforstaaelse af den hele Sag, hvorom her
+% --- p. 13 ---
+\opage{13}\setcounter{footnote}{0}%
+handles. Det bliver, ifølge Hr. Prof. Brøchners For\-%
+sikkring, overseet, at den subjective Sandhed --- paa
+Hedonismens og Stoicismens Trin --- „netop er den til\-%
+egnede og i Tilegnelsen med sig væsentlig lige objective
+Sandhed“. Men nu staaer, som bekjendt, det stoiske
+Princip i afgjørende Strid med det hedoniske; begge
+Principer kunne da umulig være lige objective, med
+mindre Principernes objective Gyldighed netop skal
+kjendes paa, at de staae i subjectiv Strid med hinanden.
+Vistnok holder Stoikeren sig overbeviist om, at det
+stoiske Princip er det eneste sande, almeengyldige, at
+ethvert fornuftigt Menneske bør leve som Stoiker; men
+Hedonikeren er jo fra sin Side som Hedoniker ligesaa
+overbeviist om, at Nydelsesprincipet udtrykker „den til\-%
+egnede, i Tilegnelsen med sig lige objective Sandhed“,
+at det Menneske, der ikke forstaaer at nyde, heller ikke
+forstaaer at leve. Udtrykker Hedonikeren „den i Til\-%
+egnelsen med sig lige objective Sandhed“, saa udtrykker
+Stoikeren den i Tilegnelsen, med sig „lige objective“ % [a small low mark after "Tilegnelsen", read as a comma (the layer's reading); tail indistinct]
+Usandhed, og omvendt. Hvo skal nu dømme de stri\-%
+dende Parter imellem, og fra hvilket Standpunkt skal
+Dommen fældes? „Fra Theoriens, Videnskabens, den
+objective Videns Standpunkt,“ svarer den kritiserende
+Forfatter. Men dersom den philosophiske Kritiks philo\-%
+sophiske Vildfarelse nogensteds kan falde i Øinene, saa
+maa det vel være her. En Stoiker kan, som bekjendt,
+sætte sig ligesaa sikkert ind i den hedoniske Theorie
+som en Hedoniker; omvendt kan en Hedoniker være
+ligesaa theoretisk hjemme i den stoiske Theorie som en
+Stoiker, og endda bliver Stoikeren ikke Hedoniker,
+Hedonikeren ikke Stoiker. Kan der gives et mere
+talende Vidnesbyrd mod Hr. Prof. Brøchners „tilegnede,
+i Tilegnelsen med sig lige objective Sandhed?“
+
+% --- p. 14 ---
+\opage{14}\setcounter{footnote}{0}%
+Hvor forskjellige Theorier af denne Natur ere fra
+Videnskabens i Sandhed objective Theorier, kan sees af
+Exempler i Mængde: Man tænke paa den pythagoræiske
+Læresætning: hvorledes skulde det være muligt at sætte
+sig ind i Beviserne for denne Læresætning og desuagtet
+hævde sig et mathematisk „Standpunkt“, der stod i
+aabenbar Strid med det pythagoræiske? Man tænke paa
+det kopernikanske System: hvorledes skulde det være
+muligt at sætte sig ind i de Beviser, ved hvilke den
+nyere Videnskab har godtgjort dette Systems objective
+Gyldighed, og endda hævde sig et astronomisk Stand\-%
+punkt, der stod i aabenbar Strid med det kopernikanske?
+Man tænke paa Optikens Lære om Farverne, paa
+Physiologiens Lære om Blodets Kredsløb, kort, hvilke
+Videnstheorier, man vil, om dem alle gjælder det, at
+klar Indsigt i den objectivt gyldige Theorie falder sam\-%
+men med Theoriens Antagelse. Men klar Indsigt i en
+subjectiv gyldig Theorie falder, hvad Hr. Prof. Brøchner
+saa ganske har overseet, ingenlunde sammen med The\-%
+oriens Antagelse. Og hvorfor ikke? Fordi den sub\-%
+jective Theories Gyldighed væsentlig beroer paa subjective
+Grunde, og de subjective Grunde paa den individuelle
+Subjectivitet.
+
+At Stoikeren ikke kan overbevise Hedonikeren, og
+Hedonikeren ikke Stoikeren, hvormeget de end gjensidig
+arbeide med Theorierne, er en ligefrem Følge af Stand\-%
+punkternes praktiske, existentielle Modsætning. Hvad i
+al Verden kan det hjælpe, at Stoikeren theoretisk paa\-%
+viser de formeentlig objective Modsigelser, hvori Nydel\-%
+sestheorien kan hilde den Nydende, saalænge den hedo\-%
+niske Subjectivitet vedbliver at sætte Nydelsen som
+Livets Høieste. At Modsigelserne ikke kunne løses ob\-%
+jectivt i en objectiv Theorie, lærer ham just, at det ikke
+er det Theoretiske, men det Praktiske, hvorpaa Efter\-%
+% --- p. 15 ---
+\opage{15}\setcounter{footnote}{0}%
+trykket falder, at det Praktiske væsentlig er subjectivt,
+og den subjective Praxis en Nydelsens Kunst. Vistnok
+kan Nydelseskunsten heller ikke løse alle Modsigelser,
+men hvad beviser saa det? „At Nydelsesprincipet selv er
+en Modsigelse!“ Ingenlunde. Det er jo netop Hedoni\-%
+kerens uafviselige Grundsætning, at Livsnydelsen selv er
+Modsigelsens Løsning, at Modsigelsens Løsning er Ny\-%
+delse. Nei, det beviser kun, at Livet frembyder Mod\-%
+sigelser, som Ingen, Stoikeren saalidt som Hedonikeren,
+formaaer at løse. Naar Livets Modsigelser blive Stoi\-%
+keren for stærke, hvad gjør han saa? Han tager sig selv
+af Dage. Men den samme, den selvsamme praktiske
+Udvei staaer jo ogsaa Hedonikeren aaben. Theorien
+kan som Theorie umulig bevirke en Forandring i det
+subjective Standpunkt, efterdi Vægten af de Grunde, der
+skulle afgjøre den ene Theories Fortrin for den anden,
+netop afhænger af Subjectivitetens praktiske Grundsætning.
+
+Kunde der virkelig gives en objectiv, af al individuel
+og subjectiv Grundstemning uafhængig Indsigt i den
+menneskelige Subjectivitets oprindelige Selvgyldighed, da
+maatte det fremfor Alt være Videnskaben magtpaalig\-%
+gende, at bringe Spørgsmaalet om Sjælens Udødelighed
+til afgjørende Besvarelse; thi at Spørgsmaalet om Sjælens
+Udødelighed er uadskilleligt fra Spørgsmaalet om Sub\-%
+jectivitetens individuelt almene Realitet, vil vist Ingen
+negte. Men at Videnskaben, naar det kommer til Stykket,
+ligesaa lidt kan bevise Umuligheden af Sjælens Udøde\-%
+lighed, som den er istand til at bevise enten Virkelig\-%
+heden eller Nødvendigheden, er en afgjort Sag. Den,
+der paastaaer, at Umuligheden kan afgjøres i Kraft af
+„Tilværelsens objective Princip“, er ligesaa vist hildet i
+et Selvbedrag, som den, der mener, at hans Overbeviis\-%
+ning om Nødvendigheden skyldes hans Viden. Den, der
+negter Udødeligheden, negter den aabenbart i Kraft af
+% --- p. 16 ---
+\opage{16}\setcounter{footnote}{0}%
+subjectiv, individuel Grundstemning; hans foregivne Vi\-%
+denskabsgrunde ere ikke objectivt gyldige Grunde, men
+Usandsynligheder, som den subjectivt bestukne Reflexion
+meddeler et Skin af objective Beviser. Det gaaer ikke
+med en Bedømmelse af Selvets Realitet som med en
+Bedømmelse af Regnbuens eller af Skyens eller af Mine\-%
+ralets Realitet; Regnbuens, Skyens, Mineralets Realitet
+er af objectiv Natur og kan efter Videns almeengyldige
+Love bedømmes objectivt; men Selvets Realitet er af
+subjectiv Natur og maa bestemmes subjectivt. Det Ob\-%
+jectives Realitet paatrænger sig Tanken med Nødvendig\-%
+hed; det Subjectives Realitet forkynder sig kun paa Be\-%
+tingelse af Frihed. At ville aflede den Realitet, der bør
+tillægges Ens eget individuelle, subjective Væsen, af den
+Realitet, der ifølge videnskabelig Overveielse maa til\-%
+lægges Subjectiviteten i objectiv Almindelighed, er en
+bagvendt og selvmodsigende Fremgangsmaade, da Dom\-%
+men om den almindelige Subjectivitet netop afhænger af
+Dommen om den egne. Den Gyldighed, et Menneske
+føler, at han \emph{maa} tillægge den egne Subjectivitet, beroer
+i sidste Instans paa den Gyldighed, han \emph{vil} tillægge den;
+i denne Forstand gjælder det, at Realitetsbestemmelsen
+væsentlig er en Villiesbestemmelse.
+
+Den Erkjendelse, Villien som Villie nødvendig maa
+forudsætte, er ikke, hvad Hr. Prof. Bröchner med for\-%
+ceret Overlegenhed vil gjøre gjældende, en theoretisk
+Erkjendelse, en objectiv Erkjendelse af „Tilværelsens ob\-%
+jective Princip“; nei, den er just lige det Modsatte, den
+er netop en praktisk Erkjendelse, en subjectiv Erkjen\-%
+delse af den egne Tilværelses subjective Princip. Den
+er med andre Ord en existentiel Selverkjendelse; men
+en existentiel Selverkjendelse kan kun ved vilkaarlig Af\-%
+vigelse fra al Sprogbrug kaldes theoretisk.
+
+Den existentielle Selverkjendelse befinde sig nu
+% --- p. 17 ---
+\opage{17}\setcounter{footnote}{0}%
+iøvrigt paa et lavere eller paa et høiere Trin, saa er dog
+Saameget vist, at dens videre Udvikling ingenlunde be\-%
+tegner dens Overgang til objectiv Viden; tvertimod! jo
+renere, klarere og dybere den praktiske Selverkjendelse
+er, desto tydeligere adskiller den sig fra den theoretiske.
+Paa sit første naturlige Trin er Selverkjendelsen umid\-%
+delbart sandselig og den tilsvarende Villie egoistisk; paa
+Frihedens aandelige, altsaa paa Subjectivitetens høieste
+Trin er Selverkjendelsen ideal, og den tilsvarende Grund\-%
+villie religiøs: Troen som personlig Forvisning er ingen
+Theorie, den er en indre, oprindelig Aandens Gjerning,
+en Act af Erkjendelsens, Selverkjendelsens, den praktiske
+Erkjendelses Eenhed med Grundvillien.
+
+Hvorledes det forholder sig med Egoismen og Er\-%
+kjendelsen af det Almene, kan nu let oplyses; thi det
+forholder sig ingenlunde saaledes, som Hr. Prof. Bröchner
+antager, at Erkjendelsen af det objective Almene skulde
+kunne frigjøre Subjectiviteten fra dens Egoisme. For\-%
+saavidt det Grundmenneskelige oprindelig er i ethvert
+Menneske, maa hver enkelt menneskelig Subjectivitet
+unegteligt kunne udtrykke det for den menneskelige
+Existens Almeengyldige i Forhold til, som Erkjen\-%
+delsen klarer sig. Men at dette Almeengyldige ikke
+desto mindre er og bliver subjectivt, dets Erkjendelse en
+afgjørende subjectiv, praktisk Erkjendelse, er uimodsige\-%
+ligt. Den praktiske Erkjendelse er en Villieserkjendelse,
+en Erkjendelse, der, idet den betinger Villien, betinges
+af Villien, en personlig Selverkjendelse. Saalænge der
+er noget Ureent, Driftbundet og Egoistisk i Villien, saa\-%
+længe er der ogsaa noget Ureent, Driftbundet og Egoi\-%
+stisk i Erkjendelsen, og omvendt: Bevægelsen gaaer i en
+psychologisk Cirkel. Den stoiske Egoisme er en anden
+end den hedoniske; men Stoikeren er desuagtet ligesaa
+væsentlig en Egoist som Hedonikeren. I Videns objec\-%
+% --- p. 18 ---
+\opage{18}\setcounter{footnote}{0}%
+tive Almene abstraheres der vel fra Egoismen, forsaavidt
+der i det Hele abstraheres fra det egne Jeg; men denne
+Abstraction er ingen personlig Frigjørelse, ingen virke\-%
+lig Forløsning: den virkelige Forløsning er kun i Troen.
+Al objectiv Viden er betinget af, at den egne tilværende
+Subjectivitets personlige Anliggender bringes i Selvfor\-%
+glemmelse; det er derfor umuligt, at nogensomhelst ob\-%
+jectiv Sandhed skulde formaae at hæve den vidende Sub\-%
+jectivitet til aandelig fri Selvstændighed. Hvor den ob\-%
+jective Viden begynder, ender Selvhensynet; hvor Selv\-%
+hensynet begynder, ender den objective Viden. Med
+det tilbagevendende Selvhensyn have vi igjen det Selviske
+og med dette den psychologiske Cirkel. Den objective
+Erkjendelse kan være reen, og Selverkjendelsen endda
+ureen: Befrielsen er kun i Troen. Eet af To, det er
+Troens Dilemma: enten maa den ufrie, selviske Subjec\-%
+tivitet evig forblive i egoistisk, driftbunden Selverkjen\-%
+delse, egoistisk, driftbunden Villie, eller ogsaa paa Be\-%
+tingelse af høiere personlig Bistand lade sig forløse af
+den oprindelig rene, fra driftbunden Egoisme frigjorte
+og just derfor i Aand og Sandhed frigjørende Sub\-%
+jectivitet.
+
+Det er en farlig Sag at confundere det Sub\-%
+jective med det Objective? Den Troende seer i Aabenba\-%
+ringen det Almeengyldige; den Ikketroende fornegter
+Aabenbaringen i Kraft af det Almeengyldige. Hvis de
+nu begge, den Ikketroende ligesaavel som den Troende,
+i selvisk lidenskabelig Iver gaae hen og forvexle det
+subjective Almeengyldige med det objective, hvad have
+vi saa? Ja saa have vi Fanatismen. Troesfanatismen er
+bekjendt nok; Særkjendet er, at den selvsyge Subjec\-%
+tivitet i lidenskabelig Forblindelse vil forvandle den sub\-%
+jective Sandhed til en objectiv Magt, en Tilværelseslov,
+for hvilken alle andre Subjectiviteter ubetinget skulle
+% --- p. 19 ---
+\opage{19}\setcounter{footnote}{0}%
+bøie sig. Vidensfanatismen er mindre bekjendt; men
+derfor ikke mindre charakteristisk. Den har naturligviis
+ikke sit Udspring fra Videnskaben, men fra en selvisk
+Fordreielse af Videnskaben. Istedenfor at tage Erkjen\-%
+delsen af det Personlige for hvad den er, en subjectiv,
+praktisk Erkjendelse, gjør den Vidende Selverkjendelsen
+uden videre objectiv theoretisk. Det er et stort psycho\-%
+logisk Selvbedrag. Den Vidende bilder sig ind, at den
+Subjectivitet, hvorfra han gaaer ud, er et objectivt al\-%
+meengyldigt Væsen, en ubedragelig Metaphysikbevidsthed,
+en sand Normalsubjectivitet, medens den dog i Virkelig\-%
+heden kun er en Abstraction af den egne individuelle
+Subjectivitets tilfældige Tilstand. Langt fra at befries
+fra „Egoismen“, bliver den Vidende ved dette Selv\-%
+bedrag tvertimod bedaaret af Egoismen; thi at gjøre den
+egne Subjectivitets tilfældige Hang til objectiv Maale\-%
+stok for alle andre Subjectiviteter, er Egoisme. Hvad
+Normalsubjectiviteten „i Kraft af Tilværelsens objective
+Princip“, har Trang til, det skal nu hver menneskelig
+Subjectivitet væsentlig have Trang til, nemlig at blive
+metaphysisk; hvad Normalsubjectiviteten ikke føler Trang
+til, en personlig Gud, en Trøst i Bønnen, et evigt Liv
+o. s. v., slige Drømmerier og subjective Kjællingerier
+tør nu ingen sand --- „objectiv sand“ --- menne\-%
+skelig Subjectivitet for Fremtiden føle Trang til. At
+føle Trang til Sligt er jo at afvige fra det Normale, at
+afvige fra det Normale er at afvige fra det Almene, at
+afvige fra det Almene er at afvige fra Sandheden; Maale\-%
+stokken er objectiv. Med sin objective Maalestok behøver
+Normalsubjectiviteten nu blot --- i al Upersonlighed ---
+at faae et lille Anfald af personlig Sandhedsiver, og den
+ulmende Vidensfanatisme vil forraade sig ved Angreb
+paa Troen.
+
+Af det her Fremsatte maa vel Forskjellen imellem
+% --- p. 20 ---
+\opage{20}\setcounter{footnote}{0}%
+min vitterlige Synsmaade og det Noget, Hr. Prof. Bröchner
+har kritiseret under Navn af min „Theorie“, være iøine\-%
+faldende. Ved at fastholde denne Forskjel bliver det da
+en temmelig let Sag at fælde en begrundet Dom om det
+videnskabelige Værd, der i det Hele kan tillægges Hr.
+Professorens philosophiske Kritik.
+
+Kritiken har taget sit Udgangspunkt i Psychologien.
+Under Overskrift: „\emph{Den psychologiske Modsætning
+mellem Villie og Viden}“ meddeles et i taageslørede
+Almeensætninger reflecteret Afsnit (S. 133---160), hvis
+Øiemed er at vise, hvor skjævt, vilkaarligt og inconse\-%
+qvent, jeg under min Fremhæven af den væsentlige For\-%
+skjel mellem praktisk og theoretisk Erkjendelse har op\-%
+fattet Villiens Forhold til Viden. I den af mig udtalte
+Sætning: „det i Subjectiviteten Allersubjectiveste er Selvet;
+men det Selviske i Selvet er Selvbestemmen, er Villie,“
+skal Grundvildfarelsen stikke. For at rette det Feilgreb
+vil Hr. Prof. Bröchner da gaae ud: „\emph{fra Væsensuni\-%
+versalitetens} Bestemmelse, der udtrykker sig i den
+Forsigværen i den frigjorte Almindeligheds Form, der er
+Selvbevidsthedens“, og opfatte „Væsenets Grundbestem\-%
+melse som Energie, nærmere som Selvhedsenergie“.
+Dersom Dunkelhed og Dybsindighed er Eet og det
+Samme, saa er det her anbragte Correctiv unegtelig
+meget dybsindigt; dersom taaget Almindelighed er et
+Beviis paa objectiv Viden, skal det villig indrømmes, at
+dette psychologiske Correctiv er holdt i objectiv Viden.
+Men dersom Opgaven er en Sagudvikling, dersom vi,
+uden Frygt for at krænke den strenge Videns almene
+Fordringer, virkelig tør indlade os paa en Tydeliggjø\-%
+relse af eiendommelige Forholds eiendommelige Natur,
+da skjønner jeg ikke rettere end, at det med saa stor\-%
+artet Eftertryk anbragte Correctiv omtrent falder sammen
+med Intet.
+
+% --- p. 21 ---
+\opage{21}\setcounter{footnote}{0}%
+Hvad her opstilles som Correctiv imod mig, er jo
+bogstavelig --- endog indtil Slagordene „Selvhed og Selv\-%
+hedsenergie“ --- min egen Anskuelse. Skulde her altsaa
+udrettes Noget, da maatte der jo føres et fyldestgjørende
+Beviis for, at min Anskuelse var i Strid, ikke med Hr.
+Prof. Bröchners eiendommelige Anskuelse, thi han har i
+dette Punkt ingen eiendommelig Anskuelse, men i Strid
+med sig selv. Er et saadant Beviis nu virkelig ført?
+Vi ville undersøge det. Naar jeg siger, at det i Sub\-%
+jectiviteten Allersubjectiveste er Selvet, saa har jeg jo
+med det Samme angivet en Forskjel imellem Subjectivi\-%
+teten og Selvet; naar jeg siger, at det Selviske i Selvet
+er Selvbestemmen, er Villie, saa har jeg jo med det
+Samme angivet en Forskjel mellem Selvet og det Selviske
+i Selvet; naar jeg siger, at det Selviske i Selvet maa,
+for at være Villie i egentlig Forstand, være Selvbe\-%
+stemmen, saa har jeg jo med det Samme indrømmet en
+Forhøielse af Selvbestemmen, en psychologisk Stigen fra
+Selvhedsenergiens første dunkle, uvilkaarlige Yttring til
+den klare bevidste Concentration, der udtrykkelig mærker
+Villien som den sig selv sættende, sig selv hævdende,
+paa sig selv beroende Selvhedsact, d. e. som vælgende,
+besluttende, fuldbyrdende Villie.
+
+Kunde det Almindelige ved Hjælp af det Alminde\-%
+lige i al Almindelighed gjøre Sagen klar, saa maatte
+man rigtignok indrømme den kritiserende Forfatter, at
+han klarede godt for sig. Thi det skorter saa vist ikke
+paa varierende Forsikkringer om Villien i det Almene,
+om det Almene i Villien, om Villiens Eenhed med det
+Almene i al Almindelighed. „Almindeligheden, der cha\-%
+rakteriserer Erkjendelsen“, er „en Almindelighed, der
+stræber henimod Concretionen“ o. s. v. (S. 135). „Om\-%
+vendt er“ (S. 136) „Enkelthedsbestemmelsen i Villien en
+saadan, der med Nødvendighed udfolder det Almene i sig,
+% --- p. 22 ---
+\opage{22}\setcounter{footnote}{0}%
+fordi Villien kun er Villie som det selvbevidste, ɔ: efter
+Begrebet almene og universelle, Væsens Villie. Villien
+maa udfolde sig fra den ved det Enkelte bestemte, det
+Enkelte sættende, Villie til den ved det, Væsenet ud\-%
+trykkende, Almeenfornuftige bestemte, det Almene reali\-%
+serende Villie.“ Fremdeles: „jo mere Villiesrealisationen
+fjerner sig fra det Instinctmæssige, Driftagtige og Egoi\-%
+stiske, jo mere bliver den en Virkeliggjørelse af det Al\-%
+meenfornuftige, af Væsenets Lov, en Væsensvillen, Ob\-%
+jectivitetens, det Almeengyldiges Bestemthed i sig“.
+Saaledes bliver det i alle Vendinger, under alle Gjen\-%
+tagelser --- ved en petitio principii --- fastsat, at Villiens
+Almene er og skal og maa være Videns Almene, „Ob\-%
+jectivitetens, det Almeengyldiges Bestemthed i sig“; paa
+en saadan petitio principii ere alle videnskabelige For\-%
+handlinger spildte.
+
+At en driftig petitio principii maa kunne afføde en
+rig Mangfoldighed af tautologiske Cirkelbeviser, er be\-%
+gribeligt. Ved Hjælp af det i Almindelighed Almene
+bliver det foreløbig beviist, at „den skarpe Modsætning“
+mellem theoretisk og praktisk Erkjendelse maa hæves,
+for at det, naar denne Modsætning først er hævet, kan
+blive rigtig beviist, at det Almene, uden Forskjel mellem
+Subjectivt og Objectivt, er det Almene, det Almeenfor\-%
+nuftige, det objectivt Almene.
+
+Der er i Hr. Prof. Bröchners Behandling af de Ud\-%
+talelser, han kritiserer, en Ubehjælpsomhed, som let kan
+bringe en mindre opmærksom Læser bort fra det Hoved\-%
+punkt, hvorom Undersøgelsen dreier sig. Om de Kjende\-%
+mærker, ved hvilke jeg har søgt at charakterisere Mod\-%
+sætningen mellem den praktiske og den theoretiske Er\-%
+kjendelse, anføres (S. 137) Følgende. „Den praktiske
+Bevidsthed skal være personlig, interesseret, i Conflict
+med Existensen, bevæget af Frygt og Haab, fuld af
+% --- p. 23 ---
+\opage{23}\setcounter{footnote}{0}%
+Selvhensyn; den theoretiske upersonlig, contemplativ,
+uinteresseret, fortabt i det Almene, bevæget af Nødven\-%
+dighed, glemmende sig selv i Begrundelsen af det Ob\-%
+jective“. Efter at have opregnet disse Characteermærker
+tilføier Hr. Prof. Bröchner saa uden videre: „Den relative
+Sandhed i disse Modsætninger er anerkjendt gjennem det
+ovenfor Udviklede, men den abstrakte og absolute Mod\-%
+sætning er benægtet.“ At den af mig fastsatte Modsæt\-%
+ning mellem Villie og Viden er i Kritikens „ovenfor
+Udviklede“ benegtet, ligefrem --- ved en Sammenblan\-%
+ding af det Almindelige med det Almindelige i al Al\-%
+mindelighed --- benegtet, indrømmer jeg; men at der
+„gjennem det ovenfor Udviklede“ er fremkommet Noget\-%
+somhelst, der kunde antyde endog blot et Forsøg paa
+enten at udslette eller dog forviske de anførte Kriterier,
+kan jeg umulig indrømme. Det er saa langt fra, at For\-%
+fatteren har indladt sig paa nogen særlig Prøvelse af de
+særlig angivne Mærker, at han endog lidt længere hen
+reent synes at have glemt, at jeg i det Hele har opstillet
+saadanne Mærker. Han siger (S. 146): „N. lægger et
+Eftertryk paa denne Bestemmelse \emph{praktisk Tænkning},
+men den faaer imidlertid hos ham ingensteds en virkelig
+Begrebsforklaring, ligesaalidt som det tilsvarende Begreb
+\emph{praktisk Erkjendelse}, og det maa overhovedet være
+paafaldende, paa hvilken Maade han, under Udviklingen
+af sin Theorie, anvender sine psychologiske Kategorier,
+uden skarp Begrebsbestemmelse og uden Sondring af
+det væsentlig Forskjellige.“
+
+Ved at see, hvordan det hermed hænger sammen,
+erholde vi et ikke ubetydeligt Bidrag til videnskabelig
+Vurdering af Hr. Professorens philosophiske Kritik.
+
+Som Beviis, og det et afgjørende Beviis, for at der
+i Virkeligheden ingen Forskjel er mellem praktisk og
+theoretisk Tænkning, anbringes (S. 146) følgende Raison\-%
+% --- p. 24 ---
+\opage{24}\setcounter{footnote}{0}%
+nement. „\emph{Praktisk Tænkning} maatte nærmest betyde
+en Reflexion, der bestemmer Sammenhængen mellem
+Princip eller Forudsætninger og Conseqventser, mellem
+Midler og Øiemed, paa det Praktiskes Gebet, altsaa efter
+Forudsætningen, en formel Udviklen af Conseqventser af
+det, der ikke opløses i Reflexionen, og denne Reflexion,
+der dog overhovedet ikke vilde faae nogen Plads paa
+det paradox Ethiskes Gebet, maatte, idet Handlingen
+indtræder, tænkes som absorberet, usynliggjort i Hand\-%
+lingens Enkelthed. En saadan praktisk Tænken vilde
+imidlertid i sin \emph{Form} ikke adskille sig fra den theoretiske
+Tænken, der uddrager Conseqventser af et endnu ikke af
+Erkjendelsen Assimileret, f. Ex. af et blot empirisk Be\-%
+stemt, eller som danner Constructionsbegreber.“ Men
+hvad beviser dette? Den, der slutter: Alle Mennesker
+ere dødelige, Cajus er et Menneske, altsaa er Cajus
+dødelig; han \emph{tænker}; den, der slutter: Alle Mennesker
+ere Cylindre, Cajus er et Menneske, altsaa er Cajus en
+Cylinder, han \emph{tænker}: den sidste Art af Tænkning er i
+% ["er i „i sin Form“": the line-end "i" and the quoted "i" both printed (dittography?); as printed]
+„i \emph{sin Form}“ ikke til at adskille fra den første. Men
+at Tænkning i \emph{sin Form} altid er Tænkning, var nok
+hverken det, der skulde bevises, ei heller det, Forfatteren
+vilde bevise.
+
+Skal der ikke lægges Vægt paa Principets og For\-%
+udsætningernes Eiendommelighed, da er der ganske vist
+ikke Spor af Forskjel mellem theoretisk og praktisk
+Tænkning: Tænkning er i Almindelighed altid Tænkning.
+Men dersom dette skal være et Beviis mod den væsentlige
+Forskjel mellem theoretisk og praktisk Tænkning, da fører
+dette os et godt Skridt videre; vi erholde da indenfor
+Theorien tillige et Beviis for, at den væsentlige Forskjel
+mellem metaphysisk og mathematisk Tænkning er hævet.
+% ["methaphysisk" here and "methaphysiske" p. 25 (for metaphysisk): as printed]
+Den, der tænker methaphysisk, han tænker; den, der
+tænker mathematisk, han tænker: Tænkning er i sin Al\-%
+% --- p. 25 ---
+\opage{25}\setcounter{footnote}{0}%
+mindelighed altid Tænkning; ergo er den mathematiske
+Tænkning i \emph{sin Form} ikke til at adskille fra den meta\-%
+physiske. Mon Mathematikerne ville hilse denne Op\-%
+dagelse som et nyt Fremskridt i Videnskaben?
+
+Den methaphysiske Tænkning er saavel i sin Form
+som i sit Indhold ueensartet med den mathematiske.
+„Non datur metaphysica in mathesin via“, disse Ord af
+en skarpt tænkende Mathematiker\footnote{% ["eg" for og: as printed (image and both witnesses)]
+C. Ramus: Differential- eg Integralregning. Fortale.} have et stort Vidnes\-%
+byrd i Videnskabernes Historie. „Det er først ved at
+fremtræde som mathematisk Videnskab, at Mechaniken,
+ligesom de andre Dele af Naturvidenskaben har opnaaet
+den Fuldendthed i Formen, den Bestemthed og Evidents,
+som er en nødvendig Betingelse for enhver sikker For\-%
+udbestemmelse af Phænomenerne som regulerede ved de
+givne Kræfter, altsaa for Muligheden af heldige An\-%
+vendelser. Man har ofte af Ukyndighed misforstaaet den
+mathematiske Analyses Betydning, baade betragtet som
+Formen, hvori Undersøgelsen fremtræder, og som Midlet,
+hvorved den tilfredsstillende gjennemføres. Det er imid\-%
+lertid let at forstaae, at Analysen ikke ved sit eget Ind\-%
+hold alene kan bevirke Opdagelsen af Naturkræfternes
+Love og Phænomener. Den tjener derimod til at opdage
+disse Phænomeners indbyrdes Sammenhæng og deres
+Afhængighed af de bestemmende Kræfter\footnote{C. Ramus: Analytisk Mechanik. Fortale.}.“
+
+Den analytiske Mechanik drager virkelig Conseqvenser
+af et „blot empirisk Bestemt“, af „et endnu ikke af Er\-%
+kjendelsen Assimileret“, forsaavidt den drager Conse\-%
+qvenser af visse i Erfaringen givne Kjendsgjerninger; men
+denne Omstændighed er saare langt fra, enten at nedsætte
+dens objective theoretiske Værdi eller at gjøre dens
+% --- p. 26 ---
+\opage{26}\setcounter{footnote}{0}%
+Tænkning eensartet med „den Reflexion, der bestemmer
+Sammenhængen mellem Midler og Øiemed paa det
+Praktiskes Gebet“. Hr. Professorens Sammenblanding
+af theoretisk og praktisk Reflexion røber overalt en kjen\-%
+delig Mangel paa indtrængende Saganalyse.
+
+Et andet, endnu stærkere Tilløb til at sætte over
+Kløften mellem den theoretiske og den praktiske Erkjen\-%
+delse har Hr. Prof. Brøchner allerede taget S. 139,
+hvor han særdeles fremhæver, „at Villiens Enkelthed er
+det universelle Væsens Fremtrædelsesform“, og derpaa
+vedbliver: „I det saaledes bestemte Enkelte gaaer det
+Almene kun paa den Maade til Hvile, at det Enkelte
+bliver gjennemsigtigt: Omsætningen er en Omsætning fra
+Tænkningens, og udtrykkelig fra den theoretiske Tænk\-%
+nings, Almindelighed til den personlige Levens Enkelt\-%
+hed; men Individet som fornuftigt villende udtrykker
+i Enkeltheden det Almene, giver det Væren i dens Form,
+der gjennemsigtig aabenbarer det Almene. Formdiffe\-%
+rentsen beherskes altsaa af den væsentlige Eenhed;
+Bevidsthedsindholdet bliver under begge Former: som
+Erkjendelsesindhold og Villiesindhold, væsentlig det samme.
+Jeg erkjender Pligten --- og det er atter: jeg erkjender
+den theoretisk --- f. Ex. den Pligt at kæmpe for Fædrelandet;
+jeg beslutter mig til at existere i det Erkjendte, og idet Be\-%
+slutningen er virkeliggjort, er Indholdet, som realiseret i den
+enkelte Villie, væsentlig det samme“. Ihvorvel det hele
+Tilløb ligefrem løber ud i en Confusion af det
+Almene med det Almene, endog i den Grad, at man i
+% ["fristes" and, two lines below, "for.": a small mark after each. Collation 2026-09-22 at 600 ppi: after "fristes" a speck at mid x-height, smaller than a stop -- not transcribed; after "for" a small dot on the base line, doubtful -- kept as printed]
+Conseqvens af det opstillede Exempel næsten fristes til
+at spørge, hvorledes en Mand, hvem Pligten at kæmpe
+for. Fædrelandet er „det universelle Væsens“ Theorie og
+„Villiens Enkelthed det universelle Væsens Fremtrædel\-%
+sesform“, har kunnet afholde sig fra at gaae med i sidste
+Krig: saa skal jeg dog, for at det ikke skal synes, som
+% --- p. 27 ---
+\opage{27}\setcounter{footnote}{0}%
+om jeg tog mig Tingen altfor let, til yderligere Oplys\-%
+ning forsøge at vise, hvad Resultatet vilde være blevet,
+hvis Hr. Professoren, istedenfor strax at identificere den
+praktiske Erkjendelse af Pligten med en theoretisk Er\-%
+kjendelse af Videns objective Love, havde taget de af
+mig opstillede Forskjelsmærker under nøiere Overveielse
+og givet sig Stunder til at anstille en Saganalyse.
+
+For at prøve Forskjelsmærkerne sammenligne man
+engang f. Ex. Pligtloven med Tyngdeloven. Ifølge min
+Opfattelse er Pligtlovens Erkjendelse væsentlig praktisk,
+Erkjendelsen af Tyngdeloven derimod væsentlig theoretisk;
+som Love have de jo vistnok begge almeen Gyldighed;
+men det Almene i Pligtloven har væsentlig subjectiv, det
+Almene i Tyngdeloven væsentlig objectiv Gyldighed.
+Hvad dette betyder, kan sees, naar vi bytte Mærkerne
+om og gjøre Tyngdeloven subjectiv, Pligtloven objectiv.
+Det subjective Moment i Tyngdelovens Erkjendelse ligger
+da deri, at den, der skal komme til klar og grundig
+Indsigt i Lovens Gyldighed, maa \emph{kunne} tænke og \emph{ville}
+tænke, altsaa være en tænkende, villende Subjectivitet;
+omvendt fremlyser Pligterkjendelsens objective Moment
+deraf, at den, der spørger om Pligten som Pligt i Al\-%
+mindelighed, ikke spørger om din eller min Pligt i Sær\-%
+deleshed, ikke om, hvad dette eller hiint Subject tilfæl\-%
+% ["Piligt" (for Pligt): as printed]
+digviis anseer for sin Piligt, men om Pligtens selvgyldige
+Væsen. Saaledes have vi da faaet Subjectivitet ind i
+Tyngdelovens, Objectivitet ind i Pligtlovens Erkjendelse;
+men ere disse Erkjendelser derved blevne eensartede?
+Det Hele er tom Formalisme. Saasnart vi betone
+det Eiendommelige ved enhver af de tvende Loves Gyl\-%
+dighed, maa det Ueensartede falde i Øinene.
+
+% [the tight line prints no visible space in "udelukkende Legemerne"]
+Tyngdelovens Gyldighed angaaer udelukkende Legemerne
+som Legemer, ikke Sjælene som Sjæle, ikke de tænkende,
+villende Subjectiviteter, ikke det i Personlighederne Per\-%
+% --- p. 28 ---
+\opage{28}\setcounter{footnote}{0}%
+sonlige. Loven, der siger os, at alle Legemer ere tunge,
+siger jo ikke, enten at alle eller kun nogle Personligheder
+ere tunge. Men naar Tyngdeloven slet ikke angaaer
+Personlighedens, men alene Legemlighedens Væsen, ikke
+har sin Opfyldelse i Personlighedens, men kun i Legem\-%
+lighedens \emph{Verden}: saa er den Erkjendende jo herved
+udtrykkelig opfordret til at see bort ikke blot fra \emph{sin}
+\emph{egen} Personlighed, men fra \emph{al} Personlighed. Med Hen\-%
+syn hertil kalder jeg Erkjendelsen af en saa objectiv, uper\-%
+sonlig Lov en upersonlig Erkjendelse.
+
+Anderledes med Pligtloven. Erkjendelsen kan be\-%
+gynde nok saa abstract, nok saa tilsyneladende objectivt
+og theoretisk: det Objective og Theoretiske forvandler
+sig øieblikkeligt til et Skin, naar Eftertrykket falder paa
+Gyldigheden. For hvilke Existenser har vel Pligtloven
+Gyldighed? Ikke for de legemlige, men for de sjælelige,
+for de tænkende, villende Subjectiviteter selv, altsaa for
+Personligheder. Ingen Enkeltvillie behøver særlig at
+indestaae for en samvittighedsfuld Opfyldelse af Tyngde\-%
+loven; den skal nok blive opfyldt alligevel. Derimod
+har enhver fornuftig Enkeltvillie særlig at indestaae for
+en samvittighedsfuld Opfyldelse af Pligtloven; den ene
+Enkeltvillie skal ikke i Kraft af nogen objectiv Theorie,
+uleilige sig med at indestaae for den anden: Enhver skal
+i sin Enkelthed personlig indestaae for sig selv. Som
+Personlighedslov er Pligtloven i strengeste Forstand en
+Samvittighedslov, Spørgsmaalet om Pligten et Samvittig\-%
+hedsspørgsmaal. Er Samvittighedsloven nu en Theorie; er
+Samvittighed maaskee en Videnskab? Staaer det fast, at
+den existerende Personligheds Viden med sig selv i
+Samvittigheden hverken er eller kan være en objectiv
+Theorie; staaer det urokkelig fast, at ethvert Pligt\-%
+spørgsmaal væsentlig er og maa være et Samvittigheds\-%
+spørgsmaal, hvilken Belæring faae vi da ud af Hr. Prof.
+% --- p. 29 ---
+\opage{29}\setcounter{footnote}{0}%
+Bröchners belærende Ord: „Jeg erkjender Pligten, --- og
+det er atter: jeg erkjender den theoretisk“?
+
+For at gjøre sig Afstanden mellem det Praktiske og
+det Theoretiske i den erkjendende Bevidsthed ret an\-%
+skuelig, forsøge man engang at sætte Tyngdeloven paa
+lige Trin med Pligtloven og behandle de mechaniske
+Problemer som Samvittighedsproblemer; det kan da al\-%
+drig feile, at det Urimelige jo maa vise sig. Hvor for\-%
+skjellig er ikke den i \emph{det Almene fortabte Viden},
+\emph{der bevæges af Nødvendighed}, fra den Erkjendelse,
+der betinges af \emph{Selvhensyn} og grunder i \emph{Frihed}!
+Da Buffon stred med Clairaut om den Newtonske Lovs
+almindelige Gyldighed, faldt det sikkerlig ikke nogen af
+de stridende Parter ind at beraabe sig paa et personligt
+Selvhensyn og sige til Modstanderen: Jeg føler i min
+Samvittighed, at du har Uret. Nei, uden alle Selvhensyn,
+uden Hjertesudgydelser eller personlige Forsikkringer,
+blev Sagen afgjort objectivt, ved objectivt nødvendige
+Grunde. Hvor strengt Videnskaben tager det med Grun\-%
+denes objective Nødvendighed, sees blandt Andet deraf,
+at Buffon, der holdt paa Newtons Lov og forsaavidt havde
+Ret i Sagen, dog i Striden selv fik Uret, idet de Grunde,
+hvortil han vilde støtte sig, forkastedes som „blot metaphy\-%
+siske og ubrugbare i den exacte Videnskab“. Hvor for\-%
+skjellige ere ikke de sande uimodsigelige Vidensgrunde
+fra de sande, og dog saa let modsigelige Samvittigheds\-%
+grunde! Da Luther stred med Zwingli om Nadver\-%
+dogmet, var ingen objectiv, være sig exact eller metaphy\-%
+sisk, Theorie istand til at forlige de Stridende, og hvor\-%
+for ikke? Fordi Spørgsmaalet oprindelig var, ikke et
+theoretisk, men et praktisk Spørgsmaal, ikke et Videns\-%
+spørgsmaal, men et Personlighedsspørgsmaal, i strengeste
+Forstand et Samvittighedsspørgsmaal: enhver af de stri\-%
+dende Parter beraabte sig i sidste Instans, og det med
+% --- p. 30 ---
+\opage{30}\setcounter{footnote}{0}%
+fuld Ret, paa sin Samvittighed. Maaske vil Hr. Prof.
+Bröchner her indvende, at de Stridende jo netop opstil\-%
+lede hver sin Theorie og just derved selv beviste, at
+Samvittighedsspørgsmaalene tilsidst maatte søge deres
+høieste Afgjørelse i Theorien; jeg behøver da blot at
+minde om, at det paa ingen af Siderne var Theorien,
+der bar den personlige Overbeviisning, men omvendt den
+personlige Overbeviisning, der bar Theorien. Maaskee
+vil Hr. Prof. Bröchner indvende, at slige afgjørende
+Selvhensyn høre til et forældet Standpunkt, at Luther
+med sin Samvittighed endnu ikke var kommen ud over
+„det Dunkle, det Egoistiske og Driftagtige,“ der „hænger
+sammen med den individuelle Naturværens uoplukkede
+Eenhed,“ til „Videns Almene“, til „Væsensuniversalite\-%
+tens Bestemmelse, der udtrykker sig i den Forsigværen
+i den frigjorte Almindeligheds Form, der er Selvbevidst\-%
+hedens“; jeg behøver da blot at gjøre opmærksom paa,
+at en Samvittighedsgrund ligesaa umulig kan forvandles
+til en objectiv Vidensgrund, som en Begrundelse af
+Tyngdeloven kan forvandles til en Begrundelse af Pligt\-%
+loven. Skulde det Vendepunkt i Slægtens Historie no\-%
+gensinde indtræde, da „den frigjorte Almindeligheds
+Form“ gik i Eet med Theoriens objective Form, saa at
+det egne personlige Selvhensyn theoretisk flød ud i
+„Væsensuniversalitetens Bestemmelse, der udtrykker sig
+i den Forsigværen i den frigjorte Almindeligheds Form,
+der er Selvbevidsthedens“, saa maatte det være det
+Vendepunkt, da Samvittigheden selv og dermed Pligt\-%
+loven blev afskaffet. Maaskee vil Hr. Prof. indvende, at
+det „Tilværelsens objective Princip“, der gaaer igjennem
+Pligtloven, naturligviis ikke er saaledes objectivt som det
+Princip, der gaaer igjennem Tyngdeloven, at der nød\-%
+vendig maa gjøres Forskjel imellem Naturnødvendighed
+og Frihedsnødvendighed, at han netop selv har indrøm\-%
+% --- p. 31 ---
+\opage{31}\setcounter{footnote}{0}%
+met denne væsentlige Forskjel ved at fremhæve „den
+Forsigværen i den frigjorte Almindeligheds Form, der
+er Selvbevidsthedens“; jeg behøver da blot at antyde
+den Conseqvens, hvormed han i eet Slag slaaer sin egen
+Theorie til Jorden. Skal her virkelig lægges Vægt paa
+den frigjorte Almindeligheds Form, da bliver jo Forskjellen
+mellem den nødvendige og den frigjorte Almindelighed en
+gjennemgaaende Principforskjel, altsaa en Sphæreforskjel,
+og saa --- er Striden endt.
+
+Naar Hr. Prof. Bröchner vil bekæmpe „den ab\-%
+stracte Modsætning mellem det Almene og det Enkelte“,
+forsaavidt den skal betinge „Disjunctionen mellem Viden
+og Existents“ (S. 132), da har han heri kun Uret, for\-%
+saavidt han vil bekæmpe min „Theorie“, men derimod
+fuldkommen Ret, forsaavidt han vil bekæmpe sin egen.
+Det er, hvad han selv (S. 139) kalder „\emph{Enkeltheds\-%
+bestemmelsen} i Villien“, hvorpaa det væsentlig kom\-%
+mer an. „Oversees det“, fortsætter Hr. Prof., „ved Op\-%
+fattelsen af denne“, nemlig \emph{Enkelthedsbestemmel\-%
+sen}, „at Villien kun er Villie som det selvbevidste ɔ:
+efter sin Natur universelle og almene Væsens Villie, saa
+bliver Villiens Enkelthed og Umiddelbarhedsmomentet i
+den ført tilbage til den umiddelbare Naturbestemtheds
+Virksomhedsyttring i Driften, den sandselig egoistiske
+Attraa, og idet denne nærmest sees fra den Side, gjen\-%
+nem hvilken den hænger sammen med den individu\-%
+elle Naturværens uoplukkede Enkelthed, der staaer i
+umiddelbar Modsætning til Videns Almene, saa bliver den
+Virksomhed, der udgaaer derfra, opfattet som overalt bestemt
+ved denne Enkelthedens Form, og hvor den ikke overho\-%
+vedet unddrager sig Bevidstheden, som den, der idethøieste
+gjengives af Bevidstheden som det i sin Umiddelbarhed
+med Erkjendelsens Almene Incommensurable. Forlades
+derimod denne Opfattelse af Enkeltheden --- der lidet
+% --- p. 32 ---
+\opage{32}\setcounter{footnote}{0}%
+vilde stemme med at Friheden tillægges Villien --- og
+fastholdes det, at Villiens Enkelthed er det universelle
+Væsens Fremtrædelsesform, er \emph{Aands}bestemthed, bliver
+% "Aands" alone letterspaced in "Aandsbestemthed", as printed
+Forholdet væsentlig et andet.“
+
+Hvis Theorie, det vel kan være, Hr. Prof. her an\-%
+griber, er jeg virkelig ikke istand til at gjætte; kun Saa\-%
+meget kan jeg sige, at det er ikke min. Aldrig har det
+dog kunnet falde mig ind, at Nogen, der fornuftigviis
+maatte antages at kunne læse, vilde være istand til at
+bringe en saa mærkværdig Misforstaaelse ud af mine
+Skrifter, at jeg virkelig blev anseet for at ville identifi\-%
+cere Aandsvilliens \emph{Enkelthed} med „den umiddelbare
+Naturbestemtheds Virksomhedsyttring i Driften, den sand\-%
+selig egoistiske Attraa“ o. s. fr. Hvormeget en saadan
+Opfattelse afviger, ikke blot fra min Synsmaade i det
+Hele, men udtrykkelig fra mine allerbestemteste Ud\-%
+talelser, hvor langt det er fra mig at ville gjøre Villies\-%
+existensen til en dyrisk Enkeltexistens, kan jeg godt\-%
+gjøre blot ved at anføre et Par Exempler. „Intet Dyr
+kan saaledes fordærve sit Liv og forfeile sit Maal som
+Mennesket; thi Dyrets Liv er en Naturgave, Menneskets
+en væsentlig Opgave. Som væsentlig Opgave er Livets
+Maal et Selvbevidsthedens Formaal, et Frihedens Ideal.
+Imod Idealet staaer Virkeligheden; men Virkeligheden,
+den stedfindende Naturlighed, maa bearbeides, forandres,
+omdannes: her maa ikke blot arbeides, her maa tænkes,
+her maa villes, at et Ideal kan virkeliggjøres. Som
+den existerende Subjectivitet, der selvvirksom stræber
+mod Idealet, er Mennesket væsentlig Aand.“ (Forelæs\-%
+% printer's dittography: "Forelæs-" at the line end, "læsninger" on the
+% next line, giving "Forelæslæsninger"; transcribed as printed
+læsninger ov. phil. Propæd. 1860---61 S. 400). At For\-%
+% "1860---61": this dash looks shorter than the pause rule (--- og, top of this page),
+% but matches the range dashes on pp. 45, 47, 51, all typed ---; made consistent at collation 2026-09-22
+holdet mellem Ideal og Virkelighed oprindelig maa
+klares i Erkjendelsen, har jeg da heller ikke overseet;
+thi den Fortolkning, Kritiken (S. 144) vil lægge ind i
+den Kjendsgjerning, at Villien kan bestemme sig lige\-%
+% --- p. 33 ---
+\opage{33}\setcounter{footnote}{0}%
+gyldig mod eller endog tiltrods for Theorien, „at den
+skulde godtgjøre Villiens Utilgjængelighed for Erkjen\-%
+delsen“, vedkommer ikke mig. Jeg har saa eftertrykke\-%
+ligt som muligt indskærpet Erkjendelsens, forstaaer sig,
+den praktiske Erkjendelses, Tænkningens, forstaaer sig,
+den praktiske Tænknings Nødvendighed for Villien som
+Aandsvillie. „I Forhold til Virkeligheden og det virke\-%
+lige Livs Opgaver maa den praktiske Erkjendelse ab\-%
+solut have større Oprindelighed end den theoretiske. Vel
+maa Villien, for at være Villie, oprindelig forudsætte
+Tanken; men deels er det, vel at mærke, ikke den theo\-%
+retiske, men den praktiske Tænkning, Villien forudsætter,
+deels er Villien med denne sin Forudsætten ligesaa op\-%
+rindelig som Tanken. Ligesom der i Tanken er Noget,
+der ikke kan afledes af Villien, efterdi Tanken som Tanke
+ikke er Villie, saaledes er der ogsaa i Villien Noget, der
+ikke kan afledes af Tanken, efterdi Villien som Villie
+ikke er Tanke. Vistnok falde saadanne Kategorier som
+Valgfrihed, Valg, Beslutning o. fl. ind under Tankens
+Belysning, forsaavidt de klare sig i sædelig Erkjendelse,
+men i Principet ere de ligefuldt Villieskategorier, deres
+Erkjendelse er væsentlig praktisk.“ (Om theor. og prakt.
+Erkjendelse S. 7).
+
+Forskjellen mellem den theoretiske og den praktiske
+Erkjendelse kan udtrykkelig sees af Forskjellen mellem
+Slutning og Beslutning. Den theoretiske Erkjendelse
+former sig i \emph{Slutninger}, men ikke i \emph{Beslutnin\-%
+ger}: Tanken slutter, men Villien beslutter. Videns ob\-%
+jective Slutninger danne sig uden Selvhensyn, i contem\-%
+plativ Uinteresserthed, uden Frygt og Haab. Og hvor\-%
+for? Fordi de danne sig uden Valgfrihed, uden For\-%
+pligtelse, uden personligt Ansvar. I Forhold til Tyngde\-%
+loven har den Vidende ingen Valgfrihed, thi de objec\-%
+tive Grunde tilstede intet Valg; ingen Forpligtelse, thi
+% --- p. 34 ---
+\opage{34}\setcounter{footnote}{0}%
+Opfyldelsen skeer med Nødvendighed; intet Ansvar, thi
+Spørgsmaalet om Brugen angaaer ikke Viden: Viden
+hviler i Indsigten. Anderledes med den praktiske Er\-%
+kjendelse; dens Problemer ere Villiesproblemer, dens
+Grunde Villiesgrunde, dens Slutninger Præmisser for
+endelig Beslutning. Den theoretiske Erkjendelse af Plig\-%
+ten fører ingenlunde enten til en virkelig Pligtopfyldelse
+eller endog til Indsigt i, hvad Pligtopfyldelse vil sige;
+den fører tvertimod bort fra begge Dele. „Theorien“
+siger, at Enkeltvillien er det Almene, at Pligten lige\-%
+ledes er det Almene, og at Villien, idet den beslutter
+sig til at opfylde Pligten, viser sig paa een Gang baade
+som det Enkelte og det Almene. Det er tomme Ab\-%
+stractioner. „Theorien“ kommer, hvormeget der end tales
+om det Concrete, aldrig ud over Abstractionen, den Ab\-%
+straction, at sætte Villiesbegrebet i Stedet for Villien,
+Pligtbegrebet i Stedet for Pligten, Beslutningens Begreb
+i Stedet for den virkelige Beslutning. Den virkelige
+Beslutning er en indvortes Handling; men just i Hand\-%
+lingen concentrerer Villien sig afgjørende til Enkelt\-%
+villie med alle en existerende Individualitets Egenheder
+og Begrændsninger. Det af Hr. Prof. Bröchner valgte
+Exempel, at gaae i Kamp for Fædrelandet, kan oplyse
+Sagen. Dersom der for en hvilkensomhelst paagjældende
+Enkeltvillie ikke var andet Valg end: enten at gaae i
+Kamp eller bryde med Pligtloven, saa kunde der dog til
+Nød --- skjøndt Pligtlovens Erkjendelse selv i sin rene
+Almindelighed er og bliver subjectiv --- være Tale om
+Beslutningens theoretiske Gjennemsigtighed; men at den
+Pligt at kæmpe for Fædrelandet er en betinget, en i sin
+virkelige Betingethed af særlige Omstændigheder og in\-%
+dividuelle Vilkaar afhængig Pligt, sees jo blandt Andet
+deraf, at det ikke uden videre er Pligt for Alle, ikke f. Ex.
+for Oldinge, Krøblinge, Qvinder og Børn. At den
+% --- p. 35 ---
+\opage{35}\setcounter{footnote}{0}%
+virkelige Betingethed paa ingen mulige Maader lader sig
+afgrændse eller bestemme ved theoretisk Erkjendelse,
+fremlyser deraf, at en, efter det Udvortes at dømme,
+kampdygtig, og forsaavidt til Kamp forpligtet, Individu\-%
+alitet kan have sine gode og tilstrækkelige Grunde, hvor\-%
+for han netop beslutter sig til ikke at gaae i Kamp.
+De personlige Grunde kunne endog være af den Natur,
+at han, uagtet han i individuel Selvforstaaelse er sig
+deres Gyldighed fuldkommen bevidst, dog føler sig for\-%
+pligtet til ikke at meddele dem til Nogen, men resolut
+at tage Ansvaret paa sig og finde sig i at blive udsat for
+Miskjendelse. Ja, det er ikke engang sagt, at den Mis\-%
+kjendte fortier sine Grunde, fordi han bærer paa en eller
+anden interessant novellistisk Hemmelighed; den ethiske
+Forklaring kan ligefrem være Bevidstheden om, at hans
+personlige Grunde enten for stedse eller dog idetmindste
+for en Tid vilde blive misforstaaede af Andre. Fra et
+andet Synspunkt viser sig noget Lignende. Sæt, at en Kæm\-%
+pende er i Kampens Hede stillet paa en høi Post og
+betroet et vigtigt Hverv. Opgaven er da at gjøre, ikke
+Pligten i theoretisk Almindelighed, thi den kan Ingen
+gjøre --- det skulde da være det rene Metaphysikmen\-%
+neske --- men \emph{sin} Pligt, altsaa den enkelte bestemte Pligt.
+Opgaven er: at lyde sin Ordre og i et afgjørende Øie\-%
+blik bruge sin Conduite. Nu kan Situationen, som be\-%
+kjendt, let stille sig saaledes, at dersom han virkelig skal
+handle paa Conduite, saa kan han ikke lyde sin Ordre, eller,
+hvis han punktlig skal lyde sin Ordre, maa han staae
+stille og see paa, at Slaget tabes. Saa gjælder det for
+Alvor om at fatte en Beslutning: her er Noget at frygte,
+og her er Noget at haabe; her skal det vise sig, om
+Enkeltvillien --- ikke Metaphysikmenneskets metaphysiske,
+men det virkelige Menneskes existerende Enkeltvillie ---
+har Charakteer nok til at tage et Ansvar paa sig.
+
+% --- p. 36 ---
+\opage{36}\setcounter{footnote}{0}%
+Men Charakteer! Charakteer er dog vel ikke et theo\-%
+retisk Noget, der i en objectiv Theorie bliver sig selv
+objectivt gjennemsigtigt? Nei, personlig er Charakteren
+af en saa subjectiv praktisk Natur, at den til Be\-%
+slutningen selv alene kan bruge den praktiske Erkjen\-%
+delse. Kan en under Indtryk af et stort Ansvar tagen
+Beslutning maaskee deduceres theoretisk af Hr. Prof.
+Bröchners Theorie: „Jeg erkjender Pligten --- og det
+er atter: jer erkjender den theoretisk....; jeg beslutter
+% "jer erkjender": so printed (r clear at 600 ppi, both witnesses agree);
+% the same quotation reads "jeg erkjender" on p. 29. Transcribed as printed.
+mig til at existere i det Erkjendte, og idet Beslutningen
+er virkeliggjort, er Indholdet, som realiseret i den en\-%
+kelte Villie, væsentlig det samme“? Naar det gjælder
+om virkelig Beslutning og virkeligt Ansvar, synes det
+endda ikke just at være saa ufornuftigt at gjøre op\-%
+mærksom paa Modsætningen mellem theoretisk og prak\-%
+tisk Erkjendelse.
+
+Det er nu vistnok ikke Hr. Prof. Bröchners Agt
+at ophæve al Forskjel mellem Erkjendelse og Villie;
+tvertimod! han mener endog, hvad Modsætningen an\-%
+gaaer, at kunne gjøre mig en Indrømmelse. Men hvad
+han paa det Bestemteste fastholder, er: at denne Mod\-%
+sætning ikke angaaer Indholdet, men alene Formen.
+„Begge Former: Erkjendelse og Villie, blive da primi\-%
+tive Udtryk for det i Selvbevidstheden som Eenhed
+aabenbarede Væsens Energie, for den Selvets Selvbe\-%
+stemmen, gjennem hvilken det, bestemmende sig, reali\-%
+serer sig: i begge Functioner hævder Selvheden og Ener\-%
+gien sig under eiendommelige Grundformer“ (S. 135).
+Hvorledes det nærmere forholder sig med disse eien\-%
+dommelige Grundformer og de til samme svarende Func\-%
+tioner, hvorvidt Enkeltvillien ved disse Functioner vil
+være istand til at bringe det til en virkelig Beslutning,
+kan sees af Udtalelser som disse: „Den til sit Maal
+naaede Erkjendelse vilde, som Udtryk for det i sig
+% --- p. 37 ---
+\opage{37}\setcounter{footnote}{0}%
+gjennemsigtige Væsens Energie, ifølge det ene Væsens
+nødvendige Væren i begge Former, umiddelbart omsætte
+sig i Villiens, ved Væsenserkjendelsen, Væsenets Selv\-%
+aabenbarethed, bestemte Energie, og den Villie, der med
+den intensiveste Energie, i den meest omfattende Betyd\-%
+ning, var Væsensvillen: Realisation af Væsenet efter dets
+% "Væsensvillen": so printed (image and both witnesses), not "-villien";
+% within Nielsen's quotation from Brøchner; left as printed
+Concretion, vilde være en Villie, der umiddelbart om\-%
+satte sig i Bevidsthed, i Erkjendelse, og i en Erkjen\-%
+delse, der var bestemt ved Videns almene objectivgyldige
+Love.“
+
+Dersom der i disse og lignende Udtalelser skjuler
+sig Noget, der virkelig fortjener Anerkjendelse, da maa
+det være noget „Fiint og Aandfuldt“, som jeg med min gro\-%
+vere Sands ikke er istand til at skimte; thi, saavidt jeg
+kan forstaae, indeholdes heri adskillige endog meget ufor\-%
+døielige Elementer. For det Første er en psychologisk Ad\-%
+skillelse af to for Selvhedsenergien eiendommelige For\-%
+mer, der ikke skulle berøre Indholdet, og det uagtet de
+udtrykkelig modsættes hinanden som primitive Former,
+som „Grundformer“, i lige Grad ulogisk og upsycho\-%
+logisk. En Form, der kan forandres, uden at Forandrin\-%
+gen væsentlig angaaer Indholdet, er en uvæsentlig, for
+Indholdet selv tilfældig Form, og kan umulig være nogen
+Grundform. Thi hvad er en Grundform ligefrem efter
+sit Begreb? Dog vel en af Væsensindhold opfyldt Form,
+en Form, hvis primitive Eiendommelighed ikke kan for\-%
+andres uden at Indholdet forandres. Saavidt om det Lo\-%
+giske; nu om det Psychologiske. Den Pligt f. Ex.,
+at kæmpe for Fædrelandet, kan, idet den erkjendes,
+ganske vist opfattes og fastholdes for sig i „Almindelig\-%
+hedens og Idealitetens“ Form, og derpaa under Opfyl\-%
+delsen omsættes i Villiens, d. e. i „Enkelthedens og Rea\-%
+litetens Form“. Men kan denne Omsætning nu siges at
+være en Formforandring, der ikke forandrer Indholdet?
+% --- p. 38 ---
+\opage{38}\setcounter{footnote}{0}%
+Man betragte engang den \emph{samme bestemte} Pligt \emph{før} og
+\emph{efter} Opfyldelsen. Før Opfyldelsen er Handlingen kun
+en Mulighed, dens Bestemmelser Mulighedsbestemmelser
+og forsaavidt Almeenbestemmelser. Men Handlingen er
+jo Pligtens Indhold; Pligtindholdet er altsaa før Opfyl\-%
+delsen et Indhold i Mulighed, et Mulighedsindhold. Men
+efter Opfyldelsen, hvor er da Alt forandret! Den Tappre
+har opfyldt sin Pligt, han har vovet sit Liv. Idet han
+fast besluttet vovede sit Liv, lod han ikke sin existerende
+Enkeltvillie som en af de mange Muligheder flyde hen i
+Mulighedernes almindelige Strøm; thi den, der vover
+saaledes, er ikke en Helt, men en Beruset, der rives med
+i Tummelen. At vove er, ethisk seet, at beslutte; at
+beslutte er at vove. Idet den Besluttede sætter Pligt\-%
+handlingen som det Afgjørende, hæver han sig ikke med
+stoisk Ligegyldighed over det mulige Udfald --- den
+stoiske Ligegyldighed er en psychologisk Svaghed, der
+forvansker det Ethiske --- men han lader Tilskikkelserne
+komme over sig, at Pligtopfyldelsens \emph{mulige} Indhold
+kan ved Handlingen, den enkelte virkelige Handling,
+blive et \emph{virkeligt} Indhold. I den virkelige Handling
+har Villien vovet sig selv som existerende Enkeltvillie,
+har ved at sætte \emph{sin Existens} ind i Indholdet væsentlig
+forandret Indholdet. At Hr. Prof. Bröchner har kunnet
+oversee en saa iøinefaldende Indholdsforandring, er be\-%
+synderligt.
+
+Endnu mere besynderlig er den Anstrengelse, Hr.
+Professoren gjør, for at forklare „det i Selvbevidstheden
+som Eenhed aabenbarede Væsens Energie“, „den Selvets
+Selvbestemmen, gjennem kvilket det, bestemmende sig,
+% "kvilket": so printed (k at 600 ppi, both witnesses agree), for "hvilket";
+% the same quotation reads "gjennem hvilken det" on p. 36. Printer's error,
+% transcribed as printed.
+realiserer sig“ i de to Grundformer: „Erkjendelse og
+Villie“. Forklaringen er virkelig curieus. For at hævde
+Erkjendelsens --- den objective Videns --- „Princip“
+overfor Villien og sørge for, at „det subjective Væsen“
+% --- p. 39 ---
+\opage{39}\setcounter{footnote}{0}%
+kan komme til at virke „\emph{efter sin Heelhed}, sin udeelte
+Personlighed“, etablerer den skarpsindige Psycholog ikke
+mindre end tre principielt selvstændige Selvhedsenergier
+i det ene og samme personlige Væsen. Den første af
+disse Energier kjendes væsentlig derpaa, at den i sig
+har Indhold, men ingen Form, de to andre udmærke sig
+ved, at de hver i sig ere Former, eiendommelige „Grund\-%
+former“ uden Indhold. At „det i Selvbevidstheden som
+Eenhed aabenbarede Væsens Energie“ i sig selv er form\-%
+løst, sees udtrykkelig deraf, at det, for at erholde Form,
+maa vende sig først til Erkjendelsen, derpaa til Villien;
+at Erkjendelse og Villie, hver for sig, maae opfattes som
+rene Former uden Indhold, sees udtrykkelig deraf, at
+disse Former ikke paa nogen Maade ere istand til at
+forandre Indholdet.
+
+Tør vi nu tage denne skarpsindige Inddeling væsent\-%
+lig, efter de angivne Begrebsbestemmelser bogstave\-%
+lig, saa komme vi da rigtignok til en Dualisme, der
+er ganske anderledes haard end den af mig paaviste.
+Er virkelig Erkjendelsen i den Forstand uafhængig af
+Villien, at den faaer sin Selvhedsenergie, ikke fra Vil\-%
+lien som Villie, men fra den første, af Villien uafhæn\-%
+gige Selvbestemmen, hiin endnu formløse, mystiske Potens,
+der oprindelig søger sin Form i Erkjendelsen: saa have
+vi jo en heel Vidensregion, en Kreds af objective Theo\-%
+rier, om hvilken det med Sandhed kan siges, at den
+staaer uafhængig af Villien, ganske uafhængig saavel
+med Hensyn til Indhold som til Form. Thi den objec\-%
+tive Viden kan da umulig afhænge af Villien efter sit
+Indhold, naar Indholdet kommer fra den formløse Potens;
+heller ikke kan Viden afhænge af Villien efter sin Form,
+naar Erkjendelsesformen ikke blot har en ligesaa stor,
+men en endnu større Primitivitet end Villiesformen.
+% --- p. 40 ---
+\opage{40}\setcounter{footnote}{0}%
+Dersom dette ikke er en psychologisk Dualisme, hvad
+er saa Dualisme?
+
+Maaskee tør vi ikke lægge en saadan Vægt paa
+Adskillelsen af Form og Indhold. Vi ville da forsøge
+det paa en anden Maade og antage, at den hele Disting\-%
+veren mellem tre forskjelligartede Selvhedsenergier ikke
+har stort at betyde; thi ved at antage dette synes vi,
+idetmindste paa nogle Steder, at komme Forfatterens
+Mening nærmere. Det siges os, at „den til sit Maal
+naaede Erkjendelse“, vilde umiddelbart omsætte sig i Vil\-%
+liens, ved Væsenserkjendelsen bestemte Energie; det siges
+os, at „den Villen, der med den intensiveste Energie var
+Væsensvillen“, vilde være „den Villie, der umiddelbart
+omsatte sig i Bevidsthed, i Erkjendelse“, og det oveni\-%
+kjøbet i en Erkjendelse, der var bestemt ved Videns al\-%
+mene, objectivgyldige Love. Af hvad her saaledes siges,
+faae vi en Forestilling om, at det er, „Mediationen“, den
+gamle velbekjendte speculative Mediation, der skal op
+igjen og holde Tridt med den raisonnerende Kritik.
+Men Kritiken og Mediationen kunne ikke forliges. Skal
+Mediationen raade, gaaer det paa ingen Maade an at
+antage en væsentlig Formforandring uden tilsvarende Ind\-%
+holdsforandring. Man sige om Mediationen, hvad man
+vil: i Kapitlet om Form og Indhold tillader den ingen
+Halvering; dens Tænkning er immanent, og den immanente
+Tænkning indlader sig ikke paa kritisk Udstykning af
+Form og Indhold. Hvorledes skulle vi vel kunne tænke
+os, at den til sit Maal naaede Erkjendelse vilde bære
+sig ad med at omsætte sig --- umiddelbart --- i Villie?
+Erkjendelsens Maal er jo lutter objectiv Theorie, lutter
+Videnskab. Saalænge den objective Erkjendelse ikke
+har udtømt alt muligt Vidensstof, maa den naturligviis
+gaae frem fra Viden til Viden uden at omsætte sig i
+Villie. Da nu Forfatteren ikke vil indrømme nogen
+% --- p. 41 ---
+\opage{41}\setcounter{footnote}{0}%
+absolut Vidensgrændse, vil Erkjendelsen selvfølgelig al\-%
+drig naae sit Maal, og den forventede Omsætning aldrig
+indtræde. Sæt, at Erkjendelsen, efter at have naaet et
+relativt Maal, omsætter sig til Villie: hvad standser da
+Erkjendelsen; hvad er det, der bevirker Omsætningen?
+Ifølge Mediationen skulde Erkjendelsen standse ved sig
+selv, ved sig selv gaae over til Villie, fordi den i sit
+Væsen er Villie. Men det forbyder Kritiken; den rai\-%
+sonnerende Kritik har udtrykkelig sat Erkjendelsesformen
+for sig, uafhængig af Villiesformen. Ifølge sund Menne\-%
+skeforstand skulde det være Villien, der standsede Er\-%
+kjendelsen og bevirkede Omsætningen; men det strider
+imod den opstillede Theorie, der sætter Erkjendelsen uaf\-%
+hængig af Villien. Det maa altsaa være hiin i sig form\-%
+løse Selvhedsenergie, hiin mystiske Potens, der hverken
+er Erkjendelse eller Villie, som maa omsætte Erkjendelsen
+i Villie. Men selv naar dette antages, er her endnu
+ingen Grund til, at Erkjendelsen, „som Udtryk for det i
+sig gjennemsigtige Væsens Energie, ifølge det ene Væsens
+nødvendige Væren i begge Former“, skulde „umiddel\-%
+bart omsætte sig“ i Villiesformen. Den eneste Grund,
+Forklaringen indeholder, er en Slags Grund til at „det
+i sig gjennemsigtige Væsens Energie“, efter at have ud\-%
+trykt sit Indhold i Erkjendelsens Form, kan bytte om
+og udtrykke sit Indhold i Villiens Form. Men et saa\-%
+dant Formskifte er da saare langt fra at betegne den
+ene Forms Overgang i den anden.
+
+Forsøge vi at tænke Overgangen ved at gaae ud
+fra Villiens Selvomsætten i Viden, saa ere vi lige nær.
+Hvad er det for en Villie, der --- med „den intensiveste
+Energie“ --- umiddelbart omsætter sig i Bevidsthed?
+Ifølge Forfatterens egen Antagelse kan Villien jo som
+Villie ikke være uden Bevidsthed; Villien med den „in\-%
+tensiveste Energie“ maa altsaa være en Villie med den
+% --- p. 42 ---
+\opage{42}\setcounter{footnote}{0}%
+intensiveste Bevidsthed. Men naar Villien med den in\-%
+tensiveste Energie selv, nemlig i Villiens Grundform,
+\emph{er} den intensiveste Bevidsthed, hvorledes kan den da
+\emph{omsætte} sig i Bevidsthed, i det, den allerede er?
+Her er jo ingen Omsætning. Skal den vidunderlige Om\-%
+sætning maaskee bestaae deri, at Villien, efter at den
+med en mindre intensiv Energie en Tidlang har holdt
+sig i Form af ordinær Villie, simpel, praktisk Charak\-%
+teervillie, omsider naaer den intensiveste Energie, og saa
+pludselig ved Hjælp af den intensiveste Energie springer
+om, --- „umiddelbart“, som naar det hedder, at Vinden
+springer om --- og forvandler sig fra Villie til Ikke-%
+Villie, til Erkjendelse, til objectiv Erkjendelse, Erkjen\-%
+delse af Videns almene objectivgyldige Love: da vil den
+hele Forklaring nærme sig stærkt til det Meningsløse.
+Den Philosoph, der i et bestemt psychologisk Exempel
+skulde kunne tydeliggjøre os en saadan Omsætning, en
+saadan umiddelbar objectiv Springen om i det Subjective
+maatte være en sand theoretisk Hexemester, en objectiv
+psychologisk Tusindkunstner.
+
+En sidste Udvei staaer endnu tilbage; heller ikke
+den tør lades uforsøgt. For at hævde Personlighedens
+udeelte Eenhed med sig selv i Erkjendelse og Villie,
+beraaber Hr. Professoren sig paa hvad han kalder „det
+i Selvbevidstheden som Eenhed aabenbarede Væsens
+Energie“, paa „den Selvets Selvbestemmen, gjennem
+hvilken det, bestemmende sig, realiserer sig“ o. s. v.
+Det er altsaa Forholdet imellem Villien og Selvets Selv\-%
+bestemmen, hvorpaa Opmærksomheden maa fæste sig.
+Ifølge den sædvanlige Synsmaade kunde man fristes til
+at antage, at Selvets Selvbestemmen egentlig var dets
+oprindelige Villen, og Villien selv Personlighedens Cen\-%
+trum; men dette er ingenlunde Tilfældet. „Det i Selv\-%
+bevidstheden som Eenhed aabenbarede Væsens Energie“
+% --- p. 43 ---
+\opage{43}\setcounter{footnote}{0}%
+har, naar vi abstrahere fra Erkjendelsesenergiens pseu\-%
+doselvstændige Selvbestemmen --- mirabile dictu --- to
+Slags særlig bestemmende Selvbestemmen, „gjennem
+hvilken det, bestemmende sig, realiserer sig“. Den første
+Selvbestemmen er den i sig formløse --- den mystiske
+Potens; den sidste, den i sig indholdsløse, er Villien.
+Villien som Villie er altsaa ikke Personlighedens selvbe\-%
+stemmende Eenhed; thi Villien fremkommer først, naar
+den første, formløse Selvbestemmen bestemmer sig til at
+lægge Bevidsthedsindholdet ind i den anden bestemmende
+Selvbestemmen, den nemlig, der bestemmer Formen.
+Villien, seet i denne Belysning, er da saa godt som util\-%
+regnelig. Villien, ak den stakkels Villie, er bleven fangen
+af en mystisk Potens og kan ikke oprindelig bestemme
+sig selv: dens Selvbestemmelse er hver Gang afhængig
+af, hvorvidt den Selvets første Selvbestemmen, „gjennem
+hvilken det, bestemmende sig, realiserer sig“, vil be\-%
+stemme den til Selvbestemmen.
+
+Det er paa et saadant Grundlag, at Hr. Professor
+Bröchner vil hævde Personlighedens udeelte Eenhed!
+Først gjør han af egen theoretisk Magtfuldkommenhed
+den existerende Bevidsthed til en videnskabelig Theorie;
+dernæst confunderer han det Almenes subjective Gyldig\-%
+hed med den objective, endog i den Grad, at han ikke
+seer sig istand til at gjøre Forskjel imellem Videnskabs\-%
+grunde og Samvittighedsgrunde, imellem en Erkjendelse
+af Pligtloven og en Erkjendelse af Tyngdeloven. Der\-%
+næst, efter at det i Kjød og Blod existerende Aands\-%
+menneske er blevet forvexlet med et Skyggerids af et
+ved Abstractioner afbleget Metaphysikmenneske, bliver
+Enkeltvilliens Almeenbegreb af en Feiltagelse sat i den
+for sin Selvstændighed kæmpende Villies Sted. Endelig,
+efter at det subjective Universalvæsen med de tre Selv\-%
+hedsenergier, den ene med Indhold uden Form, de to
+% --- p. 44 ---
+\opage{44}\setcounter{footnote}{0}%
+andre med Form uden Indhold, er blevet sig selv saa
+objectivt gjennemsigtigt, at Subjectivitetens oprindelige
+Selvbestemmen kan i fuldkommen Gjennemsigtighed be\-%
+stemme sig til Villiens Selvbestemmen, er Maalet naaet:
+Handlingen er Theorie og Theorien Handling, Forskjellen
+i al Fald kun en Formforskjel, der ikke forandrer Indholdet.
+Paa et saadant Grundlag er det nu en let Sag at negte
+Videns absolute Grændse og forkaste Mysteriet; paa et
+saadant Grundlag kan en kritiserende Philosoph da
+sagtens bevise baade Umuligheden af Guds Personlighed
+og Umuligheden af Bønnens Gyldighed og Umuligheden
+af Sjælens Udødelighed.
+
+Paa et saadant Grundlag, et luftigt Underlag af
+væsenstomme Abstractioner, skjæve Deductioner, ud\-%
+tværede Vendinger og stakaandede Bemærkninger har
+Hr. Professor Bröchner nu virkelig styltet sig op til en
+philosophisk Myndighed, en Videns Ypperstepræst, der
+renser Troen, bevarer „det Religiøse“ ved at „afskaffe
+Religionerne“ og forkynder Metaphysikmenneskets, det
+„universelle Menneskevæsens“ Evangelium, idet Viden
+vælges. Saa lyde hans Ord: „Idet Viden vælges, vælges
+nemlig det, der, som Væsensudtryk for det universelle
+Menneskevæsen, i sig bærer Muligheden til at afslutte
+sig til en Totalitet med indre Uendelighed; det der, idet
+det har det ideelle Principat i den udelelige menneske\-%
+lige Aand, kan blive Normen for en ethisk Livsheelhed;
+det, der, medens det gjennemskuer de endelige Religions\-%
+formers Væsen, begriber dem i deres Udspring af den
+sig udfoldende, hen mod sit Princip stræbende Menne\-%
+skenatur, og derfor ikke i dem beholder en forstyrrende
+Bevidsthedsskranke, og som, idet det i de historiske Re\-%
+ligionsformer udskiller det Forgængelige og Endelige fra
+det Blivende, Væsentlige og Evige, det Ikke-Religiøse
+fra det Religiøse, kan staae i Harmonie med og i sig
+% --- p. 45 ---
+\opage{45}\setcounter{footnote}{0}%
+optage dette Væsentlige, det Religiøse efter dets sande og
+evige Betydning.“ (S. 225---26).
+
+Dersom Nogen nu, efter møisommeligt at have ar\-%
+beidet sig igjennem Hr. Professorens Skrift: \emph{Problemet
+om Tro og Viden}, erklærede reent ud, at Grunden,
+hvorfor Hr. Prof. Bröchner ved denne Leilighed er op\-%
+traadt mod det sidste mulige Forsøg paa at værge Aaben\-%
+baringstroen mod Videnskabens Angreb, aabenbart ikke
+er Kjærlighed til Videnskaben, men et ulmende Had til
+den positive Christendom, mon man da ikke vilde tage
+kraftig til Gjenmæle og opløfte et Ramaskrig: „Ingen
+Insinuationer, ingen Personligheder! prøver Beviserne,
+men skumler ikke over Bevæggrundene!“ Jeg antager,
+at man vilde gjøre det, og med Rette. Men hvad be\-%
+viser det? Det beviser jo netop, hvad jeg gjør gjæl\-%
+dende, men hvad Hr. Prof. Bröchner ikke vil indrømme,
+at der er en Forskjel, en afgjort principiel Forskjel mel\-%
+lem Vidensspørgsmaal og Samvittighedsspørgsmaal, mel\-%
+lem Videnskabsgrunde og Personlighedsgrunde. Det
+beviser just, hvad jeg gjør gjældende, men hvad Hr.
+Prof. Bröchner udtrykkelig benegter, at der er en For\-%
+skjel, en uimodsigelig Principforskjel imellen den klare % sic: "imellen" (for imellem) as printed
+Indsigt i en objectiv Theorie og „Speilingen“ af det
+Personlighedens Indre, som aldrig gaaer op i noget
+videnskabeligt Begreb.
+
+To Vidende kunne blive hinanden objectivt gjennem\-%
+sigtige i den samme Viden af den samme Videnskab;
+men to Personligheder kunne aldrig blive hinanden objec\-%
+tivt gjennemsigtige i de samme personlige Anliggender;
+thi dette staaer fast: jo dybere Personlighed, desto rigere
+Inderlighed; men ingen Videnskab eier den magiske Nøgle,
+der lukker Inderlighedens Dør op.
+
+Men endskjøndt der i de existerende Personligheder
+er Dybder, hvortil Videns objective Lysning aldrig naaer
+% --- p. 46 ---
+\opage{46}\setcounter{footnote}{0}%
+ind, saa følger dog ingenlunde deraf, at der ikke skulde
+kunne fældes en almindelig, tilnærmelsesviis begrundet
+Dom om personlige Handlinger, om virkelige Charak\-%
+terer og deres større eller mindre Overeensstemmelse saa\-%
+vel med sig selv som med det Almeenmenneskelige;
+kun at Opfattelsen, som sagt, bliver en phychologisk % sic: "phychologisk" as printed
+Speiling ikke en udtømmende Begriben. Med Hen\-%
+syn hertil kan jeg da meget vel, uden at gaae det Per\-%
+sonlige for nær, gjøre opmærksom paa, at den Interesse,
+der i Hr. Prof. Bröchners foreliggende Kritik, træder i
+Forgrunden, ikke er en positiv Vidensinteresse, men en
+negativ Troesinteresse. Jeg skjønner det af følgende
+Indicier. Dersom det virkelig havde været Hr. Prof.
+Bröchners Hensigt at gjøre Videnskabens Ret gjældende
+imod Overgreb fra Troens Standpunkt: da maatte han, i
+dette Punkt idetmindste, have sluttet sig til mig. For\-%
+handlingen imellem os var da bleven en videnskabelig
+Forhandling om noget reent Videnskabeligt, f. Ex. om
+Problemerne i Grundideernes Logik. Af dette Arbeide
+foreligger en Række Analyser paa ikke mindre end 60
+Ark. Her maatte altsaa, hvorledes Resultatet end blev,
+være Noget at undersøge. At jeg ved Siden af disse
+reent videnskabelige Bestræbelser desuden mente at kunne
+bevare og forsvare den gamle Aabenbaringstro, kunde Hr.
+Prof. jo indtil videre have ladet staae hen som et i hans Øine
+psychologisk Curiosum, en „Speiling“ af noget Person\-%
+ligt, der ikke ret lod sig udtømme i det objective Be\-%
+greb, idetmindste ikke, førend jeg var naaet saavidt, at
+jeg kunde fremlægge min Religionsphilosophie som et
+gjennemarbeidet Hele. Men nu er Hr. Prof. Brøchner
+netop gaaet den omvendte Vei. Langt fra at vente paa
+en authentisk og sammenhængende Fremstilling af min
+Troeslære, har han med stort Hastværk kastet sig over
+„Bemærkninger“, „Referater“ og „aphoristiske Udta\-%
+% --- p. 47 ---
+\opage{47}\setcounter{footnote}{0}%
+lelser“, har behandlet hver Sætning, hvert Ord, hver
+Tøddel, urgerende, præciserende, distingverende, re\-%
+ducerende, concederende, restringerende, raisonerende
+o. s. v. med en Iver saa systematisk, som havde
+han et fuldfærdigt System for sig. Dette Hastværk,
+denne Iver tyder aabenbart hen paa, at Hovedopgaven
+er at komme „Aabenbaringstroen“ tillivs og faae „Reli\-%
+gionerne“ afskaffede for at kunne bevare det „Religiøse“.
+
+At Vidensinteressen ikke staaer i Forgrunden, kan
+jeg let bevise. Jeg behøver jo blot at henvise Læseren
+til den Bedømmelse af Grundideernes Logik, der findes i
+Hr. Professorens Skrift (S. 154---160). Til en begrundet
+Dom om denne Bedømmelse er det aldeles ikke for\-%
+nødent, at den dannede Læser skal være synderlig inde
+i Metaphysiken og vide Besked enten om Forholdet
+imellem System og Schema eller om „Magten“ eller om
+„det Antilogiske“; naar han blot har en nogenledes klar % a hairline mark stands over the a; read as a speck, like the one over "en" on p. 28 (collation 2026-09-22; burden of proof on the accented sort; JBIG2, no sort claim)
+Forestilling om, hvad en Forfatter, der idetmindste har
+lagt an paa at præstere noget Videnskabeligt, er beret\-%
+tiget til at fordre af den, som vil underkaste hans Ar\-%
+beide en videnskabelig Prøvelse, vil han uden Vanske\-%
+lighed fatte, hvad Enhver, der har Agtelse for Videnskab,
+maa dømme om Hr. Prof. Bröchners videnskabelige Be\-%
+dømmelse. Thi det er vist, at et halvmetaphysisk Fruen\-%
+timmer, naar hun blot forstod at bruge saadanne Ord
+som „Subreption“, „Tilsnigelse“, „Uklarhed“, „Vilkaar\-% image: the opening „ shows as a comma followed by a dot
+lighed“, „Sophistik“, „Metaphor“, „Kategorie“, „ikke de\-%
+duceret“ o. dsl., paa Steder, hvor de klinge, vilde i
+en Avisartikel kunne levere en ligesaa grundig, ligesaa
+videnskabelig Bedømmelse, og saa ovenikjøbet gjøre den
+nok saa læselig.
+
+At Grundideernes Logik ikke falder i Hr. Professor
+Bröchners Smag, maa vistnok forklares af flere Grunde,
+blandt Andet deraf, at den slet ikke ligger for hans kri\-%
+% --- p. 48 ---
+\opage{48}\setcounter{footnote}{0}%
+tiske Talent. „Det er en gammel Indvending, at Philo\-%
+sophien hænger sig i Ord, at dens Forklaringer ere Ord\-%
+forklaringer, dens Stridigheder Ordstrid, dens Viisdom
+Ordkram. Denne Indvending er ikke ganske uden Grund,
+naar man eensidig fæster Opmærksomheden paa Skygge\-%
+siderne, paa de ufrugtbare Subtiliteter, de smagløse Ud\-%
+skeielser i tom Ordkløgt, om hvilke en Johan af Salis\-%
+bury, en Erasmus fra Rotterdam og hos os en Holberg
+have, hver i sin Tidsalder, holdt Rettergang med den
+speculative Videns Clienter.“ Med disse Ord begynder
+anden Deel af den omhandlede Logik, og maaskee er der i
+dem noget Frastødende. Vistnok lægges der Vægt paa Ordet.
+„Philosophien er Ordets Videnskab; den maa nødvendig
+holde paa Ordet, saasandt den vil holde paa Tanken og
+fastholde Begrebet. Ligesom en Sjæl ikke kan være
+uden et Legeme, saaledes kan Begrebet som det i sig
+bestemte Begreb heller ikke være uden et bestemmende
+Ord; thi dersom Tanken ikke var, saa var der intet
+Ord, og dersom Ordet ikke var, saa var der heller ingen
+Tanke.“ Men under den videre Udvikling bliver det
+dog med afgjørende Eftertryk fremhævet, at den af
+Ordet betingede Tankeudvikling altid bør gaae i Eet
+med en tilsvarende Sagudvikling. Her er nu, hvis jeg
+ikke feiler, det egentlige Collisionspunkt mellem Grund\-%
+ideernes Logik og Hr. Prof. Bröchners Talent.
+
+At Hr. Prof. Bröchners Talent er et kritisk Talent
+af en egen Art, nemlig et Talent til philosophisk Ord\-%
+kritik, skal i denne Sammenhæng ikke henkastes som en
+flygtig Paastand, men til en Afslutning anskueliggjøres
+ved et Par slaaende Exempler. For at belyse, hvad han
+kalder „Theoriens Conseqventser med Hensyn til det
+Psychologiske“ (S. 178 flgd.), begynder Hr. Professoren
+med et Par udførlige, fra mit Skrift: „Om den gode Villie“
+hentede Citater, og indleder saa Belysningen selv med
+% --- p. 49 ---
+\opage{49}\setcounter{footnote}{0}%
+følgende Erklæring: „Vi have gjengivet disse Udviklinger,
+ogsaa de mod Slutningen anbragte „lazzi“, saa fuldstæn\-%
+dig, fordi kun en saadan Fuldstændighed kan give et
+tydeligt Billede af den Maade, paa hvilken Theorien
+maa forsvares“ (S. 183). Ved dette forcerede Tilløb skal
+Læseren naturligviis imponeres til at antage, at hvad jeg
+har sagt ikke blot er noget flaut og intetsigende Tøieri, men
+ovenikjøbet noget høist Upassende. Mine Ord ere disse:
+„Staaer det da fast, at Troen paa ingen Maade kan for\-%
+vandles til Viden eller Viden til Tro, saa staaer det
+ogsaa fast, at Troen ligesaa umuligt kan halveres ved
+Viden som Viden ved Tro. Kan en Bevidsthed ikke
+halveres af Venskab og Mathematik, saa kan den
+endnu mindre halveres af Ethik og Astronomie. Der
+gives mathematiske Venner, men der gives ingen ven\-%
+skabelig Mathematik; der gives forelskede Chemikere,
+men ingen chemisk Forelskelse, ingen forelsket Chemie.
+Der kan gives ethiske og uethiske Astronomer, men
+Astronomien er hverken ethisk eller uethisk. Viden\-%
+skaben er med andre Ord hverken ethisk eller uethisk,
+hverken troende eller vantro; Kjærlighed er praktisk,
+men Videnskab er theoretisk.“ Det er kun faa Linier,
+hvorom her handles, og dog indrømmer jeg, at den, der
+kan rokke den i disse faa Linier sammentrængte Grund\-%
+tanke, naar det gjælder en Sagudvikling, han kuldkaster
+hele min Anskuelse. „Men“ --- indvender man maaskee
+--- ;„Hr. Prof. Brøchner har jo rokket den!“ Jeg svarer: % image: a ;-shaped mark before „, transcribed as printed (stray sort or speck; JBIG2, no sort claim)
+Hr. Professor Bröchner gaaer, hvad enhver nogenledes
+opmærksom Læser kan see, aldeles ikke ind paa Sagen;
+nei, han lirker ved Ordene: hans philosophiske Kritik er
+i dette som i andre meget vigtige Stykker en, endog tem\-%
+melig pusillanim, Ordkritik. Man læser (S. 187): „De
+„livlige“ Analogier, N. tilføier til Oplysning, ere nærmest
+kun et lidet heldigt Forsøg i det Burleske, og bevise,
+% --- p. 50 ---
+\opage{50}\setcounter{footnote}{0}%
+med Hensyn til den omhandlede Sag, om muligt, mindre
+end Intet“.\footnote{Havde Hr. Prof. Bröchner med Hensyn til „de mathematiske
+Venner“ og „den venskabelige Mathematik“ virkelig oplyst eller
+endog blot gjort Forsøg paa at oplyse Noget, der angik „den
+omhandlede Sag“, da havde vi maaskee faaet en interessant Op\-%
+lysning om, hvorledes det personlige Forhold mellem mathematiske
+Venner kan bidrage til \emph{enten at svække eller forstærke
+de objective, mathemathiske Beviser}, hvorledes, med % sic: "mathemathiske" as printed
+andre Ord, Personlighedsgrunde kunne forvandles til Viden\-%
+skabsgrunde, en Oplysning, der sikkerlig ikke vilde undlade
+at bevirke en stor Revolution saavel i Mathematiken som
+i de øvrige Videnskaber. Men istedenfor at oplyse Noget
+om Sagen, har Hr. Professoren, maaskee af personlige
+Grunde, foretrukket at oplyse Noget om Ordene. Oplysningen
+er, „at man ikke uden videre, fordi et Adjectiv kan prædiceres
+om et Substantiv, derfor omvendt, kan prædicere et til Substan\-%
+tivet svarende Adjectiv om et til Adjectivet svarende Substantiv“,
+en Oplysning, som, hvad Sagen angaaer, omtrent staaer paa lige
+Trin med Per Degns Oplysning om Imprimatur: „Alle de Ord,
+som nævnes kand, henføres til 8 Ting, som er Nomen, Prono\-%
+men, Verbum, Participium, Conjugatio, Declinatio, Interjectio.“
+
+I hvilken Grad Hr. Professor Bröchner kan forglemme
+Sagen, blot for at kritisere Ordene, og hvor streng han er,
+naar han kritiserer Ordene, sees deraf, at hans Skarpsindighed
+endog i de anførte Exempler har kunnet opdage „det Burleske“.
+Ærbarhed er en Dyd, selv i en philosophisk Fremstilling. Men
+da Grændsen for det Ærbare jo ikke er objectiv videnskabelig,
+kunne de philosopherende Personligheder dog ogsaa drive Ær\-%
+barhedsfordringen saavidt, at det gaaer ud over Fremstillingen.
+Seer Hr. Professoren sig istand til i „en theoretisk udtømmende
+Begrebsbestemmelse“ at bevise, at jeg i de anførte Exempler har
+indblandet „urene Bestanddele“, der kunne henføres under Kate\-%
+gorien af „det Burleske“, da maa jeg naturligviis bøie mig for
+objective, uimodsigelige Grunde; men indtil et saadant Beviis
+fremlægges, forbeholder jeg mig min personlige Ret. Thi det
+er virkelig min Overbeviisning, at Philosophien, selv om den
+% note continues on p. 51
+var personificeret i det rene Metaphysikmenneske og ved denne
+Forvandling --- der naturligviis ikke maatte vedrøre Indholdet, men
+blot Formen --- bleven saa ærbar som en gammel Skolejomfru:
+saa skulde den gamle Jomfru, medmindre hun fik et hysterisk
+Anfald af Arrighed, dog i mine uskyldige Exempler have ondt
+ved at finde „det Burleske“.}
+
+% --- p. 51 ---
+\opage{51}\setcounter{footnote}{0}%
+Selv det lille Stykke (S. 184---186), hvor den kriti\-%
+serende Forfatter omsider efter adskillige Omsvøbsbe\-%
+mærkninger lader, som om han gik ind paa Sagen, ved\-%
+bliver Kritiken ligefuldt at være en Ordkritik, hvori den
+ene skjæve Bemærkning afløser den anden. „Idet Viden
+anerkjender sin Grændse, anerkjender den i det, der er
+Troens Sphære, et Mysterium for Viden. Idet Troen
+har en Grændse mod Viden, bliver det, der er Videns
+Gjenstand, et Mysterium for Troen. Troen er altsaa
+Videns Mysterium, Viden Troens, og Mysteriet, der,
+saaledes opfattet, ikke har noget Mysteriøst, forhindrer
+paa denne Maade ikke Indskrænkningen, men udtrykker
+den netop.“ Dette Exempel paa tomt Ordspil kan her
+figurere som instar omnium; kun gjælder det om at
+fatte „det Fine“. „Det Fine“ er, at et Mysterium, naar
+man veed, hvad det er: „en Grændse mod Viden“, ikke
+længer er et Mysterium; thi man veed jo, hvad det er: „en
+Grændse mod Viden“. Altsaa er en Hemmelighed, naar
+jeg veed, hvad den er, nemlig det, jeg ikke kan vide,
+ikke længer nogen Hemmelighed, thi jeg veed jo, hvad
+en Hemmelighed er, nemlig: det, jeg ikke kan vide.
+
+Den følgende Bemærkning er vel ikke slet saa tom,
+men den er baade vind og skjæv. „Viden skal, ved
+at underforstaae de i \emph{Mysteriet skjulte Mellembe\-%
+stemmelser}, kunne tænke sig den Magtaabenbarelse,
+„i hvilken den Troende seer Miraklet“, som bestaaende
+med Lovenes Uforanderlighed, men dette kan den kun,
+% --- p. 52 ---
+\opage{52}\setcounter{footnote}{0}%
+naar den, medens Miraklets Navn beholdes, lader Miraklet
+som \emph{Mirakel forsvinde i et supponeret Ratio\-%
+nelt}.“ De Læsere, som ønske at kjende min Opfattelse
+af Miraklet i en tilsvarende Sagudvikling, henviser jeg
+til mine Forelæsninger om Hindringer og Betingelser
+for det aandelige Liv i Nutiden (IX og X); om Be\-%
+mærkningen i den foreliggende Ordkritik kan jeg fatte
+mig kort. Det for Miraklet Charakteristiske er slet ikke
+det, at der gjøres Brud paa Lovene; men det, at en
+Kjendsgjerning bliver umiddelbart henført til Guds al\-%
+mægtige Villie. At Grundforholdet imellem Naturriget
+og Guds almægtige Villie er et indre Uendelighedsfor\-%
+hold, altsaa et Forhold, hvori Villien virker i Eet med
+Lovene, kan indsees i al Almindelighed, uden at Grund\-%
+forholdet selv i sine virkelige Articulationer derfor ophører
+at være et saavel for Viden som for Troen absolut Myste\-%
+rium. Hvorvidt et saadant Mysterium skal antages eller
+benegtes, er ikke et Videnskabsspørgsmaal; nei, det er
+endnu som før et Samvittighedsspørgsmaal.
+
+En ukritisk Sammenblanding af Samvittighedsspørgs\-%
+maal med Videnskabsspørgsmaal er vel det stærkeste
+Vidnesbyrd imod Videnskabeligheden i Hr. Prof. Bröchners
+philosophiske Kritik.
+
+\begin{center}\rule{3cm}{0.4pt}\end{center}
+
+\end{document}
