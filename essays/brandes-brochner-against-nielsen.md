@@ -402,8 +402,9 @@ On Nielsen's side, all in this collection:
 - **Nielsen, *Om theoretisk og praktisk Erkjendelse, nogle Bemærkninger* (1866),
   pp. 63–77.** Borderline dualism, p. 66; courage, p. 69; the God of faith known
   only practically, p. 73; "Aandens Liv er i Villien," p. 75; the theoretical to be
-  given up, p. 76. English translation not yet made.
-  [Transcription](https://hhalvors.github.io/danish-texts/texts/nielsen/theoretisk-praktisk-erkjendelse/transcription.pdf)
+  given up, p. 76.
+  [Transcription](https://hhalvors.github.io/danish-texts/texts/nielsen/theoretisk-praktisk-erkjendelse/transcription.pdf) ·
+  [Translation](https://hhalvors.github.io/danish-texts/texts/nielsen/theoretisk-praktisk-erkjendelse/translation.pdf)
 - **Nielsen, *Om „Den gode Villie“ som Magt i Videnskaben* (1867).** "Not although
   but because," p. 33; no concordat, pp. 35–36; *Mening*, pp. 62–64; the absolute
   mystery, pp. 89–90.
