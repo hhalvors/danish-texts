@@ -18,6 +18,10 @@ about:
     work: gode-vilje
   - author: nielsen
     work: brochners-kritik
+  - author: nielsen
+    work: zeuthen-svar
+  - author: nielsen
+    work: om-hindringer
 about-authors:
   - nielsen
 abstract: >
@@ -40,10 +44,12 @@ reconstruct his theory from its own premises, and take it apart in a fixed order
 When Nielsen answered Brøchner, Brøchner replied in *Et Svar til Professor R.
 Nielsen* (1868), and the next year gave the positive half of his position in *Om
 det Religiøse i dets Enhed med det Humane* (1869). All four books are in this
-collection, complete in Danish and English, together with Nielsen's reply to
-Brøchner and the two texts of Nielsen's that both critics quote most: the 1866
-paper *Om theoretisk og praktisk Erkjendelse, nogle Bemærkninger* and *Om „Den
-gode Villie“ som Magt i Videnskaben* (1867). What follows states their arguments
+collection, complete in Danish and English, and so are the Nielsen texts they
+argue with: his reply to Brøchner, his 1866 letter to Zeuthen, the two works
+both critics quote most — the 1866 paper *Om theoretisk og praktisk
+Erkjendelse, nogle Bemærkninger* and *Om „Den gode Villie“ som Magt i
+Videnskaben* (1867) — the Christiania lectures of 1868, and both volumes of
+*Grundideernes Logik*. What follows states their arguments
 as numbered theses keyed to printed pages. Danish is quoted as the transcriptions
 print it; the English is the collection's own translation.
 
@@ -95,7 +101,12 @@ dividedness a theory, and so „hæver Principløsheden selv til Princip“ — 
 precisely what he craves: leave to be whole in his halfness" (p. 14). Its war on
 theology is a "sham battle" (p. 17): miracles expelled from science are
 readmitted into the believer's practical life, as if chemists banished phlogiston
-from science in order to believe in it more fervently outside it. The disciple
+from science in order to believe in it more fervently outside it. Brandes makes
+the point by turning Nielsen's own dialogue about the Minorite's roasted birds
+around, so that its rationalist has to answer exactly as its theologian does
+(pp. 17–20). Nielsen was fond of that dialogue: he reprints it, in almost the
+same words, in his letter to Zeuthen (pp. 4–6), citing it there to the lectures
+of 1861–62, pp. 158–59, where Brandes cites the autumn 1865 lectures, p. 159. The disciple
 asked about the six days of creation must answer: "as a truthful man I assume, in
 the interest of truth, that these so-called facts are quite unhistorical; but as
 a moral individuality I assume, in the name of the good, that these same facts
@@ -160,6 +171,26 @@ opponent's words against him. His master premise is the unity of consciousness
 and of being. His authority, strikingly, is Kierkegaard, whom he quotes against
 the disciples (pp. 40, 57, 72) and credits with the whole religious content of
 Nielsen's position (p. 9).
+
+An unheaded *Efterskrift* on p. 76 disposes of a piece that reached Brandes too
+late. Nielsen's *Svar til Hr. Dr. phil. Pastor Zeuthen* „indeholder for største
+Delen kun Optryk af Forf.s Udfald mod Martensens Dogmatik“ — "for the most part
+it contains only a reprinting of the author's sallies against Martensen's
+Dogmatics" — and so calls for no change in what he had written. The letter is
+now in the collection, and the verdict is half right. Nielsen does reprint:
+pp. 4–6 carry the roasted-birds dialogue, and pp. 6–11 take Martensen's
+Dogmatics through creation, incarnation and Pentecost, to the conclusion that a
+dogmatics which explains miracles ends with "a dogmatic thermometer for
+miracles" (p. 7). But the letter also states the thesis in a form Brandes could
+have used. A doctrine of ideas, Nielsen grants, must rest on the
+mathematical-empirical foundation of the doctrine of nature, must be cognition
+by law, and cannot conflict with the doctrine of nature (p. 2); what no science
+can do is explain a miracle. „Videnskaben er ikke religiøs, Religionen ikke
+videnskabelig; Astronomien er ikke andægtig, Andagten ikke videnskabelig“ —
+"science is not religious, religion not scientific; astronomy is not devout,
+devotion not scientific" — and so faith and knowledge must, for the sake of a
+higher reconciliation, sue for divorce, while theology, which would wear the
+cloak on both shoulders, must go (p. 11).
 
 ## Brøchner, *Problemet om Tro og Viden* (1868)
 
@@ -262,9 +293,19 @@ requires a *choice*.
 
 ## The exchange continued: Nielsen's reply, *Et Svar* (1868), *Det Religiøse* (1869)
 
-According to Brøchner, Nielsen declined, in a postscript to his Christiania
-lectures, to answer his "four assailants," Brandes among them, but answered the
-fifth (*Svar*, p. 3). *Hr. Professor Brøchners philosophiske Kritik gjennemseet*
+Brøchner reports that Nielsen, in a postscript to his Christiania lectures,
+declined to answer his "four assailants," Brandes among them, and answered the
+fifth (*Svar*, p. 3). The postscript is now in the collection, and it names
+nobody. Nielsen parades his critics instead: a First in the bantering gallant
+wit manner with „Dualisme“ and „Genialitet“ and „Kulsviertro“ — Brandes, whose
+charcoal-burner is at *Dualismen* pp. 28–29 — then a Second balancing a
+theological universal monarchy on the point of „den gode Villie“, a Third
+sounding twelve blasts on a mystical trumpet, a Fourth arriving with a
+conviction on a critical lime-twig, each of them greeted with „og saa skal jeg
+svare paa det!“, "and I'm supposed to answer that!" Then „Her kommer en Femte,
+en Sjette …“ — "here comes a Fifth, a Sixth …" — „det overgaaer mine Kræfter“
+(*Om Hindringer*, p. 325). Brøchner's four are Nielsen's four, though Nielsen's
+own sentence does not stop at four. *Hr. Professor Brøchners philosophiske Kritik gjennemseet*
 (1868) is a single unbroken polemic of 52 pages, and its case reduces to five
 claims.
 
@@ -419,14 +460,30 @@ On Nielsen's side, all in this collection:
   contradiction, p. 17.
   [Transcription](https://hhalvors.github.io/danish-texts/texts/nielsen/religionsphilosophie/transcription.pdf) ·
   [Translation](https://hhalvors.github.io/danish-texts/texts/nielsen/religionsphilosophie/translation.pdf)
-- **Nielsen, *Grundideernes Logik* I (1864).** Knowing that nothing can be known,
-  pp. 4–5; the object and the content of knowledge, pp. 259–261.
-  [Transcription](https://hhalvors.github.io/danish-texts/texts/nielsen/grundideernes-logik/transcription.pdf) ·
-  [Translation](https://hhalvors.github.io/danish-texts/texts/nielsen/grundideernes-logik/translation.pdf)
+- **Nielsen, *Svar til Hr. Dr. phil. Pastor Zeuthen* (1866), 16 pp.** The three
+  conditions on a doctrine of ideas, p. 2; the roasted-birds dialogue reprinted,
+  pp. 4–6; Martensen on creation, incarnation and Pentecost, pp. 6–11; the
+  divorce of faith and knowledge, p. 11.
+  [Transcription](https://hhalvors.github.io/danish-texts/texts/nielsen/zeuthen-svar/transcription.pdf) ·
+  [Translation](https://hhalvors.github.io/danish-texts/texts/nielsen/zeuthen-svar/translation.pdf)
+- **Nielsen, *Om Hindringer og Betingelser for det aandelige Liv i Nutiden*
+  (1868).** Sixteen lectures given in Christiania, pp. 1–295, and the
+  *Efterskrift*, pp. 297–326, which answers his Norwegian listeners on the
+  reality of the sacred facts and parades his critics at p. 325.
+  [Transcription](https://hhalvors.github.io/danish-texts/texts/nielsen/om-hindringer/transcription.pdf) ·
+  [Translation](https://hhalvors.github.io/danish-texts/texts/nielsen/om-hindringer/translation.pdf)
+- **Nielsen, *Grundideernes Logik* I (1864) and II (1866).** In vol. I: knowing
+  that nothing can be known, pp. 4–5; the object and the content of knowledge,
+  pp. 259–261. Vol. II carries the pages Brandes and Brøchner cite for the
+  antilogical and for power as a fundamental idea.
+  [Vol. I transcription](https://hhalvors.github.io/danish-texts/texts/nielsen/grundideernes-logik/transcription.pdf) ·
+  [Vol. I translation](https://hhalvors.github.io/danish-texts/texts/nielsen/grundideernes-logik/translation.pdf) ·
+  [Vol. II transcription](https://hhalvors.github.io/danish-texts/texts/nielsen/grundideernes-logik-2/transcription.pdf) ·
+  [Vol. II translation](https://hhalvors.github.io/danish-texts/texts/nielsen/grundideernes-logik-2/translation.pdf)
 
-Still missing are *Grundideernes Logik* II (1866), Nielsen's reply to Zeuthen
-(1866), his autumn 1865 lectures on the *Propædeutik*, and the Christiania
-lectures with their postscript; among the disciples, Heegaard's two books and
+Still missing are the *Propædeutik* lectures that carry the roasted-birds
+dialogue — the course of 1861–62, which Nielsen cites, and the autumn 1865
+course, which Brandes cites; among the disciples, Heegaard's two books and
 Rudolph Schmidt's *Om Selvmodsigelsen*; and Høffding's *Philosophie og Theologie*
 (1866). For the doctrine's origins see [Before the Heterogeneous
 Magnitudes](/dansk/essays/nielsen-heterogeneity-1849.html); for a participant who
