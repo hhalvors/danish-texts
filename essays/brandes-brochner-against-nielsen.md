@@ -2,7 +2,7 @@
 kind: essay
 title: "Two Refutations of the Heterogeneity Doctrine"
 subtitle: "Brandes and Brøchner against Rasmus Nielsen, 1866–1869"
-updated: "2026-09-21"
+updated: "2026-09-22"
 about:
   - author: brandes
     work: dualismen
@@ -12,14 +12,21 @@ about:
     work: svar-nielsen
   - author: brochner
     work: det-religioese
+  - author: nielsen
+    work: theoretisk-praktisk-erkjendelse
+  - author: nielsen
+    work: gode-vilje
+  - author: nielsen
+    work: brochners-kritik
 about-authors:
   - nielsen
 abstract: >
   A guide to the two principal philosophical attacks on Rasmus Nielsen's doctrine
   that faith and knowledge are absolutely heterogeneous: Georg Brandes's
   Dualismen i vor nyeste Philosophie (1866) and Hans Brøchner's Problemet om Tro
-  og Viden (1868), with its sequels. Each argument is stated as a numbered thesis
-  and keyed to the printed pages of the texts in this collection.
+  og Viden (1868), with its sequels and Nielsen's reply. Each argument is stated
+  as a numbered thesis and keyed to the printed pages of the texts in this
+  collection.
 ---
 
 Rasmus Nielsen's doctrine of faith and knowledge was the most discussed piece of
@@ -33,7 +40,10 @@ reconstruct his theory from its own premises, and take it apart in a fixed order
 When Nielsen answered Brøchner, Brøchner replied in *Et Svar til Professor R.
 Nielsen* (1868), and the next year gave the positive half of his position in *Om
 det Religiøse i dets Enhed med det Humane* (1869). All four books are in this
-collection, complete in Danish and English. What follows states their arguments
+collection, complete in Danish and English, together with Nielsen's reply to
+Brøchner and the two texts of Nielsen's that both critics quote most: the 1866
+paper *Om theoretisk og praktisk Erkjendelse, nogle Bemærkninger* and *Om „Den
+gode Villie“ som Magt i Videnskaben* (1867). What follows states their arguments
 as numbered theses keyed to printed pages. Danish is quoted as the transcriptions
 print it; the English is the collection's own translation.
 
@@ -48,7 +58,13 @@ letterspacing the clause, that they can be so united netop *paa Grund af deres
 absolute Uensartethed*, "precisely on account of their absolute heterogeneity."
 The clause answers Nielsen's defenders — Brandes names Høffding,
 Rudolph Schmidt and Heegaard (*Dualismen*, p. 32n) — who complained that critics
-read Nielsen's "because" as an "although." Heterogeneity is not an obstacle the
+read Nielsen's "because" as an "although." Nielsen adopted the formula himself a
+year later: „At Tro og Viden lade sig forene i een Bevidsthed, ikke *endskjøndt*,
+men *fordi* de ere absolut ueensartede Principer, vil da med andre Ord sige, at de
+kun lade sig forene i et *absolut Mysterium*“ — "that faith and knowledge can be
+united in one consciousness, not *although* but *because* they are absolutely
+heterogeneous principles, means, in other words, that they can be united only in
+an *absolute mystery*" (*Den gode Villie*, p. 33). Heterogeneity is not an obstacle the
 union overcomes; it is the reason no conflict can arise, as a melody cannot
 contradict a theorem. Both critics accept this reading and argue that it makes
 matters worse. As they reconstruct it, the doctrine has three parts:
@@ -68,8 +84,8 @@ The book has four chapters: *Indledning* (pp. 7–24), *Den absolute
 Uensartethed* (pp. 25–46), *Det Antirationelle* (pp. 47–54) and *Dualismens
 Consequenser* (pp. 55–76). Brandes quotes Nielsen's *Grundideernes Logik*, the
 *Philosophisk Propædeutik* (the 1857 book and the 1865 lectures), and, in the
-last chapter, Nielsen's 1866 *Bemærkninger om theoretisk og praktisk
-Erkjendelse*; among the disciples, chiefly Heegaard's *Indledning til Ethiken*.
+last chapter, Nielsen's 1866 paper *Om theoretisk og praktisk Erkjendelse, nogle
+Bemærkninger*, which he calls the *Bemærkninger*; among the disciples, chiefly Heegaard's *Indledning til Ethiken*.
 His arguments reduce to six.
 
 **B1. The doctrine turns a failing into a principle (pp. 7–24).** People already
@@ -126,14 +142,18 @@ bekræfte som benægte Noget derom“ (p. 54).
 
 **B6. Every dualist ends as a monist (pp. 55–76).** In the *Bemærkninger* the
 dualism has spread from faith and knowledge to theory and practice as such.
-Nielsen now hedges — oppositions "*bordering* on dualism," which Brandes calls
-*Næstendels-Dualisme* (p. 60) — while making the will "the whole man" and
-conceding that if the union failed, "it would be the theoretical, and not the
-practical, that would have to be given up" (p. 66). The dualism is thus unstable,
+Nielsen now hedges: the life of spirit contains „Modsætninger, dybe, stærke, til
+Dualisme grændsende Modsætninger“ (1866, p. 66), which Brandes christens
+*Næstendels-Dualisme*, "pretty-nearly-dualism" (p. 60). In the same paper Nielsen
+locates spirit in the will — „Aandens Liv er i Villien“ (1866, p. 75) — and
+concedes that if one consciousness could not acknowledge both, „da vilde det i al
+Fald blive det Theoretiske, ikke det Praktiske, der maatte opgives“, "then in any
+case it would be the theoretical, and not the practical, that would have to be
+given up" (1866, p. 76; *Dualismen*, pp. 65–66). The dualism is thus unstable,
 and resolved in favor of the will. Nielsen's example of courage, known in theory
-but not possessed in practice, meets a dilemma: if courage is temperament, the
-same holds of theoretical gifts; if it is virtue, knowledge of duty can pass
-"into flesh and blood" (pp. 62–64).
+but not possessed in practice (1866, p. 69), meets a dilemma: if courage is
+temperament, the same holds of theoretical gifts; if it is virtue, knowledge of
+duty can pass "into flesh and blood" (pp. 62–64).
 
 Brandes argues by dilemma, by reductio through restatement, and by turning the
 opponent's words against him. His master premise is the unity of consciousness
@@ -175,15 +195,17 @@ is doubled likewise, so that it is forgotten that subjective truth is
 will cannot be reduced to thought, but „ved en Subreption“ he turns this
 distinctiveness into an opposition carried over from form to content (p. 134).
 Will and cognition are two forms of one self-activity, and passing between them
-changes form, not content (pp. 135–140). The courage example equivocates between
-disposition and virtue (pp. 140–142 — Brandes's B6 again). And if knowledge
+changes form, not content (pp. 135–140). The courage example (Nielsen 1866, p. 69)
+equivocates between disposition and virtue (pp. 140–142 — Brandes's B6 again). And if knowledge
 merely "mirrors" the will, then either the mirroring changes what it mirrors,
 and is not mirroring, or it does not, and the two are homogeneous; wherever there
 is interaction there is unity of essence (pp. 148–150).
 
 **R4. The metaphysical grounding refutes itself (pp. 153–160, 171–177).** To
 posit unity in the Absolute and dualism in existence is „*en Modsigelse*“
-(p. 153). An absolute limit to knowledge cannot be known: "thought by itself as
+(p. 153). An absolute limit to knowledge cannot be known (Nielsen himself had
+written that „at vide om en Ting, at Intet vides om den, er jo dog at vide Noget
+om den“, *Grundideernes Logik* I, p. 5): "thought by itself as
 thought cannot cognize its own absolute limitation, for inasmuch as it cognized
 it, it would at once set and abolish the boundary" (p. 158). Appeal to a wider
 subject that knows the limit presupposes the heterogeneity it was meant to prove
@@ -191,20 +213,29 @@ subject that knows the limit presupposes the heterogeneity it was meant to prove
 boundary always in motion (p. 160).
 
 **R5. Faith and knowledge claim the same object (pp. 177–195).** This is the
-core. Unlike fantasy, faith posits its object as *real*, as knowledge does
-(pp. 178–179). The "absolute mystery" at the boundary either merely names their
-mutual limitation — „*Troen er altsaa Videns Mysterium, Viden Troens*“ (p. 184)
-— or, taken as a medium of transition, reintroduces homogeneity. Hence: „Tro og
-Viden gjøre hver for sig Krav paa *hele* Aanden; de forholde sig begge til
-*Virkeligheden* som Heelhed og til *denne Virkeligheds Princip*, altsaa til *samme
-Object*, og idet de skulle gjøre det som *absolut uensartede*, saa ligger heri
-Modsigelsens og Adsplittelsens *Uundgaaelighed*“ — "faith and knowledge each make
-claim to the whole spirit … hence to the same object, and inasmuch as they are to
-do it as absolutely heterogeneous, there lies herein the contradiction's and the
-division's unavoidability" (p. 187). Separating faith from mere opinion does not
-help: it works only by doubling reality, against which faith itself "protests in
-the most determinate way," since it will not have Christ's birth, death and
-resurrection moved out of history (p. 192).
+core. Unlike fantasy, to which Nielsen's expositors had compared it, faith
+posits its object as *real*, as knowledge does (pp. 178–179). The "absolute
+mystery" at the boundary either merely names their mutual limitation — „*Troen
+er altsaa Videns Mysterium, Viden Troens*“ (p. 184) — or, taken as a medium of
+transition, reintroduces homogeneity. Hence: „Tro og Viden gjøre hver for sig
+Krav paa *hele* Aanden; de forholde sig begge til *Virkeligheden* som Heelhed og
+til *denne Virkeligheds Princip*, altsaa til *samme Object*, og idet de skulle
+gjøre det som *absolut uensartede*, saa ligger heri Modsigelsens og
+Adsplittelsens *Uundgaaelighed*“ — "faith and knowledge each make claim to the
+whole spirit … hence to the same object, and inasmuch as they are to do it as
+absolutely heterogeneous, there lies herein the contradiction's and the
+division's unavoidability" (p. 187). Nielsen's way out was a third term,
+*Mening*, opinion: one may keep the faith of the fathers and reject their
+opinion, since whether Paradise was an outer or an inner reality is a question
+on which „der er forskjellige Meninger“ (*Den gode Villie*, pp. 62–64). The
+separation works only by doubling reality, against which faith itself "protests
+in the most determinate way," since it will not have Christ's birth, death and
+resurrection moved out of history (p. 192). Brøchner's quotations of Nielsen in
+this section are not always exact. Nielsen writes that „Med sin iboende Grændse, sin
+indre Begrændsning, er Viden ligeoverfor Troen aldeles uindskrænket“, "with its
+inherent boundary, its inner limitation, knowledge is wholly unrestricted over
+against faith" (*Den gode Villie*, p. 35); Brøchner prints „Med sin absolute
+Grændse“ (p. 182), substituting the very word in dispute.
 
 **R6. Both sides are damaged, and the theory cannot be lived (pp. 161–215).**
 The will, cut off from knowledge, becomes blind drive, and God a "God of
@@ -229,18 +260,67 @@ agrees with Nielsen, against Martensen, that they cannot be fused into a science
 of faith (p. 117). What he denies is that their difference permits peace. It
 requires a *choice*.
 
-## The exchange continued: *Et Svar* (1868) and *Det Religiøse* (1869)
+## The exchange continued: Nielsen's reply, *Et Svar* (1868), *Det Religiøse* (1869)
 
-Nielsen declined to answer his "four assailants," Brandes among them, but
-answered Brøchner in a 52-page pamphlet, *Hr. Professor Brøchners philosophiske
-Kritik, gjennemseet* (1868). It is not in this collection, so Nielsen's
-objections are known here only as Brøchner reports them. The *Svar* adds three
-points to the book.
+According to Brøchner, Nielsen declined, in a postscript to his Christiania
+lectures, to answer his "four assailants," Brandes among them, but answered the
+fifth (*Svar*, p. 3). *Hr. Professor Brøchners philosophiske Kritik gjennemseet*
+(1868) is a single unbroken polemic of 52 pages, and its case reduces to five
+claims.
+
+1. **The critique confirms the doctrine (pp. 3–8).** Brøchner has piled up
+   contradictions in a "theory" assembled from occasional writings and a
+   disciple's report; but „Langt fra at undergrave min Troeslære, har Kritiken
+   just bidraget Sit til at stadfæste, hvad jeg ved enhver Leilighed atter og atter
+   indskærper, at Troeslæren umulig kan bestaae for Videnskabens Domstol“ — "far
+   from undermining my doctrine of faith, the critique has contributed its share to
+   confirming just what I inculcate again and again on every occasion: that the
+   doctrine of faith cannot possibly stand before the tribunal of science" (p. 4).
+   Science's claim to judge faith is postulated, not proved: „Videnskaben beviser
+   ikke sin Ret; den postulerer den kun“, since every proof is a proof of knowledge
+   and so presupposes what it was to establish (p. 8).
+2. **The miracle and the doubling of reality are Brøchner's inventions
+   (pp. 4–7, 51–52).** The concept of miracle ascribed to Nielsen agrees with his
+   own "as the square with the circle," and the "subjective water" of the rock
+   "springs solely from [Brøchner's] own spring" (pp. 6–7). What characterizes a
+   miracle is not a breach of law but that a fact „bliver umiddelbart henført til
+   Guds almægtige Villie“, and whether to accept such a mystery "is not a question
+   of science; no, it is now as before a question of conscience" (p. 52).
+3. **Subjective validity rests on subjective grounds (pp. 8–19).** "Theory" in
+   Nielsen's usage simply means science, and his opposition of subjective and
+   objective is that of a lower, egoistic to a higher, religious self-regard. The
+   Stoic and the hedonist can each master the other's theory without being
+   converted, whereas no one who has grasped the proofs of the Pythagorean theorem
+or the Copernican system can hold a standpoint opposed to them (pp. 13–15).
+4. **The law of duty is a law of conscience (pp. 20–44).** Brøchner's "energy of
+   selfhood" is literally Nielsen's own view (pp. 20–21). Duty concerns persons,
+   gravity bodies: „Er Samvittighedsloven nu en Theori; er Samvittighed maaskee en
+   Videnskab?“ (p. 28). Buffon and Clairaut settled their dispute on objective
+   grounds, Luther and Zwingli could appeal only to conscience (pp. 27–31). And
+   Brøchner's three energies of selfhood make a harsher dualism than Nielsen's
+   (pp. 36–44).
+5. **The motive is not knowledge (pp. 44–52).** The interest behind the critique
+   is „ikke … en positiv Vidensinteresse, men en negativ Troesinteresse“ (p. 46),
+   as its treatment of *Grundideernes Logik* shows (pp. 46–47).
+
+Set beside the pamphlet, Brøchner's *Svar* reports Nielsen fairly on most
+points: the tribunal of science, the definition of miracle, and the law of duty
+against the law of gravity are Nielsen's own (pp. 4, 27–31, 52). There are three
+exceptions. Nielsen never names Kierkegaard, so the concession that Brøchner had
+refuted him (*Svar*, p. 4n) is an inference from an ironic remark (p. 3); the
+"empty play on words" that Brøchner places at Nielsen's p. 50 is on p. 51; and
+Nielsen nowhere says that Brøchner spent "only 6 pages" on the *Logik*, though he
+does cite *Problemet* pp. 154–160 against its sixty sheets (pp. 46–47). The *Svar*
+itself adds three points of substance.
 
 1. **The doctrine hangs on one word.** Were absolute heterogeneity given up, „saa
    er Slaget tabt for ham … Men selve Ordet er undgaaet i Prof. N.'s Skrift“ —
    "the battle is lost for him … But the word itself is avoided in Prof. N.'s
-   book" (p. 5).
+   book" (p. 5). The charge is literally true. The noun *Ueensartethed* never
+   occurs in Nielsen's reply, and the adjective only twice, of metaphysical
+   against mathematical thinking (p. 25) and of the law of gravity against the law
+   of duty (p. 27). In *Den gode Villie*, a year earlier, "absolutely
+   heterogeneous" occurs more than fifty times.
 2. **Without knowledge there is no norm.** Deny knowledge's normative validity
    for the whole person, and one faces "the insoluble problem" of finding a norm
    that separates the true from the untrue in ethics and religion (p. 9).
@@ -250,16 +330,24 @@ points to the book.
    "here the One becomes Two; but the Two will, 'on account of' the absolute
    heterogeneity, unfortunately not become One again" (p. 10n).
 
-The rest (pp. 18–29) is sharper and more personal. It closes with Brøchner's
-statement of his task, "to find, by the way of knowledge, that which brings unity
-and reconciliation into the life of the human spirit" (p. 31). *Om det Religiøse*
-is that task carried out. Its introduction (pp. 1–4) turns the negative result of
-1868 into a demand to choose, and argues that only knowledge can be chosen. The
-old arguments recur in the body — two heterogeneous kinds of cognition would make
-"cognition" an empty name (p. 8), and the norm for true faith cannot lie in
-anything heterogeneous with knowledge (p. 50) — and the *Slutning* dismisses
-Nielsen's *Religionsphilosophie* (1869) as first trivializing and then conjuring
-away "the absolute heterogeneity" (pp. 208–209).
+The rest of the *Svar* (pp. 18–29) is sharper and more personal. It closes with
+Brøchner's statement of his task, "to find, by the way of knowledge, that which
+brings unity and reconciliation into the life of the human spirit" (p. 31). *Om
+det Religiøse* is that task carried out. Its introduction (pp. 1–4) turns the
+negative result of 1868 into a demand to choose, and argues that only knowledge
+can be chosen. The old arguments recur in the body — two heterogeneous kinds of
+cognition would make "cognition" an empty name (p. 8), and the norm for true faith
+cannot lie in anything heterogeneous with knowledge (p. 50) — and the *Slutning*
+dismisses Nielsen's *Religionsphilosophie* (1869) as first trivializing and then
+conjuring away "the absolute heterogeneity" (pp. 208–209). Brøchner names no page,
+but his target is almost certainly the passage in Nielsen's introduction that
+answers R4 directly: „Skulde det, hvad Tankeløse paastaae, være en Modsigelse, at
+Videnskaben bliver vidende om et med Viden absolut ueensartet Princip, da maatte
+det netop være den negative Kritik, der har hildet sig i Modsigelsen“ — "if it
+were, as the thoughtless assert, a contradiction that science should come to know
+of a principle absolutely heterogeneous with knowledge, then it would have to be
+precisely the negative critique that has entangled itself in the contradiction"
+(*Religionsphilosophie*, p. 17).
 
 ## The two critiques compared
 
@@ -309,14 +397,39 @@ Modstandere“.
   [Translation](https://hhalvors.github.io/danish-texts/texts/brochner/det-religioese/translation.pdf) ·
   [Note](/dansk/brochner/det-religioese.html)
 
-On Nielsen's side, the critics quote *Grundideernes Logik* (vol. I transcribed
-here), the *Philosophisk Propædeutik* of 1857, and *Om den gode Villie* (1867,
-not yet transcribed). His replies — to Zeuthen (1866) and the *gjennemseet*
-pamphlet (1868) — are not yet in the collection; his *Religionsphilosophie*
-(1869, transcribed) defends the thesis against unnamed critics on p. 17. For the
-doctrine's origins see [Before the Heterogeneous
-Magnitudes](/dansk/essays/nielsen-heterogeneity-1849.html); for a participant
-who began on Nielsen's side, the section *Striden om Tro og Viden* in Høffding's
+On Nielsen's side, all in this collection:
+
+- **Nielsen, *Om theoretisk og praktisk Erkjendelse, nogle Bemærkninger* (1866),
+  pp. 63–77.** Borderline dualism, p. 66; courage, p. 69; the God of faith known
+  only practically, p. 73; "Aandens Liv er i Villien," p. 75; the theoretical to be
+  given up, p. 76. English translation not yet made.
+  [Transcription](https://hhalvors.github.io/danish-texts/texts/nielsen/theoretisk-praktisk-erkjendelse/transcription.pdf)
+- **Nielsen, *Om „Den gode Villie“ som Magt i Videnskaben* (1867).** "Not although
+  but because," p. 33; no concordat, pp. 35–36; *Mening*, pp. 62–64; the absolute
+  mystery, pp. 89–90.
+  [Transcription](https://hhalvors.github.io/danish-texts/texts/nielsen/gode-vilje/transcription.pdf) ·
+  [Translation](https://hhalvors.github.io/danish-texts/texts/nielsen/gode-vilje/translation.pdf)
+- **Nielsen, *Hr. Professor Brøchners philosophiske Kritik gjennemseet* (1868).**
+  The tribunal of science, pp. 3–8; the miracle, pp. 4–7, 51–52; duty and
+  conscience, pp. 26–31; motive, pp. 44–47.
+  [Transcription](https://hhalvors.github.io/danish-texts/texts/nielsen/brochners-kritik/transcription.pdf) ·
+  [Translation](https://hhalvors.github.io/danish-texts/texts/nielsen/brochners-kritik/translation.pdf)
+- **Nielsen, *Religionsphilosophie* (1869).** The reply to the charge of
+  contradiction, p. 17.
+  [Transcription](https://hhalvors.github.io/danish-texts/texts/nielsen/religionsphilosophie/transcription.pdf) ·
+  [Translation](https://hhalvors.github.io/danish-texts/texts/nielsen/religionsphilosophie/translation.pdf)
+- **Nielsen, *Grundideernes Logik* I (1864).** Knowing that nothing can be known,
+  pp. 4–5; the object and the content of knowledge, pp. 259–261.
+  [Transcription](https://hhalvors.github.io/danish-texts/texts/nielsen/grundideernes-logik/transcription.pdf) ·
+  [Translation](https://hhalvors.github.io/danish-texts/texts/nielsen/grundideernes-logik/translation.pdf)
+
+Still missing are *Grundideernes Logik* II (1866), Nielsen's reply to Zeuthen
+(1866), his autumn 1865 lectures on the *Propædeutik*, and the Christiania
+lectures with their postscript; among the disciples, Heegaard's two books and
+Rudolph Schmidt's *Om Selvmodsigelsen*; and Høffding's *Philosophie og Theologie*
+(1866). For the doctrine's origins see [Before the Heterogeneous
+Magnitudes](/dansk/essays/nielsen-heterogeneity-1849.html); for a participant who
+began on Nielsen's side, the section *Striden om Tro og Viden* in Høffding's
 *Erindringer*; for Brandes's other contributions, *Samlede Skrifter* XIII (in the
 catalog, not yet transcribed). The standard modern account is Carl Henrik Koch,
 *Den danske idealisme 1800–1880* (*Den danske filosofis historie*, vol. 4, 2004).
