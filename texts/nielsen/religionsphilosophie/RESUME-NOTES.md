@@ -1205,3 +1205,32 @@ Post-repair re-sample (seed |post: pp.54, 131, 164, 187, 235, 471): 0 confirmed 
 1000–1200 dpi (worn semicolon). STILL OPEN items are listed in the transcription.tex header.
 NOT DONE: translation.tex and the old indledning/ folder were not touched; note.md not updated;
 catalog.yaml not touched.
+
+---
+
+# PHASE 2 (TRANSLATION): FULL DRAFT DONE, 2026-09-21/22, awaiting Hans's review
+
+`translation.tex` (book level) is the whole book in English, pp. 1–537, with front
+matter. It supersedes `indledning/translation.tex`: that pp. 1–30 draft was used
+as the base for chunks 01–02 and corrected against the collated Danish.
+- Method: 45 subagent chunks of about 12 pp. each, all working to one brief and
+  glossary (`.parts/translation/BRIEF.md` plus two addenda), then a
+  harmonization pass. Source fragments are in `.parts/translation/NN.texfrag`
+  (00-head = preamble and front matter). Rebuild by concatenating 00..45 plus
+  `\end{document}`. 99.texfrag is an empty stray file; ignore it.
+- Checks against the Danish body: opage 537/537 (same sequence), footnotes
+  94/94, and parmark/runhead/greekrun/lettersub/parthead/subhead all equal.
+  \emph is 351 against 352: on p.197/198 "vil" is split across the page as two
+  emphasized pieces, and it is one word in English. Quotes balance at 0 and
+  braces at 0. There are 102 `% print:` notes.
+- Test compile (lmodern substituted, Greek stripped): 438 pp., 0 errors, 0
+  character warnings. Not yet built with libertinus on the Mac.
+- A spot-check of 10 pages by an independent agent found about 0.2 errors per
+  page; the one error that changed meaning (i og for sig / an sich, p.372) has
+  been fixed across the book.
+- Open items for Hans: `.parts/translation/FLAGS.md`. These are the Socinus
+  footnote on pp.288–90, the footnotes on p.522 that may be transposed, the
+  Bible references kept as printed where they look like Nielsen's own slips,
+  "Mosebrand" on p.43x, and "Object/Gjenstand" on p.416.
+- catalog.yaml: the translation is still `status: to-do`. It has deliberately
+  not been changed until Hans has reviewed the draft and built the PDF.
