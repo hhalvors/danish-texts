@@ -1,0 +1,1456 @@
+% ============================================================
+%  Georg Brandes, Samlede Skrifter. Trettende Bind (Supplementbind).
+%  Kjøbenhavn: Gyldendalske Boghandels Forlag (F. Hegel & Søn), 1903.
+%  Introduction (1903) and "The Controversy over Faith and Knowledge" (1866--67).
+%  TRANSLATION (English), printed pp. 1--42.
+%  Translated from transcription.tex (Danish) in this directory, whose
+%  header records how its text was established.  Method:
+%  ../../../../TRANSLATION-PLAYBOOK.md.  The volume is Brandes's 1903
+%  revision of pieces first printed 1865--69; the translation follows the
+%  1903 text.
+%
+%  ---- REGISTER ----
+%  Readable modern English.  Brandes's long periods are broken where English
+%  will not carry them, but nothing is softened: the polemic is sarcastic,
+%  and where the Danish is ironic the English is ironic.
+%
+%  ---- TERMINOLOGY ----
+%  Aligned with texts/brandes/dualismen/translation.tex and the Nielsen and
+%  Brøchner translations in this repo, since the pieces belong to the same
+%  controversy:
+%    Tro / Viden          = faith / knowledge   (Tro og Viden = faith and
+%                           knowledge)
+%    Erkendelse           = cognition (NOT "knowledge", reserved for Viden)
+%    Videnskab            = science (Wissenschaft; never "natural science",
+%                           for which Brandes writes Naturvidenskab)
+%    Fagvidenskaberne     = the special sciences
+%    absolut Uensartethed = absolute heterogeneity
+%    Aand / aandelig      = spirit / spiritual;  Fornuft = reason;
+%    Forstand             = understanding;  Begreb = concept
+%    Samvittighed         = conscience;  Selvansvarlighed = self-responsibility
+%    Livsanskuelse        = view of life;  Verdensanskuelse = world view
+%    Dannelse             = cultivation;  Folkeaand = national spirit
+%    Aabenbaring          = revelation;  Under = miracle
+%  Danish work-titles stay in Danish, as Brandes cites them (Grundideernes
+%  Logik, Om den gode Vilje, Fædrelandet, Dagbladet, ...).
+%
+%  ---- CONVENTIONS ----
+%  - Quotation marks: the volume's single guillemets ‹...› -> ``...''.
+%  - Emphasis: italic is the volume's only emphasis device; every \emph{}
+%    span of the transcription is carried over as \emph{}, including the
+%    Latin and other foreign phrases, which stay untranslated.
+%  - Footnotes \fnmark{*)}{...} at the same anchor.
+%  - The ɔ: id-est mark -> "i.e."
+%  - Page markers \opage{N} and "% --- p. N ---" at the same joints as in
+%    transcription.tex, so the two can be read side by side.
+%  - Heads: a book under review keeps its Danish title, with an English
+%    gloss in brackets; Brandes's own titles are translated.  The table of
+%    contents gives the English of the volume's Indhold titles.
+%
+%  ---- HOW THE TRANSLATION WAS CHECKED (2026-09-22) ----
+%  (1) Mechanical audit (tr_audit.py): per printed page, the same \opage
+%  joints, \emph spans, footnotes, heads, rules and paragraph breaks as
+%  transcription.tex, and an English/Danish word ratio within 0.95--1.60:
+%  42 pages, 0 flagged.  (2) Independent review: two readers who had not
+%  translated these pages read every sentence of the Danish against the
+%  English for omissions, additions, negations, modals, referents and
+%  terminology.  No omission found; 7 corrections applied (plus the spacing
+%  of eight em-dashes on pp. 13--19 made uniform), namely
+%  `vil kunne finde' (p. 8, was "is bound to find"), `bør' (p. 16, was
+%  "must"), a doubled `only' (p. 25), `aandelig' as "intellectual" where the
+%  sense is debate (pp. 3, 34), an added `merely' (p. 38), and Brandes's
+%  self-quotation on p. 35 brought into line with its source on p. 32.
+%
+%  ---- DEFECTS: DANISH AS PRINTED, ENGLISH CORRECT ----
+%  The transcription is diplomatic and carries every printer's error; the
+%  translation renders the SENSE and logs the divergence in a % comment at
+%  the site.  The English quotation marks balance throughout.
+% ============================================================
+
+\documentclass[12pt,a4paper,openany]{book}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{libertinus}
+\usepackage{libertinust1math}
+\usepackage{textalpha}
+\usepackage{graphicx}
+\usepackage[english]{babel}
+\usepackage[protrusion=true,expansion=true]{microtype}
+\usepackage{setspace}
+\usepackage[margin=1.2in]{geometry}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\setlength{\headheight}{28pt}
+
+% Footnotes as the 1903 printing sets them: *), set at each site with
+% \fnmark{*)}{...}, exactly as in transcription.tex.
+\renewcommand{\thefootnote}{*)}
+\newcommand{\fnmark}[2]{\renewcommand{\thefootnote}{#1}\footnote{#2}%
+  \renewcommand{\thefootnote}{*)}}
+
+% A piece's head, mirroring transcription.tex.  #1 = the English of the
+% title as the volume's Indhold gives it (table of contents, running head);
+% #2 = the head as printed, translated (a book under review keeps its Danish
+% title, glossed in brackets).  The short rule under every head is printed.
+\newcommand{\piecehead}[2]{\clearpage\phantomsection
+  \addcontentsline{toc}{section}{#1}\markboth{#1}{#1}%
+  \begin{center}\large #2\\[6pt]\rule{2cm}{0.4pt}\end{center}\par\medskip}
+\newcommand{\piecerule}{\par\begin{center}\rule{1.5cm}{0.4pt}\end{center}\par}
+
+\usepackage{hyperref}
+\hypersetup{pdftitle={Brandes, Collected Writings XIII: The Controversy over Faith and Knowledge}, pdfauthor={Georg Brandes}, hidelinks}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LE,RO]{\thepage}
+\fancyhead[RE]{\textit{Collected Writings XIII (1903)}}
+\fancyhead[LO]{\textit{\leftmark}}
+\setstretch{1.3}
+
+\title{\textbf{The Controversy over Faith and Knowledge}\\[8pt]\large Georg Brandes, \textit{Samlede Skrifter} [Collected Writings], vol.~XIII (Supplementbind),\\ pp.~1--42}
+\author{}
+\date{Copenhagen: Gyldendal (F.\ Hegel \& Søn), 1903\\[10pt]
+  \small Translated from the Danish}
+
+% ---- original-page markers ----
+% \opage{N} marks where printed page N begins, at the same joint as in
+% transcription.tex (mid-sentence where the page turns mid-sentence).
+\usepackage{marginnote}
+\newcommand{\opage}[1]{\marginnote{\footnotesize\textit{[#1]}}}
+\newcommand{\apage}[1]{\marginnote{\footnotesize\textit{[#1]}}}
+\begin{document}
+\maketitle
+\thispagestyle{empty}
+\tableofcontents
+
+\mainmatter
+
+% --- p. 1 ---
+\piecehead{Introduction}{\opage{1}INTRODUCTION}
+In the Preface to my \emph{Samlede Skrifter} it was remarked that the
+edition would not include everything I had published in the course of my
+life. Even so, it grew far more extensive than the original estimate had
+promised, and included, among other things, besides pieces collected
+earlier, 1200 pages that had not yet been published in book form.
+
+Left out was everything polemical in form, everything that was not
+immediately accessible to the reader, and a multitude of shorter
+articles whose inclusion would have made the work swell far too much.
+
+An author is badly placed, however, if he does not himself collect and
+take care of whatever --- regardless of its greater or lesser worth ---
+bears the stamp of his cast of mind. For, as experience shows, what he
+himself lets slip out of his hands, other hands seize upon. Once a
+writer has succeeded in making his name sufficiently known, strange
+fingers rummage in his literary life and present it in whatever way
+their presumed superiority sees fit. And this superiority has all the
+freer play, the more he has left to its caprice.
+
+This consideration has led me to publish a supplement to my Samlede
+Skrifter, and I open this first supplementary
+% --- p. 2 ---
+\opage{2}volume with my earliest polemical articles, to be followed by a
+selection of others, mixed with works that aim only to present and to
+instruct. As regards these earliest articles, and the few barbs they
+contain against certain distinguished authors such as Professors Høffding
+and Wilckens, whose goodwill is an honor that I cannot be suspected of
+wishing to forfeit, and whom I would therefore least of all wish to
+offend, I may be permitted to recall the fine letter from J. L. Heiberg
+to Carsten Hauch (28 January 1841), in which the former, after warmly
+accepting Hauch's outstretched hand and assuring him that an old feud
+between them has not left a spark of ill will in his mind, tells him that
+a reprint of some polemical articles from that time ``can and should in
+no way disturb the good relationship'' which, to his joy, now exists
+between them: ``I know well that this renewal of what one might in one
+respect wish forgotten is easily misunderstood''. But, he says, ``it
+exists, after all, and in literature as well as in political history not
+only can facts not be altered, but it is even a duty to collect and
+preserve them.''
+I do not go quite as far as J. L. Heiberg. Many polemical particulars are
+best consigned to oblivion, and it would not occur to me, e.g., to
+reprint my polemical sallies from the Nietzsche controversy of 1889--90,
+now that Høffding has left his out of the collection \emph{Mindre Arbejder}.
+But to some of the literary feuds in which I have been entangled people
+will perhaps return in the future. Much that now seems to have only
+historical interest may, when kindred phenomena arise again, become
+topical once more.
+
+Faced with a critical author, the reading public divides into two groups:
+a larger one, which reads him if it is interested in the subjects he
+treats, and a smaller one, which is interested in the author himself. In
+the \emph{Samlede Skrifter}, as was expressly stated in the Preface, the
+whole emphasis was laid on the subject matter.
+% --- p. 3 ---
+\opage{3}Regard for the general public's need for instruction was the
+one deciding factor there. What belonged together by the nature of its
+subject was never split apart, even if it had been produced at widely
+separated times. And nothing was included that could lay claim to any
+attention only by its manner of treatment.
+
+In the Supplement, however, there should also be room for this and that
+which can hold only those who already take an interest in the writer and
+who read him even when the subject he treats is a matter of indifference
+to them. The critical portrayal of a personality is, after all, an art in
+its own right, and can be judged much as portrait painting is, without
+regard to whether the reader or the viewer knows the subject or not. The
+art of fencing in intellectual disputes is likewise a small art of its own,
+and can amuse the reader as a fencing bout can entertain the spectator,
+without regard to the prize for which the fencers fight.
+
+In other words, besides the broader reading public that seeks information
+about the subject matter, there is also a more finely developed public,
+which is drawn more by the author's personality than by the subject on
+which it happens for the moment to dwell. It is to this public that the
+supplementary volume is addressed.
+
+April 1903.
+\begin{flushright}G. B.\end{flushright}
+\piecerule
+
+% --- p. 4 ---
+% blank
+\opage{4}
+
+% --- p. 5 ---
+\clearpage
+\phantomsection
+\addcontentsline{toc}{chapter}{The Controversy over Faith and Knowledge}
+\begin{center}\opage{5}{\Large THE CONTROVERSY OVER FAITH AND KNOWLEDGE}\end{center}
+
+% --- p. 6 ---
+% blank
+\opage{6}
+
+% --- p. 7 ---
+\piecehead{Conscience and Science}{\opage{7}\emph{A. C. Larsen: Samvittighed og Videnskab}\\[2pt]{\normalsize[Conscience and Science]}\\[2pt](1866)}
+Writings of philosophical content are in general not especially suited to
+review in a daily paper, and if some enthusiastic man now and then
+ventures the attempt, it easily turns out, as experience shows, to be a
+``scientific work of poetry'' in the style of Lieutenant v. Buddinge.
+Since learned critiques are rightly regarded as inadmissible, the result
+is that on scientific subjects our papers teem with extremely brief,
+unproven and often enough unprovable assertions, which the public has
+indeed acquired a true virtuosity in swallowing quite raw, but whose
+number no sensible person can nevertheless feel any desire to increase.
+There is thus not much to invite one to review a pamphlet that does not
+belong to light literature; but since this one treats, with more than
+ordinary ability, a matter that not only has a claim on wide interest but
+has long since laid hold of it, the circle of readers the pamphlet may
+expect ought to be made aware of its appearance.
+
+It contains a fundamental theological outlook, set forth partly in the
+form of communication, but more often by way of defense and attack, and
+as a scientific confession it is of particular interest, since the author
+possesses a philosophical cultivation that is becoming rarer and rarer
+among the theologians of the present day, and that helps him past the
+first reefs, on which the majority, with sublime composure, sit stuck
+fast in a common shipwreck.
+
+Although the book is at feud with living persons in only a few places, it
+will nonetheless probably be regarded as a polemic, and Mr. \emph{Larsen}
+will himself bear part of the blame, since in a preface he has laid
+particular stress on his offensive
+% --- p. 8 ---
+\opage{8}aim. The part of the book that is of immediate interest is,
+moreover, the best, and one must be grateful to the author for having had
+the courage and the will to embark on a discussion of the boundary
+questions concerning the mutual relation between faith and knowledge, on
+which a clear and illuminating word is so seldom heard; among the
+students, the need to have these questions answered has long since pushed
+back every other need for philosophical learning, and not one of the
+internal tasks of science lies half so close to their hearts as this
+boundary dispute. Several, to be sure, have come to rest, but mostly
+those who would feel entirely satisfied with any conciliatory solution
+whatever; it is only human, after all, to want to have it both in the bag
+and in the sack, and natural that one is then not too particular about
+whether the bread in the bag is honest bread or not.
+But far greater is the number of \emph{those} who, after the lapse of a
+few years, have retained hardly any impressions of Professor
+\emph{Nielsen's} brilliant and fruitful teaching other than those bearing
+on the difficulties mentioned, and for whom these questions are still and
+always burning. This state of affairs is neither good nor healthy, all the
+more so as those impressions are never quite clear. For in Professor
+Nielsen's philosophy, which still unfolds luxuriantly before the students'
+eyes, this point is, in the strict sense, the salient point, the real
+``unrest'' that set the movement of thought going, drove the problems
+forward and kept the gifted worker from seeking rest for a single moment
+in rigidified forms.
+But it has seemed as though it were a condition of the life of the whole
+that this innermost provoking question should be kept constantly open,
+that the wound should not close where the thinker had been most deeply
+wounded by the god. Not that no answer was given; but the answer is
+better suited to calling forth new questions than to silencing those
+already raised.
+% "have baade i Pose og i Sæk" = to have it both ways; "have rent Brød i
+% Posen" = to have clean (honest) bread in the bag, i.e. to have a clear
+% conscience.  Brandes joins the two idioms; the English keeps both images.
+% ‹Uro› is both "unrest" and the balance wheel of a watch, which keeps the
+% mechanism going; hence "gave the movement ... Fart".  The English cannot
+% carry the second sense.
+
+Already in the Professor's \emph{Propædeutik} of 1857 the sections that
+treat the relation in question contain a plain self-contradiction: they
+let faith and knowledge, though ``absolutely heterogeneous principles'',
+be reconciled in one consciousness, since the conflict between them
+``does not arise from what pertains to principle'', and this
+contradiction has not since been removed. Professor Nielsen's position
+here is altogether such that he can expect to find two kinds of opponents:
+first, those who defend the existing theology, and
+% --- p. 9 ---
+\opage{9}secondly, those who attack it at its root and ground. The former
+will go after Prof. Nielsen as the assailant of theology; the latter,
+who seek to overthrow theology, must strive to establish their right to
+call Prof. Nielsen himself a theologian. The opponent who has now
+appeared stands in the ranks of the former. He fights as a theologian for
+hearth and altar, without rancor or malice, but not without an eye for
+the openings his superior adversary presents. He does not succeed in
+proving what he had actually set as his aim, namely that theology still
+has vitality, and there may well be good reasons why such a proof was
+bound to fail; but he establishes beyond doubt that Prof. Nielsen cannot,
+from his standpoint, reject theology, even if a certain particular
+theology and a certain particular dogmatics have been exploded.
+
+The author has one further merit. The natural reverence for Kierkegaard's
+memory has imposed silence about his works; they have been allowed to
+speak without any buzzing swarm of reasoners disturbing the impression of
+the mighty monologue. That this was right, every Dane will understand; a
+German would never grasp it, and Kierkegaard's Norwegian trumpeter,
+Mr. Dietrichson, perhaps least of all. But all the same, it was the right
+thing. Yet a drawback has followed from it, namely a petrifaction of
+certain Kierkegaardian propositions in seemingly trustworthy
+interpretations. On such points, then, an inquiry into Kierkegaard's
+meaning must be set going, and in the essay on the Paradox Mr. Larsen has
+begun one.
+
+But once these merits have been brought out, the best there is to say
+about the book has also been said. The author, in whom, despite a
+predominant independence, one can trace the influence of Jacobi and
+Schleiermacher, is lacking still, to some degree, in schooling, and to a
+high degree in dialectic. The first lack betrays itself, e.g., when at the
+end of his essay on conscience he demonstrates the impossibility of
+giving an objective proof of God's existence so thoroughly that in the
+same stroke he ends up demonstrating the impossibility of inferring from
+effect to cause at all; or when, in his somewhat layman-like feud with the
+idealists, he proves the existence of lifeless objects from the existence
+of the self-conscious being before this being has become conscious of
+itself. The lack shows itself above all in a sentence like this: ``The
+miracle precisely confirms the law of nature; if one posits the exception,
+one must also posit the rule'', in which the expressions \emph{law} and
+\emph{rule},
+% --- p. 10 ---
+\opage{10}just like the two famous sharks, swallow each other up to their
+hearts' content.
+
+Of still greater significance is the lack of dialectic. The author speaks
+the language of philosophy, he uses its designations, he romps about with
+its expressions; but --- the voice is not its voice. In every line one
+senses the theologian.
+The author's ``Absolute'' is --- at times astonishingly --- conceived
+undialectically, and why? Because in his mouth this expression does not
+designate the Idea of philosophy, but is merely a name, a hiding place, a
+mask behind which he seeks to make theology's representation of God
+unrecognizable. But since the designations of concepts react upon the
+train of thought, he not infrequently entangles himself in contradictions;
+at one moment, e.g., man is supposed not to differ in essence from the
+Absolute (the Eternal, the True), at another he is supposed not even to be
+able to comprehend the possibility of the Absolute's actions. When
+explanation now stands against explanation, philosophy's against
+theology's, the author takes up the following position. Since he is short
+of dialectical ability, the philosophical explanation becomes
+unintelligible to him; the miracle explanation, of course, does not even
+claim to be intelligible; and so it comes down to a choice between them.
+For this choice he then holds not reason but the heart responsible. That
+one will not accept the miracle explanation does not confuse him, then;
+that he understands perfectly well, for it rests on the hardening of
+hearts. Here Mr. Larsen casts aside his philosophical garb and shows
+himself in his theological vestments. Here, then, is also the limit of
+scientific discussion.
+% "men --- Røsten er ikke dens": probably an echo of Gen. 27:22 ("The voice
+% is Jacob's voice, but the hands are the hands of Esau").
+
+December 1865.
+
+\emph{Postscript}. In an article on Mr. Larsen's book in yesterday's
+\emph{Dagbladet}, Mr. \emph{Rudolf Schmidt} declares that it is not his
+intention ``on this occasion'' to clear up the obscurity in Professor
+Nielsen's doctrine mentioned above. This sad news is hereby conveyed to
+the readers of \emph{Fædrelandet} as well.
+\piecerule
+
+% --- p. 11 ---
+\piecehead{Reply to Mr. Schmidt}{\opage{11}\emph{Reply to Mr. Schmidt}\\[2pt](1866)}
+Besides an unsuccessful defense, Mr. Larsen's pamphlet contained an
+attack that carried the war into the adversary's own country. The cut was
+incomparably better than the parry; for a good cause arms eye and hand.
+In my Saturday article I endeavored to set the justification of the
+attack in a sharper light, and I held fast to this point as the main
+point; for it is on this that the interest rests. The battle against
+theology is of old date; \emph{Feuerbach} and \emph{Kierkegaard}, each
+from his own side, waged it with a force and consistency that have never
+since been attained; little weight now rests on that battle; but as
+surely as Professor \emph{Nielsen's} philosophy is a far more significant
+and far more intelligent power than the theological science of our day,
+so surely does every doubt concerning it that is not plucked out of the
+air, and every thrust that does not strike the air, have a great and
+essential significance. But the matter deserves still greater attention
+when its point is a center, when the question is a vital question of the
+utmost importance and of pervasive influence; and this matter is of that
+kind. It is this that Mr. \emph{Rudolf Schmidt} treats as a trifle.
+
+Now if the contradiction I have pointed out had really been removed in
+any of Professor Nielsen's printed writings, then I would certainly be a
+greater charlatan in philosophy than any of the several that our
+fatherland possesses. But that is not how matters stand. Mr. Schmidt is
+kind enough to pay me a compliment on my philosophical cultivation, one
+that has a reference to \emph{Grundideernes Logik} in tow. I have as
+little use for the latter as for the
+% --- p. 12 ---
+\opage{12}former; I do not even understand what Mr. Schmidt had in mind
+with it. In the published part of \emph{Grundideernes Logik} there is,
+apart from a few propositions put forward as bare assertions in the
+general introduction, nothing, absolutely nothing bearing on this
+matter, nor, given the nature of the design, could anything be found
+there. Only at the transition from the sphere of knowledge to that of
+power can the question come up, if in a form more remote from reality,
+and it can receive its proper answer only at the transition of the whole
+Logic into the philosophy of nature.
+
+I did not expect enlightenment from Mr. Schmidt; I merely made fun of an
+expression of his. I have a well-founded doubt that a polemic with him
+would prove instructive, and shall therefore not engage in one; for what
+I want is to learn. But for that very reason an explanation on
+Prof. Nielsen's part would be of the highest value to me, and nothing
+would please me more than if he felt called upon to give one. For in
+this matter what we need is not silence or reticence, but words that
+come from the liver and go to the heart, unsparing candor, clarity,
+light:
+% "Ord, der gaar fra Leveren": "tale fra Leveren" (to speak from the liver)
+% is the Danish idiom for speaking frankly; kept literally for the pairing
+% with "to the heart".
+
+\emph{Truth, like a torch, the more it's shook, it shines.}
+\piecerule
+
+% --- p. 13 ---
+\piecehead{Philosophy and Theology}{\opage{13}\emph{On Mr. Harald Høffding's}\\
+\emph{Polemic: Filosofi og Teologi}\\[2pt]{\normalsize[Philosophy and Theology]}\\[2pt](1866)}
+When one reads through this work to make a passing acquaintance
+with the author's features, one receives an almost uncanny
+impression; for with single and double quotation marks (``goose-eyes,'' as Danish calls them)
+% PUN: Danish `Gaaseøjne' (goose-eyes) is the ordinary word for quotation
+% marks, whence the ``Argus of the goose tribe''; the gloss is added so the
+% image can stand.
+by the hundred --- sometimes as many as thirty on a
+single page --- the author, like an Argus of the goose tribe, stares
+gloomily out at the reader from the paper of the book. With him, that
+is, the quotations play the same role as the text of one's own making
+plays with other authors.
+
+Proceeding from the assumption that the philosophical-theological
+controversy has in reality already been settled, Mr. \emph{Høffding}
+is concerned only to make it clear that Prof. \emph{Nielsen} is the
+one who has won; and it is to this end that he gives a heavy,
+densely packed restatement of the history of the battle, which, % Danish prints `forkjellige' for `forskellige'; rendered as the sense.
+according to the reader's differing standpoint, is either insufficient or
+unnecessary. Against Mr. \emph{Larsen's} pamphlet
+% The Danish opens this quotation with a turned (closing) mark; the English
+% balances.
+``Samvittighed og Videnskab'' he then advances
+a number of arguments, mostly ones that have already been
+seen in print once before, and finally directs against the undersigned's
+earlier articles in \emph{Fædrelandet} some objections which make up the
+weakest, but perhaps also the newest, part of the book. For these
+objections I am very grateful to the author; for they fully demonstrate
+what I have said before, namely how badly an explanation is needed
+from Prof. Nielsen's side.
+
+I have declared it a contradiction that Prof. Nielsen
+at one and the same time calls faith and knowledge absolutely heterogeneous principles
+% --- p. 14 ---
+\opage{14}and speaks of their reconciliation in human
+consciousness. Mr. Høffding teaches me that in Prof. Nielsen's view
+this reconciliation can take place, not \emph{although}, but \emph{because}
+these principles are absolutely heterogeneous. This is rather far from
+being any secret; but the contradiction is designated all the same by
+my ``although.'' Is it conceivable that two absolutely heterogeneous
+principles can be reconciled in the same consciousness? Can it be
+shown that faith and knowledge are such principles? I answer these
+questions in the negative. It might, however, well be open to doubt
+whether two absolutely heterogeneous principles could hold sway in the
+human spirit without a split setting in by which the whole of existence
+would be cracked apart; and that Prof. Nielsen himself has not taken
+this absolute heterogeneity so very strictly is best proved, after all,
+by the circumstance that he speaks of conflict and reconciliation between
+those powers; for absolutely heterogeneous powers can neither wage
+war nor make peace with one another. But let us for once
+suppose that we have two absolutely heterogeneous principles before us:
+does Mr. Høffding not see, then, how strange all this talk becomes
+about how one is to place faith highest and science lowest,
+but not the reverse? Does he not see that every question of
+what is to be placed highest and what lowest would in that case become
+still more comical than \emph{Poul Møller's} old one: Which is higher, a
+poplar-willow or a thunderclap? And yet many a poor student has perhaps
+come to grief when, at the examination drill, he answered
+wrongly and in his innocence turned faith and
+knowledge upside down.
+
+To ease understanding, however, Mr. Høffding gives
+yet another hint. Ethics, philosophical ethics, ``forms a transition
+between philosophy and religion.'' Considered in and for itself,
+this proposition may be quite excellent; but in Mr. Høffding's
+mouth it certainly cuts an incomparable figure. For morality has no doubt
+always been regarded as an admirable power; but that it could form
+the transition between two absolutely heterogeneous spheres---that
+is something hardly anyone has credited it with. Rather than
+investigate how this was supposed to come about, one is tempted to
+ask what moved Mr. Høffding to send this piece of cleverness out into
+the world. The answer is not difficult.
+
+To anyone who has followed with an attentive eye the course of
+Professor \emph{Nielsen's} rich activity as an author over the last decade,
+it has gradually become clear that, without taking back a single
+% --- p. 15 ---
+\opage{15}spoken word, he has, on the disputed point, if not changed, then at
+least altered and softened his earlier view. I am far from imagining
+that I am saying anything disparaging by this. An avowal that one has
+changed one's conviction from the ground up can be a noble, indeed an
+admirable, trait in an eminent personality, and such this act proved
+to be when Professor Nielsen in his time attached himself to
+Kierkegaard. To develop the same fundamental thought while adapting it
+is, if anything is, not merely an honest but an honorable
+thing. The latter, in my understanding, is what Professor Nielsen has done.
+In 1857 he declared that between the evangelical and the mythical
+there was no difference in the eyes of science; but in 1864 he softened
+this expression so that the superiority of religious ethics over the
+rational prevented science from declaring the Gospel
+a myth. The latter is indeed a hard saying; it is difficult
+to understand that there can be two kinds of morality, and that
+any other morality can be higher than the rational, i.e. the
+morality grounded in the rational cognition of man's nature. But no
+matter: it is plain that a softening has taken place here; for with this
+the absolute heterogeneity of faith and knowledge is at bottom given
+up, though not retracted.
+
+For such things Mr. Høffding has no eye. A development which,
+despite the apparent protest of particular utterances, tends in the
+direction of raising science from the subordinate relation in which it
+was formerly placed---this he cannot see; instead he boldly heaps
+propositions torn loose from the most various books into a pile and
+stacks one contradiction on top of another. He lays it down that neither
+the right, nor the true, nor the good could hold its ground in real life
+if it were not supported by ``religion''; but he is nonetheless
+convinced that there is a philosophical, hence rational, morality,
+which --- on the assumption just mentioned --- will at least have the less
+rational property that one cannot live by it. He maintains with the
+utmost zeal that the demands of conscience must not be asserted in
+science; but nonetheless, with the greatest unconcern, he reproaches the
+freethinkers' science with being an ``unbelieving'' science. Mr. Høffding
+is no friend of consistency.
+
+On the last page of the work the author raises the objection
+against me that, if I have found no contributions to an answer to my
+question in what has so far appeared of \emph{Grundideernes Logik}, then I ought
+% --- p. 16 ---
+\opage{16}not to have confined myself to wishing for enlightenment from
+Professor Nielsen, but should have found fault with what was given. This
+objection was easy to foresee and is easy to refute. It is, to be sure,
+incomprehensible to me how Professor Nielsen can let the possibility of
+miracle obtain a place in his system without running aground in final
+disunity; but in the part of the \emph{Logik} that has appeared, no attempt
+whatsoever has been made at that either. Nor do I see
+% The Danish prints a point after `bebuder' where the sentence runs on;
+% rendered as the sense.
+how the development is to be able to give what the preface announces
+without the higher unity of knowledge and power, of ideality and
+reality, which is the fundamental thought of the work, being burst
+apart---most immediately by the idea of power turning into the
+representation of omnipotence in the theological sense. I alluded to
+this in an earlier article.
+
+There are in this country, as elsewhere too, e.g. in
+France, certain authors who can best be likened to those well-known
+large bladders which are in themselves flat, slack and empty
+things, but which, with the help of inspiration from outside, swell up
+so that they take up quite a considerable space. It should be said
+% The Danish prints `Heffdings' (wrong-fount e); rendered as the name.
+to Mr. Høffding's credit that he does not belong to this class. He
+evidently has an honest endeavor and a serious mind. But
+these merits have not prevented him, in his relation to Professor
+Nielsen, from showing himself on this occasion to be an all too
+loose-tongued child.
+\piecerule
+
+% --- p. 17 ---
+\piecehead{A Last Rejoinder}{\opage{17}\emph{A Last Rejoinder}\\[2pt](1866)}
+Every theatergoer will have had the experience that even the
+bad actor can reap claps and applause when, as the knight of
+innocence or of faith, he pronounces a noble principle,
+and that the audience sometimes listens almost with displeasure as the actor
+defends a cause it considers bad. If my honored opponent,
+Mr. \emph{Høffding}, could get the roles so distributed between
+% The Danish prints `at kan kom' for `at han kom'; rendered as the sense.
+us that he came to play an angel of light and I a demon of
+darkness, then his cause would undeniably have won, and outward
+triumph would have been assured him. Such a turn he tries to
+give the matter by accusing me of not wanting to be a
+party but a judge, of avowing a freethinking view not openly and
+honestly but only by roundabout ways, when after all ``no one
+may take part in the contest without declaring what he bears on his shield.''
+
+But this turn shall not succeed for him; it is not unbelief
+against faith, rather it is clarity against fog, that here stand face
+to face. For what is the object of the inquiry, what alone is
+being asked in this matter? Certainly not about \emph{my}
+philosophy, any more than, e.g., about Mr. Høffding's. There is only one
+single decisive point here which must be held fast, and
+it is this: Is Professor \emph{Nielsen} in a contradiction when he
+calls faith and knowledge absolutely heterogeneous principles and yet lets
+them be reconciled in human consciousness, so that the
+one is placed highest, the other lowest, or is he not? He
+is; for either faith and knowledge are not absolutely heterogeneous, or
+they split consciousness completely; either they are not absolutely
+heterogeneous, or there can be no talk of a highest and a lowest. It
+% --- p. 18 ---
+\opage{18}is no use objecting, as Mr. Høffding does, that it is after all the
+same human being who stands in a relation to both of the two absolutely
+heterogeneous principles; for the question is precisely whether
+man's consciousness must not thereby be incurably divided. Nor does it
+help to say, as Mr. Høffding does, that for this very reason the
+question is put to each person individually how he will make
+his choice here. For what does the choice consist in? If the choice is between
+faith and knowledge on the one side and knowledge on the other,
+then whoever seizes the former chooses, after all, the split; if on the
+other hand the choice is between faith on the one side and knowledge on
+the other, then reconciliation in the same consciousness is, after all,
+given up, and only dualism, only disintegration, remains, even if it
+is shifted from the individual human being to mankind. It is
+of no use at all, like Per Degn, to answer simple and clear
+questions with highly enigmatic and unintelligible talk.\fnmark{*)}{So that Mr. Høffding shall not once more send my own turns of phrase
+back to me within the marks I will not name, and see it proved here into
+the bargain that I treat Professor Nielsen as a ``delinquent,'' I add that from this
+comparison it follows just as little that I am on the whole any Erasmus
+Montanus as that I have, like him, perpetrated the outrage ``of striking Rasmus
+% The Danish never closes the quotation opened at `at slaa'; the English
+% closes it after the inner one.
+Nielsen 3 or 4 times on the back of the neck with clenched fists, all the while shouting:
+`\emph{Probe Majoren, probe Majoren!}\,'\,'' (Act 1, Scene 6).}
+
+I do not consider myself infallible, as Mr. Høffding gives his
+readers to understand; I do not even consider Professor
+Nielsen so, which Mr. Høffding would doubtless have forgiven me
+far more readily; but if I am not so immodest as to
+take it to be impossible that I can err, I am still far
+less so foolish that I should have set pen to paper, without a rock-firm
+confidence in the truth of my cause, against a man so highly gifted
+and so superior to me as Professor Nielsen.
+What I bear on my shield, then, is this: a conviction,
+full and firm, that every dualism (twofoldness) is impossible,
+and that in consequence Professor Nielsen's doctrine on this
+point is untenable. What philosophy I have besides, or whether
+I have any at all, is quite as irrelevant to this question
+as what I think about the affairs of the
+Turks.
+
+I have strengthened my argument by showing that Professor
+Nielsen himself has not been able to hold fast to the absolute
+heterogeneity. If it really obtained, then any
+% --- p. 19 ---
+\opage{19}form of religious faith whatsoever would have to be compatible with
+Professor Nielsen's philosophy. But if one asks, e.g.: can one at the same time
+be a Catholic and an adherent of Professor Nielsen's doctrine? then
+the answer is Yes only on the condition that faith and knowledge have
+nothing whatever to do with each other, but No if account is to be taken of
+the ethics of Catholicism; for it is surely beyond doubt that this
+is not superior to the rational. In making the superiority of the ethics
+of religion the decisive thing, Professor Nielsen has given up his
+first standpoint. Since Mr. Høffding, however, believes that he
+can defend the proposition of the double ethics as a transition
+between philosophy and religion, I shall gladly follow the curious
+course of his thoughts.
+
+There is, he says, an opposition between science and
+life. When the idea of the good is to be realized in deed,
+this opposition comes forward in such a way that rational ethics shows
+its insufficiency, and the necessity is seen --- not of religious
+ethics, as one would provisionally have expected, but --- of
+``religion.'' Now I ask: what, then, is meant by religious
+ethics? Is it a science, or is it merely another name
+for the positive-religious? If it is the latter, why then the
+confusing designation? But if it is the former, then the matter is
+simple and the confusion plain. For then, by virtue of that very
+same opposition between science and life, this ethics too must
+become insufficient as soon as it is to be used in life, and
+recourse must again be had to something higher. But, not to mention that
+the significance of rational ethics, which was after all to be upheld,
+is by this line of thought reduced to less than nothing, we get
+here a series of the scientific, the superscientific, the super-super-scientific,
+etc., which does not speak in favor of the logic of this
+defense. If being a moral human being involved such
+logical entanglements, then I do see that one would have to ask with Mr.
+Høffding: Can one at the same time be an ethical man and a
+man of science? But otherwise this question is not easy to
+understand. --- No, it stands firm: if ethics makes the transition from
+philosophy to religion, then their absolute heterogeneity is given up, and
+the best proof of this doctrine's untenability is that
+Professor Nielsen has given it up not only here but, as
+I have shown, on other points as well. Thus,
+when the possibility of miracle is given a place in \emph{Grundideernes}
+% --- p. 20 ---
+\opage{20}\emph{Logik}.\fnmark{*)}{I was first informed that the solution of the problem
+was given in the part of the \emph{Logik} that had appeared. I replied that
+it was not to be found there and, given the plan of the work, could not be
+found there. The same people who picture faith and knowledge shut off
+in two different compartments of consciousness then accused me of
+subscribing to a pigeonhole philosophy. I replied that I understood the
+fundamental thought of the work to mean that the possibility of miracle
+could not be prepared for or derived, but could come about only by a leap.
+Now Mr. Høffding does not refrain from reproaching me for not having
+pointed out the error in what has already appeared---an error which I myself
+declare is not to be found there.}
+For the difference between the Absolute of philosophy and the
+almighty God of theology is this, that the latter is not, like the Absolute,
+conditioned by its own conditions; but this difference the Logic
+abolishes in positing the possibility of miracle. In the Logic,
+then, the same doubling appears as in the ethics. Just
+as it cannot be understood how religious ethics
+can fail to have a retroactive and annihilating effect
+on the rational, so it cannot be conceived that the
+unconditioned personality, by virtue of its self-determination, can raise
+itself above its own self-determinations without their
+significance being annihilated, that is to say: without the laws of nature
+and of spirit, as we know them, becoming nothing, mere semblance. I
+understand that one can, with Kierkegaard, support one's paradoxical
+faith by rejecting science; but I do not comprehend how one can,
+like Professor Nielsen, give up doubt about science and
+yet keep that faith---at least not without being compelled
+to assert against the freethinker those demands of conscience
+which one will not tolerate the theologian's directing at oneself. This
+statement may perhaps explain to Mr. Høffding what he is so
+very interested in knowing, namely what it is that I
+recognize in Kierkegaard. Only people of very little independence, surely,
+understand by recognition nothing but a plain and simple
+adherence through thick and thin. What I admire in
+Kierkegaard is, among much else, his consistency with
+himself.
+
+This is my last word to Mr. Høffding. Now nothing, to be sure,
+is further from my mind than to conclude from Professor Nielsen's silence that
+he will endorse what my opponents have asserted
+against me, or that their contributions really contain
+the correct interpretation of his view; but I believe
+that it would have served the cause if he had
+% --- p. 21 ---
+\opage{21}made this known. A tangible result a contest of ideas like
+this one could not bring; but it is my hope that, if my statements
+have yielded nothing else, they have at least perhaps made one
+or another who strives in quiet---one who has the courage to judge, the will
+to judge honestly, the understanding to judge rightly---aware
+of where the difficulty lies.
+\piecerule
+
+% --- p. 22 ---
+\piecehead{On Self-Responsibility}{\opage{22}\emph{On Self-Responsibility}\\[2pt](1866)}
+The author of ``Julen hos Elise'' has brought out, with Gad's publishing
+house, a work, ``\emph{Om Selvansvarlighed}'', which may serve as an
+example to illustrate the following sentence in ``\emph{Enten---Eller}'':
+``There is a kind of reasoning chatter which in its endlessness stands in
+the same relation to the result as the interminable lines of Egyptian
+kings to the historical yield.'' For these words give the right point of
+view for a book which, like this one, is without force in its expression
+and without movement in its thoughts, boneless in its structure, jointless
+in its articulation and bloodless in its execution.
+
+The author has set himself the laudable aim of being generally
+comprehensible, but he has not seen that comprehensibility is attained far
+better by a discipline of thought that excludes foggy breadth, irrelevant
+digressions, repetitions and triviality than by any of these scarcely
+brilliant vices themselves; he has further followed the laudable plan of
+leaving all earlier works on this subject unmentioned; but it almost seems
+as though he had also himself either not read them or not understood them;
+for otherwise it is incomprehensible that he has not even been able to
+\emph{pose} his problem with any precision, even if he could neither solve
+it nor cut it through. His work, then, belongs as little among those that
+make the results of a science clear to the great multitude as among those
+that carry literature forward; it ought not to have been published as an
+independent book; in abridged form it could have claimed a place in one of
+our two theological journals.
+
+The fundamental mood of the book is a deep sense of the inadequacy of our
+faculties to solve the riddles of existence. The
+% --- p. 23 ---
+\opage{23}author always begins by theologically shrouding matters in mystery,
+only to declare them inexplicable afterwards. Of \emph{conscience}, for
+example, it is said that although it must stand in a continuous connection
+with the all-governing principle, it is ``\emph{entirely inexplicable} how
+% The Danish closes this quotation with a turned mark (`vedligeholdes‹');
+% the English closes it normally.
+the connection takes place and is maintained''; of \emph{life} we are told
+that the vital force (!) makes itself known only when it is joined (!) with
+a bodily existence, ``but how the vital force joins itself with the bodily
+in such a way that this can reproduce itself in a new individual is the
+\emph{Unfathomable}.'' Sometimes he presupposes degrees of intelligibility
+within this Unfathomable, as when in the following sentence he arbitrates
+between theism and pantheism: ``If the first origin and the entire activity
+of a living, rational, personal being as almighty God is
+\emph{incomprehensible}, then the origin and productive power of an
+impersonal fundamental force is no less so; but the life of the world, its
+purpose and goal, becomes \emph{nevertheless more intelligible} when it is
+regarded as proceeding from a personal God.'' Sometimes, on the other hand,
+he gives up the struggle altogether, as in the following despondent, naive
+declaration, though a natural one in the author's mouth: ``we confess that
+we can never attain any clarity in our thought about the things that cannot
+be presented to our senses.''
+
+To gain a foothold in this darkness the author now sometimes starts from
+theological presuppositions, such as that of an original state of morality
+which was later lost, or that of original sin; sometimes he appeals, as his
+first presupposition, to our \emph{feeling:} positive religion is confirmed
+by ``our own inner feeling'' or by ``the involuntary feelings of a purer
+human nature,'' and an opposing view, which admittedly ``may well have
+something in its favor in what we experience by way of the senses about the
+course of development the world has passed through'' [that is, in the one
+thing about which, in the author's opinion, we can attain clarity], is
+refuted by the fact that ``there is nothing in it that can appeal to human
+feeling.'' Once this criterion of truth has been adopted, woe then to the
+doctrine of infusoria and trichinae; for truly these creatures have nothing
+about them that appeals to human feeling.
+
+On the foundation now indicated, the relation between faith and knowledge
+is determined as follows: ``The one is won by a practical path, through
+experience, by consideration of the visible, which can be observed by all;
+therefore the representation of it can also be
+% --- p. 24 ---
+\opage{24}compared with, and corrected by, the representation others have
+formed of it, and attain such certainty that we can designate it as
+\emph{knowledge}. The representation of the higher (!) spiritual, on the
+other hand, becomes of a more (!) subjective nature, because it has nothing
+visible to attach itself to that is observable by all in the same way; we
+designate it as \emph{faith}.'' By this fine and precise definition of
+concepts, logic and thoroughbass, among other things, become faith; but
+with all the amiable unselfconsciousness of a young modern lady the author
+is sure of being understood when he hangs faith upon the capacious
+comparative that goes by the name of ``the higher.''
+
+The author is as great a stylist as he is a philosopher. In the first
+capacity we see him when he teaches that ``many passions and affects can
+arise and persist only with \emph{bodily support}, such as irascibility and
+a propensity to debauchery'' (it takes a body), or when he speaks of how
+the human body ``expands from a most insignificant beginning constantly in
+greater and greater compass.'' As a thinker we hear him in the following
+priceless derivation of the love of honor: ``The beautiful body arouses
+admiration, but only the human body can call forth honor; for it is the
+spirit alone that, as the possessor of this body, becomes the object of it.
+It is chiefly the spiritual expression, which makes itself known most
+immediately in the features of the face, that can call forth honor. But the
+expression is uncertain and cannot in everyone penetrate the corporeality;
+therefore [ergo] man must seek to win honor by his actions.'' Holberg's
+Henrik never conducted a proof more wittily.
+
+In the book's seventh section, ``The Relation between Human Freedom and
+God's Governance,'' the author has concentrated the results of his research
+% The Danish prints no full stop after `Forvirring'; the English supplies it.
+and his whole confusion. This section justifies the Deity. The reasoning is
+as follows: The governance that reaches its goal while preserving the
+freedom of the persons it uses as means must be regarded as the most
+perfect. Consequently man's freedom does not conflict with the perfection
+of the governance. Since, however, a development proceeding by virtue of
+freedom cannot in every particular accord with the divine will, the
+question arises whether it would not have been most worthy of the
+governance to cancel the evil effects of freedom, often calamitous for the
+innocent, by an extraordinary intervention, by the miracle. The author
+denies this. Why?
+% --- p. 25 ---
+\opage{25}His manner of reasoning is worth hearing: ``If the shot aimed at
+the innocent man's breast glanced off it without harming him, the result
+could stand as a testimony to his innocence, but it would not cast any
+light on the act committed; the act could be set up as a test of the nature
+of the one against whom it was directed; it would not serve toward a better
+cognition of the good or the bad in the intention that led to the act.''
+How such a cognition of the moral character of the intention is to be
+derived from the outcome, we leave it to the author to prove; and merely to
+be sure we understand him, we put this question to him: Is there,
+then, no miracle, nothing supernatural?
+
+One must surely be astonished that a theological philosopher as well
+brought up as the author seems ready to answer with a flat denial. But let
+the reader be reassured: he does not do that either; in philosophy he forms
+himself on the best models. He holds with Salomon Goldkalb ``vieles for und
+% Salomon Goldkalb, the Jewish merchant of Heiberg's vaudeville `Kong Salomon
+% og Jørgen Hattemager', speaks a German-Danish jargon: roughly "much before
+% and behind, and yes and no at once".  Left as printed.
+bag, und ja und nej tillige'': ``If we see no reason to assume such
+breaches of the natural order and law as necessary for the completion of
+God's plan for the world, this nevertheless does not exclude a divine
+activity that must stand as supernatural for man. Such there must be; for
+without it the power laid down in creation could not be maintained (!).
+God's activity as sustainer of the world is supernatural in so far as it is
+\emph{incomprehensible} to the human faculties, but it becomes no less
+natural when it expresses itself, while holding fast to definite laws,
+through a \emph{higher} nature.'' Crafty author! There at a single stroke
+he found a use for his \emph{Incomprehensible} and his \emph{Higher}, and
+indeed got the two fused together into a higher
+incomprehensibility.
+
+As one among many testimonies to the theological-philosophical quagmire in
+which we are stuck here in Denmark at present, this book is not wholly
+without interest. But for the rest we know no better advice to offer its
+author than that contained in this old couplet from \emph{Peder Paars}:
+
+\begin{center}\small
+Your finger in the times you must stick, and smell\\ % I Fingren stikke maa i Tiden, lugte til,
+what time you're living in, if you would heed me well. % hvad Tid I lever i, om mig I lyde vil.
+\end{center}
+\piecerule
+
+% --- p. 26 ---
+\piecehead{The Validity of the Idea of Nationality}{\opage{26}\emph{Claudius Wilckens: Nationalitetsideens Gyldighed}\\[2pt]{\normalsize[The Validity of the Idea of Nationality]}\\[2pt](1867)}
+Against a treatise by Dean Kofoed-Hansen, \emph{Nationalitet og
+Kristendom}, the author stresses that the question of the justification of
+the idea of nationality vis-à-vis Christianity is only a single side of the
+question of the justification of human culture as such, so that one cannot
+deny that idea significance and validity without passing sentence on the
+whole of culture. To that extent Mr. Wilckens may well be entirely right.
+
+But when he now goes on to set forth his own conception of the relation
+between Christianity and humanity, his view is even more unclear and
+self-contradictory than his opponent's. From the standpoint of philosophy
+he proclaims --- seemingly without properly knowing the meaning of the word
+he uses --- an unconditional \emph{dualism} of divine history and human
+history, of religious development and human development, of Providence and
+world-governance. But dualism (fundamental cleavage) is the private shame
+of scientific thinking, which the thinker himself ought surely to be the
+last to put on display. Although the author himself declares that eternal
+Providence \emph{set} the world-governance to rule over the destiny of the
+nations, he stresses in spaced type that world history, guided by the
+world-governance, has \emph{nothing, absolutely nothing} to do with
+Providence, and Providence \emph{nothing, absolutely nothing} to do with it.
+
+This is already going very far; but the author draws the bow tighter still
+when, reproaching Dean Kofoed-Hansen for lacking even the faintest inkling
+of the said remarkable dualism, he accuses him of being in the grip of the
+same fundamental error that in the Middle Ages brought mankind
+% --- p. 27 ---
+\opage{27}to establish \emph{duæ veritates}. For who has two truths, if not
+Mr. Wilckens?
+
+In this doctrine of the relation of truth the author attaches himself very
+closely to Professor R. Nielsen. When he occasionally designates his view
+(thus, e.g., the curious proposition that ``God set the laws of nature to
+bear witness against himself'') as an ``individual explanation,'' the
+meaning of this is perhaps that, though not in such particular points, yet
+in what he otherwise puts forward, he regards himself as the organ of
+Professor Nielsen's teachings. If he is right in this, then what Holberg
+says in \emph{Niels Klim:} applies to Denmark now: ``There are a number of
+the learned men of Europe who cultivate both theology and philosophy with
+equal zeal; as philosophers they doubt all things, as theologians, on the
+other hand, they dare deny nothing.''
+\piecerule
+
+% --- p. 28 ---
+\piecehead{Introduction to Rational Ethics}{\opage{28}\emph{P. S. V. Heegaard: Indledning til den rationelle Etik}\\[2pt]{\normalsize[Introduction to Rational Ethics]}\\[2pt](1867)}
+In the wider sense of the word \emph{introduction}, any preparatory course
+through which an author leads his readers into a science may be called an
+introduction to it. Both a history of ethics and a history of morality
+could, e.g., provide a preparation for the study of the science of the
+good. But of such propaedeutics there is, for any doctrine whatever, only
+one that is indispensable, namely the one that has the doctrine itself as
+its object. The introduction to ethics that is not arbitrarily chosen but
+necessarily required answers the question: What is ethics? The proper
+problem of ethics itself is: What is the good? Since the author,
+immediately after establishing the concept of ethics, proceeds to develop
+the essence of the good, he has given no introduction in the narrower and
+proper sense.
+
+But, one might say, never mind the name: what does the book offer? To this
+the answer is that Dr. Heegaard, who takes no account of chronological
+order, has not wished to give a history of ethics; he has wished only to
+use particulars of history to illustrate the various possible ethical
+principles. To derive these is the task of his work. Since the principle of
+division that is laid down, namely the opposition between the objective
+and the subjective, is, however, an opposition that shows itself in every
+idea and not merely in the ethical one, the good is not considered
+according to its peculiar essence, but only from its general logical side;
+the specifically moral concepts, such as duty, virtue, conscience, serve by
+the plan only to illustrate the said opposition, so their ethical
+peculiarity does not come out, and
+% --- p. 29 ---
+\opage{29}like the fundamental opposition, so too the one between actuality
+and essentiality and the one between immediacy and reflection, on which the
+subdivision rests, are purely metaphysical.
+
+But, one might say, here after all is a principle of division; if only
+\emph{that} is held fast, one ought not to take the author further to task.
+Unfortunately it is dropped as quickly as it is set up. The ethics of
+essentiality is not subdivided, subjective ethics is not divided at all,
+and yet there was absolutely nothing to prevent the chosen points of view
+from being applied. Even if there were not historical representatives for
+all the forms --- which, however, can easily be found --- the cognition of
+principles, on which the author lays so much weight, required that they at
+least all be set out.
+
+Still, Dr. Heegaard perhaps wishes the reader to concede that it matters
+less whether the principle of subdivision changes, provided only the
+principle of the main division is held fast. We therefore turn our
+attention to this. But it is surely clear that if subjective-objective
+ethics is to be the third member in the series, it cannot have forms under
+it that are again declared to be one-sidedly subjective, like Kierkegaard's
+ethics. That it nonetheless has them is intelligible only from the fact
+that the author has here changed his principle of division altogether. The
+historical phenomena presented in the third section are found together not
+because their ethics bears a subjective-objective stamp, which on the whole
+it does not, but because, in contrast to the preceding ones, they take up a
+decisive relation to the Christian-religious.
+
+This is not felicitous, but let it be! We will follow the author without
+dispute here too, and merely test what forms must arise when both the
+rational and the positive-religious are given as presuppositions. One can
+then --- to use the author's expression: faith and knowledge --- either
+reject faith for the sake of knowledge (like Feuerbach) or, conversely,
+knowledge in favor of faith (like Kierkegaard), or one can assert the
+validity of both, and then either in unity (like theology) or in
+unconditional separation (like Nielsen). Of these forms Dr. Heegaard skips
+theological ethics entirely: an ethicist such as Schleiermacher is not
+included, whereas Nielsen, who has written no ethics at all, is treated at
+great length. Should the author now say that theological ethics is too
+% --- p. 30 ---
+\opage{30}insignificant to be included, this will be no reason in his mouth,
+since as the representative of one of the forms he has set up Feuerbach,
+of whom he himself remarks that he has no ethical principle. Should he say
+that theological ethics is a form that no rational person need take into
+account, he must remember that the question is still undecided whether the
+same cannot be said of the tendency that would hold faith and knowledge in
+absolute heterogeneity. In any case theological ethics cannot be rejected
+except through a critique; to shut the door on it is a way out, but not a
+scientific one.
+
+The new principle of division was the opposition between the rational and
+the positive-religious, the latter of which Dr. Heegaard stubbornly treats
+as synonymous with the religious in general, just as if there were only
+one positive religion in one single confession. But where does the
+religious come from that drops like a bomb into the book's conclusion? Is
+it enough for a cognition of principles that we do not mistake subjective
+for objective, religious for rational, without these concepts being seen in
+the least as determinations of principle, as utterances of one and the same
+being? The author says merely that revealed religion is manifestly a
+% The Danish prints no stop after `Aandsmagt'; the English supplies it.
+spiritual power. But what does that prove? For the cognition of principles
+hardly much.
+
+And what does it prove that the author calls the religious an ambiguous
+% `i rationel og antirationel Forstand': Forstand here is `sense', not the
+% faculty (understanding).
+determination, since it can be taken both in a rational and in an
+anti-rational sense; for where does the anti-rational come from? Why, it
+comes from revelation. And revelation? Why, it is simply there. But is it
+therefore anti-rational? Surely there is so much thought and reason in the
+Old and New Testaments that it at least holds its own against the
+miraculous. If one wants to draw the religious into the development as a
+definite positive form of religion, one must accept the consequences and at
+the same time draw it into the investigation. If one will not do this, but
+proceeds from it in an entirely immediate way, then let it be done
+properly, and let us have a catechism! That is incomparably easier than
+these intricate expositions, which after all can only assert, not
+demonstrate. But here the dualism has broken out that is now pressing hard
+into our philosophical condition, and that shows this condition to be
+neither more nor less than a crisis. It weakens the religious, which, as
+% --- p. 31 ---
+\opage{31}unconditionally contrary to reason, becomes an impotent spiritual
+force, and it weakens the commands of reason, which are robbed of their
+deepest elements in order to transfer these to the anti-rational, which
+means little else than to shelve them. A so-called rational ethics that
+cannot and dares not treat in its own way the ethical questions that every
+revelation treats in its own way is without generative power and of no
+significance; at most it becomes an ethics that ``can be applied in civil
+society and the state as they are in reality,'' but not by a person in whom
+the ethical, in whatever form, stirs with vigor.
+
+The older principle of division is brought by the author into connection
+with the new one by designating subjective-objective ethics as the one that
+is conscious that it is theory and not practice, whereas the
+representatives of merely objective and merely subjective ethics are said
+to be caught in the illusion that theory and practice simply coincide ---
+a strong expression indeed, when one recalls that among those who thus err
+are thinkers such as Kant and Fichte. But to this new opposition of theory
+and practice, this third principle of division, which like the second drops
+from heaven at the end of the book, not the slightest attention has been
+paid in what went before. One must, then, think the earlier forms through
+again from this point of view and so do the work the author ought to have
+done. He says himself that from this point of view one has greater sympathy
+for Aristotle, the Stoics and the Epicureans than for Hegel and Fichte, but
+why merely sympathy? The whole arrangement becomes a different one; Hegel
+and Aristotle no longer come into the same class at all. On the relation
+between the two principles of division that appeared last, moreover, Dr.~Heegaard
+does not express himself with any clarity at all; one sees, to be
+sure, that practical ethics can be both rational and religious; but for the
+former there appears no independent representative; it is found only as a
+stage of development under R. Nielsen.
+
+% The Danish prints `etisko' for `etiske'; rendered as the sense.
+The author has thus really wanted to view the ethical forms under a
+threefold point of view, namely partly according to the opposition
+subjective-objective, partly according to that of rational-religious, and
+partly according to that of theoretical-practical. With this, however,
+three principles of division have been set up. Now however unclear the
+articulation might be, these three could nevertheless very well have been
+united by virtue of dialectic. Under each of them all the forms would have
+had to be capable of being
+% --- p. 32 ---
+\opage{32}placed; they would have had to interpenetrate at every point. It
+ought to have been shown how the subjective is the objective, that both are
+the religious, both the existential, the existential the theoretical, etc.,
+until the whole cycle had been set in motion. Then the author could have
+made his distinctions with a clear conscience. As it is, the forms bristle
+outward away from one another without inner coherence, without any
+dialectic at all, and yet the author's standpoint is the dialectical one,
+so dialectical that he even --- something at which Kierkegaard would marvel
+--- lets the very boundary between the rational and the anti-rational be of
+a dialectical nature.
+
+One question forces itself upon us in conclusion, a very important one,
+namely this: Does the author himself have any standpoint? Because he, e.g.,
+presents Feuerbach as a rational-atheistic ethicist who has no ethics, it
+does not of course follow that the author is one. And because R. Nielsen is
+presented as the one who gives a religious and rational ethics, one still
+cannot presuppose it to be the author's assumption that such an ethics has
+validity.
+
+What would have to show this is missing, namely a critique of Nielsen's
+view. For the remarkable fact is that when the author comes to the points
+that, as the decisive ones, demanded a critique in the highest degree, he
+very modestly closes his critical knife, the one he has used so vigorously
+and bravely in what went before. Professor Nielsen is beyond comparison the
+most significant representative in the whole last class, and the author
+has him play a strange role. He is the representative of a distinct form,
+but as such he is representative of representatives of other forms that
+have been given no voice of their own, e.g., of the rational-religious.
+Further, he is a critique of the whole and so also of himself, and finally
+he is the chief representative of ethics, although he has written no
+ethics.
+
+What would one say if an art critic were lecturing on a sculptural group
+rich in figures and, after giving his judgment of the less important
+figures, vanished when he came to judge the principal figure, which cast
+the real light over the whole? Could he excuse himself by saying that the
+principal figure had to speak for itself and that he would say nothing but
+what the principal figure clearly said? No, then he might have spared
+himself the whole lecture; for if his listeners are able to judge the
+principal figure, they can also judge
+% --- p. 33 ---
+\opage{33}the whole group. Either one gives a lecture, and then one gives it
+to the end, or one leaves it to others to work the matter out for
+themselves, and then there is no lecture at all.
+
+If, then, it is Heegaard's opinion that Nielsen's standpoint is his own,
+he must say so; it must not be a matter about which one knows anything only
+from a more or less reliable quarter. What view underlies the critique is
+at present a secret. Only this is certain: if the author has no other
+standpoint than Professor Nielsen's, then it is just as strange to see
+R.~Nielsen's name among those of the other thinkers as it would be to see the
+author's own; if, on the other hand, he is not at one with Professor
+Nielsen, he has hardly shown great independence or self-reliance by
+leaving the latter's view unjudged.
+\piecerule
+
+% --- p. 34 ---
+\piecehead{Rejoinder to Dr. Heegaard}{\opage{34}\emph{Rejoinder to Dr. P. S. V. Heegaard}\\[2pt](1867)}
+In an anticritique whose tone is by no means justified by the
+tone of the review against which it is directed, Dr. P. S. V.
+Heegaard has not disdained to make use of the old trick with
+which a man who, in an intellectual contest, has good reasons for not
+wanting a reply sometimes tries to gag his opponent, and whose
+recipe runs as follows: ``Should Mr. N. N. now, as would be just
+like him, feel an urge to have the last word, he is free to do
+so, etc.'', which, being interpreted, means: ``Since for my part I
+have no other defense than to put forward denials and to throw
+out accusations that cannot stand a moment longer than it takes
+a reply to arrive, I feel a heartfelt urge to cut my opponent
+off, if at all possible.''
+
+Now, though it pains me not to be able to satisfy so deeply felt
+an urge, I nonetheless beg the Doctor to be assured that I fully
+understand and appreciate it. It is quite understandable that
+Dr. Heegaard, feted and acclaimed by such expert judges as those
+he has found in \emph{Illustreret Tidende} and \emph{Berlingske}, should
+himself have begun to regard his work as good and thorough, and
+that it should have been an unpleasant surprise to him to meet a
+critic who was of the opposite opinion; but he ought to have taken
+this fact more calmly; he ought to have made an effort to grasp
+the line of thought in my article, at least where it lies right
+under his nose, and he would then not have stopped in the middle
+of reading a compound sentence to lament the meaninglessness of
+its first half.
+
+% --- p. 35 ---
+\opage{35}Here is an example of how the Doctor has read. My review
+contained the following words: ``A question forces itself upon us:
+Does the author himself have any standpoint? Because he, e.g.,
+presents Feuerbach as a rational-atheistic ethicist who has no ethics,
+it does not of course follow that the author is one. And because
+R. Nielsen is presented as the one who gives a religious and
+rational ethics, one still cannot presuppose it to be the
+author's assumption that such an ethics has validity.''
+
+Dr. Heegaard now tears the one sentence about Feuerbach out of its
+context, cannot grasp the point of this statement, since no
+reasonable person could think of reasoning in that way, and cries:
+``To what purpose, then, the remark?'' Now, if my honored opponent
+really was unable, in a calm state of mind, to see what purpose
+this remark serves, it would be in vain for me to try to explain
+the matter to him; and it is only because, while writing down his
+piece, he was evidently in a state of muddled irascibility that I
+spoon-feed him the necessary enlightenment: the two cases set out
+(that of Feuerbach and that of Nielsen) are of the same kind; if
+nothing can be inferred from the first, then nothing can be
+inferred from the second either, and consequently it is left
+unexplained in the book itself whether the author is \emph{with}
+Professor Nielsen or \emph{against} Professor Nielsen, or whether he
+has no opinion at all.
+
+In his book the Doctor showed himself an accomplished diplomat,
+took careful care not to hint at any independent view, and
+performed the egg dance of departing from Professor Nielsen on no
+point whatever, without, however, hinting by so much as a syllable
+at any agreement with him; in short, he conducted himself as a
+cautious man.
+
+Now caution is no doubt a priceless virtue, a burgomaster's virtue,
+as they say --- and who knows whether Dr. Heegaard has not mistaken
+the calling of his virtues by insisting on being a philosopher! ---
+but there do occur cases here in life in which one must sacrifice
+it. It needs only someone to prove so importunate as to ask whether
+the Doctor, who ``is in on'' the development of others, has then no
+development of his own at all, and he is forced to confess that he
+has so far never thought of anything but the old thing, swearing by
+the master's words; indeed, he affects to be almost offended at the
+suspicion that he himself might have a view, and derives his
+receptiveness toward Professor Nielsen
+% --- p. 36 ---
+\opage{36}``simply'' from the fact that one does not criticize the
+standpoint on which one stands oneself\fnmark{*)}{Dr. Heegaard speaks of ``being in on the development'' much as the
+Cat and the Hen in Andersen speak of purring and laying eggs. He seems
+to think that one must, as a \emph{studiosus perpetuus}, have heard all of
+Professor Nielsen's lectures, those for the freshmen and those for the
+educated as well, if one is to be allowed to join in the talk about
+philosophical subjects here at home. Indeed, he even invites me --- not
+without wit --- to check whether he has correctly reproduced Professor
+Nielsen's line of thought from lectures that have as yet been neither
+delivered nor printed.}. But where in the world was I supposed to learn
+anything about Dr. Heegaard's standpoint, when the only road to it
+ran through an inference of which the Doctor himself (rashly)
+declares that no reasonable person could think of drawing it?
+
+No, the Doctor's newspaper article supplies a piece of information
+of which his book gives not the slightest hint, and in imparting it
+Dr. Heegaard has exchanged his arrogance for a modesty without
+equal. Far be it from me to accuse my opponent of ``straining for
+effect''; but might not the modesty he has here displayed produce
+its effect all the same? Might not many a father or guardian say to
+his ward: ``O my son! Look at yourself in the mirror of this mature
+man! Though no longer quite young, though a Doctor of Philosophy and
+a Privatdocent, though the author of a book that inspires awe by its
+thickness alone, he is still so modest as to have no other opinion
+than the one his teacher has.'' Oh, surely the Doctor, without
+having intended it, will achieve such an effect, and his modesty
+will propagate itself from generation to generation.
+
+Now modesty is no doubt an inestimable virtue, in some people's
+opinion even the finest in a young man, but there are nonetheless
+cases here in life in which an expression of modesty becomes one
+and the same thing as a declaration of bankruptcy. The Doctor is in
+a great and lamentable error when he thinks that one does need a
+standpoint of one's own to write an ethics but by no means to write
+an introduction to one, and in another error just as great when he
+supposes that my complaint about his lack of a standpoint has its
+ground in a confusion of the introduction to ethics with ethics
+itself.
+
+Dr. Heegaard is bold enough to reject my definition
+% --- p. 37 ---
+% The Danish prints a point for a comma in `indrømme. at' (below); the
+% English renders the sense.
+% `Enten faar han en almindelig Metafysik, der falder udenfor de særskilte
+% Videnskabers': construed as "a general metaphysics, falling outside that
+% of the particular sciences", i.e. the introduction would become general
+% metaphysics, which belongs to no special science.
+\opage{37}of what an introduction to ethics means with a simple: This is
+incorrect. We shall see with what right. It is already peculiar that
+my opponent should insist on one particular explanation of the title
+of his book, just as if ``Introduction to Ethics'' were a name for a
+science current and accepted among men of science. But it is still
+more peculiar that so cautious an author is not more cautious with
+the definition of the concept that he gives. When he says that one
+cannot develop what ethics is without explaining what the Good is,
+this is self-evident, understood absolutely; but taken relatively it
+is wrong, for if no distinction is made between the science of a
+science and that science itself, the system of the sciences turns
+into an even and uniform fog. And when he holds that the
+introduction to ethics ought to consist in the metaphysics of
+ethics, he runs aground on the following dilemma: either he gets a
+general metaphysics, one that falls outside that of the particular
+sciences, which is nonsense, or he is compelled to admit that the
+metaphysics of the special discipline is not an independent science
+but must consist of propositions borrowed from general metaphysics.
+And that is really how matters stand; that is why, e.g., the
+metaphysics of the beautiful has never been set up as a separate
+science either. The most amusing thing, however, is that Dr.
+Heegaard, by virtue of his way of seeing things, must consistently
+demand metaphysics itself as philosophical propaedeutics, whereby he
+comes into conflict partly with common sense, which is of lesser
+importance here, and partly with his own oracle, Professor Nielsen,
+who, in agreement with my conception, defines propaedeutics as the
+science that answers the question: ``What is philosophy?''
+
+But I will make Dr. Heegaard a present of his bold assertions on
+this point; let him define the introduction as he pleases, this much
+still stands unshaken: whatever an introduction may be, it must be an
+organic component of the system to which it leads and by which it is
+comprehended, and then the same life, the same spirit, the same
+principle must also pulse in the introduction as in the system, and a
+lack of principle must be just as reprehensible in the former as in
+the latter. How, then, can so modest a man as Dr. Heegaard believe
+that, with his modest lack of a standpoint, he is fit to write the
+introduction?
+
+Or does Dr. Heegaard perhaps have a principle after all, a
+% --- p. 38 ---
+\opage{38}principle without a standpoint? What, then, has he set against
+my specific demonstration of his spineless wavering between three
+different principles of division? Not a word, not a letter!
+% The Danish prints `Saa frejdig kan ellers er' with `kan' for `han';
+% the English renders the sense.
+Bold as he otherwise is at denying, here he fails to hear the criticism, and
+is wise to do so. And is his talk about the subdivision perhaps more
+successful than his silence about the main point? Can anything more
+preposterous be imagined than that the Doctor should call on \emph{me}
+to show what compelling reason there is to subdivide the ethics of
+essentiality, i.e., to break the phenomenon on the very wheel on
+which he himself has laid it?
+
+I answer: If there lies in the concept of actuality a compelling
+reason for subdivision into ``immediate'' and ``reflected'' --- and
+the Doctor must surely assume so, since he divides in that way ---
+then such a reason must also lie in essentiality. For in the opposite
+case those two determinations would, of course, fall outside the
+latter --- a fine ontology. The emphasis lies on what is a matter of
+principle, on the whole of all the determinations of principle
+employed, which must form a unity. If the historical material does
+not correspond, so much the worse for the Doctor. It is he, not I,
+who has to make the material and the principles essentially coincide;
+it is he who has registered, having been unable to show the
+transition between the historical and what is a matter of principle,
+and he will hardly succeed in making up for his short weight with the
+ingenuous declaration that he ``has not, after all, given so little
+in the way of development of principles.'' It does not become any
+more certain because he himself assures us of it.
+
+But then Dr. Heegaard has, of course, declared that a criticism of
+his work which, like mine, does not take up all the questions afresh
+from the beginning and does not carry out the insurmountable task of
+putting the correct in the place of the supposedly incorrect --- such
+a criticism ``is not worth heeding,'' and this pronouncement may have
+made an impression on one or two. But how can an author who by his
+own admission has a view of the whole only at second hand demand of a
+newspaper review of two and a half columns so much more than he
+himself has given in four hundred and fifty pages? The reviewer has
+supplied nothing but assertions, he says, without proof. That is only
+half true, but let it be so! Against these he sets other assertions,
+at least as unproved,
+% --- p. 39 ---
+\opage{39}apparently, to be sure, without being aware that he offers
+nothing more.
+
+But then the question still remains which assertions the thinking
+reader of the book is compelled to grant, his or mine, and I
+confidently leave it to those who know the subject to judge between
+us.
+\piecerule
+
+% --- p. 40 ---
+\piecehead{The Logic of the Fundamental Ideas}{\opage{40}\emph{R. Nielsen: Grundideernes Logik}\\[2pt]{\normalsize[The Logic of the Fundamental Ideas]}}
+% `2den Del' (Part 2) is kept in Danish as part of the title Brandes cites.
+To give an idea of the line of thought in \emph{Professor R. Nielsen's}
+``\emph{Grundideernes Logik, 2den Del}'' in a couple of words cannot be
+done. To deliver a criticism would be more difficult still. But this
+much shall simply be said: it would be a disgrace to our fatherland if
+a work such as this did not find numerous buyers among the large
+public that consists of the older or younger pupils of the excellent
+university teacher and writer to whom it is due. The volume most
+recently published is written with a logical virtuosity, a sharpness
+and definiteness of expression, an omnipresent liveliness and flight
+in the presentation, that must awaken the strongest admiration and
+that make the reading as attractive as it is instructive. Even the
+reader who is comparatively unfamiliar with investigations of this
+kind will find large sections that treat, in a manner generally
+intelligible and at the same time new, original and full of genius,
+problems to which ordinary reasoning constantly returns and which it
+is never able to solve by its own powers. Such are, e.g., the
+questions of the origin and meaning of languages, of the necessity of
+the Word as the expression of the divine thoughts, of God's
+foreknowledge and omniscience, of the creation of the world, of
+pre-existence, etc. The work is shot through with a struggle,
+testifying to an unmistakable superiority, against Madvig, against
+Sibbern, against Martensen and others as representatives of one-sided
+or antiquated points of view, and with attacks, launched from new
+standpoints, on thinkers of the past such as Kant and Hume, attacks
+that cast a peculiar light on the merits and the errors of these men.
+
+% --- p. 41 ---
+% `lyst i Kuld og Køn': the old formula for declaring a child legitimate,
+% i.e. publicly acknowledged as one's own; rendered "solemnly declared
+% legitimate".
+\opage{41}Since this place is so little suited to a critical pronouncement,
+we shall permit ourselves a remark on only one quite single point.
+Since \emph{Grundideernes Logik} has not, in Professor Nielsen's
+treatment, become a strictly delimited science, and since the author
+shows a pervasive endeavor to take in as much as possible of the
+given religious content of representation, intimations crop up here
+and there of the author's well-known views on the boundaries of the
+domain of reason against the religious, although the work as yet
+bears only faint traces of the monstrous doctrines that Dr. Heegaard
+in his latest writing has presented as belonging to Professor
+Nielsen. The cornerstone of this whole doctrine, however, is the
+Kierkegaardian conception of ``the Paradox,'' and if only one could
+succeed in showing to what desperate, indeed insane, consequences
+adherence to this standpoint must necessarily lead, then there is hope
+that the whole building erected upon it will collapse without further
+criticism. But a point of attachment for such an attempt the author
+of the Logic has himself provided. In seeking to show that the Kantian
+category \emph{the thing in itself} is a mere phantom of mist, he
+conducts the proof as follows: ``Kant cannot avoid passing a judgment
+on the \emph{thing in itself}. He must say of it that it \emph{is}. But
+once it has been proved that the category of the understanding,
+\emph{being}, must be determining for the \emph{thing in itself}, then
+the same holds of all the other categories.''
+
+Nothing can be clearer or more correct than this line of thought. But
+how, then, is it possible that the brilliant author of \emph{Grundideernes
+Logik} can fail to see that this very same line of proof can be
+applied against the concept ``the Paradoxical,'' which he has
+nevertheless solemnly declared legitimate. The philosopher of the
+absurd may writhe as much as he likes; he must still confess that, if
+he can say nothing else about the Paradox, this impenetrable,
+incomprehensible thing, he must at least establish of it that it
+\emph{is}. But being is a determination of reason. And if ``the
+Paradox'' now belongs to a circle within which the concept ``being''
+is valid, then it also belongs to a circle within which all the
+determinations of reason are valid. But what does this imply? Nothing
+less than the flagrant contradiction that the Paradoxical, as subject,
+receives nothing but predicates determined by reason. If one wishes to
+avoid it, there is no other way out than to fall silent, i.e., not
+merely to shut oneself up in an isolation in which, although one
+cannot immediately
+% --- p. 42 ---
+\opage{42}communicate oneself to others, one nonetheless understands
+oneself --- but to fall silent unconditionally, to become dumb as the
+fish is dumb, to cease to be a human being. This is the dilemma. If
+one holds fast to ``the Paradoxical,'' one will gradually find oneself
+carpentering together a system like the Ptolemaic system of astronomy,
+in which the first false conjecture could only ever be upheld by
+others just as desperate, in the same way as the paradox that
+conflicts with reason has already made a ``rational paradox'' (!)
+necessary. But then, too, one fine day the clear Copernican system of
+reason will stand victorious without any struggle, solely by the
+all-conquering power that lies in the holy simplicity of the true.
+\piecerule
+
+\end{document}

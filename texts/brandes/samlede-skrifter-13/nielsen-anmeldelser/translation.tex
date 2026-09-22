@@ -1,0 +1,1033 @@
+% ============================================================
+%  Georg Brandes, Samlede Skrifter. Trettende Bind (Supplementbind).
+%  Kjøbenhavn: Gyldendalske Boghandels Forlag (F. Hegel & Søn), 1903.
+%  Five pieces on Rasmus Nielsen and his school, 1867.
+%  TRANSLATION (English), printed pp. 85--109.
+%  Translated from transcription.tex (Danish) in this directory, whose
+%  header records how its text was established.  Method:
+%  ../../../../TRANSLATION-PLAYBOOK.md.  The volume is Brandes's 1903
+%  revision of pieces first printed 1865--69; the translation follows the
+%  1903 text.
+%
+%  ---- REGISTER ----
+%  Readable modern English.  Brandes's long periods are broken where English
+%  will not carry them, but nothing is softened: the polemic is sarcastic,
+%  and where the Danish is ironic the English is ironic.
+%
+%  ---- TERMINOLOGY ----
+%  Aligned with texts/brandes/dualismen/translation.tex and the Nielsen and
+%  Brøchner translations in this repo, since the pieces belong to the same
+%  controversy:
+%    Tro / Viden          = faith / knowledge   (Tro og Viden = faith and
+%                           knowledge)
+%    Erkendelse           = cognition (NOT "knowledge", reserved for Viden)
+%    Videnskab            = science (Wissenschaft; never "natural science",
+%                           for which Brandes writes Naturvidenskab)
+%    Fagvidenskaberne     = the special sciences
+%    absolut Uensartethed = absolute heterogeneity
+%    Aand / aandelig      = spirit / spiritual;  Fornuft = reason;
+%    Forstand             = understanding;  Begreb = concept
+%    Samvittighed         = conscience;  Selvansvarlighed = self-responsibility
+%    Livsanskuelse        = view of life;  Verdensanskuelse = world view
+%    Dannelse             = cultivation;  Folkeaand = national spirit
+%    Aabenbaring          = revelation;  Under = miracle
+%  Danish work-titles stay in Danish, as Brandes cites them (Grundideernes
+%  Logik, Om den gode Vilje, Fædrelandet, Dagbladet, ...).
+%
+%  ---- CONVENTIONS ----
+%  - Quotation marks: the volume's single guillemets ‹...› -> ``...''.
+%  - Emphasis: italic is the volume's only emphasis device; every \emph{}
+%    span of the transcription is carried over as \emph{}, including the
+%    Latin and other foreign phrases, which stay untranslated.
+%  - Footnotes \fnmark{*)}{...} at the same anchor.
+%  - The ɔ: id-est mark -> "i.e."
+%  - Page markers \opage{N} and "% --- p. N ---" at the same joints as in
+%    transcription.tex, so the two can be read side by side.
+%  - Heads: a book under review keeps its Danish title, with an English
+%    gloss in brackets; Brandes's own titles are translated.  The table of
+%    contents gives the English of the volume's Indhold titles.
+%
+%  ---- HOW THE TRANSLATION WAS CHECKED (2026-09-22) ----
+%  (1) Mechanical audit (tr_audit.py): per printed page, the same \opage
+%  joints, \emph spans, footnotes, heads, rules and paragraph breaks as
+%  transcription.tex, and an English/Danish word ratio within 0.95--1.60:
+%  25 pages, 0 flagged.  (2) Independent review: a reader who had not
+%  translated these pages read every sentence of the Danish against the
+%  English.  No omission found; 8 corrections at 11 sites (e.g. `Troen paa
+%  Dæmoner' "belief", not "faith", p. 87; `aandeligt stavnsbundne'
+%  "intellectually bound to the soil", pp. 96, 104; `Aand' "mind" of a
+%  thinker's powers, pp. 107--108; `synes at maatte' hedge restored, p. 108).
+%  One sentence is left open: p. 100 `at naa Højdepunktet i Rationalismens
+%  Betragtning af det Kristelige' is rendered literally, keeping its
+%  ambiguity; the comment at the site gives both readings.
+%
+%  ---- DEFECTS: DANISH AS PRINTED, ENGLISH CORRECT ----
+%  The transcription is diplomatic and carries every printer's error; the
+%  translation renders the SENSE and logs the divergence in a % comment at
+%  the site.  The English quotation marks balance throughout.
+% ============================================================
+
+\documentclass[12pt,a4paper,openany]{book}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{libertinus}
+\usepackage{libertinust1math}
+\usepackage{textalpha}
+\usepackage{graphicx}
+\usepackage[english]{babel}
+\usepackage[protrusion=true,expansion=true]{microtype}
+\usepackage{setspace}
+\usepackage[margin=1.2in]{geometry}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\setlength{\headheight}{28pt}
+
+% Footnotes as the 1903 printing sets them: *), set at each site with
+% \fnmark{*)}{...}, exactly as in transcription.tex.
+\renewcommand{\thefootnote}{*)}
+\newcommand{\fnmark}[2]{\renewcommand{\thefootnote}{#1}\footnote{#2}%
+  \renewcommand{\thefootnote}{*)}}
+
+% A piece's head, mirroring transcription.tex.  #1 = the English of the
+% title as the volume's Indhold gives it (table of contents, running head);
+% #2 = the head as printed, translated (a book under review keeps its Danish
+% title, glossed in brackets).  The short rule under every head is printed.
+\newcommand{\piecehead}[2]{\clearpage\phantomsection
+  \addcontentsline{toc}{section}{#1}\markboth{#1}{#1}%
+  \begin{center}\large #2\\[6pt]\rule{2cm}{0.4pt}\end{center}\par\medskip}
+\newcommand{\piecerule}{\par\begin{center}\rule{1.5cm}{0.4pt}\end{center}\par}
+
+\usepackage{hyperref}
+\hypersetup{pdftitle={Brandes, Collected Writings XIII: Reviews and Replies on Rasmus Nielsen (1867)}, pdfauthor={Georg Brandes}, hidelinks}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LE,RO]{\thepage}
+\fancyhead[RE]{\textit{Collected Writings XIII (1903)}}
+\fancyhead[LO]{\textit{\leftmark}}
+\setstretch{1.3}
+
+\title{\textbf{Reviews and Replies on Rasmus Nielsen (1867)}\\[8pt]\large Georg Brandes, \textit{Samlede Skrifter} [Collected Writings], vol.~XIII (Supplementbind),\\ pp.~85--109}
+\author{}
+\date{Copenhagen: Gyldendal (F.\ Hegel \& Søn), 1903\\[10pt]
+  \small Translated from the Danish}
+
+% ---- original-page markers ----
+% \opage{N} marks where printed page N begins, at the same joint as in
+% transcription.tex (mid-sentence where the page turns mid-sentence).
+\usepackage{marginnote}
+\newcommand{\opage}[1]{\marginnote{\footnotesize\textit{[#1]}}}
+\newcommand{\apage}[1]{\marginnote{\footnotesize\textit{[#1]}}}
+\begin{document}
+\maketitle
+\thispagestyle{empty}
+\tableofcontents
+
+\mainmatter
+
+% --- p. 85 ---
+\piecehead{On the Good Will as a Power in Science}{\opage{85}\emph{R. Nielsen: Om den gode Vilje som Magt i}\\
+\emph{Videnskaben}\\[2pt]{\normalsize[On the Good Will as a Power in Science]}\\[2pt](1867)}
+In reply to Bishop Martensen's treatise \emph{Om Tro og Viden},
+Professor \emph{Nielsen} has published, under the imprint of the
+\emph{Gyldendal Bookshop}, \emph{Om den gode Vilje som Magt i Videnskaben}, a broad
+and heavy-handed, a scornful and biting little book, written with an
+overflowing zest for producing and full of good sallies. Its
+merriment, however, has in places a character more Dutch than
+Danish.
+
+That the title is ironic, since the book sets out to show that in
+science the good will counts for nothing, is a piece of information
+that needs to be given to those who still remember that there was a
+time when Professor Nielsen himself made the theologized conscience
+the starting point of true science, and when it was proclaimed from
+the Professor's own lips that, e.g., the freethinker's biblical
+criticism, though \emph{impersonally true}, was without value, because
+it had its ground in a \emph{personal untruth}. It is all the more
+necessary to stress this, since fossil remains of this view still
+occur to this very day in the productions turned out by Professor
+Nielsen's present followers, so that these may see that they must
+make some haste if they mean to keep up, and not, like their
+predecessors, be left astern and lost along the way.
+
+The book can be seen from two sides: it means to tear down and it
+means to build up. It means to \emph{tear down} theology. What is
+% --- p. 86 ---
+\opage{86}theology? It is a discipline that stands in the same relation to
+philosophy as alchemy to scientific chemistry and astrology to
+astronomy. It has outlived its kindred spirits; it is one of the many
+relics of the Middle Ages that are slowly crumbling away in modern
+society. A fight against this dying thing has lost all interest; it is
+a spectacle unworthy of the educated man, the working man, the
+striving man, from which he would far rather turn his eyes away. How,
+then, can Professor Nielsen go on regarding theology as a fit object
+for an attack with sharp weapons? Who attacks a defenseless old woman
+who can scarcely hold herself upright on her crutches? Who leaps with
+drawn blade aboard a sinking hulk that is slowly going to the bottom
+with every man and mouse aboard?
+
+I know of no other answer than this: whom one loves, one chastens.
+Professor Nielsen answers Bishop Martensen as he answered Pastor
+Zeuthen; he has always had a little to spare --- at least a little
+printer's ink to spare --- for the ordained, say what he will. % `havt en Smule ... tilovers for': both `had a soft spot for' and `had a little left over for'; the parenthesis plays on the second sense.
+The only thing that might cause surprise is that Professor Nielsen, in
+his zeal as an educator, has forgotten the fine old schoolmaster's
+rule: If I were not angry, you should have a thrashing; for Professor
+Nielsen is angry, and he lays on all the same, and so he lays on
+wildly and now and then, out of sheer zeal, raps himself over the
+knuckles.
+
+A reader who has taken in the whole impression of the critical
+research of the modern age cannot but regret that Professor Nielsen,
+under the influence of a vehemence younger than his years, has geology
+assign Paradise its place in the ``nursery'' and the botanist send its
+trees ``to hell''; for such expressions will unpleasantly remind him
+of the time when science was polemical because it was not yet able to
+be critical, of the time when people mocked tradition and miracle
+instead of understanding and explaining the psychological origin and
+the historical development of miracle and tradition. That time, you
+see, is past, and it cannot be Professor Nielsen's intention to call it
+back. For that he has, on the one hand, far too thorough a cultivation,
+and on the other, far too thorough a goodwill toward this very
+theology from which he set out and toward which he still feels himself
+irresistibly drawn. This is a point one must always hold fast to, or
+one will feel bewildered at every moment. There are, e.g., passages in
+the Professor's book by which one might otherwise
+% --- p. 87 ---
+\opage{87}let oneself be misled into the mistaken assumption that the
+Professor's last word actually coincided with the freethinker's first;
+so, e.g., the excellently witty piece that ends with the words: ``They
+(the theologians) recognized that they could no longer go on talking
+loudly about the supernatural facts of history, since the supernatural
+facts were presumably not historical, and the historical ones not
+supernatural''; but no one must let himself be bewildered by such
+things. When Professor Nielsen here appeals to experience and to
+``sound common sense'', which, as the serpent, gives theology to eat of
+the tree of knowledge, he does not mean it seriously; his own
+standpoint is not that of ``sound common sense'' but a quite different
+one, which shall now be demonstrated as we pass on to what Professor
+Nielsen means to \emph{build up}.
+
+``Sound common sense'' sees, e.g., that there is exactly as much and
+exactly as little reason to assume demons as to assume centaurs. A
+scientific critic explains how belief in demons arose among the peoples
+of antiquity. Professor Nielsen, finally, goes about it thus: he
+% Danish prints a stray comma after `sig' (`bærer sig, saaledes ad');
+% rendered as the sense, without it.
+begins by ignoring the objection of sound common sense; next he grants
+the critic that he is right ``from the standpoint of science''; but then
+he himself adds to the latter's critique of knowledge a ``critique of
+faith'', which obeys laws of its own and has nothing to do with the
+critique of knowledge, is not crossed by it, does not collide with it
+either in war or in peace, because any collision is impossible, since
+the two critiques each obey an absolutely different principle. The
+critique of knowledge has abolished demons, but at the same time
+explained them; the critique of faith keeps them wherever their
+existence ``makes visible the fundamental miracle of faith''; that the
+whole question of demons is, for sound common sense, devoid of all
+interest and settled in advance does not come into consideration. How,
+then, do matters stand when the critique of faith comes to learn how
+loftily the critique of knowledge, which keeps its papers in another
+drawer of the brain, treats the critique of faith's own demons? The
+secret is: it does not come to learn it. How so? ``For the moment the
+critique of faith comes to learn it, it is no longer critique of
+faith, but critique of knowledge.'' It is impossible that the river
+Tajo can flow into Portugal, for the very moment it flows into
+Portugal it is no longer called Tajo, but Tejo.
+
+The critique of faith and the critique of knowledge, then, can as
+little hinder or
+% --- p. 88 ---
+\opage{88}limit each other as faith and knowledge themselves, which
+Professor Nielsen, calmly unconcerned about all objections, continues
+to describe as ``absolutely heterogeneous principles''. The further
+development of this is as follows, and most peculiar:
+
+{\small
+Consciousness is halved by relatively homogeneous factors, but not by
+absolutely heterogeneous ones. When a consciousness is halved in thought, it
+gets half a thought instead of a whole one: what is lacking is thought; if it
+is halved in will, it gets half a will instead of a whole one: what is lacking
+is will. On the other hand, one cannot in the stricter sense say that
+consciousness is halved by thought and will, such that half of the thought
+becomes will, half of the will thought [can one say this nonsense in any
+sense whatever?], for thought can be transformed into will, and will into
+thought, only in a highly figurative sense. [It is natural enough that the
+figurative expression --- transformation --- must be taken in a figurative
+and not in a literal sense]. If it is established, then, that faith can in no
+way [a moment ago it was only: not in the literal sense] be transformed into
+knowledge, or knowledge into faith, then it is also established that faith
+can as little be halved by knowledge as knowledge by faith. If a
+consciousness cannot be halved by friendship and mathematics, by love and
+chemistry, still less can it be halved by ethics and astronomy, by religion
+and geology.\par}
+
+It is a drawback that precisely what was to be proved has here been
+presupposed. That a true morality and a true religiosity cannot collide
+with a true scientific spirit goes without saying. But the question is
+precisely which morality and which religiosity is the true one, a
+positive one or a free one? The question is, e.g., whether the ancient
+religious representations of a small Semitic tribe, often enough at odds
+with itself, from the most diverse periods --- representations that are
+at every point interwoven with, and borne up by, its whole world view,
+its ideas of the origin of the earth, its superstition, its countless
+prejudices --- whether these do or do not contradict our geology and our
+astronomy. They contradict them, in the same way as in countless cases
+they contradict our morality and our religious feeling. But if Professor
+Nielsen by no means succeeds in keeping the two hemispheres apart, he
+succeeds far less still, in the end, in uniting them. For however sharp
+the separation is claimed to be, a union must, after all, be
+conceivable: ``The two absolutely heterogeneous principles meet, part,
+and \emph{in a way} enter into negotiation with each other in the medium
+of \emph{meaning}''. Meaning --- that is the saving category; on the % `Mening': meaning, sense, opinion; rendered `meaning' throughout the piece (also in the Genesis quotation, p. 89, whose `i den Mening' is Nielsen's illustration of it).
+neutral ground of meaning the two absolutely
+% --- p. 89 ---
+\opage{89}heterogeneous ones negotiate with each other. The only party that
+could have anything against such a negotiation would be the Danish
+language; for it is indeed the philosophers' prerogative to teach
+language some sense; but the two heterogeneous ones are related, after
+all, as love and mathematics are; what is the name of the medium in
+which love and mathematics conduct their negotiations?
+
+Professor Nielsen elucidates by an example: ``What is told in the first
+book of Moses about Paradise, about the tree of life, the tree of
+knowledge, etc., is certainly told with the meaning that all of it
+belongs to external reality, that the tree of life and the tree of
+knowledge have their roots in the sensuous soil of the garden just as
+surely as the vine or the fig tree. But in this meaning we cannot
+possibly take it \emph{at the present stage of cultural consciousness}?''
+
+Did we read that right? Cultural consciousness? Is Professor Nielsen
+forgetting himself and his own assertions? What business has cultural
+consciousness here, pray? Is the critique of faith to be grounded on
+cultural consciousness, and faith nevertheless be absolutely
+heterogeneous with it, not to be determined and not to be limited from
+it? What a web of brain-spun fancy, what a muddle, out of which there
+is no way out! Moral: do not give cultural consciousness your little
+finger, or it will quickly take the whole hand.
+
+``Those images,'' says Professor Nielsen, ``have not outer but inner
+reality.'' That this is not new is known to everyone who knows anything
+of the history of theology; that it is unintelligible is found by
+everyone who tries to think it through. What is inner reality, if it
+is to be different from poetic reality? --- ``The legend of Paradise,''
+says Professor Nielsen, ``cannot possibly be myth, as surely as it
+reveals to the eye of faith, in pure, clear strokes, one of the deepest
+mysteries of the will.'' Does the myth of Prometheus perhaps not do the
+same? And is this a distinguishing mark? When the legend is here denied
+outward reality, it is a matter of indifference whether it is called
+myth or not. That Paradise has a poetic reality which the ``Jura'' and
+``graywacke'' do not have goes without saying and is denied by no one.
+
+To the psychological union in the clime of \emph{meaning} there now
+corresponds the essential (ontological) one in that of \emph{mystery}. The
+development of this point is given in a language that regrettably recalls
+the most unintelligible dialect of the Hegelian age.
+
+{\small
+% --- p. 90 ---
+\opage{90}Faith and knowledge can be united only in an absolute mystery. The
+absolute mystery is at once exclusive boundary and negative middle. As
+exclusive boundary the mystery sets a separation between faith and knowledge
+as between two regions. When the believer looks toward the center of faith,
+and the knower toward the center of knowledge, what is true in faith becomes
+untrue in knowledge, and vice versa. As negative middle, on the other hand,
+the mystery unites the separated extremes and shows itself as the medium of
+passage between the regions.
+% Danish prints a comma after `Gennemgangsmedium' before capital `Idet';
+% rendered as the sense, a full stop.
+When the believer and the knower both at the same time direct their gaze
+toward the mystery, the strife is settled and the extremes are reconciled.
+Seen from the standpoint of knowledge, the miracle is now possible [yes, what
+can a punctilious drill not achieve, where one looks to the right and to the
+left at the same time!]. For while it is indeed impossible that a breach
+should ever occur in the eternal laws of nature, which are identical with the
+necessity of reason, yet with the immutability of the laws --- when the
+intermediate determinations hidden in the mystery are understood --- the
+manifestation of the power of will, of wisdom and of love, in which the
+believer sees (!) the miracle, can very well be thought to subsist. Seen from
+the standpoint of faith, the necessity of reason, with the immutable laws of
+nature, can be united with the presupposition of the miracle. For while it is
+indeed impossible that necessity should be able to hamper freedom, and the
+laws of nature limit God's will, yet, when the intermediate determinations
+hidden in the mystery are understood, it can indeed be thought that the laws
+of nature, far from being broken, are on the contrary fulfilled in the very
+highest sense every time a divine act of will is accomplished.\par}
+
+This was good theology in the old days. Philosophical hints of
+something of the sort are found, e.g., in the German clergyman
+Bockshammer, who is cited by J. L. Heiberg in \emph{Prosaiske Skrifter} I, 110.
+He concludes with a flowing torrent of words that contains the
+self-same assertion. For more than an unproved and unprovable assertion
+this is not, after all. Let us choose a miracle from the New Testament,
+e.g., the scorching of the fig tree by the divine word of power that
+punishes it for not bearing fruit. One need not, after all, be a thinker
+to see that a miracle like this --- whose psychological origin,
+incidentally, seems to be the misunderstanding of a parable as though it
+were historical reality --- that such a miracle cannot be brought into
+agreement with the laws of nature either in a plain and simple sense or
+in any higher or ``very highest'' sense. That Most Highest Sense will
+% `Allerhøjstsamme': the form in which Danish official style refers to the
+% King (`His Most High Self'); the pun on `allerhøjeste' can only be hinted.
+only waste its strength here.
+
+The duel between Bishop Martensen and Professor Nielsen, these two
+so practiced and accomplished champions, makes --- be it said with
+sincere regret --- the same impression as a practice bout between two
+equally poor fencers: neither of them can use his cutlass; neither of
+them parries the opponent's blows; but
+% --- p. 91 ---
+\opage{91}for both of them the only point is who can deal the other the
+quickest and heaviest blows. They strike like the old Norse berserkers,
+with their shields on their backs, and one is given no occasion to
+delight in great art or dexterity on either side. But if there is not
+much art here, there is all the more politics.
+
+It was good politics on the part of His Right Reverence, Bishop
+Martensen, to leave Professor Nielsen's attack on his Dogmatics
+unanswered; for dogmatics fare nowadays like other fortresses that a
+hundred years ago seemed all but impregnable: they can no longer be
+defended; their ramparts are going downhill, their moats are gutters,
+and if the fortress will not surrender its keys, it does not matter,
+since there are no gates.
+
+But just as surely it was good politics on the part of the philosophical
+champion to take the offensive and answer Bishop Martensen's polite
+``Good day'' with a terrible ``Axe-handle''. Professor Nielsen's % `Goddag --- Økseskaft': the Danish byword for an answer that has nothing to do with what was said (`Goddag Mand! --- Økseskaft!').
+main guard is no good for defense. Professor Nielsen does have one man
+on guard, but he weeps --- with the one eye and laughs with the other;
+his right hand knows not what his left is doing. He advances on two
+heterogeneous legs, a leg of flesh and a leg of wood, on two absolutely
+split legs, cleft like one of Uffe's Saxons. His head is a Janus head: % `Uffes Saksere': Saxo's Uffe the Meek, who fought two Saxon champions alone at the Eider.  `Kødben' (leg of flesh) is also `meat bone'.
+with the one mouth he proclaims the higher fulfillment of the law of
+nature through the miracle; with his other throat he gives the honor
+to cultural consciousness and sings a well-meant hymn of praise to
+David Strauss. This last is perhaps the oddest among many odd features
+of this feud. The congregation is admonished by Professor Nielsen, far
+from taking offense at Strauss's audacity, to appreciate the help that
+this man, by his ``consistent and resolute'' procedure, has directly
+rendered faith, in that he has founded the critique of knowledge to
+which Professor Nielsen, by his projected critique of faith, means to
+supply the necessary counterpart. Bishop Martensen must take a scolding
+for his orthodox condemnation of Strauss. ``If Strauss is to be
+excommunicated, then there are many who must be excommunicated'' [yes,
+% The Danish never closes the quotation opened at `‹Skal Strauss';
+% the English closes it before the bracket.
+why not, that is after all a good Christian doctrine!]; ``if Strauss is
+an Antichrist, then there are many Antichrists in the camp'' [yes, what
+orthodox man would ever doubt it!] The Janus head turns to both sides;
+it stands like Don Juan between the peasant girls and has fair words for
+% --- p. 92 ---
+\opage{92}both parties. The Grundtvigians get their share of them. \emph{Dansk
+Kirketidende} receives public praise; Mr. N. Lindberg is commended ---
+for what, would you think? --- for \emph{logical-categorical certainty}.
+
+The Fool says in \emph{Aladdin}: ``I am not fooling, it stands, upon my faith,
+% `Tro' is set in the Danish with a wrong-fount o; no bearing on the English.
+in the letter.''
+
+If anyone will take the trouble to look up the article in
+question, he will, it is said, be able to find in its notes interesting
+samples of the certainty that Professor Nielsen singles out for praise,
+and so be able to convince himself with his own eyes, not of the way in
+which a church paper takes part in a scientific polemic, for who looks
+for science in church papers, but of what, in Denmark, a philosopher
+can praise. Professor Nielsen does not forget his Pappenheimers; his
+Pappenheimers will not forget him either.
+% `Pappenheimere': Schiller, Wallensteins Tod III.15, ``Daran erkenn' ich
+% meine Pappenheimer'' -- one's own people, whom one knows.
+\piecerule
+
+% --- p. 93 ---
+\piecehead{Nielsen and Grundtvig}{\opage{93}\emph{Gb. (Rudolf Schmidt):}\\
+\emph{R. Nielsens Filosofi og den Grundtvigske Anskuelse.}\\[2pt]{\normalsize[R. Nielsen's Philosophy and the Grundtvigian View]}\\[2pt](1867).}
+Under the signature \emph{Gb.} an author who stands equally close to
+Grundtvig and to Nielsen has published a book of 124 pages, entitled
+\emph{R. Nielsens Filosofi og den Grundtvigske Anskuelse}, a book whose
+form bears witness to much stylistic maturity and cultivation. Its
+standpoint is this: to side with Nielsen unconditionally, both where he
+attacks and where he is the object of attack; to assert the genuineness
+of Grundtvig's genius and the importance of his person and his doctrine,
+while at the same time critically setting apart some of the great deal
+that is loose and repellent and bound up with Grundtvig's whole
+activity; and finally, at the end, as well as it can be done, to make
+Nielsen and Grundtvig rhyme. The worth of the book's contents differs
+greatly from one part to another. It can be stated most briefly and
+pithily thus: the larger part, the section on Grundtvig, which is
+written with a respectable striving for impartiality and rests on an
+uncommonly wide reading in Danish literature, contains much that is true
+and to the point; but the two short sections on Nielsen, which begin and
+end the book, are downright wretched. They are not merely empty of
+thought but written in an impertinent and indecent manner. For it is
+impertinence to meddle in a serious dispute in order to deliver, with
+lofty condescension, one's humble opinion as though it were a verdict of
+the Supreme Court, when one is unable to furnish a single contribution to
+the dispute or to refute a single one of the arguments
+% --- p. 94 ---
+\opage{94}one brushes aside, and contents oneself instead with the empty
+phrase that the attackers have shown themselves to be ``without the power
+of appropriation in the face of the new.''
+
+Everything that has so far been brought forward against the new doctrine
+is disposed of with the talk that, if one acknowledges Nielsen's uncommon
+gifts, one cannot possibly credit him with such errors and contradictions
+as are laid at his door. A greater perversity than the one underlying
+this answer, repeated often enough, cannot be conceived. Suppose a man is
+to go through a difficult set of accounts. This examination is regarded
+as a formality! for those around him hold it as an article of faith that
+these accounts must be correct; so they were always found by the earlier
+auditors, and if any of these raised difficulties, the matter was hushed
+up. The man would come into conflict with his own trust in the
+authorities and fall out with all respectable people if he did not
+arrive at the given total; and so, happily, he does make it tally.
+Unfortunately, someone now discovers that this happy outcome is owed to
+the circumstance that at one place in the accounts 2 and 2 have by
+mistake been added up to 5. He points this out, and receives, one after
+the other, four answers: \emph{a}) This objection rests on a
+misunderstanding. \emph{b}) You must surely be able to tell yourself that
+it is impossible that a master of figures like this one \emph{could}
+make such a mistake. \emph{c}) What you say is abominable and
+outrageous; it undermines all confidence in the established order and
+the whole childlike trust in the authorities without which everything
+falls apart. \emph{d}) What a threadbare and hackneyed objection! Truly a
+most novel and remarkable discovery, that 2 and 2 make 4!
+
+\emph{a}) The objections rest on misunderstanding. The answer is simple.
+How long do you think people will put up with this evasion? If we
+misunderstand, then open your mouths and speak plainly, so that one can
+understand you, instead of talking as if you had porridge in your
+mouths! It has come to this: it has now become the fashion in
+philosophy, as it has long been in politics, that the highest art of
+every pronouncement is to conceal where one is really heading, to
+express oneself in riddles, to say yes and no like a diplomatic dispatch
+or a speech by Napoleon III.
+
+\emph{b}) Can it be that Professor Nielsen does not know that 2 and 2 make 4?
+
+That does not concern us and is a matter of complete indifference to us;
+but we point to the fact that here, on this particular point, he
+% --- p. 95 ---
+\opage{95}has let five pass for even. % `har ladet 5 være lige': the idiom `lade fem være lige' (let five be even) means to let a thing slide; Brandes takes it literally, of the sum. The pun is kept as far as the English allows.
+Can anything more ridiculous be conceived than that, in the face of
+the specific demonstration, people go on appealing to the man's
+abilities? Contradictions have been demonstrated point by point in
+Professor Nielsen's doctrine. There is no weapon against logic but
+logic. But we ask logically, and you answer us lyrically. It is as if
+the famous Bog Wife had become the Valkyrie of the whole camp. % `Mosekonen': in Danish folklore the mist rising over the marshes is the bog wife brewing; i.e. the camp's war-maiden is a maker of fog.
+People come forward with presentations that go by leaps, with fanciful
+word-paintings, parables, shadow pictures, everything except proof,
+refutation, logic; for of these there is not even a shadow here.
+
+\emph{c}) The objections are out to take the life of the ideals (see the
+review of this book in \emph{Fædrelandet}); with dry common sense they
+would rob faith of its ground and enthusiasm of its source. We answer:
+% `til Hekkenfeldt': Hekkenfeldt (Mount Hekla) is the Danish folk
+%   euphemism for hell, `to blazes'; kept, since the opponent quotes the
+%   phrase back at Brandes (p. 98).
+A fig for such ideals, and to Hekkenfeldt with an enthusiasm that creeps
+into hiding in the bolt-hole of \emph{existence} when science challenges it
+to come out into the sunlight of the spirit. Keep to the facts and refute
+our arguments! Let those big words, the ideals, enthusiasm, which are
+posted up like placards and impress the mob, go, and set proof against
+proof. Do not boast, then, of your exact method, which is supposed to
+make your chain of inferences as reliable as the mathematical one, when
+everything you say has a merely belletristic and in no way whatever a
+scientific character. The day of belletristic truths is over. Woe to him
+who cannot bear the naked truth; woe to him who sees the task of
+philosophy in pasting the fig leaf on it!
+
+\emph{d}) What is brought forward against Professor Nielsen is old. Yes,
+it is old that a thinker must not contradict himself; yes, the truth is
+old, old as everything eternal, but what a complaint to come out with! If
+there is anything paltry in the youth of Denmark, it is its inclination
+to inferences like these: ``This is new, therefore true; this is new,
+therefore ours; this is new, therefore that around which we must
+throng.'' The novelty-mongers do not hear the call of science: ``You
+% PRINTER'S ERROR: the Danish closes the quotation after `stimle' with a
+%   turned (opening) guillemet; the English closes it.
+fools! at least test this new thing first!'' ``No,'' comes the answer,
+``let us hurry, let us hasten to get deep into the crush and push aside
+anyone who goes against the current!'' And does one really think that
+anyone will be deterred by that? Does one really think that anyone who,
+in questions like these, so important, so far-reaching, so agonizing,
+alone with himself but face to face with the spirit of science, has
+wrested from it a conviction as living and as powerful as the spirit
+itself, cares much about these currents of the age on the
+% --- p. 96 ---
+\opage{96}surface, or about those who feel safe and strong only when, in
+the midst of the crush where no one can move arm or leg, they are borne
+along without a will of their own in the wake of some admired figure? We
+have no claque in our theaters; are we now to get a claque in our
+literature?
+
+No, it is impossible to give up the hope that the young people of
+Denmark, for all their indolence, will try to arrive at an independent
+judgment. Let them feel their way forward; let them resolve, for once,
+to want to see with their own eyes! Fortunately we are not, after all,
+intellectually bound to the soil; there are ways out for anyone who feels
+% `aandeligt stavnsbundne': bound to the soil like the Danish peasant under
+%   the adscription (Stavnsbaand), abolished in 1788.
+that in one branch of our literature we lag behind the rest of Europe.
+Let the young study foreign thinkers, and it would truly be strange if
+they did not discover that these declamations are not refutations; let
+them study the more recent theism, e.g., and they will see the connection
+between Professor Nielsen's endeavors and the European reaction against
+what is taken to be a one-sided pantheism; let them only acquire a
+horizon, a wide horizon, and they will discover how far from unique
+Professor Nielsen's ``immortal'' treatment of the problem of subjectivity
+is, the treatment that the pamphlet sees in connection with Old Norse
+mythology.
+
+What is at work here in leading many astray is the following reasoning:
+When everyone must concede that the religious problems have been treated
+in our own literature (first and last by Kierkegaard) with a range and a
+depth hardly matched, perhaps, in any European world of books, how can
+anyone believe that in any other we might find greater clarity about
+these questions than here at home! This reasoning is very seductive, but
+for all its apparent force it is quite hollow. For it is by no means
+always the case that the most violent crisis brings about the best and
+truest result. No one can deny that, set beside the French Revolution of
+1789 and the French revolutions that followed it, those gigantic
+exertions to win freedom by fighting for it, our revolution of 1848 ---
+the long procession of respectable men who strolled arm in arm to
+Christiansborg --- though not lacking dignity in itself, is pitiful,
+meek, and of no account. And yet --- where is there more freedom now, in
+France or here? But in the religio-philosophical sphere the relation is
+% `omvendt forholder det sig': the case is reversed in that the violent
+%   crises are now Denmark's and the lesser ones France's; the moral is
+%   the same as for politics.
+reversed. How slight France's religious crises in this century are
+beside ours! And yet --- where is there more
+% --- p. 97 ---
+\opage{97}truth, in French religio-philosophical criticism or in our own
+productions in a similar direction? Anyone who has studied French
+literature even to some extent will hardly doubt to whom in this field he
+must hand the palm. For Kierkegaard is indeed --- and there can be no
+question here of anyone but him --- an immense spirit, one of those who
+are born scarcely once in a century; but Kierkegaard is the Tycho Brahe
+of our philosophy. He is great as Tycho Brahe was great, but like the
+astronomer he does not dare, in his blind reverence for authority, to
+place the center of our system in its sun. In astronomy this sun is a
+body; in philosophy it is called reason. It seems a tragic fate attached
+to Denmark that its greatest discoverers should be mistaken about what is
+central. But just as posterity was not prevented by Tycho Brahe's errors
+from turning his work to account, just so little does Kierkegaard fall
+along with the positive element in morality and religion. That element
+can be separated from his presentation, and infinite treasures will still
+remain. Those for whom this is a closed book, as it is for Professor R.
+Nielsen or for Mr.~\emph{Gb.}, are fighting only against progress, and
+striving, though in vain, to keep the true new from breaking its way
+through. But this new is irresistible; for it bears reason and freedom on
+its shield.
+\piecerule
+
+% --- p. 98 ---
+\piecehead{A Reply}{\opage{98}\emph{A Reply}\\[2pt](1867)}
+The author of the pamphlet \emph{R. Nielsens Filosofi og den Grundtvigske
+Anskuelse} has placed in yesterday's \emph{Berlingske Tidende} a rejoinder
+to my attack on his book, which, without bringing forward anything
+whatever against the four points I raised, ends with the words that
+``those who really believe that there is a cause at stake here will not
+fail to see that he (i.e.\ I), stung by the goad of self-importance,
+merely dances a St.\ Vitus's dance around the great tasks.'' Such things
+it is enough to quote; there is no need to answer them.
+
+As regards the accusations and questions that my honored opponent raises
+besides, it seems to me, however, that I owe an answer, not to him, but
+to the readers of \emph{Dagbladet}. He reproaches me with having pointed
+to the French religio-philosophical criticism, ``which newspaper readers
+do not know.'' I do not see what harm there would be in that, even if it
+were so; but of course it is not so. In our day newspaper readers, as is
+well known, do not form a caste of their own; practically all educated
+people read newspapers. My honored opponent is himself an example. No
+doubt Mr.~Gb. is a most cultivated man (see, e.g., the sample of his
+% The Danish prints `Hr. Gb en' without the stop after `Gb'; the English
+%   sets `Mr. Gb.' as elsewhere in the piece.
+style above), but why should \emph{Dagbladet} not be so fortunate as to
+count among its readers several men just as cultivated, men who among
+other authors know Renan, whom Mr.~Gb., as we know, knows so well?
+
+My opponent next accuses me of having consigned to Hekkenfeldt religious
+ideas ``that have borne mankind up through eighteen centuries.'' That
+would undeniably be an ugly trait. But is it really quite certain that I
+% --- p. 99 ---
+\opage{99}have acted so? Is it certain that the ideas I would have
+banished have for eighteen centuries \emph{borne human beings up?} (and
+that, surely, is far less essential than whether they are fit to bear
+mankind up today). The feuilleton that happened the other day to
+accompany my article, the fragment on the witch trials of the Middle
+% `Føljetonen': the literary section printed below the line in the
+%   newspaper (Dagbladet), which that day carried the piece on witch trials.
+Ages, which were engendered precisely by the supernatural ideas that I
+dispute, makes a good contribution to answering this question. In that
+age, when the supernatural really was alive in human consciousness, the
+views that nowadays people are content to expose to hatred were punished
+with the heretic's stake. --- A few words I could say in defense of the
+likeness between religious and political crises I shall spare, since my
+opponent has so puffed himself up that he \emph{forbids} me \emph{to speak}
+of it.
+
+There remains, then, only one point, the question repeated again and
+again, of whose crushing force people are so convinced: How can I
+acknowledge Kierkegaard's greatness and yet be convinced that he was
+mistaken about what is central? I could answer this question as I have
+answered it before, with the words that only very dependent people
+understand by admiring acknowledgment nothing other than simple adherence
+through thick and thin; but since the question is brought up anew, I add
+the following brief account of how I have come to this result: I
+discovered fairly early that Kierkegaard was not infallible. I
+discovered, e.g., and I suppose many have had the same experience, that
+Kierkegaard was an adherent of political absolutism in Denmark; that in
+the political sphere, with a remarkable narrowness in acknowledging the
+inherited merely because it is inherited, he misunderstood his time and
+fought against development and progress. I saw that his political
+prophecies, of which he himself is so proud, did not come true at all. I
+was thus led to observe that he was an absolutist in the religious sphere
+as well: that to break with tradition, to desert one's parents', to abandon
+a father's way of seeing was to him not merely a horror such as is surely
+felt, though in differing degrees, by everyone who is compelled
+% PRINTER'S ERROR: the Danish prints `fil at se' for `til at se'; rendered
+%   as the sense.
+to look filial piety in the face, and thus not merely a dread that it is
+man's task to overcome, but a \emph{spiritual} horror of the same kind as
+% PRINTER'S ERROR: the Danish prints `at samme Art' for `af samme Art';
+%   rendered as the sense.
+the one that nature implants to keep man from committing a crime against
+nature. I believed, and
+% --- p. 100 ---
+\opage{100}believe, that he is wrong in this; I hold nothing sacred merely
+because it has been handed down; for being handed down makes a thing
+neither rational nor true. I regard it as beyond doubt that on this point
+one can learn many times more from the religio-philosophical writers of
+Germany and France than from him.
+
+It is well known that Kierkegaard's works are distinguished by a rare
+consistency and unity. But it is, if perhaps not generally acknowledged,
+hardly the less certain for that, that the attempt he made at an advanced
+stage of his career as an author to demonstrate the inner coherence of
+all his writings is, on the one hand, very forced, and on the other
+cannot rule out that these works keep their value in and for themselves,
+without regard to their place in the system of the writings. Is
+Kierkegaard on this point anything other than what he would least of all
+wish to be, and what he hated most of all --- a systematizer who laces the
+free fullness of life into the stays of a preconceived, or rather in part
+an afterwards-conceived, fundamental thought? He himself is infected by
+the systematic mania that he combated in his age. But even if it were
+otherwise, even if everything Kierkegaard has written really did aim,
+from first to last, at presenting the specifically Christian in the form
+in which he conceived it, would anyone of another mind therefore be
+forbidden to take delight in, and make his own, the numerous productions
+of his that have nothing to do with the paradoxical religiosity? Seen
+from an alien standpoint, is the essay on Don Juan any less inspired,
+\emph{In vino veritas} any less brilliant, the essays on marriage any less
+captivating, or the presentation of non-Christian religiosity (in
+\emph{Afsluttende Efterskrift}) any less significant and less instructive?
+What an absurdity!
+
+But there is no need at all to stop here. In a great many cases where
+Kierkegaard, in his own opinion, presents the paradoxical (as in
+\emph{Kærlighedens Gerninger}), this paradoxical element is not contrary to
+reason at all and can be translated into the language of the human; in
+other cases, e.g.\ in \emph{Sygdommen til Døden}, the positive comes in
+toward the end without being derived. It is impossible, starting from the
+concept of despair as Kierkegaard at the outset lays it down in purely
+human terms, to bring despair, and with it sin, to the high point in
+rationalism's view of the Christian. There is, then, much in this that a % Doubtful construal: `at faa Fortvivlelsen og dermed Synden til at naa Højdepunktet i Rationalismens Betragtning af det Kristelige'.  Rendered literally, keeping the Danish ambiguity: `i Rationalismens Betragtning' may qualify `Højdepunktet' (the height sin reaches in rationalism's view of Christianity) or give Brandes's own standpoint (`in rationalism's view, it is impossible ...'); the first translator read the former, the reviewer the latter.
+% --- p. 101 ---
+\opage{101}worshipper of reason can make his own, and much else that he will
+cut away as an excrescence.
+
+Such a separation of what one regards as the lasting in Kierkegaard from
+what one considers the transient is something that simply cannot be
+avoided at all. If one will have no such separation, then let one take
+the consequences, and with Kierkegaard in his last public stand reject the
+whole life of the church and the whole life of human society, marriage,
+etc., which is surely the last thing the half-Grundtvigians would want.
+% `Halv-Grundtvigianerne': a jab at Gb. and those who, like him, stand
+%   half with Grundtvig and half with Nielsen.
+Let no one insist that he is at one with Kierkegaard on what is central
+when he himself will at any price break off the finest and sharpest point
+in which his whole endeavor culminates. All or nothing, that cry so
+popular in our day, is a watchword that, where acknowledgment is in
+question, signifies nothing other than an attempt on the life of all
+criticism.
+\piecerule
+
+% --- p. 102 ---
+\piecehead{Mr. 99 of Fædrelandet}{\opage{102}\emph{Mr. 99 of ``Fædrelandet'' (Bjørnstjerne Bjørnson)}\\[2pt](1867)}
+The honorable gentleman who has come out against me in
+\emph{Fædrelandet} under the mark 99 possesses, among other engaging
+qualities, an uncommon effrontery. It sounds incredible, but it is
+true, that Mr. 99 has not even read for himself the book over
+which he has taken up arms. The quotations he prints from this
+book are nowhere to be found in the work; what he puts forward
+as the book's words are \emph{sentences of mine}. Likewise:
+what he quotes from \emph{Fædrelandet} is not the paper's words
+but \emph{mine}. He quotes me alternately in small type (as proof
+of how presumptuous I am) and in large type (in the belief that
+he is setting my opponents' words against mine); it seems to me
+that this little fact is in and of itself enough to show what
+kind of opponent he is.
+
+Like his kindred spirit in \emph{Berlingske Tidende}, 99 wisely
+skips over all the main points and throws himself upon the
+quite inessential comparison I made. I said: it is not always
+the most violent crisis that brings about the best and truest
+result; thus, e.g., in the middle of this century we Danes in
+the political sphere, and the French in the religio-philosophical,
+have taken a great step forward without violent crises, and
+conversely the political revolutions in France and the
+theologico-philosophical movements in Denmark have not led
+directly to freedom. This was the comparison, and it seems to me
+% --- p. 103 ---
+\opage{103}that it is clear. One can of course ride it to death, as one
+% `hidse Aanden af den': to overdrive it, as a horse is driven till it
+% drops; construed so.
+can any comparison; but one has no right to want it stretched
+further than I have stretched it; for otherwise it is truly easy
+enough to make it limp: ``In the French Revolution blood was
+shed, in our theological disputes none was shed, therefore
+etc.''; ``Napoleon III put an end to the last revolution, our
+science has no Napoleon III, therefore etc.'' That our political
+movement presupposes the French one, while the French know
+nothing of Kierkegaard --- German literature they know very well
+--- is quite irrelevant to the comparison; but for the rest, this
+conception of the reason for the relation I mentioned is as
+shallow as it could possibly be. The reason is that the Romance
+and the Gotho-Germanic stocks have quite different capacities
+and tasks; the Romance stock, represented by the French,
+conceives and develops morality socially, the Gotho-Germanic
+stock conceives and develops it personally. The former always
+makes the beginning socially; from the latter the reforms
+proceed in the personal sphere; and each appropriates the
+results of the other's efforts. In the direction in which each
+of the stocks is least developed, it receives the results from
+the other without much struggle, whereas the more developed one
+may fight itself so weary that for a time it lies exhausted and
+is unable to draw the consequences it has itself prepared. Mr. 99
+stamps this view as ``nonsense'' and the comparison as an
+``unseemly blunder''. There can
+be so great a gulf between the development of two people that
+the words of the one, however clear and well-founded they may
+be, must necessarily look meaningless to the other.
+
+If any proof were needed of my remark that here people will
+not refute but declaim, my opponents have now supplied it; for
+with what have they answered me, if not with insults, with
+high-handed pronouncements and with appeals to national feeling?
+The one \emph{forbids} me to call Kierkegaard the Tycho Brahe of our
+philosophy --- something, however, in which I intend to persist,
+with or without his permission. The other would have me denied
+all use of pen and ink whatever, at least in the daily papers. O
+noble man! Yes indeed, it would be splendid if one could get rid
+of the restless spirits in this way and sit so snug in one's own
+little soap-cellar! Certainly it is easier to gag than to
+% `Sæbekælder' (soap-cellar): a basement chandler's shop, the image of
+% snug, petty, shut-in comfort; kept literal.
+% --- p. 104 ---
+\opage{104}refute; but alas, those golden days of the Middle Ages, when such
+things went so smoothly and so easily --- they are over, those
+feast-days\fnmark{*)}{An
+interesting parallel, as regards the kinship between the
+astronomical relocation of the center and the philosophical
+relocation of it to revelation, is afforded by the following
+quotation: ``\emph{Pascal} somewhere corrected a sentence of his
+own, took it back and recast it, in order to make the sun turn
+around the earth and not the earth around the sun. This great
+spirit, which on this point still harbored a remnant of
+superstition, shrank back from the truth of Copernicus.''\endgraf
+% Brandes quotes Sainte-Beuve in Danish; translated from his Danish.
+% The source line is kept verbatim, as printed.
+Sainte-Beuve: Causeries du lundi III S. 254.}.
+
+But I come to the most wounding attack that has been directed
+at me. It is this: that ``the man who can feel and speak'' as I
+do ``has no view in common with other Danes, has no Danish
+consciousness''. My view is --- not illogical, but ---
+\emph{un-Danish}. What is it, then, that I have said? That
+Kierkegaard, in my conviction, went wrong in what is central,
+i.e. in what he took to be central, the doctrine of the
+paradox --- not, of course, in what I take to be central in his
+writings, their purely human content. Is it a crime against one's
+fatherland to say this? Has this pronounced ``the death sentence
+on Danish culture''? Have we perhaps acquired a
+% Danish prints `Kultur›?›', with a second closing guillemet after
+% the question mark; the English closes the quotation once.
+philosophical authority into the bargain, alongside the religious
+ones? Kierkegaard must be right. Why? Because he is Danish. And
+Martensen, his opponent? Right, because he is Danish. And
+Grundtvig, his antipode? Right, because he is Danish. And Tycho
+Brahe against Copernicus? Right, because he is Danish. Yes, it is
+well enough known that this last Grundtvigian inference has
+already been drawn, with sublime contempt for all sound reason.
+Down with him who dares to say that ``Danish culture'' is not in
+% Danish prints `af den ‹danske Kultur›' for `at den'; rendered as the
+% sense (`that').
+every respect the best, soundest, truest on earth!
+% `Nittengryn og Nioghalvfemser': the pun on 99 (nioghalvfems) and
+% nitten (nineteen) cannot be carried; Nittengryn kept as a name.
+% `stavnsbunden': bound to the soil, as under the old adscription
+% (Stavnsbånd) of Danish peasants.
+
+``Will \emph{Dagbladet} henceforth keep contributors,'' exclaims
+Mr. 99 --- the expression ``keep'' is itself telling ---
+contributors ``who repeatedly encourage the youth of Denmark to
+come and see with their own eyes, if they do not wish to be
+called intellectually bound to the soil''? Yes, is it not dreadful
+to urge the Danish youth to see with their own eyes? No, let us
+stay in the rut we are in now, let us all together become
+Nittengryns and Ninety-Niners; for what does it not say in the
+Fox's \emph{Morals} in Holberg, Art. 17 and Art. 18: ``\emph{Scruple}
+not in religion;
+% --- p. 105 ---
+\opage{105}but hold thee blindly to the reigning faith so long as it is on
+the throne, for it is most seemly and safest to follow the
+fashion, in this as in dress. --- Trouble thee not to search out
+the truth; but believe what thou art bidden to believe; for the
+first is both dangerous and troublesome, the second, on the
+other hand, safe and comfortable; yea, it often paves the way to
+\emph{canonization}''.
+\piecerule
+
+% --- p. 106 ---
+\piecehead{R. Nielsen's Doctrine of Faith and Knowledge}{\opage{106}\emph{Heegaard: Professor R. Nielsens Lære om}\\
+\emph{Tro og Viden}\\[2pt]{\normalsize[Professor R. Nielsen's Doctrine of Faith and Knowledge]}\\[2pt](1867)}
+There has just appeared \emph{Professor R. Nielsens Lære om Tro og
+Viden}, a
+critical treatise by Dr. \emph{P. S. V. Heegaard}. It makes no
+secret of what it bears on its shield; for on the very cover it
+carries the motto: ``A philosophy that is in open contradiction
+with sound understanding is false.'' The book is a literary
+curiosity, not so much for its content --- for part of what it
+presents has been said before --- as for the surprise it
+occasions, to see \emph{this} view expressed from \emph{this}
+quarter; a pleasant surprise, to be sure, but nonetheless, as
+Nonpareil says in \emph{Recensenten og Dyret}: la surprise
+surprenante des surpris.
+
+For the author, as is well known, was one of Professor
+Nielsen's most faithful; he has been the Professor's pupil,
+adherent and secretary, and now --- alas, how changed! Where now
+is the time when Dr. Heegaard, as the highly trusted disciple,
+lay on the Master's breast and rose only to chastise with severity
+the \emph{rash} attempt of an \emph{immature} youth to tear down a
+certain solidly founded doctrine? Yes, where are the snows of
+% `hvor er den Sne, som faldt ifjor?': the Danish form of Villon's
+% refrain; given in its familiar English form.
+yesteryear? And yet Dr. Heegaard was right then. Was it not
+perhaps \emph{precipitate?} Why should the young people hurry so,
+why come two whole years too early? Could they not easily have
+waited a little and taken Dr. Heegaard along? After all, he only
+wanted a little trip abroad first (see the last page of the
+book). And was it not
+% --- p. 107 ---
+\opage{107}an \emph{immature} undertaking to sound the attack before the
+crack troops had arrived, to charge without waiting for so brave
+and valuable a reinforcement? Yes indeed: for how did it go?
+Alas, miserably; the ranks wavered, the attackers were done for;
+then, at the decisive moment, Dr. Heegaard arrives like Desaix at
+Marengo. Straight out of Professor Nielsen's own camp he breaks
+forth all at once, with flying colors and full band, leaving
+behind nothing but a trumpet, which, it is said, is now vacant.
+He hastens over to the opposing side, he falls upon the
+Professor's flank; it is in deadly earnest, and one comes over
+quite solemn at such a spectacle. Happily, a little jest and fun
+mingles with the solemnity of the procession and the horrors of
+war.
+
+For example: what has offended him and provoked him to deliver
+his bloody critique, says the author, is the claim that Professor
+Nielsen, as a mind of the first rank, has brought about a great
+philosophical breakthrough. This is of course a jest; for
+as is well known it is the author himself who earliest and most
+eagerly set this claim down in writing. Further: it is most
+unfortunate, Dr. Heegaard thinks, that Professor Nielsen, who
+began as a ``pure Hegelian'', later became Hegel's decided
+opponent. Another jest --- namely, a jesting illustration of the
+proverb: One should not speak of rope etc. Finally: consider
+\emph{Grundideernes Logik}, says the author; the best thing would
+be for Professor Nielsen, who is after all unable to complete the
+building, to leave it standing unfinished at once, as an
+``interesting ruin'', and so as a kind of Marble Church. ``Marble
+Church yourself,'' answers Professor Nielsen, calmly pointing to
+the first part of the far-famed \emph{Indledning til den
+rationelle Etik}. Now is this not a merry situation?
+% `Man skal ikke tale om Strikken osv.': the proverb runs on `in the
+% hanged man's house'. The Marble Church (Frederik's Church,
+% Copenhagen) stood as an unfinished ruin from 1770 until the 1870s;
+% Heegaard's own Indledning til den rationelle Etik had reached only
+% its first part.
+
+But joking aside, it is clear enough that precisely the mixed,
+half pathetic, half comic position in which Dr. Heegaard finds
+himself as the author of this book greatly increases the weight
+of his critical pronouncement. With what irresistible power must
+the truth not have shown itself to him, since
+% Danish prints `ham. siden' (a full stop before lower-case `siden');
+% rendered as the sense, one sentence.
+he has made so great a sacrifice to it! His critique accordingly
+bears witness first and foremost to a truth-loving mind, resolved
+no longer to let itself be dazzled, not to be content with
+flourishes or riddles, to lay bare the web of subtleties and
+fallacies on which Professor Nielsen's so-called philosophy of
+religion rests. The critique is as able as it is serious, and as
+sharp as it is dogged
+% --- p. 108 ---
+\opage{108}and merciless. It tears apart the flimsy cobweb of the brain in
+which so many weak souls have been caught like flies, and it is,
+% `Hjernespind' (a figment spun by the brain): `cobweb of the brain'
+% keeps the image of the flies.
+as a whole, so decisive and definite that it would now, after all, seem bound to
+become clear even to the slowest head that Professor Nielsen has
+lost the battle and that his doctrine has gone the way of all
+flesh.
+
+What is new in Dr. Heegaard's treatment of the question is chiefly
+this: that instead of showing how Professor Nielsen's doctrine
+conflicts with the truth in and for itself, he proves it by a
+detour, through a demonstration of how Nielsen, in every branch
+of his science, comes into contradiction \emph{with himself}
+through his reason-defying conception of the relation between
+faith and knowledge. For a critique of this nature Dr. Heegaard,
+with his special qualifications, with his exhaustive knowledge of
+Professor Nielsen's entire system, was admirably equipped, and it
+leaves very little to be desired. Here and there, to be sure,
+there is some unclarity (as, e.g., in the conception of the
+Mystery as a category), and now and then a somewhat perverse
+interpretation of the opponent's words (as where the Mystery is
+equated with the Meaning); but these small defects vanish beside
+the thoroughness and sharpness that otherwise distinguish the
+argument line by line.
+
+The book is \emph{purely} critical; it barely so much as hints at
+a standpoint of its own; the author seems to have only just come
+out of the Nielsenian school without yet having gained a
+foothold himself. It cannot be denied that this circumstance
+gives the book and its style something dry and coldly cerebral;
+there is in the author's personality no primitiveness, none of
+that native originality which, with the sureness of instinct or
+of genius, seizes what presents itself to it as truth; as a
+writer he seems to lack the best thing of all: the productive
+gift which, after the habit of barren natures, he would deny to
+\emph{the age}.
+
+That is why it surprises us that he does not value this capacity
+more highly in his former teacher. For much can be said against
+Professor Nielsen, and much ought to be said against him: he has
+entangled himself in a religio-philosophical maze, and as a
+thinker he is no systematician at all; but he has the luxuriantly
+fertile mind, the eye of genius, the rare originality, which
+are just as essential capacities in a thinker as the strictly
+scientific cultivation of thought and a sharp and reliable
+understanding.
+% --- p. 109 ---
+\opage{109}One misses in Dr. Heegaard's book a proper acknowledgment of
+this. The gratitude which undoubtedly dwells in the author's mind
+toward his so highly gifted teacher could have found fuller
+expression; it ought not to have been squeezed into a brief
+declaration, but ought to have pervaded the whole development and
+made impossible the irritated tone in which his critique speaks
+more than once.
+\piecerule
+
+\end{document}

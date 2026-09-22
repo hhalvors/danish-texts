@@ -17,7 +17,7 @@ The title page is dated 1903 and the Indledning is signed "April 1903."
 
 ## The text
 
-Three transcriptions, each with its own PDF:
+Three transcriptions, each with its own PDF and an English translation beside it:
 
 1. **Indledning and *Striden om Tro og Viden*** (pp. 1–42): the 1903
    Indledning and nine pieces of 1866–67.

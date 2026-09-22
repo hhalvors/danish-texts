@@ -1,0 +1,487 @@
+% ============================================================
+%  Georg Brandes, Samlede Skrifter. Trettende Bind (Supplementbind).
+%  Kjøbenhavn: Gyldendalske Boghandels Forlag (F. Hegel & Søn), 1903.
+%  Review of H. Brøchner, Bidrag til Opfattelsen af Filosofiens historiske Udvikling (1869).
+%  TRANSLATION (English), printed pp. 115--123.
+%  Translated from transcription.tex (Danish) in this directory, whose
+%  header records how its text was established.  Method:
+%  ../../../../TRANSLATION-PLAYBOOK.md.  The volume is Brandes's 1903
+%  revision of pieces first printed 1865--69; the translation follows the
+%  1903 text.
+%
+%  ---- REGISTER ----
+%  Readable modern English.  Brandes's long periods are broken where English
+%  will not carry them, but nothing is softened: the polemic is sarcastic,
+%  and where the Danish is ironic the English is ironic.
+%
+%  ---- TERMINOLOGY ----
+%  Aligned with texts/brandes/dualismen/translation.tex and the Nielsen and
+%  Brøchner translations in this repo, since the pieces belong to the same
+%  controversy:
+%    Tro / Viden          = faith / knowledge   (Tro og Viden = faith and
+%                           knowledge)
+%    Erkendelse           = cognition (NOT "knowledge", reserved for Viden)
+%    Videnskab            = science (Wissenschaft; never "natural science",
+%                           for which Brandes writes Naturvidenskab)
+%    Fagvidenskaberne     = the special sciences
+%    absolut Uensartethed = absolute heterogeneity
+%    Aand / aandelig      = spirit / spiritual;  Fornuft = reason;
+%    Forstand             = understanding;  Begreb = concept
+%    Samvittighed         = conscience;  Selvansvarlighed = self-responsibility
+%    Livsanskuelse        = view of life;  Verdensanskuelse = world view
+%    Dannelse             = cultivation;  Folkeaand = national spirit
+%    Aabenbaring          = revelation;  Under = miracle
+%  Danish work-titles stay in Danish, as Brandes cites them (Grundideernes
+%  Logik, Om den gode Vilje, Fædrelandet, Dagbladet, ...).
+%
+%  ---- CONVENTIONS ----
+%  - Quotation marks: the volume's single guillemets ‹...› -> ``...''.
+%  - Emphasis: italic is the volume's only emphasis device; every \emph{}
+%    span of the transcription is carried over as \emph{}, including the
+%    Latin and other foreign phrases, which stay untranslated.
+%  - Footnotes \fnmark{*)}{...} at the same anchor.
+%  - The ɔ: id-est mark -> "i.e."
+%  - Page markers \opage{N} and "% --- p. N ---" at the same joints as in
+%    transcription.tex, so the two can be read side by side.
+%  - Heads: a book under review keeps its Danish title, with an English
+%    gloss in brackets; Brandes's own titles are translated.  The table of
+%    contents gives the English of the volume's Indhold titles.
+%
+%  ---- HOW THE TRANSLATION WAS CHECKED (2026-09-22) ----
+%  (1) Mechanical audit (tr_audit.py): per printed page, the same \opage
+%  joints, \emph spans, heads, rules and paragraph breaks as
+%  transcription.tex, and an English/Danish word ratio within 0.95--1.60:
+%  9 pages, 0 flagged.  (2) Independent review: a reader who had not
+%  translated these pages read every sentence of the Danish against the
+%  English.  No omission found; 5 corrections applied (the genitive `dens
+%  Ophavs' p. 118; `aandeligt Slægtskab' "intellectual kinship" p. 121;
+%  `bevidst-ubevidst' p. 121; an added "at all" and `paa Forhaand' as "a
+%  priori" p. 122).
+%
+%  ---- DEFECTS: DANISH AS PRINTED, ENGLISH CORRECT ----
+%  The transcription is diplomatic and carries every printer's error; the
+%  translation renders the SENSE and logs the divergence in a % comment at
+%  the site.  The English quotation marks balance throughout.
+% ============================================================
+
+\documentclass[12pt,a4paper,openany]{book}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{libertinus}
+\usepackage{libertinust1math}
+\usepackage{textalpha}
+\usepackage{graphicx}
+\usepackage[english]{babel}
+\usepackage[protrusion=true,expansion=true]{microtype}
+\usepackage{setspace}
+\usepackage[margin=1.2in]{geometry}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\setlength{\headheight}{28pt}
+
+% Footnotes as the 1903 printing sets them: *), set at each site with
+% \fnmark{*)}{...}, exactly as in transcription.tex.
+\renewcommand{\thefootnote}{*)}
+\newcommand{\fnmark}[2]{\renewcommand{\thefootnote}{#1}\footnote{#2}%
+  \renewcommand{\thefootnote}{*)}}
+
+% A piece's head, mirroring transcription.tex.  #1 = the English of the
+% title as the volume's Indhold gives it (table of contents, running head);
+% #2 = the head as printed, translated (a book under review keeps its Danish
+% title, glossed in brackets).  The short rule under every head is printed.
+\newcommand{\piecehead}[2]{\clearpage\phantomsection
+  \addcontentsline{toc}{section}{#1}\markboth{#1}{#1}%
+  \begin{center}\large #2\\[6pt]\rule{2cm}{0.4pt}\end{center}\par\medskip}
+\newcommand{\piecerule}{\par\begin{center}\rule{1.5cm}{0.4pt}\end{center}\par}
+
+\usepackage{hyperref}
+\hypersetup{pdftitle={Brandes, Collected Writings XIII: The Historical Development of Philosophy (1869)}, pdfauthor={Georg Brandes}, hidelinks}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LE,RO]{\thepage}
+\fancyhead[RE]{\textit{Collected Writings XIII (1903)}}
+\fancyhead[LO]{\textit{\leftmark}}
+\setstretch{1.3}
+
+\title{\textbf{The Historical Development of Philosophy (1869)}\\[8pt]\large Georg Brandes, \textit{Samlede Skrifter} [Collected Writings], vol.~XIII (Supplementbind),\\ pp.~115--123}
+\author{}
+\date{Copenhagen: Gyldendal (F.\ Hegel \& Søn), 1903\\[10pt]
+  \small Translated from the Danish}
+
+% ---- original-page markers ----
+% \opage{N} marks where printed page N begins, at the same joint as in
+% transcription.tex (mid-sentence where the page turns mid-sentence).
+\usepackage{marginnote}
+\newcommand{\opage}[1]{\marginnote{\footnotesize\textit{[#1]}}}
+\newcommand{\apage}[1]{\marginnote{\footnotesize\textit{[#1]}}}
+\begin{document}
+\maketitle
+\thispagestyle{empty}
+\tableofcontents
+
+\mainmatter
+
+% --- p. 115 ---
+\piecehead{The Historical Development of Philosophy}{\opage{115}\emph{H. Brøchner: Bidrag til Opfattelsen af Filosofiens}\\
+\emph{historiske Udvikling}\\[2pt]{\normalsize[Contributions to the Understanding of the Historical Development of Philosophy]}\\[2pt](1869)}
+One generally reads with a certain astonishment that the most
+significant men of the past have most often been precisely those
+to whom their contemporaries paid the least heed; one is surprised
+to learn which men were preferred to them, what current of the
+age they had against them, how solitary their position was; and
+one feels assured that in our day such things are over, that our
+age knows how to find merit in its most hidden corner, seize it
+and draw it forth into the light; one flatters oneself with the
+thought that the names which sound most often and most loudly in
+our day will also be the ones on the lips of posterity. Not many
+things in the world are as certain as that in this one is sadly
+mistaken. Names that are now celebrated, persons whom everybody
+now knows, will be a nothing to posterity, and personalities who
+are now known and valued by a small circle will leave behind them
+lasting traces of their life and work. But worse off, after all,
+is he who outlives his fame than he whose fame grows so slowly
+that only when the age has caught up with the personality does it
+stand out in clear outline.
+
+Professor \emph{Brøchner} is a man who belongs to the latter
+class; he is no popular man; he has never taken a single step
+toward popularity, and he is far too far ahead of his surroundings
+to be valued by them; for one values
+% --- p. 116 ---
+\opage{116}only what one understands. He has worked in silence, and had he
+been carried off by illness before he at last, last year, began
+the publication of his writings, scarcely half a score of people
+would have known that the country had lost its most thorough and
+most incisive thinker. Fortunately he has come through his long
+illness, and the publication of his works, awaited with such great
+longing by his few disciples, has been begun.
+
+When one considers the book whose title is given above, one's
+first impression is a painful feeling. Is it not sad that Denmark
+has gradually been reduced to such smallness that the best
+writings can find no readers, can reap no recognition, can yield
+no return and can receive no criticism? Would it not be better,
+both for the man of science himself and for the whole of European
+cultivation, if men like Professor Brøchner and our other
+significant men of science lived in one of the great principal
+countries, were developed through criticism and received stimulus
+from every side? Perhaps it would be better. But it seems to me
+that the lot of such a man has its beauty even under the present
+circumstances. He and his like are the farthest advanced vedettes
+or outposts of the great European culture in the high North; their
+position is the most exposed; for outpost duty is severe and
+dangerous; but precisely thereby their scientific life demands a
+firmness of character, a courage, at certain times a soldier's
+daring, which less uncommon conditions do not develop, and which
+inspires
+% Danish prints `kans Talent' for `hans Talent'; rendered as the sense
+% ("his talent").
+love for the man, adorns and strengthens his talent.
+
+Professor Brøchner's work as a teacher at the University,
+though it has lasted several years, is not yet of such long
+standing that its influence can be clearly traced; but that it is
+significant is certain, and anyone who knows many of the younger
+students will be able to bear witness to it. Professor Brøchner
+is the first philosopher freed from all theology that our
+University has possessed; if G. Sibbern, who has had to pay
+dearly for his liberal-mindedness, is excepted, he is also the
+only living Danish one. He was appointed at a time when
+theological influences of the most varied kinds were powerful here
+at home; he has spoken from his solitary lectern to his not always
+numerous audience, while all around him the spiritually
+reactionary voices that drowned out everything else shouted to one
+another and confused every thinking brain. He has held fast to the
+conviction which from his early youth showed
+% --- p. 117 ---
+\opage{117}itself to him in the clarity of truth; in the strongest
+anti-rational storms he has held the banner of reason fast.
+
+How many of the University's other professors, e.g. of the
+Faculty of Natural Science, have not shared his way of seeing,
+and yet, as is the common custom among learned people, have kept
+quiet in order to avoid opposition and unpleasantness, and have
+always maintained that there was no reason to speak ``so long as
+no one did anything to them, made no encroachment on their
+freedom.'' As if a man were a man of science if the truth did not
+burn him like a live coal on the tongue; as if he who kept silent
+did not leave in the lurch the individual who speaks, and did not
+contribute his share to producing the false appearance that the
+latter, with his way of seeing, stands literally alone, that his
+view of life is a kind of whim, an unreasonable oddity, sprung up
+in a brain twisted by false metaphysics, etc. As I said, Professor
+Brøchner has found no support. But this much is certain: if there
+is anyone among the younger men who study the sciences of the
+spirit who in the course of his university career has received a
+strong impression of the unconditional right of free inquiry, of
+the validity of humanity over against all dogmas, then he surely
+owes this impression to Professor Brøchner; and the reviewer can
+at least testify for himself that scarcely anything, amid the
+bewildering battle of crisscrossing opinions and systems, has been
+such a support to him and such a direction to seek the truth by
+the way of reason as Professor Brøchner's strictly scientific
+inquiry and manfully unbending stance.
+
+The treatise on \emph{Filosofiens historiske Udvikling} is surely
+the most significant of the writings the author has so far
+published. It is a work that will keep its place in our
+literature. It will be an excellent guide for anyone who takes up
+the study of the history of philosophy, and it is so new and
+original, so well thought through, so tested again and again, that
+even in the rich German literature it would attract great notice
+--- what a role, then, does its publication not play in a
+philosophical literature as poor as the Danish!
+
+Professor Brøchner has not wished to give the history of
+philosophy in and for itself. He has set himself a larger goal:
+he has wished to give the philosophy of this history. What does
+that mean? When does history get its philosophy? It gets it when
+it is satisfactorily shown that it is not a sequence of
+accidental, disconnected,
+% --- p. 118 ---
+\opage{118}lawless events, when, rather, it is seen to be governed by law. That
+it must be subject to a lawfulness Brøchner establishes by
+pointing to the essence of its originator, the human race, whose
+unfolding cannot be accidental or planless but must be a real
+development. In this word \emph{development}, the concept that is
+the center of the whole of recent German and English philosophy,
+there lie rolled up all the determinations or laws that a thinking
+consideration of history is able to unfold. If history has a
+coherence, then no historical state of affairs, of any kind that
+can be named, can be without lateral influence in all directions;
+if history has a development, then no historical fact, no matter
+of what kind, can be without after-effect out into the future. If
+one takes a single small domain out of history, literary history
+for example, it stands in connection with all the other branches;
+if one takes out of that in turn a single section such as the
+history of philosophy, one once again artificially isolates a
+single part of history, which forms a whole of its own only
+relatively. But the development that takes place in the great life
+of culture is found also in this particular organ of it, just as,
+conversely, the lawfulness we find here is a guarantee to us that
+arbitrariness cannot reign at any point.
+
+The individuals of whom the race consists no doubt believe
+that they think as their own individual reason prompts them, as
+they can and as they will. In reality, however, they think also,
+and first and foremost, as they \emph{must}. They are derived
+beings; they have their thoughts from themselves as little as
+their life; just as the universal, just as the race \emph{lives}
+in them, so too the human race \emph{thinks} in the individuals.
+The ideas it is preparing appear, first, in an embryonic state in
+individual thinkers, but without these being conscious of it
+themselves, a good while before those ideas, fully developed, take
+their place in science. Second, the race's stage of development at
+the given point in time stands at the same time like a fate over
+the individuals. Although the very ideas whose organs the
+individuals are urge them in many ways to draw further
+consequences from those thoughts, to pursue them out in new,
+future directions, the spirit of the age is nevertheless a power
+that encompasses all the individual's endeavors, holds him back
+without his being conscious of it, and prevents him from pursuing
+a thought beyond the horizon of his age.
+
+% --- p. 119 ---
+\opage{119}Yet the fate that governs the individual's thinking is more
+composite still: not only is he unable to overstep the bounds of
+the contemporary stage of the race, but so long as this stage has
+not yet fully ripened and come to rest in equilibrium about its
+own center, the preceding, abandoned stage still constantly works
+as a power that hampers the individual's striving. This too is a
+law, grounded in the concept of development as well as confirmed
+by historical experience. If, finally, one notices that often
+within one and the same historical age diametrically opposed
+tendencies assert themselves, then the philosopher of history is
+able even here to show us how the standpoint of development on
+which the whole age stands is, without the two opposed camps being
+conscious of it, common to them both, and unites those who regard
+themselves as opponents in principle under the all-governing form
+of development, which, marking friend and foe alike with its
+stamp, shapes itself into two opposed schools as into two
+hemispheres that complete each other.
+
+It is laws of this nature that Professor Brøchner has
+demonstrated in the history of philosophy, and in order to confirm
+the results of his inquiry still further he has, as is his habit,
+followed the procedure of furnishing both proof and counterproof.
+He does not content himself with illustrating his line of thought
+by examples; but once this is done he chooses such cases as
+apparently constitute exceptions to the law, and shows how it
+finds its confirmation in them as well.
+
+Yet the excellence of his new book is not to be sought solely
+in the demonstration of laws, nor in the study of the relation
+between the conscious and the unconscious in human nature, a
+domain which, incidentally, may very nearly be called Professor
+Brøchner's special domain; it rests besides on the exhaustive
+knowledge of the history of philosophy by which the author takes
+so high a rank among the thinking minds of Europe. It is this that
+has made it possible for him to furnish such masterly
+investigations as those of Aristotle and Kant, who are here
+understood in a depth and with a clarity found scarcely anywhere
+else. So clear a line of thought begets a clear and beautiful
+exposition, and there are therefore large parts of this work where
+the author has succeeded, despite the refractory nature of the
+subject, in bending it into harmonious forms, and, despite the
+refractory nature of his pen, now and then in
+% --- p. 120 ---
+% Danish prints a comma before the capital of a new sentence (`Farve,
+% Saaledes'); rendered as the sense, with a full stop.
+\opage{120}letting the mood lend the presentation a gentle, spiritualized
+color. So it is, for example, in the portrayal of Neoplatonism and
+of Giordano Bruno.
+
+This is not the place to discuss the details of the book, even
+if the reviewer were equal to the task, which he is not. I shall,
+on the other hand, raise some objections to the plan of the book
+and to the author's standpoint.
+
+The plan is not altogether even, and the author's way of seeing
+is not the same toward all subjects. He has, of course, the right
+to present the longitudinal coherence of philosophy by itself and
+to see it as a relative whole. But it is also clear that such a
+conception must of necessity become very abstract and rather
+one-sided. What seems to me somewhat unsteady is this, that the
+author sometimes takes the lateral coherence into account and
+sometimes does not. In my view no philosophy can be fully
+understood unless it is seen in its close connection with all the
+other branches of the literature of its time, with the
+contemporary historical events
+% Danish prints a comma before a new sentence (`Folkeaand, Naar');
+% rendered as the sense, with a full stop.
+and with the national spirit of its people. When the subject is
+Greek philosophy, the author is willing to see it in its
+connection with the whole Greek spirit and culture, and to hold
+that only in this way can it be understood. But when the subject
+is modern French, German, English philosophy, it is treated as
+though it led a secluded existence without relation to the
+national spirit, without relation to the country's poetry,
+history, etc. Is it not strange not to introduce the presentation
+of German philosophy at all with a sketch of the gifts and limits
+of the German spirit, but to regard it without further ado as
+all-embracing? It perhaps seems so to Brøchner because he stands
+so near it; but is sheer narrow-mindedness, then, to blame for its
+never having caught on in England? I doubt it in the very highest
+degree. I for my part hold not only that at bottom it is
+unintelligible without a preliminary study of the German national
+character through its poetry, its criticism, its literature as a
+whole, but also that several distinctive traits in its individual
+heroes, as for example the strong assertion of the I, the strong
+enthusiasm for freedom in Fichte, are first seen in their true
+light when one shows Napoleon's despotism over Germany in the
+background.
+
+I admire Brøchner's gift for presenting the main points and the
+main features of a system; but in all philosophers is
+% --- p. 121 ---
+\opage{121}the systematic element what is most essential and most important?
+Is the skeleton everything, the body nothing? Ought one not at
+least to be wary of stamping interesting, heterogeneous
+philosophical phenomena with the same official school-label when
+quite different national spirits have found expression in them?
+% Danish prints `fremstilies' for `fremstilles'; rendered as the sense
+% ("is presented").
+Condillac is usually presented as an appendix to Locke; is there
+not all the same a yawning gulf between their whole manner of
+philosophizing? Is there not, on the score of nationality, a
+still stronger intellectual kinship between Descartes and Condillac
+than there is, with respect to the results of thought, between
+Condillac and Locke? Does the key to Descartes's philosophy not
+lie in the spirit of the whole great French century, and is it
+not connected with the theology, the poetry, the legislation and
+the landscape gardening of the time? In a word, do not the spirit
+of the stock and the national spirit also belong to the fate that
+is mightier than the fate of individuals, and that works on them
+unconsciously and hampers them? It seems to me that this new fate
+deserved a stronger emphasis.
+
+And since we are speaking of fate, has not Brøchner himself his
+own? He belongs to the large group of philosophers who since
+Hegel's time have tried, while retaining everything the great
+master won, to make good his mistakes, avoid his overreachings,
+and immerse themselves in the reality of which he, with his
+contempt for nature, often disdained empirical knowledge. Such
+points as the inquiry into laws and the demonstration of the
+relation between the conscious and the unconscious show how fully
+Brøchner stands at the height of his age and shares in its
+endeavors. Nevertheless, with all this he still stands, after all,
+on Hegel's ground, and I will not deny that I am inclined to % `den Tro': ordinary belief here, not the controversy's `faith'
+believe that a conscious-unconscious after-effect of the % `bevidst-ubevidst': Brandes turns Brøchner's own theme (the conscious and the unconscious) on him
+panlogism he has abandoned sometimes holds him back and sometimes
+misleads him into a priori constructions that scarcely hold water.
+Among these I count his division of philosophy into three main
+epochs, of which two are past, while the third, the philosophy of
+the future, is now about to begin. The task that he sets this
+philosophy of the future the thinkers of the preceding epoch have
+already striven to accomplish, and whether the thinkers who arise
+in the centuries immediately following will be more fortunate than
+those of the present one in avoiding a one-sided emphasis on
+nature or on spirit is a
+% --- p. 122 ---
+\opage{122}question. Whether they will in the end make use of the method
+of inquiry that Brøchner prescribes for them is a still greater
+one.
+
+The dialectical method, which has so far been practiced only in
+a single country and over a short span of time, has not stood the
+test in its original form. It has been abandoned even in Germany,
+and it is not used in any other country. That the dialectical is
+a power in the human spirit and in the universe I am far from
+doubting; but with what adaptation the method can be used Brøchner
+has not shown. All of us who work would like nothing better than
+an excellent tool; but since the highly ingenious one that has so
+far been put into our hands cannot be used, no one can hold it
+against us that for the present we prefer to make use of the coarser
+implements of the special sciences, which at least do not break in
+the hand.
+
+Finally, I see a remnant of Hegel's influence in the way in
+which Brøchner disposes of Oriental philosophy and defines the
+Greek. The Oriental he does not reckon with --- a little
+prematurely, it seems to me. There exist extremely complex, % `en Smule paa Forhaand': in advance, before examination; cf. `Forhaands-Konstruktioner', p. 121
+extraordinarily interesting Indian systems which have not yet been
+translated at all; they are, if the reviewer may take others at
+their word, philosophical in their essence; they have no special
+relation to religion, and they must surely be examined before they
+can be sacrificed to the form of philosophy which, as representing
+``the immediate unity of nature and spirit,'' must necessarily be
+the first.
+
+Brøchner arrives at this last determination by beginning with
+stamping the Greeks as \emph{the people of beauty}. This too seems
+to me an undoubted after-effect of Hegelianism. Such propositions
+are all too true, that is to say, all too abstract to be true. The
+Greeks are no more the people of beauty than the Jews are the
+people of religion, or \emph{Don Juan} the perfect opera, etc. The
+Greeks express a single, definite, historical ideal of beauty, and
+they came by a purely historical route to express it. This ideal
+is only in certain respects the highest that has arisen up to now,
+and it became so for purely historical reasons. The Greeks are the
+inventors and founders of cities that are at the same time states.
+The perilous situation of these cities among only half-subjugated
+tribes, and their life of feuding among themselves, made necessary
+the gymnastic education, which in turn brought it about that the
+perfect gymnast was valued and admired to an unheard-of degree,
+% --- p. 123 ---
+\opage{123}was crowned with wreaths at public festivals, won the right to a
+statue, and became the ideal of beauty. Is not, then, the
+determination that the Greeks are the people of the city-state
+more deep-lying and less unconditional than the determination that
+they are the people of beauty? It seems to me that it is, and it
+seems to me reasonable that from the Greeks' wholly peculiar
+political life one would be able to arrive at many of the
+determinations that are the most decisive for their philosophy.
+
+It is possible that I am wrong in some of these objections. If,
+however, they are not unfounded, the defects which they presumably
+hit nonetheless in no way rule out the great excellence of the
+book. At bottom they only establish the validity of one of the
+author's own laws, namely this: that the older epoch, so long as
+the new one has not yet emerged in its full development, works,
+unconsciously for the individual thinker, to a certain degree as a
+hindrance on his conscious striving to bring forth the philosophy
+of the new age.
+\piecerule
+
+\end{document}
