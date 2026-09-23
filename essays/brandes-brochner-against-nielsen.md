@@ -22,6 +22,8 @@ about:
     work: zeuthen-svar
   - author: nielsen
     work: om-hindringer
+  - author: brandes
+    work: samlede-skrifter-13
 about-authors:
   - nielsen
 abstract: >
@@ -170,7 +172,10 @@ Brandes argues by dilemma, by reductio through restatement, and by turning the
 opponent's words against him. His master premise is the unity of consciousness
 and of being. His authority, strikingly, is Kierkegaard, whom he quotes against
 the disciples (pp. 40, 57, 72) and credits with the whole religious content of
-Nielsen's position (p. 9).
+Nielsen's position (p. 9). That authority belongs to 1866 alone. Within a year
+Brandes is calling Kierkegaard „vor Filosofis Tycho Brahe“ — great as Tycho was
+great, but too reverent of authority to put the sun at the center of the system,
+and in philosophy "this sun is called reason" (*Samlede Skrifter* XIII, p. 97).
 
 An unheaded *Efterskrift* on p. 76 disposes of a piece that reached Brandes too
 late. Nielsen's *Svar til Hr. Dr. phil. Pastor Zeuthen* „indeholder for største
@@ -191,6 +196,64 @@ videnskabelig; Astronomien er ikke andægtig, Andagten ikke videnskabelig“ —
 devotion not scientific" — and so faith and knowledge must, for the sake of a
 higher reconciliation, sue for divorce, while theology, which would wear the
 cloak on both shoulders, must go (p. 11).
+
+## Brandes in the newspapers, 1865–67
+
+*Dualismen* was not Brandes's opening move, and the volume of his collected
+writings that gathers the journalism around it shows how much of the quarrel
+happened in the papers. Six things in it bear on the book.
+
+1. **The quarrel starts before the book.** The first piece, a review of A. C.
+   Larsen's *Samvittighed og Videnskab*, carries the dateline „I December 1865“
+   (XIII, p. 10), and it already finds the contradiction where *Dualismen* will
+   find it: the *Propædeutik* of 1857 lets faith and knowledge, "though
+   absolutely heterogeneous principles," be reconciled in one consciousness
+   (p. 8).
+2. **Høffding put the "because" to Brandes in print.** Answering Høffding's
+   *Philosophie og Theologie*, Brandes writes: „Hr. Høffding lærer mig, at efter
+   Prof. Nielsens Anskuelse kan denne Forsoning ské, ikke *skønt*, men *fordi*
+   disse Principer er absolut uensartede. Dette er temmelig langt fra at være
+   nogen Hemmelighed; men Modsigelsen er ligefuldt betegnet ved mit ‹skønt›“ —
+   "this is rather far from being any secret; but the contradiction is designated
+   all the same by my 'although'" (p. 14). The footnote at *Dualismen* p. 32n
+   is the book's version of an exchange already conducted in public.
+3. **Two arguments that did not reach the book.** If the principles are
+   absolutely heterogeneous, then ranking them — faith highest, science lowest —
+   is as comic as asking which is higher, a poplar-willow or a thunderclap; and
+   absolutely heterogeneous powers „kan hverken føre Krig eller slutte Fred med
+   hinanden“, can neither make war nor make peace, so Nielsen's talk of strife
+   and reconciliation between them is idle (p. 14).
+4. **Nielsen is said to have softened already.** Between 1857 and 1864 the
+   doctrine shifts, and „hermed er i Grunden den absolute Uensartethed af Tro og
+   Viden opgivet, skønt ikke tilbagekaldt“ — "with this the absolute
+   heterogeneity of faith and knowledge is at bottom given up, though not
+   retracted" (p. 15).
+5. **The Paradox must at least be.** Reviewing *Grundideernes Logik*, Brandes
+   turns Nielsen's own refutation of Kant's thing in itself against the Paradox:
+   whoever can say nothing else of it must still say that it *is*, „men Væren er
+   en Fornuftbestemmelse“ — but being is a determination of reason — so the
+   paradoxical takes nothing but predicates determined by reason (pp. 41–42).
+6. **Brandes attacks *Mening* a year before Brøchner.** Reviewing *Om den gode
+   Villie* he goes at the same pages Brøchner will use (R5 above), and adds a
+   catch Brøchner does not make. Nielsen had written that Paradise cannot be
+   taken as outward reality „paa Kulturbevidsthedens nuværende Trin“, at the
+   present stage of cultural consciousness. „Skal Troskritiken grundes paa
+   Kulturbevidstheden, og Troen endda være absolut uensartet med denne, ikke til
+   at bestemme og ikke til at indskrænke ud fra den?“ — is the critique of faith
+   to be grounded on cultural consciousness while faith stays absolutely
+   heterogeneous with it? „Ræk ikke Kulturbevidstheden den lille Finger, ellers
+   tager den hurtigt den hele Haand“ (XIII, p. 89).
+
+The same volume records the disciples changing sides. By late 1867 Heegaard had
+written against Nielsen, and Brandes, who had spent two pieces demolishing his
+*Indledning til den rationelle Etik* for having no standpoint of its own
+(pp. 28–33, 34–39), welcomed the new book as "as able as it is serious," praising
+exactly the method Brøchner would use a year later: showing „hvorledes Nielsen i
+enhver Gren af sin Videnskab kommer i Modsigelse *med sig selv*“ (pp. 107–108).
+Brandes also records, with sarcasm, that Heegaard had rebuked *Dualismen* as an
+immature youth's overhasty attempt — „Var det maaske ikke en *Overilelse?*“ — and
+asks why the young were in such a hurry, why they came fully two years too early
+(pp. 106–107).
 
 ## Brøchner, *Problemet om Tro og Viden* (1868)
 
@@ -398,8 +461,9 @@ precisely the negative critique that has entangled itself in the contradiction"
    blocks union (B2; R5), and in practice the doctrine is resolved in favor of
    the will (B6; R6).
 3. **Target.** Brandes aims at the doctrine's cultural effect and at the
-   disciples, Heegaard above all. Brøchner aims at Nielsen's system and at his
-   psychology of the will.
+   disciples, Heegaard above all — until late 1867, when Heegaard changed sides
+   and Brandes welcomed his book against Nielsen. Brøchner aims at Nielsen's
+   system and at his psychology of the will.
 4. **Method.** Brandes argues by dilemma, restatement and satire. Brøchner argues
    immanently: he grants what is right in Nielsen (p. 133) and derives the
    contradictions from Nielsen's own premises.
@@ -432,6 +496,21 @@ Modstandere“.
   polemic, pp. 18–29.
   [Transcription](https://hhalvors.github.io/danish-texts/texts/brochner/svar-nielsen/transcription.pdf) ·
   [Translation](https://hhalvors.github.io/danish-texts/texts/brochner/svar-nielsen/translation.pdf)
+- **Brandes, *Samlede Skrifter* XIII (1903).** The journalism around the book,
+  in Brandes's own 1903 revision: the *Striden om Tro og Viden* group, pp. 1–42
+  (Høffding, pp. 13–21; Heegaard's *Etik*, pp. 28–39; *Grundideernes Logik*,
+  pp. 40–42); the five pieces of 1867 on Nielsen, pp. 85–109 (*Om den gode
+  Vilje*, pp. 85–92; Schmidt, pp. 93–97; Kierkegaard, pp. 97–101; Heegaard's
+  book against Nielsen, pp. 106–109); and the 1869 review of Brøchner's
+  *Bidrag*, pp. 115–123. The volume's reprint of *Dualismen* (pp. 43–84) is a
+  revision of the 1866 text and is left for a collation.
+  [Striden](https://hhalvors.github.io/danish-texts/texts/brandes/samlede-skrifter-13/striden/transcription.pdf) ·
+  [Striden, English](https://hhalvors.github.io/danish-texts/texts/brandes/samlede-skrifter-13/striden/translation.pdf) ·
+  [Nielsen pieces](https://hhalvors.github.io/danish-texts/texts/brandes/samlede-skrifter-13/nielsen-anmeldelser/transcription.pdf) ·
+  [Nielsen pieces, English](https://hhalvors.github.io/danish-texts/texts/brandes/samlede-skrifter-13/nielsen-anmeldelser/translation.pdf) ·
+  [On Brøchner](https://hhalvors.github.io/danish-texts/texts/brandes/samlede-skrifter-13/brochner-bidrag/transcription.pdf) ·
+  [On Brøchner, English](https://hhalvors.github.io/danish-texts/texts/brandes/samlede-skrifter-13/brochner-bidrag/translation.pdf) ·
+  [Note](/dansk/brandes/samlede-skrifter-13.html)
 - **Brøchner, *Om det Religiøse* (1869).** Introduction, pp. 1–4; *Slutning*,
   pp. 202–210.
   [Transcription](https://hhalvors.github.io/danish-texts/texts/brochner/det-religioese/transcription.pdf) ·
@@ -483,9 +562,11 @@ On Nielsen's side, all in this collection:
 
 Still missing are the *Propædeutik* lectures that carry the roasted-birds
 dialogue — the course of 1861–62, which Nielsen cites, and the autumn 1865
-course, which Brandes cites; among the disciples, Heegaard's two books and
-Rudolph Schmidt's *Om Selvmodsigelsen*; and Høffding's *Philosophie og Theologie*
-(1866). For the doctrine's origins see [Before the Heterogeneous
+course, which Brandes cites — and the disciples' own books: Heegaard's
+*Indledning til den rationelle Etik* and *Professor R. Nielsens Lære om Tro og
+Viden*, Rudolph Schmidt's, and Høffding's *Philosophie og Theologie* (1866).
+Brandes's reviews of all of them are in the collection, so for the moment they
+are visible only through his eyes and Brøchner's. For the doctrine's origins see [Before the Heterogeneous
 Magnitudes](/dansk/essays/nielsen-heterogeneity-1849.html); for a participant who
 began on Nielsen's side, the section *Striden om Tro og Viden* in Høffding's
 *Erindringer*; for Brandes's other contributions, *Samlede Skrifter* XIII (in the
