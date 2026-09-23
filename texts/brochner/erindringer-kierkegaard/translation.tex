@@ -1,0 +1,1466 @@
+% ============================================================
+%  Hans Brøchner, "Recollections of Søren Kierkegaard"
+%  [Erindringer om Søren Kierkegaard]
+%  Det nittende Aarhundrede. Maanedsskrift for Literatur og Kritik,
+%  ed. Georg and Edvard Brandes, vol. 5, March 1877, printed pp. 337--374.
+%  Written 27 Dec. 1871 -- 10 Jan. 1872; published after Brøchner's death.
+%  TRANSLATION (English).
+%  Translated from transcription.tex (Danish) in this directory, whose
+%  header records how its text was established (every page read twice at
+%  the image).  Method: ../../../TRANSLATION-PLAYBOOK.md.  No published
+%  translation or later edition was consulted (T. H. Croxall's Glimpses and
+%  Impressions of Kierkegaard, 1959, and Steen Johansen's 1953 edition are
+%  in copyright and were not opened).
+%
+%  ---- REGISTER ----
+%  Readable modern English, scholarly, moderately literal; American
+%  spelling.  The piece is a memoir -- anecdote, conversation, character
+%  sketch -- and is rendered as one: Brøchner's affection and irony, and
+%  the point of Kierkegaard's reported sayings, are kept.  Long periods are
+%  broken only where English will not carry them, never across a page
+%  marker or a footnote anchor.
+%
+%  ---- TERMINOLOGY ----
+%  Aligned with the other Brøchner, Brandes and Nielsen translations in
+%  this repo:
+%    Tro / Viden = faith / knowledge (one ordinary "belief", p. 361, is
+%      commented at the site);  Erkendelse = cognition;  Videnskab =
+%      science (Wissenschaft);  Aand = spirit;  Kristendom = Christianity;
+%    Opbyggelse = upbuilding;  den Enkelte = the single individual;
+%    Forfattervirksomhed = authorship;  det Bestaaende = the established
+%      order;  Præst = pastor;  Livsanskuelse = view of life.
+%  Kierkegaard's works are given in their standard English titles (Either/Or,
+%  Concluding Postscript, Works of Love, Upbuilding Discourses in Various
+%  Spirits, Practice in Christianity, The Moment; Corsaren = The Corsair),
+%  as in this repo's translation of Brøchner's 1855 article; Διαψάλματα
+%  stays in Greek.  All other Danish titles (Fædrelandet, Genboerne, ...)
+%  stay in Danish.  Names unchanged; "S. K." and "K." as Brøchner writes
+%  them; Hr. / Fru = Mr. / Mrs.; Danish titles of rank (Etatsraad,
+%  Kammerraad, ...) untranslated.
+%
+%  ---- CONVENTIONS ----
+%  - Page markers \opage{N} and "% --- p. N ---" at the same joints as in
+%    transcription.tex, so the two can be read side by side; a word the
+%    Danish divides across a page turn is kept whole in English, with the
+%    marker before or after it.
+%  - The same paragraphs, numbered sections (\secnum), \emph spans
+%    (letterspacing in the original), footnote and centre blocks as the
+%    Danish.  The duplicated section number "3." (p. 340) is kept as
+%    printed; section numbers are structure, not sense.
+%  - Quotation marks „...“ -> ``...''.  Latin, German and French stay in
+%    their language; Greek verbatim.
+%  - Omission lines and the points or asterisks standing for withheld names
+%    are reproduced as printed.
+%
+%  ---- DEFECTS: DANISH AS PRINTED, ENGLISH CORRECT ----
+%  The transcription is diplomatic and carries every printer's error (logged
+%  in its header).  The translation renders the SENSE and logs the
+%  divergence in a % comment at the site; where the print omits an opening
+%  or closing quotation mark (pp. 348, 350, 352, 374) the English supplies
+%  it, so the English quotation marks balance (74 / 74).
+%
+%  ---- HOW THE TRANSLATION WAS CHECKED (2026-09-23) ----
+%  (1) Four translators, one per ten-page batch, each re-reading its English
+%  against the Danish sentence by sentence for omissions, negations, modals
+%  and tone before returning.  (2) Mechanical audit (tr_audit.py): per
+%  printed page, the same \opage joints, \emph/\textit/\textbf spans,
+%  footnote, section numbers, centre blocks and paragraph breaks as
+%  transcription.tex, and an English/Danish word ratio within 0.95--1.60:
+%  38 pages, 0 flagged (ratios 1.04--1.19).  joints.py: both batch seams
+%  (pp. 347, 367) run on mid-sentence without a spurious paragraph break.
+%  (3) Independent review: four readers who had not translated the pages
+%  read every sentence of the Danish against the English.  No omission
+%  found; 9 corrections applied -- p. 345 "paa Glatis" (tripping up, not an
+%  outing on the ice), "hverken vidste ud eller ind" (a calque replaced),
+%  "Strasburg" as printed; p. 357 "Antiker" = antique sculptures (false
+%  friend); p. 363 "den store Skikkelse" (Poul Møller's physical bulk),
+%  "Fru" = Mrs.; p. 364 "i den" refers to grief, not work; p. 371 it is
+%  Brøchner who walks past Mynster; p. 374 "skulde have talt" -- the
+%  conversation just ended was the last.
+%
+% ============================================================
+\documentclass[12pt,a4paper,openany]{book}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{libertinus}
+\usepackage{libertinust1math}
+\usepackage{textalpha}   % Greek: Διαψάλματα (p. 348), μεσότης (p. 361)
+\usepackage{graphicx}
+\usepackage[english]{babel}
+\usepackage[protrusion=true,expansion=true]{microtype}
+\usepackage{setspace}
+\usepackage[margin=1.2in]{geometry}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\setlength{\headheight}{28pt}
+\addtolength{\topmargin}{-13.5pt}
+
+% Footnotes as the 1877 printing sets them: *).
+\renewcommand{\thefootnote}{*)}
+
+% The article's numbered sections: the number alone, centred on its line,
+% exactly as in transcription.tex.
+\newcommand{\secnum}[1]{\par\begin{center}#1\end{center}\par\nobreak}
+
+\usepackage{hyperref}
+\hypersetup{
+  pdftitle={Recollections of Søren Kierkegaard},
+  pdfauthor={Hans Brøchner},
+  hidelinks
+}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LE,RO]{\thepage}
+\fancyhead[RE]{\textit{H. Brøchner: Recollections of Søren Kierkegaard}}
+\fancyhead[LO]{\textit{Det nittende Aarhundrede, March 1877}}
+
+\setstretch{1.3}
+
+\title{\textbf{Recollections of Søren Kierkegaard}\\[8pt]
+  \large [Erindringer om Søren Kierkegaard]}
+\author{Hans Brøchner}
+\date{\textit{Det nittende Aarhundrede. Maanedsskrift for Literatur og
+  Kritik}, vol.~5, March 1877, pp.~337--374\\[10pt]
+  \small Translated from the Danish}
+
+% ---- original-page markers ----
+% \opage{N} marks where printed page N begins, at the same joint as in
+% transcription.tex (mid-sentence where the page turns mid-sentence).
+\usepackage{marginnote}
+\newcommand{\opage}[1]{\marginnote{\footnotesize\textit{[#1]}}}
+\newcommand{\apage}[1]{\marginnote{\footnotesize\textit{[#1]}}}
+
+\begin{document}
+\maketitle
+\thispagestyle{empty}
+\clearpage
+
+% --- p. 337 ---
+\begin{center}\textbf{\large \opage{337}Recollections of Søren Kierkegaard.}\\[4pt]\rule{2cm}{0.4pt}\end{center}
+
+I have wanted to write down some of the recollections I
+have of Søren Kierkegaard from a long run of years, and
+which might be of some interest to others as well. They
+might perhaps one day, when S. K. finds a competent biographer,
+help to make his portrait in certain respects
+more finished and more alive. I write down my recollections
+precisely as material for a portrait of K., and
+therefore without any attempt, at this stage, to work them
+up into a whole or to give them a rounded finish by
+gathering them into groups. They are given just as
+they have been preserved, after the first impression, as \emph{separate}
+memories in a faithful memory.
+
+\secnum{1.}
+
+% Danish prints `K.‘s' with a turned comma for the apostrophe; rendered as the sense.
+My first meeting with S. K. falls in the very earliest
+days after I had become a student (1836). I saw
+him then in the house of my old uncle, the wholesale merchant M. A. Kierkegaard,
+at a party given on the occasion of the present
+Bishop Kierkegaard's engagement (or wedding?) to his
+first wife. I saw S. K. there without knowing who
+he was; I had only been told that he was Dr.
+K.'s brother. He spoke only very little that evening; he
+kept, I believe, essentially to observing. I received only a
+% --- p. 338 ---
+\opage{338}definite impression of his exterior, which rather
+amused me. He was then 23 years old, had
+something very irregular about his whole figure and a
+remarkable coiffure. His hair rose in a tousled crest
+% `et Kvarter': a quarter of an ell (c. 16 cm); rendered `six inches'.
+nearly six inches above his forehead, and it gave him
+a strangely wild look. I got the idea, without my
+knowing how, that he was a merchant's clerk
+--- perhaps because the family was a family of merchants ---
+and under the impression of his odd
+exterior I at once completed it: he must be in a draper's shop.
+I have often laughed heartily since at my own acumen.
+
+\secnum{2.}
+
+Then I remember, in the time just after, now and then
+having seen S. K. at the same place. I now came to
+talk with him, and soon noticed that he belonged somewhere
+other than behind a counter with the ell-measure in his hand.
+Amid the very plain surroundings there he amused himself
+by putting forward little paradoxes. Thus I remember
+that he once astonished his relatives by declaring, with
+the most serious face in the world, that he found
+the old A. B. C. we used in our childhood to be one
+of the most interesting books there were, and that he
+still read in it quite regularly, and got much profit
+from it. --- One evening he joined in a game of boston. It was played
+there with variations, one of which consisted in this, that
+3 of the players were dealt 17 cards each, the
+fourth, on the other hand, only one, and that the 3 others then each gave up
+4 cards to the last. In that house, where card-playing was taken
+with devout seriousness, the situation of the 4th man in this game
+was always regarded as most lamentable,
+and S. K. again caused great astonishment by expounding that
+it was the most excellent situation that could
+be imagined, and that his only wish was always to be able to be
+the fourth man so situated. That would be the
+most piquant thing of all.
+
+% --- p. 339 ---
+\secnum{3.}
+
+\opage{339}In 1837 I met K. now and then at a restaurant.
+He no longer lived with his father at that time, but in a
+house in Løvstræde, I believe the one where Reitzel's
+bookshop now (1871) is. He usually took his supper at a restaurant,
+and I can remember that I, when I now and
+then treated myself to ``a half boeuf,'' was astonished
+at the luxury S. K. displayed when he took his
+supper with a half bottle of wine and the like. We now talked
+together more frequently, and he showed himself very kind toward
+me. One evening he asked me what I was reading in the way of
+aesthetic writings. On that occasion I came to
+mention that I had access to only a little, and that I
+was quite unacquainted with many fields. He asked
+me whether I knew the writings of the German Romantics,
+and I had to say that I did not. He then urged me
+to come home with him and lent me a book by
+Eichendorff: Dichter und ihre Gesellen, --- a book I
+later bought at the auction of his books in remembrance
+of this meeting with him. I then remember that when,
+after a fortnight or so, I brought it back to him, and
+was just about to make an excuse because I, who at that time
+was studying theology with passion, had kept it
+so long, I was disconcerted when he received me
+with the question whether I had \emph{already} read it.
+He had evidently, with his sharp eye, been able to see that
+the opposite word was hovering on my tongue, and he
+amused himself by embarrassing me in a good-natured way;
+which at that time was exceedingly easy. I
+blushed so easily, and that sight always appealed to him
+in ``the young person.'' --- From my visit to K., when
+he lent me the book, I remember two things. One is
+my astonishment at his large library, which quite
+impressed me. The other was a peculiarity of K.'s. He
+went out again when we had fetched the book, and, as
+we were leaving, blew out a wax candle he had lit. He
+% --- p. 340 ---
+\opage{340}explained to me then that he always did it with a certain
+caution and at some distance, because he had
+reflected himself into the notion that the smoke of the candle
+was dangerous to inhale and could harm his
+chest.
+
+% Danish prints a second section `3.' here (it should be 4; no 4 is printed); the number is reproduced as printed.
+\secnum{3.}
+
+In 1838 S. K.'s father died. Him I saw only
+once, at my old uncle Kierkegaard's. He was
+a considerable personality, whose outward appearance imprinted itself vividly
+on my memory. He was walking up and down
+the floor of my uncle's dining room with him, in conversation. He
+walked somewhat stooped; his bearing matched the thoughtful,
+serious expression of his face; the gray hair was brushed
+back behind the ear, so that the form of the face stood out sharply.
+--- The reverence and love S. K. bore his
+father have found their living expression in his writings.
+--- The old man was a very punctual man, exact in money matters,
+thrifty in everyday things, but openhanded when occasion
+offered. S. K. once told me how
+he, as a young student, had made a journey in Nordsjælland,
+and how the old man had fitted him out
+generously with travel money, and then had even surprised him
+by sending him, at one of the last stages of the journey, a
+registered letter with 50 rix-dollars. Of his father's punctuality
+S. K. once, in a conversation with Mag. Adler, used the expression:
+% `født i Terminen': Termin is both the quarter day on which rents and payments fell due and the expected date of a birth; the English keeps only the first sense.
+``my father was born on quarter day.'' --- When S. K. left
+his father's house, the old man gave him yearly a sum that
+was very ample by the standards of the time; if I am not
+much mistaken, it was 800 rix-dollars a year.
+
+\secnum{5.}
+
+My late sister Hansine was in town in 1839 as a young girl.
+Once, when I happened to mention S. K.,
+she told me that she had seen him when, before her
+confirmation, she was here in town on a visit to old Uncle
+% --- p. 341 ---
+\opage{341}Kierkegaard. Our cousins had one day, when S. K.
+was to come there, given her the advice not to have anything
+to do with him, since he was ``a dreadfully spoiled
+and naughty boy, who always clung to his mother's skirts.''
+My sister was then 13 years old, S. K. 15.
+Later she read with great pleasure some of his upbuilding
+writings, especially ``Works of Love,'' and
+could then sometimes, with the smile peculiar to her,
+remind me of the cousins' admonition to her.
+
+\secnum{6.}
+
+Shortly after S. K. had taken his theological degree
+in 1840, I talked with him. He told me that
+his father had constantly wished him to take the
+theological examination, and that they had very often discussed
+the matter. ``As long as Father was alive, I could
+nevertheless defend my theory that I ought not to take
+it, but when he was dead, and I also had to take over
+his \textit{partes} in the debate, then I could no longer hold
+my own, and so I had to make up my mind to read for the examination.''
+This S. K. had then done with great energy. He had
+taken ``Sin Brøchner'' as his coach, had worked his way
+through the driest disciplines, made excerpts from church history,
+learned ``the lists of popes'' by heart and the like. His coach
+was very pleased with him. Shortly after S. K.
+had taken the examination, Peter Stilling (later Dr. phil.)
+came to Sin Brøchner and wanted to be coached. He remarked that
+he thought he could be finished in a year and a half;
+``S. K. hadn't read any longer than that, after all.'' ``Oh, to be sure,'' said
+old Br., who did not excel in politeness, ``don't you go
+imagining that! with S. K. it was another matter, he
+% Danish prints a semicolon after `erindrer' where a comma is wanted; rendered as the sense.
+could do anything!'' --- I remember that in 1839 I attended
+theological writing exercises together with S. K. under Clausen.
+% Danish prints `eiler' for `eller'; rendered as the sense (`or').
+He took part in them, however, only for the first 2 or 3 sessions.
+It was told that he had once, several years earlier,
+taken part in Clausen's writing exercises and once, instead of
+% --- p. 342 ---
+\opage{342}answering the set question, had analyzed it and shown that
+there was no sense to be found in it. At this Cl. had been
+offended, and S. K. had stopped going to the writing exercises.
+--- At the written theological examination S. K. was placed No.
+4 in the grading. Ahead of him stood M. Wad, Warburg
+and Chr. F. Christens. The examiners, however, declared
+to these that K.'s papers bore witness to a far greater
+maturity and development of thought than any of the others';
+but theirs contained a richer measure of positive theological matter.
+
+\secnum{7.}
+
+% Danish prints `i hvilke' (plural) with the singular `Samtale'; rendered as the sense (`in which').
+In the same conversation in which S. K. told me
+how he had come to take the theological examination,
+he also spoke of his father's remarkable calm and objectivity.
+Thus the old man had once said to S. K.:
+``it would really be a stroke of luck for you if I were dead;
+then perhaps you might still amount to something; you will
+not, as long as I live.'' --- (Another trait of his
+father was told me by my late cousin Peter Kierkegaard.
+When S. K.'s mother died, his father was deeply
+grieved. At the funeral Bishop Mynster came up
+to him and, moved, expressed his sympathy. The old man
+listened to Mynster, whom he esteemed highly, without betraying his grief,
+and when Mynster fell silent, he said: ``Shall we
+not then, Your Right Reverence, go into the room there
+and drink a glass of wine.'' Mynster, who knew him, did not
+misunderstand this remark.)
+
+\secnum{8.}
+
+It was while S. K. was in Berlin in 1841--42 that I
+presented myself for the theological examination, to which, on account
+of my unorthodox views, I was refused admission.
+I was corresponding at that time with Chr. F. Christens, who
+was also in Berlin, and through him I sent and received
+greetings, also to and from Kierkegaard. Shortly after
+his return home I met him in the street. He was
+% --- p. 343 ---
+\opage{343}very friendly toward me, talked about my situation and my
+studies, and told me, which pleased me, that in
+Berlin he had longed for several things back home, among them
+also to see me. Such a thing he could say with
+a peculiarly winning expression. His smile and his
+glance were indescribably expressive. He had a way of his own
+of greeting at a distance with a glance. It was only
+a small movement of the eye, and yet it expressed so much.
+There could be something infinitely gentle and loving in his
+glance, but also something provoking and teasing. He could,
+with one glance at a passer-by, irresistibly ``put
+himself in rapport'' with him, as he put it. Whoever
+met this glance was either attracted or repelled,
+made embarrassed, uncertain or irritated. I have walked the whole
+length of a street with him while he expounded to me
+how, by thus putting oneself in rapport with
+passers-by, one could make psychological studies, and
+while he expounded the theory, he put it into
+practice with nearly every person we met. There
+was not one on whom his glance did not make a visible
+impression. On the same occasion he astonished me by
+the ease with which he struck up a conversation with
+any number of people, in a few exchanges took up an
+earlier conversation and carried it a step further to a
+point where it could be taken up again on occasion.
+The occasion for these experiments was that one day I
+had been walking ahead of him, absorbed in thought, so that I
+had not heard him calling me, and had not noticed
+him tapping me on the shoulder. When I finally noticed
+him, he said that one did wrong thus to sink
+into oneself and not to make the observations one could
+make in such rich measure. Then, to show me the method,
+he pulled me along with him up and down several streets, and astonished
+me with his talent for psychological experiment.
+He was always interesting to walk with, but in one respect
+walking with him had its difficulty.
+% --- p. 344 ---
+\opage{344}Because of the irregularity of his movements, which
+was no doubt connected with his crookedness, one could
+never keep to a straight line when walking with him;
+one was always pushed, little by little, in toward the houses
+and the cellar steps, or out toward the gutter. When
+he, in addition, gestured with his arm and his cane,
+it became even more of a march over obstacles.
+One had now and then to seize an opportunity to
+get round to his other side in order to gain
+the room one needed.
+
+\secnum{9.}
+
+The winter S. K. spent in Berlin, he met there
+many Danes, not a few of whom had
+come there to hear Schelling. Among them was
+my late friend Christian Fenger Christens. Of him
+S. K. spoke with great appreciation; he stated later
+to me that Christens was the ablest of all the Danes
+who had been in Berlin that winter, and among them
+were, after all, such men as Lic. jur. (later Minister)
+A. F. Krieger, and the judge advocate (now head of department in the Ministry of Church and Education)
+Carl Weiss. Christens told me various
+little traits of K., of his helplessness when he
+had to speak German, especially when he had to speak of things
+of daily life (thus on the first evening in Berlin
+it was not possible for him to make it understood that he
+wanted a candlestick); --- of how his landlord
+% `trak ham op ... Optrækkerierne': taken as `overcharged' (trække op = to fleece), which the landlord offsets by promoting K. in title.
+overcharged him and, as the overcharging grew, by way of compensation
+let him advance from Magister to Doctor and then
+to Professor; --- something Kierkegaard himself was amused
+at, since he no doubt guessed the reason, --- of his embarrassment
+when Weiss, who set store by an elegant dinner, had one day
+taken him into a first-class restaurant,
+where a number of elegantly dressed gentlemen in black coats,
+with white neckcloths and cravats, stood in the corners
+of the room, and after K. had respectfully greeted them
+% --- p. 345 ---
+\opage{345}and sat down at a table with W., came leaping up and turned out
+to be waiters etc. --- Christens also told me
+how Kierkegaard in Berlin amused himself by
+getting Lic. theol. * onto slippery ground. * had already been
+abroad for a long time, had heard lectures in
+Strasburg and elsewhere and was very self-important on
+account of all the wisdom he had gathered. S. K.
+seldom failed, when they met, to ask him
+to share with him the most essential scientific results
+of his journey abroad. When * then formulated some proposition
+or other as a result gained, K. always knew how
+either to show him that it was something very old,
+or, by asking little questions about ``something that was not
+quite clear to him'' in what had been put forward, to bring the
+poor licentiate, who was only slightly gifted as a thinker,
+into such confusion that he did not know which way
+to turn. When K. had then got him to that point,
+it suddenly occurred to him that he was very
+busy and absolutely had to go somewhere or other.
+Then he left the licentiate standing in the midst of the confusion, to the great
+amusement of the others. --- In K.'s Either/Or
+this method is depicted, applied precisely to a licentiate. Might
+he not have had his Berlin acquaintance in
+mind when he wrote those pages?
+
+\secnum{10.}
+
+Not long after K.'s return home he once talked
+with me about my studies. I told him what
+Greek authors I was reading at the time, and touched on the
+interest that was awakening in me more and more for
+Greek poetry and philosophy. He encouraged me to
+continue these studies and spoke warmly of the significance
+of the Greek for our time. He used the expression:
+``Greece ought always to have a representative
+accredited to our time, just as one power has a representative
+accredited to another to make its interests
+% --- p. 346 ---
+\opage{346}felt.'' --- K. himself had a good knowledge of Greek and
+had read not a little. How finely he apprehended the
+Greek spirit, his writings bear witness.
+
+\secnum{11.}
+
+In 1842 a small pseudonymous work appeared: ``Johan
+Ludvig Heiberg efter Døden.'' I knew of the work
+before it appeared, and mentioned it once to S. K. He
+was not pleased that Heiberg was made the object
+of such a joke, and spoke with much
+warmth of his importance as an aesthetician and especially
+as his generation's teacher of aesthetics in our fatherland\footnote{K. placed H. above all the contemporary aestheticians in Germany (NB. Vischer had not yet at that time come forward except with lesser things.)}. Later, after Either/Or had appeared, and
+Heiberg had written his well-known review of it,
+S. K. once spoke to me about him and made his displeasure
+at H.'s conduct plain to see. He
+acknowledged H.'s importance as an aesthetician, but now also
+strongly stressed his limitations. ``I would be able
+to bring forward a whole series of aesthetic problems
+of which H. has not an inkling.'' By this he was no doubt alluding
+to the problems that have come forward in ``Stages
+on Life's Way'' and ``Concluding Postscript.''
+
+\secnum{12.}
+
+In those years I frequently met S. K. when in the evening I
+went for a walk. As a rule Frederiksberg
+Have was the goal of my walk. K. too went that far,
+but only to the entrance of the garden, where the little flower beds
+are on either side of the path, narrow at that time,
+that leads from the gate to the first open space. There he
+breathed in for a few moments the scent of the flowers, and
+% --- p. 347 ---
+\opage{347}then took the recollection of this ``moment'' away with him. That was
+how he liked to conclude and to set limits: his walk had a definite goal,
+but this goal was, as it were, only touched; he did not linger over it,
+and he took away, as it were, only a motif of enjoyment that could be
+worked up ideally.
+
+A small comic recollection is attached to one of these evening walks. As
+we were going back from the garden to the avenue and had to pass between
+the posts that stand at the end of the path between the trees that is set
+aside for pedestrians, the posts had just been painted. K. did not notice
+this, but rested his hand on them as he passed between them. He then
+noticed that his hand was covered in paint, and now, while carrying on
+with his conversation, made a series of unsuccessful attempts, with the
+indispensable cane under his arm, to wash the paint off by rubbing the
+drooping leaves of the trees, damp with dew, between his hands. His
+exertions brought many a smile to the faces of the passers-by.
+
+\secnum{13.}
+
+At that time I also saw S. K. on horseback now and then. He had learned
+to ride so as to be able to take this exercise and to make short
+excursions independently of coachmen and the like. He cut no very good
+figure on a horse. One could see from his posture that he did not credit
+himself with any great ability to control it, should it take it into its
+head to turn rebellious. He sat stiffly on the horse, and one had the
+impression that he was constantly remembering the riding master's
+instructions. He can hardly have had much freedom to pursue his thoughts
+and his fancies on horseback. And indeed he soon gave up this sport and
+preferred to drive when he wanted to visit his favorite spots in the woods
+around Copenhagen. In the years when his authorship was at its most
+intense, these outings were one of the means he used to keep
+% --- p. 348 ---
+\opage{348}himself fresh, and to bring himself into the mood that the
+production demanded.
+
+\secnum{14.}
+
+One single expression of K.'s from that time I cite as characteristic. He
+had a servant who was very reliable and to whom K. entrusted the carrying
+out of all kinds of practical matters. Thus when he was to move house, he
+would drive out in the morning, and in the evening he would go home to his
+new apartment, where everything stood in perfect order --- even the
+library had been arranged --- with the servant's help. Of this servant K.
+once said, after speaking of his practical talent: ``he is in reality
+\emph{my body}.''
+
+\secnum{15.}
+
+In the first period after Either/Or had come out, I had frequent
+conversations with him about the book. On reading through the Διαψάλματα
+I had at once recognized the anonymous author; I had at once found words
+that had been spoken in earlier conversations with K. Naturally I never
+tried, in my conversations with K., to get him to speak as the author; but
+where something was obscure to me, I talked with him about it as with the
+elder who had the richer insight. In this way I received many a fuller
+elaboration, and he spoke about the book with a lack of reserve that he
+would hardly have shown had I been indiscreet. One point on which he dwelt
+several times was the poetic element in Part One. One day he explained
+with great liveliness how in many places the motif for a poem was given,
+but a motif that had surely been left unexecuted on purpose. Thus as an
+example he singled out the depiction of woman's beauty and said:
+% PRINTER: the Danish prints no opening quotation mark before "i hver af disse Sætninger" (the closing one after "Sonet." is printed); the English supplies the opening `` so that the marks balance.
+``in each of these phrases: the little hand, the dainty foot, etc., there
+lies a motif for a sonnet.'' --- Now and
+% --- p. 349 ---
+\opage{349}then he would hint at, as it were, the lines along which the
+problems treated in Either/Or could be extended; but several of his hints
+only became really intelligible to me when the subsequent writings came
+out. --- He was not insensible to appreciative remarks about the book's
+significance. I remarked one day that no book, since I first read Hegel's
+Logic, had set my thoughts in motion as Either/Or had. This remark
+evidently pleased him. We were just standing at the door of his lodgings
+(on Nørregade) and were about to go our separate ways; as we parted, he
+kindly gave me his hand, with the smile I knew so well.
+
+\secnum{16.}
+
+When I had published my piece against Martensen (``Nogle Bemærkninger om
+Daaben''), K. talked with me about it. He was displeased with a review in
+Berlingske Avis which had tried to strike a superior tone and, with an
+assumed authority, meant as it were to crush the young author. I told him
+that I had really only been amused by the review, since its forced
+Christian piety took on a slightly comic tinge when one remembered that
+the anonymous article appeared in a paper edited by a Jew. --- In my
+little piece K. singled out one particular remark that he would have
+wished left out; it was, I believe, where, with some mockery of
+Martensen's attempt to assert the freedom of the newborn child, I say that
+the only act of freedom that can be spoken of in the newborn child at
+baptism is that the child screams when it is doused with water. This
+remark, K. thought, looked flippant, and could easily be exploited by the
+ill-disposed.
+
+\secnum{17.}
+
+K. mentioned Ludvig Feuerbach rather often in our conversations. It is on
+the strength of oral remarks of his that I have said in Problemet om Tro
+og Viden (p. 125) that there can be no doubt that it is Feuerbach whom K.
+had
+% --- p. 350 ---
+\opage{350}in view in a quotation cited there. He acknowledged in
+Feuerbach the clarity and sharpness with which he, precisely as one
+offended, had grasped Christianity; but he once stressed in a conversation
+that from Feuerbach's enthusiasm for nature, particularly from the pathos
+with which in Wesen des Chr. he speaks of the strengthening power of
+water, in the spiritual respect as well, he had received the impression
+not merely of a strong sensuality in F., but also of an enfeeblement
+through sensuality. He added:
+% PRINTER: the Danish prints no opening quotation mark before "dette er en Mening" (the closing one after "Gisning." is printed); the English supplies the opening `` so that the marks balance.
+``this is an opinion that I shall naturally never utter in print; but I
+have not been able to ward off this impression, and there is something in
+Feuerbach's peculiar passionate pathos, and in his antipathy to
+Christianity, that becomes clearer to me through this conjecture.''
+--- This remark about F. led him to speak of figures from antiquity in
+whom a refined sensuality came to the fore. Thus he gave a very
+imaginatively executed picture of Mæcenas: how he, who ``had no doubt
+exhausted all the pleasures of Rome,'' sought oblivion in his
+sleeplessness in the soft splashing of the fountain in his bedchamber and
+in faint strains of distant music. Such pictures he could paint finely;
+yet it was not the poetic depiction, but the psychological analysis, or
+rather dissection, that interested him.
+
+\secnum{18.}
+
+On a longer walk in those years I once had occasion to observe with what
+expression and what force K. could recite passages from a poetic work. He
+was speaking of Aladdin, of the inspired daring in wishing that marks him,
+of the contrast between this bold confidence of genius and the cautious
+calculation of reflection. He now quoted Aladdin's words to the spirit,
+where he commands him to build the splendid palace for the wedding night.
+We were just then walking outside Charlottenborg. K. stopped as he
+recited these lines, which he accompanied with
+% --- p. 351 ---
+\opage{351}a slight gesture of the arm. Color came into his cheeks, and
+his gaze grew bright and warm, and his voice, though subdued, was that of
+a ruler who knows that he has the power to command.
+
+\secnum{19.}
+
+Once we were talking about Hegel's presentation of the history of
+philosophy. K. stressed how subjective its interpretation was on many
+points, and said: ``geniuses really always lack the ability to grasp other
+people's thoughts objectively; everywhere they find their own.'' --- Not
+long afterwards, in a conversation with me, he happened to say of himself:
+``I have never had this ability to grasp others objectively.'' --- At that
+moment he hardly remembered the remark in our earlier conversation; I
+remembered it, and smiled to myself as I drew the conclusion from his
+remark about himself.
+
+\secnum{20.}
+
+At the time when Adler's mental derangement was beginning, K. told me a
+couple of curious incidents about Mag. Adler. Adler came to K. one day
+with a work he had published and talked with him at some length about the
+religious authorship of them both. Adler gave K. to understand that he
+regarded him as a kind of John the Baptist in relation to himself, who, as
+the one who had received a direct revelation, was the real Messiah. I
+still remember the smile with which K. told me that he had answered Adler
+that he was perfectly content with the position Adler assigned him: he
+found that it was a very respectable function to be a John the Baptist,
+and he did not aspire to be the Messiah. During the same visit Adler read
+aloud a large part of his work to K., some of it in his ordinary voice,
+some in a peculiar whispering one. K. permitted himself a remark to the
+effect that he could find no new
+% --- p. 352 ---
+\opage{352}revelation in Adler's
+% PRINTER: the Danish prints "8krift" (a figure 8 for the initial S) for "Skrift"; rendered as the sense.
+work, whereupon Adler said to him: ``Then I will come to you again this
+evening and read the whole work to you in \emph{this} voice (the
+whispering one), and then you will see that it will dawn on you.'' When he
+told me the story, K. was much amused at this notion of Adler's that
+varying the voice would make the work more significant. --- I once heard a
+remark about Kierkegaard from Adler in my first year as a student. He
+spoke of K.'s brilliant conversation, but put forward the opinion that K.
+sometimes prepared himself for his conversations.
+
+\secnum{21.}
+
+As a younger man, and perhaps even after his dissertation, K. had thought
+of the possibility of a post at the University. This thought, however,
+soon receded. He once told me that Sibbern had urged him to apply for an
+appointment as Docent in philosophy.
+% PRINTER: the Danish prints "af han saa" for "at han saa"; rendered as the sense ("that ... then").
+K. had replied that he would then at any rate have to stipulate a couple of
+years' time for preparation. ``Oh! how can you think that they will
+appoint you on those terms?'' said Sibbern then. ``Well, I could of
+course also,'' retorted K., ``do as Rasmus Nielsen did, and get myself
+appointed without being prepared.'' --- Sibbern grew cross and said:
+% PRINTER: the Danish opens a quotation at "De skal" and never closes it; the English supplies the closing '' after "like that!" so that the marks balance.
+``You always have to go pecking at Nielsen like that!'' --- It was a short
+time after Nielsen had been appointed to the University.
+---\,\dotfill\par
+\noindent\dotfill\par
+\noindent\dotfill
+
+\secnum{22.}
+
+In various of his writings K. has expressed himself on The Corsair's
+attack on him. There he has viewed the matter essentially from an ethical
+standpoint, and, as regards the significance the Corsair attacks had for
+the general consciousness, he no doubt greatly overestimated
+% --- p. 353 ---
+\opage{353}it. K. did not have, in relation to a given phenomenon, a
+sense of reality, if I may use this expression, that could form a
+counterweight to his so enormously developed reflection. He could, as it
+were, reflect a trifle up into something of world-historical importance.
+So, no doubt, it went with him in the case of The Corsair. --- In a
+conversation with me he spoke of the whole tendency of The Corsair and
+judged its wit-mongering from a purely aesthetic standpoint. His chief
+complaint against it was that it destroyed the public's sense for the
+comic in its ideality by always attaching the laughter to particular
+well-known persons who had once and for all been fixed for its readers as
+comic figures, so that the reader laughed at what was said, not because
+it really contained any comic substance, but because, without being really
+comic, it was said of persons whom people had once and for all agreed to
+find comic and to laugh at.
+
+\secnum{23.}
+
+Something like what happened to K. with The Corsair's attack happened to
+him also with ``Søren Kirk'' in Hostrup's ``Genboerne.'' In his
+posthumous journals K. has touched rather often on the fact that Hostrup
+put him on the stage, and he has done so in a way that shows that he felt
+affected by it. I played this role at the play's first performance, and I
+remember having spoken with K. about it at the time without being able to
+notice that he attached any importance to it; but in time he no doubt
+reflected himself into a different mood. In the little role Hostrup took
+motifs from S. K.'s writings, but in the role he was evidently thinking
+chiefly of the kind of dialectic that was rampant among the young students
+in those years, after ..... had given the impulse to a very superficial
+preoccupation with philosophy. In this kind of dialectic K. was a master
+in his younger years --- when he wanted to be. --- My conversation
+% --- p. 354 ---
+\opage{354}with K. about the role took place one evening when I was going
+to a rehearsal at Hofteatret. On Højbroplads I met K., who stopped me and
+asked where I was going. I told him I was going to the rehearsal of
+Hostrup's play. ``Ah yes, you're to play me, of course!'' K. said then. I
+answered him that I was not exactly going to play \emph{him}, but a
+dialectician of our homegrown kind. We then parted without my detecting
+that K. disliked my having taken on the little role. In any case he must
+also have known my relation to him well enough to know that it could never
+occur to me to put him in a comic light by copying him. For that I had
+too much devotion to him, and --- for that I was much too poor an actor.
+
+\secnum{24.}
+
+In the early forties K. made a journey over to the west coast of Jutland,
+to his father's native district. He told me a small characteristic
+incident from this journey.
+% "sin Fødeby": grammatically K.'s own native village, though the father's is meant; the English "his" keeps the looseness.
+In his native village, for which his late father had founded a sizable
+endowment for a school, he had been received with great deference, and
+the schoolmaster in particular had been very busy in his official
+capacity. ``I was really afraid they would put up triumphal arches for
+me,'' he said. When he was to leave, he drove past the school. There
+stood the schoolmaster, drawn up with all the schoolchildren, who were to
+sing a song composed by the teacher in S. K.'s honor. The teacher, who was
+to lead the singing, stood with a copy in his hand and was just about to
+give the sign to begin when K.'s carriage stopped beside him. S. K. leaned
+down, with his friendliest smile, toward the schoolmaster, took the copy
+out of his hand, as if to read it through, and at the same moment gave
+the coachman a sign to drive on. With that the whole arrangement fell to
+pieces. The parish clerk, who did not know his poem by heart, could not
+get the song started, the children stood silent
+% --- p. 355 ---
+\opage{355}and astonished, and S. K. rolled off down the highway, nodding
+and greeting, and in his heart amused at the schoolmaster's
+disappointment.
+
+\secnum{25.}
+
+On the day that Licentiat Hagen (later Professor of theology) had defended
+his dissertation, I talked with K. about the dissertation (``Om
+Ægteskabet''), against which I had been an opponent. K. was little pleased
+with it; he found the whole treatment superficial, and
+% Construal: "hvad der gives til en fyldigere Opfattelse af Pseudonymerne" read as what the pseudonyms offer toward a fuller conception (of marriage), not "a fuller conception of the pseudonyms".
+he alluded to what is offered by the pseudonyms toward a fuller
+conception. On this occasion too he stressed the Germans' more thorough
+treatment of such subjects, and said with regard to Hagen's treatise:
+``one really should see to it that we can cut a somewhat decent figure
+when such books are read by the Germans.''
+
+\secnum{26.}
+
+While I was staying in Berlin in the summer of 1846, S. K. came there. It
+was one of the little journeys he sometimes made when he really wanted to
+work intensively and sought changed surroundings in order to put himself
+in the mood. I met him quite unexpectedly at the restaurant where I ate,
+and where he had gone chiefly to see fellow countrymen, since during his
+first stay in Berlin this restaurant had been the gathering place of the
+Danes. As a restaurant he did not think much of it; it confined itself, he
+remarked, to ``the lowest concept of foddering.'' He met me with much
+friendliness, invited me to dine with him the next day at the hotel, and
+took long walks with me during the couple of days he stayed in Berlin. I
+was much taken up with everything new that I came into contact with in
+Berlin, and was tirelessly active. K. was amused at this activity, which
+extended even to my attending the meetings of a democratic workers'
+association. We talked a great deal together
+% --- p. 356 ---
+\opage{356}about conditions in Berlin, about conditions at home, about
+my dissertation, etc. On our walks I noticed that there were certain spots
+for which K. had acquired a fondness and which he liked to seek out. Thus
+in the Thiergarten there was a pretty spot with a park surrounded by
+flower beds. It became the goal of his walk, just as the flower beds at
+the entrance to Frederiksberg Have had been in Copenhagen. Perhaps it
+awakened memories in him of that garden and of what was connected with
+it. --- Visiting him at the hotel, I noticed with what ingenious
+calculation everything in his room was arranged so that he could work in
+the right mood. The lighting, the connection between the rooms, the
+arrangement of the furniture, everything was ordered according to a
+definite plan. K. made very great demands on the service, but was also
+very generous with his gratuities. Our little dinner for 2 persons was
+served in his room. We drank a wine that he was fond of because of its
+name: Liebfrauenmilch. This name had given him the impression of
+something mild and light, and he drank the wine in good faith, trusting
+this impression, without noticing that it is in fact one of the headier
+Rhine wines. --- It did me good to meet K. in that foreign place. He
+confirmed me in what I was then beginning to think about again: returning
+to Denmark and trying to make my way there. --- From Berlin I once sent
+K., who was always amused by the Berliners' Ueberschwänglichkeit, through
+our cousin, Mrs.~T., an advertisement I had found in a Berlin advertising
+gazette. It read, under the heading: Anfrage, as follows: ``Sollte es
+nicht zweckmässig sein das auch die Klempner sich assoziirten, um mit dem
+Zeitgeiste Schritt zu halten?'' --- It amused Kierkegaard, who
+% "sine Pappenheimere": the proverbial allusion to Schiller (Wallensteins Tod, "Daran erkenn' ich meine Pappenheimer"), kept literally.
+recognized his Pappenheimers.
+
+% --- p. 357 ---
+\secnum{27.}
+
+\opage{357}After I had come home from my first Italian
+journey (at the end of 1847), K. once came up to me
+as I stood on Østergade looking at some plaster casts
+of antique sculptures that stood in the window of the plaster-caster
+Barsugli. When we came to talk of the art of sculpture, he remarked
+that he had not really had an eye for
+it, but that it was now beginning to attract him by
+its repose. On the whole I do not believe that K.'s interest in
+and feeling for the visual arts were strongly developed; his
+interest in the beautiful drew its nourishment overwhelmingly
+from poetry.
+
+\secnum{28.}
+
+Shortly after the rebellion had broken out in 1848, I talked
+with K. about the plan I then had of going along
+as a volunteer. Besides the general
+motive that lay in the circumstances, I stressed that I personally
+needed to gain experience, above all experience of myself. K.
+granted that this way of learning through reality was
+necessary for many, but intimated that through
+imagination and reflection he took in, ideally, a still richer
+content. And it was evidently the case that
+he could make do with a \emph{motif} from reality, which
+his reflection and his imagination worked up, guided as they
+were by the experience he had gathered through the ceaseless
+labor of his own inner life.
+
+\secnum{29.}
+
+Some years later I talked with K. about a similar
+subject. At that time I felt dissatisfied at not
+having a definite occupation, and the definite duties
+that go with one; the complete freedom I
+enjoyed in my life of private study, holding no office, was beginning to become
+a burden to me. I said so in a conversation with K.:
+``I miss a definite practical occupation to such a degree
+% --- p. 358 ---
+\opage{358}that, if no other is to be found, I could be tempted to set
+myself up as a tavern-keeper.''---K. smiled and said:
+``Then you shall have my custom.'' In that connection
+he told me how, some years earlier, he had received
+a visit from a German scholar who had presumably been sent to him
+by someone or other to look at him as one
+of our curiosities. He had received the German
+very politely, but had assured him that there must be
+some misunderstanding behind the visit. ``My brother, the Doctor,''
+he had said, ``is an extraordinarily learned man
+whom it would surely interest you to get to know,
+but I am a beer-seller.''
+
+\secnum{30.}
+
+Dr. P. K. once gave---I do not remember the time exactly,
+but it must have been in the fifties---during a chance
+stay down here, a series of lectures at the
+University. They were held in the Solennitetssal before a large
+and very mixed audience. Søren K. took
+a rather ironic attitude toward these lectures, and it was with
+a certain malice that he told me a fragment of a
+conversation he had overheard one evening outside the University,
+just as the lecture was beginning. A crowd of
+gentlemen and still more ladies came streaming up the University steps.
+The coachman of a carriage waiting outside was
+addressed by a passing fellow with the question
+of what all these people were going in there for? ``Oh! they'll be going
+to a dance, I suppose!'' answered the coachman, to S. K.'s great delight.
+The lectures were in the Doctor's manner, rather
+forcedly brilliant, and in a prophetic-apocalyptic style. I
+was able to tell S. K. an anecdote concerning the lectures,
+about our old uncle in Købmagergade.
+He attended the lectures regularly, although they lay
+far above his horizon and although he was very
+hard of hearing. He felt exceedingly proud to see his
+``cousin's son on Gammeltorv'' lecturing to so numerous a
+% --- p. 359 ---
+\opage{359}crowd. One evening, when he had come home from the lectures,
+he walked up and down the floor of his parlor,
+repeating without pause: ``No! he really is a matchless man,
+that Peter Kierkegaard! the way he can talk, the way
+he can talk.'' His daughter ventured the
+question: ``Now, could you really follow his lecture?
+% The Jutlander says "en Ord" for standard "et Ord" (dialect gender); the
+% English cannot carry the dialect -- hence "den gamle Jyde" just after.
+could you really hear what he said?''---``Not \emph{one}
+word! not \emph{one} word!'' said the old Jutlander guilelessly,
+but his enthusiasm for the matchless speaker was just as great.
+
+\secnum{31.}
+
+S. K. once told me of a curious situation involving this old uncle.
+The old uncle had a passion
+for making verses, equally ghastly in content
+and form. One day he came up to see S. K. and, after a
+little preamble, came out with a pile of his
+verses, which he asked his nephew to read aloud. They then took
+their places side by side on the sofa. The old man sat
+leaning back and put on his spectacles so as to
+follow along during the reading, most likely in order to
+make sure that nothing was skipped. Søren K. sat
+somewhat bent forward, with the papers, and presumably chose
+this position so that the old man should not observe a
+treacherous smile on his face. He read the poems
+aloud from one end to the other in a raised voice and with great
+pathos. The old man was utterly enraptured; the tears ran
+down his cheeks from emotion at the beautiful verses,
+and he left S. K. with the warmest thanks.---
+Old Uncle's verses I have often heard; they were altogether
+remarkable, and had in particular the wonderful property
+of being usable, or at any rate
+of being used, with very slight variations, on the most heterogeneous occasions.
+Thus the old man had once, on the occasion of a
+granddaughter's engagement, composed a verse. It was then
+used not only at another engagement, where the personal
+circumstances of those concerned were, after all, very different;
+% --- p. 360 ---
+\opage{360}but with a quite trifling adjustment it was also
+to have been used on the occasion of my appointment
+to the University. That it was not was owing only
+to the old man's not having got it rearranged on the
+evening when the appointment, a little earlier than we had expected,
+was announced by Berlingske, and we happened to be at a party at
+the old man's.---Sometimes the verses were sung by the company
+at his house at his urgent request. A
+tune would then be chosen which by a Procrustean method
+could more or less be applied to them; but it was irresistibly comic
+to hear how now a large number of syllables
+had to be taken, as it were, in one mouthful, now a single
+syllable drawn out according to the Holbergian prescription.
+But to the old man's ears it always sounded like the loveliest
+harmonies; his face beamed with rapture
+at it.
+
+\secnum{32.}
+
+Old Kierkegaard sometimes used, in speech and in
+writing, though chiefly in writing, peculiar orders of words. Thus,
+when in his letters to his native town he
+spoke of S. K. and his brother, he used always to write: ``my
+cousin's late son Peter K., or: my cousin's late
+son S. K.'' (instead of: my late cousin's son). It
+looked especially comic in one context: when he reported
+that his cousin's late son, Peter Kierkegaard,
+had taken himself a new wife. I once told S. K.
+of this way of putting things on the uncle's part. It amused him,
+but for his own part he read into it a meaning of which the
+old man was unconscious (the old man was, after all, inspired, as a
+poet!): that he was in reality one of the departed.
+---On the same occasion he came to speak of
+the uncle's great age. I said that in a certain sense
+one could not call him old, if, that is, one
+measured the length of life by its content, since the old man
+in reality only ``lived'' the smallest part of the
+% --- p. 361 ---
+\opage{361}time he existed, and for the most part merely vegetated and slept.
+I added jokingly that S. K. was really the oldest
+man I had known. He smiled and made no
+objection to this way of reckoning.
+
+\secnum{33.}
+
+K. once told me---it occurs to me as I
+mention his age---that as a young man he had for many years
+lived in the firm conviction that he would
+die when he reached the age of 33. (Was it the age of Jesus
+that was also to be the norm for the imitator of Jesus?)---
+% "Denne Tro": ordinary belief here, not faith in the religious sense;
+% rendered "belief" (cf. "at tro dette", "to believe this", below).
+This belief was so firm in him that, when he passed
+that age, he even had the parish register looked up in order
+to make sure that it really had been passed; so
+hard was it for him to believe this.
+
+\secnum{34.}
+
+When I first lectured at the University,
+in the winter semester of 1849--50, S. K. talked with me about it
+fairly often, about the subject of the lectures (Greek
+philosophy) and about the plan for treating it. He
+told me that he would come round some time and hear
+them, but that he would not name any particular hour.
+He did not come, however; but through that constant prospect
+of possibly having him as a listener he gave me an impulse
+to treat my subject with care, and
+I rather think that that is what he intended. He also
+knew that, if he really were present, I
+would easily feel embarrassed by his presence, and that may
+have been one reason for him to stay away.
+
+\secnum{35.}
+
+In connection with my lectures he once talked
+with me about the Aristotelian metaphysics' definition
+% "den aristoteleske Metafysiks Bestemmelse": so the Danish, though the
+% definition stands in the Nicomachean Ethics (named below); rendered as written.
+of virtue as μεσότης. He had rightly seen that this
+definition did not apply to virtue in general, but
+% --- p. 362 ---
+\opage{362}only to ethical virtue---something on which people at that time were by no means
+clear. He told me that, in connection
+with this point and some others in the Nicomachean
+Ethics, he had sought information from Madvig and Sibbern.
+Madvig had told him that it was so long since
+he had read this work that he no longer had it
+% "et Jærn" (lit. "an iron"): colloquial for a person of formidable, tireless
+% capacity; rendered by sense.
+present to mind. ``And Madvig is otherwise a formidable man,'' S. K.
+added. Sibbern, on the other hand, had at once been able to give him the
+information he sought. S. K. thought highly of S., even if
+he was not blind to his weaknesses. Among
+these he once singled out Sibbern's complete
+lack of irony and---in psychological respects---his
+lack of an eye for the masked passions,
+for the doubling by which one passion
+takes on the form of another. Because of this, in his opinion,
+Sibbern had often been deceived at a time when many, especially
+ladies, turned to him to consult him as
+a kind of psychological counselor of souls.
+
+\secnum{36.}
+
+Poul Møller was someone S. K. often came to speak of, always
+with the most heartfelt affection. It was Poul Møller's
+personality, far more than his writings, that had
+made an impression on him, and he regretted that a time would
+soon come when, once the preserved memory
+of his personality had vanished and judgment
+of him rested only on his writings, people would no longer
+be able to understand his significance. He once told me
+an amusing little anecdote of P. Møller. He was to
+oppose ex officio at a disputation and had noted down
+his remarks on various loose sheets which had been
+laid inside the dissertation. Each separate objection he
+introduced with a ``graviter vituperandum est''; but as soon as
+the Præses had given an answer to the objection, he would say
+very good-naturedly: Concedo, and pass on to the next
+objection. After a rather short opposition he closed
+% --- p. 363 ---
+\opage{363}with a lively expression of regret that his time did not
+permit him to continue this interesting conversation, and
+as he then withdrew and passed S. K., who stood
+among the audience, he said to him in an undertone: ``Shall we
+go down to Pleisch's, then?''---that was the confectioner's where
+he used to go.---During the opposition it had happened
+to him that all his loose papers had at once fallen
+out of the book and fluttered about on the floor, and it
+had contributed not a little to raising the mood of the audience
+to see that large figure crawling about to
+gather up the scattered sheets.
+
+\secnum{37.}
+
+A man with whom in those years I regularly saw K.
+walking was Professor Kolderup-Rosenvinge. It was
+chiefly a shared interest in the aesthetic that brought
+them into contact. K.-R. was a cultivated man who occupied
+himself with the literatures of southern Europe and had
+translated a play by Calderon. For the rest, he was by then
+already rather dulled, and in many respects
+extremely narrow-minded. When I once expressed to S. K. my
+astonishment that he could find it interesting to talk
+with Rosenvinge, he stressed his general cultivation.
+In general he set great store by people of
+the older generation who had preserved the humane interests
+of an earlier time and that refinement of manner which a younger
+generation so much lacked.
+
+\secnum{38.}
+
+With the late Pastor Spang K. had for a time (in the years
+1844--45?) associated a great deal, and had almost daily
+called for Spang at his home for a longish evening walk.
+(Several interesting letters to Spang from S. K. are
+in the possession of Spang's daughter, Mrs.~Rump). After Spang had died,
+K. once told me how his widow had been
+overwhelmed with grief, and how he had, by his
+% --- p. 364 ---
+\opage{364}conversation, helped to bring her mind back into balance.
+On that occasion he used the expression: ``I
+know how one should grieve, and how one should
+comfort in grief.'' And indeed: he understood it as few do.
+He comforted, not by covering up the grief, but by
+first bringing it properly to consciousness, clearing it up completely,
+and then reminding one that it was a \emph{duty} to grieve,
+but for that very reason also a duty not to let oneself be crushed
+by grief, but in grief to preserve the strength for one's
+work, indeed to find in grief the incentive to do that work
+still more fully.---I have myself, in my
+relationship with S. K., more than once had the experience of
+how he knew how to lift one up when one was bowed down,
+to comfort when one grieved, and that without one's
+needing to speak of what was oppressing or saddening one.
+Thus I remember how once, in the autumn of 1850, when,
+because I had not been able to find lodgings in time,
+I had to stay for a short while at a cheerless inn,
+% Danish prints "Iudtrykket" (turned n) for "Indtrykket"; rendered as the sense.
+and under the impression of my surroundings despondent thoughts
+had got the upper hand, I then one evening, as I was walking dejectedly
+in the street, met K., who began a conversation
+with me. Without my needing to say a word about
+myself, he saw with his sharp eye that I needed
+to be brought out of an oppressive mood, and he knew how,
+by his conversation, without its seeming for a moment to be directly
+aimed at that, so to free my mind that I left
+him glad and in good heart, and for a long time was freed from
+the power of melancholy.
+
+\secnum{39.}
+
+Much of what S. K. worked out in his writings
+I remember him touching on in conversation with me while
+his thought was at work on it, and precisely because
+it was still in the making, it had a life and an attraction
+even greater than what it could have when fully formed.
+Thus I remember that once, while he was walking along
+% --- p. 365 ---
+\opage{365}with Christens and me, he developed the theme he so often
+has treated in his upbuilding writings, that ``the \emph{whole} of life
+is the time of trial.'' He developed it in this form: that
+for the believer there was an ``At last'' which seemed to
+be so near that it could be grasped, but constantly drew
+back, until the end of life finally led to grasping
+it. Only in death could it be said: ``At last!''---
+Sometimes in his conversations S. K. expressed his thought in
+a more pointed, more paradoxical form than in his writings.
+It amused him to formulate it so that it formed
+the opposite of something commonly accepted. Thus, in opposition
+to the maxim: experience makes one wise, he used
+to put forward the theory: ``Experience makes one mad!'' and he
+could carry out the proof with much humor by pointing
+to all the countless contradictions of concrete experience.
+
+\secnum{40.}
+
+The different direction of our spiritual lives and our
+fundamentally different relation to what is Christian came now and then
+% Danish prints a comma after "sammen" where the sentence ends (capital "Engang"
+% follows); rendered as the sense, with a full stop.
+distinctly to light when we talked together. Once, probably
+in 1851, he asked me what I was occupied
+with at the moment. I answered him that I was reading the
+N. T. That seemed to please him, but it did not please
+him when I added that I was reading it chiefly with
+the aim of finding, in what has been handed down, what is primitively
+Christian, and of following the successive development of
+Christian dogmatic ideas. For him such
+an investigation was something almost offensive. Although
+he draws the dogmas into his writings so little, and everywhere
+keeps to what is central in Christianity, he
+could not, for all that, place himself in such a relation to Scripture
+that it became the object of a critical investigation. He
+could not do so, partly because Scripture stood for him as a
+unity, as the unified expression of what is Christian, into which
+he would bring no distinction; partly because, by
+% --- p. 366 ---
+\opage{366}being made the object of a scientific investigation,
+it became an object of knowledge instead of an object of faith.
+
+\secnum{41.}
+
+% Danish prints "Forboldet" (b for h) for "Forholdet"; rendered as the sense.
+My divergence from S. K. in relation to what is Christian
+I did not hide from him; but we did not dispute
+about it. There was so extraordinarily much in which we
+could be in sympathy, and I preferred to let myself be taught
+by him about much that was of great importance to me,
+rather than carry on a discussion in which, by his superiority,
+he could easily have overwhelmed me, but not
+easily convinced me. In our conversations, too, his attitude toward me
+was essentially communicative, and I saw in this a
+proof that he bore me goodwill. He had
+two ways of conversing: the one essentially communicative,
+awakening, encouraging; the other questioning,
+ironizing, and, through his dialectic, confounding.
+The latter he never used against me.
+Once in a while, when I grew heated, he might throw in a
+joking, teasing word. Thus I was once speaking
+very heatedly about how no positive religion could be
+tolerant, precisely because, by its claim to be
+revealed religion, it had to lay claim to being
+the only true one, and therefore had to posit the others as
+untrue. Something universally religious, a ``religion in general,''
+must therefore, from the standpoint of positive religion, be
+an absurdity. As I was developing this with heat, I happened
+to repeat the expression: a religion in general,
+and made my own the proposition that a religion (i.e.
+% Pun the English cannot carry: "overhovedet" ("in general", "at all") is
+% literally "over the head"; K. answers "over Hovedet", "over the head".
+\emph{positive} religion) in general was an absurdity.---``Yes, and
+a chamber pot over the head,'' said K., and thereby damped
+my ardor. That is, however, the only piece of teasing of
+that kind I remember from him.---If he never tried
+to counter my divergent views directly,
+I can, given the whole friendly sympathy he always showed
+me, and which I gratefully remember, only seek the reason
+% --- p. 367 ---
+% p. 367 opens mid-sentence (Danish "kun søge Grunden / til det deri, at ...").
+\opage{367}for it in this, that he knew that I was occupying myself honestly and
+earnestly with the cause that was for him the highest, and that I was so
+familiar with what he had written about it, and with his whole way of
+thinking, that I had sufficient premises for a conclusion, and would not be
+brought nearer to it by another, but in any case only by myself.
+
+\secnum{42.}
+
+Concerning the general effect of S. K.'s writings I once said something to
+him that seemed to make some impression on him. He was speaking of how, as an
+author, he had had the peculiar fate of publishing one work after another
+without calling forth any real criticism, whether hostile or approving. He
+then told me that his writings had nevertheless found a circle of readers
+from the beginning, and, it seemed, a fixed circle, since the number of
+copies sold straight away was roughly the same (c. 70 for the writings that
+followed Either/Or). I expressed my conviction that a great many people read
+his writings with real seriousness, and that the silence of our press, which
+I explained chiefly by the critics' feeling that the writings lay beyond the
+powers of their criticism, was by no means a sign that he was meeting with
+indifference in a wider public, on which I believed that he was, precisely,
+already then having an effect on a large scale. But I added that the effect,
+as regards the relation to Christianity, had in my opinion been as much
+negative as positive. All those on whom the writings had had an effect, in
+the one direction or the other, were surely agreed that only in his
+conception did Christianity have a real distinctiveness and inspire
+reverence. But his definition of Christianity was such that it must,
+precisely, have the power to
+% --- p. 368 ---
+\opage{368}drive many away from it, as was the case with me, and must have it
+precisely through the separation it set between Christianity and nature and
+concrete human life. --- We were, when I said these words to K., just in the
+act of taking leave of each other; he grew serious and silently gave me his
+hand, and parted from me, but with a friendly expression on his face.
+
+\secnum{43.}
+
+S. K. spoke without reserve of the significance his writings could have for
+certain particular persons. His old uncle, the wholesale merchant M.
+Kierkegaard, had a son, a couple of years younger than S. K., who was
+disabled, paralyzed down the whole of one side, and wholly a cripple;
+spiritually, on the other hand, well gifted. He read his cousin's writings
+with the greatest interest, visited him now and then at his home, and drew
+from these visits much spiritual uplift. I once talked about him with S. K.
+and told him how great an impression one of his works, the confessional
+discourse in ``Upbuilding Discourses in Various Spirits'', had made on him. In
+it there is a passage about a person who by his bodily weakness is prevented
+from carrying on any work in the outward world, and it is depicted beautifully
+and upliftingly how such a person too has the universally human ethical task
+undiminished, and what particular form the task of life takes for him. S. K.
+said: ``Yes! for him this book is a blessing.'' And so it truly was. It had
+the power to give the sorely tried man strength to overcome the thought that
+his existence was useless and wasted, and to give him the consciousness of
+being essentially the equal of those more happily endowed by nature. Precisely
+this consciousness S. K. also knew how to call to life in him by his
+conversations; that is why he came away from them so strengthened.
+
+% --- p. 369 ---
+\secnum{\opage{369}44.}
+
+A conversation that I have often remembered since, I had with S. K. some time
+before his ``Practice in Christianity'' came out. We were walking together
+down by the Lakes, and he urged me not to put it off too long, beginning an
+authorship. He added jokingly: ``Now, you know, there is a place vacant in our
+literature; \emph{now I am finished}.'' This remark, which I passed over
+lightly at the time, came back vividly to my memory later, when the last
+section of S. K.'s authorship lay completed. When he spoke to me in this way,
+he evidently still cherished the hope of being able to avoid the last battle
+with the established order. Had that battle not been forced upon him, his
+authorship would indeed have been --- essentially ended, concluded, when that
+conversation took place. In reality all the stages that were to be traversed
+had by then been traversed; his writings formed a wonderfully complete whole.
+But the next stage still bore within it a possibility of a redoubling, and
+this possibility became actuality when an attempt was made to reduce his
+conception of Christianity to an eccentric exaggeration, to set up mediocrity
+and spiritlessness as what is properly normal.
+
+\secnum{45.}
+
+In the same conversation S. K. came to single out one aspect of his
+authorship, which he spoke of with the objectivity peculiar to him: it was
+the significance of his writings for Danish prose. He said: ``In this century
+our literature has displayed an almost abnormal wealth in the development of
+its poetry; our prose literature, on the other hand, has lagged behind; we
+lacked a prose that bore the stamp of the artistic. This lack I have filled,
+and that significance my writings will also retain for our literature.'' In
+this I believe he is right: his prose is art, not without its shadows, but as
+a whole the clearest,
+% --- p. 370 ---
+\opage{370}most supple, most comprehensive and fullest expression for thought,
+and no less for feeling and passion, that our literature knows. It has often
+reminded me of Plato, the author with whose prose I would most readily
+compare Kierkegaard's, and who has surely also given him the model, which he
+has freely made over in his own way.
+
+\secnum{46.}
+
+In his writings S. K. has in several places spoken of Grundtvig and
+Grundtvigianism, and almost everywhere seen it from the comic side. In a
+similar way he often expressed himself about it in his conversations. The
+sharp contrast between his conception of the religious and the Grundtvigian
+one constantly came out, and the Grundtvigian childish immediacy was cast in
+a comic light by the contrast. Only about one period of Grundtvig's life did
+S. K. once speak to me with interest and appreciation: it was the time when
+Gr. came out against Clausen. But what appealed to K. in his conduct then was
+evidently not the specifically Grundtvigian, least of all the ``matchless
+discovery'', which always seemed to K. a matchless piece of foolishness, and
+an unoriginal piece of foolishness at that, but what forms the
+opposite of rationalism: the religious stirring of \emph{life}. S. K.'s
+father, whose religious orientation was closest to that of the old Pietism,
+sympathized with Grundtvig and Lindberg, surely from this point of view, and
+S. K.'s sympathy undoubtedly had the same motive and the same limits as his
+father's.
+
+\secnum{47.}
+
+A little trait of S. K.'s comes to mind as I think of Grundtvig. The
+patroness of Grundtvigianism, the Queen Dowager Caroline Amalie, also thought
+highly of S. K., at least before his attack on Mynster. S. K. was evidently
+not insensible to goodwill shown
+% --- p. 371 ---
+\opage{371}him by a queen. One day I was walking with him on Kærlighedsstien,
+when he suddenly burst out: ``Well, devil take it! now I shan't get away.'' I
+looked at him in surprise, for otherwise he never used words resembling an
+oath, and looked ahead along the path, where a long way off I caught sight of
+a footman in red livery, and in front of him two ladies. One of these was the
+Queen Dowager, who, when we met her, very graciously stopped S. K. and talked
+with him. When he saw her, we were so far from her that we could easily have
+turned back without having been noticed. That his outburst was not altogether
+sincerely meant was the impression I got from this: ``well, devil take it!''
+was not like him, and it came out somewhat forced, as when one wants by a
+strong expression to hide that one is really quite pleased that something is
+happening. S. K.'s old, traditional reverence for the royal power has not
+been without significance in his relation to the Queen Dowager.
+
+\secnum{48.}
+
+About Bishop Mynster I had, in the spring of 1852, a conversation with S. K.
+that I often could not help thinking of later, when K. came out against him.
+One afternoon I was walking on the Ramparts, on the promenade that runs along
+the top of the parapet, and there I passed Bishop Mynster. A moment later I met
+S. K., who was walking below on the Ramparts and called to me. He had seen
+Mynster walking ahead of him, and so our conversation turned to him. K. first
+spoke of his imposing and venerable appearance, and then of his shrewd and
+polished manner, and how as a man of the world he was superior to most of the
+younger men, who for a time had believed that with their philosophical
+apparatus they could treat Mynster as a subordinate figure, but soon, on
+personal contact with him, had been overwhelmed by him and now subordinated
+themselves to him. He named in particular
+. . . . . as one who by his awkwardness and lack of polish gave Mynster so
+high a degree of
+% --- p. 372 ---
+\opage{372}superiority in their personal dealings. But he stressed very
+strongly that Mynster's forte was precisely his worldly wisdom, and that it
+was this that determined his conduct. Of his own relation to Mynster K. spoke
+ironically. He told me with a smile that he had once asked Mynster's
+permission, whenever there were problems that he could not himself bring to
+clarity, to seek guidance then from His Right Reverend Excellency! and that
+Mynster had kindly given him this permission. The smile alone with which he
+told me this showed me clearly how little, in reality, he thought of Mynster
+at that time, and the whole manner in which he characterized Mynster as a man
+of the world agreed perfectly with his later pronouncements. There was a time
+when he had thought very highly of Mynster, and he had come to this
+essentially through filial piety toward his father, who valued Mynster
+greatly. This dutiful regard for his father's judgment I have seen in several
+cases determining K.'s view. Thus I remember that he once spoke with much
+goodwill of a man who in no respect deserved esteem or could by his person
+have aroused S. K.'s interest; but his father felt great attachment and
+gratitude toward this man, who had once, by a shrewd piece of advice,
+prevented his financial affairs, which were endangered in the confused
+monetary period after the war with England, from falling into disorder.
+
+\secnum{49.}
+
+When S. K. began his polemic against the established order, and perhaps some
+time before that, he stopped taking part in the public worship of the Church,
+at which he had previously been a very regular attendant. The late Dr.
+Frederik Beck once told me that in that period S. K. liked to come into the
+Athenæum on Sunday mornings during church time; which Beck, with the relish
+for barbed remarks peculiar to him, interpreted
+% --- p. 373 ---
+\opage{373}to mean that S. K. wanted to make people notice that he did not go
+to church. --- Once, many years earlier, S. K. had asked me whether I went to
+church. I said no, and told him that I did not, partly because I felt a
+stranger there, partly because the service in the Copenhagen churches went
+on amid so many disturbances that I could in no case keep a devout frame of
+mind, but was more likely to be driven to take offense. He then said that it
+was a \emph{duty} not to let oneself be disturbed by what went on around one;
+one \emph{should} be upbuilt when one was in church.
+
+\secnum{50.}
+
+The last time I spoke with S. K. was in the summer of 1855, when I had not
+seen him for an unusually long time. It was one evening as I was walking from
+Højbroplads up toward Vimmelskaftet. K. came up to me and began a
+conversation. After we had talked for a moment about my brief part in
+political life (in the winter of 1854---55 I had been a member of the
+Rigsdag), we soon came to speak of his polemic against the established order
+of the Church. I thanked him warmly for his stand, and told him how many I
+had found who sympathized with him wholeheartedly. He spoke of the situation
+he had brought about with the greatest clarity and calm, and it astonished me
+that in the midst of the violent struggle, which cut so deep into his life
+and laid claim to his last strength, he could preserve not only his wonted
+composure and confidence, but could still keep his sense of fun. As we were
+nearing his home --- at that time he lived in Klædeboderne --- he said in a
+joking tone: ``Now I'll go home and go to bed, and then I'll say to the world
+what that Kammerraad said.'' I asked him what, then, this Kammerraad had said.
+He then told me that there had once lived an eccentric there in the street,
+who was a Kammerraad by title, and who regularly every evening
+% --- p. 374 ---
+\opage{374}used to hold the following conversation with the watchman. When
+the watchman had called ten, the Kammerraad would open the window and ask:
+``Watchman, what time is it now?'' --- ``It is ten o'clock, Mr. Kammerraad.''
+% The Danish never closes the quotation that begins "Godt!" (and prints its opening
+% mark as two commas). The English closes it after the break-off dash, before the
+% parenthesis, where the sense requires, so that its quotation marks balance.
+--- ``Good! then I think I'll go to bed. If anyone should ask for me now,
+watchman, you may tell them to ---''
+% Götz von Berlichingen's reply (in Goethe's play) is the proverbial "kiss my arse"; the Danish leaves it unspoken.
+(Götz v. Berlichingen's answer.) --- He told this story with his old humor,
+and I bade him Good night! without suspecting that I had that evening spoken
+with him for the last time.
+
+\begin{center}\small (Written between 27 Dec. 1871 and 10 January 1872.)\end{center}
+
+\begin{flushright}\textbf{H. Brøchner.}\end{flushright}
+
+\end{document}
