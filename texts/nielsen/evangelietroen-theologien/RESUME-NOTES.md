@@ -690,3 +690,64 @@ cache is 183 pages of the scan rendered at 250 dpi greyscale, one PNG per PDF
 page, named `pg-<PDFpage>.png`. Takes about three passes of a couple of minutes.
 Watch for the occasional truncated PNG — one appears most times — and delete and
 re-render it, or Pillow throws "image file is truncated".
+
+---
+
+## Full collation, 24 September 2026 (REPAIR-PLAYBOOK §5C): REPAIRED
+
+**Scan:** KB colour JPEG2000 at 250 ppi (sha256 `4c2821350fce…7efc4f`), not JBIG2, so a clear
+positive glyph is admissible evidence; an absent feature is still ink failure. The embedded
+text layer is ABBYY and loses æ/ø throughout.
+
+**Page map (verified on 159 of 174 folios):**
+- printed 1–83 = PDF + 13;
+- PDF 97–98 duplicate printed 82–83;
+- printed 84–174 = PDF + 15;
+- Forord III–VIII = PDF 8–13; Indhold = PDF 190–191.
+
+**Method:**
+- Book notes for the agents: `.parts/collation/ET-COLLATE-NOTES.md`.
+- 18 collators, about 10 pp. each, in 2 waves: Forord–p. 83 and pp. 84–174 + Indhold.
+- 4 blind second readers covered every non-emphasis change and every doubt.
+- 1 recheck of pp. 101, 118, 123, 137, 140 (a collator killed shared renders): 0 divergences.
+- 1 post-repair re-sample.
+
+**Waves (one OCRDIFF line per wave):**
+- Wave 1, Forord–p. 83: SPLICED + VERIFIED.
+  OCRDIFF: embedded ABBYY layer | pp.1-83 | 593 candidates | 3 real | 589 witness's fault | 1 unresolved
+- Wave 2, pp. 84–174: SPLICED + VERIFIED.
+  OCRDIFF: embedded ABBYY layer | pp.84-174 | 715 candidates | 3 real | 712 witness's fault | 0 unresolved
+
+Verify after each wave:
+- 174 marker pairs;
+- braces balanced;
+- the „“ tally unchanged;
+- word diff reviewed;
+- sandbox compile, 0 errors, 0 missing (= the untouched original).
+
+**Found and fixed:** the full list is in the transcription.tex header (ACCURACY block).
+- 28 transcriber's errors:
+  - 8 punctuation marks;
+  - 10 wrong words or letters (`orthodore` ×3, `laae`, `famlede`, `korser`, `ak!` …);
+  - 9 normalised spellings undone;
+  - 1 word division.
+- 16 misprints the file had silently corrected, restored as printed with comments.
+- 28 emphasis/antiqua items: `De Wette` ×5 and `grammatikalsk` are Fraktur; `Ergo` is antiqua.
+- 7 markers moved, 6 of them to split-word turns.
+- 4 wrong comments corrected (pp. 111, 125, 139, 152).
+- 17 split-word turns had `\opage{N} ` with a space, so the PDF set "Betragt ningen". Closed.
+
+**Held** (readers split): pp. III, 13, 44, 45, 64, 126 (1813/1843), 137, 167. See the header.
+
+**Post-repair re-sample** (seed `|post`, pp. 12, 50, 73, 74, 90, 150) found 0 errors and 1 emphasis
+extent (p. 50 note), now corrected.
+
+**Tooling:** `.parts/collation/`:
+- `apply_et.py` applies FIX/PRN/EMPH;
+- `edit.py` applies unique-anchor hand edits (`edits-*.py`);
+- `verify_et.py` checks a wave;
+- `tools.py` builds the packets and the hint sheets, with an ABBYY/Fraktur OCR-HABIT filter.
+
+**Rate:** about 0.24 errors/page (more than half word-level), plus about 0.16 emphasis items/page.
+This is the cleanest of the three books collated this week.
+Backup: `transcription.tex.bak.20260924-precollation`.
