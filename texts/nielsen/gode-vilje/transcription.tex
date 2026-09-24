@@ -79,7 +79,8 @@
 %  at p. 25 "religiøse"). German quotations are in Fraktur (p. 46 note).
 %  Emphasis is by LETTERSPACING -> \emph{}. Latin set in antiqua -> \textit{}
 %  (p. 46 note "Omnia et singula ...", p. 91 "credo, ut intelligam",
-%  "Metaphys. XII, 10" on p. 1 has the numeral in antiqua). Spaced antiqua
+%  "Metaphys. XII, 10" on p. 1 has the numeral in antiqua; numerals are
+%  left plain by house convention, see §5). Spaced antiqua
 %  -> \emph{\textit{}}. Fat-face (halbfett) Fraktur: none in the book. Greek in Greek type (p. 1; p. 46 note Θέσις),
 %  typed directly (textalpha). Quotation marks „...“, low-high; the closing
 %  sort is a straight double prime ″ in this fount, transcribed “.
@@ -127,6 +128,56 @@
 %       emphasis extent): 0 discrepancies.
 %  See TRANSCRIPTION-PLAYBOOK.md §3 step 4 and §7.
 %
+%  ACCURACY: full collation of all 141 pages, the title page and the
+%  Rettelser against the scan, 24 Sep 2026 (REPAIR-PLAYBOOK §5C).
+%  14 collators (10--11 pp. each, 2 waves, every line read at the image
+%  at 300--600 dpi) + 2 blind second readers on every non-convention change
+%  and every doubt (26 questions) + a post-repair re-sample of 6 fresh
+%  pages (seed |post: pp. 30, 33, 59, 85, 91, 110): 0 errors, 0 emphasis
+%  items. Page markers: all 141 confirmed at the right word.
+%    OCRDIFF: embedded ABBYY layer | pp.1-70   | 425 candidates | 0 real | 425 witness's fault | 0 unresolved
+%    OCRDIFF: embedded ABBYY layer | pp.71-141 | 483 candidates | 0 real | 483 witness's fault | 0 unresolved
+%  (ocrdiff found none of the errors below: all were read at the image.)
+%
+%  8 transcriber's errors corrected (~0.06/page):
+%      p.  47 n.  the elision rule between the verses has 9 dashes, not 8
+%      p.  49     "vred, Kritiken" (comma, not full stop)
+%      p.  63     "Havens sandselige": the "comma" was a paper fibre
+%      p.  68     "Løven er et glubsk Dyr" (the file had "Loven")
+%      p.  75     "løstes op" (long s; the file had "løftes")
+%      p. 100 n., p. 107   "Leilighedssk." as printed (the file had
+%                 normalised both to "Leilighedsskr.", which p. 96 prints)
+%      p. 133 n.  "N. Lindberg" (the file had "R.")
+%  1 misprint the file had silently corrected, restored as printed:
+%      p. 100 n.  "Kryderiet" (one d)
+%  4 misprints already as printed but uncommented, now commented:
+%      p. 25 n. "apereri"; p. 47 n. "decit"; p. 64 surplus “; p. 119
+%      "Phantheismen" (inside the Martensen quotation). p. 63 "Menen" is
+%      now logged as "as printed", not as a certain misprint (it may be a
+%      verbal noun beside "Viden"; cf. p. 62 "Forestillen og Tænken").
+%  9 emphasis/antiqua items: letterspacing added at p. 40 "som", p. 52
+%      "Jesu Liv" (the first of two; the second is unspaced), p. 88 the
+%      first "sig selv", p. 92 "Kan", p. 140 "Een være Hersker!"; extent
+%      p. 108 (the run starts at "at den Protest"); antiqua added at p. 68
+%      "Apriori", "apriori" and p. 70 "Strom.".
+%  4 paragraphing faults: spurious breaks removed at the turns to pp. 27
+%      and 67; missing breaks restored at pp. 119 and 133 (indented first
+%      lines).
+%  7 LaTeX welds repaired: an inline % comment after a word ate the
+%      newline and joined it to the next line's first word in the PDF
+%      ("Under,maatte", "Sammeal", "denguddommelige", "ial",
+%      "theistiskei", "denbiskoppelige", "VidensbegreberTroesbegreber");
+%      the comments now stand on their own lines.
+%  HOUSE CONVENTION (decided at this collation): numerals in citations are
+%      left plain, although the print sets them in antiqua (roman "XII",
+%      "Logik II", "S. IX" ...; ~20 sites). Only words are marked \textit.
+%  HELD, file reading kept: p. 1 ἔστω (no acute visible; commented);
+%      p. 22 "Hysteron-|Proteron" (line-end hyphen, compound kept);
+%      p. 75 "nemlig," (faint mark; second reader: a comma); p. 95
+%      "Mangfoldighed" and p. 109 "Negation" (a speck over a letter, not a
+%      sort: both readers); p. 126 whether the full stop of "Fjerde
+%      Confusion." is inside the spacing (cannot be told).
+%
 % ---------------------------------------------------------------------
 %  6. PRINTER'S DEFECTS LOG
 % ---------------------------------------------------------------------
@@ -140,8 +191,11 @@
 %      p.  47      „ before „Historien om Syndefaldet“ never closed
 %      p.  54      stray full stop in „med. den“
 %      p.  56      stray mark over the final e of „omtvistede“
-%      p.  63      „Menen“ for „Mening“
+%      p.  63      „Menen“ (as printed; possibly for „Mening“)
 %      p.  64      χριστᾷ for χριστῷ; a surplus closing “
+%      p.  25 n.   „apereri“ for „aperiri“; p. 47 n. „decit“ (for dicit?)
+%      p. 100 n.   „Kryderiet“, one d
+%      p. 119      „Phantheismen“ (inside the Martensen quotation)
 %      p.  71 n.   „N. H. Clausen“, initials reversed (p. 66: H. N.)
 %      p.  72      stray full stop in „Theo-|log.“
 %      pp. 87--88  a quotation resumed without a reopening „
@@ -211,6 +265,7 @@ Forlagt af den Gyldendalske Boghandel (F. Hegel.)\\[0.3em]
 
 % --- p. 1 ---
 \opage{1}\setcounter{footnote}{0}%
+% ἔστω: only the smooth breathing over the ε shows at 300 ppi; no acute visible (collation 2026-09-24; both readers). Absence taken as ink failure, not a printer's defect; accent kept.
 „Οὐκ ἀγαθὸν πολυκοιρανίη, εἷς κοίρανος ἔστω.
 „\emph{Mange til Herskab er aldrig til Gavn, kun Een
 være Hersker}“. Ved at give dette Homeriske Ord en
@@ -1138,6 +1193,7 @@ advarer Newton vel imod at gaae formeget i det Enkelte, men
 tilføier dog. Anfr. Skr. \textit{p. 292: Rerum futurarum prædictiones
 Ecclesiæ conditionem per omnia secula respiciunt.} Hvor umid\-%
 delbart han har opfattet de apocalyptiske Visioner, sees af følgende
+% sic: "apereri" for "aperiri" in the print (600 dpi; collation 2026-09-24, blind second reader agrees); transcribed as printed
 Udtalelse: \textit{Post paratas lucernas, vidit Joannes apereri januam
 Templi ac voce, quasi buccinæ, evocabatur ad eam magni atrii
 portam, quæ Orientem spectat, ut illic visa videret. Opuscul.
@@ -1182,7 +1238,6 @@ en Huulvei mellem Viingaardene. \dots\ Og da Aseninden saae
 Jehovas Engel, da lagde den sig ned under Bileam; saa
 blev Bileam vred og slog Aseninden med Kjeppen. Da aab\-%
 nede Jehova Asenindens Mund, og hun sagde til Bileam:
-
 % --- p. 27 ---
 \opage{27}\setcounter{footnote}{0}%
 hvad har jeg gjort Dig, at Du har slaaet mig nu tre Gange.
@@ -1701,7 +1756,8 @@ Verdensløbets rastløse Strøm. Skal der i Sandhed være
 Tale om en hellig Gudsaabenbaring, da maa der være en
 Historie i Historien, da maa der indenfor Verdenshistorien
 være en \emph{hellig Historie}, i hvilken Gud aabenbarer sig
-som Gud, en Historie, i hvilken \emph{det hellige Verdens\-%
+% p. 40: "som" is letterspaced, "Gud" is not (measured at 600--900 dpi; collation 2026-09-24, two readers; medium confidence)
+\emph{som} Gud, en Historie, i hvilken \emph{det hellige Verdens\-%
 formaal} aabenbarer sig som saadant, hvor Guds Ord saa\-%
 ledes indfatter sig i det menneskelige Ord, at det sidste bliver
 % --- p. 41 ---
@@ -1965,9 +2021,10 @@ lægger den fra de puristiske Stridigheder bekjendte Sebastian Pfocken i
 Munden:\\
 \hspace*{2em}\textit{Diligo philologum, qui eviscerat abdita verba}\\
 \hspace*{2em}\textit{Jure novum Christi sed mage fedus amo}\\
+% "decit" (for dicit?) is as printed, 600 dpi (collation 2026-09-24, blind second reader agrees)
 \hspace*{2em}\textit{Ergo novo quisquis de federe tenuia decit,}\\
 \hspace*{2em}\textit{En pupillam oculi vulnerat ille mei.}\\
-\hspace*{2em}--- --- --- --- --- --- --- ---\\
+\hspace*{2em}--- --- --- --- --- --- --- --- ---\\
 \hspace*{2em}\textit{Falx critica in quosvis per me grassetur. At unis}\\
 \hspace*{2em}\textit{A Bibliis fas est abstinuisse manus.}} Kritiken, den historisk viden\-%
 skabelige Kritik, er her forbilledligt betegnet ved Kundskabens
@@ -2025,7 +2082,7 @@ engang høre Menighedens Stemme!
 
 „\emph{Hvad har Du}“, spørger Menigheden den ved sit
 Syndefald syndige Theologie, „\emph{gjort af mit Juleevan\-%
-gelium}?“ Ak, kjære Menighed, bliv ikke vred. Kritiken har
+gelium}?“ Ak, kjære Menighed, bliv ikke vred, Kritiken har
 desværre revet Juleevangeliet reent istykker. Men tab ikke
 Modet! husk paa, at det er Viden, der skal hjælpe paa Troen;
 husk paa, hvad Biskop Martensen siger med Anselmus: „Ikke
@@ -2157,7 +2214,7 @@ Christendommen;“ men denne Antagelse hører ifølge den
 logiske Modsætning imellem det Rigtige og det Urigtige,
 aabenbart til det Halvrigtige, for ikke at sige, det i Grunden
 Urigtige. Man behøver blot at kaste et Blik paa den
-straußiske „Indledning“ til Jesu Liv for at overbevise sig om
+straußiske „Indledning“ til \emph{Jesu Liv} for at overbevise sig om
 Sagens virkelige Sammenhæng. „Efterat allerede Semler
 (Indl. § 8) havde talt om et Slags jødisk Mythologie og
 ligefrem kaldt Fortællingerne om Samson og Esther Myther;
@@ -2540,14 +2597,14 @@ Den væsentlige Forskjel imellem \emph{Viden} og \emph{Mening}
 blev allerede Grækerne klar; men den principielle Forskjel
 imellem Tro og Mening synes endnu ikke at være bleven
 Theologerne klar. Ligesom Forskjellen mellem Viden og
-Menen % printer's defect: "Menen" (p. 63 l. 5), for "Mening"; transcribed as printed
+Menen % as printed: "Menen" (p. 63 l. 5). Possibly a misprint for "Mening", possibly a deliberate verbal noun beside "Viden" (cf. p. 62 "Forestillen og Tænken"); collation 2026-09-24
 kun kan klares ved en Videnskritik, saaledes kan
 Forskjellen mellem Tro og Mening kun klares i en Troeskritik.
 Et Exempel. Hvad der i første Mosebog fortælles
 om Paradiset, om Livets Træ, Kundskabens Træ o. s. v.,
 er ganske vist fortalt i den Mening, at det Altsammen hører
 under det udvortes Virkelige, at Livets Træ og Kundskabens
-Træ ligesaavist have havt deres Rødder i Havens, sandselige
+Træ ligesaavist have havt deres Rødder i Havens sandselige
 materielle Jordbund, som enten Viintræet eller Figentræet.
 I denne Mening have vore luthersk-orthodoxe Fædre endnu
 for hundrede Aar siden ganske vist opfattet Fortællingen om
@@ -2607,6 +2664,7 @@ Martensen virkelig Aandens Kald og Naadegave, og det maa
 han vel føle, siden han melder sig med et saa stort Forehavende,
 til at fuldbyrde, hvad „Skriften tydelig siger“ ---
 med udtrykkeligt Hensyn paa Videnskaben? --- at Alt, baade
+% printer's defect: surplus closing “ after "skal" -- no „ opens "at Alt, baade ..." (collation 2026-09-24, blind second reader agrees); transcribed as printed
 det Synlige og Usynlige skal“ --- videnskabeligt? --- „indsamles
 under Christus som Hovedet (ἀνακεφαλαιώσασθαι
 τὰ πάντα ἐν χριστᾷ Eph. 1), % printer's defect: the Greek has "χριστᾷ" (alpha with circumflex and iota subscript) for "χριστῷ" (Eph. 1:10); transcribed as printed
@@ -2683,7 +2741,6 @@ Straußiske Kritik Negativiteten af alle dens Resultater til
 Last, saa sige man dog, hvad andet Resultat end et blot
 negativt der lod sig uddrage af de daværende Undersøgelser
 om Evangeliernes Oprindelse og deres indbyrdes Forhold!
-
 % --- p. 67 ---
 \opage{67}\setcounter{footnote}{0}%
 Idet Mening stod overfor Mening, og alle Meninger til\-%
@@ -2735,9 +2792,9 @@ Thi er Gud den personlige, villende Gud, da kunne vi
 hverken erkjende Mere eller Mindre af ham, end han selv
 vil aabenbare os“. For nu ret paa det Bestemteste at styrke
 denne sidste Sætning til uforsonlig Strid med den første,
-tilføies: „Apriori construere ham (den ethiske Gud) kunne vi
+tilføies: „\textit{Apriori} construere ham (den ethiske Gud) kunne vi
 ikke, thi kun det logisk Nødvendige, men ikke den frie Aand
-lader sig apriori construere.... \emph{Tvinge} den ethiske Gud til
+lader sig \textit{apriori} construere.... \emph{Tvinge} den ethiske Gud til
 at aabenbare sig for os, som vi ved physicalske Experimenter
 kunne tvinge Naturen til at røbe sine Hemmeligheder, kunne
 vi heller ikke“; med andre Ord: „betragte Dogmatike\-%
@@ -2752,7 +2809,7 @@ saaledes beroer Dogmatikerens Forhold til Aabenbaringen
 \emph{ikke} paa det Logisk-Physiske, forsaavidt det ikke beroer paa
 apriorisk-empirisk Nødvendighed; ganske vist er her et Liger\-%
 viis, men et Ligerviis af denne Natur minder stærkt om det
-Bekjendte: ligerviis som Loven er et glubsk Dyr, saa skulle vi
+Bekjendte: ligerviis som Løven er et glubsk Dyr, saa skulle vi
 og vandre udi et nyt Levnet.
 
 Det nytter ikke med Talemaader og Totalanskuelser.
@@ -2837,7 +2894,7 @@ Hænder eller i Disciplenes og hvorledes foregaaet: om ved
 Udvoxning (men Talen er her ikke om Naturlegemer, der
 endnu staae under en organisk Udviklingslov) eller ved
 Mangfoldiggjørelse (Orig. \textit{in Matth.} 1, 11: τῷ λόγῳ
-καὶ εὐλογίᾳ αὔξων καὶ πληθύνων. Clem. Strom.
+καὶ εὐλογίᾳ αὔξων καὶ πληθύνων. Clem. \textit{Strom.}
 % --- p. 71 ---
 \opage{71}\setcounter{footnote}{0}%
 VI, 11): ved Brødene en Voxen, ved Fiskene en Opstandelse
@@ -2884,7 +2941,8 @@ udvortes Hjemmel som nogen af de evangeliske Undergjer\-%
 ninger“. Vi maae bestandig huske paa, at det er den \emph{histo\-%
 riske Tro}, der ifølge „Concordatet“ afgiver det rette exegetisk
 paalidelige Grundlag for den religiøse. Skulde den ægte Theo\-%
-log. opgive Troen paa det Historiske i Bespiisningens Under,% sic: a full stop after "Theolog" in the print (both witnesses and the 300 ppi image); transcribed as printed
+% sic: a full stop after "Theolog" in the print (both witnesses and the 300 ppi image); transcribed as printed
+log. opgive Troen paa det Historiske i Bespiisningens Under,
 maatte han jo opgive Troen paa det Historiske i hele den hellige
 Historie. Men, spørge vi, hvad er da nu i denne Bespiis\-%
 ningshistorie det egentlig Historiske? Derpaa maa den ægte
@@ -3000,7 +3058,7 @@ kan umulig bestaae deri, at Troen og Viden hver fra sin Side
 ophøre at være Principer. Vistnok bleve vi paa disse Vilkaar
 frie for at plages med to absolut ueensartede Principer; ja vi
 bleve endogsaa frie for at plages med noget Princip: Gaa\-%
-dens Løsning var da den, at det Hele løftes op i en fuld\-%
+dens Løsning var da den, at det Hele løstes op i en fuld\-%
 stændig Principløshed. Men, ved Monarchiets kongelige
 Princip! en fuldstændig Principløshed er Theologiens fuld\-%
 stændige Ruin.
@@ -3499,8 +3557,8 @@ Menneskeheden i midlende og frelsende Menneskeaabenbarelse“.
 Her have vi altsaa Forklaringen. Men skulde vi ikke let
 blive enige om, at denne Forklaring selv trænger til en
 Forklaring? Thi hvad er det den guddommelige Logos
-egentlig har „indsænket“ i „Menneskehedens Skjød“, sig
-selv eller ikke \emph{sig selv}? Er det ikke sit egentlige Selv,
+egentlig har „indsænket“ i „Menneskehedens Skjød“, \emph{sig
+selv} eller ikke \emph{sig selv}? Er det ikke sit egentlige Selv,
 saa er det jo heller ikke Logos selv, der er incarneret. Det
 Væsen, hvis egentlige Selv ikke kan „indsænkes“ som Mulig\-%
 hed i Modersliv, kan ikke incarneres. Men er det virkelig
@@ -3550,7 +3608,8 @@ Skal Modsigelsen løses i Troen, da bliver det ingen\-%
 lunde Opgaven at bestemme, hvorledes Incarnationens Meta\-%
 physik skal enten tænkes eller ikke tænkes, thi Troesprincipet
 hæver sig kun over det Logisk-Physiske derved, at det ude\-%
-lukker al objectiv-\emph{logisk-physisk} og da med det Samme% p. 89: only "logisk-physisk" is letterspaced, not "objectiv-"
+% p. 89: only "logisk-physisk" is letterspaced, not "objectiv-"
+lukker al objectiv-\emph{logisk-physisk} og da med det Samme
 al \emph{metaphysisk} Tænkning. I Christi Person forudsættes
 Eenheden, den oprindelige, ved Undfangelsen givne Eenhed
 af guddommelig og menneskelig Natur, guddommelig og men\-%
@@ -3626,7 +3685,8 @@ tionen maa heller ikke tænkes saaledes, at Selvet, det Selv,
 der som ufuldbaaret Foster begynder i Modersliv, ikke skulde
 være det evige Logos-Selv. „Skjøndt Christus vidner: Jeg
 og Faderen ere Eet, siger han dog aldrig, jeg og Logos ere
-Eet. Thi han er den menneskelige \emph{Selv}aabenbaring af den% p. 91: only "Selv" is letterspaced
+% p. 91: only "Selv" is letterspaced
+Eet. Thi han er den menneskelige \emph{Selv}aabenbaring af den
 guddommelige Logos.“ (Dogm. § 132). At det Phlyariske
 her er sat i sit negative Moment, er kjendeligt paa Resul\-%
 tatet, thi Resultatet er complet meningsløst. Det sidste Glimt
@@ -3650,7 +3710,7 @@ veed sig ikke blot som deelagtig i den guddommelige Logos,
 men som den gudmenneskelige Fortsættelse af det evige Gud\-%
 domsliv fra Begyndelsen“. (Dogm. § 132). Denne sidste
 Udvei er nu aldeles spærret. Christus kan jo ikke sige: Jeg
-og Logos ere Eet. Kan han virkelig ikke? Nei, det veed
+og Logos ere Eet. \emph{Kan} han virkelig ikke? Nei, det veed
 den store Dogmatik, han ikke kan! Og hvorfor ikke? Fordi
 Christi menneskelige Jeg, det Jeg, der har en Begyndelse
 i Tiden, har udviklet sig fra et Ubevidst til et Bevidst ---
@@ -3699,7 +3759,8 @@ tive Moment.
 3) \emph{Det Phlyariske i speculativ Fuldendelse.}
 Mediationen af Tro og Viden lader sig naturligviis kun
 gjennemføre paa den Betingelse, at begge Parterne nærme sig
-hinanden med al mulig diplomatisk Forekommenhed d. v. s. i% p. 93: a raised dot between "diplomatisk" and "Forekommenhed" read as a speck (word space both sides)
+% p. 93: a raised dot between "diplomatisk" and "Forekommenhed" read as a speck (word space both sides)
+hinanden med al mulig diplomatisk Forekommenhed d. v. s. i
 al Oprigtighed, Uegennyttighed, kun besjælede af de varmeste
 Ønsker om Fred og god Forstaaelse. Under den gjensidige
 Tilnærmelse foregaaer der en lykkelig Forandring med dem
@@ -3932,7 +3993,7 @@ stavelig staaer i Dogmatikens § 57, § 59, § 60, § 61. Man
 \opage{100}\setcounter{footnote}{0}%
 skal ikke kunne sige, at Skabelsesbegrebets ueensartede Ele\-%
 menter blive enten logisk eller ontologisk sammenarbeidede;
-de blive kun i al Tvetydighed sammenrørte\footnote{Da Biskop Martensen (Leilighedsskr. S. 114) i Anledning af mine
+de blive kun i al Tvetydighed sammenrørte\footnote{Da Biskop Martensen (Leilighedssk. S. 114) i Anledning af mine
 Angreb paa de dogmatiske Mirakelforklaringer henviser mig til
 Strauß, som „med større Klarhed og mindre Lidenskabelighed“
 fremsætter sine Indvendinger, vil jeg i denne Sammenhæng be\-%
@@ -3949,7 +4010,8 @@ der kun saalænge vise sig forenede, som man vedbliver at ryste
 dem; medens atter andre, og tildeels ikke uberømte, Dogmatiker
 endog ligne en Pølsemasse (Billedet er ikke uædlere end Sagen),
 i hvilken den orthodoxe Kirkelære udgjør Kjødet, den Schleier\-%
-macherske Theologie Flæsket, den Hegelske Philosophie Krydderiet.
+% "Kryderiet" with one d as printed (collation 2026-09-24, blind second reader agrees; the transcription had normalised it to "Krydderiet")
+macherske Theologie Flæsket, den Hegelske Philosophie Kryderiet.
 Det er disse Blandinger, i hvilke det Bedærvede ved allehaande
 Tilsætninger igjen skal gjøres velsmagende, som allerede Lessing
 fandt saa ækle, saa modbydelige, saa opstødende; det er den saa\-%
@@ -4209,7 +4271,7 @@ tvinges Bevidstheden. En Sætning, jeg baade kan antage og
 ikke antage, er uden videnskabeligt Værd; kun den Sætning,
 jeg umulig kan forkaste uden at forkaste Videnskaben selv,
 er videnskabelig. „Men“, spørger Biskop Martensen (Lei\-%
-lighedsskr. S. 102), „skal kun det kaldes Videnskab, der kan
+lighedssk. S. 102), „skal kun det kaldes Videnskab, der kan
 paatvinges med uimodstaaelig Nødvendighed, da synker Viden\-%
 skaben ned til noget meget Tomt og Værdiløst, som det ikke
 er Umagen værdt at gjøre store Ophævelser over. Kun den
@@ -4256,7 +4318,7 @@ eller nogensinde vil forsøge at gaae udenfor Grændsen af
 det Logisk-Physiske eller hæve sig op over det rationelt Nød\-%
 vendige, og denne Hovedsætning skal vel staae fast: da er
 det mig nu, hvad enhver tænkende Læser kan sige sig selv,
-saare let at bevise, at \emph{den Protest, Biskop Martensen
+saare let at bevise, \emph{at den Protest, Biskop Martensen
 i sit Leilighedsskrift har nedlagt mod min Philo\-%
 sophie, er en Protest imod al Philosophie}.
 
@@ -4641,6 +4703,7 @@ Begreber reflectere sig i den logiske Idee. Den Viden, jeg
 vil indføre, er, det paastaaer Biskoppen, „i Virkeligheden Pan\-%
 theisme“; hvorfor? Fordi Logik skal være Ethik: en ret in\-%
 teressant Confusion.
+
 % --- p. 119 ---
 \opage{119}\setcounter{footnote}{0}%
 „Hvad der“ (Leilighedsskr. S. 33), „kan frembringe
@@ -4659,6 +4722,7 @@ videre indrømmes“.
 
 Hvorfor kan Slutningen ikke indrømmes? „Man maatte“,
 siger Biskoppen, „jo være vildfremmed i Philosophiens Hi\-%
+% sic: "Phantheismen" for "Pantheismen" (inside the quotation from Martensen), 800 dpi (collation 2026-09-24, blind second reader agrees); transcribed as printed
 storie for ikke at vide, at ogsaa Phantheismen har sit Sub\-%
 jectivitetsprincip, der snart er bleven bestemt som et Videns\-%
 princip, snart som et Magtprincip og snart som en Eenhed
@@ -4729,7 +4793,8 @@ ethiske, pathetiske Confusioner, hvormed Biskop Martensen
 ved denne Leilighed saa gavmildt har regaleret Logiken!
 
 \emph{Første Confusion}. Her siges om Heibergs Tale,
-der ganske vist er klar og forstaaelig, at den hverkeu er theistisk% printer's defect: "hverkeu" (turned n) for "hverken", p. 121 l. 11; transcribed as printed
+% printer's defect: "hverkeu" (turned n) for "hverken", p. 121 l. 11; transcribed as printed
+der ganske vist er klar og forstaaelig, at den hverkeu er theistisk
 ei heller udgiver sig for at være det. Denne besynderlige
 Yttring har sit Udspring fra en ligesaa besynderlig Sam\-%
 menblanding af logisk og theologisk Theisme. I Ideens
@@ -5119,7 +5184,8 @@ Modsætning indenfor selve den theoretiske Philosophie, to
 guddommelige Principer, den Vidende og den Mægtige, idet
 der dog gives os den Forklaring, at „det er een og den samme
 Magt, der i mægtig Selvmodsætning er ideal i Tænken og
-Dommen, reel i Virken og Frembringen“. Hvad den% PRINTED: one closing “ only; the quotation opened at „til en ny Dualisme is never closed (quote balance +1)
+% PRINTED: one closing “ only; the quotation opened at „til en ny Dualisme is never closed (quote balance +1)
+Dommen, reel i Virken og Frembringen“. Hvad den
 biskoppelige Kritik her affærdiger som en forklarende Be\-%
 mærkning er i Logiken en Grundtanke, der udvikles, bear\-%
 beides og formes i lutter logiske Begrebsbestemmelser. Skulde
@@ -5163,10 +5229,11 @@ har charakteriseret som Opinionspolemik\footnote{At det imidlertid ikke gaaer sl
 nionspolemik i det nærværende Øieblik, som det gik for sytten Aar
 % [printed p. 133 begins here, inside this note]
 siden, vil Biskop Martensen selv kunne skjønne deraf, at allerede
-R. Lindberg i sin Anmeldelse af „Leilighedsskriftet“ (Dansk Kirke\-%
+N. Lindberg i sin Anmeldelse af „Leilighedsskriftet“ (Dansk Kirke\-%
 tidende. 5te og 12te Mai) med logisk kategorisk Sikkerhed har
 paapeget adskillige af de Confusioner, hvortil Forvrængningen
 støtter sig.}.
+
 % --- p. 133 ---
 \opage{133}\setcounter{footnote}{0}%
 Heraf sees nu, hvorledes ikke blot min Philosophies, men
@@ -5285,7 +5352,8 @@ i den ene Skikkelse kan have Charakteermærker, der nøiagtig
 svare til Theismen i den anden. Tvertimod! det ligger i
 Sagens Natur, at Charakteermærkerne i Videnstheismen maae
 speile Charakteermærkerne i Troestheismen som Nødven\-%
-dighedsbestemmelser Frihedsbestemmelser, som Vidensbegreber% sic, elliptical as printed (no "og"/verb supplied)
+% sic, elliptical as printed (no "og"/verb supplied)
+dighedsbestemmelser Frihedsbestemmelser, som Vidensbegreber
 Troesbegreber.
 
 Under denne Forudsætning vil man forstaae: hvorledes
@@ -5446,7 +5514,7 @@ det Sidste, jeg paa det Første.
 
 Har nu Biskop Martensen Ret, da er han nok den
 Mand, der vil vide at gjøre sin Ret gjældende, sætte sit
-homerisk-aristoteliske: Een være Hersker! i Kraft og op\-%
+homerisk-aristoteliske: \emph{Een være Hersker!} i Kraft og op\-%
 rette det theologiske Universalmonarchie. Hvis dette skeer, da
 ville mine Indsigelser ganske rigtig, hvad Leilighedsskriftet
 (S. 142) jo ogsaa propheterer, blive at betragte som „en
