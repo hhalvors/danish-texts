@@ -442,3 +442,27 @@ do NOT add the Greek/ɔ substitutions to the actual file.
 Compile `transcription.pdf` on the user's machine (libertinus + libertinust1math), then in
 `catalog.yaml` add the `Transcription` link under work id `bemaerkninger` and set section status.
 (User commits/pushes; do not.)
+
+---
+
+## FULL COLLATION 2026-09-24/25 (REPAIR-PLAYBOOK §5C): REPAIRED
+
+Ground truth: scan sha256 d8086727…2729986a confirmed (device and container); PDF = printed + 11
+uniform (text-layer folio agrees on 119/152, none contradicts; collators read every folio).
+Work done in the cloud container; everything (briefs, results, 2nd/3rd readings, decisions,
+tools) in `.parts/collation/`. Pre-repair file = `.parts/collation/transcription.orig.tex` is NOT
+kept there — use git (HEAD) for the pre-repair version.
+
+- Wave 1 (front + pp.1–70):  OCRDIFF: embedded ABBYY layer | pp.1-70 | 347 candidates | 0 real | 347 witness's fault | 0 unresolved
+- Wave 2 (pp.71–152 + contents): OCRDIFF: embedded ABBYY layer | pp.71-152 | 349 candidates | 1 real | 348 witness's fault | 0 unresolved
+- Emphasis is SCHWABACHER (not Sperrsatz). Collators proposed ~460 spans; a blind 2nd reader
+  confirmed ~76%; every disputed span went to a blind 3rd reader (majority of three).
+  Controls: 3/57 false positives (2nd), 0/10 (3rd). \emph 34 -> 530.
+- Cost lesson: 2nd/3rd readers given pre-cut crops (`cropq.py`: phrase located via pdftotext
+  -bbox, lines cut from the embedded JPEG) cost ~110k tokens/sheet of 32 vs ~240k when the agent
+  rendered and zoomed itself, with the same agreement pattern. Use this for the next book.
+- Post re-sample (pp.10, 37, 75, 96, 100, 104): 0 wrong words; 2 single-reader letter doubts
+  left (p.37 Concresscents?, p.75 allerforst/allerførst); 2 emphasis fixes applied, 3 left.
+- Full list of changes and held items: transcription.tex header ("ACCURACY: FULL COLLATION").
+- transcription.pdf NOT rebuilt (sandbox lacks libertinus); sandbox compile 109 pp., 0 errors,
+  same as the untouched original. Run make on the real machine.
