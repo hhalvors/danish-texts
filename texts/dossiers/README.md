@@ -106,19 +106,24 @@ texts/dossiers/entydig/
 
 Bohr is in copyright, so the public version cuts each aligned German/English
 original to the sentences that carry the word. `build.py --private -o PATH`
-keeps them whole and refuses a PATH inside this repo; the private copy is built
-by `make` in `~/research/entydig-dossier/`. It needs `~/bibliotek-search` with
+keeps them whole and refuses a PATH inside this repo; the private copy in
+`~/research/entydig-dossier/` is built by `make private` (below). It needs `~/bibliotek-search` with
 its Bohr index (`./bib.py bohr-index`) as well as sks-search.
 
-## E-books
+## E-books, and the private copies
 
 `dossier.py --ebooks` adds passages from privately held e-book reissues. Those
 editions are in copyright, so the script refuses `--ebooks` for any output
-inside this repo. A private copy with them is made by hand, elsewhere:
+inside this repo, and so does `build.py --private`.
 
-```
-python3 dossier.py texts/dossiers/tilegnelse --ebooks -o ~/research/tilegnelse-dossier/tilegnelse-udvalg.tex
-```
+The private copies live in `~/research` and are built by `make private`, which
+`publish-danish.sh` runs on every publish; each is rebuilt only when its
+sources change. The recipes are in the Makefile. They are:
+
+- `~/research/tilegnelse-dossier/tilegnelse-udvalg.pdf` — the selection, with e-books
+- `~/research/tilegnelse-dossier/tilegnelse-dossier.pdf` — every passage, with e-books
+- `~/research/entydig-dossier/dossier.pdf` — Bohr, aligned originals whole
 
 Selection references to e-books (`hoeffding/...(epub):N`) are simply skipped
-in the public build.
+in the public build. All three are linked from the private pages of the site
+(`~/hhalvors.github.io/_private-site/private/index.html`).
