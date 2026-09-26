@@ -649,3 +649,17 @@ Keep each figure's `% FIGURE (printed p.N): …` comment.
   \emph{Thieles Bogtrykkeri.} / 1857.") — image-verified against PDF 6, rendered
   check matches. Portable xelatex/pdflatex verify compile clean: 4 pp., 0 errors,
   0 char-warnings, 1 marker (the body-begins marker).
+
+## 2026-09-26 — formula-and-figure collation
+
+A 6-page sample found the Danish prose clean but 1 error per page in the mathematics, so every page's
+formulas and figure lettering were collated against the scan (PDF = printed + 5) and each finding
+read again blind. The ACCURACY block in `transcription.tex` lists what changed; backup
+`transcription.tex.bak.20260926-precollation`; working files in `.parts/collation/pm-collation.tgz`.
+The transcriber's habit was to *add* things the print lacks (multiplication points, ellipses, commas
+and stops after formulas, a subscript); keep to the print. Markers for pp.73-77, 80, 83 were added.
+The two \emph spans on p.7 were a previous owner's pen underlining in the KB copy, not print.
+The prose was not collated beyond the sample. `translation.tex` was brought into line the same day
+(backup `translation.tex.bak.20260926-prerepair`; COLLATION REPAIR note in its header): formulas,
+figures and footnotes as in the Danish, p.72 "in particular" (navnlig), p.7 \emph removed; the
+English prose punctuation was left alone.

@@ -36,6 +36,23 @@
 %  The comments are unchanged and remain the record of the PDF page and
 %  of any note made at the page. \opage means the number was established
 %  at the image by hand; nothing here was placed by alignment.
+%  ACCURACY (2026-09-26): 6-page sample (seed v1: 30,64,31,20,19,69): the Danish prose matched the
+%    print word for word, but the mathematics did not (6 errors in formulas and figure labels). So a
+%    FORMULA-AND-FIGURE COLLATION was made of every page (3-84): every formula checked symbol by
+%    symbol and every figure's lettering against the scan by 9 collators, each finding read again
+%    blind by a second reader (all but one agreed; the undecided p.33 stop was left as is).
+%    Applied: 43 corrections -- mostly symbols or punctuation the transcriber had added (multiplication
+%    points, ellipses, a subscript f_n for printed f, commas and stops after formulas), a changed
+%    fraction nesting (p.30), rows of dashes the print has (pp.18, 44), "1000,000" as printed (p.50),
+%    two footnotes restructured as printed (p.52 mark after the display; p.58 note is the end of the
+%    p.57 note), two dropped "\int y\,dx =" (p.82), and two words (p.72 navnlig; p.75
+%    "Integral.-Rgn."); 9 printer's errors restored as printed with a % comment (unclosed
+%    parentheses pp.10, 63, 73, 75; "x = o" p.28; c^1 for c' p.48; "tg a" p.65; "Momemter" p.41).
+%    Figures relettered to match the print: p.64 B (title, second v and h), p.70 (no "e"), p.72
+%    (tangents AB and A'B'), p.80 (G). Markers added for pp.73-77, 80, 83, which had none.
+%    Two \emph spans on p.7 removed: they came from a reader's pen underlining in this copy, not
+%    from the print. The prose was NOT collated beyond the sample.
+%
 \documentclass[12pt]{book}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
@@ -214,9 +231,9 @@ For at faae en Regel saa omfattende, som muligt, maa man prøve saamange
 Tilfælde, som muligt; men om man end prøvede Tilfælde i Tusindviis uden at støde
 paa en eneste Undtagelse, vilde dog Reglen derved ikke kunne hæves til Lov.
 
-Reglen udtrykker kun, \emph{at et Forhold er}, ikke at det nødvendigviis maa
+Reglen udtrykker kun, at et Forhold er, ikke at det nødvendigviis maa
 være; men Loven gjælder som Lov i Kraft af Begrebet. At det, naar Loven skal
-erkjendes, ikke kommer an paa Tilfældenes Antal, men paa \emph{Sagens Væsen}, og
+erkjendes, ikke kommer an paa Tilfældenes Antal, men paa Sagens Væsen, og
 altsaa paa Indsigten, kan sees af følgende Exempel.
 
 At $\frac{1}{1-x} = 1 + x + x^{2} + \ldots$ vil give en uendelig Række, bevises
@@ -303,7 +320,8 @@ det Umulige.
 
 I de omvendte Functioner have vi Udtryk baade for Modsætning og Slutning. Er
 Functionen $\varphi$ omvendt af $\psi$, d.\ e. $\varphi(\psi(x)) = x$, saa er
-ogsaa $\psi(\varphi(x)) = x$, d.\ e. Functionen $\psi$ omvendt af $\varphi$, er
+% AS PRINTED (collation 2026-09-26): «$\psi(\varphi(x) = x$» — print has only one closing parenthesis ("ψ (φ (x)" at line end, "= x" on next line); file silently supplied the second ")"
+ogsaa $\psi(\varphi(x) = x$, d.\ e. Functionen $\psi$ omvendt af $\varphi$, er
 $\varphi(x) = x+a$, saa er $\psi(x) = a-x$; er $\varphi(x) = ax$, saa er
 $\psi(x) = \frac{x}{a}$; er $\varphi(x) = x^{n}$, saa er $\psi(x) = \sqrt[n]{x}$;
 er $\varphi(x) = a^{x}$, saa er $\psi(x) = \log x$; er $\varphi(x) = \cos x$, saa
@@ -585,13 +603,18 @@ viser os Vexelbestemmelsen af Coefficienter og Rødder:
 $A_1 = -(a_1+a_2+a_3+\dots a_n) = f_1(a_1\,a_2\dots a_n) = $ Summen af alle $a$
 med modsat Tegn; her virker første Grundfunction.
 
-% NB print oddity: above the second „3" in „3 og 3 a" the print carries a stray
-%    raised „3" (a typesetting defect); the intended reading „3 og 3 a" is given.
+\begin{center}--- --- --- --- --- --- --- --- --- --- --- ---\end{center}
+
+
 $A_3 = -(a_1a_2a_3 + a_1a_2a_4 + \dots a_1a_2a_n + a_2a_3a_4 + \dots
 a_{n-2}a_{n-1}a_n) = f_3(a_1\,a_2\,a\dots a_n) = $ Summen af Producterne af 3 og 3
 $a$ med modsat Tegn; her samvirke første og anden Grundfunction.
+
+\begin{center}--- --- --- --- --- --- --- --- --- --- --- ---\\
+--- --- --- --- --- --- --- --- --- --- --- ---\end{center}
+
 % ---- printed p.19 (PDF 24) ----
-\opage{19} $A_n = (-1)^{n}(a_1\,a_2\,a_3\dots a_n) = f_n(a_1, a_2, \dots a_n) = $ Produktet af
+\opage{19} $A_n = (-1)^{n}(a_1\,a_2\,a_3\dots a_n) = f(a_1, a_2, \dots a_n) = $ Produktet af
 alle $a$ med modsat Tegn, naar $n$ er ulige. Det er altsaa den anden
 Grundfunction her optræder.
 
@@ -664,7 +687,7 @@ $u_n = f_1(n) = a + nx$:
 \dots\ a-3x,\ a-2x,\ a,\ a+x,\ a+2x,\ a+3x\ \dots
 \]
 
-β) Den harmoniske Række, ifølge hvilken $u_n = f_2(n) = \dfrac{1}{a+nx}$:
+β) Den harmoniske Række, ifølge hvilken $u_n = f_2(n) = \dfrac{1}{a+nx}$
 % ---- printed p.21 (PDF 26) ----
 \opage{21} \[
 \dots\ \frac{1}{a-3x},\ \frac{1}{a-2x},\ \frac{1}{a-x},\ \frac{1}{a},\
@@ -933,10 +956,10 @@ for Hyperblens Asymptote:
 \[
 \begin{aligned}
 y_1 - y &= \frac{b}{a}\left(x - \sqrt{x^{2}-a^{2}}\right)
-= \frac{b}{a}\cdot
+= \frac{b}{a}
    \frac{\left(x-\sqrt{x^{2}-a^{2}}\right)\left(x+\sqrt{x^{2}-a^{2}}\right)}
         {x+\sqrt{x^{2}-a^{2}}}\\
-&= \frac{b}{a}\cdot\frac{a^{2}}{x+\sqrt{x^{2}-a^{2}}}.
+&= \frac{b}{a}\frac{a^{2}}{x+\sqrt{x^{2}-a^{2}}}
 \end{aligned}
 \]
 Betragtningen af denne Formel viser, 1) at her er en virkelig Tilnærmelse, thi
@@ -1027,7 +1050,8 @@ Coefficienters Methode. Er $f(x) = A_0 + A_1 x + A_2 x^{2} + \dots
 $A_2 = B_2$ o.\ s.\ v. Beviis. For $x = 0$ bliver $A_0 = B_0$ alene tilbage; ved
 at fradrage $A_0 = B_0$, faaer man $A_1 x + A_2 x^{2} = B_1 x + B_2 x^{2}\dots$,
 ved at dividere med $x$, $A_1 + A_2 x\dots = B_1 + B_2 x$, og, ved at sætte
-$x = 0$, $A_1 = B_1$ o.\ s.\ fr.} og Newtons Binomialformel\footnote{Binomial\-%
+% AS PRINTED (collation 2026-09-26): «$x = o$, $A_1 = B_1$» — footnote *): print sets a lower-case letter «o» (x-height, not the lining figure 0 used elsewhere) for zero in «x = o»; checked in tight crop
+$x = o$, $A_1 = B_1$ o.\ s.\ fr.} og Newtons Binomialformel\footnote{Binomial\-%
 formlen. Fra den elementære Algebra kjender man: $(a+b)^{2} = a^{2} + 2ab +
 b^{2}$; $(a+b)^{3} = a^{3} + 3a^{2}b + 3ab^{2} + b^{3}\dots$ o.\ s.\ v. Ram.\
 Elmt.\ Algbr.\ S.\ 35. I den høiere Mathematik (Ramus Algebr.\ Functl.\ S.\ 85)
@@ -1043,7 +1067,7 @@ uendelige Muligheder i Relationernes Net.
 \opage{29} Saaledes bliver da for det Første hver Coefficient kjendelig paa den tilsvarende
 Potens. Have, for at holde os til det givne Exempel, Potensfactorerne
 $x^{m}z^{n}$ i den ene Række Coefficienterne $A_m A_n$, i den anden
-$A_{m+n}\dfrac{(m+n)}{1}\dfrac{(m+n-1)\dots(m+1)}{2\cdot 3\dots n}$\footnote{Man
+$A_{m+n}\dfrac{(m+n)}{1}\dfrac{(m+n-1)\dots(m+1)}{2\quad 3\dots n}$\footnote{Man
 udvikler nemlig 1) to Rækker efter samme Lov: $a^{x} = 1 + A_1 x + A_2 x^{2} +
 \dots A_m x^{m}\dots$ og $a^{z} = 1 + A_1 z + A_2 z^{2} + \dots + A_n z^{n}$ og
 faaer 2), ved at multiplicere disse to Ligninger, to forskjellige, men
@@ -1065,7 +1089,7 @@ Mystificationer, men dog saamange Omklædninger, Forklædninger og Maskeringer, 
 Den, der ikke gjennemskuer Forvandlingerne, let bliver skuffet. Hvor let kan
 f.\ Ex.\ en Begynder ikke blændes af de mange Led i Formlen:
 $\dfrac{n(n-1)(n-2)\dots(n-n+2)(n-n+1)(n-n)}{1\cdot 2\cdot 3\dots\,
-n(n+2)\,(n-n+1)}$ saa at han ikke strax seer det maskerede Nul.} og er forvisset
+n(n+2)\,(n-n+1)}$ saa at han ikke strax seer det maskerede Nul.}, og er forvisset
 om, at den ikke skuffer. Har altsaa Mathematikeren nu i det Hele sikkret sig
 Relationen imellem Potenserne og deres Coefficienter, saa benytter han
 % ---- printed p.30 (PDF 35) ----
@@ -1075,13 +1099,13 @@ indbyrdes.
 I den anførte Række bliver saaledes den hele Vrimmel af mulige Coefficienter
 bragt i en bestemt Relation til en eneste, nemlig $A_1$, ved Formlen:
 $A_m = \dfrac{A_1^{m}}{1\cdot 2\cdot 3\dots m}$\footnote{Sættes:
-$A_m A_n = A_{m+n}\dfrac{(m+n)(m+n-1)\dots(m+1)}{1\cdot 2\cdot 3\dots n}$, og
+$A_m A_n = A_{m+n}\dfrac{(m+n)(m+n-1)\dots(m+1)}{1\cdot 2\cdot 3\quad n}$, og
 $n = 1$, faaes: $A_m A_1 = A_{m+1}\dfrac{m+1}{1}$, d.\ e.\
 $A_{m+1} = \dfrac{A_m A_1}{m+1}$. Sætter man dernæst $m = 1$, erholdes
 % print: subscript below reads $A_nA_1$ (should be $A_1A_1$) --- preserved as set
 $A_{1+1} = \dfrac{A_n A_1}{1+1} = A_2 = \dfrac{A_1^{2}}{1\cdot 2}$;
 sættes $m = 2$, da faaer man $A_{2+1} = \dfrac{A_2 A_1}{2+1} = A_3 =
-\dfrac{A_2 A_1}{3} = \dfrac{\frac{A_1^{2}}{1\cdot 2}A_1}{3} =
+\dfrac{A_2 A_1}{3} = \dfrac{\frac{A_1^{2}A_1}{1\cdot 2}}{3} =
 \dfrac{A_1^{3}}{1\cdot 2\cdot 3}\dots A_m = \dfrac{A_1^{m}}{1\cdot 2\cdot 3\dots
 m}$; heraf:
 % print oddity: „$a^x = 1 =$" set exactly as here in the original
@@ -1195,7 +1219,7 @@ $= \infty$, og tilintetgjøre Rækkens Betydning. Sætter man derimod $1+x$
 istedetfor $x$, faaer man:
 \[
 \log(1+x) = \log e\left(x - \frac{x^{2}}{2} + \frac{x^{3}}{3} - \frac{x^{4}}{4}
-+ \dots\right)
++ \dots\right).
 \]\footnote{Jvfr.\ Ramus.\ Algebr.\ og Funct.\ S.\ 87--88; nærmere Oplysning
 under b.}
 
@@ -1344,7 +1368,7 @@ e^{x\sqrt{-1}} = 1 + \frac{x\sqrt{-1}}{1} + \frac{(x\sqrt{-1})^{2}}{1\cdot 2}
 + \frac{(x\sqrt{-1})^{3}}{1\cdot 2\cdot 3} + \frac{(x\sqrt{-1})^{4}}{1\cdot 2\cdot
 3\cdot 4}\dots \\
 = 1 + x\sqrt{-1} - \frac{x^{2}}{1\cdot 2} - \frac{x^{3}\sqrt{-1}}{1\cdot 2\cdot 3}
-+ \frac{x^{4}}{1\cdot 2\cdot 3\cdot 4}\dots
++ \frac{x^{4}}{1\cdot 2\cdot 3\cdot 4}\dots,
 \end{multline*}
 thi Potenserne af $\sqrt{-1}$ danne en Periode af 4 Led: $\sqrt{-1}$, $-1$,
 $-\sqrt{-1}$ og $+1$, som gjentage sig i det Uendelige.
@@ -1445,7 +1469,7 @@ flygtig Betragtning skulde det synes, som var her Intet iveien? Man har
 $\log(a^{2}) = 2\log a$, og $\log(-a)^{2} = \log(a^{2})$; hvor nær ligger da ikke
 den Slutning, at $\log(-a)^{2}$ ogsaa maa være $= 2\log(-a)$, og dog er
 Slutningen falsk. Man har, naar $a$ og $b$ ere positive,
-$\sqrt{a}\cdot\sqrt{b} = \sqrt{a\cdot b}$; men da $\sqrt{-a}$ er umulig, gjælder
+$\sqrt{a}\cdot\sqrt{b}. = \sqrt{a\cdot b}$; men da $\sqrt{-a}$ er umulig, gjælder
 ovenstaaende Ligning ikke for negative Størrelser. Man kan ikke sige
 $(\sqrt{-a})^{2} = \sqrt{-a}\,\sqrt{-a} = \sqrt{(-a)^{2}} = \sqrt{a^{2}} = \pm a$,
 thi det er kun $\sqrt{-a}$, som ophøiet til 2den Potens giver $-a$. I Striden mod
@@ -1463,7 +1487,7 @@ Functsl.\ S.\ 92--94) følgende Formler til Sammenligning:
 %   branch and integer indices) --- reproduced as printed.
 (I) $l.\,a^{2} = l^{1}a^{2} + 2p\pi\sqrt{-1}$;
 (II) $l.\,a^{2} = 2l^{1}a + 2p\pi\sqrt{-1}$;
-(III) $2l.\,a = 2l^{1}a + 4p^{1}\pi\sqrt{-1}$ (idet Ligningen
+(III) $2l.\,a = 2l.^{1}a + 4p^{1}\pi\sqrt{-1}$ (idet Ligningen
 $l.\,a = l^{1}a + 2p^{1}\pi\sqrt{-1}$ multipliceres med 2);
 (IV) $2l(-a) = 2l^{1}(a) + 2(2p^{11}+1)\pi\sqrt{-1}$ (da man har
 $l(-a) = l^{1}a + (2p^{11}+1)\pi\sqrt{-1}$). Sammenlignes IV med III, saa bliver
@@ -1483,7 +1507,8 @@ realistisk: jo fastere den endelige Modsætning holdes, desto
 \opage{41} stærkere er Realismen. Den mathematiske Praktik betvinger imidlertid selv denne
 Realisme, idet den lader enhver af de adskilte Functioner optage de øvrige i sin
 Selvudvikling. Hver Function vender altsaa gjennem de øvrige tilbage i sig selv,
-har altsaa de øvrige som Momenter i sin Begrebsbestemmelse og sit Indhold; dette
+% AS PRINTED (collation 2026-09-26): «som Momemter i» — printer's typo „Momemter" (m for n) silently corrected in the file
+har altsaa de øvrige som Momemter i sin Begrebsbestemmelse og sit Indhold; dette
 er det Idealistiske. For Realisten ere Relationerne endelige, for Idealisten ere
 de uendelige: i en gjennemført Systematik blive de endelige Relationer
 begrundede i det Uendelige.
@@ -1603,7 +1628,7 @@ f(\overline{x+k}+h) = {}& f(x+k)\,(= X_0 + X_{0,1}k + X_{0,2}k^{2}\dots
 X_{0,n}k^{n}\dots)\\
 +{}& f_1(x+k)h\,(= X_1 h + X_{1,1}hk + \dots X_{1,n}hk^{n}\dots)\\
 +{}& f_2(x+k)h^{2}\,(= X_2 h^{2} + X_{2,1}h^{2}k \dots X_{2,n}h^{2}k^{n}\dots)\\
-&\ \ \vdots\\
+&\ \ \text{--- --- --- --- --- --- --- ---}\\
 +{}& f_m(x+k)h^{m}\,(= X_m h^{m} + X_{m,1}h^{m}k + \dots X_{m,n}h^{m}k^{n}\dots)
 \end{aligned}
 \]
@@ -1760,9 +1785,11 @@ f(\infty) = \frac{\dfrac{a}{\infty^{n}} + \dfrac{a_1}{\infty^{n-1}}
 \]
 I Ligningen:
 \[
-\lim f(x) = f(0) = c'
+% AS PRINTED (collation 2026-09-26): «\lim f(x) = f(0) = c^{1}» — printer set superscript 1 for the prime (c¹); the result line below has c′ correctly
+\lim f(x) = f(0) = c^{1}
 \]
-betegner $c'$ den Værdi, den Grændse, hvortil Functionen nærmer sig, idet $x$
+% AS PRINTED (collation 2026-09-26): «betegner $c^{1}$ den» — same printer's c¹ for c′, repeated at the start of the next line
+betegner $c^{1}$ den Værdi, den Grændse, hvortil Functionen nærmer sig, idet $x$
 bliver mindre, men som kun naaes i uendelig Tilnærmelse, forsaavidt den først
 naaes, naar $x = 0$.
 
@@ -1771,8 +1798,8 @@ Af $f(x) = \dfrac{a + a_1 x + a_2 x^{2} + \dots a_n x^{n}}{b + b_1 x + b_2 x^{2}
 + \dots b_n x^{n}}$ sees, at alle de med $x$ multiplicerede Led maae faae en desto
 mindre Værdi, jo mindre $x$ bliver. Bliver $x$ tilsidst $= 0$, faaes:
 \[
-f(0) = \frac{a + a_1\cdot 0 + a_2\cdot 0^{2} + \dots a_n\cdot 0^{n}}{b
-+ b_1\cdot 0 + b_2\cdot 0^{2} + \dots b_n\cdot 0^{n}} = \frac{a}{b} = c'.
+f(0) = \frac{a + a_1\,0 + a_2\,0^{2} + \dots a_n 0^{n}}{b
++ b_1\,0 + b_2\,0^{2} + \dots b_n 0^{n}} = \frac{a}{b} = c'.
 \]
 Men, kunde man indvende, det er jo saa langt fra, at man endnu seer nogen Forskjel
 imellem $\infty^{n}$ og $\infty^{1}$ imellem $0^{n}$ og $0^{1}$ at det endogsaa
@@ -1807,8 +1834,7 @@ forandre sig, blive større og større, mindre og mindre, uden at den paagjælde
 Qvotient forandrer sig. $\mathrm{Lim}\frac{x}{x} = \frac{\infty}{\infty}$ er
 altsaa ikke længere et ubestemt Udtryk, men ganske bestemt $= 1$; ligesaa bestemt
 er $\lim\frac{x}{x} = \frac{0}{0} = 1$. Hvad der gjælder om Qvotienten
-$\frac{x}{x'}$,
-% print: denominator set $x'$ (a prime) --- cf. the $\frac{x}{x}$ just discussed
+$\frac{x}{x}$,
 gjælder ogsaa om $\frac{x^{2}}{x}$, $\frac{x^{3}}{x}$, $\frac{x^{n}}{x}$ o.\ s.\
 v. Altsaa: da $\frac{x^{2}}{x} = x$, er $\mathrm{Lim}\frac{x^{2}}{x} =
 \frac{\infty^{2}}{\infty} = \infty$, og $\lim\frac{x^{2}}{x} = \frac{0^{2}}{0}
@@ -1823,26 +1849,26 @@ uendelige Tilnærmelse standse for en endelig Grændse. Hvor denne
 \opage{50} Grændse sættes, er i Begrebet ligegyldigt, da den kun sættes, for øieblikkelig at
 overskrides.
 
-Størrelsen $1{,}000{,}000$ forestiller for et Øieblik $\infty$, Qvotienten
-$\frac{1}{1{,}000{,}000}$ vil da nødvendigviis forestille 0.
+Størrelsen $1000{,}000$ forestiller for et Øieblik $\infty$, Qvotienten
+$\frac{1}{1000{,}000}$ vil da nødvendigviis forestille 0.
 
 I Overeensstemmelse med ovenstaaende Formler ville vi altsaa erholde:
 \begin{gather*}
-\frac{1{,}000{,}000}{1{,}000{,}000} = \frac{\infty}{\infty} = 1; \quad
-\frac{\frac{1}{1{,}000{,}000}}{\frac{1}{1{,}000{,}000}} = \frac{0}{0} = 1.\\
-\frac{(1{,}000{,}000)^{2}}{1{,}000{,}000} = \frac{\infty^{2}}{\infty}
-= 1{,}000{,}000 = \infty;\\
-\frac{\left(\frac{1}{1{,}000{,}000}\right)^{2}}{\frac{1}{1{,}000{,}000}}
-= \frac{0^{2}}{0} = \frac{1}{1{,}000{,}000} = 0.\\
-\frac{(1{,}000{,}000)^{3}}{1{,}000{,}000} = \frac{\infty^{3}}{\infty}
-= 1{,}000{,}000^{2} = \infty^{2};\\
-\frac{\left(\frac{1}{1{,}000{,}000}\right)^{3}}{\frac{1}{1{,}000{,}000}}
-= \frac{0^{3}}{0} = \left(\frac{1}{1{,}000{,}000}\right)^{2} = 0^{2}
+\frac{1000{,}000}{1000{,}000} = \frac{\infty}{\infty} = 1; \quad
+\frac{\frac{1}{1000{,}000}}{\frac{1}{1000{,}000}} = \frac{0}{0} = 1.\\
+\frac{(1000{,}000)^{2}}{1000{,}000} = \frac{\infty^{2}}{\infty}
+= 1000{,}000 = \infty;\\
+\frac{\left(\frac{1}{1000{,}000}\right)^{2}}{\frac{1}{1000{,}000}}
+= \frac{0^{2}}{0} = \frac{1}{1000{,}000} = 0.\\
+\frac{(1000{,}000)^{3}}{1000{,}000} = \frac{\infty^{3}}{\infty}
+= 1000{,}000^{2} = \infty^{2};\\
+\frac{\left(\frac{1}{1000{,}000}\right)^{3}}{\frac{1}{1000{,}000}}
+= \frac{0^{3}}{0} = \left(\frac{1}{1000{,}000}\right)^{2} = 0^{2}
 \end{gather*}
-Den Indvending, at $1{,}000{,}000$ er uendelig langt fra $\infty$, og
-$\frac{1}{1{,}000{,}000}$ følgelig ligesaa langt fra 0, betyder Intet; da
+Den Indvending, at $1000{,}000$ er uendelig langt fra $\infty$, og
+$\frac{1}{1000{,}000}$ følgelig ligesaa langt fra 0, betyder Intet; da
 Endelighedsgrændsen kun er sat, for at overskrides, vil man ikke blot kunne lade
-$1{,}000{,}000^{1{,}000{,}000}$ istedetfor $1{,}000{,}000$ forestille $\infty$,
+$1000{,}000^{1000{,}000}$ istedetfor $1000{,}000$ forestille $\infty$,
 men, hvad her er det Afgjørende, tillige indsee, at Forholdsleddene kunne
 forandres i det Uendelige, uden at det bestemte Forhold derved i mindste Maade
 forandres.
@@ -1895,11 +1921,12 @@ f(a+h) = \frac{\varphi(a+h)}{\psi(a+h)} = h^{\alpha_1-\beta_1}\,
 \frac{A_1 + A_2 h^{\alpha_2-\alpha_1} + A_3 h^{\alpha_3-\alpha_1} + \dots}
      {B_1 + B_2 h^{\beta_2-\beta_1} + B_3 h^{\beta_3-\beta_1} + \dots}
 \]
-Ved at sætte $h = 0$, faaer man\footnote{Ramus.\ Differential- og
-Integralregning 1844.\ S.\ 12--13.}:
+Ved at sætte $h = 0$, faaer man:
 \[
-f(a) = \frac{\varphi(a)}{\psi(a)} = 0^{\alpha_1-\beta_1}\,\frac{A_1}{B_1}
+f(a) = \frac{\varphi(a)}{\psi(a)} = 0^{\alpha_1-\beta_1}\,\frac{A_1}{B_1}\footnotemark
 \]
+\footnotetext{Ramus.\ Differential- og
+Integralregning 1844.\ S.\ 12--13.}
 Tre Tilfælde ere nu mulige: I) $\alpha_1 > \beta_1$; $\alpha_1 - \beta_1 = +\,n^{1}$.
 II) $\alpha_1 < \beta_1$; $\alpha_1 - \beta_1 = -\,n^{1}$. III) $\alpha_1 = \beta_1$;
 $\alpha_1 - \beta_1 = 0$. Altsaa:
@@ -1909,7 +1936,7 @@ $\alpha_1 - \beta_1 = 0$. Altsaa:
 \text{II)}\ \ f(a) &= 0^{-n^{1}}\cdot\frac{A_1}{B_1}
    = \frac{1}{0^{n^{1}}}\cdot\frac{A_1}{B_1} = \frac{A_1}{0} = \infty.\\
 \text{III)}\ \ f(a) &= 0^{0}\cdot\frac{A_1}{B_1} = 1\cdot\frac{A_1}{B_1}
-   = \frac{A_1}{B_1}.
+   = \frac{A_1}{B_1}
 \end{align*}
 Af Størrelsen $h$ sees her, hvad det vil sige, at det Endelige kan være som 0, og
 0 som et Endeligt.
@@ -2106,7 +2133,7 @@ $d^{n}y = f^{n}(x)\,dx^{n}$. Den Taylorske Række kan da med Hensyn til de her
 anvendte Betegnelser skrives saaledes:
 \[
 f(x + h) = y + \frac{dy}{dx}\cdot\frac{h}{1} + \frac{d^{2}y}{dx^{2}}\,
-\frac{h^{2}}{1\cdot2} + \frac{d^{3}y}{dx^{3}}\,\frac{h^{3}}{1\cdot2\cdot3} + \dots
+\frac{h^{2}}{1\cdot2} + \frac{d^{3}y}{dx^{3}}\cdot\frac{h^{3}}{1\cdot2\cdot3} + \dots
 \]
 
 „For enhver explicit given Function af $x$ kan Differentialcoefficienten let
@@ -2129,7 +2156,14 @@ a^{x+h} - a^{x} = a^{x}(l.\,a)\,\frac{h}{1} + a^{x}(l.\,a)^{2}\,
 \frac{h^{2}}{1\cdot2} \dots\\
 \log(x + h) - \log x = \log e\cdot\frac{1}{x}\,\frac{h}{1}
 - \log e\,\frac{1}{x^{2}}\,\frac{h^{2}}{2} \dots
-\end{gather*}}
+\end{gather*}
+% ---- footnote **) continues at the foot of printed p.58 ----
+\begin{gather*}
+\sin(x + h) - \sin x = \cos x\,\frac{h}{1} - \dots\\
+\cos(x + h) - \cos x = -\sin x\,\frac{h}{1} + \dots
+\end{gather*}
+Ved i hver Række at mærke sig Det, der svarer til $\dfrac{dy}{dx}$, faaer man de
+forlangte Værdier.}
 % ---- printed p.58 (PDF 63) ----
 \opage{58} \[
 a^{x+h} = a^{x}a^{h} = a^{x}\left(1 + (l.\,a)\,h + (l.\,a)^{2}\,\frac{h^{2}}{1\cdot2}
@@ -2144,13 +2178,7 @@ a^{x+h} = a^{x}a^{h} = a^{x}\left(1 + (l.\,a)\,h + (l.\,a)^{2}\,\frac{h^{2}}{1\c
 \]
 \[
 \cos(x + h) = \cos x\cos h - \sin x\sin h = \cos x - \sin x\cdot h - \dots
-\]\footnote{%
-\begin{gather*}
-\sin(x + h) - \sin x = \cos x\,\frac{h}{1} - \dots\\
-\cos(x + h) - \cos x = -\sin x\,\frac{h}{1} + \dots
-\end{gather*}
-Ved i hver Række at mærke sig Det, der svarer til $\dfrac{dy}{dx}$, faaer man de
-forlangte Værdier.}
+\]
 erholder man for de enkelte Rækker som første Differentialcoefficient:
 \begin{gather*}
 \frac{d.x^{n}}{dx} = nx^{x-1};\quad \frac{d.a^{x}}{dx} = (la)a^{x};\quad
@@ -2225,7 +2253,7 @@ sig $D$ som Udgangspunkt for to samtidige Bevægelser, saa at man har
 $DA = y = f_{1}(t)$, og $DC = z = f_{2}(t)$; da er Rectanglet
 $AD\cdot DC = yz = f_{1}(t)\cdot f_{2}(t)$. Hvor stor vil nu Tilvæxten blive, naar
 Bevægelserne fortsættes i en uendelig lille Tid? Man erholder
-$d(yz) = d[f_{1}(t)\cdot f_{2}(t)] = ydz + zdy = f_{1}(t)\cdot d f_{2}(t)
+$d(yz) = d[f_{1}(t)\cdot f_{2}(t)] = ydz + zdy = f_{1}(t)\, d f_{2}(t)
 + f_{2}(t)\cdot d f_{1}(t)$. Det Hele maa da, efter at Differentiationen er udført,
 og Tilvæxten funden, give $yz + d.yz$, og $d.yz = ydz + zdy$.
 
@@ -2258,7 +2286,7 @@ eiendommelige Betydning.
 
 Lad Qvotienten $\dfrac{dy}{dx} = \dfrac{0}{0}$ være, hvad forøvrigt ikke maa tages
 altfor bogstaveligt, t.\ Ex.\ $= \dfrac{2}{3}$; man vilde da tage meget feil, om man
-deraf sluttede, at $\dfrac{d^{2}y}{dx^{2}} = \dfrac{0^{2}}{0^{2}}$,
+deraf sluttede, at $\dfrac{d^{2}y}{dx^{2}} = \dfrac{0^{2}}{0^{2}}$
 % ---- printed p.61 (PDF 66) ----
 \opage{61} altsaa maatte være $\left(\dfrac{2}{3}\right)^{2}$,
 $\dfrac{d^{3}y}{dx^{3}} = \left(\dfrac{2}{3}\right)^{3}$ o.\ s.\ v. Vistnok er
@@ -2268,7 +2296,7 @@ $f^{n}(x) = \infty$; men desuagtet minder endog Betegnelsen om, at $d^{n}y$ ikke
 forholder sig til $y$ paa samme Maade, som $dx^{n}$ forholder sig til $x$.
 
 I $\dfrac{d^{2}y}{dx^{2}}$ er nemlig $dx^{2} = dx\cdot dx$; i
-$\dfrac{d^{3}y}{dx^{3}}$ er $dx^{3} = dx\cdot dx\cdot dx$ o.\ s.\ fremdl.; medens
+$\dfrac{d^{3}y}{dx^{3}}$ er $dx^{3} = dx\cdot dx\cdot dx\cdot$ o.\ s.\ fremdl.; medens
 derimod $d^{2}y = d\cdot dy$, $d^{3}y = d\cdot d^{2}y$ o.\ s.\ v. Hermed stemmer det
 da ogsaa, hvad Sagen angaaer, at $\dfrac{dy}{dx}$ i visse Tilfælde kan være 0,
 medens $\dfrac{d^{2}y}{dx^{2}}$ er en endelig Størrelse; hvilket vilde være umuligt,
@@ -2285,7 +2313,8 @@ $\varphi = \dfrac{v}{t}$, men for Øieblikkets uendelige Tid
 $\varphi = \dfrac{dv}{dt}$. Da nu Hastigheden i hvert Øieblik er
 $v = \dfrac{dx}{dt}$, saa er jo $dv = d\cdot\dfrac{dx}{dt}$;
 $\varphi = \dfrac{dv}{dt}$ bliver da $= \dfrac{\frac{d^{2}x}{dt}}{dt}
-= \dfrac{d^{2}x}{dt^{2}}$;
+= \dfrac{d^{2}x}{dt^{2}}$.
+
 % ---- printed p.62 (PDF 67) ----
 \opage{62} Naar altsaa første Differentialcoefficient betegner en Hastighed, betegner anden
 Differentialcoefficient den i Øieblikket virkende Kraft.
@@ -2320,7 +2349,7 @@ Et andet, ligesaa fatteligt Exempel kan hentes fra Maximum og Minimum.
 
 En Function af $x$ er i sit Maximum, naar $f(x + h)$ og $f(x - h)$ begge ere mindre
 end $f(x)$, eller hvad der er det Samme, naar $f(x + h) - f(x)$ og $f(x - h) - f(x)$
-begge ere negative; ere de begge positive, er Functionen derimod i sit Minimum. Er
+begge ere negative; ere de begge positive, er Functionen derimod i sit Minimum Er
 $OC = x$, $BC = CD = h$, saa er $Dm' = f(x+h)$, $MC = f(x)$, og $Bm = f(x - h)$.
 \begin{gather*}
 f(x + h) = f(x) + f'(x)\,\frac{h}{1} + f''(x)\,\frac{h^{2}}{1\cdot2} + \dots\\
@@ -2346,7 +2375,7 @@ $x = r$, saa er $y = CM$, og i sit Maximum.
 \[
 \frac{dy}{dx} = \pm\frac{r - x}{\sqrt{2rx - x^{2}}}, \quad\text{og}\quad
 \frac{d^{2}y}{dx^{2}} = \pm\frac{-\sqrt{2rx - x^{2}}
-- (r - x)\dfrac{r - x}{\sqrt{2rx - x^{2}}}}{2rx - x^{2}}.
+- (r - x)\dfrac{r - x}{\sqrt{2rx - x^{2}}}}{2rx - x^{2}}
 \]%
 \footnotetext{$d f(x) = d(\pm\sqrt{2rx - x^{2}})$ bliver da
 $= d(2rx - x^{2})^{\frac{1}{2}}$. For at udføre denne Differentiation, forudsættes
@@ -2359,7 +2388,8 @@ Ifølge denne Formel bliver $d(2rx - x^{2})^{\frac{1}{2}}
 Tælleren anvendes Formlen $d(y \pm z) = dy \pm dz$; $\tfrac{1}{2}d(2rx - x^{2})$
 bliver altsaa $\tfrac{1}{2}(d\,2rx - dx^{2})$. Men $d\,2rx = 2r\,dx$, og
 $\dfrac{2r\,dx}{dx} = 2r$; $\dfrac{d(x^{2})}{dx} = 2x^{2-1} = 2x$. Altsaa:
-$\dfrac{d(\pm\sqrt{2rx - x^{2}})}{dx}
+% AS PRINTED (collation 2026-09-26): «$\dfrac{d(\pm\sqrt{2rx - x^{2}}}{dx}» — footnote: print opens "d (±" but never closes the parenthesis (checked in tight crop)
+$\dfrac{d(\pm\sqrt{2rx - x^{2}}}{dx}
 = \pm\dfrac{\tfrac{1}{2}(2r - 2x)}{\sqrt{2rx - x^{2}}}
 = \pm\dfrac{r - x}{\sqrt{2rx - x^{2}}} = \dfrac{dy}{dx}$. For at finde den anden
 Differentialcoefficient
@@ -2367,9 +2397,9 @@ $\dfrac{d\left(\dfrac{r - x}{\sqrt{2rx - x^{2}}}\right)}{dx}$, forudsættes Form
 $d\left(\dfrac{y}{z}\right) = \dfrac{z\,dy - y\,dz}{z^{2}}$; man faaer da
 ($y = r - x$; $z = \sqrt{2rx - x^{2}}$)
 $\dfrac{\sqrt{2rx - x^{2}}\,d(r - x) - (r - x)\,d\sqrt{2rx - x^{2}}}%
-{(\sqrt{2rx - x^{2}})^{2}}$. Men
+{(\sqrt{2rx - x^{2}})^{2}}$ Men
 $\dfrac{d(r - x)}{dx} = \dfrac{dr}{dx} - \dfrac{dx}{dx} = 0 - 1$,
-$\dfrac{d\sqrt{2rx - x^{2}}}{dx} = \dfrac{r - x}{\sqrt{2rx - x^{2}}}$, og det hele
+$\dfrac{d\sqrt{2rx - x^{2}}}{dx} = \dfrac{r - x}{\sqrt{2rx - x^{2}}}$ og det hele
 Resultat: $\pm\dfrac{-\sqrt{2rx - x^{2}}
 - (r-x)\dfrac{r - x}{\sqrt{2rx - x^{2}}}}{2rx - x^{2}} = \dfrac{d^{2}y}{dx^{2}}$.}
 For enhver uendelig lille Tilvæxt til $x$, faaer $y$ sin ligeledes uendelig lille
@@ -2444,6 +2474,9 @@ Punkt vil Tangenten danne en Vinkel med den positive Retning af $x$nes Axe.
   \node[below] at (0,0) {$O$};
   \node[below] at (3,0) {$P$};
   \node[below] at (4.5,0) {$S$};
+  \node at (3.4,2.18) {$v$};
+  \node[below] at (3.75,0) {$h$};
+  \node at (3.0,4.0) {$B$};
 \end{tikzpicture}
 \end{center}
 
@@ -2470,8 +2503,8 @@ Da endvidere
 \frac{d^{2}y}{dx^{2}} = \frac{d\cdot\frac{dy}{dx}}{dx}
 = \frac{d\operatorname{tg}\alpha}{dx},
 \]
-saa betyder $\dfrac{d^{2}y}{dx^{2}}$ den Tilvæxt, hvormed $\operatorname{tg}\alpha$
-varierer, naar $x$ voxer. Men $\operatorname{tg}\alpha$ (til Punktet $m$) er
+% AS PRINTED (collation 2026-09-26): «hvormed $\operatorname{tg} a$ varierer» — print has roman "a" (not α) in "tg a varierer", unlike every other "tg α" on the page
+saa betyder $\dfrac{d^{2}y}{dx^{2}}$ den Tilvæxt, hvormed $\operatorname{tg} a$ varierer, naar $x$ voxer. Men $\operatorname{tg}\alpha$ (til Punktet $m$) er
 aabenbart, naar $x$ varierer fra $B$ til $D$, i bestandig Aftagen, saa at Tilvæxten
 er negativ; $\dfrac{d^{2}y}{dx^{2}}$ skal altsaa med Hensyn paa Maximum være
 negativ, og Formlen $\mp\dfrac{1}{r}$ give $-\dfrac{1}{r}$.
@@ -2683,8 +2716,8 @@ Forudsætter man $f(a + dx) - f(a) = f'(a)\,dx$, erholder man, ved bestandig at
 tilføie $dx$,
 \[
 \begin{array}{r@{\;=\;}l}
-f(a+2dx) - f(a+dx) & f'(a+dx)\,dx,\\[2pt]
-f(a+3dx) - f(a+2dx) & f'(a+2dx)\,dx,\\[2pt]
+f(a+2dx) - f(a+dx) & f'(a+dx)\,dx\\[2pt]
+f(a+3dx) - f(a+2dx) & f'(a+2dx)\,dx\\[2pt]
 \hdotsfor{2}\\[2pt]
 f(a+ndx) - f(a+(n-1)dx) & f'(a+(n-1)dx)\,dx\\[2pt]
 \hline
@@ -2692,7 +2725,7 @@ f(a+ndx) - f(a+(n-1)dx) & f'(a+(n-1)dx)\,dx\\[2pt]
 \]
 og ved Addition:
 \[
-f(a+ndx) - f(a) = f'(a)\,dx + \dots f'(a+(n-1)dx)\,dx.
+f(a+ndx) - f(a) = f'(a)\,dx + \dots f'(a+(n-1)dx)\,dx
 \]
 
 Er $dx$ uendelig lille, $f'(a)\,dx$, $f'(a+dx)\,dx \dots$ ligeledes, maa man sætte
@@ -2736,8 +2769,8 @@ Sagen fremstilles saaledes:
 
 \begin{center}
 % FIGURE (printed p.70): a circular arc (m ... C ... B ... n) with its chord a = CB;
-% the triangle BCD (apex D to the right), b = CD, c = BD, and the dashed altitude
-% D--e to the chord. Illustrates the projection a = b cos C + c cos B. Redrawn in
+% the triangle BCD (apex D to the right), b = CD, c = BD, and the dashed line
+% from D to the chord (unlettered). Illustrates the projection a = b cos C + c cos B. Redrawn in
 % TikZ.
 \begin{tikzpicture}[scale=0.9]
   \draw (0.35,1.95) .. controls (-0.9,1.0) and (-0.9,-1.0) .. (0.35,-1.95);
@@ -2755,7 +2788,6 @@ Sagen fremstilles saaledes:
   \node[left] at (Bb) {$B$};
   \node[right] at (Dd) {$D$};
   \node at (-0.62,0.45) {$a$};
-  \node at (-0.12,0.2) {$e$};
   \node at (0.62,0.72) {$b$};
   \node at (0.62,-0.72) {$c$};
 \end{tikzpicture}
@@ -2819,7 +2851,7 @@ Integrationen den omvendte Tangentmethode.
 
 Med Hensyn paa Cirklen blev i det Foregaaende $y = f(x) = \pm\sqrt{2rx - x^{2}}$
 givet som den oprindelige Function; Opgaven var da at finde de afledede Functioner,
-nemlig $\dfrac{dy}{dx} = \dfrac{r - x}{\sqrt{2rx - x^{2}}}$ og derved bestemme den
+navnlig $\dfrac{dy}{dx} = \dfrac{r - x}{\sqrt{2rx - x^{2}}}$ og derved bestemme den
 Vinkel, Tangenten til et Punkt i Cirklen vil danne med den positive Retning af
 Abscisseaxen. Ved at indsætte forskjellige Værdier for $x$ bestemmer man Tangenten
 for de forskjellige Punkter i Curven.
@@ -2829,22 +2861,25 @@ atter $y = f(x)$, men denne Gang bestemt som $\dfrac{b}{a}\sqrt{a^{2} - x^{2}}$.
 
 \begin{center}
 % FIGURE (printed p.72): ellipse centred at C, semi-axes CD = a (horizontal, right
-% vertex D) and CE = b (vertical, bottom vertex E); a point B on the ellipse (upper
-% right) with coordinates x (horizontal from C) and y (vertical), and its reflection
-% B'; top-left point A. Redrawn in TikZ.
+% vertex D) and CE = b (vertical, bottom vertex E); a point on the ellipse (upper
+% right) with coordinates x (horizontal from C) and y (vertical); AB the tangent at the
+% top vertex, A'B' the tangent at D (both named in the p.73 footnote). Redrawn in TikZ.
 \begin{tikzpicture}[scale=0.9]
   \draw (0,0) ellipse (2.3 and 1.6);
   \draw[->] (-2.75,0) -- (2.95,0);
   \node[right] at (2.95,0) {$X$};
   \draw[->] (0,-2.0) -- (0,2.0);
   \node[above] at (0,2.0) {$Y$};
-  \draw[dashed] (1.3,1.32) -- (1.3,-1.32);
+  \draw[dashed] (1.3,0) -- (1.3,1.32);
+  \draw (-1.6,1.6) -- (1.6,1.6);
+  \draw (2.3,-1.25) -- (2.3,1.25);
   \node at (-0.18,-0.22) {$C$};
-  \node[below] at (2.3,0) {$D$};
+  \node[below right] at (2.3,0) {$D$};
   \node[below] at (0,-1.6) {$E$};
-  \node[above left] at (-1.3,1.32) {$A$};
-  \node[above right] at (1.3,1.32) {$B$};
-  \node[below right] at (1.3,-1.32) {$B'$};
+  \node[above] at (-1.6,1.6) {$A$};
+  \node[above] at (1.6,1.6) {$B$};
+  \node[above] at (2.3,1.25) {$A'$};
+  \node[below] at (2.3,-1.25) {$B'$};
   \node at (0.6,-0.25) {$x$};
   \node at (1.5,0.6) {$y$};
 \end{tikzpicture}
@@ -2854,7 +2889,9 @@ $CD = a$;\quad $CE = b$.
 \end{center}
 
 Den hertil svarende første Differentialcoefficient, befindes da at være
-$-\dfrac{b}{a}\dfrac{x}{\sqrt{a^{2}-x^{2}}}$ hvorved da ligeledes
+$-\dfrac{b}{a}\dfrac{x}{\sqrt{a^{2}-x^{2}}}$ hvor%
+% ---- printed p.73 (PDF 78) ----
+\opage{73}ved da ligeledes
 Retningen af Tangenten for ethvert Punkt i Ellipsen kan bestemmes.
 Er f.\,Ex. $x = 0$, faaes Retningen af Tangenten i Endepunktet af
 den lille Axe; thi da er
@@ -2888,7 +2925,8 @@ Curves Tangent bestemmes; Opgaven
 % "Opgaven" (p.73) ... [display] ... "er, at finde" (p.74 top)
 \[
 \text{En Række som }\int_{0}^{x} 2x\,dx
-  = \mathrm{Lim}\,2\frac{x^{2}}{n^{2}}\,(1+2+3+4+\cdots (n-1))
+% AS PRINTED (collation 2026-09-26): «(1+2+3+4+\cdots (n-1)» — print never closes the outer parenthesis opened at "(1": only one ")" after n−1 (confirmed by tight crop); file silently added the second ")"
+  = \mathrm{Lim}\,2\frac{x^{2}}{n^{2}}\,(1+2+3+4+\cdots (n-1)
 \]
 bliver ikke summeret, men reduceret:
 \[
@@ -2900,7 +2938,8 @@ Af Reductionernes Resultat fremgaaer, at Rækkens Sum, naar man
 sætter $n = \infty$, vil give $x^{2}$, og at man altsaa erholder
 $\int_{0}^{x} 2\,x\,dx = x^{2}$; men en saadan Summation er ikke mere
 Summation: Grændsen er overskreden, Opgaven forvandlet.
-er, at finde Curvens oprindelige Ligning: $f(x) = y$. Ved
+% ---- printed p.74 (PDF 79) ----
+\opage{74} er, at finde Curvens oprindelige Ligning: $f(x) = y$. Ved
 Integrationen, den omvendte Tangentmethode, finder man da
 \[
 \int f'(x)\,dx = f(x) = \pm\sqrt{2rx-x^{2}};
@@ -2947,7 +2986,7 @@ Beregning og leder derfor almindeligen til nye Functioner"\dots\
 „Ligesom Subtraction, Division, Rodextraction, som ere omvendte
 Beregninger af Addition, Multiplication, Potensopløftelse, have ledet
 til nye Størrelser: negative, brudne, rationale og imaginære."
-Ramus. Differential- og Integral-Rgn. S.\,36.
+Ramus. Differential- og Integral.-Rgn. S.\,36.
 
 At forøvrigt Integrationen i det Hele bestemmes ved sin principielle
 Modsætning til Differentiationen, ligger i Sagens Natur, og sees af
@@ -2963,7 +3002,8 @@ $\int (f'(x)\,dx \pm \Phi'(x)\,dx) = \int d(f(x) \pm \Phi(x))
 = f(x) \pm \Phi(x)$; er
 $d(f(x)\,.\,\Phi(x)) = f(x)\,d\Phi(x) + \Phi(x)\,df(x)$, og
 $f(x)\,d\Phi(x) = d(f(x)\Phi(x)) - \Phi(x)\,df(x)$, saa er
-$\int d(f(x)\,.\,\Phi(x)) = f(x)\Phi(x) = \int f(x)\,d\Phi(x)
+% AS PRINTED (collation 2026-09-26): «= f(x\Phi(x) = \int f(x)» — in the footnote the print has "= f(x" at line end, then "Φ(x) = ∫…" — closing parenthesis of f(x) missing (confirmed by tight crop); file silently supplied it
+$\int d(f(x)\,.\,\Phi(x)) = f(x\Phi(x) = \int f(x)\,d\Phi(x)
 + \int \Phi(x)\,df(x)$, og
 $\int f(x)\,d\Phi(x) = f(x)\Phi(x) - \int \Phi(x)\,df(x)$. Men under
 den videre Udvikling bliver Sagen indviklet; allerede
@@ -3000,7 +3040,9 @@ For $\Phi(x) = (x-\alpha_1)(x-\alpha_2)\dots(x-\alpha_p)^n\,
 \]
 Ifr. Ramus. Diffr. Integrl. S.\,37.}
 I Modsætning til Differentialet som det Negative er Integralet det
-Positive. Er Differentialet et Punkt, saa er Integralet en Linie; er
+Positive. Er Differentialet et Punkt, saa er
+% ---- printed p.75 (PDF 80) ----
+\opage{75} Integralet en Linie; er
 Differentialet en Linie, saa er Integralet en Flade, er
 Differentialet en Flade, saa er Integralet et Legeme.
 
@@ -3009,7 +3051,8 @@ saalidt som det umiddelbart Positive kan frembringe det Negative:
 Overgangen fra Negativt til Positivt, og omvendt, forudsætter en
 ponerende og negerende Virksomhed, et Princip.
 
-I den negerende Virksomhed er det Positive forudsat; det er det
+% ---- printed p.76 (PDF 81) ----
+\opage{76} I den negerende Virksomhed er det Positive forudsat; det er det
 Positive, som i Negationen saa at sige gjennemskjæres, overskjæres
 eller afskjæres af det Negative: det Positive deles. I den ponerende
 Virksomhed er omvendt det Negative forudsat. Det er jo ikke det
@@ -3031,7 +3074,9 @@ ingen end ikke den allerfineste Sammenstykning; den skylder kun
 Bevægelsen sin Tilblivelse, thi den tilhører Uendeligheden.
 
 Den saakaldte sammensatte Bevægelse er ikke en Sammenstykning af to
-Bevægelser; men en gjennem to Momenter formidlet Bevægelse.
+Bevægelser; men en gjennem to Momen%
+% ---- printed p.77 (PDF 82) ----
+\opage{77}ter formidlet Bevægelse.
 Forsaavidt her er mindste Spor af virkelig Sammenstykning, vil det
 bevægede Legeme kun i endelige Mellemrum forandre sin Retning: der vil
 fremkomme en brudt, ikke en krum Linie.
@@ -3092,7 +3137,7 @@ $-\dfrac{b}{a}\dfrac{x}{\sqrt{a^{2}-x^{2}}} = \dfrac{dx}{dy}$ for
 Ellipsen, erholder man ved Reduction
 \[
 \frac{ds}{dx} = \sqrt{\frac{a^{4} + (b^{2}-a^{2})\,x^{2}}
-  {a^{2}(a^{2}-x^{2})}},
+  {a^{2}(a^{2}-x^{2})}}
 \]
 % ---- printed p.78 (PDF 83) ----
 \opage{78} altsaa
@@ -3204,11 +3249,13 @@ af en Potens angivne Lov, er $\int x\,dx = \dfrac{x^{2}}{2}$, og altsaa
 \]
 Trekantens Areal $=$ Grundlinien $\times\ \tfrac{1}{2}$ Høide.
 
+% ---- printed p.80 (PDF 85) ----
+\opage{80}%
 \begin{center}
 % FIGURE (printed p.80): parabola $y^2=px$ with vertex at A. Rectangle
 % D (top-left), B (top-right), E (bottom-right), A (bottom-left, = vertex);
 % upper branch A--C--B, lower branch A--H (below the base); chord A--B;
-% dashed vertical G (on chord) -- F (on base) -- H (on lower branch).
+% dashed vertical G (just below D--B) -- F (on base) -- H (on lower branch).
 % Labels: $AE=x$, $EB=y$, $GFH=p$. Schematic redraw.
 \begin{tikzpicture}[scale=1.15]
   \coordinate (A) at (0,0);
@@ -3219,18 +3266,18 @@ Trekantens Areal $=$ Grundlinien $\times\ \tfrac{1}{2}$ Høide.
   \draw (A) -- (B);
   \draw[domain=0:1.7,smooth,variable=\t] plot ({(\t*\t)/1.204},{\t});
   \draw[domain=-1.35:0,smooth,variable=\t] plot ({(\t*\t)/1.204},{\t});
-  \draw[dashed] (1.5,1.06) -- (1.5,-1.35);
+  \draw[dashed] (1.5,1.7) -- (1.5,-1.35);
   \node[above left] at (D) {$D$};
   \node[above right] at (B) {$B$};
   \node[below right] at (E) {$E$};
   \node[below left] at (A) {$A$};
   \node[below] at (1.5,0) {$F$};
-  \node[above right] at (1.5,1.06) {$G$};
+  \node[below right] at (1.5,1.7) {$G$};
   \node[below] at (1.5,-1.35) {$H$};
   \node at (0.5,0.95) {$C$};
 \end{tikzpicture}
 
-$AE = x$;\quad $EB = y$. \\
+$AE = x$;\quad $EB = y$ \\
 $GFH = p$.
 \end{center}
 
@@ -3247,7 +3294,7 @@ $y = f'(x) = \sqrt{p}\,\sqrt{x}$, er
 \]
 \[
 \text{Arealet } ADBCA = xy - \frac{2}{3}xy = \frac{1}{3}xy
-  = 2\times \text{Segmentet } ACB.\text{\footnotemark}
+  = 2\times \text{Segmentet } ACB\text{\footnotemark}
 \]
 \footnotetext{Vi have fundet Arealet $ABCE = \dfrac{2}{3}xy = \dfrac{2}{3}$
 af et Rectangel, som kan reduceres til et Qvadrat; Parablen kan altsaa,
@@ -3339,11 +3386,11 @@ $OD = x$, $BD = y$, $Od = x' = bd = y'$.
 $\int y\,dx = \int f'(x)\,dx = f(x) + C$. Er $x = 0$, da er
 $f(0) = 0$; $\int y\,dx = 0 + C$, og $C = 0$; er $x = OD$, da er
 \[
-\int_{0}^{x} y\,dx = \int_{0}^{x} f'(x)\,dx = f(x);
+\int y\,dx = \int_{0}^{x} y\,dx = \int_{0}^{x} f'(x)\,dx = f(x);
 \]
 er $x = Od = x'$, da er
 \[
-\int_{0}^{x'} y\,dx = \int_{0}^{x'} f'(x)\,dx = f(x').
+\int y\,dx = \int_{0}^{x'} y\,dx = \int_{0}^{x'} f'(x)\,dx = f(x').
 \]
 Forsaavidt de varierende $x$ og $x'$ ere i et vist Forhold til
 hinanden, ere de varierende Arealer $OBD$ og $Obd$ i et tilsvarende
@@ -3362,7 +3409,9 @@ Arealet $bdBD$, som før var $= f(x) - f(x')$, bliver altsaa nu
 $= f(x') - f(x') = f(x') + C = 0$, og følgelig $C = -f(x')$. Naar nu
 $x$ ved Endepunktets Bevægelse, d.\,e. ved continuerlig Tilvæxt $dx$,
 forlænges ud over $x'$, vil Arealdifferensen blive $= f(x) + C$, idet
-$C = -f(x')$. Man vil altsaa, hvormeget end $x$ voxer, altid kunne
+$C = -f(x')$. Man
+% ---- printed p.83 (PDF 88) ----
+\opage{83} vil altsaa, hvormeget end $x$ voxer, altid kunne
 sætte
 \[
 bdBD = \int_{x'}^{x} y\,dx = f(x) - f(x') = f(x) + C.
@@ -3395,7 +3444,7 @@ hvorpaa der integreres med Hensyn til Masse.
   \node[left] at (0.42,0.62) {$r$};
 \end{tikzpicture}
 
-$AM = a$;\quad $AB = r\cos\alpha$.
+$AM = a$;\quad $AB = r\cos\alpha$
 \end{center}
 
 Antager man et legemligt Punkt, et materielt Element, $dm$, der

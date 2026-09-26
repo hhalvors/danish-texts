@@ -17,6 +17,17 @@
 %  STATUS: IN PROGRESS. Done: front matter + Section I (printed pp.3--18).
 %        Resume at Section II ("The Problem of Infinity", printed p.19).
 % ============================================================
+%  COLLATION REPAIR (2026-09-26): the Danish transcription's formulas and figures were collated
+%        against the 1857 print (see its header), and the formulas, figures and footnote placement
+%        here were brought into line: symbols and punctuation the old transcription had added are
+%        removed (multiplication points, ellipses, the subscript in f(a_1,...), commas and stops
+%        after displayed formulas), printer's errors inside formulas are kept as printed (with a
+%        comment), the dash rows on pp.18 and 44, "1000,000" (p.50), the p.52 and p.58 footnotes,
+%        the two "\int y\,dx =" on p.82, and the lettering of the figures on pp.64, 70, 72, 80.
+%        p.72 "navnlig" is now "in particular" (was "namely", from a misread "nemlig"); the two
+%        \emph spans on p.7 are removed (a reader's pen underlining in the scanned copy, not print).
+%        Punctuation in the English prose itself was left alone.
+%
 \documentclass[12pt]{book}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
@@ -194,10 +205,10 @@ In order to obtain a rule as comprehensive as possible, one must test as many
 cases as possible; but even if one tested cases by the thousand without meeting
 a single exception, the rule could not thereby be raised to a law.
 
-The rule expresses only \emph{that a relation is}, not that it necessarily must
+The rule expresses only that a relation is, not that it necessarily must
 be; but the law holds as law in virtue of the concept. That, when the law is to
-be known, it does not depend on the number of cases, but on \emph{the essence of
-the matter}, and hence on insight, can be seen from the following example.
+be known, it does not depend on the number of cases, but on the essence of
+the matter, and hence on insight, can be seen from the following example.
 
 That $\frac{1}{1-x} = 1 + x + x^{2} + \ldots$ will yield an infinite series is
 proved not by continuing the division to infinity,
@@ -287,7 +298,8 @@ difference between the possible and the impossible.
 
 In the inverse functions we have expressions both for opposition and for
 conclusion. If the function $\varphi$ is the inverse of $\psi$, i.e.
-$\varphi(\psi(x)) = x$, then also $\psi(\varphi(x)) = x$, i.e. the function
+% as printed (Danish collation 2026-09-26): «$\psi(\varphi(x) = x$»
+$\varphi(\psi(x)) = x$, then also $\psi(\varphi(x) = x$, i.e. the function
 $\psi$ is the inverse of $\varphi$. If $\varphi(x) = x+a$, then $\psi(x) = a-x$;
 if $\varphi(x) = ax$, then $\psi(x) = \frac{x}{a}$; if $\varphi(x) = x^{n}$, then
 $\psi(x) = \sqrt[n]{x}$; if $\varphi(x) = a^{x}$, then $\psi(x) = \log x$; if
@@ -578,14 +590,18 @@ development shows us the reciprocal determination of coefficients and roots:
 $A_1 = -(a_1+a_2+a_3+\dots a_n) = f_1(a_1\,a_2\dots a_n) = $ the sum of all the
 $a$'s with opposite sign; here the first fundamental function operates.
 
-% NB print oddity: above the second „3" in „3 og 3 a" the print carries a stray
-%    raised „3" (a typesetting defect); the intended reading „3 og 3 a" is given.
+\begin{center}--- --- --- --- --- --- --- --- --- --- --- ---\end{center}
+
 $A_3 = -(a_1a_2a_3 + a_1a_2a_4 + \dots a_1a_2a_n + a_2a_3a_4 + \dots
 a_{n-2}a_{n-1}a_n) = f_3(a_1\,a_2\,a\dots a_n) = $ the sum of the products of the
 $a$'s taken three at a time, with opposite sign; here the first and second
 fundamental functions cooperate.
+
+\begin{center}--- --- --- --- --- --- --- --- --- --- --- ---\\
+--- --- --- --- --- --- --- --- --- --- --- ---\end{center}
+
 % ---- printed p.19 (PDF 24) ----
-$A_n = (-1)^{n}(a_1\,a_2\,a_3\dots a_n) = f_n(a_1, a_2, \dots a_n) = $ the product
+$A_n = (-1)^{n}(a_1\,a_2\,a_3\dots a_n) = f(a_1, a_2, \dots a_n) = $ the product
 of all the $a$'s with opposite sign, when $n$ is odd. It is thus the second
 fundamental function that here appears.
 
@@ -929,10 +945,10 @@ $f_1(x) = y_1 = \dfrac{b}{a}x$. Accordingly,
 \[
 \begin{aligned}
 y_1 - y &= \frac{b}{a}\left(x - \sqrt{x^{2}-a^{2}}\right)
-= \frac{b}{a}\cdot
+= \frac{b}{a}
    \frac{\left(x-\sqrt{x^{2}-a^{2}}\right)\left(x+\sqrt{x^{2}-a^{2}}\right)}
         {x+\sqrt{x^{2}-a^{2}}}\\
-&= \frac{b}{a}\cdot\frac{a^{2}}{x+\sqrt{x^{2}-a^{2}}}.
+&= \frac{b}{a}\frac{a^{2}}{x+\sqrt{x^{2}-a^{2}}}
 \end{aligned}
 \]
 The consideration of this formula shows, 1) that here there is a real approach, for
@@ -1022,7 +1038,7 @@ undetermined coefficients. If $f(x) = A_0 + A_1 x + A_2 x^{2} + \dots
 = B_0 + B_1 x + B_2 x^{2} + \dots$, then $A_0$ must be $= B_0$, $A_1 = B_1$,
 $A_2 = B_2$, and so forth. Proof. For $x = 0$, $A_0 = B_0$ alone remains; by
 subtracting $A_0 = B_0$, one obtains $A_1 x + A_2 x^{2} = B_1 x + B_2 x^{2}\dots$,
-by dividing by $x$, $A_1 + A_2 x\dots = B_1 + B_2 x$, and, by setting $x = 0$,
+by dividing by $x$, $A_1 + A_2 x\dots = B_1 + B_2 x$, and, by setting $x = o$,
 $A_1 = B_1$, and so on.} and Newton's binomial formula\footnote{The binomial
 formula. From elementary algebra one knows: $(a+b)^{2} = a^{2} + 2ab + b^{2}$;
 $(a+b)^{3} = a^{3} + 3a^{2}b + 3ab^{2} + b^{3}\dots$ and so forth. Ram.\ Elmt.\
@@ -1039,7 +1055,7 @@ speak, to catch the infinite possibilities in the net of the relations.
 Thus, in the first place, each coefficient becomes recognizable by the
 corresponding power. If, to keep to the given example, the power-factors
 $x^{m}z^{n}$ have in the one series the coefficients $A_m A_n$, in the other
-$A_{m+n}\dfrac{(m+n)}{1}\dfrac{(m+n-1)\dots(m+1)}{2\cdot 3\dots n}$\footnote{For
+$A_{m+n}\dfrac{(m+n)}{1}\dfrac{(m+n-1)\dots(m+1)}{2\quad 3\dots n}$\footnote{For
 one develops, namely, 1) two series according to the same law: $a^{x} = 1 + A_1 x +
 A_2 x^{2} + \dots A_m x^{m}\dots$ and $a^{z} = 1 + A_1 z + A_2 z^{2} + \dots
 + A_n z^{n}$, and obtains 2), by multiplying these two equations, two different but
@@ -1072,13 +1088,13 @@ themselves.
 In the cited series, thus, the whole swarm of possible coefficients is brought into
 a definite relation to a single one, namely $A_1$, by the formula
 $A_m = \dfrac{A_1^{m}}{1\cdot 2\cdot 3\dots m}$\footnote{If one sets:
-$A_m A_n = A_{m+n}\dfrac{(m+n)(m+n-1)\dots(m+1)}{1\cdot 2\cdot 3\dots n}$, and
+$A_m A_n = A_{m+n}\dfrac{(m+n)(m+n-1)\dots(m+1)}{1\cdot 2\cdot 3\quad n}$, and
 $n = 1$, one gets: $A_m A_1 = A_{m+1}\dfrac{m+1}{1}$, i.e.\
 $A_{m+1} = \dfrac{A_m A_1}{m+1}$. If one next sets $m = 1$, one obtains
 % print: subscript below reads $A_nA_1$ (should be $A_1A_1$) --- preserved as set
 $A_{1+1} = \dfrac{A_n A_1}{1+1} = A_2 = \dfrac{A_1^{2}}{1\cdot 2}$;
 if one sets $m = 2$, then one obtains $A_{2+1} = \dfrac{A_2 A_1}{2+1} = A_3 =
-\dfrac{A_2 A_1}{3} = \dfrac{\frac{A_1^{2}}{1\cdot 2}A_1}{3} =
+\dfrac{A_2 A_1}{3} = \dfrac{\frac{A_1^{2}A_1}{1\cdot 2}}{3} =
 \dfrac{A_1^{3}}{1\cdot 2\cdot 3}\dots A_m = \dfrac{A_1^{m}}{1\cdot 2\cdot 3\dots
 m}$; from this:
 % print oddity: „$a^x = 1 =$" set exactly as here in the original
@@ -1193,7 +1209,7 @@ $= \infty$, and annihilate the significance of the series. If, on the other hand
 one sets $1+x$ instead of $x$, one obtains:
 \[
 \log(1+x) = \log e\left(x - \frac{x^{2}}{2} + \frac{x^{3}}{3} - \frac{x^{4}}{4}
-+ \dots\right)
++ \dots\right).
 \]\footnote{Jvfr.\ Ramus.\ Algebr.\ og Funct.\ S.\ 87--88; further elucidation
 under b.}
 
@@ -1342,7 +1358,7 @@ e^{x\sqrt{-1}} = 1 + \frac{x\sqrt{-1}}{1} + \frac{(x\sqrt{-1})^{2}}{1\cdot 2}
 + \frac{(x\sqrt{-1})^{3}}{1\cdot 2\cdot 3} + \frac{(x\sqrt{-1})^{4}}{1\cdot 2\cdot
 3\cdot 4}\dots \\
 = 1 + x\sqrt{-1} - \frac{x^{2}}{1\cdot 2} - \frac{x^{3}\sqrt{-1}}{1\cdot 2\cdot 3}
-+ \frac{x^{4}}{1\cdot 2\cdot 3\cdot 4}\dots
++ \frac{x^{4}}{1\cdot 2\cdot 3\cdot 4}\dots,
 \end{multline*}
 for the powers of $\sqrt{-1}$ form a period of 4 terms: $\sqrt{-1}$, $-1$,
 $-\sqrt{-1}$, and $+1$, which repeat themselves to infinity.
@@ -1442,7 +1458,7 @@ possible? On a fleeting consideration it should seem as if there were nothing in
 way. One has $\log(a^{2}) = 2\log a$, and $\log(-a)^{2} = \log(a^{2})$; how near,
 then, lies the conclusion that $\log(-a)^{2}$ must also be $= 2\log(-a)$, and yet the
 conclusion is false. One has, when $a$ and $b$ are positive,
-$\sqrt{a}\cdot\sqrt{b} = \sqrt{a\cdot b}$; but since $\sqrt{-a}$ is impossible, the
+$\sqrt{a}\cdot\sqrt{b}. = \sqrt{a\cdot b}$; but since $\sqrt{-a}$ is impossible, the
 above equation does not hold for negative magnitudes. One cannot say
 $(\sqrt{-a})^{2} = \sqrt{-a}\,\sqrt{-a} = \sqrt{(-a)^{2}} = \sqrt{a^{2}} = \pm a$,
 for it is only $\sqrt{-a}$ which, raised to the 2nd power, gives $-a$. In the dispute
@@ -1460,7 +1476,7 @@ Ramus.\ Algbr.\ Functsl.\ S.\ 92--94), the following formulas for comparison:
 %   branch and integer indices) --- reproduced as printed.
 (I) $l.\,a^{2} = l^{1}a^{2} + 2p\pi\sqrt{-1}$;
 (II) $l.\,a^{2} = 2l^{1}a + 2p\pi\sqrt{-1}$;
-(III) $2l.\,a = 2l^{1}a + 4p^{1}\pi\sqrt{-1}$ (in that the equation
+(III) $2l.\,a = 2l.^{1}a + 4p^{1}\pi\sqrt{-1}$ (in that the equation
 $l.\,a = l^{1}a + 2p^{1}\pi\sqrt{-1}$ is multiplied by 2);
 (IV) $2l(-a) = 2l^{1}(a) + 2(2p^{11}+1)\pi\sqrt{-1}$ (since one has
 $l(-a) = l^{1}a + (2p^{11}+1)\pi\sqrt{-1}$). If IV is compared with III, then
@@ -1601,7 +1617,7 @@ f(\overline{x+k}+h) = {}& f(x+k)\,(= X_0 + X_{0,1}k + X_{0,2}k^{2}\dots
 X_{0,n}k^{n}\dots)\\
 +{}& f_1(x+k)h\,(= X_1 h + X_{1,1}hk + \dots X_{1,n}hk^{n}\dots)\\
 +{}& f_2(x+k)h^{2}\,(= X_2 h^{2} + X_{2,1}h^{2}k \dots X_{2,n}h^{2}k^{n}\dots)\\
-&\ \ \vdots\\
+&\ \ \text{--- --- --- --- --- --- --- ---}\\
 +{}& f_m(x+k)h^{m}\,(= X_m h^{m} + X_{m,1}h^{m}k + \dots X_{m,n}h^{m}k^{n}\dots)
 \end{aligned}
 \]
@@ -1762,9 +1778,10 @@ f(\infty) = \frac{\dfrac{a}{\infty^{n}} + \dfrac{a_1}{\infty^{n-1}}
 \]
 In the equation:
 \[
-\lim f(x) = f(0) = c'
+% as printed (Danish collation 2026-09-26): «\lim f(x) = f(0) = c^{1}»
+\lim f(x) = f(0) = c^{1}
 \]
-$c'$ denotes the value, the limit, to which the function approaches, as $x$ becomes
+$c^{1}$ denotes the value, the limit, to which the function approaches, as $x$ becomes
 smaller, but which is only reached in infinite approach, in so far as it is first
 reached when $x = 0$.
 
@@ -1773,8 +1790,8 @@ From $f(x) = \dfrac{a + a_1 x + a_2 x^{2} + \dots a_n x^{n}}{b + b_1 x + b_2 x^{
 + \dots b_n x^{n}}$ it is seen that all the terms multiplied by $x$ must acquire a
 smaller value, the smaller $x$ becomes. If $x$ at last becomes $= 0$, one gets:
 \[
-f(0) = \frac{a + a_1\cdot 0 + a_2\cdot 0^{2} + \dots a_n\cdot 0^{n}}{b
-+ b_1\cdot 0 + b_2\cdot 0^{2} + \dots b_n\cdot 0^{n}} = \frac{a}{b} = c'.
+f(0) = \frac{a + a_1\,0 + a_2\,0^{2} + \dots a_n 0^{n}}{b
++ b_1\,0 + b_2\,0^{2} + \dots b_n 0^{n}} = \frac{a}{b} = c'.
 \]
 But, one might object, one is so far from yet seeing any difference between
 $\infty^{n}$ and $\infty^{1}$, between $0^{n}$ and $0^{1}$, that it even seems as if
@@ -1808,8 +1825,7 @@ change, become greater and greater, smaller and smaller, without the quotient in
 question changing. $\mathrm{Lim}\frac{x}{x} = \frac{\infty}{\infty}$ is thus no
 longer an indeterminate expression, but quite determinately $= 1$; equally
 determinate is $\lim\frac{x}{x} = \frac{0}{0} = 1$. What holds of the quotient
-$\frac{x}{x'}$,
-% print: denominator set $x'$ (a prime) --- cf. the $\frac{x}{x}$ just discussed
+$\frac{x}{x}$,
 holds also of $\frac{x^{2}}{x}$, $\frac{x^{3}}{x}$, $\frac{x^{n}}{x}$, and so
 forth. Thus: since $\frac{x^{2}}{x} = x$, $\mathrm{Lim}\frac{x^{2}}{x} =
 \frac{\infty^{2}}{\infty} = \infty$, and $\lim\frac{x^{2}}{x} = \frac{0^{2}}{0}
@@ -1824,26 +1840,26 @@ infinite approach halt at a finite limit. Where this
 limit is set is, as regards the concept, indifferent, since it is set only in order
 to be immediately transgressed.
 
-The magnitude $1{,}000{,}000$ represents for a moment $\infty$; the quotient
-$\frac{1}{1{,}000{,}000}$ will then necessarily represent $0$.
+The magnitude $1000{,}000$ represents for a moment $\infty$; the quotient
+$\frac{1}{1000{,}000}$ will then necessarily represent $0$.
 
 In accordance with the above formulas we shall thus obtain:
 \begin{gather*}
-\frac{1{,}000{,}000}{1{,}000{,}000} = \frac{\infty}{\infty} = 1; \quad
-\frac{\frac{1}{1{,}000{,}000}}{\frac{1}{1{,}000{,}000}} = \frac{0}{0} = 1.\\
-\frac{(1{,}000{,}000)^{2}}{1{,}000{,}000} = \frac{\infty^{2}}{\infty}
-= 1{,}000{,}000 = \infty;\\
-\frac{\left(\frac{1}{1{,}000{,}000}\right)^{2}}{\frac{1}{1{,}000{,}000}}
-= \frac{0^{2}}{0} = \frac{1}{1{,}000{,}000} = 0.\\
-\frac{(1{,}000{,}000)^{3}}{1{,}000{,}000} = \frac{\infty^{3}}{\infty}
-= 1{,}000{,}000^{2} = \infty^{2};\\
-\frac{\left(\frac{1}{1{,}000{,}000}\right)^{3}}{\frac{1}{1{,}000{,}000}}
-= \frac{0^{3}}{0} = \left(\frac{1}{1{,}000{,}000}\right)^{2} = 0^{2}
+\frac{1000{,}000}{1000{,}000} = \frac{\infty}{\infty} = 1; \quad
+\frac{\frac{1}{1000{,}000}}{\frac{1}{1000{,}000}} = \frac{0}{0} = 1.\\
+\frac{(1000{,}000)^{2}}{1000{,}000} = \frac{\infty^{2}}{\infty}
+= 1000{,}000 = \infty;\\
+\frac{\left(\frac{1}{1000{,}000}\right)^{2}}{\frac{1}{1000{,}000}}
+= \frac{0^{2}}{0} = \frac{1}{1000{,}000} = 0.\\
+\frac{(1000{,}000)^{3}}{1000{,}000} = \frac{\infty^{3}}{\infty}
+= 1000{,}000^{2} = \infty^{2};\\
+\frac{\left(\frac{1}{1000{,}000}\right)^{3}}{\frac{1}{1000{,}000}}
+= \frac{0^{3}}{0} = \left(\frac{1}{1000{,}000}\right)^{2} = 0^{2}
 \end{gather*}
-The objection that $1{,}000{,}000$ is infinitely far from $\infty$, and
-$\frac{1}{1{,}000{,}000}$ consequently equally far from $0$, means nothing; since the
+The objection that $1000{,}000$ is infinitely far from $\infty$, and
+$\frac{1}{1000{,}000}$ consequently equally far from $0$, means nothing; since the
 finitude-limit is set only in order to be transgressed, one will not only be able to
-let $1{,}000{,}000^{1{,}000{,}000}$ instead of $1{,}000{,}000$ represent $\infty$,
+let $1000{,}000^{1000{,}000}$ instead of $1000{,}000$ represent $\infty$,
 but --- what is here decisive --- also see that the terms of the relation can be
 changed to infinity, without the definite relation being thereby in the least
 altered.
@@ -1896,11 +1912,12 @@ f(a+h) = \frac{\varphi(a+h)}{\psi(a+h)} = h^{\alpha_1-\beta_1}\,
 \frac{A_1 + A_2 h^{\alpha_2-\alpha_1} + A_3 h^{\alpha_3-\alpha_1} + \dots}
      {B_1 + B_2 h^{\beta_2-\beta_1} + B_3 h^{\beta_3-\beta_1} + \dots}
 \]
-By setting $h = 0$, one obtains\footnote{Ramus.\ Differential- og
-Integralregning 1844.\ S.\ 12--13.}:
+By setting $h = 0$, one obtains:
 \[
-f(a) = \frac{\varphi(a)}{\psi(a)} = 0^{\alpha_1-\beta_1}\,\frac{A_1}{B_1}
+f(a) = \frac{\varphi(a)}{\psi(a)} = 0^{\alpha_1-\beta_1}\,\frac{A_1}{B_1}\footnotemark
 \]
+\footnotetext{Ramus.\ Differential- og
+Integralregning 1844.\ S.\ 12--13.}
 Three cases are now possible: I) $\alpha_1 > \beta_1$; $\alpha_1 - \beta_1 = +\,n^{1}$.
 II) $\alpha_1 < \beta_1$; $\alpha_1 - \beta_1 = -\,n^{1}$. III) $\alpha_1 = \beta_1$;
 $\alpha_1 - \beta_1 = 0$. Thus:
@@ -1910,7 +1927,7 @@ $\alpha_1 - \beta_1 = 0$. Thus:
 \text{II)}\ \ f(a) &= 0^{-n^{1}}\cdot\frac{A_1}{B_1}
    = \frac{1}{0^{n^{1}}}\cdot\frac{A_1}{B_1} = \frac{A_1}{0} = \infty.\\
 \text{III)}\ \ f(a) &= 0^{0}\cdot\frac{A_1}{B_1} = 1\cdot\frac{A_1}{B_1}
-   = \frac{A_1}{B_1}.
+   = \frac{A_1}{B_1}
 \end{align*}
 From the magnitude $h$ it is seen here what it means that the finite can be as $0$,
 and $0$ as a finite.
@@ -2109,7 +2126,7 @@ $d^{n}y = f^{n}(x)\,dx^{n}$. The Taylorian series can then, with respect to the
 notations here employed, be written thus:
 \[
 f(x + h) = y + \frac{dy}{dx}\cdot\frac{h}{1} + \frac{d^{2}y}{dx^{2}}\,
-\frac{h^{2}}{1\cdot2} + \frac{d^{3}y}{dx^{3}}\,\frac{h^{3}}{1\cdot2\cdot3} + \dots
+\frac{h^{2}}{1\cdot2} + \frac{d^{3}y}{dx^{3}}\cdot\frac{h^{3}}{1\cdot2\cdot3} + \dots
 \]
 
 ``For every explicitly given function of $x$ the differential coefficient can easily
@@ -2133,7 +2150,14 @@ a^{x+h} - a^{x} = a^{x}(l.\,a)\,\frac{h}{1} + a^{x}(l.\,a)^{2}\,
 \frac{h^{2}}{1\cdot2} \dots\\
 \log(x + h) - \log x = \log e\cdot\frac{1}{x}\,\frac{h}{1}
 - \log e\,\frac{1}{x^{2}}\,\frac{h^{2}}{2} \dots
-\end{gather*}}
+\end{gather*}
+% ---- footnote **) continues at the foot of printed p.58 ----
+\begin{gather*}
+\sin(x + h) - \sin x = \cos x\,\frac{h}{1} - \dots\\
+\cos(x + h) - \cos x = -\sin x\,\frac{h}{1} + \dots
+\end{gather*}
+By marking in each series that which corresponds to $\dfrac{dy}{dx}$, one obtains the
+required values.}
 % ---- printed p.58 (PDF 63) ----
 \[
 a^{x+h} = a^{x}a^{h} = a^{x}\left(1 + (l.\,a)\,h + (l.\,a)^{2}\,\frac{h^{2}}{1\cdot2}
@@ -2148,13 +2172,7 @@ a^{x+h} = a^{x}a^{h} = a^{x}\left(1 + (l.\,a)\,h + (l.\,a)^{2}\,\frac{h^{2}}{1\c
 \]
 \[
 \cos(x + h) = \cos x\cos h - \sin x\sin h = \cos x - \sin x\cdot h - \dots
-\]\footnote{%
-\begin{gather*}
-\sin(x + h) - \sin x = \cos x\,\frac{h}{1} - \dots\\
-\cos(x + h) - \cos x = -\sin x\,\frac{h}{1} + \dots
-\end{gather*}
-By marking in each series that which corresponds to $\dfrac{dy}{dx}$, one obtains the
-required values.}
+\]
 one obtains, for the several series, as the first differential coefficient:
 \begin{gather*}
 \frac{d.x^{n}}{dx} = nx^{x-1};\quad \frac{d.a^{x}}{dx} = (la)a^{x};\quad
@@ -2229,7 +2247,7 @@ $D$ as the point of departure for two simultaneous movements, so that one has
 $DA = y = f_{1}(t)$, and $DC = z = f_{2}(t)$; then the rectangle
 $AD\cdot DC = yz = f_{1}(t)\cdot f_{2}(t)$. How great will the increment now be, when
 the movements are continued for an infinitely small time? One obtains
-$d(yz) = d[f_{1}(t)\cdot f_{2}(t)] = ydz + zdy = f_{1}(t)\cdot d f_{2}(t)
+$d(yz) = d[f_{1}(t)\cdot f_{2}(t)] = ydz + zdy = f_{1}(t)\, d f_{2}(t)
 + f_{2}(t)\cdot d f_{1}(t)$. The whole must then, after the differentiation has been
 carried out and the increment found, give $yz + d.yz$, and $d.yz = ydz + zdy$.
 
@@ -2272,7 +2290,7 @@ $f^{n}(x) = \infty$; but nevertheless the notation itself reminds one that $d^{n
 does not relate to $y$ in the same way as $dx^{n}$ relates to $x$.
 
 For in $\dfrac{d^{2}y}{dx^{2}}$, $dx^{2} = dx\cdot dx$; in
-$\dfrac{d^{3}y}{dx^{3}}$, $dx^{3} = dx\cdot dx\cdot dx$, and so on; whereas, on the
+$\dfrac{d^{3}y}{dx^{3}}$, $dx^{3} = dx\cdot dx\cdot dx\cdot$ and so on; whereas, on the
 other hand, $d^{2}y = d\cdot dy$, $d^{3}y = d\cdot d^{2}y$, and so forth. With this it
 also agrees, as regards the matter, that $\dfrac{dy}{dx}$ can in certain cases be 0,
 while $\dfrac{d^{2}y}{dx^{2}}$ is a finite magnitude; which would be impossible if the
@@ -2288,9 +2306,10 @@ the moving force, and seek the force in its measure, then for a finite time we h
 $\varphi = \dfrac{v}{t}$, but for the infinite time of the moment
 $\varphi = \dfrac{dv}{dt}$. Since now the velocity in each moment is
 $v = \dfrac{dx}{dt}$, then $dv = d\cdot\dfrac{dx}{dt}$; $\varphi = \dfrac{dv}{dt}$
-then becomes $= \dfrac{\frac{d^{2}x}{dt}}{dt} = \dfrac{d^{2}x}{dt^{2}}$;
+then becomes $= \dfrac{\frac{d^{2}x}{dt}}{dt} = \dfrac{d^{2}x}{dt^{2}}$.
+
 % ---- printed p.62 (PDF 67) ----
-when, then, the first differential coefficient denotes a velocity, the second
+When, then, the first differential coefficient denotes a velocity, the second
 differential coefficient denotes the force acting in the moment.
 
 Another, equally comprehensible example can be drawn from maximum and minimum.
@@ -2350,7 +2369,7 @@ $y = f(x) = \pm\sqrt{2rx - x^{2}}$,\footnotemark
 \[
 \frac{dy}{dx} = \pm\frac{r - x}{\sqrt{2rx - x^{2}}}, \quad\text{and}\quad
 \frac{d^{2}y}{dx^{2}} = \pm\frac{-\sqrt{2rx - x^{2}}
-- (r - x)\dfrac{r - x}{\sqrt{2rx - x^{2}}}}{2rx - x^{2}}.
+- (r - x)\dfrac{r - x}{\sqrt{2rx - x^{2}}}}{2rx - x^{2}}
 \]%
 \footnotetext{$d f(x) = d(\pm\sqrt{2rx - x^{2}})$ then becomes
 $= d(2rx - x^{2})^{\frac{1}{2}}$. In order to carry out this differentiation, the
@@ -2363,7 +2382,8 @@ According to this formula, $d(2rx - x^{2})^{\frac{1}{2}}
 the numerator, the formula $d(y \pm z) = dy \pm dz$ is applied;
 $\tfrac{1}{2}d(2rx - x^{2})$ thus becomes $\tfrac{1}{2}(d\,2rx - dx^{2})$. But
 $d\,2rx = 2r\,dx$, and $\dfrac{2r\,dx}{dx} = 2r$; $\dfrac{d(x^{2})}{dx} = 2x^{2-1}
-= 2x$. Thus: $\dfrac{d(\pm\sqrt{2rx - x^{2}})}{dx}
+% as printed (Danish collation 2026-09-26): «$\dfrac{d(\pm\sqrt{2rx - x^{2}}}{dx}»
+= 2x$. Thus: $\dfrac{d(\pm\sqrt{2rx - x^{2}}}{dx}
 = \pm\dfrac{\tfrac{1}{2}(2r - 2x)}{\sqrt{2rx - x^{2}}}
 = \pm\dfrac{r - x}{\sqrt{2rx - x^{2}}} = \dfrac{dy}{dx}$. To find the second
 differential coefficient
@@ -2449,6 +2469,9 @@ the $x$'s.
   \node[below] at (0,0) {$O$};
   \node[below] at (3,0) {$P$};
   \node[below] at (4.5,0) {$S$};
+  \node at (3.4,2.18) {$v$};
+  \node[below] at (3.75,0) {$h$};
+  \node at (3.0,4.0) {$B$};
 \end{tikzpicture}
 \end{center}
 
@@ -2476,7 +2499,7 @@ Since, further,
 \frac{d^{2}y}{dx^{2}} = \frac{d\cdot\frac{dy}{dx}}{dx}
 = \frac{d\operatorname{tg}\alpha}{dx},
 \]
-$\dfrac{d^{2}y}{dx^{2}}$ denotes the increment by which $\operatorname{tg}\alpha$
+$\dfrac{d^{2}y}{dx^{2}}$ denotes the increment by which $\operatorname{tg} a$
 varies when $x$ grows. But $\operatorname{tg}\alpha$ (to the point $m$) is evidently,
 when $x$ varies from $B$ to $D$, in constant decrease, so that the increment is
 negative; $\dfrac{d^{2}y}{dx^{2}}$ must, then, with respect to the maximum, be
@@ -2690,8 +2713,8 @@ If one presupposes $f(a + dx) - f(a) = f'(a)\,dx$, one obtains, by constantly ad
 $dx$,
 \[
 \begin{array}{r@{\;=\;}l}
-f(a+2dx) - f(a+dx) & f'(a+dx)\,dx,\\[2pt]
-f(a+3dx) - f(a+2dx) & f'(a+2dx)\,dx,\\[2pt]
+f(a+2dx) - f(a+dx) & f'(a+dx)\,dx\\[2pt]
+f(a+3dx) - f(a+2dx) & f'(a+2dx)\,dx\\[2pt]
 \hdotsfor{2}\\[2pt]
 f(a+ndx) - f(a+(n-1)dx) & f'(a+(n-1)dx)\,dx\\[2pt]
 \hline
@@ -2699,7 +2722,7 @@ f(a+ndx) - f(a+(n-1)dx) & f'(a+(n-1)dx)\,dx\\[2pt]
 \]
 and by addition:
 \[
-f(a+ndx) - f(a) = f'(a)\,dx + \dots f'(a+(n-1)dx)\,dx.
+f(a+ndx) - f(a) = f'(a)\,dx + \dots f'(a+(n-1)dx)\,dx
 \]
 
 If $dx$ is infinitely small, $f'(a)\,dx$, $f'(a+dx)\,dx \dots$ likewise, one must set
@@ -2744,8 +2767,8 @@ analysis the matter can be presented thus:
 
 \begin{center}
 % FIGURE (printed p.70): a circular arc (m ... C ... B ... n) with its chord a = CB;
-% the triangle BCD (apex D to the right), b = CD, c = BD, and the dashed altitude
-% D--e to the chord. Illustrates the projection a = b cos C + c cos B. Redrawn in
+% the triangle BCD (apex D to the right), b = CD, c = BD, and the dashed line
+% from D to the chord (unlettered). Illustrates the projection a = b cos C + c cos B. Redrawn in
 % TikZ.
 \begin{tikzpicture}[scale=0.9]
   \draw (0.35,1.95) .. controls (-0.9,1.0) and (-0.9,-1.0) .. (0.35,-1.95);
@@ -2763,7 +2786,6 @@ analysis the matter can be presented thus:
   \node[left] at (Bb) {$B$};
   \node[right] at (Dd) {$D$};
   \node at (-0.62,0.45) {$a$};
-  \node at (-0.12,0.2) {$e$};
   \node at (0.62,0.72) {$b$};
   \node at (0.62,-0.72) {$c$};
 \end{tikzpicture}
@@ -2827,7 +2849,7 @@ integration the inverse tangent method.
 
 With respect to the circle, $y = f(x) = \pm\sqrt{2rx - x^{2}}$ was in the foregoing
 given as the original function; the task was then to find the derived functions,
-namely $\dfrac{dy}{dx} = \dfrac{r - x}{\sqrt{2rx - x^{2}}}$, and thereby to determine
+in particular $\dfrac{dy}{dx} = \dfrac{r - x}{\sqrt{2rx - x^{2}}}$, and thereby to determine
 the angle which the tangent to a point in the circle will form with the positive
 direction of the axis of abscissas. By inserting different values for $x$ one
 determines the tangent for the different points in the curve.
@@ -2838,22 +2860,25 @@ $\dfrac{b}{a}\sqrt{a^{2} - x^{2}}$.
 
 \begin{center}
 % FIGURE (printed p.72): ellipse centred at C, semi-axes CD = a (horizontal, right
-% vertex D) and CE = b (vertical, bottom vertex E); a point B on the ellipse (upper
-% right) with coordinates x (horizontal from C) and y (vertical), and its reflection
-% B'; top-left point A. Redrawn in TikZ.
+% vertex D) and CE = b (vertical, bottom vertex E); a point on the ellipse (upper
+% right) with coordinates x (horizontal from C) and y (vertical); AB the tangent at the
+% top vertex, A'B' the tangent at D (both named in the p.73 footnote). Redrawn in TikZ.
 \begin{tikzpicture}[scale=0.9]
   \draw (0,0) ellipse (2.3 and 1.6);
   \draw[->] (-2.75,0) -- (2.95,0);
   \node[right] at (2.95,0) {$X$};
   \draw[->] (0,-2.0) -- (0,2.0);
   \node[above] at (0,2.0) {$Y$};
-  \draw[dashed] (1.3,1.32) -- (1.3,-1.32);
+  \draw[dashed] (1.3,0) -- (1.3,1.32);
+  \draw (-1.6,1.6) -- (1.6,1.6);
+  \draw (2.3,-1.25) -- (2.3,1.25);
   \node at (-0.18,-0.22) {$C$};
-  \node[below] at (2.3,0) {$D$};
+  \node[below right] at (2.3,0) {$D$};
   \node[below] at (0,-1.6) {$E$};
-  \node[above left] at (-1.3,1.32) {$A$};
-  \node[above right] at (1.3,1.32) {$B$};
-  \node[below right] at (1.3,-1.32) {$B'$};
+  \node[above] at (-1.6,1.6) {$A$};
+  \node[above] at (1.6,1.6) {$B$};
+  \node[above] at (2.3,1.25) {$A'$};
+  \node[below] at (2.3,-1.25) {$B'$};
   \node at (0.6,-0.25) {$x$};
   \node at (1.5,0.6) {$y$};
 \end{tikzpicture}
@@ -2895,7 +2920,8 @@ determined; the task
 % "Opgaven" (p.73) ... [display] ... "er, at finde" (p.74 top)
 \[
 \text{A series such as }\int_{0}^{x} 2x\,dx
-  = \mathrm{Lim}\,2\frac{x^{2}}{n^{2}}\,(1+2+3+4+\cdots (n-1))
+% as printed (Danish collation 2026-09-26): «(1+2+3+4+\cdots (n-1)»
+  = \mathrm{Lim}\,2\frac{x^{2}}{n^{2}}\,(1+2+3+4+\cdots (n-1)
 \]
 is not summed, but reduced:
 \[
@@ -2952,7 +2978,7 @@ calculation, and therefore generally leads to new functions''\dots\
 ``Just as subtraction, division, root-extraction, which are inverse
 calculations of addition, multiplication, raising to a power, have led
 to new magnitudes: negative, fractional, rational, and imaginary.''
-Ramus. Differential- og Integral-Rgn. S.\,36.
+Ramus. Differential- og Integral.-Rgn. S.\,36.
 
 That integration, moreover, is on the whole determined by its principled
 opposition to differentiation lies in the nature of the matter, and is seen from
@@ -2968,7 +2994,8 @@ $\int (f'(x)\,dx \pm \Phi'(x)\,dx) = \int d(f(x) \pm \Phi(x))
 = f(x) \pm \Phi(x)$; if
 $d(f(x)\,.\,\Phi(x)) = f(x)\,d\Phi(x) + \Phi(x)\,df(x)$, and
 $f(x)\,d\Phi(x) = d(f(x)\Phi(x)) - \Phi(x)\,df(x)$, then
-$\int d(f(x)\,.\,\Phi(x)) = f(x)\Phi(x) = \int f(x)\,d\Phi(x)
+% as printed (Danish collation 2026-09-26): «= f(x\Phi(x) = \int f(x)»
+$\int d(f(x)\,.\,\Phi(x)) = f(x\Phi(x) = \int f(x)\,d\Phi(x)
 + \int \Phi(x)\,df(x)$, and
 $\int f(x)\,d\Phi(x) = f(x)\Phi(x) - \int \Phi(x)\,df(x)$. But in
 the further development the matter becomes complicated; already
@@ -3097,7 +3124,7 @@ $-\dfrac{b}{a}\dfrac{x}{\sqrt{a^{2}-x^{2}}} = \dfrac{dx}{dy}$ for
 the ellipse is inserted, one obtains by reduction
 \[
 \frac{ds}{dx} = \sqrt{\frac{a^{4} + (b^{2}-a^{2})\,x^{2}}
-  {a^{2}(a^{2}-x^{2})}},
+  {a^{2}(a^{2}-x^{2})}}
 \]
 % ---- printed p.78 (PDF 83) ----
 thus
@@ -3214,7 +3241,7 @@ the area of the triangle $=$ base $\times\ \tfrac{1}{2}$ height.
 % FIGURE (printed p.80): parabola $y^2=px$ with vertex at A. Rectangle
 % D (top-left), B (top-right), E (bottom-right), A (bottom-left, = vertex);
 % upper branch A--C--B, lower branch A--H (below the base); chord A--B;
-% dashed vertical G (on chord) -- F (on base) -- H (on lower branch).
+% dashed vertical G (just below D--B) -- F (on base) -- H (on lower branch).
 % Labels: $AE=x$, $EB=y$, $GFH=p$. Schematic redraw.
 \begin{tikzpicture}[scale=1.15]
   \coordinate (A) at (0,0);
@@ -3225,18 +3252,18 @@ the area of the triangle $=$ base $\times\ \tfrac{1}{2}$ height.
   \draw (A) -- (B);
   \draw[domain=0:1.7,smooth,variable=\t] plot ({(\t*\t)/1.204},{\t});
   \draw[domain=-1.35:0,smooth,variable=\t] plot ({(\t*\t)/1.204},{\t});
-  \draw[dashed] (1.5,1.06) -- (1.5,-1.35);
+  \draw[dashed] (1.5,1.7) -- (1.5,-1.35);
   \node[above left] at (D) {$D$};
   \node[above right] at (B) {$B$};
   \node[below right] at (E) {$E$};
   \node[below left] at (A) {$A$};
   \node[below] at (1.5,0) {$F$};
-  \node[above right] at (1.5,1.06) {$G$};
+  \node[below right] at (1.5,1.7) {$G$};
   \node[below] at (1.5,-1.35) {$H$};
   \node at (0.5,0.95) {$C$};
 \end{tikzpicture}
 
-$AE = x$;\quad $EB = y$. \\
+$AE = x$;\quad $EB = y$ \\
 $GFH = p$.
 \end{center}
 
@@ -3253,7 +3280,7 @@ $y = f'(x) = \sqrt{p}\,\sqrt{x}$,
 \]
 \[
 \text{The area } ADBCA = xy - \frac{2}{3}xy = \frac{1}{3}xy
-  = 2\times \text{the segment } ACB.\text{\footnotemark}
+  = 2\times \text{the segment } ACB\text{\footnotemark}
 \]
 \footnotetext{We have found the area $ABCE = \dfrac{2}{3}xy = \dfrac{2}{3}$
 of a rectangle, which can be reduced to a square; the parabola can therefore,
@@ -3345,11 +3372,11 @@ $OD = x$, $BD = y$, $Od = x' = bd = y'$.
 $\int y\,dx = \int f'(x)\,dx = f(x) + C$. If $x = 0$, then
 $f(0) = 0$; $\int y\,dx = 0 + C$, and $C = 0$; if $x = OD$, then
 \[
-\int_{0}^{x} y\,dx = \int_{0}^{x} f'(x)\,dx = f(x);
+\int y\,dx = \int_{0}^{x} y\,dx = \int_{0}^{x} f'(x)\,dx = f(x);
 \]
 if $x = Od = x'$, then
 \[
-\int_{0}^{x'} y\,dx = \int_{0}^{x'} f'(x)\,dx = f(x').
+\int y\,dx = \int_{0}^{x'} y\,dx = \int_{0}^{x'} f'(x)\,dx = f(x').
 \]
 In so far as the varying $x$ and $x'$ are in a certain relation to
 one another, the varying areas $OBD$ and $Obd$ are in a corresponding
@@ -3401,7 +3428,7 @@ in which one integrates with respect to mass.
   \node[left] at (0.42,0.62) {$r$};
 \end{tikzpicture}
 
-$AM = a$;\quad $AB = r\cos\alpha$.
+$AM = a$;\quad $AB = r\cos\alpha$
 \end{center}
 
 If one assumes a corporeal point, a material element $dm$, which
