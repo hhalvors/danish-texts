@@ -210,3 +210,14 @@ conventions (quotes, emphasis, Latin → \textit, Greek verbatim, em-dash, run-i
 numbered heads, sandbox compile recipe). Book-specific vocabulary: `GLOSSARY.md`.
 Book-specific note: the Danish uses centered heads (`\begin{center}\large\S.~N.`),
 not `\section{}`/`\label{}`, so match markers by the § number + page range.
+
+## REPAIR after the full collation — 2026-09-25 (DONE)
+The Danish was fully collated (see transcription.tex header). translation.tex was brought into
+line: printed pp. 97 and 101 (previously missing from both files) translated and inserted in §9;
+169 edits for restored/corrected words, emphasis spans and paragraph breaks. Misprints the Danish
+now keeps as printed are translated by their intended sense. Sandbox compile: 111 pp., 0 errors,
+0 missing characters. Pre-repair file: translation.tex.bak.20260925-prerepair. Edit lists per
+chunk: .parts/collation/translation-repair/ (A–D .edits.json).
+Judgement calls worth a look: p.101 anacoluthon kept ("…but only the necessity with which…, the
+necessity of understanding itself showed itself as the real ground"); uægte → "spurious" (§21 twice);
+§13 "kun haves; idet det skues" re-punctuated so the idet-clause attaches to "can be cognized".

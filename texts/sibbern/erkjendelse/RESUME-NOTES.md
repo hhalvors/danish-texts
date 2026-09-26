@@ -103,3 +103,12 @@ New this round (§§13–16):
   det videnskabelige Hele", p.143 "at tage fra en vis Side"/"Mueligheden af flere
   Fremgangsmaader eller Methoder", p.147 "Spørsmaal og Problemer", p.151
   "Interesse og Glæde ved Detaillet") — marked from 300 dpi; second pass advised.
+
+## FULL COLLATION — 2026-09-25 (COMPLETE)
+Sample 0.67/pg -> full collation -> post re-sample 0.17/pg (1 held misprint). The accuracy
+statement, everything applied, held and rejected is in the **transcription.tex header**.
+Headline: printed **pp.97 and 101 were missing entirely** (restored; blind second transcription
+agrees token for token). Main word error: stripped adverbial/neuter -t. Emphasis = letterspacing.
+Working files, scripts and all reader sheets: `.parts/collation/` (and `ek-collation.tgz`).
+Pre-collation file: `transcription.tex.bak.20260925-precollation`. translation.tex was repaired
+to match on 2026-09-25 (pp.97/101 translated; see TRANSLATION-NOTES.md).
