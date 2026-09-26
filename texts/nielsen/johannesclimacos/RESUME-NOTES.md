@@ -1280,6 +1280,10 @@ Working files (packets, bands excluded, results, reader sheets and answers, appl
   House rule: the ligature is normalised to ου (as ϑ/ϰ → θ/κ).
 - The old inline `% <-- print "…"; corrected` notes were mostly false (the x/r and d/b sorts are
   distinct on a close look); those were removed, the two true ones restored as printed.
-- Not done yet: `translation.tex` has not been checked against the corrected Danish. The changes that
-  can touch the English are the wrong-word corrections, the eight emphasis spans and the Greek.
+- `translation.tex` was brought into line the same day (backup `translation.tex.bak.20260926-prerepair`;
+  its header has a COLLATION REPAIR note): Greek πᾷ → ποῦ throughout and the Doric/Attic pun
+  footnote replaced; freshness (p.121), posited (p.123), alas (p.124 fn.), addressed to me by name
+  (p.128); eight emphasis spans; six stray Danish misprint notes removed.
+- **Superseded:** the earlier notes in this file that call the print's Greek a Doric *πᾷ στῶ* are wrong.
+  The print sets the middle word with the ου-ligature (ȣ̃); four collators and two blind readers agreed.
 - The VM used for this session cannot compile the book (no babel-danish); compile on the Mac.

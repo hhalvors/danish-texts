@@ -90,6 +90,26 @@ entry as a "Source dossiers" section, linking to the PDF.
 - **Python 3 with PyYAML** (it reads `catalog.yaml` for authors' names and works' dates).
 - **LuaLaTeX** with Libertinus, as for the rest of the repo.
 
+## Dossiers with their own generator
+
+A dossier whose sources are not in sks-search has a `build.py` of its own in
+its directory, and `make` runs that instead of `dossier.py` (the Makefile tries
+the `build.py` rule first). The one so far is `entydig/`, on Niels Bohr:
+
+```
+texts/dossiers/entydig/
+  build.py        the generator (reads sks-search AND ~/bibliotek-search)
+  printed.yaml    YOU EDIT: Bohr's printed Danish, transcribed from page images
+  intro.texfrag   YOU EDIT (optional)
+  dossier.tex     GENERATED, public version
+```
+
+Bohr is in copyright, so the public version cuts each aligned German/English
+original to the sentences that carry the word. `build.py --private -o PATH`
+keeps them whole and refuses a PATH inside this repo; the private copy is built
+by `make` in `~/research/entydig-dossier/`. It needs `~/bibliotek-search` with
+its Bohr index (`./bib.py bohr-index`) as well as sks-search.
+
 ## E-books
 
 `dossier.py --ebooks` adds passages from privately held e-book reissues. Those
