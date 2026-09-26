@@ -290,5 +290,5 @@ Sample 0.83/pg -> full collation -> post re-sample <=0.33/pg (2 held single-read
 Everything applied, held and rejected is in the transcription.tex header. The old \apage markers
 for the binding-shuffled pp.41-56 were labelled by PDF order and have been replaced. Pre-collation
 file: transcription.tex.bak.20260926-precollation. Working files: .parts/collation/.
-NOT YET DONE: translation.tex still reflects the pre-collation text (e.g. p.128 "Stræben" -> "Spiren",
-p.21 "døbende" -> "dødende", paragraph breaks); needs the same repair as Om Erkjendelse's.
+translation.tex repaired to match on 2026-09-26 (30 edits; see its header). Pre-repair file:
+translation.tex.bak.20260926-prerepair.
