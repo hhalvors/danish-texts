@@ -1265,3 +1265,21 @@ the cleanest separation of the four books swept so far — continuations −6 to
 +6 px, openings above +40, nothing in between anywhere — which is what a 1-bit
 600 ppi Google scan buys over the colour JPX ones.
 
+
+## 2026-09-26 — full collation of the Danish transcription (REPAIR-PLAYBOOK §5C)
+
+`transcription.tex` was collated page by page against the scan (PDF = printed + 8). The ACCURACY block
+in its header gives the counts and examples; backup `transcription.tex.bak.20260926-precollation`.
+Working files (packets, bands excluded, results, reader sheets and answers, apply log, scripts) are in
+`.parts/collation/jc-collation.tgz`.
+
+- Main error classes: printer's misprints silently corrected (turned n printed u is common in this
+  print), modernised i/j spellings (*giælder, gierne, Skiebne*), a handful of wrong words that read
+  naturally (*som det/sat, at/ak, løb/lød, Frihed/Friskhed, raabvild/raadvild*).
+- The Greek *δός ποῦ στῶ* is printed with the ου-ligature; the file had misread it as *πᾷ*.
+  House rule: the ligature is normalised to ου (as ϑ/ϰ → θ/κ).
+- The old inline `% <-- print "…"; corrected` notes were mostly false (the x/r and d/b sorts are
+  distinct on a close look); those were removed, the two true ones restored as printed.
+- Not done yet: `translation.tex` has not been checked against the corrected Danish. The changes that
+  can touch the English are the wrong-word corrections, the eight emphasis spans and the Greek.
+- The VM used for this session cannot compile the book (no babel-danish); compile on the Mac.
