@@ -36,7 +36,8 @@ irrefutable too — not from strength but from pliability.
 
 Complete. Image-verified verbatim throughout: the front matter and printed
 pp. 1–530, 530 of 530 pages, no gaps and no duplicates, compiling to a 363-page
-LaTeX PDF. English translation not begun.
+LaTeX PDF. English translation made 2026-09-27 (`translation.tex`), mirroring
+the Danish page for page.
 
 ## Editorial note
 
