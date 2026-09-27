@@ -1,0 +1,2137 @@
+% ============================================================
+%  Constans [Hans Brøchner], "The Christian and the Human as Opposites
+%  in the Consciousness of Our Time" I--III
+%  [Det Kristelige og det Humane som Modsætninger i vor Tids Bevidsthed]
+%  Nyt dansk Maanedsskrift, ed. Vilhelm Møller, vol. 2 (April --
+%  September 1871): I. pp. 289--299; II. pp. 433--456; III. pp. 492--510.
+%  TRANSLATION (English).
+%  Translated from transcription.tex (Danish) in this directory, whose
+%  header records how its text was established (per-batch word check and
+%  a full second reading at the image).  Method: ../../../TRANSLATION-
+%  PLAYBOOK.md.  No other edition or translation was consulted.
+%
+%  ---- REGISTER ----
+%  Scholarly, moderately literal, readable English; American spelling.
+%  Long periods are broken only where English will not carry them, never
+%  across a page marker.
+%
+%  ---- TERMINOLOGY ----
+%  Aligned with this repo's translations of Om det Religiøse (1869) and
+%  "Det ubevidste og det bevidste menneskelige Sjæleliv" (1871):
+%    det Kristelige / det Humane = the Christian / the Human; det
+%      Religiøse = the religious; Religiøsitet = religiousness;
+%      Humanitet = humanity; Menneskehed = humanity (Brøchner uses the
+%      two near-synonymously: „Menneskehedens Religion“ p. 500,
+%      „Menneskehedens Religiøsitet“ p. 508, „Humanitetens Religiøsitet“
+%      pp. 505, 509); Menneskekjærlighed =
+%      love of mankind; Livsanskuelse = view of life;
+%    Tro / Viden = faith / knowledge; Videnskab = science;
+%    Virkelighed = actuality, Realitet = reality (as in Om det Religiøse;
+%      harmonized across the five batches in the caller);
+%    Væsen = essence (Menneskevæsen = the human essence); Aand = spirit;
+%      Tilværelse = existence; Forestilling = representation;
+%    sædelig / ethisk = moral / ethical; Inderlighed = inwardness;
+%      Mægling = mediation; den Enkelte = the single individual;
+%      Forsoning = reconciliation; Salighed = blessedness;
+%      Selvhengivelse = self-surrender; Gudmennesket = the God-man.
+%  Kierkegaard's Øieblikket = The Moment.
+%
+%  ---- CONVENTIONS ----
+%  - Page markers \opage{N} and "% --- p. N ---" at the same joints as in
+%    transcription.tex.
+%  - The same installment heads, numerals I.-III., section-dividing rules,
+%    paragraphs, footnote, \emph spans (letterspacing in the original),
+%    signatures and closing rules as the Danish.  Where the Danish spaces
+%    only part of a compound, the emphasis falls on the corresponding part
+%    of the English (% TR: at the site).
+%  - Quotation marks „...“ -> ``...''.  Latin and French as printed, in
+%    \textit (p. 294 keeps its roman guillemets: »pagani«).  The
+%    signature „Constans.“ is kept.
+%
+%  ---- DEFECTS AND ERRATUM: DANISH AS PRINTED, ENGLISH CORRECT ----
+%  p. 444: the print's „Viden“ is corrected in the volume's own errata
+%  (p. 572) to „Veien“; the English translates „Veien“ (the way).  The
+%  other printer's errors (listed in the transcription's header) are
+%  rendered in their evident sense and logged in % TR: at each site.
+%
+%  ---- HOW THE TRANSLATION WAS CHECKED (2026-09-27) ----
+%  (1) Five translators (pp. 289--299, 433--444, 445--456, 492--501,
+%  502--510), each re-reading its English against the Danish sentence by
+%  sentence.  (2) Mechanical audit (tr_audit.py): per printed page the
+%  same \opage joints, \emph spans, footnote, section numbers, centre
+%  blocks and paragraph breaks as transcription.tex, and an English/
+%  Danish word ratio within 0.95--1.60.  (3) Terminology harmonized in
+%  the caller (Virkelighed = actuality; Religiøsitet = religiousness).
+%  (4) Independent review: five readers who translated none of it read
+%  every sentence of the Danish against the English and proposed 13
+%  corrections, all applied (two reworded).  Sense: p. 434 the relative
+%  clause „hvis Princip“ attached to the religion, not the world;
+%  p. 455 „til hvilken ... var naaet“ refers to the consciousness, not
+%  to humanity; p. 502 „denne ethiske Bestemmelse af det, der ...“ =
+%  the determination of the divine, which designates it as spirit;
+%  p. 505 the third „paa“ makes giving this existence a content of
+%  eternity a third object of the faith.  Terminology: residual
+%  reality/real -> actuality/actual for Virkelighed (pp. 296, 455, and a
+%  stale % TR: note p. 495); Væsen = essence p. 494; Endeligheds-
+%  sondringen = the separation of finitude pp. 509--510.  English:
+%  p. 455 'an actuality'; p. 500 uafviselig = inescapable; p. 505 comma
+%  so that the will posits the opposition, not the good.  Menneskehed
+%  harmonized to 'humanity' (pp. 293, 297).
+% ============================================================
+\documentclass[12pt,a4paper,openany]{book}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{libertinus}
+\usepackage{libertinust1math}
+\usepackage{textalpha}   % Greek: Διαψάλματα (p. 348), μεσότης (p. 361)
+\usepackage{graphicx}
+\usepackage[english]{babel}
+\usepackage[protrusion=true,expansion=true]{microtype}
+\usepackage{setspace}
+\usepackage[margin=1.2in]{geometry}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\setlength{\headheight}{28pt}
+\addtolength{\topmargin}{-13.5pt}
+
+% Footnotes as the printing sets them: *) (one, p. 436).
+\renewcommand{\thefootnote}{*)}
+
+% The article's numbered sections: the number alone, centred on its line,
+% exactly as in transcription.tex.
+\newcommand{\secnum}[1]{\par\begin{center}#1\end{center}\par\nobreak}
+
+\usepackage{hyperref}
+\hypersetup{
+  pdftitle={The Christian and the Human as Opposites in the Consciousness of Our Time},
+  pdfauthor={Hans Brøchner},
+  hidelinks
+}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LE,RO]{\thepage}
+\fancyhead[RE]{\textit{Constans [H. Brøchner]: The Christian and the Human}}
+\fancyhead[LO]{\textit{Nyt dansk Maanedsskrift, vol.\ 2}}
+
+\setstretch{1.3}
+
+\title{\textbf{The Christian and the Human as Opposites\\ in the Consciousness of Our Time}\\[8pt]
+  \large [Det Kristelige og det Humane som Modsætninger i vor Tids Bevidsthed] I--III}
+\author{Constans [Hans Brøchner]}
+\date{\textit{Nyt dansk Maanedsskrift}, ed.\ Vilhelm Møller, vol.~2
+  (April--September 1871), pp.~289--299, 433--456, 492--510\\[10pt]
+  \small Translated from the Danish}
+
+% ---- original-page markers ----
+% \opage{N} marks where printed page N begins, at the same joint as in
+% transcription.tex (mid-sentence where the page turns mid-sentence).
+\usepackage{marginnote}
+\newcommand{\opage}[1]{\marginnote{\footnotesize\textit{[#1]}}}
+\newcommand{\apage}[1]{\marginnote{\footnotesize\textit{[#1]}}}
+
+\begin{document}
+\maketitle
+\thispagestyle{empty}
+\clearpage
+
+% --- p. 289 ---
+\opage{289}\begin{center}\textbf{\large The Christian and the Human as Opposites in the Consciousness of Our Time.}\end{center}
+
+\secnum{I.}
+
+What comes forth in our time as a struggle between
+faith and knowledge is, despite the central significance of this opposition,
+nevertheless only a particular expression of a more comprehensive
+struggle: the struggle between the Christian and the Human; and in
+this struggle Christianity, as the highest and concluding form of the positive
+religions, as their purest and most spiritualized expression,
+represents in turn something more universal: the
+positively religious in its opposition to the free human.
+In this last shape the opposition has already for
+millennia been pronounced for consciousness: it broke
+forth as soon as human thought, bold and strong, had
+found its law and its norm in thought itself, as soon as, in
+existence --- which it now wished to cognize for itself, not
+% TR: the print's „forlaret“ (for-|laret, the k missing at the line break) is a printer's error for „forklaret“ (explained); translated as „forklaret“
+to have explained to it through the riddles of myth --- it had found the same
+reason that is its own essence.
+
+Already in the antiquity of Greece free thought came into
+opposition to the form of the positively religious that was
+given in the Greek popular religion. The many gods with
+their strife and struggle, with their human passions,
+% --- p. 290 ---
+\opage{290}with their human destinies, in short, with all their
+finitude, became a stumbling block for the thought that sought in the whole of
+existence only the One that reason acknowledges, the
+all-encompassing, all-governing, infinite, in which it can find
+rest. And thought's opposition to the gods of the popular faith
+became an opposition that encompassed the \emph{whole} of human life.
+As soon as thought had found in itself its own law as the
+law of existence, the human will too had to be seen
+as governed by this law: in the demand of reason, not in
+the command of a foreign will or in the prescriptions of a priesthood,
+the norm for human action had to be sought. In
+cognition and in will the human spirit then sought the regulating
+principle in itself, not by detaching itself from the whole
+of existence, but by comprehending itself as a living member of
+this whole, and by finding in itself, as indwelling and
+akin to it in essence, the divine that was the ground of itself and of
+all existence. On this ground it rested
+securely, without any secret sense of lacking what thought was combating;
+and where Greek philosophy reaches its high point,
+in Aristotle, spirit stands in the free clarity of thought, in the
+secure consciousness of its unity with the divine reason,
+which in its unfolding is the life of the universe, calm and
+free over against a faith in which it sees only single glimpses of truth
+wrapped in the motley cover of mythic images, in the
+involuntary veiling of fantasy or the deliberate veiling of calculating
+cleverness.
+
+Under changing forms, but yet in its essence constantly
+the same, the opposition between the free human
+and the positively religious comes forth in the Christian
+era. From the beginning the struggle is that of the new revelation,
+of the divine truth, against that wisdom of the world
+in which the spiritual is to find a place by God's
+wisdom triumphing over man's. Here the Christian is what
+contends against the sanctioned, the established, what has been holy
+from antiquity, as the wisdom of the world also comes
+to include the faith that had originally grown up out of the natural ground of hu%
+% --- p. 291 ---
+\opage{291}man life, and which is now seen in the same light
+as the thought that once combated it. Christianity
+fights here, weak in the outward but mighty in the inward, because what
+it combats is the outlived, whose time of unfolding is past,
+whose root in consciousness has dried up, that which no longer satisfies
+the demands of life, because it expresses the human only one-sidedly
+and incompletely. It triumphs as it
+seems to succumb: from the blood of the martyrs the church rises
+up as the church triumphant, whose cross waves above the armies
+of the Roman state, whose spiritual power rises up from the imposing
+foundation of an earthly power.
+
+In another form the struggle comes forth in the Middle Ages.
+Against the entrenched power of the church, represented by a
+priesthood spread over the lands, gathered in one apex
+in the Vicar of Christ, who in the world's old capital rules
+spiritually over ``the city and the world'', the fight is waged not only
+from the side of the state, the secular power, but from the side of that
+science which the church wishes to make its handmaid
+and, as it were, to shut up in a monastery cell, far from nature and
+far from the naturally determined life of society. Thought, which willingly
+and trustingly subordinated itself to the church, which
+strained its strength to solve the task the church had
+set it: to join the dogmas together into the unity of an ecclesiastical doctrine,
+whose divine truth, to be sure, was not to be
+comprehensible to the human spirit, but was yet to be capable of being
+maintained by it as something not-impossible; --- this thought
+grew imperceptibly under the relation of servitude, and as it grew,
+there awoke its consciousness of its own laws, its need
+for freedom and its need for actuality. From the object
+that, as the unappropriable and incomprehensible, could be shaped only in an outward
+manner, thought turned toward the
+appropriable content of actuality, which it could draw from a
+nature that no longer frightened it back as something foreign,
+and which it could fetch up from the human spirit's own
+depths. As philosophy, science separated itself from theology,
+free thought from bound thought, and the opposition which in the
+% --- p. 292 ---
+\opage{292}earlier Middle Ages had been able to remain concealed stood, at the close of the Middle Ages,
+clear and sharp before consciousness. ``One is
+the truth of theology, another that of philosophy'' now became the watchword, and
+with that the divorce was accomplished, secular science
+emancipated. The church could still brand as heretics, but its
+power over minds was no longer the same as when
+an emperor, barefoot and in penitent's garb, had humbly to beg a
+pope for release from the ban, and when the foremost of thought
+had to recant before the councils what thought affirmed
+and the church denied.
+
+At the beginning of the modern age the struggle then became a
+struggle between emancipated science and the medieval-scholastic
+theology, bound by dogma and governed by the uncomprehended
+and incomprehensible; and from this weaker
+opponent science soon turned against dogma itself.
+In the time when antiquity was reborn and the human spirit
+turned back with enthusiasm to the classical models in life and
+poetry, in art and science, in order to seek in them a content
+that it could appropriate and find nourishment in, the struggle was
+waged with passion, and in this struggle philosophy got its
+martyrs. Soon, however, the opposition assumed a calmer
+shape. Science soon no longer needed to fight
+for its existence; secured by its own strength, it became a
+power of life that compelled recognition, and against which
+the divided church had to defend itself. The \emph{whole} of modern
+philosophy, in its double form as realistic and idealistic,
+stands by its principle in opposition to the positively religious,
+as this is represented by Christianity, and
+the \emph{whole} of modern natural science is foreign to it. What
+Christianity denies --- nature --- is the foundation of modern science,
+and human thought, which Christianity
+% TR: p. 292 „Synden“ (broken e in the print) read as the word; no translation issue
+sees as dimmed and darkened by sin, which has disturbed
+its essence, and as led to truth only by revelation,
+becomes for modern philosophy a source of truth,
+its governing power its own laws, which it finds confirmed
+in nature. And by science's opposition to
+% --- p. 293 ---
+\opage{293}the positively religious the general consciousness of our time
+is determined, directly or indirectly. In the whole view of the world and of life
+of the modern age the opposition is pronounced
+to positive religion's holding fast to a foreign, superhuman
+and supernatural law and norm for cognition
+and action. For the human consciousness the essentiality of nature
+as the foundation of human life stands firm, and it
+does not doubt ``the capacity of unaltered, complete human nature
+to attain, from out of its own interior, to the truth of cognition
+and of action, the source of which the human essence
+harbors within itself.'' And this human consciousness, which distances
+itself from positive religion, finds in itself the
+living source of the ideally religious by going back to the ground of its essence,
+to its fundamental relation to the eternal power of existence.
+
+Everywhere in the lands that lead the cultural development
+of the modern age we find in our time the opposition between
+the Human and the positively religious sharply pronounced and
+clearly conscious; and in the many forms, merely heterogeneous
+to a superficial glance, in which the Human expresses itself,
+it is not difficult to find the pervasive features, and in the
+deeper and more serious of these forms there shows itself everywhere a
+striving to find, in the very depths of human nature, a
+richer and truer substitute for what the positively religious
+once provided the spirit. More and more strongly the power of the
+Human asserts itself in the course of cultural development, as the wealth
+of human nature unfolds ever more fully before
+consciousness; more and more it frees itself from the constraining
+bonds of the past. Only in the lands that lie outside
+the cultural current or at its outer edges does the
+old retain to a certain degree its significance for the spirit and its
+power over it. Here one can then see the peculiar
+phenomenon that precisely this holding fast to the old is interpreted
+as a sign that it is these lands in which the
+true vital force has been preserved, that it is they who are to
+lead the future history of humanity, while
+the great cultured peoples are supposed to be outlived and spiritually exhausted.
+% --- p. 294 ---
+\opage{294}One forgets to draw a historical parallel that lies close at hand.
+When the faith of antiquity withered away and a new power of life rose
+triumphant, it was not at those points of the old
+world where the life of thought was strongest, the current of culture
+mightiest, that the old faith put up the longest and toughest resistance.
+It was in out-of-the-way regions, in provinces that fed
+on old memories, on recollections of vanished greatness;
+it was in small towns and villages that the old was preserved,
+and the name paganism for the old heathendom
+recalls this relation. The same thing repeats itself in our time
+with regard to the faith of the Middle Ages; but now people take
+pride in belonging to the »\textit{pagani}«.
+
+\begin{center}\rule{1.8cm}{0.4pt}\end{center}
+
+Under all the changing forms that the opposition
+between the positively religious and the Human has assumed
+from the first Christian era until our days, there is
+one phenomenon that must attract attention: it is
+the immobility of the Christian view of life beneath its apparent
+development. Only to a fleeting glance does
+a development show itself in the Christian view of life; what assumes
+the appearance of one is only the reflection of the opposition's
+alternation, or the amalgamating of the Christian with
+elements inconsistently taken up from what is foreign. In
+the Human there shows itself a possibility of development as rich as
+its essence, infinite as this; in the Christian view of life
+there is, and must be, immobility, both because
+of its abstraction, of its nature-less spirituality, and because
+of its boundness to authority. This boundness
+is, essentially regarded, equally great in Protestantism and Catholicism.
+Catholicism has an advantage in that tradition
+in it is at every moment borne by a living individuality
+on whom the currents of the spirit of the age can exert their
+influence; but the infallible head of the church himself is nevertheless
+so bound by the sum of tradition that piles
+% --- p. 295 ---
+\opage{295}up behind him that there can be no room for a free development.
+It is the same power of tradition, only halted
+at a definite point --- at the Scripture, which is itself only
+the monument to the tradition of a single Christian age ---
+that in Protestantism binds free inquiry and free
+development. When the Reformation protested against the tradition of Catholicism
+and, in agreement with the general striving
+of the Renaissance, of which the ecclesiastical reformation
+was only a single, limited expression, took refuge back
+in the original, this original was not what is
+primitive in the human spirit --- the spirit's freedom in thought and
+action --- but what is first in the sense of finite time: Christianity's
+first historical monuments; and one took refuge back
+in them only in order, for the benefit of the scriptural tradition, to
+renounce the right of thought, the autonomy of action, in order
+to submit to an outward, abiding norm, more binding than
+that of Catholicism.
+
+\begin{center}\rule{1.8cm}{0.4pt}\end{center}
+
+When it is frequently asserted that the general spiritual
+movement of our time is going back toward the positively
+religious, that there is generally a need making itself felt
+in minds to take this up again, this assertion rests
+on a confusion. One confuses the religious,
+which is a necessary moment in the fully conceived
+human, an expression of human nature itself in
+its vital connection with the indwelling divine, with
+what is expressed in the form of the positive religions. Of the former
+that assertion would in essentials be correct; of the latter
+it is untrue. It is that religious element --- which the
+spiritless materialism of the 18th century and its renewal
+in our days have sought to displace --- that there is now a striving, from so
+many sides, in all the deeper and more genuine forms of the
+human direction of spirit, to reinstate in its right. As
+consciousness, as it were, sinks down into its own depths and there
+meets with something higher that is the ground of human life and its
+% --- p. 296 ---
+\opage{296}power of life, it finds again in itself the religious relation; and since
+this has been found by way of cognition, the human spirit can
+live in it without falling into discord with itself and giving
+itself up, and without denying a fundamental activity of its
+essence by bringing knowledge as a sacrifice to faith. As
+moral consciousness matures, it becomes religious consciousness,
+no longer ``religionless morality''. But this religious,
+which has its germ in the Human as such, is something
+essentially other than the content of positive religion; it is
+the universally, ideally religious. Therefore, at the same time as
+it is sought, precisely the confessional differences, indeed even the differences
+between the various historical religions, become vanishing,
+and they must become so, precisely because it is the \emph{universally}
+Human in \emph{religious} form that one seeks to draw forth and unfold.
+In our days the Protestant and the Catholic, the
+Christian and the Jew, indeed the Christian and the Hindu who is touched
+by the breath of life of humanity, can meet in a faith that is essentially
+one, even if they have not given this common faith a
+common expression. And this striving of the age toward the
+religious in its liberation from the historical forms --- a
+striving that often lacks only full clarity and courage to
+acknowledge itself, --- can also be recognized as hidden
+beneath the most diverse, apparently wholly heterogeneous phenomena.
+It is hidden, as if stunted and unclear, beneath the
+attempt of half-speculative, half-Christian theology at a halfway
+rationalizing of dogma, at a halfway humanizing
+of the Christian, by means of a halfway giving-up of
+what is Christian in principle. --- It is hidden in the attempt of ordinary
+theology to go behind the historical, confessional
+expressions of Christianity in order to find an original,
+ideal Christianity that is supposed to have hovered before the Founder's thought
+but never to have found a corresponding expression in actuality; for
+this ideal, unhistorical Christianity becomes in actuality
+only an expression of the abstractly universal element in the positive
+religions, in which they coincide with rational faith. ---
+It is present, as if hiddenly at work, in the general concep%
+% --- p. 297 ---
+\opage{297}tion of the positive forms of religion that have come into being in
+our days. Even those who feel no rest in the older positive
+religions nevertheless regard the new ones with indifference or
+mistrust. The relation of the consciousness of our time to positive
+religion becomes the same as its relation to miracle.
+Like miracle, positive religion is regarded as something
+past; even if one does not deny its reality altogether,
+one conceives it as something whose coming-to-be belongs only
+to the past, has actuality only there, not in the present.
+But this conception is only the indirect denial
+of its reality altogether. --- And finally that
+striving can also be hidden beneath the very adherence to the
+absurd positive forms of religion that our time has created;
+for frequently it is precisely an unclear seeking after the free
+religious that brings people to cast away the earlier positive
+forms, if only to find a temporary rest
+in a new positive religion.
+
+\begin{center}\rule{1.8cm}{0.4pt}\end{center}
+
+The universally religious, to which the human consciousness
+in our time seeks its way back where it conceives itself
+more deeply and more completely, this ``religion of humanity''
+that is the expression of the human essence's original ideal
+religious need, is clarified for consciousness through knowledge,
+through true, thoroughgoing cognition, through
+philosophical thought. But its relation to this cognition
+sets up no abiding distinction between the thinker's
+religion and the religion of the multitude. What is grounded in
+the universally human must be capable of being formed in universally
+accessible forms of consciousness. Not in every form will the
+highest truth, which science brings to clarity, be accessible
+to all, but in one form or another it will be able to be
+so. ``Monopolies of truth for the benefit of a single class of men
+would be wrongs against all the others and real
+injuries to humanity'' (Lichtenberg). Truth
+% --- p. 298 ---
+\opage{298}is what unites, what is to become the property of all, the medium of a common
+life. And the religious that has its root in
+the very ground of the human essence, the free and freed religious,
+will, just as it can become the property of all, satisfy
+the \emph{whole} human spirit, satisfy the heart's
+need too. It will be able to do so because it is the expression of the human essence
+itself, and because what is essential for religious consciousness
+has the ability to express itself in the most diverse
+forms according to the different stages of advancing human
+development.
+
+\begin{center}\rule{1.8cm}{0.4pt}\end{center}
+
+For one who with an unbiased and comprehensive glance regards
+the religious movement in the consciousness of our time,
+a doubt will not easily arise about its real direction
+and about its goal for the future. But there lies in the
+historical circumstances under which the modern age has developed
+much that can make it explicable that the conception of the
+phenomena is so frequently confused, where uncertainty with
+regard to matters of principle works together with tendencies
+that obscure cognition. If the Christian had been
+the historically original, if it had come into a \emph{new}
+world, and if it alone had been able to fill minds, then
+the conception of it could have been sure and easy: its
+real nature would, as it were, have forced itself upon cognition.
+But when Christianity came into the world,
+great periods of culture were already concluded, distinctive fundamental forms
+of the Human were already unfolded and exhausted.
+And Christianity, as what is foreign to the world, as what
+denies nature, has always been able to fill only one domain
+of the spirit, a single need, a single form of life, not to encompass
+the human essence in its whole compass. It has
+constantly had beside it another element, another
+principle of life, and since this developed simultaneously with Christianity's
+existence and in interaction with the
+Christian, the confusion could easily arise that what had only
+% --- p. 299 ---
+\opage{299}come into being at the same time as the Christian, partly in
+struggle against it, could be seen as having proceeded from the very principle of the
+Christian, as its rich unfolding. Thereby it became
+possible that what is called Christianity could become a phenomenon
+composed of such heterogeneous elements that those who
+stand within Christianity, but have received the basic content of their
+religious consciousness, its points of support, in
+this intergrowth with the foreign, could become
+uncertain about the boundaries of the Christian against the Human, and
+that even the scientifically educated among the representatives of theology
+could regard a sharp separation, in principle, of
+the specifically Christian, whether it took place from a
+standpoint within or outside Christianity, as an
+``indefensible misunderstanding'', while they themselves put forward a
+conception of the Christian which, in seeking with a fragile
+dialectic to annex the Human, made the Christian
+into something blurred and unclear, and only concealed its lack of principle
+in the fog-clouds of phrases. ---
+
+We shall in what follows attempt to let representatives
+of the two conceptions of Christianity contending in our days
+have their say: of the one that posits the opposition
+between the Christian and the Human, and of the one
+that lets the former enclose the latter. And as we then, by way of
+history and of the development of concepts, ground our adherence
+to the conception that holds fast to the opposition,
+we shall set the Christianly religious beside the religiousness
+of humanity, which for us stands as the goal of religious consciousness.
+For this religiousness we shall then seek an expression, not
+exclusively in any single one of its spokesmen, but in
+what, in the various nuances in which it has taken
+shape, shows itself as something common and pervasive, as
+that in which its essential motives become clear.
+
+\begin{flushright}\textbf{Constans.}\end{flushright}
+\begin{center}\rule{2.6cm}{0.4pt}\\[-10pt]\rule{2.6cm}{0.4pt}\end{center}
+
+\clearpage
+% --- p. 433 ---
+\opage{433}\begin{center}\textbf{\large The Christian and the Human as Opposites in the Consciousness of Our Time.}\end{center}
+
+\secnum{II.}
+
+In the conception of the Christian there stand in our day,
+within the domain of Christianity itself, two opposites
+facing each other, sharply distinguished in principle. The one
+has found its classic expression in our literature through an
+eminently gifted personality: through \emph{Søren Kierkegaard}.
+For him the Christian stands as that which is
+unconditionally heterogeneous with everything worldly and with what is
+accessible to thought. The center of Christianity, the God-man,
+is the absolutely incomprehensible, the unconditioned
+paradox, to the acknowledgment of which in faith it is not the
+inferences of reason but the despair of the consciousness of sin that brings one.
+% TR: p. 433 the Danish reads „Det er det; hvortil“ with a semicolon (logged in the transcription as printed); rendered in the evident sense „Det er det, hvortil“.
+It is that to which one attains not through thought but in spite
+of thought and through a break with it. Faith
+grasps the incomprehensible, and in holding it fast with the
+passion of inwardness, it guards, precisely with all its strength
+and all its passion, its incomprehensibility against every
+attempt of thought to appropriate it. And just as
+Christian faith is conceived by Kierkegaard only as having issued from
+a break with thought, so too the Christian
+life that springs forth from this faith is conceived as having issued from a
+% --- p. 434 ---
+\opage{434}break with the world. Christianity is the religion of suffering;
+its commandment is to die away from the world; only through this
+death does it show the way to life. And this negative relation
+to the world is not restricted to a single time, as, for example,
+to Christianity's first historical appearance. As little
+as the unconditioned paradox of faith ever becomes more comprehensible
+with time, so little does the life that rests in it ever
+become homogeneous with the life of the world. Christianity, which, by
+demanding death, the death of selfhood, and the renunciation of everything
+worldly outside and within the individual, awakens the resistance of selfishness and
+worldliness, must constantly stand equally hostile
+over against ``the world''; it must at all times be mocked,
+reviled, hated, persecuted. And where history shows a peaceful
+relation, that is precisely the sign that Christianity
+has lost its peculiar character, that it has been corrupted
+by an admixture with the heterogeneous, that it has lowered
+the ideal demand, has denied itself. In the Christendom of our time
+Kierkegaard therefore does not recognize Christianity; he
+sees in it only a deception carried on through many centuries and carefully
+veiled; in the church protected by the state
+he sees only a caricature of Christianity, whose preachers
+live off Christ instead of living for him. He
+raises, doubting, the question whether Christianity still
+exists on earth, and as, with his ideal of the Christian
+before his eyes, he goes back through the history of the church right to its
+first age, he carries that doubt with him right up to it
+and asks gloomily: have there ever really been Christians?
+has the ideal demand of Christianity ever been fully
+realized? And this question is consistent; for can
+the religion whose principle is \emph{not} to live in the world, to be dead to the world, really find its perfect expression in the world?
+
+In this conception of the Christian there is expressed at once
+the sharpest opposition to the Christianity of ``Christendom''
+and to the Human. In opposition to the concept of a
+Christendom in which the individual is, as it were, a Christian by birth
+and continues to be one by virtue of the connection
+% --- p. 435 ---
+\opage{435}with something objectively subsisting, Kierkegaard accentuates the concept
+of ``the single individual''. Face to face he would set the individual,
+as a ``single individual'', with God, with the infinite demand of the religious,
+in order to let the decision take place in the depth of inwardness, in
+the meeting where the divine and the human touch
+in the innermost of the self. Every objective way to the God-relation
+he cuts off, not only the one that goes through objective
+thought, but also the one that goes through the church. The
+subjective, personal relation to the truth becomes, according to
+man's conditions of existence, the one true relation: in infinite
+concern for himself, in the concern that the consciousness of sin
+awakens, the individual is, in the subjectivity-relation of faith,
+which is the relation of an infinite passionate interest, as a single individual
+to win the relation to the divine as it
+is revealed as ``the god in time'', as the paradox that
+for thought is the absurd, for faith the infinitely certain,
+which in every moment, in fear and trembling, is won out of
+objective uncertainty.
+
+``The single individual'' is the point of departure, and had to be so
+for one who saw in ``Christendom'' a corruption that
+comes to light at once in the mixing of the Christian
+and the worldly and in the individual's absorption into the ecclesiastical
+community, the impersonal universal. But ``the single individual'' is
+not, as was quite recently asserted through a conspicuous misunderstanding,
+the end point for Kierkegaard.
+First the illusion had to be broken, and it had to
+be made clear to the individual that its way to God can
+go only through the narrow pass of inwardness, not along the highroad
+of the objective; only on this condition could the upheaval
+in souls on which Kierkegaard staked his life become
+actuality. But once the ``single individuals'' had each for himself
+entered into the true God-relation, the concept of the congregation,
+of the community, regained its validity, because the single individuals
+met in the same eternal goal. There came to be a communal relation
+for the single individuals, but in such a way that God was the middle term
+between the single individual and the community, not the community
+% --- p. 436 ---
+\opage{436}the middle term between the single individual and God. This relation
+is so clearly stated in Kierkegaard's writings that only an urge
+to parade a superiority by getting Kierkegaard's
+standpoint subordinated as a moment in a higher ethical-Christian-ecclesiastical-human
+one can explain the misunderstanding that ascribes to
+Kierkegaard another conception.
+
+But the life that is set as a task for the single individual
+while he stands alone face to face with God, and while
+he finds in his God-relation the relation to the other individuals,
+becomes a life that sharply separates itself from the Human.
+What sustains it is that which is inaccessible to thought:
+the unconditioned paradox, that which for thought is the absurd.
+But the paradox, which conflicts with all the laws and
+forms of thought in that it asserts the union of God and the individual
+human being in the person of Christ, the coming into being of the eternal in a moment
+of time, is for the believer the highest truth. The
+true then judges that which conflicts with it as the
+untrue, and there remains in the spirit no place for a life of
+thought; there remains no validity, not even a relative one,
+for thought. The paradox has rightly been designated
+``the miracle in the world of thought'', and it has rightly been
+emphasized that, just as the miracle in the world of nature cancels
+the concept of nature and of natural law, so the miracle in
+the world of thought must overturn the laws of thought and let all the
+certainty of knowledge dissolve into doubt. The demand on the believing
+individual would consistently have to be ``that in its life of thought it is to
+cast away all the world's content of actuality merely in order to be with
+the paradox of the consciousness of sin in the paradoxical God-relation.''
+This must become the demand, because the paradox contradicts not merely
+a single form of human thought but \emph{all} human
+thought; because here there is not a conflict between two
+forms of the rational, but between the rational in its
+entirety and the antirational. The absurd, Kierkegaard's
+categorical determination for the paradox, excludes \emph{all} thought.\footnote{Cf. Nielsen: Religionsfilosofi, pp. 8, 34, 301 ff., and elsewhere.}
+
+% --- p. 437 ---
+\opage{437}But just as the believer's life, as Kierkegaard
+conceives it, forms the opposite of the human life
+by denying thought, which expresses an essential determination
+in the human, so it comes into conflict with that life
+because it consistently cannot make room for the concretely
+moral, for all those forms of an ethical life that rest on
+a natural ground in the human.
+
+According to Kierkegaard's conception the religious relation becomes
+not merely the highest relation, to which the ethical relation
+points, in pointing beyond itself, but it becomes the
+absolute relation in the sense that it cannot ``exhaust
+itself or become concrete'' in the ethical relative relations. It
+becomes the absolute relation, then, in the sense that it lays claim
+for itself to all of man's strength and lays claim to it
+in every moment; for only as I always, in every moment, ``relate
+myself absolutely to the absolute'' do I preserve the relation
+according to its essential determinacy. But then no strength remains
+over for the ethical relations: they must vanish before the absolute,
+the infinite, precisely because they fall outside it; just as
+the finite strength of the creature must vanish when it is placed
+over against the infinite might of omnipotence. Therefore the demand is
+also made of man that, for the sake of the
+infinite religious relation, he be able to renounce \emph{all} the ethical
+relations. The religious does not become the soul in the ethical,
+does not permeate the ethical relations in such a way that, in
+raising them up into a higher sphere of infinity, it itself gains
+living actuality through them; rather it stands over against them as
+the infinite that consumes the finite, as the divine
+that brings death to the human whose eye has seen it.
+In Christianity's demand to die away, to hate one's natural
+life, it is implied that the content of natural existence
+vanishes as a nothing in its unconditioned opposition
+to the eternal truth, and with this natural foundation there vanishes
+the condition for that unfolding of the ethical through
+which alone it can gain actuality. The more decidedly Kierkegaard
+stamps his standpoint in the course of his opposition to the
+% --- p. 438 ---
+\opage{438}unprincipledness of the established order, the more decidedly this
+consequence too comes forward. In the polemic against marriage in ``The Moment''
+the consequence is stated undisguisedly.
+
+\begin{center}\rule{1.8cm}{0.4pt}\end{center}
+
+The contrast to the Kierkegaardian conception of the Christian
+is formed, now, by the one that extends the name of the Christian to
+all those forms of spiritual life that have developed simultaneously
+with and under the influence of Christianity. It
+sees Christianity not as the opposite of the spiritual life of our time
+but as its animating principle; it speaks
+of a Christian state, a Christian ethics, a Christian art,
+a Christian science; in a word: it applies the name of Christianity
+to all forms of the Human; it calls
+the world in which Christianity is like a foreign
+guest a Christian world. The sharp distinction between
+the principle of Christianity and that of the world it allows, although it
+constantly points to the apostolic as the orienting,
+to have been justified only in Christianity's first age, in which
+the struggle with the forms of the old world had to lead to an
+exclusive relation. From the moment when Christianity became
+victorious, on the other hand, its task was not to be to separate
+itself from the world, to die away from it, but to permeate
+it; its divine power is to show itself precisely in this, that
+it has been able to do so, and its capacity, as principle of life,
+to permeate the heterogeneous is sought in this, that Christianity
+is a new creation, which acts back in an elevating, ``potentiating'' way
+on nature and on the spiritual forces and
+laws. Not flight from the world but immersion in it, not
+struggle against it but peace with it and dominion over
+it then becomes Christianity's goal, which in the Christian state
+is reached in the way in which it can be reached under the conditions of finitude,
+and the state's recognition of the Christian, its favoring
+of it in the way of worldly goods, becomes a new
+proof that the human Christianity, reconciled with the world,
+is the true one. And the same recognition is also rendered
+% --- p. 439 ---
+\opage{439}to Christianity by reason. Even if the unregenerate, darkened
+reason does not comprehend the mysteries of Christianity,
+the believing reason, potentiated by the new principle of life, is nonetheless
+able to penetrate into their depths, and even if it does not
+attain logical or mathematical clarity, it can nonetheless explore
+the connection of the articles of faith, and thereby their
+ground, and develop a science of faith that is the
+summit and norm of all science. Christian philosophy rises, as
+thought borrows wings from imagination, to descry in the God of Christianity
+an eternal nature, cleansed of all the imperfection of the grosser nature
+defiled by man's sin.
+It sees in this eternal nature in God the possibility of
+asserting the relative justification of the natural in the human,
+the possibility of a reconciliation of the oppositions in human life. And
+in the union of the divine with the human in
+Christ it sees the highest expression of the reconciliation that thought
+demands: between the infinite spirit and the finite, between
+the creator and the created, spiritual-natural existence. Thus
+Christianity is seen as reconciled with the world and with
+thought, as their new, consummating principle of life.
+
+For this conception the Kierkegaardian one becomes a damnable
+one-sidedness, just as much as the ``emancipated''
+reason's assertion of the Human as the true in its
+distinction from the Christian. In place of distinction there steps
+everywhere mediation; the rich ``higher unity'' asserts itself with
+dignified superiority over against the poor one-sidednesses;
+the Human is condescendingly taken up as a serving moment,
+and with rhetorical pathos the triumphs of Christianity are proclaimed.
+
+To a fleeting glance all this can be very beautiful to
+behold, and the need for a reconciliation won without the struggle of the will
+and the exertion of thought, a need so widely spread, makes
+it psychologically easy to explain that such a theory of leveling
+finds approval with the great multitude, which needs not
+clarity but reassurance, and which more readily receives the
+smooth phrase than the sharp thought. If one looks a little more closely
+at the matter, however, one discovers without difficulty that the
+% --- p. 440 ---
+\opage{440}smooth phrase only binds together loosely stitched oppositions,
+that the higher, richer unity that is supposed to have been won
+has been procured only by a very poor method, stereotypically
+repeated everywhere, which can yield as its result only semblance, not
+actuality, phrases, not concepts. The stereotyped method
+is simply this: one takes the opposites one wants
+to bring together and joins them in one sentence as subject
+and predicate, and then one sends the phrase so formed
+out into the world with the endorsement that it ``must be thought'', which
+presumably is to be understood rather like the ``may be printed''
+% TR: p. 440 Danish „maa“ means both "must" and "may"; the article plays on „maa tænkes“ (must / may be thought) against the censor's „maa trykkes“ (may be printed), and the next sentence takes „maa tænkes“ as a mere permission. English cannot keep the one word; rendered "must be thought" throughout and "may be printed" here.
+(\textit{imprimatur}) that the censor in his day put on the books that
+were sent out into the world. At any rate one cannot well attain to more than a permission to think
+the phrase; an actual thinking of
+it becomes a sheer impossibility. Since both opposites
+find their expression in the phrase, these expressions of theirs must, as it were,
+neutralize each other: the predicate that is joined to the heterogeneous
+subject must, instead of determining the subject, rob it of
+its content and leave behind for consciousness only an indeterminate, vague representation,
+a representation of a nothing; and when
+the opposites in their determinacy then press forward again
+to consciousness, the contradiction and the discord are there anew, and
+the unity must vanish, unless consciousness can be lulled into
+a gentle slumber by the monotonous music of the phrase. A single
+example will suffice to illustrate what has been said. The opposition
+between positive religion and philosophy in the conception
+of the relation of the divine to the being of existence finds its
+pregnant expression in the opposition between the representation of creation
+and the concept of a world-unfolding, a cosmogony. For
+religion existence is a work of the incomprehensible arbitrariness
+of a creating omnipotence; for philosophy existence has being
+in virtue of the very eternal necessity of the essence of the divine; it
+is an unfolding of the essential determinations of the divine itself.
+Here sharp opposites, irreconcilable as it would seem, stand
+over against each other; but that method unites
+them easily --- in a phrase that ``must be thought''. For first
+the representation of creation is rationalized by the concept of cosmogony:
+% --- p. 441 ---
+\opage{441}it is not to be a God determined as nature-less spirit, who
+by an incomprehensible act of omnipotence produces out of nothing
+an existence that, as material, has no point of attachment
+in the essence of the divine and therefore cannot be comprehended
+as its effect. It is to be a God who has a
+nature within him, who creates out of free necessity, and it is to
+lie in the concept of creation that God produces not something dead
+but something living, that he produces a creature that at the same time
+produces and develops itself in a given independence.
+Therefore creation \emph{must} be \emph{thought} to ground cosmogony,
+or the world's self-development, its genesis. But when
+this step toward naturalism has been taken, when that which
+for the religious consciousness makes creation creation has been
+effaced, then the foot is cautiously drawn back, and the text
+continues: ``The world's cosmogonic or natural beginning
+is the relative, the finite one, which is therefore also split into
+sporadic multiplicity. All organization forms itself sporadically,
+and viewed from the cosmogonic or the natural
+standpoint the world can be said to have countless beginnings,
+to begin from infinitely many seeds of life, which, insofar
+as the natural standpoint is exclusively held fast,
+have their common unity only in chaos. But the infinitely
+many natural beginnings are all grounded in the one
+creative, supernatural beginning, in the divine Logos-will,
+which encloses within itself the wellspring of life and of light and out of its
+spiritual depth releases the whole multiplicity of living forces
+to self-movement.'' So: creation was cosmogonic,
+the supernatural natural, and now in return
+cosmogony becomes creation, the natural supernatural. Thus
+the unity must be thought; indeed, it would be an indefensible
+one-sidedness to separate the determinations. But just as the
+creation that was cosmogonic lost, precisely through this predicate,
+that which was to make it creation, so now the
+cosmogony which, as \emph{grounded} in creation, itself becomes
+creation --- in that the relative, natural beginning vanishes
+in the supernatural, the material in the ``spiritual depth'' --- loses in
+% --- p. 442 ---
+\opage{442}return precisely that which makes it cosmogony. We are
+then left with two empty representations, two names without any content,
+which we are free to think, if indeed we can
+think anything by what is contentless; and if we cannot,
+and, so as not to let our thought lose itself in the empty, we call
+back the content of the concepts and then try to use the permission
+to think their unity, the opposites split
+apart again. Then creation again stands against cosmogony, arbitrariness
+against necessity, imagination's picture of nature
+in God's ``spiritual depth'' against real, actual, material
+nature, the miracle against the lawful
+development of nature valid in its essence, the supernatural against the natural. And the contradiction
+is not removed by such logogriphs as that God
+``restricts'' his omnipotence but ``does not give it away'', that he
+``produces a creature'' that at the same time ``produces itself'',
+a creature that possesses a ``given independence''. The unity
+evaporates in the empty turns of phrase: both opposites
+are distorted, and sense can be brought into the phrases only
+if, in place of the half rational, the half
+natural, one puts the wholly antirational, the wholly supranaturalist,
+takes what belongs to the one opposite
+as a mere turn of phrase that is not meant to signify anything further, and lays
+all the emphasis on what belongs to the other. But then
+mediation has been given up, and we have returned to the conception
+that was condemned as a one-sidedness.
+
+\begin{center}\rule{1.8cm}{0.4pt}\end{center}
+
+We could restrict ourselves to demonstrating the frailty of
+the method of the theory of mediation; but in order to provide complete
+material for the judgment on the \textit{Juste-milieu} theory, we
+shall also take the path of history and of the development of concepts, in order along it
+to secure for ourselves the understanding of the Christian, the conception of
+its essential and principled relation to the Human.
+
+When we would find the historical presuppositions for
+the coming into being of Christianity, they are to be sought essentially in the development
+of the Greek and of the Jewish spirit. From different
+% --- p. 443 ---
+\opage{443}points of departure these national spirits, the representatives
+of the Aryan and of the Semitic stock, strive toward one goal of development,
+and as they meet, the conditions are given for
+the coming into being of Christianity. Whatever may have been taken up into it
+from other, oriental, elements has in any case
+come to it through the Greek or the Jewish.
+
+If we then consider first the development of the \emph{Greek} spirit,
+what becomes of essential significance here is the breaking forth of dualism
+in Greek thought and view of life. The Greek people,
+the representative of the life of beauty in world history, had found
+its highest expression for the intuition of existence in the conception
+of it as a cosmos, as a world-artwork; it had
+found its highest expression for the ideal human life in the conception
+of it as a moral artwork, as a harmonious
+forming of the natural side in man by reason. The intuition of beauty
+was thus for the Greeks the highest; it
+poured itself like a radiance over existence and human life,
+which was seen as resting in the repose of harmony. And in the relation
+to the gods the same intuition of beauty stepped
+into the foreground. When a Greek stood before Fidias's
+image of the Olympian Zeus or of Pallas Athene, then
+his devotion was this: to let the harmony of beauty of the ideal image
+% TR: p. 443 Danish as printed „Stihed“ (printer's error for „Stilhed“); rendered "stillness".
+sink down over the soul, to bring stillness, repose and
+harmony into its desire and passion, to let all pain
+be soothed by the intuition of the divine, present
+beauty.
+
+In this intuition of existence as beauty the dominion of the ideal
+is asserted; nature is subjected to the power of spirit.
+But the unity of spirit and nature in the harmony of beauty is nonetheless
+only a deceptive unity, deceptive because the artwork, in its
+immediate unity for intuition, joins two opposites:
+material and form, which stand as originally distinct,
+as not sprung from each other. When Greek thought
+reaches its full development, when it, as it were, unwraps the idea
+from the concealing veil of the sense-world and would comprehend its essence
+and its relation to the material that through it becomes a
+% --- p. 444 ---
+\opage{444}world-artwork, then the opposites separate for thought,
+and Greek thought is not able to lead them back from the separation
+to a unity firmer and surer than the beauty-unity
+of harmony, because, as Greek thought, it has its limit
+in the intuition of beauty, is bound by it as by an
+insurmountable barrier. When Plato and Aristotle had brought
+Greek thought to its highest development, the dualism became
+visible, and the period of dissolution of the intuition of beauty begins.
+The consciousness of the discord then leads first to attempts
+to see the whole of existence in the light of one of the opposites,
+and as these fail, it forces forth dualistic theories in
+which a \emph{purely spiritual} God receives as his original
+opposite dark matter. But the dualistic distinction
+between spirit and nature, which tore apart the unity of beauty,
+had to contribute to calling forth skepticism; it had to
+give spirit, which was separated by a gaping chasm from the
+material, mistrust of its cognizing, of its theoretical faculty.
+And as this doubt was awakened, it brought decisive consequences with it.
+Whereas before, spirit, trusting securely in the power
+of its thought, had set that thought the highest goal and had found rest
+in its cognition of the divine and of existence,
+it now, in mistrust of thought, seeks other sources of
+truth, and it believes it finds them in the revelations of the hidden primal being
+through the positive religions or through
+demonic intermediate beings that connect the inaccessible
+deity with finite existence. And with mistrust
+of knowledge there had also to follow mistrust of man's moral
+strength. For the Greek, knowledge was man's essential determination;
+therefore that double mistrust was inseparable.
+Recourse was then had once more to the divine and to the intermediaries
+that connected it with man, in order to find aid toward
+what spirit could not reach by its own strength. Here too
+% TR: p. 444 the print reads „Viden“ (knowledge), a misprint corrected in the volume's own errata (p. 572): „Viden“ for „Veien“; translated from „Veien“ (the way).
+the way turned aside from philosophy to religion, and it led
+through purifications and cleansings, through flight from the
+sensuous to the divine being, from which every determination
+of matter was excluded. The truth of existence
+% --- p. 445 ---
+\opage{445}thus lay in the purely spiritual, which rose to an infinite
+distance above the imperfection of matter, in which the germ of
+evil was sought; and the striving of the human spirit, which in
+the classical age of Greece had been satisfied within the
+whole of beauty that mirrored the Idea, now went out beyond the world
+to a world beyond, where all was spirit.
+
+With this development in the life of the spirit there then followed a consequence
+that became of essential significance for posterity. As
+everything sensuous, everything natural, lost its significance, the natural barriers
+that separated the peoples also lost their significance;
+the particularist spirit that divided Greeks from barbarians, and
+that saw the true representative of the human only in the free-born Greek,
+was replaced by a universalism that recognized
+man \emph{as} man, and asserted the human
+through the equality of men.
+% TR: p. 445 „Menneske-Ligheden“ rendered "the equality of men" (Lighed = equality, also likeness).
+
+What was reached along this path gained strength from the external
+political conditions. The Roman world empire broke through
+the barriers of the nationalities, crushed the distinctive character of the peoples.
+Through suffering, spirits were led away from unsatisfying
+finitude to the beyond to which the religions
+pointed. But the popular religions and their individually distinct
+divine figures were already in the process of melting
+together into an unclear unity, and this process of fusion
+was favored by the political unity. But while
+a Pantheon gathered the many gods and theology ordered
+their hosts, there rose above them a highest unity,
+lifted above all being and all thought and yet seen as the ground of all
+being and all thought; and for this invisible, purely
+spiritual divine being the many gods became serving demons,
+which led the yearning human spirit to its source, into which
+it sank down.
+
+At the point to which we have followed the Greek
+spirit in its development, where it had exchanged the harmony of beauty
+for spiritualism, national particularism
+for universalism, it meets the \emph{Jewish} spirit.
+This spirit had, in the time of the old Hebraism, rested securely in the
+% --- p. 446 ---
+\opage{446}present and this-worldly. The chosen people's contractual relation
+to Jehovah, the law with its rewards and punishments,
+the sacrificial service and the cultus pointed to a childlike stage of development,
+where the spirit has its norm outside itself and its goal
+in something finite. Through the prophets the religious was inwardized;
+the tribulations of the time, which they interpreted from a religious
+standpoint, led out beyond the present to a hope for the future
+of a messianic kingdom; the first intimations of an immortality
+glimmered forth, and the narrow barriers of national consciousness
+began to open. After the exile we then find, in a certain
+sense, a regression, an unfree clinging to the traditional.
+But on the other hand we find preparations
+for a progressive development. We find such in the
+representation, formed under Persian influence, of a
+spirit-realm that is the archetype and truth of the earthly, in the representation
+of a supernatural Messiah, and in the doctrine of the resurrection.
+Finally, in the time immediately before the appearance of Christianity,
+we see what had been prepared come forth. Through contact with the
+Greek, the dualistic distinction now develops more definitely
+between a kingdom of the world and of matter, the kingdom of the evil powers,
+and a longingly awaited heavenly kingdom in a natureless
+actuality. The heavenly kingdom is striven toward
+through an ascetic flight from sensuousness, and faith in immortality
+takes the form of a hope for a complete
+liberation from earthly matter. Connected with this
+is a moral inwardness and a universal love of mankind, which
+in practice led to the condemnation of slavery (Essenes and Therapeutae).
+The representation of the Messiah is developed toward the supernatural.
+
+In the conception of the divine in an abstractly spiritualistic
+manner; in the dualistic opposition between the
+spiritually divine and the material; in the human spirit's
+deep need to find peace and rest in a kingdom that is not
+of this world, by a dying away from everything natural,
+by flight from the world; in the distrust of being able, by its own power,
+to reach this goal --- thus, at the beginning of the Christian
+era, the two national spirits meet: the spirit whose fundamental
+% --- p. 447 ---
+\opage{447}thought was \emph{God}, and the one whose fundamental thought was \emph{man};
+and Christianity, which unites the two thoughts in the thought of the \emph{God-man},
+is determined in its basic character by its
+two essential factors.
+
+Before we demonstrate this in the principal doctrines of Christianity,
+we will briefly see the \emph{conceptual
+development of the positive religions} lead up to the point where the converging
+lines of development of the two national spirits have proved to
+meet.
+
+As the human spirit in positive religion, driven by
+the need of its essence, seeks a relation to the infinite,
+this striving of it toward the infinite is realized only under conditions of finitude:
+through a progressive series of forms
+the religious consciousness must approach its ideal. The
+infinite that it seeks it finds first in nature: nature religion
+is the first form of positive religion, nature
+the first divine being. But the seeking spirit, which
+is not yet able to distinguish itself as something higher from
+nature, is not able either to distinguish nature from itself, in the way
+that it immediately senses itself as living,
+feeling and willing. Nature, before which man bows
+in worship, is not conceived \emph{as} nature, but is
+humanized, is conceived as a personal, living,
+humanlike being. Thus the child sees external things
+as living and ensouled; thus it caresses them or
+is angry with them, because it ascribes will and thought to them.
+As the natural being that is worshipped is humanized,
+it becomes, through this very personification, in a certain sense a
+% TR: p. 447 only „over“ of „overnaturligt“ is spaced; emphasis on "super" of "supernatural".
+\emph{super}natural being. The natural object becomes as it were doubled:
+above the sensuous natural thing rises the thing's
+genius, its Fylgie, its Ferver, --- to recall the
+expressions of the different religions. As the dryad separates from
+the tree and yet is the tree, as the naiad separates from the stream
+and yet is the stream, so the doubling takes place everywhere, in
+the particular and in the comprehensive. What in the doubling stands
+as it were behind the natural is then determined as something invis%
+% --- p. 448 ---
+\opage{448}ible, as something inaccessible to the senses --- thus
+nature religion avoids the contradiction that is in it between
+representation and actuality, imagination and truth. The contradiction
+between the two objects into which the one natural object
+has divided is thereby to be canceled, in that the object that is religion's
+proper object is withdrawn from the immediate
+relation and becomes a being that is object only for faith,
+for the spirit. Herewith the conception of the divine in the religion of spirit
+is already intimated. And the religion of spirit replaces
+nature religion where human development has advanced
+so far that man, from a merely naturally determined being,
+has developed into a being that distinguishes itself from nature and
+as it were concentrates itself within itself. When man, through
+human social life, becomes a being that is determined
+by conscious laws of reason, when powers other than
+natural powers --- political, moral powers --- become the essential
+objects of his feeling of dependence, then the world and
+nature no longer appear to him as God, but as a being determined by
+a divine understanding and a divine will
+and dependent on it. As man himself, by will
+and understanding, rises above nature and thus becomes a
+supranaturalistic being, his God at the same time also becomes
+a supranaturalistic being, no longer one with nature,
+but lord over nature; and he must finally, in order
+to be lord in the strict sense, become creator of nature.
+And the many gods that the religions of spirit receive from
+the nature religions must consistently melt together into a divine
+unity. The unity of human consciousness and spirit,
+which comprehends the whole multiplicity of the external world,
+is what leads to positing the unity of God.
+
+Thus positive religion works its way up from
+the lowest stage of the nature religions to the highest of the religions of spirit,
+to the representation of the one, spiritual, creating God. But
+precisely when it reaches this point, the divine is
+conceived abstractly spiritualistically as the \emph{natureless spiritual}.
+The organ of positive religion is not compre%
+% --- p. 449 ---
+\opage{449}hending thought, but representation and feeling. What it possesses
+concentrated in the rich inwardness of feeling it
+unfolds in representation; only in this unfolding does
+the content of feeling attain definiteness and clarity. But the distinctive mark
+% TR: p. 449 the print's „sandelige“ rendered as „sandselige“ (sensuous).
+of representation is that, from the sensuous intuition which
+it is to carry over into thought, it has retained a form of externality
+which brings it about that its content steps out into a finite
+distinction and is fixed for the inner eye in this distinction.
+Therefore the divine, the source and
+ground of all existence, is placed as divine personality above and outside
+% TR: p. 449 again only „over“ of „overnaturligt“ spaced; emphasis on "super".
+this existence, determined as a \emph{super}natural being, in the
+sense that this supernatural forms the \emph{opposition}
+to the positive determinations of nature. The \emph{representational distinction}
+of the divine from nature as the supernatural
+includes the conception of it as the natureless spiritual:
+the transcendence of representation includes abstract spiritualism.
+But if the conception of the divine as
+the one, spiritual, creating God is the goal of the positive religions,
+then abstract spiritualism must be
+the hallmark of the highest of the positive religions;
+and the highest and concluding of them is Christianity.
+Only by carrying through, as consistently as is at all possible,
+an abstractly spiritualistic conception does
+Christianity attain a distinctive view of life. All antecedent
+stages, all preparations, are already given in the
+pre-Christian religions; only that one thing remains over for it.
+
+In the basic Christian representations the abstractly
+spiritualistic is everywhere easy to demonstrate. It comes forth in the doctrine
+of \emph{God} as the pure spirit who dwells in the light in which
+there is no darkness of matter. --- It comes forth in the representation
+of a \emph{creation out of nothing} by the almighty will:
+for thereby the created is posited as that which in its essence is a
+nothing, as that which has only from the arbitrariness of omnipotence, by
+which it is upheld, a borrowed being that can at any
+moment be annihilated, as happens partially in the miracle, and for
+the whole of nature in the destruction of the world, in which what
+% --- p. 450 ---
+\opage{450}was a nothing returns to the nothing from which it
+came, and lets only the spiritual remain. --- It comes
+forth in the whole representation of the activity of the divine
+as a \emph{miracle-working} activity, for in the miracle omnipotence works
+without anything real; it denies the being of the real and its
+validity. --- It comes forth in the doctrine of the \emph{human
+task of life}, which becomes this: to seek unity with God
+through Christ by deadness to the world, by the denial
+of the nature that ``lies in wickedness'', which, when
+it asserts itself as nature in us, is determined as the sinful,
+and which therefore becomes that to which the spirit is to relate
+only negatively, so that it does not become a material that
+is to be formed, but one that is to be cast away, the
+Christian being bound to flee the relations of natural life, which for him
+have no significance but can only become defiling,
+because they cannot be placed in a positive relation to the abstractly
+spiritual (thus marriage, political life, property). ---
+It comes forth in the conception of \emph{life after death} corresponding
+to this conception of the task of life. What stands before
+consciousness as an ideal, but as an ideal it
+despairs of being able to reach in this existence, it transfers
+to a life beyond, where everything natural that
+still hinders and weighs down the spiritual shall have vanished,
+where the spirit shall be freed from every natural limitation,
+and where even the body in which imagination clothes the
+departed spirit in order to be able to intuit it shall be a ``spiritual
+body''. --- It comes forth finally in the very doctrine of the \emph{God-man},
+precisely at that central point of Christianity
+where the divine is united with the human and,
+through the human, seems also to enter into a positive
+relation to the natural. For this semblance vanishes as soon as
+one considers that the life of the God-man is through and through
+a \emph{miracle} and by the miracle is loosed from the usual natural conditions
+of human life: at birth and in death,
+and at every point between them. The unity of God and
+% --- p. 451 ---
+\opage{451}man in the God-man becomes only the unity of God and
+the \emph{natureless} human. ---
+
+Thus we have, by different paths, arrived at the
+same result: that the character of Christianity is natureless
+spirituality, which stamps its conception of the divine
+and of the human. The consideration of the
+historical presuppositions, of the conceptual development of the positive religions,
+and of the basic doctrines of Christianity itself
+has led us to one and the same conception and, by
+this agreement, given it certainty. And the feeble attempts
+that are made from the side of the theory of mediation to dispute this
+conception are of such a kind that they will not easily be able to make anyone
+doubtful. We will in passing --- for that will be
+sufficient --- cast a glance at one such attempt, which
+is found in the collection of edifying reflections on ethical
+subjects that Bishop Martensen has recently published.
+
+It begins with the postulate that Holy Scripture, on
+every one of its pages, is supposed to bear witness that God is not the natureless
+spirit. ``Scripture knows only the living God. But the
+living God we (!) cannot think otherwise than in relation
+to an eternal nature subordinate to him.'' It then continues:
+``When Scripture speaks of God as an \emph{indissoluble}
+life (Hebr. 7), we cannot think of this either except
+as the indissoluble unity of the oppositions of life, among
+which we know only the opposition between spirit and nature,
+the ethical and the physical.'' This exegesis, which by its
+mixture of childishness and hair-splitting recalls that of
+the rabbis, is as unfortunate as possible, as anyone can
+convince himself by reading through two lines at
+% TR: p. 451 no full stop after „(V. 16 f.)“ in the print; the English supplies one.
+the passage cited (v. 16 f.). Christ is compared
+with Melchisedek, as the eternal high priest in contrast
+to the mortal high priest under the law of Moses. As the one
+who has no ``beginning of days or end of life'', as
+the one who ``remains high priest continually'', he is called high priest
+``after the power of an indissoluble life'', and this expression is interpreted
+in what immediately follows, where it is said: ``\emph{for}
+% --- p. 452 ---
+\opage{452}thou art a priest for \emph{ever} after the order of Melchisedek.'' Here
+there is, then, quite simply an opposition between the life that
+can cease in death and that over which death has no
+power; but not a single turn of phrase points toward that
+higher unity of ``the oppositions of life'' which we ``must
+think''. One must be uncommonly destitute of reasons to
+resort to such an art of interpretation. Yet there is still
+one argument left that almost surpasses the previous ones. It
+% TR: p. 452 the print's „Anthropomofismer“, „Anthropomofismes“, „Anthropomofistiske“ (twice) rendered "anthropomorphism(s)", "anthropomorphic".
+is drawn from the fact that Scripture everywhere speaks of God in anthropomorphisms.
+``But the truth of religious anthropomorphism
+rests on the nature in God.'' ``Living piety will not let
+itself be disputed out of the belief that God has eyes and ears, hands
+and feet, an arm that is not shortened; and it does not give up
+seeing his finger in the events of the world and in the
+life of the individual; for even though it is conscious of the figurative, the symbolic,
+and recognizes that everything must be removed that
+belongs only to created limitation, it nevertheless continues to
+hold fast that there must be a real counterpart to all this
+in God; which in other words means that God must
+have organs of revelation, instruments --- an organism.'' ---
+So: the anthropomorphic is to be image, symbol,
+hence \emph{not} express actuality; but we are nevertheless to demand
+a \emph{real} counterpart, and while we remove everything that could
+give these determinations content, we are to ascribe to God a
+body, an organism. It is the old method characterized
+above: one gives with one hand and takes
+with the other. The anthropomorphic is to be non-real
+and yet real, non-literal and yet literal, and that in order
+to support a poor, tottering, half-speculative theory that fables
+about ``physical all-possibilities'' in God, about a ``relative nothing''
+that is to be the same as the ``eternal, physical possibilities'', about
+% TR: p. 452 only „over“ of „overnaturlige“ spaced; emphasis on "super".
+``physical but \emph{super}natural powers'', about a matter that
+differs from nature by having ``stepped out (how?)
+of connection with the spirit'', and the like. It is characteristic
+that the herald of the theory must himself concede that ``no
+concrete comprehension'' of it can take place. Indeed! the
+% --- p. 453 ---
+\opage{453}empty phrases dissolve of themselves into a nothing that is not
+a ``relative'' but an altogether complete ``absolute'' one, and it is
+by an ``indefensible misunderstanding'' that the authors of Holy Scripture
+are charged with professing such a theory.
+What would the author of the Gospel of John say to the
+interpretation cited of ``the figurative language of Scripture?''
+
+\begin{center}\rule{1.8cm}{0.4pt}\end{center}
+
+If we hold fast to the conception of Christianity as
+that whose hallmark is natureless spirituality, then
+the historically given phenomenon that meets us
+under the name of Christianity becomes easily explicable to us. We understand
+not only Christianity in its struggle with the world, in its
+classical figures, in the forms of life in which it has sharply
+stamped its distinctive essence; but we also understand the
+forms in which the Christian is mixed with its opposite.
+We understand without the least difficulty how the nature-denying
+and world-denying religion --- as it
+(contrary to the hope of the first Christian age for Christ's imminent
+return) was to go on existing in the alien world,
+as it was to be proclaimed in this world, as it was to
+defend itself against the attacks from it, and as it was to be unfolded
+in consciousness --- had to exchange its originally merely
+negative relation to nature, to the natural faculties and
+powers (naturally determined thought included), and to
+the concrete forms of the life of the world, for a forced connection
+with what it denied, which was taken up as means for the
+Christian. Thus we explain what has been called a
+Christian science, a Christian art, a Christian morality,
+a Christian state. But we understand at the same time that the
+forced factual recognition of what was denied in principle
+could never become a full and true recognition, and that
+therefore the forced connection could not become a real
+union; for what was taken up remained, as mere means, without
+essential connection with the Christian. Thus too
+% --- p. 454 ---
+\opage{454}the relation shows itself everywhere where the Christian becomes conscious
+of itself, as we have demonstrated above (no. 4, p. 291)
+with regard to ``Christian'' philosophy.
+
+But while the phenomenon, from this standpoint which
+posits the opposition between the Christian and the Human,
+becomes easily explicable, the mediation that
+speculative theory attempts on the basis of the conception, characterized
+above, of Christianity's relation to the
+natural, runs up against insoluble difficulties. If the mediation
+is taken really seriously, then Christianity, which
+clearly and distinctly proclaims itself as a new creation, that
+is, as an absolutely new beginning, and which for centuries
+has been conceived as such by its confessors, becomes something purely superfluous,
+since what it is supposed to be in unity with the Human
+has already been given prior to Christianity. And all
+the great classical figures throughout the whole Christian
+era must then be conceived as one-sided, limited individualities
+to whom the proper truth of Christianity has not
+dawned. --- If restrictions are made and reservations taken,
+so that the mediation becomes only half --- and as a rule speculative
+theology ventures to go only so far when
+it has to pronounce on principles --- then both
+the Human and the Christian are distorted, and both become meaningless.
+The Human is distorted and becomes meaningless in that,
+despite all appreciative phrases, it receives only a sham actuality
+and a sham significance. The Christian is distorted
+in that the elements it takes into itself from what is alien,
+although they are as it were instantly sublimated, nevertheless cast a tinge
+over the Christian that robs it of its specific distinctiveness,
+make it something without principle and therefore meaningless.
+
+\begin{center}\rule{1.8cm}{0.4pt}\end{center}
+
+But if the conception of the Christian as
+natureless spirituality stands firm, then it also stands firm that there
+must continue to be an opposition between it and the
+% --- p. 455 ---
+\opage{455}Human, despite the significance the Christian may have had for
+the development and purification of the latter. The Christian era has
+been the purgatory of the human spirit, the time of purification of the Human.
+Natureless, abstract spirituality with its negative infinity
+has as it were burned sensuousness and finitude
+out of the human essence, and thereby made it possible for the spirit,
+as it immersed itself in the richness of its essence, to give this richness
+the form of an infinity full of content, and thus to be able to live
+an eternal life in the reconciliation of the spirit within actuality.
+It has been able to break down the barriers that separated the peoples from
+one another, and to strengthen the consciousness of a humanity, a consciousness which
+antiquity had already reached. And Christianity,
+by powerfully reminding the human spirit that human life
+first finds its truth in the relation to God, has given
+it the impulse as it were to deepen all the human relations of moral life
+in the relation to God, to make them all religious
+relations. But the view of life of natureless spirituality
+includes consequences against which the human view of life
+must defend itself. As the natural foundation of human life
+becomes a nothing, and more precisely such a nothing as, when it
+asserts itself as a something, as an actuality, is seen
+as evil, then the foundation of concrete moral
+life, of all the forms of life which, like marriage, society,
+the state, rest on a natural basis, is taken away: only
+the ascetic flight from the world, only a renunciation of the whole actual content
+of moral life remains. And when
+nature vanishes from the essence of the merely spiritual God, then
+God's activity in the nature posited by an incomprehensible act of omnipotence
+becomes the miracle-working activity that leaves no
+room for laws of nature; and with the laws of nature fall the laws of thought,
+and the validity of thought vanishes. Everywhere
+thought meets the miracle as the higher truth, and at the central point
+of Christianity, in the doctrine of the God-man, of the unity of the eternal,
+all-embracing divine with the particular human being existing under
+the limitation of the conditions of finitude,
+it meets the miracle in its most pregnant form, and it can
+% --- p. 456 ---
+\opage{456}only assert itself and the human essence, whose fundamental determination
+it is, by separating itself from what must annihilate
+it. ---
+
+But as the separation thus comes forth between the
+human consciousness and the religion which, as the highest and concluding form
+of the historically given positive religions, is
+the legitimate representative of positive religion, the
+human consciousness does not turn away from the religious in its ideal form,
+freed from the limitation of the positive; rather it
+finds this ideal religious as it immerses itself in itself,
+as it penetrates to the ground of the human essence, to
+the point where this essence is bound indissolubly to its divine
+origin. How this relation between the Human
+and the ideally religious is to be determined more precisely, we shall
+seek to show in a following section, which will conclude these developments.
+
+\begin{flushright}\textbf{Constans.}\end{flushright}
+\begin{center}\rule{2.6cm}{0.4pt}\end{center}
+
+\clearpage
+% --- p. 492 ---
+\opage{492}\begin{center}\textbf{\large The Christian and the Human as Opposites in the Consciousness of Our Time.}\end{center}
+
+\secnum{III.}
+
+When, in the many forms under which the human view of life
+--- in its more clearly or more dimly conscious opposition
+to the Christian --- has given itself expression since the
+beginning of modern times, we seek what is common and pervasive,
+what must be posited as the essentially determining factor, we
+shall find it in two main points. The one is the striving of the
+human orientation of life to assert the \emph{undisturbed, harmonious
+unity in the human essence}; the other is its striving to
+assert \emph{the ethical in its concretion}, to give the moral
+life a content of actuality rich enough to fill out \emph{the whole}
+of human life. But these two main points stand, as will readily
+appear, in the closest inner connection.
+
+Whereas the Christian view of life --- by denying the validity
+and essentiality of the natural, and by placing truth in that
+which for thought was the unappropriable, that which conflicted
+with all the laws of cognition --- had set a rupture in the human
+essence, a rupture that was infinitely sharpened when the
+doctrine of original sin posited human nature as disturbed and
+corrupted, the human view of life asserts unity in the
+\emph{double} sense of a unity between the natural side and
+% --- p. 493 ---
+\opage{493}the spiritual side in man, and of a unity, a harmony, between
+knowledge and faith, between cognition and will, between the
+theoretical and the practical. The nature which the medieval
+spirit had denied, from which it shrank back in dread, while
+the imagination was irresistibly lured by what it dreaded ---
+\emph{that} was restored to its rights once more at the beginning
+of the new age. As the human spirit sought into itself in order
+to find itself in its freedom and independence, it could no
+longer remain blind to the indissoluble bond that bound it to
+nature, to the fullness of life it drew from nature. The anxious
+hovering between fear and allurement was replaced by enthusiastic
+devotion. It was as if the Godhead had once more returned to the
+forsaken nature, which was now again seen in essential connection
+with its author, which in its beauty again became an object of
+the spirit's admiration, and in its essentiality and its grounding
+in law again became a source of cognition for the spirit. This
+orientation toward nature runs through the whole of modern times.
+We find it in the Renaissance's enthusiastic deification of the
+natural universe; we find it in empirical science's devotion to
+nature; we find it in the eighteenth century's rapture over nature
+and in its demand for naturalness in education and in life; we find
+it in our century in the renewal and spread of materialism,
+theoretical and practical, in the mighty development of the natural
+sciences, in philosophy's endeavor to see the unconscious and
+conscious mental life in man as a unity and to give the divine a
+natural content; indeed, we find it even in philosophizing theology's
+groping attempts to get an imaginative picture of nature into the
+supernatural God. But nature, once more acknowledged in its
+essentiality, is then, as natural determinateness in the human,
+seen in unity with the spiritual. Organic life unfolds into a
+spiritual life, into a life of consciousness; from our natural
+side, through the organic conditions, our cognition receives its
+content; from our life of drives the life of will receives its
+material. The natural in us becomes no
+% --- p. 494 ---
+\opage{494}longer that which is only to be denied, that from which our will
+is to die away in order to live a purely spiritual life; it
+becomes again, as in Greek antiquity, that which is to be formed
+and harmonized by the will that, through cognition of our essence
+and its fundamental relations, has gained clarity about its task,
+and that realizes the demand of true cognition. In one-sided forms
+this acknowledgment of the natural in us emerges in those
+psychological, ethical and social theories that let our
+determinateness by drives become the supreme ruling power, that let
+it govern our individual development and the ordering of social
+relations. But what asserts itself here in a one-sided way receives
+its true form where an original lawfulness in our \emph{spiritual}
+essence is acknowledged, according to which the natural
+determinations in us are ordered and formed, and under which they
+bow in service while being acknowledged in their
+legitimacy.
+
+When the unity of the \emph{natural side} and the \emph{spiritual side}
+in us is asserted, the unity between \emph{knowledge} and \emph{faith},
+between cognition and will, is asserted as well. It is the denial
+of nature that robs thought of its foothold; it is the miracle, in
+which the actuality of the real is annihilated in favor of the
+incomprehensible working of supernatural omnipotence, that sets
+thought an insurmountable barrier and robs its laws of their truth.
+Where faith, as in positive religion, is faith in the wonder-working
+God, in the God before whose will the laws of nature vanish, at
+whose command nature itself vanishes, just as it came into being at
+that command: \emph{there} faith and knowledge must form irreconcilable
+opposites; and since faith, as the organ of the higher truth,
+condemns knowledge to submission, to self-surrender, a fundamental
+form of the human spirit, an essential determination in it, is here
+denied. A rupture then enters the essence, an inner discord; for the
+essential that is to be denied cannot, precisely as essential, be
+annihilated. The relation can be otherwise when the natural is
+asserted in its truth, when nature is no longer held up over the
+abyss of nothingness by an omnipotence hovering above it, but when it,
+% --- p. 495 ---
+\opage{495}as bearing the life of the divine within itself, rests in its
+laws determined by its essence. Here the essence and working of the
+divine does not become something from which thought is thrown back,
+and which can be grasped only by a faith that denies thought: it
+becomes a content for the knowledge that, following the demand
+lying in the human essence, ventures out confidently from the finite
+in its multiplicity and limitation to the infinite. And when
+knowledge and faith no longer stand as opposites, when the human
+spirit finds rest in the content of its cognition, there comes to be
+a harmony between cognition and action as well. The faith that stood
+against knowledge also gave the will a law opposed to the law of
+knowledge. Not in the demand of the human essence but in the command
+of a supernatural, incomprehensible will was the norm of action
+sought, where the task of action was not the purely negative one: to
+flee the natural. But when faith and knowledge are in harmony, then
+the demand of knowledge, which expresses the law of the human
+essence, the human essence's own demand, is also seen as the one
+valid demand upon the will; then the same undivided human essence
+that comes to clarity about itself in its cognition is seen as
+expressing itself, in agreement with itself, in conscious action.
+The theoretical and the practical are then seen in harmony: one
+essence unfolds through both. The spirit does not waver between a
+double principle, a double law; it is not gnawed by doubt about the
+truth of its cognition and the validity of its action: in the harmony
+it has its assurance; it has rest in unity with itself. ---
+
+As the \emph{second} main motive in the human orientation of life
+we determined \emph{the assertion of the ethical in its concretion},
+% TR: p. 495 only „Virkeligheds“ of „Virkelighedsindhold“ is spaced; the emphasis falls on "actuality"
+of the moral life's content of \emph{actuality}. Within the religion
+whose character was abstract, nature-denying spirituality, the
+ethical task of life could consistently become only a dying away
+from everything natural, an ascetic flight from the world in order
+to find rest in a purely spiritual life. The ideal had to become a
+life beyond, where all natural barriers had vanished, where
+everything burdensome and defiling in the
+% --- p. 496 ---
+\opage{496}nature-determined earthly existence had been removed. As long as
+man lived under the conditions of earthly life, he could not but
+feel constantly, in his bondage to the natural, a restraining bond
+and a seed of discord within himself. The promptings of drive in the
+natural, through which nature asserted itself as a power in us, were
+felt as temptation and defilement, and the gaze turned longingly
+toward the future in which the spirit would live freed from this
+restraint. The asceticism of Christian antiquity and of the Middle
+Ages, monastic life and the hermits' flight from the world, were not
+one-sidednesses and exaggerations but consistent expressions of the
+spirit of the religion. Where the natural has lost its validity,
+where natureless spirit is the highest, \emph{there} no other life can
+consistently be lived than one that is at every moment a dying away
+from the world. For the concrete forms of moral life there can be no
+room; their validity is conditioned by the validity of the natural
+foundation in us. All moral relations and all moral forms of society
+point back, directly or indirectly, to this natural principle; they
+fall when it is denied. But the denial of it is for man a
+self-contradiction, because the human essence comprises the
+spiritual and the natural in inseparable unity. The force by which
+nature in us is to be subdued can come only from the natural ground
+itself in us, which is an abiding constituent of our essence: in the
+very negation of the natural, the natural affirms itself. The life of
+natureless spirituality therefore remains always only an attempt,
+which can be repeated again and again but never carried through,
+because that which is to be killed draws strength, in the very
+struggle, from the hidden ground. Therefore there is anxiety and
+unrest in this life, and it can be removed only when everything that
+belongs to the human essence is acknowledged, when this essence in
+its whole compass becomes the object of ethical action, when the task
+becomes the free realization of the human essence in its
+completeness, when \emph{the whole} of life in its fullness of actuality
+is drawn in under the ethical.
+
+% --- p. 497 ---
+\opage{497}A striving toward this we also find, in many forms, less perfect
+and more perfect, throughout the whole of modern times. It is such a
+striving that emerges in the secular morality of civic life, which at
+the close of the Middle Ages emancipates itself from the
+ecclesiastical; it is this striving that emerges when religion is
+transformed into morals and in this transformation is often
+trivialized; it is this striving that runs through the philanthropic
+endeavors, through socialism's attempts to order social relations,
+through philosophy's endeavors to work ethics into actuality, to
+determine the principle of moral action in such a way that it aims at
+the whole richness of life.
+
+But since the striving of the human orientation of life to assert
+moral life in its concrete actuality points back to the assertion of
+the validity of the natural, it thereby points back to what we
+singled out as the \emph{first} motive: the assertion of the unity of
+the essence. It is the human essence that in its undivided unity
+harmoniously joins nature and spirit which can unfold itself in a
+concrete moral life. But the \emph{unity} of the human essence is
+inseparable from the \emph{undisturbedness} of the human essence; and
+since the striving of the human orientation of life aims at the
+double goal we have indicated, which lies on one and the same line,
+it is borne by faith in \emph{the undisturbable good in human
+nature}, in human nature's \emph{essential completeness} beneath all
+the imperfection that is inseparable from its development and its
+struggles. The firm conviction that the human essence cannot, through
+its deed --- which, as the expression of the essence's activity, is an
+affirmation of the essence --- transform, negate this essence, is a
+\emph{pervasive} characteristic of all forms of the human view of
+life.
+
+\begin{center}\rule{1.8cm}{0.4pt}\end{center}
+
+Since the human orientation of life separates itself in principle
+from positive religion, it cannot surprise us that it has frequently
+led to a separation from the religious altogether, to
+% --- p. 498 ---
+\opage{498}a ``morality without religion'', indeed even to a passionate
+struggle against religion. This, however, is neither a pervasive
+feature of the many forms of the human orientation of life, nor is it
+its natural consequence. In many of those forms, e.g.\ in socialist
+theories, we find a striving, however unclear, to give the view of
+life a religious completion, which here as a rule does not escape the
+fantastic. In other forms we find as it were a remnant of the
+positively religious, rationalized fragments of it. In some, finally,
+and these we regard as the properly consistent ones, we find from the
+beginning a striving to assert the unity of the Human and the
+religious in such a way that the latter is seen as most deeply
+grounded in the human essence and as determined in its form and its
+content by it. And it will also be easy to show that the cognition of
+man's essence in its completeness must of necessity lead to the
+religious relation, and that it can be completed only in this.
+
+If what is peculiar to human life, that which by a decisive
+difference distinguishes it from the lower forms of life, from plant
+life and animal life, is the determination of self-consciousness, the
+free knowledge of oneself and a knowledge of an infinite, then this
+points back to the infinity of the human essence. Only the being that
+has inner infinity can, in its relation to itself, be freed from the
+bondage to the particular that characterizes the animal's
+self-sensation, which is never loosened from its momentary
+determinateness; only such a being can become conscious of itself in
+its unity and universality. And only the being that has inner
+infinity can have consciousness of an infinite, for this presupposes
+the infinity of consciousness, and this in turn the infinity of the
+being whose consciousness has this determination. But the spiritual
+being that has inner infinity can reach the goal of its unfolding,
+can find rest and satisfaction, only in a relation of infinity, in
+such a relation as that in which its determination of infinity is
+realized, as the being unfolds itself as a spiritual life-unity in
+which every original determinateness, every realized aptitude, is
+made a moment, drawn in under
+% --- p. 499 ---
+\opage{499}the conscious harmony of the being, a harmony realized through
+the activity of spirit that becomes the primitive expression of the
+self-conscious being: through cognition. And this relation of
+infinity, which is thus most immediately determined as a relation of
+the spirit \emph{to itself}, cannot be thought through without its
+unfolding into a relation \emph{to the divine}, into a \emph{religious}
+relation. When we seek the \emph{source} of the inner infinity in the
+human, when we think through the concept of self-consciousness, we
+arrive of necessity at the divine. The human self that becomes
+conscious of itself in its inner infinity can become conscious of
+itself only as a \emph{derived} self, as a self that has its ground in
+something higher; and thus self-consciousness itself encloses a
+relation to the source of the human essence, to its divine ground,
+which is at the same time the ground of the whole of existence. Human
+self-consciousness is consummated only in God-consciousness. Because
+the human essence is grounded in the divine, it can, as a
+self-conscious being, come to realization only as this relation, by
+which the being has being, comes to be for its consciousness, and
+comes to be for it in such a way that the relation to God goes in
+unity with the self's relation to itself in self-consciousness.
+
+Thus the inner connection of the religious relation with the
+essential determination of the human becomes clear. But in order that
+this relation shall acquire the character of \emph{true} infinity,
+shall be freed from the limitation of finitude that constantly remains
+attached to the positive religions, with their deity separated from
+the world, personified, wonder-working, and with their separation of
+the religious relation from the human spirit's other essential
+relations of life, it must become a relation to a divine that is in
+truth an infinite, in that, as governing and encompassing existence,
+it is \emph{indwelling} in it, and, as grounding the human spirit, it
+is \emph{of one essence} with it. And it must become a relation that
+can in actuality permeate \emph{all} the essential relations of the
+spirit, that can find its expression in the relations of \emph{moral}
+life, and that, while raising them into a higher sphere, itself gains
+fullness and actuality
+% --- p. 500 ---
+\opage{500}through them. Thus the religious relation comes to comprise
+\emph{the whole} of human life, \emph{all} the spirit's expressions of
+life; it becomes that in which the spirit at every moment finds rest
+and reconciliation: reconciliation in its own inner being through the
+harmony of the essence, and reconciliation with the ground of its
+existence.
+
+The religious relation so determined, the \emph{ideal} form of
+religiousness, the religion that can become \emph{humanity's} religion,
+thus lies in man's essential determination as a necessary,
+inescapable demand; this relation, taken in its full, comprehensive
+significance, becomes the highest, completing form of realization of
+human life.
+
+Only one determination still remains to be expressly stressed, lest
+what has been said here be misunderstood. The source of religion has
+been sought in the human essence; religion has been seen as having
+sprung from this essence, and from this point of view religion is
+seen as the work of the human spirit. But since the human essence is
+itself grounded in the divine, the origin of the source is to be
+sought deeper: in the being through which the human spirit has
+infinity as an inner essential determination, and the need for the
+realization of this infinity. From this point of view religion then
+becomes \emph{the work of the Godhead}, a work of its inner revelation
+to the human spirit, i.e.\ of its \emph{communication of essence} to
+it.
+
+\begin{center}\rule{1.8cm}{0.4pt}\end{center}
+
+Through the conception of the \emph{religious relation} in its ideal,
+universally human form, the conception of \emph{the divine} to which
+the human orientation of life must consistently lead has been
+intimated. It cannot appropriate the positive religions'
+representation of the personal, wonder-working God. In the
+determination of personality, as it is made to count in the positive
+religions and by theology, it can see only a finitizing
+determination,
+% TR: p. 500 print „Anthropomosisme“ (printer's error for „Anthropomorfisme“); rendered "anthropomorphism"
+an anthropomorphism that is transferred to God precisely in order to
+keep him separated, in representation, from the human and
+% --- p. 501 ---
+\opage{501}from existence, and to free his action from the law of rational
+necessity and make room for the miracle. Instead of this
+determination of the divine it must seek another and higher one,
+which, while it expresses God's essence as \emph{spirit}, frees it
+% TR: p. 501 the spacing runs through „Endeligheds-“ into „in-“ of „Endelighedsindskrænkningen“; the emphasis falls on "in finitude"
+from confinement \emph{in finitude}; which, while it designates God
+as the source of self-consciousnesses, frees him from the limitation
+and relative abstraction of the determination of self-consciousness.
+And by this determination it will then contradict the representation
+of the \emph{wonder-working} God. The God who through the miracle breaks
+through the laws of nature and overturns those of thought, the
+thinking spirit cannot acknowledge without denying its essence, which
+it does not have from itself but from the Godhead. It must demand a
+God whose working does not contradict itself, as the working of the
+wonder-working God does, in that it cancels what it has itself
+posited and thus shows itself to be finite. It must demand a God whose
+\emph{essence} finds its expression in the laws of reason that govern
+existence, and who therefore cannot break these laws.
+
+This God, acting according to the rational necessity of his essence,
+it must then, in order to preserve his infinity, necessarily conceive
+as \emph{indwelling} in the existence that has its ground in God, and,
+as indwelling in it, as uniting it in his unity and thus \emph{ideally}
+distinguishing himself from existence as it is unfolded in the form
+of \emph{real} being. As indwelling (immanent) in existence, as the one
+who permeates existence with his life and governs it from within, God
+must be determined as standing in a relation of \emph{unity of essence}
+to real existence and to the human spirit. From the essence of the
+effect one must infer back to that of the cause, since the cause can
+only be the cause of that whose essential determinations it bears
+within itself. As author of nature God must not merely be a
+spiritual, an ideal being, but must have the determinations of
+reality in himself, must be \emph{ideal-real} being. But as author of
+the nature that finds its completion in life and in spirit, God must
+be ideal-real being in the sense that ideality is the primitive
+determination, the fundamental determination
+% --- p. 502 ---
+\opage{502}in the divine, the one that comprehends and explains the determination of reality.
+Through God's essence, then, nature in us is at once
+asserted in its essentiality and spirit in its ideal dominion.
+The oppositions of existence point back to one principle as to
+their source; in the world of nature and in that of spirit one
+divine reason everywhere asserts itself, working according to eternal,
+inviolable laws, according to laws that have their guarantee
+in the very essence of the Godhead, whose expression they are. The
+lawfulness of existence is, as having proceeded from the indwelling eternal
+reason, an eternally valid lawfulness. --- As the goal of existence
+and as that which determines finite spirits and becomes the goal
+and norm of their action, the divine is finally
+to be seen under \emph{ethical} determinations, as the good; but this
+ethical determination of it, which definitively designates it as
+spirit is bound up in the closest way with its logical and
+physical determinations; it becomes only their fuller and
+richer expression, not a determination that frees the divine
+from the eternal laws of thought and, as theology would have it,
+makes room for miracle-working arbitrariness.
+
+\begin{center}\rule{1.8cm}{0.4pt}\end{center}
+
+Through the conception of the human essence and its relation
+to the divine, a conception to which the human orientation of life
+must consistently lead, \emph{the life-task for man} is determined.
+It can only be the free and conscious actualization
+of the human essence according to its complete determinateness.
+But this general formula for the life-task must receive a
+fuller expression. We can give it that by first
+seeing the human self as that which is an indivisible unity
+of spirit and nature, and as that in whose various fundamental activities
+the unity of the essence must express itself in accord
+with itself. The task then takes the more definite form that
+man is to develop his personality in the inner harmony of his
+fundamental activities and in inseparable unity of the spiritual
+and the natural. Man thus receives his \emph{essence} as a
+% --- p. 503 ---
+\opage{503}task, as the \emph{concrete} unity in which the real
+natural foundation is not to be denied or cowed, but taken up
+into spirit and thoroughly formed by it, so that the will receives
+content and fullness from its natural ground, while in turn that which
+proceeds from the natural foundation receives a norm and a
+rule in the ethical demand, which proceeds from the essence of spirit
+with the stamp of the original (the a priori). This
+ethical demand, which bears the stamp of the unconditioned, and which originally
+comes forth in abstract form through the consciousness
+of an obligation as such, of an unconditionally valid
+``Thou shalt!'', is then, in order to be able to form thoroughly the natural
+foundation of the personality, to be unfolded, through the cognition of man's
+essence, into a richness in which it corresponds to the richness in actuality
+of life and of action. The original consciousness
+of the good, of duty, is in the actuality of action
+to become a consciousness of this determinate good,
+of this determinate duty, and during this unfolding it is to
+retain its certainty, so that the whole of life through and through receives
+the stamp of the clear and conscious ethical.
+
+We are pointed toward the same goal also when we see
+the general formula given above for the human life-task
+from another point of view. That man is to make
+his \emph{essence} a task for himself according to its many-sided and complete
+determinateness means not only that he is to develop it
+in harmonious unity of spirit and nature and of the fundamental activities of spirit;
+but it means also that he is to develop
+it, not as isolated and atomistic, but as \emph{a distinctive
+member in a whole of existence}, as incorporated into
+this existence and as subordinated to its principle.
+Only thus does the self develop according to its completeness;
+torn loose from the vital connection with the whole, it is
+precisely the incomplete, just as the single organ in an
+individual organism loses its integrity when it is separated
+from the whole that sustains it. But as the self becomes
+conscious of itself as incorporated into something more comprehensive and as subordinated
+to something higher, its \emph{assertion of itself} in
+% --- p. 504 ---
+\opage{504}its distinctiveness becomes one with its \emph{devotion to the
+higher} that it is to serve; in other words: its self-assertion
+and self-unfolding receive the stamp of the \emph{ethical}, its willing
+of itself becomes a willing of a higher demand, of the law of existence
+and of the will of the Godhead. Thus self-development
+loses every stamp of egoism; the unfolding of
+individual distinctiveness is taken into the service of the whole and of
+the principle; the life the individual lives for itself, it lives
+for the whole of humanity and for the divine.
+And as life at every point receives the stamp of the \emph{ethical},
+it receives at the same time, since the self everywhere in existence, in all the
+relative relations, meets the divine, the stamp of the \emph{religious};
+the whole of life becomes at once ethical and religious;
+the religious relation does not, as limited to particular
+times or to particular domains of life, separate itself off from the other
+essential relations of life, but comprehends, pervades and
+elevates all the others.
+
+In this view of life, which rests on the conviction
+of the infinite worth of the human, in virtue of the indwelling of the divine
+in the universal human essence, undisturbed in its ground,
+and which leads to the recognition of the
+human in all its essential forms of appearance and
+to a universal love of humanity, of the human
+\emph{as} human, the \emph{Human} is thus in inward
+unity with the religious, which is seen as proceeding from
+the ground of the human essence and as gaining content through
+the ethical. It energetically points man toward an activity
+in the world of actuality, but toward an activity that
+in the work of actuality preserves the connection with the
+higher. By reminding at every moment of the solidarity of the
+human race, it reminds the single individual of the necessity,
+in order to solve his individual task, of working toward the solution
+of the social tasks. While the view of life
+that denies nature only gathers individuals in the work
+for their blessedness, but cannot unite them in a work
+for the earthly conditions of life for a life of spirit,
+% --- p. 505 ---
+\opage{505}the human view of life gathers them for this work, and in this very
+work it lets them work for their spiritual goal. Only
+through it can the foundation be laid for \emph{an existence worthy
+of human beings for all}, because only it recognizes in the right relation
+the significance of the spiritual and of the natural,
+the right of the individual and the demand of society, self-regard and
+solidarity. ---
+
+This religious-human view of life does not, however, form for itself
+an idyllic picture of human life, a utopia, freed from
+the imperfections of actuality. It recognizes, over against
+the infinite demand of the moral, the distance of human life
+from its ideal, its imperfection, its guilt, its
+sinfulness. But in recognizing the painful distance
+between ideal and actuality, it does not give up faith in
+man, in his capacity to actualize the good, in
+giving \emph{this} existence a content of eternity. When
+positive religion teaches the disturbance of the human essence
+by sin, a disturbance that only a divine miracle
+can remove, that religiousness of humanity maintains that
+% TR: p. 505 the Danish spaces only „-væsenet“ in „Menneske\emph{væsenet}“; the English carries the emphasis on "essence" alone.
+the human \emph{essence} cannot have been transformed by an act
+that has proceeded from the essence itself, any more than the essence of the organism
+is transformed because its integrity is suspended
+during illness. And just as little as it can concede
+that the human essence is disturbed by sin, just as little can
+it concede that nature should, through man, have been drawn
+into the disturbance. It cannot do so, because it sees
+the whole of existence as sustained by the indwelling principle.
+
+When it recognizes evil, not merely as an imperfection,
+a lack, but as an opposition to the good, posited by man's will,
+it sees in the will that
+is active toward evil a will that must be broken in the struggle
+against the good, because it struggles against what is the very
+\emph{essence} in the human, and must call forth a reaction
+from it. And it sees at the same time in this will, which has the
+semblance of false infinity, but which receives this semblance only from
+that which it struggles against and strives to displace, something active,
+% --- p. 506 ---
+\opage{506}the direction of whose working can be so reversed that the
+infinitely strained energy actualized in the service of evil can
+become active for the good, acquire positive worth for it. Just as
+in the domain of the physical the forces can be converted into one another,
+yet lose nothing in this conversion, so here, in
+the transformation of force, the sum of force is to remain unchanged.
+But for the good to be able to be actualized in the individual, this
+view of life too must recognize that individuals need
+assistance. This assistance, however, it does not seek outside the
+existence in which the individual has its actuality; it seeks
+it in the other, supplementing individuals with whom the individual
+joins together in love, in mutual communication of essence,
+and, in the last instance, in the principle that is indwelling in the individual itself,
+and that joins it together with the other individuals
+in the unity of the essence. As individuals enter into a relation of love
+to one another, it sees them as acting --- at
+once purifying and supplementing --- upon one another. The
+single individual becomes for the other a representative of
+man's universal, reason-determined essence, and as such
+it becomes for the individual, as it were, its personified, objectified
+conscience. As the one individual in that relation
+converts the other into a representative of the ideally human,
+it gains in it a determining norm, an ideal standard
+for its action, a corrective for it. And as the intuition
+of the universally human fuses with
+the intuition of the distinctiveness of personalities, of the distinctive
+forms in which the ethical is actualized in the different
+individuals, then the ethical distinctiveness, idealized by love, by the
+unconscious faith in man, includes
+not merely a corrective for what is deficient in the individual,
+but also an assurance of the ethical power in
+the human, and the individuals embraced by the relation of love
+% TR: p. 506 the Danish breaks „Saa|ledes“ at the line end without a hyphen (a printer's defect, joined in the transcription); no effect on the English.
+show themselves also as supplementing one another. Thus
+the relation of love between human beings becomes an ethical
+source of life for the individuals. But through this relation of love,
+in which individuals are joined together in a spiritual
+% --- p. 507 ---
+\opage{507}unity, there is a pointing toward the principle of this unity, toward the origin of individual
+spirits: the divine, and in it
+the assistance for the individual is in the last instance to be sought. The
+divine is, as the source of the individual spirit, that
+which works through it; it is that from which
+the human spirit has the determination of infinity that
+comes forth in its relation to itself, in its grasping of
+the good, and even in its egoistic willing of itself in opposition
+to the good. From this its ground the human spirit can
+never be separated, not even when it wills to be, for through
+the evil will itself the divine will works with
+the force of the essence, breaking and consuming the force of evil.
+In the breakthrough in which the good will breaks forth
+through the dissolution of evil, the divine is active;
+for the essence asserts itself in the breakthrough only by a
+working of \emph{that} which is the ground of the essence. And in every struggle,
+in every wavering, the will can seek back to this ground,
+which reveals itself in the innermost of the self through the ethical
+demand, and it can find in it the completion of
+the lacking force through the full self-surrender by
+which the force of the eternal is won, as the individual freely loses
+itself to the eternal. Here there no longer remains a doubt
+about reconciliation as \emph{there}, where the individual, trembling, knows itself
+dependent on the election or reprobation of an incomprehensible arbitrariness,
+% TR: p. 507 the print has no full stop after „(Calvin)“ before the next sentence; the English supplies it.
+on the ``dreadful decree'' of omnipotence (Calvin).
+Here there is certainty about reconciliation, because the individual finds the
+divine in itself as indwelling and becomes conscious of itself in its
+unity of essence with it. But as the last condition
+for the actualization of our life's goal thus becomes the divine
+working in us, we are pointed back again to the religious
+as the consummation of our ethical life. In this unity of
+the ethical and the religious the former has its truth, the latter its
+actuality.
+
+\begin{center}\rule{1.8cm}{0.4pt}\end{center}
+
+Since it has thus been shown that the human view of life
+can be completed only in the religious, its normal
+% --- p. 508 ---
+\opage{508}relation to positive religion is thereby definitively determined. There must
+be an \emph{opposition}, a clear and conscious opposition;
+but what is essential in the positive religions can, despite \emph{it},
+be preserved, and the positive, historical religions can be recognized
+in their significance for the attainment of the \emph{ideal}
+stage of religiousness that has been designated as \emph{the religion
+of humanity}. It is only one-sided forms of the
+human orientation of life that have fought in hostility against the
+positively religious, and that have conceived it as a mere
+distortion of the truth. As the human orientation of life
+gains a deeper cognition of man's essence and of
+his fundamental relations, it cannot avoid recognizing that
+it is precisely the same striving for the actualization of the
+human spirit's essence in a true relation of infinity, from
+which the ideal form of religiousness proceeds, that also
+has been what moved most deeply and what unfolded in the positive
+religions, even though that striving, in being realized under conditions of finitude,
+still shows itself in the positive religions as
+burdened with a limitation of finitude that comes forth
+in the conception of the divine, in the separation of the religious relation
+from the other essential human relations, in the
+forms of the human activities of spirit that come to
+unfolding on the stage of positive religion, and in the relation
+between them. Everywhere in the positive religions, therefore, there
+can be shown, as it were, a refraction in consciousness: infinity
+will momentarily pervade finitude, but
+finitude will nonetheless remain standing as unsuspended and cling as something
+burdensome and hindering to spirit's striving for infinity.
+
+Only in the form of religiousness that unfolds from the
+Human fully conscious of itself is the original striving of the human spirit
+freed from the burdensome limitation of finitude.
+The religious relation acquires the character of true infinity,
+because it joins the human spirit with a divine that
+is indwelling in it, and because it comprehends the whole of human life, all
+the essential human relations, so that the religious can
+become the principle of the totality of actual human life.
+% --- p. 509 ---
+\opage{509}In this religious relation, and only in it, can religious
+reconciliation become complete; for only in it does spirit not have
+over against it a divine being that, in the mystery of its incomprehensible
+will, becomes what is alien to spirit, but a
+divine in which spirit finds itself again and feels itself
+confirmed; --- and only in it does spirit have full reconciliation
+in its own interior, since all the essential activities of spirit
+are in harmony, and since the life of religion is not lived by a
+flight from the actuality of human life and by a denial
+of essential forms of its expression. As the religiousness that
+pervades the whole of human life, this religiousness of humanity
+can be designated as the religion of \emph{actuality} and
+as that which brings a reconciliation \emph{within actuality},
+a reconciliation for the \emph{undivided} human essence. It
+is the expression of the eternal spirit of religiousness as the life-principle
+of the whole of human life. As religion it is in living
+inner unity with science and morality. It has its
+root in the deepest ground of the human essence, and is therefore, since
+free and conscious spirit has found itself and found
+this form of religiousness as the expression of its essence, something
+unshakable and imperishable, independent of the changes of the times.
+
+But precisely the cognition of this includes the cognition
+of the truth that the positive religions contain. What is
+most deeply grounded in the human essence must, throughout the whole
+historical unfolding of human life, have made itself visible, even if
+only momentarily and incompletely. Spirit's striving for infinity
+must therefore also reveal itself through the positive
+religions, and it will do so all the more, the more the
+\emph{mystical} element in religion comes forward and reflection
+bound by representation recedes. In the most immediate forms of religious
+life, in the living, childlike, believing
+conception, the religious consciousness in its obscure
+longing comes nearest to the relation of infinity; where reflection gains
+the upper hand, it moves away from it, and most where theology,
+finite reflection on religion, becomes the representative
+of the religious consciousness. Then the
+% --- p. 510 ---
+\opage{510}separation of finitude between the personal God and man and
+nature, the opposition between God's essence and the human,
+the opposition between God's miracle-working activity
+and the laws of nature and of thought, is carried through as a matter of principle,
+and with the relation of finitude, which through the separation and
+the opposition fixes itself in consciousness, the discord is fixed,
+% TR: p. 510 the print has „religtøse“, a printer's error (t for i) for „religiøse“; rendered "religious".
+and the goal toward which the religious consciousness strives is
+not reached. If theology then becomes half-speculative --- and
+further than that it cannot reach without ceasing to be theology ---
+then all that is attained by the mediation attempted between
+faith and knowledge, between the antirational and the rational,
+between the positively religious and the Human, is that consciousness
+may become befogged and obscured, but there comes no
+harmony, no actual unity. Then the thinking
+spirit must seek unity with itself by its own way, and it
+finds it by immersing itself in its essence and, as it
+gains the complete concept of the Human, by seeing it include
+the religious, which does not conflict with thought but confirms
+thought, which does not flee from life but fills out, ennobles
+and elevates life. Here, then, the goal is found, and from the goal
+one can look back with recognition at the stages that lie
+behind it; but the recognition of their relative truth
+is inseparably united with the clear and free consciousness of
+what separates them from the goal. And therefore there is
+no striving, either, to preserve the semblance of the unity that in
+actuality is not present: from the standpoint of free, human
+religiousness, every neo-rationalist attempt,
+after having stripped Christianity of everything that makes it
+a positive religion, to claim for \emph{that} reduced, abstractly rational
+sublimate of Christianity which one professes
+the name of the Christian, must be unconditionally rejected as unprincipled and
+confusing.
+
+\begin{flushright}\textbf{Constans.}\end{flushright}
+\begin{center}\rule{2.5cm}{0.4pt}\\[-10pt]\rule{2.5cm}{0.4pt}\end{center}
+
+\end{document}
