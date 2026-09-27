@@ -97,9 +97,12 @@ texts/dossiers/%/dossier.pdf: texts/dossiers/%/dossier.tex
 PRIVATE := $(HOME)/research
 TILEGN  := texts/dossiers/tilegnelse
 ENTYD   := texts/dossiers/entydig
+ENERGI  := texts/dossiers/energibevarelse
 PRIVATE_PDFS := $(PRIVATE)/tilegnelse-dossier/tilegnelse-udvalg.pdf \
                 $(PRIVATE)/tilegnelse-dossier/tilegnelse-dossier.pdf \
-                $(PRIVATE)/entydig-dossier/dossier.pdf
+                $(PRIVATE)/entydig-dossier/dossier.pdf \
+                $(PRIVATE)/energibevarelse-dossier/energibevarelse-udvalg.pdf \
+                $(PRIVATE)/energibevarelse-dossier/energibevarelse-dossier.pdf
 XELATEX := xelatex -interaction=nonstopmode
 
 private: $(PRIVATE_PDFS)
@@ -112,6 +115,18 @@ $(PRIVATE)/tilegnelse-dossier/tilegnelse-udvalg.pdf: $(TILEGN)/selection.txt dos
 $(PRIVATE)/tilegnelse-dossier/tilegnelse-dossier.pdf: dossier.py
 	mkdir -p $(dir $@)
 	python3 dossier.py 'tilegn*' --authors sibbern,kierkegaard,brochner,hoeffding --title Tilegnelse --ebooks -o $(basename $@).tex
+	cd $(dir $@) && $(XELATEX) $(notdir $(basename $@)).tex >/dev/null && $(XELATEX) $(notdir $(basename $@)).tex >/dev/null
+
+# The energibevarelse recipe (a long query) lives in its selection.txt, so the
+# every-passage build reads it from there with --all rather than repeating it.
+$(PRIVATE)/energibevarelse-dossier/energibevarelse-udvalg.pdf: $(ENERGI)/selection.txt dossier.py $(wildcard $(ENERGI)/intro.texfrag)
+	mkdir -p $(dir $@)
+	python3 dossier.py $(ENERGI) --ebooks -o $(basename $@).tex
+	cd $(dir $@) && $(XELATEX) $(notdir $(basename $@)).tex >/dev/null && $(XELATEX) $(notdir $(basename $@)).tex >/dev/null
+
+$(PRIVATE)/energibevarelse-dossier/energibevarelse-dossier.pdf: $(ENERGI)/selection.txt dossier.py
+	mkdir -p $(dir $@)
+	python3 dossier.py $(ENERGI) --all --ebooks -o $(basename $@).tex
 	cd $(dir $@) && $(XELATEX) $(notdir $(basename $@)).tex >/dev/null && $(XELATEX) $(notdir $(basename $@)).tex >/dev/null
 
 $(PRIVATE)/entydig-dossier/dossier.pdf: $(ENTYD)/build.py $(ENTYD)/printed.yaml $(wildcard $(ENTYD)/intro.texfrag)

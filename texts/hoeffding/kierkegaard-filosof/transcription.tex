@@ -1,0 +1,665 @@
+% =====================================================================
+%  Harald Høffding, SØREN KIERKEGAARD SOM FILOSOF.
+%  Kjøbenhavn: P. G. Philipsens Forlag (Thieles Bogtrykkeri), 1892.
+%  [iv] + 159 pp.  First edition.
+%  TRANSCRIPTION (Danish) -- diplomatic, from the page images.
+%
+%  ---- SOURCE -----------------------------------------------------------
+%  Royal Danish Library digitisation (barcode 130020342103), library file
+%  ~/bibliotek/Høffding, Harald/kierkegaard.pdf, 173 PDF pp., 62174919
+%  bytes, sha256
+%  d19eba84999c4ca04fec4de1569a56e08de2ca13660732c3d811d4fd921e62cf,
+%  250 ppi colour page images with an ABBYY text layer.  Antiqua.
+%  This is the 1892 first edition; the revised edition (1919) differs and
+%  is NOT the source of anything here.
+%
+%  ---- PAGE MAP ---------------------------------------------------------
+%  PDF page = printed page + 9 (p. 1 = PDF 10 ... p. 159 = PDF 168).
+%  Front matter: title page (PDF 6), motto (PDF 7), Indhold (PDF 8),
+%  unnumbered.
+%
+%  ---- CONVENTIONS ------------------------------------------------------
+%  Diplomatic; 1892 orthography as printed.  Italic -> \textit;
+%  letterspacing -> \emph; small capitals -> \textsc.  Quotation marks
+%  „...“ and »...« as printed.  Footnotes *) at the mark.  Printer's
+%  errors transcribed as printed and logged in a % comment at the site.
+% =====================================================================
+\documentclass[12pt,a4paper,openany]{book}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{textalpha}
+\usepackage{libertinus}
+\usepackage{libertinust1math}
+\usepackage{graphicx}    % for \reflectbox (the old Danish ɔ: id-est mark)
+\DeclareUnicodeCharacter{0254}{\reflectbox{c}}  % ɔ (U+0254) = reversed c
+\usepackage[danish]{babel}
+\usepackage[protrusion=true,expansion=true]{microtype}
+\usepackage{setspace}
+\usepackage[margin=1.2in]{geometry}
+\usepackage{fancyhdr}
+\setlength{\headheight}{28pt}
+\addtolength{\topmargin}{-13.5pt}
+
+% Footnotes as the 1892 printing sets them: *).
+\renewcommand{\thefootnote}{*)}
+
+% Chapter numerals: the number alone, centred on its line.
+\newcommand{\secnum}[1]{\par\begin{center}#1\end{center}\par\nobreak}
+
+\usepackage{hyperref}
+\hypersetup{
+  pdftitle={Søren Kierkegaard som Filosof},
+  pdfauthor={Harald Høffding},
+  hidelinks
+}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LE,RO]{\thepage}
+\fancyhead[RE]{\textit{Harald Høffding: Søren Kierkegaard som Filosof}}
+\fancyhead[LO]{\textit{Kjøbenhavn 1892}}
+
+\setstretch{1.3}
+
+\title{\textbf{Søren Kierkegaard som Filosof}}
+\author{Harald Høffding}
+\date{Kjøbenhavn: P.\ G.\ Philipsens Forlag, 1892}
+
+\usepackage{marginnote}
+\newcommand{\opage}[1]{\marginnote{\footnotesize\textit{[#1]}}}
+\newcommand{\apage}[1]{\marginnote{\footnotesize\textit{[#1]}}}
+
+\begin{document}
+\maketitle
+\thispagestyle{empty}
+\clearpage
+
+% --- front matter: title page (PDF 6) ---
+% title page: no folio; the pencilled shelf marks at the upper right are not transcribed; no library stamp on this page (the faint oval at the imprint is show-through of the stamp on the verso)
+% lines in capitals throughout: „HARALD HØFFDING.“ in spaced roman capitals; below it a short ornamental rule (a fine line with a dotted centre ornament); „SØREN KIERKEGAARD“ in large condensed roman capitals, „SOM FILOSOF.“ smaller; the publisher's device below (a dark oval with an interlaced monogram and small figures at its top); the imprint lines in three faces (roman caps, spaced sans-serif caps, small spaced roman caps)
+\begin{center}
+HARALD HØFFDING.\\[12pt]
+% ornamental rule
+\rule{2cm}{0.4pt}\\[18pt]
+{\Large SØREN KIERKEGAARD}\\[8pt]
+SOM FILOSOF.\\[24pt]
+% publisher's device
+KØBENHAVN.\\
+P. G. PHILIPSENS FORLAG.\\[4pt]
+{\small THIELES BOGTRYKKERI.}\\[4pt]
+1892.
+\end{center}
+\clearpage
+
+% --- front matter: motto (PDF 7) ---
+% motto page: the Kierkegaard quotation in body-size roman, its source line in small italic set right; the round library stamp „BIBLIOTHECA REGIA HAFNIENSIS“ below is not transcribed
+„Hvad er et primitivt Genis Betydning? Det er ikke saa
+meget at bringe noget absolut Nyt frem; ti der er egentligt ikke
+noget Nyt under Solen; men det er at revidere det Almenmenneskelige,
+de fundamentale Spørgsmaal. Dette er i dybeste Forstand Redelighed.
+Og ganske at mangle Primitivitet, altsaa det Reviderende,
+ganske uden videre at tage Alt som given Skik og Brug og lade
+det være sig nok, at det er Skik og Brug, altsaa at unddrage sig
+Ansvaret for, at man gør lige saa: er \textit{Uredelighed}.“
+
+\begin{flushright}\small\textit{Af Søren Kierkegaards efterladte Papirer. 1847. p. 81.}\end{flushright}
+\clearpage
+
+% --- front matter: Indhold (PDF 8) ---
+% contents page: „INDHOLD.“ in spaced capitals over a short rule; „Side“ in small type over the page column; chapter entries in full capitals, the A./B. entries in small capitals, a./b./c. entries in italic, the Greek entries in roman; dot leaders; a double rule at the foot
+% printer's error: the fourth chapter is numbered „VI.“ for „IV.“ (the chapter itself, p. 54, is the fourth)
+\begin{center}INDHOLD.\\[4pt]\rule{1.5cm}{0.4pt}\end{center}
+\begin{tabular}{@{}l r@{}}
+ & {\small Side}\\
+INDLEDNING & 1.\\
+I. DEN ROMANTISK-SPEKULATIVE RELIGIONSFILOSOFI & 5.\\
+II. SØREN KIERKEGAARDS ÆLDRE SAMTIDIGE I DANMARK & 16.\\
+III. SØREN KIERKEGAARDS PERSONLIGHED & 28.\\
+VI. SØREN KIERKEGAARDS FILOSOFI & 54.\\
+\quad A. \textsc{Erkendelsesteori} & 58.\\
+\quad B. \textsc{Etik} & 70.\\
+\qquad a. \textit{Springet} & 70.\\
+\qquad b. \textit{Stadierne} & 82.\\
+\qquad\quad α. Den æstetiske Livsanskuelse & 83.\\
+\qquad\quad β. Den etiske Livsanskuelse & 92.\\
+\qquad\quad γ. Den religiøse Livsanskuelse & 109.\\
+\qquad c. \textit{Maalestokken} & 119.\\
+V. SØREN KIERKEGAARD OG KRISTENDOMMEN & 127.\\
+\quad A. \textsc{Personligt Gennembrud} & 127.\\
+\quad B. \textsc{Det sidste Ord} & 143.\\
+SLUTNING & 150.\\
+\end{tabular}
+% double rule
+\clearpage
+
+% --- p. 1 ---
+% p. 1: no running head, no folio; „INDLEDNING.“ in spaced capitals, a short rule below it; the text opens with an enlarged initial D, no indent; at the foot the signature line „Høffding: Søren Kierkegaard.“ and the sheet signature „1“ (not transcribed)
+\opage{1}\begin{center}INDLEDNING.\\[4pt]\rule{1.5cm}{0.4pt}\end{center}
+
+Det var en vemodig Tanke hos Søren Kierkegaard,
+at den Tid vilde komme, da ogsaa han vilde falde i
+»Docentens, Professorens« Haand og blive gjort til Genstand
+for Fremstilling. Ja, han forudsaa, at selve denne
+vemodige Tanke vilde blive doceret med. Hvad der var
+ham imod heri, var sikkert ikke det at blive gjort til
+Genstand for Kritik. Men det var Noget, der hang
+meget nøje sammen med hans hele Tankegang. Først
+afskyede han den »svigefulde« Beundring, der kommer
+bag efter, naar Kampen er til Ende, naar Navnkundigheden
+er vunden, og kalker Profetens Grav, glemmende,
+at det er i Samtidighedsforholdet til det Store, at det
+skal vise sig, hvilken Sans og Villie man har til at anerkende
+det. Hans Livs Gerning var det at afsløre det
+Selvbedrag, i hvilket vi saa let hilde os over for hvad
+han kaldte »den historisk afproppede Idealitet«. Men for
+det Andet var det ogsaa en af hans Hovedtanker, at der
+ingen sammenhængende psykologisk og historisk Udvikling
+gives. At paavise et aandeligt Fænomen, en Tænkers
+eller en Forfatters Virksomhed som Led i Udviklingen,
+som baaret af bestemte indre og ydre Betingelser og som
+bærende og betingende den følgende Udvikling, det var
+efter ham at drage det ned, at berøve det dets Værdi.
+Han vilde ikke »sættes paa Paragraf«.
+
+% --- p. 2 ---
+\opage{2}Hvis mit Forsøg paa at give en Karakteristik og
+en Værdsættelse af denne vort Folks største Tænker
+skulde trænge til et Forsvar over for hans egen Protest,
+da maa jeg først bemærke, at jeg gaar ud fra en helt
+anden Opfattelse af Forholdet mellem Psykologi og Etik
+end han. Jeg har den Overbevisning, at lige som de
+Skikkelser, der staa for os med idealt Præg, opstaa under
+aldeles bestemte psykologiske og historiske Betingelser,
+saaledes svækkes deres ideale Betydning --- for saa vidt
+den virkeligt er til Stede --- ikke ved, at de ses i deres
+bestemte Begrænsning og Betingethed. Tvertimod, Paavisningen
+af denne er aldeles nødvendig, dersom den
+blivende Værdi skal kunne sondres fra det, der kun
+skyldes forbigaaende og rent individuelle Forhold. Og
+dette gælder da ikke mindst om en Tænker med en saa
+udpræget og sær Ejendommelighed som Søren Kierkegaard.
+Dersom de, der skulle lære af ham, selv ere
+eller ville være Personligheder, maa de først have \textit{hans}
+personlige Ejendommelighed bestemt, for at de kunne afgøre,
+hvad de efter deres Natur og under deres Forhold
+kunne overføre fra ham. Altsaa netop i Konsekvents af
+den store Vægt, Søren Kierkegaard har lært os at
+lægge paa den personlige Tilegnelse, den personlige Sandhed,
+maa vi foretage en psykologisk-historisk og en kritisk
+undersøgende Behandling af hans Personlighed og
+Virken.
+
+Og hvad det angaar, at vi let komme i et selvbedragerisk
+Forhold til Fortidens Skikkelser, maa jeg have
+Lov til at aflægge den personlige Bekendelse, at naar
+jeg i det sidste Aars Tid, efter et Mellemrum af nogle
+og tyve Aar, har genoptaget Beskæftigelsen med Søren
+Kierkegaards Skrifter, saa har jeg paa ny maattet erfare
+den Magt, han har til at faa os til at vende Blikket
+mod os selv, til at saare os ved at vække en Selverken%
+% --- p. 3 ---
+\opage{3}delse, vi ellers ere saa tilbøjelige til at undgaa. Der er
+en Brod i disse Skrifter, som Ingen, der med Alvor fordyber
+sig i dem, vil undgaa at føle, hvilke Forudsætninger
+han saa ellers kommer med. Paa dem passer et Ord
+af Prædikerens Bog, Søren Kierkegaard oftere anvender
+i sine Dagbøger og Taler: »Forvar din Fod, naar du
+gaar til Herrens Hus!« Hans Fortolkning af dette Ord
+var den: Du kunde let faa at vide, at Idealet var
+højere, Fordringen strengere end du havde tænkt dig;
+vogt dig derfor for at komme til at høre Idealet! --- De
+Forudsætninger, med hvilke jeg nu genoptog Læsningen
+af disse Skrifter, vare ganske vist meget forskellige fra
+dem, med hvilke jeg for snart 30 Aar siden som ung
+teologisk Student begyndte mit Bekendtskab med dem.
+De førte mig den Gang ind i indre Kampe og Brydninger
+dels af praktisk-personlig, dels af teoretisk Art.
+Efter lang Modstræben maatte jeg erkende hans strenge
+Opfattelse af det Kristelige for langt mere berettiget end
+den sædvanlige, idylliske og harmoniske. Dersom Kristendommen
+virkeligt skal være Et og Alt for os i Liv
+som i Tro, har Søren Kierkegaard draget Konsekventserne
+af den. Jeg prøvede en Tid at holde det gaaende
+ved at skelne mellem Tro og Viden og mellem Ideal og
+Virkelighed. Men jeg lærte, mere gennem personlig Livserfaring
+end gennem Studium, at det var en Umulighed
+at slippe igennem paa denne Maade. Hovedafgørelsen
+maatte jo dog være den, om jeg i mit personlige Liv, i
+min aandelige Husholdning virkeligt kunde sige mig
+baaren af overnaturlig Hjælp og i min Maade at føre
+Livet paa kunde siges at lade mig lede af den religiøse
+Etiks Idealer og Bud. Selverkendelsen gav mig efter
+Haanden, efter lang Tids Uro og Pinagtighed, et klart
+Svar herpaa, som for mig har været bestemmende for
+hele mit Liv. Idet jeg her holder mig til hvad der ved%
+% --- p. 4 ---
+\opage{4}kommer Offentligheden, skal jeg bemærke, at jeg nu førtes
+til gennem Studier over Filosofiens Historie og Undersøgelser
+paa Psykologiens og Etikens Omraade at efterspore
+det menneskelige Aandslivs Betingelser, Former og
+Love. Jeg førtes til at se, at »det Humane« ingenlunde,
+som Søren Kierkegaard siger i en af sine Dagbøger,
+blot er forflygtiget Kristendom, men at det betegner en
+Livsanskuelse og en Livsførelse, der, grundlagt af Grækerne,
+uddybet og inderliggjort ved Kristendommen, udvidet
+og klaret af den nyere Tids teoretiske og praktiske
+Arbejde, vel ikke let kan sammenfattes i korte Formler,
+men ikke des mindre øver sin Magt selv over dem, der
+bekæmpe den, lige som dens stadige Udvikling ikke hindres
+af forbigaaende Udskejelser og Karikaturer. Det er
+fra dette Humanismens Standpunkt (naar vi endeligt
+skulle have et Ord paa -isme), jeg nu ser tilbage paa
+Kierkegaards Virksomhed. Men for mig har det saa
+været betydningsfuldt at se, hvor værdifuld hans Optræden
+ogsaa fra dette Synspunkt maa siges at være. Det
+er ingenlunde i polemisk Øjemed, jeg er vendt tilbage til
+ham, skønt adskillige Synsmaader, jeg ogsaa ellers er
+stødt sammen med, hos ham fremtræder med en Genialitetens
+Klarhed og Konsekvents, der gør det særligt lærerigt
+at fremdrage dem. Men idet jeg ved den Hyldest,
+jeg endnu kan bringe den store Tænker, aflægger min
+Tak for hvad han har ydet mig for min personlige Udvikling,
+vil jeg tillige give et Vidnesbyrd om, at han
+kan være Meget for Mange, der staa ham fjernt i Tro.
+Han hører i den Henseende ikke op at være vor Samtidige.
+--- Jeg haaber, man vil undskylde, at jeg her har
+talt saa Meget om mig selv. Mit Formaal var at give
+et enkelt Exempel, for mig det nærmest liggende, paa
+Søren Kierkegaards Indflydelse.
+% p. 4: the Indledning closes with a short double rule
+\begin{center}\rule{2cm}{0.4pt}\\[-8pt]\rule{2cm}{0.4pt}\end{center}
+\clearpage
+
+% --- p. 5 ---
+% p. 5: no running head, no folio; the chapter head in spaced roman capitals, „I.“ on its own line, the title on two lines (the hyphen of „ROMANTISK-SPEKULATIVE“ spaced like the letters), a short rule below; the text opens with the paragraph number „1.“ followed by an enlarged initial D
+\opage{5}\begin{center}I.\\[4pt] DEN ROMANTISK-SPEKULATIVE\\ RELIGIONSFILOSOFI.\\[4pt]\rule{1.5cm}{0.4pt}\end{center}
+
+1. Det 19. Aarhundrede begyndte med en Forening
+af Religion, Filosofi og Kunst som Løsenet i Aandens
+Verden. Man nærede en begejstret Tro paa, at Sandheden
+var én, og at alt Værdifuldt, paa hvilket Omraade
+og i hvilken Form det saa end fremtraadte, var indbefattet
+i denne ene Sandhed, naar man blot fordybede sig
+i den med aaben Sans. Ingen Skranker for Tanken ---
+og dog Bevarelse af Harmonien med den religiøse
+Følelse og med den kunstneriske Fantasi, det var den store
+Ide, som opfyldte de ledende Tænkere i de første Decennier.
+De mente, at de i Tankens strenge Form kun udtalte,
+hvad den paa ny vaagnende religiøse Sans og den
+saa mægtige poetiske Trang under andre Former levede
+og aandede i. De religionsfilosofiske Tænkeres Tro var
+i Form og Indhold ikke meget forskellig fra den, som
+Faust udtaler, da Gretchen er bekymret for, hvorledes
+det staar sig med hans Religion. Faust udtaler en
+Følelse af Uendelighed, Inderlighed og Fylde, der vækkes
+ved Livet i Naturen og med Mennesker, og som ikke
+kan sammenfattes i noget endeligt Udtryk, ikke udtømmes
+% UNSURE: „ish“ -- a reader has inked over this word (the s blotted, a pen t written over the third letter, the word underlined); under the pen t a printed h shows (ascender, arch and right stem), so the print apparently reads „ish“ for „ist“ (text layer „igtr“); printer's error transcribed as printed
+i noget Navn --- »Name ish Schall und Rauch!«
+Og Gretchen mener:
+
+% --- p. 6 ---
+% p. 6: Gretchen's two verse lines in small type, indented as a block (not set right); this is a quotation in the text, not a chapter motto
+\opage{6}\begin{center}\small\begin{tabular}{@{}l@{}}
+So ungefähr sagt das der Pfarrer auch,\\
+Nur mit ein bischen anderen Worten.
+\end{tabular}\end{center}
+
+Disse Ord kunne tjene til Motto for Tidens Opfattelse
+af Forholdet mellem Tro og Viden, saaledes som
+den --- med karakteristiske og betydningsfulde Forskelligheder
+--- fremtræder hos Schleiermacher og hos
+Hegel.
+
+2. Lige ved Aarhundredets Begyndelse (1799) udgav
+\textsc{Friederich Schleiermacher} (f. 1768, d. 1834) sine »Reden
+über die Religion an die Gebildeten unter ihren Verächtern«.
+Han opfattede her Religion som en umiddelbar
+Bevidsthed om, at alt Endeligt har sin Bestaaen i og
+ved et Uendeligt, alt Timeligt i et Evigt, ikke saaledes,
+at det Evige og Uendelige falder uden for det Timelige
+og Endelige, men saaledes, at det er dettes indre Væsen
+og Sjæl. Medens vi i vor Erkenden og vor Handlen
+rette os mod det Endelige, Bestemte og Begrænsede for
+at opfatte det eller for at ændre det, leve vi i vor Følelse
+et helt og udelt Liv, et universelt Liv, hvor Modsætning
+og Begrænsning ophæves, og hvor den Ensidighed,
+der klæber ved enhver teoretisk og praktisk Stræben,
+falder bort. Følelsen er Religionens Omraade, fordi den
+er et Liv i det Hele og Universelle, --- fordi der i den
+kundgør sig det »Instinkt for Universet«, som netop er
+Et med Religionen. Enhver Følelse har efter Schleiermacher
+en religiøs Karakter, naar den ikke er sygelig
+og fordærvet. Og som den religiøse Følelse saaledes
+ytrer sig ikke i Modsætning til, men som Fordybelse af
+Livet i Erfaringens Verden, saaledes staar Guddommen
+heller ikke som et fra denne Verden sondret Væsen, men
+som dens indre Enhed og dens besjælende Kraft. Og
+Udødeligheden er ikke en Existents, der skal afløse den
+nærværende, men bestaar i: midt i Tiden at føle det Evige
+i sig.
+
+% --- p. 7 ---
+\opage{7}Senere udviklede Schleiermacher i mere teologisk
+Form sin Opfattelse af Religionen i »Der christliche
+Glaube« (1821). Han bestemmer her den religiøse Følelse
+som ubetinget Afhængighedsfølelse og fastslaar derved et
+Moment af den største Betydning for den religiøse Psykologi.
+Det er i det Hele Schleiermachers fine psykologiske
+Sans, der giver hans Arbejder blivende Betydning.
+Baade hans tidligere Beskrivelse af den religiøse Følelse
+som universel Enhedsfølelse, som en Centralisering af
+Følelseslivet i Forhold til Tilværelsen, og den senere Bestemmelse
+af den som Afhængighedsfølelse ere værdifulde
+Bidrag til Religionens Psykologi, selv om nærmere Bestemmelser
+ere nødvendige.
+
+Dogmet er for Schleiermacher stedse noget Afledet,
+noget Sekundært. Dogmatiske Sætninger ere oprindeligt
+opstaaede som Udtryk for den religiøse Følelse. Først
+skaffer denne Følelse sig Luft paa digterisk og retorisk
+Vis; de saaledes opstaaede Udtryksformer udvikles derpaa
+i Form af Lære som Bekendelser. Og da de digteriske
+Udtryk ofte maatte komme i tilsyneladende Strid
+med hverandre, selv hvor den Følelse, der laa til Grund,
+i Virkeligheden var den samme, blev en reflekterende og
+dialektisk Behandling nødvendig for at bringe fuld Klarhed
+til Veje. Gennem disse Mellemtrin bleve de dogmatiske
+Sætninger til, og deres Gyldighed og Betydning
+ere derfor forskellige fra saadanne Sætninger, der ere
+vundne ad rent teoretisk eller filosofisk Vej. Schleiermacher
+vil gennemføre en bestemt Adskillelse mellem
+Troslæren og Filosofien, en Adskillelse, han støtter ved
+sin Erkendelseslære (som vi kende fra den efter hans
+Død udgivne, ufuldendte »Dialektik«), der kritisk paaviser
+Erkendelsens Grænser og holder Plads aaben for et
+umiddelbart Følelsesforhold til Guddommen, om hvis
+% --- p. 8 ---
+\opage{8}Væsen den teoretiske Tænken efter hans Opfattelse ikke
+kan danne noget afsluttet Begreb.
+
+Ved denne fine og aandfulde Opfattelse stillede
+Schleiermacher sig i bestemt Modsætning til Tidens to
+herskende Retninger, Ortodoxien og Rationalismen. Han
+forkastede hins udvortes Bogstavtro og dennes overfladiske
+Bortfortolkninger. Hans Værk har en blivende
+Betydning for Religionsfilosofien, og han staar som den
+største Tænker, Teologien kan opvise ved Siden af
+Augustinus og Zwingli.
+
+3. Men Schleiermacher vilde ikke blot være en fri
+religiøs Tænker; han vilde fremstille den kirkelige
+Teologi og mente at kunne gøre det ud fra sit Standpunkt.
+Her var han hildet i en stor Illusion og ofrer
+paa Tidens Alter; ti om hans personlige Sandhedskærlighed
+er der, trods Alt hvad ortodoxe og radikale Fanatikere
+have ment, ingen Tvivl. Han var den mest sokratiske
+Personlighed i den Tids Filosofi. En sjelden Sans
+for Individualiteter og en stærk Følelse af det Individuelles
+Ret og Betydning præger hans Liv, som vi kende
+det gennem en righoldig og interessant Brevsamling, og
+besjæler hans Tænkning. Men han saa ikke, at paa et
+saadant Standpunkt kan en kirkelig Teolog ikke stille
+sig. Kirken som historisk Samfund bygger paa Antagelsen
+af Aabenbaringen som objektiv Kendsgerning, som
+absolut og adækvat Udtryk for den evige Sandhed, og
+optræder derfor med Fordring om ubetinget Autoritet
+over for de enkelte Individers Følelsesliv. For Schleiermacher
+blev Dogmerne i Virkeligheden kun Symboler,
+Maalestokken subjektiv, og der er fra hans Standpunkt
+kun et Skridt til Ludwig Feuerbachs, for hvem Teologien
+kun er Psykologi. Symboler kunne ikke paatvinges; de
+maa frit kunne vælges eller frembringes, og de kunne
+ændres, uden at den til Grund liggende Følelse derfor
+% --- p. 9 ---
+\opage{9}behøver at ændres. Men det kan Kirken ikke indrømme
+for sine Dogmers Vedkommende; saa vilde jo ogsaa
+selve Begrebet Aabenbaring falde bort. For Schleiermacher
+var selv Guds Personlighed kun en symbolsk
+Forestilling! Men dersom der med Hensyn til alle
+religiøse Forestillinger er at gøre en principiel Forskel
+mellem Billede og Realitet, saa ophæves derved den positive
+Religion, som i hvert Tilfælde paa visse Punkter
+maa hævde, at Sandheden er traadt ind i Verden i sin
+hele Fylde og i sin adækvate Form.
+
+Og ved nærmere Eftersyn viser det sig tillige, at
+selve Bestemmelsen af den religiøse Følelse (baade i den
+ældre Form som Enhedsfølelse og i den senere Form som
+Afhængighedsfølelse) forudsætter flere teoretiske Forudsætninger,
+altsaa mere Filosofi, end Schleiermacher er sig
+bevidst. Den religiøse Følelse har efter hans Opfattelse
+en harmonisk Karakter. Den er netop den Følelse, gennem
+hvilken al Disharmoni, Ensidighed, Ufuldkommenhed
+og Synd overvindes. Afhængighedsfølelsen faar tilsidst
+Tillidens og Begejstringens Karakter. Men derved forudsættes
+en optimistisk og harmonisk Verdensopfattelse.
+Det forudsættes, at der ikke gives Erfaringer, der kunde
+medføre en helt anden Totalstemning over for Tilværelsen,
+eller i hvert Tilfælde give den religiøse Følelse et mindre
+harmonisk Præg. Hos Schopenhauer og Søren Kierkegaard
+fremtræder paa dette Punkt Modsætningen til den
+romantiske, harmoniserende Opfattelse saa energisk som
+tænkes kan.
+
+Det er i det Hele karakteristisk for Udviklingen paa
+det aandelige, særligt det religiøse Livs Omraade i vort
+Aarhundrede, at Modsætningerne skærpes stedse mere,
+alt som Tiden skrider frem. Aarhundredet begynder med
+Harmoni og Forsoning, men Spaltningen og Sondringen
+fuldbyrdes med stigende Eftertryk. Schleiermacher op%
+% --- p. 10 ---
+\opage{10}levede ikke den radikale Skærpelse, som kom med Strauss
+og Feuerbach, hvis Forgænger han selv er, dels ved sine
+kritiske Undersøgelser af de nytestamentlige Skrifter (der
+bl. A. førte ham til af historiske Grunde at forkaste
+Ægtheden af det første Brev til Timotheus og af Beretningerne
+om Jesu Fødsel), dels ved sin psykologiske
+Metode. Derimod oplevede han at mærke Skærpelsen
+paa den ortodoxe Fløj. Da han i Aaret 1821 for tredie
+Gang udgav sine »Taler om Religionen til de Dannede
+blandt dens Foragtere«, skrev han i Fortalen, »at Tiderne
+havde ændret sig saa paafaldende, at de Personer, til
+hvilke disse Taler ere rettede, slet ikke mere synes at
+existere, men at man, naar man saa sig om blandt de
+Dannede, snarere vilde finde det nødvendigt at skrive
+Taler til Hængehoveder og Bogstavtrælle, til overtroiske
+Mennesker, der vise baade deres Uvidenhed og deres
+Ukærlighed ved den Maade, paa hvilken de fordømme
+Andre.« --- Tiderne havde forandret sig, og de skulde
+forandre sig endnu mere.
+
+4. Ved Siden af Schleiermacher og i polemisk Holdning
+over for ham virkede ved Berlineruniversitetet i
+Aarene 20 en anden Religionsfilosof, der i endnu højere
+Grad end han udtrykker Tidens Trang til Harmoni mellem
+Tro og Viden. Det var \textsc{Hegel} (f. 1770, d. 1831).
+% footnote *) on p. 10
+Hvad der udmærkede denne Tænker, hvis Skrifters\footnote{Udførligst er Hegels religionsfilosofiske Anskuelse fremstillet i det efter hans Død udgivne Værk „Philosophie der Religion“, men i hans „Encyclopädie der philosophischen Wissenschaften“ (1817) udtaltes den allerede i mere kortfattet Form. Lettest tilgængelig er maaske hans Opfattelse af Kristendommen i „Philosophie der Geschichte“.}
+abstrakte Form gør det vanskeligt for de fleste Nutidslæsere
+at trænge ind til hvad han har af virkeligt Betydningsfuldt
+i sine Ideer, var hans store Sans for Aands%
+% --- p. 11 ---
+\opage{11}livets Enhed under alle dets forskellige Former og paa
+alle dets forskellige Trin. Da han nu i det menneskelige
+Aandsliv saa en Form for en evig Verdensaands Aabenbaring,
+blev det ham muligt at udkaste en idealistisk
+Udviklingslære, i hvis Rammer han --- ofte med stor Vilkaarlighed
+og med mere eller mindre aandfuld Omtydning
+--- indordnede Alt hvad hans rige Viden stillede til
+Raadighed fra de forskellige Omraader. Da det Guddommelige
+ytrer sig paa alle Tilværelsens Trin og i alle
+Former, anerkender Hegel ingen absolute Modsætninger.
+Alle Forskelle og Modsætninger ere Momenter i Udviklingen,
+som tjene til at give denne Indholdsfylde og
+Energi, men som selv stadigt ophæves og forenes i en
+højere Enhed. Gennem stadig Sætten og Ophæven af
+Modsætninger gaar Verdensudviklingen frem. Det er i
+en vis Forstand Kontrastvirkningen, som for Hegel er
+det Grundfænomen, der belyser Tilværelsen. Det viser
+os jo, hvorledes Modsætningerne fremkalde hinanden og
+ikke kunne skilles. Et højere Trin eller en højere Form
+for Tilværelse er efter den Hegelske Opfattelse karakteriseret
+ved, at Modsætninger ere gennemløbne og have
+afsat deres Resultat i en ny Enhedsform. Mediationen,
+Udligningen og Ophævelsen af Modsætninger (eller som
+Hegel urigtigt kalder dem: Modsigelser) blev Slagordet
+for Hegels Tilhængere. At blive staaende i et
+Modsætningsforhold var et Tegn paa, at man var hildet
+% the mark after „Endelige“ is a speck (the text layer's comma), not a printed comma
+i det Endelige og Udvortes; det gjaldt at naa den højere
+Enhed, at forene Tilværelsens Modsætninger i Harmoni.
+--- En genial Ide og et stort Maal! Men fra den almindelige
+Ide til den specielle teoretiske og praktiske Gennemførelse
+er Vejen lang, og Hegel og hans Tilhængere
+forvexlede alt for ofte Programmet med Udførelsen.
+
+Forholdet mellem Filosofi og Religion var efter
+Hegel dette, at de have samme Indhold, kun at Filoso%
+% --- p. 12 ---
+\opage{12}fien udtrykker dette Indhold i den abstrakte Tænknings
+Sprog, medens Religionen udtrykker det i Følelsens og
+Fantasiens Sprog. Forskellen er altsaa kun en Formforskel,
+der ikke skal berøre det Væsentlige. Hvad den
+Troende opfatter som historiske Begivenheder, f. Ex.
+Verdens Skabelse, Guds Menneskeblivelse i Kristus o.\,s.\,v.,
+det er for Filosofen evige Sandheder og Love, der gælde
+til alle Tider. Kristendommens Lære om den lidende
+Gud er saaledes for Filosofen ikke Udtryk for en enkelt
+Række af historiske Begivenheder, men dens væsentlige
+Indhold --- som kun Filosofen griber i dets klare, adækvate
+Form --- er den Sandhed, at det Uendelige og
+Guddommelige rører sig i den endelige Verden, medens
+dog enhver endelig Form er ufuldkommen og maa sønderbrydes.
+Det er da kun gennem stadig Undergang af
+endelige Former, at det Uendelige udfolder sig i Verden.
+Kun i den hele uendelige Proces af stadigt nye og stadigt
+igen undergaaende Livsformer bestaar Guddommens evige
+Liv. ---
+
+Allerede ved dette ene Exempel bliver det klart, at
+Hegel lige saa vel som Schleiermacher i Virkeligheden
+gør Dogmerne til Symboler, kun at de hos ham blive
+Symboler for almindelige Ideer, ikke for subjektive
+Følelser. Det beroede da hos Hegel lige som hos Schleiermacher
+paa en Illusion, naar han mente at have forsonet
+Tro og Viden. Men det var Hegels bestemte Overbevisning,
+at Intet af væsentlig Betydning gik tabt ved, at
+Trosindholdet omsattes i filosofisk Form; tvertimod mente
+han, at det da først ret blev Menneskeaandens Ejendom.
+Han saa ikke hvad først Strauss og Feuerbach skarpt
+paaviste --- at Omsætningen virkeligt betød Overgang til
+en helt anden Livs- og Verdensanskuelse end den, som
+er ejendommelig for den positive Religion, særligt for
+Kristendommen, om hvilken der naturligvis her først og
+% --- p. 13 ---
+\opage{13}fremmest er Tale. Hele Forholdet mellem Kristendom
+og Humanitet opfattede Hegel, lige som Schleiermacher,
+som et harmonisk Forhold. Den romantiske Optimisme
+er karakteristisk for begge.
+
+5. Men allerede rent filosofisk og humant var der
+en Betænkelighed, som maatte komme frem over for den
+Hegelske Filosofis Grundtanke om Modsætningernes Enhed.
+Selv om der skulde gives en højeste Enhed, i
+hvilken alle Tilværelsens Modsætninger finde deres Forsoning,
+saa ere vi jo som existerende Væsener, midt i
+denne Modsætningernes Verden, langt fra denne Enhed.
+Modsætningernes Bølgeslag løfte os og sænke os; vi ere
+afhængige af Erfaringen, vi støde paa Skranker baade i
+vor Tænken og i vor Handlen, vor Horizont er begrænset,
+og vi ende ofte i problematiske Resultater eller løbe
+Panden mod Muren: \textit{for os} er derfor hin Enhed et
+uopnaaeligt Ideal, og den Forsoning, det indeholder, er
+kun for Fantasien, eller for Troen. Dette væsentlige
+Punkt --- Forskellen mellem Metafysik paa den ene Side,
+Psykologi og Etik paa den anden Side --- oversaa Hegel,
+og deri laa hans største filosofiske Fejl. Følgen var, at
+han, og endnu mere hans Tilhængere, ofte forvexlede den
+rent abstrakte og logiske Konstatering af Modsætningers,
+f. Ex. modsatte Standpunkters Sammenhæng, med en
+Overvindelse af Modsætningerne igennem virkeligt Arbejde,
+eller paa det etiske Omraade gennem virkeligt at
+have gennem\textit{levet} dem, praktisk at have naat en Forsoning
+af de modsatte Tendentser, mellem hvilke Livet bevæger
+sig. Dertil kommer, at saa længe Livet varer,
+træde stedse nye Modsætninger, og dermed nye Problemer,
+frem; »den højere Enhed« kan derfor ikke vindes én
+Gang for alle. Teorien om Modsætningernes Enhed
+stiller altsaa et Ideal, men giver os ikke en virkelig Besiddelse.
+Det var Hegels store Fejl, at hans Bestræbelse,
+% --- p. 14 ---
+\opage{14}for at bruge hans egne Ord, gik ud paa »at omskrive
+Idealet til System«. Derved kom han (som ikke blot
+hans Religionsfilosofi, men ogsaa hans Etik og Statslære
+vise) til at krænke baade Virkelighedens og Idealets Ret.
+
+Søren Kierkegaards Opposition mod Hegel faar ikke
+mindst Betydning ved den skarpe og indtrængende Maade,
+paa hvilken han angreb dette Hovedpunkt i den Hegelske
+Filosofi. Og det maa vel mærkes, at vi her ikke staa
+over for en enkelt Filosofs Ideer. Tvertimod er den
+Hegelske Lære paa dette Punkt virkeligt af typisk Art.
+Den repræsenterer --- efter sin bedste Mening --- en
+naturlig Stræben, som det menneskelige Aandsliv til
+ingen Tid kan opgive, efter at finde Sammenhæng og
+Harmoni, efter ved egne Kræfter at vinde Magt og Overblik
+over Livet. Og --- efter den mere overfladiske Anvendelse
+--- repræsenterer den et Fantasiforhold til Tilværelsen,
+en æstetisk-kontemplativ Holdning til Problemer,
+Kriser og Modsætninger, hvilke man lader udfolde sig
+som et interessant Skuespil, af hvis Konflikter man føler
+sig uberørt, idet man betragter sig selv som den realiserede
+»højere Enhed«. --- Selv efter den bedste Mening
+trængte dog dette System, i hvilket den romantiske Bevægelse
+fra Aarhundredets Begyndelse afklaredes i
+abstrakt Form, til en alvorlig Reaktion, der i Praxis og
+Teori lagde en Accent paa Virkeligheden i dens bestemte,
+konkrete og individuelle Karakter. Og idet Søren Kierkegaard
+saa energisk, som ønskes kan, bringer denne
+Reaktion paa det etisk-religiøse Omraade, bringer han
+den tillige paa en Maade, der kan virke som stadig Modstand
+mod lignende Tendentser i den menneskelige Natur,
+saaledes som ogsaa senere Tider frembyde dem.
+
+Allerede Goethes Faust havde iøvrigt her udtalt,
+hvad det gjaldt. Da han i Nostradamus' Bog ser Symbolet
+for Universet, udbryder han først begejstret:
+
+% --- p. 15 ---
+% p. 15: the two Faust quotations in small type, indented (not set right); the mark after „lebt!“ and the dot over the e of „ein“ are specks, not printed signs (the text layer reads „!•“ and „éin“); the chapter closes with a short double rule; the rest of the page is blank
+\opage{15}\begin{center}\small\begin{tabular}{@{}l@{}}
+Wie Alles sich zum Ganzen webt,\\
+Eins in dem Andern wirkt und lebt!
+\end{tabular}\end{center}
+--- men han bliver snart vemodig over, at denne Modsætningernes
+Enhed ikke er given i Virkelighedens Form:
+\begin{center}\small Welch Schauspiel! Aber ach! ein Schauspiel nur!\end{center}
+
+Søren Kierkegaard opfattede det netop som sin
+Livsopgave at indskærpe, hvad den foregaaende romantisk-spekulative
+Menneskealder havde glemt, at Livet er
+Andet og Mere end et Skuespil for os.
+\begin{center}\rule{2cm}{0.4pt}\\[-8pt]\rule{2cm}{0.4pt}\end{center}
+
+% [text to be added: pp. 16--27]
+
+% [text to be added: pp. 28--40]
+
+% [text to be added: pp. 41--53]
+
+% [text to be added: pp. 54--69]
+
+% [text to be added: pp. 70--82]
+
+% [text to be added: pp. 83--97]
+
+% [text to be added: pp. 98--111]
+
+% [text to be added: pp. 112--126]
+
+% [text to be added: pp. 127--142]
+
+% [text to be added: pp. 143--159]
+
+\end{document}

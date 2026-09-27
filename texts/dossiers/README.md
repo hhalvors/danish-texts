@@ -29,6 +29,7 @@ quotes has been corrected and sks-search re-indexed.
 #% query: tilegn*                                    <- the recipe: FTS5 query,
 #% authors: sibbern,kierkegaard,brochner,hoeffding   <- catalog.yaml author ids, in order,
 #% title: Tilegnelse                                 <- and the word for the title page
+#% highlight: ...                                    <- optional; see "A dossier on a concept"
 #: Selected for relevance to ...                     <- '#:' lines: the printed criterion
 # any other comment                                  <- ignored
 AE:187                                               <- one passage reference per line
@@ -49,7 +50,29 @@ python3 dossier.py 'tilegn*' --authors sibbern,kierkegaard,brochner,hoeffding \
 ```
 
 (Write it outside the repo: `make` would try to build any `.tex` under `texts/`.)
+For a dossier directory, `--all` does the same from the recipe in its
+`selection.txt`, without retyping the query:
+
+```
+python3 dossier.py texts/dossiers/energibevarelse --all -o /tmp/everything.tex
+```
 Each passage there ends with a `% ...` comment whose first part is its reference.
+
+### A dossier on a concept rather than a word
+
+When no single word carries the topic, the query can be a whole FTS5
+expression. `energibevarelse/` is the example: Høffding never writes
+"Energibevarelse", but "Energiens Bestaaen", "Kraftens Bestaaen",
+"Ækvivalens" and so on, so its query is a chain of `OR`s and `NEAR(a b, n)`s.
+Such a query is too broad to highlight whole (it contains `Stof*`, `Kraft*`,
+`fysisk*`), so a fourth recipe line names the stems to highlight:
+
+```
+#% highlight: energi kraftens bestaaen ækvivalen mayer colding ...
+```
+
+Without that line every term of the query is highlighted, which for a
+one-word query like `tilegn*` is what you want.
 
 ## intro.texfrag
 
@@ -123,7 +146,9 @@ sources change. The recipes are in the Makefile. They are:
 - `~/research/tilegnelse-dossier/tilegnelse-udvalg.pdf` — the selection, with e-books
 - `~/research/tilegnelse-dossier/tilegnelse-dossier.pdf` — every passage, with e-books
 - `~/research/entydig-dossier/dossier.pdf` — Bohr, aligned originals whole
+- `~/research/energibevarelse-dossier/energibevarelse-udvalg.pdf` — the selection, with e-books
+- `~/research/energibevarelse-dossier/energibevarelse-dossier.pdf` — every passage, with e-books
 
 Selection references to e-books (`hoeffding/...(epub):N`) are simply skipped
-in the public build. All three are linked from the private pages of the site
+in the public build. All of them are linked from the private pages of the site
 (`~/hhalvors.github.io/_private-site/private/index.html`).

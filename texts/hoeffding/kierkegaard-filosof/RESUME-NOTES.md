@@ -110,3 +110,25 @@ Sandbox recipe in the playbook §3 (lmodern substitution). Last compile:
 The old `transcription.tex` / `transcription.pdf` (1892-orthography IV.A only)
 are still in this folder. Given the translation-only decision, decide whether to
 remove them from the repo and drop the transcription build from the Makefile.
+
+## 2026-09-27 — scholarly transcription of the 1892 FIRST EDITION begun
+
+Decision (Hans): the translation-only approach above is superseded. The
+e-book is the 1919 revision and cannot be cited to the original pagination;
+we now make a diplomatic transcription of the 1892 first edition from the
+KB scan (`~/bibliotek/Høffding, Harald/kierkegaard.pdf`, sha256 d19eba84…,
+registered in SCANS.tsv). PDF = printed + 9. Brief: BATCH-AGENT.md in this
+directory. The existing translation.tex (of the 1919 text) is untouched; it
+will later be revised against the 1892 transcription.
+
+Batches (markers in transcription.tex): 1–15 | 16–27 | 28–40 | 41–53 |
+54–69 | 70–82 | 83–97 | 98–111 | 112–126 | 127–142 | 143–159.
+
+Pilot, front matter + pp. 1–15 (spliced):
+OCRDIFF: embedded | 11 candidates | 0 corrected | 11 witness's fault | 0 unresolved
+Findings folded into BATCH-AGENT.md. One UNSURE: p. 5 „ish“ (for „ist“?)
+under a reader's ink correction — for the second reading. Indhold prints
+„VI.“ for IV (logged). check.py/joints clean for pp. 1–15; sandbox compile
+clean. Cost ≈ 185k tokens (≈ 11k per page).
+
+NEXT: remaining 10 batches (144 pp.), in waves of ≤5.

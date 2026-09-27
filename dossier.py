@@ -22,6 +22,15 @@ texts/dossiers/tilegnelse/dossier.tex. The same thing spelled out in flags:
         --title 'Tilegnelse' -o texts/dossiers/tilegnelse/dossier.tex \\
         --select texts/dossiers/tilegnelse/selection.txt
 
+The query may be a whole FTS5 expression rather than one word, for a dossier
+on a concept that no single word carries (texts/dossiers/energibevarelse is
+the example). The terms highlighted are then the query's own terms, or the
+stems given by a '#% highlight:' recipe line (or --highlight) instead.
+
+--all, with a dossier directory, takes the recipe from its selection.txt but
+not the selection: every passage the query finds (the Makefile's private
+"komplet" builds use it).
+
 --select FILE keeps only the passages FILE lists, one reference per line
 (texts/dossiers/tilegnelse/selection.txt is the example; its '#:' lines become
 the dossier's statement of criterion). The selection is made by reading, not
@@ -50,6 +59,10 @@ ap.add_argument("--ebooks", action="store_true", help="include e-book passages (
 ap.add_argument("--select", metavar="FILE",
                 help="keep only the passages whose references FILE lists (see a selection.txt)")
 ap.add_argument("--intro", metavar="FILE", help="LaTeX to put at the head of the document")
+ap.add_argument("--all", action="store_true",
+                help="with a dossier directory: use its recipe but not its selection (every passage)")
+ap.add_argument("--highlight", metavar="STEMS",
+                help="space-separated stems to highlight (default: the query's own terms)")
 args = ap.parse_args()
 
 # Directory mode: the recipe lives in the directory's selection.txt.
@@ -67,6 +80,11 @@ if os.path.isdir(args.query):
     args.query = recipe["query"]
     args.authors = args.authors or recipe["authors"]
     args.title = args.title or recipe["title"]
+    args.highlight = args.highlight or recipe.get("highlight")
+    if args.all:
+        if not args.output:
+            sys.exit("dossier.py: --all needs -o: it must not overwrite the directory's dossier.tex")
+        args.select = None
     args.output = args.output or os.path.join(d, "dossier.tex")
     if args.intro is None and os.path.exists(os.path.join(d, "intro.texfrag")):
         args.intro = os.path.join(d, "intro.texfrag")
@@ -92,7 +110,16 @@ if args.select:
 def wanted(cite):
     """A citation string's reference is its first token: 'AE:187', 'sibbern/erkjendelse:49'."""
     return selected is None or re.split(r"\s{2,}|\s+\(", cite.strip())[0] in selected
-stem = re.sub(r"[^\wæøåÆØÅ]", "", args.query.split()[0]).lower()
+# The word forms to highlight: every term of the query ('tilegn*' -> tilegn),
+# or the stems a '#% highlight:' line names, for a query too broad to highlight whole.
+FTS_OPS = {"AND", "OR", "NOT", "NEAR"}
+stems = []
+for t in (args.highlight.split() if args.highlight
+          else re.findall(r"[\wæøåÆØÅäöüÄÖÜ]+", args.query)):
+    t = re.sub(r"[^\wæøåÆØÅäöüÄÖÜ]", "", t).lower()
+    if t and t.upper() not in FTS_OPS and not t.isdigit() and t not in stems:
+        stems.append(t)
+one_word = len(stems) == 1 and not args.highlight
 
 catalog = yaml.safe_load(open(os.path.join(HERE, "catalog.yaml")))
 names, works = {}, {}
@@ -150,7 +177,7 @@ if selected is not None:
 
 # ---------------------------------------------------------------- helpers
 WORD = r"[\wæøåÆØÅäöüÄÖÜ]"
-HIT = re.compile(rf"(?<!{WORD}|\\)({WORD}*{re.escape(stem)}{WORD}*)", re.I)
+HIT = re.compile(rf"(?<!{WORD}|\\)({WORD}*(?:{'|'.join(map(re.escape, stems))}){WORD}*)", re.I)
 def highlight(body):
     return HIT.sub(r"\\tlg{\1}", body)
 
@@ -321,7 +348,9 @@ caveats = [
      rf"see the selection file named in this file's header. " if selected is not None else
      r"\item The search is lexical. It catches every sense of the word, alongside the "
      r"epistemic and religious uses; nothing has been filtered by sense. ") +
-    rf"Every word form containing \emph{{{esc(stem)}}} is \tlg{{highlighted}} ({nhits} in all).",
+    (rf"Every word form containing \emph{{{esc(stems[0])}}}" if len(stems) == 1 else
+     r"Every word form containing " + clause_list([rf"\emph{{{esc(s)}}}" for s in stems]).replace(" and ", " or ")) +
+    rf" is \tlg{{highlighted}} ({nhits} in all).",
     r"\item The quotations are machine-assembled. An entry without a page break of its "
     r"own carries the page it begins on; for a quotation taken from late in a long "
     r"entry, check the printed page.",
@@ -344,11 +373,22 @@ if others and selected is None:
 
 selection_tex = ("\\subsection{Selection}\n\n\\noindent " + esc(" ".join(criterion)) + "\n\n") if criterion else ""
 intro_lead = ("A selection from the passages" if selected is not None else "Every passage")
+if one_word:
+    about_query = (rf"\noindent {intro_lead} in which a form of the word occurs (query "
+                   rf"\texttt{{{esc(args.query)}}},"
+                   "\nprefix-matched, so compounds are included)")
+else:
+    about_query = (rf"\noindent {intro_lead} that match this query:" "\n\n"
+                   r"{\raggedright\small\ttfamily " + esc(args.query) + r"\par}" "\n\n"
+                   r"\noindent Bare terms are prefix-matched, so compounds are included; "
+                   r"\texttt{NEAR(a b, n)} asks for \texttt{a} and \texttt{b} within "
+                   r"\texttt{n} words of each other. They are drawn from")
+bodies = f"{len(authors)} bodies of text" if len(authors) != 1 else "one body of text"
 head = rf"""% dossier.tex — source dossier on the word {args.title}.
 % GENERATED by dossier.py; do not edit by hand. Edit selection.txt or
 % intro.texfrag beside it instead, then run `make` (see texts/dossiers/README.md).
 % This file was produced by the equivalent of:
-%   python3 dossier.py '{args.query}' --authors {",".join(authors)} --title '{args.title}' -o <this file>{" --ebooks" if args.ebooks else ""}{(" --select " + os.path.relpath(os.path.abspath(args.select), HERE)) if args.select else ""}
+%   python3 dossier.py '{args.query}' --authors {",".join(authors)} --title '{args.title}'{(" --highlight '" + args.highlight + "'") if args.highlight else ""} -o <this file>{" --ebooks" if args.ebooks else ""}{(" --select " + os.path.relpath(os.path.abspath(args.select), HERE)) if args.select else ""}
 % Each passage is followed by a visible \dcite{{...}} and by sks-search's own
 % citation string as a % comment, in the shape sks.el's `w' key produces.
 % Compile with lualatex (Makefile) or xelatex.
@@ -384,8 +424,7 @@ head = rf"""% dossier.tex — source dossier on the word {args.title}.
 \begin{{otherlanguage}}{{english}}
 {intro_tex}\section{{About this dossier}}
 
-\noindent {intro_lead} in which a form of the word occurs (query \texttt{{{esc(args.query)}}},
-prefix-matched, so compounds are included), in {len(authors)} bodies of text:
+{about_query}{',' if one_word else ''} in {bodies}:
 
 \begin{{enumerate}}
 {chr(10).join(items)}
