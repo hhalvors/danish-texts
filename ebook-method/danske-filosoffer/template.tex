@@ -1,0 +1,195 @@
+% =====================================================================
+%  Harald Høffding, DANSKE FILOSOFER.  Kjøbenhavn og Kristiania:
+%  Gyldendalske Boghandel, Nordisk Forlag, 1909 (MDCCCCIX).  206 pp.
+%  TRANSCRIPTION (Danish) of the 1909 print, complete.
+%
+%  SOURCE: the Royal Library's (KB) scan, ~/bibliotek/Høffding, Harald/
+%  danske-filosoffer.pdf (SCANS.tsv).  PAGE MAP (pagemap.py): printed page =
+%  PDF page - 15; p. 1 = PDF 16 ... p. 206 = PDF 221.  Front matter
+%  (unnumbered): half-title PDF 10, title PDF 12, contents PDF 14; these
+%  carry "% --- front matter ---" comments and no \opage.  Not
+%  transcribed: blank leaves, the publisher's pages after p. 206, folios,
+%  running heads, sheet signatures („Harald Høffding: Danske Filosofer. 1“),
+%  library stamps, pencil marks and underlinings in this copy.  Every page
+%  turn is marked "% --- p. N ---" + \opage{N} at the first word of the
+%  printed page; a word divided over a page turn ends in %.
+%
+%  CONVENTIONS: letterspacing (the print's emphasis, chiefly names) ->
+%  \emph; italic -> \textit; printed dashes -> ---, number ranges -> --;
+%  quotation marks „…“ as printed.  Chapters begin on a new page under a
+%  numbered head in capitals („I. LUDVIG HOLBERG“, then „2.“-„17.“ as printed); the Indledning has no
+%  head.  Footnotes at the page foot, marked *), **) on each page;
+%  \footnote[k] gives the note's rank on its printed page and a comment
+%  "% footnote *) on p. N" precedes each.  A note that runs over to the
+%  next page is not split.
+%
+%  METHOD (the e-book method, 2026-10-02; TRANSCRIPTION-PLAYBOOK §00 point
+%  0).  No one typed the text, except the Indledning (pp. 1-2), which the
+%  SAGA e-book lacks: it is the scan's text layer read against the image.
+%  For pp. 3-206 the base text -- words, punctuation, paragraphs, italics,
+%  the footnote texts -- is the SAGA e-book (Danske_filosoffer.epub), which
+%  sets the 115 footnotes as endnotes; ebook-method/danske-filosoffer/build.py
+%  (tracked, repo root) aligned it
+%  letter by letter with the scan's text layer, split per page by type
+%  size into text and footnote lines, took every page turn from the layer
+%  and every letterspaced word from the layer's spacing (names, verified
+%  on a sample at the image; short words excluded).  Of 392 letter
+%  disagreements 287 were settled by rule (the layer's glyph faults where
+%  the e-book's word is attested elsewhere in the repository, letterspaced
+%  capitals, specks, running heads, stamps, blocks the two streams place
+%  differently); 105 letter, 91 punctuation and 20 paragraph disagreements
+%  were decided at the image from crop sheets (decisions.tsv).  The print
+%  corrects the e-book at: p. 14 Forgaaen; p. 17 Regering; p. 19 til;
+%  p. 33 Fornuft; p. 45 Schein; p. 47 Oehlenschläger (twice); p. 61
+%  nogetsomhelst; p. 78 sin; p. 79 til; p. 85 heldede; p. 97 forbigaaet;
+%  p. 114 Bestaaen; p. 119 hans; p. 134 religionsfilosofiske; p. 137 für,
+%  regnet; p. 178 dens; p. 193 externo; p. 90 n. den; and 27 places of
+%  punctuation, chiefly commas the e-book adds („bøje, alt“, „sin,
+%  frejdige“) or points it gives as commas.  PRINTED AS IS: p. 3 „at at“; p. 37
+%  „Bamærkninger“ (corrected in pencil in this copy).
+%
+%  RESIDUAL RISKS: (1) a misprint that the e-book and the layer both
+%  normalise is invisible to the method; (2) italics are the e-book's,
+%  which the layer cannot witness; (3) letterspacing on words of fewer
+%  than four letters is not recorded unless the word stands in a spaced
+%  name; (4) p. 195, where the layer's line positions are unusable, had
+%  no paragraph-indent check.
+% =====================================================================
+\documentclass[12pt,a4paper,openany]{book}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{textalpha}
+\usepackage{libertinus}
+\usepackage{libertinust1math}
+\usepackage{graphicx}    % for \reflectbox (the old Danish ɔ: id-est mark)
+\DeclareUnicodeCharacter{0254}{\reflectbox{c}}  % ɔ (U+0254) = reversed c
+\usepackage[danish]{babel}
+\usepackage[protrusion=true,expansion=true]{microtype}
+\usepackage{setspace}
+\usepackage[margin=1.2in]{geometry}
+\usepackage{fancyhdr}
+\setlength{\headheight}{28pt}
+\addtolength{\topmargin}{-13.5pt}
+\usepackage{hyperref}
+\hypersetup{pdftitle={Danske Filosofer}, pdfauthor={Harald Høffding}, hidelinks}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LE,RO]{\thepage}
+\fancyhead[RE]{\textit{Harald Høffding: Danske Filosofer}}
+\fancyhead[LO]{\textit{1909}}
+\setstretch{1.3}
+\usepackage{marginnote}
+\newcommand{\opage}[1]{\marginnote{\footnotesize\textit{[#1]}}}
+% Footnotes as the print marks them, per page: *), **), ***), †).
+\renewcommand{\thefootnote}{\ifcase\value{footnote}\or*)\or**)\or***)\or†)\fi}
+\newcommand{\tocline}[3]{\noindent\makebox[2.2em][r]{#1}\hspace{0.6em}#2\dotfill\ #3\par}
+
+\begin{document}
+
+% --- front matter: half-title (PDF 10) ---
+\begin{center}\vspace*{6em}DANSKE FILOSOFER\end{center}
+\clearpage
+
+% --- front matter: title (PDF 12) ---
+\begin{center}
+{\large HARALD HØFFDING}\\[6pt]
+\rule{2cm}{0.4pt}\\[12pt]
+{\Huge DANSKE}\\[6pt]
+{\Huge FILOSOFER}\\[8em]
+% (the publisher's device)
+{\small GYLDENDALSKE BOGHANDEL}\\
+{\small NORDISK FORLAG}\\[2pt]
+\rule{0.6cm}{0.4pt}\\
+{\scriptsize MDCCCCIX}
+\end{center}
+\clearpage
+
+% --- front matter: contents (PDF 14) ---
+\begin{center}{\large INDHOLD}\end{center}
+\medskip
+\tocline{}{Indledning}{1}
+\tocline{1.}{Ludvig Holberg}{3}
+\tocline{2.}{Sneedorf og Wolfianerne}{16}
+\tocline{3.}{Danske Kantianere og deres Modstandere}{25}
+\tocline{4.}{Henrik Steffens}{40}
+\tocline{5.}{Hans Christian Ørsted}{49}
+\tocline{6.}{Grundtvig og H. C. Ørsted}{57}
+\tocline{7.}{Baggesen og Grundtvig}{66}
+\tocline{8.}{Anders Sandøe Ørsted}{73}
+\tocline{9.}{F. G. Howitz}{81}
+\tocline{10.}{Niels Treschow}{89}
+\tocline{11.}{F. C. Sibbern}{97}
+\tocline{12.}{Poul Møller}{118}
+\tocline{13.}{Heiberg og Martensen}{128}
+\tocline{14.}{Søren Kierkegaard}{147}
+\tocline{15.}{Frederik Dreier}{175}
+\tocline{16.}{Rasmus Nielsen}{184}
+\tocline{17.}{Hans Brøchner}{196}
+\clearpage
+
+% ===== INDLEDNING (pp. 1--2): not in the e-book; the scan's text layer, read at the image =====
+% --- p. 1 ---
+\setcounter{footnote}{0}%
+\opage{1}ET lille Land som vort ligger aabent for Indflydelser udefra. De
+aandelige Strømme fra de store Kulturlande gribe bestemmende ind i dets
+Tankeliv, og dette kan ikke faa den faste Sammenhæng gennem Tiderne, som er
+muligt, naar et Land kan frembringe en stor Mangfoldighed af tænkende Aander,
+der aldrig lade Udviklingen stanse og ved de forskellige Typer, de frembyde,
+kunne bryde Paavirkningerne udefra, saa at Sammenhængen i Folkets Tankeliv
+bedre kan bevares.
+
+Alligevel er der blevet tænkt alvorligt og selvstændigt herhjemme om de
+Spørgsmaal, det er Filosofiens Kald at drøfte, --- om Videnskabens
+Forudsætninger, om dens Resultaters Betydning for Livsanskuelsen, om
+Grundlaget for etisk Vurdering, om den menneskelige Aands Natur og Love, om
+Forholdet mellem Religion og Humanitet. De ydre Strømninger ere blevne
+tilegnede paa ejendommelig Maade, og vor Nationalkarakter har lagt sig for
+Dagen i den Maade, paa hvilken Problemerne ere blevne behandlede. Ved
+Behandlingen af saadanne Spørgsmaal som de anførte, der ligge paa Grænserne
+mellem den strenge Videnskab og Livet, maa Tænkernes Personligheder
+nødvendigvis medvirke i højere Grad end ved andre Undersøgelser. Og hvor
+Personligheden virker efter sin hele Ejendommelighed, gøre ogsaa de nationale
+Egenskaber sig gældende. De ere jo ikke Lag eller Stykker, der udefra ere
+føjede til de Enkeltes andre Egenskaber, men bestemme fra først af disse og
+klinge med, hvergang Sindets Strenge tone.
+
+At dansk Tænkning har sin Ejendommelighed, kan ses ved Sammenligning med
+svensk Tænkning. Sveriges Aandsliv
+% --- p. 2 ---
+\setcounter{footnote}{0}%
+\opage{2}har modtaget de samme Strømninger fra Udlandet som Danmarks, men de ere paa
+Tankens Omraade blevne tilegnede og udviklede paa anden Maade og i anden
+Retning end hos os. Spekulation og Mystik have spillet en langt større Rolle i
+Sverige end i Danmark, og i Sammenhæng dermed har en Trang til systematisk
+Afslutning gjort sig gældende, der aldrig har fundet fast Jordbund hos os. Den
+danske Tænkning har væsentligt været baaret af psykologisk og etisk Interesse,
+og der har atter og atter gjort sig en besindig Kritik gældende overfor
+Systemdannelserne.%
+% footnote *) on p. 2
+\footnote[1]{Se min Afhandling om svensk og dansk Filosofi i Samlingen
+\textit{Norden} (1902), saavel som min Afhandling \textit{Filosofien i Sverige}
+(Det Letterstedtske Tidsskrift 1879). --- Om de filosofiske Bevægelser i
+Udlandet, der faa Indflydelse paa dansk Filosofi, vil man finde nærmere
+Oplysning i mit Værk \textit{Den nyere Filosofis Historie} ved Hjælp af
+Registret. --- Biografier giver jeg som Regel ikke, især fordi jeg kan henvise
+til de fortrinlige Artikler af min Kollega Professor \emph{Kroman} i
+„Biografisk Leksikon“.} Hos vore ypperste tænkende Aander (Holberg,
+Ørstederne, Sibbern, Kierkegaard) gør denne Ejendommelighed sig gældende, og
+den afføder Tanker og Værker, der vel ikke have grebet ind i den store
+internationale Diskussion om Erkendelsens og Livets Spørgsmaal, men som dog
+have deres Værdi --- og det ikke blot for os. En Karakteristik af danske
+Filosofer vil kunne lære os Mangt og Meget til Orientering overfor hine
+Spørgsmaal, og ofte vil det vise sig, at vore Tænkere meget vel vilde have
+kunnet gøre sig gældende paa en større Skueplads, om Forholdene havde anvist
+dem en saadan. Tankens Himmel er, ligesom den fysiske Himmel, tilgængelig for
+Alle, ikke blot for dem, der fødtes i et stort Folk. Denne Bog vil derfor kunne
+kaste Lys over de filosofiske Problemer, ikke blot tjene til Karakteristik af
+dansk Aandsliv saaledes som det ytrer sig paa Tænkningens Omraade.
+
+\begin{center}\rule{2cm}{0.4pt}\end{center}
+\clearpage
+
+% ===== TEXT (pp. 3--206) =====
+%%BODY%%
+
+\end{document}

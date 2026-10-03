@@ -1,0 +1,204 @@
+% =====================================================================
+%  Harald Høffding, FILOSOFISKE PROBLEMER.  Indbydelsesskrift til
+%  Kjøbenhavns Universitets Aarsfest til Erindring om Kirkens Reformation,
+%  November 1902.  Kjøbenhavn: Universitetsbogtrykkeriet (J. H. Schultz),
+%  1902.  90 pp.
+%  TRANSCRIPTION (Danish) of the 1902 print, complete.
+%
+%  SOURCE: the Royal Library's (KB) scan, ~/bibliotek/Høffding, Harald/
+%  1902-filosofiske-problemer.pdf (SCANS.tsv).  PAGE MAP (pagemap.py):
+%  printed page = PDF page - 13; p. 1 = PDF 14 ... p. 90 = PDF 103.  Front
+%  matter (unnumbered): the Indbydelsesskrift leaf PDF 4 (the same leaf
+%  again at PDF 6), title PDF 8, preface PDF 10, contents PDF 12; these
+%  carry "% --- front matter ---" comments and no \opage.  Not
+%  transcribed: KB's cover sheet (PDF 1), blank and library leaves, the
+%  bound-in university list after p. 90 (PDF 104-123).  Every page turn
+%  is marked "% --- p. N ---" + \opage{N} at the first word of the printed
+%  page; a word divided over a page turn ends in %.
+%
+%  CONVENTIONS: italic -> \textit; small capitals -> \textsc (normal case
+%  inside); printed dashes -> ---, number ranges -> --; quotation marks
+%  „…“ as printed; subscripts as printed (pp. 50-51).  Høffding's notes
+%  are endnotes („Noter“, pp. 85-90, in small type), each headed by its
+%  label and the page it belongs to; in the text the anchors are a
+%  superscript figure and a parenthesis („fremgaaet“²⁸)“).  The labels run
+%  1-12, 12b, 13-31, 31b, 31c, 32-60, as printed; in the Noter the 12b note
+%  is labelled „12)“ (marked PRINTED AS IS).  Not transcribed: folios,
+%  sheet signatures („12“, p. 89), library stamps.
+%
+%  METHOD (the e-book method, 2026-10-02; TRANSCRIPTION-PLAYBOOK §00 point
+%  0).  No one typed the text.  The base text -- words, punctuation,
+%  paragraphs, italics, small caps, headings, note texts -- is the SAGA
+%  e-book (Filosofiske_problemer.epub, in this folder); it was aligned
+%  letter by letter against the scan's own text layer by
+%  ebook-method/filosofiske-problemer/build.py (tracked, repo root), which
+%  also takes every page turn from the layer.
+%  Of the letter and figure disagreements, the script settled by rule
+%  those that are the layer's known faults (glyph confusions, letterspaced
+%  small capitals, dropped accents, specks, the note labels); every other
+%  one was decided at the image from crop sheets (sheets.py, same folder):
+%  52 in the text, 62 in the notes, 22 punctuation disagreements in the
+%  text and 30 in the notes (among them every comma closing an italic
+%  title and every note's last mark), and 4 paragraph disagreements
+%  (decisions.tsv, patches.tsv).  Spot pages 9 and 87 read in full
+%  against the image afterwards; p. 87 led to the rule that a layer glyph
+%  fault settles a disagreement only where the e-book's word is attested
+%  elsewhere in the repository.  The print corrects the
+%  e-book at: p. 2 „dér“, „énhver“ (accents); p. 14 Aarsagsforholdet;
+%  p. 17 Flechsigs; p. 22 Sammenhøren; p. 23 saadant; p. 41 Genstandes;
+%  p. 42 Molekuler; p. 46 a stray point removed; pp. 50-51 the
+%  subscripts; p. 54 fører; p. 64 hele, Verdensprincipet; p. 65 føres;
+%  p. 68 Resultat; p. 70 har; p. 71 Existens; p. 72 Ret, Principet;
+%  p. 77 Friedrich, and „som Selvhævdelsen“, which the e-book omits; in
+%  the Noter: Der, Roberto, apparet, p. 36, er, Bevidsthedsfænomenerne,
+%  Psykologiske, experience, nur, nicht, Wikner, her, Grundlag,
+%  sufficiunt, Wissenschaftslehre, „p. 32 f.“, the point (not comma)
+%  after nine italic titles, the Greek of note 60, the note labels.
+%  PRINTED AS IS: p. 47 „1dentitetsforhold“ (the figure 1 for I);
+%  „(S 3)“, „(S 8)“, „(S 46)“ in the Noter; O with
+%  subscript s for O-zero, pp. 50 and 51; the second „12)“.  One doubtful
+%  point (p. 89, after „Hegel“) is marked % UNSURE.
+%
+%  RESIDUAL RISKS: (1) a misprint that the e-book and the layer both
+%  normalise is invisible to the method; (2) italics and small capitals
+%  are the e-book's, which the layer cannot witness; (3) punctuation is
+%  witnessed only where the layer reads it, and quotation marks and
+%  dashes come from the e-book alone; (4) letterspacing, if any, is not
+%  recorded.
+% =====================================================================
+\documentclass[12pt,a4paper,openany]{book}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{textalpha}
+\usepackage{libertinus}
+\usepackage{libertinust1math}
+\usepackage{graphicx}    % for \reflectbox (the old Danish ɔ: id-est mark)
+\DeclareUnicodeCharacter{0254}{\reflectbox{c}}  % ɔ (U+0254) = reversed c
+\usepackage[danish]{babel}
+\usepackage[protrusion=true,expansion=true]{microtype}
+\usepackage{setspace}
+\usepackage[margin=1.2in]{geometry}
+\usepackage{fancyhdr}
+\setlength{\headheight}{28pt}
+\addtolength{\topmargin}{-13.5pt}
+\usepackage{hyperref}
+\hypersetup{pdftitle={Filosofiske Problemer}, pdfauthor={Harald Høffding}, hidelinks}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LE,RO]{\thepage}
+\fancyhead[RE]{\textit{Harald Høffding: Filosofiske Problemer}}
+\fancyhead[LO]{\textit{1902}}
+\setstretch{1.3}
+\title{\textbf{Filosofiske Problemer}}
+\author{Harald Høffding}
+\date{Kjøbenhavn: Universitetsbogtrykkeriet (J. H. Schultz), 1902}
+\usepackage{marginnote}
+\newcommand{\opage}[1]{\marginnote{\footnotesize\textit{[#1]}}}
+% Contents lines (front matter).
+\newcommand{\tocline}[3]{\noindent\makebox[2.2em][l]{#1}#2\dotfill\ #3\par}
+\newcommand{\tocsub}[2]{\noindent\hangindent=4.4em\hspace*{2.2em}#1\dotfill\ #2\par}
+\newcommand{\tocplain}[1]{\noindent\hspace*{2.2em}#1\par}
+
+\begin{document}
+\maketitle
+\thispagestyle{empty}
+\clearpage
+
+% --- front matter: Indbydelsesskrift (PDF 4; the same leaf again at PDF 6) ---
+\begin{center}
+INDBYDELSESSKRIFT\\[2pt]
+{\scriptsize TIL}\\[2pt]
+{\large KJØBENHAVNS UNIVERSITETS}\\
+{\large AARSFEST}\\[2pt]
+{\scriptsize TIL ERINDRING OM}\\[2pt]
+{\large KIRKENS REFORMATION}\\[2pt]
+NOVEMBER 1902\\[2em]
+% (the University's seal)
+HARALD HØFFDING:\\
+FILOSOFISKE PROBLEMER\\[1em]
+\rule{1cm}{0.4pt}\\[1em]
+{\small KJØBENHAVN}\\
+{\scriptsize TRYKT I UNIVERSITETSBOGTRYKKERIET (J. H. SCHULTZ)}\\
+{\scriptsize 1902}
+\end{center}
+\clearpage
+
+% --- front matter: title (PDF 8) ---
+\begin{center}
+{\Huge FILOSOFISKE}\\[10pt]
+{\Huge PROBLEMER}\\[1.5em]
+{\scriptsize AF}\\[1.5em]
+{\large HARALD HØFFDING}\\[3em]
+\rule{1.5cm}{0.4pt}\\[3em]
+KJØBENHAVN\\
+{\scriptsize TRYKT I UNIVERSITETSBOGTRYKKERIET (J. H. SCHULTZ)}\\
+{\scriptsize 1902}
+\end{center}
+\clearpage
+
+% --- front matter: preface, no heading, in italic (PDF 10) ---
+\begin{itshape}
+Det første Udkast til denne Afhandling laa til Grund for en Række
+Forelæsninger, jeg i Februar Maaned d. A. holdt ved Upsala Universitet efter
+Indbydelse fra dettes humanistiske Sektion. Efterat jeg nu har taget de Emner,
+jeg behandlede i disse Forelæsninger, op til fornyet Drøftelse, vender min Tanke
+sig med hjertelig Hilsen og Tak til den minderige Højskole ved Fyrisaa, som for
+en Tid vilde regne mig blandt sine Lærere, --- og til de ældre og yngre Venner,
+jeg der vandt.
+
+\bigskip
+16. August 1902.
+
+\begin{flushright}HARALD HØFFDING.\end{flushright}
+\end{itshape}
+\clearpage
+
+% --- front matter: contents (PDF 12) ---
+\begin{center}{\large INDHOLD}\end{center}
+\begin{flushright}{\scriptsize Side}\end{flushright}
+\tocline{}{INDLEDNING}{1}
+\tocline{I.}{BEVIDSTHEDSPROBLEMET}{6}
+\tocsub{1. Personlighedsbegrebet og den analytiske Psykologi}{6}
+\tocsub{2. Diskontinuiteter paa det psykiske Omraade}{12}
+\tocsub{3. Psykologi og Fysiologi}{22}
+\tocsub{4. Villie og Energi}{25}
+\tocline{II.}{ERKENDELSESPROBLEMET}{28}
+\tocsub{1. Erkendelsens Arter}{28}
+\tocsub{2. Erkendelsens Principer}{31}
+\tocsub{3. Kvalitet og Kvantitet}{39}
+\tocsub{4. Elementært og idealt Aarsagsbegreb}{43}
+\tocsub{5. Subjekt og Objekt}{48}
+\tocline{III.}{TILVÆRELSESPROBLEMET}{53}
+\tocsub{1. Problem og Metode}{53}
+\tocsub{2. Metafysik som Kunst}{57}
+\tocsub{3. Første Urfænomen (Enhed eller Mangfoldighed)}{59}
+\tocsub{4. Andet Urfænomen (Aand eller Materie)}{62}
+\tocsub{5. Tredie Urfænomen (Bestaaen eller Udvikling)}{65}
+\tocline{IV.}{VURDERINGSPROBLEMET}{70}
+\tocsub{1. Indledning}{70}
+\tocplain{\hspace*{1em}\textit{A. Det etiske Problem.}}
+\tocplain{\hspace*{3em}a. Det etiske Arbejde.}
+\tocsub{2. Kontinuitetsprincipet i Etiken}{72}
+\tocplain{\hspace*{3em}b. Den etiske Vurderings Rationalitet.}
+\tocsub{3. Grundværdiernes Kamp}{75}
+\tocsub{4. De individuelle Betingelsers Forskellighed}{77}
+\tocplain{\hspace*{1em}\textit{B. Det religiøse Problem.}}
+\tocsub{5. Kontinuitetsprincipet i Religionsfilosofien}{78}
+\tocsub{6. Religionens psykologiske Sted}{80}
+\tocsub{7. Historiske Former for Religion}{82}
+
+\medskip
+\noindent Noter S. 85.
+\begin{center}\rule{2cm}{0.4pt}\end{center}
+\clearpage
+
+% ===== TEXT (pp. 1--84) =====
+%%BODY%%
+\clearpage
+
+% ===== NOTER (pp. 85--90) =====
+\begin{small}
+%%NOTES%%
+\end{small}
+
+\end{document}
