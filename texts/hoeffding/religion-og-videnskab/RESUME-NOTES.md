@@ -91,3 +91,9 @@ On Hans's machine it compiles with the real libertinus + danish babel.
 ## Conventions
 See ../../../TRANSLATION-PLAYBOOK.md for the standing method (that file is
 about translation; this is the transcription counterpart).
+
+## 2026-10-03: collated against the scan (ebook-method/collate/check.py)
+
+Run: `python3 ebook-method/collate/check.py religion-og-videnskab [--sheets|--italics|--pages]`; settings in
+`ebook-method/religion-og-videnskab/pagemap.py`, every decision in `ebook-method/religion-og-videnskab/decisions.tsv`. The
+header of transcription.tex says what changed. Ledger row updated (repaired).

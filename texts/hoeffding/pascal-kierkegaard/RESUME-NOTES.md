@@ -259,3 +259,9 @@ page-joint one: 2 in `hoeffding/relation-som-kategori/transcription.tex` and 4 i
 `nielsen/propaedeutik-1860-61/transcription.tex`, neither of which has any
 page-joint hyphens at all.
 
+
+## 2026-10-03: collated against the scan (ebook-method/collate/check.py)
+
+Run: `python3 ebook-method/collate/check.py pascal-kierkegaard [--sheets|--italics|--pages]`; settings in
+`ebook-method/pascal-kierkegaard/pagemap.py`, every decision in `ebook-method/pascal-kierkegaard/decisions.tsv`. The
+header of transcription.tex says what changed. Ledger row updated (repaired).

@@ -114,3 +114,9 @@ Historiens Filosofi* (1811), and that attribution is **confirmed**:
      cut silently here as well.
   3. Høffding's general *Indledning* (pp. 1 ff.) mentions Treschow in passing
      when tracing the Holberg/Sneedorff line forward to Høffding and Kroman.
+
+## 2026-10-03: collated against the scan (ebook-method/collate/check.py)
+
+Run: `python3 ebook-method/collate/check.py udvalgte-stykker [--sheets|--italics|--pages]`; settings in
+`ebook-method/udvalgte-stykker/pagemap.py`, every decision in `ebook-method/udvalgte-stykker/decisions.tsv`. The
+header of transcription.tex says what changed. Ledger row updated (repaired).
