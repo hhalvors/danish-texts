@@ -1,0 +1,2524 @@
+% =====================================================================
+%  R. Nielsen, DR. H. MARTENSENS DOGMATISKE OPLYSNINGER BELYSTE.
+%  Kjøbenhavn: C. A. Reitzel (Bianco Luno), 1850.  75 pp.  Fraktur.
+%
+%  TRANSCRIPTION -- GENERATED; DO NOT EDIT BY HAND.  Rebuild, chained (&&), from the repo root:
+%    python3 ebook-method/martensens-oplysninger/draft.py --emit --force
+%      this template + the scan's text layer (the Royal Library's ABBYY OCR in KB's scan of copy
+%      DA 1.-2.S 3 8°; ~/bibliotek/Nielsen, Rasmus/1850-martensens-oplysninger.pdf, see SCANS.tsv);
+%    python3 ebook-method/collate/check.py martensens-oplysninger --witness ocr --apply
+%      the decisions in decisions.tsv, taken against tesseract's independent reading of the images;
+%    python3 ebook-method/martensens-oplysninger/oepass.py --apply
+%      the ø pass and the word fixes of the unattested-word sweep (word-fixes.tsv);
+%    python3 ebook-method/martensens-oplysninger/finish.py --apply
+%      the footnotes, corrections across markup, Latin (\textit), letterspacing (\emph), PRINTED AS IS marks.
+%
+%  WORD-ACCURACY (2026-10-06).  No e-book and no earlier transcription exist.  The draft (KB's
+%  OCR layer) was collated word by word, with punctuation, quote kinds and word division, against
+%  tesseract (tessdata_best script/Fraktur): 2985 disagreements.  1593 were settled by rule
+%  (rules.py, each decision named): each OCR's known Fraktur glyph faults undone, accepted only
+%  where the cheapest agreement is a word attested in at least two other books of the corpus, or
+%  where one OCR's literal reading is the other's after at most two of the other's known faults;
+%  a third reading (tesseract deu_latf) voting under the witness's word box.  The rest were read
+%  at the image: 851 crops read BLIND by six readers (pilot + 5, controls 12 of 12), decided by
+%  script (readsbox.py, reads.py) or by hand from the readers' transcriptions; a second round of
+%  97 crops for what remained.  7 rule decisions found wrong afterwards (tesseract's x is sometimes
+%  the print's: Paradox, strax, Excerpt) were corrected and the rule narrowed.
+%  Ø: all three OCRs read the print's ø as o (the draft had 7 ø in 73 pp.).  oepass.py restores
+%  it where the o-form is no word (349 tokens) and, for pairs that are both words (for/før,
+%  bor/bør, tor/tør, fore/føre ...), from 229 tight crops of the word alone, without context
+%  (controls 4 of 4): 33 ø.  The print has „før“ twice where sense needs „for“ (p. 73), checked
+%  at the image: PRINTED AS IS.
+%  Then at the image: the unattested-word sweep (130 words found in no other book of the corpus,
+%  128 read: 78 OCR faults mended, 5 misprints kept and marked); every footnote read whole
+%  (eleven pages); the title page and motto page; the Latin and Greek; letterspacing (245
+%  candidate words measured on the images, 4 spaced, and 9 more from the readers' notes and the
+%  main session's own look).  Spot-read in full, pp. 37 and 62: 3 faults found, 2 mended (a word
+%  split by a lost line-end hyphen; „sor“ for „for“ over a page turn).
+%  The translators' reading: 134 odd spots reported; 59 crops read at the image (T01-T59,
+%  .parts/reads/ts-reads.tsv): about 30 faults mended (ø, s/f, a doubled word, two false paragraph
+%  breaks, a stray „15“ signature mark), 6 more misprints kept and marked; „hævder“ (p. 62)
+%  confirmed as printed.  Dropped text: check.py --dropped (witness words the transcription
+%  lacks, two or more in a run) found a whole line the layer had lost (p. 4, „efter at have
+%  slaaet betydeligt“) and three shorter runs (pp. 8, 20, 56); all four mended from the image.
+%  NOT ESTABLISHED: misprints that both OCRs read alike as real words, beyond the two spot pages
+%  (no full image pass); letterspacing outside the candidates read (short words; the extent of
+%  the spaced sentences on pp. 47-48 rests on single lines seen by the main session); in the
+%  footnotes, where the note reader and the collation differed, the collation's word was kept
+%  (d/b and o/ø are hard to see in the small type).
+%  PAGE MARKERS: 73 of 73 exact (check.py --pages; p. 51 turns inside „ideologisk“, split with %).
+%
+%  CONVENTIONS (as Om „Den gode Villie“).  Body in Fraktur; aa (not å); ø as printed.  Emphasis
+%  is letterspacing -> \emph{}.  Latin set in antiqua -> \textit{}.  Greek in Greek type
+%  (textalpha).  Fraktur I/I are one sort: I for I-words (Idee, Ikke), I for J-words (Jeg).
+%  The double hyphen at a line end is resolved; inside a compound it is "-".  The reversed c
+%  „ɔ:“ (id est) as printed.  "% --- p. N ---" + \opage{N} at the first word of printed page N.
+%  Footnotes *), **) per page, as printed.  Folios, signature marks (p. 49 "4", p. 51 "4*") and
+%  the library's stamps and pencil marks are not transcribed.  Print governs; misprints are kept
+%  and marked PRINTED AS IS.
+% =====================================================================
+\documentclass[12pt,a4paper,openany]{book}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{libertinus}
+\usepackage{libertinust1math}
+\usepackage{textalpha}
+\usepackage{graphicx}
+\DeclareUnicodeCharacter{0254}{\reflectbox{c}}  % ɔ (U+0254) = reversed c
+\usepackage[danish]{babel}
+\usepackage[protrusion=true,expansion=true]{microtype}
+\usepackage{setspace}
+\usepackage[margin=1.3in]{geometry}
+\usepackage{fancyhdr}
+\usepackage{hyperref}
+\hypersetup{pdftitle={Dr. H. Martensens dogmatiske Oplysninger belyste}, pdfauthor={Rasmus Nielsen}, hidelinks}
+\setlength{\headheight}{15pt}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LE,RO]{\thepage}
+\fancyhead[C]{\textit{R. Nielsen: Dr. H. Martensens dogmatiske Oplysninger belyste (1850)}}
+\renewcommand{\thefootnote}{\ifcase\value{footnote}\or *)\or **)\or ***)\else
+  \arabic{footnote})\fi}
+\setstretch{1.3}
+\usepackage{marginnote}
+\newcommand{\opage}[1]{\marginnote{\footnotesize\textit{[#1]}}}
+\newcommand{\apage}[1]{\marginnote{\footnotesize\textit{[#1]}}}
+
+\begin{document}
+
+% --- front matter, read at the image 2026-10-06 (.parts/reads/final-reads.txt, JOB A).
+% p. [1], title.  "Dr." is in antiqua; "Martensens", "Reitzel." and "Bianco Luno." are letterspaced.
+% The ornamental rule (a central flower between tapering rules) is drawn as a plain rule; KB's stamp is not transcribed.
+\begin{titlepage}
+\begin{center}
+\vspace*{3em}
+{\large Dr. H. \emph{Martensens}}\\[1em]
+{\Huge Dogmatiske Oplysninger}\\[1.5em]
+belyste\\[0.8em]
+af\\[0.8em]
+Prof. R. Nielsen.\\[2em]
+\rule{8em}{0.4pt}\\[2em]
+{\large Kjøbenhavn.}\\[0.5em]
+Hos Universitetsboghandler C. A. \emph{Reitzel.}\\[0.5em]
+{\small Trykt hos Kgl. Hofbogtrykker \emph{Bianco Luno.}}\\[0.5em]
+1850.
+\end{center}
+\end{titlepage}
+% p. [2], the motto, in small type at mid-page.
+\thispagestyle{empty}
+\vspace*{12em}
+\begin{center}
+„I dit Lys skulle vi see Lys!“\\[0.4em]
+\hspace*{6em}{\small En dogmatisk Oplysning.}
+\end{center}
+\clearpage
+
+
+% ===== TEXT (pp. 3--75) =====
+% --- p. 3 ---
+\setcounter{footnote}{0}%
+\opage{3}Min „undersøgende Anmeldelse“ har altsaa gjort sin Virkning;
+Dr. Martensen, der i Forordet til sin Dogmatik lod
+til at ville affærdige visse Punkter paa en temmelig tvetydig
+og flygtig Maade, har altsaa dog omsider indseet Nødvendigheden
+af at erklære sig med lidt større Bestemthed,
+og har da nu ogsaa i sine „dogmatiske Oplysninger“ oplyst
+os Adskilligt, som uden den „undersøgende Anmeldelse“ vistnok
+var forblevet uoplyst.
+
+At disse med „saamegen Klarhed“ affattede Oplysninger
+maae have vakt Sensation i den theologiske Læseverden
+og aabnet Manges Øine, tør jeg saameget mindre
+betvivle, som ogsaa jeg afnødes den Bekiendelse, at „Klarheden“
+i disse dogmatiske Oplysninger langt overgaaer, hvad
+jeg i saa Henseende havde ventet. Kan altsaa Dr. M. for
+sit Vedkommende være tilfreds med sine Oplysninger, da er
+jeg efter Omstændighederne i Sandhed ogsaa tilfreds; ja
+denne min Tilfredshed har netop bevirket, at en forholdsviis
+lang Tid allerede er hengaaet, inden jeg igjen kunde
+beqvemme mig til at afbryde min Ro, og tage fat paa
+Sagen.
+
+ Hvad der da især maa fremhæves som umiskjendeligt
+% --- p. 4 ---
+\setcounter{footnote}{0}%
+\opage{4}Fortrin ved de „dogmatiske Oplysninger“, er den uindtagelige
+Position, hvori Dr. M. her stiller sig til „Kritiken“, og den
+øiensynlige Overlegenhed, hvormed han hævder sit dogmatiske
+ποῦ στῶ ligeoverfor sine afmægtige „Recensenter.“
+
+Her kan da naturligviis ikke være Tanke om, at Dr.
+M. skulde være bragt i nogensomhelst Forlegenhed eller have
+endog en eneste Indrømmelse at gjøre sine Modstandere.
+Tvertimod, med hans dogmatiske Speculation er Alt i sin
+bedste Orden: Dogmatiken, dens Udførelse, dens Indledning,
+dens Forord, Alt er her saa sikkert, saa begrundet, saa sammenhængende,
+at Den, der nu ikke kan see, at „Kritikens“
+Indsigelser ere ligesaa ubeføiede, som Dr. Ms Recensenter
+incompetente, maa mangle al „Evne til umiddelbar og levende
+Ideeanskuelse.“
+
+Man har nu rigtignok meent, at en Kritik over Dr.
+Ms videnskabelige Behandling af de christelige Dogmer virkelig
+var kommen i Gang; men, om det nu ligger i Mangel
+paa „Evne til umiddelbar og levende Ideeanskuelse“,
+ifølge de dogmatiske Oplysninger, er det en reen Indbildning;
+Kritiken er endnu ikke begyndt. „Jeg kan“ --- siger
+Dr. M. (S. 7) --- kun tillægge hele denne Critik en blot
+foreløbig Charakteer, ja maa finde, at Critiken over min
+Dogmatik, saafremt en saadan overhovedet turde forventes,
+endnu ikke kan siges at være begyndt.“\dots{}
+
+Man har endvidere meent, at der i Mag. Kierkegaards
+mange Skrifter, og navnlig i Pseudonymen „Johannes Climacus“,
+var Adskilligt, som vel turde komme i Betragtning,
+naar det gjaldt om at vurdere en Dogmatiker, som,
+efter at have slaaet betydeligt af i Speculationen, dog ikke
+har kunnet beqvemme sig til at opgive Speculationen; men ---
+% --- p. 5 ---
+\setcounter{footnote}{0}%
+\opage{5}det maa vist ligge i Mangel paa „Evne til umiddelbar og
+levende Ideeanskuelse“ --- ogsaa dette er, ifølge de dogmatiske
+Oplysninger, en reen Vildfarelse. Dr. M. har (S.
+13) aldeles ingen Brug for de „Læresætninger“, man som
+Uddrag af Pseudonymen har villet meddele ham, efterdi han
+paa disse „maa anvende det gamle Ord, at det Sande deri
+ikke er Nyt, og det Nye ikke Sandt.“
+
+Man har endelig meent, at den evangeliske Opfattelse
+af Troen, som det for den naturlige Forstand uigjennemtrængelige
+Paradox, maatte, efter Alt hvad den nyere Tid har
+oplyst om Ueensartetheden af Tro og Viden, naar Begrebet
+skjærpedes, dog sætte den speculerende Dogmatiker i nogen
+Forlegenhed; men --- ogsaa dette maa vist hidrøre fra Mangel
+paa „Evne til umiddelbar og levende Ideeanskuelse ---
+ogsaa dette er, ifølge de dogmatiske Oplysninger, en reen
+Vildfarelse. Knuden stikker i, at man har forsømt at oversætte
+Ordet Paradox i Modersmaalet. Dr. M., der „i
+Almindelighed pleier, naar en vanskelig Skoleterminologie
+foreligger ham, at opsøge det tilsvarende Udtryk i Modersmaalet“,
+har da ogsaa, ved at give adskillige ret passende
+Oversættelser af dette vanskelige Ord, med sædvanlig Grundighed
+udfundet, at „Paradoxet“, naar man blot søger de
+tilsvarende Udtryk i Modersmaalet, aldeles Intet udsiger,
+som jo meget vel lader sig forene med --- „den dogmatiske
+Speculation.“
+
+Ere nu Recensenternes kritiske Indvendinger virkelig
+saa intetsigende, som sees kan i de dogmatiske Oplysninger,
+saa kan man da heller ikke være uenig om, hvorledes de
+Personer, der have kunnet fremsætte slige Indvendinger,
+maae blive at behandle. Ogsaa dette har Dr. M. forstaaet.
+% --- p. 6 ---
+\setcounter{footnote}{0}%
+\opage{6}Istedetfor de sædvanlige Omskrivninger, hvorved man ellers
+i den litterære Polemik søger at blotte sin Modstander uden
+dog at krænke ham moralsk, betjener Dr. M. sig her med
+Alvor og Myndighed af den „ligefremme Meddelelse“, og
+lader uden Omsvøb det ærede Publicum vide, hvad hans
+Modstandere ere for Folk.
+
+Den Ene af disse Modstandere, nemlig Mag. Stilling,
+er da saaledes, ifølge de dogmatiske Oplysninger (Jfr. S.
+7 -- 8), et i speculativ-dogmatisk Forstand aldeles forulykket
+Subject, et Menneske, der i den Grad mangler „positive
+Kundskaber og et paa religiøs Livserfaring grundet Bekjendtskab
+med Aabenbaringens Sandheder, at han endog
+har meent paa et Par Blade at kunne affærdige Treenighedslæren,
+Incarnationslæren, Ubiqvitetslæren, Læren om
+Syndefaldet og Arvesynden, om Frihed og Naade, foruden
+en heel Cyclus af andre Dogmer“; en Dilettant i Logiken,
+der i den Grad er berøvet „Evne til umiddelbar og levende
+Jdeeanskuelse“, at Dr. M. slet ikke kan indlade sig med ham,
+især da han --- hvad ikke kan Andet end støde Dogmatikerens
+æsthetiske Sands, har --- „uvadskede Hænder“ og ligner
+„Erasmus Montanus!“ Med denne „dogmatiske Oplysning“
+er Mag. St. altsaa een Gang for alle afviist; Dr. M. veed ikke,
+om Andre ville „tage nærmere Hensyn til Hr. Magisterens
+Skriveri“, Hs. Høiærværdighed har (Oplysn. S. 8) for sit
+Vedkommende strax lagt det hen, for ikke mere at optage det.“
+
+Den Recensent, der med et Apparat af Beviser og Grunde,
+som det, hvormed Mag. St. har udstyret ovennævnte
+Kritik, kan opnaae, at den kritiserede Forfatter behandler
+ham saa forekommende, som Dr. M. i nærværende Tilfælde
+behandler Mag. Stilling, kan imidlertid gratulere sig; thi det
+% --- p. 7 ---
+\setcounter{footnote}{0}%
+\opage{7}er jo umiskjendeligt Beviis paa, at Kritiken har virket tilgavns.
+Mag. St. har saaledes denne Gang unegtelig været heldigere
+end jeg; hans Kritik har aabenbart gjort en grundigere
+Virkning, end min, hvorfor Dr. M. da ogsaa behandler
+ham med øiensynlig Forkjærlighed. Alligevel er jeg dog ikke
+misundelig; jeg under gjerne Mag. Still. al den litterære
+Anerkjendelse, han med Rette fortjener, og har desuden al
+Grund til efter Omstændighederne at være tilfreds med det
+moralske Skudsmaal, de „dogmatiske Oplysninger“ tilkjende
+mig; her er det, det lyder saaledes: „Salige ere de, der
+ikke ville paanøde Andre deres Viisdom!“ Dette Ord af
+„den berømte Dogmatiker, den gamle Daub“, maatte Dr.
+Martensen (S. 9) uvilkaarligt mindes, da han saae „den
+Fremfusenhed“, hvormed Prof. N. vil paanøde ham den
+Viisdom, han (Prof. N.) mener at have fundet i Mag.
+Kierkegaards Skrifter. Prof. N., der dog „selv maa erkjende,
+at han ved et Lykketræf er kommen over paa det
+nye Standpunkt“, er nu tillige saa fortrydelig over, at Dr.
+M. ikke ogsaa har skiftet Standpunkt, at han endog „med
+en til Fanatisme grændsende Heftighed“ vil give Hs. Høiærværdighed
+„Syn paa Problemet.“ Den fremfusende, paatrængende,
+fanatiske Prof. N. er dog endnu (Dogm. Oplysn.
+S. 11) ikke selv bleven hjemme paa sit nye Standpunkt, og
+Dr. M. kan derfor (S. 11) ikke Andet end finde, at det er
+gaaet ham, som det pleier at gaae Begyndere, der antage
+en ny philosophisk Lære, at de ikke blot tænke med deres
+Mesters Tanker, men ogsaa tale i disses Ord, og for en Tid tabe
+Brugen af deres egen Tunge. Den fremfusende, paatrængende,
+fanatiske Prof. N. er endnu selv (Dogm. Oplysn. S. 11)
+„saaledes indviklet i Svøbet af den nye Viisdom“, og „be%
+% --- p. 8 ---
+\setcounter{footnote}{0}%
+\opage{8}væger sig endnu saa besværlig, saa discipulært i denne Viisdoms
+første Elementer, at han ikke engang formaaer at foredrage
+Dr. Martensen sine Læresætninger med sine egne
+Ord.“ --- „At Prof. N. ikke var synderlig stærk i at anerkjende
+specifiske Forskjelle og iagttage Grændser“, har Dr. M.
+(Opl. S. 62) længe vidst; men nu gaaer Forvirringen i dette
+fremfusende, fanatiske Hoved saavidt, at Prof. N. ikke længere
+gjør Forskjel imellem Godt og Ondt, men uden videre
+„slaaer det Ondes Mysterium sammen med alle øvrige, ikke
+blot overnaturlige, men ogsaa naturlige Mysterier.“ (Jfr.
+Dogm. Oplysn. S. 65); ja --- saa forvirret er denne paatrængende,
+fanatiske Prof. N., at han, skjøndt aabenbart
+betagen af Iver for en eensidig „Intellectualisme, Kriticisme
+og Scholasticisme“, dog ikke desto mindre udgiver sig
+for Troens Forsvarer (Dogm. Oplysn. S. 71), mener (Oplysn.
+S. 72) at tale i Troens Eenfold om de guddommelige
+Tings Ubegribelighed, er begyndt at blive „absolut i Troen“,
+og „har begyndt at tale med den forunderlige Parrhesie og
+Vished, som er forbausende for andre simple Troende, der
+ikke saa pludselig kunne hæve sig til de høieste Troeshøider.“
+--- Med Alt dette forudseer nu Dr. Martensen (Oplysn.
+S. 76), „at den Tid ikke vil være fjern, da der atter
+vil foregaae en Hovedforandring i Prof. Ns Anskuelser; thi
+Dr. Martensen kan umulig antage, „at en saa levende, saa
+kraftig og, tiltrods for al sin Flygtighed og dilettantmæssige
+Ustadighed, dog væsentlig grundig Natur længe kan finde
+sig tilfredsstillet ved at gaae den Vei, han nu er slaaet ind.“
+
+See, dette er uden Fordreielse og Overdrivelse den Belysning,
+hvori Dr. Ms dogmatiske Oplysninger stille dem,
+der have tilladt sig at rokke ved ποῦ στῶ, og betvivle
+% --- p. 9 ---
+\setcounter{footnote}{0}%
+\opage{9}Videnskabeligheden af hans „christelige Dogmatik.“ Men ---
+er det martensenske ποῦ στῶ nu ogsaa virkelig saa urokkeligt,
+og den Sikkerhed, Overlegenhed og Myndighed, hvormed
+han optræder i sine dogmatiske Oplysninger, saa afgjørende
+og fast begrundet, at Enhver, der vover at tvivle
+derom, uden videre maa finde sig i at blive anseet for et
+forvirret, fremfusende, paatrængende, fanatisk Hoved? Dette
+Spørgsmaal er dog vel neppe uden al Betydning. Vi faae
+nu at see.
+
+Før jeg imidlertid gaaer nærmere ind paa Sagen selv,
+maa jeg foreløbig henlede Læserens Opmærksomhed paa to
+Punkter, nemlig: det besynderlige Forhold, hvori Forfatteren
+af de „dogmatiske Oplysninger“ stiller sig til Pseudonymen,
+Johannes Climacus, og det paafaldende Hastværk,
+hvormed han affærdiger Mag. Stilling.
+
+Med megen Bestemthed afviser Dr. Martensen ethvert
+Hensyn til de af Mag. Kierkegaard udgivne Skrifter. Han
+erklærer saaledes (S. 12): „Hvad nu angaaer Johannes
+Climacus og de øvrige Pseudonymer, da ere disse i nærværende
+Sammenhæng mig aldeles uvedkommende.“ Men det
+lader sig dog alligevel ikke negte, at den tilsyneladende Bestemthed,
+hvormed den høiærværdige Forfatter viser Pseudonymen
+fra sig (en Bestemthed, der strax efter, S. 13, udgives
+for Beskedenhed) forraader en vis indre Forlegenhed,
+som end ikke den dogmatiske Sufficance, hvormed Dr. M.,
+her, som ellers overalt, fremsætter sine Paastande, kan skjule.
+Det Uddrag af Pseudonymen, der udgjør den første Halvdeel
+af min „undersøgende Anmeldelse“, er udentvivl kommet
+Hs. Høiærv. lidt ubeleiligt, just fordi det kom --- fra den
+Kant. Dr. M. har nemlig af visse Grunde allerhelst ønsket
+% --- p. 10 ---
+\setcounter{footnote}{0}%
+\opage{10}at undgaae ethvert umiddelbart Sammenstød med en vis
+Johannes Climacus og den hele „vidtløftige Litteratur“,
+hvortil denne Skikkelse hører; men, da han nu saae, at
+den Basis, hvorpaa min kritiske Vurdering af hans dogmatiske
+Speculation hviler, var et aabenlyst Uddrag af Pseudonymen,
+har han, som det synes, følt, at han ikke vel kunde
+indlade sig paa min „undersøgende Anmeldelse“, uden at sige
+et Par Ord om Pseudonymen.
+
+Saa kom Dr. Martensen da omsider i et Slags
+umiddelbar Berøring med Pseudonymen; men --- er det
+ikke mærkværdigt! --- neppe faaer Hs. Høiærv. sin „ligefremme
+Meddelelse“ begyndt med et Par Ord, før det ryster
+i ποῦ στῶ, og her viser sig en indre Usikkerhed, en Tvivlraadighed
+og Vaklevorrenhed, der ellers er den martensenske
+„Genius“ saa fremmed.
+
+Det ubehagelige vis à vis med den polemiske Pseudonym
+gjør jo virkelig den ellers bestemte Dogmatiker saa
+tvivlraadig og vankelmodig, at han end ikke er enig med
+sig selv om, hvorvidt han vil vedgaae at have læst Pseudonymen
+eller ikke læst ham, forstaaet ham eller ikke forstaaet
+ham: han vil, som vi nu skulle see, baade det Ene og det
+Andet, og dog alligevel hverken det Ene eller det Andet,
+en Tilstand, der kategorisk udtrykker Vankelmodighed.
+
+Paa den ene Side vil Dr. Martensen nyde Fordelen
+af sit fine Bekjendtskab med Mag. Kierkegaards Skrifter,
+og giver ikke utydelig at forstaae, at han har en langt
+anden (og da naturligviis ogsaa langt rigtigere) Opfattelse
+af disse Skrifter, end jeg, der dog vedgaaer at have studeret
+dem; idet han jo (S. 12) antager, „at disse Skrifter
+bevæge sig i en heelt anden Retning, end den af Prof.
+% --- p. 11 ---
+\setcounter{footnote}{0}%
+\opage{11}Nielsen indslaaede.“ --- Paa den anden Side vil Dr. Martensen
+slet ikke lægge nogen Vægt paa sin Opfattelse af
+Pseudonymerne, „thi“ --- siger han (S. 13) --- „mit Kjendskab
+til denne vidtløftige Litteratur er, som sagt, kun saare
+ringe og fragmentarisk.“
+
+Da nu Dr. Ms Kjendskab til Pseudonymernes „vidtløftige
+Litteratur“, som sagt, er „saa ringe og fragmentarisk“,
+bliver det Uddrag af Johannes Climacus, hvoraf Hs.
+Høiærv. saa høilig generes, med dogmatisk Bestemthed erklæret
+for et Indbegreb af Sætninger, for hvilke Ingen uden
+jeg skal være ansvarlig.
+
+Det Ansvar, der i denne Henseende paaligger mig, skal
+jeg da heller ikke fragaae: jeg bør virkelig staae til Ansvar
+for, at de omhandlede “Sætninger“ ere Pseudonymens egne,
+og at de ikke i noget Væsentligt ere forvanskede af mig; derimod
+er der noget Andet, hvorfor jeg ikke tør staae til Ansvar:
+jeg tør nemlig ikke svare for, hvorvidt Dr. M. vil vedgaae at
+have forstaaet disse „Sætninger“, eller ikke. --- Da det jo fornemmelig
+er disse „Sætninger“ paa hvis eftertrykkelige Bekjæmpelse
+og grundige Gjendrivelse de „dogmatiske Oplysninger“
+gaae ud: skulde man rigtignok formode, at Dr. M.
+ligefrem vilde vedkjende sig at have forstaaet „Sætningerne.“
+Men ganske vis derpaa kan man dog alligevel ikke være; thi S. 17—18 beklager Hs. Høiærv. sig høilig over, at hans
+Recensent ikke har forsøgt sig i en selvstændig Fremstilling,
+„for“ --- saa lyde hans Ord --- „at opklare disse for mig
+og for saamange Andre uforstaaelige Sætninger, men\dots{}.
+har affærdiget os med Pseudonymens egne Ord, hvorved
+vi bleve ligesaa kloge, som vi vare tilforn. Thi naar det
+gik os saaledes med det grønne Træ eller Pseudonymens
+% --- p. 12 ---
+\setcounter{footnote}{0}%
+\opage{12}Skrifter, at vi ikke kunde faae det rette Syn derpaa, hvorledes
+skal det da gaae os med det tørre, eller med Prof.
+Nielsens Excerpt?“
+
+Altsaa --- hvis jeg ikke feiler --- vedgaaer Dr. M., at
+han endnu ikke har forstaaet Pseudonymens „Sætninger.“
+Ja han vedgaaer endnu Mere, thi han vedgaaer (S. 18),
+at han tilligemed „saamange Andre“ virkelig engang har
+taget sig for at studere Pseudonymerne og arbeide sig ordentlig
+igjennem den hele „vidtløftige Litteratur“, men har
+maattet opgive det, være sig paa Grund af hans „individuelle
+Aandsretning“ eller anden Forhindring.
+
+Dr. M., der jo netop lægger saamegen Vægt paa den
+grundige Forskning, Dr. M., som jo netop i sine „dogmatiske
+Oplysninger“ har leveret os saa værdifulde Prøver paa
+sine lærde Forskninger i Tertullian og Anselm, den forskende
+Dr. Martensen kan dog umulig beklage sig over ikke at
+kunne forstaae en original Forfatter, naar han ikke vil gjøre
+sig den Uleilighed at forske, --- „\textit{negligentiæ mihi videtur};
+ja, \textit{negligentiæ mihi videtur}!“ Dr. M. har altsaa for Alvor
+forsket i Pseudonymerne, forsket efter Mening og „sammenhængende
+Erkjendelse“, men --- hans alvorlige Forskning
+har været forgiæves.
+
+Dog, hvad siger jeg, Dr. M. har jo slet ikke forsket
+i Pseudonymerne, ikke engang gjort sig den Uleilighed at
+læse dem ordentlig igjennem; han tilstaaer det selv: „mit
+Kjendskab til denne vidtløftige Litteratur er, som sagt, kun
+saare ringe og fragmentarisk.“ --- \textit{negligentiæ mihi videtur},
+ja, \textit{negligentiæ mihi videtur}! --- men han tilstaaer det jo
+selv, og man maa troe en saa alvorlig Mand paa hans Ord.
+
+Dr. M. kan altsaa erklære Pseudonymerne („det grønne
+% --- p. 13 ---
+\setcounter{footnote}{0}%
+\opage{13}Træ“) for uforstaaelige, endskjøndt han egentlig slet ikke har
+læst dem; Dr. M. kan altsaa nok gjendrive Pseudonymens
+„Sætninger“, men han kan ikke forstaae dem: see det er
+Punkter, for hvilke jeg ikke vil være ansvarlig\footnote[1]{Dr. Martensen beklager sig over, at han ikke kan forstaae Pseudonymerne, men kun i disse Skrifter finde, hvad han i Forordet til sin Dogmatik kalder „Strøtanker, Aphorismer, Indfald og Glimt“. Denne Klage afvises som ubeføiet. Naar man kun læser en Forfatter flygtig og „fragmentarisk“, hvorledes skulde man saa kunne finde Mere end Strøtanker og Aphorismer? Den „ligefremme Meddelelse“ af Dr. M., at han ikke har kunnet forstaae Pseudonymerne, bliver altsaa her at opfatte som „en indirect Meddelelse“, at nemlig Hs. Hv. har forsømt at læse.}.
+
+Dog, om Pseudonymens „indirecte Meddelelse“ saavel
+som om Dr. Martensens og mit Forhold til samme skal jeg
+siden hen udtale mig lidt udførligere; jeg gaaer nu over til
+det andet Punkt: Behandligen af Mag. Stilling. % PRINTED AS IS: Behandligen (for Behandlingen)
+
+Blandt de Ankeposter, Dr. M. fremfører imod min
+„undersøgende Anmeldelse“, udhæves især den, at jeg ikke
+skal have seet mig istand til at gjengive Pseudonymernes
+Problem med mine egne Ord, eller gjøre tilbørlig Rede
+for, hvorledes den foregivne Splid imellem Tro og Viden
+egentlig opkommer; men derimod har paa en ret discipulær
+Maade confunderet den indirecte og ligefremme Meddelelse
+med hinanden.
+
+Dersom Dr. M. nu virkelig for Alvor lægger nogen
+Vægt paa denne mod mig fremsatte Klage, dersom det nu
+virkelig er hans oprigtige Ønske at faae Problemets Tilblivelse
+beskreven, omskreven og tydeliggjort i en ligefrem
+og docerende Form: maa man da ikke høilig undre sig over,
+at Hs. Hv. med en saa yderlig, eller rettere, med en saa inderlig
+Indignation har kunnet forkaste Mag. Stillings
+Bi%
+% --- p. 14 ---
+\setcounter{footnote}{0}%
+\opage{14}drag. Alt hvad den høiærværdige Dogmatiker saa høilig
+savner hos mig, vil han jo netop kunne finde hos Mag.
+Stilling.
+
+Naar Dr. M. altsaa opholder sig over min store Udygtighed,
+at jeg nemlig er „saaledes indviklet i Svøbet af den
+nye Viisdom, og endnu bevæger mig saa besværligt, saa
+discipulært i denne Viisdoms første Elementer, at jeg ikke
+engang formaaer at foredrage ham mine Læresætninger med
+mine egne Ord“; naar Dr. M., siger jeg, fra sin gamle
+Viisdoms ophøiede ποῦ στῶ seer ned paa min Ringhed og
+overskuer min Uformuenhed: da burde Hs. Høiærv. dog idetmindste
+forunde Mag. Stilling et mildere, mere indbydende
+Blik, og glæde sig over, at Magisteren i saa Henseende er
+langt mere fremmelig, end jeg.
+
+Mag. Stilling er nemlig ikke, som jeg, saaledes indviklet
+i Svøbet af den nye Viisdom, at han skulde have
+tabt Brugen af sin egen Tunge, thi han formaaer virkelig
+at foredrage Dr. Martensen „sine Læresætuinger med sine % PRINTED AS IS: Læresætuinger (u for n)
+egne Ord“; Mag. Stilling har da heller ikke, som jeg, det
+Uheld at confundere den indirecte Meddelelse med den directe,
+thi hans Meddelelse er saa ligefrem og docerende,
+som muligt. Da jeg imidlertid til min store Forbauselse
+seer, hvorledes Dr. M. har lagt Mag. St.s Skrift tilside,
+for ikke mere at optage det, vil jeg, for at bevise, hvad jeg
+siger, ved denne Leilighed optage dette Skrift igjen, og i faa
+Hovedtræk erindre Læseren om dets Indhold.
+
+I sin med logisk Skarphed udarbeidede Afhandling behandler
+Mag. St. netop de to „Læresætninger“, hvorpaa det
+i denne Undersøgelse især kommer an, nemlig I) \textit{Quæro intelligere},
+\textit{ut credam}, og II) \textit{Credo, ut intelligam}. Altsaa:
+
+% --- p. 15 ---
+\setcounter{footnote}{0}%
+\opage{15}„I) \textit{Quæro intelligere, ut credam} (Jeg søger ved
+Tanketilegnelse, ved videnskabelig Erkjendelse, videnskabelig
+Beviisførelse at gjenoplive min ved Reflexion lidt afmattede
+Tro).“
+
+Under denne Overskrift afhandler Mag. Stilling („Om
+den indbildte Forsoning af Tro og Viden“, S. 3—44) det
+fleersidige Forhold, hvori den menneskelige Tænkning kan
+stille sig til sin Gjenstand, og beviser saa deraf, at det religiøse
+Object, Troens og Haabets Gjenstand, deri er forskjelligt
+fra ethvert andet Tankeobject, at det, naar Spændingen
+naaer sit Høieste, endog frastøder og tilbageskrækker den efter
+Viden higende Subjectivitet. Dette frastødende Forholds
+dybere Natur er imidlertid saa langt fra at blive den Reflecterende
+tydeligt ved første Øiekast, at tvertimod den i
+Theorierne arbeidende Menneskeaand har maattet gjennemgaae
+mange og smertelige Erfaringer, for den lærte at indsee,
+hvad dette vil sige. Thi den af Troen befrugtede Tænkning begynder egentlig med at betragte det christelige Object
+som ethvert andet Object, der dog alligevel efterhaanden
+maa lade sig meer og meer forarbeide og tilegne i videnskabelig
+objectiv Viden.
+
+„Lad det Christelige endog“ --- saaledes lader Forf.,
+S. 7—8, Aanden tale i Monolog --- „kalde sig selv „en
+haard Føde“, min Tankekraft, der er forsynet med saa stærke
+Fordøielsesorganer, skal vel nok fordøie det; ja Opgaven, at
+tænke det, skal og maa lykkes; thi først saaledes er det
+egentlig mit, først saaledes er det egentlig inderliggjort,
+først saaledes er jeg ligeoverfor det en fri uendelig Subjectivitet,
+befriet fra al udvortes Autoritets utaalelige Tryk;
+først saaledes er mit Forhold til det christelige Object et
+% --- p. 16 ---
+\setcounter{footnote}{0}%
+\opage{16}Forhold, der er den menneskelige Aand værdigt, thi --- „der
+Mensch, da er Geist ist, darf und soll sich selbst des Höchsten
+würdig achten“, von der Größe und Macht seines Geistes
+kann er nicht groß genug denken; und mit diesem Glauben
+wird nichs so spröde und hart seyn, das sich ihm nicht eröffnete.
+Das zuerst verborgene und verschlossene Wesen des
+Universums hat keine Kraft, die dem Muthe des Erkennens
+Widerstand leisten könnte; es muß sich vor ihm aufthun,
+und seinen Reichthum und seine Tiefen ihm vor Augen legen
+und zum Genusse geben.“
+
+Det er Hegels Aand, der taler; det er den theoretiske
+Videns Særkjende, at den altid forudsætter et ligefremt
+Forhold imellem det erkjendende Subject og Erkjendelsens
+Object, et Forhold, hvori Subjectiviteten tilsidst maa blive
+det Overgribende. I dette Punkt er der altsaa ikkun den
+Forskjel imellem den hegelske og den theologiske Speculation,
+at den hegelske Tænkning ikke bliver staaende paa Halvveien
+men fuldfører Conseqvensen. Først ved dette dristige Forsøg
+blev det da tilfulde aabenbart, at det christelige Object,
+Troens og Haabets Gjenstand, er ueensartet med Videnskabens,
+og at der er en Uendelighedens Forskjel mellem det, at
+hvile i objectiv Vished, og det, at vandre i Tro og i Haab.
+Forsøget viste sig (Anf. Skr. S. 12) som „et Overgreb, mod
+hvilket Guddommen ligesom protesterer med de Ord: „nei!
+her er ikke Du, Mennesket, men jeg, Herren, den „Overgribende“,
+der gaaer ud over dit Begreb, et Kors for din
+Tanke, et Kors, der kun kan bæres af dit Hoved ved at
+tage alle Tanker tilfange under Troens Lydighed.“
+
+Denne „Troens Lydighed“ er imidleitid ikke at forvexle % PRINTED AS IS: imidleitid
+med den indsmigrende Underdanighed, hvormed en mystisk
+% --- p. 17 ---
+\setcounter{footnote}{0}%
+\opage{17}uklar Tænker kan faae isinde at lade (S. 14) „sin Tankekraft
+engagere som Dogmernes Jabroder; et Engagement,
+der vel stundom tilbydes den af dogmatiserende Tænkere.
+Ligesom nemlig en Jabroder stedse engageres efter den Methode,
+at han tilsyneladende og for et Skins Skyld beholder
+en fri selvstændig Mening, medens han dog i Virkeligheden
+kun skal snakke Herren efter Munden: saaledes kan man
+ogsaa stundom falde paa at ville engagere Tankekraften
+paa samme nedværdigende Betingelser, og derved opnaae
+dens servile Underdanighed, en Underdanighed og et Forhold,
+der rigtignok er heelt forskjelligt fra det Forhold,
+hvor Tanken, efter ridderlig Kamp, omsider giver sig til
+Fange under Troens Lydighed.“
+
+Under den fortsatte Anstrengelse for Tilegnelsen af
+Aabenbaringstankerne kunne nu vistnok „mangfoldige Skuffelser
+og Nuanceringer i det reflecterende Subjects Forhold
+til Objectet“ vise sig; „men“ --- hedder det S. 15 --- „væsentlig
+er der i dette Forhold kun tre Former mulige, alt
+eftersom enten I. overveiende Objectets (de saakaldte Aabenbaringstankers)
+Selvstændighed hævdes; eller II. overveiende
+det tænkende Subjects Selvstændighed hævdes ; eller III. baade
+Objectets og Subjectets Selvstændighed hævdes samtidigen.
+Under I. henfører Mag. St. det Slags Tænkere , der paatage
+sig „at tænke og at fremstille som tænkelig hele den
+saakaldte gamle orthodoxe Christendom“ (Göschel).
+
+Standpunktet II. repræsenteres af Hegel og Marheineke.
+Paa dette Standpunkt er „Spændingen mellem Object
+og Subject egentlig bortfalden.“ Det christelige Object
+blev her egentlig nedsat til et upræget modstandsløst Stof,
+der maatte finde sig i at corrigeres efter Tankens Fordring.
+% --- p. 18 ---
+\setcounter{footnote}{0}%
+\opage{18}„Hvad der (S. 20) fremfor Alt var fornødent, det var en
+Kritik, som gjorde Ende paa Skinforeningen, (som kun var
+opnaaet ved Subjectets Overgreb over Objectet), og som
+fremstillede det Christelige i sine skarpe Conturer, saa at
+det ret maatte vorde Subjectet iøinefaldende, at Objectet
+(Dogmet) vilde være en haard Føde for dets Tanke.“
+
+Først paa Standpunktet III. er Partiet lige. „Objectet
+er i denne Form af Forholdet meer end Stof, Subjectet
+meer end Jabro'er. Og, idet saaledes begge Leds Selvstændighed
+samtidigen hævdes, maa det kunne komme til
+Afgjørelse, om det selvstændige Subject formaaer ved Erkjendelsesproces
+at tilegne sig det uforvanskede Object eller
+ikke.“ --- Hvorledes „Spændingen“ her opkommer, og hvad
+den væsentlig betyder, ere nu de Cardinalpunkter, Mag.
+St. behandler med ligesaamegen Varme, som indtrængende
+Skarphed.
+
+Mag. St. opfatter „Spændingen“ fra to Sider: den
+theoretiske og den praktiske. „I det theoretisk-spændte Forhold
+(S. 23) beroer Spændingens Intensitet og Omfang
+paa Intensiteten og Omfanget af Subjectets Reflexionskraft.
+Jo intensivere Reflexionskraft, desto stærkere theoretisk Spænding;
+og det er derfor ingenlunde ethvert Subjects Sag at
+komme i denne Spænding. I det personligt spændte Forhold
+derimod er væsentlig ethvert, selv det simpleste Menneske,
+saasnart han af Tilværelsen saaledes udkaares til
+Trængsel og Smerte, at hvad der --- seet og opfattet paa
+menneskelig Viis --- af ham, den Paagjældende, maa føles
+og opfattes som den dybeste Ulykke og Modgang, der kuer
+og hæmmer hans Liv, dog, seet og opfattet paa christelig
+Viis, skal være det Bedste, Guds Styrelse, Medgang. Men
+% --- p. 19 ---
+\setcounter{footnote}{0}%
+\opage{19}først Foreningen af det theoretisk spændte og det praktisk
+(personlig) spændte Forhold i eet Subject danner Spændingens
+Høieste og den Livs-Situation, i hvilken det reflecterende
+Subject maa kunne faae lidt at vide om, hvad det
+er, der egentlig bydes ham, naar det bydes ham at troe.“ ---
+Den Læser, der med sund Alvor og stille Eftertanke vil
+prøve, hvad Afhandlingen (S. 24--- 44) meddeler om den
+christelige Forsynstro og det christelige Bønsforhold, skal i
+Sandhed „faae Syn“ paa Problemets Tilblivelse og opdage
+et „Paradox“, der ingenlunde lader sig tillæmpe til dogmatisk
+Speculation derved, at man søger „det tilsvarende Udtryk
+i Modersmaalet.“ --- „II) \textit{Credo, ut intelligam} (Jeg, en Reflecterende, er
+fra Reflexionsveiene heldigviis sluppen tilbage til et fast,
+urokket bibelsk-kirkeligt \textit{Credo}, og søger nu atter fra samme
+af meer og meer at hæve min Troes-Vished til Intelligensens
+Vished).“
+
+Under denne Overskrift afhandler altsaa Mag. Stilling
+(S. 45—92) den Sætning, som vel med Rette maa kaldes
+Dr. Martensens Cardinalsætning, den Sætning, som egentlig
+betegner vor speculative Dogmatikers ποῦ στῶ; hvoraf
+det da foreløbig kan sees, at Dr. M. gjør sine Recensenter
+stor Uret, naar han beskylder dem for, at de slet ikke ville
+sætte sig ind i hans „Grundanskuelse“, og begynder sine
+„dogmatiske Oplysninger“ med at udslynge Luthers Ord:
+„Ihr habt einen andern Geist als wir!“ --- imod dem.
+
+Den udførlige Drøftelse af „\textit{Credo, ut intelligam}“ har
+Mag. St. allerede indledet i sit foregaaende Afsnit; idet
+han (S. 37) gjør opmærksom paa, at det nemlig slet ikke
+gaaer „bedre med Reflexionen \textit{post fidem} (ɔ: efterat jeg har
+% --- p. 20 ---
+\setcounter{footnote}{0}%
+\opage{20}taget Troespartiet) end \textit{ante fidem} (ɔ: førend jeg tog Troespartiet,
+men endnu stak lige midt i Reflexionsmodsætningerne).
+Reflexionsmodsætningen (Vantro) blev ved første
+Troesskridt overvunden, ikke ved Reflexionen, men \emph{ved} og
+i troende Leven, der dicterede Lydighed.“ Det Samme
+vil og maa nu skee ved ethvert af de følgende Skridt.
+Derfor er da ogsaa (S. 38) „visse dogmatiserende Tankeres
+Distinction mellem et speculativt Beviis \textit{ante fidem}
+(der skal være umuligt) og et speculativt Beviis \textit{post fidem}
+(der skal være muligt) en fuldkommen falsk og uholdbar
+Distinction.“ --- Troen er, med andre Ord, Qvalitet, og
+dens personlige Overbeviisning qvalitativt forskjellig fra Reflexionen,
+der altid har ikke blot et Vidnesbyrd \textit{pro}, men
+ogsaa et Vidnesbyrd \textit{contra}.
+
+Dersom nu Dr. Martensens Dogmatik virkelig var forsvarlig
+bygget og videnskabelig grundet paa Sætningen:
+\textit{Credo, ut intelligam}, da maatte den, ifølge Mag. Stillings
+Paastand, saavel i sit almindelige Anlæg, som i Behandlingen
+af de enkelte Dogmer, afgive et klart og fuldstændigt
+Vidnesbyrd om, hvorledes Troen (credo) og Reflexionen
+(\textit{ut intelligam}) egentlig forholde sig til hinanden. Dogmatikeren
+burde altsaa i Gjerningen vise, at han baade kjender
+Troens Qvalitet samt det \textit{genus cognoscendi}, Troen
+kræver, og tillige kjender den objective Videns (Intelligensens)
+Qvalitet samt det Resultat, hvortil en fri og alsidig
+Reflexion nødvendigviis maa føre. Men just i denne Henseende
+mener Magister Stilling, at det ikke hænger rigtig
+sammen med Dr. Martensens „sammenhængende Erkjendelse.“
+
+Magister Stilling anker paa, at man ikke kan see,
+hvad det er, Dr. Martensen paa sin Reflexionsvandring fra
+% --- p. 21 ---
+\setcounter{footnote}{0}%
+\opage{21}Troen til Intelligensen og fra Intelligensen til Troen egentlig
+har erfaret.
+
+„Erfarede han“ --- spørger Recensenten (S. 50) --- „at
+han væsentligen og hovedsageligen ikke kunde tænke det Christelige
+?“
+
+Dette Spørgsmaal besvares benegtende. „Vel“ --- hedder
+det S. 53 --- „siger Prof, M. (Dogm. S. 108), at hans
+forsøgte Viden, hans speculative Erkjendelse, ikke er ganske
+adæqvat, at der i den høieste speculative Viden er et Moment
+af Ikke-Viden. Men for det Første er dette Udtryk
+kun et afmattet og høist ucorrect Udtryk for Tankekorset,
+for Anstødet, Paradoxet og Reflexionsvidnesbyrdet \textit{contra};
+og dernæst, hvis saa Udtrykket „uadæqvat Viden“ ved nærmere
+Forklaring ikke kommer til at betyde Andet, end en
+Viden, der, qua Viden, egentlig slet ikke fortjener Videns
+Navn: saa bliver jo egentlig hele Resultatet af Vandringen
+paa den „menneskelige Erkjendelses Vei“, hele Resultatet af
+den forsøgte Viden en forsøgt Ikke-Viden, der tilbeder Guds
+forborgne Viisdom. Men heelt og holdent og uforbeholdent
+at vedgaae en Ikke-Viden, eller bedre (thi det er den
+correcteste Formel), at man, ved at reflectere tilbunds, reflecterer
+sig ind i de dybeste og forfærdeligste Reflexionsmodsætninger
+af \textit{pro} og \textit{contra}, og støder paa Tankeforset: det % PRINTED AS IS: Tankeforset (f for k; three readers)
+vægrer og krymper vor Dogmatiker sig for.“
+
+„Erfarede han da“ --- spørger Recensenten videre (S.
+62) --- „at han væsentligen og hovedsageligen kunde tænke
+det Christelige?“
+
+Ogsaa dette Spørgsmaal maa besvares benegtende.
+„Det vil ved denne Prøvelse“ --- siger Recensenten (S. 66 ---67) „ret øiensynligen vise sig, at vor Dogmatikers
+% --- p. 22 ---
+\setcounter{footnote}{0}%
+\opage{22}„\textit{Credo}“ i Gjerningen er et scholastisk hemmende \textit{Credo},
+der lægger Reflexionsfriheden under Censur, og ikke tilsteder
+den andre Yttringer, end saadanne, der ere Dogmatikerens
+Øre velbehagelige; en høist besynderlig Maade at betjene
+sig af, for at adspørge og udfritte Tanke-Autoritetens Mening
+om Dogmet.“
+
+For nu nærmere at eftervise, hvorledes Dr. Martensen
+har afbenyttet sit credo, \textit{ut intelligam}, udhæver Mag.
+Stilling forskjellige Dogmer, og kommer saa hver Gang
+til det Resultat, at Dogmatikeren, der ikke vil blive staaende
+ved \textit{Ita}, men skride frem til \textit{Quare}“, ikke paa noget Punkt
+holder, hvad han lover, men ved hvert Dogme lader, som
+han tænker, og tænker ikke endda.
+
+Dette sees nu for det Første i Behandlingen af Trinitetsdogmet
+(S. 68---81). Allerede i Begyndelsen begaaer Dr.
+M. den Inconseqvens, at ville bevise Trefoldigheden i Guds
+ontologiske Selvaabenbarelse, uden dog at ville bevise Guds
+Tilværelse. „At bevise“ --- hedder det, Dogmat. S. 89 ---
+„den aabenbarede Guds Tilværelse kan ikke være Opgaven.“
+Hvortil Mag. St. bemærker: „Kan det være Opgaven for
+Dogmatikeren at bevise, at den aabenbarede Guds Personlighed
+maa tænkes som en trefoldig Personlighed; hvorfor kan
+det saa ikke være Opgave at bevise den aabenbarede Guds
+Tilværelse, eller bevise hans Personlighed. Thi at bevise hans
+Tilværelse er just at bevise hans Personlighed.“ --- Men heller
+ikke den Prøve, Dr. M. her aflægger paa sin Begribeliggjørelse
+af Guds Treenighed, indeholder mindste Bidrag til at
+føre denne Opgave videre ad Speculationens Vei. Vistnok
+siger Dr. Martensen (Dogm. S. 128): „At tænke Væsenstriniteten
+ontologisk er at tænke den nødvendige Grundform
+% --- p. 23 ---
+\setcounter{footnote}{0}%
+\opage{23}for Guds personlige Liv, at tænke de Momenter i Guds
+Væsen, uden hvilke Personlighed og Selvbevidsthed er utænkelig.
+Men Mag. Stillings Kritik gjør det kun altfor indlysende,
+at den høiærværdige Dogmatiker aldeles ikke har
+tænkt Noget af det, der her egentlig skulde tænkes. De velbekjendte
+„Momenter i Guds Væsen“, der skulde afgive Treenighedsbegrebets
+Grundlag, ere laante fra Tænkere, hvis
+Navne Dr. M. end ikke har nævnet. Dette fra Speculationen
+laante Trinitetsbegreb viser sig her endnu ligesaa
+ueensartet med den christelige Treenighedslære, som i tidligere
+speculative Dogmatiker; hvorfor ogsaa det gamle
+Problem, hvorvidt der maa tænkes at være eet eller tre
+Jeg'er i Guddommen, aldeles ikke løses i den Martensenske
+„Speculation“, der blot hjælper sig ved at neddysse Reflexionen
+og fortie Vanskelighederne.
+
+Paa lignende Maade vedbliver Mag. Stilling sin Kritik
+over den speculative Grundighed, hvormed Dr. Martensen
+behandler de øvrige Dogmer, nemlig Incarnationsdogmet
+(Anf. Skr. S. 81 ---85), Arvesyndsdogmet og den personlige
+Tilregnelighed (S. 81 --- 88), Udødelighedsdogmet
+(S. 88 --- 92). At Kritiken over disse enkelte Dogmer er
+noget kort, maa man vistnok forklare deraf, at den ærede
+Recensent ikke har havt „umiddelbar og levende Ideeanskuelse“
+nok til ret at dvæle ved det positive Apparat af
+Skriftsteder eller ved den geniale Forfatters aandrige Omskrivninger
+af det Overleverede, men derimod har uden Omstændigheder
+blottet de egentlige Knudepunkter, for derved
+at godtgjøre, at Dr. M. i Grunden slet Intet har tænkt,
+af hvad her dog væsentlig burde tænkes.
+
+Hvorvidt det for Øvrigt er noget videre bevendt med
+% --- p. 24 ---
+\setcounter{footnote}{0}%
+\opage{24}den her skizzerede Kritik vil jeg imidlertid helst overlade til
+Læseren selv at betænke; men derimod kan jeg ikke undlade
+at udtale min Forundring over Dr. Martensens paafaldende
+Aversion for det Stillingske Indlæg.
+
+Dr. Martensen vil nu, som sagt, Intet vide af Mag.
+Stillings Kritik; men, efter min ringe Mening, burde Hs.
+Høiærv. fra sit Synspunkt just have lagt betydelig Vægt
+paa den Stillingske Kritik, og, naar han fandt, at han i
+ethvert Tilfælde kun burde indlade sig med Een, da hellere
+have valgt Mag. Stilling end mig; Hs. Høiærv. burde,
+hvis jeg ikke feiler, aabenbart have gjort det af to Hensyn:
+deels for sin egen Skyld, deels for Folks Skyld.
+
+Hvad det første Hensyn angaaer, klager jo Dr. M. over,
+at han ikke ret kan forstaae „den indirecte Meddelelse“; saameget
+mere burde han da have paaskjønnet, at Mag. Sts
+Skrift ved sin „ligefremme Meddelelse“ just vilde være ham
+en god Veiledning til at komme ordentlig ind i Sagen, og
+see, hvad det var, man her udgav for „Problemet.“ Thi
+Problemet ligger, som Mag. St. viser, ganske rigtig deri,
+at Troesobjectet staaer i et ganske andet Forhold. til den
+menneskelige Erkjendelse, end et hvilketsomhelst af de Objecter,
+der ellers blive Gjenstand for objectiv Viden.
+
+Havde Dr. M. nu fæstet sin Opmærksomhed paa dette
+Troesobjectets \emph{omvendte} Forhold til det vidende Subject,
+havde Dr. M. indladt sig paa denne Vanskelighed, istedetfor
+at hjælpe sig med pure Forsikkringer, og „fremdeles“ vedblive
+(Dogm. Oplysn. S. 55) „at betragte Dogmatikerens
+Forhold til Aabenbaringen paa tilsvarende Maade, som Naturforskerens
+til Naturen“; havde Dr. Martensen Punkt for
+Punkt viist det Intetsigende i Mag. Stillings Argumenter
+% --- p. 25 ---
+\setcounter{footnote}{0}%
+\opage{25}(især det med „Jabroderen“ og „Rækken \textit{contra}“); ja, havde
+Dr. M. virkelig følt sig oplagt til at parere det Stillingske
+Angreb med den Sikkerhed, Rolighed og Overlegenhed, som
+Bevidstheden om en retfærdig Sag giver: her havde været
+vundet Meget. Ikke blot var Dr. M., som sagt, ved denne
+Fremgangsmaade kommen (hvad han nu desværre ikke er)
+ordentlig ind i Sagen; men det kunde da maaskee ogsaa være
+lykkedes ham endnu bedre at „orientere“ sine Læsere „over
+Sagens virkelige Stilling.“
+
+Ja havde Dr. M. blot kunnet nedlade sig til at gjendrive
+Mag. Stillings kritiske Indsigelser: her havde visselig
+været vundet Meget.
+
+Alle velvillige Læsere (især alle de Læsere, der ere saa
+velvillige at nøies med Dr. Ms. „dogmatiske Oplysninger“
+uden at bekymre sig stort om Modstandernes kritiske „Skriverier“)
+vilde da uden Tvivl have raisonneret saaledes: „See
+her seer man, hvad det nye Paradoxmagerie har at betyde,
+Pseudonymen er jo kun en Humorist, en „Gymnastiker.“ Med
+den humoristiske Gymnastiker kan en saa alvorlig Dogmatiker
+som Dr. M. ikke indlade sig, da han jo naturligviis ikke
+kan vide, om Humoristens „indirecte Meddelelse“ skal være
+Spøg eller Alvor. Prof. N. er nu rigtignok ingen Humorist,
+men dog en ligesaa letsindig som uheldig Efterligner, der
+har forgabet sig i Humoristen og er bleven fremfusende.
+Med den „fremfusende“, „paatrængende“ og „letsindige“
+Prof. N. kan en saa besindig og grundig Forsker, som Dr. M.
+egentlig heller ikke indlade sig; saameget mindre, som Prof.
+N. kun giver os „Excerpt“ af Pseudonymen, og ikke er istand
+til at udvikle Problemet i „ligefrem Meddelelse.“ Men see,
+neppe viser der sig en Modstander, paa hvis docerende For%
+% --- p. 26 ---
+\setcounter{footnote}{0}%
+\opage{26}søg man dog nogenledes kan reflectere, neppe mælder sig
+en Kritiker, der dog i nogen Grad formaaer at bruge sin
+egen Tunge, neppe optræder Mag. Stilling med sin ligefremme
+Meddelelse og sine logiske Forklaringsgrunde, før det
+ogsaa viser sig, at vi i Dr Martensen have den Mand, der
+ligeledes i ligefrem Meddelelse og ved endnu vægtigere Forklaringsgrunde
+er istand til at „feie for Dogmatikens Dør“
+og „orientere os Læsere over Sagens virkelige Stilling.“
+
+Naar nu Dr. M. desuagtet lader denne øiensynlige
+Fordeel slippe sig af Hænderne og, skjøndt han saa stærkt
+opfordrer til „direct Meddelelse,“ dog alligevel afslaaer enhver
+Forhandling med den Modstander, der just tilbyder
+ham, hvad han ønsker: saa bliver man jo ikke saa ganske
+„orienteret over Sagens virkelige Stilling.“
+
+Den selvtænkende Læser (den Læser, der ikke uden
+videre tør betragte Dr. Ms. Oplysninger som Troesartikler)
+maa da uvilkaarlig spørge sig selv: „Hvad mon der
+dog kan have bevæget den høiærværdige Dogmatiker til at
+behandle Mag. St. paa en saa haanlig Maade;“ thi, sandt
+at sige, her taler jo Dr. M. ingenlunde som den Guds Mand,
+der kun tænker for „den hellige almindelige Kirke,“ men
+snarere som den dybt krænkede Forfatter, der af en kun altfor
+naturlig Selvfølelse forledes til en Ubesindighed: \textit{tantæne}
+\textit{animis coelestibus iræ}! Hvad har Mag. St. da syndet, at han
+saa brat forstødes af „en Menighedens“ Ven, af Ordets høiærværdige Tjener? I personlige Grovheder og moralske Invectiver
+kan Overtrædelsen dog umulig bestaae; thi den paagjældende
+Kritik indeholder ingen Yttring, som Enhver i en saadan Sag jo
+honnetement kan tillade sig, naar kun hans Argumenter for
+Resten holde Stik. Men hvori bestaaer da Mag. Sts. Mis%
+% --- p. 27 ---
+\setcounter{footnote}{0}%
+\opage{27}gjerning? Den skulde dog. vel aldrig bestaae deri, at han
+har talt saa frit om Reflexionen som „Jabroder“ og „Rækken
+\textit{contra},“ at Dr. M., der slet ikke behøver „Rækken \textit{contra},“
+efterdi han alene speculerer udi Gjenfødelsen, deraf har
+sluttet, at „denne uværdige Recensent endnu ikke var gjenfødt?“
+Misgjerningen skulde dog vel aldrig bestaae deri, at Mag.
+St.\footnote[1]{Et Par Spørgsmaal til Prof. Scharling.} har været saa ubeskeden, offentlig at omtale et Factum,
+der er af en saa delicat Natur, at Dr. Ms. „Beskedenhed“\footnote[2]{Dogm. Oplysning S. 69.}
+ikkun tillader ham at ansee det for „mindre væsentligt,“
+det Factum nemlig, at den høiærværdige Dogmatiker
+havde, ifølge hans egen udtrykkelige, trykte og offentliggjorte
+Vidnesbyrd, et ganske andet Videnskabsbegreb
+i Aaret 1839, end det, der nu fra Aaret 1849 ligger
+til Grund for hans Dogmatik. Skulde dette være Tilfældet,
+saa er Hs. H. vist igjen imod sin Villie kommen til
+at give os --- „en indirect Meddelelse.“
+
+For strax at „orientere“ os over „Sagens virkelige
+Stilling“, erklærer Dr. M., som vi have seet, at Kritiken
+over hans Dogmatik egentlig endnu ikke kan siges at være
+begyndt. Jeg kan nu meget godt forstaae, hvad det er for
+en Lyseffect, den høiærværdige Forfatter tilsigter ved denne
+„dogmatiske Oplysning“, men Betydningen af de Grunde,
+hvorpaa han støtter sin Paastand, kan jeg derimod ikke rigtig
+forstaae. Han klager over, at Kritiken nærmest har holdt
+sig til Indledningen. Men selv om dette ogsaa var Tilfældet,
+vilde denne Omstændighed her dog ikke begrunde nogen
+Klage. Ja, hvis Kritiken gik ud paa at vise, at Værkets Form
+% --- p. 28 ---
+\setcounter{footnote}{0}%
+\opage{28}og Udarbeidelse ikke svarede til de i Indledningen opstillede
+Grundsætninger, saa var det en anden Sag. Men her forholder
+Sagen sig omvendt. Kritiken indrømmer tvertimod,
+at Udarbeidelsen er saa god, som man ifølge de angivne
+„Grundsætninger“ med Billighed kan forlange den\footnote[1]{Her er jo vistnok i denne christelige Dogmatik, seet fra Formsiden, ogsaa noget Behageligt, noget Tiltalende, Noget der i visse Stemninger virker, om ikke just strengt overbevisende, saa dog mildt beroligende. Her er i denne christelige Dogmatik noget Fleersidigt, noget Forsonende, noget Fredsommeligt, noget Føieligt. Her er i denne christelige Dogmatik, naar den betragtes som systematisk Heelhed, tillige noget vist Kunstnerisk, noget Architectonisk, Noget, der paa een Gang ligesom formæler Universitetsbygningen med Slotscapellet, Videnskaben med Religionen: skarp Forstand og naiv Eenfoldighed, moderne Reflexion og mystisk Umiddelbarhed, Begrebets Klarhed og Mysteriets Dunkelhed, Alt smelter sammen i Stilens Eenhed, i festlig Ro, høitidelig Dæmring, som Dagens Skjær med Skinnet af et Alterlys.“ Undersøg. Anm. S. 43.}; kun
+Grundsætningernes videnskabelige Holdbarhed er det, Kritiken
+modsiger. Da nu Dr. M., hvad han i de „dogmatiske Oplysninger“
+ogsaa (S. 5.) selv tilstaaer, har i Indledningen
+fremstillet sine Grundsætninger „saa skarpt og bestemt, som
+muligt,“ saa indseer jeg virkelig ikke, hvad der kan indvendes
+imod, at en Kritik over „Grundsætningerne“ fornemmelig
+holder sig til „Indledningen“, og kun deelviis henter
+Exempler fra Udførelsen.
+
+Endvidere hedder det (S. 6), at Kritiken nu atter skal
+være kommen ind paa „den gamle, brede Vei, der i slet
+Bemærkelse kan betegnes som den tydske, hvor man nemlig
+tumler sig i lutter propædeutiske Undersøgelser, opvækker
+Støvskyer, men aldeles ikke kommer til Sagen.“ --- Men
+skulde det nu ogsaa virkelig være aldeles overflødigt, at gaae
+ind paa „propædeutiske Undersøgelser,“ og vende tilbage til
+% --- p. 29 ---
+\setcounter{footnote}{0}%
+\opage{29}Principerne, naar man vil udfinde, hvorvidt et dogmatisk
+Arbeide har noget Princip eller er --- principløst.
+
+Den Gang Dr. M. skrev sit lille Skrift: „Om Selvbevidsthedens
+Autonomie“, og „paa nogle faa Blade“ kritiserede
+baade Kant og Schleiermacher og Hegel, var han uden
+Tvivl selv af den Mening, at man endda nok kunde prøve
+et dogmatisk System uden just at fortabe sig i Detaillen af
+det dogmatiske Stof; den Gang ansaae han det endnu ikke
+for overflødigt at dvæle ved Indlednings-Spørgsmaalene
+og „Grundsætningerne“; men nu, da hans eget dogmatiske
+Værk er fuldendt, nu er det anderledes; nu skal der slet
+ikke komme Noget ud af at drøfte Dogmatikens Indledning,
+nu bliver man strax en „Erasmus Montanus“, naar man
+har den „Paatrængenhed“ at ville discutere de dogmatiske
+Principer. En betydningsfuld Forandring!\footnote[1]{Dr. Martensen, der netop gjorde sin Lykke ved Universitetet ved at foredrage Standpuncternes Philosophie i kort, populært æstetisk Overblik; Dr. M., der jo netop kom op ved sine „Indledninger om Tro og Viden“ og sine „foreløbige Anstalter til et Systems Opbyggelse“; Dr. M., der i Begyndelsen anmeldte sig som en Ideens Mand, der kun vilde røre Systemernes Nerve: den samme Dr. M. er nu (Dogm. Oplys. S. 5) med Eet bleven saa mæt og træt af alle „theologiske og philosophiske Indledningsspørgsmaal“, at han endog har begyndt at forvandle sig til en Stoffets Mand, der taler om lærde Forskninger i Tertullian. Blot det nu ikke skulde hændes Dr. M., at han over sin dybe Forskning i Tertullian forglemmer Apostlenes Gjerninger, thi at forvexle Festus og Agrippa (jfr. Dogm. Oplys. S. 30 med Ap. G. Cap. 26, 24.), er --- \textit{NB.} for en lærd Forsker --- lidt ubeldigt.} % PRINTED AS IS: ubeldigt (for uheldigt), in the note
+
+At ville, som Dr. M. (Dogmatisk. Oplysn. S. 7.)
+udtrykker sig, „affærdige Treenighedslæren, Incarnationslæren,
+Læren om Syndefaldet og Arvesynden, om Frihed
+og Naade, foruden en heel Cyclus af andre Dogmer paa
+% --- p. 30 ---
+\setcounter{footnote}{0}%
+\opage{30}et Par Blade,“ er vistnok urimeligt, naar der forlanges en
+speculativ-dogmatisk Fremstilling af hvert enkelt Dogma for
+sig. Men Saameget vil dog vel Dr. M. endnu, naar han
+ret besinder sig, sagtens indrømme os, at der er en stor
+Forskjel mellem det, at levere en positiv Bearbeidelse af et
+Dogma, og det, at underkaste en saadan Bearbeidelse en
+videnskabelig Kritik. Det Første vil i Reglen udkræve mange
+Blade, det Sidste kan, naar Kritikeren kun rammer det rette
+Punct, meget vel skee paa et Par Blade.“ Ogsaa i denne
+Henseende havde det været ønskeligt, om Dr. M. ikke blot
+havde bladet og talt Bladene i Mag. Sts. Afhandling, men
+ogsaa læst og gjennemtænkt, hvad der stod paa disse Blade,
+før han saa „strax lagde Hr. Magisterens Skriveri hen, for
+ikke mere at optage det.“
+
+Som Beviis for, at der er Noget i, hvad jeg siger,
+skal jeg endnu blot tillade mig at citere et eneste Sted af
+den Stillingske Bog. Med Hensyn paa Ubiqvitetsdogmet,
+der omhandles S. 83, hedder det i en Anmærkning S. 73:
+„At Prof. Martensen i Virkeligheden end ikke i fjerneste
+Grad formaaer at tænke en punctuel Personligheds Allestedsnærværelse,
+røber han da ogsaa ganske naivt i Ubiqvitetslæren,
+hvor Talen er om den himmelfarne Gudsson, der
+har sit Sæde ved Faderens høire Haand, som er overalt.
+„Ville vi“ --- saaledes siger vor Dogmatiker, S. 387 ---
+„fastholde og gjennemføre Forestillingen om en ubegrændset
+Christusnærværelse i Himlen og paa Jorden, da kunne vi
+ikke undgaae at forflygtige Christi Individualitet“ (ja
+det indrømmes ligefremt, at en ubegrændset Christusnærværelse
+fører til en pantheistisk Opfattelse); „thi selv en forklaret
+Individualitet, selv et aandeligt Legeme lader sig ikke
+% --- p. 31 ---
+\setcounter{footnote}{0}%
+\opage{31}tænke uden Begrændsning.“ Her spørger nu Recensenten: „Lader
+det sig da i mindste Maade bedre \emph{tænke}, at Christus
+er personlig tilstede i hver Nadvere, naar der i een By
+eller i 10 a 100 forskjellige Byer samtidigen holdes Nadvere
+paa a 100 forskjellige Steder i hver By?“ ---
+
+Denne lille Anmærkning, der ikke optager et Blad, end
+sige „et Par Blade,“ er af den Beskaffenhed, at den ikke
+blot belyser den Martensenske Behandling af Ubiqvitetsdogmet,
+men tillige det principielle Forhold, hvori Dr. M. som
+speculativ Tænker har sat sig til de kirkelige Dogmer i
+det Hele.
+
+En videnskabelig Recension af vor speculativ-christelige
+Dogmatik kan i Henhold til denne Anmærkning kortelig redigeres
+saaledes: „En original speculativ Dogmatiker er
+opstaaet iblandt os. At denne Dogmatiker baade er original
+og speculativ, sees af hans Behandling af alle Dogmer
+uden Undtagelse; men at han virkelig er ligesaa original,
+som speculativ, og ligesaa speculativ, som original, fremgaaer
+i Synderlighed af hans Behandling af Ubiqvitetslæren.
+Dette dogmatiske Problem have hverken de ældre eller de
+yngre Theologer hidtil kunnet løse paa nogen ret tilfredsstillende
+Maade. Først i det foreliggende Værk er det omsider
+lykkedes „den dogmatiske Genius“ at løse Problemet og
+ophæve „Eensidigheden“ ved en ganske ny Opdagelse. Opdagelsen
+er denne: For at være nærværende i Nadveren behøver
+den forklarede Christi Legeme endnu ikke egentlig at
+være \emph{allestedsnærværende}, det behøver blot at være
+\emph{mangestedsnærværende} paa een Gang. Da nu en
+saadan Mangestedsnærværelse egentlig maa \emph{tænkes} som en
+blot relativ og begrændset Allestedsnærværelse: er her jo
+% --- p. 32 ---
+\setcounter{footnote}{0}%
+\opage{32}Intet iveien for, at en saadan begrændset Allestedsnærværelse
+meget vel kan forenes med den forklarede Individualitets
+nødvendige Begrændsning. See, det er Problemets Løsning,
+en Løsning, hvori der jo ikke er noget Paradox! --- Hvorledes
+nu vi Andre, der ikke have kunnet gjøre Opdagelsen, imidlertid
+skulle bære os ad med at faae den nylig opdagede
+„Mangestedsnærværelse“ virkelig tænkt, siger vor Dogmatiker
+ikke: han siger kun, at den kan tænkes og bør tænkes og
+maa tænkes; men Mere siger han ikke, og dette er just det
+Originale. Hvorledes „Geniussen selv“ bærer sig ad, naar
+han logisk skal analysere den „relative Allestedsnærværelses“
+Begreb, siger han os heller ikke; han siger bare credo, \textit{ut}
+\textit{intelligam}; men, saasnart han bare siger: credo, \textit{ut intelligam},
+er det ogsaa, ligesom om det virkelig var tænkt, og
+dette er just det Speculative.“
+
+Mon det endnu, for at charakterisere det egentlige
+Standpunct, skulde være nødvendigt at gaae ind paa „den
+hele Fylde af Dogmer,“ eller kunne vi maaskee lade det
+blive ved denne magre Recension, og sige: sat sapienti?
+
+„Dersom den dogmatiske Genius“ --- siger Dr. M.
+(Dogm. Opl. S. 54) --- „dengang har været productiv, tør
+den vel være productiv endnu,“ og heri maa jeg give ham
+Ret. Men det kommer da nu heller ikke alene an paa, at
+„en dogmatisk Genius“ er „productiv“; det kommer jo ogsaa
+væsentlig an paa, hvad det er, „den dogmatiske Genius“
+producerer.
+
+Den dogmatiske Productivitet kan for nærværende Tid
+dog vel ikke nærmest gaae ud paa at opdage nye Troesartikler
+eller frembringe nye Dogmer. Jeg for mit Vedkommende
+kan slet ikke finde, at Dr. Ms. „dogmatiske Genius“
+% --- p. 33 ---
+\setcounter{footnote}{0}%
+\opage{33}har produceret et eneste nyt  Dogme (med mindre det da
+skulde være Dogmet om den forklarede Christi „Mangestedsnærværelse“).
+Det Indbegreb af Troessætninger, han behandler
+i sin Dogmatik, er netop den samme Cyclus af
+Artikler, Skriftsteder og Qvæstioner, som længst ere bearbeidede
+paa de allerforskjelligste Maader i den lutherske Kirke.
+Til Tilegnelsen af dette Stof udfordres hverken noget overvættes
+Forraad af „positive Kundskaber“ eller noget særeget
+„paa religiøs Livserfaring grundet Bekjendtskab med Aabenbaringens
+Sandheder“; man finder det hele Apparat i næsten
+ethvert dogmatisk Compendium, ja i nogle Haandbøger (t.
+Ex. i Bretschneiders Dogmatik og Hases Hutterus redivivus)
+endog langt udførligere, end i Dr. Ms Bog. Den
+Martensenske Productivitet har da i dette Stykke ingen lærd
+Betydning, som om hans Dogmatik var et nyt og eiendommeligt
+Resultat af dogmehistorisk Forskning Betydningen
+af Dr. Ms „Productivitet“ maa altsaa her søges i
+noget ganske Andet, nemlig i den videnskabelige Dygtighed,
+hvormed han heelt igjennem har vidst at opklare Forholdet
+imellem Troen og Erkjendelsen.
+
+I denne Henseende fordrer saa Dr. M., at man, for
+ret at vurdere hans „dogmatiske Productivitet“, skal (Dogm.
+Oplysn. S. 6) „lade Bedømmelsen af Erkjendelseslæren gaae
+Haand i Haand med en Prøvelse af selve Dogmeudviklingen,
+efterdi disse Tvende gjensidigt oplyse hinanden, og
+ikke rettelig kunne forstaaes uden i Forening.“ --- Jeg skal
+nu, støttende mig til Mag. Stillings Anmærkning, strax
+have den Ære at efterkomme denne Fordring.
+
+„Læren om Christi Sæde ved Faderens Høire --- hedder
+det, Dogm. § 177 --- „er udviklet i Læren om Christus,
+% --- p. 34 ---
+\setcounter{footnote}{0}%
+\opage{34}som den, der i Alt gjennemtrængende Nærværelse opfylder
+Alt i Alt (τοῦ τὰ πάντα ἐν πᾶσι πληρουμένου).“ --- Her
+er altsaa et enkelt, bestemt, positivt Dogme. Til dette Dogme
+kan nu Erkjendelsen sætte sig i et dobbelt Forhold, et videnskabeligt
+og et religiøst, et objectivt og et subjectivt Forhold.
+I begge disse Forhold kan man begynde med Sætningen
+\textit{Credo, ut intelligam}; men, som vi strax skulle see, faaer
+Sætningen en ganske anden Betydning i den religiøse Erkjendelse
+end i den videnskabelige.
+
+I objectivt videnskabelig Forstand gaaer \textit{Credo} ud paa
+en historisk Antagelse af et givet Faktum: \textit{Credo}, jeg troer,
+ɔ: jeg antager for afgjort vist, at Dogmet i sin bestemte
+Form udtrykker Christendommens og Kirkens sande og rette
+Mening. \textit{Credo}, jeg antager Dogmet, som det er, \textit{ut intelligam},
+ɔ: for at jeg derved kan komme til Erkjendelse.
+Men til hvilken Erkjendelse? Til en videnskabelig Erkjendelse,
+ɔ: til Erkjendelse af, hvorvidt jeg ad Videnskabens
+Vei kan komme til at indsee Dogmets objective Sandhed,
+eller ikke. For at afgjøre dette, maa jeg strax henvende
+min Opmærksomhed paa to Hovedpunkter, idet jeg nemlig
+maa undersøge: a) om Dogmets Indhold lader sig opfatte
+i nogensomhelst objectiv Begrebsform, og b) hvorvidt den
+dogmatiske Forestillings Realitet lader sig prøve efter nogen
+af de os bekjendte objective Love.
+
+I begge Henseender er det imidlertid let at bevise, at
+den videnskabelige Erkjendelses Forhold til Dogmet umulig
+kan være et positivt, men maa være et negativt Forhold;
+thi a) Begreberne: „Allestedsnærværelse“ og „Individualitetsbegrændsning“
+ere hinanden modsigende: en allestedsnærværende
+Individualitet er utænkelig, og Alt, hvad der
+% --- p. 35 ---
+\setcounter{footnote}{0}%
+\opage{35}kan siges om en individuel Mangestedsnærværelse, --- Nonsens.
+Selv om Dogmets Indhold ikke var i saa aabenbar Strid
+med Begrebet, som det virkelig er: det vilde dog alligevel
+ikke kunne tilegnes i videnskabelig Erkjendelse; thi b) Forestillingen
+om en forklaret Individualitet, der „opfylder Alt
+i Alt“, hører ikke hjemme i den Tingenes Orden, hvis Love
+vi kjende, men søger sin Gjenstand i det Overnaturlige.
+Men, saasnart Videnskaben indlader sig med det Overnaturlige,
+opløser den sig selv, thi her er ingen Grændse for
+Phantasteriet: enhver dybsindig „Genius“, der beraaber sig
+paa den „religiøse Livserfaring“, enhver speculativ Charlatan,
+der paakalder „den umiddelbare og levende Ideeanskuelse“,
+kan da uden videre paastaae, hvad det skal være,
+og udgive sine Paastande for videnskabelige Erkjendelser.
+
+Anderledes med den religiøse Erkjendelse. I religiøs
+Forstand faaer Ordet \textit{Credo} i Sætningen: \textit{Credo, ut intelligam},
+en afgjort subjectiv Betydning, og derfor maa Ordet
+„\textit{intelligam}“ tages i selvsamme Betydning. „Jeg troer, for
+at jeg kan erkjende“, efter Christi Forjættelse (Joh. 8, 31—
+32): „Dersom I blive i mit Ord, ere I sandelig mine
+Disciple, og I skulle erkjende Sandheden, og Sandheden
+skal gjøre Eder frie.“ Denne Erkjendelse, der ikke objectivt
+raisonnerer over Dogmet, men i inderlig og subjectiv Overbeviisning
+tilegner sig det objective Dogme, kan alene stille
+sig i et positivt Forhold til Dogmet. Men det maa vel
+fastholdes og ikke forglemmes, at, idet den subjective Erkjendelse
+stiller sig i sit positive Forhold til det bestemte Dogme,
+stiller den sig med det Samme i et negativt Forhold til al
+mulig objectiv videnskabelig Sandhedserkjendelse, af hvad
+Navn nævnes kan.
+
+% --- p. 36 ---
+\setcounter{footnote}{0}%
+\opage{36}Dette negative Forhold er nu deels et Ligegyldighedens
+Forhold, forsaavidt den Troende praktisk holder sig til Dogmet,
+uden at bekymre sig om Videnskabens objective Begreber;
+deels et polemisk Forhold, forsaavidt den Troende tillige
+bliver vidende om de Indsigelser, ved hvilke Videnskaben
+kan forsøge at svække Dogmets religiøse Betydning. For
+at erkjende Dogmet om Christi Sæde ved Faderens Høire,
+tør den Erkjendende i Troens Navn aldeles ikke indlade sig
+paa at ville udgrunde, hvorvidt en forklaret Individualitets
+Allestedsnærværelse lader sig \emph{tænke} eller ikke \emph{tænke}. Troeserkjendelsen
+bliver ved \textit{Ita}, og skrider ikke frem til \textit{Quare};
+den bliver i Christi Ord, og indlader sig ikke paa nogen
+Speculation.
+
+Naar jeg da nu efter denne korte Forberedelse forsøger,
+hvad Dr. M. fordrer, at „lade Erkjendelseslæren gaae Haand
+i Haand med en Prøvelse af selve Dogmeudviklingen“, saa
+spørges: hvilken Erkjendelseslære kan man da forefinde i Dr.
+Ms Udvikling af Dogmet om Christi Sæde ved Faderens
+Høire.
+
+At Dr. M. i Ubiqvitetslæren vil corrigere de gamle
+lutherske Dogmatikere, og at forsaavidt „det reformatoriske
+Moment“ ogsaa her viser sig i hans Dogmatik, seer jeg
+nok; men jeg seer ogsaa, hvad det er for et Correctiv, han
+har anbragt. Man kan nemlig i det her omhandlede Punkt
+corrigere de Gamle paa to Maader, alt eftersom man enten
+beraaber sig paa Troeserkjendelsen eller paa den objective
+videnskabelige Tænkning. I første Henseende viser man, at
+de Dogmatikere, der fixerede Forestillingen om Christi Legemes
+Allestedsnærværelse, just stode i Begreb med at overskride
+den religiøse Erkjendelses Grændse, og kun forsaavidt
+% --- p. 37 ---
+\setcounter{footnote}{0}%
+\opage{37}bleve frelste fra den objective Speculation, som de i Troens
+Medfør lode Forstanden drage en Conseqvens, i hvilken
+Forstanden selv gik tilgrunde. I sidste Henseende indrømmer
+man derimod, at de Gamle vare paa rette Spor, idet de
+gjorde „Christi Sæde ved Faderens Høire“ og hans individuelle
+Nærværelse i den hellige Nadvere til Gjenstand for
+objectiv Tænkning, men søger saa at rette paa deres objective
+Begriben ved en endnu dybere gaaende Begriben.
+Hvilken Vei Dr. M. er gaaet med sit „Reformatoriske“, kan
+ikke drages i Tvivl: han er aabenbart gaaet den sidste.
+
+At Dr. M., idet han „fremdeles“ vedbliver med sin
+objective, men dog „paa religiøs Livserfaring“(!) grundede,
+Erkjendelse af Aabenbaringens Sandheder“, fremdeles
+paa det Bestemteste vil have den objective Erkjendelse i
+Troen og udaf Troen adskilt fra en anden objectiv Erkjendelse,
+der ikke er af Troen, har jeg heller aldrig overseet.
+Der skal altsaa, ifølge Dr. Ms „Grundanskuelse“, gives tvende
+Arter af objectiv Erkjendelse, nemlig: en lavere, verdslig, almeenvidenskabelig,
+der endnu ikke kan sige: \textit{Credo, ut intelligam},
+efterdi den endnu er i sin Syndighed, og i denne sin
+Syndighed kun formaaer at føde den „kosmiske“, „pantheistiske“,
+„rationalistiske“ Viden, for hvilken Troen er et Paradox; og en høiere, kirkelig, dogmatisk-videnskabelig Erkjendelse,
+der strax kan sige: \textit{Credo, ut intelligam}, efterdi
+den er forløst ved Guds Naade, og det saaledes forløst, at
+den kan producere den ægte theologiske Speculation, for
+hvilken Troen ikke er noget Paradox (at sige, naar man
+tillige har saamange Sprogkundskaber, at man til Ordet
+„Paradox“ kan søge det tilsvarende Udtryk i Modersmaalet).
+
+Hvorledes Dr. Martensen vil have denne Adskillelse for%
+% --- p. 38 ---
+\setcounter{footnote}{0}%
+\opage{38}staaet, udtaler han paa det Bestemteste i sine „dogmatiske
+Oplysninger“, hvor han blandt Andet (S. 22) „henstiller“
+til mig, „at overveie, om jeg fortrøster mig til at godtgjøre,
+at Forløsningen af den faldne Menneskenatur ikke
+ogsaa omfatter Tankens Forløsning, at dette ikke er Christendommens
+Hensigt, fuldstændig at restituere den sande
+Humanitet, men at lade væsentlige Elementer --- og Tanken
+hører dog vel til de væsentlige Elementer --- forblive udenfor
+sin helliggjørende og fuldkommende Virksomhed.“
+
+I den speculative Prædikestiil, der prædiker Speculationen
+uden at tænke Tanken, kan en saadan Forsikkring om
+„Tankens Forløsning“ jo vistnok tage sig ret godt baade
+opbyggeligt og speculativt ud; men --- „viis mig din Tro
+af dine Gjerninger!“
+
+Skulde Ideen om „Tankens Forløsning“, saaledes som
+Dr. M. opfatter den, have nogen sand speculativ-dogmatisk
+Gyldighed: da maatte jo denne Forløsning være for Dogmatikeren,
+hvad Geniet er for Philosophen. Det maatte
+da vise sig, at Dogmatikeren, hvis „Genius“ var bleven
+„forløst“, virkelig formaaede, at behandle Aabenbaringens
+Problemer med en saadan videnskabelig Dybsindighed og
+udvikle Begreberne med en saadan Skarphed, at selv den
+meest begavede Philosoph maatte misunde „den Forløste“
+ikke blot hans „Evne til umiddelbar og levende Ideeanskuelse“,
+men tillige hans vidunderlige Gave til høiere Tænkning
+og indtrængende Begriben. Er dette nu i fjerneste
+Maade anvendeligt paa den Martensenske Behandling af de
+christelige Dogmer? Jeg henstiller til Læseren at overveie,
+om han „fortrøster sig til at godtgjøre, at Dr. Ms videnskabelige
+Udvikling af Ubiqvitetsdogmet bærer mindste Spor
+% --- p. 39 ---
+\setcounter{footnote}{0}%
+\opage{39}af nogen overnaturlig „Tankens Forløsning.“ Thi jeg kan
+virkelig ikke finde, at denne „dogmatiske Genius“ enten i §
+177 eller i nogen anden dogmatisk Paragraph har truffet
+ringeste videnskabelig Anstalt til at gjøre den paaberaabte
+Adskillelse af „Christusnærværelsen“ og „Logosnærværelsen“
+i nogen Grad indlysende for den objective Tænkning. Derimod
+forekommer det mig, at Alt, hvad han i denne Anledning
+„producerer“, er af den Beskaffenhed, at end ikke
+den simpleste „Dilettant i Logiken skal misunde ham „Productiviteten.“
+
+
+„Men“ --- indvender maaskee den „velvillige“ Læser ---
+„hvad Du her siger, kan nu fra dit Synspunkt være
+ganske rigtigt; men hvad beviser det? Det beviser jo kun,
+hvad ogsaa Dr. Martensen (Dogm. Oplysn. S. 45) kan
+bevidne, at Du fra Begyndelsen af har misforstaaet \textit{Credo},
+\textit{ut intelligam}. Da Du nu saaledes, som Dr. Martensen
+kan bevidne, fra Begyndelsen af saa letsindig misforstod
+\textit{Credo, ut intelligam}, at Du uden at tænke over din Tro
+--- \textit{quod negligentiæ mihi videtur}! --- endog sad og ventede
+paa, at der „ved et Lykketræf skulde tilfalde Dig en
+Arv af ontologiske og andre Erkjendelser“: hvad Under da,
+at Du i din „Fremfusenhed“ og --- jeg maa sige Dig det
+alvorligt, --- i din „Letsindighed“ ikke kan see det Betydningsfulde
+i Dr. Martensens Productivitet: for at erkjende, hvad
+den forløste Tænkning her producerer, maatte din egen Tanke
+jo selv være forløst. Vi Andre derimod, der fra Barnsbeen
+af ere opfødte og just derved gjenfødte i Christendommen,
+vi Andre, der alt bleve vante til Paradoxet, da vi
+bleve afvante fra Moders Bryst, alle vi Andre, der saadan
+lidt efter lidt ere blevne fortrolige med Aabenbaringens
+% --- p. 40 ---
+\setcounter{footnote}{0}%
+\opage{40}Sandheder, idet vi saadan lidt efter lidt have faaet „Tankens
+Forløsning“, see, alle vi Andre, vi kunne vidne for Dr.
+Martensen, at han, idetmindste relativt og til en vis Grad,
+har begrebet baade Logosnærværelsen og Christusnærværelsen,
+baade Christusnærværelsen ved Faderens Høire og Christusnærværelsen
+i den hellige Nadvere, ja alle vi Andre
+kunne for vor Deel vidne, at Dr. Martensen speculativt har
+forstaaet Christendommen, som Dr. Martensen vistnok ogsaa
+for sin Deel vil kunne vidne, at alle vi Andre speculativt
+have forstaaet ham!“
+
+Kjære Læser, hvo Du end er, gjenfødt eller ikke gjenfødt
+(thi derom kan jeg i nærværende Tilfælde Intet vidne),
+før Du end yderligere begeistrer Dig for Speculationens
+\emph{vidnende} Methode: tillad mig da blot et lille Spørgsmaal:
+Fortrøster Du Dig virkelig til at godtgjøre, at Dr. M. i
+nogensomhelst dogmatisk Paragraph, og da navnlig (for at
+dvæle ved dette enkelte Dogme) i Paragraphen om Christi
+Allestedsnærværelse, har havt Mod til at overtage Conseqvensen
+af sit eget speculative Vidnesbyrd?
+
+Havde Dr. M. for Alvor selv troet paa den objective
+videnskabelige Tankes „Forløsning“, saa maatte han jo have
+behandlet „Christusnærværelsen“ paa en ganske anden Maade,
+end skeet er. Han maatte da ikke blot have „vidnet“, at
+Begrebet af Christusnærværelsen i Himlen og den individuelle
+Christusnærværelse i Nadveren er det „naturlige Menneske
+et Paradox“, men burde tillige have „vidnet“ udtrykkelig,
+at han for sin Deel meget vel --- idetmindste til en
+vis Grad --- kunde tænke dette overnaturlige Begreb speculativt
+ved Hjælp „af Tankens Forløsning“; ja han burde
+have vidnet, at baade Anselmus (den Mand, der tidlig
+% --- p. 41 ---
+\setcounter{footnote}{0}%
+\opage{41}„indaandede ham Lyst til dogmatisk Speculation“) og „den
+første Adam“ og „Peder paa Forklarelsens Bjerg“ virkelig
+have kunnet tænke, hvad der ellers er den menneskelige Forstand
+utænkeligt, Begrebet af Christi Legemes individuelle
+Mangestedsnærværelse, og --- vel at mærke --- tænke dette
+Begreb videnskabeligt, objectivt, contemplativt, speculativt,
+dogmatisk. Kort sagt: Dr. Ms Paaberaabelse paa „Tankens
+Forløsning“ indeholder den Paastand, at Christus og Apostlene
+skulle have forjættet de Troende en ny speculativ Logik,
+en objectiv Logik eller Ontologie, hvorved det siden hen,
+naar de første evangeliske Mirakler ophørte, kunde blive muligt for en „dogmatisk Genius“ som „den hellige og almindelige
+Kirkes Organ“ at gjøre et nyt og mere tidssvarende
+Mirakel, et speculativt videnskabeligt Mirakel ved nemlig at
+gjøre Det tænkeligt, som ellers enhver anden videnskabelig
+Tænker maa finde utænkeligt.
+
+Har nu Dr. M. virkelig, naar det kom til Stykket,
+gjort Alvor af denne Paastand? Jeg kan ikke see det. Thi
+det lille Tankeforsøg, den „dogmatiske Genius“ her anstiller
+over Christi Legems Allestedsnærværelse, synes mig just ikke
+at udvise nogen „helliggjørende og fuldkommende Virksomhed
+eller bære Spor af nogen særegen Gjenfødelsens Logik.
+--- „Selv en forklaret Individualitet, selv et aandeligt Legeme
+lader sig ikke tænke uden Begrændsning.“ Denne
+Tanke er virkelig saa beskeden, saa tilgjængelig, saa ligefrem,
+naturlig og spagfærdig, at den ikke i mindste Maade overstiger,
+hvad den almindelige Logik i saa Henseende kan
+overkomme.
+
+Naar nu Dr. M. med'alt Dette saa bitterlig klager over, at hans Recensenter ikke have „givet sig Tid til at lade
+% --- p. 42 ---
+\setcounter{footnote}{0}%
+\opage{42}Bedømmelsen af Erkjendelseslæren gaae Haand i Haand med
+en Prøvelse af selve Dogmeudviklingen, og vil, at Læseren
+skal betragte Indledningens „almindelige Principer i uopløselig
+Forbindelse med den virkelige Saganskuelse, idet han
+paastaaer, at disse almindelige Principer først ved en saadan
+Saganskuelse faae „Liv og Skikkelse“, da indseer jeg virkelig
+ikke, hvad Fordeel den høiærværdige Forfatter kan
+vente sig af at indskjærpe en saadan Fordring. Thi, jeg
+vil ikke fordølge det, det forekommer mig, som om.
+Dr. Ms „Erkjendelseslære“ tager sig langt bedre ud, naar
+den holdes i en vis almindelig og svævende Afstand fra den
+„virkelige Saganskuelse,“ end naar man anvender den til
+„en Prøvelse af selve Dogmeudviklingen.“ Hvad Hs. H.
+f. Ex. i de dogmatiske Oplysninger oplyser om „den umiddelbare
+og levende Jdeeanskuelse,“ om „Tankens Forløsning“,
+om „Forløsningsbevidstheden“ og „Aabenbaringsbevidstheden“,
+om al „den Herlighed og Guddommelighed og
+himmelske Klarhed,“ „Aabenbaringen“ formedelst „Aabenbaringsbevidstheden“
+har i sig selv „paa Grund af det Indblik,
+den lader os gjøre i Guds Dybheder“, hvilket Indblik
+igjen stadfæstes ved speculative Henblik til Anselmus og den
+første Adam og Peder paa Forklarelsens Bjerg, og det saaledes,
+at disse Henblik igjen stadfæstes ved nye Indblik i
+„den profetiske Anskuelse af den nye Himmel og den nye
+Jord“, i „Legemlighedens Forklarelse“, i „Contemplationens
+Rose“ og Speculationens „stille Glæde“ („I dit Lys skulle
+vi see alt dette tykkes mig at være fremsat saa smukt,
+saa dybsindigt, aandrigt og opløftende, at det næsten er
+Synd at drage det ned fra det Svævendes ætheriske Høide
+og sætte det i Forbindelse med nogen „virkelig Sagan%
+% --- p. 43 ---
+\setcounter{footnote}{0}%
+\opage{43}skuelse“; thi ved Forbindelsen med Noget saa prosaisk som
+en virkelig Saganskuelse vilde jo alle disse „Contemplationens
+Roser“ falme og tabe deres Duft.
+
+Hvordan det altsaa vil gaae med den Martensenske
+„Erkjendelseslære,“ naar den virkelig skal „gaae Haand i
+Haand med en Prøvelse af selve Dogmeudviklingen“, er nu
+viist i Udviklingen af Ubiqvitetsdogmet. For at Ingen skal
+mene, at jeg her vilkaarligen har valgt et Dogme, som
+ifølge sin Natur hører til de meest ubegribelige, maa jeg
+gjøre opmærksom paa, at jeg aldeles ikke vedkjender mig
+den nylig opfriskede Adskillelse imellem „meer og mindre
+begribelige“ Dogmer, og at Dr. M., hvis Skarpsindighed bør
+have Æren for denne Distinction, selv maa indrømme, at
+dette Dogme, ifølge hans egen Rangordning, hører til de
+meest begribelige. „Mørkets Ubegribelighed“ --- siger han,
+Dogm. Opl. S. 58 --- er væsentlig forskjellig fra Lysets,
+hvoraf da ogsaa følger, at den Begribelighed, om hvilken
+her kan være Tale, er en specifisk anden\dots{};“ men den forklarede
+Christus tilhører jo ikke Mørkets, men Lysets Rige.
+Dr. M. kan altsaa ikke beklage sig over, at jeg ved denne
+Leilighed forvexler ham det „Teleologiske“ med det „Anti-Teleologiske;
+thi „Christi kongelige Embede“ hører dog vel
+med til „det Teleologiske.“ --- Hvad der imidlertid nærmest
+har foranlediget mig til at dvæle saalænge ved Ubiqvitetsdogmet,
+er ingenlunde den Martensenske „Modsætning imellem
+det Teleologiske og det Anti-Teleologiske“, men, som sagt,
+den Stillingske Anmærkning.
+
+Idet jeg saa hermed slutter Forhandlingen om Mag.
+Stillings Competance som Recensent af Dr. Martensens
+Dogmatik, skal jeg endnu kun tillade mig en Bemærkning.
+
+% --- p. 44 ---
+\setcounter{footnote}{0}%
+\opage{44}At Dr. M., naar han overhovedet følte sig oplagt til at
+svare „sine Recensenter“, maatte svare i en skarp Tone, var
+ifølge „det Sprog“, man havde tilladt sig mod Hs. H., at
+vente. At Dr. M., i det Øieblik han nedlader sig til at betræde
+Arena'en, strax viser sine Modstandere, at der er Riis
+i den Kost, hvormed han nu agter „at feie for sin Dør“, er
+polemisk i sin Orden.\footnote[1]{Saaledes er det f. Ex. ret passende og ingenlunde uvittigt, at han i sine dogmatiske Oplysninger præsenterer mig som Den, der vil arve de „rige Onkler.“ ---} At Dr. M. ikke lader det blive ved
+det intellectuelle Riis, men (ret som om han uvilkaarlig
+følte, at hans intellectuelle Riis ikke var saltet not) tillige
+griber det moralske (sit \textit{venia verbo}) Kosteskaft, for at
+virke med desto større „Alvor“, er vel ikke saa ganske i sin
+Orden; dog, da Dr. M. nu een Gang har meent at burde
+exseqvere den moralske Revselse, skal ogsaa denne Forret
+for mit vedkommende være hans „dogmatiske Genius"
+velvillig indrømmet, og Alt, hvad han ved denne Leilighed
+har sagt om min „Paatrængenhed“, Fremfusenhed“, „Letsindighed“
+og „Ustadighed“, for gammelt Venskabs og Bekjendtskabs
+Skyld tilgivet.
+
+Derimod er der een Ting, man paa det Alvorligste
+maa foreholde Dr. Martensen, og det ikke blot for Dr. Martensens egen Skyld, men ogsaa for „Litteraturens“ Skyld
+(thi Dr. Martensen og „Litteraturen“ og „Litteraturen“ og
+Dr. Martensen kunne her ikke adskilles), og det er, at
+Hs. H. ikke en anden Gang, naar han vil discutere
+„de almindelige Principer“, forhaster sig
+med at \emph{lægge} Modstanderens „Skriverie“ hen,
+% --- p. 45 ---
+\setcounter{footnote}{0}%
+\opage{45}før han ret har seet sig for, hvad det var, der i
+dette „Skriverie“ stod skrevet. At Dr. M. ved denne
+Leilighed har meent at burde „holde Justits i Litteraturen“,
+betvivler jeg ikke; men --- for en anden Gangs Skyld ---
+var det dog virkeligt ønskeligt, om en Mand, til hvis Autoritet
+Dr. Martensen sætter Lid, ret vilde indprænte ham
+ovenstaaende velmeente Raad; thi hvis Hs. H. fremturer med
+sit excommunicerende Magtsprog, som han her har begyndt,
+kunde han jo let misbruge Banstraalen til stor Skade
+baade for sig selv og for „Litteraturen.“
+
+Som et Slags Undskyldning for Mag. Stillings Afviisning
+kunde man maaskee betragte Dr. Ms Yttring
+(Dogm. Opl. S. 8), at han „umulig kan tage Hensyn til
+Alle, allerede af den Grund, at dette vilde føre til en trættende
+og uoverkommelig Vidtløftighed. I den Forudsætning,
+at Alt er afgjort, naar de „Sætninger“, paa hvilke min
+„undersøgende Anmeldelse“ støtter sig, ere kuldkastede, mener
+da den høiærværdige Forfatter at træffe Sømmet paa Hovedet,
+ved at træffe mit Hoved, og altsaa er det da nu mig,
+der alene maa holde for.
+
+Uden at ville opholde sig ved min „Skrivemaade“ (hvad
+der vel ogsaa maa ansees for overflødigt, efterat H. H. selv
+har givet „Beviis paa sin Skrivemaade“) vil Dr. M. blot
+opholde sig lidt over „Form og Tone“ i min Anmeldelse,
+og gaaer saa uden Omsvøb løs paa Sagen, idet han erklærer:
+
+„De Sætninger, Recensenten (Prof. N.) opstiller imod
+mig, betragter jeg som Sætninger, for hvilke Ingen uden
+han selv er ansvarlig. Om hine Sætninger maaskee have
+en heelt anden Mening i den humoristiske Sammenhæng
+% --- p. 46 ---
+\setcounter{footnote}{0}%
+\opage{46}hos Pseudonymerne, om Recensenten her er i Forstaaelse,
+eller i Ikke-Forstaaelse, eller i Misforstaaelse, alt Dette ligger
+uden for Omkredsen af min Undersøgelse. Jeg skal her kun
+indstrænke mig til den langt ringere og beskednere Opgave
+at feie for min egen Dør ved at vise, at jeg aldeles ingen
+Brug har for de Læresætninger, Recensenten med saamegen
+Paatrængenhed har villet meddele mig, efterdi jeg paa disse
+maa anvende det gamle Ord, at det Sande deri ikke er
+Nyt, og det Nye ikke Sandt; ligesom jeg ogsaa skal vise, at
+hvorledes det end monne forholde sig med hans Forstaaelse
+af Pseudonymerne, saa er det uomstødeligt vist, at han ikke
+har forstaaet mig, men paa det vilkaarligste misforstaaet og
+mistydet mine Tanker“ (Dogm. Oplysn. S. 13 ---14).
+
+At min „undersøgende Anmeldelse“ i visse Puncter er
+noget nærgaaende, vil jeg ikke negte; men den „velvillige“
+Læser vil da vist heller ikke negte, at Anmeldelsens blot
+sammenstillende, undersøgende og spørgende Form er lemfældig
+og svag i Forhold til de stærke Ord, i hvilke
+Dr. Martensen her proclamerer sin dogmatiske Speculations
+Uantastelighed.
+
+Anmeldelsen, der begynder med „en Undskyldning, at
+den tillader sig at sammenstille tvende, i Retning, Aand og
+Tone saa ueensartede Skrifter,“ som Mag. S. Kierkegaards
+„Johannes Climacus“ og Dr. H. Martensens „Christelige
+Dogmatik,“ deler sig i to Dele.
+
+Anmeldelsens første Deel (S. 9—12) indeholder kun,
+hvad Dr. M. kalder „et Excerpt“ af Pseudonymen, en sammentrængt
+Fremstilling af de Hovedtanker, der bevæge Humoristen,
+idet han tager sig den Frihed at behandle Theologernes
+Forsøg med den objective (historiske og speculative)
+% --- p. 47 ---
+\setcounter{footnote}{0}%
+\opage{47}Viden af Christendommens objective Sandhed, ikke som en
+videnskabelig Opgave, der egentlig bør discuteres i Videnskaben,
+men som den Art „alvorlige“ Bestræbelser, der, naar
+de sees i Ideen, vise sig at være af den Beskaffenhed, at
+de væsentlig høre hjemme i den høiere Komik. Hvad den
+komiske Udførelse selv angaaer, kunde denne naturligviis ikke
+gjengives i et „Excerpt“; hvorfor jeg da heller ikke har tilladt
+mig noget Forsøg i denne Retning. Men, at der igjennem
+„Humoristens“. Komik gaaer en frygtelig Alvor, var
+mig tillige saa klart, at jeg, især da jeg saae, hvorledes
+Dr. Martensen i „Forordet“ til sin Dogmatik var kommen
+paa og talte saa betydningsfuldt om „Strøtanker
+og Aphorismer, Indfald og Glimt“ --- umulig kunde undlade
+at henlede Hs. Høiærvs. Opmærksomhed paa det
+Spørgsmaal: \emph{Har ikke „Johannes Climacus“ dialektisk
+skjærpet det christelige Problem?}
+
+Da nu saaledes Anmeldelsens første Deel udelukkende
+beskjæftiger sig med Pseudonymens Theses, og ikke med et
+eneste Ord falder ind i den Martensenske Tankegang, kan
+Beviset for, at jeg har misforstaaet Dr. M., ikke hentes fra
+dette Parti. Hele Eftertrykket falder altsaa paa Anmeldelsens
+anden Deel, der (S. 42 --- 132) heelt igjennem bevæger
+sig om det Spørgsmaal:
+
+\emph{Har ikke „den christelige Dogmatik“ udialektisk
+omgaaet det christelige Problem?}
+
+I denne anden og forholdsviis udførligere Afdeling (der
+endog ved en liden Streg er adskilt fra den første) har jeg
+da --- saavidt jeg veed --- heller ikke brugt nogen fremmed
+Tunge, men, med Undtagelse af Citater, som ikke vel tillade
+% --- p. 48 ---
+\setcounter{footnote}{0}%
+\opage{48}nogen Omskrivning, fremsat Alt med mine egne Ord, og
+forklaret Dr. M. min Mening om hans Dogmatik, saa godt
+jeg har kunnet.
+
+Vil Dr. M. altsaa gjøre det „uomstødeligt vist“, at jeg
+ikke har forstaaet ham, men „paa det Vilkaarligste misforstaaet
+og mistydet hans Tanker“: da er jeg vel ogsaa berettiget
+til at vente, at Hs. Høiærv. deels indlader sig paa
+de i min Recension udviklede Hovedpuncter, deels begrunder
+sit eget „mistydede“ Videnskabsbegreb saa tydelig og bestemt,
+at deraf kan sees, at min Opfatning har været en Misforstaaelse.
+Maaskee vil Dr. M. engang med Tiden gjøre begge
+Dele; men, at han endnu i sine „dogmatiske Oplysninger“
+hverken har gjort det Første eller det Sidste, er --- uomstødeligt
+vist.
+\emph{Dr. Martensen har jo i sine dogmatiske Oplysninger aldeles ikke indladt sig paa at besvare}
+de Indvendinger, min undersøgende Anmeldelse
+fremsætter mod hans Dogmatik.
+
+For strax at angive Forskjellen imellem Troeserkjendelsen
+og den objective Viden, begynder Anmeldelsens anden
+Deel med en Undersøgelse af, hvad det vil sige, at være
+„absolut i Troen“ og „absolut i Viden.“ Forfatteren af de
+dogm. Opl. er imidlertid saa langt fra at tage noget Hensyn
+til denne Undersøgelse, at han endog tillægger mig saadanne
+Meninger, som han umulig kunde have tillagt mig,
+hvis han i mindste Maade havde ændset mine Ord.
+
+Hvad t. Ex. Viden angaaer, hedder det udtrykkelig % PRINTED AS IS: t. Ex. (for f. Ex.)
+(Anm. S. 49): „At erklære sig absolut i Viden er en Anmasselse,
+forsaavidt den Speculerende dermed vil sige sig at
+have en i alle Henseender absolut og fuldkommen Viden af
+% --- p. 49 ---
+\setcounter{footnote}{0}%
+\opage{49}det Absolute\dots{} Ikke destomindre lader Dr. M., som om
+Sligt aldrig var sagt, og paadutter mig uden videre den
+Anmasselse, at ville gaae ud fra en Speculation, der paatager
+sig at gjøre Guds Væsen absolut begribeligt. --- „Men,
+svarer Prof. N., .... Gud maa enten være absolut begribelig
+eller absolut ubegribelig.“ (Dogm. Opl. S. 52).
+
+Hvad Troen angaaer, siger Anmeldelsen (S. 50): „At
+ville gaae og gjælde for absolut i Troen er en Anmasselse,
+hvis den Enkelte dermed vil udgive sig for at kunne fuldkomme
+al Troens Gjerning, at have en i alle Maader absolut
+og ubetinget Tro, den Tro, som flytter Bjerge“
+Men, langt fra at gaae ind paa den i Anmeldelsen fremhævede
+Adskillelse af, at holde sig absolut til Troens Princip,
+og, at udgive sig selv for en absolut Troende (en Adskillelse,
+som Forordet til Dogmatiken gjorde høilig fornøden),
+gaaer Forf. af dogm. Opl. dette Punkt med tilsyneladende
+Uvidenhed forbi, og tillægger mig uden videre den Anmasselse,
+at ville udgive mig for Troeshelt (jfr. dogm. Opl. S.
+71—72 o. o. St.), og dette har Hs. H., som det synes,
+gjort, ene og alene, for at kunne (Opl. S. 12) have den
+Fornøielse at gjentage den Tvetydighed, han har anbragt i
+Forordet til sin Dogmatik, „at ligesom der var en Tid, da
+vi havde ikke Faa iblandt os, som altfor tidligt vare blevne
+absolute i Viden, saaledes fattes det nu ikke paa Saadanne
+iblandt os, som altfor tidligt ere blevne absolute i Troen\footnote[1]{At en Hr. Cand. Hjort kan komme springende med den Nyhed, at jeg nu virkelig bilder mig ind at være den Troende selv, fordi jeg i mit Skrift „Evangelietroen og den moderne Bevidsthed“ har ladet den Troende tale, faaer jeg naturligviis at finde mig i; men, at Dr. Martensen nu ogsaa tager denne Opdagelse til Indtægt, falder mig lidt tungt. Dr. M. burde dog virkelig kunne gjøre Forskjel mellem det, at lade den Troende tale, og det, at tale som den Troende; Dr. M. siger jo desuden selv, at han har læst det Skrift af mig, hvis Forord ender saaledes: „Forfatteren af nærværende Skrift tilstaaer oprigtig, at han endnu hverken i Ord eller Gjerning ret forstaaer at stride for Troen, som det sig bør“ o. s. v.}
+og altfor tidligt ere blevne Troens Forsvarere.“
+% --- p. 50 ---
+\setcounter{footnote}{0}%
+\opage{50}Som Bidrag til nærmere Bestemmelse af Forholdet
+mellem Troeserkjendelsen og Videnskaben behandler Anmeldelsen under den Overskrift:
+
+„Den christelige Dogmatik“ famler efter Problemet, men
+
+% CHECK p. 50: centred line: heading or verse
+\begin{center}finder det ikke,\end{center}
+
+det Spørgsmaal, hvorvidt den speculative Dogmatik væsentlig
+lader sig adskille fra den saakaldte Religionsphilosophie
+eller ikke. Besvarelsen af dette Spørgsmaal er i nærværende
+Sag af gjennemgribende Betydning. Lod det sig virkelig
+paavise, at der i Henseende til Princip, Methode og videnskabelig
+Interesse bestod en sand og betydningsfuld Modsætning
+imellem den speculative Dogmatikers og den speculative
+Philosophs Opfattelse og Behandling af de christelige
+Dogmer: saa fik Dr Martensen i Sandhed Ret, saa vilde
+man virkelig dog tilsidst blive nødt til at indrømme, at der
+gaves en dobbelt Speculation, en dogmatisk og en philosophisk,
+og at den første i sin Art var ligesaa videnskabelig
+berettiget, som den sidste. Nu stræber „Anmeldelsen“ at godtgjøre,
+at en saadan Modsætning kun bestaaer i Dogmatikerens
+Indbildning, ikke i Sagen. „Anmeldelsen“ efterviser,
+at det Forsøg, Dr. M. har gjort med at adskille Dogmatikens
+Begreb fra Religionsphilosophiens, opløser sig --- trods
+alle hans Forsikkringer og Paastande --- i et reent Intet;
+ja det fremhæves udtrykkelig, at den Martensenske Adskillelse af „id%
+% --- p. 51 ---
+\setcounter{footnote}{0}%
+\opage{51}eologisk“ og „philosophisk Speculation“ har havt et
+saa uheldigt Udfald, at endog tvende Paragrapher i hans
+egen Dogmatik desangaaende ere geraadede i aabenbart
+Fjendskab med hinanden,
+
+Hvad har nu Forf. af dogm. Oplys, oplyst i denne
+Anledning? Intet, aldeles Intet. Uden at ændse de mod
+hans Adskillelse fremsatte Indvendinger, gjentager han blot
+sin Paastand, at den theologiske Speculation er af en ganske
+anden og høiere Art end den philosophiske, paanøder eller
+rettere paadigter mig (Opl. S. 14) den Antagelse, at der
+ved den objective Viden blot skulde tænkes paa „en ligegyldig
+Viden“, uagtet „Anmeldelsen“\footnote[1]{„Men, naar det nu er vitterligt, at denne Adskillelse (imellem Dogmatikerens og Philosophens Interesse for Erkjendelsen af Dogmet) beroer paa en ulyksalig Forvexling af det Personlige og det Geniale; naar det nu er vitterligt, at,En kan være en troende Christen og arbeide kraftig i Troen, uden at have den intellectuelle d. v. s. den theoretiske Kjærlighed, hvorom her tales, medens en Anden kan være aldeles behersket og betagen af denne Kjærlighed, uden i samme Grad at arbeide for den subjective Tilegnelse i Troen; naar det er vitterligt,\dots{}. at den intellectuelle og speculative Kjærlighed, hvormed Tænkeren fordyber sig i Aabenbaringens Mysterier, ingenlunde er nogen egentlig religiøs Fordring („Troen er jo det ene Fornødne for os Alle“), men ene og alene Talentets Drift og Trang til Beskuelse af Ideen, til objectiv Glæde i guddommelige Syner: hvor er saa Forskjellen?\hfill Unders. Anm. S. 65.} siger lige det Modsatte; % PRINTED AS IS: at,En, in the note
+ja gaaer endog (Oplys. S. 27) strengt i Rette med
+mig, fordi jeg skal have overseet, at enhver Viden maa
+have sin Interesse, da „en absolut interesseløs Viden neppe
+lader sig tænke“. --- Saaledes forstaaer nu Dr. M. sine
+„Recensenter“. Man gjør ham opmærksom paa Forskjellen
+imellem den religiøse og den videnskabelige Interesse, deraf
+udleder han, at man taler om „en absolut interesseløs
+Vi%
+% --- p. 52 ---
+\setcounter{footnote}{0}%
+\opage{52}den“, og klager saa over, at man „misforstaaer og mistyder
+hans Tanker“.
+
+„Den christelige Dogmatik vil tilegne sig Speculationen,
+men uden at fatte Speculationens Problem“.
+
+Under denne Overskrift gaaer „Anmeldelsen“ (S. 67—90)
+ind paa en nærmere Udvikling af den principielle Forskjel
+mellem Troeserkjendelsen og Speculationen, der i det Foregaaende er paapeget. Undersøgelsen anlægger ikke her nogen
+fremmed Maalestok, men finder overalt sit Udgangspunkt
+Dr. Ms egen Dogmatik, det er Dr. Ms egne „Grundsætninger“
+om Erkjendelsen i Troen og udaf Troen, der, under
+omhyggelig Sammenstilling af herhen hørende Citater,
+gjøres til Gjenstand for videnskabelig Prøvelse. Efter at
+have sikkret sig Begrebet af, hvad Dr. M. kalder „den rene
+Videnskab“, samler „Anmeldelsen“ sin hele Opmærksomhed
+paa det Sted i „Dogmatiken“, der, hvad Standpunktet angaaer,
+vel med Rette maa betegnes som det egentlige Hovedsted.
+
+
+„For Dogmatiken er Christendommens absolute Sandhed
+given forud og uafhængig af al Speculation. Hiint
+δὸς ποῦ στῶ, som den søgende Philosophie saa ofte har
+udtalt er oprindelig besvaret for Dogmatiken; og ikke gjør
+Dogmatikeren Christendommen afhængig af sin Granskning,
+men søger kun igjennem Tænkningen en dybere Tilegnelse
+af den Sandhed, der er ham det Visseste af Alt, og til
+hvilken han er kommen ad en heelt anden Vei end Speculationens.“
+(Dogm. S. 5.)
+
+Den skjulte Modsigelse, der ligger i disse Ord, drager
+Anm. frem, og concentrerer sit Resultat i følgende Udtryk
+(S. 80):\dots{} „er Troens Tænkning forskjellig fra Specula%
+% --- p. 53 ---
+\setcounter{footnote}{0}%
+\opage{53}tionens, eller ere de i Grunden Eet? Indrømmer Dogmatikeren
+det Sidste, saa tilstaae vi vel, at han har Ret,
+naar han søger Troeserkjendelsens Fuldendelse i Speculationen;
+men maae vi saa spørge, hvad der berettiger ham
+til den Paastand, at han selv er kommen til den høieste
+Sandhed ad en heelt anden Vei end Speculationens? Erklærer
+han sig derimod for den første Antagelse, at nemlig
+Troeserkjendelsen i Princip og Væsen er aldeles forskjellig
+fra den speculative Erkjendelse, da indrømme vi ham gjerne,
+at han forud maa være kommen til den absolute Sandhed
+ad en heelt anden Vei end Speculationens; men maae vi
+saa spørge, hvor han som Dogmatiker da vil hen med Speculationen?“
+
+
+Hvad har nu Forfatteren af dogm. Opl. gjort for at
+belyse dette Punkt? Han har (Opl. S. 51) paadigtet mig
+følgende Feilgreb:
+
+„Hvad da angaaer Prof. Ns Paastand, at jeg skal
+have misforstaaet Speculationens Problem, da beroer denne
+aabenbart derpaa, at han opstiller et heelt andet Begreb om
+Speculationen, end det, jeg har vedkjendt mig i min Dogmatik,
+og derved fra først af forrykker det hele Synspunkt.“
+
+Altsaa: jeg holder mig til Dr. Ms eget i Dogmatiken
+„opstillede“ Speculationsbegreb, for at vise, at dette Speculationsbegreb
+i enhver Henseende er falsk og uholdbart; uden
+at indlade sig paa mine Grunde, erklærer Dr. M., at jeg
+opstiller „et heelt andet Begreb om Speculationen, end det,
+han har vedkjendt sig“, og vil saa, at denne Erklæring skal
+gjøre det „uomstødeligt vist“, at jeg „ikke har forstaaet ham,
+men paa det Vilkaarligste mistydet og misforstaaet hans
+Tanker.“
+
+% --- p. 54 ---
+\setcounter{footnote}{0}%
+\opage{54}Ja Forfatteren af dogm. Opl. gaaer endnu lidt videre.
+Han vedbliver nemlig at reise Beskyldninger, der ere af den
+Beskaffenhed, at jeg næsten maa antage, at H. H. enten har
+læst min Anmeldelse, som han, efter egen Tilstaaelse, har
+læst Pseudonymerne, d. v. s. blot flygtig og „fragmentarisk“,
+eller ogsaa glemt igjen, hvad han havde læst.
+
+I Anledning af, at jeg (hvad, som ovenfor er viist, er
+en usandfærdig Paastand) skulde være gaaet ud fra en Speculation,
+der paatager sig at gjøre „de guddommelige Ting
+absolut begribelige“, tillægger Dr. M. mig saaledes (Opl.
+S. 52) følgende Argumentation: „Gud maa enten være
+absolut begribelig eller absolut ubegribelig. Thi Kant og
+Hegel vare systematiske Hoveder, og den ene af disse lærte,
+at de guddommelige Ting vare absolut ubegribelige, den
+anden, at de vare absolut begribelige. Ville vi derfor være
+systematiske Hoveder, da maae vi enten lære det Ene eller
+det Andet.“
+
+Hvad jeg i min Anmeldelse (S. 124) har sagt, er
+imidlertid kun, hvad der længst er anerkjendt i Videnskaben,
+at Den, der vil skrive et System og gjælde for et systematisk
+Hoved, maa fastholde et Princip, og fra Først til Sidst
+respectere dets Conseqvenser, hvad enten han saa forøvrigt
+er Theolog eller Philosoph. For at betegne, hvad jeg mener
+med det Udtryk: „et systematisk Hoved“, har jeg exempelviis
+anført Kant og Hegel. Heraf tager Dr. M. Anledning
+til at irettesætte mig for en \textit{metabasis in aliud genus}.
+
+„Men“ --- hedder det (Opl. S. 52) --- „istedetfor at
+beraabe sig paa Kant og Hegel, hvis Paaberaabelse i nærnærende % PRINTED AS IS: nærnærende (nær- doubled over the line end)
+Sammenhæng er en \textit{metabasis in aliud genus},
+% --- p. 55 ---
+\setcounter{footnote}{0}%
+\opage{55}skulde han (Prof. N.) hellere have fremført mig Dogmatikeres
+Exempel af tilsvarende Auctoritet.“ ---
+
+Den Læser, som har mindste Kjendskab til den nyere
+Tids theologiske Litteratur, vil uden Tvivl studse og falde
+i Forundring over den besynderlige Dristighed, hvormed Dr.
+M. her taler om \textit{metabasis in aliud genus}. Det er jo
+dog vel vitterligt, ja --- „uomstødeligt vist“, at Dogmatikerne
+Daub og Marheineke væsentlig holdt sig til samme
+\textit{genus cognoscendi}, som Philosopherne Schelling og Hegel,
+og at Dogmatikeren Schleiermacher paa sin Viis var ligesaa
+systematisk-subjectiv, som Philosophen Kant.
+
+Det maa endydermere vække Forundring, at Forf. af
+dogm. Opl. saaledes kan dadle mig som den, der ikke har
+„fremført ham Dogmatikeres Exempel af tilsvarende Auctoritet“,
+da jeg dog i min Anmeldelse (S. 89) udtrykkelig har
+anført ham Daub og Marheineke, og, S. 66, mindet ham
+om Schleiermacher.
+
+Ikke mindre paafaldende forekommer mig den Sufficance,
+hvorved Dr. M., uden i fjerneste Henseende at ændse,
+hvad der staaer i Anmeldelsen (S. 82---84), fremsætter den
+Fordring, at jeg „i Gjerningen skulde have gjendrevet den
+Sætning, han har opstillet i sin Dogmatik, at ligesom de
+altid ere blevne tilskamme, der have givet sig ud for at
+have begrebet Alt, saaledes ere de ikke mindre blevne tilskamme,
+der have meent een Gang for alle at kunne afstikke
+Grændserne for al menneskelig Begriben; thi bag efter
+viste det sig bestandig, at der gaves \textit{plus ultra}, og de formeentlig
+faste Grændser aabenbarede deres bevægelige Natur
+ved at flytte sig“ (Dogm. § 33).
+
+„Ja“ --- svarer Anmeldelsen (S. 82) --- „ved at flytte
+% --- p. 56 ---
+\setcounter{footnote}{0}%
+\opage{56}sig!“ og tilføier derpaa Adskilligt om den „flydende Grændse“
+og om „\textit{plus ultra}“.
+
+Dersom det at „finde sig selv“ og blive sit Standpunkt
+tro skal vise sig deri, at man, hvad der saa end indvendes
+imod den een Gang opstillede „Grundanskuelse“, blot holder
+Ørene stive og trodser alle Indvendinger ved en dristig
+Gjentagen af egne Paastande: da indrømmer jeg gjerne, at
+Dr. Ms Adfærd i denne Sag kan kaldes dogmatisk-normal,
+og at Hs. H. i saa Henseende maa siges at have
+„fundet sig selv“. Skal man derimod lægge mindste Vægt
+paa Sandhed og Sandhedsundersøgelse: da indseer jeg virkelig
+ikke, hvad Dr. M. kan mene at opnaae ved en saa tillidsfuld
+Gjentagelse af Paastande, hvis Uholdbarhed er saa
+iøinefaldende, at de end ikke finde Tilhold i den populære
+Mening.
+
+At de altid „ere blevne tilskamme“, der have meent
+een Gang for alle at kunne „afstikke Grændserne for al
+menneskelig Begriben“, er en ligesaa ubestridelig som triviel
+Sætning, naar Talen er om saadanne Ting, som virkelig
+kunne være Gjenstand for „menneskelig Begriben“. Naturvidenskaben,
+Lægevidenskaben, Mathemathiken, Philosophien, % PRINTED AS IS: Mathemathiken
+kort, alle virkelige Videnskaber befinde sig jo i en stadig
+Fremadskriden, i alle virkelige Videnskaber gives der \textit{plus}
+\textit{ultra}, og Den maatte være forrykt, som her vilde paatage
+sig een Gang for alle at „afstikke Grændsen for al menneskelig
+Begriben“.
+
+Men hvo seer nu ikke, at her i denne Sag tales om
+at „afstikke“ en ganske anden „Grændse“. Her tales jo om
+at „afstikke“ den Grændse, hvorved den indbildte Viden
+nødvendigviis adskiller sig fra den sande Viden. Denne
+% --- p. 57 ---
+\setcounter{footnote}{0}%
+\opage{57}Grændse er saare let at afstikke: Om det Overnaturliges
+Væsen gives der kun en indbildt Viden; om den Lov, hvorefter
+det Overnaturlige virker ind paa det Naturlige, gives
+kun en indbildt Viden; om Miraklets objective Gyldighed
+gives der kun en indbildt Viden; om den aabenbarede Religions
+objective Sandhed gives der kun en indbildt Viden.
+
+At den her „afstukne Grændse“ staaer fast, godtgjøres
+saavel af Sagens Natur, som af Historiens Vidnesbyrd.
+Det ligger i Videnskabens Væsen, at den ikke kan vove sig
+ind paa det Overnaturliges Enemærker uden at give sig
+Phantasien og Phantasteriet i Vold. Det sees af Theologiens
+Historie, at denne Videnskab, langt fra at gaae fremad
+i objectiv metaphysisk Viden, meget mere gaaer tilbage i
+samme Forhold, som de virkelige Videnskaber gaae frem.
+Naturvidenskaben, Philosophien og den historiske Kritik have
+jo netop i den nyere Tid, hver paa sin Maade, bragt Theologien
+i en saadan Selvmodsigelse, at der just ikke behøves
+stor Skarpsindighed for at see, at Theologernes middelalderlige\footnote[1]{Det er i denne Henseende da heller ikke uden Betydning, at Dr. M., for at finde et Slags „Forbillede“ for sin „dogmatiske Speculation“, gaaer tilbage til Anselmus og Middelalderens Klostre.}
+Videnskabsbegreb opløses Dag for Dag, og viser
+sig lige ubrugeligt for Videnskaben og for --- Kirken.
+
+„Den christelige Dogmatik vil tilegne sig Troen, men
+uden at fastholde Troens Problem.“
+
+For at retfærdiggjøre denne Paastand, slutter „Anmeldelsen“
+sig (S. 90—125) saa omhyggelig og nøiagtig til
+de Grundsætninger“, den Martensenske Dogmatik „opstiller“
+om Troen, at man af det hele dogmatiske Værk ikke skal
+% --- p. 58 ---
+\setcounter{footnote}{0}%
+\opage{58}kunne anføre mig et eneste Sted, hvis Betydning i dette
+Punkt er overseet. Det er overhovedet ret charakteristisk,
+at den Martensenske Dogmatik, hvis „Speculation“ jo er i
+Troen, gaaer ud fra Troen og ud paa Troen, netop forraader,
+hvad Magister Stilling i sin Recension (S. 29)
+træffende bemærker --- „en paafaldende Mangel paa qvalitativt
+betegnende Prædikater for Tro og Haab.“ Dette,
+siger jeg, er charakteristisk; thi, var Dr. M. virkelig bleven
+opmærksom-paa Det, der egentlig udgjør Troens Qvalitet:
+han havde nødvendigviis maattet opgive „Speculationen.“
+
+At Troen i sig forener baade det Subjective og det
+Objective, at den Troende maa holde sig til Troens Gjenstand,
+maa vide, hvad det er, han troer, og gjøre sig Rede
+for sin Troes Indhold, forstaaer sig af sig selv, og er heller
+ikke blevet omtvistet. Men, just idet man fra begge Sider
+indrømmer, at Troen og Troens Gjenstand maa svare til
+hinanden, saa gjentager sig her det Spørgsmaal, som i
+nærværende Sag er det egentlige Hovedspørgsmaal: Hvorledes
+skal Forholdet imellem Troen og Troens Gjenstand
+rettelig bestemmes?
+
+I Dr. Ms Dogmatik bestemmes Forholdet paa een
+Gang som et relativt Vidensforhold og derhos tillige som
+et Existentialforhold, d. e. et subjectivt personligt Forhold.
+
+At denne Opfattelse af Forholdet er uklar, tvetydig og
+selvmodsigende, stræbe Anmeldelsen at vise, ikke ved at anlægge
+en fremmed og vilkaarl=Maalestok, men ved at holde % PRINTED AS IS: a damaged sort, „=“ overprinted by a curl, where vilkaarlig is meant
+sig til Dogmatikens egne Ord.
+
+„Dogmatikens anden Hovedsætning“ --- hedder det, Anm.
+S. 96 —„gaaer ud paa at forebygge „den Misviisning, der
+af Bekymring for „den Troende“ og hans Sjælstilstand bliver
+% --- p. 59 ---
+\setcounter{footnote}{0}%
+\opage{59}ligegyldig for Troen (\textit{fides, quæ creditur}), der af Iver for
+det Opbyggelige glemmer Indholdet, hvormed der skal bygges,
+glemmer Grundvolden, hvorpaa der skal bygges.“ --- „Hvad
+Reformationen vilde“ --- hedder det (Dogm. S. 40 § 21) ---
+„var hverken udelukkende det Objective eller det Subjective,
+det var den frie Forening af det Objective og det Subjective,
+af Troens Indhold og Troens Inderlighed, af guddommelig
+Aabenbaring og religiøs Selvbevidsthed.“
+
+Imod denne „frie Forening af det Subjective og det Objective“,
+saaledes som Dr. M. har forstaaet den, gjør Anmeldelsen
+den dobbelte Indsigelse, at nemlig a) „det Objective“ herved
+opløser sig, saa at det, der bliver tilbage, kun er et vagt og
+ubestemt subjectivt Noget, og b) at „det Subjective“ fra sin
+Side ligeledes forflygtiges saaledes, at det, der bliver tilbage,
+kun er et ubestemt og ubestemmeligt objectivt Noget.
+
+a) Hvad det første Punkt angaaer, vil Dr. M. naturligviis
+sikkre sig „det Objective“ ved en videnskabelig Paaberaabelse
+paa „Kirkens, Skriftens og Aandens Vidnesbyrd.“
+Anmeldelsen bebreider ingenlunde Dr. M., at han
+i sin Dogmatik har henviist os til disse Vidnesbyrd; men
+den gjør ham opmærksom paa, at han ikke har forstaaet at
+afbenytte disse saaledes, at enten Troen selv (\textit{fides, qua creditur}) eller Troens Indhold (Lærebegrebet --- \textit{fides, quæ}
+\textit{creditur}) derved i mindste Maade klares og sikkres. Anmeldelsens
+Tankegang er i Korthed følgende:
+
+„Den objective Canon for al Christendom“ (Dogm. §
+22) er Christus selv. Men Christus er kun i sin Kirke:
+altsaa er det Kirken, „hin store Enkelte!“ --- der er den
+objective Canon. Men Kirkens egentlige „Prøvesteen (lapis
+lydius)“ er kun i Skriften: altsaa er det Skriften, der er
+% --- p. 60 ---
+\setcounter{footnote}{0}%
+\opage{60}den objective Canon. Men Skriftens rette Forstaaelse er
+kun i Aandens Vidnesbyrd: altsaa er det Aandens Vidnesbyrd,
+der er den objective --- nei det er ikke sandt ---
+Aandens Vidnesbyrd er en absolut subjectiv og „indvortes
+Canon.“
+
+Alt, hvad her siges om „det Objective“, gaaer altsaa
+tilbage i det aldeles Subjective; thi Aandens Vidnesbyrd
+er i det Subjective, ikke tildeels i det Subjective og tildeels
+i det Objective, men ene og alene i det Subjective, absolut
+i det Subjective. Hvor let er det ikke at see dette, naar
+man kun vil see. Alle Theologer, Rationalisterne og de
+Speculative ligesaavel som de Orthodoxe, ere jo i Kirken,
+ville jo være i Kirken, beraabe sig paa Kirken og forsvare
+Kirken, og det uagtet deres Begreber saavel om Christus,
+som om Skriften og Kirken, ere saa modsigende og modstridende,
+som tænkes kan. Skal nu Kirken, --- „hiin store
+Enkelte“! virkelig antages at omslutte, vedkjende og tilegne
+sig alle disse indbyrdes hinanden forkjættrende og fordømmende
+Retninger: da er Aandens Vidnesbyrd i „den hellige
+og almindelige Kirke“ tilvisse ikke blot et alsidigt, men tillige
+et saa tvetydigt og tvetunget Vidnesbyrd, at Den, der
+rettelig skal udtyde dette Vidnesbyrd, maa jo have et endnu
+høiere „Aandens Vidnesbyrd.“
+
+„Og hvad“ --- spørger Dr. M. (Dogm. S. 57) ---
+„var Rationalismen Andet, end en stor \textit{theologia}
+\textit{irregenitorum}, der oversvømmede den protestantiske Christenhed?“
+Det objective Spørgsmaal om Forskjellen mellem den sande
+og falske Theologie, der i Dogmatiken skulde afgjøres videnskabeligt,
+forvandles altsaa dog umærkeligt til et subjectivt
+og uvidenskabeligt Spørgsmaal om: hvilke Theologer der ere
+% --- p. 61 ---
+\setcounter{footnote}{0}%
+\opage{61}„gjenfødte“, og hvilke der ikke ere gjenfødte. See, her have
+vi det vage, ubestemte subjective Noget, der dog tilsidst skal
+gjøre Udslaget, naar man har taget Troesobjectet forfængeligt ved at behandle det som et andet ligefrem videnskabeligt
+Object, og just derved tabt alle objective Skillemærker.
+
+Hvad har nu Forfatteren af dogm. Oplysn. gjort for
+at belyse dette Punkt? Fremsat (Oplysn. S. 16) den sindrige
+Bemærkning, at „selv den fattigste rationalistiske Dogmatik“
+maa erkjende, at Sandheden har en vis Objectivitet“..,
+og derhos --- skjøndt uden at anføre noget Sted,
+der er forbigaaet --- (Dogm. Oplysn. S. 41) henkastet den
+Beskyldning, at man „aldeles ikke gaaer ind paa Modstanderens
+Tankegang“, ikke undersøger „Troesbegrebets Genesis
+hos den Forfatter, mod hvem man stiler sit Angreb“, men
+„uden videre antager et andet Troesbegreb som det sande,
+omgaaes dermed som en fast Forudsætning, der er hævet
+over al Tvivl“ o. s. v.
+
+b) Betræffende det andet Punkt, overseer Anmeldelsen
+ingenlunde, at Dr. M. ogsaa vil hævde „det Subjective“,
+at han kalder Troeserkjendelsen en existentiel Erkjendelse, og
+vil, at „det religiøse Gudsforhold skal betragtes som et Existentialforhold;
+men --- \textit{hinc illæ lacrymæ}! just fordi Dr. M.
+vil beraabe sig paa den existentielle Tænkning, just derfor bebreider
+„Kritiken“ ham, at han befatter sig med at klare
+denne Tænknings Indhold i Speculationens objective Viden;
+thi den speculative Tænkning er i Princip og Væsen lige det
+Modsatte af den existentielle. For den existentielle Tænkning
+er det Subjective, det Personlige, det absolut afgjørende; i
+den speculative Tænkning gaaer Tænkeren ud af sig selv,
+% --- p. 62 ---
+\setcounter{footnote}{0}%
+\opage{62}taber sig i sin Gjenstand og forholder sig til den saa objectivt
+og upersonligt, som det vel er muligt.
+
+„Naar Dogmatikeren“ --- siger Anmeldelsen, S. 101, ---
+„kommer ind paa det subjective Spor, anerkjender og indskjærper
+han Subjectiviteten paa det Bedste, naar han saa
+igjen falder over i den speculative Tankegang, hævder han
+Objectiviteten, den objective Viden, „den theologiske Speculation“
+paa det Eftertrykkeligste, og dog ere disse to Retninger
+ikke blot hinanden aldeles modsatte, men ogsaa aldeles
+modsigende.“
+
+Dr. M., der til en vis Grad --- men ogsaa blot relativt
+og til en vis Grad --- vil have „det Subjective, og
+ligeledes til en vis Grad --- men ogsaa „blot relativt og
+til en vis Grad“, vil have det Objective, faaer da hverken
+den objective eller den subjective Afgjørelse, men en neutraliserende
+Forening, der er --- principløs.
+
+Hvad har nu Forfatteren af dogm. Oplysn. gjort for
+at belyse dette Punkt? Har han nogetsteds forsøgt at tydeliggjøre
+os, hvorledes en Erkjendelse, der er saa subjectiv,
+saa inderlig, saa absolut personlig, som en sand Troeserkjendelse
+nødvendigviis maa være, kan omsættes i Speculationens
+og Videnskabens objective, upersonlige Form, og endda
+være Troeserkjendelse? Nei, Hs. Høiærv. er kommen langt
+nemmere til sin dogmatiske Oplysning, idet han (S. 42)
+har gjort opmærksom paa, at det, jeg kalder den existentielle
+Tænkning, vel omtrent maa være „det Samme, hvad han i
+sin Dogmatik ogsaa har kaldt den existentielle Tænkning og
+med Daub og Mynster kaldt Erkjendelsen i Religionen.“
+
+Saaledes staaer da nu denne Sag. Man har tilladt
+sig at recensere „den christelige Dogmatik“, hvis Forord
+% --- p. 63 ---
+\setcounter{footnote}{0}%
+\opage{63}just i denne Henseende saae saa indbydende ud. Hvad de
+tvende her omhandlede Recensioner (Mag. Sts og min)
+angaaer: afviser Dr. Martensen den første, indlader sig ---
+som viist er --- ikke paa den sidste, men erklærer reent ud,
+at Kritiken over hans Dogmatik „endnu ikke egentlig kan
+siges at være begyndt.“ Man har i disse Recensioner stillet
+Dr. M. bestemte Theses, efterviist ham i hans Dogmatik
+bestemte Modsigelser, anført ham bestemte Grunde. Dr. M.
+erklærer det Hele for et tomt „Formalisterie“ og appellerer
+til Stoffet.
+
+Men, uagtet Dr. M., trods al sin Bestemthed, som
+sagt, ikke vil gaae ind paa nogen bestemt Besvarelse af
+noget bestemt Hovedspørgsmaal, vil han dog ikke destomindre
+gjøre det „uomstødeligt vist, at man ikke har forstaaet ham,
+men paa det  Vilkaarligste misforstaaet og mistydet hans
+Tanker.“ --- Forhandlingen gaaer altsaa følgende Gang:
+
+Man gjør Dr. M. opmærksom paa, at det i Troeserkjendelsen
+bliver nødvendigt at holde sig absolut til Troens
+Princip: Hs. Høiærv. forstaaer det, som om man vilde udgive
+sig for „absolut i Troen.“
+
+Man gjør Dr. M. opmærksom paa, at man i Videnskaben
+absolut maa holde sig til Videns. Princip. Hs. Hv.
+forstaaer det, som om man selv vilde udgive sig for „absolut
+i Viden.“
+
+Man gjør Dr. M. opmærksom paa, at der er en
+Uendelighedens Forskjel imellem Troens Interesse og Videns
+Interesse: Hs. Hv. forstaaer det, som om man talte
+til ham om en „ligegyldig og interesseløs Viden.”
+
+Man gjør Dr. M. opmærksom paa, hvorledes den
+Speculation, „han har vedkjendt sig i sin Dogmatik“, oplø%
+% --- p. 64 ---
+\setcounter{footnote}{0}%
+\opage{64}ser sig ved sin egen indre Modsigelse: Hs. Hv. forstaaer
+det, som om man aldeles ikke tog Hensyn til „den Speculation“,
+han har vedkjendt sig i sin Dogmatik.
+
+Man gjør Dr. M. opmærksom paa, at et systematisk
+Hoved (være sig Philosoph eller Theolog), der vil hævde
+„den sammenhængende Erkjendelse“ og revse Dem, der maae
+nøies med „Strøtanker, Aphorismer, Indfald og Glimt“,
+fremfor Alt maa lægge sig efter at have et Princip og respectere
+dets Conseqvenser: Hs. Hv. forstaaer det, som om
+man herved begik en --- „\textit{metabasis in aliud genus}!“
+
+Man gjør Dr. M. opmærksom paa, at han umulig
+kan faae Speculationen med, hvis han virkelig indrømmer,
+at Troens Tænkning er „en existentiel Tænkning.“ Hs. Hv.
+forstaaer det, som om man havde glemt, at ogsaa han i sin
+Dogmatik indrømmer, at Troens Tænkning er existentiel.
+
+Man gjør Dr. M. opmærksom paa, at Troen ganske
+vist har sin Gjenstand, sit bestemte Object, men at Sandhedserkjendelsen
+i Troen netop forholder sig til dette Object
+saaledes, at den subjective Vished, den subjective Tilegnelse
+her bliver det ene Afgjørende: Hs. Hv. forstaaer det, som
+om man talte til ham om en Sandhedserkjendelse, der
+intet Objectivt havde, og belærer os (Oplysn. S. 16), at
+„selv den fattigste rationalistiske Dogmatik“ dog maa erkjende,
+„at Sandheden har en vis Objectivitet.“
+
+Man gjør Dr. M. opmærksom paa, at efterdi Troens
+Gjenstand nødvendigviis maa svare til Troen og Troeserkjendelsen,
+saa kan Troens Gjenstand just af denne Grund
+ikke være en Videns Gjenstand, da Troen som Tro netop
+er det Modsatte af objectiv Viden: Hs. Hv. forstaaer det
+% --- p. 65 ---
+\setcounter{footnote}{0}%
+\opage{65}(jfr, Oplysn. S. 19—22), som om man talte til ham om
+en Tro, der skulde befinde sig i Strid med sin Gjenstand.
+
+Man gjør endelig Dr. M. opmærksom paa, at Troesgjenstandenes
+objective Ubegribelighed just bliver og maa
+blive indlysende for den, der veed, hvad det vil sige, at begribe
+Noget, og derhos alvorligt og vedholdende tænker over
+sin Tro. Dr. M. forstaaer det, som om man nu var bleven
+kjed af at tænke over sin Tro, og udbryder med Anselmus:
+„\textit{negligentiæ mihi videtur},\dots{} Ja: \textit{negligentiæ mihi videtur}!“
+---
+
+Denne er da i Hovedsagen Dr. Ms. Forstaaelse af sine
+„Modstanderes“ Tanker. Ja, hvad skal man sige? Skal en
+saadan Forstaaelse nu ogsaa være et Tegn paa „Tankens
+Forløsning“: da seer det --- idetmindste for mine Øine ---
+noget broget ud med „Gjenfødelsens Logik.“
+
+Om de Forsøg, Forf. af „dogm. Opl.“ her og der
+har gjort paa at forklare og understøtte sit saa „mistydede“
+Videnskabsbegreb vil jeg nu fatte mig i al Korthed,
+a) Den „dogmatiske Speculation“ kan ikke forsvares
+ved en Paaberaabelse paa „Aabenbaringsbevidstheden“, thi
+Aabenbaringens Kjendsgjerninger ere --- som vi have seet
+--- kun for Troens existentielle Tilegnelse: en speculativ
+Aabenbaringsbevidsthed er en Modsigelse.
+
+b) Den „dogmatiske Speculation“ kan ikke forsvares
+ved Henviisning til den „Contemplation“, der findes i Davids
+Psalmer og i Pauli Breve; at speculere er ikke det
+Samme, som at synge Psalmer; at omvende Hedninger er
+ikke det Samme som at speculere over Treenigheden: en
+videnskabelig Psalmendigter, en speculerende Apostel, er en
+Modsigelse
+
+% --- p. 66 ---
+\setcounter{footnote}{0}%
+\opage{66}c) Den „dogmatiske Speculation“ kan ikke forsvares
+ved Henviisning til de gamle Fædre, Tertullian, Augustin,
+Anselm o. s.v.: de kjære Fædre kunde gjerne være gode
+Christne, og endda befinde sig i nogen Uklarhed over Forholdet
+imellem „\textit{certitudo experientiæ}” og „\textit{certitudo}
+\textit{speculativa}“, ligerviis som ogsaa den kjære Dr. Martensen,
+der endnu, trods Alt, hvad Aarhundredernes videnskabelige
+Tænkning har oplyst, synes at ville forstene sig i samme
+Uklarhed, dog desuagtet for sin Person gjerne kan være en
+god Christen.
+
+d) Den „dogmatiske Speculation“ kan endelig heller
+ikke forsvares ved Henviisning til Troeslærdommenes indbyrdes
+Sammenhæng. Kun speculative Sætninger ere i
+speculativ Sammenhæng. Skulde Sammenhængen imellem
+Dogmerne være speculativ, da maatte jo hvert enkelt Dogme
+(altsaa ogsaa Dogmet om den forklarede Christi Allestedsnærværelse)
+være speculativt; men hermed forholder det sig
+nu, som vi have seet, anderledes: en speculativ Troesbekjendelse,
+en speculativ Catechismus, en speculativ Dogmatik ere
+Modsigelser, som end ikke „Gjenfødelsens Logik“ skal kunne
+„mediere.“
+
+Dog, som sagt, jeg fatter mig kort, deels fordi jeg nu
+antager, at idetmindste Stridspunctet maa være synligt for
+dem, der kunne og ville see, deels ogsaa fordi jeg ikke kan
+slutte denne Forhandling uden endnu engang at henlede
+Læserens Opmærksomhed paa Dr. Ms. og min Stilling til
+„Pseudonymen“ og den Kierkegaardske Litteratur.
+
+Istedetfor at holde sig til min Anmeldelse af „den christelige
+Dogmatik“, har da Forf. af dogm. Opl. foretrukket
+at holde sig til mit Uddrag d. e. til min Anmeldelse af
+% --- p. 67 ---
+\setcounter{footnote}{0}%
+\opage{67}„Johannes Climacus.“ --- Ved saaledes at slaae tvende saa
+ueensartede Størrelser, som „Pseudonymen“ og min Ringhed
+sammen i Eet, har Hs. Hv. uden Tvivl tilsigtet at slaae,
+som man siger, „tvende Fluer med eet Smæk,“ idet han
+vistnok har meent at kunne slaae mig i „Pseudonymen“ og
+saa med det Samme slaae „Pseudonymen“ i mig.
+
+Har nu Dr. M. ramt mig i „Pseudonymen“? --- Jeg
+kan ikke fornemme det. Thi hvad det angaaer, at jeg har
+talt i min „Mesters Ord“, da kunde jeg jo ikke vel gjøre
+Andet, naar jeg vilde give et paalideligt „Excerpt“ af hans
+„Læresætninger.“ Hvad det angaaer, at jeg ikke engang har
+søgt at forklare Hs. Hv., hvad jeg tænker mig ved „\emph{Paradoxet}“:
+da bliver dette kun at forstaae saaledes, at Hs. Hv.
+ikke engang har forsøgt at gjennemtænke, hvad der udtrykkelig
+staaer i mine Skrifter. Hvad endelig det angaaer, at
+jeg af „Letsindighed“ og „dilettantmæssige Ustadighed“ skulde
+have stiftet Standpunct, blot for at høre blandt de „særdeles
+Interessante“, da maatte det vel først godtgjøres, at mit
+valgte „Standpunct“ er uholdbart. Det tilsigtede „Smæk“
+kan altsaa ikke ramme mig, før det har ramt „Pseudonymen.“
+
+
+Har da Dr. M. virkelig ramt „Pseudonymen“ i mig?
+--- Jeg vil ikke fornærme Mag. Kierkegaard og gjøre mig
+latterlig i „Pseudonymernes“ Øine ved at forsvare „Johannes
+Climacus“ imod Dr. Martensen; jeg vil kun med et Par Ord
+belyse Dr. Ms Mening om hvad han kalder Pseudonymernes
+„vidtløftige Litteratur“ ved at henholde mig til de i hans
+„dogmatiske Oplysninger“ henkastede Ytringer.
+
+Alt i en Række af Aar have nu de pseudonyme Tænkere,
+den Ene efter den Anden, fæstet Opmærksomheden paa
+% --- p. 68 ---
+\setcounter{footnote}{0}%
+\opage{68}„Inderlighedens“ Opgaver og opbudt al deres Dialektik paa
+at gjøre det christelige Problem kjendeligt; alt i en Række
+af Aar har Dr. M., der som Dogmatiker beskjæftiger sig med
+det samme Problem, været vidende om, at disse Pseudonymer,
+skjøndt altfor indadvendte til at yttre sig med nogen
+endelig Personlighedspolemik, dog alligevel bestandig holdt
+et vaagent Øie med „Speculationen“ og „Systemet“; alt i
+en Række af Aar har en stille voxende Opmærksomhed fulgt
+denne saa forunderlig frastødende og dog saa uendelig tiltrækkende
+„Litteratur,“ saa at Mange vistnok mange Gange maae
+have spurgt sig selv: hvad er herved at gjøre? --- Under
+disse Omstændigheder maae vi da være Dr. M. dobbelt Tak
+skyldige, at han endelig træder op, og ikke blot siger os,
+hvad herved er at gjøre, men tillige siger os det i en saa
+„ligefrem Meddelelse.“ Af denne „ligefremme Meddelelse“
+maa dog vel Enhver kunne see, at Dr. M. ikke har læst og
+vist heller ikke agter at læse „Pseudonymernes Skrifter“, at
+Hs. Hv. ikke kan forstaae disse Skrifter\footnote[1]{Dr. Martensens bestemte Erklæring, at han ikke kan forstaae „Pseudonymerne“, turde dog her muligviis være at tage i en mere bogstavelig Mening, end Hs. Hv. egentlig ønsker det. Hvad han saaledes f. Ex. (Opl. S. 39), vistnok ikke saameget efter Anselms som efter Frederikke Bremers „Forbillede“, forklarer os om Støttehelten, „den Enkelte,“ item de sindrige Betragtninger, han her og der anstiller over Troens „Lidenskab“ og Troens „Risico“, synes virkelig at tyde hen paa, at hans „dogmatiske Genius“ i denne Henseende er lovlig undskyldt. Hvad der her billigviis taler til Dr. Ms. Undskyldning, er da nu ogsaa dette, at Pseudonymerne aldeles ikke tilbyde ham noget fast og tilforladeligt ποῦ στῶ.\par De dialektiske Pseudonymer have, som det synes, alle indrettet sig efter „Stadiernes“ Lichtenbergske Motto: „Solche Werke sind Spiegel; wenn ein Affe hinein guckt, kann kein Apostel heraus sehen.“ Et saadant „Standpunct“ er unegtelig kun lidet „dogmatisk“; men --- man faaer at tage det, som det er, da andet ποῦ στῶ ikke tilbydes.}, „at han ifølge sine
+% --- p. 69 ---
+\setcounter{footnote}{0}%
+\opage{69}Studiers Gang“ og sin „individuelle Aandsretning“ just
+heller ikke ønsker at forstaae disse Skrifter, og at altsaa det
+Hele heller ikke kan have stort at betyde.
+
+Det er et haardt Slag, ja, det er et dræbende Slag,
+det Slag, hvormed Dr. Ms. dogmatiske Overlegenhed her
+har slaaet den kun lidet dogmatiske „Johannes Climacus“;
+men --- det maa jeg tilstaae --- uagtet dette Slag, hvad
+Realiteten angaaer, er et saa haardt Slag, har Dr. M., hvad
+Formen angaaer, alligevel vidst at „iagttage Grændsen“ og
+føre Slaget med al den Sindighed og tilsyneladende Skaansomhed,
+der altid klæder den Overlegne.
+
+Dr. M. erklærer jo rigtignok, at han aldeles ingen Brug
+har for de „Læresætninger“, jeg af „Pseudonymen“ har villet
+„meddele“ ham, efterdi han paa disse maa anvende det gamle
+Ord, „at det Sande deri ikke er Nyt, og det Nye ikke Sandt“;
+men han indrømmer dog tillige, at „Pseudonymen“ kan til
+en vis Grad være at undskylde dermed, at han som „Gymnastiker“
+og „Humorist“ blot har til Hensigt „paa sokratisk
+Viis at sætte en dybere Skepticisme i Bevægelse (Oplysn.
+S. 12).“ Den meste Skyld falder altsaa paa mig, der har
+været saa „letsindig“ at tage Humoristens „Sætninger“ for
+ramme Alvor, og mene, at disse Sætninger kunde (Oplysn.
+S. 13) bruges til „en ny Erkjendelseslære og en derpaa
+begrundet Behandling af Theologien.“ --- Men, som sagt,
+denne Skaansomhed mod „Gymnastikeren“ ligger alene i
+Formen. Den dogmatiske Dom lyder saaledes:
+
+Skal Det, „Johannes Climacus“ siger om det christelige
+Problem, forstaaes som en gymnastisk-humoristisk Halvspøg,
+kan der maaskee gjerne være Noget i det; men dersom hans
+Hovedsætninger skulle tages for Alvor og gjælde for Sand%
+% --- p. 70 ---
+\setcounter{footnote}{0}%
+\opage{70}hed: da maa Dr. M. paa det Bestemteste erklære, at „det
+Sande den ikke er Nyt, og det Nye ikke Sandt“; og altsaa
+gaaer det jo dog i Realiteten alligevel ud over Pseudonymen.
+
+
+Hvad nu min Mening angaaer, siger jeg til alt Dette
+ganske ligefrem: læs de Kierkegaardske Skrifter ! Læser, Du,
+som vil have nogen Dom i denne Sag, hvo Du end er,
+lærd eller ulærd, læs blot de Kierkegaardske Skrifter i al
+Stilhed uden at forstyrres af Dogmets Surren og Partiernes
+Strid. Læs disse Skrifter med intellectuel Interesse!
+prøv hvad Du læser, ved Dig selv alene, og Du skal see,
+hvor let og spøgende, og dog --- hvor alvorlig, de „humoristiske“,
+Forfattere forene sig om at føre Dig ind i „Problemet“, i
+Inderlighedens, i Personlighedens, i Evighedens sande Problem,
+i det Problem, for hvis Skyld det dog alene er værd
+at leve. Eller: læs disse Skrifter med religiøs-christelig
+Interesse! frigjør dit Sind fra alle Endelighedens udadvendte,
+verdslig-kirkelige Lidenskaber, anvend det Læste paa
+Dig selv, og Du skal see, med hvilken instinctagtig og dog bevidst
+Sikkerhed de ellers saa forskjellige Forfattere forstaae at vise
+Dig det Christelige i Christendommen, og hvilken Mildhed Forsoning
+og Fred, der dog her oversvæver de mange ellers saa
+ængstendende og dybt forfærdende Tanker. Eller, hvis Du
+hellere vil det saaledes: læs da disse Skrifter i afgjort polemisk
+Interesse! Antag, at hvad jeg her har sagt, blot er en
+taabelig Overdrivelse, udsprungen enten af blind Enthusiasme
+eller underfundig Smigren for et andet Menneske, hvis Anerkjendelse
+maaskee til Gjengjæld forventes, om end i ringere
+Maal; antag, at det Hele ikke er andet end en vilkaarlig
+trodsende „Eensidighed,“ der paa det Eftertrykkeligste maa
+% --- p. 71 ---
+\setcounter{footnote}{0}%
+\opage{71}gjendrives; sæt Dig alvorlig for, at Du netop vil være den, der
+møder med Gjendrivelsen, vælg dine bestemte Puncter, gjør
+et Udkast, men --- læs imidlertid alle de paagjældende Skrifter,
+„Pseudonymerne“ ligesaavel som de „opbyggelige Taler“, læs
+dem grundig (thi, hvis Du ikke læser grundig, kan Du vist
+heller ikke gjendrive grundig): Du skal see, at det endda
+just ikke gaaer saa ganske let med Gjendrivelsen; det turde
+let hændes Dig, at Du ved at gaae ind i den virkelige
+Sammenhæng her forefandt en Selvkritik, der gjorde dine
+Indsigelser overflødige, og tilsidst lagde din hele paatænkte
+Kritik under Beslag.
+
+At jeg forøvrigt ikke er i Besiddelse af nogen ligefrem
+eller authentisk Forklaring af disse Skrifter, er en Selvfølge,
+da enhver ligefrem Forstaaelse her er gjort dialektisk umulig.
+At Umuligheden af en saadan ligefrem Forstaaelse
+skulde tjene som Beviis for, at den „indirecte Meddelelse“
+er ufuldkommen og af lavere Art end den directe, er imidlertid
+en feilagtig Mening, der er let at corrigere.
+
+Man har jo rigtignok meent, at „Pseudonymerne“ med
+deres humoristisk spøgende Form og deres dobbelt reflecterede
+Kategorier skulde være mindre alvorlige og derfor mindre
+tilforladelige, end de „opbyggelige Taler“ (f. Ex. „Kjærlighedens
+Gjerninger„). Det Modsatte er just Tilfældet. Netop ved % PRINTED AS IS: the closing quote printed low
+deres indirecte Meddelelsesform staae disse „Pseudonymer“
+just i Alvor paa lige Trin med de opbyggelige Skrifter\footnote[1]{Hvis Meddelelse desuden, skjøndt i en ganske anden Forstand, er og maa være indirect.},
+(ja, ere med al deres Vid og Humor i Grunden langt strengere);
+ved deres „indirecte Meddelelsesform“ opnaae Pseu%
+% --- p. 72 ---
+\setcounter{footnote}{0}%
+\opage{72}donymerne netop, hvad der er aldeles nødvendigt, naar der
+skal tales absolut om det Absolute, de opnaae nemlig ved
+deres Forvandlinger i det Komiske, at afskjære al relativ
+Raisonneren og standse den ellers ustandselige Discussion.
+
+
+Havde f. Ex. „Johannes Climacus“ foredraget sine af mig
+anmeldte „Læresætninger“ i en reen og ligefrem videnskabelig
+Form, det vilde være blevet Theologerne en alvorlig
+Sag, og de vilde da sikkerlig ogsaa have taget det meget
+alvorlig. Nu derimod, da han har meddeelt disse Læresætninger
+i Vittighedens og Humorets indirecte Form, nu anseer
+man ikke Sagen for saa alvorlig. Heri sees en Forvexling
+af det Høiere og det Lavere.
+
+Med en blot videnskabelig Form vilde „Forfatteren“
+aabenbart have bevæget sig i en Cirkel, forsaavidt han,
+skjøndt polemiserende mod Videnskaben, dog alligevel forblev
+indenfor Videnskaben, og saaledes forsøgte sig i den Modsigelse
+at gjøre det Ikke-Videnskabelige videnskabeligt. Med
+en blot videnskabelig Form vilde „Forfatteren“ have befundet
+sig i den Modsigelse, at tale ud af Subjectivitetens og
+Inderlighedens Grund uden dog at tale Subjectivitetens og
+Inderlighedens Sprog, at sige det „ligefrem“, som dog intet
+Menneske kan see eller forstaae „ligefrem.“ Naar da en Forfatter.
+der vil sætte et Princip igjennem og gjøre et Problem
+kjendeligt, netop bruger den Meddelelsesform, som ifølge
+Sagens Natur, er den eneste for hans Problem adæqvate
+skulle vi saa ikke være enige om at indrømme, at Valget
+af en saadan Form just tyder paa, at denne Forfattere har % PRINTED AS IS: Forfattere (for Forfatter)
+--- Alvor; og, naar det endelig indsees, at Inderlighedens
+Problem kun lader sig meddele i Inderlighedens Form, og
+% --- p. 73 ---
+\setcounter{footnote}{0}%
+\opage{73}at denne Form, hvor det gjælder en Position ligeoverfor
+„Videnskaben“, nødvendigviis maa blive en Form, der, idet
+den udfolder Subjectivitetens Indhold, tillige sikkrer dette
+Indhold derved, at enhver Yttring humoristisk ophæver sin
+umiddelbare objective Gyldighed, før desto stærkere at gjenlyde % PRINTED AS IS: før for for (p. 73; stroke checked at the image)
+i Inderligheden selv og hvile i Subjectiviteten: skulle vi
+saa ikke være enige om at indrømme, at der udkræves langt
+rigere Aandsgaver og en langt høiere Productivitet før at % PRINTED AS IS: før for for (p. 73)
+meddele Inderlighedens Problem i Inderlighedens Sprog,
+end der behøves for at fremsætte sine Tanker i en ligefrem
+videnskabelig Form.
+
+Man vil af det her Anførte let kunne see, at jeg betragter
+den Kierkegaardske Litteratur som noget i sig saa
+Eiendommeligt, Afsluttet og Enestaaende, at her aldeles ikke
+kan være Tanke om, at faae disse Skrifter ad nogen ligefrem
+Vei indførte og optagne med i den øvrige Litteratur. Men
+deraf følger ingenlunde, at man i „Litteraturen“ skulde have
+Lov til at ignorere disse Skrifter eller lade, som om man
+ikke havde læst dem. Tvertimod! Enhver, der nuomstunder
+vil tale med om Forholdet mellem Troen og Erkjendelsen
+(han være Theolog eller Philosoph, Præst eller Læg), skal
+visselig ikke opklare os Meget, hvis han selv befinder sig
+i Uklarhed over disse Skrifters „Problem.“
+
+Forsaavidt de Kierkegaardske Skrifter tilhøre Offentligheden,
+tilhøre de naturligviis ogsaa Litteraturen. Enhver
+Forfatter, hvis Opgave berører deres, kan og bør sætte sig
+i et aldeles bestemt og utvetydigt Forhold til dem.
+
+Om dette Forhold skal være polemisk afvisende eller velvillig
+anerkjendende, derom spørge Enhver sig selv, uden at
+tage Mag. Kierkegaard med paa Raad. Har Mag. Kierke%
+% --- p. 74 ---
+\setcounter{footnote}{0}%
+\opage{74}gaard saa Noget at indvende, kan han jo sige til, og selv
+gaae med i Discussionen.
+
+At jeg for min Deel ikke blot har personlig Velvillie for
+Mag. Kierkegaard men ogsaa stor Høiagtelse for den Mand
+af hvis Skrifter jeg tydelig nok (om end ikke „ligefrem“)
+kan see, at hans indre Liv maa være langt mere anstrenget
+end mit, behøver jeg vel ikke yderligere at forsikkre. Men
+det skulde dog gjøre mig inderlig ondt, om Mag. Kierkegaard
+(hvad jeg vel maa ansee for utænkeligt) skulde misforstaae
+disse mine Yttringer, som om jeg herved vilde sætte
+mig i nogetsomhelst Afhængighedsforhold til hans personlige Individualitet. Mit Forhold til denne Forfatterindividualitet
+er og maa væsentlig være det samme, som det
+vilde være, hvis han, istedetfor at leve her i Kjøbenhavn,
+levede t. Ex. i Rom eller i Philadelphia, eller som, hvis han, % PRINTED AS IS: t. Ex. (for f. Ex.)
+istedetfor at være vor „høistærede Samtidige“, antoges at have
+levet enten med Tertullian eller med Augustinus eller med
+--- Anselmus.
+
+At komme i et usandt Forhold til de Kierkegaardske
+Skrifter anseer jeg for yderst farligt, forsaavidt jeg altid
+anseer det for yderst farligt at komme i et usandt Forhold,
+til en Sandhed; at komme i en litterær Polemik med Mag.
+Kierkegaard anseer jeg derimod i denne Forstand ikke for
+saa farligt. Lad ham have nok saamegen Kløgt og nok saa
+glimrende Vaaben; Herregud, vi kunne jo ikke alle være Genier;
+naar man strider for en Sag, strider man jo ikke for
+at vise sit Talent: Mag. Kierkegaard er desuden, saavidt jeg
+veed, netop den eneste Forfatter, der har opbudt, ja jeg kunde
+sige: offret og ødslet alt sit Talent paa at bevise, at for
+Erkjendelsen af den høieste Sandhed er Talentet et Lige%
+% --- p. 75 ---
+\setcounter{footnote}{0}%
+\opage{75}gyldigt. Lad Mag. Kierkegaard paavise, at der er enten
+Tvetydighed, Uklarhed eller anden Mislighed i den Brug,
+jeg har gjort af hans Skrifter: kan han overbevise mig,
+velan, saa tilstaaer jeg mit Feilgreb og takker ham for hans
+Veiledning; kan han ikke overbevise mig, nu, saa bliver jeg
+ved Mit, og skulde mene, at jeg i saa Henseende har samme
+Ret, som enhver Anden.
+
+Altsaa: min Sag er ikke Mag. Kierkegaards Sag.
+Mag. Kierkegaards Sag er udenfor al Discussion, ideelt
+befæstet i det Inderlighedens Middelpunkt, hvorom det Religiøse
+bevæger sig. Min Sag er i Discussionen, udadvendt
+mod det Grændseskjel, hvor Theologie og Philosophie
+strides om Viden og Ikke-Viden.
+
+Da jeg udgav mit første Skrift: „Evangelitroen og % PRINTED AS IS: Evangelitroen
+den moderne Bevidsthed“, meente jeg at kunne føre min
+Sag imod Theologien, uden at berøre Nogen af vore Theologer
+personlig. Dr. Martensens Holdning i Forordet til
+hans Dogmatik opfordrede mig til at anmelde denne Bog
+i en saadan Tone, at hans fornemme Tvetydighed nødvendigviis
+maatte briste. Imidlertid har den ene Theolog følt
+sig fornærmet efter den Anden; men, skjøndt jeg i mit
+andet Skrift: „Evangelietroen og Theologien,“ har gjort udførligt
+Rede for min Opfattelse af Christendommens Forhold
+til Videnskaben, har dog ingen Theolog endnu forsøgt enten
+at omstøde mine „Sætninger“ eller overhovedet at sætte sig
+„videnskabelig“ ind i Sagen.
+
+\end{document}
