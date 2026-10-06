@@ -1,0 +1,3804 @@
+% =====================================================================
+%  R. Nielsen, OM AANDSDANNELSE med særligt Hensyn paa vort Opdragelsesvæsen.
+%  Sex Forelæsninger.  Kjøbenhavn: Gyldendal, 1877.  109 pp.
+%
+%  TRANSCRIPTION -- GENERATED; DO NOT EDIT BY HAND.  Made in three steps, all rerunnable:
+%    python3 ebook-method/om-aandsdannelse/draft.py --emit --force
+%      this template + the scan's text layer (the Royal Library's OCR, in KB's scan;
+%      ~/bibliotek/Nielsen, Rasmus/aandsdannelse.pdf, see SCANS.tsv), then
+%      patches.PATCHES (corrections read at the image that a word decision cannot express);
+%    python3 ebook-method/collate/check.py om-aandsdannelse --italics --apply
+%      the decisions in ebook-method/om-aandsdannelse/decisions.tsv, taken against an
+%      independent tesseract reading of the images (rules.py writes the ones settled by
+%      rule, each marked with its rule; the rest were read at the image), and the
+%      italics decisions (--italics must be in the same call as --apply);
+%    python3 ebook-method/om-aandsdannelse/draft.py --post
+%      patches.POST: corrections written against the collated text.
+%  Run them chained (&&): each step exits without writing if a patch fails to match.
+%  WORD-ACCURACY (2026-10-06).  No e-book and no earlier transcription exist.  The draft
+%  (KB's OCR layer, lines rebuilt from the word boxes) was collated word by word, with
+%  punctuation, quote kinds and word division, against tesseract's independent reading of
+%  the same images: 722 disagreements.  206 were settled by rule: 82 by check.py (glyph
+%  faults, noise, moved words), 124 by rules.py (tesseract's „ read as a comma and its
+%  guillemets for the print's „ “ -- the print sets „...“ only; accents tesseract adds; the
+%  layer's own glyph faults where tesseract's word is attested in the corpus and the
+%  layer's is not).  The rest were read at the image: 518 crops read BLIND (the reader saw
+%  only the printed lines; .parts/reads/), compared by script (reads.py) or decided by
+%  hand from the readers' transcriptions, and 32 more read by the main session.  OPEN 0
+%  (words and italics); no decision left unapplied that changes the text.  Then, at the
+%  image: letterspacing (114 candidate lines, 38 spaced; spaced runs garbled by both OCRs
+%  set by patch), the title page, Indhold and the six lecture openings; the --splits and
+%  --moved lists; the words attested nowhere else in the corpus near an attested word (14
+%  read: 8 misprints marked PRINTED AS IS, 5 OCR faults mended).  Spot-read in full, pp. 47
+%  and 88, with two planted control errors (2 of 2 caught): 2 letterspaced words had been
+%  missed (now set).  109 of 109 page markers exact (check.py --pages).
+%  NOT ESTABLISHED: letterspacing of short words (under five letters) outside the lines
+%  read -- the detector misses them, so some \emph spans may be missing; misprints that
+%  both OCRs read alike as real words (no full image pass).  The book has no footnotes and
+%  no italics.  This copy is heavily marked in pen and pencil; such marks are not
+%  transcribed.
+%
+%  CONVENTIONS.  "% --- p. N ---" + \opage{N} at the first word of printed page N
+%  (a word broken over the turn is split with %).  Footnotes as printed, numbered
+%  per page.  Italics \textit; letterspacing \emph.  Folios, signature marks and the
+%  library's stamps are not transcribed.  Print governs; misprints are kept and
+%  marked PRINTED AS IS.
+% =====================================================================
+\documentclass[12pt,a4paper,openany]{book}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{libertinus}
+\usepackage{libertinust1math}
+\usepackage[danish]{babel}
+\usepackage[protrusion=true,expansion=true]{microtype}
+\usepackage{setspace}
+\usepackage[margin=1.3in]{geometry}
+\usepackage{fancyhdr}
+\usepackage{hyperref}
+\hypersetup{pdftitle={Om Aandsdannelse}, pdfauthor={Rasmus Nielsen}, hidelinks}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LE,RO]{\thepage}
+\fancyhead[C]{\textit{R. Nielsen: Om Aandsdannelse (1877)}}
+\setstretch{1.3}
+\usepackage{marginnote}
+\renewcommand{\thefootnote}{\arabic{footnote})}
+\newcommand{\tocline}[3]{\noindent\makebox[2.2em][r]{#1}\hspace{0.6em}#2\dotfill\ #3\par}
+\newcommand{\opage}[1]{\marginnote{\footnotesize\textit{[#1]}}}
+% a lecture opens a new page: heading, a short rule; the print's large initial is not reproduced
+\newcommand{\lecture}[1]{\clearpage\begin{center}{\large #1}\\[0.4em]\rule{3em}{0.4pt}\end{center}\medskip\noindent}
+
+\begin{document}
+
+% --- front matter (PDF 6, title; PDF 8, Indhold), read at the image 2026-10-06 (sheet m01).
+% p. [I], title.  The publisher's device (a round monogram seal) is not reproduced; KB's stamp is not transcribed.
+\begin{titlepage}
+\begin{center}
+\vspace*{3em}
+{\Huge Om Aandsdannelse}\\[1em]
+{\large med særligt Hensyn paa vort Opdragelsesvæsen.}\\[2.5em]
+\emph{Sex Forelæsninger}\\[1em]
+af\\[1em]
+{\large \emph{R. Nielsen.}}\\[5em]
+% [publisher's device]
+\emph{Kjøbenhavn.}\\[0.5em]
+Gyldendalske Boghandels Forlag (F. Hegel \& Søn).\\[0.5em]
+{\small Trykt hos J. Jørgensen \& Co.}\\[0.5em]
+{\small 1877.}
+\end{center}
+\end{titlepage}
+% p. [III], Indhold.  „Forelæsning“ and the ordinals are letterspaced in every entry.
+\begin{center}{\large\textbf{Indhold.}}\\[0.3em]\rule{3em}{0.4pt}\end{center}
+\hfill{\small Side.}\par
+{\small
+\tocline{}{\emph{Første Forelæsning}: Forskjel mellem Kultur- og Aandsdannelse.}{1}
+\tocline{}{\emph{Anden Forelæsning}: Autoritetstro og personlig Selvforstaaelse}{17}
+\tocline{}{\emph{Tredie Forelæsning}: Aand og Bogstav: det kritiske Vendepunkt}{38}% PRINTED AS IS: the lecture begins on p. 34 (a reader's pencil corrects it)
+\tocline{}{\emph{Fjerde Forelæsning}: S. Kierkegaards Optræden}{52}
+\tocline{}{\emph{Femte Forelæsning}: S. Kierkegaards Selvmodsigelse}{71}
+\tocline{}{\emph{Sjette Forelæsning}: Religion og Humanitet}{91}
+}
+
+
+% ===== TEXT (pp. 1--109) =====
+% --- p. 1 ---
+\setcounter{footnote}{0}%
+\lecture{Første Forelæsning.}\opage{1}
+Der gjøres i vore Dage store og betydelige Anstrengelser
+til Bedste for Oplysning og Dannelse. Ved Siden
+af den lærde Dannelse og de mangfoldige Arter af Fagdannelse
+lægges der Vægt paa almindelig Dannelse:
+politisk, æsthetisk, selskabelig Dannelse. Enhver i Samfundet
+sætter en Ære i, at gjælde for et dannet Menneske.
+Det gaaer med Dannelse som med Paaklædning. Dannelse
+er en klædelig Pynt; hvo ønsker ikke at være
+velklædt og tage sig ud til sin Fordeel?
+
+Men trods den paaskjønnelsesværdige Iver for Dannelsens
+Alsidighed turde det dog, naar vi see nøiere
+efter, vise sig, at der er Noget glemt, at den lovpriste
+Alsidighed er i høi Grad eensidig. Hvad Nutidens Oplyste
+forstaae ved Dannelse er saa godt som udelukkende
+en Dannelse i Forhold til \emph{det Mangfoldige}, er hvad
+vi med eet Ord ville kalde \emph{Kulturdannelse}; at der
+ogsaa maa gives en Dannelse i Forhold til det Enfoldige,
+og at det er den egenlige \emph{Aandsdannelse},
+bliver, saa vidt vi skjønne, alt for letfærdig overseet.
+Det forudsættes uden videre, at Kulturdannelse er Et
+og Alt, saa at, naar man blot har Kultur i rigeligt
+Maal, følger Aandsdannelsen med af sig selv; det er
+en betænkelig Vildfarelse.
+
+% --- p. 2 ---
+\setcounter{footnote}{0}%
+\opage{2}Kulturdannelsen vender Blikket udad; hvad som helst
+der i Mangfoldighedens Verden glider det speidende Øie
+forbi, forvandler sig til Phænomen. Tanken, det Usandselige,
+er Phænomen lige saa vel som det Sandselige, Samvittigheden
+Phænomen lige saa vel som Elektriciteten, Geniet
+et Phænomen saa vel som Lynet, Kristus et Phænomen som
+Buddha og Muhamed. Kalde vi nu det Menneske, hvis hele
+Bevidsthedsindhold tømmer sig ud i Kulturdannelsens
+Former, et Kulturmenneske, da er det let at forstaae, at
+et saadant Menneske, hvor travlt han end har med Tingene
+og med sig selv, dog aldrig kan blive saa indadvendt,'
+at han i Alvor faaer Øie enten paa Tingenes eller sit
+eget Væsen. Han negter ingenlunde, at der er Væsen
+i Tingene, men, siger han, dette Væsen i og for sig er
+ikke til at erkjende. Han negter ikke, at han jo paa
+en Maade har en Sjæl, men hvad Sjælen er for et
+Væsen og om den virkelig er et Væsen, hvordan skulde
+han kunne vide det. Vil han betragte sin Sjæl for
+derved at kunne opdage sit eget Selv, da bliver dette
+Selv ham øieblikkelig et Phænomen. Og hvad ligger
+saa til Grund for dette Phænomen? Noget Mystisk,
+hvorover man ikke skal gruble. Ligegyldig for hvad
+han i sig selv er, danner han sig da til at synes Noget,
+at blive synet og tage sig ud som et anseeligt Phænomen
+i Phænomenernes Række.
+
+Udad vendt mod det Mangfoldige, er Kulturbevidstheden
+alsidig; den er som en Argus besaaet med Øine,
+hundrede klare Øine; men disse hundrede klare Øine
+ere alle den Trolddom underlagte, at hvad de fæste
+sig paa, øieblikkelig skjuler sit Væsen og forvandler sig
+til blot og bart Phænomen. Men i et Phænomen, der
+holder sit Væsen skjult, kan man ikke fordybe sig, og
+% --- p. 3 ---
+\setcounter{footnote}{0}%
+\opage{3}det, hvori man ikke kan fordybe sig, har kun flygtig,
+forbigaaende Interesse. Man bliver kjed af bekjendte
+Phænomener, som Barnet af sit Legetøi, og higer efter
+Nyt. Intet enkelt Phænomen har Gyldighed i og for
+sig; kun Phænomenernes Afvexling, Farvespil og Sammenhæng
+i store Grupper har Interesse. Er man færdig
+med dem i Hjemlandet, saa maa man afsted og see sig
+om i Udlandet. Kulturmennesket er Kosmopolit, en
+Odysseus, vidt bereist; han taler mange Sprog, har
+været i mange Lande, har levet baade med Kykloper
+og Nympher. Hvor er det oplivende at høre ham tale
+om de Bjerge, han har besteget, de Musæer, han har
+besøgt, de Udgravninger af uvurdeerlige Oldtidsskatte, han
+selv har overværet. Han kan kritisere Forfattere, thi
+han kjender Literaturerne; han kan beskrive Bygninger
+og Monumenter, thi han kjender Stiilarterne; Malerier
+og Statuer! ja, han har Kjenderblik, han har Smag.
+
+Men hvad veed Kulturmennesket i Forhold til det
+Enfoldige? Hvilket Spørgsmaal! Er Enfoldighed et
+Phænomen lige som alt Andet i Verden, skulde den
+dannede Mand saa ikke vide, at der foruden Dumhed
+gives høiere Arter af Enfoldighed, i Barnets Uskyld, i
+Kvindens jomfruelige Sjæl, i Kunstnerens geniale Naivetet,
+i Almuetroen, i Religionen? Ja vel, siger han, er den
+hellige Enfoldighed ædel og skjøn; men Kritiken er
+Dannelsens Blomst, Kulturens Fuldendelse, Kritiken „den
+tiende Muse“, forholder sig til Enfoldigheden som Falken
+til Duen; et giftigt Stik af spids Kritik kan dræbe
+Troen, og med Troen falder Religionen.
+
+Aandsdannelsen vender Blikket indad men dog
+ikke saaledes, at den udelukker det Mangfoldige. Man
+har i Optiken Lindser af forskjellig Form,  nogle, der
+% --- p. 4 ---
+\setcounter{footnote}{0}%
+\opage{4}sprede, andre, der samle Straalerne. Kulturdannelsen
+foretrækker straalespredende Lindser med et indbildt
+Brændpunkt; Aandsdannelsen kræver Straalesamlere og
+stiller dem saaledes, at Brændpunktet falder i Selvet.
+„Kjend dig selv!“ det er theoretisk: fæst Opmærksomheden
+paa dit indre, usandselige Væsen, thi kun i og
+ved dette Væsen formaaer du at erkjende Phænomenerne.
+Det er dog dig selv, der seer og hører, fornemmer og
+føler; det er dig selv, der glædes og sørger, tænker og
+grunder; det er dig selv, der lever. Vil du vide, hvad
+Livet er, hvad Sjælen er, hvad Bevidstheden er, da søg
+fremfor Alt Besvarelsen hos dig selv. Himlens Stjerner,
+Jordens Dyr og Hjernens Atomer kunne ikke yde dig
+ringeste Bidrag paa første Haand, thi hvad du veed
+om disse Ting, veed du kun i Kraft af din egen Bevidsthed,
+hvad du dømmer om disse Ting, dømmer du
+i Kraft af din egen Forstand, hvad Værd du tillægger
+disse Ting, tillægger du dem i Kraft af din egen Følelse.
+Bild dig ikke ind, at du ved at gaae ud fra en kritisk
+Betragtning af Dyreslægterne i deres Mangfoldighed
+eller af Menneskeslægten i Almindelighed kan opdage,
+hvad Livet er i sit Væsen; den kritiske Betragtning
+maa have en Maalestok, men hvad du end drøfter og
+hvad du end maaler, saa bærer du i sidste Instans
+Maalestokken i dig selv. „Kjend dig selv!“ det er
+praktisk: hold fast paa dig selv, ikke i selvisk Indbildning,
+men i fri, bevidst Vexelvirkning med den omgivende
+Verden. Der er en Tingenes Orden, under
+hvilken du maa bøie dig, og hvoraf du maa lade dig
+bestemme. Den foreskriver dig Betingelser, men du
+kan vælge, den tilbyder dig Nydelser, den paalægger
+dig Lidelser, den truer dig med Døden; men hvorledes
+% --- p. 5 ---
+\setcounter{footnote}{0}%
+\opage{5}du forstaaer alt dette, beroer paa din Sindssamling
+og din Selvforstaaelse; hvorledes du tager dig i alt
+dette, afhænger af din Villiesretning, altsaa væsenlig
+af, hvorledes du selv er. --- Fra Adspredelsen i det
+Udvortes, fra Phænomenernes Mangfoldighed vil Aandsdannelsen
+føre Mennesket tilbage til det enfoldige
+Ene, det væsenlige Indre, hvori Selvet lever, og saa
+igjennem dette Indre til Allivets Kilde, Naturens Ophav,
+til Nødvendighedens Gaade, til Frihedens Udspring,
+til Aanden som Aand, til Gud.
+
+Uden Aandsdannelse er ingen sammenhængende,
+heelstøbt Verdensanskuelse mulig; uden en sammenhængende
+Verdensanskuelse er ingen sand Karakterens
+Selvstændighed mulig. En indre fri og selvstændig
+Karakteer kan lige saa lidt erhverves ved at
+seile med alle Strømme og staae paa Udkig efter alle
+Mærkværdigheder som ved at lukke Øiet til for det
+Virkelige og lig en Navlebeskuer stirre paa det mystiske
+Punkt i Sjælen. Hvad vi i væsenlig Forstand kalde
+Verdensanskuelse, Livsanskuelse, beroer paa en Vexelbestemmelse
+af det, der kommer uden fra, med det,
+dér oprindelig er i os selv og kommer indenfra, en
+Vexelbestemmelse, der er saa gjennemgaaende, at Sjælen
+under alle Indtryk fra Tingenes og Phænomenernes
+Verden bevarer Indtrykket af sig selv. Selvet maa vise
+sig som medbestemmende, grundbestemmende Factor,
+ikke blot som Samler og Bærer af det Hele. Væsenet
+i denne alsidige, i Selvbestemmelse rodfæstede Vexelbestemmelse
+er Aand.
+
+Aandsdannelse opnaaes ikke derved, at man paa
+udvortes Autoritet antager faste Dogmer af en positiv
+Religionslære. Der er Mange, som have fuldt op af
+% --- p. 6 ---
+\setcounter{footnote}{0}%
+\opage{6}positive Dogmer om Aanden, og dog have de ingen
+Aandsdannelse; hvorimod en „Fritænker“, der negter
+alle Dogmer, kan have Aandsdannelse. Hvad det Negative
+og Positive i Aandsdannelsen angaaer, kommer
+det væsenlig an paa, hvorledes Fornegtelsen og Antagelsen
+bliver begrundet. Vil Nogen f. Ex. negte Guds
+Tilværelse og Sjælens Udødelighed, fordi han bilder sig
+ind, at der i Naturlæren og Kritiken er ført tilstrækkelige,
+uimodsigelige Beviser for Antagelsens Urimelighed,
+da er han blind og dum i Forhold til Aand. Befinder
+han sig derimod i Tilstand af, at kunne forstaae sig
+selv og gjennemføre sit Liv conseqvent i Fornegtelsen;
+finder han, at der i hans Væsen er Noget, der gjør
+Oprør saa vel imod Gud som imod det evige Liv;
+negter han, fordi han er sig klart bevidst, at han, ifølge
+sin Sindsbeskaffenhed, vil negte og maa negte: da har
+hans Fornegtelse Oprindelighedens Præg; han har Aand
+i negativ Form, han har Aandsdannelse. En Aandsfornegter
+med Aand kan være et Aandens Redskab, en
+dygtig Tugtemester for en aandssvækket, aandelig uklar,
+aandelig doven, aandelig forfjollet Slægt.
+
+Den positive Aandsdannelse kan gaae i forskjellig
+Retning, alt eftersom man stiller sig til de to ideelle
+Magter: \emph{Nødvendigheden og Friheden}. Sættes
+Nødvendigheden som det Oprindelige, Friheden som det
+Afledede, vil Dannelsen gaae i rationel Retning, og Overbeviisningen
+grundes paa Viden. Sættes Friheden som
+det Oprindelige, Nødvendigheden som det Afledede, vil
+Dannelsen gaae i religiøs Retning, og Overbeviisningen
+bygges paa Tro. I første Tilfælde falder Eftertrykket
+paa Erkjendelsen af den evige Fornuft, som udtaler sig
+i Naturen; Mennesket fatter og forstaaer sig selv som
+% --- p. 7 ---
+\setcounter{footnote}{0}%
+\opage{7}et Fornuftvæsen i en Verden af fornuftige, nødvendige
+Love. I sidste Tilfælde falder Eftertrykket paa Erkjendelsen
+af Gud og det Livets Ord, der aabenbarer hans
+Villie. Mennesket fatter og forstaaer sig selv som et
+„Guds Billede“, Villiesorgan for den guddommelige Aand.
+
+I hvilken af disse to Hovedretninger Aandsdannelsen
+end gaaer, maa Verdenserkjendelsen dog lade sig forlige
+med Gudserkjendelsen, og Livsanskuelsen i begge
+Henseender være sammenhængende. Fra dette Synspunkt
+vil det bedst kunne sees, hvorledes det forholder
+sig med det nittende Aarhundredes alsidige Dannelse,
+ved nemlig at kaste et Blik paa vort Opdragelsesvæsen.
+
+Man er i Fornuftlæren ikke kommet videre end til
+en kritisk Opløsning af den positive Religions Dogmer,
+og i Religionslæren ikke videre end til en simpel Gjentagelse
+og modificeret Indskærpelse af de gamle Dogmer.
+Skulde Opdragelsen bygges paa en Livsanskuelse, hvori
+der virkelig var Enhed og Sammenhæng, da maatte
+man, i det Mindste indtil videre, have to særskilte Opdragelsesanstalter,
+to Slags Skoler, en Kulturskole
+paa Fornuftens og en \emph{Kirkeskole} paa den positive
+Religions Grundlag, saa at der virkelig blev to Livsanskuelser
+at vælge imellem.
+
+I Kirkeskolen maatte da alt det strengt holdes
+borte, som middelbart eller umiddelbart kunde svække
+Troen paa den religiøse Overleverings historiske Ufeilbarhed
+og vække Tvivl om Dogmernes absolute Sandhed.
+Hele Opdragelsen maatte være indrettet derefter. Kirkeskolen
+maatte da ikke indskrænke sig til en Underviisning
+i Religion alene, den maatte paa sin Viis give en
+virkelig Natur- og Verdenserkjendelse, normerende for
+Kultur og Videnskab. Eleverne i en saadan Skole kunne
+% --- p. 8 ---
+\setcounter{footnote}{0}%
+\opage{8}da nok lære Sprog, baade ældre og nyere; men til Oprindelsen
+af de mange Sprog maae de ikke kjende
+anden Forklaring end den babyloniske Taarnbygning.
+At der maa læres Historie, baade Bibelhistorie og almindelig
+Verdenshistorie, forstaaer sig; men det Afgjørende
+er, at Historiens Gang og de store Begivenheder
+stadig holdes under Belysning af Paradiset og
+Syndefaldet og Djævelens fortsatte Kamp mod det styrende
+Forsyn. Der er da heller Intet i Veien for, at
+der ogsaa kan undervises i Mathematik, Physik og Naturhistorie;
+men det maa gjælde som urokkelig Forudsætning,
+at Verden er skabt i sex Dage, at Himlen er en
+fast Hvælving, og at Jorden staaer stille, medens Solen
+gaaer op og ned. Hypotheser om Dyreslægter, der skulde
+være uddøde før Menneskets Fremkomst, om en naturlig
+Raahedstilstand uden et forudgaaende Paradis o. desl.,
+maae behandles som „Verdens Børnelærdomme“, Phantasier
+af en udøbt Fornuft; thi det er da klart, at intet
+Dyr kunde døe, før Døden var kommen ind i Verden,
+men Døden kom jo først, efter at Mennesket havde
+syndet. Paa denne Maade kommer der Eenhed i Underviisningen.
+Mennesket erkjender, hvorledes det er skabt,
+hvorledes det er faldet, og hvorledes det igjen kan opreises:
+paa dette Grundlag kan en Opdragelse gjennemføres,
+og Aandsdannelsen blive derefter.
+
+I Kulturskolen maa Grunden ryddes og Localet
+renses for alskens mugne Overleveringer. Kritiken med
+„den frie Tanke“ bør sørge for, at der er behørig luftet
+ud, saa at man kan aande frit i Fornuftens Atmosphære.
+Istedenfor Theologiens Dogmer opstilles Naturlærens
+store Grundsætninger: Materiens Evighed, Naturlovenes
+Uforanderlighed. Astronomiens Lære om Kloderne i
+% --- p. 9 ---
+\setcounter{footnote}{0}%
+\opage{9}Rummet, Geologiens Fremstilling af Jordperioderne,
+Zoologiens Opfattelse af Menneskeslægtens Afstamning,
+den almene Forudsætning om Naturen som den absolut
+nødvendige, selvtilstrækkelige Grund til Alt, ogsaa til
+Aanden, disse Fornufterkjendelser afgive Elementerne
+i det Underlag, hvorpaa Livsanskuelsen skal hvile, og
+Opdragelsen lægges an. En Sædelære er nødvendig;
+men de sædelige Bud maae opfattes som almindelige
+Fornuftbud, hvis Opfyldelse kræves af Samfundet, men
+hvis Anvendelse indenfor Tvangslovenes Grændse faaer
+Frihed og Friskhed, Farve og Liv fra den selvbevidste
+Individualitets eiendommelige Naturgrund. Der kan
+undervises i Religion lige saa vel som i Kulturhistorie
+og Sprog, men den hele Udvikling falder ind under
+Fornuftnødvendighedens Synspunkt; det er en Selvfølge,
+at de positive Religioner med deres Mirakler og overnaturlige
+Phænomener uden Undtagelse opfattes som
+Mythologier. Føies hertil en Paaviisning af det Ideale
+i Kunst og Poesi; en Anerkjendelse af det menneskelige
+Hjertes ædlere Følelser, af Samvittighedens Ret og
+den frie Personlighed: saa har man jo en sammenhængende
+Verdensanskuelse, paa hvilken et Opdragelsessystem
+kan gjennemføres conseqvent. Aandsdannelsen
+bliver derefter.
+
+Man lægge vel Mærke til, at de to Opdragelsessystemer
+ere saa himmelvidt forskjellige i Aand og
+Retning, at enhver Grundsætning, der laanes fra det
+ene og optages i det andet, nødvendig maa forvirre
+Sindet og svække Karakteren. Har man nu hidtil holdt
+de to Skoler adskilte fra hinanden? Nei. Er det sandsynligt,
+at man i Fremtiden vil kunne holde dem adskilte?
+Nei. Hvad har man da gjort og hvad vil man
+% --- p. 10 ---
+\setcounter{footnote}{0}%
+\opage{10}fremdeles gjøre? Blande dem sammen i al Uklarhed.
+Lige fra Almueskolen op til Universitetet fortsættes jo
+Blandingen i vor kritiske Nutid paa høist ukritisk
+Maade. Man tænker som saa: et dannet Menneske
+maa kjende den fornuftige Verdensorden, og et dannet
+Menneske bør kjende Religionens Hovedlærdomme. Fornufterkjendelsen
+veileder os i vore Foretagender; Religionen
+styrker vor moralske Følelse og trøster os i
+vore Lidelser. Samfundet kan ikke gjøre Mere for den
+unge Slægt end aabne den Adgang til alsidig Dannelse;
+Forholdet mellem Fornuften og den positive Religion
+er en Gaade, som Enhver maa løse for sig selv, saa
+godt han kan.
+
+Men er det nu ogsaa forsvarligt at fylde de unge
+Sjæle med et Sammensurium af modstridende Forestillinger
+og grunde deres Opdragelse paa en Sum af
+mørke Gaader, som man selv hverken kan eller gider
+løse? Lad Religionen have sine Hemmeligheder og
+Naturen sine, saa er det dog et uafviseligt Krav, at de,
+der skulle være Ungdommens Lærere, maae kunne gjøre
+Rede for, hvorledes det forholder sig med vor Erkjendelse
+af det Overnaturlige i Religionen og vor fornuftige
+Verdenserkjendelse. Kunne de ikke det, da maa
+den humane Opdragelse i Nutiden, hvad Karakteerdannelsen
+angaaer, komme til at staae langt under den
+katholske i Middelalderen og den græske og romerske
+i Oldtiden.
+
+Man tænke sig hos os en Faders Tiltale til sin
+Søn, naar denne efter endt Underviisning forlader Skolen.
+„Min Søn! Du kjender nu de to Ledestjerner, som
+skulle lyse paa din Vei, Religionen og Fornuften. Tab
+dem aldrig af Sigte! De lyse sjeldent lige klart paa
+% --- p. 11 ---
+\setcounter{footnote}{0}%
+\opage{11}een Gang, men naar den ene slukkes, saa tændes den
+anden, saa Du vil aldrig være uden Veiledning. Den
+ene sidder høit paa den overnaturlige Himmel og giver
+Dig Vink om en Almagtsvillie, som, naar den vil, kan
+ryste Jorden og lade Stjernerne falde; den anden lyser
+i Naturens uendelige Rum og klarer Dig en Verdensorden
+saa uforanderlig, at end ikke det mindste Fnug
+kan bevæges deri uden en naturlig Aarsag. Den ene
+gaaer op i Øst, den anden i Vest. Ved at følge den
+første, oplyses Du om, at Jorden er under Forbandelse,
+og at Veien til Maalet er Lidelsernes Vei til Salighed
+hisset; ved at følge den anden erkjender Du, at Naturen
+er god, som den er, og denne Verden en Tumleplads
+for en rig Udvikling af dine Evner og Kræfter. Religionen
+har lært Dig, at Du for Gud er en strafskyldig
+Synder, evig fortabt, hvis Du ikke ved en Andens Fortjeneste
+og Forbøn kan blive benaadet. Fornuften har
+ladet Dig indsee, at Du selv maa bøde for dine Overtrædelser,
+at ingen Stedfortræder eller vilkaarlig Naade
+kan hjælpe Dig ud af de Livsmodsigelser, hvori Du har
+hildet Dig selv. Saa veed jeg da, at Du er alsidig underviist.
+Styr nu din Kurs efter de ledende Stjerner! Med
+dit dobbelte Kompas kan Du trygt pløie Livets Sø og
+vente at naae en rolig Havn.“
+
+En saadan Tiltale vil lyde som en Parodi paa vort
+hele Opdragelsesvæsen; og dog er den saa fri for al
+Overdrivelse, at de antydede Modsigelser blive langt
+mere skj ærende, naar man gaaer i det Enkelte. Men
+Et er Blandingen af det Uforligelige, et Andet er Forbindelsen
+af det væsenlig Sammenhørende. Indrømmer
+man, at en religiøs Gudserkjendelse er Mennesket lige
+saa nødvendig, som en rationel Verdenserkjendelse, og
+% --- p. 12 ---
+\setcounter{footnote}{0}%
+\opage{12}at Aandsdannelsen er betinget af begges Forening, da
+har Kulturverdenen med Hensyn paa sit Opdragelsessystem
+en stor Opgave at løse.
+
+Ved Underviisningen i de fagvidenskabelige Discipliner
+er her i denne Henseende Intet at rette. Valg
+af Stof og Methode afhænger af Øiemed og særlige Vilkaar. Alt kommer an paa den Anvendelse, som
+Videnskabens Resultater finde i Aandslæren. Vi vælge
+til et Exempel \emph{Skabelsen}., Er denne Verden skabt
+eller er dens Natur med absolut Nødvendighed, hvad
+den er, fra Evighed af? At dømme efter det Hastværk,
+hvormed den moderne Kritik har smykket den positive
+Religion til Slagtoffer paa Naturalismens Alter, skulde
+man rigtignok antage, at Skabelse var et forlorent
+--- Dogme, en blind Forestilling uden fornuftig Mening.
+Men er det nu virkelig saaledes? Naturlæren gaaer ud
+fra den Grundsætning, at der er Fornuft i Naturen.
+Det er mere end en Hypothese, thi hvis det Modsatte
+antages, saa er Videnskaben umulig. Vil Nogen maaskee
+paastaae, at Fornuft og Natur er Eet og det
+Samme, saa at Udtrykket: der er Fornuft i Naturen,
+ikke siger Andet, end at der er Fornuft i Fornuften,
+Natur i Naturen, da røber en saadan Paastand just
+ikke noget overvættes Maal af kritisk Skarpsindighed.
+Skal der være fornuftig Mening i Udtrykket, da maa
+der nødvendig underforstaaes, at Eenheden af Fornuft
+og Natur indeslutter en væsenlig Forskjel. Ville vi nu
+et Øieblik standse og besinde os paa, hvad der da
+egenlig skal forstaaes ved Fornuften, mon saa ikke den
+logiske Nødvendighed skulde føre os til Aanden?
+
+„\emph{Naturlovene},“ siger H. C. Ørsted, „udgjøre i
+Forbindelse med det Virksomme, det \emph{Almindelige} i
+% --- p. 13 ---
+\setcounter{footnote}{0}%
+\opage{13}Mangfoldigheden og det Evige i Omskiftningerne.
+Naturlovene kunne derfor ogsaa kaldes \emph{Naturtanker}.
+Men ligesom der i al Tænken er en Virksomhed, og
+Tanken tænkt uden denne kun er en Tænkningsform,
+saaledes er der i enhver tilværende Ting en Virksomhed,
+ved hvilken den hævder sin Tilværelse og yttrer den
+mod andre Ting. Uden Virksomhed har den ingen
+Virkelighed. I Tænkningen kalde vi dette Virksomme
+Villie, i de udvortes Gjenstande Kraft. Men ligesom
+Villen og Tænken er Eet, kun betragtet fra to Sider,
+saaledes ogsaa Kraft og Naturlov; de ere Yttringer af
+en uendelig Enhed af Kraft og Tanke, af den guddommelige
+Villen og den guddommelige \emph{Tænken}\dots{} Det, som
+vi erkjende i Naturen, er da ikke noget Fremmed, men
+det Samme som det, der lever i os selv.“ --- Skulle vi
+altsaa af „det, der lever i os selv“, kunne indsee, hvad
+guddommelig Tænken og Villen har at betyde, da maa
+det dog vel blive os klart, at, om vi end umulig kunne
+forestille os Guddommen som et tænkende og villende
+Individ paa menneskelig Viis, saa maae vi dog nødvendig
+opfatte den som et tænkende, villende Selvvæsen
+d. e. som et fra Naturen forskjelligt Fornuftvæsen. En
+evig Tænken uden en evig Tænker, en evig Villen uden
+en evig Villende, Tanker, som Ingen har tænkt, Villiesbestemmelser,
+som Ingen har villet, slige Antagelser
+høre hjemme i Indbildningernes Verden. Naturen kan
+lige saa lidt tænke de Tanker, der udtale sig i dens
+Love, som den kan ville de „Handlinger“, ved hvilke
+disse Love opfyldes. Enhver Ting virker efter sin
+Natur; men hvad er en Tings Natur vel Andet end
+dens indre ved guddommelig Tænken og Villen bestemte
+Anlæg. Da ingen Naturting kan give sig selv Anlæg,
+% --- p. 14 ---
+\setcounter{footnote}{0}%
+\opage{14}saa maa det fornuftige Naturanlæg oprindelig være bestemt
+af det Alt bestemmende Selvvæsen, d. e. af den
+Alt vidende, Alt formaaende Aand. Gjennem Erkjendelsen
+af Tingene og deres Love føres vi til Erkjendelsen
+af en fornuftig Verdensorden, igjennem Erkjendelsen
+af en given Verdensorden til Erkjendelsen af den
+ordnende Fornuft; men den ordnende Fornuft er en
+Indbildning, dersom den ikke har Aanden til Grund og
+Bærer.
+
+Med samme Ret som vi sige: der er Fornuft i
+Naturen, kunne vi ogsaa sige: der er Fornuft i Aanden.
+Aand og Fornuft ere Eet, men saaledes, at denne Enhed
+indeslutter en Forskjel. Naar vi tale om Fornuften saa
+tænke vi allernærmest paa det uendelige Indhold af
+Viisdomstanker, Villiesbestemmelser, Begreber og Love,
+der i Medfør af Tingenes Anlæg er virkeliggjort i Naturen.
+Naar vi tale om Aanden, tænke vi paa det uendelige
+Selvvæsen, der tænkende, villende, frembringende
+udvikler Fornuftindholdet af sit indre Dyb. Fra dette
+Synspunkt kan Forholdet mellem Nødvendighed og
+Frihed, Natur og Skabelse opklares. Nødvendigheden
+sees i Naturen, for saavidt den aabenbarer sig i Tingenes
+fornuftige Sammenhæng, Følgen maa nødvendig
+have sin Grund, Virkningen sin Aarsag. At antage en
+vilkaarlig Villie, som uden naturlige Aarsager kunde
+faae i Sinde at frembringe eller tilintetgjøre naturlige
+Ting eller gjøre de naturlige Ting unaturlige, er ganske
+vist et Tegn paa Drømmeri og Overtro.
+
+„Man har vel ogsaa“, siger Ørsted, „villet forsvare
+Overtroens Drømme mod Naturvidenskaben ved at vise
+hen dertil, at en umaadelig større Deel af Naturen er
+os mere ubekjendt end velbekjendt. Dette Forsvar kan,
+% --- p. 15 ---
+\setcounter{footnote}{0}%
+\opage{15}selv hos de Uindviede, ikke vise Andet end en Mulighed,
+som dog maa være desto mindre betydningsfuld, jo
+flere af den gamle Overtroes Indbildninger ere blevne
+saaledes belyste, at deres Intethed er bleven afgjort;
+men for dem, som ikke havde ladet sig nøie med at
+tilegne sig Naturvidenskaben med Hukommelsen og Forstanden,
+men havde levet sig ind i dens Heelhed, er
+det klart, at vore Indsigter, trods alle Ufuldkommenheder,
+dog tilintetgjøre enhver Tanke om, at der i
+Naturen skulde foregaae noget Fornuftstridigt.“ Denne
+Udtalelse maae vi ubetinget tiltræde.
+
+Indenfor det givne Hele maae Ting og Love nødvendig
+svare til hverandre: andre Kræfter, andre Love; andre
+Love, andre Kræfter. Men er det givne Heles absolute
+Nødvendighed dermed beviist? Ingenlunde! At antage,
+at den givne Erfaringsverden maa være den eneste
+mulige Verden, fordi ethvert Brud paa dens Love er
+fornuftstridigt, er lige saa ufornuftigt som at antage, at
+den retvinklede Triangel er den eneste mulige Triangel,
+fordi Benegtelsen af den pythagoræiske Læresætning er
+fornuftstridig. Den givne Natur er ganske vist et Fornufthele,
+men det Heles Eiendommelighed er bestemt
+ved dets eiendommelige Anlæg, oprindelig bestemt ved
+en almægtig Selvbestemmelse af Aanden som Aand,
+altsaa ved en \emph{Skabelse}.
+
+Er der nu ud fra Fornuftlærens Standpunkt aabnet
+Udsigt til, at den rationelle Verdenserkjendelse lader
+sig forene med en religiøs Gudserkjendelse, saa maa
+det vel ogsaa ud fra Religionslærens Standpunkt lade
+sig paavise, at den religiøse Gudserkjendelse er forenelig
+med en rationel Verdenserkjendelse. Men paa hvilke
+Betingelser? Her er Noget, der maa forandres, om%
+% --- p. 16 ---
+\setcounter{footnote}{0}%
+\opage{16}dannes, fra Grunden af omarbeides. Hvad er det?
+Dog vel ikke den aabenbarede Religion, dens overnaturlige
+Udspring, dens Mirakler og hellige Kjendsgjerninger?
+Langt fra! Rationalismen, den nye, saa
+vel som den gamle, har i denne Henseende prostitueret
+sig mere end tilstrækkeligt. Det er ikke Aabenbaringens
+Verdensanskuelse som den staaer for os med alle
+Oldtidens Mærker, hvis Karakteertræk skulle udviskes.
+Nei, det er noget ganske Andet, der for Opdragelsens
+og Aandsdannelsens Skyld maa kræves. Det er vort
+indre, væsenlige Forhold til dette Aabenbarede, vor
+Forstaaelse, vor personlige Tilegnelse deraf, kort sagt:
+vor hele religiøse Bevidsthed, vor Tro, der fra Grunden
+af maa omarbeides. Hvad en saadan Omarbeidelse
+betyder, hvor den bærer hen, og hvor vidt den lader
+sig gjennemføre, vil i det Følgende blive Gjenstand
+for nærmere Overveielse.
+
+% --- p. 17 ---
+\setcounter{footnote}{0}%
+\lecture{Anden Forelæsning.}\opage{17}
+
+Religionen er Grundlag for Aandslivet, Religionen maa
+opfattes i Tro. Det ligger da nær at gjøre et Menneskes
+Tro til Maalestok for hans Aand: jo stærkere Tro, desto
+kraftigere Aand, jo kraftigere Aand, desto stærkere Tro.
+Dette er dog ikke altid saaledes. Vel kan der ikke
+gives nogen sand og frugtbar Aandsudvikling uden Tro;
+men der kan i Virkeligheden gives en haardnakket,
+stærk og urokkelig Tro, som dog er saare fattig paa
+Aand, ja ude af Stand til at begrunde nogen virkelig
+Aandsdannelse.
+
+Troen har nemlig to Hovedsider, ligesom den positive
+Religion har to Hovedsider, en udvortes og en
+indvortes, en sandselig og en oversandselig, en historisk
+i sin Overlevering og en overhistorisk i sit Væsen. I
+Begyndelsen ere begge Elementer sammensmeltede, det
+Indvortes kommer tilsyne i et Udvortes, og det Udvortes
+omsætter sig umiddelbart i et Indvortes; men efterhaanden
+skilles de ad, og der indtræder betænkelige
+Kriser i Aandslivet.
+
+Det er et Karakteermærke ved alle positive Religioner
+uden Undtagelse, at de ved deres første Fremtræden
+anmelde sig som guddommelige Aabenbaringer.
+Jo mindre Aand der er i en saadan Aabenbaring, desto
+% --- p. 18 ---
+\setcounter{footnote}{0}%
+\opage{18}mere Eftertryk lægges der paa Antagelsen af det Udvortes.
+Den rettroende Muhamedaner antager, at Koranen
+har existeret fra Evighed i den øverste Himmel
+paa den saa kaldte bevarede Tavle, og at den derfra
+stykkeviis i en Tid af 23 Aar aabenbaredes Muhamed
+ved Engelen Gabriel. De Modsigelser, som findes i den
+hellige Bog, løses af Fortolkerne saaledes, at det senere
+aabenbarede Vers ophæver det tidligere. Her er en fast
+urokkelig Tro paa et Udvortes. Ogsaa Jødedommen
+lægger afgjørende Vægt paa det udvortes Skete og det
+udvortes Foreskrevne; men til et talende Beviis paa, at
+der oprindelig er mere Aand i Jehovatroen end i Muhamedanismen,
+traadte Propheterne op mod Præsteceremonierne
+og de udvortes Bud, og gjorde i Aandens Navn
+det Indvortes gjældende. I Christendommen, Aandens
+absolute Religion, maa det Udvortes tjene det Indvortes.
+Kristus siger: „mine Ord ere Aand og ere Liv.“— „Jeg
+er Sandheden.“ --- „I skulle erkjende Sandheden, og
+Sandheden skal gjøre Eder frie.“ --- Opgiver man det
+positive, historiske Fodfæste, da bliver Inderligheden
+mystisk, og den religiøse Bevidsthed svæver i Luften;
+men sætter man omvendt Troens Forvisning i sandselig
+Oplevelse af et overnaturligt Udvortes, da staaer den
+muhamedanske Tro i Liv og Kraft med glødende Farver
+paa øverste Trin.
+
+Der fortælles i Korstogenes Historie vidunderlige
+Ting om en vidunderlig Skikkelse i Østerlandet, „den
+\emph{Gamle paa Bjerget}.“ Hassan-Ben-Sabbah, Overhovedet
+for „Ismaeliternes Broderskab“ havde forstaaet
+at bibringe sine Undergivne en saa ubetinget Tro
+paa
+Alkoranens Ord, en saa punktlig Lydighed mod dens
+Bud og derved en saa blind Underkastelse under hans
+% --- p. 19 ---
+\setcounter{footnote}{0}%
+\opage{19}egen hellige Autoritet, at han forbausede Verden. Hans
+Troende foragtede verdslig Ære, Lidelse og Pinsler, ja
+Livet selv, for at lyde hans mindste Vink. Det var
+Opdragelse. En Grev Henrik af Champagne drog igjennem
+Ismaeliternes Land, besøgte den Gamle paa hans
+Borg og fik en hæderlig Modtagelse. Paa ethvert af de
+høie Taarne stode to Mænd paa Vagt stive som Støtter.
+Hassan gav et Par af disse Vagthavende et Vink, og
+øieblikkelig styrtede de sig fra Taarnet og laae sønderknuste
+for den forbausede Korsfarers Fødder. Den Gamle
+yttrede koldblodig: „Hvis I skulde ønske det, vilde I
+see dem alle paa mit Vink saaledes styrte sig til Jorden.“
+
+Med denne ubetingede Tro, denne blinde Lydighed
+havde det, efter Beretningerne, et eget Sammenhæng.
+Det var saa langt fra, at de vagthavende Mænd paa
+Taarnene imødesaae et saadant Øieblik med Rædsel eller
+betragtede den Gamle som en grusom Tyran, man kun
+adlød af Skræk, at de tvertimod ærede ham i deres
+Sjæls Inderste og ansaae en Afløsning, som den ovenfor
+beskrevne, for den lykkeligste af alle. De nærmere
+Omstændigheder fremstilles saaledes: Ismaeliternes Sekt
+var oprindelig deelt i to Klasser, Mestre og Lærlinge,
+til disse føiede Hassan en tredie Klasse, der skulde
+være uvidende om Sektens egenlige Hemmeligheder.
+Medlemmerne af denne Klasse kaldtes Offrene; de
+vare klædte i Hvidt, med røde Huer og Skjærf, og
+maatte bestandig holde sig omkring Stormesteren, for
+at forsvare og hævne ham. Midt i de Lande, den
+Gamle raadede over, laa et Slot, et Muhameds Paradis
+paa Jorden. Yndige Haver, løvfulde Træer, Blomster
+beduggede af Vandspringenes Støvregn bød den Indtrædende
+velkommen, skyggefulde Gange skjærmede  ham
+% --- p. 20 ---
+\setcounter{footnote}{0}%
+\opage{20}mod Solens Brand. Boligen forinden straalede i Guld
+og Marmor; Arabesker, Silke og kostbare Tepper i de
+høie, kjølige Sale, unge Piger hvilende paa bløde Divaner
+i vellystig Yppighed! her var Alt, hvad en troende
+Sjæl kunde ønske og attraae. Naar nu en Yngling skulde
+indvies til Optagelse i Offrenes (Fedawiernes) Klasse,
+skete det paa følgende Maade. Han blev i den Gamles
+Nærværelse bedøvet ved en Drik, tilberedt af Haschisch
+(Bladene af indisk Hamp), og i denne bevidstløse Tilstand
+ført til det fortryllende Sted. Naar han da slog
+Øinene op, maatte han nødvendig troe, at han var i
+Paradis og nød i fuldt Maal alle Salighedens Glæder.
+Han blev dernæst atter bedøvet og bragt tilbage. Den
+Gamle stod igjen ved hans Side og forsikkrede den Opvaagnede,
+at han ikke legemlig havde været af Stedet;
+forholdt det sig desuagtet som han sagde, da maa hans
+Sjæl ved et Mirakel være blevet henrykket til Paradis.
+Saa havde den unge Mand Troen i Hænderne; tungsindig
+længtes han efter den Stund, da han skulde komme
+derind for evig Tid, og var villig til at underkaste sig
+de Betingelser, den hellige Autoritet foreskrev ham,
+i ubetinget Lydighed.
+
+Selv indenfor Aandens Religion er der noget Muhamedansk
+i Kirketroen, særlig den katholske. Hvad
+vi her forstaae ved det Muhamedanske ligger ikke fra
+Først af i Læren, i Dogmerne, i Forskrifterne, i Ceremonierne,
+ikke i det, som er Troens Gjenstand, men
+oprindelig i Troen selv, i den Maade, hvorpaa Troen
+opfattes og bestemmes. Vil man maaskee indvende, at
+den Maade, hvorpaa Troens Væsen opfattes og bestemmes,
+selv er et Dogme, da bevæger man sig kun i en
+Cirkel. Man kan umulig foreskrive Tro paa Troens
+% --- p. 21 ---
+\setcounter{footnote}{0}%
+\opage{21}Dogme uden at forudsætte et personligt Indre, en Samvittighed,
+som kan troe sig forpligtet til at antage Dogmet.
+Hvor megen Overtalelse eller Tvang man end
+anvender, saa kan Antagelsen dog ikke blive til Tro,
+med mindre der i Sjælen selv er Noget, som siger Ja
+og Amen til Troens Dogme. Troen er altsaa i første Instans
+en oprindelig Frihedsyttring, en Selvbestemmelsesact, en
+Sandhedserkjendelse af personlige Grunde. Hvori bestaaer
+nu det Muhamedanske? Ligefrem deri, at det personlige
+Indtryk af Troens Gjenstand, som skulde danne
+Udgangspunktet for en Tilegnelse i Aand og Sandhed,
+med Eet forvandles til et Motiv for ubetinget Underkastelse
+under en udvortes Autoritet. „Du maa dog føle
+med Dig selv og erkjende, at Du er en falden, hjælpeløs
+Skabning, der trænger til Opreisning og Frelse“; naar
+denne Henvendelse til Menneskets Samvittighed har
+gjort sin Virkning, saa følger Opfordringen: „grib Frelsen,
+der tilbydes, som den Skibbrudne griber Redningsplanken,
+lad Dig optage i den ene saliggjørende Kirkes
+Skjød!“ Nu er det ude med Selvforstaaelsen og den
+frie Tilegnelse. Tro paa Kirken, blind Underkastelse
+under dens Autoritet, ubetinget Lydighed mod dens Bud
+er Frelsens Betingelse. Vistnok forsømmer Kirken ikke
+at oplyse sine Troende om, hvad det er, de skulle troe.
+Den‘lærer dem hvad Gud er, hvad Hellighed er, hvad
+Synd er; det kan Altsammen forstaaes tydelig til Punkt
+og Prik. Men fra al denne Forstaaelse er der Et, som
+væsenlig er udelukket, og det er Selvforstaaelsen. Det
+er Kirkens Gud, Kirkens Hellighed, hvorpaa der troes.
+Den Troende veed slet ikke, hvad Gud er i sig selv;
+han veed kun, hvad Kirken lærer, at Gud er. Han veed
+ikke engang hvad Synd er og hvad det er at synde;
+% --- p. 22 ---
+\setcounter{footnote}{0}%
+\opage{22}Kirken maa bogstavelig lære ham det. Hvad Kirken
+stempler som Synd, det er Synd, om end den naturlige
+Følelse siger det Modsatte; naar Kirken har udslettet
+en Synd, saa er den udslettet, hvormeget den oprindelige
+Sands for Ret og Uret end kan have at indvende.
+Hemmeligheden er, at den Troende ingen Samvittighed
+har for sig selv, at han har givet Kirken sin Samvittighed.
+Autoritetstro er Udvorteshed i det Indvortes;
+Formlen for denne Udvorteshed er Dogmet.
+
+Man har slaaet Allarm mod den katholske Kirkes
+mange historiske Overgreb i det Udvortes; og det er
+sandt, de have været oprørende og kunne maaske endnu,
+naar. „den moderne Bevidsthed“ ret har hjulpet til og
+gjort sit Bedste, blive oprørende nok; men det er Magthaveriets
+almindelige Overgreb, der mødes og standses
+med udvortes Vaaben. Det radikale, aandsfortærende
+Overgreb er Forvandlingen af det Indvortes selv til et
+Udvortes. Dette Muhamedanske, at Autoritetstroen tager
+det indvortes Menneske til Fange, lokker det ud af sig
+selv, gjør det fremmed for sig selv, saa at det, bedøvet
+som ved en Trylledrik, phantastisk og dog forstandig,
+kan finde Saligheden udenfor sig, og derved opnaae en Art
+sandselig Forvisning om dens Realitet, er en bedaarende
+Illusion, en uoverstigelig Skranke for Aandsdannelsen.
+
+Man har gjort Ophævelser over de mange vilkaarlige
+Tilsætninger i den katholske Overlevering, dens
+opdigtede Mirakler, dens Legender og Overtro; ikke
+uden Grund. Miraklerne ere dens overnaturlige Bygningsemner,
+dens Ornamenter; Legenderne snoe sig som
+Vedbende op ad dens Mure: den er luxuriøst udstyret
+med Overtroens Opfindelser. Og dog ere Overtroens
+Gjenstande endnu ikke Overtroens Væsen, men kun
+% --- p. 23 ---
+\setcounter{footnote}{0}%
+\opage{23}Udslag deraf. Overtroen sidder i Helligdommen, i Troen
+selv som Autoritetstro.
+
+Med alt dette er der dog Aand i det katholske Væsen.
+Paa Autoritetens og den blinde Lydigheds Grundlag have
+Jesuiterne viist, hvad der kan opnaaes ved mystisk comprimeret
+Inderlighed og et consequent Opdragelsessystem.
+En Karakteer som Franz Xaver skal man forgjæves lede
+om i noget andet Kirkesamfund. Et saadant Troesmod,
+en saadan Udholdenhed i Forsagelse og Selvfornegtelse,
+en saadan Bekymring for at vinde Sjæle maa i deres
+Øine, som eensidig see paa det Udvortes, stille denne
+Jesuitmissionær paa lige Trin med Apostelen Paulus.
+Men efter sit Indvortes, hvad er han saa? En Incarnation
+af den Autoritetstro, som fra Grunden af magtstjæler
+det personlige Selv. Det er ikke hans eget menneskelige
+Væsen, der under Kirkens Indflydelse er kommet
+til Udvikling, det er tvertimod det kirkelige Væsen, som
+udenfra er trængt ind i ham. Kirken har taget hans
+Hjerte, hans Villie ud af hans Bryst og sat sit Hjerte,
+sin Aand, sin Villie i Stedet. Han troer i Kirkens Navn
+Kirkens Tro, hans Verdensforsagelse er i ham Kirkens
+Forsagelse, hans Omvendelsesiver Kirkens Iver, selv er
+han det blinde Redskab, „villieløs som et Cadaver“,
+lydig „som Staven i Oldingens Haand“. Hvad han gjør
+er ganske vist noget langt Høiere og Bedre end hvad
+hine Mænd gjorde, der styrtede sig ned fra Taarnet,
+fordi det, hans Autoritet har foreskrevet ham, er høiere
+og bedre; men Motivet er det samme: ubetinget Lydighed,
+blind Underkastelse under en udvortes Autoritet.
+
+Ved sin Autoritetstro og sit Opdragelsesvæsen har
+den katholske Kirke sat et evigt Fjendskab mellem sig
+og den menneskelige Fornuft. Vel maa det synes, som
+% --- p. 24 ---
+\setcounter{footnote}{0}%
+\opage{24}om den systematiske Udvikling og Begrundelse af det
+kirkelige Lærebegreb indeholdt en væsenlig Anerkjendelse
+af Fornuftens Ret; men Anerkjendelsen er kun et Skin.
+Vistnok har der været og er endnu store Videnskabsmænd,
+berømte Lærde, ikke blot Historikere og Philologer,
+men ogsaa Mathematikere, Astronomer, Physikere,
+ja selv Philosopher i Kirkens Skjød. Men see vi nærmere
+til, saa ere de Videnskaber, som bevæge sig paa
+et verdsligt Omraade, kun til en vis Grad tolererede.
+Kirken kan, efter Omstændighederne, lukke et Øie til
+for videnskabelige Theorier og Hypotheser, saa længe
+de ikke aabenlyst sætte sig op mod dens Autoritet;
+men det skeer altid med den stiltiende Forudsætning,
+at dens egen ufeilbare Viden er uendelig ophøiet over 
+„denne Verdens Børnelærdomme“. Hvad Tænkningen i
+Forhold til Dogmet angaaer, er Fornuftens Afhængighed
+ligefrem slavisk. Fornuften er forpligtet til at indrømme,
+at Kristus har to Villier, fordi Kirken siger, at han
+har to; kvis Kirken sagde, at han havde halvtredie Villie, % PRINTED AS IS: kvis (for hvis; read at the image)
+saa var Fornuften ikke alene nødt til at antage det
+for Sandhed, men endog at gjøre sit Bedste for at faae
+det beviist. At det Brød, som, før det indvies af Præsten,
+er naturligt Brød, efter Indvielsen kan beholde sin
+naturlige Smag, sit naturlige Udseende og sine naturlige
+Egenskaber, og dog ikke længere være naturligt
+Brød, men være forvandlet til det Legeme, hvormed
+Kristus blev korsfæstet, er et saa vældigt Slag i Fornuftens
+Ansigt, at det maa sortne for dens Øine og
+overbevise den om, at den katholske Autoritetstro er
+lige saa uforenelig med en rationel Verdenserkjendelse
+som Alkoranens Aabenbaringer.
+
+% --- p. 25 ---
+\setcounter{footnote}{0}%
+\opage{25}Med Reformationen begyndte Troesdogmet at undergaae
+en væsenlig Omdannelse. Luther brød med den
+katholske Autoritet, hævdede Samvittighedens Ret og
+opfattede Troen som personlig Tilegnelse af Kristi Fortjeneste,
+altsaa. som Grundfactor i det religiøse Livs
+Inderlighed. For et Øieblik saae det ud, som skulde
+det Ydre med Eet nedsættes til Stof og Materiale for
+det sig fremarbeidende Indre, og Skriftens hellige Ord,
+gjennemglødet af Aand, tænde Selvforstaaelsens Lys i
+Sjælen. Men det varede ikke længe, før Troens Gjenstand
+drog Opmærksomheden bort fra Bevægelserne i
+det troende Selv. Det stærke, religiøse Liv blev lidt
+efter lidt til en Lære om Livet. Den protestantiske
+Kirke fik sin egen Theologie og sin egen Dogmatik i
+Lighed med den katholske: Udvortesheden feirede en
+ny Triumph, da Kirken blev Statskirke og Orthodoxien
+naaede saa vidt, at den fik sine Dogmer thinglæste af
+Politimyndigheden. Under kongelig Varetægt var Autoritetstroen
+nu bosat i Skriften, væsenlig lige saa udvortes
+som forhen i Pavedømmet.
+
+Den Paastand, at Noget er sandt, fordi det staaer 
+i Bibelen, er lige saa muhamedansk som, at Noget er
+sandt, fordi det staaer i Koranen. Den orthodoxe Bibeltro
+kan lige saa lidt faae Øie paa den Cirkel, hvori den
+bevæger sig, som den orthodoxe Pavetro. Den, der
+troer paa Kirkens Ufeilbarhed, bilder sig ind, at han,
+frigjort for al menneskelig Feilbarhed, har det Ufeilbare
+over for sig, og mærker ikke, at det er ham selv, der
+lægger Ufeilbarheden til af sit Eget. Han troer paa
+Kirken, fordi den er ufeilbar, og see, saa er det kun hans
+egen Tro paa dens Ufeilbarhed, der er ufeilbar. Ligesaa
+med den, der udvortes bygger sin Tro paa Skriften. Han
+% --- p. 26 ---
+\setcounter{footnote}{0}%
+\opage{26}vidste jo slet ikke, hvad han skulde troe, dersom ikke den
+ufeilbare Skrift lærte ham det; men han veed heller ikke,
+at det er hans egen --- ufeilbare! --- Tro, der lærer ham, at
+Skriften er ufeilbar. Saa beraaber man sig fra begge
+Sider paa Aandens Vidnesbyrd; men med Autoritetstroen
+faaer man kun Dogmet om Aanden, ikke Aanden
+selv, kun Dogmet om Vidnesbyrdet, ikke Vidnesbyrdet
+selv. I Aandens personlige Vidnesbyrd maa. det Guddommelige
+lige saa fuldt bekræftes af det Menneskelige,
+som det Menneskelige af det Guddommelige.
+
+Det er en Kjendsgjerning, at den lutherske Orthodoxie,
+fastholdt i dens positive Dogmer, staaer i samme
+fjendtlige Forhold til Nutidens Kultur og Videnskab som
+den katholske. Det er ikke alene i det Physiske og det
+Historiske, men selv i det Psychologiske, i Bevidsthedslivet,
+at Hindringerne for en gjensidig Forstaaelse vise
+sig. Man tænke paa Læren om Menneskenaturens absolute
+Fordærvelse ved Arvesynden, om Guds almindelige
+Naade, som dog ikke er almindelig, men kun kommer de
+Udvalgte tilgode; paa Læren om de to Naturer i Kristus, om
+hans Sæde ved Faderens Høire, hans Legemes Allestedsnærværelse
+og dog begrændsede Nærværelse i Nadveren
+o. s. v., og man vil, uden at overanstrænge sin Forstand,
+snart opdage, at om end Mange, Mange have troet bogstavelig
+paa alt dette, saa er der dog Ingen, der i Aand
+og Sandhed har troet det, af den simple Grund, at
+Ingen har kunnet troe det. At troe paa Noget er at
+have det i Dogmets Form som Troens Gjenstand; men
+at troe Noget er ved inderlig Tilegnelse at forvandle
+det til Troens Indhold. Hvad Troesgjenstande angaaer,
+skal der neppe kunne opvises noget saa Urimeligt og
+Absurd, at det jo fra en. eller anden Side kan blive
+% --- p. 27 ---
+\setcounter{footnote}{0}%
+\opage{27}Gjenstand for en Autoritetstro: det Absurde er jo netop
+det, som alene kan antages paa Autoritet. Anderledes
+med Troens Indhold. Hvad der inderlig skal optages
+i den religiøse Bevidsthed til aandelig Næring for Siælen, % PRINTED AS IS: Siælen (for Sjælen; read at the image)
+maa som ethvert andet Næringsmiddel lade sig opløse
+og fordøie; det maa assimilere sig med Bevidsthedens
+Væsen: Forstaaelsen deraf maa gaae i Eet med en personlig
+Selvforstaaelse. De positive Dogmer, de være
+for Øvrigt knudrede og kantede eller runde og slebne,
+ere i deres faste Tilstandsform som Stene, klare Krystaller,
+maaske Ædelstene! men ikke Livets Brød. Man
+kan hænge dem udenpaa Bevidstheden og pynte sin
+Sjæl med dem; men fordøie dem kan man ikke.
+
+Forholdet mellem Fornuftskolen og Kirkeskolen viser
+sig i en ny Belysning, naar Troen opfattes som personlig
+Tilegnelse af de positive Dogmers almeenreligiøse Indhold.
+Det er ingenlunde Opgaven at afskaffe Kirketroen
+eller i nogensomhelst udvortes Forstand at angribe Autoriteten
+som Autoritet. Tvertimod! I udvortes Forhold
+kan Autoriteten ikke alene være ærværdig, men endog
+nødvendig. End ikke den rationelle Underviisning kan
+undvære Autoriteten. Discipelen maa paa Lærerens
+Autoritet antage bestemte Læresætninger, og i Tillid til,
+at det, der endnu ligger over hans Forstand, vil blive
+ham forstaaligt, arbeide sig frem til Indsigt. Autoritetens
+Vaabenmærke bør staae over Indgangen til Undersøgelsernes
+Skole. En Videnskab, der endnu ikke har vundet
+Anseelse i den offentlige Mening og derved en vis Autoritet,
+vil være udsat for de mest overfladiske Indvendinger,
+uden at Nogen bryder sig om at undersøge
+Sagen. Gaaer det saaledes med det Rationelle, som
+dog maa kunne hævde sig i Kraft af almeengyldige
+% --- p. 28 ---
+\setcounter{footnote}{0}%
+\opage{28}Beviser, hvorledes maa det da ikke gaae med det
+Religiøse, som kun kan erkjendes af personlige Grunde.
+Har Bibelordet ingen Autoritet, Kirken og dens Dogmer
+ingen Ærværdighed, ingen Anseelse, da er Religionen
+priisgiven, og Enhver kan haane den efter Indfald og
+Lune. Sandheden selv, den evige, der er, før Abraham
+blev, maatte jo iføre sig Kjød og Blod og træde frem
+for Menneskene i menneskelig Skikkelse som Autoritet.
+
+Men selv den absolut sande Autoritet er kun et
+Udvortes; Sandheden, det evige Væsen, er et Indvortes,
+Sandheden kræver Erkjendelse, og for Erkjendelsens
+Skyld nedsætter den det Udvortes til Middel og giver
+sin Autoritet hen til Opløsning. „I skulle erkjende
+Sandheden, og Sandheden skal gjøre Eder frie.“ At
+Autoriteten opløses, betyder da ikke, at den afskaffes,
+nei, det betyder, at den i Sandhed stadfæstes. Kun
+med den falske Autoritet er det forbi, naar den opløses.
+En falsk Autoritet, Theologien f. Ex., maa svækkes desto
+mere, jo mere dens Videnskabelighed prøves, thi ethvert
+Forsøg paa at erkjende dens Grunde opløser sig i det
+Absurde. Maaske vil man indvende, at, naar Theologien
+mister sin Autoritet, saa maa det gaae ud over Kirken
+og Dogmerne. Det vilde være sandt, dersom Kirkens
+Autoritet var bygget paa Theologien; det rationelle
+Tøbrud, der opløser de sidste Stumper af den theologiske
+Autoritet, vilde da ganske vist drage Opløsningen
+af den kirkelige efter sig. Men Kirkens Autoritet er,
+naar vi tænke os om, ikke bygget paa Theologien, men
+paa Religionen; det er en Autoritet ikke for Videnskaben,
+men for Troen, en Troesautoritet. Hvorvidt denne
+Troesautoritet er sand eller falsk, beroer paa, hvorvidt
+dens Dogmer ved religiøs, personlig Tilegnelse opløse
+% --- p. 29 ---
+\setcounter{footnote}{0}%
+\opage{29}sig i Sandheden eller i Usandheden. Her er en Opgave
+for Aandsdannelsen, et Grundproblem for religiøs-rationel
+Opdragelse. Nogle Exempler.
+
+\emph{Natur og Skabelse}. „I Begyndelsen skabte Gud
+Himlen og Jorden“; disse Bibelens Ord med den derpaa
+følgende Skabelseshistorie have kirkelig Autoritet.
+„Naturen er uskabt; det er gaaet naturligt til med alle
+Dannelser i Himlen og paa Jorden“; denne Paastand
+har, ifølge den naturalistiske Synsmaade, videnskabelig
+Autoritet. Kan nu en ubetinget Tro paa nogen af disse
+to Autoriteter træde i Sandhedserkjendelsens Sted?
+Umuligt! Lader man den kirkelige Autoritet udelukke
+den videnskabelige, saa kan man jo let slippe fri for
+Bryderier med det Fornuftige. Man lægger sit Hoved
+til Hvile paa Autoritetens Dovnepude, Fornuften
+slumrer ind, og den blidelig indslumrede Fornuft forstyrres
+ikke let at af den rationelle Videns lydløse Fjed.
+Man drømmer om Skabelsesmiraklet og Adam i Paradis;
+men slige Drømmerier føre ikke til personlig Sandhedserkjendelse
+i Troen. Lader man den videnskabelige
+Autoritet udelukke den kirkelige, da har man unegtelig
+en Spore til rationel Undersøgelse af alt det Givne i
+dets Sammenhæng; men hvorfra Sammenhængen og det
+Sammenhængende er, forbliver en Gaade; thi den personlige
+Selverkjendelse mangler. Har Religionen ingen
+Autoritet, saa bliver man ved Spørgsmaalet om Tingenes
+Oprindelse alt for let færdig med Friheden. Natur er
+Nødvendighed og Nødvendigheden Natur, Naturnødvendigheden
+opsluger Friheden, først den guddommelige og
+dernæst den menneskelige. Har Videnskaben ingen
+Autoritet, saa bliver man alt for let færdig med Naturen.
+Skaberen er almægtig og kan gjøre Alt, hvad han vil
+% --- p. 30 ---
+\setcounter{footnote}{0}%
+\opage{30}med den skabte Natur, Menneskets Frihed er ikke
+væsenlig afhængig af Naturens Love, men af Skaberens
+frie Villie: det Hele løser sig op i guddommelig Vilkaarlighed.
+Kun begge Autoriteters forenede Tryk kan sætte
+alle Undersøgelsens Hjul i Gang og drive Bevidsthedslivet
+frem fra Gudserkjendelse til Verdenserkjendelse,
+fra det Religiøse til det Rationelle, fra Tro til Viden
+og fra Viden til Tro.
+
+\emph{Synd og Forløsning}. Religionen vil med kirkelig
+Autoritet indestaae for, at Synden er Folkenes Fordærvelse,
+at det syndige Menneske ikke ved egen Kraft
+kan reise sig af sit Fald, men trænger til en guddommelig
+Hjælper og Forløser. Fornuften vil med Videnskabens
+Autoritet indestaae for, at den almindelige Syndighed
+er en simpel Omskrivning af Menneskenaturens nødvendige
+Ufuldkommenhed, at Frigjørelsens Betingelser
+maae søges i denne Naturs Perfectibilitet, at Menneskeslægten
+ved en fornuftig Brug af sine naturlige Kræfter
+kan og maa i Tidernes Løb lidt efter lidt blive sin egen
+Frelser. Kaster man nu Vrag paa Fornuftens Autoritet,
+hvad saa? Saa voxer den dogmatiske Forestilling om
+Synd og Fordærvelse op til en saadan Høide, at den
+formørker hele Tilværelsen og ender med at gjøre
+den religiøse Selverkjendelse umulig. Intet Troens Lys
+er i Stand til at opklare Fordærvelsens Afgrund. Opfatte
+vi Troen, ikke som en Tro paa Dogmet, en blind
+Autoritetstro, men som en personlig, paa Selvforstaaelse
+begrundet Tilegnelse af det aabenbarede Ord, da er
+der visselig Ingen, der kan eller har kunnet troe, at
+Menneskenaturen ved Adams Synd er bleven saa grundfordærvet,
+at Slægtens Individer uden Undtagelse ere
+hjemfaldne til evig Fordømmelse. Forkaster man Kirkens
+% --- p. 31 ---
+\setcounter{footnote}{0}%
+\opage{31}og Dogmets Autoritet, saa bliver ikke alene Arvesynden
+til en forskruet Indbildning, men selv de virkelige Synder
+finde i de naturnødvendige Drifter saa mange Undskyldninger,
+at Synd og Skyld blive til tomme Talemaader,
+Syndsbevidstheden et Tegn paa blødagtig Vellyst. Der
+kan hos Kulturens Ordførere endog forekomme saa overfladiske,
+ja saa brutale Haansyttringer om Synd og Skyld,
+at den moralske Tilregnelighed udslettes. Hvorfor?
+Fordi man ikke finder det Uleiligheden værd at gaae
+i sig selv og undersøge Syndsbevidstheden nærmere. ---
+Begge Autoriteter, Kirken og Videnskaben, ere uundværlige,
+naar Mennesket under indre Samvirken af Tro
+og Fornuft skal opdage Syndens og Forløsningens Hemmelighed,
+og faae sit personlige Væsen opklaret.
+
+Det evige Liv. Vi have Skriftens og Kirkens
+Autoritet for, at Tilværelsen af et evigt Liv er historisk
+godtgjort ved Kristi Opstandelse. Vi have Naturlærens
+videnskabelige Autoritet for, at Opstandelseshistorien
+staaer i Strid med Naturlovene. Skal nu Kirkeautoriteten
+udelukkende gjælde, da er Forvisningen om det evige
+Liv bygget paa Opstandelseshistorien, hvis Autoritet er
+bygget paa Bibelen, hvis Autoritet er bygget paa
+Kirkens Autoritet, som igjen er bygget paa Historiens
+Autoritet. Det er en muhamedansk Forvisning
+i Kraft af et Udvortes. Skal Videns Autoritet uden
+videre gjælde, saa hjemfalder Historien med Dogmet til
+Kritiken, og Resultatet bliver, at det ikke er Livet,
+men Ideen om Livet, der er det Evige. I begge Tilfælde
+søger man Visheden om Selvet udenfor Selvet, fra kirkelig
+Side i en Historie, fra videnskabelig Side i en Naturbetragtning:
+den personlige Forstaaelse af det personlige
+Liv er udelukket. Den videnskabelige Alvor, hvormed
+% --- p. 32 ---
+\setcounter{footnote}{0}%
+\opage{32}de organiske Betingelser for Sjælens Existens undersøges,
+maa svare til den Troens Alvor, hvormed den religiøse
+Inderlighed omfatter det personlige Livs Fuldendelse,
+og omvendt. Fornuftundersøgelsen skal ikke indskrænkes
+eller paa endelig Maade afpasses efter det Religiøse,
+saa lidt som Troesundersøgelsen skal begrændses og
+tillæmpes efter det Fornuftige. Opløsningen maa fra
+begge Udgangspunkter være fuldstændig. Kun idet
+begge Autoriteter opløses, og Opløsningen viser, at det
+Religiøse netop er Muligheden for det Fornuftige, og
+det Fornuftige Muligheden for det Religiøse, at begge
+Muligheders Eenhed er det personlige Livs oprindelige,
+for Evigheden bestemte Selveenhed, kan Troen forenes
+med Viden, Religionen med Videnskaben.
+
+Som eneste Udvei til at forlige Kulturbevidstheden
+med den religiøse Trang har man begyndt at kalde den
+for mere end en Menneskealder siden hensovede Rationalisme
+tillive igjen ved at indblæse den Tidens Aand.
+Men Forsøget vil neppe lykkes. Rationalisten har Ret,
+naar han fordrer, at Orthodoxiens Dogmer maae opløses,
+men han har Uret i at opløse dem i Viden, ikke i Tro;
+at opløse dem i Viden er at knække dem som hule
+Nødder; den religiøse Kjærne er borte. Rationalisten
+vil have sine Troessætninger begrundede i Videnskaben
+og mærker ikke, at han indsmugler noget Personligt,
+som Videnskaben ikke kan begrunde. Han forudsætter
+en hellig, retfærdig og kjærlig Gud, og mærker ikke,
+at han herved er kommet langt ud over Videns Grændser.
+Begreber som: Guds Retfærdighed, Guds Kjærlighed,
+Guds Naade, Barmhjertighed o. desl. ere ikke Vidensbegreber,
+men Personlighedsbegreber, Troesbegreber.
+Kjærlighedens retfærdige Gud er en Personlighedens Gud,
+% --- p. 33 ---
+\setcounter{footnote}{0}%
+\opage{33}Hjertets Gud, Samvittighedens Gud. Rationalisten antager,
+at Læren om Sjælens Udødelighed er fornuftig,
+i sin Grund videnskabelig, og mærker ikke, at han
+sammenblander det, som Videnskaben ikke kan modbevise,
+med det, som den kan bevise.
+
+Mangel paa Indsigt i Forholdet mellem det Personlige
+og det Upersonlige, det Religiøse og det Fornuftige,
+er Mangel paa Aandsdannelse, Mangel paa Opdragelse.
+
+% --- p. 34 ---
+\setcounter{footnote}{0}%
+\lecture{Tredie Forelæsning.}\opage{34}
+
+Det er os fra det daglige Liv bekjendt, hvor let der
+kan opkomme Tvist om Forholdet mellem Ord og Mening.
+Man bør, som det hedder, ikke hænge sig i Ord, men
+see paa Meningen; og dog har Meningen Tilhold i
+Ordet. Man skal, som det udtrykkes i høiere Stiil, betænke,
+at Aanden levendegjør, men Bogstaven ihjelslaaer;
+men ved juridiske Kjendelser og i lovgivende Forsamlinger
+skal man da ogsaa betænke, at Aanden hæfter
+ved det bogstavelige Udtryk og vilde uden dette være
+hjemløs og uvederhæftig. Striden om Ord og Mening,
+Aand og Bogstav faaer i den protestantiske Kirke afgjørende
+Indflydelse paa Fortolkningen af den hellige
+Skrift. Det 16de og 17de Aarhundredes Dogmatikere
+holdt Aanden fast i Bogstaven og paastode, at Gud
+selv ordret havde dicteret de hellige Forfattere, hvad
+de skulde skrive. I den Forstand var Skriftens Ord
+Guds Ord, at Propheter, Evangelister og Apostle, kun
+havde været „Guds Skrivere“, „Guds Penne“. Der kan
+altsaa ikke være end den mindste Feil eller Uovereensstemmelse
+i det skrevne Aabenbaringsdocument, hverken
+hvad de historiske Kjendsgjerninger eller hvad Udtrykket
+for det Religiøse angaaer: den hellige Skrift er i Et og
+% --- p. 35 ---
+\setcounter{footnote}{0}%
+\opage{35}Alt ordret absolut ufeilbar. Hvorledes det' siden er
+gaaet Theologien med Bibelforgudelsen og den absolute
+Ufeilbarhedstro, skulle vi ikke opholde os ved: vi forbigaae
+Fataliteterne med det Udvortes og fæste Opmærksomheden
+paa det Sjælelige, det Indvortes.
+
+Uden nærmere Kjendskab til Kritiken af de bibelske
+Skrifter og det kirkelige Dogme om Inspirationen
+vil Enhver, som med Nutidens almindelige Dannelse
+forener en religiøs Trang og Ærbødighed for Skriftens
+Ord og gjennemlæser det Gamle og Ny Testamente, overbevise
+sig om, at Aabenbaringens Aand ikke lader sig
+fange i Bogstaven. Der staaer i anden Samuels Bog
+(24,1): „Jehovas Vrede traf igjen Israel; han fristede
+nemlig David“; der staaer i første Krønikernes Bog:
+(21,1): „Satan var Israels Modstander og han fristede
+David til at tælle Israel.“ Begivenheden er den samme.
+Holder man sig nu strængt til Bogstaven, saa faaer
+man jo ud, at Jehova og Satan er eet og samme Væsen.
+Skiller man Jehova fra Satan, da har man med det
+Samme skilt Aanden fra Bogstaven, Meningen fra Ordet
+og anvendt en Fortolkning. Der staaer hos Propheten
+Hoseas (11,1): „Israel var endnu, ung, da jeg fik ham
+kjær; ud af Ægypten kaldte jeg min Søn.“ Der staaer
+hos Matthæus (2,15), at Josephs Flugt med Moder og
+Barn til Ægypten skete, „at det maatte gaae i Opfyldelse,
+som Herren talede ved Propheten, der siger:
+Fra Ægypten kaldte jeg min Søn. Skal dette forstaaes
+bogstaveligt, da er Evangelisten i Modsigelse med Propheten,
+og Aanden i Modsigelse med sig selv. Det er
+hverken den samme Søn ei heller den samme Begivenhed.
+Den Søn, Propheten taler om, er Jødefolket, der i sin
+Ungdom var i ægyptisk Trældom. Propheten  seer til%
+% --- p. 36 ---
+\setcounter{footnote}{0}%
+\opage{36}bage paa det Forbigangne,  men Evangelisten siger, at
+han seer fremad mod et Tilkommende. Efter Bogstaven
+skulde altsaa Aanden, naar den bogstavelig taler om
+det Forbigangne, bogstavelig tale om det Tilkommende.
+Det er for Meningens Skyld nødvendigt at anbringe en
+Fortolkning.
+
+Fortolkningen kan ikke være ufeilbar, med mindre
+Læseren kan sikre sig en ufeilbar Fortolker. At Aanden
+i Skriftens Ord er ufeilbar, kommer os kun tilgode
+under den Betingelse, at den kan gjøre vor Forstaaelse
+deraf ufeilbar. Vil nu Skriftens Læser mene, at Aanden
+staaer i selv samme Forhold til ham som til Propheterne
+og Apostlene, siger ham ordret, hvad han skal troe og
+gjøre, da er hans Læsning af Skriften jo i religiøs Forstand
+overflødig. Maa han tilstaae for sig selv, at
+Aanden har virket i de hellige Forfattere paa en ganske
+anden Maade end den virker i ham, da er der herved
+sat en psychologisk Skranke for Forstaaelsen. Opgaven
+er, at bestemme det rette Forhold mellem det Oprindelige
+og det Afledede.
+
+Man klager over det Tvivlsomme i de bibelske
+Beretninger, Modsigelser i det Historiske o. s. v., altsammen
+noget Underordnet. Selv om alle Vanskeligheder vare hævede, og Bibelen fra Først til Sidst i
+ordret Overeensstemmelse med sig selv, det vilde dog
+ikke hjælpe os det allermindste, saalænge Vexelvirkningen
+mellem den guddommelige og den menneskelige
+Aand vedbliver at være uforklarlig. Pintsefestens Under
+er et talende Exempel. Opfattes Aandens Udgydelse
+umiddelbart efter Bogstaven, da kan det i Karakteer
+af Mirakel vel blive Gjenstand for Autoritetstro; men
+hvorledes vil det gaae med den personlige Tilegnelse?
+% --- p. 37 ---
+\setcounter{footnote}{0}%
+\opage{37}„Ere ikke alle disse, som tale, Galilæere? Og hvorledes
+høre vi dem da hver især i vort Maal, hvori vi
+ere fødte? Parther og Meder og Elamiter og vi, som
+boe i Mesopotamien og Judæa og Kappadocien, Pontus
+og Asien. I Phrygien og Pamphylien, Ægypten og de
+Egne af Lybien ved Cyrene og vi her boende Romere,
+Jøder og Jødevenner, Kreter og Araber --- vi høre dem
+tale i vore Tungemaal?“ (Ap. G. 2, 7 flgd.)
+For Autoritetstroen er her nu slet ingen Vanskelighed; Gud er jo almægtig og kan gjøre Alt, hvad
+ han vil. Men for Troen som personlig Tilegnelse er
+ her en stor psychologisk Vanskelighed. Griber Guds
+
+Aand, naar den vil, paa saa overnaturlig Maade ind i
+det sjælelige Liv, at den pludselig, uden al Forberedelse,
+meddeler Bevidstheden Færdighed i fremmede Sprog,
+da staaer jo Inspirationsmiraklet paa samme Trin som
+, Miraklet med Bileams Aseninde. Den samme Aand,
+der ved overnaturlig Indvirkning kan faae en Menneskesjæl
+til at tale et fremmed, ham forhen ubekjendt Sprog,
+kan ogsaa faae en Dyresjæl til at tale Menneskesprog.
+Men hvad er saa Sjælens Natur, og hvor ere vi med
+vor rationelle Bevidsthed? Et virkeligt Mirakel kan
+ikke begribes, det er sandt; men skal det ikke staae
+for os som noget vildt Fremmed, noget os aldeles Uvedkommende,
+da maa i det Mindste dets Mulighed erkjendes, og denne Muligheds Erkjendelse være begrundet
+i Selverkjendelse.
+
+Begynde vi ud fra det Rationelle, da er en af to
+Antagelser mulig: enten maa Naturens Orden have sin
+oprindelige Grund i Naturen selv eller i en guddommelig
+Villen. Antager man det Første, saa er der ingen
+Aabenbaring, Aabenbaringslæren er Mythologie. Antager
+% --- p. 38 ---
+\setcounter{footnote}{0}%
+\opage{38}man det Sidste, da maa det nærmere afgjøres, hvad
+der skal forstaaes ved en guddommelig Villen. Man
+kan da sætte den guddommelige Villen i en saa nødvendig
+Eenhed med Lovene for de naturlige Phænomeners
+Rækkefølge, at den Intet vil og Intet kan ville
+uden alene det, som stemmer med vor fornuftige Indsigt
+i det Heles Sammenhæng og kan indlemmes i vore
+Erfaringers stedse mere udvidede Kredse: der kan da
+fra dette rationalistiske Synspunkt heller ikke være
+Tale om nogen særegen Gudsaabenbaring. 
+
+Skal Muligheden af en Aabenbaring erkjendes, da
+maa den guddommelige Villen udtrykkelig sættes i en
+guddommelig Villie, en almægtig selvbestemmende Frihed,
+og denne Friheds bevægende Grund i en uendelig Kjærlighed.
+Denne Opfattelse maa give Afkald paa videnskabelig
+Beviisførelse, men er derfor ikke fornuftstridig.
+Ingen menneskelig Fornuft kan udmaale Dybderne i
+Naturens Anlæg, thi ingen menneskelig Fornuft kan
+udmaale Dybderne i den guddommelige Kjærlighed.
+Naturaarsagerne beroe paa Naturanlæg, Naturanlægene
+paa guddommelig Selvbestemmen; den virkelige Natur
+er en Villiesaabenbarelse af Aanden. Løsreven fra
+Aanden har Naturen ingen Selvstændighed. De naturlige
+Tings naturlige Aarsager ere alle begrundede i det
+Overnaturlige: Naturens materielle Virkelighed bestaaer
+i at være Mulighed for den guddommelige Villies overnaturlige
+Virken.
+
+Seet fra dette Synspunkt kan Universet med sine
+Love siges at hvile paa et Under. Den skabende Aand
+har ikke sat sin Frihed til paa den naturnødvendige
+Orden ei heller udtømt sit Væsens Indre i Universets
+Ydre. Er den skabende, opholdende Villie en Kjær%
+% --- p. 39 ---
+\setcounter{footnote}{0}%
+\opage{39}lighedsvillie, der vil aabenbare sig, da maa Muligheden
+for en personlig Kjærlighedsaabenbaring fra Begyndelsen
+af høre med i Naturens Anlæg. Aabenbaringsunderet
+med sine Mirakler bliver fra denne Side at opfatte
+som et Tegn paa Guds personlige Frihed: i Udslag
+af Kjærlighedens Almagt træder det i Naturen skjulte
+Overnaturlige frem af sin Skjulthed og lader sig tilsyne
+i det Naturlige; der træder noget Nyt op i Naturen,
+men Naturens Orden bliver ikke afbrudt.
+
+Hvad er der nu til Hinder for at forlige Aabenbaringstroen
+med en rationel Verdenserkjendelse? Blandt
+Andet to Ting! For det Første den moderne Fixidee,
+at Naturlove, Naturanlæg og naturlige Aarsager umuligt
+kunne have Noget med det Overnaturlige at gjøre. At
+denne Fixidee er ufornuftig, er viist i vort Foregaaende.
+For det Andet: det Pludselige, Overraskende og just
+derfor Usandsynlige i Aabenbaringsphænomenet, som det
+er fremstillet for Autoritetstroen. Men at sætte det
+Usandsynlige paa lige Trin med det Umulige, er ufornuftigt.
+Der kan, hvad f. Ex. Geniet angaaer, ikke
+drages skarpe Grændselinier mellem det, som ifølge
+organisk Disposition skyldes Hjernevirksomheden, det,
+som skyldes Selvvirksomheden, og det, som skyldes Beaandelsen.
+Gaaer det saaledes med den geniale Inspiration,
+hvor kan man da forlange at der ved Inspirationsmiraklet
+skulde lade sig trække en kritisk Grændse
+mellem det, som personlig meddeles af Guds Aand, og
+det, som forud ligger i Menneskets Sjæl. Derimod er
+det saavel hvad den mirakuløse som hvad den geniale
+Inspiration angaaer, en uafviselig Fornuftfordring, at
+Naturens og Aandens Love, om end paa høist forskjellig
+Maade, maa finde deres Opfyldelse i begge.
+
+% --- p. 40 ---
+\setcounter{footnote}{0}%
+\opage{40}Derved kastes et nyt Lys paa Aabenbaringsmiraklet
+og dets Tilegnelse. I Oldtiden var Indtrykket af det
+Overnaturlige stærkt, men Fornuftudviklingen forholdsviis
+ringe; i vore Dage er den fornuftige Indsigt i Naturtingenes
+Sammenhæng rig og klar, men Indtrykket
+af det Overnaturlige fattigt, svagt og forsvindende. Skal
+det for Nutidsbevistheden være muligt at tilveiebringe % PRINTED AS IS: Nutidsbevistheden (for Nutidsbevidstheden; read at the image)
+psychologisk Ligevægt mellem det Religiøse og det
+Rationelle, da kan det kun skee ved en Vexelvirkning
+mellem Autoritetstroen og den personligt frie Tilegnelse.
+
+Aabenbaringsordet med sine Vidundere og hellige
+Kjendsgjerninger maa, trods den videnskabelige Kritiks
+Opløsninger, blive staaende for den religiøse Bevidsthed,
+uforandret, uantastet. Fornuften maa betragte de hellige
+Livsbilleder som originale Malerier af gamle Mestere
+og ikke tillade at Farverne smudskes og Trækkene
+udviskes af rationalistiske Fingre. Videnskabelig Autoritet
+have disse Billeder ikke; men Troesautoritet,
+Aabenbaringsautoritet have de og ville de have indtil
+Verdens Ende.
+
+Ogsaa Troesautoriteten maa opløses; men, vel at
+mærke, ved Troeskritik til Selvforstaaelse og personlig
+Tilegnelse. Den Maade, hvorpaa Opløsningen skeer,
+den Dybde, hvori Tilegnelsen foregaaer, er forskjellig i
+Forhold til Individernes Sindsbeskaffenhed og det Dannelsestrin,
+hvorpaa de befinde sig.
+
+Hvad Sindsbeskaffenheden angaaer, findes der Sjæle
+af ædel Natur og rig Begavelse, hvis religiøse Trang er
+saa ringe, at de ikke have Sands for en personlig Aand,
+men derimod en oprindelig levende Sands for det upersonlige
+Almene, en saa genial Sympathie med Allivet
+i Naturen, at vi i særlig Forstand maae kalde dem Na%
+% --- p. 41 ---
+\setcounter{footnote}{0}%
+\opage{41}tursjæle. Den engelske Digter Shelley, Byrons Ven,
+var en saadan Natursjæl. I sin berømte Ode til Vestenvinden
+udaander han sit Væsens Trang og Længsel.
+„O, løft mig som en Bølge, et Blad, en Sky! jeg falder
+paa Livets Torne, jeg bløder. En Vægt af tunge Timer
+har lænket og nedbøiet En, der var Dig altfor lig ---
+utæmmelig og hurtigfodet og stolt. Gjør mig til din
+Lyre, som Skoven er det; hvad skader det, at mit Løv
+falder som dens! Dine larmende Harmoniers Magt vil
+aftvinge os begge en dyb Efteraarstone, sød, skjøndt
+sorgfuld. Vær Du, o frie Aand, min Aand; vær mig,
+Du voldsomt stormende! Driv mine Tanker, naar jeg
+er død, over Universet som visne Blade, at de kunne
+kalde ny Væxt tillive, og spred, besværget ved dette
+Digt, mine Ord blandt Menneskeheden som Aske og
+Gnister fra en uudslukket Arne!“ --- Der er igjen Sjæle,
+hos hvilke Sandsen for Inderlighed. er saa stærk, Selvbevarelsesdriften
+saa ideal, Erkjendelsestrangen saa dyb,
+at de først finde Ro, naar de ere naaede til Alkjærlighedens
+Vold og føle sig rodfæstede i Selvtankens evige
+Grund. Disse aandige Lyssjæle ville ikke fare hen
+med Stormen og løses op i Elementernes Nat; de
+ville være Borgere i Aandens og Frihedens Rige. Det
+er ikke Æolsharper, der tone for Vindenes Pust, det er
+Selvhedsinstrumenter, stemte i Fryd og Sorg, for hellige
+Harmonier, Villiesorganer for den selvbevidste Magt, der
+gjør Stormene til sine Engle, Ildsluerne til sine Tjenere.
+
+Hvilke af de to Slags Sjæle ere nu de ægte, oprindelige
+Menneskesjæle? Det kan ikke afgjøres i rationel
+Psychologie, det er en Tro, der maa prøves i
+Livet.
+
+Tage vi de forskjellige Udviklings- og Dannelses%
+% --- p. 42 ---
+\setcounter{footnote}{0}%
+\opage{42}trin, hvorpaa Individerne indenfor Aabenbaringstroens
+Kreds kunne befinde sig, i Betragtning, vil Opfattelsen
+af det Overleverede ændre sig med hvert Trin, og den
+religiøse Bevidsthed skifte Farve. Den barnlige Tro,
+Almuetroen og den i Fornuft reflecterede Tro vise hen
+til forskjellige Udviklingstrin, og dog maa Troen i Aand
+og Væsen være den samme. For Opdragelsesvæsenet og
+særlig for dem, der ere satte til at være Ungdommens
+Lærere, er her alvorlige Vanskeligheder at overvinde,
+psychologiske Knuder saa indviklede, at der maa Aandsdannelse
+til, for at kunne løse dem.
+
+Med den barnlige Tro synes det at gaae som af
+sig selv. Barnets Sjæl er lige saa modtagelig for Indtryk
+fra den oversandselige som fra den sandselige
+Verden. Bibelordets vidunderlige Anskuelighed tiltaler
+dets Følelse og Phantasie, og det Overnaturlige vækker
+ingen Forargelse: Himlen er aaben, og Guds Engle
+fare op og ned over Menneskenes Søn. Men alt som
+Barnealderen svinder, og Forstanden udvikles, indtræder
+Krisen. --- Lad os, for at gjøre det anskueligt, forestille
+os et halvt voxent Barn og dets Religionslærer
+læsende sammen i Bibelen: om Skabelse, Paradis og
+Syndefald i det Gl. Testamente, om Kristi Fødsel hans
+Lidelse, Død og Opstandelse i det N. T. Her maa naturligviis
+forudsættes, at Læreren troer oprigtig paa det,
+hvorom der læses, og at Barnet er opvakt og vel begavet.
+Indtil den unge Lærling har naaet sit fjortende
+Aar eller saa omtrent, gaaer Alting vel. Drengen har
+Glæde deraf og forstaaer det saa godt Altsammen,
+baade det om Skabelsen og det om vore første Forældre,
+hvor skjønt der var i Edens Have, og hvor taknemmelige
+de burde have været, men at Slangen for%
+% --- p. 43 ---
+\setcounter{footnote}{0}%
+\opage{43}førte dem til Ulydighed; det er næsten som om han
+selv havde oplevet det. Og nu Evangeliet: Barnet i
+Krybben, Englenes Lovsang, Hyrdernes Tilbedelse! Den
+barnlige Elev forstaaer det, elsker det og troer det saa
+vist, som havde han seet det med egne Øine. Med
+Sorgens Alvor i Hjerteangst og Bedrøvelse følger han
+den lidende Frelser over Kedrons Bæk til Gethsemane,
+til Kajaphas, til Pilati Domhuus; han oplever Korsfæstelsen,
+han staaer blandt de fromme Kvinder under
+Korset. Frelseren døer; det er i Barnets Sjæl saa høitideligt
+stille som ved Alteret i en Kirke. Saa kommer
+Opstandelsens Morgen. Mørket svinder, Vagten flygter,
+Engelen, klædt i Lys og Lyn, vælter Stenen fra Graven.
+
+Med alt dette foregaaer der lidt efter lidt en Forandring.
+Den unge Lærling nyder ogsaa anden Underviisning.
+Som Discipel i en lærd Skole eller en Realskole
+tilegner han sig Videnskabens første Elementer og
+gjør gode Fremskridt, thi han er begavet, har Fatteevne
+og en naturlig skarp Forstand. Han gaaer nu i
+sit femtende Aar. Indtrykkene fra den virkelige Omgivelse
+begynde at samle sig for ham til et Verdenshele,
+der er høist uligt det, han har modtaget fra
+Aabenbaringslæren; Kulturtankerne trænge sig ind paa
+ham; han har hemmelige Tvivl og veed ikke ret, hvorledes.
+Imidlertid er han indadtil saa optagen af at
+lære og huske og udadtil saa umiddelbart nærværende
+blandt Kammeraterne, at han endnu ikke har faaet
+Tid til at gruble over Sammenhængen; men i Religionstimen
+har han hvert Øieblik en Indvending, der dukker
+op med en uvilkaarlig Trang til at spørge. Drives Underviisningen
+ganske officielt, saa skal han vel vogte
+sig for at komme frem med sit Eget; de tillærte For%
+% --- p. 44 ---
+\setcounter{footnote}{0}%
+\opage{44}klaringer ere mere end nok til at nedslaae alle frygtsomme
+Indvendinger. Men har han Tillid til sin Religionslærer
+og er saa heldig stillet, at han kan tale med
+ham i al Fortrolighed, da ville Betænkeligheder, om
+end i al Uklarhed, liste sig frem. Her er et Vendepunkt,
+hvor det skal vise sig, om Læreren er sin Opgave
+voxen.
+
+Er Læreren en Barnetroende,  som, naar det kommer
+til Stykket, ikke veed anden Udvei end at beraabe sig
+paa Menigheden og Daabspagten og Hjertelaget og Aanden
+i Barnetroen, da kan han ved sit Ords Varme og sine
+hjertelige Formaninger vel gjøre Indtryk paa det unge
+Menneske, maaskee endog for en Tid tilsyneladende dysse
+ hans Sind til Ro; men Fornuftens Væsen gjennemskuer
+han ikke, Videnskabens Grundsætninger fatter han ikke:
+hvorledes skal han saa kunne hjælpe? Der er faldet
+et Tvivlens Frø i den unge Sjæl, og Tvivlen skyder op
+og grener sig, thi Tvivlen har Luftrødder ligesom
+Mangletræet, der i tropiske Egne danner de ufremkommelige
+Skove.
+
+Er Læreren en høikirkelig orthodox Dogmatiker,
+vil han tage Sagen paa en anden Maade. „Fornuften
+er blind for det Hellige; Nutidens hedensk opblæste
+Videnskaber ere alle paa Vildfarelsens Vei. Guds aabenbarede
+Ord skal troes bogstavelig. Naar der udtrykkelig
+staaer i den hellige Skrift, at Gud skabte Verden i
+sex Dage, saa skabte han den i sex Dage, og hvad
+betyde saa den ræsonerende Fornufts Indvendinger og
+Naturforskernes Drillerier? Gud maa dog selv bedst
+vide, hvorlænge han har været om at skabe Verden.
+Guds Ord er ufeilbart som Guds Aand; var det gaaet
+anderledes til med Skabelsen end skrevet staaer, saa
+% --- p. 45 ---
+\setcounter{footnote}{0}%
+\opage{45}havde Guds Aand nok sagt os det reent ud; thi Gud
+er sanddru, Guds hellige Aand kan ikke lyve. Dersom
+Himlen ikke var en fast Hvælving, hvor kunde der da
+paa saa mange Steder staae, at Himlen aabnede sig?
+Hvor skulde Kristus vel være faret hen, da han foer
+op til Himlen? Hvorledes kunde Paulus blive henrykket
+i den tredie Himmel, dersom der ikke var tre Himle?“
+--- Men hvad udrettes der ved slige Beviisgrunde vel
+Andet end at det unge Menneske nu ret begynder at
+føle sig som Kritiker. Læreren kan imponere ham ved
+et kraftigt: „Ti stille og lær dine Lectier, Du er endnu
+for grøn til at disputere om Sligt!“ Læreren kan lade
+ham forstaae, at han har en grundig Theolog for sig,
+og give ham Haab om, at han selv en Gang med Tiden
+kan blive en grundig Theolog og slaae alle Physikens
+„Børnelærdomme“ til Jorden; dog hvad hjælper det den
+stakkels Lærling? Tvivlene krybe i Skjul, men de sidde
+derinde.
+
+Er Læreren en gemytlig Blanding af Kritiker og
+Theolog, halvt en Rationalist og halvt en Orthodox,
+vil han maaskee indvie Drengen i store Hemmeligheder.
+Han vil med Beklagelse indrømme ham, at det ikke
+staaer saa rigtig til med den hellige Skrift og vore
+symbolske Bøger, som man kunde ønske det. Han vil
+med Haanden paa Hjertet oprigtig tilstaae, at der saa
+vel i det Nye som i det Gamle Testamente findes Mirakler,
+hvorpaa man slet ikke kan troe, Miraklet med
+Gadarenernes Sviin, Miraklet med Bileams Æsel o. m.
+fl. Men derhos vil han da heller ikke forsømme at
+lægge sin Lærling alvorlig paa Sinde, at der virkelig
+ogsaa er Mirakler, hvorpaa man ubetinget bør troe, at
+sige med Modifikation. Pintsemiraklet, f. Ex., er et
+% --- p. 46 ---
+\setcounter{footnote}{0}%
+\opage{46}Hovedmirakel. Der er noget storartet Symbolsk deri;
+det maa man absolut troe, for ikke at blive Fritænker.
+For at styrke det unge Menneske paa een Gang baade
+i Kritiken og Troen, vil den gemytlige Lærer vel ogsaa
+være saa god at indvie ham saa smaat i den „kritiske
+Indledning“ og i „Apologetiken“. Men hvad vil
+Følgen hlive? At den vordende Mand, hvis han med % PRINTED AS IS: hlive (for blive; read at the image)
+opvakt Sands bevarer sin skarpe Forstand ubeskaaren,
+maa ende som „Fritænker“. Vil han lade sin Forstand
+omskjære, det er en anden Sag, saa kan han maaskee
+opnaae at blive Theolog.
+
+Er Læreren en Mand af Aandsdannelse, en Personlighed,
+som i Kulturbevidsthedens stride Strømme
+har arbeidet sig frem, ikke til en forloren Barnetro,
+hvormed man kryber tilbage i Ammestuen, men til en i
+Sandhed barnlig Tro, en Tro, der er luttret i Selvforstaaelse,
+en levende Tro paa det aabenbarede Ord, da vil
+han vide at tage Sagen som den er. Han vil hverken
+afvise det unge Menneskes Tvivl ei heller indlade sig
+i Disput om Enkeltheder; han vil forstaae, at det igjen
+er de to Verdensbetragtninger, Oldtidens og Nutidens,
+Aabenbaringens og Fornuftens, som nu i denne Sjæl
+begynde at brydes med hinanden. Han vil som en
+kyndig Lods hjælpe den endnu Uerfarne over de første
+farlige Grunde, vise ham Sømærkerne og orientere
+ham paa det frie Hav. Det er en psychologisk Krise,
+han har for sig, og han vil behandle den med den
+modne Mands Overlegenhed. --- „Hvad er der i Veien,
+min unge Ven, at Du ikke længere, som før, kan troe
+paa Skabelsens Under, paa Paradiset og Syndefaldet,
+men begynder endog at tvivle om Kristi Opstandelse
+og Himmelfart? For et Par Aar siden kunde vi begge
+% --- p. 47 ---
+\setcounter{footnote}{0}%
+\opage{47}troe derpaa. Jeg har i denne Henseende ikke forandret
+mig. Jeg finder endnu Bibelens Ord saa talende, dens
+Udtryk saa slaaende, dens Billeder saa friske, saa fulde
+af Liv og Kraft, at jeg forynges derved og hver Gang
+tilegner mig noget Nyt. Med Dig gik det ligesaa. Jeg
+seer endnu din frembrydende Taare, da Du ved det
+Sted i Lidelseshistorien, hvor Pilatus siger til Jøderne:
+see \emph{hvilket Menneske}! gav dit Hjerte Luft og udbrød:
+Var Han med Tornekronen ikke kommet med i
+Kongerækkerne, hvor var den lange Historie om dem med
+Guldkronerne da afskyelig! Det var et Øieblik, da Du
+pludselig syntes at blive ældre end Dig selv i Foryngelse.
+Men nu begynder Du at blive gammel; hvad er
+der hændet Dig, lad mig høre!“
+
+Det unge Menneske fatter Mod og rykker ud med
+sine Bekjendelser. En Dag --- fortæller han --- havde
+vi Physik i Klassen; Læreren var blevet varm af Beviserne
+for Tyngdens Lov. Det er, sagde han, en Lov
+saa nødvendig begrundet i Legemernes Natur, saa fornuftig
+og evig, at ingen Magt hverken i Himlen eller
+paa Jorden er i Stand til at ophæve den. Da faaer en
+af mine Kammerater det Indfald at spørge, om da
+Kristi Himmelfart ikke gjorde en Undtagelse? Læreren
+taug, men med en \emph{Mine} og et himmelvendt Blik, saa
+hele Klassen loe. Jeg loe med; skjøndt det var mig
+som et Knivstik i Hjertet. Dette Knivstik gav min
+Forstand en underlig Skarphed, det var, som om den
+med Eet blev vred og hvas og vilde skjære min Tro
+i Stykker. Jeg begyndte nu at tænke over, hvad
+jeg havde læst og hørt om vort Planetsystem og vor
+Planets Ubetydelighed i Universet, om Urverdenens
+Dyr og de Millioner, Billioner Aar, der maa være for%
+% --- p. 48 ---
+\setcounter{footnote}{0}%
+\opage{48}løbne, inden Mennesket fremkom paa Jorden. Jeg er
+kun en Begynder, og meget deraf er mig dunkelt; men
+jeg har en uhyggelig Anelse, en hemmelig Mistanke om,
+at Darwins Lære om Menneskets Afstamning fra en
+eller anden Abeform dog nok kunde være den rette.
+Aberne have fire Hænder, Mennesket kun to, hvor sandsynligt
+er det nu ikke, at de bageste Hænder i Tidernes
+Løb ere blevne omdannede til Fødder. Den hellige
+Skrift veed ingen Besked om Sligt. Forleden Dag
+gjorde Læreren i Naturhistorie os opmærksomme paa, at
+ingen Slange æder Støv, endskjøndt det Modsatte ---
+tilføiede han med et sarkatisk Smiil --- rigtignok staaer % PRINTED AS IS: sarkatisk (for sarkastisk; read at the image)
+i Bibelen. Jeg er undertiden tilmode, som maatte jeg
+enten opgive Videnskaben eller blive Fritænker; det
+Første kan jeg jo ikke og det Sidste vilde jeg saare
+nødig. Hver Gang jeg kommer til at tænke derpaa,
+føler jeg mig meget ulykkelig.
+
+Finder Du Dig ulykkelig, svarer Læreren, saa er
+Faren endda ikke saa stor. Jeg var kun bange for,
+at Du var blevet Friskfyr og i Tro paa Opinionens
+Autoritet allerede havde valgt den moderne Bevidstheds
+moderne Viden, som man i en Modeboutik vælger
+en moderne Hat eller en moderne Kjole. Du vil
+dyrke Videnskaben og deri gjør Du Ret; thi Gud har
+givet Dig Evner og Gaver. Jo dybere Du trænger ind
+i Videns og Videnskabens Aand, desto større Agtelse
+vil Du faae for saadanne Mænd som Kepler og Newton,
+Laplace og Darwin; men Du vil ogsaa beundre den
+Redelighed, hvormed slige Mænd altid skjelne mellem
+det de vide, og det de ikke vide. Du vil, naar Du
+kommer saa vidt, besinde Dig paa, at der for den
+menneskelige Viden er sat en dobbelt Grændse, en re%
+% --- p. 49 ---
+\setcounter{footnote}{0}%
+\opage{49}lativ, der bestandig kan overskrides, og en absolut, der
+ikke kan overskrides. Hvis din Lærer i Physik en
+Gang ved en offenlig Prøve forelagde Dig en Opgave
+fra den høiere Mathematik, som var løst af Laplace,
+og forlangte af Dig, at Du, uden særlige Forstudier,
+alene ved Hjælp af dine elementære Skolekundskaber
+skulde løse den, vilde Du saa ansee dette for et Beviis
+paa, at Læreren selv er en stor Mathematiker, eller
+vilde Du ikke meget mere ansee det for et vilkaarligt
+og ubilligt Forlangende? Du vil dog ikke antage, at
+den Lærer, der holder sig til de simplere Opgaver og
+ved deres Løsning anvender en Fremstillingsmaade, som
+de endnu ikke Viderekomne kunne forstaae, altid gjør
+det af den Grund, at han ikke selv veed Mere; Du
+vil være beskeden nok til at antage, at han vel kan
+have en høiere Viden, uagtet han nedlader sig til din
+Fatteevne. Anvend nu dette paa den hellige Skrift og
+spørg Dig selv, om det kan ansees for et Beviis paa
+den guddommelige Aands Uvidenhed i Psysik og Naturhistorie, % PRINTED AS IS: Psysik (for Physik; read at the image)
+at den i sine Aabenbarelser om Verdens Oprindelse
+og Menneskeslægtens Afstamning har nedladt
+sig til Oldtidens Fatteevne og talt i et Sprog, som
+Menneskene kunde forstaae. Din sunde Forstand vil
+sige Dig, at hvad der i en Naturlære vilde være en utilgivelig
+Feil, kan i en Religionsmeddelelse, hvor det
+Naturlige dog altid er og bliver Symbol paa det Aandelige,
+være et stort Fortrin. Du taler om at blive Fritænker.
+Hvis det, at frigjøre Tanken for indgroede
+Fordomme og forud fattede Meninger, er Kjendemærket,
+saa er Han, der siger: „I skulle erkjende Sandheden,
+og Sandheden skal gjøre Eder frie“, den største
+Fritænker. Men skal Legen med at lade sin
+% --- p. 50 ---
+\setcounter{footnote}{0}%
+\opage{50}Tanke gaae i Veiret, som en Dreng lader sin Drage gaae
+i Veiret, og flagre for alle Vinde, betyde Tankens Frigjørelse,
+da har Fritænkeren ligesaa lidt hjemme i Videnskaben
+som i Religionen. Hvor løst hans Tanke
+end flagrer, er den dog ikke fri, han har en Traad i
+den, som Drengen i Dragen: den har hemmelig Ordre
+til at hakke i det, han ikke synes om, og rive det ned,
+der er hans Instinkter imod. Du vil i denne Mening,
+haaber jeg, aldrig blive Fritænker. Elsker Du Friheden,
+jeg mener Aandsfriheden, da kan Du umulig antage,
+at den sande Frihed skulde bestaae i at gjøre
+Aanden til Naturens Træl og lægge den i Nødvendighedens
+Lænker. Aabenbaringens Gud er Frihedens
+Gud; hvad troer Du, det bliver til med det Menneskes
+Frihed, der fornegter Frihedens Gud og forguder Nødvendigheden?
+Det seer storladent ud, at en Mand af
+den frie Tanke tør gaae i Kreds med Elementerne og
+frigjøre sig selv, næsten lige saa storartet, som at en
+Dværg tør krybe ind i en Kæmpes Harnisk, og en
+Tommeliden fraternisere med Titaner. Elsker Du Friheden,
+da er jo Frihedens Gud personlig din Gud, en
+Gud, der ikke er udenfor Dig, men i Dig som dit Væsens
+Ophav, og denne Gud er Aand. Tro paa Frihedens,
+Personlighedens og Kjærlighedens Aand, og Aanden skal
+frigjøre Dig saa vel fra Vantroens Forhaanelse af det
+Overnaturlige som fra Overtroens Ringeagt for det Naturlige.
+Din Tvivl og Uro betyder, at Du alt har
+betraadt Frigjørelsens Vei; lad mig paa Veien medgive
+Dig Pauli Ord: „Da jeg var et Barn, talede jeg som
+et Barn, tænkte jeg som et Barn, dømte jeg som et
+Barn, men da jeg blev Mand, aflagde jeg det Barnagtige.“
+
+Vi have dvælet saa længe ved denne Overgang, thi
+% --- p. 51 ---
+\setcounter{footnote}{0}%
+\opage{51}for vort Opdragelsesvæsen er den i nærværende Tid
+den allervigtigste. Kunde vi see de Millioner Sjæle,
+som, uagtet de i Barndommen have modtaget religiøse
+Indtryk, dog siden hen under Erfaringernes Mangfoldighed i den
+naturlige Verden, have tabt det Oprindelige,
+det første Enfoldige --- hvad enten de forøvrigt indbilde
+sig at have bevaret „Barnetroen“ i Autoritetens Umiddelbarhed
+eller de have valgt Emancipationen med „Kjødets
+Evangelium“ eller i indifferentisk Sløvhed ingen af Delene
+--- kunde vi see dem i et psychologisk Speil, mon det
+da ikke skulde vise sig, at den begyndende Forkvakling
+stammer fra den Overgangsperiode, hvori Barnet
+modnes til Yngling og Ynglingen til Mand, netop i den
+Periode, da Religionsunderviisningen afsluttes? At begynde
+en Religionsunderviisnng er forholdsviis en let % PRINTED AS IS: Religionsunderviisnng (for Religionsunderviisning; read at the image)
+Sag, --- det kan enhver Katechismuspræst og barnetroende
+Asyl-Peter gjøre; men at bringe Opdragelsen
+til en saadan Afslutning, at en religiøs-personlig Selverkjendelse
+i Forening med en virkelig fornuftig Verdenserkjendelse
+kan siges at være grundlagt, er en
+vanskelig Opgave, hvis Løsning betinges af Aandsdannelse.
+
+
+% --- p. 52 ---
+\setcounter{footnote}{0}%
+\lecture{Fjerde Forelæsning.}\opage{52}
+
+Det var i November 1842, at Pseudonymen Victor
+Eremitas \emph{Enten Eller} slog ned i vor Literatur som
+et Lyn fra klar Himmel. Dette Lynslag kan med Sandhed
+siges at betegne et Vendepunkt for Aandslivets
+Udvikling i Danmark. Allerede Forordets første Linier
+ere charakteristiske. „Det er maaskee dog stundom
+faldet Dig ind, kjære Læser, at tvivle en Smule om
+Rigtigheden af den bekjendte philosophiske Sætning, at
+det Udvortes er det Indvortes, det Indvortes det Udvortes.
+Du har maaskee selv gjemt en Hemmelighed,
+om hvilken Du følte, at den, i sin Glæde eller i sin
+Smerte, var Dig for kjær til at Du kunde indvie Andre
+i den. Dit Liv har maaske bragt Dig i Berøring med
+Mennesker, om hvilke Du ahnede, at noget Saadant var
+Tilfælde, uden at dog Din Magt eller Din Besnærelse
+var istand til at bringe det Forborgne til Aabenbarelse.
+Maaskee passer intet af Tilfældene paa Dig og Dit Liv,
+og dog er Du ikke ukjendt med hiin Tvivl; den har
+nu. og da som en flygtig Skikkelse svævet Din Tanke
+forbi.“ --- Der er i denne Tiltale noget Aandeagtigt,
+der spænder Forventningen. Eremiten med det fine,
+kloge Ansigt, og de vidunderlig klare, gjennemtrængende
+% --- p. 53 ---
+\setcounter{footnote}{0}%
+\opage{53}Øine synes livagtig at staae for En med en Gaade paa
+Læben, en sælsom Opdagelse, og aabne et hemmeligt
+Gjemme. Stemmen er fremmed, og dog fortrolig, ikke
+høirøstet, men tiltrækkende, sympathetisk; den kjærtegner
+Tanken, den fanger Opmærksomheden, den hvisker om,
+at der inde i Sjælen er Noget, som kaldes \emph{Inderlighed}.
+
+Aaret efter viste sig en anden Pseudonym, Johannes
+de silentio, med \emph{Frygt og Bæven}. Han forudseer sin
+Skjæbne i en Tid, da man „har slaaet en Streg over
+Lidenskaben for at tjene Videnskaben“, „Kjærligheden“,
+siger han, „har dog i Digterne sine Præster, og stundom
+hører man en Røst, der veed at holde den i
+Hævd; men om Troen høres der intet Ord, hvo taler
+til denne Lidenskabs Ære? Philosophien gaaer videre.
+Theologien sidder sminket ved Vinduet og beiler til
+dens Gunst, falbyder sin Deilighed til Philosophien.“
+Man mærker paa Pseudonymens Stemning, at Troens
+Lidenskab har bragt hans Sind i lyrisk Kog. Aaret
+efter fremtraadte en tredie Pseudonym, Johannes Climacus,
+med det philosophiske Spørgsmaal: Hvorvidt kan
+Sandheden læres? Her møder, siger han, den Vanskelighed,
+som Sokrates i Meno gjør opmærksom paa som
+paa en „stridslysten Sætning“, at et Menneske umuligt
+kan søge, hvad han veed, og ligesaa umuligt kan søge,
+hvad han ikke veed; thi hvad han veed, kan han ikke søge,
+da han veed det, og hvad han ikke veed, kan han ikke
+søge, thi han veed jo end ikke, hvad han skal søge.
+--- Enhver vil forstaae, at der ved denne Henpegen
+paa Kierkegaardske Pseudonymer sigtes til hele S. Kierkegaards
+litterære Virksomhed, og at det, hvad Aandsdannelsen
+angaaer, maa være hans eiendommelige Opfattelse
+af Tro og Viden, Religion og Fornuft, Kri%
+% --- p. 54 ---
+\setcounter{footnote}{0}%
+\opage{54}stendom og Civilisation, hvorpaa vi i denne Sammenhæng
+lægge Vægt.
+
+Den sidste Deel af \emph{Enten Eller} slutter, som
+bekjendt, med „det Opbyggelige, der ligger i den Tanke,
+at mod Gud have vi altid Uret.“ Vort Liv bringer 
+os i et mangfoldigt Forhold til andre Mennesker.
+Nogle af disse elske Ret og Retfærdighed, Andre ikke,
+de gjøre Uret. „Din Sjæl er ikke forhærdet mod den
+Lidelse, de saaledes paaføre Dig, men Du randsager
+og prøver Dig selv, Du forvisser Dig om at Du har
+Ret, og Du hviler rolig stærk i denne Overbeviisning;
+hvormeget de end krænke mig, siger Du, denne Fred
+skulle de dog ikke formaae at frarøve mig, at jeg veed,
+jeg har Ret, og at jeg lider Uret.“ Vort Liv bringer
+os i mangfoldigt Forhold til andre Mennesker, til Nogle
+drages vi med inderligere Kjærlighed end til Andre.
+„Hvis nu et saadant Menneske, der var Gjenstand for
+din Kjærlighed, gjorde Uret mod Dig, ikke sandt, da
+vilde det smerte Dig, Du vilde nøie prøve Alt, men da
+vilde Du sige: jeg veed med mig selv at jeg har Ret,
+denne Tanke skal berolige mig? O, hvis Du elskede
+ham, da vilde den ikke berolige Dig, Du vilde efterforske
+Alt,\dots{} Du vilde ønske, at Du maatte have Uret,
+Du vilde søge, om Du ikke kunde finde Noget, der
+kunde tale til hans Forsvar, og fandt Du ikke det, Du
+vilde først finde Hvile i den Tanke, at Du havde Uret.“
+
+Anderledes med vort Forhold til Gud, thi det er et
+
+Uendelighedsforhold. Kun i et uendeligt Forhold til
+
+Gud kan Tvivlen beroliges; kun i et uendeligt frit Forhold til Gud kan Menneskets Bekymring forvandles til
+Glæde. „I et uendeligt Forhold til Gud er han, naar
+ han erkjender, at Gud altid har Ret, i et uendeligt
+% --- p. 55 ---
+\setcounter{footnote}{0}%
+\opage{55}frit Forhold, naar han erkjender, at han altid har Uret.
+Saa er da Tvivlen standset; thi Tvivlens Bevægelse laae
+netop deri, at han det ene Øieblik skulde have Ret, i
+det andet Øieblik Uret, til en vis Grad have Ret, til
+en vis Grad Uret, og dette skulde betegne hans Forhold
+til Gud; men et saadant Forhold til Gud er intet
+Forhold, og dette var Tvivlens Næring\dots{}. Og skulde
+den Tanke, at mod Gud have vi altid Uret, ikke være
+begeistrende, thi hvad udtrykker den Andet end at
+Guds Kjærlighed altid er større end vor Kjærlighed?“
+Den fylder et Menneskes Sjæl med Kraft til at handle,
+den gjør ham brændende i Aanden, kun naar han
+endelig beregner, udslukkes Aandens Ild. „Om Du
+selv var den, der maatte negte Dig dit høieste Ønske,
+Du er dog glad, Du siger ikke Gud har altid Ret, thi
+deri er ingen Jubel; Du siger: mod Gud har jeg altid
+Uret. Om det, der var Dit Ønske, var, hvad Andre
+og Du selv i en vis Forstand maa kalde Din Pligt, om
+Du ikke blot maatte fornegte Dit Ønske, men paa en
+Maade svige Din Pligt, om Du ikke blot tabte Din
+Glæde, men selv Æren, Du er dog glad; mod Gud, siger
+Du, har jeg altid Uret. Om Du bankede, men der
+blev ikke opladt, om Du ledte, men ikke fandt, om Du
+arbeidede, men Intet fik, om Du plantede og vandede,
+men ingen Velsignelse saae, om Himlen var lukket, og
+Vidnesbyrdet udeblev, Du er dog glad i Din Gjerning,
+om Straffen, som Fædrenes Brødre havde nedkaldt,
+kom over Dig, Du er dog glad, thi mod Gud have vi
+altid Uret.“ --- Det er Troens Under, Inspirationens
+Tungemaal, Idealets Forkyndelse i Retning af Inderlighed.
+
+I „Frygt og Bæven“ fremstilles Abraham som Troens
+Fader; Pointen er Isaaks Offring. Den Digterbegavelse,
+% --- p. 56 ---
+\setcounter{footnote}{0}%
+\opage{56}hvormed Fremstillingen er udstyret, vil altid være Gjenstand
+for æsthetisk Beundring, og den dialektiske Skarphed,
+hvormed „det Absurde“ i Troen er drevet til
+høiere Vanvid, vil endnu i en lang Fremtid give Stof
+til religiøse Overveielser og ethiske Discussioner. „De
+rede tause i 3 Dage, paa den 4de Dags Morgen sagde
+Abraham end ikke et Ord, men opløftede Øiet og saae
+Morijabjerget i det Fjerne. Han lod Drengene blive
+tilbage og gik ene med Isaak ved Haanden op til
+Bjerget. Men Abraham sagde til sig selv: „jeg vil dog
+ikke dølge for Isaak, hvorhen denne Gang fører ham.“
+Han stod stille, han lagde sin Haand paa Isaaks Hoved
+til en Velsignelse, og Isaak bøiede sig for at modtage
+den. Og Abrahams Aasyn var Faderlighed, hans Blik
+var mildt, hans Tale formanende. Men Isaak kunde
+ikke forstaae ham, hans Sjæl kunde ikke opløftes; han
+omfattede Abrahams Knæe, han bønfaldt ved hans Fod,
+han bad for sit unge Liv, for sin skjønne Forhaabning,.
+han mindede om Glæden i Abrahams Huus, han mindede
+om Sorgen og Eensomheden. Da reiste Abraham
+Drengen op og gik med ham ved sin Haand, og hans
+Ord vare fulde af Trøst og Formaning. Men Isaak
+kunde ikke forstaae ham. Han besteg Morijabjerget,
+men Isaak forstod ham ikke. Da vendte han sig bort
+et Øieblik fra ham, men da Isaak anden Gang saae
+Abrahams Aasyn, da var det forandret, hans Blik var
+vildt, hans Skikkelse var Rædsel. Han greb Isaak i
+Brystet, kastede ham til Jorden og sagde: „Dumme
+Dreng, troer Du jeg er Din Fader? Jeg er en Afgudsdyrker.
+Troer Du det er Guds Befaling? Nei det er
+min Lyst.“ Da skjælvede Isaak og raabte i sin Angst:
+„Gud i Himlen forbarm Dig over mig, Abrahams Gud
+% --- p. 57 ---
+\setcounter{footnote}{0}%
+\opage{57}forbarm Dig over mig, har jeg ingen Fader paa Jorden,
+saa vær Du min Fader.“ Men Abraham sagde sagte
+til sig selv: „Herre i Himlene, jeg takker Dig; det er
+dog bedre at han troer, at jeg er et Umenneske, end
+at han skulde tabe Troen paa Dig!“ --- Det er en
+Stemningens Mulighed i „Frygt og Bæven“.
+
+Ja --- siger man maaskee --- dybe og mørke ere
+Havets Grunde, men endnu dybere og mørkere ere de
+Sindets Afgrunde, der aabne sig, naar Troen kogler i
+uforstaaet Lidenskab, og Tungsind og Særhed og sælsom
+Phantasie gjøre hinanden Selskab for at ledsage
+Abraham til Morija Bjerg og stirre ham ind i Øiet, just
+som han drager Kniven. Abraham staaer som en ærværdig
+Skikkelse svøbt i Oldtidens Taager; de store
+Træk aftegne sig klart i det hellige Sagn, saa længe
+han sees paa Afstand; men vover man at nærme sig
+Offerstedet og gjøre sig hans Handling nærværende, da
+gaaer Forstanden tabt, Aabenbaringens Gaade, det
+rædselsfulde Troens Absurdum forvirrer dens Tanker.
+Denne Betænkelighed er imidlertid, hvad Troens Væsen
+angaaer, idetmindste foreløbig hævet derved, at Forfatteren
+har tegnet os et andet Forbillede, en Skikkelse
+som greben ud af Nutiden, en Troesridder, paa een
+Gang Heros og Spidsborger. „Her er han. Bekjendtskabet
+stiftes, jeg bliver forestillet for ham. I det
+Moment, jeg først tager ham paa mine Øine, kaster
+jeg ham i samme Nu fra mig, gjør selv et Spring tilbage,
+slaaer Hænderne sammen og siger halv høit:
+„Herre Gud! er det Mennesket, er det virkelig ham,
+han seer jo ud som en Rodemester.“ Imidlertid er det
+dog ham. Jeg slutter mig lidt nærmere til ham, passer
+paa den mindste Bevægelse, om der ikke skulde vise sig
+% --- p. 58 ---
+\setcounter{footnote}{0}%
+\opage{58}en lille ueensartet Brøks-Telegraphering fra det Uendelige,
+et Blik, en Mine, en Gestus, et Vemod, et Smiil,
+der forraadte det Uendelige i sin Ueensartethed med
+det Endelige. Nei! Jeg examinerer hans Skikkelse fra
+Top til Taa, om der ikke skulde være en Revne, igjennem
+hvilken det Uendelige tittede ud. Nei! Han er
+heelt igjennem solid. Hans Fodfæste? er kraftigt, tilhører
+ganske Endeligheden, ingen pyntet Borgermand,
+der Søndag Eftermiddag gaaer ud paa Fresberg, træder
+grundigere paa Jorden, han tilhører ganske Verden,
+ingen Spidsborger kan tilhøre den mere. Intet er at
+opdage af dette fremmede og fornemme Væsen, hvorpaa
+man kjender Uendelighedens Ridder. Han glæder sig
+ved Alt, deeltager i Alt, og hver Gang man seer ham
+deeltage i det Enkelte, skeer det med en Vedholdenhed,
+som betegner det jordiske Menneske, hvis Sjæl hænger
+fast ved Sligt. Han passer sin Gjerning. Naar man da
+seer ham, skulde man troe, han var en Skriverkarl, der
+havde fortabt sin Sjæl i det italienske Bogholderi, saa
+punktlig er han. Han ferierer om Søndagen. Han
+gaaer i Kirke. Intet hemmeligt Blik eller noget Tegn
+paa det Incommensurable forraader ham; hvis man
+ikke kjendte ham, var det umuligt at udsondre ham
+fra den øvrige Mængde; thi hans sunde kraftige Psalmesang
+beviser i det Høieste, at han har et godt Bryst.
+Om Eftermiddagen gaaer han i Skoven. Han fryder
+sig over Alt, hvad han seer, over Menneskevrimlen, de
+nye Omnibusser, Sundet, --- naar man møder ham paa
+Strandveien, skulde man troe, han var en Kræmmersjæl,
+der slog sig løs, netop saaledes glæder han sig;
+thi han er ikke Digter, og jeg har forgjæves søgt at
+aflure ham den poetiske Incommensurabilitet. Henad
+% --- p. 59 ---
+\setcounter{footnote}{0}%
+\opage{59}Aften gaaer han hjem, hans Gang er ufortrøden som
+et Postbuds. Underveis tænker han paa, at hans Kone
+vist har en apparte lille Ret varm Mad til ham, naar
+han kommer hjem, f. Ex. et stegt Lammehoved med
+Grønt til. Hvis han mødte en Ligesindet, da kunde
+han vedblive lige til Østerport at samtale med ham
+om denne Ret med en Lidenskab, der vilde passe for
+en Restaurateur. Tilfældigvis eier han ikke 4 Sk., og
+dog troer han fuldt og fast, at hans Kone har hiin
+lækkre Ret til ham. Har hun den, da skal det være
+et misundelsesværdigt Syn for fornemme Folk, begeistrende
+for Menigmand at see ham spise; thi hans
+Appetit er stærkere end Esaus. Hans Kone har den
+ikke --- besynderligt nok --- han er aldeles den Samme.
+Paa Veien kommer han forbi en Byggeplads, han træffer
+en anden Mand. De tale et Øieblik sammen, han opfører
+i et Nu en Bygning, han disponerer over alle
+Kræfter dertil. Den Fremmede forlader ham med den
+Tanke, det var vist en Capitalist, medens min beundrede
+Ridder tænker: ja kom det derpaa an, kunde jeg sagtens
+faae det. Han ligger i et aabent Vindue og betragter
+Pladsen, paa hvilken han boer, Alt hvad der
+foregaaer, at en Rotte smutter under et Rendesteensbræt,
+at Børnene lege, alt beskæftiger ham med en
+Ro i Tilværelsen, som var han en Pige paa 16 Aar.
+Og dog er han ikke Genie; thi Geniets Incommensurabilitet
+har jeg forgjæves søgt at udspionere hos
+ham. Han ryger sin Pibe i Aftenstunden; naar man
+seer ham, skulde man sværge paa, det var Spekhøkeren
+ligeoverfor, der vegeterer i Skumringen. Han lade 5 være
+lige med en Sorgløshed, som var han en letsindig Døgenigt,
+og dog kjøber han hvert Øieblik, han lever, den
+% --- p. 60 ---
+\setcounter{footnote}{0}%
+\opage{60}beleilige Tid til den dyreste Priis, thi han gjør end
+ikke det Mindste uden i Kraft af det Absurde.“
+
+Spørgsmaalet om det Absurde bliver altsaa i allerhøieste
+Forstand et Aandsspørgsmaal, ja et Salighedsspørgsmaal.
+I „Afsluttende uvidenskabelig Efterskrift
+til de philosophiske Smuler“ fremstiller Johannes Climacus
+Problemet saaledes: „Individets evige Salighed
+afgjøres i Tiden ved Forholdet til noget Historisk, der
+ydermere er saaledes historisk, at i dets Sammensætning
+det er medoptaget, hvilket ifølge sit Væsen ikke
+kan blive historisk, og altsaa maa blive det i Kraft af
+det Absurde.“ Hvad dette betyder bliver fra et exclusivt
+kristeligt Standpunkt paa evangelisk historisk Grundlag
+anskuelig paaviist af Anti-Climacus: „\emph{Indøvelse} i
+\emph{Christendom}.“ Det Absurde, der er Troen en Salighed,
+er Vantroen en Forargelse. Kristus, Troens
+Gjenstand, er Forargelsens Mulighed: „1) den Forargelses
+Mulighed, der ikke forholder sig til Christus
+(Gud-Mennesket), men til ham som et slet og ret
+enkelt Menneske, der colliderer med det Bestaaende.
+2) Den væsentlige Forargelses Mulighed i Retning af
+Høiheden, at et enkelt Menneske taler eller handler
+som var han Gud, siger sig selv at være Gud, altsaa i
+Retning af Bestemmelsen Gud i Sammensætningen Gud-Mennesket.
+3) Den væsentlige Forargelses Mulighed i
+Retning af Ringheden, at Den, der udgiver sig for at
+være Gud, viser sig at være det ringe, fattige, lidende,
+tilsidst afmægtige Menneske.“
+
+Hermed var den hidtil gjældende Maalestok anulleret
+og Staven brudt over de mange lærde, halvhistoriske
+og halvphilosophiske Forsøg paa at gjøre
+Kristendommen begribelig for den menneskelige Fornuft.
+% --- p. 61 ---
+\setcounter{footnote}{0}%
+\opage{61}Historiske Undersøgelser over Bibelens Ægthed, dogmatiske
+Speculationer over Kirkens Lære o. desl. kunne
+vel afgive en passende Underholdning for de Lærde
+selv, men for Troen betyde de Intet. Troen er Forstanden
+en Forargelse og Fornuften en Daarskab; den
+Troende troer det Absurde: Troen er et Paradox.
+Hvorledes skulle vi da komme til Troen? Ad Inderlighedens
+Vei under Timelighedens Tryk, i Endelighedens
+Trængsler. „Tænk Dig skjult i en simpel Indfatning,
+et hemmeligt Gjemme, hvor den kostbareste
+Skat er nedlagt; --- der er en Fjeder, paa hvilken der
+skal trykkes, men Fjederen er skjult og Trykket maa
+have en vis Kraft, saa at et tilfældigt Tryk ikke kan
+være nok, saaledes er Troens Anlæg, Evighedens Haab,
+skjult i Menneskets Indre, og Trængselen er Trykket.
+Naar der trykkes paa den skjulte Fjeder, og Trykket
+er stærkt nok, saa aabner Indholdet sig i al sin Herlighed.
+Eller tænk Dig et krybende Dyr, der dog har
+Vinger, som det kan bruge, naar det drives til det
+Yderste, men til dagligt Brug finder det det ikke Umagen
+værd at bruge dem: saaledes er Troens Anlæg, Evighedens
+Haab i Menneskets Inderste: han har Vinger,
+men han maa bringes til det Yderste for at opdage
+dem eller for at faae dem og bruge dem.“
+
+Ved at fremstille Troen som Paradox gav S. Kierkegaard
+den ræsonnerende Forstand med dens selvvigtige
+Tvivlen om Alt et Slag paa Munden. Med Paradoxet
+til Forudsætning udviklede han i „Kjærlighedens Gjerninger“,
+i „Sygdommen til Døden“ og i sine mange
+opbyggelige Taler en fuldstændig Cyklus af religiøse
+Kategorier, Høidelinier for ideale Kredse, Klangfigurer
+af en tonende Evighed. --- Man skulde have meent, at en
+% --- p. 62 ---
+\setcounter{footnote}{0}%
+\opage{62}Kristendomsforkynder af saa overlegen Begavelse maatte
+have fundet Tilslutning hos samtlige Lærere i Kristendommen,
+de videnskabelige saavel som de folkelige.
+Men nei! Theologerne saae med hemmelig Gru
+paa det sære Phænomen, og der paakom dem en Fornemmelse,
+en uhyggelig Anelse, at her var, Noget,
+hvormed det ikke hængte rigtig sammen. „Hvad for
+Noget? Det skulde da vel aldrig være galt fat med
+Theologien? Skulde den maaskee kunne befrygte en
+Ildebrand?“ Hvor vil Du hen? Theologien har Intet at
+befrygte; dens Leer er ildfast, dens Borg er tryg. Udhusene
+med Faar og Kvæg og andre Kreaturer ere desuden
+assurerede. Nei, det er den stakkels Forfatter, som
+med alt sit Vid, sin Kløgt og sin Dialektik er ved at
+gaae fra Forstanden. Det er da Skade; man kunde
+ellers have brugt ham --- ikke til Kirkehistorie, thi
+dertil mangler han Lærdom og storartet Overblik, ikke
+til Dogmatik, thi dertil mangler han speculativ Dybsindighed
+og Sands for det Objective, men til Apologetik:
+han kunde have vundet sig et Navn som kristelig
+Apologet. Nu maa han opgives. --- Og saa lød da Parolen
+fra Hovedkvarteret, at den hele vidtløftige Kierkegaardske
+Litteratur var indtil videre at behandle som
+en Bunke „Strøtanker, Aphorismer, Indfald og Glimt“.
+
+Man skulde have ventet, at de Geistlige, Ordets
+Forkyndere i Menigheden, maatte have benyttet en
+Haandsrækning, hvorved de med Eet kunde blive det
+rationalistiske Uvæsen kvit og faae Bibelens Autoritet
+ubeskaaren til vederhæftig Afbenyttelse. Men nei! Der
+skal være Maade med Alt. Skal Bibelordet ret være
+opbyggeligt, maa det holdes i en vis Forbigangenhedens
+Skumring. Det skader ikke, at der er lidt Uvished i
+% --- p. 63 ---
+\setcounter{footnote}{0}%
+\opage{63}Baggrunden, lidt Angst for Fritænkeri i Sindene; Ordets
+Forkynder har da den Fordeel at kunne styrke Tilhørerne
+i Troen og tale et myndigt advarende Ord mod
+„disse Tiders Vantro“. For S. Kierkegaard vare almene
+Betragtninger over „hine Tider“ og „disse Tider“
+ørkesløse Sinkerier. Enhver, som vil, kan i aandelig
+Forstand blive samtidig med Kristus paa samme Maade
+som Apostlene. Thi om Kristus faaer man, objectivt
+seet, Intet at vide. Kristus er ikke Gjenstand hverken
+for from Beundring eller kritiserende Nysgjerrighed.
+Kristus er Modsigelsens Tegn, Forargelsens Mulighed,
+Troens Eenbaarne. Kristendommen er ikke en Lære,
+den er en „Existensmeddelelse“. Vil Du existere som
+Kristen eller vil Du ikke? det er Spørgsmaalet. Vil
+Du ikke, kan Du jo gaae din Vei, vil Du --- see her
+er Forbilledet! Saa holdt han det Nye Testamente saa
+nær op for Øinene af Præst og Menighed, at han ved
+sin „Samtidighed“ virkelig blev noget nærgaaende. Man.
+svarede ham i Kirkens Navn, at hvad Existensen angaaer,
+var der Intet i Veien. „Vi have den samme
+Herre, den samme Tro, den samme Daab, den samme
+Helligaand som Apostlene. Vel sandt, vi kunne ikke
+gjøre saa kraftige Gjerninger som Apostlene, ei heller
+leve saa økonomisk som Apostlene, thi Tiderne have
+forandret sig, men vi stole trygt paa Herrens Ord: Du
+er Petrus, og paa denne Klippe vil jeg bygge min Menighed,
+og Helvedes Porte skulle ikke faae Overhaand
+over den.“ --- Nu var Fæstningen cerneret og Bombardementet
+begyndte.
+
+„Tænk Dig, at der var en mægtig Aand, som havde
+tilsagt nogle Mennesker sin Beskyttelse, men paa den
+Betingelse, at de skulde indfinde sig et bestemt Sted,
+% --- p. 64 ---
+\setcounter{footnote}{0}%
+\opage{64}hvor der var Fare med at gaae hen --- sæt nu, at disse
+Mennesker undlod at indfinde sig paa det bestemte Sted,
+men gik hjemme i deres Dagligstue og talte begeistrede
+Ord med hinanden om, hvorledes Aanden havde lovet
+dem sin mægtige Beskyttelse, saa Ingen skulde formaae
+at skade dem: er dette ikke latterligt?\dots{} At Helvedes
+Porte ikke skulle faae Magt over hans Kirke,
+disse Ord af Christus ere i den seneste Tid bragte
+atter og atter i Erindring mod mig, mod min Paastand,
+at Christendommen slet ikke er til. Mit Svar er dette.
+Hiin Forjættelse hjælper ikke os det allermindste; thi
+det Vrøvl vi leve i som var det at være Christen, er
+slet ikke hvad Christus og det Nye Testamente forstaaer
+ved at være Christen. Christenhed er slet ikke
+Christi Kirke; ei heller siger jeg, at Helvedes Porte
+have faaet Magt over Christi Kirke, paa ingen Maade.
+Nei, jeg siger, at „Christenhed“ er et Vrøvleri, der har
+klamret sig fast ved Christendommen som et Spindelvæv
+paa en Frugt, og som nu er saa god at ville forvexle
+sig med Christendom.“
+
+Vi stride og stræbe, vi hige og søge. Hvad er
+det vi søge?  Først Guds Rige“. (Et Slags Novelle.)
+Cand. theol. Ludvig From --- han søger. Og naar man
+hører, at „en theologisk“ Candidat søger, behøver man
+da ikke nogen levende Indbildningskraft for at forstaae,
+hvad det er han søger, naturligviis Guds Rige, som
+man jo skal søge først. --- Nei, det er det dog ikke;
+det han søger, er: et kongeligt Levebrød som Præst;
+og er der, hvad jeg med nogle faa Træk skal angive,
+først skeet saare Meget, førend han er naaet saa vidt.
+Først har han gaaet i den lærde Skole, fra hvilken han
+saa er dimitteret. Derpaa har han først taget 2 Exa%
+% --- p. 65 ---
+\setcounter{footnote}{0}%
+\opage{65}miner og, efter 4 Aars Læsning først taget Embedsexamen.
+Han er da altsaa theologisk Candidat; og
+man skulde maaskee mene, at han, efter først at have
+tilbagelagt alt Dette, endelig kan komme til at virke
+for Christendommen. Ja, paa det Lav. Nei, først
+maa han gaae \textonehalf{} Aar i Seminariet; og naar det er
+gaaet, kan der da ikke være Tale om at kunne søge i
+de første 8 Aar, hvilke altsaa først maae være tilbagelagte.
+Og nu staae vi ved Novellens Begyndelse: de
+8 Aar ere forløbne, han søger. Hans Liv, som hidtil
+ikke kan siges at have havt noget Forhold til det Ubetingede,
+antager pludseligt et saadant Forhold: han
+søger ubetinget Alt; skriver det ene Ark stemplet Papir
+fuldt efter det andet, render fra Herodes til Pilatus,
+anbefaler sig baade hos Ministeren og hos Portneren,
+kort han er ganske i et Ubetingets Tjeneste. Ja, en
+af hans Bekjendte, der i de sidste Par Aar ikke har
+seet ham, mener til sin Forbauselse at opdage, at han
+er blevet mindre, hvilket maaskee lader sig forklare af,
+at det er gaaet ham som Münchhausens Hund, der var
+en Mønde, men ved den megen Løben blev en Grævling.
+Saaledes gaaer der 3 Aar. Vor theologiske Candidat
+trænger virkelig til Hvile, til efter en saa uhyre
+anstrænget Virksomhed at blive sat ud af Virksomhed
+eller at komme til Ro i et Embede og pleies lidt af
+hans tilkommende Kone, --- thi han er imidlertid først
+blevet forlovet. Endeligen --- som Pernille siger til
+Magdelone --- slaaer hans „Forløsnings“ Time, saa han
+med Overbeviisningens hele Magt vil, af egen Erfaring,
+kunne „vidne“ for Menigheden, at i Christendommen
+er der Frelse og Forløsning: han faaer et Embede.
+Hvad skeer? Ved at indhente en endnu nøiere Efter%
+% --- p. 66 ---
+\setcounter{footnote}{0}%
+\opage{66}retning end han hidtil har havt om Kaldets Indtægter,
+opdager han, at disse ere c. 150 Rd. mindre end han
+havde troet. Nu er 101 ude. Det ulykkelige Menneske
+næsten fortvivler. Han har allerede kjøbt stemplet
+Papir for at indgaae med en Ansøgning til Ministeren,
+at det maa tillades ham at betragtes som ikke kaldet
+--- og for saa igjen at begynde forfra: da en af hans
+Bekjendte faaer ham til at opgive dette. Det bliver
+altsaa derved, han beholder Kaldet. Han er ordineret
+--- og Søndagen kommet, da han skal fremstilles for
+Menigheden. Provsten, ved hvem dette skeer, er en
+mere end almindelig Mand, han har ikke blot (hvad
+de fleste Præster have, og oftest i samme Grad mere,
+jo høiere de komme op i Rangen) et uhildet Blik for
+den jordiske Profit, men tillige et speculativt Blik paa
+Verdenshistorien, Noget, han ikke beholder for sig selv,
+men lader Menigheden komme til Gode. Han har,
+genialt, valgt til Text de Ord af Apostelen Peter: „see
+vi have forladt alle Ting og fulgt Dig“, og forklarer
+nu Menigheden, at just i Tider som vore maa der
+saadanne Mænd til som Lærere, og anbefaler i Forbindelse
+hermed denne unge Mand, om hvem Provsten
+veed, hvor nær han var traadt tilbage for de 150 Rd.’s
+Skyld. --- Den unge Mand bestiger nu selv Prædikestolen
+og Dagens Evangelium er (besynderligt nok!):
+tragter først efter Guds Rige. Han holder sin Prædiken.
+„En meget god Prædiken, siger Biskoppen, som selv
+var tilstede, „en meget god Prædiken; og det frembragte
+ordentlig Virkning det hele Parti om „først“
+Guds Rige, den Maade, paa hvilken han fremhævede
+dette „Først“. „Men synes da Deres Høiærværdighed,
+at her var den ønskelige Overeensstemmelse mellem
+% --- p. 67 ---
+\setcounter{footnote}{0}%
+\opage{67}Talen og Livet; paa mig gjorde det næsten et satirisk
+Indtryk dette „Først“. „Hvilken Urimelighed; han er
+jo kaldet til at forkynde Læren, den sunde, uforfalskede
+Lære om at søge først Guds Rige; og det gjorde han
+meget godt.“
+
+Ved at see bort fra Livet, og tale om Læren, den
+sunde, uforfalskede Lære, faaer man „nymodens religiøse
+Betryggelser“. „Engang i en længst, længst forsvunden
+Tid forstod man Sagen saaledes: man fordrede
+af Den, der vilde være Lærer i Christendom, at hans
+Liv afgav Garantien for, hvad han lærte. Dette er
+man nu længst kommet bort fra, Verden er bleven
+klogere, alvorligere, har lært at ringeagte alt dette
+Smaalige og Sygelige med det Personlige, lært at begjære
+ene det Objective --- nu fordrer man, at Lærerens
+Liv afgiver Garantien for, at det, han siger,
+er Commerce, dramatisk Festlighed , Divertissement,
+reent objectivt. Nogle Exempler. Er det dette Du vil
+tale at ~
+
+om, Christendommen, det nye Testamentes
+Christendom, har en Forkjærlighed for eenlig Stand ---
+og Du selv er et eenligt Menneske: Kjære, det er ikke
+Noget for Dig at tale om, Menigheden kunde jo troe,
+at det var Alvor, blive urolig eller den kunde føle sig
+fornærmet, at Du saaledes, saa upassende blander din
+Personlighed ind. Nei, det har lange Udsigter, før Du
+kan blive duelig til med Alvor at tale derom saaledes,
+at Du i Sandhed tilfredsstiller Menigheden. Vent til
+Du engang allerede har din første Kone i Jorden og
+er et godt Stykke henne med den anden: da er Tiden
+for Dig, da træder Du frem for Menigheden, lærer og
+„vidner“, at Christendommen har Forkjærlighed for
+eenlig Stand --- og Du vil ganske tilfredsstille;  thi dit
+% --- p. 68 ---
+\setcounter{footnote}{0}%
+\opage{68}Liv afgiver Garantien for, at det er Fjas, Commerce,
+eller at det, Du siger, er: interessant. --- Er det dette
+Christelige, Du vil tale om, at Christendommen lærer
+Foragt for Titler og Ordener og alle Ærens Narrestreger
+--- og Du selv hverken er Rangsperson, eller
+Noget, som ligner Sligt: Kjære, det er ikke Noget for
+Dig at tale om, Menigheden kunde jo troe, at det var
+Alvor eller føle sig fornærmet over den Mangel paa
+Dannelse, saaledes at paanøde sin Personlighed. Nei,
+bie til Du først selv har lagt Dig en Slump Ordener
+til, jo flere jo bedre, bie til Du selv slæber en Ramse
+af Titler med Dig, saa Du for Mængden af Titler
+neppe selv veed, hvad Du hedder; da er det Tiden,
+da træder Du frem, prædiker og „vidner“ --- og Du
+vil utvivlsomt tilfredsstille Menigheden; thi dit Liv afgiver
+Garantien for, at det er dramatisk Forlystelse,
+en interessant Formiddags-Underholdning. Er det dette
+Du vil tale om, i Armod at forkynde Christendom, at
+det er den sande christelige Forkyndelse --- og Du selv
+bogstavelig er en fattig Diævel: Kjære, det er ikke
+Noget for Dig at tale om, Menigheden kunde jo troe,
+at det var Alvor, blive angst og bange, føle sig aldeles
+ude af Stemning og i allerhøieste Grad uhyggelig berørt
+ved at Armoden kom En saa nær paa Livet. Nei,
+skaf Dig først et fedt Levebrød, og naar Du saa har
+hav det saa længe, at Du snart vil avancere til et
+endnu federe: da er den beleilige Tid kommen, da
+træder Du frem for Menigheden, prædiker og „vidner“
+--- og Du vil ganske tilfredsstille; thi dit Liv afgiver
+Garantien for, at de Hele løber ud paa en Spas, som
+alvorlige Mænd kunne ønske den, i Theatret eller i
+Kirken, en Forfriskelse for at samle nye Kræfter til ---
+% --- p. 69 ---
+\setcounter{footnote}{0}%
+\opage{69}at tjene Penge. --- Og paa den Maade dyrker man Gud
+i Kirkerne! Og saa græder disse Fløiels- og Silke-Talere,
+Stemmen svigter qvalt i Taarer!“
+
+Der berettes i Evangeliet, at en Engel til visse
+Tider foer ned i Bethesda Dam og rørte Vandene, saa
+at Den iblandt de mange Syge, som derpaa først kom
+i Badet, blev helbredet. Her er ogsaa En, der rører
+Vandene, Troens, Tankens og Sprogets Vande, men er
+han en Engel? Han synes snarere at være en Dæmon;
+thi Enhver som helst iblandt „de Sunde“, der vover et
+Spring i de rørte Vande, maa jo blive lam baade paa
+Sjæl og Legeme. Hvad er han da, hvad vil han?
+„Hvad jeg vil? Ganske simpelt: jeg vil Redelighed.
+Jeg er ikke, som man velmenende --- thi Forbittrelsens
+og Raseriets og Afmagtens og Vrøvlets Opfattelse af
+mig kan jeg ikke tage Hensyn til --- har villet fremstille
+mig, jeg er ikke en christelig Strenghed lige over
+for en given christelig Mildhed. Paa ingen Maade; jeg
+er hverken Mildhed eller Strenghed --- jeg er en menneskelig
+Redelighed.“
+
+Det høieste Aands- og Kulturspørgsmaal er sat i
+Bevægelse. Hvem har nu Ret, S. Kierkegaard eller
+hans Modstandere? Spørgsmaalet er dybtgaaende og
+dertil saa skærpet og tilspidset, at det sætter sin Spydsod
+mod Tidens Bryst og tvinger den til at staae foran et
+Enten-Eller. Man kan vende Øinene bort fra Spørgsmaalet
+og lade som om det var glemt eller slet ikke
+til. Men det er lige fuldt til, og lader sig ikke afvise.
+Naar man læser de samlede Bladartikler, Kierkegaards
+Angreb og Geistlighedens Forsvar, og tager „Øieblikkene“
+med, danner der sig ud af Forhandlingerne et
+eiendommeligt Billede, en Situation, der minder om
+% --- p. 70 ---
+\setcounter{footnote}{0}%
+\opage{70}Helten og Choret i den antike Tragoedie. Dette Skuespil
+i vor danske Literatur vil sikkert gaae over i
+fremmede Literaturer og blive opført paa det store
+Verdenstheater. Om hundrede Aar skrider Paradoxets
+Elsker med sine Kjærlighedsgjerninger og sine „1000
+Præster“ over Scenen, dramatisk og med fuld Musik
+som Don Juan med sine 3000 Elskerinder.
+
+% --- p. 71 ---
+\setcounter{footnote}{0}%
+\lecture{Femte Forelæsning.}\opage{71}
+
+\emph{Det Nye Testamentes Kristendom er ikke
+mere til}. Det er S. Kierkegaards Paastand, hans „eneste
+Thesis.“ Og Beviset? er kort og fyndigt. Kristendommen
+er „Existensmeddelelse“. Den religiøse Existens i Nutiden
+og den religiøse Existens i Apostlenes Tid ere hinanden
+saa diametralt modsatte, at den ene kan betragtes
+som en Parodie paa den anden. „Hvis det vi
+forstaae ved at være Christen virkelig er det at være
+Christen: hvad er saa Gud i Himlene? Han er det
+latterligste Væsen, der nogensinde har levet, hans Ord
+den latterligste Bog, som nogensinde er kommet for
+Lyset: at sætte (som han jo gjør i sit Ord) Himmel
+og Jord i Bevægelse, at true med Helvede, med evige
+Straffe --- for at opnaae det, vi forstaae ved at være
+Christne (og vi ere jo sande Christne): nei noget saa
+Latterligt er aldrig forekommet! Tænk Dig, at der til
+et Menneske traadte en Mand med skarpladt Pistol og
+sagde til ham: jeg skyder Dig ned“, eller tænk Dig det
+endnu forfærdeligere, at han sagde: jeg bemægtiger
+mig Din Person og martrer Dig ihjel ved den rædsomste
+Dødsmaade, hvis Du ikke (pas nu paa, nu kommer det!)
+hvis Du ikke gjør Dig Livet her paa Jorden saa pro%
+% --- p. 72 ---
+\setcounter{footnote}{0}%
+\opage{72}fitabelt og nydelsesrigt som Dig er muligt, „saa er dette
+dog vel den latterligste Tale\dots{}. Den rædsomste Art
+Gudsbespottelse er den „Christenhed“ forskylder: at
+forvandle Aandens Gud til --- et latterligt Vrøvl; og
+den aandløseste Art Gudsdyrkelse, aandløsere end Alt,
+hvad der findes og fandtes i Hedenskabet, aandløsere
+end det, som Gud at tilbede en Steen, en Oxe, et Insekt,
+aandløsere end Alt er: at tilbede under Navn af
+Gud --- et Vrøvlehoved!“
+
+\emph{Naar hørte det N. Testamentes Kristendom
+op med at være til}? Efterhaanden som man hørte op
+med at forsage Verden, offre Livet for Troen og lide
+for Læren. Den har altsaa været til endnu i Joh. Husses
+Tid, Luther maa vel ogsaa regnes med til det Nye Testamentes
+Kristne? Ja, paa en Maade; men tage vi
+det strengt, saa er Christendommen egentligen ikke
+kommet ind i Verden. Det blev ved Forbilledet og
+høiest Apostlene; men disse forkyndte den dog allerede
+saa stærkt i Retning af Udbredelse, at her allerede
+Misligheden begynder\dots{}. Kun guddommelig Myndighed
+kunde imponere Menneskeslægten saaledes, at det blev
+til ubetinget Alvor med ubetinget at ville det Evige.
+Kun Gudmennesket vilde kunne udholde, hvis man vil
+tænke sig det, 1000 Aar igjennem og atter 1000 Aar
+ubetinget at virke for Lærens Udbredelse ved at forkynde
+den, selv om han ikke fik en eneste Discipel,
+hvis han kun kunde faae dem ved at forandre Vilkaaret.
+Apostelen har dog nogen selvisk Trang til den Lindring
+at faae Tilhængere, hvad Gudmennesket ikke har, der
+ikke selvisk trænger til Tilhængere, derfor kun har
+Evighedens Priis, ingen Markeds-Priis.“
+
+\emph{Og hvis er saa Skylden, at det N. Testamentes}
+% --- p. 73 ---
+\setcounter{footnote}{0}%
+\opage{73}\emph{Kristendom ikke mere er til}? Naturligviis Menneskenes
+Skyld. „I det nye Testamente er, ifølge Christi egen
+Lære, det at være Christen, blot menneskelig talt, idel
+Qval, en Qval sammenlignet med hvilken alle menneskelige
+Lidelser næsten kun er Barnestreger. Det
+Christus taler om --- thi han lægger ikke Dølgsmaal
+derpaa --- er om at korsfæste Kjødet, hade sig selv,\dots{}
+om de mest hjerteskjærende Lidelser ved at hade Fader,
+Moder, Hustru, sit eget Barn“\dots{} Det var slet ikke
+efter Menneskenes Sind. Saa greb man „til Hyklerie,
+man forfalskede Bestemmelsen af det at være Christen.
+Det at være Christen, heed det, er idel Salighed,
+„hvad var jeg, o, hvad var jeg, hvis jeg ikke var Christen;
+o, uskatteerlige Gode at være Christen; jo, det at
+være Christen, det giver først ret Livet Betydning,
+Glæderne Smag og Lidelserne Lindring.“
+
+Her er S. Kierkegaards \emph{aabenbare Selvmodsigelse}.
+
+Først bestemmer han Kristendommen som en Existensmeddelelse,
+en overnaturlig Aandsmeddelelse, en
+Gave af Guds frie Naade, og præcicerer Udtrykket % PRINTED AS IS: præcicerer (for præciserer; read at the image)
+derhen, at Kristus, Gud-Mennesket selv, det eneste
+sande Aandsmenneske, er den eneste sande Kristen.
+Apostlene, hans nærmeste Efterfølgere, forraade allerede,
+trods Inspirationen, paa selve Pintsefesten et betænkeligt
+Hang til Forfalskning, en „selvisk Trang til
+den Lindring, at faae mange Tilhængere.“ Og hvorfor?
+Fordi Aanden i Apostlene ikke var saa stærk som
+Aanden i Kristus. Saa ubetinget er Existensmeddelelsen
+afhængig af den overnaturlige, paradox-mirakuløse Aandsmeddelelse,
+at den yderste Anstrengelse af menneskelig
+Kraft og Villie i dette Forhold bliver en forsvindende
+% --- p. 74 ---
+\setcounter{footnote}{0}%
+\opage{74}Størrelse. Et Menneske kan og bør tilegne sig det
+Guddommelige, for saa vidt det bliver ham, den Enkelte,
+personlig meddeelt, men intet Menneske kan med
+al sin Iver lægge en Alen til sin Væxt eller tilegne sig
+end det Mindste af hvad Guds er, naar Gud ikke selv
+vil meddele ham det. Under denne Forudsætning maatte
+da S. Kierkegaard med sin „menneskelige Redelighed“
+være kommet til følgende Resultat: Det N. Testamentes
+Kristendom er ikke mere til. Ak hvor beklageligt.
+Men lad os ikke jamre derover eller gjøre os selv
+ufrugtbare Bebreidelser; thi det er ikke Menneskenes
+Skyld, men Guds urandsagelige Villie. Gud gjorde i
+Tidens Fylde et Experiment med en overnaturlig Existensmeddelelse,
+men lod det kort efter falde igjen.
+Hvorledes? Af hvilke Grunde? Blev hans Kjærlighed
+kold, blev Aanden træt, gjorde Menneskene ham det
+saa broget, at han blev kjed af det Hele? Spørg ikke,
+spot ikke! Det er jo, hvad det skal være, --- et Paradox,
+et Absurdum. Med denne Forklaring kunde Paradoxets
+Ordfører kjækt have hævdet sin Thesis og
+conseqvent blevet færdig med hvad han kalder „Præstevrøvlet.“
+
+
+Men den Vei gik han ikke. Han tog et andet
+Tilløb. Han stillede Forbilledet frem, for at indskærpe
+Fordringen paa ubetinget Efterfølgelse. Enhver, som
+alvorlig vil, maa kunne troe, at Gud-Mennesket har
+existeret. I Troen paa denne Existens er Existensmeddelelsen
+med dens overnaturlige Betingelser een
+Gang for alle given. Hver Troende, som vil, kan blive
+samtidig med Kristus, kan træde i hans Spor og følge
+ham efter. „Forholdet er: jo mere Du indlader Dig med
+Gud og jo mere han elsker Dig, jo mere vil Du blive,
+% --- p. 75 ---
+\setcounter{footnote}{0}%
+\opage{75}menneskeligt talt, ulykkelig for dette Liv, jo mere vil
+Du komme til at lide i dette Liv.“ I den Grad er nu
+den overnaturlige, paradox-mirakuløse Existensmeddelelse
+gjort afhængig af Menneskets Sind og Villie, at
+her end ikke er Skygge af Forandring fra Guds Side,
+thi Gud er Kjærlighed og indlader sig i Øieblikket
+med hver den, der vil indlade sig med ham. Den opstillede
+Thesis bliver da at forsvare saaledes: Det N.
+Testamentes Kristendom er ikke mere til; men det er
+ ikke Guds Skyld, det er Menneskenes Skyld. „Dette
+veed jeg paa to Maader af Erfaring. Deels deraf, at
+jeg ikke kan holde den Tanke“ (Kjærlighedstanken)
+„ud og derfor blot opdagende øiner denne sande christelige
+Bestemmelse af det at være Christen, medens
+jeg for mit Vedkommende hjælper mig til at udholde
+Lidelser med en langt lettere Tanke, en jødisk, ikke
+en i høieste Forstand christelig: at jeg lider for mine
+Synders Skyld; deels deraf, at jeg ved mit eget Livs
+Forhold maatte føres til at blive opmærksom herpaa“\dots{}.
+Den „menneskelige Redelighed“ er nu denne:
+Det N. Testamentes Kristendom er ikke mere til; thi
+jeg, Søren Aaby Kierkegaard, har ikke villet, at den
+skulde være til. Havde jeg villet indlade mig dybere
+med den guddommelige Kjærlighed og ladet den gjøre
+mig absolut ulykkelig, ganske og aldeles ulykkelig i
+dette Liv, saa havde der dog i det mindste været een
+Kristen til: Kristendommen havde da været til i mig.
+Men nu har jeg ikke villet det. Hvorfor ikke? Spot
+ikke, spørg ikke derom; det er jo, hvad det skal være,
+det Paradoxe, det Absurde. Min Opgave har jeg løst:
+at rive Masken af Hykleriet. Præsterne sige, at de
+ville, hvad Kristus vil, og for at holde Menneskene hen
+% --- p. 76 ---
+\setcounter{footnote}{0}%
+\opage{76}i denne Indbildning gjøre de andægtige Miner og forfalske
+Kristendommen; jeg angiver sandt hvad Kristendom
+er, og saa salver jeg mit Hoved og toer mit Ansigt
+og siger frit ud: Kristendommen er slet ikke til; jeg
+er endnu ikke Kristen, fordi jeg endnu ikke vil være
+det. Det er min Redelighed overfor Præsterne.
+
+Man seer, at den sidste Forklaring i Frækhed og
+Vanvid ikke staaer tilbage for den første. I en saadan
+Frækhed har S. Kierkegaard visselig ikke gjort sig
+skyldig. Men hvorved har han undgaaet Vanvidets
+Yderste? Ved at bøje af fra Conseqvensen, sætte en
+Dup paa Spydsodden og tilstaae sin Skrøbelighed: jeg
+kan ikke bære den store Kristustanke, Forbilledet er
+for stort og jeg er for lille; med andre Ord: jeg venter
+endnu paa en Existensmeddelelse.
+
+Det Kierkegaardske Gudsforhold er himmelvidt forskjelligt
+fra det nytestamentlige Gudsforhold. Det
+nytestamentlige Gudsforhold er et umiddelbart Aabenbaringsforhold;
+det Kierkegaardske er et uendelig dialektisk
+Reflexionsforhold. Modsigelsen, den radikale
+Selvmodsigelse, som S. Kierkegaard med al sin Reflecteren
+aldrig fik op i Bevidstheden, er: at et afledet
+Reflexionsforhold til Gud skulde kunne give samme
+Existens som det primitive Aabenbaringsforhold. Visselig
+har S. Kierkegaard tænkt og handlet, levet og lidt
+trods Nogen i Samtiden. Hans nærmeste Eftertid har
+endnu ikke ret besindet sig paa, hvad det er for et
+Aandsarbeide han har faaet udført og hvor uendelig
+Meget, den skylder ham. Men hans Reflexion var negativ,
+Paradoxet, det Absurde var hans eneste Positive. Paradoxets
+Positive --- det er dets dybe Hemmelighed ---
+er selv i sit Inderste negativt. Den salige Ruus i
+% --- p. 77 ---
+\setcounter{footnote}{0}%
+\opage{77}Lidelse, Forsagelse, Opoffrelse er en negativ Existens;
+Guds Kjærlighed løser sig op i lutter negative Bestemmelser
+og forvandler sig tilsidst til et sjælefortærende
+Afgrundsdyb, der er forfærdeligere end Døden. „Gud
+er Din Dødsfiende; han, Kjærligheden, han vil af Kjærlighed
+til Dig være elsket af Dig: dette betyder, at
+Du maa døe, afdøe, ellers kan Du ikke elske ham. Saa
+sidder han da, allestedsnærværende og alvidende som
+han er, og passer paa Dig, veed end det Mindste der
+foregaaer i Dig --- det veed han, Din Dødsfjende!
+Vogt Dig for at ønske Noget, vogt Dig for at frygte
+Noget; thi hvad Du ønsker, opfyldes ikke, men snarere
+det Modsatte, og hvad Du frygter, og jo mere, jo snarere
+kommer det over Dig. Thi han elsker Dig, og han vil
+være elsket af Dig; begge Dele af Kjærlighed; men
+saasnart der er Noget, Du ønsker, saa tænker Du ikke
+paa ham, ligesom naar der er Noget Du frygter, eller
+hvis Du bringer ham i Forbindelse med Din Ønsken
+og Frygten, saa tænker Du jo altsaa ikke paa ham i
+og for sig selv, det er, Du elsker ham ikke --- og han
+vil være elsket, vil det af Kjærlighed. --- Med en
+saadan Kjærlighed havner man ikke i Himlen hos Kristus,
+men i Nirvana hos Buddha.
+
+Som den Sandhedsaabenbaring, der aabner Livets
+hellige Kilder, kan Kristendommen med Grund kaldes
+en Existensmeddelelse, for saa vidt den er en uendelig
+frugtbar Livsmeddelelse. Men Liv og Existens ere dog
+ikke enstydige Ord. Det samme Liv kan give sig Udtryk
+i forskjellige Existenser: det evige Liv er de
+timelige Existensers uudtømmelige Grund. Det evige
+Liv i Kristendommens Væsen bliver ikke staaende ved
+en enkelt Tidsalders stereotype Existensschema, det
+% --- p. 78 ---
+\setcounter{footnote}{0}%
+\opage{78}gaaer, uforanderligt, som det er, ind i Forandringer,
+evigt, som det er, ind i Tid og Omskiftelse, overnaturligt,
+som det er, ind i Naturbetingelser og naturlige
+Forhold, saligt, som det er, ind i jordisk Forkrænkelighed,
+i verdslige Brydningers Uro, Lidelser og Strid.
+Herved bliver Forholdet mellem Meddelelsen og Tilegnelsen
+nærmere at bestemme. Her er en fortsat
+Vexelvirkning mellem Meddelelse og Tilegnelse, men
+Vexelvirkningens Factorer forholde sig ikke altid paa
+samme Maade.
+
+Først er den guddommelige Factor almægtig overgribende.
+Ordet bliver Kjød, Gudsaabenbareren træder
+frem som Menneske, lærer og lider, døer og opstaaer
+til Vitterliggjørelse af Livets personlige Seier over
+Døden. Han indgaaer til Herlighed; men just som
+han har sat sig paa Kongestolen ved Faderens Høire,
+kommer Aanden som i et fremfarende vældigt Veir med
+Tunger af Ild ned over Apostlene, og Ilden tænder i
+disse Vidner, og Tungemaalene gløde i Vidnesbyrdets
+Flammer. Det var den store Gjennembrudstid; Himlen
+aabnedes og Gravene aabnedes: det skjulte Under kom
+i denne Aandsvirksomhed til Udslag i aabenbare Mirakler.
+
+
+Saaledes er den primitive Existensmeddelelse, Kristendomsexistensen
+i det N. Testamente. At maale
+Nutidsexistensen med denne Maalestok og gjøre „Christenheden“
+ansvarlig for, at den ved egen Brøde har
+ladet den nytestamentlige Existens gaae tabt, forraader
+en uhyre Misforstaaelse. Apostelexistensen hørte op,
+da Gjennembrudsperioden var afsluttet.
+
+Der følger nu Perioder, i hvilke den guddommelige
+Meddelelse drager sig tilbage i Form af det skjulte
+% --- p. 79 ---
+\setcounter{footnote}{0}%
+\opage{79}Under, for at Tilegnelsens menneskelige Factor særlig
+kan træde frem og komme til bevidst Virksomhed, ---
+den katholske og den gammelprotestantiske Periode.
+
+See vi bort fra Forskjellighederne i det Udvortes
+og fæste Blikket alene paa Tilegnelsens Væsen, da har
+den katholske Kirke ved sin Gjerningshellighed unegtelig
+gjort Alt for at anstrenge den menneskelige Villie,
+men den har ogsaa gjort Alt for at vedligeholde
+Illusionen om en i mirakuløse Gjennembrud sig fortsættende
+Aandsmeddelelse. --- Vexelvirkningen mellem
+den guddommelige og den menneskelige Factor har
+derved antaget et Præg af mechanisk Endelighed.
+Den protestantiske Kirke har trængt Forestillingen om
+mirakuløse Gjennembrud tilbage og reduceret Aandsmeddelelsen
+til et stille perennerende Under. Den
+har vel ikke villet slappe Tilegnelsens Kraft, men dog
+givet Villien en eensidig indadgaaende og selvopløsende
+Retning i Dogmet om Retfærdiggjørelsen ved Troen.
+
+Begge Kirker ere, hver paa sin Maade, i lige stor
+Forlegenhed med den virkelige Menneskenatur og den
+sig fremarbeidende Existens. Og hvorfor? Fordi de,
+berøvede den sprudlende Aandens Kilde, som overnaturligt
+nærede den apostoliske Existens, ikke desto mindre
+i Efterligningens Form have fastholdt det apostoliske Existensschema.
+Vi skulle efter begges Anvisning, forsage Verden,
+døde Kjødet, kue Naturdrifterne, kort sagt, betragte
+det hele nærværende Liv som en Jammerlighed, der kun
+duer til at plage os op til Salighed hisset. Hvad den humane
+Existens angaaer, er Katholicismen med sin gjennemførte
+Asketik, sit ufordulgte Fiendskab mod fri
+fornuftig Oplysning og sit Munkevæsens mørke Foragt
+for Livets naturlige Formaal imidlertid mere conseqvent
+% --- p. 80 ---
+\setcounter{footnote}{0}%
+\opage{80}end Protestantismen. Den protestantiske Kirke har
+med Bibeholdelse af sit apostoliske Schema villet knæsætte
+Humaniteten og tage Kulturskjønheden i Favn;
+det er en Tvetydighed, den dyrt har maattet betale.
+Hvor er nu den nytestamentlige Existens, hvor er Kjødets
+Dødelse, hvor er Guds Rige? „Cand. theol. Ludvig
+From han søger“. --- S. Kierkegaards Satire gjør
+en følelig Virkning, hvert Slag af hans Svøbe efterlader
+blodige Strimer, netop fordi han gjør det nytestamentlige,
+af hans Modstandere selv høitidelig anerkjendte,
+Existensschema gjældende.
+
+Nutidsexistensen har eiendommelige Krav, som den
+hverken kan eller vil opgive; den gjør Naturlivets Betydning
+gjældende fra Grunden af og fordrer Fornuften
+anerkjendt. Dersom Kristendommen virkelig var et
+Paradox, og Troen et Absurdum, saa var det Nye Testamentes
+Kristendom rigtignok ikke mere til; men, vel at
+mærke, af den Grund, at den aldrig har været til uden
+i Menneskenes Indbildning, en Indbildning, der kun
+kan holde sig saalænge, indtil man har opdaget det
+Paradoxe.
+
+Hvad er Paradoxet? Paradoxet med det Absurde
+kommer tilsyne, naar to Begreber, der i
+fuld Gjennemsigtighed vise sig indbyrdes modsigende,
+sættes sammen i Eenhed. En fiirkantet Cirkel er et
+Absurdum. Siger man nu: i Aandens og Sandhedens
+høieste Regioner ere alle Cirkler fiirkantede, og dette
+skal troes imod al Forstand, saa protesterer Fornuften;
+vi have da Paradoxet. Siger man: i Gud-Menneskets
+Existens er der Noget blevet historisk, som ifølge sit
+Væsen umulig kan være historisk, og altsaa maa være
+blevet det i Kraft af det Absurde, og dette skal
+% --- p. 81 ---
+\setcounter{footnote}{0}%
+\opage{81}troes mod al Forstand, saa protesterer Fornuften:
+vi have Paradoxet. At Modsigelsen i den fiirkantede
+Cirkel og den foregivne Modsigelse i Gud-Menneskets
+Væsen imidlertid ere absolut ueensartede Modsigelser
+kan Enhver, som vil bruge sin Fornuft, indsee. Cirkelens
+Begreb og Fiirkantens Begreb kunne tydeliggjøres
+i exacte Bestemmelser og tilsvarende Anskuelsesformer.
+Men Gudsbegrebets Indhold kunne vi ikke udtømme
+i exacte Bestemmelser og Menneskebegrebets
+heller ikke. Naar da Troen fastholder begge Begrebers
+Eenhed i Gud-Menneskets Væsen, fatter Fornuften, at
+det, som herved forudsættes, ikke er et Absurdum, men
+et Mysterium.
+
+Maaskee vil „Cand. theol. From“ anmærke, at det
+netop er, hvad han fra Theologien længe har vidst, og
+just derfor søger\dots{}. Lad ham søge! Mysteriet er
+ikke en gammel theologisk Nat, hvori alle Katte ere
+graae, er ikke det ubestemmelige Tusmørke, hvori Religionen
+røres sammen med Videnskaben, Troen med Fornuften
+til opbyggelige Forklaringer for uklare Hoveder.
+Mysteriet er et Grændsebegreb, hvori Tro og Viden
+mødes og skilles. Det maa ved omhyggelig Videnskritik
+nøiagtig bestemmes, hvor dybt Fornuften kan
+naae med Erkjendelsen af det Naturlige; den absolute
+Grændse, hvori Erkjendelsen løser sig op, er Mysteriet.
+Det maa ved omhyggelig Troeskritik nøiagtig bestemmes,
+hvor dybt den religiøse Bevidsthed kan gaae med
+Erkjendelsen af det Overnaturlige, uden at komme i
+Modsigelse med Fornuften og derved i Strid med sig
+selv; den absolute Grændse, hvori den opløses, er Mysteriet.
+
+
+% --- p. 82 ---
+\setcounter{footnote}{0}%
+\opage{82}Aabenbaringsmiraklet er et Mysterium, Gud-Menneskets
+Væsen et Mysterium. Fæster man nu eensidig
+Opmærksomheden paa de mirakuløse Udslag og tilsvarende
+Existenskriser, idet man vilkaarlig undgaaer
+at tænke paa de i Mysteriet skjulte Mellembestemmelser,
+saa faaer man ganske rigtig ud, at det Hele er et
+Absurdum. Lægger man med S. Kierkegaard et saadant
+Existensschema som Maalestok an paa Nutidsexistensen
+og fordrer Commensurabilitet, saa faaer man
+ganske rigtig ud, at Tro og Kristendom, Anerkjendelse
+af det Absurde, det Paradoxe, ikke mere er til. Men
+Aabenbaringsmysteriet er endnu til, og vil fremdeles
+være til.
+
+„Idealerne skulle forkyndes!“ Rigtigt. Men Spørgsmaalet
+er, hvorledes de skulle realiseres og forme sig
+til Existens. Abraham staaer endnu som et Troens
+Forbillede; men ikke ligefrem ved sit Existensschema.
+„Gud fristede Abraham og sagde“\dots{}. Gud talede altsaa
+til Abraham, som en Herre kan tale til sin Tjener.
+Dette Schema kunne vi ikke tilegne os. Paa vort Existenstrin
+vil Enhver, som beraaber sig paa guddommelige
+Bud af umiddelbar Indskydelse, blive anseet for
+sindssvag. Derimod kan det, at et Menneske efter
+samvittighedsfuld Selvprøvelse og moden Overveielse af
+religiøse Grunde finder sig for Gud forpligtet, absolut
+forpligtet til at offre endog det, der er ham det Kjæreste
+og Dyrebareste i Verden, ikke ansees for Sindssvaghed.
+„Gud sagde til Abraham: tag Isaak, din eneste Søn,
+som du elsker, og gaae hen\dots{} og offer ham til et Brændoffer“\dots{}
+Dersom dette Schema bogstavelig skal gjælde
+for Nutiden, saa bliver de Troendes Gud til en Molok, og
+det høieste existentielle Udtryk for Tro og Lydighed
+% --- p. 83 ---
+\setcounter{footnote}{0}%
+\opage{83}vilde da være: at offre sine Børn til Molok. Derimod
+kan en personlig Aandsfordring, om den end i sin indre
+Ubetingethed maa komme i stærk Collision med Samtidens
+Forestillinger, vel tænkes at være begrundet og
+fuldstændig berettiget. Den, der i Troskab mod Aandsvillien
+med Gud alene som Medvider skal gjøre Fordringen
+fyldest, vil erfare, hvad Lydighed er, hvad
+det er at troe og bære et Ansvar. Naar han da, under
+det tunge Tryk af det tunge Ansvar, opløfter sit Hoved
+og seer Abraham staaende paa Morija Bjerg med Offerkniven
+i Haanden, da tegner Idealet sig paa Mysteriets
+dunkle Grund; han seer et lysende, opløftende Exempel
+paa Tro og Lydighed.
+
+„Idealerne skulle forkyndes!“ Ja. Men dog vel
+ikke derved, at de redigeres in absurdum. Den humoristiske
+Figur, S. Kierkegaards Pseudonym har dannet
+ved Sammensmeltningen af Troesridder og Spidsborger,
+er efter Tegningen kjærnesund; men ifølge det Absurdes
+Mechanik bevæger den sig paa Skruer. „Han (Troesridderen)
+tømmer i den uendelige Resignation Tilværelsens
+dybe Vemod, han kjender Uendelighedens Salighed,
+han har fornummet Smerten af at forsage Alt,
+det Kjæreste, man har i Verden, og dog smager Endeligheden
+ham fuldt saa godt som den, der aldrig kjendte
+noget Høiere, thi hans Forbliven i Endeligheden har
+intet Spor af en forknyt beængstet Dressur, og dog har
+han denne Tryghed til at fryde sig ved den, som var
+den det Visseste af Alt. Og dog, dog er hele den
+jordiske Skikkelse, han frembringer, en ny Skabning i
+Kraft af det Absurde. Han resignerede uendeligt paa
+Alt, og da greb han Alt igjen i Kraft af det Absurde.
+Han gjør bestandig Uendelighedens Bevægelse,  men han
+% --- p. 84 ---
+\setcounter{footnote}{0}%
+\opage{84}gjør det med en saadan Correcthed og Sikkerhed, at
+han bestandig faaer Endeligheden ud, og der er intet
+Secund, hvor man aner noget Andet.“
+
+Dette Vidunder belyses nu særligt ved Hjælp af
+en Ungersvend, der lægger hele sit Livs Indhold ind i
+Kjærligheden til en Prindsesse, uagtet Forholdet er et
+saadant, at denne Kjærlighed „umuligt lader sig realisere,
+umuligt lader sig oversætte fra Idealiteten til
+Realiteten.“ For nøiagtig at angive, hvori det Absurde
+ligger, stilles Ridderen af den uendelige Resignation
+imod Troens Ridder. Naar Uendelighedens Ridder har
+indseet Umuligheden af at faae Prindsessen, resignerer
+han paa Ønskets Opfyldelse. Hans Kjærlighed antager
+en religiøs Karakteer og forklarer sig i en Kjærlighed
+til det evige Væsen, der vel negter ham Opfyldelsen,
+men dog forsoner ham i den evige Bevidsthed om, at
+han besidder den Elskede i en Erindring, som ingen
+Virkelighed kan fratage ham. Han gjør det Umulige
+muligt derved, at han udtrykker det aandeligt, og
+aandeligt udtrykker han det ved at give Afkald paa
+det. Ønsket, der vilde føre ham ud i Virkeligheden,
+men strandede paa Umuligheden, bøies nu indefter,
+men er derfor ikke tabt, heller ikke glemt. Fra det
+Punkt, kvor Uendelighedens Ridder standser, gjør Troens
+Ridder endnu en Bevægelse, forunderligere end Alt, thi
+han siger: jeg troer dog, at jeg faaer hende, i Kraft
+nemlig af det Absurde, i Kraft af, at for Gud er Alting
+muligt. Saaledes er Troens Ridder „den eneste Lykkelige,
+Endelighedens Stamherre“, medens Resignationens
+Ridder er en „Fremmed og Udlænding“.
+
+Det Grundpunkt, hvorom Bevægelserne dreie sig,
+er Grændsepunktet mellem det Mulige og det Umulige.
+% --- p. 85 ---
+\setcounter{footnote}{0}%
+\opage{85}Enhver af de to Elskere er enig med sig selv om, at
+det, menneskelig talt, er ham umuligt, ikke blot usandsynligt,
+i allerhøieste Grad usandsynligt, men absolut
+umuligt at faae Prindsessen. Lad os nu see nærmere
+til, hvad heri ligger. For at den menneskelige Forstand
+kan være fuldkomment sikker paa Umuligheden,
+maa den have et ubedrageligt Tegn. Hvad skulde det
+vel være for et Tegn? --- At den kongelige Fader,
+om det saa var i fuld Samstemning med sit Statsraad
+og hele Diplomatiet, det europæiske, asiatiske,
+amerikanske, australiske tilsammen, satte sig imod
+Partiet, vilde ikke være det ubedragelige Tegn.
+Kongen kunde jo døe, og de diplomatiske Positioner
+forandre sig. Selv om Prindsessens Hjerte var
+koldt mod den Elskendes Bønner, det vilde dog ikke
+være det ubedragelige Tegn. Det var jo ikke umuligt,
+at hendes Følelser kunde forandre sig; man har Exempler
+paa, at unge Piger have opgivet Knibskheden og omsider
+ladet sig røre. Men --- vi sætte dette Tilfælde
+--- dersom Prindsessen døde: ja saa have vi Tegnet,
+thi det er tilvisse, menneskelig talt, umuligt at ægte hende,
+naar hun er død og begraven. Hvad gjør nu Resignationens
+Ridder? Han resignerer uendelig paa sit Ønskes Opfyldelse,
+men bevarer sin Kjærlighed i Erindringens
+Smerte. Men hvad gjør Troens Ridder? Han faaer
+den --- døde og begravne --- Prindsesse, og lever med
+hende i fuld Endelighed, i udvortes Virkelighed, i Fryd
+og Herlighed, i Kraft af det Absurde. Skal dette forstaaes
+bogstaveligt, saa maa man unegtelig give Pseudonymen
+Ret, naar han udbryder: „det Sidste forbauser
+mig, min Hjerne vender sig i mit Hoved ved at tænke
+derpaa. Resignationens Bevægelse gjør jeg ved mig
+selv, og det jeg derfor vinder, er min evige Bevidsthed
+% --- p. 86 ---
+\setcounter{footnote}{0}%
+\opage{86}i salig Forstaaelse med min Kjærlighed til Gud. Men ved
+Troen giver jeg ikke Afkald paa Noget, tvertimod, ved
+Troen faaer jeg Alt netop i den Forstand, i hvilken
+det hedder, at den, som har Tro som et Sennopskorn,
+kan flytte Bjerge.“
+
+Enten Fornuft eller Tro! Hvor Troen begynder,
+hører Fornuften op, d. e. saalænge et Menneske endnu
+har beholdt en lille Rest af sund Fornuft tilbage, er
+den uendelige Resignation hans Høieste, han naaer
+kun til det Punkt, hvor Troen skulde begynde. Den
+Troende har lagt hele Fornuftstrækningen bagved sig og
+gaaer videre. For ham er Grændsen mellem Sandsynligt
+og Usandsynligt, Muligt og Umuligt ikke mere til,
+thi for Gud ere jo alle Ting mulige. Altsaa enten
+Fornuft, og da uden al Tro, eller Tro, og da uden al
+Fornuft; dette er det Kierkegaardske Dilemma. Men
+see vi nærmere til, mon det da ikke skulde vise sig,
+at Tro og Fornuft, skjøndt i menneskelig Forstand to
+absolut ueensartede Erkjendelsesfaktorer, dog have
+deres Eenhedsgrund i det guddommelige Væsens Dyb,
+i Mysteriet?
+
+Pseudonymen i „Frygt og Bæven“ forsikkrer, at
+han kan gjøre den uendelige Resignations Bevægelse
+ved sig selv --- uden Tro --- i „salig Forstaaelse“ med
+sin Kjærlighed til Gud. Men en salig Forstaaelse med
+Gud er umulig, naar den Tanke, at for Gud ere alle
+Ting mulige, er udelukket. Det hedder i „Sygdommen
+til Døden“: Gud er det, at Alt er muligt. Ved at
+fornegte denne Tanke ophæver man Gudsbegrebet og
+fornegter Gud; men en salig Forstaaelse i Kjærlighed
+til en fornegtet Gud er et Absurdum. Skal dette Absurde
+absolut være Troens Mærke, saa befinder Ridde%
+% --- p. 87 ---
+\setcounter{footnote}{0}%
+\opage{87}ren af den uendelige Resignation sig jo allerede paa sin
+Viis indenfor Troens Omraade. Det Absurde ved Troesridderen
+skal være dette, at han midt i Endeligheden veed
+at finde sig til Rette med Forskjellen mellem det, i
+menneskelig Forstand, Mulige og det Umulige, mellem
+det Sandsynlige og det Usandsynlige, uagtet han
+dog holder fast ved den Tanke, at for Gud ere alle
+Ting mulige. Troesridderen er altsaa paa sin Viis en
+ganske fornuftig Mand. Men dersom Resignationens
+Ridder netop ved at være fornuftig er troende og Troens
+Ridder netop ved at være troende er fornuftig, saa er
+jo Grændsen hævet.
+
+Er da den principielle Modsætning mellem Tro og
+Fornuft forsvundet? Ingenlunde! Her begyndes ud
+fra to absolut ueensartede Udgangspunkter: den naturnødvendige
+Tingenes Sammenhæng og den guddommelige
+Villies Almagt; men alt som man stiger ned i Dybet
+fra den ene Side og op af Dybet fra den anden Side,
+viser det sig at den sidste og yderste Grændse mellem
+Muligt og Umuligt forsvinder i Mysteriet. Fornuftidealet
+er: at bringe alle Virkelighedens Muligheder
+ind under Altilværelsens betingede Nødvendighed, Troesidealet
+er at bringe Nødvendigheden med den uendelige
+Betingelsernes Kjæde ind under den guddommelige Villies
+ubetingede Frihed; men ingen Dødelig skal kunne
+paavise den sidste og yderste Grændse, hvor den betingede
+Nødvendighed hører op, og den absolut ubetingede
+Frihed begynder. Frihedens og Nødvendighedens
+oprindelige, actuelle Eenhed er skjult i Mysteriet.
+
+I Fremstillingen af Troesidealerne tale de Kierkegaardske
+Pseudonymer med forskjellige Tunger og
+modsige hverandre paa det Kraftigste, netop i Kraft af
+% --- p. 88 ---
+\setcounter{footnote}{0}%
+\opage{88}det Absurde. Hos Johannes de silentio gjør Troens
+Absurdum den Troende til Forjættelsernes Patriarch,
+Velsignelsernes Arving, Endelighedens Stamherre, det
+lyksaligste Menneske paa Jorden: Abraham faaer
+Isaak i Kraft af det Absurde; Troesridderen faaer
+Prindsessen --- den for Umulighedens Skyld døde og
+begravne Prindsesse —, han faaer hende virkelig, de
+leve tilsammen i Fryd og Gammen, i Kraft af det Absurde.
+Men hos Joh. Climacus og hos Anti-Climacus gaaer
+det anderledes til. Hos Climacus gjør Troen den reflecterende
+Humorist, der saa gjerne vilde forstaae den
+og sætte sig ind i den, de forskrækkeligste Existensbryderier,
+i Kraft af det Absurde, og hos Anti-Climacus,
+den religiøse Karakteer, der er og lever midt i Troen,
+gjør Troen Mennesket, menneskelig talt, til den ulykkeligste
+Skabning, netop i Kraft af det Absurde. Men
+naar det Absurde er lige saa kraftigt til at gjøre et
+Menneske lykkeligt som til at gjøre det ulykkeligt, hvorledes
+kan da Forskjellen mellem det Lykkelige og det
+Ulykkelige blive Troens Kraftmaaler?
+
+Lidelsernes, Smerternes og Forsagelsernes Existensschema
+kan i Principet være lige saa vildledende som
+Glædernes og Nydelsernes. Kristus er ikke kommet til
+Verden for at forstærke Lidelserne eller for at forhøie
+Glæderne; at han ikke desmindre gjør begge Dele, betyder,
+at han i absolut Forstand er kommet, for Livets
+og Lysets og Sandhedens Skyld, til Aabenbaring af
+Guds hemmelige Raad, fra Frihedens hellige Dyb, Retfærdighedens
+og Kjærlighedens Mysterium.
+
+Noget ganske Andet er det, naar der tales om det
+opdragende Element. Fra Opdragelsens og Aandsudviklingens
+Standpunkt har S. Kierkegaard umiskjende%
+% --- p. 89 ---
+\setcounter{footnote}{0}%
+\opage{89}ligt grebet det Rette, for saa vidt han, i sin Forkyndelse
+af Idealerne, idelig og idelig med en psychologisk
+Iagttagers indtrængende Skarphed og en smerterig Selvoplevelses
+overbevisende Kraft har indskjærpet den
+frivillige Lydighed under Aandens Lov og prædiket
+„Lidelsernes s Evangelium“. Men Nutidsexistensen og
+dens aandelige Vilkaar har han ikke forstaaet. Han
+meente at imponere det Bestaaende ved at drage de
+nytestamentelige Existensfordringer frem og med Farver
+af glødende Aand indbrænde hvert Træk af det
+store Gjennembruds Schema i sin Samtids Bevidsthed,
+og mærkede ikke, at Samtiden, hvor forhutlet den end
+var ved sine „nymodens religiøse Betryggelser“, dog i
+et meget væsentligt Punkt havde Ret imod ham. Han
+meente at hidføre en aandelig Revolution, en afgjørende
+Katastrophe. Endnu paa sit Dødsleie skal han have
+sagt: „jeg falder som en Bombe, Bomben springer, og
+saa tænder det.“ Men Røret gik forbi, og Katastrophen
+udeblev, Bomben sprang, men det tændte ikke. Derimod
+opnaaede han unegtelig paa en ret slaaende og
+iøinefaldende Maade at overraske og fange det hele
+officielle Kirkevæsen i Konsekvenserne af dets egne
+Forudsætninger.
+
+Den Enkelte skal ikke have Ret til at haane Menigheden
+og sætte sin subjective Reflexion i Aandsmeddelelsens
+Sted; men lad det kun være sagt reent
+ud, der er i den officielle Kristendomsforkyndelse et
+Noget, som fra Grunden af maa forandres. Det er ikke
+det aabenbarede Ord, der skal forandres, det er Tilegnelsen,
+den frie, personlige Tilegnelse af den indholdsrige
+Sandhed, der maa fremstilles i et nyt Lys. Skal
+Kristustanken fæste Rod i Sjælene og blive Kulturtidens
+% --- p. 90 ---
+\setcounter{footnote}{0}%
+\opage{90}dybeste, kraftigst bevægende Livstanke, da ville Barnetroens
+Billeder og Almuetroens F orestillinger ikke
+strække til. Det er en virkelig Forstaaelse af det
+Religiøses Forenelighed med det Rationelle, hvorpaa
+det fremfor Alt kommer an. Existensens Omdannelse
+er ikke katastrophisk; den foregaaer --- under forudsat
+Villiesanstrengelse --- indenfra, langsomt og stille, men
+sikkert og sundt, ved Opdragelse og fremadskridende
+Aandsdannelse.
+
+% --- p. 91 ---
+\setcounter{footnote}{0}%
+\lecture{Sjette Forelæsning.}\opage{91}
+
+Nutidsexistensen har sit eget Væsen; i Holdning,
+Gang og Physionomie adskiller den sig klart og bestemt
+fra alle sine Forgængere. Dens Synsmaade er realistisk;
+den holder sig til det Virkelige som det staaer og
+gaaer. Dog er det ingenlunde dens Mening dermed at
+fornegte Aanden eller ringeagte de ideale Fordringer;
+men den har en Mistanke til alle abstrakte, høit svævende
+Idealer, hvad enten de iklæde sig religiøse, ethiske,
+politiske eller æsthetiske Former. Idealer i det Blaa
+maae være saa deilige som de ville, de ere dog ufrugtbare
+Skyer, luftige Vegetationer, der ikke kunne trives
+i Virkelighedens Jordbund; de virke skadeligt, naar de
+i Evighedens Navn blodsuge Timeligheden og udmarve
+det nærværende Liv, istedenfor at give det Kræfter.
+Nutidsexistensen er ingenlunde samvittighedsløs, lider
+just heller ikke af Skrupler: dens Samvittighed er som
+et Foster, der har vendt sig i Leiet.
+
+At Menneskenaturen paa Grund af sin Dobbelthed
+(Dualisme), som sandselig og aandelig, bestandig gjør
+Indtryk af, at Mennesket lever som Grændsesoldat mellem
+to Riger, et naturligt og et overnaturligt, er en Kjendsgjerning.
+Modsætningen mellem det Aandelige og det
+% --- p. 92 ---
+\setcounter{footnote}{0}%
+\opage{92}Legemlige, det Himmelske og det Jordiske, vil, hvor
+meget man end for Harmoniens og Eenhedens Skyld
+anstrenger sig med at svække og fortrænge det ene
+Led, ikke lade sig udslette. Den naturalistiske Stræben:
+at forherlige Naturen paa Aandens Bekostning,
+og den asketiske: at forhjælpe Aanden til Seier ved
+at dræbe Naturen, ere modsvarende Yderligheder. Ingen
+af disse Yderligheder er i Stand til at bedaare
+Nutiden. Nutidsbevidstheden har Kritik nok til at
+indsee, at en naturalistisk Moral ikke blot er lige saa
+huul, men i al sin Prunken med Sandselivets Herlighed
+endnu mere foragtelig end Asketiken.
+
+Asketen midt i sin Vildfarelse har dog en ubetinget
+Anerkjendelse af Aanden som det Høieste. Hans
+Opfattelse af Aandens Væsen kan være fattig og uklar;
+men har han erkjendt, at Aanden er Villie, da skaaner
+han ikke sig selv, men opbyder Alt, for at lyde Aandens
+Bud og gjøre dens Fordringer fyldest; han spæger
+sit Kjød, han kvæler de naturlige Lyster, han
+hærder sin Villie ved Luttring i Ild af Forsagelsens
+Smerter. Man kan beklage hans Eensidighed; men man
+kan ikke negte ham en vis Høiagtelse.
+
+Naturalisten med „Drifternes Autonomie“ og „Kjødets
+Evangelium“ søger sit Støttepunkt i „den moderne
+Bevidsthed“. Han kan med en vis Ret beraabe sig
+paa, at Naturlivet er Grundlag for Aandslivet, men
+han forvansker det Sande ved at nedsætte det foregivne
+Aandsliv til en formel Afglands af Bevidstheden
+om det naturlige, endelige, forkrænkelige Livs Væsen
+og Virken. Han kan gjøre endeel Spræl med de Aandsarbeider,
+der allerede ere udførte, og endnu i Fremtiden
+skulle udføres, inden det Ideale kommer til sin
+% --- p. 93 ---
+\setcounter{footnote}{0}%
+\opage{93}Ret og Frihedens Værk fuldendes. Men, see vi nærmere
+til, saa gaaer det Hele ud paa en Fornegtelse af
+Aandens absolut selvgyldige Villie, altsaa af Aanden
+som Aand. De splittede Villieskræfter forvandles til
+elementære Naturkræfter. Det store Skuespil, som
+disse Naturkræfters fornuftnødvendige Brydninger frembringe,
+faaer sit aandrige Præg ved at beskues, kritiseres,
+og nydes af „den moderne Bevidsthed“. Menneskehedens
+høieste Opgave, Dybden i alle dens Længsler,
+Lønnen for alle dens Anstrengelser, Maalet for dens
+Strid og Stræben maa da sættes i at hæve sig op
+paa „den moderne Bevidstheds“ Stade. Hvad Kirken
+var for Middelalderens Troende, det er „den moderne
+Bevidsthed“ for Nutidens Vidende. Kirken gav Aflad
+for allehaande Synder og saa igjennem Fingre endog
+med grove Udskeielser, naar blot een Betingelse var
+tilstede: Tro paa Kirken og dens Autoritets Ufeilbarhed.
+Var denne Betingelse ikke tilstede, da vee Forbryderen;
+havde hans Liv end Englenes Reenhed og alle en Helgens gode Gjerninger, han var dog en Kjætter, banlyst
+og dømt til evig Fortabelse. „Den moderne Bevidstheds“
+kritiske Majestæt er traadt i Kirkens Sted.
+Tanken er fri, at sige, naar den ubetinget underkaster
+sig „den moderne Bevidstheds“ Ufeilbarhed; thi denne
+Ufeilbarhed er ikke blot en Vidensartikel, den er en
+Troesartikel. Videnskabens Dyrkere kunne have modstridende
+Anskuelser, tvivle om Fornuften, forgude Fornuften
+og gjøre sig skyldige endog i grove Inconseqvenser:
+siger Intet! Kritiken giver Aflad for allehaande
+Modsigelser og seer gjennem Fingre med Tankernes Skrøbelighed,
+selv med \emph{grove Inconseqvenser}, dog, vel at
+mærke, paa een Betingelse: at Ophavsmændene oprigtig
+% --- p. 94 ---
+\setcounter{footnote}{0}%
+\opage{94}bekjende sig til „den moderne Bevidsthed“. Hvis denne
+Betingelse mangler, saa kan den Skyldige pakke ind
+og hænge sig selv i Kundskabens Træ. Kjætteren er
+dømt --- ikke til Baal og Brand, thi „den moderne
+Bevidsthed“ holder paa det Humane --- men til at udstødes
+af Videnskaben, berøves Fremtiden og hensættes
+i Literaturens Gabestok, Andre til Skræk og Advarsel.
+
+Nutidsbevidstheden, væsenlig seet, falder ingenlunde
+sammen med „den moderne Bevidsthed“. Nutidens
+Vidende vide meget vel at gjøre Forskjel mellem det
+Forbigaaende og det Blivende. Sandheden er hverken
+gammeldags eller moderne, den er evig. Den evige
+Sandhed kan skifte Form og Udtryk, efter som Tiderne
+skifte, men i Væsen og Grund forbliver den altid den
+samme.
+
+Den personlige Sandheds Aand, som aabenbarer
+sig i Religionen, kan paa Nutidsbevidsthedens Trin erkjendes
+i to hinanden modsvarende Virksomhedsformer,
+Meddelelsens oprindelige og Tilegnelsens afledede Form,
+den første betegnende for Gjennembrudsexistensen, den
+sidste afgjørende for Nutidsexistensen. Aldrig før i
+Historien er Modsætningen mellem de to Existensformer
+traadt saa tydelig frem. Forholdet er hidtil blevet
+mere eller mindre fordunklet derved, at man deels har
+villet indrette det Afledede i Lighed med det Oprindelige,
+deels give det Afledede Skin af at være det Oprindelige
+selv i sin videre Fortsættelse, deels endelig
+omdanne det Oprindelige ved at tillæmpe det efter det
+Afledede. Katholicismen afgiver talende Exempler paa
+Forsøg i de to førstnævnte Retninger. Apostolisk Hellighed,
+apostoliske Mirakler gjentage sig i skuffende
+Efterligninger, selv Frelserens Liv og hellige Vunder
+% --- p. 95 ---
+\setcounter{footnote}{0}%
+\opage{95}copieres i middelalderlige Farvetryk. Den gamle Protestantisme
+lod det Oprindelige blive staaende som det
+Fuldkomne, det Uopnaaelige, og nøiedes med at tilegne
+sig Læren, uden at kunne komme til Klarhed over Existensens
+Omdannelse. Medens man i Virkeligheden
+gik ind paa en Tillæmpning efter de forandrede Tidsvilkaar
+og ydede Statsmyndigheden og det borgerlige
+Samfunds mangfoldige Krav fuld Anerkjendelse, følte
+man sig dog i sin Samvittighed forpligtet til at indskjærpe
+de apostoliske Forskrifters bogstavelige Efterlevelse,
+uden at turde vedgaae for sig selv, at det
+Sidste stod i skjærende Modsigelse til det Første.
+Først i Oplysningsperioden begyndte man at tage Mod
+til sig. Ved Fornuftens Lys indsaae man, hvor urimeligt
+det var at leve ligefrem efter Apostlenes Anviisning.
+Men hvad gjorde man saa? Man gjorde Apostlene
+til „fornuftige“ Mænd, underlagde deres Ord en „fornuftig“
+Mening og uddrog en jævn borgerlig Moral af
+deres Lære. Kristendommens foregivne „Perfectibilitet“
+havde til Følge, at det Afledede blev sat i det
+Oprindeliges Sted: Copien blev Original, og Originalen
+Copi. Det rationalistiske Misgreb var imidlertid for
+aabenlyst til, at det i Længden kunde holde sig. Apostelexistensen
+er igjen traadt frem i al sin Eiendommelighed,
+og Spørgsmaalet er, hvorledes Nutidsexistensen
+har at indrette sig, for at det Afledede kan i Aand og
+Sandhed svare til det Oprindelige.
+
+Det første Nødvendige er, at Modsætningen træder
+ud i fuld Belysning. Aabenbaringsexistensen med de
+ideale Karakteermærker bliver staaende uantastet.
+Overfor denne Autoritet stiller Nutidsexistensen sig paa
+sit historisk bestemte Grundlag med klar Bevidsthed
+% --- p. 96 ---
+\setcounter{footnote}{0}%
+\opage{96}om sine eiendommelige Aandsvilkaar. Nutidsexistensen
+veed med sig selv, at den hverken kan eller vil indrette
+sig paa at være en ligefrem Efterligning af hiin
+ideale Gjennembrudsexistens. Idealexistensen anpriser
+for Exempel en eenlig Stand; men Nutidsexistensen
+holder paa, at Ægteskab og Familieliv kan i Aandens
+Navn være lige saa berettiget som Coelibat.
+Naar Idealexistensen foretrækker Armod for Rigdom,
+saa er Nutidsexistensen af den Mening, at man uden
+at krænke det Ideale kan foretrække Rigdom for Armod.
+Naar den ideale Gjennembrudsexistens seer ned
+paa politiske Samfundsforhold som paa noget i sig selv
+Ligegyldigt og anseer det at være Træl for et lige saa
+gunstigt Vilkaar som det at være Fri, saa erklærer
+Nutidsexistensen reent ud, at den politiske Tilstand
+ingenlunde er ligegyldig, at der i Aandens Kraft maa
+kæmpes for borgerlig Orden og borgerlig Frihed, at
+Anseelse og Ære er bedre end Ringhed og Vanære.
+
+Hvad Nutiden saaledes udtaler, er dens oprigtige
+Hjertens Mening. Ved at give sig som den er
+og sige sin Mening reent ud stiller Nutidsexistensen
+sig i et sandere Forhold til den hellige Autoritet end
+ved at smigre og hykle. Intet kan være Sandhedens
+Aand modbydeligere end Hykleri; den guddommelige
+Majestæt er ikke tilgængelig for andægtige Complimenter.
+
+
+Vel kunde det synes, som om Nutidsexistensen ved
+at udtale sig i en Retning, der er Idealexistensen saa
+modsat, vilde trodse Autoriteten og unddrage sig Aandsfordringerne.
+Det er en stor Misforstaaelse. Meningen
+er, at de to Existensformer, Idealexistensen med sit
+Oprindelige og Realexistensen med sit Afledede, maae
+% --- p. 97 ---
+\setcounter{footnote}{0}%
+\opage{97}træde ud i fuld Modsætning, for at Eenheden kan erkjendes
+i sin Dybde, og Aandens Baand imellem dem
+knyttes desto fastere. Hvad der skiller Nutidsexistensen
+fra det første Oprindelige er noget Mere end „Verdens
+Vantro“ og „disse Tiders Ugudelighed“, det er Noget,
+hvorover den menneskelige Villie ikke vilkaarlig raader.
+Hiint Aandens Gjennembrud skete jo ikke paa Grund
+af Menneskenes Hellighed, men Aanden brød igjennem
+for at helliggjøre Menneskene. Apostlene vare efter
+egen Bekjendelse Syndere, og Apostelmenighedens Medlemmer
+vare store Syndere.
+
+Det er Aandsmeddelelsen og de tilsvarende historiske
+Vilkaar, hvorpaa Modsætningen væsentlig beroer.
+I Gjennembrudsexistensen var den guddommelige Aands
+Selvmeddelelse saa mægtigt overstrømmende, at den
+drev sine Udvalgte frem til frivilligt Vidnesbyrd, Strid
+og Kamp for Lysets og Sandhedens Rige. Over for
+dette Lysets og Sandhedens Rige stod Verdensriget,
+Mørkets og Løgnens Rige, der maatte bekæmpes med
+aandelige Vaaben. Det Aandsfjendtlige var udvortes;
+Lidelsen og Trængslen, ja Spliden i Mennesket selv var
+særlig betinget af denne Udvorteshed: Aanden var
+villig, om end Kjødet var skrøbeligt. I Nutidsexistensen
+er Aandsmeddelelsen svagere, ikke et i synlige Udslag
+vitterligt Mirakel, men et stille perennerende Under.
+De bratte, katastrophiske Overgange fra Mørke til Lys,
+fra Vantro til Tro, som karakterisere Gjennembrudsperioden,
+ere forvandlede til gradvise, trinvise Omdannelser,
+betingede af Villiens Kraft i Tilegnelsens Arbeide.
+I Aposteltiden var det Aanden, som paa overnaturlig
+Maade greb de menneskelige Sjæle, fyldte dem, løftede
+dem, hævede dem op over Tid og Forkrænkelighed. I
+% --- p. 98 ---
+\setcounter{footnote}{0}%
+\opage{98}Nutiden er det omvendt Menneskene, der maae søge
+den i sine Frelsesmidler nærværende Aand, gribe den,
+holde den fast og ved inderlig Tilegnelse arbeide sig
+op igjennem Timelighedens Forviklinger til Sandhed og
+evigt Liv. Den hastige Bevægelse ovenfra nedad er
+omsat i en langsom Bevægelse nedenfra opad.
+
+Aandens Rige, som i Aabenbaringens Sprog kaldes Guds
+Rige, kaldes i Nutidens Sprog Humanitetens Rige. Dersom
+det nu kunde vises, at Guds Rige var for indskrænket til at
+omfatte Alt, hvad der hører til det sande Menneskelige
+i fuld Udstrækning, eller dersom det lod sig godtgjøre,
+at Humanitetens Rige havde et eget Grundlag for sig,
+hvorpaa det kunde bygges, befæstes og udvides uden
+Gudsrigets Bistand, da vilde det Humane og det Religiøse
+ganske vist falde udenfor hinanden. Dersom det
+Humane virkelig faldt udenfor det Religiøse, da vilde
+det jo være ganske i sin Orden, at de to Aandsriger
+fremdeles bekæmpede hinanden paa Liv og Død, thi
+det enes fuldstændige Seier maatte nødvendig blive det
+andets Undergang. Men det viser sig tvertimod, at begge
+Riger, oprindelig seet, have samme Grundlag, samme
+høieste Formaal, saa at Ingen kan nyde fuld Borgerret
+i det ene uden at være Borger i det andet; her
+er ikke to Riger, men to Existensformer af eet og samme
+guddommeligt-menneskelige Aandens Rige.
+
+Naar det ikke desto mindre seer ud, som var
+her virkelig to med hinanden kæmpende Riger, da kan
+dette ikke tilskrives den constituerende Grundlov;
+det maa være Borgernes Skyld, som ved eensidig at
+klamre sig enten til den ene eller til den anden af de
+to Existensformer geraade i Splid med hverandre, danne
+% --- p. 99 ---
+\setcounter{footnote}{0}%
+\opage{99}Partier og plage Riget med indvortes Uroligheder. Lad
+os forsøge at oplyse dette ved nogle Exempler.
+
+\emph{Aandslovene}. Ved at stille sig exclusivt paa
+Gudsrigets Side og tale Aabenbaringens Sprog faaer
+Bodsprædikanten Myndighed til at hævde de hellige
+Loves ubetingede Gyldighed. Det er jo ikke Menneskebud,
+men Guds Bud. Gud selv har udtrykkelig givet
+disse Love; Beskrivelsen af den guddommelige Lovgivning
+virker imponerende. Jehova tordner fra Sinai,
+og Bjerget skjælver, og Tilhørernes Samvittighed skjælver:
+det er den Almægtiges Bud, vee Den, der vover
+at overtræde dem! --- Pietisternes og Methodisternes Historie
+afgiver talende Exempler paa, hvilke Aandens
+Rørelser Bodsprædikenen endnu i den nyere Tid formaaer
+at fremkalde. Der behøves en hellig Autoritet
+for at vække det naturlige Menneske til alvorlig Selvprøvelse.
+Der er i Strengheden selv noget Vækkende:
+Almuetroen forynges og styrkes derved; de bydende
+Ord virke paa Sindet opløftende som Røster fra oven,
+forfriskende som Aandepust af guddommelig Majestæt.
+Men mærkeligt nok, gjør en saadan Forkyndelse saa
+godt som intet Indtryk paa Kulturmennesket. Ved at
+stille sig exclusivt paa Humanitetens Standpunkt betragter
+han det hele Maskineri af overnaturlige Drivhjul
+som et Bevægelsesapparat, den menneskelige Phantasie,
+uden ret at vide deraf, selv har construeret. Den
+Virkning, Maskineriet gjør paa de troende Sjæle, er
+naturligviis en Gjenstand for hans iagttagende Opmærksomhed;
+men det er kun en Gjenstand. Det lyner fra
+Skyernes Mulm, fra de mørke Vinger, paa hvilke Aanden
+svæver, men Lynene ramme ikke den humane Betrag%
+% --- p. 100 ---
+\setcounter{footnote}{0}%
+\opage{100}ter; han staaer rolig under Sinais Torden, uanfægtet
+som en Correspondent, der refererer til Bladet.
+
+Og hvad kommer der saa til at staae i Bladet?
+„Det er et Tidens Tegn, et mærkeligt Phænomen at
+see den veltalende, af Begeistring glødende N. N. samle
+Masserne skareviis om sin Prædikestol. En storartet
+Opvækkelse! Hans Tale er et Skybrud; Ordene
+falde som Regndraaber, vederkvægende efter langvarig
+Tørke.“ Saa følger Beskrivelsen af en mærkværdig Mand
+med høi Pande, funklende Øine, indfaldne Kinder,
+smalle Læber og et langt Skjæg. Miner, Gestus, Talemaader
+og Slagord pointeres paa det Nøiagtigste, men
+om det Aandelige i Sagen selv meldes der ikke et Ord.
+
+At Gud selv skulde have dicteret Moselovens ti
+Bud, vil man paa Humanitetens Vegne finde endnu
+urimeligere end at han skulde have dicteret, hvor mange
+og hvor lange Gardiner, der skulde ophænges i Tabernaklet,
+af hvilke Farver og med hvormange Sløifer.
+Humanisterne, som saa klart indsee, at der er Forskjel
+mellem sædelige Bud og carmoisinrøde Gardiner, indsee
+ogsaa, at Forskjellen netop bestaaer i, at de sædelige
+Bud maae have, hvad Gardiner ikke vel kunne have, et
+umiskjendeligt Præg af det Fornuftnødvendige, det Almeengyldige.
+Det kunde vel ved en foreløbig Betragtning
+synes, som var det mindre fornødent, at Gud selv
+gav Aabenbaringer om Gardinerne, end at han aabenbarede
+Morallovene; men fra et humanistisk Synspunkt
+viser Sagen sig omvendt. Om Forhæng, Gardiner, Lampeolie
+o. dsl. maatte Jehova nødvendig give ordret Besked,
+naar han vilde have Tabernaklet nøiagtig indrettet efter
+sit eget Hoved, thi slige Specialiteter, der umulig kunne
+udledes af den rene Fornuft, maae just af den Grund
+% --- p. 101 ---
+\setcounter{footnote}{0}%
+\opage{101}henregnes til „Guds Riges“ Inventarium. Hvad Morallovene
+derimod angaaer, er en mirakuløs Aabenbaring
+aldeles overflødig, thi disse Love have deres tilstrækkelige
+Grund i Fornuften og den menneskelige Natur, og
+høre udtrykkelig til Humanitetens Rige.
+
+Saa skarpt kan det exclusivt Religiøse og det exclusivt
+Humane stille sig mod hinanden. Men at de Religiøse
+ved eensidig Fastholden af det Overnaturlige lige saa vist
+misforstaae Religionen, som de Humane ved eensidig
+at holde sig til det Naturlige misforstaae Humaniteten,
+lader sig tydelig paavise.
+
+Religiøse Opvækkelser have til enhver Tid den store
+Betydning, at de i Sandhed Opvakte ville gribe Sagen
+fra Grunden af, sætte det Oprindelige i Kraft og trænge
+ind til Aandslivets Kjerne. Men Grændsen og Skranken
+er, at de med al deres Ivren for Aandens Ret og de
+hellige Love aldrig naae frem til nogen egenlig Redegjørelse
+for det virkelige Livs Naturlove, for Menneskenes
+Arbeiden, Virken og Stræben i det Nærværende.
+De blive bestandig staaende ved den Forklaring, at det
+er en ond, ugudelig, syndig, forfængelig og forkrænkelig
+Verden, hvori vi leve. De kunne paa deres Fingre opregne
+de mange Overtrædelser, Synder og Udsvævelser,
+hvortil Verdens Børn ere hengivne. Men hvad sætte
+de i Stedet? Et Hellighedsvæsen som bestaaer i at
+gjøre sig Livet saa suurt som muligt. Det er ikke
+nok med Overholdelsen af de ti Bud; der er mange
+andre Bud at overholde; Guds Børn maae f. Ex. ikke lee,
+ikke ryge Tobak, ikke dandse, ikke spille Kort, ikke gaae
+paa Komedie o. s. v. Ved at banlyse Livsnydelser og
+sætte snævre Grændser for det Tilladelige lægger man
+an paa at sikkre Aanden et varigt Herredømme over
+% --- p. 102 ---
+\setcounter{footnote}{0}%
+\opage{102}Kjødet, og vist er det, at dersom der blot var Spørgsmaal
+om et Liv med færre og færre Fornøjelser, saa
+vilde Brødre og Søstre af den strenge Disciplin staae
+paa et overordnet Trin. Men den falske Forudsætning,
+at Aand og Natur staae fjendtlig mod hinanden, skinner
+igjennem. Saa længe det fra religiøs Side ikke er
+indseet, at det Aandelige trænger til det Naturlige, at
+det er Aandens Maal at luttre det Naturlige, udvikle,
+forme og fremhjælpe det menneskelige Liv i alle Retninger,
+saa længe vil Forkyndelsen af Guds Rige være
+afmægtig over for Humaniteten, uden væsenlig Indflydelse
+paa Nutidsexistensen i det Hele.
+
+Paa Humanitetens Trin er Misligheden af modsat
+Art. Her begyndes uden videre med det Naturlige, det
+Nærværende, det virkelige Livs mangfoldige Opgaver.
+Saa gjælder det om at paavise Lovene. Men hvad er
+det for Love? Lutter Naturlove --- gjældende saa vel
+for Dyret som for Mennesket. I Menneskelivet skulle
+nu disse Love, saa vidt Hjernevirksomheden tillader
+det, efterhaanden forvandles til almindelige Fornuftlove
+og derved til Aandslove. Men med Forvandlingen gaaer
+det kun smaat. Den rene Fornuft med sit kategoriske
+Imperativ er en Abstraction, og Naturen gjør Oprør
+mod alle Abstractioner. Den virkelige Fornuft ligger
+skjult i de virkelige Drifter. De virkelige Drifter ere
+ikke blot selviske, men ogsaa sympathetiske. I Bavianernes
+indbyrdes Hjælpsomhed er Humanitetens sædelige
+Væsen præfigureret. Hos Mennesket bliver ---
+især ved den arvelige Hjerneforbedring --- de empiriske
+Ideer lidt efter lidt aprioriske. Under fortsat Vexelvirken
+af Samfundets mangehaande Kræfter gaae de
+sædelige Drifter umærkelig over til sædelige Grund%
+% --- p. 103 ---
+\setcounter{footnote}{0}%
+\opage{103}sætninger, til et System af sædelige Love. De sædelige
+Love danne Grundlaget for Humaniteten og den humane
+Aand. Næringsvirksomheden, Industrien, Oekonomien,
+Kapitalen, Politiken, Videnskaben, Poesien og Kunsten
+arbeide i Aandens Tjeneste; Resultatet af alle disse
+Arbeider er Menneske-Aandens voxende Magt over den
+lavere Natur. Denne Humanitetens Aand har en uendelig
+lang Fortid og en uendelig lang Fremtid, men, desværre,
+ingen virkelig Nutid; thi den har aldrig havt og vil
+aldrig faae nogen virkelig Villieseenhed. Af Vexelvirkningen
+mellem Samfundets Enkeltvillier kan Villieseenheden
+og dermed den virkelige Aand aldrig resultere.
+Enkeltvillierne ere i deres inderste Grund Driftvillier;
+men naar Driftvillien skal være det Oprindelige,
+saa komme vi --- til Bavianerne.
+
+De exclusivt Religiøse forsee sig paa det Absolute;
+de blive staaende ved en overnaturlig Gudsvillie, hvis
+ubetingede Bud de i al deres Lydighed ikke formaae
+at opfatte som Forkyndelser af en det hele Menneskeliv
+gjennemtrængende Aandsvillie. De kunne ikke fyldestgjøre
+Religionen, fordi de ikke kunne fyldestgjøre
+Humaniteten. De exclusivt Humane forsee sig paa det
+Relative. Med deres naturlige Driftvillier ere de ikke
+i Stand til at hæve Menneske-Aanden til virkeligt Herredømme
+over Naturlivets stridige Elementer, og selvfølgelig
+ikke i Stand til at fyldestgjøre Humanitetens
+Fordringer. Religionen fordrer det Humane, thi den
+fordrer en guddommelig Frigjørelse af Menneskelivets
+Kræfter. Humaniteten kræver det Religiøse, thi de
+relative Villiers Anstrængelser ere forgjæves, naar de
+ikke have den hellige absolute Villie til Bærer og første
+Bevæger.
+
+% --- p. 104 ---
+\setcounter{footnote}{0}%
+\opage{104}\emph{Retfærdighed}. „Skjælver, I Syndere, thi Gud
+er retfærdig!“ Naar dette Tilraab i Aabenbaringens
+Navn lyder ud over Verden, pleier det sjældent at forfeile
+sin Virkning. Just som Menneskene ere allermeest
+uenige, ere de netop allermeest enige om at klage over
+Urettens Vederstyggelighed, den voxende Uretfærdigheds
+Anmasselse, Vold og Vilkaarlighed. Paa det menige
+Folks religiøse Følelse vil da hiint formanende Tilraab
+virke som et Lynslag og gjøre et mægtigt Ryk i Samvittighederne.
+De Troende slaae sig for Brystet, Enhver
+bekjender sin Synd for at undflye den kommende
+Vrede. Bag denne øieblikkelige Bodfærdighed lurer
+ikke sjældent en selvisk Forestilling om, at man ved
+Syndernes Bekjendelse strax kan blive Synderne kvit,
+at det selvfølgelig ikke saa meget er En selv som det
+er den ugudelige, af Uretfærdighed opfyldte Verden,
+der maa grue for Straffen. Verdensdommeren, den
+Retfærdige, antager sig de Undertrykte, de Forurettede,
+og Enhver føler sig jo selv som en Forurettet. „Naar
+Menneskesønnen kommer i Skyen med Kraft og megen
+Herlighed, skal han skille de Retfærdige fra de Uretfærdige,
+som en Hyrde skiller Faarene fra Bukkene,
+og da skulle alle Jordens Slægter hyle; men de Udvalgte,
+som ere sonede ved Lammets Blod, som have
+afført sig deres egen Retfærdighed og iført sig Forsonerens,
+skulle tages til Naade.“
+
+Paa Nutidens Kulturmenneske vil en saadan høitidelig
+Anmeldelse af Guds Retfærdighed ikke gjøre
+noget Indtryk. Kritiken maa finde, at den skarpe Adskillelse
+mellem de Retfærdige og de Uretfærdige er
+inhuman: der er Ret og Uret paa begge Sider, paa
+„Faarenes“ saa vel som paa „Bukkenes.“ Det er heller
+% --- p. 105 ---
+\setcounter{footnote}{0}%
+\opage{105}ikke korrekt at sige: Gud er retfærdig, thi Retfærdighed
+er et Begreb, der kun finder Anvendelse paa
+menneskelige Forhold. Selv om man vil sige, at Retfærdigheden
+er guddommelig, saa er det dog kun en
+Abstraction. Den rene Retfærdighed gjælder Intet i
+sig selv, det er en Skuemønt, der ikke er i Kurs.
+Virkelig Retfærdighed er kun til i det virkelige Sindelag,
+der lægger sig for Dagen i Striden om Mit og Dit,
+altsaa i den Maade, hvorpaa man opfatter og behandler
+de positive Retsspørgsmaal. Men de positive Retsspørgsmaal
+ere menneskelige Spørgsmaal, og Benaadningsretten
+en menneskelig Ret med en Bismag af Vilkaarlighed,
+der karakteriserer Endeligheden og i Et og Alt tilhører
+Relativiteten.
+
+Ogsaa fra dette Synspunkt viser Modsætningen
+mellem det Religiøse og det Humane sig som en uforsonlig
+Splid. Men hvad er Grunden? I den umiddelbart
+religiøse Forestilling seer det ud, som var den
+menneskelige Retfærdighed uden Gyldighed for Gud.
+Det kan da siges om alle Tilsyneladelser af denne
+Retfærdighed, hvad en Kirkefader har sagt om Hedningenes
+Dyder, at de ere glimrende Laster. Forstaaes
+dette saaledes, at menneskelig Retfærdighed,
+naar den, fastholdt for sig, vil have Fortjeneste
+over for Gud, maa blive et Udtryk for menneskelig
+Frækhed, kan herimod Intet indvendes. Naar Retfærdigheden
+derimod opfattes saaledes, at dette Væsen
+nødvendig maa udelukke den menneskelige Natur
+og sætte den guddommelige i Stedet, saa er det Religiøse
+rigtignok absolut uforeneligt med det Humane,
+men saa er ogsaa den religiøse Grundtanke fordunklet.
+De Troende skulle tilegne sig Forsonerens Retfærdighed,
+men Forsoneren gjør det jo netop aabenbart, at det
+% --- p. 106 ---
+\setcounter{footnote}{0}%
+\opage{106}Guddommelige selv er menneskeligt. Dersom Forsoneren
+blot opfattes som en historisk Individualitet, der
+engang har lidt og er død paa Grund af Menneskenes
+Uretfærdighed, da er det aldeles umuligt at tilegne sig
+hans Retfærdighed. Men Forsonerens Væsen er i gudmenneskelig
+Forstand Menneskehedens inderste sande
+Væsen. Forsoneren kom netop een Gang for alle udvortes
+til Menneskene som historisk Skikkelse, for at han nu
+og fremdeles kan komme i Aanden indvortes med sin
+Retfærdighed, ikke som en fremmed Person, men som
+Væsen og Grund i al sand menneskelig Personlighed. At
+tilegne sig Forsonerens Retfærdighed er at guddommeliggjøre
+den menneskelige og menneskeliggjøre den guddommelige
+Retfærdighed, er i dybeste Forstand at fyldestgjøre
+Humaniteten.
+
+Stille vi os paa det humane Standpunkt og begynde
+med Striden om Mit og Dit, da bliver det jo indrømmet,
+at Retsstridigheder, selv de ivrigste, umulig kunne føre
+til retfærdige Forhold, med mindre de begrundes paa Retfærdighedstanken,
+føres med et retfærdigt Sindelag
+og en retfærdig Villie. Agter man ikke Retfærdighedens
+ubetingede Gyldighed, men gjør Retfærdigheden
+i og for sig til et tomt Begreb, da vil den endelige
+Retsstrid ende med den Stærkeres Ret, og den
+relative Retfærdighed forvandle sig til et positivt Udtryk
+for den relative Uretfærdighed. Skal den relative
+Retfærdighed tilnærmelsesviis seire over Uretfærdighed,
+da maa det skee i Kraft af Retfærdighedens Idee. Men
+Retfærdighedens Idee er en Villiesidee, den absolute
+Retfærdighed forudsætter en absolut retfærdig Villie,
+en Villie, som i sidste Instans faaer Bugt med al Uretfærdighed.
+Tro paa den seirende Retfærdighed er
+uadskillelig fra Tro paa Retfærdighedens Gud. Gud
+% --- p. 107 ---
+\setcounter{footnote}{0}%
+\opage{107}maa for den menneskelige Retfærdigheds Skyld absolut
+være retfærdig: det Humane kræver det Religiøse.
+
+Hvad hermed er antydet, kan udvikles i det Uendelige;
+men jo videre Udviklingen gaaer, og jo nøiagtigere
+Forholdsbestemmelserne angives, desto tydeligere viser
+det sig, at Religionen maa være human, og Humaniteten
+religiøs.
+
+\emph{Aandsdannelse}. Stille vi Nutidsexistensen paa
+sit historiske Grundlag med sine Arbeider og Formaal
+frit over for Apostelexistensen med de ideale Gjennembrud,
+idet dog begge Existenser erkjendes for væsenlig
+sammenhørende, saa faae vi. et Indtryk af storstilet
+Dualisme. Gudsrigets Tjenere med den himmelstræbende
+Livsretning og altopoffrende Verdensforsagelse,
+„under Ære og Vanære, under ondt Rygte og godt
+Rygte, som Forførere og dog sanddrue, som miskjendte
+og dog erkjendte, som de, der døe og dog leve, som
+de, der ere revsede og dog ikke ihjelslagne, som bedrøvede
+og dog glade, som fattige, der dog gjøre Mange
+rige, som de, der have Intet og dog besidde Alt“, ---
+og saa Humanitetens Tjenere, fordybede i det Jordiske,
+stridende for det Timelige, arbeidende for det Nærværende,
+for Øieblikkets Krav i Endelighedens Trældom,
+rige og dog fattige, overmætte og dog hungrige, freidige
+og dog i hemmelig Angst, glade og dog bekymrede,
+altid bekymrede for verdslige Goder, Ære, Magt og
+borgerlig Indflydelse, --- hvilken uhyre Modsætning!
+
+Og dog høre begge Existenser ind under eet og
+samme Rige, Aandens Rige; Grundloven er for begge
+den samme, Frihedens, Retfærdighedens og Kjærlighedens
+Grundlov. Den ubetingede Fordring er, at
+Aanden skal herske overalt i sit Rige, i de lavere som
+% --- p. 108 ---
+\setcounter{footnote}{0}%
+\opage{108}i de høiere Regioner. Hvis nu Apostelexistensen ikke
+stod fast paa Autoritetens hellige Grund, saa vilde
+Vidnesbyrdet om Aandens Ret og Maal forsvinde. Hvad
+Aanden kan fordre af Mennesket, naar sandselig Drift
+og selvisk Egenraadighed gjør Oprør mod dens Herredømme,
+hvilke Offre den kræver, hvilke Kræfter den
+har, hvilke Midler den tilbyder, naar det i Striden
+kommer til det Yderste, vilde reent være glemt; det
+Hellige, det absolut Ophøiede, der holder Maalestokken,
+vilde synke ned i lutter Endelighed, lutter Relativitet,
+og falsk Vægt og Maal indsnige sig overalt og forvirre
+de humane Forhold. Saa lidt som der kan gjøres
+Ret og Skjel i et borgerligt Samfund med falsk Mynt,
+falsk Maal og Vægt, lige saa lidt kan der holdes Orden
+i Aandens Rige, naar de ideale Maalestokke ere brudte,
+naar det Høiere kan blive det Lavere, og det Lavere
+det Høiere, alt som Døgnet skifteviis løfter og styrter
+sine Afguder.
+
+Idealexistensen gjælder ikke alene for Guds Skyld,
+men først og sidst for Menneskets Skyld, og Nutiden
+har for saa vidt Ret, naar den fæster sit Blik paa
+Realiteternes Verden og holder paa det Humane.
+Det er unegtelig en Indbildning, ja en indgroet
+Fordom, at Aandens hellige Gud skulde have foreskrevet
+Menneskene en eneste Lov, en eneste Betingelse, som
+ikke var begrundet i det menneskelige Væsens Anlæg,
+ikke var nødvendig for dets frie, personlige Selvudvikling.
+Men at det Personlige kan begrundes paa et
+Upersonligt, er ogsaa en Indbildning.
+
+Det er Menighedslivet, der vedblivende danner
+Grundlag for Aandslivet. Ordets Tjenere i Menigheden
+have den store Opgave at haandhæve og indskærpe
+Gudsrigets Vilkaar, ikke med paatagen Apostelmyndig%
+% --- p. 109 ---
+\setcounter{footnote}{0}%
+\opage{109}hed, men, for Tilegnelsens Skyld, med Aandsdannelsens
+hele Overlegenhed. Ungdommens Lærere have den store
+Opgave ved Aandsdannelsens Midler, at give de aabenbarede
+Sandheder et praktisk fatteligt Udtryk i Humanitetens
+Sprog og ved Idealernes Autoritet i Opdragelsens
+Alvor gjøre dem nærværende. --- Saa er der
+vel en Forskjel mellem Kirkeskolen og Kulturskolen,
+men Spliden er hævet, en gjensidig Forstaaelse er opnaaet,
+saa at begge Skoler, om end ved forskjellige
+Midler og ad forskjellige Veie, kunne arbeide i samme
+Aand til Opnaaelse af det samme Maal.
+
+Der er vel dem, som mene, at Religionens Tid er
+forbi, at Humaniteten alene har Fremtiden for sig. Vi
+skulle efter deres Anviisning ikke blive staaende paa
+kirkelig Grund og med Luther stirre mod Østen; vi
+skulle med en ny Columbus heise „den frie Tankes“
+svaiende Flag og freidig styre vor Kurs mod Vesten. „Fjernt
+i Vest, i Naturopdagelsernes Atlanterhav ligger Aandens
+forjættede Land, skjult som en Perle i Dybet.“ --- Det er
+en falsk Anviisning. Den, der blindt hen styrter
+sig i Naturalismens Svælg, dukker ikke op „med en Perle
+i Haanden“, men --- med en Blære i Munden.
+
+Den samme Livets og Sandhedens Aand, der fordum
+ved overordenlig Selvmeddelelse frembragte Apostelexistensen,
+meddeler sig endnu paa Tilegnelsens humane
+Vilkaar med Foryngelsens og Omdannelsens Kraft til
+Nutidsexistensen. Schemaet er et andet, men Indholdet
+er det samme. Midlerne have vi, Betingelserne ere os
+givne; det kommer kun an paa, at vi bruge dem rettelig.
+Til at bruge dem rettelig udkræves der Opdragelse og
+Aandsdannelse.
+
+\end{document}
