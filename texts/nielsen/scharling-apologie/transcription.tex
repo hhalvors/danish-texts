@@ -1,0 +1,847 @@
+% =====================================================================
+%  R. Nielsen, ET PAR ORD I ANLEDNING AF PROF. SCHARLINGS APOLOGIE FOR DR. MARTENSENS DOGMATIK.
+%  Kjøbenhavn: C. A. Reitzel (Bianco Luno), 1850.  24 pp.  Fraktur.
+%
+%  TRANSCRIPTION -- GENERATED; DO NOT EDIT BY HAND.  Rebuild, chained (&&), from the repo root:
+%    python3 ebook-method/scharling-apologie/draft.py --emit --force
+%      this template + tesseract's script/Fraktur reading of KB's scan (the scan has NO text layer; the reading is
+%      set as one by ocr.py MODEL=layer); ~/bibliotek/Nielsen, Rasmus/1850-scharling-apologie.pdf, see SCANS.tsv;
+%    python3 ebook-method/collate/check.py scharling-apologie --witness ocr --apply
+%      the decisions in decisions.tsv, taken against an independent reading by a different model (tesseract deu_latf);
+%    python3 ebook-method/scharling-apologie/oepass.py --apply
+%      the ø pass and the word fixes of the unattested-word sweep (word-fixes.tsv);
+%    python3 ebook-method/scharling-apologie/finish.py --apply
+%      the footnotes, corrections across markup, Latin (\textit), letterspacing (\emph), PRINTED AS IS marks.
+%
+%  WORD-ACCURACY (2026-10-06).  No e-book, no earlier transcription and no text layer exist.  The draft is
+%  tesseract's script/Fraktur reading (tessdata_best), set as a layer; it was collated word by word, with
+%  punctuation, quote kinds and word division, against tesseract's deu_latf model: 830 disagreements in 5705
+%  words.  About 540 were settled by rule (rules.py, each decision named): each model's known Fraktur faults on
+%  this print undone (Fraktur reads k as f, sk as f or st, v as y, x as r; deu_latf has no æ), accepted only
+%  where the result is a word attested in at least two other books of the corpus, two attested words going to
+%  the image unless one is OCR junk beside a far commoner word; a third reading (tesseract dan) voting only for
+%  an attested word.  The rest were read at the image: 278 crops read BLIND by three readers (controls 6 of 6),
+%  decided by script (readsbox.py) or by the main session from the readers' transcriptions.
+%  Ø: all three models read the print's ø as o.  oepass.py restores it where the o-form is no word (122 tokens)
+%  and, for pairs that are both words (for/før, bor/bør, tor/tør, fore/føre ...), from 56 tight crops of the
+%  word alone, without context (controls 4 of 4): 10 ø.
+%  Then: the unattested-word sweep (94 words found in no other book: 43 OCR faults with one possible reading set
+%  by sense, 15 read at the image, the rest genuine or misprints); two page readers on every page (letterspacing, antiqua,
+%  paragraph starts, every footnote read whole), and the main session's own look at every page for
+%  letterspacing (it found „tænker“, p. 4, that the readers missed) and at 2x zoom for the doubtful words.  The
+%  layer dropped no text (check.py --dropped).  Shared faults both models read alike were set from the page
+%  images (finish.py GLOBAL and POST: iffe, fun, fal, theologiste, Loftestang, Parador, Dine, Dieblik ...).
+%  NOT ESTABLISHED: misprints that both models read alike as real words, beyond those met in the sweep and the
+%  page looks (no full letter-by-letter image pass); letterspacing of single short words.
+%  PAGE MARKERS: 22 of 22 exact (check.py --pages).
+%
+%  CONVENTIONS (as Dr. H. Martensens dogmatiske Oplysninger belyste).  Body in Fraktur; aa (not å); ø as printed.
+%  Emphasis is letterspacing -> \emph{}.  Latin set in antiqua -> \textit{}.  Greek in Greek type (textalpha).
+%  Fraktur I/J are one sort: I for I-words (Idee, Ikke), J for J-words (Jeg).  The double hyphen at a line end is
+%  resolved; inside a compound it is "-".  "% --- p. N ---" + \opage{N} at the first word of printed page N.
+%  Footnotes *), **) per page, as printed.  Folios, signature marks and the library's stamps and pencil marks are
+%  not transcribed.  Print governs; misprints are kept and marked PRINTED AS IS.
+% =====================================================================
+\documentclass[12pt,a4paper,openany]{book}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{libertinus}
+\usepackage{libertinust1math}
+\usepackage{textalpha}
+\usepackage{graphicx}
+\DeclareUnicodeCharacter{0254}{\reflectbox{c}}  % ɔ (U+0254) = reversed c
+\usepackage[danish]{babel}
+\usepackage[protrusion=true,expansion=true]{microtype}
+\usepackage{setspace}
+\usepackage[margin=1.3in]{geometry}
+\usepackage{fancyhdr}
+\usepackage{hyperref}
+\hypersetup{pdftitle={Et Par Ord i Anledning af Prof. Scharlings Apologie for Dr. Martensens Dogmatik}, pdfauthor={Rasmus Nielsen}, hidelinks}
+\setlength{\headheight}{15pt}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LE,RO]{\thepage}
+\fancyhead[C]{\textit{R. Nielsen: Et Par Ord i Anledning af Prof. Scharlings Apologie (1850)}}
+\renewcommand{\thefootnote}{\ifcase\value{footnote}\or *)\or **)\or ***)\else
+  \arabic{footnote})\fi}
+\setstretch{1.3}
+\usepackage{marginnote}
+\newcommand{\opage}[1]{\marginnote{\footnotesize\textit{[#1]}}}
+\newcommand{\apage}[1]{\marginnote{\footnotesize\textit{[#1]}}}
+
+\begin{document}
+
+% --- front matter, read at the image 2026-10-06 (main session).
+% p. [1], title.  "Lic.", "Dr." and "1850." in antiqua; "Nielsen," and "Reitzel." letterspaced.  The ornamental rule
+% is drawn as a plain rule; KB's stamp and the pencil "Kgl Bibl" are not transcribed.
+\begin{titlepage}
+\begin{center}
+\vspace*{3em}
+{\Large Et Par Ord}\\[1em]
+i Anledning af\\[1em]
+{\Huge Prof. Scharlings Apologie}\\[1em]
+for\\[1em]
+{\LARGE Dr. Martensens Dogmatik}\\[1em]
+af\\[1em]
+{\large Lic. R. \emph{Nielsen,}}\\
+{\small Prof. i Phil.}\\[2em]
+\rule{8em}{0.4pt}\\[2em]
+{\large Kjøbenhavn.}\\[0.5em]
+Hos Universitetsboghandler C. A. \emph{Reitzel.}\\[0.5em]
+{\small Trykt hos Kgl. Hofbogtrykker Bianco Luno.}\\[0.5em]
+1850.
+\end{center}
+\end{titlepage}
+% p. [2], the motto, in Greek, at mid-page (the epigram of Demodocus); the attribution in bold antiqua, as printed.
+\thispagestyle{empty}
+\vspace*{12em}
+\begin{center}
+\begin{minipage}{0.8\textwidth}
+\textit{Μιλήσιοι ἀξύνετοι μέν οὐκ εἰσί· δρῶσι δὲ, οἷαπερ οἱ ἀξύνετοι.}\\[0.4em]
+\hspace*{\fill}\textbf{Demodacus.} % PRINTED AS IS: Demodacus (for Demodocus), checked at the image
+\end{minipage}
+\end{center}
+\clearpage
+
+
+% ===== TEXT (pp. 3--24) =====
+% --- p. 3 ---
+\setcounter{footnote}{0}%
+\opage{3}I „nyt theologisk Tidsskrift“ (1ste Bind, 2det Hefte S.
+348—375) er Hs. Høiærværdighed Dr. theol. Prof. C.
+E. Scharling --- mærkværdigt nok! --- optraadt som
+Apologet for Dr. Martensens Dogmatik.
+
+At et saa energisk Skridt fra Prof. Scharlings
+Side er kommet mig noget uventet og tillige har bragt mig
+i stor Forlegenhed, vil jeg ikke fordølge. Paa et
+skarpt videnskabeligt Indlæg fra Dr. Martensen selv har
+jeg længe været forberedt, men paa en Apologie fra Prof.
+Scharling, nei, det tilstaaer jeg, paa en saa gemytlig
+Apologie var jeg aldeles ikke forberedt.
+
+Hvorfor jeg kalder den Scharlingske Apologie \emph{gemytlig},
+er let at forklare. Et videnskabeligt Forsvar
+holder sig strengt til Modstanderens Indsigelser og Grunde;
+men slige formelle Hensyn ere naturligviis af underordnet
+Betydning i en Apologie, hvis hele Beviiskraft lader
+sig henføre til Kategorierne: Velvillie og Uvillie, Bifald
+og Mishag, Roes og Dadel.
+
+Hvor Prof. Scharling for Tiden har sit videnskabelige
+Standpunkt, og om han overhovedet har noget, skal jeg
+ikke kunne afgjøre; derimod er det af det foreliggende
+% --- p. 4 ---
+\setcounter{footnote}{0}%
+\opage{4}Aktstykke ingenlunde vanskeligt at angive hans apologetiske
+Standpunkt: Prof. Scharling er for nærværende Tid ---
+gemytlig rosende Prof. Martensen, gemytlig dadlende
+hans Modstandere. Hvad Prof. Scharling nu egentlig
+\emph{tænker} om „Troens“ Forhold til „Viden“, om Religionens
+Forhold til Philosophien, Christendommens til Theologien,
+vil den Smule Skarpsindighed, der blev mig forundt,
+ikke kunne udfinde af hans gemytlige Apologie;
+hvad jeg derimod uden Anstrengelse kan udfinde, og hvad
+der unegtelig ogsaa er lykkedes den theologiske Professor
+at fremstille med sjelden theologisk Klarhed, er det for
+„den theologiske Videnskab“ vistnok heller ingenlunde uvigtige
+Vendepunkt, at Hs. Høiærværdighed er bleven vred
+paa Magister Stilling og mig.
+
+Saa bliver da det første facultetsmæssige Udbytte af
+den første facultetsmæssige Apologie for vor nyeste Litteraturs
+første facultetsmæssige Dogmatik at udtrykke og
+fastholde i den ligesaa vægtige som vigtige Sætning: \emph{Professor Scharling er bleven vred paa Magister}
+\emph{Stilling og Professor Nielsen}.
+
+At jeg nu ved denne alvorlige og høitidelige Leilighed
+først nævner Mag. Stillings Navn, har sin Grund
+i Beskedenhed, og skeer alene for Høfligheds Skyld; thi
+ifølge Vredens ulige, skjøndt dog vistnok billige Fordeling,
+tilkommer det egentlig mig at indtage den første Plads.
+Sagen er denne: Paa Magister Stilling er Professor
+Scharling kun vred af een Aarsag, den nemlig, at Magister
+Stilling har kunnet tillade sig at skrive imod Dr.
+Martensen; paa mig er Hs. Høiærværdighed derimod vred
+af to Aarsager, thi jeg har ikke alene været saa dristig
+at skrive imod Dr. Martensen, men desuden i Forveien
+% --- p. 5 ---
+\setcounter{footnote}{0}%
+\opage{5}været saa dumdristig at skrive Adskilligt imod „de theologiske
+Middelmaadigheder.“\footnote[1]{Jfr. „Evangelietroen og den moderne Bevidsthed“.}
+
+Der er da i den gemytlige Apologie en fælles Revselse,
+der overgaaer os begge. Vi have begge svarligen
+forsyndet os imod den theologiske Videnskab ved „den ubehagelige
+Overraskelse“, vore „udførligere Bedømmelser“ af
+„den christelige Dogmatik“ have beredet Dr. Martensen;
+„den haanende Ironie, den drillende Spot, hvormed Forkastelsesdommen
+er ledsaget, den grusomme Lyst, hvormed
+vi“ --- at ogsaa jeg skal udtrykke mig gemytlig --- „afskyde Ironiens Pile“ imod den stakkels „berømte“ Forfatter,
+„synes (S. 351) ikke at kunne udelukke Formodningen
+om, at andre Motiver end den paaberaabte rene
+Iver for Sandheden have gjort sig gjældende ved vore
+Kritikers Affattelse“; kort sagt: vi blive begge revsede og
+det tilgavns, thi vi have begge været slemme.
+
+Men foruden den fælles theologiske Revselse, der
+saaledes tilkjendes os begge, har Prof. Scharlings apologetiske Gemytlighed endnu en Revselse, et Overskud, en
+Tilgift af Revselse, som særlig tilkjendes mig. Uagtet vi,
+som sagt, begge ere slemme, er Magister Stilling dog
+alligevel ikke nær saa slem som jeg. Rigtignok er Mag.
+Stilling voldsom --- „maaskee endog den voldsomste“ ---
+men desuagtet (jfr. Anm. S. 360) „bærer dog Magister
+Stillings Skrift ved Siden af personlig Ømfindtlighed
+Præget af en subjectiv Overbeviisning, der vækker Læseren
+til Alvor og Sympathie“\dots{} Anderledes er det med
+mig! „Anderledes er det med Prof. Nielsen. Hans
+Fremstilling fremkalder det Indtryk, som om han nok
+% --- p. 6 ---
+\setcounter{footnote}{0}%
+\opage{6}kunde gjøre Tilbudet: „Vil I nu tage min Mening, saa
+vil jeg igjen forsvare Jer Mening“\dots{} --- Ak, hvad skal
+jeg svare? Bedre var det maaskee, om jeg slet ikke svarede,
+men taug stille, og bøiede mig i al Ærbødighed
+for den theologiske Revselse! thi, alvorlig talt, hvad skal
+jeg svare? Med mig gaaer der til det Yderste; til min
+Forbauselse og høist ubehagelige Overraskelse erfarer jeg
+nu, at jeg staaer ved Randen af tvende Yderligheder,
+tvende forfærdelige Yderligheder, hvis Navne jeg end ikke tør
+nævne, men maa overlade Læseren at udfinde af Prof.
+Scharlings Beskrivelse.
+
+Den første Yderlighed beskrives (S. 364 Anm.) saaledes:
+„Han (Prof. N.) nævner ikke gjerne Theologerne
+uden med et eller andet haanende Tillægsord (Skoletheologer,
+Middelveistheologer \&c.) % the Fraktur r-rotunda abbreviation ꝛc. (= et cetera), read 2c. by tesseract; rendered \&c. as in propaedeutiske-logik; alt hvad Dumt og Forkeert,
+Theologer kunne have forskyldt og ikke forskyldt, samler
+han til Træk i de Carrikaturbilleder, hvormed han søger
+at gjøre sine theologiske Modstandere til Latterlighedens
+Martyrer. Dette hænger forresten sammen med en forunderlig
+Illusion om den Anseelse, som han mener, at
+Theologerne, især theologiske Doctorer og Professorer, nyde.
+Derfor forfølger han disse med den samme Bitterhed og
+Satire, som Voltaire (sic!) i sin Tid Præsterne.“
+
+Den anden, endnu langt betænkeligere Yderlighed
+beskrives saaledes: Efterat Magister Stillings Sætning:
+\textit{quamvis absurdum sit, credo}, foreløbig er berørt, hedder
+det i Texten (S. 364): „ikke desto mindre maa der dog
+til Grund for den sidste Erklæring, naar den ikke uden
+videre skal afvises som udelukkende al videre fornuftig
+Overveielse, ligge den Forestilling, at de christelige Dogmer,
+hvor urimelige de end fremstille sig for Subjectet,
+ikke desto mindre have en objectiv gyldig og evig Sand%
+% --- p. 7 ---
+\setcounter{footnote}{0}%
+\opage{7}hed, hvilken det kun ikke er muligt paa Grund af Forhindringer
+eller Indskrænkninger hos Subjectet“ (---\textit{NB}---)
+„i en given Tilstand at erkjende.“ Paa denne psychologiske
+Forklaring følger nu Noten, og Noten maa man
+endelig ikke overspringe, thi Noten er det Bedste, thi
+Noten er endnu mere gemytlig end Texten, thi i
+Noten ligger Pointen, thi i Noten siger Professor
+Scharling: „Om dette (— nemlig hvad der anføres
+om Mag. Stillings Sætning —) imidlertid skulde
+være Prof. Nielsens Mening, veed jeg ikke; thi han finder
+Stillings anførte Formel endnu for tvetydig, og vil have
+den udtydet i Sætningen: \textit{credo, quia absurdum est.}
+Saaledes kunde her være indtraadt i Virkeligheden, hvad
+J. P. Lange (Christl. Dogmatik, 1849, 1ster Th. S.
+409) fornylig endnu har sat som \emph{Mulighed}, „daß am
+Ende auch noch ein Philosoph kommen könnte, der das
+Denken oder das Bewustseyn selbst ebenfalls für eine Illusion
+erklären wollte. Was wäre nun da anzufangen?
+Man mußte ihn mit dem Zugeständniß, daß sein eignes
+Bewustseyn in Taumel gerathen sein könne, nach Hause
+schicken.“
+
+Nach Hause! altsaa: nach Hause! ja, lad det saa
+blive derved: nach Hause!
+
+Da jeg med min „Evangelietro“ og min „undersøgende
+Anmeldelse“ rykkede frem mod en i Litteraturen
+vistnok meget anseelig, men dog efter min Overbeviisning
+aldeles uholdbar theologisk Videnskab, var jeg endda ikke
+forberedt paa saa faa Muligheder; men, at denne \emph{Mulighed},
+denne hersens \emph{Mulighed}, hvorom Prof. Scharling
+her taler, just skulde være saa nær ved at „være indtraadt
+i Virkelighed“, nei, det tilstaaer jeg, derpaa var jeg
+% --- p. 8 ---
+\setcounter{footnote}{0}%
+\opage{8}slet ikke forberedt: det er da ogsaa et „overraskende“ Krigspuds
+af den gemytlige Apologie.
+
+Ved dette Krigspuds maa jeg med mine Skrifter
+da vel omtrent være tilmode, som Krigsraadet i en maadelig
+Fæstning, der uforvarende overrumples af en stærk
+og listig Fiende; man forudseer klart, at Modstand er
+forgjæves, og dog, da det jo dog alligevel ikke er en aaben
+By, men i al „Middelmaadighed“ en Fæstning, føler man, at
+man, idetmindste for Ærens Skyld, maa gjøre Noget. Saaledes,
+ja netop saaledes gaaer det nu mig med denne
+apologetiske Overrumpling. Prof. Scharling kaster Handsken
+for den troende Speculation: jeg føler, at jeg maa
+gjøre Noget, og forudseer alligevel, at det ikke kan blive
+til Noget.
+
+At jeg nu virkelig trods al min „Pirrelighed“ maa have
+en vis Grund til at være forsigtig med Prof. Scharlings
+litterære Kjendelser, skal Hs. Høiærværdighed selv kunne bevidne,
+naar han tænker sig om. For nogle Aar tilbage, det
+var just i det Tidspunkt, da --- som Hs. H. selv siger
+S. 352 --- „den saakaldte speculative Theologie her tillands
+nød en Anseelse, hvis Glands allerede var begyndt
+at blegne i dens oprindelige Hjem,“ udgav jeg en, ikke i
+streng hegelsk, men i speculativ-theologisk Aand affattet
+Commentar over Pauli Brev til Romerne. Denne Commentar
+havde strax det Uheld at tildrage sig Prof. Scharlings
+Opmærksomhed, hvorfor han da ogsaa efter sin gemytlige
+Sædvane fandt sig beføiet til at afgive en litterær
+Kjendelse, for med det Samme at vise mig lidt
+tilrette.
+
+Havde jeg nu dengang følt Kald til at indlade mig
+med Prof. Scharling, havde Leiligheden været saa gunstig,
+som muligt. „I de Dage“ --- siger Hs. H. selv S.
+% --- p. 9 ---
+\setcounter{footnote}{0}%
+\opage{9}353 --- „gik der overhovedet en haard Dom over alle Videnskabsmænd,
+som ikke vilde eller ikke kunde sætte sig i
+umiddelbar Relation til det gjældende System“; altsaa:
+i de Dage, da Raisonneurernes Indsigelse imod den speculative
+Erkjendelse blev „afviist med streng Tilretteviisning
+for aandelig Indskrænkethed og Ubekjendtskab med
+Philosophiens Væsen“, i de Dage var det just, at Prof.
+Scharling affærdigede mit Forsøg over Romerbrevet\footnote[1]{Tidsskrift for Litteratur og Kritik, udgivet af F. C. Petersen. 1842. 1ste Bind. S. 210.},
+og i de Dage havde jeg da ogsaa, ifølge min særdeles
+store „Pirrelighed“, havt den skjønneste Leilighed til at
+være --- lidt slem imod Prof. Scharling.
+
+Hvorfor forsømte jeg da, siden min „Pirrelighed“ nu
+engang er saa overvæties, den gunstige Leilighed, og
+bøiede mig i beskeden Taushed under den gemytlige Revselse? --- Kjære Læser, hvad skal jeg svare? Svarer jeg,
+at jeg gjorde det, fordi jeg følte en vis Undseelse ved at
+angribe en Mand, som kort tilforn havde været min Lærer:
+troer man mig vel ikke; thi Hans Høiærværdighed
+sigtede mig jo allerede dengang for ironiserende Anmasselse.
+Svarer jeg, at jeg gjorde det, fordi jeg helst vilde
+skaane en Mand, som aabenbart ved en reen Feiltagelse
+var kommen til at afgive sin Kjendelse i en Sag, der
+angik den theologiske Speculation: saa troer man mig vel
+heller ikke; thi jeg er jo nu engang mistænkt for „andre
+Motiver“. Nu, saa vil jeg da svare, hvad sandt er, og
+give et Svar, som Prof. Scharling vist bedre vil troe,
+end noget andet; jeg vil da svare ham og sige det reent
+ud: jeg gjorde det af Frygt.
+
+% --- p. 10 ---
+\setcounter{footnote}{0}%
+\opage{10}Hvad der indgjød mig denne Frygt, var ingenlunde
+Skarpheden i de Scharlingske Indsigelser (thi de manglede
+al Skarphed), heller ikke Vægten af de Scharlingske Grunde
+(thi de manglede al Vægt), men en fatal Omstændighed,
+den nemlig, at Prof. Scharling i mit ungdommelige Forsøg
+overhovedet slet ikke kunde finde --- „Aanden“. Ja,
+denne Omstændighed var det just, som allerede dengang
+lammede min Kraft, og indjog mig en Skræk, jeg siden
+den Tid ikke har forvundet.
+
+Til en grundigere Vurdering af min store Forlegenhed
+kan jeg dog maaskee allerbedst føre Læseren ad en
+lille Omvei.
+
+Før man overhovedet indlader sig i en litterær Strid,
+bør man fornuftigviis see sig for, hvem det er, man faaer
+med at gjøre, og, saavidt muligt, søge at sondere de polemiske
+Kræfter. Hvad navnlig den videnskabelige Polemik
+angaaer, forekommer det mig, som om Forfatterne bedst
+kunde inddeles i følgende tre Classer: 1) de Forfattere,
+som i Genialitetens og i Frihedens Form ere sikkre paa
+Princip og Idee; 2) de Forfattere, der erkjende Principet
+i Form af Grundsætning, og derfor maae bøie sig
+for den regelrette Conseqvents; 3) de Forfattere, der ikke
+gaae af Veien for noget Princip, eftersom de i deres litterære
+Gemytlighed egentlig ikke vide, hvad et Princip er.
+
+At nu Forfatterne af første Rang ere farlige Polemikere,
+især naar de tillige ere begavede med en saa vittig
+Phantasie, at de endog kunne skjule det Alvorliges
+Tyngde i Spøgens Lethed, forstaaer sig af sig selv. Jeg
+nævner her Mag. Kierkegaard og Prof. Heiberg, thi ved
+at nævne disse Navne fritager jeg Læseren og mig selv
+fra en prosaisk Beskrivelse af den høiere Polemik.
+
+Til Polemikere af anden Classe henhøre alle dygtige
+% --- p. 11 ---
+\setcounter{footnote}{0}%
+\opage{11}og paalideliae Videnskabsmænd, der umiddelbart søge deres % PRINTED AS IS: paalideliae (for paalidelige; 2x zoom)
+Styrke i Beviser og Grunde; disse Forfattere ere i
+Regelen bundne til den formelle Alvors prosaiske Form,
+og kjendes derfor ogsaa bedst under Navn af „de alvorlige
+Forfattere“.
+
+Til Polemikerne af Nr. 3 henhøre alle principfrie,
+eller rettere: principløse, men dog alvorlige, ufortrødne og
+lærde Skribenter, alle værdige Medlemmer af den værdige
+Familie \emph{Wagner}\footnote[1]{Jfr. Gocthes Faust.}, der paa en saa værdig Maade % PRINTED AS IS: Gocthes (for Goethes; 2x zoom)
+fremmer Videnskaben i alle Retninger og pryder Litteraturen
+i alle Lande. Naar en Forfatter af dette Slægtskab
+gjør Mine til at indlade sig i en litterær Strid, især i en
+dialektisk Principstrid, maa man være forsigtig, meget forsigtig,
+thi dette Slags Folk er yderst farligt. --- Med Polemikerne
+af første Rang slipper man endda nogenledes
+fra det, naar man forresten har en god Sag og en sund
+Tanke (selv om man taber, er Tabet altid Gevinst); men
+vee Den, der skal værge sig med et Princip imod dem,
+der ikke rammes af noget Princip; vee Den, der skal forsvare
+en Tankes Eenhed imod dem, der tage alskens Tanker
+og alle Slags Ideer til Indtægt, og just derved paa
+den skjønneste Maade bevise, „at Menneskers aandelige
+Væsen udgjør en Eenhed“; ja vee Den, der falder i Hænderne
+paa en Polemiker af Nr. 3, thi --- med Familien
+Wagner er der intet Udkomme.
+
+Læseren aner vist allerede min Forlegenhed. --- Under hvilken Rubrik Prof. S. vil henføre mig, er let at see
+af den omineuse Yttring: „nach Hause,“ mig er det derimod
+ingenlunde let at see, under hvilken Rubrik jeg i denne
+% --- p. 12 ---
+\setcounter{footnote}{0}%
+\opage{12}Sag skal henføre Professor Scharling. At sætte ham
+iblandt Polemikerne af første Rang, gaaer dog vel neppe
+an (nu det forstaaer sig, hvis en Anden vil gjøre det,
+skal jeg ikke sige Noget derimod, men --- jeg tør ikke).
+At henføre Hs. Høiærværdighed under Nr. 3 gaaer endnu
+mindre an; det vilde jo være en blodig Fornærmelse imod
+en Mand, der ikke blot er Medlem af det theologiske Facultet,
+men, hvis jeg ellers husker ret, endog Medlem af
+Videnskabernes Selskab. Min alvorlige Bestræbelse maa
+altsaa gaae ud paa, at faae ham sat i Classe med de
+„alvorlige Videnskabsmænd“ under Rubriken Nr. 2; men
+hvor utaknemmelig denne Bestræbelse er, og hvor lidet
+Haab jeg denne Gang kan have om at føre den til noget
+gunstigt Resultat, vil den Sagkyndige let kunne see
+ved en flygtig Gjennemlæsning af hans gemytlige Apologie.
+
+Som et af de Hovedtræk, der især charakterisere
+denne Apologie, og hvorved Prof. Scharling med samt
+hans theologiske Tidsskrift især synes at befinde sig i --- „en
+stadig Fremadskriden“, maa jeg her fremhæve den litterære
+Ugeneerthed, et interessant Hovedtræk, der ligeledes hænger
+sammen med det Gemytlige.
+
+„Det er besynderligt“, siger Prof. Scharling, idet han
+(S. 355) omtaler Mag. Kierkegaard, „at endnu Ingen
+har gjort denne Forfatters Skrifter til Gjenstand for en
+udførligere Analyse, som de baade i sig selv fortjene, og
+hvortil der ved det Bifald, som de have vundet hos Læsere
+af høist forskjellige Dannelsestrin, synes at være særlig
+Opfordring.“ Da jeg nu heri er aldeles enig med
+Prof. Scharling, forekommer det mig netop af den Grund
+høist „besynderligt“, at Hs. H. med saa megen Ugeneerthed
+har kunnet indlade sig paa en saa temmelig affærdigende
+% --- p. 13 ---
+\setcounter{footnote}{0}%
+\opage{13}Bedømmelse af disse Skrifter, uden at der dog i denne
+Bedømmelse er mindste Spor af, at Hs. Høiærvædighed % PRINTED AS IS: Høiærvædighed (for Høiærværdighed)
+selv har værdiget dem endog blot en flygtig, endsige da,
+en udførligere Analyse.
+
+At Prof. Scharling aldeles ikke har værdiget Mag.
+Kierkegaards Bøger nogen Analyse, kan strax sees af de
+allerførste Linier, hvori han begynder at recensere deres
+Form. Der er vel neppe nogen opvakt Student, som ikke
+allerede veed, at de Kierkegaardske Skrifter, hvad Formen
+angaaer, dele sig i to Hovedclasser, og at ethvert Skrift
+i enhver af disse Classer igjen har en i sin Art uendelig
+individualiseret, indtil de fineste Enkeltheder omhyggelig
+articuleret og nüanceret Form. Denne Formforskjellighed
+generer imidlertid ikke Prof. Scharling. Uden at
+bekymre sig om nogle ellers usædvanlige Transformationer
+slaaer Hs. Høiærv. uden Omstændigheder alle Bøgerne i
+een Bunke, og vedbliver saa i gemytlig Ugeneerthed at
+tale om „den formløse Brede, den baade til rette og urette
+Tid spøgende Ironie, den forcerede Jagen efter Paradoxer
+og Antitheser, og den om ogsaa vittige, dog ofte trættende
+Snaksomhed, der synes at forhindre Forfatteren, trods
+hans forbausende Productivitet, fra at bringe sine Betragtninger
+til nogen tilfredsstillende Afslutning.“ Med
+denne afsluttende Opfattelse af den Kierkegaardske Form
+(en Opfattelse, man vel allerede før har hørt af „travle
+Folk“ i Byen) hænger det da ogsaa uden Tvivl sammen,
+at Mag. Kierkegaards Dialektik --- besynderligt nok! ---
+hos Prof. Scharling (S. 358) „efterlader en Følelse,
+som om hans Fremstilling ikke ret var Alvor, men kun
+et Forsøg i den høiere Aandsgymnastik.“\footnote[1]{En „udførligere Analyse“ af en af Pseudonymerne (t. Ex. af Johannes Climacus) vilde, hvis den blot nogenledes kunde lykkes, ganske vist afgive stærke Bidrag til Besvarelsen af det Spørgsmaal: \emph{Hvad er Alvor}?} % PRINTED AS IS: t. Ex. (for f. Ex.), as in Dr. H. Martensens dogmatiske Oplysninger belyste
+
+% --- p. 14 ---
+\setcounter{footnote}{0}%
+\opage{14}Dog, om Formen, og navnlig om Inderlighedens indirecte
+Meddelelsesform i dobbeltreflecterede Kategorier, er
+jeg, der selv saa haardt støder an imod Formen, uværdig
+til at gaae i Rette med Prof. Scharling, hvis smagfulde
+Tidsskrift jo ikke blot smager paa Formen, men ogsaa smager
+af Formen; en udførligere Formforhandling vilde her desuden
+være paa urette Sted, og føre os for langt bort fra den
+apologetiske Gemytlighed. Derimod vilde jeg --- om jeg saa
+ogsaa ved denne Leilighed skulde støde lidt an imod Formen
+--- dog inderlig gjerne give Prof. Scharling det velmeente
+Raad, at han aldrig mere giver sig af med at
+vurdere eller kritisere de Ting, han endnu ikke ret har
+forstaaet, og til den Ende gjøre ham opmærksom paa nogle
+Punkter, hvori hans litterære Ugeneerthed synes at være
+af den Natur, at den ikke engang kan undskyldes med
+det Gemytlige.
+
+Idet Prof. Scharling. (S. 368) vurderer Magister
+Kierkegaards Polemik mod „Systemet“, udtaler han sig
+paa en saadan Maade, at Den, der ellers ikke er nærmere
+underrettet, nødvendigviis maa antage, at Magister Kierkegaard
+efterhaanden er skeiet ud fra det berettigede Standpunkt,
+hvormed han begyndte, og er endt i en aabenbar
+Eensidighed. Det hedder saaledes: „Saalænge Magister
+Kierkegaards Polemik indskrænkede sig til en Bestridelse
+af, at Systemet var istand til at træde istedetfor Troen\dots{} --- da var den i sin Berettigelse, og man fulgte den med
+Bifald og Interesse. Men altsom den gik ud paa at
+fjerne Tro og Viden fra hinanden, desto mere førtes den
+% the note *) of p. 13 runs over onto the foot of p. 14 („af Johannes Climacus) vilde ... Hvad er Alvor?“): set in full at its mark
+% --- p. 15 ---
+\setcounter{footnote}{0}%
+\opage{15}over til samme Eensidighed, som den saa kraftig bestred\dots{} Derfor kunde ogsaa den fortsatte Polemik, trods
+mangt et aandrigt Tankelyn, ikke rigtigen træffe sin Gjenstand,
+jo mere den forlod de mere abstracte Regioner, og
+gik ind paa de givne historiske Forhold.“
+
+See saaledes bliver nu Mag. Kierkegaards „forbausende
+Productivitet“ med Eet affærdiget af Prof. Scharling.
+Hvilket Indtryk maa nu en saadan Bedømmelse
+gjøre? --- Paa en aldeles naiv og godtroende Læser maa
+Bedømmelsen vel gjøre det Indtryk, at Mag. Kierkegaard
+her er stedt for en høiere Domstol, at den theologisk-videnskabelige
+Overlegenhed, der alt længe har havt et
+vaagent Øie med hans mangehaande „dialektiske Vendinger“,
+nu endelig, da det synes at gaae for vidt, omsider
+bryder Tausheden og viser det urolige „Genie“ tilbage
+inden de rette Grændser. Paa mig gjør Bedømmelsen
+imidlertid et andet Indtryk, thi paa mig gjør den det
+Indtryk, som om det Hele maaskee kunde være løs Tale.
+Det Troesparadox, der fremsættes af „Johannes Climacus“,
+er jo væsentlig det selvsamme Paradox, som det, der aander
+i „\emph{Frygt og Bæven}“. At Stemningen, Formen og
+Udviklingen maa være forskjellig, er en Selvfølge, da nemlig
+Johannes \textit{de silentio} expectorerer sig i „\emph{dialektisk}
+\emph{Lyrik}“, medens Johannes Climacus derimod leverer et
+„\emph{existentielt Indlæg}“.
+
+Jeg udtaler denne Paastand uden Omsvøb, ikke blot
+fordi jeg mener at være vis i min Sag, men navnlig
+fordi det jo egentlig er Prof. Scharling, hvem man,
+hvad Benegtelsen angaaer, med Rette kan paalægge \textit{onus}
+\textit{probandi}. Vil altsaa Prof. Scharling staae ved sit Ord,
+og kan han klart bevise mig, at Mag. K. har i de
+nævnte Skrifter forandret Standpunkt. at det Paradox, % PRINTED AS IS: Standpunkt. at (a point, or a comma without its tail)
+% --- p. 16 ---
+\setcounter{footnote}{0}%
+\opage{16}der stilles af Johannes \textit{de silentio}, er et ganske andet og
+i et ganske andet Forhold. til \textit{Absurdum}, end det, der % PRINTED AS IS: the point after Forhold
+stilles af Johannes Climacus\footnote[1]{Thi at Johannes \textit{de silentio} taler om Abrahams Tro, Johannes Climacus derimod om den christelige Tro, gjør her, hvor det netop gjælder om at udvise Troens Sphære, ingen Forskjel.}; da, ja da skal jeg ikke
+blot være villig i al Gemytlighed at lade mig „nach
+Hause schicken“, men endog ovenikjøbet gjøre „Apologetiken“
+Afbigt og forgylde „den kritiske Indledning“.
+
+Da det imidlertid let kunde træffe sig, at Prof. S.
+blev Beviset skyldig, og just derved kom til at bevise lidt
+meer, end han egentlig vilde, skal jeg for dette Tilfældes
+Skyld ikke her undlade at anføre Noget, som idetmindste
+i mine Øine betydelig taler til hans Undskyldning. Idet
+Hs. H. gjennemlæste de „udførligere Bedømmelser“ af
+Dr. Martensens Dogmatik, er det uden Tvivl hændet
+ham, at han saa vel paa „Dogmatikens“ som i det Hele
+paa “Tyeologiens“ Vegne har følt sig yderst ubehagelig % PRINTED AS IS: Tyeologiens (for Theologiens), between two high quotes; 2x zoom
+afficeret. I sin bekymrede Stemning er han da ved en
+ganske naturlig Idee-Association kommen til at tænke
+først paa Mag. Kierkegaards Paradox, saa paa mit Paradox,
+saa paa Mag. Stillings Paradox, derefter ved en
+ligeledes ganske naturlig Idee-Association paa „Proudhon“,
+„Max Stirmer“, ja paa Proudhons og Max % PRINTED AS IS: Stirmer (for Stirner; 2x zoom)
+Stimers „Consorter“ tilligemed de øvrige „forfængelige % PRINTED AS IS: Stimers (for Stirners; 2x zoom)
+Middelmaadigheder“ (\textit{les mediocrités ambitieuses}), som
+„forøge Forvirringen ved at kaste hver sit Paradox ud i
+Verden“; det har da i et saa bekymret Øieblik været
+ham, som om han saae Pandoras aabne Æske og grandgivelig
+saae, at Æsken var fuld af --- lutter Paradoxer;
+% --- p. 17 ---
+\setcounter{footnote}{0}%
+\opage{17}det har da i et saa bekymret Øieblik heller ikke været
+Hs. H. let at hitte Rede i Paradoxerne, men alle Paradoxer,
+christelige, uchristelige, socialistiske, communistiske,
+danske, franske, tydske, spanske, kort: alle Verdens virkelige
+og uvirkelige Paradoxer have viist sig for ham i en
+saadan Mangfoldighed og forvildet sig saaledes imellem
+hverandre, at det saa tilsidst slet ikke har været ham muligt
+at adskille, hvilket der var hvilket.
+
+Et Hovedtræk, der ligeledes charakteriserer den Scharlingske
+Apologie, er en vis litterær Glemsomhed, en gemytlig
+Glemsomhed, der i adskillige Punkter forraader, at
+den høiærværdige Forfatter vistnok ikke altid maa have
+den troeste Hukommelse. Hvorfor Prof. Scharling ikke
+just er nogen synderlig Velynder af den philosophiske
+Speculation, bekjender han selv, og jeg behøver altsaa
+ikke nærmere at forklare ham Grunden; men, at Prof.
+Scharling (hvis han ellers ikke i al Stilhed har forandret
+sin tidligere Mening) heller ikke er nogen særdeles
+Velynder af den theologiske Speculation, vilde jeg endogsaa
+temmelig let kunne bevise ham, hvis jeg blot turde
+stole en Smule paa hans litterære Hukommelse.
+
+Den Anskuelse af Forholdet imellem Tro og Viden,
+der ligger til Grund for Dr. Martensens Dogmatik, er
+ganske vist den samme Anskuelse, som den, der ligger til
+Grund for min Udvikling af Pauli Brev til Romerne\footnote[1]{Hermed vil jeg dog ingenlunde have paastaaet, at min Udviklingsform skulde være ligesaa classisk som Dr. Martensens (jeg er nu engang ingen „Genius“), heller ikke har jeg i hiint Ungdomsforsøg kunnet sammenarbeide slet saa mange ueensartede Elementer, som Dr. Martensen med saa megen plastisk Kraft har gjort i det fuldendte Værk, hvori „en mystisk Livsaande udøver en lønlig fængslende Magt over den uhildede Læser“. Hvad jeg paastaaer, er kun dette, at „Grundanskuelsen“ er væsentlig den samme, og vedbliver med denne min Paastand, indtil jeg seer et lille Beviis for det Modsatte.}.
+% --- p. 18 ---
+\setcounter{footnote}{0}%
+\opage{18}At Prof. Scharling imidlertid maa have glemt denne
+lille Omstændighed, er klart nok af de Ord, hvormed han
+(S 371) imødegaaer Kritikens Indvendinger imod den
+store Sætning, at Dogmatikeren er „\emph{paa een Gang sin}
+\emph{Videnskabs og sin Kirkes Organ.}“ Det hedder
+saaledes: „Men enhver saadan Betragtning, der i den
+historiske Udvikling anerkjender noget Relativt og Bevægeligt,
+bliver afviist af en Kritik, der, medens den gjør
+Andre Bebreidelsen for at være blevet staaende paa det
+eengang indtagne Standpunkt, selv ikke har løsrevet sig
+fra sit forrige Standpunkt i den Henseende, at den jo fra
+dette har beholdt ligesaavel den abstracte Opfattelse af
+„absolut Viden“, „objectiv Vished“, „sammenhængende Erkjendelse“, som Forestillingen om den christelige Tro
+enten som et afsluttet Indbegreb af visse uforanderlige
+Læresætninger eller som en aldeles uklar og ubestemmelig
+Følelse“. --- Dersom nu Prof. Scharling, da han nedskrev
+disse mærkelige Linier, bare havde husket sig lidt om,
+og besindet sig paa det Begreb af „absolut Viden“,
+„objectiv Vished“, „sammenhængende Erkjendelse“, jeg f. Ex.
+har udviklet i min propædeutiske Logik, \textit{item} paa det theologiske
+Erkjendelsesprincip, der gaaer igjennem mit Romerbrev,
+vilde H. H. ganske vist have strøget den hele
+Passus, som aldeles ikke passende paa mig, skjøndt det
+dog netop er mig, der har angrebet hiin store Sætning
+af Dr. Martensen. Skulde det nemlig være sandt, hvad
+% the note *) of p. 17 runs over onto the foot of p. 18 (from „hvori „en mystisk Livsaande“): set in full at its mark
+% --- p. 19 ---
+\setcounter{footnote}{0}%
+\opage{19}Prof. Scharling paastaaer, at jeg nu har en aldeles abstract
+Opfattelse af „absolut Viden“, objectiv Vished“, % PRINTED AS IS: no opening quote before objectiv
+„sammenhængende Erkjendelse“, saa maa det dog i det
+mindste være usandt, hvad dog Prof. Scharling i samme
+Aandedræt ligeledes paastaaer, at jeg i denne Henseende
+ikke har kunnet løsrive mig fra mit forrige Standpunkt,
+thi i de to anførte Skrifter er min Opfattelse af „absolut
+Viden“ og „objectiv Vished“ endda ikke saa ganske
+abstract; men det er nu eengang en Fatalitet med den
+litterære Glemsomhed!
+
+Dengang Prof. Scharling recenserede min Udvikling
+af Romerbrevet, var Aanden i den theologiske Speculation
+ham endnu en fremmed og ubekjendt Størrelse,
+og derfor kunde han --- til min Forbauselse ---
+da heller ikke finde Aanden. Nu derimod, da Dr.
+Martensen „med sædvanlig Klarhed har udtalet sig i Indledningen
+til sin Dogmatik paa en Maade, som i det
+Hele vil findes ligesaa tiltalende som tilfredsstillende for
+den, der ikke har opgivet Overbeviisningen om, at Menneskets
+aandelige Væsen udgjør en Eenhed“, nu faaer
+Prof. Scharling pludselig Syn paa Aanden, anerkjender
+Principet, og optræder saa i al Gemytlighed som Apologet
+for den theologiske Speculation.
+
+Men hvorledes skal jeg nu forklare mig dette Særsyn?
+Jeg antager ingenlunde, at Prof. Scharling forsætlig
+har villet være partisk eller gjøre mig Uret; meget
+mere troer jeg at have opdaget et Synspunkt, hvorfra
+det Hele lader sig forklare paa en ligesaa naturlig som
+gemytlig Maade. Pointen ligger i, hvad H. H. kalder
+„de aandelige Bevægelsers Constellation“. Saalidet Prof.
+Scharling nogensinde kan antages at have været partisk
+imod „Speculationen“, saa lidet kan han endnu antages
+% --- p. 20 ---
+\setcounter{footnote}{0}%
+\opage{20}at være partisk imod „Paradoxet“. Prof. Scharling holder
+vist i Grunden ligesaa meget af „Paradoxet“ som af
+„Speculationen“, og ønsker kun, at de kjønt skulle skjønne
+derpaa og forliges smukt indbyrdes. Naar Prof. Scharling
+altsaa for Tiden taler lidt haardt til „Paradoxet“
+og udtrykker sig lidt anderledes om „Speculationen“, end
+han forhen har gjort, da er Aarsagen hertil neppe at
+søge i nogen væsentlig Forandring i Prof. Scharlings
+„Grundanskuelse“; men „her tilbyder sig strax en naturligere
+og værdigere Forklaring, naar vi gaae tilbage i Tiden,
+og agte paa Forskjellen i de aandelige Bevægelsers
+Constellation.“
+
+I de Dage, da Troesspeculationen var saa „hovmodig“,
+og saae saa fornemt ned paa den „kritiske Indledning“,
+i de Dage, da der overhovedet gik „en haard
+Dom over alle Videnskabsmænd og Skribenter, som ikke
+vilde eller ikke kunde“ --- give sig af med Speculationen,
+i de Dage var Prof. Scharling kun lidet fornøiet med
+det hele Speculationsvæsen, enten det saa for Resten
+var philosophisk eller theologisk. Ikke uden en vis indre
+Tilfredsstillelse hilsede Hs. H. saa de Dage, da en ligesaa
+berettiget, som uimodstaaelig Polemik reiste sig imod
+det besværlige System, og gjorde „Speculationen“ komisk;
+forsaavidt fulgte Prof. S. da „Paradoxet“ med „Bifald og
+Interesse“ --- Men saa kom igjen de Dage, da „Speculationen
+krøb til Korset, og næsten grædefærdig over
+„Paradoxets Vilkaarlighed“ udøste sin Kummer i „den
+kritiske Indlednings“ følelsesfulde Barm; og de Dage ere
+vel saa omtrent disse Dage, og i disse Dage har Prof.
+Scharling da ogsaa følt, at det endelig gaaer forvidt, og
+desaarsag besluttet at sige et opmuntrende Ord til den
+% --- p. 21 ---
+\setcounter{footnote}{0}%
+\opage{21}dybt nedbøiede „Speculation“ og holde Styr paa det
+uartige „Paradox.“
+
+Ingenlunde skal man derfor beskylde Prof. Scharling
+for den Anmasselse at ville udjævne Differenserne i de modstridende
+Anskuelser eller, som det hedder, „mediere“ Speculationen
+med Paradoxet; nei, saa høit sigter Prof. S.
+ikke; han tænker kun som saa: enhver af Potenserne kan
+være god for sig, naar de kun i gjensidig Anerkjendelse
+ikke genere hinanden eller hindre hinandens „Berømmelse“.
+Til Prof. Scharlings Berømmelse være det da sagt, at
+man, ifølge hans gemytlige Apologie, ingenlunde bør gaae
+strengt i Rette med de modsatte Opfattelser og de ueensartede
+Principer, men derimod (S. 373) „bidrage man
+til Anerkjendelse og Paaskjønnelse af enhver Bestræbelse,
+som med Begeistring for sit Maal og med beskeden Erkjendelse
+af de Kræfter, der ere forundte til dets Opnaaelse,
+gaaer ud paa at stille de Sandheder, hvorpaa
+de enkelte Menneskers og den hele Menneskeslægts evige og
+timelige Vel beroer, i et klarere Lys, at begrunde dem
+dybere, og paa denne Maade bidrage til at vække og
+bevare Ærefrygt og Hengivenhed for deres velgjørende
+Indflydelse.“
+
+At der nu ogsaa virkelig kan ligge en smuk Følelse
+til Grund for en saa gemytlig Formaning, maa indrømmes;
+det er barnlige Forestillinger; men Vanskeligheden er, at
+slige barnlige Forestillinger Intet bevise i en videnskabelig
+Discussion.
+
+Dersom jeg imidlertid paastod, at der i den hele gemytlige
+Apologie intetsteds var gjort nogen Anstalt til at
+opklare det videnskabelige Stridspunkt, vilde jeg dog gaae
+forvidt. Der er virkelig et Sted, hvor Hs. H. kommer
+i Tanker om, at han dog ogsaa burde angive Pro%
+% --- p. 22 ---
+\setcounter{footnote}{0}%
+\opage{22}blemet; dette Sted findes S. 367, og lyder saaledes:
+„Det er klart, at Løftestangen i den Dialektik, som her
+benyttes, er Spændingen af Begrebet: „\emph{Viden,}“ „\emph{Vished,}“
+„\emph{sammenhængende Erkjendelse}“, til en saadan
+Grad af „Absoluthed“ og „Objectivitet“, at den enten
+ingen Anvendelse finder“ o. s. v.
+
+Altsaa i den urimelig overdrevne Spænding af Begrebet:
+„Viden“, „Vished“, „sammenhængende Erkjendelse“,
+vil Prof. Scharling see den „Løftestang“, hvormed
+en altfor nærgaaende Dialektik har forsøgt at løfte
+„den christelige Dogmatik“ af de speculative Hængsler.
+Hvorledes det nu er gaaet til, at Prof. Scharling just har
+faaet Syn paa dette Begreb, og saa troet, at det var Løftestangen,
+er ikke vanskeligt at gjætte. Da Prof. Martensen
+rykkede frem med sin store Dogmatik, og vilde gjøre
+Plads til Høire og Venstre, var Begrebet: „sammenhængende
+Erkjendelse“, netop det Varsko, hvormed han betydede „de absolute i Troen“ og „de absolute i Viden“,
+at de nu maatte gaae af Veien, og ikke komme ham for
+nær med deres „Strøtanker og Aphorismer, Indfald
+og Glimt.“ Da jeg nu i denne Trængsel blev betagen
+af Forskrækkelse, og var i Angst for at blive ynkelig
+overkjørt, greb jeg efter „Løftestangen“, og fandt den heldigviis
+i „Paradoxet“ hos „Johannes Climacus“. For
+imidlertid at minde Læseren om den forblommede Udfordring,
+der syntes at lyde saa kjækt i det Martensenske Slagord,
+lod jeg i min „undersøgende Anmeldelse“ Begrebet:
+„sammenhængende Erkjendelse“, løbe med som en lille
+glaneur, at der i Tilfælde af, at „Løftestangen“ gjorde
+sin Virkning, ikke skulde spildes noget Ax af det speculative
+Læs. Hvorledes jeg for Resten indbilder mig at
+have brugt „Løftestangen“, er tydeligt nok af min sidste
+Thesis: „\emph{den christelige Dogmatik er princip}%
+% --- p. 23 ---
+\setcounter{footnote}{0}%
+\opage{23}\emph{løs}“. --- At nu Prof. Scharling ikke er falden paa at
+søge „Løftestangen“ i denne Thesis, forekommer vistnok høist
+besynderligt, da Stangen jo ellers er følelig nok; men, som
+sagt, jeg frygter meget, at Hs. H. har sine egne Meninger
+om, hvad et Princip er.
+
+At jeg paa ingen Maade har kunnet bruge Begrebet:
+„sammenhængende Erkjendelse“, som „Løftestang“,
+vil Enhver indsee, der overhovedet veed, hvad en Løftestang er.
+En Løftestang maa jo være fast og stærk; men Begrebet: „sammenhængende
+Erkjendelse“, er just et meget blødt og bøieligt
+Begreb, der snoer sig i alle mulige Grader. Der
+gives jo mange Slags Sammenhæng og mange Grader
+i enhver Sammenhæng; der gives reel Sammenhæng,
+ideel Sammenhæng, fast Sammenhæng, løs Sammenhæng:
+Alt, selv den gemytlige Apologie har sin Sammenhæng; hvis Prof. Scharling altsaa i Kategorien:
+Sammenhæng, mener at have fundet en Stang, kan det
+visselig ikke være en „Løftestang“; det maa da vel være --- en anden Stang; dog vel aldrig en Liimstang!
+
+Til Løn for sin ædle Stræben at kuske „Paradoxet“
+og holde Orden i Litteraturen, venter Prof. Scharling,
+at „de Mænd, mod hvis Adfærd han nu har erklæret
+sig“, skulle kjølne „deres Harme i en Philippika ---
+hvorved han forudseer en ikke mindre ublid Behandling,
+end den, Marsyas erfarede af den fortørnede Gud.“ ---
+Ak! hvor det dog i denne Verden gaaer underlig omkring
+med den menneskelige Forudseen. Jeg forudsaae nu saavist,
+at jeg skulde faae et Svar fra Prof. Martensen,
+og see, saa faaer jeg --- en Apologie fra Prof. Scharling;
+Prof. Scharling forudseer saa igjen, at han vil
+faae „en Philippika“ fra mig, og see, saa faaer han
+--- et Par gemytlige Ord.
+
+Det er da for Resten besynderligt nok, at Prof. S. har
+kunnet „forudsee“, at hans gemytlige Apologie virkelig skulde
+% --- p. 24 ---
+\setcounter{footnote}{0}%
+\opage{24}fortjene en Philippika, og derved tillige forudsee, at det vilde
+gaae ham som Marsyas; denne Forudseen maa da vist ogsaa
+hidrøre fra en af de mørke Muligheder, han stundom
+seer, naar han seer Paradoxerne i Pandoras Æske.
+Hvad mig anbelanger, kan Hs. H. saamænd være rolig
+for, at jeg aldrig skal hjemsøge ham med nogen Philippika,
+eller kjølne min Harme paa en uskyldig Mand, der
+vist aldrig vil vække min Harme. Jeg har i mine Skrifter
+aldrig yttret nogen Harme mod Prof. Scharling, aldrig
+udfordret Prof. Scharling, og, reentud sagt, sjeldent % PRINTED AS IS: reentud (for reent ud)
+tænkt paa Prof. Scharling. Vil Prof. S. desuagtet
+godhedsfuld vedblive, som hidtil, at tænke paa mig, vise
+mig lidt til Rette og tage sig af min Opdragelse, skal
+jeg ogsaa vide at paaskjønne det i al Stilhed; kun maa
+Prof. S. ikke tage det ilde op, om han kun sjeldent seer
+skriftligt Beviis paa min Taknemmelighed; jeg har, som
+sagt, en Frygt for at indlade mig formeget med Prof.
+Scharling, der altid ængster mig med sine mørke Muligheder.
+
+
+At nu Mulighederne kunne være mørke nok, skulde
+jeg, der ikke er sikker fra nogen Side, men kun subsisterer
+ved at troe det Bedste og frygte det Værste, da ogsaa
+allermindst fordriste mig til at benegte. Men selv
+om det Værste skulde skee, selv om det engang skulde
+ske, at enten „Paradoxet“ eller „Speculationen“ fandt
+sig beføiet til at paategne mig mit Skudsmaal, give
+mig Afsked som en ubrugelig Tjener, og stikke mig ---
+„nach Hause“; saa vilde jeg dog, idet jeg stikkes „nach
+Hause“, ret gjerne medtage den Trøst, at „den theologiske
+Videnskab“ omsider maatte have fundet sit Princip, og
+derhos tillige bevaret den Overbeviisning, at Professor
+Scharlings „aandelige Væsen udgjør en Eenhed.“
+
+\begin{center}\rule{4em}{0.4pt}\end{center} % a small ornamental rule closes the text
+
+\end{document}
