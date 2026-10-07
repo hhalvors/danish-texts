@@ -1,0 +1,2428 @@
+% =====================================================================
+%  R. Nielsen, OM SKJÆBNE OG FORSYN.  Kjøbenhavn: Otto Schwarz, 1853
+%  (Berlingske Bogtrykkeri).  83 pp.  Fraktur.  Reissued unchanged 1867 as
+%  »Om Tilværelsens ideale Magter: Skjæbne og Forsyn« (83 pp.).
+%
+%  TRANSCRIPTION -- GENERATED; DO NOT EDIT BY HAND.  Rebuild, chained (&&), from the repo root:
+%    python3 ebook-method/skjaebne-og-forsyn/draft.py --emit --force
+%      this template + the scan's text layer (Google's OCR in the Google Books scan of the
+%      British Library copy, books.google.com/books?id=tHRZAAAAcAAJ;
+%      ~/bibliotek/Nielsen, Rasmus/1853-skjaebne-og-forsyn.pdf, see SCANS.tsv);
+%    python3 ebook-method/collate/check.py skjaebne-og-forsyn --witness ocr --apply
+%      the decisions in decisions.tsv, taken against tesseract's independent reading of the images;
+%    python3 ebook-method/skjaebne-og-forsyn/oepass.py --apply
+%      the ø pass (lexicon + 147 tight word crops read at the image, oe-reads.tsv);
+%    python3 ebook-method/skjaebne-og-forsyn/finish.py --apply
+%      headings, the footnote, divided words, emphasis, PRINTED AS IS marks (each from a reading at the image).
+%
+%  WORD-ACCURACY (2026-10-07; IN PROGRESS).  No e-book, no earlier transcription exists.  The draft (Google's OCR
+%  layer) was collated word by word, with punctuation and word division, against tesseract (tessdata_best
+%  script/Fraktur), with deu_latf and frak2021 as third and fourth readings: 1264 disagreements.  198 settled by
+%  check.py's own rules, 786 by rules.py (each decision named; a blind audit of 46 of them, mixed into the crops,
+%  found no rule error); the rest at the image, in BLIND crops read by three Sonnet readers who saw neither OCR
+%  reading (6 of 6 planted controls read right), and a few by hand from the readers' notes.  The ø (read o by every
+%  OCR): lexicon + 147 tight word crops (for/før ...).  Title page, headings, the one footnote (p. 50), the page
+%  heads of pp. 3 and 5 and the residue were read at the image (structure reader); emphasis (letter-spacing, bold)
+%  from 80 word crops.
+%
+%  SWEEP (2026-10-07): every word of the text not attested elsewhere in the corpus (97, proper names aside) read at
+%  the image in a crop: 8 mended (word-fixes.tsv: Ære for the layer's „Wre“ x3, Lysenes, gjælder, timelig,
+%  personlige, og), the rest confirmed as printed.  Emphasis: every span re-read as a whole line (r-sweep.tsv L lines).
+%
+%  SAMPLED PAGE CHECK (2026-10-07, pagecheck.py; seed 20261007: pp. 10, 29, 42, 50, 57, 60, 67, 1177 words, transcribed
+%  BLIND at the image and compared word by word, every difference settled): 5 word errors (4.25 / 1000, 95 % upper 8.9)
+%  and 2 of punctuation.  Four of the five belonged to two classes of fault that the layer AND tesseract share, so the
+%  collation could not see them: the Fraktur Ø read as D (Øie, Øieblik, Øiekast, Øine) and j read as i after g/k (gjør,
+%  afgjørende, kjende, skjøndt, gjengjældende).  Every occurrence of both classes in the book (49) was looked at in a line
+%  crop and mended (finish.py CLASS; Forskiellen p. 8 and Kiød p. 82 are printed with i).  The fifth: sheet signatures
+%  (1*, 2*, 4*, 5*) had been kept in the text; all dropped.  Punctuation: „Lidenskaben?“ (p. 10) and four more marks lost
+%  where a blind reading's box stopped short of them, restored; „men — dersom“ (p. 42).
+%
+%  SECOND READING BY TRANSLATION (2026-10-07).  Two translators listed 36 odd spots; all were read at the image in line
+%  crops (main session).  15 transcription faults mended (finish.py TRFIX): a page's lost first word („Middel-|maadighed“,
+%  p. 11), specks read as marks (Det,. p. 7; De -moralske p. 10; skal. p. 82; In-. p. 80), „j“ for i (p. 34), straight
+%  quotes (p. 36), a stray closing quote (p. 54), a false paragraph break inside a quotation (p. 64), letere/lettere
+%  (p. 74), gage/gaae (p. 82); and two words the rule `tokens` had glued on letter-spaced lines (EdersFiender p. 29,
+%  personligeOpgaver p. 58), found by prescreen.py before dispatch.  Six more misprints confirmed and marked (Jorgens,
+%  Personligligheden, Ham.,, hiælper, Nøst, deri,.).
+%
+%  NOT ESTABLISHED (yet).  EMPHASIS is the least certain layer: the print letter-spaces its Scripture quotations
+%  throughout, and the extent of the runs on pp. 29 (Eder: „elsker Eders Fiender …“), 42 („Ja endog alle Eders
+%  Hovedhaar …“ -- since settled), 55-58 („den, som giør fattig …“) has not been set; on p. 48 („det umuligt, men for Gud
+%  ere alle Ting mulige“) the line reader saw bold where the word reader saw spacing; „hvorledes“ (p. 4) and „ikke“
+%  (p. 30) are set on one reading against another.  (The p. 42 quotation is now spaced throughout, seen at the image.)  Open: „op voxte“ across the page turn pp. 12-13 (one word?);
+%  „paà“ (p. 20, a grave-like mark, kept as the layer read it).  No whole page has yet been read blind against the text.
+%  PRINTED AS IS: „ørgeligt“ for sørgeligt (p. 18); „den Rige. en“ (p. 56).
+%
+%  PAGE MAP.  printed p = PDF page - 2 throughout (p. 3 = PDF 5, p. 83 = PDF 85); folios of 79 pp. read
+%  off the layer, all consistent (to be confirmed at the image).  PDF 3: title, p. [1]; PDF 4: p. [2];
+%  PDF 86: the British Library's stamp; PDF 88: Otto Schwartz's advertisement (not transcribed).
+%
+% =====================================================================
+\documentclass[12pt,a4paper,openany]{book}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{libertinus}
+\usepackage{graphicx}
+\DeclareUnicodeCharacter{0254}{\reflectbox{c}}  % ɔ (U+0254) = reversed c
+\DeclareUnicodeCharacter{A75B}{r}   % r rotunda (ꝛc. = etc.)
+\usepackage[danish]{babel}
+\usepackage[protrusion=true,expansion=true]{microtype}
+\usepackage{setspace}
+\usepackage[margin=1.3in]{geometry}
+\usepackage{fancyhdr}
+\usepackage{hyperref}
+\hypersetup{pdftitle={Om Skjæbne og Forsyn}, pdfauthor={Rasmus Nielsen}, hidelinks}
+\setlength{\headheight}{15pt}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LE,RO]{\thepage}
+\fancyhead[C]{\textit{R. Nielsen: Om Skjæbne og Forsyn (1853)}}
+\renewcommand{\thefootnote}{\ifcase\value{footnote}\or *)\or **)\or ***)\else
+  \arabic{footnote})\fi}
+\setstretch{1.3}
+\usepackage{marginnote}
+\newcommand{\opage}[1]{\marginnote{\footnotesize\textit{[#1]}}}
+\newcommand{\apage}[1]{\marginnote{\footnotesize\textit{[#1]}}}
+% headings as printed (read at the image, .parts/notes/r-struct.tsv): the Indledning and the part titles in large
+% Fraktur, the part letters A./B./C. and section numerals I.-IV. in bold antiqua, section titles in bold Fraktur; a short
+% rule under each part title; in B, sections I and II take a bold Scripture verse as their title (\motto)
+\newcommand{\overskrift}[1]{\begin{center}{\Large #1}\\[0.3em]\rule{3em}{0.4pt}\end{center}\addcontentsline{toc}{section}{#1}}
+\newcommand{\afdeling}[3][]{\begin{center}\ifx&#1&\else#1\\[0.6em]\fi\textbf{#2}\\[0.3em]{\Large #3}\\[0.3em]\rule{3em}{0.4pt}\end{center}\addcontentsline{toc}{section}{#2 #3}}
+\newcommand{\delafsnit}[1]{\begin{center}{\Large\textbf{#1}}\end{center}\addcontentsline{toc}{subsection}{#1}}
+\newcommand{\stykke}[2]{\begin{center}\ifx&#1&\textbf{#2}\else\textbf{#1}\ifx&#2&\else\\[0.2em]\textbf{#2}\fi\fi\end{center}}
+\newcommand{\motto}[1]{\begin{quote}\textbf{#1}\end{quote}}
+
+\begin{document}
+
+% --- PDF 3, the title page, p. [1], read at the image 2026-10-07 (.parts/notes/r-struct.tsv, F3): Fraktur
+% throughout but the year (antiqua); an ornamental rule (drawn plain) between the author and the imprint.  The print has
+% „Schwartz“ (the layer read Schwarz; KB's catalogue has Schwarz).  The verso, p. [2] (PDF 4), is blank.
+\begin{titlepage}
+\begin{center}
+\vspace*{4em}
+{\Large Om}\\[1em]
+{\Huge Skjæbne og Forsyn}\\[1.5em]
+af\\[1em]
+{\Large\textbf{R. Nielsen,}}\\[0.5em]
+{\small Professor i Philosophi ved Kjøbenhavns Universitet.}\\[3em]
+\rule{8em}{0.4pt}\\[3em]
+\textbf{Kjøbenhavn.}\\[0.5em]
+Forlagt af Otto Schwartz.\\[0.5em]
+{\small Berlingske Bogtrykkeri.}\\[0.5em]
+\textit{1853.}
+\end{center}
+\end{titlepage}
+
+% ===== TEXT (pp. 3--83) =====
+% --- p. 3 ---
+\setcounter{footnote}{0}%
+\opage{3}\overskrift{Indledning.}
+
+Det er umuligt ved en almindelig Betragtning af de
+historiske Begivenheder at erkjende Forskjellen mellem
+Skjæbne og Forsyn.
+
+Da Jerusalem blev forstyrret, da sagde Jøden:
+„det er Jehova, der hævner sin Lovs Overtrædelse“;
+da sagde Nazaræeren: „det er den Korsfæstedes Blod,
+der kommer over Folkets Hoved“; men Romeren sagde:
+„det er Skjæbnen.“
+
+Som nu Jøden, Nazaræeren og Romeren dengang
+dømte, hver efter sin Stemning og sit Standpunkt,
+saa dømmer endnu den Dag idag hvert Parti og
+hvert Menneske efter sin Stemning og sit Standpunkt
+om enhver historisk Begivenhed. Det kommer altsaa
+ikke an paa Begivenheden, men paa Stemningen og
+Standpunktet.
+
+Det er umuligt ved en almindelig Betragtning af
+de enkelte mærkelige Tildragelser i de enkelte Menneskers Liv at gjøre Forskjel imellem Skjæbne og Forsyn.
+
+To Mennesker kunne i det Udvortes opleve de
+samme Hændelser, komme i de samme Farer,  frelses
+% --- p. 4 ---
+\setcounter{footnote}{0}%
+\opage{4}paa samme uventede og vidunderlige Maade: den Ene
+seer i alt Dette et Skjæbnens Spil, den Anden seer
+et Forsyn. Det kommer altsaa slet ikke an paa,
+hvad det er, der opleves, men \emph{hvorledes} det opleves;
+det kommer ikke an paa Tildragelsen, men paa
+Tænkemaaden.
+
+Det er umuligt for et Menneske at faae sin Tro
+paa Forsynet ligefrem stadfæstet ved de Begivenheder,
+der møde ham; thi han maa jo tyde alle Begivenheder
+efter sin Tro. Kommer Medgang: det er Forsynet;
+kommer Modgang: det er ogsaa Forsynet; er Alt i
+Tilværelsen forstaaeligt og lykkeligt, og Fremtiden lys:
+det er Forsynet; er Alt i Tilværelsen forvirret og
+besværligt, og Fremtiden mørk: det er ogsaa Forsynet.
+
+Den, der ikke saaledes i Alt underordner sin egen
+menneskelige Dom under sin Tro paa Forsynet, troer
+slet ikke paa Forsynet.
+
+Men, naar Begivenhederne saavel i Historien som
+i de enkelte Menneskers Liv lade sig udtyde paa saa
+høist forskjellig Maade: saa kunne vi jo, hvad Skjæbne
+og Forsyn angaaer, Intet, aldeles Intet lære af Begivenhedernes
+Gang.
+
+% --- p. 5 ---
+\setcounter{footnote}{0}%
+\opage{5}\afdeling{A.}{Om Skjæbnen.}
+\stykke{I.}{Hvad er Skjæbnen?}
+
+Den kolde, ubøielige og dog saa lunefulde,
+vilkaarlige Magt, vi kalde Skjæbne, er væsentlig
+begrundet i Naturtingenes indbyrdes Sammenhæng,
+i Tilværelsens lovbestemte Orden,
+altsaa i Verdensfornuften selv.
+
+Fornuftloven og den ved samme betingede
+Nødvendighed er imidlertid i og for sig endnu
+ingenlunde at kalde Skjæbne. Forsaavidt de
+tilværende Ting umiddelbart underordne sig de
+almeengyldige Love, er Nødvendigheden, den
+ydre saavelsom den indre, at betragte som Vexelvirkningens,
+Heelhedens og Harmoniens Grundlag.
+Stjernernes Gang, Aarstidernes Vexel,
+% --- p. 6 ---
+\setcounter{footnote}{0}%
+\opage{6}Planternes Væxt, alt Sligt er begrundet i Natursammenhængen,
+og forsaavidt i Nødvendigheden;
+men her er ingen Skjæbne.
+
+Først i Dyreverdenen, hvor det individuelle
+Liv yttrer sig med Selvfornemmelse og selvisk
+Formaal, begynder Skjæbnen at dæmre. Hvad
+kan et Dyr ikke lide; hvor forskjellig er ikke i
+denne Henseende Dyrenes Skjæbne: den fangne
+Fugl og den frie Fugl have hver sin Skjæbne;
+og nu Huusdyrenes Skjæbne, --- dersom Heste
+og Æsler kunde tale!
+
+Men Heste og Æsler kunne ikke tale; denne
+Ufuldkommenhed mildner deres Skjæbne. Dyrets
+Afhængighed af Instinctet, dets Fortabthed
+i Øieblikket, dets Bevidstheds Dunkelhed, der
+tilslører Fremtidens Muligheder og skjuler det
+Forbigangne i Glemsel, forhindrer det fra at
+sætte sig som fri Selvhensigt, bøier det mildt
+under Naturnødvendighedens Aag, og er som
+et Dække, der afbøder Skjæbnens Slag.
+
+Kun hvor der er en Selvhensigt, en Villiens
+Plan, et personligt Maal, kan der være
+Tale om en Magt, der kuer Hensigten, hindrer
+Planen og forstyrrer Maalet. Blandt alle Jorgens Skabninger er derfor Mennesket den eneste,  % PRINTED AS IS: p. 6 „Jorgens“ for Jordens (seen at the image)
+% --- p. 7 ---
+\setcounter{footnote}{0}%
+\opage{7}hvem Naturen har indrømmet det store, tvetydige
+Fortrin, at han i egentlig Forstand, saalænge
+han staaer paa Verdslighedens Grund,
+skal staae under Skjæbnen. Rige Anlæg, mægtig
+Villie, dristig Aand, alle Personlighedens
+naturlige Gaver kunne ikke frelse ham fra den
+mørke, gaadefulde Magt; thi jo større Personligheden
+er, desto mægtigere er Skjæbnen.
+Skjæbnen er alt det Personliges Fiende; derfor
+maae Guderne føle deres Magt, derfor maa
+Jupiter med sin Lynstraale bøie sig under Fatum.
+
+\stykke{II.}{Skjæbnens Herredømme.}
+
+Er det et Skjæbnens Særkjende, at den
+overalt træder Personligheden fiendtlig imøde;
+saa følger jo heraf, at dens Herredømme
+maa være ligesaa udstrakt, som den personlige
+Stræben.
+
+I de timelige Goders Erhvervelse, i Ideernes
+Sphære, ja selv i det Moralske, maae vi
+skjelne imellem Det, der beroer paa os, og
+Det, der ikke beroer paa os. Dersom nu Det,
+der ikke beroer paa os, tog Hensyn til vor
+personlige Trang, og kom vor fornuftige Villie
+% --- p. 8 ---
+\setcounter{footnote}{0}%
+\opage{8}til Hjælp, saa var det ikke Skjæbnen, men en
+høiere, Alt styrende Viisdom. Verdslig seet,
+er det Omvendte just Tilfældet. Den almene
+Overmagt, hvoraf vor Stræben afhænger, er
+saa langt fra at ændse det Personlige i os, at
+den meget mere forholder sig ligegyldig, ja
+endog spottende dertil: dette er just det Fatale.
+
+Betragte vi Forskiellen mellem Sunde og
+Syge, Rige og Fattige, Høie og Ringe i Verden,
+da indsees det ved første Øiekast, at Fordelingen
+af de timelige Goder ingenlunde skeer
+efter Trang og Fortjeneste, men at den fordelende Verdensmagt har fulgt Vilkaarligheden,
+har ladet Held og Uheld, Lykke og Ulykke raade
+for Delingen, og saavel i Skikkelse af Lykke som
+Ulykke havt den menneskelige Personlighed til
+Bedste.
+
+Vende vi os fra det Udvortes til det Indvortes, da gjentager sig en lignende Vilkaarlighed.
+Det er et menneskeligt Fortrin at kunne
+hæve sig over det Partikulære, det Smaalige,
+sætte sig almeengyldige Formaal, det vil sige:
+leve for Ideer. Men dette Fortrin er ikke
+ligeligt for Alle; her møde vi jo den skjæbnesvangre
+Forskjel imellem de Begavede og de
+% --- p. 9 ---
+\setcounter{footnote}{0}%
+\opage{9}Ubegavede, de Aandrige og de Aandløse. Det
+Udtryk, at leve for en Idee, er desuden tvetydigt,
+saalænge det lades ubestemt, til hvilken
+Sphære Ideen hører. Der gives personlige
+og upersonlige Ideer.
+
+Kunstens, Videnskabens, Statens Ideer ere
+upersonlige; Moralens Idee er personlig.
+
+At leve for en upersonlig Idee er at give
+sig hen i det Upersonlige. Enhver aandig Hengivelse
+i det Aandige forhøier Selvfølelsen; derfor
+have Genierne og de Begeistrede en saa kraftig
+intensiv Leven i sig selv. Men det Upersonlige
+faaer tilsidst Overmagten. Det Inderlighedens
+Baand, der binder de Udmærkede til Ideen og
+gjør dem til dens kraftige Redskaber, er tillige
+den Lænke, hvori Skjæbnen fanger Personligligheden  % PRINTED AS IS: p. 9 „Personlig-|ligheden“, a syllable set twice at the line end
+og binder den til sit Hjul: Værket
+fuldendes, Mesteren gaaer tilgrunde; Ideen
+seirer, dens Redskab ligger sønderbrudt (en
+Columbus, en Kepler, en Mozart, en Fulton
+kunne, hver i sit Sprog, afgive Forklaring).
+Haard er Skjæbnen, naar den vilkaarlig fordeler
+de endelige Goder, leger med de Lykkelige
+og plager de Ulykkelige; men grusom er den,
+naar den som upersonlig Idee lister sig ind
+% --- p. 10 ---
+\setcounter{footnote}{0}%
+\opage{10}i Menneskets Indre og blodsuger Personligheden.
+
+For at modstaae Skjæbnen bør altsaa Mennesket
+give sig ind under den moralske Verdensorden
+og øve sig i Dyd, thi Dydens Idee er
+personlig. Dette Raad er gammelt og godt,
+men, verdslig forstaaet, utilstrækkeligt; saa langt,
+som Naturlovene gaae, gaaer ogsaa Skjæbnens
+Rige.
+
+Som vi med Hensyn paa de upersonlige
+Ideer skjelne imellem Begavede og Ubegavede,
+saaledes maae vi med Hensyn paa den moralske
+Idee gjøre Forskjel imellem ædle og uædle Naturer.
+De moralske Naturanlæg synes nemlig
+at være ligesaa vilkaarlig fordeelte, som Talenterne
+og de timelige Goder. Der gives Individer,
+der ikke kunne Andet end være fromme,
+dydige, elskelige, fordi det ligger i deres Natur;
+og der gives Individer, der af Naturen
+ere saa godt som prædestinerede til Forbrydelse.
+Vistnok har Mennesket, hvad man kalder en fri
+Villie; men hvad formaaer Villien imod Lidenskaben?
+hvad bliver det i Virkeligheden til
+med den moralske Villie, hvor Naturgrunden
+mangler? Halvhed, Hykleri, Qvakleri, Middel%
+% --- p. 11 ---
+\setcounter{footnote}{0}%
+\opage{11}maadighed! Villien griber først kraftig, naar den
+selv kraftig er greben, men den gribes kun kraftig
+af Det, som opgaaer for den indre Sands,
+og tilfredsstiller personlig. Har nu den moralske
+Idee alene sin Gyldighed i den personlige
+Selvtilfredsstillelse, saa er jo Den, der
+tilfredsstiller sig i det Slette, naar han virkelig
+tilfredsstiller sig, ligesaa berettiget, som Den,
+der tilfredsstiller sig i det Gode; Forskjellen
+sættes af Skjæbnen og udslettes igjen af Skjæbnen;
+thi Døden gjør os Alle lige: Døden er
+den sidste Skjæbne.
+
+\stykke{III.}{Kamp mod Skjæbnen.}
+
+Den verdslige Almeenaand er en upersonlig
+Aand, der vil fortære det menneskelige Selv;
+den verdslige Personlighed er i sin Grund en
+egoistisk Personlighed, som til Trods for det
+Almene vil hævde det menneskelige Selv. Imellem
+det upersonlige Almene og det egoistisk
+Personlige er Forholdet spændt. Det Upersonliges
+Overmagt i Forholdet er Skjæbnen; derfor
+strider Personligheden imod, og holder sig,
+saavidt den formaaer, i Kamp mod Skjæbnen.
+
+% --- p. 12 ---
+\setcounter{footnote}{0}%
+\opage{12}Efter den særegne personlige Fordring og
+den Maade, hvorpaa Fordringen drives igjennem,
+charakterisere vi Kampen som: den \emph{borgerlige, den heroiske og den moralske}.
+
+Den borgerlige Verden er Endelighedens,
+de timelige Goders Verden. Den fornuftige
+Villie kan da i en Verden, der er bygget paa
+lutter Betingelser, ikke tænke paa at gjøre
+nogen ubetinget Fordring eller kræve ubetinget
+Tilfredsstillelse. Det endelige Maal er en taalelig
+Tilstand: Personligheden bukker for Omstændighederne, og gaaer paa Accord med Skjæbnen.
+Men den Overeenskomst, der saaledes sluttes
+mellem det Egoistiske og det Almene, er alligevel
+forbigaaende, upaalidelig og falsk; de contraherende
+Parter ere væsentlig hinandens Fiender:
+den taalelige Tilstand bliver snart utaalelig, og
+Personligheden drives til Fortvivlelse. Den
+Mægtige trykker den Ringe, og den Ringe hader
+den Mægtige; den Rige foragter den Fattige,
+og den Fattige misunder den Rige; Lykken fordærver de Lykkelige, Ulykken de Ulykkelige; Fordærvelsen
+føder Forbittrelse, Forbittrelsen bryder
+ud i Oprør.
+
+Da Kadmus saaede Dragens Tænder, op
+% --- p. 13 ---
+\setcounter{footnote}{0}%
+\opage{13}voxte harniskklædte Mænd, der dræbte hinanden:
+disse harniskklædte Mænd ere Skjæbnens
+Sønner.
+
+Seet i Phænomenet, er det Menneskenes
+Oprør imod hverandre indbyrdes; væsentlig
+seet, er det den endelige, egoistiske Personligheds
+Oprør mod Skjæbnen. Seet i Phænomenet,
+er det en forandret Tilstand, en ny
+Tingenes Orden, der fremgaaer af Kampen;
+væsentlig seet, er det den samme Tilstand, den
+samme forbigaaende, upaalidelige, falske Overeenskomst
+mellem det Personlige og det Upersonlige, det Egoistiske og det Almene, altsaa
+endnu som før: den samme Skjæbne.
+
+I den borgerlige Spænding mellem det Selviske
+og det Almene maa Personligheden strax
+føle sig som den svagere; hvorfor den ogsaa
+bevæger sig imellem de to Yderligheder: føielig
+Underdanighed og fortvivlet Opsætsighed. Føler
+Personligheden sig derimod ligesaa stærk som
+det Almene, bliver Spændingen lidenskabelig
+aandig, og Kampen \emph{heroisk}.
+
+Den heroiske Villie nøies ikke med at modtage
+Betingelser, den vil selv foreskrive Betingelser;
+den tager ikke tiltakke med en taalelig
+% --- p. 14 ---
+\setcounter{footnote}{0}%
+\opage{14}Tilstand, den fordrer ubetinget Tilfredsstillelse.
+Her er desuden et høiere Mellemværende, hvori
+de spændte Extremer, Personligheden og Skjæbnen,
+forene sig, dette Mellemværende er Ideen.
+Den heroiske Villie vil en Idee, og forsaavidt
+det Almene; den vil tillige denne Idee virkeliggjort
+i et bestemt verdsligt Maal, altsaa i en
+Endelighed: her lurer Skjæbnen. Ved at afstikke
+sig sit Maal maaler Personligheden sig
+med Skjæbnen. At Skjæbnen har en Overmagt,
+indlyser strax; men istedetfor at falde tilføie,
+foreskriver Villien dog denne Overmagt
+sine Betingelser, idet den foreskriver sig selv et
+Valg. Dette Valg er imellem Alt og Intet,
+Maalets Opnaaelse og Personlighedens Undergang.
+
+„Det koste, hvad det vil, jeg gaaer til
+Maalet!“ med dette Løsen har Friheden hævet
+sig over Skjæbnen; saa tyder en Crøsus Oraklet,
+saa læser en Wallenstein i Stjernerne, saa
+gaaer en Cæsar over Rubicon, og saa begynder
+Kampen.
+
+Det er Maalets Opnaaelse, der giver det
+Personlige sit Værd; heri ligger, „at, naar
+Maalet tages bort, saa er Personligheden i sig
+% --- p. 15 ---
+\setcounter{footnote}{0}%
+\opage{15}selv noget aldeles Ligegyldigt; den heroiske Beslutning
+udtrykker altsaa den Modsigelse, at det
+Personlige beviser sin høieste Gyldighed ved at
+sætte sig som Middel for Maalet, som det i
+sig selv Ligegyldige. Dersom denne Modsigelse
+opgik for Bevidstheden i en klar og pludselig
+Tanke, vilde den vel være som et Dolkestød,
+der øieblikkelig dræbte Helten; men Modsigelsen
+tilhylles af Ideen, fornemmes som Uro i Gemyttet, og forvandler sig til et Begivenhedernes
+Drivhjul. Gjennemtrængt af Ideen, er den
+personlige Selvfølelse fortabt i det Upersonlige.
+Helten er allermeest sig selv, naar han er
+allermeest udenfor sig selv i sin uimodstaaelige
+Higen mod Maalet; greben af en uforklarlig
+Magt, føler han sig mægtig; denne Magtfølelse
+er hans Indvielse, hans mystiske Forbund med
+Skjæbnen.
+
+Det er Skjæbnens List at fange det Personlige
+ved Personligheden selv, som det er
+Skjæbnens Lyst at søndertræde sin Fange.
+Skjæbnen bedaarer i Form af Lykke; den lammer
+som den Gaade, der vækker Angst; den rammer
+i Skikkelse af Nemesis; den bedaarede Crøsus,
+den lammede Wallenstein, den knuste Cæsar.
+
+% --- p. 16 ---
+\setcounter{footnote}{0}%
+\opage{16}Under den heroiske Kamp er det Personliges
+Sammensmelten med det Upersonlige et Mysterium.
+At afsløre dette Mysterium er en Opgave
+for „den Vise“. Personligheden vender
+sig da indad imod sig selv, for at klare og virkeliggjøre
+sin frie Bestemmelse; saaledes bliver
+Kampen moralsk.
+
+For at maale sig med Skjæbnen maa Personligheden
+allerførst gjøre sig Rede for, hvad
+det da egentlig er, der staaer i vor Magt, og
+hvad alt Det betyder, der ikke staaer i vor Magt.
+
+Indsees det nu, at Fordelingen af de timelige
+Goder og Onder: Sundhed og Sygdom,
+Rigdom og Armod, borgerlig Frihed og borgerlig
+Trældom o. s. v., ikke væsentlig staaer i
+vor Magt, saa maa Frigjørelsen jo begynde
+dermed, at Forskjellen imellem timelige Goder
+og timelige Onder nedsættes til en i sig selv
+ligegyldig Forskjel.
+
+Det er altsaa „den Vise“ aldeles ligegyldigt,
+om han er sund eller syg, rig eller fattig,
+Herre eller Slave. Vistnok er det behageligere
+at være sund end at være syg; men, da Villien
+ligesaa godt kan bevise sin Kraft i Sygdom
+som i Sundhed, kan Forskjellen mellem Be%
+% --- p. 17 ---
+\setcounter{footnote}{0}%
+\opage{17}hageligt og Ubehageligt ikke røre det personlige
+Selv.
+
+At finde sig i det Ubehagelige og skikke sig
+i Modgang er Resignation.
+
+Allerede den borgerlige Kamp gjør Resignation
+nødvendig. Den, der attraaer timelige
+Goder, maa finde sig i timelige Tab; men det
+er kun endelig Resignation, hvor Tabet af det
+Ene erstattes ved Opnaaelsen af det Andet.
+Saa vexler i Endelighed Frygt og Haab, Sorger
+og Glæder, Tab og Erstatning; selv Tabet
+af de Kjære, hvor smerteligt det end i Øieblikket
+er, kan jo forvindes, erstattes --- med Tiden;
+thi Tiden læger alle Saar.
+
+Denne Endelighedens Trøst, denne timelige
+Vexel af Frygt og Haab, af Øieblikkets Jammer
+og Øieblikkets Jubel foragter „den Vise“.
+Hævet i rolig, stolt Selvfølelse over det Omskiftelige,
+resignerer han, ikke nu og da med
+Hensyn paa dette eller hiint Endelige, men een
+Gang for alle paa alt Endeligt, idet han erkjender,
+at det Timelige efter sit Begreb er og
+maa være timeligt, det Forkrænkelige forkrænkeligt.
+
+„Har Du“ --- siger den Vise --- „et smukt
+% --- p. 18 ---
+\setcounter{footnote}{0}%
+\opage{18}Leerkar, husk da vel paa, at det kan sønderbrydes.
+Glemmer Du dette, da vil det smerteligt
+forstyrre Dig, naar det skeer; men husker
+Du altid derpaa, kan Tilfældet ikke overraske
+Dig. Elsker Du din Hustru og din Søn, kom
+da ihu, at de ere dødelige. Glemmer Du dette,
+kan Smerten engang forvirre dit Sind; men
+husker Du altid derpaa, da vil Du rolig, uden
+Suk og Klage, følge dem til Graven.“
+
+Hvad er saa Skjæbnen? I sine Phænomener
+et vilkaarligt Spil af Medgang og Modgang,
+Lykke og Ulykke, men efter sit Væsen det
+i Tingenes Natur Begrundede, det Nødvendige,
+det Almeenfornuftige. Heraf udledes den moralske
+Lov, at den sædelige Personlighed ikke
+maa ville Andet, end hvad Fornuften vil, og
+ikke ønske Andet end det, der følger af Tingenes
+Gang.
+
+„Du skal ikke græde, naar Du sidder i
+Theatret, og seer et Sørgespil; thi det er ikke
+ørgeligt, at Helten falder, dersom det er nødvendigt.  % PRINTED AS IS: p. 18 „ørgeligt“ for sørgeligt (R12, read at the image)
+Hvad der maa skee, det bør skee, og
+dermed skal Du være tilfreds.“
+
+Indviende sig til Nødvendighedens Tjeneste,
+% --- p. 19 ---
+\setcounter{footnote}{0}%
+\opage{19}vil det personlige Selv forvandle Nødvendigheden
+til Frihed og gjøre Friheden uimodstaaelig
+som Nødvendigheden. Saaledes forsonet med
+Tilværelsens Love, siger den Vise: „før mig,
+o Skjæbne!“
+
+For at virke i Verden maa Villien sætte sig
+et verdsligt Maal; men her er Forskjellen mellem
+„den Vise“ og „Daaren“. Daaren gjør
+sin Personlighed til Middel for Maalet; den
+Vise gjør ethvert endeligt Maal til Middel for
+sin Personlighed.
+
+„Verden“, siger den Vise, „er et stort Theater.
+Menneskene ere Skuespillere. Guddommen
+er den Digter, der lader Skuespillet opføre, og
+fordeler Rollerne. Saa faaer den Ene Kongens,
+den Anden Tiggerens, den Ene Herrens,
+den Anden Slavens Rolle. Det tilkommer
+ikke Skuespilleren at vrage sin Rolle, men
+at spille sin Rolle. Kun Den, der spiller sin
+Rolle godt, vinder Guddommens Bifald.“
+
+Den Guddom, hvis Bifald den Vise attraaer,
+er i egentlig Forstand den personificerede
+Skjæbne; det moralske Selv er Skjæbnens
+Personification. Den uendelige Resignation  er
+% --- p. 20 ---
+\setcounter{footnote}{0}%
+\opage{20}altsaa dog en uendelig Egoisme; det er Skuespilleren,
+der paà egen Haand har digtet sig
+en Rolle; det er Skuespilleren, der spiller for
+sig selv, og behager sig selv i Rollen; det er
+Skuespilleren, der til Slutningen indhøster sit
+eget Bifald.
+
+At dette uden Overdrivelse forholder sig saaledes,
+sees tydeligt i den sidste Akt.
+
+Den skjæbnesvangre Personlighed, der her
+har gjort sig til sin egen Guddom, kan ikke
+tydeligere bevise sin Selvraadighed end derved,
+at den raader over sit eget Liv, og derfor, selv
+vælger og bestemmer sin egen Død. Det personlige
+Liv er endeligt; det Endelige er ligegyldigt.
+Med Frihed og Overlæg fuldbyrder
+Skjæbnens Ven, hvad Skjæbnen ellers vilde
+fremtvinge: han tager sig selv af Dage. Personligheden
+hævder sig selv ved at tilintetgjøre
+sig selv. Hermed ender den moralske Kamp og
+det moralske Skuespil.
+
+% --- p. 21 ---
+\setcounter{footnote}{0}%
+\opage{21}\afdeling{B.}{Om Forsynet.}
+\stykke{}{Hvad er et Menneske?}
+
+Ja, hvad er et Menneske? noget Stort og
+Herligt; noget Ringe og Elendigt! Der er
+paa Jorden ingen Skabning, der kan blive saa
+lykkelig som et Menneske; thi der er paa Jorden ingen Skabning, der kan blive saa ulykkelig
+som et Menneske; ingen, der kan glæde sig som
+et Menneske, fordi ingen kan sørge som et
+Menneske; ingen, der kan frygte, hvad et Menneske
+kan frygte, fordi der er ingen, der kan
+haabe, som et Menneske kan haabe; ingen, der
+kan hade som et Menneske, fordi der er ingen,
+der kan elske som et Menneske; ingen, der kan
+hovmode sig som et Menneske; ingen, der kan
+ydmyge sig som et Menneske; ingen, der kan
+spotte som et Menneske; ingen, der kan tilbede
+som et Menneske; ingen, ingen, der kan lide
+den Uret, et Menneske kan lide; ingen, ingen,
+der kan gjøre den Uret, et Menneske kan gjøre
+mod sig selv og Andre. Hvad er da et Menneske?
+
+% --- p. 22 ---
+\setcounter{footnote}{0}%
+\opage{22}Alle de Umyndige, der ere i Naturens Vold,
+hjælpes af Naturen; Mennesket er i Skjæbnens
+Vold: hvo hjælper Mennesket?
+
+\delafsnit{Det aabenbarede Forsyn.}
+\stykke{I.}{}
+\motto{Thi han lader sin Sol opgaae over Onde og
+Gode, og lader det regne over Retfærdige og
+Uretfærdige.}
+
+Men er det da en Hjælp? Kan da den
+Gode trøste sig, at Solen opgaaer ogsaa over
+de Onde? Kan den Retfærdige glæde sig, at
+Himlen velsigner de Uretfærdige? Vi vide, at
+det gaaer saaledes i Verden; vi vide, at Naturens
+Love ikke kjende Forskjel paa Onde og
+Gode, paa Retfærdige og Uretfærdige. Stormen
+reiser sig, og Skibet synker, og Menneskene
+forgaae; de forgaae baade Onde og Gode,
+baade Retfærdige og Uretfærdige. Jorden aabner
+sig, og opsluger Staden, og Menneskene
+omkomme; de omkomme baade Onde og Gode,
+baade Retfærdige og Uretfærdige. Pesten drager
+igjennem Landene, og Menneskene døe af
+den dræbende Sot; de døe baade Onde og
+% --- p. 23 ---
+\setcounter{footnote}{0}%
+\opage{23}Gode, baade Retfærdige og Uretfærdige. Kan
+Sligt da betyde et Forsyn? Det seer jo ud som
+Skjæbne.
+
+Ja, dersom alt Personligt er endeligt, og
+det Evige selv upersonligt, saa er det Skjæbne.
+Men, dersom det Personlige tillige er det Evige,
+dersom den sande Personlighed er det Eviges
+Sandhed: saa er der et Forsyn.
+
+Dersom den evige Personlighed ikke selv var
+menneskelig, var der for Mennesket intet Forsyn
+og ingen Hjælp; dersom Mennesket af sig
+selv var den evige Personlighed, da var hvert
+Menneske sit eget Forsyn og i evig Forstand
+sin egen Hjælper.
+
+Hvert Menneske, der maa bekjende: „Jeg er
+ikke Sandheden, men jeg trænger personlig til
+Sandheden“, maa forholde sig troende til Forsynet,
+og kan ikke være sit eget Forsyn.
+
+Kun det Menneske, der turde sige om sig
+selv: „Før Abraham blev, er jeg, det Eviges
+Sandhed, den sande Personlighed“, kun et saadant
+Menneske kan forholde sig vidende til Forsynet,
+kan som menneskeligt Individ være under
+Forsynet, og dog være Forsynet selv, der gjør
+sig til Troens Gjenstand.
+
+% --- p. 24 ---
+\setcounter{footnote}{0}%
+\opage{24}Den Menneskens Søn, der vidste med sig
+selv, at han var det sande, i Kjød og Blod
+aabenbarede Forsyn, og derfor gjorde sig til
+Troens Gjenstand, har da heller ikke lært os
+at see Forsynets Retfærdighed i en endelig
+Fordeling af timelige Goder og timelige Onder.
+
+At betale det Timelige med det Evige, det
+Evige med det Timelige, er i al Evighed uretfærdigt;
+men at betale det Timelige med det
+Timelige, det Evige med det Evige, det er Lige
+for Lige, det er guddommelig Retfærdighed.
+
+Dersom det virkelig var Forsynets Tanke,
+at det Gode og det Onde skulde gjengjældes
+timeligt, maatte vi da ikke vente, at han, der
+blev Menneske, aleneste for at han skulde være
+det aabenbarede Forsyn, vilde faae baade Rigdom
+og Magt og alle andre timelige Goder? Naar
+det nu ikke skeer: hvad kan da være Grunden?
+Skulde Forsynet maaskee misunde et Menneske
+det Timelige? Eller skulde han, der er det
+sande Menneske, sætte en Slags Ære i at undvære
+og foragte det Menneskelige? Det er jo
+en Spot over alt Guddommeligt og Menneskeligt.
+Naar da han, der kunde have al Verdens
+Herlighed, ikke har det, hvortil han kan
+% --- p. 25 ---
+\setcounter{footnote}{0}%
+\opage{25}hælde sit Hoved, da er denne Fornedrelse ikke
+at tilskrive en Villiens Vilkaarlighed, saa lidt
+som en Skjæbnens Nødvendighed. Det er den
+menneskelige Selvfornegtelse for Sandhedens
+Skyld, det er Personlighedens uendelige Selvbekræftelse,
+der i denne Ringhed aabenbarer den
+guddommelige Overlegenhed, den fuldkomne Retfærdighed.
+
+Alt i Aartusinder har Menneskeheden stridt
+for timelig Gjengjældelse; og endnu gaaer Solen op over Onde og Gode, og endnu regner
+det over Retfærdige og Uretfærdige. Den, der
+verdslig seer paa Verdens Gang, seer i alt
+Dette kun Skjæbnen; men Den, der troende
+seer paa Menneskens Søn, seer Faderens Villie,
+som er i Himmelen.
+
+Dersom det var Forsynets Tanke, at Enhver,
+der strider for en almeengyldig Idee,
+skulde anerkjendes af Menneskene, og faae Ret
+i Forhold til Ideens Værd og den Opoffrelsens
+Kraft, hvormed han strider: maatte vi da ikke
+vente, at Han, der ikke blot stred for den høieste
+Idee, men var Ideen selv, skulde have tilkjæmpet
+sig den høieste Anerkjendelse i Verden?
+
+Alle de store Miskjendte, der ellers have
+% --- p. 26 ---
+\setcounter{footnote}{0}%
+\opage{26}stridt for Ideer, og ere af Samtiden blevne
+lønnede med Utak, Had og Foragt, kunde dog
+kun fordre en betinget Anerkjendelse; det var
+dog kun relative Ideer, for hvilke de strede; og
+selv om En stred for det Høieste, kunde han
+dog ikke sige med Sandhed: „Jeg, der strider
+for det Høieste, er selv det Høieste.“
+
+Menneskens Søn, der strider for den evige
+Sandhed, vidner om sig selv: „Jeg er Sandheden“;
+Menneskens Søn kan derfor gjøre sig
+til Troens Gjenstand, kan fordre ubetinget
+Underkastelse, guddommelig Ærefrygt.
+
+Alle de store Miskjendte, der ellers kunne
+klage over Menneskenes Utaknemmelighed, maae
+dog vel tilstaae, at Samtiden ved at negte
+dem Anerkjendelse i Ideens Navn, kun skader
+sig selv til en vis Grad; Ideen kommer jo dog
+alligevel engang Slægten tilgode: den Enkeltes
+Personlighed er ligegyldig.
+
+Menneskens Søn, der er Personligheden
+selv, og maa fordre ubetinget Anerkjendelse for
+Personlighedens Skyld, veed med uimodsigelig
+og smertelig Vished, at hvert Menneske, der
+negter ham, hvad han fordrer, tilføier sig selv
+en evig personlig Uret.
+
+% --- p. 27 ---
+\setcounter{footnote}{0}%
+\opage{27}Alle de store Miskjendte, der ellers fik Uret,
+endskjøndt de havde Ret, kunde med Rette
+klage over Skjæbnen; og vi, der nu indsee den
+Uret, de maatte lide, vi kunne beklage dem, ja
+vi kunne græde over dem, naar vi tænke paa
+deres Skjæbne. Men Han, den Ene, der fik
+Uret, ikke endskjøndt, men fordi han havde
+Ret, evig, ubetinget Ret, han vil ikke beklages,
+ikke ynkes, ikke begrædes; han siger jo udtrykkelig:
+„Græder ikke over mig, men græder
+over Eders egen og Eders Børns Skjæbne.“
+
+Saa var da den Retfærdige iblandt de Uretfærdige;
+Solen gik op over Onde og Gode, og
+som Solen sank, gik Mørket op over Gode og
+Onde; og Mørket styrkede de Onde, og i en
+Mørkets Time led den Retfærdige for de
+Uretfærdige. Det seer ud som en Skjæbne;
+dog, det er ikke Skjæbne, det er Faderens Villie,
+som er i Himmelen.
+
+Dersom det var Forsynets Tanke, at Menneskene
+selv skulde finde Veien ved Fornuftens
+Lys, saa havde Menneskens Søn aldrig gjort
+sig til Troens Gjenstand.
+
+Kun det Lige erkjendes af det Lige, det
+Personlige af det Personlige, men Guds og
+% --- p. 28 ---
+\setcounter{footnote}{0}%
+\opage{28}Menneskenes Personligheder ere ikke hinandens
+Lige.
+
+„Agt din Ven, foragt din Fiende; skaf Dig
+Ret i Tiden, om Du kan, thi i Evigheden holdes
+der ingen Rettergang; Godt og Ondt, Ret
+og Uret ere kun Endelighedens Differenser, personlige
+Modsætninger, der alle opløses i det
+evige, upersonlige Ene.“ Her er den Viisdom,
+der negter Forsynet, og forguder Skjæbnen.
+
+„Elsk din Ven, had din Fiende; thi dine
+Venner ere den Eviges Venner, dine Fiender
+den Eviges Fiender: see, Sværdet er i din
+Haand, at Himmelens Retfærdighed maa fuldkommes
+paa Jorden.“ Her er den Lidenskab,
+der vil forvandle Forsynet selv til en
+Skjæbne.
+
+Personlighedens indbildte Overmagt er i
+begge Former en evig Afmagt. Den, der foragter
+sin Fiende, foragter væsentlig sig selv;
+thi han foragter det Personlige: Foragtens
+Overmagt er en Egoismens Afmagt. Den,
+der gjør sin Fiende til Guds Fiende, raser
+imod Gud: den fanatiske Overmagt er en vanvittig
+Afmagt.
+
+For at frelse den menneskelige Personlighed
+% --- p. 29 ---
+\setcounter{footnote}{0}%
+\opage{29}fra dens naturlige Afmagt kom Forsynet selv i
+Tjenerens Skikkelse. Var han kommen i Herskerens
+Skikkelse med udvortes guddommelig
+Overmagt, vare vi forblevne i vor naturlige
+Afmagt. Men han fornegtede sig selv, lod
+Verden beholde den udvortes Overmagt, og
+blev lydig indtil Døden, at han i Selvfornegtelse
+og Lydighed kunde aabenbare Personlighedens
+uendelige Overlegenhed. Hans Fiender
+vare visselig Guds Fiender; han saae deres
+Forblindelse, han sørgede over deres Hjerters
+Haardhed; men. han foragtede dem ikke, han  % PRINTED AS IS: p. 29 a small point after „men“ (seen at the image)
+forbandede dem ikke: han bad for dem, og
+døde.
+
+I have hørt, at det er sagt: „Du skal
+elske din Ven, og hade din Fiende“;
+men jeg siger Eder: „elsker Eders Fiender,
+velsigner dem, som forbande Eder;
+gjører vel imod dem, som hade Eder,
+og beder for dem, som krænke og forfølge Eder, paa det at I maae vorde
+Eders Faders Børn, som er i Himlene.
+\emph{Thi han lader sin Sol opgaae over
+Onde og Gode, og lader det regne over
+Retfærdige og Uretfærdige}.
+
+% --- p. 30 ---
+\setcounter{footnote}{0}%
+\opage{30}\stykke{II.}{}
+\motto{Ja endog alle Eders Hovedhaar ere talte, frygter
+derfor ikke.}
+
+Men ere disse Ord dog ikke at forstaae som
+en digterisk Overdrivelse? Dersom den guddommelige
+Retfærdighed virkelig er ophøiet over
+enhver timelig Forskjel imellem Gode og Onde,
+er det da tænkeligt, at den Evige skulde sænke
+sig saa dybt i det Timelige og være saa nøieregnende
+med det Enkelte? er det tænkeligt, at
+Menneskehedens Forsyn skulde tælle alle Menneskenes
+Børn, som en Hyrde tæller sine Faar?
+er det den Alvidende værdigt at tælle saa smaaligt,
+endogsaa Spurvene, endogsaa Haarene paa
+Menneskets Hoved?
+
+„Alle Eders Hovedhaar ere talte, frygter
+derfor \textbf{ikke}!“ Dersom disse Ord kun vare menneskelige
+Ord, da maatte vi vel betragte dem
+som en Overdrivelse i et Begeistringens Udbrud;
+thi i den Verden af Farer, der ligger
+imellem Mennesket og Gud, har et Menneske
+jo Meget at frygte. Men, naar Han, der
+taler Ordet, er Ordet selv, da maae vi jo lære
+af ham, hvor Faren er, og hvad vi have at
+frygte.
+
+% --- p. 31 ---
+\setcounter{footnote}{0}%
+\opage{31}Der er i Farernes Verden kun een ubetinget
+Fare, kun Eet, der er frygteligt, kun Een,
+der er at frygte. Derfor siger Ordet, det
+aabenbarede Forsyn: „Jeg vil vise Eder, for
+hvem I skulle frygte.“
+
+Og Forsynet er menneskeligt. Han, der
+taler om Faren, og viser os, for hvem vi skulle
+frygte; Han, der overskuer alle Endelighedens
+Farer og siger: „frygter ikke!“ han veed, hvad
+Fare er; hans Liv var fortroligt med Faren.
+Faren søgte ham i hans Vugge; den fulgte
+ham til hans Grav. Overalt, i Ørkenen som
+i Stæderne, paa Galilæas Sletter, imellem
+Judæas Bjerge, overalt, hvor han gik hen, gik
+Faren efter ham, og lurede paa ham.
+
+Aarvaagen som Forsynet, frimodig som Den,
+der er under Forsynet, gaaer Menneskens Søn
+ad Farernes Vei, og frygter for Intet i Verden.
+Han arbeider, og Intet standser ham;
+han gaaer til sit Maal, og Ingen lægger Haand
+paa ham, før hans Time kommer.
+
+Men, da hans Time var kommen gik han
+frivillig Faren imøde; den overraskede ham ikke
+som et Tilfælde, den kom ikke over ham som
+en Skjæbne; den kom, fordi han lod den komme.
+% --- p. 32 ---
+\setcounter{footnote}{0}%
+\opage{32}Den kom da heller ikke i udvortes Larm, ikke i
+en Storm af menneskelige Lidenskaber, ikke i et
+Bulder af fiendtlige Vaaben; den kom i al
+Stilhed, eensom til den Eensomme: kun saaledes
+lod han den komme.
+
+Ene hiin Nat i den stille Have, lod han
+Faren komme til sig, og stred med den, ikke
+som den Stærke strider, men som den Skrøbelige, at der i Kjød og Blod ikke skulde være
+en Skjæbnens Forskjel imellem Stærke og
+Skrøbelige, men en Hengivenhedens Seier i
+Skrøbelighed.
+
+Ene hiin Nat i den stille Have, lod han
+Faren gaae som en Dødsangst igjennem sin
+Sjæl; han trodsede den ikke, han foragtede den
+ikke, han hævede ikke stolt sit Hoved som Den,
+der offrer sig til Skjæbnen; han faldt paa sit
+Ansigt, og bøiede sig ydmyg under Faderens
+Villie.
+
+Ene hiin Nat i den stille Have, lod han alle
+Endelighedens Farer forvandle sig i Inderlighed
+til een Fare. Saa stred han i Inderlighed,
+og seirede i Inderlighed; og, da han saa reiste
+sig fra Striden, see, da var det forbi med
+Faren, da var der slet ingen Fare.
+
+% --- p. 33 ---
+\setcounter{footnote}{0}%
+\opage{33}Dog --- hvad siger jeg? er det virkelig forbi
+med Faren: nu kommer jo først den virkelige
+Fare, thi nu kommer jo Vagten med Sværd og
+Stænger. Ja, nu kommer Virkeligheden, men
+--- Faren har vendt sig. Han, der spørger:
+„Hvem lede I efter?“ er uforfærdet; Vagten
+falder til Jorden af Forfærdelse.
+
+Den Nat, da Menneskens Søn blev forraadt,
+hudflættet og dømt, er i Virkeligheden
+en Farernes Nat; men Faren har vendt sig.
+Her er Fare for en Judas; her er Fare for
+en Kajaphas. Her er Fare for en Pilatus,
+der vadsker sine Hænder; her er Fare for
+Folket, at den Uskyldiges Blod kommer over
+dets Hoved. Ja, her er mange Farer og for
+Mange; men for Ham, den Ene, for ham er
+der ingen Fare.
+
+Var der Fare for ham, da fik han vel Undsætning;
+var hans Liv, hans Sag virkelig i
+Fare, da skulde hans Tjenere vel stride for
+ham, og mere end tolv Legioner Engle ruste
+sig til hans Forsvar. Nu staaer han uden Forsvarere, vaabenløs, ene iblandt sine Fiender:
+hvorfor? Fordi Faren alt er forbi; fordi hans
+Hovedhaar ere talte.
+
+% --- p. 34 ---
+\setcounter{footnote}{0}%
+\opage{34}„Ikke en Spurv falder til Jorden uden Faderens
+Villie; ja endog Eders Hovedhaar ere
+talte.“
+
+Endelighedens Verden er en Tilfældighedernes
+Verden. Fastholdes nu dette eller hiint
+Tilfældige i dets tilfældige Enkelthed, da er
+enhver saadan tilfældig Enkelthed, som f. Ex.
+at en Spurv falder til Jorden, at der falder
+et Haar af et Menneskes Hoved o. s. v., tilvisse
+ligegyldig for Gud og Mennesker. En
+saadan Fastholden af det Tilfældige i dets Tilfældighed
+er nemlig aandløs, og det Aandløse
+er i al Evighed ligegyldigt.
+
+Det Tilfældige faaer først Betydning derved,
+at det sees i væsentligt Forhold til et Andet,
+som ikke er tilfældigt. Dette Andet kan
+igjen være: enten Verdens Fornuftgrund eller
+Personligheden selv.
+
+Hvad Tilfældigheden betyder i dens Sammenhæng
+med Verdens Grund og naturlige
+Aarsager, er et videnskabeligt Spørgsmaal, der
+aldeles ikke vedkommer Forsynstroen.
+
+Hvad Tilfældigheden derimod betyder som
+et verdsligt Mellemværende mellem Gud og
+Mennesket, er et personligt Spørgsmaal. Dette
+% --- p. 35 ---
+\setcounter{footnote}{0}%
+\opage{35}Spørgsmaal kan kun besvares af Ham., der  % PRINTED AS IS: p. 35 a point before the comma after „Ham“
+aabenbarer Forsynets Tanke.
+
+Her er en Blindfødt; lad os høre Mesterens
+Samtale med Disciplene. „Og Disciplene
+spurgte ham og sagde: Mester, hvo haver syndet?
+denne eller hans Forældre, at han er født
+blind? Og Mesteren sagde: hverken denne
+syndede, ei heller hans Forældre; men paa det
+at Guds Gjerninger skulde blive aabenbarede
+paa ham.“
+
+Disciplene og Mesteren ere altsaa enige i
+den Forudsætning, at Tilfældet ikke kan være
+noget Selvstændigt ligeoverfor Gud, at Forsynet
+i ethvert Tilfælde hæver det Tilfældige.
+Men, idet Disciplene ligefrem oversee Tilfældet,
+hildes de i en dobbelt Misforstaaelse, forsaavidt
+de paa een Gang miskjende Naturforholdenes
+Realitet, og drage den guddommelige
+Retfærdighed ned i det Timelige. Mesteren,
+der kjender Forsynets Tanke, gjør opmærksom
+paa Forskjellen imellem Naturbestemmelsen og
+Guds udtrykkelige Villie. Forskjellen imellem
+Seende og Blindfødte er en naturlig Forskjel i
+det Timelige, der ikke ligefrem svarer til Guds
+gjengjældende Retfærdighed. Forsaavidt ind%
+% --- p. 36 ---
+\setcounter{footnote}{0}%
+\opage{36}rømmes altsaa det Tilfældige. Men det Tilfældige
+er ikke for Gud i dets Tilfældighed;
+det bestemmes som Middel for hans bestemte
+Hensigt. Hvad der altsaa var Tilfældet med
+hiin Blindfødte, at Guds Gjerninger paa ham
+skulde blive aabenbarede, det Samme er just Tilfældet
+med alle Blindfødte og med alle de mulige
+Tilfælde i Verden, der vedrøre det Personlige.
+
+--- „Medens jeg er i Verden, er jeg Verdens
+Lys.“
+
+Det naturlige Menneske, der seer Alt i Naturlighedens
+Lys, seer Tilfælde paa Tilfælde,
+saavel i Verdens Gang som i sit eget Liv; det
+er det Blindfødte i den endelige Personlighed,
+der ikke kan see Forsynet for lutter Tilfælde.
+Menneskens Søn, den personlige Sandhed,
+aabner den Blindes Øine, og hæver derved det
+sørgelige Tilfælde.
+
+„Medens jeg er i Verden, er jeg Verdens Lys.“
+
+Forsynets Historie er en hellig Historie.
+Dersom den hellige Historie var at opfatte ligefrem,
+som enhver anden Historie, saa behøvede
+vi kun at følge Menneskens Søn paa hans
+Vandring, for at see, hvorledes han ophæver
+% --- p. 37 ---
+\setcounter{footnote}{0}%
+\opage{37}Tilfældigheden, og aabenbarer Guds Gjerning.
+Men i Forsynets hellige Historie er det Ydre
+saa ueensartet med det Indre, at kun Den, der
+seer Alt i Troens Lys, seer Forsynet.
+
+Jo rigere Hjælpekilder Personligheden har i
+sig selv, desto lettere forvandler den Tilfældet
+til Middel og Anledning; jo mere overraskende
+Tilfældet er, desto mere overraskende er ogsaa
+den Aandsnærværelse, der gjennemlyner Tilfældigheden.
+Derfor er Geniet i Pagt med
+Lykken, er selv Lykken; derfor tæller den praktiske
+Genialitet ligesaa mange Seire, som afgjørende
+Tilfælde.
+
+Dersom nu den personlige Overlegenhed,
+der aabenbarer Forsynets Tanke, var at sammenligne
+med Geniets Overlegenhed: da vilde
+vi indbyde de Aandrige, de Geniale til at
+gjennemgaae den hellige Historie; da vilde vi
+sige til disse Aandrige, disse Geniale: „Seer
+dog engang ret paa Menneskens Søn; som han
+magter Tilfældigheden, har endnu Ingen paa
+Jorden kunnet magte den; thi for ham er intet
+Tilfældigt, han ophæver og forvandler alle
+Tilfælde. Er det de mangehaande Sygdomstilfælde;
+han hæver ethvert Tilfælde, thi han
+% --- p. 38 ---
+\setcounter{footnote}{0}%
+\opage{38}helbreder jo alle de Syge. Er det de sørgelige
+Dødstilfælde; han hæver dem, naar og
+hvor han vil, thi han kan jo opvække de Døde.
+Er det et af Ondskabens rænkefulde, spidsfindig
+udtænkte Tilfælde, et Tilfælde, som med Skattens
+Mynt, eller et Tilfælde, som med Qvinden
+og hendes syv Mænd i Opstandelsen; see,
+han magter alle disse Tilfældigheder. Sandhedens
+Lyn splitter Ondskabens Væv, og Tilfældet
+falder som en Skjæbne paa dem, der
+forhærde sig i Usandhed.
+
+Men, uagtet den personlige Magtfuldkommenhed
+i alle disse Tilfælde er umiskjendelig,
+er dog en saadan Opfattelse i sig selv en Bespottelse;
+Menneskens Søn er ikke en Lykkens
+Helt; han er Forsynets Hellige, Troens Gjenstand.
+--- „Troer Du, at jeg kan gjøre dette?“ ---
+
+Dersom Du ikke troer, da bliver Tilfældet
+i dets sørgelige Tilfældighed; men „dersom
+ Du kunde troe, da skulde Du see Guds
+Herlighed.“
+--- „Medens jeg er i Verden, er jeg Verdens
+Lys.“
+
+For Skjæbnens Blindfødte ere alle endelige
+Tilfælde ligegyldige. Hermed opløses alt det
+% --- p. 39 ---
+\setcounter{footnote}{0}%
+\opage{39}Enkelte i en eensformig, upersonlig, tom Almindelighed,
+der mangler Livets Indhold og
+Farvernes Rigdom. „Den Vise“ med al sin
+Kraft er derfor ogsaa som et aandigt Skyggebillede,
+et Skjæbnens Gjenfærd, der svinder i
+det Dunkle.
+
+For Den, der „troer paa Guds Søn“, den
+personlige Sandhed, den sande Personlighed, er
+det verdslig Tilfældige et personligt Mellemværende
+mellem Gud og det enkelte Menneske.
+Hvert mødende Tilfælde er en særegen Opgave,
+Forsynet forelægger til personlig Løsning: saamange
+Tilfælde, saamange Opgaver. Under
+den endelige Løsning staaer Mulighed mod
+Mulighed, Forstaaelse mod Misforstaaelse, Fare
+mod Fare: --- Menneske, gjør hvad Du vil,
+men gjør det i ubetinget Tro! Dersom Du
+ikke troer, da bliver det Dig et sørgeligt Tilfælde,
+men --- „dersom Du kunde troe, da
+skulde Du see Guds Herlighed.“
+
+--- „Medens jeg er i Verden, er jeg Verdens
+Lys.“
+
+Den udvortes vexlende Mangfoldighed af
+endelige Tilfælde er, naar den sees i Sandhedens
+Lys, lutter særegne Betingelser for Ud%
+% --- p. 40 ---
+\setcounter{footnote}{0}%
+\opage{40}viklingen af det personlige Indre. Livets Tilfælde
+ere Guds Tilskikkelser. Vantroen, der i
+Tilskikkelsen kun seer Tilfældet, hjemfalder til
+Skjæbnen; Troen, som i ethvert Tilfælde seer
+Tilskikkelsen, frelses af Forsynet.
+
+Menneskenes Forhold til det i den hellige
+Historie sig aabenbarende Forsyn er derfor ikke
+et eensformigt, farveløst Forhold, der taber sig
+i upersonlig Almindelighed; det er et uendelig
+indholdsrigt, mangfoldig, indtil de mindste Enkeltheder
+nuanceret Livsforhold imellem den personlige
+Sandhed og de menneskelige Personligheder.
+Her staaer i hvert Optrin Tro mod
+Vantro, de Seende mod de Blinde; her blive
+de Blinde seende, de Seende blinde; her har
+hver Begivenhed, hvert Tilfælde, hvert Ord,
+hvert Blik, ja hvert Øieblik Uendelighedens
+Betydning; her opgaaer Lyset over Onde og
+Gode; her kommer Tilskikkelsen over Retfærdige
+og Uretfærdige; her blive Guds Gjerninger
+aabenbarede; her blive mange Hjerters
+Tanker aabenbarede.
+
+--- „Medens jeg er i Verden, er jeg Verdens
+Lys.“
+
+I den høieste Spænding mellem Viisdom%
+% --- p. 41 ---
+\setcounter{footnote}{0}%
+\opage{41}mens Plan, Menneskenes Vilkaarlighed og Verdens
+Tilfældigheder bliver Forsynet aabenbaret;
+derfor er den hellige Historie en Lidelsernes
+Historie.
+
+Det seer i Lidelseshistorien ud, som vilde
+Skjæbnen selv reise sig til Kamp mod Forsynet,
+som skulde Tilfældigheden herske, og den menneskelige
+Vilkaarlighed rive sig løs fra Styrelsen.
+
+Og det seer i Lidelseshistorien ud, som havde
+Guds Villie evig forudbestemt hver enkelt Begivenhed,
+ hvert enkelt Optrin, hvert enkelt Træk.
+
+--- Saa maa den Ene da „døe for Folket,
+at ikke det ganske Folk skal fordærves“. Det
+er et Ondskabens Indfald, en despotisk Vilkaarlighed
+af en Enkelt i et enkelt Tilfælde; og
+dog, --- det er jo ingen Vilkaarlighed, det er
+jo en Aandens Indskydelse, det er jo en Spaadom,
+der udtrykker Forsynets Tanke.
+--- Saa bliver den Retfærdige da „regnet
+iblandt Misdædere“; --- en oprørende, sørgelig
+Vilkaarlighed, et sørgeligt Tilfælde! og dog,
+det er jo ingen Vilkaarlighed; det er jo Viisdommens
+forudbeskikkede Raad, det er jo Spaadommens
+Opfyldelse.
+
+% --- p. 42 ---
+\setcounter{footnote}{0}%
+\opage{42}Saa døer den Korsfæstede: Solen formørkes,
+Forhænget revner, Gravene briste\dots{}.
+„forunderlige Hændelser, maaskee opdigtede Tilfælde“\dots{}.
+Ja, men --- dersom Du kunde
+troe!
+
+\emph{Sælges ikke to Spurve for een Penning,
+og ikke een af dem falder til Jorden uden Eders Faders Villie. Ja
+endog alle Eders Hovedhaar ere talte.
+Frygter derfor ikke, I ere bedre end
+mange Spurve}.
+
+\stykke{III.}{For Gud ere alle Ting mulige.}
+
+Men der skeer jo dog ingen Mirakler! ---
+„Ja det er just det Betænkelige, at en Personlighed,
+der tilhører Undernes Tidsalder, her
+fremstilles som Forbillede, at Han, der gjør de
+mange Undergjerninger, just skal være Exempel
+for os, der leve under Naturlovene. Den, der
+kan stille Stormen, kan jo gjerne sove paa
+Skibet; men Den, der ikke kan stille Stormen,
+maa vaage og bruge sine Kræfter. Den, der
+med et Ord kan kaste Vagten til Jorden, kan
+jo sagtens stikke Sværdet i Balgen; men, naar
+% --- p. 43 ---
+\setcounter{footnote}{0}%
+\opage{43}Ordet Intet formaaer, maa man prøve det
+blanke Vaaben.“
+
+Dersom disse Betænkeligheder blot tilhørte
+den erklærede Vantro, vilde vi slet ikke ændse
+dem; men hvor er en Tro saa stærk, at den
+ikke strider med Tvivlen?
+
+De fleste Mennesker kjende vist saadanne
+Sorgens, Ængstelsens, Spændingens Øieblikke,
+i hvilke den Tanke ligesom uvilkaarlig paatrænger
+sig: O, at der dog kunde skee et Mirakel!
+
+--- „Han haver frelst Andre, sig selv kan
+han ikke frelse.“ Saa lød det spottende Ord
+over Ham, der havde hjulpet saa Mange, og
+nu selv var som en Hjælpeløs.
+
+Al Hjælp i det Timelige er i Forsynets
+Tanke Middel for det Evige: der kan hjælpes
+ved et Mirakel; men der kan ogsaa hjælpes
+uden Mirakel. Bliver Miraklet forstaaet som
+en Hjælp i det Timelige, saa hjælper det slet
+ikke; det skader. Bliver Hjælpeløsheden i det
+Timelige forstaaet som Vækkelsesmiddel for det
+Evige, saa skader den slet ikke; den hjælper.
+At der skeer et Mirakel, kan være baade til
+Hjælp og til Fordærvelse; at Miraklet ikke skeer,
+kan være baade til Fordærvelse og til Hjælp.
+% --- p. 44 ---
+\setcounter{footnote}{0}%
+\opage{44}Et Menneske hjælpes kun af Gud, naar det
+hjælpes ubetinget personlig; men det hjælpes
+kun ubetinget personlig, naar det hjælpes til
+Troen, i Troen, ved Troen. Hvorfor er
+Miraklet skeet? At jeg skal troe. Hvorfor
+skeer Miraklet ikke? At jeg skal troe. Den,
+der negter Miraklets Mulighed, negter Forsynet;
+Den, der antager, at Gud kun kan hjælpe
+ved et Mirakel, negter ogsaa Forsynet.
+
+Som Tegn paa sin guddommelige Magtfuldkommenhed
+gjør Menneskens Søn Miraklet:
+han bespiser de Hungrige. Men --- er det ikke
+vidunderligt? --- Han, der hiælper Andre ved  % PRINTED AS IS: p. 44 „hiælper“ (the next line has hjælper)
+et Mirakel, hjælper ikke sig selv ved et Mirakel.
+Han, der formaaede at bespise fem Tusinde
+i Ørkenen, forvandlede dog ikke Stene til Brød,
+for at stille sin egen Hunger i Ørkenen.
+
+Her sees det Dobbeltsidige i Forsynets Hjælp.
+Den eensomme Hungrige, der fristes til et Mirakel,
+og dog ikke vil hjælpe sig ved et Mirakel,
+er dog alligevel væsentlig hjulpen: han har
+personlig Hjælpen i sig selv; han har Hjælpen
+i den guddommelige Vished, at et Menneske
+ikke hjælpes paa een, men paa utallige Maader,
+fordi „Mennesket ikke lever af Brød alene,
+% --- p. 45 ---
+\setcounter{footnote}{0}%
+\opage{45}men af hvert Ord, som udgaaer af Guds
+Mund.“
+
+Den hungrige Mængde, der bliver hjulpen
+ved Miraklet, er dog alligevel væsentlig hjælpeløs.
+Den hungrer atter den næste Dag, og
+søger Hjælperen, ikke fordi den saae Tegnet,
+men fordi den aad af Brødet, og mættede sig.
+Hjælpen blev tilbudt, og dog kunde det ikke
+hjælpe; fordi de Hungrige troede, at det gjaldt
+om Brødet alene, fordi Mængden troede, at
+der skulde hjælpes timelig i det Timelige.
+
+For Gud ere alle Ting mulige. Paa utallige
+Maader kan Forsynet hjælpe; og dog er
+det Altsammen forgjæves, naar Mennesket ikke
+vil forstaae den evige, personlige Hjælp, og lade
+sig hjælpe. Kunde der hjælpes timelig i det
+Timelige, da skulde vel snart alle Hungrige mættes,
+alle Nøgne klædes, og alle Endelighedens
+Sorger endes; her ere jo fem Tusinde, som
+kunne vidne, at Forsynet baade kan og vil
+hjælpe; men her ere jo ogsaa fem Tusinde,
+som kunne vidne, at dette ikke er Hjælpen.
+
+For Gud ere alle Ting mulige. Paa overnaturlig
+Maade kan Forsynet aabenbare sit
+Herredømme over Liv og Død. Dersom de
+% --- p. 46 ---
+\setcounter{footnote}{0}%
+\opage{46}Syges Helbredelse og de Dødes Opstandelse
+var Hjælpen selv: da skulde Almagten vel snarlig
+helbrede alle Syge, og aabne alle Grave; men,
+naar det gjælder den forkrænkelige Personligheds
+Forvandling til Uforkrænkelighed, kan der
+kun hjælpes ved indvortes Helbredelse, indvortes
+Opvækkelse. At Miraklet skeer, bliver i
+Forsynets Aabenbaring netop et Beviis for, at
+Miraklet i og for sig ikke er Hjælpen, og derved
+tillige et Beviis for, at Hjælpemidlet ligesaa
+godt kan bestaae deri, at der ikke skee Mirakler.
+
+For Gud ere alle Ting mulige. Som Tegn
+paa sin guddommelige Magtfuldkommenhed gjør
+Menneskens Søn et Opvækkelsens Under. Men
+--- er det dog ikke forunderligt? --- Han, der
+veed med sig selv, at han kan vække den Døde
+af Graven, see, han staaer som en Hjælpeløs
+bedrøvet ved Graven og græder.
+
+At kunne opvække den Døde og dog staae
+og græde ved Graven, seer jo ud som en Modsigelse. Ja tilvisse, Ingen, der vil bruge sin
+Forstand, skal kunne negte, at her maa være
+en Modsigelse. Men, hvis er Skylden? hvo
+er det, som her foraarsager Modsigelsen? Ikke
+Hjælperen, men de mange Hjælpeløse, der ved
+% --- p. 47 ---
+\setcounter{footnote}{0}%
+\opage{47}ham skulle hjælpes. Dersom de Hjælpeløse
+strax kunde indsee, hvori Hjælpen bestaaer, da
+var her Hjælp nok, da kunde Han, der staaer
+ved Graven, i et Øieblik frelse Alle, og forherlige
+sig selv. Men Hjælpen misforstaaes,
+Midlet forvandles; hvad der burde være til
+Hjælperens Forherligelse, bringer just Forfølgelsen
+og Lidelsen over ham, gjør ham, menneskelig
+talt, hjælpeløs; dette er just Modsigelsen,
+og det en Modsigelse saa sørgelig, at
+Guds Søn selv maa græde derover.
+
+„Han haver frelst Andre, sig selv kan han
+ikke frelse.“ --- Hvor der dog kan være Sandhed
+i en Bespottelse! Thi det er jo bogstavelig
+sandt, at han haver frelst Andre, og det er jo
+ogsaa bogstavelig sandt, at han nu ikke kan
+frelse sig selv --- ved Miraklet.
+
+Havde Hjælpemidlet været Hjælpen selv;
+havde Løgn og Ondskab, Vold og Uretfærdighed
+kunnet tilintetgjøres ved et Mirakel: da var
+Forsynets hellige Historie ikke bleven en Lidelsernes
+Historie, men en Forherligelsens Historie
+for Gud og Mennesker. Nu derimod, da Miraklet
+kun er Middel, og Midlet forvendes,
+saa hjælpes der ved det modsatte Middel, saa
+% --- p. 48 ---
+\setcounter{footnote}{0}%
+\opage{48}hjælpes der i al Inderlighed derved, at der
+ikke skeer noget Mirakel. For at hjælpe personlig
+maa den personlige Hjælper selv blive
+som den Hjælpeløse. ---“ „Og ville saa Alle blive
+hjulpne?“
+
+For Mennesker er det umuligt, men
+for Gud ere alle Ting mulige.
+
+\afdeling[\rule{10em}{0.4pt}]{C.}{Om Skjæbne og Forsyn.}
+\stykke{I.}{Skjæbne er Skyld.}
+
+Thi det, som man kan vide om Gud, er dem aabenbart, thi Gud har aabenbaret dem det, --- saa at
+de ere uden al Undskyldning.
+
+Den, der vil fortrøste sig til Forsynets
+Hjælp, maa gjøre Forsynets Villie; Den, der
+vil gjøre Forsynets Villie, maa kjende Forsynets Tanke. Hvo kjender Forsynets Tanke?
+hvo gjør Forsynets Villie? Den personlige
+Sandhed, den sande Personlighed.
+
+% --- p. 49 ---
+\setcounter{footnote}{0}%
+\opage{49}Forholdet imellem den Ene, der er den personlige
+Sandhed, og de Mange, der ved ham
+skulle deelagtiggjøres i Sandheden, er ikke et
+udvortes historisk Forhold imellem et enkeltstaaende
+Individ, der engang har været til, og
+en Mængde andre Individer, der i Tiden have
+sluttet sig sammen om denne Ene. Var det saaledes,
+da vilde der jo være en Skjæbnens Forskjel
+imellem dem, der vare saa lykkelige at
+komme i personligt Forhold til det overordentlige
+Individ, og de Mange, Mange, der vare
+lovlig undskyldte, at de ikke kjendte ham, fordi
+de aldrig havde seet ham, og aldrig hørt et
+Ord om ham.
+
+Den personlige Sandhed er Sandhedens
+Konge; hver Den, som elsker Sandheden, hører
+hans Røst, og hver Den, som hører hans Nøst,  % PRINTED AS IS: p. 49 „Nøst“ for Røst
+frelses af Forsynet.
+
+Al Skjæbne er personlig Usandhed; thi Skjæbnen
+kommer kun derved, at det Personlige selv
+gjør sig til det Usande. Al Skjæbne er væsentlig
+Skyld; thi Skjæbnen kommer kun derved, at det Personlige krænker sig selv ved at
+bøie sig under det Upersonlige. Al Skjæbne er
+væsentlig Synd; thi Skjæbnen opkommer kun
+% --- p. 50 ---
+\setcounter{footnote}{0}%
+\opage{50}derved, at Mennesket fornegter Gud ved at
+forvandle ham til et Upersonligt.
+
+Personlighedens umiddelbare Selvfornemmelse
+bestemmes deels ved det Endelige, deels
+ved det Evige. Selvfornemmelsen, umiddelbart
+bestemt ved det Endelige, er Egoisme; bestemt
+ved det Evige, er den Samvittighed.
+
+Egoismens Ideal er en Blanding af det
+Personlige med det Upersonlige; denne Blanding
+er det Forblommede, hvori den endelige
+Personlighed skjuler sin Afmagt for sig selv;
+dette Forblommede er det Mythiske. Det er
+ikke blot Afguden, der er mythisk; det Mythiske
+er i Afgudsdyrkerens upersonlige Personlighed.\footnote{Det \textit{Mythiske} er ikke en Phantasiens Bestemmelse; det er en ethisk Bestemmelse. Den mythiske Fortolkning saavel af det Gl. som af det N. Tst. er begrundet i personlig Usandhed, eller, om man vil, i upersonlig Sandhed.}
+
+Samvittighedens Ideal er en Eenhed af Aabenbaring
+og Tro. I Aabenbaringen bliver den
+egoistiske Afmagt sig selv aabenbar ligeoverfor
+den personlige Almagt, og i Troen faaer Mennesket
+sin sande Personligheds Kraft som en
+Guds Kraft.
+
+% --- p. 51 ---
+\setcounter{footnote}{0}%
+\opage{51}Alle Egoismens Idealer staae under Skjæbnen;
+alle Samvittighedens Idealer ere under
+Forsynet.
+
+Igjennem hele Historien gaaer Striden imellem
+personlig Sandhed og personlig Usandhed,
+imellem Egoismens og Samvittighedens Idealer. Under Stridens Gang skiller Slægten sig
+ad, og Bevægelsen deler sig i tvende Strømme:
+den mythiske og den i Aabenbaringstroen \emph{religiøse}.
+
+I den mythiske Retning seirer Egoismens
+Idealer under idelige Modvirkninger af Samvittigheden;
+i den troende Retning seirer Samvittigheden
+under idelige Modvirkninger af
+Egoismen. Adskillelsen er gjennemgribende som
+en Adskillelse imellem tvende, hinanden modsatte
+Aandssphærer. Over begge er der en Skjæbne,
+thi i begge er der en Skyld; men ogsaa over
+begge er der et sig forbarmende Forsyn, der
+straffer Skylden.
+
+For Mythernes Folk er Straffen Skjæbne;
+for Aabenbaringens Folk er Skjæbnen Straf;
+begge føres til Maalet: den personlige Sandhed
+er Forsynets Maal, og Maalet naaes i
+Tidens Fylde. 
+
+% --- p. 52 ---
+\setcounter{footnote}{0}%
+\opage{52}I Tidens Fylde optræder altsaa det virkeliggjorte
+Samvittighedsideal: \emph{frelsende}, thi
+Personlighedens Frelse er Samvittighedens Sag;
+\emph{dømmende}, thi hvert Menneske skal dømmes
+af sit Ideal. Men Idealets Sandhed er Sandhedens
+Konge; hvert Glimt af personlig Sandhed,
+hver Gnist af Samvittighed, der yttrer sig
+i Verden, er en Gnist af hans Flamme, et
+Glimt af hans Lys.
+
+Den personlige Sandhed er Sandhedens
+Konge; hver Den, som elsker Sandheden, hører
+hans Røst, og erkjender, at han er Idealet selv.
+Men de, som forblive i Usandheden, høre ikke
+hans Røst; de ville helst beholde deres egne
+selvgjorte, forqvaklede Idealer, den Ene i Naturen,
+den Anden i den skrevne Lov. Nu bliver
+Skylden aabenbar. Brøden ligger nu ikke
+deri,. at Idealet er blevet formørket og forvansket  % PRINTED AS IS: p. 52 a point after the comma
+i Tidernes Løb; thi denne Forvanskning
+hæves jo netop derved, at Sandhedens Konge
+selv viser sig i Verden; nei, Brøden ligger just
+deri, at enhver af Parterne paa sin Viis vil
+beholde det forqvaklede Ideal, det Ideal, der
+modsiger Samvittigheden, men smigrer Egoismen.
+Saaledes bliver da Miskjendelsen af
+% --- p. 53 ---
+\setcounter{footnote}{0}%
+\opage{53}Forsynet til aabenbart Oprør imod Forsynet;
+et saadant Oprør er en Forblindelse, Forblindelsen
+er Skjæbne, Skjæbnen er Skyld: her
+gjælder ingen Undskyldning.
+
+Sættes Sandheden upersonlig, da er det
+ganske rigtigt, hvad den moderne Aand paastaaer,
+at Menneskeslægtens Historie er syndfri,
+og at Synderne falde paa alle Individer
+uden Undtagelse; men anerkjendes den personlige
+Sandhed, saa gjælder Troens Ord, at
+Slægtens Historie er en syndig Historie, og at
+der er Een i Slægten, der er syndfri.
+
+Verdenshistorien er i uophørligt Oprør mod
+Forsynet; men Styrelsen viser sig deri, at
+Oprørerne ere afmægtige. For at see Oprøret
+i hele dets Udstrækning maae vi skjelne mellem
+de larmende Oprørere og de stille Oprørere.
+
+I et Aandens Billede skildres de larmende
+Oprørere fra Oldtids Dage som Folkene, „der
+bruse og pønse paa tomme Raad, som Jordens
+Mægtige, der ville sønderrive Styrelsens
+Baand og stride mod Forsynets Konge“. Mod
+disse bruges det stærke Ord, at Han, der
+sidder i Himmelen, leer.
+
+Straffen, der skal ramme disse Oprørere,
+% --- p. 54 ---
+\setcounter{footnote}{0}%
+\opage{54}kommer da ogsaa i Skjæbnens Skikkelse; thi
+Forsynets Konge skal „knuse dem med Jernstav,
+som en Pottemagers Kar skal han slaae dem i
+Stykker.“
+
+De larmende Oprørere ere udvortes kjendelige,
+just fordi de larme; anderledes forholder
+det sig med de stille. De stille Oprørere reise
+ikke dristig Ideal mod Ideal; de hæve ikke
+Hovedet saa høit, at Skjæbnen historisk kan
+ramme dem: hvilke ere da de stille Oprørere?
+
+Lad os først tilstaae, at det stille Oprør ulmer
+i os Alle, og derhos charakterisere Oprørerne
+selv efter Begrebet. Det er jo alle de, der
+fortrøste sig til Forsynets Bistand uden nogensinde
+at forelægge sig selv det alvorlige Spørgsmaal: hvad er da egentlig Forsynets Tanke?
+det er jo alle de, der trøstig beraabe sig paa
+Sandhed og Ret, uden dog at ville bøie sig
+ubetinget for Retfærdighedens Ideal, og høre
+Sandhedens Konge; det er jo alle de Mennesker,
+Høie og Lave, Rige og Fattige, Begavede
+og Ubegavede, der ene og alene, eller dog nærmest
+og allernærmest, indrette deres Liv paa
+hyggeligt Velvære, behagelig Tryghed, endelig
+Travlhed, timelig Virksomhed for timelig For%
+% --- p. 55 ---
+\setcounter{footnote}{0}%
+\opage{55}maal, og for Resten alle ere dydzirede, forsaavidt
+de alle ere zirede med de for den jordiske
+Velværen høist nødvendige Dyder, saasom:
+Skikkelighed, Ærbarhed, Vindskibelighed,
+Ædruelighed, Redelighed i Pengesager, Fredsommelighed,
+Tjenstvillighed, hvortil endnu kan
+regnes Godmodighed, Omgjængelighed, Selskabelighed
+o. o. v., alle disse, der have alle
+disse Dyder og hverken meer eller mindre, alle
+disse ere hverken meer eller mindre end honette,
+ærbare, stille, skikkelige Oprørere imod den evige
+Forsynets Tanke, imod den Sandhedens Konge,
+der fornedrede sig selv, og lod Tilskikkelserne
+komme over sig, at det dog maatte blive aabenbart,
+hvad det er, at kjende Forsynets Tanke
+og gjøre Forsynets Villie.
+
+\stykke{II.}{Timelige Vilkaar.}
+
+Herren er den, som gjør fattig, og den, som gjør rig;
+han er den, som nedtrykker, og den, som ophøier.
+
+Uligheden i de menneskelige Vilkaar er vistnok
+i verdslig Forstand at betragte som et sørgeligt
+Misforhold, en Skjæbnens Uretfærdighed;
+men i Troens Forstand er denne Ulighed
+% --- p. 56 ---
+\setcounter{footnote}{0}%
+\opage{56}just et Beviis paa Forsynets allestedsnærværende
+Retfærdighed.
+
+I timelig Henseende har den Rige. en overordentlig  % PRINTED AS IS: p. 56 full stop before lower-case „en“ (R04)
+Begunstigelse fremfor den Fattige, den
+Mægtige fremfor den Ringe; i Verdslighedens
+Sprog maae vi udtrykke dette saaledes: Skjæbnen er den, som gjør fattig, og den,
+som gjør rig; det er den, som \emph{nedtrykker}, og den, som ophøier.
+
+See vi derimod Sagen i Troens Lys, da
+er heri slet ingen Uretfærdighed, ingen Vilkaarlighed,
+ingen Partiskhed. At dette ikke er
+en vilkaarlig Paastand, men en evig Sandhed,
+følger ligefrem af Modsætningen mellem det
+Verdslige og det Religiøse.
+
+Ligeover for Skjæbnen, altsaa i Verdsligheden,
+er Menneskets Betydning i enhver Henseende
+endeliggjort. Et Menneske kan i Verden være noget Stort; men al verdslig Storhed
+er relativ: selv den største Individualitet
+forsvinder som en Ubetydelighed i det umaadelige
+Hele. Omvendt kan et Menneske være
+noget saare Ringe; men selv den Ringeste er
+dog altid Noget. Som nu al Storhed og al
+Ringhed i verdslig Forstand er Stykværk, saa er
+% --- p. 57 ---
+\setcounter{footnote}{0}%
+\opage{57}ogsaa al Menneskets Betydning Stykværk: Verdsligheden
+er just det udstykkede Menneskevæsen.
+
+Det er ikke den Samme, der paa een Gang
+er baade stor og ringe; men den Ene er stor,
+den Anden ringe; det er ikke den Samme, der
+paa een Gang er baade rig og fattig; men den
+Ene er rig, den Anden fattig; ja den Samme
+er end ikke altid det Samme: før var han
+mægtig, nu er han kun ringe; før var han
+fattig, nu er han jo rig.
+
+Fastholdes nu denne Menneskevæsnets verdslige
+Udstykning i dens Verdslighed, saa have
+vi Skjæbnen. Hvert Menneske, der har sit
+Liv i denne Udstykning, udtrykker personlig den
+upersonlige Sandhed: Skjæbnen er den, som
+gjør fattig, og den, som gjør rig; det er den,
+som nedtrykker, og den, som ophøier.
+
+Ligeover for Gud er Mennesket derimod i
+dets Endelighed „Støv og Aske“, en ligegyldig
+Størrelse, et reent Intet; og dog er Mennesket
+i Guds Tanke noget uendelig Stort, Aand af
+Guds Aand, Guds Billede. Her falder til
+begge Sider det Endelige, det Relative bort,
+og dermed falder ogsaa Udstykningen bort.
+
+Her er den Samme væsentlig altid det
+% --- p. 58 ---
+\setcounter{footnote}{0}%
+\opage{58}Samme. Den Samme, der her er ringe, er
+ogsaa stor, thi hans Storhed fremgaaer af
+hans Ringhed; den Samme, der her er fattig,
+er ogsaa rig, thi i hans Fattigdom fødes personlig
+en Evighedens Rigdom.
+
+Men nu Stykværket, Verden og Verdsligheden?
+Verdsligheden maa bort; men Verden
+bliver, thi Verden er god; Stykværket bliver,
+thi dette Stykværk er saare godt --- i Forsynets
+Øine.
+
+Herren er den, som gjør fattig, og
+den, som gjør rig; han er den, som
+\emph{nedtrykker}, og den, som ophøier.
+
+Alle Tilskikkelser ere personlige Opgaver. Formedelst
+Stykværket bliver den ene Opgave til
+mange Opgaver, og just i denne Forskjellighed
+for hvert Menneske en virkelig sand og personlig
+Opgave.
+
+Hvad der i hver Tilskikkelse er guddommelig
+Hjælp, er tillige timelig Byrde, og Alt,
+hvad der seer ud som timelig Hjælp, er omvendt
+guddommelig Byrde.
+
+Stille vi den Mægtige og den Ringe imod
+hinanden, da kommer Opgaven i aldeles modsatte
+Tilskikkelser, og, saa at sige, under to For%
+% --- p. 59 ---
+\setcounter{footnote}{0}%
+\opage{59}klædninger. Enhver af de Tvende faaer umiddelbart
+det personlige Indtryk af Tilværelsen,
+der svarer til hans Stilling: et Menneske er
+noget Stort; et Menneske er noget Ringe.
+
+Dersom nu Opgavens Løsning blot bestod
+i en Tilegnelse af det personlige Indtryk, at et
+Menneske er noget Stort, og kan udrette noget
+Stort i Verden: da var den Mægtige vilkaarlig
+begunstiget, thi det Indtryk modtager han jo
+netop fra alle Sider i hvert Øieblik, han lever.
+
+Dersom Opgavens Løsning omvendt bestod
+i en umiddelbar Tilegnelse af det Indtryk, at
+et Menneske er noget Ringe; da var den Ringe
+jo ligefrem begunstiget ved sin Ringhed, thi
+Verden skal nok lære ham, hvor ringe han er.
+
+Men --- her er den Samme væsentlig altid
+det Samme. Opgavens Løsning bestaaer altsaa for begge i en Forarbeidelse og inderlig
+Tilegnelse af begge Indtryk; herved blive Vilkaarene
+lige.
+
+Kan nu den Mægtige forarbeide Indtrykket
+af verdslig Storhed saaledes, at han --- ikke
+blot til Opbyggelse i en stille Time, men i al
+verdslig Omgivelse, i virkelig Personlighed --- i
+hvert Øieblik forvandler dette Indtryk i religiøs
+% --- p. 60 ---
+\setcounter{footnote}{0}%
+\opage{60}Følelse af uendelig Ringhed for Gud; kan den
+Mægtige, naar Tusinder med Beundring see op til
+ham, dog endnu altid see det Øie, der prøvende
+seer ned paa ham: da løser han en stor Opgave;
+da forstaaer han, at timelig Hjælp er guddommelig
+Byrde; da vil han ogsaa bære sin Byrde,
+blive i Høiheden, og opløfte sit Hoved som Den,
+der er sat i Høiheden, forklarende den Tanke,
+at Herren er den, som ophøier.
+
+Saa kommer den Ringe, men --- hvor stor,
+hvor ophøiet er ikke hans Opgave! Hvad han
+er, hvad han føler, tænker og gjør, er jo dog
+saa ubetydeligt, for det Hele saa ligegyldigt,
+at Ingen lægger Mærke dertil, fordi det slet
+ikke er værd at bemærke. Og dog skal denne
+Ubetydelige og alt det Ubetydelige, han gjør,
+være af uendelig Betydning. For ham, der end
+ikke er kjendt i Verden, skal hvert Øieblik være
+ligesaa vigtigt, ligesaa spændende, ligesaa afgjørende,
+som for Den, der er stillet saa høit,
+at hans Vink bevæger en Verden. Kan nu
+den Ringe løse denne Opgave, kan han, den
+Ubemærkede, virkelig tilegne sig det personlige
+Indtryk, at han i ethvert Nu bemærkes af Forsynet: da vil han i Sandhed forstaae, at Det,
+% --- p. 61 ---
+\setcounter{footnote}{0}%
+\opage{61}der er timelig Byrde, er guddommelig Hjælp;
+da vil han, naar det saa skal være, gjerne blive
+i Ringheden som den Fortrykte: han trykkes jo
+ikke af Skjæbnen; han udtrykker jo den Tanke,
+at Herren er den, som nedtrykker.
+
+Sammenstille vi nu den Mægtige med den
+Ringe, saaledes som de selv begge have stillet
+sig under Forsynet; da vil den Første vist ikke
+foragte den Sidste, og den Sidste ikke misunde
+den Første; nei, nu ville de forstaae hinanden
+i al Inderlighed, og hjælpe hinanden af al Kraft,
+den Mægtige ved sin Magt, den Ringe ved
+sin Ringhed.
+
+„Herren er den, som gjør fattig, og den,
+som gjør rig.“
+
+Naar de Rige i taknemmelig Erkjendelse af
+Forsynets Viisdom indskjærpe denne Sætning
+som guddommelig Garanti for Eiendomsretten,
+medens de Fattige i Utaalmodighed over Skjæbnens
+Vilkaarlighed reise sig, for at komme Viisdommen
+til Hjælp: saa bruse Vandene, saa
+mødes Oprørerne fra begge Sider, de stille med
+de larmende; men --- Han, der sidder i Himmelen,
+leer.
+
+Det er i den almindelige Mening en let
+% --- p. 62 ---
+\setcounter{footnote}{0}%
+\opage{62}Sag at takke Forsynet for Rigdom, men saare
+tungt at skulle takke for Fattigdom. Dette
+er imidlertid ikke den guddommelige Mening.
+\emph{Sandheden} siger: „salige ere de Fattige“;
+Sandheden siger: „det er lettere, at en Kameel
+gaaer igjennem et Naaleøie, end at en
+Rig kommer i Guds Rige“. Dersom det da
+er sandt, hvad \emph{Sandheden} siger, saa maa
+Rigdom jo være en stor og forfærdelig Byrde;
+men dersom Rigdom er en saa stor og forfærdelig
+Byrde, da er den Rige jo ikke af Gud
+begunstiget fremfor den Fattige.
+
+Hvad skal den Fattige gjøre? Forstaae Guds
+Tilskikkelse, og forvandle Byrden til Hjælp.
+
+Hvad skal den Rige gjøre? Forstaae Tilskikkelsen,
+og forvandle Byrden til Hjælp. Men
+saa skal jo den Rige gjøre det Selvsamme som
+den Fattige. Skulle de nu begge, hver paa sin
+Maade, gjøre det Samme; da trænge de ogsaa til gjensidig Understøttelse, og bør følgelig
+hjælpe hinanden; men især bør den Fattige
+hjælpe den Rige, thi den Fattige har jo det
+Mindre at bære.
+
+% --- p. 63 ---
+\setcounter{footnote}{0}%
+\opage{63}Den Fattige, der hjælpes af Gud saaledes,
+at han --- i personlig Sandhed virkelig hjælper
+den Rige, beviser just derved i Gjerning, at
+Herren er den, som gjør fattig.
+
+„Det er lettere, at en Kameel gaaer igjennem
+et Naaleøie, end at en Rig forstaaer Forsynets
+Tanke og gjør Forsynets Villie“; Rigdommen
+gjør altsaa Opgavens Løsning saa vanskelig, at
+Byrden næsten maa betragtes som overmenneskelig.
+Hvad er da Sandhedens personlige Raad
+til den Rige? At den Rige snarest muligt formindsker
+sin overmenneskelige Byrde, og hjælper
+sig ved at hjælpe den Fattige. Kun naar den
+Rige saaledes hjælper den Fattige, kun naar
+den Rige personlig for Gud erkjender, at han,
+hver Gang han afhjælper den Trængendes
+Nød, væsentlig hjælper sig selv, udtrykker han
+den Sandhed, at Herren er den, som gjør
+rig.
+
+Saa ere da Vilkaarene lige; saa ere vi da,
+skjøndt under mange Forklædninger, alle een
+Faders Børn; saa er da Retfærdigheden guddommelig,
+som Gud er retfærdig.
+
+% --- p. 64 ---
+\setcounter{footnote}{0}%
+\opage{64}\stykke{III.}{Aandelige Vilkaar.}
+
+Al god og fuldkommen Gave kommer herovenfra fra
+Lysenes Fader, hos hvem der ikke er Forandring
+eller Skygge af Omskiftelse.
+
+Vil Nogen spørge ligefrem, om Talenterne,
+Genierne, Heroerne og de store Verdensideer
+dog ikke ifølge deres høiere Natur maae siges i
+ganske særegen Forstand at være under Forsynet;
+da kan et saadant Spørgsmaal ikke besvares,
+saalænge det holdes i en Almindelighed,
+der udelukker det Personlige. Først, naar det
+Personlige tages med, bliver der Mening i
+Spørgsmaalet, og Besvarelsen vil da beroe
+paa den Stilling, Personligheden indtager til
+Ideerne.
+
+Den, der holder sig til den upersonlige
+Sandhed, altsaa i dette Tilfælde --- hvor det
+Personlige netop er det Afgjørende --- til den
+personlige Usandhed, vil da naturligviis paastaae,
+at Ideerne oprinde af Verdensfornuftens
+Naturgrund, og at de høiere Aandsgaver følgelig ikke ere Andet end rene Naturgaver.
+
+Den derimod, der troer personlig paa den
+personlige Sandhed, vil ubetinget fastholde den
+% --- p. 65 ---
+\setcounter{footnote}{0}%
+\opage{65}Forudsætning, at al god og fuldkommen Gave
+kommer herovenfra fra Lysenes Fader, at altsaa Ideerne i Historien saavelsom Fuglene under
+Himmelen, Genierne i Kunsten saavelsom
+Lilierne paa Marken staae under Guds faderlige
+Varetægt.
+
+Forskjellen imellem Begavede og Ubegavede
+er i en vis Maade at sammenligne med Forskjellen
+mellem Rige og Fattige. De Begavede
+ere jo de aandelig Rige, der meddele os af
+deres Overflødighed, hvad de godt kunne undvære.
+Uligheden faaer imidlertid en ganske anden Betydning i det Aandelige end i det Timelige.
+Seet i Ideen, er Intet saa agtværdigt,
+som et sandt Aandsaristokrati, og seet i Ideen,
+er Intet saa foragteligt, som det rene Pengearistokrati.
+
+De Aandsbegavede ere bestemte til at være
+Slægtens Velgjørere, Lærere, Opdragere og
+Tugtemestere; de ere Ideens Tjenere, udsendte
+til Tjeneste for dem, der skulle deelagtiggjøres
+i Ideernes Rigdom; men hvilken af disse
+Tjenere, vi end vælge os til Exempel, saa
+overbevises vi om, at enhver overordentlig
+Gave forvandler sig til en guddommelig Byrde,
+% --- p. 66 ---
+\setcounter{footnote}{0}%
+\opage{66}naar den Begavede skal udtrykke Forsynets
+Tanke.
+
+For Gud er ethvert Menneskeværk, selv det
+største Mesterværk, Intet. For Talentet er
+Værket Alt; thi det er jo „Værket, der skal prise
+Mesteren“. For Gud gjælder alene Samvittighedens
+personlige Ideal; i de relative Aandssphærer
+gjælde de mange upersonlige, til Værkernes
+Udførelse ledende Idealer. Ville de
+Begavede nu stille sig under Forsynet, da vil
+jo Enhver af dem komme til at leve for
+tvende, hinanden modvirkende, Idealer; thi Enhver
+af dem faaer da foruden Samvittighedsidealet,
+der gjør Værket til et Intet, endnu
+desuden det til hans Talent svarende Ideal,
+der gjør Værket til Alt. Men at leve for
+tvende, hinanden modstræbende, Idealer er overordentlig byrdefuldt.
+
+At de Begavedes Fortrin fremfor de Ubegavede
+virkelig er en guddommelig Byrde, kan
+paavises i Exempler fra de forskjellige Aandssphærer.
+
+Lad engang den geniale Kunstner stille sig
+under Forsynet ved Siden af den simple Arbeidsmand. De anerkjende da begge Samvit%
+% --- p. 67 ---
+\setcounter{footnote}{0}%
+\opage{67}tighedsidealet; de ere altsaa lige i religiøs Begeistring.
+Men Arbeidsmandens Værk ligger
+saa langt under det Ideale, at det umulig
+kan blive Gjenstand for fristende Begeistring;
+Kunstnerens Arbeide er derimod umuligt uden
+en tilsvarende Begeistring.
+
+Hvilken Forskjel! Naar Arbeidsmanden kun
+dyrker een Gud, og kun har een Begeistring,
+faaer Kunstneren jo næsten to Guder, idet han
+faaer to Idealer, og begeistres i to ueensartede
+Retninger. Medens der ikke let skal findes
+nogen Arbeidsmand, der mener, at hans Værk
+som Værk er til Guds Ære (thi det vilde dog
+være besynderligt, om En paastod, at han kunde
+grave Gruus til Guds Ære, eller slaae Kalk til
+Guds Ære), saa er Kunstneren idelig fristet til
+at sammenblande Kunstidealets og Samvittighedsidealets
+Fordring. Ja, dersom det blot
+kunde lykkes Talentet at forvandle Kunstdyrkelsen
+til en ligefrem Gudsdyrkelse, saa var
+Kunstneren hjulpen, saa kunde man rigtignok
+sige, at den Begavede var baade Lykkens og
+Guds Yndling. Men det er umuligt: det
+æsthetiske Pietisteri er Oprør mod Forsynet.
+Der kan ligesaalidt males et Billede,  være sig
+% --- p. 68 ---
+\setcounter{footnote}{0}%
+\opage{68}et catholsk Mariebillede eller et protestantisk
+Christusbillede, til Guds Ære, som der kan
+componeres en Ouverture til Guds Ære, eller
+spilles Comoedie til Guds Ære.
+
+Al religiøs Kunstdyrkelse er raffineret Afgudsdyrkelse.
+I Kunsten er Værket Alt; i Forsynets
+Øine er Værket Intet. Adskillelsen af
+hellig og verdslig Kunst er saa langt fra at
+betegne en virkelig Forskjel imellem det Religiøse
+og det Profane i personlig Forstand, at
+den „hellige“ Kunst netop medfører den største
+Fristelse til at profanere det Hellige. Forskjellen er vel hentet fra Stoffet, men dog fornemmelig
+fra Talentets Beaandelse. Den profane
+Kunstner (Skuespildigteren, Skuespilleren) beaandes
+verdslig, og er ikke saa let fristet til at
+forvexle sin Muse med en Forsynets Engel;
+den „hellige“ Kunstner faaer derimod sin Beaandelse
+gjennem de hellige Gjenstande, hans
+Kunstbegeistring er som en Gudsbegeistring:
+saa skeer det let, at den Begeistrede bliver
+svimmel, annammer Indgivelsen som en Guds
+Aabenbaring, falder tilbedende paa sine Knæ,
+og bliver --- en raffineret Afgudsdyrker.
+
+Ethvert overordentligt Talent er en god og
+% --- p. 69 ---
+\setcounter{footnote}{0}%
+\opage{69}fuldkommen Gave; men det koster utrolig Anstrengelse
+at udtrykke den personlige Sandhed,
+at Gaven kommer herovenfra.
+
+Den Ikke-Begavede, der æder sit Brød i sit
+Ansigts Sved, og sukker under Endelighedens
+Byrder, har i disse Byrder en guddommelig
+Hjælp, og fristes ikke af de relative Idealer.
+Den Begavede, der bevæges i Stemning og hengiver
+sig i ideel Productivitet, maa fordobble sin
+Anstrengelse for at bevare sin Personlighed.
+Værket, der er ham Alt, maa tillige være ham
+et Intet, et Ligegyldigt, en Barneleg, et Vehikel
+for Udvikling af ethiske Kræfter. Den
+Begavede, der nu kan gjøre dette: kan have
+Kunsten, som om han ikke havde den, kan elske
+dens Ideal, som om han ikke elskede det, fordi
+han elsker Gud over alle Ting, kan takke Gud
+ligesaa inderlig, naar Værket aldeles mislykkes,
+som naar det over al Maade lykkes, kan holde
+sig saa uforandret til Samvittighedens Ideal,
+at der i hans Personlighed end ikke er Skygge
+af Omskiftelse, hvordan saa end Lykken skifter i
+Kunstens Verden; ja, den Begavede, der kan
+gjøre dette, han er sandelig en Mester over
+mange Mestere; han veed, hvad det vil sige,
+% --- p. 70 ---
+\setcounter{footnote}{0}%
+\opage{70}at Gaven er mere end en Lykkens Gave; han
+udtrykker personlig den Sandhed, at Gaven
+kommer herovenfra, fra Lysenes Fader, hos
+hvem der ikke er Forandring eller Skygge af
+Omskiftelse.
+
+Et Liv, der indvies til Kunsten, har altid
+Mulighed til megen Lykke og megen Ulykke, til
+bittre Smerter og til rige Nydelser; dette
+gjælder ligefrem, forsaavidt Gaven opfattes som
+Naturgave. Saaledes priisgivet for eventyrlig
+Vexel af Held og Uheld, staaer Talentet ligefrem
+under Skjæbnen.
+
+Vil den Begavede derimod stille sig under
+Forsynet, da er hans Liv, uden Hensyn til
+Lykke og Ulykke, væsentlig indviet til ethisk Anstrengelse
+og religiøs Lidelse. Og hvad er
+saa alle Endelighedens Qvaklerier med Held
+og Uheld, Anerkjendelse og Ikke-Anerkjendelse i
+Sammenligning med den indre personlige Anstrengelse,
+at skulle arbeide for et Maal, et
+Ideal, der dog er et Middel, et Intet; at
+skulle opflammes af Begeistring, og saa igjen
+begeistres til at slukke Begeistringens Flamme!
+
+Overveie vi nu dette, og betænke, at Kunstens
+Børn ere Ideens Tjenere, udsendte til
+% --- p. 71 ---
+\setcounter{footnote}{0}%
+\opage{71}Tjeneste for os; og betænke, hvad disse Tjenere
+maae offre for vor Skyld, bære og lide for vor
+Skyld, da have vi visselig ikke Aarsag til at
+misunde dem deres aandige Fortrin; vi ere
+meget mere forpligtede til at tjene dem igjen i
+Alt, hvad vi kunne, komme dem imøde med Erkjendtlighed,
+og ære dem som Forsynets Sendebud,
+saasandt de virkelig (hvad vi jo maae troe)
+i Alt bestræbe sig for at udtrykke Forsynets
+Tanke.
+
+See vi os om i Sandhedens Rige, da forefinde
+vi to hinanden ganske modsatte Sphærer,
+Videnskabens og Personlighedens. Den videnskabelige
+Sandhed er i sit Væsen upersonlig;
+den personlige Sandhed er i sit Væsen uvidenskabelig.
+
+I Videnskaben gjælder Talentet; det er igjen
+Endelighedens Forskjel imellem Begavede og
+Ubegavede, der beviser, at Videnskaben tilhører
+Verden. I Personlighedens Sphære er denne
+Forskjel hævet. Sandheden siger: „Jeg priser
+Dig, Fader, Himmelens og Jordens Herre!
+at Du haver skjult dette for de Vise og Forstandige,
+og aabenbaret det for de Umyndige“;
+dette siger jo dog med andre Ord: „Jeg priser
+% --- p. 72 ---
+\setcounter{footnote}{0}%
+\opage{72}Dig, Fader! at Du haver gjort den personlige
+Sandhed uvidenskabelig.“
+
+Begreberne Skjæbne og Forsyn ere selv
+uvidenskabelige Begreber; deres Forskjel viser
+sig først, idet Personligheden træder til, og indtager
+sin Position.
+
+Bøier Personligheden sig under den videnskabelige
+Sandhed, saa seirer det Upersonlige,
+og saa kommer Skjæbnen. Med denne Position
+er det jo let nok at opløse den hele Troeslære
+i Usandhed; men ved denne Position har Personligheden
+tillige væsentlig opgivet sig selv, og
+befinder sig i personlig Usandhed. Den videnskabelige
+Sandhed har aldeles ingen Skyld i
+denne Usandhed: Skylden ligger i det personlige
+Selv.
+
+Hævder Personligheden derimod sin oprindelige
+Ret, og vender sig troende til Troens
+Gjenstand: da er det en temmelig let Sag, at
+blive de videnskabelige Indvendinger qvit; thi
+de falde jo bort af sig selv.
+
+Lad os da i Forsynets Navn anerkjende
+vort religiøse Forhold til Gud som et personligt
+Forhold; men lad os da ogsaa, i Forsynets
+Navn, modstaae den Fristelse, at ville
+% --- p. 73 ---
+\setcounter{footnote}{0}%
+\opage{73}have en „\emph{Troesvidenskab}“, eller med andre
+Ord: at ville have dette Personlige igjen udlagt
+i det Upersonlige.
+
+Alt, hvad der videnskabeligt kan gjøres, for
+at klare og sikkre Troens Opgaver, bestaaer i
+en fuldstændig og tydelig Adskillelse af Videnskabens
+og Personlighedens Enemærker. Ethvert Troesbegreb maa derfor fremstilles saaledes,
+at det netop bliver kjendeligt ved dets
+skarpe Modsætning til Vidensbegrebet, og Sphærernes
+Ueensartethed paa alle Punkter efterviist
+og belyst.
+
+Saadanne Kategorier som: „religiøs Genius“,
+„videnskabelig Naadegave“, høre til Indbildningens
+Fostre, der hverken ere religiøse
+eller videnskabelige.
+
+Geniet er i dets umiddelbare Form en Naturens
+Gave, og ingen Naturens Gave kan forholde
+sig ligefrem understøttende til det Religiøse.
+
+Det religiøse Øieblik er aldrig videnskabeligt;
+det videnskabelige Øieblik er aldrig religiøst.
+
+Det gaaer med Videnskabsmanden, som med
+Kunstneren: vil han udtrykke Forsynets Tanke,
+bliver han dragen i to modsatte Retninger.
+Videnskaben er hans Maal, hans Værk, hans
+% --- p. 74 ---
+\setcounter{footnote}{0}%
+\opage{74}verdslige Ideal. Arbeidende for dette Maal,
+maa han bruge sin hele Bevidsthedskraft, for at
+fjerne alt personlig Forstyrrende og glemme sig
+selv i Interessen for den almene Sandhed.
+Skal han saa tilbage i det Religiøse, da behøver
+han igjen omvendt hele sin Bevidsthedskraft for
+at samle sig personlig, vække sig selv til umiddelbar
+Fornemmelse af Virkelighedens punktuelle
+Indtryk, og erkjende, at det nu ikke gjælder
+Dette eller Hiint i Almindelighed, men at det
+gjælder ham, ham selv personlig for den personlige Gud.
+
+Videnskabeligheden fremmer ikke det Religiøse,
+den bedøver det Religiøse. Den, der
+sidder i den dybeste Videnskabelighed, er ligesaa
+langt fra det Religiøse, som Den, der ligger
+i den dybeste Søvn.
+
+Ogsaa heri viser det sig, at verdsligt Fortrin
+er guddommelig Byrde. Det er langt lettere under Hverdagslivets Sysler, Sorger og
+Glæder at arbeide inderlig i det Religiøse, end
+at have det Religiøse i et Studerekammer. Du
+kan bære paa en Møllesteen, og have det Religiøse;
+men ingen Tænker paa Jorden kan have
+det Religiøse i det Øieblik, han løser en viden%
+% --- p. 75 ---
+\setcounter{footnote}{0}%
+\opage{75}skabelig Knude. En Kone kan spinde paa sin
+Rok, og have det Religiøse; men en Mand,
+var han end nok saa troende, kan ikke grunde
+videnskabelig paa Guds Tilværelse, og til samme
+Tid have det Religiøse.
+
+At al Videnskab i og for sig, ligesom alt
+Verdsligt i og for sig, fører bort fra Gud,
+ligger deri, at al Videnskab fører bort fra det
+Personlige. Naar det Personlige, det i Samvittighedsidealet
+Punktuelle, først er behørig svækket,
+kan Videnskabens Ideal da ogsaa let forvandle
+sig til Guddommen selv. Derfor høres saadanne
+Talemaader som: „Videnskaben fører os
+Gud nærmere; Videnskabens Dyrkelse er i høiere
+Forstand Guds Dyrkelse.“
+
+Men er da Videnskaben ikke en god og fuldkommen
+Gave? Jo, tilvisse! men det koster
+utrolig Anstrengelse, naar den Videndes Existens
+skal udtrykke den personlige Sandhed, at
+Gaven kommer herovenfra, fra Lysenes Fader,
+hos hvem der ikke er Forandring eller Skygge
+af Omskiftelse.
+
+Aandens Overlegenhed er Menneskets Lidelse:
+Han, der haver den evige Aand, har lidt for
+os Alle.
+
+% --- p. 76 ---
+\setcounter{footnote}{0}%
+\opage{76}Overskue vi nu Fordelingen af de aandelige
+Gaver i det Hele, da viser den sig, fra to forskjellige
+Sider: verdslig uretfærdig, guddommelig
+retfærdig.
+
+Verdslighedens Aand, de relative Idealers,
+de endelige Værkers og Bestræbelsers Aand,
+er upersonlig, og just derfor uretfærdig. Naturens
+Gaver uddeles i Flæng som Lykkens
+Gaver: den Ene er begavet, den Anden indskrænket;
+den Ene fuldfører et stort Værk, og
+bliver noget Stort; den Anden udretter Intet,
+og bliver i Ubetydelighed. Saa deles Arbeiderne:
+den Begavede faaer det store Arbeide,
+og er i Fordelen; den Ubegavede maa staae tilbage.
+Saa strides de Arbeidende om Arbeidet;
+saa opslides og fortæres de Arbeidende som
+Midler, og Værkerne, de sidste Maal, blive
+tilbage som Historiens Udbytte, som Babylons
+Gruus, som Ægyptens Pyramider, som Mindesmærker
+om de Masser af personlige Kræfter,
+der i Tidernes Løb ere offrede til Skjæbnen.
+
+Forsynets, Samvittighedsidealets, det evige
+Formaals Aand er personlig, og just derfor
+retfærdig. I dette Aandens Rige faaer hvert
+Menneske sin Gave som personlig Opgave.
+% --- p. 77 ---
+\setcounter{footnote}{0}%
+\opage{77}Den, der fik den største Kraft, fik ogsaa den
+største Byrde. Her svarer Gaven nøiagtig til
+Byrden, Værket til Ansvaret, Lønnen til Anstrengelsen;
+her faaer den Største ikke Mere,
+og kan ikke faae Mere, end den Mindste; thi
+den Mindste saavel som den Største faaer jo,
+enhver efter sin Anstrengelse i Troen, den hele
+personlige Sandhed.
+
+\stykke{IV.}{Det ene Fornødne.}
+
+Men uden Tro er det umuligt at behage Gud; thi det
+bør Den, som kommer frem for Gud, at troe, at
+han er til, og at han bliver deres Belønner, som
+søge ham.
+
+„Naturen maa hjælpe sig selv“: denne Regel,
+der vist har megen Gyldighed i Medicinen,
+synes næsten at kunne overføres paa Ethiken,
+naar man seer Alting verdslig. Thi er det
+ikke forunderligt, hvorledes de personlige Naturanlæg
+kunne spotte Opdragelse og Dannelse;
+hvorledes en god Natur kan opdrage sig selv
+trods slette Exempler, og en slet Natur forhærde
+sig mod de bedste Exempler; hvorledes en selvstændig
+Natur, snart bøielig, snart stridig, kan
+% --- p. 78 ---
+\setcounter{footnote}{0}%
+\opage{78}opretholde fin Individualitet under stærke udvortes
+Tryk, medens den svage, uselvstændige
+Natur ikke ved nogensomhelst understøttende
+Omgivelse kan hjælpes ud over sin medfødte
+Umyndighed.
+
+I verdslig Forstand er her naturligviis i
+denne som i enhver anden timelig Ulighed en
+Tilfældets Vilkaarlighed, en Skjæbnens Uretfærdighed;
+men i guddommelig Forstand er
+Skjæbnen Skyld, og Skylden er Menneskets
+egen.
+
+At dette forholder sig saaledes, kan jo
+høres, naar de Paagjældende begynde at beklage
+sig over Skjæbnen.
+
+Klager den Svage, at han maa staae tilbage
+for den Stærke; da kan han vel have Ret
+i det Timelige; thi i alt Timeligt udretter den
+stærke Natur langt mere end den svage. Men
+for Gud anklager den Svage sig selv; thi for
+Gud gjælder Troen som det ene Fornødne, og
+i Troen er Forskjellen hævet.
+
+For at troe, maa den Stærke blive svag,
+som den Svageste; thi Gud er kun stærk i de
+Svage. Skulde her være nogen endelig Forskjel,
+da maatte Fordelen jo snarere være paa
+% --- p. 79 ---
+\setcounter{footnote}{0}%
+\opage{79}den Svageres Side; men her er ingen Forskjel:
+den naturlige Svaghed og den naturlige
+Styrke forsvinder ligelig i den Svaghed, som
+ene gjælder for Gud. Saa sættes Ligheden for
+Gud i det Indre, og al den Ulighed, der tilhører
+det Ydre, den hele udadgaaende Virksomhed,
+er da at betragte som det Forsvindende,
+der ikke vedrører det personlige Selv.
+
+Er det et uroligt, lidenskabeligt, i indre
+Sønderrevethed martret Sind, der vil sammenligne
+sig med den besindige, rolige, af Naturen
+harmonisk anlagte Individualitet, og beklage sig
+over sin Skjæbne: da vil ogsaa denne Klage
+høres af Gud som en Selvanklage; thi Troen
+fordres, og i Troen er Forskjellen hævet.
+
+Den af Naturen Rolige maa rystes og uroliges
+til det Yderste, for at naae Troen; og
+den af Naturen Urolige finder jo Ro og Fred,
+naar han kommer til Troen. Troen er ikke
+lidt Ro og lidt Uro, eller lutter Fred i Nogle
+og lutter Ufred i Andre; men Troen er overalt
+og i Alle det Eviges Uro i al naturlig Ro,
+det Eviges Fred i al naturlig Ufred. Den
+Ulighed i Blandingen af Fred og Ufred; der
+som en Følge af Individualiteternes Naturfor%
+% --- p. 80 ---
+\setcounter{footnote}{0}%
+\opage{80}skjellighed bliver tilbage, tilhører den timelige
+Verden, den timelige Kamp, og er det personlige
+Selv underordnet.
+
+Vil den blidere, blødere Natur beklage sig
+i Sammenligning med den haardere og haardføre, at denne har langt lettere ved at bære
+Livets Tilskikkelser; da høres ogsaa denne Klagende
+af Gud som En, der anklager sig selv.
+Tilværelsen kan være haard og streng; den af
+Naturen Haardføre har i det Timelige det
+umiskjendelige Fortrin, at han lettere hærder
+sig mod Skjæbnens Slag, end den Ulykkelige,
+der fik det blødere, blidere Sind. Men i Troen
+er Forskjellen hævet. Troens Opgave er Ingen
+for streng, thi den er uendelig mild; den
+er Ingen for mild, thi den er uendelig streng.
+Den himmelske Fader er ikke som en jordisk
+Fader lidt mere føielig mod de Føielige, lidt
+mere haard imod de Haarde; nei, Forsynets
+Gud er væsentlig lige naadig og lige streng
+imod alle Naturer.
+
+Som der kan være en Gjenstridighed i
+Haardhed, saa kan der ogsaa være en Gjenstridighed i klynkende Blødagtighed: den hellige
+Strenghed fortærer al naturlig Gjenstridighed;
+% --- p. 81 ---
+\setcounter{footnote}{0}%
+\opage{81}men, naar den guddommelige Ild har fortæret
+det menneskelig Gjenstridige, forvandler den sig
+til Mildhed, til uendelig Barmhjertighed. Derfor
+skal intet Menneske kjende sin Tro derpaa, at
+han har Strengheden alene, og Ingen derpaa,
+at han har Mildheden alene; men under alle
+Individualiteternes Forskjelligheder kan Enhver
+kjende sin Tro derpaa, at den altid har Strengheden
+i Mildhed og Mildheden i Strenghed.
+
+Stundom klage vi Mennesker over, at Troen
+er for overjordisk, for aandelig, for overspændt,
+saa at den ikke ret tillader os at see paa det
+Timelige, glæde os over det reent Menneskelige
+og virke i det Nærværende. Det er naturligt,
+at denne Klage opkommer hos Enhver,
+der i nogen Grad anstrenger sig med Troens
+Opgave; lad os da klage, den Ene over Hiint,
+den Anden over Dette, naar vi kun vide, at
+vi for Gud anklage os selv.
+
+Eet er fornødent; dette Ene er Troen, i
+Troen ubetinget Anerkjendelse af Samvittighedens
+Fordringer, i Troen ubetinget Ydmygelse
+under Personlighedens Ideal, i Troen
+ubetinget Lydighed mod Idealets Love, i Troen
+ubetinget Tillid til Idealets Forjættelser; naar
+% --- p. 82 ---
+\setcounter{footnote}{0}%
+\opage{82}et Menneske i inderlig Alvor stræber at fastholde
+dette Ene: da leve han i Verden, som
+han kan og vil, eensom eller i Selskab, fastende
+i Ørkenen eller nydende i Samfundet: der skal
+være Velsignelse i det Altsammen, og det skal
+Altsammen komme ham tilgode.
+
+Men uden Tro er det umuligt.
+
+Det Timelige som timeligt er ikke til en vis
+Grad ligegyldigt for Gud; det er uendelig ligegyldigt.
+Timeligt Savn, timelig Smerte, timelig
+Glæde, timelig Nydelse, det er i sig Altsammen
+Intet; her gjælder ingen Endelighedens
+Medynk, ingen Klynken og ingen Jamren, alt
+Timeligt gaaer og skal gaae efter Naturens
+Orden: Mennesket i Kiød og Blod er „Støv
+og Aske“, et Intet for Gud, som Verden i al
+dens Herlighed og al dens Elendighed er et
+Intet for Gud, den Almægtige. Men, just fordi
+det Timelige i dets Timelighed er uendelig ligegyldigt,
+er det som Middel og Betingelse for
+Menneskets personlige Opdragelse af uendelig
+Gyldighed. Forsynet har ikke som Odin kun
+eet Øie; Forsynet har Millioner Øine, et
+Øie med hvert Menneske, et Øie i hver Samvittighed.
+I Slægternes Mylder, i Begiven%
+% --- p. 83 ---
+\setcounter{footnote}{0}%
+\opage{83}hedernes Trængsel er ingen Sjæl forglemt, og
+intet Tilfælde tilfældigt.
+
+Verdens Magter larme, den Almægtige tier;
+Verdens Magter ruste sig og forsvare deres
+Ret, den Almægtige er saa stille og rolig!
+Lad dem, der kunne nøies med lidt Ret og
+lidt Uret, lidt Skyld og lidt Skjæbne, udtyde
+dette, som de ville: hvert Menneske, der i Samvittighedens
+Navn vil frelses af Skjæbnens
+Vold, maa erkjende, at Forsynet er aabenbaret,
+at Knuden er løst, at der er Hjælp for Enhver,
+der vil lade sig hjælpe.
+
+Men uden Tro er det umuligt; thi Troen
+paa Forsynet er Forsynets Hjælp.
+
+\begin{center}---\end{center}
+
+\end{document}
