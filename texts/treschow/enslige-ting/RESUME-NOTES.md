@@ -203,3 +203,7 @@ the anthology he cuts both Schelling passages (231 and 246).
   mindre" for "Ikke desmindre" (→ "Nevertheless"); p.241 "virkekelig" (→ "really").
 - Both files now ready for a local compile with the real fonts (libertinus +
   textalpha); catalog.yaml section set to `complete`.
+
+## Sampled check, 8 Oct 2026
+
+Disagreement sample against tesseract (REPAIR-PLAYBOOK.md §11; setup in ebook-method/enslige-ting/, OCR cache in .parts/collate/). Result and the fault applied: see the SAMPLED CHECK paragraph of the transcription header and ACCURACY-LEDGER.tsv. The §3 whole-book read is still owed. Backup: transcription.tex.bak.20261008-sample.

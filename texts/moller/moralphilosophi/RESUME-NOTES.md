@@ -72,3 +72,7 @@ Per PHILOSOPHY-PRIORITIES.md: Forberedelser til en Afhandling om Affectation
 (vol. 3, Brudstykke IV, pp. 163–188 — natural pairing with § 29 here); a Fraktur
 transcription of the Strøtanker (vol. 3, pp. 1–147); the vol. 4 history-of-
 philosophy course; the vol. 5 philosophical Recensioner.
+
+## Sampled check, 8 Oct 2026
+
+Disagreement sample against tesseract (REPAIR-PLAYBOOK.md §11; setup in ebook-method/moralphilosophi/, OCR cache in .parts/collate/). Result and the fault applied: see the SAMPLED CHECK paragraph of the transcription header and ACCURACY-LEDGER.tsv. The §3 whole-book read is still owed. Backup: transcription.tex.bak.20261008-sample.
