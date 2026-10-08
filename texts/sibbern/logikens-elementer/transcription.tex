@@ -605,6 +605,28 @@
 %          fragment to its marker by the FIRST--LAST pair in the fragment's own
 %          filename, so the split marker and the fragment name must agree
 %          exactly. See the note at the head of the body skeleton.
+%
+%  ACCURACY SAMPLE (2026-10-08, REPAIR-PLAYBOOK §3). 12 random pages read word against
+%  word at 600 dpi by readers who had not transcribed them, two planted control errors each
+%  (all four caught). Seed v1: 11, 145, 239, 274, 288, 314. Seed v2, drawn excluding v1:
+%  27, 46, 72, 191, 214, 266 (read for words only).
+%    WORDS: 0 errors in 12 pp. One silently normalised misprint: p. 214 "horer" (sic) had
+%      been set as "hører". It is now kept as printed, with a comment.
+%    PARAGRAPHS: the v2 reader found a false paragraph break at the 266/267 page turn. A
+%      script then found 27 page joins where a blank line before "% --- p. N ---" broke a
+%      running sentence (pp. 110--310, mostly 256--310). Three of them split a word
+%      (Be|tydning 179, og|saa 260, for|saavidt 261). In every case the scan's first line
+%      on the new page is unindented. All 27 are mended, each with a REVISED comment.
+%    FACES (Schwabacher = \emph): the v1 reader disputed 20 calls. Each went to a blind
+%      crop reader (5 of 6 planted face controls right) and was settled by majority of
+%      three (file, sample reader, blind reader). 10 calls changed, all on pages 11, 145,
+%      239 and 288: 6 \emph{} on Fraktur words removed (p. 11: Modsætning x2, Anskuen,
+%      Maade x2; p. 288: the second Medfølge), 4 Schwabacher words marked (p. 11 "den"
+%      with reelle; p. 145 Virkeligheden, Væsen; p. 239 the first Erkjendelsen). The other
+%      10 claims were outvoted and stand as the file had them. So in the 6 pages checked for
+%      face, about 1.7 face errors per page. EMPHASIS IN THIS EDITION IS NOT RELIABLE
+%      outside those pages; a whole-book face pass would be needed to make it so.
+%    Records: .parts/collate/pageread/ (pageread-le-*.tgz, le-apply.py).
 % ============================================================================
 
 \documentclass[12pt]{book}
@@ -1930,19 +1952,24 @@ saadan, der saaledes staaer
 foregaaende, at den forudsætter denne som sin Betingelse.
 
 Anskuelse og Tænkning vise sig allerede her som dem, der staae i en bestemt
-\emph{Modsætning} til hinanden.
+% REVISED 2026-10-08 (face vote, majority of three: the file, the sample reader, a blind crop reader): "Modsætning" is Fraktur.
+Modsætning til hinanden.
 
 \anm{1} At der af Tænkningen fremhæver sig en egen selvstændig, Tænkningen
 tilhørende, Erkjenden af ganske anden Natur, end den uafhængigt af bevidst
 Tænkning sig dannende Anskuen, vil vise sig i det Følgende (§. 15). Men da vil
 der ogsaa sees (§. 21), at der i denne Erkjenden indtræder en ny Art af
-Anskuen, en \umph[schwab]{intellectuel} \emph{Anskuen}, i \emph{Modsætning} til
-hvilken vi kalde hiin første Anskuen, vi her have betragtet, den
-\emph{reelle}. Tænkningen refererer sig saaledes paa en dobbelt \emph{Maade}
+% REVISED 2026-10-08 (face vote, majority of three: the file, the sample reader, a blind crop reader): "Anskuen" and "Modsætning" after "intellectuel" are Fraktur.
+Anskuen, en \umph[schwab]{intellectuel} Anskuen, i Modsætning til
+% REVISED 2026-10-08 (face vote, majority of three: the file, the sample reader, a blind crop reader): "den" is Schwabacher with "reelle"; the
+% "Maade" that follows on the next line is Fraktur.
+hvilken vi kalde hiin første Anskuen, vi her have betragtet, \emph{den
+reelle}. Tænkningen refererer sig saaledes paa en dobbelt Maade
 til en Anskuen, deels til en saadan, der, uafhængigt af den, gaaer i Forveien
 for den, deels til en saadan, som hæver sig frem i Tænkningen selv, og ifølge
 den selv. Paa begge kan den siges at gaae ud, men paa forskjellig
-\emph{Maade}.
+% REVISED 2026-10-08 (face vote, majority of three: the file, the sample reader, a blind crop reader): this "Maade" is Fraktur.
+Maade.
 
 \anm{2} Til det umiddelbar Givne, paa hvis Undersøgelse eller Behandling
 Tænkningen gaaer ud, hører ikke blot det Indbegreb af Anskuelser, vi ved den
@@ -4689,8 +4716,8 @@ Selvstændighed, idet vi, efter at
 % scale "genetiske Fremstilling" looked emphasised in both of its occurrences
 % on this page; at 600 dpi its F is letter for letter the F of "Fornemmeligen"
 % and "Fordringer" on the same page, i.e. ordinary Fraktur. Not marked.
-
 % --- p. 110 ---
+% REVISED 2026-10-08: blank line(s) removed here -- the print runs on across the page turn (the first line of p. 110 is not indented), so they made a false paragraph break.
 \opage{110} have trængt ind i Tingens Sammenhæng og ligesom fattet dens Mening, nu i Følge
 deraf paa fri Haand construere os dens hele Skikkelse med alle dens Enkeltheder,
 og derpaa vende tilbage til den givne Gjenstand, for at prøve vor Constructions
@@ -4716,8 +4743,8 @@ deres Flader og Kanter. Hvorunder
 % 600 dpi -- see the abstract* counter-datum in the head note.
 % "mathematisk=physiske" breaks at the line end exactly at its own compound
 % hyphen ("mathematisk=" / "physiske"), so the printed "=" is kept.
-
 % --- p. 111 ---
+% REVISED 2026-10-08: blank line(s) removed here -- the print runs on across the page turn (the first line of p. 111 is not indented), so they made a false paragraph break.
 \opage{111} hine Constructioner da bestandigen komme til Prøve, om nu og Alt i Tingen svarer
 til dem og deres Conseqventser).
 
@@ -5373,7 +5400,6 @@ et ganske andet System af almindelige Begreber, end det er, der ligger til Grund
 hele Sprog, og har fixeret sig i dette, og
 % p. 134 ends here, mid-sentence, with "og" and NO dash after it — verified at 2.6x on
 % the last line (tesseract's trailing "---" is gutter noise from the facing leaf).
-
 % =====================================================================================
 % BATCH NOTES, pp. 120--134 (agent, 2026-08-27)
 %
@@ -5414,6 +5440,7 @@ hele Sprog, og har fixeret sig i dette, og
 %   where an emphasis would have been most expected.
 % =====================================================================================
 % --- p. 135 ---
+% REVISED 2026-10-08: blank line(s) removed here -- the print runs on across the page turn (the first line of p. 135 is not indented), so they made a false paragraph break.
 \opage{135} % SEAM VERIFIED ON THE IMAGE (PDF 159, 600 dpi): printed p. 134 ends
 % "...i vort hele Sprog, og har fixeret sig i dette, og" — the last word on the page
 % is a complete "og", with NO hyphen and NO dash after it. NO word is broken across
@@ -5727,10 +5754,12 @@ vi bruge dette Udtryk derom, maae vi be%
 % --- p. 145 ---
 \opage{145}mærke, at skjønt et Grundbegreb naturligen strax antager Charakteren af almindeligt,
 saa at der kan spørges om flere muelige Modificationer deraf, kan dog det tilsvarende
-Reelles særdeles Beskaffenhed medføre, at det i Virkeligheden ikke har flere
+Reelles særdeles Beskaffenhed medføre, at det i \emph{Virkeligheden} ikke har flere
 Gjenstande, end een. Og forsaavidt hører den virkelige Gjentagelighed, eller den
 reale Muelighed af Fælledshed for flere, ikke egentligen til et Grundbegrebs, en
-Grundforms, Væsen.
+Grundforms, \emph{Væsen}.
+% REVISED 2026-10-08 (face vote, majority of three: the file, the sample reader, a blind crop reader): "Virkeligheden" (four lines up) and "Væsen"
+% are Schwabacher.
 
 Exempler kunne naturligviis allerførst søges i saadanne individuelle Gjenstande, som
 f. Ex. Pauli Brev til Romerne, hvor allerede Grundbegrebet om Tankegangen deri, d. e.
@@ -6029,7 +6058,6 @@ aabenbart Alt have,
 %       same Fraktur capital R as in "Reel" on the line above.
 % Rubric A.'s head on p. 30 agreed with its Oversigt entry exactly, so this is the
 % first head/contents disagreement in the book.
-
 % --- rubric B. --- §§ 60--67.  The head falls between p. 148 (§. 59) and
 %     p. 153 (§. 60); insert it where it stands and report the page:
 %     \rubrik{B.}{Reel Synthese,\\
@@ -6049,6 +6077,7 @@ aabenbart Alt have,
 %   §.60 p.153, §.61 p.157, §.62 p.160, §.63 p.163 | §.64 p.168, §.65 p.172,
 %   §.66 p.175, §.67 p.178
 % --- p. 153 ---
+% REVISED 2026-10-08: blank line(s) removed here -- the print runs on across the page turn (the first line of p. 153 is not indented), so they made a false paragraph break.
 \opage{153} % SEAM WITH p. 152: this page opens mid-sentence and closes the round parenthesis
 % that p. 152 left open at "(Nogen Realitet maa imidlertid aabenbart Alt have,". No
 % word is broken across the 152/153 joint --- verified on the image at 600 dpi: p. 153
@@ -6773,7 +6802,6 @@ videnskabelig Be%
 % Oversigt has it.
 % The last line ends with "%" so that "Be" joins the first word of p. 179
 % without a space.
-
 % --- rubric C. --- §§ 68--74:
 %     \rubrik{C.}{Sammenlignings=Analyse\\
 %       eller\\
@@ -6787,7 +6815,8 @@ videnskabelig Be%
 % The rubric D head stands between p. 201 (§. 74) and p. 208 (§. 75) — the
 % pp. 193--207 batch hunts it.
 % --- p. 179 ---
-\opage{179} % SEAM: p. 178 ends "...faaer allerede en sand videnskabelig Be=" and p. 179 opens
+% REVISED 2026-10-08: blank line(s) removed here -- the print runs on across the page turn (the first line of p. 179 is not indented), so they made a false paragraph break.
+\opage{179}% SEAM: p. 178 ends "...faaer allerede en sand videnskabelig Be=" and p. 179 opens
 % "tydning og Værd derved" — the joint word is "Betydning" (verified on the image
 % of p. 179 at 300 dpi).
 tydning og Værd derved, at det viser sig som en nødvendig og væsentlig Activitets
@@ -7604,7 +7633,6 @@ planmæssig Følge, efter en vis constant Norm for Farveblandingerne; Tallenes
 % page borders. §. 74's Anm. 5 is still running at the foot of p. 207, which ends
 % mid-sentence on the complete word "Tallenes". The rubric D. head must therefore
 % stand MID-PAGE on printed p. 208, between the end of Anm. 5 and §. 75.
-
 % Round 5 split, 2026-08-27. The three division markers for rubrics D, E and F
 % (pp. 208--225, 226--227, 228--245) are replaced by three CONTIGUOUS batch
 % markers that cut across the rubric boundaries on purpose: rubric E is only two
@@ -7636,6 +7664,7 @@ planmæssig Følge, efter en vis constant Norm for Farveblandingerne; Tallenes
 %   §.98 p.243, §.99 p.244, §.100 p.245
 % NB §§ 75 and 76 share p. 208, and §§ 91 and 92 share p. 234.
 % --- p. 208 ---
+% REVISED 2026-10-08: blank line(s) removed here -- the print runs on across the page turn (the first line of p. 208 is not indented), so they made a false paragraph break.
 \opage{208} hele Række byder os ogsaa et Exempel; ligeledes kunne vi finde et Exempel i
 Tihedernes Række i det decadiske Talsystem; Chrystallographien byder Exempler
 paa Rækker, hvis Norm i det Hele er \umph[schwab]{abstraheret} af Naturens egne
@@ -7863,7 +7892,9 @@ egen Forestilling, at hiint Almeenbegreb, som et vist Beskaffenhedsbegreb
 forbinde med Ordet \emph{Farve}), er Analysen ingen egentlig Begrebsanalyse, men
 % EMPHASIS: "Farve" is Schwabacher (its F is the round Schwabacher F; a, r, v, e
 % all round) against the Fraktur "med Ordet" before and "er Ana=" after. 600 dpi.
-hører hen under den forhen betragtede reelle Gjenstandes Analyse. Begrebet
+% PRINTER'S DEFECT, AS PRINTED: "horer" for "hører" -- a plain o with no stroke, against the
+% slashed ø of "fører" at the head of this page (600 dpi). Found by the 2026-10-08 sample.
+horer hen under den forhen betragtede reelle Gjenstandes Analyse. Begrebet
 \umph[schwab]{abstraheres} her kun af \emph{de reelle} Gjenstande, saaledes som
 % FACE: "abstraheres" is FRAKTUR --- angular a, the Fraktur \=st ligature ---
 % verified at 600 dpi against "Begrebet" beside it.
@@ -8805,7 +8836,9 @@ sig; (see herom videre især §. 58, hvor det ogsaa er viist, at et Begreb kan h
 Charakteer af generelt i flere Henseender).
 
 Hvorledes Begreber endnu adskille sig fra reelle Anskuelser i Henseende til den
-Charakteer, Erkjendelsen har, og den i Erkjendelsen indtrædende Nødvendighed, derom see
+% REVISED 2026-10-08 (face vote, majority of three: the file, the sample reader, a blind crop reader): the first "Erkjendelsen" is Schwabacher
+% (round E); the second is Fraktur.
+Charakteer, \emph{Erkjendelsen} har, og den i Erkjendelsen indtrædende Nødvendighed, derom see
 §. 22 og 24.%
 % --- p. 240 ---
 \opage{240} Angaaende den Forening af reel og \umph[schwab]{intellectuel} Anskuelse, der fører til
@@ -9488,8 +9521,8 @@ blive forbundet med Subjectsforestillingen, (hvorom videre i §. 110).
 
 \anm{} Den Position, som skeer ved Omdømmet, er nærmest at betragte som en
 \emph{Determination og Charakterisering} (see §. 101); men
-
 % --- p. 256 ---
+% REVISED 2026-10-08: blank line(s) removed here -- the print runs on across the page turn (the first line of p. 256 is not indented), so they made a false paragraph break.
 \opage{256} Prædicatet kan ogsaa betragtes som det, der betegner den \emph{Plads eller
 Classe}, til hvilken Subjectet er at henføre, og da viser Omdømmet sig enten som
 en \emph{Rubricering og Subsumtion}, eller som en \emph{Benægtelse} af en
@@ -9517,8 +9550,8 @@ en Tohed, eller i en Position af \emph{Tvende}, men giver
 % "Tohed" is Fraktur (hooked Fraktur T, narrow e/o), while "Tvende" beside it is
 % Schwabacher (broad open bowl, round wide e). The two T's were compared at 600 dpi
 % against the Fraktur controls "Ting" and "Totaliteten" on p. 257.
-
 % --- p. 257 ---
+% REVISED 2026-10-08: blank line(s) removed here -- the print runs on across the page turn (the first line of p. 257 is not indented), so they made a false paragraph break.
 \opage{257} just derved, eller fremstiller, en Eenhed. Omdømmet kan kun fremkomme af en
 Erkjendelse, hvorved Prædicatet er erkjendt i, eller hos, Subjectet, og begge
 altsaa ere skuede som Eet, og just ved Omdømmet selv sammenfattes eller
@@ -9576,11 +9609,11 @@ Spørsmaal, der og kan tage denne Vending, om det ogsaa er \textit{B}, at
 % in "kun dette synes, dette kaldes" are ordinary Fraktur, not emphasised.
 
 \anm{2} Det \emph{er}, hvorved Omdømmets Position skeer, har vel undertiden den
-Betydning eller Kraft, at det betegner Gjenstandens hele%
+Betydning eller Kraft, at det betegner Gjenstandens hele
 % \emph{er}: LETTERSPACED in running text ("D e t  e r"), verified at 600 dpi;
 % spacing.py flags it as "single? er, (1.44)".
-
 % --- p. 259 ---
+% REVISED 2026-10-08: blank line(s) removed here -- the print runs on across the page turn (the first line of p. 259 is not indented), so they made a false paragraph break.
 \opage{259} Væren i dens Eiendommelighed, eller Det, som (i reel eller logisk Forstand)
 constituerer Gjenstanden; (som i det Spørsmaal: hvad er Fornuft? hvad er Tro,
 Samvittighed? og i de Svar, som disse Spørsmaal søge). Men i Almindelighed siger
@@ -9605,9 +9638,9 @@ er, siges tilmed og%
 % SHEET SIGNATURE "(17*)" stands at the foot of p. 259 and is not transcribed.
 % "er," in the last line is NOT letterspaced (checked at 600 dpi against the
 % spaced "e r" on pp. 258 and 260); spacing.py's "single? det (1.64)" is noise.
-
 % --- p. 260 ---
-\opage{260} saa en anden Gjenstand at være, og saaledes sættes flere forskjellige
+% REVISED 2026-10-08: blank line(s) removed here -- the print runs on across the page turn (the first line of p. 260 is not indented), so they made a false paragraph break.
+\opage{260}saa en anden Gjenstand at være, og saaledes sættes flere forskjellige
 Gjenstande, som de, der ere det Selvsamme: Noget, som Omdømmets Form saa
 ligefrem tilstæder, at derfor i Almindelighed Prædicatet staaer som den mere
 almindelige Forestilling (jfr. §. 110, Anm. 2), hvorfor ogsaa et Omdømme i
@@ -9637,9 +9670,9 @@ Beskaffenhed hos dem).
 Grunde; Fornuft er Sands for det Uendelige og Evige, forsaavidt den træder frem
 og udvikler sig under Form af Tænkning; Mennesket er det jordiske Fornuftvæsen;
 Sjælen er Livet selv, for%
-
 % --- p. 261 ---
-\opage{261} saavidt det formedelst en organiserende Virksomhed individualiserer sig i et
+% REVISED 2026-10-08: blank line(s) removed here -- the print runs on across the page turn (the first line of p. 261 is not indented), so they made a false paragraph break.
+\opage{261}saavidt det formedelst en organiserende Virksomhed individualiserer sig i et
 vist Ydre, der da i Eet med hiint træder frem med en vis Eenhed og Heelhed, som
 et Individ for sig --- sees det let, at det logiske \emph{er} har den
 førstangivne Kraft og Betydning. Derimod viser i de Sætninger: Skimmelen er en
@@ -9711,8 +9744,8 @@ de
 % "Gehalt", "Classe" and the two capitalised "Det" are Fraktur, not Schwabacher.
 % "er nu;" -- the OCR's word-final z ("nuz") is this scan's signature semicolon error;
 % verified as a semicolon on the image.
-
 % --- p. 263 ---
+% REVISED 2026-10-08: blank line(s) removed here -- the print runs on across the page turn (the first line of p. 263 is not indented), so they made a false paragraph break.
 \opage{263} specielle Gjenstande overalt gjenskue noget Almeent og for Mange til Grund Liggende. Men
 Sætningen: denne Ting er Kaal, kan da ikke heller sige Andet, end at Det, der er Gjenstand
 for Begrebet Kaal, er \emph{i} denne Gjenstand, anskues deri, og hører med til dens Væren.
@@ -9750,8 +9783,8 @@ træder frem, altsaa at være det Specielle. (I de to Sætninger: ''den organise
 % the front matter, so no new non-ASCII character is introduced. NOT the Danish „...“.
 i Naturen er en individualiserende,'' og ''den individualiserende Tendents i Naturen er en
 organiserende,'' have vi
-
 % --- p. 264 ---
+% REVISED 2026-10-08: blank line(s) removed here -- the print runs on across the page turn (the first line of p. 264 is not indented), so they made a false paragraph break.
 \opage{264} Exempel paa denne dobbelte Betydning af det logiske er). I hiint Tilfælde kommer Sætningen
 frem mere som Svar paa det Spørsmaal: hvad er den og den Ting egentligen eller i sig selv;
 i sidste Tilfælde derimod mere som Svar paa det Spørsmaal: af hvad Beskaffenhed er den og
@@ -9811,8 +9844,8 @@ nu given uafhængigt af Tænkningen ved reel
 % TWO § HEADS ON THIS PAGE, §. 109 and §. 110, exactly as the Oversigt has it. Verified on
 % the image: both are bare centred antiqua "§. N." lines with no argument beneath.
 % NO EMPHASIS ON THIS PAGE beyond the two antiqua items marked above.
-
 % --- p. 266 ---
+% REVISED 2026-10-08: blank line(s) removed here -- the print runs on across the page turn (the first line of p. 266 is not indented), so they made a false paragraph break.
 \opage{266} Anskuelse, eller given ved foregaaende Tænkning, gaaer da først i Almindelighed ud paa et
 Hvad, et Hvorledes, et Hvorfor, (jfr. §. 5, Anm. 3), søgende Noget, som skal opklare
 % "jfr." in LOWER CASE here, not Sibbern's usual capitalised "Jfr." (which stands on p. 265
@@ -9851,8 +9884,8 @@ Subjectet sammenstillede Prædicat skal forbindes med Subjectet (i den forhen §
 Betydning af Ordet forbinde), men det kan ogsaa vise sig, at det ei skal forbindes dermed.
 Ogsaa i sidste Tilfælde vil imidlertid et Omdømme fremkomme; thi ogsaa da vil Subjectet
 blive bestemt
-
 % --- p. 267 ---
+% REVISED 2026-10-08: blank line(s) removed here -- the print runs on across the page turn (the first line of p. 267 is not indented), so they made a false paragraph break.
 \opage{267} ved Hjelp af Prædicatet: selv naar der sættes, at \textit{S} ikke skal tænkes saaledes, som
 \textit{P} angiver, bestemmes der dog altid, hvorledes \textit{S} skal forestilles.
 
@@ -9881,8 +9914,8 @@ Forholdsord.
 
 Men betragte vi Omdømmet som et Svar paa et vist bestemt Spørsmaal, i hvilket allerede et
 \textit{S} og et \textit{P} ere satte, saa kunne der endnu
-
 % --- p. 268 ---
+% REVISED 2026-10-08: blank line(s) removed here -- the print runs on across the page turn (the first line of p. 268 is not indented), so they made a false paragraph break.
 \opage{268} tænkes flere Maader, hvorpaa \textit{S} bestemmes ved Hjelp af \textit{P}, uden at
 \textit{S} eller \textit{P} selv forandres, hvoraf flyde adskillige Inddelinger af
 Omdømmer.
@@ -10047,8 +10080,8 @@ Subjectet, som derved gives, eller i Henseende til den derved fremsatte
 % around it; normalised to "Non-P".
 % SEAM AT THE FOOT: p. 271 ends on the COMPLETE word "fremsatte" -- no hyphen, no "=" --
 % and p. 272 opens with "Erkjendelse." Verified at 600 dpi.
-
 % --- p. 272 ---
+% REVISED 2026-10-08: blank line(s) removed here -- the print runs on across the page turn (the first line of p. 272 is not indented), so they made a false paragraph break.
 \opage{272} Erkjendelse. Istedetfor at den simple Negation blot udsiger, at \textit{S} ikke medfører
 \textit{P}, saa gaaer den negative \emph{Affirmation} derimod ud paa, at \textit{S}
 udelukker \textit{P}. I hiin forbindes \emph{Negationsordet} med Forholdsordet, i denne
@@ -10150,8 +10183,8 @@ bemærke vi, at Præfixet u
 % The sheet signature "(18)" at the foot is not transcribed.
 % SEAM AT THE FOOT: p. 273 ends on the COMPLETE word "u" and p. 274 opens "paa dansk". No
 % word is broken across the 273/274 joint.
-
 % --- p. 274 ---
+% REVISED 2026-10-08: blank line(s) removed here -- the print runs on across the page turn (the first line of p. 274 is not indented), so they made a false paragraph break.
 \opage{274} paa dansk ei altid betegner den simple Negation af Det, foran hvilket den staaer.
 
 \anm{3} Den anførte Tredeling erkjendes iøvrigt ikke af alle Logikere, idet nogle mene, at
@@ -10251,8 +10284,8 @@ nyt Prædicat, (eller et Tillæg til Prædicatet, hvorved dette da dog altid i s
 bliver et andet). Men idet en saadan afgjørende Bestemmelse søges, viser sig
 Mueligheden af flere, midt imellem fuldkommen Bestemmelse og Ikke=Bestemmelse
 liggende Positioner, som Svar paa det forudsatte
-
 % --- p. 277 ---
+% REVISED 2026-10-08: blank line(s) removed here -- the print runs on across the page turn (the first line of p. 277 is not indented), so they made a false paragraph break.
 \opage{277} Spørsmaal. Saadanne halvt ubestemte Svar ere de, der gives ved Ordene: tildeels,
 maaskee, og ved et Ja, som er forbundet med et dersom. Herved fremkaldes da adskillige
 Inddelinger af Omdømmer.
@@ -10321,8 +10354,8 @@ omspurgt, Modsætningen imellem alle og nogle overhovedet først
 %    bounding box of "nogle" here is 196 px against 197 px for the p. 277 l. 21 control,
 %    and "og" is 70 px against a 70--73 px norm across pp. 277--279. Identical set; the
 %    apparent weight is loose justification in a line set wide. Left PLAIN.
-
 % --- p. 279 ---
+% REVISED 2026-10-08: blank line(s) removed here -- the print runs on across the page turn (the first line of p. 279 is not indented), so they made a false paragraph break.
 \opage{279} indtræder under den Tænkning, hvorved Forholdet imellem det omspurgte Subject og
 Prædicat skal afgjøres aldeles.
 % spacing.py flags "skal" (l. 3) as single? at 1.35; at 600 dpi it is ordinary Fraktur
@@ -10360,8 +10393,8 @@ eller \emph{ikkun}, bør tilkjendegives, hvad enten
 % ordinary Fraktur; measured ink boxes 396--403 px against 423 px for the Schwabacher
 % "particulære" of p. 277 l. 29. "nogle" at ll. 26 and 30 measures 205/209 px including
 % its full stop against a 197 px control, i.e. the same set: left plain.
-
 % --- p. 280 ---
+% REVISED 2026-10-08: blank line(s) removed here -- the print runs on across the page turn (the first line of p. 280 is not indented), so they made a false paragraph break.
 \opage{280} Sætningen skal forstaaes paa den ene eller den anden Maade. Imidlertid forstaaes den
 naturligviis gjærne som blot particulær, naar Intet føies til.
 
@@ -10405,8 +10438,8 @@ Tilføiende, altid nærmere maa bestemmes saaledes, at det enten forandres til e
 almindeligt bestemt benægtende, eller at tvende particulære, et bekræftende og et
 benægtende, træde i dets Sted, og da fremdeles, hvad det particulære Omdømme
 overhovedet angaaer, Forskjellen imellem simpel Negation og
-
 % --- p. 281 ---
+% REVISED 2026-10-08: blank line(s) removed here -- the print runs on across the page turn (the first line of p. 281 is not indented), so they made a false paragraph break.
 \opage{281} negativ Affirmation ikke har nogen Indflydelse paa Meningen, saa blive her i alt kun
 fire Hovedarter af Omdømmer at bemærke, hvilke man betegner med Bogstaverne
 \textit{a}, \textit{e}, \textit{i}, \textit{o}, efter Vocalerne i Ordene
@@ -10738,7 +10771,9 @@ mindre antages Forsætningens Indhold i og for sig.
 Det, der antages, er blot, at, dersom det Ene finder Sted, saa er ogsaa det Andet
 at antage, saa at altsaa blot den fremsatte \emph{Nexus} imellem For= og
 Eftersætning, eller dennes Affølge af, eller \emph{Medfølge} med, hiin, hvilken
-Affølge eller \emph{Medfølge} kaldes \emph{Conseqventsen}, er Positionens
+% REVISED 2026-10-08 (face vote, majority of three: the file, the sample reader, a blind crop reader): this second "Medfølge" is Fraktur
+% (Fraktur M; the first, a line up, is Schwabacher).
+Affølge eller Medfølge kaldes \emph{Conseqventsen}, er Positionens
 egentlige Gjenstand. Omdømmet er rigtigt, naar blot denne er rigtig.
 % EMPHASIS ll. 3--7, settled at 600 dpi against controls on the same lines
 % ("imellem", "eller", "med", "kaldes", "egentlige"): "Nexus" (round open N, e, u,
@@ -10824,8 +10859,8 @@ Forhold til en anden formedelst den Art af Sammenknytning, der skeer ved et
 % here — checked at 600 dpi; it is set exactly like "et" and "eller" beside it.
 % (Contrast pp. 258, 260, 261, 268, where the logical "er" is letterspaced.)
 % "(19)" at the foot is the sheet signature, not text.
-
 % --- p. 290 ---
+% REVISED 2026-10-08: blank line(s) removed here -- the print runs on across the page turn (the first line of p. 290 is not indented), so they made a false paragraph break.
 \opage{290} ligefrem kategorisk Maade, men kunde nu vistnok ogsaa igjen selv blive Gjenstand
 for en hypothetisk Position, i hvilket Tilfælde et vist \emph{Dersom} vilde
 antages som det, der kun statueredes under Forudsætning af et vist andet
@@ -11445,8 +11480,8 @@ rigtigt. Naar det som i Prædicatet fremstilledes, allerede tænktes ligefrem at
 være givet i Subjectet saaledes, som dette var opstillet, og tilmed tænktes som
 allerede ligefrem indeholdt i Subjectsforestillingen, saa vilde Sætningen være
 en identisk, og ikke indeholde et Fremskridt i Erkjendelse, ikke en
-
 % --- p. 307 ---
+% REVISED 2026-10-08: blank line(s) removed here -- the print runs on across the page turn (the first line of p. 307 is not indented), so they made a false paragraph break.
 \opage{307} Fremgang fra noget Givet og Antaget til noget Andet, som deraf saaes videre at
 følge, altsaa ei heller give os en Nexus imellem Tvende, som Tvende. Til den
 egentlige analytiske Sætning udfordres det lige saa vel, som til den
@@ -11476,8 +11511,8 @@ alt Rumopfyldende er tungt, og den er da en synthetisk Sætning, da kun
 % The sheet signature "(20*)" stands at the foot; not text, not transcribed.
 % EMPHASIS: none. "analytisk"/"synthetisk" at printed ll. 26--27 checked at
 % 300 dpi against "alle Legemer ere tunge" on the same line: ordinary Fraktur.
-
 % --- p. 308 ---
+% REVISED 2026-10-08: blank line(s) removed here -- the print runs on across the page turn (the first line of p. 308 is not indented), so they made a false paragraph break.
 \opage{308} enten en paa Erfaring bygget Induction, eller og en, af visse af Erfaringer
 uddragne Resultater understøttet, Idee om en altomfattende reel Sammenhæng
 imellem alt Legemligt, kan, som sammenknyttende Medium, føre til den.
@@ -11510,8 +11545,8 @@ Enkeltheder (hvad enten
 % beside it. The German title is NOT set off in any way and takes no markup.
 % A former owner's PEN stroke — a hand-drawn opening bracket — stands in the
 % left margin at "Anm. 2." (printed l. 6). Ink, not type; not transcribed.
-
 % --- p. 309 ---
+% REVISED 2026-10-08: blank line(s) removed here -- the print runs on across the page turn (the first line of p. 309 is not indented), so they made a false paragraph break.
 \opage{309} disse danne en egentlig Heelhed, eller ikke) sees at føre flere Forhold imellem
 disse Enkeltheder indbyrdes med sig, naar disse tænkes at træde i forskjellige
 Stillinger, eller undergaae forskjellige Variationer, medens dog
@@ -11533,8 +11568,8 @@ Natur, sees at medføre, bliver dog det i Sætningen udtalte Omdømme egentligen
 % The whole page is a single unbroken paragraph — no indented line anywhere —
 % continuing Anm. 2. EMPHASIS: none; spacing.py reports nothing and no word on
 % the page departs from the angular Fraktur of its neighbours.
-
 % --- p. 310 ---
+% REVISED 2026-10-08: blank line(s) removed here -- the print runs on across the page turn (the first line of p. 310 is not indented), so they made a false paragraph break.
 \opage{310} at betragte som analytiskt. Endeligen kan en Sætning siges nærmest at være en
 analytisk, naar dens Subject støtter sig til, eller viser tilbage til, et vist
 andet Begreb, og Sætningen nu om hiint udsiger Noget, som fra dette ligefrem
