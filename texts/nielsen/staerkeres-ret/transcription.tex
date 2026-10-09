@@ -1,0 +1,575 @@
+% =====================================================================
+%  R. Nielsen, DEN STÆRKERES RET.  Tale ved Reformationsfesten 1863 for Universitetet.
+%  Kjøbenhavn: Gyldendal (F. Hegel); Thieles Bogtrykkeri, 1863.  15 pp.  Fraktur.
+%  The speech given at the University of Copenhagen's Reformation festival, 1863.
+%
+%  TRANSCRIPTION -- GENERATED; DO NOT EDIT BY HAND.  Rebuild, chained (&&), from the repo root:
+%    python3 ebook-method/staerkeres-ret/draft.py --emit --force
+%      this template + the scan's text layer (Google's OCR in the Google Books scan of the
+%      British Library copy 3911.aa.46., books.google.com/books?id=QDZdAAAAcAAJ;
+%      ~/bibliotek/Nielsen, Rasmus/1863-den_Stærkeres_Ret_Tale_ved_Reformations.pdf, see SCANS.tsv);
+%    python3 ebook-method/collate/check.py staerkeres-ret --witness ocr --apply
+%      the decisions in decisions.tsv, taken against tesseract's independent reading of the images;
+%    python3 ebook-method/staerkeres-ret/oepass.py --apply
+%      word-fixes.tsv (the page check's word corrections, each seen in a crop);
+%    python3 ebook-method/staerkeres-ret/finish.py --apply
+%      the drop capital, a dash, the printed rule on p. 14, PRINTED AS IS marks (each read at the image).
+%
+%  WORD-ACCURACY (2026-10-08).  No e-book and no earlier transcription exists.  The draft (Google's OCR layer) was
+%  collated word by word, with punctuation and word division, against tesseract (tessdata_best script/Fraktur), with
+%  deu_latf and frak2021 as third and fourth readings: 284 disagreements.  70 settled by check.py's own rules, 161 by
+%  rules.py (each decision named; a blind audit of 22 of them, mixed into the crops, found one rule error, mended:
+%  „samler“ p. 15), 50 at the image in BLIND crops read by a Sonnet reader who saw neither OCR reading (2 of 2 planted
+%  controls read right), 3 by hand from the reader's notes.
+%
+%  FULL PAGE CHECK (2026-10-08, pagecheck.py with every page in the sample: the title page and pp. 3-15, 3857 words).
+%  Every page was transcribed BLIND at the image by a second Sonnet reader and compared word by word; every difference
+%  (46) was settled in a crop read in the main session.  Transcription errors found and mended: 16 of words (4.2 per
+%  1000) and 1 of punctuation; the other 29 differences were the reader's slips or notation.  Of the 16, 8 belong to the
+%  two classes of fault that the layer AND tesseract share (see skjaebne-og-forsyn): the Fraktur Ø read as D (Øieblik
+%  x5, Øiemed) and gj read as gi (gjøre x2, where the rule frak had overruled the layer); 4 more are ø read as o (Møde,
+%  høiere x2, Høihed), which every OCR misses; then Hær (layer: Har), Glosser (Glosfer), Illusionen (JIllusionen), and
+%  the drop capital P read twice.  The dash p. 9 („Hvad er — paa“) had been dropped by the layer.  Since every page was
+%  read, these are all the errors the check could find; what it cannot see is a reading in which the transcription and
+%  the blind reader agree on the same fault.
+%  Paragraphing: 29 indented paragraph starts, as the page reader counted (draft INDENT_MAX measured to 5.0).  Emphasis:
+%  the page reader saw no letter-spacing or bold in the text (the title page only).
+%  PRINTED AS IS: „Ostandelse“ for Opstandelse (p. 9); „Oltids“ for Oldtids (p. 15).  „disse dristige, driftige
+%  Forventninger“ (p. 13): the second word has f, not long s (600 dpi crop) -- not a doubled word.
+%
+%  PAGE MAP.  printed p = PDF page - 6 (p. 3 = PDF 9, p. 15 = PDF 21); folios 4-15 printed, p. 3 has none (a
+%  handwritten „64“ at its foot).  PDF 7: title, p. [1]; PDF 8: p. [2], blank; PDF 22: the British Library's date stamp.
+%  No signatures, no footnotes.
+%
+% =====================================================================
+\documentclass[12pt,a4paper,openany]{book}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{libertinus}
+\usepackage{graphicx}
+\DeclareUnicodeCharacter{0254}{\reflectbox{c}}  % ɔ (U+0254) = reversed c
+\DeclareUnicodeCharacter{A75B}{r}   % r rotunda (ꝛc. = etc.)
+\usepackage[danish]{babel}
+\usepackage[protrusion=true,expansion=true]{microtype}
+\usepackage{setspace}
+\usepackage[margin=1.3in]{geometry}
+\usepackage{fancyhdr}
+\usepackage{hyperref}
+\hypersetup{pdftitle={Den Stærkeres Ret}, pdfauthor={Rasmus Nielsen}, hidelinks}
+\setlength{\headheight}{15pt}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LE,RO]{\thepage}
+\fancyhead[C]{\textit{R. Nielsen: Den Stærkeres Ret (1863)}}
+\renewcommand{\thefootnote}{\ifcase\value{footnote}\or *)\or **)\or ***)\else
+  \arabic{footnote})\fi}
+\setstretch{1.3}
+\usepackage{marginnote}
+\newcommand{\opage}[1]{\marginnote{\footnotesize\textit{[#1]}}}
+\newcommand{\apage}[1]{\marginnote{\footnotesize\textit{[#1]}}}
+% headings as printed (read at the image, .parts/notes/r-struct.tsv): the Indledning and the part titles in large
+% Fraktur, the part letters A./B./C. and section numerals I.-IV. in bold antiqua, section titles in bold Fraktur; a short
+% rule under each part title; in B, sections I and II take a bold Scripture verse as their title (\motto)
+\newcommand{\overskrift}[1]{\begin{center}{\Large #1}\\[0.3em]\rule{3em}{0.4pt}\end{center}\addcontentsline{toc}{section}{#1}}
+\newcommand{\afdeling}[3][]{\begin{center}\ifx&#1&\else#1\\[0.6em]\fi\textbf{#2}\\[0.3em]{\Large #3}\\[0.3em]\rule{3em}{0.4pt}\end{center}\addcontentsline{toc}{section}{#2 #3}}
+\newcommand{\delafsnit}[1]{\begin{center}{\Large\textbf{#1}}\end{center}\addcontentsline{toc}{subsection}{#1}}
+\newcommand{\stykke}[2]{\begin{center}\ifx&#1&\textbf{#2}\else\textbf{#1}\ifx&#2&\else\\[0.2em]\textbf{#2}\fi\fi\end{center}}
+\newcommand{\motto}[1]{\begin{quote}\textbf{#1}\end{quote}}
+
+\begin{document}
+
+% --- PDF 7, the title page, p. [1], read at the image 2026-10-08 (page reader + main session): Fraktur throughout
+% but the year (antiqua); „Tale“, „Universitetet“ and „Thieles Bogtrykkeri.“ letter-spaced.  Not printed, so not
+% transcribed: a handwritten „1624“ at the head, a pencilled „K“ and underline, the British Museum's stamp.
+% The verso, p. [2] (PDF 8), is blank.
+\begin{titlepage}
+\begin{center}
+\vspace*{4em}
+{\Huge\textbf{Den Stærkeres Ret.}}\\[2em]
+{\Large\textls[200]{Tale}}\\[1em]
+{\large ved Reformationsfesten 1863}\\[0.8em]
+{\small for}\\[0.8em]
+{\large\textls[200]{Universitetet}}\\[0.8em]
+{\small af}\\[0.8em]
+{\large\textbf{R. Nielsen.}}\\[8em]
+{\small\textbf{Kjøbenhavn.}}\\[0.5em]
+{\small Forlagt af den Gyldendalske Boghandling (F. Hegel).}\\[0.5em]
+{\footnotesize\textls[200]{Thieles Bogtrykkeri.}}\\[0.5em]
+\textit{1863.}
+\end{center}
+\end{titlepage}
+
+% ===== TEXT (pp. 3--15) =====
+% --- p. 3 ---
+\setcounter{footnote}{0}%
+\opage{3}Paa Reformationens Vei, dens Strid, dens Gang, dens
+Kamp og Seir, lyser en Tanke, --- den gamle Tanke om
+Kraft og Svaghed, om Ret og Magt; og denne Tanke er
+en Dom, en Verdensdom om Ret og Magt: den Stærkere
+vil have Ret, den Svagere maa give efter.
+
+Ja, det er en Verdensdom: den Stærkere vil have Ret.
+„Vi ville have Ret, thi vi have Magt!“ saa lød det i Trusler
+fra Rom; „vi skulle vel faae Magt, saa sandt vi have Ret!“
+saa lød det i Svar fra Wittenberg. Saa høres fra alle
+Sider de Stridendes Raab paa Ret, paa Magt og paa
+Forlig mellem Ret og Magt; det er som vilde de alle det
+Samme. Og dog er her en Forskjel, en væsentlig Forskjel.
+Thi det gjør jo dog en væsentlig Forskjel, om vi forstaae
+Rettens Eenhed med Magten saaledes, at det er den sandselige,
+haandgribelige Magt, der uden alle Omsvøb er Ret, eller
+saaledes, at det er den hellige, den uforkrænkelige Ret, der i
+sit Væsen evig er Magt; det giver en Verdens Forskjel, om
+vi bedømme Styrken saaledes, at den Stærkere har Ret,
+alene fordi han er stærk, eller saaledes, at han i Sandhed
+kun er den Stærkere, forsaavidt han har Ret.
+
+Her er Forskjel paa Ret og her er Forskjel paa Magt:
+her er physisk Magt, og her er aandelig Magt; men hvilken
+af disse Magter man end vil forvandle til Ret, dersom det
+ikke betyder, at man med det Samme vil forvandle Ret til
+Magt, saa bliver dog Magten misbrugt.
+
+% --- p. 4 ---
+\setcounter{footnote}{0}%
+\opage{4}Der er Elendighed i Verden, der er Jammer og Nød,
+naar den physiske Magt bliver misbrugt; thi det er tungt,
+ubeskrivelig tungt, at bøie sig for den raa Magt; det er tungt,
+ubeskrivelig tungt, at erkjende den Stærkeres Ret, naar den
+Stærkere kun er en Røver; det er tungt, ubeskrivelig tungt,
+at bære Undertrykkelsens Aag, og tungt at opveie Frihed
+med Guld. Og Frihed veiet mod Guld! hvad er vel Guldets
+Vægt, naar en Brennus kaster sit Sværd paa Vægtskaalen?
+væ victis! --- ja, vee de Overvundne.
+
+Og dog er Elendigheden større endnu, naar den aandelige
+Magt bliver misbrugt; naar Bedrag omskygger det
+Hellige, naar Sjælene fanges og Tankerne bindes og Sandhed
+svinder og giver et Skin som Solens matte Skin i en
+Formørkelse. Vel er Krigen med sine Rædsler forfærdelig;
+men Pesten er dog endnu forfærdeligere; og vel er Trældom
+i det Udvortes en sørgelig Ting, men Trældom i det Indvortes,
+aandelig Trældom, Samvittighedens og Tankernes Trældom,
+er Pesten selv, den skumle Pest: denne sorte Død er Fortabelse.
+
+Vi tør nu ikke sige, at den katholske Kirke begyndte med
+at bøie Retten og misbruge Magten; thi, timelig seet, begyndte
+den ikke med Magten. Den begyndte ikke i Pragt
+og Herlighed, men i Forsagelse, i Selvfornegtelse og udvortes
+Ringhed. Det begyndte ikke med, at en Christi
+Statholder og Fyrsternes Formynder sad høit paa St.
+Peters Stol og slyngede Banstraalen; nei, Begyndelsen var
+i Sagtmodighed, i Opoffrelse, i Taalmodighed. Fredens
+Sendebud gik ud i Verden, ud til Folkene i den vilde
+Strid, at bringe dem Forsonerens Hilsen og forlige Fienderne;
+saaledes var Begyndelsen.
+
+Hvad Forholdet er mellem Magt og Ret, kan sees af
+denne Begyndelse. Havde hine Sendebud ikke været forvissede
+om, at der gives en uforkrænkelig Ret, der er stærkere
+end den raa Magt: de havde ikke bragt Forsonerens Bud%
+% --- p. 5 ---
+\setcounter{footnote}{0}%
+\opage{5}skab, de havde ikke vovet sig ud blandt de vilde Horder. De
+kom som Værgeløse, men dog saa vel udrustede; de kom som
+Svage, og dog saa stærke! thi den, der kan herske over sit
+Sind, er stærk, stærkere end den, der kun kan indtage Staden;
+og den, der kan bede for sine Fiender, er stærk, stærkere end
+den, der kun kan myrde sine Fiender, og den, der kan offre
+sit Liv for Sandhed og Ret, er stærk, stærkere end den, der
+kan offre Folkeslag og Riger for indbildt Hæder og Magt.
+
+Saa gik da hine Sendebud, Enhver ad sine Veie, ud
+i Verden. Der kommer en Fremmed til Krigernes Leir;
+det er en Vaabenløs, der vil stride med de Bevæbnede, en
+Svag, der dog vil overvinde de Stærke: hvo skal i denne
+Strid give efter? Det bliver ikke den Vaabenløse, der giver
+efter for de Bevæbnede; nei, det bliver de Bevæbnede, som
+denne Gang maae give efter for den Vaabenløse. Det er jo
+ikke den Fremmede, der skjælver for Herskerens Blik, bliver
+angst for det blinkende Sværd og kaster sig ned for Kongens
+Fødder og beder om Beskærmelse og Naade; nei, han skjælver
+ikke for Herskerens Blik; han forkynder sit Budskab; han er
+slet ikke angst for det blinkende Sværd, thi han forkynder sit
+Budskab; han beder ikke om Naade, han tilbyder Naade.
+Nu forstumme de vilde Raab; det bliver stille i Leiren:
+Krigeren hører den Fremmedes Budskab, Kongen, den ellers
+Ubøielige, bøier sit Hoved, lytter og grunder og føler sig
+underlig tilmode. Saa er det da ikke Hæren, denne hele
+Hær af stærke Mænd, fuldblodige Krigere, som i dette Møde
+har Magten, den høiere Magt; nei, den Fremmede med sit
+Budskab, Ordets Mand med Blikkets Ild, den blege Munk
+med Crucifixet, ham er det, som i dette Møde har Magten,
+den høiere Magt; ham er det, som i dette Møde bærer
+Magtens Tegn, det Magtens Tegn, som evigt er Retfærdighedens
+Tegn. See dette Magtens Tegn! det gjør den Svage
+stærk, den Stærke svag; thi Kongen knæler med sin Hær for
+% --- p. 6 ---
+\setcounter{footnote}{0}%
+\opage{6}Magtens og Retfærdighedens Tegn. Saa er det da en
+Dom, en Verdensdom om Ret og Magt: den Stærkere vil
+have Ret; den Svagere maa give efter.
+
+Der er Forskjel paa Ret og der er Forskjel paa Magt;
+der vil i dette Timelige altid dannes og digtes, spidsfindig
+digtes en Ret, som dog i evig Forstand er Uret; der vil i
+det lavere Virkelige altid røre sig en Magt, en opblæst, raa,
+paatrængende Magt, som dog i evig Forstand er Afmagt.
+Skal nu det Timelige ikke destomindre tvinges til at bøie sig
+under det Evige; skal Retfærdigheden selv, den hellige Tanke,
+som evig er Magt, gribe ind i Tidernes Hjul og bevæge
+Virkeligheden: da maa dens Aabenbaring være mere end et
+stort Syn i et stort Øieblik; da maa dens Gjennembrud
+være Mere end et Blus i Skyen, et Lyn i Natten eller et
+flagrende Lys i Stormen; det Guddommelige vil da ikke
+indskrænke sig til at overraske Folkene ved Tegn fra Himmelen,
+men nedstige til Menneskene, nedlade sig til menneskelige
+Formaal, menneskelige Vilkaar, og tage Bolig blandt
+Menneskene.
+
+Men naar det Guddommelige saaledes fra sin Side
+rører sig, for at rense, styrke og forklare det Menneskelige,
+kan det heller ikke feile, at jo et Menneskeligt fra sin Side
+ogsaa vil røre sig, for at svække, smitte og formørke det
+Guddommelige.
+
+Folkelig praktisk drog den katholske Kirke med dristig
+Haand det Oversandselige ned i Sandsernes Verden; folkelig
+praktisk lod Catholicismen det Usynlige iføre sig synlig
+Skikkelse og gav det Allerhelligste legemlig, ja haandgribelig
+Nærværelse. Det var et Skridt nedad; men dog i menneskelig
+Forstand tillige et Skridt fremad. Paa det sandselige phantasirige
+Naturmenneske virker Aanden ved synlige, sandselige
+Midler. Middelalderens Folk med de ideale Drømme, de
+dybe Længsler og stærke Lidenskaber trængte til aandelige
+% --- p. 7 ---
+\setcounter{footnote}{0}%
+\opage{7}Formyndere, til Tugtemestere med guddommelig Fuldmagt;
+Næverettens Tid, der fordrede Guds-Domme, forlangte at
+høre --- Guds egen Røst, forlangte at see --- Guds Statholder
+selv nærværende paa Jorden. Det var en egen Blanding af
+Barbarie og Fromhed, af Trods og Ydmyghed, raa Sandselighed og asketisk Selvfornegtelse i utallige Afskygninger af
+Vildfarelser og Smerter, Forbrydelser og Anger og Taarer,
+der i hiin eventyrlige Tidsalder gjorde Theokratiet nødvendigt.
+Med Theokratiet fuldendtes Hierarchiet. Saa reiste sig den
+høie Kirke; Middelalderens Kirke paa Oldtidens Gruus,
+paa Hedenskabets mægtige Ruiner; Romerkirken med de
+dunkle Hvælvinger, med den dybe Choral og det mystisk
+alvorlige Sprog; Pavekirken med de Alt formaaende Naadegaver,
+et uberegneligt Overskud af gode Gjerninger, en
+uvurdeerlig Skat af skriinlagte Helgenes Been og af alle de
+Helliges Fortjenester. Saaledes reiste sig den høie Kirke:
+det er Middelalderens Aand i Middelalderens Stiil, denne
+symbolske Ritus, denne billedrige, sindbilledlige Cultus med
+Skriftemaal og Litanier, med Alterlys og Virakskyer, Præster
+og Sakramenter.
+
+Vistnok var her i alt dette en Forvanskning af det Oprindelige,
+en stedse voxende Sandhedsformørkelse. Evangeliets
+Lys stod allerede længst i Skygge bag Kirkens Piller; Menighedens
+Herre, Forbilledet selv, var glemt af en Skare Tilbedere,
+der helst vilde knæle for Himmelens Dronning. Men
+trods denne Sandhedens Formørkelse var Kirkens høiere
+Magt dog endnu altid begrundet paa høiere Ret: det Menneskelige
+var opløftet ved det Guddommelige; vidunderlige Kræfter
+rørte sig i Sind og Tanker. Kirken i sin Magt og Vælde
+havde allerede skabt sig en ny Himmel; der indtraadte nu et
+Vendepunkt, hvor det ret skulde vise sig, at den ogsaa formaaede at skabe en ny Jord; dette Vendepunkt er Korstogenes
+Begyndelse.
+
+% --- p. 8 ---
+\setcounter{footnote}{0}%
+\opage{8}At Europa i det 11te Aarhundrede trængte til en Opvækkelse,
+er umiskjendeligt. Under mangehaande Trængsler
+og mørke Anelser arbeidede det med tunge, uklare Tanker paa
+at finde en Vei gjennem Virkeligheden, et Bedrifternes Maal,
+en Mulighed til at oprede Timelighedens Virvar. Det var
+en qvalfuld Tilstand. Vel var der en Salighed i Himlen
+for dem, der undgik Fordømmelsen; men paa Jorden var
+der intet Godt, thi Jorden var en Jammerdal. Saa gik
+der da en Angst igjennem alle Sjæle; der skete Tegn i Sol
+og Maane; Folkene vansmægtede i Rædsel og Forventning, thi
+Himmelens Kræfter rørte sig: Dommedag var nær forhaanden.
+
+Skulde dette Jordiske --- endnu engang --- faae virkelig
+Betydning, da kunde det kun skee derved, at det umiddelbart
+kom til at tjene det Himmelske; skulde der gives et
+høiere Maal for Bestræbelser i det Timelige, da maatte der
+være en Vei paa Jorden, en Hæderens, Handlingernes og
+Bedrifternes Vei, der førte lige til Himmelen. „Hvad skal
+jeg gjøre, at jeg kan arve det evige Liv?“ Det var ikke en
+enkelt riig Yngling, som i en Slags Overilelse spurgte saaledes;
+thi tusinde og atter tusinde Ynglinge, rige paa Daadskraft
+og ridderligt Mod, grundede hver for sig paa det
+Spørgsmaal: „hvad skal jeg gjøre, at jeg kan vinde et  % PRINTED AS IS: this quotation is not closed (after „Navn?“; page reader and layer agree)
+evigt Liv, et udødeligt Navn? Det var ikke en lille Flok af
+Ørkesløse, som, efterdi de i Grunden slet Intet vilde gjøre,
+fik Tiden til at gaae med det Spørgsmaal: „hvad skulle vi
+gjøre, at vi kunne arbeide Guds Gjerning?“ det var Europas
+Folk, som i Trængsler og Nød, i Gjæring og Spænding,
+ikke vidste, hvad de skulde gjøre.
+
+Men Kirken vidste det; den høiere Magt er atter her
+en høiere Ret; thi Paven vidste, hvad de skulde gjøre. Paa
+Kirkeforsamlingen i Clairmont blev det forklaret for de lyttende
+Skarer, hvad Christenheden skulde gjøre. „Befrie
+Jerusalem!“ saa lød Forklaringen fra Pavens Mund; befrie
+% --- p. 9 ---
+\setcounter{footnote}{0}%
+\opage{9}Jerusalem og myrde Korsets Fiender, det var --- til Syndernes
+Forladelse, til Sjælefred og Salighed --- den store
+Ridderdaad, den Gjerning, som Guds Folk da skulde gjøre.
+„Befrie Jerusalem!“ saa lød det over Vestens Lande; nu
+var da Veien funden, Maalet sat, det høie Maal. „Befrie
+Jerusalem!“ nu var det Alle klart, at Pavens Tanke var
+Guds Tanke og Pavens Villie Guds Villie, ja, saa maatte
+Pavens Bud da ogsaa være det Magtens Bud, Hærskarerne
+adløde. „Befrie Jerusalem!“ det var Opvækkelse til Liv,
+Ostandelse endnu før Dommens Dag.  % PRINTED AS IS: „Ostandelse“ for Opstandelse (p. 9; crop J13, all three OCRs agree)
+
+Men Tiden gaaer, Erfaringen kommer. Det første Syn
+af Østerlandene, af Palæstina, af Jerusalem, hvor var dog
+dette første fjerne Syn i Phantasiens Farvepragt opløftende
+og skjønt og herligt i Sammenligning med al den haarde,
+knudrede, kummerlige Virkelighed, der siden Skridt for Skridt
+paatrængte sig de endnu Uerfarne. Jo mere overspændt en
+Forventning er, desto større er ogsaa den Skuffelse, der
+følger efter. Den lange Strid om Opstandelsens Grav er
+et romantisk Epos, et eventyrligt Ridderspil med phantastiske
+Afvexlinger af Seire og Nederlag, glimrende Forhaabninger
+og bittre Skuffelser, opblussende Begeistring og trykkende
+Mismod. Det varede i to hundrede Aar, men saa var
+Illusionernes Tid forbi.
+
+Men er Illusionernes Tid forbi, saa er det væsentlig
+forbi med Middelalderen, thi Middelalderen er Illusionernes Tid. Hvad er ---
+paa Historiens Vei --- vel Illusionen? Ideernes Fata Morgana, en Phantasiens Luftspeiling,
+fortryllende, naar den i samme Syn, i eet og
+samme Billede kan sammensmelte Sandhed med Bedrag.
+Saalænge Sandhedselementet endnu er kraftigt til at tvinge
+Bedraget, er Illusionen som en Aabenbaringsform for ideale
+Magter og kan i denne Charakteer just tjene Begeistringen;
+men efterhaanden som Forholdet vender sig om, alt som
+Bedraget faaer Overhaand og fortærer Sandhedselementet,
+% --- p. 10 ---
+\setcounter{footnote}{0}%
+\opage{10}vil Idealet vige bort og efterlade sit meduseagtige Modbillede,
+et ret afskrækkende Vrængebillede.
+
+Just som det Tidspunkt var indtraadt, da Pavedømmet
+havde udtømt sine aandelige Kræfter og dermed tabt sin
+væsentlige Berettigelse, kunde Paven med de tvende Sværd
+jo vende sig mod Syd og Nord og Øst og Vest, erklære sig
+for Verdens Herre, en myndig Hersker over Folk og Stater;
+hans Ret, hans kanoniske Ret med Glosser og Extravaganter
+blev da fuldstændig bragt i System. Det er et storstilet Rethaveri
+her fortsættes; en oprørende Strid mellem Magt og
+Ret vil nu for Alvor tage sin Begyndelse.
+
+En ikkun verdslig Magt maa dog altid, dersom den da
+i nogen Maade skal bygge paa en Retstilstand og give sig
+endog blot Skin af Ret, finde sig i visse Skranker, binde
+sig til visse ubrødelige Vilkaar; men med en geistlig Magt,
+en hellig, ufeilbar, guddommelig Magt, en Magt, der længst
+har krænket den evige Sandhed og gjort det Allerhelligste til
+Middel for lave verdslige Øiemed, er det en anden Sag:
+her bliver i Ordets sørgelige Mening den høieste Uret
+høieste Ret.
+
+For at forestille sig Kirkens geistlig-verdslige Magt i
+dens overordentlige Storhed og overordentlige Misbrug, maa
+man ret betragte den næsten uoverskuelige Mængde Anmasselser
+og Vilkaarligheder, som denne Magt, denne alene ufeilbare
+Magt, har været istand til at byde Nationer og Fyrster;
+det er en aldrig afbrudt Række af forargelige Optrin, hvormed
+dens hellige Herskesyge, den hellige Gjerrighed, det hellige
+Rænkespil og den hellige Frækhed har formaaet at udfylde
+det mærkværdige Tidsrum, der ligger imellem Korstogenes
+Slutning og Reformationens Begyndelse.
+
+Den Stærkere vil have Ret; men her er Forskjel paa
+Ret og Forskjel paa Styrke. Saa stærk var Romerkirken
+midt i sin Fordærvelse, at hverken de hæftige Storme, der
+% --- p. 11 ---
+\setcounter{footnote}{0}%
+\opage{11}under det pavelige Schisma rasede i dens Indre, eller de
+mange Grundstød, som de humane Magter: Staten, Videnskaben,
+Nationernes opvaagnende Selvfølelse og den fremadskridende
+Cultur, i stedse stigende Reactioner bibragte den
+udenfra, vare istand til at kue den Vældige. Eet, men ikkun
+Eet, var endnu tilbage, der kunde tvinge den ellers Ubetvingelige; Eet, men ikkun Eet, formaaede at gjennembryde
+hiint uhyre Væv af Underfundighed, Løgn og Bedrag; dette
+Ene var Sandheden i al Eenfoldighed, den længe forhaanede
+Sandhed, Retfærdighedstanken, den ideale Ret, der i sit
+Væsen evig er Magt.
+
+Men naar her virkelig skal begyndes med den ideale
+Ret, altsaa oprindelig og fra Roden af, da kan her ikke begyndes
+med haandgribelig Overlegenhed eller med forud beregnet
+Sandsynlighed for en afgjørende Seir; skal her strides
+for Sandheden, ubetinget for Sandhedens evige Ret, da
+maa her atter begyndes i Svaghed, i timelig Ubetydelighed,
+i udvortes Ringhed: saaledes begynder Reformationen.
+
+„Vi ville have Ret, thi vi have Magt,“ saa lød det i
+Trusler fra Rom; „vi skulle vel faae Magt, saa sandt vi
+have Ret,“ saa lød det i Svar fra Wittenberg. At den hellige
+Ret i sit Væsen evig er Magt, var just den Tanke, der besjælede
+Luther; det var en Samvittighedstanke, der hævede
+ham høit over Menneskefrygt, en Guddomstanke, der gav
+ham Kraft og Mod, en saadan Kraft, et saadant Mod, at
+han i hvert Afgjørelsens Øieblik --- og med hvor mange Afgjørelsens
+Øieblikke er ikke hans Levnetsløb betegnet?
+--- altid fandt det afgjørende Ord og stadfæstede Ordet ved afgjørende
+Handling. Paa Rigsdagen i Worms forhandles da
+et stort Retsspørgsmaal; paa Rigsdagen i Worms ere Magthaverne
+forsamlede. Betragter engang Forsamlingen, det er
+en talrig, en glimrende Forsamling af Riddersmænd, Prælater,
+Fyrster og Churfyrster med Keiseren selv, den nylig Kronede,
+% --- p. 12 ---
+\setcounter{footnote}{0}%
+\opage{12}i sin Midte: Alt hvad det hellige romerske Rige har at opvise
+af Glands og Hæder, af Pragt og Herlighed, er her tilstede;
+og betragter saa den ringe Munk, den haardt Anklagede,
+den to Gange Bandlyste, der nu træder ind i Forsamlingen
+og skal føre sit Forsvar: hvilken Modsætning i det
+Udvortes af Ringhed og Høihed, af Afmagt og Magt maa
+ikke paatrænge sig os ved dette Syn; og saa --- hvilken
+Modsætning i det Indvortes af Høihed og Ringhed, af Magt
+og Afmagt vender ikke Forholdet om og forvandler os Indtrykket
+af dette Syn!
+
+Det er da igjen den udvortes, haandgribelige Magt, der
+truer med at knuse den Værgeløse, og det er igjen den
+Værgeløse, der vil stride med de Bevæbnede, en Svag, der
+dog vil overvinde de Stærke. Saa vilde Luther bryde Løgnens
+Aag; saa lød hans sidste Svar høit i den lyttende Forsamling:
+„Eftersom da Eders Keiserlige Majestæt, Churfyrstelige
+og Fyrstelige Naader begjære et eenfoldigt, slet og
+ret Svar, saa vil jeg give et, som hverken har Horn eller
+Tænder, nemlig saaledes: Med mindre jeg ved den hellige
+Skrifts Vidnesbyrd eller med aabenbare, klare og indlysende
+Grunde bliver overvunden og overbeviist (thi jeg troer hverken
+Paven eller Concilierne, da det ligger aabenbart for Dagen,
+at de ofte have feilet og modsagt hverandre), saa at jeg ved
+selve de Sprog, som jeg har anført og brugt, bliver overtydet, og min Samvittighed fangen i Guds Ord, hverken kan
+eller vil jeg kalde Noget tilbage, thi det er hverken sikkert
+eller raadeligt at gjøre Noget imod sin Samvittighed. Her
+staaer jeg, jeg kan ikke Andet; Gud hjælpe mig. Amen!“
+
+Det var i Afgjørelsens Time et afgjørende Ord, og
+Ordet var en afgjørende Handling. Hvo kan nu tvivle om,
+hvad Luther vil, og hvad det er, hvorfor han strider? For
+Sandheds hellige Skrift, for de aabenbare, klare og indlysende
+Grunde og for Samvittighedens uforkrænkelige Ret!
+% --- p. 13 ---
+\setcounter{footnote}{0}%
+\opage{13}Vel staaer han der alene i de Mægtiges Forsamling; men
+dog ikke ene som den, der er forladt af Alle. Vistnok har
+han ikke forud sikkret sig en physisk Understøttelse, en Hær af
+Forbundstropper, der kunde rykke frem som fra et Baghold
+og komme ham paa givet Vink til Undsætning; men derfor
+er han ikke uden Hjælp og Bistand. I Farens Øieblik, just
+da han handler som den, der ikke mere kan underhandle, i
+Farens Øieblik bliver der i det Forborgne arbeidet for hans
+Sag, paa tusinde Steder, i tusinde Maader virket for ham,
+underhandlet til hans Hjælp og Bistand. Thi hvormange
+nye Tanker, hvormange hidtil dunkle, undertrykte Forestillinger, selv i de kronede Hoveder, hvilke ubeskrivelige
+Anelser og dristige Forventninger blive her ikke vakte, kaldte
+frem som ved et Trylleslag af Luthers stærke Ord. Og disse
+nye Tanker, disse frisk udsprungne Forestillinger, disse dristige,
+driftige Forventninger, de strømme ham imøde, de tale hans
+Sag, de stemme for ham, de samle sig i Kreds om ham,
+en mægtig, en usynlig Hær, en Forbundshær af klare Grunde,
+stærke Sympathier. Vel har nu Løgnen ogsaa sine Sympathier;
+men Sandhed, Ret og klare Grunde --- hvordan
+end Verden dreier sig --- de ville altid virke for den gode
+Sag; de ville samle sig i Farens Stund, en mægtig Hær
+af skjulte Kræfter, stærke Sympathier.
+
+Vistnok var det en ulige Kamp --- af Lysets Straaler
+imod Mulm og Mørke, eenfoldig Sandhed mod et Væv af
+Løgn; det var ulige Kamp --- med Aandens Vaaben, Ordets
+Kraft alene imod physisk Magt og Rænkespil og snedig
+Fanatisme; det var ulige Kamp, men i ulige Kamp skal
+Styrken prøves. Og den blev prøvet Skridt for Skridt og
+Punkt for Punkt, og Prøvelsen var streng; men aldrig
+svigtede dog Sandheds hellige Skrift, og aldrig svigtede
+de klare Grunde med den stærke Ret. Ja, den blev prøvet,
+Prøvelsen var tung; men hiint Retfærdighedens Tegn, det
+% --- p. 14 ---
+\setcounter{footnote}{0}%
+\opage{14}Tegn, der gjør den Svage stærk, den Stærke svag, var atter
+Magtens Tegn paa Farens Dag, et Seierstegn i Kampens
+Storm, da Luthers Røst lød høit i Stormen: „Hører Du,
+Pave, ikke du allerhelligste, nei, du allersyndigste, at Gud
+fra sin Himmel skal snarligen styrte din Stol og sænke den
+i Helvedes Afgrund!“
+
+Det er ikke Formastelse, det er ikke Overmod og det er
+ikke blinde Lidenskaber, der tale til os igjennem disse Trusels
+Ord; nei, det er Luthers Tro, det er hans levende og klippefaste
+Overbeviisning, at den hellige Ret i sit Væsen evig er
+Magt. Det er da heller ikke Paven i Rom alene eller
+Pavedømmet alene, hvorpaa Truslen sigter; thi den sigter
+paa enhver oprørende Anmasselse; den sigter paa enhver
+vilkaarlig og despotisk Magt, som ved et Overmaal af Løgn
+og Rænker indbilder sig at kunne formørke Alt og trodse
+Alt, baade Sandheds hellige Skrift og de klare Grunde og
+den oprindelige stærke Ret: over enhver saa blind, saa uretfærdig
+Magt i Tiden har Martin Luther lyst Forbandelse.
+
+\begin{center}\rule{3em}{0.4pt}\end{center}
+
+Den Stærkere vil have Ret: det er en Dom, en Verdensdom!
+Men hvad er en Verdens Dom uden en Verdens
+Dommer? Hvad er vel al vor Strid om Ret og Magt i
+dette Timelige? en vaagen Drøm, et Skyggespil, dersom der
+ikke er en evig Ret, en hellig Magt, der kjender Alt og
+styrer Alt og aabenbarer sig i Alt som Verdens Dommer.
+
+I din Varetægt, Alt seende Forsyn, almægtige Verdens
+Dommer, befale vi da vort elskede Fædreland med Landsfaderen,
+vor folkelig trofaste, dyrebare Konge, Kong Frederik
+den Syvende, og hele det kongelige Huus. Din Aand, som
+er Viisdoms og Forstands Aand, Raads og Krafts Aand,
+være over Fædrelandets troe Mænd i Kongens og i Folkets
+Raad, at de Institutioner, som værne om Friheden og det
+borgerlige Livs rige, alsidige Udvikling i aandelig saavel som
+% --- p. 15 ---
+\setcounter{footnote}{0}%
+\opage{15}i timelig Retning, maa bevares, omfredes og benyttes til i
+stedse videre Omfang at forlige det Stridige og forene det
+Adskilte. Og naar vi derhos haabe og bede, at denne Høiskole
+fremdeles maa blomstre og aldrig forlades af den
+levende Sands for Sandhedens Undersøgelse og Sandhedserkjendelse,
+der alene knytter varige Baand mellem Lærere og
+Tilhørere: da tænke vi herved tillige paa enhver høiere
+Stræben i Kirke og Skole, i Videnskab og Kunst, at alle
+Aandens Kræfter tilsidst maae rettes imod samme Maal; vi
+tænke paa ethvert redeligt Arbeide, enhver god og hæderlig Gjerning
+her i Landet, at vi Alle maae have Fredens rige Velsignelse,
+saalænge det kan forundes os at leve i Fred.
+
+Men er Fred umulig, slaaer Afgjørelsens Time,
+kommer Kaldelsen til os, da vi i Gjerning skulle vise, at vi
+endnu --- endnu i den ellevte Time --- have bevaret Luthers Tro,
+hans klippefaste Overbeviisning, at der er en uforkrænkelig Ret,
+som i sit Væsen evig er Magt: da være Du Almægtige, i
+den ulige Kamp, vort Skjold og Værge og vor faste Borg,
+som Du var Luthers faste Borg, hans Skjold og Værge!
+Thi det er ikke noget Nyt, vi have for; ak, nei! det er en
+gammel Strid, langvarig Rettergang fra Arilds Tid, fra
+hiin Prinds Uffo med det rustne Sværd --- han greb til
+Værget, da det gjaldt --- og saa igjennem Tiders, lange
+Tiders Vexel ned indtil de sidste Offere, der faldt, rigt
+smykkede med Kampens Roser. Det er en gammel Strid,
+thi udaf Oltids Taager, Fortids Skumring samler sig en  % PRINTED AS IS: „Oltids“ for Oldtids (p. 15; crop J21)
+Hær, en talrig, mægtig Hær, der strider for vor Ret; det
+er en Forbundshær af stærke Minder: o, lad den være nær
+paa Kampens Dag, i Farens Stund, den bryde frem med
+samlet Styrke og med Kraft og Ild, som Flammer i en Luthers
+Aand, som Sværdets Lyn i Gustav Adolphs Haand, at lyse
+paa vor Vei til Maalet.
+
+\end{document}
