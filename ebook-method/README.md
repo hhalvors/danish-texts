@@ -33,6 +33,71 @@ skew+curvature fit; `--italics` finds italic words by stroke slant; `--mark` set
 the exact `\opage` markers; `pagemarks-en.py` is the short form for a text whose
 sections and paragraphs match the translation one to one).
 
+`humane-ethik/` (1876; 2026-10-05): no e-book, two scans of two copies.  draft.py (Google's layer), check.py against
+tesseract on the KB copy, rules.py (KB's own layer as third witness), sheets.py + reads.py (BLIND crop reading),
+notesheets.py + notescmp.py (every footnote read in full), spacedsheets.py + spaced.tsv (letterspacing).  New check.py
+settings it introduced: SPACING 'strict', QUOTES 'strict', WMARKS True, and the option --unapplied.
+
+`mindre-arbejder/` (1899; started 2026-10-05): no e-book; the draft is Danish Wikisource's page-by-page "Valideret"
+text (wikisource.py caches it; draft.py expands its templates and keeps the print where Wikisource silently corrected
+a misprint), collated against the KB scan's layer by collate/check.py, with tesseract on the KB images as third
+witness (ocr.py, rules.py).  Wikisource is not diplomatic (lower-cased nouns, at/af ...): every word is collated.
+
+`om-aandsdannelse/` (Nielsen, 1877; 2026-10-06): the den-store-humor pipeline on a KB antiqua scan with no notes --
+draft.py (KB layer; pagemap NO_NOTES, INDENT_MAX), ocr.py (tesseract witness), rules.py (Humor's note rules switched off;
+'guillemet' and 'layerfault' added), sheets.py + reads.py (blind crops, from humane-ethik), spacedsheets.py + spaced.tsv
+(letterspacing, applied by draft.py --post), patches.py (PATCHES and POST).  First book outside texts/hoeffding/:
+pagemap.py `AUTHOR` sets the folder for collate/check.py, sheets.py and pagemarks.py.
+
+`speculative-logik/` (Nielsen, 1841-42, Fraktur; 2026-10-07): the martensens-oplysninger pipeline with a fourth reading
+(frak2021), book-specific rules (tokens, vote34, consensus, IJ, pair, WNORM), sfix.py (layer s = ø), crops.py (blind
+sheets, union boxes, controls, AUDIT of rule decisions; audit.py scores them), readsbox2.py, structsheets.py (notes,
+marks, headings, front matter), emphsheets.py (bold by stroke width, spacing), sweep2.py, lint.py, and finish.py.
+
+`skjaebne-og-forsyn/` (Nielsen, 1853, Fraktur; set up 2026-10-07): speculative-logik's pipeline on a Google Books scan
+(BL copy, 600 ppi, Google's OCR layer).  draft.py adds mathematik-og-dialektik's long-s mapping; rules.py unchanged (its
+fault lists were counted on KB's layer: audit before trusting).  Google's layer gave 13 disagreements a page against
+tesseract, KB's ABBYY layer on speculative-logik 46.  finish.py not yet written.
+
+`brandes-universitetsfilosofien/` (Rubow, Danske Studier 1928, 18 pp. antiqua, footnotes several to a line; 2026-10-09):
+a NEW route for short texts.  The text of record is a BLIND whole-page reading by two Sonnet readers
+(pagecheck.py sheets + PAGECHECK-BRIEF.md: paragraphs, centred lines, small-type quotations, footnotes as NOTE lines,
+marks as ^n, italics *x*), and vote.py checks every reader word against the ABBYY layer AND tesseract: a word stands
+when either machine agrees, the rest are cropped; it also lists words both machines have that the readers lack.
+vote-fixes.tsv holds the corrections; fromreads.py writes transcription.tex (template.tex for header and preamble;
+MISPRINTS and POST inside).  draft.py / check.py / pagereads.py from om-aandsdannelse were run as a cross-check only
+(draft.py now writes .parts/draft-from-layer.tex, never the transcription).  Rebuild: `vote.py && fromreads.py --write`.
+
+`staerkeres-ret/` (Nielsen, 1863, Fraktur; 2026-10-08): skjaebne-og-forsyn's pipeline on a 13-page Google Books scan
+(BL copy), finished by a FULL blind page check (pagecheck.py, every page) instead of a sample; adjcrops.py crops the
+page check's differences; finish.py is new (drop capital, a dash, the rule on p. 14, PRINTED AS IS marks).  Rebuild:
+`draft.py --emit --force && ../collate/check.py staerkeres-ret --witness ocr --apply && oepass.py --apply && finish.py --apply`.
+
+`erindringer/` (Høffding, 1928; 2026-10-07): the den-store-humor pipeline on the Slægtsforskernes Bibliotek scan (ABBYY
+layer) with the Lindhardt og Ringhof e-book of the same text as a third reading: draft.py (layer; old-style folios;
+white lines from line gaps, `WHITE_GAP`), ocr.py (tesseract witness), rules.py (etik's e-book vote), sheets.py + reads.py
+(blind crops, controls.tsv), ebookdiff.py -> qsheets.py -> qresolve.py -> efix.py (every difference between the
+finished text and the e-book read at the image; efix.tsv), pagepass.py + pagepass.tsv (89 pages read whole), and
+patches.POST (where the 41 pages read on 23 Sep 2026 govern).  Rebuild:
+`draft.py --emit --force && ../collate/check.py erindringer --apply && efix.py && draft.py --post` (from the repo root,
+with `ebook-method/erindringer/` prefixed).
+
+`tydskland-efter-hegel/` (Høffding, 1872; pilot pp. 1-16 on 2026-10-09): the humane-ethik pipeline on an Internet Archive
+Google scan whose layer is the Archive's ABBYY OCR (abbyy_scan.py binds TIFFs + ABBYY into the PDF).  draft.py (humane-ethik's,
++ ABBYY TeX-special rules), ocr.py + rules.py (om-aandsdannelse's), sheets.py (erindringer's, controls from rule decisions),
+reads.py, pagediff.py (a whole-page reading vs transcription and tesseract), patches.PAGESET (pages set whole), sweep.py
+(unattested words), spaced.tsv.  Rebuild: `draft.py --emit --force && PILOT=1 ../collate/check.py tydskland-efter-hegel --apply
+&& PILOT=1 draft.py --post`.
+
+`psykologiske-undersoegelser/` (Høffding, 1889; transcription and translation built 2026-10-09): danske-filosoffer's build.py on a
+Google scan of an Academy volume (Stanford copy) with the Lindhardt og Ringhof e-book of the same text.  Changed: the
+body/footnote split is by baseline PITCH (notes 10-12 pt, body 13-16), because Google's tight word boxes make type
+size unreadable from box height; SIG matches the series line „Vidensk. Selsk. Skr.“ only.  Letterspacing is measured
+from box WIDTH (per-character widths fitted by least squares; calibration in the book's RESUME-NOTES); the stacked
+formulas are patches.  Rebuild: `build.py --emit`; `sheets.py --todo` crops anything undecided.  Needs numpy (the width fit) as well as Pillow.
+Translation: tydskland-efter-hegel's tools (GLOSSARY.md, TRANSLATOR-BRIEF.md, tr_parts.py, tr_template.tex); rebuild
+the English with `tr_parts.py build --write`.
+
 ## What a run needs (not in this repo)
 
 - the scan, found by `pagemap.py` under `~/bibliotek/Høffding, Harald/` (SCANS.tsv
@@ -127,6 +192,11 @@ Videnskab, Religionsfilosofiens Opgave, Udvalgte Stykker, Pascal og Kierkegaard 
 Udvikling, Relation som Kategori and Den menneskelige Tanke (552). An anchor that recurs takes `@k` (its k-th
 occurrence). Heading blocks are skipped: their page turn goes to the first text under them.
 
+Two limits (2026-10-03, Den nyere Filosofis Historie): it reads arabic page numbers only, so roman
+front-matter pages (XI-XV) are placed by hand; and when the print sets its notes as endnotes but the
+English has them as footnotes, the endnote pages fall out of order -- mark them by hand inside the
+footnotes that carry those notes, and list them as comments in anchors-en.txt.
+
 ## Is the English still right? `collate/xcheck.py`
 
     python3 ebook-method/collate/xcheck.py --all --measure          one line per book (sources: collate/xcheck-sources.tsv)
@@ -149,9 +219,82 @@ occur exactly once; `--write` keeps a backup. Den menneskelige Tanke was repaire
 list, which is how the tool was checked. A count of 0 for a book with a git source means only that the
 transcription has not changed since the English was last revised, not that the English is right.
 
+When the transcription covers only a SELECTION of the e-book, give the source as
+`PATH.epub::FILE-REGEX[::NOTES=first-last]` -- the e-book files to keep and the range of its endnotes --
+or the whole book is compared against the selection (Den nyere Filosofis Historie:
+`...Den_nyere_filosofis_historie.epub::s004-|s015-::NOTES=218-236`). Roman page markers (`\opage{XI}`)
+are pages like any other. When the English has no `\opage` markers, `--review`'s English window is
+not the right place; grep the English for the Danish context instead.
+
 ## Starting a new book
 
 Copy the folder of the nearest model -- `filosofiske-problemer/` for endnotes,
 `danske-filosoffer/` for footnotes at the page foot -- set the book's page map,
 e-book file names and front matter, start an empty `decisions.tsv`, and follow
 TRANSCRIPTION-PLAYBOOK.md §00.
+
+**A book with no e-book and no earlier transcription** (model:
+`spinozas-liv-og-laere/`, 2026-10-03): `draft.py --emit` builds a draft
+transcription.tex from the scan's text layer by rule (lines rebuilt from the word
+boxes, hyphens joined, paragraphs from indents, footnotes from their smaller line
+pitch, exact page markers, "% CHECK" at every guess); `pagemap.py` sets
+`WITNESS = 'ocr'`, so `collate/check.py BOOK` collates the draft against an
+independent tesseract reading, never against the layer it was made from. On the
+device, tesseract must run single-threaded in parallel (`OMP_THREAD_LIMIT=1`,
+four workers) and in calls under the time limit: a background job does not
+survive the call.
+Rebuild with `draft.py --emit --force && collate/check.py BOOK --apply` (chained: a failed patch
+leaves the file unwritten). `check.py BOOK --moved` and `--splits` list the two kinds of rule-settled
+disagreement that can hide a real error (a word out of place; a space the witness lacks): read them.
+Second model, `den-store-humor/` (2026-10-04): three steps, `draft.py --emit --force &&
+collate/check.py BOOK --italics --apply && draft.py --post`; the last applies `patches.POST`,
+corrections written against the collated text (the footnotes, read at the image, and specks), since
+check.py rewrites words and italics after the draft patches. `collate/spaced.py` (letterspacing by
+letter gaps in the tesseract boxes) is EXPERIMENTAL: noisy on bitonal scans, not used for the result.
+Third, `spinozas-ethica/` (2026-10-04): the Humor pipeline on a Google scan of an Academy volume (two folios
+in the head, small-capital names, superscript note marks, tight word boxes); see TRANSCRIPTION-PLAYBOOK.md §00.
+Fourth, `etik/` (2026-10-04): the same pipeline on a scan from the National Library of Norway (nb.no), Etik 4th ed.
+(1913, 606 pp.).  nb.no gives page images and its own OCR as ALTO files, not a PDF with a text layer: `etik/nb_scan.py`
+fetches both by IIIF and binds them into a PDF with the ALTO words as invisible text, each word on its ALTO line's
+baseline and NB's superscripts (note marks) as superscript digits, and the line-end hyphen, which ALTO keeps apart as
+<HYP>, put back on its word, so that draft.py and check.py read it unchanged.  nb_scan.py also writes, once, the
+files draft.py and check.py read beside pagemap.py: notetops.tsv (where each page's notes begin: the printed rule
+found in the page image, else a line that starts with a note's number), italics.tsv (the words NB's OCR set in
+italics, for check.py --italics) and spaced.tsv (letterspaced words, for draft.py --post).  notemarks.tsv and
+postfix.tsv hold what was read at the image (lost note marks, garbled notes; corrections inside markup).
+
+`martensens-oplysninger/` (Nielsen, 1850; 2026-10-06): the first FRAKTUR book.  draft.py (KB's ABBYY layer), ocr.py
+(tesseract script/Fraktur as witness; MODEL=deu_latf as a third reading), rules.py (Fraktur glyph-fault rules: frak,
+frak-lit, vote3, oefix), batchsheets.py + readsbox.py (blind crops decided by crop id and boxed word), oepass.py (the ø
+pass: lexicon + context-free word crops, oe-reads.tsv; and word-fixes.tsv from sweepsheets.py, the unattested-word sweep),
+finish.py (footnotes rebuilt, POST corrections, Latin \textit, \emph, PRINTED AS IS).  Rebuild: see the transcription's header.
+
+`scharling-apologie/` (Nielsen, 1850; 2026-10-06): a Fraktur book with NO text layer, copied from martensens-oplysninger.
+ocr.py builds all three readings: MODEL=layer (tesseract script/Fraktur set as a text-only PDF layer,
+.parts/layer-Fraktur.pdf, which draft.py reads through pagemap.layer_path()), MODEL=deu_latf (the witness) and MODEL=dan
+(the third reading; it alone often sees ø).  rules.py: fault lists re-derived for the two tesseract models, the
+two-attested-words guard with a frequency exception (frak-freq), rule2 (line-end = hyphens and spaces before stops),
+skal.  finish.py rewritten (NOTES, POST, GLOBAL shared faults, EMPH, MISPRINTS).  The scan's MediaBox is four times its
+CropBox: renders are the MediaBox, the page is their lower left (batchsheets.py/sweepsheets.py crop to it).
+
+`mathematik-og-dialektik/` (Nielsen, 1859; 2026-10-06): a Fraktur book FULL OF FORMULAS, with Google's OCR layer (good on
+the Fraktur, garbled in the math).  Copied from martensens-oplysninger.  Crop sheets were replaced by COMBINED PAGE
+READERS (workgen.py: whole pages per reader, with the open words listed by context; each reader writes WORD, MATH in
+LaTeX with anchor words, NOTE whole, SPACED, ANTIQUA, HEAD, PARA, ODD lines -> page-reads.tsv; wordapply.py decides the
+words).  pagemap NO_NOTES: notes come from the readers, not the layer.  finish.py sets notes, formulas, headings, spacing,
+paragraphs, then PAGEFIX: pagefix/pN.tex (pages rewritten whole by agents, text-only from the readers' lines, then at the
+image for the doubtful ones) replaces a page only while the page from the earlier steps equals pagefix/base/pN.tex
+(else PAGEFIX STALE with the diff); pagefix/CHANGES.tsv lists every word change.  Then WORDFIX (OCR faults from an
+unattested-word sweep), POST, MISPRINTS (the book's own Rettelser).  losscheck.py: witness word runs the text lacks.
+Front and back matter (title, motto, Forord, Indhold, Rettelser) are static in template.tex; pagemap END stops check.py
+before the back matter.
+Translation (2026-10-06): tr_extract.py (FIRST LAST | front | back), tr_build.py (ten parts; joins two parts with a blank
+line only where the Danish has a paragraph break at that page turn; checks pages, notes per page, glued %, and emph,
+textit, $ and paragraph counts per part), tr_template.tex, TRANSLATOR-BRIEF.md; nine Sonnet translators (1.06M tokens).
+Their odd spots: trspots.tsv (screened by hand) -> spotsheets.py (crops round the tesseract box at 300 dpi, sheets
+.render/...-tr-NN.png, -tr2-NN.png) -> ODD (literal, exactly once) and new MISPRINTS in finish.py, then the same changes
+by hand in the English parts.  finish.py also: pagefix pages are spliced with '\n', not '\n\n' (a page turn is no
+paragraph), then FALSE PARAGRAPH BREAKS and LINE-END HYPHENS passes for what the page-fix agents copied from the print.
+Formula proof (2026-10-07): formulacheck.py (letters/digits of each formula against the layer and tesseract at its
+anchors; flags what neither vouches for) -> proofsheets.py (scan crop over the typeset formula; --pages for whole-page
+views of the items whose crop missed) -> readers' DIFFERS checked at the image -> FX in finish.py.

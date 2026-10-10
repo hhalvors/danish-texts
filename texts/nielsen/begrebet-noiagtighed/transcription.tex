@@ -1,0 +1,1809 @@
+% =====================================================================
+%  R. Nielsen, OM BEGREBET NØIAGTIGHED med særligt Hensyn paa Hr. Prof. Steens „Bidrag“.
+%  Efterskrift til „Philosophie og Mathematik“.  Kjøbenhavn: Gyldendal (F. Hegel); Thieles Bogtrykkeri, 1860.
+%  55 pp.  Fraktur, formulas in antiqua; footnotes; pp. 53-55 Trykfeil og Rettelser (to Philosophie og Mathematik,
+%  Philosophisk Propædeutik and Mathematik og Dialektik).
+%
+%  TRANSCRIPTION -- GENERATED; DO NOT EDIT BY HAND.  Rebuild from the repo root:
+%    python3 ebook-method/begrebet-noiagtighed/fromreads.py --write
+%  (this template + the blind page readings ebook-method/begrebet-noiagtighed/reads/reads-R1..R6.txt + vote-fixes.tsv; see ACCURACY below).
+%
+%  EDITION.  The text of record is the Google Books scan of the British Library copy (books.google.com/books?id=
+%  BnlZAAAAcAAJ, digitized 2013-10-23; ~/bibliotek/Nielsen, Rasmus/1860-begrebet-noiagtighed-google.pdf, SCANS.tsv),
+%  600 ppi, Google's Fraktur OCR as text layer.  A second copy, DTU's (Danmarks Tekniske Kulturarv, 300 ppi colour, its
+%  own OCR; ~/bibliotek/Nielsen, Rasmus/begrebet-nøiagtighed.pdf), has the same setting and pagination (printed p = PDF
+%  - 3 there).  A third, Harvard's (Google Books sDoVAAAAYAAJ, 2008), was not used.  No e-book and no earlier
+%  transcription exists (checked 2026-10-10: the repo, Google Books, HathiTrust, KB).
+%
+%  ACCURACY (2026-10-10).  The words, notes, formulas and paragraphs are those of a BLIND whole-page reading (six Sonnet
+%  readers, every page, 149 sheets at 220 dpi; ebook-method/begrebet-noiagtighed/reads/reads-R1..R6.txt), checked word by word against three
+%  machine texts of the same pages: Google's layer, tesseract (tessdata_best script/Fraktur) and the collated draft
+%  (layer against tesseract, 1825 disagreements settled by check.py, rules.py and the reading).  A reader's word stands
+%  where at least one machine agrees with it (vote2.py); 344 words had no support and were read at the image in BLIND
+%  crops (211 crops, two readers, 4 of 4 planted controls read right) or, at the end, in 600-dpi crops in the main
+%  session.  Every formula and Greek word, and the errata pages whole, were read a second time, blind, at 340 dpi (two
+%  line readers, 112 crops) and compared with the first reading (formcmp.py).  A last check (finalcheck.py) aligned the
+%  finished text with layer and tesseract again: the words where both machines agree against it are all of known kinds
+%  (the Fraktur Ø both read as D: Øiekast, Øiemed, Øie, Øret, Øieblik; ranges of pages; „sig“ read as fig; spacing).
+%  A lexicon scan (D-words whose Ø-form is attested; gi/ki for gj/kj) then found four Ø read as D by the reader AND
+%  both machines (Øieblik p. 25, Øieblikkets p. 49, Øiemed pp. 51-52), and the translators' odd spots (46) one more
+%  reading („og ak,“ p. 36, a damaged k, misread at first in the main session too) and the doubled „af af“ (p. 40).
+%  The readers' faults corrected in this way (vote-fixes.tsv, ~100 entries): d/b, k/t, f/long s and qv/qu confusions,
+%  dropped and doubled letters, a misread footnote line (p. 44), antiqua set where the print has Fraktur (p. 25).
+%  What this cannot see: a fault shared by the reader and one machine.
+%  PRINTED AS IS (each seen at the image; a % comment at the site): „saud“ for sand (p. 8), „Interssante“ (p. 9),
+%  „Functioneus“ (p. 28), „Synspuukt“ (p. 34), „eud“ for end (p. 38), „dct“ for det (pp. 42 and 50),
+%  „Differeutialcoefficienterne“ (p. 42), „umiddelber“ (p. 43) -- most of them turned n's that the reader and Google's
+%  layer both read as n; only tesseract kept them (turned.py lists such words).
+%  Not transcribed: an inked spacing sort before „nogenledes“ (p. 18; the layer reads „[“); the British Museum's date
+%  stamp „18 JY 63“ (p. 52); sheet signatures.  The readers set the antiqua zero as O where it is capital-height
+%  (pp. 34-35, „C = O“) and as 0 where it is an old-style figure: kept as read.  Quotation marks („ 372, “ 371) are as
+%  printed, unbalanced across page turns and run-over notes.
+%  Footnotes: 17, five of them running over one or more pages (pp. 28-30, 42-43, 43-44, 46-47, 49-50; a comment marks
+%  each page turn inside the note).  Emphasis: letterspacing as \emph, bold as \textbf, antiqua words as \textit (the
+%  house convention for Fraktur books); formulas in math mode, displayed where the print gives a formula its own line.
+%
+%  PAGE MAP.  printed p = PDF page - 4 (p. 3 = PDF 7, p. 55 = PDF 59); folios 4-55 printed, p. 3 has none.  PDF 3: the
+%  printed wrapper; PDF 5: title, p. [1]; PDF 6: p. [2] (British Museum stamp only).  Sheet signatures 1*-4*.  The
+%  errata (Trykfeil og Rettelser, pp. 53-55) correct I. Philosophie og Mathematik, II. Philosophisk Propædeutik and
+%  III. Mathematik og Dialektik.
+%
+%  TOOLS (ebook-method/begrebet-noiagtighed/, README there): draft.py, ocr.py, check.py (collation), rules.py, vote.py,
+%  pagecheck.py + PAGECHECK-BRIEF.md (page sheets), vote2.py, cropsv.py, lines.py, formcmp.py, spot.py, turned.py,
+%  mkfix.py, finalcheck.py, fromreads.py.  Agent tokens: page readers ~776k, crop readers ~211k, line readers ~250k.
+%
+% =====================================================================
+\documentclass[12pt,a4paper,openany]{book}
+\usepackage[utf8]{inputenc}
+\usepackage[LGR,T1]{fontenc}
+\usepackage{textalpha}
+\usepackage{amsmath}
+\usepackage{libertinus}
+\usepackage{graphicx}
+\DeclareUnicodeCharacter{0254}{\reflectbox{c}}  % ɔ (U+0254) = reversed c
+\DeclareUnicodeCharacter{A75B}{r}   % r rotunda (ꝛc. = etc.)
+\usepackage[danish]{babel}
+\usepackage[protrusion=true,expansion=true]{microtype}
+\usepackage{setspace}
+\usepackage[margin=1.3in]{geometry}
+\usepackage{fancyhdr}
+\usepackage{hyperref}
+\hypersetup{pdftitle={Om Begrebet Nøiagtighed}, pdfauthor={Rasmus Nielsen}, hidelinks}
+\setlength{\headheight}{15pt}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LE,RO]{\thepage}
+\fancyhead[C]{\textit{R. Nielsen: Om Begrebet Nøiagtighed (1860)}}
+\renewcommand{\thefootnote}{\ifcase\value{footnote}\or *)\or **)\or ***)\else
+  \arabic{footnote})\fi}
+\setstretch{1.3}
+\usepackage{marginnote}
+\newcommand{\opage}[1]{\marginnote{\footnotesize\textit{[#1]}}}
+\newcommand{\apage}[1]{\marginnote{\footnotesize\textit{[#1]}}}
+\providecommand{\tg}{\operatorname{tg}}
+
+\begin{document}
+
+% --- The title page, p. [1] (PDF 5), read at the image 2026-10-10: Fraktur but „Begrebet Nøiagtighed“ (a large
+% black-letter face) and the year (antiqua); „Thieles Bogtrykkeri.“ letter-spaced; Gyldendal's device (a monogram in a
+% garter) between the author and the imprint.  Not printed, so not transcribed:
+% a shelfmark and „5.“ in ink.  The verso, p. [2] (PDF 6), carries only the British Museum's stamp.  The BL copy
+% keeps the printed wrapper (PDF 3): the same title in a ruled frame, without „(F. Hegel)“ and with the device.
+\begin{titlepage}
+\begin{center}
+\vspace*{3em}
+{\large Om}\\[1em]
+{\Huge\textbf{Begrebet Nøiagtighed}}\\[1em]
+{\small med særligt Hensyn paa}\\[1em]
+{\Large\textbf{Hr. Prof. Steens „Bidrag“.}}\\[1.5em]
+\rule{4em}{0.4pt}\\[1.5em]
+{\small Efterskrift til „Philosophie og Mathematik“}\\[0.8em]
+{\small af}\\[0.8em]
+{\large\textbf{R. Nielsen.}}\\[1em]
+\vspace{5em}
+{\small\textbf{Kjøbenhavn.}}\\[0.5em]
+{\small Forlagt af den Gyldendalske Boghandling (F. Hegel).}\\[0.5em]
+{\footnotesize\textls[200]{Thieles Bogtrykkeri.}}\\[0.5em]
+\textit{1860.}
+\end{center}
+\end{titlepage}
+
+% ===== TEXT (pp. 3--55) =====
+% --- p. 3 ---
+\opage{3}\setcounter{footnote}{0}%
+
+\begin{center}\textbf{Om Begrebet: Nøiagtighed, med særligt Hensyn paa}\\
+\textbf{Hr. Prof. Steens „Bidrag“. Efterskrift til „Philosophie}\\
+\textbf{og Mathematik“.}\end{center}
+
+\begin{center}\rule{3em}{0.4pt}\end{center}
+
+I alle Videnskaber og da fornemmelig i den exacteste
+af alle Videnskaber gjælder det at være nøiagtig; men
+Nøiagtighedsfordringen kan, hvad ofte nok sees af Kritiker
+og Anmældelser, dog ogsaa indeholde betænkelige Misvisninger. Man kan nemlig være nøiagtig i det Uvæsentlige og unøiagtig i det Væsentlige, nøiagtig i at udpege
+Enkeltheder, men unøiagtig i at opfatte det Hele, nøiagtig
+i at anbringe sine egne uforgribelige Meninger, men høist
+unøiagtig i at tyde og gjengive den Synsmaade, man vil
+bestride.
+
+I „Philosophie og Mathematik“ findes et Par betydeligere Uagtsomhedsfeil og nogle mindre Unøiagtigheder,
+som her skulle rettes. For imidlertid at anbringe Rettelser paa rette Maade, maa man vide at skjelne imellem
+virkelige og foregivne Feil; thi ligesom det er stridende
+mod Nøiagtighedens Fordring at lade virkelige og vitterlige Feil henstaae uden Rettelse, saaledes er det jo ogsaa
+Tegn paa Usikkerhed, en Usikkerhed, som Vanen til Unøiagtighed kun altfor let medfører, at lade sig overraske af
+dristige Indsigelser og da i slig Overraskelse forlede til at
+rette det i sig Rigtige, og vedkjende sig Feil, hvor der
+ingen Feil er.
+
+% --- p. 4 ---
+\opage{4}\setcounter{footnote}{0}%
+I en Piece, betitlet: „Bidrag til en Kritik af Prof.
+R. Nielsens „Philosophie og Mathematik“, Kjøbenhavn,
+Reitzels Forlag, 1859“, har Hr. Prof. Steen, vistnok ikke
+uden Selvovervindelse og megen Pligtfølelse, omsider følt
+sig opfordret til at tjene Nøiagtigheden og hjælpe os med
+Rettelserne. Før vi imidlertid benytte den tilbudte Veiledning, ville vi dog først, for ikke at komme paa Vildspor,
+i Almindelighed see at angive Veiens Retning ved at mærke
+os nogle Afvisere, idet vi, med andre Ord, mærke os
+nogle af den litterære Nøiagtigheds meest iøinefaldende
+Karikaturformer.
+
+Som første Hovedform nævne vi den \emph{rabulistiske}. At
+udpege Feil er et Tegn paa Overlegenhed; at udpege
+mange Feil er et Tegn paa megen Overlegenhed; at udpege uhyre mange, uhyre store og uhyre grove Feil er
+altsaa et Tegn paa en uhyre Overlegenhed: her have vi
+Rabulisten, den litterære Markskriger. At den Opgave,
+„Philosophie og Mathematik“ har stillet sig, just ikke hører
+blandt de letteste, ville vel endogsaa de, som forøvrigt
+bryde Staven over det hele Forsøg, uden Modsigelse indrømme. En streng, men grundig Kritik, der vilde oplyse
+os om, hvad her i et saadant Forsøg maaskee kunde findes
+brugbart, og hvad heri maatte betragtes som mislykket, fik
+da i Forhold til den stillede Opgaves Vanskelighed en
+heller ikke ganske let Opgave. Men hvad der for en
+grundig Kritik er vanskeligt, er naturligviis for en rabulistisk Kritik ikke vanskeligt; de to Arter af Kritik ere hinanden modsatte, saa stik modsatte, at jo vanskeligere Sagen
+er for den grundige, desto lettere er den for den rabulistiske, jo mere Tid hiin fordrer til anstrængende Overveielser, desto mageligere fuldender denne sit Hastværksarbeide.
+Vi kunne oplyse Modsætningen ved et let Exempel. „Paa hvilke Læsere er den propædeutiske Afhandling,
+Philosophie og Mathematik, nu egentlig beregnet?“ Skal
+Afhandlingen betragtes som et Udkast, nærmest bestemt til
+% --- p. 5 ---
+\opage{5}\setcounter{footnote}{0}%
+Afbenyttelse ved mundtlige Foredrag for yngre Studerende:
+da seer dog vel en videnskabelig Recensent ved første Øiekast, at Hensynet til de Oplysninger, et mundtligt Foredrag kan meddele, er et ved Bedømmelsen afgjørende Hensyn, der overalt maa fastholdes, saa at de Indvendinger,
+som maaskee ellers kunde gjøres imod Anvendelsen af
+nogle i sig „vanskelige Exempler“, falde bort af sig selv.
+Vil man derimod under Bedømmelsen aldeles ikke tage
+Hensyn til noget mundtligt Foredrag, men lade Afhandlingen „fremtræde som trykt Frembringelse, der baade gjør
+Krav paa og maa være belavet paa litterær Kritik“: da
+følger heraf, hvad en grundig Kritiker øieblikkelig indrømmer, at enhver Paaberaabelse paa „de unge Studerendes“ Kundskaber maa afvises som ubeføiet. Anderledes,
+naar Rabulisten begynder at anbringe sit Hulter til Bulter
+af sammenrørte Synsmaader og ueensartede Maalestokke.
+Er Fremstillingen tydelig, saa er den jo bred og trivial, og
+det, der siges, saa almindelig bekjendt, at det ikke er Noget
+at byde de Sagkyndige. Stikker en dialektisk Braad, saa
+„tillader man sig, indtil det Modsatte bevises, at antage
+den berørte Sætning for meningsløs.“ Træffer man paa
+et dunklere Partie; det bliver at behandle paa een af to
+Maader: enten underskyder man det i Hast en urimelig og
+„ravgal“ Mening, erklærer den underskudte Mening for
+„dødsdømt“, og vil, da „en trykt Frembringelse jo maa
+være belavet paa litterær Kritik,“ naturligviis ikke høre et
+Ord om mundtlige Foredrag, hvori en Forklaring skulde
+gives de unge Studerende; eller, hvis „den trykte Frembringelse“, hvormeget man end skruer og vrider de enkelte
+Sætninger, ikke ret vil blive saa meningsløs, som man
+kunde ønske det; saa vælger man den modsatte Udvei, saa indrømmer man, at den Kyndige jo vistnok kan see, hvad der er
+Forfatterens Tanke, men „de unge Studerende?“ ja, „de
+unge Studerende!“ --- med et medlidende Blik vender man
+sig mod „de unge Studerende“, og har saa strax en bekymret
+% --- p. 6 ---
+\opage{6}\setcounter{footnote}{0}%
+Tanke i den store Hovedanke, at „Den, der optræder som
+Lærer for de unge Studerende, der nylig have forladt
+Skolen, henter sine Exempler fra en dem ubekjendt Sphære.“
+Ved saaledes at sammenryste Indvendinger, som man ryster
+Glasstumper i et Kaleidoskop, tjener Rabulisten den videnskabelige Nøiagtighed, og Nøiagtighedens Fordring gjør sin
+Virkning: en nysgjerrig Læser kiger i Kaleidoskopet, hører
+om det Unøiagtige, seer det Nøiagtige, og er --- overbeviist.
+
+Som Karikaturens anden Hovedform kunne vi anføre den \emph{pedantiske}. Nøiagtighed og Punktlighed træffe
+jo sammen deri, at Alt i det Enkelte skal være som paa
+en Prik. Nøiagtighed er altsaa det Samme som Prikkenhed; jo smaaligere Prikkenhed, desto større Nøiagtighed:
+her er Pedanten, den litterære Nittengryn. Nøiagtighedsfordringen er nu den, at ingen Sætning bør ansees for
+rigtig klar eller ret forstaaelig, som ikke er forsynet med
+saamange Forsigtighedshanker, Betingelser, Indskrænkninger
+og subtile Reservationer, at den endog enestaaende, udreven
+af al Sammenhæng, kan gjøre enhver Misforstaaelse umulig; her bliver Noget at prikke i, Noget at opdage og
+Noget at beklage for Den, hvem det især maa behage at
+beklage, at have maattet trætte Læseren paa over fyrretyve Sider, for at fremsætte det Urigtige, Meningsløse og
+Uklare paa den første fjerde Part af en halv Side.“
+
+I de fleste Former af Litteraturens og Videnskabens
+humane Frembringelser veed man ellers ret vel at gjøre
+Forskjel imellem Nøiagtighed og Pedanterie; kun den stokmathematiske Prikkenhed synes endnu at ville have Privilegium paa at ansees for streng Nøiagtighed. Der siges i
+en Stjernekatalog: „disse Stjerner ere hele Januar og
+Februar Maaned ved anførte Klokkeslet synlige paa den
+nordlige Himmel“; en nøieregnende Recensent træder op og
+corrigerer: „denne Angivelse er unøiagtig; her maa vel
+forudsættes, at den nordlige Himmel hele Januar og
+% --- p. 7 ---
+\opage{7}\setcounter{footnote}{0}%
+Februar Maaned igjennem ikke formørkes enten af Taager
+eller egentlige Skyer; ere disse Antagelser urigtige, saa
+hviler det Hele paa en Misforstaaelse, for hvilken Forfatteren selv bærer Skylden, thi man maa gjætte sig til
+hans Mening, naar han ikke præciserer den;“ Enhver forstaaer, at en saadan Rettelse er i høieste Grad pedantisk.
+Men naar det nu i „Philos. og Mathem.“ fremhæves, at
+ogsaa Mathematiken kan i sit Sprog udtrykke baade det
+Mulige og det i sig Umulige, idet der exempelviis, og
+derhos flygtig, fordi en tungfodet Beskrivelse af en
+saa let fattelig Sag vilde være unødvendig, tilføies:
+„$a = \frac{b}{c}$ er for Tanken en Virkelighed, $b = \pm\sqrt{a^{2} - x^{2}}$
+en Mulighed“\dots{}, og saa en Recensent paa Nøiagtighedens Vegne corrigerende anmærker: „naar det hedder, at
+$a = \frac{b}{c}$ er en Virkelighed, forudsættes vel $b$ og $c$ rationale,
+naar $b = \pm\sqrt{a^{2} - x^{2}}$, maa vel $x$ ligge imellem $+$
+og --- $a$; ere disse Antagelser urigtige, saa hvile vore Indsigelser paa en Misforstaaelse, for hvilken Forfatteren selv
+bærer Skylden, thi man maa gjætte sig til hans Mening,
+naar han ikke præciserer den“: mon da en saadan Rettelse
+ikke ogsaa skulde falde ind under Kategorien af det Pedantiske?\footnote{Hvilken Modsigelse Pedanteriet i sig selv indeholder, sees deraf,
+at den pedantiske Rettelse næsten altid igjen kræver en ny Rettelse. Skulle b og c forudsættes rationale, for at $a = \frac{b}{c}$ kan
+være en Virkelighed, er Forudsætningen i en saadan Almindelighed endnu uklar og unøiagtig; nei, man maa, for at „præcisere“
+Udtrykket, udtrykkelig forudsætte, at det rationale b og det rationale c ere ulige store. Ere b og c ikke ulige store, da
+er den foreslaaede Indskrænkning endog aldeles urigtig, thi
+$a = \frac{\sqrt{2}}{\sqrt{3-1}}$ er jo ligesaavel en Virkelighed, som $a = \frac{2}{3-1}$.
+Denne pedantiske Rettelse kunde saa igjen foranledige en Rettelse o. s. fr.}
+
+% --- p. 8 ---
+\opage{8}\setcounter{footnote}{0}%
+At den pedantiske Nøiagtighed maa ved sine egne
+Conseqvenser slaae over i det Unøiagtige, Uefterrettelige og
+aldeles Upaalidelige, er en Selvfølge; naar der skal gjøres
+Væsen af det Uvæsentlige, maa det i sig Væsentlige blive
+overseet: gjør man Alt lige væsentligt, saa gjør man med
+det Samme Alt lige uvæsentligt.
+
+Pedanten og Rabulisten ere Aandsfrænder; i deres
+recenserende Fremgangsmaade er der kun den Forskjel, at
+Rabulisten knuser med Rabalder, naar Pedanten prikker
+ihjel med Naale. I Rabulisteriet saavelsom i Pedanteriet
+% misprint for sand (turned n), PRINTED AS IS: tesseract saud, 600-dpi crop (spot-turned)
+forudsætter man dog imidlertid gjerne en vis Mangel paa saud Dygtighed; men er nu tillige Dygtigheden, om end
+kun som borneret Fagdygtighed, tilstede, og dermed en tydelig Forestilling om, hvorledes de rabulistiske og pedantiske
+Midler bedst combineres og anbringes, naar man vil en
+Forfatter tillivs og have ham „domfældt“; saa er Maalet
+fyldt, saa antager Nøiagtighedskarikaturen sin høieste og
+interessanteste Form, nemlig den chikanerende!
+
+Chikaneuren er interessant derved, at han gaaer ind under
+Reflexionen; thi det Interessante har altid paa en eller
+anden Maade sit Tiltrækkende i en Reflexion. Rabulisten
+er umiddelbar, og hans Optræden derfor i Grunden uden
+væsentlig Interesse; hans høie Raab, hans hæftige Gebærder, hans blomstrende, fuldblodige Grovheder og ugenerte
+Personligheder kunne jo vistnok, forsaavidt de ere „Vidnesbyrd om den Upartiskhed, den Hensynsløshed, den Iver og
+Varme, hvormed han for Sagens Skyld gaaer ind paa
+Discussionen,“ nu og da være ret morsomme; men interessante ere de egentlig ikke. For at fængsle Reflexionen,
+maatte Rabulisten selv have Reflexion; men til at være
+Rabulist behøves ikke megen Reflexion, ikke synderlig mere,
+end til at være Trommeslager.
+
+At det Interessante betinges af Reflexionen, udelukker
+dog ingenlunde Muligheden af, at der jo ogsaa kan gives
+en Reflexion, som ingenlunde er interessant. Pedanteriet
+% --- p. 9 ---
+\opage{9}\setcounter{footnote}{0}%
+er ikke uden Reflexion, og dog er Pedanteriet ikke det
+Interessante. Naar Pedanten, hvad „de talløse Unøiagtigheder“ angaaer, corrigerer en Bog med samme Nøiagtighed,
+som den, hvormed „Licentiaten“ i „En Students Eventyr“
+beskriver „Lægdsgaarden Ølsebymagle“, kan han, især naar
+han giver sig til at „beklage, at have maattet trætte Læseren
+paa fyrretyve Sider, for at fremsætte det Urigtige, Meningsløse og Uklare paa et lille Stykke af en halv Side,“ jo
+vistnok paa en Maade blive interessant, nemlig for Læserens
+Reflexion: „fyrretyve Sider, saamange Feil, saamange
+Unøiagtigheder, saamange Rettelser! Den, der med en
+saadan Iver vil tjene Nøiagtigheden, maa jo, før han
+faaer hele Bogen rettet, og dermed Forfatteren litterært
+henrettet, rette sig selv ihjel!“ Men Eet er det, at Pedanteriet lader sig afvinde en interessant Side; noget
+ganske Andet, at det efter sin Charakteer selv skulde høre
+til det Interessante. Pedanten kan blive interessant, idet
+han kan blive comisk; men den gnavne, gustne, reflexionssyge Pedant er i Virkeligheden dog en ynkelig og ingenlunde interessant Figur.
+
+Chicaneuren derimod, som med Kraft og Dygtighed
+forstaaer at gribe de Elementer, der tilbydes ham fra
+lavere Sphærer, og benytte dem som Midler for sit Øiemed, Chicaneuren, der veed, baade hvad han selv vil, og
+tillige hvad man i en Litteratur bør ville, Chicaneuren, der
+sætter et Videnskabeligt op, og har et Lidenskabeligt in
+mente, ligerviis som man i simpel Regning sætter Nul op, og
+har Ni in mente, ja, Chicaneuren har, hvad da især forraader sig, naar han er lidt ubehjælpsom, altid en Fordobling, og hører desaarsag fra alle Sider under det
+Interessante: jo mere man gjennemskuer hans Væsen, desto
+interessantere bliver han, thi hans Væsen er, paa Grund
+af Fordoblingen, en Reflexion.
+
+% misprint for Interessante, PRINTED AS IS: layer, tesseract and the 340-dpi line reader read Interssante
+Den Fordobling, hvori Chicaneuren har sit Interssante, beroer, almindelig seet, paa et Vexelskin af Mora%
+% --- p. 10 ---
+\opage{10}\setcounter{footnote}{0}%
+litet og Videnskab. Det Videnskabelige er, at „de mange
+Feil rettes, og rettes med Nøiagtighed;“ det Moralske er,
+at de rettes til den rette Side. Da det nu, idet vi med
+Chicaneuren jo befinde os paa videnskabelig Grund, „foreløbig ikke saameget kommer an paa Feilenes Mængde, som
+paa deres Beskaffenhed, ikke saameget paa deres Qvantitet,
+som paa deres Qvalitet“: maae de mange Rettelser jo fremfor
+Alt gaae ud paa, at give Feilene den rette Qvalitet, og
+bringe Noget ud af Qvaliteten. Vi vælge igjen et lille
+Exempel. I „Phil. og Mathem.“ bliver Forholdet imellem
+første og anden Differentialcoefficient oplyst ved et Par
+Formler fra Mechaniken: $v = \frac{dx}{dt}$ og $\Phi = \frac{dv}{dt} = \frac{d^{2}x}{dt^{2}}$. En sagkyndig,
+men for Resten troskyldig, Læser kunde maaskee
+endog flere Gange gjennemløbe det lille Stykke S. 61,
+nederst, uden at mærke Noget, idet han uvilkaarlig tænkte
+sig Hastigheden snart constant og snart variabel, eftersom
+Sammenhængen og de valgte Udtryk naturligen førte det
+med sig\footnote{Selv hvis den Kyndige, idet han uvilkaarlig stødte paa Feilen,
+skulde fatte Mistanke om, at Forf. maaskee var i Vilderede med
+Begreberne: vilde han dog som Mand af Ære først see sig lidt
+om iblandt Forfatterens andre Frembringelser, og t. Ex. raadføre sig med Phil. Propæd. S. 164---167, før han offentlig og
+paa Prent angreb ham ved at stemple Feilen med den grove
+Uvidenheds Mærke. Men det forstaaer sig: slige Hensyn gjælde
+kun blandt Mænd af Ære; Rabulister og Chicaneurer have
+deres eget Pligtcapitel.}. Men, gjør Pedanten Anskrig, fatter Læseren jo
+strax, hvad her er skeet, thi her er skeet en Opdagelse. Og
+dog vilde det kun lidet hjælpe, at en Feil blev opdaget, naar
+Feilen ikke havde den rette Beskaffenhed, naar der ingen
+ordentlig Qvalitet var i Feilen, naar Feilen ikke var til at
+sørge over. Istedetfor at mærke sig Opdagelsens Vigtighed
+og sørge over Feilen, vare „de unge Studerende“ vel endog
+istand til at mærke sig Pedantens Vigtighed, og more sig
+% --- p. 11 ---
+\opage{11}\setcounter{footnote}{0}%
+ved: quel bruit pour une omelette! Nei, skal Opdagelsen
+gjælde Noget, skal der være Forslag i Opdagelsen, da maa
+her en Mand til, der kan bruge Opdagelsen, sætte Couleur
+paa Rettelsen, og sørge over Feilen. Den opdagede Feil
+er da, sørgeligt nok, ingen Uagtsomhedsfeil, nei, det er en
+Uvidenhedsfeil, en Feil af den groveste Art! „Forf.“, der
+vil „klare Begreberne“, har nemlig ikke kjendt, hvad dog
+„enhver Student kjender“, at der er Forskjel imellem en
+constant og en variabel Hastighed; nei, det har han ikke
+kjendt, og det er just det Sørgelige; lader os alle sørge:
+sørgelige Hastighed, sørgelige Formler, sørgelige $v$! sørgelige
+$dv$ divideret med dt, sørgelige $\Phi$, o sørgelige Feil! sørgeligt, at saadanne Feil kunne begaaes af Den,
+der optræder som Forfatter og Lærer; endnu
+sørgeligere, at de finde Forsvarere!“
+
+Deri bestaaer just Chicaneurens interessante Fordobling,
+at han ikke blot veed at opdage Feilen, men endog at
+gjøre dens Qvalitet saa sørgelig, at her i Alvor er Grund
+til at sørge derover.
+
+Med disse Afvisere for Øie ville vi da nu, adlydende
+Nøiagtighedens Love, bestræbe os for at vandre Rettelsernes
+rette Veie, og derhos prøve den Veiledning, Hr. Prof.
+Steens Bidrag i saa Henseende maatte tilbyde os. Strax
+i Indgangserklæringen lover „Bidraget“ (S. 4) os Adskilligt,
+som, ifølge Hr. Prof.'s Forsikkring, vil være „af stor Betydning med Hensyn til Bedømmelsen af Forfatterens
+Standpunkt overhovedet.“ Tør vi nu ogsaa stole paa
+Opfyldelsen af dette Løfte? „Forf.'s“ Standpunkt er et
+philosophisk, nærmere bestemt: et dialektisk: hvilke „Bidrag“
+leverer Hr. Prof's. „Kritik“ nu til en Belysning af dette
+Standpunkt? I Anledning af Spørgsmaalet om den Betydning, der maa tillægges Begrebet: Tilnærmelse, siger
+„Bidraget“ (S. 27), at „det ikke er Meningen her at give
+nogen Kritik af den Dialektik, der gaaer igjennem hele Afhandlingen;“ hermed er saa Dialektiken affærdiget. Hvilken
+% --- p. 12 ---
+\opage{12}\setcounter{footnote}{0}%
+Stilling Hr. Prof. Steens Kritik indtager til Philosophie
+og philosophisk Begrebsudvikling i det Hele, har „Bidraget“
+(S. 19) betegnet os paa en ret tydelig og let fattelig
+Maade. Her meddeles nemlig i Anledning af „Uendelighedsproblemet, Mathematikens og Philosophiens store
+Fælledsproblem,“ følgende interessante Oplysning: „Jeg,“
+(Professor Steen) „troer nu vistnok, at Forf. her er paa
+en aldeles urigtig Vei. Der er for det Første ikke Noget,
+man kan benævne „Uendelighedsproblemet“ i Mathematiken“\dots{} „Men Forf. er Professor i Philosophie, min
+Mening om dette Spørgsmaal betyder kun Noget for mig
+selv, og det er ogsaa kun for min egen Skyld, at jeg har
+villet udtale denne forskjellige Opfattelse\dots{}“ Altsaa: istedetfor
+at indlade sig paa at undersøge „Forf.'s“ Standpunkt, stiller
+Mathematikeren sig, for en Sikkerheds Skyld, paa „Troens“
+Standpunkt, og gjør saa i Kraft af et „Jeg troer“ \textit{(credo, ut}
+\textit{intelligam)} trygt og tillidsfuldt sin „Mening“ gjældende. Det
+kan man kalde Forsigtighed, en sand troende Mathematikers
+Forsigtighed! Forsigtigere har maaskee endnu aldrig nogen
+„streng Kritik“ ved at holde sig paa behørig Afstand undgaaet Berøring med den kritiserede Forfatters Standpunkt.
+„Jeg skal,“ siger Hr. Prof. Steen (Bidr. S. 19) „i den
+foreliggende Undersøgelse, saa godt jeg formaaer, gaae ind
+paa Forf.'s Tankegang, hvorved det da er et Held for mig,
+at han vil følge den af Mathematiken betegnede Vei.“
+Vistnok er det et Held at være Mathematiker af Fag, naar
+der handles om at følge en af Mathematiken betegnet Vei;
+men i en Undersøgelse, der ligesaameget angaaer Philosophien
+som Mathematiken, maa „den af Mathematiken betegnede
+Vei“ dog vel fornuftigviis vælges saaledes, at den under
+Begrebsudviklingen falder sammen med den af Philosophien
+betegnede Vei; Mathematikeren vilde altsaa overvurdere sit
+„Held“, dersom han ved en saadan Undersøgelse oversaae
+det Philosophiske, og „troede“ sig berettiget til at slaae ned
+i det blot Mathematiske.
+
+% --- p. 13 ---
+\opage{13}\setcounter{footnote}{0}%
+For at oplyse, hvor urimelig og tankeløs en Adskillelse af
+det Mathematiske og det Philosophiske i en Undersøgelse, som
+denne, maa være, vælge vi af „Phil. og Mathem.“ de to
+Exempler, der efter vor Overbeviisning ere de eneste, som med
+nogen Grund kunne henregnes under Kategorien af væsentlige
+Feil. Det første af disse Exempler findes S. 10, og angaaer Modsætningen imellem den trigonometriske Linie, cos x,
+og den til samme svarende Bue $\mathrm{arc}\, (\cos = x)$; det andet
+findes S. 43, og angaaer den Maade, hvorpaa Forudsætningen og Betingelsen for en Udvikling af Taylorsrækken
+fremsættes.
+
+Hvori bestaaer nu, væsentlig seet, Feilen i vort første
+Exempel? Istedetfor at træffe det Punkt, hvori Feilen stikker,
+og bestemme Forholdet imellem dens mathematiske og philosophiske Beskaffenhed, begynder Hr. Professor Steen med
+en Feilslutning, idet han deraf, at alle Functioner ere
+intellectuelle Handlinger, vil udlede, at alle Functioner
+maae være hinanden ophævende Handlinger; men det er en
+Overilelse. Hvad han her kalder „en urigtig Grund“, er
+altsaa hans egen Opfindelse; ligeledes er det Urigtige i,
+hvad han kalder „den urigtige Paastand“, ene og alene at
+tilskrive hans egen Paastand. Hvilke og hvormange Betydninger man end fra et reent mathematisk Synspunkt
+kan være foranlediget til at forbinde med saadanne Udtryk
+som $\cos x$, $\mathrm{arc}\, (\cos = x)$ o. s. v., vil dog Ingen kunne
+negte, at $x$ i $\cos x$ efter sit Begreb er en Bue, og $x$ i
+$\mathrm{arc}\, (\cos = x)$ efter sit Begreb en ret Linie. Forvandler
+man nu $x$ i begge Udtryk til rene Tal, og lader den oprindelige Betydning ikke blot træde i Baggrunden, men
+bortfalde, og, vel at mærke, bortfalde saaledes, at der end
+ikke er Glimt af det Oprindelige tilbage: vil da ikke Buen
+til et reent Tal være ligesaa logisk, som Chorden til en
+reen Samvittighed?
+
+Naar Hr. Prof. St. altsaa paastaaer, at i Functions%
+% --- p. 14 ---
+\opage{14}\setcounter{footnote}{0}%
+læren er $x$ i $\cos x$ ikke en Bue, $x$ i $\mathrm{arc}\, (\cos = x)$ ikke en
+ret Linie, men at begge ere rene Tal, og at denne „for en
+philosophisk Betragtning“ nødvendige Opfattelse er „den
+for Functionslæren ene rigtige Opfattelse“: da bliver man
+underlig tilmode. Skulde „Functionslæren“ nu virkelig
+fordre, at den oprindelige Betydning af $x$ i $\Phi(x)=\cos x$
+og i $\Psi(x)=\mathrm{arc}\,(\cos=x)$ aldeles blev udslettet? Det
+skulde da være, naar vi betragtede de mathematiske Functioner fra --- „Troens“ Standpunkt; thi at den af Hr.
+Prof. Steen opstillede Paastand, betragtet fra Videnskabens
+Standpunkt, ingenlunde bifaldes af alle „Europas Mathematikere“, kan t. Ex. sees af Professor Jürgensens „Begyndelsesgrunde“ S. 18\footnote{Begyndelsesgrundene af den mathematiske Analyse, Kjøbenhavn
+1855.}, hvori det udtrykkelig hedder, at
+„Logarithmen er en Function af Tallet, Sinus (som Linie)
+en Function af Radius og Buen.“
+
+Men selv om den paaankede Feil var tilstrækkelig
+paaviist, stod Spørgsmaalet om dens Indflydelse paa det
+Philosophiske jo endnu tilbage. Feilen, saaledes som den
+nu er, kunde, hvad det blot Mathematiske angaaer, for den
+Sags Skyld gjerne have været tyve Gange større, og dens
+Indflydelse paa Begrebsudviklingen endda at regne for
+Intet; thi den korte Bemærkning, hvori den indgaaer,
+kan uden Skade for Tankegangen aldeles bortfalde.
+
+At der, for nu at nævne det næste Exempel, under Opstillingen af de Forudsætninger, hvorpaa Taylorsrækken
+hviler, er, S. 43, indløben en urigtig Bemærkning, angaaende Coefficienterne $A_{0}$, $A_{1}$, $A_{2}\dots$, skal villig indrømmes, ligesom det ogsaa skal indrømmes, at Noget i
+denne Anledning er blevet opstillet som Betingelse, der,
+nærmere beseet, ikke er en Betingelse, men en Conseqvens.
+% --- p. 15 ---
+\opage{15}\setcounter{footnote}{0}%
+Imidlertid er Taylorsrækken selv, hvormeget Spræld man
+end vil gjøre af disse indledende Bemærkningsfeil, dog
+alligevel i „Phil. og Mathem.“ fra S. 44---45, fremstillet, rigtignok ikke ved ligefrem at udskrive Ramus
+(Algebra og Functionslære S. 99---100), men dog med
+saa nøie Tilslutning til og væsentlig Overeensstemmelse
+med den af Ramus angivne Beviismaade, at et Angreb
+paa „det blot Mathematiske“, her maa forvandle sig til et
+Angreb paa Ramus. Det vækker derfor Eftertanke, at
+Hr. Professor Steen, idet han bereder sig til at paaanke
+„den for en Mathematiker gruelige Maade, hvorpaa Taylors Formel behandles“, maa berede sig
+ved en lille Demonstration imod Ramus. Vistnok har det
+noget Imponerende, at høre Hr. Professor Steen ved denne
+Leilighed appellere til „Europas Mathematikere“, ligesom
+det heller ikke kan Andet end indgyde Læseren Respect for
+den Nøiagtighed, den fine Nøiagtighed, hvormed Hr.
+Professor St. seer Alt og bemærker Alt og benytter Alt,
+naar han, efter at have appelleret til „Europas Mathematikere“, saa igjen med et Blik paa „Philosophie og
+Mathematik“ gjør den fine Bemærkning, at „Udtrykket:
+Taylors Række omformes til Maclaurins Række“, forsaavidt ikke er ret heldigt, som det deraf ikke er ganske
+klart, at den sidste kun er et slet og ret specielt Tilfælde
+af Taylors“; men det altfor Imponerende kan saa igjen
+let overvælde, og de mange skarpsindige Antydninger, de
+mangehaande mange og fine Bemærkninger let aflede Opmærksomheden fra Hovedsagen. Det Spørgsmaal, om
+„Forf.“ i Philosophie og Mathematik har viist, at han
+veed nogen Besked med det Mathematiske i Taylorsrækken,
+er jo dog i denne Sammenhæng Hovedsagen; kan altsaa
+„Forf.“ med god Ret i Hovedsagen beraabe sig paa
+Ramus, saa er Ramus --- med al mulig Agtelse for
+„Europas Mathematikere“ --- hos os dog vel i Hovedsagen endnu altid Ramus.
+
+% --- p. 16 ---
+\opage{16}\setcounter{footnote}{0}%
+Det saaledes behandlede Mathematiske kan saa, hvormeget Hr. Prof. St. end uleiliger sig, dog alligevel ikke løsrives fra det Philosophiske. „Den gruelige Maade, hvorpaa
+Taylors Formel“, for nu at sige det anden Gang, „behandles, og den gruelige Anstrængelse Hr. Prof. har gjort,
+for ved denne Behandling at blive det Philosophiske aldeles
+qvit, har ingenlunde ført til det forønskede Resultat. Sætningen om den videnskabelige Methode som den, hvis uendelige Formidling paa een Gang skyldes „den nødvendige Sagbevægelse og den frie Tankebevægelse“, hænger i; selv efterat
+Hr. Prof. ved at opgive „den nødvendige Sagbevægelse“
+har splittet og deelt og dreiet og vendt og optrevlet hver
+Tøddel saalænge, indtil det Hele ved hans „frie Tankebevægelse“ er blevet til Ærtehalm, kritisk-mathematisk Ærtehalm: vil Sætningen om den videnskabelige Methode, hvor
+ivrigt og hæftigt Hr. Prof. Steen end ryster Halmen i sit
+„Bidrag“, mærkeligt nok, ikke lade sig afryste.
+
+„Det skal kun nævnes“, siger Hr. Prof. („Bidr.“ S.
+39), „at den Udvikling, som Forf. efter Ramus giver, paa
+ingen Maade er med \emph{Nødvendighed} given ved Sagen
+selv og „den frie Tankebevægelse“, hvilket bedst sees deraf,
+at det af Ramus opstillede Beviis er ham ganske eiendommeligt\footnote{Det skal kun nævnes, at det Ramus „ganske eiendommelige Beviis
+allerede findes hos Lagrange \textit{(Calcul des fonctions. A Paris}
+$1806. p. 10-13$), og altsaa --- priset være Hr. Prof. Steens
+uhyre Nøiagtighed --- allerede er Lagrange „ganske eiendommeligt.“}, hvorimod Taylors Formel, som skriver sig fra 1715,
+forhen er fremkommen og beviist paa andre Maader“. Gyldne
+Ord! her er Noget at lære. Naar der altsaa for een og
+samme Læresætning gives to, tre, maaskee fire lige tilstrækkelige Beviser: hvad beviser saa dette? Ja, det beviser, at
+intet af disse Beviser er „med Nødvendighed“. Og naar
+en Mathematiker opstiller et „ham ganske eiendommeligt
+Beviis“ for en Læresætning, som for over hundrede Aar siden
+% --- p. 17 ---
+\opage{17}\setcounter{footnote}{0}%
+er bleven beviist ved et andet Beviis: hvad beviser saa
+dette? Ja, det beviser jo, at „den frie Tankebevægelse“ ikke
+lader sig forene med „den nødvendige Sagbevægelse“! Hr.
+Prof. Steen gjør sig paa flere Steder i „Bidraget“ kjendelig Umage for, at Læseren skal underrettes om, \emph{hvorledes}
+han endnu gransker i „Erkjendelse og Granskning“, og repeterer sin „Logik“ for „ved ethvert Beviis at bemærke,
+hvad der er det egentlige \textit{punctum quæstionis} og hvad der
+er den egentlige \textit{nervus probandi}: her er et logisk Udbytte,
+her ere Frugter af hans Granskning, sunde, skjønne, velsmagende Frugter!
+
+Den, der nu blot vil smage paa en af disse Frugter,
+vil, dersom han ellers har nogen Smag for videnskabelige
+Beviser, uden Vanskelighed overbevise sig om, at Hr. Prof.
+Steen, naar han vælger at kritisere det blot Mathematiske
+uden at indlade sig med det Philosophiske, vel kan have sine
+gode og tilstrækkelige Grunde.
+
+„Jeg skal“, siger Hr. Prof., „i den foreliggende Undersøgelse, saa godt jeg formaaer, gaae ind paa Forfatterens
+Tankegang“; vi gjentage denne priisværdige Yttring, fordi
+vi overalt finde det i sin Orden, at Den, der vil kritisere
+en Forfatter, gaaer ind paa hans „Tankegang“, og kunne
+kun beklage, at Hr. Prof., til Trods for sit Tilsagn, ikke blot
+i det Hele gaaer aldeles udenom „Forfs.“ Tankegang, men
+endog, som frygtede han for at gjøre sig afhængig af nogensomhelst Tankegang, ikke engang har villet \emph{inddele}, men
+blot \emph{afdele} sit Bidrag. Skulde her være Tale om en Inddeling, maatte her jo, hvad Hr. Prof. St. da ogsaa maa blive
+paamindet om, hver Gang han repeterer sin „Logik“, være en
+Inddelingsgrund, et \textit{fundamentum divisionis}, der fra Først
+til Sidst kunde bestemme Inddelingen; men en saadan Inddelingsgrund bringer da ogsaa En strax i Afhængighed af
+en Tankegang. Denne Afhængighed undgaaer man derimod,
+naar man, istedetfor at inddele, blot vil dele, d. v. s. partere,
+skjære i Stykker. „For at lette Oversigten er Undersøgel%
+% --- p. 18 ---
+\opage{18}\setcounter{footnote}{0}%
+sen“ --- hedder det (S. 4) --- „deelt i flere Afsnit“; d. v. s.
+deelt, som man deler et Hastværksarbeide, deelt, ikke som for
+et Indholds Skyld, men alene for Stoffets Skyld, „da
+Stoffet er saa rigt“, deelt --- i syv Bidrag, skaaret i syv
+Stykker, vilkaarlig, som man skjærer en Pølse.
+
+Den eneste Forudsætning, under hvilken en saa vilkaarlig, al Sammenhæng afbrydende, al Tankegang ødelæggende Deling og Udstykning, nogenledes lod sig retfærdiggjøre, maatte da være den Omstændighed, at enhver af de
+opstillede „Afdelinger“ fandt sit Midtpunkt, sit naturlige
+Holdningspunkt i Behandlingen af en bestemt Hovedfeil, der
+ved sin store Betydning maatte fængsle Opmærksomheden.
+Vi skulle nu undersøge, hvorvidt en saadan Omstændighed
+er forhaanden, og da, for ikke at springe i Texten, begynde
+med Begyndelsen.
+
+I. „Forfatteren er (Bidr. S. 47) ikke ganske paa det
+Rene med Forholdet imellem de enkelte elementære Functioner“; det er den Paastand, der i første Afdeling (S. 4---6)
+udgjør Kritikens Thema, hvorhos det da især fremhæves, at
+„Potensen“ $x^{a}$ og den exponentielle Function $a^{x}$ snart adskilles som to selvstændige Functioner, snart igjen slaaes
+sammen til een. Den Læser, som tager Sagen for Alvor,
+og ikke vil betragte Hr. Professor Steens „Bidrag til en
+Kritik“ af en propædeutisk Afhandling som Bidrag til en
+Charakteristik af litterære Overfald, er dog vel i sin gode
+Ret, naar han nu i dette første Afsnit angaaende „Forholdet
+imellem de enkelte elementære Functioner“ venter at finde,
+ikke tomme Sigtelser og flaue Bemærkninger, men klare
+Beviser, hvoraf det uimodsigelig fremgaaer, at her virkelig
+finder „en Begrebsforvirring“ Sted. Men hvori skal nu
+Begrebsforvirringen bestaae? hvor er Beviset? At to Functioner snart adskilles, snart igjen „slaaes sammen i een“,
+deraf kan dog vel ikke uden videre sluttes til Begrebsforvirring. Multiplication og Division, Product og Qvotient,
+ere jo, for at nævne et Exempel, naar de sees fra et Syns%
+% --- p. 19 ---
+\opage{19}\setcounter{footnote}{0}%
+punkt at opfatte som to særskilte Functioner; thi, dersom de
+ikke vare to særskilte, hvorledes kunde de da betragtes som
+omvendte, hinanden ophævende Functioner? Ikke desto
+mindre blive disse særskilte Functioner dog i en anden Forstand at slaae sammen i een; thi dersom de ikke gik sammen
+i een, hvorledes kunde de da betegnes ved een og samme
+Fundamentalligning? Ikke saaledes, men dog paa en anden
+Maade kunne Potensen $x^{a}$ og den exponentielle Function $a^{x}$
+„slaaes sammen i een“, uagtet de ere to selvstændige Functioner. Forsaavidt her nemlig er Tale om den oprindelige
+Regnemaade, hvoraf de fremgaae, maa de ufeilbarlig „slaaes
+sammen i een“, thi de fremkomme begge ved Multiplicationens Overgang til Potensation, og høre forsaavidt begge
+uden Forskjel under „Potenskategorien“ („Phil. og Mathem.“
+S. 36); men i deres Fundamentalligninger vise de nævnte
+Functioner sig derimod som to selvstændige, og ere desaarsag
+i „Phil. og Mathem.“ S. 9 adskilte ved tilsvarende Fundamentalligninger. Man skulde ikke troe, at en Mathematiker, og da allermindst en Mathematiker, som af pure
+Pligtfølelse er optraadt, for at paavise „grove Feil“ og
+„sørgelig Begrebsforvirring“, og tjene Nøiagtigheden, kunde
+falde paa at hænge sig i saa simple Ting, og saa ovenikjøbet løbe sur i saa simple Ting, og, nøiagtig talt, selv
+blive hængende. „I Mathematiken“, siger Hr. Prof. Steen,
+„gjøres ikke Overgang fra „Multiplicationen“ til den exponentielle Function paa den antydede Maade; den her mente
+Overgang gjøres til Potensen, ikke til $a^{x}$, men til $x^{a}$, og
+ikke fra Begrebet \emph{Multiplication}, men fra Begrebet
+\emph{Produkt}, thi Multiplication er en Regningsart, Produktet
+$ax$ en Function“. See, dette siger nu Hr. Prof. Steen
+bestemt, nøiagtig om Mathematiken; vi maae imidlertid ikke
+glemme, at det er Hr. Prof. Steen, der siger det, og ikke
+Mathematiken; thi det kunde jo dog være muligt, at her i
+hvad Hr. Prof. St. saa bestemt og nøiagtig siger om Mathematiken, viste sig nogen „Begrebsforvirring“, og hvis her
+% --- p. 20 ---
+\opage{20}\setcounter{footnote}{0}%
+nu virkelig var „en Begrebsforvirring“, og vi saa i Distraction kom til at forvexle Mathematiken med Hr. Prof. Steen,
+og Hr. Prof. Steen med Mathematiken, saa at vi, istedetfor
+at henføre dem til „to selvstændige Functioner“, fik dem
+„slaaede sammen i een“, saa vilde det jo give en endnu
+større Begrebsforvirring.
+
+At her i den af Hr. Prof. St. dicterede Rettelse maa
+være „en Begrebsforvirring“, slutter jeg af to Ting: for
+det Første deraf, at det staaer hos Ramus, for det Andet
+deraf, at det ligger i Sagens Natur.
+
+Den elementære Theorie af de enkelte Functioner $a + x$,
+$a x$, $a^{x}$, $\log x$ bliver nemlig i „Første Afsnit af Algebra og
+Functionslære“ anlagt paa følgende Inddeling: „\textit{§ I.} Sum
+(Addition): $a + x$. \textit{§ II.} Product (Multiplication): $a x$.
+\textit{§ III.} Potens (Opløftelse til Potens): $a^{x}$. \textit{§ IV.} Logarithmen:
+$\log x$, og saa tilsidst \textit{§ V.} Functioner; Fundamentalligninger: $f(x)$.“ Denne af Ramus opstillede Inddeling viser
+tydelig nok, at „den her mente Overgang“ netop gjøres fra
+Begrebet Multiplication, idet den gjøres fra Begrebet Product, og at den ligesaameget gjøres fra Multiplicationen til
+„den exponentielle Function“, som fra Productet til Potensen, idet „Potensen“, istedetfor at betegnes ved $x^{a}$, netop
+betegnes ved $a^{x}$. Vil Hr. Prof. St. maaskee betragte den
+paaberaabte Inddeling, som noget for Ramus Eiendommeligt, og til Ære for „den frie Tankebevægelse“ appellere til
+„Europas Mathematikere“; da ville vi, for ikke at overvældes
+ af en saa ophøiet Forestilling, som Forestillingen om
+„Europas Mathematikere“, igjen lade „den frie Tankebevægelse“
+gaae i Eet med „den nødvendige Sagbevægelse“, og appellere
+til sund Fornuft. Skal her paa nogen Maade kunne tales
+om at gjøre en Overgang, hvorved den ene Function afledes
+af den anden, maa man nødvendigviis holde sig til de eiendommelige Regningsarter, hvori Functionerne oprindelig have
+deres Vorden og Tilbliven; er Functionsbegrebet under en
+Tydeliggjørelse af denne Vorden derimod allerede ført til
+% --- p. 21 ---
+\opage{21}\setcounter{footnote}{0}%
+det Vendepunkt, at Fundamentalligningerne for de fire enkelte
+Functioner $a x$, $x^{a}$, $a^{x}$, $\log x$ kunne, som Ramus siger,
+„for enhver af disse Functioner udtrykke den Lov, hvorefter
+Functionens successive Værdier følge paa hinanden“; da
+kan her ikke længere være Tale om nogen Overgang, thi da
+ere Functionerne „\textit{irreducible}“ til hverandre indbyrdes.
+
+Altsaa: skal der lægges Vægt paa Adskillelsen af $a^{x}$ og
+$x^{a}$, saa kan en Overgang fra „Product“ til „Potens“ ligesaa
+lidt gjøres, som en Overgang fra „Multiplication“ til „exponentiel Function“. Dog, hvad siger jeg, at en saadan
+Overgang ikke kan gjøres? Hr. Prof. Steen vil jo paatage
+sig at gjøre Overgangen! Men, mon Hr. Prof. Steen ---
+maaskee ved Hjælp af „Erkjendelse og Granskning“ --- nu
+ogsaa virkelig er istand til at gjøre Overgangen? Ja, kan
+Hr. Prof. gjøre Overgangen, kan han udføre det mærkværdige
+Kunststykke at gjøre Overgangen fra Begrebet „Product“ til
+Begrebet „Potens“, uden at det, vel at mærke, --- hvad
+han med sin store Nøiagtighed jo selv maa ansee for Tegn
+paa „Begrebsforvirring“, ja, paa „sørgelig“ Begrebsforvirring, --- tillige bliver en Overgang fra „Begrebet Multiplication“: da veed jeg, som „hverken er eller vil være
+Mathematiker“, jo vistnok ikke, hvilken Beundring en saadan
+Overgang vil vække blandt „Europas Mathematikere“; men
+dette veed jeg, blandt Philosopherende, store og smaae, vil
+Overgangen vække Forbauselse. Et Product uden Multiplication, en Multiplication uden Product! den Tænker, der
+kan fastholde en saadan Adskillelse, og gjøre en saadan Overgang, er hævet over „Begrebsforvirring“, har nok i „Erkjendelse og Granskning“, og kan forsmaae at indlade sig
+med „Dialektiken.“
+
+II. „Han (Forf.) har ikke rigtig forstaaet den Maade,
+hvorpaa det mathematiske Begreb Imaginært opstaaer, og
+der hersker en Deel Uklarhed med Hensyn til andre Former,
+hvorunder Størrelsen optræder i „Elementerne“; her er den
+paa „Kritiken“ i andet Afsnit begrundede Klage: vi ville
+% --- p. 22 ---
+\opage{22}\setcounter{footnote}{0}%
+endnu følge Hr. Prof. St., for at undersøge, om da ikke
+denne Klage muligviis skulde have en eller anden videnskabelig Grund. At et Udtryk som $\sqrt{-1}$ eller $\sqrt[2m]{-a}$ kan
+for Tanken være en Umulighed, og at der (Phil. og Math.
+S. 38) gjøres den Bemærkning, at „en imaginær Størrelse
+hører ifølge Definitionen til det Umulige“, disse, som det
+ved første Øiekast kunde synes, temmelig uskyldige Yttringer
+have vakt Hr. Prof. Steens Forargelse endog i høieste Grad.
+„Heri ligger“, siger han, „en \emph{fuldstændig Misforstaaelse af den elementære Begrebsudvikling i}
+Mathematiken“. Denne Beskyldning er da høirøstet nok;
+men Beviset? „Hvorfor“, siger Hr. Prof., „skulde det være
+mere muligt at trække 4 fra 3 end at finde Qvadratroden
+af --- 1?“ Vi svare: hvorfor skulde det vel være mere umuligt? I gamle Dage var det da rigtignok umuligt at trække
+4 fra 3, fordi det i gamle Dage var umuligt at tage 4,
+hvor der kun var 3, at udgive 4 Rdlr., naar man kun
+havde 3 Rdlr. Er dette Umulige maaskee nu i den nyere
+Tid ved Mathematikens Fremskridt bleven en Mulighed?
+Kan den nye Lære om det Negative kanskee lære En, hvordan
+man skal bære sig ad, naar man vil plukke Haar af den
+Skaldede, eller faae 4 Rdlr. ud af en Lomme, der kun
+gjemmer 3 Rdlr.? At finde Qvadratroden af --- 1, er,
+forsaavidt man derved udtrykkelig forstaaer, at finde et Tal,
+som, opløftet til anden Potens, giver --- 1, af mange, og
+det endog meget fornuftige Folk, af Folk, som ellers ikke
+„stille sig paa den umiddelbare løse Betragtnings Standpunkt“, anseet for umuligt, ligesaa umuligt, som at construere
+en rund Fiirkant: kan Hr. Prof. Steen ved sin nye Lære
+om det Negative nu virkelig aabne os Udsigter til at faae
+den runde Fiirkant construeret? besidder han i sine exacte
+Analyser den Kunst at gjøre det i sig Umulige muligt, da
+burde han sige det reent ud, han burde gjøre det offentlig
+bekjendt. Han burde gjøre det bekjendt ved Trommeslag,
+% --- p. 23 ---
+\opage{23}\setcounter{footnote}{0}%
+og det af to Grunde: for det Første, at vi kunne beundre
+ham, som han fortjener det, thi Den, der gjør det Umulige
+muligt, fortjener Beundring; for det Andet, at vi strax kunne
+indrømme ham Alt, saa at vi ikke gaae hen og prostituere
+os ved upassende Indvendinger, Gjendrivelser, og alskens
+intellectuelle Qvaklerier, fordi det behager en saadan Mand
+at tillægge os „en fuldstændig Misforstaaelse af den
+elementære Begrebsudvikling i Mathematiken.“
+
+Men, vil maaskee Nogen indvende, her er jo egentlig
+ikke Tale om at gjøre det Umulige muligt, men om at
+paavise Muligheden endogsaa der, hvor den Ukyndige kun
+altfor let seer det Umulige. Skulde det maaskee være
+denne i sig meget fornuftige Sætning, „Forf.“ her har
+forsyndet sig imod? Den Læser, som endnu ikke ganske
+har forsvoret at indlade sig med „Dialektiken“, vil da, hvad
+Spørgsmaalet om Muligt og Umuligt angaaer, ikke oversee, hvad der udtrykkelig staaer i „Phil. og Mathem.“
+S. 38: „Dersom man med den logiske Sætning: \textit{possibile}
+\textit{est, quod non implicat contradictionem,} kunde hvad Begreberne angaaer holde sig til nominelle Definitioner, vilde
+man snart blive færdig med Adskillelsen af det Mulige og
+det Umulige; men en grundig Adskillelse er betinget ved
+Systematik\dots{} Ja (S. 39), saa dialektisk er Mulighedsgrændsen, endog paa det mathematiske Omraade, at den
+exacte Videnskab selv i mange Punkter endnu neppe formaaer at holde den fast.“ Her er altsaa i „Phil. og
+Mathem.“ gjort Muligheden de størst mulige Indrømmelser; disse Indrømmelser ere da, hvad navnlig den imaginære Størrelse angaaer, saa omfattende, at man ogsaa i
+denne Anledning maa forbauses over den Uforbeholdenhed,
+hvormed Hr. Prof. Steen proclamerer „en fuldstændig
+Misforstaaelse af den elementære Begrebsudvikling i Mathematiken.“
+
+„Men,“ kunde En sige, „de Indrømmelser, „Forf.“
+saaledes gjør angaaende det Imaginæres mulige Betyd%
+% --- p. 24 ---
+\opage{24}\setcounter{footnote}{0}%
+ninger, hjælpe ham slet ikke; nei, det hjælper ham ikke!“
+Hvorfor hjælper det ham ikke? „Prof. Steen siger det
+udtrykkelig, og hvad Prof. Steen saadan siger udtrykkelig,
+kan man ubetinget stole paa, Prof. Steen siger: det hjælper
+ham ikke, det nytter ham ikke!“ „Det hjælper ham ikke
+(Bidr. S. 8), at det Imaginære knytter de trigonometriske
+Functioner til den exponentielle (Pag. 38), det nytter ham
+ikke, at han kjender Noget til de imaginære Størrelsers
+geometriske Fremstilling, „det Umulige og desaarsag Imaginære bliver altsaa dog „ikke paa nogen Maade reelt (jfr.
+Noten S. 39); det Reelle og det Imaginære maa, efter
+som før saadanne Kundskabers Erhvervelse, være modsatte
+mathematiske Begreber.“ Indvendingen bestaaer altsaa deri,
+at „Forf.“ ikke kan gjøre det Imaginære ligefrem til det
+Reelle, og desaarsag endnu maa ansee det Reelle og det
+Imaginære for at „være modsatte Begreber“: i Sandhed
+en slaaende Indvending! Den, der faaer et Slag af en
+saadan Indvending, faaer en Fornemmelse, som fik han et
+Slag paa Øret. „Et saadant Slag er paa een Gang et
+Imaginært og et Reelt“, siger Dialektiken; men, det forstaaer
+sig, det Imaginære og det Reelle vedblive jo ligefuldt at være
+modsatte Begreber, altsaa: „det hjælper ikke, det nytter ikke“.
+„Et saadant Slag kan bringe En til at see noget Sort“, siger
+Dialektiken, „kan bringe En til at see en Tavle, og foran
+Tavlen en skjælvende Elev, og ved Siden af Tavlen en
+bister Lærer, vred i Kabudsen, vride sig, slaae sig paa Maven, skrige: galt, ravgalt! det hjælper ikke, det nytter ikke!“
+ogsaa dette er et Imaginært og dog et Reelt; men, det forstaaer sig, det Imaginære og det Reelle vedblive jo ligefuldt
+at være modsatte Begreber, altsaa: „det hjælper ikke, det
+nytter ikke!“
+
+„Den, som angiver det Imaginære som umuligt ifølge
+Definitionen, er“, siger Hr. Prof. (Bidr. S. 8), „hildet i
+en Snare, han har lagt sig selv“. Dersom det nu kunde
+formilde Hr. Prof. St., om vi henviste ham til Logiken,
+% --- p. 25 ---
+\opage{25}\setcounter{footnote}{0}%
+naturligviis ikke til „Dialektiken“, men til „den rigtige Logik“:
+vilde vi, da her jo handles om en nominel Definition,
+gjerne minde ham om, at der til en Definition kræves foruden
+\textit{et genus proximum tillige en differentia specifica.}
+Er nu „Størrelsen“ \textit{genus proximum,} da er det klart, at
+den \textit{differentia specifica,} der betegnes ved Tillægsordet:
+reel i Udtrykket: reel Størrelse ene og alene faaer sin
+Betydning ved Modsætningen til den \textit{differentia specifica,}
+der betegnes ved Tillægsordet: \emph{\textit{imaginær}}, saa at Udtrykket:
+\emph{\textit{imaginær}} \emph{Størrelse} oprindelig betyder en Størrelse, der
+ikke er og ikke kan være reel. Tænke vi os et Øieblik Udtrykket: „imaginær“ ombyttet med „umulig“, da skulde vel
+end ikke Den, hvem en hysterisk \textit{furor uterinus} ellers kunde drive
+til Yderligheder for „det Imaginære“, forarges og falde i
+Krampe, fordi en Begrebsudvikling (Phil. Math. S. 38),
+just idet den sigter paa Muligheden, besindig indskyder den
+Mellemsætning: „men den umulige Størrelse hører jo ifølge
+Definitionen til det Umulige: hvorledes er nu dette at forstaae?“ Dersom det nu kunde hjælpe, om vi førte Beviis
+for, at imaginær og umulig Størrelse oprindelig have været
+eenstydige, ja dersom det kunde bringe Hr. Prof. Steen til
+Raison, om vi, for at vove det Yderste, appellerede til
+„Europas Mathematikere“: da skulde vi, siden et Mindre
+ikke kan gjøre det, gjerne nævne ham Newton. Idet Newton \textit{(Universal Arithmetic, Part. II. p. 355---56 \&c.)} discuterer Ligningen: $x = a \pm \sqrt{aa - bb},$ fremkommen ved
+Opløsningen af $xx - 2ax + bb = 0,$ siger han: naar
+$aa < bb$ blive Rødderne „\emph{\textit{umulige}}“, thi den lige Rod af
+en negativ Størrelse er \emph{\textit{umulig.}}\footnote{\textit{\dots{} but when a a is less than b b, they become impossible; because then a a --- b b will be a negative Quantity, and the square}
+\textit{Root of a negative Quantity is impossible.}
+(Anfr. Skr. S. 356).}
+
+Men naar det nu er uimodsigeligt, at Ordet „imaginært“ oprindelig har i Mathematiken Hensyn paa det Umulige;
+% --- p. 26 ---
+\opage{26}\setcounter{footnote}{0}%
+hvad Skin af Grund har Hr. Prof. Steen da til at kaste
+sig over en saa naturlig og velmotiveret Overgangssætning
+som denne: „men den imaginære Størrelse hører jo ifølge
+Definitionen til det Umulige, hvorledes er dette at forstaae?“
+
+Vilde Nogen endnu mene, at Mathematiken i den nyere
+Tid har gjort det muligt, som Newton her erklærer for
+umuligt, kunne vi lade Newton selv oplyse ham om Vildfarelsen. Som et Exempel, der kan vise hvorledes det mathematiske Sprog bruger „det Imaginære“ for at betegne
+det Umulige\footnote{At Hr. Prof. St. ikke kan være uvidende herom (jvfr. t. Ex. „Begyndelsesgrundene i Analytisk Plangeometri“, S. 53), forstaaer sig
+af sig selv; men hvorfor gjør han saa Qvalm om ingen Ting?}, henviser han til den Opgave, at bestemme
+Skjæringen mellem en ret Linie og en Cirkel.
+
+Kalde vi nemlig den rette Linies Afstand fra Centrum
+$p$, Radius $r$, Chorden, der afskjæres, $c$, da have vi
+paa Spørgsmaalet: hvor stor er Chorden? som Svar:
+$c = 2\sqrt{r^{2} - p^{2}}$. Er nu $p > r$, bliver $c$ imaginært,
+eller, som Newton udtrykker det, umuligt.\footnote{\textit{In Algebra the Root of an impossible Quantity has}
+\textit{its Expression; but in Geometry none. In Algebra you}
+\textit{obtain a general Solution, and there is an Expression in all}
+\textit{Cases of the Thing required; only within certain Bounds, that}
+\textit{Expression represents an imaginary Quantity, or rather is the}
+\textit{Symbol of an Operation which in that Case cannot be performed; and serves only to shew the Genesis of the}
+\textit{Quantity, and the Limits within which it is possible.}
+(Anfr. Skr. S. 357. Anm.). Jvfr. Chasles. \textit{Géométrie supérieure.}
+$p. 57$ og isærdeleshed $p. 547$.} Det imaginære $c$ tilkjendegiver altsaa Umuligheden af, at Linien kan
+af Cirklen afskjære nogen Chorde. Men hvorfor er nu
+dette umuligt? fordi Linien ligger heelt udenfor Cirklen.
+Men saa er her jo dog en Linie, og vi kunne fra en
+anden Side see noget Reelt forbundet med det Imaginære.
+Ved nemlig at forvandle $2\sqrt{r^{2} - p^{2}}$, for $p > r$, til
+$\sqrt{p^{2} - r^{2}}\sqrt{-1}$ seer man, at den imaginære Størrelse
+% --- p. 27 ---
+\opage{27}\setcounter{footnote}{0}%
+har en reel Bestanddeel, og at denne Deel netop er det
+Stykke af Tangenten til den givne Cirkel, som en den givne
+Linie tangerende Cirkel afskjærer.
+
+For nu ret tydelig at see, hvorledes det Umulige og
+det Mulige bestemmes ved hinanden, idet det Imaginære
+vexler med det Reelle, ville vi endnu betragte det anførte
+Exempel lidt nærmere. Sæt at Opgaven stilles under
+følgende Form: Der er givet to concentriske Cirkler, den
+ene med Radius $p$, den anden med Radius $r$; man finde
+Længden af en Chorde i den yderste, som tangerer den
+inderste. I Løsningen af denne Opgave maae vi da skjelne
+imellem:
+$1$) $p < r$, saa at man faaer:
+
+\begin{center}$c = 2\sqrt{r^{2} - p^{2}}$ ($I$)\end{center}
+
+$2$) $p > r$, saa at man faaer:
+
+\begin{center}$c = 2\sqrt{p^{2} - r^{2}}$ ($II$)\end{center}
+
+Ved Multiplication med den imaginære Størrelse $\sqrt{-1}$,
+kan man da nu let reducere ($I$) til ($II$).
+
+Heraf følger da, at ($I$) er umulig, naar ($II$) er mulig,
+og at omvendt ($II$) er umulig, naar ($I$) er mulig. Dette
+Mathematiske er saa tillige i fuldkommen Overeensstemmelse
+med det Logiske, thi $p$ kan dog umulig, --- i slige Tilfælde
+veed Dialektiken meget vel, hvad den skal indrømme den formelle Logik, --- paa een Gang være baade større (hvorpaa
+($II$) giver Svar) og tillige (hvorpaa ($I$) giver Svar), mindre end $r$.
+
+Efter at have givet disse Oplysninger, kan jeg nu forsaavidt slutte mig til Hr. Prof. Steen, som jeg kan slutte
+med hans egne Ord: „Det er bekjendte Ting, men man
+nødes til at gjentage dem, naar man tilsigter at forstaaes
+ogsaa af den mindre Indviede“.
+
+III. „Han (Forf.) er i fuldkommen Vilderede med
+Hensyn til et meget vigtigt Spørgsmaal i Integralregningen,
+angaaende den arbitrære Constants Betydning, Maaden,
+% --- p. 28 ---
+\opage{28}\setcounter{footnote}{0}%
+hvorpaa den bestemmes, og som Følge deraf ogsaa angaaende
+bestemte og ubestemte Integraler“. (Bidr. S. 48; behandlet
+S. 9---19).
+
+Altsaa: „i fuldkommen Vilderede!“ At udpege Feil er
+et Tegn paa Overlegenhed, at udpege mange Feil et Tegn
+paa megen Overlegenhed; vi skulle her for at belyse Hr.
+Prof. Steens Overlegenhed, blot fremhæve nogle Punkter,
+thi at gaae i det Enkelte er vist ikke Uleiligheden værd.
+„Jeg har virkelig“, siger Hr. Prof. (Bidr. S. 12) „med en
+god Villie søgt at imødekomme Forfs. Forklaringer“; denne
+Erklæring er animerende, thi den er orienterende. Ligesom
+nemlig det hele Bidrag i Almindelighed, saaledes er dette
+Afsnit i Særdeleshed fortrinlig skikket til at vise os, hvad
+„en god Villie“ formaaer. Følgende Exempler ere betegnende. Imod den (Phil. og Math. S. 76) angivne Forskjel
+imellem den brudte og den krumme Linie anbringer „den
+gode Villie“ (Bidr. S. 11) den uskatterlige Rettelse, at
+den krumme Linie er sammensat mathematisk af endelige
+Længder saavelsom den brudte og rette“. Hvad der (Phil.
+og Mathem. S. 79) anføres imod Muligheden af at „sammenstykke Trekanten af uendelig mange smaa Rectangler“.
+bliver med „en god Villie“ afviist (S. 11), som om dette
+virkelig lod sig gjøre i Kraft af det mathematiske Begreb
+Uendelig, ifølge Infinitesimalmethoden“\footnote{Kan Hr. Prof. nu virkelig vise os, hvorledes man i Infinitesimalmethoden bærer sig ad med en saadan Sammenstykning, hvorledes
+den kan skee uden at man, vel at mærke, (hvad Phil. og Mathem.
+S. 70 udtrykkelig fremhæver) forvandler Opgaven ved at
+% misprint for Functionens (turned n), PRINTED AS IS: tesseract, crop
+anvende den paa Functioneus Natur beroende Integration: da
+bliver det en ligesaa glimrende Præstation, som naar han fastholder Functionen: Produkt efter at have bortkastet Begrebet: Multiplication. Men kan han ikke dette, maa han selv tilstaae, at man
+ifølge Infinitesimalmethoden ligesaavel, naar det kommer til Stykket, maa betjene sig af Relationen mellem en afledet og oprindelig
+% (the note runs on to p. 29)
+Function, som i hvad han kalder „den mere stringente Fremstilling“: hvad Ret har han saa til at anbringe sin Rettelse, hvad
+Grund har han for sit „mathematisk urigtigt“? Den i sig ligesaa uimodsigelige som let fattelige Bemærkning (Mathem. Phil.
+S. 67), at man ikke uden videre kan sætte $dx = 0$, eller
+$\int dx = \infty 0$, fordi $\infty 0 = \frac{1}{0} 0 = \frac{0}{0}$ er, baade som Integral og
+som Differentialcoefficient, aldeles ubestemt faaer „den gode Villie“
+ved et Par besynderlige Vridninger omsider vreden ind under følgende Forqvakling: „Forf.“ gjør den Slutning, at naar to Udtryk
+optræde under den ubestemte Form $\frac{0}{0}$ (af hvilke den ene dog
+oprindelig er $\infty 0$ og kun ved en formel Anvendelse af
+Lighedstegnet bliver $\frac{0}{0}$), saa er der ingen Forskjel
+imellem dem!“ Hertil skal svares kort og godt: kan Hr. Prof.
+bringe noget Bestemt ud af Former som $\infty 0$ og $\frac{0}{0}$, altsaa fastholde en Forskjel imellem dem, uden at see hen til deres Oprindelse af en eller anden Function: da gjør han sit tredie Kunststykke, ligesaa glimrende som Adskillelsen af Multiplication og
+Produkt, og ligesaa overraskende som Trekantens Sammenstykning
+af uendelig smaae Rectangler, og vi ville beundre ham; men kan
+han ikke dette, ville vi ikke beundre ham, thi saa er hans Rettelse
+kun en Hovmesteren, og en saadan Hovmesteren aldeles ubeføiet.
+At Formerne $\infty 0$ og $\frac{0}{0}$ ikke ere til at adskille eller nærmere at
+bestemme, naar man abstraherer fra Functionen, er just den Tanke,
+som i Phil. og Mathem. (S. 67) udtrykkelig fremhæves: „Ma%
+% (the note runs on to p. 30)
+thematiken indlader sig da heller ikke paa at bestemme $dx$ umiddelbart, være sig som Punkt eller Linie; $dx$ bestemmes kun i et
+Forhold som f. Ex. af $dy$, saaledes at Forandringsloven“ --- nemlig
+for $dy$ i dets Afhængighed af $dx$ --- „kan vise sig i $f(x) = y$.
+I „Bidr.“ S. 13, rykker „den gode Villie“ frem med følgende
+Udfald, som da for den Sags Skyld ligesaa gjerne kunde kaldes
+et Indfald. „Men lader os nu“, siger Hr. Prof., „antage, at
+det forholder sig rigtigt, at $\int dx$ ikke kan betragtes som en Bestemmelse af $\infty \cdot 0$“ (i Form af en Indrømmelse er Bemærkningen
+falsk, thi i Phil. og Mathem. bliver $\int dx$ udtrykkelig betragtet
+som en Bestemmelse af $\infty \cdot 0$), „og at Arealet $\int y dx$ ikke kan
+sammenstykkes af uendelig mange uendelig smaa Rectangler, hvad
+er da „det Uendelige“, der ved Integrationen føres tilbage til
+„endelig Bestemthed“? Saa er der i $\int y dx$ intet mathematisk
+Uendeligt og saa maa det Uendelige, hvis det har nogen Betydning, have en philosophisk Betydning --- i Sandhed et Virvar,
+som man vel skal lade være at finde Rede i!“ Altsaa: fordi man
+ikke kan „sammenstykke“, vel at mærke, „sammenstykke“, siger og
+skriver: „sammenstykke“ det Endelige af det Uendelige, saa er der i
+$\int y dx$ intet mathematisk Uendeligt: i Sandhed, et Virvar saa
+fuldstændigt, som Nogen kan ønske sig, der blot ønsker sig Virvar,
+fordi han blot ønsker at udpege Feil; ja, at udpege Feil er et
+Tegn paa Overlegenhed, at udpege mange Feil et Tegn paa
+megen Overlegenhed, at udpege uhyre mange, uhyre store og uhyre
+grove Feil et Tegn paa en uhyre Overlegenhed!}
+
+% --- p. 29 ---
+\opage{29}\setcounter{footnote}{0}%
+Naar det nu derhos til Slutning som i Lapidarstiil og
+med behørige Trompetstød gjøres vitterligt for Alle, baade for
+Indviede og for „mindre Indviede“ og for Uindviede, at
+„Forf.“ i Phil. og Mathem. er i „fuldkomment Vilderede
+med Hensyn til et meget vigtigt Spørgsmaal i Integralregningen, angaaende den arbitrære Constants Betydning“,
+da fatte de Indviede naturligviis let, hvad en saadan Bekjendtgjørelse har at betyde; men de mindre Indviede? Ja,
+de mindre Indviede, navnlig „de unge Studerende“ kunde
+dog maaskee ved de stærke Trompetstød, især naar de høre,
+at Bekjendtgjørelsen endog udgaaer fra „den gode Villie“,
+let komme i Vilderede angaaende „den arbitrære Constant“,
+og det saameget lettere, som „den gode Villie“ jo ogsaa i
+% --- p. 30 ---
+\opage{30}\setcounter{footnote}{0}%
+visse Tilfælde er „en arbitrær Constant“. Lad mig da, for
+en Sikkerheds Skyld, gjøre „de mindre Indviede“ opmærksomme paa, at det i Integralregningen aldeles ingen Vanskelighed har med den paaberaabte „arbitrære Constant“.
+Betegne vi nemlig ved $dx$ en uendelig lille Tilvæxt til $x$,
+da følger det jo af sig selv, at $x$ i det Øieblik den faaer
+Tilvæxten, allerede maa have en vis bestemt Værdi, være
+sig $0$ eller $a$ eller $c$, og altsaa opfattes som en Constant.
+Af denne simple Forudsætning kunne saa Conseqvenser udvikles i de allerforskjelligste Retninger; her gives ikke blot
+een, men hundrede Maader, hvorpaa Betydningen af „den
+% --- p. 31 ---
+\opage{31}\setcounter{footnote}{0}%
+arbitrære Constant“ kan fremstilles og forklares. Vil nu
+Hr. Prof. St. ikke desto mindre paastaae, at der kun gives
+een eneste rigtig Maade, nemlig hans egen Maade\footnote{Ved at sætte et Areal som $bdBD = \int_{x^{1}}^{x} y dx = f(x) - f(x^{1}) =$
+$f(x) + C$ skal, ifølge Hr. Prof. St.'s Paastand, „enhver Distinction
+imellem bestemt og ubestemt Integral ganske udslettes“; men dette
+er naturligviis kun en Paastand, da man, naar ellers ikke et vilkaarligt Magtsprog forbyder al Brug af incomplete Ligninger, jo
+kan tyde den angivne Formel saaledes: Arealet \textit{bdBD} viser nu,
+hvad det vil sige, at $\int_{x^{1}}^{x} y dx = f(x) - f(x^{1})$ er en nærmere
+Bestemmelse af $f(x) + C$, idet $C = - f(x^{1})$, med andre Ord, at
+det bestemte Integral netop er et specielt Tilfælde af det ubestemte.}: da
+lad ham bekjendtgjøre det ved Trompetstød, og han vil finde
+Mathematikere, endog Mathematikere af første Rang, i
+„fuldkomment Vilderede angaaende den arbitrære Constants
+Betydning, Maaden, hvorpaa den bestemmes, og som Følge
+deraf ogsaa angaaende ubestemte og bestemte Integraler“.
+
+„Jeg beklager“, siger Hr. Prof. Steen, idet han slutter
+sit 3die Afsnit, „at have maattet trætte Læseren paa næsten
+fire Sider for at fremsætte det Urigtige, Meningsløse og
+Uklare paa een Side“. Hvilke Anstrængelser Hr. Prof.'s
+„gode Villie“ har maattet gjøre, for saaledes at „trætte
+Læseren“, sees tydelig nok af de Midler, han har maattet
+anvende. Til at sætte endog „den mindre Indviede“ istand
+til at vurdere Beskaffenheden af disse Midler, vil et eneste
+Exempel være tilstrækkeligt. For at forstaaeliggjøre, hvorfor
+man altid, naar man, som Prof. Jürgensen udtrykker det,
+„vil give Integralet den fuldstændigste Form“, maa tilføie
+en Constant, endog i saadanne Tilfælde, hvor Constanten,
+naar den nærmere bestemmes, viser sig at være $0$, er der
+i Phil. og Math. (S. 82) direct henviist til Bestemmelsen
+af Trekantens Areal og derved indirect til Bestemmelsen af
+Paralleltrapeziet.
+
+% --- p. 32 ---
+\opage{32}\setcounter{footnote}{0}%
+Uden mindste Hensyn til Afhandlingens bestemte Tankegang\footnote{Forud for Exemplet med Arealberegningen anføres nemlig (S. 81)
+et Par andre Exempler, hvoraf det umiskjendelig sees, at „Forf.“
+aldeles ikke er i Vilderede med den arbitrære Constant og den
+Maade, hvorpaa den bestemmes; men disse Exempler har Hr.
+Prof. Steen „med en god Villie“ naturligviis aldeles fortiet.} anbringer Hr. Prof. St. med et Rethaveri, der
+vistnok uden Overdrivelse kan kaldes voldsomt, sin egen det
+egentlige Spørgsmaal uvedkommende Tankegang, og begynder saa ved følgende Vridninger, som han saa træffende
+udtrykker sig, „at trætte Læseren“. Bestemmer man Trekantens Areal ved $y \cdot \frac{x}{2}$ fra Endelighedens Synspunkt“,
+siges der (Bidr. S. 15), „saa maa man fra Uendelighedens
+Standpunkt anvende Formlen: $\int y dx + C$“.
+
+Nu følge Rettelserne. Første Rettelse: „Det er en
+Mangel paa Nøiagtighed, naar her ikke angives, hvad $x$ og
+$y$ betyde, og man kan kun gjætte sig til, at Bemærkningen
+refererer sig til Exempel 2 S. 79.“ Det er ved denne
+Rettelse „en Mangel paa Nøiagtighed“, at den indeholder en
+ligefrem Usandhed, thi den Figur, hvortil Fremstillingen
+refererer sig, findes (S. 82) i umiddelbar Forbindelse med
+Forklaringen selv; Rettelsen har dernæst, hvad Nøiagtighedsbegrebet angaaer, den Mangel, at den, selv om den var
+aldeles nøiagtig, er pedantisk. Slige Rettelser ere vistnok i
+høi Grad uheldige, naar man for Alvor lægger an paa at
+„fremme Udbredelsen af videnskabelige Sandheder“, men
+heldige nok, naar Opgaven er at forqvakle en videnskabelig
+Udvikling, og „trætte Læseren“.
+
+Anden Rettelse: „Antager man $\frac{yx}{2}$ for Trekantens
+Areal, saa er $\int y dx = \frac{xy}{2} + C$ ikkun i eet Tilfælde
+Arealet af en Trekant, nemlig naar $C = 0$, men saa vilde
+% --- p. 33 ---
+\opage{33}\setcounter{footnote}{0}%
+der komme til at staae, at $\frac{yx}{2}$ var Trekantens Areal
+fra Endelighedens Synspunkt, $\frac{xy}{2}$ derimod fra
+Uendelighedens! Vælger man denne Opfattelse, saa
+faaer man altsaa det samme Resultat fra de to forskjellige
+Synspunkter; men hvortil da en Sammenstilling af dem,
+som om der var en Forskjel?“ Denne Rettelse er uforglemmelig, thi den er \textit{colossal}\footnote{„Ingen“, siger Hr. Prof. St. (Bidr. S. 15), „som har fulgt den
+foregaaende Udvikling med Opmærksomhed, vil kunne negte, at
+der paa de tre her nærmest omtalte Blade Pag. 75---80 hersker
+Uklarhed og Forvirring med en ikke ringe Tilsætning af Urigtighed; men det er Intet imod Side 82, hvor der vrimler af Feil,
+som fuldstændig godtgjøre, at Forf. enten slet ikke har forstaaet
+Integralregningens simpleste Sætninger eller ikke har det Herredømme derover, som skal forhindre ham fra, naar han skal give
+selvstændige Udviklinger, at begaae de allergroveste Feil“. Ja, „de
+allergroveste Feil“! slagen af slige „allergroveste Feil!“ maa „Forf.“
+trøste sig med et lille Stykke Moral hos Claudius, hvori det saa
+trøstende hedder: „Ein großes Maul es auch nicht thut“.}. I „Phil. og Mathem.“
+er nemlig Grundtanken denne: den samme Størrelse, det
+samme Areal, t. Ex. Trekantens, lader sig opfatte fra to
+hinanden modsatte Synspunkter, Endelighedens og Uendelighedens. Fra Endelighedens Synspunkt er Trekantens Areal
+angivet ved Formlen $y\frac{x}{2}$, idet, som Figuren viser, $x = OD$
+er Grundlinien, $y = BD$ Høiden. Her kan ikke være Tale
+om at tilføie nogen Constant, og hvorfor ikke? Fordi
+$x = OD$ og $y = BD$ ere endelige, vilkaarlige Størrelser, der
+vælges som tilværende og opfattes som givne. Fra Uendelighedens Standpunkt derimod maa Bestemmelsen af Trekantens Areal nødvendigviis falde ind under den almindelige
+Formel: $\int y dx = \frac{xy}{2} + C$, det vil sige: her maa lægges
+Vægt paa Tilføielsen af en Constant, uagtet Værdien af
+denne Constant for Trekantens Vedkommende er $0$. Pointen
+% --- p. 34 ---
+\opage{34}\setcounter{footnote}{0}%
+% misprint for Synspunkt (turned n), PRINTED AS IS: layer, tesseract, crop (the other Synspunkt on p. 34 is set right)
+er, at Constanten, seet fra dette Synspuukt, har en ligesaa
+væsentlig Gyldighed, naar den er $O$, som naar den ikke er
+$O$. Opfatte vi nemlig Størrelserne $y$ og $x$ som uendelig
+variable saaledes, at $x$ i $f(x) = y$ er den Uafhængige, $y$
+den Afhængige: da opfattes Arealet, ifølge Formlen:
+$\int y\,dx = \frac{xy}{2} + C$, saaledes, at dets Tilværen udtrykkelig
+sees som Resultat af en Tilbliven.
+
+Men hvad har Hr. Prof. Steens „gode Villie“ nu ikke
+forstaaet at bringe ud af denne i sig lidet paafaldende Fremstilling, hvilke Slutninger har han ikke draget, hvilke Rettelser har han ikke præsteret! Man forestille sig en Forsamling af „Europas Mathematikere“, man forestille sig Hr.
+Prof. St. optræde i Forsamlingen, anbringe sine Rettelser,
+og hver Gang træffe Pointen: hvilken Opmærksomhedens
+Spænding, hvilken Lytten, og saa --- hvilken Overraskelse!
+„Faaer man“, saaledes lyder Hr. Prof. St.s Rettelse, „det
+samme Resultat fra to forskjellige Synspunkter, hvortil da
+en Sammenstilling af dem, som om her var en Forskjel?“
+det vil sige: naar to forskjellige Veie føre til samme Maal,
+saa er der ingen Forskjel imellem de to --- forskjellige Veie:
+en fiin Bemærkning, en skjøn Pointe! „Er $C$“, vedbliver Hr. Prof., „ikke $O$, saa er $\int y\,dx = \frac{xy}{2} + C$
+Arealet af et Paralleltrapez, og saa vilde der staae, at
+$y\frac{x}{2}$ er Trekantens Areal fra Endelighedens Synspunkt,
+men fra Uendelighedens Standpunkt maa man
+for Trekantens Areal anvende et Udtryk for
+Arealet af et Paralleltrapez!“ Altsaa: efterdi
+$\int y\,dx = \frac{xy}{2} + C$ ikke er en Trekant, dersom det er et
+Paralleltrapez, og ikke et Paralleltrapez, dersom det er en
+Trekant, saa ere disse to Tilfælde at opfatte saaledes, at
+det sidste Tilfælde kun er et specielt Tilfælde af det første
+Tilfælde, thi naar $C$ er $O$, saa er dette (Bidr. S. 16)
+naturligviis kun et specielt Tilfælde af det Tilfælde, at $C$
+% --- p. 35 ---
+\opage{35}\setcounter{footnote}{0}%
+ikke er $O$: hvor skarpsindigt! „Altsaa“, vedbliver Hr. Prof.
+St., „har den philosophiske Betragtning her (Phil. Mathem.
+S. 82) bragt os i Strid med den logiske Sætning: \textit{possibile}
+\textit{est, quod non implicat contradictionem}, ifølge hvilken Forf.
+dog S.38 mener, at en rund Fiirkant er umulig, men paa S. 82
+kommer til at et fiirkantet Areal fra Uendelighedens Synspunkt
+er et trekantet“. Men --- lad os høre det endnu engang ---
+hvordan er „Forf.“ nu egentlig kommen til, at et fiirkantet
+Areal er trekantet? „Ih, det er jo klart af, hvad Hr. Prof.
+St. siger, og Hr. Prof. St. har altid Ret i, hvad han
+saadan siger, det er han naturligviis kommen til derved, at
+han, \textit{plaudite jam}, i sin grove Uvidenhed er kommen til at
+antage $C = O$ for en ordentlig Constant“. --- Skade, at $C = O$
+ikke er en ordentlig Constant; thi, det forstaaer sig, var
+Nul, det rene Nul, en rigtig Constant, saa lod Trekanten
+nok være at være fiirkantet, og naar $C = O$ først kunde
+afholde Trekanten fra at være fiirkantet, saa skulde $C > O$
+til Gjengjæld snart lære Fiirkanten af med de Nykker at
+ville være trekantet! See, paa den Slags underholdende
+Slutninger argumenterer en Hr. Prof. St.; og nu træde
+Nogen iblandt „Europas Mathematikere“ frem, og sige, at
+en Hr. Prof. Steen ikke er ligesaa hjemme i sin Logik, som
+i sine Constanter; nu sige Nogen, at en Hr. Prof. Steen
+ikke har havt Gavn af „Erkjendelse og Granskning“; nu
+sige Nogen, at en Hr. Prof. Steen med sin Nøiagtighed,
+sin sjeldne, fast utrolige Nøiagtighed maa „trætte Læseren“!
+thi at han selv beklager at maatte trætte Læseren, er dog
+vel „i al Beskedenhed“ en Hentydning til, at han her med
+sin „gode Villie“ --- „tillader“ sig at underholde Læseren.
+
+IV. „Han (Forf.) har fattet den første mathematiske
+Betydning af Begreberne Nul og Uendeligt, som rene Størrelsesgrændser.
+Derimod har han kun en uklar Forestilling
+om den væsentlige Charakteer, disse Begreber have som
+Midler til at udtrykke Negationer i positiv Form, og endelig har han slet ingen Anelse om deres Betydning som
+% --- p. 36 ---
+\opage{36}\setcounter{footnote}{0}%
+Overgangsformer, hvoraf netop fremskinner noget Qualitativt
+i Modsætning til den rene Quantitet, indenfor hvilken Mathematiken ellers bevæger sig. Men heri have netop Mathematiken og Philosophien deres væsentligste Berøringspunkt,
+om hvilket det vistnok gjælder, at det kunde tilfulde belyses,
+naar de to Videnskaber komme hinanden imøde \dots{}. Han
+er tildeels som Følge af en urigtig og uklar Opfattelse af
+Begreberne Nul og Uendeligt, i Vilderede med Hensyn til
+alle Formler, hvori disse eiendommelige Former fremtræde,
+saasom ved at give $\frac{0}{0}$, $\infty 0$, $\frac{\infty}{\infty}$ m. m.“ (Bidr. S. 48---
+49; jvf. S. 19---30).
+
+Den mathematiske Troesbekjendelse, hvormed Hr. Prof.
+St., som allerede forhen er bemærket, indleder dette Afsnit,
+idet han aflægger Vidnesbyrd om sin uforgribelige Mening
+angaaende Uendelighedsproblemet, frembyder for en nærmere
+Betragtning adskillige ret interessante Sider. Ligesom det
+nemlig er en kategorisk Feil at ville anbringe en objectiv
+Viden, hvor Troens subjective Forvisning maa være det
+ene Gyldige, saaledes er det paa den anden Side en ligesaa
+kategorisk Feil at ville bringe Troen i Anvendelse, hvor en
+objectiv Viden ene og alene kan gjælde. At Hr. Prof. St.
+med sin „strenge Kritik“ virkelig har et Hang og det endog
+et især for en Mathematiker meget betænkeligt Hang til, hvor
+det convenerer ham, at anbringe Troens, Meningens og den
+subjective Opfattelses magelige Kategorier, er klart af mange Indicier. Naar han saaledes i Anledning af det Ramus --- og ak,
+tillige Lagrange --- „ganske eiendommelige Beviis“ (Bidr. S. 40)
+yttrer med en ham ingenlunde uklædelig, men vistnok usædvanlig
+Beskedenhed: „jeg tillader mig at tilføie nogen Tvivl om, at
+Europas Mathematikere ville kunne enes om at anerkjende
+Ramus's Beviis for fuldkomment tilfredsstillende?“ da faaer
+man et Indtryk, som var den mathematiske Læresætning med
+Eet forvandlet til en Troessætning, som kunde Gyldigheden
+af et Beviis i høieste Instans afgjøres for den enkelte
+% --- p. 37 ---
+\opage{37}\setcounter{footnote}{0}%
+Mathematiker derved, at han fik den sanctioneret paa et Concilium af mathematiske Notabiliteter, ligerviis som den troende
+Katholik faaer sit Dogme sanctioneret paa et Concilium af
+kirkelige Autoriteter. Her er altsaa dog en Autoritetstro,
+der uvilkaarlig rører sig hos Hr. Prof. Steen, og det uagtet det jo netop er Hr. Prof. Steen, som ved denne Leilighed har følt sig opfordret til at optræde „ikke med nogen
+selvtagen eller indbildt Autoritet, ikke med Henviisning til
+andre mathematiske Forfattere“ (naturligviis med Undtagelse
+af „Europas Mathematikere“), „men ene og alene med
+Grunde.“
+
+I Hr. Prof. Steens Opfattelse endog af det blot Mathematiske mærker man ikke blot Fagmanden, der eensidig
+seer Alt i sin særskilte Videnskabs Lys, men tillige den mathematiske Forretningsmand, der allerede har tillagt sig en
+bestemt Maneer, en noget stereotyp Fremgangsmaade, hvori
+Routinen skal bøde paa manglende Aandsfrihed, ja den
+complette Autoritetsmand, der kræver Respect for sin Mening, sin individuelle Mening, som man kræver Respect for
+en Trumf. Tør man ikke gaae ud fra slige psychologiske
+Forudsætninger, saa bliver den paafaldende Ugenerthed, den
+overordentlige Selvtillid, hvormed en Mand, der jo dog
+ikke vil optræde „med nogen selvtagen eller indbildt Autoritet“, i Mathematikens Navn tør stemple hver Sætning, der
+ikke behager ham, med sit „urigtigt“, „galt“, „ravgalt“,
+„meningsløst“, som var han ikke blot mathematisk Fagmand,
+men den incarnerede Mathematik i egen Person, aldeles
+ubegribelig; kun med en stærk Tilsætning af et til Fagtroen
+Hørende bliver det forklarligt, at en Mand, hvis Dannelse
+neppe har ført ham i den Retning, der meest begunstiger en
+strengere, alsidigere og sammenhængende Begrebsudvikling,
+frisk væk gaaer løs paa, hvad han vitterlig ikke har forstaaet,
+ja, som det synes, ikke engang gjort sig mindste Uleilighed
+med at forstaae, men snarere, at vi ikke skulle miskjende
+„den gode Villie“, Uleilighed med at misforstaae.
+
+% --- p. 38 ---
+\opage{38}\setcounter{footnote}{0}%
+At Hr. Prof. St., med al Respect for hans Routine
+som Regnemester, ingenlunde er den Mand, man skal henvende sig til, naar man vil vide Besked om det i Mathematiken Uendelige, er klart af hele hans Bidrag, og bliver
+især tydeligt af, hvad han foredrager os i dette og i Partier af de følgende Afsnit. Allerede den Begyndelse, han
+gjør med at indrømme, at der vel gives et mathematisk
+Begreb: Uendelig, „der opstaaer og kommer til Anvendelse,
+og som er yderst vigtigt og tilmed vanskeligt, fordi det er
+af blandet Natur“, lader os ane, at vi i det Uendelige, han
+anseer for yderst vigtigt og tilmed vanskeligt, ville træffe paa
+endeel Blandingsgods, man helst maa see at skille sig af med, for
+ikke at belæmre Begrebsudviklingen. Strax idet han lader sin
+hovmestererende Kritik svinge Korporalstokken over de første
+opstillede Rækker, slaaer han feil. I den lange Rettelse (Bidr.
+S. 21) er der ikke et Ord, ikke et eneste Ord, der vedkommer
+det, han vil rette. I sin Iver og Hast har han nemlig seet
+feil, og løber strax vild iblandt „de forskjellige Veie“; thi ved
+„de forskjellige Veie“ betegnes ingenlunde, hvad han, der sjældent bryder sig om nogen Sammenhæng, gjætter paa, men,
+hvad der tydelig fremgaaer af Sammenhængen, $f_{1}(n) = a + nx$
+for den arithmetiske, $f_{2}(n) = \frac{1}{a + nx}$ for den harmoniske og
+$f_{3}(n) = ax^{n}$ for den geometriske Række. Vistnok har han
+ligesom en Fornemmelse af, at her i det Hele er noget Underligt, og navnlig har et lille „men“ i Texten tilladt sig
+at gjøre Hr. Prof. opmærksom paa, at han vist maatte
+være gaaet feil; men Hr. Prof. St., der, som sagt, har
+Hang til Autoritetstro, og derfor aldrig kan troe, at det
+skulde være ham, ham selv, der tog feil, men derimod meget
+% V129 crop = layer = tesseract: misprint for end, PRINTED AS IS
+let troe, at „Forf.“ har begaaet en Dumhed, var det eud
+en uhyre Dumhed, sætter frisk væk sit eget „idet“ istedetfor
+Textens „men“, og saa gaaer Rettelsen strygende.
+
+„Jeg skal,“ siger Hr. Prof. (Bidr. S. 22) „lade aldeles ude af Betragtning, at Sammenhængen mellem Alt
+% --- p. 39 ---
+\opage{39}\setcounter{footnote}{0}%
+dette“ (Philos. og Mathem. S. 20---26) „er for løs til at
+kunne fortjene Navn af en „Begrebsudvikling“; men de deri
+forekommende Urigtigheder maae paavises.“ Altsaa: Hr. Prof.
+vil nok paastaae, at Sammenhængen og det en Sammenhæng, af hvad der optager hele 6 Sider, er for løs til at
+fortjene Navn af „Begrebsudvikling“; men dersom Nogen
+skulde falde paa at betvivle hans Paastand, og afæske ham
+en Smule Begrundelse, saa er det jo med det Samme erklæret, at her ingen Grund er til at spørge om nogen
+Grund, da Sligt skal „lades aldeles ude af Betragtning“;
+altsaa: to Erklæringer i een Erklæring! Dersom her ikke
+forudsættes Fagtro, Autoritetstro, og det endog en temmelig
+blind Autoritetstro, hvad er da Autoritet? hvad er Autoritetstro? Naar Hr. Prof. St. endvidere (Bidr. S. 24) i
+Anledning af sin Mening om Noget, hvoraf han ikke har
+fattet Meningen, udbryder: „Men skulde det være Meningen, saa ville den og lignende Bemærkninger være dødsdømte“, fører han da ikke et Sprog, som om han sad paa
+Mathematikens Pavethrone, forkyndte Dogmerne, og slyngede sit Anathema imod „de Dødsdømte“? Dog, lad os
+ikke glemme det, Hr. Prof. St. vil jo ingen Autoritetstro,
+Hr. Prof. St. er jo netop den Mand, der har „følt sig opfordret til at optræde, ikke med nogen selvtagen eller indbildt Autoritet, men ene og alene med Grunde.“
+
+Et Exempel paa, hvad det er for Blandingsgods, Hr.
+Prof. St. vil paaprakke Philosophien, naar den vover at
+røre ved det mathematisk Uendelige, er „den væsentlige Characteer, Begreberne Nul og Uendeligt“, ifølge hans Mening,
+„skulle have som Midler til at udtrykke Negationer i positiv Form.“
+„Naar der spørges (Bidr. S. 27), hvormeget skal der lægges
+til $a$ for at give $a$, saa svares der i Ord: der skal ikke lægges
+Noget til, altsaa \emph{benegtende}, men der svares i Tegn:
+$a-a = 0$, der skal lægges Nul til, altsaa bekræftende,
+idet Negationen er lagt i Nullet. Naar der fremdeles
+spørges, hvor mange Gange skal $0$ gjøres større for at give
+% --- p. 40 ---
+\opage{40}\setcounter{footnote}{0}%
+$a$, saa svares i Ord: det kan man ikke frembringe ved at
+multiplicere $0$, men i Tegn: $\frac{a}{0} = \infty$, $0$ skal gjøres uendelig mange Gange større for at give $a$; Negationen ligger
+her i Uendelig.“ Efterat have meddeelt disse interessante
+Oplysninger tilføier saa Hr. Prof. triumpherende: „Og om
+dette særdeles væsentlige Punkt har Forf., der
+vil skrive om Philosophie og Mathematik, kun en
+eneste Bemærkning, og den har endda hele Tilfældighedens Charakteer.“
+
+Endskjøndt vi gjerne indrømme, at disse, som Hr. Prof.
+selv kalder dem, „simple og letfattelige Forklaringer“\footnote{I sit første Exempel paa Negation i positiv Form, nemlig $a-a$
+= 0, synes Hr. Prof. især at være meget indtaget; han udbryder
+i Noten: „Man sammenligne denne simple og letfattelige Forklaring med Forf.s Yttringer om $a-a = 0$ S. 53. Jeg tillader mig ikke at forstaae disse“\dots{} „Man sammenligne!“ Denne
+triumpherende Opfordring maa man, at jeg her skal anbringe en
+Position i negativ Form, naturligviis ikke tage som et Udbrud af
+% the doubled „af“ (line end and next line), PRINTED AS IS: layer reads it too
+af barnagtig Glæde over at have produceret sig i Logik, og derved produceret en simpel og letfattelig Trivialitet, men meget
+mere som et Vink til yderligere Belæring. Foruden Negationen
+i positiv Form meddeles jo som Tilgift i den fra et logisk Synspunkt saa betegnende Negation: „Jeg tillader mig ikke at forstaae“
+en Negation i en ganske egen original Form, nemlig en Negation
+i Fyldekalks Form. Er det nu maaskee tillige Hr. Prof.s Mening, at slige Negationer i Fyldekalks Form ligeledes skulle udgjøre væsentlige Punkter i hans Lære om Nul og Uendeligt, da
+skal jeg ikke indvende Noget derimod; men de ville neppe komme
+enten Philosophien eller „de unge Studerende“ tilgode.}
+vidne om dybere „Granskning“ i den formelle Logik: saa kunne
+vi dog hverken tillægge dem Betydning i Læren om det
+Uendelige, eller antage, at de just i nogen synderlig Grad
+ville tiltale „de unge Studerende.“ Om det Umulige i, at
+gjøre en uendelig Afstand endelig, er en eneste Bemærkning,
+selv om den har hele Tilfældighedens Charakteer, meer end
+% --- p. 41 ---
+\opage{41}\setcounter{footnote}{0}%
+tilstrækkelig. Vil man gaae videre og undersøge, hvorledes
+det Uendelige i forskjellige Tilfælde kommer til at betegne
+deels det Mulige, deels det Umulige: da skal det snart vise
+sig, at den særskilte Betydning beroer paa en Tilsætning af
+Noget, der ikke i og for sig vedkommer Uendelighedens Begreb. Søge vi t. Ex. det geometriske Sted for Midtpunkterne
+af Kugler, der tangere tre givne Kugler paa samme Side, faae vi
+en Hyperbel; den uendelige Radius, som her betegner Negationen, vil da tilhøre den til det uendelig fjerne Punkt i
+Hyperblen svarende Kugle. Men en Kugle med en uendelig Radius er ingen Kugle, det er et Plan: Kuglens Umulighed er forsaavidt Planets Mulighed. $\infty$ kan
+her endvidere betegne Overgangen fra Positivt til Negativt,
+fra Kuglerne med positiv Radius til dem med negativ Radius, fra Kugler i Rækken, som tangere de tre givne udvendigt, til dem, som tangere dem indvendigt.
+
+Hr. Prof. Steens Tanker ere uregjerlige: hans Reflexion har utrolige Nykker. Hvor Umuligheden, saaledes
+som i det imaginære $\sqrt{-1}$ udtrykkelig er lagt i Betegnelsen
+selv, vil Hr. Prof. ikke vedkjende sig den, ikke høre et Ord
+om den, slet ikke vide af den at sige; hvor Umuligheden
+derimod, saaledes som i $0$ og $\infty$, hverken ligger i Begrebet
+eller Betegnelsen, men forudsætter saa særegne Hensyn til
+særegne Betingelser, at den ligesaa godt kunde blive betegnet ved
+en positiv som en negativ Størrelse, ligesaa godt ved et Endeligt,
+som ved et Uendeligt, der vil Hr. Prof. St.s lunefulde Reflexion absolut have det Umulige presset ind i $0$ og $\infty$;
+kun paa denne Maade kan Hr. Prof. forherlige sin Opdagelse, sin store Opdagelse, Opdagelsen af „Negationer i positiv Form!“
+
+Da min Opfattelse af Forholdet mellem det Endelige
+og det Uendelige allerede har erholdt en videre Udvikling i
+et andet Skrift,\footnote{Mathematik og Dialektik. 1859. Hegels Forlag.} skal her i denne Sammenhæng endnu
+% --- p. 42 ---
+\opage{42}\setcounter{footnote}{0}%
+kun anføres et Par Exempler, for dog yderligere at vise,
+med hvilken Selvtillid Hr. Prof. St. indlader sig paa at
+bedømme, hvad han aldeles ikke har givet sig Tid til at
+gjennemtænke.\footnote{Nogle Exempler. 1) Bidrag S. 43. Angaaende den Slutning:
+„men naar det er beviisligt, at Forholdet for det Uendelige bliver det samme som for det Endelige, kan det Uopnaaelige siges
+at være opnaaet,“ tilføies: „Dette er urigtigt“, og det henføres
+endog under Exemplerne paa „grove Urigtigheder.“ En saadan
+% misprint for det, PRINTED AS IS (600-dpi crop spot-42-dect; tesseract dect)
+Rettelse forraader Tankeløshed; thi dersom det lovbestemte Forhold ikke forblev dct samme, enten Forholdsleddene iøvrigt ere
+endelige eller uendelige, kunde de saakaldte ubestemte Former jo
+aldrig bestemmes. Det Tankeløse træder endnu stærkere frem,
+idet Rettelsen fortsættes: „allerede i Mathematikens første Elementer træffes utallige Exempler paa, at man kjender to Størrelsers Forhold uden at kjende Størrelserne selv.“ Der behøves
+kun en ringe Grad af mathematisk Tænksomhed for at indsee, at
+ingen Størrelse er til at kjende uden Relationer og Forhold.
+Hvad er vel Eenheden? Skal 1 ikke tages paa samme umiddelbare Maade, som man tager en Pind: saa er 1 kun at bestemme
+som Forhold af to ligestore Størrelser: $\frac{a}{a} = \frac{x}{x} = \lim. \frac{x}{x} = \frac{0}{0}$
+$= \mathrm{Lim.} \frac{x}{x} = \frac{\infty}{\infty} = 1.$ Staaer det nu fast, at enhver Størrelse
+bestemmes ved den bestemte Eenhed, da staaer det ogsaa fast, at
+% misprint (turned n), PRINTED AS IS: tesseract, crop spot-42-indbyrdes
+Eenheden selv bliver oprindelig bestemt som et Forhold: den oprindelige Størrelsesbestemmelse er en Relations- og Forholdsbestemmelse. 2) I Bidrag S. 45, angaaende den Sætning, at Differeutialcoefficienterne af forskjellig Orden, „skjøndt
+forskjellige fra hverandre indbyrdes“, dog i Sammenligning med
+endelige Størrelser, hver især ere som $\frac{0}{0}$,“ bemærkes: „Dette er
+urigtigt, thi de forskjellige Differentialcoefficienter ere i Reglen
+\emph{bestemte} endelige Størrelser“\dots{} „Feilen er, at Forf. S. 55
+og 60 opstiller $\frac{dy}{dx} = \frac{0}{0}$\dots{}, men glemmer, at naar Differentialet $dx$ er givet, saa er Differentialet $dy$ ogsaa givet ved $dx$.“
+% (the note runs on to p. 43)
+En eneste saadan Rettelse er tilstrækkelig til at stemple den Vilkaarlighed, hvormed Hr. Prof. St. anbringer sine Rettelser. I
+Phil. og Mathem. S. 55 siges udtrykkelig: „I Forhold til en
+hvilkensomhelst endelig Størrelse ere $dx$ og $dy$ begge $= 0$, men
+til hinanden indbyrdes ere de desuagtet i et ganske bestemt Forhold: $\frac{dy}{dx} = \frac{0}{0}$ ligesaa bestemt som f. Ex. $\frac{y}{x}$ eller som $\frac{1}{2}$ eller
+som $\frac{2}{3}$. At Differentialcoefficienterne i denne Forstand kunne
+være \emph{bestemte} endelige Størrelser, og i Reglen ere det, er da
+ingenlunde overseet; men Sagen er, at Hr. Prof. ikke kan forstaae, hvad der ikke er fremsat med de samme Ord, hvori han
+med sin Routine er vant til at faae det fremsat, og derfor ikke
+seer, at $\frac{dy}{dx} = \frac{0}{0}$ her udtrykkelig skal betegne, at den bestemte
+Størrelse er Eet med det bestemte Forhold, og at dette bestemte
+Forhold kan fastholdes, uagtet Forholdsleddene ere forsvindende,
+at, med andre Ord, --- hvad han heller ikke har forstaaet ---
+„Forholdet for det Uendelige, $\frac{dy}{dx}$, bliver det samme som for det
+Endelige“. 3) Bidr. S. 47: „Side 75 i Noten findes: „Da
+en Constant ikke kan have noget Differential, kan den heller ikke
+have noget Integral.“ „Det første“, hedder det, indeholder ingen
+Begrundelse af det sidste, og det sidste er tilmed urigtigt.“ --- At
+man nu i Beregningernes Maskineri kan anvende Betegnelsen for
+uendelig Summation ogsaa af Led, der ikke ere Differentialer,
+skal indrømmes; men i Begrebet, og her handles jo om „Begrebsudvikling“, er Integralet saaledes modsat Differentialet, at
+de svare til hinanden: Integration forudsætter væsenlig Differentiation. Naar det endvidere hedder, at i $\int a\,dx = ax + C$ er
+$a\,dx$ constant: da beroer denne Rettelse paa en Spidsfindighed;
+thi ved en Constant, der ikke kan have noget Differential, tænkes
+her naturligviis ikke paa Differentialet selv: $dx$ kan, uagtet den
+i et Forhold som $\frac{dy}{dx}$ er constant, ingenlunde slaaes sammen med
+% V142 misprint for umiddelbar, PRINTED AS IS
+en umiddelber Constant $C$. At gaae i det Enkelte med Alt, hvad
+% (the note runs on to p. 44)
+Hr. Prof. St. i tøilesløs Vilkaarlighed har produceret af Løst og
+Fast, vilde være for vidtløftigt. Som charakteristisk for de mangfoldige, aldeles uhjemlede Fyldekalksrettelser skal endnu kun tilføies, at $\int a\,dx = ax + C$ nu dog alligevel (Bidr. S. 47) har faaet
+Tilladelse til at gjælde for et bestemt Integral, medens vi derimod Bidr.
+S. 14 correxes med den Rettelse, at det netop er den arbitrære
+Constant, der gjør Integralet ubestemt.}
+
+„Det vil være rigtigst,“ siger han i Bidr. S. 23,
+„først at vise, hvorledes Forf.s eget Exempel Hyperblen og
+% --- p. 43 ---
+\opage{43}\setcounter{footnote}{0}%
+dens Asymtote, der ved at oplyse Begrebet „uendelig Tilnærmelse“ slet ikke har dermed at bestille\dots{} at det Endelige
+% --- p. 44 ---
+\opage{44}\setcounter{footnote}{0}%
+skulde kunne ligge uendelig nær ved det Uendelige\dots{} thi
+enten er Abscissen $x$ endelig, og saa ere $y_{1}$ og $y$ endelige
+Størrelser med en endelig Differens, eller $x$ er uendelig,
+og saa blive $y_{1}$ og $y$ uendelige med Differensen Nul.“ Af
+denne Rettelse sees, at Hr. Prof. St. ikke blot til mathematisk Brug, hvad der kan være meget priseligt, anvender
+Grændsemethoden, men at han tillige er, ved den megen
+Routine, saaledes forhexet af denne Methodes abstracte:
+\emph{enten --- eller,} at Methoden er bleven ham til Maneer.
+Men naar Grændsemethodens mechaniske: \emph{enten---eller} først
+er bleven en Mathematiker til Maneer, skal han nok lade
+være at fatte Det, hvorpaa det væsentlig kommer an i en
+Begrebsudvikling af det Uendelige.
+
+Ifølge Grændsemethodens: enten---eller, enten Endeligt
+eller Uendeligt, kommer man ved et kritisk Spring fra Endeligt til Uendeligt, ligesom man ved et kritisk Spring kan
+komme fra Landet i Vandet: nu er $x$ endelig, nu er $x$
+uendelig,\footnote{Jvfr. Mathem. og Dialektik. S. 59---60} nu er man paa Landet, nu er man i Vandet.
+Kan man nu maaskee ved idelig Springen omsider drive det
+til, at man i Springet springer Bevægelsen over: da gjør
+man sit fjerde Kunststykke, en Præstation ligesaa glimrende,
+som Bortfjernelsen af Begrebet Multiplication fra Functionen Product, ligesaa glimrende, som Sammenstykningen af
+Trekanten ved de uendelig mange Rectangler, endnu mere
+glimrende, end Paaviisningen af en Forskjel imellem $\infty\ 0$
+% --- p. 45 ---
+\opage{45}\setcounter{footnote}{0}%
+og $\frac{0}{0}$ uden Anvendelse af Functionsloven; men kan man
+ikke ved nogetsomhelst Spring, være sig logiske Krumspring
+eller mathematiske Bukkespring, springe Bevægelsen over,
+fordi man ikke ved noget Spring kan springe Springet over,
+og dog desuagtet af pure Pligtfølelse føler sig kaldet til at
+belære Den, der i Springet seer en Bevægelse: da er man
+ikke en berettiget Læremester, men en tankeløs Springer.
+
+En Sætning, som den (i Phil. og Mathem. S. 24):
+„Afstanden fra Endeligt til $0$ og fra Endeligt til $\infty$ er
+altsaa her som en Afstand fra det ene Endelighedspunkt til
+det andet“ hører især blandt dem, der maae vække Forargelse hos tankeløse Springere. Til Beviis for, hvilken
+uhyre Feil der begaaes ved at antage, at en nok saa lille
+Bevægelse til den ene eller den anden Side bringer Vinklens Tangens fra at være uendelig til at være endelig, opstilles (Bidr. S. 25) følgende Ligning:
+\[ \mathrm{tg}\,90^{\circ} - \mathrm{tg}\,(90^{\circ} \pm \varepsilon) = \frac{\sin (\mp \varepsilon)}{\cos 90^{\circ}\,\cos (90^{\circ}\pm\varepsilon)} = \frac{1}{\cos 90^{\circ}} \]
+$= \infty$, „hvorved,“ som det udtrykkes, „\emph{den mathematiske}
+\emph{Feil er paaviist at være uendelig stor.}“ Uden at
+opholde os ved de mange og skjønne Conseqvenser, der
+kunne udledes deraf, at man saadan uden videre maaler en
+mathematisk Feil med den ved Feilen overseete Differens,
+ville vi, for at prøve, om her i Virkeligheden nu ogsaa er
+nogen Feil, strax spørge, hvad det da er, Ligningen $\mathrm{tg}\,90^{\circ}$
+--- $\mathrm{tg}\,(90^{\circ} \pm \varepsilon) = \infty$ egentlig skal bevise. I Overeensstemmelse med Springemethodens enten---eller, enten $90^{\circ} \pm \varepsilon$
+og da en endelig Tangens, eller $90^{\circ}$ og da en uendelig
+Tangens, vil jo en nok saa lille Bevægelse til den ene eller
+den anden Side bringe Vinklens Tangens fra at være
+uendelig til at være endelig; og dog seer Hr. Prof. St.
+just heri „den store Misforstaaelse“, som han ved den opstillede Ligning vil corrigere. Forsaavidt Ligningen beviser
+% --- p. 46 ---
+\opage{46}\setcounter{footnote}{0}%
+Noget, beviser den det stik Modsatte af hvad Hr. Prof. St.
+vil bevise.
+
+At det Endelige ligger det Uendelige uendelig nær, vil,
+naar vi fastholde Grændsemethoden, jo med andre Ord
+sige, at der for det Endelige gives en yderste Grændse, der
+ikke kan overskrides, uden at det Uendelige pludselig viser
+sig. En saadan yderste Grændse er nu just det Punkt,
+hvori Secans og Tangens skjære hinanden, umiddelbart før
+Skjæringen ophører, d. v. s. umiddelbart før Vinklens
+Overgang fra $90^{\circ} \pm \varepsilon$ til $90^{\circ}$, idet $\varepsilon$ tænkes at være den
+mindst mulige Størrelse. Hvor stor er nu Afstanden imellem det Punkt, hvori Tangens berører Cirklen, og det for
+Tangens og Secans yderste Skjæringspunkt? \emph{Uendelig!}
+Men saa maatte Secans og Tangens jo være parallele, og
+kunde følgelig ikke skjære hinanden. \emph{Endelig!} Men dersom
+Skjæringspunktet ikke ligger umiddelbart paa Grændsen
+af det Uendelige, kan det jo ikke være det yderste; men
+er det det Punkt, hvormed det Uendelige begynder, maa
+det jo ligge uendelig langt borte. \emph{Hverken endelig}
+\emph{eller uendelig!} Men dersom her virkelig er et
+Mellemrum imellem det Punkt, hvormed det Endelige
+ender, og det Punkt, hvorfra det Uendelige begynder:
+maaskee de Springende da kunde give os en lille Underretning om, hvorledes de uendelig mange Tangenter,
+hvis Skjæringspunkter med Secans just falde i dette
+Mellemrum, nærmere blive at bestemme\footnote{Tilvæxterne til Tangenten forholde sig omvendt som Qvadratet
+af de Cosinusser, hvortil Vinklerne svare. Er $y = \mathrm{tg}\,x$, saa er
+$dy = \frac{dx}{\cos^{2} x}$. Tænke vi os altsaa det ene Been af en Vinkel bevæge sig fra 0 til $90^{\circ}$ med constant Vinkelhastighed, da vil det
+Punkt, hvori det bevægelige Been skjærer en paa det faste Been
+perpendikulær Linie, bevæge sig med en continuerlig voxende
+Hastighed (ved $45^{\circ}$ er denne Hastighed omtr. 2 Gange saa stor,
+som ved $1^{\circ}$, ved $89^{\circ}$ omtr. 1642 Gange saa stor, som ved $45^{\circ}$);
+% (the note runs on to p. 47)
+men Overgangen til disse forskjellige Hastigheder skee ikke ved
+Spring, men, vel at mærke, continuerligt. Paa Overgangen fra
+$90 - h$ til $90^{\circ}$, hvor $h$ er en mindst mulig Størrelse, synes det
+vel, som om Hastigheden pludselig sprang fra endelig til $\infty$; men
+dette ligger deri, at $h$ bestandig angiver en endelig Discretion,
+forsaavidt den ikke opfattes i sin Forsvinden, d. v. s. i en fortsat
+Bevægelse henimod $0$. Det er med Hensyn hertil, at vi i Grændsemethoden erholde forskjellige $\infty$ for $\mathrm{tg}\,90^{\circ}$, alt efter den Maade,
+hvorpaa vi lade dens Forskjel fra den foregaaende forsvinde.
+Man betragte blot:
+$\lim \frac{dy_{90^{\circ}-h}}{dy_{90^{\circ}-nh}} = \lim \left(\frac{\cos (90^{\circ}-nh)}{\cos (90^{\circ}-h)}\right)^{2} = \lim \left(\frac{\sin nh}{\sin h}\right)^{2} = n^{2},$
+hvor
+$y_{90^{\circ}-h} = \mathrm{tg}\,(90^{\circ}-h),\ y_{90^{\circ}-nh} = \mathrm{tg}\,(90^{\circ}-nh).$
+Det eneste Tilfælde, hvor Forholdet imellem de to Tilvæxter
+skulde, strengt taget, blive uendeligt, vilde jo være for $n = \infty$;
+men i saa Tilfælde havde det bevægelige Been jo ikke bevæget sig
+continuerligt fra den ved $90^{\circ} - nh$ til den ved $90^{\circ} - h$ bestemte
+Stilling; Bevægelsen maatte da være skeet ved et Spring.
+Grændsemethoden, der altid sætter $h$ enten som endelig eller som
+$0$, kan umulig forstaaeliggjøre den i Vorden og Bevægelse gjældende Continuitet. Man sætte:
+$\mathrm{tg}\,90^{\circ} = \lim \mathrm{tg}\,(90^{\circ} - h) = \infty_{1}$
+$\mathrm{tg}\,90^{\circ} = \lim \mathrm{tg}\,(90^{\circ} - 2h) = \infty_{2} = 2^{2}\,\infty.$
+$\mathrm{tg}\,90^{\circ} = \lim \mathrm{tg}\,(90^{\circ} - 3h) = \infty_{3} = 3^{2}\,\infty.$
+$\dots$
+$\mathrm{tg}\,90^{\circ} = \lim (90^{\circ} - nh) = \infty_{n} = n^{2}\,\infty$
+Altsaa er $\infty_{n-1} - \infty_{n} = \infty.$
+Grændsemethodens Ufuldkommenhed viser sig da endvidere deri,
+at den, uden at kunne opfatte $\infty$ som Størrelse, dog alligevel maa
+lade $\infty$ figurere som Størrelse.}. Endelige kunne
+% --- p. 47 ---
+\opage{47}\setcounter{footnote}{0}%
+disse Tangenter jo ikke være, da Endelighedens Grændse
+allerede er overskreden; uendelige kunne de heller ikke være,
+da det Uendelige endnu ikke er naaet; men ere de hverken
+endelige eller uendelige, ville da ikke slige Tangenter uden
+Endelighed og uden Uendelighed blive ligesaa interessante,
+som Baggesens Knive uden Skaft og uden Blad? --- Havde
+Hr. Prof. St. blot ikke havt en slet saa klippefast Tro paa
+„selvtagen eller indbildt Autoritet“, som han ved disse Ret%
+% --- p. 48 ---
+\opage{48}\setcounter{footnote}{0}%
+telser har lagt for Dagen: da havde han vel, istedetfor at
+argumentere fra en Ligning, hvis hele Betydning i denne
+Sammenhæng, beroer paa den Trivialitet, at $\infty - a = \infty$,
+til „en uendelig stor Feil“, tænkt sig lidt om, og besindet sig
+paa, hvad de fra Mathematikens Historie bekjendte Stridigheder om Fluxionsmethoden, Infinitesimalmethoden og
+Grændsemethoden vel kunne have at betyde; og dersom Hr.
+Prof. St. var kommen til at tænke nærmere over sin
+Videnskabs Historie, vilde han ikke blot have seet sig lidt
+nærmere for med det Ramus --- og ak! tillige Lagrange,
+„ganske eiendommelige Beviis“, men vist ogsaa have betænkt
+sig to Gange, inden han saa offentligt og uforbeholdent,
+aflagde en „Troesbekjendelse“, som denne: „Der er for det
+Første ikke Noget, man kan benævne „Uendelighedsproblemet“ i Mathematiken“.
+
+Hvorledes Hr. Prof. St.s Rettelser retfærdiggjøre den
+Udstykning, hvorved han, for at „gruppere Stoffet“, har
+gjort Brud paa al Sammenhæng og Tankegang, maa endog „den mindre Indviede“ nu vel kunne bedømme. Vistnok
+har Hr. Prof. St., især i Begyndelsen, en Forestilling om,
+at der maa gjøres Forskjel imellem væsentlige og uvæsentlige Feil, og navnlig synes det at være gaaet klart op for
+ham, at „umiskjendelige Tryk- og Skrivfeil“ maae henregnes blandt de uvæsentlige; men, hvor lidt han i sin store
+Nøiagtighedsiver er tilbøielig til at lade nogen Feil undskylde
+sig med, at den kun er en Trykfeil, kan blandt Andet sees
+af følgende Exempel: „Side 65 (Bidr. 46) paastaaes, at
+$\frac{d^{2}y}{dx^{2}}$ er den Tilvæxt, hvormed $\mathrm{tg}\,\alpha$ varierer, naar $x$ voxer.
+Det er urigtigt, thi denne Tilvæxt er $\frac{d^{2}y}{dx}$, og her er ingen Trykfeil, som hele Udviklingen og Udtrykkets Gjentagelse
+beviser“. Allerede i Udtrykket „paastaaes“ ligger en vilkaarlig Overdrivelse, saa at dette Udtryk forsaavidt er urigtigt.
+Hvad der siges om „hele Udviklingen“ er ligeledes urigtigt;
+% --- p. 49 ---
+\opage{49}\setcounter{footnote}{0}%
+thi Udtrykket: $\frac{d^{2}y}{dx^{2}} = \frac{d \cdot \frac{dy}{dx}}{dx} = \frac{d\,\mathrm{tg}\,\alpha}{dx}$ viser da vel
+saa tydeligt, som muligt, hvad der skal forstaaes ved den
+Tilvæxt, hvormed $\mathrm{tg}\,\alpha$, nemlig maalt med $dx$, varierer,
+naar $x$ voxer. Hvad der siges om „Udtrykkets Gjentagelse“
+er endvidere urigtigt, thi $\frac{d^{2}y}{dx^{2}}$ forekommer kun een eneste
+Gang saaledes, at man ved absolut ikke at ville underforstaae det
+$dx$, hvormed Tilvæxten maales, og hvorved den altsaa først er
+fuldstændig bestemt, kan vride det ind under en Misforstaaelse.
+At Gjentagelsen af et feilagtigt Udtryk, selv om en saadan
+Gjentagelse havde fundet Sted, uden videre skulde være et
+Beviis imod Muligheden af en Trykfeil, er endelig en
+Slutningsmaade, som Hr. Prof. St., trods sin overordentlige
+Nøiagtighed, alligevel, om ikke for Andres, saa dog for
+sin egen Skyld, skulde være lidt forsigtig med at anvende.
+
+I Bidr. (S. 34) gjentages det jo udtrykkeligt, at den Rest,
+som efter $x^{n}$ skal tilføies, er $\frac{x^{n}}{1 - x}$\footnote{„I det mathematiske Sprog er Prædicatet congruent med Subjectet“; af denne Sætning vil Hr. Prof. St. bevise, at man ikke
+tør skrive $\frac{1}{1 - x} = 1 + x + x^{2} + \dots$ Dersom det nu hermed
+var sagt, at man ved at tage flere og flere Led i den uendelige
+Række stedse mere nærmede sig den ved $\frac{1}{1 - x}$ udtrykte endelige
+% (the note runs on to p. 50)
+Værdie: da vilde her for $x > 1$ være Grund til at gjøre Indsigelse; men om en saadan Tilnærmelse er her ikke Tale. Lighedstegnet betyder kun, at Rækken: $1 + x + x^{2} + ....$, for i Uendelighedens Form at svare til, være congruent med $\frac{1}{1 - x}$
+i Endelighedens Form, maa have et uendeligt Antal Led; hvilket
+ogsaa kan udtrykkes saaledes, at $\frac{1}{1 - x}$ ved Division frembringer
+$1 + x + x^{2} + ....$, idet Divisionen fortsættes uden Afbrydelse. Naar nu herimod reises den hovmestererende Indsigelse, at
+der af $\frac{1}{1 - x}$ frembringes ved Division $1 + x + x^{2} + . .$
+$x^{n} + \frac{x^{n+1}}{1 - x}$, selv om n skulde være uendelig: da er denne
+Indsigelse kun et nyt Beviis paa den Tankeløshed, hvortil
+Springemethodens Mechanik kan forlede en mathematisk Springer.
+Skal her være Tale om „Begrebsudvikling“, maa det dog vel
+% misprint for det, PRINTED AS IS: tesseract, crop
+være tilladt at spørge om Forskjellen imellem Tænkeligt og Utænkeligt. Men hvorledes er dct tænkeligt, at der efter $x^{n}$ kan følge
+et $x^{n+1}$, naar n skal være uendelig? Hvad betyder det, at der
+efter $x^{n}$ tilføies en Rest $\frac{x^{n+1}}{1 - x}$? Det betyder jo, at Divisionen,
+istedetfor at blive fortsat, tvertimod bliver afbrudt; men derved at
+Divisionen afbrydes og Resten tilføies er den uendelige Række jo
+bleven endelig. At en Division skal fortsættes i det Uendelige
+bliver altsaa ved et mathematisk Decret: „Resten til!“ --- et Decret
+ved Tavlen, bestemt saaledes, at den skal afbrydes etsteds i det
+Endelige. Er man nu beredt til at døie Modsigelsen i en saa raa
+Form, naar blot Operationsmaskineriet gaaer, og Regningen giver
+det rette Facit: saa kan man jo vistnok sagtens lade haant om
+„Dialektiken“; men man burde da ogsaa med det Samme være
+saa conseqvent at lade haant om enhver „Begrebsudvikling.“}. Hvad, om nu
+Nogen, i Anledning af, at den samme Feil $\frac{x^{n}}{1 - x}$ unegtelig
+gjentages, ved behørige Trompetstød vilde bekjendtgjøre, at
+Hr. Prof. St., En af „Europas Mathematikere“, endnu
+lægger en saa grov Uvidenhed for Dagen, at han antager
+den efter $x^{n}$ følgende Rest for $\frac{x^{n}}{1 - x}$!
+
+Hr. Prof. St.'s „Bidrag“ bærer i det Hele som i det
+Enkelte Præg af at være et ved en vis Øieblikkets Stem%
+% --- p. 50 ---
+\opage{50}\setcounter{footnote}{0}%
+ning foranlediget Hastværksarbeide. Paa Den, der nu kan
+fatte, hvad det er Hr. Prof. St. kalder „væsentlige Feil“ og
+„grove Feil“, og hvorledes han gaaer tilværks med at rette disse
+„væsentlige Feil“, disse „grove Feil“, vil det upaatvivleligt gjøre
+et imponerende, for ikke at sige, intimiderende Indtryk, at
+høre Hr. Prof. St. slutte sit 5te Afsnit med følgende Tirade
+om Prof. Jürgensen: „Kan maaskee Hr. Prof. Jürgensen
+% --- p. 51 ---
+\opage{51}\setcounter{footnote}{0}%
+vise, at de mathematiske Udsættelser, jeg her seer mig nødsaget til at gjøre, ere uberettigede eller uvæsentlige? Det
+vilde unegtelig være mig en Overraskelse, om han vilde
+forsøge derpaa, men lykkes ham kan det ikke.“ --- For at føre
+et saadant Sprog imod en saadan Mand, maa man være
+sig sin Overlegenhed bevidst, og Hr. Prof. Steen er just en
+Mand, der er sig sin Overlegenhed bevidst. En saadan
+„Europas Mathematiker“, der er sig sin Overlegenhed bevidst, er naturligviis ingen \textit{miles gloriosus}, men en imponerende, intimiderende Skikkelse. Det er da at vente, at
+denne ligesaa negative som positive Størrelse, denne ligesaa
+hovmestererende som triumpherende Skikkelse vil i Fremtiden,
+som hidtil, hævde sin Plads, vise sin Overlegenhed, og bevare sin Holdning, altid imponerende, intimiderende, hovmestererende, triumpherende.
+
+I alle Videnskaber og da fornemmelig i den exacteste
+af alle Videnskaber gjælder det at være nøiagtig. Men den
+sande Nøiagtighedsfordring maa altid referere sig til en
+Forskjel imellem Væsentligt og Uvæsentligt, og denne Forskjel igjen til en afgjørende Synsmaade, en det Hele saavelsom det Enkelte bestemmende Tankegang.
+
+Nøiagtighed og Fuldstændighed høre blandt de
+Kategorier, hvis dialektiske Dobbeltsidighed især viser sig i Bestemmelsen af Grændseforholdet mellem Philosophien og
+Fagvidenskaberne. Hvad der i saa Henseende er sagt om
+Kategorierne: Dunkelhed, Klarhed og Tydelighed (Phil.
+Propæd. S. 108---109), gjælder da ogsaa om Nøiagtigheden og Fuldstændigheden. „Enhver videnskabelig Fremstilling af dybere Indhold har altid en Mængde lysende
+Punkter i Forgrunden, en Mængde dunkle Punkter i Baggrunden, og mellem begge mangfoldige Overgange. Hvor
+flere Videnskaber behandle det Samme, vil enhver gjøre Sit
+tydeligt; men de ville aldrig gjøre det Samme tydeligt paa
+samme Maade.“ Ligesaa med Hensyn til Nøiagtighed.
+Hvad en Udvikling ifølge sit Øiemed maa bestemme med
+% --- p. 52 ---
+\opage{52}\setcounter{footnote}{0}%
+største Nøiagtighed, tør en anden efter sit Øiemed kun
+antyde i flygtige, svævende Træk, just fordi den skal lade
+Nøiagtighedens Eftertryk falde paa andre Punkter.
+
+Abstraherer man fra de ved Videnskabernes indbyrdes
+Forskjellighed bestemte Hensyn til Klarhed, Tydelighed, Nøiagtighed og Fuldstændighed, blive kun aphoristiske Forestillinger om et Tydeligt og et Utydeligt, et Nøiagtigt og
+et Unøiagtigt, d. v. s. et Rigtigt og et Urigtigt, tilbage.
+Hvad der da ikke er rigtigt er altsaa urigtigt, og hvad der
+ikke er urigtigt, er rigtigt. Det aphoristiske: „rigtigt eller
+urigtigt?“ bliver ved Abstractionen til et Spil, et for Rabulister, Pedanter og Chicaneurer underholdende Spil, et
+litterært: „effen eller ueffen?“
+
+\begin{center}\rule{3em}{0.4pt}\end{center}
+
+% --- p. 53 ---
+\opage{53}\setcounter{footnote}{0}%
+
+\begin{center}Trykfeil og Rettelser.\end{center}
+
+\begin{center}\rule{3em}{0.4pt}\end{center}
+
+\begin{center}I. Philosophie og Mathematik.\end{center}
+
+\noindent S. 10 Linie 11 fr. oven $a - x$ læs: $x - a$.
+
+\noindent - - - 15---20 udgaaer.
+
+\noindent - 30 - 7 fr. neden $\frac{A_{2}A_{1}}{1 + 1}$ læs: $\frac{A_{1}A_{1}}{1 + 1}$.
+
+\noindent - 36 - 5 - - $-\frac{x^{2}}{1.2}$ - $-\frac{x^{2}}{2}$.
+
+\noindent - - - 4 - - $\frac{x^{3}}{1.2.3} - \frac{x^{4}}{1.2.3.4}$ læs: $\frac{x^{3}}{3} - \frac{x^{4}}{4}$.
+
+\noindent - - - 2 - - $\log \left( \frac{(1 + x)}{\log e} \right)^{\frac{2y^{2}}{1.2}}$ læs:
+\[ \left( \frac{\log (1 + x)}{\log e} \right)^{\frac{2y^{2}}{1.2}}. \]
+
+\noindent - 37 - 8 fr. oven $-\frac{x^{6}}{1.2.3.4.5.6}$ læs:
+\[ -\frac{x^{7}}{1.2.3.4.5.6.7}. \]
+
+\noindent - 40 - 3 fr. neden $l (-a)$ have fælleds med $l. a$
+
+\noindent læs: $2 l (-a)$ have fælleds med $l (a^{2})$.
+
+\noindent - 43 - 11---28 fr. oven udgaaer.
+
+\noindent - 44 - 2 og 11 fr. oven tilføies Factorerne $h^{m} k^{n}$.
+
+\noindent - 49 efter Linie 3 fr. oven tilføies: idet her endnu foreløbig ligesaalidt reflecteres paa nogen Forskjel
+
+\noindent imellem $\infty$ og $\infty$, som paa nogen Forskjel
+
+\noindent imellem $0$ og $0$.
+
+% --- p. 54 ---
+\opage{54}\setcounter{footnote}{0}%
+S. 57 Linie 3 fr. oven $f''''(x)$, . . læs: $f'''(x)$ og $d^{3}y =$
+\[ f'''(x)\ dx^{3}. \]
+
+\noindent - 77 - 15 fr. oven
+
+\noindent $A = ds$, den uendelig læs: $AB = ds$, det uendelig
+
+\noindent lille Sector. lille Segment.
+
+\noindent - - Linie 2 fr. neden $\frac{dx}{dy}$ læs: $\frac{dy}{dx}$.
+
+\noindent - 82 - 16 - - et vist Forhold læs: en vis Relation.
+
+\noindent - - - 14 - - Forhold læs: Relation.
+
+\noindent - 83 - 5 og 10 fr. neden $r^{2} \sin \Theta dr d\Theta d\alpha$ læs:
+\[ r^{2} dr \sin \alpha d\alpha d\Theta. \]
+
+\noindent - 84 - 8 fr. oven ligeledes.
+
+\begin{center}II. Philosophisk Propædeutik.\end{center}
+
+\noindent S. 92 Linie 16 fr. oven Systemer --- det sphæroedriske \dots{}
+
+\noindent læs: Systemer, som, for at
+
+\noindent nævne et Exempel, --- det sphæroedriske \dots{}
+
+\noindent - 106 - 7 - - største, Teluret den mindste læs:
+
+\noindent mindste, Teluret den største.
+
+\noindent - 139 - 12 - - her som Bindeled \dots{} læs: her,
+
+\noindent for at minde om et moderne
+
+\noindent Synspunkt, som Bindeled.
+
+\noindent - 161 - 6 - - den baconiske \dots{} læs: den af
+
+\noindent Apelt anførte baconiske \dots{}
+
+\begin{center}III. Mathematik og Dialektik.\end{center}
+
+\noindent S. 67 Linie 7 fr. neden Efter $\frac{1.2.3 \dots n}{(a+1) \dots (a+n)}$
+
+\noindent bortfalder $+ ....$
+
+\noindent - 74 Anmærkn. Linie 2 fr. oven $(1+x)^{1+x^{2}}$ læs:
+\[ (1+x)^{1-x^{2}}. \]
+
+% --- p. 55 ---
+\opage{55}\setcounter{footnote}{0}%
+S. 77 Linie 2 fr. neden Differentialcoifficienten læs:
+
+\noindent Differentialcoefficienten.
+
+\noindent - 86 - 7 - - $\frac{du}{dx_{2}}$ læs: $\frac{du}{dx_{2}} h_{2}$.
+
+\noindent - 88 - 6 fr. oven $\varphi'(x)\frac{n}{1} ....$ læs: $\varphi'(x)\frac{h}{1}$.
+
+\noindent - 95 - 3 - - af høiere end $r^{te}$ Orden \dots{}
+
+\noindent læs: af $r^{te}$ og høiere Orden \dots{}
+
+\noindent - 96 - 9 - - $f''(x)\frac{dx}{1} + f'''(x)\frac{dx^{2}}{1.2}$ læs:
+\[ f''(x)\frac{dx}{1.2} + f'''(x)\frac{dx^{2}}{1.2.3}. \]
+
+\noindent - - - 14 - - $f'''(x)\frac{dx^{2}}{1.2}$ \dots{} læs:
+
+\noindent $f'''(x)\frac{dx^{3}}{1.2.3}$ \dots{}
+
+\noindent - 106 --- 1ste Linie Text fr. neden $\int_{x=b}^{x=b}(2xdx + dx^{2})$ \dots{} læs:
+\[ \int_{x=a}^{x=b}(2xdx + dx^{2}) \]
+
+\noindent - 108 Linie 5 fr. oven $\int_{0}^{x} 3x^{3}dx$ . . læs: $\int_{0}^{x} 3x^{2}dx$ \dots{}
+
+\noindent - - - 7 - - egentlige læs: legemlige.
+
+\noindent - 132 Anm. Linie 3 fr. ned. παραλογιζόμενος læs: παραλογιζόμενος.
+
+\noindent - 138 - - 7 fr. oven καθ, αὐτό læs: καθ᾽ αὐτο. 
+
+\noindent - - - - - - - αεί  læs ἀει \dots{}
+
+\noindent - 139 - - 8 - - \textit{Physie} læs: \textit{Physic}.
+
+\end{document}
