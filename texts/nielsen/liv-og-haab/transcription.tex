@@ -1,0 +1,3647 @@
+% =====================================================================
+%  R. Nielsen, OM LIV OG HAAB.  Sex Forelæsninger.
+%  Kjøbenhavn: Gyldendalske Boghandel (F. Hegel); trykt hos J. Jørgensen & Co., 1875.  103 pp.  Antiqua.
+%
+%  TRANSCRIPTION -- GENERATED; DO NOT EDIT BY HAND.  Rebuild from the repo root:
+%    python3 ebook-method/liv-og-haab/draft.py --emit --force \
+%      && python3 ebook-method/collate/check.py liv-og-haab --italics --apply \
+%      && python3 ebook-method/liv-og-haab/draft.py --post
+%
+%  STATUS: COMPLETE (2026-10-12): title page and the whole text, pp. 1-103 (no footnotes; the print has no Indhold --
+%  the table of contents after the title is editorial).
+%
+%  EDITION.  The text of record is Google Books' scan of the New York Public Library copy (barcode 33433081637278;
+%  ~/bibliotek/Nielsen, Rasmus/liv_og_haab.pdf, SCANS.tsv), 600 ppi bitonal, with Google's OCR as text layer.  The only
+%  printing; no e-book and no earlier transcription exists (checked 2026-10-12: the repo, the web).  The Internet
+%  Archive's copy (omlivoghaabsexf00nielgoog) is the same scan; its ABBYY FineReader 8 OCR served as a third reading.
+%
+%  ACCURACY (2026-10-12).  The words are those of Google's layer (draft.py), collated word by word with an independent
+%  tesseract reading of the images (collate/check.py, witness 'ocr'): 371 disagreements in 26,751 words.  55 were settled
+%  by check.py's own rules; rules.py settled the rest of the rule-settled ones only after a BLIND PILOT of 91 crops (reader
+%  A, 20/20 controls) had measured each candidate: tesseract's stops before a lower-case word 9/9, its lone marks where the
+%  layer has none 8/8 (all specks), its glyph faults 8/8, its » for the print's „ 8/8, its aa read an 4/4, the layer's
+%  glyph faults 3/3, accents 3/3, case 2/2, tesseract's long dashes 8/8 (here all real); the doubled-quote and
+%  word-division rules failed once each and were narrowed or left off.  The THIRD reading (abbyy.py) only narrowed rules:
+%  where it agreed with the layer it was right 11/12, where it agreed with tesseract only 7/10 -- never a vote.  The rest
+%  were read at the image BLIND (sheets.py: 218 word crops with two planted controls a sheet, 48 of 48 controls read right;
+%  six Sonnet readers), and about 100 doubtful spots in the main session from line crops (zoom.py; 600-dpi crops for single
+%  letters).  p. 17, a leaf folded in the scanner (both OCRs fail there), was set whole from a crop.  LETTERSPACING (the
+%  print's emphasis, \emph): candidate lines by the white columns inside words (spacedlines.py), 44 lines read blind (6/6
+%  controls), the doubts read in the main session: 25 runs.  ITALICS (Latin tags) by stroke slant, read blind: 3.
+%  SWEEPS after OPEN 0, each spot read at the image: check.py --moved found four lines the layer had put out of order
+%  (pp. 3, 86, 94); the split sweep, two words run together (p. 9); a review of reads.py's decisions, a word lost at a
+%  line end that a crop's box hid (p. 79, viden-|skabelig) and five opening „ that both OCRs had lost (pp. 5, 46, 78, 87,
+%  94: reads.py now sends such a case to the hand list); the quote-balance sweep, a speck read as “ (p. 35); the
+%  unknown-word sweep (379 words in no other transcription), the misprints below.  SAMPLED PAGE CHECK (pagecheck.py, seed
+%  202610125): pp. 2, 41, 70 and the title page read whole and blind, 764 words: 1 word error (a speck over an a read as
+%  „påa“ by both OCRs) and 1 punctuation error (a speck read as a stop), both mended (95 % upper bound ~6 per 1000 words).
+%  TRANSLATION as a last reading: the six translators listed 21 odd spots (ebook-method/liv-og-haab/tr/odd-*.tsv), all
+%  read at the image: 13 mended by POST patch -- specks both OCRs read as stops, a hyphen or an apostrophe (pp. 4, 5, 10,
+%  28, 82), „dog“ read „dag“ by both (p. 8), a lost closing dash (p. 31), a false paragraph break (p. 44), spaces before
+%  marks -- and two misprints marked; the rest are the print's (Øjne, højlys, vanhelde, han, a quotation left open p. 73).
+%  What this cannot see: a misprint both OCRs normalise into a real word -- the sweeps find only non-words and nonsense.
+%  PRINTED AS IS (each seen at the image; a % comment at the site): „ubyre“ (p. 38, for uhyre), „al“ (p. 42, for at),
+%  „Aaabenbarelse“ (p. 67), „Philosphiens“ (p. 72), „har“ (p. 96, for han); also, unmarked, the print's „Ormadz“, „højlys“
+%  (p. 84) and „Øjne“ (p. 7, noted).
+%  PRINTER'S DEFECT (a sort that did not ink; the letter supplied, a % comment at the site): „Det“ (p. 58, „Deı“).
+%  The ø rule (Hans 2026-10-08) found nothing („stode“, stood, is a word).
+%  Not transcribed: signature marks, library stamps, specks; the large initials of the lecture openings are set as plain
+%  letters; the rule under each lecture heading is drawn by \lecture.  Quotation marks as printed („ “).
+%
+%  PAGE MAP.  printed p = PDF page - 12 (p. 1 = PDF 13, p. 103 = PDF 115); half-title PDF 9, title PDF 11.
+%  Each lecture begins on a new page: I p. 1, II p. 18, III p. 35, IV p. 52, V p. 70, VI p. 87.
+%
+%  TOOLS (ebook-method/liv-og-haab/, copied from gamle-nye-profeter): draft.py, ocr.py, abbyy.py, rules.py, sheets.py +
+%  reads.py + READER-BRIEF.md, spacedlines.py + spaced.tsv, zoom.py, pagecheck.py + PAGECHECK-BRIEF.md, patches.py
+%  (PATCHES, POST), decisions.tsv, and the sweeps splitsweep.py, linecheck.py, parcheck.py, unknown.py.
+%
+% =====================================================================
+\documentclass[12pt,a4paper,openany]{book}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{libertinus}
+\usepackage{libertinust1math}
+\usepackage[danish]{babel}
+\usepackage[protrusion=true,expansion=true]{microtype}
+\usepackage{setspace}
+\usepackage[margin=1.3in]{geometry}
+\usepackage{fancyhdr}
+\usepackage{hyperref}
+\hypersetup{pdftitle={Om Liv og Haab}, pdfauthor={Rasmus Nielsen}, hidelinks}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LE,RO]{\thepage}
+\fancyhead[C]{\textit{R. Nielsen: Om Liv og Haab (1875)}}
+\setstretch{1.3}
+\usepackage{marginnote}
+\renewcommand{\thefootnote}{*)}
+\newcommand{\tocline}[3]{\noindent\makebox[2.2em][r]{#1}\hspace{0.6em}#2\dotfill\ #3\par}
+\newcommand{\opage}[1]{\marginnote{\footnotesize\textit{[#1]}}}
+% a lecture opens a new page: heading, a short rule; the print's large initial is not reproduced.  The contents line is
+% editorial (the print has no Indhold): \tableofcontents below lists the six lectures.
+\newcommand{\lecture}[1]{\clearpage\phantomsection\addcontentsline{toc}{chapter}{#1}\begin{center}{\large #1}\\[0.4em]\rule{3em}{0.4pt}\end{center}\medskip\noindent}
+
+\begin{document}
+
+% --- front matter: PDF 9, half-title »LIV OG HAAB.« with a short rule; PDF 11, title (both read at the image, m1:F9, F11,
+% 2026-10-12).  The print has no Indhold; the table of contents after the title is editorial.
+\begin{titlepage}
+\begin{center}
+\vspace*{2em}
+{\small OM}\\[1em]
+{\Huge LIV OG HAAB.}\\[2.5em]
+SEX FORELÆSNINGER\\[1em]
+{\small AF}\\[1em]
+{\large R. NIELSEN.}\\[2em]
+[publisher's device]\\[4em]
+{\large KJØBENHAVN.}\\[0.5em]
+FORLAGT AF DEN GYLDENDALSKE BOGHANDEL (F. HEGEL).\\[0.5em]
+{\small TRYKT HOS J. JØRGENSEN \& CO.}\\[0.5em]
+{\small 1875.}
+\end{center}
+\end{titlepage}
+
+\renewcommand{\contentsname}{Indhold {\normalsize\textit{(editorial; not in the print)}}}
+\tableofcontents
+\clearpage
+
+
+% ===== TEXT (pp. 1--103) =====
+% --- p. 1 ---
+\setcounter{footnote}{0}%
+\lecture{Første Forelæsning.}\opage{1}Livet, og da særlig Menneskelivet, er anlagt paa eiendommelige
+Vilkaar. Vi leve i det Nærværende, og det
+Nærværende maa være os vigtigt, thi det er jo det, som
+i fuldeste Maal er virkeligt. Men fæste vi nu vort Blik
+paa dette Virkelige, Nærværende, saa svinder det ind
+og bliver saa kort: det forvandler sig til lutter flygtige,
+forbifarende Øieblikke. Hvad der i dette Nu er et
+Nærværende, er i næste et Forbigangent, og hvad der
+endnu er et Tilkommende, er i næste Nu et Nærværende.
+Dersom hele vort Livs Indhold skulde indskrænke sig
+til det, vi i strængeste Forstand maae kalde det Nærværende,
+hvor vilde det være forfængeligt, tomt og fattigt.
+Det Nærværende er jo egenlig kun en Grændse mellem
+Fortid og Fremtid; følge vi Grændsepunktets Bevægelse
+som Linie, da er Virkelighedslinien smal, smallere endnu
+end den, hvorpaa Liniedandseren bevæger sig.
+
+Hvoraf kommer det da, at Livets Virkelighed kan,
+ikke alene brede sig for vor Anskuelse i Rummet, men
+strække sig i Tiden, saa at ikke blot Minuter og Timer,
+men Dage, Maaneder, Aar kunne synes at samle sig til
+Eet og gaae ind under det Nærværende? Det kommer
+jo deraf, at vi ikke blot ere nedsænkede i det timelige
+% --- p. 2 ---
+\setcounter{footnote}{0}%
+\opage{2}Nu, men ogsaa hævede derover: vi see fremad og vi
+see tilbage. Vi have det Kommende i Forventning, det
+Svundne i Erindring. Erindring og Forventning række
+hinanden Haand og bære Virkelighedens Vægt paa stærke
+Arme. Forventning af et Onde er Frygt, Forventning
+af et Gode er Haab; saa deles Livet mellem Frygt og
+Haab. Forventningen sigter paa det Mulige, men Erindringen
+forklarer det Virkelige; thi ligesom Planten
+voxer af Frøet, og Frøet igjen af Planten, saaledes
+fødes det Virkelige altid af en Mulighed, og nye Muligheder
+ligge skjulte som Frø i Virkelighedens Jordbund.
+
+Hvorledes Forventningen skifter mellem Frygt og
+Haab, beroer ikke alene paa et Øiensynligt, der vækker
+Angst, som ved et Skibbrud, naar Nødskriget høres, og
+Redningsbaadene ere i Arbeide; men det beroer ogsaa,
+og det fornemmelig, paa dybere Forstaaelse af, hvad
+Virkelighed er i sin Grund, hvilke Muligheder den
+bærer i sit Skjød. En saadan Forstaaelse beroer igjen
+paa Oplevelse, og det Oplevede bevares i Erindringen:
+af Erindring lære vi at frygte, og af Erindring lære vi
+at haabe.
+
+Naar Aaret skifter, er der en Midnatstime, da det
+kan være spændende nok at blive alene med sig selv.
+Et Fremtidsforhæng ruller op, og hvad er det vi see?
+Et Hav af bølgende Muligheder! Ellers er Scenen tom,
+hvad der bevæger sig hen over den er kun Skygger:
+det Virkelige, der forventes, er endnu ikke kommet.
+Og dog er den tomme Scene bygget paa virkelig Grund,
+den svæver ikke i Luften: dens virkelige Grund er alt
+det Svundne, som Erindringen bærer. Hvad vil der
+vise sig? Ønsket frister, Frygten advarer, Sandsynligheden
+regner med mange Tal, Erindringen væver et
+% --- p. 3 ---
+\setcounter{footnote}{0}%
+\opage{3}gaadefuldt Væv, men Haabet? Vil Haabet ikke vise
+sig, hvor er da det Hele dødt og øde, Aandedrættet
+tungt, Stenen paa Hjertet ikke til at bære. Men det
+lysner: Haabet kommer som Livets Herold, en Dagning
+i Øst, og dog bag Erindringens Slør som Maanen i den
+klare Nat. Det er Haabet, hvormed Fremtidsstykket
+begynder, det er Haabet, der hilses med lønlig Jubel.
+Haabet er den skjønne Skuespillerinde: hvilken Straale
+i hendes Blik! hendes Ord er Musik, hun dandser paa
+Tidens Vover, hun kaster --- see, disse Blomster af
+Lys paa Mulighedernes Hav hen over den dunkle, af
+Skygger befolkede Scene.
+
+Skjøndt Erindringen tilhører Fortiden og Haabet
+Fremtiden, saa er det dog umiskjendeligt, at de ere to
+Strømme af een Kilde. Livet er den fælles Kilde,
+hvorfra de udvælde og hvortil de uafbrudt vende tilbage.
+Udtørres Haabets Væld, saa udtørres ogsaa Erindringens,
+og omvendt.
+
+Efter det Udvortes at dømme, skulde man vel antage,
+at Haab og Erindring i den Grad vare deelte, at
+de endog maatte have hver sin Livsalder. Ungdommen,
+siger man, er Haabets Tid, Alderdommen Erindringens.
+Den Unge har Lidet at erindre, men Meget at haabe;
+den Gamle har Lidet at haabe, men Meget at erindre.
+Saa priser man Ungdommens Vaar med de knoppende
+Haab og trøster Alderdommen med en Erindringens
+Efterhøst. En bedaarende Lovprisning, en sørgelig Trøst.
+Det Ungdomshaab, der mangler Erindring, fordi det
+mangler Erfaringens Segl paa indre Oplevelser, hvad
+er det vel? En Duft, en Klang, et Toneløb paa Livets
+Strengeleg, en Morgendrøm, der svinder, naar Virkeligheden
+selv begynder sit Dagværk. Og den Erindring,
+% --- p. 4 ---
+\setcounter{footnote}{0}%
+\opage{4}der skal trøste en Alderdom uden Haab, hvor er den
+bleg og mat! Der er Liv i Erindringen, saalænge Haabet
+lever, men naar Haabet døer, skifter Erindringen Farve.
+Den sygner, tæres hen, et Minde om Savn, et Gjenfærd
+fra en svunden Tid, en urolig Aand, hvis stirrende Blik
+og veemodige Miner forraade, at der end ikke er Fred
+i Glemselens Grave.
+
+Livet er mere end blot Naturgave; det er, aandelig
+forstaaet, en stor Opgave. Vi leve først, naar vi lære
+at leve. Haab og Erindring høre ikke til de Ting, som
+uden videre indfinde sig af sig selv; det er sjælelige
+Virksomheder, indre Tilstande, der trænge til Omhu og
+Pleie. Her er Noget at lære. Vi lære at haabe, alt
+som vi lære at frygte, og vi lære at frygte og haabe,
+alt som vi lære at erindre.
+
+Ligesom en god Huusholder omhyggelig gjennemgaaer
+sine Regnskabsbøger og passer nøie paa at ingen
+Gjældsposter oversees og intet Udestaaende glemmes,
+saaledes maa vort Livs Mellemværende mellem Haab og
+Erindring idelig opgjøres: udestaaende Summer indkræves,
+Gjældsposter likvideres, og Erindringen nøiagtig
+skrive og gjemme enhver Kvitering. At erindre er ikke
+det Samme som at huske. Der er Mennesker, som huske
+godt, men erindre maadeligt, og der er dem, der huske
+maadeligt, men erindre godt. Hukommelsen opbevarer
+det Virkelige ligefrem som det er: vi huske Løst og Fast,
+det Tilfældige med det Væsenlige; men Erindringen foretager
+en Lutring af det Oplevede og tilegner sig kun
+det Væsenlige. Erindringen sætter Kapitalen fast, de
+løbende Udgifter udredes af Hukommelsen: for at opspare
+Livskapital, maae vi lære at erindre. Saaledes ogsaa
+med Haabet. At haabe er ikke det Samme som at
+% --- p. 5 ---
+\setcounter{footnote}{0}%
+\opage{5}bugne af glad Forventning eller tillidsfuldt at ønske.
+Der er livlige Mennesker, rødmussede Sjæle, som altid
+have det bedste Haab, rosenfarvede Forventninger, altid
+gode Varsler. Men deres Varsler ere kun Fugleskrig,
+og deres „bedste Haab“ som Solen i April. Naar Forventningen
+rider Sommer i By, og Udsigtens Solskin
+smigrer Ønsket, nedkomme de altid med et nyt Haab.
+Men det Nyfødte faaer desværre kun en kort Levetid:
+Udsigterne skifte, Vinden vender sig, og det blussende
+Haab blæser ud. Skulle vi under de skiftende Udsigter
+holde Haabet fast, da maae vi lære at haabe.
+
+Den bedste Læremester for Erindring og Haab er
+Frygten; vi maae lære at frygte. Den, der ikke veed,
+hvad det er at frygte, veed heller ikke, hvad det er at
+haabe, og den, der ingen Erindring har om oplevet Fare,
+veed endnu ikke ret hvad det er at erindre. Men netop
+med Hensyn paa Frygt og Fare er det mærkværdigt,
+hvorledes vi Mennesker anlægge en ganske anden Maalestok
+paa Haabet end paa Erindringen. Jo mindre Faren
+synes at være, desto større er vort Haab; men omvendt:
+jo større Faren virkelig har været, desto større er den
+tilsvarende Erindring. Den truende Fare er et Fremtidsmørke,
+en Mulighed, der vækker Frygt. Mod den
+mørke Mulighed ruster Haabet sig og peger paa de
+lyse Muligheder, Muligheden af, at Faren kan gaae forbi,
+Muligheden af, at den kan overvindes. Haabet seer
+skævt til Faren, vil allerhelst skjule den, dække den
+med en Flig af sin Kaabe, at dens afskrækkende Udseende
+ikke skal forfærde os. Haabet gaaer i Forbund
+med Ønsket, og Ønsket og Haabet ere enige om, at
+det dog i Grunden var allerbedst, om der slet ingen
+Fare var. Faren er Fjenden. Det er jo muligt, at
+% --- p. 6 ---
+\setcounter{footnote}{0}%
+\opage{6}Fjenden flygter, naar man træder ham dristig under
+Øine, men det Modsatte er ogsaa muligt. Det er
+muligt, at Fjenden kan fældes, naar man behjertet
+samler sin Kraft og retter et Slag, som rammer; men
+desværre, det Modsatte er jo ogsaa muligt. Saa vexler
+Frygt med Haab, og hverken Ønsket eller Haabet veed
+ret Besked med Faren.
+
+Anderledes Erindringen; den veed Besked med Faren,
+thi Faren er nu oplevet. Erindringen veed, at en Fare,
+seet paa Afstand, kan synes mindre end den virkelig
+er, og lærer os at frygte. Men den veed ogsaa, at de
+mørke Muligheder, der indhylle Faren, flagre om Faren
+som en Reisekappe, saa længe den endnu har Farten
+af et Tilkommende, kunne give den et langt forfærdeligere
+Udseende end Virkeligheden selv, naar den er
+kommet. De mørke Muligheder ere som Tordenskyer;
+den, der er midt i dem, skal ikke være saa udsat som
+de, der bevæge sig neden under.
+
+Der er især en Klasse af Farer, hvilke Erindringen
+elsker, ja opelsker med en Forkjærlighed som En, der
+opelsker Blomster, Farer, hvis Pragtbilleder den altid
+viser frem, naar den vil kjæle for Ønsket og smigre
+Haabet; det er ingenlunde dem, der droge forbi som
+Uveirsskyer uden Uveir, men netop dem, som sindigt
+Mod og en besluttet Villies Udholdenhed lykkelig overvandt.
+Det Ord er bekjendt, hvormed Oldtidens Krigere
+opmuntrede hverandre, naar det for Alvor gjaldt at
+sætte Livet ind: \textit{olim hæc meminisse juvabit,} engang
+skal det være en Lyst at mindes dette. Hvad der er
+bittert, tungt, ja afskrækkende, naar det skal opleves,
+kan være trøsterigt, skjønt og glædeligt, naar det er
+oplevet. Der er i Poesien, i Historien, ja selv i det
+% --- p. 7 ---
+\setcounter{footnote}{0}%
+\opage{7}daglige Liv Exempler nok, som lære os, hvad Erindring
+om overvunden Fare formaaer, og i hvilken Grad den
+kan smigre for Haabet.
+
+Det skildres i en Romance, hvorledes Kong Alfons
+af Castilien --- efter en glimrende Seir over Maurerne
+ved Saladofloden --- sidder paa Thronen og plukker
+Ædelstenene af sin Krone for at uddele dem til Løn blandt
+de tappre Riddere. Han har tilsidst kun een, Rubinen,
+tilbage, den kostbareste af dem alle; men hvor er Helten,
+den unge Helt, han som altid holdt sig ved Kongens
+Side? Midt i en Skov af Damascenerklinger afbødede
+hans Skjold de dræbende Hug; Kongen skylder ham sit
+Liv, hvor er „den grønne Ridder“? Da triner den beskedne
+Yngling frem; men, siger han med Haand paa
+Hjertet: den funklende Rubin er ingen Løn for mig.
+Den Ædelsteen, som ene lønner mig, den bærer Kongen
+i sit Bryst. Alle studse, vredes, hvor besynderligt! Da
+blottes under det løftede Visir en deilig Kvindes Aasyn.
+„Donna Blanca, Dronningen!“ Der gik en Hvisken
+gjennem Salen. Det var et Øieblik. Et saadant Øieblik,
+viet til Erindring, omstraalet af Haab, ja et saadant
+Øieblik var vel værd at opleve. Hvor forfærdeligt
+at imødesee Krigens Rædsler, naar Forventningen truer;
+men hvor opløftende at have oplevet selv det Rædselfulde,
+naar Faren vel er overvunden.
+
+Og nu fra det daglige Liv, en kort Fortælling om
+en ung Moder. Det er Nyaarsaften; hun sidder ene,
+Manden er paa en Reise. Og dog, hun er ikke alene:
+en lille Dreng med klare Øjne og guult krøllet Haar er % print: „Øjne“ with j (elsewhere Øine)
+hos hende; men han kan jo rigtignok ikke tænke paa
+at holde hende med Selskab, han har saa travlt med
+sig selv, han exercerer paa Gulvet. Som hun sidder i
+% --- p. 8 ---
+\setcounter{footnote}{0}%
+\opage{8}Tanker og en stille Bøn gaaer igjennem hendes Sind,
+føler hun sit Hoved tungt; hun maa læne sig lidt tilbage
+og lukke Øinene. Da seer hun et Syn, et Sygeleie.
+I Sengen ligger et Barn, gustent og hentæret; en
+forgrædt Kvinde sidder hos og stirrer paa den Lille,
+som aabner de halvbrustne Øine og lukker dem mat.
+Saa svinder Synet, hun farer op i Skræk og Angst: var
+det et Varsel? Hun tør slet ikke tale derom. Manden
+kom tilbage, og mangen fortrolig Meddelelse fandt
+Sted om, hvad der var seet og skeet i Mellemtiden;
+men det Gaadefulde, det Uhyggelige kunde hun ikke
+berøre. Hun stred med Frygten og klyngede sig til
+Haabet. Saa gik Aaret hen, og hvad betød saa Varslet?
+Næste Nyaarsaften var den lille Dreng blevet endda
+ikke saa lidt større og da ogsaa af og til lidt mere
+støiende. Det var en stor Glæde for Forældrene, at
+de just den Aften kunde see, hvor han var voxet i det
+sidste Aar og blevet sundere og kraftigere end de havde
+turdet haabe. Thi der var ganske rigtigt foregaaet en
+stor Forandring med den Lille. Han havde været syg,
+længe syg, dødssyg. Det havde, for Moderen især, været
+tunge Dage og mørke Nætter. Der var blevet vaaget
+ved hans Leie, grædt ved hans Leie, bedet ved hans
+Leie, da med Eet, just som den sidste Gnist af Haab
+skulde slukkes, vendte Livet forunderlig tilbage. Saa
+sad de Lykkelige, Mand og Hustru, sammen og forklarede
+for hinanden, hvor godt det dog er, at vi ikke
+forud vide det Tilkommende, hvor velgjørende det er,
+at Tilskikkelserne komme over os, at der i Menneskets
+Sind ere Kræfter skjulte, som først komme for Lyset,
+naar Afgjørelsens Time er der, at vi dog allermeest
+elske det, hvorfor vi allermeest have lidt og stridt, det,
+% --- p. 9 ---
+\setcounter{footnote}{0}%
+\opage{9}vi have vundet gjennem Frygt og Fare. Saa sad de
+Haand i Haand; det var indbyrdes Underviisning: de
+lærte at erindre og de lærte at haabe.
+
+Dog, vi ere endnu ikke færdige med Faren; den
+har Mere at sige os, naar den skal tale heelt ud.
+Erindringen har fremstillet den i et formildet Lys ved
+Hjælp af de glædelige Udfald. Det glædelige Udfald
+berøver Faren dens Braad, thi det Farlige ved Faren
+er netop Muligheden af et sørgeligt Udfald. Lad Erindringen
+nu regne efter, tælle de glædelige Udfald sammen
+i en Rubrik, de sørgelige i en anden og see, paa hvilken
+Side den faaer den største Sum. Om ogsaa begge
+Summerne vare lige, ja selv om Sandsynlighedsregningen
+fandt, hvad den ikke finder, at der, under Forudsætning
+af omtrent lige Muligheder, maatte paa hvert sørgeligt
+Udfald gaae ti glædelige: det vilde dog ikke forandre
+Sagen, ikke tage Braadden bort, ikke fjerne den forfærdelige
+Mulighed, der er Farens Allerinderste. Det
+sørgelige Udfalds Mulighed er det Damoklessværd, der
+hænger truende over Issen paa hver dristig Daad, som
+kun er viet det Timelige; alle driftige Bestræbelser, alle
+Øieblikkets Haab, alle Foretagender, som fylde Slægtens
+travle Hu og mætte det Nærværende med Indhold, have
+dette truende Sværd over sig. Ingen Plan saa snild, den
+kan jo strande; ingen Villie saa stiv, den kan jo knækkes;
+intet Taarn saa kneisende, det kan jo falde; ingen
+Bygning saa stolt, den kan jo styrte sammen. Hvor
+Faren viser sit Medusahoved, der daaner Haabet, og
+Erindringen krymper sig i Smerte.
+
+Saa maa der da være en Tilværelsens Magt, der
+raader saa vel for de sørgelige som for de glædelige
+Udfald. Men hvad er det for en Magt? Lykkens
+% --- p. 10 ---
+\setcounter{footnote}{0}%
+\opage{10}Indfald, Skæbnens Gang, et styrende Forsyn? Hvad er
+det, hvo lærer os det, hvor faae vi Vished derom, en
+Vished, som ikke bedrager? Livets Ophav, Livet selv
+maa give os Vished. Men, siger man, Livet selv er jo
+saa høist forskjelligt, den Ene faaer et Indtryk, den
+Anden et andet. Livet taler med tusinde Tunger, hvert
+Menneske hører med sit Øre, oversætter i sit Sprog og
+faaer sin egen Forklaring. Den Ene søger Livets Ophav
+i Naturen, den Anden i Aanden; den Ene anviser Individet
+sit Maal inden Timelighedens Grændse: efter
+Døden er Intet at haabe og Intet at frygte; den Anden
+henlægger Maalet i Evigheden: efter Døden er der Alt
+at haabe og just derfor ogsaa Alt at frygte; den Ene
+gaaer Faren imøde med Tillid til Verdenslovenes absolute
+Uforanderlighed; den Anden troer paa et faderligt Forsyn,
+en Kjærlighed, som aldrig sover. Hvem har nu Ret?
+Det er en gammel Trætte, og Spørgsmaalet er, hvorledes
+den skal blive bilagt.
+
+Det kunde vel synes, at dersom Gaadens Løsning
+var at søge i Livet selv, vilde de mange Livsbetragtninger
+umuligt kunne give saa modsigende Resultater; det
+kunde synes, at navnlig den videnskabelige, rolige, sindige,
+grundige, omfattende Betragtning omsider maatte
+blive i Stand til at magte Opgaven og bilægge Striden.
+Heri er en Vildfarelse. Vel maa Livet have et i sig
+uforanderligt Grundlag, men hvor dybt det ligger og af
+hvilken Beskaffenhed det er, opdages, ikke ved at gruble,
+men ved at leve: Gaadens Løsning er ikke i det Udvortes,
+men i det Indvortes. Det Indvortes er ikke udtømt
+i det Almene, som Alle med Nødvendighed have
+fælles; der er Kilder i Bunden, og hver Enkelt maa
+for egen Regning see at grave og finde. Menneskelivet
+% --- p. 11 ---
+\setcounter{footnote}{0}%
+\opage{11}faaer ganske vist et tvetydigt Udseende, naar man betragter
+det udvortes, vil overskue det, som man overskuer
+et Landskab, eller forfølge dets Løb som en Flod,
+hvis Udspring og Udmunding det gjælder om at faae
+een Gang for alle nøiagtig afsat paa Kaartet. Varer
+det længe med at opdage Nilens Kilder, da vil det vare
+længere endnu, inden den forskende Videnskab naaer
+saa vidt, at den virkelig opdager Livets Kilder. Om
+end Opdagelsen gives i et videnskabeligt Skyggerids, er
+dog derved end ikke det Halve naaet. Kalde vi Livet
+en Flod, da er denne Flod deri forskjellig fra Jordens
+andre Floder, at dens Udløb er hyllet i et uigjennemtrængeligt
+Mørke. Den taber sig, hedder det, under
+Jorden. Ja under Jorden! Hvad er den saa i sit videre
+Løb, en Lethe dyndet og dorsk, Glemselens Flod med
+muldne Been og Gruus af hensmuldrede Bautastene?
+eller maaskee et Foryngelsens Bad, et speilklart Vand
+med Himlens Dyb, en Paradiisflod, den Haabets Strøm,
+hvoraf Erindringen drikker?
+
+Livets sidste Maal kan ikke opdages ved nogensomhelst
+udvortes Beskuelse, ikke fastsættes ved tænkende
+Almeenbetragtning, være sig af Himlens Stjerner eller
+af Markens Blomster, være sig af Allivet under Nødvendighedens
+eller under Frihedens Former. Enhver,
+selv den sindrigste Betragtning af Selvvæsenets Tilsyneladelser
+i Naturen eller Historien er behæftet med Tvetydighed
+og giver os paa hvert Spørgsmaal et dobbelt
+Svar, baade Ja og Nei. Hermed er ikke kastet Vrag
+enten paa Fornuftens Brug eller Erfaringens Hjælpemidler.
+Naturens Love, Menneskehedens Skjæbner, Historiens
+Gang, Alt indeholder Vink og Veiledning. Vi
+ære Traditionerne i den kirkelige Lære; Aabenbaringens
+% --- p. 12 ---
+\setcounter{footnote}{0}%
+\opage{12}hellige Ord ere den Troende en Klippegrund, hvorpaa
+han bygger sit Haab. Men det forandrer ikke Tilværelsens
+Grundlov, ikke Livets Vilkaar; thi dette er
+Livets Vilkaar: at Enhver, som vil komme til Bunds i
+det store Spørgsmaal, maa arbeide med at komme til
+Bunds i sig selv. De Gamle troede, at der etsteds i
+Jorden var en Hule, hvorigjennem Veien gik ned til
+Underverdenen, ned til de Dødes Rige. Paa en saadan
+Hule troe vi ikke, men vi ere forvissede om, at der i
+Menneskets Sjæl er et Dyb, hvorom Mange neppe have
+mere end en Anelse, at det er det dunkle Dyb, hvori
+Evigheden boer, og hvor Veien gaaer ned til Gaadernes
+Land.
+
+At denne Opfattelse af det Indvortes nøiagtig stemmer
+med det, der viser sig ved en Betragtning af det Udvortes,
+kan Historien lære os. Gaae vi tre Hundredaar
+tilbage, hvilken Forskjel mellem Fortid og Nutid, netop
+med Hensyn paa Spørgsmaalet om Liv og Haab!
+
+Det Spørgsmaal, der drev Reformationen frem, var
+trods alle timelige Betingelser og Tilsætninger ganske
+vist et Evighedsspørgsmaal, og for saa vidt et mægtigt,
+afgjørende Livsspørgsmaal; men det var under en Form,
+som den kritisk reflecterende Nutid ikke vil vedkjende
+sig. I Reformationens og i Trediveaarskrigens Tidsalder
+stod det fast som en afgjort Sag, at den positive,
+aabenbarede Religion maatte være Grundlag for Liv og
+Haab. Derom var ingen Tvist, ingen Tvivl. Men i
+hvilket Kirkesamfund er den uforfalskede Religion at
+finde? Derom var Tvivl og Tvist og blodig Strid. For
+den nærværende Tid er det første afgjørende Spørgsmaal
+ikke: i hvilket Kirkesamfund har den positive
+Religion sit reneste Udtryk? Spørgsmaalet er meget
+% --- p. 13 ---
+\setcounter{footnote}{0}%
+\opage{13}mere dette: trænger det humane Samfund virkelig til
+Religion? Kan Menneskelivet ikke fuldende sit Løb og
+naae sit Maal uden Religionens, i det mindste uden
+den positive Religions Bistand? I hine Dage var det
+en fast dogmatisk Forudsætning, at Sjælen maatte fortsætte
+sit individuelle Liv efter Døden; Spørgsmaalet
+var: hvorledes vil den fortsætte det, i Salighed eller
+Fordømmelse? Gives der en Skjærsild eller er Læren om
+Skjærsilden en Fabel? I vore Dage staaer Spørgsmaalet
+om Skjærsild og evig Fordømmelse ikke i Forgrunden;
+Spørgsmaalet er, om der i det Hele gives et Liv efter
+Døden, om ikke Udødelighedshaabet selv er en Indbildning.
+
+
+Overfladisk seet, tager denne Forandring sig ud
+som et sørgeligt Tilbageskridt, ikke som et væsenligt,
+culturhistorisk Fremskridt. Det maa jo synes, som toge
+de dogmatiserende Fædre i det sextende og syttende
+Aarhundrede de store Livsspørgsmaal i større Dybde
+og med langt større Alvor end deres politiserende
+Sønner i det attende og nittende. Fra Individernes
+Synspunkt kan det maaskee være saa, men ikke fra
+Historiens. Almeenbevidstheden har, hvad det Religiøse
+angaaer, i vor Tid gjort et umiskjendeligt Fremskridt.
+De Forudsætninger, paa hvilke hine dogmatiserende
+Fædre byggede deres Tro og Haab, vare alle tilførte
+udenfra, gik alle over i krystalliseret Form og stivnede
+i udvortes Autoritet. Det gjælder om de Evangeliske
+lige saa vel som om de Katholske. Enhver Tvivl blev
+forkjættret, enhver Modsigelse slaaet til Jorden ved et
+Magtsprog, enhver Anderledestænkende var øieblikkelig
+hjemfalden til Dommen. Følgen var, at det dybere
+Sjælelige, trods Rørelser, Længsler, Suk og Taarer,
+% --- p. 14 ---
+\setcounter{footnote}{0}%
+\opage{14}aldrig naaede til fuld Udvikling eller klar Forstaaelse.
+Troen var stærk, naar Lidenskaben blussede op, men
+just fordi det troende Blik eensidig hæftede ved en
+udvortes fast Formbestemthed med Udelukkelse af enhver
+anden, blev Begeistringen til Fanatisme. Fanatismens
+kraftigste Næring er Had og Fordømmelse.
+I vore Dage er Fanatismen veget for Besindigheden,
+Fordømmelsens Ordfører er blevet svag paa Mælet.
+Følgen heraf er, at det Indre kan komme til fri Udvikling,
+at det kan blive kjendeligt, hvad der rører sig
+i Sjælene. Forskjellige Røster lade sig høre, modsatte
+Anskuelser brydes med hverandre; men intet Magtsprog
+slaaer umiddelbart igjennem, ingen udvortes Myndighed
+faaer Ret til at afgjøre en Strid, som kun kan udkæmpes
+med aandelige Vaaben. Troen er umulig uden indre
+Frihed; men Frihed for Tro er tillige Frihed for
+Vantro. Kun paa Frihedens Vilkaar tør det, efterhaanden
+som Striden gaaer frem og Kriserne blive
+alvorligere, haabes, at den gamle Trætte, den lange
+Proces, omsider kan blive ført for sit rette Værnething
+og Sagen indledet til Doms.
+
+At Menneskelivet efter sit inderste Væsen maa være
+af eet Anlæg, have eet fælles Maal, og at Sandheden
+for saa vidt maa være den samme for Alle, kan ikke
+bestrides. De indbyrdes modstridende Livsanskuelser
+hidrøre fra en overfladisk, eensidig Opfattelse eller
+endog Fornegtelse af Grundsandheden og følgelig fra
+en Miskjendelse af Livets \emph{oprindelige} Væsen, dets
+Vei og Maal. Denne Miskjendelse kan ikke fjernes ved
+udvortes opstillede Sandhedsnormer. Lad det tusinde
+Gange være sandt, at Sandheden een Gang for alle har
+aabenbaret sig; hvad hjælper det, naar dens Aabenbarelse
+% --- p. 15 ---
+\setcounter{footnote}{0}%
+\opage{15}mistydes. Var det en umiddelbar Natursandhed, hvorom
+det gjaldt, saa maatte den bekræftes ved naturvidenskabelige
+Undersøgelser; var det en ligefrem historisk
+Kjendsgjerningssandhed, maatte den stadfæstes ved historisk
+Kritik; var det en almindelig Væsens- og Nødvendighedssandhed,
+maatte den prøves i objectiv philosophisk
+Tænkning; men en personlig Sandhed, en
+Villiessandhed, en i Frihed begrundet Livssandhed,
+hvorledes skal den kunne prøves? Hvad Frihed er,
+kan kun erkjendes af den, der frigjøres og tilegner sig
+Friheden; hvad Personlighed er, kun af den, der har
+gravet saa dybt i Sindets Grund, at han er naaet til
+Livets Ophav. Alt kommer an paa Oplevelse. De mange
+hverandre modstridende Livsanskuelser hidrøre altsaa
+fra de mange forskjellige, lavere og høiere, Trin, hvorpaa
+Oplevelsen staaer. Har Menneskelivet i sin Heelhed
+eet Anlæg, een Grundlov, eet Maal, saa er det umuligt,
+at Livets Fordringer kunne fyldestgjøres lige fuldstændig
+paa et hvilketsomhelst Oplevelsestrin.
+
+At En lever enten paa et umiddelbart eller vilkaarligt
+Trin i umiddelbare Nydelser eller vilkaarlige
+Interesser og finder sig tilfreds, er intet paalideligt
+Sandhedsmærke. Det kan jo være Lykke, tilfældig
+Individualitet, en ved Omstændighederne bestemt Tilstand.
+Naar Omstændighederne forandre sig, og Lykken
+svigter, hvad bliver der saa af den tilfældige Individualitet?
+Kun den, der har en Oplevelsens Vished om, at der
+hverken paa Jorden eller i Himlen, hverken i Tiden
+eller i Evigheden er nogen Tilværelsesmagt, der kan
+bringe ham i Splid med sig selv og føre ham bort fra
+sit Maal, har erkjendt sit Ophav og veed, hvad Livet
+er. Den eneste Prøve paa en Livsanskuelse er den,
+% --- p. 16 ---
+\setcounter{footnote}{0}%
+\opage{16}at Livet faaer Lov at udfolde sig og vinde Skikkelse.
+Er der syndet imod Grundsandheden, skal Tilværelsen
+nok gjøre det aabenbart, og Vildfarelsen komme for
+Dagen.
+
+Det er afgjort vist, at et levende Væsen aldrig kan
+blive til noget Større eller Bedre end det, hvorpaa det
+oprindelig er lagt an; det gjælder for Mennesket om
+at kjende sit Væsens Anlæg. Men Menneskets Anlæg
+er dobbelt: et grundvæsenligt, der svarer til Slægten,
+og et individuelt, der viser sig i særlig Begavelse. Det
+er i begge Henseender vigtigt, ikke at sætte sig selv
+for høit og heller ikke for lavt. Hvad den individuelle
+Begavelse angaaer, kan den Enkelte maaskee fra Begyndelsen
+af snarere være fristet til at vente sig for
+Meget end for Lidet, thi Phantasien er i Bevægelse:
+Haabet med sit Tryllespeil gaaer foran, og paa Veien er
+der lutter Roser; men naar Erfaringen kommer med Oplevelsen,
+stikke Tornene igjennem, og det kan da hænde,
+at Erindringen faaer Ar og Skrammer. Hvad den almene
+Begavelse: det at være Menneske, angaaer, er Slægten
+navnlig i vore Dage, da Naturhistorien florerer, snarere
+fristet til at sætte sit Livsanlæg for lavt end for høit.
+At være begavet som slet og ret Menneske har intet Smigrende
+for Individet, men at være Talent, Geni, fortrinlig
+begavet, kan smigre den Enkelte. Naar En siger: vi ere
+en Dyreslægt, uden Tvivl modificerede Aber, saa mener
+han ikke dermed at krænke Nogen, allermindst sig selv:
+han gjør jo blot sine naturhistoriske Kundskaber gjældende.
+Men er der Nogen tilstede, som med gammeldags Dannelse
+vilde svare den Talende: saa er Du jo selv paa
+Afstamningens Vegne i Grunden et Fæ, vilde det være en
+Fornærmelse. At være et Dyr, naar vi Alle ere Dyr,
+% --- p. 17 ---
+\setcounter{footnote}{0}%
+\opage{17}er ikke fornærmeligt, det angaaer jo kun vor fælles
+Begavelse; men at kaldes et Fæ er fornærmeligt, thi
+det er at sigtes for Mangel af individuel Begavelse.
+
+Vi bør ikke give os hen til phantastiske Forventninger
+og sætte vor Tilværelse for høit; men vi bør
+heller ikke opgive Haabet, det Evighedshaab, der adler
+vor Slægt, vi bør ikke sætte vort Liv for lavt. Der er
+i Oplevelsen en Maalestok for Haab, som Erindringen
+gjemmer. Det er denne Maalestok, vi i det Følgende
+skulle drage frem, idet vi tale om Liv og Haab.
+
+% --- p. 18 ---
+\setcounter{footnote}{0}%
+\lecture{Anden Forelæsning.}\opage{18}Der gaaer et Sagn om en undergjørende Kilde, en
+Sundhedsbrønd, helbredende for Alle, der tynges af
+Aarenes Vægt, den kaldes Ungdomskilden. Det er naturligt,
+at der i alle Verdens Egne, ogsaa i vort gamle
+Thule, er blevet flittigt søgt efter en saadan Kilde.
+Men alle Efterforskninger have hidtil været frugtesløse.
+Digteren med sin Ønskekvist er ufortrødent gaaet i
+Spidsen for de Søgende. Ofte har Kvisten bøiet sig i
+hans Haand, og han har varslet snart her, snart der;
+men desværre, hver Gang man styrtede til og stak
+Fingeren i Virkelighedens Jordbund, viste det sig at
+være --- en Feiltagelse. Ogsaa Archæologien har paa
+en Maade taget sig af Sagen ved at anstille værdifulde
+Udgravninger; men den archæologiske Congres er dog
+nok endnu, saa vidt vides, ikke kommet paa det Rene
+med Resultatet. Derimod er den moderne Kritik forlængst
+paa det Rene med, at Ungdomskilden maa regnes
+blandt de forlorne Sager, at det forholder sig med den
+som med Paradiset, de Vises Steen, Irems Have, Kong
+Salomons Ring og andre Fortidens Herligheder, der ere
+forlorne. Skade, skulde det være sandt, at Kilden ikke
+% --- p. 19 ---
+\setcounter{footnote}{0}%
+\opage{19}er til at finde. Vi tør ikke opgive Haabet, og naar vi
+ikke opgive Haabet, finde vi strax, hvad vi søge; thi
+Ungdomskilden er jo netop Haabet.
+
+At Haabet er en Ungdomskilde, skjønnes allerede
+deraf, at der altid er noget Ungdommeligt i det at
+haabe, og at det især er den Unge, som haaber; men
+Sagen faaer dog først sin rette Forstaaelse, naar vi
+besinde os paa, at der er to Slags Alderdom, en
+legemlig og en sjælelig, og svarende hertil da ogsaa to
+Slags Ungdom. Mod den Alderdom, der kommer med
+astronomiske Aar og vil regnes efter Almanakken, voxer
+ingen Urt, for den er der ingen Ungdomskilde. Men
+Sjælen er ikke saaledes afhængig af Tiden; den kjender
+en Ungdom, som allerede er gammel, og en Alderdom,
+som endnu er ung: der gives Oldinge paa Firsindstyve,
+som dog ere yngre end Mænd paa Tredive. Naar blev
+i sørgelig Forstand et Menneske gammelt? Den Dag,
+da det hørte op med at haabe.
+
+Idet vi tale om to Slags Alderdom og to Slags
+Ungdom, maae vi for Alting ikke glemme, at der ogsaa
+gives to Slags Haab. Der er timelige Haab, og de
+timelige Haab ere mange; og der er et Evighedshaab,
+som altid er eet og det samme. De to Slags Haab
+kunne skilles ad. Der kan haabes umiddelbart paa det
+Timelige med Forglemmelse af det Evige, og der er
+dem, der mene, at Hjertets kjæreste Haab først trives
+ret og blomstre i Døgnets Sol, naar Evighedens kjølige
+Aande er borte. Der kan haabes paa det Evige med
+Opgivelse og Forsagelse af det Timelige, og der er
+dem, der sætte Fjendskabet mellem Timeligt og Evigt
+saa høit, at Jorden maa blive en Jammerdal, før vi
+naae saa vidt, at vi øine Himlen. Det gaaer i Virkelig%
+% --- p. 20 ---
+\setcounter{footnote}{0}%
+\opage{20}heden dog ikke saa ligefrem med at aflægge det Timelige,
+som ivrige Bodsprædikanter synes at antage; det
+er en indviklet Skilsmissesag. Det er evig vist, at de
+to Slags Haab ikke tør forvexles; men det er ogsaa
+vist, at de i dette Nærværende høre sammen som
+Aand og Natur, som Sjæl og Legeme. Hvad er et
+timeligt Haab, naar det allersidste Evighedsskjær,
+det sidste Idealitetens Solglimt, er svundet? Det er
+ikke længer Haab, men enten en selvisk attraaende
+Indbildning eller en kold, paa Sandsynlighed grundet
+Forventning. Og hvorledes seer Haabet vel ud, naar
+det vender sig bort med Foragt fra ethvert Indhold,
+som tilbyder sig gjennem det Timelige? Det er en
+Livserfaring, at der ikke alene gribes fejl, naar enten
+det saakaldte Naturlige skal gjøres til Eet og Alt, eller
+der leves paa falsk Forlig mellem Timeligt og Evigt,
+men at der ogsaa gribes feil, og at Feilen ikke er
+mindre farlig, just fordi der sigtes høiere, naar Naturlivets
+Grund skal ryddes ud for at det Aandelige kan
+faae Plads. Det er vel sandt, at Menneskenes Mængde,
+navnlig i vort Aarhundrede, er langt mindre udsat
+for den sidste Fristelse end for den første; men desuagtet
+bør vi være paa vor Post imod den farligste
+af alle Vildfarelser. Det er i Religionshistorien ikke
+noget sjældent Syn, at Verdenslyst og gudelig Spægelse
+gaae Haand i Haand, at det selviske Væsen lige saa
+vel kan bringes til at rase i Forsagelser som til at
+svælge i Nydelser.
+
+Den sande Opgave indstiller sig først, naar man
+har indseet, at det Naturlige hører med i Udvikling af
+Aand, at det Evige laaner Stof og Indhold fra det
+Timelige. Fra dette Synspunkt bliver det os klart,
+% --- p. 21 ---
+\setcounter{footnote}{0}%
+\opage{21}hvad det Ungdommelige betyder, hvorledes Ungdom i
+væsenlig Forstand forholder sig til Haab.
+
+I det ungdommelige Sind ere to Elementer, det
+Naturlige og det Aandelige eller, hvad der siger det
+Samme, det Virkelige og det Ideale, det Timelige og
+det Evige, oprindelig sammenvoxede, de ere af eet Skud,
+Green og Blomst af een Knop. Den unge, uerfarne,
+men endnu ufordærvede Sjæl haaber, og hvorpaa?
+Naturligviis paa alt det, som er ædelt og stort og godt
+og skjønt i denne store, skjønne Verden. Det er ikke
+Storhedens tomme Begreb, ikke en almindelig Idee om
+et almindeligt Gode eller en tilreflecteret Forestilling
+om det i sig ubestemmelige Skjønne, der fylder Ungdomshaabet.
+Nei, det Store har Skikkelse: Helte med Sværd,
+det Gode har Kjød og Blod, og Skjønheden? Sidder
+jo ved Ruden, hvo der blot turde hilse.
+
+Det er et Misgreb, naar man vil overfylde en ungdommelig
+Phantasie med Eventyr om Ridderspil og
+Skjønhedspriis, om Heltekraft, som aldrig svigter, og
+om de mange Dydens Krandse, som Lykkens Fingre
+have travlt med at flette til de Seirende. Det er en
+Underviisning, der blæser op; man giver de Unge overspændte
+Forestillinger, Forventninger uden Oplevelser,
+Svulst og Svamp, opklækker kun Phantaster. Men det
+er mere end et Misgreb, det er en Forbrydelse mod
+de unge Sjæle, naar Underviisningen systematisk indrettes
+paa at gjøre dem gamle før Tiden; naar det
+Virkelighedsspeil, der stadig holdes dem for Øie, kun
+viser dem Billeder af en udlevet, undergaaet Verden
+med falske Idealer, et Civilisationens Theater, hvor
+Frækhed og Rænker og Magthaveri og dulgt Fortvivlelse
+spille Hovedrollen; naar Hukommelsen Dag for Dag
+% --- p. 22 ---
+\setcounter{footnote}{0}%
+\opage{22}belæsses med Stumper fra Ødelæggelsernes Herlighed,
+medens Forstanden sysler med Former og Former af
+Former uden Ende. Viisdomsuglen bygger i Storheds
+Ruiner! Men naar intet Ord af Liv, ingen Straale af
+Aand opklarer denne Underverden af sukkende Titaner
+og styrtede Giganter --- kun Sammenhæng og Væv, og
+Væv og Sammenhæng er den hele Forklaring: hvad
+Under, om den Unge ubevidst, halvbevidst opgiver sit
+første barnlige Haab; hvad Under, om han lidt efter
+lidt, endnu før Oplevelsens Tid, gjør sig fortrolig med
+Skæbnens Gang og Kræfternes Spil og den regnende
+Forstands Overlegenhed; hvad Under, om en kommende
+Slægt oplever, at Oldinge paa tyve Aar trække paa
+Skulderen med Smiil, hvis der endnu er en Daare saa
+ungdommelig at ville svømme mod Sandsynlighedernes
+Strøm og vove sit Liv paa Sandhed og Ret. Der er
+en Aandsforbrydelse til, som stjæler Ungdommen fra
+de Unge.
+
+Faaer Ungdomshaabet de nødvendige Betingelser
+for en sund og naturlig Væxt, vil Forholdet mellem det
+Timelige og det Evige arbeide sig frem under Livets
+Gang, og Retningen blive forskjellig, efter som Charakteren
+udvikler sig. Skal der virkelig danne sig en
+Charakteer, og den personlige Friheds Krav skee Fyldest,
+saa maa der nødvendig indtræde et Vendepunkt,
+da Villien vælger mellem Eet af To: enten at sætte
+det Timelige som det eneste Virkelige og med Forsæt
+udelukke det Evige, eller: at sætte det Evige som Maal
+og bearbeide det Timelige som Udviklingselement, som
+Middel. Hvorledes dette skeer i de Enkeltes Liv, kan
+ikke beskrives: her er ligesaa mange Muligheder som
+Individualiteter; men den Grundlov, hvorefter Udviklingen
+% --- p. 23 ---
+\setcounter{footnote}{0}%
+\opage{23}foregaaer, kan paavises, og det er, hvad jeg nu skal
+forsøge.
+
+Haabet bestemmes ved det, som haabes; men saa
+længe det Timelige endnu er sammenvoxet med det
+Evige, befinder Haabet sig, saa at sige, i en puppeagtig
+Tilstand. Forvandlingen foregaaer uformærkt. Saaledes
+f. Ex. med Elskovshaabet. De Haabende vide ikke ret
+deraf. Hvad der i lykkelig Forstaaelse er afgjort
+mellem dem, er et Timeligt og dog --- for Evigt! Saa
+kommer Øieblikket: Haabet flagrer som en Sommerfugl
+fra Blomst til Blomst, men de lykkelig Haabende føle
+sig forvissede om, at de lette Vinger kunne bære den
+op til Stjernerne. De have, med andre Ord, en Anelse
+om, at et evigt Liv kan begynde i Tiden. Det Sidste
+er rigtigt; men Forstaaelsen er saa ungdommelig. Det
+ungdommelige Haab maa prøves; hvori bestaaer nu
+Prøvelsen?
+
+Det unge Haab er forberedt paa Hindringer, beredt
+til at kæmpe mod Modstand. Dersom Modstand og
+Hindring ikke var mulig, saa var det jo ikke Haab,
+men mathematisk Vished. Modstand er ikke Haabets
+farligste Fjende, thi Haabet har Mod; Hindringen, selv
+om den strækker sig langt, er ikke Haabets farligste
+Fjende, thi Haabet har ogsaa Taalmod; der er en Udholdenhed
+i Haabet, som hvisker: giv Tid, min Dag
+vil komme, Lykken skal krone de Trofaste. Men der
+er en Mulighed, som Tiden sidder inde med, en Fjende,
+den lumskelig huser: det er Skuffelsen i Form af Bedrag.
+Bedraget er Haabets farligste Fjende; det udsætter
+ikke Opfyldelsen, ak nei, det gjør Opfyldelsen
+til Intet, det vil jo snigmyrde Haabet. Men hvorfra
+kommer Bedraget? Ikke fra det Evige, nei, fra det
+% --- p. 24 ---
+\setcounter{footnote}{0}%
+\opage{24}Timelige! Her begynde de to Elementer, Evigt og
+Timeligt, at skilles ad, og denne Adskillelse er en Krise.
+
+Det vilde være meget ungdommeligt, om vi antoge,
+at det alene var Elskovshaabet, der saaledes var udsat
+for Bedrag. Bedragets Mulighed ligger paa Luur overalt;
+er der mangehaande timelige Haab, saa er der ogsaa
+mange Slags Bedrag og mangehaande Skuffelser. En
+Skuffelse er i samme Grad smertelig, som Haabet var
+tillidsfuldt og rigt og skjønt. Det Farligste ved Krisen
+er, at Skuffelsen af et enkelt Haab saa let er i Stand
+til at brede sig, angribe Haabet selv og gjøre den
+Skuffede haabløs. En Solformørkelse, hvor den er
+total, udbreder et Dødningeskjær over den hele Natur,
+Markens Dyr betages af Angst, Kvæget brøler, Smaafuglene
+flagre forvildede om eller søge til deres Reder.
+Saaledes ogsaa, naar Bedragets Skygge dækker Haabet
+fuldstændig, vil Synet paa det hele Liv undergaae en
+Forvandling. Det er ikke blot denne eller hiin enkelte
+Udsigt, der formørkes, men Tillidens Grundvold rystes,
+Tilværelsen faaer et Gravlampeskjær over sig. Hvorfor
+leve vi? Kun for at døe. Hvorfor nyde vi? For ret
+at lide. Hvorfor glædes vi? For dybt at sørge. Hvorfor
+haabe vi? For bittert at skuffes.
+
+Saalænge Sindet er i Oprør, ville Omgivelsens
+Trøstegrunde naturligviis ikke finde Indgang. At det
+nok gaaer over, at Tiden læger alle Saar, at man til
+Vederlag jo kan faae sig et nyt Haab, slige Hverdagstalemaader
+afvises med Foragt: „et nyt Haab, ja med
+en ny Skuffelse, en Mulighed, som med Tiden, naar
+Lykken en Dag er i sit onde Lune, faaer Lov til at
+løslade Bedraget !“ Vi mærke os, at Krisen her sætter
+Skilsmisse, ikke blot mellem Fortid og Fremtid, men i
+% --- p. 25 ---
+\setcounter{footnote}{0}%
+\opage{25}strengeste Forstand mellem Timeligt og Evigt. Om de
+adskilte Elementer nogensinde i dette Liv skulle gjenforenes
+og hvorledes, beroer paa mere end udvortes
+Omstændigheder, det beroer paa den Spændkraft, der
+er i Sindet, og fremfor Alt paa det, som Villien vælger
+og den modne Beslutning holder fast.
+
+Der gives vel faa Mennesker, som have betraadt
+Oplevelsernes Vei, uden at de tillige paa en eller anden
+Maade, med dunklere eller klarere Viden, i svagere eller
+stærkere Grad have erfaret, hvad det vil sige, at
+gjennemgaae en Skuffelsens Krise. Vi kunne ikke ligefrem
+hente vore Exempler fra det Udvortes, allermindst
+fra det offenlige Liv, thi Sager af denne Natur komme
+ikke paa Udstillingen. Historien opbevarer dem i hemmelige
+Archiver. Men begynde vi indenfra og raadføre
+os med Psychologien, vil den levere Exemplarer i
+Mængde. Bevægelige Grupper af Individualiteter, Mænd
+og Kvinder, Ynglinge og Piger, fattige, rige, eenfoldige,
+kløgtige, fremstille sig her paa dette første, farlige
+Overgangstrin. Lad os betragte dem nøiere: Figurer
+paa en dunkel Grund, Physiognomier af et tilsyneladende
+freidigt Ydre, men Streiflyset falder paa et gaadefuldt
+Indre; det er, som havde hvert Individ et dobbelt
+Ansigt. De ere alle Lidende, skjøndt man ikke saa lige
+kan see det paa dem. Lidt blege maaskee; men Bleghed
+kan jo have mange Aarsager. Nogle tankefulde,
+Panden taaget, Øinene svømmende, Andre, der løfte
+Hovedet stolt, i hvis ulmende Blik og sammenbidte
+Læber man ligesom læser en Udfordring; kort: af det
+Ydre kan Intet sluttes. Hvad der nager dem, er en
+Hemmelighed, de ere alle saarede af Skuffelsens Braad,
+alle bidte af Bedragets Slange. Unge, og dog allerede
+% --- p. 26 ---
+\setcounter{footnote}{0}%
+\opage{26}gamle! Thi som man jo veed, at Haaret kan blive graat i
+en eneste Nat, saa kan et skuffet Haab i en Kummerens
+Time gjøre et Menneske ældre, end Tiden med rolig
+Gang gjennem mange Aar. Dog er Sygdommen ikke
+dødelig. Det vil gaae over; Saarfeberen sætter sig,
+helbredende Kræfter arbeide i skjulte Værksteder, om
+føie Tid gjør Livet atter sine Krav gjældende: vi kunne
+snart betragte vore Lidende som Reconvalescenter.
+
+Det Punkt, hvorpaa den psychologiske, vi kunne
+tilføie den religiøs-ethiske, Interesse hviler, er nu dette:
+hvorledes vil Helbredelsen foregaae? Med dem, som,
+uden at fatte den Tvetydighed, hvoraf Krisen skulde
+udrive dem, faae sig et nyt Haab, som man faaer sig
+en ny Kjole, og begynde paa en Frisk med et Timeligt
+og dog for Evigt, blive vi let færdige: de vare ikke
+egenlig saarede, de vare kun besvimede. Vi kunne da
+dele vore Invalider i to Klasser. Til den første Klasse
+henregne vi dem, som med en vis besluttet Resignationens
+Kulde tage fat paa det Virkelige med Opgivelse
+af det Ideale, vælge det Timelige med Ryggen vendt
+mod det Evige. De ere i egenligste Forstand uden
+Haab og dog ikke haabløse; thi den, der frivillig giver
+Haabet Afsked, er ikke haabløs. Det Timelige har
+mange Krav og kan desaarsag tilbyde dem mange Forventninger.
+Kun vente de sig ingen Foryngelse; deres
+Valgsprog er: os bedrager man ikke, thi vi ere gamle.
+Under den anden Klasse henføre vi dem, hos hvilke det
+Evige, det Ideale, kun blev tilbagetrængt, for at reagere
+fra Hjertets Bund med endnu større Kraft. De drikke
+paa Ny af Livets Væld: Ungdomskilden risler, Haabet
+voxer og forvandles. Det er en Selvfølge, at enhver
+af de to Klasser igjen maa falde i forskjellige Under%
+% --- p. 27 ---
+\setcounter{footnote}{0}%
+\opage{27}afdelinger, eftersom Sindet er svagere eller stærkere,
+eftersom det er Følelsen eller Forstanden, Phantasien
+eller Villien, der har Overvægt.
+
+Først et Par Ord om den første Klasse. Det svagere
+Sind, der har mistet sit Haab paa alt det Høiere,
+synker ned enten i Hverdagens smaalige Sysler eller i
+Døgnets bedøvende Tummel. Det lærer af Erfaring at
+afpasse sine Forventninger efter Omstændighederne;
+men selv om de udvortes Vilkaar ere glimrende, om
+end sandselige Lidenskaber flamme op og finde Tilfredsstillelse,
+der er dog en Tomhed, en stille Bitterhed i
+en saadan Sjæl, et nagende Mismod, at Verden er falsk,
+Tilværelsen huul, at Livet ikke holder, hvad det lover.
+Individer af denne Kategorie kunne for Øvrigt være
+godmodige, glæde sig med de Glade og betragte Ungdommens
+Lykke med et eget Sympathiens Veemod; men
+de kunne ogsaa være misundelige, ondskabsfulde og
+maale de Haabende med et Blik af Skadefryd, som siger:
+ogsaa I skulle skuffes!
+
+Anderledes med det stærke Sind, naar det har taget
+Afsked med Haabet, ombyttet de ideale Formaal med
+store Virkelighedsinteresser og viet sin Villiekraft til at
+tjene under det Nærværende. At en saadan Charakteer
+skulde blive et slet eller farligt Menneske, er ingenlunde
+givet. Det kan blive en i sin Kreds hæderlig Mand,
+en driftig Mand, ret en Tidens Mand, Forretningsmand
+af første Skuffe. Der er Intet i Veien for, at en saadan
+Mand kan have et velvilligt Sind, et godt Hjerte, at
+han kan glæde sig ved at virke til Gavn, ikke alene
+for sig selv, men ogsaa for Samfundet. Men han har
+en Livsanskuelse, han ikke prædiker paa Gaden; den
+er indprentet i hans Sind saa dybt, at han ikke trænger
+% --- p. 28 ---
+\setcounter{footnote}{0}%
+\opage{28}til at faae den bekræftet hos Andre, dens korte Viisdom
+er: naar Kistelaaget slaaes til, er Historien ude. Med
+denne Leveviisdom befinder han sig efter Omstændighederne
+vel. Vistnok vilde den være utilstrækkelig, hvis
+Døden virkelig ikke skulde være i Stand til at løse
+Knuden paa Alexanders Maneer; men det maa Døden
+om. En Mand i en saadan Bedrift har ikke Tid til at
+gruble over Sligt; han tager det praktisk. Han faaer
+Modgang, han oplever Kummer og Sorg, men veed at
+finde sig tilrette i Alt. Det er, som fik han med hvert
+Aar en ny Bekræftelse paa Sandheden af sin Anskuelse.
+Ganske naturligt; thi det Element, hvori Sjælen lever,
+og hvoraf den drager sin Næring, indvirker paa dens
+Trang og Væsen. Man fodrer unge Dyr, f. Ex. Kaniner,
+med Krap for at see de røde Lag i Knoglerne. Et
+lignende Experiment kan gjøres med Sjælen. Menneskets
+Sjæl faaer timelige Safter i Marven, naar den daglig
+mættes med Timeligt, kun med Timeligt. Jo mere en
+Sjæl giver sig hen til Indtryk af det Sandselige, desto
+lettere overbeviser den sig om, at Intet har Realitet
+uden det, som er sandseligt; jo dybere en Individualitet
+med alle sine Interesser sænker sig i det Endelige,
+aander og lever i lutter Endelighed, desto øiensynligere
+bliver det den, at det Evige er et Skin, det Hiinsidige
+et drømt Ideal: man kan uvilkaarlig fornemme paa sig
+selv, at Sjælen døer med Legemet. Men derfor ringeagter
+man ikke Dyden; tvertimod! det timelige Liv har
+Dyden behov, og derfor maa man øve Dyden. Saa
+lever da denne dydige Mand i rastløs Virksomhed som
+Familiefader, Borger, Politiker, i Spidsen for mangehaande
+offenlige Foretagender. Ikke blot Actieselskaber
+og milde Stiftelser, ogsaa Kirken har ham i vigtige
+% --- p. 29 ---
+\setcounter{footnote}{0}%
+\opage{29}økonomiske Forbedringer Meget at takke. Saaledes
+lever han, og saa døer han. Og han faaer en Begravelse
+--- tre lange Gader fulde af Vogne --- og en
+Ligprædiken, ja en Ligprædiken! thi nu gaaer denne
+Hædersmand ind til den evige Salighed, ind i Forklarelsens
+Egne at hente sin Løn, en Løn saa stor, saa
+vel fortjent, saa salig og rig, at der ikke er et tørt Øie
+i Kirken. --- Hvorledes denne Mand har forstaaet sig
+selv, hvilket Ansvar han paadrog sig den Dag, da han,
+saaret af Skuffelsen, bød sit Evighedshaab tilfals mod
+en klækkelig Sum i timelig Valuta, bliver en Sag for
+sig. Men i Eet har han forstaaet sig selv; thi vi kjende
+ham til Bunds --- vi have ikke mødt ham i den udvortes
+Verden, men fundet ham i Psychologien, vi have
+jo selv skabt ham, og maae da vel ogsaa kjende ham
+--- han har paa sin Viis rigtig forstaaet, at han og
+den evige Salighed ikke have det Mindste med hinanden
+at gjøre. Kunde han svare fra Kisten derinde, vilde
+der høres en Stemme: jeg fik den Løn, jeg ventede,
+stille med det Evige, lader mig nu have Ro i min Grav.
+
+Vende vi os til den anden Klasse, til dem, der
+drikke af Ungdomskilden, da er den individuelle Forskjellighed
+atter at kjende i Forhold til som det nye
+Haab forbliver i Stemning og Phantasie eller gjør Pagt
+med Villien og træder ud i Charakteer og Handling.
+Det er Haabets Gjenfødelse, vi skulle betragte. Hvorledes
+kan Haabet gjenfødes? Det døer i Skuffelsen,
+skal det komme til Live igjen, maa det fødes paa Ny.
+Hvad vi i denne Sammenhæng kalde det gjenfødte
+Haab, er ikke nyt i den Forstand, at det skulde have
+et andet Udspring og være et ganske andet end det,
+hvormed vi begyndte. Ungdomshaabet var jo netop
+% --- p. 30 ---
+\setcounter{footnote}{0}%
+\opage{30}derfor saa skjønt, fordi det i sig forenede det Evige
+med det Timelige. Det var Krisen, som satte Splid
+mellem de to Elementer. Det gjenfødte Haab maa da
+atter optage det Timelige, men forstaaer sig, paa andre
+og høiere Vilkaar.
+
+Vi maae bestandig erindre, at Livet selv er Haabets
+Kilde. Har Livet fra sit Ophav et dobbelt Krav, et
+timeligt og et evigt, da maa Haabet ogsaa have et
+dobbelt Indhold. Dersom Haabet ikke havde et Evighedselement
+i sit Indhold, maatte det jo, som vi alt have
+seet, gaae under i timelig Forventning, opgive sine
+ideale Muligheder og tabe sig i en Sandsynlighedsregning.
+Dersom Haabet ikke turde laane et Indhold fra det
+Timelige, maatte det ubetinget udelukke det Dennesidige;
+som en Fredløs, Landflygtig paa Jorden maatte
+det uafbrudt stirre mod det Hiinsidige og søge sit Hjem
+i det Blaa. Men det Blaa og det Evige ere ikke Eet
+og det Samme. Skal Haabet vise Vei gjennem Livet,
+maa det kaste sit Blik paa den virkelige Jord: den, der
+gaaer paa Jorden med altid himmelvendte Øine, udsætter
+sig let for at snuble. Men naar Haabet atter
+griber det Timelige, maa den Haabende, der har overstaaet
+Skuffelsens Krise, vel være sig bevidst, at det
+Timelige gribes for det Eviges Skyld. Hvad det ubetinget
+kommer an paa, er en Forvisning om, at det
+Ideale selv er Haabets Grund, at Haabet opfyldes i
+evig Forstand, hver Gang det giver os en Stadfæstelse
+paa det Eviges Realitet. Under denne Forudsætning
+kan Haabet i dette nærværende Liv baade skuffes timeligt
+og dog opfyldes evigt. Ja, den timelige Skuffelse
+kan, som vi strax skulle see, være et kraftigt Middel
+til at stadfæste en evig Opfyldelse.
+
+% --- p. 31 ---
+\setcounter{footnote}{0}%
+\opage{31}Det er Overanstrengelse, naar en moderne Viisdom
+paatager sig at drage Himlen ned paa Jorden og smelte
+Tilværelsen om, saa at det samlede Livs forklarede
+Øieblikke skulle gjøre det Evige selv commensurabelt
+med det Timelige: vi ere endnu ikke i Himlen fordi
+Jorden befinder sig i Himmelrummet. Men det er
+derfor ligefuldt en farlig og for Aandslivet fordærvelig
+Misviisning, naar det Evige i den Forstand gjøres til
+et Hiinsidigt, at det Timelige bliver eneraadende paa
+Jorden. Sandheden er, at det Evige med indre Selvstændighed
+ud fra sit eget Rige gjennemvirker det
+Timelige, bærer det Timelige, stræber til at omdanne,
+forklare og forvandle det Timelige.
+
+Lad os, for ikke at springe for mange Mellemled
+over, begynde med Phantasie og Stemning. Man tænke
+paa dybere, gjærende Naturer som Mystikerne; man
+tænke paa geniale Individualiteter, i hvilke Ideerne arbeide.
+Det er ingenlunde Sjæle, som alle haabe paa
+et personligt Liv efter Døden; og dog have de en uvilkaarlig
+Fornemmelse af det Evige. Det boer i dem,
+og just fordi det er dem saa umiddelbart nærværende,
+kunne de --- uden at der endnu er Tale om et Hiinsidigt ---
+være os et Exempel paa, hvad Haabets Gjenfødelse,
+det, vi kalde dets evige Opfyldelse, selv i negativ
+Form, vil sige. Man lægge vel Mærke til Digterne,
+især de urolige, dem, hvis inderste Væsen er Smerte:
+Byron, Heine, Alfred de Musset og Mange blandt de
+allernyeste. Hvor meget de end prise vort Livs Naturside,
+det blinde, men ufeilbare Instinkt og de sandselige,
+elementære Lidenskaber, hvor meget de end forgude
+især det kvindelige Legeme: saa mærker man dog, at
+de ere lige saa utilfredse med den falmende Natur og
+% --- p. 32 ---
+\setcounter{footnote}{0}%
+\opage{32}dens visne Blomster, som de ere utilfredse med den
+spidsborgerlige Tomhed i Aanden, med Menneskenes
+indbildske, smaalige Hu og den adstadige Samfundsprosa.
+Hvad er det, som midt i det glimrende Selskab,
+trods Anerkjendelsens Laurbær og Beundringens Virak,
+gjør dem til eensomme Fugle? Hvad er det for et
+Lysskjær, som i et og samme Nu forlyster og smerter
+Øiet? Det funklende Ideal, paa hvis Lynglimt de haabe!
+Bestandig den ideale Fordring og saa en Skuffelse. Paa
+hver Skuffelse følger et nyt Glimt med et nyt Haab og
+saa --- igjen en Skuffelse. Haabet døer i Skuffelsen
+for at fødes paa Ny: her er et Evighedselement, som
+uafbrudt reagerer mod det Timelige. Hvilken Kval, at
+Haabet i Nu efter Nu baade døer og lever! Ulykkelige
+Veer, en Gjenfødelsesproces med et haabløst Haab, og
+hvorfor? Fordi det bliver ved Stemning og Phantasie
+i selvisk Aand, fordi det Evige aldrig faaer Kraft til
+virkelig Forløsning.
+
+Skal Haabet gjenfødes i Charakteer og Villie, maa
+der andre Skikkelser frem paa Scenen. Her er en
+Mand; vi hente ham ikke fra Gaden, han kommer med
+Hilsen fra Psychologie og Ethik, beredt til at underkaste
+sig en Virkeligheds Prøve. Det er et Menneske,
+hvem Skuffelsens Smerte har lært, at man ikke selvisk
+skal leve for sig selv, men vinde sit Liv ved at sætte
+det ind og virke for ideale Formaal. Det virkelige Liv
+har Formaal nok; det har ogsaa Idealer. Det Virkelighedsideal,
+som nærmest lyser for ham, er Friheden, ikke
+den Frihed, som slaaer Mængden løs, men den, som
+adler Mængden og løfter den op til et Folk. Her er
+hans Maal. Saa slaaer han Allarm i den søvnige Leir;
+Talen ruller som en Bjergstrøm, Masserne vaagne,
+% --- p. 33 ---
+\setcounter{footnote}{0}%
+\opage{33}Skarer flokke sig om den Begeistrede og sluge de
+vækkende Ord. Det er et Fremtidssyn med et stort
+Haab, som her folder Banneret ud; vil Haabet opfyldes?
+Klogskaben veed det: det vil ende med en Skuffelse.
+Ja, desværre, med en stor Skuffelse. Det er da ikke
+noget Nyt; men det, som for denne Mand er eiendommeligt,
+er den Maade, hvorpaa han tager sig i
+Skuffelsen. Han maa vel, siger man, blive klog af Erfaring.
+Ja vist bliver han klog, men paa sin Viis: nu
+begynder han først at handle som en Daare. Mange,
+som i Opvækkelsens Tid bare Fanen høit, gik til Veirs
+med det nye Flag og vare dristige Skippere, der styrede
+lige mod Malstrømmen, krøbe sammen af Skræk, da
+Hvirvlen kom, og Dybet begyndte at koge; kloge,
+belærte af Erfaring, gjorde de stille omkring, viklede
+forsigtig Fanen ind og forlode „det synkefærdige Vrag“
+med Idealet i Lommen. Men Haabets Mand holdt ud
+paa sin Post, det var en ungdommelig Daarskab. Og
+Eet endnu, som var mere ungdommeligt: han stod ved
+sit Ord, han var endnu glad i sin første Forventning.
+Ingen, end ikke den Forsigtigste blandt de Forsigtige,
+havde Speiderblik som han, naar det gjaldt om at opdage
+Faren. Men Faren for ham var ene den, at tøilesløse
+Overgreb skulde kvæle Friheden, og Mængden selv
+lægge Folket øde. Ingen, end ikke den Modigste blandt
+de Modige, turde som han saa aabent, frit og hensynsløst
+udpege de Skyldige og rive Masken af Forførerne;
+det var jo en Daarskab. Ingen som han turde blotte
+det Afgrundssvælg, hvori graadig Higen efter Magt i
+Forbund med selvisk splittende Interesser og en gusten,
+suurøiet, Alt nivellerende Misundelse var i Færd med
+at styrte den forvildede Hob. Daarskab! Han vilde,
+% --- p. 34 ---
+\setcounter{footnote}{0}%
+\opage{34}ikke ved Spot og Haan, men ved ærlig, usminket Tale,
+ved Sandhedens klare overbevisende Ord aabne de
+Forblindedes Øine og lede Bevægelsen i det rette Spor:
+ungdommelig Daarskab. Tilsidst, da Nemesis kom,
+Gudinden, den ubønhørlige, der straffer alle Overgreb
+og hævner den haanede Fornuft, stod han ganske alene.
+--- Er han nu uden Haab? Ingenlunde. Hans Haab
+staaer uformørket fast og lyser som en Baun fra Fjeldet.
+Det kan Ingen forstaae. Det maa da, siger man, vel
+være fordi han ringeagter Erfaringens Raad, at han
+kan blive ved at være saa ungdommelig. Nei, det kan
+Ingen forstaae. Kloge Folk, som jo ellers forstaae sig
+paa Alt, kunne ikke forstaae sig paa ham, thi i hans
+Erfaringer ligger en Hemmelighed. Hans Haab har
+maaskee skuffet Andre, men det har ikke skuffet ham
+selv. Hvor kunde Frihedshaabet vel skuffe den, som
+ved hvert udvortes Nederlag havde erfaret, at han
+vandt en indvortes Seier. Hvor kunde han svigte det
+trofaste Haab, som gjorde ham evig fri og trykkede
+Befrielsens Segl paa enhver opoffrende Handling. Han
+stirrede ikke op mod det Blaa; han gravede dybt i
+Timelighedens Jord, og han fandt en Skat. Og denne
+Skat? Det var mere end et Horn af Guld, det
+var mere end de Vises Steen, det var mere end Kong
+Salomons Ring; det var et Udødelighedspant, et Kildespring
+i Sjælens Bund, en Haabets Vei til Livets Væld:
+han drak af Ungdomskilden.
+
+% --- p. 35 ---
+\setcounter{footnote}{0}%
+\lecture{Tredie Forelæsning.}\opage{35}Haabet er af personlig Oprindelse. Blandt alle Skabninger
+paa Jorden er Mennesket den eneste, som i
+egenlig Forstand kan siges at haabe; thi Mennesket
+er et personligt Væsen. Dyret kan attraae, længes, forvente;
+men fordi det forventer et Gode, er denne Forventning
+dog endnu ikke Haab. Hvad der adler en
+Forventning til Haab, selv hvor det Timelige staaer i
+Forgrunden, er et frit henstillet Fremtidsbillede, en
+Mulighed klædt i lyse Farver, en aandig Klarhed, et
+Idealitetens Skær, som Dyrets Øie aldrig seer.
+
+Religionen taler om al Skabningens Forlængsel,
+dens Smerte og Suk, dens Haab om Befrielse fra Forkrænkelighedens
+Trældom. Den romantiske Poesie gjentager
+det Samme; den lytter til en stille Klage, en
+sagte, spørgende Hvisken, et veemodigt Suk fra Allivets
+Sjæl i Naturen. „Aftenrøden, naar den skriver sit Godnat
+i Skyers Lag, spørger om ei snart den bliver Forbud
+for en salig Dag“. Hvorledes er dette at forstaae?
+Hvem er det, der sukker og klager, hvem er det, der
+længes og haaber? Ikke den stumme Natur, men
+det talende Menneske. Det er Mennesket, som laaner
+Naturen sin Røst. Vel er der Røster i Naturen,
+% --- p. 36 ---
+\setcounter{footnote}{0}%
+\opage{36}mange Røster, og dog er Naturen selv som en Døvstum.
+Elementerne blive høirøstede, naar de bruse og larme;
+men Brusen og Larmen er endnu ingen talende Røst,
+saa lidt som den Døvstummes Brummen. Dyret har
+Stemme og Sjælen et Suk, og Stemme og Suk kunne
+sige os Meget, naar det tolkes; men Dyret er ikke sin
+egen Tolk: det er et Umælende. Det er Mennesket,
+der laaner Naturen sit Ord; det er Menneskets Sjæl,
+der gjør sig til Tolk for dens Smerte, dens Suk og dens
+Klage. Og med begrundet Ret. Først i Mennesket,
+det tænkende Væsen, kommer Modsætningen mellem
+det Virkelige og det Ideale frem af sit Skjul; først i
+Mennesket, det selvbevidste Væsen, kan Naturlivet sukke
+under Forkrænkelighedens Trældom; først i Mennesket,
+det personlige Væsen, kan al Skabningen haabe.
+
+Som Haabet er, er ogsaa dets Modsatte, Frygten.
+Dyrets Frygt er dunkel Anelse, uvilkaarlig Skræk og
+Angst. Menneskets Frygt gaaer videre, det har en
+personlig Frygt, en Frygt for erkjendte Muligheder;
+den selvbevidste Phantasie opdager de ængstende Muligheder
+overalt, lokker dem til sig, klæder dem op og
+giver dem Form og Skikkelse. Der er en Skikkelse,
+mørk og truende, som staaer paa Veien snart fjernere,
+snart nærmere, altid desto mørkere, jo mere solbeskinnet
+Veien er, det er Døden. Dyret døer, men det har aldrig
+seet Døden. Menneskets Sjæl seer Døden mange Gange,
+inden den virkelig kommer. Hver Gang Nogen har sat
+sig et Maal i noget Timeligt og ret vil glæde sig til
+dets Opnaaelse, staaer Dødsskyggen der, og der opstaaer
+en Kamp mellem Skyggen og Haabet. Du kan jo være
+død inden i Morgen! hvor nedslaaende for den, der
+venter sig en Glæde, ret en stor, usigelig Glæde af den
+% --- p. 37 ---
+\setcounter{footnote}{0}%
+\opage{37}Dag i Morgen. Derfra Fortvivlelsens Griben efter Nydelsens
+Øieblik. Religionen har laant den et Ord:
+lader os æde og drikke, thi i Morgen skulle vi døe.
+
+Selv de, der ville mere end æde og drikke, ville
+arbeide for høiere Formaal, men dog søge Livets Fuldendelse
+indenfor det Timelige, møde Dødsskyggen paa
+Veien; men Modet voxer, Skyggen maa vige, de Behjertede
+mane den ned med en kraftig Formel, og
+Formlen siger: \emph{Individet døer, men Slægten lever}.
+Der er noget Vækkende, Oplivende i denne Tanke, den
+har noget Trøsteligt ved sig; lad os veie Indtrykket og
+forstaae, hvad det siger, i et Billede. --- Der stod et
+gammelt Træ, ombølget i Vaaren af den varme Luft;
+Solen saae luende ned fra Himlen og prædikede for
+Mark og Skov Opstandelsens Evangelium med en Fynd
+og Kraft, saa det mylrede op af Jorden. Knopperne
+paa det gamle Træ skyndte sig, hvem der kunde komme
+først med at sprænge de mummieagtige Hylstre og fremvise
+de friske, saftige Skud: der var allerede Blade og
+Blomster paa Træet. Men nogle Solstraaler, som legede
+mellem Grenene og nysgjerrig tittede ind gjennem alle
+Sprækker, bleve opmærksomme paa en enkelt Knop,
+der sad saa trevent, krøb sammen i sit Hylster og vilde
+ikke frem med Noget. Hvad skal det betyde? spurgte
+de, hvorfor holder Du Dig saadan tilbage? Aa, svarede
+den, jeg er kun et ubetydeligt Individ, der er Knopper
+nok foruden mig. Jeg gider desuden ikke springe ud,
+det kan dog ikke føre til Noget. --- Hvad er det, Du
+siger? Kan det ikke føre til Noget? --- Nei, svarede den,
+jeg har hørt en Hvisken om, at det kun er Forfængelighed
+og stakket Herlighed med al denne Springen ud;
+om føie Tid skulle Blomsterne falde af, og Bladene
+% --- p. 38 ---
+\setcounter{footnote}{0}%
+\opage{38}hvirvles omkring paa Jorden. --- Det er Vind, sagde
+Solstraalerne, det er en Vind, der har forskrækket Dig;
+hør ikke efter Vinden, den farer altid med løs Snak.
+Kom Du kun frem, saa lille Du er, og Du skal see den
+store straalende Verden, og Du skal see, paa hvilket
+mægtigt, herligt Træ, Du selv er et Led. Du skal være
+stolt af at yde dit ringe Bidrag til Træets Væxt og
+dets Krones Udfoldning, Du skal see Individer og
+Slægter, og Du skal sande Digterens Ord om Døden og
+Livet. --- „Ligesom Træernes Blade, saaledes er Menneskens
+Slægter, Bladene strøes af Blæsten paa Jord,
+men naar Skovene grønnes, skyde der friske fra Grenene
+frem ved Vaarens Igjenkomst. Saaledes Menneskens
+Slægter, een fødes, en anden forsvinder“.
+
+Men det er dog en egen Sag med et Haab, der
+alene skal bygges paa en Sætning som den: Individerne
+døe, men Slægten lever; thi Sætningen udvider sig til
+at betyde: \emph{Slægterne døe, kun Allivet lever}.
+
+Individerne voxe som Korn paa Slægtens Ager;
+Liv af Liv, nye Spirer, nye Straa, nye Blomster og Ax:
+det er en frugtbar Ager; ved dette Syn skal Haabet
+fryde sig. Men Glæden er ikke ublandet. Paa Ageren
+gaaer en Høstkarl, huuløiet og mager; det er Knokkelmanden
+med sin Lee. Hvo skulde troe, at der i disse
+tørre Knokler kunde boe en saa ubyre Arbeidskraft. % PRINTED AS IS: „ubyre“ (for uhyre)
+Han meier ned for Fode gule Straa og grønne Spirer,
+hvad han levner er kun Jord og Muld. Millioner Gange
+Millioner Individer, forskjellige Arter, forskjellige Slægter,
+mylre frem paa den frugtbare Ager; Knokkelmanden
+hvæsser sin Lee og høster dem alle. Hvo skulde troe,
+at en Beenrad kunde holde saaledes ud. Han faaer sit
+Arbeide færdigt saa punktlig, saa præcis, at det Stykke,
+% --- p. 39 ---
+\setcounter{footnote}{0}%
+\opage{39}han har foran sig, det Nærværendes smalle Strimmel,
+er forsvindende i Sammenligning med den uhyre Strækning,
+han alt har meiet, den Forbigangenhedens lange,
+brede Stubmark, han har i Ryggen. Et Ocean af Mulm
+imod en Strimmel Lys! Livet sukker, Erindringen gyser
+ved at see derpaa, og Haabet græder som et Barn.
+
+Det er ikke Dødsskyggen alene, hvormed Haabet
+maa kæmpe; selv i det friske, nærværende Liv er der
+en Magt, der er Livets Fjende; denne Magt er det Onde.
+Og det Onde, hvad indeslutter ikke dette ene Ord,
+hvilke Tilværelsens Tryk, hvilke Kvaler og Lidelser,
+sjælelige, legemlige, forskyldte, uforskyldte, halvforskyldte,
+indgaae ikke som Brøker under denne Generalnævner,
+det Onde. Ikke kunde Oceanets Søn, hiin gamle Proteus,
+snoe sig gjennem flere Bugtninger og paatage sig
+mere ulige Skikkelser end denne snedige og dog saa
+aabenbare Livets Fjende, den mørke, gaadefulde Magt,
+der er alle Onders Ophav. Skal Mennesket, det personlige
+Væsen, kunne kæmpe mod det Onde og haabe
+paa Seier, maa det gjøre Forbund, ikke med upersonlige
+Magter, men med den høieste personlige Magt: det maa
+bygge sit Haab paa et \emph{styrende Forsyn}.
+
+Trangen til en personlig styrende Magt, der sikkrer
+det Godes Overvægt i den fortsatte Kamp og leder Individer
+og Slægter til Fuldendelsens Maal, har saa dybe
+Rødder i Sjælen, at denne Trang endogsaa der, hvor
+det klare Sandhedsord endnu ikke har tændt sit Lys,
+bryder frem med aandig, uimodstaaelig Kraft og giver
+sig Form i Mythen. Hos alle hedenske, men dog haabende
+Folkeslag finde vi en Forsynsmythe; saaledes hos
+Nordboerne, saaledes hos Perserne.
+
+% --- p. 40 ---
+\setcounter{footnote}{0}%
+\opage{40}Hos vore nordiske Fædre er Kampen mellem det
+Gode og Onde en stadig Krig mellem Aser og Jætter.
+Hvorledes Kampen ender, er bekjendt. Efter Ragnarok
+synke de Onde ned til Nastronds Orme, men de
+Gode opstaae til forklaret Liv, til Glæde og Fred i
+Gimle.
+
+Hos Perserne udfolder Kampen mellem det Gode
+og det Onde sig til et umaadeligt Verdensdrama, det
+er en Kamp, der ligelig strækker sig gjennem alle Naturens
+og Aandens Regioner, en Kamp mellem Lyset
+og Mørket, Ormadz og Ahriman. Ved det almægtige
+Ord har Ormadz fra Begyndelsen skabt foruden sex
+udødelige Magter en himmelsk Hærskare af Aander og
+Ferver. Hver Skabning lige fra Dyret til Engelen fik
+sin Ferver, sin Skytsaand. Paa Jorden var „det høie
+Bjerg“, som ragede op gjennem alle de himmelske
+Kredse lige til det første Lys; der fæstede Ormadz sin
+Bolig. Men fra Syden kom Ahriman, den onde Aand
+med Mørkets Hær, og Mørkets Hær var lige saa
+talrig og mægtig som Lysets. Ormadz søgte at bevare
+Freden; men Ahriman, fnysende af Vrede, begyndte
+Striden. Vel blev han i det første Møde blændet af
+Ormadz' Straaleglands og ved Synet af Ferverne: det
+Godes Ord overvandt ham; han styrtede ned i Afgrunden.
+Men han var ikke afvæbnet. Han rustede
+sig og samlede Kræfter; mod enhver af Ormadz's gode
+Frembringelser satte han en ond. Da han atter stormede
+mod Himlen, blev han greben af en saadan Rædsel,
+at han i en Slanges Skikkelse styrtede ned til Jordens
+Midtpunkt og smittede Alt; selv Ilden, det reneste Element,
+smittede han med Røgen. Hver Gang Ahriman
+steg op mod Himlen, blev han kastet i Afgrunden;
+% --- p. 41 ---
+\setcounter{footnote}{0}%
+\opage{41}Ormadz og de gode Aander seirede. Men paa Jorden
+holdt Ahriman Stand; her deler han Magten med Ormadz:
+Lys og Mørke, Godt og Ondt, ligge i uophørlig
+Strid. At Kampen ogsaa maa gaae gjennem Menneskelivet,
+opvækkende baade Frygt og Haab, er en Selvfølge.
+De første Mennesker levede skyldfrie og rene i
+Troen paa Ormadz, indtil Ahriman fik dem forlokkede
+til at drikke Gedemælk og æde af forbudne Frugter.
+Det var Kvinden, som offrede først til Diverne, de onde
+Aander. Saa kom Døden ind i Verden med Ahriman
+paa Grund af Menneskets første Synd. Men Døden er
+ogsaa en Befrielse for Mennesket, thi med Kampen mod
+det Onde hører den op. De Dødeliges Sjæle, som fra
+Verdens Begyndelse ere skabte af Ormadz, leve i Himlen,
+hvorfra de nødes til at stige ned og forbinde sig med
+Legemerne for at fuldende den jordiske Pilgrimsgang.
+Efter Døden føres de til Broen Chinvad, der er bred
+og bekvem for de Gode, men smal og skarp for de
+Onde. Naar de Gode ere komne over Broen, føres de
+ind i Ormadz' Rige til Fryd og Glæde; men de Onde
+styrtes fra Broen ned i Afgrunden for at udstaae Pinsler,
+hvis Vedvaren er i Forhold til Synderne, men dog kan
+forkortes ved Forbøn af Frænder og hellige Mænd.
+Den største Deel af de syndige Mennesker forbliver i
+Straffens Rige indtil Verdens Ende, indtil Ahrimans
+Magt er brudt, og Saligheden kommer at omfatte Alle.
+
+Det er kun Myther; men Myther kunne, hvad det
+Personlige angaaer, indeholde store Sandheder. Hvad
+det ved Mythen fornemmelig kommer an paa, er det
+Indvortes, ikke det Udvortes, Livstanken selv, ikke
+dens Indklædning. Om Ahriman har forlokket de første
+Mennesker til at drikke Gedemælk eller Faaremælk, er
+% --- p. 42 ---
+\setcounter{footnote}{0}%
+\opage{42}uvæsenligt; det Væsenlige er, at en ond, fristende Villie
+har forlokket dem. Hvilke Frugter de bleve fristede
+til at æde, er ikke Spørgsmaalet; Hovedsagen er, at
+det var \emph{forbudne} Frugter, at de ved at æde af disse
+Frugter gjorde Brud paa den hellige Lov, kom i Modsigelse
+med sig selv og syndede. Hvorledes Døden i
+physisk Forstand blev en Følge af Synden, derom giver
+Mythen ingen Forklaring, Eftertrykket falder paa det
+psychologiske Moment, at den physiske Død formedelst
+Synden optræder som en fjendtlig Magt, der truer det
+personlige Liv med Undergang. Det Tvetydige ved
+Mythen er, at den opstiller et Udvortes, som kun betyder
+et Indvortes, og ikke selv kan gjøre Rede for
+Forskjellen mellem Indvortes og Udvortes. Mythetroen
+begynder oprindelig med at gribe det Indvortes i det
+Udvortes, saa at et levende Indhold gjennemstrømmer
+Phantasien. Men umærkeligt skeer det, lidt efter lidt,
+at de beskuelige Former faae Præg af ydre sandselig,
+selvstændig Virkelighed; Mythens Aand svinder bort,
+og kun Masken, det legemlige Overtræk bliver tilbage.
+At være Troende paa dette Trin er da, persisk forstaaet,
+al være fuldt og fast overbeviist om, at Ormadz boer % PRINTED AS IS: „al“ (for at)
+paa „det høie Bjerg“, at Ahriman virkelig har seet ud
+som en Slange, da han styrtede ned fra Himlen, og at
+det deels er Gedemælken, deels en straffende Villies
+Magtbud, der har sat Døden ind i Verden. ---
+Den der, naar Bevidstheden, støttet paa Billedformen,
+har naaet det ægte dogmatiske Trin, ikke troer Alt
+bogstaveligt, er det religiøse Politi en mistænkelig Person
+og stærkt paa Veien til Vantro.
+
+Vi lægge Mærke til, at den Forandring, som Mythetroen
+efterhaanden undergaaer, bevirkes af en reflec%
+% --- p. 43 ---
+\setcounter{footnote}{0}%
+\opage{43}terende Forstand, der eensidig kaster sig over det Ydre
+og vil have alle Indklædningens Former fyldte med
+solid Virkelighed; det er dette, der udtrykkes ved, at
+de mythiske Begivenheder blive til sikkre, historiske
+Kjendsgjerninger. Hvad følger nu heraf? Bliver Reflexionen
+staaende paa Halvveien, saa bringer den det
+kun til at forandre den ideeopfyldte Mythetro til en
+vis vulgær folkelig Overtro med en Tilgift af uklar Inderlighed.
+Med dette svagere Salt kunne Tanker og Sæder
+og naturlige Kræfter dog i lang Tid holde sig friske. Dette
+var i den gamle Verden Tilfældet med Perser og Nordboer,
+hvis Hedenskab aldrig naaede saa vidt, at det
+passerede Linien og kom ind under Kulturens Solbrand.
+Hos Grækerne og Romerne kom Reflexionen derimod
+saa vidt, at den blev sig Overtroen klart bevidst. Naar
+der først var vundet noget Overblik over en virkelig
+Natursammenhæng med Aarsager, Betingelser og Love,
+kunde det ikke falde den reflecterende Forstand vanskeligt
+at indsee, at Guderne med deres Bedrifter hverken
+vare, ei heller nogensinde havde været virkelige. Idet
+Spørgsmaalet gjaldt et Udvortes og lød paa: virkeligt
+eller uvirkeligt? blev Tænkningen endog hos dem, der
+grundede over Tingenes Væsen, mere og mere optagen
+af det Naturnødvendige og bortvendt fra det Personlige.
+
+
+Forsynstroen, som hos Romerne var en egoistisk
+Fastholden ved den Skæbnens Bestemmelse --- sic erat
+in fatis --- at Rom skulde være Verdens Herskerinde,
+kom hos Grækerne aldrig til at spille nogen egenlig
+Hovedrolle. Grækerne vare i det Hele ikke noget haabende
+Folk; Haabet laa gjemt i Pandoras Æske og var
+vel egenlig kun for Individerne til Privatbrug. At
+% --- p. 44 ---
+\setcounter{footnote}{0}%
+\opage{44}haabe er romantisk; det  er at see paa det Vordende
+og længes efter det Kommende. At resignere er
+klassisk; det klassiske Øie seer ikke paa det Vordende,
+men hviler ud i Anskuelsen af det Værende, det i sig
+Fuldendte: Fremtiden er kun en fortsat Nutid.
+
+I hvilken Grad den dannede Bevidsthed med sin
+kritiske Reflexion i det andet Aarhundrede efter vor
+Tidsregning var kommet ud over den folkelige Forestilling
+om en guddommelig Verdensstyrelse, kan blandt
+Andet sees af den Maade, hvorpaa Lukian holder Afregning
+med de gamle Guder. I en af hans Dialoger
+--- Zeus i Kvide --- begynder det med, at Guders og
+Menneskers Fader gaaer op og ned i sin Høisal, river
+sig i Haaret og udstøder Klageskrig som en Fortvivlet.
+Here aabner Døren; Zeus vil forklare hende, hvilken
+Ulykke, der er hændet, men hun afbryder ham med
+det skinsyge Udraab: Du Skalk, jeg kjender Dig nok,
+det er igjen et Elskovseventyr, og gaaer sin Vei. Nu
+kommer Hermes, og Zeus fortæller ham Sammenhængen.
+Du veed, siger han, at vi Guder for nogle Dage siden
+bleve indbudte af en rig Kjøbmand i Athen, som da
+hans Skib var i Fare, havde, hvis det blev frelst, lovet
+os en stor Offring og et rigt Gjæstebud. Han kneb
+paa Beværtningen, den Gnier; men da jeg nu engang
+var kommet til den for sin Gudsfrygtighed berømte
+Stad, vilde jeg dog benytte mit Incognito til at see
+mig om og erfare Stemningen. Hvad maa jeg opleve?
+I en gammel Buegang, hvor en Menneskemasse var
+strømmet sammen, stode to Philosopher og disputerede
+om Guderne og deres Tilværelse. Den ene, en Stoiker,
+forsvarede dem meget grundigt, og det syntes den første
+Dag, som om Mængden vilde holde med ham. Men
+% --- p. 45 ---
+\setcounter{footnote}{0}%
+\opage{45}den anden Dag mødte Modstanderen, det var en Epikuræer,
+ret et afskyeligt Menneske, med saadanne Indvendinger,
+at han rev Folket med sig og alle svore
+paa, at de fra nu af ikke mere vilde ære Guderne,
+men foragte dem og slukke Ilden paa deres Altere.
+Det er onde Tider, Hermes, det er ude med Troen;
+hvad skulle vi dog gribe til? Hermes raader Zeus at
+sammenkalde en Generalforsamling. --- Ja, gjør det,
+Hermes, kald dem sammen, Guder og Gudinder, store
+og smaa, saa mange de ere, siig, at jeg befaler det.
+Hermes raaber: alle Guder og Gudinder maae strax
+give Møde; der skal paa Zeus's Befaling holdes en
+Generalforsamling. Der kommer Ingen; Alt er stille;
+hvordan kan det gaae til, ere Guderne da blevne døve?
+Du Dosmer, udbryder Zeus, er det at kalde paa Guderne?
+Du kan da nok begribe, at de ikke agte paa
+en saa prosaisk Tilsigelse. Du maa tale dem til paa
+Vers, et Vers af Homer! Hermes begynder: Hører I
+Guder alle, som boe paa Himmelen vide\dots{} Nu høres
+der en Susen og Brusen i Luften; de komme fra alle
+Verdens Hjørner og samles i den store Sal ved Siden;
+der bliver en forfærdelig Støi og Larm derinde i Salen.
+Er det ikke besynderligt, siger Zeus til Hermes, jeg er
+saa underlig tilmode. Jeg maa jo nødvendig holde et
+Indledningsforedrag. Du kjender mig fra Homer og
+veed, at Ordet ellers aldrig pleier at svigte mig; men
+i dette Øieblik, jeg forsikkrer Dig paa min Ære: jeg
+er ganske benauet; hvor skal jeg faae en passende
+Idee? Ikke Andet end det, svarer Hermes; gjør som
+Talerne i Athenen, saa kan Du aldrig være i Forlegenhed.
+Hvorledes bære da Talerne i Athenen sig ad?
+De stjæle det Meste fra Andre og lægge Lidt til af
+% --- p. 46 ---
+\setcounter{footnote}{0}%
+\opage{46}deres Eget. Kunsten er: ikke at tage Formeget fra
+en Enkelt, men laane Lidt hos den Ene og Lidt hos
+den Anden: saa er det ikke Plagiat. --- Fortræffeligt,
+Hermes, det vil jeg gjøre. Gaae Du imidlertid ind og
+bring dem til Ro. --- Hermes gaaer, men kan ikke faae
+Bugt med Forvirringen. Alle trænge paa; Enhver vil
+have Sæde blandt de Øverste. Hermes gaaer igjen til
+Zeus. „Forstyr mig ikke, nu sidder jeg midt i Talen“.
+Men det er ikke muligt at holde Styr paa dem; jeg
+maa have en Regel: vor olympiske Rangforordning
+trænger høilig til en Revision. Ja, siger Zeus, skulde
+Retten have sin Gang, saa maatte de jo rangere efter
+de Mestere, som have formet deres Billeder, Phidiasguderne
+først og saa nedefter. Men Tiden er materialistisk;
+vi komme til at rette os noget efter Stoffet.
+Lad de Guder og Gudinder, der ere af Guld, Sølv og
+Elfenbeen, sidde øverst; Du forstaaer mig. Hermes
+gaaer med den Besked; men der opstaaer en ny Trætte.
+Apollo taler om sin „sølverne Bue“; Aphrodite paastaaer,
+at hun er saa godt som af Guld, da Homer har
+kaldt hende „den gyldne“, hvortil en Anden bemærker,
+at det er en egen Sag med hendes Forgyldning. Saaledes
+bliver det ved, indtil den rhodiske Kolos træder
+op. Han er, som han siger, hverken af Sølv eller Guld;
+men han er sig sin Overmagt fuldt bevidst; han har den
+i Massen. Han slaaer i Bordet og gjør Massens Ret gjældende.
+Det imponerer Forsamlingen; den kommer i Orden.
+Da Alle ere satte til Sæde, træder Zeus ind, rømmer
+sig og holder Indledningstalen. Efter at have skildret
+dem Situationen og viist dem Ulykken i al dens Storhed,
+ender han med at give Ordet til den, som først maatte
+begjære det. Almindelig Taushed. Gjentagen Opfordring;
+% --- p. 47 ---
+\setcounter{footnote}{0}%
+\opage{47}Spænding og Taushed. Omsider reiser sig En, det er
+Momus. Det glæder mig, siger Zeus, at Du, Momus, i
+dette alvorlige Øieblik er saa vel stemt, at Du kan
+glemme din Spot og give os et godt Raad. Du har
+Ordet, lad os høre dit Raad. Gode Raad, siger Momus,
+har jeg ikke; men ville I Guder høre et Trøstens Ord,
+saa er det dette, at hvis Menneskene nu vende os
+Ryggen, da maae vi jo Alle vide med os selv, at vi have
+ærlig fortjent det. Naar have vi Guder nogensinde for
+Alvor bekymret os om Menneskenes Anliggender? Tænk
+Dig om, Zeus, hvilke Masser af Vold og Uret der ligge
+opdyngede paa Jorden, stadig voxende i al den Tid,
+Du har ført Scepteret. Hvor var Du, da Friheden i
+Hellas kæmpende, døende, drog det sidste Suk, da
+Achæerne maatte sende de Tusinde til Rom? Hvad bestilte
+Du den Dag, Mummius indtog Korinth? Naar Du
+ikke sad og nikkede paa en af Olympens Aase, saa
+løb Du gal efter Nympherne og de smukke Piger.
+Hør! hør! --- fra Here. Ja, Here, Dig behøver Menneskeslægten
+da just heller ikke at løfte til Skyerne; dit
+Sind er som den mørke Luft, Du har altid fulgt dit
+Had og dine Luner. --- I denne Aand, om end ikke
+med de samme Ord, gjør Momus det op med Forsynsmythen,
+og trøster Guderne med, at er der end enkelte
+Tænkende, der naae saa vidt, at de see dem i Spillet,
+saa vil der dog altid være en uvidende Hob, som nok
+vil blive ved med at dyrke dem og haabe paa deres
+Hjælp og Bistand.
+
+Mod de Christne vender Lukian sig med, om muligt,
+endnu større Haan. Disse usle Mennesker bilde
+sig ind, at Guddommen bekymrer sig om dem; de
+kvække som Frøer i en Sump og bryste sig af et Forsyn,
+% --- p. 48 ---
+\setcounter{footnote}{0}%
+\opage{48}der tæller Haarene paa deres Hoveder, saa sikkre paa
+sig selv og dog saa lettroende, at de lade sig bedrage
+af enhver Gjøgler.
+
+Den gamle, haabløse Verden med al sin Viden, alt
+sit Vid, gik Skridt for Skridt til Graven. Stor ved sin
+Kraft, vidunderlig i sit Taalmod, uovervindelig trods
+ubeskrivelige Lidelser, løftede den nye Tro med det
+nye Haab sit Banner høit; og Banneret blev et Magtens
+Tegn, et Mærketegn paa evigt Liv, et Salighedslys i
+Dødens Nat, et Skjold imod alle Farer.
+
+Det er nu snart sexten Hundredaar siden, at
+Verdensmagterne i Civilisation og Barbari begyndte at
+bøie sig for det nye Tegn; og dog skal end den gamle
+Strid gjentage sig, om end under andre Former. Den
+moderne Civilisation, der mere og mere har vendt sig
+mod Naturens upersonlige Væsen og valgt Grækenland
+og Rom til sine Idealer, har, som man forsikkrer, faaet
+Overbeviisning om, at Salighedshaabet er Skin og Drøm,
+og Tanken om en almægtig, fri, altstyrende Villie, ikke
+en Tanke, men en Indbildning. Det Relative er Moment
+i det Absolute, det Forkrænkelige uadskilleligt fra det
+Uforkrænkelige: det Onde er ligesaa nødvendigt som
+det Gode. Uden Laster ingen Dyd, uden Skygger intet
+Lys, uden Død intet Liv; ingen Sandhed uden Løgn,
+ingen Glæde uden Sorg, ingen Nydelse uden Lidelse,
+ingen Kraft uden Modstand, ingen Symphonie uden
+Dissonanser, intet Drama uden en Skurk: det er i
+kort Begreb den nye Viisdom. Heraf følger med
+ubarmhjertig Logik, at selv om det Gode maa sættes
+som Maal, saa er det Onde dog nødvendigt for det
+Godes Skyld. Kraftmaaleren er for begge den samme:
+voxer det Gode, saa voxer ogsaa det Onde. Men heraf
+% --- p. 49 ---
+\setcounter{footnote}{0}%
+\opage{49}følger da ogsaa --- med ubarmhjertig Logik, at ethvert
+Haab paa en bedre Fremtid for Individerne som for
+Slægten er forfængelig Daarskab. Er
+der ikke en tilsløret
+Modsigelse, en hemmelig Skavank i denne Logik,
+saa følger uimodsigelig heraf, at den nye Verden, naar
+den atter naaer Civilisationens Høide, maa gaae ligesaa
+haabløs i sin Grav som den gamle. Denne Haabløshed
+har da ogsaa i den allernyeste Tid fundet sit videnskabelige
+Udtryk i den saakaldte Nihilisme. Gaaden
+er, at Alt er af Intet, og Gaadens Løsning, at Alt
+vender tilbage til Intet. Hvad har saa Slægten at
+haabe? Intet. Viisdommen er, at Slægten, naar den
+har seet Alt, prøvet Alt, gjennemskuet Alt, omsider
+maa blive færdig med Alt og opdage Maalet: Intet.
+Som en Olding, mæt af Dage, mødig og træt, vil den
+udlevede Slægt med et veemodigt Smiil tage Afsked fra
+Livet og være for Evigt forsonet med Døden.
+
+Nihilismen er mørk og tungsindig; men i sit mørke
+Tungsind har den noget høist Alvorligt og Rensende. Det
+er Endeligheden, Timeligheden, den spraglede Verdens
+mangefarvede Interesser og dens Storværkers Forfængelighed,
+hvorover den holder Dom. Det Endelige, fastholdt
+for sig, er Skin, og Skinnets Grund er Intet.
+Idet hele Tilværelsen saaledes kommer i den Alt prøvende
+Kritiks Smeltedigel og smeltes om, gaaer Intet
+tabt uden Endelighedens Slagger. Resultatet er langt
+fra at være saa haabløst, som det ved et første Øiekast
+kunde synes.
+Det store Intet, der sluger Alt, kan
+umulig være tomt; det er en aandig Muligheds Grund,
+hvori Alting synker; det Hele er der endnu, men forvandlet
+saaledes, at det paa Ny maa begrundes og bestemmes
+af Aand.
+
+% --- p. 50 ---
+\setcounter{footnote}{0}%
+\opage{50}Nihilismen er ikke nær saa farlig for Haabet som
+den ellers saa yndede Forventning om en forestaaende
+stor og lyksalig Fremtid. Det er en Anskuelse, der
+bygger trygt paa Endelighedens Grund. Nu maae vi
+visselig indrømme, at de endelige Maal og de timelige
+Interesser have deres Realitet, og at det vilde være
+sørgeligt, om disse Interesser med al den Handlekraft,
+de udfordre, skulde svækkes og lammes af en tungsindig
+Speculation. Det er ikke Endeligheden, men dens
+Grund og Begrundelse, hvorom vi tale. Det er den
+uimodsigelige Sandhed, at det timelige Liv aldrig naaer
+og aldrig kan naae til fuld harmonisk Afslutning, naar
+dets sidste Maal er sat i en timelig Tid, som atter og
+atter skal indskærpes. Forventningen er, at Civilisationen
+en Gang, maaskee ved en coup de main, skal
+gjøre det store Mirakel, at al Strid og Splid hører op,
+at Alle faae lige Deel i Livets Goder og desaarsag leve
+i Fred og god Forstaaelse. Det overgaaer Civilisationens
+Kræfter: et haabløst Haab! Før skal Verdenshavet
+sove ind til evig Ro, alle Bølger lægge sig, alle stride
+Strømme staae stille, før Timeligheden, dette forkrænkelige
+Væsen, hvis Inderste er Uro, Strid og Splid, skal
+komme til Fred, til Harmonie med sig selv og afsætte
+en Ligevægts-Tilstand. Nei, Kamp og Kamp og atter
+Kamp, det er i Evighedens Navn al Timeligheds Løsen.
+I timelig Forstand kan det siges med Grund, at det
+Onde maa tjene det Gode. Samfundets Røre, de vilde
+Skrig, den dumpe Larm, de hastende Fodtrin, skal nok
+forstyrre Blødagtighedens Søvn, „de Civiliseredes“
+skjønne Drøm om en jordisk Lyksalighed.
+
+Der maa --- for Evighedens Skyld --- i Menneskenes
+Sind forblive en hemmelig Angst, et aabent Saar, en
+% --- p. 51 ---
+\setcounter{footnote}{0}%
+\opage{51}Rift; thi kun igjennem denne Rift kan Sukket trænge
+sig frem, det Længselens Suk, der aner et Uforkrænkeligt.
+Der maa i Timelighedens Muurværk være Sprækker
+og Revner; kun igjennem disse Sprækker og Revner
+falder der Lysskær ind fra det Evige.
+
+Kunde det lykkes en verdslig Klogskab
+--- om end blot for en føie Tid --- at dæmpe alle Klager, stoppe
+Munden paa al Utilfredshed, mætte endogsaa Graadigheden
+selv og faae den jordiske Velværens Rifter og
+Revner behørig tilkittede, hvad vilde da skee? Da
+vilde den aandige Tone forsvinde; den sidste Hilsen
+fra høiere Regioner, den sidste svage Gjenlyd af hine
+Sphærers Harmonier vilde døe hen. Det vilde gaae med
+den i Endelighed forstokkede, i Timelighed forstenede
+Tilværelse, som det efter Sagnet gik med hiin forunderlige
+Støtte --- Memnonsstøtten. Hver Morgen, naar
+Solen gik op, gav Støtten en Tone, det sang i Stenen.
+Der var noget Aandeagtigt deri. Man lyttede til og
+fornam det Guddommelige: det klang som en Hilsen
+fra oven. Hemmeligheden var, at der var en Sprække
+i Stenen, en Revne i Støtten. Man opdagede Revnen,
+men Hemmeligheden opdagede man ikke. Man meente,
+at naar Støtten blev repareret, vilde den ret begynde
+at synge og give Toner i fuld Harmonie. Hvor blev
+man skuffet; thi hvad skete nu? „Ak Støtten den blev
+taus, og Solen gjød sit tause Guld i Ørkensandets
+Bækken. Og aldrig meer hiin klare Hilsen lød, fra
+samme Time, som man heled Sprækken“.
+
+% --- p. 52 ---
+\setcounter{footnote}{0}%
+\lecture{Fjerde Forelæsning.}\opage{52}Det er en ikke ualmindelig Mening, at der i den
+positive, aabenbarede Religion indeholdes adskillige
+Stykker, som ikke egenlig vedkomme Troen, og som
+man desaarsag kan lade staae hen; men, siger man,
+der er eet Stykke, som for Livets og Haabets Skyld
+absolut maa bevares, og det er Troen paa Forsynet.
+Den tvivlende Forstand kan tage mange Artikler bort
+af en kirkelig fuldstændig Troesbekjendelse, men den
+om det faderlige Forsyn maa blive staaende, det er
+det allervigtigste Stykke. Der er dem, der føie et
+Stykke til, som ogsaa skal blive staaende, det er Troen
+paa Sjælens Udødelighed; og der er dem, som for en
+Sikkerheds Skyld føie endnu et Stykke til, og det er
+Troen paa en retfærdig, men dog naadig Dommer, der
+omsider vil opgjøre vort Livs Regnskab og betale
+Enhver efter sine Gjerninger. Naar disse tre Stykker
+ere i god Behold, antager man at have Alt, hvad man
+behøver af positiv Religion. Hvorledes er nu dette
+at forstaae?
+
+Det skal indrømmes, at der i den Fremstilling af
+Phænomener og Kjendsgjerninger, hvorigjennem Aabenbaringens
+Indhold udenfra træder os imøde, kan fore%
+% --- p. 53 ---
+\setcounter{footnote}{0}%
+\opage{53}komme Meget, som ligger os fjernt, fordi det er i
+historisk Form og tilhører en fjern Fortid, Meget, som
+ved første Øiekast er os frastødende, fordi vor Verdensbetragtning,
+det Virkelighedsbillede af Himmel og Jord,
+hvortil Nutidens Dannelse og Tankegang naturlig har
+ført os, er saa vidt forskjellig fra Oldtidens. Det skal
+indrømmes, at den kirkelige, ja selv den bibelske Overlevering
+i dens enkelte Led og Sammenføininger, er
+langt fra at afgive et udvortes sikkert Underlag, et
+dogmatisk Bjælkeværk, hvorpaa man kan slaae Tro
+og Haab fast som med Spiger og Søm; alt dette kan
+indrømmes, og endda er den antydede Opfattelse af
+den positive, aabenbarede Religion behæftet med store
+Vildfarelser.
+
+Allerede den Omstændighed, at her er Tale om
+Stykker, eet, to, tre Stykker, altsaa om en Udstykning,
+maa jo gjøre En betænkelig. Indeholder Aabenbaringen
+Sandhed, da lader Sandheden sig ikke udstykke. Den
+aabenbarede Religion er, i sit væsenlige Indhold, enten
+fra Først til Sidst falsk eller fra Først til Sidst sand;
+der er een Aand, een Tro, eet Haab i alle Forkyndelser,
+een Livets Strøm gaaer igjennem det Hele. Den, der
+i Sandhed har tilegnet sig det aabenbarede Ord om
+Forsynet, det faderlige Forsyn, uden hvis Villie ikke
+en Spurv falder til Jorden, har ogsaa tilegnet sig Ordet
+om Synd og Naade, om Frygt og Haab, om evigt Liv,
+Retfærdighed og Dom. Den, der ikke har tilegnet sig
+det Sidste, er i en Vildfarelse, naar han bilder sig ind,
+at han desuagtet har forstaaet og tilegnet sig det
+Første. Den positive, aabenbarede Religion er fra Først
+til Sidst en Forsynsaabenbarelse: Alt samler sig i den
+ene Tro, Troen paa Forsynet. Den positive, aabenbarede
+% --- p. 54 ---
+\setcounter{footnote}{0}%
+\opage{54}Religion er fra Først til Sidst en Retfærdigheds- og
+Kjærlighedsaabenbarelse: Alt samler sig i den ene Tro,
+Troen paa en sidste personlig Forherligelse af alt det
+Gode og en sidste personlig Fordømmelse af alt det
+Onde.
+
+Hvorledes overbevise vi os om Sandheden heraf?
+Hvad giver os Vished? Livets Ophav, Livet selv! Vi
+leve først, idet vi lære at leve. Maalestokken for Tro
+er Oplevelse; Maalestokken for Haab er Oplevelse, og
+--- det kan ikke gjentages for ofte --- Maalestokken for
+Tilegnelse og Forstaaelse af den aabenbarede Religion
+i sin Heelhed er fra Begyndelsen til Enden Oplevelse.
+Vi fastholde kun det Udvortes for derigjennem at tilegne
+os det Indvortes; men Tilegnelsen er i Oplevelse.
+Hvad der i det historisk Overleverede er af den Beskaffenhed,
+at det ikke paa nogen Maade enten umiddelbart
+eller middelbart kan blive Gjenstand for indre,
+personlig Oplevelse, kommer ikke Religionen ved, kan
+ikke være enten Gjenstand for Tro eller Grundlag
+for Haab.
+
+Ved at anlægge den fra Oplevelsen selv eller dog
+fra dens Mulighed hentede Maalestok blive vi i Stand
+til at charakterisere de forskjellige Misforstaaelser af
+Forsynslæren og fra Religionens Standpunkt at bidrage
+til en Belysning af det levende Forsyns Selvaabenbarelse
+for Individer og Slægter.
+
+Blandt Misforstaaelserne møde vi da for det Første
+den overfladiske eller vulgære Forsynstro. Den er
+sammensat af to Elementer: Forestillingen om en almindelig,
+i det Hele uforanderlig Verdensorden og
+Forestillingen om en „Guds Finger“, som ved givne
+Leiligheder griber ind, hvor det gjælder. At saadanne
+% --- p. 55 ---
+\setcounter{footnote}{0}%
+\opage{55}to Forestillinger ikke ligefrem kunne forliges i een
+Bevidsthed, er begribeligt. Under Oplevelsen blandes
+de da ogsaa paa den meest forskjellige Maade.
+
+Har Forestillingen om en uforanderlig Verdensorden
+Overhaand, saa synker Læren om Forsynet ned til en
+blot menneskelig Opfindelse. Kjendte vi alle Omstændigheder,
+vilde vi kunne beregne Begivenhedernes Indtræden,
+som en Astronom beregner en Solformørkelse
+eller en anden Constellation. Nu kjende vi ikke den
+uendelige Sammenkjædning af Aarsager, Betingelser
+og Virkninger. Vi støde paa Tilfælde, Hændelser,
+mærkværdige Sammentræf. Ere disse Begivenhedernes
+Sammentræf af store, heldbringende Virkninger enten
+for os selv eller for det Hele, saa blive vi rørte og i
+Rørelsens Øieblik troende: vi henføre dem under Forsynet;
+forekomme de os ubetydelige, saa er det bare
+Hændelser; trykke de os som Modgang, saa er det
+Skjæbnen; komme vi til rolig, kold Overveielse, saa er
+det Tingenes naturlige Gang. Vor Forsynstro og vort
+Haab er grundet paa vor Uvidenhed.
+
+Har Forestillingen om en almægtig, vilkaarlig Villie
+Overvægt, da sætter Mennesket sig i en Art eventyrligt
+Forhold til Forsynet, vover Alt, selv det Dumdristigste,
+paa Forsynets Regning. Ligesom en letsindig og uvorn
+Søn, der har en rig og mægtig Fader, tillader sig allehaande
+Udskeielser, idet han stoler paa, at Faderen,
+som vel er noget streng, men dog i Hjertet en god og
+kjærlig Fader, nok vil rede ham ud af Forlegenheden
+og komme ham til Hjælp, naar det kniber, saaledes
+kunne Menneskene blive phantastisk troende og bygge
+et sønligt phantastisk Haab paa Forsynets faderlige
+Finger. Det er utroligt, hvor let de blive troende og
+% --- p. 56 ---
+\setcounter{footnote}{0}%
+\opage{56}i Troen haabende, naar det stemmer med deres Tilbøieligheder.
+En Ødeland kan leve flot af, hvad han
+har, naar han slet ikke bekymrer sig om Fremtiden,
+men lader Forsynet sørge for den Dag i Morgen. Et
+heelt Folk kan bespare Millioner, naar det har „den
+rette levende Tro“ og sætter sin Lid til Forsynets
+Finger. Dets Forsvarsvæsen vil f. Ex. ikke koste det
+Meget; det har slet ingen Hast med at faae det i Orden.
+Hvis en lurende Fjende engang skulde fristes til at ville
+have Fingre i et saa hjerteligt troende Folk, da lad ham
+tage sig ivare, at Forsynet ikke faaer Fingre paa ham:
+en saadan Tro med et saadant Haab er meget besparende.
+
+Et Par Træk af virkelig Oplevelse. Der var en
+Gang en Konge, som oplevede den Hjertesorg at maatte
+slutte Fred med en overmægtig Fjende, efter at have
+afstaaet ham omtrent Halvdelen af sit Rige. Det var
+en haard Skjæbne; men det kunde jo ogsaa opfattes
+som en Tilskikkelse af Forsynet, og blev i det Mindste
+opfattet saaledes officielt. Der blev anordnet Gudstjeneste
+med Takkebøn over hele Landet. Kongen med
+sit Hof var i Kirke. Bagved Kongens Stol sad en
+Hofmand og mumlede under Prædikenen. Kongen
+vendte sig om og spurgte: hvad mumler Du om? Jeg
+taler med vor Herre, D. M. Hvad siger Du til Vorherre?
+Jeg takker ham for Freden, D. M. Og hvad
+svarer han Dig? Ingen Aarsag! Her have vi et
+Exempel, som viser, at Forestillingen om Forsynets
+Villie er gaaet under i Forestillingen om Verdenslovene
+og Tingenes naturlige Gang. --- Et andet Træk falder ind
+under det Pusilanime. Det var en skikkelig Kone, hvis
+Mand var Virtuos. Samme Kone kom til visse Tider
+paa Grund af Omstændighederne i et eget, ret eien%
+% --- p. 57 ---
+\setcounter{footnote}{0}%
+\opage{57}dommeligt Forhold til Forsynet. Virtuosen pleiede
+nemlig en Gang om Aaret at give en stor, extraordinær
+Aftenunderholdning. Ved denne Anledning gik Konen
+i Kirke, sædvanligviis to Gange. Første Gang, før
+Aftenunderholdningen, bad hun til Forsynet, og hendes
+Bøn var en Bedebøn; hun bad af Hjertet, inderlig og
+oprigtig, at det dog maatte gaae godt, hun bad om et
+talrigt Besøg, Lykke og Held paa Violinen o. s. frmdl.
+Anden Gang, efter Aftenunderholdningen, bad hun til
+Forsynet, og hendes Bøn var en Takkebøn, at sige,
+naar det var gaaet godt; thi naar det ikke var gaaet
+rigtig godt, saa takkede hun slet ikke. Her er et
+Exempel, som viser, at Forestillingen om Tingenes
+naturlige Gang kan, naar det gjælder, blive fortrængt
+af Forestillingen om en overnaturlig indgribende Villie.
+Det Pusilanime ligger ikke i, at den Bekymrede bad
+om noget Timeligt; thi dersom det ikke var tilladt at
+bede om noget Timeligt, saa var det jo heller ikke tilladt
+at bede om det daglige Brød; nei, det Smaalige
+ligger i det Selviske, at hun glemte at takke, naar det
+ikke var gaaet efter Ønske.
+
+Den næste Misforstaaelse staaer paa et høiere Trin.
+Her bygges ganske rigtig paa den Forudsætning, at
+Forsynets Villie ikke gaaer uden om Lovene, men
+igjennem Lovene, og magter Alt, det Mindste med det
+Største. Men saa gjøres der ogsaa den Fordring, at
+Forsynets Bistand og Hjælp skal give sig tydelig tilkjende
+i dette virkelige, nærværende Liv. Forestillingen
+om et Hiinsidigt er enten ganske glemt eller dog trængt
+tilbage; Forsynstroen er tagen som et Stykke for sig,
+adskilt fra Udødelighedstroen. Fra dette Synspunkt
+% --- p. 58 ---
+\setcounter{footnote}{0}%
+\opage{58}gjælder det, hvad Leibnitz siger: „det er ingen ringe
+Sag at være tilfreds med Gud og med Universet.“
+
+Det falder det Selviske i Mennesket, med al mulig
+Ivren for Retfærdighed, Kjærlighed og Barmhjertighed,
+langt lettere at appellere til Naturen og finde sig til
+Rette under Nødvendigheden end at holde Troen fast
+paa en altstyrende Villie og haabe paa Forsynets Bistand.
+Ingen, som er i Fare, vil vredes paa Naturmagterne,
+om de end true ham med Undergang; de
+kunne nu ikke Andet, de ere lovlig undskyldte. Ingen,
+som er i Havsnød, bliver forbittret enten paa Stormen
+eller paa Bølgerne eller paa Klipperne; de villieløse
+Væsener have jo ingen Skyld i de Ødelæggelser, de
+anrette. Men dersom der var En med derude, om hvem
+Alle vidste, at han kunde hjælpe, naar han blot vilde,
+og dog ikke hjalp, han vilde blive Gjenstand for en
+rasende Forbittrelse. Man kalder paa ham, man beder,
+man besværger ham, man raaber til ham, Alt forgjæves!
+Han staaer taus, ubevægelig, kold som Bølgen, stokdøv
+som Stormen, haard som Klippen, --- et hjerteløst Uhyre!
+De Kæmpende haane ham, de Døende forbande ham,
+og de, som overleve Faren, erklære, at det ikke har
+været nogen virkelig Person, men et Phantom, et
+Taagesyn, et Foster af ophidset Indbildning. Saaledes
+er det gaaet mange Mennesker med Forsynet. De begyndte
+med at troe, de kom i Fare, de haabede, de
+raabte om Hjælp; men den Tause gav intet Svar,
+Hjælpen udeblev. Enten sank de da i Dybet med en
+Forbandelse paa Læberne, eller et Tilfælde hjalp dem:
+de løb fra Faren, takkede Hændelsen og spottede Forsynets
+Afmagt. Det var en Feil i Oplevelsen; der var % printer's defect: the t of „Det“ did not ink („Deı“)
+Noget, de aldrig fik at see i Faren, et Syn, som Troen
+% --- p. 59 ---
+\setcounter{footnote}{0}%
+\opage{59}alene kan vise Haabet. „Han stod, den Tause, paa
+Skibet derude, midt i den hylende Storm, og frelste
+dem alle, --- ikke \emph{fra} Undergang, nei \emph{igjennem}
+Undergang.“ Det var Troen, der opdagede det, thi
+Troens Øie er skarpt, det seer igjennem Taager. Troen
+saae i Horizontens Rand den nye Kyst, den stille Havn.
+Det dukkede op hiint solrige Land; Lundenes Skygger,
+Kildernes blinkende Sølv, selv Blomsterfloret paa de
+grønne Enge kunde Troen see. Og Troen blev glad og
+hviskede til Haabet: „see, hvor han, den Tause, han,
+hvem de forbande, staaer og frelser dem alle, hver og
+een; Ingen bliver glemt, hverken Smaa eller Store, der
+er Vei, der er Plads, der er Bolig til dem alle. Saa
+ville vi To, Du og jeg, ikke forbande ham; nei, Du
+skal prise ham høit, og jeg vil falde ned og tilbede
+ham.“
+
+Misforstaaelsens tredie Form, en Ændring af den
+foregaaende, er især charakteristisk ved den selviske
+Utaalmodighed. Den Haabende opgiver ikke sin Tro
+paa Forsynet; men Ret og Skjel skal der være i Verden:
+hvad bliver det til med Retfærdigheden, hvor bliver
+Gjengjældelsen af? Det gaaer saa langsomt. Ondskaben
+hoverer, det Gode undertrykkes, den Stærke bryster sig
+af sin Arms Kraft: det seer undertiden ud, som om
+Forsynet sov. Vaagn op, hvor længe skal det vare?
+Det er Utaalmodighedens Raab og Klage. De to Stykker:
+Troen paa et styrende Forsyn og Troen paa en retfærdig
+Dommer, ere her satte sammen med Udelukkelse
+af det dybere Mellemliggende. Det glemmes bestandig,
+at den sidste Opgjørelse ikke er her, men hisset; det
+glemmes, at Timeligheden ikke blot er en Opdragelsesanstalt,
+men fremfor Alt en Frihedens Kampplads; det
+% --- p. 60 ---
+\setcounter{footnote}{0}%
+\opage{60}glemmes, at den sidste Act af det store Skuespil ikke
+falder indenfor, men i væsenlig Forstand udenfor den
+timelige Livsgrændse.
+
+I Skuespilhuset, naar der opførtes et stort Drama,
+der ret satte Tilskuernes Sind og Tanker i Spænding,
+skal det i ældre Dage, da Naiveteten var større end
+den er nuomstunder, undertiden være hændt, at et
+uforberedt, men grundærligt og troskyldigt Menneske
+kom til at forstyrre Forestillingen ved sin Utaalmodighed.
+Der er i et saadant Stykke naturligviis onde
+Lidenskaber, Falskhed, Bagvaskelse, Misforstaaelser.
+Der er Scener, Sammenstød, hvor et eneste Ord vilde
+være nok til at klare det Hele, naar det blot blev udtalt.
+Det kan den ærlige Mand ikke holde ud at see
+paa. Han vil forraade Hemmeligheden; han raaber
+høit og vil komme de Vildledte til Hjælp. Man tysser
+paa ham og faaer ham stillet tilfreds; men det varer
+ikke længe, thi i fjerde Act bliver det værre og værre.
+Det er ham, „Skurken, den rødhaarede Kjæltring med
+de buskede Bryn og de sorte Øine“, som den ærlige
+Mand ikke for nogen Priis kan fordrage; „thi det er
+ham, der gaaer omkring og gjør alle Ulykkerne.“ Den
+ærlige Mand er i Oprør, hans Utaalmodighed taaler
+ingen Indvending; han skammer de lunkne Tilskuere
+ud, at de sidde saa ligegyldige; han raaber paa Politiet
+og vil strax op paa Scenen og gjøre lyst, før det er
+for sildig; han glemmer, hvad der staaer paa Plakaten,
+at Stykket har --- en femte Act. Det er et Billede,
+om end et ufuldkomment Billede, paa den menneskelige
+Utaalmodighed over for det styrende Forsyn. Vi stole
+paa Digteren, naar Stykket gaaer sin Gang og spænder
+vor Forventning; men over for det store Verdensdrama,
+% --- p. 61 ---
+\setcounter{footnote}{0}%
+\opage{61}hvori vi selv have en lille Rolle, brister vor Taalmodighed:
+vi harmes over de Medspillende og forarges
+paa den usynlige Digter. Hvilke Optrin, naar en
+romersk Triumphator holder sit Indtog i „den evige
+Stad“, hvilket Billede af Retfærdighed paa Jorden! Vi
+kunne knap taale at læse om Andres Ulykker i Historien;
+angaaer det os selv, saa mistvivle vi let om Forsynets
+Retfærdighed. Vi glemme, at Stykket har en femte Act,
+der spilles paa en anden Scene. --- Disse Misforstaaelser
+maae hæves, naar det skal være muligt at tilegne sig
+Aabenbaringens Ord om et levende Forsyn.
+
+Forsynets Væsen er Villie, almægtig Villie. Det
+store Drama, hvori Enhver spiller med, er anlagt paa
+at udvikle Menneskevillien og bringe den gjennem Strid
+og Vildfarelser til Overeensstemmelse med den guddommelige
+Villie. Hvad vil da denne guddommelige
+Villie, hvad er dens egenlige Plan med Mennesket?
+Dersom Planen laa i et Fornuftsystems ubetinget afsluttede
+Nødvendighed, maatte den, i sine Grundtræk i
+det Mindste, kunne udfindes ved grundig videnskabelig
+Tænkning. Her behøvedes ingen særlig Aabenbaring.
+Men da dens inderste Princip er Villie, Frihed, en
+ubetinget Frihed, der gjør Fornuftsystemet til Grundlag
+og sætter Alt i Naturen som Middel for sit Maal, saa
+er det umuligt, at dette, den ubetingede Villies, Maal
+kan blive Mennesket aabenbart, uden derved, at Villien
+selv aabenbarer det.
+
+Denne Aabenbaring har to Trin. Det første Trin
+er betegnet ved Lovene, de store Love for Lydighed
+og Frihed. Lovene gjælde det Almindelige; dog gaaes
+der, for Livets og Virkelighedens Skyld, ogsaa i det
+Enkelte med bestemte Bud, Trusler og Forjættelser,
+% --- p. 62 ---
+\setcounter{footnote}{0}%
+\opage{62}Straf over de Onde, Belønning og Velsignelse for de
+Gode. Gjengjældelsen udgaaer fra den Evige, men
+lyder dog paa det Timelige; saa vækker Gjengjældelsestanken
+en smertelig Strid mellem Tro og Tvivl, mellem
+Haab og Skuffelse. Haabet skuffes og holder sig dog
+trods alle Skuffelser; det er en fortsat Krise, men en
+Troens og Lydighedens Krise, en Krise, hvorunder
+Spændingen voxer, og Haabet luttres. Det andet Trin
+er Haabets Opfyldelse, den Forventedes Komme, Forsynets
+personlige Selvaabenbarelse. Hvad denne Aabenbarelse
+betyder, i hvilket Forhold den staaer til Livets
+Maal, Individernes Frelse og Slægtens Udvikling, kan
+blandt Andet sees af den Maade, hvorpaa den Forventede
+blev modtagen. „Han kom til sit Eget, og
+hans Egne anammede ham ikke“; disse Ord minde os
+om en Strid, der begyndte i Tidernes Vendepunkt og
+vil fortsætte sig indtil Verdens Ende.
+
+„Skal det være det aabenbarede Forsyn? Er dette
+Menneske Gud selv, seer Gud saaledes ud? Er det
+hans Tanke, hans Vei, hans Midler og Maal? Det faaer
+et fornuftigt Menneske vanskeligt i sit Hoved. Vistnok
+kunde Slægten høilig trænge til et Forsyn, der vilde
+hjælpe de Undertrykte mod deres Undertrykkere og tage
+sig af de forvirrede Sager; men at tilbyde sig i en
+saadan Skikkelse fører til Intet. Skal Forsynet trænge
+igjennem og gjøre Virkning, da maa det komme i anderledes
+storartet Form, anvende andre Midler og for
+Alvor gribe Verdensstyrelsens Tøiler.“ Vi kunne ikke
+ved nogensomhelst objectiv Almeenbetragtning eller
+videnskabelig Begrundelse overbevise Menneskene om,
+at den Forventede virkelig er det aabenbarede Forsyn;
+men der er dog Noget, hvorom alle Tænkende kunne
+% --- p. 63 ---
+\setcounter{footnote}{0}%
+\opage{63}overbevise sig, og det er: enten maa det sig aabenbarende
+Forsyn gaae den Vei, han gik, eller: der er
+intet Forsyn, Slægten er haabløs. Det kan til Punkt
+og Prik bevises.
+
+Gaaden ligger i Forholdet mellem den guddommelige
+og den menneskelige, den almægtige og den afmægtige
+Villie. Denne Gaade bliver ikke løst ved en
+Formaning som den, at Mennesket skal lyde Guds
+Villie; thi naar Lydigheden sættes i blind Underkastelse
+under udvortes Bud, gaaer Friheden tabt: der er ingen
+væsenlig Selvbestemmelse, intet Oplevelsens Indhold,
+ingen Udvikling. Gaaden kan ikke løses ved at henvise
+Mennesket til sin Natur og naturlige Grundvillie; thi
+hvis Udgangspunktet søges i Naturen, maa Mennesket
+følge sit Instinkt og er givet til Priis for dunkle Indskydelser;
+hvis Mennesket vil tage sig sammen, bearbeide
+de naturlige Indskydelser og bruge sin endelige Villie
+som den er, maa det stole paa sig selv, og hvad betyder
+saa Forsynet? Gaaden kan heller ikke løses ved en
+Anviisning paa det Godes Idee, thi det Godes Idee i
+„immanent Existens“ er en videnskabelig Mythe. Ideen,
+hedder det, bestemmer Villien, Villien er absolut afhængig
+af Ideen, d. v. s. Villien bestemmer Ideen, Ideen er
+absolut afhængig af Villien. I Adskillelse fra Ideen er
+Villien Vilkaarlighed; i Adskillelse fra Villien er Ideen
+Nødvendighed. Friheden er den fingerede Bevægelse,
+at Nødvendigheden gaaer op i Vilkaarligheden, for at
+Vilkaarligheden igjen kan synke ned i Nødvendigheden.
+Den immanente Frihed er en Selvmodsigelse uden Haab;
+her er intet Forsyn.
+
+Lad os betragte den Forventede. Hvad er han?
+Et virkeligt Menneske i Kjød og Blod. Hvorfra kommer
+% --- p. 64 ---
+\setcounter{footnote}{0}%
+\opage{64}han? Fra Faderens Skjød, fra det hellige Dyb, hvor
+Skaberen speiler sit Billede i Slægten, hvor Guds Væsen
+er Eet med og dog forskjelligt fra Menneskets Væsen,
+ hvor Villien selv er Natur, og Naturen hellig Villie.
+Saa staaer han der, paa Tidernes Strøm, den Almægtiges
+Aabenbarer og dog afmægtig som et Menneske. Det
+er ubegribeligt, siger man. Rigtigt! Det er ikke Noget
+at byde Videnskaben, thi det er, reent ud sagt, et
+Under. Men dette Under er netop Friheden, thi Friheden
+selv er et Under. Skulle vi nu forkaste Underet,
+fordi det ikke kan begrundes i objectiv Viden, saa
+maae vi med det Samme forkaste Frihed, Forsyn og
+Haab, thi Frihed, Forsyn og Haab ere ikke videnskabelige
+Størrelser.
+
+Frihedens Under forudsætter et eiendommeligt
+Villiesforhold mellem Almagt og Afmagt. Den guddommelige
+Villie er fri, thi den er almægtig. Frihed
+er uadskillelig fra Magt, ubetinget Frihed uadskillelig
+fra Almagt. Den menneskelige Villie er ufri, thi den
+er afmægtig: Ufrihed er uadskillelig fra Afmagt. I Forsynets
+Aabenbarelse skulle vi da see det Under, at den
+almægtige Villie gjør sig afmægtig, at den afmægtige
+kan blive deelagtig i Magten. Afmagten iføres Almagten,
+for saa vidt Menneskets Villie bliver Fuldføreren
+af den guddommelige: deri bestaaer i absolut
+Forstand den menneskelige Villies \emph{Frihed}.
+
+At ville, hvad Forsynet vil, er at ville, hvad den
+Almægtige vil, er at have en uimodstaaelig Villie. Forbilledet,
+det aabenbarede Forsyn, har i store Kjendsgjerninger
+lagt for Dagen, hvad dette vil sige. Han
+staaer ved Lazari Grav, og hvorledes? \emph{Grædende},
+\emph{bedende}, \emph{bydende}. At græde og bede er menneskeligt,
+% --- p. 65 ---
+\setcounter{footnote}{0}%
+\opage{65}det tyder paa Afmagt; men Stemmen, der byder:
+Lazarus, kom herud! er guddommelig og tyder paa
+Almagt.
+
+Dersom vi nu forsee os paa det Udvortes, saa
+bliver en saadan Undergjerning let til Forargelse. „Er
+Forsynet aabenbaret for at opvække de Døde, hvorfor
+blev det da staaende ved nogle enkelte, høist tvivlsomme
+Forsøg og gik ikke videre?“ Vi ville ikke her holde
+Revue over den Hærskare af Indsigelser, hvormed den
+videnskabelige Kritik staaer rede til Angreb; vi ere
+færdige med dem alle, idet vi indrømme, at de vel
+kunne have deres Gyldighed fra en objectiv Videns
+Synspunkt; vor hele Gjendrivelse er sammentrængt i
+den Erklæring: \emph{den objective Videns Synspunkt
+er falsk}. Det Spørgsmaal, paa hvis Besvarelse det
+ved denne som ved enhver anden Undergjerning væsenlig
+kommer an, retter sig ikke umiddelbart mod dens
+Virkelighed, men først og sidst mod dens \emph{Mulighed}.
+Det er en Mulighedsgrændse, der kategorisk skiller
+mellem Tro og Vantro. Er en Undergjerning \emph{umulig},
+saa er der ingen fri, almægtig Villie, intet ubetinget
+Frihedsprincip, intet levende Forsyn, intet Haab: saa
+har Vantroen Ret. Er Undergjerningen \emph{mulig}, saa
+gaaer der igjennem det Udvortes en Vei til det Indvortes,
+og saa er en Oplevelse ogsaa mulig.
+
+Fastholdt som historisk Kjendsgjerning kan Lazari
+Opvækkelse ikke opleves af os; det Eneste, vi kunne
+opleve, er en endeløs, forvirret Strid om Kjendsgjerningens
+Virkelighed. See vi derimod paa det Indvortes,
+saa viser her sig noget Andet. Det Almagtsord,
+der lød ved Lazari Grav, er en Aabenbarelse af den
+Guds Hemmelighed, at Altilværelsens inderste Princip
+% --- p. 66 ---
+\setcounter{footnote}{0}%
+\opage{66}er Frihed, at den almægtige Villie er i Lovenes Sammenhæng
+Lovenes Herre, saa at det Høieste, Menneskets
+Villie kan naae, er at blive Organ for Almagtsvillien.
+Det er et stort, guddommeligt Bidrag til Opklaring af
+den hele Forsynstanke, som Undergjerningen byder os.
+Det, som trykker, det, som kuer den opad stræbende
+Villie, vækker Mismod og nedslaaer Haabet, er fra Endelighedens
+Standpunkt altid dette: hvorledes vil Frihed
+i denne physisk bundne Tilværelse være mulig? Skaf
+Mulighed! Jo mere Villien anstrænger sig og Kræfterne
+sættes ind paa Opnaaelsen af et høiere Gode, desto
+flere Hindringer optaarne der sig paa Veien; det kan
+see ud, som om blinde Love stængede for Mulighederne,
+og de ufrie Magter sammensvore sig mod Friheden.
+Hvad siger nu Forsynets Ord ved Lazari Grav? Frygter
+ikke! Ville I kun, hvad Forsynet vil, saa er der
+Mulighed nok, Mulighed for Tro og Haab.
+
+Kan da, spørger man, den menneskelige Villie ved
+at være Forsynsvilliens Organ selv blive almægtig?
+Ingenlunde; enhver selvisk Tanke maa bort. Dersom
+der er endog blot en Rest af Selviskhed tilbage hos
+den, i hvis Haand Forsynet har lagt Udførelsen af en
+stor Plan, vil den egenraadige Villie underfundigt eller
+aabenlyst søge at rive Magten til sig, bruge den i sit
+eget Navn, til egen Forherligelse, d. v. s. misbruge den,
+og saa tilsidst synke sammen i Afmagt. Religionen
+bruger herom det Udtryk, at en Saadan ikke vil give
+Gud Æren. Udtrykket bliver ikke sjeldent misforstaaet,
+som om det fornemmelig var Forsynet om udvortes
+Æresbevisninger at gjøre. Denne Misforstaaelse afgiver
+et fortræffeligt Skalkeskjul for Egoismen. Den romerske
+Triumphator gik til Capitolium for at takke Guderne;
+% --- p. 67 ---
+\setcounter{footnote}{0}%
+\opage{67}den christusbekjendende Triumphator gaaer til Kirken,
+synger \textit{Te Deum} og ophænger Trophæerne fra Rov og
+Vold til Guds Ære: Forskjellen er ikke stor. Det
+eneste Vilkaar, hvorpaa den afmægtige Villie kan være
+i sand Eenhed med den almægtige og virke som et Almagtens
+Redskab, er Lydighed, ubetinget Lydighed. Den
+ubetingede Lydighed betyder for Mennesket Hengivelse,
+ubegrændset Selvopoffrelse i Forsynets Tjeneste.
+
+Hvorfor græd Frelseren ved Lazari Grav? Vi svare:
+fordi Frelsertanken, den store Forsynstanke, hvori Almagten
+enes med Afmagten, og fordrer af Mennesket
+sit Lydighedsoffer i Fornedrelse og Lidelse, stod levende
+for ham. Kunde der hjælpes ved et Almagtsord, da
+vidste han, at Faderen i Himlen vilde høre hans Bøn.
+Og Bønnen blev hørt, og han stod for Folkets Øine
+som den Almægtige; og det betød for ham, at nu var
+Maalet fyldt, nu svore Fjenderne hans Undergang, nu
+skulde Afmagtsaabenbarelsen begynde, nu skulde han
+i Fornedrelsen tømme den bittre Kalk. At opvække
+den Døde var ikke Hjælpen; Undergjerningen var en
+Indvielse til Lidelsen, et Almagtstegn, at Alt, hvad
+han led, det led han i frivillig Lydighed: Hjælpen var,
+at han selv gik i Døden.
+
+Almagt og Afmagt, Frihed og Lydighed enes i
+Kjærligheden: Forsynets Aaabenbarelse er Aabenbarelsen % PRINTED AS IS: „Aaabenbarelse“
+af den guddommelige Kjærlighed. I Kjærlighedens Aand
+bliver Afmagten selv almægtig.
+
+Paa al den Kjærlighed, som stammer fra Aand, er
+der sat et guddommeligt Præg, det er --- Overlegenhed.
+Selv naar Aandskræfterne staae i Egenkjærlighedens
+Tjeneste, kunne de dog, især naar der er kæmpet for
+noget Almeent og Idealt, grundfæste en høiere Selv%
+% --- p. 68 ---
+\setcounter{footnote}{0}%
+\opage{68}følelse, en naturlig Stolthed, som ikke fornegter sig,
+om end Helten, overvældet af Fjender, mishandles og
+martres til Døde; men en Overlegenhed af denne Art
+bringer det kun til at resignere, tie for den raa Magt
+og foragte Menneskenes Ondskab. Den forhen Mægtige
+er nu en Afmægtig, og Resignationens talende Taushed
+siger, at han er sig sin Afmagt bevidst. Anderledes,
+naar Aandskræfterne staae, ikke i Egenkjærlighedens,
+men i Alkjærlighedens Tjeneste. Sandhedens Konge
+med Tornekronen aabenbarer den evige Kjærligheds
+absolute Overlegenhed. Han har ikke blot Sindsstyrke
+til at tie og lide; nei, han har i Inderlighedens Forstand
+en Almagts Kræfter tilovers. I Forsmædelsernes,
+Smerternes, Dødskvalernes bittre Øieblik har han den
+uendelige Overlegenhed at kunne hæve sin Røst og
+nedbede Tilgivelse over sine Fjender. At en Afmægtig
+kan i frivillig Opoffrelse være saa almægtig, det er en
+Forsynets Aabenbarelse, det er Alkjærlighedens ubegribelig
+store Under. Den, der vil veie Underet i de
+to Ord, Almagtsordet ved Lazari Grav og Tilgivelsens
+Ord fra Korset, skal visselig finde, at det sidste, naar
+det veies paa Oplevelsens Vægtskaal, staaer lige med
+det første.
+
+Det aabenbarede Forsyn er Slægtens Forbillede,
+dens Frelser og Fører. Forsynsvillien er ikke blot guddommelig,
+men ogsaa menneskelig. Forsynet er ikke
+blevet siddende i Himlen og har foreskrevet de stakkels
+Dødelige Love, som ere uforligelige med Kjød og Blod,
+Aandslove saa kolde, at de dræbe den naturlige Individualitet,
+Almagtslove, for hvilke de Afmægtige maae
+gyse; Forsynet har selv iført sig Kjød og Blod, har
+aabenbaret sin Almagt i Afmagtens Form, har opfyldt
+% --- p. 69 ---
+\setcounter{footnote}{0}%
+\opage{69}sine egne Love og levet et menneskeligt Liv paa Jorden.
+Det er ikke vilkaarlig Sprængning af Tingenes Sammenhæng,
+ikke Brud paa Naturens Love, men Friheden,
+den menneskeblevne Frihed selv, der er Underet. Forbilledet
+er ikke blot udvortes i Historien, men ogsaa,
+om end fordunklet, indvortes i Slægten. Det levende
+Forsyn taler til Menneskene ikke som til Individer af
+lavere Orden, men som til Brødre og Søstre; og hvor
+Ordet, Frihedens, Lydighedens, Kjærlighedens Ord, finder
+Indgang, hæver Billedet sig i klare Træk. Dette Væsen
+er ikke fremmed for vor Natur, det er vor Slægts
+hellige Grund; det er i Sjælene derinde, naar det blot
+maa komme frem til indre Oplevelse, til Opklaring af
+Livets Maal, til Fuldbyrdelse af Forsynets Tanke, til
+Grundfæstelse af Tro og Haab.
+
+% --- p. 70 ---
+\setcounter{footnote}{0}%
+\lecture{Femte Forelæsning.}\opage{70}Dersom Menneskelivet skal afsluttes indenfor Timelighedens
+Grændser, saa er Forsynstroen en Indbildning,
+og Slægten væsenlig haabløs. Det er ofte blevet sagt,
+og det siges endnu, at Udødelighedshaabet kun er et
+Foster af Individets barnagtige Frygt for Døden, en
+selvisk Attraa efter at bevare sit kjære forfængelige Jeg
+med alle dets Indskrænkninger i det Uendelige. „Det
+er Egenkjærlighed at lægge en saadan Vægt paa at
+conservere sit individuelle Selv. Istedenfor at klamre
+os til et intetsigende Haab om en personlig Udødelighed,
+bør vi beflitte os paa at aflægge vor Egoisme, glemme
+os selv, arbeide for det store Hele, søge Hvile ved Naturens
+Bryst, aande ud i det Almene og see at blive
+Momenter i det Absolute.“ Altsaa: \emph{det Upersonlige
+er høiere end det Personlige}.
+
+Er dette nu sandt, saa kan han, der kalder sig
+Verdens Frelser, den forbilledlige Personlighed, paa
+hvem de Troende personlig bygge deres Haab, i hvem
+de see det aabenbarede Forsyn, umulig være Sandheden.
+Hvad er han da? En høist forunderlig dybsindig
+Sværmer, vistnok et religiøst Geni efter en overordenlig
+Maalestok, men en dødelig, begrændset Individualitet,
+% --- p. 71 ---
+\setcounter{footnote}{0}%
+\opage{71}hildet og fangen i megen Egoisme. Den Livstanke, som
+Forbilledet kom til Verden for at aabenbare, kan udtrykkes
+i den ene Sætning: \emph{det Personlige er i
+Himlen og paa Jorden høiere, uendelig høiere
+end det Upersonlige}.
+
+Er det Egoisme at sætte sit Liv i det Personlige
+og lægge Vægt paa sig selv, hvilken Dødelig paa Jorden
+har da hendraget en saadan Opmærksomhed paa sit
+personlige Selv, som han, der først og sidst og altid
+med Eftertryk af guddommelig Myndighed siger \emph{Jeg}.
+Ingen Prophet er gaaet videre end til at begynde med
+et: \emph{Jehova siger}; men denne, Propheternes Prophet,
+begynder ud fra sig selv med et: Jeg siger. „Sandelig,
+sandelig, jeg siger Eder.“ „Før Abraham blev er jeg.“
+„Jeg er Sandheden.“ „Kommer til mig, troer paa mig,
+bliver i mig.“ „Jeg er Viintræet, I ere Grenene.“
+„Lærer af mig!“ „Jeg er kommet ned fra Himlen,
+ikke at jeg skal gjøre min Villie, men hans Villie, som
+sendte mig.“ „Jeg har Livet, ikke at jeg skal bevare
+det, men at jeg skal offre det; som et Hvedekorn skal
+det falde i Jorden, jeg skal give det hen til Manges
+Frelse.“ Dersom dette er Egoisme, da maae vi tilstaae,
+at det er en Egoisme af en egen Art.
+
+Der er en let kjendelig Forskjel mellem det Egoistiske
+og det Personlige. Egoisten holder paa sit Jeg i
+endelig Forstand; han frasiger sig ingen Ret og bringer
+intet Offer, med mindre han seer, at han har Fordeel
+deraf. Han kan vove Alt, ogsaa Livet, men altid under
+Forudsætningen af: \emph{at være eller ikke være}. Netop
+fordi han aldrig driver det videre end til at opfatte sit
+Jeg som endeligt, kan han endog med en Hazardspillers
+Dristighed sætte det i Vove; gaaer det tabt, hvad er
+% --- p. 72 ---
+\setcounter{footnote}{0}%
+\opage{72}det saa mere? Hvad endeligt er, maa have en Ende.
+Personligheden lægger uendelig Vægt paa sig selv; thi
+Selvet veed sig som evigt; den personlige Forvisning
+om Selvets Evighed bliver i Gjerningen udtrykt ved, at
+Mennesket vinder sig selv ved at offre sig selv: denne
+Kredsbevægelse gjennem Fornedrelse til Ophøielse,
+gjennem Død til Opstandelse, gjennem frivillig Opoffrelse
+til uendelig Selvbekræftelse, denne Evighedsring, hvori
+Personligheden kredser sig om sit oprindelige Midtpunkt,
+er ufattelig for Egoismen. Der er ofte klaget over, at
+den objective Videnskab, navnlig Philosophien, er saa
+tilbøielig til at sætte det Personlige lavere end det
+Upersonlige, at den ikke vil erkjende Gud for et personligt
+Væsen. Disse Klager hidrøre fra Misforstaaelser
+saa vel af Videnskabens som af Personlighedens Natur.
+Det mangler i Philosphiens Historie ikke paa velmenende % PRINTED AS IS: „Philosphiens“
+Forsøg med at faae Læren om Guds Personlighed videnskabelig
+beviist i objectiv Viden. Personlighedsbegrebet,
+siger man, er det høieste, rigeste og fyldigste af alle
+Begreber; følgelig kan intet Begrebssystem fuldendes
+og afsluttes uden i og ved og igjennem Begrebet af en
+personlig Gud. Vi behøve ikke at fordybe os i forviklede
+Begrebsanalyser for at komme til Erkjendelse
+af, at heri skjuler sig en stor Vildfarelse.
+
+Til et fyldigt Begreb af Guds Personlighed hører
+der, hvad den positive, aabenbarede Religion eftertrykkelig
+indprenter os, Andet og Mere end almeennødvendige
+Tankebestemmelser af et i Magt og Viisdom
+uendeligt Selvvæsen. Om ogsaa Ideevidenskaben formaaer
+at opklare, hvad Aanden er i sit almene Begreb;
+om end Aandslæren, hvad vi antage, vil bringe det til,
+at selv de objective Erfaringsmænd omsider indsee, at
+% --- p. 73 ---
+\setcounter{footnote}{0}%
+\opage{73}det Væsen, der bærer Naturen og begrunder dens
+Dannelsesdrift og Viisdommen i dens ubevidste Frembringelser,
+maa være en seende, vidende, almægtig
+villende Aand: saa ere vi dog med et saadant Aandsbegreb
+uendelig langt fra Erkjendelsen af, hvad Religionen
+forstaaer ved Guds alfaderlige Personlighed.
+
+Religionen taler om Guds Vrede, Barmhjertighed,
+Naade o. s. fremdl.; de, der antage, at slige guddommelige
+Sindsrørelser kunne afhandles og begrundes i objectiv
+Viden, maae være uvidende om, hvad Videnskab
+er. Det er let sagt, overfladisk seet, ogsaa let forstaaet,
+at det guddommelige Væsen ikke kan sættes i lidenskabeligt
+Oprør paa samme Maade som et Menneske.
+Man har i Fornuftens Navn beflittet sig paa at faae
+det gamle Testamentes Jehova befriet fra de forfærdelige
+Lidenskaber, „der vanhelde hans Aasyn og gjøre
+ham saa hæftig, at hans Vrede bliver en fortærende
+Ild“; det er, hedder det, billedlige Udtryk, menneskelige
+Forestillinger. „Gud er alt for fornuftig til at kunne
+blive vred. „Vil man ikke blive staaende paa Halvveien,
+da maa man nødvendig indrømme, at Gud ogsaa er for
+fornuftig til at lade sig røre af selvforskyldt Elendighed,
+alt for ophøiet til at indlade sig med Individerne
+enkeltviis; de ere jo i en fornuftig Verden; lad dem
+synde, rase, angre, fortryde, klynke, bede og bære
+Følgerne af deres Handlinger, indtil de lære at finde
+sig til Rette med den evige, uforanderlige Viisdom.
+Saa fornuftig, saa ophøiet, saa uforanderlig, saa fuldstændig
+befriet fra alle Affecter og Rørelser maa den
+sande Gud være, hvis han ellers skal nyde den Ære at
+blive introduceret i Videnskaben.
+
+% --- p. 74 ---
+\setcounter{footnote}{0}%
+\opage{74}Opfattet i Videns Form er Guddommen et Væsen
+uden Følelse, uden Sind, uden Hjerte. At et saadant
+Væsen er upersonligt, sees da ogsaa deraf, at det med
+al sin Viden, Magt og Villen er i den Grad optaget af
+det Hele, det Nødvendige, det Almene, at det umulig
+kan sætte sig i noget særligt personligt Forhold til
+individuelle Personligheder. Denne Opfattelse af det
+guddommelige Væsen er nu, ifølge den positive, aabenbarede
+Religion, en sjælefordærvende Grundvildfarelse.
+For at hæve denne Grundvildfarelse og aabenbare
+Guds Personlighed er Verdens Frelser traadt frem som
+Faderens Eenbaarne; det er i denne Forstand, at han
+lægger Vægt paa sit Jeg, viser hen paa sig selv og
+siger: „Jeg og Faderen vi ere Eet.“
+
+Det Spørgsmaal, hvorledes et virkeligt, altsaa afmægtigt,
+Menneske paa Jorden kan være Eet med den
+Almægtige i Himlen, er intet Vidensspørgsmaal, men et
+personligt Spørgsmaal, altsaa et Troesspørgsmaal. Er
+Faderen uendelig i Almagt og Frihed, saa er Sønnen
+uendelig i Hengivelse og Lydighed: de ere forskjellige
+og dog Eet i Kjærlighedens Aand, og Kjærlighedens
+Aand er personlig.
+
+Som Aabenbareren af Guds Personlighed staaer
+Frelseren omgiven af Undere og Tegn. Disse Undere
+og Tegn skulle gjøre det vitterligt, at Gud ikke blot
+har Almagt og Villie, men et Hjerte, som føler for de
+Lidende og forbarmer sig over de Vildfarende: det
+personligt Varslende, det personligt Frelsende er Kjernepunktet
+i dem alle. Saa urimelige, ja forargelige Christi
+Undergjerninger end maae forekomme dem, der ville
+have Alt begrundet i Viden, saa trøsterige og guddommelige
+ere de for de Troende.
+
+% --- p. 75 ---
+\setcounter{footnote}{0}%
+\opage{75}Det kunde vel synes, som maatte den moderne
+Kritik, der ikke blot afkræfter de historiske Vidnesbyrd
+om Undergjerningernes Troværdighed, men ogsaa fører
+Beviser for deres Umulighed, udøve en ødelæggende,
+al Tro nedbrydende Virkning paa Menneskenes Sind og
+ved stadig Henviisning til upersonlige Magter omsider
+gjøre Almeenbevidstheden fremmed for den personlige
+Sandhed. At Bevægelsen kan være farlig nok for Individer,
+som svagt rodfæstede i det Personlige let rives
+med af Opinionens Strøm, skal ikke negtes; men, see
+vi nærmere til, da turde det vise sig, at den troesfornegtende
+Kritik har gjort den positive Aabenbaringstro
+en stor og væsenlig Tjeneste; det turde vise sig i
+en kommende Tid, at Kritikens gjennemførte Opløsning
+af hele den hellige Historie har været et rensende
+Middel, et mægtigt Bidrag til klarere og dybere Forstaaelse
+af dens Kjendsgjerninger; det turde vise sig,
+at de negative Aander, langt fra at have berøvet os
+disse Kjendsgjerningers Virkelighed, tvertimod have
+hjulpet os til at faae Øinene op for deres egenlige og
+sande Betydning.
+
+Er det, spørger man, da ikke virkelig sandt, hvad
+der fra saa mange Sider forsikkres, at Videnskaben een
+Gang for alle har beviist Miraklernes Umulighed? Vi
+svare: Nei, det er virkelig ikke sandt. Et Beviis for
+Umuligheden er ikke ført og vil, saa sandt den menneskelige
+Viden har en uoverskridelig Grændse, aldrig kunne
+føres. Alt hvad Videnskaben i denne Henseende har
+præsteret, beroer paa en Forvexling af det Umulige
+med det Usandsynlige. Kritiken har let ved at bevise
+et Mirakels Usandsynlighed, thi Miraklet maa jo ifølge
+sin Charakteer være det Overordenlige, det Overraskende,
+% --- p. 76 ---
+\setcounter{footnote}{0}%
+\opage{76}det Usandsynlige; men at det Usandsynlige ikke er det
+Samme som det Umulige, beviser Sandsynlighedsregningen
+endogsaa mathematisk. Det egenlige Mellemværende
+mellem Videnskab og Religion dreier sig, som sagt, ikke
+om et historisk Antal Undergjerningers Virkelighed eller
+Uvirkelighed, Sandsynlighed eller Usandsynlighed, men
+ene og alene om Underets Mulighed. Man kan antage
+denne Mulighed uden at komme i Strid med Videnskaben,
+thi den ligger slet ikke paa de videnskabelige
+Forskningers Omraade; men man kan ikke benegte
+denne Mulighed uden at fornegte Guds Personlighed og
+dermed hele den aabenbarede Religion.
+
+I hvilken Udstrækning det Anførte gjælder, kan
+sees i et Overblik over de evangeliske Mirakler; de ere
+med al deres Udvorteshed alle uden Undtagelse at opfatte
+efter Inderlighedens Lov fra Personlighedens
+Synspunkt.
+
+Det er hos mange oprigtige Bibeltroende en gammel
+indgroet Fordom, at et Mirakel lader sig opleve som
+en anden historisk Kjendsgjerning, naar man blot kunde
+blive Øienvidne. Det er en falsk Forudsætning. Det
+Ydre, det Overraskende, det Forbausende kan man opleve;
+men Aarsagen? En underfundig Brug af hemmelige
+Naturkræfter? Et aftalt Spil mellem Indviede? Et Sandsebedrag
+eller en Guds Gjerning? Her maa vælges en
+Forklaring, og Valget er personligt. Intet Mirakel i
+Jesu Liv er anderledes beskaffent. Han helbreder en
+Besat, og Pharisæerne sige, at det er med Djævelens
+Bistand. Han opvækker Enkens Søn; hvis der havde
+været en Sadducæer tilstede, vilde han have sagt: „det
+traf sig beleiligt, det unge Menneske var kun skindød.“
+Han kalder Lazarus frem af Graven; og der er dem,
+% --- p. 77 ---
+\setcounter{footnote}{0}%
+\opage{77}der mene, at det var aftalt Spil med Vennen og hans
+Søstre. Charakteristisk er det, at nogle af Øienvidnerne
+gik til Pharisæerne og fortalte dem, hvad han havde
+gjort, og at der saa i det forsamlede Raad blev besluttet
+at slaae ham ihjel. En saadan Beslutning vilde
+ligefrem have været afsindig, hvis Pharisæerne virkelig
+havde kunnet overbevise sig om, at Miraklet med Lazarus
+var en historisk Kjendsgjerning: at ville slaae en Mand
+ihjel, der kan opvække de Døde, er mere end Trods og
+Vantro, det er slet og ret Afsindighed.
+
+Naar vi læse Beretningerne i den hellige Historie,
+synes det, som om hver Undergjerning stod for Anskuelsen
+i saa klare Træk, at intet Øienvidne kunde
+tage feil, enten han forøvrigt var Ven eller Fjende.
+Det kommer deraf, at Beretningerne, saaledes som de
+foreligge, ere opfattede i Tro og fremstillede i Tro.
+Havde vi havt Vantroens Beretninger liggende for os
+ved Siden, da skulde vi seet en Forskjel; og dog kunne
+Øienvidnerne, hvad det Historiske angaaer, antages at
+være, hver fra sit Synspunkt, lige redelige, lige troværdige.
+
+
+Ingen Troværdig beretter Andet end, hvad han
+virkelig har seet; men den personlige Forskjel er, at
+den, der seer et Mirakel med Troens Øie, faaer noget
+Andet at see, end den, der seer med Vantroens. Beretningen
+nedskrives ikke i samme Nu som Undergjerningen
+skeer; der forløber en Mellemtid, og i Mellemtiden
+gaaer den udvortes Oplevelse over i den indvortes.
+Det er ikke Hukommelsen, der bliver det Afgjørende;
+det er Erindringen. Men Troens Erindring er en anden
+end Vantroens.
+
+% --- p. 78 ---
+\setcounter{footnote}{0}%
+\opage{78}Det er hos Bibeltroende en gammel Fordom, at de
+mange enkelte Mirakler skulde være lige saa mange
+historiske Beviser for Aabenbaringens Sandhed. Denne
+Misforstaaelse har den nyere Kritik behørig revset. Skal
+Miraklet staae fast som et saa uomstødeligt Beviis, at
+Ingen kan negte dets historiske Virkelighed uden at
+negte al Historie: saa skulle vi, siger Kritiken, snart
+faae beviist, at Beviset ikke duer, at den hele Aabenbaring
+er en Mythe.
+
+„Hvad skal saa Miraklet til, naar det baade træder
+frem og dog ikke træder frem, baade skal være et
+Beviis og dog ikke et Beviis?“ Vi svare, at begge Bestemmelser
+oprindelig høre med i Aabenbarelsen af det
+Personlige. Traadte Miraklet ikke frem, saa vilde
+Aabenbaringen mangle det Almagtstegn, som siger, at
+Gud personlig er med. Traadte Miraklet frem med en
+saa udvortes overvældende Magt, at her ingen Mulighed
+var for et Valg mellem Tro og Vantro, vilde det knuse
+den menneskelige Personlighed: for Magten og den
+Mægtige maae Alle kaste sig i Støvet.
+
+Det berettes, at Pilatus, da han fik at vide, at
+Jesus var en Galilæer og „hørte under Herodes' Magt“,
+sendte Fangen til Herodes, som selv var i Jerusalem i
+de samme Dage. „Men der Herodes saae Jesum, blev
+han meget glad, thi han havde for længe siden gjerne
+villet see ham, fordi han havde hørt Meget om ham og
+haabede at skulle see et Tegn af ham.“ Hvor det kan
+ligne en Herodes at ville nyde Miraklet som en Underholdning
+og lege med Magtens Tegn. Men med Almagtens
+Tegn kan der ikke leges; og dersom den fangne
+Mand havde tabt Taalmodigheden og den Almægtige i
+Himlen ligesaa, med andre Ord: dersom Miraklet virkelig
+% --- p. 79 ---
+\setcounter{footnote}{0}%
+\opage{79}var kommet til Udslag i en utilsløret, forfærdelig Magthandling,
+hvad var der saa blevet af Herodes, Pilatus,
+Cajaphas og alle dem, der havde deres Magt fra at
+krybe for Magten? Ja, hvad var der blevet af den
+menneskelige Frihed?
+
+Hvis den Bibeltro, der ligefrem vil bygge paa det
+udvortes Bogstavelige, havde Ret --- hvad den dog
+ifølge sin egen Forudsætning umulig kan have, eftersom
+de bibelske Beretningers Ordlyd i mange Punkter er
+saa afvigende --- men sæt, at den gamle Bibeltro havde
+Ret, saa vilde Troeslivets Vilkaar være et ganske andet
+for os end det var for hine Øienvidner. De, der
+umiddelbart oplevede Miraklerne selv, maatte jo faae
+„Troen i Hænderne“; men vi, der leve i en Verden
+uden Mirakler og desaarsag maae leve af gamle Beretninger,
+hvorledes skulle vi faae Troen i Hænderne?
+Fastholde vi derimod, hvad der ligger i Miraklets Bestemmelse,
+nemlig at vække det personlige Liv i Mennesket,
+saa bliver Vilkaaret for os og for Hine væsenlig
+det samme. Ligesom Øienvidnerne stode over for
+\emph{Kjendsgjerningerne} med det store Spørgsmaal om
+Muligheden og et personligt Valg mellem Troens og
+Vantroens Forklaring, saaledes staae vi over for \emph{Beretningerne}
+den Dag i Dag med det samme Spørgsmaal
+og det samme Valg.
+
+Hvilken uhyre Afstand der er imellem en videnskabelig
+Begrundelse af et Mirakels Virkelighed og en
+troende Forstaaelse af det virkelige Mirakels Betydning,
+kan sees ved et Blik paa det Anførte. At indføre
+mirakuløse Forestillinger i en objectiv Videnskab er at
+udhule dens Grundlag og forkvakle dens Væsen. Men
+at bringe den Vidende til at indsee Miraklets Mulighed
+% --- p. 80 ---
+\setcounter{footnote}{0}%
+\opage{80}er ikke at gaae Videnskaben for nær; med denne
+Mulighed som Grundlag at bygge Troeserkjendelsen op
+i videnskabelig Belysning er at udsone den gamle Strid
+mellem Tro og Viden.
+
+Hvad det i vor nærværende Culturperiode frem for
+Alt kommer an paa, er dette Dobbelte. \emph{Fra de
+Videndes Standpunkt}: en Erkjendelse af, at den
+aabenbarede Religion er en aandig Magt, som ikke lader
+sig afvise; at det religiøse Liv har en Gyldighed i sig
+selv, en personlig Sandhed, der er uafhængig af Videnskaben.
+Den Vidende kan have en saadan Erkjendelse
+uden at være troende; men mangler Erkjendelsen, saa
+er Culturtilstanden huul, og Alt hvad der fra et formeentlig
+høiere politisk Stade gjøres af Hensyn til Almuen
+og det menige Folk, for at værne om de religiøse
+Institutioner, er spildt Umage. Det menige Folk har
+--- i slige Ting --- et sikkert Instinkt og et skarpt Blik,
+der ikke lader sig blænde. \emph{Fra de Troendes Standpunkt}:
+en Erkjendelse af, at det religiøse Liv i vore
+Dage trænger til Forstaaelse, inderlig, væsenlig Forstaaelse
+af de aabenbarede Kjendsgjerninger: uden
+Forstaaelse ingen Tilegnelse, uden Tilegnelse ingen
+Oplevelse.
+
+Til Forstaaelse hører Begriben, og til Begriben
+Tænken. Billeder, Forestillinger, Følelser, Phantasier
+og Meninger gjøre ikke Sagen klar. Troen har sine
+Begreber lige saa fuldt som Videnskaben har sine.
+Religionens og Troens Begreber danne i deres Kreds
+lige saa vel en sammenhængende Eenhed, som de videnskabelige
+Begreber i deres. Men at der maa opstaae
+en grændseløs Forvirring i Tankerne, naar de to
+Erkjendelseskredse blandes, kan Enhver ved nogen
+% --- p. 81 ---
+\setcounter{footnote}{0}%
+\opage{81}Eftertanke let overbevise sig om. Vi ville ikke her
+udmale den Forfærdelse, der maatte paakomme selv det
+største videnskabelige Genie, hvis han officielt skulde
+tvinges til at give en objectiv, uimodsigelig, for Alle
+fyldestgjørende Begrundelse af Læren om Guds Barmhjertighed
+og Syndernes Forladelse. --- Lad en Tænker,
+som har anvendt sit Liv og sit Talent paa at grunde
+over de religiøse Sandheder, som med ubetinget Agtelse
+for Videnskab og videnskabelig Forskning samvittighedsfuldt
+har gjennemgaaet, drøftet og prøvet Alt, hvad der
+fra Kritikens Side er indvendt mod Verdensfrelseren
+og hans Mirakler, være kommet til det Resultat, at
+Evangelisterne have Ret, at der i Troen maa være et
+Liv, som Videnskaben ikke kjender: er han saa dermed
+blevet en Troende? Han kan forsvare Troen imod
+Videns Angreb, og endda kan det, personlig talt, see
+betænkeligt ud med hans egen Tro. Der er Noget, han
+har vundet, og det er ganske vist noget Væsenligt: han
+har en Forstaaelse i Tanken. En Forstaaelse i Tanken
+er en Betingelse, en ufravigelig Betingelse for en sand
+Tilegnelse, men Tilegnelsen selv beroer paa Oplevelse:
+Ingen kommer et Haarsbred videre i Tro, end han
+kommer i personlig Oplevelse.
+
+For Livets, d. e. for Oplevelsens Skyld kom Verdens
+Frelser til Verden. Vi kunne ikke først i en objectiv
+Theorie forvisse os om Gyldigheden af hans Komme, og
+saa derpaa bygge vor Tro. Hans personlige Liv er det
+Væld, der aabner sig for Alle. Ethvert Gjennembrud af
+nyt og høiere Liv i Historien er betinget af et Menneskeoffer:
+Frelseren er den, som offrer sig for Alle. Derfor
+stiller han sig frem som Menneske og dog med guddommelig
+Myndighed og lægger afgjørende Vægt paa sit
+% --- p. 82 ---
+\setcounter{footnote}{0}%
+\opage{82}personlige Jeg: „Kommer til mig, lever af mig, bliver i
+mig: uden mig formaae I slet Intet.“ Det er Personlighedens
+evige Liv, der aabenbarer sig i ham og fuldender
+sit Kredsløb: fra guddommelig Oprindelse gjennem Fornedrelse
+til Ophøielse.
+
+Det er mærkeligt at see, i hvilken Grad den objective
+Viden har plaget sig med at faae det Menneskelige
+i Frelserens Personlighed til at stemme med det Guddommelige.
+Gnosticismen i Oldtiden holdt sig til det
+Guddommelige og erklærede hans Lidelse og Død for
+Skin og Skuffelse. Rationalismen i Nutiden holder sig
+til det Menneskelige og forklarer hans Opstandelse og
+Himmelfart som en Mythe. Kun ved at afvise den
+objective Viden, holde os til Troeserkjendelsen og fæste
+vort Blik paa det Personlige bliver det os muligt at
+indsee den virkelige Sammenhæng mellem Fornedrelsen
+og Ophøielsen og forstaae det Udvortes i Kraft af det
+Indvortes.
+
+Det Udvortes i Lidelseshistorien er for den naturlige
+Sands afskrækkende, just fordi det er saa virkeligt.
+Guddommens Sol gaaer ned, Skyggerne brede sig, det
+bliver saa mørkt. Oplevelsens mørke Vei gaaer først
+til Gethsemane, saa til Pilati Domhuus og saa til Golgatha.
+Det Udvortes, omgivet af Rædsler, støder fra,
+driver Beskueren ind i sig selv og opvækker Spørgsmaal
+paa Spørgsmaal: hvad er det dog her foregaaer?
+Hvo er den Dømte og hvad ere Dommerne? Seer Retfærdigheden
+saaledes ud, er det den Retfærdiges Skjæbne?
+Ingen Bistand fra oven, ingen Engle med Sværd, intet
+frelsende Mirakel; kun Virkeligheden, den strenge, iiskolde
+Virkelighed, Verdenslovene med uafviselige Krav
+paa Opfyldelse! Den Almægtige seer det fra sin Himmel,
+% --- p. 83 ---
+\setcounter{footnote}{0}%
+\opage{83}men rører sig ikke; Elias stiger ikke ned at hjælpe den
+Hjælpeløse. Røsterne tie for oven, at Bespottelsens,
+Hadets, Forhaanelsens Ord desto lydeligere kunne høres
+fra neden. Først da den Retfærdige har bragt sit Offer
+og den tornekronede Kjærlighed har bøiet sit Hoved,
+komme Varslerne: Solen formørkes, Jorden skjælver,
+Forhænget i Templet revner; hvad betyder alt dette?
+Det betyder, at Offeret er modtaget, at Kjærlighedens
+Afmagt er i Frihedens og Lydighedens Navn blevet Eet
+med sin Almagt; det betyder, at den Døde skal overvinde
+Døden selv, og det Personlige faae Magt med det
+Upersonlige. Men det Udvortes er forfærdeligt: Troen
+er nedbøiet, Haabet har Sorg.
+
+Med sin Sorg og sit Haab gaaer en Maria Magdalene,
+den troende Sjæl, til Urtegaarden, til Stedet, hvor de
+lagde ham, og kiger ind i Graven: ak, han er borte.
+Hun græder, vender sig om og mener at see en Urtegaardsmand,
+der kan sige hende Besked; da hører hun
+sit Navn: Maria! Intet virker med større Inderlighed
+og mere personligt end at blive nævnet ved sit Navn
+saaledes, i et saadant Øieblik og af en saadan Stemme.
+Ogsaa her gaaer Forstaaelsen af det Udvortes frem af
+det Indvortes. I den dæmrende Morgen, i Omgivelsernes
+Dunkelhed flyde Skygge og Virkelighed over i hinanden;
+hvor naturligt, at en Kvindes taareblændte Øie kan forvexle
+sin Sjæls Forventede, Gjenstanden for hendes
+Længsel og Haab, med en fremmed Urtegaardsmand.
+Men --- Maria! Ved Navnet og Stemmen dages det i
+hendes Sjæl: hun seer, fordi hun troer, hun seer i salig
+Vished sit Haabs Opfyldelse og tilbeder den Opstandne.
+
+Har Lidelseshistorien noget Frastødende, fordi det
+Virkelige er saa forfærdelig virkeligt, da har Opstandelsens
+% --- p. 84 ---
+\setcounter{footnote}{0}%
+\opage{84}og Himmelfartens Historie --- for den naturlige Sands ---
+omvendt sit Tvivlsomme deri, at det Ideale, det Overvirkelige,
+ikke synes at være virkeligt nok. Hvor mange
+Gange, under hvilke og hvor mange Skikkelser den
+Opstandne har viist sig for sine Troende, kan ikke afgjøres;
+bort med Fuskerforsøg i den objective Viden!
+Men det er vist, at den Forklarede aldrig blev seet af
+Vantroens Øie; og dette er da igjen et Beviis for, at
+det udvortes Virkelige er til for at vække og befæste
+det personlige Liv i det Indvortes. Vort Udødelighedshaab
+er grundet paa et Under, paa Frelserens Opstandelse.
+Dette Under maa for Livets og Haabets
+Skyld opfattes som en vitterlig, for Troende virkelig
+historisk Kjendsgjerning. Men den troende Bevidsthed
+griber feil, naar den ligefrem vil støtte sig til udvortes
+Beviser og indlade sig med den objective Viden.
+
+Havde det ligget i Underets Bestemmelse, at Beviset
+for dets udvortes Virkelighed skulde være uigjendriveligt,
+da havde den Opstandne jo blot havt behov
+at vise sig ved højlys Dag i Jerusalems Gader. Hvilken
+Stimlen af Tilskuere, Jøder, Grækere, Romere! det
+skulde i Sandhed ikke manglet paa Øienvidner. Lidet
+skulde det have hjulpet Sadducæere og Tvivlere at beraabe
+sig paa, at den Korsfæstede kun havde været
+skindød, at han for tidlig var blevet nedtagen af Korset;
+thi Opstandelsen ender jo med Himmelfarten. Her er
+da endelig et Mirakel, som, hvis det var foregaaet
+offenligt og i Alles Paasyn, kunde været stadfæstet ved
+et saa storartet historisk Vidnesbyrd, at der ikke var
+blevet Skygge af Tvivl tilbage. Man forestille sig,
+hvilket Indtryk det vilde have gjort paa den hele Befolkning,
+hvis den Opstandne havde fastsat Dag og Time,
+% --- p. 85 ---
+\setcounter{footnote}{0}%
+\opage{85}da han med Sine vilde bestige Oliebjerget og derfra
+fare op til Himlen for at sætte sig hos Almagtens høire
+Haand. Menneskenes Mængde, hvor adspredt og tankeløs
+den end for Resten kan være, skulde visselig ikke have
+viist sig ligegyldig imod et saa storartet Skue. Det var
+blevet mere end en nysgjerrig, sammenløben Hob, som
+her var kommet til at spille Øienvidnets Rolle. Trods
+de Mægtiges og Skriftkloges Foragt for Nazaræerens
+Undergjerninger, vilde den virkelige Opstandelse, hvorledes
+de end tydede den, dog allerede have vakt deres
+Opmærksomhed og sat dem i Spænding. Som en Løbeild
+vilde Budskabet sikkerlig være naaet til Rom, til Athen,
+til Verdens store Stæder: den hele civiliserede Menneskehed
+var ved dette Skuespil blevet repræsenteret. Hvilket
+Syn, at see den Forklarede paa Skyen, høit over Alle,
+synlig for Alle. Saa havde vi havt et historisk Beviis,
+et Kjendsgjerningsbeviis, der kunde slaae hver Tvivl til
+Jorden.
+
+De, der pukke paa de udvortes, uomstødelige Beviser,
+maae dog nok her blive bange for deres egne
+Forestillinger. Et Kjendsgjerningsbeviis, som det ovenfor
+beskrevne, vilde jo have forherliget den guddommelige
+Personlighed ved at tilintetgjøre den menneskelige.
+Naar Alt var slaaet fast i Magtphænomenets Udvorteshed,
+hvad blev det saa til med det frie Valg mellem Tro og
+Vantro? Hvad blev det til med den personlige Udvikling?
+Den var tilintetgjort; det Hele var endt med
+en Dommedag.
+
+Den Forklarede staaer paa Skyen; hans Aasyn være
+nok saa mildt, Kjendsgjerningen taler: „I vilde ikke
+troe, nu have I Vished, udvortes Vished, og den udvortes
+Vished dømmer og fordømmer Eder alle. I vilde
+% --- p. 86 ---
+\setcounter{footnote}{0}%
+\opage{86}ikke Frihed i Lydighed; nu gaaer Friheden bort, den
+farer op til Himlen, hvorfra den kom; men I skulle
+bære Lydighedens Aag, I skulle trælle i Støvet. I forhaanede
+Kjærligheden, da den saaes i sin Afmagt;
+I spottede dens Selvopoffrelse, dens ydmyge Taalmod,
+dens rige Forjættelser, dens bekymrede Omhu, dens
+inderlige Medynk, selv naar den saaes i Taarer. Nu
+skulle I see den iført sin Almagt, Majestæten som han
+er, ikke i Tjenerens, nei i Herskerens Skikkelse: han
+knuser hver afmægtig Trods og spørger ikke mere om
+Menneskers Villie.“ Det var et Kjendsgjerningsbeviis,
+men et forfærdeligt.
+
+Betænke vi dette, saa kunne vi forstaae, hvi den
+Opstandne kom saa stille, som i det Skjulte: at samles
+med sin lille Kreds, at vandre med de To til Emaus,
+der Dagen hældede og det stundede til Aften, at hilse
+de Elleve, da Dørene vare lukkede. Pludselig staaer
+han iblandt dem, som et Syn, som en Aand og dog
+som han virkelig er, den Korsfæstede selv med den
+aabne Side og Naglegabene i sine Hænder. Det er
+Inderlighedens Vei, den stille Vei; ikke at Virkeligheden
+skal være tvivlsom, men at Vidnesbyrdet kan komme
+udenfra og dog indenfra, fra Sjælens Dyb, fra Sindets
+Grund, at Aabenbarelsen kan være ikke blot for Syn
+og Sands, men for indre Oplevelse til personlig Væxt,
+for sand Tilegnelse i Tro og Haab.
+
+% --- p. 87 ---
+\setcounter{footnote}{0}%
+\lecture{Sjette Forelæsning.}\opage{87}Enhver Tidsalder har sine Fordomme, vor egen ikke
+mindre end alle de foregaaende. Middelalderens Fordom
+var, at Alt hvad der angik Tro og Haab, maatte stadfæstes
+udenfra ved et Magtsprog; dens Tro paa Kirkens
+og Pavens guddommelige Myndighed var en Overtro.
+Nutidens Fordom er, at en religiøs Overbeviisning er
+uden Værd, naar den ikke har faaet sin Daab i en
+objectiv Viden; denne Tro paa Videnskabens Evne og
+Eneret til at afgjøre, hvad der tør gaae og gjælde for
+religiøs Sandhed, er vor Tids Overtro. Begge Vildfarelser,
+den moderne saa vel som den middelalderlige, vise sig
+især i deres rette Lys, naar Talen er om Livets Fuldendelse,
+om „de sidste Ting“, om Tilstanden efter
+Døden.
+
+Middelalderen var næsten mere topographisk orienteret
+i den hiinsidige Verden end i den dennesidige.
+Man havde alle Kredsene for sig: Paradiset, Fædrenes
+Kreds eller Abrahams Skjød, Børnenes Kreds, Skærsilden
+og Helvede; man vidste nøiagtig, hvor det laae
+Altsammen. Protestantismen slog en Streg over Skærsildens
+Kreds, og holdt sig i det Hele til Bibelen. Her
+meente man da at finde paalidelige Efterretninger fra
+% --- p. 88 ---
+\setcounter{footnote}{0}%
+\opage{88}den anden Verden. Christus, der var kommet ned fra
+Himlen, hvor han med egne Øine havde seet Alt,
+maatte jo vide Besked; Apostlene, der fik hver eneste
+Tøddel, de nedskreve, indblæste af den Hellig Aand,
+kunde da heller ikke tage feil. Saa samlede man paa
+Skriftsteder; men jo ivrigere man stræbte at arbeide
+de spredte Antydninger sammen til et forstaaeligt Hele,
+desto større bleve Vanskelighederne.
+
+Lignelsen om Lazarus og den rige Mand, Christi
+Ord til Røveren paa Korset og lignende Udtalelser
+synes jo at sætte det udenfor al Tvivl, at der ingen
+Mellemtilstand gives: Lazarus kommer strax i Abrahams
+Skjød, den rige Mand i Helvede, Røveren til Paradiis.
+Men i Modsætning hertil staaer Læren om, at de Døde
+først paa den yderste Dag skulle opstaae af Gravene.
+Hvorledes forholder det sig da med Sjælen i den
+Mellemtid, der ligger imellem Døden og Opstandelsen?
+Nogle iblandt de Gamle meente, at Sjælen døde med
+Legemet, og at begge, baade Sjæl og Legeme, bleve
+vakte til Liv igjen ved et Mirakel; Andre meente, at
+Sjælene sov indtil Dommens Dag, og atter Andre, der
+forkastede Sjælesøvnen, fandt Mellemtilstanden betegnet
+ved at lægge Vægt paa Aandernes Ophold i Hades. ---
+Altsammen Fuskeri i den objective Viden.
+
+Bestræbelsen for at faae Læren sat dogmatisk fast
+i objective Former hidsede Reflexionen og hidførte
+Kritiken. Det var Halvrationalismen i forrige Aarhundrede,
+som brød Isen. Med utroligt Hovedbrud
+anstrengte man sig og vilde gjøre det ret tydeligt for
+den sunde Menneskeforstand, hvorledes det egenlig
+maatte gaae til paa Dommens Dag. Man deelte Begivenheden
+juridisk i tre Afdelinger: 1) Forhøret,
+% --- p. 89 ---
+\setcounter{footnote}{0}%
+\opage{89}2) Domfældelsen og Bekjendtgjørelsen og 3) Fuldbyrdelsen.
+Saa gik det da op for Forstanden, at det
+Hele umulig kunde endes paa een Dag. „Uomtvistelig,“
+siger en ældre Dogmatiker, „maa Verdensdommen vare
+længe, hvilket er saa meget rimeligere, som en tydelig
+Fremstilling af denne vigtige Sag vil være det meest
+lærerige Skuespil for ethvert tænkende Væsen og udbrede
+det største Lys over de dunkleste Hemmeligheder.
+Desværre kunne de ydre Omstændigheder ikke nærmere
+bestemmes.“ Ifølge et sandsynligt Overslag har man
+udfundet, at for et Antal af omtrent 300 Millioner
+Mennesker maa Dommedagen vare i det mindste
+100,000 Aar.
+
+En anden Besværlighed var: at udfinde, hvorledes
+saa mange Mennesker paa een Gang kunde komme til
+at see Dommeren og høre hans Ord. Nogle antoge,
+at de opstandne Legemer vare rumfrie; men det var
+let at bevise, at de umulig kunde være Legemer uden
+at indtage et Rum. Om man endog vilde mene, at
+naar de ret kunde knibe sig sammen og gjøre sig
+smaa, kunde der sidde tusinde paa et Knappenaalshoved,
+saa maatte der jo dog være Plads. Endnu i
+Halvfemserne fik en Ubenævnt udregnet, at naar Menneskene,
+som billigt er, skulde staae i Retten, saa vilde
+et Fladerum af Kongeriget Bøhmens Størrelse være tilstrækkeligt
+uden Kniberi.
+
+De, som ikke her kunne see, at Tro og Viden maae
+gaae hver sin Vei, skulde nødig paatage sig at være
+Veivisere. Den kirkelige Dogmatik er deels historisk
+deels speculativt gaaet i Compagnie med den objective
+Viden: det har bekommet den ilde. Den objective
+Viden vil, hvad der ligger i dens Natur, vide Besked
+% --- p. 90 ---
+\setcounter{footnote}{0}%
+\opage{90}med det Objective; den forholder sig, hvad man fra et
+halvspeculativt dogmatisk Standpunkt jo ogsaa i nyere
+Tid har rost sig af, ganske rigtig til de overnaturlige
+Phænomener, som Naturforskeren forholder sig til de
+naturlige Kjendsgjerninger. Men naar den objective
+Viden først er blevet Herre i Huset, hvad saa? Ved
+at underkaste de overnaturlige Phænomener en Kritik
+opdager den, at det Hele er urimeligt, usammenhængende,
+usandsynligt og modsigende; med denne Opdagelse bliver
+den vred, slaaer Dogmatikens kirkelige Porcellain i
+Stykker og gaaer sin Vei.
+
+Anderledes med den Erkjendelse, der udspringer af
+Troesprincipet; den befatter sig ikke med Undersøgelser
+af det Objective, den anlægger en anden Maalestok.
+Det første Spørgsmaal er: hvilken Betydning have Christi
+og Apostlenes Udtalelser om „de sidste Ting“ for Personligheden
+selv og den personlige Oplevelse? Det
+bliver da strax indlysende, at disse Udtalelser ikke ville
+tilfredsstille en menneskelig Videbegjærlighed, men veilede
+os til at forstaae, hvad der i evig Forstand er
+afgjørende. Det aabenbarede Ord vil i hellig Alvor
+vække vor Frygt og vort Haab; det vil med guddommelig
+Myndighed indprænte os Forestillinger om de store
+Kriser, Livet har at gjennemgaae, inden det naaer til
+Fuldendelsen. Fra dette Synspunkt kunne vi forstaae,
+at de forskjellige Udtalelser, ihvorvel de alle udspringe
+af den samme Grundtanke, kunne fremgaae af indbyrdes
+forskjellige Motiver. Fremstillingsmotivet forandrer sig,
+hver Gang den samme Sandhed skal belyses fra en
+ny Side.
+
+I. Lignelsen om den rige Mand og Lazarus ligesom
+ogsaa i Forjættelsen til Røveren paa Korset bliver det
+% --- p. 91 ---
+\setcounter{footnote}{0}%
+\opage{91}udtrykkelig udtalt, at der imellem Livet her og Livet
+hisset er en væsenlig Forbindelse, en indre personlig
+Sammenhæng: den kommende Tilstand er forberedt og
+betinget af Retningen i det Nærværende. Den Fattige
+kommer i Abrahams Skjød som den, der har lidt i
+Tro og Taalmod; den Rige med sin Nydelsesegoisme og
+sin Ubarmhjertighed faaer sit Sted der, hvor Ubarmhjertigheden
+har hjemme. Røveren, der i Kvalernes
+Time faaer Troens Syn og opdager, at hans Medkorsfæstede
+har et Rige, hvori han er Herre, kommer
+til Fredens og Salighedens Sted, og Stedet er ham jo
+ganske nær.
+
+Et andet Motiv ligger i Fremstillingen af Opstandelsen.
+Her gaae Individerne sammen med Slægten,
+og Skilsmissen mellem de Gode og de Onde fuldbyrdes.
+Ligesom der er en Død for Alle, saaledes er der ogsaa
+en Opstandelse og en Dom for Alle. Det er et jordisk
+Øie, der skal oplades til at see det Overjordiske. Stille
+vi os nu paa et jordisk Standpunkt og spørge: hvor ere
+vore Døde? saa lyder det naturlige Svar: de hvile i
+Jordens Skjød, de sove i Gravene. Det er et virkeligt
+Syn paa de Dødes Hjemsted, et Indtryk af Livets Forkrænkelighed;
+Dødens Magt er imponerende. Hertil
+maa da svare et lige saa storartet, imponerende Indtryk
+af Dødsovervinderens Magt, af hans Magt, hvem det er
+givet at have Livet i sig selv. Overjordiske Kræfter
+røre sig, Domsbasunen lyder, Menneskesønnens Røst
+høres: de Sovende vaagne, Gravene aabne sig, de Døde
+staae op, Dommedagen begynder. Skjøndt der ved alt
+dette sigtes paa det Virkelige, saa holder Fremstillingen
+sig dog i Symbolets Form; det ligger i Sagens Natur
+og skjønnes umiddelbart deraf, at Billederne vexle.
+% --- p. 92 ---
+\setcounter{footnote}{0}%
+\opage{92}Først dømmes Slægten, idet Slægterne dømme hverandre
+indbyrdes. „De Mænd af Ninive skulle opstaae ved
+Dommen imod denne Slægt og fordømme den; thi de
+omvendte sig ved Jonas' Prædiken, og see, her er Mere
+end Jonas. Dronningen fra Sønden skal opstaae ved
+Dommen imod denne Slægt, og fordømme den; thi hun
+kom fra Jordens Grændser, at høre Salomons Viisdom,
+og see, her er Mere end Salomon.“ At Maalestokken
+hentes fra Slægt imod Slægt, er et Vidnesbyrd om, at
+Dommen kommer indvortes fra, at den ikke er vilkaarlig,
+men personlig. Derefter et andet Billede: omkring
+Christusthronen sidde tolv Dommere, Apostlene paa
+tolv Stole; de dømme de tolv Israels Stammer. Tilsidst
+fuldendes Skildringen: Menneskesønnen sees med alle
+de hellige Engle; han sidder paa sin Herligheds Throne:
+„alle Folkeslag skulle forsamles for ham, og han skal
+skille dem fra hverandre, ligesom en Hyrde skiller
+Faarene fra Bukkene.“
+
+De Grundlagsbegreber, der bære Muligheden af hele
+det overjordiske Indhold, have alle Præg af fyldig
+Realitet. De to Verdener, den dennesidige og den hiinsidige,
+have begge Rum, Tid, Materie og Kræfter, den
+ene i forkrænkelig, den anden i uforkrænkelig Form:
+intet Indvortes uden et Udvortes, ingen Sjæle uden
+Legemer, ingen menneskelig Personlighed uden virkelig,
+anskuelig Individualitet. Der holdes Gjæstebud i den
+hiinsidige Verden: de komme fra Øst og Vest at sidde
+til Bords med Abraham, Isak og Jakob; Christus drikker
+med Sine --- den nye Viin i Faderens Rige. Det er
+Billedformer, fulde af Sandhedsindhold; men det er
+ingen Beskrivelse af en udvortes, faststaaende Virkelighed,
+ingen Kaarttegning over det fremmede Land, ingen
+% --- p. 93 ---
+\setcounter{footnote}{0}%
+\opage{93}Photographie af dets Egne, dets Bygninger, dets Huusgeraad,
+dets Indvaanere.
+
+Hvad er det nu som adskiller de store Aabenbaringsbilleder
+fra alle Myther, alle Former af apokalyptisk
+Poesi og phantastisk Symbolik? Det er, med et eneste
+Ord, det Personlige. Grundtanken, Kjærnen i det Altsammen
+er det personlige Livs Fuldendelse. Alt Upersonligt
+er Middel, Materiale, Apparat. Det er Personligheden
+selv, den guddommelige og den menneskelige,
+den \emph{gudmenneskelige}, hvorom Alt dreier sig. Denne
+Dreiningsaxe er fastere end den astronomiske Verdensaxe,
+dette Himmelpunkt er mere uforanderligt end
+Polens Stjerne.
+
+Det er en Misforstaaelse, som kun tankeløs Overfladiskhed
+i Forening med vanemæssigt Hang til systematisk
+Hjernefordunkling kan behage sig i, en aldeles
+urimelig Misforstaaelse: at Henførelsen af alle Undergjerninger
+og overnaturlige Phænomener skulde falde
+sammen med en underfundig Tendens, en stiltiende
+Bestræbelse for at faae det Overnaturliges, d. e. det
+høiere Naturliges Virkelighed bortforklaret eller dog
+forvandlet til en ubestemt, i Luften svævende Idee.
+Det er jo tvertimod en Bestræbelse for at hævde denne
+Virkeligheds Charakteer som uopløselig, af Videnskaben
+uantastelig Aandsvirkelighed, at det personlige Synspunkt
+er valgt. Hvorfor afvise vi Fuskeriet med den objective
+Viden? For at sikkre Personlighedens og dermed Oplevelsens
+Maalestok for Tro og Haab.
+
+Troen er et Liv; som Livet er, saaledes er Haabet,
+og som Haabet er, saaledes er Livet. Er der en
+væsenlig Forskjel mellem Troeslivet og det selvisk naturlige
+Liv, saa maa der jo ogsaa være en tilsvarende
+% --- p. 94 ---
+\setcounter{footnote}{0}%
+\opage{94}Forskjel mellem det med Troen gjenfødte Haab og alle
+de Former af naturlige Haab, som kun uden fra berøre
+Troeslivet. Det er, naar vi see lidt nærmere til, ikke
+vanskeligt at skille det naturlige Haab fra Troeshaabet.
+Opfattelsen af Forholdet mellem den nærværende og
+den tilkommende Verden afgiver et sikkert Prøvemaal.
+Det naturlige Haab ligner Troeshaabet deri, at det
+altid vil noget Høiere, Skjønnere, Fuldkomnere; saa
+længe den gradvise Forandring slaaer til, saa længe
+Kjendsgjerninger og Forestillinger, laante fra bekjendte
+Omgivelser, kunne understøtte Sandsynligheden, gaaer
+det naturlige Haab med, om end den Bro, der fører
+over Afgrundene, er smal og lang. Men falder Sandsynlighedens
+Rækværk, skal alt det Bekjendte opgives,
+og Overgangen betegnes ved en Forvandling, da sortner
+det for Haabets Øine: det bliver enten vildt phantastisk
+eller det afmattes og døer. Kun Troens gjenfødte Haab
+udholder Forvandlingens Overgang. Det er kun dette
+Haab, for hvis Opfyldelse det aabenbarede Ord vil
+indestaae; ethvert andet til Religionen sig knyttende
+Haab kan skuffes.
+
+Det er mærkværdigt at see, hvor let den menneskelige
+Bevidsthed kan blande det absolut Ueensartede
+sammen. Der er i mange Sjæle en Længsel, et Haab,
+der bygges paa Tro; de haabe paa en Opstandelse, et
+Gjensyn hisset, en Forklarelse, en evig Salighed. Troen
+vil saa gjerne holde alt dette fast; men er det ikke
+forunderligt? Haabet, som ellers er saa villigt til at ile
+forud og strøe Lysglimt paa Veien, bliver her uvilkaarlig
+forskrækket og tør ikke gaae med. Hvad er der da
+i Veien? „Vi maae jo,“ hedder det, „nødvendig troe
+paa et evigt Liv og et Gjensyn hisset; dersom vi ikke
+% --- p. 95 ---
+\setcounter{footnote}{0}%
+\opage{95}holdt fast ved denne Tro, vilde det nærværende Liv
+være værre end Døden. Men det er os dog saa vanskeligt
+at troe, thi Haabet er saa mat, det vil ikke lyse.
+Kunde vi blot gjøre os en nogenlunde rimelig Forestilling
+om, hvad der venter os hiinsides, og hvordan det egenlig
+skal gaae til med den virkelige Overgang fra Død til
+Liv, saa vilde Haabet styrke vor Tro.“
+
+Istedenfor at henvise til Forvandlingen og fordre
+Haabets Gjenfødelse, melde sig nu de saare behagelige,
+særdeles imødekommende Veivisere, villige til at understøtte
+det naturlige Haab med en Smule objectiv Viden
+og gjøre Overgangen fattelig, høist rimelig. Herfra disse
+halvnaturalistiske, halvtroende Leflerier med „Dagen
+efter Døden“ deels med Brint og Æther, deels med
+Bibelsteder, Anelser, Forsikkringer og beskedne, men
+dog uforgribelige Meninger. Man glemmer, at Overgangen
+er en Forvandling, at kun det gjenfødte Haab
+kan tilegne sig Forvandlingen og gaae sammen med
+Troen.
+
+Da Frelseren i den sidste Aften ved Afskeden
+trøstede de bedrøvede Disciple, lød hans Ord: „Eders
+Hjerte forfærdes ikke; troer paa Gud og troer paa mig.
+I min Faders Huus ere mange Boliger\dots{}. Jeg gaaer
+bort at berede Eder Sted.“ Den sentimentale Halvtro
+med sit naturlige Haab finder det høist opbyggeligt og
+derfor ret antageligt, at Christus ved disse Ord har
+peget op mod den synlige Aftenhimmel, mod Sirius,
+Plejaderne, Orion, og, hvo veed, maaskee endogsaa prophetisk
+givet en Anmeldelse af „Naadens Aabenbarelse
+i Naturen“. Det Vamle ved slige Leflerier ligger i
+Følelsen af, at det ikke er Alvor hverken med Natur
+eller Naade. Ingen har i stærkere og myndigere Ord
+% --- p. 96 ---
+\setcounter{footnote}{0}%
+\opage{96}udtalt, at hele det synlige Universum er Forkrænkelighed
+underlagt, end Frelseren selv, naar har siger: „Himmel % PRINTED AS IS: „har“ (for han)
+og Jord skulle forgaae; men mine Ord skulle ikke forgaae.“
+Saalænge Christi Ord have Noget at betyde,
+kunne Kloderne i det astronomiske Himmelrum ikke
+antages at være Boliger for de Salige.
+
+Indgangen i „de evige Boliger“ er betinget af en
+Forvandling. Det er Forvandlingen, ikke en Afstand i
+Rummet, der sætter Grændseskjel mellem den nærværende
+og den tilkommende Verden. Lad os besinde
+os paa, hvad en Forvandling betyder. Hvad Forandringen
+er i Endelighedens Form, det er Forvandlingen
+i Uendelighedens. Græmmelse, Sygdom, Alderdom kunne
+forandre et Menneske endog i den Grad, at de, der
+ikke have seet ham i Mellemtiden, finde ham ganske
+ukjendelig; og dog er det Hele kun en Forandring, for
+saa vidt det falder indenfor Endelighedens Grændser.
+Omvendt kan der foregaae en Forvandling med et
+Menneske, uden at Personen derved bliver ukjendelig.
+En ung Pige, en Yngling, en moden Mand kan opleve
+Noget, som saa aldeles omdanner det indre Væsen, at
+vi maae sige: det er det samme Menneske, og dog ikke
+det samme. Alle blot deelvise og gradvise Overgange,
+hvor vidt de end gaae, ere Forandringer, men de
+kvalitative Overgange ere Forvandlinger. At et Menneske
+lidt efter lidt aflægger sine Feil er en Forbedring, og
+en Forbedring er en Forandring; men Overgangen fra
+Vantro til Tro er mere end en Forandring, det er en
+Forvandling; Gjenfødelse er en Forvandling; Overgang
+fra Liv til Død og fra Død til Liv er en Forvandling;
+Pauli Omvendelse er mere end en Forandring, det er
+en Forvandling.
+
+% --- p. 97 ---
+\setcounter{footnote}{0}%
+\opage{97}Først naar Forskjellen mellem Forandring og Forvandling
+er blevet os klar, kunne vi paa Troens Vilkaar
+danne os et Begreb, nemlig et religiøst Begreb om Forholdet
+mellem en forkrænkelig og en uforkrænkelig
+Verden. Lys og Skygge, Love og Grændser, prægede
+Former og fyldig Virkelighed maae dog vel lige saa
+fuldt antages at høre til den uforkrænkelige Natur som
+til den forkrænkelige. Og dog er her en gjennemgribende
+Forskjel. Der er i Skyggen, i Grændsen, i Forskjellighedens
+og Modsætningens Væsen en Dobbeltsidighed,
+som ikke maa oversees. Det er ikke Skyggerne, men
+deres Misforhold til Lyset, der vidne om det Forkrænkelige:
+det sande Forhold mellem Skygger og Lys
+giver os jo netop Farvernes Rigdom. Det er ikke
+Grændserne i og for sig, men Misforholdet mellem
+Grændserne og det, som begrændses, der charakteriserer
+det Forkrænkelige. I Uforkrænkelighedens Form ere
+Grændserne ikke Skranker, Hæmmelser, Hindringer,
+men Væsensbestemmelser for det Individuelle. Selv
+Smerten, Lidelsen, Modstanden, Sorgen, Frygten, Faren
+faae Forkrænkelighedens Præg alene derved, at de
+træde ud som selvstændige Magter, der kue og true
+det levende Væsen. Den uforkrænkelige Natur udsletter
+ikke ligefrem disse negative Magter, men den forvandler
+dem, nedsætter dem til overvundne Hindringer, tjenende
+Bestemmelser for den positive, fyldige Leven. Kun
+i den forkrænkelige Verden have Dissonanserne en
+skrigende Selvstændighed, i den uforkrænkelige lyde de
+med, men denne Medlyden er en Opløsning i Harmonier:
+Harmonierne selv have en fortsat Dissonansernes Opløsning
+til Grundlag. En sand Erkjendelse af, hvad
+Forvandling er, forudsætter Oplevelse; det gjenfødte
+% --- p. 98 ---
+\setcounter{footnote}{0}%
+\opage{98}Haab er bygget paa Tro i indre Oplevelse. Det er
+dette og kun dette Haab Alkjærlighedens Aabenbarer
+har givet sit Ord og sat sit Liv i Pant, at det ikke
+skal skuffes.
+
+Betragte vi de personlige Forhold mellem Individerne
+indbyrdes, Forhold, som have et sjæleligt,
+aandigt Evighedspræg, der hæver dem over det Forkrænkelige,
+da vil Forskjellen mellem det naturlige og
+det gjenfødte Haab strax lade sig tilsyne. Der er
+Kjærlighedsbaand, der knytte Forældre til Børn, Manden
+til Hustruen, den Elskende til den Elskede. Døden sønderriver
+disse Baand, hvilken Smerte! Det er jo som
+rykkede den det Personlige op med Rode, spredte det
+for alle Vinde, gav det til Priis for upersonlige Elementer.
+Dog, der er jo et Gjensyn! Troen kalder paa
+Haabet, men Haabet fortvivler: hvor blev Skikkelsen af,
+hvor er Gjensynets Land, hvor ere Mulighederne? Det
+naturlige Haab maa døe for at fødes paa Ny, og hvoraf
+skal det fødes uden af Troen paa ham, som haver
+det evige Liv i menneskelig Form og Skikkelse. Hans
+Opstandelse og Forklarelse er den eneste Garantie, vi
+have for, at Individualiteten ikke løses op, naar den
+forvandles og forklares. „I have“, sagde han til Sine,
+da Døden just stod og ventede paa ham, „I have nu
+Bedrøvelse; men jeg vil see Eder igjen, og Eders Hjerte
+skal glæde sig, og Ingen skal tage Eders Glæde fra
+Eder.“ Da han saae sine Egne igjen, og de saae ham,
+var han forvandlet. Men var han derfor mindre virkelig,
+mindre individuel, mindre personlig?
+
+Det Haab, der er født af hans Opstandelses Kraft
+i personlig Oplevelse, danner Grundlaget for ethvert
+særligt, individuelt Haab om et Gjensyn. Intet af de
+% --- p. 99 ---
+\setcounter{footnote}{0}%
+\opage{99}personlige Træk slettes ud, Intet af den Skikkelse,
+hvorpaa Kjærlighedens Øie har hvilet, gaaer tabt, kun
+Eet gaaer tabt, uigjenkaldelig tabt, og det er det Forkrænkelige.
+
+
+Og saa tilsidst Fuldendelsens Maal, Saligheden; her
+gjentager sig det Samme: Troen vil holde det fast, at
+der er en Salighed hisset, men det naturlige Haab
+forsager. Hvad er Salighed? Et Ord, der betegner
+Forvandling. Kunde det begynde ligefrem med det vi
+kjende, med det Lykkelige, og det Lykkelige stige til
+det Lyksalige, og Lyksalighedens Toppunkt naae lige
+op til Saligheden: saa skulde det naturlige Haab med
+Fryd udfolde sine Vinger. Det naturlige Haab forstaaer
+saa godt at give det Lykkelige, det Forkrænkelige, en
+lille krydrende Tilsætning af det Uforkrænkelige, det
+mere end Lykkelige, det Salige, og lade begge Elementer
+gaae sammen til Eet i Lyksalighed. At To, som længe
+have kæmpet med Farer og Modgang og, hvad værre
+er, med gjensidig Misforstaaelse, maae i Foreningens
+og Forstaaelsens Øieblik blive ikke blot lykkelige, det
+er forlidt, nei, lyksalige, det kan det naturlige Haab
+fortræffelig forstaae; det aander dybt, og Hjertet banker
+ved Forestillingen om de Tvendes Lyksalighed. Men
+deres Salighed, hvis de bukkede under i Kampen og
+døde paa Veien til Lyksalighedens Maal, vilde det
+skuffede Haab kun offre en Taare.
+
+Det naturlige Haab fatter ikke den evige Salighed;
+thi den evige Salighed gaaer ikke i Forbund med
+Lykken, saa lidt som Uforkrænkeligheden i den hiinsidige
+Verden gaaer i Forbund med Forkrænkeligheden.
+Lykken maa bort, thi Forkrænkeligheden maa bort; nu
+sortner det for Haabets Øine. Salighed, den rene
+% --- p. 100 ---
+\setcounter{footnote}{0}%
+\opage{100}skjære Salighed, hvad er det dog for en Tilstand? Lys
+i Lys og Hvidt i Hvidt, alle Billeder blive saa blege:
+de hvide Klæder, Palmerne, selv Harperne og Lovsangene
+maae jo paa Grund af den evindelige Gjentagelse tabe
+sig i det Eensformige. Skal det naturlige Haab ikke
+blodsuge Troen og ende i Mishaab, maa det døe; men
+det døer kun for at fødes paa Ny.
+
+Salighedshaabet, det gjenfødte Haab, er ikke mat;
+det er i en voxende Spænding. Det faaer af personlige
+Grunde en Modsætning, der nok skal holde det vaagent,
+denne Modsætning er Frygt. Hvad har da, den der
+haaber paa Saligheden, at frygte for? For det, som
+er Saligheden Modsat. Det gjælder i det Uforkrænkelige
+som i det Forkrænkelige, at de modsatte Led maae
+svare til hinanden. Hvad er Lykken modsat? Ulykken.
+Hvad er Lyksaligheden modsat? Ulyksaligheden. Og
+hvad er saa Saligheden modsat? Usaligheden, Fortabelsen.
+Heraf sees, at Frygten i særegen Forstand
+maa voxe med Haabet. Jo mattere Haabet, og jo
+blegere Salighedsbilledet er, desto mindre er ogsaa
+Frygten for Usalighed. Omvendt, jo rigere og stærkere
+Salighedsbilledet bliver, jo inderligere den Længselens
+Attraa er, der forbinder sig med Haabet, desto større er
+ogsaa den uvilkaarlige Angst for Usalighedens Mulighed.
+Frygten voxer ved Tanken om, at det i intet Punkt er
+lettere at bedrage sig selv end netop i dette.
+
+Der er en Sindsuro, som kan martre Sjælen med
+Uvished og paaføre den alle de Kvaler og Pinsler, som
+kun altfor let gjorde den middelalderlige Askese og den
+pietistiske Aandsformørkelse forklarlige. Imod disse
+Udskeielser staaer den lutherske Tanke som en skærmende
+Muur: „Du skal troe, ikke paa din egen, men
+% --- p. 101 ---
+\setcounter{footnote}{0}%
+\opage{101}paa Forsonerens Retfærdighed; i Troen har Du Salighedsvished,
+en Vished, som ikke kan rokkes!“ Ere vi
+saa hermed færdige? Ingenlunde! Just idet Troen
+vil sætte sig fast som et Værende, et een Gang for
+alle Afgjort, lister Bedraget sig ind fra en anden Side.
+„Vi ere Troende og i Troen haabende; med os har det
+ingen Fare. Vi kjende ikke Frygt, vi kjende kun Glæde;
+vi ere som Børn, glade ved det Nærværende, gladere
+endnu ved det Tilkommende, glade paa Jorden, endnu
+gladere i Himlen, glade ved Lykken, endnu gladere ved
+Saligheden. Mørket er borte, Udsigten fri, Riset er
+knækket, Alt er en Leg: saa glade lege vi for vor Herre.“
+
+I Sandhed, hvis Aanden ikke i den Grad fortørnes
+over en saadan Krænkelse af det aabenbarede Ord, at
+den vender sig bort og lader os blive i vore fornøielige
+Indbildninger med freidigt Mod til at støie i Samfundet,
+heise Tankeløshedens Seiersflag og gaae paa Eventyr
+med dem, der øve Hærværk, da maa Sandhedens
+hellige Aand jo vende sig mod os i flammende Vrede.
+Denne Vrede vil da være Vidnesbyrdet om dens ubegribelige
+Barmhjertighed; den vil jo spørge: „hvad er
+Eders Haab, hvor er Eders Frygt? Jeg --- den Helligaand
+--- kjender kun eet Haab, det Haab, der døer i
+timelige Skuffelser, men opstaaer med den Opstandne,
+det Haab, der ikke løber fra de indre Farer, men overvinder
+al Frygt, det gjenfødte Haab. Hvad er Eders
+Frihed, hvor er Eders Lydighed? Jeg kjender kun een
+Frihed, den fik sin Daab i Selvfornegtelse, sin Indvielse
+i Lydighed. Hvad er Eders Glæde, hvor er
+Eders Sorg? Jeg kjender en Glæde, usigelig stor;
+Stjernehimlen kan ikke rumme den, og dog kan den
+boe i et Menneskes Bryst; men det er ikke en lallende
+% --- p. 102 ---
+\setcounter{footnote}{0}%
+\opage{102}Børneglæde, det er den Glæde, som kan løfte Sorgen,
+tømme Smerternes Kalk og sige til Korset: Velkommen!
+Hvor er den Livskamp, I bestod? hvor er Eders store
+Villie, det høie Sind, den klare Daad, det Evighedstegn,
+hvorpaa den himmelske Fader vil, at hans Børn skulle
+kjendes i Verden? Hvad er Eders Tro, Eders Haab?
+viser mig Eders Forvandling!“
+
+Men, indvender den reflecterende Forstand, dersom
+der virkelig er en uforkrænkelig Verden i Vente, hvortil
+saa disse Forvandlingsskrupler, saa længe vi ere i
+dette Forkrænkelige; Forvandlingen foregaaer jo af sig
+selv, naar Overgangen skeer til det Uforkrænkelige.
+Hvad betyder denne Angst for Usalighed og Fortabelse?
+I et uforkrænkeligt Liv kan der jo ingen Usalighed
+være. Her glemmes det, at Salighedens Rige er et
+Personlighedens og Frihedens Rige, at Freden og Hvilen
+er i de virksomme Villiers Harmonie med den alfaderlige
+Grundvillie. Er der nu Villier, som ikke gaae op
+i denne Harmonie, Sjæle saa dunkle, saa matte og
+sløve, at de store Indtryk virke bedøvende; Sjæle saa
+selvisk forhærdede, at de fyldes af Had til hvad der
+i Kjærlighedens Navn er ædelt, ophøiet og reent: saa
+ville jo alle Straaler fra Evighedens Sol brænde i disse
+Sjæle som en fortærende Ild: Saligheden vil for dem
+alle forvandle sig til Usalighed.
+
+Der er da i hiint Uforkrænkelighedens Rige Muligheder
+for en uendelig Række af Villieskriser. Fra
+neden, i det mørke Dyb, i Evighedens Afgrunde en
+trodsig, fornegtende Villie, der sætter Røre i alt det
+Selviske, det Egoistiske, og hidser til fortvivlet Kamp
+under krampeagtige Modsigelser. Fra oven Forløserens
+Billede, Frelserens Aabenbarelse i Millioner og Millioner
+% --- p. 103 ---
+\setcounter{footnote}{0}%
+\opage{103}Speilinger, og bestandig den samme Stemme, den
+samme kaldende Røst: „kommer til mig, lever i mig,
+bliver i mig, uden mig formaae I slet Intet.“ --- En
+saadan Fred er mere end en ørkesløs Hvile.
+
+Ere disse Kriser, disse Spændinger uden Ende?
+Nei! Kun at de ikke ende paa Endelighedens, men
+paa Uendelighedens Maade. At Noget ender i Endelighed,
+vil sige: det hører op, og saa er det forbi, maaskee
+glemt; man gaaer over til noget Andet. Men det, som
+ender i Evigheden, dets Ende er Begyndelse, og dets
+Begyndelse er Ende. Her komme de store Livsbilleder,
+Haabets og Frygtens Billeder. Alt samler sig som i eet
+Syn, i et Nu, at det Overjordiske kan blive anskueligt
+fra et jordisk Standpunkt; at vi maae tilegne os Frelserens
+Ord: „den Time kommer, da alle de i Gravene
+skulle høre Menneskens Søns Røst, og de skulle gaae
+frem, de, som have gjort godt, til Livets Opstandelse,
+men de, som have gjort ondt, til Dommens Opstandelse;“
+at vi maae lære at haabe, alt som vi lære at frygte, at
+vi i Sandhed maae lære at leve.
+
+Hvad her er meddeelt, er kun et Skyggerids; og
+selv om det flygtig Antydede fik en Udvikling i nok
+saa rige, nok saa klare Tanker, fik al den Udfoldelsens
+Yppighed, den Udtrykkets Frodighed, den Ordets overtalende
+Magt i Fremstillingens Fuldendthed, som en
+høiere Begavelse kan give: det vilde dog kun være et
+Skyggerids! Det, som skal udfylde Skyggeridset, det,
+som skal hæve det til Virkelighed, indblæse det Livsaande
+og give det Lys og Farver, maa Enhver lægge til
+af sit Eget. Livet vil leves, Haabet vil haabe; kun den
+i Haabet Levende faaer Oplevelsens Vished, Indtrykkets
+Fylde, Overbeviisningens Kraft, og vidner om Liv og Haab.
+
+\end{document}
