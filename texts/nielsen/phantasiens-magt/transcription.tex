@@ -1,0 +1,3226 @@
+% =====================================================================
+%  R. Nielsen, OM PHANTASIENS MAGT.  Sex Forelæsninger.
+%  Kjøbenhavn: Forlagt af den Gyldendalske Boghandel (F. Hegel); trykt hos J. Jørgensen & Co., 1876.  91 pp.  Antiqua.
+%
+%  TRANSCRIPTION -- GENERATED; DO NOT EDIT BY HAND.  Rebuild from the repo root:
+%    python3 ebook-method/phantasiens-magt/draft.py --emit --force \
+%      && python3 ebook-method/collate/check.py phantasiens-magt --italics --apply \
+%      && python3 ebook-method/phantasiens-magt/draft.py --post
+%
+%  STATUS: COMPLETE (2026-10-12): title page, Indhold and the whole text, pp. 1-91.  The book has no preface and no notes.
+%
+%  EDITION.  The text of record is the Royal Library's scan (KB 130025470861; ~/bibliotek/Nielsen, Rasmus/
+%  phantasiens-magt.pdf, SCANS.tsv), 300 ppi colour, with KB's OCR as text layer.  The only printing; no e-book and no
+%  earlier transcription exists (checked 2026-10-12: the repo, the web, KB).  This copy is marked in pencil throughout
+%  (underlinings, strokes and brackets in the margins), which the layer read as letters and which split words.
+%
+%  ACCURACY (2026-10-12).  The words are those of KB's layer (draft.py), collated word by word with an independent
+%  tesseract reading of the images (collate/check.py, witness 'ocr'): 569 disagreements in 23,083 words.  About 80 were
+%  settled by check.py's own rules and 104 by rules.py, each rule grounded in this book's crops: the print sets „...“ only
+%  (tesseract's » and % are its reading of „ and “: zoom q-01); tesseract's aa read as an/ag (maae>mane, faae>fane);
+%  tesseract's glyph faults where the layer's word is attested and tesseract's not; the layer's glyph faults of equal
+%  length where tesseract's word is attested and the layer's not; tesseract's marks where the layer has nothing and the
+%  print has pencil (this copy's); accents tesseract adds; the printer's space before ;:?!.  The candidate rules were
+%  measured first on a blind pilot of 58 crops (8/8, 12/12, 8/8, and 14/15 -- the miss, „fiint“, which both OCRs read
+%  wrong, led to the equal-length restriction).  The rest, 385 checks in all with the pilot, were read at the image BLIND
+%  (sheets.py: crops with no readings shown, two planted controls a sheet, 78 of 78 controls read right; six Sonnet
+%  readers, .parts/reads/r-b1-A.tsv, r-b2-B..F.tsv); about 110 of those were decided in the main session from the
+%  readers' lines, and some 20 spots at 300-600 dpi (zoom.py, sheets q, s, t, u, v, w, x600, y600, z).
+%  Then four sweeps of the collated text, each spot read at the image: check.py --splits and a corpus-vocabulary sweep
+%  for words the layer split where pencil underlining crosses them (18 mended: k unn e, e gen Erkj endelseskreds ...);
+%  check.py --moved for widely spaced lines the layer put out of order (pp. 21, 60, 66, 83, 85, 87, 89, 91); the readers'
+%  whole LINEs matched against the text (found „kan Tro sættes“, p. 44, where a W decision had lost „Tro“, and
+%  „Feltraabet“, p. 67, which both OCRs read „Feltraahet“); and every word in no other transcription of the corpus (383
+%  words; found the misprints below, a stain and two specks both OCRs read as letters).  No italics (slant scores
+%  99 % <= 1.04, no runs) and no letterspacing in the body (the twelve highest letter-gap scores were all unspaced); the
+%  Indhold letterspaces »Forelæsning«.  SAMPLED PAGE CHECK (pagecheck.py, seed 202610121): pp. 19, 28, 84 and the title
+%  page read whole and blind, 778 words: 0 word, 0 punctuation and 0 markup errors (95 % upper bound 3.9 per 1000 words).
+%  What this cannot see: a misprint both OCRs normalise into a real word -- the corpus sweep finds only non-words.
+%  TRANSLATION as a last reading: the four translators listed 40 odd spots (ebook-method/phantasiens-magt/tr/odd-*.tsv),
+%  all read at the image (zoom o-01, o-02, q62): 16 mended by POST patch -- a line-end word the layer lost (p. 41
+%  „Phantasie.“), four false paragraph breaks from pencil in the margin (pp. 29, 60), four raised specks read as stops or
+%  hyphens by both OCRs (pp. 11, 31, 48, 62), „aftale“ for „at tale“ (p. 67) -- and four more misprints found; the rest
+%  are the print's (Øjne, nok som, Rowel, sindig, Vexelskin, quotation marks the print leaves open).
+%  PRINTED AS IS (each seen at the image; a % comment at the site): „Tankespørgsmal“ and „Nodern“ (p. 14), „kar“ for
+%  har (p. 55), „et“ for er (p. 61), „sil“ for til (p. 63), „Chisti“ (p. 68), „maaksee“ (p. 69), „ekstastiske“ (p. 88);
+%  quotations not closed in the print (pp. 56, 59).  Specks read as accents by both OCRs: „Herregaarden“ (p. 2), „havde“ (p. 61).
+%  The ø rule (Hans 2026-10-08) found nothing here (oefix.py's „stode“ -> „støde“ is wrong: stode, „stood“, is a word).
+%  Not transcribed: signature marks („1“, „1*“ ...), library stamps, the copy's pencil marks; the rule under each lecture
+%  heading is drawn by \lecture.  Quotation marks are as printed („ “).
+%
+%  PAGE MAP.  printed p = PDF page - 9 (p. 1 = PDF 10, p. 91 = PDF 100); title PDF 6, Indhold PDF 8.
+%  Each lecture begins on a new page: I p. 1, II p. 14, III p. 28, IV p. 43, V p. 57, VI p. 75.
+%  The Indhold sets »Første Forelæsning« etc. letterspaced; reproduced here in \emph (house convention).
+%
+%  TOOLS (ebook-method/phantasiens-magt/, copied from betingelserne-villie): draft.py, ocr.py, rules.py, sheets.py +
+%  reads.py + READER-BRIEF.md, zoom.py, prescreen.py, pagecheck.py + PAGECHECK-BRIEF.md, patches.py (PATCHES, POST),
+%  decisions.tsv.
+%
+% =====================================================================
+\documentclass[12pt,a4paper,openany]{book}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{libertinus}
+\usepackage{libertinust1math}
+\usepackage[danish]{babel}
+\usepackage[protrusion=true,expansion=true]{microtype}
+\usepackage{setspace}
+\usepackage[margin=1.3in]{geometry}
+\usepackage{fancyhdr}
+\usepackage{hyperref}
+\hypersetup{pdftitle={Om Phantasiens Magt}, pdfauthor={Rasmus Nielsen}, hidelinks}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LE,RO]{\thepage}
+\fancyhead[C]{\textit{R. Nielsen: Om Phantasiens Magt (1876)}}
+\setstretch{1.3}
+\usepackage{marginnote}
+\renewcommand{\thefootnote}{\arabic{footnote})}
+\newcommand{\tocline}[3]{\noindent\makebox[2.2em][r]{#1}\hspace{0.6em}#2\dotfill\ #3\par}
+\newcommand{\opage}[1]{\marginnote{\footnotesize\textit{[#1]}}}
+% a lecture opens a new page: heading, a short rule; the print's large initial is not reproduced
+\newcommand{\lecture}[1]{\clearpage\begin{center}{\large #1}\\[0.4em]\rule{3em}{0.4pt}\end{center}\medskip\noindent}
+
+\begin{document}
+
+% --- front matter: PDF 6, title (read at the image, 2026-10-12); the verso carries nothing of the text.
+\begin{titlepage}
+\begin{center}
+\vspace*{3em}
+{\large OM}\\[1em]
+{\Huge PHANTASIENS MAGT.}\\[2.5em]
+SEX FORELÆSNINGER\\[1em]
+{\small AF}\\[1em]
+{\large R. NIELSEN.}\\[2em]
+[publisher's device]\\[4em]
+KJØBENHAVN.\\[0.5em]
+FORLAGT AF DEN GYLDENDALSKE BOGHANDEL (F. HEGEL).\\[0.5em]
+{\small TRYKT HOS J. JØRGENSEN \& CO.}\\[0.5em]
+{\small 1876.}
+\end{center}
+\end{titlepage}
+
+% --- PDF 8: Indhold (read at the image, 2026-10-12)
+\begin{center}{\large Indhold.}\\[0.3em]\rule{3em}{0.4pt}\end{center}
+\hfill{\small Side}\par
+\noindent\emph{Første Forelæsning.}\enspace Phantasie og Virkelighed\dotfill\ 1.\par
+\noindent\emph{Anden Forelæsning.}\enspace Phantasiens Forhold til Spørgsmaalet\par
+\noindent\hspace*{2em}om Sjælens Udødelighed\dotfill\ 14.\par
+\noindent\emph{Tredie Forelæsning.}\enspace Religiøs Phantasie\dotfill\ 28.\par
+\noindent\emph{Fjerde Forelæsning.}\enspace Gammeltestamentlig Phantasie\dotfill\ 43.\par
+\noindent\emph{Femte Forelæsning.}\enspace Nytestamentlig Phantasie\dotfill\ 57.\par
+\noindent\emph{Sjette Forelæsning.}\enspace Phantasiens uendelige Rige\dotfill\ 75.\par
+\clearpage
+
+
+% ===== TEXT (pp. 1--91) =====
+% --- p. 1 ---
+\setcounter{footnote}{0}%
+\lecture{Første Forelæsning.}\opage{1}
+
+Vi kjende det daglige Liv, dets Glæder og Sorger, dets
+Hygge og Fred. Alt er os her saa hjemligt, saa tilvant,
+saa bekjendt. Men bagved det Bekjendte er der et
+Ubekjendt, og dette Ubekjendte melder sig stundom
+uvilkaarlig med Spørgsmaal, som ængste. Vi sidde i
+Familiens Kreds i Solskin af huuslig Lykke, det Ubekjendte
+hvisker: hvorlænge vil det vare? Vi mindes
+vore Hedengangne, og Religionen trøster os med et
+Gjensyn; det Ubekjendte hvisker: er der et Gjensyn,
+er Du vis derpaa? Saaledes i mangfoldige Tilfælde.
+Hvad er nu dette Ubekjendte? Er det af det Onde
+eller af det Gode? Hvorfra stammer det, fra Lysets
+Ophav eller fra Mørkets Egne? Det kommer som
+et Iilbud, et Varsel, en Mindelse om det Usynlige,
+en manende Røst fra Aandernes Verden. Der er
+Mennesker, som have en naturlig Sky for at gjøre dette
+Ubekjendtes nærmere Bekjendtskab. Men Hverdagslivet
+selv er underlagt Tilskikkelser, som kunne bringe det
+Ubekjendte til at træde frem, pludselig og i al sin Vælde.
+Lad mig anføre et lille Exempel.
+
+Et ungt Menneske, med oprindelige Anlæg og bestemt
+til Studeringer, havde allerede gjennemgaaet det
+% --- p. 2 ---
+\setcounter{footnote}{0}%
+\opage{2}første akademiske Cursus, da Faderen, som begyndte
+at føle sig gammel og træt, ønskede at hans Søn skulde
+blive Landmand og hjælpe ham med at bestyre Gaarden.
+Sønnen gav efter for Faderens Ønske, saa meget villigere,
+som der i Egnen var en Herregaard, og paa Herregaarden % scan: a speck over the second a
+en ung Frøken, Godseierens Datter. Den unge Mand
+havde seet paa hende, og hun havde igjen seet paa ham ---
+hans Beslutning var tagen. Hen i Høst --- han havde
+allerede den Gang været et Par Aar i sin nye Virksomhed
+--- viste sig en Komet paa Himlen. Det gav
+Folk Noget at tænke paa og satte Landboernes Sind i
+Røre. Gamle Koner forsikrede, at Krig, Hungersnød,
+Jordskjælv og Pestilense forestode, enten alle fire Dele
+eller i det Mindste een af Delene, det kunde aldrig
+feile. De Yngre meente, at Sagen vel ikke var saa
+farlig; Kometen var jo ordenlig anmeldt i Almanakken.
+De læste og saae, at den Uge efter Uge punktlig og
+stille rettede sig efter Almanakkens Forskrifter: den
+kunde umulig have noget Ondt i Sinde. Men alt som
+den ugeviis kom nærmere, tog Forundringen til, thi
+Kometen syntes at forandre sig og antage et truende
+Udseende. Det røde Øie blev bestandig hvassere, Halen
+voxede, bredte og grenede sig som et stort Ildriis.
+Stjernerne paa den klare Septemberhimmel fik et
+mattere Skin; det var som vilde Himlen halvt lukke
+Øjnene til, for ikke at see det uhyggelige Tegn. De
+gamle Koner grebes af en prophetisk Aand; de prædikede
+Bod og Omvendelse, og Mange bleve andægtige.
+
+Dog det naturlige Liv gjør sine Rettigheder gjældende.
+Høsten havde været velsignet; for Hungersnød
+var der da ingen Fare. Rønnebærrene bleve røde, Løvet
+i Skoven blev bruunt og violet og guult, og Bladene
+% --- p. 3 ---
+\setcounter{footnote}{0}%
+\opage{3}faldt; Vinden foer rigtignok hæsblæsende hen over
+Stubber og pløiede Marker, men til Jordskjælv var der
+Intet at mærke; Sundhedstilstanden var god, og Aviserne
+turde nok staae inde for Freden: saa skulde der da
+være Høstgilde.
+
+Høstgildet paa Herregaarden var Omegnens aarlige
+og meest glimrende Fest, det var i Sandhed en folkelig
+Fest; thi den liberale Godseier indbød Høie og Lave.
+Piger og Fruer, Adelsmænd og Bønder blandede sig i
+Dandsen mellem hverandre; Strømmen bølgede i de
+store Sale og gjennem den med Fakler og Lamper oplyste
+Have. Mange havde glædet sig til denne Fest,
+men Ingen mere end vor unge Ven. Han ventede nu
+saa vist, at denne Aften skulde krone hans Lykke.
+Som han red paa Veien fattede han et Forsæt, der
+skulde staae fast; han vilde denne Aften erklære sin
+hemmelige Forlovelse for Godseieren; han havde omhyggelig
+valgt sine Ord og saae allerede i Aanden,
+hvorledes den fornemme, men humane Herre, der altid
+havde paaskjønnet hans Driftighed og viist ham saa
+megen Forekommenhed, lod de første Overraskelsens
+Rynker glatte sig og gav efter for hans og den elskede
+Datters forenede Bønner. Det forekom den unge Mand,
+alt som han nærmede sig og hørte Fanfaren og saae
+de vaiende Flag, at en saadan Høstfest nødvendig maatte
+være bestemt til at blive en Forlovelsesfest. Forestillingen
+herom blev ham saa levende, at han ordenlig begyndte
+at overveie, hvorledes han mest passende skulde svare,
+naar de Forlovedes Skaal blev udbragt. Men just som
+han red ind ad Porten, stod det Ubekjendte paa Luur
+og spurgte ham hviskende: er Du vis i din Sag?
+
+% --- p. 4 ---
+\setcounter{footnote}{0}%
+\opage{4}Hvorledes Varslet slog ham, de nærmere Omstændigheder,
+hvor mange piinlige Øieblikke han maatte
+udholde inden han naaede Visheden, ved slige Enkeltheder
+ville vi ikke opholde os. Langt om længe blev
+han i een af Havens dunkle Kroge indhentet af den
+unge Frøken; der var ikke Tid til Forklaring, Mængden
+omsværmede dem, det raslede i Grenene, der var Folk
+i Nærheden: kun dette fik hun med graadkvalt Stemme
+og et Udtryk af den dybeste Smerte udtalt: Alt er forbi!
+med disse Ord svandt hun som et Syn. --- „Alt forbi!“
+Om en Afgrund havde aabnet sig, om Kometen havde
+dasket Jorden med sin Hale, kunde den unge Mand
+ikke være blevet mere bestyrtet.
+
+„Alt forbi.“ Som en Fredløs, der ængstelig undviger
+Menneskers Selskab, ilede han ad en lønlig Sti gjennem
+Krattet over en Steentrappe ud paa den aabne Mark.
+Stemmerne og den glade Latter tabte sig, Musikkens
+Toner løde stedse svagere og døde sagte hen i den maaneklare
+Nat. Alt var stille, kun enkelte fjerne Hundeglam
+lode sig høre fra de omliggende Landsbyer. Han vadede
+i Muld, bestandig fremad, som havde han et Maal, indtil
+han standsede ved en stor Mergelgrav. Han maalte
+den med Øinene; Vandet, det vidste han, var tre Gange
+saa dybt som den steile Rand var høi, og denne overgik
+dog en Mands Høide. Det Ubekjendte hviskede:
+„Du maa bort, Du maa reise.“ Han saae i det speilede
+Dyb; Kometen stod dernede, som om den holdt stille
+og ventede paa ham. Det er en Paradiisfugl med gyldne
+Fjer, med den vil jeg reise. Opad kunde jeg ikke naae
+den, den sad mig for høit, men nedad, et Spring, et
+dristigt Spring i Dybet, og jeg rider paa dens Ryg.
+Men hvad er det Sorte derhenne? Kroppen af en død
+% --- p. 5 ---
+\setcounter{footnote}{0}%
+\opage{5}Hund! En Reisekammerat, der i Hastværk har ladt
+sin Overkjole i Stikken: saa kommer jeg da ikke til
+at gjøre Touren alene. „Du maa først tage Afsked“,
+hviskede det Ubekjendte; „Reisen er lang, hvo veed, naar
+Du kommer tilbage“.
+
+Og han vilde tage Afsked, ikke med nogen levende
+Modersjæl, men med den dunkle Lund paa Høien histhenne.
+Der oppe var en Græsbænk; der sov i Græsset
+mellem visne Straa en Udsæd uden Høst, en Førstegrøde
+af et Hjertes Vaar, forladte Børn af et skuffet
+Haab, Erindringer om en kortvarig, men ubeskrivelig
+Lyksalighed. Altsaa, tænkte han, først i Lunden et
+Farvel, og saa tilbage til Mergelgraven og Kometen og
+den døde Hund! Han ilede til Høien, der var Feber i
+hans Blod, hans Hjerne brændte; han tørnede mod et
+ungt men udgaaet Træ; en Ugle skreg, en opskræmmet
+Hare foer ham tæt forbi. Alt løb rundt, han havde
+en Fornemmelse, som om der regnede Ild fra Kometen
+ned paa hans Hoved. Med vaklende Knæ arbeidede
+han sig op ad Fodstien og fik Øie paa Bænken. Der
+sad en kvindelig Skikkelse. Er det muligt? hun sidder
+deroppe, hun venter paa mig? Nei, det er umuligt.
+Jo, det er hende, og dog --- ikke hende. Den Siddende
+reiste sig, belyst af Maanens Straaler, og Skikkelsen
+blev aandeagtig majestætisk. „Du drager bort herfra,
+vil tage Afsked; men Du skal ikke reise med den døde
+Hund. En Ven skal følge Dig, en Ven, som kjender
+Veien, en ædel, tro Ledsager, paalidelig som hiin, der
+fulgte Beatrices Elsker igjennem Helvede, igjennem
+Skjærsilden og igjennem Paradiset ind i Himlen“. Saa
+svandt det underlige Syn; den unge Mand var ramt
+som af et Lyn og styrtede til Jorden. Hvad der siden
+% --- p. 6 ---
+\setcounter{footnote}{0}%
+\opage{6}blev af ham, da han reiste sig igjen, bekymrer os ikke.
+Vi have kun berørt hans Historie for det Ubekjendtes
+d. e. for Phantasiens Skyld; thi det Væsen, der vaagnede
+til Liv i ham, da han opvaagnede, det var i Sandhed
+Phantasien.
+
+For at komme til Indsigt i Phantasiens Væsen,
+maae vi helst begynde med Virkeligheden, dens Betingelser
+og Love. Virkeligheden ligefrem som den staaer
+og gaaer er ikke Phantasiens Gjenstand; at beskjæftige
+sig med det Virkelige overlader den til Forstanden og
+de fem Sandser. Men Virkeligheden skjuler Noget, som
+i høi Grad interesserer Phantasien, Noget, som den
+overalt udspeider og opdager; og hvad er det saa?
+Spørge vi Phantasien, saa svarer den os, at det er
+hemmelighedsfulde Væsener, usynlige Skjønheder, Ansigter,
+som titte frem bag Virkelighedens Gardiner. Det
+er da med andre Ord ikke Virkeligheden selv, men
+dens Muligheder.
+
+Men Mulighederne, de Muligheder, som sætte Phantasien
+i Bevægelse, ere af høist forskjellig Art. Vi kunne
+see det af vor Fortælling. De gamle Koners Phantasie
+søgte Mulighederne i Kometen, men løb vild i Lovene
+og miskjendte Virkeligheden. Det var astrologiske
+Muligheder, og Astrologernes gyldne Tid er forbi. Ingen
+troer paa Stjernernes Indflydelse, naar Spørgsmaalet er
+om det jordiske Liv, dets Skjæbner og Tilstande. Tycho
+Brahes Dage ere ude af Cours som forældede Mønter.
+Og hvorfor? Fordi Stjernernes Stillinger, Bevægelser og
+indbyrdes Vexelvirkninger rette sig efter Love, som kunne
+udfindes ved Beregning. Anderledes med den Slags
+Muligheder, som bedaarede den unge Mands Phantasie,
+de lade sig ikke beregne, som man beregner en Komet%
+% --- p. 7 ---
+\setcounter{footnote}{0}%
+\opage{7}bane; det er psychologiske Muligheder, Frihedsmuligheder.
+
+
+Stjernerne paa den udvortes Himmel følge saa ufravigelig
+bestemte Baner, at Iagttageren forud nøiagtig
+kan angive det Sted, hvortil de til ethvert fastsat Tidspunkt
+ville komme. Men Stjernerne paa den indvortes
+Himmel, der hvor hvert enkelt Menneske helst maa lede
+efter sin Lykkestjerne, bevæge sig i uregelmæssige Baner.
+Vel ere ogsaa disse underkastede Love og naturlige Betingelser,
+men Omstændighederne vexle, og Perturbationerne
+ere saa mangfoldige, at ingen Beregning slaaer til:
+Forstanden arbeider sig træt, og Phantasien leer ad Klogskabens
+Forlegenhed. Vor unge Mand gik dristig frem, han
+troede paa sin Lykkestjerne og blev skuffet; han kunde
+lige saa godt være blevet skuffet paa aldeles modsat
+Maade, ved Tilbageholdenhed og Mistro.
+
+Blandt de Diapsalmata, der indlede S. Kierkegaards
+„Enten—Eller“ forekommer følgende --- i hvad han kalder
+et extatisk Foredrag, et Foredrag, som vor unge Ven
+maaskee ikke har havt Tid til at høre: „Tro en Pige,
+Du vil fortryde det; tro hende ikke, Du vil ogsaa fortryde det; tro en Pige eller tro hende ikke, Du vil fortryde
+begge Dele; enten Du troer en Pige eller Du
+troer hende ikke, Du vil fortryde begge Dele.“ Det er
+et Schema, der kan udfyldes paa de forskjelligste Maader.
+Fra Ethiken f. Ex.: Vær ærlig, Du vil fortryde det, vær
+uærlig, Du vil ogsaa fortryde det; enten Du er ærlig
+eller Du er uærlig, Du vil fortryde begge Dele. Fra
+det Intellectuelle: Brug din Forstand, Du vil fortryde
+det, brug den ikke, Du vil ogsaa fortryde det; brug
+din Forstand eller brug den ikke, Du vil fortryde begge
+Dele; enten Du bruger din Forstand eller Du ikke
+% --- p. 8 ---
+\setcounter{footnote}{0}%
+\opage{8}bruger den, Du vil fortryde begge Dele. Saaledes kan
+man jo blive ved i det Uendelige. Hvad skal nu alt
+dette sige? Forfatteren giver en kort, men fyndig Forklaring:
+„Hæng Dig, Du vil fortryde det; hæng Dig
+ikke, Du vil ogsaa fortryde det; hæng Dig eller hæng
+Dig ikke, Du vil fortryde begge Dele; enten Du hænger
+Dig eller Du ikke hænger Dig, Du vil fortryde begge
+Dele;“ og saa tilføier han: „Dette, mine Herrer, er Indbegrebet
+af al Leve-Viisdom.“
+
+Den Fortvivlelsens Ironie, som saaledes driver sit
+dialektiske Spil, kan belyses fra mange forskjellige Sider;
+en Hovedside, som vi i denne Sammenhæng ville fremhæve,
+angaaer Forholdet mellem Virkelighed og Phantasie.
+At lade Phantasien raade for Virkeligheden gaaer
+ikke an; den vilde slaae sig løs, vende op og ned
+paa Alt og rumstere forfærdeligt med den givne Tingenes
+Orden. Men at udelukke Phantasien gaaer heller
+ikke an. Naar det, vi i endelig Forstand kalde det
+Virkelige, skal være vort Et og Alt, saa mistydes Frihedens
+Muligheder, Inderlighedens Skatte, som ligge
+gjemte i Sindet, forblive ubrugte, og Livskilderne udtørres.
+Lad os see paa det tørre Forstandsmenneske. Hvorledes
+bærer en Saadan sig ad? For ikke at bedaares af Illusioner
+begynder han med at udstykke Mulighederne i
+lutter forestillede Tilfælde og beregne de sandsynlige
+Følger. Det kan nu være meget godt, men hvor langt
+naaer han? Han opstiller to Tilfælde, tre Tilfælde,
+maaskee ti, tyve forskjellige Tilfælde. Nu skal han til
+at vælge. Men naar han saa vil til at vælge det ene,
+falder det ham ind, at han lige saa godt kunde vælge
+det modsatte; vil han holde paa det ene, saa indstiller
+sig strax et andet. Han staaer omsværmet af Tilfælde,
+% --- p. 9 ---
+\setcounter{footnote}{0}%
+\opage{9}som En, der er omsværmet af Fluer; der er noget Drillende
+deri; det er Phantasiens Muligheder, der lege
+Tagfat imellem Tilfældene, de have ham til Bedste, de
+gjække ham lige som Alferne gjække Mester Grimmemann
+ved at tilliste sig snart hans Bestalling og snart
+hans Briller.
+
+At udelukke Phantasien for at gribe Virkeligheden,
+gaaer ikke an; thi man mister det Øie, hvormed man
+i dybere Forstand skulde opdage Mulighederne.
+
+Men Sagen faaer et endnu langt alvorligere Udseende,
+naar Spørgsmaalet er om Menneskets Bestemmelse,
+dets Stilling og Betydning i den store synlige
+Verden. Bag det Synlige ligger det Usynlige; bag det
+Sandselige det Usandselige; til alt det Ydre svarer der
+et Indre, og naar vi see nøiere til, er det altid det
+Indre der bestemmer sit Ydre. Det er jo netop det
+Indre, vi kalde Tingenes Væsen, deres Anlæg, deres
+Natur. Naturlæren, den forskende Erfaringslære, undersøger
+Tingene i Naturen, deres Egenskaber, Kræfter,
+Love; den er forvisset om, at enhver Ting maa virke i
+Overeensstemmelse med sin Natur; men hvad Naturen
+er, det veed den ikke. Den lægger ikke Dølgsmaal
+derpaa, den skjelner skarpt mellem det, den veed, og
+det, den ikke veed.
+
+Naturlæren gaaer med denne sin Skjelnen endnu
+videre; naar der handles om det Enkelte eller om hele
+Grupper eller Systemer af ligeartede Kjendsgjerninger,
+saa forstaaer den, at Indsigtens og Kundskabens Omraade
+bestandig kan udvides. Der er Meget vi endnu
+for Øieblikket ikke vide; men vi kunne med Tiden faae
+det at vide. Naar der derimod spørges om det første
+Oprindelige, om Tingenes Ophav, om Naturen selv, saa
+% --- p. 10 ---
+\setcounter{footnote}{0}%
+\opage{10}standser den ved en uoverskridelig Grændse; saa tilstaaer
+den besindige og ædruelige Erfaringslære, at den fra
+sit Stade umulig kan ved fortsatte Undersøgelser naae
+til en Viden om, hvad Tingene ere i deres inderste Grund.
+„Vi kjende Tingenes Egenskaber, men ikke Tingene;
+Phænomenerne, men ikke deres Væsen; vi vide ikke,
+hvad Kraft er, ikke, hvad Magnetisme er, hvad Elektricitet
+er, hvad Livet er og hvorfra det oprinder, Men dette
+vide vi, at det Hele udvikler sig betinget i nødvendig
+Sammenhæng, og at Alt maa gaae efter uforanderlige
+Love“.
+
+Dette vilde nu altsammen være saare skjønt, oplysende
+og veiledende, dersom vi kunde blive staaende
+herved. Men der er en Hage ved Tingen, og en Braad
+i Bevidstheden. Vi tale om en indre, usynlig Verden,
+der aabenbarer sig i den ydre og sandselige. Fra det,
+vi see, slutte vi til det, vi ikke see. Hvorledes forholder
+det sig nu med denne indre usynlige, usandselige Verden?
+Gaaer alt det Indre nødvendig op i sit Ydre eller er
+her et Overskud? Er det Ydre, hvori det Indre træder
+frem, indskrænket til denne Verden, denne Natur, eller
+er der en høiere Verden, en dybere Natur, af hvis Love,
+Liv og Kræfter denne vor sandselige, synlige Verden kun
+giver en ufuldkommen Afspeiling: kan der, med andre
+Ord, gives en overnaturlig Verden? Kulturbevidstheden
+med den „moderne Videnskab“ erklærer reentud: det
+er umuligt! Det Overnaturlige er Skin og Phantasie.
+Den Himmel, hvor den Almægtige throner, det Helvede,
+hvori de Usalige pines, Lysets Engle, Afgrundens Dæmoner,
+Altsammen. Skin og Phantasie!
+
+Her er et Vendepunkt, afgjørende for Udviklingens
+Gang og Slægternes Fremtid. Et Grundspørgsmaal er
+% --- p. 11 ---
+\setcounter{footnote}{0}%
+\opage{11}tilbagetrængt, mishandlet, forkvaklet og kommer kun
+frem i forvirrede Forestillinger; det er Spørgsmaalet om
+Phantasiens Væsen og dens Betydning for Erkjendelsen
+af den evige Sandhed.
+
+Det Overnaturlige, hedder det, er kun en Phantasie.
+Her er i denne almindelige Sætning Noget, vi maae
+indrømme, og Noget, vi paa Liv og Død maae bekæmpe.
+Vi maae indrømme, at alle de Forestillinger, vi kunne
+gjøre os om et hiinsidigt, overnaturligt Rige, dannes i
+Phantasiens Form, at de for saa vidt alle høre Phantasien
+til. Men kun en Phantasie, dette lille Ord
+kun er Stridens Kardinalpunkt, Kampens Midtpunkt,
+dette kun bestemmer Seir og Nederlag, dette tilsyneladende
+ubetydelige kun er som Waterlooslagets
+„gamle Avlsgaard“.
+
+Ved dette kun er der sat Splid mellem Virkelighed
+og Phantasie. Her tænkes da udelukkende paa den
+menneskelige Phantasie i dens mangfoldige deels uvilkaarlige,
+deels vilkaarlige Formen, dens Gjæren og Væven,
+Virken og Dannen. Det er da ganske sandt, at den
+menneskelige Phantasie med al sin skabende Evne staaer
+afmægtig overfor den virkelige Natur; den kan lege med
+de naturlige Muligheder; den kan sidde ved Sandsynlighedernes
+Væverstol og væve de usynlige Traade i
+Mønstre, der have en skuffende, slaaende Lighed med
+det Virkelige; men Virkeligheden selv kan den ikke
+frembringe, den kan ikke skabe af Intet. Men hvad om
+det ved nærmere Undersøgelse viste sig, at ikke blot
+Tænkningens, men ogsaa Phantasiens Form er en oprindelig
+og nødvendig Sandhedsform; at der ikke blot
+gives en menneskelig, men ogsaa en guddommelig
+Phantasie, ikke blot en afmægtig, men ogsaa en almægtig
+% --- p. 12 ---
+\setcounter{footnote}{0}%
+\opage{12}Phantasie, ikke blot en eventyrlig spillende, men en i
+Alvor villende, af Viisdommens Love, af Planer og Formaal
+gjennemaandet Phantasie. Hvad om alt det, vi
+kalde det Virkelige, det Haandgribelige, viste sig med
+al sin Realitet at være, ikke et absolut Selvstændigt,
+men et Billede præget af skabende, anskuende Tænken,
+et Magtens Udslag af guddommelig Phantasie: det vilde
+forandre Sagen. Kunde dette klares, begrundes og gjøres
+indlysende for den dannede Bevidsthed, vilde da ikke
+det Overnaturlige forlige sig med det Naturlige, og den
+hele Tilværelse fremstille sig for os i et nyt Lys?
+
+Her er ikke Tale om Brud paa Lovene; heller ikke
+vil det for al menneskelig Viden uigjennemtrængelige
+Mysterium blive gjennemsigtigt: Mystik og Mysticisme
+maae vi holde borte. Men et nyt Mulighedernes Dyb
+vil aabne sig for os. For at see ned i dette Dyb uden
+at svimle, maae vi staae fast paa de strenge Loves
+Grundlag. Det er en ny Himmel og en ny Jord, vi
+skulle opdage, ikke i Virkelighedens Form, men i Mulighedens.
+Da Alt skal sees under Mulighedens Slør i
+Phantasiens Speil, er det nødvendigt at kjende den
+Grændselinie, henad hvilken vi skulle bevæge os: at
+klare Phantasiens Væsen er ikke det Samme som at
+phantasere. Vi maae have Virkelighedens Blylod med,
+for at prøve, hvor dybe Grunde der er i Mulighedernes
+Ocean. Det turde da vise sig, at der kan være Verdener
+af anden og høiere Orden end dem, der tilhøre
+dette naturlige Universum.
+
+Vi kunne ikke følge Beatrices Elsker paa hans
+høie Flugt; vi maae gaae Undersøgelsens jevne Vei og
+bruge vore Maalesnore; vi maae skjelne mellem Illusion
+og Virkelighed, mellem Skin og Sandhed. Poesien har
+% --- p. 13 ---
+\setcounter{footnote}{0}%
+\opage{13}sin Phantasie, men Religionen har ogsaa sin. Phantasien
+behersker Menneskene lige saa vel middelbart
+som umiddelbart. Vi ville forsøge en Vandring gjennem
+det store Rige, hvor den Vidunderlige boer og aabenbarer
+sin Magt; dette Rige er ikke langt borte; tvertimod,
+det er os uendelig nær. Mange af Phantasiens
+Phænomener ere os bekjendte; men Væsenet er et
+Ubekjendt: vi ville stræbe at gjøre dette Ubekjendtes
+nærmere Bekjendtskab.
+
+% --- p. 14 ---
+\setcounter{footnote}{0}%
+\lecture{Anden Forelæsning.}\opage{14}
+
+Der er i vor Tilværelse neppe noget Emne af høiere
+Rang, der i den Grad har formaaet at hendrage det
+store Fleertals Opmærksomhed paa sig som Spørgsmaalet
+om Sjælens Udødelighed. Det er et vedvarende
+Stridsspørgsmaal. Striden føres ikke alene udvortes
+imellem dem, der afgjørende bekræfte, og dem, der lige
+saa afgjørende benegte Udødeligheden; men Stridsemnet
+lister sig ind i hvert Menneskes Indre; det
+vækker en Splid mellem Sands og Forstand, mellem
+Hoved og Hjerte, mellem Tro og Tvivl. Det er et vedholdende
+Bekymringsspørgsmaal; det suger sig fast i
+Bevidstheden, det trænger gjennem Blod og Nerver ind
+i Samvittigheden. Hvor sandselig sløvt eller hvor
+tankeløst og letsindigt maa ikke det Menneske være,
+hvem dette Spørgsmaal om Sjælen og dens Udødelighed
+aldrig berørte. Det er mere end et almindeligt Tankespørgsmal, % PRINTED AS IS: „Tanke-|spørgsmal“ (an a missing)
+det er personligt. Fra dette Stridsemne er
+det umuligt at udelukke Phantasien; den blander sig i
+Sagen, enten man mærker det eller ikke; ja den
+kommer tilsidst uvilkaarlig til at spille en Hovedrolle.
+Man lægge Texten tilrette, hvordan man vil, det er
+dog Phantasien, der skriver Nodern og sætter Musikken % PRINTED AS IS: „Nodern“ (a gap: the final e did not print)
+% --- p. 15 ---
+\setcounter{footnote}{0}%
+\opage{15}til. Intet Thema har flere Variationer. Hvor bliver
+der ikke phantaseret over Sjælens Udødelighed!
+
+Vistnok falder Spørgsmaalet om Sjælens Udødelighed
+oprindelig sammen med Spørgsmaalet om det evige
+Liv, og bliver for saa vidt religiøst at besvare i Tro;
+men ogsaa Troen har sin Phantasie. Imellem Tro og
+Phantasie er der et eget Forhold. Troen vil lige saa
+lidt som Phantasien underordne sig det udvortes Sandselige;
+begge ere enige om, ikke at krybe for Naturlovene
+eller bøie Nakken under den blinde Nødvendighed.
+Begge føle sig fribaarne, i Stand til at optage Kampen
+med det Endelige og hæve sig over de Skranker, der
+sættes dem af den materielle Virkelighed. Og dog kan
+Troen ikke uden Betænkelighed give sig i Ledtog med
+Phantasien. Den aner en Fare. Der er i Phantasien
+en Drift til at gaae paa Eventyr, en ungdommelig
+Kaadhed, en Lyst til at drille Virkeligheden og lege
+Sandsynlighedsleg med de store Muligheder. Paa denne
+Leg kan Troen ikke indlade sig, thi dens Væsen er
+Alvor; Troen kan, om saa skal være, byde den timelige
+Verden Trods, thi den kjender dens Forkrænkelighed
+og har gjennemskuet dens Intethed; men Virkeligheden
+selv kan den ikke byde Trods; tvertimod! den er
+uendelig interesseret i det Virkelige, det høiere Virkelige,
+for hvilket den strider. Troen tør ikke kaste
+Virkelighedens Byrder fra sig, for at gjøre sig let og
+svinge sig høit paa Phantasiens Vinger; thi det er
+Ikarusvinger, Vinger af Vox, der smelte for Solens Ild.
+
+Men, seet fra en anden Side, ville Tro og Phantasie
+gjøre Forbund, nemlig hvor det gjælder at komme til
+Rette med det Sandsynlige og erkjende det Mulige.
+Troen kan gaae imod Sandsynligheden; men den kan
+% --- p. 16 ---
+\setcounter{footnote}{0}%
+\opage{16}ikke gaae imod Muligheden. Det Usandsynlige kan
+troes, men det Umulige kan ikke troes; saa maa de
+begge, Troen og Phantasien, hjælpe hinanden med at
+udklare Muligheden.
+
+Anvendes det her Sagte paa Læren om Sjælens Udødelighed,
+da er det Første og Vigtigste dog vel dette, om en
+saadan Udødelighed er mulig. Dette Spørgsmaal bliver
+bestandig mere nærgaaende, alt som vi lære denne
+virkelige Verden, den nærværende Natur at kjende.
+For Oldtiden var Spørgsmaalet ikke nær saa vanskeligt
+eller indviklet som det er for Nutiden; thi Nutiden har
+en anderledes indtrængende Viden om Naturlovene og
+det Materielles Betydning end Oldtiden. Der er i vor
+Tid Mennesker, som leve i hemmelig Angst for Naturlærens
+voxende Indflydelse; de have en Frygt for at
+indlade sig med dens Undersøgelser, de ere bange for
+at miste deres Tro. Det er en piinlig Tilstand og et
+sørgeligt Vidnesbyrd, at det nok ikke staaer ganske
+rigtig til med denne Tro, at der i Hjertet er en Tvivlens
+Orm, som gnaver. Har Troen Sandhed, behøver
+den da at leve i et Tusmørke? den maa kunne taale
+Dagens Lys. Der er slet ingen Fare ved at lade Naturlæren
+rykke frem med sine Indsigelser; det skal nok
+vise sig, at den selv er i Vildfarelse og gjør Overgreb,
+naar den bilder sig ind at kunne udslette Muligheden,
+den Mulighed, hvori Troen grunder. Synes det end et
+Øieblik at lykkes, da er det kun i Kraft af en ufuldbaaren
+Tænkning og en misledet Phantasie.
+
+Vi ville anføre nogle af de bekjendteste Indvendinger
+imod Sjælens Udødelighed. Det er umuligt, siger
+man, at Sjælen kan overleve sit Legeme, thi det sjælelige
+Liv er afhængigt af Organer. Det vi kalde vor
+% --- p. 17 ---
+\setcounter{footnote}{0}%
+\opage{17}Sjæl er ikke noget Væsen for sig. Vel er Sjælen ikke
+Materie; men den er dog en Virksomhed af det Materielle,
+en Nervevirksomhed og fremfor Alt en Hjernevirksomhed.
+Hvor bliver Sjælen af, naar den forlader
+Legemet? Ja, hvor bliver Lyset af, naar Ætheren
+kommer i Hvile; hvor bliver den elektriske Strøm af,
+naar Batteriet forstyrres; hvor bliver Ilden af, naar
+den chemiske Proces hører op? Det forholder sig med
+Sjæl og Legeme som med Tonerne og et Instrument.
+Et forstemt Instrument giver falske Toner, og naar
+Strengene briste, er det forbi med Musikken. Det er
+en barnagtig Forestilling, at Sjælen skulde forlade Legemet
+eller, som det hedder, fare ud af Legemet. En
+nøgen, legemløs Sjæl er en tom Phantasie. I Orienten
+troer man paa Sjælevandringen; de Afdødes Sjæle kunne
+boe i Planter og Dyr, i Katte, Hunde, Elephanter, ja
+den troende Hindu maa endog være bange for at kunne
+træffe sine Forfædres Aander i Rotter og Muus: ængstende
+Indbildninger, uhyggelige Phantasier. Hos os
+hører Troen paa Sjælevandringen vel til Sjeldenhederne,
+men desto almindeligere er Forestillingen om, at Sjælen
+gaaer over til en anden Verden. Hvor ligger nu den
+Verden? Phantasien kommer i Forlegenhed, naar den
+examineres af Forstanden. Den digter en hiinsidig
+Verden, men hvor er dette Hiinsidige? Bagved, udenfor,
+indenfor, nedenfor, ovenfor den nærværende Verden?
+Disse Spørgsmaal kan Phantasien ikke besvare. Hvorsomhelst
+den peger hen, opad eller nedad, i Nord eller
+Syd, i Øst eller Vest, den peger allevegne ud i Rummet
+og kommer ikke udenfor dette naturlige Universum.
+Der phantaseres om et nyt Legeme, et aandeligt, overnaturligt
+Legeme, altsaa en aandelig, overnaturlig Ma%
+% --- p. 18 ---
+\setcounter{footnote}{0}%
+\opage{18}terie. Men er der noget Naturligt til, saa er det nok
+Materien. Hvad er vel en overnaturlig Materie? En
+unaturlig Natur, et udstrakt Væsen uden Udstrækning.
+Man har desaarsag i den nyere Tid da ogsaa begyndt
+at indrette „Dagen efter Døden“ paa en med Naturlæren
+lidt mere overeensstemmende Maade ved at betjene
+sig af Brinten og Ætheren og lade Sjælen afreise
+paa en Lysstraale til andre Kloder, Syvstjernen eller
+Nordstjernen eller maaskee til Hundestjernen. Det
+smager af Videnskab; men Smagen er vammel, og der
+behøves kun ringe Eftertanke for at overbevise sig om,
+at det Hele er et løsagtigt Phantasterie.
+
+Naar disse Indvendinger udvikles og gjennemføres
+med skarp Forstand og Kjendskab til Naturlovene,
+gjøre de en stærk Virkning. Jo mere Overveielsen gaaer
+i det Enkelte, desto urimeligere bliver det Hele. Det
+Sande og det Falske blandes paa en saa eiendommelig
+Maade, at Sagen let kan faae et Udseende, som var
+Udødelighedstroen kun en Phantasie, en Indbildning.
+Hvoraf kommer nu det? Det kommer deraf, at Grundlaget,
+hvorpaa den hele Betragtning hviler, er falsk.
+
+Det er for det Første en falsk, en grundfalsk Forestilling,
+at Sjælen ikke er et fra Legemet forskjelligt
+Væsen. For at bevise, at Følelse, Bevidsthed, Forstand,
+Phantasie ikke er Andet end Nerve- og Hjernevirksomhed,
+gaaer man ud fra Erfaring; men Erfaringen kommer i
+Strid med sig selv; thi der gives ikke blot en udvortes,
+men ogsaa en indvortes Erfaring. Jeg erfarer, at jeg
+har et Legeme, og at dette Legeme bestaaer af materielle
+Dele; men jeg erfarer ogsaa, at der er Noget i mit
+Indre, jeg maa kalde mig selv; jeg erfarer, at min Bevidsthed,
+min Følelse, min Forstand og min Phantasie,
+% --- p. 19 ---
+\setcounter{footnote}{0}%
+\opage{19}hvormeget disse Virksomheder end ere betingede og
+afhængige af materielle Organer, af Nerver og Hjerne,
+dog umulig kunne være materielle Virksomheder. Magneten
+kan tiltrække, et elektrisk Batteri kan udvikle
+Elektricitet, Sligt hører til de livløse Elementers Natur.
+Men Materien, hvor eiendommelig den end fordeles og
+leires, kan ikke føle; der tænkes ved Hjælp af Hjernen,
+men Hjernen, denne besynderlig furede Masse med sine
+Vindinger og Labyrinther, Hjernen som blot organiseret
+Materie kan ikke tænke. Det er vor Sjæl, der føler,
+det er vor Sjæl, der er sig bevidst, det er vort sjælelige
+Væsen, der tænker. Kan det nu nytte at komme
+med den Forklaring, at det med Sjælen kun er en
+Phantasie. Hvorfra kommer da Phantasien? Vi gad
+høre den Physiker, som kunde forklare os med nogen
+Rimelighed, hvorledes Atomerne maae leire sig, for at
+Materien kan begynde at phantasere. Man forsøge det
+en Dag eller endog blot en Time at leve med Materialisternes
+eller de moderne Positivisters Anskuelse, og man
+vil gradviis nærme sig Vanvid. Skal Sjælen være Hjerne
+og Hjernen Sjæl, saa maa den hele menneskelige Organisme
+betragtes under Synspunktet af en eiendommelig
+formet Organdynge; man kan da ikke tale om mit eller
+dit Legeme, om min eller din Hjerne, thi Udtryk som
+min og din forudsætte, at Du og jeg ere særlige Væsener.
+Naar to Mennesker tale med hinanden, er det altsaa
+ikke to Sjæle, men to Hjerner, der meddele hinanden
+deres Forestillinger og betroe hinanden deres Tanker.
+Det kan jo for et ironisk Lune være ret underholdende,
+at betragte Menneskene paa Torve og Gader som selvbevægende
+Atomdynger, organiske Automater, at see
+dem nikke til hinanden og tage Hatten af for hinanden,
+% --- p. 20 ---
+\setcounter{footnote}{0}%
+\opage{20}idet enhver af disse Hjerner bilder sig ind, at den har
+et Selv, et Jeg, skjøndt alt det med Jeg selv og
+Du selv kun er Phantasie. I en af Hoffmanns Romaner
+skildres en ung Pige, som ved sin Skjønhed
+og sine Talenter gjør overordenlig Lykke i det elegante
+Selskab; hun dandser graciøst, hun synger og
+spiller med Virtuositet, med Smag og Foredrag. De
+unge Herrer flokkes om hende, hun fængsler dem i en
+Tryllekreds; der er Tilbedelse og Courtoisie, der er
+Hjertebanken og Concurrence; der er lynende Blikke,
+som endogsaa true med Dueller. Men En af Tilbederne
+holder sig stille tilbage, han venter. Han venter paa
+det Øieblik, da han kan træffe den Skjønne alene og
+kaste sig for hendes Fødder. Øieblikket kommer, men
+hvad maa han erfare? Den Tilbedte er intet virkeligt
+Menneske; det er en Dukke, et overordenlig fiint forarbeidet
+Konstværk! Øinene af slebet Kul, de mørke
+Bryn paasatte, hun er en Automat, hun har ingen Sjæl,
+hun gaaer paa Skruer. Hvad om vi nu alle vare naturfrembragte
+Automater, der bildte os selv og Andre ind,
+at vi havde en levende Sjæl, medens dog Sandheden
+var, at vi alle gik paa Skruer. Vanvid!
+
+Det maa staae fast for den sunde Sands og den
+indre Erfaring, at vi have en Sjæl, og at den i vort
+Legeme virksomme Sjæl er et fra Materien forskjelligt
+Væsen; og saa er det da ikke, hvad Materialisterne
+ansee det for, barnagtigt at tale om, at Sjælen ved
+Døden forlader sit Legeme. Men hvor gaaer den hen?
+Her kommer Phantasien til at tale et Ord med, og det
+for Alvor. Hvad er Rummet, hvad er Materien, hvad
+er den legemlige Verden? Uden Phantasiens Hjælp vil
+% --- p. 21 ---
+\setcounter{footnote}{0}%
+\opage{21}det være umuligt at give noget forstaaeligt, end sige
+noget fornuftigt, Svar paa disse Spørgsmaal.
+
+Hvad er Rummet? en Form for det Udstrakte, i
+sig selv en tom Form, men dog en Anskuelsens Form,
+en Form for alt det Anskuelige. Dette Anskuelige kan
+nu være deels et Udvortes og Materielt, deels et Indvortes
+og Aandeligt; men Rummet retter sig altid efter
+det Indhold, hvormed det fyldes. Den, der drømmer,
+drømmer i Rummet; men det er ikke det udvortes Rum,
+det er et indvortes, og dog faaer dette Indvortes Form
+af et Udvortes. Den Bortreiste f. Ex., der længes, kan
+ligge paa et fremmed Sted i det fjerne, fremmede Land
+og drømme om sit Hjem. Drømmen kan være saa
+levende, at han seer dem alle for sig i de bekjendte
+Værelser og de vel bekjendte Omgivelser. Der er altsaa
+et andet Rum i hans Drøm end det, hvori han
+legemlig er, og hvori han vil befinde sig, naar han
+vaagner. Her er altsaa to Slags Rum, det drømte og
+det virkelige. Hvorfor kalde vi nu ikke det drømte
+Rum virkeligt? Fordi det ikke er fyldt med virkelige
+Gjenstande, men kun med Drømmebilleder. Som den
+tomme Form er det drømte Rum lige saa vel Rum som
+det virkelige: Forskjellen beroer alene paa det, hvormed
+Rummet fyldes. Et Maleri paa Væggen, et Landskab
+f. Ex., viser os det Samme paa en anden Maade.
+Rummet i Værelset og Rummet i Billedet give to Slags
+Rum. Billedet, det forestille nu den romerske Campagne
+eller den jydske Hede, har sit eget Rum. Forgrund,
+Mellemgrund, Baggrund skille sig ad; det Nærmere
+nærmer sig, det Fjernere fjerner sig: vi see ind i
+en ubestemmelig Dybde, og dog bliver Væggen ikke
+gjennembrudt. Hvad er nu det for et Rum? Et illu%
+% --- p. 22 ---
+\setcounter{footnote}{0}%
+\opage{22}sorisk Rum og hvorfor? Fordi de Gjenstande, hvormed
+det fyldes, ere illusoriske.
+
+Phantasien er altsaa ikke i Modsigelse med sig
+selv, naar der skjelnes imellem forskjellige Slags Rum.
+Hele Vanskeligheden ved Her og Hisset falder bort,
+hvad Rummet angaaer. Vi maae da udelukkende spørge
+om det, der opfylder Rummet. Vi komme herved til
+at gjøre et dybere Indblik i Phantasiens Væsen.
+
+Vor menneskelige Phantasie kan fylde et indvortes
+Rum med Billeder, men Rummet forbliver illusorisk,
+et indbildt Rum, fordi vore Billeder ere Indbildninger,
+der mangle Virkelighed; det er vor Phantasies Afmagt,
+at den ikke kan give sine Billeder sand Realitet. Hvad
+hører der altsaa til for at frembringe et virkeligt Rum?
+En almægtig Phantasie, der kan fylde sit Rum med
+virkelige Gjenstande, en skabende Phantasie, der formaaer
+at oversætte sit rige Indhold, sit Indre, i et
+mangfoldigt og mægtigt Ydre, d. e. i en udvortes, sandselig
+tilværende Verden.
+
+Det er Forholdet imellem det Indre og det Ydre,
+hvorpaa det her kommer an. Vi tale om Skaberens
+almægtige Tanker og om hans almægtige Villie; men
+lad os ikke glemme hans almægtige Syn. Dersom der
+i Skaberens evige Selvmagt ikke var Andet end Tanker
+og Villie, saa var denne udvortes, legemlige Verden
+aldrig blevet til. Vel er der Tanker, guddommelige
+Tanker i denne Verden, men her er ogsaa Materie og
+Legemlighed; denne Materiens og Legemlighedens Verden
+er mere end en Verden af Tanker. Tanker ere usynlige,
+men her er en Verden af haandgribelige Ting.
+Vel er der i denne Verdens Love en lovgivende Villie
+kjendelig; men der er i Verden mere end Love, der er
+% --- p. 23 ---
+\setcounter{footnote}{0}%
+\opage{23}Stoffer og Masser. Lovene ere usynlige som Villien,
+hvoraf de fremgaae; men den Tingenes Orden, hvori
+Lovene opfyldes og Villien fuldbyrdes, er sandselig,
+synlig, haandgribelig. Hvorfra stammer nu dette Udvortes,
+Sandselige, Haandgribelige? Fra Phantasien, den
+almægtige Phantasie. Det er jo netop Phantasiens
+Væsen at være mæglende imellem det Indre og det
+Ydre, det Usynlige og det Synlige. Phantasien er beslægtet
+med Tanken og tilhører det Indre; men den er
+ogsaa beslægtet med det Sandselige, særlig med Synets
+Sands: dens Frembringelser ere Billeder, og naar der i
+disse Billeder er Magt, saa ere Billederne virkelige
+Gjenstande. Magt og Virkelighed, Magt og Selvstændighed,
+Magt og Realitet svare til hinanden i det
+Mindste som i det Største. Der er en Selvstændighed
+i Tingene, fordi der er en Magt i Tingene; der er en
+Selvstændighed i hvert Atom, fordi der er Noget af en
+Magt i Atomet: jo mere Magt, desto større Selvstændighed,
+jo mindre Magt, desto mindre Selvstændighed.
+Den hele Natur er et Magtens Rige. Derfor har Naturen
+en Sluttethed i sig selv, den udvikler sig af sit
+Indre, sine Anlæg; men alle Bestemmelser ere forud
+givne, den kan ikke give sig selv et eneste nyt Anlæg.
+Denne Magt i Naturen stammer fra Almagten; den er
+en Synliggjørelse i guddommelig Phantasie, en Aabenbarelse
+af den uendelige, skabende og opholdende
+Selvmagt.
+
+Hvor mange Verdener kan der altsaa være? Vi
+svare: saa mange som der kan rummes i den guddommelige
+Phantasie, og det er --- mange!
+
+Frelserens Ord: „I min Faders Huus ere mange
+Boliger“ tyde hen paa, at hans Blik, om det end
+% --- p. 24 ---
+\setcounter{footnote}{0}%
+\opage{24}maaskee har hvilet paa den østerlandske Stjernehimmel,
+paa Pleiaderne eller Orions Bælte, dog har gjennemtrængt
+dette Ydre og seet ind i en anden Himmel, en Verden
+af høiere Orden. Der kan altsaa foruden dette vort
+synlige Universum med sin Uendelighed, sit Rum, sin
+Materie, sin Legemlighed og sine talløse Kloder, være
+utallige høiere Verdener, hver især med sin Uendelighed,
+sit Rum og sin Legemlighed. Vor Stjernehimmel er
+høi og dyb: men dybere endnu er den almægtige Phantasie
+med de uudtømmelige Muligheder. Fra dette
+Synspunkt ville vi betragte Sjælens Udødelighed.
+
+Hvad vil det nu sige, at Sjælen forlader Legemet?
+Vi udtrykke det tydeligst ved, at den ombytter den
+ene Verden med den anden. For at indsee, hvad heri
+ligger, kaste vi et Blik paa Søvnen og Døden. Døden,
+hedder det, er Søvnens Broder; Søvnens Genius med
+den opadvendte Fakkel svarer til Dødens med den
+nedadvendte. Dette Broderskab gjælder ikke i physiologisk
+Forstand; Physikeren og Lægen ville have Meget
+at indvende derimod; men det gjælder i psychologisk
+Forstand; det gjælder, naar der spørges om det Indre,
+om Livets Væsen og Grund. I Søvnen lukke sig de
+udvortes Sandser, Bevidstheden tager af, og Søvnen kan
+være saa dyb, at endogsaa Drømmen forsvinder. I
+Døden ophører al Sandsning, Bevidsthedens Lys slukkes;
+men Sjælen bliver ikke til Intet; den synker i sit Indre
+ned i sin dybe Grund; denne Grund er det evige Væsen,
+den guddommelige Phantasie, i hvis Skjød den hviler.
+Derfor nævne vi de Døde med det betegnende Ord, de
+Hensovede. Paa Dødssøvnen følger en Opvaagnen, en
+ny Legemdannelse i en ny Verden. Den nye Verden
+er af anden og høiere Orden end denne nærværende;
+% --- p. 25 ---
+\setcounter{footnote}{0}%
+\opage{25}men baade den Verden, som Sjælen forlader, og den,
+hvori den ved Dannelsen af sit nye Legeme indtræder,
+begge Verdener, hvor forskjelligartede de end ere, ere
+Aabenbarelser af den ene og samme almægtige Phantasie.
+Med Opvaagnelsen følger Erindringen om det
+Forbigangne; men Overgangen er ingen Reise, den er
+en Forvandling. Overgangen er indvortes, og dog virkelig;
+vi kalde vore Døde de Hedengangne.
+
+Saa langt kunne vi gaae uden at støde an mod
+nogensomhelst af de bekjendte Naturlove; men vove
+vi os videre frem, forsøge vi at skildre, hvorledes det
+seer ud i den nye Verden med de nye Tilstande, saa
+begynde vi at phantasere.
+
+Der er hos visse Mennesker en ubændig nysgjerrig
+Higen efter at gjøre fortroligt Bekjendtskab med Aandeverdenen,
+især naar det kan skee paa en ret sandselig
+og haandgribelig Maade; de mane Aander frem, de
+adspørge de Døde. Det gik vidt i Oldtiden, man tænke
+paa „Keiser og Galilæer“; men det gaaer endnu langt
+videre i Nutiden. Der er i denne Henseende intet
+Forehavende saa dumdristigt, at en ophidset Phantasie
+jo tør indlade sig derpaa. At faae Aanderne til at
+vise sig legemlig, især i Mørke, er nu som Ingenting;
+men at udfritte dem ret privat, at photographere dem,
+at tage dem med i Huusholdningen og faae dem til at
+lave Pølser, det er --- „en Videnskab“. Oprørende er
+det, naar et saadant Phantasterie af den groveste Aandsraahed
+vil sætte sig i Forbindelse med Religionen og
+hjælpe til med at faae Christendommen videnskabelig
+begrundet.
+
+Der er en Form af Phantasie, som staaer Religionen
+nær, den er af ædlere, høiere Oprindelse, den har sit
+% --- p. 26 ---
+\setcounter{footnote}{0}%
+\opage{26}Udspring, ikke fra den grove Sandselighed, men fra en
+frit tilegnet, klar Anskuelse af Livets Kriser; det er en
+Digterphantasie, der udfolder sit Indhold i den saakaldte
+apokalyptiske Poesi. Herhen hører som Led i
+Verdensliteraturen Dantes divina Comedia, i vor egen
+Literatur Heibergs „En Sjæl efter Døden“; ogsaa Slutningspartiet
+af „Adam Homo“ bør nævnes. De Billeder,
+som forekomme i slige Digtninger, gjøre ikke Fordring
+paa at gjælde for Virkelighed, det er Symboler, De
+kunne være af gribende Virkning, og faae ethisk Betydning
+derved, at de anskueliggjøre Sjæletilstande, som
+paa en indtrængende Maade minde os om de personlige
+Udviklingslove og levendegjøre vor Forestilling om
+Sammenhængen mellem Livet her og Livet hisset. Man
+tænke paa Adam Homo, som han sidder paa Synderbænken og seer med Gru paa den store Vægtskaal.
+Alma nærmer sig, en Haabets Stjerne i den mørke Nat;
+hun trøster den Forsagte, leder ham ved Haanden og
+indgyder ham Mod til at gjennemgaae Ildprøven. Det
+er en Strid mellem det Nye og det Gamle, en Forvandlingsproces,
+som gjøres anskuelig i Situation. Den
+forhen Store bliver saa lille, og den forhen Lille saa
+stor. Adam Homo, i Verden den store Mand, „Adam
+Homo med den blide Aand, Baron, Geheimeraad, Ridder
+af det hvide Baand“, hvor er han blevet lille; og Alma,
+den stille, dybe, men oversete og forladte Sjæl, hvor er
+hun stor! For at den nye Herlighed kan aabenbares,
+er der et Jordstof, der først maa fortæres, et „Pandser“,
+der maa smelte, en gammel Herlighed, der maa
+„brændes til Kul“. Og det foregaaer for vore Øjne,
+det bliver os nærværende, det lyder ud fra Skjærsildens
+Chor: „Hjertets smeltede Pandser henflyder, Med
+% --- p. 27 ---
+\setcounter{footnote}{0}%
+\opage{27}vor Pynt drive Flammerne Spøg: Vore Krandse, Bedrifter
+og Dyder gaae op som et Intet i Røg“. Det er
+Phantasie, men denne Phantasie er under Ideens Tugt,
+det er ingen ørkesløs, tom Phantaseren.
+
+Og dog er der en Forskjel, en væsenlig Forskjel
+mellem den apokalyptiske Poesi og Aabenbaringsordet.
+Aabenbaringsordet anskueliggjør i store Træk, hvad der
+venter os i en tilkommende Verden. Ogsaa disse Skildringer
+høre ind under  Phantasiens Omraade; men her
+maa anlægges en ganske anden Maalestok: her sigtes
+i høiere Forstand paa et Virkeligt. Her er intet Grundlag
+for videre gaaende Phantaseren, men en Opfordring
+til alvorlig Selvprøvelse. Vi skulle i det Følgende gaae
+over til at betragte den religiøse Phantasie.
+
+% --- p. 28 ---
+\setcounter{footnote}{0}%
+\lecture{Tredie Forelæsning.}\opage{28}
+
+Alt for en Deel Aar tilbage blev der i vor Literatur
+gjort opmærksom paa, at Religionen led under Mishandling
+af Videnskaben. Det blev da fremhævet, at
+der maatte gjøres Forskjel mellem Naturligt og Overnaturligt,
+at Aabenbarelser fra et hiinsidigt Rige ikke
+lode sig maale med Hverdagserfaringers Alen eller
+presse ind under de bekjendte Naturlove. Det blev
+fremhævet, at ihvorvel Intet kan være sandt i Religionen,
+hvis Usandhed videnskabelig lader sig bevise, saa var
+det dog utilbørligt at sætte Videnskaben til Dommer
+over Religionen; det var at forgude vor stykkevise
+Viden og løfte den op paa Alvidenhedens Throne.
+Religionen maatte have Lov til at udvikle og begrunde
+sine Sandheder religiøst; saa kunde Videnskaben paasee,
+at der i Udviklingen Intet indeholdtes, som stred mod
+vitterlige Kjendsgjerninger og i alt Fald varetage sin
+ubestridelige Ret til alsidig fri Undersøgelse. Det blev
+i udførlig Fremstilling viist, at der ifølge den menneskelige
+Videns Begrændsning nødvendig maatte gives to,
+af hinanden uafhængige, men dog hinanden vexelsidig
+belysende Erkjendelseskredse, en for det Overnaturlige
+og en for det Naturlige, en for Religionen og en for
+% --- p. 29 ---
+\setcounter{footnote}{0}%
+\opage{29}Videnskaben. Der blev, kort sagt, gjort en utvetydig
+Adskillelse mellem Tro og Viden.
+
+Denne Adskillelse vakte Forargelse, ikke blot hos
+dem, der paa Forhaand holdt sig forvissede om, at
+Troens Dage vare talte, eftersom det Overnaturlige,
+betragtet i Videns Lys, kun er Skin og Phantasie; men
+hvad der er mere mærkværdigt, ogsaa hos dem, som
+paa Kirkelærens Vegne følte sig kaldede til at tale
+Religionens Sag. De erklærede reent ud, at det Overnaturlige
+ikke alene lod sig optage til Begrundelse i
+Videnskaben, men at der gaves en ifølge sin Oprindelse
+overnaturlig Videnskab, en Hellig-Aands Videnskab, der
+satte sine Dyrkere i Stand til at hæve sig over „Verdens
+Børnelærdomme“ og tugte, „de hedensk opblæste
+Naturvidenskaber“. Og hvad Vei gik man saa? Ikke
+Logikens Vei, af Frygt for at smitte sig med „det
+Kenologiske“; man valgte en mere anskuelig Fremgangsmaade,
+nemlig at lade saadanne Ord som Villie,
+Skabervillie, den frie Inderlighed, den gode Villie, aftrykke
+med fede Typer. Fede Typer ere jo ogsaa
+Realiteter; og ved slige Realiteter forberedte man sig
+da til at tugte de indbildske Realvidenskaber. Som
+sagt, Forargelsen over, at Religionen skulde have sin
+egen Erkjendelseskreds var paa begge Sider saa stor,
+at Troens Forsvarere og Troens Fornegtere, Kirkens
+Mænd og Mænd af den frie Tanke i Videnskabens Navn
+rakte hinanden Haand, og den gjensidige Forstaaelse
+syntes at blive cordial. Det Cordiale tabte sig dog, og
+det Hele gik lidt efter lidt over til en stille Gjæring.
+Den ærede Almeenhed har siden den Tid været bekymret
+snart for Videnskaben og snart for Religionen,
+snart for „Troen“ og snart for „den frie Tanke“; men
+% --- p. 30 ---
+\setcounter{footnote}{0}%
+\opage{30}i de sidste Dage ere Udsigterne blevne lysere; rette
+Vedkommende, som tilgavns ere inde i Sagen, have
+omsider paataget sig det besværlige Hverv at oplyse
+det store Publikum. Den bekymrede Almeenhed vil
+nu kunne sætte sig i Kundskab om, hvorledes det
+egenlig staaer til med det omstridte Mellemværende
+mellem Religion og Videnskab. At en Afgjørelse nærmer
+sig, er øiensynligt, det kan tydelig sees deraf, at Striden
+føres i Aviserne. Naar en saadan Strid om en saadan
+Sag gaaer over i Aviserne, saa veed man, at nu er det
+Alvor; det er et ligesaa ubedrageligt Tegn paa Alvor,
+at en Sag af denne Natur kommer i Avisen, som det
+er et ubedrageligt Tegn paa, at en Melodie er almeenyndet,
+naar den kommer i Lirekassen.
+
+Vi kunne ikke her tage hele Sagen for i den
+Korthed, den Fynd og Klarhed, hvormed den bør tages
+i Avisen; Sligt overlade vi til dem, som dertil have
+Begavelse, Forstudier og Myndighed. Men et Bidrag
+kunne vi dog give, nemlig til at belyse den Side, som
+særlig angaaer Phantasien.
+
+Den aabenbarede Religion er grundet paa Mirakler;
+men, derfor indestaaer „den moderne Videnskab“, Miraklet
+er kun Skin og Phantasie. Der skeer ingen
+Mirakler og der er aldrig skeet Mirakler; Miraklet er
+en selvmodsigende og desaarsag intetsigende Forestilling.
+Miraklet er et Brud paa Naturlovene, men Naturlovene
+ere uforanderlige; det er en Ramse, som enhver Skoledreng
+nuomstunder kan paa sine Fingre. --- Men hvad
+er nu egenlig Meningen med, at Lovene brydes? Meningen
+er, at Tingenes Sammenhæng brydes, at den
+guddommelige Viisdom modsiger sig selv. Denne Sætning
+har Gyldighed paa een Betingelse, den nemlig, at
+% --- p. 31 ---
+\setcounter{footnote}{0}%
+\opage{31}hele Viisdommens Plan er udtømt, fuldstændig udtømt
+i denne naturlige Tingenes Orden. Kan Videnskaben
+virkelig bevise dette --- endnu har den ikke beviist det;
+dens foregivne Beviser ere kun Paastande, og disse
+Paastande i maadelig Overeensstemmelse med dens
+ædruelige Bekjendelser, at den ikke kjender Væsenet,
+men kun Egenskaberne, ikke Kraften selv, men kun
+dens Yttringer o. s. v. --- men skulde Videnskaben engang
+naae til en saa dybtgaaende Indsigt i Tingenes
+Væsen og hemmelige Sammenhæng, at den med klare
+Grunde kan godtgjøre, at den overnaturlige Verden
+kun er Skin og Phantasie; saa er det i Sandhed forbi
+med Aabenbaring og Tro. Men heller ikke før, lad os
+ikke forhaste os!
+
+Aabenbaringsfornegterne ere snilde nok til at holde
+Striden fast paa Naturlovenes Omraade og lade, som
+om det med det Overnaturlige for længst var afgjort:
+paa denne Maade have de allerede Seiren i Hænde.
+Hvad kan det hjælpe, at Troesforsvarerne beraabe sig
+paa den almægtige Skaber, naar Skaberens Plan med
+Love og Sammenhæng, Materie og Kræfter er udtømt,
+fuldstændig udtømt i dette naturlige Universum? Er
+der Intet bagved, slet Intet, ingen fri Inderlighed, intet
+Rigdoms Dyb af Muligheder, hvoraf den skabende
+Frihed kan øse, hvad nytter det saa at paakalde Almagten?
+Den evige Lov er Lovgiverens Herre, Nødvendigheden
+raader: Frihedens Puls staaer stille. Den
+menneskelige Villie har dog en Art fri Inderlighed, en
+Selvbestemmen; men er Guddommens Skjød umiddelbart
+Eet med Naturens Grund, da bryder Alting frem,
+ja Livet selv, af betinget Nødvendighed, som naar en
+Gnist falder i Krudt. Vi leve i Constitutionernes
+% --- p. 32 ---
+\setcounter{footnote}{0}%
+\opage{32}Tidsalder, Videnskaben har faaet Øiet op for Constitutionen
+i det store Hele; den vil Intet høre om „en
+uansvarlig Gud“ med urandsagelige Raadslutninger; den
+har gjennemseet Tilværelsens gamle Grundlov paany
+og forvisset sig om, at den Almægtige nok skal afholde
+sig fra at gjøre Statscoup.
+
+Lad det være en Phantasie, saa staaer det Spørgsmaal
+dog tilbage, om de kirkelig beskikkede Troesforsvarere
+fra deres Side virkelig formaae at indføre
+det Overnaturlige i Videnskaben og faae dets Erkjendelse
+tilstrækkelig begrundet. At tage Myndighedsminen
+paa og bruge Magtsprog, hjælper ikke; at ville paatvinge
+Videnskabernes frie Republik et absolut Monarchie
+og lade „den gode Villie“ trykke op med nok saa
+fede Typer, for at tugte de naturalistiske Børnelærdomme,
+fører til ydmygende Nederlag. Her er en Phantasiens
+Hemmelighed, vi maae see at faae opklaret.
+
+Den aabenbarede Religion har Syner og Billeder,
+underfulde Former af skabende Phantasie; vel at mærke
+ikke blot af menneskelig, nei, oprindelig af guddommelig
+Phantasie. Den lange, tusindaarige Strid om Religion
+og Videnskab bærer Vidne herom. De troende Fædre
+beraabte sig paa Aandens Vidnesbyrd, og med Rette.
+Men de opfattede Vidnesbyrdet eensidig, idet de ikke
+nok som agtede paa den religiøse Phantasie, og desaarsag
+overvurderede det udvortes, historisk Virkelige.
+Det gik til en Tid. Men saa kom der et Vendepunkt.
+Alt som Forstandsoplysningen tiltog, og Kritiken begyndte
+at komme til Kræfter, indtraadte Vanskeligheder,
+den ene mere umedgjørlig end den anden. De
+protestantisk-orthodoxe Lærere, der i Modsætning til
+Katholikerne meente at have et tilforladeligt juridisk
+% --- p. 33 ---
+\setcounter{footnote}{0}%
+\opage{33}thinglyst Aabenbaringsdokument i den hellige Skrift,
+gik ud fra Forudsætningen om Skriftens absolute Ufeilbarhed.
+For at forherlige Ufeilbarheden antoge de, at
+hvert Ord, hvert Bogstav og Tøddel saavel i det Gamle
+som i det Nye Testamente var indblæst af Gud; denne
+Antagelse beredte dem smertelige Skuffelser. Til Ufeilbarheden
+hørte, at ogsaa Vocaltegnene i den hebraiske
+Text oprindelig maatte være indblæste; men Kritiken
+viste, at disse Tegn vare en sildigere Tilsætning af
+jødiske Lærde, og Orthodoxiens Ordførere maatte give
+efter. Til Ufeilbarheden hørte, at Græciteten i det Nye
+Testamente maatte være classisk, thi den Aand, der
+paa overnaturlig Maade havde uddeelt sine Sproggaver
+paa Pintsefesten, maatte dog vel være lige saa grundig
+hjemme i det græske Sprog som enten Plato eller
+Aristoteles; men da Philologien fik sine Glarøine paa
+og kom til at see efter, viste det sig at være en Feiltagelse,
+og Orthodoxien maatte give efter. Saa skulde
+da, trods menneskelige Ufuldkommenheder i det Sproglige,
+hele den bibelske Historie fra Først til Sidst i Et
+og Alt være ufeilbar. Men nu toge Undersøgelserne et
+nyt Opsving. Lærde Forskere beviste, at mange af
+Bøgerne vare uægte; at Texten var tvivlsom; at der
+fandtes Uovereensstemmelser, ikke alene mellem de
+bibelske Beretninger og profanhistoriske Vidnesbyrd,
+men, hvad der endnu var værre, Afvigelser og øiensynlige
+Modsigelser imellem de hellige Forfattere indbyrdes.
+Tilsidst stege Indsigelserne til en saa overvældende
+Flod, at den gamle Orthodoxie stod maalløs,
+fortabt, og saae alle sine Dæmninger brudte.
+
+Saa indtraadte der da for Kirkelærens Vedkommende
+en mere liberal og fordomsfri Periode. Det
+% --- p. 34 ---
+\setcounter{footnote}{0}%
+\opage{34}kunde jo ikke hjælpe at være halsstarrig og forsvare
+det Uforsvarlige; man maatte bøie sig for Videnskabens
+Beviser, man maatte være fornuftig. Men efterhaanden
+som man selv begyndte at blive fornuftig, begyndte
+man da ogsaa at indsee, at der i den hellige Skrift
+var Meget, som stred mod Fornuften; Djævelen f. Ex.
+var slet ikke fornuftig, Dæmonerne og Besættelserne og
+alt det Overnaturlige, hvormed den skrevne Aabenbaring
+var belemret, var ufornuftigt. Til Syvende og Sidst opdagede
+man, at alle Mirakler --- naar man undtog
+Skabelsens --- vare ufornuftige.
+
+Kun det Naturlige var virkeligt; det Overnaturlige
+var uvirkeligt. Man maatte da see at faae det Overnaturlige
+bort; det kunde allerbedst skee ved en philologisk-kritisk
+Fortolkning. Dog her stødte man paa en
+Anstødssteen, der ikke var let at rydde af Veien; thi
+det var hele Bygningens Hjørnesteen, det var Christus
+selv. Man fandt det beklageligt, at en ellers saa fornuftig
+Mand som Christus havde indladt sig paa at
+gjøre Mirakler. Fritænkerne erklærede ham aabenlyst
+for en Bedrager; men Kirkelærerne, der godt kunde
+see, at han var et Dydsmønster, undskyldte ham paa
+det Bedste og forsikkrede, at han havde gjort det i en
+god Mening, blot for at læmpe sig efter Almuens Forestillinger.
+Andre skøde Skylden fra Mesteren over paa
+Disciplene; det var Disciplene, der havde misforstaaet
+ham, og forvandlet hans naturlige Sygehelbredelser til
+Mirakler. Og hvad blev der saa af den evangeliske
+Historie? En tør Beenrad i forvrængende Omsvøb. Den
+rene Jomfru blev til en ordinær Tømmermandskone, ja
+til en Kvinde af tvetydigt Rygte. Den Opstandne var
+en Skindød, der skrantende af sine Saar listede sig
+% --- p. 35 ---
+\setcounter{footnote}{0}%
+\opage{35}omkring i Tusmørke og kun fik en glimrende Bortgang,
+for saa vidt han engang i en stærk Aftenbelysning gik
+bag et høit Bjerg og derved fik Disciplene til at troe,
+at han var faret til Himmels. Tarveligt var det med
+denne Aabenbaring; men det var videnskabeligt. Da
+viste der sig med Et en ny Udvei, det var et nyt Syn;
+Æsthetiken og Philosophien havde faaet Øje paa Phantasien,
+at sige den menneskelige.
+
+Hvorfra stamme de hedenske Guder? Det er ikke
+historiske Personer, ikke tomme Naturallegorier; heller
+ikke er det vilkaarlige Digtninger, som ved et Præstebedrag
+have fundet Indgang hos det menige Folk og
+grundlagt dets Overtro. De hedenske Guder ere Skabninger
+af en ideeopfyldt, men ubevidst digtende Phantasie.
+Disse Frembringelser i Sagn og Digt ere Myther;
+Religion er Mythologie. Nu slog Befrielsens Time. Ere
+de hedenske Religioner Mythologier, hvorfor skulde den
+saakaldte aabenbarede Religion, i Jødedom og Christendom, ikke ogsaa være Mythologie? Mythen har netop
+det Eiendommelige ved sig, at den med en aandig
+Naturkrafts Uimodstaaelighed udspringer i Phantasien.
+Den skabende Phantasie laaner sine Elementer fra
+Naturbegivenheder og Historie; det er da heraf forklarligt,
+at det Mythiske kan paa den allernaiveste
+Maade være sammenblandet med det udvortes Virkelige,
+det Overnaturlige med det Historiske. Nu begyndte
+man da at finde Myther først i det Gamle og siden i
+det Nye Testamente, Naturmyther, mythiske Sagn, historiske
+Myther, philosophiske Myther o. s. v. Og hvad er
+saa Resultatet? Det nyeste videnskabelige Resultat er,
+at alt det Overnaturlige i det Nye saa vel som i det
+Gamle Testamente er Mythologie. Aanden er rigtignok
+% --- p. 36 ---
+\setcounter{footnote}{0}%
+\opage{36}borte, men man har jo dog Ideen. Paa Ideens Vegne
+skal den officielle Religionslære for Tiden anvende Kritiken
+for at udfinde, hvad og hvormeget der i Evangelierne
+er Mythe og hvad der er virkelig Historie.
+
+Jesu Liv falder i tre Afsnit: 1) fra hans Undfangelse
+og Fødsel til hans Daab i Jordans Flod og hans
+Fristelse i Ørken; 2) fra hans Optræden som Lærer til
+hans Død og Begravelse; 3) det tredie og sidste Afsnit
+omfatter hans Opstandelse og Himmelfart. Ifølge den
+nugjældende videnskabelige Synsmaade indeholder kun det
+andet Afsnit om hans offenlige Liv en virkelig Historie,
+og fra denne Histories Virkelighed maa da hans Mirakler
+udskilles, thi Miraklerne ere jo kun Myther. Det første
+og sidste Afsnit er reen og skær Mythologie. Bebudelsen en Mythe; Fødselsunderet en Mythe; Opstandelsen med de paafølgende Aabenbarelser og Himmelfarten, en Mythe. Ingen, der vil staae paa Videnskabens
+ Grund er i Stand til her at hævde det historisk Virkelige;
+det er ikke een Ting eller to Ting, som her give
+Vanskeligheder; det er, om man vil, tusinde, ja titusinde
+Ting, thi det er alle nuværende Videnskabers samstemmende
+Vidnesbyrd om Naturlovene og deres Uforanderlighed,
+Forsvareren af det Historiske her faaer imod
+sig. Det er lige saa umuligt, at faae nogensomhelst af
+de mange Videnskaber overtydet om, at det ikke er
+Myther, men virkelige Kjendsgjerninger, som det er
+umuligt at overbevise Astronomien om, at Himlen er
+en fast Hvælving, og at Jorden staaer stille i Verdens
+Midtpunkt. Den Enkelte kan gjerne paastaae det; men
+Videnskaben agter ikke hans Paastand. Troens Forsvarere
+kunne beraabe sig paa, at Christendommen er
+en historisk Kjendsgjerning; Videnskaben svarer, at
+% --- p. 37 ---
+\setcounter{footnote}{0}%
+\opage{37}Muhamedanismen, Brahmaismen, Buddaismen ogsaa ere
+historiske Kjendsgjerninger, uden at deraf kan udledes,
+at deres Myther ere guddommelige Aabenbaringer.
+
+Saa staaer da endnu den gamle, traditionelle, men
+aandsforladte Religionslære paa Videnskabens Grund.
+Men hvordan staaer den? Dens Stilling er ikke misundelsesværdig,
+den seer med foldede Hænder paa de store
+Aabenbaringsbilleder og gribes af Veemod. Bebudelsens
+Engel, Hyrdernes Syn i den straalende Nat, hvor enfoldig ophøiet. Gid det var virkeligt! Men desværre,
+det er ikke virkeligt, det kan ikke være virkeligt.
+Videnskaben siger Nei! og Naturlovene true: saa faaer
+det i Guds Navn at være Myther.
+
+Dersom Sagen ikke var saa alvorlig, at Situationen
+i Sandhed maa blive tragisk, saa vilde den hele Fortvivlelse
+virkelig være komisk; thi den er selvforskyldt:
+det Hele beroer paa en Indbildning. En Digterphantasie,
+der vil gjøre sig bekjendt med den officielle Religionslæres
+nyeste videnskabelige Bedrifter, vil finde et uudtømmeligt
+Oplag af Emner til komisk Behandling. Snart
+hedder det sig, at Johannesevangeliet er det sande dybe
+Hjertes Evangelium og at de tre andre maae rette sig
+efter Johannes. Saa kommer der med næste Post Efterretning
+om, at Johannesevangeliet er et fiint udarbeidet, bevidst
+Konstværk. Altsaa ikke historisk! Hvem af Evangelisterne
+skal nu spille Hovedrollen? Lukas kan det nu
+ikke være: altsaa enten Mathæus eller Markus. Det er
+Mathæus; nei, det er Markus! Saa tænder man Kritikens
+Løgte og leder efter et Urevangelium.
+
+Lige saa stor er Raadvildheden med det Historiske
+i Miraklerne. Man vil skjelne kritisk mellem
+Virkelighed og Sagn, og kun antage det for Virkeligt,
+% --- p. 38 ---
+\setcounter{footnote}{0}%
+\opage{38}som har alle Evangelisters samstemmige Vidnesbyrd.
+Vandringen paa Havet behøver da ikke at være virkelig,
+--- at sige paa Kathedret, thi paa Prædikestolen er den
+altid virkelig; men Bespiisningsmiraklet maa nødvendig
+være virkeligt, thi det har jo alle Vidnesbyrd. Dog nei,
+det kan umulig være virkeligt: Brødene ere for faa og
+ Fiskene for smaa. „At see Brødet svulme og formere
+ sig i Christi Haand, er et uhyggeligt Syn: hvad vil
+ Videnskaben sige?“ --- Var det saa ikke bedst at ombytte
+det videnskabelige Grundlag med et religiøst, og vælge
+ sit Standpunkt udenfor Videnskaben? „Nei! Nei! det
+gaaer paa ingen Maade an; den Dag da Religionslæren
+ophører at være en Videnskab, en objectiv, paa objective
+Kjendsgjerninger fast begrundet Videnskab, paa
+den Dag maa Religionen gaae tilgrunde, og det sørgelige Budskab vil staae i Avisen. Og det behøves heller
+ikke; Faren er ikke saa stor; det er kun en Overgang.
+Videnskaben har endnu ikke sagt sit sidste Ord. Man
+kan være vis paa, at naar Videnskaben en Gang faaer
+sagt sit sidste Ord, saa skulle vi nok faae Miraklernes
+historiske Virkelighed objectivt videnskabelig begrundet.“
+Men naar faaer Videnskaben sagt sit sidste Ord? Det
+bliver en langvarig Proces, længere endnu end den fra
+Bleakhouse bekjendte: Jarndyce and Jarndyce. Den
+menneskelige Forstand er forarget, og Phantasien forvildet;
+den af Forargelse forvildede Phantasie staaer
+smilende mellem Actstykkerne og siger med den gamle
+vanvittige Jomfru: Pray, accept my blessing!
+
+Religionslæren behøver ikke at gaae ud af Videnskabernes
+Kreds; men den behøver i Sandhed at stille
+sig paa et ikke-videnskabeligt d. e. paa Troens og Aaben%
+% --- p. 39 ---
+\setcounter{footnote}{0}%
+\opage{39}baringens eget overvidenskabelige Standpunkt. Lad saa
+kun Videnskabens Lys falde opklarende over det Hele.
+
+Stille vi os paa Religionens eget oprindelige Grundlag,
+vil det strax blive indlysende, hvorledes det gaaer
+til, at Mythe og Aabenbaring kunne have en saa paafaldende
+Lighed med hinanden, at den videnskabelige
+Kritik, der har nedsat det Overnaturlige til Skin og
+Phantasie, ikke, trods al sin Skarpsindighed, er i Stand
+til at skille dem ad. De have begge en fælles Form,
+Synets, Phantasiens Form. Den almægtige Gud er ogsaa
+Synets og Synernes Gud. Men der er en Forudsætning,
+hvorpaa Troen staaer fast, og denne Forudsætning
+kan ingen Videnskab rokke, det er Kjærlighedens Almagt.
+Videnskaben kan hverken benegte eller bekræfte
+Guds Kjærlighed; thi den veed slet Intet om den. I
+Kjærlighedens Almagt ligger Aabenbaringens Mulighed;
+denne Mulighed skal Videnskaben vel lade staae, og
+saa er det nok. I Aabenbaringens Mulighed har Troen
+et Skjold mod Kritikens Pile; men i Virkeliggjørelsen
+af denne Mulighed er ogsaa Phantasiens Magt aabenbaret.
+
+
+Kjærligheden er en Tanke og mere end en Tanke;
+den er en Villie og mere end en Villie; den har et
+Hjerte, og Hjertet begjærer et Syn, og i Synet en Skikkelse,
+og Syn og Skikkelse sees i Phantasie. Der er i
+Mythen Noget af en guddommelig Phantasie; men det
+Guddommelige er fordunklet. Hildet i Sandselighed, besnæret
+af selvisk Attraa, har den til sig selv overladte
+Menneskephantasie, kun seet Glimt af Sandheden, ikke
+Sandheden selv. Lyset har skinnet i Mørket, men
+Mørket har ikke begrebet det. Derfra det Forblommede,
+det Uklare og Tvetydige; derfra det phantastisk
+% --- p. 40 ---
+\setcounter{footnote}{0}%
+\opage{40}Illusoriske, hvormed Mythen altid er behæftet. I Aabenbaringen derimod har den guddommelige Phantasie Magten over den menneskelige, klarer den i sit Lys og
+fylder den med sin Sandhed; derfor ere Aabenbaringsphænomenerne
+saa rene, utvetydige, gjennemsigtige for
+Aanden. Aand og Natur ere inderlig forenede; ogsaa
+det Overnaturlige har sin Natur. Naturbegrebet har
+derfor tvende Sider, en videnskabelig og en religiøs.
+Det videnskabelige Naturbegreb dannes og maa danne
+sig for os under Indtryk og Iagttagelse af naturlige
+Kjendsgjerninger; men gjennem det Synlige skimtes det
+Usynlige, gjennem det Bekjendte det Ubekjendte, gjennem
+Lovene Lovgiveren, gjennem Nødvendigheden Friheden.
+Aanden i sin Uforanderlighed med sine Evighedstanker
+udfolder Naturindholdet i Tingenes Sammenhæng,
+i Phantasienødvendighedens Form. Længere kommer
+Videnskaben ikke.
+
+Hvor Videnskaben slipper, begynder Religionen, og
+Religionen er det Oprindelige; den gaaer i Tiden forud
+for al Videnskab; den gaaer igjennem Aabenbaring og
+Myther. Her gjælder det da om at gjøre Skilsmisse
+mellem Indbildning og Sandhed, at finde en Prøvesteen,
+der kan adskille Aabenbaring fra Mythe. Denne Prøvesteen
+have vi i Troen paa Kjærlighedens Almagt. At
+Naturens Skaber ogsaa er Aandernes Fader, at Nødvendighedens
+og Lovenes Gud ogsaa er Frihedens og
+Kjærlighedens Gud, at det Overnaturlige i fri Inderlighed
+er det usynlige Grundlag for alt det udvortes Naturlige,
+det kan kun erkjendes i Tro. Denne Tro, een
+Gang plantet i Slægtlivets Grund og udtalt i en bestemt,
+utvetydig Troesbekjendelse, faaer Videnskaben
+aldrig udryddet af Menneskenes Hjerte. Ramsen om
+% --- p. 41 ---
+\setcounter{footnote}{0}%
+\opage{41}de uforanderlige Love bliver  intetsigende, naar det erkjendes,
+at der ikke blot er en synlig Sammenhæng
+mellem de synlige Ting, men ogsaa en indre, om end
+usynlig Sammenhæng mellem det Naturlige og det
+Overnaturlige, at, med andre Ord, Verdener af lavere
+og høiere Orden ere forenede i Almagtens Væsen, i Frihedens
+og Kjærlighedens guddommelige Phantasie.
+
+Forskjellen mellem Aabenbaring og Mythe kan
+sees i Troens Lys paa Tanken, Villien og Phantasien.
+Paa Tanken! Der er Tanker i Mytherne, ofte dybsindige
+Tanker, men Synerne gaae op og ned, de krydsende
+Tanker blandes, og Forestillingerne forvirres. I
+Aabenbaringen er Tanken klar, Lovens Tanke, Livets
+Tanke, Tanken om Synd og Død og Tanken om Opreisning
+og Frelse. Paa Villien! Gjennem Mytherne gaaer
+der en Længsel, en Higen og Trang til at see en nærværende
+Gud. Men Sandseligt og Aandeligt, Naturdrift
+og selviske Lidenskaber blande sig med den dybere
+Attraa, og den hellige Villie vedkjender sig det ikke.
+Saa blive Mythens Undere Indbildninger, phantastiske
+Tegn: her skee ingen Mirakler. I Aabenbaringens Ord
+er Villien med, den almægtige Villie: Tanke og Villie
+svare til hinanden som Ord og Tegn. Aandens Gud,
+Lovens og Kjærlighedens Gud er med i sit Ord og
+taler i Tegnet Almagtens Sprog: Hører Ordet, see her
+mit Tegn! det er Miraklet. Men saa udvortes virkeligt
+end Miraklet kan være, det maa dog sees med
+Troens Øje: saa sætter den guddommelige Phantasie den
+menneskelige i Bevægelse. Hvilken Forskjel imellem den
+ofte glimrende, farverige, men trods det Storslaaede og
+Plastiske dog forvirrede Mythephantasie og den klare
+af Salighedslyset bestraalede, og just derfor saa rene,
+% --- p. 42 ---
+\setcounter{footnote}{0}%
+\opage{42}kydske Aabenbaringsphantasie. Kaste vi et Blik paa
+Bebudelsens Evangelium og lade den guddommelige
+Tanke og Villie og Phantasie være forenede i Kjærlighedens
+Almagt, saa kunne vi forstaae Aabenbaringen.
+Her er en Tanke, der skal indføres i Menneskelivet, en
+Kjærlighedstanke, og Tanken er denne: da alle selv
+de ædleste Naturer i Slægten bære Spiren i sig til
+Synd og Død fra Fødselen af, saa skal der nu fødes
+Een, som af Naturen selv er usyndig og reen, et Aandens
+Menneske, et Evighedens Barn, en hellig Spire,
+som voxer op uden Synd og frelser fra Synd og Død.
+Denne Tankes Eenhed med den almægtige Villie er
+Underets Aarsag. Underet selv er en Hemmelighed;
+men Hemmeligheden skal aabenbares, den skal blive
+vitterlig for Alle; saa kommer den Alt aabenbarende
+Phantasie og gjør det Usynlige synligt. Englenes Hilsen,
+Marias Ord, den høitidelige Erklæring! i dette
+Livsbillede er der intet mythisk, intet tvetydigt; det
+siger netop, hvad det skal sige, hverken mere eller
+mindre. Det er ikke menneskelig Indbildning; det er
+i Kjærlighedens Almagt guddommelig Phantasie; hver
+Linie og hver Farvetone, hver enkelt Træk og hver
+Lysning derover, Alt er af Aand; det saaledes Aabenbarede
+er virkeligt i allerhøieste Forstand, men det er
+Aandsvirkelighed, Virkelighed for Aand. --- Som Begyndelsen
+er, saa er ogsaa Fortsættelsen og den sidste Slutning.
+Men Lysningerne vexle, det Naturlige og det Overnaturlige,
+det virkelige Udvortes og det høiere Indvortes
+gribe vidunderligt ind i hinanden; kun Aabenbaringsphantasie
+i Eenhed med Tro formaaer at klare os en saadan
+Vexelvirkning: vi skulle nærmere see, hvorledes.
+
+% --- p. 43 ---
+\setcounter{footnote}{0}%
+\lecture{Fjerde Forelæsning.}\opage{43}
+
+Hvor let en Strid om guddommelige Ting kan udarte
+til en tom Ordstrid, naar der ikke tilbørlig sørges for,
+at Ord og Sag gjensidig belyse hinanden, er nok som
+bekjendt. Strides der f. Ex. om Tro og Viden, kan
+man overmaade let give det Skin af, at al Viden er
+grundet paa Tro. Maleren, der skal bruge Farverne,
+maa jo troe, troe paa sit Syn; Mathematikeren med sit
+a = a maa troe, troe paa sin Forstand; Astronomen
+maa troe paa sine egne og Andres Iagttagelser o. s.
+frmdl. Men man kan da ogsaa fra den anden Side
+ligesaa let give det Skin af, at al Tro er grundet paa
+Viden. Vi maae jo dog vide, hvad Tro er, vide, hvad
+det er, hvorpaa vi troe, og vide, hvorfor vi troe derpaa;
+og naar vi vide Alt dette tilgavns, er det Hele jo bygget
+paa Viden. Dette Spilfægteri hører op, naar vi ærlig
+gaae ind paa Sagen. Der er Noget, der ikke skal troes,
+men vides, og der er Noget, der ikke skal vides, men
+troes. Siger man, at Solen skinner, saa svarer den
+Seende: Jeg veed det; kun en Blind kunde sige: jeg
+troer det. Siger man at to og to er fire, saa svarer
+den Forstandige: jeg veed det; kun en Idiot kunde sige:
+jeg troer det. Er Talen om en Pengesum, og der
+% --- p. 44 ---
+\setcounter{footnote}{0}%
+\opage{44}spørges; er Regningen rigtig? da hjælper det ikke at
+svare: jeg troer det, thi det skal ikke troes, det skal
+vides. I slige Forbindelser betyder Tro kun en foreløbig
+Antagelse, en Halvvished forenet med Tvivl. Her
+søges Viden, først med Viden kommer Visheden, og med
+Viden og Visheden forsvinder Troen. Den, som i slige
+Tilfælde har naaet til fuld Vished, siger: jeg troer det
+ikke, thi jeg veed det. Anderledes, naar Talen er om
+Sjælens Udødelighed, om Guds Kjærlighed, om den overnaturlige
+Verden. Et Menneske kan, hvad alt dette angaaer,
+være saa vis i sin Sag, at han uden Omsvøb tør
+sige: jeg veed det; jeg veed det vist, at Gud er Kjærlighed;
+jeg veed det vist, at der er et evigt Liv, en
+Opstandelse o. s. v. Viden betyder her en urokkelig
+Vished; men denne urokkelige Vished gjør ikke Troen
+overflødig, tvertimod! den er Et med Troen selv: Viden
+er her et Udtryk for den fulde Forvisning i Tro. Ogsaa
+fra dette Synspunkt kan Tro sættes imod Tvivl,
+men Tvivlen har da ikke sit Udspring fra ufuldkommen
+Viden, men fra Vantro. Det, som i alleregenligste Forstand
+maa troes, er netop det, som ifølge sin Natur
+ikke kan vides; --- kun maa det ikke oversees, men paa
+det Eftertrykkeligste indskærpes, at Troen kan i sin
+Erkjendelsessphære give en lige saa tilforladelig Vished,
+en lige saa fuldkommen Forvisning som Viden i sin.
+
+I Troens Sphære er Modsætningen mellem Tro og
+Viden forsvunden, thi her spørges, i videnskabelig Forstand,
+slet ikke om Viden; her indtræde Modsætninger
+af en ganske anden Art: Modsætning mellem Tro og
+Overtro, mellem Vantro og Overtro.
+
+For at komme til Klarhed over, hvorledes det forholder
+sig med Modsætningerne paa Troens Omraade, er
+% --- p. 45 ---
+\setcounter{footnote}{0}%
+\opage{45}der et Forhold, vi igjen maae tage i Øjesyn, Grundforholdet
+mellem Phantasie og Virkelighed.
+
+Al Virkelighed, den være udvortes eller indvortes,
+sandselig eller oversandselig, falder --- ikke udenfor ---
+men indenfor den almægtige Phantasie. I denne allerhøieste
+Forstand kunne vi da sige, at al Virkelighed er
+Aandsvirkelighed, den har jo i Phantasien sit Udspring
+fra Aandens skabende Almagt.
+
+Men fra Menneskets Standpunkt seer Sagen anderledes
+ud. Her er en Adskillelse, en Kløft imellem en
+udvortes og en indvortes Virkelighed, imellem Tingene
+udenfor os og vor Bevidsthed om Tingene. Tingene
+maae sandses; vel er der i Sandsningen en skjult
+Phantasie, for saa vidt der er en Anskuen; men denne
+Phantasie er bunden i Sandsningen, og Sandsningen,
+bunden og betinget af Indtryk fra Tingene, er umiddelbart
+afhængig af det udvortes Givne. --- Dette giver
+os en udvortes Virkelighed, Naturvirkelighed, Virkelighed
+for Sands og Forstand. I Modsætning hertil have
+vi en indvortes Verden, en Verden af Billeder, Forestillinger
+og Tanker, en oversandselig Verden, en Verden,
+hvori ogsaa det Overnaturlige kan fremstille sig i Phantasiens
+Medium. Denne Verden har Virkelighed, for
+saa vidt den har Sandhed, og den har Sandhed, for
+saa vidt den er af guddommelig Oprindelse. Hvor
+Phænomener af denne oversandselige, overnaturlige Verden
+da her træde os imøde med den Aabenbaringens Klarhed
+og Kraft, der underlægger sig det Udvortes, der
+tale vi i særlig og religiøs Forstand om Aandsvirkelighed,
+Virkelighed for Aand.
+
+Den udvortes Naturvirkelighed imponerer det sandselige
+Menneske og staaer for Bevidstheden med Præg af
+% --- p. 46 ---
+\setcounter{footnote}{0}%
+\opage{46}en Selvstændighed, der sætter Phantasien Skranker og
+forvandler dens Billeder til Indbildninger; men det
+aandelige Menneske erkjender, at alt det Udvortes har
+sin Oprindelse fra det Indvortes, at Naturvirkeligheden
+med dens Kjendsgjerninger og Love er og maa være
+Aandsvirkeligheden absolut underordnet.
+
+Fra dette Stade kunne vi nu med særligt Hensyn
+paa Phantasien allerede see, hvorledes det gaaer til, at
+Vantro og Overtro stille sig mod Tro. Naar Sandser
+og Sandselighed i den Grad har fanget og fængslet et
+Menneskes Phantasie, at det Naturlige alene har Gyldighed
+for ham, medens det Overnaturlige er blevet
+forvandlet til Skin og Indbildning, saa have vi Vantroen.
+Vantroen kjender ingen anden Phantasie end den blot
+menneskelige, den æsthetisk illusoriske. Har omvendt
+det Overnaturlige i Phantasien antaget Charakteer af
+et udvortes Sandseligt, saa at det Aandsvirkelige sættes
+paa lige Trin med det i Naturen Materielle og Virkelige,
+saa have vi Overtroen.
+
+Kun Troen formaaer at opfatte begge Virkelighedsformer
+i deres indbyrdes Forskjel og Eenhed; thi kun
+Troen formaaer at erkjende en Vexelvirkning mellem
+den guddommelige og den menneskelige Phantasie. Der
+er i det Gamle Testamente storstilede Exempler, som
+lære os, hvad dette vil sige.
+
+Moses taler som Lovgiver aldrig i sit eget, men
+altid i Jehovas Navn. Forkyndelsen af de ti Bud begynder
+med den bekjendte Formel (2 Moseb. 20):
+„Gud talede alle disse Ord og sagde.“ For den religiøse
+Sands kan dette i sin Almindelighed ikke have noget
+videre Stødende. De ti Bud ere af almeensædeligt
+Indhold; de udtale Tanker og Grundsætninger, som
+% --- p. 47 ---
+\setcounter{footnote}{0}%
+\opage{47}ethvert borgerligt Samfund overalt maa vedkjende sig:
+man kunde næsten kalde dem Fornuftbud. Den Smule
+Phantasie, der hører til for at sætte sig i Mose Sted,
+erkjende hans Tro paa Jehova og indsee Nødvendigheden
+af, at han maatte tale i Jehovas Navn, naar han
+skulde tale med Myndighed, indfinder sig som af sig
+selv. Det Overnaturlige og det Naturlige, det Overfornuftige
+og det Fornuftige synes her uvilkaarlig at
+smelte sammen til fuld Harmonie. Men Eenhedsbaandet
+brister snart, naar vi gaae lidt videre i Texten. Det
+hedder (2 Moseb. 25): „Og Jehova talede til Moses,
+idet han sagde: Tal til Israels Børn, at de skulle tage
+mig en Offergave af hver Mand\dots{} Og dette er Offergaven,
+som I skulle tage af dem: Guld og Sølv og
+Kobber. Mørkeblaat og Purpurrødt og Carmoisinrødt
+og fiint Linned og Gedehaar og Sælhundeskind og rødfarvet
+Vædderskind og Acacietræ. Olie til Lysning,
+Urter til Salveolie og til vellugtende Røgelse\dots{}“ Er
+dette ordret fra Jehovas Mund, saa gaaer Jehova med
+sine Forskrifter for Tabernaklets Indretning unegtelig
+vidt i det Smaalige; han indlader sig paa de allerubetydeligste
+Enkeltheder. Ingen menneskelig Bygmester
+kan gjøre det nøiagtigere. Det Ophøiede synes
+her at blive borte i lutter Endelighed. Hvad skulle vi
+nu fra Troens Standpunkt tænke og dømme? Tage vi
+Forskrifterne som ordret dicterede af Jehova selv, saa
+gaaer det Hele over i udvortes Virkelighed og bliver
+en udvortes Historie. For Tilegnelsen af en saadan
+udvortes Historie har den religiøse Tro ingen Prøvesteen,
+intet indre, ubedrageligt Sandhedsmærke. Forskjellige
+Religionsbøger, Zendbøgerne hos Perserne,
+Vedabøgerne hos Hinduerne, Koranen o. fl. kunne jo
+% --- p. 48 ---
+\setcounter{footnote}{0}%
+\opage{48}indeholde lignende Forskrifter. Credat Judæus Apella,
+non ego. Men naar det indre, ubedragelige Sandhedsmærke
+forsvinder, forvandler Troen sig til Overtro.
+Overtroens Phantasie er kjendelig paa, at det Aandelige
+nedsænkes i det Sandselige --- Gedehaar og Sælhundeskind
+og rødfarvet Vædderskind kan kun beskjæftige
+Phantasien paa en aldeles sandselig Maade --- saa
+at Sandhedskriteriet gaaer tabt. Gaaer man nu til den
+modsatte Yderlighed og paastaaer, at de særlige Forskrifter
+for Tabernaklet ikke hidrøre fra Jehova, men
+alene fra Moses, saa kan man ikke uden Vilkaarlighed
+antage, at de ti Bud ere Jehovas Bud, thi med Forskriften
+for Sabbaten og Forbudet mod at begjære, hvad
+Næstens er, gaaes der jo ogsaa i det Enkelte --- Næstens
+Hustru, hans Tjener, hans Tjenestepige, hans Oxe, hans
+Asen kunne jo ogsaa beskjæftige Phantasien paa sandselig
+Maade. Men naar det med Jehovas Ord svinder
+ind til en Indbildning, saa have vi Vantroen.
+
+Hvor er nu Troen med sit Sandhedsmærke? I
+Vexelvirkningen mellem den guddommelige og den
+menneskelige Phantasie; thi heri indesluttes den religiøs-psychologiske
+Vexelvirkning mellem den guddommelige
+og den menneskelige Tanke, den guddommelige
+og den menneskelige Villie, det guddommelige og
+dog menneskelige Syn, det guddommelige og dog menneskelige
+Sprog i guddommelige og dog menneskelige
+Billeder. Det lovgivende Ord er Ord af Moses og dog
+i Sandhed Jehovas Ord; Billedet af Tabernaklet i alle
+dets Enkeltheder er en Frembringelse af Mose Phantasie,
+dannet, formet og udarbeidet i Prophetens Indre,
+og dog et guddommeligt Grundsyn, Planen i Et og Alt
+Jehovas Plan. Saa taler Israels Gud, og Talen er
+% --- p. 49 ---
+\setcounter{footnote}{0}%
+\opage{49}virkelig, aandsvirkelig. Jehova taler til sin Prophet
+som Aand til Aand, han taler til Moses, i Mose Indre
+--- igjennem Moses, et guddommeligt og dog menneskeligt
+Ord; saaledes blive Budene Mosebud, og dog Jehovas
+Bud.
+
+Hvad vide vi da om denne Vexelvirkning? Vi vide,
+i videnskabelig Forstand, Intet, slet Intet; her er ingen
+Gjenstand for Viden, men i Kraft af den religiøse Phantasie,
+er her en Gjenstand for Tro. Sandhedsmærket
+er ubedrageligt, naar Aabenbaringstanken er i Eenhed
+med Troestanken; den aabenbarede Villie i Væsen
+og Grund er Troens Villie: Sandhedsprøven er i det
+troende Sind, og Forvisningen i det Indre.
+
+Lad os gaae tilbage til Begyndelsen og betragte
+Prophetens Kaldelse. I Midians Ørk ved Bjerget Horeb,
+fjernt fra Pharaos Hof, er Moses Hyrde. Derude
+mellem Bjergene er der en Eensomhedens Uendelighed:
+Minderne vaagne, Tankerne tale, men Stemmerne tie,
+Taushed boer i de øde Fjelde, derude er der et Møde
+mellem Phantasie og Virkelighed. Og det Virkelige er
+et Udvortes, en Tornebusk, og see! der er Ild i Tornebusken,
+og Tornebusken brænder og bliver dog ikke
+fortæret. Saa høres en kaldende Røst; det taler i
+Moses til Moses: „Jeg er din Faders Gud, Abrahams
+Gud, Isaks Gud og Jakobs Gud. Jeg har visselig seet
+mit Folks Elendighed. --- Gaa, jeg vil sende dig til
+Pharao, at udfrie mit Folk af Ægypten.“ Og Moses
+skjælver ved Tanken om det store Hverv, der er uendeligt
+over hans Kræfter. „Men“ --- lyder Stemmen ---
+„hvad er det du har i din Haand?“ En Stav. „Kast den
+paa Jorden“ --- og han kastede den til Jorden, og den
+blev til en Slange, og Moses flyede tilbage for Slangen.
+% --- p. 50 ---
+\setcounter{footnote}{0}%
+\opage{50}--- „Indbildning, Skin og Phantasie, et oprørende Brud
+paa Naturlovene!“ Det er Stemmer fra Videns Kathedre;
+men disse Stemmer og disse Raab, hvad enten de
+komme fra de Lærde selv eller fra deres Skoledrenge,
+naae ikke ud til hine Egne, forstyrre ikke Eensomhedens
+Fred i Midians Ørk, ikke den høitidelige Taushed,
+der holder Vagt om Bjerget Horeb. Det Eneste,
+hvorom her spørges, er Aabenbaringstanken i dens
+Eenhed med Villiens og Phantasiens Almagt. Den
+Slange, som fremkommer af Mose Stav, har ingen Plads
+i Zoologien; at stirre paa den som paa et udvortes
+Sandseligt, er skadeligt for Øinene, man bliver blind
+enten af Overtro eller af Vantro. Men, sige de Vidende,
+her menes jo dog en virkelig Slange; Moses seer den:
+han gyser og farer tilbage. Vi svare: ja, vel er den
+virkelig, men Virkeligheden er af en egen Art, og maa
+sees med Troens Øine. Det Overvirkelige er som et
+Lyn i Mørket: i samme Nu som det sees, har Øiet
+lukket sig; intet Skin er saa blændende som Skinnet
+af det Overnaturlige, intet Lyn er saa stærkt som Almagtens
+Udslag.
+
+Det er just det Eiendommelige ved et saadant
+Aabenbaringssyn, at det har Skikkelse af et Udvortes
+og ligner det Naturlige, og dog, naar Sands og Forstand
+ville til at undersøge det, saa er der enten et
+blot Naturligt, eller det Hele er forsvundet. Kun Troens
+Øie udholder at see paa Tegnet, thi dette Sjælens Øie
+er netop bygget og organiseret saaledes, at det Sandselige
+kan opløse sig i et Oversandseligt, og det Udvortes
+omsættes i et Indvortes. Og hvor er saa Sandhedens
+Mærke? I Tankens Eenhed med Villiens Almagt,
+i den guddommelige Phantasie, der gjør det Usynlige
+% --- p. 51 ---
+\setcounter{footnote}{0}%
+\opage{51}synligt. Jehova vil frelse sit Folk fra Ægyptens Plager,
+fra Trældommens Aag, han vil frelse det; her er hans
+Ord. Han kan frelse det, her er hans Tegn! Ja, her
+er han selv: med denne Forvisning, en Troesforvisning,
+der holder Stand mod al Videns Tvivl, tager da Moses
+sin Stav op og gaaer til Pharao.
+
+At det udvortes Naturlige kan i Aandsvirkeligheden
+gribes og magtes af det Overnaturlige, er umiskjendeligt;
+men at det i den religiøse Phantasie ogsaa kan
+virke paa fri indvortes Maade, er klart af de prophetiske
+Syner. Vi vælge et Sted hos Esaias (6. Kap.).
+Propheten beskriver sin Kaldelse. „I det Aar, Kong
+Usias døde, da saae jeg Herren siddende paa en høi
+og ophøiet Throne, og hans Klædebons Flige fyldte
+Templet. Serapher stode over ham, hver med sex Vinger;
+med de to tildækkede hver sit Aasyn, med de to
+tilhyllede han sine Fødder og med de to fløi han. Og
+den ene raabte til den anden: hellig, hellig, hellig er
+Jehova Zebaoth, hele Jorden er fuld af hans Herlighed!
+Og Dørposterne skjalv ved den Raabendes Røst og
+Huset fyldtes af Røg. Og jeg sagde: vee mig! jeg
+gaaer tilgrunde; thi jeg er en Mand med urene Læber
+og jeg boer midt iblandt et Folk, som har urene Læber,
+og dog have mine Øine seet Kongen, Jehova, Zebaoth.
+Da fløi en af Serapherne til mig, og i sin Haand havde
+han en glødende Steen, hvilken han tog med en Tang
+fra Alteret. Og han rørte ved min Mund og sagde:
+see, dette berører dine Læber; og din Misgjerning er
+vegen fra dig, og din Synd skal forsones. Og jeg
+hørte Herrens Røst, som sagde: hvem skal jeg sende,
+og hvem vil gaae for os? Da sagde jeg: her er jeg,
+send mig!“ --- Dersom dette ikke er Aabenbarings%
+% --- p. 52 ---
+\setcounter{footnote}{0}%
+\opage{52}phantasie, og dersom der i denne Aabenbaringsphantasie
+ikke er en sand og levende Vexelvirkning mellem det
+Guddommelige og det Menneskelige, hvor er der saa et
+Sandhedens Lys? Er et Syn med dette Høihedspræg i
+denne Symbolik med denne Reenhed ikke Virkelighed,
+Aandsvirkelighed, Virkelighed for Aand: hvad er saa
+Virkelighed og hvad er Aand?
+
+Hvorledes den religiøse Phantasie, uden at tabe sit
+Aabenbaringspræg eller opgive sin Troescharakteer,
+gaaer over til Poesi, kan sees af mangfoldige Exempler
+i det Gamle Testamente, navnlig hos David. Det Eiendommelige
+ved denne Poesi er, at enten den vender
+sig ind efter, klagende i Synd og Anger, eller den
+vender sig ud efter og optager Indtryk fra den omgivende
+Natur, beundrende dens Storhed, jublende over
+dens Herlighed, overalt er Phantasien fyldt af Jehovas
+Nærværelse og seer i Alt en Aabenbaring af Skaberens
+Almagt. David skildrer, hvorledes Jehova i Farens
+Stund kom ham til Hjælp mod hans Fjender, og aabenbarede
+sig i et Uveir. „I min Angst paakaldte jeg
+Jehova, og han hørte fra sit Tempel min Røst. Da
+blev Jorden rystet saa den bævede, og Bjergenes Grundlag
+skjalv.“ --- Det er i et Tordenveir at Jehova kommer.
+„Der slog Røg op i hans Næse, fortærende Ild
+foer ud af hans Mund, glødende Kul gnistrede fra ham.
+Han bøiede Himlene og steg ned; han red paa en
+Cherub og fløi, han svævede paa Veirets Vinger.“
+Denne Fremstilling tyder ikke paa noget særeget
+Gjennembrud af det Overnaturlige; det er den menneskelige
+Side af Troesphantasien, som her er i fri Bevægelse;
+Fremstillingen er saa klar, at vi paa alle Punkter
+kunne see, hvorledes det udvortes Naturlige forvandler
+% --- p. 53 ---
+\setcounter{footnote}{0}%
+\opage{53}sig i Speilinger af Digterkongens religiøse Phantasie.
+Men denne Phantasie vilde ikke i Sandhed være religiøs,
+dersom den ikke indenfra var grebet af Jehova selv og
+beaandet af Aabenbaringens Indhold.
+
+Hvor dybtgaaende Vexelvirkningen mellem det Guddommelige
+og det Menneskelige er i det Gamle Testamentes
+Aabenbaringsphantasie, viser sig endnu fra en
+anden Side. Der er en væsenlig Forskjel mellem de
+mythiske Guder, de græske f. Ex. eller de nordiske, og
+Aabenbaringens eneste sande Gud. De mythiske Guder
+ere sjælelig-legemlige Individualiteter, Menneskevæsener,
+kun af høiere Orden. Der er menneskelige Tilbøieligheder
+og Lidenskaber i disse Guder. De skifte Sind,
+de blive vrede og overile sig; det gaaer saa vidt hos
+Homer, at Guderne alene ved at see paa Kampen for
+Troja og tage Parti blive saa indbyrdes splidagtige og
+paa det Sidste saa iltre, at de bogstavelig slaaes saa
+det ryger om Ørene.
+
+Jehova har ingen saadan begrændset Individualitet;
+han er uendelig ophøiet, uforanderlig; Jehova er Aand,
+hans Væsen det evige, alvidende, selvmægtige Jeg. Da
+Moses spørger, hvad Navn han skal give ham, naar han
+kommer til Ægypten og taler til Israels Børn, faaer
+han til Svar: Jeg er den jeg er, mit Navn er: Jeg
+skal være. Og dog stiger den Ophøiede fra sin Evighedsthrone
+ned til Jorden, den Uendelige indlader sig med
+det Endelige, den Usynlige gjør sig synlig, ja hvad mere
+er, han faaer et menneskeligt Sind, hans Stemninger
+vexle, hans Barmhjertighed kan omskiftes til flammende
+Vrede, han kan angre, fortryde; til hvilken Yderlighed
+han kan gaae i sin Forbitrelse, naar hans Hæftighed
+blusser op, derpaa have vi et ret slaaende Exempel i
+% --- p. 54 ---
+\setcounter{footnote}{0}%
+\opage{54}anden Mosebog (Kap. 32). Da Aaron har støbt Guldkalven,
+siger Jehova til Moses: Jeg har seet dette Folk,
+og see, det er et haardnakket Folk. Og nu, lad mig
+være, at min Vrede kan optændes mod dem og jeg kan
+fortære dem, og jeg vil gjøre dig til et stort Folk. Da
+bønfaldt Moses for Jehovas, sin Guds Aasyn og sagde:
+hvorfor er din Vrede blusset op imod dette Folk, hvilket
+du har udført af Landet Ægypten med en stor
+Kraft og en stærk Arm? Hvorfor skulle Ægypterne
+sige saaledes: til deres Ulykke har han ført dem ud,
+forat slaae dem ihjel paa Bjergene og ødelægge dem
+fra Jordens Overflade, vend om fra din opblussende
+Vrede og fortryd dog det Onde imod dit Folk. Mindes
+Abraham og Isak og Israel, dine Tjenere, hvilke du
+har tilsvoret ved dig selv, til hvem du har sagt: jeg vil
+mangfoldiggjøre eders Sæd som Stjernerne paa Himmelen,
+og alt dette Land, som jeg har sagt, vil jeg give
+eders Sæd, og de skulle arve det evindelig. „Da fortrød
+Jehova det Onde, som han havde sagt, at han
+vilde gjøre imod sit Folk.“ Det er en høist charakteristisk
+Situation. Vantroen hoverer: her kan man see,
+at Aabenbaringstro er Overtro og Overtroen dum. Propheten
+overgaaer sin Gud: Moses er roligere, sindigere
+end Jehova selv. Det er med ophøiet Overlegenhed, at
+den høitbetroede Tjener bringer sin kongelige Herres
+oprørte Sind i Ligevægt. Og hvorved skeer det? Ved
+at vække den Forbittredes Æresfølelse; thi Ægypterne
+vilde jo lee ad ham, naar han opgav sin Plan og slog
+dem ihjel, han skulde befrie. Men især ved at minde
+ham om hans Ed, at han ikke skal staae som en Meeneder
+o. s. v.
+
+% --- p. 55 ---
+\setcounter{footnote}{0}%
+\opage{55}Og hvad er saa det, som her forarger? Aandens
+hellige Vrede.
+
+Men med denne hellige Vrede har det i den religiøse
+Phantasie en egen Sammenhæng. Aabenbaringens
+Gud har et Hjerte, et Sind. Han kan elske og han
+kan hade, han kan vredes og han kan formildes. Idet
+hans Tanker, hans Villie og Synerne af hans Phantasie
+gaae over i Menneskets Tanker og sætter Menneskets
+Sind og Lidenskaber i Røre, da see vi den hellige
+Vrede bruse op som et Menneskes Vrede og den guddommelige
+Pathos gløde med en Ild af menneskelig
+Lidenskab. Vi maae aldrig glemme, at det, der taler
+til Moses, ogsaa taler i Moses. Sandhedsmærket sees,
+naar der skjelnes mellem Tro og Overtro. For Overtroen
+er hele Historien udvortes; hvad Jehova siger og
+hvad Moses siger staaer udvortes adskilt, som naar det
+ene Menneske taler til det andet; saa kommer Vantroen
+og paaviser, at det Hele er en Mythe. Men Troen har
+en anden Forklaring; den giver Jehova Ret, ubetinget
+Ret, at det Folk, der efter en saadan Befrielse kan
+dandse om Guldkalven, har fortjent Døden; den takker
+Moses som Forbeder, men den seer tydelig at Henviisningen
+til Ægypternes Hoveren og til den svorne Ed
+ikke sigter paa en Tilstandsforandring i den Eviges
+uforanderlige Væsen, men paa en Bevægelse i den
+Bedendes Indre. Det er Prophetens Tro paa den frelsende
+Jehovas uforanderlige Villie, der løfter ham op
+over hans egne menneskelige Lidenskaber. Troen forstaaer,
+hvad det vil sige, at den evig høie Aandens Gud
+faaer et menneskeligt Præg, ja et folkeligt Præg.
+
+Israels Gud kar et jødisk Physiognomie; han sees % PRINTED AS IS: „kar“ for har
+ikke altid i det rene, klare Himmellys, men i Blandings%
+% --- p. 56 ---
+\setcounter{footnote}{0}%
+\opage{56}skjær af jødisk Folkesind, et Luehav af jødiske Lidenskaber.
+Det er ikke for Intet, at han kalder sig Abrahams
+Gud, Isaks Gud og Jakobs Gud. Med dette
+Physiognomie er han den Ophøiede, hans Aasyn mildt,
+og dog, naar Vreden kommer, forfærdeligt.
+
+Aabenbaringsphantasien i det Gamle Testamente
+er jødisk: rig paa Forjættelser er denne Jehovaphantasie,
+mægtig overvældende i sine Trusler. „Jeg
+vil hjemsøge Jerusalem med Lamper, og jeg vil hjemsøge
+Mændene, som sige hos sig selv: Jehova gjør
+hverken godt eller ondt\dots{} Det er Lyden af Jehovas
+Dag, da hviner Helten høit. En Vredesdag er denne
+Dag, en Dag med Nød og Trængsel, med Bulder og
+Brag, med Mulm og Mørke, med Skyer og Taage; den
+Dag, da Basunen gjalder imod de befæstede Stæder og
+imod de høie Taarne. Jeg vil ængste Mennesker, saa
+de skulle gaae i Blinde, thi de synde mod Jehova. % PRINTED AS IS: no closing mark
+(Zephan. 1).
+
+Ingen iblandt alle Guderne har kunnet velsigne, som
+Israels Gud, naar han velsigner; og Ingen iblandt alle
+Guderne har kunnet forbande, som Israels Gud, naar
+han forbander. Den, der vil lære, hvad religiøs
+Phantasie er, han læse det Gamle Testamente. Men
+Aabenbaringstanken skrider frem --- som Solen paa sin
+lyse Vei til Middagshøiden, det Gamle Testamente forbereder
+det Nye; vi skulle see, hvilken Forandring der
+herved foregaaer med den religiøse Phantasie.
+
+% --- p. 57 ---
+\setcounter{footnote}{0}%
+\lecture{Femte Forelæsning.}\opage{57}
+
+Det kunde ved en foreløbig Betragtning næsten see ud,
+som om det Nye Testamente --- naar undtages Johannes’
+Aabenbaring --- ikke indrømmede den religiøse Phantasie
+et saa vidt udstrakt eller storartet Spillerum som det
+Gamle. I en vis Forstand maa dette vel kunne siges.
+Phantasieformerne blive nemlig desto mere fremtrædende,
+jo skarpere den nærværende, mangekantede Virkelighed
+tegner sine Omrids mod den lyse, dæmrende Grund af
+et Hiinsidigt, et Ubegrændset og Usynligt, som dog begrændser
+sig og gjør sig synligt. Slagskyggerne paa
+Jorden blive desto længere og mørkere, jo mere skraanende
+Lyset fra oven falder paa de fremragende Høider.
+Lys og Mørke, Helligt og Syndigt, Lydighed og Oprør,
+et haardnakket Folk og en tugtende Jehova, disse Tilværelsens
+yderste Modsætninger befinde sig paa det
+gammeltestamentlige Trin under uafladelig Tiltrækning
+og Frastøden i uophørlige Brydninger. Den Almægtige
+selv, den uendelig Ophøiede nedlader sig til Mennesket
+og taler med Mennesket: Jehova taler med Moses som
+en Mand med sin Næste, og dog --- kun Jehova er
+evig, Mennesket er Støv og Aske. Her er Noget, der
+kan sætte den religiøse Phantasie i Bevægelse.
+
+% --- p. 58 ---
+\setcounter{footnote}{0}%
+\opage{58}I det Nye Testamente  synes den religiøse Phantasie
+at komme til Ro; det Overnaturlige gaaer i dybeste
+Hemmelighed sammen til Eenhed med det Naturlige,
+det Guddommelige bliver menneskeligt; Gud selv
+aabenbarer sig som Menneske, et virkeligt Menneske,
+der fødes og voxer, lider og døer. Den oprindelige
+Eenhed af Gud og hans Aabenbaring er Ordet. Som
+Ordet selv er den Usynlige synlig. „Og Ordet blev
+Kjød, og boede iblandt os.“ Gjennem den udvortes
+Ringhed lyser den indvortes Høihed, og den religiøse
+Phantasie finder Hvile i Beskuelsen, naar Evangelisten
+tilføier: „vi saae hans Herlighed, en Herlighed som den
+Eenbaarnes af Faderen fuld af Naade og Sandhed.“
+Det er en Aabenbarelse, som kan fylde den religiøse
+Phantasie med Virkelighed. Dette Syn alene opveier
+og forklarer alle det Gamle Testamentes prophetiske
+Syner. „Salige de Øine, der see det I see!“ Men det
+maa sees i Troens Lys; Vantroens Øie seer kun det
+Forargelige.
+
+Forskjellen mellem det Gamle og det Nye Testamentes
+religiøse Phantasie er begrundet i Forskjellen
+mellem det Gamle og det Nye Testamentes Aand.
+Væsenlig er Aanden den samme, men dog paa de to
+Aabenbaringstrin forskjellig. Hvor forskjellig er ikke
+Loven fra Evangeliet!
+
+Lovgivningen paa Sinai, forfærdelig for den menneskelige
+Phantasie, er ledsaget af Rædsler. Bjerget bæver,
+Lynene flamme; ud af Mulmet og de mørke Skyer taler
+Jehova til Moses og til Moses alene; intet levende
+Væsen, Menneske saa lidt som Dyr, tør nærme sig
+Bjergets Fod. Virkningen beskrives i talende Træk:
+„da Folket fornam Tordenen og Flammerne og Bjerget,
+% --- p. 59 ---
+\setcounter{footnote}{0}%
+\opage{59}som røg, da flyede de og stode langt borte. Og de
+sagde til Moses: tal du med os; da ville vi høre, men
+lad Gud ikke tale med os, at vi ei skulle døe. --- Det er % PRINTED AS IS: no closing mark
+Lovens Aand i Frygtens Phantasie; og Frygt maa der
+til, Ærefrygt for det Hellige, naar et endnu raat og
+uopdraget Folk skal løftes op paa Aandens Trin.
+
+Hvor ganske anderledes med Kjærlighedsloven i
+det Nye Testamente, den nye Lov, som paa een Gang
+fuldkommer og ophæver den gamle. Denne Lov truer
+ikke og tvinger ikke; den kjender ikke Forbandelser,
+nei kun Velsignelser. Det er en Frihedens Lov, en
+Hjertets Lov, thi det er en „Salighedernes“ Lov. Vi
+høre det af hans Mund, der prædiker paa Bjerget.
+„Salige de Fattige i Aanden, salige de Rene af Hjertet,
+salige de Sagtmodige, de Barmhjertige, de Fredsommelige,
+salige de, som lide Forfølgelse for Retfærdigheds Skyld,
+--- Himmeriges Rige er deres.“ Denne Lovgivning indjager
+ikke Skræk, dette „Salighedernes Bjerg“ er ikke
+omgivet af Rædsler. Andre Syner, lyse Billeder stille
+sig frem for Phantasien. Folket staaer ikke langt borte,
+slaget med Forfærdelse for den Usynlige; tværtimod,
+det nærmer sig i Tryghed den Synlige, det samler sig,
+det flokker sig omkring ham i tætte Skarer. Ethvert
+hans Ord er en Livets Kilde, Sjælene indsuge det, Øret
+drikker det som en ny Viin. Intet Jordskjælv, ingen
+Lyn og Tordenbrag om Bjerget, hvor han prædiker;
+nei, Fred i Naturen og Fred i Menneskenes Hjerter.
+Hvor er det livsaligt, foraarsfriskt, høitideligt derude:
+Himlen høi og Luften klar, Fuglene frie for al Bekymring,
+og Lilierne paa Marken saa tause, stille, som
+lyttede de til den guddommelige Tale.
+
+Men hvem er han nu egenlig, den nye Prophet, hvorfra
+% --- p. 60 ---
+\setcounter{footnote}{0}%
+\opage{60}stammer han, hvis Søn er han? saa spørges der trindt
+omkring i Galilæas Stæder, og Spørgsmaalet sætter
+Menneskenes Phantasie i Bevægelse. Det skal være
+virkeligt, at han er en Tømmermands Søn; Folk i
+Nazareth kjende jo baade hans Fader og Moder, hans
+Brødre og hans Søstre. --- Men han taler med en
+Myndighed, som var han stegen ned fra Himlen. Hvorfra
+har han denne Myndighed? Som en Prophet fra
+Aanden! --- Men han taler jo som den, der staaer over
+alle Propheter; hvis Søn er han? --- Skulde dette med
+hans Herkomst staae hen i al Tvetydighed, saa blev
+han jo en mythisk Person, men Aabenbaring er det
+Modsatte af Mythe. Til Bebudelsesevangeliet slutter
+sig da Fødselsevangeliet.
+
+Det Billede, som her fremstilles for den religiøse
+Phantasie, har alle Aabenbaringens Mærker. Englesynet
+og det himmelske Chor er ikke bestemt for
+Hyrderne alene; det er bestemt for alle Slægter, at
+sige for Alle, som trods Verdens Forgudelse af overmægtige
+Kraftgenier ville vende deres Tanke mod
+Bethlehem, og betragte Barnet i Krybben.
+
+I Fødselsevangeliet viser sig ret en eiendommelig
+Modsætning og tillige eiendommelig Sammensmeltning
+af udvortes Virkelighed og Aandsvirkelighed. Barnet i
+Krybben hører jo lige saa vel som Maria, Joseph og
+Hyrderne til det udvortes, historisk Virkelige; men
+Englene hvor høre de hen? Til Phantasiens Verden!
+Og dog er deres Tilværelse ingenlunde for den religiøse
+Phantasie, hvad den er for Vantroen, kun en overtroisk
+Indbildning eller i det Høieste en blot æsthetisk-mythisk
+Illusion. Vexelbestemmelsen af det Sandselige og
+det Oversandselige er her saa gjennemgaaende, at den,
+% --- p. 61 ---
+\setcounter{footnote}{0}%
+\opage{61}der ikke kan see Englene, kan heller ikke see Barnet.
+Barnet maa sees med det samme Troens Øie, hvormed
+Englene sees; i modsat Fald et det ikke Christusbarnet, % PRINTED AS IS: „et“ for er
+men et underskudt Barn, ikke det Barn, som Hyrderne
+tilbede.
+
+Den dobbelsidige Virkelighed viser os hen til den 
+religiøse Phantasies guddommelige Oprindelse. Leder
+man i det Udvortes efter Fødselsevangeliets historiske
+Kilder, da leder man forgjæves; thi dets Oprindelse
+hyller sig i et uigjennemtrængeligt Mørke. Paa den
+ydre Virkeligheds Omraade ville Vantro og Overtro
+herom kunne føre deres Strid indtil Verdens Ende.
+
+For Troen er Striden afgjort; den har et Sandhedsmærke, som er ubedrageligt, og det er i Aanden. Om
+Maria havde afgivet mundtlig Beretning, om Hyrderne,
+saamange de vare, havde efterladt hver enkelt for sig
+eller alle i Forening skriftligt Vidnesbyrd: det vilde
+ikke føre os et eneste Skridt videre. Det Beviis, som
+heraf kunde uddrages, var alene det, at Hyrderne og Maria havde troet paa Aabenbarelsen. Det maatte jo
+da blive en Troesvirkelighed; men idet Historiens 
+Virkelighed i religiøs Phantasie forvandler sig til
+Troesvirkelighed, er den i samme Nu forvandlet til
+Aandsvirkelighed. --- „Og strax var med Engelen en
+himmelsk Hærskares Mangfoldighed, som lovede Gud“\dots{}
+Den som, naar han har fæstet sit Blik paa Barnet,
+ikke kan faae Syn paa den himmelske Hærskares Mangfoldighed,
+han mangler religiøs Phantasie, og Folianter
+af historiske Beviser ville ikke formaae at tvinge ham
+til Tro. Men den, hvis Øie een Gang blev opladt til
+at see --- Barnet i Krybben og Engleskaren i den
+hellige Nat, for ham staaer Synet klart og vist: han
+% --- p. 62 ---
+\setcounter{footnote}{0}%
+\opage{62}forlanger intet udvortes Vidnesbyrd. Den, som ikke
+har Øre til at høre de Saliges Chor, vil lytte forgjæves
+til Kritikens høirøstede Stemmer. Men den, hvis indre
+Øre een Gang er blevet opladt for det himmelske Budskab,
+han vil formaae at skille Sandhed fra Indbildning,
+Aabenbaring fra Mythe.
+
+Da Christus havde endt sin Bjergprædiken, for
+undrede Folket sig saare over hans Lærdom, thi „han
+lærte dem, som den, der havde Myndighed.“ Hvorfra
+har han da denne Myndighed? Fra Himlen. Vel
+sandt; men han er jo et virkeligt Menneske, født og
+opvoxet som Menneske. Myndighed forudsætter personlig
+Overlegenhed. Han maa altsaa under sin Forberedelse
+have oplevet Noget, som paa guddommelig
+og dog menneskelig Viis hører Charakteerudviklingen
+til, og gjør hans uendelige Selvvished, hans indre personlige
+Overlegenhed forstaaelig. Dette fører os til
+Evangeliet om Fristelsen i Ørken.
+
+Denne Fristelseshistorie danner et organisk Led i
+Fremstillingen af Jesu Liv derved, at den i faa, men
+store Træk giver os et Billede af den Kamp, hvori
+hans besluttede Villie aabenbarer sin Reenhed og
+Styrke. Men at denne Historie, saa sandt den er
+virkelig, hører ind under Aandsvirkelighed, Virkelighed
+for Aand, kan dog vist Ingen betvivle. Her, om ellers
+nogensteds, er der Anledning til at tale om Phantasiens
+Magt; thi i Fristelsen gaae Tanke og Villie
+uimodsigelig sammen med Phantasie. Fristelsen er
+ingen selvisk sandselig Gjæring i Christi Sind, men en
+Styrkeprøve med Mørkets Aand. Her er et Sammenstød
+af Villie med Villie, Christi Villie og Djævelens
+Villie.
+
+% --- p. 63 ---
+\setcounter{footnote}{0}%
+\opage{63}De to Villier holde sig adskilte, men den virkelige
+Adskillelse, der betinger Sammenstødet, er ikke i det
+udvortes Rum, den er i Phantasiens Medium. Det Udvortes
+og blot Naturlige, den lange Fasten, Ørkens
+Eensomhed, de øde Omgivelser, alt Sligt danner her
+Relief for det Indvortes.
+
+Det er tre Villiestanker, der alle angaae Misbrug
+af de overnaturlige Gaver, hvormed en Messias, Guds
+Søn, maatte være udrustet, eller rettere tre Former af
+den samme Villiestanke, som Fristeren griber og anvender.
+Den første er en Misbrug af Mirakelgaven,
+der sigter paa det umiddelbart Sandselige: „er du
+Guds Søn, da siig, at disse Stene blive til Brød“. Det
+var en Phantasie, der menneskelig seet, kunde friste
+den Hungrige. Havde Christus givet efter for denne
+Fristelse, saa havde med det Samme hans Sendelse
+været forgjæves. Den der sandselig selvisk vil bruge en
+overnaturlig Gave til at stille sin Hunger, sin Tørst,
+vil ogsaa sandselig selvisk bruge den til at afværge
+Lidelser, Forhaanelser og trodse Spotterne paa Golgatha
+ved at stige ned af Korset. Det hører med til det
+Kjærlighedsoffer, som den sig til Forsagelse Indviende
+bragte, at han, der ved et Mirakel kunde bespise Tusinder
+i Ørken, ikke vilde røre en Steen for ved et Almagtsord
+at tilfredsstille sin egen Hunger. „Da tog
+Djævelen ham med sig til den hellige Stad og satte
+ham paa Tindingen af Templet“. Mon denne Begivenhed
+vinder i virkelig Forstaaelse ved at Troen forvandler
+sig sil Overtro og gjør det Hele til en udvortes Historie? % PRINTED AS IS: „sil“ for til
+Christus maatte da være ført gjennem Luften af Djævelen
+omtrent som en Doctor Faust paa Mephistopheles’
+Kappe. Her vindes Intet, men her tabes Alt: Vantroen
+% --- p. 64 ---
+\setcounter{footnote}{0}%
+\opage{64}faaer Ret, naar den forvandler det Hele til en Mythe.
+Det er i Aanden, baaren af en dæmonisk Phantasie,
+at Christus staaer paa Templets Tinde. Den Indskydelse,
+at styrte sig ned, for at lade sig bære paa Hænderne
+af Engle og forvandle sin messianske Optræden til
+en storartet Selvforherligelse, et guddommeligt Eventyr,
+hvori der ikke behøvedes hverken Taalmod eller Lydighed
+eller den Selvfornedrelsens Smerte, som skulde ende
+med en Død paa Korset --- denne Indskydelse kommer
+ikke fra Christi Sind, nei, den kommer fra det Væsen,
+hvis Villie er Oprør mod Gud. Messias lader sig løfte
+op til denne Høide af Mørkets Aand; thi han svimler
+ikke paa Templets Tinde: Fristerens Forsøg er ham et
+Middel til at fuldkomme sin Villies Alvor, at vie sig til
+ubetinget Underkastelse under sin himmelske Faders
+besluttede Raad.
+
+At Kampen er mellem Aand og Aand, Mørkets og
+Lysets, Løgnens og Sandhedens Aand, en Villieskamp i
+Phantasiens Medium, bliver især tydeligt af det, som
+følger. „Atter tog Djævelen ham med paa et saare
+høit Bjerg og viste ham alle Verdens Riger og deres
+Herlighed“. Hvor ligger vel det høie Bjerg, hvorfra
+der er Udsigt over alle Verdens Riger og deres Herlighed?
+I Phantasiens Land, paa Kysten ved det aabne
+Hav --- i Dybet boer Forventning, og Mulighedernes
+Bølger rulle --- derfra er Udsigt: paa den vilde Strøm
+hist ude ligger Sirenernes Ø, stormslagne Skibe synke
+som Vrag; høie Taarne sees i Luften, Slotte og Borge
+i Skyernes Lag, store Stæder og vidtstrakte Egne, som
+koglende Indbildning befolker. Paa Kysten hist, i
+Phantasiens Land, der ligger Bjerget, det høie Bjerg
+med Udsigt over al Verdens Herlighed.
+
+% --- p. 65 ---
+\setcounter{footnote}{0}%
+\opage{65}Mangen En, høit begavet, rigt udrustet, mangen
+Helt, hvis Navn end glimrer i Historiens Aarbøger, har
+staaet paa det høie Bjerg med Mulighederne foran sig
+og Verdensbetingelserne omkring sig; men han tog feil
+af Skin og Virkelighed. Aandsvirkelighed var ham kun
+en Phantasie; saa kom den fristende Villie hviskende,
+listende frem af sit Skjul, forblommet som i en Mythe.
+Den Udkaarede valgte det udvortes Store; Egoismen greb
+i Virkelighedens Strenge --- et kraftigt Greb! Strengene
+tonede, bruste og brast, men Grundakkorden lød paa
+misbrugt Aand: den Udkaarede faldt og drog Millioner
+efter sig i Faldet. Hvordan han steg, hvor høit han
+stod og hvor dybt han faldt! Historien seer paa det
+Virkelige, og den gigantiske Virkelighed er som en
+Mythe. Saa er det da til Verdens Frelse, at En har
+staaet paa det høie Bjerg, en Eneste, som med fuld
+Bevidsthed mødte Mørkets Aand og gjennemskuede Bedraget.
+Saa er det da til Verdens Frelse, at der trods
+de høie Raab paa Villieskraft og Villiesstorhed i Selvforgudelsens
+bedaarende Phantasie, endnu kan høres en
+Stemme, en myndig Stemme, som lyder fra Bjerget:
+„Vig bort, Satan, thi der er skrevet: du skal tilbede
+Herren din Gud og tjene ham alene.“
+
+Er det her Fremsatte nu ogsaa virkelig skikket til
+at overbevise ethvert fornuftigt Menneske om Aabenbaringens,
+særlig om Christendommens Sandhed?
+Vi svare aabenlyst: Nei, ingenlunde! Skulde Aabenbaringens
+Sandhed begrundes med almeengyldige, uimodsigelige
+Fornuftbeviser, da maatte den jo begrundes
+videnskabeligt. Men ingen Dannet i Nutiden vil finde
+det anstødeligt, at ethvert Forsøg med at faae enten
+% --- p. 66 ---
+\setcounter{footnote}{0}%
+\opage{66}Bebudelses- eller Fødsels eller Fristelseshistorien som
+virkelig Historie sikkret enten ved historiske eller almeenphilosophiske
+Grunde, fortjener at vises bort fra
+de videnskabelige Begrundelsers Enemærker. Vi befinde
+os med det hele Aabenbaringsindhold ingenlunde
+i Videns, men i Troens Sphære. Den, der erklærer, at
+Tro og Troeserkjendelse ingen Gyldighed har for ham,
+at alt det om det Overnaturlige er hans Natur imod og
+virker som et Tryk paa Hjertekulen, et Forspil til Noget
+der begynder med Kvalme, har ikke alene Ret til at
+erklære sig, men ogsaa Krav paa en vis Anerkjendelse,
+for saa vidt han siger sin Mening reent
+ud og uden Omsvøb melder sig som en Vantro.
+
+Anderledes forholder det sig derimod med dem,
+som i Videns og Videnskabens Navn angribe den aabenbarede
+Religion. De beraabe sig ikke paa deres Vantro,
+men paa deres Sandhedskjærlighed. Dersom det i
+Videns klare, ubedragelige Lys kunde sees, at der var
+Sandhed i Troen paa det Overnaturlige, saa vilde de
+gjerne troe; men det er saa usandsynligt, og de ere saa
+sandhedskjærlige! Det er enten et Selvbedrag eller et
+Hykleri. Videnskaben bør skee sin Ret; men den
+tør ikke overskride sin Grændse. Det er nødvendigt,
+at det afgjørende Stridspunkt holdes skarpt
+for Øie. Her paa Grændsen mellem Tro og Viden
+spørges ikke om Sandsynlighed, her spørges alene om
+Mulighed. Lad Videnskaben godtgjøre, at et Aabenbaringsphænomen er usandsynligt, høist usandsynligt,
+ja, det Usandsynligste af Alt: siger Intet, slet Intet!
+Men dersom dets Umulighed kan bevises, saa er Troessphæren
+gjennembrudt, og dens Lys udslukkes. Den
+moderne Videnskab holder Vagt ved Grændsen, og hver
+% --- p. 67 ---
+\setcounter{footnote}{0}%
+\opage{67}Gang den gjør et Udfald, høres Feltraabet: „Umuligt!“
+Lad os i Korthed see, om dette „Umuligt“ ikke skulde
+være en falsk Phantasie.
+
+Vi kaste et Blik paa Læren om Lyset. Physiken
+har opstillet den høist sandsynlige Hypothese, at Lyset
+beroer paa en Svingning i Ætheren. Den, der gjør sig
+bekjendt med den høiere Optik, vil ogsaa i denne Henseende
+have rig Anledning til at beundre den menneskelige
+Skarpsindighed. Det er beviist, at det røde Lys
+maa give over 500, det violette over 700 Billioner
+Svingninger i et Secund. Men er nu hermed Lysets
+Væsen forklaret? Ingenlunde. Lyset som Lys, som
+Klarhed, forudsætter et Syn, en seende Bevidsthed, der
+ikke lader sig aflede af Æthersvingninger. „Naar Ætheren
+er i Hvile, er der intet Lys“; men naar alle Øine lukkes,
+naar der intet seende Væsen er, hverken i Himlen
+eller paa Jorden, saa er der heller intet Lys. At tale
+om et Verdenslys, der er uafhængigt af alle Individers
+Øine, er at tale om et Verdenssyn, der er uafhængigt
+af alle seende Sjæle, d. e. at tale om Skaberens evige
+Seen, om Almagtens guddommelige Phantasie.
+
+Dersom Rummet og Ætheren og de Betingelser,
+der sætte den i Svingning, ikke oprindelig fremgik af
+den guddommelige Seen, saa maatte Læren om Lyset
+være en Lære om et uforklarligt Skin uden Væsen.
+Er der nu i den hele videnskabelige Lyslære et eneste
+Støttepunkt for den Paastand, at Skaberordet: bliv Lys!
+skulde høre til det Umulige? Ordet er jo netop et
+kategorisk Udtryk for den guddommelige Tankes Eenhed
+med den guddommelige Villie i Phantasiens altskuende
+Magt. I Phantasiens Form er Ordet det
+oprindelige Væsensudtryk for det Synliges Fremgang
+% --- p. 68 ---
+\setcounter{footnote}{0}%
+\opage{68}af det Usynlige. Kan der nu i Rummet, i Ætheren,
+dens Bølger og Svingninger paavises en eneste Grundbestemmelse,
+som beviser Umuligheden af en altskuende
+Guddoms uendelige Seen? Ingen, slet ingen. „Umuligt“
+er her et tomt Udbrud af tom Indbildning, en falsk Phantasie.
+Men dersom Videnskaben ikke kan bevise Skaberordets
+Umulighed, naar Talen er om den Usynliges
+Synliggjørelse af det naturlige Universum, hvor vil den
+saa hen med sit „Umuligt“, naar Talen er om den frie
+Kjærlighedsaabenbarelse i Personlighedsordet selv, det
+Ord, som er „Verdens Lys“, det skabende Ord, som
+var i Begyndelsen?
+
+Indvendinger, som for en videnskabelig Kritik
+ere af større Betydning, hentes fra den iøinefaldende
+Modsætning mellem det, som skete paa Chisti Tid, og % PRINTED AS IS: „Chisti“
+det som i vor Tid antages for muligt. „Hvem kan i
+vore Dage troe paa Djævlebesættelser eller Opvækkelser
+af de Døde? Kan man end, hvad Djævlebesættelser angaaer,
+tye ind i den religiøse Phantasies skyggerige
+Smuthuller og der søge Skjul mod den forfølgende
+Kritik, saa gaaer det dog ikke an at gjøre de Dødes
+Opvækkelse til en Phantasie. At opvække en Død er
+lige saa umuligt som at gjøre en Steen til et Menneske.
+Den, der troer paa Sligt, maa bryde Staven over alle
+Videnskabens Resultater. Et af To: enten maa man
+slukke Fornuftens Lys og give sig hen til den mørkeste
+Overtro, eller indrømme Videnskaben med dens Inductioner,
+Analogier og vidtstrakte Erfaringer Ret til at
+fordre Grundsætningen om en uafbrudt sammenhængende,
+jævnt fremskridende Naturudvikling respecteret, en
+Grundsætning, der er af saa meget større Vægt, som
+den alene stemmer med, hvad Fornuften lærer os om
+% --- p. 69 ---
+\setcounter{footnote}{0}%
+\opage{69}det guddommelige Væsens Uforanderlighed.“ --- Saa længe
+Synspunktet bliver staaende indenfor Grændsen af Sandsynligt
+og Usandsynligt --- altsaa udenfor Troeserkjendelsernes
+Lyskreds --- ville slige Indvendinger gjøre
+Indtryk; men, naar Spørgsmaalet er om Muligt og
+Umuligt, opløse de sig i et Intet. Naar Videnskaben
+hævder, at den i Naturen ikke er i Stand til at opdage
+Noget, der kunde tyde hen paa et Overnaturligt, og
+derved tilstrækkelig godtgjør, at Læren om det Overnaturlige
+ikke hører ind under det, som videnskabelig
+kan begrundes: har den saa med det Samme beviist,
+at det Overnaturliges Indgriben i Naturens Løb er
+umulig? Naar Videnskaben hævder det guddommelige
+Væsens Uforanderlighed, har den saa med det Samme
+beviist, at denne Uforanderlighed nødvendig maa gjøre
+den guddommelige Selvbestemmen, Guds Villies Frihed,
+umulig? Naar Videnskaben hævder Umuligheden af, at
+den absolute Aand kan modsige sig selv, har den saa
+med det Samme beviist Umuligheden af, at denne
+naturlige Tingenes Orden kan i sin usynlige, for
+menneskelig Viden tilgængelige Sammenhæng med det
+Overnaturlige, være Gjennemgangsled og Middel for
+høiere Formaal? Har man maaksee beviist et saadant % PRINTED AS IS: „maaksee“
+høiere Formaals Umulighed eller Umuligheden af, at
+et Middel kan tjene sit Formaal? Naar Videnskaben
+hævder --- og det kan endogsaa hævdes uden Videnskab
+--- at et dødt Legeme ikke kan kaldes tillive ved
+naturlige Midler, har den saa med det Samme beviist
+Umuligheden af, at det kan skee ved overnaturlige
+Midler? --- Vantroen mener at gjøre sig ukjendelig ved
+at svøbe sig ind i Videns Kappe, men Vinden blæser
+i Kappen, og paa Kløerne kjender man Løven.
+
+% --- p. 70 ---
+\setcounter{footnote}{0}%
+\opage{70}Her er, vel at mærke, ingenlunde Tale om væsenlig
+Splid mellem Viden og Tro. Den negative Kritik maa
+have Lov til at bevise, at Aabenbaringstroen er uden
+videnskabelig Gyldighed; naar den blot beviser det ret
+videnskabeligt, reent videnskabeligt, saa veed man hvad
+det er: det gjør slet ingen Skade. Her er alene Tale
+om den Troesfornegtelse, som under Sandhedskjærlighedens
+og den strenge Videnskabeligheds Skin er blevet
+sig selv vigtig i Bestræbelsen med at undergrave
+Religionens religiøse Grundlag.
+
+Vantroen er driftig, snild og politisk; den forstaaer
+saa godt, hvor det passer i dens Kram, at alliere sig
+med Overtroen, afvise Aandsvirkeligheden og fordre det
+udvortes Haandgribelige. --- „Er der,“ siger den negative
+Kritik, „Noget, som Troen maa erkjende for virkeligt,
+udvortes historisk Virkeligt, da er det dog nok Christi
+Opstandelse.“ Ja! svarer Overtroen. „Gaaer ikke Christus
+efter sin Opstandelse omkring med det selvsamme
+materielle Legeme, som det, hvormed han blev begravet?“
+Jo! svarer Overtroen, med det selvsamme materielle
+Legeme. „Er det ikke forblommet Undvigelse og Halvtro
+her at tale om Aandsvirkelighed og tye til Phantasiens
+Hjælp, for at unddrage sig Tvivlens Indvendinger?“
+Jo vist er det forblommet Halvtro med denne Aandsvirkelighed,
+svarer Overtroen. --- Naar nu Vantroen ad
+denne Vei har faaet Overtroen paa Glatiis, saa hoverer
+den og slaaer det Hele i Vrangen, „Christus gjør sig
+usynlig, han forsvinder for de To, som gik til Emaus;
+altsaa har han intet materielt Legeme. Christus gaaer
+igjennem lukkede Døre; altsaa har han intet materielt
+Legeme. Christus farer op til Himlen, tvertimod Tyngdens
+Lov, altsaa har han intet materielt Legeme.“ --- Den
+% --- p. 71 ---
+\setcounter{footnote}{0}%
+\opage{71}stokhistoriske Overtro staaer betuttet, aner, at den har
+drukket Dus med Skarpretteren, og veed hverken ud
+eller ind. Vantroen smiler, tager den Betuttede under
+Hagen, seer den ind i Øinene og siger: Virkelighed!
+Ja, Du er dog et godt ærligt Stykke Virkelighed; den,
+der siger om Dig, at du er en Aandsvirkelighed, Virkelighed
+for Aand, han lyver Dig skammelig paa. Bliv
+ikke vred; jeg kan i Grunden godt lide Dig; men ---
+Du er dum.
+
+Troen selv kan Vantroen ikke fordrage, deres
+Sind og Syn er uendelig forskjelligt. Det er ikke blot
+Virkeligheden, men ogsaa Phantasien, hvorom de ere
+uenige. Al Troesvirkelighed er, selv om det ikke bliver
+udtalt med klar Bevidsthed, altid Aandsvirkelighed;
+men Aandsvirkelighed er en Forskandsning, som den
+negative Kritik med al sin Snildhed, sine Reflexionsapparater
+og taktiske Manøvrer ikke er istand til at
+gjennembryde. Naar den mener at have faaet Tag i
+det Udvortes, saa forvandler det sig og gaaer over i et
+Indvortes, og naar den saa mener at kunne fastholde
+det Indvortes for sig som Phantasie og Indbildning,
+saa forvandler det sig igjen og slaaer ud i et Udvortes.
+Utaalmodig og forbittret udbryder Kritiken: „maae
+vi faae at vide, hvad og hvormeget her er Udvortes,
+maae vi faae at vide, hvad og hvormeget der skal henregnes
+til det Indvortes!“ Men Troen svarer uanfægtet:
+her er Mysteriet, og Mysteriet er ingen Opgave for
+Viden. Vantroen bilder sig ind at slaae det afgjørende Slag
+og træffe Sømmet paa Hovedet, naar den sammenfatter
+Undersøgelsernes Resultat i afskrækkende Slagord:
+„Mystik, Mysticisme!“ Heller ikke dette gjør
+Indtryk paa Troen. Mysteriet frister ikke til over%
+% --- p. 72 ---
+\setcounter{footnote}{0}%
+\opage{72}spændt Intuition eller ufrugtbar Phantaseren; det angiver
+kort, kategorisk: den menneskelige Videns Grændse.
+Aabenbaringsmysteriet giver ingen Anviisning paa at
+udviske Virkelighedens Mærker og liste sig uden om
+Lovene; den giver tvertimod Anviisning paa en Lov, en
+Frihedens Grundlov, der er lige saa sikker for Troen
+som Videnskabslovene ere for Videnskaben; denne
+Grundlov er en Forvandlingslov.
+
+Forvandlingsloven kommer tilsyne i det Overnaturliges
+vidunderlige Indvirken paa det Naturlige. At denne
+Lov ikke tages forfængelig, er sikkret derved, at den
+er en Lov for det Usandsynlige. Troen har fra sin
+Side et lige saa skarpt Blik for det Usandsynlige som
+Vantroen fra sin. Sløves Blikket for det Usandsynlige,
+gaaer Troen øieblikkelig over til Overtro; thi Overtroen
+er dum. Men Troen er ikke dum, den veed, hvad den
+gjør, naar den trods Usandsynligheden griber Muligheden.
+Heri ligger, at den Mulighed, Troen griber imod al
+Sandsynlighed, maa for Sjælens Frelse, for Hjertets
+Fred være af en saa gjennemgribende Betydning, at
+den ikke kan opgives, uden at Forvisningen om det
+evige Liv med det Samme opgives. Ogsaa Troen
+veed, hvad den gjør: den har sine Grunde.
+
+Vi kunne prøve Forvandlingsloven paa Opstandelsesevangeliet.
+Visselig --- det er Troens Forvisning
+--- er Christus opstanden fra de Døde med sit
+virkelige Legeme, ikke med et Skinlegeme. Men, at dette
+virkelige Legeme desuagtet hæver sig over det blot
+Udvortes og Materielle, at det allerede tilhører Aandsvirkelighedens
+Sphære, giver sig jo aabenbart tilkjende
+ved den Opstandnes Ord til Maria Magdalene i Urtegaarden.
+Det Overnaturlige virker igjennem det Naturlige.
+% --- p. 73 ---
+\setcounter{footnote}{0}%
+\opage{73}Den Opstandnes Legeme gjennemgaaer en Række Forvandlinger.
+Disse Forvandlinger, der svare til de forskjellige
+Aabenbarelser for Disciplene og ende med
+Himmelfarten som den sidste Forklarelse, høre væsenlig
+med til Afslutningen af Jesu Liv, fordi de i hans
+Personlighed gjøre det oprindelige Grundforhold mellem
+det Naturlige og det Overnaturlige aabenbart.
+
+Forvandlingsloven i og for sig er saa langt fra at
+staae i Strid med Naturlærens store Grundsætninger, at
+det tvertimod er den, der alene er i Stand til at begrunde
+Fornuftens Ret. At forstaae Naturen uden Aand
+af den bare Materie er umuligt. Naturphilosophien
+leder os til det uimodsigelige Resultat, at Naturen
+skabes, bæres og forklares af Aanden. Grændsen mellem
+Tro og Viden er bestemt derved, at Viden maa holde
+sit Resultat i Nødvendighedens Form, og kan ikke gjøre
+Brug af de Frihedsmuligheder, som heri dæmre. Det
+er Troens uangribelige Forudsætning, at den faste,
+nærværende Tingenes Orden, hvor jævnt den end udvikler
+sig, hvor mange Millioner- Billioner Aar dens
+Udviklingsgang end udviser, dog har sin inderste
+oprindelige Grund i et Anlæg af skabende Frihed; at,
+med andre Ord, det hele Universum hviler paa Grundlaget
+af et skjult Under.
+
+Aabenbaringen gjør det Skjulte aabenbart. Opstandelsesmiraklet
+anskueliggjør Forholdet mellem det
+Forkrænkelige og det Uforkrænkelige, mellem Her og
+Hisset, mellem Døden og Livet. Om Aabenbaringsmysteriet
+veed Physiken med al sin Mathematik Intet,
+slet Intet. Den har i „sit Auditorium“ Ret til at tale
+om Vandets og Legemernes Vægtfylde, om Tyngdelovens
+Almeengyldighed i den naturlige Verden o. desl.; men
+% --- p. 74 ---
+\setcounter{footnote}{0}%
+\opage{74}naar Vantroen i den Anledning gjør sig et Ærende ind
+i Aabenbaringens Lyskreds, for i Tyngdelovens og Vægtfyldens
+Navn at raabe: Umuligt! forraader den en Aandsraahed,
+der maa finde sig i at blive viist udenfor.
+
+Det skal villig indrømmes, at den aabenbarede
+Religions Indhold har endnu mangfoldige andre Sider,
+hvorfra den maa belyses end netop Phantasiens. Desuagtet
+turde det vel være paa Tide at blive opmærksom
+paa, at den store Forvirring paa Troens Omraade for
+en stor Deel hidrører fra en Forkvakling af den religiøse
+Phantasie. Medens der i alle Dannelses Kredse
+omhyggelig sørges for at den æsthetiske Phantasie med
+Sands og Smag for Alt, hvad der henhører under Konst
+og Poesie, bliver behørig udviklet, er den religiøse Phantasie
+traadt i Skygge, endog i den Grad, at dens Uddannelse
+synes at være afsluttet med Confirmationsalderen.
+En Blanding af alskens Elementer, lidt fra
+Æsthetik og lidt fra Physik, lidt fra Mythologie og lidt
+fra videnskabelig Kritik forvirrer Synet og fordunkler
+Opfattelsen af Aabenbaringsordet saavel i det Nye som
+i det Gamle Testamente. Men Phantasien er en Magt,
+ogsaa i Religionen; Enhver, som føler Trang til at
+gjøre sig Rede for sin Tro, vil sikkerlig ogsaa føle
+Trang til at klare sig sin religiøse Phantasie.
+
+% --- p. 75 ---
+\setcounter{footnote}{0}%
+\lecture{Sjette Forelæsning.}\opage{75}
+
+Hvad der i en Henseende er begrændset, kan i en
+anden Henseende være ubegrændset; dette gjælder
+øiensynligt om Phantasiens uendelige Rige. At dette
+Rige er uendeligt, maae selv de indrømme, der fornegte
+dets guddommelige Væsen og søge Phantasiens Udspring
+i en physiologisk Disposition af Nerver og Hjerne.
+
+Der er i enhver til Bevidsthedslivet hørende Virksomhed
+en skjult Phantasie. Ingen Hukommelse er
+mulig uden Phantasie; Erfaringsbillederne, Billeder af
+hvad vi have oplevet, af hvad vi have seet i Naturen
+eller lært i Historien, ligge ikke hengjemte i Sjælen
+som i et Magasin: de ere i vort Indre som Muligheder,
+som Dispositioner i vort Nervesystem. At vi mindes
+det Forbigangne, beroer paa, at Phantasien ifølge en
+Villiestilskyndelse kan paa vilkaarlig Maade vække de
+indsovede Muligheder og stille det Oplevede frem i et
+Billede for vort indre Syn. Ogsaa Forstanden med
+dens sindige lovbundne Virksomhed er betinget af
+Phantasie. Det er Forstanden, der adskiller, sammenligner,
+ordner og forbinder vore Forestillinger; men
+hvad er en Forestilling? Et sig opløsende Billede, svævende
+mellem det Usynlige og det Synlige, det Ubestemte
+og dog Bestemte: som Billedets Opløsning er, maa
+% --- p. 76 ---
+\setcounter{footnote}{0}%
+\opage{76}ogsaa Billedet være, men Billedet dannes af Phantasien.
+Mathematiken er i strengeste Forstand en Forstandsvidenskab;
+men Mathematik er umulig uden tilsvarende
+Phantasie. De utallige Combinationer af Former og
+Formler, de mangfoldige sammensatte, fordoblede, ofte
+høist indviklede geometriske Figurer gjøre det indlysende
+nok, at der maa gives en egen mathematisk Phantasie.
+Heller ikke Villien, hvor praktisk den er og hvor udelukkende
+den end tager Sigte paa det Virkelige, kan
+undvære Phantasiens Bistand. Den Opgave, som Villien
+sætter sig, er jo endnu ikke virkelig løst, men den skal
+løses, det vil sige; den er en Mulighed, hvis Indhold
+maa være anskueligt i Phantasiens Form. Og hvor
+inderlig er ikke Phantasien forenet med Følelsen; man
+tænke paa Stemning, Glædens Stemning, Sorgens Stemning:
+ingen ideel Stemning uden Phantasie!
+
+Men Phantasien, hvor meget den end er til Tjeneste
+for enhver Sjælevirksomhed ved enhver Anledning, nøies
+dog ikke med en simpel Tjenerrolle; den har en
+hemmelig, man kunde sige kvindelig Drift til selv at
+herske. Den kommer ikke plumpt med det; den gaaer
+varlig frem for Trylleriets Skyld: den bruger List. Den
+melder sig ikke som en stortalende Herre, der træder
+i Gulvet med klirrende Sporer og fører Kommando-Ordet;
+nei, som en væver lille Pige, med Skudsmaal:
+ferm til sin Gjerning og villig til Alt.“ Men just for
+denne Fermheds og Villigheds Skyld maa man holde
+Øie med den, bestandig have den i Kikkerten og nøie
+vogte paa hvert dens Skridt. Den seer saa uskyldig
+ud og er dog saa udspekuleret, listig, intrigant, en
+Skuespillerinde af første Rang, med Mesterskab i Forvandlinger,
+Trylleoptog og bedaarende Illusioner. Phan%
+% --- p. 77 ---
+\setcounter{footnote}{0}%
+\opage{77}tasiens Rolleregister er af et uhyre Omfang fra det
+Dybsindigste og Rørende indtil det Lystigste, meest
+Overgivne, Taabelige og Fjantede, der er til.
+
+Ihvorvel Phantasien er sindig, bøielig, bevægelig og
+kan optage Alt og bearbeide, hvad den optager paa
+den allerfrieste Maade, saa har den dog et forskjelligt
+Præg hos de forskjellige Individualiteter. Man seer det
+paa det Eiendommelige i enhver Art af Begavelse. Der
+gives en egen Malerphantasie, en musikalsk Phantasie,
+Digterphantasie o. s. v. Hvor Phantasiebegavelsen i en
+eller anden Retning overskrider sin Grændse, begynder
+øieblikkelig det Søgte og Maniererede. Ja ikke blot
+hos de særlig Begavede, men hos ethvert velorganiseret
+Individ har Phantasien sin egen Grundform. Det er
+forstaaeligt nok, naar vi betænke, at den Anskuelsens
+Eenhed, hvori alle Livsindtryk, Tanker, Forestillinger,
+Forbilleder og Bestræbelser optages, netop afgives af
+Phantasien. Ligesom ethvert Menneske i legemlig Forstand
+har sit eiendommelige Ansigt, saa har det ogsaa
+i sjælelig Forstand sit eiendommelige, af dets Grundphantasie
+bestemte Physiognomie: Phantasien er Sjælens
+ideelle Ansigt. Uden et høiere Vexelskin af de to
+Ansigter, det indre og det ydre, vilde det Mimiske i
+Skuespillet tabe sin Betydning. Til at være en stor
+Mimiker hører noget Mere end at kunne lægge sit
+Ansigt i Folder og skjære Grimacer. Al plastisk Inspiration
+gaaer igjennem Phantasien.
+
+Dette er saa meget naturligere, som Phantasien
+ogsaa omfatter den Side af Bevidstheden, der igjennem
+det Halvbevidste rækker ned i det Ubevidstes dunkle
+Regioner. Phantasien arbeider lige saa vel i Bevidsthedens
+Nat som i dens Daglys; den elsker Dæmringen,
+% --- p. 78 ---
+\setcounter{footnote}{0}%
+\opage{78}Skumringen og den vaagne Drøm, hvori dens luftige
+Skuespil allerhelst opføres. Hermed stemmer det, at
+Phantasiens Magt ikke umiddelbart afhænger af bevidste
+Tanker eller et vilkaarligt Forestillingsløb, men gjennemtrænger
+Kjød og Blod og virker som en aandig Naturkraft.
+Man tænke paa den Angst og Skræk som et
+Blik eller et Ord kan vække, man tænke paa den uvilkaarlige
+Blegnen og den lige saa uvilkaarlige Rødmen.
+
+Derfor bør man aldrig maale et Menneskes personlige
+Dannelse med hans Forstandsudvikling, hans Indsigter
+og Kundskaber alene; ville vi have en Maalestok
+for hans Sindsstyrke, maae vi have Phantasien med,
+den Elementærphantasie, som boer i Nerverne. Er
+denne Phantasie forkvaklet eller forsømt, saa har Villien
+intet sikkert Grundlag og Besindelsen kan svigte En i
+det afgjørende Øieblik. Samling, Fatning, Aandsnærværelse
+beroer væsenlig paa umiddelbar Phantasie.
+Et raat Menneske, hvis Phantasie er lige saa afstumpet
+som hans Samvittighed, kan i visse Tilfælde udvise
+større Koldblodighed end en Dannet, hvis Elementærphantasie
+ikke er blevet udviklet i Forhold til hans
+Forstandsoplysning. En Kirketyv, der bryder ind ved
+Nattetid, kan famle omkring ved Alteret og mellem
+Kisterne i en Begravelse med en Rolighed saa uanfægtet,
+som om han gik i sin Dagligstue. Griber Nogen ham
+pludselig i Mørket bagfra, saa falder det ham dog ikke
+ind, at det er et Spøgelse; han veed strax, hvad det er:
+det er Politiet. Derimod kan mangen Oplyst holde sig
+fuldstændig overbeviist om, at der ingen Gjengangere
+gives, og dog ved Nattetid være bange for at søge Selskab
+med de Døde: han er egenlig ikke bange for
+de Døde, men han er bange for sin Phantasie.
+% --- p. 79 ---
+\setcounter{footnote}{0}%
+\opage{79}Den bekjendte La Mettrie, en af de allerkrasseste
+Materialister mod Slutningen af forrige Aarhundrede, en
+Mand, der hverken var bange for Gud eller Djævelen,
+var bange for at gaae over en Kirkegaard om Natten.
+
+Den, der har en syg Phantasie, kan umulig have
+en sund Sjæl. Som man taler om Forhærdelse f. Ex. i
+Leveren, saaledes kan man ogsaa tale om Forhærdelsesknuder
+i Phantasien; hvad ere vel de saakaldte Fixideer
+Andet end saadanne Knuder. Alle Sjælesygdomme,
+hvilke de organiske Aarsager end kunne være, vise hen
+til en Forstyrrelse i Phantasien. Vel er Forstanden
+ogsaa forstyrret; men at Forstandsforvirringen hidrører
+fra forstyrrende Billeder, vilde Indskydelser, kan blandt
+Andet sees deraf, at de Gale kunne ræsonnere med
+skarp Forstand og sikker Logik indenfor de Grændser,
+som Fixideerne afsætte. Hvor uhyggeligt at gjøre et
+Indblik i et Galehuus: alle Phantasiens Forvrængninger
+blive der synlige.
+
+Der er et Billede af Kaulbach, det forestiller en
+Daarekiste. Man seer de Sindssyge samlede og grupperede,
+men man seer ogsaa, at den Ene slet ikke
+ændser den Anden: Enhver af dem er sig selv nok,
+udelukkende beskjæftiget med sin egen Fixidee. De
+forskjelligste Indbildninger og Lidenskaber staae malede
+i Ansigter og Stillinger. Især er der En, --- Figuren
+er ingen Karikatur --- men han opvækker Gysen. Det
+er en Begeistret, der forkynder Evangeliet; han løfter
+Korset og smiler som en Forklaret. Men i dette Blik,
+i dette salige Smiil, hvilket bundløst Dyb af Vanvid!
+
+Phantasien er en væsenlig Form for Sandhedens
+Indhold og dog første Opfinder af alskens Indbildninger,
+Løgn og Bedrag. Fra psychologisk Side ligger da
+% --- p. 80 ---
+\setcounter{footnote}{0}%
+\opage{80}heri en Opfordring til nøiere at undersøge Phantasiens
+Oprindelse og gjøre sig Rede for, hvorfra den faaer sit
+høist uligeartede Indhold. Psychologien maa i vore
+Dage støtte sig til Physiologien; uden Indsigt i Organbygningen
+og de organiske Betingelser er det umuligt
+at komme til klar Erkjendelse eller frugtbar Indsigt i
+de sjælelige Virksomheder. Ogsaa i denne Henseende
+har den fremskridende Naturlære vundet en betydelig
+Indflydelse paa Aandslæren. Herhen hører en nærmere
+Opklaring af de saakaldte Hallucinationer. Det er
+bekjendt hvorledes den Febersyge kan phantasere,
+hvorledes Drankeren i sit Delirium faaer Syner af en
+saa haandgribelig Realitet, at han tumler med dem,
+som med legemlige Gjenstande. Opiumsspiserens indbildte
+Herligheder og deres gradvise Forvandling til
+lige saa mange virkelige Elendigheder, høre til de
+Phænomener, der vække Opsigt.
+
+I J. L. Heibergs samlede Skrifter (8de Bind) findes
+en lille Afhandling om en engelsk Opiumsspisers Bekjendelser.“
+„Opium,“ hedder det, „bringer Sjælen i
+en rolig, ja alvorlig Nydelsestilstand. Alle Sjæleevnerne
+synes at udvikle sig til en overordenlig Grad, idet de
+dog tillige vedligeholde den fuldkomneste Harmonie.“
+Vi faae her Exempler paa, hvad en materiel Paavirkning
+af Nervesystemet har at betyde. „Jeg stod,“ siger
+Bekjenderen, „høit over Livets Tummel; Forvirring,
+Bekymring, Ængstelse, de hemmelige Byrder, som
+undertrykke Hjertet, alt var forsvundet; det forekom
+mig som en Helligaften for hele Skabningen, som en
+Hviledag for alle Menneskehedens Elendigheder. Det
+jordiske Livs Glæder og Forhaabninger vare forsonede
+med Graven, og min aandelige Bevægelse foregik uden
+% --- p. 81 ---
+\setcounter{footnote}{0}%
+\opage{81}Anstrængelse, uden Træthed, ligesom Stjernernes paa
+Himlen. Og med alt dette en dyb Ro, som ikke fremkom
+af en Uvirksomhedstilstand, men syntes at være
+Resultatet af uendelige Kræfters Modsætning, det var
+paa een Gang en Virksomhed uden Grændse og en
+uendelig Hvile“. Med hvilken Magie en sygelig anspændt
+Phantasie kan virke, i hvilken Grad den formaaer at
+fremkogle en Verden af Syner og give dem Præg af
+Virkelighed, fremlyser af følgende Beskrivelse: „Henflyttet
+under Vendekredsens Himmel, saae jeg mig“ ---
+man erindre sig, at Manden er i London --- „snart omgiven
+af alle disse Egnes overordenlige, baade vegetabile
+og animale Frembringelser. Fugle, Abekatte,
+Reptilier omringede mig fra alle Sider, og forfulgte
+mig uophørlig. Jeg flygtede ind i Pagoder og fandt
+mig indelukket for evig i disse Bygningers hemmelige
+Smuthuller. Jeg var paa een Gang Afgudsbilledet og
+Præsten, Guden og Offeret. Jeg flygtede gjennem Asiens
+Skove, forfulgt af Bramas Vrede; Vischnu hadede mig,
+og Siva lagde Snarer for mig. Paa een Gang stod jeg
+lige for Isis og Osiris, de beskyldte mig for at have
+begaaet en Forbrydelse, hvorover Ibis og Krokodillen
+skjælvede og bævede. De dømte mig til en tusindaarig
+Nat i Gravmæler af Steen, og begravede mig med
+Sphinxer og Mumier i utilgængelige Pyramider. Derpaa
+fandt jeg mig nedsænket i Nilens Mudder, midt imellem
+Uhyrer, gjennemtrukne af Floddynd, og mellem alle
+Slags rædsomme og væmmelige Ting“. --- Billederne
+blive bestandig mørkere og vildere. „En uhyre Krig,
+et Slag, en Dødskamp maatte indtræffe paa et eller
+andet Sted, og oprulle sig for mig som et mørkt og
+sørgeligt Skuespil; men jeg vidste hverken hvor eller
+% --- p. 82 ---
+\setcounter{footnote}{0}%
+\opage{82}hvorledes, eller ved hvem. Den levende Deeltagelse,
+jeg følte derfor, var saa meget utaaleligere, som jeg
+hverken kjendte Beskaffenheden eller Aarsagen eller
+det sandsynlige Udfald af det, som jeg interesserede
+mig for. Som det ofte hænder os i Drømme, hvor vi
+stedse ere Midtpunktet af alt det, som tildrager sig
+omkring os, saaledes forekom det mig ogsaa her, at
+jeg havde Magt til at bestemme dette Udfald, og dog
+tillige, at jeg ikke havde det. Jeg følte, at jeg kunde
+gjøre det, dersom jeg havde Kraft til at ville det, men
+jeg var ligesom nedtrykt af en uhyre Byrde, som jeg
+ikke kunde befrie mig fra. Jeg forblev altsaa i min
+Uvirksomhed. Men nu nærmede sig det kritiske Øieblik,
+Oprøret blev stærkere, et uendeligt Anliggende
+skulde afgjøres. Derpaa fulgte en pludselig Bestyrtelse,
+overilet Flugt i alle Retninger, og Gjenlyd af utallige
+Flygtningers Skridt. Derpaa gik Skygger og Blus,
+Hvirvelvinde og menneskelige Ansigter mig forbi; og
+endelig --- under Følelsen af, at Alt var tabt --- Fruentimmerskikkelser,
+og Trækkene af det, som havde været
+mig kjærest i Verden. Og kun et eneste Øieblik var
+tilstaaet os; vi maatte skilles for evig. Alle vred Hænderne,
+jamrede og hylede, og fra alle Sider hørte man
+gjentage: Farvel for evig! --- Disse rædselsfulde Ord gjenlød
+i mit Indre, jeg vaagnede i den skrækkeligste Ængstelse,
+og skreg med høi Røst: Jeg vil aldrig mere sove!“
+
+At Sligt maa hidrøre fra Affectioner i Hjernen,
+derom kan der ikke være Tvivl. Physiologien har i
+denne Henseende stor Fortjeneste af at have gjort
+Rede for de forskjellige Arter af Hallucinationer.
+
+Dog, ogsaa i dette Punkt maa Aandslæren være
+paa sin Post, thi Sagen kan let faae en Vending, som
+% --- p. 83 ---
+\setcounter{footnote}{0}%
+\opage{83}forvansker Opfattelsen, nedsætter det Ideale til Skin
+og forvrænger det Allerhøieste.
+
+Ligesom Kritiken ved Hjælp af en dybere gaaende
+Psychologie har opdaget Mythernes Udspring og forvandlet
+Aabenbaring til Mythe, saaledes kan den nu,
+overfladisk seet, med en vis Ret beraabe sig paa en
+dybere gaaende Physiologie og afvise de historiske
+Vidnesbyrd, der bære Præg af psychologisk Troværdighed,
+hvor Talen er, ikke om dunkle, halvbevidste,
+men om klare, fuldt bevidste Aabenbarelser, ved den
+korte og tørre Bemærkning: det er Hallucinationer.
+
+Et Par Exempler. Den hellige Antonius flygter
+fra Verden ud i Ørken, men Djævelen følger med og
+plager ham med allehaande Fristelser. Snart er det
+hæslige Trolde, der skrække ham, og snart deilige
+Kvinder, der sætte hans Afholdenhed paa Prøve; man
+hører langt borte hans Skrig i Hulen, thi Satan selv
+angriber ham corporlig og slaaer ham til Jorden. Heri,
+siger Physiologen, er intet Urimeligt. Det kan Altsammen
+virkelig være gaaet saaledes til. Eremiten har
+plaget sig med Askese, Fasten og Spægelser saalænge,
+indtil han er blevet et Offer for de forfærdeligste
+Hallucinationer.
+
+Det fortælles om Muhamed, at da han i Eensomheden
+under Bøn og Fasten grublede paa sin nye Religion, da hørte han fra alle Sider i den omgivende
+Natur Stemmer, som stadfæstede hans guddommelige
+Sendelse. Det talede fra Klipperne: Du er Profeten;
+det lød fra Skyerne: Du er Propheten; Træerne stak
+Hovederne sammen, Løvet hviskede og Kilderne rislede:
+See der gaaer Profeten. Og Muhamed blev ført
+gjennem
+alle syv Himle. I den øverste saae han Dødens
+Engel;
+% --- p. 84 ---
+\setcounter{footnote}{0}%
+\opage{84}ja, han saae Guds største Skabning, en Engel, som
+havde 70,000 Hoveder, i hvert Hoved 70,000 Munde, i
+hver Mund 70,000 Tunger; med hver Tunge talte den
+70,000 Tungemaal og forkyndte i dem alle Herrens
+Priis. Tilsidst blev han ført frem for Gud Herren selv,
+og til Høire for Thronen stod der at læse: der er ingen
+anden Gud end Gud, og Muhamed er hans Profet. Da
+Koreishiternes Stamme satte sig op imod ham og ikke
+vilde lytte til hans Prædiken, fordi han krænkede
+deres Forret ved at kæmpe mod Afguderiet, var hans
+Farbroder Abu-Taleb den Eneste, der tog ham i
+Forsvar, skjøndt han negtede at bekjende hans Tro.
+Han raadede sin Brodersøn til at afstaae fra sit Forehavende,
+da deraf ellers vilde flyde store Ulykker; men
+Muhamed svarede: „Kom man ogsaa til mig med Solen
+i den ene Haand og Maanen i den anden, man skulde
+dog ei faae mig til at vige“.
+
+Hvad er nu Indbildning og hvad er Sandhed? Kan
+dette i Troens Sphære afgjøres med objektivt videnskabelige
+Grunde og Beviser? Umuligt! Havde vi end
+i hver Stad 70,000 theologiske Faculteter, og hvert Facultet
+70,000 lærde Theologer, og hver Theolog 70,000
+Folianter, og hver Foliant 70,000 theologiske Beviser:
+det skulde dog ikke rokke en Muhameds Tro, skulde,
+selv om han havde forstaaet hvert eneste Beviis til
+Punkt og Prik, ei faae ham til at vige et Haarsbred.
+Kan dette saa maaskee gjøre os usikkre over Troeserkjendelsens
+Gyldighed? Aldeles ikke. Synets Sands
+kan bedrage, hvi skulde Phantasien ikke ogsaa kunne
+bedrage. Men saa lidt som noget fornuftigt Menneske
+vil opgive at stole paa sit Syn, uagtet han veed, at
+Synet kan skuffe, lige saa lidt vil nogen troende Sjæl
+% --- p. 85 ---
+\setcounter{footnote}{0}%
+\opage{85}forarges over, at Aabenbaringen kommer i Phantasiens
+Form, ihvorvel han veed, at Phantasien kan skuffe.
+
+For at skjelne skarpt imellem Sandt og Falsk,
+maae vi bestandig have Opmærksomheden fæstet paa
+Phantasiens væsenlige Indhold i dets Eenhed med
+Formen. Dette gjælder ikke alene om det Religiøse,
+hvis Indhold er Aandsvirkelighed, Virkelighed for Aand;
+men det gjælder ogsaa i Sphærer, hvor Indholdet er, hvad
+vi særlig kalde Idee. Det gjælder i Konst og Poesie,
+det gjælder praktisk i den rationelle Ethik. Konsten
+har sin Sandhed, uagtet der gives Forvrængninger af
+Konst; Poesien har sin Sandhed, og denne Sandhed er
+netop kjendelig paa, at der gives en usand Poesie, en
+tom og fad, ja usædelig og for de Ubefæstede høist
+fordærvelig Poesie.
+
+Tør Poesien være usædelig? Der er ført megen
+Strid om Forholdet mellem det Skjønne og det Gode.
+De, som fordre, at Poesien skal være moralsk i den
+Forstand, at den umiddelbart skal moralisere, de glemme,
+at der hvad Indholdsformen angaaer, gives to væsenlig
+forskjellige Ideer, den æsthetiske Idee, det Skjønne, og
+den ethiske Idee, det Gode; de glemme, at Phantasien
+er Selvhersker i Skjønhedens Rige og har Ret til at
+tage Alt i sin Tjeneste, ikke blot det Gode, men ogsaa
+det Onde, det Umoralske, det Hæslige. Men de, der
+gaae til den modsatte Yderlighed og paastaae, at Poesien
+slet ikke behøver at ændse de sædelige Fordringer,
+de, der antage, at den frie Phantasie ligerviis som den
+frie Tanke kan i ethisk Forstand byde Læseren hvad
+det skal være; at den med Virkeligheden og dens Muligheder
+for Øie, netop feirer sin meest glimrende
+Triumph, naar den forstaaer at gribe en Bordelhistorie,
+% --- p. 86 ---
+\setcounter{footnote}{0}%
+\opage{86}et Emne i sine prosaiske Omrids saa gemeent, at modne
+Mænd for Velanstændighedens Skyld med Uvillie vise
+det fra sig, og dog udstyre dette lurvede Emne saa
+glimrende, saa brillant og pikant og lade Fremstillingens
+Trylleri forherlige det Uanstændige endog i den
+Grad, at unge Læserinder, uden at vide, hvad de gjøre,
+fordybe sig deri og draabeviis faae deres Phantasie
+forgiftet; --- de, der opfatte det Poetiske fra dette
+Synspunkt, maae paa Forhaand have lukket deres Øine
+for Poesiens guddommelige Mission.
+
+Det er ikke blot, hvad man fra et høitflyvende
+Emancipationens Standpunkt maaskee vil kalde en
+spidsborgerlig Moral, som herved bliver haanet: det er
+Ideen selv, der er krænket. Man gjøre Kløften mellem
+det Æsthetiske og det Ethiske saa bred, man vil, saa
+er det dog vel aabenbart, at den ethiske Idee har en
+idetmindste lige saa gyldig Realitet som den æsthetiske.
+
+At der lige saa vel maa gives en ethisk, som en
+æsthetisk Phantasie, er let at oplyse. Men i det Ethiske
+er Phantasien tjenende. Det er allerede bemærket, at
+Villien trænger til Phantasiens Hjælp. Intet er farligere
+for den sædelige Villie end en forvirret, forhexet, af
+falske Billeder vildledt Phantasie. Hvorfra stammer
+Forfængelighed? Fra falsk Phantasie! Og Ærgjærrighed
+og Pengegridskhed? Fra forhexet Phantasie! Og Vellystens
+Dæmon? Fra forgiftet Phantasie! Den, der
+planmæssig lægger an paa at fordærve et Menneske,
+vil ikke indskrænke sig til at omstøde disse eller hine
+Grundsætninger, eller lokke den Paagjældende ind i
+disse eller hine Vaner; nei! Fordærveren kan ikke være
+sikker paa sit Offer, før han i Bund og Grund har
+faaet dets Phantasie fordærvet. Først med den for%
+% --- p. 87 ---
+\setcounter{footnote}{0}%
+\opage{87}dærvede Phantasie ville de sidste Mindelser af Samvittighedsnag
+høre op, og den sidste Rest af en sædelig
+Idee være med Rode oprykket.
+
+Men det er dog vel indlysende, at de sande Ideer,
+hvor forskjellige de end indbyrdes ere, umulig kunne
+være hverandres Fjender og nære en saadan Ringeagt,
+ja et saa indgroet Had til hverandre, at den ene skulde
+lægge an paa at forhaane eller endog udrydde den
+anden. Forholdet er jo lige det omvendte: der er i
+Grunden god Forstaaelse mellem Idee og Idee, der er
+Fred og Harmonie i Ideernes Sphære.
+
+Vel kan der ogsaa tales om en Ideernes Egoisme,
+idet en enkelt Idee kan trænge saa stærkt paa, at den
+skyder de andre tilside; men denne Egoisme hører ikke
+til Ideernes indre Væsen; den kommer ved deres Gjennemgang
+gjennem det menneskelige Sind, paa Overgangen
+fra Evighed til Tid, til Udtræden i Verden, til Virkeliggjørelse
+i det Timelige. Det er med Ideen i Menneskets
+Sind som med Blommen til Fuglens Æg, først er den
+lille og blød som et Bær, dernæst som en Drue og tilsidst
+ved Gjennemgangen gjennem Æggelederen overtrækkes
+den med Hinden og den haarde Skal. Og dog
+kommer Ideen anderledes frem af sit Anlæg end Fuglen
+af Ægget. Jo mere en Idee er beaandet af det Almene
+og gjennemtrængt af Aand, desto klarere vil den under
+sin individualiserende Fremtræden vise os, at den med
+al sin Eiendommelighed vedkjender sig
+Slægtskabet
+med de øvrige Ideer, især med dem af den nærmeste
+Kreds, hvorunder den hører. Dette gjælder bogstavelig
+om Forholdet mellem den æsthetiske og den ethiske Idee.
+
+Den „moderne Poesie“ gjør vel i at
+tage „Verdens
+Børn“ som de ere, og blotte den Huulhed og Indbildskhed,
+% --- p. 88 ---
+\setcounter{footnote}{0}%
+\opage{88}hvormed en afbleget Fromhedsphantasie eller reglementeret
+Kasernemoral saa gjerne vil føre det store
+Ord; den gjør vel i at indsætte det naturlige Menneskes
+Drifter og Anlæg i deres oprindelige Rettigheder.
+Men disse Drifter og Anlæg maae jo dog have et
+menneskeligt Maal og være Aandens Love undergivne.
+Det er et uhyggeligt Tegn paa forvirret Phantasie, naar
+end ikke Digteren kan faae Øie paa Aandslovene, men
+gjør Driftens Tilfredsstillelse selv til Ideal, gjør sine
+Helte og Heltinder til Meteorer og Sæbebobler, og smiler
+ironisk, naar de stærke Sjæle, forviklede i deres egne
+Conseqvenser, gaae tilgrunde. Man kan ikke bebreide
+den moderne Poesie, at den fordyber sig i det Virkelige
+og vinder i Mesterskab, hvor det gjælder om at assimilere
+sig dets Elementer i levende Former og charakteersvangre
+Situationer. Men man kan med Grund bebreide
+den, at dens Livsbilleder ere falske, fordi de have
+enten en fad og tom eller endog aldeles falsk Baggrund.
+Det Poetiske lider ikke derved, at det nærværende,
+virkelige Liv med dets Modsætninger af selvvigtige
+Borneertheder og ekstastiske Emancipationer faaer Lov % PRINTED AS IS: „ekstastiske“
+at træde frem i tydelige Træk; men det lider forfærdeligt
+derved, at Indtrykket af den hele Fremstilling viser,
+at Digteren selv med al sin Begavelse er fattig paa
+Aand og kun driver Leg med Ideer, et verdensklogt
+og dog i sandselig Emancipation forvirret Subject, der
+mangler Maalestok. Den moderne Poesie --- Cherbuliez’s
+Miss Rowel f. Ex. --- forstaaer meget godt at forlige
+det Ethiske med det Æsthetiske, for saa vidt den har
+Noget deraf, men den har ikke Meget.
+
+Efter det evige Væsen maa det Gode absolut være
+skjønt, og det Skjønne godt. Ikke desto mindre er
+% --- p. 89 ---
+\setcounter{footnote}{0}%
+\opage{89}Phantasieformen for disse Ideers Fremtræden høist
+forskjellig.
+
+I Konst og Poesie bearbeider Phantasien det Virkelige
+alene fra Mulighedssiden; det vil sige: den faaer
+kun Virkeligheden med i Speilbilleder af det Virkelige,
+men det Virkelige selv rører den ikke med en Finger.
+Den lader den reelle Verden gaae sin egen skjæve Gang
+og bygger sig til Erstatning en ideal Verden, rigere,
+herligere og mere fortryllende end den, som er dannet
+af det grove Stof. Og Menneskene forlystes ved Synet
+af den nyskabte Verden; Lys og Skygge hvor ere de
+lykkelig fordeelte, Lysbrydningerne mangfoldige og Farveblandingen
+smeltende, yndig, henrivende. Her blotter
+Naturen sine dulgte Skjønheder, sine jomfruelige Hemmeligheder.
+Her gaaer det med Fart over Bjerge og Dale;
+selv Modgangen er et Krydderi, Sinkerierne, belles
+horreurs, ere interessante. Og Menneskene i denne
+Verden, hvor ere de aabenhjertige! De betroe os Alt,
+hvad de føle og tænke. Man kommer dem saa nær,
+man kan fornemme deres Aandedrag og mærke, hvor
+Pulsen slaaer. Her er Befordring, her er Erfaring, her
+vindes Menneskekundskab: man har „Mosters Briller“
+paa, og seer hver Enkelt lige ind i Hjertet.
+
+Med den ethiske Phantasie er det anderledes tarveligt. Idet Phantasien tager Tjeneste hos Villien, maa
+Virkeligheden jo vistnok ogsaa opfattes fra Mulighedernes
+Side; men med de ethiske Muligheder forholder det sig
+paa en ganske anden Maade end med de æsthetiske.
+De eneste Muligheder, som Villien ændser, er dem, som
+virkelig lade sig realisere. Villien seer med Phantasiens
+Blik paa Muligheden, men, vel at mærke, for Virkelighedens
+Skyld; den ethiske Villie gaaer fra Virkelighed
+% --- p. 90 ---
+\setcounter{footnote}{0}%
+\opage{90}gjennem Mulighed over til en ny Virkelighed, thi den
+omarbeider Virkeligheden.
+
+Er nu den nye, af Villien bearbeidede Virkelighed
+skjønnere og rigere end den, hvormed der begyndtes?
+Vi svare: Ja! kun at Skjønheden ikke væsenlig er i det
+Udvortes, men i det Indvortes. Lægges det afgjørende
+Eftertryk paa Forskjønnelsen af det Udvortes, saa tager
+det Æsthetiske Magten fra det Ethiske, og den hele
+Bestræbelse, om der end arbeides i Ansigtets Sved,
+faaer et overveiende Præg af blot æsthetisk Phantasie.
+
+Her er et Phantasiebedrag, for hvilket Culturverdenen
+med sin rastløse Arbeiden for Livets Bekvemmeligheder,
+Comfort i det Mindre og storartede
+Forskjønnelser i det Større, store Anlæg, store Bygninger,
+store Mindesmærker o. s. v., idelig er udsat.
+Bedraget bestaaer ingenlunde deri, at der arbeides i
+det Materielle paa Fremgang og Forskjønnelse, langtfra!
+Bedraget er, at denne Arbeiden i udadgaaende Retning
+sættes som et usvigeligt Tegn paa det Ethiske. Bedraget
+er, at det Ethiske, langt fra at holde Skridt
+med Kulturen, tvertimod svækkes, idet Pragtphænomenernes
+Glands giver Maalestokken an og sætter det
+Godes usynlige Skjønhed i Skygge.
+
+Det Godes Skjønhed er, naar vi lægge Vægt paa
+Modsætningen til det Æsthetiske, en usynlig Skjønhed.
+Vel har denne usynlige Skjønhed ogsaa sit Phænomen,
+og kan sees i Phantasie; men den æsthetiske Betragtning
+giver kun en forbigaaende Stemning: den sande
+Indsigt er betinget af personlig Oplevelse. Trofasthed,
+Standhaftighed, Taalmodighed, Langmodighed, ere usynlige
+Skjønheder. Det er ikke de ydre Omgivelser, som
+her skulle glimre; tvertimod! selv den æsthetiske Phan%
+% --- p. 91 ---
+\setcounter{footnote}{0}%
+\opage{91}tasie forstaaer, at de --- for Effectens Skyld --- helst
+maae være saa tarvelige som muligt. Et mørkt Fængsel,
+en fattig Stue, et Sygeleie, det er Omgivelser, som
+passe for den usynlige Skjønhed.
+
+Den æsthetiske Phantasie kan digte Taalmodigheden
+og forelske sig i sit Digt; men den virkelige Taalmodigheds
+Væsen fatter den ikke. Den kan forelske
+sig i et skjønt Ansigt; men naar den forelsker sig i
+Taalmodighedens Skjønhed, falder der et Slør over dens
+Øine, thi den seer ikke Væsenet selv, men kun et Skin,
+og begriber ikke, hvorledes den taalmodige Sjæl i
+Virkeligheden kan holde ud at være saa taalmodig.
+Dette Spørgsmaal kan alene den ethiske, ja strengt
+taget den religiøs-ethiske, Phantasie forstaae, men ---
+paa Oplevelsens Betingelse.
+
+Vi begyndte med at see os om i Phantasiens store
+Rige, og nu vi have seet, at dette Rige er uendeligt,
+er vor korte Vandring til Ende. Vil Nogen sige ved
+sig selv: det er Skade, thi nu var det just værd at
+begynde, da vilde det være mig ikke blot en Paamindelse,
+at denne Fremstilling visselig har sin Ufuldkommenhed,
+men ogsaa et Vidnesbyrd om, at vi dog
+paa vor korte Vei have mødt Adskilligt, hvormed det
+vel var værd at gjøre nærmere Bekjendtskab.
+
+\end{document}
