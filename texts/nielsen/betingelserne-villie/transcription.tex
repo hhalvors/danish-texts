@@ -1,0 +1,3364 @@
+% =====================================================================
+%  R. Nielsen, OM BETINGELSERNE FOR EN KRAFTIG VILLIE.  Sex Forelæsninger.
+%  Kjøbenhavn: Den Gyldendalske Boghandel (F. Hegel); trykt hos J. H. Schultz, 1874.  83 pp.  Antiqua.
+%
+%  TRANSCRIPTION -- GENERATED; DO NOT EDIT BY HAND.  Rebuild from the repo root:
+%    python3 ebook-method/betingelserne-villie/draft.py --emit --force \
+%      && python3 ebook-method/collate/check.py betingelserne-villie --italics --apply \
+%      && python3 ebook-method/betingelserne-villie/draft.py --post
+%
+%  STATUS: COMPLETE (2026-10-12): title page and the whole text, pp. 1-83.  The book has no preface, contents or notes.
+%
+%  EDITION.  The text of record is the Google Books scan of the New York Public Library copy (barcode 33433081648804;
+%  ~/bibliotek/Nielsen, Rasmus/betingelserne74.pdf, SCANS.tsv), 600 ppi bitonal, Google's OCR as text layer.
+%  (betingelserne_for_en_kraftig_villie.pdf in the same folder is the same scan re-paged.)  The second printing,
+%  »Andet Oplag« (Kjøbenhavn: J. H. Schubothe, 1884; KB scan betingelserne84.pdf, ABBYY layer), is a RESETTING with other
+%  page breaks: it is not the text transcribed, but it served as a finding aid (below).  No e-book and no earlier
+%  transcription exists (checked 2026-10-12: the repo, the web, KB).  An English translation, »The conditions of a
+%  powerful will« (1882), exists and was not used.
+%
+%  ACCURACY (2026-10-12).  The words are those of Google's layer (draft.py), collated word by word with an independent
+%  tesseract reading of the images (collate/check.py, witness 'ocr'): 623 disagreements.  78 were settled by check.py's
+%  own rules, 213 by rules.py -- each rule grounded in this book's crops: the dashes the layer drops; o/ø and other
+%  ø-faults of the layer where the ø-form is the corpus's word (the ø rule); the printer's space before ;:?! ; a layer
+%  stop between a word and a lower-case word (a speck); tesseract's guillemets where the layer has none (the print sets
+%  »...« and »...», both; the layer drops most of them and writes others as >> <<); the sheet signature.  The rest, 330,
+%  were read at the image BLIND (sheets.py: crops with no readings shown, two planted controls a sheet, 58 of 58 controls
+%  read right; six Sonnet readers, .parts/reads/r-b1-A.tsv, r-b2-B..F.tsv), and ~115 of those decided in the main session,
+%  some at 300 dpi (zoom.py).  Then a FINDING AID: diff84.py compared the collated text with the 1884 resetting word by
+%  word (236 differences) and every spot not explained by 1884's OCR or obvious revision -- 113 -- was read at the image
+%  (zoom.py, z84-z90, zoom84-items.tsv).  It found what neither OCR could: ten spurious long dashes (tesseract reads a
+%  wide space after a stop as „—“; the 'dash+' rule had taken them), two marks tesseract invented (pp. 20, 80), specks
+%  read as stops by both OCRs, closing guillemets both missed, three words the layer split, a gutter loss (p. 40), and
+%  six misprints.  Letterspacing (the print's only emphasis; no italics: slant scores 99% <= 1.02): candidates measured by
+%  letter gaps (spacedsheets.py, threshold 0.095, 83 lines read blind; spaced.tsv, 56 runs); short spaced words off those
+%  lines may be missed.  SAMPLED PAGE CHECK (pagecheck.py, seed 20261012): pp. 1, 27, 45 and the title page read whole
+%  and blind, 929 words: 1 word error (the misprint „bebandle“ p. 27, which both OCRs had normalised), 0 punctuation,
+%  0 markup -- 1.1 per 1000 words (95 % upper bound 5.1).  What this cannot see: a misprint both OCRs normalise where
+%  the 1884 resetting has the correct word too -- the page check suggests about one in a thousand words.
+%  PRINTED AS IS (each seen at the image; a % comment at the site): „netcp“ (p. 5), „Fortsaaelse“ (p. 11),
+%  „Mennnesket“ (p. 12), „1“ for I (p. 17), „bebandle“ (p. 27), „Aabenbarlse“ (p. 54), „fortætte“ (p. 57),
+%  „Følelsebedrag“ (p. 60); a missing stop after „Villie“ (p. 2), „Eenhed“ (p. 14), „Uleilighed“ (p. 82).
+%  Supplied: p. 40 „tilvisse!“ (all but lost at the gutter in this copy) and „per[sonlige]“ (lost), read as the 1884
+%  resetting has them.  The ø rule (Hans 2026-10-08) applied: „sløves“ (p. 82) and the layer's o-forms throughout.
+%  Not transcribed: sheet signatures („R. Nielsen: Om Villien. N“, „N*“), library stamps and pencil, the copy's pen
+%  strokes (one overdraws the dash on p. 36), the wavy rule under each lecture heading (\lecture draws a short rule).
+%  Bold: one line, p. 49.  Quotation marks are as printed, in both directions.
+%
+%  PAGE MAP.  printed p = PDF page - 12 (p. 1 = PDF 13, p. 83 = PDF 95); title PDF 11, verso PDF 12 (stamps only).
+%  Each lecture begins on a new page: I p. 1, II p. 12, III p. 23, IV p. 35, V p. 48, VI p. 65.
+%
+%  TOOLS (ebook-method/betingelserne-villie/, copied from om-aandsdannelse and udvalgte-stykker): draft.py, ocr.py,
+%  rules.py, sheets.py + reads.py + READER-BRIEF.md, spacedsheets.py, diff84.py, zoom.py, pagecheck.py +
+%  PAGECHECK-BRIEF.md, patches.py (PATCHES, POST), spaced.tsv, decisions.tsv.  Agent tokens: crop readers ~634k,
+%  page reader ~88k.
+%
+% =====================================================================
+\documentclass[12pt,a4paper,openany]{book}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{libertinus}
+\usepackage{libertinust1math}
+\usepackage[danish]{babel}
+\usepackage[protrusion=true,expansion=true]{microtype}
+\usepackage{setspace}
+\usepackage[margin=1.3in]{geometry}
+\usepackage{fancyhdr}
+\usepackage{hyperref}
+\hypersetup{pdftitle={Om Betingelserne for en kraftig Villie}, pdfauthor={Rasmus Nielsen}, hidelinks}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LE,RO]{\thepage}
+\fancyhead[C]{\textit{R. Nielsen: Om Betingelserne for en kraftig Villie (1874)}}
+\setstretch{1.3}
+\usepackage{marginnote}
+\renewcommand{\thefootnote}{\arabic{footnote})}
+\newcommand{\tocline}[3]{\noindent\makebox[2.2em][r]{#1}\hspace{0.6em}#2\dotfill\ #3\par}
+\newcommand{\opage}[1]{\marginnote{\footnotesize\textit{[#1]}}}
+% a lecture opens a new page: heading, a short rule; the print's large initial is not reproduced
+\newcommand{\lecture}[1]{\clearpage\begin{center}{\large #1}\\[0.4em]\rule{3em}{0.4pt}\end{center}\medskip\noindent}
+
+\begin{document}
+
+% --- front matter: PDF 11, title (to be read at the image).  The verso (PDF 12) carries only library stamps.
+\begin{titlepage}
+\begin{center}
+\vspace*{3em}
+{\Huge Om Betingelserne}\\[0.6em]
+{\large for}\\[0.6em]
+{\Huge en kraftig Villie.}\\[2.5em]
+Sex Forelæsninger\\[1em]
+af\\[1em]
+{\large R. Nielsen.}\\[5em]
+Kjøbenhavn.\\[0.5em]
+Forlagt af den Gyldendalske Boghandel. (F. Hegel.)\\[0.5em]
+{\small Trykt hos J. H. Schultz.}\\[0.5em]
+{\small 1874.}
+\end{center}
+\end{titlepage}
+
+
+% ===== TEXT (pp. 1--83) =====
+% --- p. 1 ---
+\setcounter{footnote}{0}%
+\lecture{Første Forelæsning.}\opage{1}
+
+Der er i Menneskenes Sind en ubetvingelig Uro, en
+dunkel ustyrlig Drift, som jager efter Frihed. Hvad er da
+Frihed? Et personligt Gode, altsaa mere end et udvortes
+Vilkaar. Dersom Frihed blot var et udvortes Vilkaar, en
+Tilstand, der kunde naaes ved at unddrage sig ydre Baand
+og Tvang, da vilde Zigeuneren være friere end Statsborgeren,
+Markens vilde Dyr og Fuglene under Himlen
+friere end Mennesket. Men Frihed er væsenlig et indvortes
+Gode, Frihed er vor Individualitets Selvstændighed, vor Personligheds
+Grundpræg; Frihed er vort Adelsbrev, vort indre,
+sande, oprindelige Selv.
+
+Selvstændighed beroer paa Selvbestaaen, Selvbestaaen
+paa Selvbestemmen, og Selvbestemmen er Frihed: jo mere
+Selv der er i et Menneske, desto større er Friheden; jo
+mindre og svagere Selvet er, desto mindre er Friheden.
+Frihedens Grund er Villie, thi Villien er Selvets Kjerne.
+Selvet er det Selvbestemmende, men Selvbestemmelsesevnen
+er netop Villien; Villien er fri: jo kraftigere Villie, desto
+større Frihed, jo svagere Villie, desto mindre Frihed.
+
+Ere nu alle Mennesker oprindelig anlagte paa Frihed,
+saa er jo hermed givet, at de alle uden Undtagelse maae
+have en fri Villie. Men idet vi antage, at alle Mennesker
+have fri Villie, saa maae vi dog tilstaae, at vi langtfra alle
+besidde Villiens Frihed i lige Maal; Nogle have en stærk,
+Andre en svag Villie: hvoraf kan det vel komme? Er
+Villien noget Medfødt eller noget Selverhvervet eller maaskee
+% --- p. 2 ---
+\setcounter{footnote}{0}%
+\opage{2}en Himlens Gave, en Gave af Aanden, den evigt frie? Vi
+kunne nu gjerne sige, at den deels er noget Medfødt, deels
+noget Selverhvervet, og dog i Et og Alt en Himlens Gave;
+men saa kommer det da an paa, hvorledes dette nærmere
+bliver at forstaae.
+
+Vor første Forudsætning er, at Villien beroer paa
+noget Medfødt. Til Villie hører naturligt Anlæg. Det
+er en Kjendsgjerning, at der fødes Individualiteter med saa
+fremtrædende Selvstændighed, at de fra Naturens Haand
+udgaae som lutter Villie % PRINTED AS IS: no stop
+Det er de fødte Herskere; Herskerpræget
+med dets Overlegenhed er over dem, enten de
+for Øvrigt befinde sig i høiere eller lavere Stilling. De,
+der saae en Napoleon i hans første Ungdom, mødte det
+samme Blik, de fine, læselige Skjæbnetræk, den samme Sluttethed
+og jernfaste Villie hos den unge Elev fra Brienne som
+siden hos den store Keiser. Andre derimod komme til Verden
+med saa svage Selvstændighedsanlæg og forraade en saa
+paafaldende Villieløshed, at de synes bestemte til at gaae
+i Ledebaand hele Livet igjennem. Selv om de fødes i
+Purpur og, saa at sige, med et Scepter i Haanden, er
+Villiessvagheden dog saa stor, at de aldrig selv formaae
+enten at fatte eller fastholde nogen afgjørende Beslutning.
+De leve under et bestandigt Formynderskab: Yndlinge,
+Tjenere, Raadgivere maae paatage sig at ville i deres Sted,
+og de paatage sig det gjerne.
+
+Istedenfor at gaae ud fra Grundsætningen om alle
+Menneskers lige Adkomst til Frihedens Goder, skulde man
+fra dette Synspunkt fristes til at troe, at Naturen havde
+reist et uoverstigeligt Grændseskjel mellem Fribaarne og
+Ufribaarne, havde forud bestemt Nogle til Selvstændighed,
+Andre til Afhængighed, Nogle til Herrer, Andre til Slaver.
+Vi tør imidlertid, hvad det Medfødte angaaer, ikke oversee,
+at det ingenlunde forholder sig med Villiesevnen som med
+andre Sjæleevner f. Ex. Hukommelsen. Naar En siger: jeg
+har engang havt en meget tro Hukommelse, men desværre
+næsten tabt den i en stor Sygdom, saa beklage vi ham,
+og vor Beklagelse er uden Forbehold. Vil Nogen derimod
+% --- p. 3 ---
+\setcounter{footnote}{0}%
+\opage{3}træde frem og sige: jeg har engang havt en meget kraftig
+Villie, men ulykkeligviis mistet den i en Feber, saa beklage
+vi ham vel ogsaa, men dog med et eget Forbehold. --- Man
+kan miste Synet uden at miste Hørelsen, man kan til en
+vis Grad tabe Hukommelsen uden at tabe Forstanden;
+men vi kjende ingen Sygdom, hvori et Menneske kan tabe
+Villien, og for Resten gjenvinde sin Helsen.
+
+Den, der forsikkrer, at han har alle Sjæleevner ubeskaarne
+paa Villien nær, som desværre gik tabt i en Koldfeber,
+kan ikke være rigtig i Hovedet. Et besynderligt
+Menneske! Han har Kundskaber, Dannelse, brillant Hukommelse
+og som det synes ogsaa god Forstand, kan tale
+med om mange Ting, Videnskab, Politik, Konst, Handelsaffairer,
+uden at man mærker Noget; kun naar han kommer
+paa det ene Punkt, det Punkt om Villien og Koldfeberen,
+bliver han sær. Sligt kan hændes, naar vi tænke
+paa Sindssygdomme. En ældre Kone, som i sin Familie
+altid havde været anseet for sund og karsk, kom pludselig
+til den Overbeviisning, at hun ikke kunde spise. Havde
+hun da ingen Appetit? Jo. Var hun bange for at blive
+forgivet? Nei. Hvad var der da i Veien? Ak, det var
+en haard Skjæbne. Hun havde længe anet det; men nu
+var det pludselig gaaet op for hende; hun var nemlig
+ikke som andre Mennesker forsynet med indvendige Organer,
+og hvad kunde det saa nytte, at hun spiste. Hun var,
+forsikkrede hun, huul indeni, ganske huul, huul som en
+Tromme, og saa græd hun. Paa lignende Maade kan et
+Menneske falde paa den Fixidee, at han har tabt sin Villie,
+eller slet ikke er blevet begavet med Villie, at der i hans
+Indre er noget Huult, inderst inde et tomt Rum, et lille
+mørkt Hul, just der, hvor Villien skulde sidde.
+
+Det er en Fixidee; men idet vi føle os overbeviste
+om, at det maa være en Fixidee, gjøre vi et Fremskridt i
+Erkjendelse. Vi indsee nemlig, at Villien, trods det Medfødte
+i Evnen, er anderledes afhængig af os selv end hvilkensomhelst
+anden Evne. Jeg faaer ikke en stærk Hukommelse,
+fordi jeg vil, eller en frugtbar Forstand, fordi jeg
+% --- p. 4 ---
+\setcounter{footnote}{0}%
+\opage{4}vil, eller en dyb Følelse eller en rig Indbildningskraft,
+fordi jeg vil; slige Fortrin beroe paa Naturbegavelse,
+og herom gjælder det, at Ingen kan lægge en Alen til sin
+Væxt. Med Villien er det en anden Sag; Villie faaer jeg
+kun, idet jeg vil, ene og alene, fordi jeg vil. Et Menneske
+kan have nok saa store Gaver og rige Evner: dersom
+han ikke vil, saa faaer han ingen Villie. Den, der vil
+halvt, faaer en halv Villie; men den, der kraftig vil, faaer
+en kraftig Villie. Villien er fra dette Synspunkt sin egen
+Aarsag: ved at ville frembringe vi Villie. Villien er altsaa
+vor egen Frembringelse, en Frembringelse, hvorunder Selvet,
+det Villende i os, frembringer sig selv. Det kan gives os at
+ville, men Villien kan ikke gives os, vi maae erhverve den
+selv: Villien er noget \emph{Selverhvervet}.
+
+Hvorfor have saa ikke alle Mennesker en lige stærk
+og kraftig Villie? Det maa, ifølge den sidst opstillede
+Synsmaade, være deres egen Skyld. Og dog har ogsaa
+denne Synsmaade sin Misviisning. Her melder sig En med
+en Indvending, lad os høre ham. Han siger: Dersom Villie
+alene beroede paa det at ville, saa vilde min Villie, det
+være sagt uden al Beskedenhed, være en af de største og
+stærkeste i Samtiden. Thi Villiens Selverhvervelse, Villie
+frembragt ved Villie, en sig bestandig forøgende og forstærkende
+Selvbestemmen, en mægtig, stor og kraftig Villie er
+netop det Ideal, jeg har sværmet for fra min Ungdom af.
+Men jeg er, just paa Grund af min Iver, kommet tilkort
+med Idealet. Ikke har jeg hengivet mig til den sværmeriske
+Indbildning, at et Menneske kan i det Udvortes Alt, hvad
+han vil, at Villien kan flytte Bjerge. Jeg har holdt mig
+til de mig forundte Evner; men netop i det Indvortes har
+jeg seet den gabende Kløft mellem at \emph{ville} og at \emph{kunne}.
+For at kunne bestemme Villien som min egen, maatte jeg
+begynde med en omhyggelig og nøiagtig Udskillen af det,
+som var mit, fra det, som ikke var mit. Men da jeg
+havde udskilt Alt, som ikke var mit, hvormeget beholdt
+jeg saa tilbage? Kun det at ville, den indre Bestemmen,
+Villiestanken, den rene Villen, et Skyggevæsen uden Kraft.
+% --- p. 5 ---
+\setcounter{footnote}{0}%
+\opage{5}Kun forsaavidt jeg er mig min Villie tydelig bevidst, tør
+jeg kalde den min, og kun forsaavidt jeg tør kalde den
+min, kan jeg selv bestemme den. Hvad der er mig ubevidst,
+er ikke mit; Ingen kan bestemme, hvad han ikke
+kjender. Det eneste i Villien, jeg er mig bevidst, er det,
+at jeg vil. Med denne Bevidsthed kan jeg sidde hele Dage
+og ville og ville uden at udrette det Allermindste. I
+samme Øieblik jeg forsøger at foretage mig Noget, indløber
+der strax en Mængde ueensartede Biomstændigheder, som
+jeg ikke gjennemskuer, og hvorover jeg ikke er Herre. Jeg
+kan sidde ved et rigtbedækket Bord, hungrig og tørstig:
+dersom jeg ikke gjorde Andet end ville, saa sultede jeg
+ihjel, og det var dog netcp % PRINTED AS IS (netop)
+det, som jeg ikke vilde. Nu
+sige Menneskene rigtignok, at Sligt er Spidsfindighed. »Ræk
+Haanden ud og tag for dig; med andre Ord: brug dine
+Kræfter, saa sulter du ikke ihjel «. Men jeg har en Mistanke
+om, at Menneskene i slige Ting ikke altid vide,
+hvad de selv sige. »Brug dine Kræfter!» det er jo netop
+min Gaade. Er det Kræfternes Brug, der beroer paa Villien,
+eller er det ikke snarere Villiens Brug, der beroer paa
+Kræfterne? Naar vi vilkaarlig bevæge Arm og Haand, da
+forekommer det os vel, at det er vor bevidste Villie, der
+gjør det; men at det ikke er saaledes, kan den ringeste
+Eftertanke lære os. Villien bevæger Nerverne, Nerverne
+Musklerne, og Musklerne Armen, uden at vi paa
+nogen Maade ere istand til at blive os bevidste, hvorledes
+det egenlig gaaer til. Kun Saameget vide vi, at det ikke
+er det i vor Villie, vi tør kalde vort Eget, som formaaer
+at udrette Sligt. Bliver Armen lam, skjæres Bevægenerverne
+over, saa kan den Paagjældende ville saa kraftig,
+han vil: Armen bevæger sig ikke.
+
+Dersom Kræfternes Brug ubetinget beroede paa vor
+Villie, da maatte vor Villie jo selv have Kræfterne i sin
+Magt. At erhverve sig Villie ved kraftig at ville, vilde da
+bogstavelig være det Samme som at frembringe de legemlige
+Kræfter, hvortil Villien trænger. Man maatte da ved
+selverhvervet Villie kunne overvinde Sygdom og frembringe
+% --- p. 6 ---
+\setcounter{footnote}{0}%
+\opage{6}Sundhed; men at dette er umuligt, tilstaaer Enhver. Det
+er en Kjendsgjerning, at visse Muskler og Muskelbevægelser
+ere Villien underlagte; men at det ingenlunde er Villien,
+vor bevidste, selverhvervede Villie, som fra Begyndelsen
+af har gjort sig til Herre over Musklerne, er indlysende.
+At ville forklare Organernes Brug af Vanen er tankeløst.
+Vane kommer ved Gjentagelse; Villien, hedder det, gjentager
+Brugen af Organerne saalænge, indtil den tilsidst
+bliver Herre over Bevægelserne. Saa forklarer man Kræfternes
+Brug ved at sige: Brugen gjentager sig; en maadelig
+Forklaring, naar der netop spørges om Brugens Mulighed.
+Det er jo, som vilde man forklare et Mirakel ved
+at sige: Miraklet gjentager sig.
+
+Den Sygdom, man kalder St. Veits Dands, giver
+iøinefaldende Exempler paa Misforhold mellem Villien og
+Bevægelserne. Lemmerne bevæge sig uden at adspørge
+Villien. --- I Talens Strøm synes det, som om Ordene i
+deres Forbindelse ligefrem bleve styrede af vor bevidste
+Villie, og dog er det ikke altid let at finde just det Ord,
+man søger. I Tilfælde af Hjernesvækkelse kan Skilsmissen
+mellem det, den Syge egenlig vilde sige, og det
+han virkelig siger, endog være saa stor, at han f. Ex.
+siger Kjøkken, naar han mener Brød, og Skuffe, naar han
+mener Penge. Villien sigter paa det Rette, men de bevægende
+Kræfter unddrage sig den rette Brug.
+
+Det er med Villien som med en Herre, der udretter
+Alt ved Tjenere, og desaarsag maa bære Ansvaret
+for Alt, hvad Tjenerne gjøre. Er det noget Godt, saa
+roser man, ikke Tjenerne, men Herren, thi det var jo ham,
+der vilde det; er det noget Ondt, saa dadler man, ikke
+Tjenerne, men Herren, thi det var jo ham, der vilde det.
+Dette er altsammen i sin Orden, saalænge Tjenerne ere,
+som villieløse Slaver, punktlig lydige. Men begynde de
+at gaae paa deres egen Haand og blive ulydige eller dog
+kun halvt lydige, saa kan Herren ikke længer tage Skylden
+paa sig. Og dog har en Herre i Reglen større Hævd
+over sine Tjenere, end Villien over sine Kræfter. Det
+% --- p. 7 ---
+\setcounter{footnote}{0}%
+\opage{7}staaer i Herrens Magt at give en ulydig Tjener Afsked
+og antage en ny Tjener; men det staaer ikke i Villiens
+Magt at give de gamle ulydige Nerver Afsked og antage
+nye i deres Sted.
+
+Brug dine Kræfter! det er som vilde en Aladdin
+sige: gnid paa Lampen! Villiens Brug af Kræfterne er
+vel ikke eventyrlig, thi den er bunden til Lovene; men i
+sin sidste Grund er den desuagtet lige saa uforklarlig som
+Aandens Komme, naar Lampen gnides. Villien vil, og
+Kræfterne røre sig; der gnides paa Lampen, og Aanden
+kommer: det første Phænomen er gaadefuldt som det
+sidste.
+
+Vi have her betragtet to indbyrdes modsatte Forestillingsmaader,
+af hvilke den første udelukkende gjør
+Villien til noget \emph{Medfødt}, medens den sidste ligesaa
+udelukkende gjør den til noget \emph{Selverhvervet}. At de
+begge ende i det Urimelige, kommer af, at de begge, hver
+paa sin Maade, forvexle Villien selv med dens Betingelser.
+Det Medfødte er endnu ikke Villie; det er kun Villiesanlæg,
+og forsaavidt en \emph{Betingelse}. Det Selverhvervede er ikke
+Villiens Grund; Selverhvervelsen forudsætter netop det, som
+skal erhverves. For at frembringe Villie, maa man ville, men
+for at \emph{kunne} ville, maa man jo allerede have Villie, for
+kraftig at ville, maa man have en kraftig Villie. Den,
+som slet ingen Villie har at begynde med, kan ikke ville,
+og den, som ikke forud har en kraftig Villie, kan ikke
+ville kraftig. Saa sees da heraf, at den Selverhvervelse,
+hvorunder Villien bliver til og voxer, ikke kan være Villiens
+inderste Grund og første Aarsag, men kun en Betingelse.
+
+
+Nu kunde man fristes til at slaae de to Betingelser
+sammen og sige: Villien er deels noget Medfødt, deels
+noget Erhvervet; ved at tage det Medfødte og det Erhvervede
+under Eet, faae vi baade Villiens Selvbestemmen
+og dens Grund, altsaa: den hele Villie. Det er en Umulighed;
+de to Betingelser ere altfor ueensartede til, at de
+saadan uden videre skulde lade sig sammensmelte. Der
+% --- p. 8 ---
+\setcounter{footnote}{0}%
+\opage{8}er i Villiens Væsen Noget,  der beroer paa Naturen, og
+Noget, der beroer paa os. Men det, der beroer paa Naturen,
+kan umulig beroe paa os; thi, hvis saa var, maatte
+vi jo sige, at det Hele beroer paa os. Omvendt kan det,
+som beroer paa os, da heller ikke siges at beroe paa Naturen;
+thi, hvis saa var, maatte jo det Hele komme til
+at beroe paa Naturen. Nei, det, som skal kunne forene
+de to ueensartede Betingelser, maa nødvendig være et
+tredie Høiere, en Villiesmagt, som paa en Gang er i Naturen
+og dog over Naturen, i os og dog over os: denne
+Villiesmagt er \emph{Aanden}.
+
+Idet vor frie Villie opfattes som en Aandens Gave, bliver
+den i allerhøieste Forstand en Opgave, og Opgavens Løsning
+religiøs. Men netop ved det Religiøse begynde Vanskelighederne
+forfra, thi her begynde Mistydningerne for Alvor.
+
+Det Religiøse har mange Fjender. Fromme Mænd
+klage bitterlig over Nutidens Ugudelighed og tiltagende
+Vantro; de have vel Grund dertil, naar de vende Blikket udad
+og see det stadig voxende Tal af udvortes Fjender. Men
+Fjenden er i det Indvortes! »Ja«, svare de, »vor Arvefjende
+er indvortes, det er Djævelen, Antichristen, Dyret
+med de mange Horn, hvis Tegn vi snart faae at see --- i
+det Udvortes«. Men Fjenden er i det Indvortes, i det Religiøse
+selv, en Hær af snigende Misforstaaelser. De første
+farlige Fjender, et troende Sind har at værge sig imod,
+ere Misfostre af dets egen opulmende Indbildning. Slige
+Misfostre vise sig under mange Forklædninger; de melde
+sig ikke altid med Sjæleangst, lyssky Forsagthed og Tvivl, de
+melde sig ligesaa ofte med svullen Tro, falsk Sikkerhed
+og en vis tykblodig Selvtillid, som hindrer Aandens
+Udvikling. De, som ville bygge paa Religionens hellige
+Grund, maae bære sig ad som Israeliterne, da de byggede
+paa det andet Tempel, den Helligdom, som i Tidens Fylde
+skulde modtage Verdens Frelser; de byggede med Værget
+i Haanden. Kun er Forskjellen den, at Fjenderne af hiint
+udvortes Tempel vare udvortes; men Fjenderne af Aandens
+Helligdom ere væsenlig indvortes.
+
+% --- p. 9 ---
+\setcounter{footnote}{0}%
+\opage{9}Ogsaa Reflexioner ere farlige, naar Forstanden, medens
+den endnu er usikker over Villielivets Forudsætninger,
+begynder at raisonnere. Her er En, som klager, at han
+trods al sin Eftertanke ikke er istand til at komme paa
+det Rene med, hvorledes det i Troen egenlig forholder sig
+med Aanden og Villien. Jeg hører jo nok, siger han, en
+heel Deel salvelsesfulde Forsikkringer om, at det er Gud
+den Helligaand, der gjenføder Mennesket, skaber i os et
+nyt Menneske, et nyt Sind, en ny Villie o. s. v. Naar
+der tales saadan i al Almindelighed derom, især naar der
+tales i Pathos, faaer jeg en Fornemmelse, som om jeg ogsaa
+forstod det, at sige: i al Almindelighed. Men naar jeg
+saa gaaer i mig selv og ret forsøger at gjøre mig Rede for,
+hvorledes det da egenlig forholder sig med Aand og Villie,
+saa løber det rundt for mig. De Opvakte tilraabe mig:
+»Du skal ikke gruble, men troe; naar Du bare vil troe, saa
+gaaer det som af sig selv!« Jeg vil gjerne troe, men hvormed
+skal jeg praktisk begynde, fra hvem skal Begyndelsen udgaae,
+fra Aanden eller mig selv? Er det mig, der skal
+gjøre det første Skridt, saa nødes jeg da til at begynde
+med den Villie, jeg har; men den Villie, jeg har, er jo
+netop den gamle Villie, en Villie, som ikke duer, en Villie
+udenfor Aanden, altsaa en aandløs Villie. Hvorledes kan
+et Menneske komme til Aanden ved Hjælp af en aandløs
+Villie? Saa hedder det: »Du skal bede om Aanden!« Men
+saalænge jeg endnu ikke har faaet Aanden, er jo min Bøn
+aandløs! Det kan altsaa ikke være mig, der skal begynde;
+det maa være Aanden. Staaer det nu fast, at Begyndelsen
+udgaaer, ikke fra mig, men fra Aanden: saa har jeg intet
+Andet at gjøre end at sidde stille hen og vente paa Aanden.
+Skal jeg da blive Kvæker? Man svarer mig: »Du
+har jo Aanden, saa sandt Du er døbt. Det kommer alene
+an paa Dig selv, om Du vil ihukomme din Daabspagt og
+lade Aanden virke.« --- Lade Aanden virke! Men saa
+er her jo dog Noget, der udelukkende beroer paa mig,
+ikke paa Aanden. Hvad vil det sige, at ihukomme sin
+Daabspagt? Det kan dog umulig være en blot og bar
+% --- p. 10 ---
+\setcounter{footnote}{0}%
+\opage{10}Hukommelsessag; her maa være Noget, som udtrykkelig
+beroer paa Sind og Villie, mit eget Sind, min egen
+Villie. For at Aanden skal kunne virke i mig, maa
+jeg altsaa, som ovenfor sagt, ved min, endnu aandløse,
+Villie hjælpe den til at virke. Saa griber man
+da til den sidste Forklaring og siger: »Du skal ikke
+belure Aanden, ikke formaste Dig til at ville forstaae, hvorledes
+den virker. Den virker i det Skjulte som en ny Natur;
+Du skal erfare dens Virksomhed som en Kjendsgjerning.
+Du kan erfare, at Planten voxer, men ikke gjennemskue
+Naturens Hemmelighed og begribe, hvorledes. Det nye Liv
+er en ny Plante, det voxer en stille Væxt: vi voxe, vi
+groe, det er en Kjendsgjerning.»
+
+Saa føres der da megen opbyggelig Tale om Livets aandelige
+Væxt, hvorledes det groer, selv naar vi sove. Jeg kan
+desværre ikke faae Øie paa Kjendsgjerningen. Bygget groer
+og Havren groer; det groer i den Frugtsommelige, og
+Barnet fødes og voxer til Mand, og der vaagner i Manden
+en Drift, som Barnet ikke kjendte; det er Kjendsgjerninger.
+Men med Livets Væxt i de Troende er det en egen Sag.
+Jeg har i mange Aar hørt dem sige, at det groer i dem,
+at de bestandig voxe; jeg har taget dem paa Ordet og
+saa nøiagtig som muligt taget Maal af dem, for dog tilsidst
+at opbygges ved Kjendsgjerningen; men hvad har jeg
+erfaret? I det Udvortes har jeg vel kunnet see, at ogsaa
+de Troende forandre sig med Aarene, at Nogle af dem
+blive, om ikke altid høiere, saa dog ikke sjældent endeel
+førere; men hvad Charakteerudvikling angaaer, har jeg ikke
+været istand til at opdage nogen Fremgang. Det forekommer
+mig, at Gjennemsnittet staaer akkurat ved det
+samme Maal iaar som for ti, ja for tyve Aar siden: skikkelige
+Mennesker, som --- paa Talemaaderne nær --- have en
+paafaldende Lighed med andre skikkelige Mennesker. Det med
+Væxten maa da være en stor Hemmelighed. Min Hemmelighed
+er, at det ikke vil groe i mig. Jeg fik ogsaa i
+sin Tid en Opvækkelse og haabede, at det skulde groe;
+% --- p. 11 ---
+\setcounter{footnote}{0}%
+\opage{11}men desværre, det groer ikke: jeg er som Grantræet, der
+engang havde været Juletræ, --- sat i Væxten.
+
+Denne Prøve paa tilraisonnerede Misforstaaelser indeholder
+en kraftig Paamindelse om, at Fjenden er i det
+Indvortes.
+
+Hvad sigter saa alt dette til? En Fortsaaelse % PRINTED AS IS (Forstaaelse)
+af,
+hvad Villie er. Vi begyndte med at antage Villien for
+noget Medfødt; men Antagelsen førte til det Urimelige.
+Vi fortsatte med at opfatte Villien som noget Selverhvervet,
+men Opfattelsen førte til det Urimelige. Vi endte med at
+henføre Villien til Aanden; men idet Opgaven blev religiøs,
+kom Misforstaaelserne. Saa skulde dette da indlede
+et Forsøg paa at eftervise Villiens Udspring og \emph{klare Betingelserne
+for en kraftig Villie}.
+
+% --- p. 12 ---
+\setcounter{footnote}{0}%
+\lecture{Anden Forelæsning.}\opage{12}
+
+Efter en gammel Inddeling siges Mennesket at bestaae
+af tre Hoveddele: \emph{Legeme}, Sjæl og \emph{Aand}. Denne Tredeling
+maa dog ikke forstaaes, som om Mennnesket % PRINTED AS IS
+var
+sammensat af tre Stykker, og det Hele fremkommet ved,
+at Sjælen var sat ind i Legemet, og Aanden ind i Sjælen,
+at det Ydre skulde omgive det Indre som den ene Æske
+kan omgive den anden. Dersom det Indre kun var indæsket
+i det Ydre, vilde jo Eenheden mangle, den organiske
+Eenhed, der gjør os til levende Væsener.
+
+Et af de stærkeste Vidnesbyrd for, at det menneskelige
+Legeme, trods Mangfoldigheden og Forskjelligheden af dets
+Dele, ikke er, hvad man kalder en Maskine, et sammenstykket
+Hele, men besjæles af Liv og Selveenhed, er Følelsen
+af Smerte. Der kan være Smerte i de forskjelligste Dele
+af Legemet, men Smerten som Smerte vedkommer egenlig
+ikke Delene for sig, ikke engang Nerverne; det er Sjælen,
+der føler. Den, der, for at holde os til Hverdagserfaringer,
+har f. Ex. Tandpine, siger ikke: det maa Tænderne om, det
+er en Uro i Nerverne, som ikke vedkommer mig; nei, han
+maa bekjende, at det vedkommer ham, at det er ham selv,
+der maa føle Smerten, den Smerte, som er i Tænderne.
+
+Var Mennesket et saadant sammenstykket Hele, at
+hver Deel havde sit eget Liv og sin egen Følelse for sig,
+da maatte det være det fuldt bevidste Selv let at underkaste
+sit Legeme Operationer; men for at underkaste sig
+% --- p. 13 ---
+\setcounter{footnote}{0}%
+\opage{13}smertelige Operationer og dog, saavidt muligt, unddrage sig
+Smerten, bliver man jo nuomstunder chloroformeret. Ved
+denne Selvbedøvelse skeer det, at Legemets enkelte Dele,
+de enkelte Organer, blive som Stykker, der lide hvert
+for sig.
+
+Følelsen, Selvfornemmelsen især, voxer, udvikles, forfines
+med Civilisationen; men det seer næsten ud, som om
+Villieskraften tog af. Da Mucius Scævola stak sin Haand
+i Ilden og lod den brænde, medens han talede til Porsenna,
+da var han ganske vist ikke chloroformeret. Vel seer det
+ud, som var hans Haand kun et Stykke Legeme for sig,
+som kom det ikke ham ved, men var alene Haandens Sag,
+hvorvidt den kunde taale Ilden eller ikke; og dog var det
+ingen Udstykning. Han følte, hvad der foregik, han følte
+Smerten; men der var i hans Selv et Noget, som var
+stærkere end Følelsen, hævet over Smerten, det var hans
+besluttede Villie. Mucius Scævola var en Mand med kraftig
+Villie. Er det saa maaskee kun Manden, der i Forhold til
+Smerten kan have en saadan kraftig, heroisk Villie? Nei!
+ogsaa Kvinden. Historien veed at tale derom i Nordboernes
+Liv og i Romernes. Da Mrc. Brutus, Cassius og Casca
+havde sammensvoret sig for at myrde Cæsar og frelse Republiken,
+bar Brutus tungt paa Hemmeligheden og turde ikke
+betroe den til sin Hustru: hun var jo dog kun en Kvinde.
+Porcia anede, hvad der foregik, men for at gjøre sig værdig
+til en Indvielse og vise, at hun, en Kvinde, kunde staae ved
+Mandens Side selv i et Rædslernes Øieblik, gav hun sig
+et dybt og smerteligt Stik i Foden. Saa traadte hun frem,
+let og med sikkre Fjed, skjøndt Smerten brændte, og nu
+turde Brutus betroe hende Alt. Porcia var en Kvinde med
+Villie, en stor og fast og kraftig Villie.
+
+Det er da klart af Villien saavel som af Følelsen, at
+vort menneskelige Væsen ikke er et sammenstykket Hele,
+men en Livseenhed, en sig bestemmende Selveenhed, en
+Følelses- og Villieseenhed, et Jeg.
+
+Den sunde Sands har paa sin Viis hævet sig over
+Sammenstykningen ved at løfte Mennesket op over Trede%
+% --- p. 14 ---
+\setcounter{footnote}{0}%
+\opage{14}lingens tre Dele; hvert Menneske kalder sig et Jeg og siger:
+Jeg har et Legeme, jeg har en Sjæl, jeg har Aand.
+
+Her indtræder nu et besynderligt Forhold mellem:
+at have og at være. Hvad vor Besiddelse af udvortes
+Ting angaaer, falder det unaturligt at gjøre det, vi have,
+til Eet med det, vi ere. Fordi En har en Herregaard,
+siger han dog ikke: jeg er, hvad jeg har, en Herregaard,
+saalidt som den, der har en Stok, vil sige: jeg er en Stok.
+Rigtignok skal det i Amerika i nogle Kredse være Skik, at
+Værten præsenterer to Herrer i Selskabet for hinanden kort
+kategorisk som: to Millioner Dollars! --- fire Millioner! men,
+ihvorvel en saadan Talbestemmelse har den Fordeel, at den
+exact angiver Inclinationsvinklen for det forskjellige Nik, hvormed
+de To bør komme hinanden imøde: saa kan det dog ikke
+negtes, at en saa ligefrem Sammensmeltning af det at have
+med det at være maa forekomme os noget vel materialistisk.
+
+Anderledes, naar Talen er om vort Væsens Bestanddele
+og vore væsenlige Egenskaber. I denne Sammenhæng kan
+det at have paa forskjellig Maade falde sammen med det
+at være. Vi have et Legeme, vi ere Legemer, vort Væsen
+er legemligt; vi have en Sjæl, vi ere Sjæle, vort Væsen er
+sjæleligt; vi have Aand, vi ere Aander, vort Væsen er
+aandeligt. I denne Sammensmeltning af, hvad vi have og
+hvad vi ere, fastholde vi vort Væsens Eenhed % PRINTED AS IS: no stop
+Vort Selv,
+vort Jeg, det Jeg, vi have, og det Jeg, vi ere, er fra første
+Spire af legemligt-sjæleligt-aandeligt. Der er i Mennesket
+kun een Natur; men denne Natur har tre Hovedsider, og
+den hele Natur er igjen i enhver af sine Hovedsider. Der
+er i vor Grundnatur tre Naturer: en \emph{sandselig}, svarende
+til Legemligheden og den Side af Sjælen, som gaaer ind
+under Sandsning og sandselige Tilskyndelser; en \emph{fornuftig},
+svarende til det Ulegemlige, altsaa til den Side af Sjælen,
+som gaaer op i Ideeanskuelser og Tænkning af det Almene;
+en \emph{aandelig}, svarende til det oprindelige Selv i evig Frihed,
+til Aanden.
+
+Denne Tredeling er afgjørende for Villien og dens
+Betingelser, thi heraf følger, at ogsaa Villien er tredeelt.
+% --- p. 15 ---
+\setcounter{footnote}{0}%
+\opage{15}Vore mange Bryderier med Friheden, alle vore Anstrengelser
+med at faae os selv i vor Magt og arbeide os op til Selvstændighed
+hidrøre fra, at vi oprindelig have tre Villier:
+en \emph{Driftvillie}, svarende til vor sandselige Natur og det
+i Villien Medfødte, en \emph{Fornuftvillie}, svarende til vor
+Erkjendelse af de almeengyldige Verdenslove og det i Villien
+Selverhvervede, og endelig en \emph{Aandsvillie}, en Villie, som,
+naar den forstaaer sig selv og erkjender sit Udspring,
+har sin Selvstændighed i ubetinget Afhængighed af Aanden
+selv, og veed sig bevæget af Guds Villie.
+
+Der er altsaa tre Trin, hvorpaa Mennesket kan staae
+med sin tresidige Villie; men det er klart, at vi maae staae
+enten paa det første eller paa det andet eller paa det
+tredie af disse Trin, naar vi skulle have en udeelt, fast og
+kraftig Villie.
+
+\emph{Naturmennesket}, hvorved vi ikke blot forstaae
+Mennesket som det er i raa, naturlig Tilstand, men det
+til sin medfødte Naturgrund umiddelbart bundne Menneske,
+staaer paa det første Trin. Det er med sin individuelle
+Begavelse, sin Fornuft og Genialitet som af een Støbning.
+Naturmennesket har, uden Hensyn til, hvorvidt dets Civilisering
+er naaet, kun een herskende Villie, een Grundvillie,
+og det er \emph{Driftvillien}. Heltelivet i det gamle Norden
+og det hos Grækerne blomstrende Kulturliv lærer os, hvad
+dette vil sige.
+
+\emph{Fornuftmennesket}, hvorved vi udelukkende tænke
+paa Saadanne, hvis Villie bevæges af det for Tanken Nødvendige
+og i sin væsenlige Nødvendighed Almeengyldige,
+staaer paa det andet Trin. Tænkeren, den Vise, der kun
+vil, hvad han maa ville, har i sin Overeensstemmelse med
+sig selv een Villie, een Grundvillie og det er: \emph{Fornuftvillien}.
+Oldtidens store Charakterer, en Sokrates, Stoikerne
+o. Fl., afgive Exempler.
+
+\emph{Aandsmennesket}, i Forbilledet selv det eneste
+sande Menneske, Frihedens Aabenbarer, der vil frigjøre Alle,
+staaer udelukkende paa det tredie Trin. Her er i Villieseenhed
+to Villier, en guddommelig og en fuldstændig
+% --- p. 16 ---
+\setcounter{footnote}{0}%
+\opage{16}menneskelig; men de to Villier ere ikke udstykkede, ikke
+splidagtige; den guddommelige er menneskelig og den
+menneskelige guddommelig; begges Eenhed er en absolut
+personlig Villieseenhed, det er \emph{Aandsvillien}.
+
+Men vi, det nittende Aarhundredes Børn, Natur-, Kultur- og
+Aandsmennesker af mange Kuld, hvor staae nu
+egenlig vi? Ikke paa noget enkelt af de tre Trin; vi staae
+paa alle Trin, alle mulige Mellemtrin. Det kommer af, at
+vi ere saa alsidige. At staae paa eet Trin, at blive staaende
+og staae fast, er jo eensidigt, og Eensidighed er den Udyd,
+man af alle mest maa frygte. Saa ere vi da alsidige, det
+vil sige: vi have Noget af en Driftvillie, Noget af en Fornuftvillie
+og Lidt af en Aandsvillie i forskjellig Blanding.
+Denne vor Alsidighed bevirker, at Villielivet trods al dets
+Rørighed gaaer noget trangt. Vi maae tjene ikke blot to,
+men tre Herrer; thi enhver af de tre Villier i os er en
+Stormagt, og Stormagter ere altid herskesyge. Kan Ingen
+af dem blive Overherre, saa vække de Splid; de ville svække
+os, udstykke vort Væsen og dele os, som Stormagterne i
+sin Tid deelte Polen.
+
+Vi skulle i det Følgende betragte hvert af de tre
+Villiestrin for sig, og begynde da med \emph{Driftvillien}.
+
+Mennesket har Drifter ligesom Dyret, men derfor er
+Mennesket ikke et Dyr, og de menneskelige Drifter ikke
+dyriske. Man bør ikke ringeagte Drifterne, de høre nødvendig
+med til vor Menneskenatur; kun naar en menneskelig
+Drift begynder at blive dyrisk, har Mennesket Grund
+til at blive bange for sig selv. Særkjendet paa den menneskelige
+Drift er, at det Sandselige kan optage det Ideelle,
+gaae ind under det Fornuftige og suge Kræfter af det Aandelige.
+Driften kan omfatte det Laveste og det Høieste; der
+gives en Drift til sandselig Nydelse, men der gives ogsaa
+en Drift til Guds Rige.
+
+Driften er Villiens frugtbare Skjød, det Hylster og
+Svøb, hvoraf den vikler sig ud. Derfor virker Driftvillien
+med en saa forunderlig primitiv Naturkraft. Villien kan
+ikke gribe uden at gribes af Noget, ikke bevæge sig med
+% --- p. 17 ---
+\setcounter{footnote}{0}%
+\opage{17}Kraft uden inderlig og stærkt at være bevæget af
+Noget. Det som fra Begyndelsen af driver og bevæger,
+fordi dets Gjenstand fylder Villien, den naturlige Villens
+indre Drivende, er Driften.
+
+Driftvillien kan tilegne sig det Fornuftige og fyldes
+af Ideer, men derfor bliver den ikke Fornuftvillie; den
+bliver kun en \emph{fornuftig} Driftvillie. Den kan have
+Salighedens Længsler, tilegne sig Frihedens Forjættelser, ja
+selv den dybe Kjærligheds aandige Væsen, og dog bliver
+den aldrig Aandsvillie; den er og bliver en aandelig Driftvillie.
+Man tænke paa Forholdet mellem Mand og Kvinde,
+mellem Moder og Barn, og man vil erkjende, at det Sandselige
+kan forklares i det Ideelle, det Aandige, paa Driftlivets
+Grundlag. Lidenskaberne kunne være paa een Gang
+baade sandselige og ideelle. Digterne prise Kjærligheden,
+og vi ere dem taknemmelige. Men Kjærlighed er jo en
+Villie, og dog kalder man den ogsaa en Lidenskab. Rigtigt!
+Hos Eros er Villien Lidenskab, og Lidenskaben Villie;
+saaledes maae det være: det er Driftvillie. De der paastaae,
+at denne Driftvillie i sin tilslørede Grund er dyrisk, bagvaske
+Eros og haane det Menneskelige. Julie har Villie
+til Romeo, hendes Villie er Lidenskab; men denne Lidenskab
+er som en aandig Livsluft det høiere Element, hvori hun
+voxer; dens Blus og Flamme er Lyset, hvori hun staaer
+som forklaret.
+
+Hvor stort Driftvilliens Omfang er, kan sees, naar den
+anvendes paa Bestemmelsen af \emph{Folk} og \emph{Mængde}. Hvor
+er Folket? I Mængden. Hvor er saa Mængden? 1 % PRINTED AS IS: the figure 1 for I
+Folket.
+Og dog er Mængden endnu ikke Folket, og Folket mere
+end Mængden, skjøndt begge Bestemmelser falde indenfor
+Driftvillien. Vi have et storstilet Exempel i det gamle
+Testamente. Da Moses var hos Jehova paa Bjerget, slog
+Folket sig løs, blev en Hob, blev Mængde. Denne i Lidenskab
+bevægede Mængde fordrede af Aaron, at han skulde
+gjøre dem Guder, som kunde føre dem an og »gaae for
+deres Aasyn.» Det var Driftvillie. Guder af Guld, Guldguder,
+det var noget anderledes Virkeligt og Nærværende
+% --- p. 18 ---
+\setcounter{footnote}{0}%
+\opage{18}end hiin Usynlige deroppe i Skyerne. Mængden fordrede
+det; den var høirøstet, thi den havde en Villie. Aaron
+fandt, at det var en kraftig Villie; saa forvexlede han
+Folket med Mængden og støbte Guldkalven. Da Moses
+kom, og Aaron saae hans Aasyn, blev han angst og bad:
+»ikke blusse min Herres Vrede op; du kjender Folket, at
+det hælder til det Onde.» Da viste det sig, hvad Aandsvillie
+er. Moses stillede sig for Leirens Port og bød: »hvo
+som hører Jehova til, han komme til mig!» Moses satte
+Livet ind, thi Hoben var rasende. Men da Kommandostemmen
+lød, den myndig bydende, fik Hoben andre Tanker,
+en anden Villie: Mængden blev igjen et Folk. Fik Folket
+saa med Eet en Aandsvillie? Nei! kun Moses havde Aandsvillie;
+men Folket fik ved ham en Villie, som af uvilkaarlig
+Drift maatte bøie sig for Aand; det var en aandelig Driftvillie,
+og høiere Villie faaer Folket aldrig som Folk.
+
+Gaae vi ind paa de særskilte Former, saa er enhver
+aandig Stræben, der oprindelig beroer paa særlig Begavelse,
+Talent, Geni, at henføre under Driftvillien; Genivillie er
+Driftvillie.
+
+Det er et dybt og sandt og rørende Træk i Øhlenschlægers
+Correggio, at den stakkels Antonio, hvis Mod
+Mikkel Angelos haarde, uretfærdige Dom har knuust, gaaer
+i Rette med sig selv og trøster sig med sin Konstnersamvittighed,
+idet han siger: »Gud veed, jeg gjorde det ei
+for at glimre. Jeg malede, som Bien danner Celler, som
+Fuglen bygger i et Træ sin Rede,» altsaa af indre Trang,
+af Konstnerdrift; det er Driftvillie.
+
+Gjælder det om praktisk udadgaaende Virksomhed, om
+historiske Bedrifter, hvilken Betydning have da ikke Drifttilskyndelser
+og Lidenskaber! Vi see det paa Heltene, en
+Kreds af store Skikkelser, som alle staae under Driftvillien.
+Hvormeget Fornuftigt, hvormange Ideer og Tanker har
+Villien ikke her formaaet at tilegne sig; og dog er det,
+naar vi see nærmere til, ikke Fornuftvillie, endnu mindre
+Aandsvillie, men en af Ideer beaandet, af Lidenskaber gjennemglødet
+Driftvillie, vi have for os. Det er en aandig
+% --- p. 19 ---
+\setcounter{footnote}{0}%
+\opage{19}Naturkraft, en ubetvingelig Attraa, der driver Helten frem;
+han vil, fordi han maa ville. Skule Jarl i »Kongsæmnerne»
+kan ikke opgive sin Kamp mod Hakon, ikke fraskrive sig
+Thronen og gjøre Forlig; og hvorfor ikke? Det er hans
+Væsens Trang imod; de store Kongetanker sige nei.
+
+Det er et eget, opløftende Syn at betragte de mange
+høist forskjellige Phænomener, som Driftvillien i hver Tidsalder,
+hos hvert Kjøn og i enhver Retning kan afsætte;
+de ere som Meteorer, de glimre; men jo mere de glimre,
+desto lettere ville de briste. Driftvilliens Individer ere med
+al deres Villiekraft ikke frie, men naturbundne: de ere i dunkle
+Magters Vold. Vel fare de ikke frem i Blinde, thi hvis de
+blindthen følge Lidenskabernes Indskydelser, blive excentriske,
+altfor kometagtige, saa tabe vi Interessen for dem. Men
+selv, naar de ville holde sig i Ideens Spor inden visse
+Grændser, er deres Vei den farligste af alle. De have
+Reisning, Opsving, Bevægelse og Fart; men Grundlaget
+gynger, og Bevægelsen er som en Dands over Afgrunden.
+De kunne faae Magt over Andre, men Ingen iblandt dem
+alle kan i strengere Forstand faae sig selv i sin Magt.
+
+Det ligger i Driftvillien, at den bevæges af Noget,
+hvorover den ikke selv raader.
+
+Som nu i det Erotiske. Forelskelse, siger man, er
+Noget, der kommer paa Folk, uden at de egenlig vide,
+hvorfra og hvorfor. Det er ikke blot Ungdommen der er
+udsat; ingen Alder er ganske sikker: halvgamle Mænd især,
+naar det kommer paa dem, blive i Reglen stærkt medtagne.
+Men hvad der saadan kommer af sig selv, kan jo gaae
+over igjen af sig selv; det er Driftvilliens Luner, Ingen
+kan gjøre for det. Især viser sig det Usikkre, naar to
+modstridende Følelser eller to Lidenskaber taarne sig mod hinanden,
+ligesom to Bølger, og der opstaaer en Brænding.
+Den Paagjældende er som i Havsnød; han raader jo ikke
+for, hvilken Bølge der skal blive den høieste eller med andre
+Ord, hvilken af de to Villier der i ham skal blive den
+stærkeste. Sættes den erotiske Villie f. Ex. mod Konstnervillien,
+saa har man en skjøn Fortælling om en ridderlig
+% --- p. 20 ---
+\setcounter{footnote}{0}%
+\opage{20}Elsker, som brændte sin Harpe for at frelse sin Elskede fra
+at døe i Kulden. Men Forholdet kan let vendes om; thi
+mangen poetisk Elsker har ladet sin Elskede fryse ihjel, og
+conserveret Harpen. Ingen er ansvarlig, den Troløse saa
+lidt som den Trofaste; Ingen kan kaldes til Regnskab, da
+jo Alt kommer an paa den stærkere Bølge. Der er en
+Romance af Schak Staffeld, »Tilbagekomst»; den handler
+om en maurisk Kriger, som vender hjem fra Tagos Bred
+med »Kampens Støv i sine Lokker og dens Blod ved sine
+Fjed;» han kalder paa sin Elskede: Selindaja! Men hun
+gjør Omsvøb; han maa nævne, hvad han vil, Grotten,
+Mandeltræet, Gitteret; der er bestandig Noget i Veien, Alt
+er blevet anderledes. Tilsidst udbryder han i ædel Harme:
+»Ha, Troløse, mens jeg sanked disse femten Hædersar, uden
+Blu Du til en Anden Tro og Hjerte givet har;» men hun
+svarer ham koldblodig som den, der har en god Samvittighed:
+»Hjertet har jeg ei bortgivet, Allah høre mine Ord! Almoralif
+har det taget, og hvad kunde jeg derfor?»
+
+At Heltene med al deres Villiesstyrke i Grunden ere
+lige saa usikkre paa sig selv som Elskerne, --- forudsat, at
+deres Villie kun er en Driftvillie --- kan let bevises. Undersøger
+man, hvad det egenlig er, som i en Heltecharakteer
+med saa mange Planer, under saa mange Svingninger og
+Krydsninger af ydre Omstændigheder, holder det Hele sammen
+og grundfæster Eenheden, da vil man ved nærmere Eftersyn
+finde, at det ingenlunde er en selvmægtig Villie, men en
+eller anden gjennemgaaende, herskende Lidenskab. En saadan
+Lidenskab kommer ikke altid tilsyne paa den brusende
+Overflade, den holder sig helst under Bølgerne og arbeider
+stille i Dybet. Men at det ikke er Helten selv, men Lidenskaben,
+der er den egenlige Herre, bliver iøinefaldende,
+naar Omstændighederne føie det saa, at der i Sindet vækkes
+en ny og mægtig Lidenskab, saa at Dybet røres og de
+to Modstandere komme i Strid med hinanden. I et saadant
+Tilfælde kan den Stærke pludselig blive svag, faae
+Anfald af Vanvid, og Charakteren ligesom gaae i Stykker.
+Fra den gamle Historie blot et eneste Exempel: Marcus
+% --- p. 21 ---
+\setcounter{footnote}{0}%
+\opage{21}Antonius. I Triumviratet mellem Octavian, Antonius og
+Lepidus, --- til Hævn over Cæsars Mordere, kunde Antonius,
+hvad Begavelse og Feltherretalent angik, vistnok i alle
+Maader maale sig med Octavian. Ikke desto mindre bukkede
+han under, da det siden kom til Fjendskab imellem dem.
+Hvorfor? Den almindelige Forklaring er, at Antonius gav
+sig til Priis for udsvævende Lidenskaber, medens Octavian
+under Kampens Forvirring forstod den Konst at beherske
+sig, beregne hvert Skridt paa Sømmelighedens Vei, og holde
+Togaens Folder sluttede. Man vilde imidlertid tage meget
+feil, om man antog, at Octavian var en Mand, der kun
+fulgte Fornuftens Bud, medens Antonius lod sig lede af
+blinde Indskydelser. Sandheden er, at begge staae under
+Driftvillien. Charakterernes Forskjel er væsenlig at bestemme
+ved Forholdet mellem deres Lidenskaber. Octavian, den
+siden saa lykkelige Keiser August, havde den Lykke: kun
+at være behersket af een Lidenskab, en Lidenskab, der hos
+ham var stærk nok til at tvinge og kue de øvrige. Octavians
+Sundhed var, at han kun havde een Syge --- Herskesygen.
+Antonius derimod havde det Uheld at blive betagen
+af to Lidenskaber, befængt med en dobbelt Syge, Herskesyge
+og Elskovssyge. Han kom til Ægypten, saae Cleopatra, og
+--- hvad kunde han derfor? --- hun erobrede ham, gjorde
+ham til sit Bytte. Saa blev Slaget ved Actium afgjørende.
+Antonius flygtede, fordi Cleopatra flygtede --- til Ægypten,
+og da hun, den Troløse, holdt sig skjult og lod udsprede
+det Rygte, at hun var død, tog Antonius sig selv af Dage.
+Helten faldt, et ulykkeligt Offer for en lige saa trofast som
+utilregnelig Kjærlighed.
+
+Efter sin Natur er Driftvillien den samme, enten den
+yttrer sig i Hverdagslivets smaa Forhold eller den gjør
+Udslag i store Verdensbegivenheder; men naar vi ville
+gjennemskue dens Væsen, er det bedst, for Tydeligheds
+Skyld, at see den i store Træk. Det viser sig da, at
+Styrkens Hemmelighed er Svaghed, at Selvstændigheden er
+uselvstændig, at den opbrusende Frihed bukker under for
+Nødvendigheden. Driftvilliens Helte og Heltinder gaae
+% --- p. 22 ---
+\setcounter{footnote}{0}%
+\opage{22}freidigt ombord paa Begivenhedernes Strøm; det tager sig
+prægtig ud at see dem i Opseiling: hvert Fartøi gaaer for
+fulde Seil, thi Lidenskaberne fylde Seilene. Men her er
+farlige Grunde, Compasset har uberegnelig Misviisning, Driftvillien
+er som en beruset Styrmand, og Nødankeret mangler.
+Saa lide de Skibbrud, de strande paa Skjæbnens Klipper.
+Mod Drifternes, Tilbøielighedernes, Lidenskabernes urolige
+Element staae Tilværelsens Skranker, de strenge Verdenslove,
+Virkelighedens faste Mure; det er Skjæbnens Magt, ---
+saa ender det tragisk. At en Enkelt, lykkelig som Octavian,
+undgaaer Skibbrudet, er kun en Skuffelse, et Phænomen,
+der kun vedkommer det Ydre; i Sagen selv ere de
+alle under Skjæbnen.
+
+Det er Brydningen mellem det Urolige og det Faste,
+mellem det Driftagtige og det Fornuftige, hvori Selvet løses
+op og gaaer tilgrunde. Naar den ydre Modstand hidser
+Lidenskaben, naar den indre Syden og Kogen tager til, og
+Brændingen stiger, da har Dybet sine egne Tanker, det
+tænker paa Undergang; de store Skibe, de stolte Seilere
+slaaes til Vrag, Driftvilliens Kræfter splittes. Driftvillien er
+altsaa ikke den frie Villie; skal Villien blive fri, maa den
+forvandles, hæves op paa et nyt Trin og undergives Lovene.
+Vi skulle i det Følgende see et Forsøg.
+
+% --- p. 23 ---
+\setcounter{footnote}{0}%
+\lecture{Tredie Forelæsning.}\opage{23}
+
+Det er en Forvandling, der foregaaer med Villien,
+idet den hæver sig fra sit første, naturlige Trin op paa
+sit næste og høiere, og bliver fra Driftvillie til \emph{Fornuftvillie}.
+At denne Overgang er mere end en Forandring,
+at den, væsenlig seet, beroer paa en Forvandling, maa
+udtrykkelig fremhæves.
+
+Driftvillien kan, som i vort Foregaaende er viist,
+klares, ændres, idealiseres, kan fra at være en sandselig
+blind Villie blive til en seende Villie, en Villie med Tanker,
+Ideer, Planer, det er en Fremgang til det Bedre, en Forædling,
+en stor Forandring, men det er endnu ingen Forvandling.
+Det inderste Bevægende er Drift og bliver
+Drift, det Hele falder indenfor ufrie, dunkle Naturtilskyndelsers
+Omraade. Saalænge Driften raader, er Lidenskaben
+den egenlige Kraftmaaler; der gives ikke blot opblussende,
+hidsige, hæftig udfarende Lidenskaber, der gives ogsaa
+sindige, tause Lidenskaber, rugende, drømmende, ulmende
+Lidenskaber. Men indenfor den hele Kreds af umiddelbare
+Naturtilskyndelser, de være lavere eller høiere, hidsige
+eller sindige, gjælder det: jo større Lidenskab, desto stærkere
+Villie, Lidenskabens Styrke er Betingelsen for Villiens
+Kraft.
+
+Først idet Villien gaaer over fra at være fornuftig
+Driftvillie til at blive, hvad vi i egenlig For%
+% --- p. 24 ---
+\setcounter{footnote}{0}%
+\opage{24}stand maa kalde Fornuftvillie, skeer Forvandlingen. Alt
+bliver fra Grunden af anderledes. Drifterne udryddes ikke,
+men Magten tages fra dem, de tæmmes; de naturlige
+Tilskyndelser træde i Fornuftens Tjeneste, og maae forpligte
+sig til ubetinget Lydighed. Nye Bevæggrunde, en
+heel Besætning af nye Motiver, komme til Roret; det er,
+bogstavelig talt, et nyt Dynasti, der bestiger Thronen.
+Driftens Sted træder Indsigten; ikke dunkle Rørelser, men
+klare Tanker, ikke gjøglende Haabs tillokkende Billeder,
+men Erkjendelse af det Almeengyldige, fast Overbeviisning
+om det i og for sig Sande og Rette er det, som fra nu
+af skal bevæge Villien. Her spørges ikke om Lyst og
+Ulyst, ikke om Tilbøieligheder, men om Pligt og Ret, thi
+Pligt og Ret ere personlige Udtryk for uafviselige Love.
+Her er i denne Anskuelse en Høihed, som imponerer; en
+kjølig Helligdom, en Kuppel med evige Stjerner hvælver
+sig over det Timelige. Mennesket fatter sin væsenlige
+Bestemmelse  og faaer Agtelse for sig selv. Men i det
+Tiltrækkende er der tillige noget Frastødende, Noget, som
+kan opvække Gysen. For at gjøre Villien fri, maa Fornuften
+begynde med at overskjære de Baand, som binde den til
+Drifternes moderlige Rod; hvert Nerverør, hver Trevl og
+Traad fra Moderstammen maa sønderrives. Skal Fornuften
+raade, saa maa den raade i Et og Alt. En saadan Selvhersker
+gaaer ikke paa Accord med Hjertets Rørelser, vil
+ikke parlamentere med lunefulde Tilbøieligheder, ikke erkjende
+noget Følelsens Veto: Fornuften er en Souverain
+med absolut Monarchie.
+
+Det vil heraf forstaaes, at det ikke er Handlingens
+Udvortes, hvorpaa det væsenlig kommer an, men dens
+Indvortes. En Handling, der udspringer af en fornuftig
+Driftvillie, kan i sit Ydre have en paafaldende Lighed
+med en Handling, der er udsprunget af reen Fornuftvillie:
+Forskjellen ligger i det indre Bevægende. Det er, naar
+der tales om historiske Personer, ofte vanskeligt at afsige
+en sikker Dom. En Agamemnon offrer sin Datter, en
+Junius Brutus »slagter sine Sønner paa Borgerfrihedens
+% --- p. 25 ---
+\setcounter{footnote}{0}%
+\opage{25}Alter»: hvad er det nu egenlig for Handlinger? De, som
+strax ere ved Haanden med deres: »blinde Fanatikere,
+Umennesker, unaturlige Fædre!» forraade just ikke nogen
+dyb Indsigt enten i Driftvilliens eller i Fornuftvilliens
+Væsen; thi det er vist, at der gives Optrin, Collisioner,
+forfærdelige Sammenstød af modstridende Fordringer, hvorunder
+den kolde Fornuft kan tyrannisere det naturlige
+Hjertes Følelser fuldt saa stærkt som en i Lidenskab
+glødende Driftvillie.
+
+De anførte Handlinger kunne, naar de sees paa Afstand,
+og betragtes i og for sig, være Fornufthandlinger,
+thi det er jo Fornuftens Bud, at alt det Individuelle skal
+offres for det Almene. Ja, de \emph{kunne} være det. Men
+see vi nærmere til, saa staaer hverken Agamemnon eller
+Brutus paa den rene Fornufts Standpunkt; de ere begge
+optagne af endelige, om end paa Samfundets Almene
+sigtende, Formaal: deres Villie er en potenseret Driftvillie.
+Paa de endelige Formaals Omraade skal Fornuften vel
+regulere Driften, men for Resten skaane den, saa at den
+inden visse Grændser faaer Lov til at være sig selv i al
+Naturlighed. Fra dette Synspunkt falder der en mørk
+Skygge over de store Skikkelser, Agamemnon og Brutus;
+thi Faderhjertet har lige saa fuldt sin ubestridelige Ret,
+som Samfundets Almene har Krav paa Kongen og Statsmanden.
+I Driftvilliens Navn fordre vi, og med Føie,
+at Fornuften skal være menneskelig, og dens strenge Bud
+lade sig forlige med Humanitet. Det fordrede Grækerne
+--- dog Spartanerne fraregnede --- ogsaa; men ikke Romerne.
+
+
+Den mærkelige Forskjel, der, i det Hele taget, er
+mellem det græske og det romerske Sind, mellem Grækernes
+livsvarme, geniale Driftvillie, og den kolde, men følgestrenge
+Romervillie, er kjendelig selv af de tilfældig valgte
+Exempler. Det Haarde, Oprørende i Agamemnons Offerhandling
+har det græske Sagn paa eiendommelig Maade
+vidst at formilde og forsone med skjøn Humanitet. Artemis,
+den fortørnede Gudinde, kommer Menneskefølelsen
+% --- p. 26 ---
+\setcounter{footnote}{0}%
+\opage{26}til Hjælp, hun fordrer sit Offer, men hun frelser det ogsaa;
+hun frelser Iphigenia, fører hende bort til Tauris og
+kaarer hende til sin Præstinde. Indtrykket af den guddommelige
+Mildhed borttager det Oprørende og virker som
+et Idealitetens Bad, hvori den naturlige Følelse luttres.
+Anderledes med det romerske Optrin. Vistnok havde
+Brutus's Sønner forbrudt sig imod Republikken, forsaavidt
+de hørte til de unge Sammensvorne, der vilde gjenindføre
+Kongedømmet, og Brutus, »Fædrelandsbefrieren», kunde ikke
+uden Selvmodsigelse stemme for deres Benaadning. Men
+Maaden, hvorpaa Henrettelsen bliver skildret, den forstenende
+Kulde, hvormed Faderen, uden engang at vende
+sit Ansigt bort, seer Sønnernes Hoved falde, er oprørende
+for al Humanitet, et Symbol paa Romervilliens Foragt for
+naturlig, menneskelig Følelse.
+
+Denne hjerteløse Haardhed, denne ubøielige, al naturlig
+Følelse kvælende Følgestrenghed kan let imponere Betragteren,
+forvirre hans Dom og forlede ham til at ansee
+Romervillien ikke blot for mere fornuftig end Grækervillien,
+men endog for en reen og stor og ophøiet Fornuftvillie,
+en mønsterværdig, systematisk gjennemført Statsmandsvillie.
+Det er en Indbildning. Ganske vist er Romervillien
+anderledes systematisk conseqvent end Grækervillien,
+og derfor ogsaa stærkere. Den græske Villie i sin foraarsfriske
+Ungdommelighed har Kræfter, store, geniale
+Naturkræfter; men Romervillien er mere end en Udstraaling
+af Kræfter, den er en egen Kræfternes Eenhed, en
+Magt, en verdenserobrende, folkeopslugende Magtvillie. At
+denne Magtvillie, langt fra at være, hvad vi i egenlig Forstand
+maa kalde Fornuftvillie, men en aandløs-aandig Naturvillie,
+en ulvegraadig, umættelig Driftvillie, som, naar den
+har fortæret Alt, maa ende med at fortære sig selv, trænger
+i denne Sammenhæng ikke til Beviis: Historien fører
+Beviset.
+
+Det moderne Begreb om Fornuft og Fornuftvillie er
+endnu ikke klarere, i praktisk Forstand neppe saa klart,
+som det var hos Oldtidens Vise. Vi fordre Fornuft og
+% --- p. 27 ---
+\setcounter{footnote}{0}%
+\opage{27}vi fordre Humanitet; men Spørgsmaalet er, om disse to
+Fordringer virkelig lade sig forene, saa sandt Fornuften,
+vel at mærke, skal være vort Et og Alt, den eneste,
+høieste styrende Magt i vor humane Verden.
+
+Vi fordre, at Fornuften skal beherske os og dog
+skaane vort Hjertes Tilbøieligheder; vi mene, at det vel
+lader sig gjøre, da vore ædle Tilbøieligheder jo i Grunden
+vidne om fornuftige Anlæg og altsaa maae være villige til
+at gaae ind under Fornuftvilliens ubetingede Herredømme:
+det turde dog være en Feiltagelse. Vi fordre af Fornuften,
+at den ikke blot skal være streng, men ogsaa billig, skal
+tage Hensyn til vore Skrøbeligheder, kort: opdrage os
+som en streng, men kjærlig Fader opdrager sine Børn.
+Men Lignelsen halter. Fornuften er ingen kjærlig Fader,
+men en ubøielig Hersker, kold, uforanderlig som de evige Love. Naar Faderen revser sin lille Dreng, saa gjør den
+Lille Omvendelse, lover Bod og Bedring: »vil være artig,
+vil være sød!» Saa gaaer Uveiret over og det kommer
+til en Forsoning, skjøndt Faderen veed, at den angerfulde
+Synder lige saa let kan glemme Løftet, som han glemmer
+det snertende Riis. Men saaledes kan Fornuften ikke
+bebandle % PRINTED AS IS (behandle)
+os Myndige, kan umulig paa een Gang baade
+rise og tilgive os Fornuftige. Vi fordre, at Fornuften
+skal respectere vor Individualitet, skal vise Imødekommen,
+være en føielig, human og medgjørlig Fornuft: paa disse
+constitutionelle Betingelser skal den faae Lov at regjere.
+Men paa disse Betingelser vil Fornuften ikke indlade sig.
+Og hvorfor ikke? Fordi den ikke kan det uden at modsige
+sig selv og blive ufornuftig.
+
+Er Fornuften da despotisk, inhuman og grusom?
+Ingenlunde. Det være langt fra os at ville nedsætte Fornuften,
+tale ilde om den og forsøge at sætte en Plet paa
+dens rene, ophøiede Charakteer. Vi ville tvertimod lade
+Fornuften selv komme til Orde. Den siger til Mennesket:
+Du har at vælge. Vil Du blive staaende paa Driftvilliens
+Standpunkt, velan! Jeg skal tjene Dig med Alt, hvad
+jeg kan, med Raad og Formaning, Underviisning og Op%
+% --- p. 28 ---
+\setcounter{footnote}{0}%
+\opage{28}lysning i enhver Henseende. Men saa maa Du vide, at
+jeg kun er Din Tjener, ikke Din Herre. Du kan følge
+mine Raad, om Du saa behager, og Du kan forkaste dem
+om Du vil: jeg indestaaer ikke for Følgerne. Blive dine
+Følelser splidagtige, gjøre dine Lidenskaber Oprør, kommer
+dit Sind i Kog og der dannes en Malstrøm, som suger
+Dig til sig og maler Dig ned i en Afgrund, det bliver
+Din egen Sag: jeg er uden Ansvar. Vil Du derimod udfries
+af din naturbundne Tilstand og løftes op paa Selvstændighedens
+Trin, saa maae vi vende Forholdet om;
+saa bliver det mig, der skal byde, og Dig, der skal lyde,
+saa er jeg ikke din Tjener, men ubetinget din Herre:
+vælg nu! Det kan man da ikke kalde inhumant; det er,
+som mig synes, ret fornuftig talt af Fornuften.
+
+Det Eneste, man kan befrygte, er at Fornuften, naar
+den bliver saa enevældig, vil glemme at benytte sig af
+den skjønne kongelige Ret, man kalder Benaadningsret.
+Og saaledes er det. Fornuften er blandt alle absolute
+Herskere den Eneste, som ikke kjender til Benaadningsret.
+Fornuften er det selvløse Almene, hvis Væsen og Indhold
+gaaer op i Lovenes Sammenhæng. Fornuftvillien er Selvets
+egen Villie, forsaavidt det tænkende Selv alene vil, at Nødvendighedslovene
+opfyldes. Frigjørelsen bestaaer i, at Selvet
+vil, hvad det af Overbeviisning maa ville: opløse sig selv
+i det Almene og Selvløse.
+
+Paa Driftvilliens Trin befinder Individet sig vel, naar
+dets individuelle Krav, de være materielle eller ideelle, tilfredsstilles;
+derfor er Sundhed et Gode, Sygdom et Onde,
+Rigdom et Gode, Fattigdom et Onde o. s v. Paa den % PRINTED AS IS: no stop after s
+Art Tilfredsstillelse kan Fornuftvillien ikke indlade sig.
+Alle baade indvortes og udvortes, baade usandselige og
+sandselige Goder, forsaavidt de blot tjene til at mætte
+den umiddelbare Individualitet, ere af underordnet Betydning.
+Man behøver just ikke at foragte dem; men
+de underligge Tilfældighed, betinges af Lykke, og maae
+desaarsag henregnes til det i sig selv Ligegyldige. Den
+Vise er hævet over Lykkens Omskiftelser; han haaber Intet,
+% --- p. 29 ---
+\setcounter{footnote}{0}%
+\opage{29}thi han frygter Intet: det er det gamle stoiske Ideal, og
+dette Fornuftideal er endnu det eneste conseqvente. Den
+Vise er sig selv nok; han vil, hvad Skjæbnen vil, hans
+Liv er en Skjæbnens Aabenbarelse: saa er han stærk som
+Skjæbnen, klippefast, urokkelig som Skjæbnen.
+
+Betragte vi nu dette Fornuftideal --- og der gives
+intet andet --- noget nøiere, saa viser det sig, at den Charakterens
+lovpriste Overeensstemmelse med sig selv, hvoraf
+der i Oldtid og Nutid er gjort saameget Væsen, opløser
+sig i Modsigelse paa Modsigelse, og at disse Modsigelser
+ingenlunde ligge i den evige Fornuft, men i Menneskenes
+egen Misforstaaelse af, hvad Fornuften er, og hvortil den
+skal bruges.
+
+Det er da for det Første let at indsee, at det opstillede
+Ideal ikke kan virkeliggjøres. De høittravende
+Talemaader, at den Vise er sig selv nok, er lykkelig selv
+i en gloende Ovn, er Konge, Præst, Spaamand og Digter,
+maae tages for hvad de ere --- Talemaader.
+Siger man:
+et saadant Ideal stilles op som et Maal, hvortil der i det
+Uendelige stræbes; det naaes kun i uendelig Tilnærmelse:
+da er det ikke vanskeligt at overbevise sig om, at Tilnærmelsen
+indeholder en Modsigelse. Saalænge nemlig
+alt det, den naturlige Individualitet maa betragte som
+væsenlige Goder: Sundhed, Begavelse, Rigdom, Anseelse,
+Magt, Indflydelse o. s. v. endnu ikke er nedsat til at være
+noget aldeles Ligegyldigt, altsaa saalænge det indre Bevægende
+endnu vedbliver at være en umiddelbar Drift,
+saalænge vedbliver Mennesket at staae under Driftvillien.
+Der kan paa dette Trin saa lidt være Tale om en Tilnærmelse til det rene Fornuftideal, som der ved at reise
+Jorden rundt kan være Tale om en Tilnærmelse til Maanen.
+Gjøres der Alvor af, at den bevidste Fornuft skal ved alle
+Handlinger være det indre Bevægende, saa at Ingen tør
+attraae Noget, med mindre Fornuften byder det, Ingen
+hungre eller tørste, elske eller hade uden ifølge Fornuftens
+udtrykkelige Befaling, saa begynder det Umenneskelige.
+% --- p. 30 ---
+\setcounter{footnote}{0}%
+\opage{30}Men et i sit inderste Væsen umenneskeligt Maal kan ikke
+være et Ideal for Mennesker.
+
+Modsigelsen kommer tilsyne i alle virkelige Handlinger.
+At de timelige Goder uden Undtagelse ere ligegyldige, vil
+med andre Ord sige, at alle endelige Formaal ere ligegyldige.
+Den Vise maa kunne finde sig tilrette i alle
+Stillinger, være virksom under alle Forhold. Fornuftvillien
+maa virke, dens kraftige Væsen er Virken. Den Vise kan
+f. Ex. være Feltherre. Saa leverer han da et Slag.
+Hvorfor? For at vinde det! Ja, det mener en Daare,
+et Individ, der endnu befinder sig under Driftvillien. Nei,
+den Vise leverer Slaget for Fornuftens Skyld, ene og alene
+for Fornuftens Skyld. Om han vinder eller taber, kommer
+derfra med Ære eller med Skam, er ham ligegyldigt,
+ganske og aldeles ligegyldigt. Men naar alle udvortes
+Øiemed ere ligegyldige, saa maae de tilsvarende Handlinger
+jo ogsaa være ligegyldige. Hvorfor vil da den Vise nedlade
+sig til at handle?
+
+Den Vise virker og handler, ikke for andre Menneskers
+Skyld, ikke for Folkets, ikke for Statens Skyld, men alene
+for sin egen Skyld, at han i sin Væren og Virken kan
+vide sig i Overeensstemmelse med sig selv og Fornuften.
+Heraf følger, at hans Maalestok for Dyd og Last maa
+blive en anden end den, der justeres for det borgerlige
+Samfund. Da nemlig enhver udvortes Handling i sig selv
+er ligegyldig, maa Handlingens Beskaffenhed, dens Værd
+eller Uværd, udelukkende beroe paa Charakterens Overeensstemmelse
+med sig selv hos den Handlende. Den
+Vise kan i Medfør af sin Selvovereensstemmelsesfordring
+være beføjet til at begaae Handlinger, der i Menneskenes
+Øjne see ud som Forbrydelser; han kan røve, myrde,
+stjæle, lyve, Altsammen i Conseqvents af den rene Fornuft.
+I slige Henseender er Intet forbudt, undtagen det Umulige.
+
+Men, indvender man, naar det rene Fornuftmenneske
+kan blive et saadant Uhyre, hvorledes kunne da Charakterer
+saa ædle og ophøiede som en Sokrates, en Epiktet,
+en Marcus Aurelius, regnes iblandt Fornuftmennesker?
+% --- p. 31 ---
+\setcounter{footnote}{0}%
+\opage{31}Vi svare: De staae paa Fornuftvilliens Trin, forsaavidt det
+indre Bestemmende ikke er en umiddelbar og dunkel Drift,
+men en i Tanken klaret Sandhed. Men ved en ethisk
+Selvskuffelse have de gjort Fornuften til noget Mere end
+den er, til et aandigt Selvvæsen, en villende Guddom; de
+have af deres eget rige Indre lagt Noget ind i Fornuften,
+som umuligt kan udledes af dens Væsen. Det er Charakterer
+med en dæmrende, religiøs Baggrund: den personlige
+Forudsætning er: at Selvet er evigt. En saadan
+Forudsætning er vel ikke i Strid med Fornuften, men
+--- det maa atter og atter indskærpes --- den kan ikke begrundes
+af Fornuften, ikke afledes af det rene Fornuftbegreb.
+Fornuftbegrebet, fastholdt for sig, er Begrebet
+af det selvløse Almene: Fornuftgrunde ere Nødvendighedsgrunde,
+ikke Frihedsgrunde.
+
+Den Frihedsbestemmelse, som kan udledes af den
+rene Fornuft, er saa selvmodsigende som muligt. Den
+Vise har en Villie, thi han har et Selv. Saa begynder
+han da med at luttre dette Selv, gyde det i Fornuftens
+Smeltedigel for at befrie det fra Slagger og urene Indblandinger.
+Han samler sig og tager fat med en Villieskraft,
+en Energie, som var dette Selv bestemt for en heel
+Evighed. Men netop her naaer Modsigelsen sit Høieste;
+den culminerer, saa at sige, i Fornuftens Zenith. Thi
+Selvet, seet i dette Lys, er ikke evigt; det er forgængeligt
+som Tingene i Naturen. Det existerende Selv er individuelt,
+og det Individuelle løses op og forgaaer: kun
+Fornuften er evig, evig som Lovene. Naar den Vise har
+spillet sin Rolle paa Verdenstheatret, ligegyldigt, om det
+er Tiggerens, Skrædderens eller Keiserens Rolle, og seer, at
+Rollen er ude, saa træder han af. Han behøver ikke at
+vente paa naturlig Afløsning, han kan afløse sig selv, han
+kan med Frihed slukke sit Lys og gaae bort: at give sig
+selv Døden er Udtrykket for den høieste Skjæbnevillie, den
+Villiesbestemmelse, hvori Selvet selv løser sig op, den
+formelle Friheds sidste Fornufthandling.
+
+Men naar Menneskets Selv er forgængeligt som Alt i
+% --- p. 32 ---
+\setcounter{footnote}{0}%
+\opage{32}Verden, og det Forgængelige er et Ligegyldigt, saa er det
+dog vel heraf indlysende, at ogsaa Selvet er et Ligegyldigt,
+dets Selvstændighed og Overeensstemmelse med sig selv
+i Grunden et Ligegyldigt: og dog var det jo netop for
+Selvets og Selvstændighedens Skyld --- altsaa for et Ligegyldigt!
+--- at der i sidste Instants skulde leves, virkes
+og handles.
+Dette er den rene Fornuftvillies i Et og Alt
+gjennemførte Conseqvents.
+
+Den moderne Bevidsthed indrømmer, at de ægte
+Stoikere have indviklet sig i Modsigelse, men maa, naturligviis!
+give dem Ret i at det ethiske Fornuftideal er det
+eneste Sande. Sagen er, at hine gamle Tænkere vare
+eensidige. Deres Verdensanskuelse var kold og gold: Tilværelsens
+Indhold, Livstræets frodige Væxt, dets grenede
+Stamme, det legende Lys, Individualitetens yppige Skud
+med Løv og Blomster i Duft og Farve, alt dette savnes;
+alt dette blev overseet, thi de gamle Tænkere vare, som
+sagt, eensidige. Men de nye Tænkere ere alsidige, de
+tage Alting med, det Mindste med det Største, og oversee
+Intet. Hvorledes bære de sig ad? Det synes indviklet
+og gaaer dog ligefrem: man gjøre frisk væk Natur til
+Fornuft, og Livsindholdet --- det Concrete --- kommer af
+sig selv. Fornuften er naturlig i Følelser, Drifter og Lidenskaber;
+Naturen er fornuftig i Tanker, Ideer og Love.
+Fornuftens Krav er Naturens Ret: Fornuften i Kjød og
+Blod, Naturens Gjenindsættelse i sin Ret, er det sande
+Fremtidsideal, den dybere Mening i »Kjødets Evangelium».
+
+Saavidt kunde de Gamle ikke naae, dertil var deres
+Enfoldighed endnu for stor. Vel begyndte ogsaa de med
+en almindelig Eenhed af Fornuft og Natur: at leve overeensstemmende
+med Fornuften var hos dem at leve over-
+eensstemmende med Naturen. Men dette gjaldt kun i al
+Almindelighed; saasnart de kom ind paa det Enkelte, indtraadte
+Spliden. At gjøre det Timelige evigt og det Evige
+Timeligt, det Ligegyldige Væsenligt og det Væsenlige ligegyldigt,
+er en Opgave, hvis Løsning overgik de gamle
+% --- p. 33 ---
+\setcounter{footnote}{0}%
+\opage{33}Tænkeres Kræfter, og maa desaarsag være forbeholdt de
+nye Tænkere.
+
+Fornuftens Herredømme og Kjødets Evangelium!
+Tør vi nu ogsaa give os hen til det lyse Haab, at en saa
+kolossal Modsigelse virkelig vil blive løst? Istedenfor at
+gaae fremad, gaae vi jo tilbage; istedenfor at hæve os
+op paa Fornuftvilliens høiere Trin, synke vi umærkelig
+ned under Driftvillien. Fornuften er ikke moderne, saa
+lidt som Naturen; det er slet ikke sagt, at den moderne
+Bevidsthed og den evige Fornuft ere Et og det Samme.
+
+Fornuftvilliens Trin er et nødvendigt Overgangstrin,
+og Erkjendelsen af den praktiske Fornuft en væsenlig
+Betingelse for en kraftig Villie. Det Rensende og Opdragende
+ligger i, at det menneskelige Selv lærer at bøie
+sig for noget Almeengyldigt, lærer at resignere og igjennem
+uendelig Resignation modtager et Indtryk af noget Evigt.
+Men Fornuften kan ikke lære Mennesket at opfatte sit
+eget individuelle Selv som evigt. Dersom den kunde det, saa
+maatte der i Videnskaben gives et fuldgyldigt, uigjendriveligt
+Beviis for Sjælens Udødelighed. Men at et saadant Beviis
+hverken er givet eller nogensinde vil kunne gives, er en
+klar Sag, naar vi først tilfulde have lært at indsee, hvad
+Fornuft er, og hvorfor dens Evighed maa være selvløs:
+Udødelighedens Mulighed kan bevises, men dens Virkelighed
+kan ikke bevises.
+
+Vil man bevise Sjælens Udødelighed af moralske
+Grunde og beraabe sig paa, at en fuldstændig Udvikling
+af vor frie sædelige Personlighed vilde være umulig, dersom
+vor Sjæl ikke var udødelig: da overskrider man Fornuftens
+Grændser, overanstrænger dens Kræfter og gjør en
+personlig Indsats, for hvis almene Gyldighed den rene
+Fornuft hverken kan eller vil gaae i Borgen. Saa bliver
+det ved det Gamle: Fornuften, det almene Væsen med
+Ideer og Love, er evig; Menneskets Individualitet med sin
+organisk betingede Selvbevidsthed, sine Drifter og Livskrav
+er timelig. Lægges den afgjørende Vægt paa det Sidste,
+% --- p. 34 ---
+\setcounter{footnote}{0}%
+\opage{34}saa hersker Driftvillien; gaaer Selvbestemmelsen ud fra
+det Første, saa hersker Fornuftvillien.
+
+Driftvillie er et Trin for sig og Fornuftvillie et Trin
+for sig. De to Trin kunne ikke skrues sammen til eet.
+Man kan ikke tage Stykker ud af Driftvillien, for at bøde
+paa Fornuftvillien, saa lidt som omvendt. Den personlige
+Selvstændighed lader sig ikke consolidere ved at lime
+noget Individuelt, som ikke er evigt, sammen med noget
+Evigt, som ikke er individuelt. Villiens Frihed er intet
+Flikværk: man kan flikke paa en gammel Sko, men man
+kan ikke sammenflikke Idealer. Skal Fornuftvillien forenes
+med Driftvillien, da maae de begge forvandles og optages
+i et tredie Høiere: dette tredie Høiere er Aandsvillien.
+
+% --- p. 35 ---
+\setcounter{footnote}{0}%
+\lecture{Fjerde Forelæsning.}\opage{35}
+
+Vi leve i Opdagelsernes Tid; her spørges og høres
+bestandig Nyt: nye Maskiner, nye Stjerner, nye Solsystemer,
+nye Svovlstikker! hvo kan opregne det alt; Intet i Stort
+eller Smaat unddrager sig Forskerens Blik. Det mylrer
+frem, det hidtil Ubekjendte, fra Havets Grunde, fra Himmelrummets
+Dybder og fra Jordens Indvolde. Det Spredte
+samles, ordnes, sammenlignes, tydes, vurderes, examineres.
+Det er Virkelighedens Indhold, Verdens Sammenhæng, Tingenes
+Kræfter og Lovenes Rige, som den tænkende, iagttagende
+Fornuft utrættelig gjennemforsker.
+
+De store Opdagelsesreiser gaae ikke blot udefter men
+ogsaa indefter. Fornuften dvæler ikke ved det blot Sandselige;
+den spørger om det Usandselige, den vil i det
+Timelige opdage det Evige, i alt det Vordende erkjende det
+Værende. Hvad er saa dette evigt Værende? Er det Materiens
+Grunddele, uforanderlige Atomer, hvoraf alle Ting
+sammensættes for igjen at opløses? Eller er det et overbevidst
+og just derfor ubevidst Tankevæsen, Naturens blinde,
+iboende Viisdom, som virker og væver i alle Phænomener?
+Eller er Hemmeligheden maaskee et uendeligt Intet, det
+Intet, som jævner Alt, den mørke Nat, som gjemmer Alt,
+den hellige Taushed, hvori alle Røster forstumme, det
+overfyldte-tomme Svælg, det evige Ginnungagap, hvoraf Alt
+gaaer frem, og hvortil Alt, det Hele, tilsidst skal vende
+tilbage? Hvad er Natur, hvad er Aand, hvor er det Baand,
+som binder dem sammen? Her gjør Fornuften Opdagelse
+paa Opdagelse; det ene Verdenssyn jager det andet, den
+% --- p. 36 ---
+\setcounter{footnote}{0}%
+\opage{36}ene Philosophie fortrænger den anden, den ene Tænker overbyder
+den anden. Materialisme, Spiritualisme, Realisme,
+Idealisme, Pantheisme, Atheisme, Nihilisme: det er et
+broget, vidtløftigt Prøvekaart der foreligger. Og hvad beviser
+saa dette? At her er mange, og, naar vi see nøiere
+til, sammenhængende Forsøg, der alle stræbe til eet Maal.
+Fornuften vil alsidigt klare sit Syn; den frie Tanke vil
+ikke lade sig binde til noget Dogme, ikke vige for noget
+Magtsprog, ikke bøie af for nogen vilkaarlig opstillet Skranke.
+--- Det er Ret, saaledes bør det være. Vi skulle ikke
+sætte Fornuftens Lys under Traditionernes Lampeskærm,
+ikke lænkebinde den frie Tanke, ikke ønske, at det dog
+nu omsider maatte have en Ende med de mange og store
+Opdagelser. Tvertimod! Jo flere Fornuftopdagelser der
+gjøres, de tilhøre nu den udvortes eller den indvortes
+Verden, desto klarere maa jo den vidende Bevidsthed blive.
+
+En Opdagelse staaer imidlertid tilbage, en eneste,
+men meget væsenlig, en Opdagelse, som bestandig bliver
+overhalet i Lærdom, og, trods den megen Lærdom, flygtig
+behandlet; dens Gaade ligger i det Spørgsmaal: hvad er
+et \emph{Menneske}?
+
+»Et Menneske,« svarer den moderne Viden, »er et
+heldig organiseret Dyr; det er tydeligt af Jordklodens
+Udviklingshistorie. Mennesket nedstammer fra en eller
+anden Dyreform i Urverdenen, rimeligviis fra en gammel
+prægnant, tvetydig Abe.« --- Dersom der ved denne Nedstammen
+kun skal tænkes paa et zoologisk-naturligt Overgangsled,
+saa vedkommer Undersøgelsen udelukkende Naturlæren,
+og vi kunne lade Hypothesen gjælde for, hvad den
+er --- en Hypothese. Men, hvis Afstamningen skal forstaaes
+saaledes, at Menneskenaturen oprindelig er dyrisk, en
+Abenatur, som i tusinde Gange Aartusinders Løb gjennem
+utallige Ændringer og gradvise Overgange har arbeidet sig
+op til at blive et selvbevidst Fornuftvæsen, et Væsen, hvis
+dunkle, naturbundne Abevillie lidt efter lidt er blevet til
+en menneskelig klar og fri Fornuftvillie: da bliver Opdagelsen
+philosophisk, og gaaer ind under Aandslæren.
+
+% --- p. 37 ---
+\setcounter{footnote}{0}%
+\opage{37}Det Philosophiske, siger man, er saa vanskeligt at
+forstaae; det er kun for de gode Hoveder. Ja, det Philosophiske,
+vi her have for os, er ganske vist vanskeligt at
+forstaae. En Abenatur, der er sig sin Fornuft bevidst,
+videnskabelige Aber, Aber, der philosophere! det Philosophiske
+i en saadan Philosophie ligger over almindelig Menneskeforstand;
+det kan kun forstaaes --- i klar Logik
+--- af Familiens gode Hoveder.
+
+Vilde man fra dette Synspunkt indlade sig paa at
+undersøge Værdien af det Udbytte, Mennesket har vundet
+igjennem den gradvise Udvikling, da er her ganske vist,
+fra een Side seet, forbausende Resultater at opvise; men
+spørge vi, hvorvidt alt dette egenlig har været til Gavn for
+Slægtens Frihed og Lykke, da opstaae Betænkeligheder,
+ikke mindst med Hensyn paa Villien. Dyret vil, hvad det
+maa ville, det nøies med sin Driftvillie; Mennesket har
+paataget sig at ville, baade hvad Driften vil, og hvad Fornuften
+vil: det er en stor Besværlighed. Aben er lykkelig,
+den vil altid helst, hvad den bør; Mennesket maa gjøre
+en Forskjel imellem, hvad det helst vil, og hvad det bør
+ville; det er slet ikke lykkeligt. Ved sin beundringsværdige
+Selvudvikling, sin megen Kultur og Civilisation har
+Mennesket paadraget sig den store Ulykke at blive bebyrdet
+med to Villier, som ikke kunne forliges.
+
+Det kommer der ud af de mange Opdagelser. Mennesket
+har opdaget sig selv og i Selvet opdaget Spliden;
+Spliden er i dets Indre, Modsigelsen gaaer til Marv og
+Been, thi Selvet er dyrisk, og dog fornuftigt. Aben, der
+aldrig har indladt sig paa at opdage sig selv, har lykkelig
+undgaaet Spliden. Dyret har et Naturselv, men seer det
+aldrig, og slipper let fra alle Bryderier med Modsigelsen.
+Mennesket, der har dreiet sit Øie indad og seet sit bevidste
+Selv, er blevet et Offer for Modsigelsen. Af Modsigelsen
+udspringer Tvivlen, og med Tvivlen følger Vildfarelsen:
+Mennesket har opdaget Tvivlen og i Tvivlen Vildfarelsens
+Mulighed. Der er i ældre Dage holdt udførligt Register
+over de mange positive, baade legemlige og sjælelige, For%
+% --- p. 38 ---
+\setcounter{footnote}{0}%
+\opage{38}trin, som skulde udmærke Mennesket frem for Dyret. Det
+Positive i alle disse Fortrin har den nyere Kritik saa godt
+som udslettet; de negative Fortrin derimod har Kritiken
+ikke kunnet udslette: Mennesket kan fordærve sit Liv, forvrænge
+sin Opgave, fare vild og forfeile sit Maal; det Fortrin
+har Dyret ikke. Mennesket har opdaget Dyden, thi
+det har opdaget Lasten, og det opdagede Lasten just den
+Dag, da det opdagede Pligten. Dyret er dydigt, men uden
+at vide deraf, det handler i Overeensstemmelse med sin
+Natur, det kjender ikke Lasten, thi det kjender ikke Pligten.
+Mennesket har gjort Bekjendtskab med Pligten, ak!
+det gjør et betænkeligt Skaar i Dyden: dersom der ingen
+Pligter var, saa vare vi alle dydige. Mennesket har opdaget
+Døden, en uhyggelig Opdagelse. At Dyret maa døe
+lige saa vel som Mennesket, er vist; men Døden som Død
+er ikke til for Dyret. Døden er i sig selv som et Intet;
+men det er forbeholdt det selvbevidste Væsen at tænke
+dette Intet, møde dette Intet som en Magt og give det
+Tilværelse i Tanken. Dyret lever i Øieblikket og nyder i
+Øieblikket; hvert givet Øieblik faaer Sit, og det næste
+Øieblik er ikke til. Mennesket seer i det nærværende
+Øieblik Muligheden af et næste Øieblik, og i denne Mulighed
+seer det Døden. Saa kan Synet af et næste Øieblik
+pludselig forstyrre Nydelsen, den manende Skygge kan vise
+sig midt under Festen, som Bancos Aand ved Macbeths
+Gjæstebud. Mennesket har opdaget Evigheden; det er
+endnu det Allerværste. Denne Opdagelse sætter Kronen
+paa alle dets Fortrin, dog, vel at mærke, negativt, thi det
+er en Tornekrone. Ved at blive sig det Evige bevidst opdager
+Mennesket, at Selvmodsigelsen i dets Væsen er uløselig:
+det Evige forpligter, og Modsigelsen er i Forpligtelsen.
+
+
+Hvortil er Mennesket forpligtet? Til at gjøre det
+Gode --- for det Godes Skyld. Heri ligger, at det Gode
+ikke tør maales med Endelighedens Alenmaal og sættes i
+Klasse med det blot Nyttige, det i Øieblikket Tjenlige;
+en blank og bar Nyttighedslære er i sædelig Forstand en
+% --- p. 39 ---
+\setcounter{footnote}{0}%
+\opage{39}fræk Fornegtelse af det Evige. Men naar det Gode skal
+villes, fordi det i sig selv er godt, saa kan et Menneske
+jo i timelig Forstand blive ulykkeligt, alene fordi han vil
+det Gode. Naar da vor Nedstammen fra Dyret bliver forstaaet
+saaledes, at Mennesket døer som et Dyr, og Meningen
+er, at det menneskelige Selv lige saa lidt er evigt som
+det dyriske: saa maa jo det Menneske, der vil det Gode
+for det Godes Skyld, indvikle sig i en uopløselig Selvmodsigelse.
+
+
+Det Gode, siger man, har sin Løn i sig selv; Mennesket,
+der føler Forpligtelsen, faaer en forhøiet Selvfølelse,
+en uvilkaarlig Fornemmelse af, at det Evige er et Nærværende.
+Det er en tvetydig Tale. Den kan være sand,
+saalænge Spørgsmaalet om Selvets Evighed endnu staaer
+hen ubesvaret. Det er et daarligt Tegn paa Sands for det
+Gode, naar et Menneske vil værge sig mod Forpligtelsens
+Krav ved at kræve Beviis for, at en timelig Opoffrelse virkelig
+vil lønne sig engang i en tilkommende Evighed.
+Men Talen bliver usand, naar det med Eet opdages, og
+begge Dele sees i Opdagelsen lige klart: baade, at Selvet,
+der forpligtes, er timeligt, og at det forpligtende Gode er
+evigt.
+
+Som det levende Væsen er, maa dets Grundkrav,
+dets væsenlige Trang ogsaa være. Dyret lever i Timelighed,
+det fordrer det Timelige, og kun det Timelige har
+Fordringer paa det: det har ingen Forpligtelsens Modsigelse
+at drages med. Mennesket, paa hvem der hviler et alvorligt
+Krav baade fra det Timelige og det Evige, er stillet
+mellem en dobbelt Ild. Ved at holde sig til det Timelige
+maa det jo i væsenlig Forstand kunne tilfredsstille sit
+inderste Selv, saa sandt dette inderste Selv er timeligt,
+kun timeligt. Men saa kommer Evighedstanken med sit
+ubetingede Gode og fordrer, at det timelige Selv skal i
+dette ubetingede Gode erkjende sit sande Væsen, skal,
+skjøndt det veed med sig selv, at det kun er timeligt,
+forpligte sig til at leve, som om det var evigt; denne
+Modsigelse lader sig ikke løse. Det Væsen, som forpligter,
+% --- p. 40 ---
+\setcounter{footnote}{0}%
+\opage{40}og det Væsen, som forpligtes, maae i deres oprindelige
+Grund være af samme Art, i modsat Fald er Forpligtelsen
+en Tvangssag uden sædeligt Værd: kun et evigt Selvvæsen
+kan forpligtes til det Evige. At fordre af et timeligt Selv,
+at det skal lade sig forpligte af et evigt Gode, er lige saa
+modsigende, som hvis man vilde tvinge et Dyr, der kun
+er organiseret til at bevæge sig i Vandet, til at flyve i
+Luften.
+
+Skal det ikke ende med, at de mange Opdagelser tilsidst
+gjøre Tilværelsen meningsløs og Livet utaaleligt, da
+maa Mennesket endnu en Gang see at opdage sig selv:
+det maa opdage Troen og i Troen opdage Aanden.
+
+Men opdage Troen! Her møder den moderne Bevidsthed
+med sit Philosophiske. At opdage Troen, siger
+man, er endnu mere overflødigt end at opdage Krudtet;
+Troen er forlængst opdaget, og dens Hemmelighed gjennemskuet.
+Troen er ingen ny Stjerne, men en gammel Hornlygte,
+ved hvis magiske Skin Enhver kan see, hvad hans
+Indbildning helst vil foregøgle ham. Nei, ikke Tro, men
+Viden! Viden er den nye Stjerne, Viden er Verdens Sol,
+det kongelige Dagens Lys, der straaler i Tidens Øie. Saaledes
+lyder Bebudelsen. Hvad faae vi da at see ved Hjælp
+af dette Lys, naar vi, vel at mærke, see ind i Selvet?
+Tvivl og Tvivl og atter Tvivl. Selvet i Tvivl og Selvet i
+Modsigelse, Evighed i Tanken og Døden i Hjertet: fortærende
+Selvmodsigelse! Saa kan Videns Lys i dette Punkt
+umulig være det sande Lys. Her er jo desuden ikke eet
+Lys, men mange. Lysbølgerne rulle saa vildt, at de mange
+Lysskær deelviis forstærke og deelviis igjen formørke hverandre.
+De komme ikke fra Aandens Himmel, men fra
+Modsigelsernes Skjul, fra uroligt skiftende Tanker. Skiftende
+Tanker give kun flagrende Lys: Stjerneskud og Lygtemænd,
+Veirlys, som blavre for Tvivlenes Vindpust, slige
+vildsomme Lys kunne umulig lede os til at opdage Troen.
+
+Men er Troen da ikke forlængst opdaget? Jo, tilvisse! % til-|visse: the first letters all but lost at the gutter in this copy (z02 Y2); read as the 1884 resetting has it
+Men Sagen er, at det med Opdagelser i det per[sonlige] % the word is lost at the gutter in this copy (z02 Y2); supplied from the 1884 resetting
+Indre,
+i Sindets Dunkelheder, i Selvets forborgne
+% --- p. 41 ---
+\setcounter{footnote}{0}%
+\opage{41}Gruber, forholder sig anderledes end med andre Opdagelser.
+Naar En i Videnskaben har gjort en Opdagelse, kunne
+Andre vel træde til for at prøve den og, hvis den bestaaer
+sin Prøve, tilegne sig den. Men de, som paa denne Maade
+tilegne sig den, kunne dog ikke give sig ud for at have
+gjort Opdagelsen paa første Haand. Det behøves heller
+ikke: det Opdagede staaer fast som et Givet, og det saaledes
+Givne kan paa anden, tredie og fjerde Haand komme
+til almindelig Kundskab, og dets Erkjendelse udbrede sig i
+stedse videre Kredse. Men saaledes forholder det sig ikke
+med Opdagelse af Troen og den deraf betingede Opdagelse
+af Aanden. Begge hinanden forudsættende Opdagelser ere
+Sidebestemmelser af een og samme Grundopdagelse, hvis
+Hemmelighed ligger i Selvet, og som desaarsag hvert Menneske
+selv maa see at bringe for Lyset. Troens Opdagelse
+er en personlig Opgave for hver Enkelt især, altid en Opdagelse
+paa første Haand, en primitiv Selvopdagelse. At
+denne Opdagelse maa have sine Forudsætninger i den aabenbarede
+Religion, er vist nok; men derfor ophører den ikke
+at være primitiv. Hvad nytter det vel, at Religionen med dens
+hellige Kjendsgjerninger er os given, naar vi ikke kunne
+erkjende dens Sandhed. At erkjende Religionens Sandhed
+er at opdage Religionen; men at opdage Religionen er
+igjen at opdage Troen.
+
+Hvor overfladisk og løs den almindelige Forestilling
+om Tro er, giver sig uvilkaarlig tilkjende i tilsvarende Talemaader.
+Er det udvortes Ting, historiske Begivenheder,
+om hvilke vi endnu ikke have fuld Vished, saa hedder det:
+jeg veed det ikke, men jeg troer det. Er det en videnskabelig
+Læresætning, hvorom der tvistes, saa hedder det:
+jeg vil gjerne troe, at det Opstillede er rigtigt, men jeg
+har dog en lille Tvivl; for at jeg kan vide, at Sætningen
+er sand, maa jeg have Beviset gjennemført. Saaledes er
+det med alle de Sandheder, i hvis Natur det ligger, at de
+maae kunne godtgjøres som almeengjældende, være sig ved
+umiddelbar Sandsning eller ved Slutninger og tvingende
+Beviser. Ved al videnskabelig Erkjendelse gjælder Troen
+% --- p. 42 ---
+\setcounter{footnote}{0}%
+\opage{42}kun for en foreløbig, med Tvivl behæftet Antagelse; almeengyldige
+Fornuftsandheder ville \emph{ikke troes}, men \emph{vides}.
+
+Naar nu et tomt, overfladisk Sind eller et af Videnskab
+og videnskabelig Forskning optaget og betaget Individ
+vil have den samme Maalestok anvendt ogsaa paa det
+Religiøse, da er dette et slaaende Beviis for, at den Vidende
+endnu ikke har opdaget Troen; thi i religiøs Forstand er
+Troen selv den høieste menneskelige Vished. Troen træder
+her i Videns Sted og vil desaarsag ikke begrundes paa
+Viden. At vide og at troe er i religiøs Forstand det Samme:
+jeg veed det, thi jeg \emph{troer} det. Jeg veed, thi jeg troer,
+at dette menneskelige Selv, der begynder i Tiden, har et
+evigt Ophav og bærer i sig sin Evighedsspire. Jeg veed,
+at dette Selv med sin aandig-naturlige Individualitet er
+skabt, ikke i Abens Lignelse, men i Guds Billede; jeg
+veed det i Tro, saa vist som jeg sandselig veed, at Ilden
+brænder, at Sneen kjøler, og Solens Straaler lyse og varme.
+Jeg veed det, fordi jeg føler det, og jeg føler det, fordi
+jeg tænker det. Jeg veed det, ikke blot fordi jeg føler
+det og tænker det, men fordi jeg i alle Følelser, alle Forestillinger
+og alle Tanker vil det; jeg vil det, ikke af vilkaarligt
+Lune eller blind Indskydelse; jeg vil det, fordi
+jeg i rolig, klar, besindig Selverkjendelse maa ville det,
+og jeg maa ville det, fordi jeg elsker det. Naar denne
+Selvforstaaelse er vunden, saa er Troen opdaget, saa gjælder
+det gamle Ord: siig mig, hvad Du elsker, og jeg skal
+sige Dig, hvad Du er, thi det, Du elsker, det er Du, og
+det, Du væsenlig er, det elsker Du.
+
+Men --- lyder det fra en anden Side --- naar Troen
+yder fuldstændig Vished for alle Troende, og Troeslæren
+kan jo fornuftigviis kun lægge an paa at have overbevisende
+Kraft for de Troende: er det saa ikke heraf indlysende,
+at Troens Indhold lige saa fuldt maa kunne afgive
+Stof for videnskabelig Begrundelse, som enten Naturens
+eller Historiens Indhold; at med andre Ord Troesforskeren
+maa staae i samme Forhold til Religionens Kjendsgjerninger,
+som Naturforskeren til Naturens? --- Det er en gam%
+% --- p. 43 ---
+\setcounter{footnote}{0}%
+\opage{43}mel og haardnakket, men derfor ikke mindre aandssvækkende
+Vildfarelse, vi her have for os, en Vildfarelse, der
+er ganske anderledes livsfarlig for Religionens Sag, end
+enten Materialismen eller Atheismen eller Nihilismen eller
+hvad man ellers vil nævne. Vel maa der gives en Erkjendelseskreds,
+i hvilken Religionens Sandheder i deres
+indre Sammenhæng og Begrundelse komme til fuld Belysning,
+en lys og klar Erkjendelseskreds, i hvilken de evige
+Tankelove med et rigt Apparat af gjennemforskede Kjendsgjerninger
+vedblive at gjælde. Men i samme Nu man vil
+stille Troens Lærebygning paa lige Grundlag med det, som
+i egenlig Forstand hører Videnskaben til, styrter hele Bygningen
+sammen.
+
+Hvad skal det blive til, naar Troesforskeren vil forholde
+sig til Aabenbaringen, som Naturforskeren til Naturen?
+Naturen er et altid Nærværende, tilgængelig for
+Sandsning og sandselig Vished. Men hvor er der sandselig
+Vished for Troen? Hvad skal det blive til, naar
+Troesforskeren absolut vil forholde sig til de aabenbarede
+Kjendsgjerninger, som Historieforskeren til Historien?
+
+Skulle Troesartiklerne forud begrundes paa historiske
+Vidnesbyrd og antages paa udvortes Autoritet, før de kunne
+troes, da er Katholicismen --- den pavelige, vel at mærke,
+med Dogmet om Pavens Ufeilbarhed --- det eneste Rette;
+thi udenfor den katholske Kirke er det dog vel lige saa
+umuligt at give fuldt historisk Hjemmel for tre hundrede
+Skriftdogmer, som for tre apostoliske Troesartikler. Skal den
+personlige Forvisning om Troesartiklernes Sandhed derimod
+søges i levende Tro paa det selvnærværende Livets Ord, da er
+denne Tro paa Livets Ord en Erkjendelseskilde for sig, et
+Princip, der i Selvet begrunder sig selv, uafhængigt af
+Viden og Videnskab. Overalt, hvor det formummede Blandingsvæsen
+af Tro og Viden endnu fortsætter sit gamle
+Spøgeri, er Troen ikke opdaget.
+
+At opdage Troen er at opdage Aanden og i Aanden
+at opdage Villien; thi Aanden er Villiens Grund, ja Villien
+% --- p. 44 ---
+\setcounter{footnote}{0}%
+\opage{44}selv. For Menneskevilliens Frihed i Aandens Kraft er Troen
+den første Betingelse.
+
+Forskjellen mellem Aandsvillie og Fornuftvillie kan
+allerede her blive kjendelig. Fornuftvillien er afmægtig
+overfor Naturen, thi det er kun Mennesket, der vil i Fornuftens
+Navn, Fornuften selv er intet villende Væsen. De,
+der tillægge dette Væsen en fri, selvstændig Villie, maae
+enten opstille Fornuften som en Afgud eller paa Grund af
+en Sprogforvirring forvexle Fornuften med Aanden. Den
+guddommelige Aand har Naturen i sin Magt; Naturen
+skabes, bæres og forklares af Aanden. Vil Nogen derimod
+paastaae, at det er Fornuften, der har Naturen i sin Magt,
+da kunne vi strax vende Sætningen om og sige: det er
+Naturen, der har Fornuften i sin Magt. Begge Synsmaader
+ere lige sande og lige falske. Det gaaer med Fornuften
+som med Lovene: saadanne Love, saadanne Ting;
+og omvendt: saadanne Ting, saadanne Love. Tingenes
+Væsen udtaler sig i Lovene, men Lovenes Virkelighed beroer
+paa Tingene; tage vi Lovene bort, saa forsvinde Tingene,
+men dersom vi, i Tanken, tage alle Ting bort, hvad
+bliver der saa af Lovene? Det gjensidige Afhængighedsforhold
+af Ting og Love, Natur og Fornuft, viser hen til
+det tredie Høiere, der har begge i sin Magt, til Aanden.
+
+Aanden har i sin almægtige Villies Eenhed al Naturens
+Rigdom og alle Fornuftens Love; den bevæger os
+ikke som en dunkel Drift, den hersker ikke som den kolde
+Lov; den tvinger ikke, den skaber, den sammenstykker
+ikke, den beaander. Det er Aanden, som forklarer det
+Individuelle i det Almene, Driften i Fornuft, og Fornuften
+i Drift. Aanden vil det Almene, men den vil lige saa
+oprindelig det Individuelle. Den opløser ikke Selvet, den
+udsletter ikke Skikkelsen; den giver det Evige Liv og
+Livet Evighed; den giver det Levende et Selv og Selvet
+ Skikkelse, en til Forklarelse indviet Skikkelse: den
+opfylder Lovene og den overvinder Døden.
+
+Paa Aandslivets Trin bliver Villien stærk; lad os
+see, hvad det er, der giver den Kræfter.
+
+% --- p. 45 ---
+\setcounter{footnote}{0}%
+\opage{45}Saalænge den menneskelige Villie er henviist til sig
+selv alene, saalænge den, saa at sige, for egen Regning
+maa føre Kampen mod Naturskrankerne og al den Modstand,
+hvormed Nødvendigheden og dens gamle Allierede,
+Tilfældene, ere i Stand til at overvælde en indskrænket
+Individualitet, seer det fortvivlet ud med Friheden: Drift
+og Fornuft staae begge under Skjæbnen. Kan den kæmpende
+Villie derimod faae Undsætning af en absolut Styrke,
+en Hjælper, som selv er Villie, almægtig Villie, saa klarer
+det op i Frihedens Horizont, og Udsigterne blive lyse.
+Den almægtige Villie vil ikke fortære den afmægtige, men
+optage den i sig og give den Styrke: jo dybere denne
+Erkjendelse trænger ind, desto kraftigere maa Villien blive.
+Vistnok vedbliver der i Timeligheden at være en Splid
+mellem Drifter og Pligter: Driftvillien er selvisk hæftig,
+Fornuftvillien tom og kold; men i Aand og Tro --- paa
+Aandsvilliens Trin --- er Spliden væsenlig hævet. De
+ueensartede Fordringer, de timelige og de evige, begynde
+at forvandle sig og blive eensartede. Fornuften er aandig,
+den kan beaandes og fyldes med personligt Indhold; Driften
+er livsvarm, den kan afkjøles og luttres i Beaandelse,
+for igjen at varmes. Thi Aanden er ikke kold; den er
+Allivets Væld, i salig Attraa med dybe Længsler, den har
+al Inderlighedens Varme.
+
+Gud er Aand, og Gud er Kjærlighed: Aanden er
+Kjærlighed. Det ligger i Kjærlighedens Væsen, at den
+forener det Modsatte og forliger det Stridige. Fornuften,
+det vil sige: vor fornuftigt tænkende Bevidsthed, kan
+indsee det Sande i denne Sætning, forsaavidt den fastholdes
+i al Almindelighed, men naar Knuden strammes, og det
+Afgjørende lægges ind i Kjærlighedens Grund, dens Maal
+og dens Villie, bliver Fornuften blind. Skal Fornuften
+antage en evig Villie, da bliver det en almindelig, ubevidst
+Villen, der falder sammen med den evige Nødvendighed,
+med Naturens iboende Drift til at virke og forme. En
+guddommelig Villie, som i selvbevidste Øiemed har indblæst
+Støvet Liv, har forenet en udødelig Sjæl med et
+% --- p. 46 ---
+\setcounter{footnote}{0}%
+\opage{46}dødeligt Legeme, og spændt Modsætningen af Forkrænkeligt
+og Uforkrænkeligt saa stærkt, at dette vort Legeme maa døe,
+for at Sjælen i Sandhed kan leve; en Almagtsvillie, som har
+gjort alt dette af Kjærlighed og i den faderlige Hensigt,
+at Mennesket under Nødvendighedens Tryk og Timelighedens
+Byrde skal hæve sig op til Frihed og tilegne sig
+et evigt Liv --- en saadan, fri, bevidst og personlig Kjærlighedsvillie
+er ikke til for den videnskabelige Fornuft.
+Vi maae finde det høist naturligt, at de, som udelukkende
+søge al høiere Vished i Viden og Videnskab, vedblivende
+ansee en Frihedslære af denne Art for vilkaarlig og ubegrundet.
+
+
+Fornuften kan indsee, at Frihedsmaalet vilde staae
+høit og være et storartet Maal for en kraftig Villies
+Stræben, \emph{dersom} der gaves en tilkommende Verden.
+Ja \emph{dersom}! Men hvorledes komme vi ud over dette
+\emph{Dersom}? Hvorledes bærer man sig ad med at danne
+sig et klart Begreb eller endog blot en sandsynlig Forestilling
+om en overnaturlig Verdens Beskaffenhed? hvilken
+Videnskab paatager sig at føre Beviset for dens absolute
+Nødvendighed, uden at indsmugle Forudsætninger, som
+ikke tilhøre Viden?
+
+Den Evighedsvillie, som Fornuften kan erkjende, er
+i sit uforanderlige Væsen hverken kjærlig eller ukjærlig;
+den elsker Intet, thi den hader Intet. Kjærlighed og
+Had høre, ligesom Attraa og Afsky, Sympathie og Antipathie,
+under Endelighedens Modsætninger, og falde paa Individernes
+Affecter.
+
+Ved at mærke os den menneskelige Fornufts Grændse
+gjøre vi ikke Fornuften Uret. Tvertimod. At kræve af
+et Væsen, hvad der overstiger dets Evne, er ufornuftigt;
+det er ufornuftigt at fordre af Fornuften, hvad der er
+over dens Kræfter. Den menneskelige Fornuft har gjort
+mange vidunderlige Opdagelser i Verden og vil forhaabenlig
+endnu gjøre flere; men der er een Opdagelse, den
+aldrig har gjort og trods al Gransken, Grublen og Forsken
+aldrig vil gjøre, det er Opdagelsen af Selvets evige Liv.
+% --- p. 47 ---
+\setcounter{footnote}{0}%
+\opage{47}Det er just den Opdagelse, der ligger for Troen, den eneste
+Opdagelse, som Troen i Aand og Sandhed kan gjøre.
+Troen opdager Selvets Evighed: den opdager Aanden og i
+Aanden Kjærligheden og i Kjærlighedens Aand et saligt
+Liv. Denne Opdagelse er en indre personlig Oplevelse,
+den er som Aandedrættet og maa bestandig gjentages;
+standser Aandedrættet, saa svinder Livet; standser Oplevelsen,
+saa svinder Troen, og med Troen Aanden og med
+Aanden den kraftige Villie.
+
+Vi leve i Opdagelsernes Tid; vi leve for at opdage
+--- Aandens Villie.
+
+% --- p. 48 ---
+\setcounter{footnote}{0}%
+\lecture{Femte Forelæsning.}\opage{48}
+
+\emph{Naar Aanden er stærk, saa er Villien} kraftig;
+denne Sætning kan indrømmes, uden at den derfor
+fører os til dybere Indsigt, thi Spørgsmaalet er: hvorfra
+kommer Aanden, og hvorledes vinder den Styrke i
+Mennesket?
+
+Det er ikke med Aanden, som med Driften. Hvorfra
+kommer Driften? Vi behøve ikke at lede efter den,
+den er os nær, i vor Natur. Den \emph{kommer} ikke, den
+er, den yttrer sig uvilkaarligt som den er, fordi den er.
+
+Det er ikke med Aanden, som med Fornuften.
+Hvorfra kommer Fornuften? Den kommer ikke langveis
+fra; vi stirre ikke op i det Blaa og forvente dens Komme.
+Den \emph{kommer} ikke, den \emph{er}, i vort Væsen. I samme
+Øieblik som vi besinde os paa, hvad det Fornuftige er,
+opdage vi, at Fornuften ikke er et Fraværende, men et
+os væsenlig Nærværende.
+
+Kan nu det Samme siges om Aanden? Hertil maa
+svares baade Ja og Nei. Ja! Aanden er nærværende;
+den er jo guddommelig, og det Guddommelige er et Allestedsnærværende.
+Og dog Nei! thi Aanden er ikke som
+Driften, umiddelbart nærværende i Naturen; den er ikke
+for Tanken nødvendigt nærværende, som Fornuften. Naar
+det Fornuftige tænkes, saa er det med Nødvendighed; men
+fordi En tænker sig noget Aandeligt, deraf følger endnu
+% --- p. 49 ---
+\setcounter{footnote}{0}%
+\opage{49}ikke, at den Tænkende har Aanden selv i levende Nærværelse.
+Aanden kan altsaa være paa een Gang baade
+nærværende og dog fraværende, kan være os uendelig
+nær, skjøndt vi dog maa forvente dens Komme. Det
+er som en Gaade. Hemmeligheden er: at Aanden
+\textbf{ikke blot er \emph{Væsen}, men ogsaa \emph{Villie}}.
+
+Falder nu Eftertrykket, det for Religion og Tro afgjørende
+Eftertryk paa, at Aanden er Villie, saa er dens
+Komme en Aabenbarelse, og Aabenbarelsen et Under.
+Saaledes kom Evangeliets Aand over Sandhedens første
+Vidner; den kom som i en Lyd af Himlen, som i et fremfarende
+vældigt Veir, der opfyldte Huset, den kom med
+Tunger af Ild og med Sprogenes Gave, den kom med
+Evighedens Varsler, med Almagtens Tegn, den kom i et
+stort Mirakel. Men dette Mirakel er netop den vidende
+Fornuft et Forargelsens Tegn; det er Miraklet, der har uddybet
+Skilsmissens Kløft mellem Datid og Nutid. Hvor er
+dog ikke Alt forandret siden hiint første Gjennembrud.
+Aanden, siger man, er endnu den samme; men hvor er
+Kraften, hvor ere dens Undere?
+
+Den civiliserede Nutid troer ikke paa Mirakler, de
+Fornuftige kunne ikke engang høre Tale om dem uden at
+faae Kvalme. Verden, hedder det, er ikke længer indrettet
+paa Mirakler; Mirakler ere dens Constitution imod;
+dens Nervesystem fordrager dem ikke, Jordens ikke og
+Himlens ikke heller. Vi vende vort Blik nedad, vi grave
+i Jorden og finde dernede et stort Bibliothek af Stene,
+som i tydelige Skrifttegn berette om forgangne Verdeners
+Liv og Tilstande; men i intet Jordstrøg, paa intet Punkt
+finde vi Spor af et Paradiis. Vi væbne Øiet og see opad:
+Stjerner over Stjerner! men hvor ere Englene, hvor er
+den Eviges Throne? Himlen har aabnet sig, ogsaa for
+os, men anderledes end i hine Dage. Nutidens Himmel
+kan ikke aabne sig, som Datidens aabnede sig for den
+Himmelfarende; vore Skyer kunde ikke bære ham, hvis
+han engang vilde komme igjen »med Kraft og megen
+Herlighed». De Troende see det, og tør dog ikke see
+% --- p. 50 ---
+\setcounter{footnote}{0}%
+\opage{50}det. Troen er en Nonne med Slør, hun slaaer blufærdig
+Øiet ned, men stjaalne Blikke gaae gjennem Sløret. Derfor
+--- det forsikkre de Skarpsynede --- er Slægten svag,
+den er blevet vidende, og vil dog være troende; dens
+Væsen er deelt og derfor svækket; den lever halvt i det
+Gamle og halvt i det Nye, halvt i overnaturlige Indbildningers
+Tryllerier, og dog mere end halvt i Virkelighedens
+Interesser med alle en naturlig Verdens nærværende
+Kjendsgjerninger: saa sygner Slægten hen i Halvtro og
+Tvivl, Villien mattes og Charaktererne svækkes.
+
+Det er ganske vist en alvorlig Krise, der maa
+gjennemgaaes, inden den nyere Dannelse faaer sig arbeidet
+ud af det Gudernes Tusmørke, hvori dens uforligelige Forestillinger
+om Tid og Evighed, lig Jætter og Aser, øiensynlig
+stride den sidste Strid. Aabenbaringens Aand med
+sine Undere og Naturen med sine uforanderlige Love have
+i vor Nutidsbevidsthed stillet sig saa skarpt mod hinanden,
+at Halvtroen gaaer med en ond Samvittighed og venter
+paa en sidste Forklaring. Troestanker og Videnstanker i
+forvirret Blanding, Phantasier af Religion og Indtryk af
+Videnskab bevæge sig i underlige Syner, vildledende, som
+Ørkenens Luftspeilinger for den Reisende. Veien gjennem
+dette Uføre, den eneste Vei, som sikkert fører til Maalet,
+er betegnet ved et gjennemgaaende Spørgsmaal, Spørgsmaalet
+om Villien. Dette Spørgsmaal har nemlig det
+Særegne ved sig, at det fører Striden om alt det Udvortes
+tilbage til et eneste, afgjørende Indvortes.
+
+Hvad er Altilværelsens inderste Bevægende: Naturens
+dunkle Drift eller en evig fri, almægtig Villie? Det er Cardinalpunktet,
+hvorom det Hele dreier sig. Antages det
+Første, saa er Miraklet en Umulighed, og historiske Vidnesbyrd,
+de være nok saa mange og nok saa overeensstemmende,
+kunne ikke blæse Virkelighed ind i det Umulige.
+Antages det Sidste, saa er Miraklet muligt. Og dog kunne
+historiske Vidnesbyrd ikke give os fuld Vished om nogetsomhelst
+enkelt virkeligt Mirakel. Historiske Vidnesbyrd
+give os kun en Sandsynlighed; men det virkelige Mirakel,
+% --- p. 51 ---
+\setcounter{footnote}{0}%
+\opage{51}det ligger i dets Væsen, er altid usandsynligt. Viden holder
+sig til det historisk Sandsynlige, og forkaster det Usandsynlige;
+Troen gaaer ud over det Sandsynlige, og griber
+det Mulige. Det Umulige kan ikke troes, men det Usandsynlige,
+som dog er muligt, kan troes: her er Forskjellen
+mellem Tro og Viden.
+
+Paa Profanhistoriens Omraade har den forskende
+Videnskab en sikker Veiledning i bekjendte Love og en
+derved normeret Sandsynlighedens Maalestok; naar en Tildragelse
+er saa sandsynlig, at Ingen kan negte den uden
+med det Samme at benegte al historisk Sandsynlighed, saa
+er Tildragelsen sikkret som Kjendsgjerning. Anderledes
+med Aabenbaringens Kjendsgjerninger i den hellige Historie.
+Her kan det Sandsynlige ikke normeres efter bekjendte
+Love, thi Underet selv er det Usandsynligste af
+Alt. Griber nu Troen ud over det blot Sandsynlige for, i
+den almægtige Villies Navn, under Virkelighedens Form
+at gribe den høieste Mulighed, saa synes den jo udsat
+for at oversee Tingenes naturnødvendige Sammenhæng,
+glemme Lovene og komme ind paa det Eventyrlige. Imod
+denne Vildfarelse staaer Livets Ord, det guddommelige Selv,
+Magtvilliens Aabenbarer, fast, urokkelig fast som Klippen
+i Havet. Hans Villie er Magt, alle Muligheders Hemmelighed,
+han er Underet selv, omgiven af Under og Tegn.
+Og dog er hans egen Villie, menneskelig seet, som en
+Afmagt; han har, bogstavelig talt, ingen Egenvillie: hans
+Villie er at gjøre Almagtens Villie, Faderens Villie, som
+er i Himlene. Saa staaer han paa Frihedens Grund, og
+dog under strenge Love. Han viser sig, som han er,
+--- Sandheden! Ja, men i Lydighed. Ikke som en vilkaarlig
+Hersker, men som en lydig Tjener, lever han i Sandheden,
+strider for Sandheden, lider for Sandheden, døer
+for Sandheden: han, den tjenende Sandhed, bryder ikke
+Lovene, han opfylder Lovene. Han stifter ikke en ny
+Religion ved Hjælp af en ny Lære med et godt Exempel,
+nei, han stifter, hvad han er, og han er, hvad han
+stifter, Religionen selv, \emph{Aandsvillien} i Kjød og Blod.
+
+% --- p. 52 ---
+\setcounter{footnote}{0}%
+\opage{52}Det gaaer jo feiende nok med Erklæringer som denne:
+»vi leve i Lovenes, ikke i Miraklernes Tid»; men er saa
+Menneskeslægtens høieste Anliggende hermed afgjort?
+Lad os oversætte Erklæringen i et andet Sprog, for ret
+at see, hvad den indeholder. Vi leve i Lovenes Tid, det
+vil sige: Almagtsvillien er gaaet ud, kun de endelige
+Villier ere tilbage. Vor Fremtids Fane bærer den nye
+Indskrift: \emph{Døgnvillien}. Hermed stemmer det nu ganske
+vel, at alle Døgnvillier skulle frem, og Fleertalsvillien
+sidde paa Magtens Throne; men hvorledes denne Døgnvillie
+vil bære sig ad med at naae det høie Maal: at opfylde
+Lovene og løfte Masserne op paa Frihedens Trin, er endnu
+ikke forklaret.
+
+Spørgsmaalet om Underet falder i sidste Instans
+sammen med Spørgsmaalet om \emph{Villiens Oprindelighed}.
+Dette Spørgsmaal lader sig ikke affærdige ved at paaberaabe
+sig Naturlovenes Uforanderlighed. Man kunde da
+lige saa godt henvise til Tankelovenes Uforanderlighed.
+Kunne de uforanderlige Tankelove ikke engang siges at
+gjøre den menneskelige Villie Afbræk, naar Talen er om
+nye Ideer, nye Begyndelser og tilsvarende nye Handlinger,
+hvor meget mindre skulle de uforanderlige Naturlove da i
+noget Punkt kunne gjøre den guddommelige Villies ubetingede
+Frihed Afbræk. Den ubetingede Frihed bestaaer
+ikke deri, at Villien er uden Betingelser, men deri, at den
+har Betingelserne i sin Magt, og er hævet over endelige
+Skranker. Fornuften er Formen for Viisdommens Indhold,
+men Indholdet selv bestemmes af Villien. Aanden har
+ikke Fornuften udenfor sig, saa lidt som den har Viisdommen
+udenfor sig. Den almægtige Villie kan gjøre,
+hvad den vil, virke og røre sig, som den vil, den kommer
+aldrig udenfor det uendelige Heles uendelige Sammenhæng:
+den kan jo aldrig komme udenfor sig selv. Men netop
+i Sammenhængens Uendelighed har Friheden sine uudtømmelige
+Muligheder.
+
+For den almægtige Villie ere alle Ting mulige; det
+betyder ikke, at Villiens Almagt kan gjøre Lovene til Intet,
+% --- p. 53 ---
+\setcounter{footnote}{0}%
+\opage{53}ophøie Modsigelser til Love, gjøre Natur til Unatur, Cirkelen
+fiirkantet o. s. v., men det betyder, at den i og ved
+og med Lovene kan bringe det i Menneskenes Øine Allerusandsynligste
+frem, kan uden Brud paa Tingenes skjulte
+Sammenhæng pludselig bryde alle Sandsynligheders Maalestokke.
+Den almægtige Villie, der har Tingene i sin Magt,
+har ogsaa Lovene i sin Magt; men at have Lovene i sin
+Magt er: at have deres Opfyldelse i sin Magt. Den, der
+har Tanken i sin Magt, gjør aldrig Brud paa Tankelovene;
+den, der har Naturen i sin Magt, gjør aldrig Brud paa
+Naturlovene.
+
+Der er en Grundsætning, hvorom Aabenbaringstroen
+med sin Forvisning om Aand og Villie maa være enig,
+aabenlyst, oprigtigt, fuldstændigt enig med Nutidsbevidstheden,
+det er Sætningen om Lovenes Uforanderlighed.
+Naar denne Sætnings Gyldighed, ret forstaaet, tilfulde er
+anerkjendt, saa er Forbindelsen mellem Fortid og Nutid
+aandelig gjenoprettet, og Muligheden af en gjensidig Forstaaelse
+mellem Fornuft og Religion tilveiebragt. Paa
+Grundlaget af denne Forstaaelse beroer Adskillelsen af det,
+som videnskabelig kan vides, og det, som ikke kan vides,
+men maa falde ind under Tro. Hvad er den oprindelige
+Grund til Naturlovenes Uforanderlighed? »Tingenes Væsen,
+Verdens fornuftnødvendige Sammenhæng»; det er Naturlærens
+Forklaring. »Guds almægtige Villie» ; det er Religionens
+Forklaring. Her viser sig paa Erkjendelsernes
+Landkaart en tydelig Grændse mellem Tro og Viden, en
+Demarcationslinie, nok saa tilforladelig som den, Paven
+drog, da Columbus havde opdaget den nye Verden.
+
+Erfaringslæren begynder med Kjendsgjerningerne,
+holder sig til Lovene og standser ved Nødvendigheden.
+Naturphilosophien gaaer et Skridt videre. Den kan i Grundforholdet
+af Natur og Aand paavise den betingede Nødvendigheds
+Fremgang af Friheden, Lovenes Oprindelse fra den lovgivende
+Villie. Men den maa med alt dette dog blive
+staaende ved Nødvendighedssiden og nøies med det, som
+uafviselig hører med til Forstaaelse af \emph{givne} Kjends%
+% --- p. 54 ---
+\setcounter{footnote}{0}%
+\opage{54}gjerninger og videnskabelig Begrundelse af \emph{bekjendte}
+Love. Som  i en hellig Skumring af halvgjennemsigtig
+Nødvendighed kan Naturphilosophien overalt see Lysskæret
+af den guddommelige Frihed; men Villien selv i
+Mulighedernes indre Uendelighed kan den ikke see: Frihedens
+Sol gaaer aldrig op i disse Videns Egne, den
+holder sig i Horizontens Rand.
+
+Naturphilosophiens sidste Sætning er Religionens
+første: Naturen bæres af Aanden, Lovene grunde i Villien.
+Nu gaaer Frihedssolen op, det dages over Mulighederne.
+Det er en Erkjendelseskreds for sig, Troens, Aabenbaringens
+evige Lyskreds. Hvad see vi her i dette nye Lys?
+Villien i det almægtige Selv, Friheden i alle sine Muligheder:
+\emph{Underet}! Underet er, at Almagten er Villie, og
+Villien Almagt; Underet er, at Alverdens Nødvendighed
+har sin oprindelige Grund i guddommelig Frihed, Underet
+selv er Viisdommens Hemmelighed.
+
+Det Under, hvorom her tales, er ikke Phænomen,
+men Væsen, det er et Grundunder. Det har sit ubedragelige
+Vishedsmærke, ikke i udvortes Tegn, men i indvortes,
+i vort personlige Selv, i Selvforstaaelse af Tro og Villie.
+Det skal ikke først stadfæstes ved vidtløftige Vidneforhør
+over ydre Mirakler; det er omvendt de ydre Mirakler, som,
+naar Troeskritiken anlægger sin Maalestok, alle maae føres
+tilbage til og stadfæstes af det altid værende, evigt blivende,
+aldrig skiftende Grundunder.
+
+Naar vi nu, under disse Forudsætninger, gjentage, at
+Aanden er Villie, og dens Aabenbarlse % PRINTED AS IS (Aabenbarelse)
+et Under: saa er
+det dog vel indlysende, at heri ikke skjuler sig mindste
+Bagtanke eller Bitanke om Lovbrud, løs Vilkaarlighed eller
+guddommeligt Lune. Aanden er Væsen, og Aanden er
+Villie. At Aanden aabenbarer sig, vil da sige: den viser
+sig i Troens Speil som den er efter sin Villies evige
+Væsen. Hvad er da Aanden efter sit aabenbarede Væsen?
+Kjærlighed, hellig, uforanderlig Kjærlighed. Heri ligger,
+at den altid er redebon --- thi Kjærlighed er altid rede%
+% --- p. 55 ---
+\setcounter{footnote}{0}%
+\opage{55}bon ---
+at den altid vil komme, naar og hvor den, paa
+Frihedens Vilkaar, kan komme.
+
+Vi kjende Sandhedens Aand paa Livets Ord. Spørge
+vi, hvorfor den da tøvede saalænge, inden den kom ---
+med Livets Ord til fuld Aabenbarelse, da er det Troens
+eenfoldige Svar: den kunde ikke komme før, den var forhindret.
+Den var i Ordet, og Ordet var Verdens Lys, og
+Lyset skinnede --- men i mørke Myther, og Mørke og
+Myther begrebe det ikke. Spørge vi, hvorfor den ikke
+kommer til os i Magtens Tegn med Underets Kraft, som
+den kom til Fædrene, da er det Troens eenfoldige Svar:
+den kommer ikke med Underets Kraft, fordi den ikke kan,
+den er forhindret. Det er den menneskelige Villie, som
+paa Frihedens Vei har kastet de mange Stene og opdynget
+de mange Hindringer.
+
+»Men», siger man, »saa er her jo dog en Modsigelse,
+en utaalelig, fra Under og Villie uadskillelig Modsigelse.
+Eet af To: enten er Aanden almægtig, eller den er afmægtig.
+Er Aanden almægtig, hvad kan da standse dens
+Komme? Den kommer og gaaer, som den vil, naar den
+vil, og hvorhen den vil; den kommer med Seier, lysende,
+varmende: Hjerterne smelte for Ord af Ild, som Klippernes
+Iis for Solens Glød. Saaledes kommer en Almægtig. Kan
+Aanden ikke komme saaledes; er der Noget, som kan
+stille sig i Veien, et virkeligt Noget, som kan lamme
+dens Kraft, tvinge den til at staae stille eller dog bøie
+af og liste sig frem ad Omveie: hvor er saa Villiens Almagt,
+og hvad er Underet?»  Unegteligt! her er en Modsigelse.
+Gudsvillien er almægtig, Menneskets Villie er afmægtig.
+»Og saa skulde dette Afmægtige være i Stand
+til at sætte sig op mod det Almægtige, saa skulde det
+Selviske i Menneskets Egenvillie virkelig have Kraft til at
+gjøre Aandsvillien Modstand? Det maa være en Indbildning,
+et Bedrag». Vi svare: Ja! det er ganske vist en
+Indbildning, at Døgnvillier, om de end i Millionviis sammenrottede
+sig til Oprør, skulde formaae at sætte den evige
+Villie Skranker; det er et Bedrag, et gruopvækkende,
+% --- p. 56 ---
+\setcounter{footnote}{0}%
+\opage{56}aandsfortærende Selvbedrag. Men dette Selvbedrag er et
+virkeligt Noget, det er i Menneskets Egenvillie saa virkeligt,
+at det kan »bedrøve Aanden».
+
+Kom det an paa Magten alene, saa var Aanden vis
+paa sin Seier: det ringeste Pust, og Alverdens Hindringer
+vege som Fnug. Men hvad blev det saa til med Menneskets
+Frihed? Skulde Aanden bruge Magt og tage den
+gjenstridige Egenvillie med Vold, saa maatte den jo grundlægge
+Friheden ved at gjøre Friheden til Intet: det er en
+Modsigelse saa klar, at vi heri see det Umulige. Var
+Talen om at gjøre de Døve hørende, de Blinde seende, at
+aabne Gravene og opvække de Døde, saa kunde vi ikke
+sige: det er Almagtsvillien umuligt; thi vor Viden slaaer
+ikke til. Vi kunne sige, at slige Gjerninger ikke lade sig
+forklare efter de os bekjendte Love; men vi kunne ikke
+sige, at de staae i Strid med Lovene, thi de endnu uopdagede
+Loves Tal er uendelig større end Tallet paa de
+opdagede. Alle de Modsigelser, som en letfærdig Viden i
+sin Overilelse i denne Henseende har formuleret, ere byggede
+paa Sand og falde bort af sig selv, naar de prøves. Men
+den Modsigelse, at den almægtige Villie skulde ikke blot
+kunne tvinge den afmægtige --- deri er ingen Modsigelse
+--- men tvinge den til ikke at lade sig tvinge, tvinge den til
+at bestemme sig med Frihed, det er en Modsigelse saa klar
+og indlysende, at den, der tillægger Almagten en saadan
+Mulighed, ikke veed, hvad han selv siger. Frihedens Knude
+vil ikke hugges over, den vil løses.
+
+Knudens Løsning er Selvbedragets Opløsning. Selvbedraget
+er i Mennesket dobbelt, ja tredobbelt. Det er i
+Tanken og kaldes Forblindelse; det er i Villien og kaldes
+Trods; det er i Følelsens Eenhed af Tanke og Villie, og
+kaldes Forhærdelse. Det er vanskeligt, om ikke umuligt,
+at komme Bedraget tillivs under nogen enkelt af disse
+Former for sig; de tre Medinteressenter, Tanke, Villie og
+Følelse, holde sammen i det fælles Bedrag, de ere som
+Sammensvorne: den Ene vil ikke forraade den Anden.
+Forstanden kan ikke opklares, og Forblindelsen ikke hæves,
+% --- p. 57 ---
+\setcounter{footnote}{0}%
+\opage{57}saalænge Villien er vrang og Følelsernes Strøm gaaer
+Sandheden imod. Følelsen faaer falske Indtryk, saalænge
+Forstanden er omtaaget, og den af falske Forestillinger
+bedaarede Villie holder Indgangen spærret for enhver Lysstraale.
+Og skulde vel en Villie med falske Tanker og
+falske Forestillinger, falske Billeder og selviske Indskydelser
+paa egen Haand være i Stand til at begynde med Sandheden
+ud fra sig selv og hugge Bedraget igjennem, som en
+Chlotaldo sønderhugger Morganas Perle? Det Hele viser
+tilbage til Selvets uopladte Naturgrund, den ubevidste Eenhed,
+som bærer Tanke, Villie og Følelse i uforklaret Selvbestemmen:
+skal Bedraget kunne hæves, saa maa der i
+denne Naturgrund være Noget, som holder igjen og
+gjemmer en Mulighed for Aanden.
+
+Kunde vi forestille os Selvbedraget fortsætte sit Kredsløb
+gjennem de tre Hovedformer af Tanke, Villie og Følelse
+saa længe, saa vedholdende og i en saadan Dybde, at det
+Skjulte i Selvets Grund blev bragt op i Bevidsthedens Lys
+og den sidste Rest af naturlig Umiddelbarhed opbrugt:
+saa vilde Selvbedraget fortætte % PRINTED AS IS (fortsætte)
+sig i en Villie af ubetinget
+Lysfornegtelse, en i Aand formørket Villie, en Aandsvillie,
+der ikke var menneskelig, men satanisk. At det under
+denne Forudsætning hverken vilde være Tanken eller Følelsen,
+men Villien selv, der til allersidst kom til at gjøre
+Udslaget, er indlysende. Følelsen er uvilkaarlig; det
+følende Væsen har ikke Indtrykket i sin Magt, og heri
+ligger altid en Undskyldning for Følelsesbedraget. Ogsaa
+Tankebedraget har sin Undskyldning, saa længe det Ubevidste
+endnu er saa fremherskende, at der kan bevares et
+Skin af, at Tanken bestandig er i Begreb med at søge
+det Sande. Først naar den fornegtede Sandhed staaer
+klaret for Tanken og Smertens Stik gaaer igjennem Hjertet,
+har Egenvillien Betingelser for at forvandle Selvbedraget
+til absolut Selvforblindelse og drive Forhærdelsen til det
+Yderste.
+
+Dersom en saadan Selvmodsigelse blot var logisk,
+vilde den uden videre være at henføre under det Umulige,
+% --- p. 58 ---
+\setcounter{footnote}{0}%
+\opage{58}og Bedraget glide Tanken forbi, som en Skygge paa Væggen.
+Men en Selvmodsigelse af denne Art er mere end logisk,
+den er personlig. Allerede paa Driftvilliens Trin gjør
+Individet Erfaringer af, at det Sande ingenlunde er det
+Samme som det Behagelige, og Forstanden faaer ved slige
+Anledninger ofte travlt nok med at tilhylle det Usande
+og besmykke det Halvsande. Paa Fornufterkjendelsens
+Trin kan Egenvillien i Skjæbnens Navn holde sig selv saa
+fast, at den hellere vil »knuses» end »bøies». Kommer
+nu en saadan potenseret Egenvillie i Forhold til Aanden
+selv, Sandhedens og Kjærlighedens Aand, da er det ingenlunde
+givet, at den bøier sig for Aanden, om den end
+maa erkjende Aanden for Magt. Det Modsatte kan skee.
+Den potenserede Egenvillie føler, at den i al sin Afmagt
+dog har en Magt, Magt til at trodse Aanden. Greben af
+Selvmodsigelsens Krampe, griber den da med Fortvivlelsens
+Kraft til det Valg: hellere at lide alle Selvfortærelsens
+Kvaler end bekjende sin Skyld, bære Ydmygelsen og bøie
+sig for den Overmægtige. Naar dette Valg er skeet, saa
+er Forblindelsen fuldendt; saa er Sandhed Løgn, og Løgn er
+Sandhed, Frihed Trældom, og Trældom Frihed: Kjærlighedens
+Lys udslukkes i Hadets Mørke.
+
+Den samme Sandhedens Aand, der vækker Kjærlighed,
+kan ogsaa vække Had, thi Had er en omvendt, i selvisk
+Trods forvrænget Kjærlighed. Det er ikke Kjærlighedens
+Skyld, at den vækker Had; den kan ikke gjøre for det.
+Kjærligheden kan taale Alt for Andres Skyld, men Selvmodsigelse
+kan den ikke taale. Den kan ikke fornegte
+sit Væsen og sige til sig selv: jeg maa forandre mig, jeg
+maa see at blive egenkjærlig, det vil sige: ukjærlig, thi
+ellers vækker jeg Had. Kjærlighedens Væsen er: ikke at
+skjule, men at aabenbare sig. Naar da den sig aabenbarende
+Kjærligheds Aand vækker Had, saa bliver Hadet
+ikke ringe, fordi Kjærligheden er stor; nei, Hadet nærer
+sig af Kjærligheden, voxer ved Kjærligheden, stræber at
+maale sig med Kjærligheden og blive uendeligt, fordi
+Kjærligheden er uendelig. Hvad heri er skjult, skulle vi i
+% --- p. 59 ---
+\setcounter{footnote}{0}%
+\opage{59}denne Sammenhæng ikke forsøge at drage frem, men kun
+holde det fast, at der paa Villiens Vei i Frihedens Navn
+virkelig er et Noget, som kan bedrøve Aanden.
+
+Vi have betragtet Selvbedraget fra den stærke Side;
+lad os til Slutning vende Synspunktet om og betragte det
+fra Svaghedens Side.
+
+Der er jo Mennesker, og deres Tal er vist ikke ringe,
+bekymrede Sjæle, som sukke i sig selv og sige: «Vi staae
+ikke Aanden imod; vi føle, at vi trænge til Aanden; vi
+bede om Aanden, men --- Aanden kommer ikke.« Og der
+er til Vederlag igjen dem, som i Overmaal nyde Aanden,
+Troens Udvalgte, hvis fedtpandede Trivelighed ligefrem glindser
+af Aanden: de snakke om Aanden og snakke med Aanden.
+De besidde det Trylleord, hvori Aanden boer; saa kjende
+de Aanden godt: de ere, reent ud sagt, Kammerater med
+Aanden. Der er i Forholdet mellem Gud og hvert
+enkelt Menneske en Hemmelighed, som kun den Alvidende gjennemskuer; men see vi lidt skarpt paa det Menneskelige,
+viser det sig da ikke ogsaa her, at Selvbedraget er
+dobbelt, ja tredobbelt.
+
+Der er et Forestillingsbedrag, som med Forglemmelse
+af Aandens Allestedsnærværelse, tager Aabenbaringsordet
+forfængeligt, sætter Aanden fast i et Billede og gjør Billedet
+udvortes. Under Billedet af en usynlig, men dog
+endelig Person, der bevæger sig i Rummet, farer »den
+Helligaand«, op og ned og ned og op, et bevinget Mellembud
+mellem Jord og Himmel. Vi forarges ikke over det Billedlige;
+men naar dette Billedlige krystalliserer i Phantasien
+til en fast Virkelighed, naar Aanden til visse Tider
+aflægger Besøg i et Menneskehjerte og gaaer igjen med
+Løfte om at vende tilbage; naar, sige vi, dette Billedvæsen
+faaer en saadan Magt med Bevidstheden, at den Bedende
+sidder og venter, at Aanden som Gjæst skal banke paa
+Døren: tør vi da undre os, om en saadan Ventende kan
+komme til at vente forgjæves? At gjøre Personlighedens
+Aand til et mythisk Væsen, trolovet med Iris, der farer paa
+Regnbuen, er at opfatte den som en Afgud; men at opfatte
+Aanden som en Afgud, er at bedrøve Aanden.
+
+% --- p. 60 ---
+\setcounter{footnote}{0}%
+\opage{60}Det antydede Forestillingsbedrag forbinder sig med
+et tilsvarende Følelsebedrag. % PRINTED AS IS (Følelsesbedrag)
+ Indbildningen er, at Aandens
+Nærværelse skulde være Gjenstand for en umiddelbar indvortes
+Sandsning, at den Sjæl, hvem Aanden besøger,
+skulde være i Stand til at sige paa Klokkeslet, naar Besøgelsen
+skete, skulde kunne gjøre en tydelig Adskillelse
+mellem to Væsener, sit eget Væsen og Aanden,
+skulde ligefrem kunne samtale med Aanden: »det sagde
+jeg til Aanden, og saa sagde Aanden til mig« o. s. v.
+Naar denne Indbildning faaer Overhaand, og dens skjulte
+Indflydelse er uden Tvivl langt større end Mange ret
+ville tilstaae: tør vi da finde det forunderligt, at der er
+oprigtige Sjæle, som vedgaae for sig selv, at de aldrig
+have staaet Ansigt til Ansigt med Aanden selv, aldrig
+nogensinde have enten seet eller umiddelbart fornummet
+Guds egen Nærværelse som Helligaand?
+
+Saa skal den hellige Skrift bære Skylden. I Modsætning
+til de Billedtroende, som, for at tage Skriftordet ret
+bogstaveligt, gjøre det Overnaturlige unaturligt, og sætte det
+Indvortes til paa et Udvortes, optræde saa »de Fornuftige«
+med en Vidensfortolkning, som bortskaffer det Overnaturlige,
+udvander Aabenbaringsordet og faaer dets Charakteerpræg
+udvisket. Saa bliver Aandens Bog ved Hjælp af et
+dobbelt Selvbedrag til en tvetydig Bog: Børnene i Ammestuen
+holde sig til Billederne og lege Juul med det Overnaturlige;
+de Voxne opdage Naturligheden og lefle med
+Mythologien.
+
+Forestillings- og Følelsesbedraget forene sig i et Tredie,
+den farligste Form af dem alle, og det er Villiesbedraget.
+Det Skuffende, hvorfra man gaaer ud, er Forestillingen om,
+at Menneskets naturlige Villie kan blive tilovers som en
+Størrelse for sig ved Siden af Aandsvillien. Hos Nogle bliver
+dette opfattet saaledes, at den naturlige Villie, være sig i
+Form af Driftvillie eller Fornuftvillie, skal tvinges ind
+under Aandens Lov og pidskes op til, om ikke just at fortjene
+Aanden, saa dog til at gjøre sig værdig til Aanden,
+arbeide sammen med Aanden, og, om muligt, ved gode
+% --- p. 61 ---
+\setcounter{footnote}{0}%
+\opage{61}Gjerninger indlægge sig Fortjenester hos Aanden. Herhen
+hører en egen Form af den saakaldte strenge, bekymrede
+Christendom, ikke den i Sandhed, men den i Suurhed bekymrede,
+en Christendom, hvis Kjærlighed er en Art
+gudelig Ærgrelse, hvis Trøst er en Forvisning om de Glades
+evige Fordømmelse, en Christendom, som hader Verden med
+en guul Tro, der har sit Sæde i Galden. Hos Andre bliver
+Menneskets naturlige Villie ganske rigtigt erklæret for
+uduelig til at gjøre Aandens Gjerninger. Alt beroer uden
+videre paa Aanden og Troen, den nye Villie kommer af
+sig selv. Vil Aanden, saa er der Villie; vil Aanden ikke,
+nu vel, saa er der endnu ingen Villie --- Villien groer
+langsomt. Men det gjør Ingenting: af Tro er der fuldt op,
+og Aand og Tro er det Hele. Paa disse Betingelser
+kommer det til et skjønt Forlig mellem Aandsmennesket
+og det naturlige Menneske: de kunne nu saa godt sammen,
+thi de elske jo begge Friheden. Troen har sin Frihed
+i det Overnaturlige, og det kan jo ikke genere det
+Naturlige; Driftvillien, der har sin Frihed i det Naturlige,
+kan gaae omkring og græsse, hvor helst den vil, paa Timelighedens
+Overdrev, naar den for Resten er skikkelig og
+ikke forgriber sig paa Troen. Forliget er saa hjerteligt, at
+det livagtigt seer ud, som om de to Villier, Troens og
+Driftens, vare blevne til een Villie. Herhen hører en vis
+Formation af den saakaldte glade Christendom, ikke den i
+ Sandhed glade --- thi det er for Troen evig vist, at Aandens
+Liv er et Liv i Glæde --- men den i Naturlighed
+glade, den kisteglade, der finder det saa deiligt paa Jorden,
+fordi den er saa sikker paa Himlen.
+
+Naar disse Selvbedrag hæves, og de kunne hæves
+--- hvert Menneske har i det aabenbarede Ord, det Ord, hvis
+levende, sakramentale Nærværelse er at finde i Menigheden,
+Betingelser for at hæve dem, naar han alvorlig vil --- saa
+kommer Aanden.
+
+Der gjøres i vor nærværende Tid adskjellige Forsøg
+paa at forlige Nutidsbevidstheden med den bestaaende Religion.
+Man gaaer i denne Henseende ud fra den ganske
+% --- p. 62 ---
+\setcounter{footnote}{0}%
+\opage{62}vist almeengyldige Forudsætning,  at Menneskeheden har
+Trang til Religion, en saa dybtgaaende og væsenlig Trang,
+at Stater og Folk, Civilisation og Sædelighed, al borgerlig
+Orden og alle en høiere Oplysnings Goder vilde løse sig op
+i et Chaos af raae Lidenskaber og Menneskelighedens Træk
+forvrænges til Rovdyrets Glubskhed og til Abens Lignelse,
+hvis Religionen forsvandt fra det menneskelige Samfund.
+Man holder endvidere fast paa den i sig fuldgyldige
+Sandhed, at det Religiøse umuligt kan være os et Levende,
+Nærværende, dersom det ikke paa aandskraftig Maade formaaer
+at gjennemtrænge Nutidsbevidstheden saa fuldstændig,
+at vi med fuld Frihed leve og virke og røre os deri
+som i vort rette, aandige Livselement. Man har ganske
+rigtig indseet, at det maa være dette aandige Livselement,
+der indeholder de første afgjørende Betingelser for Dannelsen
+af Charakterer med et nyt Syn og en ny Villie,
+en Villie, som med Tro og Mod tør gribe Opgaverne fra
+Grunden af og freidig arbeide paa deres Løsning. Om alt
+dette maae vistnok de Fremmeligere i Tiden alle være
+enige; men, gaae vi nærmere ind paa Sagen, møde
+vi saa ikke dette Forunderlige, at Forsøgene begynde med
+at oversee det første Nødvendige?
+
+Skal det Religiøse sættes i Kraft, saa er det dog vel
+aldeles nødvendigt, at Enhver maa begynde med at spørge
+sig selv, hvori det Religiøse da væsenlig bestaaer, hvad
+Religion oprindelig er, og hvor Sandhedsmærket findes,
+det ubedragelige, der kan forvisse ham om, at han ikke
+farer vild og begiver sig ind paa det Uvisse. Er Sandhedsmærket
+tilforladeligt, da maa det findes i hans eget
+Selv, i Selvforstaaelse af Tro og Aand. Denne Selvforstaaelse
+er en Villiesforstaaelse, en Forstaaelse af Underet;
+thi Underet er Religionen selv. At en menneskelig Villie
+staaer i et Nødvendighedsforhold til villieløse Ting, deri
+er der intet Under; at menneskelige Villier forholde sig til
+hverandre som Vilkaarlighedspunkter, der alle beherskes af
+overmægtige Love, deri er der intet Under. Men at Guds
+almægtige Villie er traadt i Forhold til Menneskets afmæg%
+% --- p. 63 ---
+\setcounter{footnote}{0}%
+\opage{63}tige Villie, har aabenbaret sig selv som en Menneskevillie,
+og ved denne sin Selvaabenbarelse stiftet et Kjærlighedsforhold,
+en salig Forligelse, at de to Villier, Guds og Menneskets,
+til evig Tid kunne være som een Villie, det er i
+Aand og Sandhed et Under. De, der mene, at de bedst
+kunne sætte det Religiøse i Kraft ved at udelukke Underet,
+ere som de, der mene, at de bedst kunne tegne Cirkelen
+ved at fremstille den som en Fiirkant. At forkaste Underet
+er at forkaste Religionen; at antage Religionen som Religion
+er at erkjende Underet.
+
+Staaer Sandhedsmærket fast i det Indre, saa udgaaer
+herfra det Lys, som kan opklare det tilsvarende Ydre.
+Det Indre i Troen er saa langt fra at være ligegyldigt mod
+sit Ydre, at hver Troende maa erkjende, at hans Selvforstaaelse
+i Aand ikke skyldes ham selv, men er vakt ved
+et udenfra kommende Ord, og hviler paa det sakramentale
+Ordets Under, som med Aandsvilliens Almagt meddeler sit
+Indre i, med og under et bestemt Ydre. Saa er her
+altsaa formedelst Underet et fortsat, levende Vexelforhold
+mellem det Indre og det Ydre. Saalænge alt det Ydre
+opfattes og bedømmes som Middel og Gjennemgangsled for
+det Indre, saalænge vedbliver Selvforstaaelsen at berige sig,
+og Sandhedsmærket slaaer til. Først naar Bevidstheden
+gjør Forsøg paa at gaae uden om Troen, bagved Troen,
+for at gribe den religiøse Kjendsgjerning i reen, historisk
+Udvorteshed, svigter Sandhedsmærket, og Famlen og Tvivlen
+begynder. Det kan ikke noksom indskærpes, at Troen og
+Troens Indhold ere uadskillelige: ethvert Mirakel er Karikatur,
+naar det ikke bliver seet med Troens Øie. Den
+hellige Historie udfolder for vor Betragtning en Række
+Livsbilleder og fører os ind i en Kreds af Kjendsgjerninger
+og Phænomener, i hvilke Fortidens Troende, de være nu
+Øienvidner eller ikke Øienvidner, have seet og erkjendt de
+Almagtstegn, ved hvilke den frelsende, forløsende Kjærlighedsvillie
+har aabenbaret sig for dem; Spørgsmaalet er,
+om vi i deres Tro kunne gjenkjende Troens Væsen og dele
+Tro med dem. Forstaaelsen og Tilegnelsen af den hellige
+% --- p. 64 ---
+\setcounter{footnote}{0}%
+\opage{64}Historie er en sig fortsættende Gjenkjendelse af Troens
+Liv, dens Væsen og Indhold. Hvor denne Gjenkjendelse
+svigter, der svigter ogsaa vort Sandhedsmærke, og det
+Overleverede berører os ikke religiøst.
+
+Det er en fuldt berettiget Fordring, den nyere Tid
+har opstillet, at Forskningen skal være fri. Paa de her
+opstillede Vilkaar kan Aabenbaringstroen ikke have det
+Ringeste at indvende imod den videnskabelige Forsknings
+ubegrændsede Frihed; thi nu veed den med sig selv, at
+ingen Videnskritik, dens Resultater være nok saa negative,
+længer er i Stand til at undergrave det religiøse Grundlag.
+Blev det end videnskabeligt beviist, at vi ikke havde
+et eneste Evangelium umiddelbart fra noget Øienvidne, ja
+selv om det kunde bevises, at vort Matthæusevangelium
+var fra det andet, og vort Johannesevangelium fra det
+tredie Aarhundrede: saa vilde alle disse Beviser dog ikke
+have den ringeste Indflydelse paa Bestemmelsen af Religionens
+Indhold. Her spørges ikke om de historiske
+Mellemled, hvorigjennem Sandhedsmeddelelsen er gaaet;
+her spørges om Sandheden, den aabenbarede Sandhed, og
+Sandhedsmærket, det ubedragelige, er i vort Indre.
+
+Vi leve af Underet og dog under Lovene; vi leve
+under Nødvendighedens Tryk og dog i Friheden, midt i
+den materielle Verdens haandgribelige Kjendsgjerninger og
+dog i en nærværende Evighed, saa sandt vi have den personlige
+Vished, at Villien er Aand, og Aanden Villie.
+
+At maale sin Tro med Følelsens Varme er usikkert,
+thi Varmemaalet er ubestemmeligt, og det Ubestemmelige
+kan skuffe. At maale sin Tro med Tankens Klarhed er
+usikkert, thi Klarheden er kold og Idealet i Tankens Speil
+staaer udenfor Virkeligheden. Men at maale sin Tro med
+Aand og Villie, med den Aandsvillie, som i Tankens Klarhed
+har Inderlighedens Varme og Selvbestemmelsens Virkelighed,
+er sikkert: Sandhedens Maal for Aand og Tro er
+en kraftig Villie.
+
+% --- p. 65 ---
+\setcounter{footnote}{0}%
+\lecture{Sjette Forelæsning.}\opage{65}
+
+En kraftig Villie vil virke: vælge, beslutte, handle;
+det vil Driftvillien, det vil Fornuftvillien, vil i høieste Forstand
+Aandsvillien. Hvad vælger da Aandsvillien? Den
+er i Væsen guddommelig, og vælger det Menneskelige; den
+er i virksom Aabenbarelse menneskelig, og vælger det Guddommelige:
+den er i sit Valg gudmenneskelig. Det er i
+Ordet som Gud, at den Evige selv udvælger hvert Menneske,
+og det er igjen formedelst Ordet, at Mennesket af Aandens
+Kraft kan gjøre Udvælgelsen virkelig. Først da, naar den
+menneskelige Villie paa een Gang vælges og vælger, vælges
+af Gud til at vælge Gud, vælge sit Udspring: da brister
+Egenvilliens Selvbedrag. Selvet vælger sig selv efter sin
+evige Bestemmelse, vælger Frihed i ubetinget Afhængighed,
+vælger at ville Eet: være Aandens Organ, vælger at ville
+Guds Villie. Valget er ikke mellem Dette eller Hiint
+af mange Goder; Valget er indenfor Villien selv mellem
+lavere og høiere, forkrænkelig og uforkrænkelig Villie. Det
+er Villielivets dybeste Krise: den gamle Villie døer, for at
+fødes paa ny; Driftvillien begraves, for at opstaae forklaret
+som Aandsvillie. Et saadant Valg mellem Liv og Død
+er Valget mellem Tro og Vantro.
+
+Troen, det kan ikke noksom gjentages, er mere end
+en Rørelse, mere end en troskyldig Antagelse af et foreskrevet
+Noget, hvorpaa der skal troes; Tro er Fordybelse
+% --- p. 66 ---
+\setcounter{footnote}{0}%
+\opage{66}i Aand, er Hjertets fulde Hengivelse til Livets Ord; denne
+Hengivelse er mere end en Indseen, mere end en Tænken,
+den er en Villiesakt, en indre Gjerning, Aandsvilliens første,
+oprindelige Handling. »Giv mig dit Hjerte!« det vil sige:
+giv mig din Villie.
+
+Den kraftige Villie har altid et Maal; det har Driftvillien,
+det har Fornuftvillien, det har i allerhøieste Forstand
+Aandsvillien. Hvilket Maal har da Aandsvillien sat?
+Den vil det Timelige, men for det Eviges Skyld, det Evige
+er Maal, det Timelige er Middel. Maalet er: Personlighedens
+timelig betingede, men kraftig dybe, alsidig virkelige
+Udfoldning af et evigt Livs uudtømmelige Indhold.
+Derfor er dette Maal baade timeligt og evigt.
+
+Driftvillien har sit Maal i det Timelige, den vil i al
+Naturlighed et Nærværende; Fornuftvillien har sit Maal i
+et nærværende Evigt, hvis Love blodsuge det Naturlige og
+fortære det Timelige. Driftvillien vil umiddelbart det
+Menneskelige, men gjør det Personlige timeligt, og bliver
+umenneskelig. Fornuftvillien vil i den almene Nødvendigheds
+Navn det Menneskelige, men opløser Selvet og bliver
+derved umenneskelig. Det Umenneskelige, der ligger skjult
+paa Bunden, saa vel under Fornuftvillien som under Driftvillien,
+hidrører fra, at begge saa udelukkende ville det
+Menneskelige, kun det Menneskelige. Aandsvillien derimod
+har i Maalets Eenhed et dobbelt Maal; den vil i personlig
+Forstand det Menneskelige, fordi den personlig vil det
+Guddommelige. Den vil ikke et Guddommeligt for sig og
+et Menneskeligt for sig; den vil i den sande Personligheds
+hellige Navn det Gudmenneskelige. Saa omfatter dens
+Maal baade Jord og Himmel, baade et Nærværende og et
+Tilkommende, baade et Her og et Hisset: det dobbelsidige
+Maals gudmenneskelige Eenhed er Livet selv, det
+evige Liv.
+
+At det evige Liv er Livet selv, kan sees paa Lovene.
+Det forholder sig nemlig ikke saaledes, som Mange synes
+at antage, at der efter Oprindelsen skulde være to Slags
+Liv, et der udspringer af Timelighed, ved Siden af et
+% --- p. 67 ---
+\setcounter{footnote}{0}%
+\opage{67}andet, som er fra det Evige. De, der holde fast paa
+Forestillingen om et Liv, hvis Oprindelse, Udvikling og
+Afslutning udelukkende skulde tilhøre Timeligheden, have
+ikke gjort sig tilbørligt Rede for, hvad Timelighed er, og
+hvad der forstaaes ved det, vi kalde Liv.
+
+Timeligt er ingenlunde alt det, som foregaaer i Tiden;
+thi enhver Udvikling, ogsaa af et evigt Indhold, maa foregaae
+i Tid: Tid hører med til Evighed. Timeligt derimod
+er det, som i Tiden foregaaer saaledes, at dets
+Virken og Væren forudsætter Udstykning og betinges af
+Sammensætning. Foranderlighed, Omskiftelighed, Forkrænkelighed,
+det Enes Fremgang af det Andet og Opløsning
+i det Andet, altsaa udstykket Andethed, er Kjendemærket
+paa Timelighed. I denne Forstand ere alle materielle
+Dannelser timelige.
+
+Anderledes med det Evige, hvis Væsen i Alt er sig
+selv ligt. Allivet er evigt, et Selvvæsen, som igjennem
+Stoffet, det timelige Andet, udvikler sig selv, kun sig selv
+og sit Indhold. Livet i alt Levende begynder indenfra og
+holder sig under Stoffets Bearbeidelse, Omformning og
+Tilegnelse i sit indre Kredsløb; i dette Kredsløb viser sig
+det Evige. Der declameres om Materiens Evighed, om de
+evige Stjerner, de evige Bjerge o. dsl.; det er kun Declamation.
+Materiens, Stjernernes, Bjergenes Tilværelse er
+en selvløs Tilværelse, en Tilværelse i Andethed, altsaa i
+Timelighed. De Billioner Gange Trillioner af Aar, hvormed
+man saa let kan rutte, formaae ikke at gjøre al denne
+Timelighed til en virkelig Evighed. Men Allivet, som
+midt i Andetheden beseirer Udstykningen, fortsætter og
+bevarer sig selv, er evigt. Der er i Plantens Celler og i
+Markens Blomster mere Evighed end i alle »de evige
+Stjerner« tilhobe. Livsphænomenerne ere forkrænkelige, men
+Livets Væsen i sit stille Kredsløb er uforkrænkeligt; det
+sammensættes ikke af et Andet og løses ikke op i et
+Andet: det bliver i sig selv, uforanderligt i sine Forandringer,
+uforgængeligt i sit Indre, skjøndt det Ydre
+forgaaer.
+
+% --- p. 68 ---
+\setcounter{footnote}{0}%
+\opage{68}Man besinde sig ret paa Forskjellen mellem det Levende
+og det Livløse, og man vil overbevise sig om, at
+ethvert Væsen, vi ansee for et Levende, om det saa kun
+lever i en enkelt Celle, bliver at ansee for et Selvvæsen,
+medens Stoffet, det Materielle, med dets Kræfter og Love
+kun er et Andetvæsen, er livløst, fordi det er selvløst.
+Heri sees en gjennemgaaende Forskjel mellem physiske
+Love og Livslove. De physiske Love ere Timelighedslove;
+kun Selvudviklingslovene ere sande Evighedslove. Af blotte
+Stofdele og physiske Love kan Livets Oprindelse ikke afledes:
+at aflede Livet af det Livløse, Selvvæsenet af det
+Selvløse er ligesaa umuligt, som at aflede Noget af Intet.
+Først, idet det Timelige gaaer ind under det Evige, og de
+physiske Love optages i Love for Selvudvikling, erkjende
+vi Livets Love.
+
+Hvorpaa beroer saa Adskillelsen mellem timeligt og
+evigt Liv? Ikke paa Allivets Væsen, thi det er fra Evighed
+af et Selvvæsen, men paa Livets særlige Fremtræden i de
+levende Individer. I denne Henseende er Forskjellen mellem
+Planteliv, Dyreliv og Menneskeliv af gjennemgaaende Betydning.
+I Plantelivet er Selvvæsenet saa flydende, at et
+bestaaende Selv ikke danner sig; i Dyrelivet faaer Selvvæsenet
+et naturligt Selv, thi Dyret har en Sjæl; men
+først paa Menneskelivets Trin er Spiren lagt til Udvikling
+af et Selv, der er sig bevidst, et aandigt, personligt Selv.
+
+Det Spørgsmaal, hvorledes de levende Individer kunne
+fortsætte deres Selvudvikling ud over Timelighedens Grændser,
+kan ingen Videnskab besvare. En saadan i det Uendelige
+fortsat Udvikling af det individuelle Liv er fra de
+naturlige Erfaringers Synspunkt usandsynlig, men, ifølge
+Livslovene, dog en Mulighed. Det er denne Mulighed,
+Troen griber, idet den opdager Selvets Evighed, opløser
+den i Timelighed hildede Egenvillie og forvandler den til
+Aandsvillie. Den fulde Forvisning om Individernes evige
+Liv er betinget af Aandsvillie.
+
+Det er en letfærdig Forestilling, at der i dette Nærværende
+ikke skulde gives nogen personlig Vished om et
+% --- p. 69 ---
+\setcounter{footnote}{0}%
+\opage{69}evigt Liv, men først efter Døden. Skulde vi først efter
+Døden opdage, at der er et evigt Liv, kunde Opdagelsen
+blive forfærdelig.
+
+Egenvillien, hvad enten den for Øvrigt optræder i
+Form af Driftvillie eller som Fornuftvillie, fornegter det
+evige Liv, og gjør Brud paa dets Love. Driftvillien gjør
+Individualitetens timelige Krav gjældende, men udelukker
+de evige; det er et Lovbrud, et Brud paa Livsloven. Fornuftvillien
+gjør Evighedskrav gjældende, men paa en selviskselvløs
+Maade til Individualitetens Undergang; det er et
+Lovbrud, et Brud paa Livsloven. En saadan Egenvillie
+kan gjøre Væsen af Nødvendigheden, bukke og skrabe for
+Naturlovenes Uforanderlighed, saa meget den vil, den gjør
+dog Brud paa en uforanderlig Lov, Frihedens, Personlighedens
+hellige Lov, det evige Livs Grundlov. Men at
+gaae gjennem Døden ind til Evigheden som en vitterlig
+Forbryder mod det evige Livs Grundlov, er dog vel en
+betænkelig Sag.
+
+Paa Aandsvilliens Trin stiller Forholdet mellem det
+Timelige og det Evige sig som et Forhold i Splid og Forsoning.
+Kun forsaavidt det Timelige i enhver Henseende
+gjøres til Middel for det Evige, kan Aandsvillien bruge det
+Timelige og trods Modstand, Hindringer og Gjenvordigheder
+forlige sig dermed. Saa kan der strides og lides i det
+Timelige, men naar der strides og lides for det Eviges
+Skyld, erkjendes det, at Strid og Lidelse afgive Betingelser
+for at udvikle Villiens Kraft og forhøie dens Styrke; med
+denne Erkjendelse voxer Forvisningen om evigt Liv: det
+Evige kommer bestandig nærmere, saa er der en Forsoning.
+Men endskjøndt Livet i denne Forsoning er \emph{evigt},
+saa er det dog endnu ikke \emph{saligt}. Saligheden er kun i
+lyse Øieblikke; Spliden er ikke hævet: Modsætningen
+bliver mellem Saligt og ikke Saligt. Det er Villielivets
+Lov inden Timelighedens Grændser.
+
+Anderledes, naar Timeligheden omskiftes med Evigheden,
+naar \emph{Her} ombyttes med \emph{Hisset}. I Evigheden
+selv ere de to Væsener, det timelige og det evige, Fjender
+% --- p. 70 ---
+\setcounter{footnote}{0}%
+\opage{70}paa Liv og Død, uforsonlige Fjender. I Evighedens Rige
+taales ingen Timelighed, thi her taales ingen Forkrænkelighed;
+det følger af Sagens Natur, det ligger i Evighedsloven.
+Al udvortes Timelighed, alle Mærker af naturlig
+Forkrænkelighed kan Døden borttage; men det Forkrænkelige,
+der er i det Indvortes, naar Selvet med sin Egenvillie
+er i Forkrænkelighed, trods al sin Arbeidsvigtighed dog i
+sit Selvbedrag lutter Endelighed, lutter Timelighed, lutter
+Forkrænkelighed, dette Mærke kan Døden ikke borttage;
+thi Døden har ingen Magt til at udslette det Personlige i
+Menneskets Væsen.
+
+Saa er da dette det evige Livs ubrødelige Lov:
+»\emph{Enten --- Eller}«. Enten har Mennesket sit inderste
+personlige Liv i Aandsvillien, og da kommer Evighedens
+Vaar og udfolder Livet til Blomst; det er det Salige. Eller
+Mennesket har sit Liv i sin Egenvillie, har i Egenvilliens
+Almene villet sig selv og sin Opløsning. Saa kommer
+dette Selv med sit Selvbedrag som Evighedens Fjende ind
+i Evigheden. Det vil opløses, og kan dog ikke opløses,
+thi det Evige i Selvet gjør sin Ret gjældende. Det har
+ikke villet et evigt Liv, saa maa det lide alle Selvmodsigelsens
+Kvaler; det har ikke villet Alkjærlighedens Villie,
+saa møder det Magten, den dømmende Villies Almagt; det
+er det Usalige. Timelighedens Modsætning af Saligt og
+Ikke-Saligt kan altsaa i et Hisset forvandle sig til en
+Evighedsmodsætning mellem Salige og Usalige; det er en
+Dom efter Loven.
+
+»Men«, sige den oplyste Fornufts Talsmænd, »dette
+Usalige er jo netop det Inhumane. Troer Aandsvillien at
+kunne kyse os med Usalighed, reent ud sagt, med Muligheden
+af en evig Fordømmelse, saa have vi da her et
+haandgribeligt Beviis for, hvad det er, hvortil det Hele
+tilsidst peger hen. En evig Fordømmelse! Det er et nyt
+Opkog af den gamle Modsigelse, en Begrebsmodsigelse,
+som Videnskaben forlængst har løst, --- det Usalige, det
+Barbariske, det Umenneskelige!« Vort Svar er kort. Som
+Livet er, saa ere dets Love, og Lovene ere jo --- »ufor%
+% --- p. 71 ---
+\setcounter{footnote}{0}%
+\opage{71}anderlige«. Dersom Frihedens, Personlighedens Grundlov
+er barbarisk, saa er ganske vist det evige Liv barbarisk;
+men saa er ogsaa al Tale om indre Selvstændighed, personligt
+Maal, Kamp for Frihed, og hvad man ellers vil,
+naar der tales i Alvor, meningsløs, barbarisk Tale.
+
+Lad os holde os til det, vi kjende, det evige Livs
+Love indenfor Timeligheden, og til Slutning kaste et Blik
+paa Forholdet mellem \emph{det Religiøse} og \emph{det Humane}.
+
+Vi tør da, hvad dette Forhold angaaer, ikke blive
+staaende ved det Udvortes og kalde Historien til Vidne
+paa, hvor ofte Religionen har villet en Vei, og Humaniteten
+en anden. Spørgsmaalet er: hvad fordrer Religionen,
+og hvad fordrer Humaniteten? Lade de religiøse og humane
+ Fordringer sig forene eller ikke? Intet kan være mere
+aandssvækkende end den i taaget Fromhed undfangede
+Forestilling, at Livet i Gud og Livet i Verden skulde være
+uforenelige Ting, at et kraftigt, dygtigt, virksomt Liv i den
+virkelige Verden skulde være en Synd. Naar nu de, som
+kalde sig »Guds Børn«, desuagtet ere nødsagede til at
+»arbeide og see paa Profiten« lige saa vel som »Verdens
+Børn«, saa trøste de sig med »den haarde Nødvendighed«
+og »Guds Naade«, og leve hen i et gudeligt Smaavrøvl om
+»Syndernes Forladelse«, som ikke fremmer det Humane, og
+ingen Hjemmel har i det Religiøse. Thi hvad er det,
+Religionen oprindelig kalder Synd? Det er jo den Tilstand,
+hvori Mennesket befinder sig udenfor Aanden, den
+Tilstand, hvori Individet er hjemfaldet til Driftvillien og
+den af Gud forladte Egenvillie. Mennesket, siger Religionen,
+fødes i Synd; thi det fødes under Driftvillien. Af
+Tilstanden Synd udspringe de saakaldte actuelle Synder;
+de gaae gjennem Følelse, Phantasie og Forestilling og modtage
+den individuelle Tilregneligheds Præg, idet de optages
+og fuldbyrdes af Egenvillien.
+
+ Betragte vi disse virkelige Synder nøiere, da viser det
+sig, at de lige saa vel forstyrre Livet i Verden som Livet
+i Gud, ere i lige Grad ødelæggende for det Humane og
+for det Religiøse. Det er en egen Art gudelig Naivetet,
+% --- p. 72 ---
+\setcounter{footnote}{0}%
+\opage{72}naar en Sjæleryster, som rigtig vil gaae løs paa Verdens
+Ugudelighed, giver sig til at dundre mod Mord, Tyveri,
+Overdaadighed, Gjerrighed, Ondskab, Svig, Løsagtighed
+osv., som klare Beviser paa Oprør mod Gud, Overtrædelser
+af hans strenge Bud. De beængstede Samvittigheder faae
+et Indtryk af, at dersom den Almægtige ikke saa bogstaveligt
+havde forbudt alt Sligt i sin hellige Lov og truet
+Overtræderne med Helvede, saa havde slige grove Udbrud
+af menneskelig Egenvillie ikke i egenlig Forstand været
+Synder. Det glemmes, at Almagtens Bud ere Kjærlighedsbud,
+at det Onde forbydes, fordi det i sig selv er ondt,
+og er ondt fordi det undergraver det Menneskelige. En
+Gud, hvis Villie fordrer noget Andet af Mennesket end
+det, som hvert Menneske, der i Tro erkjender sin evige
+Bestemmelse, maa fordre af sig selv, er en Afgud; med
+andre Ord: en Religion, der staaer i Strid med sand
+Humanitet, er lige saa falsk som en Humanitet, der staaer
+i Strid med sand Religion.
+
+Denne Erkjendelse hænger paa det Nøieste sammen
+med den rette Forstaaelse af, hvad Syndsforladelse er.
+Det er en barnlig Forestilling, at Faderen i Himlen, der
+er blevet vred, fordi hans strenge Bud er overtraadt, kan,
+idet Forbederen træder imellem, formildes og blive god
+igjen, naar Synderen kryber til Korset og beder ydmygt
+om Forladelse. Det Barnlige i en saadan Forestilling bør
+vi ære og agte, thi det er evig vist, at Gudsforholdet fra
+Menneskets Side vedblivende maa være et barnligt Forhold.
+Men det Barnlige er væsenlig forskjelligt fra det Barnagtige.
+Og barnagtigt bliver Forholdet saa vel hos de
+»søde« Christne som hos de »sure«, naar Syndsforladelsens
+evige Grundlov miskjendes.
+
+De Glade, der ere saa rødmussede, fordi de midt i
+»Verdensvrøvlet« kunne gjøre saa omtrent, hvad de ville,
+og dog altid være forvissede om »Syndernes Forladelse«,
+fordi den staaer i den tredie Troens Artikel, ere ikke
+barnlige, men barnagtige. Istedenfor at maale Synden
+med Selvmodsigelsens lige saa humane som religiøse
+% --- p. 73 ---
+\setcounter{footnote}{0}%
+\opage{73}Maalestok, og kjende Angerens Alvor og Syndsforladelsens
+Virkelighed paa den gjenopvakte Aandsvillies fornyede
+Spændkraft, skyde de Loven tilside, og voxe og groe i den
+Indbildning, at en gammel Psalme er vel saa god som
+en ny Villie.
+
+De sure Christne, der holde paa Tvangslovene, have
+Besværlighed nok, ikke blot med deres egne, men ogsaa,
+og det fornemmelig, med Andres Synder: intet Under,
+at de ere saa blege. Naar det store Synderegister med
+Hor og Mord og Luxus og Overdaadighed og Svig og
+Tyveri osv. oprulles, undgaaer det deres Opmærksomhed,
+at Sjæledommeren staaer med den ene Fod i Himlen,
+men med den anden paa Raadstuen; det undgaaer dem,
+at de store Synder paa Regnebrættet i Grunden ere lige
+saa inhumane som irreligiøse, at Politiet stadig er paa
+Spor efter de groveste, uagtet Politiet jo dog ikke er en
+religiøs, men en slet og ret human Institution: denne
+storladne Ivren mod »Synderne« og »Synderne« og »Synderne«
+er, naar den sees i sit Forhold til Aand, mindre
+alvorlig end barnagtig.
+
+Jo mere den religiøse Erkjendelse klarer sig, desto
+tydeligere vil det indsees, at Livet i Verden maa være en
+væsenlig Betingelse for Livet i Gud, saa sandt det religiøse
+Liv i høieste, fyldigste Maal er et Villieliv. Eet er \emph{fornødent};
+men for dette Enes Skyld er et Verdensindhold
+af Følelser, Forestillinger, Interesser og Arbeider fornødent.
+Synden kan nu antage to Former. Enten mangler Selvet
+det ene Fornødne, Aandskjærligheden med Tro og Haab
+er udeladt, og Egenvillien kaster sig graadig over det
+Mangfoldige: det er Synden i Form af Verdslighed;
+eller Selvet forbruger al sin Villiekraft paa at skille sig
+af med det virkelige Verdensindhold og forbrænde i Gud,
+det være nu ad Endelighedens Vei ved vilkaarlige Forsagelsers
+gode Gjerninger, eller ad Uendelighedens Vei ved
+mystisk at styrte sig i den unævnelige Alkjærligheds
+Lyshav: det er Synden i Form af misforstaaet Gudelighed.
+Livet i Gud betyder, at Mennesket ubetinget
+% --- p. 74 ---
+\setcounter{footnote}{0}%
+\opage{74}har opgivet sin Egenvillie og erkjendt sin absolute Afhængighed
+af Guds Villie. Livet i Verden betyder, at
+den absolute Afhængighed begrunder en virkelig Frihed,
+at Aandsvillien gjør Mennesket selvstændigt. Aanden
+beviser just sin Personligheds Kraft deri, at Mennesket
+med kraftig Villie og sikker Haand tager fat paa det
+virkelige Livs Arbeider.
+
+Middelalderens naive Adskillelse mellem \emph{gudelige}
+og \emph{verdslige} Gjerninger kan hverken bestaae for Religionens
+eller for Humanitetens Dom. Alle sædelige Handlinger
+ere i lige Grad religiøse og humane, saa sandt de
+udgaae fra Aandsvillien.
+
+Ingen Gjerning i Verden, der staaer i noget Forhold
+til det personlige Liv, er Aanden for ringe; og ingen
+udvortes endelig Gjerning, selv om den overbød den største
+i en Loyola's himmelstormende Askese, er stor nok til
+at udtrykke Aanden som Aand.
+
+Der er i alle Gjerninger, de være »gudelige« eller
+»verdslige«, Synd, naar Aandsvillien mangler; men i alle
+Gjerninger, de kaldes nu verdslige eller gudelige, ophæves
+det Syndige, forsaavidt Aandsvillien træder i Kraft.
+
+Der er ikke tre Slags Gjerninger: nogle, vi skulle
+gjøre for Guds Skyld, andre vi skulle gjøre for Næstens
+Skyld foruden dem, vi skulle gjøre for vor egen Skyld.
+Elsk Gud over alle Ting og din Næste som dig
+selv! Disse Lovens store Bud ere eet Bud. Det er
+umuligt at elske sig selv i Sandhed uden at elske Gud,
+og det er umuligt at elske Gud uden at elske sin Næste.
+Det Religiøse er, at Kjærlighed til Gud staaer øverst; det
+Humane er, at Kjærlighed til os selv staaer uadskillelig
+fra Kjærlighed til Næsten.
+
+Det gamle ufrugtbare Skolespørgsmaal, hvorledes vi
+med Sikkerhed skulle udfinde, hvad Guds Villie er med
+Hensyn paa Livets enkelte Gjerninger i de forskjellige
+mødende Tilfælde, falder fra dette Synspunkt bort af sig
+selv. Tilværelsen stiller Mennesket en uoverskuelig Mængde
+af høist forskjellige Opgaver. Ingen af disse Opgavers
+% --- p. 75 ---
+\setcounter{footnote}{0}%
+\opage{75}Løsning er overladt til Menneskets selviske Forgodtbefindende.
+Det Religiøse fordrer, at de alle, umiddelbart eller
+middelbart henføres --- i Troen --- til Guds Villie. Men
+ingen af dem alle bliver i sin umiddelbare Enkelthed bogstavelig
+bestemt ved en af Gud dicteret Befaling; de skulle
+alle opfattes med Aandens Frihed. Det Humane skeer sin
+Ret, idet den menneskelige Villie som Aandsvillie er i
+hvert mødende Tilfælde opfordret til at handle ud af
+Personlighedens Indre.
+
+Grundforholdet mellem det Religiøse og det Humane
+lader sig, ifølge vort Foregaaende, nøiagtig bestemme ved
+Forholdet mellem Driftvillie, Fornuftvillie og Aandsvillie.
+Fornuftvillien betegner, som vi have seet, et Overgangstrin,
+og lader sig ikke gjennemføre; den svæver bestandig
+mellem Religiøst og Irreligiøst, mellem Humant og Inhumant.
+Driftvillien vil, idet den begynder at blive fornuftig, uden
+videre ind paa det Humane. Om den end bliver paavirket
+af Aand, opgiver den derfor ikke sig selv, men gaaer paa
+Accord med det Religiøse, og søger paa bedste Maade at
+drage Fordeel af Religionen for at bevare og fremme Humaniteten.
+Hertil svarer den ofte noget krinkelkrogsagtige
+Brug, som politiserende Samfund, af Klogskabshensyn, have
+vænnet sig til at gjøre af de religiøse Institutioner.
+Aandsvillien derimod staaer i et dobbelt Forhold til det
+Humane, et fjendtligt og et forsonligt. Den staaer i Strid
+med Drifthumaniteten, thi den staaer i Strid med den
+naturlige Driftvillie. Den stiller sig afgjørende paa Religionens
+Side, retter sine Angreb mod den aandsfornegtende
+Humanitet, nedbryder dens Altere og brænder dens Idoler.
+Saa seer det ud, som om den var barbarisk. Men disse
+Angreb paa falsk Humanitet ere i Principet til Bedste for
+det i Sandhed Humane; just derved, at det Humane
+ubetinget gaaer ind under det Religiøse, bliver det gjenfødt
+til et høiere Liv: Aandsvillien griber ind i det Verdslige,
+planter sit Frihedsbanner og gaaer i Kamp for Humanitetens
+Ret.
+
+% --- p. 76 ---
+\setcounter{footnote}{0}%
+\opage{76}Det tvesidige Forhold mellem Aandsvillien og Humaniteten
+lader sig eftervise i alle Samfundets Kredse, i
+Familien, i det Borgerlige, i de Almeenhedens Formaal,
+for hvilke der arbeides med Ideer.
+
+Ægteskabet er Familielivets sædelige Grundlag.
+Hvorfra stammer det? hvilken Gyldighed har det? er det
+opløseligt eller uopløseligt? De, som leve med den usminkede
+Drifthumanitet, maae naturligviis erklære Ægteskabet
+for et naturligt Produkt af Driftvillien. Det Humane er
+da, at Ægteskabet betinges af gjensidig Kjærlighed; de
+umiddelbare Hjerters umiddelbare Hengivelse med Offer
+og Accidenser er Ægteskabets Lykke. Hændes det nu,
+at Kjærlighedsilden gaaer ud, og det kan saa let hændes,
+da det jo er Driftkjærlighed, saa maa Ægteskabet hæves,
+for ikke at blive ulykkeligt. Have Individerne ikke uden
+videre Ret til at hæve det selv, da er det naturligviis en brutal
+Inhumanitet af et slavisk Bestaaende, som tør understaae
+sig at sætte Skranker for den frie Kjærlighed i »det frie
+Kjød«. At Aandsvillien ikke kan forlige sig med en saadan
+Humanitet, er begribeligt. Men det Samfund, der er
+blevet staaende ved at faae Drifthumaniteten sminket op med
+nogle sædelige Skjønhedspletter, uden at ville gaae ind
+paa Religionens ubetingede Fordring, tilfredsstiller heller
+ikke Aandsvillien. Fra dette Standpunkt faaer man ud,
+at Ægteskabet ganske vist, efter den guddommelige Lov,
+er uopløseligt, men dog, naar der indhentes speciel Bevilling,
+være sig fra Paven eller Cancelliet, alligevel opløseligt
+af Hensyn til det Humane. Imod en saadan halvreligiøs,
+forhutlet Humanitet have alvorlige Bodsprædikanter
+til forskjellige Tider hævet deres myndige Røst: »det
+guddommelige Bud maa høres, erkjendes og lydes, om saa
+Alverdens Humanitet skal gaae til Grunde derved!« Saa
+seer det ud, som om Religionen var grusom og foragtede
+det Humane. Og dog er det en uhyre Misforstaaelse.
+
+Det Religiøse vil herske absolut, ubetinget; men ikke
+ved udvortes Lovbud. Det udvortes Lovbud, hvad enten
+det bygges paa Skriftsteder eller paa Cancellirescripter eller
+% --- p. 77 ---
+\setcounter{footnote}{0}%
+\opage{77}paa begge Dele, maa ifølge sin Natur altid holde sig
+indenfor endelige Betingelser, og kan i sin Udvorteshed
+aldrig gjøre Fordring paa at gjælde for absolut. Det
+Absolute ligger i, at det guddommelige Bud i Aandens
+Navn er et Kjærlighedsbud, et Personlighedens, Selvstændighedens
+og Frihedens Bud. Den religiøse Forstaaelse
+er, at Budet i al sin Strenghed ikke vil paalægge Individerne
+udvortes Tvang, men overbevise dem om Aandsvilliens
+Krav og fange dem i deres egen Samvittighed. Kommer
+en religiøs Individualitet efter alvorlig Selvprøvelse for Gud
+til den ydmygende Vished, at det indgaaede Ægteskab er,
+af hvilkesomhelst Grunde, blevet et tomt Skin, et Trældomsaag,
+en Snare, da tør en saadan Personlighed, være
+sig Kvinde eller Mand, træde selvstændig op, bryde sit
+Aag og gaae sin egen Vei trods Tungernes Travlhed og
+et retfærdigt Nabolavs velbekjendte Pharisæisme: det Mod
+skal Troen give. Det er Religionens Humanitet, og
+sandere Humanitet kan ikke gives.
+
+Det borgerlige Samfunds sædelige Grundlag er Ret
+til Eiendom; hvor Eiendomsretten ikke agtes, kan ingen
+Samfundsorden bestaae. Den driftige Borger vinder Indflydelse
+i Forhold til som han udvider sine Besiddelser.
+Den borgerlig juridiske Personlighed fremtræder i Form
+af Eiendom: jo større Eiendom, desto mere Personlighed.
+Det er naturlig Humanitet. Driftvillien har sit vigtigste
+Mellemværende i Maalforhold af Mit og Dit. Saa danner
+der sig et humant Samfund med humane Formaal. Kaldes
+nu det Religiøse til Hjælp for at indvie og velsigne al
+denne Humanitet, faaer den personlige Eiendom naturligviis
+høie Tanker om sig selv. Eiendommen bliver Capital,
+og Capitalens Magt er uimodstaaelig. Capitalen bugner
+under Velsignelsen; den voxer og formerer sig, gjør sig
+Jorden underdanig og regjerer over Fisken i Havet og
+Majestæten paa Thronen, over Arbeideren i Gruben
+og over hvert ubemidlet Dyr, som kryber paa Jorden.
+For at sikkre sig alle Velsignelsens Frugter, bliver Drifthumaniteten
+gudelig: den rige Mand gaaer i Kirke om
+% --- p. 78 ---
+\setcounter{footnote}{0}%
+\opage{78}Søndagen, giver Summer til det Offenlige osv.; paa
+Driftvilliens Standpunkt altsammen hæderligt, smukt og
+humant. Men hvad siger Religionen? Bort med det altsammen!
+»Sælg alt dit Gods og giv det til de Fattige ;«
+»det er lettere, at en Kameel gaaer igjennem et Naaleøie
+end at en Rig kommer ind i Guds Rige!« --- Hvor forargeligt.
+Hører I, sige de Fornuftige, hvor fanatisk
+eensidig Religionen er, hvor lidt den forstaaer sig paa det
+i Virkeligheden Humane!
+
+For at tage det Forargelige bort og berolige Sindene
+kommer en blødsøden Sjæletrøster med den ligesaa videnskabelige
+som humane Fortolkning, at det ingenlunde er
+Religionens Mening, at vi bogstavelig skulle bortgive alt
+vort Gods: den vil kun vække vor Samvittighed og
+sætte de Gjerrige Skræk i Blodet. Den rette Mening er,
+at vi skulle betænke de Fattige, give Noget bort af Godset,
+en god Deel, især til gudeligt Brug, men ikke Alt; det
+Meste skulle vi selv beholde, at vi ret maae lære at bestyre
+det til Gavn og Glæde for os selv og vore Arvinger.
+Men hvad siger Religionen? Bort med det Hele! »Sælg,
+hvad Du haver, og giv de Fattige det.« Det er Veien
+til Fuldkommenhed, Forsagelsens Vei til »Himmeriges
+Rige«. Saaledes blev Budet forstaaet i hine Dage, da
+Ørkenens Eremiter og Middelalderens strenge Munke endnu
+ikke havde lært at fuske i det religiøst Humane.
+
+Dog, indvender man, »det store Fremskridt, Nutiden
+har gjort, bestaaer jo netop i, at den vil forlige Religion
+med Humanitet.« Tilvisse! Men Forliget skal dog vel
+ikke grunde sig paa en underfundig Svig. Misforstaaelsen
+hos hine Gamle var ingenlunde den, at de toge den religiøse
+Fordring for ubetinget. Paa den bogstavelige Forstaaelse
+staaer en hellig Antonius, en Benedict fra Nursia,
+en Francesco af Assisi uendelig høiere end alle den
+moderniserede Christendoms Mæglingsethikere tilhobe.
+
+Asketernes Misforstaaelse var ingenlunde den, at
+de toge Forsagelsens Bud for strengt, men tvertimod den,
+at de ikke toge det strengt nok. De opfattede Verdens%
+% --- p. 79 ---
+\setcounter{footnote}{0}%
+\opage{79}forsagelsens Bud som et udvortes Bud, et til Fuldkommenheds
+Opnaaelse vilkaarlig foreskrevet Tvangsbud. Vel
+var dette Bud dem ogsaa et Hjertets Bud, et Kjærlighedsbud
+til Befrielse og Salighed; men Kjærlighedens
+Bud blev ikke opfattet i Kjærlighedens Aand, thi det
+blev ikke opfattet i den personlige Friheds Aand. Saa
+seirede Ufriheden og der fremkom indenfor Religionen to
+Slags Moral, en høiere for de Fuldkomne og en lavere
+for de Ufuldkomne. Det var dette Misgreb, der gjorde
+den middelalderlige Religiøsitet inhuman.
+
+Først naar Forsagelsens Bud bliver tilegnet i Tro
+som et indvortes Bud, et Frihedens, Kjærlighedens og
+Personlighedens Bud i al sin Strenghed, bliver Strengheden
+igjen Mildhed, og det Humane gjenfødes i det Religiøse.
+Det seer saa strengt ud, at Mennesket skal i udvortes
+Forstand skille sig ved alt sit Gods; Driftvillien seer ingen
+Bagdør, hvorigjennem den kan slippe bort fra en saa nærgaaende
+Fordring. Naar det Udvortes derimod omsættes
+i det Indvortes; naar Budet vender sig og siger: behold,
+hvad du har, i det Udvortes; men slip det i det Indvortes,
+vær med al din Eiendom som den, der ikke eier en Hvid,
+saa, mener man, er Religionen saare mild: Driftvillien øiner
+Bagdøren, smiler i Skæget, og har sine egne Tanker. Og dog
+er det saa, at det hellige Kjærlighedsbud, forstaaet i Aand
+og Sandhed som et Frihedens Bud til personlig Selvudvikling,
+er i al sin Mildhed langt strengere end et hvilketsomhelst
+asketisk Tvangsbud. Det er Aandsvilliens Kraft,
+der skal prøves i Humaniteten.
+
+Dersom det religiøse Princip for sand Humanitet
+ikke bliver anerkjendt, vil Striden om Mit og Dit udvikle
+sig til en barbarisk Strid, og i en barbarisk Strid vil Seiren
+tilsidst være paa de elementære Kræfters Side. Bliver
+Humanitetsprincipet derimod tilfulde anerkjendt, ikke mindre
+paa de Besiddendes end paa de Ikke-Besiddendes Side,
+vil Verdenskampen gaae sin Gang, men Humaniteten,
+støttet paa Aandsvilliens Kraft, vil seire. 
+
+% --- p. 80 ---
+\setcounter{footnote}{0}%
+\opage{80}Kaste vi et Blik paa de forskjellige Arbeider, som
+udføres i Ideernes Tjeneste og ere betingede af særlig
+Begavelse, saa viser sig Modsætning mellem Idee og
+Aand. Hvor stor denne Modsætning er, kan sees paa
+Grækere og Jøder. Grækerne have en overstrømmende
+Rigdom af frugtbare Ideer, men, hvad vi i egenlig Forstand
+maae kalde Aand, have de ikke. Jøderne staae
+paa Aandens Trin under den lovgivende Jehovas Villie,
+men have en paafaldende Mangel paa productive Ideer.
+Jøderne repræsentere det Religiøse, Grækerne det Humane.
+Man vil desaarsag finde det naturligt, at Christendommen
+under sin store Indtrædelseskamp i Verden begyndte med
+at bryde Staven over alle Hedenskabets Genieværker; det
+var i de Dannedes Øine et talende Beviis paa fanatisk
+Inhumanitet. Man vil endvidere finde det naturligt, at
+den Humanitet, som en religionsfornegtende Nutid vil
+grundlægge paa det moderne Dogme om Drift- og Fornuftlivets
+absolute Eenhed, vender sig med Ringeagt bort fra
+»den semitiske Races« stivsindede Borneerthed og søger
+sine Forbilleder under den græske Himmel. Man vil
+endelig finde det i sin Orden, at de, som ikke her tør
+see det Fjendtlige i Forholdet mellem en aabenbaret Religion
+og en hedensk Humanitet, fordi de ikke tør vedgaae
+for sig selv, at to absolut ueensartede Principer maae kæmpe
+paa Liv og Død, indtil enten det ene eller det andet faaer
+Magten, hutle sig igjennem ved en Mægling efter deres
+eget Hoved.
+
+Paa Halvreligiøsitetens lige saa halvhumane som principløse
+Mæglingstrin møde vi da igjen den middelalderlige
+Adskillelse mellem Gudeligt og Verdsligt, men med et
+moderniseret Tilsnit. »Alle Humanitetens Ideer ere berettigede,
+forstaaer sig; Talent og Genie ere gode Gaver,
+og alle gode Gaver skulle bruges.« Men nu indtræder den
+Vanskelighed, at de allerfleste humane Ideer ere af Naturen
+rene Hedninger, og det gaaer dog ikke vel an i vor Tid
+at døbe Ideerne, som man i Middelalderen døbte Klokkerne.
+Man maa da gjøre behørig Forskjel mellem dem paa den
+% --- p. 81 ---
+\setcounter{footnote}{0}%
+\opage{81}ene Side, der ikke lade sig henføre under det Religiøse ---
+Physikens f. Ex. og Komikens --- og dem paa den anden
+Side, som deels umiddelbart deels middelbart kunne bruges
+i Religionens Tjeneste. Det første Slags maa man lade
+gaae paa deres egen Haand i al Verdslighed og kun sørge
+for, at de holde sig inden visse Grændser. Det sidste
+Slags maa man sætte Priis paa, thi de ere Mæglere mellem
+det Religiøse og det Humane, efter som de bruges
+mere eller mindre gudeligt. Det skulde da, hvad Anvendelse
+af Talent og Genie angaaer, ifølge denne Synsmaade,
+være mere gudeligt at bygge Kirker end at bygge Raadstuer,
+mere gudeligt at spille Orgel end at spille Violin,
+mere gudeligt at male Helgene end at male Køer. Naar
+man nu desuagtet ikke aabenlyst vil vedkjende sig en
+saadan Synsmaade, da er det nok fordi man nødig vil vedkjende
+sig den Forblanding, som ligger til Grund for
+Synsmaaden; thi det er netop Forblandingen af, hvad
+der vedkommer Ideen, og hvad der beroer paa Villien,
+som forvirrer Opfattelsen saavel af det Religiøse som af
+det Humane.
+
+Ideeformens Indhold er altid fra en eller anden Side
+et Verdensindhold; Gudsideen selv gjør herfra ingen
+Undtagelse. --- Ingen Idee er i og for sig enten gudelig
+eller ugudelig; heri ligger, at alle Ideer uden Undtagelse
+kunne henføres under Aandsvillien, forsaavidt Aandsvillien
+ingenlunde vil kue, men tvertimod nære, rense og beaande
+den Driftvillie, der føder dem til Verden. Enhver Idee
+har et Maal i sig selv, og enhver Idee er et Middel for
+Aanden. At negte Idee-Udviklingen sin naturlige Ret,
+er inhumant; men at sætte det absolute Maal i nogensomhelst
+Idee og forgude Ideen, hvad enten det nu er en
+Videnskabens eller en Konstens Idee, Ideen af et Statssystem
+eller Ideen af et Kirkesystem, er irreligiøst.
+
+Hvor Aandsvillien mangler, blive Ideerne selviske;
+den Spænding og Splid, som opstaaer imellem dem, sætter
+Lidenskaberne i Bevægelse og giver dem Tøilen. Et bølgende
+Hav af selvisk-ideelle Bestræbelser kan sættes i Oprør;
+% --- p. 82 ---
+\setcounter{footnote}{0}%
+\opage{82}Stormen kan stige til en saadan Grad, at et rigt begavet
+Folk gaaer under i Striden. Vi have i Grækerne et
+tragisk Exempel.
+
+Den naturlige Humanitet kan ikke bære sig selv,
+den maa bæres af Aanden. De mange Ideeconflicter ere
+Opgaver for Villien; de danne sig for Villiens Skyld, de
+opfordre den til Anstrengelse, de kræve dens Afgjørelse.
+I en stadig Kamp mod selviske Hindringer have vi
+Betingelserne for den personlige Udvikling af Aandsvilliens
+Kraft.
+
+Paa disse Tilværelsens Grundlove vil det i Troen
+kunne sees, at der maa være en inderlig Forbindelse
+mellem det Nærværende og det Tilkommende, mellem
+Her og Hisset. Denne Forbindelse kan ikke begrundes
+ved udvortes Betragtning af »de Dødes Opstandelse«.
+Den store Umage, som christelige Dogmatikere, især de
+ældre, have gjort sig med en naturligviis »videnskabelig«
+Udmaling af den tilkommende Herlighed, hvorledes de
+Døde nu egenlig skulle opstaae, i hvilken Alder, i hvilken
+Tilstand, eenbenede eller tobenede, med Paryk eller uden
+Paryk, er spildt Uleilighed % PRINTED AS IS: no stop
+Det hele Spørgsmaal viser
+tilbage til Inderligheden, Personligheden, Aandsvillien,
+Friheden.
+
+Det Mangfoldige er til for det Enes Skyld, det
+Timelige er til for det Eviges Skyld: det evige Liv er et
+indre Liv, der nærer sig af Erindring. Alt, hvad der
+opleves i det Udvortes, efterlader et Spor i det Indvortes,
+det vil sige: det \emph{inderliggjøres}, det erindres. Jo
+kraftigere Villien er under Oplevelsen, desto dybere graves
+Erindringens Spor. At disse Spor nogensinde kunne udslettes,
+er en Indbildning, et sandseligt Selvbedrag, der
+hidrører fra, at Organerne sløves. I Sjælens Liv, i Personlighedens
+Grund udslettes de aldrig: Livets Love vise
+alle hen til een og samme Grundlov, Erindringens Lov.
+Meget siges og Meget høres, Meget huskes og Meget
+glemmes i dette Timelige, men Aanden lytter og gjemmer;
+den glemmer Intet: i Evigheden glemmes Intet. Hu%
+% --- p. 83 ---
+\setcounter{footnote}{0}%
+\opage{83}kommelsen kan svækkes, Forstanden omtaages, og Bevidsthedens
+Lys udslukkes; men dybere end alt dette og
+til Grund for alt dette ligger Selvets Natur forvaret og
+skjult i Aandens Erindring. Af Erindringens Nat gaaer
+Alt frem igjen, og det dages paany: Selvbevidsthed,
+Forstand og Hukommelse vaagner op med alt det Oplevede
+og først og sidst med alt det, som i Alvor er villet.
+Hvad der i dette Timelige er levet og nydt, hvorfor her
+er arbeidet, lidt og stridt, hvad Villien har naaet, og
+hvad den inderlig har tilstræbt, men ikke opnaaet, af alt
+dette gaaer Intet tabt; trods sandselig Glemsomhed bliver
+Intet glemt, det bliver altsammen gjemt, begravet og gjemt
+i Erindringens Skjød til fornyet Gjennemsyn.
+
+Vort Æmne er ikke udtømt; det er i sig selv
+uudtømmeligt. Langt fra den Indbildning at kunne udtømme
+det Uudtømmelige, har jeg i disse Foredrag indskrænket
+mig til at belyse nogle Træk af Villielivets store
+Billede for derved at yde et, om end ufuldkomment, Bidrag,
+med det Ønske, at Enhver, som vil tage sine Livserfaringer
+til Hjælp, maa i Alvor selv blive opmærksom paa, hvad
+Aandsvillie er, og klare sig Betingelserne for en kraftig
+Villie.
+
+\end{document}
