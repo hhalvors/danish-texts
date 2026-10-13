@@ -1,0 +1,2116 @@
+% =====================================================================
+%  R. Nielsen, TO SLAGS UNDERVISNING, I-II
+%  In: For Ide og Virkelighed. Et Tidsskrift, udgivet af R. Nielsen, Bj. Bjørnson og Rud. Schmidt.  Aargang 1869.
+%  Kjøbenhavn: Chr. Steen & Søns Forlag; Louis Kleins Bogtrykkeri.  pp. 297-323, pp. 409-441.  Antiqua.
+%
+%  TRANSCRIPTION -- GENERATED; DO NOT EDIT BY HAND.  The five Nielsen essays of the 1869 volume are built by ONE pipeline
+%  (ebook-method/for-idee-1869/) into a combined working file, which split5.py cuts into the five transcriptions.
+%  Rebuild from the repo root:   sh ebook-method/for-idee-1869/rebuild.sh
+%
+%  STATUS: COMPLETE (2026-10-13): the volume's title page and the whole essay, pp. 297-323, pp. 409-441, with its notes.
+%
+%  EDITION.  The only printing.  Text of record: the Internet Archive's scan of the University of Toronto copy
+%  (forideogvirkelig00kjobuoft), ~/bibliotek/Nielsen, Rasmus/1869-for-idee-og-virkelighed.pdf (SCANS.tsv), 886 PDF pages,
+%  400 ppi colour; text layer = the IA's ABBYY FineReader OCR.  Printed page N = PDF N + 10 to p. 688; a plate is bound in
+%  before p. 689, so pp. 689-706 = PDF N + 12.  Title page PDF 7.  No e-book, no other scan, no earlier transcription found
+%  (checked 2026-10-13: the repo, the web, the Internet Archive; HathiTrust and Google Books could not be queried that day).
+%
+%  ACCURACY (2026-10-13; one collation for all five essays, 189 pp., ~48,000 words).  The words are those of the ABBYY layer
+%  (draft.py), collated word by word with an independent tesseract reading of the images (collate/check.py, witness 'ocr'):
+%  1132 disagreements at the first collation.  check.py's own rules settled 96; rules.py settled ~330 more, each rule
+%  switched on only after a BLIND PILOT of 107 crops (reader A, 21/22 controls) had measured it on this book: tesseract's
+%  glyph faults 8/8, aa read an 8/8, accents it adds 8/8, the layer's glyph faults 7/7 and 8/8, o/ø by the ø rule 8/8, the
+%  printer's space before a mark 8/8 (house rule), and the narrow word-division rules; the quote, dash, note-number and
+%  word-seam rules failed the pilot and stayed off.  The rest were read at the image BLIND (sheets.py: 579 word crops on
+%  58 sheets, two planted controls a sheet, 116 of 116 controls right; six readers) and about 110 spots in the main
+%  session from line crops (zoom.py).  STRUCTURE read at the image (reader K): the essays' headings, the volume's title
+%  page, every footnote whole (the notes were collated where they stand and then moved to their marks), the signatures.
+%  LETTERSPACING (the print's emphasis, \emph): candidate lines by box width (spacedwidth.py; the gap measure is noise on
+%  this scan): 163 lines read blind (22/22 roman controls), doubtful ones read in the main session.  ITALICS by stroke
+%  slant (check.py --italics): 24 crops read blind; the only italics are Latin quotations.
+%  SWEEPS after OPEN 0, each spot read at the image: the W-shortens / T-longer list of the blind decisions (found two
+%  W decisions that had dropped a note's mark and a closing «, and one that had joined „der f.“); --moved and --splits;
+%  the split sweep; the reader-line sweep; paragraph starts against tesseract's indents; quotation marks (the print
+%  closes with « and often with », both as printed); the unknown-word sweep (31 spots: 16 corrections).
+%  TRANSLATION as a last reading: the twelve translators listed 79 odd spots (ebook-method/for-idee-1869/tr/odd-*.tsv),
+%  ~60 read at the image (zoom zo, zw, zx): mended -- f's whose head did not ink, read t by both OCRs (pp. 21, 36, 309, 319,
+%  441; a recurring defective sort, as in Folkelige Foredrag), two blind decisions that had taken a reader's t for the
+%  print's f (pp. 322, 539), a speck read as a stop (p. 589), a lost dash (p. 525), the verse on p. 414 set as one quotation,
+%  false paragraph breaks at page turns left by the notes' removal (pp. 430, 553, 620, 695, 703); the rest are the print's.
+%  SAMPLED PAGE CHECK (pagecheck.py, seed 202610136): pp. 12, 418, 521, 694 and the title page read whole and blind, 1069
+%  words: 0 word and 0 punctuation errors; one letterspaced passage in a note missed (p. 694), mended.
+%  What this cannot see: a misprint both OCRs normalise into a real word.
+%  The ø rule (Hans 2026-10-08): o-forms that are no word (Oieblik, Ifolge, imode ...) are set with ø.
+%  DEFECT, letter supplied p. 309: „af“: the f did not ink its head; letter supplied
+%  DEFECT, letter supplied p. 319: „fin“: the f did not ink its head; letter supplied
+%  PRINTED AS IS p. 418: „Indvendiger“ for Indvendinger
+%  PRINTED AS IS p. 423: „aandige“ (so also p. 618)
+%  PRINTED AS IS p. 429: „historiske-Virkelighed“, with a hyphen
+%  DEFECT, letter supplied p. 441: „finde“: the f did not ink its head; letter supplied
+%  DEFECT, letter supplied p. 301: „saaledes“: the second e is broken (a small curved mark); letter supplied
+%  DEFECT, letter supplied p. 319: „efter“: the f did not ink its head (both OCRs read t); letter supplied
+%  PRINTED AS IS p. 323: „derved. at“: a stop before a lower-case word
+%  PRINTED AS IS p. 410: „Læreanstalt. kan“: a stop before a lower-case word
+%  PRINTED AS IS p. 410: „Emter“
+%  PRINTED AS IS p. 422: „Dömmekraft“, set with ö
+%  Not transcribed: running heads, folios, sheet signatures („For Ide og Virkelighed.  20“), the library's stamp; the large
+%  initial of each essay is set as a plain letter.  Quotation marks as printed (» « in the text, „ “ in the notes).  The notes
+%  are numbered ¹) per page, as printed (p. 553: *)).
+%
+%  TOOLS (ebook-method/for-idee-1869/, copied from folkelige-foredrag): draft.py, ocr.py, rules.py, sheets.py + reads.py +
+%  READER-BRIEF.md, heads.py, spacedwidth.py + spacedlines.py + spaced.tsv, zoom.py, pagecheck.py + PAGECHECK-BRIEF.md,
+%  patches.py (PATCHES, NOTES, POST), decisions.tsv, the sweeps, split5.py, rebuild.sh.
+% =====================================================================
+\documentclass[12pt,a4paper,openany]{book}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{libertinus}
+\usepackage{libertinust1math}
+\usepackage[danish]{babel}
+\usepackage[protrusion=true,expansion=true]{microtype}
+\usepackage{setspace}
+\usepackage[margin=1.3in]{geometry}
+\usepackage{fancyhdr}
+\usepackage{hyperref}
+\hypersetup{pdftitle={To Slags Undervisning}, pdfauthor={Rasmus Nielsen}, hidelinks}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LE,RO]{\thepage}
+\fancyhead[C]{\textit{R. Nielsen: To Slags Undervisning (1869)}}
+\setstretch{1.3}
+\usepackage{marginnote}
+\renewcommand{\thefootnote}{\arabic{footnote})}   % the print numbers each page's note ¹) (p. 553: *))
+\newcommand{\opage}[1]{\marginnote{\footnotesize\textit{[#1]}}}
+% the essay's heading: title (and subtitle), centred, a short rule; the print's large initial is not reproduced
+\newcommand{\essayhead}[2]{\begin{center}{\large #1}\ifx&#2&\else\\[0.3em]{\normalsize #2}\fi\\[0.5em]\rule{3em}{0.4pt}\end{center}\medskip\noindent}
+\newcommand{\signature}[1]{\par\smallskip\hfill #1\hspace*{2em}\par}
+
+\begin{document}
+
+% --- front matter: the volume's title page (PDF 7), read at the image (reader K, F7; the page check reads it again blind).
+\begin{titlepage}
+\begin{center}
+\vspace*{3em}
+{\Huge For Ide og Virkelighed.}\\[1em]
+\rule{8em}{0.4pt}\\[1em]
+{\large Et Tidsskrift,}\\[0.8em]
+{\small udgivet}\\[0.4em]
+{\footnotesize af}\\[0.6em]
+{\large R. Nielsen,}\\[0.4em]
+{\large Bj. Bjørnson og Rud. Schmidt.}\\[1em]
+\rule{8em}{0.4pt}\\[1em]
+{\large Aargang 1869.}\\[1em]
+\rule{8em}{0.4pt}\\[4em]
+Kjøbenhavn.\\[0.4em]
+Chr. Steen \& Søns Forlag.\\[1.5em]
+{\small Louis Kleins Bogtrykkeri.}
+\end{center}
+\end{titlepage}
+
+% ===== TEXT (pp. 297-323, pp. 409-441) =====
+\essayhead{To Slags Undervisning.}{I.}
+% --- p. 297 ---
+\setcounter{footnote}{0}%
+\opage{297}Undervisning og Dannelse kan anlægges og ledes i
+meget forskjellige Retninger; man vilde ved Forsøg paa
+at opregne alle mulige Methoder komme til et uoverskueligt
+Tal. Her skal kun gjøres opmærksom paa to
+i Anlæg, Formaal og Fremgangsmaade uligeartede Skoler,
+den \emph{lærde} og den \emph{folkelige.}
+
+Karaktermærket for den lærde Undervisning er Meddelelse
+af grundigt sammenhængende Kundskaber med
+tilsvarende Aandsdannelse; Hukommelse og Forstand ere
+de Sjæleevner, paa hvis Udvikling det fornemmelig kommer
+an: her virkes oprindelig paa Menneskets intellektuelle
+Væsen, ikke paa det hele Menneske. Opgaven
+for den folkelige Undervisning er derimod en personlig
+Dannelse, Indvirkning paa Sindet, Vækkelse af Sjælekræfterne
+med tilsvarende Oplysning om Menneskelivets
+Maal og Vilkaar for den Enkelte, for Samfundet, for
+Slægten: her virkes fra Grunden af paa det hele Menneske.
+I den lærde Undervisning er og maa Kundskabsinteressen
+være det Høieste, medens Folkeoplysningens
+oprindelige Drivfjeder er at søge i Livsinteressen. Som
+Interesserne ere, maae Bestræbelserne være. Det er
+% --- p. 298 ---
+\setcounter{footnote}{0}%
+\opage{298}nødvendigt at skille de to Slags Undervisning tilbørligt
+fra hinanden, naar man vil gjøre sig Rede for Principerne;
+men dermed skal dog ikke negtes, at der imellem
+begge maa gives mangfoldige Bindeled, at Kundskabsundervisningen
+f. Ex. kan udøve en, om end middelbar,
+saa dog betydelig Indflydelse paa Karakter og
+Livsretning, ligesom at Folkeoplysningen igjen fra sin
+Side maa, for at naae nogen Høide, baade forudsætte
+og fremme Erhvervelse af fornødne Forkundskaber.
+
+Den lærde Undervisning er hos alle civiliserede Folk
+i fuld Gang og fuld Anerkjendelse. Kundskabsskolen
+er gammel; den har gjennem Aarhundreder vidst at
+skride frem med Tiden, reformere sig selv og trods
+mangfoldige baade indvortes og udvortes Hindringer tilkæmpe
+sig Udbredelse i stedse videre Kredse. »Kundskab
+er Magt«, denne Sandhed staaer klart for alle
+Dannede, ligesaa klart for den industridrivende Borger,
+der praktisk seer paa Kundskabernes Anvendelse og
+Nytte, som for den theoretiserende Forsker, hvis ideale
+Maal er Kundskaben selv. En saadan Anerkjendelse er
+endnu langtfra bleven den folkelige Undervisning til Del.
+Denne Undervisning er da heller ikke Aarhundreder
+gammel; den er tvertimod meget ung, endnu i sin første,
+famlende Begyndelse; Livstanken i dens indre Eiendommelighed
+er --- naar vi nu blot kunde sige det uden
+altfor smertelig Forargelse for dem, der have Dispositionen
+--- allerførst brudt frem med de Grundtvigske
+Høiskoler.
+
+Før vi imidlertid forsøge en nærmere Opklaring af,
+hvad og hvormeget der ligger i denne Paastand, maae
+vi først afværge nogle Misforstaaelser, som i den nyere
+% --- p. 299 ---
+\setcounter{footnote}{0}%
+\opage{299}Tid, vel særlig i Anledning af den vaagnende folkelige
+Stræben, ere fremkomne angaaende det lærde Undervisningsvæsen.
+
+Man har fra et noget almueagtigt Synspunkt været
+tilbøielig til at betragte Universitetet og de lærde Skoler
+med Alt, hvad derunder hører, som forældede Indretninger,
+Institutioner, hvis nær forestaaende Opløsning maatte
+ansees som nødvendig Betingelse for friere Fremskridt i
+Aanden; man har i Klager over »Bogaristokratiet«, »det
+lærde Laugsvæsen«, »Levebrødsvæsenet« o. s. v. gjort
+gjældende, at Lektielæsning, Stiløvelser og streng Examen
+forvandlede Skolen til en Art Tugthus, en officiel
+Tvangsanstalt, der kuede Ungdommens Mod, sløvede den
+medfødte Lærelyst, svækkede Livskræfterne, bragte Iskulde
+ind i de varme Hjerter og paadrog dem en aandelig
+Forkjølelse. Endskjøndt nu mange af disse Indsigelser,
+naar vi dømme efter den ydre Virkelighed, ikke just ere
+saa ganske ubeføiede, saa ere de dog, naar vi see paa
+Ideen, grundløse.
+
+Kundskabsskolen maa til Løsning af sine Opgaver
+nødvendigvis gaae ud fra bestemte Forudsætninger, og
+stille særegne Fordringer. Den første Betingelse er, at
+Eleven indprenter sig, hvad der forklares og foreskrives
+ham, ved at lære visse Lektier; anden Vei til Kundskabers
+Erhvervelse gives ikke. Nu kan jo vel en saadan
+Lektielæsning, især naar Lektierne efterhaanden
+blive flere og større, mangen Gang føles som en trykkende
+Byrde; her kan da være Tale om at lette den
+Unge Byrden, hvis den bliver ham for tung, men her
+kan fornuftigvis ikke være Tale om at fritage ham for
+Byrden. Byrde tyder paa Arbeide, og den Unge skal
+% --- p. 300 ---
+\setcounter{footnote}{0}%
+\opage{300}lære at arbeide. Som nu Skolen i det Hele vil vaage
+over, at Eleven uden Overanstrengelse sættes istand til
+at arbeide med Alvor, Dygtighed og Lyst, saa vil den
+ogsaa ved omhyggelig Overhøren, Veiledning og Tilrettevisning
+vide at kontrollere Arbeidet. Eleven kommer
+paa denne Maade til en klar Forestilling om, hvad han
+kan, og hvad han ikke kan; han lærer, hvad det er at
+lære Noget; han indseer efterhaanden tydeligere, hvor
+nødvendigt det er, at kjende Noget tilgavns, at kjende
+det i Sammenhæng, grundigt, sikkert og fuldstændigt.
+Saa kommer han mere og mere ind under Tankens Tugt
+og føler Vægten af gyldige Grunde --- et uundværligt
+Element i Karakterens Udvikling; thi det Menneske, der
+ikke har Agtelse for klare Tanker og gyldige Grunde,
+mangler noget Væsenligt i at være Menneske, hvor levende
+Følelse, hvor varmt et Hjerte han end for Resten kan have.
+
+Som en Anke mod det lærde Skolevæsen i dets
+nuværende Form høres ikke sjeldent den Indvending, at
+Programmet har formange Rubrikker, at der kræves altfor
+mange uensartede Ting, saa at Eleverne lære Lidt
+af Alt uden at lære Noget tilgavns. Vi skulle her ikke
+undersøge, hvorvidt der muligvis for Tiden fordres vel
+mange Fag, om disse Fag ikke maaske staae for
+udvortes sideordnede, istedenfor at underordnes under
+enkelte Hovedfag, der kunde give det Hele større Hold
+og Sluttethed; vi skulle kun gjøre opmærksom paa,
+at Kundskabsskolen maa sikkre sit intellektuelle Grundlag,
+og at dette Grundlag bliver for smalt og Synskredsen
+for snever, naar Læregjenstandene ere for
+faa og ensformige. Den videnskabelige Forberedelsesskole
+kan ikke begynde som Fagskole; just derfor
+% --- p. 301 ---
+\setcounter{footnote}{0}%
+\opage{301}er det, at den optager saa mange uligeartede Fag. De
+mange Fag betyde, at det ikke særlig kommer an paa
+noget enkelt for sig, at det enkelte Fag kun er et enkelt Element
+i den hele Dannelse. Nu er det jo vistnok ganske naturligt,
+at blandt flere opvakte og begavede Elever vil En
+have Blik og Forkjærlighed for et Fag, en Anden for
+et andet, En for Historie, en Anden for Mathematik, en
+Tredie for Sprogene o. s. frmdl.; slige Yttringer af individuel
+Forkjærlighed kunne endogsaa regnes blandt de
+meget lovende Tegn. Men kan end Skolen til en vis Grad
+see igjennem Fingre med Enkeltes intellektuelle Tilbøieligheder,
+saa tør den dog af Hensyn til Evnernes ligelige,
+saavidt muligt, harmoniske Udvikling, ikke give ungdommelige
+Liebhaverier utidig Næring, saa lidt som den tør
+godkjende den Undskyldning, at et enkelt Hoved skulde
+saa udelukkende være organiseret for en enkelt Undervisningsgren, at
+det paa Grund heraf umulig kunde sætte sig ind
+i Begyndelsesgrundene til de andre. Naar da Fordringen er
+af »de mange Fag at lære Noget tilgavns«, saa kan
+dette fornuftigvis kun forstaaes saaledes, at Eleven lidt   % PRINTER'S DEFECT (p. 301): „saaledes“: the second e is broken (a small curved mark); letter supplied
+efter lidt kommer til Erkjendelse af, hvor vigtigt det
+er ham at sammenarbeide det Forskjelligartede, saa at
+Overskuelsen over det Hele staaer i det rette Forhold
+til Indsigten i dets Enkeltheder; det er ideelle Totaliteter,
+et Rige af Love, en Verden af Erkjendelser, som
+efterhaanden skal opgaae for hans indre Syn. Det saameget
+omtvistede Examensvæsen vil da, naar det sees i
+denne Belysning, netop bidrage Sit til Øiemedets Opnaaelse.
+
+Det er en stor og betydningsfuld Opgave, den Studerende
+maa løse, naar han grundig skal forberede sig
+til en lærd Examen. Det er ikke gjort dermed, at han
+% --- p. 302 ---
+\setcounter{footnote}{0}%
+\opage{302}propper en Mængde Kundskaber og Læresætninger ind i
+sin Hukommelse; han maa forstaae at bearbeide det rige,
+høist uligeartede Stof, indtil han faaer den hele Masse
+organiseret. Hertil udkræves Mere end Forstandsmekanik,
+Hukommelse og Flid, hertil udkræves først og sidst
+en vaagen, virksom, selvstændig arbeidende Tænkning.
+Vel kan Tænkningen endnu ikke vise sin Selvstændighed
+derved, at den Studerende paa egen Haand opdager
+enten nye Kjendsgjerninger eller nye Sandheder; han er
+ligefrem henvist til at modtage og tilegne sig det Overleverede.
+Men see vi nærmere til og besinde os paa,
+hvad heri ligger, da opdage vi let, at de Kræfter, der
+væsenlig betinge videnskabelig Produktivitet, allerede
+her ere i fuld Virksomhed. Det er, som bekjendt, ingenlunde
+nogen let Sag at sætte sig fuldstændig ind i
+en given Lære, selv om Læresætningerne ere fremstillede
+i klar systematisk Sammenhæng. Vanskeligheden forøges,
+naar flere indbyrdes modstridende Anskuelser skulle
+bedømmes og det Stridige udlignes; der hører Aandssmidighed,
+Selvbesindelse og Resignation til for at tage
+de fremmede Tanker i Besiddelse, leve sig ind i dem og
+gjøre dem til sine egne. Øvelsen heri er saa langt fra
+at svække den videnskabelige Selvtænkning, at den tvertimod
+afgiver en af dens første ufravigelige Betingelser.
+Hvormegen umoden Kritik, hvormange løse, frække, kaade
+Overhalinger af dybere gaaende Arbeider bringes ikke
+til Torvs paa det literære Marked alene af den Grund,
+at de Kritiserende have forsømt hin gavnlige Øvelse og
+desaarsag mangle den Selvkritik, der skulde advare dem
+imod at tage fat paa Opgaver, de saa lidt have gjennemarbeidet,
+at de endog, hvad den allertarveligste Rede%
+% --- p. 303 ---
+\setcounter{footnote}{0}%
+\opage{303}gjørelse angaaer, vilde komme ynkelig derfra, dersom
+de skulde bestaae en offenlig, upartisk, men streng
+Examen.
+
+Det Næste, Forberedelsen kræver, er at faae de
+uligeartede Erkjendelser grupperede i Bevidstheden saaledes,
+at Detaillerne træde tydelig frem uden at skade
+Overblikket. Under denne Bestræbelse er Enhver i
+strengeste Forstand henvist til sig selv; thi den Fremgangsmaade,
+som passer for den Ene, kan være høist
+ubekvem for den Anden. Den psykologiske Vexelvirkning
+mellem Fantasi, Forstand og Hukommelse, hvorpaa
+det her kommer an, kan i de indre, fine, ofte umærkelige
+Overgange være høist forskjellig hos de Forskjellige.
+Den, der f. Ex. har en meget omfattende og tro Hukommelse,
+vil være tilbøielig til at begynde med Enkelthederne og
+betragte det Hele som en Sum af mangfoldige Dele; først
+ved at huske hjælpes han til at tænke: Forstanden opererer
+paa Hukommelsens Grundlag. Den, hos hvem Forstand
+og Tænkning har en naturlig Overvægt, maa gaae den
+omvendte Vei. For ham er det allerførst af Vigtighed at
+fremhæve det Almene, trænge ind i Sætningernes Sammenhæng
+og bevare Overskuelsen. For ikke at bebyrdes
+med overflødigt Stof, maa han ved hvert Skridt
+fremad lade Tænkningen strengt prøve og nøiagtig afveie,
+hvilke og hvormange Enkeltheder der i den givne
+Sammenhæng nødvendig høre med til Forstaaelsen af
+det Hele: det er Forstanden, som ved denne Økonomi
+kommer Hukommelsen til Hjælp. At nu begge, baade
+han med den stærke Hukommelse og han med den indtrængende
+Forstand, maa stræbe til eet og samme Maal,
+er en Selvfølge; men det gjør, hvad Arbeidsmaaden an%
+% --- p. 304 ---
+\setcounter{footnote}{0}%
+\opage{304}gaaer, en væsenlig Forskjel, om det er Hukommelsen,
+der oprindelig bærer Forstanden, eller omvendt.
+
+Videnskabelig Gjennemgang gjennem en stor, i sig
+selv afrundet Lærebygning, hvis Portaler og Søiler, hvis arkitektoniske
+Led og Dele staae i symmetrisk Samklang med
+hverandre indbyrdes og med det Hele, og derhos et tilsvarende
+psykologisk Indblik i Selvets intellektuelle Væsen,
+et grundigt Bekjendtskab med Ens egen aandig-individuelle
+Natur, en Selvkritik, der afslører Mangler og
+Fortrin og afgiver Maalestok for fremtidig Arbeidsdygtighed,
+ere Fordele, som neppe Nogen, der ved en grundig
+Examens-Forberedelse har holdt Anstrengelsen ud,
+vil fortryde at have erhvervet sig.
+
+Der kan da, saasandt vi agte Videnskaben og fastholde
+det videnskabelige Synspunkt, ikke gjøres nogensomhelst
+begrundet Indvending imod Skolen som Kundskabsskole;
+det er meget mere at ønske og haabe, at
+den lærde Undervisning, uanfægtet af Tidens vexlende
+Stemninger, maa i Eet og Alt blive sin Karakter tro.
+Derimod er der i de herskende Forestillinger om Kundskab
+og Dannelse en Grundvildfarelse, som paa det
+Kraftigste maa modarbeides.
+
+Det er en hos Mange dybt indgroet Fordom, at Kundskabernes
+Mangfoldighed er Dannelsens Kjendemærke,
+at den, der har mange Kundskaber, kan tale mange
+Sprog og tale med om Alt, er den sande Dannede, medens
+den, der har færre Kundskaber og kun taler eet
+Sprog, røber Mangel paa Dannelse og kan som indskrænket
+Individ let blive overseet i det dannede Selskab.
+At denne Synsmaade, der staaer i nøie Forbindelse
+med Tidsalderens herskende Tilbøielighed til at
+% --- p. 305 ---
+\setcounter{footnote}{0}%
+\opage{305}sætte Menneskets udelukkende Fortrin i det Intellektuelle,
+er til ubodelig Skade for Aandslivet i alle Retninger,
+vil ved lidt nærmere Overveielse let kunne indsees.
+
+Den er for det Første til Skade for den lærde Undervisning;
+thi den bevirker, at Kundskabsskolen idelig
+staaer Fare for at falde ud af sin oprindelige Karakter.
+Er det Lærdom og Videnskab, der væsenlig skal betinge
+Aandsudviklingen, da maa Skolen paa det Strengeste
+indskærpe, at disse høie intellektuelle Goder allerførst
+eftertragtes for deres egen Skyld uden nogetsomhelst
+Hensyn til udvortes, endelige Fordele. At lade
+sig optage i den lærde Skole er da det Samme som at
+indvie sit Liv, sin bedste Tid og sine bedste Kræfter til
+Videnskabens Dyrkelse. Vistnok bør der fra Statens
+Side vaages over, at Videnskaben altid maa kunne sikkre
+sine sande Dyrkere en virkelig Livsstilling, en hæderlig
+Plads i Samfundet; men slige lovende Udsigter tør ikke
+komme i Betragtning, naar Spørgsmaalet er om de første
+Bevæggrunde. Før Videnskaben kan tjene som Middel,
+maa den først være Maal i sig selv, tillægges Værd
+i og for sig selv og elskes for sin egen Skyld. Den
+Discipel, som, idet han træder ind i Skolen, ikke medbringer
+en ungdommelig stor, om end ungdommelig uklar,
+Forestilling om det Herlige, det Ophøiede i at stræbe
+efter Kundskab og Indsigt, ham ville Muserne ikke hilse:
+han træder ind som en Uværdig; og den Discipel, som,
+uagtet Skolen anvender sine bedste Lærekræfter paa at
+aabne hans Øie og vække hans Sands, dog ikke kan
+drive det videre end til det praktiske Spørgsmaal, hvad
+Nytte man dog har af at lære saamange unyttige Ting,
+bør, om han end for Resten læser Lektierne nok saa
+% --- p. 306 ---
+\setcounter{footnote}{0}%
+\opage{306}upaaklageligt, meddeles consilium abeundi, thi han er
+ikke paa sin rette Plads, han er gaaet feil. Men dersom
+Skolen paa denne Maade skulde opretholde de ideale
+Fordringer, da følger det af sig selv, at den, for at
+vinde i Indhold, maatte tabe betydeligt i Omfang. For
+at blive ved den klassiske Dannelse, vilde to eller tre
+Latinskoler, som hver aarlig i Gjennemsnit sendte ti a tolv
+Studerende til Universitetet, vel omtrent være Maximum
+i et saa lille Land som Danmark. Nu derimod, da uklare
+Forestillinger om Aandslivets Hindringer og Betingelser
+for en Del gjøre Udslaget, staaer Sagen anderledes.
+
+I den skikkelige Mening, at den studerende Vei dog
+altid er en sikker og hæderlig Vei, at en Skat af Kundskaber
+er en kostelig Skat, og at »det Bedste, man kan
+gjøre for sine Børn, er at give dem en god Opdragelse«,
+see Forældre og Værger sig bekymrede om efter høiere
+Dannelsesanstalter, og see da ofte feil; thi det gaaer
+en masse løs paa Latinskolerne, Gymnasierne og Universitetet.
+Dette tyder, især naar vi see hen til en
+kommende Tid, hvori neppe nogen velstaaende Borger
+vil have Aarsag til at misunde Embedsstanden det
+gyldne Overflødighedshorn, aabenbart paa en dybere liggende
+Grundvildfarelse. Det kan umulig være Hensyn
+til Fordelen eller de gode Udsigter, som her har Overvægten;
+det maa være noget Andet. Det er den taagede
+Blanding af to Slags Dannelse, den intellektuelle og den
+personlige, der forvirrer Opfattelsen. --- Realskolen f. Ex.
+er utvetydig en Kundskabsskole og intet Andet. Den,
+der vil sætte sin Søn i en Realskole, bliver sig let bevidst,
+hvad det er, han egenlig vil. Han vil, at det
+unge Menneske skal arbeide sig frem, skal erhverve sig
+% --- p. 307 ---
+\setcounter{footnote}{0}%
+\opage{307}en Sum af nyttige Kundskaber i bestemte Fag. Han
+kan for Resten have den største Agtelse for Videnskabelighed,
+særlig for Realvidenskaberne; han kan forstaae,
+at en Arbeiden med Hovedet styrker Evnerne og giver
+den Duelige en egen Forstandsoverlegenhed; men han
+bedaares ikke let af uklare Fantasier angaaende det
+Ideale i Undervisningen selv: at Realskolen just i særegen
+Grad skulde forædle Hjertet og forhøie det Aandelige
+i Personlighedens Udvikling, falder ham neppe
+ind. Anderledes med den klassiske Undervisning; den
+synes nu engang at have faaet Privilegium paa at fremelske
+det Ædleste og Dybeste i den menneskelige Aand,
+saa at den baade meddeler nyttige Kundskaber og tillige
+giver de unge Sjæle den finere aandelige Næring,
+der er Betingelsen for ideal Personlighed. Men netop
+dette delte, dobbeltsidige Hensyn, Hensynet dels til de
+nyttige Kundskaber, dels til den finere aandelige Næring,
+medfører en Tvetydighed, der er yderst farlig for
+Skolen. Den tør nu ikke længere betragte sine Elever
+udelukkende som en Kreds af unge vordende Videnskabsdyrkere;
+langtfra! her er jo Mange tilstede, som vitterlig
+aldrig have tænkt paa at offre deres Liv til Videnskaberne;
+de ere her blot for Kundskabsindsamlingens Skyld
+og for at faae nogen klassisk Dannelse. Endnu mindre
+tør Skolen lægge det afgjørende Eftertryk paa Kundskabernes
+Nytte; thi hvad det Nyttige angaaer, kan den
+umulig konkurrere med Realskolen. Skal Latin og Græsk
+læres for Nyttens Skyld, skulle Herodot og Homer, Cicero,
+Virgil, Ovid og Horats læses i Grundsprogene
+udelukkende for Kundskabernes Skyld og for den praktiske
+Anvendelses Skyld, da seer det sørgeligt ud med den finere
+% --- p. 308 ---
+\setcounter{footnote}{0}%
+\opage{308}Næring, den klassiske Dannelse og den forventede Sjæleadel.
+Saa staaer Skolen i al Tvetydighed som en
+høiere Dannelsesanstalt --- med mange Karakterbøger
+--- uden Karakter. Med denne Tvetydighed kan det
+nemlig ikke undgaaes, at de tilstrømmende Elever jo
+komme til at udgjøre en blandet Befolkning. Omkring
+de virkelig Kaldede, Minervas ægte Sønner, samler sig
+efterhaanden en større Flok af uægte Sønner, af Saadanne,
+som, da de nu engang skulle gaae »den studerende
+Vei«, vistnok paa Afstand have en vis Respekt for den
+høie Gudinde, og vel ogsaa med Tiden ville gjøre hende
+den Ære at anbringe hendes Ugle paa Kaskjetten; men
+som for Resten, hvad det Videnskabelige angaaer, rent ud
+sagt, ikke vide med sig selv, hverken hvad det Hele
+skal betyde, eller hvad de i aandelig Forstand egenlig
+have at gjøre. Stemningen hos Flertallet vil da udøve
+en Indflydelse paa Aanden i Skolen, der ikke er til det
+Bedre. En dygtig Bestyrelse i Forening med nidkjære,
+duelige Lærere kan vel afgive Sikkerhed for, at Sædelighed,
+Orden og taalelig Flid i det Hele opretholdes;
+men den Opvakthed, der betinger dybere Forstaaelse,
+den ideale Sands, den aandige Hunger og Tørst lader
+sig ikke indblæse. Som det er modbydeligt at skulle
+spise og spise og smage paa mange Retter, naar man ingen
+Appetit har, saaledes maa det ogsaa falde den Unge
+besværligt at skulle læse og læse og lære de hundrede
+forskjellige Ting, af hvilke maaske neppe mere end een
+eller to i Virkeligheden og naturligt kunde, --- »hvis
+han blot havde Tid« --- interessere ham.
+
+Jo mere de indvortes Hensyn aftage, desmere voxe
+de udvortes. Det er ikke Aanden i de Gamle, ikke de
+% --- p. 309 ---
+\setcounter{footnote}{0}%
+\opage{309}store Verdenstanker, ikke Sprogets Rytmer, ikke den
+klare klassiske Form, der fængsler Eleven og tilskynder
+ham til at lære sit Pensum; nei, det er andre mere udvortes
+og reelle Hensyn, Hensyn til »mg og ug« og til
+»Oprykning ved næste Examen«. Aandsarbeidet faaer paa
+denne Maade Lighed med et Fabrikarbeide; man besørger
+det Nødvendigste af Hverdagsgjerningen mekanisk
+og med døsig Flid, men arbeider paa Kraft i den travle
+Tid; man trykkes bestandig kun af een Bekymring, en
+stille Bekymring, der voxer, alt som Afgjørelsens Stund
+nærmer sig, Bekymringen for at »bestaae ved Examen«.
+Under Trykket af Skoletvangen og den i mange Maader
+besværlige Lektielæsning er der imidlertid et Noget, der
+bevæger sig i den ungdommelige Fantasi og lyser med
+Idealitetens Glands, det er Forestillingen om det frie
+Liv ved Universitetet. »I Skolen læse vi kun for Examens
+Skyld; først naar vi komme til Universitetet, begynde
+vi at studere«. Denne Forestilling vil skuffe
+Mange; den vil i Reglen skuffe alle dem, der ikke
+alt fra Begyndelsen af have følt, hvad det er at
+sætte de indvortes Hensyn høiere end de udvortes.
+Thi den første »praktiske« Fordring, Universitetet stiller
+til de unge Studerende, er, at de snarest muligt
+forberede sig ikke blot til een, men til tre Examina, af   % PRINTER'S DEFECT (p. 309): „af“: the f did not ink its head; letter supplied
+hvilke de to første allerhelst maatte afsluttes i Løbet af
+det første Aar, for at der saa med udelte Kræfter kan
+arbeides paa den store Embedsexamen; »først naar Embedsexamen
+er vel overstaaet, kan man egentlig begynde
+at studere«. Er allerede i Skoletiden Hensynet til Examen
+blevet et udvortes Hensyn, og Forestillingen om, hvad
+det er at læse til en Examen, slaae sig igjennem og
+% --- p. 310 ---
+\setcounter{footnote}{0}%
+\opage{310}bestaae ved en Examen, behørigt trivialiseret: hvad Under
+da, om den gamle nøgterne, triviale Forestilling
+dukker op paany, saa at Fabrikvæsenet med store Lektier,
+mekaniske Manuduktioner, Hastværksrepetitioner og
+ilfærdige Overhalinger, inden man ret veed deraf, er i
+fuld Gang.
+
+Det er Kundskabsskolens medfødte Ensidighed, at
+den, naar den samvittighedsfuldt bevarer sit oprindelige
+Præg og virker Alt, hvad den formaaer, i Aandens Tjeneste,
+dog ikke er istand til at udvikle hele den menneskelige
+Aand; faaer det nu desuagtet Udseende af, at
+den lærde Høiskole er den eneste aandelige Dannelsesanstalt,
+der kan gives, saa maa den synke fra sit oprindelige
+Niveau ned til at tjene det blotte Udvortes, til
+Asyl for det tomme Skin, et dødt mekanisk Lærdomsvæsen, et af endelige Interesser drevet Fabrikvæsen, for
+hvis Kvalme Muserne flygte.
+
+Er den uklare Forestilling om »Dannelse«, »Aandsdannelse«,
+»høiere Dannelse«, allerede til Skade for det
+videnskabelige Undervisningsvæsen, da er Skaden endnu
+langt større, naar vi stige nedad og betragte Undervisningen
+i de Kredse af Livet, hvor der ikke kan være
+Tale om Videnskab. Alle vore offenlige Skoler, Borgerskolerne
+og Almueskolerne, ere jo uden Undtagelse
+Kundskabsskoler, alle anlagte paa Lektielæsning, Udenadslæsning
+og Examenslæsning, allesammen indrettede
+efter det lærde Forbillede. Dersom nu disse Skoler alle
+bleve opfattede under Synspunktet af populære Realskoler,
+saa kunde herimod ikke være Noget at indvende;
+thi nyttige Kundskaber ere nødvendige for Alle.
+
+Men saaledes forholder det sig ikke. I Borger- og
+% --- p. 311 ---
+\setcounter{footnote}{0}%
+\opage{311}Almueskoler lægges der udtrykkelig an paa at vække
+det høiere Liv i den unge Slægt, at virke opdragende.
+Til Opdragelsen hører da ikke blot, at Børnene lære at
+læse, skrive, regne o.s.v., dertil hører fornemmelig, at
+de undervises om det for Livet Høieste og Vigtigste, at
+de undervises i Religion. Betragte vi nu Religionsundervisningen
+i disse Skoler lidt nærmere, da møde vi
+den ovenfor berørte Tvetydighed igjen, men under en
+endnu bedrøveligere Skikkelse. At meddele Religionskundskaber
+og at vække det religiøse Liv, disse to uligeartede
+Opgaver fremkalde to Bestræbelser, af hvilke den
+ene uophørlig modarbeider den anden. »Timen i Religion
+er en Slags opbyggelig Time; de religiøse Sandheder
+kunne ikke meddeles enten som blotte Forstandslærdomme
+eller som udvortes historiske Kjendsgjerninger. Derfor
+kunne jødiske Børn ikke undervises sammen med kristne;
+de kunne have alle de andre Timer fælles, kun ikke Timen
+i Religion. Religionens Lærdomme maae komme
+fra Hjertet og gaae til Hjertet, de maae derfor meddeles
+af en troende Lærer, som paa bedste Maade søger
+at vække og befæste Troen hos de Unge.« Dette er Bestræbelsen
+i den ene Retning. Men hermed forbindes
+nu en anden Bestræbelse, og den er for Skolen som
+Skole endnu vigtigere, det er Bestræbelsen for at meddele
+Kundskaberne i et vist befalet Omfang.
+
+Hvad er Religion? »Man kalder det Religion at
+have Kundskab om Gud og hans Villie, samt om den
+Maade, paa hvilken han vil æres og dyrkes af os«; disse
+Begyndelsesord i den ældre befalede Lærebog ere i høi
+Grad betegnende for det Synspunkt, hvorfra Religionsundervisningen
+opfattes i Skolen. Ogsaa i Religionen
+% --- p. 312 ---
+\setcounter{footnote}{0}%
+\opage{312}er der Lektier, ogsaa i Religionstimen skal der høres
+paa Lektien, ogsaa i Religionen skal der tages Examen.
+Hvad er det nu, der kan prøves ved en Examen? Ikke
+Troeslivet selv, eller hvorvidt de Unge hver især virkelig
+have Troen. En saadan Examen i Troen har Tilværelsens
+Herre udelukkende forbeholdt sig selv at anstille.
+Det Eneste, der kan prøves, er Kundskaberne.
+Men det, der ved Examen udelukkende er Prøvelsens
+Gjenstand, er ogsaa Skoleundervisningens høieste, vigtigste
+Maal, og Bestræbelsen for Kundskaberne faaer da
+af denne Grund en naturlig og nødvendig Overvægt over
+den vækkende Bestræbelse, Bestræbelsen for Livet.
+
+Grundlaget for den offenlige, officielle Religionsundervisning
+er en justeret Lærebog, et kort Udtog af den
+kirkelig systematiske Dogmatik: her have vi det lærde
+Forbillede. Lærebogen med dens Skriftsteder er bestemt
+til Udenadslæsning, især gjælder det om at kunne Skriftstederne
+paa sine Fingre. Udenadslæsning er for Børn
+en aandelig mekanisk Syssel; saa begynder det med
+Aandsmekanik; men Aandsmekanik i Religion slaaer
+Livet ihjel. Det nytter ikke, at Lærebogen udtrykkelig
+siger, at Religionen ikke alene er en Kundskab, men
+ogsaa et Liv; thi, naar det staaer i Lektien, gaaer det
+øieblikkelig over i Udenadsmekaniken, at Religionen er
+et Liv; det nytter ikke, at der autoriseres en ny Lærebog,
+som begynder lidt mere hjertelig med det Spørgsmaal:
+»Hvad skal fremfor Alt ligge os paa Hjerte?« thi,
+hvad der »fremfor Alt skal ligge os paa Hjerte«, løber
+uden videre med i Ramsen. Dersom der blev udsat en
+Prisbelønning for Besvarelsen af det Spørgsmaal: »Hvorledes
+skal man under Skin af at ville indprente Børn
+% --- p. 313 ---
+\setcounter{footnote}{0}%
+\opage{313}den aabenbarede Religions Hovedlærdomme uden Forargelse
+bidrage Sit til, at de fra Begyndelsen af kunne
+faae hemmelig Lede til al Religion?« da vilde Opgaven
+uden Tvivl bedst kunne løses ved en grundig psykologisk
+Udvikling af, hvad der under Udenadslæsning af en
+dogmatisk Lærebog halv bevidst, halv ubevidst maa
+foregaae i Barnets Sjæl.
+
+Vistnok kan man med nogen Grund beraabe sig
+paa, at det ikke er en slavisk Udenadslæren, hvorom
+det gjælder, at Lærebogen kun er en Ledetraad til forstandig
+Afbenyttelse, og at Læreren altid vil sørge for
+at vække Børnenes Eftertanke, idet han forklarer dem
+det Læste saaledes, at det baade virker paa Følelsen
+og oplyser Forstanden. Vi tvivle ikke om, at den
+retsindige Lærer jo vil i begge Henseender gjøre sit
+Bedste; vi mene kun, at det i sig selv Modsigende
+ikke lader sig udføre. Hvad Følelsen angaaer, er det
+umuligt, at Sandheder, der meddeles i Form af rene
+Læresætninger og have saa Lidet med Barnets virkelige
+Liv at gjøre, just skulde efterlade noget særdeles
+Indtryk eller fæste sig dybt i det barnlige Sind. Man
+tage f. Ex. en Læresætning som denne: »Ægteskabet
+er den inderlige Forbindelse mellem Mand og Hustru,
+som Gud har indstiftet til gjensidig Hjælp og Menneskeslægtens
+Forplantelse. Ægtefolk skulle leve sammen
+i Kjærlighed og Troskab indtil Døden.« Saa sand denne
+Sætning nu end i og for sig er, saa vilde det jo dog
+være unaturligt, om den virkede stærkt paa den lille
+tiaarige Pige eller vakte alvorlige Tanker hos den elleveaarige
+Dreng. Hvis den lille Pige og den lille Dreng,
+naar de udenfor Skoletiden talte med hinanden om det,
+% --- p. 314 ---
+\setcounter{footnote}{0}%
+\opage{314}der naturlig maatte ligge dem begge paa Sinde, følte
+sig uvilkaarlig tilskyndede til at gjennemgaae og forklare
+det nævnte Stykke samt derunder hørende Skriftsteder
+med hinanden paa fri Haand: saa vilde man vel
+finde det noget betænkeligt, ja uhyggeligt, fordi det var
+unaturligt. Derimod vilde man finde det ganske i sin
+Orden, om de flittige Børn, den lille Dreng og den lille
+Pige, i Læsetimer udenfor Skolen overhørte hinanden i
+den foreskrevne Lektie og passede nøie paa Skriftstederne,
+baade det med »Ægteskabet være hæderligt« og
+det med »Mændene ere skyldige« og det med »I Kvinder!
+værer Eders egne Mænd underdanige«; det Barnlige
+er, at der ikke tænkes videre ved det, at det gaaer
+paa Ramse; jo raskere Ramsen gaaer, desto uskyldigere
+er det Hele.
+
+Lærebogen er objektiv; dens dogmatiske Sætninger
+ere alle indrettede efter Systemet, og det objektive System
+kan ikke tage Hensyn til den barnlige Alders endnu
+umodne Subjektivitet. Man indvende ikke, at det kun
+er enkelte Læresætninger, hvis Anvendelse og rette Forstaaelse
+ligger udenfor Børnenes Synskreds; thi det lader
+sig let vise, at der ikke er en eneste religiøs Sætning,
+som, vel at mærke, i Form af Lærebogssætning er, naar
+vi tage det strengt, tilgængelig for den barnlige Forstand.
+»Gud er retfærdig, det er: han lader det Gode
+faae Fremgang og Løn, og han hæmmer og straffer det
+Onde«; denne Sætning kan et Barn ikke forstaae. Tages
+den enfoldigt efter Ordene, saa kommer den i Strid
+med Kjendsgjerninger, paa hvilke den Unge allerede tidlig
+vil blive opmærksom; tages den enfoldigt efter Aanden,
+saa bliver Meningen den, at de i Sandhed Gode,
+% --- p. 315 ---
+\setcounter{footnote}{0}%
+\opage{315}hvad jo kan sees af Profeternes, af Apostlenes og fremfor
+Alt af Kristi Exempel, netop maae lide i denne Verden,
+medens det Onde paa mange Maader faaer »Fremgang
+og Løn«; men op til det Aandens Høidepunkt,
+hvorfra et saa skærende Misforhold viser sig foreneligt
+med Guds Retfærdighed, kan Barnet ikke løftes.
+Skal den opbyggelige Fortolkning gaae ud paa at
+vise, at det Onde jo vistnok til en Tid kan faae Fremgang
+i Verden, men kun til en Tid, saa at man for
+Udfaldets Skyld dog i Reglen staaer sig bedst ved at
+gjøre det Gode: da bliver Forklaringen ræsonnerende;
+der fremkommer et Blandingsbegreb, et Miskmask af
+Fromhed og Egennytte, Gudsfrygt og verdslig Klogskab,
+som forvirrer Barnets Tanker og nedslaaer dets ideale
+Forestilling om Guds Retfærdighed.
+
+»Men« --- siger man maaske --- »denne hele Betragtningsmaade
+gjør kun Virkning ved at overdrive
+Skyggesiderne og stirre paa den Ufuldkommenhed,
+som klæber ved alt Menneskeligt; den overseer Livets
+Kjendsgjerninger og staaer i Strid med den sikkre Erfaring.
+Thi Erfaring lærer, at skikkelige, sædelige, flittige,
+nogenlunde begavede Børn uden Besvær baade lære
+Lærebogen og forstaae Forklaringen og finde Opbyggelse
+derved. Den, der tvivler herom, behøver blot, naar Leilighed
+gives, at træde ind i Skolen og overvære en
+Katekisation eller, hvad der endnu er tilforladeligere, være
+tilstede ved den egenlige Modenhedsprøve, den sidste
+offenlige Examen. Ved at høre paa Examen vil enhver
+Billigttænkende kunne overbevise sig om, at Børnene
+virkelig have forstaaet Lærebogen, at der ved sammenhængende
+Kundskaber i den hele Religion er lagt en
+% --- p. 316 ---
+\setcounter{footnote}{0}%
+\opage{316}sikker Grund, saa at Troen er vis og Forstanden oplyst.
+Det er dog en høist vigtig Sag, at de Unges Forstand
+paa Religionen tidlig udvikles, saa at de kunne gjøre
+Regnskab for, baade hvad de skulle troe, hvormeget de
+skulle troe, og hvorfor de skulle troe det Altsammen«.
+Vi forstaae meget godt, hvad heri ligger. Det er med
+en ofte forbausende Sikkerhed, at opvakte og vel underviste
+Børn kunne ved en Skoleexamen svare paa Spørgsmaal,
+der ellers sætte graanende Tænkere i Forlegenhed.
+»Hvad vil det sige, at Gud har skabt Himmelen og Jorden?«
+»Gives der andre fornuftige Skabninger end Menneskene?«
+»Ere alle Englene gode?« »Hvad er Guds
+Øiemed med Verdens Opholdelse?« paa slige Spørgsmaal
+kan det halvvoxne Barn ofte svare saa tydelig, rent og
+bestemt, at det beskæmmer de Ældre. Dersom der nu
+virkelig var Sandhed i al denne Forstaaelse, saa var
+det Vidunderlige naaet. Men Sandheden er, at det Hele
+er Skin, et psykologisk, sjælefordærvende Bedrag.
+
+Enhver, som har givet sig noget af med at undervise,
+vil være bleven opmærksom paa den Smidighed,
+hvormed en ungdommelig Forstand formaaer at efterligne
+Lærerens Tanker uden egenlig at tænke dem. Der er
+en Tankernes Efterligning, der kan være saa skuffende,
+at det livagtig seer ud, som havde Lærlingen virkelig
+forstaaet Sagen, idet han endog for en Del med egne
+Ord nøiagtig eftergjør en foreskreven Tankebevægelse;
+og dog er det en Skuffelse, en som oftest naiv Selvskuffelse. I exakte Videnskaber, Mathematik, Mekanik,
+er Skuffelsen endda temmelig let at opdage; men ikke
+saaledes i Aandslæren. Man vil i Filosofien f. Ex. kunne
+fremstille ethvert Problem, selv det allervanskeligste,
+% --- p. 317 ---
+\setcounter{footnote}{0}%
+\opage{317}paa en saadan Maade, at Begynderen bliver i Stand til
+at følge den nøiagtig betegnede Tankevei gjennem alle
+Krumninger med en saadan Klarhed, Sindighed og tilsyneladende
+Naturlighed, at det tager sig ud, som havde
+det unge Menneske tænkt over Sagen i mange Aar; og
+dog er det Hele maaske kun en skuffende Efterligning.
+Derfor maa der ved den filosofiske Undervisning fremfor
+Alt sørges for, at Skemaet ikke kommer til at gjælde
+for Systemet, at ikke en stereotyp Lærebog med afmaalte
+Kapitler og staaende Paragrafer Aar efter Aar
+sætter sig saa fast i Traditionen, at Filosofien selv bliver
+en Tankelektie. At der hører en vis Tænksomhed til
+for at lære en Tankelektie, er jo vist nok; men det er
+ogsaa vist, at der er Intet, som mere svækker Evnen
+til Selvtænkning end denne hule, overfladiske Efterligning,
+denne tankeløse Tænkning, der tilsidst maa ende i intellektuel
+Løgnagtighed.
+
+Er den tankeløse Tænkning en farlig Snyltegjæst
+ved den videnskabelige Undervisning, hvor der dog kan
+anbringes saamange og forskjellige Korrektiver, da er
+den, som Enhver vil forstaae, endnu langt farligere ved
+Børneundervisningen, allerfarligst ved Undervisning i
+Religion. De objektive religiøse Læresætninger ligge i
+den Grad udenfor Børnenes virkelige Fatteevne, at disse
+hverken kunne føle eller tænke noget i Sandhed Væsenligt
+ved nogen af dem. Man tage f. Ex. Nadverlæren.
+»Brødet og Vinen i den hellige Nadvere ere«
+--- siger Lærebogen --- »ikke blotte Tegn paa Jesu Legeme
+og Blod; heller ikke forvandles Brødet og Vinen
+til Jesu Legeme og Blod, men i, \emph{med} og \emph{under} Brødet
+og Vinen modtage vi i den hellige Nadvere Jesu
+% --- p. 318 ---
+\setcounter{footnote}{0}%
+\opage{318}Legeme og Blod, som paa en for os ubegribelig Maade
+er virkeligen der tilstede«. Vi spørge: hvad Indtryk
+skal denne dogmatiske Oplysning gjøre paa den unge
+Piges barnlige Sind? Hvorledes skal den halvvoxne
+Dreng være i Stand til enten at tænke eller forestille sig
+noget Bestemt ved den givne Forklaring? Det Naturligste
+er, at han ikke engang forsøger derpaa.
+Skulde det et Øieblik falde ham ind at ville forstaae
+Forklaringen, da er han ilde faren. »Hvorfra vide vi
+Noget om den Maade, paa hvilken Kristi Legeme og
+Blod er nærværende i Nadveren? Det maa vel være en
+guddommelig Autoritet, der siger os det; men hvilken?
+Bibelen kan det ikke være; thi af Indstiftelsens Ord:
+\emph{det er mit Legeme; dette er det Nye Testamentes
+Kalk i mit Blod,} kunne vi ikke see, hvorledes
+det forholder sig med \emph{Maaden.} Der staaer jo
+ikke: i, \emph{med og under dette} (Brødet) \emph{er mit Legeme;}
+der staaer udtrykkelig, at \emph{dette} (Brødet) \emph{er}
+\emph{mit Legeme;} endnu mindre siges der, at Blodet er i
+Vinen, thi det ligger nok saa nær at forstaae Indstiftelsesordene
+saaledes, at det er \emph{Vinen} (det Nye Testamentes
+Kalk), \emph{der er i Blodet.} Have vi nu ikke en
+guddommelig Autoritet, saa maae vi vel have en menneskelig.
+Det maa være store Religionslærere, lærde og
+fromme Mænd, som ved alvorlig Tænkning have udgransket
+Maaden, og det saa bestemt og nøiagtigt, at vi nu
+lige saa trygt kunne støtte os til deres menneskelige
+som til Skriftens guddommelige Autoritet; men er det
+muligt? Her læres jo udtrykkelig, at Maaden er ubegribelig;
+hvordan skal man da forestille sig, at der er
+Mennesker, som nøiagtig kunne fastsætte og bestemme,
+% --- p. 319 ---
+\setcounter{footnote}{0}%
+\opage{319}altsaa begribe en ubegribelig Maade. Her skal baade
+tænkes og dog ikke tænkes, baade forestilles og dog
+ikke forestilles noget Bestemt ved \emph{den ubegribelige}
+\emph{Maade:} hvor besynderligt!«
+
+Det er en stor Lykke for Religionslærerne i Skolen,
+at det end ikke falder de bedst begavede Drenge
+ind at ville tænke over, hvad der staaer i Lærebogen.
+Hvis denne Uskik kom i Gang, vilde det være til megen
+Forstyrrelse i Læretimerne; thi selv om Børnene vare
+saa sædelig oprigtige, at de aldrig tillode sig at spørge
+enten af Selvvigtighed eller efter løse Indfald: saa vilde   % PRINTER'S DEFECT (p. 319): „efter“: the f did not ink its head (both OCRs read t); letter supplied
+der dog fremkomme saamange Spørgsmaal, at der --- for
+Overhøringens Skyld --- ikke kunde blive Tid til at besvare
+Halvdelen, og, hvad værre er, Spørgsmaal, som
+vilde sætte Læreren selv i den pinligste Forlegenhed.
+Nu derimod, da hin Uskik lykkeligvis ikke finder Sted,
+gaaer Sagen sin jevne, rolige Gang. De Unge lære af
+Instinkt, thi Instinktet er en fin og skarpsindig Læremester,   % PRINTER'S DEFECT (p. 319): „fin“: the f did not ink its head; letter supplied
+at der i de indprentede Forestillinger er Noget, man ikke
+skal forestille sig, i Forstaaelsen Noget, man ikke skal forstaae:
+saa lære de Unge, ikke at tænke religiøst, nei, at efterligne
+og gjengive foreskrevne religiøse Tankelektier, saa kan
+Efterligningstalentet med dets glimrende Hulhed komme til
+Ære og Anseelse ved Examen. Det er ikke sand Dannelse,
+end ikke Begyndelsen dertil; det er en mekanisk
+Dressur. Som Rekrutten dresseres til at lære sine Reglementer,
+saaledes dresseres den opvoxende Skoledreng
+til at lære sine Dogmer; og dog ikke engang saaledes,
+ikke nær saa praktisk, thi den unge Soldat vil strax
+have Brug for Reglementerne, men Drengen er endnu
+langt fra at have Brug for Dogmerne.
+
+% --- p. 320 ---
+\setcounter{footnote}{0}%
+\opage{320}Blev Livsinteressen virkelig sat over Kundskabsinteressen,
+da var det ikke Lærebogen, men Bibelhistorien,
+der kom til at afgive Grundlaget. Nu læres der
+jo vistnok Bibelhistorie baade i Almue- og Borgerskoler;
+men ogsaa i denne Henseende hersker det lærde Forbillede.
+Istedenfor at lade de store Aandsbegivenheder
+træde frem for Anskuelsen gjennem Bibelens egen barnlig
+ophøiede Fremstilling, hvori Modsætningen af Guddommeligt
+og Menneskeligt, af det Himmelske og det
+Jordiske, den ideale og den triviale Virkelighed kan
+føles og fattes uden ræsonnerende Omsvøb, anvendes der
+nu til skematisk Oversigt et lille aandsfattigt Udtog af
+den hele Religionshistorie, at Barnet ligelig kan faae
+Noget at vide om alle de Ting, Gud har gjort fra Verdens
+Begyndelse, fra Skabelsens første Dag indtil Rigsdagen
+i Kjøbenhavn 1536. Her kan ikke dvæles ved
+enkelte store Optrin, ved saadanne tanke- og farverige
+Livsbilleder, der kunde give de unge Sjæle et dybt uforglemmeligt
+Indtryk af Idealets Herlighed, af Aandens
+Magt, naar Gudsstemmen høres, naar det Vidunderlige
+skeer, naar det Overnaturlige omstraaler det Naturlige.
+For Udtogets Skyld blive alle Begivenheder, de overnaturlige
+med de naturlige satte paa samme Virkeligheds
+Trin og stillede i samme Lys: at »Herren sendte sin
+Engel til Daniels tre Venner i den gloende Ovn«, er
+virkeligt, at »Jonas blev slugt af en stor Fisk, der
+kastede ham op igjen, saa at han kom levende paa
+Strandbredden«, er virkeligt, virkeligt i samme Forstand
+som det er virkeligt, at Rhoboam var samtidig med
+Jeroboam, at Titus var Biskop paa Kreta og Kristen
+Pedersen født i Svendborg. Saa har man et ligeligt
+% --- p. 321 ---
+\setcounter{footnote}{0}%
+\opage{321}Overblik over Alt, faaer i en vis Sammenhæng Lidt at
+vide om al Slags Virkelighed, Lidt om Titus, Lidt
+om Daniel, Lidt om den gloende Ovn, Lidt om den
+store Fisk, Lidt om Jonas og Lidt om Kristen Pedersen.
+
+Det nytter naturligvis ikke at ville ræsonnere med
+Børn om Forskjellen mellem det Sande og det Virkelige,
+mellem Virkelighed af lavere og af høiere Orden;
+men lidt mere Varsomhed med at trække de mange
+Mirakelhistorier paa Traad og fremstille det Overnaturlige
+paa en saa sandselig udvortes Maade, at det første
+Skridt paa Erfaringens og Selvtænkningens Vei maa
+lede de Unge i en farlig Fristelse, kunde man dog nok
+anvende.
+
+Det er ikke Forslag til Forbedringer i det bestaaende
+Skolevæsen, vi her fremsætte, saa lidt som
+det er Indførelse enten af nye Lærebøger eller nye
+Bibelhistorier, vi anbefale. Vi gaae tvertimod ud fra
+den Forudsætning, at Skolen, som den nu er, fortjener al
+Anerkjendelse --- som Kundskabsskole. Kun dette maae vi
+paa det Eftertrykkeligste fremhæve, at saalænge der,
+selv hvad Religionsundervisningen angaaer, ikke gives
+andre Folkeskoler end de efter det lærde Forbillede indrettede
+Kundskabsskoler: da kunne disse Kundskabsskoler,
+de være iøvrigt saa fortræffelige som de ville,
+dog aldrig grundlægge enten sand personlig Dannelse
+eller »levende Folkeoplysning«. Ved enhver frugtbar
+Undervisning maa enten Kundskabsinteressen eller Livsinteressen
+være det Afgjørende; at ville med en vis Ligelighed
+gjøre Fyldest i begge Henseender og, som man
+siger i det jevne Sprog, slaae to Fluer med eet Smæk,
+er at ville det Urimelige, det Modsigende, det Umulige.
+% --- p. 322 ---
+\setcounter{footnote}{0}%
+\opage{322}Saalænge Erhvervelse af Kundskaber er Dannelsens
+Maal, og de erhvervede Kundskabers Mangfoldighed Dannelsens
+Maalestok, saalænge vil Befolkningens store Flertal
+i ethvert Land leve hen i en ufri, almueagtig Tilstand;
+thi hvad Kundskabserhvervelse angaaer, kan
+Flertallet umuligt konkurrere med et Mindretal af mere
+Begunstigede. Men dersom det store Flertal af Mangel paa
+Kundskaber ikke er i Stand til at naae en sand, personlig,
+selvstændig Aandsdannelse, da vil Fremtiden, trods
+politiske Rettigheder og frie Forfatninger, ikke blive
+en Rettighedernes, Lighedens og Frihedens Tid, men paa
+den ene Side en Kulturforfinelsens, paa den anden
+en Raahedens og i begge Henseender en Lovløshedens,
+Forvirringens og Trældommens Tid; thi den udvortes
+Frihed kan kun begrundes paa den indvortes. »Der gives
+og kan gives et frit Folk, men der gives ikke og kan
+ikke gives en fri Almue; thi Almuens Trin er, aandelig
+seet, Umyndighedens, altsaa Ufrihedens Trin. Det gjælder
+ved folkelig Undervisning om at bringe den menige
+Mand saavidt, at han vil kunne tænke klart sine egne
+Tanker, gjøre sig tilstrækkelig Rede for sine egne Handlinger;
+indsee og forstaae, at Ingen i Samfundet kan
+have Rettigheder, uden at han tillige har Pligter; indsee
+og forstaae, at Enkeltmands Interesse kun fremmes paa
+fornuftig Maade derved, at Samfundsinteresserne varetages
+i det Store; indsee og forstaae, at Samfundsinteresserne i det Store umulig kunne fremmes, med mindre
+de forskjellige Arbeidsklasser, ikke blot de, der
+arbeide i det Legemlige, men ogsaa de, der arbeide i
+det Aandelige, nyde fuld Anerkjendelse, hver efter de i
+Forholdenes Natur begrundede Vilkaar. Kun den, som
+% --- p. 323 ---
+\setcounter{footnote}{0}%
+\opage{323}er i Stand til at give sig selv Grunde for, hvad han vil
+og hvad han gjør, vil være i Stand til at forstaae de
+Grunde, der gives ham af Andre. Vanskeligheden ved
+Menigmands Frigjørelse er ikke den, at han mangler
+enten ædel Selvfølelse eller Forstand eller redelig Villie;
+men Vanskeligheden er, at hans Tænkning er uklar, hans
+Synskreds indskrænket, hans Sind mistænksomt. Vanskeligheden
+er, at han ikke ret veed enten at give Grunde
+eller tage imod Grunde, fordi han er væsenlig ufri.
+Menigmand er ufri, saalænge hans Indre er dunkelt;
+men, at hans Indre er dunkelt, giver sig tilkjende derved.   % PRINTED AS IS (p. 323): „derved. at“: a stop before a lower-case word
+at han i de mest personlige Anliggender er mørk,
+indesluttet. --- Der er i Folket en dobbelt Trang, Trang
+til Religion og Trang til Oplysning, Trang til Sjælefrelse
+og Trang til Kultur«\footnote[1]{Om Hindringer og Betingelser for det aandelige Liv i Nutiden. S. 287---88.}; skal denne Trang afhjælpes,
+da maa der begyndes forfra paa en ny Vei,
+med en ny Undervisning, thi Aarhundreders, ja Aartusinders,
+Erfaring har lært, at Maalet ikke naaes med
+den gamle.
+\signature{R. \emph{Nielsen}.}
+
+\clearpage
+\essayhead{To Slags Undervisning.}{II.}
+% --- p. 409 ---
+\setcounter{footnote}{0}%
+\opage{409}Dersom Forskjellen mellem de nye og de gamle Skoler
+alene bestod deri, at hine ligefrem tilbøde en Fortsættelse
+og Udvidelse af den Undervisning, der allerede var
+grundlagt i disse, da vilde det forhaabede Fremskridt
+vist ikke have stort at betyde. Skulde der uden videre
+bygges paa det gamle Grundlag, da maatte man jo ogsaa
+i alt Væsenligt anvende den gamle Fremgangsmaade.
+Om der ogsaa valgtes et nyt Stof, idet man i
+Bondehøiskolerne særlig lagde an paa at gjøre Menigmand
+bekjendt med Fædrelandets Sagnhistorie, Literatur
+og politiske Tilstande, det vilde dog ikke forandre
+Sagen. Thi hvorledes skulde man indrette Fremgangsmaaden?
+At gjøre Kundskabsmeddelelsen lidt friere,
+livligere og fornøieligere ved udelukkende Brug af det
+mundlige Ord og ved at fritage Eleverne for Lektielæsning
+og Examen, skulde neppe føre til Maalet; Følgen af et
+saadant Frihaandsforsøg vilde vel snarere blive, at det
+Nye forstyrrede det Gamle uden selv at komme til Kræfter.
+Nei, Sandheden er, at der fra Kundskabsskolen til
+Folkeskolen ikke gives nogen ligefrem brolagt Overgang.
+
+Rodfæstet i det Gamle er den doktrinære Undervisningsmand
+sat i den pinlige Forlegenhed, at han ikke
+% --- p. 410 ---
+\setcounter{footnote}{0}%
+\opage{410}kan Andet end føle den Livsmagt, der aander i det Nye, og
+dog maa stirre paa dette Nye med et ærgerligt og forarget
+Blik, et Blik, der standser ved Skallen uden at
+opdage Kjernen. Fra denne Kant ville adskillige Indsigelser
+da ogsaa naturlig lade sig høre. »Man begynder
+nu med at gjøre Folkeundervisning til en Art behagelig
+Tidsfordriv, en Slags Ordsprogsleg med Sang og
+Klang og alskens opbyggeligt Morskab. Men at arbeide
+aandelig er ikke det Samme som at more sig. Det er
+»Alvor og Gammen, der skal kunne saa godt tilsammen«;
+og saa vælger man den Gammen, der passer sig,
+ikke for Læreren, men for Ammen. Det er jo at nedværdige
+den guddommelige Fornuft. Al sand Undervisning
+maa begynde med Ærbødighed for det, som er
+høiere end Mennesket, saa at Enhver, der træder ind i
+en stor Læreanstalt. kan mindes, hvad Ordet siger:   % PRINTED AS IS (p. 410): „Læreanstalt. kan“: a stop before a lower-case word
+drag dine Sko af, thi dette Sted er helligt. Der er en
+ammestueagtig Naturlighed, hvormed man frit efter Lune
+og Indfald tør give sig i Snak om Livets allerhøieste
+Anliggender, og kige »Vorherre« kammeratlig i Kortet:
+mon det skulde være det Nye? I den selvbehagelige
+Indbildning, at djærv Smagløshed og logisk Ugenerthed
+afgive det fortræffeligste Bevis paa folkelig Veltalenhed,
+fylder man Hovederne paa de unge Lærlinge med Viser
+og Ordsprog, Emter og Eventyr, folkehistoriske og verdenshistoriske   % PRINTED AS IS (p. 410): „Emter“
+Overblik saalænge, at det tilsidst maa
+løbe rundt for Øinene. Ifølge en mere drømmende end
+dømmende Opfattelse af Aandsfænomener i Billedsproget
+forklarer man Billede ved Billede, og nikker beundrende
+til ethvert Mundheld uden at kjende en Tanke.
+Langtfra at gjælde for hvad de oprindelig ere, Symbo%
+% --- p. 411 ---
+\setcounter{footnote}{0}%
+\opage{411}ler for Oldtidstanker, som kun i en given Sammenhæng
+have en vis indskrænket Almengyldighed, blive
+Sagn og Myther behandlede som Spaadomme af uudgrundelig
+dybt Indhold, og Fortolkningen gjort afhængig af
+den allervilkaarligste Ide-Association. Hvad »Mythesmeden«
+har ment, er ligegyldigt, det Vigtige er, at
+Mythen kan bruges til hvadsomhelst: en Billedæske,
+hvori man gjemmer, hvad Skjaldeblikket har seet, et
+koloreret Omslag om den profetiske Aands allernyeste
+historiske Aabenbaringer. Det er en falsk Stræben efter
+at være paa en Gang dybsindig, aandrig og dog enfoldig.
+For at modarbeide en Yderlighed kaster man
+sig over i en anden. Man vil undgaae de stive Former
+og bliver formløs; man vil bort fra det Konstlede og
+forfalder til Plathed; man forsmaaer forfængelig Pynt,
+og griber det Rene med uvaskede Hænder. En saadan
+Ligefremhed, hvorved man paa snaksom Maade familiariserer
+sig med Tilværelsens ideale Magter, gjør et Indtryk
+omtrent, som hvis en Menighed i en af Fristaterne,
+for at undgaae det falsk Høitidelige, faldt paa at samle
+sig og holde Bøn med Hænderne i Lommen og Cigar
+i Munden.« --- Lad dette saa være en Prøve paa doktrinær
+Forstaaelse; det er jo ganske naturligt, at de,
+der ikke formaae at trænge ind i Fæstningen selv, maae
+holde sig til Udenværkerne.
+
+Grundforskjellen mellem det Nye og det Gamle er
+iøinefaldende, naar vi see hen til de første Betingelser.
+Den gamle, officielle Folkeskole er en Børneskole. Mod
+Børn og Umyndige kan der anvendes Tvang; Børneskolen
+under Statens Formynderskab er da ogsaa en Tvangsskole
+i dobbelt Henseende: for Børnene og for Foræl%
+% --- p. 412 ---
+\setcounter{footnote}{0}%
+\opage{412}drene. Den nye Folkeskole er en Skole for Voxne;
+for de Voxnes Undervisning har Samfundet ingen Tvangslove:
+her kan altsaa begyndes med Frihed. Den gamle
+Folkeskole er en Kundskabsskole og maa som Kundskabsskole
+bygge paa et konstigt, mekanisk Grundlag;
+den nye Folkeskole derimod, som ved Vækkelse af de
+personlige Aandskræfter vil være en Skole for Livet,
+kan tale med de levende Mennesker om Livet selv, om
+hvad der ligger dem nær og begynde med et naturligt
+Grundlag. Ved at betragte disse Udgangspunkter
+hvert for sig lidt nærmere ville vi let overbevise os om,
+hvor væsenlige de ere.
+
+Det er en Omstændighed, hvorpaa der maa lægges
+Vægt, at Ungdommens officielle Undervisning netop ender
+i det Tidspunkt, hvor Aandslivet egenlig først for
+Alvor skal til at begynde. At man ikke ved Tankelektier
+til Udenadslæsning kan foregribe den modnere Alders
+forventede Eftertanke, er allerede viist. Det gaaer
+ikke med Levevisdom som med en Konfirmationskjole, der
+kan syes for lang og vid, for at blive tilpas med Aarene.
+Ved at give Barnet et systematisk Udtog af
+Sædelæren fremmer man ikke dets Sædelighed; endnu
+mindre styrker man dets Tro paa Gud ved en i Lærebogsform
+affattet Børnedogmatik, thi Børnedogmatiker
+og dogmatiske Børn skulle vanskelig »mødes i Guds Rige«.
+Hvad der gjælder om Religion og Sædelære, gjælder paa
+tilsvarende Maade om Verdenshistorie, Fædrelandshistorie,
+det borgerlige Livs Fordringer osv., der er en Grændse
+for de Umyndiges Fatteevne, som ikke kan overskrides,
+uden at der gjøres Brud paa den guddommelige Orden.
+Det er i denne Henseende af Vigtighed, at den nye
+% --- p. 413 ---
+\setcounter{footnote}{0}%
+\opage{413}Folkeskole begynder Undervisningen forfra, idet den begynder
+med de Voxne.
+
+Er det allerede i sig selv unaturligt, at en Skole for
+Voxne skulde nedlade sig til at virke ved Tvang, saa
+bliver det Unaturlige dog endnu mere unaturligt, naar
+det udtrykkelig er en Vækkelsesskole, en Skole for Livet.
+Ved den blotte Kundskabserhvervelse, navnlig ved
+Alt, hvad der gaaer ind under Lektielæsning og Examen,
+er det en temmelig ligegyldig Sag, om Indøvelsen
+er skeet frivillig eller ufrivillig. Naar en Dreng har lært
+den store Tabel, saa har han lært den, og saa er det
+Pust overstaaet. Om det gik med det Gode eller med
+det Onde, om det var ham en sand Fornøielse eller det
+kostede Taarer, kan han gjerne glemme, naar han blot
+ikke glemmer Tabellen. Anderledes med de Sandheder,
+der skulle virke paa Sindet og have Betydning for Personligheden.
+Vistnok gives der i det praktiske Liv
+mangfoldige Handlinger, som hverken ere aldeles frivillige
+eller aldeles ufrivillige, men en Blanding af begge,
+saasom at betale Skat, at gjøre Krigstjeneste o. desl.
+Tvang og Frihed kunne forliges i alle saadanne Tilfælde,
+hvor det mere kommer an paa Handlingens Udvortes
+end paa dens Indvortes, mere paa Gjerningen end paa
+Bevæggrunden, i det Hele mere paa Samfundet end paa
+Individerne. Men Livsanskuelse, personlig Overbevisning,
+Kjærlighed til Fædrelandet, levende Kjærlighed til Gud
+og Næsten, slige Aandens Gaver lade sig ikke inddrive
+ved Tvang, de ere Frihedens Frugter, og Friheden har
+sin Begyndelse i sig selv.
+
+Det Begreb, hvori Enhed af Tvang og Frihed oprindelig
+maa søges, er Begrebet: Opdragelse. Opdragelse
+% --- p. 414 ---
+\setcounter{footnote}{0}%
+\opage{414}forudsætter Optugtelse og er forsaavidt betinget af Tvang;
+men sand Opdragelse maa altid ende med Selvopdragelse.
+Optugtelse ved Andre faaer kun Betydning ved
+at lede til Selvoptugtelse; Selvoptugtelse kræver en fast
+Villie, en kraftig Selvbestemmelse: her begynder Friheden.
+De to i Opdragelsen liggende Opgaver kunne nu
+ligelig fordeles paa Modsætningen mellem den gamle og
+den nye Skole.
+
+Løsenet i det gamle Opdragelsessystem har altid
+været, og vil forhaabenlig vedblive at være: Respekt og
+Lydighed. Med denne imponerende Fordring træder
+Kundskabsskolen de Unge imøde, og benytter saa de Betingelser
+og Midler, Undervisningen stiller til dens Raadighed,
+for at lade dem føle, at der er Noget til, der hedder
+Lov. At være i Skolen er at være under Loven.
+Den strenge Disciplin er ikke et nødvendigt Onde, nei
+den er et væsenligt Gode, thi fornuftig Strenghed er vidt
+forskjellig fra despotisk Haardhed. Strenghed er Alvorens
+Udtryk, der gjør det Ubetingede føleligt og rammer
+Uvorenheden med Digterens Ord:
+
+\begin{quote}
+»Respekt er hvad det skorter paa,\\
+Indprentes maa den i Din Hu,\\
+Og Du Dig underordne maa\\
+For det, som er lidt Mer end Du.\\
+Respekt, som sagt, thi nu har Du ingen,\\
+Respekt for Stedet, Respekt for Tingen.«
+\end{quote}
+
+Det er vel fornemlig den Respekt for Tingen, hvortil den
+gamle Skole havde optugtet sine Disciple, som Slutningen
+af forrige og Begyndelsen af dette Aarhundrede
+endnu kunde takke for saamange store offenlige, handlekraftige
+Karakterer. Karakter forudsætter fast Overbe%
+% --- p. 415 ---
+\setcounter{footnote}{0}%
+\opage{415}visning og stærk Villie; men fast Overbevisning og
+stærk Villie forudsætter igjen, at der er Noget, der
+ubetinget vil respekteres. Ved Respekt for Tingen kunde
+da Striden mellem modsatte Livsanskuelser slaae igjennem
+i Samtiden og blive lidt Mere end et Opinionskævleri
+mellem avisskrivende Individer: hver Anskuelse, der vilde
+staae og falde med sin Karakter, blev agtet; kun den
+vindige, Intet villende Karakterløshed var foragtet.
+
+Hvor Respekt for Tingen mangler, indretter man sig
+paa en anden Maade. I den Forudsætning, at enhver
+bestemt Anskuelse, ligesom ogsaa enhver bestemt Karakter,
+er en Ensidighed, en Art Bornerthed i Villien,
+indretter man sig en literær Butik med Principer og
+Theorier i alle Mønstre, gamle og nye, positive og negative,
+frem- og tilbagegaaende efter Omstændighederne, et Kaleidoskop
+af de mest modstridende Anskuelser. Hver Gang
+nu En viser sig med en ny Anskuelse, er der altid en
+Svend i Butiken, der passer ham op, idet han gaaer
+forbi, kaster ham til Publikums Moro en gammel og
+modsat Anskuelse lige i Øinene og griner ham ud, ikke
+fordi den Forbigaaendes Anskuelse just er daarligere end
+saamange Andres, men fordi han har den Anmasselse,
+den Villiens Bornerthed, at ville have en bestemt Anskuelse
+og ligne Noget, der kunde kaldes Karakter.
+Lykkes det paa denne Maade lidt efter lidt at forvandle
+et høistæret Publikums Respekt for Tingen til Respekt
+for Butiken, saa er Spillet gaaende. Saa kan en
+hæderlig Eier af en saadan hæderlig Butik sidde lunt
+i Offenlighed og slaae sig op i al mulig Hæderlighed;
+det skulde da være, at der dog var een Hæderlighed,
+han ikke kunde naae, at han ikke kunde naae at blive
+% --- p. 416 ---
+\setcounter{footnote}{0}%
+\opage{416}hæderlig Karakter. Karakter er nemlig ifølge Forudsætningen
+stemplet som Ensidighed; men stemplet Ensidighed
+sprænger Butikken, thi Butikken er den luftige
+karakterløse Alsidighed. At nu et Individ, der ikke kan
+blive Karakter, heller ikke kan blive hæderlig Karakter,
+er da vel ligesaa indlysende, som at et Væsen, der
+ikke kan blive Menneske, heller ikke kan blive Medmenneske.
+»Respekt er hvad det skorter paa«, Respekt,
+ikke for Individet, men for Sagen, naar Sagen er et
+Livsspørgsmaal, hvis Besvarelse umulig kan undgaaes,
+medmindre Karakterløsheden selv skal være Tidsalderens
+Karakter. Mangel paa Respekt for en vigtig Sag
+er Mangel paa Opdragelse, et Vidnesbyrd om, at de
+ræsonnerende Individer have unddraget sig den strenge
+Disciplin ved at løbe for tidlig af Skole.
+
+Den strenge Disciplin er den gamle Skoles Hæder;
+den staaer paa Lovens Grund og peger mod Frihedens
+forjettede Land, men kommer ikke selv derind; hvor
+Tvangen ophører, har den sin Grændse. Ved denne
+Grændse tager den Afsked med Disciplene, som nu paa
+egen Haand maa vove det leukadiske Spring ind i den
+nye Region. Overgangen fra det Gamle til det Nye er
+betegnet ved det Vendepunkt, da Tvangsopdragelsen
+skal forvandles til Selvopdragelse. Med Hensyn paa den
+høiere Folkeskole er denne Overgang udtrykkelig gjort
+afhængig af et Valg. Ikke hvad der vælges, men at
+der vælges, er her det Afgjørende. Saa langt som
+Tvangen rækker, falder Ansvaret væsenlig paa Formyndere
+og Lærere; naar Tvangen ophører, falder Ansvaret
+paa den Paagjældende selv. Det bliver nu hans
+egen Sag, om han vil nøies med, hvad han har, eller
+% --- p. 417 ---
+\setcounter{footnote}{0}%
+\opage{417}tragte efter noget Bedre. Frihedsskolen indbyder ham,
+tilbyder ham sin Tjeneste, men den frister ham ikke.
+Den har ingen endelige Fordele at tilbyde ham, ingen
+lokkende Udsigter, hvad det Udvortes angaaer; den
+maa tvertimod begynde med at fordre endog forholdsvis
+betydelige Offere af Penge, Tid og Arbeidskræfter.
+At Saamange endog blandt de Ubemidlede allerede
+have modtaget Vilkaarene, er et glædeligt Tidens
+Tegn. Det vidner om, hvad der rører sig dybt i Folkets
+Sind: en Trang til Vækkelse, til indre Frigjørelse.
+Det menige Folk aner, hvad fornem Klogskab
+ikke har kunnet udregne, at der maa gives en Sandhed,
+som uafhængig af endelig Forskjel i Kundskab og Lærdom
+er tilgængelig for Alle, en levende Sandhed, som
+tænder sin Fakkel ved Frihedens Sol og gjør aandeligt
+Formynderskab overflødigt. Der er da al psykologisk
+Sikkerhed for, at unge Mænd, som under de angivne
+Betingelser indtræde i Frihedsskolen, ikke ville enten
+misforstaae eller misbruge Friheden. Den høiere Kundskabsskole
+maa altid spørge de Indtrædende om Forkundskaberne,
+thi i Forkundskaberne bestaaer Forberedelsen;
+Frihedsskolen derimod spørger ikke om Forkundskaberne,
+den sætter Forberedelsen i Trangen. Ikke
+den Elev, der har de fleste Kundskaber, men den, der
+har den mest opvakte Sands og føler den stærkeste Tilskyndelse
+til virksom Deltagelse i det aandelige Arbeide,
+er den bedst Forberedte. Han kommer da heller ikke
+for et Skins Skyld, dertil er Opoffrelsen for kostbar;
+nei, han kommer for Sagens Skyld. Han vil ikke døsig
+gnave paa en Tankelektie, ubekymret om Tanken
+selv, kun opmærksom paa, hvordan Læreren »vil have
+% --- p. 418 ---
+\setcounter{footnote}{0}%
+\opage{418}det«; han vil, saavidt det staaer i hans Magt, anstrenge
+sig for at see med egne Øine, høre med egne Øren,
+tænke med egen Hjerne: en saadan frisk Oprindelighed er
+vel i Stand til at opveie Savnet af mangeaarige Forstudier.
+
+Grundlaget for Undervisningen giver sig nu af sig
+selv; thi Skolen begynder med Begynderen der, hvor han
+er, og taler kun til ham om Ting, han uden Vanskelighed
+strax kan forstaae. Til at tyde et Ordsprog eller
+høre et Folkesagn, et Eventyr, et Stykke Historie er
+Enhver forberedt; den daglige Erfaring har desuden beriget
+ham med et ikke ringe Kjendskab til Menneskelivet
+og den ham omgivende Natur: her er Tilknytningspunkter
+nok, naar Læreren forstaaer at benytte dem.
+Men hvorledes skulle de benyttes? Her møder en Vanskelighed,
+vi ikke tør oversee, og det saa meget mindre,
+som den let kan forstørres af dem, der ønske at
+gjøre Indvendiger. »Lad Begyndelsen« --- siger man ---   % PRINTED AS IS (p. 418): „Indvendiger“ for Indvendinger
+»være nok saa naturlig, og det mundlige Ord nok saa
+vækkende: saa er her jo dog et Stof. Stoffet vil voxe
+hver Dag med hver Time: hvorledes skal nu Tilhøreren
+ved den blotte Høren kunne samle og ordne det ophobede
+Stof, dersom han hverken har Bøger eller skriftlige
+Optegnelser? Men dersom han for at have Gavn
+af Foredraget maa tye til Lærebøger og skrevne Hefter,
+saa bliver jo Fremgangsmaaden ved Folkehøiskolen i alt
+Væsenligt den samme som ved den lærde Høiskole. For
+at det mundlige Ord skal kunne bære sin Frugt, maa
+Eleven i Forveien have lært baade at læse og skrive;
+han maa begynde med Kundskaber for at erhverve sig
+Kundskaber: paa denne Maade bliver Skolen for Livet jo
+dog en Kundskabsskole; og hvad Forskjel er her saa
+% --- p. 419 ---
+\setcounter{footnote}{0}%
+\opage{419}imellem det Nye og det Gamle? At Folkehøiskolen ikke
+har kunnet holde sig paa Høidepunktet af bare Vækkelse
+og Begeistring, men har maattet nedlade sig til det
+Reale og fra Begyndelsen indrette sig paa at meddele
+nyttige Kundskaber i bestemte Fag, er en Kjendsgjerning.
+Saaledes finder man f. Ex. i »Beretning om Folkehøiskolen
+i Rødding af C. Flor 1846« Timetabeller,
+der lyde paa »Theoretisk Landvæsen«, »Fysik«, »Geografi«,
+Statistik«, »Arithmetik og Regning«, »Geometri
+og Tegning« osv. --- Skulde den stærkt betonede Forskjel
+mellem det Gamle og det Nye have principiel
+Gyldighed, da maatte Fremskridtet jo være betegnet ved
+Opdagelsen af en ny Methode, en Undervisningsmaade,
+der gjorde det muligt, at bibringe uforberedte Elever
+grundige Kundskaber uden at uleilige dem med Lektielæsning
+og Examen. Er en saadan Opdagelse virkelig
+gjort? Og hvis den var gjort, hvad saa? Saa vilde
+den jo strax komme den gamle Skole tilgode og netop
+tjene til at udjevne enhver Kløft imellem det Gamle og
+det Nye.«
+
+At Indvendinger af denne Natur beroe paa en aabenbar
+Misforstaaelse, er let at vise. For at Kundskabsskolen
+kan svare til sit Begreb, maa Kundskabsmeddelelsen
+være Maal, ikke Middel; i Folkeskolen derimod
+maa Kundskabsmeddelelsen være Middel, ikke Maal. Det
+gjør en væsenlig Forskjel. Talen være f. Ex. om Geometri.
+Dersom der nu begyndes saaledes: Geometri er
+Videnskaben om Rumstørrelser, et System af sammenhængende
+Læresætninger; det er desaarsag nødvendigt at skride
+frem fra Bevis til Bevis uden at overspringe noget væsenligt
+Mellemled; ethvert Bevis faaer sin Betydning ved
+% --- p. 420 ---
+\setcounter{footnote}{0}%
+\opage{420}de Forudsætninger, hvoraf det fremgaaer, og de Følgesætninger,
+hvortil det videre kan føre osv., saa høre vi
+strax, hvor vi ere; vi ere i Kundskabsskolen. I Folkeskolen
+begyndes der fra et andet Udgangspunkt. Det er
+ikke Bevisførelsen i og for sig, ikke Relationerne mellem
+mathematiske Linier, Vinkler og Flader, der oprindelig
+vækker Interessen; det er i Reglen Opgaver af rent
+praktisk Art. At en Trekant altid er fuldkommen bestemt,
+naar to Vinkler med en hosliggende Side ere
+givne, vil neppe i nogen synderlig Grad tiltale Begynderen.
+»Men hvorledes er det muligt, at man staaende
+paa Jorden kan maale Høiden af et Taarn eller af et
+Træ i Skoven? Den Opgave var det nok værd at faae
+løst«. Ved at gaae ud fra noget Virkeligt, fra Noget, der
+er ham umiddelbart bekjendt, ledes Eleven let til en
+Forstaaelse af, hvad Læren om Forholdet mellem Trekantens
+Dele vil sige. Interessen for Bevisførelsen afledes
+af Interessen for den praktiske Opgave. Det Antal
+Læresætninger og Beviser, han maa gjennemgaae, og den
+Orden, hvori disse følge paa hinanden, retter sig altsaa
+ikke efter Systemet, men efter den valgte Opgave. Det
+er end ikke nødvendigt, at alle Læresætninger blive beviste.
+Naar Eleven først har begyndt at indsee, hvad
+et Bevis er, kunne mange Sætninger ligefrem tages paa
+Autoritet. Ved et Gilde paa Landet, hvor Samtalen i
+Anledning af Almanakken havde begyndt at tage et
+høiere Sving, var der engang En, der spurgte: »hvor langt
+monstro er der fra Jorden til Maanen«? »Det er der ingen
+Mennesker, der veed«, svarede en gammel Bonde; »der er
+endnu Ingen af de Lærde, der har kjørt den Vei.« --- Skulde
+en Elev uden Forkundskaber arbeide sig systematisk
+% --- p. 421 ---
+\setcounter{footnote}{0}%
+\opage{421}igjennem Arithmetiken og Geometrien ind i Astronomien,
+indtil han i Kapitlet om Parallaxen kunde faae hint Spørgsmaal
+besvaret, da vilde Arbeidet i Forhold til den korte
+Tid, han kan anvende derpaa, ganske vist være uoverkommeligt.
+Og dog kan Besvarelsen af et eneste saadant
+Spørgsmaal være af overordenlig Betydning for hans
+personlige Dannelse; den kan aabne ham et Indblik, ikke
+blot i Verdensbygningen men ogsaa i den menneskelige
+Viden, et Indblik, som hæver ham høit over det almueagtige
+Standpunkt og giver ham en Forestilling om, at
+Videnskab og almindelig Oplysning have Noget med
+hinanden at gjøre. Heldigvis kan han, hvis det virkelig
+er ham om at gjøre, med en let overkommelig Forberedelse
+faae sit Spørgsmaal besvaret, uden at segne
+under Systematikens Byrde. Det Samme gjælder om
+de Hovedbeviser, paa hvilke det Kopernikanske System
+støtter sig. Her kan ved praktisk Fremgangsmaade erhverves
+Kundskaber, endog sammenhængende Kundskaber,
+f. Ex. i Landmaaling; men Kundskaberne ere Midler,
+ikke Øiemed. Det Omfang og den Sammenhæng,
+hvori de meddeles, er afhængig af Elevens individuelle
+Begavelse og personlige Interesse. Det er ikke for Videnskabens
+Skyld, men for sin egen Skyld, at han arbeider;
+det er ikke Mængden af det, han lærer, men
+den Veiledning, han faaer til at udvikle sig selv, der er
+Hovedsagen; det er Vækkelsen, hvorpaa det først og
+sidst kommer an. »Det Vigtigste ved vor Høiskole« ---
+hedder det i anførte »Beretning« S. 13 --- »er ikke de
+positive Kundskaber og Færdigheder, som vi søge at
+bibringe Eleverne, men snarere det hele aandelige Liv,
+som bliver vakt og næret hos dem, saa at deres For%
+% --- p. 422 ---
+\setcounter{footnote}{0}%
+\opage{422}stand bliver skarpere, deres Dömmekraft modnere, deres   % PRINTED AS IS (p. 422): „Dömmekraft“, set with ö
+Hjerter aabnere og ædlere, at der vækkes hos dem
+Sands for Orden, Skjønhed og et smagfuldt Liv, at Lyst
+til Beskæftigelse kan træde istedenfor den sædvanlige
+Dorskhedsvane, at deres Sind og derved deres Væsen
+kan blive frimodigere, deres Følelse for Kammeratskab
+og Fædreland blive vakt, næret og styrket«.
+
+Gjælder det allerede om den Kreds af Kundskaber,
+der nærmest angaaer de udvortes og endelige Ting, at
+den afgiver Vækkelsesmidler for personlig Selvudvikling,
+da gjælder dette endnu i høiere Forstand om de Dannelseselementer,
+der ifølge deres Natur udelukkende tilhøre
+Aandens Rige; vi tænke paa Mythologi og Historie
+og begges Forhold til den aabenbarede Religion.
+
+»Hvem der vil have evig Krig« --- siger N. F. S.
+Grundtvig i sin Fremstilling af »Nordens Kæmpeaand«
+(Nordens Mythologi 1832, S. 95 flgd.) --- »har nemt ved
+at naae sin afsindige Hensigt, thi han behøver blot at
+forkynde Ærlighed og Sandhed aaben Feide, da skeer
+hans Villie; men hvem der vil have evig Fred, og hvem
+skulde da ikke altid ville det? han slipper ingenlunde
+saa nemt dertil, som de kjære Filosofer allevegne har
+bildt dem ind, og som man nu sædvanlig tænker. Fred og
+Ro er nemlig Et, og Stilhed er et Andet, saa Rolighed
+lader sig forene med stærk Bevægelse, og Stilhed kan
+være forbundet med stor Uro, som man vel klarest seer
+ved at sammenligne den ædelmodige, seirrige Helt med
+den bagbundne Slave. Dette var ogsaa Billedet, der
+svævede for vore fribaarne, høimodige Stamfædre, saa
+de følte dybt, at Livet er den første Betingelse for hvad
+levende Folk kan kalde Fred og Ro, og Kræfternes frie
+% --- p. 423 ---
+\setcounter{footnote}{0}%
+\opage{423}Udvikling den anden\dots{}. Denne nordiske Anskuelse af
+det timelige Liv hos Guder og Mennesker som en bestandig
+Kamp, det kun gjælder om at føre saa ædelt,
+saa kraftigt og saa klogt, som muligt, da al den virkelige
+Fred, der kan times Gudefolket og Adelstammen i
+Tidens Løb, udspringer som en Seirsgudinde af Kampen;
+denne Anskuelse maa i en vis Grad findes hos
+ethvert Folk, der skal hævde sin Selvstændighed og
+faae Lov til at udvikle sine Kræfter, selv paa den fredeligste
+Maade, og at den eiheller i Norden er uddød, har
+det nærværende Aarhundrede viist; men sit aandige Præg   % PRINTED AS IS (p. 423): „aandige“ (so also p. 618)
+har den dog næsten tabt, saa, istedenfor at udvikles til
+Klarhed, fordunkledes den mer og mer, til det blev
+den almindelige Mening, at Krige vel er et nødvendigt
+Onde, fordi der gives rovgjerrige Folk, ærgjerrige Kæmper
+og herskesyge Fyrster; men at al Kamp dog i
+Grunden er afskyelig, og mer afskyelig, jo aandeligere
+dens Gjenstand er\dots{}. Man kan vel tænke, at det er
+ei min Hensigt dermed at forgude Asa-Thor eller saaledes
+at vaske Blodet af Nordens Kæmper, at de synes
+englerene, thi alle Historiens Kyndige kan see, at ligesom
+der kun har været een Helt med uplettet Skjold,
+saaledes er ogsaa Kristendommens Kæmpe-Aand den
+Eneste, der fortjener Guddomsnavn og Tilbedelse; men
+vel ønskede jeg ret at indskærpe alle mine Læsere den
+miskjendte Sandhed, at, uagtet Kæmpeaandens jordiske
+Redskaber var ligesaa langt fra at være lydesløse, som
+Fredsmæglerne, saa var de dog derfor hverken mindre
+uundværlige eller mindre berettigede til Beundring og
+skaansom Bedømmelse i en syndig Verden.«
+
+Med disse Ord er den afgjørende Synsretning, saa%
+% --- p. 424 ---
+\setcounter{footnote}{0}%
+\opage{424}vidt vi kunne skjønne, engang for alle angivet: Mythologi,
+Historie og Religion belyse hverandre gjensidig.
+--- Man kan være uenig om Maaden, paa hvilken den
+udtalte Livstanke bedst lader sig udvikle og sætte i
+Kraft, men om Tanken selv maae Alle, der ville lidt
+Mere end en nysgjerrig Kigen i Døgnkombinationernes
+Kaleidoskop, upaatvivlelig være enige. Forskjellen mellem
+Kundskabsskolen og Folkeskolen er her saa slaaende,
+som muligt. Thi naar Eftertrykket ensidig lægges paa
+Kundskaberne, maae Mythologi, Historie og Religion naturligvis
+falde ud fra hverandre i tre Fag, tre særskilte Stykker,
+der have Lidet eller Intet med hverandre at gjøre.
+
+Af Mythologien som Kundskabsfag lærer man da en
+hel Del om nordiske, græske, romerske Guder med tilhørende
+Gudinder: det er mange Navne, mange Figurer,
+Attributer, Optrin og eventyrlige Bedrifter, Eleven har
+at indprente sig, naar han skal finde Rede i det Altsammen.
+Og hvad kommer saa alt dette os ved; vi troe
+jo dog ikke længer paa de gamle Guder? »Vistnok« --- svarer
+man --- »hvad Frihedslivet, vort indre sjælelige Liv
+med den nugjældende Verdensanskuelse, angaaer, kommer
+det Hele os egenlig slet ikke ved: vi ere jo langt
+udover hine gamle Fantasier«. Og hvorfor skal man
+saa lægge sig efter at kjende dem? »Det er nødvendigt
+for Dannelsens Skyld; det er ganske nødvendigt at kjende
+Noget til Oldtidens ideale Forestillinger. De mythiske
+Digtninger, i hvilke det Ophøiede og Rædselsfulde ofte
+forbinder sig med Træk af barnlig Ynde og naiv Elskværdighed,
+indeholde desuden en rig Mangfoldighed af
+kunstneriske og poetiske Motiver. Hvorledes skulde man
+kunne forstaae de mange Allusioner hos Nutidens Digtere,
+% --- p. 425 ---
+\setcounter{footnote}{0}%
+\opage{425}dersom man ikke var nogenlunde orienteret i sin Mythologi.
+Den, der ikke veed, at Frigga var Odins Hustru,
+at Venus var gift med Vulkan, at Mars var Krigsgud
+hos Romerne ligesom Thor hos Nordboerne, maa jo
+sidde som en Idiot i dannede Menneskers Selskab, kan
+ikke besøge et Musæum, ikke engang gaae paa Udstillingen
+og lukke sin Mund op uden at prostituere sig.«
+Det er altsaa ikke Mythens Væsen, men kun dens Skin,
+et æsthetisk reflekteret Efterskin, for hvis Skyld Anstrængelserne
+gjøres.
+
+Og nu Historien? Man har, som bekjendt, Kompendier
+af Konsthistorien, der give en Udsigt over de
+vigtigste Skoler i Konstens forskjellige Perioder med
+Navne paa berømte Konstnere i hver Periode samt en
+kort Beretning om hver Konstners Levnet, Arbeider,
+Fødeby, Dødsaar osv. Dersom nu et ungt Menneske,
+om ikke just af særdeles Kjærlighed til Konsten, saa
+dog fordi det nu engang hører med til den høiere Dannelse,
+ønskede at sætte sig noget ind i Konsthistorien
+og af den Grund gjorde en Reise til en af de Byer, der
+udmærke sig ved rige Konstskatte og berømte Gallerier:
+da kunde dette jo meget vel lade sig høre. Men dersom
+han saa, efter at være ankommen til et Konstens
+Hovedsæde, istedenfor at gaae omkring i Gallerierne og
+betragte Mesterværkerne, blev siddende i sit Logi for
+at læse over paa Kompendiet, indtil han kunde det udenad,
+og saa, idet han var lige nær ved at kunne det og derved
+omsider forberedt til at nyde Beskuelsen, opdagede, at
+hans Tid var udløben, at han nu paa Grund af andre
+vigtigere Forretninger maatte forlade Byen, saa vilde man
+dog vel finde, at han havde taget Sagen noget bagvendt.
+
+% --- p. 426 ---
+\setcounter{footnote}{0}%
+\opage{426}Hvad der ved sig selv er indlysende med Hensyn
+paa Konsthistorien, synes ikke endnu at være ganske
+indlysende med Hensyn paa Verdenshistorien, thi her er
+det Kompendiet først og Kompendiet sidst, hvorom Undervisningen
+dreier sig. Det koster i Reglen saamange
+Aars Anstrengelse at lære et med Navne og Aarstal vel
+spækket Udtog af Verdenshistorien nogenledes udenad,
+at naar Maalet er naaet, saa er Tiden omme; saa indtræder
+den omvendte Bevægelse: man glemmer med Lethed,
+hvad man lærte møisommeligt, og det taagede Omrids,
+der bliver tilbage, er endnu længere fra at gjøre
+Indtryk af virkelig Historie, end Elefanten i en ABC-Bog
+er fra at gjøre Indtryk af virkelig Elefant. Et
+Riges Erobring kan fortælles i to Linier, en hel Revolution
+paa en halv Side; selv om der anvendes et Blad
+eller to til Beskrivelse af en Verdensomvæltning, kommer
+saa Læseren derved virkelig ind i de virkelige
+Begivenheder? Man holder sig til Kjendsgjerningerne
+for at gribe det Virkelige, og mærker ikke, at Virkeligheden
+selv med dens Strid og Smerte, dens Kræfter
+og Lidenskaber er dunstet bort. Hvad lære vi saa af
+Historien? »Mange Ting, mærkværdige Ting, overordenlig
+Meget!« Og dog, naar Spørgsmaalet er om det
+nærværende Øieblik, overordenlig Lidet. Saalidt som
+de Døde kunne skrive Love for de Levende, ligesaalidt
+kan den forbigangne Tid umiddelbart bestemme, hvad
+der skal skee i den nærværende. Vel er det sandt, at
+Eftertiden altid staaer paa Fortidens Skuldre; men det
+er derfor ikke mindre sandt, at enhver Tidsalder med
+Aand og Liv har Opgaver, med hvis Løsning den maa
+begynde forfra. »Hvad maa der gjøres?« »Hvad vil
+% --- p. 427 ---
+\setcounter{footnote}{0}%
+\opage{427}der skee?« Naar disse Spørgsmaal blive paatrængende,
+da nytter det kun lidet at slaae op i et verdenshistorisk
+Kompendium og spørge Fortiden tilraads; thi Fortidens
+Orakler ere dunkle. Det er med Fortiden, naar man
+paa udvortes, endelig Maade tyer til den om Raad, som
+med Spaakvinden i Endor: det Høieste, den formaaer,
+er at mane et Gjenfærd. Ethvert dristigt Foretagende
+har i Fortidsbegivenhederne altid ligesaamange fraraadende
+som tilraadende Grunde; vil den Modige vise de
+afskrækkende Exempler fra sig ved at sige: »det var
+den Gang, men nu er det anderledes«, da kan den feige
+Tvivler jo med de selvsamme Ord afkræfte et hvilketsomhelst
+opmuntrende Exempel. Ved ensidig at holde sig
+til de saakaldte rene Kjendsgjerninger, de nøgne Fakta,
+--- og det gjør Kompendiet paa Kundskabernes Vegne ---
+griber man et Udvortes uden dybere Forstaaelse af det
+tilsvarende Indvortes. Man mener i et saadant Udvortes
+at holde Virkeligheden fast; det er en Skuffelse.
+Det udvortes Virkelige i Historiens Kjendsgjerninger er
+ikke det Virkelige selv, men kun et Billede deraf, ei
+engang et fuldstændigt Billede, kun nogle blege Træk.
+Det, som viser sig, er ikke til; men det har været:
+fuimus Troes, fuit Ilium et ingens gloria Teucrum. Det
+er Skyggen af det Henfarne, der tages for Virkelighed,
+og saa bilder man sig ind, at denne Skinvirkelighed er
+den historiske Sandhed, den virkelige Historie.
+
+Skal nu Adskillelsen mellem Mythologi og Historie
+ligefrem grunde sig derpaa, at Historien giver os det Virkelige,
+Mythen det Uvirkelige, og skal saa Intet gjælde
+for Virkelighed, uden det, som ligefrem kan bekræftes ved
+Vidnesbyrd af de fem Sandser: da vil det være vanske%
+% --- p. 428 ---
+\setcounter{footnote}{0}%
+\opage{428}ligt, for ikke at sige umuligt, at danne sig en sikker
+Overbevisning om den aabenbarede Religions Kjendsgjerninger.
+Det kan nemlig ikke skjules for et uhildet
+Blik, at de bibelske Fortællinger indeholde to uligeartede
+Bestanddele, en overnaturlig og en naturlig, af hvilke
+den første har en paafaldende udvortes Lighed med det
+Mythiske, den sidste med det ligefremt Historiske; og
+dog gjøre Aabenbaringsfænomenerne Fordring paa sand
+Virkelighed. Det er ifølge Kundskabsudviklingens hele
+Gang, især naar vi betænke Naturlærens stedse voxende
+Indflydelse, da heller ikke forunderligt, at Kløften mellem
+dem, der antage, og dem, der forkaste den positive
+Religion, maa blive større og større. Enhver Undergjerning,
+hvoraf den hellige Skrift giver en Beskrivelse,
+opvækker jo naturlig hos Læseren det Spørgsmaal:
+er dette virkeligt eller er det uvirkeligt?
+
+De, som nu, være sig af Mangel paa Dannelse eller
+af Mangel paa Eftertanke eller af andre, maaske dybere
+personlige, Grunde, aldeles ikke bekymre sig om Naturens
+saakaldte »uforanderlige Love«, men uden alle
+Mellembestemmelser henføre Alt til Guds almægtige Villie,
+kunne jo vel uden Selvmodsigelse antage Undergjerninger
+for virkelige; men hvad Modsætningen af det
+Naturlige og det Overnaturlige angaaer, vil det, saalænge
+de blot holde sig til det Ydre i Kjendsgjerningerne,
+være dem umuligt at angive nogen bestemt Grændse
+mellem Historisk og Mythisk. Man ræsonnerer i Almindelighed
+saaledes: »At Bileams Aseninde virkelig har
+kunnet tale, er historisk, thi det staaer i Bibelen, men
+at Achilles Hest Xanthos engang skal have havt »det
+bevingede Ord«, er mythisk, thi det staaer ikke i Bibe%
+% --- p. 429 ---
+\setcounter{footnote}{0}%
+\opage{429}len, det staaer kun hos Homer«. Et saadant Ræsonnement
+kan imidlertid kun gjælde, saalænge det staaer
+fast, at Alt, hvad der staaer i Bibelen, er udvortes
+bogstavelig historisk. Og dog vil denne Forudsætning,
+om hvilken Katholiker og Protestanter officielt ere enige,
+ikke engang slaae til. Katholikerne ville, som bekjendt,
+ikke indrømme, at Miraklernes Tid er forbi; de antage
+tvertimod, at der i Kirkens Historie idelig er skeet
+og endnu skeer Mirakler. Den, f. Ex. der ikke kan troe,
+at den fromme Kanonikus A er »gaaet tørskoet over
+Elben« eller at den hellige Biskop B har kunnet »hænge
+sine Handsker paa en Solstraale«, kan heller ikke troe,
+at Elias foer til Himlen i en gloende Vogn, og at Jerichos
+Mure faldt, fordi Josva lod Præsterne blæse i Basuner;
+men den, der trods »den hellige Kirkes enstemmige
+Vidnesbyrd« ikke kan troe Sligt, er »en Hedning«,
+»en Vantro«, »en Kætter«, »en Tyrk«!
+
+De, som udelukkende holde paa Ligheden, vel at
+mærke, den udvortes Lighed, mellem det Mythiske i Hedenskabet
+og det Overnaturlige i Kristendommen, kunne,
+naar de ville være konsekvente, ikke slaae sig til Ro, før
+alt det Overnaturlige er blevet mythisk, og den hele
+positive Religion forvandlet til Mythologi.
+
+Der er et vigtigt Punkt, hvorom Atheister og Theologer
+altid ere enige, nemlig det udvortes Historiske.
+»Er det sandt, hvad Bibelen beretter, saa maa det være
+virkelig skeet, er det virkelig skeet, saa maa det være
+historisk«, det er den fælles Forudsætning: paa den
+udvortes historiske-Virkelighed, skal Sandheden beroe.   % PRINTED AS IS (p. 429): „historiske-Virkelighed“, with a hyphen
+Naar Theologien desuagtet som »historisk Videnskab«,
+% --- p. 430 ---
+\setcounter{footnote}{0}%
+\opage{430}vil, hvad den hellige Historie angaaer, komme til en
+anden Slutning end Atheismen, da kan den ikke rokke
+Oversætningen, men maa forsigtig indskrænke sig til at
+lirke ved Undersætningen.
+
+»Dersom det Overnaturlige virkelig er sandt, saa maa
+det være historisk.
+
+Nu er det ikke historisk og kan ikke være det.
+
+Ergo er det Overnaturlige i Virkeligheden usandt,
+d. v. s. det er mythisk«.
+
+Saaledes er Slutningen atheistisk.
+
+»Dersom det Overnaturlige virkelig er sandt, saa
+maa det være historisk.
+
+Nu er det efter al Sandsynlighed virkelig historisk.
+
+Ergo er det i alle Maader vist og sandt, og det
+Mythiske udelukket.«
+
+Saaledes er Slutningen theologisk.
+
+Det er det udvortes Historiske, det Skrifthistoriske,
+hvorom Apologetiken og den negative Kritik idelig drages
+med hinanden. Og saa trækker Apologetiken altid
+det korteste Straa; forstaaer sig, det er videnskabeligt
+Straa, ellers kunde jo den apologetiske Leg ikke fortsættes.
+Den første af de anførte Slutninger er dog idetmindste,
+hvad Formen angaaer, logisk korrekt, den
+sidste er derimod hinkende, ukorrekt\footnote[1]{Efterat Mænd som G. E. Lessing og S. Kierkegaard tilstrækkelig have godtgjort Umuligheden af „at bygge sin Salighed“ paa objektiv Vished om nogetsomhelst objektivt Historisk, kunde Apologetiken gjerne spare sig Anstrængelsen med at gavne Religionen ved at sammenflikke „Synopser“ og lappe paa „den hellige Historie“.}. Man behøver
+blot at besinde sig paa Forskjellen mellem historisk og
+% --- p. 431 ---
+\setcounter{footnote}{0}%
+\opage{431}religiøs Tro, mellem Sandsynlighed og Vished, og man
+vil faae en Forestilling om, hvorledes Sagerne staae,
+naar Theologien, for at redde nogle historiske Stumper,
+maa fire for Kritiken og, for at bevare et Skin af Videnskab,
+i Videns Navn nedlade sig til at kokettere
+med en let besløret Atheisme.
+
+Ifølge den af Grundtvig angivne Synsmaade, vil Forholdet
+mellem Sandhed og Virkelighed vise sig i et
+andet Lys. Virkeligheden er dobbelsidig; den har ikke
+blot et Udvortes, men ogsaa et Indvortes. Det er
+saa langt fra, at Eftertrykket kan falde paa det Udvortes,
+at det, hvor Spørgsmaalet er om Sandheden,
+meget mere falder paa det Indvortes. Dette gjælder
+ligesaa afgjørende for Mythologien som for Historien; thi
+det indvortes Virkelige er Aand. Den samme Aand,
+der er i et Folks Mythologi, maa ogsaa være i dets Historie,
+og omvendt. Historie og Mythologi maa vexelsidig
+opklare og belyse hinanden, dersom det ellers skal
+være muligt at bestemme Folke-Aanden. Oldtidshistorien
+er paa een Gang en Gudernes og en Heltenes Historie:
+saadanne Helte, saadanne Guder, og da igjen:
+saadanne Guder, saadanne Helte!
+
+Ligesom Heltelivet, det høiere Menneskeliv, har sit Forbillede
+i Gudelivet, og kun under denne Forudsætning
+kan være virkeligt, saaledes har igjen Gudelivet
+sin naturlige Grund og sin Virkeligheds Kraft i Heltelivet.
+Forskjellen mellem den græske og den nordiske
+Mythologi er i Virkeligheden selv en Forskjel mellem
+den græske og den nordiske Folke-Aand, men Forskjellen
+mellem den græske og den nordiske Folke-Aand er
+% --- p. 432 ---
+\setcounter{footnote}{0}%
+\opage{432}jo netop den Grundaarsag, hvoraf det Karakteristiske i
+begge Folkeslags Historie alene kan afledes\footnote[1]{Forfatteren af denne Afhandling har i Forelæsninger: Om Hindringer og Betingelser (anden Forelæsning) søgt at paavise dette.}.
+
+Det gaaer med et helt Folk som med et enkelt
+Menneske: for at samle sig til forhøiet Selvudvikling,
+maa det kjende sig selv, sine Kræfter og naturlige Anlæg.
+Vidnesbyrdet om dets naturlige Anlæg og deraf
+betingede Livsretning er at søge i dets Mythologi; Brugen,
+det hidtil har gjort af Kræfter og Anlæg, maa sees
+af dets Levnetsløb, dets Historie. Det bedste Middel til
+at komme bort fra Øieblikkets Virvar og besinde sig paa
+Fremtiden, er at gaae tilbage til Fortiden, men, vel at
+mærke, ad Aandens lige Vei, ikke ad de ydre endelige
+Begivenheders mangfoldig snoede, ofte vildsomme Stier.
+Ved at tabe sig i det udvortes Mangfoldige adspredes
+Sindet, Blikket forvilder sig, og Betragtningen ender med
+Bedøvelse; kun naar Begivenhedernes Mangfoldighed beherskes
+af Tankens Enhed, saa at enhver Udvikling
+baade udgaaer fra og leder til Besvarelse af et praktiske
+Hovedspørgsmaal, vil Historien bidrage til, at Bevidstheden
+klares, at Folket virkelig gaaer i sig selv.
+Her er da i Fortiden Meget, der styrker og opløfter,
+men ogsaa meget, der ydmyger og nedtrykker, Feil, der
+maae rettes, Misgreb og Forsømmelser, der maae angres,
+Svagheder, der maae bekæmpes, Skæbnens Slag, der
+maae bæres med Resignation. Men for at Historien paa
+denne Maade skal kunne virke vækkende og belærende,
+maa den ydre Virkelighed overalt henføres til og forklares
+af den indre. Historien er da ikke noget blot
+Udlevet, et Gravsted for svunden Herlighed, Forbigan%
+% --- p. 433 ---
+\setcounter{footnote}{0}%
+\opage{433}genhedens døde Hav, hvor kun Erindringen boer mellem
+sunkne Stæder og Troner, men en nærværende,
+bevægende Magt, en Livets Strøm, den Tidernes Elv,
+der driver Tilværelsens Hjul.
+
+Først naar det aandige Baand, der forbinder Mythologi
+og Historie, er fundet, kan Religionen erkjendes i
+sit eiendommelige Forhold til begge. Det Grundbegreb,
+hvortil Vexelvirkningen af Mythologi, Historie og Religion
+maa henføres, er Begrebet Frihed. Frihedens Princip
+er Villie, Villiens Væsen er Aand; i Frihedens Verden
+er det Aand og Villie, der behersker og bestemmer
+den ydre Virkelighed. Er Folke-Aanden vaagen og Villien
+stærk, saa er Handlekraften stor, og Historien rig
+paa Bedrifter; er Aanden døsig og Villien mat, saa er
+Handlekraften ringe, og den virkelige Historie ubetydelig.
+Da nu Mythologien er det Aandens Speil, hvori
+Folket seer sine Livsidealer og Formaal, saa angiver
+denne Folke-Aandens første naturlige Selvaabenbarelse
+tillige den Høide, hvortil et Folk ved egne Kræfter
+er i Stand til at hæve sig, det Maal af Frihed, hvortil
+dets virkelige Historie kan naae, og hvori den naturligen
+maa have sin Grændse. Saaledes naaede Grækerne
+i den gamle Verden netop til at virkeliggjøre det
+Frihedsideal, som under Skjønhedens Form udtaler sig
+i deres Mythologi; men heller ikke et Skridt længer.
+Hvad der gjælder om Skjønhedsidealet hos Grækerne,
+gjælder paa tilsvarende Maade om Magtidealet hos Romerne.
+Udvortes seet, er det Barbarernes Vaaben, der
+gjør Ende paa Romermagten; men, indvortes seet, havde
+denne Magt allerede fra Begyndelsen af sit Maal, sin
+Grændse i sig selv.
+
+% --- p. 434 ---
+\setcounter{footnote}{0}%
+\opage{434}Dersom der nu i Virkeligheden ikke gaves anden
+Aand end Folke-Aanden, saa vilde det see sørgeligt ud
+med Friheden. Enhver Folkeaand har nemlig i Folkets
+Individualitet en Naturgrændse, der ikke kan overskrides.
+Vel er Aanden som Aand altid det Almene, men
+dette Almene faaer kun Virkelighed med Kjød og Blod,
+ved at leve og boe, i det Individuelle. At ville frigjøre
+Aanden fra den naturlige Indskrænkning ved at opløse
+den nationale Eiendommelighed i kosmopolitisk Ensformighed,
+er, hvad Erfaringen noksom har viist, en metafysisk
+Vildfarelse, et Forsøg paa at sætte Skyggen i
+Legemets Sted og gjøre Livet selv til et blodløst Abstraktum.
+
+Det ligger i Sagens Natur, at en tiltagende Civilisation
+og dermed fremskridende Tænkning, efterhaanden
+maa undergrave den mythiske Folketro og forvandle
+Gudeskikkelserne til bevidste Symboler. Dersom nu en
+Mythologi kunde tænkes at indeholde den høieste Sandhed
+og angive Principet for den virkelige Frihed: da
+vilde den Omdannelse, som Mytherne undergik i Reflexionen,
+jo vistnok ikke betyde en Afkræftelse, men en Forhøielse
+af Folke-Aanden, som paa denne Maade kom til
+Klarhed over sig selv. Men saaledes forholder det sig
+ikke. Det er ikke alene Gudernes udvortes Virkelighed,
+Forstandskritiken angriber; den angriber Gudeverdenens
+Væsen, dens Sandhed, idet Fornuften indseer, at et saadant
+Væsen ikke længer fremmer, men hemmer Friheden.
+Saa følger Opløsningen som af sig selv; thi den
+bevidste Tænkning, der opdager det Ufornuftige og dermed
+det Aandløse i Gudelæren, er ikke i Stand til at indsætte
+en ny Aand istedenfor den gamle. Saaledes kunde
+% --- p. 435 ---
+\setcounter{footnote}{0}%
+\opage{435}den græske Filosofi vel opløse den græske Mythologi,
+men Opløsningen angreb Folke-Aanden; Filosofien selv
+var magisk behersket af Folke-Aandens Grundformer:
+ved at opløse Mythologien naaede den sin Fuldendelse,
+men just som den stod i Begreb med at gaae videre,
+indledede den sin egen Opløsning, thi Grændsen var sat
+af Aanden.
+
+Med den aabenbarede Religion kommer Sandhedens
+Aand, den Villiens og Frihedens Aand, som alene formaaer
+at løse Virkelighedens Gaader. Religionens Forhold
+til Mythologien er fra dette Synspunkt af at bestemme
+ved den aabenbarede Aands Forhold til Folke-Aanden.
+For at see, hvad heri ligger, kunne vi begynde
+med det enkelte Menneske. Den aabenbarede Religion
+er hævet over al national Begrændsning; den er bestemt
+for alle Folkeslag, altsaa for alle Mennesker, for
+ethvert enkelt Menneske uden Undtagelse. Men uagtet
+ethvert Menneske maa kunne tilegne sig Religionen, saa
+er der dog, hvad Dybden, Inderligheden, Kraften og Selvstændigheden
+i en saadan Tilegnelse angaaer, en umiskjendelig
+Forskjel mellem Individerne. Individualiteten
+er mere end et passivt Medium for Aandens Gjennemgang,
+den er som Ædelstenen, der bryder Lyset og
+kaster Straalerne tilbage med eiendommelig Glands og
+Farvespil. Det kan uden Overdrivelse siges, at enhver
+sand og dygtig Individualitet opfatter de religiøse Sandheder
+paa eiendommelig Maade. Forskjellen hidrører
+ikke ligefrem fra det Udvortes, thi Bekjendelsen kan
+være den samme og Læren den samme; den væsenlige
+Forskjel er i det Indvortes. Ikke blot i det Udvortes,
+men ogsaa i det Indvortes er en Mand forskjel%
+% --- p. 436 ---
+\setcounter{footnote}{0}%
+\opage{436}lig fra en Kvinde; hvoraf igjen følger, at det religiøse
+Liv vinder en anden Skikkelse i Manden end i Kvinden.
+Dersom den aabenbarede Religion ikke lagde den
+allerstørste Vægt paa Bevarelse og Forevigelse af det i
+Frihedslivet Individuelle, vilde Læren om de Dødes Opstandelse
+være uden Betydning. --- Men Individualiteten i
+den Enkelte er i det Hele uadskillelig fra Folke-Individualiteten.
+At der saavel i denne som i hin er Meget,
+der tilhører Endeligheden og hjemfalder til Forkrænkeligheden,
+skal ikke nægtes --- det gjælder da især
+om det Ydre --- men i det Almindeliges Navn maa Individualiteten
+hævdes. Holdes nu Folke-Individualitetens
+Betydning fast, da er der jo heller ikke noget Urimeligt
+i, at eet Folk kan være anlagt paa en dybere Opfattelse
+af Frihedslivet end et andet; den nordiske Mythologi
+bærer i denne Henseende Vidne om de nordiske
+Folks eiendommelige Begavelse. At gjøre et folkeligt
+Fortrin gjældende, er ingenlunde det Samme som at
+smigre Folkets Forfængelighed; det kan tverimod være
+et Forsøg paa at vække dets Samvittighed. Det gjælder
+her som overalt: »Af den, hvem Meget er betroet,
+kan ogsaa meget fordres«. Naar en stor Fortid staaer
+i tragisk Strid med en kummerlig Nutid, da er der Noget
+iveien, der er Noget gaaet tabt. Historien vidner
+imod det paagjældende Folk, at det har forsømt den
+beleilige Tid og ikke brugt sine store Kræfter.
+
+Jo dybere en Mythologi er, desto dybere er Folke-Aanden,
+og jo dybere Folke-Aanden er, desto inderligere
+og kraftigere vil Folket kunne tilegne sig Aabenbaringens
+Aand. Det er Frihedslivet, altsaa Virkeligheden,
+den indre Virkelighed, hvorpaa Alt først og sidst
+% --- p. 437 ---
+\setcounter{footnote}{0}%
+\opage{437}kommer an. Den, der ikke kan forstaae, at de mythiske
+Symboler endnu den Dag idag have Noget med det virkelige
+Liv at gjøre, vil, naar vi see nærmere til, heller
+ikke kunne føle og fatte, at Aabenbaringens overnaturlige
+Kjendsgjerninger have Noget med Nutidens aandelige
+Vilkaar at gjøre: Sandheden, den indre Virkelighed
+i hine som i disse, er Aandsvirkelighed, Virkelighed
+for Aanden. Men ligesom der er Forskjel paa timeligt
+og evigt Liv, paa timelig og evig Frihed, paa Menneskets
+Egenvillie og Guds almægtige, hellige Villie, saaledes
+er der ogsaa Forskjel paa Folke-Aanderne og
+Religionens hellige Aand; og da ogsaa en himmelvid
+Forskjel mellem den Ide-Virkelighed, der kan tillægges
+de mythiske Symboler, og den ideale Virkelighed, der
+tilkommer det Overnaturlige, en principiel Forskjel mellem
+Mythologi og Aabenbaring\footnote[1]{Om Religion og Mythologi jvfr. Forf.s Religionsfilosofi S. 11, flgd.}.
+
+Den Grundtanke, som her er antydet i flygtige Omrids,
+skulde nu i Folkeskolen antage Skikkelse, Liv og
+Farve; dertil behøves Lærekræfter. Det koster allerede
+Aandsanstrængelse og vedholdende Tænkning at arbeide
+sig alsidig og grundig ind i en rig Verdensanskuelse, og
+dog er dette endda kun den halve Vei til Maalet; thi
+Vanskeligheden er at faae det Indvundne udfoldet og
+fremstillet. Vi maae i denne Anledning gjøre opmærksom
+paa den kategoriske Forskjel, der er imellem at
+docere, at snakke gemytlig og at tale personlig.
+
+At docere er at foredrage en Sag objektivt, klare
+dens Sammenhæng i almene Begreber og vise dens Gyldighed
+i Kraft af uimodsigelige Grunde. I det strenge
+
+% --- p. 438 ---
+\setcounter{footnote}{0}%
+\opage{438}Kathederforedrag holder Læreren sin Subjektivitet tilbage;
+hvis han i enkelte Yttringer lader den skinne igjennem,
+da skeer det saa indirekt, at de forbigaaende Glimt af
+individuel Stemning kun tjene til at forstærke Indtrykket
+af Sagens Betydning og skærpe Opmærksomheden for
+Grundenes Vægt. Kun ved at lægge Baand paa sin
+Individualitet og fjerne uvedkommende Hensyn til private
+Meninger kan Læreren tilveiebringe den ophøiede
+Ro, den kjølige Besindighed, den Bevidsthedens ufordunklede
+Klarhed, der er en Betingelse for, at Tilhøreren
+uforstyrret kan følge Tankebevægelsen Punkt for
+Punkt.
+
+At snakke gemytlig er nu lige det Modsatte. Den
+naturfriske, umiddelbare Subjektivitet kryber ikke i
+Skjul bag det Objektive, men giver sig ganske som
+den er, ubekymret, om det skeer i Søndagsdragt eller
+in \textit{puris naturalibus} eller i Slaabrok og Tøfler. Det
+gemytlige Foredrag kan spille i alle Farver, klimpre paa
+alle Strenge og gjøre en høist forskjellig Virkning. Det
+kan være tiltrækkende og underholdende, hvis den talende
+eller, for at blive i Kategorien, snakkende Individualitet
+har Lune, Vid og Humor i Overflødighed; men hvis disse
+gode Gaver mangle, kan det ogsaa blive langtrukket,
+besværligt og kjedeligt. Det kan blive til noget Belærende,
+hvis den, der spøgende spiller med Ordet, har
+Indsigt, Blik og Forstand, men i modsat Fald kan det
+jo ogsaa blive til noget Andet, f. Ex. til Vrøvl. Over
+alt dette raader en høiere, uransagelig Tilfældighed.
+
+Den, der vil tale personlig, maa nu hverken holde
+sig i Objektivitetens Kulde eller varme sig ved Blus af
+gemytlige Indfalds Fyrværkeri. Han tør, hvad det Ob%
+% --- p. 439 ---
+\setcounter{footnote}{0}%
+\opage{439}jektive angaaer, ikke byde sine Tilhørere en udenfra
+kommende Belæring og lade dem forsøge at iføre
+sig en Theori, der ikke særlig er for dem, men for
+Menneskeheden, ligesom man lader Rekruten prøve en
+Uniform, der ikke er syet til ham, men til Armeen;
+han maa allerførst, om vi saa maae sige, have taget Maal
+af sig selv og sine Tilhørere, saa at han virkelig er i
+Stand til at sætte sig paa Tilhørernes Standpunkt, digte
+sig ind i deres Forestillingskreds, tale ud af deres egen
+Bevidsthed, røre Strengene i deres eget Bryst og hjælpe
+dem til at tænke deres egne Tanker. Dette er Opgaven,
+seet fra den subjektive Side. Men Sagen, det Objektive,
+er ham ligesaa vigtig. Han maa i denne Henseende
+medbringe en Fylde af Kundskaber, et rigt
+Stof og have Stoffet tilbørlig gjennemarbeidet. Det
+er ikke Emnet for sig, saalidt som det er Formen af
+af blot individuel Eiendommelighed, der giver Talen
+det personlige Præg: det er den aandige Enhed af
+begge. Læreren maa i den Grad have optaget Sagen
+i sin Bevidsthed, at han bogstavelig lever i den. Det
+Hele maa være ham saa nærværende, at han i Talens
+Øieblik, under Foredragets Gang, efter Tanke og
+Stemning kan gribe Exemplerne frit, kan beherske og
+forme det Mangfoldige saaledes, at et folkeligt Karakterbillede,
+et Sjælemaleri af Historiens virkelige Liv,
+uvilkaarlig danner sig for Tilhørerne. Saa bliver det
+Høieste enfoldigt og forstaaes enfoldigt; Tanken iklædes
+Fortællingen; Billeder og Reflexioner, Exempler og
+Beskrivelser vexle med fuld Frihed, men uden Omsvøb
+eller udsvævende Vidtløftighed: saa virker den hele
+Fremstilling til at sikkre Forstaaelsen og fremme Er%
+% --- p. 440 ---
+\setcounter{footnote}{0}%
+\opage{440}kjendelsens Udvikling, saa kan den Ulærde naturlig
+følge med, og den Lærde have sin Glæde af at sidde
+hos og lytte efter. Den bare Livlighed kan ikke gjøre
+det, saalidt som den tørre Grundighed. Man er paa
+Aandslærens Enemærker altfor tilbøielig til at sætte
+Skilsmisse mellem det grundige og det vækkende Foredrag; idet man antager, at det grundige udelukkende
+tilhører Videnskaben og derfor ikke kan nedlade sig til
+at være vækkende, medens det vækkende, der falder
+udenfor Videnskaben, umulig kan være grundigt, men
+maa nøies med at være livligt. Det er en falsk Synsmaade.
+Sandheden er, at et folkeligt Foredrag maa
+holdes i en anden Form end et videnskabeligt; men de,
+som antage, at et Foredrag er ugrundigt, fordi det er
+vækkende og levende, maae vel ogsaa antage, at et
+Foredrag altid er videnskabeligt og grundigt, naar det
+blot er dygtig trægt, talentløst og kjedsommeligt.
+
+Af det her Afhandlede vil det forhaabenlig nu være
+klart, at Fremskridt, der gjøres i de nye Folkeskoler,
+ikke beroe paa Elevernes Forkundskaber, men
+paa Lærernes Duelighed. I Kundskabsskolen falder den
+overveiende Del af Arbeidsbyrden paa Eleverne, thi det
+er virkelig lettere at høre i en Lektie end at lære
+en Lektie; i Folkeskolen derimod falder Arbeidsbyrden
+fornemmelig paa Læreren, saasandt det altid er lettere
+at høre paa et frugtbart vækkende Foredrag, end det er
+at holde det. Kan det folkelige Foredrag blot udvikle sig
+til den Klarhed og Fuldkommenhed, som Sagens Vigtighed
+kræver, saa kan man være forvisset om, at Tilhørerne
+nok skulle komme i Arbeide, at enhver mulig
+Veiledning, den være mundlig eller skriftlig, den være
+% --- p. 441 ---
+\setcounter{footnote}{0}%
+\opage{441}at finde i mindre Lærebøger eller i større Værker, skal   % PRINTER'S DEFECT (p. 441): „finde“: the f did not ink its head; letter supplied
+efter Tid og Leilighed blive benyttet, thi driftig Selvvirksomhed
+med friske Kræfter udretter store Ting.
+
+Det har i nærværende Afhandling ikke været vor
+Opgave enten at revidere givne Undervisningsplaner eller
+gjøre Udkast til nye; vi have, med særligt Hensyn paa
+Ide og Virkelighed, indskrænket os til at henlede Opmærksomheden
+paa et stort Forehavende, som, takket være
+de mange unge Mænd, der ikke alene hos os, men ogsaa
+i Broderlandene med opoffrende Begeistring have lagt
+Haand paa Værket, vil med Styrelsens Bistand bære
+Frugter for aandelig Frihed og borgerligt Fremskridt
+til Held og Velsignelse for Nordens Lande. Vi have
+fæstet vort Blik paa den Vækkelse, paa hvilken der
+efter vor Overbevisning alene kan bygges et Fremtids
+Haab; men vi have ikke villet enten oversee eller miskjende
+det Gode og Gavnlige, som Kundskabsskolen
+saavel i lavere som høiere Stil har ydet og fremdeles
+vil yde: vi have med den principielle Forskjel mellem
+lærd og folkelig Dannelse for Øie villet bidrage til en
+Erkjendelse af, at der i Nutiden kan og maa gives
+to Slags Undervisning.
+\signature{R. \emph{Nielsen}.}
+
+\end{document}
