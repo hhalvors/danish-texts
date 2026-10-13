@@ -1,0 +1,752 @@
+% =====================================================================
+%  R. Nielsen, FILOSOFI OG SUND MENNESKEFORSTAND
+%  In: For Ide og Virkelighed. Et Tidsskrift, udgivet af R. Nielsen, B. Bjørnson og Rud. Schmidt.  Aargang 1870. Første Bind (Bind 2).
+%  Kjøbenhavn: Chr. Steen & Søns Forlag; Louis Kleins Bogtrykkeri.  Bind 2, pp. 385-404.  Antiqua.
+%
+%  TRANSCRIPTION -- GENERATED; DO NOT EDIT BY HAND.  Rasmus Nielsen's eight essays in the volumes 1870-1873 are built by ONE
+%  pipeline (ebook-method/for-idee-1870-73/) into a combined working file, which split7.py cuts into seven transcriptions
+%  (Aandsvirkelighed and its sequel, Videre om Aandsvirkelighed, are one: Hans, 2026-10-13).
+%  Rebuild from the repo root:   sh ebook-method/for-idee-1870-73/rebuild.sh
+%
+%  STATUS: COMPLETE (2026-10-13): the volume's title page and the whole essay, Bind 2, pp. 385-404, with its notes.
+%
+%  EDITION.  The only printing.  Text of record: Nasjonalbiblioteket's scan (nb.no) of the volume, ~/bibliotek/Nielsen, Rasmus/1870-1-for-idee-og-virkelighed.pdf (NB item 440261bfdbcab019d4f313aa5894cf6e) (SCANS.tsv),
+%  page images fetched by nbfetch.py, 300 dpi colour, NO text layer; printed page N = PDF page N + 4.  No e-book, no
+%  Wikisource text, no reprint, no earlier transcription found (checked 2026-10-13: the repo, the web, the Internet Archive,
+%  da.wikisource; HathiTrust and the Google Books API could not be queried that day; Google Books holds at least the 1873
+%  volume, nielsen/darwinismen's source -- a second copy, not used).
+%
+%  ACCURACY (2026-10-13; one collation for all eight texts, 231 pp., ~58,000 words).  The DRAFT is NB's own OCR (ALTO, ABBYY
+%  FineReader 12), laid over the page images (combine.py) and turned into LaTeX by draft.py; it was collated word by word
+%  with an independent tesseract reading of the same images (collate/check.py, witness 'ocr'): 1556 disagreements.
+%  check.py's own rules settled 78.  Candidate rules were first scored BY SCRIPT on a text already read at the image
+%  (calibrate.py: Et Synspunkt for Darwinismen, same volume as Verdensanskuelse), then measured on a BLIND PILOT of 152 crops
+%  (reader A, 52/52 planted controls right); 17 rules passed (NB's glyph faults: o for ø, D/O/U for Ø, i for l, li for h,
+%  l for I, opening » read «, words run together or broken apart; tesseract's: aa read an/ag/å, added accents; the
+%  printer's space before a mark, house rule) and settled 772; the rest were read at the image BLIND (562 crops on 94
+%  sheets, four readers, 188/188 planted controls right), ~160 decided in the main session from the readers' lines and ~40
+%  at 300-dpi zooms.  STRUCTURE read at the image (reader K): every footnote whole (30; collated where they stand, then moved
+%  to their marks, then compared word by word with the reading: notecmp.py, 9 differences settled at the image), the
+%  headings, the section numerals, the essays' last lines and signatures, the three Greek words, the volume title pages.
+%  LETTERSPACING (the print's emphasis, \emph): candidate lines by letter gaps and box width, calibrated on the words the
+%  word readers had marked spaced (spaced.py): 361 lines read blind (61/62 roman controls), 25 doubtful extents read at a
+%  zoom.  SWEEPS after OPEN 0: words run together that both OCRs share (lower-case + capital), the unknown-word sweep (678
+%  words, ~20 suspects, 14 read at the image: 4 OCR faults, 7 misprints kept), --moved, the dropped-word list, the
+%  W-shortens list of the blind decisions.
+%  SAMPLED PAGE CHECK (pagecheck.py, seed 202610137): one page of each essay or part, pp. 2289, 2400, 3305, 4308, 5033,
+%  5208, 6514, 8011 of the working numbering (Bind x 1000 + page), read whole and blind, 1965 words: 0 word errors,
+%  1 punctuation (a compound's hyphen lost at a page turn: „Ny-|Holland“) and 1 letterspacing („to be or not to be“)
+%  error, both mended.  95 % upper bound for word errors: 1.5 per 1000 words.
+%  What this cannot see: a misprint both OCRs normalise into a real word.
+%  The ø rule (Hans 2026-10-08): o-forms that are no word are set with ø; „stode“ (= stood) is a word and stays.
+%  PRINTED AS IS Bind 2, p. 392: „Naturhistorie o, s. v.“ comma for the stop of o. (b1-19-04)
+%  PRINTED AS IS Bind 2, p. 389: „Livggaaderne“ for Livsgaaderne (zoom z4)
+%  Not transcribed: running heads, folios, sheet signatures („For Ide og Virkelighed. 1870. I. 20“), library stamps; the
+%  large initial of each essay is set as a plain letter.  Quotation marks as printed (» « in the text, sometimes a closing
+%  »; „ “ in some notes).  The notes are numbered ¹), ²) per page, as printed.  Greek as printed (textalpha).
+%
+%  TOOLS (ebook-method/for-idee-1870-73/): nbalto.py, combine.py, alto.py, ocr.py, draft.py, rules.py, calibrate.py,
+%  sheets.py + reads.py + READER-BRIEF.md, spaced.py + spaced.tsv, structsheets.py, notecmp.py, unknown.py, zoom.py,
+%  pagecheck.py + PAGECHECK-BRIEF.md, patches.py (PATCHES, PRENOTES, NOTES, POST, MISPRINTS), decisions.tsv, split7.py,
+%  rebuild.sh.
+% =====================================================================
+\documentclass[12pt,a4paper,openany]{book}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{libertinus}
+\usepackage{libertinust1math}
+\usepackage{textalpha}
+\usepackage[danish]{babel}
+\usepackage[protrusion=true,expansion=true]{microtype}
+\usepackage{setspace}
+\usepackage[margin=1.3in]{geometry}
+\usepackage{fancyhdr}
+\usepackage{hyperref}
+\hypersetup{pdftitle={Filosofi og sund Menneskeforstand}, pdfauthor={Rasmus Nielsen}, hidelinks}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LE,RO]{\thepage}
+\fancyhead[C]{\textit{R. Nielsen: Filosofi og sund Menneskeforstand (1870)}}
+\setstretch{1.3}
+\usepackage{marginnote}
+\renewcommand{\thefootnote}{\arabic{footnote})}   % the print numbers each page's notes ¹), ²)
+\newcommand{\opage}[1]{\marginnote{\footnotesize\textit{[#1]}}}
+% the essay's heading: title (and subtitle), centred, a short rule; the print's large initial is not reproduced
+\newcommand{\essayhead}[2]{\begin{center}{\large #1}\ifx&#2&\else\\[0.3em]{\normalsize #2}\fi\\[0.5em]\rule{3em}{0.4pt}\end{center}\medskip\noindent}
+\newcommand{\signature}[1]{\par\smallskip\hfill #1\hspace*{2em}\par}
+
+\begin{document}
+
+% --- front matter: the title page of Bind 2 (PDF 1 of 1870-1-for-idee-og-virkelighed.pdf), read at the image (reader K, m1);
+% short wavy rules are set as plain rules; the library stamps are not transcribed.
+\begin{titlepage}
+\begin{center}
+\vspace*{3em}
+{\Huge For Ide og Virkelighed.}\\[1em]
+\rule{8em}{0.4pt}\\[1em]
+{\large Et Tidsskrift,}\\[0.8em]
+{\small udgivet}\\[0.4em]
+{\footnotesize af}\\[0.6em]
+{\large R. Nielsen,}\\[0.4em]
+{\large B. Bjørnson og Rud. Schmidt.}\\[1em]
+\rule{8em}{0.4pt}\\[0.6em]
+{\large Aargang 1870. Første Bind.}\\[0.6em]
+\rule{8em}{0.4pt}\\[4em]
+Kjøbenhavn.\\[0.4em]
+Chr. Steen \& Søns Forlag.\\[1.5em]
+{\small Louis Kleins Bogtrykkeri.}
+\end{center}
+\end{titlepage}
+
+% ===== TEXT: pp. 385-404 =====
+\essayhead{Filosofi og sund Menneskeforstand.}{}
+% --- p. 385 ---
+\setcounter{footnote}{0}%
+\opage{385}Det er endnu kun lidt over tredive Aar siden, at J.
+L. Heiberg fandt sig i vor Literatur opfordret til at
+tage Ordet for en dybere gaaende filosofisk Tænkning
+og med Eftertryk minde om, hvor langt vi i denne
+Henseende stode tilbage for andre civiliserede Nationer,
+eftersom Filosofien endnu kun var en fremmed, neppe
+engang velkommen Gjæst her i Landet. »Man har«,
+siger han, »allerede ofte fremsat den Bemærkning, at
+medens vi Danske tilegne os den almindelige europæiske
+Kultur i dens mange forskjellige Retninger, er der dog
+endnu een tilbage, ad hvilken vi hidtil ikke have ladet
+os føre, nemlig den filosofiske. Det politiske, det videnskabelige,
+det æsthetiske og det religiøse Liv bærer
+hos os Nutidens almindelige Præg; fra alle hine Hjørner
+blæser Kulturens velgjørende Vind paa vort lille Danmark,
+som dog ikke blot ligefrem følger den herskende
+Luftstrøm, men ogsaa mangen Gang bruger Seil og
+Ror til at modificere sin Retning, til at benytte det
+mægtige Element, uden at lade sig beherske af det.
+Men idet vi villigen lade os gjennemblæse af den \emph{Aande},
+der ifølge den nordiske Fabel kommer fra de fire Dværge
+% --- p. 386 ---
+\setcounter{footnote}{0}%
+\opage{386}i Verdenshjørnerne af Ymers uhyre Hjerneskal, frygte
+vi derimod for at forkjøles af den universelle \emph{Aand},
+og krybe forsigtigen i vort Sneglehus, hvergang vi spore
+dens Nærværelse« (Perseus. Nr. 1. 1837).
+
+Meget Vand er siden den Tid løbet i Stranden.
+Rigets Forfatning, Folkets Tanker, Literaturens Udseende,
+det aandelige Livs Retning, Alt har i et Mellemrum af
+faa Aar undergaaet en saadan Forandring, at det Gamle
+og det Nye allerede staae som to Rethavende, der iagttage
+hinanden mistænksomt, maale hinanden med Øinene,
+og selv, hvor der paa begge Sider er god Villie, have
+Vanskelighed nok ved at forstaae hinanden. Under de
+stærke Bevægelser i det Udvortes er Blikket tillige blevet
+vendt mod det Indvortes; en stigende Trang til aandelig
+Selvbesindelse yttrer sig, om end paa forskjellig
+Maade, i stedse videre Kredse. Saaledes er da Filosofien
+hos os ikke længer en overflødig Luxus, en indført
+Zirplante, der kun kan trives i et dertil opvarmet
+Drivhus, men en uafviselig Fornødenhed, et Aandens
+Krav, vi paa vore Vilkaar maae see at tilfredsstille,
+saa godt vi kunne.
+
+Thi hvad er Filosofi? En videnskabelig Bevidsthedslære,
+en Videnskab, der vil opklare, hvad det er,
+vi kalde vort Selv, og forhjælpe det tænkende Menneske
+til at orientere sig i sin egen Bevidsthed. Alle
+Slags Indbildninger og Sandsebedrag, Skuffelser og Selvbedrag
+af enhver Art have, menneskelig talt, deres Rod
+i Uvidenhed om det selvbevidste Livs Grundlove. At
+ride vild i sin ‘egen Skov er farligt, skjøndt i en vis
+Forstand herskabeligt, forsaavidt det forudsætter, at
+Skoven og dermed Eiendommen maa have en vid Ud%
+% --- p. 387 ---
+\setcounter{footnote}{0}%
+\opage{387}strækning; men at løbe vild i sin egen Bevidsthed og
+spørge som Bonden: »var det mig, der var her før?« er
+jammerligt og det i samme Forhold som de individuelle
+Naturgaver ere betydelige, og de aandelige Besiddelser,
+Kundskaber, Erfaringer o. s. v., udstrakte. Der er da,
+som man seer, Noget i Filosofien, der vedkommer Alle.
+Ingen kan tænke over sit Liv uden at filosofere; Virkeligheden,
+det daglige Liv med Omstændighederne og
+de uforudseelige Tilfælde har Problemer nok: Jeppe i
+Baronens Seng er jo nær ved at blive kvalt af Problemer.
+
+Imod de nationale Bestræbelser i Nutiden har man
+nu og da villet opstille den gamle Sætning, at Sandheden
+er ens for Alle, at folkelige Forskjelligheder ikke
+tør udøve nogen Indflydelse paa Videnskaberne, at navnlig
+Filosofien, den almene Videnskab, maa være kosmopolitisk.
+Forsaavidt her endnu tænkes paa Tænkningens
+rene Love, har Sætningen ganske vist sin Gyldighed.
+Men naar Spørgsmaalet er om den eiendommelige Behandling
+af de videnskabelige Opgaver og om den ved
+Folkesprogene betingede Fremstilling af Videnskabens
+Indhold, gjør Nationaliteten sin Ret gjældende. Jo oprindeligere
+de videnskabelige Frembringelser ere, og jo
+mere Undersøgelserne nærme sig det inderste Aandelige,
+desto stærkere vil Erkjendelseslæren og dermed den hele
+Literatur være præget af Folke-Aanden. At Filosofien,
+den kosmopolitiske Videnskab, ingenlunde kan være
+tjent med at rykkes op af den folkelige Jordbund og
+svæve frit i almene Tankers luftige Regioner, lærer dens
+egen Historie. Grækernes Filosofi er en Afspeiling af
+den græske Aand, og det er ingenlunde tilfældigt, at
+% --- p. 388 ---
+\setcounter{footnote}{0}%
+\opage{388}Filosofien for Tiden har en ganske anden Karakter i
+Tydskland end f. Ex. i England.
+
+Dersom det da er sandt, hvad jo ofte gjentages,
+at det er den klare sunde Forstand, forenet med en vis
+Dybsindighed, men tillige med afgjort Uvillie mod mystiske
+Spekulationer og ørkesløse Grublerier, der skal
+afgive Maalestok for det danske Folks intellektuelle Begavelse
+--- en Synsmaade, der finder Stadfæstelse i den
+Kjendsgjerning, at Holberg, »Stifteren af vor Literatur,
+han, hvis uberegnelige Indflydelse paa vor Smag og vort
+naturlige Omdømme har gjort sig gjældende i næsten
+alle Retninger«, netop er en af den sunde Menneskeforstands
+genialeste Repræsentanter --- dersom dette, sige
+vi, forholder sig saaledes: da maa der ogsaa kunne paavises
+en til denne Aandsretning særlig svarende filosofisk
+Opgave.
+
+Opgaven er: \emph{at bestemme den menneskelige}
+Videns Grændse.
+
+Den første afgjørende Betingelse for at opnaae videnskabelig
+Indsigt er, at jeg ved hvert Skridt nøiagtig
+maa skjelne mellem det, jeg veed, og det, jeg ikke
+veed. Mine Fremskridt i Viden beroe nu derpaa, at der
+er Meget, som jeg endnu ikke veed, men som jeg dog
+maaske med Tiden kan faae at vide. Der er i den
+menneskelige Viden til alle Sider utallige Grændser, som
+kunne overskrides. Ved nye Opdagelser, nye Synspunkter,
+nye Methoder gjør Videnskaben uophørlig Fremskridt,
+overskrider de gamle Grændser i alle Retninger,
+og det vil i denne Forstand være umuligt at forudsige,
+hvorvidt den i Tidernes Løb kan naae. Men Spørgsmaalet,
+det for Liv og Videnskab afgjørende Grændse%
+% --- p. 389 ---
+\setcounter{footnote}{0}%
+\opage{389}spørgsmaal, hvorpaa vi her i den sunde Menneskeforstands
+Navn maae lægge Vægt, er et ganske andet.
+Grundspørgsmaalet er, om Filosofien i Videns Form formaaer
+at løse Tilværelsens Gaader.
+
+Blandt Livggaaderne er der fornemmelig to, paa   % PRINTED AS IS (Bind 2, p. 389): „Livggaaderne“ for Livsgaaderne (zoom z4)
+hvis Betydning den sunde Menneskeforstand altid har
+lagt en særdeles Vægt, og for hvis Løsning den vistnok
+vilde være Filosofien som Videnskab uendelig forbunden;
+det er, som bekjendt, Realiteten af Guds Tilværelse
+og Sjælens Udødelighed, hvorpaa den søger Bekræftelse.
+Har Filosofien været istand til at give en
+saadan Bekræftelse? Nei! Hvorfor ikke? Fordi den
+sidste, afgjørende Besvarelse af de herhen hørende Spørgsmaal
+ligge udenfor den menneskelige Videns Grændse.
+At de mange hidtil opstillede Beviser, ved hvilke man
+har søgt at grundfæste hine for Menneskeheden trøstelige
+Sandheder, lade sig opløse i lige saa mange Tvivl,
+har den negative Kritik tilstrækkelig godtgjort. Ved
+at angribe Beviserne for de formentlige Sandheder er
+man da gaaet til den modsatte Yderlighed; man har
+saaledes ud fra den moderne Bevidstheds Standpunkt
+opstillet Beviser, for hvis »ubønhørlige Logik« baade
+Gud og Udødelighed maa forsvinde. Gud, det almægtig
+villende Selv, er ikke til; et almægtigt, villende Væsen
+er et begrebløst Begreb, en Troens Indbildning, en
+Sæbeboble, der brister, naar den berøres af Kritikens
+Naalespids: Guds Tilværelse er, som Tilværelsen af den
+runde Firkant, umulig. Paa lignende Maade beviser
+man, at Sjælens Udødelighed er umulig. Sjælens Liv
+er oprindelig betinget af legemlige Organer; at tænke
+uden Hjerne er ligesaa umuligt som at føle uden Nerver.
+% --- p. 390 ---
+\setcounter{footnote}{0}%
+\opage{390}Altsaa: naar Nerverne døe, døer ogsaa Følelsen, naar
+Legemet døer, døer ogsaa Sjælen.
+
+Men hvad siger den sunde Menneskeforstand? Den
+siger, at Filosofien er anmassende, naar den giver sig
+Udseende af at vide det, som intet Menneske kan vide.
+Den sunde Forstand tager ligesaa lidt Parti med den
+Viden, der afsætter, som med den, der indsætter Gud;
+ligesaa lidt med den, der modbeviser, som med den, der
+beviser Sjælens Udødelighed. Den sunde Forstand er,
+hvad de høieste Sandheder angaaer, en stor Skeptiker;
+den kommer med sine Grunde for og imod aldrig ud over
+Tvivlen. Men denne Forstandens uovervindelige Tvivlen
+indeholder jo netop en Forudsætning, som Forstanden selv
+maa ansee for hævet over enhver Tvivl, den Forudsætning,
+at der i Virkeligheden er Noget, som vi i dette nærværende
+Liv aldrig faae at vide, at den menneskelige
+Viden, med andre Ord, har en uoverskridelig Grændse.
+
+Der er mange Sætninger, der tage sig fornuftig ud,
+saalænge de holdes i al Almindelighed; og dog, naar
+der tales om noget Bestemt, og det gjælder om en virkelig
+Anvendelse, kan det pludselig vise sig, at de ved
+første Øiekast antagelige Sætninger indeholde en skjult
+Tvetydighed og give en falsk Mening. Herhen høre den
+abstrakte Filosofis almene Sætninger om den menneskelige
+Videns Grændser. Skulde der, vil man sige, være
+Noget for Viden aldeles Utilgængeligt, da maatte der
+jo saavel i vort eget Indre som i Tingenes Verden være
+Noget, der var aldeles utilgængeligt for Tanken, Noget
+saa gaadefuldt, at det unddrog sig al vor Begriben, fordi
+det unddrog sig alle saavel Naturens som Tankens Love.
+Men et saadant hemmelighedsfuldt, i sig utænkeligt
+% --- p. 391 ---
+\setcounter{footnote}{0}%
+\opage{391}Væsen er et sandt Uvæsen. Hvor farligt det er at give
+sig hen til uklare Forestillinger om et mystisk Væsen,
+hvis uforklarlige Virksomhed ikke er bunden til nogen
+tænkelig Lov, hvis Aabenbarelser spotte alle Begreber
+om Tingenes Sammenhæng ved betingede Aarsager og
+tilsvarende Virkninger, kan sees af Fornuftens uafladelige
+Kamp med Overtroen\footnote[1]{Overtroens Væsen er at antage Aarsager uden Love.}. I Kina f. Ex., hvor en forstandig
+Opfattelse af de synlige Ting og deres Forbindelse
+dog er naaet saavidt, at man til Hverdagsbehov er nogenlunde
+hjemme i Astronomien, viser Almanaken udtrykkelig,
+hvad en Kineser hver Dag Aaret rundt maa lide
+af hemmelig Angst for Tilfældenes gaadefulde Spil; kloge
+Forskrifter ere nødvendige. En kinesisk Kalender, begyndende
+med den 8de Februar, Kinesernes Nyaarsdag, foreskriver:
+»Den Første kan du gjøre dine religiøse Offringer
+(saavel af Høns som Fisk); du kan henvende
+dig til Himlen (i Taksigelser, Bønner, Løfter --- ved at
+afbrænde Guldpapir, Straafigurer eller Fyrværkeri i uendelig
+Mangfoldighed); du kan klæde dig i Galla, med
+Skindhue eller elegant Livbaand\dots{}. Den Femte maa
+du ikke begynde en Reise\dots{}. Den Ottende er tvivlsom\dots{}.
+Den Tiende kan du indgaae Ægteskab\dots{}.
+Den Trettende maa du Klokken fem om Morgenen sidde
+med Ansigtet vendt mod Sydost«. Uden at miskjende den
+europæiske Kulturs store Fortrin for den kinesiske, kan
+man dog, naar man ret betænker, hvor farlig det endnu
+i vor oplyste Tid er at være Tretten tilbords, at lægge
+to Knive overkors, at tage en Knappenaal op om Mandagen,
+begynde paa Noget om Fredagen o. s. v., med
+
+% --- p. 392 ---
+\setcounter{footnote}{0}%
+\opage{392}Grund paastaae, at der midt i den civiliserede Verden
+endda ikke er saa ganske Faa, som med sky Blik til
+Tilfældets Dør, der altid staaer paa Klem, bære paa
+en kinesisk Angst for hemmelige Magters lunefulde Indgriben
+i Tingenes Sammenhæng.
+
+Skal Slægten nogensinde naae saa vidt, at den omsider
+faaer Bugt med al denne overtroiske Frygt og
+bliver alle disse Ængstelser, disse uhyggelige Anelser
+kvit: da maa den efterhaanden lære at gjøre sig fri
+for mystiske Forestillinger om uopløselige Gaader. Men
+hvad vil dette nu sige Andet, end at Tankens Lys i
+Bevidstheden tilsidst maa blive saa klart, at alle Ting
+i Verden vise sig som nødvendige Aabenbarelser af den
+evige Fornuft. Fornuften i Verden og Fornuften i Mennesket
+er eet og samme Væsen; Menneskets Viden om
+Tingene svarer nøiagtig til dets Viden om sig selv. Er
+det utænkeligt, at Noget kan være til, som ifølge sin
+Natur falder udenfor Fornuftens Grændse, da er jo hermed
+givet, at der umulig enten paa Jorden eller i Himlen
+eller i Afgrundene kan være Noget til, som ifølge
+sin Natur falder udenfor den menneskelige Videns Grændse.
+
+Med den her opstillede Synsmaade gaaer det fortræffeligt,
+saalænge man, som sagt, bevæger sig indenfor
+de almindelige Betragtningers Omkreds. Ved idelig
+at beraabe sig paa Fornuften og Lovene, Tænkningens
+og Tingenes uforanderlige Love, kan man endog give
+Sagen et Udseende, som om de strenge, forskende Videnskaber,
+Fysik, Kemi, Fysiologi, Naturhistorie o, s. v.   % PRINTED AS IS (Bind 2, p. 392): „Naturhistorie o, s. v.“ comma for the stop of o. (b1-19-04)
+alle forenede sig med Filosofien om at stadfæste den
+Grundsætning, at den menneskelige Viden ikke har nogen
+sidste endelig Grændse. Tage vi derimod Sagen som
+% --- p. 393 ---
+\setcounter{footnote}{0}%
+\opage{393}den i Virkeligheden er, saa viser der sig noget Andet.
+Thi saa viser det sig, at Grundsætningen om den menneskelige
+Videns absolute Grændse ingenlunde staaer i
+Strid med Grundsætningen om Lovenes Uforanderlighed;
+saa viser det sig, at Naturvidenskaberne, langt fra at
+nægte den skarpt betegnede Vidensgrændse, tvertimod,
+alle for en og en for alle, forudsætte den og holde den
+i Hævd.
+
+Besinde vi os paa, hvorledes det egenlig er gaaet
+til, at Naturvidenskaberne i den nyere Tid have kunnet
+tage et saa mægtigt Opsving og opnaae saa store mærkværdige
+Resultater, da er Grunden hertil bekjendt nok,
+thi den ligger i Methoden. Methoden, den rette Fremgangsmaade,
+bestemmes netop derved, at man strax fra
+Begyndelsen af gjør sig Rede for, hvad der under givne
+Betingelser kan undersøges og hvad der ligger udenfor
+Undersøgelsen, hvad der kan vides og hvad der ikke
+kan vides. Saalænge Grændsen mellem det, der kan
+vides, og det, der ikke kan vides, endnu var svævende
+og ubestemt, saaledes som i Oldtiden og gjennem hele
+Middelalderen, saalænge var ogsaa Undersøgelsernes
+Gang vaklende, og Udbyttet ubestemt; Stjernetyderi,
+Guldmageri, Grublerier over de Vises Sten, slige mystiske
+og magiske Bestræbelser vise tydelig nok, hvor
+uklar Bevidstheden var over Videnskabens Grændser og
+Opgaver.
+
+Det er virkelig mærkværdigt at see den Skarphed,
+hvormed de strenge Videnskaber udskille det, der
+ligger udenfor Viden, fra det, som kan og maa blive
+Gjenstand for videnskabelig Undersøgelse. »Formaalet
+for Mekaniken«, hedder det, »er at udgrunde de almin%
+% --- p. 394 ---
+\setcounter{footnote}{0}%
+\opage{394}delige Love for de mekaniske Naturkræfters Ligevægt
+og for Massernes Bevægelser, hvorved en fuldkommen
+Orden og Harmoni vedligeholdes i Legemverdenens Fænomener«.
+Man skulde nu mene, at de mekaniske Kræfters
+skjulte Væsen maatte fra Grunden af blive opklaret
+i den analytiske Mekanik; men her gives udtrykkelig
+den Erklæring, \emph{at vi ikke vide, hvad Kraft er.}
+»Naar et Legeme« --- med disse Ord begynder Laplace
+sin »Himlens Mekanik« --- »forandrer sin Stilling imod
+et System af Legemer, hvilket vi ansee for hvilende,
+saa synes det os at bevæge sig«; og han tilføier: »den
+besynderlige Egenskabs Natur, som gjør, at et Legeme
+forflyttes fra et Sted til et andet, er og vil bestandig
+forblive ubekjendt; man har betegnet den med Navnet
+Kraft, men man kan kun bestemme dens Virkninger og
+de Love, hvorefter den virker«. En lignende Angivelse
+af Videns Grændse møde vi i den kemiske Fysik, f. Ex.
+i Læren om Varmen. »Følelsen er i Stand til ved Legemerne
+at skjelne mellem forskjellige Tilstande, som
+man udtrykker ved Ordene: \emph{hed}, \emph{varm}, \emph{kold} o. s. v.
+Naar et Legeme, som man kalder koldt, bliver varmt
+eller hedt, voxer dets Rumfang, det udvider sig. Den
+\emph{ubekjendte Aarsag,} som bevirker Legemernes Udvidelse,
+og som tillige frembringer de forskjellige, anførte
+Indtryk paa vor Følelse, kalder man Varme«.
+Altsaa: vi vide ikke, hvad Varme er; vi vide da heller
+ikke, hvad Magnetisme er, vi vide ikke, hvad Elektricitet
+er; vi vide ikke, hvad Aarsagen til en kemisk
+Tiltrækning er; kort sagt: der er i Grundlaget for alle
+naturvidenskabelige Lærebygninger nedlagt en Tilstaaelse
+af, at den menneskelige Viden har en uoverskridelig
+% --- p. 395 ---
+\setcounter{footnote}{0}%
+\opage{395}Grændse. Hermed have de exacte Videnskaber uden Omsvøb
+indrømmet, at Tilværelsen trods Tingenes naturlige
+Sammenhæng har sine Gaader; og dog er der vel
+Ingen, der vil paastaae, at den forudsatte Vidensgrændse
+vil indgyde Menneskene en hemmelig Angst for Naturens
+dunkle Magter, eller bringe nogen Moders Sjæl til
+at berede sig paa ubekjendte Muligheder ved at sidde
+»den Trettende Klokken fem om Morgenen med Ansigtet
+vendt mod Sydost«.
+
+Betragte vi Forholdet mellem Sjæl og Legeme, da
+kan Ingen tvivle om, at det i alle Henseender er bestemt
+ved Love; ikke desto mindre maae Undersøgelserne
+begynde fra to aldeles forskjellige Udgangspunkter.
+Vælges Udgangspunktet i det Sjælelige, saa faae vi
+Psykologien; vælges det i det Legemlige, faae vi Fysiologien.
+Psykologien holder sig til de indre Erfaringer,
+til vor umiddelbare Bevidsthed om Følelse, Fantasi,
+Hukommelse, Forstand, Drift, Villie o. s. v. Fysiologien
+holder sig til de ydre Erfaringer, den betragter
+det menneskelige Legeme, som ethvert andet Legeme,
+undersøger dets Organer og Væv, dets indre
+Bygning og Sammensætning dels fra et mekanisk, dels
+fra et kemisk, dels fra et morfologisk Standpunkt.
+
+Nu er det vel saa, at Undersøgelsen af det indvortes
+Sjælelige bestandig forudsætter Henblik til det
+Legemlige, og at omvendt Udtydningen af de legemlige
+Dannelser betinges af Henblik til de sjælelige Funktioner;
+hvorledes skulde det vel være muligt for Psykologen
+at gjøre sig noget Begreb om Synsvirksomheden
+uden Kjendskab til Øiet, eller for Fysiologen at
+tyde Øiets Bygning uden Hensyn til Synsvirksomheden?
+% --- p. 396 ---
+\setcounter{footnote}{0}%
+\opage{396}Psykologien og Fysiologien maae komme hinanden imøde;
+de maae flittig konferere og korrespondere med hinanden.
+
+Desuagtet ere de to Videnskaber af en saa uligeartet
+Karakter, at den ene udgjør en Del af Filosofien,
+den anden af Fysiken. Der gives ingen ligefrem
+Overgang fra den ene til den anden: Overgangen sker
+ved et Spring. Følelse og Følenerve ere paa det Inderligste
+forenede; men fra den fysiologiske Analyse af
+en Følenerve til den psykologiske Erkjendelse af en Følelse,
+hvilken uhyre Afstand! Gjenstanden for den udvortes
+Erfaring er absolut uensartet med Gjenstanden
+for den indvortes. Hvorlænge end Fysiologi og Psykologi
+fortsætte deres Undersøgelser, og hvormeget de
+end i Tidernes Løb kunne nærme sig til hinanden, der
+kommer dog aldrig den Tid, da de tilfulde forstaae hinanden.
+De tale hver sit Sprog, og de to Sprog ere
+saa himmelvidt forskjellige, at hvad der siges i det ene,
+ikke ved nogensomhelst Oversættelse lader sig gjengive i
+det andet. Det er, som om Loven og Gaaden her havde
+sat hinanden Stævne; Loven kan erkjendes, men Gaaden
+er uopløselig. Naar en Følenerve overskæres, saa taber
+den paagjældende Del af Legemet al Følelse; det er en
+Lov, som Fysiologien har opdaget, og hvoraf den kan
+gjøre en rig Anvendelse; men derved er den ikke kommen
+Besvarelsen af det Spørgsmaal, hvorledes Nerven
+forplanter Følelsen, et Haarsbred nærmere. Og hvad
+Lighed er der saa mellem Hjernevindinger, Hjerneorganer,
+den hvide og den graa Marv, og det Bevidsthedsliv
+af Tanker og Forestillinger, der under Tilsyn af et styrende
+Selv arbeider i Hjernen?
+
+% --- p. 397 ---
+\setcounter{footnote}{0}%
+\opage{397}Det er aldeles umuligt, at enten en Hjernevirksomhed
+skulde kunne frembringe en Tanke, eller en Tankevirksomhed
+foraarsage en Bevægelse i Hjernen, dersom
+der ikke er en indre fælles Natur, hvori de begge forenes.
+En saadan Natur maa være legemlig som Hjernen
+og sjælelig som Tanken; men en saadan Natur er
+hverken Gjenstand for Tænkning eller for Sandsning;
+den unddrager sig enhver mulig Undersøgelse: den ligger udenfor den menneskelige Videns Grændse.
+
+Og dog maa der være en saadan Natur; vi vide
+det med Vished: vi kunne bevise det psykologisk. Hvis
+der i Hjernevirksomheden ikke var Andet end det, vi
+ved Hjælp af fysiologisk Iagttagelse kunne forestille os:
+da vilde en Hjernevirksomhed umulig kunne frembringe
+en Tanke. Den fysiologiske Virksomhed er, hvad enten
+den opfattes fra den mekaniske eller kemiske eller
+morfologiske Side, legemlig, ene og alene legemlig. At
+nu en Virksomhed i en legemlig Del kan frembringe
+Forandringer i en anden legemlig Del, kunne vi vel forstaae,
+thi her er Aarsagen ensartet med Virkningen;
+men at en Virksomhed i det blot Legemlige kan frembringe
+en Forandring i det aldeles Ulegemlige, er en
+Modsigelse, thi her er Aarsagen absolut uensartet med
+Virkningen. Hvorledes en Tanke kan frembringe en
+anden Tanke, Tanken om Grund f. Ex. Tanken om
+Følge, Tanken om Øiemed Tanken om Midler, er indlysende,
+thi her er det Frembringende ensartet med det,
+som frembringes; men at Tanken, en ulegemlig Aarsag,
+skulde i Hjernen kunne frembringe en legemlig Virkning,
+er utænkeligt, thi Aarsagen er igjen uensartet,
+absolut uensartet med Virkningen.
+
+% --- p. 398 ---
+\setcounter{footnote}{0}%
+\opage{398}Men, indvender man, naar vi nu vide, at Forbindelsen
+mellem Sjæl og Legeme absolut maa beroe paa
+en for begge fælles Natur, en Grundnatur, hvori det
+Uligeartede er ligeartet, saa vide vi jo, at en saadan
+Natur er til, og kunne altsaa ikke uden Modsigelse paastaae,
+at dens Væren falder udenfor vor Viden. Det
+Sofistiske i en saadan Indvending er iøinefaldende. Naar
+vi sige, at der her er Noget, som ligger udenfor vor
+Viden, saa sige vi ganske rigtig, at vi have en Viden
+om, at et saadant Noget er, men vi sige jo ogsaa, at
+vi ikke kunne komme ud over denne almene Viden og
+bestemme det Ubekjendte nærmere; hermed er Grændsen
+fastsat.
+
+Sjælens lovbestemte Forbindelse med Legemet er
+altsaa en Livsgaade. Saa enfoldig som denne Sætning
+er, saa har den dog, hvad den sunde Menneskeforstand
+let vil indsee, overordenlig vigtige Følger. Følgerne vise
+sig strax, naar Talen er om Skilsmissen mellem Sjæl
+og Legeme, om Døden; thi det forstaaer sig af sig selv:
+som Forbindelsen er, maa ogsaa Skilsmissen være. Forholdet
+mellem Loven og Gaaden bliver atter synligt.
+
+Det er en Lov, ligesaa afgjørende for Psykologien
+som for Fysiologien, at naar Tænkningsorganerne forstyrres,
+saa forstyrres ogsaa Tænkningen, og at Bevidsthedens
+Lys udslukkes, naar Legemet døer. Beraabende
+sig paa denne Lov have Naturalisterne anset
+det for afgjort, at Sjælen nødvendig maatte gaae tilgrunde
+med Legemet. Det er en meget overilet Paastand.
+Hverdagserfaringen lærer, at Bevidstheden kan
+fordunkles, som f. Ex. i Søvne, ja endog forsvinde, som
+% --- p. 399 ---
+\setcounter{footnote}{0}%
+\opage{399}i en dyb Besvimelse, og dog vende tilbage, fordi det
+sjælelige Liv ikke ophører. Det Spørgsmaal: om Sjælen
+er i Stand til at overleve Legemet, hænger paa det
+Nøieste sammen med det Spørgsmaal: om det sjælelige
+Liv trods sin Afhængighed af de legemlige Organer dog
+ikke allerede i denne Tilværelse er hævet over Forkrænkeligheden
+derved, at det i sit dybere Grundlag, i
+den forborgne Natur, hvorpaa Foreningen af Sjæl og
+Legeme oprindelig beroer, har Kræfter og Betingelser
+for at danne sig et nyt Legeme, et Legeme af høiere
+Orden, naar det jordiske er opløst.
+
+»Mennesket døer som en Hund», siger en aandrig
+Fysiolog; men, spørge vi, hvorledes døer saa Hunden?
+Som et Menneske! Det er en skjøn Forklaring. Fysiologerne
+selv tilstaae, at de ikke vide, hvad Livet er;
+vi tage dem paa Ordet, og minde dem om, at de heller
+ikke vide, hvad Døden er. Det er altsaa, thi her er
+vor Videns Grændse, muligt, at Sjælen døer med Legemet,
+men det er ogsaa --- thi Videns Grændse kan ikke
+overskrides --- muligt, at Sjælen overlever Legemet.
+Den Indvending, at et tilkommende Liv ikke lader sig
+tænke, da ethvert Forsøg paa at danne sig en tydelig
+Forestilling om en høiere Verdensorden opløser sig i
+lutter Modsigelser, har ingen Gyldighed i den strenge
+Videnskab. Fysiken, der holder sig strengt til de naturlige
+Kjendsgjerninger, støder idelig paa Fænomener,
+hvis indre Sammenhæng den ikke kan begribe. Den
+kan, efter at have udfundet Lovene, lægge de anerkjendte
+Love til Grund for en tilsvarende Forklaring,
+og endda kan Forklaringen opløse sig i Modsi%
+% --- p. 400 ---
+\setcounter{footnote}{0}%
+\opage{400}gelse\footnote[1]{Et Exempel. Ampère forklarer Magneten som bestaaende af mangfoldige molekulære, parallele og ensstillede elektriske Kredsløb. Af denne Hypothese kunne alle magnetiske Fænomener udtydes paa en til de mathematiske Formler nøiagtig svarende Maade. Men --- disse Kredsløb skulle nu foregaae midt i en Leder (Staalet f. Ex.), og maae da, ifølge Ampères egen Lov, forlade Molekület og udbrede sig over det hele Legeme. Tilstanden kan altsaa ikke vedblive, medmindre Molekulet bestandig frembringer et nyt Kredsløb. Men --- et elektrisk Kredsløb forudsætter et tilsvarende Forbrug og en tilsvarende Varmefrembringelse; men ved Magneten er der ingen Varmefrembringelse og intet Forbrug, altsaa heller intet elektrisk Kredsløb.}. Skulde Naturlæren fornægte de Fænomener, hvis
+Væsen den ikke kan begribe, da maatte den ende med
+at fornægte den hele Natur.
+
+Paa den sikkre Fastsættelse af Videns Grændse
+beroer Forholdet mellem Tro og Viden. Naar den yderste
+Grændse for menneskelig Viden er naaet, vil Løsningen
+af Livets høieste Opgaver altid stille sig saaledes,
+at der fremkommer to lige gjældende og dog hinanden
+ophævende Muligheder: det er muligt, at Sjælen
+er dødelig, og det er muligt, at den er udødelig, det er
+muligt, at der er en levende, personlig, villende Gud
+til, men det Modsatte er ogsaa muligt. Først naar Videnskaben
+efter alsidig Prøvelse har givet begrundet
+Vished for, at den ene af de to Muligheder har samme
+videnskabelige Gyldighed som den anden, har Viden sagt
+sit sidste Ord og maa overlade Afgjørelsen til Troen.
+Troen vælger nu den ene af de to Muligheder, Vantroen
+den anden. Skilsmissen mellem Tro og Vantro
+skeer ved Valget; Valget er ikke videnskabeligt, men
+absolut personligt, her vælges i Kraft af personlige
+Grunde.
+
+% --- p. 401 ---
+\setcounter{footnote}{0}%
+\opage{401}Paa det ved Valget bestemte Grundlag kunne filosofiske
+Lærebygninger atter opføres; men disse Lærebygninger
+adskille sig nu fra de direkt videnskabelige
+derved, at Grundene ere Personlighedsgrunde, at det
+ikke er Nødvendigheden, men Friheden, hvorpaa Begrundelsen
+hviler. Gaaden og Loven træde herved ind
+i en ny Fase.
+
+Det er en ligesaa bekjendt som forslidt Indvending,
+at Personlighedslæren ved i Frihedens Navn at gjøre
+Troen til selvstændigt Erkjendelsesprincip indfører Vilkaarligheden,
+gjør Brud paa Lovene og kommer i Strid
+med Tingenes naturnødvendige Sammenhæng. Navnlig
+er det Læren om Underet, der vækker Forargelse. Det
+kan, siger man, fra Videnskabens Standpunkt vel indrømmes,
+at der er meget Gaadefuldt i Naturen. Naturlæren
+opdager jo bestandig nye Fænomener, nye
+Kræfter og nye Muligheder; men disse Opdagelser kunne
+ingenlunde svække vor Overbevisning om Tingenes nødvendige
+Sammenhæng, da enhver ny Opdagelse er, om
+ikke altid en Opdagelse af nye Love, saa dog en Udvidelse
+og Stadfæstelse af de allerede bekjendte. Med
+Villiesprincipet indføres derimod Vilkaarligheden; men
+Vilkaarligheden, de vilde Muligheders Løsen, er uforenelig
+med Lovene.
+
+Hvorledes det forholder sig med denne Sag, kan
+oplyses saavel fra en menneskelig som fra en guddommelig
+Side. Vi tillægge jo ikke blot Menneskene,
+men ogsaa Dyrene, vilkaarlige Bevægelser, Bevægelser
+der have deres Aarsag i umiddelbar Selvbestemmelse.
+Dersom det nu virkelig var sandt, at enhver Yttring af
+vilkaarlig Selvbestemmelse stred mod Naturlovene, da
+% --- p. 402 ---
+\setcounter{footnote}{0}%
+\opage{402}maatte man nødvendig antage Eet af To: enten er Vilkaarligheden
+et Skin, og der er slet intet Vilkaarligt,
+eller, hvis der gives vilkaarlige Livsyttringer, saa maa
+Vilkaarligheden hvert Øieblik gjøre Brud paa Lovene.
+Maae nu begge Antagelser erklæres for falske, saa er
+hermed tillige givet, at selvbestemmende Væseners Vilkaarlighed
+meget vel kan forenes med uforanderlige
+Love.
+
+Der er i Tilværelsen en gjennemgaaende Modsætning
+mellem Naturens og Aandens, Nødvendighedens og
+Frihedens Væsen, men der er i Principet selv ligesaa lidt
+nogen Strid imellem Lovene for de to Regioner, som
+der indenfor Naturrigets Omkreds er nogen Strid mellem
+de mekaniske og kemiske Love.
+
+Ja, vedbliver man fra Kritikens Side, Sligt lader sig
+nok saadan høre i Almindelighed, og saalænge det kun høres
+i al Almindelighed, klinger det ret godt; men drage vi
+Tilfældene frem, saa viser sig strax det Urimelige. At
+den menneskelige Villies Vilkaarlighed ikke kan bryde
+Naturens Sammenhæng, følger ligefrem af, at Menneskets
+Villie er afmægtig; men ifølge Personlighedslærens
+øverste Grundtanke, skal Guds almægtige Villie
+jo kunne gribe vilkaarlig ind i Naturens Orden, gjøre
+Mirakler og altsaa bryde Lovene. --- Her er nu atter
+en Blanding af Sandt og Falsk. Det er ganske vist et
+Særmærke for Underet, at det har den almægtige Villie
+til frit bestemmende Aarsag; men det er fra Troens og
+Personlighedens Synspunkt ingenlunde Underets Kjende,
+at det skulde medføre Brud paa de guddommelige
+Love. At gjøre det Lovstridige til Underets Kjendemærke
+er et Paafund af den nyere Kritik. Grunden til,
+% --- p. 403 ---
+\setcounter{footnote}{0}%
+\opage{403}at dette Paafund har vundet saa stærk Indgang, at Sætningen
+nu er nær ved at blive ophøiet til en af Videnskabens
+store Grundsætninger, ligger klart for Dagen.
+For at tage sig ud som Videnskab og fuske i at forklare
+eller dog forsvare Miraklet, har Theologien fra
+Arilds Tid af maattet overskride Videns Grændse; for
+at gjendrive den fuskeragtige Forklaring og blive Miraklet
+kvit, er den negative Kritik fra sin Side ligeledes
+bleven fristet til at overskride Videns Grændse. Theologien
+slutter: naar Gud er almægtig, saa maa han
+efter Behag kunne tilintetgjøre de naturlige Aarsager
+og suspendere Lovene; Kritiken slutter: naar Gud gjør
+en Gjerning, der ikke lader sig forklare efter de os bekjendte
+Love, saa gjør han en Ugjerning og kommer i
+Modsigelse med sig selv. Det er falsk Logik\footnote[1]{Ved at forandre Udtrykket og sige: en Begivenhed, der strider mod en eneste af de os bekjendte Love, strider imod alle Love, vinder man kun en tvetydig Fordel. Udtrykket: at stride mod en Lov, kan nemlig tages i to Betydninger. Det kan betyde: at staae i Modsigelse med Lovens Begreb som Lov (at tegne en rund Firkant, fremvise en Virkning uden Aarsag, sætte 2 + 2 = 5 o. desl.). I denne Mening finder Udtrykket ingen Anvendelse paa Miraklet. Det kan dernæst betyde: at være i tilsyneladende Strid med en virkelig Lov, saa at Opfyldelsen af den ubekjendte Lov synes at ophæve den bekjendte. I denne Mening finder Udtrykket Anvendelse ikke alene paa Miraklet, men ogsaa paa Naturbegivenhederne indbyrdes. Forestille vi os, at En, der hidtil kun havde lært at forklare Fænomener efter mekaniske Love, pludselig blev Vidne til overraskende Fænomener af magnetiske, elektriske, elektromagnetiske Love: mon han da ikke ville mene at see lutter Vidundere?}. Den
+tomme Ræsonneren over, hvad Gud kan gjøre, og hvad
+Gud ikke kan gjøre, forvirrer Hjernerne.
+
+Ifølge det her Anførte vil nu Enhver med sund
+Forstand og almindelig Dannelse kunne sige sig selv,
+% --- p. 404 ---
+\setcounter{footnote}{0}%
+\opage{404}hvor vigtigt det er, at der een Gang for alle sættes en
+Grændse mellem det, som kan vides, og det, som ikke
+kan vides; først naar Grændsen er sat, og dens Gyldighed
+anerkjendt, ville Liv og Videnskab kunne mødes
+i ærlig Forstaaelse og see hinanden i Øiet. En Opgave
+af saa gjennemgribende Betydning vil naturligvis
+efterhaanden trænge sig frem og blive behandlet i alle
+Lande af alle Tænkere, saa langt som Videnskaben
+naaer; men det udelukker ikke, at dens Løsning kan
+ligge den ene Folkeindividualitet nærmere end den anden.
+Den tydske Spekulation er gaaet ud over Grændsen;
+den engelske Erfaringsfilosofi er ikke naaet til Grændsen;
+den franske Forstandslogik med de exakte og dog
+bevægelige Former gjør Grændsen flydende abstrakt ved
+at gjøre den mathematisk; det er da ikke urimeligt, at
+et Folk, hvis eiendommelige Literatur har en Holberg
+til Fader og en dybsindig Mythologi til Moder, et Folk,
+med hvis jævne sunde Forstand det saa naturlig stemmer,
+at det ikke har forhastet sig med at bygge himmelstormende
+Systemer, men givet sig Tid og først begyndt
+at filosofere paa egen Haand, efter at det i Naturlære,
+Historie og Poesi har sikkret sig et forsvarligt
+Grundlag for Aandslæren, at, sige vi, et saadant Folk
+maaske kunde faae Øiet op for en af Nutidens væsenligste
+Opgaver, at dets sildig fødte Filosofi kunde voxe
+ved Opgaven og fremme dens Løsning ved at yde, om
+end kun et Bidrag; et Bidrag er altid Noget.
+\signature{R. \emph{Nielsen}.}
+
+\end{document}

@@ -1,0 +1,806 @@
+% =====================================================================
+%  R. Nielsen, PROPÆDEUTIK OG LOGIK.  Cursus for Universitetsaaret 1868-69.
+%  Kjøbenhavn: Forlagt af den Gyldendalske Boghandel (F. Hegel); trykt hos J. H. Schultz, 1868.  6 + 456 pp.  Fraktur.
+%
+%  THE NEW PAGES ONLY.  The volume is a composite: 445 of its 456 text pages are sheets of three earlier books in the
+%  same setting (the same type, line for line), and those books are transcribed in this repository.  This file holds
+%  what was set for 1868: the title page, the separately paginated Oversigt (pp. [1]-6), pp. 81-89 (the opening of
+%  section B, »Propædeutik og Ideernes Logik«; pp. 81 and 89 given whole although their first 17 / last 25 lines are the
+%  earlier setting) and pp. 263-264 (the seam into section C, »Propædeutik og Ideelære«).  The rest:
+%    pp. 1-80 (and p. 81, lines 1-17) = Forelæsninger over »Philosophisk Propædeutik« 1860-61 (1862), pp. 1-81
+%                                       (texts/nielsen/propaedeutik-1860-61)
+%    pp. 90-262 (and p. 89 from »1) Ordet og Gud«) = Grundideernes Logik II (1866), the same pages
+%                                       (texts/nielsen/grundideernes-logik-2)
+%    pp. 265-456 = Grundideernes Logik I (1864), the same pages (texts/nielsen/grundideernes-logik)
+%  How this was established (map1868.py, concord.py, setting.py, changes.py, concordance.tsv in
+%  ebook-method/propaedeutik-1868/): the 1868 scan's text layer matched page for page against the transcriptions, and
+%  its sequence of line-end words against the earlier scans' layers (80-100 % on shared pages, 0-9 % on new ones); the
+%  earlier books' printed errata are not corrected in 1868, and a three-way word diff found no textual change.
+%
+%  TRANSCRIPTION -- GENERATED; DO NOT EDIT BY HAND.  Rebuild, chained (&&), from the repo root:
+%    python3 ebook-method/propaedeutik-1868/draft.py --emit --force
+%    python3 ebook-method/collate/check.py propaedeutik-1868 --witness ocr --apply
+%    python3 ebook-method/propaedeutik-1868/oepass.py --apply
+%    python3 ebook-method/propaedeutik-1868/finish.py --apply
+%
+%  WORD-ACCURACY (2026-10-13).  No e-book and no other transcription of these pages exists, except that p. 89 from
+%  »1) Ordet og Gud« and p. 263 are the type of Grundideernes Logik II, whose transcription served as their draft (the
+%  layer garbles the Greek and interleaves the note).  The draft (Google's layer) was collated word by word, with
+%  punctuation and word division, against tesseract (tessdata_best script/Fraktur), with deu_latf and frak2021 as third
+%  and fourth readings: 613 disagreements.  100 settled by check.py's own rules, 358 by rules.py (dash+ and case rules
+%  withdrawn: Google's 600-ppi scans make spurious dashes), 26 Greek words on p. 89 by hand (GL II's type), 142 at the
+%  image in BLIND crops read by two Sonnet readers (controls 4 of 4 right; a blind audit of 32 rule decisions found no
+%  rule error, 3 reader slips), 34 by hand from the readers' notes and 4 line crops.  OPEN 0.
+%
+%  FULL PAGE CHECK (2026-10-13, pagecheck.py, every page: the title leaf and pp. 1-6, 81-89, 263-264, 4613 words).
+%  Every page was transcribed BLIND at the image by three further Sonnet readers and compared word by word; every
+%  difference was settled in the main session, the doubtful ones in line crops (.render/propaedeutik-1868-adj*).
+%  Transcription errors found and mended: 37 of words (8.0 per 1000), almost all of the classes that the layer and
+%  tesseract SHARE in Fraktur (k read f: iffe, funne, frafjende; s read f: faadant, fingulære; R read N: Net; V read B:
+%  Basen, Bærende; Ø read D: Die, Diet, Diemed; I read J; æ read a: vare, Vasen, formales; Kant read Kaut); 6 of
+%  punctuation (two dashes, a parenthesis, three quotation marks); 7 word divisions that the crop readers' line-break
+%  forms had brought in (Qva-litet, Gjen-/standen ...); and the emphasis: 42 letterspaced runs, a bold phrase and the
+%  bold heads, none of which the OCRs see.  Since every page was read, these are all the errors the check could find;
+%  what it cannot see is a reading in which the transcription and the blind reader agree on the same fault.  The
+%  readers' Qu for the print's Qv, Character for Characteer, Enhed for Eenhed and the like were their slips (crops).
+%  Greek accents on p. 89 follow GL II (the same type); a reader read acutes where GL II has graves, below what the
+%  crops resolve.
+%  PRINTED AS IS: „(Uende-/hedsbegrebet)“ p. 263 (a syllable lost when the note's first line was reset for 1868).
+%  The ø rule (CLAUDE.md): 13 o-forms set as ø (følgende, Størrelse, føies, Dømmende ...) and „løse“ (p. 88).
+%
+%  PAGE MAP.  Scan ~/bibliotek/Nielsen, Rasmus/Propædeutik-1868.pdf (Google Books, 482 PDF pp.; SCANS.tsv).
+%  PDF 9 and 11: the title leaf, scanned twice; PDF 13-18: Oversigt pp. [1]-6 (printed p = PDF - 12); text pp. 1-456 = PDF 19-474
+%  (printed p = PDF - 18).  PDF 476: the publisher's advertisement of Nielsen's writings (not transcribed, Hans
+%  2026-10-13).  Other PDF pages blank, or Google's notice (PDF 1).
+%
+% =====================================================================
+\documentclass[12pt,a4paper,openany]{book}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{libertinus}
+\usepackage{graphicx}
+\DeclareUnicodeCharacter{0254}{\reflectbox{c}}  % ɔ (U+0254) = reversed c
+\DeclareUnicodeCharacter{A75B}{r}   % r rotunda (ꝛc. = etc.)
+\DeclareUnicodeCharacter{221E}{\ensuremath{\infty}}  % ∞ (Oversigt p. 1)
+\usepackage[danish]{babel}
+\usepackage{textalpha}   % polytonic Greek typed directly (p. 89), as in grundideernes-logik-2
+\usepackage[protrusion=true,expansion=true]{microtype}
+\usepackage{setspace}
+\usepackage[margin=1.3in]{geometry}
+\usepackage{fancyhdr}
+\usepackage{hyperref}
+\hypersetup{pdftitle={Propædeutik og Logik. Cursus for Universitetsaaret 1868--69 (the new pages)}, pdfauthor={Rasmus Nielsen}, hidelinks}
+\setlength{\headheight}{15pt}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LE,RO]{\thepage}
+\fancyhead[C]{\textit{R. Nielsen: Propædeutik og Logik (1868)}}
+\renewcommand{\thefootnote}{\ifcase\value{footnote}\or *)\or **)\or ***)\else
+  \arabic{footnote})\fi}
+\setstretch{1.3}
+\usepackage{marginnote}
+\newcommand{\opage}[1]{\marginnote{\footnotesize\textit{[#1]}}}
+\newcommand{\apage}[1]{\marginnote{\footnotesize\textit{[#1]}}}
+\newcommand{\gr}[1]{#1}   % marks the Greek (p. 89) for tools; textalpha sets it
+% the end of a note begun on a page not transcribed here (p. 263: the note of GL II p. 262), set at the foot without a mark
+\newcommand{\contnote}[1]{\begingroup\renewcommand{\thefootnote}{}\footnotetext{\textit{[continued from p.~262:]} #1}\endgroup}
+% editorial seams: where the 1868 volume continues in the type of an earlier book (no-argument macros, so that the
+% collation, which reads only the printed words, does not see them)
+\newcommand{\editorial}[1]{\par\medskip\begin{center}\small\textit{[#1]}\end{center}\medskip\par}
+\newcommand{\seamOversigt}{\editorial{End of the Oversigt.  The text pp.~1--80, and p.~81 to the head »B.«, is
+  \emph{Forelæsninger over »Philosophisk Propædeutik« fra Universitetsaaret 1860--61} (1862), pp.~1--81, in the same
+  setting: see that transcription.}}
+\newcommand{\seamB}{\editorial{pp.~90--262 (and p.~89 from »1) Ordet og Gud«) are \emph{Grundideernes Logik II} (1866),
+  the same pages in the same setting: see that transcription.  p.~263 below is GL II p.~263 with one line taken up
+  from GL II p.~264.}}
+\newcommand{\seamC}{\editorial{pp.~265--456 are \emph{Grundideernes Logik I} (1864), the same pages in the same
+  setting: see that transcription.  End of the volume.}}
+
+\begin{document}
+
+
+
+% --- PDF 9, the title page; PDF 11 is the same leaf scanned a second time (cleaner; a pencilled underline under the
+% author's name and two strokes).  Read at the image by the page reader: the title large, the course line, the author and
+% the place in bold Fraktur; the publisher and printer small; the year in antiqua.
+\begin{titlepage}
+\begin{center}
+\vspace*{4em}
+{\Huge\textbf{Propædeutik og Logik.}}\\[2em]
+{\Large\textbf{Cursus for Universitetsaaret 1868--69.}}\\[3em]
+{\small Af}\\[1em]
+{\Large\textbf{R. Nielsen.}}\\[8em]
+{\small\textbf{Kjøbenhavn.}}\\[0.5em]
+{\small Forlagt af den Gyldendalske Boghandel (F. Hegel.)}\\[0.5em]
+{\footnotesize Trykt hos J. H. Schultz.}\\[0.5em]
+\textit{1868.}
+\end{center}
+\end{titlepage}
+
+\chapter*{Editorial note}
+\addcontentsline{toc}{chapter}{Editorial note}
+{\small This volume, Nielsen's course book for 1868--69, was made up for the most part of sheets of his earlier books,
+reissued in the same setting.  Only the pages composed for 1868 are transcribed here; the others are in the
+transcriptions of the earlier books:
+\begin{center}
+\begin{tabular}{ll}
+1868 & is \\ \hline
+Oversigt pp.~[1]--6 & new (below) \\
+pp.~1--80, p.~81 lines 1--17 & \emph{Forelæsninger over »Philosophisk Propædeutik« 1860--61}, pp.~1--81 \\
+p.~81 from »B.«, pp.~82--88, p.~89 lines 1--8 & new (below; pp.~81 and 89 given whole) \\
+pp.~89 (from »1) Ordet og Gud«)--262 & \emph{Grundideernes Logik II} (1866), the same pages \\
+pp.~263--264 & the seam into section C (below; p.~264 is new) \\
+pp.~265--456 & \emph{Grundideernes Logik I} (1864), the same pages \\
+\end{tabular}
+\end{center}
+Page numbers in the margin are those of the 1868 print.\par}
+
+% --- p. 1 ---
+\setcounter{footnote}{0}%
+\opage{1}\begin{center}{\large Oversigt.}\end{center}
+
+
+Vi aabne os et Indblik i den philosophiske Videns
+Eiendommelighed, idet vi begynde med at opfatte Philosophien
+som Modsigelseslære, som Mulighedslære og som
+Dialektik. For at charakterisere Dialektikens Forhold til de
+exacte Analyser tilføies et Overblik over Forholdet mellem den
+mathematiske og den philosophiske Behandling af Uendelighedsproblemet.
+Af dette Overblik fremhæves følgende Hovedpunkter.
+
+a) Enhver endelig Størrelse kan deles i uendelig mange
+uendelig smaa Dele, og Summen angives ved 0.∞. Da
+nu den ene endelige Størrelse ikke desto mindre er forskjellig
+fra den anden, saa følger heraf at det ene 0. ∞ maa kunne
+være forskjelligt fra det andet, at med andre Ord 0.∞ er
+en ubestemt Størrelse.
+
+b) Den ubestemte Størrelse 0. ∞ kræver en Bestemmelse
+af det uendeligt Lille og det uendeligt Store. Denne Bestemmelse beroer paa Forskjellen mellem faste og bevægelige
+Grændser. Den faste Grændse kan ikke overskrides; den
+bevægelige kan, saavel hvad Formindskelse som Formerelse
+angaaer, overskrides i det Uendelige.
+
+c) Da en Quotient af to foranderlige Størrelser forbliver
+uforandret, naar Tæller og Nævner enten divideres eller
+multipliceres med samme Størrelse, saa indsees heraf, at
+Quotienter af uendelige (smaa eller store) Størrelser maae
+kunne være ligesaa bestemte som af endelige.
+
+Paa disse Forudsætninger beroer det Uendeliges Analyse,
+hvis Udbytte for Philosophien er, at Modsigelserne mellem
+det Endelige og det Uendelige, som ellers behandles i altfor
+abstract Almindelighed, finde en punktuel dialektisk Løsning
+paa et exact Grundlag.
+
+% --- p. 2 ---
+\setcounter{footnote}{0}%
+\opage{2}\begin{center}\textbf{Propædeutik og Logik.}\end{center}
+
+
+Philosophiens almene Grundlag er Logik. Denne Videnskab
+kan behandles deels som formel Logik deels som Ontologie,
+Metaphysik eller Ideernes Logik.
+
+\begin{center}\textbf{Formel Logik}\\
+\textbf{i}\\
+\textbf{Grundrids.}\end{center}
+
+Den formelle Logik eller Læren om de abstract nødvendige Tankeformer deler sig i Læren om Begreb, Dom og
+Slutning.
+
+\begin{center}\textbf{Begreb.}\end{center}
+
+
+Tænkningen, som allerede er med i Sandsningen, hæver
+sig frem, idet den opløser de umiddelbare Sandsebilleder, danner
+ved Sammenligning og Abstraheren et Almeenbillede,
+fastholder det i Ordet, udvikler dets nødvendigt sammenhørende
+Væsensmærker og hæver det til et Begreb (\emph{Begrebsanalyse};
+Definition).
+
+Indbegrebet af de for et Begreb uundværlige Mærker
+kaldes Begrebets \emph{Indhold}, Antallet af de Gjenstande, hvorpaa
+det finder Anvendelse, kaldes dets \emph{Omfang} (Forhold
+imellem Omfang og Indhold; over- og underordnede Begreber;
+Slægts- og Artsbegreber).
+
+\begin{center}\textbf{Dom.}\end{center}
+
+
+Begrebet finder kun sit rene logiske Udtryk i Sproget;
+Ord forbindes til Sætninger, og i Sætninger udtales
+Domme. Den Sætning, der efter sin Form udtrykker et
+Begreb, er en logisk Dom. For at udtrykke Begrebet, maa
+Dommen formelig angive: \emph{Subjectet}, den Forestilling, der
+skal bestemmes, \emph{Prædicatet}, den bestemmende Forestilling,
+og \emph{Copula}, det bestemmende Forbindelsesord.
+
+Af Subjectets ved Copula bestemte Forbindelse med Prædicatet
+følger, at Dommen kan adskilles i en Fleerhed af lo%
+% --- p. 3 ---
+\setcounter{footnote}{0}%
+\opage{3}gisk forskjellige Domme, og Dommene \emph{inddeles}: efter \emph{Qvalitet}
+i bekræftende (a er b), benægtende (a er ikke b) og
+uendelige (Samvittigheden er ingen Fiirkant); efter \emph{Qvantitet}
+i singulære (dette a er b), particulære (nogle a ere b)
+og generelle (alle a ere b); efter \emph{Relation} i kategoriske (a er,
+ifølge sin Kategori, b), hypothetiske (dersom a er b, saa er
+c d) og disjunctive (a er enten b eller c eller d); efter \emph{Modalitet}
+i assertoriske (a er virkelig b), problematiske (a er
+muligviis b) og apodiktiske (a er nødvendigviis b).
+
+Fremgaaer Prædicatet med almeenlogisk Nødvendighed af
+Subjectet, kaldes Dommen \emph{analytisk}, kan Prædicatet kun
+ved en særegen Erfaring føies til Subjectet, kaldes Dommen
+synthetisk (\textit{synthetiske Domme a posteriori} og \textit{a priori}).
+
+\begin{center}\textbf{Slutning.}\end{center}
+
+
+Dommen maa begrundes, dens Gyldighed indsees; den
+Tænkningsact, hvorved en Doms Gyldighed udledes af een
+eller flere andre Domme, er en logisk Slutning. Har Slutningen
+kun een Forsætning (Præmis), kaldes den \emph{umiddelbar},
+har den flere Præmisser, kaldes den \emph{middelbar} (Slutningens
+Reqvisiter).
+
+De \emph{middelbare} Slutninger \emph{inddeles} i: de \emph{kategoriske},
+der betinges af, at det underordnede Begrebs Kjendemærke
+(\textit{nota notæ}) subsumeres under det overordnede (syllogistiske
+Figurer); de \emph{hypothetiske}, der beroe paa det Betingedes
+Afhængighed af sin Betingelse (\textit{modus ponens} og \textit{modus
+tollens}); og de \emph{disjunctive}, som grunde sig paa, at
+Leddene af et Hele gjensidig forholde sig saaledes, at naar
+eet udtrykkelig er sat, saa ere de øvrige udelukkede (\textit{modus
+ponendo tollens}), og naar de øvrige ere udelukkede, saa maa
+det tilbageblevne sættes (\textit{modus tollendo ponens}).
+
+Ved at afhandle Læren om Beviis og Methode løser
+den formelle Logik sig op i en almindelig Erkjendelses- og
+Videnskabslære.
+
+% --- p. 4 ---
+\setcounter{footnote}{0}%
+\opage{4}\begin{center}\textbf{Hovedsætninger}\\
+\textbf{af Grundideernes Logik.}\end{center}
+
+a) Den Gyldighed, der kan tillægges Philosophien,
+beroer væsentlig paa den Gyldighed, der kan tillægges Ordet.
+Det menneskelige Ord udtrykker kun en afmægtig Viden;
+derfor falde Begreb og Gjenstand udenfor hinanden. Det
+bliver i denne Henseende Philosophiens Opgave at paavise
+Forholdet mellem det afledede og det oprindelige, mellem det
+menneskelige og det guddommelige Ord.
+
+b) Det guddommelige Ord er: α) i \emph{Videns} Form
+det indre Billedlige, der bærer Forestillinger og Tanker, Begreber
+og Domme, β) i \emph{Magtens} Form det udvortes Prægende,
+den faktiske Udtalen af Begrebets og Gjenstandens
+Eenhed; γ) i \emph{Vexelbestemmelsen} af Viden og Magt
+den teleologiske Forskjelseenhed af Tænken og Virken, Dommen
+og Handlen, Begriben og Skaben.
+
+c) I \emph{Videns} Form bliver Forholdet mellem Dom og
+Gjenstand opfattet theoretisk. Dommens Eenhed med Gjenstanden
+forklares: α) ved en \emph{Parallelisme} (Plato, Cartesius)
+saaledes, at Tingene opfattes som sandselige Afbilleder af
+intellectuelle Urbilleder; β) ved \emph{Impression} og \emph{Abstraction}
+(Hume) saaledes, at Begreberne blive intellectuelle Afbilleder
+af de i Erfaringen givne Gjenstande; γ) ved en \emph{subjectiv
+Determination} (Kant) saaledes, at de subjective
+Erkjendelsesformer, der paavirkes af et ubekjendt objectivt
+Værende (das Ding an sich), antages at bestemme Erfaringens
+Phænomener.
+
+d) I \emph{Magtens} Form bliver Forholdet mellem Dom og
+Gjenstand at opfatte praktisk. Dommens Eenhed med Gjenstanden
+fordrer da: α) en \emph{Præformation} (ideel Praxis),
+hvorved Realbegrebet, det Begreb, der skal realiseres, forud
+bestemmer Gjenstanden ved Henblik til de Betingelser, under
+hvilke Realiseringen skal foregaae; β) en \emph{Realisation} (ideelreel
+Praxis), hvorved det i Realbegrebet Almene Punkt for
+Punkt omsættes i sit tilsvarende Individuelle, saa at Gjen%
+% --- p. 5 ---
+\setcounter{footnote}{0}%
+\opage{5}standen, der frembringes, bliver at betragte som Begrebets
+praktiske Definition; endelig γ) en Explication (Tilbagevenden
+fra Praxis til Theorie), hvorved den Dømmende og Frembringende
+viser sig at gjenkjende Frembringelsens Begreb i den
+frembragte Gjenstand (Henblik til Skabelsen).
+
+e) Den teleologiske Eenhed af Begrebet i \emph{Videns} med Begrebet
+i \emph{Magtens} Form beroer paa interpreterende Functioner,
+svarende til Vexelbestemmelser af \emph{at være og at betyde}.
+Den Dialektik af Midler og Formaal, som herunder udvikler
+sig, lader os indsee, at Virkeligheden udtrykker Begreber ved et
+kategorisk Magtsprog.
+
+f) Hvorledes det Subjective i \emph{Ideernes Logik} forholder sig
+til det Objective, kan endnu yderligere oplyses ved den Udvikling
+af Begreberne: Mulighed, Virkelighed og Nødvendighed,
+der svarer til Dommenes Inddeling efter Modaliteten i den
+formelle Logik.
+
+\begin{center}\textbf{Propædeutik og Ideelære.}\end{center}
+
+
+Ideen, Begrebets og Indholdets absolute Eenhed, --- det
+i en Totalitet af Midler og Formaal udviklede Princip, Identiteten af det Subjective og det Objective --- kan siges at være
+baade Eet med og forskjellig fra Virkeligheden. I Modsætning
+til Phænomenet, det Ydre, er Ideen Væsenet, det Indre, og
+dog er Ideen hævet over Adskillelsen af Væsen og Phænomen,
+af Indre og Ydre, er i sin Modsætning til Phænomenet
+Phænomenets og Væsenets væsentlige Eenhed, i sin Modsætning
+til Virkelighedens Ydre den virkelige Eenhed af Ydre og Indre.
+
+Da Ideen saaledes gjennemtrænger og bestemmer al
+Virkelighed, saa følger heraf, at Ideelæren ikke kan faae Realitet
+uden paa et omfattende Grundlag af logisk indledende Virkelighedsanalyser.
+Vi have Exempler herpaa i Objectivitetens Logik, i
+Læren om Functioner af Grunden, af Aarsagen og af Grundaarsagen.
+
+
+\begin{center}\textbf{Hovedsætninger hørende til Ideelæren.}\end{center}
+
+
+1) Grundaarsagen, Principet eller, som vi ogsaa kunde
+kalde den, Idee-Aarsagen, udvikler sit Indhold i Totaliteter,
+og \textbf{Totaliteternes Udvikling} gaaer igjennem Extremer og Slut%
+% --- p. 6 ---
+\setcounter{footnote}{0}%
+\opage{6}ninger. Charakteristisk er i denne Henseende Forskjellen mellem
+den \emph{mechaniske}, den \emph{chemisk-physiske} og \emph{organiske}
+Totalitet, hvis logiske Formudvikling gjennem tilsvarende
+Functioner angiver Forholdet mellem den \emph{kosmologiske},
+den \emph{geologiske} og den \emph{biologiske} Idee og danner
+Grundlaget for Naturphilosophien.
+
+2) Modsætningen mellem Natur og Aand bestemmes i
+Ideelæren saaledes, at Naturen, væsentlig seet, er Ideen i
+Nødvendighedens Form, Aanden Ideen i Frihedens Form.
+Natur og Aand ere i Ideen Eet; men denne Grundeenhed maa
+dog opfattes saaledes, at begge i Kraft af Ideen tillige ere
+hinanden oprindelig modsatte. Aanden kan ligesaa lidt afledes
+af Naturen som Naturen af Aanden. Modsætningseenheden
+er en Slutningseenhed, der kjendes paa den indre Uendelighed,
+at Begyndelsen selv er en Slutning ligesaavel som Resultatet.
+
+3) \emph{Aandsphilosophiens} Inddeling (efter Hegel) i de
+tre Afsnit: a) Aanden i sit Begreb (Anthropologie, Psychologie);
+b) \emph{den praktiske} Aand (Retsphilosophien, Historiens
+Philosophie) og c) \emph{den absolute} Aand (Æsthetik, Religionsphilosophie)
+har vel som Schema betragtet sine Fordele, men
+maa dog med Hensyn paa Princip og Methode underkastes
+en gjennemgaaende Kritik.
+\seamOversigt
+
+% --- p. 81 ---
+\setcounter{footnote}{0}%
+\opage{81}medens dog det abstracte Qvantum, der afgiver Qvantiteringens
+umiddelbare Forudsætning, just skylder Qvantiteringen
+sin Tilværen, og derved kommer til at forudsætte det, hvis
+Forudsætning det selv skulde være: saa indsees heraf, at Qvantiteten
+som abstract Begreb først kan faae sin sande Betydning
+i og ved et Tilværende, hvis Qvantitet den er.
+
+Om den rene Mathematik hedder det, at den finder
+„Anvendelse“ paa virkelige Gjenstande (i Mechanik, Astronomie,
+Optik o. desl.). Væsentlig forstaaet forudsætter en saadan
+„Anvendelse“, at det Mathematiske oprindelig er virkeliggjort
+i de Gjenstande, hvorpaa Mathematiken anvendes. En Anvendelse
+af Mathematik paa virkelige Gjenstande vilde være,
+om ikke en reen Umulighed, saa dog en subjectiv Vilkaarlighed,
+dersom det Mathematiske ikke selv med indre objectiv
+Nødvendighed hørte med i Virkelighedens Væsen; men som
+Moment i Virkelighedens Væsen hører det Mathematiske
+tillige med i Philosophien.
+
+\begin{center}\rule{4em}{0.4pt}\\[0.5em]
+B.\\[0.3em]
+\textbf{Propædeutik og Ideernes Logik.}\\[0.5em]
+\rule{4em}{0.4pt}\end{center}
+
+
+For at erkjende den Betydning, Ordet som Ord maa
+udøve paa Grundforestillingerne om det Evige, paa Ideernes
+første naturlige Dannelse i Bevidstheden mærke vi os særlig
+Kategoriernes Vorden i Mythologie og Theosophie.
+
+Kjendemærket paa det Mythiske er, i Principet, ingenlunde
+Uklarhed over det udvortes Endelige; det er ikke Sandselighedens
+Taagebilleder, men Ideens Lynslag, ikke Forstandens
+Nat, men Fornuftens Daggry, der laaner Bevidsthedsindholdet
+de vidunderlige mythiske Farver. Hvor eiendommelig Farveblandingen
+er, falder i Øinene, naar man ret vil charakterisere
+Mythologien og det mythiske Standpunkt. „For Mythologien“,
+% --- p. 82 ---
+\setcounter{footnote}{0}%
+\opage{82}siger Heiberg, „gives der intet andet, Alt omfattende Synspunkt,
+end det poetiske. Mythologien er Poesie og reent
+oprindelig Folkepoesie“. Senere hen bliver saa denne Folkepoesie
+tillige opfattet som en Art speculativ Philosophie.
+„Enhver Mythologie“ hedder det, „begynder med Kosmogonie;
+thi den philosopherende Menneskeheds første Bestræbelse er at
+forklare Tilværelsens Under. Det første Spørgsmaal er
+hvorledes er Verden blevet til? Hvad var der førend Alt
+dette blev til? Eller hvad var der, da der endnu Intet var?
+Forstanden kan saalidet besvare disse Spørgsmaal, at den
+endogsaa maa erklære dem for taabelige og sig selv modsigende.
+Men Phantasien svæver dristigt hen over Tingenes Begyndelse,
+uden at frygte for at tabe sig i Intet. Den befolker Tomheden,
+den lader Lyset opstaae af Mørket, Tilværelsen af
+Ikketilværelsen“\footnote[1]{J. L. Heibergs nordiske Mythologie. Paa Dansk udgivet af Chr. Winther. Kbhvn. 1864. S. 4 og S. 24.} o. s. v.
+
+At Mythologien paa een Gang er baade Poesie og
+Philosophie, vil da med andre Ord sige, at den i Grunden
+hverken er Poesie eller Philosophie; ikke Poesie, fordi den er
+Philosophie; ikke Philosophie, fordi den er Poesie. Det
+Nærmere sees af Functionerne. Det Poetiske bliver her ikke
+opfattet som Poesie. Poesien forudsætter en paa det absolute
+Indhold lydende Adskillelse af Illusion og Virkelighed, en
+Adskillelse, der udtrykkelig sætter Illusionen over Virkeligheden,
+fordi den sætter Ideen over Endeligheden; men ved en saa
+reflecteret Adskillelse kan Mythen som Mythe umulig bestaae:
+de mythiske Skikkelser holde sig ved Ideens Magie paa en
+høiere Virkeligheds Trin; her er paa dette Trin end ikke
+Anelse om Illusion. Ligesaalidt bliver det Philosophiske
+i Mythedannelsen opfattet som Philosophie. Hvad skulde det
+vel være for en Art Philosophie, som begyndte med en
+udtrykkelig Splid mellem Forstand og Phantasie, og som paa
+Grund af denne Splid opgav Forstanden og lod Phantasien
+% --- p. 83 ---
+\setcounter{footnote}{0}%
+\opage{83}raade? Istedetfor at begynde med en Dualisme af Phantasie
+og Forstand, begynder Mythedannelsen tvertimod med en af
+Forstand og Fornuft imprægneret Phantasie; man kan om
+den mythiske Ideebevægelse med fuld Ret sige, at Tanken
+phantaserer, fordi \emph{Phantasien tænker.}
+
+Naar da den af Forstand og Fornuft imprægnerede
+Phantasie „svæver dristigt hen over Tingenes Begyndelse,
+uden at frygte for at tabe sig i Intet“, hvad styrer da dens
+Flugt, hvad er det, der bevarer den fra at styrte i Tomhedens
+Afgrund? Væsentlig er det \emph{Ideen}; umiddelbart seet, er det
+\emph{Ordet.} Begyndelsens Afgrund er lige dyb, enten vi begynde
+med Chaos eller med \emph{Ginungagap}, den er i begge uendelig
+dyb: men i det uendelige Dyb formæles Ideen med Ordet.
+
+Begynde vi med Chaos, da er det naturligviis ikke den
+tomme Benævnelse, hvorpaa her lægges Vægt, thi Benævnelserne
+vexle. Men de eenstydige Benævnelser lyde alle paa det samme
+Grundord. At Chaos nu som Grundord er en Ideens Aabenbarelse,
+sat og bevæget af Ideens Magt, kan let paavises.
+Chaos er i mythisk Forstand hverken et abstract logisk Begreb
+eller et Udtryk for en Tilstand af physisk Forvisning, men
+en i Ordet fastholdt Totalitetseenhed, et subjectivt-objectivt
+Første, der i billedlig og dog ubilledlig Form anskueliggjør, hvad
+ikke kan anskues, nemlig Tingenes Oprindelse, Ideen af al
+virkelig Begyndelse eller den virkelige Begyndelses Idee.
+
+At Chaos som Begreb ikke er i Begrebets, men i et
+ubilledligt Billedes Form, følger udtrykkelig af Anskuelsens
+Eenhed med Ordet. Hvad er der i Chaos? Intet, og dog Alt!
+Denne Tankens Selvmodsigelse med de deraf udspringende
+Conseqvenser opfattes ikke i Form af en Tanke, men sees
+i et Billede, et mægtigt Tankebillede, dannet af Ordet.
+Idet Tanken ved Ordets Hjælp phantaserer over Intet og
+Alt, tænker Phantasien væsentlig paa Alt og anskuer dog
+i Chaos Intet, det Tomme; den tænker væsentlig paa Intet,
+og anskuer dog i Chaos Alt, nemlig Spirerne til Alt (\textit{non
+bene junctarum discordia semina rerum}). Indholdet,
+% --- p. 84 ---
+\setcounter{footnote}{0}%
+\opage{84}det i Chaos indholdsløse Indhold, er væsentlig subjectivt
+formedelst Ordet: et Product af phantaserende Tænkning; af
+tænkende Phantasie; men det anskues tillige objectivt, slaaer
+den anskuende Bevidsthed med Objectivitetens Magt i Ordet,
+og antager Skikkelse af physisk umiddelbar Realitet.
+
+Men at Chaos i objectiv Mening desuagtet ikke har
+physisk umiddelbar Realitet, er netop en Følge af det i
+Billedet Ubilledlige, af Anskuelsens mythiske Eenhed med Ordet.
+I objectiv physisk Betydning skulde Chaos jo være den virkelige
+Opløsning, hvori Altilværelsen maatte befinde sig, naar alle
+Former vare forstyrrede, og Atomernes Vrimmel i regelløs
+Forvirring. For en forstandig kritisk Bevidsthed om et
+saadant Chaos har Ordet tabt sin magiske Kraft. Ordet
+Chaos er i dette Tilfælde kun et Navn; Chaos derimod som
+udvortes virkelig Tilstand er Tingen, og Tingen, ikke Ordet,
+er det, hvorpaa det kommer an. Adskilt fra den paa Ordet
+hvilende Phantasie, vil Forstanden da paa egen Haand
+gjennemforske det virkelige Chaos, Tingenes udvortes virkelige
+Begyndelse. Men dette Forstandens Forehavende vil totalt
+mislykkes. Som virkelig Tilstand er Chaos aldeles uvirkelig;
+der er virkelig ingen Tilværelse, der kan begynde med et
+virkeligt Chaos: hvad Forstanden skal faae ud af et saadant
+Chaos, maa den i Virkeligheden selv indsmugle deri: det er
+en ørkesløs Leg, Forstanden leger med sig selv og det Virkelige.
+
+I det mythiske Chaos er Objectiviteten subjectiv; det
+objective Indhold er ved Ordet omsat i subjectiv Form.
+Hvor forskjelligt det mythiske Chaos er fra det udvortes
+physiske, er da ogsaa kjendeligt paa de Skikkelser, der fremgaae
+af Chaos. „Først er Chaos, dernæst den udstrakte Jord,
+det mørke Tartaros --- og Eros, den skjønneste blandt de
+udødelige Guder“. Den, der seer de gamle Guder udtræde
+af Chaos, kan ikke være i Tvivl om, hvad Chaos er for et
+Væsen. Idet her begyndes med Chaos, tages her paa en
+Maade Tilløb til en objectiv Fremstilling af Verdens
+Tilblivelse, af Tingenes, de endelige Realiteters Dannelse;
+% --- p. 85 ---
+\setcounter{footnote}{0}%
+\opage{85}men Synet vender sig. Kosmogonien slaaer om og bliver
+Theogonie. Chaos bliver en Guddom, den Guddom, af hvis
+Skjød de særlige Guder fødes. Denne Tilbagegang af det
+Kosmogoniske i det Theogoniske er for Mythedannelsen i høi
+Grad charakteristisk. For at Verden kan blive til, maae
+Guderne først blive til; for at de endelige Realiteter i
+Virkeligheden kunne blive til, maae Realideerne først blive til:
+Realideernes endelige Vorden reflecterer i sig Grundideernes
+evige Væren.
+
+Chaos er altsaa i sin Idealitet evig, i sin umiddelbare
+Realitet timelig, Guddom i Væren, Naturgrund i Vorden,
+Totalitet i oprindelig Eenhed, Totaliteternes Grund i oprindelig
+Fleerhed; i Chaos er det Relative absolut, det Absolute relativt;
+i Chaos-Ordet er Bevægelsen Hvile, og Hvilen igjen Bevægelse;
+Fylden Tomhed, og Tomheden Fylde; det Indvortes et Udvortes,
+og dette Udvortes igjen et Indvortes: i Chaos er Ideen Ord,
+og Ordet Idee.
+
+Det er da ikke en Tilfældighed, men en væsentlig
+Nødvendighed, at de ældste Guder udgaae af Chaos. I logisk
+Form er Nødvendigheden kjendelig paa, at Fleerheden fremgaaer
+af Eenheden, efterdi Eenheden selv oprindelig er
+Fleerhed, at det Særskilte i Totaliteten fremgaaer af det
+Almene, efterdi det Almene oprindelig er en Totalitet af
+Særskilte. Men i den logiske Form mangler Indholdet
+umiddelbar Realitet; Realiteten, den mythiske Realitet,
+kommer med Ordet, thi det ved Ideen bestemte Ord bestemmer
+Ideen.
+
+Saadanne Skikkelser som Gæa, Tartaros, Erebos, Nyx
+og Eros ere i deres Oprindelighed mere end tomme Personificationer.
+„Skikkelser af det Skikkelsesløse“, „elementære
+Former af det første Ene, i sig selv Formløse“, slige fastende
+Abstractioner falde lige saa langt under Ideen som under
+Virkeligheden. Nei, ved Ideens Magie i det mythiske Ord
+ere de ældste Guder, trods det i Formen Uformelige, typiske
+Skikkelser, fulde af Realitet, hver Guddom en Totalitet i sig,
+% --- p. 86 ---
+\setcounter{footnote}{0}%
+\opage{86}et eget Væsen, et bestemt Physiognomie. Det er Ideen, der
+i særskilte Totalitetseenheder gjennemtrænger, bevæger og bestemmer
+Ordet; men det er i umiddelbar Forstand Ordet,
+det særskilte Grundord, der i sin Eenhed optager, bestemmer
+og samler Mangfoldigheden af de ideelle og reelle, ubilledlige
+og billedlige Momenter, der udgjøre Ideens absolute Indhold.
+
+Gudinden Gæa, der faaer Navn efter Jorden, optager
+ved dette Navn al Jordens Realitet i sig, bliver ved dette
+Navn en Guddom med umaadelige Evner, vældige Kræfter
+og store Muligheder; men at Gudinden har faaet Navn efter
+den virkelige Jord, siger med det Samme, at det er den
+virkelige Jord, der har faaet Navn efter Gudinden. Jordgudinden
+og den virkelige Jord have ikke blot eet Navn, men
+de ere eet Væsen, betegnede ved eet Ord: de ere i Ordet Eet,
+efterdi de ere i Ideen Eet. At den virkelige Jord er Gudinde,
+viser os ret paa en slaaende Maade, hvad det vil sige, at
+Ideens objective, reelle Indhold er --- formedelst Ordet
+--- omsat i subjectiv, ideel Form; at Gudinden med alle Træk
+af elementær Subjectivitet er Jorden selv, den virkelige Jord,
+anskueliggjør paa den anden Side, hvad Ordet formaaer,
+naar det gjælder om at oversætte et subjectivt Indhold, ---
+thi Gudindens Væsen er i sin Idealitet et subjectivt Væsen, ---
+i umiddelbar, objectiv Form.
+
+Den colossale Dristighed, hvormed den tænkende, af
+Ideen imprægnerede Phantasie ved Syn af virkende Guder
+trodser Sandsynligheden, er et talende Vidnesbyrd om Ordets
+Magt i de objectiverede Begivenheder. Gudealderen, den
+fjerne Fortid, er Ideernes, de ideale Aarsagers gyldne Tid;
+Nærværelsen med sine Kjendsgjerninger er Virkelighedens, Betingelsernes
+og de materielle Aarsagers Tid: kunne de to
+Tider vel blive til een Tid? I Ordets, d. v. s. i Fortællingens,
+Erindringens, Speil reflecterer det Forbigangne sig
+jo vistnok i det Nærværende som de store Grundideer i Udviklingens virkelige Resultater; men Virkeligheden med sine
+Tingsaarsager reagerer med Nærværelsens Magt mod hine
+% --- p. 87 ---
+\setcounter{footnote}{0}%
+\opage{87}ideale Forudsætninger; Conseqvensen er en Splid mellem
+Tingen og Ordet, en Splid mellem det Objective og det
+Subjective, en Splid mellem Indhold og Form, Phantasie
+og Tanke, en Splid, der vækker Kritiken, ophæver Standpunktet
+og stiller de ideeformende Functioner nye og høiere
+Opgaver.
+
+Saavidt om det Mythiske. Til Belysning af den
+theosophiske Form kaste vi et Blik paa Philo.
+
+„Naar man“, siger en nyere Forfatter, „beskjæftiger sig
+med den jødiske Alexandrinisme, henvises man uvilkaarligt til
+Hebraismen og Platonismen, som dem, under hvis Paavirkning
+den uimodsigeligt har uddannet sig. Heri ere alle
+Fortolkere enige; Forskjellen fremtræder først, naar man skal
+gjøre sig det klart, hvilken Aandscharacteer, der udtalte sig
+deels i selve denne Receptivitet, deels i den friere Productivitet,
+som denne kaldte tillive. I Gfrører og Dähne finde vi nu
+de seneste og meest udprægede Repræsentanter for Opfattelsen
+af den som reflecterende; thi skjøndt de polemisere skarpt mod
+hinanden og ende i saa godt som modsatte Resultater, fremstille
+de dog det Standpunkt, hvorpaa de tænke sig Philo
+saavelsom hans Forgjængere i den alexandrinske Theosophi
+at staae, hovedsageligt eens. --- Som de aandelige Kræfter,
+hvis Sammenstød bringer Bevægelsen ind i Philos Aand,
+betragte de fra den ene Side den bestemte Tilegnelse af den
+platoniske Modsætning mellem det Guddommelige og Materien
+og af den deraf med Nødvendighed følgende Tanke, at Gud
+ikke kunde staae, end ikke i den fjerneste Forbindelse med
+Endeligheden, saa at endog alle Prædikater, som hentede
+fra denne, bleve at frakjende ham; fra den anden Side
+den ligesaa uopgivelige Tro paa Gud som Person, paa
+hans Ledelse af Jødefolket og Moselovens Guddommelighed.
+Den Aandsvirksomhed, som derved tænkes fremkaldt, var da
+en Bestræbelse efter at forbinde disse to modsatte Elementer
+til eet System, og til den Ende skal der være uddannet den
+dobbelte Theori: om den allegoriske Skriftfortolkning og de
+% --- p. 88 ---
+\setcounter{footnote}{0}%
+\opage{88}guddommelige Mellemvæsener. Som den, der skal være
+baaren af denne bevidste Stræben efter at lade begge disse
+to modsatte Principer holde hinanden Stangen, saa at begges
+Hovedsætninger bleve urokkede, characteriseres ogsaa Philos
+Lære som en rationel Supranaturalisme.
+
+Naar vi nu i Et og Alt fjerne os fra denne Gudsbetragtning,
+saa er det ikke nærmest fordi den skulde støde an
+imod et enkelt Punkt, men fordi den modstrider hele den
+philoniske Erkjendelses Characteer. Er den nemlig fremstaaet
+ved slig combinerende Reflexion, er dens enkelte Forestillinger
+og Udsagn Udtryk for en saadan, saa maa den ogsaa bære
+dennes Kjendetegn. Men det er det, den ikke gjør. Ad en
+dobbelt Vei kunde nu denne Reflexion gaae frem, hvorefter
+vel Philos Værker vilde faaet et høist forskjelligt Præg, men
+dog altid baaret Reflexionens Characteer. Man skulde snarest
+have troet, at, hvis Philo virkelig havde havt den Vanskelighed
+for Øie, som kom frem ved de før berørte modsatte Fordringer,
+men dog betragtet den som en, der ved nøiere Undersøgelse
+forsvandt, thi var den forekommen ham uopløselig, maatte
+han jo have bestridt en saadan Sammensmeltning og ikke selv
+forsøgt den, --- hans Bestræbelse da nærmest maatte være
+gaaet ud paa, ved raisonnerende Sammenstilling at eftervise,
+hvorledes denne Modsigelse kun var tilsyneladende og hævedes
+--- vi vide jo hvorved --- ved Allegorien og ved Forestillingen
+om de guddommelige Mellemvæsener; og hans Philosophi
+vilde paa denne Maade have taget en \emph{formel-logisk} Retning.
+\emph{Men til alt dette findes hos Philo aldeles intet
+Spor.} Hvad nemlig \emph{Allegorien} angaaer, som jo skal være det
+ene Mellemled, da vil man vel . . . . kunne slutte, hvorfor vi paa
+ingen Maade kunne dele denne Mening, men ikke desto mindre
+ville vi dog rette en Bemærkning imod den. Skal Allegorien
+være uddannet i dette Øiemed, nødes man jo til at
+tænke sig, at Philo, med Øiet fæstet paa den omtalte
+Vanskelighed, med Ønsket om at løse den, hvis det var
+muligt, uddannede denne Theori, ikke som et Middel til at
+% --- p. 89 ---
+\setcounter{footnote}{0}%
+\opage{89}blænde Taaber, men som det, der tilfredsstillede ham selv,
+idet den ikke syntes ham fremtvungen ved et vilkaarligt Magtsprog,
+men i sig selv at være sand, thi først da kunde den
+jo atter bevise Sandheden af det Øiemed, hvori den brugtes“.
+Men saaledes forholder det sig ikke.
+
+At det ikke er „rationel Supranaturalisme“, men
+„Theosophie“, hvorom her handles, kan sees af Forholdet
+mellem Ordet og Gud.
+% p. 89 from here: the setting of GL II p. 89; the draft takes texts/nielsen/grundideernes-logik-2 (same type), then collated
+
+1) \emph{Ordet og Gud i tvetydig Eenhed}. Den philoniske
+Hovedkategorie er, som bekjendt, Kategorien Logos; men
+om Philo iøvrigt opfatter Logos som identisk med Gud eller
+som et fra Gud forskjelligt Væsen, om dette Væsen skal antages
+at være personligt eller upersonligt, derom have Fortolkerne
+hidtil ikke kunnet blive enige\footnote[1]{Jvfr.\ G.\ Steenberg. Om Synspunktet for Opfattelsen af Philos
+Gudserkjendelse. Kjøbenhavn 1849. S.\ 84---125.}. Den theosophiske
+Reflexion vælger i al Naivetet forskjellige Udgangspunkter,
+uden at ændse de Modsigelser, som fremkomme, naar
+ueensartede Synsmaader skulle gaae op i hinanden. Paa
+den ene Side fremstilles da Logos som et med Gud identisk
+Væsen, som Guds Tænkning (\gr{λογισμὸς τοῦ θεοῦ}), som Guds
+Ord (\gr{ῥῆμα}), Guds Eed (\gr{ὅρκος}), Guds Lov (\gr{νόμος}), Guds
+Pagt (\gr{διαθήκη}). Men ligesaa umiddelbart opstilles Logos
+paa den anden Side som et Væsen for sig, som det Baand
+(\gr{δεσμὸς}), der sammenbinder alle Ting (\gr{περιέχων τὰ πάντα}),
+som, „for at hindre Alt fra at skeie ud, tænkes udspændt fra
+den ene Ende af Verden til den anden“; Logos er den guddommelige
+Viisdom, der gjennemstrømmer Verden; Verden % PRINTER (GL II): quotation opened at „den guddommelige is not closed
+er denne Viisdoms Klædebaand; Viisdommen selv er \gr{ὁ τῆς
+φύσεως ὀρθὸς λόγος}. Uagtet Logos i begge disse Opfattelser
+er upersonlig, saa indstille sig dog igjen andre Synspunkter,
+fra hvilke Logos udtrykkelig sees som personligt Væsen,
+som en Gud selv underordnet Gud (\gr{δεύτερος θεὸς, πρωτόγονος
+υἱὸς}), o.\ s.\ v.
+
+\seamB
+
+% --- p. 263 ---
+\setcounter{footnote}{0}%
+\opage{263}enkelte Sætninger derimod ikke særlig fremtræde med apodiktisk
+Selvstændighed, da hver relativ Bestemmelse er et Moment,
+et Glimt af det Absolute. Men just denne de apodiktiske
+Momenters reflecterede og i Reflexionen gjennemsigtige Form
+gjør Ideen, det absolut Apodiktiske, synlig.
+
+% p. 263: the setting of GL II p. 263 + its p. 264 line 1; the draft takes texts/nielsen/grundideernes-logik-2, then collated.
+% The note at the foot is the end of a note begun on p. 262 (GL II p. 262, at „Uendelighedsproblem.“).
+Modalitetens almindelige Hovedformer: Mulighed, Virkelighed
+og Nødvendighed, anbefale sig vexelviis til den sunde
+Sands saaledes, at snart Endeligheden, snart Uendeligheden,
+snart Virkelighedssiden, snart Ideesiden vender imod Betragteren.
+Paa Endelighedens Trin gjælder det, at der nødvendigviis maa være Noget, der blot er \emph{muligt}, Noget, der er
+\emph{virkeligt}, og Noget, der er \emph{nødvendigt}. Seet under
+Uendelighedens Synspunkt træder Forskjellen mellem Muligt,
+Virkeligt og Nødvendigt saaledes i Baggrunden, at den ene
+af Formerne uvilkaarligt faaer Magt med de to andre, og nu
+\contnote{have kunnet faaet det i deres Tanker ubegribelige Begreb (Uendehedsbegrebet) paa en tilfredsstillende Maade adskilt fra den paa % PRINTED AS IS: „(Uende-/hedsbegrebet)“, a syllable lost (crop k2); GL II 1866 has „(Uendelig-/hedsbegrebet)“ and „faae“ where 1868 has „faaet“: the first line of this note was reset for 1868
+dette Begreb hvilende Methode, viser Mathematikens Historie lige
+fra Leibnitz og Newton (Jvfr.\ Mathem.\ og Dialekt.\ S.~90--91,
+S.~95 o.\ flg.) indtil den nærværende Tid. „For det Første kunne
+vi, naar Principet er ubekjendt, jo ikke vide, om ogsaa alle deraf
+følgende Conseqvenser lade sig indrømme: vi gaae som i Blinde,
+og det turde hænde sig, at vi efter møisommelig Anstrengelse tilsidst
+stødte paa Noget, som netop udviste Principets Natur, d.\ v.\ s.
+paa Noget, vi ikke kunde begribe. For det Andet: er det ikke en
+skammelig Nedværdigelse af Fornuften, at lade den følge en Sammenhæng
+af Led, en Række, hvis Begyndelse og Ende den ikke kan
+gjennemskue?“ Disse Savriens Betænkeligheder forklare tilstrækkelig
+den Uro og Spænding, hvori det Uendeliges Analyse bestandig har
+holdt den mathematiske Reflexion (Mathem.\ Dial.\ S.~55--56),
+hvis Problem --- saaledes som en af Berlinerakademiet i Aaret
+1784 udsat Priisopgave charakteristisk nok udtrykker det, „wie aus
+einer widersprechenden Voraussetzung so viele wahren Sätze haben
+können hergeleitet werden“ --- ikke vil ophøre at vende tilbage.
+Forelæsninger over „Phil. Propæd.“ fra Universitetsaaret 1860--61.
+S.~47--48.}
+% --- p. 264 ---
+\setcounter{footnote}{0}%
+\opage{264}hedder det: snart, at Alt er muligt, snart, at Alt er virkeligt,
+snart, at Alt er nødvendigt. Falder Eftertrykket paa Vorden
+(Heraklit), saa er Alt muligt: falder Eftertrykket paa Væren
+og det Værende, saa er Alt virkeligt (Megarikerne); falder
+Eftertrykket paa Virkelighedens i sig reflecterede Væsen, den
+uendelige Substans, saa er Alt nødvendigt (Spinoza). I logisk
+Forstand er Nødvendigheden overgribende, men den overgribende
+Nødvendighed er subjectiv væsentlig.
+
+\begin{center}\rule{4em}{0.4pt}\\[0.5em]
+C.\\[0.3em]
+\textbf{Propædeutik og Ideelære.}\\[0.5em]
+\rule{4em}{0.4pt}\end{center}
+
+
+Naar Ideen skal erkjendes som Virkelighedens Idee og
+optage Kjendsgjerningsmomenterne i sit væsentlige Indhold,
+vil Udviklingen fornemmelig være betinget af en indtrængende
+Analyse ikke blot af det Objectives Eenhed med det Subjective,
+men af Objectivitetsbestemmelsernes egen uendelige Rigdom.
+Saalænge det Objective blot behandles i al Almindelighed,
+maa dets eiendommelige Charakteer nødvendig forflygtiges;
+thi det Almindelige er ikke, hvad man i Modsætning til
+det psychologisk Subjective altfor eensidig har fremhævet,
+det Objective, men tvertimod det i sit Væsen oprindelig
+Subjective: at behandle det Objective i al Almindelighed
+er at behandle det paa en subjectiv Maade, er, med
+andre Ord, at behandle det, ikke som et Objectivt, men
+som et Subjectivt. Sættes f. Ex. Idee og Virkelighed imod
+hinanden, saa træder Ideen, uagtet den selv er Eenheden af
+det Subjective og det Objective, dog øieblikkelig over paa den
+subjective Side, medens Virkeligheden bliver staaende som særligt
+Udtryk for det Objective, Grunden hertil er let at indsee.
+Kjendemærket for det Objective er overalt Andetheden, Enkeltheden
+i dens Umiddelbarhed, det udvortes Mangfoldige, Forskjelligartede o. s. v. Nu kan der jo vistnok i al Almindelighed siges
+
+\seamC
+
+\end{document}
