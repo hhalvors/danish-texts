@@ -1,0 +1,830 @@
+% =====================================================================
+%  Harald Høffding, Montaignes Betydning i Etikens Historie
+%  In: Det nittende Aarhundrede. Maanedsskrift for Literatur og Kritik, udgivet af Georg Brandes og Edvard Brandes.  [Aargang 1876] April--September.  Juni 1876, pp. 210-230.
+%  Antiqua.
+%
+%  TRANSCRIPTION -- GENERATED; DO NOT EDIT BY HAND.  Høffding's four pieces of 1875-76 (Herbert Spencers Filosofi; the
+%  review of Wilkens; Montaignes Betydning i Etikens Historie; Benedikt Spinoza) are built by ONE pipeline
+%  (ebook-method/hoeffding-1875-76/) into a combined working file, which split.py cuts into four transcriptions.
+%  Rebuild from the repo root:   sh ebook-method/hoeffding-1875-76/rebuild.sh
+%
+%  STATUS: COMPLETE (2026-10-15): the volume's title page and the whole text, pp. 210-230, with its 12 notes.
+%
+%  EDITION.  The only printing.  Text of record: the Internet Archive's own Scribe scan of the University of Illinois copy, detnittendeaarh1876unse_0 (500 ppi colour JP2); extract ~/bibliotek/Høffding, Harald/1876-nittende-aarhundrede-apr-sep-pp210-230.pdf (SCANS.tsv, sha256), made by ia_extract.py
+%  (title leaf, Indhold leaves, the article).  SECOND COPY (voter only): Google's scan of the Harvard copy, nittendeaarhund03unkngoog (its ABBYY OCR).
+%  The article head and the running heads read „Etikens“; the volume's Indhold „Ethikens Historie“ (both recorded; the catalog follows the head).
+%
+%  ACCURACY (2026-10-15; one collation for all four texts, 57 working pages, ~17,100 words).
+%  (a) The DRAFT is our own tesseract reading (tessdata_best: dan for Det nittende Aarhundrede, script/Fraktur for Nær og
+%      Fjern; 300 dpi) of the Archive's JP2 images, laid over the working PDF and turned into LaTeX by draft.py.  It was
+%      chosen over the Archive's own OCR (tesseract 5.2/5.3, hOCR) by measurement against the Harvard copy's ABBYY OCR
+%      (words unmatched: 3.0% against 9.5% in the Montaigne volume; the Archive reads aa as åa and long s as f).  The
+%      Archive's OCR is the WITNESS: collated word by word (collate/check.py): 900 disagreements, 76 settled by check.py.
+%  (b) Rules (rules.py: the Archive's å for a, long s read f, glyph faults against attested words, 326) and a THIRD reading
+%      voted: the ABBYY OCR of ANOTHER COPY (Google's scan of the Harvard volume), by context and by word alignment
+%      (rules.py harv-*, vote2.py hv-*), never on figures and never making a word the corpus does not attest.  AUDIT: 30
+%      letter-changing rule/vote decisions read blind at the image: 0 contradicted (6 undetermined crops).
+%  (c) The rest of Det nittende Aarhundrede read at the image BLIND (round b1: 210 crops on 12 sheets, five readers, 23/24
+%      planted controls right; ~80 decided by hand from the readers' lines).  OPEN 0.
+%  (d) Every FOOTNOTE read whole at the image (readers N1, N2: 26 notes on 23 pages), set from the reading; the note marks
+%      checked at zooms (four the draft had misplaced, moved).  STRUCTURE read at the image (reader K): the title pages, the
+%      heads, the endings and signatures, the verse on p. 116.
+%  (e) Nær og Fjern (FRAKTUR, two columns, no second copy): each column PROOFREAD WHOLE at the image against the draft by
+%      two readers (P1, P2; 3 of 4 planted errors found): 171 corrections (proofapply.py); then an unattested-word sweep
+%      and a long-s / ø sweep, every doubtful word read at a zoom (proof-fixes.tsv, final-fixes.tsv).
+%  (f) LETTERSPACING (\emph{} here) MEASURED at the image (spacemeasure.py, white runs between letters, threshold 5 px: 31
+%      runs), every run judged at the image by reader K (13 kept in the body; the notes' spacing read by N1/N2).  Italics:
+%      none found by stroke slant (check.py --italics).
+%  (g) QUOTATION MARKS: the print quotes „...“ only (every quotation read at the image in b1, the notes and the structure);
+%      both OCRs read „ as , or ,, and “ as ' ” " »: set by class (quotes.py), outside the notes.
+%  (h) Sweeps on the collated text, every doubtful spot read at a zoom: unattested words (229 words in no other
+%      transcription: 12 words mended, the misprints below confirmed); specks both OCRs had read as marks (specksweep.py,
+%      marks the Harvard copy lacks mid-sentence: 16 removed).  The TRANSLATORS' odd spots (64) were read at zooms before
+%      the translation was finished: 22 more faults mended (specks, ɔ: read as 2:, a running head and a footnote left in
+%      the text, two paragraph breaks at page turns), 3 misprints confirmed (final-fixes.tsv).
+%  (i) SAMPLED PAGE CHECK (2026-10-15, budget-limited to 3 pages): pp. 113 (Spencer), 217 (Montaigne) and one Nær og Fjern
+%      column (p. 2, right), chosen at random (seed 20261015, one per stratum), transcribed BLIND at the image by one
+%      reader (1,143 words) and compared word by word (pagecheck.py): 10 differences; decided at zooms: 3 reader slips;
+%      7 errors of the collated text (2 words: „for“ for „før“, „skikkelig“ for the print's „stikkelig“; 5 marks: four
+%      specks both OCRs had read as stops or quotes, one stop hidden by a planted control) = ~6 per 1000 words, all mended.
+%      The specks led to specksweep.py over the whole of Det nittende Aarhundrede: 16 more found at zooms and removed.
+%  PRINTED AS IS (misprints kept, marked at the line):
+%    p. 227: „kaldter“ for kaldte; sweep zoom
+%    p. 219: „egen Væsen“ for eget Væsen; translator odd spot, zoom
+%    p. 223: „kan ikke formulerer“ kan for han; translator odd spot, zoom
+%    p. 227: „uudertrykt“ for undertrykt; note reader N2, translator odd spot, zoom
+%  CONVENTIONS.  Page turns: % --- p. N --- and \opage{N} (the printed page); a word divided over a page turn is
+%  split with %.  Footnotes as \footnote at their marks, numbered per page as printed (*), **)).  \emph{} = letterspacing.
+%  The running heads and the sheet signatures are not transcribed.  The ø rule (CLAUDE.md).
+% =====================================================================
+\documentclass[12pt,a4paper,openany]{book}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{libertinus}
+\usepackage{libertinust1math}
+\usepackage[danish]{babel}
+\usepackage[protrusion=true,expansion=true]{microtype}
+\usepackage{setspace}
+\usepackage[margin=1.3in]{geometry}
+\usepackage{fancyhdr}
+\usepackage{hyperref}
+\hypersetup{pdftitle={Montaignes Betydning i Etikens Historie}, pdfauthor={Harald Høffding}, hidelinks}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LE,RO]{\thepage}
+\fancyhead[C]{\textit{H. Høffding: Montaignes Betydning i Etikens Historie (1876)}}
+\fancypagestyle{plain}{\fancyhf{}\fancyhead[LE,RO]{\thepage}}
+\setstretch{1.3}
+\usepackage{marginnote}
+\usepackage{graphicx}
+\DeclareUnicodeCharacter{0254}{\reflectbox{c}}   % ɔ (id est)
+\makeatletter
+\renewcommand{\thefootnote}{\ifcase\value{footnote}\or *\or **\or ***\else\arabic{footnote}\fi)}   % the print marks each page's notes *), **)
+\makeatother
+\newcommand{\opage}[1]{\marginnote{\footnotesize\textit{[#1]}}}
+\newcommand{\signature}[1]{\par\smallskip\hfill #1\hspace*{2em}\par}
+\pdfstringdefDisableCommands{\renewcommand{\footnote}[2][]{}\renewcommand{\opage}[1]{}}
+
+\begin{document}
+
+\begin{titlepage}
+\begin{center}
+{\LARGE\bfseries Det nittende Aarhundrede.}\\[1em]
+{\small\bfseries \emph{Maanedsskrift}}\\[0.3em]
+{\small for}\\[0.3em]
+{\large\sffamily Literatur og Kritik.}\\[1.2em]
+{\small Udgivet af}\\[0.3em]
+{\large Georg Brandes {\small og} Edvard Brandes.}\\[0.6em]
+\rule{3em}{0.4pt}\\[0.6em]
+{\small\bfseries 1876. April---September.}\\
+\vfill
+% [printer's device: a ring with the monogram GB]
+{\large\sffamily \emph{København}.}\\[0.4em]
+{\small Forlagt af den Gyldendalske Boghandel (F. Hegel).}\\
+{\small Trykt hos J. Jørgensen \& Co.}\\[0.4em]
+{\small 1876.}
+\end{center}
+\end{titlepage}
+\clearpage
+
+% --- p. 210 ---
+\setcounter{footnote}{0}%
+\opage{210}\begin{center}{\Large\sffamily\bfseries Montaignes Betydning i Etikens Historie.}\\[0.5em]\rule{4em}{0.4pt}\end{center}\medskip
+
+Der kan drages en Parallel mellem Videnskabens
+Genfødelse i det 15de og 16de Aarhundrede og det
+Vendepunkt, som indenfor den græske Tænknings Historie
+indtraadte med Sokrates. De græske Filosofer før ham
+havde fordybet sig i Betragtningen af Verden, den ydre
+Natur, som Grækerne kaldte Himlen. Sokrates indskærpede
+nu, at for at Mennesket kan have en Viden,
+som kan hjælpe ham i Livet og blive Sjælen i hans
+Handlen, maa han først og fremmest kende sig selv.
+Det Menneskelige, Menneskets Natur, Opgaver og Pligter
+var for Sokrates Tænkningens væsenlige Genstand, og
+han er derved bleven Grundlægger af Etiken, Læren
+om den menneskelige Handlens Vilkaar og Formaal. I
+Forhold til de tidligere Tænkere stod han da som den,
+der førte Filosofien ned fra Himlen til Menneskenes Huse
+og Boliger. Ogsaa om Renæssancetidens Tænkere kan
+dette Billede bruges. Men Himlen betegner da ikke,
+som hos Grækerne, den ydre Natur, Universet, men den
+overnaturlige Verden, i hvilken Middelalderens Kirke
+havde lært Menneskene at se Livets egentlige Maal, i
+Forhold til hvilket det jordiske Liv selv var et Intet.
+Verdenslivet havde ingen selvstændig Betydning, ingen
+væsenlige Opgaver at løse; det var en kort Prøvetid,
+som afsluttedes med en absolut Afgørelse. Kunstens og
+Videnskabers Genfødelse var Tegn paa, at man atter
+% --- p. 211 ---
+\setcounter{footnote}{0}%
+\opage{211}begyndte at vende tilbage fra Himlen til Menneskeverdenen.
+Man hentede især Styrke ved Betragtningen
+og Tilegnelsen af den antike Kultur, hvor man fandt det
+rent menneskelige Liv afspejlet, det „naturlige Menneske“,
+som Kirken fordømte. Naturen i det Hele blev Genstand
+for begejstret Anskuelse, og den fremblomstrende Naturvidenskab
+gav snart denne Anskuelse et fast og urokkeligt
+Grundlag. Man følte sig ikke længere fremmed i
+Universet; der opstod en Frejdighed og en Tillid til
+Livet, som gjorde en Stræben efter Løsning af rent
+menneskelige Opgaver mulig. Men denne Tillid viste sig,
+som Følge af Tidsalderens hele Karakter, paa umiddelbar,
+tumultuarisk Vis, som brændende Entusiasme, ikke
+med klar Selvbesindelse. Man ser endnu Menneskets
+Væsen som indflettet i Natursammenhængen, opfatter det
+ikke i hele dets Dybde og Inderlighed. Men Naturen
+staar som den uendelige, alt omfattende, hvori alle endelige
+Modsætninger tabe sig, navnlig Oldtidens Modsætning
+mellem Form og Stof, Middelalderens Modsætning mellem
+Aand og Natur.
+
+Hvad særlig Etiken angaar, da fremdrog den nu
+paa den ene Side det, som Kirken kaldte det naturlige
+Menneske, med dets Drifter og Stemninger, dets Tanker
+og Kræfter, som det virkelige Grundlag for Nydelse og
+Handlen (Montaigne, Macchiavelli) eller for at vise, at
+det i sig selv har Principet for den sædelige Handlen
+og ikke behøver at vente Lønnen i et Hinsides (Pomponatius);
+paa den anden Side finder man Frigørelsen i
+Hengivelse til og begejstret Opofrelse for det uendelige
+Ideindhold, som nu opgaar for Bevidstheden (Giordano
+Bruno). Naturligvis kunne disse to Sider ikke adskilles;
+de staa i indre Forbindelse med hinanden; det følger
+allerede af de foregaaende Bemærkninger, og det vil
+navnlig indlyse ved den følgende Skildring af En af de
+nævnte Tænkere fra Renæssancetiden.
+
+% --- p. 212 ---
+\setcounter{footnote}{0}%
+\opage{212}Montaigne er en typisk Repræsentant for den Skepticisme,
+der i Tider fulde af stærke aandelige Modsætninger
+ofte opstaar hos klare, uhildede Aander, der ikke
+føle Trang til en positiv Anskuelse, allerede af den
+Grund, at man jo maatte træde i Marken for en saadan
+og altsaa selv blive en af de mange kæmpende Parter.
+Det vilde Montaigne for enhver Pris undgaa. Han levede
+i Frankrig (1533---1592) paa Religionskrigenes
+Tid og var her Vidne til, hvorledes enhver af de stridende
+Parter ikke blot mente at have Retten paa sin
+Side, men var sikker paa at besidde den eneste saliggørende
+Sandhed, saa sikker, at man med Ild og Sværd
+vilde bringe Modstanderne over paa sin Side. Montaignes
+sunde og selvstændige Natur --- man har kaldet ham
+det 16de Aarhundredes mest originale Aand --- udviklet
+ved en forstandig og naturlig Opdragelse, ved Rejser og
+ved omfattende Læsning især af klassiske Forfattere,
+maatte nødvendigvis føle sig foranlediget til at undersøge
+den menneskelige Erkendelses og Overbevisnings
+Væsen, der kunde tillade en saadan Forskellighed og
+Strid. Dog maa man her ikke vente at finde metodiske
+Undersøgelser. Tænkningen er for ham snarere som et
+Slags Leg eller Tidsfordriv; han lader Tankerne gaa,
+som de ville, og giver atter sine Læsere dem ligesaa
+ubundne og uordnede, som han selv har faaet dem\footnote[1]{„Je n'ay pas aultre sergeant de bande à renger mes pieces que la fortune: à mesme que mes resveries se presentent, je les entasse“. Essais de Michel de Montaigne liv. II chap. 10.}.
+Derfor lover han heller ikke sine Læsere Lærdom; det
+Eneste, de ville lære at kende af hans Bog, er ham selv:
+C'est icy un livre de bonne foy, lecteur. Il t'advertit dez
+l'entré, que je ne m'y suis proposé aulcune fin, que domestique
+et privée“. (L'aucteur au lecteur),
+
+Men allerede dette er betydningsfuldt. Saaledes at
+hengive sig til sine egne Tanker og vugge sig i sine
+% --- p. 213 ---
+\setcounter{footnote}{0}%
+\opage{213}egne Fantasier er et moderne Træk, et Vidnesbyrd om,
+at Individet allerede har frigjort sig fra de traditionelle
+Forudsætninger og uden at bekymre sig om nogen Autoritet
+trygt tør overlade sig til Strømningerne i sit eget
+Indre og lade sig lede af dem paa Opdagelsesrejser til
+nye, ubekendte Egne. Allerede dette giver os derfor
+Anledning til at spørge om Montaignes Forhold til
+Kirkelæren.
+
+I sin Ungdom havde Montaigne efter sin Faders
+Opfordring oversat et Skrift af Raimundus af Sabunde
+(som levede i det 15de Aarhundrede), en naturlig Theologi,
+som i Naturen og Fornuften søgte Beviser for de
+kirkelige Lærdomme. Senere hørte han, at der fra forskellige
+Sider var rejst Indvendinger mod denne Bevisførelse,
+og i det længste Kapitel blandt hans „Essays“
+(liv. II chap. 12) søgte han saa at imødegaa disse Indvendinger.
+Men han gør dette paa en Maade, der trods
+den gennemførte Ironi røber hans virkelige Anskuelse.
+
+Paa den ene Side havde man ment, at Troeslærdommene
+vare for hellige og ophøjede til at støttes med
+menneskelige Grunde; paa den anden Side havde man
+erklæret de anvendte Grunde for svage og ubrugelige.
+
+De første Modstandere viser han sig tilsyneladende
+meget velvillig imod. Meget vel, siger han. Troen skal
+i sig selv være nok. Men --- hvis vor Tro virkelig var
+ægte, indgiven fra Himlen, saa vilde vort Liv sikkert se
+anderledes ud; alle Forhold vilde være omdannede i
+Overensstemmelse med de hellige Fordringer, og de
+Kristne vilde ikke saa ofte blive beskæmmede i deres
+Vandel af Tyrker og Hedninger. Saa vilde heller ikke
+Religionskrigene med alle deres uædle Lidenskaber have
+kunnet splitte os; den menneskelige Affekt og Interesse
+vilde ikke have ført Ordet ved disse hellige Anliggender.
+Alt dette er Bevis nok for, at vi stedse tage Religionen
+paa vor egen Maade, med vore menneskelige Hænder, og
+at den overnaturlige Indgivelse træder tilbage for Tradition,
+% --- p. 214 ---
+\setcounter{footnote}{0}%
+\opage{214}Skik og Brug. Vi ere Kristne af lignende Grunde som
+vi ere Franske eller Tyske.
+
+Allerede her har Montaigne glemt Raimundus, som
+han skulde forsvare. Men han taber ham aldeles af
+Syne, saasnart han giver sig i Kast med den anden
+Indvending, den, at Beviserne ikke slaa til. Disse Modstandere
+vil han aldeles knuse ved at vise dem den
+menneskelige Erkendelses Afmagt og Intethed. Men
+istedetfor den Slutning, som man skulde vente heraf, at
+Mennesket blindt maa hengive sig til den guddommelige
+Avtoritet, skinner det klart igennem, at Montaigne selv
+akcepterer de skeptiske Resultater, og at de for ham
+danne en Grænse ikke blot overfor den filosofiske, men
+ogsaa overfor den teologiske Dogmatisme. Han hæver
+det Guddommelige saa højt over Menneskets Blik og
+Evne\footnote[1]{C'est aux chrestiens une occasion de croire, que de rencontrer chose incroyable. Liv. II. chap 10.}, ikke for at tilbede det des inderligere, men for
+med Ironi at vende sig bort derfra.
+
+Montaigne stiller de forskellige filosofiske Skolers
+Lærdomme op imod hverandre; han viser Sansernes Upaalidelighed;
+han samler Træk af Dyrenes Liv for at godtgøre,
+at Mennesket ikke besidder noget væsenligt Fortrin
+fremfor dem; --- kort sagt, han har hele Skepticismens
+sædvanlige Arsenal til sin Raadighed, og han
+anvender det med Virtuositet. Men hvad der især maa
+interessere os, er at se hvorledes han forstaar at koncentrere
+de skeptiske Argumenter paa en Maade, der
+røber en virkelig filosofisk Tænker bag den kaade Ironiker.
+Vor Fornuft, siger han, kan ikke vise os Sandheden;
+thi for at vi kunde være sikre paa, at det virkelig
+var Sandheden, den viste os, maatte vi have en anden
+Fornuft, der kunde indestaa for den førstes Sandhed, og
+for denne anden ogsaa en tredie og saaledes i det
+Uendelige. Al vor Erkendelse stammer tilsidst fra
+% --- p. 215 ---
+\setcounter{footnote}{0}%
+\opage{215}Sanserne\footnote[1]{Toute cognoissance s'achemine en nous par les sens; se sont nos maistres (ibid).}, men heller ikke de kunne lære os det Sande.
+Thi de opfatte kun Tingen saaledes som den ifølge deres
+Beskaffenhed tager sig ud for dem\footnote[2]{Les sens ne comprennent pas le subject estrangier, ains seulement leurs propres passions (ibid).}. Tingen selv undgaar
+os bestandig, og vi have ingen Maalestok for at
+bedømme Forholdet mellem dens virkelige Væsen og vor
+Fornemmelse af den. Paa lignende Maade viser Montaigne,
+at da Indbildningskraften ikke kan gaa ud over
+vort eget Væsen, tænke vi os nødvendigvis Guddommen
+under menneskelige Former. Skønt Menneskene altsaa
+selv have dannet sig deres Guder, blive de dog bange
+for dem, ligesom Børnene blive bange for deres Kammerats
+Ansigt, som de selv have malet eller sværtet. ---
+Der ligger her til Grund en Anelse om den Tanke, Kant
+og Feuerbach i nyere Tid saa energisk have gennemført
+paa Erkendelseslærens og Religionsfilosofiens Omraade,
+at det Sete stedse betinges ved Synet og ikke kendes
+uden i sit Forhold til dette.
+
+Montaigne drager heraf saavel teoretiske som navnlig
+praktiske Konsekvenser. Da Mening staar mod Mening
+hos de Lærde, --- da der ikke er noget saa Urimeligt,
+at jo et eller andet Folk har optaget det i sin Religion,
+--- da det Gode og Rette er forskelligt hos de forskellige
+Nationer, saa at det, der er Synd paa denne Side
+Bjærgene, er Dyd paa den anden Side, --- saa er der
+ikke Andet for end at vedgaa sin Uvidenhed. Det er
+et Bevis paa Galskab og paa den allerhøjeste Grad af
+Uvidenhed at anse sig for sikker paa Noget. Al vor
+Forsken kan kun tjene til at udvikle og bekræfte den
+Uvidenhed, som er os medfødt. Ja, man kan ikke engang
+være vis paa sin Tvivl og Uvidenhed; man skal
+derfor ikke sige: jeg tvivler! --- men: hvad véd jeg? ---
+% --- p. 216 ---
+\setcounter{footnote}{0}%
+\opage{216}Heraf følger, at man vel kan undskylde dem, der fejle i
+deres religiøse Forestillinger; thi da disse Forestillinger
+angaa Noget, som ligger ud over menneskelige Grundes
+Raaderum, saa kan den, der ikke oplyses af den guddommelige
+Naade, let fare vild; --- men at det paa den
+anden Side er uforsvarligt at sætte sig op imod den bestaaende
+Tilstand, fordi man mener selv at have fundet
+Noget, som er bedre. Det vidner om stor Egenkærlighed
+og Hildethed. Jeg væmmes ved det Nye, siger Montaigne,
+under hvilken Skikkelse det saa fremstiller sig. Ikke
+fordi de bestaaende Love i sig selv altid ere fornuftige.
+Lovenes Gyldighed beroer ikke paa, at de ere retfærdige,
+men netop paa, at de ere Love: c'est le fondement mystique
+de leur auctorité! Ofte skriver Lovenes Oprindelse
+sig fra Taabelighed og Egennytte, men Sædvanen
+giver dem Fasthed og lader dem synes retfærdige. Derfor
+er det farligt at følge dem tilbage til deres Oprindelse.
+Det gaar med dem, som med en mægtig Flod,
+der i sit Udspring kun er et ubetydeligt Væld. Saaledes
+vokse Lovenes Magt fra en tilfældig Begyndelse i
+Tidens Løb.
+
+Sædvanen er Verdens Herskerinde. Det gælder ikke
+blot om de juridiske Love, men ogsaa om de moralske.
+Samvittigheden føler sig bunden til, hvad den er vant
+til at respektere, og kan ikke uden Anger og Nag frigøre
+sig derfor. Kannibalerne, der betragte det som en
+Pietetspligt at spise deres gamle Forældre, vilde forarges
+ved at se de Afdøde blive nedgravede i Jorden til
+Føde for Ormene. Vel skal den Vise indadtil frigøre
+sin Sjæl, saameget som muligt drage sig ud af Mængden
+for uhildet at kunne dømme om Tingene (retirer son
+ame de la presse et la tenir en liberté et puissance de
+juger librement des choses. Liv. I chap. 22); --- men udadtil
+maa han følge de bestaaende Love og Skikke. I
+Modsætning til de mange stridende Meninger overlader
+han sig umiddelbart og naivt til Naturen, som aldrig
+% --- p. 217 ---
+\setcounter{footnote}{0}%
+\opage{217}leder fejl, naar man blot ikke forfalsker den ved at ville
+tolke dens Visdom; men herimod sikrer netop Uvidenheden
+og Ligegyldigheden ham: „Oh! que c'est un doulx
+et mol chevet, et sain, que l'ignorance et l'incuriosité, à
+reposer une teste bien faicte!“ (liv. III chap. 13). Fra
+de udvortes Sysler trækker han sig tilbage i sit eget Jeg
+og følger det ind i dets inderste Løngange, de mørkeste
+Folder. Men denne Vej til Ro kan saa naturligvis ikke
+være fælles for Alle; Enhver maa søge den for sig, efter
+sin Natur.
+
+Denne gennemførte Skepsis, der ikke engang i sin
+egen Tanke finder en fast Grund, men bestandig holder
+sig i Spørgsmaalsform, er dog ikke Montaignes sidste
+Ord. Allerede Pascal har set dette, naar han i den
+mesterlige Karakteristik af Montaigne, som findes i hans
+„Pensées“, sætter det som dennes Formaal at finde en
+Moral, der grundes paa Fornuften, uden Troens Lys.
+Montaigne er en Moralist, ikke blot fordi han psykologisk
+ skildrer Menneskets Natur, men ogsaa fordi han
+virkelig udtaler en sammenhængende etisk Anskuelse.
+Men af hvad Art kan denne være, naar han stiller sig
+skeptisk overfor ethvert positivt Princip?
+
+Vi have allerede naaet det Punkt, hvor Skepticismen
+hos Montaigne gaar over til positiv Anskuelse. Han
+hævder vel Uvidenheden og gør Que sais-je? til sit
+Princip; men Uvidenheden er ham kun Middel til at
+gribe Naturen. Menneskene have, siger han, ved deres
+Ræsonnementer forkvaklet den sande og oprindelige Natur,
+hvis Spor kun findes hos de Udannede og hos Dyrene.
+Naturen har derved mistet sin faste og universelle
+Karakter og har faaet en særegen Form hos hver Enkelt.
+Dyden bestaar ikke i Tankens eller Fornuftens Herredømme,
+men i at lade Naturen udvikle sig efter sin egen
+Lov, saaledes at Fornuften blot afskærer de falske Udvækster.
+Drifterne følge deres eget naturlige Løb, og
+Fornuften kan ikke umiddelbart hindre dem deri. Mon%
+% --- p. 218 ---
+\setcounter{footnote}{0}%
+\opage{218}taigne siger derfor, at hvis han besidder nogen Dyd, saa
+er det en Uskyldighed, han snarere skylder Lykken end
+Fornuften. Naar Naturen af sig selv fører den etiske
+Harmoni med sig, saa følger det af sig selv, at Nydelsen
+ikke staar i Modsætning til Dyden, men netop ved Dyden
+opnaar sin højeste og reneste Form. Af Naturen tragte
+vi ikke efter Andet end Nydelse. Men den lavere Nydelse
+fortjener ikke dette Navn; den er kun øjeblikkelig
+og fuld af Ængstelse og Savn. Den højere Nydelse bestaar
+i selve Dyden, som man derfor ikke med Stoikerne
+maa tænke sig mørk og stræng, tronende paa en stejl
+Klippe i en ensom Ørken, der er fuld af Farer. Ej
+heller forholder det sig saaledes, at den selv er mild og
+smilende, men Vejen til den mørk og besværlig; saa
+vilde Ingen besidde den, da Ingen naar at tilbagelægge
+hele Vejen. Vejen maa svare til Maalet, hvortil den
+fører. Dyden boer paa en skøn og blomstrende Høj,
+hvorfra den ser alle Ting under sig, og man naaer dertil
+ad skyggefulde og blomstersmykkede Stier, med Naturen
+som Fører, Lykken og Nydelsen som Ledsagere.
+
+Denne Lære minder om Epikuræismen. Men allerede
+Montaigne selv har bemærket, at det kun er en falsk
+Mening, at Epikuræismen i Fasthed og Strænghed skulde
+staa tilbage for Stoicismen (liv. II chap. 11). Hvis man
+anvender dette paa hans egen Lære, vil det kunne udtrykkes
+saaledes, at der kræves meget Arbejde og megen
+Anstrængelse, for at den sande Natur kan udfolde sig i
+Mennesket. Hvad der gør, at Stoikerne staa Montaigne
+fjærnere, er det asketiske Element hos dem og deres
+Ringeagt for det umiddelbare Naturlige og Menneskelige,
+som Montaigne netop søger at fremlokke og frede om.
+Aandens Storhed, siger han, bestaar ikke saameget i at
+hige opad og fremad, som i at ordne og begrænse sig.
+Intet er saa skønt og ret, som at være Menneske paa
+god og tilbørlig Vis, ingen Videnskab saa vanskelig, som
+at forstaa at føre sit Liv paa rette Maade, og den værste
+% --- p. 219 ---
+\setcounter{footnote}{0}%
+\opage{219}Sygdom er Foragt for vort eget Væsen\footnote[1]{Entre nous --- siger han i Anledning af de kristelige Asketer --- ce sont choses que j'ay tousjours veues de singulier accord, les opinions supercelestes, et les moeurs soubterraines. Liv. III chap. 13.}. Naturen er
+en god Fører, og ikke mere god end klog og retfærdig.
+Derfor beundrer Montaigne alligevel „de heroiske Sjæles
+Højhed“. Det er jo hans Princip, at Enhver skal maales
+med sin egen Alen, efter sin egen Natur (sur son propre
+modele). Hans egen Svaghed gør ham ikke blind for
+Andres Styrke; skønt han selv kryber paa Jorden, kan
+han dog se Andres høje Flugt, og han anser det ikke
+for nogen ringe Sag at bevare den moralske Dømmekraft
+sund i en Tidsalder som hans, hvor Dyden ikke
+synes at være Andet end „un jargon de college“, og
+hvor de fleste stræbe at nedsætte enhver stor og ædel
+Handling ved paa en subtil Maade at henføre den til
+slette Motiver for at kunne faa den draget ned i deres
+egen Sfære. Hine „heroiske Sjæle“ ere Mønstre, som
+Naturen vælger for at vise, hvilken Højde den menneskelige
+Dyd og Kraft kan naa (liv. I chap. 36).
+
+I den Sædelighed, til hvilken Naturen fører os, naaer
+ altsaa Nydelsen sin ædleste Form ved at blive Et med
+Dyden. Den forsoner tillige en anden Modsætning,
+mellem Egoismen og Hengivelsen til Andre. Ved at indlade
+sig paa de offenlige Anliggender og give sig af med
+Andres Sager, mister man let Noget af sit egen Væsen. De % PRINTED AS IS (egen Væsen: for eget Væsen; translator odd spot, zoom)
+Fleste give sig umiddelbart hen, og tilhøre derfor ikke
+sig selv. Selv Vellysten skal man ikke helt hengive sig
+til; den gemmer Smerte paa Bunden. Man skal ikke
+fordybe sig i Verden, men kun berøre den, glide hen
+over dens Overflade. Det Største i Verden er at forstaa
+at tilhøre sig selv. Man skal ikke binde sig til Andet
+end til sin egen Natur (n'espouser que soi-mesme). Deraf
+følger ikke, at man skal være Egoist og ikke bekymre
+% --- p. 220 ---
+\setcounter{footnote}{0}%
+\opage{220}sig om Andre; tværtimod, den som ikke lever for Andre,
+lever heller ikke for sig selv. Selvhensynet indeslutter
+Hensynet til Andre; begge følge af den samme Natur.
+
+Montaigne vil ikke foredrage en slap og blødagtig
+Nydelseslære. Det ses ikke blot af det Foregaaende,
+men ogsaa af den Rolle, Tanken om Døden spiller hos
+ham. Ingen, siger han, vilde kunne glæde sig ved Livet,
+naar han frygtede Døden, lige saa lidt som den dømte
+Forbryder paa Vejen til Retterstedet kan glæde sig over
+de skønne Egne, han kommer igennem. De Fleste søge
+derfor den Udvej at se at glemme den, men denne Udvej
+er dyrisk, er brutal Stupiditet. Og desuden, hvad
+hjælper det? Man gaar og kommer, danser og ler, som
+om Døden ikke var til; og naar den saa berøver os En
+af vore Nærmeste, forandres denne Sorgløshed til den
+dybeste Fortvivlelse og Nedslagenhed. I Sandhed, selv
+om denne dyriske Tankeløshed var mulig hos et forstandigt
+Menneske, saa er den dog for dyrt købt. Man maa
+i rette Tid lære at bekæmpe denne uundgaaelige Fjende,
+uforfærdet gøre Front imod den. Dens frygteligste Vaaben
+er det Fremmede og pludselig Truende. Lad os da berøve
+den dette ved at gøre os fortrolig med den, vænne
+os til den ved stedse at have den i Tanke, ved at fremstille
+den for vor Indbildningskraft under alle mulige
+Skikkelser. Lad os gøre som de gamle Ægyptere, der
+ved deres muntreste Fester lod bringe Mumier af afdøde
+Mennesker ind for at tjene til Paamindelse for de Indbudte.
+Da det er uvist, hvor Døden venter os, saa lad
+os vente den overalt. At tænke over Døden er at tænke
+over Friheden; den som har lært at dø, har lært at ophøre
+at trælle; der gives intet Ondt i Livet for den, der
+har indset, at Berøvelsen af Livet ikke er et Onde. Man
+skal ikke knytte sig saa fast til Livet, ej heller til nogen
+Nydelse eller Gerning i Livet, at man ikke uden Sorg
+kan skilles derfra. Livet er i sig selv hverken et Gode
+eller et Onde; det kommer an paa, hvorledes man har
+% --- p. 221 ---
+\setcounter{footnote}{0}%
+\opage{221}brugt det; man kan have levet meget i kort Tid. „Je
+veux, qu'on agisse et qu'on alonge les offices de la vie,
+tant qu'on peult, et que la mort me trouve plantant
+mes choulx, mais nonchalant d'elle et encore plus de
+mon jardin imparfaict“. Hvor er desuden vort Liv kun
+et forsvindende Intet, naar vi sammenligne det med Evigheden,
+eller endog blot med Stjærnernes, Bjærgenes.
+Flodernes og Træernes Ælde! Hvilken Ret have vi til
+at tillægge os en Væren i dette korte Øjeblik, der kun
+er et lille Glimt i en evig Nats uendelige Løb, en saa
+kort Afbrydelse af vor vedvarende og naturlige Tilstand,
+da jo Døden indtager Alt, hvad der ligger forud og bagefter
+dette Øjeblik, ja endog en god Del af det selv?
+Med Rette siger derfor Naturen til os: „Gaa ud af denne
+Verden, som du er kommen ind i den. Den Overgang,
+du foretog fra Død til Liv, uden Lidenskab og uden
+Rædsel, skal du nu gøre om fra Liv til Død. Din Død
+er et Led i Universets Orden, i Verdens Liv“\footnote[1]{Liv. I chap. 19: Que philosopher c'est apprendre à mourir.}.
+
+Den Karakter, Mennesket udvikler i Løbet af sit
+Liv, udspringer med Nødvendighed af hans oprindelige
+Natur. Den bevidste Fornuft kan, som vi allerede have
+hørt, ifølge Montaigne kun virke indirekte, afværgende
+og rensende; den positive Livsfylde oprinder af Naturens
+Skød. Dog er der én positiv Følelse, Fornuften kan bevirke,
+og som opstaar, naar Virkningen af den uendelig
+omskiftende Naturdrift kommer i Strid med den fornuftige
+Indsigt i det Rette. Denne indre Disharmoni
+føles som Anger. Herved oprettes der en indre Domstol
+i os, som Ingen kan undfly, selv om han overfor
+Andre synes nok saa rolig og sikker med Hensyn til
+sine Handlinger. Selv om vore Gerninger tage sig glimrende
+ud for Andre, ere de dog for os selv kun som
+klare Straaler, der springe i Vejret fra en uren og mudret
+Grund. Men skønt Angeren er en positiv Følelse, har
+% --- p. 222 ---
+\setcounter{footnote}{0}%
+\opage{222}den dog sin Grænse der, hvor Fornuften har sin; selve
+den Lidenskab, der er Et med vort eget Væsen, og som
+ved Vane og Øvelse har fæstet endnu dybere Rod, kan
+den ikke forandre. I denne Forstand er Angeren umulig.
+Det er kun Illusion eller Hykleri, naar man mener virkelig
+at kunne blive eller være bleven en Anden. Det
+sker maaske i det Højeste, som Pythagoras mente, at
+Menneskene faa en ny Sjæl, naar de nærme sig Guderne
+for at modtage deres Orakler; men denne nye Sjæl er
+kun paatagen og forsvinder igen efter kort Tids Forløb.
+Enhver har i sig selv en ham ejendommelig, hans Væsen
+beherskende Form (une forme sienne, une forme maitresse),
+som ikke kan forandres, men modstaar enhver
+ydre Paavirkning og omdanner den paa sin Vis. Derfor
+naa Forsøgene paa at reformere og forbedre Verden kun
+til Skallerne, aldrig til selve Kærnen. Hvad mig selv
+angaar, siger Montaigne, da kan jeg ønske, at jeg var
+et andet Menneske; jeg kan fordømme og afsky min almindelige
+Natur (ma forme universelle) og bede Gud
+om en fuldstændig Reformation af mit Væsen; men det
+kalder jeg ikke Anger, ligesaa lidt som jeg kalder det
+Anger at være utilfreds over ikke at være en Engel eller
+en Cato. Fordi jeg forestiller mig højere og fuldkomnere
+Naturer end min egen, derfor forbedres ikke mine
+Evner,  ligesaa lidt som min Arm eller min Forstand
+bliver kraftigere, fordi jeg kan danne mig en Forestilling
+om en Anden, hos hvem de ere kraftigere. I saa Fald
+vilde jo ogsaa vore mest uskyldige Handlinger blive
+Genstand for Anger, fordi vi let indse, at de under Forudsætning
+af en fuldkommen Natur ogsaa vilde være
+blevne udførte med større Fuldkommenhed og Værdighed\footnote[1]{Liv. III chap. 2: Du repentir.}.
+
+Altsaa: den virkelige Anger, Angeren i strængeste
+Betydning vilde føre til, at jeg blev en Anden; men
+% --- p. 223 ---
+\setcounter{footnote}{0}%
+\opage{223}en Anden kan jeg ikke blive, saalænge jeg er mig
+selv. Det er denne Modsigelse i Angerens Begreb,
+hvorpaa Montaigne støtter sin Benægtelse af dens
+Realitet. Det ses her klart, hvilken Rolle Immanentsprincipet
+spiller her hos ham, skønt kan ikke formulerer % PRINTED AS IS (kan ikke formulerer: kan for han; translator odd spot, zoom)
+det filosofisk. I Modsætning til den ortodokse
+Anskuelse om Menneskenaturens Fordærvelse og
+Nødvendigheden af en absolut Genfødelse, hævder han
+den menneskelige Naturs Enhed og Uforanderlighed og
+dens Sammenhæng med Naturen i dens Helhed. Naar
+Handlingerne ere udførte, gaa de ind som nødvendige
+Led i Universets store Proces, i Aarsagernes og Virkningernes
+uendelige Række; og det er forgæves at
+sørge over dem. Fantasien kan ikke med al sin Styrke
+gøre et eneste Punkt indenfor denne store Proces til Intet.
+--- En saadan Anskuelse vilde, hvad f. Eks. Schopenhauers
+Lære viser, kunne føre til Pessimisme; naar man
+ nemlig antager, at Grundvæsenet (la forme maistresse)
+er ondt. Men Montaigne betænker sig intet Øjeblik paa,
+om han skal give Heraklit eller Demokrit Ret: jeg
+tror ikke, siger han, at der er saa megen Ulykke blandt
+os som der er Forfængelighed, eller saa megen Ondskab;
+som der er Dumhed!
+
+Pascal har skildret Montaigne som Skeptiker og
+Moralist, og i det Hele som den, der fremstiller „det naturlige Menneske“. Men han har ikke ført Skildringen
+videre saaledes, at det sidste Grundlag for Montaignes
+Livsanskuelse kom for Dagen, det Punkt, hvorom Alting
+tilsidst drejer sig, og hvorved Montaigne naaer ud over
+det blot Populære og Moralske og antyder en hel filosofisk
+Verdensanskuelse. Dette maatte i og for sig have
+mindre Interesse for Pascal, der selv stillede sig paa et
+afgjort praktisk Standpunkt. Pascal beundrer Montaignes
+dialektiske Gennemførelse af Skepticismen og akcepterer
+den i Paradoksets Tjeneste; men han forkaster hans
+Moral som Hedenskab, ja i sidste Instans som Fejghed.
+% --- p. 224 ---
+\setcounter{footnote}{0}%
+\opage{224}Om man nu just kan beskylde en Livsanskuelse for
+Fejghed, der gør sig det til en væsenlig Opgave at indøve
+Tanken om Døden og have den til sin Fortrolige
+ved Alt, hvad man foretager, er en anden Sag; i sin
+brændende Lidenskab for Evangeliet maatte Pascal anse
+Alt for lavt, hvad der ikke absolut gik op i denne overnaturlige
+Magt. Derfor er det ogsaa, at han stanser
+ved den moralske og religiøse Betragtning og ikke gaar
+fremad til den metafysiske. Det følger tillige af sig selv,
+at det Metafysiske ligger temmelig skjult hos en causeur
+som Montaigne. Men efter Alt, hvad vi have hørt i det
+Foregaaende, kan det ikke være tvivlsomt, at der bag
+hans Skepticisme og hans Eudæmonisme hæver sig en
+uendelig Baggrund, til hvilken han stedse direkte eller
+indirekte viser hen. Det er Ideen om Naturen i dens
+Højhed og Uendelighed, der i sin store Kæde ogsaa omslutter
+Menneskelivet som et enkelt Led. Sainte-Beuve
+har i sin Port-Royal (3e éd. II p. 412), hvor han i Anledning
+af Pascal kommer til at beskæftige sig med
+Montaigne, peget hen paa, hvorledes denne gennem sit
+Naturbegreb slutter sig til Grundtanken i de store metafysiske
+Systemer, særlig Hobbes og Spinoza. Modsætningen
+til Dualismen, Tilliden til Menneskenaturen og
+dens Kræfter maatte nødvendigvis føre et klart og livligt
+Hoved til den Grundvold, hvorpaa hele den moderne
+Verdensanskuelse hviler, selv om han ikke har udtalt
+denne i en filosofisk Formel.
+
+Naturbegrebet gjorde os allerede tidligere Forbindelser
+mellem Montaignes Skepticisme og hans Moral
+forstaaelig. Men dette Begreb spiller saavel i det Smaa
+som i det Store en Hovedrolle hos ham. Er Talen f.
+Eks. om Sygdom, vil han ikke vide Noget af Lægerne;
+de forkvakle kun Naturen og hindre den i dens egen
+rette Udvikling; --- ligesom ethvert andet Væsen har
+ogsaa Sygdommen sin bestemte Tid til at udvikle sig og
+til at afslutte sit Liv, og det er forgæves at gribe ind
+% --- p. 225 ---
+\setcounter{footnote}{0}%
+\opage{225}her. Man skal lade Naturen raade; den forstaar Sagerne
+bedre end vi. I Naturens Orden maa man finde
+sig. Ligesom Verdensharmonien er vort Liv sammensat
+af Modsætninger, af forskellige Toner, som alle høre med
+i den store Sammenhæng, Sygdom og Død saavel som
+Sundhed og Liv. --- Er Talen om Opdragelse, da gælder
+det ligeledes at lade Naturen have sit frie Løb: nature
+peut tout et fait tout! --- Endelig hæver han ved Hjælp
+af Naturbegrebet selve sin Skepticisme. Den eneste
+Maade, siger han, ved hvilken man kan sikre sig mod at
+maale Tingene med en falsk Alen, er at gaa ud over de
+relative Sammenligninger og stille sig „vor Moder Naturen
+i dens hele Majestæt“ for Øje; den viser os en
+gennemgaaende og stadig Mangfoldighed, indenfor hvilken
+vi opdage os selv og Alt, hvad vi kalde stort; herved
+faa vi først det rette Begreb om Tingenes Størrelse.
+Uden en saadan absolut Maalestok anser Enhver sin
+Religion og sit Lands Forfatning for de eneste rigtige
+og kalder alt Andet Barbari, medens det dog snarere
+burde kaldes Barbari at indsnevre „vor store og mægtige
+Moder Naturs“ Kraft ved at drage vilkaarlige og
+tilfældige Grænser og Skranker. Det er desuden ogsaa
+umuligt; Naturen spotter vore Kunster og triumferer over
+vore kløgtige Paafund\footnote[1]{Ce n'est pas raison que l'art gaigne le poinct d'honneur sur nostre grande et puissante mere nature. Nous avons tant rechargé la beauté et la richesse par nos inventions, que nous l'avons du tout estouffee: si est ce que partout ou sa pureté reluict, elle faict une merveilleuse honte à nos vaines et frivoles entreprises. Liv. I chap. 30: Des cannibales.}. --- Og med dette Naturbegreb
+staar endelig Montaignes Gudsbegreb i nøje Forbindelse.
+„Af alle menneskelige Meninger om Religionen“, siger
+han (liv. II chap. 12), „synes den mig at have mest Sandsynlighed
+og Forsvarlighed, der erkendte Gud som en
+ubegribelig Magt, Ophav til og Opholder af Alt, den
+absolute Godhed og Fuldkommenhed, der tager imod og
+% --- p. 226 ---
+\setcounter{footnote}{0}%
+\opage{226}bifalder den Ære og den Dyrkelse, som Menneskene,
+hver paa sin Vis, ydede ham, under hvilken Form, under
+hvilket Navn og paa hvilken Maade det saa skete.“ Vi
+se heraf, hvilken nøje Sammenhæng der er mellem Montaignes
+Verdensanskuelse og hans humane og tolerante
+Aandsretning.  Tolerancen grunder sig hos ham ikke
+blot paa Skepticismen, men Forudsætningen om, at den
+evige og uendelige Natur ligger til Grund for og aabenbarer
+sig i Alt og Alle, maa nødvendigvis føre til den
+Erkendelse, at Ingen er afskaaret fra det Evige og Guddommelige,
+og at dette kan lægge sig for Dagen under
+utallige Former, som hver for sig have Ret til at udvikle
+sig med Frihed.
+
+Montaigne var ikke, som Pascal i sin jansenistiske
+Iver mente, en Fejghedens og Sandselighedens Apostel,
+men en ædel og sund Natur. Han afspejler sig selv i
+sit Skrift baade efter sine gode og sine slette Sider, med
+elskværdig Naivetet. Hvilken Inderlighed, der boede i
+i ham, ses bl. A. af den Maade, hvorpaa han skildrer
+sit Venskabsforhold til Etienne de la Boétie\footnote[1]{Nos ames ont charié si uniement ensemble; elles se sont considerees d'une si ardente affection, et de pareille affection, descouvertes jusques au fin fond des entrailles l'un de l'aultre, que non seulement je cognoissois la sienne comme la mienne, mais je me feusse certainement plus volontiers fié à luy de moy, qu'à moy.} (liv. I chap.
+27). Dette Forhold bestod, siger han, i en fuldstændig
+gensidig Opgaaen af den Enes Vilje i den Andens, saa
+at Ingen beholdt Noget for sig selv, og Enhver kendte
+den Andens inderste Motiver\footnote[2]{Etienne de la Boëtie (1530---1563), Medlem af Parlamentet i Bordeaux, er især bekendt ved sin „Discours sur la servitude volontaire“, ogsaa kaldet „Contre un“, som han forfattede i sit 18de Aar (par maniere d'exercitation seulement, siger Montaigne), og hvori han med glødende Begejstring, skønt i en retorisk Stil, der stærkt minder om de Gamle, forkynder Læren om Alles naturlige Frihed og viser, at det er Menneske%
+\opage{227}hedens egen Skyld, naar den bliver uudertrykt, thi Undertrykkeren er kun En mod de Mange og vilde ikke have nogen Magt, naar disse ikke selv underkastede sig ham. Montaigne kalder ham Aarhundredets største Mand; senere har man ment, at det smukke Kapitel, i hvilket Montaigne omtaler sin afdøde Ven har gjort denne mere berømt, end hans egne Skrifter vilde have gjort.}. „Naar jeg sammenligner
+% --- p. 227 ---
+\setcounter{footnote}{0}%
+\opage{227}hele Resten af mit Liv med de fire Aar, i hvilke det
+har været mig givet at nyde hans kære Selskab og Omgang, saa staar det kun for mig som en Taage, som en
+lang og kedsom Nat“. Venskabet var i det Hele det
+etiske Forhold, der mest laa for Montaigne; her gav
+han sig ganske hen uden at frygte for at miste sig selv.
+--- Hvor sund en Natur han var, ser man af den Bemærkning,
+at Medgang altid stemmer ham til Alvor og
+Besindighed. „Jeg er frommere i Medgang end i Modgang.
+Lykken tjener mig til Tugt og Opdragelse, ligesom
+Ulykkerne og Revselserne for Andre; Heldet er mig
+en særlig Spore til Maadehold og Beskedenhed“. (Liv.
+III chap. 9).
+
+Med Nødvendighed maatte vi vende tilbage til Personen
+selv, efter tilsyneladende at have forladt ham for
+at fremstille hans Livsanskuelse. Hos Montaigne mindre
+end hos nogen Anden kunne begge skildres hver for sig.
+Men tage vi nu hele Fænomenet, da er det en karakteristisk
+Type for Renæssancen, vi her have for os.
+Fuldblodig og sanselig, og dog paa sin Vis rettet mod
+det Uendelige, bevægende Alt, og dog hvilende og nydende
+midt under Bevægelsens Hvirvel, glædende sig ved
+Oldtiden og dog med Fremtidens Tanke i sit Skød. I
+sin egen Tid blev Montaigne kun forstaaet af Enkelte\footnote[1]{Se \emph{Nisard}: Précis de l'histoire de la littérature française. p. 211 f.}% PRINTED AS IS (uudertrykt: for undertrykt; note reader N2, translator odd spot, zoom)
+.
+Justus Lipsius kaldte ham den franske Thales, Kardinal
+du Perron kaldter hans Bog le bréviaire des honnétes % PRINTED AS IS (kaldter: for kaldte; sweep zoom)
+gens. I det 17de Aarhundrede stod Montaigne for Pascal
+% --- p. 228 ---
+\setcounter{footnote}{0}%
+\opage{228}
+og Jansenisterne som den store Hedning, der klarere end
+nogen Anden har udtalt det naturlige ɔ: det syndige
+Menneskes Principer. Først i det 18de Aarhundrede
+kunde han finde beslægtede Aander. Voltaire stammer
+fra ham ved sin fine og smidige Ironi og skarpe Kritik.
+Rousseau udtaler, hvad Montaigne kun antyder, Nødvendigheden
+af at forlade det forfinede Kulturliv (Montaignes
+„nature sophistiquée et raffinée) og vende tilbage
+til den ægte, oprindelige Natur. Diderot forener endelig
+begge Elementer i sig og er derfor maaske den senere
+Forfatter, der har størst Lighed med Montaigne.
+
+Vi have forsøgt at finde et System i Montaignes
+Essays; og med Systemet maa nødvendigvis følge en
+Kritik. Som vi have søgt at vise, er Montaignes Hovedtanke
+den samme, der trænger sig frem i hele Renæssancens
+Tænkning, Naturens Ide. Denne Ide fremtræder
+hos ham under en ejendommelig Form. Den danner den
+almindelige Baggrund, den sidste Forudsætning for hans
+Skepticisme; den er tillige den positive Magt, han ser
+virke i Alt, og for hvilken han overalt søger at berede
+Plads. Men der er dog, særlig naar vi betragte ham
+som Etiker, en afgørende Mislighed i hans Opfattelse
+af Naturbegrebet. Han ser det Naturlige som en umiddelbart
+henflydende Strøm, som en Slags Vegeteren, der
+hindres og forvanskes ved den bevidste Tænken og Virken.
+Deraf bliver igen Følgen, at Menneskets Tænken og
+Virken kun faar negativ eller indirekte Betydning, istedetfor
+at disse Funktioner dog ligesaavel som enhver anden
+maa have deres Plads og Betydning indenfor Naturen.
+Principet for den menneskelige Handlen maa netop findes
+ved at undersøge, hvilken Anvendelse af disse Funktioner
+der følge af Menneskets sande Natur. De staa altsaa
+ikke udenfor den uendelige Naturs Strøm, men ere selv
+Former for denne. Gennemføres denne Betragtning, da
+træder det aktive Element i Naturbegrebet klarere frem;
+istedetfor den umiddelbare Strømning træder nu den
+% --- p. 229 ---
+\setcounter{footnote}{0}%
+\opage{229}bevidste Hengivelse og den energiske Udvikling af den i
+Naturideen antydede Opgave. Fra denne Side finde vi
+tildels Sagen opfattet hos Giordano Bruno, Montaignes
+yngre Samtidige, naar denne ligesom Platon ser Naturdriften
+som Udtryk for en ideal Uro, der ikke tillader
+Mennesket at hvile, førend det har erhvervet Harmoni og
+Forsoning ved Tankens og Villiens Arbejde og gennem
+Hengivelse til det Uendelige med den hele Personlighed\footnote[1]{Heraf følger naturligvis ogsaa en anden Opfattelse af de afgørende etiske Problemer. Saaledes fastholder Bruno navnlig Angerens Realitet, hvilken Montaigne paa naturalistisk Vis nægtede. Men Bruno opfatter Angeren saaledes, at han ikke opgiver Immanensprincipet. Han antager intet absolut Ondt, ingen Fordærvelse af Menneskenaturen. Men uden Strid og Kamp, uden Modsigelse og Modstand kan det Sande og Gode ikke sejre: og det Onde er den negative Magt, der rejser Modsigelsen og gør Kampen nødvendig. Denne negative Magt maa ophæves; Sjælen vinder sig selv gennem Sønderknuselsen. Angeren er altsaa et Tegn paa Sjælens ideale Natur: den er som en lysende Gnist, der slaar ud af den haarde Flint og vidner om dens Slægtskab med Solen. --- Det er klart, at det Principielle og Berettigede i Montaignes Polemik ikke benægtes ved Brunos Opfattelse; thi hin Polemik var rettet mod Angeren som fuldstændig Forvandling af Naturen.}.
+Hos Bruno findes der derfor ingen saadan Modsætning
+som hos Montaigne mellem den endelige Tænken og
+Villen, som Intet kan udrette, og Anskuelsen af den
+uendelige Natur. Montaignes Skepticisme, som fra en
+anden Side set er et af hans Hovedfortrin, idet den befrier
+fra Avtoritetstroens Forudsætninger, har dog netop
+sin Grund i, at Naturideen hos ham, saameget den end er
+Basis for Alt, staar som en fjærn og mystisk Magt og ikke
+drages frem til konkret Gennemførelse i Virkeligheden.
+
+Men det er naturligvis en ensidig Betragtningsmaade
+at se Montaigne som filosofisk Etiker. Han kommer
+kun til sin Ret, naar man ser ham i hans hele literær%
+% --- p. 230 ---
+\setcounter{footnote}{0}%
+\opage{230}historiske Betydning, og denne beror paa, at han ikke
+henvender sig til de Lærde og de ensomme Tænkere,
+men at han i et saa let, klart og livligt Foredrag, som
+endnu ikke var hørt i et nyere Sprog, rettede Talen til
+Enhver, som vilde høre ham, om ikke af anden Grund,
+saa dog for at underholde sig ved et saa behageligt Selskab
+som Montaignes Essays er.
+\signature{\textbf{Harald Høffding.}}
+
+\end{document}

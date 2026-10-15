@@ -1,0 +1,403 @@
+% =====================================================================
+%  Harald Høffding, Benedikt Spinoza
+%  In: Nær og Fjern.  Et Ugeblad, redigeret af P. Hansen.  Sjette Bind (Nr. 222-274).  Kjøbenhavn 1877: C. A. Reitzel; Otto B. Wroblewsky.  Nr. 233, Søndag den 17. December 1876, pp. [1]-3 (the weekly numbers each issue's pages from 1), the lead article.
+%  Fraktur, two columns; French titles in antiqua (\textit{} here).
+%
+%  TRANSCRIPTION -- GENERATED; DO NOT EDIT BY HAND.  Høffding's four pieces of 1875-76 (Herbert Spencers Filosofi; the
+%  review of Wilkens; Montaignes Betydning i Etikens Historie; Benedikt Spinoza) are built by ONE pipeline
+%  (ebook-method/hoeffding-1875-76/) into a combined working file, which split.py cuts into four transcriptions.
+%  Rebuild from the repo root:   sh ebook-method/hoeffding-1875-76/rebuild.sh
+%
+%  STATUS: COMPLETE (2026-10-15): the volume's title page and the whole text, pp. [1]-3.
+%
+%  EDITION.  Internet Archive naer-og-fjern-1876-77 (a private scan, 305 ppi colour JP2, uploaded 2024); extract ~/bibliotek/Høffding, Harald/1876-naer-og-fjern-6-nr233.pdf (SCANS.tsv, sha256).  No second copy found (Internet Archive, NB, Runeberg, HathiTrust).  The masthead (an engraved vignette) is described, not reproduced; the title and byline span both columns; the article is unsigned.
+%
+%  ACCURACY (2026-10-15; one collation for all four texts, 57 working pages, ~17,100 words).
+%  (a) The DRAFT is our own tesseract reading (tessdata_best: dan for Det nittende Aarhundrede, script/Fraktur for Nær og
+%      Fjern; 300 dpi) of the Archive's JP2 images, laid over the working PDF and turned into LaTeX by draft.py.  It was
+%      chosen over the Archive's own OCR (tesseract 5.2/5.3, hOCR) by measurement against the Harvard copy's ABBYY OCR
+%      (words unmatched: 3.0% against 9.5% in the Montaigne volume; the Archive reads aa as åa and long s as f).  The
+%      Archive's OCR is the WITNESS: collated word by word (collate/check.py): 900 disagreements, 76 settled by check.py.
+%  (b) Rules (rules.py: the Archive's å for a, long s read f, glyph faults against attested words, 326) and a THIRD reading
+%      voted: the ABBYY OCR of ANOTHER COPY (Google's scan of the Harvard volume), by context and by word alignment
+%      (rules.py harv-*, vote2.py hv-*), never on figures and never making a word the corpus does not attest.  AUDIT: 30
+%      letter-changing rule/vote decisions read blind at the image: 0 contradicted (6 undetermined crops).
+%  (c) The rest of Det nittende Aarhundrede read at the image BLIND (round b1: 210 crops on 12 sheets, five readers, 23/24
+%      planted controls right; ~80 decided by hand from the readers' lines).  OPEN 0.
+%  (d) Every FOOTNOTE read whole at the image (readers N1, N2: 26 notes on 23 pages), set from the reading; the note marks
+%      checked at zooms (four the draft had misplaced, moved).  STRUCTURE read at the image (reader K): the title pages, the
+%      heads, the endings and signatures, the verse on p. 116.
+%  (e) Nær og Fjern (FRAKTUR, two columns, no second copy): each column PROOFREAD WHOLE at the image against the draft by
+%      two readers (P1, P2; 3 of 4 planted errors found): 171 corrections (proofapply.py); then an unattested-word sweep
+%      and a long-s / ø sweep, every doubtful word read at a zoom (proof-fixes.tsv, final-fixes.tsv).
+%  (f) LETTERSPACING (\emph{} here) MEASURED at the image (spacemeasure.py, white runs between letters, threshold 5 px: 31
+%      runs), every run judged at the image by reader K (13 kept in the body; the notes' spacing read by N1/N2).  Italics:
+%      none found by stroke slant (check.py --italics).
+%  (g) QUOTATION MARKS: the print quotes „...“ only (every quotation read at the image in b1, the notes and the structure);
+%      both OCRs read „ as , or ,, and “ as ' ” " »: set by class (quotes.py), outside the notes.
+%  (h) Sweeps on the collated text, every doubtful spot read at a zoom: unattested words (229 words in no other
+%      transcription: 12 words mended, the misprints below confirmed); specks both OCRs had read as marks (specksweep.py,
+%      marks the Harvard copy lacks mid-sentence: 16 removed).  The TRANSLATORS' odd spots (64) were read at zooms before
+%      the translation was finished: 22 more faults mended (specks, ɔ: read as 2:, a running head and a footnote left in
+%      the text, two paragraph breaks at page turns), 3 misprints confirmed (final-fixes.tsv).
+%  (i) SAMPLED PAGE CHECK (2026-10-15, budget-limited to 3 pages): pp. 113 (Spencer), 217 (Montaigne) and one Nær og Fjern
+%      column (p. 2, right), chosen at random (seed 20261015, one per stratum), transcribed BLIND at the image by one
+%      reader (1,143 words) and compared word by word (pagecheck.py): 10 differences; decided at zooms: 3 reader slips;
+%      7 errors of the collated text (2 words: „for“ for „før“, „skikkelig“ for the print's „stikkelig“; 5 marks: four
+%      specks both OCRs had read as stops or quotes, one stop hidden by a planted control) = ~6 per 1000 words, all mended.
+%      The specks led to specksweep.py over the whole of Det nittende Aarhundrede: 16 more found at zooms and removed.
+%  PRINTED AS IS (misprints kept, marked at the line):
+%    p. 2: „stilt“ for skilt (ſtilt); proofreader P1
+%    p. 2: „paaden“ for paa den, set solid; sweep zoom
+%    p. 2: „kartersianske“ for kartesianske; sweep zoom
+%    p. 2: „stikkelig“ for skikkelig (ſtikkelig); page check, zoom
+%    p. 3: „tehoretiske“ for theoretiske; proofreader P2, sweep zoom
+%  CONVENTIONS.  Page turns: % --- p. N --- and \opage{N} (the printed page); Nær og Fjern's second column is marked % (column 2); a word divided over a page turn is
+%  split with %.  Footnotes as \footnote at their marks, numbered per page as printed (*), **)).  \emph{} = letterspacing.
+%  The running heads and the sheet signatures are not transcribed.  The ø rule (CLAUDE.md).
+% =====================================================================
+\documentclass[12pt,a4paper,openany]{book}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{libertinus}
+\usepackage{libertinust1math}
+\usepackage[danish]{babel}
+\usepackage[protrusion=true,expansion=true]{microtype}
+\usepackage{setspace}
+\usepackage[margin=1.3in]{geometry}
+\usepackage{fancyhdr}
+\usepackage{hyperref}
+\hypersetup{pdftitle={Benedikt Spinoza}, pdfauthor={Harald Høffding}, hidelinks}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LE,RO]{\thepage}
+\fancyhead[C]{\textit{H. Høffding: Benedikt Spinoza (1876)}}
+\fancypagestyle{plain}{\fancyhf{}\fancyhead[LE,RO]{\thepage}}
+\setstretch{1.3}
+\usepackage{marginnote}
+\usepackage{graphicx}
+\DeclareUnicodeCharacter{0254}{\reflectbox{c}}   % ɔ (id est)
+\makeatletter
+\renewcommand{\thefootnote}{\ifcase\value{footnote}\or *\or **\or ***\else\arabic{footnote}\fi)}   % the print marks each page's notes *), **)
+\makeatother
+\newcommand{\opage}[1]{\marginnote{\footnotesize\textit{[#1]}}}
+\newcommand{\signature}[1]{\par\smallskip\hfill #1\hspace*{2em}\par}
+\pdfstringdefDisableCommands{\renewcommand{\footnote}[2][]{}\renewcommand{\opage}[1]{}}
+
+\begin{document}
+
+\begin{titlepage}
+\begin{center}
+{\LARGE\bfseries Nær og Fjern.}\\[0.5em]
+\rule{3em}{0.4pt}\\[0.5em]
+{\large \emph{Et Ugeblad},}\\[0.3em]
+{\small\bfseries redigeret af P. Hansen.}\\[0.5em]
+\rule{3em}{0.4pt}\\[0.8em]
+{\small \emph{Sjette Bind}.}\\[0.3em]
+{\small\bfseries (Nr. 222---274.)}\\
+\vfill
+{\small\bfseries Kjøbenhavn 1877.}\\[0.4em]
+{\small\bfseries C. A. Reitzel.\qquad Otto B. Wroblewsky.}
+\end{center}
+\end{titlepage}
+\clearpage
+
+% --- p. 1 ---
+\setcounter{footnote}{0}%
+\opage{1}\begin{center}{\small Kjøbenhavn.  Udkommer hver Søndag.\quad {\large\bfseries Nr. 233.}\quad Den 17. December 1876.  Abonnementspris: 3 Kr. 50 Øre Kvartalet.}\\[0.3em]\rule{\textwidth}{0.4pt}\\[0.8em]{\Large \emph{Benedikt Spinoza.}}\\[0.4em]{\small Af \textbf{Dr. phil.} Harald Høffding.}\\[0.4em]\rule{3em}{0.4pt}\end{center}\medskip
+
+Vor Tids Iver for at oprejse Statuer og Mindesmærker
+har ofte bragt mig til at tænke paa Ordet om dem, der
+kalke Profeternes Grave. Man kan ikke holde den vemodige
+Tanke borte, at Anerkjendelsen af Fortidens Storhed
+ikke hindrer Miskjendelse af Samtidige. Men det er
+paa den anden Side naturligt, at en friere og forsonligere
+Betragtning lettest kommer frem overfor det Forbigangne,
+hvor Alt er afsluttet, Kampen endt og de Kæmpendes
+Stilling og Motiver belyste ved deres Plads og Vilkaar
+indenfor den historiske Udvikling. For Spinozas Vedkommende
+synes det i hvert Tilfælde at forholde sig saa.
+Selv de, der ikke kunne sympathisere med hans Standpunkt
+og hans Lære, kunne ikke nægte ham deres Beundring for
+hans ædle og milde Karakter og maa indrømme hans store
+Betydning for den senere Videnskab og Litteratur. Og
+naar man erindrer, hvor megen Forfølgelse og Miskjendelse
+Spinoza maatte lide, hvor ene han stod i sin Tid,
+og hvor fremmed denne følte sig overfor hans Ideer, saa
+at der hengik over 100 Aar, før de kunde trænge igjennem,
+saa vil den Statue, som nu skal oprejses for ham i Haag
+ved Bidrag ikke blot fra hans Fødeland, men ogsaa fra
+det øvrige Europa, staa som et Vidnesbyrd om, at der er
+foregaaet et Fremskridt ikke blot i Forstaaelse af det Store
+og Betydningsfulde, men ogsaa i frisindet og tolerant
+Tænkemaade.
+
+At han stod ene i sin Tid, hænger maaske noget sammen
+med, at han oprindelig var fremmed for den nyere
+% (column 2)
+\setcounter{footnote}{0}%
+vesterlandske Videnskab og Litteratur. Hans Forældre vare
+portugisiske Jøder, som havde forladt Fødelandet for deres
+Troes Skyld og i Holland, Religionsfrihedens Vugge, havde
+søgt sig et nyt Hjem. I Amsterdam var der paa den Tid
+en blomstrende jødisk Menighed med en Synagoge og en
+Rabbinskole, ved hvilken navnkundige Lærere virkede. I denne By fødtes \emph{Benedikt Spinoza} den 24. November
+1632. Paa Grund af den Begavelse, han tidlig lagde for
+Dagen, bestemtes han til den lærde Stand, det vil sige,
+til at blive Rabbiner. Han gjorde ogsaa saa raske Fremskridt
+paa denne Bane, at han allerede i sit 16. Aar var
+en anseet Talmudist. Men snart begyndte hans skarpe
+Forstand og utrættelige Forskerlyst at føle sig utilfreds
+indenfor Traditionens og Theologiens Skranker. Rimeligvis
+var det paa denne Tid, at han lærte Latin og begyndte
+at studere de klassiske Forfattere, Naturvidenskaberne
+og den kartesianske Filosofi. Hans Lærer i Humaniora
+var Lægen van Ende, der havde en Slags Undervisningsanstalt
+i sit Hus og var bekjendt for sine frie religieuse
+Anskuelser. Et Sagn fortæller, at Spinoza blev forelsket
+i hans Datter, der hjalp Faderen med Undervisningen,
+men at hun foretrak en Meddiscipel for ham. Dog har
+man i den nyeste Tid forkastet denne Beretning, da van
+Endes Datter efter de Oplysninger, som ere fundne, paa
+den Tid, hvorom her er Tale, kun var lidt over ti Aar
+gammel.
+
+De Tvivl, der rejste sig hos ham, og de nye Tanker,
+% --- p. 2 ---
+\setcounter{footnote}{0}%
+\opage{2}som begyndte at forme sig, have sikkert tidlig fjernet ham
+noget fra hans Troesfæller og gjort hans Besøg i Synagogen
+mindre hyppige; thi der fortælles, at man lovede
+ham en ikke lille aarlig Pension, naar han blot vilde besøge
+Synagogen af og til. Ja, man skal endog have forsøgt
+voldsommere Midler imod ham. En Aften, da han
+forlod Synagogen, overfaldt En ham med en Dolk, hvis
+Stød dog kun flængede hans Klædning. Man havde
+Mistanke om, at han vilde træde over til Kristendommen,
+og vilde nødig afstaa en saa begavet Tilhænger til en
+anden Konfession. Dog maa det ogsaa fremhæves, at
+Tilhængerne af den kartersianske Filosofi paaden Tid bleve % PRINTED AS IS (paaden: for paa den, set solid; sweep zoom) % PRINTED AS IS (kartersianske: for kartesianske; sweep zoom)
+betragtede med Mistanke ogsaa indenfor den kristne Kirke.
+Den anden Dortrechtersynode havde nylig erklæret dem for
+udelukkede fra kirkelige Embeder. Den lille jødiske Menighed,
+som maatte vaage endnu strengere over sine Medlemmer,
+greb, da hverken gode eller onde Midler frugtede,
+tilsidst den Udvej, at udstøde den Frafaldne fra sin Midte.
+Dette skete i Juli Maaned 1656. Banformularen blev
+for nogle Aar siden funden i den jødiske Menigheds Arkiv
+i Amsterdam; den er holdt i det gamle Testamentes Stil
+og benytter til Dels dets Ord. „Forbandet“ --- hedder
+det bl. A. --- „være han om Dagen, forbandet være han
+om Natten, forbandet, naar han lægger sig, forbandet,
+naar han rejser sig fra sit Leje! Forbandet være hans
+Udgang, forbandet hans Indgang!“ „Vider, at Ingen
+maa have noget at skaffe med ham hverken mundtlig eller
+skriftlig, Ingen maa vise ham nogen Gunst, Ingen dvæle
+under hans Tag, Ingen nærme sig ham paa mere end fire
+Alen, Ingen læse Noget, han har forfattet!“
+
+I sit 24. Aar var Spinoza saaledes stødt ud i Verden,
+voldsomt stilt fra Familie og Stammefrænder, og % PRINTED AS IS (stilt: for skilt (ſtilt); proofreader P1)
+uden Tilhold noget andet Sted. Det kom ham nu til
+Gode, at Talmud paalagde Enhver, der uddannede sig til
+Rabbiner, at lære et Haandværk. Han havde lært den
+Kunst at slibe optiske Glas og havde bragt det til stor
+Færdighed heri. Derved skaffede han sig nu sit tarvelige
+Udkomme. Men han fik endnu ikke Lov til at leve i Ro.
+Paa den jødiske og den kristne Gejstligheds Opfordring
+forviste Amsterdams Øvrighed ham i Aaret 1660 fra Staden
+„for at hævde Ordenen og Subordinationen.“ Han
+boede i de nærmest følgende Aar i Rhynsburg, en lille
+Flække ved Leiden, hvor en arminiansk Sekt, de saa kaldte
+Kollegianter, havde fundet et Fristed. Senere flyttede han
+til Voorburg ved Haag, og endelig (1669) paa sine Venners
+Opfordring til selve Haag.
+
+Om Spinozas Karakter og indre Liv i hans Ungdom
+veed man kun, hvad man kan slutte af de ydre Begivenheder
+og af Brevene og Skrifterne fra hans senere Aar.
+Hans Biografer slutte gjerne tilbage fra den Ro og Resignation,
+som udpræger sig i disse, og mene, at han ogsaa
+i sin Ungdom har lagt saadanne Egenskaber for Dagen;
+dog mene Nogle, at man kun kan tænke sig dem hos den
+modne Tænker som Resultat af lidenskabelige Kampe i
+Ungdommen. Det er i hvert Tilfælde klart, at han tidlig
+har sammenfattet al sin Higen og Tragten i een Attraa ---
+den at erhverve en klar og gyldig Erkjendelse af Menneskets
+Væsen og Forhold til hele Naturen. Hele hans
+Karakter har et intellektuelt Præg; Undersøgelse og Betragtning
+er for ham det Højeste. Han skildrer selv i sin
+Afhandling om „Forstandens Forbedring“, hvorledes de
+% (column 2)
+\setcounter{footnote}{0}%
+Goder, de Fleste søge, Ære, Rigdom og sandselig Nydelse,
+havde tabt deres Værd for ham, og det nu gik op for
+ham, at det sande og højeste Gode var „Erkjendelsen af
+vor Aands Sammenhæng med hele Naturen.“ Han søgte
+i Sandhedserkjendelsen Mere end blot Theori; han søgte
+en Livsanskuelse. Og hans Storhed bestaaer her netop i
+den Harmoni, der hos ham var mellem Erkjendelsen og
+Karakteren, Tanken og Livet.
+
+Efter Udgivelsen af hans første Skrift, en Fremstilling
+af den kartesianske Filosofi med Antydninger af de Punkter,
+hvor den maatte føres videre, blev han snart berømt.
+Mange opsøgte ham i hans Bolig, og han førte en betydelig
+Brevvexling. En af hans Korrespondenter, Oldenburg,
+den første Præsident for Videnskabernes Selskab i
+London; nævner som det Tiltrækkende hos ham „grundig
+Viden i Forbindelse med Mildhed og fin Dannelse.“ I Aaret
+1670 udgav han en „theologisk-politisk Afhandling“, som gik
+ud paa at vise, „at Tænkefriheden ikke blot kan indrømmes
+uden Skade for Fromheden og for Statens Fred, men at
+den end ikke kan ophæves, uden at disse med det Samme
+gaa til Grunde“. Han forlangte her Ret for Enhver til
+at fortolke de religieuse Lærdomme efter bedste Indsigt ---
+og ikke blot danne sig sin egen Overbevisning, men ogsaa
+udtale den. Han anfører (idet han synes at glemme,
+hvorledes det var gaaet ham selv) sin Fødeby, Amsterdam,
+som Exempel paa, at en saadan Frihed kan bestaa med
+et ordnet Samfunds Væsen. „I denne blomstrende og
+udmærkede Stad leve Mennesker af alle Nationer og
+Troesbekjendelser i største Endrægtighed. Der er ingen nok
+saa forhadt Sekt, uden at dens Tilhængere jo (naar de
+blot Ingen krænke, give Enhver Sit og leve stikkelig) beskyttes % PRINTED AS IS (stikkelig: for skikkelig (ſtikkelig); page check, zoom)
+af den offentlige Statsmagt“. Han er den Første,
+der har hævdet Tolerancens Princip i denne fulde Udstrækning.
+Det anførte Værk indeholdt desuden historisk-kritiske
+Undersøgelser af det gamle Testamentes Bøger,
+hvorved Grunden blev lagt til hele den nyere Bibelkritik,
+og rationalistiske Fortolkninger af de vigtigste Dogmer.
+Den Forargelse, dette Skrift vakte, afskrækkede Spinoza
+fra at udgive Mere. Hans Hovedværk, „Ethiken“, cirkulerede
+i Afskrifter mellem hans Venner og udkom først
+efter hans Død.
+
+I hele den sidste Del af sit Liv led han af en
+tærende Brystsygdom. Han fortsatte dog stadig sine Studier,
+og med saadan Iver, at han en Gang i tre Maaneder
+ikke forlod sit Hus. Han boede hos Maleren van Spyck,
+i hvis Familie han ofte tilbragte sine Hviletider; han talte
+navnlig gjerne med sin Vært og hans Kone om Religionen
+og om de Prædikener, de havde hørt i Kirken. Endnu Dagen før sin Død var han nede hos dem for at ryge en
+Pibe Tobak og tale om Dagens Prædiken. Han formanede
+stedse Folk til at blive i deres Konfession og fremhævede
+det praktisk-ethiske Moment i Religionen.
+
+Spinoza døde d. 21. Februar 1677. Ingen var tilstede
+hos ham uden hans Ven Lægen Ludvig Meyer.
+Der udbredte sig Rygter om, at han skulde være død i
+Fortvivlelse eller endog have begaaet Selvmord, ligesom
+der ogsaa om hans Karakter og Adfærd vare meget slemme
+Rygter i Omløb. En luthersk Gejstlig, Colerus, der kom
+til at bo i samme Hus, som Spinoza tidligere havde boet
+i, tog sig for at undersøge Sammenhængen og udgav en
+Levnetsbeskrivelse af Spinoza (paa Hollandsk, oversat paa
+% --- p. 3 ---
+\setcounter{footnote}{0}%
+\opage{3}Fransk: \textit{«La vie de Spinoza, tirée des écrits de ce fameux philosophe et du témoignage de plusieurs personnes dignes de foi, qui l’ont connu particulièrement, par Jean Colerus. A la Haye 1706»} --- det bedste Kildeskrift
+til Spinozas Levnet) og han kunde modsige alle
+de Rygter, som Fordommen havde avlet og Fanatismen
+udspredt. Uagtet Colerus selv fordømmer Spinozas Lærdomme,
+fremhæver han hans rene Sæder, milde Karakter
+og store Uegennyttighed. Denne sidste Egenskab udviste
+Spinoza navnlig overfor sine Søstre, hvem han overlod
+sin Arvepart, ligesom han flere Gange afviste Tilbud om
+Pengeunderstøttelse fra sine Venner. Et Professorat i
+Heidelberg, som blev ham tilbudt, afslog han for ej at
+hindres i sine rolige Studier og af Frygt for Intolerancen.
+
+Man har ofte vel udelukkende udledt Spinozas Lære
+af Kartesianismen. Af et for nogle Aar tilbage fundet
+Ungdomsskrift fremgaaer det, at han har været stærkt paavirket
+af Middelalderens jødiske Religionsfilosofer og af
+Giordano Bruno, Renaissancens største Filosof, der hævdede
+Naturens Uendelighed og Enhed. Hvad Spinoza
+fandt hos Descartes, var den klare, mathematiske Methode
+og en mekanisk Naturopfattelse. Udgaaende fra Ideen om
+den uendelige Substans, der paa een Gang er Natur og
+Gud, søger han at vise, at det er den, der rører sig i
+Alt. Den materielle og den aandelige Verden ere forskjellige
+Former for Aabenbaringen af den uendelige
+Enhed.
+
+Slige Tanker maatte i Følge Sagens Natur længe
+ligge hen uforstaaede; baade religieuse og filosofiske Fordomme hindrede Tilegnelsen af dem. Spinoza laa, efter
+Lessings Ord, som en død Hund, haanet og sparket af
+alle Parter. Da kom hans Opstandelse i Slutningen af
+det 18. Aarhundrede med den friere og friskere Bevægelse
+i Poesi, Filosofi og Videnskab. Det vilde føre for vidt
+her at udvikle, hvad han har været for Aander som Lessing,
+Herder, Goethe, Novalis, Schelling og Schleiermacher.
+For Goethe aandede der i Spinozas Skrifter en „Fredens
+Luft“; han lærte af dem at se, at der er en stor, nødvendig
+Sammenhæng i Alt, og beundrede den dybe Resignation,
+som udtaler sig i dem. I det Skrift af Schleiermacher, som indleder den religieuse Fornyelse efter det 18.
+Aarhundredes Rationalisme, hylder han i en begejstret
+Lovprisning Spinozas dybe og i Sandhed religieuse Aand.
+I de Forelæsninger, som Schellings Discipel Henrik
+Steffens ved dette Aarhundredes Begyndelse holdt i Kjøbenhavn,
+og som havde saa mægtig en Indflydelse paa
+vor Litteraturs Udvikling, finder man ligeledes en smuk
+og begejstret Lovtale over Spinoza. „Aldrig kan jeg“, siger
+Steffens bl. A., „tænke mig denne herlige Mand i sin
+rolige Ensomhed, med et Lys i sin Sjæl, som intet Tilfælde
+formaaede at bortjage, med en indvortes Fred, som
+ingen Forfølgelser kunde forstyrre, uden at en Straale af
+% (column 2)
+\setcounter{footnote}{0}%
+hans Lys vækker det skjønneste Haab hos mig.“ (Man
+efterlæse hele Begyndelsen af den 2. Forelæsning).
+
+Hvad man i Aarhundredets Begyndelse forsøgte ad
+poetisk og spekulativ Vej --- at opfatte Naturen og Tilværelsen
+i sin Helhed og Enhed, det arbejder i vore Dage
+den reale Forsken henimod. I vor Tids Naturvidenskab
+og Filosofi er der en stærk enhedssøgende Tendens. Der
+aabner sig vide Horizonter, og der knyttes Forbindelser og
+dannes Overgange, hvor man tidligere standsede ved et
+gabende Svælg. Dette maa naturlig levendegjøre Mindet
+om den ensomme hollandske Tænker i det 17. Aarhundrede.
+Spinoza er ogsaa derved beslægtet med den moderne
+Realisme, at han trods sin spekulative og deduktive Methode
+hævder den strenge kausale Sammenhæng og fordrer
+en mekanisk Forklaring gjennemført overalt. Særlig hvad
+Forholdet mellem Sjæl og Legeme angaaer, synes hans
+Theori at være den, mod hvilken de nyeste psykologiske og
+fysiologiske Undersøgelser pege hen.
+
+Vi kunne ikke længer bruge Spinozas Methode i
+Filosofien. Hvad der for hans Tanke stod som det Første,
+det sikre Udgangspunkt: det absolute Væsen, er for os
+netop det, der evig unddrager sig Tanken. Vi maa søge
+ad Erfaringens Vej --- som ogsaa for Spinoza var den
+eneste, ad hvilken vi kunne lære Enkeltvæsenerne at kjende
+--- at finde Lovene og Formerne for Aandens Liv og dens
+Sammenhæng med hele Tilværelsen. Men Spinozismen
+staaer som et Mønster ved sin Dristighed og Konsekvens;
+den er et Forsøg, som i denne Form kun har sit Sidestykke
+i Hegels System, og dette kan i Originalitet og i
+Liniernes Renhed ikke maale sig med Spinozas. Og foruden
+det Befrugtende og Dybsindige i Grundtanken er
+der ogsaa hos Spinoza, som hos enhver stor Tænker,
+underordnede Punkter af megen Interesse og blivende
+Betydning. Jeg har allerede omtalt hans historiske
+Kritik og hans Hævden af Tolerancens Princip, og skal
+endnu kun nævne hans psykologiske Fremstilling af Lidenskaberne,
+deres Oprindelse, Udvikling og Vexelspil. Det
+er en i sin Art saa klassisk Fremstilling, at Johannes
+Müller endnu for nogle og tredive Aar siden aftrykte den
+hel og holden i sin berømte „Handbuch der Physiologie“.
+Den har først i vor Tid fundet Sidestykker i de engelske
+Psykologers Fremstillinger.
+
+Men aldeles afseet fra de tehoretiske Resultater staaer % PRINTED AS IS (tehoretiske: for theoretiske; proofreader P2, sweep zoom)
+Spinoza som et stort Forbillede paa den sande Forskers
+Karakter, og ved den Mildhed og Ro, han bevarede
+i sit Indre saa vel som overfor Andre, skjøndt han
+havde lidt under Livsanskuelsens Brydninger, staaer han
+særlig som en Skikkelse, af hvis Betragtning man, som Steffens sagde, kan hente „det skjønneste Haab“ i en Tid som vor, hvor Anskuelserne ikke brydes mindre, selv om
+Brydningen maaske foregaaer under mindre voldsomme
+Former.
+
+\end{document}
