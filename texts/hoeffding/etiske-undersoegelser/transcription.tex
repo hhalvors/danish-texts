@@ -1,0 +1,2968 @@
+% =====================================================================
+%  GENERATED; DO NOT EDIT BY HAND.  Rebuild: sh ebook-method/etiske-undersoegelser/rebuild.sh
+%  Harald Høffding, Etiske Undersøgelser.  Kjøbenhavn: P. G. Philipsens Forlag, 1891.  [VI] + 83 pp.; three treatises:
+%  Om Muligheden af en filosofisk Etik (pp. 1-23), Om Velfærdsprincipet (pp. 24-41), Forholdsloven i Etiken (pp. 42-83).
+%  Diplomatic transcription (HOEFFDING-QUEUE #6), begun 2026-10-16.
+%  ACCURACY (2026-10-16).  Scan: Google's scan of the Wisconsin copy (Internet Archive etiskeundersgel00hfgoog), 600 ppi
+%  bitonal, [VI] + 83 pp., complete by folio; no page damaged by the measure of mindre-arbejder-2 (low-confidence line-edge
+%  words: max 6, threshold 8), gutter not cut (33-40 pt of white).  The NB copy (8df6665866cef49a09cc7815de97c99b) could not be
+%  fetched (NB's server returned 404/500 for its images and ALTO, 2026-10-16): ONE copy, two readings.
+%  Readings: our tesseract (tessdata_best dan, 300 dpi; own non-words 0.33 % against ABBYY's 1.15 %) as the draft, the
+%  Archive's ABBYY as the witness; collated word by word (ebook-method/collate/check.py): 588 disagreements, 54 settled by
+%  check.py, 189 by rules.py, the rest at the image.  Blind compact crop sheets (READER-BRIEF.md: 549 word spots in 535 crops
+%  + 33 paragraph starts, 28 planted controls, 28 right) covered every open check, an audit sample of 12 per rule class
+%  (one class, markplaced, concerns note marks only and is superseded by the note reading; layerfault wrong once, forudsé),
+%  the unattested-word sweep, specks and an ø/umlaut sweep; then whole-line crops (z1) for what the word crops could not
+%  settle (every line-end dash tesseract alone read proved to be nothing).  Decisions in decisions.tsv (rule:/hand: notes),
+%  word fixes in fixes1.tsv.  The 53 footnotes were read whole by two note readers and set from their reading at the marks
+%  they read (noteplace.py); their text was diffed against the collated draft's (notesdiff.py): 26 differences, all the
+%  draft's except one reader's normalisation (Vierterljahrsschrift, p. 20, settled at 600 ppi).  Structure, front matter, the
+%  fraction (p. 55) and the Greek (p. 57) from a structure reader, the Greek also read in the blind crops (two readings agree).
+%  Letterspacing MEASURED (spacemeasure.py: white runs bimodal, GAP 5; 153 runs), checked on a sample of 30 runs + 12 lines
+%  (no false run; one too wide, one short word missed) and set by spaceapply.py.
+%  Blind page check, STRATIFIED: 3 pages of the 15 less clean (>= 3 low-confidence edge words: pp. 25, 57, 58) and 3 clean
+%  (pp. 13, 26, 64), seed 2026101606, 1,686 words: 0 word errors from the collation; 1 fault introduced by a patch (a %
+%  comment after the Greek hid 7 words on p. 57) and 2 letterspacing faults (p. 57 Aristoteles not set; p. 13 ham set):
+%  all mended.  Rates: word errors 0.59 / 1000 (95 % upper 2.81), emphasis 1.19 / 1000 (upper 3.73).
+%  RESIDUE, stated honestly: (1) letterspacing is measured, not read: short words beside a run and runs at the end of a
+%  line may be missed or over-set (~1 per 1000 words by the check); 6 measured runs could not be placed (p. 6 forkastes,
+%  in notes Körner, Darwin, Jhering are set from the note readers' own marking); (2) the two OCRs read the same images, so
+%  a fault both share where the corpus attests the word is invisible to the collation (the translators' odd spots are
+%  the next reading); (3) the Greek accents of p. 57 rest on two readings at ~300 dpi (ἓν as both read; Aristotle ἕν).
+%  THE TRANSLATORS' ODD SPOTS (52, from four translators) were all looked at in 600 ppi line crops of the scan (main
+%  session): 12 faults of the transcription mended (specks read as , . ; and a stop; a space before «; praktisk-populære;
+%  juridisk-teologiske; tesseract junk 5% and the folio 838; the p. 6 note repeated in the body; p. 82 a run wrongly set
+%  letterspaced; p. 33 Tillempelsen, a comma after all) -- fixes1.tsv („odd“ rows), patches.NOTECUT; the rest are the print's.
+%  Misprints kept as printed, marked PRINTED AS IS at the line (patches.MISPRINTS, 17): the print's weak f reads as t in
+%  „af“ six times (pp. 8, 9, 16, 40, 43, 54: „at“ for „af“), doubled words at line turns (pp. 16, 32, 65, 69, 82), a
+%  missing word (pp. 39, 73), vidde (48), Crimonologie (74), sukjektivt (57), a comma ending a paragraph (38).  In the
+%  notes, as printed and not marked there: p. 20 Vierterljahrsschrift; p. 43 „Lectures ou Jurisprudence“; p. 62
+%  Gefängsnisswesens and Tardé (p. 77 Tarde); p. 70 „affectus coërceri nec tolli“ (Spinoza: nec coërceri).  Printed and
+%  right: hints (p. 50, genitive of hin), Ildlænderne (pp. 32-33, the Fuegians), Shakesperes (p. 11), Arbeide (p. 79).
+%  The print has no å: tesseract's å for ä mended (Vorgänge, Clärchen, Aktenmässige).
+%  Conventions: printer's errors transcribed as printed and logged in a % comment at the site; \opage{N} = printed page N
+%  begins; a word broken over a page turn is split with %; footnotes as printed, marked *), **), ***) and numbered per
+%  page (\footnote[k]).  Italics \textit; letterspacing \emph.  The ø rule (CLAUDE.md) applies.
+% =====================================================================
+\documentclass[12pt,a4paper,openany]{book}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{libertinus}
+\usepackage{libertinust1math}
+\usepackage[danish]{babel}
+\usepackage{textalpha}   % the Greek on p. 57
+\usepackage[protrusion=true,expansion=true]{microtype}
+\usepackage{setspace}
+\usepackage[margin=1.2in]{geometry}
+\usepackage{marginnote}
+\usepackage{hyperref}
+\hypersetup{pdftitle={Etiske Undersøgelser}, pdfauthor={Harald Høffding}, hidelinks}
+\setstretch{1.3}
+\renewcommand{\thefootnote}{%
+  \ifcase\value{footnote}\or *)\or **)\or ***)\or \dag)\or \dag\dag)\or \dag\dag\dag)\else \arabic{footnote})\fi}   % p. 28: six notes
+\makeatletter\@addtoreset{footnote}{page}\makeatother
+\newcommand{\opage}[1]{\marginnote{\footnotesize\textit{[#1]}}}
+\newcommand{\essay}[2][]{\chapter*{#2}\addcontentsline{toc}{chapter}{#1}}   % [toc title]{title as printed}
+\pdfstringdefDisableCommands{\renewcommand{\footnote}[2][]{}\renewcommand{\opage}[1]{}}
+\begin{document}
+
+\frontmatter
+% Front matter (PDF 7 title, PDF 9 Forord, PDF 11 Indhold), set from the structure reading (struct-S1) checked against the
+% layer.  The scan's library stamps and pencil (A 1289, 623724) are not print.
+\begin{titlepage}\centering
+{\large\textsc{Harald Høffding.}}\\[1ex]\rule{3em}{0.4pt}\\[3ex]
+{\Huge ETISKE UNDERSØGELSER.}\\[4ex]
+\fbox{\begin{tabular}{c}\small\textbf{OM MULIGHEDEN AF EN FILOSOFISK ETIK.}\\\small\textbf{OM VELFÆRDSPRINCIPET.}\\\small\textbf{FORHOLDSLOVEN I ETIKEN.}\end{tabular}}\par\vfill
+{\small KØBENHAVN.}\\[0.5ex]{\small\textbf{P. G. PHILIPSENS FORLAG.}}\\[0.5ex]{\footnotesize\textbf{THIELES BOGTRYKKERI.}}\\[1ex]{\small 1891.}
+\end{titlepage}
+\chapter*{FORORD.}
+Af de tre Afhandlinger, der udgøre dette Skrift, lægger jeg selv størst Vægt paa den tredie, i hvilken jeg har søgt at
+gennemføre en i min Etik (noget mere i den tyske end i den danske Udgave) antydet Idé, der turde være af nogen Betydning
+for den etiske Tænkning. Denne Afhandling har allerede været trykt i første Hefte af »International Journal of Ethics«
+(Efteraaret 1890). --- I de to første Afhandlinger har jeg taget nogle Spørgsmaal, som angaa Etikens første Principer, op
+til fornyet Behandling. De kunne betragtes enten som Indledning til eller som Supplement til min Etik (især Kap.~I, III og
+VII). Den anden Afhandling (Om Velfærdsprincipet) trykkes omtrent samtidigt hermed i det amerikanske Tidsskrift »The
+Monist« som Del af en længere Artikel. ---
+
+\noindent\hspace*{2em}\textit{Januar 1891.}\hfill\textbf{Harald Høffding.}
+\chapter*{INDHOLD.}
+\begin{flushright}\small\textbf{Side}\end{flushright}
+\noindent\begin{tabular}{@{}p{0.86\textwidth}@{\hspace{0.5em}}r@{}}
+Om Muligheden af en filosofisk Etik\dotfill & 1\\
+Om Velfærdsprincipet\dotfill & \textbf{24}\\
+Forholdsloven i Etiken\dotfill & \textbf{42}\\
+\end{tabular}
+\mainmatter
+% --- p. 1 ---
+\setcounter{footnote}{0}%
+\essay[Om Muligheden af en filosofisk Etik]{Om Muligheden af en filosofisk Etik.}
+\opage{1}
+1. At prædike Moral er let, at begrunde Moral er
+vanskeligt, har en Filosof sagt. Denne Sætning er rigtig,
+dersom man ved at prædike Moral blot forstaar at udtale
+de i det givne Samfund gængse Forestillinger om Godt
+og Ondt. Men hvis man ved at prædike Moral forstaar
+at henvende sig paa en saadan Maade til de enkelte
+Individer, at disses Karakter derved faar Motiver og
+Tilskyndelser til at udvikle sig ikke blot i de gængse
+etiske Forestillingers Aand, men i sande og gyldige Idealers
+Aand, saa er det ikke blot den vanskeligste og den
+højeste Kunst af alle, men den vil ogsaa nødvendigvis
+føre over til hvad hin Filosof erkendte som en stor Vanskelighed,
+nemlig at give en Begrundelse af etiske Domme.
+
+Etiske Domme, Domme om Godt og Ondt, opstaa
+fra først af som uvilkaarlige Følelsesudbrud. De udtale
+den Værdi, der tillægges menneskelige Handlinger eller
+Institutioner. I ethvert Samfund er der et vist Indbegreb
+af etiske Domme, hvis Gyldighed anerkendes. De ligge
+i Luften, idet det enkelte Individ tilegner sig og anvender
+disse Domme som umiddelbart givne og berettigede, lige
+som det arver Racens Instinkter og Traditioner i det
+Hele. Dette Indbegreb af etiske Domme udtrykker hvad
+man har kaldet \emph{den positive Moralitet}. Denne har,
+% --- p. 2 ---
+\setcounter{footnote}{0}%
+\opage{2}lige som positiv Religion og positiv Lovgivning, en historisk
+Karakter. Den har udviklet sig og udvikler sig
+stadigt under Vexelvirkning med Racens eller Samfundets
+Skæbne og Livsforhold. Dens Indhold er en Kreds af
+Forbilleder, Leveregler og Bud, der i lange Tider gaa
+fra Slægt til Slægt som »uskrevne Love« og ofte staa
+for den Enkelte med hemmelighedsfuld Myndighed. Det
+enkelte Individ bøjer sig saa meget mere for dem, som
+de forkyndes og hævdes af Autoriteter, Personligheder,
+hvis fysiske eller aandelige Magt vækker dets Frygt, dets
+Ærefrygt, dets Tillid eller dets Kærlighed, og over for
+hvilke ingen Trang til Kritik føles, i hvert Tilfælde ingen
+Kritik let kommer til Orde. Saadanne Autoriteter ere
+Forældre, Lærere, Præster, Fyrster, Lovgivere, Religionsstiftere.
+--- Den positive Moralitet kunde tænkes fremstillet
+i sin Sammenhæng. Vi vilde da faa en Fremstilling
+af de hos et vist Folk og paa en vis Tid gældende etiske
+Domme. Den teologiske Etik og den positive Retsvidenskab
+vilde være Dele af en saadan positiv\footnote[1]{Ordet „positiv“ betegner i hele denne Sammenhæng (positiv Moralitet, positiv Religion, positiv Lovgivning, positiv Etik) ikke Modsætning til „negativ“. Heller ikke bruges det i den Betydning, i hvilken Auguste Comte tager det, naar han kalder sin Filosofi „la philosophie positive“ eller Positivismen. Hos Comte er „positif“ det Samme som faktisk, virkeligt givet i Naturen. Derimod betegner Ordet „positiv“ her, hvad der er sat i bestemt \emph{historisk} Form, som udtrykkeligt fastslaaet Bestemmelse eller \emph{Tradition}.} Etik (saaledes
+kunde man maaske kalde den videnskabelige Fremstilling
+af den positive Moralitet), idet den teologiske Etik
+blot angaar de etiske Domme, der kunne udledes af en
+vis religiøs Tro, og den positive Retsvidenskab kun omfatter
+de Regler og Bud, der udtrykkeligt ere formulerede
+i Landets juridiske Love. Den positive Etik vilde tillige
+% --- p. 3 ---
+\setcounter{footnote}{0}%
+\opage{3}indeholde de Regler og Bud, som den offentlige Mening,
+Sæd, Skik, Tradition og Undervisning indskærpe.
+
+Men naar Frygten for eller Tilliden til de historisk
+givne Autoriteter svinder, eller naar af andre Aarsager
+Trangen til en dybere gaaende etisk Erkendelse vaagner,
+kan man ikke blive staaende ved den positive Moralitet.
+Der reiser sig et Spørgsmaal om selve Autoriteternes
+Berettigelse, om de første Principer, der betinge Gyldigheden
+af alle etiske Domme. Have etiske Domme ikke
+Gyldighed, uden for saa vidt de hævdes af Autoriteter?
+Det er det store Spørgsmaal, ved hvis Fremsættelse \emph{den
+filosofiske Etik} bliver til. Dennes Opgave maa være
+at vise, at man uden at forudsætte Autoriteternes absolute
+Gyldighed, kan finde et Grundlag for etiske Domme
+i den menneskelige Natur. Lige som den filosofiske Erkendelsesteori
+angaar de første Principer for den teoretiske
+Verdensopfattelse, som grunder sig paa den
+menneskelige Natur, saaledes angaar den filosofiske Etik
+de første Principer for den \emph{Vurdering} af menneskelige
+Handlinger, som grunder sig paa selve den menneskelige
+Natur.
+
+2. Forholdet mellem den filosofiske Etik og den
+positive Moralitet behøver ikke at være fjendtligt. Den
+menneskelige Natur, i hvilken Filosofien søger et Grundlag
+for etiske Domme, aabenbarer sig ogsaa i Historien
+og faar bestemmende Indflydelse paa Udviklingen af den
+positive Moralitet. De Idealer og Bud, som udgøre dennes
+Indhold, ere ikke opstaaede uden i Kraft af den menneskelige
+Natur, saaledes som denne under de givne Forhold
+virkede. Selv i den strengeste Autoritetstro lægger
+derfor Menneskenaturen sig for Dagen. Ingen Autoritet
+kan være rent ydre: Autoriteten er kun Autoritet ved
+den Følelse, den formaar at vække. Troen paa Autoriteten
+hænger derfor stedse sammen med Menneskenes  hele
+% --- p. 4 ---
+\setcounter{footnote}{0}%
+\opage{4}Følelsesliv og gennem dette igen med de Erfaringer, som
+Menneskene gøre under deres Kamp for Tilværelsen.
+Ved saaledes at gaa tilbage til den positive Moralitets
+Sammenhæng med den menneskelige Natur, ser man dens
+Slægtskab med den filosofiske Etik. For en Del har den 
+filosofiske Etik kun den Betydning \emph{at bringe vore
+etiske Dommes Sammenhæng med vor Natur og
+vore Livsvilkaar til fuld Bevidsthed}, som jo i
+det Hele Filosofien kan siges at være den menneskelige
+Aands Selverkendelse i teoretisk og praktisk Henseende.
+
+
+Men foruden dette Forhold mellem filosofisk Etik og
+positiv Moralitet, der fremkommer ved, at denne ikke
+har den samme Trang som hin til at gaa tilbage til det
+første Grundlag, kan der endnu finde tre forskellige Forhold
+Sted mellem dem.
+
+Den filosofiske Etik kan ud fra den klarere Forestilling
+om de første Principer føres til at fordre, at der
+skal \emph{arbejdes videre} væsentligt i samme Aand som
+inden for den positive Moralitet, men ud fra mere omfattende
+Synspunkter. Saaledes arbejder den nyere Tids
+Humanitetsfølelse videre paa Grundlag af det Menneskekærlighedens
+Princip, som især den kristelige Etik hævdede,
+som den græske Etik gjorde gældende inden for
+de ved Nationalfølelsen satte Grænser, og som allerede
+virkede i den gammelindiske Familieetik i den Følelse,
+der omfattede Alle, der samledes om samme Arne. Det
+gælder her blot Principets \emph{Udvidelse} ud over Konfessionens,
+Nationens og Familiens Grænser\footnote[1]{Smlgn. min „Etik“. København 1887. p. 326---331.}.
+
+Medens det her gælder Udvidelse og Gennemførelse,
+kan det i andre Tilfælde være nødvendigt at indføre en
+helt anden Motivering og Begrundelse, for at Anerken%
+% --- p. 5 ---
+\setcounter{footnote}{0}%
+\opage{5}delse og fortsat Anvendelse af det historisk Givne kan
+blive mulig. Det historisk Givne i Handlemaade eller i
+Samfundsforholdenes Ordning anerkendes og benyttes da
+ikke af det Motiv, der oprindeligt har fremkaldt det, men
+af et helt andet Motiv. Der finder med andre Ord en
+Motivforskydning Sted. --- Af Arnens Hellighed udviklede
+sig hos de gamle Indere Asylretten, der særligt
+blev af Betydning ved Arnestederne i Templet og i
+Kongens Gaard\footnote[1]{Smlgn. \emph{Leist}: Alt-arischen Jus gentium. Leipzig 1889. p. 20 f. 87. --- F. \emph{Pollock}: The King’s Peace (Oxford Lectures. London 1890). p. 70. 77.}; denne Asylret blev igen en Form,
+under hvilken Fred kunde stiftes og Benaadning øves;
+og heraf udsprang dels Statsmagtens Haandhævelse af
+Ret og Orden, dels ogsaa den humanere Behandling af
+Forbrydere og i det Hele af dem, der ere i Konflikt med
+det bestaaende Samfund. --- Et andet Exempel er den
+private Ejendom, der historisk har udviklet sig under
+Indflydelse af Erhvervsdrift, Virkelyst og Magtfølelse, men
+som Samfundet anerkendte og regulerede i det Enkelte
+for Fredens og Ordenens Skyld, og som nu i etiske og
+nationaløkonomiske Systemer kun anerkendes, for saa
+vidt den fremmer den Enkeltes Selvvirksomhed i Samfundets
+Tjeneste\footnote[2]{Smlgn. min „Etik“. p. 264---266.}. --- Motivforskydningen har en oplysende
+Parallel i den Maade, hvorpaa et og samme
+Organ hos forskellige Arter af levende Væsener kan udøve
+forskellige Funktioner, fordi det er afpasset efter forskellige
+Forhold. Forlemmerne ere saaledes Griberedskaber
+og Føleredskaber hos Mennesket, Gangredskaber hos
+Hesten, Flyveredskaber hos Fuglen, Svømmeredskab hos
+Hvalen. En og samme Grundform fremtræder omdannet
+paa forskellig Maade under de forskellige Livsforhold.
+% --- p. 6 ---
+\setcounter{footnote}{0}%
+\opage{6}Omvendt kunne forskellige Organer komme til at udføre
+samme Funktion, naar levende Væsener af forskellig Art
+for en Del have samme Livsbetingelser. Det er saaledes
+højst forskellige Dele af Organismen, der hos Pattedyr,
+Fiske, Krebsdyr og Insekter fungere som Aandedrætsorganer;
+Fuglenes og Insekternes Vinger skyldes Udvikling
+af helt forskellige Legemspartier\footnote[1]{Smlgn. \emph{Gervais}: Élements de zoologie. Paris 1871. p. 49 f. 54 ff. \emph{Darwin}: Om Arternes Oprindelse. p. 507. 519. \emph{Körner}: Die logischen Grundlagen der Klassifikation der Organismen. (Wundt’s Philosophische Studien. II.). p. 242.}. Motivforskydningen
+paa det psykologisk-etiske Omraade svarer til
+denne Omdannelse og Tillempelse paa det biologiske Omraade.
+Ogsaa paa det biologiske Omraade er det jo i en
+vis Forstand Motivet, der ændres, idet de samme Organer
+komme til at tjene forskellige Formaal eller forskellige
+Organer til at tjene samme Formaal. I Etiken kunne
+Handlinger og Institutioner saaledes faa en anden Betydning
+og derfor en anderledes motiveret Anerkendelse
+end forhen. Lige saa lidt som man fra den »adaptive«
+(ved Tillempelse opstaaede) Lighed mellem Sommerfugle
+og egentlige Fugle tør slutte til et virkeligt Slægtskab
+mellem dem, lige saa lidt kan man fra en Handlings
+eller en Institutions nuværende etiske Betydning slutte
+til dens historiske Oprindelse og Udvikling. Og lige saa
+omvendt: fra den historiske Opstaaen kan der ikke uden
+videre sluttes til Værdien. --- Motivforskydningens Fænomen
+egner sig derfor godt til at belyse Forholdet mellem
+den historiske og den filosofiske Behandling af Etiken\footnote[2]{Se herom min „Etik“ p. 8---10.}.
+
+Endelig kan Forholdet dog ogsaa være det, at den
+positive Moralitets Grundsætninger og Bud helt maa forkastes,
+og nye Grundsætninger stilles op i Stedet. Da
+er Indholdet altsaa negativt, ikke begrundende, fort%
+% --- p. 7 ---
+\setcounter{footnote}{0}%
+\opage{7}sættende eller omdannende. Et saadant Forhold indtager
+den filosofiske Etik til Askesen (for saa vidt denne erklærer
+Lystfølelse i og for sig for ond og vil være mere
+end Øvelse i fornøden Selvbeherskelse), til Intolerancen,
+til Slaveriet og til andre barbariske Institutioner. ---
+
+3. Vi vende nu tilbage til det Spørgsmaal, om der
+i den menneskelige Natur gives et fast Grundlag for
+etisk Vurdering, uafhængigt af de historisk givne Autoriteters
+Indflydelse. Af dette Spørgsmaals Besvarelse afhænger
+Muligheden af en filosofisk Etik.
+
+Al Videnskab har tilsidst sit Grundlag i den menneskelige
+Natur. Saaledes forudsætter Logiken Tænkeevnen
+(Sammenligningsevnen, Evnen til at finde Lighed
+og Forskel); Geometrien forudsætter desuden Evnen til
+Rumsanskuelse; Fysiken og Kemien forudsætte desuden
+endnu de forskellige ydre Sanser (Berøringssans, Syn,
+Hørelse, Smag, Lugt), o. s. v. Hvad forudsætter nu Etiken
+for sit Vedkommende?
+
+Ved etiske Domme virker der et Element med, der
+ikke spiller nogen Rolle ved rent logiske eller naturvidenskabelige
+Domme. Det drejer sig ved dem om Mere end
+at fastslaa Identitet og Forskel eller at paavise en Sammenhæng
+mellem Fænomener. Beskaffenheden af en Handling
+eller en Institution kan kun fremkalde en etisk Dom,
+en Dom om Godt og Ondt, naar vedkommende Handling
+eller Institution vækker en Følelse af Lyst eller Ulyst
+hos os. Dersom vi vare blot anskuende, sansende og
+sammenlignende Væsener, uden Evne til at føle Lyst og
+Ulyst, vilde saadanne Domme ikke opstaa. Enhver Dom
+opstaar ved Analyse af en given Totalopfattelse\footnote[1]{Se min „Formel Logik“. 2 Udg. p. 13.}. Det
+Ejendommelige ved de etiske Domme er, at de analysere,
+i bevidst Form udtale den Følelse, Synet af eller Fore%
+% --- p. 8 ---
+\setcounter{footnote}{0}%
+\opage{8}stillingen om en Handling vækker hos os. Der forudsættes
+Evne til at opfatte Handlingen og gøre sig dens
+Karakter tydelig (ved Sammenligning); men dertil kommer
+endnu Følelseselementet, den vækker, som en tredie Faktor
+ved Siden af Kendskabet til de faktiske Forhold og
+Evnen til at tænke over Handlingen. Erfaring godtgør
+jo ogsaa, at etiske Diskussioner kunne bringes til at
+maatte stanse paa tre Maader, nemlig ikke blot naar en
+af Parterne overbevises om en Selvmodsigelse eller om
+en faktisk Fejltagelse,\footnote[1]{Se „Formel Logik“. p. 24 f.} men ogsaa naar det er helt forskellige
+Arter af Følelse, der hos de stridende Parter
+bestemme de etiske Domme. De etiske Uenigheder, der
+kun angaa Konsekventser eller faktiske Omstændigheder,
+ere ikke af afgørende Natur. Anderledes forholder det
+sig, hvor det er en forskellig Følelse, der bestemmer
+Vurderingen, --- hvor \emph{Vurderingsmotivet} altsaa er
+forskelligt.
+
+Dersom nu Følelserne varierede i det Uendelige, ---
+dersom der ikke var visse typiske Former for Følelse,
+som med en vis Fasthed gøre sig gældende hos de enkelte
+Individer hvert for sig og paa samme Maade hos flere
+forskellige Individer, saa vilde ingen filosofisk Etik være
+mulig. Men saaledes er det ikke. Vi finde hos hvert
+normalt Individ en Følelse, som er den herskende hos
+ham, i det Mindste i en vis Periode, saaledes at den udgør
+Tyngdepunktet i hans Natur og vil bestemme hans
+vurderende Domme. Det er den vigtigste Bestanddel at % PRINTED AS IS (Bestanddel: Bestanddel at: at for af (600 ppi))
+hans »reale Selv«\footnote[2]{Se min „Psykologi“. Kap. V, 5; VI E, 2; VII B, 1 c.}. Og hos ethvert Individ vil der
+tillige --- formedelst Erindring og Sammenligning, ja,
+allerede formedelst det blotte Selvopholdelsesinstinkt ---
+gøre sig en Sammenhæng gældende mellem de enkelte
+% --- p. 9 ---
+\setcounter{footnote}{0}%
+\opage{9}Øjeblikke og de enkelte Livsperioder. Heri ytrer sig det
+»formale Selv«\footnote[1]{„Psykologi“. Kap. V, 5 (cfr. IV, 7 e).}. Der vil derfor ytre sig en stærkere
+eller svagere Tendents til at vurdere Handlingerne ikke
+blot efter deres Indflydelse paa det enkelte Øjeblik eller
+den enkelte Periode, men efter deres Indflydelse paa Livet
+i dets Helhed. Og hos de forskellige Individer ytrer der
+sig ikke blot Følelser, der ere knyttede til deres Bestaaen
+hvert for sig alene, men ogsaa saadanne, som ere bestemte
+ved de fælles Livsvilkaar, og som umiddelbart knytte det
+ene Individ til et eller flere andre. Moderinstinktet og
+de af det udspringende Følelser ere umiddelbare Naturtilskyndelser
+i denne Retning. Inden for Familien, Stammen
+og Nationen, og inden for de forskellige Associationer
+og Kammeratskaber udvikle sig under Indflydelsen af
+fælles Arbejde og fælles Skæbne mere eller mindre beslægtede
+Følelser. Saadanne Følelsers Inderlighed og
+Omfang staa i Regelen i omvendt Forhold til hinanden;
+stærkest og kraftigst røre de sig i de snevreste Kredse,
+især i Familien og Naboskabet. Men Historien viser, at
+de have kunnet udvikle sig til at omfatte hele Menneskeheden.
+Ideen om en Menneskehed og om almindelig
+Menneskekærlighed (caritas generis humani) udviklede
+sig allerede hos Oldtidens Grækere og Romere i de sidste
+Aarhundreder før Kristi Fødsel, vistnok som Følge at % PRINTED AS IS (Kristi: som Følge at: at for af (600 ppi))
+den Maade, hvorpaa de nationale Skranker sønderbrødes
+ ved Alexander den Stores og Romernes Erobringer, saa
+at Følelsen af Slægtskab og Fællesskab blev mulig.
+
+De etiske Domme maa nu bestemmes ved en af de
+her omtalte Følelser (foruden at de, som allerede anført,
+bestemmes ved Tænkningens Konsekvents og Kendskabet
+til de faktiske Forhold). Men deri ligger da, at \emph{der er
+Mulighed for lige saa mange etiske Systemer},
+% --- p. 10 ---
+\setcounter{footnote}{0}%
+\opage{10}\emph{som der er forskellige herskende Følelser, der
+kunne bestemme Dommene}. De forskellige etiske
+Systemer adskille sig fra hverandre ved Vurderingsmotivet.
+Etikens Historie viser os, at de forskellige Muligheder
+for en stor Del ere blevne benyttede. Endog
+en ren Øjebliksetik, der lader Hensynet til det enkelte
+Øjeblik, afset fra alle andre Øjeblikke, være eneraadende,
+er bleven forsøgt (af Aristippos fra Kyrene). Man har
+ofte taget Udgangspunktet i det enkelte, isolerede Individs
+Selvopholdelse, Livsnydelse og Magtfølelse. Derved
+føres man til et System, hvor Hensynet til andre Individer
+kun faar Værdi som ofte uundværligt Middel til
+at naa Goder for Individet selv. Etiken bliver altsaa en
+Lære om de nødvendige Omveje, den Enkelte maa gaa
+for at naa sin Lykke. Hvor Grundlag og Vurderingsmotiv
+hentes fra Sympatien, kunne igen forskellige Systemer
+blive mulige, alt efter det Omfang, Sympatien har.
+En Familieetik haves tilnærmelsesvis realiseret i den
+gammelindiske Etik. En national Etik er udviklet af
+Platon og Aristoteles. En Stands- eller Associationsetik
+fremtræder tilnærmelsesvis i Historien, ogsaa i vore Dage,
+under de forskellige Samfundsklassers indbyrdes Brydninger.
+Men ogsaa en Humanitetsetik arbejder sig frem
+igennem Historien; Vurderingen af Handlinger og Institutioner
+tager da deres Indflydelse paa alle menneskelige
+Væsener i Betragtning.
+
+\emph{Psykologisk og historisk set} er der en kontinuerlig
+Sammenhæng mellem alle disse forskellige Standpunkter,
+der i Teori og Praxis fremtræde gennemført
+med mere eller mindre Konsekvents og med større eller
+ringere Sagkundskab. Sammenhængen beror paa, at det
+ene Vurderingsmotiv i Kraft af psykologiske Love og
+under Indflydelse af Livets Erfaringer kan afløses af det
+andet. Med en saadan Forandring forandres ogsaa Sy%
+% --- p. 11 ---
+\setcounter{footnote}{0}%
+\opage{11}stemet af de etiske Domme; men denne Forandring er
+Virkning, ikke Aarsag. Det er nye Følelsers Opstaaen,
+det kommer an paa, og de opstaa ved praktiske Erfaringer,
+ikke ved teoretiske Ræsonnementer. Der finder nu stadigt
+en praktisk Opdragelse Sted, ikke blot inden for Familien,
+men ogsaa inden for Samfundslivet i det Hele. Den
+Enkelte lærer at underordne Hensynet til det enkelte
+Øjeblik under Hensynet til Livshelheden, og Hensynet
+til sin Selvopholdelse og Nydelse under Hensynet til,
+hvad det fælles, almene Vel kræver. En Tilslutning til
+andre Individer, der indlededes af egoistiske Motiver,
+kan under det fortsatte Samliv og dets Erfaringer blive
+selvstændig Genstand for Lystfølelse; hvad der først
+grebes som Middel, kan blive Formaal. I den Art Motivforskydning
+bestaar for en stor Del Menneskehedens Opdragelse
+gennem Historien. Men den vilde neppe føre
+vidt, naar den ikke støttedes ved umiddelbare sympatiske
+Instinkter\footnote[1]{Smlgn. „Psykologi“, VI C, 2---7.}.
+
+\emph{Etisk set} er der derimod Diskontinuitet mellem de
+forskellige Standpunkter og Systemer, idet det ikke er
+muligt for det ene at gendrive det andet ad den logiske
+Bevisførelses Vej eller ved Hjælp af objektive Kendsgerninger.
+Jo større Konsekvents det enkelte System besidder,
+des uangribeligere vil det være. Den resolute og
+konsekvente Egoist, der gør sig selv til eneste Formaal
+og betragter andre Individer blot som Midler for sig selv,
+kan ikke gendrives fra Familieetikens, Nationsetikens
+eller Humanitetsetikens Standpunkt. Han siger med Shakesperes
+Richard III: I am myself alone! Naturligvis er
+det kun, for saa vidt Systemet er konsekvent, at det er
+uangribeligt; hvis Familiefølelsen, Nationalfølelsen eller
+Menneskekærligheden rører sig hos Egoisten, vil han
+% --- p. 12 ---
+\setcounter{footnote}{0}%
+\opage{12}kunne komme i Modsigelse med sig selv og let gendrives.
+Ellers kan han kun bringes til at opgive sit Standpunkt
+ved, at der vækkes en Følelse hos ham, han hidtil ikke har
+kendt. Men dette sker ved »Moralprædiken« (i højeste
+Forstand), ikke ved blot »Moralbegrundelse«. Det er den
+etiske Kunst, ikke den etiske Videnskab, som da træder
+i Virksomhed.
+
+Der gives i ethvert Samfund Individer, der ikke staa
+paa det Grundlag, som er nødvendigt for, at Samfundslivet
+paa det givne Trin kan bestaa. Saadanne Individer
+ere Børn, Sindssyge og Forbrydere. Man kan sige, at
+de have andre etiske Systemer end det, Samfundet som
+saadant hylder. Over for dem anvendes der andre Midler
+end det blotte Ræsonnement. De blive Genstand for en
+praktisk Behandlingsmaade, en Tugt og Opdragelse, der
+skal vække de Følelser hos dem, de hidtil manglede.
+Samfundet tiltager sig i \emph{Kraft af sin egen Etik}, Ret
+til at behandle dem paa denne Maade, men kan ikke
+altid begrunde denne Ret ud fra saadanne Individers egen
+Etik. --- I enhver etisk Dom, vi udtale, er der egentligt
+et saadant pædagogisk Moment. Den etiske Dom udspringer
+ikke blot af Følelsen; den taler ogsaa til Følelsen.
+Den, hvis Handling vi vurdere, rose eller dadle vi;
+vi sætte derved hans Følelse i Bevægelse, gøre os til
+Autoritet over for ham og have Ansvaret for Virkningen
+af de Motiver, vi paa denne Maade kunne fremkalde.
+
+4. Imidlertid maa det vel mærkes, at de forskellige
+Systemer ikke ere hverandre rent sideordnede. Det enkelte
+System kan give de andre Systemer en vis underordnet
+Betydning inden for sig. Egoistens System f. Ex. udelukker
+ikke Hensynet til Familie og Stat, men betragter
+dem blot under Synspunktet af Midler. Nations- og Humanitetsetiken
+maa fra deres Standpunkter vise, hvorledes
+det enkelte Individ inden for deres Systemer kommer til
+% --- p. 13 ---
+\setcounter{footnote}{0}%
+\opage{13}sin fulde Ret, skønt paa anden Vis end efter det egoistiske
+System. Gennem Sympatien, gennem Hengivelsen
+til et større Hele og Arbejde i dets Tjeneste udvikles
+den Enkeltes Kræfter og Evner; hans Personlighed udvides
+og styrkes netop gennem Selvforglemmelsen. At
+glemme sig selv er ikke det Samme som at tabe sig selv.
+Det er at sætte sig andre Formaal end sit eget Jeg.
+Ved den forøgede og den forhøjede Stræben, disse videre
+gaaende Formaal betinge, faar Sindet større Liv, Kraft
+og Flugt. Det er saaledes en Berigelse, en Vinding for
+Individet, hvis Sympatien faar Magt i det. Men dette
+kan først erfares, naar Sympatien \emph{har afløst} Egoismen,
+og kan altsaa ikke være Grund eller Motiv for denne
+Afløsning. Derfor vilde Sympatien ikke have udviklet
+sig i Menneskeslægten, dersom Naturen ikke her, lige
+som ved Selvopholdelsen, greb fat i os gennem Instinkter
+og uvilkaarlige Erfaringer. Vi vilde ellers i al Evighed
+staa som Manden, der ikke vilde gaa i Vandet, før han
+kunde svømme.
+
+Man kunde maaske mene, at det her gik som ved
+et fysisk eller kemisk Experiment, ved hvilket der ad
+Erfaringens Vej (a posteriori) godtgøres Noget, som man
+ad den blotte Tænknings Vej (a priori) ikke kunde godtgøre,
+og at Etiken altsaa her ikke var stillet anderledes
+end enhver Videnskab, der optager Forudsætninger fra Erfaringen.
+Men man vilde da overse en meget væsentlig
+Forskel. Det Experiment, der her er Tale om, skal foregaa
+med Individet selv, og netop med det i ham, der
+betinger hans etiske Dom. Naar Individet har erfaret,
+hvorledes Sympatien udvider hans Jeg, gør det sundere,
+kraftigere og aabner det nye Kilder til Tilfredsstillelse,
+saa er han selv bleven en Anden end han før var; han
+har faaet et andet realt Selv. Han gør Regnskabet op
+fra et andet Grundlag end det, han stod paa, før han
+% --- p. 14 ---
+\setcounter{footnote}{0}%
+\opage{14}foretog Experimentet, --- og Opgørelsen er helt igennem
+bestemt ved det nye Grundlag, det nye Vurderingsmotiv.
+Han ændrer altsaa ikke sin Anskuelse ved Slutning fra
+Experimentet, men dette ændrer umiddelbart hans Følelse
+og som Følge deraf hans Anskuelse.
+
+Desuden sker Overgangen fra det ene Grundlag til
+det andet ikke med samme Lethed som den, med hvilken
+et Experiment foretages. Det viser Historien og daglig
+Erfaring tilstrækkeligt. Menneskehedens Opdragelse tager
+lang Tid. For nogle Individers Vedkommende har man
+endog benegtet Muligheden af, at der kan vækkes det
+Minimum af Sympati, det nu bestaaende borgerlige Samfund
+kræver; i en anden Sammenhæng ville vi drøfte
+denne Benegtelse nærmere. Erfaringen viser i hvert Tilfælde,
+at der gives Individer, som i Konsekvents af det
+Grundlag, hvorpaa de nu én Gang staa, tørne sammen
+med de givne Forhold og gaa til Grunde. Tragedien
+henter nogle af sine største Emner fra etiske Systemers
+Sammenstød; inden for et og samme System er tragisk
+Sammenstød ikke saa let muligt. --- Og selv hvor Overgangen
+fra et Grundlag til et andet lykkes, tager den i
+Regelen Tid og sker ofte gennem stærke Kriser.
+
+Det vilde derfor være en meget uhensigtsmæssig Brug
+af Ordene, hvis man vilde kalde en Følelse egoistisk,
+fordi det dog ogsaa i Sympatien er vor \emph{egen} Lyst eller
+Ulyst, vi have, og fordi Sympatien ikke kunde bestaa,
+naar den ikke medførte et fyldigere og inderligere Liv
+og derved en større Tilfredsstillelse og Selvhævdelse end
+der vilde opnaas, naar Lyst- og Ulystfølelse kun bestemtes
+ved en Selvopholdelse og Selvhævdelse, for hvilken alt
+Andet i Verden var blotte Midler. En saadan Brug af
+Ordene vilde forlede til at overse nogle af de betydeligste
+og dybest indgribende Modsætninger paa det aandelige
+Livs Omraade.
+
+% --- p. 15 ---
+\setcounter{footnote}{0}%
+\opage{15}5. Det beror paa et Valg, hvilket Standpunkt der
+indtages i en Fremstilling af Etiken. Det vilde have sin
+store Interesse at faa de forskellige mulige Systemer hvert
+for sig fuldt udførte, saa at vi kunde se, hvorledes Etiken
+former sig i det Enkelte paa et Øjebliksstandpunkt, et
+egoistisk Standpunkt, et Familiestandpunkt o. s. v. Det
+vilde kaste Lys over Vurderingsmotivernes Natur. Den
+historiske eller sammenlignende Etiks Interesse beror
+herpaa; ti historisk finde vi Tilnærmelser til de forskellige
+mulige Systemer. Men ogsaa kun Tilnærmelser. Ti i det
+virkelige Liv ere Vurderingsmotiverne (lige saa vel som
+Handlingsmotiverne) altid mere eller mindre sammensatte.
+Vor Samvittighed (det vil sige, den Følelse, der faktisk
+bestemmer vor Vurdering) falder neppe nogensinde fuldstændigt
+sammen med Sympatien eller Egoismen eller med
+en enkelt af deres Former. Følelser af højst forskellig Art
+virke sammen i den. Naar Etiken for at naa fuld Klarhed
+og Konsekvents udtager en enkelt bestemt Følelse
+og holder sig til den som Grundlag, idet den tænker sig
+den i fuld Renhed og Styrke og med største Omfang,
+foretager den en lignende Abstraktion og Idealisation,
+som enhver formel Videnskab foretager ved sit første
+Skridt. Det rene Rum, som Geometrien forudsætter i sine
+første Definitioner og Axiomer, forekommer ikke i Virkeligheden
+som Genstand for Sansning og Anskuelse.
+
+Naar nu Etiken til Grundlag vælger en ideal Samvittighed,
+der i sin Vurdering bestemmes ved universel
+Sympati, har den vel foretaget en Abstraktion, men denne
+bestaar i, at den tænker sig en Kraft i ideal Fuldendelse,
+som faktisk bestaar i Verden, har arbejdet sig frem og
+sandsynligvis vil vedblive at arbejde sig frem. Den har
+altsaa trods sin Idealitet fast Grund under Fødderne.
+Den foreslaar os at betragte den menneskelige Verden
+og det, som dér foregaar, fra dette Stade og se, hvilke
+% --- p. 16 ---
+\setcounter{footnote}{0}%
+\opage{16}Idealer og Opgaver deraf følge. Saa kunne Andre jo betragte Verden fra deres Stade. Naar vi da hver for sig
+gaa frem med saa stor Konsekvents som muligt og støtte
+os til saa mange og sikre Erfaringer som muligt, vil vor
+Erkendelse have gjort de Fremskridt, den paa dette Omraade
+formaar at gøre. Muligheden at at begrunde Etiken % PRINTED AS IS (begrunde: Muligheden at at begrunde: for af at (600 ppi))
+fører os til Nødvendigheden af at anerkende en Begrænsning
+for dens Videnskabelighed. Begrundelse og Begrænsning
+høre paa alle Omraader nøje sammen. ---
+
+Naar Sympatien vælges som Vurderingsmotiv,
+ligger deri, at kun de Formaal, som en oplyst, konsekvent
+og universel Sympati vedkender sig, kunne være
+de højeste etiske Formaal. Men der ligger ikke deri, at
+Sympatien nødvendigvis bør være Handlingsmotiv i
+alle Tilfælde og hos alle Individer. Der kan i den menneskelige
+Natur ligge andre Motiver, der ikke behøve at
+føre til Modstrid mod de Formaal, Sympatien sætter, men
+netop kunne arbejde til Bedste for dem; og disse Motiver
+kunne endog være uundværlige. Trang til Selvopholdelse
+og Selvhævdelse, Ærgerrighed, Tilslutning til Sæd og
+og Skik eller til ærværdige Autoriteter --- det er Exempler
+paa Kræfter og Tendentser i den menneskelige
+Natur, som en Etik, der støtter sig til Sympatien som
+sidste Vurderingsmotiv, fuldt ud kan anerkende, for saa
+vidt de virke i Retning af de Formaal, den har sat.
+Forskellen mellem saadanne Motiver og den universelle
+Sympati er, at medens denne sidste \emph{nødvendigvis}
+kommer i Modsigelse med sig selv ved ikke at betragte
+Handlinger og Institutioner fra Helhedens (Samfundets,
+tilsidst Menneskehedens) Synspunkt, komme de andre Motiver
+ikke nødvendigvis i Modsigelse med sig selv ved
+en mere begrænset Synskreds. For Egoisten er det ligegyldigt,
+hvorledes det gaar med de Andre (hvad enten
+de ogsaa ere Egoister eller ikke), naar de blot fremme
+% --- p. 17 ---
+\setcounter{footnote}{0}%
+\opage{17}\emph{hans} Formaal. Og selv om der, som Nogle have ment
+at kunne godtgøre, skulde være en Harmoni mellem alle
+Egoisters velforstaaede Interesser, saa glæder den enkelte
+Egoist sig kun herover, for saa vidt denne Formaalenes
+Harmoni kommer \emph{ham} til Gode. Dersom Forestillingen
+om en saadan virkelig eller mulig Interessernes Harmoni
+hos ham vakte en Glæde eller maaske endog Begejstring,
+som gaar ud over den Glæde, der føles over et Middel,
+der kun har Værd som Middel, saa vilde han ikke mere
+være Egoist; han vilde da være naat til at have andre
+Formaal foruden sig selv.
+
+Den paa Sympatien som Vurderingsmotiv grundede
+Etik fører hver Enkelt til at betragte sig ikke blot som
+Formaal, men ogsaa som Middel, og til at betragte Andre
+ikke blot som Midler, men ogsaa som Formaal. Fra intet
+andet Grundlag kan denne Betragtningsmaade begrundes.
+Dens almindelige Grundtanke kan udtrykkes saaledes:
+
+Se paa dit Liv og paa de Andres Liv ikke blot fra
+dit eget Stade, som om det var Verdens Midtpunkt, men
+fra et højere Stade: Samfundets, Slægtens! Fordi du
+naar det Maal, du har sat dig, er det ikke sagt, at alle
+Andre ogsaa have naat deres Maal. Fordi du har faaet
+dine Ønsker opfyldte, er der Lidelse nok endnu tilbage i
+Verden, berettigede, men uopfyldte Ønsker i tilstrækkelig
+Mængde. Var du end den Største, der har levet, saa er
+du dog kun én blandt Mange af den Slægt, hvis Historie
+ikke er afsluttet med din Historie!
+
+6. En væsentlig Indvending mod Forsøget paa at
+bygge Etiken paa Sympatien som Vurderingsmotiv, kunde
+synes at ligge i Kampen for Tilværelsen som ledende
+Synspunkt for alt Liv, ogsaa det menneskelige Liv. Naar
+Livet er en uafbrudt Kamp for at bestaa mellem forskellige
+Arter og mellem forskellige Individer af samme
+Art, gælder det saa ikke for hver Enkelt at komme de
+% --- p. 18 ---
+\setcounter{footnote}{0}%
+\opage{18}Andre i Forkøbet og at skaffe sig saa stor Fordel som
+muligt paa deres Bekostning, og maa en paa Sympati
+grundet Etik saa ikke savne al Rod i det virkelige Liv?
+Der synes jo dog saa ikke at gælde anden Modsætning
+end den, der bestaar mellem dem, der kunne bestaa og
+udvikle sig, og dem, der ikke kunne det, --- mellem de
+Sunde, Kraftige og Lykkelige paa den ene Side, de Syge,
+ Svage og Lidende paa den anden Side. Og er der her
+ikke en absolut, en haabløs Modsætning, ved hvilken der
+ikke kan rokkes, uden at almindelig Svækkelse og Lammelse
+bliver Følgen?
+
+Medens Nogle fortolke den Darwin'ske Lære om
+Kampen for Tilværelsen paa denne Maade og med æstetisk
+Velbehag svælge i Tanken om den Hensynsløshed
+og Kraft, Tilværelseskampen fører til at udfolde, er der
+Andre, som vel indrømme, at saadanne etiske Konsekventser
+ligge i hin Lære, men som deri finde en af de
+væsentligste Indvendinger imod den. --- Hvad Darwin
+selv angaar, indrømmede han ingen af disse Konsekventser.
+Som Moralfilosof sluttede han sig til den af Shaftesbury
+og Hutcheson grundlagte og i vore Dage af Herbert
+Spencer videre førte etiske Skole, der i Sympatien saa
+Etikens Grundlag, en Opfattelse, som det i denne Afhandling er forsøgt at give en bestemtere Belysning og
+Gennemførelse. Jeg skal nu forsøge i Korthed at vise,
+at den store Naturforsker har havt en rigtigere Opfattelse
+af sin Lære end den, der kommer frem hos dem,
+der drage hine formentlige Konsekventser.
+
+7. Kampen for Tilværelsen bringer alle Muligheder
+til Udfoldelse, som ere til Hjælp under de givne Forhold.
+Der kan saaledes udvikle sig en hensynsløs Selvopholdelsestrang,
+der kan stige til forskellige Grader af bevidst
+Egoisme. Der ligger en Mulighed og en Tendents i den
+menneskelige Natur i denne Retning. Men det er ikke
+% --- p. 19 ---
+\setcounter{footnote}{0}%
+\opage{19}den eneste Mulighed, som ligger i den menneskelige
+Natur, og heller ikke den eneste Mulighed, som kan udfolde
+sig under Kampen for Tilværelsen. Denne Kamp
+er ikke i bogstavelig Forstand en »Kamp af Alle mod
+Alle«, saaledes som Thomas Hobbes i sin Tid antog.
+Den Tilværelse, som Kampen gælder, er ikke blot det
+enkelte Individs, men Artens, Slægtens. Og Arten opholdes
+ikke altid og ikke blot ved, at enkelte Individer
+hvert for sig saa hensynsløst som muligt søge at holde
+sig oppe, men ofte ogsaa, ja: kun, ved at de stræbe og
+kæmpe i Fællesskab, eller ved, at det ene Individ ofrer
+sig for det andet. Kampen for Tilværelsen frembringer
+altsaa ikke blot Egoisme, men ogsaa Midler til at komme
+ud over Egoismen. Dens Virkninger ere ikke alle enstydige,
+ikke alle af samme Værdi i etisk Henseende. En
+Etik er netop nødvendig, fordi der maa træffes et Valg
+mellem disse Virkninger, saa snart Spørgsmaalet er om,
+hvilke af dem vi med vor bevidste Villen og Indgriben
+skulle begunstige, og hvilke vi skulle søge at hæmme
+eller fortrænge. Som villende Væsener ere vi ikke blot
+Virkninger af den forudgaaende Udvikling, men ogsaa
+(for en Del i det Mindste) Aarsager til den følgende Udvikling,
+og vore etiske Overvejelser angaa den Retning,
+i hvilken vor Kausalitet bør gaa. For at afgøre dette,
+behøve vi en Maalestok, et Ideal, og Etikens første Opgave
+er at fastsætte det Grundlag, ud fra hvilket en
+saadan Maalestok kan findes. Den filosofiske Etik søger,
+som vi have set, dette Grundlag i den menneskelige
+Natur. Kampen for Tilværelsen kan, saa sandt den er
+Betingelsen for alt Liv, ikke stanses; men den kan
+maaske føres paa en Maade, der stemmer med det givne
+Vurderingsmotiv.
+
+Ved at se paa de første Betingelser for Slægtens
+Bevarelse ville vi finde en Mulighed herfor.  --- Goethe
+% --- p. 20 ---
+\setcounter{footnote}{0}%
+\opage{20}sagde, da han saa et Billedhuggerarbejde, der fremstillede
+en Ko med en diende Kalv: »Her have vi et Emne af
+den højeste Art: det Verden opholdende, gennem hele
+Naturen gaaende ernærende Princip træder os her i en skøn
+Lignelse i Møde«. Den Darwin'ske Lære er en nærmere
+Udførelse af denne Tanke. Den har paavist, at uden Instinkter,
+der føre til Omsorg og Opofrelse for Afkommet,
+kan en Art ikke bestaa i Kampen for Tilværelsen. Saa
+mange Gaader, der end staa tilbage, hvad de første Spirer
+til det vidunderligste Instinkt i Naturen, Moderinstinktet
+eller Forældreinstinktet, angaar, saa er dets Nødvendighed
+indlysende. Det viser sig især, hvor det staar i den grelleste
+Modsætning til et Væsens andre Instinkter. Edderkopperne
+f. Ex. ere Rovdyr, der søge deres Bytte hver
+for sig ved Hjælp af deres Net, uden at der, som hos
+saa mange andre Rovdyr, kan udvikle sig en vis social
+Følelse under Jagtkammeratskabet. De angribe og fortære
+tvertimod andre Individer af deres egen Art, selv
+om der ikke er Mangel paa andet Bytte. End ikke i
+Parringstiden ere Han og Hun sikre for hinandens Rovlyst.
+Afkommet vilde derfor strax gaa til Grunde, dersom
+ikke selv hos disse ellers saa »egoistiske« Dyr Moderinstinktet
+fremtraadte endog i usædvanlig høj Grad\footnote[1]{Se \emph{Fr. Dahl}: Versuch einer Darstellung der psychischen Vorgänge in den Spinnen. (Vierterljahrsschrift für wissenschaftliche Philosophie. IX). p. 180 ff.}. ---
+De Instinkter og Følelser, som knytte Forældre og Børn
+til hinanden, begunstiges altsaa afgjort ved Kampen for
+Tilværelsen. Kun i sjeldnere Tilfælde ere de modsatte Instinkter
+Genstand for naturlig Udvælgelse. Saaledes kan
+det Instinkt, der faar Arbejdsbierne til at dræbe deres
+Brødre, Dronerne, og Bidronningen til at dræbe Biprin%
+% --- p. 21 ---
+\setcounter{footnote}{0}%
+\opage{21}sesserne\footnote[1]{\emph{Darwin}: Menneskets Afstamning. I. p. 75. --- Arternes Oprindelse. p. 259.}, kun forklares ved dets Betydning under Tilværelseskampen,
+der altsaa under nogle Omstændigheder
+begunstiger Moderkærlighed og Søskendekærlighed, under
+andre Omstændigheder det Modsatte; dog er dette Sidste
+det sjeldneste Tilfælde. Hvor inden for en og samme Art
+enkelte Individer i større eller mindre Grad mangle
+Forældreinstinktet,\footnote[2]{Se herom \emph{Lombroso}: Der Verbrecher. Deutsche Uebers. p. 9. 27. --- Dictionnaire des sciences anthropologiques. Article „Famille“.} maa saadanne Undtagelser forklares
+paa samme Maade, saa fremt de ikke ere Rester fra tidligere
+Udviklingstrin, der holde sig i enkelte Tilfælde
+formedelst Atavisme.
+
+Denne Betragtningsmaade finder ogsaa Anvendelse
+paa Sammenholdets og Fællesskabets Betydning for de
+enkelte Individer under deres Livsopholdelse og Livsførelse.
+Ikke som Følge af bevidst Beregning og vilkaarligt
+Valg, men i Følge Forholdenes Natur kommer
+det enkelte Individ til at føre Kampen for Tilværelsen
+sammen med andre. Det indøver praktisk Sammenholdet
+og Samarbejdet, før det kan danne sig nogen Forestilling
+om dets Betydning. Der danner sig herved inden for en
+og samme Gruppe af Mennesker en Broderskabs- og
+Menneskelighedsfølelse, som maaske fra først af kun
+viser sig under Krig og Fare, men senere kan ytre sig
+ogsaa under andre Forhold.
+
+Under det saaledes uvilkaarligt indstiftede og indøvede
+fælles Liv, under Fællesskabet i Skæbne og Arbejde,
+i Lyst og Smerte, lærer den Enkelte praktisk at
+anvende en højere Maalestok end den, der kan hentes fra
+hans egne, rent individuelle Interesser. Gennem Samlivet
+og Samvirksomheden udvikler Samfølelsen sig, --- lige%
+% --- p. 22 ---
+\setcounter{footnote}{0}%
+\opage{22}gyldigt hvilke Motiver, der fra først af have ført til
+Samlivet og Samvirksomheden, ti en Motivforskydning
+finder her ofte Sted.
+
+I min »Etik« har jeg vist, hvorledes denne praktiske
+Udvikling af Fællesskabsfølelsen spiller en Rolle inden
+for Ægteskabet (p. 180), ved Arbejderstandens Organisation
+(p. 244), ved Religionsfrihedens Udvikling (p. 312)
+og ved Nationalfølelsen (p. 338 f.). Jeg har ført den tilbage
+til »det aristoteliske Princip« (p. 162 f.), at uvilkaarlig
+Indøvelse af Egenskaber og Færdigheder gaar
+forud for bevidst Besiddelse og Udøvelse. Egenskaber
+danne sig, --- det var Aristoteles's, ved den nyere Biologi
+og Psykologi bekræftede Lære, --- ved Virken og
+Handlen, og hvor en Egenskab eller en Færdighed har
+dannet sig, er der forbunden en Lystfølelse med Udøvelsen
+af de tilsvarende Handlinger. Den første Betingelse
+er, at Livsforholdene giver Anledning til Øvelse.
+
+8. Endnu et Hovedpunkt er der at fremhæve til
+Belysning af Etikens Forhold til Kampen for Tilværelsen.
+Denne gælder ikke blot den rene, nøgne Existents, den
+blotte fysiske Bestaaen. Den Tilværelse, der kæmpes om,
+er den, som føres paa et bestemt Livstrin. Ikke uden
+Modstand, ikke uden at flere Muligheder først prøves,
+gaar Livet tilbage til et lavere, mere elementært Trin.
+Ethvert Livstrin har sine Fornødenheder, i hvilke dets
+Væsen lægger sig for Dagen. Kun paa de aller simpleste
+Livstrin er Lyst- og Ulystfølelsen ene knyttet til, hvad
+der umiddelbart tjener til at opholde Livet. Naar disse
+mest elementære Fornødenheder ere tilfredsstillede, vil
+der paa højere Trin røre sig en Trang til at bruge
+Kræfterne og en Lyst ved denne Brug, selv om den ikke
+fører til noget praktisk Resultat. Lystfølelsen ved Leg
+og den æstetiske Følelses Udvikling ere Exempler herpaa.
+Glæden ved Sandhedserkendelse er ogsaa et Exempel paa
+% --- p. 23 ---
+\setcounter{footnote}{0}%
+\opage{23}denne Motivforskydning, ved hvilken Lystfølelsen knyttes
+til selve Virksomheden og ikke blot til dennes Resultat.
+Der er naat et højere Trin, hvor Livets elementære Krav
+træde saaledes tilbage, at ideelle, af det fysiske Selvopholdelseskrav
+uafhængige Interesser blive mulige. Og
+naar nu et saadant Trin er naat, gælder Kampen for
+Tilværelsen dette Livstrins Bevarelse: Livet er det, der
+føres paa dette Trin; alt Andet er Død. Med Rette taler
+man derfor om en aandelig Død, hvor ideelle Interesser
+ere udslukte. Til saadanne ideelle Interesser høre nu
+ogsaa Sympatien og Samvittigheden, naar de have arbejdet
+sig frem. Et Liv, som kun vindes ved at fornegte
+dem, vilde nu staa som værdiløst\footnote[1]{Smlgn. „Om Grundlaget for den humane Etik“. (København 1876), p. 30 f., hvor jeg allerede har fremsat denne Tanke.}.
+
+% --- p. 24 ---
+\setcounter{footnote}{0}%
+\essay[Om Velfærdsprincipet]{Om Velfærdsprincipet.}
+\opage{24}
+
+
+1. Naar Velfærdsprincipet anerkendes som \emph{Maalestok}
+ved Vurderingen af Handlinger og Institutioner,
+vil det sige, at disse kaldes gode eller onde, alt efter
+som de i deres Virkninger (saa langt vi kunne forfølge
+disse) medføre overvejende Lystfølelser eller overvejende
+Ulystfølelser hos en større eller mindre Kreds af bevidste
+Væsener. Enhver Handling kan sammenlignes med en
+Sten, som kastes i Vandet; Bevægelsen forplanter sig i
+større eller mindre Kredse, og Vurderingen beror paa,
+hvorledes den virker dér, hvor den griber ind i levende
+Væseners Ve og Vel. Lige som den teoretiske Videnskab
+forklarer det enkelte Naturfænomen ved dets Sammenhæng
+med andre Naturfænomener, saaledes vurderer Etiken den
+ene Følelse ved dens Forhold til andre Følelser: den
+Tilfredsstillelse, den Handlende selv føler ved sin Handlen,
+kan kun billiges, dersom Handlingens Virkninger ikke
+gribe forstyrrende ind i andre Væseners Lystfølelse, naar
+et saadant Indgreb da ikke kan paavises som nødvendigt
+Middel for en saa meget des større Lystfølelse, --- og de
+bedste Handlinger ere de, som forøge Lystfølelsen i Verden
+og formindske Ulystfølelsen. --- Dette Princip svarer som
+\emph{Maalestok} umiddelbart til Sympatien som \emph{Vurderingsmotiv}.
+Hvor vidt det er muligt at anerkende det
+% --- p. 25 ---
+\setcounter{footnote}{0}%
+\opage{25}fra Standpunkter, der lægge andre Vurderingsmotiver
+til Grund, skal her ikke nærmere drøftes\footnote[1]{Se herom „Etik“ p. 39---42.}.
+
+Vurderingen bliver ikke staaende ved den ydre Handling,
+men gaar tilbage til den Handlendes Motiver, til
+hans Karakteregenskaber, til hele det indre Liv, af
+hvilket Handlingen er udsprungen. Dette har sin Grund
+i dens Natur og Oprindelse. De etiske Domme ere fra
+først af uvilkaarlige Følelsesudbrud. Og disse Følelsesudbrud
+ere af stor praktisk Betydning, idet de virke
+bestemmende paa Villien (den egne og Andres) og frembringe
+Motiver til fremtidige Handlinger. Det er da nødvendigt
+at gaa tilbage til det Punkt, hvor det er muligt at
+paavirke den Kraft, som har frembragt Handlingen, og
+dette Punkt ligger i det indre Liv, i Sindelaget hos den
+Handlende, i de Motiver, der have hidført Handlingen.
+Kun naar de ændres, ændres ogsaa de fremtidige Handlinger,
+og med disse igjen deres Virkninger. Det er
+Virkningstendentsen, der konsekvent forfølges tilbage til
+sin Kilde.
+
+En Kraft kende vi kun fra dens Virkninger. Kun
+ved Slutning kunne vi danne os en Forestilling om hvad
+der foregaar i et Menneskes Sind, om de Motiver og
+Evner, han raader over. En Godhed eller Storhed, der
+aldrig nogensinde viste sig i Handling, vilde ikke kunne
+blive Genstand for etisk Anerkendelse. Den vilde bero
+paa Selvbedrag. Der maa dog i det Mindste foregaa et
+indre Arbeide, en Higen og Stræben i den Retning, det
+etiske Princip kræver. Ofte maa Individet i sin Vurdering
+af sig selv tage sin Tilflugt til dette indre Arbejde,
+og den sande etiske Vurdering maa tilsidst angaa det\footnote[2]{Se herom den følgende Afhandling om Forholdsloven i Etiken.};
+men det er jo ogsaa netop Begyndelse, Tilløb til det, som
+% --- p. 26 ---
+\setcounter{footnote}{0}%
+\opage{26}Velfærdsprincipet fordrer, kun at Fortsættelsen ofte paa
+Grund af individuelle Forhold umuliggøres.
+
+Men lige saa vigtigt er det at fastholde, at Virkningen
+af Handlingen ikke strax behøver at vise sig.
+Naar store og gode Mennesker saa ofte miskendes af
+deres egen Samtid, forklares det ved, at kun et meget
+omfattende Blik kan udmaale Betydningen af deres Færd.
+Deres Storhed og Godhed beror netop paa, at deres Tanke,
+Følelse og Villie omfatter langt mere end deres kortsynede
+og snevertfølende Samtid formaar at opdage. Lang
+Tid kan gaa, inden almindelig Forstaaelse og Tilegnelse
+bliver mulig. Derfor ligger det ingenlunde i Velfærdsprincipet,
+at man i sin Færd skal rette sig ganske efter
+den Trang og de Fornødenheder, Menneskene i Øjeblikket
+have. Velfærdsprincipet fordrer netop, at vi ikke sky
+Striden mod Fordomme og Træghed. Det Bedste, man
+kan gøre for Andre, er ofte simpelt hen at lade dem føle,
+at de endnu i deres Ønsker og Fornødenheder staa for
+lavt og ikke stille tilstrækkeligt store Fordringer. Saaledes
+gaar --- for at tage et Exempel --- den store Kunstner
+ofte sin ensomme Gang, uforstaaet eller endog misforstaaet
+af den store Mængde. Og dog følger han Velfærdsprincipet,
+uden at han maaske tænker derpaa, ved strængt
+at hævde Kunstens Fordringer. Han forøger Slægtens
+aandelige Kapital og skænker den en Kraft, som i Fremtiden
+kan komme til at virke i store Kredse. Kun en
+kortsynet Opfattelse og Anvendelse holder sig til den i
+Øjeblikket herskende Trang i Stedet for at se hen til
+Slægtens varige Livsbetingelser og til de stadige Kilder
+for nyt Liv og ny Virksomhed\footnote[1]{Denne sidste Udvikling er her hidsat fra min „Etik“ p. 94.}.
+
+2. Velfærdsprincipet afgiver en \emph{Regel}, vi kunne
+lægge til Grund ved vor Vurdering af Handlinger. Men
+% --- p. 27 ---
+\setcounter{footnote}{0}%
+\opage{27}det fordrer ingenlunde, som man under Tiden har ment,
+at Hensynet til Velfærd ogsaa skal være \emph{Motiv} for enhver
+Handling. Vi gribe kun til almindelige Principer
+for at orientere os i saadanne Tilfælde, hvor det umiddelbare
+Skøn eller den instinktmæssige Følelse ikke kan bringe
+Sagen til Afgørelse, altsaa i Tvivlstilfælde, eller ogsaa
+naar vi tilstræbe en systematisk Behandling af etiske
+Spørgsmaal. Den etiske Følelse kan virke aldeles uvilkaarligt
+og uden egentligt Ræsonnement, idet vi umiddelbart
+betages af Handlingen som den staar for os (for
+Tanken, altsaa som mulig, eller i Erfaringen, altsaa som
+virkelig), lige som vi i vor æstetiske Følelse umiddelbart
+kunne gribes af et Kunstværks eller et Landskabs Skønhed,
+uden at behøve at ty til æstetiske Ræsonnementer. Eller
+man følger trygt de »uskrevne Love«, som indeholdes i
+Sæd og Skik, i Tradition, i det Hele i den positive
+Moralitet. Netop i Kraft af Velfærdsprincipet vil en
+saadan Umiddelbarhed være at anbefale og opretholde, saa
+længe den ikke fører til at overse virkelige Problemer
+og Opgaver. Det er Uskyldighedstilstanden, af hvilken
+Ingen bør udrives uden Nødvendighed. Naar den umiddelbare
+Tryghed er brudt, blive de abstrakte Principer
+nødvendige Hjælpemidler; men de kunne ofte kun gennem
+mange Mellemled anvendes i de enkelte, konkrete Tilfælde,
+og de faa ikke saa let en praktisk Indflydelse
+paa Villien.
+
+Endog helt andre Motiver end etisk Følelse eller
+Hengivelse til den positive Moralitets Fordringer kan
+Velfærdsprincipet billige, ønske eller kræve. Det er saaledes
+heldigst, om en Mand drager Omsorg for sin Hustru
+og sine Børn, fordi han elsker dem, og ikke fordi hans
+etiske Følelse kræver det. Hvor Pligten bevidst skal
+træde i Kraft i de inderligste Forhold mellem Mennesker,
+er det i Regelen et Tegn paa, at et mindre heldigt Forhold
+% --- p. 28 ---
+\setcounter{footnote}{0}%
+\opage{28}er til Stede. Den fuldkomne Kærlighed driver ikke blot
+Frygten, men ogsaa Pligten ud. Lige som Familieforholdet
+er ogsaa Kunstnerens og Forskerens Forhold til deres
+Fag et Exempel herpaa\footnote[1]{Lige som der her er skelnet mellem Maalestok eller Vurderingsprincip og Handlingsmotiv, saaledes er der i den foregaaende Afhandling (§ 5) skelnet mellem Vurderingsmotiv og Handlingsmotiv. Paa Grund af den nøje Sammenhæng mellem Vurderingsprincip (Maalestok) og Vurderingsmotiv (Grundlag) falde disse to Betragtninger omtrent sammen.}.
+
+Der er af Wundt\footnote[2]{Ethik. Eine Untersuchung der Thatsachen und Gesetze des sittlichen Lebens. Stuttgart 1886. p. 339.} opstillet følgende Indvending
+mod Velfærdsprincipet: »Det er tænkeligt, at En opofrer
+sig for en Anden; det er tænkeligt, at En hengiver Gods
+og Liv for et eller andet idealt Formaal, for Fædrelandet,
+Friheden, Troen eller Videnskaben. Men det er aldrig
+forekommet og vil aldrig forekomme, at Nogen resignerer,
+for at den Sum af Lykke, der gives i Verden, kan blive
+større«. Denne Indvending overser netop, at hvad der
+er Princip for Vurderingen af en Handling, naar denne
+anerkendes som god, ikke \emph{behøver} at være Motiv for
+Handlingen. Den Handlendes Tanke og Følelse kunne
+meget godt stanse ved Fædrelandet, Friheden, eller hvilket
+andet idealt Formaal han ofrer sig for, uden at han behøver
+at anstille nogen Reflexion over hvad der betinger
+selve disse ideale Formaals Værdi. Men i en systematisk
+Etik eller i praktiske Tvivlstilfælde drøfte vi Fædrelandskærlighedens\footnote[3]{Se min „Etik“. Kap. XXXVI.},
+Frihedsfølelsens\footnote[4]{Ibid. Kap. XXIII og XL.}, Troens\footnote[5]{Ibid. Kap. XXXI---XXXIII.} og Videnskabens\footnote[6]{Ibid. Kap. XXVIII og XXIX.}
+Værd og Betydning for det menneskelige Liv.
+Dersom f. Ex. Frihed ikke var et Gode for et Folk, vilde
+% --- p. 29 ---
+\setcounter{footnote}{0}%
+\opage{29}det være urigtigt, om et Menneske vilde ofre Livet for
+at bevare den. Naturligvis drejer det sig i det enkelte
+Tilfælde aldrig om det abstrakte Begreb Velfærd i og
+for sig, lige saa lidt som det ved en speciel teoretisk
+Undersøgelse drejer sig om det abstrakte Begreb Aarsag
+i og for sig. Men vi opstille i Etiken Velfærdsprincipet
+og i Erkendelsesteorien Aarsagsprincipet, naar vi ad
+Analysens Vej have søgt de første Forudsætninger for
+vor praktiske og teoretiske (vurderende og forklarende)
+Aandsvirksomhed. ---
+
+3. Mod Velfærdsprincipet strider det ikke, at Lyst
+saa ofte maa købes med Smerte. Ti Smerten staar da
+kun som det nødvendige Gennemgangsled, og Velfærdsprincipets
+Betydning er netop at hævde, at Bevisbyrden
+paahviler den, der paastaar, at et saadant Gennemgangsled
+er nødvendigt. Al Tilføjelse af Smerte skal motiveres,
+medens Lystfølelsen i og for sig (naar ikke det, der fremkalder
+den, tillige volder større uheldbringende Virkninger)
+er berettiget. Velfærdsprincipet siger blot: frembring saa
+megen Lyst og saa liden Ulyst som muligt ved din
+Handlen! I hvilken Grad det er muligt at fyldestgøre
+denne Fordring, derom indeholder Velfærdsprincipet i og
+for sig Intet. Et Princip omstødes dog ikke ved Vanskeligheden
+af at anvende det. Og Erfaring viser, at der gives
+en Lystfølelse, som ikke er for dyrt købt, selv om der
+gaar dyb Smerte med i Købet. Man har mod Velfærdsprincipet
+anført Clärchens Sang (i Goethe's »Egmont«):
+»Himmelhoch jauchzend, \emph{zum Tode betrübt}«. Men
+lad Clärchen tale ud, og lad os lægge Mærke til Sangens
+sidste Linier, i hvilke hun uddrager Resultatet af hele
+sin Stemningsrække: »Glücklich allein ist die Seele, die
+liebt!« Sagen er: der gives en Bevægelse i Sindet, et
+Liv i Følelsen, som er forbundet med en saa dyb og stor
+Tilfredsstillelse, at den stærke Svingning mellem Lyst og
+% --- p. 30 ---
+\setcounter{footnote}{0}%
+\opage{30}Smerte ikke ophæver den totale Lykkefølelse, men netop
+styrker den. Der virke her to psykologiske Love sammen.
+Den ene er den, i Følge hvilken Smerten (eller Ulysten,
+eller Sorgen), naar den ikke overstiger en vis Grænse,
+kan danne Baggrund for Lystfølelsen og derved forhøje
+denne. Allerede heri ligger et tilstrækkeligt Motiv til at
+vælge saadanne Tilstande i Stedet for dem, der ikke naa
+saa højt i Intensitet, skønt de paa den anden Side ere
+mere usammensatte Lysttilstande. Den anden Lov er den,
+at der i selve Sorgen kan være noget Tiltrækkende, sandsynligvis
+fordi det stærke Liv, den kraftige Bevægelse,
+den Anspænding af Evnerne, som følger med den, i og
+for sig medfører en Tilfredsstillelse. Al Kraftanspændelse,
+som ikke er uforholdsmæssig, er forbunden med Lyst
+følelse. Midt i Sorgen kan da en Lystfølelse ved selve
+Sorgens Styrke og Voldsomhed gøre sig gældende, hvilket
+viser sig i, at man ikke \emph{vil} udrives af den. Den organiske
+Udladning, som er forbunden med enhver stærk
+Stemning, er et vigtigt Element her, selv om den ikke
+skulde indeholde den fulde Forklaring. --- Da Auguste
+Comte havde mistet den Kvinde, der udøvede en saa afgørende
+Indflydelse paa hans Aandsretning i den sidste
+Periode af hans Liv, udtalte han en Gang i en Henvendelse,
+han rettede til sit Erindringsbillede af hende: »Kun
+dig skylder jeg, at jeg ikke kommer til at forlade Livet
+uden paa værdig Maade at have lært den menneskelige
+Naturs bedste Følelse at kende\dots{} Midt under de
+tungeste Smerter, Følelsen kan medføre, har jeg aldrig
+ophørt at føle, at \emph{det Væsentligste for Lykken} er
+at have Hjærtet opfyldt paa værdig Maade, selv om det
+er af Smerte, ja selv af den bitreste Smerte«. --- Auguste
+Comte og Clärchen ere altsaa ganske enige, og Velfærdsmoralen
+er enig med dem. Med den store Livsbevægelse
+og Livsfylde følge ogsaa de store Omkostninger, de store
+% --- p. 31 ---
+\setcounter{footnote}{0}%
+\opage{31}Kontraster og de store Svingninger. Det gælder da at
+have Mod til at vove og vælge. Hvem har sagt, at det
+Højeste skulde kunne faas for en billig Penge?\footnote[1]{Denne sidste Udvikling har jeg allerede fremsat i „Tilskueren“. Nov.---Dec. 1889. p. 861 f.}
+
+Vi have nu én Gang intet andet psykologisk Kriterium
+paa Livets Sundhed og Kraft end Lystfølelse. Hvad
+der --- i \emph{alle} sine nærmere eller fjernere Virkninger ---
+kun volder Lystfølelse hos alle de Væsener, det berører,
+det kan umuligt være at forkaste. For saa vidt er Velfærd,
+defineret som varig Lystfølelse, det sidste Vurderingsprincip.
+Herimod strider det ikke, at det Højeste, vi 
+faktisk kende, ofte ved nogle af sine Betingelser medføre
+en stor Smerte. Hvo som vil være sikker for Savn og
+Sorg, maa ikke elske Noget som helst; men hvis nu
+selve Kærligheden var den højeste Lykke?
+
+Smerte er overalt Tegn paa en begyndende Opløsning
+af Livet\footnote[2]{Se om denne Teori: „Psykologi“ VI D, 2---3.}. I simpleste Form viser dette sig ved den
+»fysiske« Smerte, der opstaar ved Sønderrivning af det
+organiske Væv. Det gælder ogsaa for den »aandelige«
+Smerte, der bestaar i Sorg, Tvivl eller Anger\dots{} Den
+tyder paa en Disharmoni mellem forskellige Kræfter og
+Drifter i Sindet, en Disharmoni, der ved at stige tilsidst
+kan sprænge Bevidstheden. Naar Smerten dog ofte er
+et nødvendigt Gennemgangsled, er det dels, fordi den
+(som allerede vist) ved Kontrast og Stimulering kan sætte
+stærkere Kræfter i Bevægelse, der opveje de opløsende
+Kræfter, dels ogsaa fordi det gælder Opløsning af Noget
+i os, der hindrer en friere og rigere Livsudfoldelse. Barnefødsel
+er forbunden med Smerte, fordi det nye Liv kun
+kan fremtræde ved Løsrivelse fra det gamle, hvoraf det
+hidtil har udgjort en Del. Sandhedserkendelsen vindes
+ofte med Smerte, fordi Fordomme og Illusioner briste.
+% --- p. 32 ---
+\setcounter{footnote}{0}%
+\opage{32}I Angerens Smerte opløses et lavere Selv, for at et højere
+Selv kan udvikle sig.
+
+4. Hvad der især har affødt Modstanden mod Velfærdsprincipet,
+er sikkert det, at man er tilbøjelig til
+ved Ordet Lystfølelse først og fremmest at tænke paa
+de mest elementære og sanselige Former for Lyst. Velfærdsprincipet
+udelukker ikke disse, men indbefatter Mere
+end dem. Det tager Hensyn til alle Sider i Menneskets
+Natur, idet det hævder, at en varig Lystfølelse ikke kan
+frembringes med Sikkerhed, naar en væsentlig Side af
+denne Natur lades upaaagtet. Manglen ved de elementære
+Lystfølelser er, at de for største Delen kun svare
+til øjeblikkelige og begrænsede Forhold. Et Væsen, hvis
+Følelse er af rent elementær Art, kan hævde sig, saa
+længe de simple Livsbetingelser, efter hvilke det er tillempet,
+ikke ændres. Saaledes synes nogle af de laveste
+Dyreformer, som Infusionsdyr og Rhizopoder, i uendeligt
+lange Tider at have bestaaet næsten som de nu ere.
+Tillempelsen efter Forholdene er her saa godt som fuldstændig.
+Det Samme kan være Tilfældet med Væsener,
+der paa et tidligere Udviklingstrin have besiddet mere
+udviklede Former og Organer og derfor sandsynligvis
+ogsaa have havt et rigere Følelsesliv. Dyr, som i deres
+Ungdom leve frit, men senere føre en snyltende Tilværelse,
+gaa helt op i Ernæringslivet og miste alle Nerver og
+Muskler, der ikke umiddelbart tjene dette. --- Ogsaa hos
+Menneskene findes Exempler nok paa en Tillempelse efter
+Forholdene, der hindrer videre Udvikling. Om Ildlænderne
+bemærker Darwin i sin Skildring af deres (i vore
+Øjne) sørgelige Tilværelse\footnote[1]{Rejse om Jorden. p. 242.}: »Der er ingen Grund til at
+at tro, at Ildlænderne aftage i Mængde; derfor maa vi % PRINTED AS IS (tro,: at at: at doubled at the line turn (600 ppi))
+antage, at de nyde et saadant Maal af Lykke, hvorledes
+% --- p. 33 ---
+\setcounter{footnote}{0}%
+\opage{33}den nu end er beskaffen, at Livet faar Værdi for dem.
+Naturen, som gjorde Vanen til en uimodstaaelig Magt
+og lod dens Virkninger blive arvelige, har afpasset Ildlænderen
+efter hans elendige Lands Klima og Frembringelser«.
+Ogsaa højere staaende Naturfolk, og ikke blot
+Naturfolk, frembyde lignende Exempler. Det er Nøden,
+der driver Mennesket ind paa Fremskridtets Bane. Hvor
+ selv usle Forhold ikke have umuliggjort Tillempelsen,
+betinges Følelseslivet kun af en snever Kreds af Forhold.
+Der kan da maaske opnaas en fuldstændigere Tilfredshed
+end under mangfoldigere og mere indviklede Forhold. Et
+lille Kar er lettere at fylde end et stort\footnote[1]{Vas minus majore plenius esse potest, qvamvis liqvoris minus contineat. \emph{Cartesius}: Epistola IV. (De vita beata).}.
+
+Det kunde nu synes at maatte være en væsentlig
+Indvending mod Velfærdsprincipet, at det maatte lede til
+at anerkende en saadan til Livets første Fornødenheder
+og til rent elementære Følelser indskrænket Tilværelse
+for at staa lige saa højt som den Tilværelse, der udfyldes
+med aandeligt Arbejde og Kulturvirksomhed, --- ja, for
+at staa højere end denne sidste, der neppe vil medføre
+saa ublandet og sikkert Velbefindende, men være forbunden
+med stedse ny Trang, ny Stræben og ny Uro.
+--- En Tilværelse som Ildlændernes forekommer vel Alle
+kummerlig og ussel, fordi de sikkert ofte lide Mangel og
+Nød. Men vi kunne ogsaa tage et andet Exempel.
+Alexander von Humboldt traf i Sydamerika en Befolkning,
+der levede af Banantræerne, som ere saa frugtbare, at
+en Tønde Land, som er bevoxet med dem, kan ernære
+50 Individer. Disse Træer behøve ingen egentlig Dyrkning;
+kun skal Jorden omkring Rødderne bearbejdes med
+Hakke en eller to Gange om Aaret. Disse Mennesker
+kunne, i Ordets dobbelte Betydning, »nære« sig ved meget
+% --- p. 34 ---
+\setcounter{footnote}{0}%
+\opage{34}lidt Arbejde. Derfor ere de ogsaa sløve og uden Kultur.
+Men de Fornødenheder, de have, faa de tilfredsstillede.
+
+Hvad der for os vilde gøre et saadant Liv uudholdeligt,
+\emph{Trangen til Virksomhed, Udvikling og}
+\emph{Fremskridt}, existerer ikke paa saadanne Trin. Denne
+Trang er, hvad der vel maa mærkes, \emph{selv en Følge
+af Udvikling og Fremskridt}. --- En af Darwins
+Forgængere, \emph{Lamarck}, antog en indre, iboende Udviklingstrang
+hos alle levende Væsener. Men \emph{Darwin} har,
+støttet til Erfaringen, hævdet, at Udviklingen stedse indledes
+ved ydre Forholds Indvirkning. For Lamarck blev
+det en Vanskelighed, hvorledes de aller simpleste Former
+ere vedblevne at bestaa, --- hvorfor de i Kraft af den
+antagne Udviklingstrang ikke forlængst ere gaaede over
+til højere Former. Han løste denne Gaade ved at antage
+en generatio æqvivoca, en Nyopstaaen af de simpleste
+organiske Væsener ud af uorganisk Materie, en Antagelse,
+som hidtil ikke er bleven bekræftet. For Darwin volder
+de simpleste Formers fortsatte Bestaaen ingen saadan
+Vanskelighed. Ti efter hans Lære begunstiges kun de
+Variationer, som kunne være til Gavn under Kampen for
+Tilværelsen under de givne Forhold; Kvalitetsvalget medfører
+derfor ikke nødvendigvis en fremadskridende Udvikling\footnote[1]{Arternes Oprindelse. p. 153 f.}.
+For Menneskenes Vedkommende har \emph{Th. Waitz}
+klart vist, hvorledes Udviklingstrangen selv er et Udviklingsprodukt:
+»Af et Folk uden Samkvem og uden
+Væddestrid med andre, et Folk, som med forholdsvis Lethed
+eller kun med Overvindelse af tilvante og som nødvendige
+betragtede Vanskeligheder kan tilfredsstille sin
+Fornødenhed ved hvad der umiddelbart omgiver det, og
+som føler sig tilfreds dermed og lever lykkeligt, --- af et
+saadant Folk maa man ikke vente, at det skal gøre nogen
+% --- p. 35 ---
+\setcounter{footnote}{0}%
+\opage{35}som helst Anstrængelse for at civilisere sig. Hvo som
+har, hvad han behøver, og føler sig vel derved i enhver
+Henseende, han arbeider ikke. Man bliver ikke civiliseret
+uden Nød og paa fri Haand eller for maaske at følge en
+ædel Trang, som bor i Hjertet. Gaar det da anderledes
+i vort moderne Samfund? Hører der ikke først en lang
+Dannelsens Skole til, for at indgyde Mennesket Interesse
+ved Arbeidet som saadant? Man regne en Gang efter
+blandt de saakaldte Dannede, hvor mange der gøre sig
+Anstrengelse for deres egen eller Andres Dannelses Skyld
+uden at være nødte dertil! Man vil saa høre op med at
+betvivle de Vildes Jevnbyrdighed med os, hvad aandelige
+Evner angaar, i det Mindste af den Grund, at de undlade
+at anstrænge sig uden Nødvendighed«\footnote[1]{Die Indianer Nordamerikas. Leipzig 1865. p. 69.}.
+
+Ejendommeligt for Naturtilstanden i Modsætning til
+Kulturtilstanden (for saa vidt man skarpt kan stille disse
+to Tilstande i Modsætning til hinanden) er det, at hist
+maa Stødet til Forandring i Levevis og Tænkemaade
+stedse komme ude fra, medens der her --- selv om det
+skulde være i forholdsvis smaa Kredse --- rører sig en
+stærkere eller svagere Trang til Fremskriden, som stedse
+holdes vedlige. Denne Forskel danner en Analogi til
+Forskellen mellem uorganisk og organisk Tilværelse. I
+Organismen vedligeholdes Kræfternes Spil med en vis
+Uafhængighed af Øjeblikkets og de begrænsede Omgivelsers
+Paavirkninger; i den uorganiske Verden (og ligeledes
+naar man sammenligner de lavere Organismer med
+de højere) spille ydre Paavirkninger en langt mere afgørende
+Rolle. Hos Kulturfolkene er der vakt en Trang
+til at ændre og differentiere, til at udforme Livet i alle
+Retninger og til at tilspidse det inden for hver enkelt
+Retning. Der er udvoxet aandelige Følehorn, som uaf%
+% --- p. 36 ---
+\setcounter{footnote}{0}%
+\opage{36}brudt ere i Virksomhed. En ny Art Følelser bliver nu
+mulig, Følelser, hvis Natur ikke blot bestemmes ved de
+Formaal, som opnaas, men ogsaa knytte sig umiddelbart
+til selve Arbejdet og Virksomheden. Mennesket er derved
+blevet selvstændigere og friere, og hans Aandsliv har
+vundet i Dybde og Styrke, idet det ikke længere blot
+bestemmes ved den ydre Verden, men væsentligt ved de
+Kræfter, der røre sig i den indre Verden. Der stilles
+da nu ogsaa højere Fordringer til Livet.
+
+\emph{Denne Udviklingstrangs Opstaaen kan stemme
+fuldstændigt med Velfærdsprincipet}. Ti hin Stabilitet
+i Naturtilstanden, der snart kan forekomme os
+ynkelig, snart paradisisk, er afhængig af de ydre Forholds
+Stabilitet. Men en absolut sikret Stabilitet gives ikke i
+Naturen. Selv om de nærmeste Omgivelser ikke ændres,
+sker der Ændringer andre Steder i Verden og hos andre
+Væsener, og Kampen for Tilværelsen kan da nøde de
+stabile Væsener til enten at gaa under eller udvikle
+Fremskridtsevnen hos sig. De højere udviklede Væsener
+stille ofte under Kampen for Tilværelsen de lavere udviklede
+Væsener dette Valg. Det stilles mange Naturfolk, eller
+Kulturfolk, der ere blevne staaende paa et lavere Trin;
+de gaa saa ofte Undergangen i Møde, naar den højere
+Kultur nærmer sig.
+
+Hvad her er paavist ved Exempler fra Racer og
+Folkeslag, kan ogsaa paavises for de enkelte Individers
+Vedkommende. En fuldkommen Tillempelse efter begrænsede
+Forhold indeslutter altid en Fare: Faren for, at
+Individet, naar dets Livsforhold og dets Synskreds udvides,
+ikke skal have de indre Betingelser for at hævde
+sig. Den barnlige Naivitet, den drømmende Fantasi,
+den sanselige Nydelse have hver sin Ret og sin Betydning;
+men Tilstanden bliver let en Søvngængertilstand, i
+hvilken der kun er Sikkerhed og Lykke, indtil Opvaag%
+% --- p. 37 ---
+\setcounter{footnote}{0}%
+\opage{37}ningen sker, og hvor den største Hjælpeløshed kan indtræde
+ved Opvaagningen. Og der ses endda ganske bort
+fra, at saadanne Tilstande ofte kun bestaa paa andre
+Væseners Bekostning, idet disse enten maa yde Søvngængeren
+Hjælp eller dog undvære hans slumrende Kræfter.
+
+Velfærd kan derfor ikke bestaa i en passiv, én Gang 
+for alle frembragt Tilstand, en Tilstand, der ikke selv er
+Udgangspunkt for ny Udvikling og Fremskridt. Velfærd
+maa i højeste Forstand bestaa i \emph{en Tilstand}, hvor der er
+opsamlet Kraft og anlagt rige Muligheder for Fremtiden,
+og som afføder en Trang til at sætte nye Formaal og
+indlede ny Stræben. Den maa bestaa i en Tilstand,
+\emph{der baade i og for sig er attraaværdig og afføder
+Stræben efter ny attraaværdige Tilstande,
+altsaa en Tilstand, der ikke blot er Formaal,
+men ogsaa Middel, ikke blot har Værdi som
+Virkning, men ogsaa som Aarsag}. Lystfølelsen
+knytter sig her umiddelbart til selve Virksomheden og
+Arbejdet, til selve Udfoldelsen af Kræfterne, ikke blot til
+Resultatet. Hvor en saadan Lystfølelse er mulig, dér
+blive mange Lidelser udholdelige, som paa et lavere
+Niveau vilde være Tegn paa selve Livets Opløsning.
+Spænding og Længsel, Skuffelse og Savn kunne ikke
+udeblive og ville med en vis Rytme afløse den frejdige
+Fremgang mod det Maal, man har sat sig; men gennem
+alle Svingninger kan Grundretningen og Grunddriften
+bevares.
+
+Dette er det Ideal, Velfærdsprincipet, naar det gennemtænkes,
+fremkalder for os. Hvor vidt det kan naas, er
+et Spørgsmaal, som til hver given Tid og for hvert enkelt
+Individ maa besvares ad experimental Vej. Det gælder
+meget ofte ikke blot om Ændringer i Individernes Natur,
+men ogsaa i Samfundets Ordning eller endog i den ydre
+Natur, for at en Tilnærmelse til Maalet kan finde Sted.
+% --- p. 38 ---
+\setcounter{footnote}{0}%
+\opage{38}Men for os er i denne Sammenhæng Hovedsagen, at vi
+her have en Maalestok til Bedømmelse af Handlinger og
+Institutioner, % PRINTED AS IS (Institutioner,: a comma ends the paragraph (600 ppi))
+
+Denne Maalestok svarer til en Tendents, der gaar
+gennem hele den organiske Natur, hvor Lyst i det Hele
+og Store tyder paa Liv og Fremgang, Smerte paa Tilbagegang
+og Død. Velfærdsprincipet hævder \emph{Livets Ret}:
+ethvert Væsen har Ret til at bestaa og udvikle sig, for
+saa vidt derved ikke frembringes saa meget des større
+Smerte for andre Væsener. Den Etik, der bygger paa
+Velfærdsprincipet, søger altsaa at fortsætte Naturudviklingen
+paa mere bevidst og harmonisk Maade. Den opfordrer
+til at søge efter Midler til Liv og Fremgang, som
+den ubevidste Naturudvikling ikke vilde føre til, og den
+stræber at udelukke den unødvendige Smerte og Nød,
+som den blinde Kamp for Tilværelsen fører med sig. Den
+omfatter en Række Opgaver, der strækker sig lige fra
+den Lindring og Hjælp, som Medlidenheden motiverer, til
+Arbejdet paa de højeste sociale, æstetiske og intellektuelle
+Idealers Virkeliggørelse. Det er den specielle Etiks Opgave
+at undersøge, hvorledes disse forskellige Opgaver
+skulle behandles, og hvorledes de forholde sig til hverandre
+indbyrdes.
+
+5. Men fordi Velfærd bestaar i Virksomhed og Udvikling,
+kan man ikke omvendt sige, at Virksomhed og
+Udvikling nødvendigvis ere forbundne med Velfærd eller
+føre til Velfærd. Fordi det er urigtigt at tro, at Begrænsning
+af Fornødenhederne altid fører til Maalet, følger jo
+dog ingenlunde, at ubegrænset Mangfoldiggørelse af Fornødenhederne
+skulde være det Rette. Kulturudviklingen
+kan antage Former og slaa ind paa Veje, der ikke stemme
+med Velfærdsprincipet. Vi finde derfor ogsaa i Historien
+til sine Tider skarpe og indtrængende Advarsler mod den
+bestaaende Kultur. Saaledes i Grækenland af Sokrates,
+% --- p. 39 ---
+\setcounter{footnote}{0}%
+\opage{39}Kynikerne og Stoikerne, i det 18de Aarhundrede af Rousseau
+og i vore Dage af Leo Tolstoj. Saadanne store
+Aanders Opposition maa i hvert Tilfælde gøre os opmærksomme.
+
+
+Jeg ser her bort fra det Spørgsmaal, om det, vi kalde
+Kultur, uden videre kan bibringes ethvert Folk. Selv
+om man har været for hurtig til at frakende Naturfolk
+Evnen til at modtage Civilisation, følger deraf ikke, at
+det vilde være et Gode for et Folk at opgive sine i og
+ved det selv udviklede Livsformer for at lade sig regulere
+efter Former og Idealer, der ere udviklede under helt
+andre Forhold. Saa direkte kan selv den mest berettigede
+og fuldkomne Kultur ikke meddeles. \emph{Waitz}, der udtrykkeligt
+hævder, at man intet Bevis har ført for Indianernes
+Uimodtagelighed for Kultur, priser dog de Indianerhøvdinger,
+der modsatte sig den europæiske Civilisations
+Indtrængen i deres Folk, for »Kærlighed til deres Folk
+og rigtig Indsigt i dets sande Velfærd«. Der ligger her
+(lige som ved etiske Systemers Sammenstød) en Mulighed
+for tragiske Konflikter, som særligt ogsaa Indianernes
+Historie frembyder mange Exempler paa.
+
+Grunden til, at der kan komme Strid mellem Kultur
+og Velfærd, ligger i Kulturbestræbelsens Rastløshed og
+Hensynsløshed. Det gaar med den som med den uvilkaarlige
+(»spontane«) Bevægelsestrang, der fører til at
+bruge Kræfter og Lemmer, blot fordi der Energi til Stede, % PRINTED AS IS (Energi: fordi der Energi: er missing (600 ppi))
+uden at Henblikket til et værdifuldt Formaal leder den,
+saa at det bliver tilfældigt, hvilket Resultat Bevægelsen
+faar. Kulturbestræbelsen kan føre dels til Overanspændelse
+af Kræfterne, dels til ensidig Anvendelse af dem
+(formedelst overdreven Differentiation), dels til Isolation,
+brudstykkeagtig Udskillen af de enkelte Virksomheder.
+Hos det enkelte Individ plejes og udvikles enkelte Evner
+(hos Nogle f. Ex. Intelligentsen, hos Andre den fysiske
+% --- p. 40 ---
+\setcounter{footnote}{0}%
+\opage{40}Arbejdskraft) paa andres Bekostning; Harmonien, Evnen
+til at føle sig som Helhed og Enhed, mangler. En saadan
+Ensidighed gør, at Individet kun faar Værdi som et
+Hjul i det store Maskineri, kun bliver Middel, ikke Formaal.
+Den hænger sammen med en ensidig social Udvikling;
+Undertrykkelsen af enkelte Sider i den Enkeltes
+Natur, foraarsages ved Undertrykkelsen af enkelte Stænder
+og Klasser i Samfundet. Dersom man vilde identificere
+Kultur og Etik og betragte Udvikling som et sikrere
+Kriterium end Velfærd, vilde man ganske overse, at der
+gives et socialt Spørgsmaal. Det sociale Spørgsmaal er
+et etisk Spørgsmaal og tillige et Spørgsmaal om vor
+Kulturs Berettigelse, begge Dele i Kraft af Velfærdsprincipet.
+Skulde det være det Rette, at den materielle
+og den ideelle Kulturs Frembringelser kun komme et lille
+Mindretal til Gode, medens alle Andre udelukkes fra at
+faa Del i dem? Det vilde ganske stride mod det Ideal
+af et Samfund, som følger at Velfærdsprincipet. Ti den % PRINTED AS IS (følger: følger at: at for af (600 ppi))
+største Velfærd er til Stede, hvor hvert enkelt Individ
+udvikler sig paa selvstændig Vis saaledes, at det derved
+paa bedste Maade hjælper andre Individer til en lignende
+Udvikling ud fra deres ejendommelige Stade. Der existerer
+da \emph{et harmonisk Samfund af selvstændige Personligheder}.
+Dette er nu den højeste etiske Ide. Hvert
+enkelt Individ staar som en lille Verden for sig, og dog
+i den inderligste Vexelvirkning med den store Verden,
+af hvilken det er en Del. Den Enkelte tjener Slægten,
+og Slægten tjener den Enkelte. Enhver Særstilling, enhver
+Ulighed i Fordelingen maa begrundes ved hvad de
+forskellige Livsvilkaar og Opgaver kræve, og ethvert Individs
+Evner og Drifter skulle udvikles saa fuldt og rigt, som
+foreneligt er med hvad Slægtens Liv som Helhed kræver\footnote[1]{Se nærmere herom „Etik“. p. 31. 164. 227---240.}.
+
+% --- p. 41 ---
+\setcounter{footnote}{0}%
+\opage{41}6. Det følger af hvad her er udviklet, at Velfærdsprincipet
+ingenlunde er saa let at anvende i de enkelte
+Tilfælde, som det maaske kunde synes. Den specielle
+Sammenhæng kan være saa indviklet, at vi ikke kunne
+overse den eller forudse Virkningerne af vor Indgriben.
+Vi kunne ikke af Velfærdsprincipet a priori udlede et
+System af enkelte Handlinger eller en Ordning af Samfundet
+eller en hel Kultur. Dets Betydning er (lige som
+Aarsagsprincipet paa det teoretiske Omraade) at stille
+Problemer og at vejlede ved deres Behandling. Det er
+regulerende, ikke konstruerende. Det forudsætter det
+umiddelbare, uvilkaarlige Liv hos den Enkelte og i Samfundet
+og træder først til, naar der sker en bevidst
+Drøftelse af det saaledes Udvikledes Værdi og af Maaden,
+hvorpaa det skal føres videre. Al Etik faar derved en
+historisk Karakter. Ti vi begynde aldrig --- hverken hvad
+den enkelte Individualitet eller Samfundet angaar --- absolut
+forfra, men have at arbejde videre paa et givet Grundlag
+under Vejledning af de Principer og Idealer, der udspringe
+af vor Natur.
+
+% --- p. 42 ---
+\setcounter{footnote}{0}%
+\essay[Forholdsloven i Etiken]{Forholdsloven i Etiken.}
+\opage{42}
+
+
+\begin{center}I.\end{center}
+
+
+Det er Hensigten med denne Afhandling at paavise,
+at Gyldigheden af alle etiske Love beror paa bestemte
+Forhold og Betingelser, saa at Forholdsloven, vor Erkendelses
+Grundlov, ogsaa finder Anvendelse paa Etikens
+Omraade. Det vil vise sig, at denne Betragtning i væsentlige
+Henseender tjener til at karakterisere den etiske
+Erkendelses og de etiske Loves Beskaffenhed. ---
+
+Vi kunne begynde med at undersøge, i hvilken Betydning
+og med hvilken Ret, man i det Hele taler om
+etiske Love. Ordet Lov bruges her ikke i samme Betydning
+som i Naturvidenskaben, i Psykologien og i
+Sociologien. Ti Etiken vil ikke paavise de Regler, som
+den menneskelige Villen og Handlen faktisk følger,
+men de Normer og Idealer, den \emph{skal} følge, den Maalestok,
+den bør være underlagt. Den Betydning af Ordet
+Lov, som ligger til Grund i den filosofiske Etik, minder
+derfor om den Maade, paa hvilket Ordet bruges i den
+positive Retsvidenskab og desuden i den teologiske Etik,
+saa vel som i Videnskaben om den positive Moralitet
+(de i Sæd og Skik og i den bestaaende offentlige Mening
+liggende Normer). Men fra disse Videnskaber afviger
+den filosofiske Etik ved, at den ikke bygger paa nogen
+% --- p. 43 ---
+\setcounter{footnote}{0}%
+\opage{43}ydre, naturlig eller overnaturlig Autoritet, men søger at
+grunde sine Normer og Idealer paa selve den menneskelige
+Natur, saaledes som vi erfaringsmæssigt kende denne.
+Man har ment, at denne Omstændighed gjorde det utilstedeligt
+at tale om etiske Love.
+
+I Følge \emph{John Austin} forudsætter en Lov to
+Parter, en, som giver Loven, og en, for hvem Loven
+gælder, og Lovens forbindende Kraft ligger i, at den,
+der giver Loven, har Magt til at hævde den ved at
+knytte Smerte til dens Overtrædelse. Da nu den saaledes
+med Magt hævdede Lov frembringer Ensformighed i
+Handlemaaden, idet de enkelte Handlinger bestemmes
+ved den i Loven udtalte Fordring, kan Ordet Lov tillige
+komme til at betyde en almindelig Regel, som følger i
+de enkelte Tilfælde, og det er denne Side af Begrebet
+Lov, og kun denne, som vi gøre Brug af, naar vi tale
+om Naturlove. Vi mene dermed den regelmæssige Rækkefølge
+af Naturens Fænomener, uden at vi behøve at forestille
+os denne Regelmæssighed som Virkning af en bydende
+Villies Magt. Selv om nu denne Sprogbrug kan
+tilstedes, negter Austin bestemt, at Begrebet Lov kan
+finde Anvendelse paa de Regler for Handlen, som det
+enkelte Menneske fastsætter og anerkender for sig selv.
+Ti her er der jo hverken Tale om en Naturlov, ej
+heller gives der en over Individet staaende Magt, som
+kan hævde Loven i Overtrædelsestilfælde. »Ti skønt han
+kan fatte det oprigtige Forsæt at tilføje sig selv Smerte,
+hvis hans Færd afviger fra den Rettesnor, han har fastsat
+for den, saa afhænger den virkelige Tilføjelse at % PRINTED AS IS (Tilføjelse: Tilføjelse at: at for af (600 ppi))
+denne mulige Smerte af hans egen Villie«)\footnote[1]{Lectures ou Jurisprudence. I. p. 213 f.}.
+
+Skulde der dog nu ikke være et \emph{psykologisk
+Grundlag for Begrebet etisk Lov}, der kunde inde%
+% --- p. 44 ---
+\setcounter{footnote}{0}%
+\opage{44}holde de tre Elementer, som i Følge Austin forudsættes
+ved den strenge Anvendelse af Begrebet Lov: 1) et Forhold
+mellem Overordnet og Underordnet, 2) en almindelig
+Regel for Handlen og 3) Hævden af denne almindelige
+Regel ved Smerte i Overtrædelsestilfælde?
+
+Der rører sig hos Mennesket forskellige Følelser,
+hver bestemte ved sit Fornemmelses- eller Forestillingsindhold.
+Der er en Følelse, som er knyttet til Individets
+egen Selvopholdelse. Og der er andre Følelser, som lader
+Individet deltage i Andres Ve og Vel. Da nu enhver
+Følelse tillige er et Handlingsmotiv eller afføder en Drift
+til Handling, vil der i Menneskets Bevidsthed kunne
+fremtræde en Drift til Handling, som er bestemt ved
+Hensynet til en mere omfattende Tingenes Orden, til en
+større Gruppes Velfærd, over for en Drift til Handling,
+som kun er bestemt ved Hensynet til Individets egen
+begrænsede Interesse. Der vil da i Individet være Noget,
+som peger ud over dette selv og anviser det Plads som
+et enkelt Led i et stort Hele, saaledes at dettes Velfærd
+under Tiden kan kræve Opofrelse af, hvad Hensynet til
+Individets egen Velfærd som isoleret Væsen vilde fordre.
+Her vil der da i Individets eget Væsen være en Modsætning
+mellem to Parter, mellem en Drift, som er knyttet
+til Forestillingen om en større Tingenes Orden, og en
+Drift, der har en snevrere Horisont. Det første Element
+i Lovens Begreb er hermed paavist. --- I Virkeligheden
+forholder det sig ikke anderledes, selv hvor den Part,
+der giver Loven, er en ydre Autoritet. Ti denne Autoritet
+maa dog kundgøre sig for Individet ved at vække
+dets Følelse (hvad enten denne Følelse er Frygt eller
+Ærefrygt), og Loven vil ogsaa her lægge sig for Dagen
+gennem et Forhold mellem to Følelser eller Drifter i
+Menneskets Indre. For den, som kan udrydde Følelsen
+af Frygt eller Ærefrygt i sig, existerer Loven ikke. Det
+% --- p. 45 ---
+\setcounter{footnote}{0}%
+\opage{45}ses heraf, at den filosofiske Etik har lige saa megen Ret
+til at anvende Begrebet Lov som Retslæren, Teologien
+og den positive Moral. --- Jeg gaar her ikke nærmere
+ind paa, hvorledes denne indre Modsætning mellem et
+mere omfattende og et mere begrænset Hensyn inden for
+Følelses- og Driftlivet kommer i Stand. Det er en Modsætning,
+der historisk har udviklet sig under det sociale
+Livs Indflydelse paa Mennesket i Kraft af almindelige
+psykologiske Love.
+
+Altsaa det første af de tre Elementer i Lovens Begreb
+kan meget vel genfindes i de Love, den filosofiske
+Etik opstiller. Det Samme gælder nu ogsaa om det af
+de tre Elementer, som Austin aller mindst kunde finde
+her, nemlig Sanktionen eller den ved Overtrædelse af
+Loven hidførte Lidelse. Austin mener, at det blot beror
+paa Individets Villie, om det kommer til at lide Smerte
+ved Overtrædelsen af den Lov, der skulde udspringe af
+dets egen Natur. Men naar den etiske Lov er Formuleringen
+af en Drift, som fremkaldes ved, at Individets
+Følelse er bestemt ved Hensynet til et større Hele, da
+vil en saadan Drift ikke kunne møde Modstand og Modsigelse
+fra andre Sider i Individets Natur, uden at der
+opstaar mere eller mindre stærk Smerte. Naar den Drift,
+der volder, at Individet ikke lyder den etiske Lov, det
+selv har anerkendt, ikke helt kan fortrænge eller udrydde
+den Drift, som førte til Anerkendelse af Loven, saa vil
+der opstaa den indre Disharmoni, den smertelige Følelse
+af indre Opløsning og Nedværdigelse, som vi kalde ond
+Samvittighed eller ogsaa Anger. Og det beror ikke paa
+Individets vilkaarlige Valg, om denne Smerte skal indtræde
+eller ikke; den følger med psykologisk Nødvendighed
+af de forhaandenværende Betingelser. Det, der ytrer
+sig i den onde Samvittighed og i Angeren, er ikke noget
+Tilfældigt eller Vilkaarligt. Det er et under de givne
+% --- p. 46 ---
+\setcounter{footnote}{0}%
+\opage{46}Forhold uundgaaeligt psykologisk Resultat --- lige saa
+uundgaaeligt, som den ydre Straf er, naar Statsmagten
+er stærk, klog og hurtig nok til at faa fat i Overtræderen
+af den borgerlige Lov. Men Statsmagten formaar
+jo ikke altid at ramme Forbryderen med sin Straf, og
+saaledes kan det ogsaa ske, at Angeren udebliver, nemlig,
+naar den Drift, der fører til Anerkendelsen af et
+større Hele, er udslukt, eller naar den ikke er stærk og
+levende nok til at gøre sig gældende i Modsætning til
+den Drift, som førte til at udøve den Handling, der stred
+imod hin Anerkendelse.
+
+Endeligt vil ogsaa den Egenskab ved Loven, at den
+betegner en almindelig Regel, kunne paavises i den etiske
+Lov. I Forestillingen om den større Helhed, til hvilken
+Mennesket føler sig knyttet, --- Familien, Klanen, Nationen,
+Menneskeheden, --- har det et Princip, af hvilket
+der kan udledes almindelige Regler for dets Villen og
+Handlen. Naar Individet ikke vil sige sig selv imod,
+maa det bedømme sin Villies Tilstand og Retning ud fra
+det mest universelle og ophøjede Synspunkt, det kender,
+ud fra Tanken om det store Hele, af hvilket det føler
+sig som et enkelt Led. De enkelte Regler følge med logisk
+Konsekvents ud fra denne Tanke, naar denne én
+Gang er anerkendt. Den etiske Videnskab er da kun en
+Udfoldelse af, hvad der implicite er givet i den universelle
+Sympati, saaledes som denne historisk har udviklet
+sig i Menneskeslægten. ---
+
+Men naar det saaledes har vist sig berettiget at anvende
+Begrebet Lov i Etiken, saa ligger der tillige i den
+foregaaende Begrundelse, at saa vel det almindelige
+Princip som de Regler, der udledes af det, kun gælde
+i \emph{Forhold til} og \emph{paa Betingelse af} et bestemt psykologisk
+Grundlag. Dersom der skulde gives Mennesker,
+som mangle dette Grundlag, saa kunde og vilde de ikke
+% --- p. 47 ---
+\setcounter{footnote}{0}%
+\opage{47}anerkende de etiske Love. Hvorledes man maa stille sig
+overfor saadanne Individer, om de findes, er en Sag for
+sig, som vi senere ville komme til at berøre; her hævde
+vi kun, at alle etiske Love kun gælde i Forhold til en
+bestemt psykologisk Forudsætning. Dette er Etikens \emph{psykologiske}
+Relativitet\footnote[1]{Smlgn. min „Etik“. p. 35---37. --- Se ovenfor p. 7---17.}.
+
+\begin{center}II.\end{center}
+
+
+Men det er ikke tilstrækkeligt at fastsætte det psykologiske
+Grundlag og opstille det dertil svarende etiske
+Princip. De Forhold, under hvilke de af dette Princip
+følgende Regler skulle anvendes, ere saa indviklede og
+sammensatte, at det er vanskeligt, ja umuligt at finde
+Regler, som uden videre skulde kunne finde Anvendelse
+i alle \emph{specielle Forhold og Situationer}.
+
+Den \emph{almindelige} Lov eller Regel kan ikke forudsé
+alle mulige Situationer, i hvilke et Menneske kan blive
+nødt til at fatte en afgørende Beslutning. Det er en
+Vanskelighed, som den etiske Lov har fælles med den
+juridiske og den teologiske Lov, saa vel som med den
+positive Moralitets Lov. Livet er for rigt og mangfoldigt
+til at kunne sættes i et fuldt færdigt System. Forholdene
+gaa gennem mange forskellige Nuancer og Mellemtrin
+over i hverandre; skarpt afstukne Grænser existere ikke.
+Den almindelige Lov, der skal passe paa \emph{alle} Tilfælde
+af en vis Art, bliver let uanvendelig i det enkelte
+bestemte Tilfælde, som kan være aldeles enestaaende.
+Den etiske Lov maa derfor --- hvis den ikke for den tilsyneladende
+formelle Konsekvents vil ofre Livets virkelige
+Ret --- fastsætte den almindelige \emph{Tendents} eller \emph{Retning},
+som Villien skal følge, og ikke give specielle An%
+% --- p. 48 ---
+\setcounter{footnote}{0}%
+\opage{48}visninger  til, hvorledes der i alle enkelte Tilfælde ubetinget skal handles. Kun paa denne Maade kan Lovens
+Almengyldighed forenes med de til forskellige Tider og
+paa forskellige Steder forskellige Forhold. Dette kan man
+kalde \emph{den historiske Relativitet} af de etiske Loves
+Indhold\footnote[1]{Se min „Etik“. p. 160 f.}. Ud fra samme psykologiske Grundlag og i
+Henhold til samme almindelige Vurderingsprincip vil der
+under forskellige historiske Forhold, i forskellige Situationer
+være at træffe forskellige Afgørelser med Hensyn
+til Samfundets Ordning og det enkelte Individs egen
+Færd. Hvad der er muligt paa et Udviklingstrin, er ikke
+muligt paa et andet. Der kan ikke af det almindelige
+Velfærdsprincip (saa lidt som af noget andet Princip)
+konstrueres nogen Ordning af Staten eller Familien, der
+uden videre kunde indføres overalt. Enhver social Ordning
+forudsætter, at de, der skulle være Samfundets Medlemmer,
+leve under visse bestemte indre og ydre Betingelser.
+Paa bar Grund kan ingen Bygning opføres.
+
+De etiske Love miste herved ikke deres Betydning.
+De kunne ikke sige, hvorledes vi paa Livets Hav skulle
+kunne klare hver enkelt Bølge, der rejser sig overfor os,
+eller hvorledes vi skulle krydse i de enkelte Tilfælde.
+Men de kunne sige os, i hvilken Retning vi i det Hele
+skulle styre, og de gøre det muligt, at vort Kompas kan
+lede os uden Misvisning, selv om Vejen er nok saa
+bugtet og uregelmæssig. De formulere de almindelige
+Fordringer, som det højeste Formaal, vi anerkende, stiller
+til os. Midlerne til at tilfredsstille disse Fordringer kunne
+skifte indenfor vidde Grænser. Men naar Villiens almindelige % PRINTED AS IS (vidde: for vide (600 ppi))
+Retning er given, og naar der er tilstrækkelig
+Kraft og Konsekvents i Karakteren, ville ogsaa de enkelte
+Veje og Midler udfindes, uden at man kommer i
+% --- p. 49 ---
+\setcounter{footnote}{0}%
+\opage{49}Konflikt med Hovedformaalet. \emph{Kant} har med Rette sagt,
+at Kasuistik ikke er en Videnskab, men en Kunst, »ikke
+en Lære om, hvorledes Noget skal findes, men Øvelse i
+hvorledes Sandheden skal søges«.
+
+Kasuistiken angaar de Problemer, som de givne objektive
+Forholds indviklede Natur stiller, naar der skal
+tages en med de etiske Principer stemmende Afgørelse.
+Den søger at analysere Forholdene i deres Elementer for
+at udfinde, hvad Konsekventsen af de almindelige Principer
+maa være under disse bestemte Forhold. Den opstiller
+almindelige Regler for Konflikttilfælde eller søger
+ved udtænkte Exempler at øve Evnen til at finde det
+Rette. Men Analyse og almindelig Regel kunne ikke
+altid overføres fra det ene Tilfælde til det andet. Det
+kan f. Ex. være rigtigt, at et højere, mere omfattende
+Formaal skal fyldestgøres fremfor et lavere, mere begrænset;
+men Vanskeligheden er netop at afgøre, hvad der
+i \emph{dette bestemte} Tilfælde er det mest betydningsfulde
+Formaal. Afset fra Tilfældenes varierende Mangfoldighed
+hænge alle Formaal saaledes sammen, at man ikke kan
+gribe ind i et af dem, uden at det faar Virkninger for
+en stor Mængde af de andre; og hvorledes da med
+Sikkerhed gøre Regnestykket op om, hvad der vil vise
+sig at have Overvægt i det Hele, de gavnlige eller de
+fordærvelige Virkninger af en vis Art Indgriben?
+
+ Man kan ikke uden videre sige, at det mere omfattende
+Hensyn i det enkelte Tilfælde skal have Overvægten
+over det begrænsede Hensyn, saa at f. Ex. hvor
+Statens og Familiens Interesser komme i Strid, Familien
+altid bør vige, eller min Interesse altid skal underordnes,
+hvor den kommer i Strid med flere Andres. Ti Livets
+sunde Udvikling beror ikke blot paa dets Omfang, men
+ogsaa paa dets Kraft og Inderlighed, ikke blot paa Extensiteten,
+men ogsaa paa Intensiteten. I det snevrere
+% --- p. 50 ---
+\setcounter{footnote}{0}%
+\opage{50}Samfund kan der leves et inderligere og fyldigere Liv
+end i det store Samfund, og selve den Kraft, der holder
+det store Samfund sammen, udfoldes og øves i de mindre
+Samfund, saa at hints Livskraft beror paa disses. Indenfor
+det snevrere Samfund opstaar en Samfølelse, der efter
+at have voxet sig stærk kan udvides til at blive en
+væsentlig Del af det, der bærer de større Samfund. Den
+egentlige Produktivitet finder Sted i de mindre Kredse;
+fra dem udgaa de nye Tanker og de nye Kræfter. Derfor
+kan Hensynet til Omfanget ikke uden videre blive
+afgørende i Konflikttilfælde. Noget Lignende gælder,
+hvad det enkelte Individs Selvopholdelse angaar. Slægtens
+Liv vinder i Kraft, jo mere og jo bedre de enkelte Individer
+formaa at opholde og hævde sig selv saa vel i
+materiel som i aandelig Henseende. Inden for den individuelle
+Etik skal Selvhævdelsen altsaa ikke uden videre
+ofres for Hengivelsen, lige saa lidt som inden for den sociale
+Etik det snevrere Samfunds Interesse altid skal
+ofres for det størres. --- Men hvor vanskeligt kan det da
+ikke i det enkelte Tilfælde være at træffe den rette Afgørelse,
+saa at hverken Livets Kraft og Inderlighed eller
+dets Omfang og Udbredelse lider Skade? ---
+
+Et andet Tilfælde, i hvilket der kan være Brug for
+Kasuistik, er Forholdet til andre Menneskers Fordomme.
+Her har Bentham\footnote[1]{Of the influence of time and place in matter of legislation. (Works. I.). p. 180.} givet følgende Regel: »Den, som
+letfærdigt og uden Nødvendighed angriber en Fordom, og
+den, som finder sig i at blive ledet som en blind Slave
+af Fordom, fare begge vild fra Fornuftens rette Vej«. ---
+Men hvorledes kan man i det enkelte Tilfælde afgøre,
+om der er Nødvendighed til Stede for et Angreb, eller
+om det vilde være uværdigt Slaveri at lempe sig efter
+% --- p. 51 ---
+\setcounter{footnote}{0}%
+\opage{51}de herskende Fordomme? Her variere Forholdene i en
+særligt høj Grad, da Spørgsmaalet er, om de enkelte
+Individer, vi staa overfor, have Betingelser for at kæmpe
+den (maaske baade ydre og indre) Kamp igennem, i
+hvilken vi styrte dem ind ved at angribe, hvad der hidtil
+har staaet urokkeligt fast for dem, og hvad der maaske
+har givet deres Liv Hold og Styrke. ---
+
+Bentham mener vel, at man i vore Dage er for tilbøjelig
+til at benegte, at de Love, som for vor Tid ere
+de bedst mulige, ogsaa vilde have været det i tidligere
+Tider. Der gives Love, som vilde have været gavnlige
+til enhver Tid. Men han udtaler den historiske Relativitets
+Princip paa en træffende Maade i følgende Ord\footnote[1]{Anf. Skr. p. 193.}:
+»Hvis jeg skulde vælge, hvad jeg med størst Sandhed
+og Redebonhed vilde tillægge de prægtige Egenskaber
+Almindelighed og Uforanderlighed, saa skulde det snarere
+være visse \emph{Grunde} for Lovene end Lovene selv: snarere
+de \emph{Grundsætninger}, paa hvilke Lovene skulle bygges,
+de underordnede \emph{Betragtninger}, som følge af disse
+Grundsætninger, den bedste Plan, efter hvilken de kunne
+forbindes, de \emph{Hensyn}, ved hvilke Lovgiveren bør lade
+sig lede, --- end hvilke som helst bestemte Love, som
+Lovgiveren burde give, for at de, der ere betroede til
+hans Omhu, kunde blive regerede vel«.
+
+\begin{center}III.\end{center}
+
+
+1. Foruden \emph{det psykologiske Grundlag} og
+\emph{den historisk givne Situation}, er der endnu en
+tredie Faktor at tage Hensyn til, et tredie Forhold, ved
+hvilket den etiske Afgørelse i de enkelte Tilfælde maa
+bestemmes. Det er dette tredie Punkt, som det særligt
+% --- p. 52 ---
+\setcounter{footnote}{0}%
+\opage{52}var min Agt ved denne Afhandling at henlede Opmærksomheden
+paa, fordi det er blevet mindre paaagtet end
+de to første (især end det andet). Det fremkommer ved,
+at forskellige Individer paa samme Grundlag (og derfor
+med samme etiske Principer) og i de samme Situationer
+møde med \emph{forskellige Anlæg og Evner}. Lige saa
+lidt som samme Principer føre til samme Konsekventser
+i forskellige Situationer, lige saa lidt kunne de i samme
+Situation føre til samme Konsekventser, naar de villende
+og handlende Individer ere forskelligt udstyrede. Vi staa
+her overfor \emph{den individuelle Relativitet} eller den
+personlige Ligning i Etiken\footnote[1]{I min „Etik“ p. 133---134 har jeg allerede fremhævet dette Punkt. Bestemtere er det udtalt i den tyske Udgave (Leipzig 1888). p. 154 f., hvor jeg har betegnet Loven om den individuelle Relativitet som Forholdsloven i Etiken. Begrebet Forholdslov kan dog gives en videre Betydning, saa at ogsaa den psykologiske og den historiske Relativitet gaa ind derunder.}.
+
+De forskellige etiske Opfattelser synes i det Hele at
+være enige om, at de etiske Love eller Bud ere de
+samme for Alle i samme Situationer. Den Etik, som lægger
+Autoritetsprincipet til Grund, gaar ud fra, at Autoritetens
+Villie forlanger det Samme af alle Individer. Paa den
+ene Side staar den evige Villie, paa den anden Side
+Menneskene, der skulle lyde dens Bud. Paa lignende
+Maade ere Statens Love og de Bud, Sæd og Skik indskærpe,
+de samme for alle Individer. Der gælder, som
+man siger, ingen Personsanseelse. I Følge Fornuftmoralen
+udspringer der en almindelig Lov af den menneskelige
+Fornuft, som Enhver maa følge med Fare for at komme
+i Strid med sig selv, det vil sige: med det Almenmenneskelige
+i sin Natur. Ogsaa Velfærdsprincipets Tilhængere
+have i Regelen været tilbøjelige til at opfatte Sagen paa
+lignende Maade. De etiske Love udlede de ved Deduk%
+% --- p. 53 ---
+\setcounter{footnote}{0}%
+\opage{53}tion fra Velfærdsprincipet, sammenholdt med den givne
+Situation, og disse Love skulle saa lyde ens for Alle.
+
+At der maa være en Fejl i denne Antagelse, kan
+indses paa følgende Maade. \emph{Paa Grund af Individernes
+forskellige Evner og Drifter, vil en og
+samme Fordring faa højst forskellig Betydning}
+for dem. Fordringen om en vis Grad af Selvbeherskelse
+overfor en eller anden Naturdrift vil saaledes kunne betyde
+noget højst Forskelligt for de forskellige Individer,
+idet enhver af disse kan have Naturdriften anlagt i forskellig
+Grad. Hvad den Ene formaar uden mindste Anstrengelse,
+fordi der er en umiddelbar Harmoni mellem
+Fordringen og hans oprindelige Natur, formaar den Anden
+maaske kun efter en alvorlig, sønderslidende Kamp, medens
+den Tredie maaske aldeles ikke formaar at overvinde
+sin ubændige Natur. Hvad der for den Første
+stemmer med selve Naturtilbøjeligheden, bliver for den
+Anden en med stærk Anspændelse og bevidst Villen udført
+Pligthandling, og betegner for den Tredie en Opgave,
+han ikke kan løse, da han fra først af mangler
+Betingelserne derfor. Loven er altsaa i \emph{Virkeligheden}
+ikke den samme for dem alle tre. Og nu kan det ikke
+nytte at skelne mellem Loven i sig selv og Individernes
+forskellige Evne til at opfylde den. Den etiske Lov adskiller
+sig jo fra en teologisk eller juridisk Lov ved at
+udspringe af selve den menneskelige Natur. Den kommer
+ikke udefra, men skal udfolde sig for Individet ud af det
+Inderste i dets Væsen. Den kan da ikke naas blot ved
+Deduktion ud fra Principer og Situationer, som ere fælles,
+og som ikke indeholde noget Hensyn til det enkelte Individs
+Ejendommeligheder. Saa længe kun hine to Punkter
+ere medtagne ved Lovens Deduktion, kan den ikke være
+Individets egen Lov, men en abstrakt upersonlig Fordring.
+\emph{Den virkeligt etiske Lov maa ikke blot}
+% --- p. 54 ---
+\setcounter{footnote}{0}%
+\opage{54}\emph{være rettet til Individet, men ogsaa være individualiseret
+saaledes, at Individets Væsen kommer
+til Udvikling gennem Fyldestgørelse af
+Lovens Fordring}. Den maa tage Hensyn til de specielle
+Udgangspunkter for Villen og Handlen, som ligge
+i det enkelte Individs Natur. Den vilde ellers fordre
+Andet, og Mere eller Mindre, af det ene Individ end af
+det andet: kun naar den lyder forskelligt for hvert enkelt
+Individ alt efter dets Muligheder, stiller den i Virkeligheden
+den samme Fordring til dem.
+
+Dette følger simpelt hen af Velfærdsprincipet. Det
+enkelte Individ er ikke blot underlagt den Lov, som udtaler,
+hvad Slægtens Velfærd fordrer, men er selv et ejendommeligt
+Led af Slægten. I den Lov, som gælder for
+det, maa derfor to Hensyn mødes paa harmonisk Maade:
+Slægtens og Individets Krav. Loven er ikke funden, er
+ikke den rette Lov, saa længe ikke begge disse Hensyn
+ere komne til deres fulde Ret. Idet den Enkelte i sin
+Stræben og Virken arbejder for Slægtens Velfærd, maa
+han tillige arbejde for sin egen Velfærd som Del at % PRINTED AS IS (tillige: Del at Slægten: at for af (600 ppi))
+Slægten. Derfor maa han have sin specielle Etik, der
+baade kvalitativt og kvantitativt er forskellig fra de
+andre Individers, idet hans Natur og Dispositioner blive
+medbestemmende for den Maade, paa hvilken Loven
+former sig for ham.
+
+Det vilde være en stor Misforstaaelse, hvis man
+heraf vilde uddrage den Slutning, at al Selvopofrelse var
+at forkaste. Den Selvopofrelse, der udspringer af begejstret
+Kærlighed, af fri Beslutning, er netop en Ytring af Individets
+eget inderste Væsen, Afløb for en dyb Trang
+hos det. I den ideale Selvopofrelse gaa Selvhævdelse og
+Hengivelse i Et: Livet faar, saa underligt det lyder, kun
+Værdi ved at ofres. (Se p. 23. 29ff.). Spørgsmaalet er netop
+i de enkelte Tilfælde, om der er Evne hos Individet til
+% --- p. 55 ---
+\setcounter{footnote}{0}%
+\opage{55}saadan Opofrelse. Den Art Handlinger kan lige saa lidt
+som andre Arter af Handlinger fordres med lige stor
+Lethed af enhver. Her kommer Problemet frem, da Evnen
+og Driften til Begejstring og Hengivelse faktisk ikke er
+den samme hos Alle.
+
+Lige som i Følge Fechners Lov Fornemmelsen ikke
+beror paa Indtrykkets absolute Styrke, men paa Forholdet
+mellem det nærværende Indtryk og det forudgaaende,
+som allerede har paavirket det sansende Individ,
+saaledes maa fra et rent etisk Synspunkt den Fordring,
+der i Virkeligheden stilles til Individet, ikke være Et
+med den Fordring, der --- uden Hensyn til Individets
+Forudsætninger --- kunde udledes af de almindelige Principer
+og den givne Situation, men bero paa Forholdet
+mellem denne rent objektive Fordring og Individets Forudsætninger
+eller Dispositioner, og dette Forhold vil være
+forskelligt for de forskellige Individer. Den rent objektive
+Fordring kan sammenlignes med en Byrde, der i sig
+selv har samme Vægt, men som mærkes forskelligt paa
+forskellige Individers Skuldre.
+
+Det er altsaa en fuldstændig Individualisation af den
+etiske Lov, som herved fordres. Den Formulering, som
+kan passe for Alle, eller dog for et stort Antal Individer,
+kan kun være grov og overfladisk. Ved Bestemmelsen af
+$\pi$ kunne vi under Tiden lade os nøje med $\frac{22}{7}$, medens vi
+ved at stille større Fordringer til Nøjagtighed komme til
+flere Hundrede Decimaler, og endda stedse kunne tænke
+os større Nøjagtighed. Lige som der i den psykologiske
+Beskrivelse og Forstaaelse af en Karakter altid er Noget,
+som undslipper os, fordi det er umuligt at gribe alle
+Nuancer og fremdrage de individuelle Egenskaber i deres
+hele Mangfoldighed, saaledes vil der ogsaa ved Bestemmelsen
+af den individuelle Opgave være individuelle
+% --- p. 56 ---
+\setcounter{footnote}{0}%
+\opage{56}Nuancer for hvert enkelt Menneske, som ikke kunne
+fremstilles udtømmende i nogen Formel. Eller rettere: i
+den samme Formel maa der for hvert enkelt Individs
+Vedkommende indsættes særegne Koefficienter. De juridiske
+Love skære Alle over én Kam, og de gængse
+etiske Love gøre det ogsaa i alt for høj Grad. En fin
+Sans for de individuelle Forskelligheder i kvalitativ og
+kvantitativ Henseende er endnu overordentligt sjelden.
+
+Den samme Tankegang, der lod den etiske Vurdering
+gaa tilbage fra Handlingen til Motivet, maa konsekvent
+føre et Skridt videre og tage Hensyn til de Anlæg og
+Dispositioner, der betinge Motivernes Opstaaen. Muligheden
+for et Motivs Opstaaen er ikke den samme hos
+alle Individer. Kun en absolut indeterministisk Opfattelse
+vilde kunne antage, at (som en tysk Jurist\footnote[1]{Citeret i Vierteljahrsschrift für wissenschaftliche Philosophie. VI. p. 201.} har udtalt
+det) »den moralske Evne til at hæmme lovstridige Drifter
+er en uforanderlig Størrelse, som normalt er at statuere
+hos alle Mennesker uden Hensyn til individuelle Anlæg«.
+En saadan Antagelse strider dog i den Grad mod al
+psykologisk Erfaring, at den vistnok vil blive sjeldnere
+og sjeldnere i videnskabelige Kredse. --- Og desuden er
+det ikke nok med, at et Motiv kan gøre sig gældende
+med en vis Styrke. Den Indflydelse, det kan faa paa
+Villien, vil bero paa de andre Motivers Styrke i Forhold
+til det. Saaledes kunne, som allerede Butler\footnote[2]{Sermon, XII.} har bemærket,
+to Mennesker have nøjagtigt samme Grad af
+Medlidenhed; men hos den Ene rører der sig en meget
+stærk Ærgerrighed eller Hævnlyst, hos den Anden ere
+disse Følelser meget svage; de ville da være stillede
+højst forskelligt i etisk Henseende. Det gaar her som
+% --- p. 57 ---
+\setcounter{footnote}{0}%
+\opage{57}med Vægtskaale: hvilken Skaal der skal synke, beror
+ikke paa de Lodder, der lægges paa den enkelte Skaal,
+men paa deres Forhold til de Lodder, der lægges paa
+den anden Skaal.
+
+2. Den første Tænker, som har havt sin Opmærksomhed
+henvendt paa det her fremdragne etiske Problem,
+er \emph{Aristoteles}. Idet han fremstiller sin bekendte Lære
+om Dyden som den rette Midte, indskærper han udtrykkeligt,
+at objektivt set (κατ’ αὐτὸ τὸ πρᾶγμα) er Midten
+den samme for Alle, idet der kan angives to Yderligheder,
+som det gælder at holde sig lige meget borte fra,
+men sukjektivt set (πρὸς ἡμᾶς) forholder det sig paa Grund % PRINTED AS IS (sukjektivt: for subjektivt; S1 and the two OCRs read k)
+af de individuelle Dispositioner anderledes. Lige saa lidt
+som et og samme Kvantum Føde passer for den øvede
+Atlet og for den første Begynder i Gymnastiken, lige
+saa lidt vil for Alle det indre Midtpunkt for Driftslivet
+være beliggende paa samme Sted (τοῦτο δ’οὐχ ἓν οὐδὲ
+ταὐτὸν πᾶσιν)\footnote[1]{Eth. Nic. II, 5. p. 1106 a, 32.}. Hvad der hos den ene maa kaldes
+Tapperhed, idet det hos ham forudsætter Betvingelsen af
+en stærk Frygtagtighed, det vil kunne øves aldeles uden
+Villiesanspændelse og Selvovervindelse af den Anden.
+Denne Betragtningsmaade gennemfører Aristoteles paa en
+interessant Maade med Hensyn til de enkelte Dyder. ---
+Denne aristoteliske Lære, som vidner om et overraskende
+fint Blik for den individuelle Personligheds Betydning og
+Ret i etisk Henseende, staar, som jeg et andet Sted\footnote[2]{„Etik“, p. 133 f.}
+har gjort opmærksom paa, i en mærkelig Disharmoni til
+den aldeles fremherskende Plads, som Aristoteles giver
+Staten i Forhold til Individet. Aristoteles har ikke gjort
+noget Forsøg paa at vise, hvorledes hin tilsyneladende
+ultra-individuelle Lære kan forliges med den objektive,
+% --- p. 58 ---
+\setcounter{footnote}{0}%
+\opage{58}sociale Betragtningsmaade. Socialt fordres der dog --- saa
+synes det i det Mindste --- ofte med Nødvendighed Mere
+af det enkelte Menneske, end han kan yde efter den véd
+\emph{hans} Natur bestemte »rette Midte«. I Forholdet mellem
+Individ og Samfund kommer der en Række Problemer
+frem, som de antike Tænkere endnu ikke havde noget
+klart Blik for. Alligevel staar hin aristoteliske Lære som
+en af de mest geniale Synsmaader, der nogensinde er
+gjort gældende i Etiken\footnote[1]{I nyere Tid er Tanken om den etiske Lovs Individualisering gjort gældende af \emph{Jakobi}, \emph{Schleiermacher} og især af \emph{Beneke} (Physik der Sitten. 1822), samt i vor egen Literatur af A. S. \emph{Ørsted} i hans smukke Afhandling „om Grænserne mellem Teori og Praxis i Sædelæren“ (1811), som er aftrykt i første Bind af „Eunomia“.}.
+
+Man kunde maaske mene, at det er et i og for sig
+uløseligt Problem, som Aristoteles uden at vide det har
+stillet ved sin Lære om den individuelt bestemte »rette
+Midte«. Det kunde synes, at et Valg maatte træffes
+mellem to lige mislige Udveje. Den ene Udvej vilde være
+en etisk Subjektivisme, i Følge hvilken enhver almengyldig
+etisk Lov falder bort, da Loven bliver aldeles
+forskellig for hvert enkelt Individ. Den anden Udvej
+vilde være en uforenelig Strid mellem det enkelte Menneskes
+individuelle Etik og det sociale Menneskelivs etiske
+Krav. --- Den Opfattelse af den etiske Lov, som i det 
+Foregaaende er gjort gældende, hjælper os dog ud over
+dette Dilemma.
+
+Subjektivismen afvises ved, at trods de forskellige
+Former, den etiske Lov maa antage i og for de forskellige
+Individer, kan dog \emph{Retningen} for deres Stræben
+være den samme. De etiske Love formulere, som vi allerede
+fra et andet Synspunkt have set, Tendentser eller
+% --- p. 59 ---
+\setcounter{footnote}{0}%
+\opage{59}Retninger for Livsførelsen og Livsordningen. Naar flere
+Skibe krydse op mod Vinden, opnaa de --- paa Grund
+af deres forskellige Bygning --- med lige stor Anstrengelse
+forskellige Resultater; men derfor kunne de alle bevare
+Retningen; denne ligger i Fortsættelsen af den Kurs, de
+holde. Den objektive Betragtningsmaade behøver altsaa
+ikke at falde bort, fordi man hævder den etiske Lovs Individualisering.
+De individuelle Forskelligheder i Anlæg
+og Drifter maa Etiken tage som faktiske Udgangspunkter,
+der ikke kunne udslettes, men af hvilke det gælder at
+bringe det mest Mulige ud. De medføre ganske vist en
+Skranke for Etiken som Videnskab, men en Skranke,
+der ikke blot vidner om vor Tænknings Begrænsning,
+men først og fremmest om Livets rige Mangfoldighed,
+som ikke kan indpasses under bestemte Rubriker, skønt
+det, der rører sig i de mange individuelle Existentser,
+dog kan være rettet mod det højeste Maal for al menneskelig
+Handlen. Dette Maal er tillige saa ophøjet, at
+de individuelle Forskelligheders Betydning for den ideale
+Betragtningsmaade indskrænkes i høj Grad, om den ikke
+ganske forsvinder.
+
+Den anden tilsyneladende Konsekvents bortfalder,
+naar man nøjere gennemtænker Forholdet mellem Individ
+og Samfund, og naar man tillige opfatter de etiske Loves
+egentlige Betydning paa rette Maade. --- Det enkelte
+Individ er fra først til sidst Led af Samfundet, og \emph{Samfundets
+Liv er det Liv, der rører sig i alle de
+enkelte Individer}. Samfundets Maal er derfor ikke
+naat, saa længe dets Fordringer til det enkelte Individ
+medføre en ubodelig Disharmoni i dettes Indre. Naar
+Samfundets Villie ikke kan gennemføres, uden at det
+enkelte Individ kues eller knækkes, saa tyder det paa
+en Ufuldkommenhed i selve Samfundets Ordning. Idealet
+er først naat, naar det Arbejde, Individet øver i Sam%
+% --- p. 60 ---
+\setcounter{footnote}{0}%
+\opage{60}fundets Tjeneste, tillige tjener til Udfoldelse af dets egne
+Evner og Drifter paa fri og harmonisk Maade. Den
+største Velfærd er kun til Stede, hvor hvert enkelt Individ
+udvikler sig paa selvstændig Vis og netop derved
+paa bedste Maade fremhjælper en lignende Udvikling hos
+de andre Individer. Derved kommer det paa én Gang til
+at staa som Maal og Middel. Det Afgørende er, at der
+i det enkelte Individs Indre øves et Arbejde i \emph{Retning}
+af det etiske Formaal; \emph{hvor meget} Arbejde der kan
+øves, vil afhænge af Kræfterne og variere med disse.
+Enhver Lov, der vil fastsætte ikke blot Arbejdets Retning,
+men ogsaa dets Kvantum (»Mandevilliens qvantum
+satis«, for at tale med Henrik Ibsen), kan kun angive et
+Gennemsnit eller fastslaa et Minimum. Saaledes gaar det
+med de etiske Love i deres historiske Form. Den Maalestok,
+den Enkelte til given Tid og i et givet Folk anvender
+paa sig selv, vil stedse bære Præget af Tid,
+Stand og Race; han ser sig selv, som han tænker sig,
+at en upartisk Tilskuer blandt de Mennesker, han kender,
+vilde se paa hans Færd. Og selv om de Fordringer, han
+herved føler stillede til sig, mere fyldestgøres af ham ved
+den almindelige Retning, det besjælende Sindelag i hans
+Villen, end ved en Række adækvate Handlinger, saa
+har det dog sin \emph{pædagogiske} Betydning, at Fordringerne
+fremtræde for ham ikke blot med Idealitetens men ogsaa
+med Objektivitetens Præg. Des snarere og lettere vil
+Driften vækkes til at komme ud over den hidtilværende
+Tilstand. Kontrasten mellem Idealet og den sociale Fordring
+paa den ene Side, og Individets faktiske Villen paa
+den anden Side, kan ofte være et nødvendigt Gennemgangsled
+for, at den etiske Bestræbelse, saaledes som
+den i Følge Individets egen Natur er mulig, kan komme
+i Stand. En Gnist er nødvendig for at udløse den bundne
+Kraft. Der er Naturer, som først gennem en smertelig
+% --- p. 61 ---
+\setcounter{footnote}{0}%
+\opage{61}Konflikt med de objektive Normer faa deres Kraft tilstrækkeligt
+frigjort, for hvem der altsaa ingen anden Vej
+gaar til Harmonien end gennem Disharmonien. --- De
+to Sætninger: at den etiske Lov skal formulere Livets
+Retning, og at den skal virke pædagogisk, hænge nøje
+sammen. Begge Fordringer fyldestgøres nemlig ved, at
+den etiske Lov opstiller \emph{Typer eller Forbilleder}. Et
+Forbillede anviser Retningen og opfordrer samtidigt til
+Efterfølgelse. Men der fremtræder dog her en tydelig
+Forskel mellem den videnskabelige Etik og den praktisk-populære
+Etik, mellem Moralfilosofi og Moralprædiken.
+Praktisk har det sin store Betydning, at Maalet sættes
+højt for Alle, for at deres Kræfter kunne udløses. Det
+synes jo at være nødvendigt at forlange for meget, for
+at det Tilstrækkelige kan blive ydet. Den videnskabelige
+Etik kan i sin Bestemmelse af den etiske Lovs Begreb
+ikke tage Hensyn til den praktiske Teknik. Hvor let
+eller vanskeligt det er i Praxis at finde den for hvert
+enkelt Individ efter dets særegne Natur gældende Lov,
+gør videnskabeligt set Intet til Sagen. --- Paa den anden
+Side er der vel heller intet Spørgsmaal om, at jo mere
+individualiseret Moralprædikenen bliver, des mere vil den
+virke. Moraliseren en bloc hjælper neppe meget. Det er
+altsaa --- trods den tilsyneladende Modsætning --- dog et
+Ideal, den videnskabelige Etik her fremkalder for den
+praktiske Moraliseringskunst.
+
+3. Man kunde sige: »Den etiske Lov er jo en af
+Velfærdsprincipet udledet Konsekvents, ved hvilken der
+ikke kan rokkes af Hensyn til det enkelte Individs Natur.
+Hvad der i Kraft af et almindeligt Princip er ret og
+rigtigt, maa være det for \emph{alle} Individer.« Men, som
+allerede vist, hører hvert \emph{enkelt} Individ med sine Forudsætninger
+og Anlæg dog med til den Kreds af Væsener,
+hvis Velfærd skal fremmes. Dersom der stilles en ubøn%
+% --- p. 62 ---
+\setcounter{footnote}{0}%
+\opage{62}hørlig Fordring til det om Noget, som virkeligt ligger
+over dets Evne, saa er der et mod selve Velfærdsprincipet
+stridende Misforhold mellem Samfund og Individ til
+Stede, et Misforhold, hvis Aarsag ikke \emph{behøver} at ligge
+\emph{ene} hos Individet. Den Lidelse, Individet kommer til at
+udholde paa Grund af Misforholdet mellem dets Natur
+og Samfundets Krav, er derfor ikke blot at opfatte som
+Straf, men ogsaa som en Skæbne, lige som den Lidelse,
+der udspringer af den manglende Overensstemmelse mellem
+Individets Natur og de ydre Naturforhold. Naar det
+viser sig, at Ændringer i Samfundets Ordning og i de
+Livsbetingelser, som derved beredes for de enkelte Individer,
+ofte have langt større Indflydelse paa Forbrydelsernes
+Talrighed end Reformer af Straffevæsenet\footnote[1]{G. \emph{Tardé}: La criminalité comparée. p. 61: Changez les conditions, s'il se peut, de la société, bien plutôt que son système de pénalité, et sa criminalité se modifiera. --- Om de sociale Aarsager til Forbrydelse se \emph{Mischler} i „Handbuch des Gefängsnisswesens“, herausg. von Holtzendorff und Jagemann II. p. 447. 481 ff.}, saa
+er det klart, at man ikke kan stille det historisk givne
+Samfund med dets Krav som absolut berettiget paa den
+ene Side, og det enkelte Individ med dets bestemte Natur
+og Dispositioner som absolut forpligtet paa den anden
+Side. Det enkelte Individ er jo overfor Samfundet aldrig
+blot Aarsag, men altid tillige Virkning, og --- hvad der
+især maa fremhæves --- det er Virkning, før det er Aarsag.
+Selv om der i Individets Natur laa ulykkelige, antisociale
+Dispositioner, saa vilde disse maaske ved en bedre
+Ordning af Samfundet kunne hæmmes, afledes eller omsættes
+i uskadelige Former, medens den nuværende Ordning
+maaske ligefrem yder dem Betingelser for en frodig
+Udvikling. Og jo mere Samfundets Ordning sker efter
+% --- p. 63 ---
+\setcounter{footnote}{0}%
+\opage{63}bevidst Overlæg, des større bliver dets Ansvarlighed
+overfor det enkelte Individ.
+
+Dersom denne Opfattelse er rigtig, maa man vente
+at finde Spor af den ogsaa i Teologien og Retslæren,
+skønt disse gaa ud fra Modsætningen mellem en absolut
+objektiv Lov paa den ene Side og Individet, der har at
+lyde den, paa den anden Side. Jeg finder i den Rolle,
+som Naade og Benaadning spille i Teologien og Retslæren,
+et Spor af den Tanke om den sande Lovs Individualisering,
+som jeg her har søgt at udvikle. I Naaden og
+Benaadningen kundgør der sig nemlig mere eller mindre
+tydeligt et Hensyn til den Handlendes Individualitet og
+til dennes subjektive Betingelser. Den ortodoxe Lære
+antager jo endog, at det naturlige Menneske ikke \emph{kan}
+opfylde Loven! Naaden underkender altsaa Loven ved
+at hævde, at Menneskets hele Individualitet ikke rammes
+af Modsætningen til Lovens Bud. I selve Muligheden af
+en Forsoning ligger, at Loven ikke var absolut berettiget
+overfor Individet; --- ellers vilde Forsoningen være en
+ligefrem Selvmodsigelse. Og naar efter den ortodoxe
+Forsoningslære Gud selv, Lovens Giver, bringer det
+Offer, ved hvilket Lovens Overtrædelse sones, kunde man
+heri finde et symbolsk Udtryk for, at det er Loven, ikke
+Mennesket, der har haft den egentlige Uret. --- Efter den
+juridiske Opfattelse er Benaadningen ligefrem »Retfærdighedens
+Selvkorrigeren«\footnote[1]{\emph{Jhering}: Der Zweck im Recht. I. p. 428.}, eller som en ældre Jurist\footnote[2]{\emph{Anselm v. Feuerbach}: Aktenmässige Darstellung merkwürdiger Verbrechen. Giessen 1828. I. p. 353.}
+udførligere udtaler det: »At bøde paa Lovenes Ufuldkommenheder
+under deres Anvendelse, med Visdom at
+udligne Misforholdet mellem den lovlige Straf og en enkelt
+Overtræders Strafbarhed, mellem den uforanderlige, al%
+% --- p. 64 ---
+\setcounter{footnote}{0}%
+\opage{64}mindelige Lovs ubøjelige Strenghed og den individuelle
+Skylds mangfoldige Foranderligheder, og saaledes \emph{at forsone
+Retfærdigheden med Billigheden}, denne Magt
+er med Benaadningsretten lagt i Suverænens Haand«.
+Dersom selve Retfærdigheden trænger til at korrigeres,
+maa det komme af dens Ufuldkommenhed! --- Ved den
+juridisk-teologiske Modsætning mellem Synd og Naade,
+Forbrydelse og Benaadning svinges der til begge Sider
+af det Midtpunkt, i hvilket den egentlige Sandhed ligger.
+Paa Grund af Vanskeligheden ved at ramme selve Midtpunktet,
+bevæger man sig først et Stykke ud over det
+til den ene Side, dernæst et Stykke til den modsatte
+Side. I Stedet for at bevæge sig efter Diagonalen, bevæger
+man sig først ad den ene, dernæst ad den anden
+af Parallelogrammets to Sider. Og som allerede antydet,
+der synes at være Naturer, som kun kunne udvikle sig
+gennem saadanne Modsætninger, og som ikke kunne bevæge
+sig efter Diagonalen.
+
+I den moderne Udvikling af Straffevæsenet finder
+jeg mere eller mindre bevidst den samme Tanke ligge til
+Grund. --- Naar det Minimum af ydre Sædelighed, Staten
+fordrer af sine Medlemmer, i Virkeligheden stiller forskellige
+Fordringer til de Enkelte efter disses forskellige
+Natur, saa er det Statens Pligt at tage Hensyn til disse
+Forskelligheder og finde Udgangspunkter i Individernes
+Natur for en Udvikling henimod det, Loven fordrer.
+Alt er ikke gjort med at fastsætte Loven og idømme
+Straffen. Den Erkendelse synes da ogsaa nu at være 
+vaagnet, at Straffefuldbyrdelsen er af nok saa stor Vigtighed
+som Straffelovgivningen og Straffedommene, og at
+de Erfaringer, der indsamles under Straffefuldbyrdelsen,
+bør blive af væsentlig Betydning for Fremtidens Strafferet.
+I Straffefuldbyrdelsen kommer netop det individualiserende Moment frem, som Straffelov og Straffedom kun
+% --- p. 65 ---
+\setcounter{footnote}{0}%
+\opage{65}højst ufuldkomment kunne lade lade komme til dets Ret. % PRINTED AS IS (ufuldkomment: lade lade: doubled (600 ppi))
+De Erfaringer, som gøres ved Straffefuldbyrdelsen, ville
+derfor mere og mere virke tilbage paa Strafferettens
+Ordning. Saaledes har \emph{Franz von Holtzendorff}
+nyligt udtalt: »De moderne Straffeteorier maa langt snarere
+udledes ad Induktionens Vej og \emph{af Straffefuldbyrdelsens Erfaringer} end omvendt Straffefuldbyrdelsen af aprioriske
+Teorier«\footnote[1]{Handbuch des Gefängnisswesens. Hamburg 1888. I. p. 387. --- De følgende Bemærkninger om Fængselsvæsenets Udvikling ere ogsaa hentede fra dette Værk.}. Det anerkendes tillige mere og mere, at
+det ikke er Forbrydelserne som objektive Fakta, men Forbrydernes
+Personligheder, man i Straffevæsenet har med
+at gøre. Man har derfor fordret de uforanderlige Domme
+afløste af Domme, som fastsætte en ubestemt Straffetid,
+for at der kan tages Hensyn til Individets Karakter, saaledes
+som denne viser sig under Straffefuldbyrdelsen. Man
+fordrer en bestemt Inddeling af Forbryderne med forskellig
+Behandling efter deres forskellige Karakter. Der
+gør sig i det Hele i det sidste Aarhundrede (efter John
+Howards Tid) ved alle Reformer af Straffevæsenet den
+Tanke gældende, at Forbryderen saa vidt muligt skal træde
+tilbage i det menneskelige Samfund ikke blot kuet og
+tvungen, men virkeligt forbedret. Den Erfaring er bleven
+almindeligt anerkendt, at for Mange ligger efter deres
+indre og ydre Forhold Forbrydelsen uendeligt nær, medens
+den for Andre ligger meget fjernt. Det enkelte
+Individs Ret overfor den abstrakte, upersonlige Lov anerkendes
+saaledes mere og mere. Individualisering og
+Humanisering gaa Haand i Haand og ere i Virkeligheden
+ uadskillelige.
+
+I en ideal Stat vilde der kun fordres af Enhver hvad
+der svarede til hans Evner og Kræfter. Fordringen vilde
+være afpasset efter hans Ejendommelighed, ligesom vi ved
+% --- p. 66 ---
+\setcounter{footnote}{0}%
+\opage{66}Opdragelsen afpasse de Fordringer, vi stille til Barnet, efter
+dettes Udviklingstrin, for at Fordringen kan give Anledning
+til Udfoldelse af Kræfterne og ikke til Underkuelse
+af hele Individets Væsen. De sociale Ulemper, der vilde
+hidrøre fra, at de samme Fordringer ikke stilledes til alle
+Individer, vilde da være at afhjælpe ved særegne Foranstaltninger.
+Saa længe dette Ideal af en gennem alle
+sine Institutioner og Love opdragende Stat ikke kan realiseres,
+maa Staten gennem Straffefuldbyrdelsen øve en Del
+af det Værk, den ikke paa en mere direkte etisk Maade
+har formaaet at fuldbyrde. Den virkelige Ordning fører
+til at svinge om den sande, ideale Ordning som usynligt
+Midtpunkt i haarde, smertelige Modsætninger.
+
+4. Ved at tage Hensyn til den individuelle Faktor
+ville de kasuistiske Problemer løses som af sig selv. Rent
+objektivt kan det i det enkelte Tilfælde være umuligt at
+afgøre, om der snarere skal arbejdes for et større Samfund
+eller for et mindre, om Hovedvægten skal lægges
+paa Udbredelsen af den vundne Kultur til saa Mange
+som muligt eller paa at frembringe ny Kultur, som foreløbigt
+kun vil komme nogle Faa til Gode, o. s. v. Men saadanne
+Spørgsmaal ville i Regelen finde deres Afgørelse
+derved, at Enhver har sine Evner og Anlæg, som betinge
+hans Kald. I Begrebet Kald ligger netop tydeligt udtalt,
+at et Menneskes Pligt ikke blot bestemmes ved de
+almindelige etiske Principer og de givne faktiske Forhold,
+men ogsaa ved hans egen individuelle Natur. Begrebet
+Kald hviler paa den Tanke, at Mesterskabet viser
+sig i Begrænsningen, da al Villen og Handlen maa gaa
+ud paa noget Bestemt, og at Begrænsningen væsentligt
+beror paa de individuelle Evner og Kræfter. Det er
+disse, der »kalde«, idet Kraften har en Tendents til at
+vække Driften. --- Tage vi Virksomheden i Kulturens
+Tjeneste som Exempel, saa vil der være dem, hvis Evner
+% --- p. 67 ---
+\setcounter{footnote}{0}%
+\opage{67}bedst gøre dem skikkede til at virke i en snever Kreds,
+og hvis Virksomhed derfor naturligt bliver indskrænket
+til at sørge for deres egen og deres Nærmestes Opholdelse,
+saaledes at deres Virken i det Højeste kun indirekte
+kan faa Betydning ud over den snevrere Kreds. Andre
+vil der være, som egne sig til at virke paa og for Mange,
+og som derfor ville være gode Redskaber til at udbrede
+den hidtil vundne Kultur videre. Andre igen ville have
+Instinkt og Kraft til at slaa ind paa nye Veje, til at
+prøve nye Muligheder. Trods Modsigelse og Mangel paa
+Forstaaelse fra Mængdens Side øve de dog deres Værk
+og pleje de første Spirer til Fremtidens Kultur. Der vil
+for den Enkelte, der kender sig selv, her ikke være nogen
+Tvivl om, hvor han skal vende sig hen. Men Hovedvanskeligheden
+er netop den at kende sig selv, som
+allerede \emph{Sokrates}, Etikens Grundlægger, indskærpede.
+Den sokratiske Grundtanke viser sig netop ved den Opfattelse,
+jeg her søger at gøre gældende, af Loven som
+individuel, i sin hele store og dybe Betydning. Selvskuffelse
+er saa let mulig, hvor det gælder at udfinde
+sin egen Evne og afstikke sit Maal og dermed sin Grænse.
+Intet objektivt Kriterium slaar her ganske til, og der
+maa stedse voves noget, handles i Tillid til hvad den
+personlige Overbevisning forkynder. Ethvert Valg er
+her en praktisk Hypotese, hvis Verification det er Livets
+Opgave at bringe. Hvis Individet i sin etiske Formel
+anbringer urigtige Koefficienter, bliver Opgaven ikke løst.
+
+Dette gælder ogsaa, naar vi i Stedet for Kaldsvirksomheden
+tage \emph{Selvbeherskelsen} som Exempel til at
+belyse Forholdsloven i Etiken.
+
+Selvbeherskelse paa enkelte Omraader kan forekomme
+sammen med fuldstændig Mangel paa Selvbeherskelse paa
+andre Omraader. Indianerne f. Ex. ere i Stand til at
+udholde de forfærdeligste Pinsler, naar de falde 5\% i Fjende%
+% --- p. 68 ---
+\setcounter{footnote}{0}%
+\opage{68}haand, eller naar de ved at paalægge sig selv de mest
+udsøgte Lidelser ville forsone og ære deres Guder. Ogsaa
+Sygdom bære de uden Klage, og de fordre af deres
+Kvinder, at de skulle føde uden Smerteskrig. I deres
+ydre Optræden bevare de stedse den største Ro, Anstand
+og Alvor, selv om de heftigste Lidenskaber rase i deres
+Indre. Men overfor Nydelser som Spise, Drikke og Spil
+formaa de ikke at styre sig. Det var med stor Anstrengelse,
+at nogle Høvdinge fik sat igennem, at Drukkenskab
+skulde betragtes som en Last. --- Dette viser, at
+Evnen til Selvbeherskelse ikke er en konstant Faktor,
+uafhængig af hvad der ellers rører sig i Mennesket.
+
+Endnu klarere viser dette sig ved Selvbeherskelse
+paa Kønsinstinktets Omraade. De forskellige Individer
+ere her højst forskelligt udrustede. Der gives dem, hos
+hvem Instinktet virker i Harmoni med sympatiske Følelser,
+saa at det ikke kræver Tilfredsstillelse, uden hvor det
+danner det naturlige Grundlag for inderlig Hengivelse til
+et andet Individ, der omfattes med Glæde og Beundring.
+Dette er af saa meget des større Betydning, som Tilfredsstillelsen
+af Kønsinstinktet hovedsageligt af den Grund
+falder ind under etisk Betragtning, at den ikke er mulig
+uden ved Hjælp af et andet Individ. Afset fra dette
+Forhold og det deraf udspringende Ansvar vilde Kønsinstinktet
+kun være at bedømme fra et rent individualistisk
+eller egoistisk Standpunkt, altsaa efter hygiejniske
+Hensyn eller efter Hensynet til den harmoniske Udvikling
+af Individets sjælelige og legemlige Evner i det Hele.
+Det store Problem, den etiske Vanskelighed fremkommer
+netop ved, hvorledes dette mægtige Instinkt, der sætter
+saa stærke Følelser i Bevægelse og er saa betydningsfuldt
+for selve det enkelte Individs Velfærd, skal kunne
+tilfredsstilles saaledes, at det ikke volder fysisk og moralsk
+Lidelse for andre Individer og griber forstyrrende ind i
+% --- p. 69 ---
+\setcounter{footnote}{0}%
+\opage{69}den rette sociale Ordning. --- Foruden de før omtalte
+lykkeligt anlagte Individer gives der andre, hos hvem
+Instinktet rører sig i hele sin elementære Brutalitet, som
+en rent fysisk Trang, ved hvis Tilfredsstillelse Genstanden
+selv kan være ligegyldig. --- Hos atter Andre er Instinktet
+forholdsvis stærkt, men de formaa dog at aflede Opmærksomheden
+fra det ved ideelle Sysler eller andet Arbejde.
+--- Hos atter Andre kan det ikke beherskes paa denne
+Maade. Der findes i det Hele her utallige Gradationer lige
+til den »sygeligt forhøjede Kønsdrift«, som i Følge Krafft-\emph{Ebing}
+hyppigt findes hos Individer med en »neuropatisk
+Konstitution«, Individer, der »en stor Del af deres Liv
+lide under Byrden af denne konstitutionelle Anomali i
+deres Driftliv«\footnote[1]{Psychopathia sexualis. 2. Aufl. p. 34.}. --- De to Køn ere i Regelen forskelligt
+disponerede i denne Henseende. Harmonien mellem Kønsinstinktet
+og den ideelle Hengivelse til et andet Individ
+er sikkert langt hyppigere hos Kvinden end hos Manden,
+hvilket turde hænge sammen med, at Hannen i hele Dyreverdenen
+er den mest aktive og agressive Part ved Forplantningen,
+hvorfor Instinktet hos den har en saa elementær
+og hensynsløs Styrke, som det kun sjældent har hos
+Hunnen. --- Men ogsaa hos Mændene varierer Instinktets
+Styrke og Forhold til andre Motiver som sagt i det
+Uendelige. Under den Strid, som hyppigt føres om sexuel
+Sædelighed, overser man i Regelen disse talløse individuelle
+Forskelligheder, som dog sikkert er det aller vigtigste
+Element i den hele Sag. Man opstiller fra de modmodsatte % PRINTED AS IS (modmodsatte: mod-|modsatte at the line turn (600 ppi))
+Sider lige absolute Paastande. Fra den ene
+Side formulerer man strenge, almengyldige Bud uden at
+indse, at man derved lægger en højst forskellig Byrde
+paa de forskellige Skuldre. Fra den anden Side postulerer
+man en fysiologisk Nødvendighed, som Enhver skal
+% --- p. 70 ---
+\setcounter{footnote}{0}%
+\opage{70}ligge under for. Dette er et Fatum, som ikke existerer.
+Kønsinstinktet fremtræder under andre Forhold hos Mennesket
+end hos Dyret. Naar det vaagner hos Mennesket,
+har Evnen til Selvbeherskelse allerede paa andre Omraader
+udviklet sig. Der er sat Forestillinger og Følelser
+i Bevægelse, som ikke tillade Instinktets direkte Herredømme,
+og som, naar Opmærksomheden og Interessen for
+ideel Selvopholdelse er vakt, kunne gøre det muligt at
+dæmpe det og bringe dets Ytringer i Harmoni med Livets
+øvrige Krav. Kun maa det ikke glemmes, at Selvbeherskelse
+som rent negativ Dyd er en psykologisk Umulighed.
+Det er en Sætning, som altfor ofte glemmes i Etiken, at
+en Drift kun kan hæmmes af en anden Drift. Det kommer
+derfor ved Selvbeherskelsen ikke blot an paa, hvor stærk
+den Tilbøjelighed er, der skal kues, men ogsaa paa, om
+der er Mulighed til Stede for andre Tilbøjeligheder, der
+kunne lægge Beslag paa den sjælelige Energi. Det gælder
+om, at der er en stor Kærlighed, en stor Begejstring,
+som kan fylde Sjælen. Forholdsloven paa Etikens Omraade
+viser sig her at være en simpel Følge af Loven
+om Energiens Bestaaen\footnote[1]{Man vilde her ogsaa kunne benytte sig af Inertiens Lov. \emph{Spinoza} beviser sin Sætning: affectus coërceri nec tolli potest, nisi per affectum contrarium et fortiorem (Eth. IV, 7) ud fra Inertiens Lov.}. Den Energi, vor Bevidsthed
+eller vor Hjerne raader over, er til enhver Tid begrænset;
+jo mere af den, der forbruges til én Drifts Tilfredsstillelse,
+des mindre bliver der tilbage til de andre Drifter. Tilintetgørelse
+er umulig, men Omsætning til andre Former
+kan være mulig. Selvbeherskelsens store Heroer have
+besiddet en stor Begejstring for andre Sider af Livet end
+dem, de vendte sig fra. Den store Selvbeherskelse, Indianerne
+vise overfor Saar og Smerte i Krig, Fangenskab
+eller religiøs Dyrkelse, betinges ved deres Æresbegreber,
+% --- p. 71 ---
+\setcounter{footnote}{0}%
+\opage{71}deres Stammefølelse, deres religiøse Tro. Overfor sanselige
+Udskejelser havde deres Livsforhold ikke givet Anledning
+til opvejende Motivers Opstaaen. Som \emph{Leslie
+Stephen} har bemærket, udvikler der sig hos Mennesket,
+efterhaanden som det skrider frem i intellektuel, æstetisk
+og sympatisk Henseende, en højere Sensibilitet, der medfører
+en Følelse af Væmmelse og Foragt for sanselige
+Udskejelser afset fra disses beregnelige Følger, en Sensibilitet,
+der kan virke lige saa direkte og imperativisk
+som nogen af de elementære Sanseevner\footnote[1]{Science of Ethics. p. 102. 195. 200. --- Se ovenfor p. 23.}.
+
+Selvbeherskelsens Kamp staar paa, indtil den nye
+Anvendelse af Energien har faaet fuldstændig Overvægt
+over den tidligere. Denne Kamp bliver af højst forskellig
+Art hos de forskellige Individer, efter Forholdet mellem
+de oprindelige eller erhvervede Tilbøjeligheder. Hos
+Nogle foregaar Omsætningen endog uden Kamp; men der
+er dem, som kæmpe haardt uden at naa fast Grund under
+Fødderne. Det Villiesarbejde, som foregaar i disse sidste,
+er langt alvorligere end det, der øves af hine, skøndt det
+ydre Resultat bliver langt ringere. Naar Jesus hellere
+omgikkes med Skøger end med Farisæere, var det maaske,
+fordi han hos dem fandt en indre Stræben og Higen, der
+vel ikke kunde overvinde de modstaaende Skranker, men
+dog var i nærmere Slægtskab med den ideale etiske Lov
+end Farisæernes selvtilfredse Korrekthed. ---
+--- Forholdsloven kaster Lys over mange etiske Spørgsmaal,
+der ellers vilde være uløselige. Den lærer os at
+forene Etikens Idealitet med den realistiske Anerkendelse
+af Livets Mangfoldighed, idet den viser os, at den egentlige
+etiske Udvikling foregaar ud fra en Mængde forskellige
+Udgangspunkter, fra meget forskellige Niveauer
+henimod et og samme Maal.
+
+% --- p. 72 ---
+\setcounter{footnote}{0}%
+\opage{72}5. Hvor den af de almindelige Principer og den
+givne Situation udspringende Opgave ganske stemmer
+med Individets egen Evne og Drift, have vi de lykkeligste
+--- og naar Opgaven er stor --- de største Mennesker.
+Det Karakteristiske for disse er den indre Sikkerhed
+og Harmoni, med hvilke de --- trods alle indre og ydre
+Kampe --- gaa frem mod deres Maal og udfylde deres
+Plads. Her er den af \emph{Herbert Spencer} saa kaldte
+»organic morality« til Stede. At der gives saadanne
+Naturer er et Faktum, som ikke kan benegtes, hvorledes
+man saa vil forklare det. Det er dem, der afgive Forbilleder
+for Andre. Man maa herved vel fastholde, at
+Opgaven ikke blot stilles Individet ud fra uforanderlige,
+én Gang for alle givne Situationer, men at Individet, i
+Kraft af sin Evne og Drift og i Henhold til de højeste
+Principer ogsaa netop kan stille sig selv den Opgave at
+forandre den foreliggende Situation, hvortil denne saa
+naturligvis selv maa indeholde en Mulighed. Hos de
+store Banebrydere udvikle sig Evner og Drifter, som
+ikke kunne finde deres Tilfredsstillelse under de givne
+Forhold, og som derfor selv ud af disse frembringe nye
+Forhold. Saadanne Individer opstaa sandsynligvis ved
+en af de Variationer, der i Følge Darwins Hypotese ere
+Forudsætningen for, at en ny Livsform kan danne sig.
+Deres Ret falder sammen med deres Evne. Ved selve
+Udfoldelsen af hvad der ligger i deres Natur afgive de
+Forbilleder for en ny Retning paa et af Menneskelivets
+Omraader og blive derved Midler for Slægtens Fremgang.
+Natur og Kunst, Natur og Pligt virke her umiddelbart
+sammen. De bære Loven i sig selv i højere Forstand
+end det kan siges om dem, i hvilken ingen nye Muligheder
+for en højere Udvikling ligge. Dog kan der ogsaa
+hos dem, hvis Opgaver væsentligt bestemmes ved Forholdene
+som de ere givne, findes »organisk Moralitet«,
+% --- p. 73 ---
+\setcounter{footnote}{0}%
+\opage{73}dersom deres Natur umiddelbart fører dem baade til den
+Virksomhed og til den Begrænsning og Selvbeherskelse,
+som Forholdene kræve.
+
+Den fuldstændige Modsætning til saadanne Naturer
+vilde være til Stede, dersom der skulde gives Individer,
+hos hvem aldeles ingen, end ikke den svageste Bevægelse
+eller Stræben i Retning af det etiske Ideal kunde udløses.
+Alle Koefficienterne i den etiske Formel vilde da være
+Nul. Ingen nok saa pædagogisk formuleret Fordring eller
+Appel vilde kunne virke som stimulus. Vi komme her
+blandt Andet til det Spørgsmaal, om der gives uforbederlige
+Forbrydere, et Spørgsmaal, som i den nyeste Tid
+med stor Bestemthed er blevet besvaret bekræftende af
+\emph{den italienske kriminalpsykologiske og retsfilosofiske
+Skole}.
+
+Denne Skole har store Fortjenester af Videnskaben.
+Den sædvanlige etiske og juridiske Betragtningsmaade
+bliver staaende ved Handlingen og de nærmest liggende
+Motiver og gaar ikke tilbage de Aarsager, som have % PRINTED AS IS (tilbage: gaar ikke tilbage de: til missing (600 ppi))
+frembragt den Handlendes hele Karakter. Den tidligere
+herskende Indeterminisme har begunstiget denne Opfattelse.
+Den kriminelle Antropologi og Psykologi, som
+skylder den italienske Skole saa meget, arbejder paa at
+raade Bod paa denne Ensidighed. Den søger at konstatere
+Forbryderens legemlige og aandelige Ejendommeligheder
+og at paavise Aarsagerne til disse. Den har
+paa Grundlag af disse Undersøgelser opstillet Forbrydertypen
+(homo delinquens) som en særegen Variation af den
+almindelige Mennesketype. Blandt de legemlige Særegenheder
+for denne Type nævner \emph{Lombroso} særligt saadanne
+Egenskaber ved Kranie, Hjerne og Fysiognomi,
+der maa betragtes som Afvigelser fra det \emph{civiliserede}
+Menneskes Type (\emph{regressive} Afvigelser), bl. a. ringe
+Kraniekapacitet, lille og snever Pande. Blandt de sjæle%
+% --- p. 74 ---
+\setcounter{footnote}{0}%
+\opage{74}lige Særegenheder fremhæver han en mærkværdig Uimodtagelighed
+for Smerte, med hvilken vistnok en ikke mindre
+mærkelig Mangel af Medlidenhed staaer i naturlig Forbindelse.
+De vasomotoriske Reflexer ere i det Hele svage,
+og det er sjeldent, at de egentlige Forbrydernaturer kunne
+rødme. Den moralske Følelse mangler, hvad der (som
+allerede \emph{Despine} havde udtalt) viser sig i Angerens
+store Sjeldenhed. Hele denne Type er nu i Følge Lombroso
+og den italienske Skole at forklare ved Atavisme.
+Den opstaar nu til Dags ved, at dybe Lag fra Menneskeslægtens
+Forhistorie skyde sig op igen midt under Civilisationen.
+Paa anden Maade mener man ikke at kunne
+forklare det Umotiverede og Hensynsløse ved de egentlige
+Forbryderes Færd, ligesom ogsaa Tilbagefaldenes Hyppighed
+og de bedst udtænkte Straffesystemers ringe Virkning
+forstaas, naar det er Kræfter fra Urtiden, som røre
+sig paa ny.
+
+Den moralske Sans --- siger en fremragende italiensk
+Forsker, Garofalo (i sin »Crimonologie«) --- er Aarhundreders % PRINTED AS IS (Crimonologie: for Criminologie (600 ppi))
+Værk. Hvis nu --- som Erfaringen viser ---
+enkelte Individer ikke ere blevne delagtige i dette Værk,
+men lide af en medfødt moralsk Insensibilitet, hvilket
+viser sig i, at Medlidenheden ikke rører sig hos dem,
+end ikke i dens mest elementære Former --- hvorledes
+kan man saa tænke sig, at nogensomhelst Paavirkning
+og Opdragelse i Løbet af det enkelte Individs Livstid
+skulde kunne udrette, hvad der for den øvrige Slægt har
+kostet stedse gentagne Erfaringer i Løbet af Aartusinder?
+Mennesket er godt af Instinkt, ikke af Reflexion; naar
+da Instinktet mangler, hvilken anden Kraft skulde saa
+kunne raade Bod derpaa? Individer, der ikke (som
+Lejlighedsforbrydere) forsynde sig paa Grund af forbigaaende
+Anledninger, men som atter og atter vende tilbage
+til deres forbryderiske Færd, eller som ved Hand%
+% --- p. 75 ---
+\setcounter{footnote}{0}%
+\opage{75}lingens forholdsvis ringe Motiver og den oprørende Maade,
+paa hvilken den udføres, aabne Indblik i et indgroet antisocialt
+Sindelag, --- saadanne Individer er det umuligt
+for et civiliseret Samfund at assimilere sig. De vilde
+kunne passe i langt tidligere Civilisationer, og nu om
+Stunder maaske i Dahomey eller paa Fidschiøerne; men
+det er haabløst at ville gøre dem til Elementer i vort
+nuværende Samfundsliv. Overfor dem kan Samfundet da
+ingen Pligt have. Derimod har det overfor sig selv den
+Pligt at eliminere saadanne »Molekuler«, som ville skade
+Livet i den øvrige Organisme. Det er en individualistisk
+Ensidighed at ville hævde, at forbryderiske Individer af
+den beskrevne Art skulde have Rettigheder overfor Samfundet.
+Den sociale Nødvendighed er ubetinget, og den
+sociale Reaktion taaler ingen Begrænsning.
+
+Saa vidt \emph{Lombroso} og Garofalo. --- Den af disse
+Forskere hævdede Anskuelse interesserer os her, for saa
+vidt som den antager en absolut moralsk Insensibilitet
+hos nogle Individer, som derved vilde udelukkes fra i
+nogen som helst Grad at høre til den Mangfoldighed af
+Udgangspunkter, fra hvilke den menneskelige Udvikling
+bevæger sig hen imod sit Ideal. Ikke blot den individuelle
+Relativitet, men ogsaa den psykologiske Relativitet
+vilde falde bort. Vi vilde i de egentlige Forbrydernaturers
+Sindelag og Tankegang have givet et System,
+som var fundamentalt modsat det etiske System, paa hvilket
+den menneskelige Udvikling, bevidst eller ubevidst er
+bygget. Og der skulde aldeles ingen Mulighed være for
+at hint System kunde overvindes af dette uden ved en
+Udryddelseskrig. Førend vi gaa ind paa denne Antagelse,
+maa vi underkaste den en nærmere Drøftelse.
+
+a. Det er altid usikkert at slutte fra enkelte Handlinger
+til et Menneskes inderste Karakter og de Muligheder,
+den indeholder. Et Menneskes Karakter og dens
+% --- p. 76 ---
+\setcounter{footnote}{0}%
+\opage{76}Muligheder udtømmes ikke ved den enkelte Handling. I
+Følge Garofalo behøver Forbrydelsen ikke en Gang at
+være særligt stor, og dog skal Undersøgelsen af Forbryderens
+Karakter ved Hjælp af de Oplysninger, der kunne
+skaffes til Veje, kunne være tilstrækkelig for en antropologisk
+og psykologisk uddannet Dommer til at afgøre,
+om Individet hører til dem, der kunne lempe sig efter
+det civiliserede Samfunds Krav, eller om det maa »elimineres«.
+Ja, end ikke Handling behøves; et Forsøg skal
+kunne være tilstrækkeligt!
+
+Lige saa usikker er den Slutning, der drages fra
+Fraværelsen af Anger. Den er især konstateret hos
+dødsdømte Forbrydere eller hos Fanger som dem, Dostojevski
+maatte dele Fængsel med i Sibirien, og som just
+ikke vare Genstand for nogen virkeligt pædagogisk Behandling.
+Fordi Angeren ikke kan vækkes i den korte
+Tid mellem Forbrydelsens Udøvelse og Dødsdommens
+Udførelse, og fordi den ikke kunde vækkes hos Forbrydere,
+der underkastedes den Behandlingsmaade, som indtil
+for kort Tid siden var den sædvanlige i Fængslerne,
+deraf kan man dog ikke slutte, at den \emph{under ingen
+Omstændigheder} vilde kunne vækkes. --- Tilbagefaldenes
+Hyppighed tyder ligeledes paa indgroede, men
+ikke nødvendigvis paa uforbederlige Tilbøjeligheder.
+
+Garofalo vil ved Frihedsstraffene ikke have nogen
+bestemt Tid fastsat ved Dommen, blandt Andet »fordi
+man ikke kan maale den Andel i Forbrydelsen, som de
+omgivende Forholds Indflydelse havde, og den, som selve
+Individets Anomali havde«. Først efter en længere Iagttagelsesperiode,
+i hvilken man kan lære Individets Karakter
+at kende, skal Grænsen for Straffetiden kunne
+fastsættes\footnote[1]{La Criminologie. p. 395.}. Men hvorledes kan han saa i nogle Tilfælde
+% --- p. 77 ---
+\setcounter{footnote}{0}%
+\opage{77}fordre absolut Elimination? Den Usikkerhed i Kendskabet
+til Forbryderens Karakter, som gør, at Frihedsstraffens
+Længde ikke forud skal kunne fastsættes, maa
+ogsaa gøre det umuligt at fastslaa absolut Elimination
+som eneste Udvej! 
+
+b. Naar de uforbederlige antisociale Anlæg forklares
+ved Atavisme, saa rejser der sig et nyt Problem, nemlig
+hvorledes saa udprægede Ejendommeligheder, der ikke
+blot angaa en enkelt Side i Individets Karakter, men
+hele Karakteren, have kunnet holde sig inden for Slægten
+ved Siden af Ejendommeligheder af helt modsat Art.
+Hvorledes har den Traad, gennem hvilken det enkelte
+Individ hænger sammen med Urslægterne, kunnet undgaa
+at blive spunden sammen med den Traad, ved hvilken
+det hænger sammen med de nærmeste Slægtled og med
+de Institutioner og Traditioner, som disse have frembragt
+og overleveret? Med andre Ord: selv om Forklaringen af
+Forbrydertypen ved Atavisme er rigtig\footnote[1]{G. \emph{Tarde} har i sin „Criminalité comparée“ kritiseret denne Forklaring og kommer til det Resultat, at selv om man maa anerkende utvivlsomme fysiologiske og anatomiske Analogier mellem de fødte Forbrydere og de Vilde, og selv om hine --- som alle Monstra --- frembyde regressive Træk, saa findes de dog hos dem \emph{kombinerede paa en særegen Maade}, og man maa ikke bedømme vore Forfædre efter denne Prøve. (p. 46). Men saa gælder det at forklare „Kombinationen“ --- og den kan dog ikke være uafhængig af den sociale Udvikling.}, saa \emph{er Atavismen
+intet Bevis paa}, at \emph{Samfundet ingen Skyld
+og derfor heller ingen Pligt har over for Individet}.
+Ti naar de antisociale Spirer have kunnet holde
+sig saa længe i latent Form inden for Slægten og ikke
+ere blevne omdannede, maa det dog komme af Mangler
+og Ufuldkommenheder i Slægtens Liv. Samfundstilstandenes
+og i det Hele det etiske Livs Fuldkommenhed maa
+dog maales, ikke blot efter hvilke positive Fremskridt
+% --- p. 78 ---
+\setcounter{footnote}{0}%
+\opage{78}der gøres, men ogsaa efter hvilke uheldige Muligheder
+der fortrænges og ophæves. Jo fuldkomnere en Samfundsorden
+er, des mere virker den paa de enkelte Individers
+inderste Væsen. Atavismen er altsaa selv et Tegn paa
+social Ufuldkommenhed og retfærdiggør ikke, at Samfundet
+stilles overfor det forbryderiske Individ som den absolute
+Ret overfor den absolute Retsløshed. --- Mærkeligt nok
+kommer den italienske Skole, idet den stiller de forbryderiske
+Individer uden for Samfundet baade i fysisk og
+etisk Henseende, til samme Resultat som Indeterminismen
+og Individualismen, skønt disse ellers ere dens Antipoder.
+
+c. Naar Garofalo, lige som tidligere \emph{Despine}
+(og endnu tidligere \emph{Anselm von Feuerbach}), lærer,
+at den moralske Insensibilitet kan forblive latent, indtil
+ydre Anledninger røbe den, --- naar han lærer, at selv
+om Fattigdom ikke er den egentlige Aarsag til Forbrydelse,
+saa vilde dog mange Mennesker være vedblevne
+at være latente Forbrydere, hvis de ikke havde været
+fattige, og hvis de havde levet i et andet milieu, --- saa
+synes det klart, at Samfundet maa være en medvirkende
+Aarsag, da dets Ordning altid mere eller mindre betinger
+det milieu, i hvilket de enkelte Individer udvikle sig.
+Man kan skelne nok saa skarpt mellem den blotte Anledning
+og den egentlige Aarsag; denne Distinktion vil altid
+være mere eller mindre kunstig, idet \emph{den fuldstændige
+Aarsag bestaar baade af de ydre Anledninger
+og de indre Anlæg}. Der er saa meget des mere Grund
+til at fremhæve dette, som det jo er »Anledningerne«, der
+bevirke den uhyre Forskel mellem to latente Forbrydere,
+at den Ene bliver erklæret for inassimilabel, medens den
+Anden uforstyrret fortsætter sit Liv som Samfundsmolekule!
+
+
+d. \emph{Nedarvede Anlæg have stedse en vis
+Ubestemthed}, der gør det muligt, at de ved Opdragelse
+% --- p. 79 ---
+\setcounter{footnote}{0}%
+\opage{79}og ydre Forhold kunne udvikles i forskellig Retning.
+Hvad der nedarves, er kun Dispositioner. Der kan ikke
+bevises at være en fatalistisk Naturbestemmelse til Stede,
+som skulde gøre alle Erfaringer, Oplevelser og Anstrængelser
+betydningsløse. Selv om en god Opdragelse og
+lykkelige Forhold ikke skulde formaa at kvæle den onde
+Spire, men i det Højeste kunde bevirke, at den udfolder
+sig uden sociale Ulemper, saa vil dog en slet Opdragelse
+gøre overordentligt Meget til at udvikle den onde Spire.
+Man vil derfor ikke kunne drage nogen absolut Grænse
+mellem hvad der udspringer af Individet i og for sig, og
+hvad der skyldes de Forhold, i hvilke det stedes, og som
+for en stor Del bero paa Samfundets Ordning. --- Meget
+ofte er der ingen absolut Egoisme til Stede. Hos Forbrydernaturer
+kunne Familiefølelserne ofte være meget
+stærke, saa at de forbryderiske Instinkter kun ytre sig
+over for Fremmede. Her kunde da maaske ligge en
+Mulighed for Vækkelse af videre gaaende Sympati, lige
+som det er fra Familiefølelserne, at Menneskekærligheden
+fra først af har udviklet sig til at omfatte større Kredse.
+Et andet Udgangspunkt kunde søges i Forbryderens Selvfølelse
+og Trang til at gøre sin Person gældende. Dostojevski
+bemærker, at den værste Straf for Forbryderen
+vilde være \emph{unyttigt} Arbeide. Dette hænger sikkert
+sammen med, at unyttigt Arbejde, som det at øse i Danaidernes Kar, lader Personligheden staa som et Intet, der
+hverken har Betydning for sig selv eller Andre. Denne
+sidste Rest af Selvfølelse vilde uden Paavirkning ude fra
+ikke være nok til at overvinde Ladheden, der er en hyppig
+Del af Forbrydernaturen; men den kan afgive et Udgangspunkt for Opdragelse, og de moderne Straffesystemer ere
+vist med Rette overbeviste om, at det især er gennem
+Arbejdet Opdragelsen skal ske.
+
+e. Fordi vore Institutioner endnu ikke have løst
+% --- p. 80 ---
+\setcounter{footnote}{0}%
+\opage{80}den store Opgave at hindre Forbrydelsernes, særligt Tilbagefaldenes
+Tiltagen, derfor kan man ikke slutte, at der
+virkeligt skulde gives absolut uforbederlige Forbrydere,
+Individer, hos hvem ingen som helst etisk Stræben skulde
+kunne vækkes, og som aldeles ikke skulde kunne bringes
+i Forhold til det etiske Ideal. Selv om en fuldstændig
+Tilbagevenden til det menneskelige Samfundsliv ikke
+skulde være mulig, kunde der dog vækkes en Drift, der
+førte fremad i Retning af Idealet, var det end kun med
+smaa Skridt. En Forsoning vilde da være mulig, og den
+\emph{absolute} Elimination ikke nødvendig. --- Der er ingen
+Grund til at tro, at Udviklingen af Straffevæsenet skulde
+have naat sit Højdepunkt. Reformen er kun i sin første
+Begyndelse. Man har hidtil været mere opfindsom i at
+udtænke Straffe, som kunde tilfredsstille Gengældelsestrangen
+og Lysten til at afskrække, end i at udfinde
+Midler og Veje til at paavirke Forbrydernes Karakter
+for gennem denne forsinkede Opdragelse at genoprette
+hvad der formedelst Samfundets Ordning var forsømt paa
+et tidligere Trin. Dette kom af den udvortes Maade, paa
+hvilken man tidligere betragtede Forbrydelsen. Man holdt
+sig \emph{til, at} den var begaaet, og lagde mindre Vægt paa,
+\emph{hvorledes} og \emph{hvorfor} den blev begaaet. Den italienske
+Skole vil ved sine Arbejder, der fra saa mange Sider
+belyse Forbryderkarakteren, bidrage meget til fuldstændigt
+at gøre Ende paa denne urigtige Betragtningsmaade.
+Denne Fortjeneste er uafhængig af Gyldigheden af de
+Slutninger, Skolen selv uddrager af sine Undersøgelser.
+
+Det staar da efter alt dette endnu som et aabent
+Spørgsmaal, om der gives menneskelige Individer, som
+ere aldeles uforbederlige, saaledes at den etiske Lov, selv
+om den blev nok saa individualiseret, ikke skulde kunne
+komme til at gøre sig gældende hos dem. For den almindelige
+Teori, jeg har villet gøre gældende, er dette
+% --- p. 81 ---
+\setcounter{footnote}{0}%
+\opage{81}Spørgsmaals Besvarelse ikke af afgørende Betydning. Men
+hvis min Teori er rigtig, opfordrer den til stor Varsomhed,
+inden man erklærer Individer for \emph{absolut} uimodtagelige
+i etisk Henseende. Dersom hvert Individ har
+sin egen individuelle Lov, er hint Spørgsmaal langt vanskeligere
+at besvare, end hvis man havde Ret til at gaa ud
+fra en objektiv Lov, der skulde kunne fyldestgøres af Alle.
+Der udfordres en Sans for individuelle Forskelligheder og
+en Taalmodighed, som giver sig Tid, indtil den haarde
+Skal kan sønderbrydes. Overfor Forbryderne (»Forbrydertypen«)
+har man længe baaret sig ad, lige som Europæerne
+pleje at bære sig ad over for de andre Racer.
+Lige som man uden videre har erklæret disse for at
+mangle Evne til Civilisation\footnote[1]{De Betragtninger, med hvilke Th. \emph{Waitz} imødegaar Paastanden om Indianernes Mangel paa Evne til Civilisation, have i denne Sammenhæng Interesse. Han siger bl. a.: „Indianernes lange Stillestaaen paa et meget lavt Kulturtrin, beviser Lidet eller Intet mod deres Begavelse, saa længe de endnu ikke længere Tid igennem have været stedte i saadanne Forhold, som over Hovedet gøre et Fremskridt muligt, og det er hidtil ikke sket. Ja, endnu mere. Naar der mange Aarhundreder igennem, saa vidt vi vide, ikke har indvirket Noget paa et Folk, af hvilket man kunde love sig en omdannende Indflydelse paa deres Organisation og deres Levevis, paa deres ydre og indre Liv, saa er det sandsynligt, at der behøves langt stærkere Magter og en i langt længere Tid uafbrudt fortsat Paavirkning, for i det Hele at frembringe en Omdannelse af dem, selv en nok saa ubetydelig, end i det modsatte Tilfælde“. Die Indianer Nordamerikas. Leipzig 1865. p. 74.} og dermed dømt dem til
+Undergang, saaledes har man erklæret hine for at mangle
+moralsk Evne og dermed dømt dem til »Elimination«.
+
+6. Til Slutning vil jeg lidt videre udvikle den i det
+Foregaaende udtalte Tanke, at de individuelle Forskelligheders
+Betydning i Etiken ikke er udtømt ved, at de
+hidføre Nødvendigheden af en gennemgaaende Individu%
+% --- p. 82 ---
+\setcounter{footnote}{0}%
+\opage{82}alisering af den etiske Lov, eller derved, at Livet faar
+større Fylde og Rigdom, end hvis det skulde og kunde
+tilskæres efter visse bestemte, almindelige Regler. Anerkendelsen
+af dens Betydning gør tillige Slægtens Fremadskriden
+forstaaelig. --- Udviklingen inden for den orgaganiske % PRINTED AS IS (orgaganiske: orga-|ganiske at the line turn (600 ppi))
+Verden bliver, som Darwin har lært, kun mulig
+ved, at der finder en uafbrudt Varieren Sted. Af de
+»spontane« individuelle Variationer udvælges og fastholdes
+de, som ere mest tjenlige for Livets fortsatte Bestaaen.
+Disse saaledes fastholdte Variationer blive altsaa typiske
+for Livets fortsatte Udvikling. En Analogi hertil have
+vi paa det etiske Omraade. De, hos hvem de Karakteregenskaber, den etiske Lov fordrer, udvikle sig med
+største Kraft og i den højeste Grad, og af hvem den
+indre og ydre Modstand overvindes med Lethed eller,
+selv om det sker gennem haard Kamp, paa en saadan
+Maade, at de derved gennembryde Skranker, der hidtil
+stansede Udviklingen, --- de staa vel i en vis Forstand
+ikke etisk højere end de Mange, der maa kæmpe haardt
+for blot at naa et Jevnmaal af Udvikling, og som væsentligt
+holde sig paa de hidtil banede Veje, men de staa dog
+som Forbilleder, der vejlede, opmuntre og trøste; de angive
+ikke blot \emph{Vej og Retning}, som Mønstre til Efterfølgelse,
+men vise tillige, \emph{hvilke Muligheder der
+indeholdes i den menneskelige} Natur. Trods de
+store individuelle Forskelligheder ere dog alle menneskelige
+Væsener beslægtede, og det er en naturlig Slutning,
+at hvad de videst Komne have naat, ogsaa til en vis
+ Grad maa kunne blive tilgængeligt for de Andre. Som
+\emph{Herbert Spencer} har sagt: »Hvad der nu karakteriserer
+de undtagelsesvis Store kan ventes en Gang at
+ville karakterisere Alle. Ti hvad den bedste menneskelige
+Natur er i Stand til, ligger inden for den hele menneske%
+% --- p. 83 ---
+\setcounter{footnote}{0}%
+\opage{83}
+lige Naturs Rækkevidde«\footnote[1]{Data of Ethics. p. 256 f.}. Historien viser, at de Mennesker,
+der staa som etiske Forbilleder for lange Tider, ikke
+altid vare saadanne, hvis Indre var fuldt af stærke og
+varige indre Modsætninger, eller hvis Karakter bar Spor
+af store indre Kampe, men snarere harmoniske Naturer,
+som levede og aandede i store Tanker, under hvilke de
+andre Dele af deres Natur saa godt som uden Modstand
+bøjede sig. Og det er naturligt nok, ti den, hvis Kraft
+beslaglægges af den indre Kamp, vil ikke let for Andre
+kunne frembyde Billedet af en mod et betydningsfuldt
+Maal rettet kraftig personlig Virksomhed. I den religiøse
+Forestilling er dette endog gennemført i en saadan Grad,
+at man har gjort Forbilledet syndefrit og villet tage ethvert
+Spor af virkelig, menneskelig Kamp og Stræben
+bort. Dette er at skyde forbi Maalet; men det vidner
+om Trangen til ophøjede Forbilleder, en Trang, som ikke
+kan falde bort, naar Livet ikke skal blive fladt og sløvt.
+
+Slægtens Solidaritet ophæves altsaa ikke ved den
+etiske Lovs individuelle Relativitet. Slægtens Enhed bestaar
+netop i og gennem Mangfoldigheden af Individer.
+Det er, som jeg har søgt at vise, i Livets fælles Retning
+og Tendents, at Berettigelsen til at tale om etisk Lov
+begrundes. Og derved godtgøres ogsaa Slægtens Enhed
+trods alle Forskelligheder.
+\end{document}
