@@ -22,13 +22,17 @@
 TEXFILES := $(shell find texts -name '*.tex' -not -path '*/.parts/*' | sort)
 PDFFILES  := $(TEXFILES:.tex=.pdf)
 
+# E-books made by epub.py (see the E-books section below); add a book here.
+EPUBS := texts/hoeffding/mindre-arbejder/transcription.epub \
+         texts/hoeffding/mindre-arbejder-2/transcription.epub
+
 # latexmk flags: pdf mode, non-interactive, stop on first error
 LATEXMK   := latexmk -pdf -interaction=nonstopmode -halt-on-error
 LATEXMKLUA := latexmk -lualatex -interaction=nonstopmode -halt-on-error
 
-.PHONY: all clean cleanall list help dossiers private
+.PHONY: all clean cleanall list help dossiers private epub
 
-all: $(PDFFILES)
+all: $(PDFFILES) $(EPUBS)
 
 # LuaLaTeX overrides for files using fontspec/unicode-math
 # (must come before the general pattern rule)
@@ -141,6 +145,19 @@ dossiers:
 	  if [ -f $$d/build.py ]; then (cd $$d && python3 build.py) || exit 1; \
 	  else python3 dossier.py $$d || exit 1; fi; done
 
+# E-books: EPUB 3 editions of finished transcriptions, made by epub.py (its
+# docstring says what each LaTeX construct becomes) and written next to the
+# .tex.  Add a book by adding its transcription.epub to EPUBS.  Libertinus
+# Serif is embedded when kpsewhich finds it; Pillow, if installed, draws the
+# cover.  *.epub is gitignored (privately owned e-books), but .gitignore lets
+# transcription.epub through, so these are published beside the PDFs; `make`
+# builds them along with the PDFs.
+# EPUBS itself is defined at the top, before `all`.
+epub: $(EPUBS)
+
+texts/%/transcription.epub: texts/%/transcription.tex epub.py
+	python3 epub.py $<
+
 # Compile each .tex to PDF.
 # cd into the source directory first so relative paths resolve correctly.
 # latexmk detects how many pdflatex passes are needed (typically 2 for
@@ -193,6 +210,7 @@ help:
 	@echo "  make list      show PDF status for each source file"
 	@echo "  make -j4       parallel build with 4 jobs"
 	@echo "  make dossiers  regenerate every texts/dossiers/*/dossier.tex (see texts/dossiers/README.md)"
+	@echo "  make epub      build the e-books listed in EPUBS (epub.py)"
 	@echo ""
 	@echo "  After building, run 'bash sync-pdfs.sh' to push PDFs to phi423."
 	@echo ""
