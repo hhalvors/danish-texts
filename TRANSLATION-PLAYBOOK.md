@@ -424,3 +424,187 @@ method and gave few odd spots (33, ~14 real).  Two lessons: (1) tr_parts.py's qu
 OPENING mark: this print opens with « and closes with », so counting both doubled every Danish count; (2) the odd spots
 caught one of my own wrong crop decisions (knude/kunde) and stray marks the e-book adds („,.“, a „. “ opening a note),
 which the letter alignment cannot see because it compares letters only.
+
+### 6m. Nielsen's Om Begrebet Nøiagtighed by two translators (2026-10-10)
+`ebook-method/begrebet-noiagtighed/` (GLOSSARY.md, TRANSLATOR-BRIEF.md, tr_extract.py, tr_build.py, tr_template.tex).  The
+title term was put to Hans, who asked which concept Nielsen means: the text decides (pp. 51-52 tie Nøiagtighed to the
+essential relative to a purpose and to clarity/distinctness/completeness, and reject reducing it to right/wrong), so
+Nøiagtighed = precision, not accuracy (correctness) -- quote the passages with page numbers when proposing a key term.
+Two parts cut where a page opens a paragraph (p. 29); a note running over pp. 28-30 stays whole in part 01.  160k + 150k.
+Formulas copied byte-exact and counted by tr_build.py (`$`, `\[`).  46 odd spots: one real misreading of the Danish
+(„og at,“ = „og ak,“), the rest quotation-mark drift and the print's own forms.  After a Danish fix, mend the English by
+exact replacement and rebuild (`$o$` → o, \textit{arc (cos-x)} → math, a misplaced `% print:` note).
+
+### 6n. Nielsen's Om Betingelserne for en kraftig Villie by four translators (2026-10-12)
+`ebook-method/betingelserne-villie/` (GLOSSARY.md: the title and the triad drive-will / reason-will / spirit-will put to Hans
+first, since the earlier Nielsen translations disagree -- instinctive/rational will in religionsphilosophie, drive-will in
+videnskabslaere).  Parts cut at lecture openings (each lecture begins on a new page): 7.1k, 7.5k, 5.4k, 5.8k Danish words,
+105-119k tokens each, ~440k in all.  The 39 odd spots: checked first against the 1884 resetting's text (most were the
+print's own forms: Charakteer-, Chlotaldo, opulmende, Mrc.), then 9 real faults mended by POST patch -- three false
+paragraph breaks, a layer line put out of order (p. 20), a word doubled by the collation (p. 82), a lost hyphen, two specks.
+Mend the English at the same spots by exact replacement before tr_build.py --write.
+
+### 6o. Nielsen's Om Phantasiens Magt by four translators (2026-10-12)
+`ebook-method/phantasiens-magt/` (GLOSSARY.md: Phantasie = imagination and the title put to Hans first; the earlier Nielsen
+translations had both "imagination" and "fantasy").  Parts cut at lecture openings: 6.9k, 7.5k, 4.6k, 4.4k Danish words,
+102-136k tokens each, ~450k in all.  The 40 odd spots were all read at the image in the main session (two 16-crop zoom
+sheets): 16 real faults mended by POST patch -- a word the layer lost at a line end (p. 41, where the translator had put
+[\dots]), four false paragraph breaks from pencil in the margin, raised specks both OCRs read as stops -- and four
+misprints marked; the rest were the print's.  Mend the English at the same spots (exact replacement) before
+tr_build.py --write, and add `% print: … (misprint)` at the line end for each new PRINTED AS IS.
+
+### 6p. Nielsen's Gamle og nye Propheter by six translators (2026-10-12)
+`ebook-method/gamle-nye-profeter/` (GLOSSARY.md: the title, Nyrationalisme = neo-rationalism, Opgjørelse = Reckoning,
+Troessamvittighed = conscience of faith put to Hans first).  Parts = the six lectures, 4.3-5.1k Danish words, 105-119k
+tokens each, ~670k in all (five at once, then the sixth).  47 odd spots, all read at the image in the main session (zoom
+sheets zo-01..03, zq): 21 real faults mended by POST patch (TRANSCRIPTION-PLAYBOOK §6, Gamle og nye Propheter), the
+English mended at the same spots.  A term the glossary omits gets the translators' own word: Phantasie came out as
+"fantasy" twice -- carry the house terms of earlier books (Phantasie = imagination) into every Nielsen glossary.
+
+### 6q. Nielsen's Om Liv og Haab by six translators (2026-10-12)
+`ebook-method/liv-og-haab/` (GLOSSARY.md: the title, Oplevelse/Erfaring = experience, Allivet = the universal life put to
+Hans first).  Parts = the six lectures, 4.3-4.6k Danish words, 91-103k tokens each, ~595k in all (five at once, then the
+sixth).  21 odd spots, all read at the image (zoom zo, zz-par): 13 real faults mended by POST patch, two misprints marked,
+the English mended at the same spots (exact replacement) before tr_build.py --write.  A translator met „Lykke“ as luck
+and used "fortune" there: give such a split in the glossary from the start.  tr_build.py had the last page of the book
+it was copied from hard-coded (`range(1, 113)`): now `C_LAST`; set it per book.
+
+### 6r. Nielsen's Om Samfundets Vilkaar by six translators (2026-10-12)
+`ebook-method/om-samfundets-vilkaar/` (GLOSSARY.md: the title On the Conditions of Society, folkelig = popular, the
+constitutional names kept in Danish with Grundloven = the Constitution, myndig/umyndig/Myndling/Formynder = of age /
+under age / ward / guardian, put to Hans first).  Parts = the six lectures, 3.8-4.7k Danish words, ~95k tokens each,
+~575k in all (five at once, then the sixth; Sonnet).  39 odd spots, all read at the image (zoom zo-01, zo-02): 8 real
+faults mended by POST patch, 7 misprints marked, the English mended at the same spots.  A translator who italicises
+the glossary's foreign names breaks tr_build.py's \textit count: say "roman" in the glossary.  One translator wrote its
+odd-spots file beside tr/ instead of in it: look for `odd-*.tsv` in the book's ebook-method folder too.
+
+### 6s. Nielsen's Folkelige Foredrag by ten translators (2026-10-12/13)
+`ebook-method/folkelige-foredrag/` (GLOSSARY.md: the title Popular Lectures, Folkekirke = the People's Church, Folke-Aand /
+Folketro / Folkelærer = the spirit / faith / teacher of the people, Gudsdom = judgment of God, put to Hans first; Grundlov
+= the fundamental law in lectures I-III, the Constitution in VII).  Parts = the nine lectures and the Festtale, 2.3-4.9k
+Danish words, ~96k tokens each, ~960k in all (two batches of five; Sonnet).  77 odd spots, ~40 read at the image: ~15
+transcription faults mended by POST patch (specks, thin spaces, both-OCR misreads, four f's with an uninked head), the
+English comments mended at the same spots.  Lecture heads here are heading + place line only (the titles live in the
+Indhold): the template takes the PDF-outline titles from a \lecturetitleN list, so nothing unprinted enters the collated text.
+
+### 6t. Nielsen's five essays in For Ide og Virkelighed 1869 by twelve translators (2026-10-13)
+`ebook-method/for-idee-1869/` (GLOSSARY.md: the five titles, Virkelighed = reality, Grund(e) = ground(s), Undervisning =
+instruction, Dannelse = cultivation, Sindsformørkelse = darkening of the mind, put to Hans first).  Parts cut at page turns
+where no word is broken (tr_extract.py checks the anchors in each essay's own transcription.tex): 12 parts of 3.3-5.2k
+Danish words, ~86-113k tokens each, ~1.17M in all (5 + 5 + 2; Sonnet).  tr_build.py builds the five translation.tex files and
+checks each part (opage, notes, paragraph breaks per page, \emph, \textit, \essayhead, \signature, quote, \\).  79 odd
+spots, ~60 read at the image: ~15 transcription faults mended (uninked f heads, a lost dash, the verse of p. 414, false
+paragraph breaks at page turns), the English mended at the same spots (exact replacement) before tr_build.py --write.
+
+
+### 6u. Nielsen's Propædeutik og Logik 1868–69, the new pages (2026-10-13)
+`ebook-method/propaedeutik-1868/` (GLOSSARY.md: Ideelære = doctrine of the idea, Ideernes Logik = logic of ideas,
+Oversigt = Synopsis put to Hans; the rest = the Grundideernes Logik glossary).  ~4.6k Danish words translated in the main
+session.  Where a page is the SAME TYPE as an earlier book (p. 81 to »B.«, p. 89 from »1) Ordet og Gud«, pp. 263-264
+to »C.«), that book's English was taken verbatim, so the same Danish reads the same in English; a continued footnote
+from a page not translated here is set with \contnote (no mark).  Check paragraph counts per page against the Danish
+by script (only \setcounter artefacts differed).
+
+### 6v. Nielsen's eight essays in For Ide og Virkelighed 1870–73 by fifteen translators (2026-10-14)
+`ebook-method/for-idee-1870-73/` (GLOSSARY.md: Aandsvirkelighed = Spiritual Reality, sund Menneskeforstand = Sound Human
+Understanding, Videnskritik / Troeskritik = criticism of knowledge / of faith, Under(et) = miracle (Mirakel too),
+Forkjærlighed = preferential love, put to Hans first; the rest from the 1869 glossary).  Aandsvirkelighed is ONE
+translation.tex in two parts: tr_build.py sets the English title page of Bind 5 before Part II, and each essay opens with
+its own volume's title page in English.  15 parts of 2.9-5.1k Danish words, ~88-107k tokens each, ~1.45M in all (pilot 1,
+then 5 + 5 + 4; Sonnet); all 15 passed tr_build.py's checks at once.  74 odd spots, ~50 read at 300-dpi zooms (zoom.py):
+13 transcription faults and 9 false paragraph breaks at page turns (a line ending without a stop, the next page opening
+with a capitalised noun -- the 1869 rule saw only lower case; draft.py now joins both) mended in the Danish by
+rebuild.sh, the same paragraph joins made in the English fragments, then tr_build.py --write.  LESSON: a speck beside a
+word is read by ALTO or the readers as a quotation mark, ~ or ‘; the translator, who sees the mark opens nothing, finds it.
+
+### 6w. Høffding's Moderne Filosofer by six translators (2026-10-14)
+`ebook-method/moderne-filosoffer/` (GLOSSARY.md from the earlier Høffding glossaries; put to Hans first: det Usondrede /
+Sondring = the Indistinct / distinction, Gentagelse = recurrence, Overmenneske = overman).  Six parts cut at chapter or
+paragraph starts on page turns (tr_parts.py), pilot 1 then 5, ~0.83M tokens in all; the parts were made and checked in
+the cloud workspace while the device was offline, then written to `ebook-method/moderne-filosoffer/tr/` and built with `tr_parts.py build
+--write` (page markers, endnote marks and paragraph breaks per page vs the Danish: all OK).  117 odd spots, ~70 read at
+the image: 10 transcription faults (last.tsv), the rest misprints, now listed PRINTED AS IS.  LESSONS: (1) a glossary
+term must name its VARIANTS: one translator met Nietzsche's „Genkomst“ and rendered it „return“ beside „recurrence“ for
+„Gentagelse“; grep the English for every variant of a key term.  (2) A dropped brace in one fragment (an unclosed
+\textit) compiles into a run of italics, not an error: compile each fragment's build and compare the \textit counts with
+the Danish (tr_parts.py does).  (3) Where the Danish set a dash inside a heading or ran two notes together, the
+translator followed it; fix the Danish, then the English the same way.
+
+### 6x. Høffding's Oplevelse og Tydning by nine translators (2026-10-14)
+`ebook-method/oplevelse-og-tydning/` (GLOSSARY.md; put to Hans first: Oplevelse / Erfaring = experience / experience
+[Erfaring] where the two are contrasted, Tydning = interpretation, and nine further terms accepted as proposed).  Nine
+parts cut at essay or chapter starts (tr_parts.py), ~1.26M tokens; made and checked in the cloud workspace while the
+device was offline, then written to `tr/` and built with `tr_parts.py build --write` (all checks OK).  163 odd spots;
+the 128 that touch the Danish became `extra-b3.tsv` and went to the image as blind crops (109; two readers, ~0.17M
+tokens, 24/24 controls) or were settled against the e-book (19): 7 transcription faults, all of a kind the collation
+cannot see because both OCRs agree (a speck or worn hyphen read as ~, a speck read as a stop, „Modslykke“).  LESSONS:
+(1) Feeding the odd spots back as `--extra` crops costs little and finds what neither OCR flags; do it for every book.
+(2) Though the brief explains it, a translator still took a page-turn join (`lige%` … `\opage{222}ledes`) for a lost
+space; such spots are settled by a grep, not the image.  (3) The glue-trap check must exempt `\setcounter{footnote}{0}%`
+lines (tr_parts.py does now).  (4) One translator dropped two parenthetical glosses („(narrative spells)“) in a list:
+compare parenthesis counts per page as well as quotes.
+
+### 6y. Høffding's Den engelske Philosophi i vor Tid by eight translators (2026-10-15)
+`ebook-method/engelske-philosophi/` (GLOSSARY.md settled by Claude without asking, on Hans's "do the whole book without
+stopping"; the choices marked ◆ are for him to review: the title English Philosophy in Our Time; Udvikling = development,
+but evolution for Spencer's and Darwin's theory (Udviklingsphilosophien = the Philosophy of Evolution); Forestilling = idea,
+the empiricists' word; Aand = mind, spirit only for Hegel and religion; Jeget = the self; Følelse = feeling; Tillempelse =
+adjustment, Spencer's word).  Eight parts by chapter and section (tr_parts.py), Sonnet translators, pilot first, then
+batches of at most five; Høffding's Danish renderings of Mill, Bain and Spencer translated from his Danish, not replaced
+by the English originals.  208 odd spots, all read blind at the image (round b3, three readers, 52/52 controls): 71
+transcription faults and 53 misprints of the print.  LESSONS: (1) Parts cut at a section start can still begin in
+mid-paragraph or mid-word at a page turn; the build must join such parts without a blank line (tr_parts.py now takes the
+join from the Danish).  (2) The odd spots found far more here than in 6x (an Archive scan whose two copies share worn
+sorts): run an unattested-word sweep on the Danish before the translators, and send them only what is left.  (3) A
+paragraph break the translators query at a page turn is usually the draft's, not the print's (pp. 83, 107, 179): settle by
+the image and mend in the Danish, then rebuild the parts.
+
+### 6z. Høffding's Om Religionsfrihed by two translators (2026-10-15)
+`ebook-method/tilskueren-1886-90/` (GLOSSARY.md from oplevelse-og-tydning's; put to Hans first: Religionsfrihed = religious
+freedom, Trang = need, Følelsesliv = emotional life).  Two parts at section starts on page turns (tr_parts.py), Sonnet,
+~0.17M tokens; the three Nietzsche-debate pieces are NOT translated (Banks, The Great Debate, 2024).  8 odd spots, read at
+zooms in the main session: 5 transcription faults (lost stops, specks read as . and ').  LESSON: unify terms across parts
+after the build (one translator wrote "love of humanity" against the glossary's "love of humankind"): grep the English for
+each glossary term's alternatives before writing translation.tex.
+
+### 6aa. Høffding's four pieces of 1875-76 by five translators (2026-10-15)
+`ebook-method/hoeffding-1875-76/` (GLOSSARY.md from engelske-philosophi's, Spencer's terms the same; new choices marked ◆
+for Hans: Nydelse = enjoyment, Kriticisme = criticism, Anger = repentance, Tolerance = toleration).  Six parts over four
+books (tr_parts.py `build SLUG`), Sonnet, pilot then four, ~0.48M tokens; made in the cloud workspace and written back.
+64 odd spots, ~45 read at zooms in the main session: 22 transcription faults, 3 misprints.  LESSON: when the Danish is
+mended after the translation (a stray footnote removed, a paragraph break at a page turn joined), mend the English the
+same way before `build --write`: the per-page paragraph check shows every such spot.
+
+### 6ab. Høffding's Filosofien i Sverig by four translators, while Hans was travelling (2026-10-16/17)
+Four parts (tr_parts.py, cut where a paragraph begins), Sonnet, pilot then three, ~0.5M tokens; made in the cloud workspace
+while the computer was offline and written back when it returned.  A Swedish-spelled Danish print with Swedish quotations:
+GLOSSARY.md S1 (◆ for Hans) translates a Swedish quotation in the text and keeps the Swedish on a `% sv:` line above it.
+27 odd spots, all read at zooms: 6 transcription faults after OPEN 0 (a worn e that both OCRs read as c -- „sc“,
+„thcologien“ -- and so never reached a reader; ö dropped; é for è; a ' for ”), 3 misprints marked, 1 spot misreported by its
+translator (the transcription was right).  LESSONS: (1) a translator's page number can be off by a page or more: find the
+spot in transcription.tex before rendering.  (2) In a GENERATED book a final-fixes row that matches nothing stops
+proofapply.py --final from writing, and the later steps then run on the unfixed text: rerun the whole rebuild from draft.py
+--emit, never only its tail (spaceapply.py run twice doubles every \emph).  (3) proofapply.py turns — into --- in a
+replacement: a row must not span a — the print keeps.  (4) A fixed /tmp path for backups (pagemap BAKDIR) fails when another
+sandbox user made it first: use tempfile.gettempdir().
+
+### 6ac. Høffding's Religiøse Tanketyper by seven translators (2026-10-17)
+Seven parts cut at essay starts (tr_parts.py), Sonnet, pilot then five then one, ~0.86M tokens (~18k per 1000 Danish
+words; ~50k of each agent is fixed overhead, so parts of 6-9k words are cheaper per word than short ones).  The parts
+were made in the cloud workspace from staged copies and committed back.  Title and Højsind put to Hans; the rest from
+the earlier glossaries and the corpus (Grundværdi = fundamental value, Livspoesi = poetry of life).  61 odd spots: 31
+read at 400-dpi LINE crops in the main session (four sheets of eight, ~8k tokens): one transcription fault, three
+divisions whose hyphen the layer lost, a verse block set wrong, eleven misprints to mark.  LESSONS: (1) pages missing
+from the scan and set from another source get a one-line `%` note in the English too (brief); (2) a structural mend
+in the Danish after translation (verse, divisions) must be made in the English fragment the same way before
+`build --write`, or the per-page paragraph check fails.
+
+### 6ad. Høffding's Kort Oversigt (1910) by six translators (2026-10-17)
+Six parts of 4.3-5.9k words cut at chapter heads (tr_parts.py now takes an anchor regex per part, since this print's
+page turns fall inside sentences), Sonnet, pilot then five, ~0.78M tokens (~26k per 1000 words, more than 6ac's because
+the glossary to read was the 450-line one of Den nyere Filosofis Historie, bound in full).  The title put to Hans (A
+Short Survey of the History of Modern Philosophy, distinct from Macmillan's 1912 A Brief History).  The front matter
+(title page, Contents, the nine-line Preface) translated in tr_template.tex by the main session.  54 odd spots, ALL read
+at line crops: 33 transcription faults (a lost first line, a lost paragraph break, specks, doubled dashes, eight titles
+only partly italic), 9 misprints.  LESSON: translators find what a three-witness collation cannot, when both OCRs fail
+the same way (a dropped line, an italic span begun one word late); read every odd spot.
