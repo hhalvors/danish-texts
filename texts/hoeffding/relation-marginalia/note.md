@@ -225,13 +225,35 @@ subject of the judgment, and »At allerede Dommens Subjekt forudsætter en
 Skelnen, overses let, … da det forudsættes kendt og derfor ikke altid
 udtrykkes«. Høffding's answer to Russell is that the subject–predicate judgment
 is relational already, since its subject has first to be singled out by an act
-of distinguishing. The footnote names that act Kierkegaard's leap. The treatise
-on Plato's *Parmenides* is his »Bemærkninger om den platoniske Dialog
-Parmenides« (*Videnskabernes Selskabs filosofiske Meddelelser*, 1920), which
-the printed text of *Relation som Kategori* cites twice: on p. 17 (note), for
-Plato's view that even a sudden experience has its definite place in a series
-of experiences, and on p. 6 for the turn of Plato's later dialogues to the
-judgment. Kierkegaard had himself tied the leap to the *Parmenides*: the note on
-»det Pludselige« (τὸ ἐξαίφνης) in *Begrebet Angest*, ch. III. The asterisk
+of distinguishing. The footnote names that act Kierkegaard's leap.
+
+The treatise is Høffding's »Bemærkninger om den platoniske Dialog Parmenides«
+(*Filosofiske Meddelelser* I, 2, 1920; now in this collection), and pp. 38–57
+are its chapter 3, »Begrebet det Pludselige (τὸ ἐξαίφνης) i Platons
+Filosofi«. Two points in it explain the footnote.
+
+1. *The leap comes from this passage of the* Parmenides. Plato asks when a
+   change from one state to another takes place, and answers that it happens
+   suddenly, in »det Pludselige«, which »er et Paradox (ἄτοπον) … ikke i nogen
+   Tid« (pp. 38–39; *Parm.* 155 E–156 E). Kierkegaard discusses the doctrine
+   in a note to *Begrebet Angst* (ch. 3), renders »det Pludselige« as
+   »Øjeblikket«, and needs it for the leap, »den absolute Frihedsakt«, which
+   »kender ingen Lov« (pp. 40–41). Høffding corrects both: Plato cannot keep
+   the sudden outside time, since it is »Led i Tidsrækken«, and Kierkegaard,
+   by placing the leap between two moments with none between them, »nærmer
+   … sig igen til Platon's egen Opfattelse« (p. 41; with a reference to *Søren
+   Kierkegaard som Filosof*, 2nd ed., pp. 78–82).
+2. *The sudden is never outside relation.* A transition »kan ikke forstaas ud
+   fra den enkelte Tilstand som isoleret« (p. 40); »Pludselighed kan ikke
+   udsiges om nogen Oplevelse, der ikke staar i kvalitativ Modsætning til
+   andre Oplevelser« (p. 42); and in the *Symposium* the highest beauty
+   appears »pludselig (ἐξαίφνης)« only at the end of a series of steps taken
+   in order (210 E; pp. 44 ff.) — the point *Relation som Kategori* cites the
+   treatise for on p. 17 (note).
+
+Read together with the note, the act that singles out the subject of a
+judgment is such a leap: sudden and not deduced from what precedes, yet, like
+every leap, within relations, so that the subject–predicate judgment is
+relational from the start. The asterisk
 might instead belong to a second mark at the right margin, at »flere Emner«;
 the photograph does not settle which.
