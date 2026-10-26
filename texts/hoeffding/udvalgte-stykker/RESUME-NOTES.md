@@ -827,3 +827,10 @@ Hans decided: the noun is `actuality` throughout pp. 162-198 (5 sites: pp. 172, 
 
 ## 2026-10-12: Anstød in the Smuler excerpt
 Hans decided: Anstød = `shock` (pp. 163 x2, 164), støde an = `strike against` (p. 165), with a translator's note (\trnote) at the first occurrence, p. 163. Backup translation.tex.bak.20261012-anstod. Glossary updated.
+
+## 2026-10-26: paragraph-initial long dashes (the mindre-arbejder-3 check, TRANSCRIPTION-PLAYBOOK lesson 13)
+Every paragraph-initial `---` read at the scan (ink test + crops): 5 moved back to the end of the line before (the print has them there).  The cases are in
+ebook-method/udvalgte-stykker/dashfix.tsv and are applied to transcription.tex by
+    python3 ebook-method/collate/dashfix.py udvalgte-stykker --write
+which must be run AFTER any rebuild of the transcription (append it to the rebuild line above).  The English mended to
+match (the same dashes moved / paragraphs joined in translation.tex).
