@@ -1,0 +1,2073 @@
+% =====================================================================
+%  GENERATED; DO NOT EDIT BY HAND.  Built by
+%  python3 ebook-method/formel-logik/tr_parts.py build --write
+%  from tr_template.tex and the two parts in ebook-method/formel-logik/tr/*.texfrag.
+%
+%  Harald Høffding, FORMAL LOGIC.  FOR USE IN LECTURES.  Fifth, revised edition.  English translation of
+%  "Formel Logik. Til Brug ved Forelæsninger. Femte omarbejdede Udgave" (Copenhagen and Kristiania: Gyldendalske
+%  Boghandel, Nordisk Forlag, 1907), made from the collated transcription (transcription.tex in this folder) by
+%  two translator agents (2026-10-29) working from GLOSSARY.md and TRANSLATOR-BRIEF.md (ebook-method/formel-logik/);
+%  their 19 odd spots were settled at the image and the Danish mended where it was the transcription's fault.  The printed page numbers
+%  of the 1907 edition are in the margin.  The logical notation (math mode, \sim, \udel, the schemes) is the
+%  transcription's, unaltered; tr_parts.py build checks it character for character.  Danish example sentences are
+%  translated, with the Danish word in brackets where the logical point turns on the Danish wording.
+% =====================================================================
+\documentclass[12pt,a4paper,openany]{book}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{libertinus}
+\usepackage{libertinust1math}
+\usepackage{array}
+\usepackage{arydshln}   % formel-logik: \cdashline, the short dotted rule of the schemes pp. 44-45 (notatex.py)
+\usepackage{graphicx}
+\usepackage{newunicodechar}
+\newunicodechar{ɔ}{\reflectbox{c}}   % formel-logik: »ɔ:« (det er), as in the Brøchner transcriptions
+\newcommand{\udel}{\mathbin{\cdot\kern-0.1em|\kern-0.1em\cdot}}   % formel-logik: the exclusion sign ·|· of p. 27 (»gensidigt Udelukkelsesforhold«)
+\usepackage{textalpha}
+\usepackage[english]{babel}
+\usepackage[protrusion=true,expansion=true]{microtype}
+\usepackage{setspace}
+\usepackage[margin=1.3in]{geometry}
+\usepackage{fancyhdr}
+\usepackage{hyperref}
+\hypersetup{pdftitle={Formal Logic}, pdfauthor={Harald Høffding}, hidelinks}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LE,RO]{\thepage}
+\fancyhead[C]{\textit{Høffding: Formal Logic, 5th ed. (1907)}}
+\setlength{\headheight}{15pt}
+\setstretch{1.3}
+\usepackage{marginnote}
+\newcommand{\opage}[1]{\marginnote{\footnotesize\textit{[#1]}}}
+\newcommand{\whiteline}{\par\vspace{\baselineskip}\par}
+% heading macros (from ledende-tanker; to be used by patch once the headings are read at the image)
+\newcommand{\parthead}[1]{\par\bigskip\phantomsection\begin{center}{\Large #1}\end{center}\addcontentsline{toc}{part}{#1}\medskip}
+\newcommand{\unnumhead}[1]{\par\bigskip\phantomsection\begin{center}{\Large #1}\end{center}\addcontentsline{toc}{chapter}{#1}\medskip}
+\newcommand{\chapterhead}[2]{\par\bigskip\phantomsection\begin{center}{\large #1\ #2}\end{center}\addcontentsline{toc}{chapter}{#1 #2}\medskip}
+\newcommand{\chapterheadii}[3]{\par\bigskip\phantomsection\begin{center}{\large #1\ #2\\ #3}\end{center}\addcontentsline{toc}{chapter}{#1 #2 #3}\medskip}
+\newcommand{\sectionhead}[2]{\par\bigskip\phantomsection\begin{center}#1 \textit{#2}\end{center}\addcontentsline{toc}{section}{#1 #2}\medskip\ignorespaces}
+\newcommand{\ix}[3]{\par\noindent\hspace*{#1}#2\dotfill #3}
+% formel-logik (heads.py): chapter = numeral, title in capitals, the smaller subtitle; section heads; letterspacing
+\newcommand{\chaphead}[3]{\par\bigskip\phantomsection\begin{center}\ifx&#1&\else{\large #1}\par\smallskip\fi{\Large #2}\ifx&#3&\else\par\smallskip{\large #3}\fi\end{center}\addcontentsline{toc}{chapter}{\ifx&#1&\else #1. \fi #2}\medskip}
+\newcommand{\sechead}[2]{\par\bigskip\phantomsection\begin{center}#2\end{center}\addcontentsline{toc}{section}{#1}\medskip}
+\newcommand{\spaced}[1]{\textls[180]{#1}}
+
+% the translator's note, set by tr_parts.py build before the Forord (p. VII)
+\newcommand{\translatorsnote}{\chapter*{Translator's Note}
+\noindent This is a translation of the fifth, revised edition (1907) of Harald Høffding's \textit{Formel Logik}.  The
+printed page numbers of that edition are in the margin.
+
+Høffding's logical notation is kept exactly as printed.  Capital letters ($A$, $B$, $C$, \dots) stand for concepts, and
+the corresponding small letters for their negations ($a$ = non $A$).  Letters written together ($AB$) stand for the
+combination of concepts, the concept whose intension is the sum of theirs.  The sign $=$ means identity, that is, the
+possibility of substitution ($A = AB$: $A$ does not occur without $B$); $<$ and $>$ compare extensions ($A < B$: the
+extension of $A$ is part of that of $B$); $\sim$ (Danish ``er ikke,'' ``is not'') marks the contrary relation; $\udel$
+the relation of mutual exclusion; $0$ the self-contradictory combination, ``nothing.''  Raised numerals
+(\textsuperscript{1}), \textsuperscript{2}), \dots) number the cases of an inference.
+
+Danish example sentences are translated; where the logical point turns on the Danish wording, the Danish word is given in
+square brackets.  Misprints of the 1907 printing are translated in their evident sense.
+\clearpage}
+
+\begin{document}
+
+\frontmatter
+% --- p. III ---
+\thispagestyle{empty}\opage{III}\vspace*{5cm}
+\begin{center}{\Large FORMAL LOGIC}\end{center}
+\clearpage
+
+% --- p. V ---
+\begin{titlepage}\centering\opage{V}
+\vspace*{1cm}
+{\large HARALD HØFFDING}\par\medskip
+\rule{3cm}{0.4pt}\par\vspace{1.5cm}
+{\Huge FORMAL LOGIC}\par\bigskip
+{\large FOR USE IN LECTURES}\par\vspace{1.2cm}
+\textit{FIFTH, REVISED EDITION}\par
+\vspace{2cm}
+\vspace{3cm}
+COPENHAGEN AND KRISTIANIA\par
+GYLDENDAL BOOKSHOP\par
+NORDISK FORLAG\par\medskip
+\rule{1.5cm}{0.4pt}\par\medskip
+{\small THE PUBLISHER'S PRINTING HOUSE}\par\medskip
+1907\par
+\vfill
+{\small Translated from the Danish}\par
+\end{titlepage}
+\translatorsnote
+% --- p. VII ---
+\opage{VII}
+
+\chapter*{PREFACE TO THE FIFTH EDITION}
+
+
+In its manner of presentation this outline of logic follows
+the logic of identity and of intension set forth by \textsc{Leibniz}, \textsc{Boole} and \textsc{Jevons}.
+Through repeated occupation with this manner of presentation
+and its application in my teaching,
+I have become confirmed in the view that it aims more closely
+at the essential side of our thinking, and that
+by its simplicity and clarity it is better suited to pedagogical
+use than the usual manner of presentation. ---
+
+In the present fifth edition I have undertaken a thoroughgoing
+revision, based on the views I
+have developed in my treatise \textit{Det psykologiske Grundlag
+for logiske Domme} (Videnskabernes Selskabs Skrifter. 6th
+series) and in the essay on the concept of analogy (Mind
+1905, in Danish in the second series of my ``Mindre Arbejder'').
+I have also been able to make use of some valuable
+critical remarks from one of my former listeners
+and from Dr.\ \textsc{Anton Thomsen}.
+
+\textit{December 1906.}
+
+\hfill\textbf{Harald Høffding.}
+
+% --- p. IX ---
+\chapter*{\opage{IX}CONTENTS}
+\begin{small}
+
+
+\ix{0em}{\textbf{I. Synthesis and Analysis.}}{1}
+\par\noindent\textbf{II. Analysis of Intuitions:} Formation of Concepts and Judgments.
+\ix{1em}{A. Formation of Concepts}{5}
+\ix{1em}{B. Intension and Extension of Concepts.}{8}
+\ix{1em}{C. Formation and Formulation of Judgments.}{11}
+\ix{1em}{D. Secondary Judgments.}{18}
+\par\noindent\textbf{III. Analysis of Judgments:} Inference.
+\ix{1em}{A. The Logical Principles}{23}
+\ix{1em}{B. Inferences}{28}
+\ix{2em}{a. Direct Inference}{29}
+\ix{2em}{b. Indirect Inference.}{34}
+\ix{3em}{α. Indirect Inference by Pure Deduction}{35}
+\ix{3em}{β. Indirect Inference as a Union of Induction and Deduction}{38}
+\par\noindent\textbf{Appendix:}
+\ix{1em}{1. Mill's Methods of Induction}{42}
+\ix{1em}{2. Analogy and Inference by Analogy}{46}
+\end{small}
+\clearpage
+
+\mainmatter
+
+% --- p. 1 ---
+\opage{1}\chaphead{I}{SYNTHESIS AND ANALYSIS}{}
+
+
+1. To think is to compare, to find difference and similarity.
+In different forms and to different degrees such
+a comparing shows itself in all perceiving and having of ideas, in all
+observation and connection of ideas. Indeed, every state of consciousness
+is conditioned by the differences and similarities found
+within it and in its relation to other states of consciousness.
+Pleasure and pain are conditioned by an experience's relation to our nature
+and our condition; to will is to prefer, and so likewise rests
+on a relation of difference. In a narrower sense only the
+comparison carried out with explicit, concentrated (involuntary or voluntary) attention
+is called thinking. Such
+attention is awakened when the task is to solve a problem
+or to find means to an end. (Cf.\ Psykologi VB, 11.)
+
+Comparison presupposes energy to be able, at one stroke or in
+immediate succession, to hold fast to and hold together
+different elements; only through such holding together do
+the similarity or the difference appear. A psychical energy that manifests
+itself as synthesis is therefore the ultimate presupposition of all thinking.
+(Cf.\ Psykologi II, 5.)
+
+Seen from another side too, synthesis is the ultimate
+presupposition of thinking. Comparison takes place by attention
+passing from element to element; but this presupposes that the
+different elements, prior to the comparison, are given
+in connection, in a total intuition. Only on the basis of such
+a total intuition can analysis, the particular turning
+of attention to the individual elements (parts, sides
+% --- p. 2 ---
+\opage{2}or qualities), take place. --- The total intuition may be
+sense-intuition, memory-intuition or imagination-intuition. Thinking
+can take place on the basis of all these different
+kinds of intuition, and it then becomes a special question
+how these are related to one another. --- In every such
+total intuition a manifold of elements is connected.
+
+
+The comparing and connecting activity which, seen from two sides in this way,
+is the condition of comparison, and hence of
+thinking, we call synthesis. \textit{All analysis presupposes synthesis,
+just as all comparison does}.
+
+Total intuitions are formed from the first involuntarily, and we hold
+fast to them as long as possible. Only reluctantly do we proceed
+to dissolve them. But another ordering of the elements
+than the one given in the involuntary intuitions may be
+necessary, partly in order to give us an overview of the many
+different intuitions we have, partly in order to remove the contradictions
+that may appear within the same intuition or
+in the relation between several different intuitions which occur
+simultaneously or close at hand.
+
+Whereas psychology, as the natural history of thinking, investigates
+the actual thought processes that take place in us, logic seeks
+rules and standards by which a distinction can be made
+between valid and invalid thinking. Valid thinking must
+be that which arrives at firm and universally valid results. By
+a firm result is meant one that can be held fast without
+the thinker coming into contradiction with himself (even if
+ever so many sense-, memory- and imagination-intuitions crop
+up); by a \textit{universally valid} result is meant one that is
+recognized not merely by the thinker himself, but by other
+thinking beings at the same stage of development as he. Logical
+thinking springs from a striving to preserve
+identity with ourselves and with all those whose power of thinking we
+recognize as equal to our own. \textit{Valid thinking is
+that by which it is possible to maintain as great a correspondence
+as possible among as many elements of consciousness
+(our own and others') as possible}. Experience shows that the more we
+% --- p. 3 ---
+\opage{3}hold fast to the standard thereby given, the fewer disappointments we suffer,
+and the more secure the expectations in which we can indulge. ---
+
+Logical thinking is in a certain sense not productive.
+Its work consists in bringing to explicit consciousness, through analysis and comparison,
+what is already contained
+in the given total intuitions, which are the work of the original synthesis.
+It brings the content given in our sense-, memory- and
+imagination-intuitions into new connections, called
+concepts and judgments. From judgments inferences can in turn be drawn;
+in which the relation between the concepts contained in different judgments
+comes to explicit consciousness; but a wholly new
+content the inference does not bring in relation to the judgments, any more
+than judgments and concepts do in relation to the intuition. And
+yet it can be not merely a strenuous, but also a significant
+psychical work that has been done when the content of consciousness
+has been recast into new forms (from intuitions to concepts and
+judgments, and from judgments to inferences), so that new syntheses
+can take the place of the first syntheses. Thereby
+not only can an overview and clarity be won of what has hitherto been intuited,
+but a need and capacity can also be awakened to seek out
+and produce new intuitions.
+
+2. \textit{Every} science is a doctrine of valid thinking in
+its own domain. Formal logic investigates the general
+forms of valid thinking, the conditions of thought's agreement
+with itself, regardless of which domains thinking
+moves in. It abstracts from all determinate content
+and can therefore take its examples from all possible domains.
+It is, after all, always one and the same human thought that is at work,
+and there must then be certain rules of validity that hold everywhere.
+
+Mathematics too may be called a formal science, since it
+abstracts from the specific qualities of objects and merely investigates
+similarities and differences between figures and magnitudes.
+But logic is formal to a still higher degree, since even figures
+and magnitudes are for it specific qualities; it investigates
+similarity and difference in all generality, wherever they appear
+to thinking. The logical principles therefore form
+presuppositions for mathematics as for every other science.
+
+
+% --- p. 4 ---
+\opage{4}Formal logic does not coincide with the theory of knowledge,
+which is also sometimes called logic. The former tests the agreement
+among our ideas without asking about
+their real significance. Logical thinking can be practiced on the basis
+of imagination-intuitions as well as on the basis of memory- and
+sense-intuitions. Formal logic passes over into the theory of knowledge
+when the question is asked whether the forms
+and results of our thinking hold for real existence: whether there is consistency
+in existence, as there is consistency in what logic
+regards as correct thinking. This question arises
+naturally from the fact that thinking is practiced on the basis of intuitions
+which it has not itself produced. In connection with this
+there also arises the question of the relation among sense-,
+memory- and imagination-intuitions, a relation which formal logic
+leaves aside.
+
+% --- p. 5 ---
+\opage{5}\chaphead{II}{ANALYSIS OF INTUITIONS}{FORMATION OF CONCEPTS AND JUDGMENTS}
+
+
+\sechead{A. Formation of Concepts.}{\textbf{A. Formation of Concepts.}}
+
+
+3. The first condition of valid thinking is that we become
+distinctly conscious of what is contained in the intuitions
+formed by involuntary synthesis. This is attained by analysis, that is,
+by a series of acts of attention (see 1). Of the table
+at which I sit I have an image, which by an involuntary
+synthesis is formed from immediate and reproduced sensations
+of sight, touch and movement. I analyze it when
+I notice that it is black, hard, square, long, etc. A
+chemical substance (e.g., carbonic acid) I determine by taking note of
+its appearance, its effects, its occurrence in nature,
+its origin. In psychology I characterize consciousness
+by taking note of its limiting states and of its peculiar
+mode of operation (see Psykologi II, 5).
+
+4. This analysis is supported partly by comparison among
+the elements (the parts or qualities) themselves, partly by
+comparison between them and similar or different elements
+in other intuitions, which are reproduced (partly in bound,
+partly in free form, see Psykologi VB, 1---2). Only thereby can the
+distinctive character of the individual element properly appear. The location and magnitude
+of the individual part can be determined only when it
+is held together with other parts; the individual quality must be
+held together with others in order to become distinct. (Cf.
+the law of relation. Psykologi VA, 5; D, 5). Often an element
+can be distinguished only when it has occurred in another connection,
+% --- p. 6 ---
+\opage{6}so that a recognition can take place. The color and shape of the table
+I notice rather when I have seen the same color with another
+shape and the same shape with another color. This recognition
+is expressed by my giving the qualities names. If I call the
+table square, it means that I recognize a shape I
+have met with in other intuition-images. When Newton called the
+force that keeps the planets in the vicinity of the sun gravitation,
+he wished thereby merely to signify that it is the same
+force that brings the hurled stone back to the earth.
+
+Analysis thus rests on a synthesis, which works as
+an auxiliary process. Since intuition and comparison already presuppose
+synthesis (1), we see how analysis and synthesis stand in
+constant interaction.
+
+5. Having now found the elements contained in the
+given intuition, the task is to connect and order them in such a way
+that we obtain a unified characterization of the given content. There
+must then again be performed a gathering together, a synthesis; only
+thereby is the whole process concluded which leads to the framing of \textit{a
+concept}.
+
+From the mere idea, which is only a reproduction of a
+given intuition (in the simplest case only of a sensation),
+the concept differs by the clarity and distinctness won through the interaction of
+analysis and synthesis. A concept
+is an idea whose content we have made clear and distinct to ourselves,
+so that it is not altered by the different connection
+in which it occurs. Our consciousness can now at
+this point preserve its identity with itself, and accidental
+associations of ideas can be prevented from intervening. Thereby
+it also becomes possible for several individuals to be able to think
+together: only when each for himself has fixed his ideas
+can they connect the same ideas with the same word.
+
+
+\textit{A concept is thus an idea that is firm (for the same individual) and
+universally valid (for the different thinking individuals)}.
+--- The definition (the fixing of the concept, the determination of the concept)
+consists essentially in a delimitation of the content of ideas.
+It seeks to reduce this to the least possible by
+% --- p. 7 ---
+\opage{7}omitting the elements that are not necessary to distinguish the one
+content of an idea from the other.
+
+A concept may be formed on the basis of a single
+intuition, or on the basis of several different intuitions
+of the same phenomenon (thing, person, event, relation), or
+on the basis of several intuitions that have different phenomena
+as their object. In the first two cases the concept is called
+an \textit{individual concept}, in the last case a general concept.
+(Cf.\ Psykologi VB, 9.) If the individual concept is formed on the basis
+of a single intuition, it is called \textit{concrete}; if it is formed
+on the basis of several different intuitions, it is called \textit{typical}.
+General concepts may be of lower or higher degree, according
+as they stand nearer to or farther from immediate intuition;
+the former are called \textit{species concepts}, the latter \textit{generic concepts}. What in one
+respect is species may in another respect be genus, and
+vice versa.
+
+The \textit{extension} of a concept is the sum of the intuitions for which
+it holds; the intension of a concept is the marks (qualities
+or parts) which have been found by analysis of the given
+intuitions.
+
+Where several different intuitions underlie it, that is,
+in typical and general concepts, the similarity that
+is found among the individual intuition-images need only be similarity of relations
+(analogy): it will be the relation among the parts
+or qualities that is similar, not the individual parts or
+qualities themselves. In the individual concept of a particular human being,
+which is to hold for him as young, as grown
+and as old, the similarity on which the concept builds is similarity of relations.
+Likewise in the concept horse, the concept vertebrate, etc.
+The concept expresses the law of the mutual relation of the parts or qualities.
+Only where the concept indicates a quite simple
+mark (as e.g. the label on trunks that are registered
+from Copenhagen to London) can similarity of coincidence or similarity of quality
+be present. Where this is not the case, it is only
+by the aid of analogy that consciousness can go from example to
+example while preserving its identity with itself. (Cf.
+on similarity of coincidence, of quality and of relations Psykologi VB, 8.)
+% --- p. 8 ---
+\opage{8}The simplest and clearest example is taken as the basis, perhaps
+merely in schematic form, i.e., with omission of all dispensable
+elements. The concept is a direction for carrying out
+a movement of thought through a series of intuitions. Whether
+it can be completed depends on whether the concept is formed on the basis
+of sufficiently many and sufficiently complete intuitions.
+Where the content of the intuition is inexhaustible, the definition
+becomes merely a hypothesis, which may be necessary for a provisional overview,
+but must find its confirmation through continued analysis.
+
+6. The formation of concepts takes place by the elements of a given intuition
+being seen in their mutual relation and in relation to the elements
+in other intuitions, and the determination of the concept takes place
+by a delimitation of the content found by analysis.
+\textit{Every concept therefore expresses a relation}. I become
+conscious of the elements in the content of an intuition by considering
+them in their difference and similarity, partly over against one another,
+partly over against elements in other intuitions. Every
+concept must therefore be defined in relation to other concepts.
+A definition must be changed, partly when the content of the intuition
+changes, partly when the nearest lying concepts change.
+There is therefore a constant interaction between concept and intuition
+and between definition and classification. The concept of chemical
+composition changed when Boyle demonstrated how, by
+the composition of elementary substances, a substance with
+other properties than these can arise; and thereby it became further
+possible to distinguish sharply between chemical connection
+and mechanical mixture. Rousseau's demonstration of the distinctive character
+of the life of feeling led to a new division of psychology.
+
+If one cannot point out the content of a concept that forms
+a limit for a given concept, one forms provisionally a negative
+concept (non $A$ as limit for $A$). See below: 8.
+
+\sechead{B. Intension and Extension of Concepts.}{\textbf{B. Intension and Extension of Concepts.}}
+
+
+7. \textit{The intension and extension of concepts} (5) \textit{stand in inverse relation
+to one another}. For the more different intuitions that underlie
+the formation of concepts, the fewer marks can
+% --- p. 9 ---
+\opage{9}be included in the intension of the concept. The more different intuitions
+a concept is to hold for, the fewer qualities it can assert
+of them. Thus the typical individual concept has greater
+extension but less intension than a corresponding concrete individual concept;
+a general concept has greater extension but less
+intension than an individual concept, and in the same way it goes
+with species concepts and generic concepts in relation to one another. A concept
+is called lower in relation to another when it has less extension
+but greater intension, --- higher when it has greater extension
+but less intension. Thus the concept human being
+is higher in relation to the concept Negro: it comprises more individuals
+than the latter, but it cannot specify as many marks
+as the latter.
+
+The proposition about the inverse relation between extension and
+intension holds only when we compare concepts that lie
+in the same series, i.e., when they find application within one
+and the same group of intuitions and marks, without however
+being coordinate. It does not hold for two coordinate species concepts;
+for the extension of a species can be widened or narrowed
+without its intension being diminished or increased. Because there are
+more sparrows than eagles in the world, the concept sparrow
+need not have less intension than the concept eagle. The concept
+bird, on the other hand, has greater extension but less intension than
+both of the two concepts mentioned. Other examples of concepts
+that lie in the same series are: Negro --- human being --- living
+being; hatred --- feeling --- element of consciousness; square --- rectangle
+--- quadrilateral --- rectilinear figure --- figure.
+
+It must also be remarked that we do not always think a concept
+with all its marks, but only with those that are necessary
+to distinguish it from the nearest lying concepts.
+We content ourselves with defining the human being as a rational being
+when it is merely a question of distinguishing the human being from the animal. The law
+of the inverse relation between intension and extension holds
+of course only when we take the whole intension into account.
+
+8. \textit{Negative concepts} are formed when, in the attempt at
+definition, it turns out that there is a limit to the intension and extension
+of a concept, without our being able for the time being to specify positive
+% --- p. 10 ---
+\opage{10}marks for that which lies on the other side of the limit.
+In classification we must then content ourselves with entering
+a concept with negating marks: non $A$ as limit
+for $A$. (This notation recalls the concepts mentioned in 5
+whose only intension is a simple mark.) The history of classifications
+shows that one often has to form groups for the time being without
+positive marks and leave it to later research to
+find such, which will then lead to a further division of
+the manifold that is perhaps comprised in the negative concept.
+Aristotle divided the animals into rational and irrational,
+and the irrational again into those that have (red) blood and those that
+do not have (red) blood. Often a negative concept may be concealed
+under a positive designation; thus Linnaeus, for his
+sixth class of animals, which he called the worms, could not specify other
+marks than that they were neither mammals, birds, amphibians,
+fishes nor insects. Later Lamarck divided the animals into
+vertebrates and invertebrates, and Cuvier was the first to find positive
+marks for and a positive division of the invertebrates.
+--- Negative concepts can thus have the significance of marking
+provisional limits in the development of research.
+
+The relation between the intensions of two negative concepts is the
+converse of the relation between the intensions of the two corresponding positive concepts.
+The concept ``living being'' has less intension
+than the concept ``human being,'' but the concept ``non-living'' has
+greater intension than the concept ``non-human.'' Thus $A < B$,
+but $a > b$ (when the small letters denote the negative concepts).
+--- The corresponding holds for the extension. The concept
+``living being'' has greater extension than the concept ``human being,''
+but the concept ``non-living'' has less extension than the concept
+``non-human.'' $A > B$, but $a < b$. --- The negations of the higher
+concepts have greater intension but less extension than the negations of the
+lower concepts.
+
+9. In the use of the words ``higher'' and ``lower'' regard is had
+to the extension of concepts, and older logic has
+on the whole laid predominant weight on this side of the concept.
+And yet it is the intension that first and foremost plays a role
+% --- p. 11 ---
+\opage{11}in thinking. It must first be decided which marks
+are to be included in the concept, before it can be decided in how
+many different cases these marks are found again.
+This is connected with the fact that we form our concepts from the outset
+on the basis of intuition; when we proceed strictly methodically,
+we must therefore begin with concrete individual concepts.
+It is from the outset undetermined how great the extension
+may become, --- whether we can form typical and general concepts.
+It is thus the intension we begin with when we proceed logically.
+--- Psychology, to be sure, teaches us that the art may be precisely
+to grasp the concretely individual in its whole distinctiveness,
+and that a vague grasp of the particular misleads
+into hasty generalization, so that the development our ideas
+must undergo, seen from one essential side, consists in
+an individualization and specialization. (Psykologi VB, 9b.) But
+this shows only that the logical doctrine of valid thinking is
+different from the psychological doctrine of actual thinking.
+
+\sechead{C. Formation and Formulation of the Judgment.}{\textbf{C. Formation and Formulation of the Judgment.}}
+
+
+10. Formation of judgments and formation of concepts cannot be separated
+from one another, but are two sides of the same thought process. The
+judgment too is formed, where it is formed from the outset, by analysis
+of intuition. Whereas in the formation of concepts the analysis aims
+at emphasizing and isolating individual elements, which come
+to make up the intension of the concept, in the formation of judgments it aims
+at determining the relation among the elements given in the intuition.
+But to a distinct concept there also belongs the determination
+of this relation, and the very framing, the definition
+of the concept, takes place by a judgment, since the individual concept can only
+be determined by its relation to other concepts. (Cf. the relation
+between definition and classification: 6. 8.) The auxiliary
+synthesis (4) plays a greater role in the formation of judgments than
+in the formation of concepts, since the grasp of the mutual relation
+among the elements of the intuition, as well as of the relation of the intuition
+to other intuitions, presupposes a more pronounced holding together
+with something that is not immediately given.
+
+% --- p. 12 ---
+\opage{12}A judgment is a \textit{firm and universally valid connection of concepts}.
+(Cf.\ 5.)
+
+According to the legend, Newton, at the sight of a falling apple,
+is supposed to have hit upon the thought that gravity must operate throughout the whole
+of space, hence on the moon in relation to the earth and on
+the planets in relation to the sun, and from the intuition-image thus arisen
+he drew the judgment which he later
+sought to prove: planetary motion is a motion of falling. --- If
+I say: this man is good! --- this judgment is derived (when I
+pronounce it on first impression) from my sense- and memory-intuitions
+of the man and his conduct, in which I find the quality
+``good'' (which I know from other intuitions, see 4).
+
+For a proof of the validity of a judgment one must go the way of
+inference, through inductions and deductions. The relation
+between intuition and judgment is, to be sure, analogous to the relation
+between ground and consequence, but is not so fully and clearly
+conscious as the latter can be.
+
+This analogy also holds in the respect that, just as
+the consequence contains only what was already contained in
+the ground, so the judgment brings no wholly new content,
+but only a new, more determinate and conscious form for the
+content given in the intuition.
+
+11. The relation which the judgment asserts as holding between
+two concepts (or elements of concepts) can be expressed in different
+ways. One can keep to \textit{the usual linguistic
+mode of expression}, where the one concept or element (the predicate)
+is referred to the other (the subject) by means of the word
+``er'' [is] (copula). Or one can keep to this, that the one concept
+(the predicate concept) has a greater extension than the other (the subject concept),
+so that the latter is included in (subsumed under)
+the former. This \textit{relation of subsumption} can then be illustrated
+by geometrical figures, so that e.g.\ the subject is represented as
+a smaller circle inside a larger one, which denotes the predicate.
+(An analogous mode of presentation could be applied with regard to
+the relation between the intensions of concepts, so that the predicate concept
+were expressed as a small circle inside the larger
+circle of the subject concept. This mode of presentation has however never been tried.)
+% --- p. 13 ---
+\opage{13}Or one can formulate the judgment as the expression of \textit{a relation of identity}
+between two concepts, hence as an equation. This
+mode of expression recalls algebra, just as the former recalls
+geometry.
+
+But although the judgment can recall grammar,
+geometry and algebra alike, it is nonetheless in itself independent of these
+modes of expression, as is seen from the fact that words, figures or signs
+must be chosen according to the relation of thought and determined by it. A
+closer demonstration of this will serve to illuminate the relation of thought
+to the manner in which it is expressed.
+
+12. The logical subject is the more indeterminate concept
+from which the movement of thought in the formation of judgments proceeds,
+and about which it turns (the initial idea); the logical predicate
+is the concept in which the movement of thought ends (the final idea),
+because the subject has found in it its closer
+determination. The Danish language connects them by the word ``er'' [is].
+But the grammatical sentence is not always a simple formulation
+of such a relation of concepts.
+
+a) \textit{A grammatical sentence can contain several logical judgments
+at once}. The sentence ``This sofa is hard'' can
+contain three judgments, since the statement can contrast this sofa
+with another sofa, or characterize the object pointed at as a sofa,
+or merely assert hardness of it.
+``Gustavus Adolphus fell at Lützen on November 6, 1632'' asserts
+not merely the King's fall, but time and place. b) This
+plurality of judgments in one and the same sentence is connected
+with the fact that \textit{the grammatical predicate is not always the logical
+predicate}. One can find the logical predicate by
+noting where the stress lies. If one says ``\textit{this} sofa is hard,''
+the logical predicate lies in ``this,'' and the judgment becomes: ``the
+sofa that is hard is this one here.'' ``\textit{All} the guests have come'':
+here the logical predicate lies in ``All''; it is the new element. ``\textit{Then}
+the powder magazine blew up'': the logical predicate here is the point of time:
+it was known beforehand that the powder magazine had blown up.
+In sentences that are not uttered aloud, and where the stress
+is not indicated, interpretation from the whole context must find
+the logical predicate. c) \textit{There are sentences in which the logical}
+% --- p. 14 ---
+\opage{14}\textit{subject is not expressed at all}, because it goes without saying
+or lies in the situation. Such predicate judgments
+we have in the simple exclamations like ``Splendid!'' ``Bravo!'' or in
+announcements like ``The King!'' --- To this class belong also the indeterminately
+descriptive sentences in which merely a state or an activity
+is stated: ``There's a draft.'' ``It is declining.'' ``There is talk
+of ....'' The initial idea is here indeterminate and cannot be
+formulated, or it is self-evident, and the interest is wholly absorbed
+in the logical predicate.
+
+The significance of stress and the presence of predicate judgments
+show that the psychological interest is attached to the
+logical predicate, which brings what is new, whereas the logical
+subject stands as provisionally known, even though it needs
+closer determination. If a clear consciousness is to be reached of
+the relation the judgment asserts, this relation must however be formulated in such a way
+that both subject and predicate are determined expressly;
+only then can the relation between them become clear, the relation
+to which the logical interest is properly attached. Only when
+this relation is distinctly stated can the judgment really be
+a firm and universally valid connection of concepts. Logically viewed, it is
+therefore in the end without significance what is the initial idea
+and what is the final idea, and how we
+get from the former to the latter. The temporal relation loses its significance.
+The grammatical formulation stands in this respect nearer
+to psychology than to logic. The two following formulations
+have, on the other hand, a purely logical character.
+
+13. When one, like the older logic from Aristotle on,
+takes the extension of concepts as the basis, the judgment means that
+the group of phenomena for which the one concept (the subject concept)
+holds is a part of the group of phenomena
+for which the other concept (the predicate concept) holds. The judgment thus expresses
+\textit{a relation of subordination (relation of subsumption)}.
+That Negroes are human beings means that the group of Negroes is smaller
+than the group of human beings and is included in it. One can illustrate
+this relation by representing the higher concept as
+a larger circle, within whose circumference the other concept is represented
+as a smaller circle. That $A$ is $B$ thus means $A < B$.
+
+% --- p. 15 ---
+\opage{15}In this way one will be able to give a valid presentation
+of logic; only such judgments in which the two concepts
+are absolutely identical ($A = B$) will one be unable to find room
+for, and they do not occur in Aristotle either. Geometrically
+we should here have only a single circle and could not see that
+it means the coincidence of two concepts. ---
+
+Because one starts from the extension of concepts, one need nevertheless not
+conceive the judgment as subsumption. For $A < B$ implies
+that $A$ is identical with a part of $B$'s extension. Negroes are a part
+of humanity. Let $n$ now mean ``some,'' then $A = nB$. For
+$n = 1$ (where 1 means the whole totality as opposed to a
+part or some) we get $A = B$. --- Thereby the judgment is represented
+as the expression of a relation of identity between two extensions.
+
+But it is then natural to go a step further. When $A$ is
+$B$, $A$'s extension is perhaps only a part of $B$'s extension; but
+in any case $B$'s whole intension must hold for $A$. And since it
+is the intension of the concept that thinking first turns to,
+while the determination of the extension is secondary (9), it will be
+natural to take the intension of concepts as the basis. This leads
+us to the third mode of presentation, which expresses the judgment
+by a relation of identity between intensions of concepts.
+
+14. Just as the need to form concepts springs from
+consciousness's need to preserve its agreement, if
+possible its identity with itself, despite the manifoldness and
+change of the content of consciousness, so there will also be a natural
+need to preserve identity when we connect one concept with
+another in a judgment. The more the two concepts stand external and
+foreign to one another, the less will consciousness be able to
+preserve its unity, --- the more will the connection stand as forced,
+in the end as a mere verbal connection. The more, on the other hand, we
+can see the relation between the two concepts as a
+relation of identity, the more natural and clear will the connection
+be. When we determine more closely the different degrees or
+kinds of identity that may be present, we shall be able to
+maintain the contention that \textit{the judgment expresses a relation of identity}.
+--- Leibniz and (in the 19th century) Boole and Jevons have
+founded this mode of presentation.
+
+% --- p. 16 ---
+\opage{16}There are three different relations of identity.
+
+a) The intension of the predicate concept may be a closer determination
+of the intension of the subject concept, without the two concepts
+coinciding entirely. When I, e.g., by observing a man's
+conduct, am led to pronounce the judgment ``The man is good,'' the concept
+``good'' is a closer determination of the individual concept
+``the man.'' The goodness is found in the man's conduct, and only because
+it is there is the judgment asserted. In the designation ``good'' lies a
+reference (by auxiliary synthesis, see 4 and 10) to other phenomena
+which have presented a similar quality. By the judgment
+``The orbit of Mars is an ellipse'' Kepler, after an analysis
+of Tycho Brahe's observations, pronounced a more determinate characterization
+of the planet's orbit than had hitherto been had; by the designation
+``ellipse'' there was expressed a recognition (by means of auxiliary
+synthesis) of a figure that was known from the doctrine of
+conic sections. --- This kind of judgment can be formulated thus:
+$A = AB$. The sign of equality here means possibility of substitution,
+i.e., of putting the one expression in place of the other. The juxtaposition
+of the letters ($AB$) means a concept whose
+intension is the sum of the intensions of two concepts ($A$'s and $B$'s),
+hence a combination of concepts. $A = AB$ thus means that when
+we have $A$, we have a richer intension than we thought. $A$ does not occur
+without $B$, but $B$ may occur without $A$. There
+are other ellipses besides the orbit of Mars, and other good beings
+besides that man. $B$ has a greater extension than $A$: $A < B$.
+--- Perhaps $A$ has more determinations than $B$, and we then have
+$A = ABCD$ .....
+
+A relation of identity of this kind is called \textit{partial identity}.
+
+b) When not only is $B$ a closer determination of $A$,
+but $A$ also proves to be a closer determination of
+$B$, so that we have both $A = AB$ and $B = BA$, there is \textit{absolute
+identity} between $A$ and $B$. It is immaterial in what order
+the concepts occur in a combination, since this does not alter
+the sum of the intension. Therefore $AB = BA$.
+
+Two absolutely identical concepts are only equally valid expressions
+for one and the same intension of a concept, which can be considered from two
+different sides. Examples: ``This house is my home.'' ``It
+% --- p. 17 ---
+\opage{17}is Peter who is coming'' (the one coming = Peter). The King of
+England = the Emperor of India. Grundtvig's year of birth = the
+fourth year after Oehlenschläger's year of birth. The circle = the
+line returning into itself, in which every point has
+the same distance from one and the same point.
+
+Whereas the demonstration of partial identity presupposes only an
+analysis of the one concept ($A$), since the other ($B$) is contained
+in it, the demonstration of absolute identity presupposes an analysis
+of both concepts. The thought activity by which absolute
+identity is discovered is thus more composite than that by
+which partial identity is discovered. An absolute identity presupposes
+two partial identities ($A = AB$ and $B = BA$). Nevertheless
+there is an involuntary tendency to conceive a relation of identity
+as absolute before it has been tested from both sides.
+
+c) The relation between two concepts ($A$ and $B$) may finally
+be that $A$ is partially or absolutely identical with $B$
+only under certain conditions. The proposition ``Water is liquid,'' holds
+only when the temperature is above 0°, but not above 80° (Réaumur).
+--- This relation is called \textit{limited identity}. It is expressed
+thus: $AC = ABC$ (limited partial identity) or
+$AC = BC$ (limited absolute identity). $C$ here denotes the
+condition without which the relation of identity does not hold.
+
+On closer investigation it will turn out that every judgment
+expresses limited identity (just as every concept expresses
+a relation, see 6). We omit the limitation where it does not
+appear distinctly, and where it is not of essential significance
+for the course of thought. Often special experiences are needed in order that
+the limitation be discovered. An inhabitant of the tropics would not think
+that the proposition ``Water is liquid'' needed any limitation
+(provided he does not call steam water).
+
+The judgments that assert limited identity presuppose not merely
+an analysis of one or both concepts, but also of the whole
+larger context within which their intension occurs,
+and within which the conditions for their
+identity must also be found.
+
+% --- p. 18 ---
+\opage{18}\sechead{D. Secondary Judgments.}{\textbf{D. Secondary Judgments.}}
+
+
+15. When on the basis of intuition a judgment has been formed,
+the question can be raised of the validity of this judgment, --- whether
+it holds for all phenomena of the same kind, --- whether it
+holds unconditionally, --- whether it holds at all, --- whether it
+might not be called in doubt. When a judgment is determined
+more closely in one of these respects, we get a judgment about it,
+hence a judgment in the second power. Such a judgment about a judgment
+is called a \textit{secondary judgment}, and in contrast to it the
+first judgment is called a primary judgment. Various
+classes of secondary judgments have been set up, and there has been a tendency to regard
+them as wholly independent kinds of judgments, which were not supposed to
+be reducible to one another. But it will turn out that their
+differences depend for the most part only on the linguistic
+expressions, and that, when we keep strictly to their logical
+significance, they can be formulated as primary judgments. It is
+the same kind of judgments we have before us, whether their subject
+is a single concept or a judgment.
+
+16. Since intuition (sensation, memory, imagination) always gives
+us something single and individual, a primary judgment will concern only
+a single case. Thinking first discovers a partial,
+absolute or limited relation of identity between the intensions of two concepts;
+later it must be decided whether this relation
+may be assumed to hold in several cases, or perhaps in all cases
+of a similar kind. In $A = AB$, $A$ is a concept whose extension
+is smaller than $B$'s (cf.\ 14 a). $A$ is more individual than $B$.
+The investigation of whether $A$ can be made a typical or general
+concept takes place through a series of judgments in which the intension of the subject concept
+is compared with that of other, related concepts.
+I must, e.g., investigate whether other human beings show
+the same conduct as the man whom I (in 14 a) called good, so that
+I can set up the judgment: ``some human beings are good'' [nogle],
+or perhaps ``all human beings are good'' [alle]. If this widening
+of the extension of the subject concept is undertaken, the determination of quantity
+(some or all) which is introduced becomes a logical predicate of the judgment,
+however it may be expressed grammatically. A
+% --- p. 19 ---
+\opage{19}\textit{quantitative} judgment is a judgment about in how many cases a certain given
+judgment holds; in this secondary judgment the given judgment is the
+logical subject. Grammatically the determination of quantity is added to
+the linguistic subject of the given judgment (cf.\ 12: ``All the guests
+have come,'' i.e., the guests now arrived make up all those who
+were expected). --- Often, however, the intension of the subject concept must be diminished
+before the judgment can be extended to hold for more phenomena:
+the concept of this particular human being has a greater
+intension than the concepts ``some'' [nogle] and ``all'' [alle] human beings.
+
+A quantitative judgment can be expressed by limited identity.
+If I have found that the judgment $A = AB$ holds only in some cases,
+I can denote this by $CA = CAB$, $C$ meaning the
+qualities peculiar to these cases.
+
+There is no ground for setting up quantitative judgments as
+a special kind of judgments.
+
+17. When a judgment is put forward as unconditionally valid, it is called
+\textit{categorical}; when it is put forward as conditioned by the
+validity of another judgment, it is called \textit{hypothetical}.
+
+On closer investigation it turns out that every judgment
+can be formulated as a hypothetical judgment, since there can always
+be pointed out presuppositions that must be present in order that
+the judgment may hold. (Cf.\ 14 c.) If one wishes to formulate
+these presuppositions, this can be done by setting up a limited
+relation of identity between the concepts connected in the judgment:
+in $AC = BC$, $C$ denotes the totality of the presuppositions that
+must be present in order that $A = B$ may hold. However, a hypothetical
+judgment can also be expressed in another way. The hypothetical
+judgment ``If $A$ is $B$, then $C D$'' asserts that the judgment ``$C$ is
+$D$'' holds only if the judgment ``$A$ is $B$'' holds. It is thus
+a judgment about a judgment, a secondary judgment. The two judgments in a
+hypothetical judgment are related as subject and predicate in a primary
+judgment. If we now say that the conditions for $A$ being $B$ are denoted by $P$, and the conditions for
+$C$ being $D$ by $Q$, then that hypothetical
+judgment asserts an identity of $P$ and $Q$: either $P = PQ$ or $P = Q$ or
+$PR = PQR$ (or $QR$), $R$ in the last case denoting the
+more remote conditions for an identity of $P$ and $Q$.
+
+Often the difference between a categorical and a hypothetical
+% --- p. 20 ---
+\opage{20}judgment is purely linguistic. The sentence: ``When the sides of a triangle
+are equal, the angles are also,'' can also be expressed
+thus: ``An equilateral triangle is equiangular.''
+
+18. Immediate judgments are positive. Greater
+experience (more intuitions) belongs to setting up \textit{negating} judgments than
+to setting up positive judgments. A negating judgment is set up only
+when there is occasion to reject a positive expectation.
+When I enter a room and say: ``There is no one here!'' this
+negating judgment is a rejection of an expectation that
+someone was in there, and it is due to a comparison
+between the room as it presents itself to my view, and the room
+as I expected to find it. There prove to be fewer
+elements in the observation than in the expectation. (Cf.\ on
+negating concepts: 8.) A negating judgment is thus a judgment
+about a judgment, a secondary judgment.
+
+A negating judgment (e.g.\ $A$ is not $B$) can on closer
+consideration be formulated in just as simple a way as a
+positive judgment. For it expresses a relation of identity (partial
+or absolute or limited) between the one concept and
+the negation of the other concept. If we let the sign $\sim$ mean ``is not,''
+and denote (as in 8) by small letters the negations
+of the concepts denoted by the corresponding capital letters
+(so that e.g.\ $a$ means the absence of the marks denoted by $A$),
+then, if $A \sim B$, $A = Ab$ and $B = Ba$. There
+is thus partial identity between $A$ and $b$, and between $B$ and $a$.
+$A$ and $B$ are then said to stand in a \textit{contrary relation} to one another: they
+are incompatible, they exclude one another; – but because the one
+concept does not hold, the other concept need not hold.
+There are more than two possibilities. What is not red need
+therefore not be blue. What is not good need
+therefore not be evil. A right-angled triangle is not
+equilateral; but because a triangle is not equilateral, it is not
+thereby said that it is right-angled --- $A \sim B$ can nevertheless sometimes mean
+$A = b$. Examples of this are found wherever a
+choice must be made between two possibilities. According to the strict Stoic conception
+everything was evil that was not good. The relation between position
+and negation (Yes and No) is of this kind; a
+% --- p. 21 ---
+\opage{21}question must (when one acknowledges the presuppositions under
+which it is put) be answered either affirmatively or negatively.
+If I negate $A$, I get $a$; if I negate $a$, I get $A$ again; I
+thus do not get beyond these two possibilities. Such a
+relation is called \textit{contradictory}. There is then not merely a relation of opposition,
+but a relation of contradiction between the two concepts.
+Not only do they exclude one another, but when the one
+does not hold, the other necessarily holds. A contradictory
+relation is a two-termed relation, whereas a contrary relation
+is a many-termed relation.
+
+Sometimes a relation which under ordinary circumstances
+is contrary may under certain special conditions pass
+over into being contradictory. We then get $AC = bC$. One
+must grant the Stoics that under certain conditions one
+acts evilly if one does not act well, e.g.\ if one can
+save a human being and does not do so.
+
+19. When over against a given judgment another
+judgment can be set, whose validity excludes the validity of the former, there being a
+contrary or contradictory relation between the two judgments,
+--- then the given judgment becomes \textit{problematic} and makes the
+other judgment problematic too. The two judgments which Galilei discusses in his
+``Dialoger'': ``The earth moves'' – ``The earth does not move,''
+made one another problematic. In this example the relation
+between the two judgments is contradictory. On the other hand we have a
+contrary relation when the two judgments: ``The table is black'' and
+``The table is brown'' are set against each other; for here there are more
+than two possibilities.
+
+Problematic judgments are secondary. They are properly a
+kind of hypothetical judgments. A judgment is problematic when its
+validity presupposes the invalidity of another judgment, and it can
+therefore be formulated like a hypothetical judgment with a negative presupposition
+(thus $P = Pq$ etc., see 17). Yet in a problematic
+judgment the two judgments stand more side by side than in the
+hypothetical, where the relation is not always reciprocal (except in
+$P = Q$). A problem arises when two mutually exclusive
+judgments are possible, so that one stands before an Either---Or.
+
+If proof can be given for one of the judgments, the other falls
+% --- p. 22 ---
+\opage{22}away, and the problematic character is removed. The same may
+be attained when one of the judgments is refuted. But if the relation
+is contrary (not contradictory), there may be several judgments
+that conflict with the given one, and which therefore must also be
+got out of the way, if the latter is to lose its problematic character.
+--- A judgment that has lost its problematic character in one of these ways
+is called apodictic.
+
+20. Common to all secondary judgments (the quantitative,
+hypothetical, negative and problematic) is that the auxiliary
+synthesis, which in a primary judgment is only of subordinate significance
+(10 and 14 a), plays a more prominent role.
+When I am to determine the extension in which a judgment holds
+(16), and the presuppositions under which it holds (17), I must
+expressly hold together and compare it with other
+intuitions or judgments. And the same is necessary when a
+judgment is to be removed (18), and when its relation of opposition to
+another judgment is to be demonstrated (19). --- Yet it is always merely
+a difference of degree that there is between primary and secondary judgments.
+This is seen from the fact that they can be formulated in quite the same way.
+
+% --- p. 23 ---
+\opage{23}\chaphead{III}{ANALYSIS OF JUDGMENTS}{FORMATION OF INFERENCES}
+
+
+\sechead{A. The Logical Principles.}{\textbf{A. The Logical Principles.}}
+
+
+21. Already in the transition from intuition to concept and
+judgment, a principle asserts itself, whether one is conscious of it or not,
+namely that the intension of the concept or
+judgment is to correspond to the intension of the intuition, so that
+this transition can be regarded as a conversion into another
+form. In the formation of concepts and judgments nothing new is produced in a
+certain sense, except precisely the new form itself, which
+becomes significant for the continued work of the mind. But
+the same principle appears still more clearly
+in inference, i.e. in the formation of new judgments out of given
+judgments. The conclusion (Konklusionen) is to correspond to the premisses
+(Præmisserne) and to be only a conversion of
+their intension into a new form. The relation between conclusion and
+premisses is analogous to that between concept or judgment and
+intuition. It is the relation called the relation between
+\textit{ground and consequence}. In the formation of inferences this relation
+appears distinctly; therefore the logical principles are discussed as an
+introduction to the theory of inference, although they can already be traced
+in the theory of concept and judgment.
+
+22. The most general principle of thinking
+is that our concepts and judgments are to be \textit{grounded}, i.e. traced
+back either to given intuitions or to other concepts and
+judgments that are assumed valid. Our concepts and judgments we form
+at first involuntarily, and the task of grounding them comes
+afterwards. The first demand of logic is that concepts and
+% --- p. 24 ---
+\opage{24}judgments are to have their sufficient ground: \textit{the principle of
+sufficient ground} (principium rationis sufficientis). How
+far we are to go back, and can go back, in grounding depends
+on the nature of the particular question. Often we must stop
+for lack of data; but in itself the said
+principle leads into an infinite series of tasks.
+
+Whether there is in reality a ground for everything that happens
+is a question that formal logic, which has to do only
+with the ordering of our thoughts, cannot decide. A distinction must
+be drawn between ground and cause. Concepts and judgments have
+their ground in intuitions; conclusions have their ground
+in judgments that are assumed valid. But the causal relation is assumed
+to obtain between events (in us or outside us)
+that succeed one another in time, and which are so linked to
+one another that when the one occurs, the other also occurs inevitably.
+Between premisses and conclusion
+there is no temporal relation; the latter is already contained in (``lies in'')
+the former, even though we may be long in seeing it. But in
+the causal relation the event that is cause precedes in time
+the one that is effect. Between the concepts ground and
+consequence on the one hand, and the concepts cause and effect on
+the other hand, there is an analogy, which is expressed by saying that the cause
+is called the ground of becoming of the effect (besides being for
+us a ground of knowledge, i.e. a ground for expecting the event
+we call the effect). The problem of cause, which it is
+the task of the theory of knowledge, not of formal logic, to discuss,
+concerns precisely the justification of the analogy between the grounding of our propositions
+and the temporal succession of events. --- In formal
+logic and pure mathematics we have to do only with grounds;
+in the real sciences (natural science, psychology and history)
+we have to do with causes as well. The difference between the
+formal and the real sciences depends on the role that differences of quality
+and differences of time play in the latter, whereas the formal
+sciences abstract from them. (For formal logic,
+however, figures and magnitudes are also qualities, cf. 2.)
+
+23. Our striving for grounding can stop at two
+points, either at the intuitions from which we form the
+% --- p. 25 ---
+\opage{25}simplest concepts and judgments, or at the principles
+that are presupposed in the formation of concepts and judgments and
+in the drawing of inferences. In the first case it must be examined
+whether our sense-intuitions are not illusory, whether our
+memories do not deceive us, and whether we can and will hold fast to
+our images of the imagination. In the second case a continued discussion
+will be impossible if any of the participants does not acknowledge
+the logical principles; these, since they are presupposed
+in all grounding, cannot themselves be grounded.
+He who would deny the presuppositions of all grounding would place himself outside
+all discussion. We discover the logical principles by
+noting the procedure that is used in deriving
+judgments from other judgments or from intuitions. He who
+denies them must either point to another procedure
+or give up all discussion.
+
+In the grounding of judgments and the setting up of concepts
+five principles may be necessary.
+
+24. \textsuperscript{1}) The principle of identity: $A = A$. This principle is already implicit
+in the definition of a concept as a fixed and universally valid
+idea, i.e. an idea that, wherever it occurs,
+has the same intension, and thus can be set equal to itself.
+It is implicit furthermore in the relation between subject and predicate
+in the judgment, when this is formulated as identity. And it is presupposed
+in all inferring: from two judgments ($A = B$ and $B = C$) I
+can derive a third ($A = C$) only when they have a common concept;
+I can then put the expression for this concept from the
+one judgment into the other. The inference takes place by substitution,
+and identity can be defined as possibility of substitution. Identical
+concepts must be capable of being put everywhere in the place of one another. I
+have the right to put $A = B$ (or $A = AB$ etc.) only when the
+concepts that are connected by the sign of equality are merely different
+expressions for one and the same intension, so that I can everywhere put
+the one in the place of the other.
+
+Our actual ideas can never be shown
+to be absolutely identical. We can only point to an actual
+similarity of coincidence, where no difference is noticed (cf.
+Psykologi VB, 8. 11); but absolute certainty of identity
+% --- p. 26 ---
+\opage{26}cannot be attained. Even where we think one and the same thought again
+(e.g. pass from $A$ on the one side of the sign of equality to $A$ on
+the other side of the sign of equality), there may be a difference of nuance
+in the manner in which we think it. In setting up
+the principle of identity, logic gives us a standard or an ideal,
+by which we can test the exactness and validity of our concepts, judgments and inferences.
+Only an approximation in the direction
+of this ideal can be possible.
+
+25. \textsuperscript{2}) \textit{The principle of simplicity}: $AAA ..... = A$. The repetition of a concept
+and its combination with itself has no logical significance,
+since its intension is not changed thereby. --- Whereas logic
+can get nothing out of the combination of identical concepts,
+it is otherwise in arithmetic: here weight is laid on the fact
+that the repeated concepts presuppose just as many different
+acts of thought, and that the concept of number therefore finds application just as well
+in the series $AAA$ .... as in the series $ABC$ .... In the
+application of the concept of number it may be a matter of indifference whether the units have
+the same or different intension. --- For psychology the repetition of an element of consciousness
+is of great significance; it makes recognition
+possible; it tends to weaken feeling, but
+on the other hand can itself be an expression of strong feeling,
+as when we e.g. repeat the words in order that feeling may find vent
+(Verily, verily I say unto you!). (Cf. Psykologi VI E,
+4; F, 4.)
+
+26. \textsuperscript{3}) \textit{The principle of contradiction} (the law of contradiction):
+$Aa = 0$. I cannot form a combination or a judgment
+by connecting a concept with its own negation. Where such
+a connection (e.g. ``a round square'' or ``the square is
+round'') has been formed, it must immediately be canceled. For logic
+a self-contradictory connection is nothing (= 0). --- For psychology
+actual self-contradictions are phenomena that are to be
+explained. Self-contradiction is possible so long as the contradicting
+ideas are not apprehended definitely, not analyzed exactly,
+and not brought into immediate connection with one another. Many kinds of
+psychological causes (especially the influence of feeling, see
+Psykologi VI F, 1) can prevent consciousness from discovering
+the self-contradiction.
+
+% --- p. 27 ---
+\opage{27}27. \textsuperscript{4}) While I cannot combine $A$ with $a$, I can
+combine it with another concept. And I then have, as regards
+every such concept, the choice between two possibilities:
+to connect $A$ with this concept (e.g. $B$) or not to connect
+$A$ with it. There are only these two possibilities; we thus face
+here a contradictory relation. There are only two logical
+dimensions: position and negation. (Cf. 18.) This
+relation is expressed in the \textit{principle of duality} (principium exclusi
+medii inter duo contradictoria): The concept $A$ must either be connected
+with $B$ or not be connected with $B$. This can be expressed thus:
+$AB \udel Ab$ (the sign $\udel$ signifying a mutual relation of exclusion,
+a contradictory relation, an Either---Or).
+The principle of duality expresses both the incompatibility of the two
+combinations and the fact that the cancellation of the one is
+the assertion of the other.
+
+A vertebrate must either be a mammal or not be
+one: the marks that are peculiar to the vertebrate type
+must either occur together with those that are peculiar
+to the mammal type, or without these.
+
+Every concept and its negation divide the world into two parts
+($B$ and $b$). What does not have the marks of the one concept
+must have those of the other. And the same thing is repeated within
+each single concept, when a division is to take place. The
+negative concepts therefore play an important role in attempts
+at classification. (Cf. 8.)
+
+When $B$ is not a necessary determination of $A$, both
+$AB$ and $Ab$ can occur --- under different conditions or
+at different times. The vertebrate type occurs both in
+mammals and in non-mammals, e.g. both in the horse and
+in the eagle.
+
+28. \textsuperscript{5}) \textit{The principle of commutativity}: $AB = BA$. (Cf. 14 b.)
+It is a matter of indifference whether I begin with the one or with the
+other concept in a combination, for the intension is not changed
+thereby. The order of the members is a matter of indifference. --- The same rule holds
+in arithmetic as regards addition and multiplication.
+On the other hand, in the psychological respect (as everywhere where
+real events are in question) it is not a matter of indifference in which
+% --- p. 28 ---
+\opage{28}order the members follow one another, since the preceding members
+come to influence the following ones. (Psykologi VA, 4; VI E.)
+
+29. The logical principles are not merely presuppositions for
+all grounding, and thereby for all discussion, but they express
+also the nature of human thinking. To think is to connect
+through comparison (see 1 and Psykologi VB, 11), and
+thinking moves forward through identifications, substitutions,
+negations and combinations, the basic rules of which are
+formulated in the logical principles. Finally, the logical
+principles lead to the setting up of ideals of knowledge and act as
+guiding thoughts in our investigations, in that they lead us to
+apprehend both similarities and differences as exactly as possible
+and thereby make our connections of thought ever more secure and more perfect.
+Whether they hold for existence as a whole, so that this,
+seen from a human standpoint, is rational, is a question
+that belongs partly to the theory of knowledge, partly to cosmology
+(metaphysics). (Cf. the section ``De filosofiske Problemer''
+in ``Kort Oversigt over den nyere Filosofis Historie''.)
+
+\sechead{B. Inferences.}{\textbf{B. Inferences.}}
+
+
+30. An inference aims at bringing to distinct consciousness
+what is contained in certain given judgments. Thereby
+no new intension is produced, but we become conscious of what
+we know. Sometimes we know more, sometimes less, than we thought we
+knew. But it can mean a very great advance that we
+become conscious of the significance and range of our judgments.
+
+Inference can be of two kinds. In \textit{direct inference}
+two or more judgments are given, and the task is then to find
+a common concept (the middle term), so that substitution
+can take place from the one judgment to the other. Here one proceeds
+thus, by means of the principle of identity, straight from premisses
+to conclusion. In \textit{indirect inference} it is investigated
+which combinations of the concepts contained in one or more judgments
+can subsist with the validity of these judgments.
+This investigation takes place by rejecting the combinations
+that, by substitution from the given judgments, prove to be 
+% --- p. 29 ---
+\opage{29}self-contradictory. Here, then, one builds not merely on the principle of identity,
+but also on the principle of contradiction (and, as will appear later,
+the principle of duality), and the result is reached through the casting out of
+the invalid combinations. --- In both kinds
+of inference the principles of simplicity and of commutativity
+may find application.
+
+Inference rests, like the formation of concepts and the formation of judgments,
+on the interaction of analysis and synthesis. The given judgments,
+which are set up and put together by a process corresponding
+to the first synthesis (1. 4. 10), must be analyzed in order that one
+may find which concepts can be substituted. But next,
+by means of substitution, a new synthesis takes place,
+which leads to seeing which judgments or combinations
+correspond to and subsist with the given judgments. Inference is, as
+Aristotle already expressed it, a \textit{thinking together} of the
+given. The Greek word for inference (syllogismos) means
+precisely thinking together. Inference is a logical synthesis.
+
+\sechead{a. Direct Inference.}{\textbf{a. Direct Inference.} (Inference by Substitution Alone.)}
+
+
+31. It is presupposed here that we have (in the simplest case)
+two judgments given that have a common concept, so that substitution
+from the one judgment into the other becomes possible. Such a concept
+is called the middle term; the concepts in relation to which the middle term
+is either subject or predicate are called the principal concepts.
+--- Of the innumerable forms of direct inference
+only a few are given here as examples.
+
+32. \textit{When a subject has a predicate that in turn is the subject
+of another predicate, it is inferred that that subject also has
+this other predicate}:
+\[\begin{array}{l}
+A = AB \\
+B = BC \\
+\hline
+A = ABC = AC
+\end{array}\]
+Neptune is a planet; every planet moves in an ellipse;
+therefore Neptune also moves in an ellipse. A square
+is a parallelogram; in a parallelogram the
+% --- p. 30 ---
+\opage{30}diagonals bisect each other; therefore in a square the diagonals bisect
+each other.
+
+This inference is expressed in the Aristotelian logic, which
+builds on the extension of concepts (see 13), thus:
+\[\begin{array}{l}
+A < B \\
+B < C \\
+\hline
+A < C.
+\end{array}\]
+It is called an inference in the \textit{first figure}. Aristotle distinguishes
+between different ``figures'' (schemata), in that, according to his exposition,
+the different place of the concepts as subject or predicate
+in the premisses became of great importance. In the first figure the
+middle term is predicate in the one premiss, subject in the
+other. --- In geometrical representation $A$ will be a small
+circle inside $B$, and $B$ in turn a circle inside $C$, and it is then seen
+immediately that $A$ is contained in $C$. ---
+
+If instead of partial identities we had absolute identities
+in the premisses, the conclusion would also be an absolute
+identity:
+\[\begin{array}{l}
+A = B \\
+B = C \\
+\hline
+A = C.
+\end{array}\]
+This form of inference (which could not occur in Aristotle
+and cannot be represented geometrically) is used when the identity
+of phenomena is to be established. If I have an exact description
+($B$) of a man ($A$), and this description fits entirely
+the person ($C$) who committed a certain murder, I infer
+that $A$ is the murderer. The force ($A$) that holds the moon in
+its orbit is the same force ($C$) that on earth is called
+gravity, because the law ($B$) for both forces is the same. ---
+
+If I have
+\[\begin{array}{l}
+A = AB \\
+B = BA \\
+\hline
+\end{array}\]
+there follows $A = B$.
+
+% --- p. 31 ---
+\opage{31}Here, besides the principle of identity, the principle of
+commutativity is also applied. An absolute identity is inferred here from two partial
+identities. What we get here is, properly, only a definition of absolute
+identity. (Cf. 14 b and 28.) --- An equiangular triangle
+is equilateral, and an equilateral triangle is equiangular; the two
+kinds of triangles are therefore identical.
+
+33. \textit{From the fact that two subjects have one and the same predicate,
+nothing can be inferred about the relation between them}.
+\[\begin{array}{l}
+A = AB \\
+C = CB
+\end{array}\]
+Here there is nothing to substitute. In Aristotle this becomes the
+\textit{second figure}:
+\[\begin{array}{l}
+A < B \\
+C < B,
+\end{array}\]
+and he warns expressly against inferring here, unless
+the one premiss is negative. (When $A$ is $B$, but $C$ is not
+$B$, $A$ cannot be $C$.) --- Geometrically both $A$ and $C$ lie
+inside the circle $B$; but their mutual relation cannot be
+decided; they may coincide or intersect or
+fall outside each other or the one inside the other.
+--- From the fact that both fishes and whales live in water, it can neither
+be inferred that whales are fishes, nor conversely. But from the fact that fishes
+have cold blood and whales warm blood, it can be inferred that whales
+are not fishes. If $A = AB$ and $C = Cb$, $C$ cannot be
+predicate of $A$, since we should then get $ABCb$, which contains a
+contradiction.
+
+34. \textit{When one and the same subject has two predicates,
+a limited identity of the two predicate concepts can
+be inferred from this}.
+\[\begin{array}{l}
+B = BA \\
+B = BC \\
+\hline
+BA = BC
+\end{array}\]
+Fishes are both aquatic animals and vertebrates, and these two
+properties then occur together under certain conditions.
+% --- p. 32 ---
+\opage{32}Man is a spiritual being, and man is a material
+being; the spiritual and the material must then be
+compatible under certain conditions. (Whether the conditions that are
+expressed by $B$ are the only ones under which $A$ and $C$ can
+occur together is not said here.)
+
+This inference is represented in the Aristotelian logic thus:
+\[\begin{array}{l}
+B < A \\
+B < C
+\end{array}\]
+and is called an inference in the \textit{third figure}. The middle term is here
+subject in both premisses. The conclusion becomes: some $A$ is
+$C$ (e.g.: some aquatic animals are vertebrates). --- Geometrically the
+third figure can be represented by the circles $A$ and $C$ intersecting,
+and $B$ being the piece that belongs to both circles.
+(If $A < C$, we return to the first figure.) ---
+
+If we have not merely $B = BA$ and $B = BC$, but also
+$A = AB$ and $C = CB$ (and so can combine the 2nd and 3rd figures),
+we get $A = C$, so that the two concepts, which at first seemed only to
+be limitedly identical, now prove to be absolutely identical.
+If $A$ means ``most highly developed rational being'', $B$ ``man''
+and $C$ ``animal with the most perfect brain'', we get that the
+most highly developed rational being is the animal that has the most perfect
+brain.
+
+35. \textit{If both premisses are negative}, a conclusion can be found
+by using what is set out in 18 about
+negative judgments.
+
+If I have the two negative judgments $A \sim B$ and $B \sim C$, I must
+examine whether each of them is merely contrary, or whether they
+are contradictory. Each of them must necessarily
+be contrary.
+
+$A \sim B$ must mean \textsuperscript{1}) $B = Ba$, but can also mean \textsuperscript{2}) $B = a$.
+
+$B \sim C$ must mean \textsuperscript{3}) $B = Bc$, but can also mean \textsuperscript{4}) $B = c$.
+
+If only \textsuperscript{1}) and \textsuperscript{3}) hold, we get $Ba = Bc$. If \textsuperscript{1}) and \textsuperscript{4}) hold,
+we get $Ba = c$. If \textsuperscript{2}) and \textsuperscript{3}) hold, we get $a = Bc$. If \textsuperscript{2}) and \textsuperscript{4})
+hold, we get $a = c$.
+
+Here we have started from the middle term; but one can also
+start from the principal concepts:
+
+% --- p. 33 ---
+\opage{33}$A \sim B$ must mean \textsuperscript{1}) $A = Ab$, but can also mean \textsuperscript{2}) $A = b$.
+
+$B \sim C$ must mean \textsuperscript{3}) $C = Cb$, but can also mean \textsuperscript{4}) $C = b$.
+
+If \textsuperscript{1}) and \textsuperscript{3}) hold, nothing can be inferred (since that is the second figure).
+If \textsuperscript{1}) and \textsuperscript{4}) hold, we get $A = AC$. If \textsuperscript{2}) and \textsuperscript{3}) hold,
+we get $C = CA$. If \textsuperscript{2}) and \textsuperscript{4}) hold, we get $A = C$.
+
+36. Sometimes only one premiss is expressly
+given, and yet an inference can be drawn. Such an inference
+is called an \textit{immediate inference}. It stands as self-evident.
+But if a proof is demanded, one or more of the
+logical principles are needed for it. Here (in direct inference) we have to do only with
+the immediate inferences that can be proved by
+the principle of identity.
+
+If $A = B$, then $A = AB$ and $B = BA$ follow. This lies
+already in the very concept of absolute identity. (Cf. 14 b. 28. 32.)
+But it can be proved thus: $A = AA$ (by the principle of
+simplicity). If now $B$ is substituted in one place on the right-hand side, we get $A = AB$.
+In the same way we get from $B = BB$ that $B = BA$. --- From $A = B$
+it can also be inferred that $AC = BC$. What holds absolutely must
+also hold under a certain condition. The proof is as follows: We
+put: $AC = AC$ and insert on the one side $B$ for $A$, so
+that we get $AC = BC$.
+
+37. \textit{The question whether an inference can be reversed}, so
+that the conclusion becomes premiss, and the earlier premisses conclusions,
+must be examined in the various cases.
+
+The inference from $A = AB$ and $B = BA$ to $A = B$ (33) can be
+reversed (see 36). But the inference from $A = B$ to $AC = BC$
+ (36) cannot be reversed, since one has no right without further ado
+to cancel the condition. --- Where the middle term disappears
+in the conclusion, as when (32) one infers from $A = AB$ and $B = BC$
+to $A = AC$, or from $A = B$ and $B = C$ to $A = C$, the inference
+cannot be reversed, since one cannot find the middle term from the
+conclusion, and since, moreover, any middle term whatever
+will give the same conclusion. $A = C$ follows just as well
+from $A = X$ and $X = C$ as from $A = B$ and $B = C$.
+
+The ground (the premisses) leads with necessity to
+the consequence (the conclusion), but cannot always go the opposite
+way. In empirical science one infers back from a given
+% --- p. 34 ---
+\opage{34}phenomenon (e.g. the presence of carbonic acid) to the conditions for its
+origination; but these may be different in different cases.
+(Carbonic acid may arise through the respiration of animals, through
+combustion, through volcanic eruptions etc.) Therefore most
+explanations of nature are hypotheses, grounded conjectures.
+And a hypothesis does not become fully certain because it is confirmed
+by experience, so long as it cannot be shown that
+no other premisses could lead to the same result,
+--- so long, that is, as the inference cannot be reversed. Leibniz
+already saw this: le succès ne démontre pas la vérité
+de l'hypothèse. All modern natural science thus rests
+on presuppositions that were set up by Galileo and his
+successors, and the question is whether these presuppositions are
+the only ones from which the results won can be reached.
+(Cf. on this the more recent viewpoints in the theory of knowledge mentioned in ``Oversigt over den nyere Filosofis
+Historie'' VIII, 2.)
+
+Not only can one and the same conclusion be derived from judgments
+with highly different middle terms, but a correct conclusion
+can be derived from factually incorrect or even self-contradictory
+premisses. Both $A = B$ and $B = C$ may be factually incorrect,
+and yet $A = C$ may be factually correct. It often turns out
+that one arrives from false premisses at a result that
+is then proved correct by other routes. The correct derivation
+of $A = C$ might e.g. be that from $A = K$ and $C = K$. ---
+From $A = a$ and $a = C$ follows $A = C$, which contains no
+self-contradiction, although the one premiss is self-contradictory.
+
+\sechead{b. Indirect Inference.}{\textbf{b. Indirect Inference.} (Inference by Substitution and Elimination.)}
+
+38. Indirect inference investigates which combinations of concepts
+can subsist with the validity of one or more
+given judgments. This investigation takes place by inserting, in the
+combinations (according to the principle of duality) conceivable of the concepts given in the judgment
+(or judgments), the expressions
+that the judgments give for these concepts, and casting out (eliminating)
+the combinations that become self-contradictory. This is a deduction,
+in that one goes from one or more given judgments to the
+combinations that can subsist with them. --- The judgments
+% --- p. 35 ---
+\opage{35}that are investigated in this way may themselves have been derived
+by \textit{induction} from certain given combinations of concepts. Deduction
+then provides the proof that the judgments have been correctly derived.
+Induction is essentially a method of discovery; by it we procure
+judgments that can be tested deductively. It is preparatory
+work; the inference proper is always deductive.
+
+\sechead{α. Indirect Inference as Pure Deduction.}{\spaced{α. Indirect Inference as Pure Deduction.}}
+
+
+39. When the judgment $A = B$ is given, which combinations
+of $A$ and $B$ and their negations will then be possible? --- Since
+two concepts are in question, only four combinations can be conceived
+\textit{according to the principle of duality}: $A$ can occur either with
+$B$ or without $B$; $B$ either with $A$ or without $A$; $a$ either with
+$B$ or without $B$; $b$ either with $A$ or without $A$. The four combinations
+that can be conceived are thus $AB$, $Ab$, $aB$ and $ab$.
+(Geometrically this can be illustrated by letting the circles
+$A$ and $B$ intersect; there is then a part of $A$ without $B$,
+a part that belongs to both $A$ and $B$, and a part of $B$ without $A$;
+to this is added the space outside the two circles, where neither
+$A$ nor $B$ is found.) But now the task is to find which of
+these conceivable combinations are possible when the judgment
+$A = B$ is given. This is done by inserting this judgment in the
+four combinations \textit{(by virtue of the principle of identity)} and then
+\textit{(by virtue of the principle of contradiction)} casting out the combinations
+that become self-contradictory. The combinations in which
+nothing can be substituted remain standing as possible.
+\[\begin{array}{l}
+AB = AA = BB \\
+Ab = Bb = 0 \\
+aB = aA = 0 \\
+ab
+\end{array}\]
+Thus only $AB$ and $ab$ can occur when $A = B$. ---
+If the person $A$ is to be identical with the murderer $B$, then
+he must have been present everywhere the murderer has been,
+and have been absent where the murderer was absent.
+
+40. When the judgment $A = AB$ is given, we get by the same
+procedure $AB$, $aB$ and $ab$ as possible cases. --- If
+% --- p. 36 ---
+\opage{36}heat is a form of motion, we must be able to find phenomena of heat
+and motion together, or motion without heat
+(since there are other forms of motion than heat), or phenomena
+that are neither motion nor heat. Only the combination
+heat without motion ($Ab$) is excluded.
+
+When $A = Ab$ is given, $Ab$, $aB$ and $ab$ become possible. When
+$A = b$ is given, only $Ab$ and $aB$ become possible.
+
+41. For simplicity's sake examples with two concepts have been chosen in the foregoing.
+If three concepts are in question,
+we get 8 conceivable combinations to examine. (Geometrically
+this can be represented by letting three circles intersect
+one another so that each of them intersects both the others;
+one then gets 7 different pieces besides the space outside
+the three circles.) If four concepts are contained in the given
+judgments, we get 16 combinations etc. --- The following example
+with three concepts shows the procedure.
+
+Let $A = AB$ and $C = CB$ be given. Then the 8 conceivable
+combinations are:
+\begin{center}
+\begin{tabular}{l@{\qquad}l}
+\textsuperscript{1}) $ABC$ & \textsuperscript{5}) $aBC$ \\
+\textsuperscript{2}) $ABc$ & \textsuperscript{6}) $aBc$ \\
+\textsuperscript{3}) $AbC$ & \textsuperscript{7}) $abC$ \\
+\textsuperscript{4}) $Abc$ & \textsuperscript{8}) $abc$
+\end{tabular}
+\par\smallskip By substitution we get:\par\smallskip
+\begin{tabular}{l@{\qquad}l}
+\textsuperscript{1}) $ABBCB = ABC$ & \textsuperscript{5}) $aBCB = aBC$ \\
+\textsuperscript{2}) $ABBc = ABc$ & \textsuperscript{6}) $aBc$ \\
+\textsuperscript{3}) $ABbCB = 0$ & \textsuperscript{7}) $abCB = 0$ \\
+\textsuperscript{4}) $ABbc = 0$ & \textsuperscript{8}) $abc$
+\end{tabular}
+\end{center}
+By indirect inference one can thus draw inferences from the
+``second figure'' (33) concerning the combinations of concepts that
+are possible when two subjects have the same predicate.
+
+If one starts from $B = BA$ and $B = BC$ (thus the ``third figure'',
+see 34), $ABC$, $AbC$, $Abc$, $abC$ and $abc$ become possible.
+
+42. If we start from mutually contradictory premisses,
+indirect inference can call attention to the error.
+
+% --- p. 37 ---
+\opage{37}
+\[\begin{array}{l@{\qquad}l}
+A = b \\
+B = A \\
+\hline
+AB = bB = 0 & aB = aA = 0 \\
+Ab = bB = 0 & ab = aA = 0
+\end{array}\]
+All conceivable combinations thus fall away. --- Another
+example will occur below (46).
+
+\whiteline
+
+\sechead{β. Indirect Inference as a Union of Induction and Deduction.}{\spaced{β. Indirect Inference as a Union of Induction}\\
+\spaced{and Deduction.}}
+
+43. If we have a series of combinations of concepts given, we can
+seek one or more judgments that express the relation between
+the concepts contained in the combinations. Such judgments
+are found by analysis, as when we form our judgments on the
+basis of immediate intuition (10). When the combinations
+are very numerous, one must feel one's way forward through provisional
+hypotheses. Thus Kepler first tried the assumption that
+the orbit of Mars was a circle, before he discovered that it was an
+ellipse. The auxiliary synthesis plays a great role here.
+The combinations stand here side by side, whereas in the simpler
+cases of the formation of judgments the task is to illuminate a single
+combination (given in intuition) by means of the others.
+(Cf. 10 and 20.)
+
+The transition from given combinations to judgments is called
+induction. But a proof that the judgments found really
+correspond to the given combinations and not to others must be given
+by deduction. The proof of an induction is always a deduction,
+and the significance of induction consists in setting up a conjecture
+that can be tested. (Cf. 38.)
+
+Indirect inferences must always be capable of being reversed, if they
+are correct. I must be able to go both from a definite judgment to
+definite combinations, and conversely.
+
+44. If the combinations $AB$ and $ab$ are given, we see that where
+$A$ is, $B$ is, and conversely, and that where one of them is lacking,
+the other is lacking too. To this correspond $A = B$ and $a = b$. And
+by deduction from these judgments we come also to $AB$ and
+$ab$, and to them alone (see 39).
+
+% --- p. 38 ---
+\opage{38}If $AB$, $aB$ and $ab$ are given, we see that where $A$ is, $B$ is, whereas
+$B$ can occur without $A$, and that where $B$ is lacking, $A$ is lacking.
+That gives $A = AB$ and $b = ba$. Of $B$ and $a$ nothing can be asserted.
+Deduction from $A = AB$ leads also to $AB$, $aB$ and $ab$, whereas
+$Ab$ would be self-contradictory. (See 40.)
+
+If $AB$, $Ab$ and $aB$ are given, it is seen that $a$ occurs only if
+$B$ is, whereas $B$ can occur without $a$, and that where $B$ is lacking,
+$a$ is lacking too. To this correspond $a = aB$ and $b = bA$. Of $A$ and
+$B$ nothing can be asserted here. By deduction from these two judgments
+we get also the three given combinations and no others.
+
+If the given combinations were $ABC$, $AbC$, $aBc$ and
+$abC$, there would lie in them $A = AC$, $b = bC$, $c = cB$, furthermore
+$AB = ABC$ etc.
+
+45. Many \textit{immediate inferences} (cf. 36) can be
+proved only by indirect inference. This holds of the important kind
+of immediate inference by which \textit{from a positive judgment we
+derive a negative judgment or conversely}. Such a derivation
+is called \textit{contraposition}.
+
+From $A = AB$ follows immediately $b = ba$. For when $B$ is where
+$A$ is, $A$ must be lacking where $B$ is lacking. A proof can nevertheless be given
+thus: Of the four possible combinations, when $A = AB$
+is given, $Ab$ drops out; only $AB$, $aB$ and $ab$ remain, and from
+them follows (see 44) $b = ba$.
+
+From $A = B$ follows immediately $a = b$. If there is absolute identity
+between $A$ and $B$, $a$ must be lacking where $b$ is lacking, and conversely.
+A proof can be given thus: Of the four possible combinations,
+when $A = B$ is given, $Ab$ and $aB$ drop out; only $AB$ and $ab$
+remain, and from them follows (see 44) $a = b$.
+
+These inferences can be reversed. From $b = ba$ follows by
+contraposition $A = AB$, from $a = b$ follows $A = B$. ---
+
+By means of contraposition we can formulate an inference
+in the ``second figure'' with a negative premiss (see 33):
+
+\begin{center}$A = AB$\end{center}
+
+
+\begin{center}$C = Cb$\end{center}
+
+
+From $C = Cb$ follows $B = Bc$, so that we transform the second figure
+into the first figure:
+
+% --- p. 39 ---
+\opage{39}
+\[\begin{array}{l}
+A = AB \\
+B = Bc \\
+\hline
+A = ABc = Ac.
+\end{array}\]
+Even from the second figure with two positive premisses we can
+now get a result. For from $A = AB$ follows $b = ba$, and from $C = CB$
+follows $b = bc$, so that we get:
+\[\begin{array}{l}
+b = ba \\
+b = bc \\
+\hline
+ba = bc
+\end{array}\]
+The second figure is thus changed by contraposition into the third
+figure. ---
+
+46. In every induction we must have all the concepts contained
+in the combinations given both in negative and in positive
+form, since every concept must be capable of being negated. (Cf. 5---6.)
+If we are to infer from two combinations alone, these must therefore
+be either $AB$ and $ab$ or $Ab$ and $aB$ (when only two concepts
+are in question).
+
+If, on the other hand, we had e.g. $AB$ and $aB$ given, we should
+get the two judgments $A = AB$ and $a = aB$. But from them follows by
+contraposition (45) $b = ba$ and $b = bA$, which conflict with one another
+(make one another problematic, see 19). A contradiction thus
+arises when we infer from given combinations that
+exclude the negation of a concept. This contradiction can only
+be removed when we can find more combinations. If we find
+e.g. $ab$, the judgment $b = bA$ drops out, and the contradiction ceases.
+Thus the problems that experience poses lead us to extend
+our experience. --- Conversely, by proceeding deductively
+from the two propositions $A = AB$ and $a = aB$ we should arrive at the result
+that the concept $B$ could not be negated, and this result
+would naturally lead us to discover the contradiction between
+the premisses. ---
+
+If all conceivable combinations are given, no
+judgment can be set up. All concepts then occur in all the connections
+conceivable by virtue of the principle of duality: $A$ now with $B$,
+now with $b$, $B$ now with $A$, now with $a$ etc. If our
+% --- p. 40 ---
+\opage{40}experience were always of this nature, we could form no judgments,
+and if the whole of nature were of this nature,
+the causal principle would not hold, since it presupposes that a
+phenomenon occurs only in connection with a certain definite
+other phenomenon. Where experience seems to present cases
+that offer all conceivable combinations (with two concepts
+thus both $AB$, $Ab$, $aB$ and $ab$), we assume --- if we
+are concerned to hold fast to the causal principle --- that our experience
+is incomplete, in that it is limited to two concepts.
+If our experience is extended so that we take account of a
+third concept $C$, which occurs together with $A$ and $B$, we shall
+perhaps be able to set up one or more judgments. Thus if
+we found the combinations $ABC$, $AbC$, $aBc$ and $abC$ (see the end of 44).
+If, on the other hand, all 8 combinations of $A$, $B$ and $C$
+occurred, no judgment could be set up here either. We
+should then have to set up a fourth concept $D$, which could belong together
+with the three concepts. And so on, until the difficulty
+is removed. (Cf. 14. A limited identity cannot be
+derived from the subject concept and the predicate concept alone, but is found
+by an extension, which establishes that the relation between the two concepts
+can be fixed only when a third concept is taken in.)
+--- Thus the thinking elaboration of the given leads
+to seeing its incompleteness and thereby drives to extending experience.
+
+
+47. Even if the judgment found leads by deduction to the
+given combinations and to no others, and thus proves to
+be correctly derived, it nevertheless remains a \textit{hypothesis},
+so long as it has not been established with certainty that the given
+combinations are exhaustive, so that no combinations
+of another kind occur. Such certainty can, apart from
+very simple and surveyable relations, be very difficult
+to attain. The scientific character of the hypothesis depends on its
+being the logical expression for all given combinations. It then stands
+as a \textit{grounded} conjecture. But it needs \textit{confirmation}
+(verification), so long as there is still the possibility of
+new combinations. The confirmation takes place when the new combinations
+are shown to be of the same kind as those on which
+% --- p. 41 ---
+\opage{41}one relied in setting up the hypothesis. (Cf. 5 on
+definition as a hypothesis.) The hypothesis $A = B$ is confirmed
+if all new experiences of $A$ and $B$ are of the kinds $AB$
+or $ab$; it is refuted if the presence of $Ab$ or
+$aB$ can be shown. (See also 37.)
+
+The scientific induction starts from certain cases
+as typical and shows that all other cases belong to the same
+type. Newton's theory of gravitation was grounded by an investigation
+of the motion of the moon; it was confirmed by the fact that Kepler's
+laws could be derived from it, --- that ebb and flood could be
+explained by it, --- and later by a multitude of new discoveries,
+e.g. the discovery of Neptune, which was brought about by
+inference from the theory of gravitation. The working value of a hypothesis
+(its significance as a principle for research) coincides
+with the possibility of its verification.
+
+% --- p. 42 ---
+\opage{42}\chaphead{}{APPENDIX}{}
+
+
+\sechead{1. Mill's Inductive Methods.}{\textbf{1. Mill's Inductive Methods.}}
+
+
+JEVONS was the first to show with clarity that the proof of an induction
+consists in a deduction which, starting from provisionally set up judgments,
+leads back to the combinations from which these judgments were derived,
+together with a continued demonstration that all
+combinations are of the same kind as those from which the judgments
+were derived. ARISTOTLE understood by induction a complete
+collection of a certain kind of phenomena together with the showing of judgments
+that hold for them all. But such a complete collection
+is very seldom possible, and the problem is precisely how our
+knowledge can be built up and carried further, although it cannot be proved that the given
+is exhaustive. BACON and STUART
+MILL have given special descriptions of the methods of induction,
+without having seen their close connection with deduction,
+which alone can give a proof. Stuart Mill's exposition,
+which is built on a study of the history of modern empirical
+science, nevertheless has lasting interest through the clarity with which
+it brings out the essential forms.
+
+a. \textit{The method of agreement}. When a phenomenon $B$ occurs
+under different circumstances, such that there is only
+one thing ($A$) that always precedes, while everything else varies,
+it is conjectured that $A$ is the cause of $B$ (or that both are successive effects
+of the same cause). This conjecture will be the
+better grounded, the more cases we have of this kind.
+\[\begin{array}{l@{\qquad}l@{\qquad}l}
+AVX & AYZ & ......... \\
+BV_1X_1 & BY_1Z_1
+\end{array}\]
+% --- p. 43 ---
+\opage{43}If the different cases in which the formation of dew
+occurs are compared (on surfaces in the open air after sunset, on
+a glass of fresh water in a warm room, on the inside of
+a window in a sudden downpour etc.), they present, despite
+all differences, the common feature that, before the formation of dew,
+a sudden cooling of a surface in relation to the surrounding
+air occurs, and in this we then find the cause
+of the formation of dew.
+
+This method can, however, lead only to a provisional conjecture.
+It draws attention to the relation between
+$A$ and $B$, but does not exclude the possibility that $B$ might some time
+occur without $A$. (We have only the combination $AB$ given
+and know nothing of the negative cases. Cf. 46.) Does condensation
+not take place when sudden cooling is excluded? This
+question must be answered before the inference is secure. The use
+of a medicine may have proved beneficial in a series of cases;
+but is it beneficial in all cases, and --- would the patients
+not have been cured even if they had not
+used the medicine? --- We are thereby led over to the next
+method.
+
+b. \textit{The method of difference}. When a phenomenon $B$ does not occur
+unless the phenomenon $A$ precedes, while all other circumstances
+are alike (so that the occurrence of $A$ and $B$ constitutes the only
+difference), it is inferred that $A$ is the cause of $B$ (or that $A$ and $B$ are
+effects of the same cause).
+\[\begin{array}{l@{\qquad}l}
+AVX & VX \\
+BV_1X_1 & V_1X_1
+\end{array}\]
+Here only two cases are needed, one where $A$ and $B$ occur,
+and another where under otherwise equal circumstances they do not
+occur. --- With a clouded sky or in wind no formation of dew takes place,
+only in calm and clear weather. By stretching a
+sheet at a height of some feet above the ground one prevents the radiation of heat
+from it, and then the formation of dew also drops away
+under the sheet, while it goes on just outside. --- The task is
+to find a single circumstance that is decisive
+% --- p. 44 ---
+\opage{44}(in that it is either the whole cause, or contains the cause,
+or is a part of the cause, which always consists in a whole group
+of conditions, cf. Psykologi VD, 5 d; --- this remark
+holds for all four methods, but is of particular importance here).
+Gray discovered that the difference between electrical conductors and
+insulators depended on the constitution of the substances; he had
+at first assumed that when a silk cord was a better insulator than
+a hemp cord, it was because it was thinner; but it turned
+out that a metal wire that was as thin as the silk cord
+conducted the electricity. --- A man's blameless conduct may
+be due to his good character --- but perhaps also to his fortunate
+circumstances, which bring no temptations. --- After the Danish
+agrarian reforms at the end of the 18th century there occurred
+a great rise in the prices of agricultural products, so that one could not
+see clearly what was due to them; their fortunate influence
+became clear, on the other hand, when prices in the 19th century
+began to fall again. ---
+
+In the method of difference we have the combinations $AB$ and $ab$
+given, from which follows $A = B$ (which is here to be interpreted thus:
+if $A$ is, $B$ is, and $B$ does not occur without $A$). (Cf. 17.)
+
+The last two methods are more special forms of the method of difference.
+
+
+c. \textit{The method of residues}. When $AVX$ precedes $BV_1 X_1$, and when
+it is known that $V$ is the cause of $V_1$ and $X$ of $X_1$, it is inferred that $A$ is the
+cause of $B$.
+\[\begin{array}{l@{\qquad}l@{\qquad}l}
+AVX & V & X \\
+\cdashline{1-3}
+BV_1X_1 & V_1 & X_1
+\end{array}\]
+From the irregularities in the orbit of the planet Uranus, which
+could not be explained by the attraction of the known planets,
+it was inferred that beyond Uranus there must be a hitherto
+unknown planet, and this led to the discovery of Neptune. --- Human
+characters and racial peculiarities cannot be explained merely by
+the influence of upbringing and other external (physical and social)
+circumstances; there remains an unexplained residue, which
+must be explained by heredity. (Cf. Psykologi VII C, 2.)
+
+d. \textit{The method of proportional variations}. When a
+% --- p. 45 ---
+\opage{45}phenomenon $B$ increases or decreases, or in general changes, according
+as another phenomenon $A$ undergoes corresponding changes,
+while all other circumstances remain unchanged,
+it is inferred that $A$ is the cause of $B$ (or that both are
+effects of the same cause).
+% PRINTED AS IS: the middle cell of the bottom row is A₂V₁X₁ (B₂V₁X₁ expected?), and B₁V₁X has no subscript on X (z-06-04)
+\[\begin{array}{l@{\qquad}l@{\qquad}l}
+A_1VX & A_2VX & A_3VX ......... \\
+\cdashline{1-3}
+B_1V_1X & A_2V_1X_1 & B_3V_1X_1
+\end{array}\]
+This method finds application where one cannot wholly
+exclude a phenomenon. One then examines the cases where it
+varies, and seeks to find other phenomena that under the same
+circumstances vary in a corresponding manner. The method requires
+that the varying series be continued as far as possible.
+
+The law of inertia was grounded by Galileo by this method:
+the smoother he made his balls and the grooves in which he let them
+roll, the longer the balls went on rolling. --- That mental life
+is particularly bound up with the nervous system (whether the one
+is cause of the other, or the cause lies further back),
+is inferred from the fact that they vary in a corresponding manner. (Psykologi
+II, 6---7.) --- Statistics shows that the number of marriages rises when
+grain prices fall, and falls when these rise. ---
+
+With regard to these methods of Mill it must be noted that they
+presuppose a distinct difference between cause and effect. Such a
+distinct difference exists only for the provisional conception;
+when research penetrates further into the relation,
+it finds a continuous transition from what is called ``cause''
+to what is called ``effect''. (Cf. Psykologi VD, 3.)
+
+The methods of Mill presuppose the validity of the causal principle
+and lie to that extent outside formal logic (cf. 22).
+Mill conceded this and thereby came to move in a
+circle, since he grounded the causal principle itself by induction
+(the method of agreement). (Cf. ``Oversigt over den
+nyere Filosofis Historie'' VII b.)
+
+The question of the validity of the causal principle leads over
+from formal logic to the theory of knowledge, which asks with
+what right we ascribe to the principle of ground (and the logical principles contained
+% --- p. 46 ---
+\opage{46}in it, see 21 to 29) validity for real
+existence, not merely for the ordering of our thoughts. --- In psychology, too,
+we come to discuss the causal relation, namely
+in the question how we distinguish between reality
+and mere idea (illusion or dream). (Cf. on this Psykologi
+VD, 1---2.)
+
+\sechead{2. Analogy and Inference by Analogy.}{\textbf{2. Analogy and Inference by Analogy.}}
+
+
+The innermost nerve of all logic is identity. It is by virtue of
+it that we fix our ideas to concepts, tie
+concepts together in judgments and go from judgments to judgments
+through inference. The aim of our thinking is therefore, as far as
+possible, to reduce differences to identities --- or at least
+to apprehend them as if they were identities, and see how far
+we can carry through this apprehension. But thought carries on
+a constant struggle with the given in order to attain this aim. And
+at several points analogy (similarity of relations) must take the place
+of identity.
+
+a. Our concepts rest for the most part, namely apart from
+the ``mark-concepts'', on analogy between the phenomena for
+which they hold (5). Only approximately can there be shown among the marks
+of different phenomena given in intuition
+so strict an identity as the principle of identity demands
+(24). There appears here an irrational relation between the matter
+and the form of knowledge, between the given and its expression in
+thought. Once we have formed a concept, we must work
+with it as identical with itself, until we perhaps, from increased
+and clearer matter of knowledge, can form a more perfect
+concept. But it must not be forgotten that it often rests from the start
+on analogy, and that our definitions are often hypotheses.
+
+b. When we now connect the concepts in judgments, and the judgments
+in inferences, the connections thus established
+between our thoughts cannot without further ado be assumed to reproduce the
+connections that obtain between the given phenomena.
+The relation between ground and consequence on the one hand and between
+cause and effect on the other we have no right
+to identify. We can apprehend the
+% --- p. 47 ---
+\opage{47}sequence of events as if it reproduced a relation between ground and consequence;
+but only an analogy is it justified to assume here (22). In a
+similar way matters stand with the application of mathematical
+concepts and judgments to phenomena. The number series is the
+simplest and most surveyable ordering of elements we know,
+and we therefore naturally seek to order the phenomena in analogous
+series, so that from the relations that hold between the numbers
+we may infer relations between the phenomena. The so-called
+mechanical conception of nature rests on the great analogy between
+motions in space and series of qualitative changes.
+Thus physics regards the series of colors as if it were merely
+a series of quantitative changes (in the refraction of waves of ether
+etc.), and the qualitative changes of substances are regarded in chemistry
+as if they were merely rearrangements of unchanged
+small parts. The application of the formal sciences to the
+real sciences (cf. 2 and 22) is thus due to analogy.
+
+c. In the examples just mentioned, inference by analogy appears
+in its simplest form, as the method of proportional
+variations. Inference from the one series (e.g. the quantitative)
+can here always find its confirmation by an observation of new
+members in the other series (the qualitative).
+
+But it is not always that inference by analogy can assume this
+form. Often it is an inference in the second figure (33): when two
+subjects have a common property, it is natural to ask
+whether they do not agree in more properties, especially when
+the common property is of essential, deeply penetrating significance.
+That both fishes and whales are aquatic animals may occasion
+an investigation of what other properties they have in common.
+While the second figure cannot ground any logical inference,
+it can give the impulse to a discovery, which can then find
+its confirmation by quite other routes. And when a subject has
+two predicates (third figure, see 34), it is natural to ask
+how these two predicates (e.g. aquatic animals and vertebrates
+of the fishes) mutually determine one another; that may lead to
+seeking out several other cases in which the two predicates occur
+together. (One then properly makes the two predicates into
+subjects, so that the third figure passes over into the second figure, which is
+% --- p. 48 ---
+\opage{48}the proper scheme for inference by analogy.) Thus analogy can
+act as a driving force, and in a more positive way
+than self-contradiction (see 46). It is a significant method of discovery.
+But when the proof is to be given, it must be given
+by means of identities. Newton's discovery of gravity as
+a law of the world is said to have been made by means of a bold
+analogy (10) between the motion of the moon and the motion of falling
+on earth; but the proof was given according to the formula $A = B = C$ (32),
+where $B$ signifies the identical law of the two motions.
+
+Aptly Aristotle, who uses the word analogy only
+in the sense of mathematical proportion, has called what we term
+inference by analogy an inference from an example (paradeigma). We
+infer from the relations in one case to the relations in another
+case. With him it forms an opposition both to induction
+and to deduction. --- It approaches induction the more
+different examples it relies on, so that a judgment can be
+grounded and perhaps later confirmed.
+
+d. It is the great question in all analogizing whether
+we have the right to transfer what holds in one respect
+or for certain phenomena to other respects or other
+phenomena, because a single point of similarity can be shown. In the end
+the question poses itself, and in its most problematic form,
+when we stand at the boundary of our knowledge and ask whether
+we can from what our experience and thinking teach us about existence
+draw inferences to its whole nature. Here mankind
+--- in its religions and in its speculations
+--- has worked with great and bold analogies, which cannot be confirmed
+by experience, and whose worth also need not
+rest on that.
+
+\end{document}

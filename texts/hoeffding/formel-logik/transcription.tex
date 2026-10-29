@@ -1,0 +1,2189 @@
+% =====================================================================
+%  Harald Høffding, FORMEL LOGIK.  TIL BRUG VED FORELÆSNINGER.  Femte omarbejdede Udgave.
+%  Kjøbenhavn og Kristiania: Gyldendalske Boghandel, Nordisk Forlag, 1907 (Forlagets Bogtrykkeri).  [X] + 48 pp.  Antiqua.
+%  The edition Høffding sent in sheets to the student Niels Bohr for criticism in November 1906 (Pais, Niels Bohr's Times,
+%  ch. 6 nn. 45-47); the Forord (December 1906) thanks "en af mine tidligere Tilhørere" and Dr. Anton Thomsen.
+%
+%  GENERATED; DO NOT EDIT BY HAND.  Built by ebook-method/formel-logik/rebuild.sh (draft.py --emit, collate/check.py --apply,
+%  draft.py --post, heads.py, notatex.py); edit the pipeline (template.tex, patches.py, decisions.tsv, schemes.tsv,
+%  casenums.tsv, italics.tsv), never this file.  Rebuild line in texts/hoeffding/formel-logik/RESUME-NOTES.md.
+%
+%  EDITION AND SCAN.  Text of record: the University of Minnesota copy, scanned by Google and served by HathiTrust
+%  (umn.31951002000878s): ~/bibliotek/Høffding, Harald/1907-formel-logik-5udg.pdf (SCANS.tsv by sha256 b176ccbb…),
+%  65 PDF pages, 600 ppi bitonal, Google's OCR layer.  PDF = printed + 13 (p. 1 = PDF 14, p. 48 = PDF 61); every folio
+%  present.  PDF 6 half-title, 8 title page, 10 Forord til femte Udgave, 12 Indholdsfortegnelse (one page; PDF 13 blank).
+%  The front pages carry no folio: their markers [III] [V] [VII] [IX] are counted back from p. 1.  No e-book and no earlier
+%  transcription of this edition exists (edition check 2026-10-29); the first edition (1884) is a different text.
+%
+%  NOT TRANSCRIBED (marks of this copy): the bookplate (PDF 3) and a library stamp (PDF 11); on the title page the pencil
+%  date "1843-" after the author's name and the library's perforation stamp; on the Forord the pencil shelfmark "160 H67",
+%  the accession stamp "50811" and the dealer's stamp "Dec. 14. 1907. Stechert" (which overprints the line "Jeg har tillige
+%  ... Bemærkninger fra en af mine tidligere Tilhørere": its words were read at the image); Google's watermark; the sheet
+%  signatures ("Harald Høffding: Formel Logik. 5. Udg. N", "N*").
+%
+%  METHOD AND ACCURACY (2026-10-29; TRANSCRIPTION-PLAYBOOK.md §00).  No one re-typed the text.
+%  (1) The draft is Google's layer turned into LaTeX by script (draft.py); corrections that a word decision cannot express
+%      are literal patches (patches.py: 73 before the collation, 5 after it, 6 paragraph joins, 8 dashes moved).
+%  (2) It was collated word by word, with punctuation, against an independent tesseract 4 reading (dan, tessdata_best,
+%      300 dpi) by ebook-method/collate/check.py: 454 disagreements in pp. 1-48 at the end; 10 settled by check.py's rules,
+%      444 by decisions -- 88 by rules.py (dashes the layer drops, quote kinds, accents; never on a line of notation),
+%      252 from the blind notation readings (below), 10 by the three-way vote, 97 at the image in the main session -- OPEN 0.
+%  (3) The LOGICAL NOTATION was read BLIND: every line with notation (296) and the 17 schemes and tables, as crops, by six
+%      readers who saw neither machine reading (NOTATION-BRIEF.md; 12 planted control lines, 12 right).  Each reading was
+%      aligned with the draft token by token (notareads.py) and every difference put to a three-way vote of reader, layer and
+%      tesseract (vote.py): 60 places where reader and tesseract agreed against the draft were corrected; the residue (70)
+%      was settled at the image in the main session (z-sheets), including the whole p. 36 table, the p. 40 line the layer
+%      had scrambled, and the p. 45 scheme.  The schemes are set whole from the adjudicated readings (schemes.tsv).
+%  (4) The 97 open prose checks were settled at the image in the main session (p-sheets); 8 words divided over a page turn,
+%      whose hyphen the layer had lost on the page's last line, were joined.
+%  (5) Read at the image in the main session: every heading (wording, case, bold, letterspacing), the front matter, the 14
+%      paragraph-initial long dashes (an ink test, then the image: 8 end the paragraph before, 6 stand flush inside one),
+%      the exclusion sign of p. 27.
+%  (6) ITALICS: found by a stroke-slant test on tesseract's word boxes (calibrated on words the blind readers saw italic:
+%      ITAL 1.06), merged into runs across short words (italics.py), and then EVERY run read at the image in the main session
+%      (it-, it2-, it3-sheets): the test misses the first word(s) of italic sentences and stops at short words (extents set
+%      in italics-fix.tsv), and gave 4 false positives (p. 2 "fast", p. 24 "Grund", p. 31 "(Naar …)", and one crop that
+%      showed the wrong word), dropped; a final stop after an italic run is roman.  72 runs set.
+%  (7) Sampled blind page check (Forord, pp. 13, 38, 44; 1,122 words; 2/2 planted controls found): 0 word errors,
+%      1 punctuation (Uranus’), 5 italic sentence openings -- all mended; every italic run then verified at the image
+%      (main session).
+%  Cost: approximately 1.3M agent tokens (the pipeline agent ~0.73M by its own token count; six blind notation readers
+%  ~490k; the blind page reader ~97k), plus the main session's adjudication at the crop sheets.
+%
+%  CONVENTIONS.  Diplomatic: spelling, capitals and punctuation as printed; „…“ quotation marks; the long dash as ---;
+%  »ɔ:« (det er) as printed.  The paragraph numbers (1.-47.) as printed.  Words divided at a line end are joined; a word
+%  divided across a page turn carries the marker inside it (\opage{N}).  Running heads are kept as comments at each page
+%  turn.  LOGICAL NOTATION in math mode (the print sets the logical letters in italics): =, <, > as printed; the print's
+%  negation sign ~ ("er ikke") as \sim; the exclusion sign ·|· of p. 27 as \udel; subscripts as _1; the raised case numbers
+%  ¹) ²) ... as \textsuperscript{N}); schemes as display arrays, the printed rule as \hline, the short dotted rule of the
+%  three-column schemes pp. 44-45 as \cdashline; the p. 36 table as two tabulars.  Headings: chapter numeral and title in
+%  capitals; the section heads A.-D., a./b. and the Tillæg's 1./2. in bold (in a./b. the parenthesis roman); the α./β.
+%  heads letterspaced (\spaced).  Italics \textit; names in small capitals (the Forord) \textsc.
+%
+%  THE CONTENTS PAGE AND THE HEADS DISAGREE (both recorded; each is set as printed):
+%    p. 11  Indhold »C. Dommes Dannelse og Formulering«;  head »C. Dommens Dannelse og Formulering.«
+%    p. 35  Indhold »α. Indirekte Slutning ved ren Deduktion«;  head »α. Indirekte Slutning som ren Deduktion.«
+%    p. 42  Indhold »1. Mill’s Induktionsmetoder«;  head »1. Mill’s induktive Metoder.«
+%
+%  PRINTER'S ERRORS, PRINTED AS IS: p. 45, the scheme of the proportional variations: the middle cell of the bottom row reads
+%  A₂V₁X₁ (B₂V₁X₁ expected?), and B₁V₁X has no subscript on X.  Logged at the site with % PRINTED AS IS.
+%  After the translation (2026-10-29), the translators' 19 odd spots were read at the image: also PRINTED AS IS (logged at the
+%  site): p. VII »pædagisk«, p. 3 and p. 34 a semicolon before a relative clause, p. 14 »af / af sig selv«, p. 17 »deres
+%  Indhold forekomme«, p. 24 »Videnkaber«, p. 33 the cross-reference »(33)« (32 meant?).  Mended: 8 notation spans the notation
+%  pass had missed or set wrongly (mathfix.tsv, casenums.tsv), words it had set in math mode (notatex.py), p. 36 »Varme- og«.
+% =====================================================================
+\documentclass[12pt,a4paper,openany]{book}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{libertinus}
+\usepackage{libertinust1math}
+\usepackage{array}
+\usepackage{arydshln}   % formel-logik: \cdashline, the short dotted rule of the schemes pp. 44-45 (notatex.py)
+\usepackage{graphicx}
+\usepackage{newunicodechar}
+\newunicodechar{ɔ}{\reflectbox{c}}   % formel-logik: »ɔ:« (det er), as in the Brøchner transcriptions
+\newcommand{\udel}{\mathbin{\cdot\kern-0.1em|\kern-0.1em\cdot}}   % formel-logik: the exclusion sign ·|· of p. 27 (»gensidigt Udelukkelsesforhold«)
+\usepackage{textalpha}
+\usepackage[danish]{babel}
+\usepackage[protrusion=true,expansion=true]{microtype}
+\usepackage{setspace}
+\usepackage[margin=1.3in]{geometry}
+\usepackage{fancyhdr}
+\usepackage{hyperref}
+\hypersetup{pdftitle={Formel Logik}, pdfauthor={Harald Høffding}, hidelinks}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LE,RO]{\thepage}
+\fancyhead[C]{\textit{Høffding: Formel Logik, 5. Udg. (1907)}}
+\setlength{\headheight}{15pt}
+\setstretch{1.3}
+\usepackage{marginnote}
+\newcommand{\opage}[1]{\marginnote{\footnotesize\textit{[#1]}}}
+\newcommand{\whiteline}{\par\vspace{\baselineskip}\par}
+% heading macros (from ledende-tanker; to be used by patch once the headings are read at the image)
+\newcommand{\parthead}[1]{\par\bigskip\phantomsection\begin{center}{\Large #1}\end{center}\addcontentsline{toc}{part}{#1}\medskip}
+\newcommand{\unnumhead}[1]{\par\bigskip\phantomsection\begin{center}{\Large #1}\end{center}\addcontentsline{toc}{chapter}{#1}\medskip}
+\newcommand{\chapterhead}[2]{\par\bigskip\phantomsection\begin{center}{\large #1\ #2}\end{center}\addcontentsline{toc}{chapter}{#1 #2}\medskip}
+\newcommand{\chapterheadii}[3]{\par\bigskip\phantomsection\begin{center}{\large #1\ #2\\ #3}\end{center}\addcontentsline{toc}{chapter}{#1 #2 #3}\medskip}
+\newcommand{\sectionhead}[2]{\par\bigskip\phantomsection\begin{center}#1 \textit{#2}\end{center}\addcontentsline{toc}{section}{#1 #2}\medskip\ignorespaces}
+\newcommand{\ix}[3]{\par\noindent\hspace*{#1}#2\dotfill #3}
+% formel-logik (heads.py): chapter = numeral, title in capitals, the smaller subtitle; section heads; letterspacing
+\newcommand{\chaphead}[3]{\par\bigskip\phantomsection\begin{center}\ifx&#1&\else{\large #1}\par\smallskip\fi{\Large #2}\ifx&#3&\else\par\smallskip{\large #3}\fi\end{center}\addcontentsline{toc}{chapter}{\ifx&#1&\else #1. \fi #2}\medskip}
+\newcommand{\sechead}[2]{\par\bigskip\phantomsection\begin{center}#2\end{center}\addcontentsline{toc}{section}{#1}\medskip}
+\newcommand{\spaced}[1]{\textls[180]{#1}}
+
+\begin{document}
+
+\frontmatter
+% --- front matter (PDF 6 half-title, 8 title page, 10 Forord, 12 Indhold) as drafted from the layer: the title page
+%     and the Indhold are to be set in their printed form by patch after they are read at the image ---
+% --- p. III ---
+\thispagestyle{empty}\opage{III}\vspace*{5cm}
+\begin{center}{\Large FORMEL LOGIK}\end{center}
+\clearpage
+
+% --- p. V ---
+% the title page (PDF 8); not transcribed: the pencil date "1843-" after the name and the library's perforation stamp
+\begin{titlepage}\centering\opage{V}
+\vspace*{1cm}
+{\large HARALD HØFFDING}\par\medskip
+\rule{3cm}{0.4pt}\par\vspace{1.5cm}
+{\Huge FORMEL LOGIK}\par\bigskip
+{\large TIL BRUG VED FORELÆSNINGER}\par\vspace{1.2cm}
+\textit{FEMTE OMARBEJDEDE UDGAVE}\par
+\vspace{2cm}
+% [the publisher's device]
+\vspace{3cm}
+KJØBENHAVN OG KRISTIANIA\par
+GYLDENDALSKE BOGHANDEL\par
+NORDISK FORLAG\par\medskip
+\rule{1.5cm}{0.4pt}\par\medskip
+{\small FORLAGETS BOGTRYKKERI}\par\medskip
+1907
+\end{titlepage}
+% --- p. VII ---
+\opage{VII}%
+
+\chapter*{FORORD TIL FEMTE UDGAVE}
+
+
+Dette Omrids af Logiken følger i Fremstillingsmaade
+den af \textsc{Leibniz}, \textsc{Boole} og \textsc{Jevons} opstillede Identitets- og
+Indholdslogik. Ved gentagen Syslen med denne Fremstillingsmaade
+og Anvendelse af den ved min Undervisning
+er jeg bleven bestyrket i, at den baade tager nærmere
+Sigte paa den væsentlige Side ved vor Tænken, og at den
+% PRINTED AS IS: »pædagisk« (for pædagogisk)
+ved sin Simpelhed og Klarhed egner sig bedre til pædagisk
+Brug end den sædvanlige Fremstillingsmaade. ---
+
+I nærværende femte Udgave har jeg foretaget en gennemgaaende
+Omarbejdelse, støttet til de Synsmaader, jeg
+har udviklet i min Afhandling \textit{Det psykologiske Grundlag
+for logiske Domme} (Videnskabernes Selskabs Skrifter. 6.
+Række) og i Afhandlingen om Begrebet Analogi (Mind
+1905, paa Dansk i anden Række af mine „Mindre Arbejder“).
+Jeg har tillige kunnet gøre Brug af nogle værdifulde
+kritiske Bemærkninger fra en af mine tidligere Tilhørere
+og fra Dr. \textsc{Anton Thomsen}.
+
+\textit{December 1906.}
+
+\hfill\textbf{Harald Høffding.}
+
+% not transcribed: the accession stamp "50811" and the dealer's stamp "Dec. 14. 1907. Stechert"
+
+% --- p. IX ---
+\chapter*{\opage{IX}INDHOLDSFORTEGNELSE}
+\begin{small}
+
+
+\ix{0em}{\textbf{I. Syntese og Analyse.}}{1}
+\par\noindent\textbf{II. Analyse af Anskuelser:} Begrebs- og Domsdannelse.
+\ix{1em}{A. Begrebsdannelse}{5}% the layer: "Begrebsdannelse ..." (a stop before the leader not certain)
+\ix{1em}{B. Begrebsindhold og Begrebsomfang.}{8}
+\ix{1em}{C. Dommes Dannelse og Formulering.}{11}% head p. 11: "C. Dommens Dannelse og Formulering."
+\ix{1em}{D. Sekundære Domme.}{18}
+\par\noindent\textbf{III. Analyse af Domme:} Slutning.
+\ix{1em}{A. De logiske Grundsætninger}{23}
+\ix{1em}{B. Slutninger}{28}
+\ix{2em}{a. Direkte Slutning}{29}
+\ix{2em}{b. Indirekte Slutning.}{34}
+\ix{3em}{α. Indirekte Slutning ved ren Deduktion}{35}% head p. 35: "α. Indirekte Slutning som ren Deduktion."
+\ix{3em}{β. Indirekte Slutning som Forbindelse af Induktion og Deduktion}{38}
+\par\noindent\textbf{Tillæg:}
+\ix{1em}{1. Mill’s Induktionsmetoder}{42}% head p. 42: "1. Mill’s induktive Metoder."
+\ix{1em}{2. Analogi og Analogislutning}{46}
+\end{small}
+\clearpage
+
+\mainmatter
+% notatex.py applied
+% heads.py applied
+
+% --- p. 1 ---
+\opage{1}\chaphead{I}{SYNTESE OG ANALYSE}{}
+
+
+1. At tænke er at sammenligne, at finde Forskel og Lighed.
+Under forskellige Former og i forskellige Grader ytrer en
+saadan Sammenlignen sig i al Fornemmen og Forestillen, i al
+Iagttagelse og Forestillingsforbindelse. Ja, enhver Bevidsthedstilstand
+er betinget ved de Forskelle og Ligheder, der findes
+indenfor den og i dens Forhold til andre Bevidsthedstilstande.
+Lyst og Smerte betinges ved en Oplevelses Forhold til vor Natur
+og vor Tilstand; at ville er at foretrække, og beror altsaa ogsaa
+paa et Forskelsforhold. I snevrere Betydning kaldes kun den
+med udtrykkelig, koncentreret (uvilkaarlig eller vilkaarlig) Opmærksomhed
+fuldbyrdede Sammenligning Tænken. En saadan
+Opmærksomhed vækkes, naar det gælder at løse en Opgave
+eller finde Midler til et Formaal. (Smlgn. Psykologi VB, 11.)
+
+Sammenligning forudsætter Energi til paa én Gang eller i
+umiddelbar Rækkefølge at kunne fastholde og sammenholde
+forskellige Elementer; kun ved saadan Sammenholden fremtræder
+Ligheden eller Forskellen. En psykisk Energi, der ytrer
+sig som Syntese, er derfor al Tænknings sidste Forudsætning.
+(Smlgn. Psykologi II, 5.)
+
+Ogsaa fra en anden Side set er Syntese Tænkningens sidste
+Forudsætning. Sammenligningen sker ved, at Opmærksomheden
+gaar fra Element til Element; men der forudsættes da, at de
+forskellige Elementer forud for Sammenligningen ere givne i
+Sammenhæng, i en Totalanskuelse. Kun paa Grundlag af en
+saadan Totalanskuelse kan Analysen, den særlige Henvendelse
+af Opmærksomheden paa de enkelte Elementer (Dele, Sider
+% --- p. 2 ---
+% running head: I. Syntese og Analyse .
+\opage{2}eller Beskaffenheder), foregaa. --- Totalanskuelsen kan være
+Sanseanskuelse, Erindringsanskuelse eller Fantasianskuelse. Der
+kan finde en Tænken Sted paa Grundlag af alle disse forskellige
+Arter af Anskuelse, og det bliver da et specielt Spørgsmaal,
+hvorledes disse forholde sig til hverandre. --- I enhver
+saadan Totalanskuelse er en Mangfoldighed af Elementer forbundne.
+
+
+Den sammenholdende og forbindende Virken, der saaledes
+fra to Sider set er Betingelse for Sammenligning, altsaa for
+Tænken, kalde vi Syntese. \textit{Al Analyse forudsætter Syntese,
+ligesom al Sammenligning gør det}.
+
+Totalanskuelser dannes fra først af uvilkaarligt, og vi holde
+saa længe som muligt fast ved dem. Kun modstræbende skride
+vi til at opløse dem. Men en anden Ordning af Elementerne
+end den, der er givet i de uvilkaarlige Anskuelser, kan være
+nødvendig, dels for at skaffe os en Oversigt over de mange
+forskellige Anskuelser, vi have, dels for at ophæve de Modsigelser,
+der kunne fremtræde indenfor samme Anskuelse eller
+i Forholdet mellem flere forskellige Anskuelser, der optræde
+samtidigt eller paa nært Hold.
+
+Medens Psykologien som Tænkningens Naturhistorie undersøger
+de faktiske Tankeprocesser, der foregaa i os, søger Logiken
+Regler og Maalestokke, efter hvilke der kan skelnes
+mellem gyldig og ugyldig Tænken. Den gyldige Tænken maa
+være den, der naar til faste og almengyldige Resultater. Ved
+et fast Resultat menes et saadant, som kan fastholdes, uden at
+den Tænkende kommer i Modsigelse med sig selv (om end
+nok saa mange Sanse-, Erindrings- og Fantasianskuelser dukke
+op); ved et \textit{almengyldigt} Resultat menes et saadant, som
+anerkendes ikke blot af den Tænkende selv, men af andre
+tænkende Væsener paa samme Udviklingstrin som hans. Den
+logiske Tænken udspringer af en Stræben efter at bevare
+Identiteten med os selv og med Alle, hvis Tænkeevne vi
+anerkende som lige med vor egen. \textit{Den gyldige Tænken er
+den, ved hvilken det er muligt at hævde saa stor Overensstemmelse
+som muligt mellem saa mange Bevidsthedselementer
+(vore egne og Andres) som muligt}. Erfaringen viser, at jo mere vi
+% --- p. 3 ---
+% running head: I. Syntese og Analyse .
+\opage{3}fastholde den herved givne Maalestok, des færre Skuffelser lide
+vi, og des tryggere Forventninger kunne vi hengive os til. ---
+
+Den logiske Tænken er i en vis Forstand ikke produktiv.
+Dens Arbejde gaar ud paa gennem Analyse og Sammenligning
+at bringe til udtrykkelig Bevidsthed, hvad der allerede er indeholdt
+i de givne Totalanskuelser, som ere den oprindelige Synteses
+Værk. Den bringer det i vore Sanse-, Erindrings- og
+Fantasianskuelser givne Indhold i nye Forbindelser, som kaldes
+% PRINTED AS IS: the semicolon before »i hvilke«
+Begreber og Domme. Af Domme kan igen drages Slutninger;
+i hvilke Forholdet mellem de i forskellige Domme indeholdte
+Begreber komme til udtrykkelig Bevidsthed; men et helt nyt
+Indhold bringer Slutningen ikke i Forhold til Dommene, saalidt
+som Domme og Begreber i Forhold til Anskuelsen. Og
+dog kan det ikke blot være et strengt, men ogsaa et betydningsfuldt
+psykisk Arbejde, der er gjort, naar Bevidsthedsindholdet
+er omsat i nye Former (fra Anskuelser til Begreber og
+Domme, og fra Domme til Slutninger), saa at nye Synteser
+kunne træde i Stedet for de første Synteser. Derved kan
+der ikke blot skaffes Oversigt og Klarhed over det hidtil Anskuede,
+men der kan ogsaa vækkes Trang og Evne til at opsøge
+og frembringe nye Anskuelser.
+
+2. \textit{Enhver} Videnskab er en Lære om gyldig Tænken paa
+sit Omraade. Den formelle Logik undersøger den gyldige
+Tænkens almindelige Former, Betingelserne for Tankens Overensstemmelse
+med sig selv, ligegyldigt hvilke Omraader Tænkningen
+bevæger sig paa. Den ser bort fra alt bestemt Indhold
+og kan derfor hente sine Exempler fra alle mulige Omraader.
+Det er jo stedse en og samme menneskelig Tanke, der arbejder,
+og der maa da være visse Gyldighedsregler, der gælde overalt.
+
+Matematiken kan ogsaa kaldes en formel Videnskab, da den
+ser bort fra Genstandenes specielle Kvaliteter og blot undersøger
+Ligheder og Forskelle mellem Figurer og Størrelser.
+Men Logiken er i endnu højere Grad formel, idet ogsaa Figurer
+og Størrelser for den er specielle Kvaliteter; den undersøger
+Lighed og Forskel i al Almindelighed, hvorsomhelst de fremtræde
+for Tænkningen. De logiske Grundsætninger danne derfor
+Forudsætninger for Matematiken som for al anden Videnskab.
+
+% --- p. 4 ---
+% running head: I. Syntese og Analyse .
+\opage{4}Den formelle Logik falder ikke sammen med Erkendelsesteorien,
+som ogsaa undertiden kaldes Logik. Hin prøver Overensstemmelsen
+mellem vore Forestillinger uden at spørge om
+disses reale Betydning. Logisk Tænkning kan øves paa Grundlag
+af Fantasianskuelser saavel som paa Grundlag af Erindrings- og
+Sanseanskuelser. Den formelle Logik gaar over til Erkendelsesteorien,
+naar dér spørges om, hvorvidt vor Tænknings Former
+og Resultater gælde for den reale Tilværelse: om der er Konsekvens
+i Tilværelsen, ligesom der er Konsekvens i, hvad Logiken
+anser for den rette Tænken. Dette Spørgsmaal kommer
+naturligt frem ved, at Tænkningen øves paa Grundlag af Anskuelser,
+den ikke selv har frembragt. I Sammenhæng hermed
+opstaar ogsaa Spørgsmaalet om Forholdet mellem Sanse-,
+Erindrings- og Fantasianskuelser, et Forhold, den formelle Logik
+lader staa hen.
+
+% --- p. 5 ---
+\opage{5}\chaphead{II}{ANALYSE AF ANSKUELSER}{DANNELSE AF BEGREBER OG DOMME}
+
+
+\sechead{A. Begrebsdannelse.}{\textbf{A. Begrebsdannelse.}}
+
+
+3. Den første Betingelse for gyldig Tænken er, at vi blive
+os tydeligt bevidste, hvad der indeholdes i de ved uvilkaarlig
+Syntese dannede Anskuelser. Dette opnaas ved Analyse, altsaa
+ved en Række af Opmærksomhedsakter (se 1). Af det Bord,
+jeg sidder ved, har jeg et Billede, der ved en uvilkaarlig
+Syntese er dannet af umiddelbare og reproducerede Syns-,
+Berørings- og Bevægelsesfornemmelser. Jeg analyserer det, naar
+jeg bemærker, at det er sort, haardt, firkantet, langt o. s. v. Et
+kemisk Stof (f. Ex. Kulsyre) bestemmer jeg ved at lægge Mærke
+til dets Udseende, dets Virkninger, dets Forekomst i Naturen,
+dets Opstaaen. I Psykologien karakteriserer jeg Bevidstheden
+ved at lægge Mærke til dens Grænsetilstande og til dens ejendommelige
+Virkemaade (se Psykologi II, 5).
+
+4. Denne Analyse støttes dels ved Sammenligning mellem
+Elementerne (Delene eller Egenskaberne) indbyrdes, dels ved
+Sammenligning mellem dem og lignende eller forskellige Elementer
+i andre Anskuelser, som reproduceres (dels i bunden,
+dels i fri Form, se Psykologi VB, 1---2). Kun derved kan det
+enkelte Elements Ejendommelighed ret fremtræde. Den enkelte
+Dels Beliggenhed og Størrelse kan kun bestemmes, naar den
+sammenholdes med andre Dele; den enkelte Egenskab maa
+sammenholdes med andre, forat den kan blive tydelig. (Jvnfr.
+Forholdsloven. Psykologi VA, 5; D, 5). Ofte kan et Element
+kun skelnes, naar det er forekommet i en anden Sammenhæng,
+% --- p. 6 ---
+% running head: II . Analyse af Anskuelser .
+\opage{6}saa at en Genkendelse kan ske. Bordets Farve og Form lægger
+jeg snarere Mærke til, naar jeg har set samme Farve med anden
+Form og samme Form med anden Farve. Denne Genkendelse
+udtrykkes ved, at jeg giver Egenskaberne Navne. Kalder jeg
+Bordet firkantet, vil det sige, at jeg genkender en Form, jeg
+har truffet i andre Anskuelsesbilleder. Naar Newton kaldte den
+Kraft, der holder Planeterne i Nærheden af Solen, Tiltrækning,
+vilde han derved blot betegne, at det er den samme
+Kraft, som fører den udslyngede Sten tilbage til Jorden.
+
+Analysen støtter sig saaledes til en Syntese, der virker som
+Hjælpeproces. Da allerede Anskuelse og Sammenligning forudsætte
+Syntese (1), se vi, hvorledes Analyse og Syntese staa i
+stadig Vexelvirkning.
+
+5. Have vi saa fundet de Elementer, der indeholdes i den
+givne Anskuelse, gælder det at forbinde og ordne dem saaledes,
+at vi faa en samlet Karakteristik af det givne Indhold. Der
+maa da igen foretages en Sammenfatten, en Syntese; først
+derved afsluttes hele den Proces, der fører til Opstilling af \textit{et
+Begreb}.
+
+Fra den blotte Forestilling, der kun er Reproduktion af en
+given Anskuelse (i simpleste Tilfælde kun af en Fornemmelse),
+adskiller Begrebet sig ved den gennem Vexelvirkningen af
+Analyse og Syntese vundne Klarhed og Tydelighed. Et Begreb
+er en Forestilling, hvis Indhold vi ere blevne os klart og tydeligt
+bevidst, saa at det ikke ændres ved den forskellige Sammenhæng,
+i hvilken det forekommer. Vor Bevidsthed kan nu paa
+dette Punkt bevare sin Identitet med sig selv, og tilfældige
+Forestillingsassociationer kunne hindres fra at gribe ind. Derved
+bliver det tillige muligt, at flere Individer kunne tænke i
+Forening: kun naar de hvert for sig have fæstnet deres Forestillinger,
+kunne de til samme Ord knytte de samme Forestillinger.
+
+
+\textit{Et Begreb er altsaa en (for samme Individ) fast og (for
+de forskellige tænkende Individer) almengyldig Forestilling}.
+--- Definitionen (Begrebets Fastsættelse, Begrebsbestemmelsen)
+bestaar væsentligt i en Afgrænsning af Forestillingernes Indhold.
+Den søger at reducere dette til det mindst mulige ved at ude%
+% --- p. 7 ---
+% running head: A. Begrebsdannelse .
+\opage{7}lade de Elementer, som ikke ere nødvendige til at skelne det
+ene Forestillingsindhold fra det andet.
+
+Et Begreb kan være dannet paa Grundlag af en enkelt
+Anskuelse, eller paa Grundlag af flere forskellige Anskuelser
+af samme Fænomen (Ting, Person, Begivenhed, Forhold), eller
+paa Grundlag af flere Anskuelser, der have forskellige Fænomener
+til Genstand. I de to første Tilfælde kaldes Begrebet
+et \textit{Individualbegreb}, i det sidste Tilfælde et Almenbegreb.
+(Smlgn. Psykologi VB, 9.) Dannes Individualbegrebet paa Grundlag
+af en enkelt Anskuelse, kaldes det \textit{konkret}; dannes det
+paa Grundlag af flere forskellige Anskuelser, kaldes det \textit{typisk}.
+Almenbegreber kunne være af lavere eller højere Grad, alt
+eftersom de staa umiddelbar Anskuelse nærmere eller fjernere;
+hine kaldes \textit{Artsbegreber}, disse \textit{Slægtsbegreber}. Hvad der i en
+Henseende er Art, kan i en anden Henseende være Slægt, og
+omvendt.
+
+Begrebets \textit{Omfang} er Summen af de Anskuelser, for hvilke
+det gælder; Begrebets Indhold er de Kendemærker (Egenskaber
+eller Dele), som ere fundne ved Analyse af de givne
+Anskuelser.
+
+Hvor flere forskellige Anskuelser ligge til Grund, altsaa
+ved typiske og almene Begreber, behøver den Lighed, der
+findes mellem de enkelte Anskuelsesbilleder, kun at være Forholdslighed
+(Analogi): det vil være Forholdet mellem Delene
+eller Egenskaberne, der er ligt, ikke selve de enkelte Dele eller
+Egenskaber. Ved Individualbegrebet om et bestemt Menneske,
+der skal gælde for det baade som ungt, som voxent og som
+gammelt, er Ligheden, hvorpaa Begrebet bygger, Forholdslighed.
+Ligeledes ved Begrebet Hest, Begrebet Hvirveldyr o. s. v.
+Begrebet udtrykker Loven for Delenes eller Egenskabernes
+indbyrdes Forhold. Kun hvor Begrebet angiver et ganske enkelt
+Kendemærke (som f. Eks. Mærket paa Kofferter, der indskrives
+fra København til London), kan Dækningslighed eller Kvalitetslighed
+være tilstede. Hvor dette ikke er Tilfældet, er det kun
+ved Analogiens Hjælp, at Bevidstheden kan gaa fra Exempel til
+Exempel med Bevarelse af sin Identitet med sig selv. (Smlgn.
+om Dæknings-, Kvalitets- og Forholdslighed Psykologi VB, 8.)
+% --- p. 8 ---
+% running head: II . Analyse af Anskuelser .
+\opage{8}Det simpleste og klareste Exempel lægges til Grund, maaske
+blot i skematisk Form, d. v. s. med Udeladelse af alle undværlige
+Elementer. Begrebet er en Anvisning til at foretage en
+Tankebevægelse gennem en Række af Anskuelser. Om den
+kan fuldføres, beror paa, om Begrebet er dannet paa Grundlag
+af tilstrækkeligt mange og tilstrækkeligt fuldstændige Anskuelser.
+Hvor Anskuelsesindholdet er uudtømmeligt, bliver Definitionen
+kun en Hypotese, der kan være nødvendig til foreløbig Oversigt,
+men maa finde sin Bekræftelse ved fortsat Analyse.
+
+6. Begrebsdannelsen sker ved, at en given Anskuelses Elementer
+ses i deres indbyrdes Forhold og i Forhold til Elementerne
+i andre Anskuelser, og Begrebsbestemmelsen sker
+ved en Afgrænsning af det Indhold, der er fundet ved Analyse.
+\textit{Ethvert Begreb udtrykker derfor et Forhold}. Jeg bliver
+mig Elementerne i en Anskuelses Indhold bevidst ved at betragte
+dem i deres Forskel og Lighed dels overfor hverandre
+indbyrdes, dels overfor Elementer i andre Anskuelser. Ethvert
+Begreb maa derfor defineres i Forhold til andre Begreber.
+En Definition maa ændres, dels naar Anskuelsesindholdet
+ændres, dels naar de nærmest liggende Begreber ændres.
+Der er derfor en stadig Vexelvirkning mellem Begreb og Anskuelse
+og mellem Definition og Klassifikation. Begrebet kemisk
+Sammensætning ændredes, da Boyle paaviste, hvorledes der
+ved Sammensætning af elementære Stoffer kan opstaa et Stof
+med andre Egenskaber end disse; og derved blev det fremdeles
+muligt at skelne skarpt mellem kemisk Sammenhæng
+og mekanisk Blanding. Rousseau’s Paavisning af Følelseslivets
+Ejendommelighed førte til en ny Inddeling af Psykologien.
+
+Kan man ikke paavise Indholdet af et Begreb, der danner
+Grænse for et givet Begreb, danner man foreløbigt et negativt
+Begreb (non $A$ som Grænse for $A$). Se nedenfor: 8.
+
+\sechead{B. Begrebsindhold og Begrebsomfang.}{\textbf{B. Begrebsindhold og Begrebsomfang.}}
+
+
+7. \textit{Begrebers Indhold og Omfang} (5) \textit{staa i omvendt Forhold
+til hinanden}. Ti jo flere forskellige Anskuelser, der ligge
+til Grund ved Begrebsdannelsen, des færre Kendemærker kunne
+% --- p. 9 ---
+% running head: B. Begrebsindhold og Begrebsomfang .
+\opage{9}optages i Begrebets Indhold. Jo flere forskellige Anskuelser
+et Begreb skal gælde for, des færre Egenskaber kan det udsige
+om dem. Saaledes har det typiske Individualbegreb større
+Omfang, men mindre Indhold end et tilsvarende konkret Individualbegreb;
+et Almenbegreb har større Omfang, men mindre
+Indhold end et Individualbegreb, og paa samme Maade gaar det
+med Arts- og Slægtsbegreber i Forhold til hinanden. Et Begreb
+kaldes lavere i Forhold til et andet, naar det har mindre Omfang,
+men større Indhold, --- højere, naar det har større Omfang,
+men mindre Indhold. Saaledes er Begrebet Menneske
+højere i Forhold til Begrebet Neger: det omfatter flere Individer
+end dette, men det kan ikke angive saa mange Kendemærker
+som dette.
+
+Sætningen om det omvendte Forhold mellem Omfang og
+Indhold gælder kun, naar vi sammenligne Begreber, der ligge
+i samme Række, d. v. s. naar de finde Anvendelse indenfor en
+og samme Gruppe af Anskuelser og Kendemærker, uden dog
+at være sideordnede. Den gælder ikke for to sideordnede Artsbegreber;
+ti en Arts Omfang kan udvides eller indskrænkes,
+uden at dens Indhold forminskes eller forøges. Fordi der er
+flere Spurve end Ørne i Verden, behøver Begrebet Spurv
+ikke at have mindre Indhold end Begrebet Ørn. Begrebet
+Fugl har derimod større Omfang, men mindre Indhold end
+begge de to nævnte Begreber. Andre Exempler paa Begreber,
+der ligge i samme Række, ere: Neger --- Menneske --- levende
+Væsen; Had --- Følelse --- Bevidsthedselement; Kvadrat --- Rektangel
+--- Firkant --- retliniet Figur --- Figur.
+
+Det maa tillige bemærkes, at vi ikke altid tænke et Begreb
+med alle dets Kendemærker, men kun med dem, der ere nødvendige
+for at skelne det fra de nærmest liggende Begreber.
+Vi lade os nøje med at definere Mennesket som Fornuftvæsen,
+naar det blot gælder om at skelne Mennesket fra Dyret. Loven
+om det omvendte Forhold mellem Indhold og Omfang gælder
+naturligvis kun, naar vi tage Hensyn til hele Indholdet.
+
+8. \textit{Negative Begreber} dannes, naar det ved Forsøg paa
+Definition viser sig, at der er en Grænse for et Begrebs Indhold
+og Omfang, uden at man foreløbigt kan angive positive
+% --- p. 10 ---
+% running head: II . Analyse af Anskuelser .
+\opage{10}Kendemærker for det, der ligger paa den anden Side af Grænsen.
+Ved Klassifikationen maa vi da lade os nøje med at opføre
+et Begreb med negtende Kendemærker: non $A$ som Grænse
+for $A$. (Denne Betegnelse minder om de i 5 omtalte Begreber,
+hvis eneste Indhold er et simpelt Mærke.) Klassifikationernes
+Historie viser, at man ofte foreløbigt maa danne Grupper uden
+positive Kendemærker og overlade til den senere Forsken at
+finde saadanne, hvilket da vil føre til en videre Inddeling af
+den Mangfoldighed, der maaske indbefattes i det negative Begreb.
+Aristoteles inddelte Dyrene i fornuftige og ufornuftige,
+og de ufornuftige igen i dem, der have (rødt) Blod, og dem, der
+ikke have (rødt) Blod. Ofte kan et negativt Begreb skjules
+under en positiv Benævnelse; saaledes kunde Linné for sin
+sjette Dyreklasse, som han kaldte Ormene, ikke anføre andre
+Kendemærker, end at de hverken vare Pattedyr, Fugle, Amfibier,
+Fisk eller Insekter. Senere inddelte Lamarck Dyrene i
+Hvirveldyr og Hvirvelløse, og først Cuvier fandt positive
+Kendemærker for og en positiv Inddeling af de Hvirvelløse.
+--- Negative Begreber kunne altsaa have den Betydning at markere
+foreløbige Grænser under Forskningens Udvikling.
+
+Forholdet mellem to negative Begrebers Indhold er det
+omvendte af Forholdet mellem de to tilsvarende positive Begrebers
+Indhold. Begrebet „levende Væsen“ har mindre Indhold
+end Begrebet „Menneske“, men Begrebet „Ikke-levende“ har
+større Indhold end Begrebet „Ikke-Menneske“. Altsaa $A < B$,
+men $a > b$ (naar de smaa Bogstaver betegne de negative Begreber).
+--- Det Tilsvarende gælder for Omfanget. Begrebet
+„levende Væsen“ har større Omfang end Begrebet „Menneske“,
+men Begrebet „Ikke-levende“ har mindre Omfang end Begrebet
+„Ikke-Menneske“. $A > B$, men $a < b$. --- De højere Begrebers
+Negationer have større Indhold, men mindre Omfang end de
+lavere Begrebers Negationer.
+
+9. Ved Brugen af Ordene „højere“ og „lavere“ er der taget
+Hensyn til Begrebernes Omfang, og den ældre Logik har
+idethele lagt overvejende Vægt paa denne Side af Begrebet.
+Og dog er det Indholdet, der først og især spiller en Rolle
+% --- p. 11 ---
+% running head: B. Begrebsindhold og Begrebsomfang .
+\opage{11}ved Tænkningen. Det maa først afgøres, hvilke Kendemærker
+der skulle optages i Begrebet, før det kan afgøres, i hvor
+mange forskellige Tilfælde disse Kendemærker genfindes.
+Dette hænger sammen med, at vi fra først af danne vore Begreber
+paa Grundlag af Anskuelse; naar vi gaa strengt metodisk
+frem, maa vi derfor begynde med konkrete Individualbegreber.
+Det staar fra først af ubestemt, hvor stort Omfanget
+kan blive, --- om vi kunne danne typiske og almene Begreber.
+Det er altsaa Indholdet, vi begynde med, naar vi gaa logisk
+frem. --- Psykologien lærer os ganske vist, at Kunsten netop
+kan være at opfatte det konkret Individuelle i dets hele Ejendommelighed,
+og at en vag Opfattelse af det Enkelte forleder
+til forhastet Generalisation, saa at den Udvikling, vore Forestillinger
+maa gennemgaa, fra en væsentlig Side set bestaar i
+en Individualisering og Specialisering. (Psykologi VB, 9b.) Men
+det viser kun, at den logiske Lære om den gyldige Tænken er
+forskellig fra den psykologiske Lære om den faktiske Tænken.
+
+\sechead{C. Dommens Dannelse og Formulering.}{\textbf{C. Dommens Dannelse og Formulering.}}
+
+
+10. Domsdannelse og Begrebsdannelse kunne ikke skilles
+fra hinanden, men ere to Sider af samme Tankeproces. Ogsaa
+Dommen dannes, hvor den dannes fra først af, ved Analyse
+af Anskuelse. Medens Analysen ved Begrebsdannelsen gaar ud
+paa Fremhæven og Udskillen af enkelte Elementer, der komme
+til at udgøre Begrebets Indhold, gaar den ved Domsdannelsen
+ud paa at bestemme Forholdet mellem de i Anskuelsen givne
+Elementer. Men til et tydeligt Begreb hører ogsaa Bestemmelsen
+af dette Forhold, og selve Opstillingen, Definitionen
+af Begrebet, sker ved en Dom, idet det enkelte Begreb kun
+kan bestemmes ved sit Forhold til andre Begreber. (Smlgn. Forholdet
+mellem Definition og Klassifikation: 6. 8.) Den hjælpende
+Syntese (4) spiller en større Rolle ved Domsdannelsen end
+ved Begrebsdannelsen, da Opfattelsen af det indbyrdes Forhold
+mellem Anskuelsens Elementer saavel som af Anskuelsens Forhold
+til andre Anskuelser forudsætter mere udpræget Sammenholden
+med Noget, som ikke umiddelbart er givet.
+
+% --- p. 12 ---
+% running head: II . Analyse af Anskuelser .
+\opage{12}En Dom er en \textit{fast og almengyldig Forbindelse af Begreber}.
+(Smlgn. 5.)
+
+Efter Sagnet skal Newton ved Synet af et faldende Æble
+være kommen paa den Tanke, at Tyngden maatte virke i hele
+Verdensrummet, altsaa paa Maanen i Forhold til Jorden og paa
+Planeterne i Forhold til Solen, og af det saaledes opstaaede
+Anskuelsesbillede har han uddraget den Dom, som han senere
+søgte at bevise: Planetbevægelsen er en Faldbevægelse. --- Siger
+jeg: denne Mand er god! --- udledes denne Dom (naar jeg
+fælder den paa første Haand) af mine Sanse- og Erindringsanskuelser
+af Manden og hans Færd, i hvilken jeg finder Egenskaben
+„god“ (som jeg kender fra andre Anskuelser, se 4).
+
+Ved et Bevis for Dommens Gyldighed maa man gaa Slutningens
+Vej, gennem Induktioner og Deduktioner. Forholdet
+mellem Anskuelse og Dom er ganske vist analogt med Forholdet
+mellem Grund og Følge, men er ikke saa fuldt og klart
+bevidst, som dette kan være.
+
+Denne Analogi finder ogsaa Sted i den Henseende, at ligesom
+Følgen kun indeholder, hvad der allerede indeholdtes i
+Grunden, saaledes bringer Dommen ikke noget helt nyt Indhold,
+men kun en ny, mere bestemt og bevidst Form for det
+i Anskuelsen givne Indhold.
+
+11. Det Forhold, Dommen udsiger som gældende mellem
+to Begreber (eller Begrebselementer), kan udtrykkes paa forskellig
+Maade. Man kan holde sig til \textit{den sædvanlige sproglige
+Udtryksmaade}, hvor det ene Begreb eller Element (Prædikatet)
+henføres til det andet (Subjektet) ved Hjælp af Ordet
+„er“ (Kopula). Eller man kan holde sig til, at det ene Begreb
+(Prædikatsbegrebet) har et større Omfang end det andet (Subjektsbegrebet),
+saaledes at dette indbefattes i (subsumeres under)
+hint. Dette \textit{Subsumptionsforhold} kan man da anskueliggøre
+ved geometriske Figurer, saa at f. Ex. Subjektet fremstilles som
+en mindre Cirkel inde i en større, der betegner Prædikatet.
+(En analog Fremstillingsmaade kunde anvendes med Hensyn til
+Forholdet mellem Begrebernes Indhold, saa at Prædikatsbegrebet
+udtryktes som en lille Cirkel inde i Subjektsbegrebets større
+Cirkel. Denne Fremstillingsmaade er dog aldrig bleven forsøgt.)
+% --- p. 13 ---
+% running head: C. Dommens Dannelse og Formulering .
+\opage{13}Eller man kan formulere Dommen som Udtryk for \textit{et Identitetsforhold}
+mellem to Begreber, altsaa som en Ligning. Denne
+Udtryksmaade minder om Algebra, ligesom den forrige om
+Geometri.
+
+Men skønt Dommen kan minde baade om Grammatik,
+Geometri og Algebra, er den dog i sig selv uafhængig af disse
+Udtryksmaader, hvad der ses af, at Ord, Figurer eller Tegn
+maa vælges efter Tankeforholdet og bestemmes ved dette. En
+nærmere Paavisning heraf vil tjene til Belysning af Tankens
+Forhold til den Maade, den udtrykkes paa.
+
+12. Det logiske Subjekt er det mere ubestemte Begreb,
+hvorfra Tankebevægelsen ved Domsdannelsen gaar ud, og
+hvorom den drejer sig (Udgangsforestillingen); det logiske Prædikat
+er det Begreb, i hvilket Tankebevægelsen ender (Slutningsforestillingen),
+fordi Subjektet i det har fundet sin nærmere
+Bestemmelse. Det danske Sprog forbinder dem ved Ordet „er“.
+Men den grammatiske Sætning er ikke altid en simpel Formulering
+af et saadant Begrebsforhold.
+
+a) \textit{En grammatisk Sætning kan paa én Gang indeholde
+flere logiske Domme}. Sætningen „Denne Sofa er haard“ kan
+indeholde tre Domme, idet Udsagnet kan stille denne Sofa i
+Modsætning til en anden Sofa, eller betegne den paapegede
+Genstand som en Sofa, eller blot udsige Haardheden om den.
+„Gustav Adolf faldt ved Lützen den 6. November 1632“ udsiger
+ikke blot Kongens Fald, men Tid og Sted. b) Denne
+Flerhed af Domme i en og samme Sætning hænger sammen
+med, at \textit{det grammatiske Prædikat ikke altid er det logiske
+Prædikat}. Man vil kunne finde det logiske Prædikat ved at
+bemærke, hvor Tonen ligger. Siges „\textit{denne} Sofa er haard“,
+ligger det logiske Prædikat i „denne“, og Dommen bliver: „den
+Sofa, som er haard, er denne her.“ „\textit{Alle} Gæsterne ere komne“:
+her ligger det logiske Prædikat i „Alle“; det er det Nye. „\textit{Da}
+sprang Krudttaarnet“: det logiske Prædikat er her Tidspunktet:
+man vidste i Forvejen, at Krudttaarnet var sprunget i Luften.
+Ved Sætninger, der ikke udtales mundtligt, og hvor Betoningen
+ikke angives, maa Fortolkning ud af hele Sammenhængen finde
+det logiske Prædikat. c) \textit{Der gives Sætninger, i hvilke det}
+% --- p. 14 ---
+% running head: II . Analyse af Anskuelser .
+% PRINTED AS IS: »af« printed twice (line end and the next line: »af / af sig selv«)
+\opage{14}\textit{logiske Subjekt slet ikke er udtrykt}, fordi det forstaar sig af
+af sig selv eller ligger i Situationen. Saadanne Prædikatsdomme
+have vi i de simple Udraab, som „Herligt!“ „Bravo!“, eller i
+Meldinger som „Kongen!“ --- Herhen høre ogsaa de ubestemt
+beskrivende Sætninger, i hvilke blot en Tilstand eller en Virksomhed
+angives: „Det trækker.“ „Det gaar tilbage.“ „Der tales
+om ....“ Udgangsforestillingen er her ubestemt og kan ikke
+formuleres, eller den er selvfølgelig, og Interessen gaar ganske
+op i det logiske Prædikat.
+
+Betoningens Betydning og Tilstedeværelsen af Prædikatsdomme
+viser, at den psykologiske Interesse er knyttet til det
+logiske Prædikat, som bringer det Nye, medens det logiske
+Subjekt staar som foreløbigt bekendt, selvom det trænger til
+nærmere Bestemmelse. Skal der naas en klar Bevidsthed om
+det Forhold, Dommen hævder, maa denne dog formuleres saaledes,
+at baade Subjekt og Prædikat bestemmes udtrykkeligt;
+kun da kan Forholdet mellem dem blive klart, det Forhold,
+hvortil den logiske Interesse egentligt er knyttet. Kun naar
+dette Forhold er tydeligt angivet, kan Dommen virkeligt være
+en fast og almengyldig Forbindelse af Begreber. Logisk set er
+det derfor tilsidst uden Betydning, hvad der er Udgangsforestilling,
+og hvad der er Slutningsforestilling, og hvorledes vi
+komme fra hin til denne. Tidsforholdet taber sin Betydning.
+Den grammatiske Formulering staar i denne Henseende nærmere
+ved Psykologien end ved Logiken. De to følgende Formuleringer
+have derimod en rent logisk Karakter.
+
+13. Naar man, som den ældre Logik ligefra Aristoteles af,
+lægger Begrebernes Omfang til Grund, betyder Dommen, at
+den Gruppe af Fænomener, som det ene Begreb (Subjektsbegrebet)
+gælder for, er en Del af den Gruppe af Fænomener,
+det andet Begreb (Prædikatsbegrebet) gælder for. Dommen udtrykker
+altsaa \textit{et Underordningsforhold (Subsumptionsforhold)}.
+At Negrene ere Mennesker vil sige, at Gruppen Negre er mindre
+end Gruppen Mennesker og indbefattes i denne. Man kan anskueliggøre
+dette Forhold ved at fremstille det højere Begreb som
+en større Cirkel, indenfor hvis Omkreds det andet Begreb fremstilles
+som en mindre Cirkel. At $A$ er $B$, betyder altsaa $A < B$.
+
+% --- p. 15 ---
+% running head: C. Dommens Dannelse og Formulering .
+\opage{15}Ad denne Vej vil man kunne give en gyldig Fremstilling
+af Logiken; kun saadanne Domme, i hvilke de to Begreber
+ere absolut identiske ($A = B$), vil man ikke kunne finde Plads
+til, og de forekomme heller ikke hos Aristoteles. Geometrisk
+vilde vi her kun have en eneste Cirkel og ikke kunne se, at
+den betyder to Begrebers Dækning. ---
+
+Fordi man gaar ud fra Begrebernes Omfang, behøver man dog
+ikke at opfatte Dommen som Subsumption. I $A < B$ ligger nemlig,
+at $A$ er identisk med en Del af $B$’s Omfang. Negrene er en Del
+af Menneskeheden. Lad nu $n$ betyde „nogle“, saa er $A = nB$. For
+$n = 1$ (hvor 1 betyder det hele Indbegreb i Modsætning til en
+Del eller nogle) faas $A = B$. --- Herved fremstilles Dommen
+altsaa som Udtryk for et Identitetsforhold mellem to Omfang.
+
+Men det ligger da nær at gaa et Skridt videre. Naar $A$ er
+$B$, er $A$’s Omfang maaske kun en Del af $B$’s Omfang; men
+i hvert Tilfælde maa $B$’s hele Indhold gælde for $A$. Og da det
+nu er Begrebsindholdet, Tænkningen først vender sig imod,
+medens Omfangets Bestemmelse er sekundær (9), vil det være
+naturligt at lægge Begrebernes Indhold til Grund. Dette fører
+os til den tredie Fremstillingsmaade, der udtrykker Dommen
+ved et Identitetsforhold mellem Begrebsindhold.
+
+14. Ligesom Trangen til at danne Begreber udspringer af
+Bevidsthedens Trang til at bevare sin Overensstemmelse, om
+muligt sin Identitet med sig selv trods Bevidsthedsindholdets
+Mangfoldighed og Skiften, saaledes vil der ogsaa være en naturlig
+Trang til at bevare Identiteten, naar vi forbinde et Begreb med
+et andet i en Dom. Jo mere de to Begreber staa udvortes og
+fremmede for hinanden, des mindre vil Bevidstheden kunne
+bevare sin Enhed, --- des mere vil Forbindelsen staa som paatvungen,
+tilsidst som en blot Ordforbindelse. Jo mere vi derimod
+kunne se Forholdet mellem de to Begreber som et
+Identitetsforhold, des mere naturlig og klar vil Forbindelsen
+være. Naar vi nærmere bestemme de forskellige Grader eller
+Arter af Identitet, som kunne være tilstede, ville vi kunne
+hævde den Paastand, at \textit{Dommen udtrykker et Identitetsforhold}.
+--- Leibniz og (i det 19. Aarhundrede) Boole og Jevons have
+grundlagt denne Fremstillingsmaade.
+
+% --- p. 16 ---
+% running head: II . Analyse af Anskuelser .
+\opage{16}Der gives tre forskellige Identitetsforhold.
+
+a) Prædikatsbegrebets Indhold kan være en nærmere Bestemmelse
+af Subjektsbegrebets Indhold, uden at de to Begreber
+falde ganske sammen. Naar jeg f. Ex. ved at betragte en Mands
+Adfærd føres til at udtale den Dom „Manden er god“, er Begrebet
+„god“ en nærmere Bestemmelse ved Individualbegrebet
+„Manden“. Godheden findes i Mandens Adfærd, og kun fordi
+den er der, udsiges Dommen. I Benævnelsen „god“ ligger et
+Henblik (ved hjælpende Syntese se 4 og 10) til andre Fænomener,
+som have frembudt en lignende Egenskab. Ved Dommen
+„Marsbanen er en Ellipse“ udtalte Kepler, efter en Analyse
+af Tycho Brahes Iagttagelser, en bestemtere Karakteristik
+af Planetens Bane, end man hidtil havde havt; ved Benævnelsen
+„Ellipse“ udtryktes en Genkendelse (formedelst hjælpende
+Syntese) af en Figur, der var bekendt fra Læren om
+Keglesnittene. --- Denne Art Domme kan formuleres saaledes:
+$A = AB$. Lighedstegnet betyder her Mulighed af Substitution,
+d. v. s. af at sætte det ene Udtryk i Stedet for det andet. Sammenstillingen
+af Bogstaverne ($AB$) betyder et Begreb, hvis
+Indhold er Summen af to Begrebers ($A$’s og $B$’s) Indhold,
+altsaa en Begrebskombination. $A = AB$ betyder altsaa, at naar
+vi have $A$, have vi et rigere Indhold, end vi tænkte. $A$ forekommer
+ikke uden $B$, men $B$ kan forekomme uden $A$. Der
+er andre Ellipser foruden Marsbanen, og andre gode Væsener
+foruden hin Mand. $B$ har et større Omfang end $A$: $A < B$.
+--- Maaske har $A$ flere Bestemmelser end $B$, og vi have da
+$A = ABCD$ .....
+
+Et Identitetsforhold af denne Art kaldes \textit{partiel Identitet}.
+
+b) Naar ikke blot $B$ er en nærmere Bestemmelse ved $A$,
+men $A$ ogsaa viser sig at være en nærmere Bestemmelse ved
+$B$, saa at vi have baade $A = AB$ og $B = BA$, er der \textit{absolut
+Identitet} mellem $A$ og $B$. Det er ligegyldigt, i hvilken Orden
+Begreberne forekomme i en Kombination, da dette ikke forandrer
+Summen af Begrebsindholdet. Derfor er $AB = BA$.
+
+To absolut identiske Begreber ere kun lige gyldige Udtryk
+for et og samme Begrebsindhold, som kan betragtes fra to
+forskellige Sider. Exempler: „Dette Hus er mit Hjem.“ „Det
+% --- p. 17 ---
+% running head: C. Dommens Dannelse og Formulering .
+\opage{17}er Peter, der kommer“ (den Kommende = Peter). Kongen af
+England = Kejseren af Indien. Grundtvigs Fødselsaar = det
+fjerde Aar efter Oehlenschlägers Fødselsaar. Cirkelen = den
+i sig selv tilbageløbende Linie, i hvilken ethvert Punkt har
+samme Afstand fra et og samme Punkt.
+
+Medens Paavisningen af partiel Identitet kun forudsætter
+Analyse af det ene Begreb ($A$), idet det andet ($B$) indeholdes
+i det, forudsætter Paavisningen af absolut Identitet en Analyse
+af begge Begreber. Den Tankevirksomhed, ved hvilken absolut
+Identitet opdages, er altsaa mere sammensat end den, ved
+hvilken partiel Identitet opdages. En absolut Identitet forudsætter
+to partielle Identiteter ($A = AB$ og $B = BA$). Alligevel
+er der en uvilkaarlig Tilbøjelighed til at opfatte et Identitetsforhold
+som absolut, før det er prøvet fra begge Sider.
+
+c) Forholdet mellem to Begreber ($A$ og $B$) kan endeligt
+være det, at $A$ kun under visse Betingelser er partielt eller
+absolut identisk med $B$. Sætningen „Vand er flydende“, gælder
+kun, naar Varmegraden er over 0°, men ikke over 80° (Réaumur).
+--- Dette Forhold kaldes \textit{begrænset Identitet}. Det udtrykkes
+saaledes: $AC = ABC$ (begrænset partiel Identitet) eller
+$AC = BC$ (begrænset absolut Identitet). $C$ betegner her den
+Betingelse, uden hvilken Identitetsforholdet ikke gælder.
+
+Ved nærmere Undersøgelse vil det vise sig, at enhver Dom
+udtrykker begrænset Identitet (ligesom ethvert Begreb udtrykker
+et Forhold, se 6). Vi udelade Begrænsningen, hvor den ikke
+træder tydeligt frem, og hvor den ikke er af væsentlig Betydning
+for Tankegangen. Ofte behøves særegne Erfaringer, forat
+Begrænsningen skal opdages. En Tropebeboer vilde ikke mene,
+at Sætningen „Vand er flydende“ behøvede nogen Begrænsning
+(naar han ikke kalder Damp for Vand).
+
+De Domme, der udsige begrænset Identitet, forudsætte ikke
+blot en Analyse af et eller begge Begreber, men ogsaa af hele
+% PRINTED AS IS: »deres Indhold forekomme« (singular noun, plural verb)
+den større Sammenhæng, indenfor hvilken deres Indhold forekomme,
+og indenfor hvilken ogsaa Betingelserne for deres
+Identitet maa findes.
+
+% --- p. 18 ---
+% running head: II . Analyse af Anskuelser .
+\opage{18}\sechead{D. Sekundære Domme.}{\textbf{D. Sekundære Domme.}}
+
+
+15. Naar der paa Grundlag af Anskuelse er dannet en
+Dom, kan der spørges om Gyldigheden af denne Dom, --- om
+den gælder for alle Fænomener af samme Art, --- om den
+gælder ubetinget, --- om den overhovedet gælder, --- om den
+ikke skulde kunne drages i Tvivl. Naar en Dom bestemmes
+nærmere i en af disse Henseender, faa vi en Dom om den,
+altsaa en Dom i anden Potens. En saadan Dom om en Dom
+kaldes en \textit{sekundær Dom}, og i Modsætning til den kaldes den
+første Dom en primær Dom. Man har opstillet forskellige
+Klasser af sekundære Domme og været tilbøjelig til at betragte
+dem som aldeles selvstændige Arter af Domme, der ikke skulde
+kunne reduceres til hverandre. Men det vil vise sig, at deres
+Forskelligheder for en stor Del kun bero paa de sproglige
+Udtryk, og at de, naar vi holde os strengt til deres logiske
+Betydning, kunne formuleres som primære Domme. Det er
+samme Art Domme, vi have for os, hvad enten deres Subjekt
+er et enkelt Begreb eller en Dom.
+
+16. Da Anskuelse (Sansning, Erindring, Fantasi) stedse giver
+os noget Enkelt og Individuelt, vil en primær Dom kun angaa
+et enkelt Tilfælde. Tankevirksomheden opdager først et partielt,
+absolut eller begrænset Identitetsforhold mellem to Begrebers
+Indhold; senere maa det afgøres, om dette Forhold
+kan antages at gælde i flere Tilfælde, eller maaske i alle Tilfælde
+af lignende Art. I $A = AB$ er $A$ et Begreb, hvis Omfang
+er mindre end $B$’s (smlgn. 14 a). $A$ er mere individuelt end $B$.
+Undersøgelsen af, om $A$ kan gøres til et typisk eller alment
+Begreb, sker gennem en Række af Domme, i hvilke Subjektsbegrebets
+Indhold sammenlignes med andre, beslægtede Begrebers.
+Jeg maa f. Ex. undersøge, om andre Mennesker vise
+samme Adfærd som den Mand, jeg (i 14 a) kaldte god, saa at
+jeg kan opstille den Dom: „nogle Mennesker ere gode,“ eller
+maaske „alle Mennesker ere gode.“ Foretages denne Udvidelse
+af Subjektsbegrebets Omfang, bliver den Kvantitetsbestemmelse
+(nogle eller alle), der indføres, et logisk Prædikat ved Dommen,
+hvorledes den saa end udtrykkes grammatisk. En \textit{kvanti%
+% --- p. 19 ---
+% running head: D. Sekundære Domme .
+\opage{19}tativ} Dom er en Dom om, i hvor mange Tilfælde en vis given
+Dom gælder; i denne sekundære Dom er den givne Dom det
+logiske Subjekt. Grammatisk føjes Kvantitetsbestemmelsen til
+den givne Doms sproglige Subjekt (smlgn. 12: „Alle Gæsterne
+ere komne“, ɔ: de nu ankomne Gæster udgøre alle dem, der
+ventedes). --- Ofte maa dog Subjektsbegrebets Indhold forminskes,
+før Dommen kan udvides til at gælde for flere Fænomener:
+dette bestemte Menneskes Begreb har et større
+Indhold end Begreberne „nogle“ og „alle“ Mennesker.
+
+En kvantitativ Dom kan udtrykkes ved begrænset Identitet.
+Har jeg fundet, at Dommen $A = AB$ kun gælder i nogle Tilfælde,
+kan jeg betegne dette ved $CA = CAB$, idet $C$ betyder de
+for disse Tilfælde ejendommelige Egenskaber.
+
+Der er ingen Grund til at opstille kvantitative Domme som
+en særlig Art af Domme.
+
+17. Naar en Dom fremsættes som ubetinget gyldig, kaldes
+den \textit{kategorisk}; naar den fremsættes som betinget ved en
+anden Doms Gyldighed, kaldes den \textit{hypotetisk}.
+
+Ved nærmere Undersøgelse viser det sig, at enhver Dom
+kan formuleres som en hypotetisk Dom, idet der stedse vil
+kunne paavises Forudsætninger, som maa være tilstede, forat
+Dommen skal gælde. (Smlgn. 14 c.) Hvis man vil formulere
+disse Forudsætninger, kan det ske ved at opstille et begrænset
+Identitetsforhold mellem de i Dommen forbundne Begreber:
+i $AC = BC$ betegner $C$ Indbegrebet af de Forudsætninger, som
+maa være tilstede, forat $A = B$ skal gælde. Dog kan en hypotetisk
+Dom ogsaa udtrykkes paa anden Maade. Den hypotetiske
+Dom „Hvis $A$ er $B$, er $C D$“ udsiger, at Dommen „$C$ er
+$D$“ kun gælder, hvis Dommen „$A$ er $B$“ gælder. Den er altsaa
+en Dom om en Dom, en sekundær Dom. De to Domme i en
+hypotetisk Dom forholde sig som Subjekt og Prædikat i en primær
+Dom. Betegne vi nu Betingelserne for, at $A$ er $B$, ved $P$ og
+Betingelserne for, at $C$ er $D$, ved $Q$, saa udsiger hin hypotetiske
+Dom en Identitet af $P$ og $Q$: enten $P = PQ$ eller $P = Q$ eller
+$PR = PQR$ (eller $QR$), idet $R$ i sidste Tilfælde betegner de
+længere tilbage liggende Betingelser for en Identitet af $P$ og $Q$.
+
+Ofte er Forskellen mellem en kategorisk og en hypotetisk
+% --- p. 20 ---
+% running head: II . Analyse af Anskuelser .
+\opage{20}Dom rent sproglig. Sætningen: „Naar Siderne i et Triangel
+ere ligestore, ere Vinklerne det ogsaa,“ kan ogsaa udtrykkes
+saaledes: „Et ligesidet Triangel er ligevinklet.“
+
+18. De umiddelbare Domme ere positive. Der hører større
+Erfaring (flere Anskuelser) til at opstille \textit{negtende} Domme end
+til at opstille positive Domme. En negtende Dom opstilles kun,
+naar der er Anledning til at afvise en positiv Forventning.
+Naar jeg kommer ind i en Stue og siger: „Her er Ingen!“ er
+denne negtende Dom en Afvisning af en Forventning om, at
+der var Nogen derinde, og den skyldes en Sammenligning
+mellem Stuen, som den frembyder sig for mit Blik, og Stuen,
+som jeg ventede at finde den. Der viser sig at være færre
+Elementer i Iagttagelsen end i Forventningen. (Smlgn. om
+negtende Begreber: 8.) En negtende Dom er altsaa en Dom
+om en Dom, en sekundær Dom.
+
+En negtende Dom (f. Ex. $A$ er ikke $B$) kan ved nærmere
+Betragtning formuleres paa en ligesaa simpel Maade som en
+positiv Dom. Den udtrykker nemlig et Identitetsforhold (partielt
+eller absolut eller begrænset) mellem det ene Begreb og
+det andet Begrebs Negation. Lade vi Tegnet $\sim$ betyde „er ikke“,
+og betegne vi (ligesom i 8) ved smaa Bogstaver Negationerne
+af de ved de tilsvarende store Bogstaver betegnede Begreber
+(saa at f. Ex. $a$ betyder Fraværelsen af de ved $A$ betegnede
+Kendemærker), saa er, hvis $A \sim B$, $A = Ab$ og $B = Ba$. Der
+er altsaa partiel Identitet mellem $A$ og $b$, og mellem $B$ og $a$.
+$A$ og $B$ siges da at staa i \textit{kontrært Forhold} til hinanden: de
+ere uforenelige, de udelukke hinanden; – men fordi det ene
+Begreb ikke gælder, behøver det andet Begreb ikke at gælde.
+Der er flere end to Muligheder. Hvad der ikke er rødt, behøver
+derfor ikke at være blaat. Hvad der ikke er godt, behøver
+derfor ikke at være ondt. Et retvinklet Triangel er ikke
+ligesidet; men fordi et Triangel ikke er ligesidet, er det ikke
+sagt, at det er retvinklet --- $A \sim B$ kan dog undertiden betyde
+$A = b$. Exempler derpaa haves overalt, hvor der maa træffes
+Valg mellem to Muligheder. Efter den strenge stoiske Opfattelse
+var Alt ondt, hvad der ikke var godt. Forholdet mellem Position
+og Negation (Ja og Nej) er af denne Art; et Spørgs%
+% --- p. 21 ---
+% running head: D. Sekundære Domme .
+\opage{21}maal maa (naar man anerkender de Forudsætninger, under
+hvilke det stilles) besvares enten bekræftende eller benegtende.
+Negerer jeg $A$, faar jeg $a$; negerer jeg $a$, faar jeg $A$ igen; jeg
+kommer altsaa ikke ud over disse to Muligheder. Et saadant
+Forhold kaldes \textit{kontradiktorisk}. Der er da ikke blot et Modsætningsforhold,
+men et Modsigelsesforhold mellem de to Begreber.
+Ikke blot udelukke de hinanden, men naar det ene
+ikke gælder, gælder nødvendigvis det andet. Et kontradiktorisk
+Forhold er et toleddet Forhold, medens et kontrært Forhold
+er et flerleddet Forhold.
+
+Undertiden kan et Forhold, der under sædvanlige Omstændigheder
+er kontrært, under visse særlige Betingelser gaa
+over til at blive kontradiktorisk. Vi faa da $AC = bC$. Man
+maa give Stoikerne Ret i, at man under visse Betingelser
+handler ondt, hvis man ikke handler godt, f. Ex. hvis man kan
+redde et Menneske, og ikke gør det.
+
+19. Naar der overfor en given Dom kan stilles en anden
+Dom, hvis Gyldighed udelukker hins Gyldighed, idet der er et
+kontrært eller kontradiktorisk Forhold mellem de to Domme,
+--- saa bliver den givne Dom \textit{problematisk} og gør selv den
+anden Dom problematisk. De to Domme, Galilei drøfter i sine
+„Dialoger“: „Jorden bevæger sig“ – „Jorden bevæger sig ikke“,
+gjorde hinanden problematiske. I dette Exempel er Forholdet
+mellem de to Domme kontradiktorisk. Derimod have vi et
+kontrært Forhold, naar de to Domme: „Bordet er sort“ og
+„Bordet er brunt“ stilles imod hinanden; ti her er der flere
+end to Muligheder.
+
+Problematiske Domme ere sekundære. De ere egentligt en
+Art hypotetiske Domme. En Dom er problematisk, naar dens
+Gyldighed forudsætter en anden Doms Ugyldighed, og den kan
+derfor formuleres ligesom en hypotetisk Dom med negativ Forudsætning
+(altsaa $P = Pq$ o. s. v., se 17). Dog staa ved en problematisk
+Dom de to Domme mere Side om Side end ved den
+hypotetiske, hvor Forholdet ikke altid er gensidigt (uden ved
+$P = Q$). Et Problem opstaar, naar to hinanden udelukkende 
+Domme ere mulige, saa at man staar overfor et Enten---Eller.
+
+Kan der føres Bevis for en af Dommene, falder den anden
+% --- p. 22 ---
+% running head: II . Analyse af Anskuelser .
+\opage{22}bort, og den problematiske Karakter ophæves. Det Samme kan
+opnaas, naar en af Dommene gendrives. Men hvis Forholdet
+er kontrært (ikke kontradiktorisk), kan der være flere Domme,
+som stride imod den givne, og som derfor ogsaa maa skaffes
+af Vejen, hvis denne skal miste sin problematiske Karakter.
+--- En Dom, der paa en af disse Maader har mistet sin problematiske
+Karakter, kaldes apodiktisk.
+
+20. Fælles for alle sekundære Domme (de kvantitative,
+hypotetiske, negative og problematiske) er det, at den hjælpende
+Syntese, der ved en primær Dom kun er af underordnet Betydning
+(10 og 14 a), spiller en mere fremtrædende Rolle.
+Naar jeg skal bestemme det Omfang, i hvilket en Dom gælder
+(16), og de Forudsætninger, under hvilke den gælder (17), maa
+jeg udtrykkeligt sammenholde og sammenligne den med andre
+Anskuelser eller Domme. Og det Samme er nødvendigt, naar en
+Dom skal ophæves (18), og naar dens Modsætningsforhold til
+en anden Dom skal paavises (19). --- Det er dog stedse kun
+en Gradsforskel, der er mellem primære og sekundære Domme.
+Det ses af, at de kunne formuleres ganske paa samme Maade.
+
+% --- p. 23 ---
+\opage{23}\chaphead{III}{ANALYSE AF DOMME}{SLUTNINGSDANNELSE}
+
+
+\sechead{A. De logiske Grundsætninger.}{\textbf{A. De logiske Grundsætninger.}}
+
+
+21. Allerede ved Overgangen fra Anskuelse til Begreb og
+Dom gør sig, hvad enten man er sig det bevidst eller ikke,
+en Grundsætning gældende, nemlig den, at Begrebets eller
+Dommens Indhold skal svare til Anskuelsens Indhold, saa at
+hin Overgang kan betragtes som Omsætning til en anden
+Form. Ved Begrebs- og Domsdannelse frembringes der i en
+vis Forstand intet Nyt, uden netop selve den nye Form, der
+bliver af Betydning for det fortsatte aandelige Arbejde. Men
+endnu tydeligere fremtræder den samme Grundsætning ved
+Slutningen, d. v. s. ved Dannelsen af nye Domme ud af givne
+Domme. Slutsætningen (Konklusionen) skal svare til Forudsætningerne
+(Præmisserne) og kun være en Omsætning af
+deres Indhold i en ny Form. Forholdet mellem Slutsætning og
+Forudsætninger er analogt det mellem Begreb eller Dom og
+Anskuelse. Det er det Forhold, som kaldes Forholdet mellem
+\textit{Grund og Følge}. Ved Slutningsdannelsen træder dette Forhold
+tydeligt frem; derfor drøftes de logiske Grundsætninger som
+Indledning til Slutningslæren, skønt de allerede kunne spores
+i Læren om Begreb og Dom.
+
+22. Den mest almindelige Grundsætning for Tænkningen
+er, at vore Begreber og Domme skulle \textit{begrundes}, d. v. s. føres
+tilbage enten til givne Anskuelser eller til andre Begreber og
+Domme, som antages gyldige. Vore Begreber og Domme danne
+vi fra først af uvilkaarligt, og Opgaven at begrunde dem kommer
+bagefter. Logikens første Fordring er, at Begreber og
+% --- p. 24 ---
+% running head: III . Analyse af Domme .
+\opage{24}Domme skulle have deres tilstrækkelige Grund: \textit{den tilstrækkelige
+Grunds Princip} (principium rationis sufficientis). Hvor
+langt vi skulle og kunne gaa tilbage ved Begrundelsen, beror
+paa det enkelte Spørgsmaals Natur. Ofte maa vi stanse paa
+Grund af manglende Data; men i sig selv fører det nævnte
+Princip ind i en uendelig Række af Opgaver.
+
+Om der i Virkeligheden er en Grund til Alt, hvad der sker,
+er et Spørgsmaal, den formelle Logik, der kun har at gøre
+med Ordningen af vore Tanker, ikke kan afgøre. Der maa
+skelnes mellem Grund og Aarsag. Begreber og Domme have
+deres Grund i Anskuelser; Slutsætninger have deres Grund
+i Domme, der antages gyldige. Men Aarsagsforholdet antages
+at finde Sted mellem Begivenheder (i os eller udenfor os),
+der afløse hinanden i Tiden, og som ere saaledes knyttede til
+hinanden, at naar den ene indtræder, indtræder uundgaaeligt
+ogsaa den anden. Mellem Forudsætninger og Slutsætning er
+der intet Tidsforhold; denne er allerede indeholdt i („ligger i“)
+hine, selvom vi maaske ere længe om at indse det. Men ved
+Aarsagsforholdet gaar den Begivenhed, der er Aarsag, i Tiden
+forud for den, der er Virkning. Mellem Begreberne Grund og
+Følge paa den ene Side, Begreberne Aarsag og Virkning paa
+den anden Side er der en Analogi, som udtrykkes ved, at Aarsagen
+kaldes Virkningens Tilblivelsesgrund (foruden at den for
+os er Erkendelsesgrund, d. v. s. Grund til at vente den Begivenhed,
+vi kalde Virkningen). Aarsagsproblemet, som det er
+Erkendelsesteoriens, ikke den formelle Logiks Opgave at drøfte,
+angaar netop Berettigelsen af Analogien mellem vore Sætningers
+Begrundelse og Begivenhedernes Tidsfølge. --- I formel
+Logik og ren Matematik have vi kun med Grunde at gøre;
+i de reale Videnskaber (Naturvidenskab, Psykologi og Historie)
+have vi tillige med Aarsager at gøre. Forskellen mellem de
+formelle og de reale Videnskaber beror paa den Rolle, Kvalitetsforskelle
+og Tidsforskelle spille i disse sidste, medens de formelle
+% PRINTED AS IS: »Videnkaber« (for Videnskaber)
+Videnkaber se bort fra dem. (For den formelle Logik
+ere dog ogsaa Figurer og Størrelser Kvaliteter, smlgn. 2.)
+
+23. Vor Stræben efter Begrundelse kan stanse paa to
+Punkter, enten ved de Anskuelser, af hvilke vi danne de
+% --- p. 25 ---
+% running head: A. De logiske Grundsætninger .
+\opage{25}simpleste Begreber og Domme, eller ved de Grundsætninger,
+der forudsættes ved Dannelsen af Begreber og Domme og
+ved Uddragen af Slutninger. I første Tilfælde maa det undersøges,
+om vore Sanseanskuelser ikke ere illusoriske, om vore
+Erindringer ikke bedrage os, og om vi kunne og ville fastholde
+vore Fantasibilleder. I andet Tilfælde vil en fortsat Diskussion
+være umulig, naar Nogen blandt Deltagerne ikke anerkender
+de logiske Grundsætninger; disse kunne, da de forudsættes
+ved al Begrundelse, ikke selv begrundes. Den, der vilde negte
+al Begrundelses Forudsætninger, vilde stille sig selv udenfor
+al Diskussion. Vi opdage de logiske Grundsætninger ved at
+lægge Mærke til den Fremgangsmaade, der anvendes ved Dommes
+Udledning af andre Domme eller af Anskuelser. Den, der
+negter dem, maa enten paavise en anden Fremgangsmaade
+eller opgive al Diskussion.
+
+Ved Begrundelse af Domme og Opstilling af Begreber
+kunne fem Principer være nødvendige.
+
+24. \textsuperscript{1}) Identitetsprincipet: $A = A$. Dette Princip ligger allerede
+i Definitionen af et Begreb som en fast og almengyldig
+Forestilling, d. v. s. en Forestilling, der overalt, hvor den optræder,
+har det samme Indhold, altsaa kan sættes lig sig selv.
+Det ligger fremdeles i Forholdet mellem Subjekt og Prædikat
+i Dommen, naar denne formuleres som Identitet. Og det forudsættes
+ved al Slutten: af to Domme ($A = B$ og $B = C$) kan
+jeg kun udlede en tredie ($A = C$), naar de have et fælles Begreb;
+jeg kan da sætte Udtrykket for dette Begreb fra den
+ene Dom ind i den anden. Slutningen sker ved Substitution,
+og Identitet kan defineres som Substitutionsmulighed. Identiske
+Begreber maa overalt kunne sættes i Stedet for hinanden. Jeg
+har kun Ret at sætte $A = B$ (eller $A = AB$ o. s. v.), naar de
+Begreber, der forbindes ved Lighedstegnet, kun ere forskellige
+Udtryk for et og samme Indhold, saa at jeg overalt kan sætte
+det ene i Stedet for det andet.
+
+Vore virkelige Forestillinger kunne ikke nogensinde godtgøres
+at være absolut identiske. Vi kunne kun paavise en faktisk
+Dækningslighed, hvor der ingen Forskel mærkes (smlgn.
+Psykologi VB, 8. 11); men absolut Sikkerhed for Identiteten
+% --- p. 26 ---
+% running head: III . Analyse af Domme .
+\opage{26}kan ikke naas. Selv hvor vi tænke en og samme Tanke igen
+(f. Ex. gaa fra $A$ paa den ene Side af Lighedstegnet til $A$ paa
+den anden Side af Lighedstegnet), kan der være en Nuanceforskel
+i den Maade, hvorpaa vi tænke det. Ved at opstille
+Identitetsprincipet giver Logiken os en Maalestok eller et Ideal,
+hvorved vi kunne prøve vore Begrebers, Dommes og Slutningers
+Nøjagtighed og Gyldighed. Kun en Tilnærmelse i Retning
+af dette Ideal kan være mulig.
+
+25. \textsuperscript{2}) \textit{Enkelthedens Princip}: $AAA ..... = A$. Et Begrebs
+Gentagelse og Kombination med sig selv har ingen logisk Betydning,
+da dets Indhold ikke ændres derved. --- Medens Logiken
+ikke kan faa Noget ud af identiske Begrebers Kombination,
+er det anderledes i Aritmetiken: her lægges Vægt paa,
+at de gentagne Begreber forudsætte ligesaa mange forskellige
+Tankeakter, og at Talbegrebet derfor ligesaa vel finder Anvendelse
+ved Rækken $AAA$ .... som ved Rækken $ABC$ .... Ved Talbegrebets
+Anvendelse kan det være ligegyldigt, om Enerne have
+samme eller forskelligt Indhold. --- For Psykologien er et Bevidsthedselements
+Gentagelse af stor Betydning; den gør Genkendelse
+mulig; den har Tendens til at svække Følelsen, men
+kan paa den anden Side selv være Udtryk for stærk Følelse,
+idet vi f. Ex. gentage Ordene, forat Følelsen ret kan faa Luft
+(Sandeligt, sandeligt jeg siger Eder!). (Smlgn. Psykologi VI E,
+4; F, 4.)
+
+26. \textsuperscript{3}) \textit{Kontradiktionsprincipet} (Modsigelsens Grundsætning):
+$Aa = 0$. Jeg kan ikke danne en Kombination eller en Dom
+ved at forbinde et Begreb med dets egen Negation. Hvor en
+saadan Forbindelse (f. Ex. „en rund Firkant“ eller „Firkanten
+er rund“) er dannet, maa den strax ophæves. For Logiken er
+en selvmodsigende Forbindelse et Intet (= 0). --- For Psykologien
+ere de faktiske Selvmodsigelser Fænomener, der skulle
+forklares. Selvmodsigelse er mulig, saalænge de modsigende
+Forestillinger ikke opfattes bestemt, ikke analyseres nøjagtigt
+og ikke bringes i umiddelbar Forbindelse med hinanden. Mangehaande
+psykologiske Aarsager (især Følelsens Indflydelse, se
+Psykologi VI F, 1) kunne hindre Bevidstheden i at opdage
+Selvmodsigelsen.
+
+% --- p. 27 ---
+% running head: A. De logiske Grundsætninger .
+\opage{27}27. \textsuperscript{4}) Medens jeg ikke kan kombinere $A$ med $a$, kan jeg
+kombinere det med et andet Begreb. Og jeg har da, hvad
+ethvert saadant Begreb angaar, Valget mellem to Muligheder:
+at forbinde $A$ med dette Begreb (f. Ex. $B$) eller ikke forbinde
+$A$ med det. Der er kun disse to Muligheder; vi staa altsaa
+her overfor et kontradiktorisk Forhold. Der gives kun to logiske
+Dimensioner: Position og Negation. (Smlgn. 18.) Dette
+Forhold er udtrykt i \textit{Dualitetsprincipet} (principium exclusi
+medii inter duo contradictoria): Begrebet $A$ maa enten forbindes
+med $B$ eller ikke forbindes med $B$. Dette kan udtrykkes saaledes:
+$AB \udel Ab$ (idet Tegnet $\udel$ betyder et gensidigt Udelukkelsesforhold,
+et kontradiktorisk Forhold, et Enten---Eller).
+Dualitetsprincipet udtrykker baade Uforeneligheden af de to
+Kombinationer og det Forhold, at den enes Ophævelse er
+Hævden af den anden.
+
+Et Hvirveldyr maa enten være et Pattedyr eller ikke være
+det: de Kendemærker, der ere ejendommelige for Hvirveldyrstypen,
+maa enten forekomme sammen med dem, der ere ejendommelige
+for Pattedyrstypen, eller uden disse.
+
+Ethvert Begreb og dets Negation dele Verden i to Dele
+($B$ og $b$). Hvad der ikke har det ene Begrebs Kendemærker,
+maa have det andets. Og det Samme gentager sig indenfor
+hvert enkelt Begreb, naar en Inddeling skal finde Sted. De
+negative Begreber spille derfor en vigtig Rolle ved Forsøg
+paa Klassifikation. (Smlgn. 8.)
+
+Naar $B$ ikke er en nødvendig Bestemmelse ved $A$, kunne
+baade $AB$ og $Ab$ forekomme --- under forskellige Forhold eller
+til forskellige Tider. Hvirveldyrstypen forekommer baade hos
+Pattedyr og hos Ikke-Pattedyr, f. Ex. baade hos Hesten og
+hos Ørnen.
+
+28. \textsuperscript{5}) \textit{Ombyttelighedens Princip}: $AB = BA$. (Smlgn. 14 b.)
+Det er ligegyldigt, om jeg begynder med det ene eller med
+det andet Begreb i en Kombination, ti Indholdet ændres ikke
+derved. Leddenes Orden er ligegyldig. --- Samme Regel gælder
+i Aritmetiken for Additions og Multiplikations Vedkommende.
+Derimod er det i psykologisk Henseende (som overalt hvor
+der er Tale om reale Begivenheder) ikke ligegyldigt, i hvilken
+% --- p. 28 ---
+% running head: III . Analyse af Domme .
+\opage{28}Orden Leddene følge efter hverandre, da de foregaaende Led
+faa Indflydelse paa de følgende. (Psykologi VA, 4; VI E.)
+
+29. De logiske Principer ere ikke blot Forudsætninger for
+al Begrundelse, og derved for al Diskussion, men de udtrykke
+tillige den menneskelige Tænknings Natur. At tænke er at forbinde
+gennem Sammenligning (se 1 og Psykologi VB, 11), og
+Tænkningen bevæger sig frem gennem Identifikationer, Substitutioner,
+Negationer og Kombinationer, hvis Grundregler ere
+formulerede i de logiske Principer. Endeligt føre de logiske
+Principer til Opstilling af Erkendelsesidealer og virke som
+ledende Tanker ved vore Undersøgelser, idet de føre til at
+opfatte baade Ligheder og Forskelle saa nøjagtigt som muligt
+og derved gøre vore Tankeforbindelser stedse sikrere og fuldkomnere.
+Om de gælde for Tilværelsen idethele, saa at denne,
+set fra et menneskeligt Synspunkt, er rationel, er et Spørgsmaal,
+der dels hører under Erkendelsesteorien, dels under Kosmologien
+(Metafysiken). (Smlgn. Afsnittet „De filosofiske Problemer“
+i „Kort Oversigt over den nyere Filosofis Historie“.)
+
+\sechead{B. Slutninger.}{\textbf{B. Slutninger.}}
+
+
+30. En Slutning gaar ud paa at bringe til tydelig Bevidsthed,
+hvad der er indeholdt i visse givne Domme. Derved
+frembringes intet nyt Indhold, men vi blive os bevidste, hvad
+vi vide. Snart vide vi Mere, snart Mindre, end vi troede at
+vide. Men det kan betegne et meget stort Fremskridt, at vi
+blive os Betydningen og Rækkevidden af vore Domme bevidst.
+
+Slutningen kan være af to Arter. Ved \textit{direkte Slutning}
+haves to eller flere Domme givne, og det gælder da at finde
+et fælles Begreb (Mellembegrebet), saaledes at der kan finde
+Substitution Sted fra den ene Dom til den anden. Her skrides
+altsaa ved Hjælp af Identitetsprincipet lige frem fra Forudsætninger
+til Slutsætning. Ved \textit{indirekte Slutning} undersøges,
+hvilke Kombinationer af de i en eller flere Domme indeholdte
+Begreber, der kunne bestaa med disse Dommes Gyldighed.
+Denne Undersøgelse sker ved Forkastelse af de Kombinationer,
+der ved Substitution ud fra de givne Domme vise sig selv%
+% --- p. 29 ---
+% running head: B. Slutninger .
+\opage{29}modsigende. Her bygges altsaa ikke blot paa Identitetsprincipet,
+men ogsaa paa Kontradiktionsprincipet (og som det siden vil
+vise sig, Dualitetsprincipet), og Resultatet naas gennem Udskydning
+af de ugyldige Kombinationer. --- Ved begge Arter
+af Slutning kunne Enkelthedens og Ombyttelighedens Principer
+finde Anvendelse.
+
+Slutningen beror, ligesom Begrebsdannelsen og Domsdannelsen,
+paa Vexelvirkning af Analyse og Syntese. De givne Domme,
+der ere opstillede og sammenstillede ved en Proces, der svarer
+til den første Syntese (1. 4. 10), maa analyseres, forat man
+kan finde, hvilke Begreber der kunne substitueres. Men dernæst
+finder ved Hjælp af Substitution en ny Syntese Sted,
+som fører til at se, hvilke Domme eller Kombinationer der
+svare til og bestaa med de givne Domme. Slutningen er, som
+allerede Aristoteles har udtrykt det, en \textit{Sammentænken} af det
+Givne. Det græske Ord for Slutning (syllogismos) betyder
+netop Sammentænken. Slutningen er en logisk Syntese.
+
+\sechead{a. Direkte Slutning.}{\textbf{a. Direkte Slutning.} (Slutning ved Substitution alene.)}
+
+
+31. Der forudsættes her, at vi have (i simpleste Tilfælde)
+to Domme givne, der have et fælles Begreb, saa at Substitution
+fra den ene Dom i den anden bliver mulig. Et saadant Begreb
+kaldes Mellembegrebet; de Begreber, i Forhold til hvilke Mellembegrebet
+enten er Subjekt eller Prædikat, kaldes Hovedbegreberne.
+--- Af de utallige Former for direkte Slutning
+anføres her kun nogle enkelte som Exempler.
+
+32. \textit{Naar et Subjekt har et Prædikat, der igen er Subjekt
+for et andet Prædikat, sluttes, at hint Subjekt ogsaa har
+dette andet Prædikat}:
+% scheme n2r-01-01 (notatex.py)
+\[\begin{array}{l}
+A = AB \\
+B = BC \\
+\hline
+A = ABC = AC
+\end{array}\]
+Neptun er en Planet; enhver Planet bevæger sig i en Ellipse;
+altsaa bevæger Neptun sig ogsaa i en Ellipse. Et Kvadrat
+er et Parallelogram; i et Parallelogram halvere Diago%
+% --- p. 30 ---
+% running head: III . Analyse af Domme .
+\opage{30}nalerne hinanden; altsaa halvere Diagonalerne i et Kvadrat
+hinanden.
+
+Denne Slutning udtrykkes i den aristoteliske Logik, der
+bygger paa Begrebernes Omfang (se 13), saaledes:
+% scheme n2r-01-02 (notatex.py)
+\[\begin{array}{l}
+A < B \\
+B < C \\
+\hline
+A < C.
+\end{array}\]
+Den kaldes en Slutning i \textit{første Figur}. Aristoteles skelner
+mellem forskellige „Figurer“ (Skemaer), idet efter hans Fremstilling
+Begrebernes forskellige Plads som Subjekt eller Prædikat
+i Præmisserne blev af stor Vigtighed. I første Figur er
+Mellembegrebet Prædikat i den ene Præmis, Subjekt i den
+anden. --- Ved geometrisk Fremstilling vil $A$ være en lille
+Cirkel indeni $B$, og $B$ igen en Cirkel indeni $C$, og det ses
+da umiddelbart, at $A$ indeholdes i $C$. ---
+
+Hvis vi istedetfor partielle Identiteter havde absolute Identiteter
+i Præmisserne, vilde Slutsætningen ogsaa være en absolut
+Identitet:
+% scheme n2r-01-03 (notatex.py)
+\[\begin{array}{l}
+A = B \\
+B = C \\
+\hline
+A = C.
+\end{array}\]
+Denne Slutningsform, (der ikke kunde forekomme hos Aristoteles
+og ikke kan fremstilles geometrisk) benyttes, naar Fænomeners
+Identitet skal godtgøres. Har jeg en nøjagtig Beskrivelse
+($B$) af en Mand ($A$), og denne Beskrivelse ganske
+passer paa den Person ($C$), der begik et vist Mord, slutter
+jeg, at $A$ er Morderen. Den Kraft ($A$), der holder Maanen i
+dens Bane, er den samme Kraft ($C$), der paa Jorden kaldes
+Tyngde, fordi Loven ($B$) for begge Kræfter er den samme. ---
+
+Har jeg
+% scheme n2r-01-04 (notatex.py)
+\[\begin{array}{l}
+A = AB \\
+B = BA \\
+\hline
+\end{array}\]
+følger $A = B$.
+
+% --- p. 31 ---
+% running head: B. Slutninger .
+\opage{31}Her anvendes foruden Identitetsprincipet ogsaa Ombyttelighedens
+Princip. En absolut Identitet sluttes her af to partielle
+Identiteter. Det er egentligt kun en Definition af absolut
+Identitet, vi her faa. (Smlgn. 14 b og 28.) --- Et ligevinklet Triangel
+er ligesidet, og et ligesidet Triangel er ligevinklet; de to
+Arter af Triangler ere altsaa identiske.
+
+33. \textit{Deraf, at to Subjekter have et og samme Prædikat,
+kan Intet sluttes om Forholdet mellem dem}.
+% scheme n2r-01-05 (notatex.py)
+\[\begin{array}{l}
+A = AB \\
+C = CB
+\end{array}\]
+Her er Intet at substituere. Hos Aristoteles bliver dette
+\textit{anden Figur}:
+% scheme n2r-01-06 (notatex.py)
+\[\begin{array}{l}
+A < B \\
+C < B,
+\end{array}\]
+og han advarer udtrykkeligt mod at slutte her, med mindre
+den ene Præmis er negtende. (Naar $A$ er $B$, men $C$ ikke er
+$B$, kan $A$ ikke være $C$.) --- Geometrisk ligge baade $A$ og $C$
+indenfor Cirklen $B$; men deres indbyrdes Forhold kan ikke
+afgøres; de kunne dække hinanden eller skære hinanden eller
+falde udenfor hinanden eller den ene indenfor den anden.
+--- Deraf, at baade Fisk og Hvaler leve i Vandet, kan hverken
+sluttes, at Hvaler ere Fisk, eller omvendt. Men deraf, at Fisk
+have koldt Blod og Hvaler varmt Blod, kan sluttes, at Hvaler
+ikke ere Fisk. Hvis $A = AB$ og $C = Cb$, kan $C$ ikke være
+Prædikat til $A$, da vi saa vilde faa $ABCb$, der indeholder en
+Modsigelse.
+
+34. \textit{Naar et og samme Subjekt har to Prædikater, kan
+deraf sluttes en begrænset Identitet af de to Prædikatsbegreber}.
+% scheme n2r-02-01 (notatex.py)
+\[\begin{array}{l}
+B = BA \\
+B = BC \\
+\hline
+BA = BC
+\end{array}\]
+Fiskene ere baade Vanddyr og Hvirveldyr, og disse to
+Egenskaber forekomme da under visse Betingelser sammen.
+% --- p. 32 ---
+% running head: III . Analyse af Domme .
+\opage{32}Mennesket er et aandeligt Væsen, og Mennesket er et materielt
+Væsen; det Aandelige og det Materielle maa da være
+foreneligt under visse Betingelser. (Om de Betingelser, der
+udtrykkes ved $B$, ere de eneste, under hvilke $A$ og $C$ kunne
+forekomme sammen, siges her intet om.)
+
+Denne Slutning fremstilles i den aristoteliske Logik saaledes:
+% scheme n2r-02-02 (notatex.py)
+\[\begin{array}{l}
+B < A \\
+B < C
+\end{array}\]
+og kaldes en Slutning i \textit{tredie Figur}. Mellembegrebet er her
+Subjekt i begge Præmisser. Slutsætningen bliver: nogle $A$ er
+$C$ (f. Ex.: nogle Vanddyr ere Hvirveldyr). --- Geometrisk kan
+tredie Figur fremstilles ved, at Cirklerne $A$ og $C$ skære hinanden,
+og at $B$ er det Stykke, der hører til begge Cirkler.
+(Hvis $A < C$, komme vi tilbage til første Figur.) ---
+
+Dersom vi ikke blot have $B = BA$ og $B = BC$, men ogsaa
+$A = AB$ og $C = CB$ (altsaa kunne forbinde 2. og 3. Figur),
+faa vi $A = C$, saa at de to Begreber, der først kun syntes at
+være begrænset identiske, nu vise sig at være absolut identiske.
+Hvis $A$ betyder „højst udviklet Fornuftvæsen“, $B$ „Menneske“
+og $C$ „Dyr med fuldkomnest Hjerne“, faa vi, at det
+højest udviklede Fornuftvæsen er det Dyr, der har den fuldkomneste
+Hjerne.
+
+35. \textit{Dersom begge Præmisser ere negtende}, kan man finde
+en Slutsætning ved Benyttelsen af, hvad der i 18 er fremsat
+om negtende Domme.
+
+Har jeg de to nægtende Domme $A \sim B$ og $B \sim C$, maa jeg
+undersøge, om de hver for sig blot ere kontrære, eller om de
+ere kontradiktoriske. Kontrære maa enhver af dem nødvendigvis
+være.
+
+$A \sim B$ maa betyde \textsuperscript{1}) $B = Ba$, men kan ogsaa betyde \textsuperscript{2}) $B = a$.
+
+$B \sim C$ maa betyde \textsuperscript{3}) $B = Bc$, men kan ogsaa betyde \textsuperscript{4}) $B = c$.
+
+Hvis kun \textsuperscript{1}) og \textsuperscript{3}) gælde, faas $Ba = Bc$. Hvis \textsuperscript{1}) og \textsuperscript{4}) gælde,
+faas $Ba = c$. Hvis \textsuperscript{2}) og \textsuperscript{3}) gælde, faas $a = Bc$. Hvis \textsuperscript{2}) og \textsuperscript{4})
+gælde, faas $a = c$.
+
+Her er gaaet ud fra Mellembegrebet; men man kan ogsaa
+gaa ud fra Hovedbegreberne:
+
+% --- p. 33 ---
+% running head: B. Slutninger .
+\opage{33}$A \sim B$ maa betyde \textsuperscript{1}) $A = Ab$, men kan ogsaa betyde \textsuperscript{2}) $A = b$.
+
+$B \sim C$ maa betyde \textsuperscript{3}) $C = Cb$, men kan ogsaa betyde \textsuperscript{4}) $C = b$.
+
+Hvis \textsuperscript{1}) og \textsuperscript{3}) gælde, kan Intet sluttes (da det er anden Figur).
+Hvis \textsuperscript{1}) og \textsuperscript{4}) gælde, faas $A = AC$. Hvis \textsuperscript{2}) og \textsuperscript{3}) gælde,
+faas $C = CA$. Hvis \textsuperscript{2}) og \textsuperscript{4}) gælde, faas $A = C$.
+
+36. Undertiden er der kun én Forudsætning udtrykkeligt
+given, og dog kan en Slutning drages. En saadan Slutning
+kaldes en \textit{umiddelbar Slutning}. Den staar som selvindlysende.
+Men fordres der et Bevis, behøves dertil et eller flere af de
+logiske Principer. Her (ved direkte Slutning) have vi kun at
+gøre med de umiddelbare Slutninger, der kunne bevises ved
+Identitetsprincipet.
+
+Dersom $A = B$, følger $A = AB$ og $B = BA$. Dette ligger
+og allerede i selve Begrebet absolut Identitet. (Smlgn. 14 b. 28. 32.)
+Men det kan bevises saaledes: $A = AA$ (efter Enkelthedens
+Princip). Substitueres nu $B$ et Sted paa højre Side, faas $A = AB$.
+Paa samme Maade faas af $B = BB$, at $B = BA$. --- Af $A = B$
+kan ogsaa sluttes $AC = BC$. Hvad der gælder absolut, maa
+ogsaa gælde under en vis Betingelse. Beviset er følgende: Vi
+sætte: $AC = AC$ og indsætte paa den ene Side $B$ for $A$, saa
+faas $AC = BC$.
+
+37. \textit{Det Spørgsmaal, om en Slutning kan vendes om}, saa
+at Slutsætningen bliver Præmis, og de tidligere Præmisser Slutsætninger,
+maa undersøges i de forskellige Tilfælde.
+
+% PRINTED AS IS: the cross-reference »(33)«; § 32 may be meant (the inference from A = AB and B = BA to A = B is set out there)
+Slutningen fra $A = AB$ og $B = BA$ til $A = B$ (33) kan
+vendes om (se 36). Men Slutningen fra $A = B$ til $AC = BC$
+(36) kan ikke vendes om, da man ikke uden videre har Ret
+til at ophæve Betingelsen. --- Hvor Mellembegrebet forsvinder
+i Slutningen, som naar der (32) sluttes fra $A = AB$ og $B = BC$
+til $A = AC$, eller fra $A = B$ og $B = C$ til $A = C$, kan Slutningen
+ikke vendes om, da man ikke af Slutsætningen kan
+finde Mellembegrebet, og da desuden ethvertsomhelst Mellembegreb
+vil give samme Slutsætning. $A = C$ følger ligesaa vel
+af $A = X$ og $X = C$, som af $A = B$ og $B = C$.
+
+Grunden (Forudsætningerne) fører med Nødvendighed til
+Følgen (Slutsætningen), men kan ikke altid gaa den modsatte
+Vej. I Erfaringsvidenskaben sluttes tilbage fra et givet Fæno%
+% --- p. 34 ---
+% running head: III . Analyse af Domme .
+\opage{34}men (f. Ex. Tilstedeværelsen af Kulsyre) til Betingelserne for dets
+Opstaaen; men disse kunne i forskellige Tilfælde være forskellige.
+(Kulsyre kan opstaa ved Dyrenes Aandedræt, ved
+Forbrænding, ved vulkanske Udbrud o. s. v.) Derfor ere de
+fleste Naturforklaringer Hypoteser, begrundede Formodninger.
+Og en Hypotese bliver ikke fuldt ud sikker, fordi den bekræftes
+ved Erfaring, saalænge det ikke kan godtgøres, at
+ingen andre Forudsætninger kunde føre til samme Resultat,
+--- saalænge altsaa Slutningen ikke kan vendes om. Allerede
+Leibniz har indset dette: le succès ne démontre pas la vérité
+de l’hypothèse. Hele den nyere Naturvidenskab hviler saaledes
+% PRINTED AS IS: the semicolon before »der opstilledes«
+paa Forudsætninger; der opstilledes af Galilei og hans
+Efterfølgere, og Spørgsmaalet er, om disse Forudsætninger ere
+de eneste, ud fra hvilke de vundne Resultater kunne naas.
+(Smlgn. herom de nyere, i „Oversigt over den nyere Filosofis
+Historie“ VIII, 2 omtalte erkendelsesteoretiske Synsmaader.)
+
+Ikke blot kan en og samme Slutsætning udledes af Domme
+med højst forskellige Mellembegreber, men en rigtig Slutsætning
+kan udledes af faktisk urigtige eller endog selvmodsigende
+Præmisser. Baade $A = B$ og $B = C$ kunne være faktisk urigtige,
+og dog kan $A = C$ være faktisk rigtig. Det viser sig ofte,
+at man fra falske Forudsætninger kommer til et Resultat, der
+saa ad andre Veje bevises at være rigtigt. Den rigtige Udledning
+af $A = C$ kunde f. Ex. være den af $A = K$ og $C = K$. ---
+Af $A = a$ og $a = C$ følger $A = C$, der ingen Selvmodsigelse
+indeholder, skønt den ene Præmis er selvmodsigende.
+
+\sechead{b. Indirekte Slutning.}{\textbf{b. Indirekte Slutning.} (Slutning ved Substitution og Elimination.)}
+
+38. Den indirekte Slutning undersøger, hvilke Begrebskombinationer
+der kunne bestaa med Gyldigheden af en eller flere
+givne Domme. Denne Undersøgelse sker ved, at man i de
+(ifølge Dualitetsprincipet) tænkelige Kombinationer af de i Dommen
+(eller Dommene) givne Begreber indsætter de Udtryk,
+Dommene give for disse Begreber og udskyder (eliminerer)
+de Kombinationer, der blive selvmodsigende. Dette er en Deduktion,
+idet man gaar fra en eller flere givne Domme til de
+Kombinationer, der kunne bestaa med dem. --- De Domme,
+% --- p. 35 ---
+% running head: B. Slutninger .
+\opage{35}som undersøges paa denne Maade, kunne selv være udledte
+ved \textit{Induktion} af visse givne Begrebskombinationer. Deduktionen
+giver da Beviset for, at Dommene ere rigtigt udledte.
+Induktionen er væsentligt en Opdagelsesmetode; vi skaffe os
+ved den Domme, der kunne prøves deduktivt. Den er et forberedende
+Arbejde; den egentlige Slutning er altid deduktiv.
+
+\sechead{α. Indirekte Slutning som ren Deduktion.}{\spaced{α. Indirekte Slutning som ren Deduktion.}}
+
+
+39. Naar Dommen $A = B$ er given, hvilke Kombinationer
+af $A$ og $B$ og deres Negationer ville da være mulige? --- Da
+der er Tale om to Begreber, kan der \textit{ifølge Dualitetsprincipet}
+kun tænkes fire Kombinationer: $A$ kan enten forekomme med
+$B$ eller uden $B$; $B$ enten med $A$ eller uden $A$; $a$ enten med
+$B$ eller uden $B$; $b$ enten med $A$ eller uden $A$. De fire Kombinationer,
+der kunne tænkes, ere altsaa $AB$, $Ab$, $aB$ og $ab$.
+(Geometrisk kan dette anskueliggøres ved at lade Cirklerne
+$A$ og $B$ skære hinanden; der bliver da en Del af $A$ uden $B$,
+en Del, som baade hører til $A$ og $B$ og en Del af $B$ uden $A$;
+dertil kommer saa Rummet udenfor de to Cirkler, hvor hverken
+$A$ eller $B$ findes.) Men nu gælder det at finde, hvilke af
+disse tænkelige Kombinationer der ere mulige, naar Dommen
+$A = B$ er given. Det sker ved at indsætte denne Dom i de
+fire Kombinationer \textit{(i Kraft af Identitetsprincipet)} og derpaa
+\textit{(i Kraft af Kontradiktionsprincipet)} udskyde de Kombinationer,
+der blive selvmodsigende. De Kombinationer, i hvilke
+Intet kan substitueres, blive staaende som mulige.
+% scheme n2r-02-03 (notatex.py)
+\[\begin{array}{l}
+AB = AA = BB \\
+Ab = Bb = 0 \\
+aB = aA = 0 \\
+ab
+\end{array}\]
+Altsaa kun $AB$ og $ab$ kunne forekomme, naar $A = B$. ---
+Hvis Personen $A$ skal være identisk med Morderen $B$, saa
+maa han have været tilstede overalt, hvor Morderen har været,
+og have været borte, hvor Morderen var borte.
+
+40. Naar Dommen $A = AB$ er given, faa vi efter samme
+Fremgangsmaade $AB$, $aB$ og $ab$ som mulige Tilfælde. --- Hvis
+% --- p. 36 ---
+% running head: III . Analyse af Domme .
+\opage{36}Varme er en Form for Bevægelse, maa vi kunne finde Varme- og
+Bevægelsesfænomener sammen, eller Bevægelse uden Varme
+(da der er andre Bevægelsesformer end Varme), eller Fænomener,
+der hverken ere Bevægelse eller Varme. Kun Kombinationen
+Varme uden Bevægelse ($Ab$) er udelukket.
+
+Naar $A = Ab$ er given, blive $Ab$, $aB$ og $ab$ mulige. Naar
+$A = b$ er given, blive kun $Ab$ og $aB$ mulige.
+
+41. For Simpelheds Skyld er der i det Foregaaende valgt
+Exempler med to Begreber. Hvis der er Tale om tre Begreber,
+faa vi 8 tænkelige Kombinationer at undersøge. (Geometrisk
+kan man fremstille dette ved at lade tre Cirkler skære
+hverandre saaledes, at enhver af dem skærer begge de andre;
+man faar da 7 forskellige Stykker foruden Rummet udenfor
+de tre Cirkler.) Er der fire Begreber indeholdte i de givne
+Domme, faa vi 16 Kombinationer o. s. v. --- Følgende Exempel
+med tre Begreber viser Fremgangsmaaden.
+
+Lad $A = AB$ og $C = CB$ være givne. Saa ere de 8 tænkelige
+Kombinationer:
+% scheme n2r-02-04 (notatex.py)
+\begin{center}
+\begin{tabular}{l@{\qquad}l}
+\textsuperscript{1}) $ABC$ & \textsuperscript{5}) $aBC$ \\
+\textsuperscript{2}) $ABc$ & \textsuperscript{6}) $aBc$ \\
+\textsuperscript{3}) $AbC$ & \textsuperscript{7}) $abC$ \\
+\textsuperscript{4}) $Abc$ & \textsuperscript{8}) $abc$
+\end{tabular}
+\par\smallskip Ved Substitution faas:\par\smallskip
+\begin{tabular}{l@{\qquad}l}
+\textsuperscript{1}) $ABBCB = ABC$ & \textsuperscript{5}) $aBCB = aBC$ \\
+\textsuperscript{2}) $ABBc = ABc$ & \textsuperscript{6}) $aBc$ \\
+\textsuperscript{3}) $ABbCB = 0$ & \textsuperscript{7}) $abCB = 0$ \\
+\textsuperscript{4}) $ABbc = 0$ & \textsuperscript{8}) $abc$
+\end{tabular}
+\end{center}
+Man kan altsaa ved indirekte Slutning drage Slutninger fra
+„anden Figur“ (33) angaaende de Begrebskombinationer, der
+ere mulige, naar to Subjekter have samme Prædikat.
+
+Gaar man ud fra $B = BA$ og $B = BC$ (altsaa „tredie Figur“,
+se 34), blive $ABC$, $AbC$, $Abc$, $abC$ og $abc$ mulige.
+
+42. Dersom vi gaa ud fra indbyrdes modsigende Præmisser,
+vil indirekte Slutning kunne gøre opmærksom paa Fejlen.
+
+% --- p. 37 ---
+% running head: B. Slutninger .
+\opage{37}%
+% scheme n2r-02-05 (notatex.py)
+\[\begin{array}{l@{\qquad}l}
+A = b \\
+B = A \\
+\hline
+AB = bB = 0 & aB = aA = 0 \\
+Ab = bB = 0 & ab = aA = 0
+\end{array}\]
+Alle tænkelige Kombinationer falde altsaa bort. --- Et andet
+Exempel vil forekomme nedenfor (46).
+
+\whiteline
+
+\sechead{β. Indirekte Slutning som Forbindelse af Induktion og Deduktion.}{\spaced{β. Indirekte Slutning som Forbindelse af Induktion}\\
+\spaced{og Deduktion.}}
+
+43. Have vi en Række Begrebskombinationer givne, kunne
+vi søge en eller flere Domme, der udtrykke Forholdet mellem
+de i Kombinationerne indeholdte Begreber. Saadanne Domme
+findes ved Analyse, ligesom naar vi danne vore Domme paa
+Grundlag af umiddelbar Anskuelse (10). Naar Kombinationerne
+ere meget talrige, maa man prøve sig frem gennem foreløbige
+Hypoteser. Saaledes prøvede Kepler først den Antagelse, at
+Marsbanen var en Cirkel, før han opdagede, at den var en
+Ellipse. Den hjælpende Syntese spiller her en stor Rolle.
+Kombinationerne staa her jævnsides, medens det ved de simplere
+Tilfælde af Domsdannelse gælder om at belyse en enkelt
+(i Anskuelsen given) Kombination ved Hjælp af de andre.
+(Smlgn. 10 og 20.)
+
+Overgangen fra givne Kombinationer til Domme kaldes
+Induktion. Men et Bevis for, at de fundne Domme virkeligt
+svare til de givne Kombinationer og ikke til andre, maa føres
+ved Deduktion. Beviset for en Induktion er stedse en Deduktion,
+og Induktionens Betydning bestaar i at opstille en Formodning,
+der kan prøves. (Smlgn. 38.)
+
+Indirekte Slutninger maa stedse kunne vendes om, hvis de
+ere rigtige. Jeg maa baade kunne gaa fra en bestemt Dom til
+bestemte Kombinationer, og omvendt.
+
+44. Ere Kombinationerne $AB$ og $ab$ givne, se vi, at hvor
+$A$ er, er $B$, og omvendt, og at hvor en af dem mangler,
+mangler ogsaa den anden. Dertil svarer $A = B$ og $a = b$. Og
+ved Deduktion fra disse Domme komme vi ogsaa til $AB$ og
+$ab$, og til dem alene (se 39).
+
+% --- p. 38 ---
+% running head: III . Analyse af Domme .
+\opage{38}Ere $AB$, $aB$ og $ab$ givne, se vi, at hvor $A$ er, er $B$, medens
+$B$ kan forekomme uden $A$, og at hvor $B$ mangler, mangler $A$.
+Det giver $A = AB$ og $b = ba$. Om $B$ og $a$ kan Intet udsiges.
+Deduktion fra $A = AB$ fører ogsaa til $AB$, $aB$ og $ab$, medens
+$Ab$ vilde være selvmodsigende. (Se 40.)
+
+Ere $AB$, $Ab$ og $aB$ givne, ses, at $a$ kun forekommer, hvis
+$B$ er, medens $B$ kan forekomme uden $a$, og at hvor $B$ mangler,
+mangler ogsaa $a$. Dertil svarer $a = aB$ og $b = bA$. Om $A$ og
+$B$ kan her Intet udsiges. Ved Deduktion fra hine to Domme
+faa vi ogsaa de tre givne Kombinationer og ikke andre.
+
+Hvis de givne Kombinationer var $ABC$, $AbC$, $aBc$ og
+$abC$, vilde deri ligge $A = AC$, $b = bC$, $c = cB$, fremdeles
+$AB = ABC$ o. s. v.
+
+45. Mange \textit{umiddelbare Slutninger} (smlgn. 36) kunne kun
+bevises ved indirekte Slutning. Det gælder om den vigtige Art
+af umiddelbar Slutning, ved hvilken vi \textit{af en positiv Dom
+udlede en negativ Dom eller omvendt}. En saadan Afledning
+kaldes \textit{Kontraposition}.
+
+Af $A = AB$ følger umiddelbart $b = ba$. Ti naar $B$ er, hvor
+$A$ er, maa $A$ mangle, hvor $B$ mangler. Bevis kan dog føres
+saaledes: Af de fire mulige Kombinationer falde, naar $A = AB$
+er given, $Ab$ bort; kun $AB$, $aB$ og $ab$ foreligge altsaa, og af
+dem følger (se 44) $b = ba$.
+
+Af $A = B$ følger umiddelbart $a = b$. Er der absolut Identitet
+mellem $A$ og $B$, maa $a$ mangle, hvor $b$ mangler, og omvendt.
+Bevis kan føres saaledes: Af de fire mulige Kombinationer
+falde, naar $A = B$ er given, $Ab$ og $aB$ bort; kun $AB$ og $ab$
+foreligge, og af dem følger (se 44) $a = b$.
+
+Disse Slutninger kunne vendes om. Af $b = ba$ følger ved
+Kontraposition $A = AB$, af $a = b$ følger $A = B$. ---
+
+Formedelst Kontraposition kunne vi formulere en Slutning
+i „anden Figur“ med negtende Præmis (se 33):
+
+% CHECK p. 38: display of notation
+\begin{center}$A = AB$\end{center}
+
+
+% CHECK p. 38: display of notation
+\begin{center}$C = Cb$\end{center}
+
+
+Af $C = Cb$ følger $B = Bc$, saa at vi forvandle anden Figur
+til første Figur:
+
+% --- p. 39 ---
+% running head: B. Slutninger .
+\opage{39}%
+% scheme n2r-03-01 (notatex.py)
+\[\begin{array}{l}
+A = AB \\
+B = Bc \\
+\hline
+A = ABc = Ac.
+\end{array}\]
+Selv af anden Figur med to positive Præmisser kunne vi
+nu faa et Resultat. Ti af $A = AB$ følger $b = ba$, og af $C = CB$
+følger $b = bc$, saa at vi faa:
+% scheme n2r-03-02 (notatex.py)
+\[\begin{array}{l}
+b = ba \\
+b = bc \\
+\hline
+ba = bc
+\end{array}\]
+Anden Figur forandres altsaa ved Kontraposition til tredie
+Figur. ---
+
+46. Ved enhver Induktion maa vi have alle i Kombinationerne
+indeholdte Begreber givne baade i negativ og i positiv
+Form, da ethvert Begreb maa kunne negeres. (Smlgn. 5---6.)
+Skal der sluttes fra to Kombinationer alene, maa disse altsaa
+være enten $AB$ og $ab$ eller $Ab$ og $aB$ (naar der kun er Tale
+om to Begreber).
+
+Hvis vi derimod f. Ex. havde $AB$ og $aB$ givne, vilde vi
+faa de to Domme $A = AB$ og $a = aB$. Men af dem følger ved
+Kontraposition (45) $b = ba$ og $b = bA$, der stride mod hinanden
+(gøre hinanden problematiske, se 19). Der opstaar altsaa
+en Modsigelse, naar vi slutte fra givne Kombinationer, der
+udelukke et Begrebs Negation. Denne Modsigelse kan kun
+skaffes afvejen, naar vi kunne finde flere Kombinationer. Finde
+vi f. Ex. $ab$, falder Dommen $b = bA$ bort, og Modsigelsen ophører.
+Saaledes føre de Problemer, Erfaringen stiller, til at udvide
+vor Erfaring. --- Omvendt vilde vi ved deduktivt at gaa
+ud fra de to Sætninger $A = AB$ og $a = aB$ komme til det Resultat,
+at Begrebet $B$ ikke skulde kunne negeres, og dette Resultat
+vilde naturligt føre os til at opdage Modsigelsen mellem
+Præmisserne. ---
+
+Dersom alle tænkelige Kombinationer ere givne, kan ingen
+Dom opstilles. Alle Begreber forekomme da i alle de i Kraft
+af Dualitetsprincipet tænkelige Forbindelser: $A$ snart med $B$,
+snart med $b$, $B$ snart med $A$, snart med $a$ o. s. v. Hvis vor
+% --- p. 40 ---
+% running head: III . Analyse af Domme .
+\opage{40}Erfaring stedse var saaledes beskaffen, vilde vi ingen Domme
+kunne danne, og hvis hele Naturen var saaledes beskaffen,
+vilde Aarsagssætningen ikke gælde, da den forudsætter, at et
+Fænomen kun indtræder i Forbindelse med et vist bestemt
+andet Fænomen. Hvor der i Erfaringen synes at foreligge Tilfælde,
+der frembyde alle tænkelige Kombinationer (ved to Begreber
+altsaa baade $AB$, $Ab$, $aB$ og $ab$), antage vi --- hvis det
+er os om at gøre at fastholde Aarsagssætningen --- at vor Erfaring
+er ufuldstændig, idet den er begrænset til to Begreber.
+Hvis vor Erfaring udvides saaledes, at vi tage Hensyn til et
+tredie Begreb $C$, der forekommer sammen med $A$ og $B$, ville
+vi maaske kunne opstille en eller flere Domme. Saaledes hvis
+vi fandt Kombinationerne $ABC$, $AbC$, $aBc$ og $abC$ (se 44 Slutning).
+Dersom derimod alle 8 Kombinationer af $A$, $B$ og $C$
+forekom, kunde heller ikke her nogen Dom opstilles. Vi
+maatte da opstille et fjerde Begreb $D$, der kunde høre sammen
+med de tre Begreber. Og saaledes fremdeles, til Vanskeligheden
+er hævet. (Smlgn. 14. En begrænset Identitet kan ikke
+udledes af Subjekts- og Prædikatsbegrebet alene, men findes
+ved en Udvidelse, der godtgør, at Forholdet mellem de to Begreber
+kun kan fastsættes, naar et tredie Begreb tages med.)
+--- Saaledes fører den tænkende Bearbejdelse af det Givne til
+at se dets Ufuldstændighed og driver derved til at udvide Erfaringen.
+
+
+47. Selvom den fundne Dom ved Deduktion fører til de
+givne Kombinationer og ikke til andre, og altsaa viser sig at
+være rigtigt udledet, vedbliver den dog at være en \textit{Hypotese},
+saalænge det ikke med Sikkerhed er godtgjort, at de givne
+Kombinationer ere udtømmende, saa at ingen Kombinationer
+af anden Art forekomme. En saadan Sikkerhed kan, afset fra
+meget simple og overskuelige Forhold, være meget vanskelig
+at naa. Hypotesens videnskabelige Karakter beror paa, at den
+er det logiske Udtryk for alle givne Kombinationer. Da staar
+den som en \textit{begrundet} Formodning. Men den trænger til \textit{Bekræftelse}
+(Verifikation), saalænge der endnu er Mulighed for
+nye Kombinationer. Bekræftelsen sker da ved, at de nye Kombinationer
+paavises at være af samme Art som de, til hvilke
+% --- p. 41 ---
+% running head: B. Slutninger .
+\opage{41}man støttede sig ved Opstillingen af Hypotesen. (Smlgn. 5 om
+Definitionen som en Hypotese.) Hypotesen $A = B$ bekræftes,
+dersom alle nye Erfaringer om $A$ og $B$ ere af Arterne $AB$
+eller $ab$; den gendrives, dersom Tilstedeværelsen af $Ab$ eller
+$aB$ kan paavises. (Se desuden 37.)
+
+Den videnskabelige Induktion gaar ud fra visse Tilfælde
+som typiske og paaviser, at alle andre Tilfælde høre til samme
+Type. Newtons Gravitationsteori begrundedes ved en Undersøgelse
+af Maanens Bevægelse; den bekræftedes ved, at Keplers
+Love kunde udledes af den, --- at Ebbe og Flod kunde
+forklares ved den, --- og senere ved en Mængde nye Opdagelser,
+f. Ex. Opdagelsen af Neptun, der fremkaldtes ved
+Slutning fra Gravitationsteorien. En Hypoteses Arbejdsværdi
+(dens Betydning som Princip for Forskning) falder sammen
+med Muligheden af dens Verifikation.
+
+% --- p. 42 ---
+\opage{42}\chaphead{}{TILLÆG}{}
+
+
+\sechead{1. Mill’s induktive Metoder.}{\textbf{1. Mill’s induktive Metoder.}}
+
+
+JEVONS har først med Klarhed paavist, at Induktionsbeviset
+bestaar i en Deduktion, der ud fra foreløbigt opstillede Domme
+fører tilbage til de Kombinationer, af hvilke disse Domme udledtes,
+i Forbindelse med en fortsat Godtgørelse af, at alle
+Kombinationer ere af samme Art som de, af hvilke Dommene
+udledtes. ARISTOTELES forstod ved Induktion en fuldstændig
+Samling af en vis Art Fænomener med Paavisning af Domme,
+der gælde for dem alle. Men en saadan fuldstændig Samling
+er meget sjeldent mulig, og Problemet er netop, hvorledes vor
+Erkendelse kan bygges op og føres videre, skønt det Givne
+ikke kan bevises at være udtømmende. BACON og STUART
+MILL have givet specielle Beskrivelser af Induktionsmetoderne,
+uden at de have set deres nøje Sammenhæng med Deduktionen,
+der ene kan give et Bevis. Stuart Mill’s Fremstilling,
+der er bygget paa et Studium af den nyere Erfaringsvidenskabs
+Historie, har dog stadigt Interesse ved den Klarhed, med hvilken
+den fremhæver de væsentlige Former.
+
+a. \textit{Overensstemmelsesmetoden}. Naar et Fænomen $B$ indtræder
+under forskellige Omstændigheder, saaledes at der kun
+er én Ting ($A$), der stedse gaar forud, medens alt Andet skifter,
+formodes, at $A$ er Aarsag til $B$ (eller at begge ere succesive Virkninger
+af samme Aarsag). Denne Formodning vil være des
+mere begrundet, jo flere Tilfælde vi have af denne Art.
+% scheme n2r-03-03 (notatex.py)
+\[\begin{array}{l@{\qquad}l@{\qquad}l}
+AVX & AYZ & ......... \\
+BV_1X_1 & BY_1Z_1
+\end{array}\]
+% --- p. 43 ---
+% running head: 1. Mill's induktive Metoder .
+\opage{43}Sammenlignes de forskellige Tilfælde, i hvilke Dugdannelsen
+indtræder (ved Overflader i fri Luft efter Solens Nedgang, paa
+et Glas med frisk Vand i en varm Stue, paa Indersiden af
+et Vindu ved pludseligt Regnskyl o. s. v.), frembyde de trods
+alle Forskelligheder det fælles Træk, at der forud for Dugdannelsen
+indtræder en pludselig Afkøling af en Overflade i
+Forhold til den omgivende Luft, og deri finde vi da Aarsagen
+til Dugdannelsen.
+
+Denne Metode kan dog kun føre til en foreløbig Formodning.
+Den henleder Opmærksomheden paa Forholdet mellem
+$A$ og $B$, men udelukker ikke Muligheden af, at $B$ engang
+kunde indtræde uden $A$. (Vi have kun Kombinationen $AB$ given
+og vide Intet om de negative Tilfælde. Smlgn. 46.) Sker Fortætningen
+ikke, naar pludselig Afkøling udelukkes? Dette
+Spørgsmaal maa besvares, før Slutningen er sikker. Brugen
+af et Lægemiddel kan have vist sig gavnlig i en Række Tilfælde;
+men er det gavnligt i alle Tilfælde, og --- vilde Patienterne
+ikke være blevne helbredede, selvom de ikke havde
+brugt Lægemidlet? --- Vi føres herved over til den næste
+Metode.
+
+b. \textit{Forskelsmetoden}. Naar et Fænomen $B$ ikke indtræder,
+uden Fænomenet $A$ gaar forud, medens alle andre Omstændigheder
+ere ens (saa at $A$’s og $B$’s Indtræden udgør den eneste
+Forskel), sluttes, at $A$ er Aarsag til $B$ (eller at $A$ og $B$ ere
+Virkninger af samme Aarsag).
+% scheme n2r-03-04 (notatex.py)
+\[\begin{array}{l@{\qquad}l}
+AVX & VX \\
+BV_1X_1 & V_1X_1
+\end{array}\]
+Her behøves kun to Tilfælde, et, hvor $A$ og $B$ indtræde,
+og et andet, hvor de under ellers lige Omstændigheder ikke
+indtræde. --- Ved skydækket Himmel eller i Blæst sker ingen
+Dugdannelse, kun i stille og klart Vejr. Ved at udspænde et
+Lagen i nogle Fods Højde over Jorden hindrer man Varmeudstraalingen
+fra denne, og da falder ogsaa Dugdannelsen bort
+under Lagenet, medens den gaar for sig lige udenfor. --- Det
+gælder om at finde en enkelt Omstændighed, som er afgørende
+% --- p. 44 ---
+% running head: Tillæg .
+\opage{44}(idet den enten er hele Aarsagen, eller indeholder Aarsagen,
+eller er en Del af Aarsagen, der altid bestaar i en hel Gruppe
+af Betingelser, smlgn. Psykologi VD, 5 d; --- denne Bemærkning
+gælder for alle fire Metoder, men er af særlig Vigtighed her).
+Gray opdagede, at Forskellen mellem elektriske Ledere og
+Isolatorer beroede paa Stoffernes Beskaffenhed; han havde
+først antaget, at naar en Silkesnor var en bedre Isolator end
+en Hampesnor, kom det af, at den var tyndere; men det viste
+sig, at en Metaltraad, der var ligesaa tynd som Silkesnoren,
+afledte Elektriciteten. --- Et Menneskes brødefri Vandel kan
+skyldes hans gode Karakter --- men maaske ogsaa hans lykkelige
+Forhold, der ingen Fristelser medføre. --- Efter de danske
+Landboreformer i Slutningen af det 18. Aarhundrede indtraadte
+en stor Prisstigning paa Landbrugsprodukter, saa at man ikke
+klart kunde se, hvad der skyldtes dem; deres heldige Indflydelse
+blev derimod tydelig, da Priserne i det 19. Aarhundrede
+begyndte at falde igen. ---
+
+Ved Forskelsmetoden have vi Kombinationerne $AB$ og $ab$
+givne, hvoraf følger $A = B$ (der her er at fortolke saaledes:
+hvis $A$ er, er $B$, og $B$ indtræder ikke uden $A$). (Smlgn. 17.)
+
+De to sidste Metoder ere speciellere Former af Forskelsmetoden.
+
+
+c. \textit{Restmetoden}. Naar $AVX$ gaar forud for $BV_1 X_1$, og naar
+det vides, at $V$ er Aarsag til $V_1$ og $X$ til $X_1$, sluttes, at $A$ er
+Aarsag til $B$.
+% scheme n2r-03-05 (notatex.py)
+\[\begin{array}{l@{\qquad}l@{\qquad}l}
+AVX & V & X \\
+\cdashline{1-3}
+BV_1X_1 & V_1 & X_1
+\end{array}\]
+Af de Uregelmæssigheder i Planeten Uranus’ Bane, der
+ikke kunde forklares ved de bekendte Planeters Tiltrækning,
+sluttede man, at der udenfor Uranus maatte findes en hidtil
+ukendt Planet, og dette ledte til Opdagelsen af Neptun. --- Menneskelige
+Karakterer og Raceejendommeligheder kunne ikke blot
+forklares ved Opdragelsens og andre ydre (fysiske og sociale)
+Forholds Indflydelse; der bliver en uforklaret Rest tilbage, som
+maa forklares ved Arvelighed. (Smlgn. Psykologi VII C, 2.)
+
+d. \textit{De proportionale Forandringers Metode}. Naar et Fæ%
+% --- p. 45 ---
+% running head: 1. Mill's induktive Metoder .
+\opage{45}nomen $B$ tiltager eller aftager, eller idethele forandrer sig, altefter
+som et andet Fænomen $A$ undergaar tilsvarende Forandringer,
+medens alle andre Omstændigheder forblive uforandrede,
+sluttes, at $A$ er Aarsag til $B$ (eller at begge ere
+Virkninger af samme Aarsag).
+% scheme n2r-03-06 (notatex.py)
+\[\begin{array}{l@{\qquad}l@{\qquad}l}
+A_1VX & A_2VX & A_3VX ......... \\
+\cdashline{1-3}
+B_1V_1X & A_2V_1X_1 & B_3V_1X_1
+\end{array}\]
+% PRINTED AS IS: the middle cell of the bottom row is A₂V₁X₁ (B₂V₁X₁ expected?), and B₁V₁X has no subscript on X (z-06-04)
+Denne Metode finder Anvendelse, hvor man ikke helt kan
+udelukke et Fænomen. Man undersøger da de Tilfælde, hvor det
+varierer, og søger at finde andre Fænomener, der under samme
+Omstændigheder variere paa tilsvarende Maade. Metoden kræver,
+at de varierende Rækker fortsættes saa langt som muligt.
+
+Inertisætningen begrundedes af Galilei ved denne Metode:
+jo glattere han gjorde sine Kugler og de Render, han lod dem
+løbe i, des længere bleve Kuglerne ved at løbe. --- At Sjælelivet
+særligt er knyttet til Nervesystemet (hvad enten det ene
+er Aarsag til det andet, eller Aarsagen ligger længere tilbage),
+sluttes af, at de variere paa tilsvarende Maade. (Psykologi
+II, 6---7.) --- Statistiken viser, at Ægteskabernes Antal stiger, naar
+Kornpriserne synke, og falder, naar disse stige. ---
+
+Med Hensyn til disse Mill’ske Metoder maa mærkes, at de
+forudsætte en tydelig Forskel mellem Aarsag og Virkning. En
+saadan tydelig Forskel er der kun for den foreløbige Opfattelse;
+naar Forskningen trænger længere ind i Forholdet,
+finder den en kontinuerlig Overgang fra det, der kaldes „Aarsag“,
+til det, der kaldes „Virkning“. (Smlgn. Psykologi VD, 3.)
+
+De Mill’ske Metoder forudsætte Aarsagssætningens Gyldighed
+og ligge forsaavidt udenfor den formelle Logik (smlgn. 22).
+Mill indrømmede dette og kom derved til at bevæge sig i en
+Kreds, da han begrundede selve Aarsagssætningen ved Induktion
+(Overensstemmelsesmetoden). (Smlgn. „Oversigt over den
+nyere Filosofis Historie“ VII b.)
+
+Spørgsmaalet om Aarsagssætningens Gyldighed fører over
+fra den formelle Logik til Erkendelsesteorien, der spørger, med
+hvilken Ret vi tillægge Begrundelsens Princip (og de deri inde%
+% --- p. 46 ---
+% running head: Tillæg .
+\opage{46}holdte logiske Principer, se 21 til 29) Gyldighed for den reale
+Tilværelse, ikke blot for Ordningen af vore Tanker. --- Ogsaa
+i Psykologien komme vi til at drøfte Aarsagsforholdet, nemlig
+ved Spørgsmaalet om, hvorledes vi skelne mellem Virkelighed
+og blot Forestilling (Illusion eller Drøm). (Smlgn. herom Psykologi
+VD, 1---2.)
+
+\sechead{2. Analogi og Analogislutning.}{\textbf{2. Analogi og Analogislutning.}}
+
+
+Den inderste Nerve i al Logik er Identitet. Det er i Kraft
+af den, at vi fæstne vore Forestillinger til Begreber, knytte
+Begreber sammen i Domme og gaa fra Domme til Domme
+gennem Slutning. Vor Tænknings Maal er derfor saavidt som
+muligt at reducere Forskelligheder til Identiteter --- eller dog
+at opfatte dem, som om de vare Identiteter, og se, hvor langt
+vi kunne gennemføre denne Opfattelse. Men Tanken fører en
+stadig Kamp med det Givne for at kunne naa dette Maal. Og
+paa flere Punkter maa Analogi (Forholdslighed) træde i Stedet
+for Identitet.
+
+a. Vore Begreber bero for en stor Del, nemlig afset fra
+„Mærkebegreberne“, paa Analogi mellem de Fænomener, for
+hvilke de gælde (5). Kun tilnærmelsesvis kan der mellem forskellige,
+i Anskuelsen givne Fænomeners Kendemærker paavises
+en saa streng Identitet, som Identitetsprincipet kræver
+(24). Der fremtræder her et irrationelt Forhold mellem Erkendelsens
+Stof og Form, mellem det Givne og dets Udtryk i
+Tanken. Have vi éngang dannet et Begreb, maa vi arbejde
+med det som identisk med sig selv, indtil vi maaske af forøget
+og klarere Erkendelsesstof kunne danne et fuldkomnere
+Begreb. Men det maa ikke glemmes, at det ofte fra først af
+beror paa Analogi, og at vore Definitioner ofte ere Hypoteser.
+
+b. Naar vi nu forbinde Begreberne i Domme, og Dommene
+i Slutninger, kunne de Forbindelser, der saaledes tilvejebringes
+mellem vore Tanker, ikke uden videre antages at gengive de
+Forbindelser, der finde Sted mellem de givne Fænomener.
+Forholdet mellem Grund og Følge paa den ene Side og mellem
+Aarsag og Virkning paa den anden Side have vi ikke Ret
+til at identificere. Vi kunne opfatte Begivenhedernes Række%
+% --- p. 47 ---
+% running head: 2. Analogi og Analogislutning .
+\opage{47}følge, som om den gengav et Forhold mellem Grund og Følge;
+men kun en Analogi er det her berettiget at antage (22). Paa
+lignende Maade forholder det sig ved Anvendelsen af matematiske
+Begreber og Domme paa Fænomenerne. Talrækken er den
+simpleste og mest overskuelige Ordning af Elementer, vi kende,
+og vi søge derfor naturligt at ordne Fænomenerne i analoge
+Rækker, saa at vi fra de Forhold, der gælde mellem Tallene,
+kunne slutte til Forhold mellem Fænomenerne. Den saakaldte
+mekaniske Naturopfattelse beror paa den store Analogi mellem
+Bevægelser i Rummet og kvalitative Forandringers Rækker.
+Saaledes betragter Fysiken Farverækken som om den blot var
+en Række kvantitative Ændringer (i Æterbølgers Brydning
+o. s. v.), og Stoffernes kvalitative Forandringer betragtes i Kemien,
+som om de blot vare Omlejringer af uforandrede
+Smaadele. Anvendelsen af de formelle Videnskaber paa de
+reale Videnskaber (smlgn. 2 og 22) skyldes altsaa Analogi.
+
+c. I de nys nævnte Exempler optræder Analogislutningen
+i dens mest enkelte Form, som de proportionale Forandringers
+Metode. Slutning fra den ene Række (f. Ex. den kvantitative)
+kan her stedse finde sin Bekræftelse ved en Iagttagelse af nye
+Led i den anden Række (den kvalitative).
+
+Men det er ikke altid, at Analogislutning kan antage denne
+Form. Ofte er den en Slutning i anden Figur (33): naar to
+Subjekter have en fælles Egenskab, ligger det nær at spørge,
+om de da ikke stemme overens i flere Egenskaber, især naar
+den fælles Egenskab er af væsentlig, dybt indgribende Betydning.
+At baade Fiske og Hvaler ere Vanddyr, kan foranledige
+en Undersøgelse af, hvilke andre Egenskaber de have fælles.
+Medens anden Figur ikke kan begrunde nogen logisk Slutning,
+kan den give Stødet til en Opdagelse, der saa kan finde
+sin Bekræftelse ad helt andre Veje. Og naar et Subjekt har
+to Prædikater (tredie Figur, se 34), ligger det nær at spørge,
+hvorledes disse to Prædikater (f. Ex. Vanddyr og Hvirveldyr
+om Fiskene) indbyrdes bestemme hinanden; det kan lede til
+at opsøge flere andre Tilfælde, i hvilke de to Prædikater forekomme
+sammen. (Man gør da egentligt de to Prædikater til
+Subjekter, saa at tredie Figur gaar over til anden Figur, der er
+% --- p. 48 ---
+% running head: Tillæg .
+\opage{48}det egentlige Skema for Analogislutning.) Saaledes kan Analogien
+virke fremaddrivende, og det paa en mere positiv Maade
+end Selvmodsigelsen (se 46). Den er en betydningsfuld Opdagelsesmetode.
+Men naar Beviset skal føres, maa det føres
+ved Hjælp af Identiteter. Newtons Opdagelse af Tyngden som
+Verdenslov skal være bleven gjort ved Hjælp af en dristig
+Analogi (10) mellem Maanens Bevægelse og Faldbevægelsen
+paa Jorden; men Beviset førtes efter Formlen $A = B = C$ (32),
+hvor $B$ betyder de to Bevægelsers identiske Lov.
+
+Træffende har Aristoteles, der kun bruger Ordet Analogi
+i Betydning af matematisk Proportion, kaldt det, vi benævne
+Analogislutning, for Slutning fra et Exempel (paradeigma). Vi
+slutte fra Forholdene i et Tilfælde til Forholdene i et andet
+Tilfælde. Den danner hos ham en Modsætning baade til Induktion
+og til Deduktion. --- Den nærmer sig til Induktion, jo flere
+forskellige Exempler den støtter sig til, saa at en Dom kan
+begrundes og maaske senere bekræftes.
+
+d. Det er ved al Analogiseren det store Spørgsmaal, om
+vi have Ret til at overføre, hvad der gælder i én Henseende
+eller for visse Fænomener, til andre Henseender eller andre
+Fænomener, fordi et enkelt Lighedspunkt kan paavises. Tilsidst
+stiller Spørgsmaalet sig, og det i sin mest problematiske Form,
+naar vi staa ved Grænsen af vor Erkendelse og spørge, om
+vi fra det, vor Erfaring og Tænkning lærer os om Tilværelsen,
+kunne drage Slutninger til dennes hele Natur. Her har Menneskeheden
+--- i sine Religioner og i sine Spekulationer
+--- arbejdet med store og dristige Analogier, der ikke kunne bekræftes
+ved Erfaring, og hvis Værd heller ikke behøver at
+bero derpaa.
+
+\end{document}
