@@ -24,7 +24,8 @@ PDFFILES  := $(TEXFILES:.tex=.pdf)
 
 # E-books made by epub.py (see the E-books section below); add a book here.
 EPUBS := texts/hoeffding/mindre-arbejder/transcription.epub \
-         texts/hoeffding/mindre-arbejder-2/transcription.epub
+         texts/hoeffding/mindre-arbejder-2/transcription.epub \
+         texts/hoeffding/mindre-arbejder-3/transcription.epub
 
 # latexmk flags: pdf mode, non-interactive, stop on first error
 LATEXMK   := latexmk -pdf -interaction=nonstopmode -halt-on-error
